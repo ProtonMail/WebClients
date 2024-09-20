@@ -15,5 +15,4 @@ export * from './spotlight';
 export * from './text';
 export * from './title';
 export * from './topnavbar';
-export * from './treeview';
 export * from './v2';
