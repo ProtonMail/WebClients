@@ -186,6 +186,18 @@ export type { SearcheableSelectProps } from './components/selectTwo/SearchableSe
 export { default as SelectTwo } from './components/selectTwo/SelectTwo';
 export type { SelectTwoProps } from './components/selectTwo/SelectTwo';
 export { default as ShortcutsSectionView } from './components/shortcuts/ShortcutsSectionView';
+export { default as CollapsibleSidebarSpotlight } from './components/sidebar/CollapsibleSidebarSpotlight';
+export { default as Sidebar } from './components/sidebar/Sidebar';
+export { default as SidebarList } from './components/sidebar/SidebarList';
+export { default as SidebarListItem } from './components/sidebar/SidebarListItem';
+export { default as SidebarListItemContent } from './components/sidebar/SidebarListItemContent';
+export { default as SidebarListItemContentIcon } from './components/sidebar/SidebarListItemContentIcon';
+export { default as SidebarListItemHeaderLink } from './components/sidebar/SidebarListItemHeaderLink';
+export { default as SidebarListItemLink } from './components/sidebar/SidebarListItemLink';
+export { default as SidebarLogo } from './components/sidebar/SidebarLogo';
+export { default as SidebarNav } from './components/sidebar/SidebarNav';
+export { default as SidebarPrimaryButton } from './components/sidebar/SidebarPrimaryButton';
+export { default as SimpleSidebarListItemHeader } from './components/sidebar/SimpleSidebarListItemHeader';
 export { default as SkeletonLoader } from './components/skeletonLoader/SkeletonLoader';
 export { default as ReloadSpinner } from './components/spinner/ReloadSpinner';
 export { default as StepDot } from './components/stepDot/StepDot';
