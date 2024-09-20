@@ -92,6 +92,7 @@ const MainContainer: FunctionComponent = () => {
     const [showChat, setShowChat] = useState({ autoToggle: false, render: false });
     const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
     const canDisplayB2BLogsVPN = useFlag('B2BLogsVPN');
+    const isB2BAuthLogsEnabled = useFlag('B2BAuthenticationLogs');
 
     const vpnRoutes = getRoutes({
         user,
@@ -105,6 +106,7 @@ const MainContainer: FunctionComponent = () => {
         subscription,
         isUserGroupsFeatureEnabled,
         canDisplayB2BLogsVPN,
+        isB2BAuthLogsEnabled,
     });
     useConvertExternalAddresses();
     useUnprivatizeMembers();

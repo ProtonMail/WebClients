@@ -37,6 +37,7 @@ interface Arguments {
     memberships: GroupMembershipReturn[] | undefined;
     isUserGroupsMembershipFeatureEnabled: boolean;
     isB2BDrive: boolean;
+    isB2BAuthLogsEnabled: boolean;
 }
 
 export const getRoutes = ({
@@ -58,6 +59,7 @@ export const getRoutes = ({
     memberships,
     isUserGroupsMembershipFeatureEnabled,
     isB2BDrive,
+    isB2BAuthLogsEnabled,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -93,6 +95,7 @@ export const getRoutes = ({
             subscription,
             canDisplayB2BLogsVPN,
             isUserGroupsFeatureEnabled,
+            isB2BAuthLogsEnabled,
         }),
         vpn: getVpnAppRoutes({ app }),
         wallet: getWalletAppRoutes(),
