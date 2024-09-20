@@ -11,7 +11,7 @@ import SecurityCheckupCohort from '@proton/shared/lib/interfaces/securityCheckup
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { AppLink, SubTitle } from '../../components';
+import { AppLink } from '../../components';
 import {
     useHasOutdatedRecoveryFile,
     useIsDataRecoveryAvailable,
@@ -286,7 +286,7 @@ const GenericSecurityCheckupCard = ({
                     <Icon name={icon} size={10} />
                 </div>
                 <div>
-                    <SubTitle className="h3 text-bold mb-0">{title}</SubTitle>
+                    <h2 className="h3 text-bold mb-0">{title}</h2>
                     <div className="color-weak max-w-custom">{subtitle}</div>
                 </div>
             </div>
