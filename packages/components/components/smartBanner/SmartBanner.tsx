@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
+import Logo from '@proton/components/components/logo/Logo';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
-import Logo from '../logo/Logo';
 import { useSmartBanner } from './useSmartBanner';
 import { useSmartBannerTelemetry } from './useSmartBannerTelemetry';
 

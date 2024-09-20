@@ -6,7 +6,6 @@ export * from './image';
 export * from './label';
 export * from './labelStack';
 export * from './link';
-export * from './logo';
 export * from './newFeatureOnboarding';
 export * from './newFeatureTag';
 export * from './orderableTable';
