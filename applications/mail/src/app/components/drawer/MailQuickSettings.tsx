@@ -9,6 +9,9 @@ import {
     MailShortcutsModal,
     Option,
     SelectTwo,
+    ShortcutsToggle,
+    ToggleAssistant,
+    ToggleAssistantEnvironment,
     Tooltip,
     useKeyTransparencyContext,
     useModalState,
@@ -23,9 +26,6 @@ import DrawerAllSettingsView from '@proton/components/components/drawer/views/qu
 import DrawerDownloadApps from '@proton/components/components/drawer/views/quickSettings/DrawerDownloadApps';
 import { DrawerAppScrollContainer, DrawerAppSection } from '@proton/components/components/drawer/views/shared';
 import { KeyTransparencyDetailsModal } from '@proton/components/components/keyTransparency';
-import ShortcutsToggle from '@proton/components/containers/general/ShortcutsToggle';
-import ToggleAssistant from '@proton/components/containers/general/ToggleAssistant/ToggleAssistant';
-import ToggleAssistantEnvironment from '@proton/components/containers/general/ToggleAssistant/ToggleAssistantEnvironment';
 import { useApi, useEventManager, useNotifications, useUserSettings } from '@proton/components/hooks';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useKeyTransparencyNotification from '@proton/components/hooks/useKeyTransparencyNotification';
