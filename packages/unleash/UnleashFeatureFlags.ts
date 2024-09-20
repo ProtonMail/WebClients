@@ -25,7 +25,6 @@ enum CommonFeatureFlag {
     WalletPlan = 'WalletPlan',
     WalletAutoSetup = 'WalletAutoSetup',
     SentinelRecoverySettings = 'SentinelRecoverySettings',
-    LeftSidebarCollapsible = 'LeftSidebarCollapsible',
     InboxDesktopWinLinNewAppSwitcher = 'InboxDesktopWinLinNewAppSwitcher',
 }
 
