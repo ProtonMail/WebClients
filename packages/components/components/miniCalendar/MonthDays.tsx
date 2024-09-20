@@ -5,7 +5,7 @@ import { isAfter, isBefore, isSameDay, isSameMonth, isWithinInterval } from 'dat
 
 import clsx from '@proton/utils/clsx';
 
-import type { DateTuple } from './index.d';
+import type { DateTuple } from './interface';
 
 const getTargetDate = (target: any, days: Date[]) => {
     const idx = parseInt(target?.dataset?.i || '', 10);

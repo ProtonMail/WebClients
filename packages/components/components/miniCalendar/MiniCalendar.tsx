@@ -7,6 +7,7 @@ import { c } from 'ttag';
 import { Button, Vr } from '@proton/atoms';
 import TodayIcon from '@proton/components/components/icon/TodayIcon';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import clsx from '@proton/utils/clsx';
 
 import { createObserver } from '../../hooks/useElementRect';
@@ -15,7 +16,7 @@ import MonthDays from './MonthDays';
 import WeekDays from './WeekDays';
 import WeekNumbers from './WeekNumbers';
 import { getDateTupleFromMonday, getDaysInMonth } from './helper';
-import type { DateTuple, WeekStartsOn } from './index.d';
+import type { DateTuple } from './interface';
 
 export interface Props {
     hasCursors?: boolean;

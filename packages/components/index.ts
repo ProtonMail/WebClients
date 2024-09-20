@@ -121,6 +121,8 @@ export { default as useDebounceInput } from './components/input/useDebounceInput
 export { default as EllipsisLoader } from './components/loader/EllipsisLoader';
 export { default as Loader } from './components/loader/Loader';
 export { default as LoaderIcon } from './components/loader/LoaderIcon';
+export { default as MiniCalendar } from './components/miniCalendar/MiniCalendar';
+export { default as LocalizedMiniCalendar } from './components/miniCalendar/LocalizedMiniCalendar';
 export { default as TextLoader } from './components/loader/TextLoader';
 export { default as ConfirmModal } from './components/modal/Confirm';
 export type { ConfirmModalProps } from './components/modal/Confirm';
