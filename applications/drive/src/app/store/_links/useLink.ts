@@ -517,23 +517,34 @@ export function useLinkInner(
     ): Promise<DecryptedLink> => {
         return debouncedFunction(
             async (abortSignal: AbortSignal): Promise<DecryptedLink> => {
-                const namePromise = decryptSigned({
-                    armoredMessage: encryptedLink.name,
-                    privateKey: !encryptedLink.parentLinkId
-                        ? await getSharePrivateKey(abortSignal, shareId)
-                        : await getLinkPrivateKey(abortSignal, shareId, encryptedLink.parentLinkId),
-                    // nameSignatureAddress is missing for some old files.
-                    // Fallback to signatureAddress might result in failed
-                    // signature check, but no one reported it so far so
-                    // we should be good. Important is that user can access
-                    // the file and the verification do not hard fail.
-                    // If we find out that it doesnt work for some user,
-                    // we could skip the verification instead. But the best
-                    // would be to fix it properly in the database.
-                    publicKey: await getVerificationKey(
-                        encryptedLink.nameSignatureAddress || encryptedLink.signatureAddress
-                    ),
-                }).then(({ data, verified }) => ({ name: data, nameVerified: verified }));
+                const namePromise = new Promise<{ name: string; nameVerified: VERIFICATION_STATUS }>(
+                    async (resolve, reject) => {
+                        try {
+                            const privateKey = !encryptedLink.parentLinkId
+                                ? await getSharePrivateKey(abortSignal, shareId)
+                                : await getLinkPrivateKey(abortSignal, shareId, encryptedLink.parentLinkId);
+                            const publicKey = await getVerificationKey(
+                                encryptedLink.nameSignatureAddress || encryptedLink.signatureAddress
+                            );
+                            const { data, verified } = await decryptSigned({
+                                armoredMessage: encryptedLink.name,
+                                privateKey,
+                                // nameSignatureAddress is missing for some old files.
+                                // Fallback to signatureAddress might result in failed
+                                // signature check, but no one reported it so far so
+                                // we should be good. Important is that user can access
+                                // the file and the verification do not hard fail.
+                                // If we find out that it doesnt work for some user,
+                                // we could skip the verification instead. But the best
+                                // would be to fix it properly in the database.
+                                publicKey,
+                            });
+                            resolve({ name: data, nameVerified: verified });
+                        } catch (error) {
+                            reject(error);
+                        }
+                    }
+                );
 
                 const revision = !!revisionId
                     ? await getLinkRevision(abortSignal, { shareId, linkId: encryptedLink.linkId, revisionId })
