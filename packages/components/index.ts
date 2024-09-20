@@ -110,3 +110,25 @@ export type { PassEvent } from './containers/b2bDashboard/Pass/interface';
 export { PromotionBanner } from './containers/banner/PromotionBanner';
 export { ProtonMailBridgeSection } from './containers/bridge/ProtonMailBridgeSection';
 export { CacheProvider } from './containers/cache/Provider';
+export { AccountRecoverySection } from './containers/recovery/AccountRecoverySection';
+export { DataRecoverySection } from './containers/recovery/DataRecoverySection';
+export { SessionRecoverySection } from './containers/recovery/SessionRecoverySection';
+export { OverviewSection } from './containers/recovery/OverviewSection';
+export { getOverallStatus } from './containers/recovery/getOverallStatus';
+export { InviteSection } from './containers/referral/invite/InviteSection';
+export { RewardSection } from './containers/referral/rewards/RewardSection';
+export { ReferralModal } from './containers/referral/modals/ReferralModal';
+export { ReferralSpotlight } from './containers/referral/ReferralSpotlight';
+export { ReferralFeaturesList } from './containers/referral/ReferralFeaturesList';
+export { ReferralHowItWorks } from './containers/referral/ReferralHowItWorks';
+export {
+    ReferralInvitesContextProvider,
+    useReferralInvitesContext,
+} from './containers/referral/ReferralInvitesContext';
+export { getShouldOpenReferralModal } from './containers/referral/modals/helper';
+export { useRightToLeft } from './containers/rightToLeft/useRightToLeft';
+export { RightToLeftProvider } from './containers/rightToLeft/Provider';
+export { ExternalPGPSettingsSection } from './containers/security/ExternalPGPSettingsSection';
+export { AddressVerificationSection } from './containers/security/AddressVerificationSection';
+export { PGPSchemeSelect } from './containers/security/PGPSchemeSelect';
+export { SentinelSection } from './containers/sentinel/SentinelSection';

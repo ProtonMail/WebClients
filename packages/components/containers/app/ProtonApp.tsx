@@ -1,6 +1,6 @@
 import type { ComponentType, ReactNode } from 'react';
 
-import { CacheProvider } from '@proton/components';
+import { CacheProvider, RightToLeftProvider } from '@proton/components';
 import Icons from '@proton/icons/Icons';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
@@ -11,7 +11,6 @@ import CompatibilityCheck from '../compatibilityCheck/CompatibilityCheck';
 import ConfigProvider from '../config/Provider';
 import ModalsProvider from '../modals/Provider';
 import NotificationsProvider from '../notifications/Provider';
-import RightToLeftProvider from '../rightToLeft/Provider';
 import DefaultThemeProvider from '../themes/ThemeProvider';
 
 interface Props {

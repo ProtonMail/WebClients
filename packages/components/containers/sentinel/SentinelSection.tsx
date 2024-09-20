@@ -41,7 +41,7 @@ interface Props {
     app: APP_NAMES;
 }
 
-const SentinelSection = ({ app }: Props) => {
+export const SentinelSection = ({ app }: Props) => {
     const { APP_NAME } = useConfig();
     const [userSettings] = useUserSettings();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
@@ -171,5 +171,3 @@ const SentinelSection = ({ app }: Props) => {
         </SettingsSectionWide>
     );
 };
-
-export default SentinelSection;

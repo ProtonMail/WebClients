@@ -29,7 +29,7 @@ interface Props {
     };
 }
 
-const OverviewSection = ({ ids }: Props) => {
+export const OverviewSection = ({ ids }: Props) => {
     const { call, stop, start } = useEventManager();
     const authentication = useAuthentication();
     const api = useApi();
@@ -103,5 +103,3 @@ const OverviewSection = ({ ids }: Props) => {
         </>
     );
 };
-
-export default OverviewSection;

@@ -10,7 +10,7 @@ interface Props {
     children: React.ReactNode;
 }
 
-const Provider = ({ children }: Props) => {
+export const RightToLeftProvider = ({ children }: Props) => {
     const state = useState(getIsRTL(document.documentElement.lang));
     const [isRTL, setRTL] = state;
 
@@ -32,5 +32,3 @@ const Provider = ({ children }: Props) => {
 
     return <RightToLeftContext.Provider value={state}>{children}</RightToLeftContext.Provider>;
 };
-
-export default Provider;
