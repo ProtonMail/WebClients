@@ -404,6 +404,7 @@ const PlanSelection = (props: Props) => {
     const { sendStartCancellationPricingReport } = useCancellationTelemetry();
 
     const canAccessDistributionListFeature = useFlag('UserGroupsPermissionCheck');
+    const showGatewaysForBundlePlan = useFlag('ShowGatewaysForBundlePlan');
 
     const maximumCycle: Cycle | undefined = getMaximumCycle(maybeMaximumCycle, audience, app, currency);
 
@@ -557,6 +558,7 @@ const PlanSelection = (props: Props) => {
                             organization,
                             plans,
                             user,
+                            showGatewaysForBundlePlan,
                         }),
                         cycle,
                         plan.Currency

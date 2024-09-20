@@ -144,6 +144,7 @@ const MainContainer = () => {
     const canDisplayNewSentinelSettings = useFlag('SentinelRecoverySettings');
     const isUserGroupsMembershipFeatureEnabled = useFlag('UserGroupsMembersPermissionCheck');
     const isB2BAuthLogsEnabled = useFlag('B2BAuthenticationLogs');
+    const showGatewaysForBundlePlan = useFlag('ShowGatewaysForBundlePlan');
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
@@ -185,6 +186,7 @@ const MainContainer = () => {
         isUserGroupsMembershipFeatureEnabled,
         isB2BDrive,
         isB2BAuthLogsEnabled,
+        showGatewaysForBundlePlan,
     });
 
     useEffect(() => {

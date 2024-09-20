@@ -452,9 +452,10 @@ export const willTrialExpire = (subscription: Subscription | undefined) => {
 
 export const getHasMemberCapablePlan = (
     organization: Organization | undefined,
-    subscription: Subscription | undefined
+    subscription: Subscription | undefined,
+    flags: { showGatewaysForBundlePlan: boolean }
 ) => {
-    const supportedAddons = getSupportedAddons(getPlanIDs(subscription));
+    const supportedAddons = getSupportedAddons(getPlanIDs(subscription), flags);
     return (organization?.MaxMembers || 0) > 1 || (Object.keys(supportedAddons) as ADDON_NAMES[]).some(isMemberAddon);
 };
 

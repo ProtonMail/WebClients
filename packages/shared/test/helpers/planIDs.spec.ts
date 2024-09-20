@@ -115,7 +115,16 @@ describe('switchPlan', () => {
     it('should remove previous plan', () => {
         const planIDs = { [PLANS.MAIL]: 1 };
         const planID = PLANS.VISIONARY;
-        expect(switchPlan({ planIDs, planID, plans: getTestPlans(), organization: MOCK_ORGANIZATION, user })).toEqual({
+        expect(
+            switchPlan({
+                planIDs,
+                planID,
+                plans: getTestPlans(),
+                organization: MOCK_ORGANIZATION,
+                user,
+                showGatewaysForBundlePlan: false,
+            })
+        ).toEqual({
             [PLANS.VISIONARY]: 1,
         });
     });
@@ -123,7 +132,16 @@ describe('switchPlan', () => {
     it('should transfer domain addons', () => {
         const planIDs = { [PLANS.BUNDLE_PRO]: 1, [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: 5 };
         const planID = PLANS.BUNDLE_PRO_2024;
-        expect(switchPlan({ planIDs, planID, plans: getTestPlans(), organization: MOCK_ORGANIZATION, user })).toEqual({
+        expect(
+            switchPlan({
+                planIDs,
+                planID,
+                plans: getTestPlans(),
+                organization: MOCK_ORGANIZATION,
+                user,
+                showGatewaysForBundlePlan: false,
+            })
+        ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
             [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: 5,
         });
@@ -132,7 +150,16 @@ describe('switchPlan', () => {
     it('should transfer member addons', () => {
         const planIDs = { [PLANS.BUNDLE_PRO]: 1, [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 5 };
         const planID = PLANS.BUNDLE_PRO_2024;
-        expect(switchPlan({ planIDs, planID, plans: getTestPlans(), organization: MOCK_ORGANIZATION, user })).toEqual({
+        expect(
+            switchPlan({
+                planIDs,
+                planID,
+                plans: getTestPlans(),
+                organization: MOCK_ORGANIZATION,
+                user,
+                showGatewaysForBundlePlan: false,
+            })
+        ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
             [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 5,
         });
@@ -141,7 +168,16 @@ describe('switchPlan', () => {
     it('should not transfer addons', () => {
         const planIDs = { [PLANS.BUNDLE_PRO]: 1, [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: 5 };
         const planID = PLANS.MAIL;
-        expect(switchPlan({ planIDs, planID, plans: getTestPlans(), organization: MOCK_ORGANIZATION, user })).toEqual({
+        expect(
+            switchPlan({
+                planIDs,
+                planID,
+                plans: getTestPlans(),
+                organization: MOCK_ORGANIZATION,
+                user,
+                showGatewaysForBundlePlan: false,
+            })
+        ).toEqual({
             [PLANS.MAIL]: 1,
         });
     });
@@ -150,7 +186,9 @@ describe('switchPlan', () => {
         const planIDs = { [PLANS.ENTERPRISE]: 1 };
         const organization = { UsedAddresses: 16, UsedDomains: 11 } as Organization;
         const planID = PLANS.BUNDLE_PRO;
-        expect(switchPlan({ planIDs, planID, plans: getTestPlans(), organization, user })).toEqual({
+        expect(
+            switchPlan({ planIDs, planID, plans: getTestPlans(), organization, user, showGatewaysForBundlePlan: false })
+        ).toEqual({
             [PLANS.BUNDLE_PRO]: 1,
             [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 1,
             [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: 1,
@@ -169,7 +207,16 @@ describe('switchPlan', () => {
             UsedAI: 0,
         } as Organization;
 
-        expect(switchPlan({ planIDs, planID: planId, plans: getTestPlans(), organization, user })).toEqual({
+        expect(
+            switchPlan({
+                planIDs,
+                planID: planId,
+                plans: getTestPlans(),
+                organization,
+                user,
+                showGatewaysForBundlePlan: false,
+            })
+        ).toEqual({
             [PLANS.MAIL_PRO]: 1,
             [ADDON_NAMES.MEMBER_MAIL_PRO]: 6,
             [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 7,
@@ -191,7 +238,16 @@ describe('switchPlan', () => {
             ChargebeeUser: ChargebeeEnabled.INHOUSE_FORCED,
         } as User;
 
-        expect(switchPlan({ planIDs, planID: planId, plans: getTestPlans(), organization, user })).toEqual({
+        expect(
+            switchPlan({
+                planIDs,
+                planID: planId,
+                plans: getTestPlans(),
+                organization,
+                user,
+                showGatewaysForBundlePlan: false,
+            })
+        ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
         });
     });
