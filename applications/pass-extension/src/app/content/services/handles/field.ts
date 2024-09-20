@@ -1,5 +1,10 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
-import type { FieldHandle, FormHandle } from 'proton-pass-extension/app/content/types';
+import {
+    DropdownAction,
+    type FieldHandle,
+    type FormHandle,
+    IFramePortMessageType,
+} from 'proton-pass-extension/app/content/types';
 import { actionPrevented, actionTrap, withActionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
 import { createAutofill } from 'proton-pass-extension/app/content/utils/autofill';
 
@@ -73,9 +78,14 @@ const onInputField = (field: FieldHandle): (() => void) =>
         const dropdown = ctx?.service.iframe.dropdown;
         const { action, element } = field;
 
-        if (dropdown) {
-            const { visible } = dropdown.getState();
-            if (visible && !actionPrevented(element) && !action?.filterable) dropdown?.close();
+        if (dropdown && dropdown.getState().visible) {
+            if (!actionPrevented(element) && !action?.filterable) dropdown?.close();
+            else if (action?.type === DropdownAction.AUTOFILL_LOGIN && action?.filterable) {
+                dropdown.sendMessage({
+                    type: IFramePortMessageType.AUTOFILL_FILTER,
+                    payload: { startsWith: field.value },
+                });
+            }
         }
 
         field.setValue((field.element as HTMLInputElement).value);
