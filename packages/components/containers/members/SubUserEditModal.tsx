@@ -66,23 +66,29 @@ interface MemberState {
 const getMemberDiff = ({
     model,
     initialModel,
-    hasVPN,
 }: {
     model: MemberState;
     initialModel: MemberState;
     hasVPN: boolean;
-}) => {
-    return {
-        name: initialModel.name !== model.name ? model.name : undefined,
-        storage: initialModel.storage !== model.storage ? model.storage : undefined,
+}): Partial<MemberState> => {
+    return Object.fromEntries(
+        Object.entries({
+            name: initialModel.name !== model.name ? model.name : undefined,
+            storage: initialModel.storage !== model.storage ? model.storage : undefined,
+            // NOTE: These values are not included because they are updated immediately
+            /*
         vpn: hasVPN && initialModel.vpn !== model.vpn ? model.vpn : undefined,
         numAI: initialModel.ai !== model.ai ? model.ai : undefined,
         private: model.private !== initialModel.private ? model.private : undefined,
         role: model.role !== initialModel.role ? model.role : undefined,
-    };
+         */
+        }).filter(([, value]) => {
+            return value !== undefined;
+        })
+    );
 };
 
-const getMemberStateFromMember = (member: Member) => {
+const getMemberStateFromMember = (member: Member): MemberState => {
     return {
         name: member.Name,
         storage: member.MaxSpace,
@@ -142,6 +148,8 @@ const SubUserEditModal = ({
     const [submitting, withLoading] = useLoading();
     const [loadingUnprivatization, withLoadingUnprivatization] = useLoading();
     const [loadingRole, withLoadingRole] = useLoading();
+    const [loadingVPN, withLoadingVPN] = useLoading();
+    const [loadingScribe, withLoadingScribe] = useLoading();
     const { createNotification } = useNotifications();
     const normalApi = useApi();
     const silentApi = getSilentApi(normalApi);
@@ -193,7 +201,10 @@ const SubUserEditModal = ({
             })
         );
         if (result.member) {
-            updateModel(getMemberStateFromMember(result.member));
+            const newValue = getMemberStateFromMember(result.member);
+            const memberDiff = getMemberDiff({ model, initialModel, hasVPN });
+            // Keep the partially updated member diff values if any
+            updateModel({ ...newValue, ...memberDiff });
             createNotification({ text: c('Success').t`User updated` });
         }
         return result.diff;
@@ -411,7 +422,12 @@ const SubUserEditModal = ({
                                     <Toggle
                                         id="vpn-toggle"
                                         checked={model.vpn}
-                                        onChange={({ target }) => updatePartialModel({ vpn: target.checked })}
+                                        loading={loadingVPN}
+                                        onChange={({ target }) => {
+                                            withLoadingVPN(handleUpdateMember({ vpn: target.checked })).catch(
+                                                errorHandler
+                                            );
+                                        }}
                                     />
                                 }
                                 label={
@@ -532,8 +548,13 @@ const SubUserEditModal = ({
                                     <Toggle
                                         id="ai-assistant-toggle"
                                         checked={model.ai}
+                                        loading={loadingScribe}
                                         disabled={disableAI}
-                                        onChange={({ target }) => updatePartialModel({ ai: target.checked })}
+                                        onChange={({ target }) => {
+                                            withLoadingScribe(handleUpdateMember({ numAI: target.checked })).catch(
+                                                errorHandler
+                                            );
+                                        }}
                                     />
                                 }
                                 label={
@@ -562,17 +583,15 @@ const SubUserEditModal = ({
                     )}
                     {showAddressesSection && (
                         <div>
-                            <h3 className="text-strong">{c('Label').t`Addresses`}</h3>
+                            <h3 className="text-strong mb-2">{c('Label').t`Addresses`}</h3>
                             <div>
-                                <Addresses organization={organization} memberID={member.ID} />
+                                <Addresses organization={organization} memberID={member.ID} hasDescription={false} />
                             </div>
                         </div>
                     )}
                 </ModalContent>
                 <ModalFooter>
-                    <Button onClick={handleClose} disabled={submitting}>
-                        {c('Action').t`Cancel`}
-                    </Button>
+                    <div>{/* empty div to make it right aligned*/}</div>
                     <Button loading={submitting} type="submit" color="norm">
                         {c('Action').t`Save`}
                     </Button>

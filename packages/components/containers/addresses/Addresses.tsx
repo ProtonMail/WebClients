@@ -9,9 +9,10 @@ interface AddressesProps {
     isOnlySelf?: boolean;
     organization?: Organization;
     memberID?: string;
+    hasDescription?: boolean;
 }
 
-const Addresses = ({ isOnlySelf, organization, memberID }: AddressesProps) => {
+const Addresses = ({ isOnlySelf, organization, memberID, hasDescription }: AddressesProps) => {
     const [user] = useUser();
     const [allowAddressDeletion] = useAllowAddressDeletion();
 
@@ -22,9 +23,14 @@ const Addresses = ({ isOnlySelf, organization, memberID }: AddressesProps) => {
             memberID={memberID}
             organization={organization}
             allowAddressDeletion={allowAddressDeletion ?? false}
+            hasDescription={hasDescription}
         />
     ) : (
-        <AddressesWithUser user={user} allowAddressDeletion={allowAddressDeletion ?? false} />
+        <AddressesWithUser
+            user={user}
+            allowAddressDeletion={allowAddressDeletion ?? false}
+            hasDescription={hasDescription}
+        />
     );
 };
 

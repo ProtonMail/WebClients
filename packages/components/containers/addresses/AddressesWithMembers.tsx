@@ -44,9 +44,17 @@ interface Props {
     isOnlySelf?: boolean;
     memberID?: string;
     allowAddressDeletion: boolean;
+    hasDescription?: boolean;
 }
 
-const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf, allowAddressDeletion }: Props) => {
+const AddressesWithMembers = ({
+    user,
+    organization,
+    memberID,
+    isOnlySelf,
+    allowAddressDeletion,
+    hasDescription = true,
+}: Props) => {
     const [members, loadingMembers] = useMembers();
     const [addresses, loadingAddresses] = useAddresses();
     const [customDomains] = useCustomDomains();
@@ -133,13 +141,15 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf, allowA
 
     const children = (
         <>
-            <SettingsParagraph className="mt-2">
-                <span>
-                    {c('Info').t`Use the different types of email addresses and aliases offered by ${BRAND_NAME}.`}
-                </span>
-                <br />
-                <Href href={getKnowledgeBaseUrl('/addresses-and-aliases')}>{c('Link').t`Learn more`}</Href>
-            </SettingsParagraph>
+            {hasDescription && (
+                <SettingsParagraph className="mt-2">
+                    <span>
+                        {c('Info').t`Use the different types of email addresses and aliases offered by ${BRAND_NAME}.`}
+                    </span>
+                    <br />
+                    <Href href={getKnowledgeBaseUrl('/addresses-and-aliases')}>{c('Link').t`Learn more`}</Href>
+                </SettingsParagraph>
+            )}
 
             {currentMember && !user.isSubUser && (
                 <div className="mb-4 flex gap-2 self-start items-center">
