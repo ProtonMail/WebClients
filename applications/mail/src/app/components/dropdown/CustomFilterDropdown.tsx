@@ -3,11 +3,20 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Checkbox, FiltersUpsellModal, PrimaryButton, useFilters, useModalState, useUser } from '@proton/components';
-import { OPERATORS } from '@proton/components/containers/filters/constants';
-import { ConditionComparator, ConditionType } from '@proton/components/containers/filters/interfaces';
-import FilterModal from '@proton/components/containers/filters/modal/FilterModal';
-import newFilter, { computeTree } from '@proton/components/containers/filters/utils';
+import {
+    Checkbox,
+    ConditionComparator,
+    ConditionType,
+    FilterModal,
+    FiltersUpsellModal,
+    OPERATORS,
+    PrimaryButton,
+    computeTree,
+    newFilter,
+    useFilters,
+    useModalState,
+    useUser,
+} from '@proton/components';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import identity from '@proton/utils/identity';

@@ -2,9 +2,16 @@ import { useCallback, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { NotificationButton, useAddresses, useApi, useAppLink, useFilters, useNotifications } from '@proton/components';
-import type { Filter } from '@proton/components/containers/filters/interfaces';
-import { createDefaultLabelsFilter } from '@proton/components/containers/filters/utils';
+import {
+    NotificationButton,
+    createDefaultLabelsFilter,
+    useAddresses,
+    useApi,
+    useAppLink,
+    useFilters,
+    useNotifications,
+} from '@proton/components';
+import type { Filter } from '@proton/components';
 import { useGetFolders, useGetLabels } from '@proton/components/hooks/useCategories';
 import { addTreeFilter, deleteFilter } from '@proton/shared/lib/api/filters';
 import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
