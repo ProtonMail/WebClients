@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
 import type { Member, UserModel } from '@proton/shared/lib/interfaces';
+import { getMemberEmailOrName } from '@proton/shared/lib/keys/memberHelper';
 
 import type { ModalProps } from '../../components';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, SettingsLink } from '../../components';
@@ -37,7 +38,7 @@ const ReactivatePasswordlessOrganizationKey = ({
                                 <AdministratorList
                                     members={otherAdminsWithKeyAccess.map((member) => ({
                                         member,
-                                        email: member.Addresses?.[0]?.Email || member.Name,
+                                        email: getMemberEmailOrName(member),
                                     }))}
                                     expandByDefault={true}
                                 />

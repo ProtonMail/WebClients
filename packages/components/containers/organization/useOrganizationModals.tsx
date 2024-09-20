@@ -3,11 +3,12 @@ import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { getPrivatizeError } from '@proton/account';
+import { getPrivatizeError } from '@proton/account/organizationKey/actions';
 import { Button, Card, Href } from '@proton/atoms';
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Member } from '@proton/shared/lib/interfaces';
+import { getMemberEmailOrName } from '@proton/shared/lib/keys/memberHelper';
 import {
     OrganizationKeyMode,
     OrganizationKeyState,
@@ -63,7 +64,7 @@ const UserNeedsToInvite = ({
                         <AdministratorList
                             members={otherAdminsWithMissingOrgKeys.map((member) => ({
                                 member,
-                                email: member.Addresses?.[0]?.Email || member.Name || '',
+                                email: getMemberEmailOrName(member),
                             }))}
                         />
                     </div>
