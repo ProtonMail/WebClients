@@ -94,9 +94,10 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
                 }
 
                 case DropdownAction.AUTOFILL_LOGIN: {
-                    if (!authorized) return { action, domain: '' };
+                    const startsWith = field.value.trim();
+                    if (!authorized) return { action, domain: '', startsWith };
                     if (autofocused && !(await ctx.service.autofill.getCredentialsCount())) return;
-                    return { action, domain };
+                    return { action, domain, startsWith };
                 }
                 case DropdownAction.AUTOSUGGEST_ALIAS: {
                     if (!url?.displayName) throw new Error();
@@ -210,6 +211,7 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
         getState: () => iframe.state,
         init: pipe(iframe.init, () => dropdown),
         open: pipe(open, () => dropdown),
+        sendMessage: iframe.sendPortMessage,
     };
 
     return dropdown;
