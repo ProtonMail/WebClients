@@ -1,12 +1,12 @@
 import type { ReactNode } from 'react';
 
+import Hamburger from '@proton/components/components/sidebar/Hamburger';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
-import { Hamburger } from '../../components';
 import type { Props as HeaderProps } from '../../components/header/Header';
 import Header from '../../components/header/Header';
 import { TopNavbar, TopNavbarList, TopNavbarListItem, TopNavbarUpsell } from '../../components/topnavbar';
