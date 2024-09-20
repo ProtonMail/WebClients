@@ -34,6 +34,7 @@ import type {
     KeyTransparencyCommit,
     KeyTransparencyVerify,
     Member,
+    Organization,
     VerifyOutboundPublicKeys,
 } from '@proton/shared/lib/interfaces';
 import { CreateMemberMode } from '@proton/shared/lib/interfaces';
@@ -179,6 +180,22 @@ interface CreateMemberPayload {
     numAI: boolean;
 }
 
+// This resets the VPN connections of the admin to the default value, since this gets reset by the API when changing subscriptions etc
+export const resetAdminVPN = async ({
+    api,
+    members,
+    organization,
+}: {
+    api: Api;
+    members: Member[];
+    organization: Organization;
+}) => {
+    const self = members.find((member) => Boolean(member.Self));
+    if (organization.MaxVPN > 0 && self && self.MaxVPN !== VPN_CONNECTIONS && self.MaxVPN === organization.MaxVPN) {
+        await api(updateVPN(self.ID, VPN_CONNECTIONS));
+    }
+};
+
 export const editMember = ({
     member,
     memberDiff,
@@ -203,6 +220,13 @@ export const editMember = ({
             await api(updateQuota(member.ID, memberDiff.storage));
         }
         if (memberDiff.vpn !== undefined) {
+            if (memberDiff.vpn) {
+                const [members, organization] = await Promise.all([
+                    dispatch(membersThunk()),
+                    dispatch(organizationThunk()),
+                ]);
+                await resetAdminVPN({ api, members, organization }).catch(noop);
+            }
             await api(updateVPN(member.ID, memberDiff.vpn ? VPN_CONNECTIONS : 0));
         }
         if (memberDiff.numAI !== undefined) {
@@ -306,15 +330,8 @@ export const createMember = ({
             model.role = MEMBER_ROLE.ORGANIZATION_MEMBER;
         }
 
-        const self = members.find((member) => Boolean(member.Self));
-        if (
-            organization.MaxVPN > 0 &&
-            self &&
-            self.MaxVPN !== VPN_CONNECTIONS &&
-            self.MaxVPN === organization.MaxVPN &&
-            model.vpn
-        ) {
-            await api(updateVPN(self.ID, VPN_CONNECTIONS)).catch(noop);
+        if (model.vpn) {
+            await resetAdminVPN({ api, members, organization }).catch(noop);
         }
 
         const error = validateAddUser({
