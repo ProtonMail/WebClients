@@ -7,13 +7,13 @@ import type { ModalProps } from '@proton/components';
 import {
     Prompt,
     useCalendarShareInvitationActions,
+    useContactEmailsCache,
     useModalState,
     useNotifications,
     useSettingsLink,
 } from '@proton/components';
 import CalendarLimitReachedModal from '@proton/components/containers/calendar/CalendarLimitReachedModal';
 import ShareCalendarWithSignatureVerificationErrorModal from '@proton/components/containers/calendar/shareProton/ShareCalendarWithSignatureVerificationErrorModal';
-import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useLoading } from '@proton/hooks';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';

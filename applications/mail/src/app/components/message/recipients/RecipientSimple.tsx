@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
+import type { ContactEditProps } from '@proton/components';
 
 import type { RecipientOrGroup } from '../../../models/address';
 import RecipientItem from './RecipientItem';

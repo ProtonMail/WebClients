@@ -11,6 +11,7 @@ import {
     useCalendarModelEventManager,
     useConfig,
     useContactEmails,
+    useContactEmailsCache,
     useEventManager,
     useGetAddressKeys,
     useGetCalendarEventRaw,
@@ -21,7 +22,6 @@ import {
     useUser,
 } from '@proton/components';
 import { ImportModal } from '@proton/components/containers/calendar/importModal';
-import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useReadCalendarBootstrap } from '@proton/components/hooks/useGetCalendarBootstrap';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';

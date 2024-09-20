@@ -2,8 +2,7 @@ import { useCallback, useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { useActiveBreakpoint } from '@proton/components';
-import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
+import { ContactEmailsProvider, useActiveBreakpoint } from '@proton/components';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import useNavigate from '../../../hooks/drive/useNavigate';

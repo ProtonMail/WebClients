@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import {
     AppLink,
     CancellationReminderSection,
+    ContactEmailsProvider,
     CustomLogo,
     FeatureCode,
     Logo,
@@ -34,7 +35,6 @@ import {
     useUser,
     useUserSettings,
 } from '@proton/components';
-import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { getIsSectionAvailable, getRoutePaths } from '@proton/components/containers/layout/helper';
 import UnprivatizationRequestTopBanner from '@proton/components/containers/members/Unprivatization/UnprivatizationRequestTopBanner';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';

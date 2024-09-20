@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { AddressesAutocompleteTwo } from '@proton/components/components';
+import { AddressesAutocompleteTwo, useContactEmailsCache } from '@proton/components';
 import AddressesInput, { AddressesInputItem } from '@proton/components/components/addressesInput/AddressesInput';
 import Icon from '@proton/components/components/icon/Icon';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
@@ -45,8 +45,6 @@ import { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPr
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
-
-import { useContactEmailsCache } from '../../contacts/ContactEmailsProvider';
 
 export enum VALIDATION_ERROR_TYPES {
     INVALID_EMAIL,
