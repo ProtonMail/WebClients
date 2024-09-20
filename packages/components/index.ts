@@ -170,6 +170,7 @@ export { default as SearchableSelect } from './components/selectTwo/SearchableSe
 export type { SearcheableSelectProps } from './components/selectTwo/SearchableSelect';
 export { default as SelectTwo } from './components/selectTwo/SelectTwo';
 export type { SelectTwoProps } from './components/selectTwo/SelectTwo';
+export { default as ShortcutsSectionView } from './components/shortcuts/ShortcutsSectionView';
 export { default as SkeletonLoader } from './components/skeletonLoader/SkeletonLoader';
 export { default as ReloadSpinner } from './components/spinner/ReloadSpinner';
 export { default as StepDot } from './components/stepDot/StepDot';
