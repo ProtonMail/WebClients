@@ -3,6 +3,7 @@ import webpack from 'webpack';
 import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 
 import getConfig from '@proton/pack/webpack.config';
+import { NamedDeterministicChunkIdsPlugin } from '@proton/pass/utils/webpack/chunks/plugin';
 
 const CRITICAL_OFFLINE_ASSETS = [
     /** main assets */
@@ -21,8 +22,7 @@ const CRITICAL_OFFLINE_ASSETS = [
 
     /* wasm */
     'wasm',
-    'vendors-node_modules_protontech_pass-rust-core_proton_pass_web_js.chunk.js',
-    'vendors-node_modules_pmcrypto_node_modules_openpgp_dist_lightweight_argon2id_min_mjs',
+    'node_modules_pmcrypto_node_modules_openpgp_dist_lightweight_argon2id_min_mjs',
 ];
 
 const result = (env: any): webpack.Configuration => {
@@ -47,7 +47,15 @@ const result = (env: any): webpack.Configuration => {
         config.output.chunkFilename = (pathData, assetInfo) => {
             const chunkName = pathData?.chunk?.name;
             if (chunkName && chunkName.startsWith('pass.service-worker')) return `[name].js?v=${version}`;
-            if (typeof chunkFilename === 'function') return chunkFilename(pathData, assetInfo);
+
+            if (typeof chunkFilename === 'function') {
+                const result = chunkFilename(pathData, assetInfo);
+                /** `NamedDeterministicChunkIdsPlugin` will preserve `[name]` as
+                 * the named chunkId - as such replace it with the `[id]` to ensure
+                 * filenames match the deterministic chunkId */
+                return result.replace('[name]', '[id]');
+            }
+
             return chunkFilename ?? '[id].js';
         };
 
@@ -55,6 +63,7 @@ const result = (env: any): webpack.Configuration => {
     }
 
     if (config.plugins) {
+        config.plugins.push(new NamedDeterministicChunkIdsPlugin());
         config.plugins.push(
             new WebpackManifestPlugin({
                 fileName: 'assets/offline.json',
