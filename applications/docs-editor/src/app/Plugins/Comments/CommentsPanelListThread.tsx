@@ -131,9 +131,9 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
       data-thread-mark-id={markID}
       onClick={handleClickThread}
       className={clsx(
-        'group/thread border-weak bg-norm mb-3.5 list-none overflow-hidden rounded-lg border transition-transform duration-[50ms] last:mb-0 focus:outline-none',
+        'group/thread border-weak bg-norm mb-3.5 list-none overflow-hidden rounded-lg border transition-transform duration-[25ms] last:mb-0 focus:outline-none',
         isActive || isHovering
-          ? 'shadow-raised relative translate-x-[-5%] hover:bg-[--optional-background-lowered]'
+          ? 'shadow-raised relative translate-x-[-5px] hover:bg-[--optional-background-lowered]'
           : '',
         thread.isPlaceholder || isDeleting ? 'pointer-events-none opacity-50' : '',
       )}
