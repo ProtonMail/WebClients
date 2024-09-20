@@ -3,12 +3,18 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
-import { CalendarLogo, DriveLogo, MailLogo, PassLogo, WalletLogo } from '@proton/components/components';
+import {
+    CalendarLogo,
+    DriveLogo,
+    MailLogo,
+    PassLogo,
+    PromotionBanner,
+    SettingsLink,
+    WalletLogo,
+} from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Meter from '@proton/components/components/progress/Meter';
 import { SettingsSection } from '@proton/components/containers';
-import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useSubscription, useUser } from '@proton/components/hooks';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

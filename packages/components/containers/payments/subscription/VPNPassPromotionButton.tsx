@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
+import { PromotionBanner } from '@proton/components';
+import Logo from '@proton/components/components/logo/Logo';
 import { CYCLE, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import type { Currency } from '@proton/shared/lib/interfaces';
 
-import Logo from '../../../components/logo/Logo';
 import { getSimplePriceString } from '../../../components/price/helper';
 import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
 
