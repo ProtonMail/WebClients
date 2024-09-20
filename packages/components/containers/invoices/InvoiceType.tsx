@@ -1,10 +1,6 @@
 import { c } from 'ttag';
 
-import { INVOICE_TYPE } from '@proton/shared/lib/constants';
-
-import type { Invoice } from './interface';
-
-const CREDIT_NOTE_PREFIX = 'CN';
+import { INVOICE_TYPE, type Invoice, isCreditNoteInvoice } from '@proton/payments';
 
 const getType = (invoice: Invoice) => {
     const type: INVOICE_TYPE = invoice.Type;
@@ -17,7 +13,7 @@ const getType = (invoice: Invoice) => {
         case INVOICE_TYPE.CANCELLATION:
             return c('Invoice type display as badge').t`Cancellation`;
         case INVOICE_TYPE.CREDIT:
-            if (invoice.ID.startsWith(CREDIT_NOTE_PREFIX)) {
+            if (isCreditNoteInvoice(invoice)) {
                 // Credit Note is a system generated note that might occur as a middle step e.g. in currency conversion
                 return c('Invoice type display as badge').t`Credit note`;
             }
