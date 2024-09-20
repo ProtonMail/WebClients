@@ -565,3 +565,7 @@ export { default as ProtonVPNCredentialsSection } from './containers/vpn/ProtonV
 export { default as ProtonVPNResourcesSection } from './containers/vpn/ProtonVPNResourcesSection/ProtonVPNResourcesSection';
 export { default as TVContainer } from './containers/vpn/tv/TVContainer';
 export { default as WireGuardConfigurationSection } from './containers/vpn/WireGuardConfigurationSection/WireGuardConfigurationSection';
+
+export { default as CompatibilityCheck } from './containers/compatibilityCheck/CompatibilityCheck';
+export { default as CompatibilityCheckView } from './containers/compatibilityCheck/CompatibilityCheckView';
+export { getCompatibilityList } from './containers/compatibilityCheck/compatibilityCheckHelper';
