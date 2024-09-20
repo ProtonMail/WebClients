@@ -2,9 +2,8 @@ import type { Ref } from 'react';
 import { memo } from 'react';
 
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import clsx from '@proton/utils/clsx';
-
-import type { WeekStartsOn } from './index.d';
 
 export interface Props {
     weekStartsOn: WeekStartsOn;

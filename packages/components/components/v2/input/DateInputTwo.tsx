@@ -8,11 +8,11 @@ import { c } from 'ttag';
 import type { InputProps } from '@proton/atoms';
 import { Input } from '@proton/atoms';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import LocalizedMiniCalendar from '@proton/components/components/miniCalendar/LocalizedMiniCalendar';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import generateUID from '@proton/utils/generateUID';
 
 import { useHotkeys } from '../../../hooks';
-import LocalizedMiniCalendar from '../../miniCalendar/LocalizedMiniCalendar';
 import { usePopperAnchor } from '../../popper';
 
 const toFormatted = (value: Date, locale: Locale) => {
