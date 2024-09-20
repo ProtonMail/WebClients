@@ -2,12 +2,11 @@ import type { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 import { format } from 'date-fns';
 
+import EnDash from '@proton/components/components/text/EnDash';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 import type { Options } from '@proton/shared/lib/date-fns-utc/format';
 import formatUTC from '@proton/shared/lib/date-fns-utc/format';
 import { dateLocale } from '@proton/shared/lib/i18n';
-
-import { EnDash } from '../text';
 
 interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     startDate: Date;

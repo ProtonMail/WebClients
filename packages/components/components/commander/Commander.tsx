@@ -9,11 +9,11 @@ import type { IconName } from '@proton/components/components/icon/Icon';
 import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import Mark from '@proton/components/components/text/Mark';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
 import Form from '../form/Form';
-import { Mark } from '../text';
 
 import './Commander.scss';
 
