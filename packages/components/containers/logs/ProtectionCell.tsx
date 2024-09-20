@@ -7,6 +7,7 @@ import { Tooltip } from '../../components';
 type Props = {
     protection?: ProtectionType | null;
     protectionDesc?: string | null;
+    isB2B?: boolean;
 };
 
 const ProtectionTooltip = () => {
@@ -17,16 +18,16 @@ const ProtectionTooltip = () => {
     );
 };
 
-const ProtectionCell = ({ protection, protectionDesc }: Props) => {
+const ProtectionCell = ({ protection, protectionDesc, isB2B = false }: Props) => {
     const protectionTooltip = protection ? <ProtectionTooltip /> : null;
     if (protection === ProtectionType.OK) {
         return protectionTooltip;
     }
     return (
-        <>
+        <div className={isB2B ? 'flex flex-column' : ''}>
             <span className="shrink-0 mr-2">{protectionTooltip}</span>
-            <span className="flex-1">{protectionDesc || '-'}</span>
-        </>
+            <span className={isB2B ? 'max-w-full text-ellipsis' : 'flex-1'}>{protectionDesc || '-'}</span>
+        </div>
     );
 };
 

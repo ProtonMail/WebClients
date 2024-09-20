@@ -36,3 +36,10 @@ export const getShareID = (vaultID: string) => ({
     url: `pass/v1/vault/share/${vaultID}`,
     method: 'get',
 });
+
+export const getOrgAuthLogs = (query: string) => {
+    return {
+        url: `account/organization/logs/auth?${query}`,
+        method: 'get',
+    };
+};
