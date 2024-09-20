@@ -176,6 +176,12 @@ export { default as OrderableTableRow } from './components/orderableTable/Ordera
 export { default as Pagination } from './components/pagination/Pagination';
 export { default as usePagination } from './components/pagination/usePagination';
 export { default as usePaginationAsync } from './components/pagination/usePaginationAsync';
+export type { ArrowOffset, PopperArrow, PopperPlacement, PopperPosition } from './components/popper/interface';
+export { default as Popper } from './components/popper/Popper';
+export { default as usePopper } from './components/popper/usePopper';
+export { default as usePopperAnchor } from './components/popper/usePopperAnchor';
+export { default as usePopperState } from './components/popper/usePopperState';
+export { allPopperPlacements, cornerPopperPlacements, verticalPopperPlacements } from './components/popper/utils';
 export { default as Price } from './components/price/Price';
 export { default as CircularProgress } from './components/progress/CircularProgress';
 export { default as DynamicProgress } from './components/progress/DynamicProgress';
@@ -311,6 +317,45 @@ export { VPNEvents } from './containers/b2bDashboard/VPN/VPNEvents';
 export { PromotionBanner } from './containers/banner/PromotionBanner';
 export { ProtonMailBridgeSection } from './containers/bridge/ProtonMailBridgeSection';
 export { CacheProvider } from './containers/cache/Provider';
+export { default as CompatibilityCheck } from './containers/compatibilityCheck/CompatibilityCheck';
+export { getCompatibilityList } from './containers/compatibilityCheck/compatibilityCheckHelper';
+export { default as CompatibilityCheckView } from './containers/compatibilityCheck/CompatibilityCheckView';
+export { default as ContactEmailsProvider, useContactEmailsCache } from './containers/contacts/ContactEmailsProvider';
+export type { ContactEmailsCache, GroupWithContacts } from './containers/contacts/ContactEmailsProvider';
+export { default as ContactGroupDropdown } from './containers/contacts/ContactGroupDropdown';
+export { default as ContactImage } from './containers/contacts/ContactImage';
+export { default as ContactProvider } from './containers/contacts/ContactProvider';
+export { default as ContactEditModal } from './containers/contacts/edit/ContactEditModal';
+export type { ContactEditModalProps, ContactEditProps } from './containers/contacts/edit/ContactEditModal';
+export {
+    default as ContactGroupModal,
+    type ContactGroupEditProps,
+} from './containers/contacts/group/ContactGroupEditModal';
+export { collectContacts, default as useApplyGroups } from './containers/contacts/hooks/useApplyGroups';
+export { useContactModals } from './containers/contacts/hooks/useContactModals';
+export { default as useSenderImage } from './containers/contacts/hooks/useSenderImage';
+export { default as ContactsRow } from './containers/contacts/lists/ContactRow';
+export { default as ContactsList } from './containers/contacts/lists/ContactsList';
+export { default as MergeModal } from './containers/contacts/merge/ContactMergeModal';
+export type { ContactMergeModalProps, ContactMergeProps } from './containers/contacts/merge/ContactMergeModal';
+export {
+    default as ContactDeleteModal,
+    type ContactDeleteProps,
+} from './containers/contacts/modals/ContactDeleteModal';
+export {
+    default as ContactExportingModal,
+    type ContactExportingProps,
+} from './containers/contacts/modals/ContactExportingModal';
+export {
+    default as ContactSelectorModal,
+    type ContactSelectorProps,
+} from './containers/contacts/selector/ContactSelectorModal';
+export {
+    default as ContactDetailsModal,
+    type ContactDetailsProps,
+} from './containers/contacts/view/ContactDetailsModal';
+export { default as ContactView } from './containers/contacts/view/ContactView';
+export { default as ContactViewErrors } from './containers/contacts/view/ContactViewErrors';
 export { default as CredentialLeakSection } from './containers/credentialLeak/CredentialLeakSection';
 export type { FetchedBreaches, SampleBreach } from './containers/credentialLeak/models';
 export { default as FilePreview, FilePreviewContent } from './containers/filePreview/FilePreview';
@@ -585,48 +630,3 @@ export { default as ProtonVPNCredentialsSection } from './containers/vpn/ProtonV
 export { default as ProtonVPNResourcesSection } from './containers/vpn/ProtonVPNResourcesSection/ProtonVPNResourcesSection';
 export { default as TVContainer } from './containers/vpn/tv/TVContainer';
 export { default as WireGuardConfigurationSection } from './containers/vpn/WireGuardConfigurationSection/WireGuardConfigurationSection';
-
-export { default as CompatibilityCheck } from './containers/compatibilityCheck/CompatibilityCheck';
-export { getCompatibilityList } from './containers/compatibilityCheck/compatibilityCheckHelper';
-export { default as CompatibilityCheckView } from './containers/compatibilityCheck/CompatibilityCheckView';
-
-export { default as ContactEmailsProvider, useContactEmailsCache } from './containers/contacts/ContactEmailsProvider';
-export type { ContactEmailsCache, GroupWithContacts } from './containers/contacts/ContactEmailsProvider';
-
-export { default as ContactGroupDropdown } from './containers/contacts/ContactGroupDropdown';
-export { default as ContactImage } from './containers/contacts/ContactImage';
-export { default as ContactProvider } from './containers/contacts/ContactProvider';
-export { default as ContactEditModal } from './containers/contacts/edit/ContactEditModal';
-export type { ContactEditModalProps, ContactEditProps } from './containers/contacts/edit/ContactEditModal';
-
-export {
-    default as ContactGroupModal,
-    type ContactGroupEditProps,
-} from './containers/contacts/group/ContactGroupEditModal';
-
-export { collectContacts, default as useApplyGroups } from './containers/contacts/hooks/useApplyGroups';
-export { useContactModals } from './containers/contacts/hooks/useContactModals';
-export { default as useSenderImage } from './containers/contacts/hooks/useSenderImage';
-export { default as ContactsRow } from './containers/contacts/lists/ContactRow';
-export { default as ContactsList } from './containers/contacts/lists/ContactsList';
-export { default as MergeModal } from './containers/contacts/merge/ContactMergeModal';
-export type { ContactMergeModalProps, ContactMergeProps } from './containers/contacts/merge/ContactMergeModal';
-
-export {
-    default as ContactDeleteModal,
-    type ContactDeleteProps,
-} from './containers/contacts/modals/ContactDeleteModal';
-export {
-    default as ContactExportingModal,
-    type ContactExportingProps,
-} from './containers/contacts/modals/ContactExportingModal';
-export {
-    default as ContactSelectorModal,
-    type ContactSelectorProps,
-} from './containers/contacts/selector/ContactSelectorModal';
-export {
-    default as ContactDetailsModal,
-    type ContactDetailsProps,
-} from './containers/contacts/view/ContactDetailsModal';
-export { default as ContactView } from './containers/contacts/view/ContactView';
-export { default as ContactViewErrors } from './containers/contacts/view/ContactViewErrors';

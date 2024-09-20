@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import type { WasmApiWalletAccount } from '@proton/andromeda';
 import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, DropdownSizeUnit } from '@proton/components';
+import { usePopperAnchor } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import type { IWasmApiWalletData } from '@proton/wallet';
 
 import { Input } from '../../atoms';

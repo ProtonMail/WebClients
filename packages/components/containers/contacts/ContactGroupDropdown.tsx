@@ -11,6 +11,7 @@ import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import SearchInput from '@proton/components/components/input/SearchInput';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import {
     getContactGroupsDelayedSaveChanges,
@@ -23,7 +24,6 @@ import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/c
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
-import { usePopperAnchor } from '../../components/popper';
 import Mark from '../../components/text/Mark';
 import { useContactEmails, useContactGroups, useMailSettings, useUser } from '../../hooks';
 import type { ContactGroupEditProps } from './group/ContactGroupEditModal';

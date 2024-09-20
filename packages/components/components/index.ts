@@ -6,5 +6,4 @@ export * from './image';
 export * from './label';
 export * from './labelStack';
 export * from './link';
-export * from './popper';
 export { default as SmartBanner } from './smartBanner/SmartBanner';

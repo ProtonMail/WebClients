@@ -11,6 +11,9 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
+import type { PopperPlacement, PopperPosition } from '@proton/components/components/popper/interface';
+import usePopper from '@proton/components/components/popper/usePopper';
+import { allPopperPlacements } from '@proton/components/components/popper/utils';
 import { useCombinedRefs } from '@proton/hooks';
 import { dropdownRootClassName } from '@proton/shared/lib/busy';
 import clsx from '@proton/utils/clsx';
@@ -21,8 +24,6 @@ import useElementRect from '../../hooks/useElementRect';
 import type { HotkeyTuple } from '../../hooks/useHotkeys';
 import { useHotkeys } from '../../hooks/useHotkeys';
 import useIsClosing from '../../hooks/useIsClosing';
-import type { PopperPlacement, PopperPosition } from '../popper';
-import { allPopperPlacements, usePopper } from '../popper';
 import Portal from '../portal/Portal';
 import type { DropdownSize } from './utils';
 import { DropdownSizeUnit, getHeightValue, getMaxSizeValue, getProp, getWidthValue } from './utils';
