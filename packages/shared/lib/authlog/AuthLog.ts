@@ -83,3 +83,10 @@ export interface AuthLog {
     Status: AuthLogStatus;
     Time: number;
 }
+
+export interface B2BAuthLog extends AuthLog {
+    User: {
+        Email: string;
+        Name?: string;
+    };
+}
