@@ -4,6 +4,7 @@ import { memberAcceptUnprivatization, memberRejectUnprivatization } from '@proto
 import { Button, InlineLinkButton } from '@proton/atoms';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useApi from '@proton/components/hooks/useApi';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -32,6 +33,7 @@ const MemberUnprivatizationModal = ({ member, orgName, parsedUnprivatizationData
     const dispatch = useDispatch();
     const api = useApi();
     const [authModalProps, setAuthModal, renderAuthModal] = useModalState();
+    const { createNotification } = useNotifications();
 
     const adminEmail = parsedUnprivatizationData.payload.unprivatizationData.AdminEmail;
 
@@ -46,12 +48,14 @@ const MemberUnprivatizationModal = ({ member, orgName, parsedUnprivatizationData
             )
         ).then(() => {
             onChange();
+            createNotification({ text: c('unprivatization').t`Administrator access enabled` });
             rest.onClose?.();
         });
     };
 
     const handleReject = () => {
         dispatch(memberRejectUnprivatization({ api, member }));
+        createNotification({ text: c('unprivatization').t`Administrator access rejected` });
         onChange();
         rest.onClose?.();
     };
