@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
 import {
     getEmailOrUsername,
@@ -97,19 +99,27 @@ export const read1Password1PifData = async ({ data }: { data: string }): Promise
         const ignored: string[] = [];
         const items: ItemImportIntent[] = parse1PifData(data)
             .map((item) => {
-                switch (item.typeName) {
-                    case OnePassLegacyItemType.LOGIN:
-                        return processLoginItem(item);
-                    case OnePassLegacyItemType.NOTE:
-                        return processNoteItem(item);
-                    case OnePassLegacyItemType.PASSWORD:
-                        return processPasswordItem(item);
-                    case OnePassLegacyItemType.CREDIT_CARD:
-                        return processCreditCardItem(item);
-                    case OnePassLegacyItemType.IDENTITY:
-                        return processIdentityItem(item);
-                    default:
-                        ignored.push(`[${item.typeName}] ${item.title ?? ''}`);
+                const type = item?.typeName ?? c('Label').t`Unknown`;
+                const title = item?.title ?? '';
+
+                try {
+                    switch (item.typeName) {
+                        case OnePassLegacyItemType.LOGIN:
+                            return processLoginItem(item);
+                        case OnePassLegacyItemType.NOTE:
+                            return processNoteItem(item);
+                        case OnePassLegacyItemType.PASSWORD:
+                            return processPasswordItem(item);
+                        case OnePassLegacyItemType.CREDIT_CARD:
+                            return processCreditCardItem(item);
+                        case OnePassLegacyItemType.IDENTITY:
+                            return processIdentityItem(item);
+                        default:
+                            ignored.push(`[${type}] ${title}`);
+                    }
+                } catch (err) {
+                    ignored.push(`[${type}] ${title}`);
+                    logger.warn('[Importer::1Password::1pif]', err);
                 }
             })
             .filter(truthy);
@@ -124,7 +134,7 @@ export const read1Password1PifData = async ({ data }: { data: string }): Promise
 
         return { vaults, ignored, warnings: [] };
     } catch (e) {
-        logger.warn('[Importer::1Password]', e);
+        logger.warn('[Importer::1Password::1pif]', e);
         throw new ImportProviderError('1Password', e);
     }
 };

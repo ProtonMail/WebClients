@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import { readCSV } from '@proton/pass/lib/import/helpers/csv.reader';
 import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
 import {
@@ -9,6 +11,7 @@ import {
 import type { ImportPayload, ImportVault } from '@proton/pass/lib/import/types';
 import type { Maybe } from '@proton/pass/types';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import lastItem from '@proton/utils/lastItem';
 
@@ -57,34 +60,42 @@ export const readRoboformData = async ({ data }: { data: string }): Promise<Impo
         const vaults: ImportVault[] = groupedByVault.map((roboformItems) => {
             const vaultName = roboformItems[0].Folder;
 
-            const items = roboformItems.map((item) => {
-                /* Bookmark */
-                if (item.Url && !item.MatchUrl && !item.Login && !item.Pwd) {
-                    return importLoginItem({
-                        name: item.Name,
-                        urls: [item.Url],
-                        note: item.Note,
-                    });
-                }
+            const items = roboformItems
+                .map((item) => {
+                    try {
+                        /* Bookmark */
+                        if (item.Url && !item.MatchUrl && !item.Login && !item.Pwd) {
+                            return importLoginItem({
+                                name: item.Name,
+                                urls: [item.Url],
+                                note: item.Note,
+                            });
+                        }
 
-                /* Note */
-                if (!item.Url && !item.MatchUrl && !item.Login && !item.Pwd) {
-                    return importNoteItem({
-                        name: item.Name,
-                        note: item.Note,
-                    });
-                }
+                        /* Note */
+                        if (!item.Url && !item.MatchUrl && !item.Login && !item.Pwd) {
+                            return importNoteItem({
+                                name: item.Name,
+                                note: item.Note,
+                            });
+                        }
 
-                /* Login */
-                return importLoginItem({
-                    name: item.Name,
-                    urls: [item.MatchUrl],
-                    note: item.Note,
-                    ...getEmailOrUsername(item.Login),
-                    password: item.Pwd,
-                    totp: formatOtpAuthUri(item),
-                });
-            });
+                        /* Login */
+                        return importLoginItem({
+                            name: item.Name,
+                            urls: [item.MatchUrl],
+                            note: item.Note,
+                            ...getEmailOrUsername(item.Login),
+                            password: item.Pwd,
+                            totp: formatOtpAuthUri(item),
+                        });
+                    } catch (err) {
+                        const title = item?.Name ?? '';
+                        ignored.push(`[${c('Label').t`Unknown`}] ${title}`);
+                        logger.warn('[Importer::Roboform]', err);
+                    }
+                })
+                .filter(truthy);
 
             return {
                 shareId: null,

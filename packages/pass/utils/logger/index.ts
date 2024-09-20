@@ -13,9 +13,9 @@ export const registerLoggerEffect = (effect: (...args: any[]) => void) => {
     log.methodFactory = function (methodName, logLevel, loggerName) {
         const originalMethod = originalFactory(methodName, logLevel, loggerName);
 
-        return function (...args: any[]) {
-            effect(...args);
-            if (ENV === 'development') originalMethod(...args);
+        return function (...logs: any[]) {
+            effect(...logs.map((log) => (log instanceof Error ? log.message : log)));
+            if (ENV === 'development') originalMethod(...logs);
         };
     };
 
