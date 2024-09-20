@@ -1,6 +1,5 @@
 import { useCallback } from 'react';
 
-import { usePopperAnchor } from '@proton/components';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
@@ -8,6 +7,7 @@ import DropdownMenuButton from '@proton/components/components/dropdown/DropdownM
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import type { Domain } from '@proton/shared/lib/interfaces';
 
 import AddSubdomainModal from './AddSubdomainModal';

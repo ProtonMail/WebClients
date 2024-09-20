@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { NotificationCounter, NotificationDot } from '@proton/atoms';
 import type { ThemeColor } from '@proton/colors/types';
 import { Tooltip } from '@proton/components';
-import type { PopperPlacement } from '@proton/components/components';
+import type { PopperPlacement } from '@proton/components/components/popper/interface';
 import clsx from '@proton/utils/clsx';
 
 export interface Props extends ComponentPropsWithRef<'button'> {
