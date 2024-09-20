@@ -46,7 +46,7 @@ export const InboxDesktopFreeTrialOnboardingModal = () => {
             {render && (
                 <ModalTwo size="small" {...modalState} onClose={startFreeTrial}>
                     <ModalTwoContent className="text-center mt-8 mb-4 flex gap-6 flex-column">
-                        <img src={protonDesktop} alt={c('Free trial desktop').t`${MAIL_APP_NAME} desktop app`} />
+                        <img src={protonDesktop} alt="" />
                         <div>
                             <h1 className="text-bold mb-2 text-2xl">{c('Free trial desktop')
                                 .t`Try the app-new desktop app`}</h1>
