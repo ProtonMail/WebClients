@@ -358,6 +358,17 @@ export { default as ContactView } from './containers/contacts/view/ContactView';
 export { default as ContactViewErrors } from './containers/contacts/view/ContactViewErrors';
 export { default as CredentialLeakSection } from './containers/credentialLeak/CredentialLeakSection';
 export type { FetchedBreaches, SampleBreach } from './containers/credentialLeak/models';
+export {
+    default as CalendarModelEventManagerProvider,
+    useCalendarModelEventManager,
+} from './containers/eventManager/calendar/CalendarModelEventManagerProvider';
+export {
+    useCalendarsInfoCoreListener,
+    default as useCalendarsInfoListener,
+} from './containers/eventManager/calendar/useCalendarsInfoListener';
+export { default as EventManagerContext } from './containers/eventManager/context';
+export { default as EventManagerProvider } from './containers/eventManager/EventManagerProvider';
+export { default as EventNotices } from './containers/eventManager/EventNotices';
 export { default as FilePreview, FilePreviewContent } from './containers/filePreview/FilePreview';
 export { default as ImagePreview } from './containers/filePreview/ImagePreview';
 export { default as NavigationControl } from './containers/filePreview/NavigationControl';

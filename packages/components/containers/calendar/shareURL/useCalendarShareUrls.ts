@@ -21,7 +21,7 @@ import updateItem from '@proton/utils/updateItem';
 
 import { useEventManager, useGetCalendarInfo, useNotifications } from '../../../hooks';
 import { useGetCalendarPublicLinks } from '../../../hooks/useGetCalendarPublicLinks';
-import { useCalendarModelEventManager } from '../../eventManager/calendar';
+import { useCalendarModelEventManager } from '../../eventManager/calendar/CalendarModelEventManagerProvider';
 
 const useCalendarShareUrls = (calendars: VisualCalendar[]) => {
     const { createNotification } = useNotifications();

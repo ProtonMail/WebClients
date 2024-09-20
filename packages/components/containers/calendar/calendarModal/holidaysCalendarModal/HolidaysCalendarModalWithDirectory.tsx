@@ -56,7 +56,7 @@ import {
     useNotifications,
     useReadCalendarBootstrap,
 } from '../../../../hooks';
-import { useCalendarModelEventManager } from '../../../eventManager';
+import { useCalendarModelEventManager } from '../../../eventManager/calendar/CalendarModelEventManagerProvider';
 import Notifications from '../../notifications/Notifications';
 import BusySlotsCheckbox from '../BusySlotsCheckbox';
 import { getDefaultModel } from '../personalCalendarModal/calendarModalState';

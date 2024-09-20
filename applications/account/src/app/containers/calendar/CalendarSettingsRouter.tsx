@@ -17,12 +17,12 @@ import {
     useAddresses,
     useCalendarUserSettings,
     useCalendars,
+    useCalendarsInfoListener,
     useIsInboxElectronApp,
     useSubscribedCalendars,
 } from '@proton/components';
 import CalendarInvitationsSection from '@proton/components/containers/calendar/settings/CalendarInvitationsSection';
 import CalendarsSettingsSection from '@proton/components/containers/calendar/settings/CalendarsSettingsSection';
-import { useCalendarsInfoListener } from '@proton/components/containers/eventManager/calendar';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
