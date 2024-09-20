@@ -24,9 +24,11 @@ export interface FormHandle {
     reconciliate: (type: FormType, fields: DetectedField[]) => void;
 }
 
+export type FieldAction = { type: DropdownAction; filterable?: boolean };
+
 export interface FieldHandle {
     /** action attached for this field */
-    action: MaybeNull<DropdownAction>;
+    action: MaybeNull<FieldAction>;
     /** Indicates the autofill status of the field. A value of `null`
      * means the current field value was a user input. Otherwise, it
      * stores the FieldType that triggered the autofilled value */
@@ -57,12 +59,13 @@ export interface FieldHandle {
     focus: (options?: { preventAction?: boolean }) => void;
     getBoxElement: (options?: { reflow: boolean }) => HTMLElement;
     getFormHandle: () => FormHandle;
-    setAction: (action: MaybeNull<DropdownAction>) => void;
+    setAction: (action: MaybeNull<FieldAction>) => void;
     setValue: (value: string) => void;
 }
 
 export type FormTrackerFieldConfig = {
     type: FieldType;
+    filterable?: boolean;
     action?: DropdownAction;
 };
 

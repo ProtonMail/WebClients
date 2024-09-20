@@ -48,7 +48,13 @@ const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
             const shouldOpen = ctx?.getState().authorized && (!opened || shouldClose) && openOnFocus;
 
             if (shouldClose) dropdown?.close();
-            if (shouldOpen) ctx?.service.iframe.attachDropdown()?.open({ action, autofocused: true, field });
+            if (shouldOpen) {
+                ctx?.service.iframe.attachDropdown()?.open({
+                    action: action.type,
+                    autofocused: true,
+                    field,
+                });
+            }
         });
     });
 
@@ -65,7 +71,13 @@ const onBlurField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
 const onInputField = (field: FieldHandle): (() => void) =>
     withContext((ctx) => {
         const dropdown = ctx?.service.iframe.dropdown;
-        if (dropdown?.getState().visible && !actionPrevented(field.element)) dropdown?.close();
+        const { action, element } = field;
+
+        if (dropdown) {
+            const { visible } = dropdown.getState();
+            if (visible && !actionPrevented(element) && !action?.filterable) dropdown?.close();
+        }
+
         field.setValue((field.element as HTMLInputElement).value);
     });
 
