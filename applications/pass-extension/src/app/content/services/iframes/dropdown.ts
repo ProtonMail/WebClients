@@ -210,6 +210,7 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
         getState: () => iframe.state,
         init: pipe(iframe.init, () => dropdown),
         open: pipe(open, () => dropdown),
+        sendMessage: iframe.sendPortMessage,
     };
 
     return dropdown;

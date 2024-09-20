@@ -100,6 +100,7 @@ export const createNotification = ({ root, onDestroy }: NotificationOptions): In
         getState: () => iframe.state,
         init: pipe(iframe.init, () => notification),
         open: pipe(open, () => notification),
+        sendMessage: iframe.sendPortMessage,
     };
 
     return notification;
