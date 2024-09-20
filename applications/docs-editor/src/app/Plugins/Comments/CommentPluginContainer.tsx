@@ -13,7 +13,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { createPortal } from 'react-dom'
 
 import { CommentInputBox } from './CommentInputBox'
-import { FloatingAddCommentButton } from './FloatingAddCommentButton'
+import { FloatingQuickActions } from './FloatingQuickActions'
 import CommentsPanel from './CommentsPanel'
 import type { CommentMarkNodeChangeData, CommentThreadInterface } from '@proton/docs-shared'
 import { CommentThreadState, CommentsEvent } from '@proton/docs-shared'
@@ -322,7 +322,7 @@ export default function CommentPlugin({
         !showCommentInput &&
         isEditorEditable &&
         createPortal(
-          <FloatingAddCommentButton anchorKey={activeAnchorKey} editor={editor} onAddComment={onAddComment} />,
+          <FloatingQuickActions anchorKey={activeAnchorKey} editor={editor} onAddComment={onAddComment} />,
           containerElement || document.body,
         )}
       {showCommentsPanel && <CommentsPanel threads={threads} setShowComments={setShowCommentsPanel} />}

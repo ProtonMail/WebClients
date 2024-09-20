@@ -100,7 +100,7 @@ export function useSuggestionCommentContent(
       color = 'weak'
     }
     return (
-      <div key={index}>
+      <div key={index} className="line-clamp-2">
         <span className={`color-${color} font-medium`}>
           {icon} {title}
           {content.length > 0 && ':'}
