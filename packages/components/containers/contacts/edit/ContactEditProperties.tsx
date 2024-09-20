@@ -5,6 +5,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Icon, { type IconName } from '@proton/components/components/icon/Icon';
+import OrderableContainer from '@proton/components/components/orderable/OrderableContainer';
+import OrderableElement from '@proton/components/components/orderable/OrderableElement';
 import { OTHER_INFORMATION_FIELDS } from '@proton/shared/lib/contacts/constants';
 import {
     compareVCardPropertyByPref,
@@ -19,7 +21,6 @@ import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/
 import isTruthy from '@proton/utils/isTruthy';
 import move from '@proton/utils/move';
 
-import { OrderableContainer, OrderableElement } from '../../../components';
 import type { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import type { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
 import type { ContactImageProps } from '../modals/ContactImageModal';
