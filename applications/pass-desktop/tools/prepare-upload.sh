@@ -35,7 +35,7 @@ fi
 
 cd "$CWD"
 if [ "$CHANNEL" = "Stable" ]; then
-  find "$BUILD_DIR" -type f > artifact.list
+  find "$BUILD_DIR" -type f ! -name RELEASES ! -name RELEASES.json > artifact.list
 fi
 
 printf "PASS_RELEASE_CHANNEL=%s\nPASS_RELEASE_PLATFORM=%s" "$CHANNEL" "$PLATFORM" > deploy.env
