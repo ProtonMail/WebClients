@@ -18,6 +18,7 @@ import { isAdmin } from '@proton/shared/lib/user/helpers';
 
 import type { AddressesState } from '../addresses';
 import { addressesThunk } from '../addresses';
+import { bootstrapEvent } from '../bootstrap';
 import { serverEvent } from '../eventLoop';
 import type { ModelState } from '../interface';
 import type { UserState } from '../user';
@@ -30,8 +31,25 @@ enum ValueType {
     complete,
 }
 
+export type UnprivatizationMemberSuccess = {
+    type: 'success';
+};
+export type UnprivatizationMemberFailure = {
+    type: 'error';
+    error: string;
+};
+
+interface UnprivatizationMemberState {
+    members: {
+        [id: string]: UnprivatizationMemberSuccess | UnprivatizationMemberFailure | undefined;
+    };
+}
+
 export interface MembersState extends UserState, AddressesState {
-    [name]: ModelState<EnhancedMember[]> & { meta?: { type: ValueType } };
+    [name]: ModelState<EnhancedMember[]> & {
+        meta?: { type: ValueType };
+        unprivatization: UnprivatizationMemberState;
+    };
 }
 
 type SliceState = MembersState[typeof name];
@@ -55,7 +73,12 @@ const freeMembers: EnhancedMember[] = [];
 const initialState: SliceState = {
     value: undefined,
     error: undefined,
-    meta: { type: ValueType.complete, fetchedAt: 0, fetchedEphemeral: undefined },
+    meta: {
+        type: ValueType.complete,
+        fetchedAt: 0,
+        fetchedEphemeral: undefined,
+    },
+    unprivatization: { members: {} },
 };
 const slice = createSlice({
     name,
@@ -121,8 +144,15 @@ const slice = createSlice({
                 member.addressState = 'rejected';
             }
         },
+        setUnprivatizationState: (state, action: PayloadAction<UnprivatizationMemberState>) => {
+            state.unprivatization = action.payload;
+        },
     },
     extraReducers: (builder) => {
+        builder.addCase(bootstrapEvent, (state) => {
+            state.unprivatization = initialState.unprivatization;
+        });
+
         builder.addCase(serverEvent, (state, action) => {
             if (!state.value) {
                 return;
@@ -271,6 +301,7 @@ export const getMemberAddresses = ({
 export const membersReducer = { [name]: slice.reducer };
 export const membersThunk = modelThunk;
 export const upsertMember = slice.actions.upsertMember;
+export const setUnprivatizationState = slice.actions.setUnprivatizationState;
 export { default as UnavailableAddressesError } from './errors/UnavailableAddressesError';
 export { default as InvalidAddressesError } from './errors/InvalidAddressesError';
 export { default as MemberCreationValidationError } from './errors/MemberCreationValidationError';

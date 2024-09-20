@@ -10,6 +10,7 @@ import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { EnhancedMember } from '@proton/shared/lib/interfaces';
+import { getMemberEmailOrName } from '@proton/shared/lib/keys/memberHelper';
 
 import type { ModalProps } from '../../components';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
@@ -128,7 +129,7 @@ export const InviteOrganizationKeysModal = ({ members, ...rest }: Props) => {
                                                     <AdministratorItem
                                                         key={member.ID}
                                                         name={member.Name}
-                                                        email={member.Addresses?.[0]?.Email || member.Name}
+                                                        email={getMemberEmailOrName(member)}
                                                     />
                                                 ))}
                                             </div>
