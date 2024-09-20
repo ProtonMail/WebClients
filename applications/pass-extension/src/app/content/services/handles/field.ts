@@ -1,10 +1,5 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
-import {
-    DropdownAction,
-    type FieldHandle,
-    type FormHandle,
-    IFramePortMessageType,
-} from 'proton-pass-extension/app/content/types';
+import { type FieldHandle, type FormHandle, IFramePortMessageType } from 'proton-pass-extension/app/content/types';
 import { actionPrevented, actionTrap, withActionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
 import { createAutofill } from 'proton-pass-extension/app/content/utils/autofill';
 
@@ -12,6 +7,7 @@ import { FieldType, FormType } from '@proton/pass/fathom';
 import { findBoundingInputElement } from '@proton/pass/utils/dom/input';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
+import throttle from '@proton/utils/throttle';
 
 import { createFieldIconHandle } from './icon';
 
@@ -73,23 +69,31 @@ const onBlurField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
 
 /* on input change : close the dropdown if it was visible
  * and update the field's handle tracked value */
-const onInputField = (field: FieldHandle): (() => void) =>
-    withContext((ctx) => {
+const onInputField = (field: FieldHandle): ((evt: Event) => void) => {
+    const syncAutofillFilter = throttle(
+        withContext<(startsWith: string) => void>((ctx, startsWith) => {
+            ctx?.service.iframe.dropdown?.sendMessage({
+                type: IFramePortMessageType.AUTOFILL_FILTER,
+                payload: { startsWith },
+            });
+        }),
+        250,
+        { trailing: true }
+    );
+
+    return withContext((ctx) => {
         const dropdown = ctx?.service.iframe.dropdown;
         const { action, element } = field;
+        const { value } = field.element;
 
         if (dropdown && dropdown.getState().visible) {
             if (!actionPrevented(element) && !action?.filterable) dropdown?.close();
-            else if (action?.type === DropdownAction.AUTOFILL_LOGIN && action?.filterable) {
-                dropdown.sendMessage({
-                    type: IFramePortMessageType.AUTOFILL_FILTER,
-                    payload: { startsWith: field.value },
-                });
-            }
+            else if (action?.filterable) syncAutofillFilter(value);
         }
 
-        field.setValue((field.element as HTMLInputElement).value);
+        field.setValue(value);
     });
+};
 
 /* when the type attribute of a field changes : detach it from
  * the tracked form and re-trigger the detection */
