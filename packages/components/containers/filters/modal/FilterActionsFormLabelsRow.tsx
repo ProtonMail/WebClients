@@ -5,12 +5,13 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useUser } from '@proton/components/hooks';
 import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import clsx from '@proton/utils/clsx';
 
-import { LabelStack, useModalState } from '../../../components';
+import { LabelStack } from '../../../components';
 import type { LabelModel } from '../../labels/modals/EditLabelModal';
 import EditLabelModal from '../../labels/modals/EditLabelModal';
 import type { Actions } from '../interfaces';

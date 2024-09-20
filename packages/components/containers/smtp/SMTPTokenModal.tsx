@@ -3,20 +3,14 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import type { ModalProps } from '@proton/components';
-import {
-    Form,
-    InputFieldTwo,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    useApi,
-    useFormErrors,
-    useNotifications,
-} from '@proton/components';
+import { Form, InputFieldTwo, useApi, useFormErrors, useNotifications } from '@proton/components';
 import Copy from '@proton/components/components/button/Copy';
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { useLoading } from '@proton/hooks';

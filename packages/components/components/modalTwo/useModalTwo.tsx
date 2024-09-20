@@ -1,10 +1,9 @@
 import type { ComponentType, ReactNode } from 'react';
 import { useCallback, useRef, useState } from 'react';
 
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import noop from '@proton/utils/noop';
-
-import type { ModalStateProps } from './useModalState';
-import useModalState from './useModalState';
 
 type PartialModalStateProps = Partial<ModalStateProps>;
 

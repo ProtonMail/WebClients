@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import type { Domain, SSO } from '@proton/shared/lib/interfaces';
 
-import { useModalState } from '../../../components';
 import { SettingsParagraph, SettingsSection } from '../../account';
 import RemoveSSOModal from './RemoveSSOModal';
 

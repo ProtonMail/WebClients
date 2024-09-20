@@ -1,10 +1,10 @@
 import { useInactiveKeys } from '@proton/account';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import { reactivateKeysProcess } from '@proton/shared/lib/keys';
 import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
-import { useModalState } from '../../components';
 import {
     useAddresses,
     useAddressesKeys,

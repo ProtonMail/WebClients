@@ -130,6 +130,20 @@ export { default as FormModal } from './components/modal/FormModal';
 export { default as HeaderModal } from './components/modal/Header';
 export { default as InnerModal } from './components/modal/Inner';
 export { default as PreviewPDFModal } from './components/modal/PreviewPDFModal';
+export { default as BasicModal } from './components/modalTwo/BasicModal';
+export { ModalContext, default as ModalTwo } from './components/modalTwo/Modal';
+export type { ModalOwnProps, ModalProps, ModalSize } from './components/modalTwo/Modal';
+export { default as ModalContent, default as ModalTwoContent } from './components/modalTwo/ModalContent';
+export type { ModalContentProps } from './components/modalTwo/ModalContent';
+export { default as ModalTwoFooter } from './components/modalTwo/ModalFooter';
+export { default as ModalTwoHeader } from './components/modalTwo/ModalHeader';
+export {
+    default as useModalState,
+    useModalStateObject,
+    useModalStateWithData,
+} from './components/modalTwo/useModalState';
+export type { ModalPropsWithData, ModalStateProps, ModalStateReturnObj } from './components/modalTwo/useModalState';
+export { useModalTwo, useModalTwoPromise, useModalTwoStatic } from './components/modalTwo/useModalTwo';
 export { default as Option } from './components/option/Option';
 export { default as Price } from './components/price/Price';
 export { default as CircularProgress } from './components/progress/CircularProgress';

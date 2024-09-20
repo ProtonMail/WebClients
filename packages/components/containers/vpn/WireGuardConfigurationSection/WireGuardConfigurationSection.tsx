@@ -13,6 +13,7 @@ import Radio from '@proton/components/components/input/Radio';
 import TextArea from '@proton/components/components/input/TextArea';
 import Info from '@proton/components/components/link/Info';
 import ConfirmModal from '@proton/components/components/modal/Confirm';
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
@@ -21,7 +22,7 @@ import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shar
 import { readableTime } from '@proton/shared/lib/helpers/time';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
 
-import { ErrorButton, InputFieldTwo, useModalTwoStatic } from '../../../components';
+import { ErrorButton, InputFieldTwo } from '../../../components';
 import Details from '../../../components/container/Details';
 import Summary from '../../../components/container/Summary';
 import { getObjectKeys } from '../../../helpers';

@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
 import { updateSessionAccountRecovery } from '@proton/shared/lib/api/sessionRecovery';
 
-import { useModalState } from '../../components';
 import {
     useApi,
     useAvailableRecoveryMethods,

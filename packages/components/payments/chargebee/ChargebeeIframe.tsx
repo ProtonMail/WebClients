@@ -27,7 +27,9 @@ import {
     isUnhandledErrorMessage,
     paypalAuthorizedMessageType,
 } from '@proton/chargebee/lib';
-import { ModalTwo, ModalTwoContent, useModalState } from '@proton/components/components';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useApi, useNotifications } from '@proton/components/hooks';
 import { type ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
 import { type ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';

@@ -2,6 +2,10 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Modal from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -9,8 +13,6 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import type { ModalProps } from '../../../components';
-import { ModalTwo as Modal, ModalTwoContent as ModalContent, ModalTwoHeader as ModalHeader } from '../../../components';
 import { useNotifications } from '../../../hooks';
 import HumanVerificationForm from './HumanVerificationForm';
 import { isVerifyAddressOwnership } from './helper';

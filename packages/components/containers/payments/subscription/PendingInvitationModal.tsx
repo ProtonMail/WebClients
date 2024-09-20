@@ -1,14 +1,12 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import type { ModalStateProps } from '@proton/components/components';
-import {
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    useSettingsLink,
-} from '@proton/components/components';
+import { useSettingsLink } from '@proton/components/components';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { useApi, useConfig, useEventManager, useGetOrganization, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { CacheType } from '@proton/redux-utilities';

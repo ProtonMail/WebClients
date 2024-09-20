@@ -5,6 +5,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { useLoading } from '@proton/hooks';
 import { checkLabelAvailability, create as createLabel, updateLabel } from '@proton/shared/lib/api/labels';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
@@ -14,8 +19,7 @@ import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import noop from '@proton/utils/noop';
 
-import type { ModalProps } from '../../../components';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useFormErrors } from '../../../components';
+import { useFormErrors } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import NewLabelForm from '../NewLabelForm';
 

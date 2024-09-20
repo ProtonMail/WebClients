@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms';
-import { Href } from '@proton/atoms';
-import type { ModalProps } from '@proton/components/components';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter } from '@proton/components/components';
+import { Button, ButtonLike, Href } from '@proton/atoms';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import { useApi } from '@proton/components/hooks';
 import { PASS_WEB_APP_URL } from '@proton/pass/constants';
 import { TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry';

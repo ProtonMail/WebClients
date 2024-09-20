@@ -23,7 +23,6 @@ import {
     useFeature,
     useIsSecurityCheckupAvailable,
     useIsSentinelUser,
-    useModalState,
     useNotifications,
     useOrganization,
     usePopperAnchor,
@@ -41,6 +40,7 @@ import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppHref, getAppShortName } from '@proton/shared/lib/apps/helper';

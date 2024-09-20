@@ -6,6 +6,7 @@ import { Button, ButtonLike, Card, Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { SettingsParagraph } from '@proton/components/containers';
 import { getNextDefaultCalendar } from '@proton/components/containers/calendar/settings/defaultCalendar';
@@ -19,7 +20,6 @@ import type { Address, Subscription, UserModel } from '@proton/shared/lib/interf
 import type { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { useModalState } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import { useModalsMap } from '../../../hooks/useModalsMap';
 import { PersonalCalendarModal } from '../calendarModal/personalCalendarModal/PersonalCalendarModal';

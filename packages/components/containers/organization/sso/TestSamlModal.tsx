@@ -3,13 +3,11 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
-import {
-    type ModalProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-} from '@proton/components/components/modalTwo';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { InputFieldTwo } from '@proton/components/components/v2';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { ExternalSSOError, handleExternalSSOLogin } from '@proton/components/containers/login/loginActions';

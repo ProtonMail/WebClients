@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { useApi, useEventManager, useNotifications, useUserSettings } from '@proton/components/hooks';
 import { disableTotp, removeSecurityKey } from '@proton/shared/lib/api/settings';
@@ -11,7 +12,6 @@ import { getHasFIDO2SettingEnabled } from '@proton/shared/lib/settings/twoFactor
 import { getId } from '@proton/shared/lib/webauthn/id';
 import noop from '@proton/utils/noop';
 
-import type { ModalProps } from '../../components';
 import ReauthUsingRecoveryModal from './ReauthUsingRecoveryModal';
 
 interface Props extends ModalProps {

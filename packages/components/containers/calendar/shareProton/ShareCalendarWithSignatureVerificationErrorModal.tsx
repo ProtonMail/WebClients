@@ -1,15 +1,12 @@
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Modal from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-
-import type { ModalProps } from '../../../components';
-import {
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-} from '../../../components';
 
 interface Props extends ModalProps {
     senderEmail: string;

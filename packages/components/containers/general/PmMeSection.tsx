@@ -1,12 +1,13 @@
 import { c } from 'ttag';
 
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
 import PmMeUpsellModal from '@proton/components/components/upsell/modal/types/PmMeUpsellModal';
 import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { useModalState, useSettingsLink } from '../../components';
+import { useSettingsLink } from '../../components';
 import { useSubscription, useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 import PmMeButton, { getActivateString } from './PmMeButton';

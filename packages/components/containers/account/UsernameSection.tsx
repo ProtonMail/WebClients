@@ -4,10 +4,11 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button, Card, CircleLoader, Href, InlineLinkButton } from '@proton/atoms';
-import { AppLink, PromotionBanner, Tooltip, useModalState } from '@proton/components';
+import { AppLink, PromotionBanner, Tooltip } from '@proton/components';
 import Badge from '@proton/components/components/badge/Badge';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useLoading from '@proton/hooks/useLoading';
 import { postVerifySend } from '@proton/shared/lib/api/verify';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
