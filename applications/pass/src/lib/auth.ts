@@ -189,7 +189,7 @@ export const createAuthService = ({
             const validSession = authStore.validSession(session) && session.LocalID === localID;
             const autoFork = !loggedIn && !locked && pathLocalID !== undefined && !validSession;
 
-            if (!getOnline()) app.setStatus(AppStatus.ERROR);
+            if (!getOnline() && authStore.hasSession()) app.setStatus(AppStatus.ERROR);
             else if (autoFork) {
                 /* If the session could not be resumed from the LocalID from path,
                  * we are likely dealing with an app-switch request from another app.
