@@ -10,13 +10,13 @@ import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLa
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
 import TestSamlModal from '@proton/components/containers/organization/sso/TestSamlModal';
 import { PLANS } from '@proton/shared/lib/constants';
 import type { Domain, SSO } from '@proton/shared/lib/interfaces';
 import securityUpsellSvg from '@proton/styles/assets/img/illustrations/security-upsell.svg';
 
-import { InputFieldTwo } from '../../../components';
 import { useCustomDomains, useOrganization, useSamlSSO, useUser } from '../../../hooks';
 import SubSettingsSection from '../../layout/SubSettingsSection';
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '../../payments';

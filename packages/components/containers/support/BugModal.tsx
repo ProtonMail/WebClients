@@ -10,8 +10,6 @@ import {
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
     Form,
-    InputFieldTwo,
-    TextAreaTwo,
     useFormErrors,
 } from '@proton/components';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
@@ -23,6 +21,8 @@ import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import { reportBug } from '@proton/shared/lib/api/reports';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, CLIENT_TYPES } from '@proton/shared/lib/constants';

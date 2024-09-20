@@ -12,7 +12,9 @@ import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextArea from '@proton/components/components/v2/input/TextArea';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
@@ -22,7 +24,6 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Domain } from '@proton/shared/lib/interfaces';
 import dragAndDrop from '@proton/styles/assets/img/illustrations/drag-and-drop-img.svg';
 
-import { InputFieldTwo, useFormErrors } from '../../../components';
 import type { IdentityProviderEndpointsContentProps } from './IdentityProviderEndpointsContent';
 import IdentityProviderEndpointsContent from './IdentityProviderEndpointsContent';
 import UploadedXmlFile from './UploadedXmlFile';

@@ -4,6 +4,9 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import TotpInputs from '@proton/components/containers/account/totp/TotpInputs';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import { useLoading } from '@proton/hooks';
@@ -13,7 +16,6 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { InputFieldTwo, PasswordInputTwo, useFormErrors } from '../../components';
 import { useApi, useConfig, useErrorHandler, useNotifications } from '../../hooks';
 import type { OnLoginCallback } from '../app/interface';
 import type { ChallengeRef, ChallengeResult } from '../challenge';

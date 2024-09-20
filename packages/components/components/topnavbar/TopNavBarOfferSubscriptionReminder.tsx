@@ -1,6 +1,8 @@
 import { useRef } from 'react';
 
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Spotlight from '@proton/components/components/spotlight/Spotlight';
+import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import { FeatureCode } from '@proton/components/containers/features';
 import useOfferFlags from '@proton/components/containers/offers/hooks/useOfferFlags';
 import type { Offer, OfferConfig } from '@proton/components/containers/offers/interface';
@@ -9,7 +11,6 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Currency } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { Spotlight, useSpotlightShow } from '../spotlight';
 import TopNavbarUpgradeButton from './TopNavbarUpgradeButton';
 
 interface Props {

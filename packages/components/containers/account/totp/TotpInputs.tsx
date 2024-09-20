@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import Info from '@proton/components/components/link/Info';
-
-import { InputFieldTwo, TotpInput } from '../../../components';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import TotpInput from '@proton/components/components/v2/input/TotpInput';
 
 interface Props {
     type: 'totp' | 'recovery-code';

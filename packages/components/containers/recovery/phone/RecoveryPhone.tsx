@@ -6,13 +6,15 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import PhoneInput from '@proton/components/components/v2/phone/PhoneInput';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useLoading from '@proton/hooks/useLoading';
 import { updatePhone } from '@proton/shared/lib/api/settings';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { InputFieldTwo, PhoneInput, useFormErrors } from '../../../components';
 import type { InputFieldProps } from '../../../components/v2/field/InputField';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import ConfirmRemovePhoneModal from './ConfirmRemovePhoneModal';

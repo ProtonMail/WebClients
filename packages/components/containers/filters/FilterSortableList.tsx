@@ -2,7 +2,10 @@ import type { ContainerGetter, SortEndHandler } from 'react-sortable-hoc';
 
 import { c } from 'ttag';
 
-import { OrderableTable, OrderableTableBody, OrderableTableHeader } from '../../components';
+import OrderableTable from '@proton/components/components/orderableTable/OrderableTable';
+import OrderableTableBody from '@proton/components/components/orderableTable/OrderableTableBody';
+import OrderableTableHeader from '@proton/components/components/orderableTable/OrderableTableHeader';
+
 import FilterItemRow from './FilterItemRow';
 import type { Filter } from './interfaces';
 

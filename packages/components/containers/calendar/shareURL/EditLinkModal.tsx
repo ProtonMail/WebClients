@@ -6,11 +6,11 @@ import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import BasicModal from '@proton/components/components/modalTwo/BasicModal';
 import type { BasicModalProps } from '@proton/components/components/modalTwo/BasicModal';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { useLoading } from '@proton/hooks';
 import { MAX_CHARS_CLEARTEXT } from '@proton/shared/lib/calendar/constants';
 import type { Nullable } from '@proton/shared/lib/interfaces/utils';
 
-import { InputFieldTwo } from '../../../components';
 import { useNotifications } from '../../../hooks';
 
 interface EditLinkModalProps extends Omit<BasicModalProps, 'children' | 'footer'> {

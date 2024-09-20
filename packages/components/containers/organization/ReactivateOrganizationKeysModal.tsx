@@ -10,6 +10,9 @@ import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
@@ -20,7 +23,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { decryptPrivateKeyWithSalt } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import { InputFieldTwo, PasswordInputTwo, useFormErrors } from '../../components';
 import { useApi, useAuthentication, useEventManager, useGetOrganizationKey, useNotifications } from '../../hooks';
 
 interface Props extends ModalProps {

@@ -8,6 +8,7 @@ import BasicModal from '@proton/components/components/modalTwo/BasicModal';
 import type { BasicModalProps } from '@proton/components/components/modalTwo/BasicModal';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { useApi, useGetCalendarInfo, useNotifications } from '@proton/components/hooks';
 import { createPublicLink } from '@proton/shared/lib/api/calendars';
 import { MAX_CHARS_CLEARTEXT } from '@proton/shared/lib/calendar/constants';
@@ -21,8 +22,6 @@ import {
 import type { CalendarLink, CalendarUrlResponse } from '@proton/shared/lib/interfaces/calendar';
 import { ACCESS_LEVEL } from '@proton/shared/lib/interfaces/calendar';
 import { splitKeys } from '@proton/shared/lib/keys';
-
-import { InputFieldTwo } from '../../../components';
 
 interface Props extends Omit<BasicModalProps, 'children' | 'footer'> {
     calendarID: string;

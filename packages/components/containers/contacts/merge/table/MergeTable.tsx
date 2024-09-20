@@ -1,13 +1,12 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import OrderableTable from '@proton/components/components/orderableTable/OrderableTable';
+import '@proton/components/components/orderableTable/OrderableTableHeader.scss';
 import TableCell from '@proton/components/components/table/TableCell';
 import type { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
 
-import { OrderableTable } from '../../../../components';
 import MergeTableBody from './MergeTableBody';
-
-import '../../../../components/orderableTable/OrderableTableHeader.scss';
 
 const MergeTableHeader = () => {
     return (

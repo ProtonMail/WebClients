@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import OrderableTableRow from '@proton/components/components/orderableTable/OrderableTableRow';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import FiltersUpsellModal from '@proton/components/components/upsell/modal/types/FiltersUpsellModal';
 import { useLoading } from '@proton/hooks';
@@ -13,7 +14,6 @@ import { deleteFilter, toggleEnable } from '@proton/shared/lib/api/filters';
 import { FILTER_STATUS } from '@proton/shared/lib/constants';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
 
-import { OrderableTableRow } from '../../components';
 import { useApi, useEventManager, useNotifications, useUser } from '../../hooks';
 import FilterWarningModal from './FilterWarningModal';
 import type { Filter } from './interfaces';

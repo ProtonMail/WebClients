@@ -15,6 +15,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { getCalendarModalSize } from '@proton/components/containers/calendar/calendarModal/helpers';
 import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
 import { useLoading } from '@proton/hooks';
@@ -25,7 +26,6 @@ import { getSharedCalendarSubHeaderText } from '@proton/shared/lib/calendar/shar
 import type { Nullable } from '@proton/shared/lib/interfaces';
 import type { NotificationModel, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { InputFieldTwo } from '../../../../components';
 import type { SelectChangeEvent } from '../../../../components/selectTwo/select';
 import { TruncatedText } from '../../../../components/truncatedText';
 import GenericError from '../../../error/GenericError';

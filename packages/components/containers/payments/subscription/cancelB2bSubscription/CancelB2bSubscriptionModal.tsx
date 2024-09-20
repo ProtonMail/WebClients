@@ -3,16 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    Form,
-    InputFieldTwo,
-    TextAreaTwo,
-    useApi,
-    useConfig,
-    useErrorHandler,
-    useFormErrors,
-    useUser,
-} from '@proton/components';
+import { Form, useApi, useConfig, useErrorHandler, useFormErrors, useUser } from '@proton/components';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
@@ -21,6 +12,8 @@ import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Option from '@proton/components/components/option/Option';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import { getClientName } from '@proton/components/helpers/report';
 import { reportCancelPlan } from '@proton/shared/lib/api/reports';
 import { getBrowser, getOS } from '@proton/shared/lib/helpers/browser';
