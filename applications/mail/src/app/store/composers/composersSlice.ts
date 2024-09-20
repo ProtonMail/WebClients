@@ -63,7 +63,7 @@ const composersSlice = createSlice({
             state.composers[composer.ID] = composer;
         },
         setInitialized(state, action: PayloadAction<{ ID: ComposerID; message: MessageState }>) {
-            state.composers[action.payload.ID].senderEmailAddress = action.payload.message?.data?.Sender.Address;
+            state.composers[action.payload.ID].senderEmailAddress = action.payload.message?.data?.Sender?.Address;
             state.composers[action.payload.ID].recipients = {
                 ToList: action.payload.message.data?.ToList || [],
                 CCList: action.payload.message.data?.CCList || [],
