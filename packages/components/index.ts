@@ -205,6 +205,8 @@ export { default as TableHeaderCell } from './components/table/TableHeaderCell';
 export { default as TableRow } from './components/table/TableRow';
 export { default as TableRowBusy } from './components/table/TableRowBusy';
 export { default as TableRowSticky } from './components/table/TableRowSticky';
+export { default as Tabs } from './components/tabs/Tabs';
+export type { Tab } from './components/tabs/Tabs';
 export { default as Time } from './components/time/Time';
 export { default as TimeIntl } from './components/time/TimeIntl';
 export { default as TimeZoneSelector } from './components/timezoneSelector/TimeZoneSelector';
@@ -212,6 +214,8 @@ export { default as Toggle } from './components/toggle/Toggle';
 export { default as Toolbar } from './components/toolbar/Toolbar';
 export { default as ToolbarButton } from './components/toolbar/ToolbarButton';
 export { default as Tooltip } from './components/tooltip/Tooltip';
+export { default as TreeViewContainer } from './components/treeview/TreeViewContainer';
+export { default as TreeViewItem } from './components/treeview/TreeViewItem';
 export type { UpsellFeature as UpsellFeatures } from './components/upsell/modal/interface';
 export { default as AutoDeleteUpsellModal } from './components/upsell/modal/types/AutoDeleteUpsellModal';
 export { default as ComposerAssistantB2BUpsellModal } from './components/upsell/modal/types/ComposerAssistantB2BUpsellModal';
@@ -500,6 +504,3 @@ export { default as ProtonVPNCredentialsSection } from './containers/vpn/ProtonV
 export { default as ProtonVPNResourcesSection } from './containers/vpn/ProtonVPNResourcesSection/ProtonVPNResourcesSection';
 export { default as TVContainer } from './containers/vpn/tv/TVContainer';
 export { default as WireGuardConfigurationSection } from './containers/vpn/WireGuardConfigurationSection/WireGuardConfigurationSection';
-
-export { default as Tabs } from './components/tabs/Tabs';
-export type { Tab } from './components/tabs/Tabs';

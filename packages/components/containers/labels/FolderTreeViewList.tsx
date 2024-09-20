@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { TreeViewContainer, TreeViewItem } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import { useLoading } from '@proton/hooks';
@@ -12,7 +13,6 @@ import { getParents, order } from '@proton/shared/lib/helpers/folder';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import clsx from '@proton/utils/clsx';
 
-import { TreeViewContainer, TreeViewItem } from '../../components';
 import { useActiveBreakpoint, useApi, useEventManager } from '../../hooks';
 import ActionsLabel from './ActionsLabel';
 import FolderIcon from './FolderIcon';
