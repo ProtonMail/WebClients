@@ -50,7 +50,6 @@ import {
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import type { Address } from '@proton/shared/lib/interfaces';
 import type { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import CalendarSidebarListItems from './CalendarSidebarListItems';
@@ -82,10 +81,9 @@ const CalendarSidebar = ({
     const api = useApi();
     const [user] = useUser();
 
-    const featureFlagCollapsible = useFlag('LeftSidebarCollapsible');
     const [showSideBar, setshowSideBar] = useLocalState(true, `${user.ID}-${APPS.PROTONCALENDAR}-left-nav-opened`);
     const { viewportWidth } = useActiveBreakpoint();
-    const collapsed = !showSideBar && !viewportWidth['<=small'] && featureFlagCollapsible;
+    const collapsed = !showSideBar && !viewportWidth['<=small'];
 
     const onClickExpandNav = () => {
         sendRequestCollapsibleSidebarReport({
@@ -344,7 +342,7 @@ const CalendarSidebar = ({
                     </>
                 )}
 
-                {featureFlagCollapsible && !isElectronApp && (
+                {!isElectronApp && (
                     <span
                         className={clsx(
                             'mt-auto',
@@ -375,12 +373,12 @@ const CalendarSidebar = ({
                                     onClick={onClickExpandNav}
                                     aria-pressed={showSideBar}
                                 >
-                                        <Icon
-                                            name={showSideBar ? 'chevrons-left' : 'chevrons-right'}
-                                            alt={c('Action').t`Show navigation bar`}
-                                        />
-                                    </button>
-                                </Tooltip>
+                                    <Icon
+                                        name={showSideBar ? 'chevrons-left' : 'chevrons-right'}
+                                        alt={c('Action').t`Show navigation bar`}
+                                    />
+                                </button>
+                            </Tooltip>
                         </CollapsibleSidebarSpotlight>
                     </span>
                 )}

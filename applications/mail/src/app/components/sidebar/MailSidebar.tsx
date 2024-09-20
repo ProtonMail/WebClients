@@ -28,7 +28,6 @@ import {
 } from '@proton/shared/lib/helpers/collapsibleSidebar';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
@@ -49,11 +48,10 @@ interface Props {
 
 const MailSidebar = ({ labelID }: Props) => {
     const api = useApi();
-    const featureFlagCollapsible = useFlag('LeftSidebarCollapsible');
     const [user] = useUser();
     const [showSideBar, setshowSideBar] = useLocalState(true, `${user.ID}-${APPS.PROTONMAIL}-left-nav-opened`);
     const { viewportWidth } = useActiveBreakpoint();
-    const collapsed = !showSideBar && !viewportWidth['<=small'] && featureFlagCollapsible;
+    const collapsed = !showSideBar && !viewportWidth['<=small'];
 
     const onCompose = useOnCompose();
     const dispatch = useMailDispatch();
@@ -118,7 +116,7 @@ const MailSidebar = ({ labelID }: Props) => {
                 {canDisplayChecklist && displayState === CHECKLIST_DISPLAY_TYPE.REDUCED && !collapsed && (
                     <UsersOnboardingChecklist smallVariant />
                 )}
-                {featureFlagCollapsible && !isElectronApp && (
+                {!isElectronApp && (
                     <span
                         className={clsx(
                             'mt-auto',
@@ -127,7 +125,7 @@ const MailSidebar = ({ labelID }: Props) => {
                         )}
                     >
                         <CollapsibleSidebarSpotlight app={APPS.PROTONMAIL}>
-                        {collapsed && <div aria-hidden="true" className="border-top my-1 mx-3"></div>}
+                            {collapsed && <div aria-hidden="true" className="border-top my-1 mx-3"></div>}
                             <Tooltip
                                 title={
                                     showSideBar
@@ -146,12 +144,12 @@ const MailSidebar = ({ labelID }: Props) => {
                                     onClick={() => onClickExpandNav()}
                                     aria-pressed={showSideBar}
                                 >
-                                        <Icon
-                                            name={showSideBar ? 'chevrons-left' : 'chevrons-right'}
-                                            alt={c('Action').t`Show navigation bar`}
-                                        />
-                                    </button>
-                                </Tooltip>
+                                    <Icon
+                                        name={showSideBar ? 'chevrons-left' : 'chevrons-right'}
+                                        alt={c('Action').t`Show navigation bar`}
+                                    />
+                                </button>
+                            </Tooltip>
                         </CollapsibleSidebarSpotlight>
                     </span>
                 )}
