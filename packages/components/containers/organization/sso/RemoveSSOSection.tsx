@@ -2,9 +2,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import type { Domain, SSO } from '@proton/shared/lib/interfaces';
 
-import { SettingsParagraph, SettingsSection } from '../../account';
 import RemoveSSOModal from './RemoveSSOModal';
 
 interface Props {

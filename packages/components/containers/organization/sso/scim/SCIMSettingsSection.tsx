@@ -10,6 +10,11 @@ import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
+import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
+import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import useLoading from '@proton/hooks/useLoading';
 import { baseUseDispatch } from '@proton/react-redux-store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
@@ -19,13 +24,6 @@ import { DOMAIN_STATE } from '@proton/shared/lib/interfaces';
 
 import getBoldFormattedText from '../../../../helpers/getBoldFormattedText';
 import { useApi, useNotifications } from '../../../../hooks';
-import {
-    SettingsLayout,
-    SettingsLayoutLeft,
-    SettingsLayoutRight,
-    SettingsParagraph,
-    SettingsSectionWide,
-} from '../../../account';
 import SubSettingsSection from '../../../layout/SubSettingsSection';
 import ReadonlyFieldWithCopy from '../ReadonlyFieldWithCopy';
 import DisableSCIMModal from './DisableSCIMModal';

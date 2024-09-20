@@ -7,9 +7,10 @@ import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import type { GroupMembership } from '@proton/shared/lib/interfaces';
 
-import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import GroupActions from './GroupActions';
 import GroupState from './GroupState';
 

@@ -3,13 +3,14 @@ import { c } from 'ttag';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
 import PmMeUpsellModal from '@proton/components/components/upsell/modal/types/PmMeUpsellModal';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { useSettingsLink } from '../../components';
 import { useSubscription, useUser } from '../../hooks';
-import { SettingsParagraph, SettingsSection } from '../account';
 import PmMeButton, { getActivateString } from './PmMeButton';
 
 interface Props {

@@ -8,6 +8,8 @@ import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import Price from '@proton/components/components/price/Price';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { isSplittedUser } from '@proton/payments';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, isFreeSubscription } from '@proton/shared/lib/constants';
@@ -16,7 +18,6 @@ import { isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import { BillingPlatform, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
 import { usePaymentStatus, useSubscription, useUser } from '../../hooks';
-import { SettingsParagraph, SettingsSection } from '../account';
 import { openLinkInBrowser } from '../desktop/openExternalLink';
 import CreditsModal from './CreditsModal';
 import InAppPurchaseModal from './subscription/InAppPurchaseModal';

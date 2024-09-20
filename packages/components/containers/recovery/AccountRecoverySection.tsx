@@ -2,14 +2,14 @@ import { c } from 'ttag';
 
 import Loader from '@proton/components/components/loader/Loader';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
+import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
+import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { useLoading } from '@proton/hooks';
 import { updateResetEmail, updateResetPhone } from '@proton/shared/lib/api/settings';
 
 import { useEventManager, useModals, useMyCountry, useNotifications, useUserSettings } from '../../hooks';
-import { SettingsSection } from '../account';
-import SettingsLayout from '../account/SettingsLayout';
-import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import AuthModal from '../password/AuthModal';
 import RecoveryEmail from './email/RecoveryEmail';
 import RecoveryPhone from './phone/RecoveryPhone';

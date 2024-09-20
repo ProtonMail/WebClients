@@ -5,9 +5,6 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import {
-    SettingsParagraph,
-    SettingsSection,
-    SettingsSectionWide,
     UpgradeBanner,
     useActiveBreakpoint,
     useAddresses,
@@ -23,6 +20,9 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { useLoading } from '@proton/hooks';
 import { deleteToken, getTokens, isTokenEligible } from '@proton/shared/lib/api/smtptokens';
 import {

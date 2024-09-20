@@ -14,7 +14,7 @@ import {
 } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import Meter from '@proton/components/components/progress/Meter';
-import { SettingsSection } from '@proton/components/containers';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useSubscription, useUser } from '@proton/components/hooks';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

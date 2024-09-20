@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { SettingsParagraph, SettingsSection } from '@proton/components/containers';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { useSubscription } from '@proton/components/hooks';
 
 import CancelB2bSubscriptionModal from './CancelB2bSubscriptionModal';
