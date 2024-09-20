@@ -15,7 +15,7 @@ import { SettingsParagraph, SettingsSection } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
-import PGPSchemeSelect from './PGPSchemeSelect';
+import { PGPSchemeSelect } from './PGPSchemeSelect';
 
 interface AutomaticallySignModalProps extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {
     onConfirm: (value: boolean) => void;
@@ -49,7 +49,7 @@ const AutomaticallySignModal = ({ onConfirm, ...rest }: AutomaticallySignModalPr
     );
 };
 
-const ExternalPGPSettingsSection = () => {
+export const ExternalPGPSettingsSection = () => {
     const [{ Sign, AttachPublicKey, PGPScheme } = DEFAULT_MAILSETTINGS] = useMailSettings();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
@@ -179,5 +179,3 @@ const ExternalPGPSettingsSection = () => {
         </SettingsSection>
     );
 };
-
-export default ExternalPGPSettingsSection;

@@ -13,7 +13,7 @@ import AuthModal from '../password/AuthModal';
 import RecoveryEmail from './email/RecoveryEmail';
 import RecoveryPhone from './phone/RecoveryPhone';
 
-const AccountRecoverySection = ({ divider = true }: { divider?: boolean }) => {
+export const AccountRecoverySection = ({ divider = true }: { divider?: boolean }) => {
     const { createModal } = useModals();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const [loadingEmailReset, withLoadingEmailReset] = useLoading();
@@ -119,5 +119,3 @@ const AccountRecoverySection = ({ divider = true }: { divider?: boolean }) => {
         </SettingsSection>
     );
 };
-
-export default AccountRecoverySection;
