@@ -5,7 +5,7 @@ import { flushSync } from 'react-dom';
 import { c } from 'ttag';
 
 import { Button, InlineLinkButton } from '@proton/atoms';
-import { InputFieldTwo, PasswordInputTwo, Tabs, useFormErrors } from '@proton/components/components';
+import { InputFieldTwo, PasswordInputTwo, Tabs, useFormErrors } from '@proton/components';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';

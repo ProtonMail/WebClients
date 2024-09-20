@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { Scroll } from '@proton/atoms';
+import { Tabs } from '@proton/components';
 
-import { Tabs } from '../..';
 import { useAddresses } from '../..';
 import BreachListItem from './BreachListItem';
 import BreachListUpgradeLink from './BreachListUpgradeLink';

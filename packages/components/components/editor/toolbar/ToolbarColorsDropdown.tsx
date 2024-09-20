@@ -2,12 +2,12 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Tabs } from '@proton/components';
 import ColorSelector from '@proton/components/components/color/ColorSelector';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import { COMPOSER_TOOLBAR_ICON_SIZE } from '@proton/shared/lib/constants';
 
 import Icon from '../../icon/Icon';
-import { Tabs } from '../../tabs';
 import { FONT_COLORNAMES } from '../constants';
 import ToolbarDropdown from './ToolbarDropdown';
 
