@@ -1,6 +1,7 @@
 import type { Environment } from '@proton/shared/lib/interfaces';
 
 import type { ThemeModeSetting, ThemeSetting, ThemeTypes } from '../themes/themes';
+import type { DefaultProtocol } from './DefaultProtocol';
 import type { DesktopVersion } from './DesktopVersion';
 
 export interface DesktopThemeSetting {
@@ -25,11 +26,13 @@ export type IPCInboxDesktopFeature =
     | 'EarlyAccess'
     | 'MultiAccount'
     | 'LatestVersionCheck'
-    | 'InstallSource';
+    | 'InstallSource'
+    | 'MailtoTelemetry';
 export type IPCInboxGetInfoMessage =
     | { type: 'theme'; result: ThemeSetting }
     | { type: 'latestVersion'; result: DesktopVersion | null }
-    | { type: 'installSource'; result: string | null };
+    | { type: 'installSource'; result: string | null }
+    | { type: 'defaultMailto'; result: DefaultProtocol };
 export type IPCInboxClientUpdateMessage =
     | { type: 'updateNotification'; payload: number }
     | { type: 'userLogin'; payload?: undefined }
@@ -43,17 +46,24 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'showNotification'; payload: ElectronNotification }
     | { type: 'updateLocale'; payload: string }
     | { type: 'setTheme'; payload: ThemeSetting }
-    | { type: 'earlyAccess'; payload: Environment | undefined };
+    | { type: 'earlyAccess'; payload: Environment | undefined }
+    | { type: 'checkDefaultMailtoAndSignal'; payload?: undefined }
+    | { type: 'defaultMailtoTelemetryReported'; payload?: undefined };
 export type IPCInboxClientUpdateMessageType = IPCInboxClientUpdateMessage['type'];
-export type IPCInboxHostUpdateMessage = {
-    type: 'captureMessage';
-    payload: {
-        message: string;
-        level: 'error' | 'warning';
-        tags: Record<string, string | number>;
-        extra: Record<string, string | number>;
-    };
-};
+export type IPCInboxHostUpdateMessage =
+    | {
+          type: 'captureMessage';
+          payload: {
+              message: string;
+              level: 'error' | 'warning';
+              tags: Record<string, string | number>;
+              extra: Record<string, string | number>;
+          };
+      }
+    | {
+          type: 'defaultMailtoChecked';
+          payload: DefaultProtocol;
+      };
 export type IPCInboxHostUpdateMessageType = IPCInboxHostUpdateMessage['type'];
 
 /**
