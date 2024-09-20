@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import { ErrorZone } from '@proton/components/components';
+import ErrorZone from '@proton/components/components/text/ErrorZone';
 import { isFirstLastNameValid } from '@proton/shared/lib/contacts/property';
 import type { VCardContact, VCardProperty, VcardNValue } from '@proton/shared/lib/interfaces/contacts/VCard';
 

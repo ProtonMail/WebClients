@@ -7,7 +7,6 @@ import { InvalidAddressesError, UnavailableAddressesError, createMember } from '
 import validateAddUser from '@proton/account/members/validateAddUser';
 import { Button, Input } from '@proton/atoms';
 import {
-    Marks,
     useApi,
     useBeforeUnload,
     useEventManager,
@@ -31,6 +30,7 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
+import Marks from '@proton/components/components/text/Marks';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
