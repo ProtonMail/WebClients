@@ -121,10 +121,10 @@ export { default as useDebounceInput } from './components/input/useDebounceInput
 export { default as EllipsisLoader } from './components/loader/EllipsisLoader';
 export { default as Loader } from './components/loader/Loader';
 export { default as LoaderIcon } from './components/loader/LoaderIcon';
-export { default as MiniCalendar } from './components/miniCalendar/MiniCalendar';
-export { default as LocalizedMiniCalendar } from './components/miniCalendar/LocalizedMiniCalendar';
 export { default as TextLoader } from './components/loader/TextLoader';
 export { default as SettingsMaintenanceLayoutWrapper } from './components/maintenanceLayout/SettingsMaintenanceLayoutWrapper';
+export { default as LocalizedMiniCalendar } from './components/miniCalendar/LocalizedMiniCalendar';
+export { default as MiniCalendar } from './components/miniCalendar/MiniCalendar';
 export { default as ConfirmModal } from './components/modal/Confirm';
 export type { ConfirmModalProps } from './components/modal/Confirm';
 export { default as DialogModal } from './components/modal/Dialog';
@@ -207,7 +207,48 @@ export { VPNEvents } from './containers/b2bDashboard/VPN/VPNEvents';
 export { PromotionBanner } from './containers/banner/PromotionBanner';
 export { ProtonMailBridgeSection } from './containers/bridge/ProtonMailBridgeSection';
 export { CacheProvider } from './containers/cache/Provider';
+export {
+    COMPARATORS,
+    OPERATORS,
+    TYPES,
+    getComparatorLabels,
+    getConditionTypeLabels,
+    getDefaultFolderOptions,
+    getDefaultFolders,
+    getOperatorLabels,
+    noFolderOption,
+    noFolderValue,
+} from './containers/filters/constants';
+export { default as FiltersSection } from './containers/filters/FiltersSection';
+export { ConditionComparator, ConditionType, FilterStatement } from './containers/filters/interfaces';
+export type { Condition, Filter, SimpleObject } from './containers/filters/interfaces';
+export { default as SieveEditor } from './containers/filters/modal/advanced/SieveEditor';
+export { default as FilterConditionsFormRow } from './containers/filters/modal/FilterConditionsFormRow';
+export { default as FilterModal } from './containers/filters/modal/FilterModal';
+export { default as SpamFiltersSection } from './containers/filters/SpamFiltersSection';
+export {
+    computeFromTree,
+    computeTree,
+    convertModel,
+    createDefaultLabelsFilter,
+    createUniqueName,
+    isSieve,
+    default as newFilter,
+    normalize,
+    sieveTemplates,
+} from './containers/filters/utils';
 export { default as MinimalForgotUsernameContainer } from './containers/forgotUsername/MinimalForgotUsernameContainer';
+export { default as AutoSaveContactsToggle } from './containers/general/AutoSaveContactsToggle';
+export { default as DateFormatSection } from './containers/general/DateFormatSection';
+export { default as LanguageAndTimeSection } from './containers/general/LanguageAndTimeSection';
+export { default as LanguageSection } from './containers/general/LanguageSection';
+export { default as PmMeSection } from './containers/general/PmMeSection';
+export { default as ShortcutsToggle } from './containers/general/ShortcutsToggle';
+export { default as TimeFormatSection } from './containers/general/TimeFormatSection';
+export { default as ToggleAssistant } from './containers/general/ToggleAssistant/ToggleAssistant';
+export { default as ToggleAssistantContainer } from './containers/general/ToggleAssistant/ToggleAssistantContainer';
+export { default as ToggleAssistantEnvironment } from './containers/general/ToggleAssistant/ToggleAssistantEnvironment';
+export { default as WeekStartSection } from './containers/general/WeekStartSection';
 export { default as GmailSyncModal } from './containers/gmailSyncModal/GmailSyncModal';
 export { default as GmailSyncModalAnimation } from './containers/gmailSyncModal/GmailSyncModalAnimation';
 export { default as SignInWithGoogle } from './containers/gmailSyncModal/SignInWithGoogle';
@@ -431,14 +472,3 @@ export { default as ProtonVPNCredentialsSection } from './containers/vpn/ProtonV
 export { default as ProtonVPNResourcesSection } from './containers/vpn/ProtonVPNResourcesSection/ProtonVPNResourcesSection';
 export { default as TVContainer } from './containers/vpn/tv/TVContainer';
 export { default as WireGuardConfigurationSection } from './containers/vpn/WireGuardConfigurationSection/WireGuardConfigurationSection';
-export { default as AutoSaveContactsToggle } from './containers/general/AutoSaveContactsToggle';
-export { default as DateFormatSection } from './containers/general/DateFormatSection';
-export { default as LanguageAndTimeSection } from './containers/general/LanguageAndTimeSection';
-export { default as LanguageSection } from './containers/general/LanguageSection';
-export { default as PmMeSection } from './containers/general/PmMeSection';
-export { default as ShortcutsToggle } from './containers/general/ShortcutsToggle';
-export { default as TimeFormatSection } from './containers/general/TimeFormatSection';
-export { default as ToggleAssistantContainer } from './containers/general/ToggleAssistant/ToggleAssistantContainer';
-export { default as WeekStartSection } from './containers/general/WeekStartSection';
-export { default as ToggleAssistant } from './containers/general/ToggleAssistant/ToggleAssistant';
-export { default as ToggleAssistantEnvironment } from './containers/general/ToggleAssistant/ToggleAssistantEnvironment';
