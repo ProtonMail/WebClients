@@ -4,7 +4,7 @@ import { endOfDay, isAfter, isBefore, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Pagination } from '@proton/components/components';
+import { Pagination, usePaginationAsync } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import { useApi, useErrorHandler, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
@@ -13,7 +13,7 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import type { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
 import noop from '@proton/utils/noop';
 
-import { GenericError, SettingsSectionWide, usePaginationAsync } from '../../..';
+import { GenericError, SettingsSectionWide } from '../../..';
 import { toCamelCase } from '../../credentialLeak/helpers';
 import { FilterAndSortEventsBlock } from '../FilterAndSortEventBlock';
 import PassEventsTable from './PassEventsTable';

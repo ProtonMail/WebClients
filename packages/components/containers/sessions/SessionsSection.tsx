@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { Pagination, usePagination } from '@proton/components';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import Table from '@proton/components/components/table/Table';
@@ -16,7 +17,6 @@ import { querySessions, revokeOtherSessions, revokeSession } from '@proton/share
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
-import { Pagination, usePagination } from '../../components';
 import { useApi, useAuthentication, useNotifications } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 import SessionAction from './SessionAction';
