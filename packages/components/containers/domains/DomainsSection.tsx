@@ -6,6 +6,7 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import Loader from '@proton/components/components/loader/Loader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableHeader from '@proton/components/components/table/TableHeader';
@@ -27,7 +28,6 @@ import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useModalState } from '../../components';
 import {
     useApi,
     useCustomDomains,

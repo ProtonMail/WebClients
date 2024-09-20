@@ -1,19 +1,17 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Modal from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useLoading from '@proton/hooks/useLoading';
 import { getDomain } from '@proton/shared/lib/api/domains';
 import type { Domain } from '@proton/shared/lib/interfaces';
 import { VERIFY_STATE } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import type { ModalProps } from '../../../components';
-import {
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-} from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import { verifyDomain } from '../../domains/DomainModal';
 import TXTSection from './TXTSection';

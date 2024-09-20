@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
+import BasicModal from '@proton/components/components/modalTwo/BasicModal';
 import type { BasicModalProps } from '@proton/components/components/modalTwo/BasicModal';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
@@ -21,7 +22,7 @@ import type { CalendarLink, CalendarUrlResponse } from '@proton/shared/lib/inter
 import { ACCESS_LEVEL } from '@proton/shared/lib/interfaces/calendar';
 import { splitKeys } from '@proton/shared/lib/keys';
 
-import { BasicModal, InputFieldTwo } from '../../../components';
+import { InputFieldTwo } from '../../../components';
 
 interface Props extends Omit<BasicModalProps, 'children' | 'footer'> {
     calendarID: string;

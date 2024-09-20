@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { useLoading } from '@proton/hooks';
 import { disableTotp } from '@proton/shared/lib/api/settings';
 
-import type { ModalProps } from '../../../components';
-import { useModalState } from '../../../components';
 import { useEventManager, useNotifications } from '../../../hooks';
 import AuthModal from '../../password/AuthModal';
 

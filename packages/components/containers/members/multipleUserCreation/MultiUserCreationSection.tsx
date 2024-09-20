@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Tooltip } from '@proton/components';
-import { useModalState } from '@proton/components/components/modalTwo';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';

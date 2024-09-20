@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { useOrganization } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
@@ -10,8 +11,6 @@ import { useLoading } from '@proton/hooks';
 import { leaveOrganisation } from '@proton/shared/lib/api/organization';
 import { BRAND_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { isOrganizationFamily } from '@proton/shared/lib/organization/helper';
-
-import type { ModalStateProps } from '../../components';
 
 interface Props extends ModalStateProps {
     organisationName: string;

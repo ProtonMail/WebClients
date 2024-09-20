@@ -4,9 +4,10 @@ import { Form, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
 import { Button, CircleLoader, Panel, PanelHeader } from '@proton/atoms';
-import { InputFieldTwo, TextAreaTwo, useModalState } from '@proton/components/components';
+import { InputFieldTwo, TextAreaTwo } from '@proton/components/components';
 import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { useNotifications } from '@proton/components/hooks';

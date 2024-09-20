@@ -4,18 +4,15 @@ import { c } from 'ttag';
 
 import type { Input } from '@proton/atoms';
 import { Button, CircleLoader, Href } from '@proton/atoms';
-import {
-    InputFieldTwo,
-    type ModalProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    TextAreaTwo,
-} from '@proton/components/components';
+import { InputFieldTwo, TextAreaTwo } from '@proton/components/components';
 import Form from '@proton/components/components/form/Form';
 import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { useNotifications } from '@proton/components/hooks';

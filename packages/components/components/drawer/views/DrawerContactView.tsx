@@ -4,10 +4,10 @@ import { c } from 'ttag';
 
 import { EasySwitchProvider } from '@proton/activation';
 import { Button } from '@proton/atoms';
-import { useModalTwoStatic } from '@proton/components/components';
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import type { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
 import DrawerView from '@proton/components/components/drawer/views/DrawerView';
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import { useContactModals } from '@proton/components/containers';
 import { useContactMergeModals } from '@proton/components/containers/contacts/hooks/useContactMergeModals';
 import ContactImportModal from '@proton/components/containers/contacts/import/ContactImportModal';

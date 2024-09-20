@@ -5,6 +5,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import ColorPicker from '@proton/components/components/input/ColorPicker';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { getCalendarModalSize } from '@proton/components/containers/calendar/calendarModal/helpers';
@@ -39,15 +44,7 @@ import type {
 } from '@proton/shared/lib/interfaces/calendar';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import type { ModalProps } from '../../../../components';
-import {
-    InputFieldTwo as InputField,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    useFormErrors,
-} from '../../../../components';
+import { InputFieldTwo as InputField, useFormErrors } from '../../../../components';
 import CountrySelect from '../../../../components/country/CountrySelect';
 import {
     useApi,

@@ -2,9 +2,10 @@ import { c } from 'ttag';
 
 import { useMemberAddresses } from '@proton/account';
 import { Button } from '@proton/atoms';
-import { useConfig, useMembers, useModalState } from '@proton/components';
+import { useConfig, useMembers } from '@proton/components';
 import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';

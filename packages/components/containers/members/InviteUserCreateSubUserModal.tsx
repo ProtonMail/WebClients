@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { getInviteLimit } from '@proton/components/containers/members/UsersAndAddressesSection/helper';
@@ -9,8 +11,6 @@ import { BRAND_NAME, PLAN_NAMES } from '@proton/shared/lib/constants';
 import type { Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';
 import { isOrganizationFamily } from '@proton/shared/lib/organization/helper';
 
-import type { ModalStateProps } from '../../components';
-import { useModalState } from '../../components';
 import { useCustomDomains } from '../../hooks';
 import SubUserCreateModal from './SubUserCreateModal';
 

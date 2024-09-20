@@ -6,16 +6,12 @@ import { c } from 'ttag';
 import { changeOrganizationSignature } from '@proton/account';
 import { getIsEligibleOrganizationIdentityAddress } from '@proton/account/organizationKey/actions';
 import { Button } from '@proton/atoms';
-import type { ModalProps } from '@proton/components';
-import {
-    InputFieldTwo,
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-    useFormErrors,
-} from '@proton/components';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
+import { InputFieldTwo, SettingsLink, useFormErrors } from '@proton/components/components';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Modal from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { useAddresses, useErrorHandler, useNotifications } from '@proton/components/hooks';

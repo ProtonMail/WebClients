@@ -6,9 +6,13 @@ import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import TextArea from '@proton/components/components/input/TextArea';
 import Loader from '@proton/components/components/loader/Loader';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 
-import type { ModalProps } from '../../../components';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, QRCode, Tabs } from '../../../components';
+import { QRCode, Tabs } from '../../../components';
 
 export interface WireGuardCreationModalProps extends ModalProps {
     text?: string;

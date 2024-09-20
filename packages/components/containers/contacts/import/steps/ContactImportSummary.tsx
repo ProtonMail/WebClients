@@ -4,12 +4,14 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import DynamicProgress from '@proton/components/components/progress/DynamicProgress';
 import { getImportCategoriesModel, haveCategories } from '@proton/shared/lib/contacts/helpers/import';
 import type { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
 import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/contacts/Import';
 
-import { ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../../components';
 import { useUser } from '../../../../hooks';
 import { useGetContactGroups } from '../../../../hooks/useCategories';
 import { extractTotals } from '../encryptAndSubmit';

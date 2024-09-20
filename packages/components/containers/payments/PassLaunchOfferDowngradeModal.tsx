@@ -1,12 +1,11 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Price from '@proton/components/components/price/Price';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { PASS_APP_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import type { Subscription } from '@proton/shared/lib/interfaces';
-
-import type { ModalProps } from '../../components';
 
 interface Props extends ModalProps {
     subscription: Subscription;

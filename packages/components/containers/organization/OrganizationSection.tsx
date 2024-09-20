@@ -6,6 +6,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Loader from '@proton/components/components/loader/Loader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import useLoading from '@proton/hooks/useLoading';
@@ -22,7 +23,7 @@ import { handleSetupAddressKeys } from '@proton/shared/lib/keys';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import type { Credentials } from '@proton/shared/lib/srp';
 
-import { ButtonGroup, Label, useModalState } from '../../components';
+import { ButtonGroup, Label } from '../../components';
 import Row from '../../components/container/Row';
 import {
     useApi,

@@ -4,6 +4,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Modal from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
@@ -13,16 +18,7 @@ import { passwordLengthValidator } from '@proton/shared/lib/helpers/formValidato
 import generateUID from '@proton/utils/generateUID';
 import noop from '@proton/utils/noop';
 
-import type { ModalProps } from '../../../components';
-import {
-    InputFieldTwo,
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-    PasswordInputTwo,
-    useFormErrors,
-} from '../../../components';
+import { InputFieldTwo, PasswordInputTwo, useFormErrors } from '../../../components';
 import { useModals } from '../../../hooks';
 import UnlockModal from '../../login/UnlockModal';
 

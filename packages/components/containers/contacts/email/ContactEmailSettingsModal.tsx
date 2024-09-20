@@ -3,14 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    Label,
-    type ModalProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-} from '@proton/components/components';
+import { Label } from '@proton/components/components';
 import Alert from '@proton/components/components/alert/Alert';
 import Collapsible from '@proton/components/components/collapsible/Collapsible';
 import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
@@ -20,6 +13,11 @@ import Field from '@proton/components/components/container/Field';
 import Row from '@proton/components/components/container/Row';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { useLoading } from '@proton/hooks';
 import getPublicKeysEmailHelper from '@proton/shared/lib/api/helpers/getPublicKeysEmailHelper';
 import { extractScheme } from '@proton/shared/lib/api/helpers/mailSettings';

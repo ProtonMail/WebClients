@@ -4,6 +4,11 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Modal from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { useLoading } from '@proton/hooks';
 import { editMemberInvitation, inviteMember, updateAI } from '@proton/shared/lib/api/members';
@@ -14,15 +19,7 @@ import { hasDuo, hasFamily, hasVisionary } from '@proton/shared/lib/helpers/subs
 import type { Member, Organization } from '@proton/shared/lib/interfaces';
 import clamp from '@proton/utils/clamp';
 
-import type { ModalStateProps } from '../../components';
-import {
-    InputFieldTwo,
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-    useFormErrors,
-} from '../../components';
+import { InputFieldTwo, useFormErrors } from '../../components';
 import { useApi, useEventManager, useNotifications, useSubscription } from '../../hooks';
 import { AssistantUpdateSubscriptionButton } from '../payments';
 import MemberStorageSelector, { getInitialStorage, getStorageRange, getTotalStorage } from './MemberStorageSelector';

@@ -2,6 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { useLoading } from '@proton/hooks';
 import { clearContacts, deleteContacts } from '@proton/shared/lib/api/contacts';
@@ -9,7 +10,6 @@ import { allSucceded } from '@proton/shared/lib/api/helpers/response';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Contact } from '@proton/shared/lib/interfaces/contacts';
 
-import type { ModalProps } from '../../../components';
 import { ErrorButton } from '../../../components';
 import { useApi, useContacts, useEventManager, useNotifications } from '../../../hooks';
 import { getDeleteText } from '../../general/helper';

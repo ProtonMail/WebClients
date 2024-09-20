@@ -4,13 +4,16 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useContactList from '@proton/components/containers/contacts/hooks/useContactList';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import noop from '@proton/utils/noop';
 
-import type { ModalProps } from '../../../components';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import { useAddresses, useContactGroups, useUserKeys } from '../../../hooks';
 import useContact from '../hooks/useContact';
 import useVCardContact from '../hooks/useVCardContact';

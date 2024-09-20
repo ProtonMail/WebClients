@@ -7,6 +7,11 @@ import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import Icon from '@proton/components/components/icon/Icon';
 import RoundedIcon from '@proton/components/components/icon/RoundedIcon';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { useLoading } from '@proton/hooks';
 import { addDomain, getDomain } from '@proton/shared/lib/api/domains';
@@ -22,15 +27,7 @@ import {
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import type { ModalProps } from '../../components';
-import {
-    ButtonGroup,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    useFormErrors,
-} from '../../components';
+import { ButtonGroup, useFormErrors } from '../../components';
 import { useApi, useCustomDomains, useEventManager, useNotifications, useStep } from '../../hooks';
 import AddressesSection from './AddressesSection';
 import DKIMSection from './DKIMSection';

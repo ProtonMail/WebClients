@@ -2,20 +2,17 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Modal from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { KEY_FILE_EXTENSION } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import noop from '@proton/utils/noop';
-
-import type { ModalProps } from '../../../components';
-import {
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-} from '../../../components';
 
 const handleExport = async (name: string, publicKey: PublicKeyReference) => {
     const fingerprint = publicKey.getFingerprint();

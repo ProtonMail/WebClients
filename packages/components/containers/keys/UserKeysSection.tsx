@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import type { AlgorithmInfo } from '@proton/crypto';
 import type { KeyGenConfig } from '@proton/shared/lib/interfaces';
 import { addUserKeysProcess } from '@proton/shared/lib/keys';
 
-import { useModalState } from '../../components';
 import {
     useApi,
     useAuthentication,

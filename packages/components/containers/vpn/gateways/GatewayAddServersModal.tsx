@@ -3,9 +3,12 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
-import type { ModalStateProps } from '@proton/components/components';
 import Form from '@proton/components/components/form/Form';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 
 import type { CountryOptions } from '../../../helpers/countries';
 import { GatewayCountrySelection } from './GatewayCountrySelection';

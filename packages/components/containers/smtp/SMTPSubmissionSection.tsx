@@ -12,12 +12,12 @@ import {
     useActiveBreakpoint,
     useAddresses,
     useApi,
-    useModalState,
     useNotifications,
     useOrganization,
     useUser,
 } from '@proton/components';
 import Loader from '@proton/components/components/loader/Loader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
