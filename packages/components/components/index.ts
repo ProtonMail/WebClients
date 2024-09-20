@@ -12,5 +12,4 @@ export * from './orderableTable';
 export * from './popper';
 export { default as SmartBanner } from './smartBanner/SmartBanner';
 export * from './spotlight';
-export * from './topnavbar';
 export * from './v2';
