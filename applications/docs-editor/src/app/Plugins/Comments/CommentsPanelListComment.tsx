@@ -174,12 +174,12 @@ export function CommentsPanelListComment({
           {isSuggestionComment && isSuggestionsFeatureEnabled && thread.state === CommentThreadState.Active && (
             <>
               <Tooltip title={c('Action').t`Decline suggestion`} onClick={rejectSuggestion}>
-                <Button icon pill shape="ghost" size="small">
+                <Button icon pill className="flex-shrink-0" shape="ghost" size="small">
                   <Icon size={4.5} name="cross" />
                 </Button>
               </Tooltip>
               <Tooltip title={c('Action').t`Accept suggestion`} onClick={acceptSuggestion}>
-                <Button icon pill shape="ghost" size="small">
+                <Button icon pill className="flex-shrink-0" shape="ghost" size="small">
                   <Icon size={4.5} name="checkmark" />
                 </Button>
               </Tooltip>

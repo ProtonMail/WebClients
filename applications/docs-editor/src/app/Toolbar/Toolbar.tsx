@@ -18,6 +18,8 @@ import {
   $findMatchingParent,
   $getNearestBlockElementAncestorOrThrow,
   $getNearestNodeOfType,
+  IS_ANDROID,
+  IS_IOS,
   mergeRegister,
 } from '@lexical/utils'
 import type { ElementFormatType } from 'lexical'
@@ -98,6 +100,11 @@ const stepFontSize = (currentFontSize: string, step: number): string => {
   return nextFontSize ? `${nextFontSize}px` : currentFontSize
 }
 
+function isMobile() {
+  // @ts-expect-error
+  return IS_ANDROID || IS_IOS || window.Android != null || window.webkit?.messageHandlers?.iOS != null
+}
+
 export default function DocumentEditorToolbar({
   interactionMode,
   onInteractionModeChange,
@@ -111,6 +118,8 @@ export default function DocumentEditorToolbar({
   const [activeEditor, setActiveEditor] = useState(editor)
 
   const { isSuggestionsFeatureEnabled } = useApplication()
+
+  const canShowSuggestionsButton = isSuggestionsFeatureEnabled && !isMobile()
 
   const isEditable = useLexicalEditable()
 
@@ -713,6 +722,8 @@ export default function DocumentEditorToolbar({
     },
   }
 
+  const isEditMode = interactionMode === 'edit'
+  const isViewMode = interactionMode === 'view'
   const isSuggestionMode = interactionMode === 'suggest'
 
   return (
@@ -1402,13 +1413,15 @@ export default function DocumentEditorToolbar({
           className="ml-auto flex gap-2 py-2"
           style={{
             border: '0',
+            backgroundColor: isSuggestionMode ? 'var(--signal-success)' : undefined,
+            color: isSuggestionMode ? 'var(--signal-success-contrast)' : undefined,
           }}
           caretClassName="-ml-1"
           content={
             <>
-              {interactionMode === 'edit' && <Icon name="pencil" />}
-              {interactionMode === 'suggest' && <SpeechBubblePenIcon className="h-4 w-4" />}
-              {interactionMode === 'view' && <Icon name="eye" />}
+              {isEditMode && <Icon name="pencil" />}
+              {isSuggestionMode && <SpeechBubblePenIcon className="h-4 w-4" />}
+              {isViewMode && <Icon name="eye" />}
             </>
           }
           hasCaret={!viewportWidth['<=small']}
@@ -1420,7 +1433,7 @@ export default function DocumentEditorToolbar({
             {hasEditAccess && (
               <>
                 <DropdownMenuButton
-                  className="flex items-center gap-2 text-left text-sm"
+                  className={clsx('flex items-center gap-2 text-left text-sm', isEditMode && 'active')}
                   onClick={() => {
                     onInteractionModeChange('edit')
                   }}
@@ -1428,10 +1441,11 @@ export default function DocumentEditorToolbar({
                 >
                   <Icon name="pencil" size={4.5} />
                   {c('Info').t`Editing`}
+                  {isEditMode && <Icon name="checkmark" className="ml-auto" size={4.5} />}
                 </DropdownMenuButton>
-                {isSuggestionsFeatureEnabled && (
+                {canShowSuggestionsButton && (
                   <DropdownMenuButton
-                    className="flex items-center gap-2 text-left text-sm"
+                    className={clsx('flex items-center gap-2 text-left text-sm', isSuggestionMode && 'active')}
                     onClick={() => {
                       onInteractionModeChange('suggest')
                     }}
@@ -1439,12 +1453,13 @@ export default function DocumentEditorToolbar({
                   >
                     <SpeechBubblePenIcon className="h-4 w-4" />
                     {c('Info').t`Suggesting`}
+                    {isSuggestionMode && <Icon name="checkmark" className="ml-auto" size={4.5} />}
                   </DropdownMenuButton>
                 )}
               </>
             )}
             <DropdownMenuButton
-              className="flex items-center gap-2 text-left text-sm"
+              className={clsx('flex items-center gap-2 text-left text-sm', isViewMode && 'active')}
               onClick={() => {
                 onInteractionModeChange('view')
               }}
@@ -1452,6 +1467,7 @@ export default function DocumentEditorToolbar({
             >
               <Icon name="eye" size={4.5} />
               {c('Info').t`Viewing`}
+              {isViewMode && <Icon name="checkmark" className="ml-auto" size={4.5} />}
             </DropdownMenuButton>
           </DropdownMenu>
         </SimpleDropdown>
