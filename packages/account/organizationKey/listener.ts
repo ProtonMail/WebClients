@@ -3,7 +3,6 @@ import type { Action } from '@reduxjs/toolkit';
 import { CryptoProxy } from '@proton/crypto';
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities';
-import { getIsAddressConfirmed, getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getSentryError } from '@proton/shared/lib/keys';
@@ -15,6 +14,7 @@ import { selectMembers } from '../members';
 import { selectOrganization } from '../organization';
 import {
     changeOrganizationSignature,
+    getIsEligibleOrganizationIdentityAddress,
     migrateOrganizationKeyPasswordless,
     migrateOrganizationKeyPasswordlessPrivateAdmin,
 } from './actions';
@@ -83,8 +83,10 @@ export const organizationKeysManagementListener = (startListening: SharedStartLi
     startListening({
         predicate: (action, currentState, nextState) => {
             const orgKey = selectOrganizationKey(nextState).value;
-            const addresses = selectAddresses(nextState).value;
-            return Boolean(orgKey?.privateKey && !orgKey.Key.FingerprintSignature && (addresses || [])?.length >= 1);
+            const eligibleAddresses = (selectAddresses(nextState).value || []).filter(
+                getIsEligibleOrganizationIdentityAddress
+            );
+            return Boolean(orgKey?.privateKey && !orgKey.Key.FingerprintSignature && eligibleAddresses.length >= 1);
         },
         effect: async (action, listenerApi) => {
             const state = listenerApi.getState();
@@ -96,16 +98,14 @@ export const organizationKeysManagementListener = (startListening: SharedStartLi
             listenerApi.unsubscribe();
 
             const addresses = await listenerApi.dispatch(addressesThunk());
-            const activeAddresses = addresses.filter(
-                (address) => getIsAddressEnabled(address) && getIsAddressConfirmed(address)
-            );
-            const primaryActiveAddress = activeAddresses[0];
-            if (!primaryActiveAddress) {
+            const eligibleAddresses = addresses.filter(getIsEligibleOrganizationIdentityAddress);
+            const primaryEligibleAddress = eligibleAddresses[0];
+            if (!primaryEligibleAddress) {
                 return;
             }
 
             try {
-                await listenerApi.dispatch(changeOrganizationSignature({ address: primaryActiveAddress }));
+                await listenerApi.dispatch(changeOrganizationSignature({ address: primaryEligibleAddress }));
             } catch (e) {
                 const error = getSentryError(e);
                 if (error) {
