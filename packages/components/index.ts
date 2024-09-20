@@ -257,6 +257,34 @@ export { default as UpsellModal } from './components/upsell/modal/UpsellModal';
 export { default as useUpsellConfig } from './components/upsell/useUpsellConfig';
 export { default as AppVersion } from './components/version/AppVersion';
 export { default as VideoInstructions } from './components/videoInstructions/VideoInstructions';
+export { default as AccessibilitySection } from './containers/account/AccessibilitySection';
+export { default as DeleteSection } from './containers/account/DeleteSection';
+export { default as EditEmailSubscription } from './containers/account/EditEmailSubscription';
+export { default as EmailSubscriptionCategories } from './containers/account/EmailSubscriptionCategories';
+export { default as EmailSubscriptionSection } from './containers/account/EmailSubscriptionSection';
+export { default as EmailSubscriptionToggles } from './containers/account/EmailSubscriptionToggles';
+export { default as FamilyPlanSection } from './containers/account/FamilyPlanSection';
+export { default as AuthSecurityKeyContent } from './containers/account/fido/AuthSecurityKeyContent';
+export { default as GroupMembershipSection } from './containers/account/groups/GroupMembershipSection';
+export { default as PasswordsSection } from './containers/account/PasswordsSection';
+export { default as SettingsLayout } from './containers/account/SettingsLayout';
+export { default as SettingsLayoutLeft } from './containers/account/SettingsLayoutLeft';
+export { default as SettingsLayoutRight } from './containers/account/SettingsLayoutRight';
+export { default as SettingsPageTitle } from './containers/account/SettingsPageTitle';
+export { default as SettingsParagraph } from './containers/account/SettingsParagraph';
+export { default as SettingsSection } from './containers/account/SettingsSection';
+export { default as SettingsSectionExtraWide } from './containers/account/SettingsSectionExtraWide';
+export { default as SettingsSectionTitle } from './containers/account/SettingsSectionTitle';
+export { default as SettingsSectionWide } from './containers/account/SettingsSectionWide';
+export {
+    AccountSpotlightsProvider,
+    useAccountSpotlights,
+} from './containers/account/spotlights/AccountSpotlightsProvider';
+export { StartUsingPassSpotlight } from './containers/account/spotlights/passB2bOnboardingSpotlights/PassB2bOnboardingSpotlights';
+export { default as TotpInputs } from './containers/account/totp/TotpInputs';
+export { default as TwoFactorSection } from './containers/account/TwoFactorSection';
+export { default as UpgradeBanner } from './containers/account/UpgradeBanner';
+export { default as UsernameSection } from './containers/account/UsernameSection';
 export { AutoReplySection } from './containers/autoReply/AutoReplySection';
 export type { PassEvent } from './containers/b2bDashboard/Pass/interface';
 export { PassEvents } from './containers/b2bDashboard/Pass/PassEvents';

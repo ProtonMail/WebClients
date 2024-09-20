@@ -14,6 +14,7 @@ import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { useLoading } from '@proton/hooks';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import {
@@ -38,7 +39,6 @@ import type { CalendarMemberInvitation, VisualCalendar } from '@proton/shared/li
 
 import { ButtonGroup } from '../../../components';
 import CalendarSelectIcon from '../../../components/calendarSelect/CalendarSelectIcon';
-import { SettingsSectionWide } from '../../../containers';
 import CalendarBadge from '../../../containers/calendar/settings/CalendarBadge';
 import { useCalendarShareInvitationActions, useEventManager, useNotifications } from '../../../hooks';
 import ShareCalendarWithSignatureVerificationErrorModal from '../../calendar/shareProton/ShareCalendarWithSignatureVerificationErrorModal';

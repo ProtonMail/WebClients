@@ -3,10 +3,11 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
-import { SettingsSection, useAppTitle, useSubscription, useUser, useVPNServersCount } from '@proton/components';
+import { useAppTitle, useSubscription, useUser, useVPNServersCount } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 

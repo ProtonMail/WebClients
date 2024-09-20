@@ -1,4 +1,5 @@
-import { SettingsPageTitle, SettingsSectionWide } from '@proton/components/containers/account';
+import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 
 import type { PlanConfigReminder } from './interface';
 

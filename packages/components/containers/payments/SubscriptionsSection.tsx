@@ -12,6 +12,8 @@ import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
 import Time from '@proton/components/components/time/Time';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import MozillaInfoPanel from '@proton/components/containers/account/MozillaInfoPanel';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { useLoading } from '@proton/hooks';
 import { onSessionMigrationPaymentsVersion } from '@proton/payments';
 import { changeRenewState } from '@proton/shared/lib/api/payments';
@@ -31,8 +33,6 @@ import noop from '@proton/utils/noop';
 import type { BadgeType } from '../../components/badge/Badge';
 import { default as Badge } from '../../components/badge/Badge';
 import { useApi, useEventManager, usePlans, usePreferredPlansMap, useSubscription, useUser } from '../../hooks';
-import { SettingsSectionWide } from '../account';
-import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import { useCancellationTelemetry } from './subscription/cancellationFlow';
 import { subscriptionExpires } from './subscription/helpers';
 

@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
-import { SettingsParagraph, SettingsSection } from '../../../account';
 import { useCancellationFlow } from '../cancellationFlow';
 import { useCancelSubscriptionFlow } from './useCancelSubscriptionFlow';
 

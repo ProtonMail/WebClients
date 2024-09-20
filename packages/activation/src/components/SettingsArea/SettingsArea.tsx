@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import type { SettingsAreaConfig } from '@proton/components';
 import { FeatureCode, Loader } from '@proton/components';
-import { SettingsParagraph, SettingsSectionWide } from '@proton/components/containers/account';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import PrivateMainSettingsArea, {
     PrivateMainSettingsAreaBase,
 } from '@proton/components/containers/layout/PrivateMainSettingsArea';

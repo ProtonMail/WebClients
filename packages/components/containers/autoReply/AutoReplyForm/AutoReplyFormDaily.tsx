@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { SettingsParagraph } from '../../account';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+
 import DaysOfWeekField from './fields/DaysOfWeekField';
 import TimeField from './fields/TimeField';
 import TimeZoneField from './fields/TimeZoneField';

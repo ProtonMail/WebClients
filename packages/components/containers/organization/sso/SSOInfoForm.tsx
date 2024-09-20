@@ -4,6 +4,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Info from '@proton/components/components/link/Info';
+import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
+import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
+import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
 import { updateSAMLConfig } from '@proton/shared/lib/api/samlSSO';
@@ -13,7 +16,6 @@ import { useFlag } from '@proton/unleash';
 
 import { InputFieldTwo, TextAreaTwo, useFormErrors } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
-import { SettingsLayout, SettingsLayoutLeft, SettingsLayoutRight } from '../../account';
 import type { IdentityProviderEndpointsContentProps } from './IdentityProviderEndpointsContent';
 import ReadonlyFieldWithCopy from './ReadonlyFieldWithCopy';
 

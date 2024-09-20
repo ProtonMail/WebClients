@@ -1,4 +1,4 @@
-import { SettingsSectionWide } from '@proton/components';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import clsx from '@proton/utils/clsx';
 
 import InviteSendEmail from './InviteSendEmail';
