@@ -17,6 +17,5 @@ export * from './emailPrivacy';
 export * from './error';
 export * from './eventManager';
 export * from './features';
-export * from './filePreview';
 export * from './password';
 export * from './payments';
