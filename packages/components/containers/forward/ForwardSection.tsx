@@ -4,6 +4,7 @@ import { useLocation } from 'react-router';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import { Tabs } from '@proton/components';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
@@ -14,7 +15,6 @@ import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { Tabs } from '../../components';
 import { useAddresses, useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSection, SettingsSectionWide } from '../account';
 import ForwardModal from './ForwardModal';

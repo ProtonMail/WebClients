@@ -515,3 +515,6 @@ export { default as ProtonVPNCredentialsSection } from './containers/vpn/ProtonV
 export { default as ProtonVPNResourcesSection } from './containers/vpn/ProtonVPNResourcesSection/ProtonVPNResourcesSection';
 export { default as TVContainer } from './containers/vpn/tv/TVContainer';
 export { default as WireGuardConfigurationSection } from './containers/vpn/WireGuardConfigurationSection/WireGuardConfigurationSection';
+
+export { default as Tabs } from './components/tabs/Tabs';
+export type { Tab } from './components/tabs/Tabs';
