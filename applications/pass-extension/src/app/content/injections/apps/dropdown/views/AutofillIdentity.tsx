@@ -30,7 +30,7 @@ type Props = Extract<DropdownActions, { action: DropdownAction.AUTOFILL_IDENTITY
 export const AutofillIdentity: FC<Props> = ({ domain }) => {
     const { visible, close, forwardMessage } = useIFrameContext();
     const [state, setState] = useMountedState<MaybeNull<AutofillIdentityResult>>(null);
-    const loading = state === null;
+    const loading = useMemo(() => state === null, [state]);
 
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIMIT_AUTOFILL });
 

@@ -1,5 +1,4 @@
-import type { FC } from 'react';
-import { useCallback, useEffect, useMemo } from 'react';
+import { type FC, useCallback, useEffect, useMemo } from 'react';
 
 import {
     useIFrameContext,
@@ -9,7 +8,7 @@ import { ListItem } from 'proton-pass-extension/app/content/injections/apps/comp
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
 import { DropdownHeader } from 'proton-pass-extension/app/content/injections/apps/dropdown/components/DropdownHeader';
 import { DropdownItemsList } from 'proton-pass-extension/app/content/injections/apps/dropdown/components/DropdownItemsList';
-import type { DropdownAction, DropdownActions } from 'proton-pass-extension/app/content/types';
+import type { DropdownAction, DropdownActions, IFrameMessageWithSender } from 'proton-pass-extension/app/content/types';
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
 
@@ -24,41 +23,57 @@ import { WorkerMessageType } from '@proton/pass/types';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { type AutofillLoginResult } from '@proton/pass/types/worker/autofill';
-import { truthy } from '@proton/pass/utils/fp/predicates';
+import { partOf, truthy } from '@proton/pass/utils/fp/predicates';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 type Props = Extract<DropdownActions, { action: DropdownAction.AUTOFILL_LOGIN }>;
 
-export const AutofillLogin: FC<Props> = ({ domain }) => {
+export const AutofillLogin: FC<Props> = ({ domain, startsWith }) => {
     const { settings, visible, close, forwardMessage } = useIFrameContext();
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIMIT_AUTOFILL });
 
     const [state, setState] = useMountedState<MaybeNull<AutofillLoginResult>>(null);
-    const loading = state === null;
+    const [filter, setFilterState] = useMountedState<string>(startsWith);
+    const loading = useMemo(() => state === null, [state]);
 
-    const resolveCandidates = useCallback(() => {
-        sendMessage
-            .on(
-                contentScriptMessage({
-                    type: WorkerMessageType.AUTOFILL_LOGIN_QUERY,
-                    payload: {},
-                }),
-                (res) => {
-                    if (res.type === 'success') setState(res);
-                    else setState({ items: [], needsUpgrade: false });
-                }
-            )
-            .catch(noop);
-    }, []);
+    const filteredItems = useMemo(() => {
+        if (!state?.items) return [];
+        if (!filter) return state.items;
+        return state.items.filter((item) => partOf(item.name, item.userIdentifier)(filter));
+    }, [state?.items, filter]);
 
-    useEffect(() => {
-        if (visible) resolveCandidates();
-        else setState(null);
-    }, [visible]);
+    const resolveCandidates = useCallback(
+        () =>
+            sendMessage
+                .on(
+                    contentScriptMessage({
+                        type: WorkerMessageType.AUTOFILL_LOGIN_QUERY,
+                        payload: {},
+                    }),
+                    (res) => {
+                        if (res.type === 'success') setState(res);
+                        else setState({ items: [], needsUpgrade: false });
+                    }
+                )
+                .catch(noop),
+        []
+    );
+
+    const setFilter = useCallback(
+        ({ payload }: IFrameMessageWithSender<IFramePortMessageType.AUTOFILL_FILTER>) =>
+            setFilterState(payload.startsWith),
+        []
+    );
 
     useRegisterMessageHandler(WorkerMessageType.AUTOFILL_SYNC, resolveCandidates);
+    useRegisterMessageHandler(IFramePortMessageType.AUTOFILL_FILTER, setFilter);
     useTelemetryEvent(TelemetryEventName.AutofillDisplay, {}, { location: 'source' })([visible]);
+
+    useEffect(() => {
+        if (visible) void resolveCandidates();
+        else setState(null);
+    }, [visible]);
 
     const dropdownItems = useMemo(
         () =>
@@ -75,7 +90,7 @@ export const AutofillLogin: FC<Props> = ({ domain }) => {
                               autogrow
                           />
                       ),
-                      ...state.items.map(({ shareId, itemId, userIdentifier, name, url }) => (
+                      ...filteredItems.map(({ shareId, itemId, userIdentifier, name, url }) => (
                           <ListItem
                               key={itemId}
                               title={name}
@@ -101,7 +116,7 @@ export const AutofillLogin: FC<Props> = ({ domain }) => {
                       )),
                   ].filter(truthy)
                 : [],
-        [state, forwardMessage]
+        [state, filter, forwardMessage]
     );
 
     if (loading) return <CircleLoader className="absolute inset-center m-auto" />;
