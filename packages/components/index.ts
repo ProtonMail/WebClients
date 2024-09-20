@@ -124,6 +124,7 @@ export { default as LoaderIcon } from './components/loader/LoaderIcon';
 export { default as MiniCalendar } from './components/miniCalendar/MiniCalendar';
 export { default as LocalizedMiniCalendar } from './components/miniCalendar/LocalizedMiniCalendar';
 export { default as TextLoader } from './components/loader/TextLoader';
+export { default as SettingsMaintenanceLayoutWrapper } from './components/maintenanceLayout/SettingsMaintenanceLayoutWrapper';
 export { default as ConfirmModal } from './components/modal/Confirm';
 export type { ConfirmModalProps } from './components/modal/Confirm';
 export { default as DialogModal } from './components/modal/Dialog';
