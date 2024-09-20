@@ -23,7 +23,12 @@ import { BEFOREINPUT_EVENT_COMMAND } from '../../Commands/Events'
 import { type EditorRequiresClientMethods } from '@proton/docs-shared'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { useMarkNodesContext } from '../MarkNodesContext'
-import { ACCEPT_SUGGESTION_COMMAND, REJECT_SUGGESTION_COMMAND, SUGGESTION_MODE_KEYDOWN_COMMAND } from './Commands'
+import {
+  ACCEPT_SUGGESTION_COMMAND,
+  REJECT_SUGGESTION_COMMAND,
+  SUGGESTION_MODE_KEYDOWN_COMMAND,
+  TOGGLE_SUGGESTION_MODE_COMMAND,
+} from './Commands'
 import debounce from '@proton/utils/debounce'
 import { UNORDERED_LIST, ORDERED_LIST, CHECK_LIST } from '@lexical/markdown'
 import { $acceptSuggestion } from './acceptSuggestion'
@@ -32,15 +37,20 @@ import { $handleBeforeInputEvent } from './handleBeforeInputEvent'
 import { $formatTextAsSuggestion } from './formatTextAsSuggestion'
 import { Logger } from '@proton/utils/logs'
 import { $selectionInsertClipboardNodes } from './selectionInsertClipboardNodes'
+import type { DocumentInteractionMode } from '../../DocumentInteractionMode'
+import { KEYBOARD_SHORTCUT_COMMAND } from '../KeyboardShortcuts/Command'
+import { getShortcutFromKeyboardEvent } from '../KeyboardShortcuts/Utils'
 
 const LIST_TRANSFORMERS = [UNORDERED_LIST, ORDERED_LIST, CHECK_LIST]
 
 export function SuggestionModePlugin({
   isSuggestionMode,
   controller,
+  onInteractionModeChange,
 }: {
   isSuggestionMode: boolean
   controller: EditorRequiresClientMethods
+  onInteractionModeChange: (mode: DocumentInteractionMode) => void
 }) {
   const [editor] = useLexicalComposerContext()
 
@@ -162,6 +172,29 @@ export function SuggestionModePlugin({
 
     return mergeRegister(
       editor.registerCommand(
+        KEYBOARD_SHORTCUT_COMMAND,
+        ({ shortcut }) => {
+          if (shortcut === 'SUGGESTION_MODE_SHORTCUT') {
+            editor.dispatchCommand(TOGGLE_SUGGESTION_MODE_COMMAND, undefined)
+            return true
+          }
+          return false
+        },
+        COMMAND_PRIORITY_CRITICAL,
+      ),
+      editor.registerCommand(
+        TOGGLE_SUGGESTION_MODE_COMMAND,
+        () => {
+          if (isSuggestionMode) {
+            onInteractionModeChange('edit')
+            return true
+          }
+          onInteractionModeChange('suggest')
+          return true
+        },
+        COMMAND_PRIORITY_CRITICAL,
+      ),
+      editor.registerCommand(
         ACCEPT_SUGGESTION_COMMAND,
         (suggestionID) => {
           if (!editor.isEditable()) {
@@ -233,7 +266,7 @@ export function SuggestionModePlugin({
         }
       }),
     )
-  }, [controller, editor, suggestionModeLogger])
+  }, [controller, editor, isSuggestionMode, onInteractionModeChange, suggestionModeLogger])
 
   useEffect(() => {
     if (!isSuggestionMode) {
@@ -291,6 +324,12 @@ export function SuggestionModePlugin({
       editor.registerCommand(
         SUGGESTION_MODE_KEYDOWN_COMMAND,
         (event) => {
+          const shortcut = getShortcutFromKeyboardEvent(event)
+          if (shortcut === 'SUGGESTION_MODE_SHORTCUT') {
+            editor.dispatchCommand(TOGGLE_SUGGESTION_MODE_COMMAND, undefined)
+            return true
+          }
+
           const { key, shiftKey, ctrlKey, metaKey } = event
           const controlOrMeta = IS_APPLE ? metaKey : ctrlKey
           const lowerCaseKey = key.toLowerCase()

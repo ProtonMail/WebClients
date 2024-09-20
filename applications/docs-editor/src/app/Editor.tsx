@@ -200,7 +200,11 @@ export function Editor({
         {showTreeView && <TreeViewPlugin />}
         <MarkNodesProvider>
           <CommentPlugin controller={clientInvoker} username={username} />
-          <SuggestionModePlugin isSuggestionMode={isSuggestionMode} controller={clientInvoker} />
+          <SuggestionModePlugin
+            isSuggestionMode={isSuggestionMode}
+            controller={clientInvoker}
+            onInteractionModeChange={onInteractionModeChange}
+          />
         </MarkNodesProvider>
       </SafeLexicalComposer>
     </CollaborationContext.Provider>

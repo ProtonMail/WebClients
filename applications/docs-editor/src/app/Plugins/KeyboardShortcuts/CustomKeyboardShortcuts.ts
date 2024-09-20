@@ -182,4 +182,11 @@ export const CustomKeyboardShortcuts = Object.freeze([
     code: 'KeyK',
     displayKey: 'k',
   },
+  {
+    id: 'SUGGESTION_MODE_SHORTCUT',
+    hasModifier: true,
+    shiftKey: true,
+    code: 'KeyX',
+    displayKey: 'x',
+  },
 ] as const) satisfies readonly KeyboardShortcutMatcher[]

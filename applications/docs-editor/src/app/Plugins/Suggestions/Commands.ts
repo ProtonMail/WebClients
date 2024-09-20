@@ -6,3 +6,4 @@ export const REJECT_SUGGESTION_COMMAND: LexicalCommand<string> = createCommand('
 export const SUGGESTION_MODE_KEYDOWN_COMMAND: LexicalCommand<KeyboardEvent> = createCommand(
   'SUGGESTION_MODE_KEYDOWN_COMMAND',
 )
+export const TOGGLE_SUGGESTION_MODE_COMMAND: LexicalCommand<undefined> = createCommand('TOGGLE_SUGGESTION_MODE_COMMAND')
