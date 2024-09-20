@@ -36,3 +36,25 @@ export enum MethodStorage {
     INTERNAL = 0,
     EXTERNAL = 1,
 }
+
+export enum INVOICE_TYPE {
+    OTHER = 0,
+    SUBSCRIPTION = 1,
+    CANCELLATION = 2,
+    CREDIT = 3,
+    DONATION = 4,
+    CHARGEBACK = 5,
+    RENEWAL = 6,
+    REFUND = 7,
+    MODIFICATION = 8,
+    ADDITION = 9,
+    CURRENCY_CONVERSION = 10,
+}
+
+export enum INVOICE_STATE {
+    UNPAID = 0,
+    PAID = 1,
+    VOID = 2,
+    BILLED = 3,
+    WRITEOFF = 4,
+}

@@ -1,9 +1,8 @@
 import { render, screen } from '@testing-library/react';
 
-import { INVOICE_STATE, INVOICE_TYPE } from '@proton/shared/lib/constants';
+import { INVOICE_STATE, INVOICE_TYPE, type Invoice } from '@proton/payments';
 
 import InvoiceType from './InvoiceType';
-import type { Invoice } from './interface';
 
 it('should render', () => {
     const invoice: Invoice = {

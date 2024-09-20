@@ -7,6 +7,7 @@ import { useChargebeeContext } from '@proton/components/payments/client-extensio
 import type { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments';
+import type { Invoice } from '@proton/payments';
 import { checkInvoice, getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getHasSomeVpnPlan } from '@proton/shared/lib/helpers/subscription';
@@ -19,7 +20,6 @@ import { useApiResult, useEventManager, useNotifications, useSubscription, useUs
 import PaymentWrapper from '../payments/PaymentWrapper';
 import StyledPayPalButton from '../payments/StyledPayPalButton';
 import { getInvoicePaymentsVersion } from './helpers';
-import type { Invoice } from './interface';
 
 interface CheckInvoiceResponse {
     Code: number;

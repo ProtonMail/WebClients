@@ -16,8 +16,14 @@ import type {
     WrappedCryptoPayment,
     WrappedPaypalPayment,
 } from '@proton/payments';
-import { PAYMENT_METHOD_TYPES, isTokenPaymentMethod, isV5PaymentToken } from '@proton/payments';
-import type { INVOICE_OWNER, INVOICE_STATE, INVOICE_TYPE } from '@proton/shared/lib/constants';
+import {
+    type INVOICE_STATE,
+    type INVOICE_TYPE,
+    PAYMENT_METHOD_TYPES,
+    isTokenPaymentMethod,
+    isV5PaymentToken,
+} from '@proton/payments';
+import type { INVOICE_OWNER } from '@proton/shared/lib/constants';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import type { ProductParam } from '../apps/product';
