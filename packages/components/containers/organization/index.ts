@@ -6,6 +6,7 @@ export { default as OrganizationTwoFAHeader } from './OrganizationTwoFAHeader';
 export { default as OrganizationTwoFAEnforcementSection } from './OrganizationTwoFAEnforcementSection';
 export { default as OrganizationTwoFARemindersSection } from './OrganizationTwoFARemindersSection';
 export { default as OrganizationGroupsManagementSection } from './groups/OrganizationGroupsManagementSection';
+export { default as AuthenticationLogs } from './AuthenticationLogs';
 
 export * from './sso';
 export * from './logoUpload';

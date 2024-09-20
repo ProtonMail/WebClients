@@ -21,6 +21,7 @@ interface Props {
     subscription?: Subscription;
     canDisplayB2BLogsVPN: boolean;
     isUserGroupsFeatureEnabled: boolean;
+    isB2BAuthLogsEnabled: boolean;
 }
 
 const groupsCompatiblePlans = new Set([
@@ -38,6 +39,7 @@ export const getOrganizationAppRoutes = ({
     subscription,
     canDisplayB2BLogsVPN,
     isUserGroupsFeatureEnabled,
+    isB2BAuthLogsEnabled,
 }: Props) => {
     const isAdmin = user.isAdmin && !user.isSubUser;
 
@@ -224,6 +226,11 @@ export const getOrganizationAppRoutes = ({
                     {
                         text: c('Title').t`Two-factor authentication enforcement`,
                         id: 'two-factor-authentication-enforcement',
+                    },
+                    {
+                        text: c('Title').t`Security events`,
+                        id: 'security-events',
+                        available: isB2BAuthLogsEnabled,
                     },
                 ],
             },
