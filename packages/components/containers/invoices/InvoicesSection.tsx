@@ -4,9 +4,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import { INVOICE_STATE, type Invoice } from '@proton/payments';
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { InvoiceDocument, getInvoice } from '@proton/shared/lib/api/payments';
-import { INVOICE_OWNER, INVOICE_STATE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { INVOICE_OWNER, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
@@ -33,7 +34,6 @@ import InvoiceType from './InvoiceType';
 import type { InvoicesPreviewControls } from './InvoicesPreview';
 import InvoicesPreview from './InvoicesPreview';
 import { getInvoicePaymentsVersion } from './helpers';
-import type { Invoice } from './interface';
 import useInvoices, { ELEMENTS_PER_PAGE } from './useInvoices';
 
 type InvoicesHook = ReturnType<typeof useInvoices>;

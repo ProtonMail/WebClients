@@ -18,7 +18,14 @@ import type { PaymentProcessorType } from '@proton/components/payments/react-ext
 import type { CheckSubscriptionData, PaymentsVersion } from '@proton/shared/lib/api/payments';
 import type { Currency, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
-import type { Autopay, MethodStorage, PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from './constants';
+import type {
+    Autopay,
+    INVOICE_STATE,
+    INVOICE_TYPE,
+    MethodStorage,
+    PAYMENT_METHOD_TYPES,
+    PAYMENT_TOKEN_STATUS,
+} from './constants';
 
 export interface CreateCardDetailsBackend {
     Number: string;
@@ -358,4 +365,24 @@ export interface CryptoPayment {
 
 export interface WrappedCryptoPayment {
     Payment: CryptoPayment;
+}
+
+export interface Invoice {
+    ID: string;
+    Type: INVOICE_TYPE;
+    State: INVOICE_STATE;
+    Currency: Currency;
+    AmountDue: number;
+    AmountCharged: number;
+    CreateTime: number;
+    ModifyTime: number;
+    AttemptTime: number;
+    Attempts: number;
+    IsExternal: boolean;
+}
+
+export interface InvoiceResponse {
+    Code: number;
+    Invoices: Invoice[];
+    Total: number;
 }
