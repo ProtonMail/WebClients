@@ -108,6 +108,7 @@ import type { WebCoreVpnSingleSignupStep3CompleteTotal } from './types/web_core_
 import type { WebCoreVpnSingleSignupStep4OrgSetupTotal } from './types/web_core_vpn_single_signup_step4_orgSetup_total_v1.schema';
 import type { WebCoreVpnSingleSignupStep4Setup2Total } from './types/web_core_vpn_single_signup_step4_setup_2_total_v1.schema';
 import type { WebCoreVpnSingleSignupStep4SetupTotal } from './types/web_core_vpn_single_signup_step4_setup_total_v1.schema';
+import type { HttpsProtonMeWebCoreWebvitalsTotalV1SchemaJson } from './types/web_core_webvitals_total_v1.schema';
 import type { WebCryptoKeyTransparencyErrorsTotal } from './types/web_crypto_keytransparency_errors_total_v1.schema';
 import type { HttpsProtonMeWebDrivePublicShareLoadErrorTotalV1SchemaJson } from './types/web_drive_public_share_load_error_total_v1.schema';
 import type { HttpsProtonMeWebDrivePublicShareLoadSuccessTotalV1SchemaJson } from './types/web_drive_public_share_load_success_total_v1.schema';
@@ -312,6 +313,8 @@ class Metrics extends MetricsBase {
     public core_vpn_single_signup_step4_setup_2_total: Counter<WebCoreVpnSingleSignupStep4Setup2Total>;
 
     public core_vpn_single_signup_step4_setup_total: Counter<WebCoreVpnSingleSignupStep4SetupTotal>;
+
+    public core_webvitals_total: Counter<HttpsProtonMeWebCoreWebvitalsTotalV1SchemaJson>;
 
     public crypto_keytransparency_errors_total: Counter<WebCryptoKeyTransparencyErrorsTotal>;
 
@@ -851,6 +854,11 @@ class Metrics extends MetricsBase {
 
         this.core_vpn_single_signup_step4_setup_total = new Counter<WebCoreVpnSingleSignupStep4SetupTotal>(
             { name: 'web_core_vpn_single_signup_step4_setup_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_webvitals_total = new Counter<HttpsProtonMeWebCoreWebvitalsTotalV1SchemaJson>(
+            { name: 'web_core_webvitals_total', version: 1 },
             this.requestService
         );
 
