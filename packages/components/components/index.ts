@@ -9,7 +9,6 @@ export * from './link';
 export * from './logo';
 export * from './newFeatureOnboarding';
 export * from './newFeatureTag';
-export * from './orderable';
 export * from './orderableTable';
 export * from './pagination';
 export * from './popper';

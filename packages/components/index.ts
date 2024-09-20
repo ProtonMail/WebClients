@@ -148,6 +148,9 @@ export {
 export type { ModalPropsWithData, ModalStateProps, ModalStateReturnObj } from './components/modalTwo/useModalState';
 export { useModalTwo, useModalTwoPromise, useModalTwoStatic } from './components/modalTwo/useModalTwo';
 export { default as Option } from './components/option/Option';
+export { default as OrderableContainer } from './components/orderable/OrderableContainer';
+export { default as OrderableElement } from './components/orderable/OrderableElement';
+export { default as OrderableHandle } from './components/orderable/OrderableHandle';
 export { default as Price } from './components/price/Price';
 export { default as CircularProgress } from './components/progress/CircularProgress';
 export { default as DynamicProgress } from './components/progress/DynamicProgress';
