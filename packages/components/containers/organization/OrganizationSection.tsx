@@ -30,6 +30,7 @@ import { createPreAuthKTVerifier } from '@proton/shared/lib/keyTransparency';
 import { handleSetupAddressKeys } from '@proton/shared/lib/keys';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import type { Credentials } from '@proton/shared/lib/srp';
+import useFlag from '@proton/unleash/useFlag';
 
 import {
     useApi,
@@ -78,6 +79,8 @@ const OrganizationSection = ({ app, organization }: Props) => {
     const [editOrganizationNameProps, setEditOrganizationNameModal, renderEditOrganizationNameModal] = useModalState();
     const [newDomainModalProps, setNewDomainModalOpen, renderNewDomain] = useModalState();
 
+    const showGatewaysForBundlePlan = useFlag('ShowGatewaysForBundlePlan');
+
     const { createNotification } = useNotifications();
     const isPartOfFamily = getOrganizationDenomination(organization) === 'familyGroup';
 
@@ -96,7 +99,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
         return <Loader />;
     }
 
-    const hasMemberCapablePlan = getHasMemberCapablePlan(organization, subscription);
+    const hasMemberCapablePlan = getHasMemberCapablePlan(organization, subscription, { showGatewaysForBundlePlan });
 
     return (
         <>

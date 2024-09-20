@@ -428,6 +428,7 @@ export const getUserInfo = async ({
     signupParameters,
     upsellPlanCard,
     toApp,
+    showGatewaysForBundlePlan,
 }: {
     api: Api;
     paymentsApi: PaymentsApi;
@@ -440,6 +441,7 @@ export const getUserInfo = async ({
     planParameters: PlanParameters;
     signupParameters: SignupParameters2;
     toApp: APP_NAMES;
+    showGatewaysForBundlePlan: boolean;
 }): Promise<{
     paymentMethods: SavedPaymentMethod[];
     subscription: Subscription | undefined;
@@ -535,6 +537,7 @@ export const getUserInfo = async ({
                     organization,
                     plans,
                     user,
+                    showGatewaysForBundlePlan,
                 }),
             });
         }
