@@ -21,7 +21,7 @@ interface Props {
     modalProps: ModalProps;
 }
 
-const TopNabarOfferSubscriptionReminder = ({
+const TopNavbarOfferSubscriptionReminder = ({
     currency,
     app,
     onChangeCurrency,
@@ -72,4 +72,4 @@ const TopNabarOfferSubscriptionReminder = ({
     );
 };
 
-export default TopNabarOfferSubscriptionReminder;
+export default TopNavbarOfferSubscriptionReminder;

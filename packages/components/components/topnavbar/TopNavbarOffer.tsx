@@ -14,7 +14,7 @@ import type { OfferConfig } from '../../containers/offers/interface';
 import { subscriptionModalClassName } from '../../containers/payments/subscription/constants';
 import { useActiveBreakpoint, useSubscription, useUser, useWelcomeFlags } from '../../hooks';
 import { PromotionButton } from '../button/PromotionButton';
-import TopNabarOfferSubscriptionReminder from './TopNavBarOfferSubscriptionReminder';
+import TopNavbarOfferSubscriptionReminder from './TopNavBarOfferSubscriptionReminder';
 import TopNavbarListItem from './TopNavbarListItem';
 
 interface Props {
@@ -116,7 +116,7 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: P
     // The subscription reminder spotlight is displayed instead of the regular offer modal
     if (offerConfig.ID === 'subscription-reminder') {
         return (
-            <TopNabarOfferSubscriptionReminder
+            <TopNavbarOfferSubscriptionReminder
                 app={app}
                 currency={currency}
                 onChangeCurrency={onChangeCurrency}
