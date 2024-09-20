@@ -28,7 +28,7 @@ import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import { useAddresses, useApi, useConfig, useEventManager, useGetCalendarUserSettings, useUser } from '../../../hooks';
-import { useCalendarModelEventManager } from '../../eventManager/calendar';
+import { useCalendarModelEventManager } from '../../eventManager/calendar/CalendarModelEventManagerProvider';
 import AttachingModalContent from './AttachingModalContent';
 import ImportInvitationModalContent from './ImportInvitationModalContent';
 import ImportSummaryModalContent from './ImportSummaryModalContent';

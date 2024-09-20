@@ -11,7 +11,6 @@ export * from './drawer';
 export * from './drive';
 export * from './emailPrivacy';
 export * from './error';
-export * from './eventManager';
 export * from './features';
 export * from './password';
 export * from './payments';
