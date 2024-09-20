@@ -261,6 +261,9 @@ const MainContainer: FunctionComponent = () => {
                                     </SubscriptionModalProvider>
                                 </Route>
                             )}
+                            <Route path="/account">
+                                <Redirect to={vpnRoutes.account.to} />
+                            </Route>
                             <Route path={vpnRoutes.account.to}>
                                 <PrivateMainSettingsArea config={vpnRoutes.account}>
                                     <>

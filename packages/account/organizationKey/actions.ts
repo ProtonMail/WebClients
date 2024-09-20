@@ -15,7 +15,7 @@ import {
     uploadOrganizationKeySignature,
 } from '@proton/shared/lib/api/organization';
 import { KEYGEN_CONFIGS, KEYGEN_TYPES, MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
-import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
+import { getIsAddressConfirmed, getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type {
     Address,
@@ -988,6 +988,10 @@ export const migrateOrganizationKeyPasswordlessPrivateAdmin = (): ThunkAction<
             }
         }
     };
+};
+
+export const getIsEligibleOrganizationIdentityAddress = (address: Address) => {
+    return getIsAddressEnabled(address) && getIsAddressConfirmed(address);
 };
 
 export const changeOrganizationSignature = ({
