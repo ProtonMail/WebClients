@@ -22,6 +22,7 @@ import type {
     CheckWithAutomaticOptions,
     ExistingPaymentMethod,
     ExtendedTokenPayment,
+    Invoice,
     PayPalDetails,
     PaymentMethodFlows,
     PaymentMethodStatus,
@@ -336,4 +337,18 @@ export function isV5PaymentToken(data: any): data is V5PaymentToken {
 }
 export function isCheckWithAutomaticOptions(data: any): data is CheckWithAutomaticOptions {
     return !!data && !!data.forcedVersion && !!data.reason;
+}
+
+const CREDIT_NOTE_PREFIX = 'CN';
+export function isCreditNoteInvoice(invoice: Pick<Invoice, 'ID'>): boolean {
+    return invoice.ID.startsWith(CREDIT_NOTE_PREFIX);
+}
+
+const CURRENCY_CONVERSION_PREFIX = 'CC';
+export function isCurrencyConversionInvoice(invoice: Pick<Invoice, 'ID'>): boolean {
+    return invoice.ID.startsWith(CURRENCY_CONVERSION_PREFIX);
+}
+
+export function isRegularInvoice(invoice: Pick<Invoice, 'ID'>): boolean {
+    return !isCreditNoteInvoice(invoice) && !isCurrencyConversionInvoice(invoice);
 }
