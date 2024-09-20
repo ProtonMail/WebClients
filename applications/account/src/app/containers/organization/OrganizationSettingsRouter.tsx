@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 import {
+    AuthenticationLogs,
     CatchAllSection,
     DomainsSection,
     GatewaysSection,
@@ -120,6 +121,7 @@ const OrganizationSettingsRouter = ({
                         <OrganizationTwoFAHeader organization={organization} />
                         <OrganizationTwoFARemindersSection organization={organization} />
                         <OrganizationTwoFAEnforcementSection organization={organization} />
+                        <AuthenticationLogs organization={organization} />
                     </PrivateMainSettingsArea>
                 </Route>
             )}

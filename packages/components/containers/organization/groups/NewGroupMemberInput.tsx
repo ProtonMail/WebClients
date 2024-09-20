@@ -11,7 +11,7 @@ import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
 import type { NewGroupMember } from './EditGroup';
 
-const convertEnhancedMembersToContactEmails = (members: EnhancedMember[]): ContactEmail[] => {
+export const convertEnhancedMembersToContactEmails = (members: EnhancedMember[]): ContactEmail[] => {
     return members.flatMap(
         (member) =>
             member.Addresses?.map((address) => ({
@@ -28,7 +28,7 @@ const convertEnhancedMembersToContactEmails = (members: EnhancedMember[]): Conta
     );
 };
 
-const convertGroupMemberToRecipient = (groupMembers: GroupMember[]): Recipient[] => {
+export const convertGroupMemberToRecipient = (groupMembers: GroupMember[]): Recipient[] => {
     return groupMembers.map((member) => {
         return {
             Name: member.Email,
