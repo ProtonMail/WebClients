@@ -53,19 +53,21 @@ export const switchPlan = ({
     organization,
     plans,
     user,
+    showGatewaysForBundlePlan,
 }: {
     planIDs: PlanIDs;
     planID?: PLANS | ADDON_NAMES;
     organization?: Organization;
     plans: Plan[];
     user: User | undefined;
+    showGatewaysForBundlePlan: boolean;
 }): PlanIDs => {
     if (planID === undefined) {
         return {};
     }
 
     const newPlanIDs = { [planID]: 1 };
-    const supportedAddons = getSupportedAddons(newPlanIDs);
+    const supportedAddons = getSupportedAddons(newPlanIDs, { showGatewaysForBundlePlan });
 
     // Transfer addons
     (Object.keys(supportedAddons) as ADDON_NAMES[]).forEach((addon) => {
@@ -192,8 +194,11 @@ export const setQuantity = (planIDs: PlanIDs, planID: PLANS | ADDON_NAMES, newQu
     };
 };
 
-export const supportB2BAddons = (planIDs: PlanIDs) => {
-    const supportedAddons = getSupportedB2BAddons(planIDs);
+export const supportB2BAddons = (
+    planIDs: PlanIDs,
+    { showGatewaysForBundlePlan }: { showGatewaysForBundlePlan: boolean }
+) => {
+    const supportedAddons = getSupportedB2BAddons(planIDs, { showGatewaysForBundlePlan });
     return !!Object.keys(supportedAddons).length;
 };
 
