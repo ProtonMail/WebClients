@@ -13,7 +13,7 @@ export enum DropdownAction {
 
 export type DropdownActions =
     | { action: DropdownAction.AUTOFILL_IDENTITY; domain: string }
-    | { action: DropdownAction.AUTOFILL_LOGIN; domain: string }
+    | { action: DropdownAction.AUTOFILL_LOGIN; domain: string; startsWith: string }
     | { action: DropdownAction.AUTOSUGGEST_ALIAS; domain: string; prefix: string }
     | ({ action: DropdownAction.AUTOSUGGEST_PASSWORD; domain: string } & PasswordAutosuggestOptions);
 
