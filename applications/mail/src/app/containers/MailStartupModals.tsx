@@ -56,7 +56,11 @@ const MailStartupModals = () => {
         if (openReminderModal) {
             openModal(setReminderModal);
         } else if (onboardingOpen) {
-            openModal(setOnboardingModal);
+            if (isElectronMail) {
+                setWelcomeFlagsDone();
+            } else {
+                openModal(setOnboardingModal);
+            }
         } else if (shouldOpenReferralModal.open) {
             onceRef.current = true;
             document.dispatchEvent(new CustomEvent(OPEN_OFFER_MODAL_EVENT));
