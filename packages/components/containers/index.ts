@@ -8,7 +8,6 @@ export * from './challenge';
 export * from './compatibilityCheck';
 export * from './config';
 export * from './contacts';
-export * from './credentialLeak';
 export * from './desktop';
 export * from './domains';
 export * from './drawer';

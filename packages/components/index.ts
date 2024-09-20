@@ -255,6 +255,8 @@ export { VPNEvents } from './containers/b2bDashboard/VPN/VPNEvents';
 export { PromotionBanner } from './containers/banner/PromotionBanner';
 export { ProtonMailBridgeSection } from './containers/bridge/ProtonMailBridgeSection';
 export { CacheProvider } from './containers/cache/Provider';
+export { default as CredentialLeakSection } from './containers/credentialLeak/CredentialLeakSection';
+export type { FetchedBreaches, SampleBreach } from './containers/credentialLeak/models';
 export { default as FilePreview, FilePreviewContent } from './containers/filePreview/FilePreview';
 export { default as ImagePreview } from './containers/filePreview/ImagePreview';
 export { default as NavigationControl } from './containers/filePreview/NavigationControl';
