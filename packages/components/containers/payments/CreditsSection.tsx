@@ -5,6 +5,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import Price from '@proton/components/components/price/Price';
 import { isSplittedUser } from '@proton/payments';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -13,8 +15,6 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import { BillingPlatform, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
-import { useModalTwoStatic } from '../../components';
-import { useModalState } from '../../components/modalTwo';
 import { usePaymentStatus, useSubscription, useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 import { openLinkInBrowser } from '../desktop/openExternalLink';

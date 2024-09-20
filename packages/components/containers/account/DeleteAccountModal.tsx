@@ -7,6 +7,12 @@ import { Button, Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import Form from '@proton/components/components/form/Form';
 import Checkbox from '@proton/components/components/input/Checkbox';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { useLoading } from '@proton/hooks';
@@ -21,18 +27,7 @@ import { getOrganizationDenomination } from '@proton/shared/lib/organization/hel
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import type { ModalProps } from '../../components';
-import {
-    ErrorButton,
-    InputFieldTwo,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    TextAreaTwo,
-    useFormErrors,
-    useModalState,
-} from '../../components';
+import { ErrorButton, InputFieldTwo, TextAreaTwo, useFormErrors } from '../../components';
 import { AuthModal } from '../../containers';
 import {
     useApi,

@@ -5,6 +5,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { APPS } from '@proton/shared/lib/constants';
 import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
@@ -14,8 +19,6 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
-import type { ModalProps } from '../../../components/modalTwo';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components/modalTwo';
 import {
     useAddresses,
     useConfig,

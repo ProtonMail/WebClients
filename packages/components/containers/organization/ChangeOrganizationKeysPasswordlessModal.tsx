@@ -5,12 +5,16 @@ import { c } from 'ttag';
 import type { OrganizationKeyRotationPayload } from '@proton/account';
 import { getKeyRotationPayload, rotatePasswordlessOrganizationKeys } from '@proton/account';
 import { Button, CircleLoader } from '@proton/atoms';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 
-import type { ModalProps } from '../../components';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useModalState } from '../../components';
 import { useApi, useErrorHandler, useEventManager, useNotifications } from '../../hooks';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import AuthModal from '../password/AuthModal';

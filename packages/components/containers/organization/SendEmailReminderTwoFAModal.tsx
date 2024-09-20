@@ -3,6 +3,11 @@ import { c } from 'ttag';
 import { Avatar, Button } from '@proton/atoms';
 import Badge from '@proton/components/components/badge/Badge';
 import Form from '@proton/components/components/form/Form';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Modal from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { useLoading } from '@proton/hooks';
 import { sendEmailReminderTwoFA } from '@proton/shared/lib/api/organization';
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
@@ -10,14 +15,7 @@ import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { Address, Member, PartialMemberAddress } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import type { ModalProps } from '../../components';
-import {
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-    useFormErrors,
-} from '../../components';
+import { useFormErrors } from '../../components';
 import { useApi, useEventManager, useNotifications } from '../../hooks';
 
 interface Props extends ModalProps {

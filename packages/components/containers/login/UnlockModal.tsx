@@ -4,21 +4,18 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Modal from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryUnlock } from '@proton/shared/lib/api/user';
 import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
-import type { ModalProps } from '../../components';
-import {
-    InputFieldTwo,
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-    PasswordInputTwo,
-} from '../../components';
+import { InputFieldTwo, PasswordInputTwo } from '../../components';
 import { useApi, useErrorHandler } from '../../hooks';
 
 interface Props extends Omit<ModalProps<typeof Form>, 'as' | 'onSubmit' | 'size' | 'onSuccess'> {

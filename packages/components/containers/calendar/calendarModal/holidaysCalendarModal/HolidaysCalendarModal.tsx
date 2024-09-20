@@ -6,6 +6,10 @@ import { Button } from '@proton/atoms';
 import { useGetHolidaysDirectory } from '@proton/calendar/holidaysDirectory/hooks';
 import Form from '@proton/components/components/form/Form';
 import Loader from '@proton/components/components/loader/Loader';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
 import type {
     CalendarBootstrap,
@@ -13,8 +17,6 @@ import type {
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
 
-import type { ModalProps } from '../../../../components';
-import { ModalTwo as Modal, ModalTwoContent, ModalTwoFooter } from '../../../../components';
 import { useGetCalendarBootstrap } from '../../../../hooks';
 import GenericError from '../../../error/GenericError';
 import HolidaysCalendarModalWithDirectory from './HolidaysCalendarModalWithDirectory';
@@ -73,7 +75,7 @@ const HolidaysCalendarModal = ({
 
     if (error) {
         return (
-            <Modal as={Form} fullscreenOnMobile size="large" {...rest}>
+            <ModalTwo as={Form} fullscreenOnMobile size="large" {...rest}>
                 <ModalTwoContent className="calendar-modal-content">
                     <GenericError />
                 </ModalTwoContent>
@@ -82,15 +84,15 @@ const HolidaysCalendarModal = ({
                         {c('Action').t`Close`}
                     </Button>
                 </ModalTwoFooter>
-            </Modal>
+            </ModalTwo>
         );
     }
 
     if (!directory || (calendar && !bootstrap)) {
         return (
-            <Modal as={Form} fullscreenOnMobile size="large" {...rest}>
+            <ModalTwo as={Form} fullscreenOnMobile size="large" {...rest}>
                 <Loader />
-            </Modal>
+            </ModalTwo>
         );
     }
 

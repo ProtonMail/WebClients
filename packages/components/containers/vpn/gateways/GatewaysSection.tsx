@@ -4,6 +4,7 @@ import { c, msgid } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
@@ -16,7 +17,6 @@ import gatewaySvg from '@proton/styles/assets/img/illustrations/gateway.svg';
 import gatewaysEmptyStateAdminsSvg from '@proton/styles/assets/img/illustrations/gateways-empty-state-admins.svg';
 import gatewaysEmptyStateUsersSvg from '@proton/styles/assets/img/illustrations/gateways-empty-state-users.svg';
 
-import { useModalTwoStatic } from '../../../components';
 import SettingsSectionWide from '../../../containers/account/SettingsSectionWide';
 import { EmptyViewContainer } from '../../../containers/app';
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '../../../containers/payments';

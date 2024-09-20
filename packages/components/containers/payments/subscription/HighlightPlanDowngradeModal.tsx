@@ -3,6 +3,11 @@ import { c, msgid } from 'ttag';
 import { Button, Card } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import Icon from '@proton/components/components/icon/Icon';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Modal from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { BRAND_NAME, type FreeSubscription, PLANS } from '@proton/shared/lib/constants';
@@ -11,13 +16,6 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { type FreePlanDefault, type PlansMap, type Subscription, type UserModel } from '@proton/shared/lib/interfaces';
 import { getSpace } from '@proton/shared/lib/user/storage';
 
-import type { ModalProps } from '../../../components';
-import {
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-} from '../../../components';
 import type { ShortPlan } from '../features/interface';
 import { getFreePassPlan, getFreePlan } from '../features/plan';
 import SubscriptionCancelPlan from './SubscriptionCancelPlan';

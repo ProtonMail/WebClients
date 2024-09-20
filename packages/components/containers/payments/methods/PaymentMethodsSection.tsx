@@ -4,6 +4,7 @@ import type { ButtonProps } from '@proton/atoms';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useChargebeeEnabledCache } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
 import useLoading from '@proton/hooks/useLoading';
@@ -12,7 +13,6 @@ import { APPS, EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
-import { useModalState } from '../../../components';
 import { useConfig, useMozillaCheck, usePaymentMethods, useSubscription, useUser } from '../../../hooks';
 import { SettingsParagraph, SettingsSection } from '../../account';
 import MozillaInfoPanel from '../../account/MozillaInfoPanel';

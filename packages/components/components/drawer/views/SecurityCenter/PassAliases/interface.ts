@@ -1,4 +1,4 @@
-import type { ModalStateReturnObj } from '@proton/components/components';
+import type { ModalStateReturnObj } from '@proton/components/components/modalTwo/useModalState';
 import type { PassBridgeAliasItem } from '@proton/pass/lib/bridge/types';
 import type { AliasOptions, Share, ShareType } from '@proton/pass/types';
 

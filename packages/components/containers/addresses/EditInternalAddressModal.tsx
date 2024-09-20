@@ -4,6 +4,11 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Modal from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { useLoading } from '@proton/hooks';
 import { renameInternalAddress, updateAddress } from '@proton/shared/lib/api/addresses';
 import { CANONICALIZE_SCHEME, canonicalizeEmail, getEmailParts } from '@proton/shared/lib/helpers/email';
@@ -12,15 +17,7 @@ import type { Address } from '@proton/shared/lib/interfaces';
 import { getRenamedAddressKeys } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import type { ModalProps } from '../../components';
-import {
-    InputFieldTwo,
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-    useFormErrors,
-} from '../../components';
+import { InputFieldTwo, useFormErrors } from '../../components';
 import { useApi, useEventManager, useGetOrganizationKey, useGetUserKeys, useNotifications } from '../../hooks';
 
 interface Props extends ModalProps<'form'> {

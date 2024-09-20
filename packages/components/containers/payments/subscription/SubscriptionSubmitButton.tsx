@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { useConfig, useModalState } from '@proton/components';
+import { useConfig } from '@proton/components';
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Price from '@proton/components/components/price/Price';
 import { isChargebeePaymentProcessor } from '@proton/components/payments/react-extensions/helpers';
 import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';

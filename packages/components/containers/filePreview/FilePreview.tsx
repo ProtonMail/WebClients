@@ -4,8 +4,8 @@ import { forwardRef, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
-import { useCombinedRefs } from '@proton/hooks';
-import { useLoading } from '@proton/hooks';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { useCombinedRefs, useLoading } from '@proton/hooks';
 import busy from '@proton/shared/lib/busy';
 import { isMinimumSafariVersion, isSafari } from '@proton/shared/lib/helpers/browser';
 import {
@@ -19,7 +19,6 @@ import {
 } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable, isPreviewTooLarge } from '@proton/shared/lib/helpers/preview';
 
-import { useModalState } from '../../components';
 import { useBeforeUnload, useHotkeys } from '../../hooks';
 import AudioPreview from './AudioPreview';
 import CloseModal from './CloseModal';

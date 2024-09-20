@@ -5,6 +5,11 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Modal from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import {
     useIsSessionRecoveryInitiatedByCurrentSession,
     useSessionRecoveryInsecureTimeRemaining,
@@ -24,16 +29,7 @@ import { getArmoredPrivateUserKeys, getEncryptedArmoredOrganizationKey } from '@
 import { srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
-import type { ModalProps } from '../../../components';
-import {
-    InputFieldTwo,
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-    PasswordInputTwo,
-    useFormErrors,
-} from '../../../components';
+import { InputFieldTwo, PasswordInputTwo, useFormErrors } from '../../../components';
 import {
     useApi,
     useAuthentication,

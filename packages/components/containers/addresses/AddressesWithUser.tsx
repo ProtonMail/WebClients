@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import { SettingsParagraph } from '@proton/components/containers';
@@ -16,13 +17,7 @@ import type { Address, CachedOrganizationKey, Member, UserModel } from '@proton/
 import { getIsNonDefault, sortAddresses } from '@proton/shared/lib/mail/addresses';
 import move from '@proton/utils/move';
 
-import {
-    OrderableTable,
-    OrderableTableBody,
-    OrderableTableHeader,
-    OrderableTableRow,
-    useModalState,
-} from '../../components';
+import { OrderableTable, OrderableTableBody, OrderableTableHeader, OrderableTableRow } from '../../components';
 import { useAddresses, useApi, useEventManager, useNotifications } from '../../hooks';
 import AddressActions from './AddressActions';
 import AddressStatus from './AddressStatus';

@@ -2,11 +2,10 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 import { BRAND_NAME, UNPAID_STATE } from '@proton/shared/lib/constants';
-
-import type { ModalProps } from '../../components';
 
 interface Props extends ModalProps {
     delinquent?: UNPAID_STATE;

@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
 import Info from '@proton/components/components/link/Info';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import UpsellIcon from '@proton/components/components/upsell/UpsellIcon';
 import AutoDeleteUpsellModal from '@proton/components/components/upsell/modal/types/AutoDeleteUpsellModal';
 import { useLoading } from '@proton/hooks';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 
-import { useModalState } from '../../components';
 import { useApi, useEventManager, useFeature, useUser } from '../../hooks';
 import { SettingsLayout, SettingsLayoutLeft, SettingsLayoutRight } from '../account';
 import { FeatureCode } from '../features';

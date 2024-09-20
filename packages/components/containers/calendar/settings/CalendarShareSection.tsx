@@ -3,8 +3,8 @@ import type { Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike, Card } from '@proton/atoms';
-import { useModalState } from '@proton/components/components';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { SettingsParagraph, SettingsSectionWide } from '@proton/components/containers';
 import { useApi, useNotifications } from '@proton/components/hooks';
 import { removeInvitation, removeMember } from '@proton/shared/lib/api/calendars';

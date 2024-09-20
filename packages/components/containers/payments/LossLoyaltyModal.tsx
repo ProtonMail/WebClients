@@ -1,12 +1,11 @@
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { Organization } from '@proton/shared/lib/interfaces';
-
-import type { ModalProps } from '../../components';
 
 interface Props extends ModalProps {
     organization: Organization;

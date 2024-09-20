@@ -1,15 +1,12 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import type { ModalProps } from '@proton/components';
-import {
-    Form,
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-    useFormErrors,
-} from '@proton/components';
+import { Form, useFormErrors } from '@proton/components';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Modal from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';

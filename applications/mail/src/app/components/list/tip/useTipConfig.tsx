@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
-import { EditLabelModal } from '@proton/components';
+import { EditLabelModal, useModalStateObject } from '@proton/components';
 import ProtonSentinelUpsellModal from '@proton/components/components/drawer/views/SecurityCenter/ProtonSentinel/modal/ProtonSentinelUpsellModal';
-import { useModalStateObject } from '@proton/components/components/modalTwo';
 import AutoDeleteUpsellModal from '@proton/components/components/upsell/modal/types/AutoDeleteUpsellModal';
 import IncreasePrivacyUpsellModal from '@proton/components/components/upsell/modal/types/IncreasePrivacyUpsellModal';
 import LabelsUpsellModal from '@proton/components/components/upsell/modal/types/LabelsUpsellModal';
