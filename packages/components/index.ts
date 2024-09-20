@@ -266,32 +266,17 @@ export {
     sieveTemplates,
 } from './containers/filters/utils';
 export { default as MinimalForgotUsernameContainer } from './containers/forgotUsername/MinimalForgotUsernameContainer';
-export {
-    default as AutoSaveContactsToggle,
-    default as AutoSaveContactsToggle,
-} from './containers/general/AutoSaveContactsToggle';
-export { default as DateFormatSection, default as DateFormatSection } from './containers/general/DateFormatSection';
-export {
-    default as LanguageAndTimeSection,
-    default as LanguageAndTimeSection,
-} from './containers/general/LanguageAndTimeSection';
-export { default as LanguageSection, default as LanguageSection } from './containers/general/LanguageSection';
-export { default as PmMeSection, default as PmMeSection } from './containers/general/PmMeSection';
-export { default as ShortcutsToggle, default as ShortcutsToggle } from './containers/general/ShortcutsToggle';
-export { default as TimeFormatSection, default as TimeFormatSection } from './containers/general/TimeFormatSection';
-export {
-    default as ToggleAssistant,
-    default as ToggleAssistant,
-} from './containers/general/ToggleAssistant/ToggleAssistant';
-export {
-    default as ToggleAssistantContainer,
-    default as ToggleAssistantContainer,
-} from './containers/general/ToggleAssistant/ToggleAssistantContainer';
-export {
-    default as ToggleAssistantEnvironment,
-    default as ToggleAssistantEnvironment,
-} from './containers/general/ToggleAssistant/ToggleAssistantEnvironment';
-export { default as WeekStartSection, default as WeekStartSection } from './containers/general/WeekStartSection';
+export { default as AutoSaveContactsToggle } from './containers/general/AutoSaveContactsToggle';
+export { default as DateFormatSection } from './containers/general/DateFormatSection';
+export { default as LanguageAndTimeSection } from './containers/general/LanguageAndTimeSection';
+export { default as LanguageSection } from './containers/general/LanguageSection';
+export { default as PmMeSection } from './containers/general/PmMeSection';
+export { default as ShortcutsToggle } from './containers/general/ShortcutsToggle';
+export { default as TimeFormatSection } from './containers/general/TimeFormatSection';
+export { default as ToggleAssistant } from './containers/general/ToggleAssistant/ToggleAssistant';
+export { default as ToggleAssistantContainer } from './containers/general/ToggleAssistant/ToggleAssistantContainer';
+export { default as ToggleAssistantEnvironment } from './containers/general/ToggleAssistant/ToggleAssistantEnvironment';
+export { default as WeekStartSection } from './containers/general/WeekStartSection';
 export { default as GmailSyncModal } from './containers/gmailSyncModal/GmailSyncModal';
 export { default as GmailSyncModalAnimation } from './containers/gmailSyncModal/GmailSyncModalAnimation';
 export { default as SignInWithGoogle } from './containers/gmailSyncModal/SignInWithGoogle';
