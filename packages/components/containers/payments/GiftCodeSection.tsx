@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { useLoading } from '@proton/hooks';
 import { onSessionMigrationPaymentsVersion } from '@proton/payments';
 import { buyCredit, validateCredit } from '@proton/shared/lib/api/payments';
@@ -11,8 +13,6 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { InputFieldTwo, useFormErrors } from '../../components';
 import { useApi, useEventManager, useNotifications, useSubscription, useUser } from '../../hooks';
-import { SettingsSection } from '../account';
-import SettingsParagraph from '../account/SettingsParagraph';
 
 const GiftCodeSection = () => {
     const [value, setValue] = useState('');

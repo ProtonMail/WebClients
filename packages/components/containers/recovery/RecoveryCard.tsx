@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { ButtonLike, Href } from '@proton/atoms';
 import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
+import SettingsSectionTitle from '@proton/components/containers/account/SettingsSectionTitle';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -25,7 +26,6 @@ import {
     useUserSettings,
 } from '../../hooks';
 import { useIsRecoveryFileAvailable } from '../../hooks/recoveryFile';
-import { SettingsSectionTitle } from '../account';
 import type { RecoveryCardStatusProps } from './RecoveryCardStatus';
 import RecoveryCardStatus from './RecoveryCardStatus';
 import getSentinelRecoveryProps from './getSentinelRecoveryProps';

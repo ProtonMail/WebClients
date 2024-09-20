@@ -1,13 +1,13 @@
 import { render } from '@testing-library/react';
 
 import Loader from '@proton/components/components/loader/Loader';
+import MozillaInfoPanel from '@proton/components/containers/account/MozillaInfoPanel';
 import { MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
 import { applyHOCs, mockUseUser, withEventManager } from '@proton/testing';
 
 import { usePaymentMethods, useSubscription } from '../../../hooks';
 import useModals from '../../../hooks/__mocks__/useModals';
-import { MozillaInfoPanel } from '../../account';
 import PaymentMethodsSection from './PaymentMethodsSection';
 import PaymentMethodsTable from './PaymentMethodsTable';
 

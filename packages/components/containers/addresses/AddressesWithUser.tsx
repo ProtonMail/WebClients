@@ -7,7 +7,7 @@ import Alert from '@proton/components/components/alert/Alert';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
-import { SettingsParagraph } from '@proton/components/containers';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import { orderAddress } from '@proton/shared/lib/api/addresses';
 import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';

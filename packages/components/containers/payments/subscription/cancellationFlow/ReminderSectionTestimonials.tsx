@@ -1,9 +1,7 @@
-import {
-    SettingsParagraph,
-    SettingsSection,
-    SettingsSectionTitle,
-    SettingsSectionWide,
-} from '@proton/components/containers/account';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
+import SettingsSectionTitle from '@proton/components/containers/account/SettingsSectionTitle';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 
 import type { PlanConfigTestimonial } from './interface';
 

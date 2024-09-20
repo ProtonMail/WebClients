@@ -8,6 +8,11 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
+import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
+import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import useLoading from '@proton/hooks/useLoading';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
@@ -37,13 +42,6 @@ import {
     useSubscription,
     useUser,
 } from '../../hooks';
-import {
-    SettingsLayout,
-    SettingsLayoutLeft,
-    SettingsLayoutRight,
-    SettingsParagraph,
-    SettingsSection,
-} from '../account';
 import DomainModal from '../domains/DomainModal';
 import AuthModal from '../password/AuthModal';
 import EditOrganizationIdentityModal from './EditOrganizationIdentityModal';

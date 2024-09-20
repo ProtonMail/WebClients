@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { Card } from '@proton/atoms';
-import { SettingsSectionWide } from '@proton/components';
 import Loader from '@proton/components/components/loader/Loader';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
 import { useReferralInvitesContext } from '../ReferralInvitesContext';

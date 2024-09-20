@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
+import MozillaInfoPanel from '@proton/components/containers/account/MozillaInfoPanel';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
@@ -34,7 +35,6 @@ import {
     useSubscription,
     useVPNServersCount,
 } from '../../hooks';
-import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import { openLinkInBrowser, upgradeButtonClick } from '../desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '../desktop/useHasInboxDesktopInAppPayments';
 import PlanSelection from './subscription/PlanSelection';

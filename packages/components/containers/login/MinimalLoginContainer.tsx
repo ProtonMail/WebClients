@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
-import { TotpInputs } from '@proton/components/containers';
+import TotpInputs from '@proton/components/containers/account/totp/TotpInputs';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import { useLoading } from '@proton/hooks';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';

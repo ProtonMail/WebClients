@@ -4,6 +4,11 @@ import Info from '@proton/components/components/link/Info';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
+import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
+import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import {
     MotionModeSetting,
@@ -17,7 +22,6 @@ import clsx from '@proton/utils/clsx';
 
 import { Tooltip, useNotifications } from '../..';
 import { useTheme } from '../themes/ThemeProvider';
-import { SettingsLayout, SettingsLayoutLeft, SettingsLayoutRight, SettingsParagraph, SettingsSection } from './index';
 
 const themeFontFaceEntries = getThemeFontFaceEntries();
 const themeFontSizeEntries = getThemeFontSizeEntries();

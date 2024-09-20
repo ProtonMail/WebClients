@@ -15,6 +15,9 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import { useAccountSpotlights } from '@proton/components/containers/account/spotlights/AccountSpotlightsProvider';
 import {
     getInvitationAcceptLimit,
     getInvitationLimit,
@@ -63,7 +66,6 @@ import {
     useSubscription,
     useUser,
 } from '../../../hooks';
-import { SettingsParagraph, SettingsSectionWide, useAccountSpotlights } from '../../account';
 import { SetupOrgSpotlight } from '../../account/spotlights/passB2bOnboardingSpotlights/PassB2bOnboardingSpotlights';
 import { AddressModal } from '../../addresses';
 import CreateMissingKeysAddressModal from '../../addresses/missingKeys/CreateMissingKeysAddressModal';

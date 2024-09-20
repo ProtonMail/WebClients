@@ -5,13 +5,14 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Tooltip } from '@proton/components';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 import { useFlag } from '@proton/unleash';
 
 import { useCustomDomains, useMembers } from '../../../hooks';
-import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import CreateUserAccountsModal from './CreateUserAccountsModal/CreateUserAccountsModal';
 import UploadCSVFileButton from './UploadCSVFileButton';
 import type { CsvConfig } from './csv';

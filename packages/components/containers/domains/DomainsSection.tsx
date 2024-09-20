@@ -11,6 +11,9 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import UpgradeBanner from '@proton/components/containers/account/UpgradeBanner';
 import { useLoading } from '@proton/hooks';
 import { CacheType } from '@proton/redux-utilities';
 import { getDomain } from '@proton/shared/lib/api/domains';
@@ -36,7 +39,6 @@ import {
     useOrganization,
     useUser,
 } from '../../hooks';
-import { SettingsParagraph, SettingsSectionWide, UpgradeBanner } from '../account';
 import useOrganizationModals from '../organization/useOrganizationModals';
 import CatchAllModal from './CatchAllModal';
 import DeleteDomainModal from './DeleteDomainModal';

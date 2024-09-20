@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 import { ButtonLike, Href } from '@proton/atoms';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getImportExportAppUrl } from '@proton/shared/lib/helpers/url';
-
-import { SettingsParagraph, SettingsSection } from '../account';
 
 const ImportExportAppSection = () => {
     return (

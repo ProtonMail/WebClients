@@ -44,6 +44,7 @@ import {
     ThemesSection,
     TopBanners,
     TopNavbarUpsell,
+    TwoFactorSection,
     UnAuthenticated,
     UpgradeVpnSection,
     UserDropdown,
@@ -60,7 +61,6 @@ import {
     useUser,
     useUserSettings,
 } from '@proton/components';
-import TwoFactorSection from '@proton/components/containers/account/TwoFactorSection';
 import { getIsSectionAvailable, getRoutePaths, getSectionPath } from '@proton/components/containers/layout/helper';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import type { ZendeskRef } from '@proton/components/containers/zendesk/LiveChatZendesk';

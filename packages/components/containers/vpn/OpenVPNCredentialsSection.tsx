@@ -6,15 +6,16 @@ import { Button, Href } from '@proton/atoms';
 import Copy from '@proton/components/components/button/Copy';
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import Icon from '@proton/components/components/icon/Icon';
+import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
+import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
+import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { useLoading } from '@proton/hooks';
 import { resetVPNSettings } from '@proton/shared/lib/api/vpn';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useApi, useNotifications, useUserVPN } from '../../hooks';
-import { SettingsParagraph, SettingsSectionWide } from '../account';
-import SettingsLayout from '../account/SettingsLayout';
-import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../account/SettingsLayoutRight';
 
 interface Props {
     app?: string;

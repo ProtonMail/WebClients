@@ -9,6 +9,8 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import {
@@ -18,7 +20,6 @@ import {
 } from '@proton/shared/lib/organization/helper';
 
 import { useAddresses, useOrganizationKey } from '../../hooks';
-import { SettingsParagraph, SettingsSection } from '../account';
 import useDisplayOrganizationKey from './useDisplayOrganizationKey';
 import useOrganizationModals from './useOrganizationModals';
 

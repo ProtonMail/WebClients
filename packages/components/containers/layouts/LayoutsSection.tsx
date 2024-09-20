@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { useLoading } from '@proton/hooks';
 import { updateComposerMode, updateViewLayout } from '@proton/shared/lib/api/mailSettings';
 import { updateDensity } from '@proton/shared/lib/api/settings';
@@ -11,7 +12,6 @@ import type { COMPOSER_MODE, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSet
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import { useApi, useEventManager, useMailSettings, useNotifications, useUserSettings } from '../../hooks';
-import { SettingsSectionWide } from '../account';
 import ComposerModeCards from './ComposerModeCards';
 import DensityRadiosCards from './DensityRadiosCards';
 import ViewLayoutCards from './ViewLayoutCards';

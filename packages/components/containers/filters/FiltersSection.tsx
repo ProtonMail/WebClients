@@ -6,11 +6,12 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { applyFilters, updateFilterOrder } from '@proton/shared/lib/api/filters';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { useApi, useEventManager, useFilters, useNotifications } from '../../hooks';
-import { SettingsParagraph, SettingsSection } from '../account';
 import ActionsFilterToolbar from './ActionsFilterToolbar';
 import FilterSortableList from './FilterSortableList';
 import type { Filter } from './interfaces';

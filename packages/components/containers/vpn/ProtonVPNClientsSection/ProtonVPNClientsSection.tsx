@@ -8,13 +8,14 @@ import DropdownMenuLink from '@proton/components/components/dropdown/DropdownMen
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
 
 import DownloadClientCard from '../../../components/downloadClientCard/DownloadClientCard';
 import { useNotifications, useWelcomeFlags } from '../../../hooks';
-import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import OnboardingContent from '../../onboarding/OnboardingContent';
 
 interface DownloadModalProps extends ModalProps {

@@ -1,7 +1,7 @@
 import Loader from '@proton/components/components/loader/Loader';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 
 import { useOrganization } from '../../hooks';
-import { SettingsSectionWide } from '../account';
 import Addresses from './Addresses';
 
 interface Props {
