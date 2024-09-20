@@ -6,6 +6,7 @@ import { LocationErrorBoundary } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { API_CODES, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { handleDocsCustomPassword } from '@proton/shared/lib/drive/sharing/publicDocsSharing';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
@@ -19,10 +20,33 @@ import { PublicDriveProvider, useBookmarksPublicView, useDownload, usePublicAuth
 import { useDriveShareURLBookmarkingFeatureFlag } from '../store/_bookmarks/useDriveShareURLBookmarking';
 import { useDriveDocsPublicSharingFF, useOpenDocument } from '../store/_documents';
 import { sendErrorReport } from '../utils/errorHandling';
-import { getErrorMetricType } from '../utils/errorHandling/apiErrors';
+import { is4xx, is5xx, isCryptoEnrichedError } from '../utils/errorHandling/apiErrors';
 import { Actions, countActionWithTelemetry } from '../utils/telemetry';
 import type { ErrorTuple } from '../utils/type/ErrorTuple';
 import { deleteStoredUrlPassword } from '../utils/url/password';
+
+export const getErrorMetricTypeOnPublicPage = (error: unknown) => {
+    const apiError = getApiError(error);
+
+    if (apiError.status === HTTP_STATUS_CODE.NOT_FOUND || apiError.code === API_CODES.NOT_FOUND_ERROR) {
+        return 'does_not_exist_or_expired';
+    }
+
+    if (apiError.status && typeof apiError.status === 'number') {
+        if (is4xx(apiError.status)) {
+            return '4xx';
+        }
+        if (is5xx(apiError.status)) {
+            return '5xx';
+        }
+    }
+
+    if (isCryptoEnrichedError(error)) {
+        return 'crypto';
+    }
+
+    return 'unknown';
+};
 
 export default function PublicSharedLinkContainer() {
     return (
@@ -112,15 +136,20 @@ function PublicShareLinkInitContainer() {
     }, []);
 
     useEffect(() => {
-        if (errorMessage) {
-            sendErrorReport(new Error(errorMessage));
-        }
         if (error) {
+            const errorMetricType = getErrorMetricTypeOnPublicPage(error);
             metrics.drive_public_share_load_error_total.increment({
                 type: !link ? 'unknown' : link.isFile ? 'file' : 'folder',
                 plan: user?.isPaid ? 'paid' : user?.isFree ? 'free' : 'not_recognized',
-                error: getErrorMetricType(error),
+                error: errorMetricType,
             });
+
+            // We use observability to track this, so we can omit it from Sentry
+            if (errorMetricType !== 'does_not_exist_or_expired') {
+                if (errorMessage) {
+                    sendErrorReport(new Error(errorMessage));
+                }
+            }
         }
     }, [errorMessage, error]);
 
