@@ -59,8 +59,6 @@ import noop from '@proton/utils/noop';
 
 import { getCryptoWorkerOptions } from './cryptoWorkerOptions';
 
-export * from './action';
-
 class InvalidSessionError extends Error {
     public extra: ExtraSessionForkData = {};
 

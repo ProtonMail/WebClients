@@ -3,7 +3,8 @@ import { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { getDomainAddressError, selectUnprivatizationState, useMemberAddresses } from '@proton/account';
+import { getDomainAddressError, useMemberAddresses } from '@proton/account';
+import { selectUnprivatizationState } from '@proton/account/members/unprivatizeMembers';
 import { getDomainError } from '@proton/account/members/validateAddUser';
 import { Avatar, Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';

@@ -18,7 +18,7 @@ import { isAdmin } from '@proton/shared/lib/user/helpers';
 
 import type { AddressesState } from '../addresses';
 import { addressesThunk } from '../addresses';
-import { bootstrapEvent } from '../bootstrap';
+import { bootstrapEvent } from '../bootstrap/action';
 import { serverEvent } from '../eventLoop';
 import type { ModelState } from '../interface';
 import type { UserState } from '../user';

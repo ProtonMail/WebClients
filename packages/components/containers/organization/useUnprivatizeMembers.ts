@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { unprivatizeMembers } from '@proton/account';
+import { unprivatizeMembers } from '@proton/account/members/unprivatizeMembers';
 import { useApi, useMembers } from '@proton/components/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import noop from '@proton/utils/noop';
