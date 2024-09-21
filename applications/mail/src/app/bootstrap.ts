@@ -8,6 +8,7 @@ import {
     welcomeFlagsActions,
 } from '@proton/account';
 import * as bootstrap from '@proton/account/bootstrap';
+import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import { createCalendarModelEventManager } from '@proton/calendar';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
@@ -164,7 +165,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             store.unsubscribe();
         });
 
-        dispatch(bootstrap.bootstrapEvent({ type: 'complete' }));
+        dispatch(bootstrapEvent({ type: 'complete' }));
 
         return {
             ...userData,
