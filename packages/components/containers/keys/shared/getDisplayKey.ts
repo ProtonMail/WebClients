@@ -34,7 +34,7 @@ export const getDisplayKey = ({
     isWeak,
     isE2EEForwardingKey,
 }: Arguments): KeyDisplay => {
-    const { isSubUser, isPrivate } = User;
+    const { isPrivate } = User;
     const signedKeyListItem = signedKeyListMap[fingerprint];
 
     const { ID, Flags, Primary, AddressForwardingID } = Key;
@@ -67,7 +67,7 @@ export const getDisplayKey = ({
         isForwarding,
     };
 
-    const hasUserPermission = !isSubUser || isPrivate;
+    const hasUserPermission = isPrivate;
     const canModify = isAddressKey && hasUserPermission && !isPrimary;
     const canDeleteForwarding = AddressForwardingID === null;
 

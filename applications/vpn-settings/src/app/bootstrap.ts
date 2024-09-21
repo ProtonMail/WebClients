@@ -1,5 +1,6 @@
 import { initEvent, serverEvent, userSettingsThunk, userThunk, welcomeFlagsActions } from '@proton/account';
 import * as bootstrap from '@proton/account/bootstrap';
+import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
@@ -83,7 +84,7 @@ export const bootstrapApp = async ({
             store.unsubscribe();
         });
 
-        dispatch(bootstrap.bootstrapEvent({ type: 'complete' }));
+        dispatch(bootstrapEvent({ type: 'complete' }));
 
         return {
             ...userData,

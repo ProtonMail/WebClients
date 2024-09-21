@@ -2,6 +2,7 @@ import type { UnknownAction } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import { CacheType } from '@proton/redux-utilities';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { removeAddressKeyRoute, removeUserKeyRoute } from '@proton/shared/lib/api/keys';
 import {
@@ -29,6 +30,7 @@ import { addressKeysThunk } from '../addressKeys';
 import { type AddressesState, addressesThunk } from '../addresses';
 import { type InactiveKeysState, selectInactiveKeys } from '../inactiveKeys';
 import { type OrganizationState, organizationThunk } from '../organization';
+import { userThunk } from '../user';
 import { userKeysThunk } from '../userKeys';
 import { type MemberState, memberThunk, updateMember } from './index';
 
@@ -84,7 +86,7 @@ export const deleteAllInactiveKeys = ({
     api,
 }: {
     api: Api;
-}): ThunkAction<Promise<void>, AddressesState & InactiveKeysState, ProtonThunkArguments, UnknownAction> => {
+}): ThunkAction<Promise<boolean>, AddressesState & InactiveKeysState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, getState) => {
         const inactiveKeys = selectInactiveKeys(getState());
 
@@ -97,7 +99,7 @@ export const deleteAllInactiveKeys = ({
         });
 
         if (!inactiveUserKeys.length && !inactiveAddressesKeys.length) {
-            return;
+            return false;
         }
 
         const addresses = await dispatch(addressesThunk());
@@ -130,6 +132,8 @@ export const deleteAllInactiveKeys = ({
                 return api(removeUserKeyRoute({ ID: Key.ID }));
             })
         );
+
+        return true;
     };
 };
 
@@ -170,8 +174,13 @@ export const memberAcceptUnprivatization = ({
         if (!payload) {
             return;
         }
-        await dispatch(deleteAllInactiveKeys({ api }));
+        const deletedInactiveKeys = await dispatch(deleteAllInactiveKeys({ api }));
         await api(acceptMemberUnprivatizationInfo(payload));
         dispatch(updateMember({ Unprivatization: null }));
+        // Refetch the user (and addresses) so that the relevant fields get updated (mostly the Private field)
+        dispatch(userThunk({ cache: CacheType.None }));
+        if (deletedInactiveKeys) {
+            dispatch(addressesThunk({ cache: CacheType.None }));
+        }
     };
 };
