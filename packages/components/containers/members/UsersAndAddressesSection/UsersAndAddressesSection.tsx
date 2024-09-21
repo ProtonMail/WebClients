@@ -4,13 +4,16 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { getDomainAddressError, useMemberAddresses } from '@proton/account';
+import { selectUnprivatizationState } from '@proton/account/members/unprivatizeMembers';
 import { getDomainError } from '@proton/account/members/validateAddUser';
 import { Avatar, Button } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import {
     getInvitationAcceptLimit,
     getInvitationLimit,
 } from '@proton/components/containers/members/UsersAndAddressesSection/helper';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
+import { baseUseSelector } from '@proton/react-redux-store';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { removeMember, resendUnprivatizationLink, updateRole } from '@proton/shared/lib/api/members';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -38,6 +41,7 @@ import {
 import clsx from '@proton/utils/clsx';
 
 import { Info, SearchInput, Table, TableBody, TableCell, TableRow, useModalState } from '../../../components';
+import Tooltip from '../../../components/tooltip/Tooltip';
 import {
     useAddresses,
     useApi,
@@ -92,6 +96,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const api = useApi();
     const { call } = useEventManager();
     const accessToAssistant = useAssistantFeatureEnabled();
+    const unprivatizationMemberState = baseUseSelector(selectUnprivatizationState);
 
     const hasReachedLimit = organization?.InvitationsRemaining === 0;
     const hasSetupActiveOrganizationWithKeys =
@@ -583,6 +588,26 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                                                     {c('Users table: badge').t`It's you`}
                                                                 </UserTableBadge>
                                                             )}
+                                                            {(() => {
+                                                                const result =
+                                                                    unprivatizationMemberState.members[member.ID];
+                                                                if (result?.type !== 'error') {
+                                                                    return;
+                                                                }
+                                                                const error = result.error;
+                                                                return (
+                                                                    <Tooltip
+                                                                        title={c('unprivatization')
+                                                                            .t`Something went wrong enabling administrator access: ${error}`}
+                                                                        openDelay={0}
+                                                                    >
+                                                                        <Icon
+                                                                            name="exclamation-triangle-filled"
+                                                                            className="color-danger"
+                                                                        />
+                                                                    </Tooltip>
+                                                                );
+                                                            })()}
                                                             {allowPrivateMemberConfiguration &&
                                                                 !isOrgAFamilyPlan &&
                                                                 Boolean(member.Private) && (

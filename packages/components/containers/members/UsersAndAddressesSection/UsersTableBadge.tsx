@@ -10,7 +10,7 @@ const UserTableBadge = ({
     ...rest
 }: ComponentPropsWithoutRef<'div'> & {
     tooltip?: string;
-    type: 'weak' | 'success' | 'info' | 'warning';
+    type: 'weak' | 'success' | 'info' | 'warning' | 'error';
 }) => {
     return (
         <Badge type={type === 'weak' ? 'origin' : type} tooltip={tooltip} className="" {...rest}>
