@@ -52,15 +52,19 @@ import { addressesThunk } from '../addresses';
 import { organizationThunk } from '../organization';
 import type { OrganizationKeyState } from '../organizationKey';
 import { organizationKeyThunk } from '../organizationKey';
-import type { MemberKeyPayload } from '../organizationKey/actions';
-import { getMemberKeyPayload, getPrivateAdminError, setAdminRoles } from '../organizationKey/actions';
+import {
+    type MemberKeyPayload,
+    getMemberKeyPayload,
+    getPrivateAdminError,
+    setAdminRoles,
+} from '../organizationKey/actions';
 import { userKeysThunk } from '../userKeys';
 import InvalidAddressesError from './errors/InvalidAddressesError';
 import UnavailableAddressesError from './errors/UnavailableAddressesError';
 import { MemberCreationValidationError, membersThunk, upsertMember } from './index';
 import validateAddUser from './validateAddUser';
 
-const getMember = (api: Api, memberID: string) =>
+export const getMember = (api: Api, memberID: string) =>
     api<{
         Member: Member;
     }>(getMemberConfig(memberID)).then(({ Member }) => Member);

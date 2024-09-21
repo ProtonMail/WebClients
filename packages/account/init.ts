@@ -1,6 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import { Address, User, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Address, User, UserSettings } from '@proton/shared/lib/interfaces';
 
 export const initEvent = createAction(
     'init event',
