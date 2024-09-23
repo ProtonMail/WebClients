@@ -18,7 +18,7 @@ interface OwnProps {
     border?: boolean;
 }
 
-export type Props<E extends ElementType> = PolymorphicPropsWithRef<OwnProps, E>;
+export type Props<E extends ElementType> = PolymorphicPropsWithRef<{}, E>;
 
 const defaultElement = 'div';
 
