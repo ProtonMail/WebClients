@@ -9,7 +9,6 @@ import {
   $getSelection,
   $isRangeSelection,
   $isElementNode,
-  $createParagraphNode,
   $isRootNode,
   $createTextNode,
   $isTextNode,
@@ -23,10 +22,10 @@ import type { ProtonNode } from './ProtonNode'
 import { $isSuggestionNode, $createSuggestionNode } from './ProtonNode'
 import {
   getTargetRangeFromInputEvent,
-  $isPointAtStartOfBlock,
   $wrapSelectionInSuggestionNode,
   getBoundaryForDeletion,
   $mergeWithExistingSuggestionNode,
+  $isWholeSelectionInsideSuggestion,
 } from './Utils'
 import type { Logger } from '@proton/utils/logs'
 
@@ -89,7 +88,7 @@ function $handleDeleteInput(
 ): boolean {
   const [boundary, isBackward] = getBoundaryForDeletion(inputType)
 
-  let suggestionNode: ProtonNode | null = null
+  let suggestionNodes: ProtonNode[] = []
 
   const isSelectionCollapsed = selection.isCollapsed()
 
@@ -101,63 +100,47 @@ function $handleDeleteInput(
   )
 
   if (isSelectionCollapsed && boundary !== null) {
-    if ($isPointAtStartOfBlock(selection.focus) && isBackward) {
-      const focusNode = selection.focus.getNode()
-      const topLevelElement = focusNode.getTopLevelElement()
-      const topLevelPrevSibling = topLevelElement?.getPreviousSibling()
-      if (!$isElementNode(topLevelPrevSibling)) {
-        return true
-      }
-
-      const lastChild = topLevelPrevSibling.getLastChild()
-      const doesJoinSuggestionAlreadyExist =
-        $isSuggestionNode(lastChild) && lastChild.getSuggestionTypeOrThrow() === 'join'
-      if (doesJoinSuggestionAlreadyExist) {
-        return true
-      }
-
-      const joinSuggestion = $createSuggestionNode(suggestionID, 'join')
-      topLevelPrevSibling.append(joinSuggestion)
-      joinSuggestion.selectStart()
-      onSuggestionCreation(suggestionID)
-      return true
-    }
-
     selection.modify('extend', isBackward, boundary)
   }
 
-  const anchorNode = selection.anchor.getNode()
   const focusNode = selection.focus.getNode()
   const existingParentSuggestion = $findMatchingParent(focusNode, $isSuggestionNode)
 
-  const isWholeSelectionInsideExistingSuggestion =
-    existingParentSuggestion?.isParentOf(anchorNode) && existingParentSuggestion.isParentOf(focusNode)
+  const isWholeSelectionInsideExistingSuggestion = $isWholeSelectionInsideSuggestion(selection)
 
   if (!isWholeSelectionInsideExistingSuggestion || existingParentSuggestion?.getSuggestionTypeOrThrow() !== 'delete') {
-    suggestionNode = $wrapSelectionInSuggestionNode(selection, selection.isBackward(), suggestionID, 'delete')
+    suggestionNodes = $wrapSelectionInSuggestionNode(selection, selection.isBackward(), suggestionID, 'delete')
   }
 
-  if (isBackward && suggestionNode) {
-    suggestionNode.selectPrevious()
-  }
-
-  if (!suggestionNode) {
+  if (!suggestionNodes.length) {
+    logger?.info('No suggestion nodes were created')
     return true
+  }
+
+  if (isBackward) {
+    suggestionNodes[0].selectPrevious()
   }
 
   if (isWholeSelectionInsideExistingSuggestion) {
-    suggestionNode.remove()
+    for (const node of suggestionNodes) {
+      node.remove()
+    }
     return true
   }
 
-  const prevSibling = suggestionNode.getPreviousSibling()
-  const nextSibling = suggestionNode.getNextSibling()
-  if ($isSuggestionNode(prevSibling) && prevSibling.getSuggestionTypeOrThrow() === 'delete') {
-    $mergeWithExistingSuggestionNode(suggestionNode, prevSibling, false)
-    logger?.info('Merged delete suggestion with prev delete sibling')
-  } else if ($isSuggestionNode(nextSibling) && nextSibling.getSuggestionTypeOrThrow() === 'delete') {
-    $mergeWithExistingSuggestionNode(suggestionNode, nextSibling, true)
-    logger?.info('Merged delete suggestion with next delete sibling')
+  if (suggestionNodes.length === 1) {
+    const node = suggestionNodes[0]
+    const prevSibling = node.getPreviousSibling()
+    const nextSibling = node.getNextSibling()
+    if ($isSuggestionNode(prevSibling) && prevSibling.getSuggestionTypeOrThrow() === 'delete') {
+      $mergeWithExistingSuggestionNode(node, prevSibling, false)
+      logger?.info('Merged delete suggestion with prev delete sibling')
+    } else if ($isSuggestionNode(nextSibling) && nextSibling.getSuggestionTypeOrThrow() === 'delete') {
+      $mergeWithExistingSuggestionNode(node, nextSibling, true)
+      logger?.info('Merged delete suggestion with next delete sibling')
+    } else {
+      onSuggestionCreation(suggestionID)
+    }
   } else {
     onSuggestionCreation(suggestionID)
   }
@@ -190,10 +173,13 @@ function $handleInsertInput(
 
   if (!selection.isCollapsed()) {
     logger?.info('Wrapping non-collapsed selection in a delete suggestion')
-    const suggestionNode = $wrapSelectionInSuggestionNode(selection, selection.isBackward(), suggestionID, 'delete')
-    if (existingParentSuggestion) {
+    const isInsideExistingSelection = $isWholeSelectionInsideSuggestion(selection)
+    const nodes = $wrapSelectionInSuggestionNode(selection, selection.isBackward(), suggestionID, 'delete')
+    if (isInsideExistingSelection) {
       logger?.info('Removing the wrapped suggestion as it is inside an existing one')
-      suggestionNode?.remove()
+      for (const node of nodes) {
+        node.remove()
+      }
     } else {
       onSuggestionCreation(suggestionID)
     }
@@ -237,24 +223,11 @@ function $handleInsertParagraph(
   onSuggestionCreation: (id: string) => void,
   logger?: Logger,
 ): boolean {
-  const currentElement = selection.focus.getNode().getTopLevelElement()
-  if (!currentElement) {
-    return true
-  }
-
-  if ($isPointAtStartOfBlock(selection.focus)) {
-    logger?.info('Will create a paragraph with a split suggestion since selection is at start of the block')
-    const paragraph = $createParagraphNode()
-    const split = $createSuggestionNode(suggestionID, 'split')
-    paragraph.append(split)
-    if ($isElementNode(currentElement.getPreviousSibling())) {
-      const lastChild = currentElement.getPreviousSibling<ElementNode>()!.getLastChild()
-      if ($isSuggestionNode(lastChild) && lastChild.getSuggestionTypeOrThrow() === 'split') {
-        split.setSuggestionId(lastChild.getSuggestionIdOrThrow())
-      }
-    }
-    currentElement.insertBefore(paragraph)
-    onSuggestionCreation(split.getSuggestionIdOrThrow())
+  const currentNonInlineElement = $findMatchingParent(
+    selection.focus.getNode(),
+    (node): node is ElementNode => $isElementNode(node) && !node.isInline(),
+  )
+  if (!currentNonInlineElement) {
     return true
   }
 
@@ -274,8 +247,8 @@ function $handleInsertParagraph(
   const splitSuggestionPrevSibling = splitStart.getPreviousSibling()
   if ($isSuggestionNode(splitSuggestionPrevSibling)) {
     splitStart.setSuggestionId(splitSuggestionPrevSibling.getSuggestionIdOrThrow())
-  } else if ($isElementNode(currentElement.getPreviousSibling())) {
-    const lastChild = currentElement.getPreviousSibling<ElementNode>()!.getLastChild()
+  } else if ($isElementNode(currentNonInlineElement.getPreviousSibling())) {
+    const lastChild = currentNonInlineElement.getPreviousSibling<ElementNode>()!.getLastChild()
     if ($isSuggestionNode(lastChild) && lastChild.getSuggestionTypeOrThrow() === 'split') {
       splitStart.setSuggestionId(lastChild.getSuggestionIdOrThrow())
     }

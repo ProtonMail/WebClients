@@ -15,6 +15,8 @@ import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ProtonContentEditable } from '../../ContentEditable/ProtonContentEditable'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import * as ReactTestUtils from '../../Utils/react-test-utils'
+import type { ListItemNode } from '@lexical/list'
+import { $createListItemNode, $createListNode } from '@lexical/list'
 
 polyfillSelectionRelatedThingsForTests()
 
@@ -416,33 +418,105 @@ describe('$handleBeforeInputEvent', () => {
       })
     })
 
-    test('should create join suggestion when backspacing at start of block', async () => {
-      await update(() => {
-        const paragraph1 = $createParagraphNode().append($createTextNode('Hello'))
-        const paragraph2 = $createParagraphNode().append($createTextNode('World'))
-        $getRoot().append(paragraph1, paragraph2)
-        paragraph2.selectStart()
-        $handleBeforeInputEvent(
-          editor!,
-          {
-            inputType: 'deleteContentBackward',
-            data: null,
-            dataTransfer: null,
-          } as InputEvent,
-          onSuggestionCreation,
-        )
+    describe('Join', () => {
+      describe('Backspacing at start of block', () => {
+        beforeEach(async () => {
+          await update(() => {
+            const paragraph1 = $createParagraphNode().append($createTextNode('Hello'))
+            const paragraph2 = $createParagraphNode().append($createTextNode('World'))
+            $getRoot().append(paragraph1, paragraph2)
+            paragraph2.selectStart()
+          })
+          await update(() => {
+            $handleBeforeInputEvent(
+              editor!,
+              {
+                inputType: 'deleteContentBackward',
+                data: null,
+                dataTransfer: null,
+              } as InputEvent,
+              onSuggestionCreation,
+            )
+          })
+        })
+
+        test('root should have 2 children', () => {
+          editor!.read(() => {
+            const root = $getRoot()
+            expect(root.getChildrenSize()).toBe(2)
+          })
+        })
+
+        test('first paragraph should have text and join node', () => {
+          editor!.read(() => {
+            const paragraph1 = $getRoot().getChildAtIndex<ElementNode>(0)
+            expect($isParagraphNode(paragraph1)).toBe(true)
+            expect($isTextNode(paragraph1?.getFirstChild())).toBe(true)
+            expect($isSuggestionNode(paragraph1?.getLastChild())).toBe(true)
+            expect(paragraph1?.getLastChildOrThrow<ProtonNode>().getSuggestionTypeOrThrow()).toBe('join')
+          })
+        })
+
+        test('second paragraph should only have text', async () => {
+          editor!.read(() => {
+            const paragraph2 = $getRoot().getChildAtIndex<ElementNode>(1)
+            expect($isParagraphNode(paragraph2)).toBe(true)
+            expect(paragraph2?.getTextContent()).toBe('World')
+          })
+        })
       })
-      editor!.read(() => {
-        const root = $getRoot()
-        expect(root.getChildrenSize()).toBe(2)
-        const paragraph1 = root.getChildAtIndex<ElementNode>(0)
-        expect($isParagraphNode(paragraph1)).toBe(true)
-        expect($isTextNode(paragraph1?.getFirstChild())).toBe(true)
-        expect($isSuggestionNode(paragraph1?.getLastChild())).toBe(true)
-        expect(paragraph1?.getLastChildOrThrow<ProtonNode>().getSuggestionTypeOrThrow()).toBe('join')
-        const paragraph2 = root.getChildAtIndex<ElementNode>(1)
-        expect($isParagraphNode(paragraph2)).toBe(true)
-        expect(paragraph2?.getTextContent()).toBe('World')
+
+      describe('Backspacing at start of non-block non-inline element', () => {
+        let paragraphNode!: ParagraphNode
+        let normalListItem1!: ListItemNode
+
+        beforeEach(async () => {
+          await update(() => {
+            const root = $getRoot()
+            paragraphNode = $createParagraphNode().append($createTextNode('Paragraph'))
+            root.append(paragraphNode)
+            normalListItem1 = $createListItemNode().append($createTextNode('List Item 1'))
+            const nestedListItem1 = $createListItemNode().append($createTextNode('Nested List Item 1'))
+            const list = $createListNode('bullet').append(
+              normalListItem1,
+              $createListItemNode().append($createListNode('bullet').append(nestedListItem1)),
+            )
+            root.append(list)
+            nestedListItem1.selectStart()
+          })
+          await update(() => {
+            $handleBeforeInputEvent(
+              editor!,
+              {
+                inputType: 'deleteContentBackward',
+                data: null,
+                dataTransfer: null,
+              } as InputEvent,
+              onSuggestionCreation,
+            )
+          })
+        })
+
+        test('root should have 2 children', () => {
+          editor!.read(() => {
+            const root = $getRoot()
+            expect(root.getChildrenSize()).toBe(2)
+          })
+        })
+
+        test('paragraph should only have text', () => {
+          editor!.read(() => {
+            expect(paragraphNode.getChildrenSize()).toBe(1)
+          })
+        })
+
+        test('normal list item 1 to have text and join node', async () => {
+          editor!.read(() => {
+            expect(normalListItem1.getChildrenSize()).toBe(2)
+            expect($isTextNode(normalListItem1.getChildAtIndex(0))).toBe(true)
+            expect($isSuggestionNode(normalListItem1.getChildAtIndex(1))).toBe(true)
+          })
+        })
       })
     })
 
