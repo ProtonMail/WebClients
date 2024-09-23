@@ -15,10 +15,11 @@ import Time from '@proton/components/components/time/Time';
 import MozillaInfoPanel from '@proton/components/containers/account/MozillaInfoPanel';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import type { Invoice } from '@proton/components/containers/invoices/interface';
+import type { Invoice } from '@proton/payments';
+import { INVOICE_STATE } from '@proton/payments';
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { InvoiceDocument, getInvoice } from '@proton/shared/lib/api/payments';
-import { INVOICE_OWNER, INVOICE_STATE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { INVOICE_OWNER, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 

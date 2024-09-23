@@ -1,6 +1,6 @@
 import { act } from 'react-dom/test-utils';
 
-import { fireEvent, getAllByText } from '@testing-library/react';
+import { fireEvent, getAllByText, screen } from '@testing-library/react';
 import { addDays } from 'date-fns';
 import type { Location } from 'history';
 import loudRejection from 'loud-rejection';
@@ -427,11 +427,11 @@ describe('Sidebar checklist display', () => {
             items: new Set(),
         } as ContextState);
 
-        const { getByTestId, container } = await render(<MailSidebar {...props} />);
-        getByTestId('onboarding-checklist');
+        const { container } = await render(<MailSidebar {...props} />);
+        screen.getByTestId('onboarding-checklist');
 
         const nav = container.querySelector('nav');
-        expect(nav?.childNodes.length).toEqual(3);
+        expect(nav?.childNodes.length).toEqual(4);
     });
 
     it('Should not display the checklist if state is full', async () => {
@@ -442,12 +442,12 @@ describe('Sidebar checklist display', () => {
             canDisplayChecklist: true,
         } as ContextState);
 
-        const { queryByTestId, container } = await render(<MailSidebar {...props} />);
-        const checklistWrapper = queryByTestId('onboarding-checklist');
+        const { container } = await render(<MailSidebar {...props} />);
+        const checklistWrapper = screen.queryByTestId('onboarding-checklist');
         const nav = container.querySelector('nav');
 
         expect(checklistWrapper).toBeNull();
-        expect(nav?.childNodes.length).toEqual(2);
+        expect(nav?.childNodes.length).toEqual(3);
     });
 
     it('Should not display the checklist if state is hidden', async () => {
@@ -458,12 +458,12 @@ describe('Sidebar checklist display', () => {
             canDisplayChecklist: true,
         } as ContextState);
 
-        const { queryByTestId, container } = await render(<MailSidebar {...props} />);
-        const checklistWrapper = queryByTestId('onboarding-checklist');
+        const { container } = await render(<MailSidebar {...props} />);
+        const checklistWrapper = screen.queryByTestId('onboarding-checklist');
         const nav = container.querySelector('nav');
 
         expect(checklistWrapper).toBeNull();
-        expect(nav?.childNodes.length).toEqual(2);
+        expect(nav?.childNodes.length).toEqual(3);
     });
 
     it('Should hide the checklist when pressing the cross button in the sidebar', async () => {
@@ -476,12 +476,12 @@ describe('Sidebar checklist display', () => {
             canDisplayChecklist: true,
         } as Partial<ContextState>);
 
-        const { container, getByTestId } = await render(<MailSidebar {...props} />);
+        const { container } = await render(<MailSidebar {...props} />);
 
         const nav = container.querySelector('nav');
-        expect(nav?.childNodes.length).toEqual(3);
+        expect(nav?.childNodes.length).toEqual(4);
 
-        const closeButton = getByTestId('onboarding-checklist-header-hide-button');
+        const closeButton = screen.getByTestId('onboarding-checklist-header-hide-button');
         fireEvent.click(closeButton);
         expect(mockedChangeDisplay).toHaveBeenCalledWith(CHECKLIST_DISPLAY_TYPE.HIDDEN);
     });
