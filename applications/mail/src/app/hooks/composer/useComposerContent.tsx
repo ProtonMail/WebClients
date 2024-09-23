@@ -752,9 +752,9 @@ export const useComposerContent = (args: EditorArgs) => {
         onClose();
     };
 
-    const handleExpandComposer = () => {
+    const handleExpandComposer = async () => {
         autoSave.cancel?.();
-        onCompose({ type: ComposeTypes.fromMessage, modelMessage });
+        await onCompose({ type: ComposeTypes.fromMessage, modelMessage });
     };
 
     const lock = opening || !hasRecipients;
