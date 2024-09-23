@@ -452,9 +452,10 @@ export const willTrialExpire = (subscription: Subscription | undefined) => {
 
 export const getHasMemberCapablePlan = (
     organization: Organization | undefined,
-    subscription: Subscription | undefined
+    subscription: Subscription | undefined,
+    flags: { showGatewaysForBundlePlan: boolean }
 ) => {
-    const supportedAddons = getSupportedAddons(getPlanIDs(subscription));
+    const supportedAddons = getSupportedAddons(getPlanIDs(subscription), flags);
     return (organization?.MaxMembers || 0) > 1 || (Object.keys(supportedAddons) as ADDON_NAMES[]).some(isMemberAddon);
 };
 
@@ -838,6 +839,20 @@ export const getMaxValue = (plan: Plan, key: MaxKeys): number => {
 
     return result ?? 0;
 };
+
+export function getAddonMultiplier(addonMaxKey: MaxKeys, addon: Plan): number {
+    let addonMultiplier: number;
+    if (addonMaxKey === 'MaxIPs') {
+        addonMultiplier = getPlanMaxIPs(addon);
+        if (addonMultiplier === 0) {
+            addonMultiplier = 1;
+        }
+    } else {
+        addonMultiplier = getMaxValue(addon, addonMaxKey);
+    }
+
+    return addonMultiplier;
+}
 
 export function isTaxInclusive(checkResponse?: Pick<SubscriptionCheckResponse, 'TaxInclusive'>): boolean {
     return checkResponse?.TaxInclusive === TaxInclusive.INCLUSIVE;

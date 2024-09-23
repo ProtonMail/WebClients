@@ -38,6 +38,7 @@ import type { Currency, Plan } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
+import useFlag from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
@@ -98,6 +99,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
         flow: 'signup-vpn',
     });
     const activeBreakpoint = useActiveBreakpoint();
+    const showGatewaysForBundlePlan = useFlag('ShowGatewaysForBundlePlan');
 
     const getPlans = useGetPlans();
 
@@ -215,7 +217,9 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
             plan: vpnPlanName,
             cycle: cycleData.upsellCycle,
         };
-        const { plan, planIDs } = getPlanIDsFromParams(plans, preferredCurrency, signupParameters, defaults) || {};
+        const { plan, planIDs } =
+            getPlanIDsFromParams(plans, preferredCurrency, signupParameters, defaults, { showGatewaysForBundlePlan }) ||
+            {};
 
         const selectedPlanCurrency = plan.Currency;
 
