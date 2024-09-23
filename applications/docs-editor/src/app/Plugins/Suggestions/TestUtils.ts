@@ -103,7 +103,19 @@ export function polyfillSelectionRelatedThingsForTests() {
             let prevSibling = anchorNode.previousSibling
 
             if (prevSibling === null) {
-              prevSibling = anchorNode.parentElement.previousSibling.lastChild
+              let parentElement = anchorNode.parentElement
+              let parentPrevSibling: Element | null = null
+              while (parentElement && !parentPrevSibling) {
+                parentPrevSibling = parentElement.previousSibling
+                parentElement = parentElement.parentElement
+              }
+              if (parentPrevSibling) {
+                prevSibling = parentPrevSibling.lastChild
+              }
+            }
+
+            if (!prevSibling) {
+              return
             }
 
             if (prevSibling.nodeName === 'P') {
@@ -115,7 +127,7 @@ export function polyfillSelectionRelatedThingsForTests() {
               anchor.offset = 0
             } else {
               anchor.node = prevSibling.firstChild
-              anchor.offset = anchor.node.nodeValue.length - 1
+              anchor.offset = anchor.node.nodeValue.length
             }
           } else if (!_$isTextNode) {
             anchor.node = anchorNode.childNodes[anchorOffset - 1]
