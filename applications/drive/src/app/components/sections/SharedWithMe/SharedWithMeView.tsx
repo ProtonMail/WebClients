@@ -6,6 +6,7 @@ import { useAppTitle } from '@proton/components';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';
 import { useDriveSharingFlags, useSharedWithMeView } from '../../../store';
+import { Actions, traceTelemetry } from '../../../utils/telemetry';
 import { FileBrowserStateProvider } from '../../FileBrowser';
 import ToolbarRow from '../ToolbarRow/ToolbarRow';
 import SharedWithMe from './SharedWithMe';
@@ -14,7 +15,11 @@ import SharedWithMeToolbar from './SharedWithMeToolbar';
 const SharedWithMeView = () => {
     useAppTitle(c('Title').t`Shared with me`);
     const { activeShareId, setDefaultRoot } = useActiveShare();
-    useEffect(setDefaultRoot, []);
+
+    useEffect(() => {
+        setDefaultRoot();
+        traceTelemetry(Actions.SignUpFlowAndRedirectCompleted).end();
+    }, []);
 
     const sharedWithMeView = useSharedWithMeView(activeShareId);
     const hasSharedItems = !!sharedWithMeView.items.length;
