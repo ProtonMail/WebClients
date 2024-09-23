@@ -1,7 +1,8 @@
 import type { RenderResult } from '@testing-library/react';
 import { fireEvent, render, within } from '@testing-library/react';
 
-import { Option } from '../option';
+import Option from '@proton/components/components/option/Option';
+
 import SelectTwo from './SelectTwo';
 
 function renderBasicSelect() {

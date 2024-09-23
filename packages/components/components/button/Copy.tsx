@@ -6,9 +6,8 @@ import { c } from 'ttag';
 import type { ButtonLikeShape, ButtonProps } from '@proton/atoms';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { copyDomToClipboard, textToClipboard } from '@proton/shared/lib/helpers/browser';
-
-import { Tooltip } from '../tooltip';
 
 interface Props extends Omit<ButtonProps, 'value'> {
     /**

@@ -3,9 +3,15 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { InputFieldTwo, Option, SelectTwo, Toggle } from '@proton/components/components';
+import { InputFieldTwo, useCalendarModelEventManager } from '@proton/components';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
-import { SettingsLayoutLeft, SettingsSectionWide, useCalendarModelEventManager } from '@proton/components/containers';
+import Toggle from '@proton/components/components/toggle/Toggle';
+import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
+import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
+import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import {
     getCalendarEventSettingsModel,
     getDefaultModel,
@@ -24,8 +30,6 @@ import type {
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
 
-import SettingsLayout from '../../account/SettingsLayout';
-import SettingsLayoutRight from '../../account/SettingsLayoutRight';
 import { BusySlotsLabelInfo } from '../calendarModal/BusySlotsCheckbox';
 import useBusySlotsAvailable from '../hooks/useBusySlotsAvailable';
 import Notifications from '../notifications/Notifications';

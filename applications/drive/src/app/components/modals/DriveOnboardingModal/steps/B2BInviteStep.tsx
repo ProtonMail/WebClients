@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { OnboardingContent, OnboardingStep, useSettingsLink } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
-import { useSettingsLink } from '@proton/components/components/link';
-import { OnboardingContent, OnboardingStep } from '@proton/components/containers/onboarding';
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import driveB2BInvite from '@proton/styles/assets/img/illustrations/drive-onboarding-b2b-invite.svg';
 

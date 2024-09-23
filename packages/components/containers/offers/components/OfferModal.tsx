@@ -1,9 +1,10 @@
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import type { Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import type { ModalProps } from '../../../components/modalTwo';
-import { ModalTwo, ModalTwoContent } from '../../../components/modalTwo';
 import useOnSelectDeal from '../hooks/useOnSelectDeal';
 import useVisitedOffer from '../hooks/useVisitedOffer';
 import type { Offer, OfferConfig, OfferProps } from '../interface';

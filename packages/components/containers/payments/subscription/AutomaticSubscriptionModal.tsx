@@ -9,13 +9,13 @@ import {
     useConfig,
     useLastSubscriptionEnd,
     useLoad,
-    useModalState,
     usePaymentStatus,
     usePlans,
     useSubscription,
     useSubscriptionModal,
     useUser,
 } from '@proton/components';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import {
     blackFriday2023DriveFreeConfig,

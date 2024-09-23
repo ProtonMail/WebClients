@@ -3,14 +3,15 @@ import { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
+import Price from '@proton/components/components/price/Price';
 import { SelectedPlan } from '@proton/payments';
 import type { ADDON_NAMES } from '@proton/shared/lib/constants';
 import { AddonKey, AddonLimit } from '@proton/shared/lib/constants';
 import type { AddonGuard, SupportedAddons } from '@proton/shared/lib/helpers/addons';
-import { isDriveOrgSizeAddon } from '@proton/shared/lib/helpers/addons';
 import {
     getSupportedAddons,
     isDomainAddon,
+    isDriveOrgSizeAddon,
     isIpAddon,
     isMemberAddon,
     isOrgSizeAddon,
@@ -27,7 +28,6 @@ import type { Audience, Currency, Cycle, Plan, PlanIDs, Subscription } from '@pr
 import { Renew } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { Price } from '../../../components';
 import ScribeAddon from '../ScribeAddon';
 import { AccountSizeCustomiser } from './AccountSizeCustomiser';
 import { AdditionalOptionsCustomiser } from './AdditionalOptionsCustomiser';

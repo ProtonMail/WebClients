@@ -2,6 +2,9 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import Info from '@proton/components/components/link/Info';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { useGetUserSettings } from '@proton/components/hooks/useUserSettings';
 import { useLoading } from '@proton/hooks';
 import { updateDeviceRecovery } from '@proton/shared/lib/api/settingsRecovery';
@@ -11,7 +14,6 @@ import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import { syncDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 
-import { Info, Toggle, useModalState } from '../../components';
 import {
     useApi,
     useAuthentication,
@@ -33,7 +35,8 @@ import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import SettingsParagraph from '../account/SettingsParagraph';
 import SettingsSection from '../account/SettingsSection';
-import { DisableMnemonicModal, GenerateMnemonicModal } from '../mnemonic';
+import DisableMnemonicModal from '../mnemonic/DisableMnemonicModal';
+import GenerateMnemonicModal from '../mnemonic/GenerateMnemonicModal';
 import ExportRecoveryFileButton from './ExportRecoveryFileButton';
 import VoidRecoveryFilesModal from './VoidRecoveryFilesModal';
 

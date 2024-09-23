@@ -5,6 +5,15 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import Info from '@proton/components/components/link/Info';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Modal from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import RegisterSecurityKeyContent from '@proton/components/containers/account/fido/RegisterSecurityKeyContent';
 import { useLoading } from '@proton/hooks';
 import { getSecurityKeyChallenge, registerSecurityKey } from '@proton/shared/lib/api/settings';
@@ -16,17 +25,6 @@ import { getCreatePayload } from '@proton/shared/lib/webauthn/create';
 import type { RegisterCredentials } from '@proton/shared/lib/webauthn/interface';
 import physicalKeyRegistered from '@proton/styles/assets/img/illustrations/physical-key-registered.svg';
 
-import type { ModalProps } from '../../../components';
-import {
-    Checkbox,
-    Info,
-    InputFieldTwo,
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-    useFormErrors,
-} from '../../../components';
 import { useApi, useErrorHandler, useEventManager } from '../../../hooks';
 import AuthModal from '../../password/AuthModal';
 import { maxSecurityKeyNameLength } from './constants';

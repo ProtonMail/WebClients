@@ -3,10 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Input } from '@proton/atoms';
-import { CircleLoader } from '@proton/atoms';
-import { Label } from '@proton/components/components';
+import { CircleLoader, Input } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import Label from '@proton/components/components/label/Label';
 import { useElementBreakpoints } from '@proton/components/hooks';
 import type { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
 import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';

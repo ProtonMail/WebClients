@@ -1,6 +1,6 @@
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import clsx from '@proton/utils/clsx';
 
-import { Tooltip } from '../tooltip';
 import Icon from './Icon';
 
 interface Props {

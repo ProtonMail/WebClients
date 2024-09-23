@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 
-import { useModalState } from '../../components/modalTwo';
-import { BugModal } from '../support';
+import BugModal from '../support/BugModal';
 
 const ChallengeError = () => {
     const [bugReportModal, setBugReportModal, render] = useModalState();

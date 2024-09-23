@@ -14,7 +14,7 @@ import type { UserSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { useTheme } from '../../../containers/themes';
+import { useTheme } from '../../../containers/themes/ThemeProvider';
 import type { ToolbarDropdownAction } from './ToolbarDropdown';
 import ToolbarDropdown from './ToolbarDropdown';
 

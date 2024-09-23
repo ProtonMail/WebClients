@@ -23,7 +23,7 @@ import {
     useNotifications,
     useReadCalendarBootstrap,
 } from '../../../hooks';
-import { useCalendarModelEventManager } from '../../eventManager/calendar';
+import { useCalendarModelEventManager } from '../../eventManager/calendar/CalendarModelEventManagerProvider';
 
 interface Props {
     type?: CALENDAR_MODAL_TYPE;

@@ -3,20 +3,19 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { changeOrganizationSignature, getIsEligibleOrganizationIdentityAddress } from '@proton/account';
+import { changeOrganizationSignature } from '@proton/account';
+import { getIsEligibleOrganizationIdentityAddress } from '@proton/account/organizationKey/actions';
 import { Button } from '@proton/atoms';
-import type { ModalProps } from '@proton/components/components';
-import {
-    InputFieldTwo,
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-    Option,
-    SelectTwo,
-    useFormErrors,
-} from '@proton/components/components';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Modal from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { useAddresses, useErrorHandler, useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store';

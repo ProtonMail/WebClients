@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
+import UnderlineButton from '@proton/components/components/button/UnderlineButton';
 import noResultsImg from '@proton/styles/assets/img/illustrations/empty-search.svg';
-
-import { UnderlineButton } from '../../../components';
 
 interface Props {
     query?: string;

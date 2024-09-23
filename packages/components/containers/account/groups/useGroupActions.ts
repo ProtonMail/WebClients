@@ -11,8 +11,9 @@ import {
     useGetUserKeys,
     useNotifications,
 } from '@proton/components';
-import { CryptoProxy } from '@proton/crypto';
+import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import type { PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { baseUseDispatch } from '@proton/react-redux-store';
 import { deleteGroupMember } from '@proton/shared/lib/api/groups';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
@@ -30,7 +31,6 @@ import {
 } from '@proton/shared/lib/keys';
 import { getActiveKeyObject, getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
 
-import { useKTVerifier } from '../..';
 import useVerifyOutboundPublicKeys from '../../keyTransparency/useVerifyOutboundPublicKeys';
 
 interface ForwardingAddressKeyParameters {

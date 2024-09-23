@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import type { WasmSortOrder, WasmTransactionDetails } from '@proton/andromeda';
-import { useModalStateWithData } from '@proton/components/components';
+import { useModalStateWithData } from '@proton/components/components/modalTwo/useModalState';
 import { useUserKeys } from '@proton/components/hooks';
 import {
     type IWasmApiWalletData,

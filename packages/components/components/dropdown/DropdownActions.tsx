@@ -4,13 +4,13 @@ import { c } from 'ttag';
 
 import type { ButtonProps } from '@proton/atoms';
 import { Button } from '@proton/atoms';
+import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import type { Props as DropdownMenuButtonProps } from '@proton/components/components/dropdown/DropdownMenuButton';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import Icon, { type IconName } from '@proton/components/components/icon/Icon';
+import Info from '@proton/components/components/link/Info';
 import clsx from '@proton/utils/clsx';
 
-import ButtonGroup from '../button/ButtonGroup';
-import { Info } from '../link';
 import DropdownMenu from './DropdownMenu';
 import SimpleDropdown from './SimpleDropdown';
 

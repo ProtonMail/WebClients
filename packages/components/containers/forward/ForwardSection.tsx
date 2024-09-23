@@ -4,17 +4,21 @@ import { useLocation } from 'react-router';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import { Tabs } from '@proton/components';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { useIncomingAddressForwardings, useOutgoingAddressForwardings } from '@proton/components/hooks';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { Tabs, useModalState, useModalTwoStatic } from '../../components';
 import { useAddresses, useUser } from '../../hooks';
-import { SettingsParagraph, SettingsSection, SettingsSectionWide } from '../account';
 import ForwardModal from './ForwardModal';
 import IncomingForwardTable from './IncomingForwardTable';
 import OutgoingForwardTable from './OutgoingForwardTable';

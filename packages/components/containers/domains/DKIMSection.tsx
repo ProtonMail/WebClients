@@ -2,12 +2,17 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import Copy from '@proton/components/components/button/Copy';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableRow from '@proton/components/components/table/TableRow';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
 import type { Domain } from '@proton/shared/lib/interfaces';
 import { DKIM_STATE } from '@proton/shared/lib/interfaces';
 
-import { Copy, Table, TableBody, TableCell, TableHeader, TableRow } from '../../components';
 import { useNotifications } from '../../hooks';
 
 interface Props {

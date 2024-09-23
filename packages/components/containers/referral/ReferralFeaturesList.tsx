@@ -1,6 +1,9 @@
 import { c } from 'ttag';
 
-import { Icon, Info, StripedItem, StripedList } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
+import Info from '@proton/components/components/link/Info';
+import StripedItem from '@proton/components/components/stripedList/StripedItem';
+import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import { CALENDAR_APP_NAME, DRIVE_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 

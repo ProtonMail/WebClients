@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useKTVerifier } from '@proton/components/containers/keyTransparency';
+import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import { useAddressesKeys, useApi, useEventManager, useNotifications, useUser } from '@proton/components/hooks';
 import { encryptionDisabled, expectSignatureDisabled } from '@proton/shared/lib/helpers/address';
 import type { Address } from '@proton/shared/lib/interfaces';

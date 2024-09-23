@@ -1,8 +1,8 @@
+import Checkbox from '@proton/components/components/input/Checkbox';
 import { toVCard } from '@proton/shared/lib/contacts/helpers/csv';
 import { display as getDisplay } from '@proton/shared/lib/contacts/helpers/csvFormat';
 import type { PreVcardsProperty } from '@proton/shared/lib/interfaces/contacts/Import';
 
-import { Checkbox } from '../../../../components';
 import ContactImportCsvSelectField from './ContactImportCsvSelectField';
 import ContactImportCsvSelectType from './ContactImportCsvSelectType';
 import ContactImportCsvTableRowsNField from './ContactImportCsvTableRowsNField';

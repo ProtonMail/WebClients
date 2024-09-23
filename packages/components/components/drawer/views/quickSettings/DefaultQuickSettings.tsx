@@ -2,14 +2,16 @@ import type { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
+import Info from '@proton/components/components/link/Info';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { ColorScheme, PROTON_THEMES_MAP, ThemeModeSetting, getThemes } from '@proton/shared/lib/themes/themes';
 
-import { Info, Toggle } from '../../../../components';
-import { ThemeCards, useTheme } from '../../../../containers';
+import ThemeCards from '../../../../containers/themes/ThemeCards';
+import { useTheme } from '../../../../containers/themes/ThemeProvider';
 import ThemeSyncModeDropdown from '../../../../containers/themes/ThemeSyncModeDropdown';
 import { useEarlyAccess, useNotifications, useShowThemeSelection } from '../../../../hooks';
 import DrawerAppHeadline from '../shared/DrawerAppHeadline';

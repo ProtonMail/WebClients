@@ -1,10 +1,12 @@
 import { c } from 'ttag';
 
 import { ButtonLike, Href } from '@proton/atoms';
-import { SettingsLink } from '@proton/components/components';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { useUser } from '@proton/components/hooks';
 import {
     APP_UPSELL_REF_PATH,
@@ -15,9 +17,6 @@ import {
 import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import protonSentinelImage from '@proton/styles/assets/img/illustrations/upsell-proton-sentinel.svg';
-
-import type { ModalStateProps } from '../../../../../modalTwo';
-import { ModalTwo } from '../../../../../modalTwo';
 
 interface Props {
     modalProps: ModalStateProps;

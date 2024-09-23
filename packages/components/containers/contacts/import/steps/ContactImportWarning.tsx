@@ -4,11 +4,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { CONTACTS_APP_NAME } from '@proton/shared/lib/constants';
 import type { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
 import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/contacts/Import';
 
-import { ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../../components';
 import ErrorDetails from './ContactImportWarningErrorDetails';
 
 interface Props {

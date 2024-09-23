@@ -2,10 +2,10 @@ import { format } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
-import { useModalState } from '../../../../components';
 import { useUser } from '../../../../hooks';
 import ConfirmSessionRecoveryCancellationModal from '../ConfirmSessionRecoveryCancellationModal';
 import PasswordResetAvailableAccountModal from '../PasswordResetAvailableAccountModal';

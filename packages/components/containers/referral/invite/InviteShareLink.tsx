@@ -3,7 +3,9 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, TwitterButton, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/components';
+import TwitterButton from '@proton/components/components/button/TwitterButton';
+import Icon from '@proton/components/components/icon/Icon';
 import { useUserSettings } from '@proton/components/hooks';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import throttle from '@proton/utils/throttle';
@@ -36,10 +38,7 @@ const InviteShareLink = () => {
         <div>
             <h2 className="h3 text-bold">{c('Label').t`Your referral link`}</h2>
             <div className="invite-section-share-link flex items-stretch gap-2">
-                <div
-                    className="flex-1 flex items-center p-2 user-select border rounded"
-                    title={referrerLink}
-                >
+                <div className="flex-1 flex items-center p-2 user-select border rounded" title={referrerLink}>
                     <span className="text-ellipsis">{referrerLink}</span>
                 </div>
                 <div className="flex gap-2 flex-nowrap justify-end">

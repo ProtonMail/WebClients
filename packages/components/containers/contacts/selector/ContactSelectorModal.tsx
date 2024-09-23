@@ -5,23 +5,21 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import SearchInput from '@proton/components/components/input/SearchInput';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import clsx from '@proton/utils/clsx';
 
-import type { ModalProps } from '../../../components';
-import {
-    Checkbox,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    Option,
-    SearchInput,
-    SelectTwo,
-} from '../../../components';
 import { useActiveBreakpoint, useContactEmailsSortedByName, useUserSettings } from '../../../hooks';
 import { useContactGroups } from '../../../hooks/useCategories';
 import type { ContactEditProps } from '../edit/ContactEditModal';

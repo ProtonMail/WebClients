@@ -6,10 +6,11 @@ import Alert from '@proton/components/components/alert/Alert';
 import Editor from '@proton/components/components/editor/Editor';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import type { EditorActions } from '@proton/components/components/editor/interface';
+import Toggle from '@proton/components/components/toggle/Toggle';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { AUTO_REPLY_CHARACTER_COUNT_LIMIT } from '@proton/shared/lib/mail/constants';
 import noop from '@proton/utils/noop';
 
-import { Toggle, Tooltip } from '../../../components';
 import { useMailSettings, useUser } from '../../../hooks';
 import type { Actions } from '../interfaces';
 

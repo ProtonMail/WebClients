@@ -4,10 +4,12 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ContactFormatted, ContactMergeModel } from '@proton/shared/lib/interfaces/contacts';
 import move from '@proton/utils/move';
 
-import { ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import type { ContactMergePreviewModalProps } from './ContactMergePreviewModal';
 import MergeTable from './table/MergeTable';
 

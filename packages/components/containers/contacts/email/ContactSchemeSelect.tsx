@@ -1,12 +1,13 @@
 import { c } from 'ttag';
 
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { CONTACT_PGP_SCHEMES } from '@proton/shared/lib/constants';
 import { PGP_SCHEMES, PGP_SCHEMES_MORE } from '@proton/shared/lib/constants';
 import { PGP_SCHEME_TEXT } from '@proton/shared/lib/contacts/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 
-import { Option, SelectTwo } from '../../../components';
 import type { SelectChangeEvent } from '../../../components/selectTwo/select';
 
 const { INLINE, MIME } = PGP_SCHEME_TEXT;

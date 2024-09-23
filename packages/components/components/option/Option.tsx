@@ -6,7 +6,7 @@ import usePrevious from '@proton/hooks/usePrevious';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
 
-export interface Props<V> extends Omit<ComponentPropsWithoutRef<'button'>, 'value' | 'onChange' | 'title'> {
+export interface OptionProps<V> extends Omit<ComponentPropsWithoutRef<'button'>, 'value' | 'onChange' | 'title'> {
     value: V;
     onChange?: (value: V) => void;
     selected?: boolean;
@@ -35,7 +35,7 @@ const Option = <V,>({
     className,
     preventScroll = false,
     ...rest
-}: Props<V>) => {
+}: OptionProps<V>) => {
     const ref = useRef<HTMLButtonElement | null>(null);
     const previousActive = usePrevious(active);
 

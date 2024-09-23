@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { BREACH_STATE } from '@proton/components/containers/credentialLeak/models';
+import type { FetchedBreaches } from '@proton/components/containers/credentialLeak/models';
 
 import BreachInfo from './BreachInfo';
 import BreachInfoNote from './BreachInfoNote';
@@ -9,7 +10,6 @@ import BreachRecommendations from './BreachRecommendations';
 import BreachTitle from './BreachTitle';
 import UserBreachInfo from './UserBreachInfo';
 import { getStyle } from './helpers';
-import type { FetchedBreaches } from './models';
 
 import './BreachInfoCard.scss';
 

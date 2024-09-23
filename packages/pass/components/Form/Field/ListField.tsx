@@ -6,8 +6,8 @@ import type { FieldProps, FormikErrors } from 'formik';
 import { FieldArray } from 'formik';
 
 import type { Input } from '@proton/atoms';
+import { Icon, InputFieldTwo } from '@proton/components';
 import type { IconName } from '@proton/components/';
-import { Icon, InputFieldTwo } from '@proton/components/';
 import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import type { Unpack } from '@proton/pass/types';

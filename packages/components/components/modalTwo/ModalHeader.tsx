@@ -1,15 +1,15 @@
 import type { ComponentPropsWithRef, ReactElement, ReactNode } from 'react';
-import React, { cloneElement, useContext } from 'react';
+import { cloneElement, useContext } from 'react';
 
 import { c } from 'ttag';
 
 import type { ButtonProps } from '@proton/atoms';
 import { Button, Vr } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
-import { Tooltip } from '../tooltip';
 import { ModalContext } from './Modal';
 
 import './ModalHeader.scss';

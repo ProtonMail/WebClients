@@ -10,6 +10,7 @@ import { Input } from '@proton/atoms';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { findLongestMatchingIndex } from '@proton/shared/lib/helpers/string';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import generateUID from '@proton/utils/generateUID';
@@ -17,7 +18,6 @@ import noop from '@proton/utils/noop';
 import withDecimalPrecision from '@proton/utils/withDecimalPrecision';
 
 import { useHotkeys } from '../../hooks';
-import { usePopperAnchor } from '../popper';
 
 const toFormatted = (value: Date, locale: Locale) => {
     return format(value, 'p', { locale });

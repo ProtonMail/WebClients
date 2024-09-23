@@ -1,11 +1,16 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Info from '@proton/components/components/link/Info';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { ColorScheme, ThemeModeSetting, getThemes } from '@proton/shared/lib/themes/themes';
 
-import type { ModalProps } from '../../components';
-import { Info, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Toggle } from '../../components';
 import ThemeCards from './ThemeCards';
 import { useTheme } from './ThemeProvider';
 import ThemeSyncModeCard from './ThemeSyncModeCard';

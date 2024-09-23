@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Info } from '../..';
+import Info from '@proton/components/components/link/Info';
 
 interface UserBreachInfoProps {
     email?: string;

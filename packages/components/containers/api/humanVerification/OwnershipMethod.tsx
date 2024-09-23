@@ -5,6 +5,8 @@ import { flushSync } from 'react-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import Loader from '@proton/components/components/loader/Loader';
 import { isVerifyAddressOwnership } from '@proton/components/containers/api/humanVerification/helper';
 import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -16,7 +18,6 @@ import {
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Api, HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
-import { Loader, SettingsLink } from '../../../components';
 import { useNotifications } from '../../../hooks';
 import RequestNewCodeModal from './RequestNewCodeModal';
 import Text from './Text';

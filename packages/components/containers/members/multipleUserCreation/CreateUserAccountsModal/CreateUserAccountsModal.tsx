@@ -6,19 +6,7 @@ import { c, msgid } from 'ttag';
 import { InvalidAddressesError, UnavailableAddressesError, createMember } from '@proton/account';
 import validateAddUser from '@proton/account/members/validateAddUser';
 import { Button, Input } from '@proton/atoms';
-import type { ModalProps } from '@proton/components';
 import {
-    Checkbox,
-    Icon,
-    Marks,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    Table,
-    TableBody,
-    TableCell,
-    TableHeader,
     useApi,
     useBeforeUnload,
     useEventManager,
@@ -27,18 +15,29 @@ import {
     useGetOrganizationKey,
     useGetUser,
     useGetUserKeys,
-    useKTVerifier,
     useNotifications,
     useSubscription,
 } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Progress from '@proton/components/components/progress/Progress';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import Marks from '@proton/components/components/text/Marks';
+import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { MEMBER_PRIVATE } from '@proton/shared/lib/constants';
-import { MEMBER_ROLE } from '@proton/shared/lib/constants';
+import { MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { escapeRegex, getMatches } from '@proton/shared/lib/helpers/regex';

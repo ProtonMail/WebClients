@@ -2,11 +2,12 @@ import type { ReactNode } from 'react';
 import { Children, cloneElement, isValidElement, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router';
 
+import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import clsx from '@proton/utils/clsx';
 
 import createScrollIntoView from '../../helpers/createScrollIntoView';
 import useAppTitle from '../../hooks/useAppTitle';
-import { SettingsPageTitle, SettingsParagraph } from '../account';
 import ErrorBoundary from '../app/ErrorBoundary';
 import PrivateMainArea from './PrivateMainArea';
 import SubSettingsSection from './SubSettingsSection';
@@ -15,7 +16,7 @@ import type { SettingsAreaConfig } from './interface';
 
 interface PrivateMainSettingsAreaBaseProps {
     breadcrumbs?: ReactNode;
-    title: string;
+    title?: string;
     noTitle?: boolean;
     description?: ReactNode;
     children?: ReactNode;

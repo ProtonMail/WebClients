@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useTheme } from '@proton/components/containers';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import imgSuccessDarkTheme from '@proton/styles/assets/img/illustrations/account-security-success-dark.svg';
 import imgSuccessWhiteTheme from '@proton/styles/assets/img/illustrations/account-security-success-white.svg';
 

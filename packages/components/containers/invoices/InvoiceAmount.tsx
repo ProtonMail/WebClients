@@ -1,6 +1,6 @@
-import { INVOICE_STATE, type Invoice } from '@proton/payments';
-
-import { Price } from '../../components';
+import Price from '@proton/components/components/price/Price';
+import type { Invoice } from '@proton/payments';
+import { INVOICE_STATE } from '@proton/payments';
 
 interface Props {
     invoice: Invoice;

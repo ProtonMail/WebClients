@@ -4,7 +4,11 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import AttachedFile from '@proton/components/components/attachedFile/AttachedFile';
+import Row from '@proton/components/components/container/Row';
 import Dropzone from '@proton/components/components/dropzone/Dropzone';
+import FileInput from '@proton/components/components/input/FileInput';
+import Label from '@proton/components/components/label/Label';
 import {
     IMPORT_CALENDAR_FAQ_URL,
     MAX_IMPORT_EVENTS_STRING,
@@ -14,7 +18,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import type { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar/Import';
 
-import { AttachedFile, FileInput, Label, Row } from '../../../components';
 import CalendarSelect from '../../../components/calendarSelect/CalendarSelect';
 
 interface Props {

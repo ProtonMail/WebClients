@@ -1,9 +1,9 @@
 import type { ReactNode } from 'react';
 
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import type { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { SettingsSectionWide } from '../../account';
 import CalendarsTable from './CalendarsTable';
 
 export interface CalendarsSectionProps {

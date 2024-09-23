@@ -2,15 +2,13 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Modal from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 
-import type { ModalProps } from '../../../../components';
-import {
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-} from '../../../../components';
 import ReadonlyFieldWithCopy from '../ReadonlyFieldWithCopy';
 
 export interface SCIMConfiguration {

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { PromotionBanner } from '@proton/components';
+import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
 import { useBundleProPlan } from '@proton/components/hooks/useHasPlan';
 import { PLANS } from '@proton/shared/lib/constants';
 import type { Organization } from '@proton/shared/lib/interfaces';

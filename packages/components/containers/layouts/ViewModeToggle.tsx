@@ -1,8 +1,8 @@
 import type { ChangeEvent } from 'react';
 
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import { Toggle } from '../../components';
 import { useToggle } from '../../hooks';
 
 const { GROUP, SINGLE } = VIEW_MODE;

@@ -6,7 +6,10 @@ import { NotificationDot } from '@proton/atoms';
 import type { ThemeColor } from '@proton/colors';
 
 import type { IconName } from '../icon/Icon';
-import { SidebarListItem, SidebarListItemContent, SidebarListItemContentIcon, SidebarListItemLink } from './index';
+import SidebarListItem from './SidebarListItem';
+import SidebarListItemContent from './SidebarListItemContent';
+import SidebarListItemContentIcon from './SidebarListItemContentIcon';
+import SidebarListItemLink from './SidebarListItemLink';
 
 interface Props {
     to: string;

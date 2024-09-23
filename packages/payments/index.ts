@@ -3,11 +3,11 @@ export { DEFAULT_TAX_BILLING_ADDRESS, type BillingAddress, type BillingAddressPr
 export { getErrors, isExpired, type CardModel } from './core/cardDetails';
 export {
     Autopay,
+    INVOICE_STATE,
+    INVOICE_TYPE,
     MethodStorage,
     PAYMENT_METHOD_TYPES,
     PAYMENT_TOKEN_STATUS,
-    INVOICE_STATE,
-    INVOICE_TYPE,
 } from './core/constants';
 export {
     type PaymentVerificator,

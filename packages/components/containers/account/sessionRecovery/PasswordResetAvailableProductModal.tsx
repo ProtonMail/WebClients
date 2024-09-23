@@ -3,16 +3,14 @@ import { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Modal from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { useSessionRecoveryInsecureTimeRemaining } from '@proton/components/hooks/useSessionRecovery';
 
-import type { ModalProps } from '../../../components';
-import {
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-    SettingsLink,
-} from '../../../components';
 import { useUser } from '../../../hooks';
 import ConfirmSessionRecoveryCancellationModal from './ConfirmSessionRecoveryCancellationModal';
 import passwordResetIllustration from './password-reset-illustration.svg';

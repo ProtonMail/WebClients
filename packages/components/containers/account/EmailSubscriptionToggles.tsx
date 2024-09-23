@@ -1,9 +1,10 @@
+import Info from '@proton/components/components/link/Info';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import type { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/constants';
 import { NEWSLETTER_SUBSCRIPTIONS, NEWSLETTER_SUBSCRIPTIONS_BY_BITS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { isGlobalFeatureNewsEnabled } from '@proton/shared/lib/helpers/newsletter';
 
-import { Info, Toggle } from '../../components';
 import type { EmailSubscription } from './constants/email-subscriptions';
 import { getEmailSubscriptions } from './constants/email-subscriptions';
 

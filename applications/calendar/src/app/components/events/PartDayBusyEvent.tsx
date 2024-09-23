@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
+import { useContactEmailsCache } from '@proton/components';
 import { getContactDisplayNameEmail } from '@proton/shared/lib/contacts/contactEmail';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 

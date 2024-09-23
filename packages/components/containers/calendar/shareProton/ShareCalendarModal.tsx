@@ -4,18 +4,19 @@ import { useEffect, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import {
-    AddressesAutocompleteTwo,
-    Loader,
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-    RadioGroup,
-} from '@proton/components/components';
+import { useContactEmailsCache } from '@proton/components';
 import AddressesInput, { AddressesInputItem } from '@proton/components/components/addressesInput/AddressesInput';
 import Icon from '@proton/components/components/icon/Icon';
+import RadioGroup from '@proton/components/components/input/RadioGroup';
+import Loader from '@proton/components/components/loader/Loader';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Modal from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import AddressesAutocompleteTwo from '@proton/components/components/v2/addressesAutocomplete/AddressesAutocomplete';
 import InputField from '@proton/components/components/v2/field/InputField';
+import { useKeyTransparencyContext } from '@proton/components/containers/keyTransparency/useKeyTransparencyContext';
 import {
     useApi,
     useGetAddressKeys,
@@ -45,10 +46,6 @@ import { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPr
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
-
-import type { ModalProps } from '../../../components';
-import { useContactEmailsCache } from '../../contacts/ContactEmailsProvider';
-import { useKeyTransparencyContext } from '../../keyTransparency';
 
 export enum VALIDATION_ERROR_TYPES {
     INVALID_EMAIL,

@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { APP_NAMES, PLANS } from '@proton/shared/lib/constants';
 import {
     APPS,
@@ -21,9 +22,8 @@ import {
 } from '@proton/shared/lib/user/storage';
 import { useFlag } from '@proton/unleash';
 
-import { LockedStateTopBanner } from '.';
-import { SettingsLink } from '../../components';
 import { useConfig, useLocalState, useSubscription, useUser } from '../../hooks';
+import LockedStateTopBanner from './LockedStateTopBanner';
 import TopBanner from './TopBanner';
 
 const IGNORE_STORAGE_LIMIT_KEY = 'ignore-storage-limit';

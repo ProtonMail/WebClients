@@ -1,7 +1,7 @@
 import type { ComponentPropsWithRef, KeyboardEvent } from 'react';
 import { forwardRef } from 'react';
 
-import CircleLoader from '@proton/atoms/CircleLoader/CircleLoader';
+import { CircleLoader } from '@proton/atoms';
 import DropdownCaret from '@proton/components/components/dropdown/DropdownCaret';
 import { type IconName } from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';

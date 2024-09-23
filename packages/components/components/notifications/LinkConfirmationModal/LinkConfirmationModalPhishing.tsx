@@ -1,14 +1,7 @@
-import React from 'react';
-
-
-
 import { c } from 'ttag';
 
-
-
-import { Checkbox } from '../../input';
-import { Label } from '../../label';
-
+import Checkbox from '@proton/components/components/input/Checkbox';
+import Label from '@proton/components/components/label/Label';
 
 interface Props {
     link: string;

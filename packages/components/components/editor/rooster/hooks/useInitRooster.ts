@@ -3,7 +3,8 @@ import { useCallback, useEffect, useRef } from 'react';
 
 import type { IEditor } from 'roosterjs-editor-types';
 
-import { useSyncIframeStyles, useTheme } from '@proton/components/containers';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import useSyncIframeStyles from '@proton/components/containers/themes/useSyncIframeStyles';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 

@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 
-import { getThemeStyle } from '@proton/components/containers/themes/ThemeProvider'
+import { getThemeStyle } from '@proton/components'
 import type { APP_NAMES } from '@proton/shared/lib/constants'
 
 export const THEME_ID = 'theme-root'

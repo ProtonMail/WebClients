@@ -5,12 +5,15 @@ import { c, msgid } from 'ttag';
 
 import { ButtonLike, Href } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
-import { SettingsSectionWide } from '@proton/components/containers';
-import type { EnhancedLogical } from '@proton/components/containers/vpn/OpenVPNConfigurationSection/interface';
+import Radio from '@proton/components/components/input/Radio';
+import RadioGroup from '@proton/components/components/input/RadioGroup';
+import Info from '@proton/components/components/link/Info';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { PLANS, SORT_DIRECTION, VPN_APP_NAME, VPN_CONNECTIONS, VPN_HOSTNAME } from '@proton/shared/lib/constants';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
 
-import { Info, Radio, RadioGroup, SettingsLink } from '../../../components';
 import {
     type CountryOptions,
     correctAbbr,
@@ -18,7 +21,7 @@ import {
     getLocalizedCountryByAbbr,
 } from '../../../helpers/countries';
 import { usePlans, useSortedList, useUser, useUserSettings, useUserVPN, useVPNLogicals } from '../../../hooks';
-import { SettingsParagraph } from '../../account';
+import type { EnhancedLogical } from '../OpenVPNConfigurationSection/interface';
 import ConfigsTable, { CATEGORY } from './ConfigsTable';
 import ServerConfigs from './ServerConfigs';
 import { isSecureCoreEnabled, isTorEnabled } from './utils';

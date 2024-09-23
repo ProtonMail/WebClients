@@ -4,6 +4,9 @@ import { isValidElement, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalSize } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import StepDot from '@proton/components/components/stepDot/StepDot';
 import StepDots from '@proton/components/components/stepDots/StepDots';
 import { updateFlags, updateWelcomeFlags } from '@proton/shared/lib/api/settings';
@@ -14,8 +17,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import range from '@proton/utils/range';
 
-import type { ModalSize } from '../../components';
-import { ModalTwoContent as ModalContent, ModalTwo } from '../../components';
 import {
     useApi,
     useConfig,
@@ -200,7 +201,7 @@ const OnboardingModal = ({
 
     return (
         <ModalTwo {...rest} size={size} className="onboarding-modal">
-            <ModalContent className="m-8">
+            <ModalTwoContent className="m-8">
                 {childStep}
                 {hasDots ? (
                     <div className="text-center">
@@ -218,7 +219,7 @@ const OnboardingModal = ({
                         </StepDots>
                     </div>
                 ) : null}
-            </ModalContent>
+            </ModalTwoContent>
         </ModalTwo>
     );
 };

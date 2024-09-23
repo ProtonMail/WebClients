@@ -6,8 +6,7 @@ import { c } from 'ttag';
 
 import { CircleLoader, InlineLinkButton } from '@proton/atoms';
 import type { ChallengeRef } from '@proton/components';
-import { Challenge, DropdownSizeUnit, Icon, Info, InputFieldTwo, PasswordInputTwo } from '@proton/components';
-import Option from '@proton/components/components/option/Option';
+import { Challenge, DropdownSizeUnit, Icon, Info, InputFieldTwo, Option, PasswordInputTwo } from '@proton/components';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';

@@ -3,14 +3,13 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike, Card } from '@proton/atoms';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { useSubscription, useUser } from '@proton/components/hooks';
 import { useBundleProPlan } from '@proton/components/hooks/useHasPlan';
 import { PLANS } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 import { Audience } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
-
-import { SettingsLink } from '../../components';
 
 interface Props {
     children: ReactNode;

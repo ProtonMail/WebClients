@@ -1,8 +1,8 @@
 import type { ChangeEvent } from 'react';
 
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { STICKY_LABELS } from '@proton/shared/lib/mail/mailSettings';
 
-import { Toggle } from '../../components';
 import { useToggle } from '../../hooks';
 
 const { ENABLED, DISABLED } = STICKY_LABELS;

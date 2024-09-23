@@ -1,12 +1,13 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import useLoading from '@proton/hooks/useLoading';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME, PLANS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import { SettingsParagraph, SettingsSection } from '../../account';
 import { useCancelSubscriptionFlow } from './cancelSubscription';
 import { useCancellationFlow } from './cancellationFlow';
 import useCancellationTelemetry from './cancellationFlow/useCancellationTelemetry';

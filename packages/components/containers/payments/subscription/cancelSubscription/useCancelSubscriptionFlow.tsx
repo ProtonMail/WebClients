@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { useModalState } from '@proton/components/components';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import { isSplittedUser, onSessionMigrationPaymentsVersion } from '@proton/payments';
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { changeRenewState, deleteSubscription } from '@proton/shared/lib/api/payments';
@@ -22,7 +23,6 @@ import { Renew } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 
-import { useModalTwoPromise } from '../../../../components/modalTwo/useModalTwo';
 import {
     useApi,
     useEventManager,

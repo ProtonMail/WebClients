@@ -2,8 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
-
-import { TableCell } from '../../../../components';
+import TableCell from '@proton/components/components/table/TableCell';
 
 interface Props {
     disabledPrevious: boolean;

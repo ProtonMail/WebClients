@@ -1,10 +1,12 @@
 import type { ReactElement, ReactNode } from 'react';
 import { cloneElement, useContext } from 'react';
 
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo, { ModalContext } from '@proton/components/components/modalTwo/Modal';
+import type { ModalContentProps } from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import clsx from '@proton/utils/clsx';
-
-import type { ModalContentProps, ModalProps } from '../modalTwo';
-import { ModalContext, ModalTwo, ModalTwoContent, ModalTwoFooter } from '../modalTwo';
 
 import './Prompt.scss';
 

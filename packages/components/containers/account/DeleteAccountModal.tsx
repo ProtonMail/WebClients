@@ -5,7 +5,21 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import ErrorButton from '@proton/components/components/button/ErrorButton';
 import Form from '@proton/components/components/form/Form';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import AuthModal from '@proton/components/containers/password/AuthModal';
 import { useLoading } from '@proton/hooks';
 import { leaveOrganisation } from '@proton/shared/lib/api/organization';
 import { canDelete, deleteUser, unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -18,22 +32,6 @@ import { getOrganizationDenomination } from '@proton/shared/lib/organization/hel
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import type { ModalProps } from '../../components';
-import {
-    Checkbox,
-    ErrorButton,
-    InputFieldTwo,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    Option,
-    SelectTwo,
-    TextAreaTwo,
-    useFormErrors,
-    useModalState,
-} from '../../components';
-import { AuthModal } from '../../containers';
 import {
     useApi,
     useAuthentication,

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { SectionConfig } from '@proton/components/containers/layout';
+import type { SectionConfig } from '@proton/components';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING, PLANS } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';

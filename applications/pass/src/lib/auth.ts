@@ -9,7 +9,7 @@ import { onboarding } from 'proton-pass-web/lib/onboarding';
 import { getSettingsStorageKey, settings } from 'proton-pass-web/lib/settings';
 import { getTelemetryStorageKey, telemetry } from 'proton-pass-web/lib/telemetry';
 
-import type { CreateNotificationOptions } from '@proton/components/containers/notifications';
+import type { CreateNotificationOptions } from '@proton/components';
 import type { AppStateContextValue } from '@proton/pass/components/Core/AppStateProvider';
 import {
     type AuthRouteState,

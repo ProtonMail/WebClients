@@ -3,9 +3,9 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Donut } from '@proton/atoms';
-import { Slider } from '@proton/atoms';
+import { Donut, Slider } from '@proton/atoms';
 import { ThemeColor, getVariableFromThemeColor } from '@proton/colors';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { PLANS } from '@proton/shared/lib/constants';
 import humanSize, { getLongSizeFormat, getSizeFormat, getUnit } from '@proton/shared/lib/helpers/humanSize';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
@@ -14,7 +14,6 @@ import { getOrganizationDenomination } from '@proton/shared/lib/organization/hel
 import clamp from '@proton/utils/clamp';
 import generateUID from '@proton/utils/generateUID';
 
-import { Tooltip } from '../../components';
 import InputField from '../../components/v2/field/InputField';
 import { useElementRect } from '../../hooks';
 

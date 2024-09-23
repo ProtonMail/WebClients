@@ -2,7 +2,7 @@ import type { ComponentPropsWithoutRef, ReactElement, ReactNode } from 'react';
 
 import { type IconName } from '@proton/components/components/icon/Icon';
 
-import type { Props as OptionProps } from '../option/Option';
+import type { OptionProps } from '../option/Option';
 import type { NodeOrBoolean } from '../v2/field/InputField';
 
 export type SelectChangeEvent<V> = {

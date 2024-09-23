@@ -4,18 +4,18 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import type { DropdownProps } from '@proton/components/components/dropdown/Dropdown';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import type { PopperPlacement } from '@proton/components/components/popper/interface';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
 import Option from '../option/Option';
-import type { PopperPlacement } from '../popper';
 import SelectButton from './SelectButton';
 import { SelectDisplayValue } from './SelectDisplayValue';
 import SelectOptions from './SelectOptions';
 import type { SelectProps } from './select';
 import useSelect, { SelectProvider } from './useSelect';
 
-export interface Props<V> extends SelectProps<V> {
+export interface SelectTwoProps<V> extends SelectProps<V> {
     /**
      * Optionally allows to remove the border around the select. Use for example in inputs
      */
@@ -70,7 +70,7 @@ const SelectTwo = <V extends any>({
     caretClassName,
     dropdownClassName,
     ...rest
-}: Props<V>) => {
+}: SelectTwoProps<V>) => {
     const anchorRef = useRef<HTMLButtonElement | null>(null);
 
     const [search, setSearch] = useState('');

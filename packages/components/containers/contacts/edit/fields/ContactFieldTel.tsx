@@ -1,9 +1,8 @@
 import type { ChangeEvent } from 'react';
 
+import TelInput from '@proton/components/components/input/TelInput';
 import { getAllFieldLabels } from '@proton/shared/lib/helpers/contacts';
 import type { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
-
-import { TelInput } from '../../../../components';
 
 interface Props {
     vCardProperty: VCardProperty<string>;

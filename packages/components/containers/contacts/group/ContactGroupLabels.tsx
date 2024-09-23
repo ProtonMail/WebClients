@@ -1,9 +1,8 @@
 import type { MouseEvent } from 'react';
 
+import type { LabelDescription } from '@proton/components/components/labelStack/LabelStack';
+import LabelStack from '@proton/components/components/labelStack/LabelStack';
 import type { ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
-
-import type { LabelDescription } from '../../../components/labelStack/LabelStack';
-import LabelStack from '../../../components/labelStack/LabelStack';
 
 interface Props {
     contactGroups: ContactGroup[];

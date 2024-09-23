@@ -3,8 +3,10 @@ import type { Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike, Card } from '@proton/atoms';
-import { SettingsLink, useModalState } from '@proton/components/components';
-import { SettingsParagraph, SettingsSectionWide } from '@proton/components/containers';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { useApi, useNotifications } from '@proton/components/hooks';
 import { removeInvitation, removeMember } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_SETTINGS_SECTION_ID, MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';

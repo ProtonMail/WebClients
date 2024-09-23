@@ -5,7 +5,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
-import { useTheme } from '@proton/components/containers';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import {
     closeDrawerFromChildApp,
     getIsDrawerPostMessage,
@@ -15,7 +16,6 @@ import {
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 
-import { Tooltip } from '../../components';
 import Header from '../../components/header/Header';
 import { useConfig, useDrawer, useEventManager, useHotkeys } from '../../hooks';
 
