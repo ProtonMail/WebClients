@@ -1,13 +1,16 @@
 import { useState } from 'react';
 
 import { Button } from '@proton/atoms';
-import { Info, Option, SelectTwo, Toggle } from '@proton/components';
-import { QuickSettingsSectionRow } from '@proton/components/components/drawer/views/quickSettings';
 import {
     DrawerAppHeadline,
     DrawerAppScrollContainer,
     DrawerAppSection,
-} from '@proton/components/components/drawer/views/shared';
+    Info,
+    Option,
+    QuickSettingsSectionRow,
+    SelectTwo,
+    Toggle,
+} from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
 import mdx from './QuickSettings.mdx';

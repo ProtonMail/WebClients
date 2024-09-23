@@ -13,6 +13,7 @@ import {
     DrawerAppHeader,
     DrawerAppHeaderCustomTitle,
     DrawerSidebar,
+    DrawerVisibilityButton,
     FeatureCode,
     FloatingButton,
     Icon,
@@ -37,7 +38,6 @@ import {
     useUser,
 } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
-import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
 import type { CustomAction, CustomActionRenderProps } from '@proton/components/containers/contacts/widget/types';
 import { CONTACT_WIDGET_TABS } from '@proton/components/containers/contacts/widget/types';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';

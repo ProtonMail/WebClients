@@ -8,6 +8,7 @@ import type { Breakpoints, CommanderItemInterface } from '@proton/components';
 import {
     Commander,
     DrawerSidebar,
+    DrawerVisibilityButton,
     ErrorBoundary,
     InboxQuickSettingsAppButton,
     PrivateMainArea,
@@ -20,7 +21,6 @@ import {
     useLabels,
     useModalState,
 } from '@proton/components';
-import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
