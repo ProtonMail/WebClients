@@ -1,6 +1,6 @@
 import Price from '@proton/components/components/price/Price';
-import type { Invoice } from '@proton/components/containers/invoices/interface';
-import { INVOICE_STATE } from '@proton/shared/lib/constants';
+import type { Invoice } from '@proton/payments';
+import { INVOICE_STATE } from '@proton/payments';
 
 interface Props {
     invoice: Invoice;
