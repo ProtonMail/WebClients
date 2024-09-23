@@ -119,10 +119,8 @@ export const GatewayCountrySelection = ({
             </Row>
             {needUpsell && (
                 <>
-                    <Row className="rounded p-2 bg-info">
-                        <div className="shrink-0">
-                            <Icon name="info-circle" />
-                        </div>
+                    <div className="flex flex-nowrap mb-4 rounded p-2 bg-info">
+                        <Icon name="info-circle" className="shrink-0" />
                         <div className="ml-2">
                             {totalCountExceeded ? (
                                 c('Info')
@@ -139,7 +137,7 @@ export const GatewayCountrySelection = ({
                                 </>
                             )}
                         </div>
-                    </Row>
+                    </div>
                     <Row>
                         {canBuyMore && (
                             <Button
@@ -153,14 +151,12 @@ export const GatewayCountrySelection = ({
                     </Row>
                 </>
             )}
-            <Row className="rounded p-2 bg-weak">
-                <div className="shrink-0">
-                    <Icon name="info-circle" />
-                </div>
+            <div className="flex flex-nowrap mb-4 rounded p-2 bg-weak">
+                <Icon name="info-circle" className="shrink-0" />
                 <div className="ml-2">
                     {c('Info').t`We recommend having multiple servers in different locations to provide redundancy.`}
                 </div>
-            </Row>
+            </div>
         </>
     );
 };

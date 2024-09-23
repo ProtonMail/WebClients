@@ -54,6 +54,7 @@ enum AccountFlag {
     V2SignupRegionalCurrency = 'V2SignupRegionalCurrency',
     DashboardRegionalCurrency = 'DashboardRegionalCurrency',
     B2BAuthenticationLogs = 'B2BAuthenticationLogs',
+    ShowGatewaysForBundlePlan = 'ShowGatewaysForBundlePlan',
 }
 
 enum CalendarFeatureFlag {

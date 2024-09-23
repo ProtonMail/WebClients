@@ -132,7 +132,10 @@ export function getSupportedB2CAddons(planIDs: PlanIDs): SupportedAddons {
     return supported;
 }
 
-export function getSupportedB2BAddons(planIDs: PlanIDs): SupportedAddons {
+export function getSupportedB2BAddons(
+    planIDs: PlanIDs,
+    { showGatewaysForBundlePlan }: { showGatewaysForBundlePlan: boolean }
+): SupportedAddons {
     const supported: SupportedAddons = {};
 
     if (planIDs[MAIL_PRO]) {
@@ -156,12 +159,18 @@ export function getSupportedB2BAddons(planIDs: PlanIDs): SupportedAddons {
     if (planIDs[BUNDLE_PRO]) {
         supported[ADDON_NAMES.MEMBER_BUNDLE_PRO] = true;
         supported[ADDON_NAMES.DOMAIN_BUNDLE_PRO] = true;
+        if (showGatewaysForBundlePlan) {
+            supported[ADDON_NAMES.IP_BUNDLE_PRO] = true;
+        }
         supported[ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO] = true;
     }
 
     if (planIDs[BUNDLE_PRO_2024]) {
         supported[ADDON_NAMES.MEMBER_BUNDLE_PRO_2024] = true;
         supported[ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024] = true;
+        if (showGatewaysForBundlePlan) {
+            supported[ADDON_NAMES.IP_BUNDLE_PRO_2024] = true;
+        }
         supported[ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024] = true;
     }
 
@@ -190,10 +199,13 @@ export function getSupportedB2BAddons(planIDs: PlanIDs): SupportedAddons {
     return supported;
 }
 
-export const getSupportedAddons = (planIDs: PlanIDs): SupportedAddons => {
+export const getSupportedAddons = (
+    planIDs: PlanIDs,
+    { showGatewaysForBundlePlan }: { showGatewaysForBundlePlan: boolean }
+): SupportedAddons => {
     const supported: SupportedAddons = {
         ...getSupportedB2CAddons(planIDs),
-        ...getSupportedB2BAddons(planIDs),
+        ...getSupportedB2BAddons(planIDs, { showGatewaysForBundlePlan }),
     };
 
     return supported;

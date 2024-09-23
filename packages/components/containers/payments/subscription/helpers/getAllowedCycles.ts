@@ -42,6 +42,8 @@ function capMaximumCycle(
         { plan: ADDON_NAMES.MEMBER_SCRIBE_DUO, cycle: CYCLE.YEARLY },
 
         { plan: PLANS.PASS, cycle: CYCLE.YEARLY },
+        { plan: PLANS.MAIL_BUSINESS, cycle: CYCLE.YEARLY },
+        { plan: PLANS.BUNDLE_PRO_2024, cycle: CYCLE.YEARLY },
 
         { plan: PLANS.MAIL, cycle: CYCLE.YEARLY, currencyPredicate: (currency) => isRegionalCurrency(currency) },
         { plan: PLANS.DRIVE, cycle: CYCLE.YEARLY, currencyPredicate: (currency) => isRegionalCurrency(currency) },
