@@ -7409,6 +7409,7 @@ __metadata:
     typescript: "npm:^5.5.4"
     ua-parser-js: "npm:^1.0.38"
     web-streams-polyfill: "npm:^3.3.3"
+    web-vitals: "npm:^4.2.3"
     webpack: "npm:^5.93.0"
     zod: "npm:^3.23.8"
   languageName: unknown
@@ -42740,6 +42741,13 @@ __metadata:
   version: 3.3.3
   resolution: "web-streams-polyfill@npm:3.3.3"
   checksum: 10c0/64e855c47f6c8330b5436147db1c75cb7e7474d924166800e8e2aab5eb6c76aac4981a84261dd2982b3e754490900b99791c80ae1407a9fa0dcff74f82ea3a7f
+  languageName: node
+  linkType: hard
+
+"web-vitals@npm:^4.2.3":
+  version: 4.2.3
+  resolution: "web-vitals@npm:4.2.3"
+  checksum: 10c0/905bdb9434f365435c3c00e5f473ce088980fcd61068906e20a575bae9590e1cc28dab0f90958c66717591e2f4c9b809ec8025cef5796fa4bc1304d50332f125
   languageName: node
   linkType: hard
 
