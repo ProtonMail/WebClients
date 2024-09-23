@@ -2,45 +2,41 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import type { ModalPropsWithData } from '@proton/components';
+import type { ModalOwnProps } from '@proton/components';
 import { useNotifications, useUserKeys } from '@proton/components/hooks';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import { type TransactionData, encryptWalletDataWithWalletKey, useWalletApi } from '@proton/wallet';
-import { updateWalletTransaction, useWalletDispatch } from '@proton/wallet/store';
+import { encryptWalletDataWithWalletKey, useWalletApi } from '@proton/wallet';
+import { updateWalletTransaction, useApiWalletTransactionData, useWalletDispatch } from '@proton/wallet/store';
 
 import { TEXT_AREA_MAX_LENGTH } from '../../constants';
-import { useBitcoinBlockchainContext } from '../../contexts';
 import { TextAreaModal } from '../TextAreaModal';
 
-interface Props extends ModalPropsWithData<{ transaction: TransactionData }> {
+interface Props extends ModalOwnProps {
+    hashedTxId: string;
     apiWalletData: IWasmApiWalletData;
 }
 
-export const TransactionNoteModal = ({ apiWalletData, data, ...modalProps }: Props) => {
-    const baseLabel = data?.transaction.apiData?.Label ?? '';
+export const TransactionNoteModal = ({ apiWalletData, hashedTxId, ...modalProps }: Props) => {
+    const [walletTransactions] = useApiWalletTransactionData([hashedTxId]);
+    const apiWalletTransaction = walletTransactions?.[hashedTxId];
+
+    const baseLabel = apiWalletTransaction?.Label ?? '';
     const dispatch = useWalletDispatch();
 
     const [userKeys] = useUserKeys();
     const { createNotification } = useNotifications();
-    const { walletMap } = useBitcoinBlockchainContext();
     const walletApi = useWalletApi();
 
     const handleSaveNote = useCallback(
         async (label: string) => {
-            const apiData = data?.transaction?.apiData;
-
-            if (!apiData || !userKeys) {
+            if (!apiWalletTransaction || !userKeys) {
                 return;
             }
 
-            const { WalletID, WalletAccountID, ID: TransactionID, Label } = apiData;
+            const { WalletID, WalletAccountID, ID: TransactionID, Label } = apiWalletTransaction;
 
             // TODO: later WalletAccountID won't be nullable anymore, typeguard can be removed then
-            const account = WalletAccountID && walletMap[WalletID]?.accounts[WalletAccountID];
-
-            if (account && WalletAccountID && apiWalletData?.WalletKey?.DecryptedKey && Label !== label) {
-                // TODO: later WalletAccountID won't be nullable anymore, typeguard can be removed then
-
+            if (WalletAccountID && apiWalletData?.WalletKey?.DecryptedKey && Label !== label) {
                 try {
                     const [encryptedLabel] = await encryptWalletDataWithWalletKey(
                         [label],
@@ -56,15 +52,16 @@ export const TransactionNoteModal = ({ apiWalletData, data, ...modalProps }: Pro
                             encryptedLabel ?? ''
                         );
 
-                    if (data.transaction.apiData?.HashedTransactionID) {
+                    if (apiWalletTransaction?.HashedTransactionID) {
                         dispatch(
                             updateWalletTransaction({
-                                hashedTransactionId: data.transaction.apiData?.HashedTransactionID,
+                                hashedTransactionId: apiWalletTransaction?.HashedTransactionID,
                                 update: { Label: label },
                             })
                         );
                     }
 
+                    modalProps.onClose?.();
                     createNotification({ text: c('Wallet Transaction').t`Transaction label successfully updated` });
                 } catch (error: any) {
                     createNotification({
@@ -77,11 +74,11 @@ export const TransactionNoteModal = ({ apiWalletData, data, ...modalProps }: Pro
         [
             apiWalletData.WalletKey?.DecryptedKey,
             createNotification,
-            data?.transaction.apiData,
+            apiWalletTransaction,
             dispatch,
             userKeys,
             walletApi,
-            walletMap,
+            modalProps,
         ]
     );
 
