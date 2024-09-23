@@ -3,7 +3,12 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms';
 import QRCode from '@proton/components/components/image/QRCode';
 import Logo from '@proton/components/components/logo/Logo';
-import { CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import {
+    CALENDAR_APP_NAME,
+    CALENDAR_MOBILE_APP_LINKS,
+    MAIL_APP_NAME,
+    MAIL_MOBILE_APP_LINKS,
+} from '@proton/shared/lib/constants';
 import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';
 import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg';
 
@@ -60,15 +65,15 @@ const MobileAppSecttingsSection = () => {
         <div className="flex gap-6 mt-3">
             <ProductDownloadCard
                 app="proton-mail"
-                qrCodeLink="https://proton.me/mailapp"
-                appStoreLink="https://apps.apple.com/app/apple-store/id979659905"
-                playStoreLink="https://play.google.com/store/apps/details?id=ch.protonmail.android"
+                qrCodeLink={MAIL_MOBILE_APP_LINKS.qrCode}
+                appStoreLink={MAIL_MOBILE_APP_LINKS.appStore}
+                playStoreLink={MAIL_MOBILE_APP_LINKS.playStore}
             />
             <ProductDownloadCard
                 app="proton-calendar"
-                qrCodeLink="https://proton.me/calapp"
-                appStoreLink="https://apps.apple.com/app/apple-store/id1514709943"
-                playStoreLink="https://play.google.com/store/apps/details?id=me.proton.android.calendar"
+                qrCodeLink={CALENDAR_MOBILE_APP_LINKS.qrCode}
+                appStoreLink={CALENDAR_MOBILE_APP_LINKS.appStore}
+                playStoreLink={CALENDAR_MOBILE_APP_LINKS.playStore}
             />
         </div>
     );

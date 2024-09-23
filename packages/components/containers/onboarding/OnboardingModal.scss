@@ -7,3 +7,15 @@
 		--size: #{rem(394)};
 	}
 }
+
+.onboarding-modal--larger {
+	min-block-size: rem(300);
+
+	&#{&} {
+		--size: #{rem(480)};
+	}
+}
+
+.onboarding-modal--new {
+	min-block-size: rem(600); // Keep reasonnably same height
+}

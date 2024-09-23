@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="none">
+    <g clip-path="url(#a)">
+        <rect width="80" height="80" fill="url(#b)" fill-opacity=".09" rx="20" />
+        <g filter="url(#c)">
+            <path
+                fill="url(#d)"
+                d="m57.976 22.652-15.119-3.298a7.412 7.412 0 0 0-4.526 0l-15.119 3.298c-.898.29-2.176.856-2.212 1.836V45.26c0 2.393.712 4.77 2.448 6.417 4.2 3.985 11.342 8.453 16.787 10.269.251.072.503.072.718 0 5.391-1.797 11.686-5.452 15.598-9.108C58.3 51.204 59 48.818 59 46.426V24.488c-.036-.98-.126-1.546-1.024-1.836Z"
+            />
+        </g>
+        <path
+            fill="#fff"
+            d="M35.559 42.576v3.51h2.463V42.73a1.232 1.232 0 0 1 1.232-1.232h2.526a4.443 4.443 0 0 0 3.143-7.588 4.446 4.446 0 0 0-3.143-1.302H35.56v4.388h2.463v-2.069h3.592a2.103 2.103 0 1 1 0 4.206h-2.612a3.443 3.443 0 0 0-3.443 3.444Z"
+        />
+        <path
+            fill="#fff"
+            d="M39.254 41.498a3.695 3.695 0 0 0-3.695 3.695v.894h2.463V42.73a1.232 1.232 0 0 1 1.232-1.231Z"
+        />
+        <circle cx="9" cy="43" r="1" fill="#6D4AFF" opacity=".3" />
+        <circle cx="9" cy="59" r="1" fill="#6D4AFF" opacity=".3" />
+        <circle cx="26" cy="9" r="1" fill="#6D4AFF" opacity=".3" />
+        <circle cx="41" cy="13" r="1" fill="#6D4AFF" opacity=".3" />
+        <circle cx="23" cy="64" r="1" fill="#6D4AFF" opacity=".3" />
+        <circle cx="37" cy="70" r="1" fill="#6D4AFF" opacity=".3" />
+        <circle cx="58" cy="62" r="1" fill="#6D4AFF" opacity=".3" />
+        <circle cx="67" cy="69" r="1" fill="#6D4AFF" opacity=".3" />
+        <circle cx="72" cy="52" r="1" fill="#6D4AFF" opacity=".3" />
+        <circle cx="69" cy="41" r="1" fill="#6D4AFF" opacity=".3" />
+        <circle cx="58" cy="9" r="1" fill="#6D4AFF" opacity=".3" />
+        <circle cx="69" cy="26" r="1" fill="#6D4AFF" opacity=".3" />
+        <circle cx="11" cy="21" r="1" fill="#6D4AFF" opacity=".3" />
+    </g>
+    <defs>
+        <linearGradient id="b" x1="-3.148" x2="99.262" y1="-2.92" y2="34.008" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#ECAAFF" />
+            <stop offset="1" stop-color="#6A48F6" />
+        </linearGradient>
+        <linearGradient id="d" x1="55.482" x2="28.511" y1="6.566" y2="66.477" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#EEBEFF" />
+            <stop offset="1" stop-color="#5228FF" />
+        </linearGradient>
+        <clipPath id="a">
+            <rect width="80" height="80" fill="#fff" rx="20" />
+        </clipPath>
+        <filter
+            id="c"
+            width="68"
+            height="73.493"
+            x="6"
+            y="14"
+            color-interpolation-filters="sRGB"
+            filterUnits="userSpaceOnUse"
+        >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+            <feOffset dy="2.22" />
+            <feGaussianBlur stdDeviation="1" />
+            <feColorMatrix values="0 0 0 0 0.290196 0 0 0 0 0.176471 0 0 0 0 0.772549 0 0 0 0.04 0" />
+            <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_6235_34169" />
+            <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+            <feOffset dy="10.493" />
+            <feGaussianBlur stdDeviation="7.5" />
+            <feColorMatrix values="0 0 0 0 0.290196 0 0 0 0 0.176471 0 0 0 0 0.772549 0 0 0 0.05 0" />
+            <feBlend in2="effect1_dropShadow_6235_34169" result="effect2_dropShadow_6235_34169" />
+            <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+            <feOffset dy="5" />
+            <feGaussianBlur stdDeviation="5" />
+            <feColorMatrix values="0 0 0 0 0.290196 0 0 0 0 0.176471 0 0 0 0 0.772549 0 0 0 0.05 0" />
+            <feBlend in2="effect2_dropShadow_6235_34169" result="effect3_dropShadow_6235_34169" />
+            <feBlend in="SourceGraphic" in2="effect3_dropShadow_6235_34169" result="shape" />
+        </filter>
+    </defs>
+</svg>

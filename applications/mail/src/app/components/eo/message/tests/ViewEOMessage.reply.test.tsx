@@ -1,4 +1,4 @@
-import { screen, waitFor } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
 import { EOClearAll, reply } from '../../../../helpers/test/eo/helpers';
@@ -19,14 +19,14 @@ describe('Encrypted Outside message reply', () => {
     it('should not be able to click on reply button if max replies has been reached', async () => {
         await setup({ replies: [reply, reply, reply, reply, reply] as EOMessageReply[] });
 
-        const replyButton = await waitFor(() => screen.findByTestId('eoreply:button'));
+        const replyButton = await screen.findByTestId('eoreply:button');
         expect(replyButton).toHaveAttribute('disabled');
     });
 
     it('should be able to click on reply button if max replies has not been reached', async () => {
         await setup({ replies: [reply, reply, reply, reply] as EOMessageReply[] });
 
-        const replyButton = await waitFor(() => screen.findByTestId('eoreply:button'));
+        const replyButton = await screen.findByTestId('eoreply:button');
         expect(replyButton).not.toHaveAttribute('disabled');
     });
 });

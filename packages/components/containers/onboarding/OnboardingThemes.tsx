@@ -1,35 +1,46 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import type { ThemeTypes } from '@proton/shared/lib/themes/themes';
 
-import type { Theme } from '../themes/ThemeCards';
 import ThemeCards from '../themes/ThemeCards';
-import type { Props as OnboardingContentProps } from './OnboardingContent';
+import { useTheme } from '../themes/ThemeProvider';
 import OnboardingContent from './OnboardingContent';
+import OnboardingStep from './OnboardingStep';
+import { ONBOARDING_THEMES } from './constants';
+import type { OnboardingStepRenderCallback } from './interface';
 
-interface Props extends Omit<OnboardingContentProps, 'decription' | 'onChange'> {
-    themes: Theme[];
-    themeIdentifier: ThemeTypes;
-    onChange: (identifier: ThemeTypes) => void;
-}
+interface Props extends OnboardingStepRenderCallback {}
 
-const OnboardingThemes = ({ themes, themeIdentifier, onChange, ...rest }: Props) => {
+const OnboardingThemes = ({ ...rest }: Props) => {
     const mobile = isMobile();
+    const theme = useTheme();
+
+    const handleThemeChange = (newThemeType: ThemeTypes) => {
+        theme.setTheme(newThemeType);
+    };
 
     return (
-        <OnboardingContent
-            title={c('Onboarding Proton').t`Pick a theme`}
-            description={c('Onboarding Proton').t`You will be able to change your theme any time in your settings.`}
-            {...rest}
-        >
-            <ThemeCards
-                list={themes}
-                themeIdentifier={themeIdentifier}
-                onChange={onChange}
-                size={mobile ? 'medium-wide' : 'large'}
-            />
-        </OnboardingContent>
+        <OnboardingStep>
+            <OnboardingContent
+                title={c('Onboarding Proton').t`Pick a theme`}
+                description={c('Onboarding Proton').t`You will be able to change your theme any time in your settings.`}
+                {...rest}
+            >
+                <ThemeCards
+                    list={ONBOARDING_THEMES}
+                    themeIdentifier={theme.information.theme}
+                    onChange={handleThemeChange}
+                    size={mobile ? 'medium-wide' : 'large'}
+                />
+            </OnboardingContent>
+            <footer className="flex flex-nowrap">
+                <Button size="large" fullWidth onClick={rest.onNext}>
+                    {c('Action').t`Next`}
+                </Button>
+            </footer>
+        </OnboardingStep>
     );
 };
 

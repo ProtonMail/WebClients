@@ -9,3 +9,5 @@ export interface OnboardingStepRenderCallback {
     onBack?: () => void;
     displayGenericSteps?: boolean;
 }
+
+export type OnboardingStepComponent = (props: OnboardingStepRenderCallback) => ReactNode;

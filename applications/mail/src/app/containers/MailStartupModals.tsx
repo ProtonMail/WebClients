@@ -19,13 +19,9 @@ import { shouldOpenReminderModal } from '@proton/components/containers/payments/
 import { OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
-import MailOnboardingModal from '../components/onboarding/MailOnboardingModal';
+import MailOnboardingModal from '../components/onboarding/modal/MailOnboardingModal';
 
-interface Props {
-    onboardingOpen: boolean;
-}
-
-const MailStartupModals = ({ onboardingOpen }: Props) => {
+const MailStartupModals = () => {
     const [subscription, subscriptionLoading] = useSubscription();
 
     // Onboarding modal
@@ -41,7 +37,8 @@ const MailStartupModals = ({ onboardingOpen }: Props) => {
     const seenReferralModal = useFeature<boolean>(FeatureCode.SeenReferralModal);
     const shouldOpenReferralModal = getShouldOpenReferralModal({ subscription, feature: seenReferralModal.feature });
 
-    const [, setWelcomeFlagsDone] = useWelcomeFlags();
+    const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
+    const onboardingOpen = !welcomeFlags.isDone;
 
     const showLightLabellingFeatureModal = useShowLightLabellingFeatureModal();
     const [lightLabellingFeatureModalProps, setLightLabellingFeatureModal, renderLightLabellingFeatureModal] =
@@ -78,13 +75,13 @@ const MailStartupModals = ({ onboardingOpen }: Props) => {
             {renderOnboardingModal && (
                 <EasySwitchProvider>
                     <MailOnboardingModal
-                        hideDiscoverApps
                         onDone={() => {
                             setWelcomeFlagsDone();
                             onboardingModal.onClose();
                         }}
                         onExit={onboardingModal.onExit}
                         open={onboardingModal.open}
+                        hideDiscoverApps
                     />
                 </EasySwitchProvider>
             )}

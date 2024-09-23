@@ -3,7 +3,7 @@ import { useUserSettings } from '@proton/components/hooks';
 import { render } from 'proton-mail/helpers/test/render';
 
 import AccountsLoginModal from './AccountsLoginModal';
-import { getOnlineAccounts } from './OnlineAccounts';
+import { getOnlineServices } from './getOnlineServices';
 
 jest.mock('@proton/components/hooks/useUserSettings');
 const mockedUserSettings = useUserSettings as jest.MockedFunction<any>;
@@ -14,7 +14,7 @@ describe('AccountsLoginModal', () => {
         const { getAllByTestId } = await render(
             <AccountsLoginModal open onClose={jest.fn} onExit={jest.fn} key="us" />
         );
-        const links = getOnlineAccounts();
+        const links = getOnlineServices();
         const allLinks = links.map((item) => item.services).flat();
 
         expect(getAllByTestId('accounts-login-modal-service-item')?.length).toEqual(allLinks.length);
@@ -26,11 +26,11 @@ describe('AccountsLoginModal', () => {
         const { getAllByTestId } = await render(
             <AccountsLoginModal open onClose={jest.fn} onExit={jest.fn} key="non_us" />
         );
-        const links = getOnlineAccounts();
+        const links = getOnlineServices();
         const allLinks = links
             .map((item) => item.services)
             .flat()
-            .filter((item) => !item.usOnly);
+            .filter((item) => item.country !== 'US');
 
         expect(getAllByTestId('accounts-login-modal-service-item')?.length).toEqual(allLinks.length);
     });

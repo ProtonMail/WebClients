@@ -9,12 +9,11 @@ import onboardingFamilyPlan from '@proton/styles/assets/img/onboarding/familyPla
 import onboardingOrganization from '@proton/styles/assets/img/onboarding/organization.svg';
 import clsx from '@proton/utils/clsx';
 
-import type { Props as OnboardingContentProps } from './OnboardingContent';
 import OnboardingContent from './OnboardingContent';
+import OnboardingStep from './OnboardingStep';
+import type { OnboardingStepRenderCallback } from './interface';
 
-interface Props extends Omit<OnboardingContentProps, 'decription' | 'img'> {
-    handleNext: () => void;
-}
+interface Props extends OnboardingStepRenderCallback {}
 
 const OnboardingSetupOrganization = (props: Props) => {
     const [organization] = useOrganization();
@@ -37,29 +36,38 @@ const OnboardingSetupOrganization = (props: Props) => {
     const img = hasFamilyOrg ? onboardingFamilyPlan : onboardingOrganization;
 
     return (
-        <OnboardingContent title={title} description={description} {...props}>
-            <div className={clsx('text-center', isMobile() ? 'pt-4' : 'pt-12')}>
-                <img
-                    src={img}
-                    alt={imgAlt}
-                    className="w-full mb-2 max-w-custon"
-                    style={{
-                        '--max-w-custon': isMobile() ? '15em' : '20em',
-                    }}
-                />
-                <Button
-                    size="large"
-                    color="norm"
-                    fullWidth
-                    onClick={() => {
-                        goToSettings('/multi-user-support', undefined, true);
-                        props.handleNext();
-                    }}
-                >
-                    {c('Action').t`Start setup`}
-                </Button>
-            </div>
-        </OnboardingContent>
+        <OnboardingStep>
+            <OnboardingContent title={title} description={description} {...props}>
+                <div className={clsx('text-center', isMobile() ? 'pt-4' : 'pt-12')}>
+                    <img
+                        src={img}
+                        alt={imgAlt}
+                        className="w-full mb-2 max-w-custon"
+                        style={{
+                            '--max-w-custon': isMobile() ? '15em' : '20em',
+                        }}
+                    />
+                    <Button
+                        size="large"
+                        color="norm"
+                        fullWidth
+                        onClick={() => {
+                            goToSettings('/multi-user-support', undefined, true);
+                            props.onNext();
+                        }}
+                    >
+                        {c('Action').t`Start setup`}
+                    </Button>
+                </div>
+            </OnboardingContent>
+            <footer>
+                <footer className="flex flex-nowrap">
+                    <Button size="large" fullWidth onClick={props.onNext}>
+                        {c('Action').t`Skip`}
+                    </Button>
+                </footer>
+            </footer>
+        </OnboardingStep>
     );
 };
 
