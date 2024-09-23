@@ -19,8 +19,8 @@ import {
 } from '@proton/shared/lib/helpers/addons';
 import { setQuantity } from '@proton/shared/lib/helpers/planIDs';
 import {
+    getAddonMultiplier,
     getMaxValue,
-    getPlanMaxIPs,
     getVPNDedicatedIPs,
     hasVpnBusiness,
 } from '@proton/shared/lib/helpers/subscription';
@@ -85,22 +85,8 @@ const AddonCustomizer = ({
 
     const isSupported = !!supportedAddons[addonNameKey];
     const addonMaxKey = AddonKey[addonNameKey];
-    /**
-     * Workaround specifically for MaxIPs property. There is an upcoming mirgation in payments API v5
-     * That will structure all these Max* properties in a different way.
-     * For now, we need to handle MaxIPs separately.
-     * See {@link MaxKeys} and {@link Plan}. Note that all properties from MaxKeys must be present in Plan
-     * with the exception of MaxIPs.
-     */
-    let addonMultiplier: number;
-    if (addonMaxKey === 'MaxIPs') {
-        addonMultiplier = getPlanMaxIPs(addon);
-        if (addonMultiplier === 0) {
-            addonMultiplier = 1;
-        }
-    } else {
-        addonMultiplier = getMaxValue(addon, addonMaxKey) ?? 1;
-    }
+
+    const addonMultiplier = getAddonMultiplier(addonMaxKey, addon);
 
     const scribeAddonKey = (Object.keys(supportedAddons) as ADDON_NAMES[]).find(isScribeAddon);
 

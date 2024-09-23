@@ -16,9 +16,8 @@ import { getPlanFromCheckout } from './planIDs';
 import {
     INCLUDED_IP_PRICING,
     customCycles,
-    getMaxValue,
+    getAddonMultiplier,
     getMembersFromPlanIDs,
-    getPlanMaxIPs,
     getPricePerCycle,
     getPricingPerMember,
 } from './subscription';
@@ -51,15 +50,7 @@ const getAddonQuantity = (addon: Plan, quantity: number) => {
      * See {@link MaxKeys} and {@link Plan}. Note that all properties from MaxKeys must be present in Plan
      * with the exception of MaxIPs.
      */
-    let addonMultiplier: number;
-    if (maxKey === 'MaxIPs') {
-        addonMultiplier = getPlanMaxIPs(addon);
-        if (addonMultiplier === 0) {
-            addonMultiplier = 1;
-        }
-    } else {
-        addonMultiplier = maxKey ? getMaxValue(addon, maxKey) : 0;
-    }
+    const addonMultiplier = maxKey ? getAddonMultiplier(maxKey, addon) : 0;
 
     return quantity * addonMultiplier;
 };

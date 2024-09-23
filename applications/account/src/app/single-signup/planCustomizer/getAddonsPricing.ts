@@ -1,7 +1,7 @@
 import type { ADDON_NAMES } from '@proton/shared/lib/constants';
 import { AddonKey, AddonLimit } from '@proton/shared/lib/constants';
 import { getSupportedAddons } from '@proton/shared/lib/helpers/addons';
-import { getMaxValue, getPlanMaxIPs } from '@proton/shared/lib/helpers/subscription';
+import { getAddonMultiplier, getMaxValue, getPlanMaxIPs } from '@proton/shared/lib/helpers/subscription';
 import type { Cycle, Plan, PlanIDs } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -34,22 +34,7 @@ export default function getAddonsPricing({
             const isSupported = !!supportedAddons[addonNameKey];
             const addonMaxKey = AddonKey[addonNameKey];
 
-            /**
-             * Workaround specifically for MaxIPs property. There is an upcoming migration in payments API v5
-             * That will structure all these Max* properties in a different way.
-             * For now, we need to handle MaxIPs separately.
-             * See {@link MaxKeys} and {@link Plan}. Note that all properties from MaxKeys must be present in Plan
-             * with the exception of MaxIPs.
-             */
-            let addonMultiplier: number;
-            if (addonMaxKey === 'MaxIPs') {
-                addonMultiplier = getPlanMaxIPs(addon);
-                if (addonMultiplier === 0) {
-                    addonMultiplier = 1;
-                }
-            } else {
-                addonMultiplier = getMaxValue(addon, addonMaxKey) ?? 1;
-            }
+            const addonMultiplier = getAddonMultiplier(addonMaxKey, addon);
 
             // The same workaround as above
             const min: number = getMaxValue(currentPlan, addonMaxKey);
