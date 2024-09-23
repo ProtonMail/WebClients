@@ -44,7 +44,7 @@ import { srpVerify } from '@proton/shared/lib/srp';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
-import { GenericError } from '../error';
+import GenericError from '../error/GenericError';
 import { AuthModal } from '../password';
 
 interface Inputs {
