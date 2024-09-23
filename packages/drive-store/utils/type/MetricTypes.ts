@@ -1,6 +1,5 @@
-// TODO: DRVWEB-4123 Unify Share Types
 export enum MetricShareType {
-    Own = 'own',
+    Main = 'main',
     Device = 'device',
     Photo = 'photo',
     Shared = 'shared',
