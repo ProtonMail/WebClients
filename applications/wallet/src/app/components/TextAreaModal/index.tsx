@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 
-import type { ModalPropsWithData } from '@proton/components';
+import type { ModalOwnProps } from '@proton/components';
 import { TextAreaTwo } from '@proton/components';
 
 import { Button, Input, Modal } from '../../atoms';
 
-interface Props extends ModalPropsWithData<{}> {
+interface Props extends ModalOwnProps {
     title: string;
     buttonText: string;
     inputLabel: string;

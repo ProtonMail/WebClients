@@ -2,14 +2,14 @@ import { createContext, useContext } from 'react';
 
 import noop from 'lodash/noop';
 
-import type { WasmApiWalletAccount } from '@proton/andromeda';
-import type { IWasmApiWalletData, TransactionData } from '@proton/wallet';
+import type { WasmApiWalletAccount, WasmTransactionDetails } from '@proton/andromeda';
+import type { IWasmApiWalletData } from '@proton/wallet';
 
 import type { SubTheme } from '../../utils';
 
 export interface WalletTransactionDrawerData {
     kind: 'transaction-data';
-    transaction: TransactionData;
+    networkDataAndHashedTxId: [WasmTransactionDetails, string];
     onClickEditNote: () => void;
     onClickEditSender: () => void;
 }
