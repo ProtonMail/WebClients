@@ -80,6 +80,37 @@
   --focus-outline: var(--interaction-norm-major-2);
   --focus-ring: var(--interaction-norm-minor-1);
   --search-field-focus-background: #0e0e0e;
+  --vault-unspecified: 140 140 147;
+  --vault-custom: 167 121 255;
+  --vault-heliotrope: 167 121 255;
+  --vault-mauvelous: 242 146 146;
+  --vault-marigold-yellow: 247 215 117;
+  --vault-de-york: 145 199 153;
+  --vault-jordy-blue: 146 179 242;
+  --vault-lavender-magenta: 235 141 214;
+  --vault-chestnut-rose: 205 90 111;
+  --vault-porsche: 228 163 103;
+  --vault-mercury: 230 230 230;
+  --vault-water-leaf: 158 226 230;
+  --pass-box-shadow: rgb(0 0 0 / 0.3);
+  --pass-content-box-shadow: rgb(14 14 14 / 0.8);
+  --pass-scroll-color: rgb(14 14 14 / 0.35);
+  --pass-loby-background: radial-gradient(
+      61.86% 61.86% at 50% 0%,
+      rgb(255 255 255 / 0.16) 0%,
+      rgb(255 255 255 / 0) 100%
+    ),
+    #191927;
+  --pass-scroll-gradient-start: linear-gradient(
+    180deg,
+    var(--pass-scroll-color),
+    transparent
+  );
+  --pass-scroll-gradient-end: linear-gradient(
+    0deg,
+    var(--pass-scroll-color),
+    transparent
+  );
 }
 @supports (-webkit-hyphens: none) {
   :root,
