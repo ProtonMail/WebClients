@@ -154,12 +154,12 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     }
 
     if (document.visibilityState !== 'visible') {
-      this.logger.error('Attempting to connect socket while document is not visible')
+      this.logger.warn('Attempting to connect socket while document is not visible')
       return
     }
 
     if (this.state.isConnected || this.socket) {
-      this.logger.error('Attempted to connect while already connected')
+      this.logger.warn('Attempted to connect while already connected')
       return
     }
 
