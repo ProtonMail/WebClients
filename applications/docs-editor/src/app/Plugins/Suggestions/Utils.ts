@@ -1,9 +1,10 @@
-import type { LexicalNode, Point, RangeSelection, TextNode } from 'lexical'
-import { $isBlockElementNode, $isDecoratorNode, $isElementNode, $isTextNode } from 'lexical'
+import type { ElementNode, LexicalNode, RangeSelection, TextNode } from 'lexical'
+import { $isDecoratorNode, $isElementNode, $isTextNode } from 'lexical'
 import type { SuggestionType } from './Types'
 import { $isImageNode } from '../Image/ImageNode'
 import type { ProtonNode } from './ProtonNode'
 import { $isSuggestionNode, $createSuggestionNode } from './ProtonNode'
+import { $findMatchingParent } from '@lexical/utils'
 
 /**
  * Wraps a given selection with suggestion node(s), splitting
@@ -15,7 +16,7 @@ export function $wrapSelectionInSuggestionNode(
   isBackward: boolean,
   id: string,
   type: SuggestionType,
-) {
+): ProtonNode[] {
   const nodes = selection.getNodes()
   const anchorOffset = selection.anchor.offset
   const focusOffset = selection.focus.offset
@@ -24,6 +25,8 @@ export function $wrapSelectionInSuggestionNode(
   const endOffset = isBackward ? anchorOffset : focusOffset
   let currentNodeParent
   let lastCreatedMarkNode: ProtonNode | null = null
+
+  const createdMarkNodes: ProtonNode[] = []
 
   // We only want wrap adjacent text nodes, line break nodes
   // and inline element nodes. For decorator nodes and block
@@ -48,7 +51,19 @@ export function $wrapSelectionInSuggestionNode(
         continue
       }
       const splitNodes = node.splitText(startTextOffset, endTextOffset)
-      if (splitNodes.length === 1 && startTextOffset === textContentSize) {
+      const isAtEndOfTextNode = splitNodes.length === 1 && startTextOffset === textContentSize
+      if (isAtEndOfTextNode) {
+        const nonInlineParent = $findMatchingParent(
+          node,
+          (node): node is ElementNode => $isElementNode(node) && !node.isInline(),
+        )
+        const isLastDescendant = node.is(nonInlineParent?.getLastDescendant())
+        if (type === 'delete' && isLastDescendant) {
+          const joinNode = $createSuggestionNode(id, 'join')
+          node.insertAfter(joinNode)
+          lastCreatedMarkNode = joinNode
+          createdMarkNodes.push(joinNode)
+        }
         continue
       }
       targetNode =
@@ -93,6 +108,7 @@ export function $wrapSelectionInSuggestionNode(
         // If we don't have a created mark node, we can make one
         lastCreatedMarkNode = $createSuggestionNode(id, type)
         targetNode.insertBefore(lastCreatedMarkNode)
+        createdMarkNodes.push(lastCreatedMarkNode)
       }
 
       // Add the target node to be wrapped in the latest created mark node
@@ -106,7 +122,7 @@ export function $wrapSelectionInSuggestionNode(
   }
 
   // Make selection collapsed at the end
-  if ($isElementNode(lastCreatedMarkNode)) {
+  if ($isSuggestionNode(lastCreatedMarkNode)) {
     if (isBackward) {
       lastCreatedMarkNode.selectStart()
     } else {
@@ -114,7 +130,7 @@ export function $wrapSelectionInSuggestionNode(
     }
   }
 
-  return lastCreatedMarkNode
+  return createdMarkNodes
 }
 
 /**
@@ -184,15 +200,6 @@ export function $isNodeNotInline(node: LexicalNode) {
 }
 
 /**
- * Determines whether the given point is at the start of a
- * block element
- */
-export function $isPointAtStartOfBlock(point: Point) {
-  const focusNode = point.getNode()
-  return $isBlockElementNode(focusNode.getTopLevelElement()) && !focusNode.getPreviousSibling() && point.offset === 0
-}
-
-/**
  * Given a certain inputType, it returns what selection boundary should be used for deletion and whether the
  * deletion is forward or backward.
  */
@@ -231,4 +238,26 @@ export function $mergeWithExistingSuggestionNode(node: ProtonNode, mergeWith: Pr
     }
   }
   node.remove()
+}
+
+/**
+ * Checks if the given selection is fully within a suggestion
+ */
+export function $isWholeSelectionInsideSuggestion(selection: RangeSelection): boolean {
+  const focusNode = selection.focus.getNode()
+  const focusSuggestionParent = $findMatchingParent(focusNode, $isSuggestionNode)
+  if (!focusSuggestionParent) {
+    return false
+  }
+
+  const anchorNode = selection.anchor.getNode()
+  const anchorSuggestionParent = $findMatchingParent(anchorNode, $isSuggestionNode)
+  if (!anchorSuggestionParent) {
+    return false
+  }
+
+  const isSameSuggestion =
+    focusSuggestionParent.getSuggestionIdOrThrow() === anchorSuggestionParent.getSuggestionIdOrThrow()
+
+  return isSameSuggestion
 }
