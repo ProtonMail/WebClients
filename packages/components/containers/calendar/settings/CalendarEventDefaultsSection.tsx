@@ -3,8 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { useCalendarModelEventManager } from '@proton/components';
-import { InputFieldTwo } from '@proton/components/components';
+import { InputFieldTwo, useCalendarModelEventManager } from '@proton/components';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';

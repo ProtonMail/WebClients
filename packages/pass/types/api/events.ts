@@ -2,7 +2,7 @@
  * in this type definition - it only
  * specifies the keys we're consuming
  * in the extension sagas for now */
-import type { Invoice } from '@proton/components';
+import type { Invoice } from '@proton/payments';
 import type { Address, Organization, Subscription, User, UserSettings } from '@proton/shared/lib/interfaces';
 
 export enum ChannelType {

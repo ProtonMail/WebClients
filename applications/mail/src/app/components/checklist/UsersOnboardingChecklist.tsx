@@ -117,6 +117,7 @@ const UsersOnboardingChecklist = ({
                         <li>
                             <CheckListProtectInbox
                                 smallVariant={smallVariant}
+                                data-testid="testing-flavien-checklist-protect-inbox"
                                 onClick={() => setProtectModalOpen(true)}
                                 style={{ borderRadius: smallVariant ? '0.5rem 0.5rem 0 0' : null }}
                                 done={items.has(ChecklistKey.ProtectInbox)}
@@ -125,6 +126,7 @@ const UsersOnboardingChecklist = ({
                         <li>
                             <CheckListGmailForward
                                 isInMaintenance={isImporterInMaintenance}
+                                data-testid="testing-flavien-checklist-gmail-forward"
                                 smallVariant={smallVariant}
                                 onClick={() => setGmailForwardOpen(true)}
                                 done={items.has(ChecklistKey.Import)}
@@ -133,6 +135,7 @@ const UsersOnboardingChecklist = ({
                         <li>
                             <CheckListAccountLogin
                                 smallVariant={smallVariant}
+                                data-testid="testing-flavien-checklist-account-login"
                                 onClick={() => setLoginModalOpen(true)}
                                 done={items.has(ChecklistKey.AccountLogin)}
                             />
@@ -140,6 +143,7 @@ const UsersOnboardingChecklist = ({
                         <li>
                             <CheckListMobileStores
                                 smallVariant={smallVariant}
+                                data-testid="testing-flavien-checklist-mobile-apps"
                                 style={{ borderRadius: smallVariant ? '0 0 0.5rem 0.5rem' : null }}
                                 onClick={() => setMobileAppsOpen(true)}
                                 done={items.has(ChecklistKey.MobileApp)}
