@@ -1,8 +1,11 @@
 import { c } from 'ttag';
 
 import { Button, ButtonLike, CircleLoader, InlineLinkButton } from '@proton/atoms';
+import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
+import Row from '@proton/components/components/container/Row';
 import Icon from '@proton/components/components/icon/Icon';
+import Label from '@proton/components/components/label/Label';
 import Info from '@proton/components/components/link/Info';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Loader from '@proton/components/components/loader/Loader';
@@ -28,8 +31,6 @@ import { handleSetupAddressKeys } from '@proton/shared/lib/keys';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import type { Credentials } from '@proton/shared/lib/srp';
 
-import { ButtonGroup, Label } from '../../components';
-import Row from '../../components/container/Row';
 import {
     useApi,
     useAuthentication,

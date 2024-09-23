@@ -1,14 +1,13 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import ErrorButton from '@proton/components/components/button/ErrorButton';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
 import { deleteLabel } from '@proton/shared/lib/api/labels';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
-
-import { ErrorButton } from '../../../components';
 
 interface Props extends ModalProps {
     label: Label;

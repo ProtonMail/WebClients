@@ -4,7 +4,6 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
-import { Label } from '@proton/components';
 import {
     type AddressesAutocompleteItem,
     getContactsAutocompleteItems,
@@ -14,6 +13,7 @@ import Autocomplete from '@proton/components/components/autocomplete/Autocomplet
 import Field from '@proton/components/components/container/Field';
 import Row from '@proton/components/components/container/Row';
 import ColorPicker from '@proton/components/components/input/ColorPicker';
+import Label from '@proton/components/components/label/Label';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';

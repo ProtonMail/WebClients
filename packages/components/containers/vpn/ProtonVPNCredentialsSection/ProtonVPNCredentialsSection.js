@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import Field from '@proton/components/components/container/Field';
+import Row from '@proton/components/components/container/Row';
+import Label from '@proton/components/components/label/Label';
 import { BRAND_NAME, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
-import { Label } from '../../../components';
-import Field from '../../../components/container/Field';
-import Row from '../../../components/container/Row';
 import { useUser } from '../../../hooks';
 
 const ProtonVPNCredentialsSection = () => {

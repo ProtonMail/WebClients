@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Tooltip, useConfirmActionModal, useRevisionRetentionDays, useUser } from '@proton/components';
+import { useConfirmActionModal, useRevisionRetentionDays, useUser } from '@proton/components';
 import Radio from '@proton/components/components/input/Radio';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import clsx from '@proton/utils/clsx';
 
 import { BusinessUpgradeBanner, FreeUpgradeBanner } from './banner';

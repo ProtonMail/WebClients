@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { useSettingsLink } from '@proton/components/components';
+import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { getDisabledString, getEnabledString } from '@proton/components/containers/credentialLeak/helpers';

@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import FileButton from '@proton/components/components/button/FileButton';
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -13,7 +14,6 @@ import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
 import debounce from '@proton/utils/debounce';
 import generateUID from '@proton/utils/generateUID';
 
-import FileButton from '../../button/FileButton';
 import Form from '../../form/Form';
 import Input from '../../input/Input';
 import Label from '../../label/Label';

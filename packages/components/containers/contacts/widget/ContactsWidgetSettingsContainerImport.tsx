@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
-import { Label } from '@proton/components';
+import Label from '@proton/components/components/label/Label';
 
 import ImportCsvContactButton from './ImportCsvContactButton';
 

@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import Input from '@proton/components/components/input/Input';
+import Label from '@proton/components/components/label/Label';
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import FormModal from '@proton/components/components/modal/FormModal';
 import Price from '@proton/components/components/price/Price';
@@ -11,8 +12,8 @@ import { usePaymentFacade } from '@proton/components/payments/client-extensions'
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import type { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
-import { PAYMENT_METHOD_TYPES } from '@proton/payments';
 import type { Invoice } from '@proton/payments';
+import { PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { checkInvoice, getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getHasSomeVpnPlan } from '@proton/shared/lib/helpers/subscription';
@@ -20,7 +21,6 @@ import type { Currency } from '@proton/shared/lib/interfaces';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 
-import { Label } from '../../components';
 import Field from '../../components/container/Field';
 import Row from '../../components/container/Row';
 import { useApiResult, useEventManager, useNotifications, useSubscription, useUser } from '../../hooks';

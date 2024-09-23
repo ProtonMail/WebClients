@@ -1,4 +1,4 @@
-import type { IconProps } from '@proton/components';
+import type { IconProps } from '@proton/components/components/icon/Icon';
 import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 
