@@ -26,8 +26,8 @@ export enum TelemetryMeasurementGroups {
     securityCenter = 'any.web.security_center',
     paymentsFlow = 'payments.flow',
     /** Drive Web */
-    driveWebFeaturePerformance = 'drive.web.feature_performance',
-    driveWebActions = 'drive.web.actions',
+    driveWebFeaturePerformance = 'drive.web.feature_performance_unauth',
+    driveWebActions = 'drive.web.actions_unauth',
     /** Shared */
     collapsibleLeftSidebar = 'any.web.collapsible_left_sidebar',
     smartBanner = 'any.web.smart_banner',
@@ -174,8 +174,8 @@ export enum TelemetryPaymentsEvents {
 }
 
 export enum TelemetryDriveWebFeature {
-    performance = 'drive_web_feature_performance',
-    actions = 'drive_web_actions',
+    performance = 'drive_web_feature_performance_unauth',
+    actions = 'drive_web_actions_unauth',
 }
 
 export enum TelemetryCollapsibleLeftSidebarEvents {
