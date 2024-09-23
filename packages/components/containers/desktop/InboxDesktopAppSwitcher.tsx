@@ -98,7 +98,7 @@ function InboxDesktopMacAppSwitcher({ appToLinkTo }: Props) {
     );
 }
 
-export default function InboxDesktopAppSwitcher(props: Props) {
+export function InboxDesktopAppSwitcher(props: Props) {
     if (isElectronOnMac) {
         return <InboxDesktopMacAppSwitcher {...props} />;
     }

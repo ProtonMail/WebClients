@@ -6,10 +6,10 @@ import { ButtonLike, CircleLoader } from '@proton/atoms';
 import type { ModalStateProps } from '@proton/components';
 import {
     AppLink,
+    FreeUpgradeBanner,
     ModalTwo,
     ModalTwoContent,
     ModalTwoHeader,
-    RevisionsFreeUpgradeBanner,
     getRetentionLabel,
     useModalTwoStatic,
     useUser,
@@ -63,7 +63,7 @@ const RevisionsModalContent = () => {
                 (hasPaidDrive ? (
                     <RevisionsSettingsBanner revisionRetentionDays={revisionRetentionDays} />
                 ) : (
-                    <RevisionsFreeUpgradeBanner />
+                    <FreeUpgradeBanner />
                 ))}
             {isLoading && <CircleLoader className="w-full m-auto mt-5" size="large" />}
             {!isLoading && currentRevision ? (
