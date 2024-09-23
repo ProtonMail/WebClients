@@ -1,5 +1,12 @@
 import type { ElementNode, LexicalEditor, ParagraphNode, RangeSelection, TextNode } from 'lexical'
-import { $isParagraphNode, $isTextNode, $setSelection } from 'lexical'
+import {
+  $isParagraphNode,
+  $isTabNode,
+  $isTextNode,
+  $setSelection,
+  COMMAND_PRIORITY_CRITICAL,
+  SELECTION_INSERT_CLIPBOARD_NODES_COMMAND,
+} from 'lexical'
 import { $createParagraphNode, $createTextNode, $getRoot, $getSelection, $isRangeSelection } from 'lexical'
 import { AllNodes } from '../../AllNodes'
 import { $handleBeforeInputEvent } from './handleBeforeInputEvent'
@@ -17,6 +24,8 @@ import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import * as ReactTestUtils from '../../Utils/react-test-utils'
 import type { ListItemNode } from '@lexical/list'
 import { $createListItemNode, $createListNode } from '@lexical/list'
+import { $selectionInsertClipboardNodes } from './selectionInsertClipboardNodes'
+import type { Logger } from '@proton/utils/logs'
 
 polyfillSelectionRelatedThingsForTests()
 
@@ -85,6 +94,9 @@ describe('$handleBeforeInputEvent', () => {
   })
 
   const onSuggestionCreation = jest.fn()
+  const logger = {
+    info: jest.fn(),
+  } as unknown as Logger
 
   describe('Insertion', () => {
     test('should insert basic text', async () => {
@@ -292,6 +304,76 @@ describe('$handleBeforeInputEvent', () => {
         const paragraph2 = root.getChildAtIndex<ElementNode>(1)
         expect($isParagraphNode(paragraph2)).toBe(true)
         expect(paragraph2?.getChildrenSize()).toBe(0)
+      })
+    })
+
+    describe('Plaintext-only data transfer', () => {
+      let commandDisposer!: () => void
+
+      beforeEach(async () => {
+        commandDisposer = editor!.registerCommand(
+          SELECTION_INSERT_CLIPBOARD_NODES_COMMAND,
+          ({ nodes }) => $selectionInsertClipboardNodes(nodes, onSuggestionCreation, logger),
+          COMMAND_PRIORITY_CRITICAL,
+        )
+        const dataTransfer = {
+          getData: (format) => {
+            if (format === 'text/plain') {
+              return 'Hello\tWorld\nParagraph'
+            }
+            return ''
+          },
+        } as DataTransfer
+        await update(() => {
+          $handleBeforeInputEvent(
+            editor!,
+            {
+              inputType: 'insertFromPaste',
+              data: null,
+              dataTransfer,
+            } as InputEvent,
+            onSuggestionCreation,
+          )
+        })
+      })
+
+      test('root should have 2 paragraphs', () => {
+        editor!.read(() => {
+          const root = $getRoot()
+          const children = root.getChildren()
+          expect(children.length).toBe(2)
+          expect(children.every($isParagraphNode)).toBe(true)
+        })
+      })
+
+      test('first paragraph should have text, tab, text nodes inside a suggestion', () => {
+        editor!.read(() => {
+          const paragraph = $getRoot().getChildAtIndex<ParagraphNode>(0)
+          expect(paragraph?.getChildrenSize()).toBe(1)
+
+          const child = paragraph?.getFirstChild<ProtonNode>()
+          expect($isSuggestionNode(child)).toBe(true)
+
+          expect($isTextNode(child?.getChildAtIndex(0))).toBe(true)
+          expect($isTabNode(child?.getChildAtIndex(1))).toBe(true)
+          expect($isTextNode(child?.getChildAtIndex(2))).toBe(true)
+        })
+      })
+
+      test('second paragraph should have text node inside suggestion', () => {
+        editor!.read(() => {
+          const paragraph = $getRoot().getChildAtIndex<ParagraphNode>(1)
+          expect(paragraph?.getChildrenSize()).toBe(1)
+
+          const child = paragraph?.getFirstChild<ProtonNode>()
+          expect($isSuggestionNode(child)).toBe(true)
+
+          expect($isTextNode(child?.getChildAtIndex(0))).toBe(true)
+        })
+      })
+
+      afterEach(() => {
+        commandDisposer()
       })
     })
   })
