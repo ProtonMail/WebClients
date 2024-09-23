@@ -381,7 +381,10 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
                         </div>
                     )}
 
-                    {!isSentinelUser && isSecurityCheckupAvailable && securityCheckup.actions.length ? (
+                    {!isSentinelUser &&
+                    isSecurityCheckupAvailable &&
+                    (securityCheckup.actions.includes('phrase') ||
+                        securityCheckup.furtherActions.includes('phrase')) ? (
                         <AppLink
                             toApp={APPS.PROTONACCOUNT}
                             to={`${SECURITY_CHECKUP_PATHS.ROOT}?${securityCheckupParams.toString()}`}
