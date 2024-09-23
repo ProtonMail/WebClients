@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -15,7 +15,7 @@ import {
 } from 'proton-mail/helpers/checklist/checkedItemsStorage';
 
 import ServiceItem from './AccountsLoginModalServiceItem';
-import { getOnlineAccounts } from './OnlineAccounts';
+import { getOnlineServices } from './getOnlineServices';
 
 const AccountsLoginModal = (props: ModalStateProps) => {
     const { items, markItemsAsDone } = useGetStartedChecklist();
@@ -25,7 +25,7 @@ const AccountsLoginModal = (props: ModalStateProps) => {
     const isUserInUS = Locale === 'en_US';
 
     const [checkedItems, setCheckedItems] = useState<string[]>([]);
-    const links = getOnlineAccounts();
+    const links = useMemo(() => getOnlineServices(), []);
 
     useEffect(() => {
         const data = getSavedCheckedItemsForUser(user.ID);
@@ -54,7 +54,7 @@ const AccountsLoginModal = (props: ModalStateProps) => {
                 <div>
                     {links.map((group) => {
                         // Hide group if whole group is US only and user is not in US or if whole group is done
-                        if (group.services.every((service) => service.usOnly) && !isUserInUS) {
+                        if (group.services.every((service) => service.country === 'US') && !isUserInUS) {
                             return null;
                         }
 
@@ -70,7 +70,7 @@ const AccountsLoginModal = (props: ModalStateProps) => {
                                     ) : (
                                         group.services.map((service) => {
                                             // Hide services that are US only for users outside of US
-                                            if (service.usOnly && !isUserInUS) {
+                                            if (service.country === 'US' && !isUserInUS) {
                                                 return null;
                                             }
 

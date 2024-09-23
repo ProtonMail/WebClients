@@ -7,18 +7,15 @@ import type { ContextState } from 'proton-mail/containers/onboardingChecklist/pr
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { minimalCache, render } from 'proton-mail/helpers/test/helper';
 
-import MailSidebar from '../sidebar/MailSidebar';
+import MailSidebar from '../../sidebar/MailSidebar';
 import UsersOnboardingChecklist from './UsersOnboardingChecklist';
 
-// import UsersOnboardingChecklist from './UsersOnboardingChecklist';
-
-jest.mock('../../containers/onboardingChecklist/provider/GetStartedChecklistProvider', () => ({
+jest.mock('proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider', () => ({
     __esModule: true,
     useGetStartedChecklist: jest.fn(),
     default: ({ children }: { children: any }) => <>{children}</>,
 }));
 
-jest.mock('../../containers/onboardingChecklist/provider/GetStartedChecklistProvider');
 const mockedReturn = useGetStartedChecklist as jest.MockedFunction<any>;
 
 const labelID = 'labelID';

@@ -1,3 +1,7 @@
+export type CountryTimezone = typeof singleCountryTimezoneDatabase;
+export type CountryTimezoneShortFormat =
+    (typeof singleCountryTimezoneDatabase)[keyof typeof singleCountryTimezoneDatabase];
+
 export const singleCountryTimezoneDatabase = {
     'Africa/Abidjan': 'CI',
     'Africa/Accra': 'GH',
@@ -417,4 +421,4 @@ export const singleCountryTimezoneDatabase = {
     'Pacific/Tongatapu': 'TO',
     'Pacific/Wake': 'UM',
     'Pacific/Wallis': 'WF',
-};
+} as const;

@@ -43,6 +43,15 @@
 	}
 
 	&.is-active {
+		// fix ghost case
+		&.button-ghost-norm {
+			.theme-card-image {
+				--button-active-border-color: var(--interaction-norm-major-3);
+
+				box-shadow: 0 0 0 2px var(--button-active-border-color);
+			}
+		}
+
 		box-shadow: 0 0 0 1px var(--button-active-border-color);
 
 		&::after {
