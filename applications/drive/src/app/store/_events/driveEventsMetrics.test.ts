@@ -69,10 +69,10 @@ describe('EventsMetrics', () => {
             eventType: EVENT_TYPES.CREATE,
             encryptedLink: { volumeId: 'vol1', linkId: 'link1' } as EncryptedLink,
         });
-        eventsMetrics.batchCompleted('vol1', 'event1', VolumeType.own);
+        eventsMetrics.batchCompleted('vol1', 'event1', VolumeType.main);
 
         expect(metrics.drive_sync_event_unecessary_total.increment).toHaveBeenCalledWith(
-            { volumeType: VolumeType.own, eventType: 'delete' },
+            { volumeType: VolumeType.main, eventType: 'delete' },
             1
         );
     });
@@ -94,30 +94,30 @@ describe('countEventsPerType', () => {
             ],
         } as DriveEventsResult;
 
-        countEventsPerType(VolumeType.own, driveEvents);
+        countEventsPerType(VolumeType.main, driveEvents);
 
         expect(metrics.drive_sync_event_total.increment).toHaveBeenCalledTimes(4);
         expect(metrics.drive_sync_event_total.increment).toHaveBeenCalledWith(
-            { volumeType: VolumeType.own, eventType: 'create' },
+            { volumeType: VolumeType.main, eventType: 'create' },
             1
         );
         expect(metrics.drive_sync_event_total.increment).toHaveBeenCalledWith(
-            { volumeType: VolumeType.own, eventType: 'update' },
+            { volumeType: VolumeType.main, eventType: 'update' },
             2
         );
         expect(metrics.drive_sync_event_total.increment).toHaveBeenCalledWith(
-            { volumeType: VolumeType.own, eventType: 'delete' },
+            { volumeType: VolumeType.main, eventType: 'delete' },
             1
         );
         expect(metrics.drive_sync_event_total.increment).toHaveBeenCalledWith(
-            { volumeType: VolumeType.own, eventType: 'update_metadata' },
+            { volumeType: VolumeType.main, eventType: 'update_metadata' },
             1
         );
     });
 
     test('handles undefined events', () => {
         const driveEvents: DriveEventsResult = {} as DriveEventsResult;
-        countEventsPerType(VolumeType.own, driveEvents);
+        countEventsPerType(VolumeType.main, driveEvents);
         expect(metrics.drive_sync_event_total.increment).not.toHaveBeenCalled();
     });
 });

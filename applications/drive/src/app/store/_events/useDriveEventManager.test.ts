@@ -54,17 +54,17 @@ describe('useDriveEventManager', () => {
 
     it('subscribes to a share by id', async () => {
         await act(async () => {
-            await hook.current.volumes.startSubscription(VOLUME_ID_1, VolumeType.own);
+            await hook.current.volumes.startSubscription(VOLUME_ID_1, VolumeType.main);
             expect(hook.current.getSubscriptionIds()).toEqual([VOLUME_ID_1]);
-            await hook.current.volumes.startSubscription(VOLUME_ID_2, VolumeType.own);
+            await hook.current.volumes.startSubscription(VOLUME_ID_2, VolumeType.main);
             expect(hook.current.getSubscriptionIds()).toEqual([VOLUME_ID_1, VOLUME_ID_2]);
         });
     });
 
     it('unsubscribes from shares by id', async () => {
         await act(async () => {
-            await hook.current.volumes.startSubscription(VOLUME_ID_1, VolumeType.own);
-            await hook.current.volumes.startSubscription(VOLUME_ID_2, VolumeType.own);
+            await hook.current.volumes.startSubscription(VOLUME_ID_1, VolumeType.main);
+            await hook.current.volumes.startSubscription(VOLUME_ID_2, VolumeType.main);
 
             hook.current.volumes.unsubscribe(VOLUME_ID_2);
             expect(hook.current.getSubscriptionIds()).toEqual([VOLUME_ID_1]);
@@ -75,7 +75,7 @@ describe('useDriveEventManager', () => {
         const handler = jest.fn().mockImplementation(() => {});
 
         await act(async () => {
-            await hook.current.volumes.startSubscription(VOLUME_ID_1, VolumeType.own);
+            await hook.current.volumes.startSubscription(VOLUME_ID_1, VolumeType.main);
             hook.current.eventHandlers.register(handler);
             await hook.current.pollEvents.volumes([VOLUME_ID_1]);
 
@@ -88,7 +88,7 @@ describe('useDriveEventManager', () => {
         const handler2 = jest.fn().mockImplementation(() => {});
 
         await act(async () => {
-            await hook.current.volumes.startSubscription(VOLUME_ID_1, VolumeType.own);
+            await hook.current.volumes.startSubscription(VOLUME_ID_1, VolumeType.main);
             hook.current.eventHandlers.register(handler);
             hook.current.eventHandlers.register(handler2);
             await hook.current.pollEvents.volumes([VOLUME_ID_1]);
@@ -102,8 +102,8 @@ describe('useDriveEventManager', () => {
         const handler = jest.fn().mockImplementation(() => {});
 
         await act(async () => {
-            await hook.current.volumes.startSubscription(VOLUME_ID_2, VolumeType.own);
-            await hook.current.volumes.startSubscription(VOLUME_ID_1, VolumeType.own);
+            await hook.current.volumes.startSubscription(VOLUME_ID_2, VolumeType.main);
+            await hook.current.volumes.startSubscription(VOLUME_ID_1, VolumeType.main);
             hook.current.eventHandlers.register(handler);
             await hook.current.pollEvents.volumes(VOLUME_ID_1);
             await hook.current.pollEvents.volumes(VOLUME_ID_2);
@@ -117,7 +117,7 @@ describe('useDriveEventManager', () => {
         const handler2 = jest.fn().mockImplementation(() => {});
 
         await act(async () => {
-            await hook.current.volumes.startSubscription(VOLUME_ID_1, VolumeType.own);
+            await hook.current.volumes.startSubscription(VOLUME_ID_1, VolumeType.main);
             hook.current.eventHandlers.register(handler);
             const handlerId = hook.current.eventHandlers.register(handler2);
             hook.current.eventHandlers.unregister(handlerId);
@@ -130,7 +130,7 @@ describe('useDriveEventManager', () => {
 
     it('polls event', async () => {
         await act(async () => {
-            await hook.current.volumes.startSubscription(VOLUME_ID_1, VolumeType.own);
+            await hook.current.volumes.startSubscription(VOLUME_ID_1, VolumeType.main);
             await hook.current.pollEvents.volumes(VOLUME_ID_1);
 
             expect(apiMock).toBeCalledTimes(2); // fetching events + poll itself
@@ -140,8 +140,8 @@ describe('useDriveEventManager', () => {
     it("can poll events for all shares it's subscribed to", async () => {
         const handler = jest.fn().mockImplementation(() => {});
         await act(async () => {
-            await hook.current.volumes.startSubscription(VOLUME_ID_1, VolumeType.own);
-            await hook.current.volumes.startSubscription(VOLUME_ID_2, VolumeType.own);
+            await hook.current.volumes.startSubscription(VOLUME_ID_1, VolumeType.main);
+            await hook.current.volumes.startSubscription(VOLUME_ID_2, VolumeType.main);
             hook.current.eventHandlers.register(handler);
             await hook.current.pollEvents.driveEvents();
             expect(handler).toBeCalledTimes(2);
