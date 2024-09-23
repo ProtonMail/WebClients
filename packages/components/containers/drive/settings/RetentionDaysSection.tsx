@@ -6,10 +6,11 @@ import Radio from '@proton/components/components/input/Radio';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import clsx from '@proton/utils/clsx';
 
-import { BusinessUpgradeBanner, FreeUpgradeBanner } from './banner';
+import { BusinessUpgradeBanner } from './banner/BusinessUpgradeBanner';
+import { FreeUpgradeBanner } from './banner/FreeUpgradeBanner';
 import { useRetentionOptions } from './useRetentionOptions';
 
-const RetentionDaysSection = () => {
+export const RetentionDaysSection = () => {
     const [{ hasPaidDrive, isAdmin }] = useUser();
 
     const [confirmActionModal, showConfirmActionModal] = useConfirmActionModal();
@@ -69,5 +70,3 @@ const RetentionDaysSection = () => {
         </div>
     );
 };
-
-export default RetentionDaysSection;
