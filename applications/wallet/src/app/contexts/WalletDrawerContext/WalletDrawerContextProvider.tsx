@@ -9,7 +9,7 @@ import { WalletDrawerContext } from '.';
 import { Drawer } from './Drawer';
 import { WalletDiscoverContent } from './WalletDiscoverContent';
 import { WalletReceiveContent } from './WalletReceiveContent';
-import { WalletTransactionDataDrawer } from './WalletTransactionDataContent';
+import { WalletTransactionDataDrawer } from './WalletTransactionDataDrawer';
 
 interface Props {
     children: ReactNode;
@@ -92,7 +92,7 @@ export const WalletDrawerContextProvider = ({ children }: Props) => {
                 >
                     {drawerData.data.kind === 'transaction-data' && (
                         <WalletTransactionDataDrawer
-                            transaction={drawerData.data.transaction}
+                            networkDataAndHashedTxId={drawerData.data.networkDataAndHashedTxId}
                             onClickEditNote={drawerData.data.onClickEditNote}
                             onClickEditSender={drawerData.data.onClickEditSender}
                         />
