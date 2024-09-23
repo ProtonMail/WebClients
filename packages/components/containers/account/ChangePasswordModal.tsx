@@ -45,7 +45,7 @@ import {
     useNotifications,
     useUser,
 } from '../../hooks';
-import { GenericError } from '../error';
+import GenericError from '../error/GenericError';
 import AuthModal from '../password/AuthModal';
 import { handleChangeLoginPassword } from './changePasswordHelper';
 

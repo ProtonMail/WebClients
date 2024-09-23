@@ -13,7 +13,8 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import type { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
 import noop from '@proton/utils/noop';
 
-import { GenericError, SettingsSectionWide } from '../../..';
+import SettingsSectionWide from '../../../containers/account/SettingsSectionWide';
+import GenericError from '../../../containers/error/GenericError';
 import { toCamelCase } from '../../credentialLeak/helpers';
 import { FilterAndSortEventsBlock } from '../FilterAndSortEventBlock';
 import PassEventsTable from './PassEventsTable';
