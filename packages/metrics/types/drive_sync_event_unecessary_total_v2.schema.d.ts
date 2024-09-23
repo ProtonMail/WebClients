@@ -6,13 +6,12 @@
  */
 
 /**
- * Web Vitals on Web
+ * Count number of unecessary/skipped events per event type
  */
-export interface HttpsProtonMeWebCoreWebvitalsTotalV1SchemaJson {
-  Value: number;
+export interface HttpsProtonMeDriveSyncEventUnecessaryTotalV2SchemaJson {
   Labels: {
-    type: "CLS" | "LCP" | "INP";
-    rating: "good" | "needs-improvement" | "poor";
-    context: "public" | "private";
+    eventType: "create" | "delete" | "update" | "update_metadata";
+    volumeType: "main" | "shared";
   };
+  Value: number;
 }

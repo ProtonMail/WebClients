@@ -45,7 +45,7 @@ describe('useUploadMetrics::', () => {
                 getShareType({
                     type: ShareType.default,
                 } as Share)
-            ).toBe(MetricShareType.Own);
+            ).toBe(MetricShareType.Main);
         });
 
         it('for photos share', () => {
