@@ -14,41 +14,44 @@ import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import walletNotFoundImg from '@proton/styles/assets/img/illustrations/wallet_not_found.svg';
 import clsx from '@proton/utils/clsx';
-import { type SenderObject, type TransactionData, encryptPgp, useWalletApi } from '@proton/wallet';
-import { updateWalletTransaction, useWalletDispatch } from '@proton/wallet/store';
+import { type DecryptedTransactionData, type SenderObject, encryptPgp, useWalletApi } from '@proton/wallet';
+import { updateWalletTransaction, useApiWalletTransactionData, useWalletDispatch } from '@proton/wallet/store';
 
 import { Button, Input, Modal } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
 
 export interface WalletCreationModalOwnProps {
-    walletTransaction: TransactionData;
+    hashedTxId: string;
 }
 
 type Props = ModalOwnProps & WalletCreationModalOwnProps;
 
-const senderName = (tx: TransactionData) => {
-    if (typeof tx.apiData?.Sender === 'string') {
+const senderName = (apiData?: DecryptedTransactionData) => {
+    if (typeof apiData?.Sender === 'string') {
         return '';
     } else {
-        return tx.apiData?.Sender?.name ?? '';
+        return apiData?.Sender?.name ?? '';
     }
 };
 
-const senderEmail = (tx: TransactionData) => {
-    if (typeof tx.apiData?.Sender === 'string') {
+const senderEmail = (apiData?: DecryptedTransactionData) => {
+    if (typeof apiData?.Sender === 'string') {
         return '';
     } else {
-        return tx.apiData?.Sender?.email ?? '';
+        return apiData?.Sender?.email ?? '';
     }
 };
 
-export const UnknownSenderModal = ({ walletTransaction, ...modalProps }: Props) => {
+export const UnknownSenderModal = ({ hashedTxId, ...modalProps }: Props) => {
+    const [walletTransactions] = useApiWalletTransactionData([hashedTxId]);
+    const apiWalletTransaction = walletTransactions?.[hashedTxId];
+
     const [contacts] = useContactEmails();
     const [shouldSaveAsContact, setShouldSaveAsContact] = useState(false);
     const dispatch = useWalletDispatch();
 
-    const [name, setName] = useState(senderName(walletTransaction));
-    const [email, setEmail] = useState(senderEmail(walletTransaction));
+    const [name, setName] = useState(senderName(apiWalletTransaction));
+    const [email, setEmail] = useState(senderEmail(apiWalletTransaction));
 
     const alreadyExistsAsContact = contacts?.some((e) => e.Email === email || e.Name === name);
 
@@ -115,7 +118,7 @@ export const UnknownSenderModal = ({ walletTransaction, ...modalProps }: Props) 
 
     const handleClickSaveSender = async () => {
         //  !walletTransaction.WalletAccountID below is a typeguard, should be removed when API makes it non-nullable anymore
-        if (!checkData() || !userKeys || !walletTransaction.apiData || !walletTransaction.apiData?.WalletAccountID) {
+        if (!checkData() || !userKeys || !apiWalletTransaction?.WalletAccountID) {
             return;
         }
 
@@ -130,9 +133,9 @@ export const UnknownSenderModal = ({ walletTransaction, ...modalProps }: Props) 
             await walletApi
                 .clients()
                 .wallet.updateExternalWalletTransactionSender(
-                    walletTransaction.apiData.WalletID,
-                    walletTransaction.apiData.WalletAccountID,
-                    walletTransaction.apiData.ID,
+                    apiWalletTransaction.WalletID,
+                    apiWalletTransaction.WalletAccountID,
+                    apiWalletTransaction.ID,
                     encryptedSender
                 );
 
@@ -140,17 +143,18 @@ export const UnknownSenderModal = ({ walletTransaction, ...modalProps }: Props) 
                 await createContact();
             }
 
-            createNotification({ text: c('Unknown sender').t`Transaction sender has been updated succesfully` });
-
             // Typeguard
-            if (walletTransaction.apiData.HashedTransactionID) {
+            if (apiWalletTransaction.HashedTransactionID) {
                 dispatch(
                     updateWalletTransaction({
-                        hashedTransactionId: walletTransaction.apiData.HashedTransactionID,
+                        hashedTransactionId: apiWalletTransaction.HashedTransactionID,
                         update: { Sender: parsedSender },
                     })
                 );
             }
+
+            modalProps.onClose?.();
+            createNotification({ text: c('Unknown sender').t`Transaction sender has been updated succesfully` });
         } catch {
             createNotification({ text: c('Unknown sender').t`Transaction sender could not be updated` });
         }

@@ -54,6 +54,27 @@ export const ConfirmationTimeDataListItem = ({ tx, loadingLabel, loading }: TxDa
         ? { width: '1.5rem', height: '1.5rem' }
         : { width: '2rem', height: '2rem' };
 
+    const innerDate = useMemo(() => {
+        if (confirmedDate) {
+            if (isNarrow) {
+                return (
+                    <Tooltip title={confirmedDate}>
+                        <span className="color-hint block text-ellipsis">{confirmedDate}</span>
+                    </Tooltip>
+                );
+            }
+
+            return <span className="color-hint block text-ellipsis">{confirmedDate}</span>;
+        }
+
+        return (
+            <div className="flex flex-row flex-nowrap items-center color-primary">
+                <CircleLoader className="shrink-0" />
+                <div className="ml-2 text-ellipsis">{c('Wallet transaction').t`In progress`}</div>
+            </div>
+        );
+    }, [confirmedDate, isNarrow]);
+
     return (
         <DataListItem
             label={
@@ -67,31 +88,16 @@ export const ConfirmationTimeDataListItem = ({ tx, loadingLabel, loading }: TxDa
                     rounded
                     placeholder={<div className={imgClassName} style={imgStyle} />}
                 >
-                    <>
-                        {value >= 0 ? (
-                            <img className={imgClassName} src={arrowReceiveSvg} alt="" style={imgStyle} />
-                        ) : (
-                            <img className={imgClassName} src={arrowSendSvg} alt="" style={imgStyle} />
-                        )}
-                    </>
+                    {value >= 0 ? (
+                        <img className={imgClassName} src={arrowReceiveSvg} alt="" style={imgStyle} />
+                    ) : (
+                        <img className={imgClassName} src={arrowSendSvg} alt="" style={imgStyle} />
+                    )}
                 </Skeleton>
             }
             bottomNode={
                 <Skeleton loading={loading} placeholder={<span>{c('Loader').t`Loading data`}</span>}>
-                    {confirmedDate ? (
-                        isNarrow ? (
-                            <Tooltip title={confirmedDate}>
-                                <span className="color-hint block text-ellipsis">{confirmedDate}</span>
-                            </Tooltip>
-                        ) : (
-                            <span className="color-hint block text-ellipsis">{confirmedDate}</span>
-                        )
-                    ) : (
-                        <div className="flex flex-row flex-nowrap items-center color-primary">
-                            <CircleLoader className="shrink-0" />
-                            <div className="ml-2 text-ellipsis">{c('Wallet transaction').t`In progress`}</div>
-                        </div>
-                    )}
+                    {innerDate}
                 </Skeleton>
             }
         />

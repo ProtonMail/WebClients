@@ -129,25 +129,35 @@ export const useTransactionTable = ({
     const [apiWalletTransactionData, loadingApiWalletTransactionData] =
         useApiWalletTransactionData(apiWalletTransactionDataArg);
 
-    const [noteModalState, setNoteModalState] = useModalStateWithData<{ transaction: TransactionData }>();
-    const [unknownSenderModal, setUnknownSenderModal] = useModalStateWithData<{ transaction: TransactionData }>();
+    const [noteModalState, setNoteModalState] = useModalStateWithData<{ hashedTxId: string }>();
+    const [unknownSenderModal, setUnknownSenderModal] = useModalStateWithData<{ hashedTxId: string }>();
 
     const openNoteModal = useCallback(
         (transaction: TransactionData) => {
-            setNoteModalState({ transaction });
+            const hashedTxId = transaction.apiData?.HashedTransactionID;
+
+            // Typeguard: here transaction should be already hashed in database
+            if (hashedTxId) {
+                setNoteModalState({ hashedTxId });
+            }
         },
         [setNoteModalState]
     );
 
     const handleClickRow = useCallback(
         async (transaction: TransactionData) => {
-            openDrawer({
-                theme: getThemeForWallet(apiWalletsData ?? [], wallet.Wallet.ID),
-                transaction,
-                kind: 'transaction-data',
-                onClickEditNote: () => setNoteModalState({ transaction }),
-                onClickEditSender: () => setUnknownSenderModal({ transaction }),
-            });
+            const hashedTxId = transaction.apiData?.HashedTransactionID;
+
+            // Typeguard: here transaction should be already hashed in database
+            if (hashedTxId) {
+                openDrawer({
+                    theme: getThemeForWallet(apiWalletsData ?? [], wallet.Wallet.ID),
+                    networkDataAndHashedTxId: [transaction.networkData, hashedTxId],
+                    kind: 'transaction-data',
+                    onClickEditNote: () => setNoteModalState({ hashedTxId }),
+                    onClickEditSender: () => setUnknownSenderModal({ hashedTxId }),
+                });
+            }
         },
         [apiWalletsData, openDrawer, setNoteModalState, setUnknownSenderModal, wallet.Wallet.ID]
     );

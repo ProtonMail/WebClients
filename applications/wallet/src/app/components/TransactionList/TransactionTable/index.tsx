@@ -136,6 +136,18 @@ export const TransactionTable = ({ wallet, walletAccountId, sortOrder, onClickRe
                         </>
                     </div>
                 )}
+
+                {noteModalState.data && (
+                    <TransactionNoteModal
+                        hashedTxId={noteModalState.data.hashedTxId}
+                        apiWalletData={wallet}
+                        {...noteModalState}
+                    />
+                )}
+
+                {unknownSenderModal.data && (
+                    <UnknownSenderModal hashedTxId={unknownSenderModal.data.hashedTxId} {...unknownSenderModal} />
+                )}
             </>
         );
     }
@@ -186,40 +198,31 @@ export const TransactionTable = ({ wallet, walletAccountId, sortOrder, onClickRe
     }
 
     return (
-        <>
-            <div className="flex flex-column mx-auto justify-center grow mb-10">
-                <img className="block mb-3" src={arrowsExchange} alt="" />
-                <div>
-                    <p className="h2 text-semibold text-center">{c('Wallet transaction').t`Start your journey`}</p>
-                    <p className="h2 text-semibold text-center">{c('Wallet transaction')
-                        .t`Add bitcoins to your wallet`}</p>
-                </div>
-                <div className="flex flex-row justify-center mt-6 ui-standard bg-transparent gap-2">
-                    <Button
-                        onClick={() => onClickReceive()}
-                        shape="ghost"
-                        color="norm"
-                        className="text-lg min-w-custom button-lighter border border-weak"
-                        style={{ '--min-w-custom': '7.5rem' }}
-                    >
-                        {c('Wallet transaction').t`Receive`}
-                    </Button>
-                    <Button
-                        onClick={() => onClickBuy()}
-                        shape="solid"
-                        className="button-darker text-lg min-w-custom"
-                        style={{ '--min-w-custom': '7.5rem' }}
-                    >
-                        {c('Wallet transaction').t`Buy`}
-                    </Button>
-                </div>
+        <div className="flex flex-column mx-auto justify-center grow mb-10">
+            <img className="block mb-3" src={arrowsExchange} alt="" />
+            <div>
+                <p className="h2 text-semibold text-center">{c('Wallet transaction').t`Start your journey`}</p>
+                <p className="h2 text-semibold text-center">{c('Wallet transaction').t`Add bitcoins to your wallet`}</p>
             </div>
-
-            <TransactionNoteModal apiWalletData={wallet} {...noteModalState} />
-
-            {unknownSenderModal.data && (
-                <UnknownSenderModal walletTransaction={unknownSenderModal.data.transaction} {...unknownSenderModal} />
-            )}
-        </>
+            <div className="flex flex-row justify-center mt-6 ui-standard bg-transparent gap-2">
+                <Button
+                    onClick={() => onClickReceive()}
+                    shape="ghost"
+                    color="norm"
+                    className="text-lg min-w-custom button-lighter border border-weak"
+                    style={{ '--min-w-custom': '7.5rem' }}
+                >
+                    {c('Wallet transaction').t`Receive`}
+                </Button>
+                <Button
+                    onClick={() => onClickBuy()}
+                    shape="solid"
+                    className="button-darker text-lg min-w-custom"
+                    style={{ '--min-w-custom': '7.5rem' }}
+                >
+                    {c('Wallet transaction').t`Buy`}
+                </Button>
+            </div>
+        </div>
     );
 };

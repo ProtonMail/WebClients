@@ -1,13 +1,15 @@
 import { useState } from 'react';
 
+import compact from 'lodash/compact';
 import { c } from 'ttag';
 
+import { type WasmTransactionDetails } from '@proton/andromeda';
 import { Icon, useModalStateWithData } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import arrowReceiveSvg from '@proton/styles/assets/img/illustrations/arrow-receive.svg';
 import arrowSendSvg from '@proton/styles/assets/img/illustrations/arrow-send.svg';
 import { COMPUTE_BITCOIN_UNIT, type TransactionData } from '@proton/wallet';
-import { useUserWalletSettings } from '@proton/wallet/store';
+import { useApiWalletTransactionData, useUserWalletSettings } from '@proton/wallet/store';
 
 import { CoreButton } from '../../atoms';
 import { Price } from '../../atoms/Price';
@@ -27,27 +29,37 @@ import {
 } from './data-items';
 
 interface Props {
-    transaction: TransactionData;
+    networkDataAndHashedTxId: [WasmTransactionDetails, string];
     onClickEditNote: () => void;
     onClickEditSender: () => void;
 }
 
-export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote, onClickEditSender }: Props) => {
+export const WalletTransactionDataDrawer = ({
+    networkDataAndHashedTxId: [networkData, hashedTxId],
+    onClickEditNote,
+    onClickEditSender,
+}: Props) => {
+    const [transactionsFromStore] = useApiWalletTransactionData(compact([hashedTxId]));
+    const apiData = transactionsFromStore?.[hashedTxId] ?? null;
+
     const [showMore, setShowMore] = useState(false);
     const { network } = useBitcoinBlockchainContext();
-    const exchangeRate = transaction.apiData?.ExchangeRate ?? undefined;
+    const exchangeRate = apiData?.ExchangeRate ?? undefined;
     const [recipientDetailsModal, setRecipientDetailsModal] = useModalStateWithData<RecipientDetailsModalOwnProps>();
 
     const [settings] = useUserWalletSettings();
 
-    const isSender = transaction.networkData.sent > transaction.networkData.received;
+    const isSender = networkData.sent > networkData.received;
+
     /**
      * If user is sender, we want to display what the amount he actually sent, without change output amount and feees
      * If user is recipient, we want to the amount he received
      */
     const value = isSender
-        ? transaction.networkData.sent - (transaction.networkData.fee ?? 0) - transaction.networkData.received
-        : transaction.networkData.received - transaction.networkData.sent;
+        ? networkData.sent - (networkData.fee ?? 0) - networkData.received
+        : networkData.received - networkData.sent;
+
+    const transactionData: TransactionData = { networkData, apiData };
 
     return (
         <>
@@ -83,7 +95,7 @@ export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote, onCl
             </div>
 
             <RecipientsDataItem
-                tx={transaction}
+                tx={transactionData}
                 onClick={(email, btcAddress, index) =>
                     setRecipientDetailsModal({ recipient: { Address: email, Name: email }, btcAddress, index })
                 }
@@ -91,28 +103,28 @@ export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote, onCl
 
             <hr className="my-4" />
             <SendersDataItem
-                tx={transaction}
+                tx={transactionData}
                 onClickEditSender={() => {
                     onClickEditSender();
                 }}
             />
 
-            <DateDataItem tx={transaction} />
+            <DateDataItem tx={transactionData} />
 
             <hr className="my-4" />
-            <StatusDataItem tx={transaction} />
+            <StatusDataItem tx={transactionData} />
 
-            {transaction.apiData?.Body && (
+            {apiData?.Body && (
                 <>
                     <hr className="my-4" />
-                    <MessageDataItem tx={transaction} />
+                    <MessageDataItem tx={transactionData} />
                 </>
             )}
 
             <hr className="my-4" />
 
             <NoteDataItem
-                tx={transaction}
+                tx={transactionData}
                 onClick={() => {
                     onClickEditNote();
                 }}
@@ -122,7 +134,7 @@ export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote, onCl
             {showMore ? (
                 <>
                     <AmountDataItem
-                        amount={transaction.networkData.fee}
+                        amount={networkData.fee}
                         label={c('Wallet transaction').t`Network fee`}
                         exchangeRate={exchangeRate}
                         infoTitle={c('Wallet info')
@@ -132,12 +144,12 @@ export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote, onCl
                     <hr className="my-4" />
 
                     <AmountDataItem
-                        amount={(transaction.networkData.fee ?? 0) + value}
+                        amount={(networkData.fee ?? 0) + value}
                         label={c('Wallet transaction').t`Total (sent amount + fee)`}
                         exchangeRate={exchangeRate}
                     />
 
-                    <LinkToBlockchainDataItem tx={transaction} network={network} />
+                    <LinkToBlockchainDataItem tx={transactionData} network={network} />
                 </>
             ) : (
                 <div>
