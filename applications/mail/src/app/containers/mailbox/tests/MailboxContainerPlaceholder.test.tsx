@@ -14,6 +14,11 @@ jest.mock('../../../containers/onboardingChecklist/provider/GetStartedChecklistP
     default: ({ children }: { children: any }) => <>{children}</>,
 }));
 
+jest.mock('@proton/unleash/useVariant', () => ({
+    __esModule: true,
+    default: jest.fn(() => ({ name: 'old' })),
+}));
+
 jest.mock('../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider');
 const mockedReturn = useGetStartedChecklist as jest.MockedFunction<typeof useGetStartedChecklist>;
 

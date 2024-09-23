@@ -4,12 +4,12 @@ import { Button, ButtonLike } from '@proton/atoms';
 import { useActiveBreakpoint } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
-import type { ServiceDetails } from './OnlineAccounts';
+import { type OnlineService } from '../constants';
 
 import './AccountsLoginModalServiceItem.scss';
 
 interface ServiceDetailsProps {
-    service: ServiceDetails;
+    service: OnlineService;
     isServiceDone?: boolean;
     serviceMarkedAsDone?: boolean;
     onServiceDone: (serviceKey: string, hideItem: boolean) => void;

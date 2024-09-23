@@ -38,7 +38,7 @@ import { useGetStartedChecklist } from '../../containers/onboardingChecklist/pro
 import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { layoutActions } from '../../store/layout/layoutSlice';
 import { selectLayoutIsExpanded } from '../../store/layout/layoutSliceSelectors';
-import UsersOnboardingChecklist from '../checklist/UsersOnboardingChecklist';
+import UsersOnboardingChecklist from '../onboarding/checklist/UsersOnboardingChecklist';
 import MailSidebarList from './MailSidebarList';
 import MailSidebarPrimaryButton from './MailSidebarPrimaryButton';
 

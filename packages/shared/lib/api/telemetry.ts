@@ -16,6 +16,7 @@ export enum TelemetryMeasurementGroups {
     changelogOpened = 'any.changelog_opened',
     keyTransparency = 'any.web.key_transparency',
     subscriptionModal = 'any.web.subscription_modal',
+    mailOnboarding = 'mail.web.onboarding',
     mailPrivacyDropdown = 'mail.web.privacy_dropdown',
     mailSelectAll = 'mail.web.select_all',
     mailSnooze = 'mail.web.snooze',
@@ -32,6 +33,17 @@ export enum TelemetryMeasurementGroups {
     collapsibleLeftSidebar = 'any.web.collapsible_left_sidebar',
     smartBanner = 'any.web.smart_banner',
     clientInstalls = 'common.any.client_installs',
+}
+
+export enum TelemetryMailOnboardingEvents {
+    start_onboarding_modals = 'start_onboarding_modals',
+    finish_onboarding_modals = 'finish_onboarding_modals',
+    select_theme = 'select_theme',
+    enable_gmail_forwarding = 'enable_gmail_forwarding',
+    change_login = 'change_login',
+    finish_change_login = 'finish_change_login',
+    download_desktop_app = 'download_desktop_app',
+    premium_features = 'premium_features',
 }
 
 export enum TelemetrySubscriptionModalEvents {
@@ -206,6 +218,7 @@ export type TelemetryEvents =
     | TelemetryMailEvents
     | TelemetryMailSelectAllEvents
     | TelemetryMailComposerAssistantEvents
+    | TelemetryMailOnboardingEvents
     | TelemetryChangelog
     | TelemetrySecurityCenterEvents
     | TelemetryPaymentsEvents

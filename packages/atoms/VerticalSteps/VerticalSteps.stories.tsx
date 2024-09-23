@@ -37,3 +37,32 @@ export const Basic = () => (
         />
     </VerticalSteps>
 );
+
+export const Primary = () => (
+    <VerticalSteps className="vertical-steps--primary">
+        <VerticalStep
+            titleCentered
+            titleBold={false}
+            title="Select service to update"
+            icon={<span className="m-auto">1</span>}
+        />
+        <VerticalStep
+            titleCentered
+            titleBold={false}
+            title="Do another great step"
+            icon={<span className="m-auto">2</span>}
+        />
+        <VerticalStep
+            titleCentered
+            titleBold={false}
+            title="Do another great step again"
+            icon={<span className="m-auto">3</span>}
+        />
+        <VerticalStep
+            titleCentered
+            titleBold={false}
+            title="Do another great step final step"
+            icon={<span className="m-auto">4</span>}
+        />
+    </VerticalSteps>
+);
