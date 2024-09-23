@@ -89,8 +89,8 @@ export default function useUploadMetrics(isPaid: boolean, metricsModule = metric
         }
         // Type of error
         metricsModule.drive_upload_errors_total.increment({
+            shareType,
             type: errorCategory,
-            shareType: shareType === MetricShareType.Own ? 'main' : shareType,
             initiator: 'explicit',
         });
 
@@ -133,7 +133,7 @@ export function getShareType(share?: Share): MetricShareType {
     }
 
     if (share.type === ShareType.default) {
-        return MetricShareType.Own;
+        return MetricShareType.Main;
     } else if (share.type === ShareType.photos) {
         return MetricShareType.Photo;
     } else if (share.type === ShareType.device) {

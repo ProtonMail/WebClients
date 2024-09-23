@@ -1,4 +1,4 @@
 export enum VolumeType {
-    own = 'own',
+    main = 'main',
     shared = 'shared',
 }

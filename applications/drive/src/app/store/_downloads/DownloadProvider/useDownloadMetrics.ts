@@ -12,8 +12,8 @@ import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
 import { is4xx, is5xx, isCryptoEnrichedError } from '../../../utils/errorHandling/apiErrors';
-import type { DownloadErrorCategoryType } from '../../../utils/type/MetricTypes';
-import { DownloadErrorCategory, MetricShareType } from '../../../utils/type/MetricTypes';
+import type { DownloadErrorCategoryType , MetricShareType } from '../../../utils/type/MetricTypes';
+import { DownloadErrorCategory } from '../../../utils/type/MetricTypes';
 import useSharesState from '../../_shares/useSharesState';
 import { getShareType } from '../../_uploads/UploadProvider/useUploadMetrics';
 import type { Download } from './interface';
@@ -56,7 +56,7 @@ export const useDownloadMetrics = (
         const errorCategory = getErrorCategory(state, error);
         metrics.drive_download_errors_total.increment({
             type: errorCategory,
-            shareType: shareType === MetricShareType.Own ? 'main' : shareType,
+            shareType,
             initiator,
         });
     };
@@ -65,7 +65,7 @@ export const useDownloadMetrics = (
         metrics.drive_download_success_rate_total.increment({
             status: state === TransferState.Done ? 'success' : 'failure',
             retry: 'false',
-            shareType: shareType === MetricShareType.Own ? 'main' : shareType,
+            shareType,
         });
     };
 
@@ -73,7 +73,7 @@ export const useDownloadMetrics = (
         if (isError && Date.now() - lastErroringUserReport.current > REPORT_ERROR_USERS_EVERY) {
             metrics.drive_download_erroring_users_total.increment({
                 plan: user ? (user.isPaid ? 'paid' : 'free') : 'unknown',
-                shareType: shareType === MetricShareType.Own ? 'main' : shareType,
+                shareType,
             });
             lastErroringUserReport.current = Date.now();
         }

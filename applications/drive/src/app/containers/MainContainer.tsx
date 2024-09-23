@@ -117,7 +117,7 @@ const InitContainer = () => {
             return;
         }
 
-        driveEventManager.volumes.startSubscription(volumeId, VolumeType.own).catch(console.warn);
+        driveEventManager.volumes.startSubscription(volumeId, VolumeType.main).catch(console.warn);
         return () => {
             driveEventManager.volumes.unsubscribe(volumeId);
         };
