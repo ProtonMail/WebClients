@@ -2,10 +2,10 @@ import { c } from 'ttag';
 
 import type { Props } from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
 import DrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
+import useAppLink from '@proton/components/components/link/useAppLink';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Optional } from '@proton/shared/lib/interfaces';
 
-import { useAppLink } from '../../link';
 import { WalletDrawerLogo } from '../drawerIcons';
 
 const WalletDrawerAppButton = ({

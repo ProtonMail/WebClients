@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import Prompt from '@proton/components/components/prompt/Prompt';
+import ErrorButton from '@proton/components/components/button/ErrorButton';
 import type { PromptProps } from '@proton/components/components/prompt/Prompt';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { useLoading } from '@proton/hooks';
 import { deleteDomain } from '@proton/shared/lib/api/domains';
 import type { Domain } from '@proton/shared/lib/interfaces';
 
-import { ErrorButton } from '../../components';
 import { useApi, useEventManager, useNotifications } from '../../hooks';
 
 interface Props extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {

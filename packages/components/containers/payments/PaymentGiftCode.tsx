@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
+import UnderlineButton from '@proton/components/components/button/UnderlineButton';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 
-import { UnderlineButton } from '../../components';
 import { useToggle } from '../../hooks';
 
 interface Props {

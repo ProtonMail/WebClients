@@ -3,8 +3,8 @@ import { useHistory } from 'react-router';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ErrorButton } from '@proton/components/components';
 import Alert from '@proton/components/components/alert/Alert';
+import ErrorButton from '@proton/components/components/button/ErrorButton';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';

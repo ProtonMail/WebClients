@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
+import ButtonGroup from '@proton/components/components/button/ButtonGroup';
+import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
@@ -15,6 +17,7 @@ import TableHeaderCell from '@proton/components/components/table/TableHeaderCell
 import TableRow from '@proton/components/components/table/TableRow';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import CalendarBadge from '@proton/components/containers/calendar/settings/CalendarBadge';
 import { useLoading } from '@proton/hooks';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import {
@@ -37,9 +40,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import type { CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { ButtonGroup } from '../../../components';
-import CalendarSelectIcon from '../../../components/calendarSelect/CalendarSelectIcon';
-import CalendarBadge from '../../../containers/calendar/settings/CalendarBadge';
 import { useCalendarShareInvitationActions, useEventManager, useNotifications } from '../../../hooks';
 import ShareCalendarWithSignatureVerificationErrorModal from '../../calendar/shareProton/ShareCalendarWithSignatureVerificationErrorModal';
 

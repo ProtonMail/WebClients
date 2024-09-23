@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import Checkbox from '@proton/components/components/input/Checkbox';
+import Label from '@proton/components/components/label/Label';
 import type { PromptProps } from '@proton/components/components/prompt/Prompt';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -11,7 +12,6 @@ import type { User } from '@proton/shared/lib/interfaces';
 import { getHasRecoveryMessage } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 
 import type { PrivateAuthenticationStore } from '../../containers';
-import { Label } from '../label';
 
 export const shouldShowConfirmSignOutModal = ({
     user,

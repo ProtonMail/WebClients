@@ -3,7 +3,8 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { TwitterButton, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/components';
+import TwitterButton from '@proton/components/components/button/TwitterButton';
 import Icon from '@proton/components/components/icon/Icon';
 import { useUserSettings } from '@proton/components/hooks';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';

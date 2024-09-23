@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
 import PmMeUpsellModal from '@proton/components/components/upsell/modal/types/PmMeUpsellModal';
@@ -9,7 +10,6 @@ import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT
 import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { useSettingsLink } from '../../components';
 import { useSubscription, useUser } from '../../hooks';
 import PmMeButton, { getActivateString } from './PmMeButton';
 

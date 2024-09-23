@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import Copy from '@proton/components/components/button/Copy';
+import Label from '@proton/components/components/label/Label';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableHeader from '@proton/components/components/table/TableHeader';
@@ -10,7 +11,6 @@ import TableRow from '@proton/components/components/table/TableRow';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Domain } from '@proton/shared/lib/interfaces';
 
-import { Label } from '../../components';
 import { useNotifications } from '../../hooks';
 
 interface Props {

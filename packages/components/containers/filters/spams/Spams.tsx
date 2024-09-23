@@ -2,10 +2,11 @@ import { useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { LabelStack, Pagination } from '@proton/components';
 import SearchInput from '@proton/components/components/input/SearchInput';
+import LabelStack from '@proton/components/components/labelStack/LabelStack';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Pagination from '@proton/components/components/pagination/Pagination';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';

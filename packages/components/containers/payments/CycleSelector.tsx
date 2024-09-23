@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import { CYCLE, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
 import { omit } from '@proton/shared/lib/helpers/object';
 import type { Cycle } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import type { Props as ForwardedButtonGroupProps } from '../../components/button/ButtonGroup';
-import ButtonGroup from '../../components/button/ButtonGroup';
 import Option from '../../components/option/Option';
 import type { Props as ForwardedSelectProps } from '../../components/select/Select';
 import Select from '../../components/select/Select';

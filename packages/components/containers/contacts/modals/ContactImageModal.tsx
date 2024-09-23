@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { Button, Input } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import FileInput from '@proton/components/components/input/FileInput';
+import Label from '@proton/components/components/label/Label';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -17,7 +18,6 @@ import { resizeImage } from '@proton/shared/lib/helpers/image';
 import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
 import debounce from '@proton/utils/debounce';
 
-import { Label } from '../../../components';
 import Field from '../../../components/container/Field';
 import Row from '../../../components/container/Row';
 import { useNotifications } from '../../../hooks';

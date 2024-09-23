@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { GenericError, useModalStateObject } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
 import BreachModal from '@proton/components/containers/credentialLeak/BreachModal';
@@ -20,6 +20,7 @@ import {
 import type { FetchedBreaches, SampleBreach } from '@proton/components/containers/credentialLeak/models';
 import { BREACH_STATE } from '@proton/components/containers/credentialLeak/models';
 import { useBreaches } from '@proton/components/containers/credentialLeak/useBreaches';
+import GenericError from '@proton/components/containers/error/GenericError';
 import { useApi, useErrorHandler, useNotifications, useUser, useUserSettings } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store';

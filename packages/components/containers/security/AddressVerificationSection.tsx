@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { BetaBadge } from '@proton/components';
+import BetaBadge from '@proton/components/components/badge/BetaBadge';
 import Info from '@proton/components/components/link/Info';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';

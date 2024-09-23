@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { useSettingsLink } from '@proton/components/components';
+import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';

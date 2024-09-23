@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
+import UnderlineButton from '@proton/components/components/button/UnderlineButton';
 import Radio from '@proton/components/components/input/Radio';
 import clsx from '@proton/utils/clsx';
 
-import { UnderlineButton } from '../../../components';
 import type { SimpleFilterModalModel } from '../interfaces';
 import { FilterStatement } from '../interfaces';
 import FilterConditionsFormRow from './FilterConditionsFormRow';

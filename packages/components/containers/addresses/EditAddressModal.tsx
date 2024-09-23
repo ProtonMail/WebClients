@@ -3,18 +3,18 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import Field from '@proton/components/components/container/Field';
+import Row from '@proton/components/components/container/Row';
 import Editor from '@proton/components/components/editor/Editor';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import type { EditorActions } from '@proton/components/components/editor/interface';
 import Input from '@proton/components/components/input/Input';
+import Label from '@proton/components/components/label/Label';
 import FormModal from '@proton/components/components/modal/FormModal';
 import { useLoading } from '@proton/hooks';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
 import type { Address } from '@proton/shared/lib/interfaces';
 
-import { Label } from '../../components';
-import Field from '../../components/container/Field';
-import Row from '../../components/container/Row';
 import { useApi, useEventManager, useNotifications } from '../../hooks';
 
 const EMPTY_VALUES = [/^(<div><br><\/div>)+$/, /^(<div>\s*<\/div>)+$/];

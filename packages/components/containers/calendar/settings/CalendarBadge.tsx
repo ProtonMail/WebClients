@@ -1,5 +1,5 @@
-import { Tooltip } from '@proton/components';
 import Badge from '@proton/components/components/badge/Badge';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import type { CalendarStatusBadge } from '@proton/shared/lib/calendar/badges';
 
 const CalendarBadge = ({ badgeType, text, tooltipText, className }: Omit<CalendarStatusBadge, 'statusType'>) => {
