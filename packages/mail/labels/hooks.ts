@@ -9,7 +9,7 @@ import type { Category, Folder, Label } from '@proton/shared/lib/interfaces';
 import type { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import noop from '@proton/utils/noop';
 
-import { CategoriesState, categoriesThunk, selectCategories } from './index';
+import { type CategoriesState, categoriesThunk, selectCategories } from './index';
 
 const hooks = createHooks(categoriesThunk, selectCategories);
 
