@@ -1,4 +1,4 @@
-import type { SubSectionConfig } from '../layout';
+import type { SubSectionConfig } from '../layout/interface';
 import LinkItem from './LinkItem';
 
 interface Props {

@@ -4,18 +4,15 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
-
-import type { ModalProps } from '../../../components';
-import {
-    Loader,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    QRCode,
-    Tabs,
-    TextArea,
-} from '../../../components';
+import QRCode from '@proton/components/components/image/QRCode';
+import TextArea from '@proton/components/components/input/TextArea';
+import Loader from '@proton/components/components/loader/Loader';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import { Tabs } from '@proton/components/components/tabs/Tabs';
 
 export interface WireGuardCreationModalProps extends ModalProps {
     text?: string;

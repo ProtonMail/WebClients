@@ -1,7 +1,7 @@
 import { ButtonLike } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 
-import { SettingsLink } from '../../components';
 import RecoveryStatusIcon from './RecoveryStatusIcon';
 import RecoveryStatusText from './RecoveryStatusText';
 

@@ -1,6 +1,7 @@
 import { addMonths } from 'date-fns';
 import { c, msgid } from 'ttag';
 
+import Time from '@proton/components/components/time/Time';
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
 import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
@@ -9,7 +10,6 @@ import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscr
 import type { Coupon, Currency, PlanIDs, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
 
 import Price from '../../components/price/Price';
-import Time from '../../components/time/Time';
 import { getMonths } from './SubscriptionsSection';
 import type { CheckoutModifiers } from './subscription/useCheckoutModifiers';
 

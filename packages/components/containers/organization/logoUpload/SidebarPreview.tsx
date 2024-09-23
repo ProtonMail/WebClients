@@ -1,4 +1,4 @@
-import { CustomLogo, Logo } from '@proton/components/components';
+import { CustomLogo, Logo } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 

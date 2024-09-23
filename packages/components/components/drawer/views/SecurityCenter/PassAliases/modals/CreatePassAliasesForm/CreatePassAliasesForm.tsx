@@ -4,20 +4,18 @@ import { c } from 'ttag';
 
 import type { Input } from '@proton/atoms';
 import { Button, CircleLoader, Href } from '@proton/atoms';
-import {
-    InputFieldTwo,
-    type ModalProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    Option,
-    SelectTwo,
-    TextAreaTwo,
-} from '@proton/components/components';
 import Form from '@proton/components/components/form/Form';
 import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import InputField from '@proton/components/components/v2/field/InputField';
+import TextArea from '@proton/components/components/v2/input/TextArea';
 import { useNotifications } from '@proton/components/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
@@ -141,7 +139,7 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit, passAliasesURL }: Props) 
                         }}
                     >
                         <InputFieldStacked hasError={!!errors?.note} isBigger classname="mb-2">
-                            <InputFieldTwo<typeof Input>
+                            <InputField<typeof Input>
                                 type="text"
                                 label={c('Label').t`Title`}
                                 value={formValues.name}
@@ -165,7 +163,7 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit, passAliasesURL }: Props) 
 
                         <InputFieldStackedGroup classname="mb-4">
                             <InputFieldStacked isGroupElement icon="alias" hasError={!!errors?.alias}>
-                                <InputFieldTwo<typeof Input>
+                                <InputField<typeof Input>
                                     label={c('Label').t`Your alias`}
                                     type="text"
                                     readOnly
@@ -183,7 +181,7 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit, passAliasesURL }: Props) 
                                 icon="arrow-up-and-right-big"
                                 hasError={!!errors?.mailbox}
                             >
-                                <InputFieldTwo<typeof SelectTwo<AliasOptions['mailboxes'][number]>>
+                                <InputField<typeof SelectTwo<AliasOptions['mailboxes'][number]>>
                                     label={c('Label').t`Forwards to`}
                                     as={SelectTwo}
                                     onBlur={() => setBlurred({ ...blurred, mailbox: true })}
@@ -201,12 +199,12 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit, passAliasesURL }: Props) 
                                     {mailboxes.map((aliasMailbox) => (
                                         <Option key={aliasMailbox.id} title={aliasMailbox.email} value={aliasMailbox} />
                                     ))}
-                                </InputFieldTwo>
+                                </InputField>
                             </InputFieldStacked>
                             <InputFieldStacked isGroupElement icon="note" hasError={!!errors?.note}>
-                                <InputFieldTwo<typeof TextAreaTwo>
+                                <InputField<typeof TextArea>
                                     label={c('Label').t`Note`}
-                                    as={TextAreaTwo}
+                                    as={TextArea}
                                     autoGrow
                                     unstyled
                                     className="rounded-none p-0 resize-none"

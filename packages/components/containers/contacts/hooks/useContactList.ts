@@ -6,7 +6,7 @@ import type { ContactEmail, ContactFormatted } from '@proton/shared/lib/interfac
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import { useContactEmails, useContactGroups, useContacts } from '../../../hooks';
-import { useItemsSelection } from '../../items';
+import useItemsSelection from '../../items/useItemsSelection';
 
 interface Props {
     search?: string;

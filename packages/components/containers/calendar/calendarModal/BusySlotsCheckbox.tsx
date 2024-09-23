@@ -1,8 +1,7 @@
-import React from 'react';
-
 import { c } from 'ttag';
 
-import { Info, Toggle } from '@proton/components/components';
+import Info from '@proton/components/components/link/Info';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { CALENDAR_SHARE_BUSY_TIME_SLOTS } from '@proton/shared/lib/calendar/constants';
 
 import useBusySlotsAvailable from '../hooks/useBusySlotsAvailable';

@@ -1,11 +1,14 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Loader from '@proton/components/components/loader/Loader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import type { AlgorithmInfo } from '@proton/crypto';
 import type { KeyGenConfig } from '@proton/shared/lib/interfaces';
 import { addUserKeysProcess } from '@proton/shared/lib/keys';
 
-import { Loader, useModalState } from '../../components';
 import {
     useApi,
     useAuthentication,
@@ -18,7 +21,6 @@ import {
     useUser,
     useUserKeys,
 } from '../../hooks';
-import { SettingsParagraph, SettingsSectionWide } from '../account';
 import KeysTable from './KeysTable';
 import AddKeyModal from './addKey/AddKeyModal';
 import ExportPrivateKeyModal from './exportKey/ExportPrivateKeyModal';

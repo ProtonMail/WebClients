@@ -1,10 +1,8 @@
-import {
-    PrivateMainArea,
-    SettingsPageTitle,
-    SettingsParagraph,
-    SettingsSection,
-    SettingsSectionTitle,
-} from '@proton/components';
+import { PrivateMainArea } from '@proton/components';
+import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
+import SettingsSectionTitle from '@proton/components/containers/account/SettingsSectionTitle';
 
 const PrivateMainAreaLoading = () => {
     return (

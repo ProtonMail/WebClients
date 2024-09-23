@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
+import Badge from '@proton/components/components/badge/Badge';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { Badge, Tooltip } from '../../components';
 import type { AddressStatuses } from './helper';
 
 const AddressStatus = ({

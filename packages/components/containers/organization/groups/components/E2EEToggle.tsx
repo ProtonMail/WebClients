@@ -2,12 +2,12 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import Toggle from '@proton/components/components/toggle/Toggle';
 import useLoading from '@proton/hooks/useLoading';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { Address } from '@proton/shared/lib/interfaces';
 
-import { Toggle } from '../../../../components/';
 import useGroupCrypto from '../useGroupCrypto';
 
 interface Props {

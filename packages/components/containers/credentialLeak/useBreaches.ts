@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 
-import type { FetchedBreaches } from '@proton/components/containers';
+import type { FetchedBreaches } from '@proton/components/containers/credentialLeak/models';
 import { BREACH_STATE } from '@proton/components/containers/credentialLeak/models';
 
 export const useBreaches = () => {

@@ -8,10 +8,15 @@ import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation
 import { changeCreateLoadingState, createSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
 import { selectCreateSyncState } from '@proton/activation/src/logic/sync/sync.selectors';
 import { Button, Href } from '@proton/atoms';
-import type { OnboardingStepRenderCallback } from '@proton/components';
-import { OnboardingContent, OnboardingModal, OnboardingStep, useActiveBreakpoint } from '@proton/components';
-import GmailSyncModalAnimation from '@proton/components/containers/gmailSyncModal/GmailSyncModalAnimation';
-import SignInWithGoogle from '@proton/components/containers/gmailSyncModal/SignInWithGoogle';
+import {
+    GmailSyncModalAnimation,
+    OnboardingContent,
+    OnboardingModal,
+    OnboardingStep,
+    type OnboardingStepRenderCallback,
+    SignInWithGoogle,
+    useActiveBreakpoint,
+} from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import blockSender from '@proton/styles/assets/img/onboarding/mail_onboarding_block_sender.svg';
 import blockTrackers from '@proton/styles/assets/img/onboarding/mail_onboarding_block_trackers.svg';

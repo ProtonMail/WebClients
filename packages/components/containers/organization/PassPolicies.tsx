@@ -3,7 +3,13 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
-import { Info, Toggle } from '@proton/components/components';
+import Info from '@proton/components/components/link/Info';
+import Toggle from '@proton/components/components/toggle/Toggle';
+import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
+import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
+import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { PassLockSelector } from '@proton/components/containers/pass/PassLockSelector';
 import { useErrorHandler } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
@@ -14,13 +20,6 @@ import type { OrganizationSettings } from '@proton/pass/types/data/organization'
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash';
 
-import {
-    SettingsLayout,
-    SettingsLayoutLeft,
-    SettingsLayoutRight,
-    SettingsParagraph,
-    SettingsSection,
-} from '../account';
 import { GenericError } from '../error';
 
 const getPolicies = (): { setting: keyof OrganizationSettings; label: string; tooltip: string }[] => [

@@ -2,9 +2,14 @@ import { memo } from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
-import { Button } from '@proton/atoms';
+import { Button, ButtonLike } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableRow from '@proton/components/components/table/TableRow';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { getVPNServerConfig } from '@proton/shared/lib/api/vpn';
 import { PLANS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
@@ -12,7 +17,6 @@ import type { Logical } from '@proton/shared/lib/vpn/Logical';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { SettingsLink, Table, TableBody, TableCell, TableRow, Tooltip } from '../../../components';
 import type { CountryOptions } from '../../../helpers/countries';
 import { useApi, useUser } from '../../../hooks';
 import Country from './Country';

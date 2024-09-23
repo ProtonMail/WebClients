@@ -2,8 +2,7 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
 import CircularProgress from '@proton/components/components/progress/CircularProgress';
-
-import { Tooltip } from '../../../components';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 
 const LoadIndicator = ({ server: { Load = 0 } }) => {
     // 1-49% load is GREEN color #5db039

@@ -13,6 +13,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import type { PopperPlacement } from '@proton/components/components/popper/interface';
+import usePopper from '@proton/components/components/popper/usePopper';
+import usePopperState from '@proton/components/components/popper/usePopperState';
+import { shouldShowSideRadius } from '@proton/components/components/popper/utils';
 import { useCombinedRefs } from '@proton/hooks';
 import discoverIllustration from '@proton/styles/assets/img/illustrations/spotlight-binoculars.svg';
 import newIllustration from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
@@ -20,9 +24,6 @@ import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
 import { useIsClosing } from '../../hooks';
-import type { PopperPlacement } from '../popper';
-import { usePopper, usePopperState } from '../popper';
-import { shouldShowSideRadius } from '../popper/utils';
 import Portal from '../portal/Portal';
 
 type SpotlightType = 'discover' | 'new';

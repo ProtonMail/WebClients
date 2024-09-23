@@ -2,7 +2,7 @@ import { type FC, type KeyboardEventHandler } from 'react';
 
 import { c } from 'ttag';
 
-import { Toggle } from '@proton/components';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { InlineFieldBox } from '@proton/pass/components/Form/Field/Layout/InlineFieldBox';
 import type { MaybeNull } from '@proton/pass/types';
 

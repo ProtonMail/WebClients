@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 
-import type { IsActiveInEnvironmentContainer, SpotlightProps } from '@proton/components/components';
+import type { SpotlightProps } from '@proton/components/components/spotlight/Spotlight';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 
+import type { IsActiveInEnvironmentContainer } from './NewFeatureTag';
 import NewFeatureTag from './NewFeatureTag';
 
 jest.mock('@proton/shared/lib/helpers/storage');
@@ -12,7 +13,7 @@ const mockedRemoveItem = jest.mocked(removeItem);
 
 const SPOTLIGHT_ID = 'this-is-a-mocked-spotlight';
 const NEW_FEATURE_TAG_ID = 'this-is-a-test-instance-of-new-feature-tag';
-jest.mock('@proton/components/components', () => ({
+jest.mock('@proton/components', () => ({
     __esModule: true,
     Spotlight: () => <div data-testid={SPOTLIGHT_ID}></div>,
 }));

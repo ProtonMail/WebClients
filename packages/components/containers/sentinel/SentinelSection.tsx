@@ -4,7 +4,13 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components/containers';
+import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
+import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
+import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { useBundleProPlan } from '@proton/components/hooks/useHasPlan';
 import { useLoading } from '@proton/hooks';
 import { disableHighSecurity, enableHighSecurity } from '@proton/shared/lib/api/settings';
@@ -22,7 +28,6 @@ import { isProtonSentinelEligible } from '@proton/shared/lib/helpers/userSetting
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { Toggle } from '../../components';
 import {
     useApi,
     useConfig,
@@ -31,10 +36,6 @@ import {
     useSearchParamsEffect,
     useUserSettings,
 } from '../../hooks';
-import { SettingsParagraph, SettingsSectionWide } from '../account';
-import SettingsLayout from '../account/SettingsLayout';
-import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import { getDisabledString, getEnableString, getEnabledString } from '../credentialLeak/helpers';
 
 interface Props {

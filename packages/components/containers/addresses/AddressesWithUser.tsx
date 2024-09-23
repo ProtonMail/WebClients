@@ -4,9 +4,14 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import OrderableTable from '@proton/components/components/orderableTable/OrderableTable';
+import OrderableTableBody from '@proton/components/components/orderableTable/OrderableTableBody';
+import OrderableTableHeader from '@proton/components/components/orderableTable/OrderableTableHeader';
+import OrderableTableRow from '@proton/components/components/orderableTable/OrderableTableRow';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
-import { SettingsParagraph } from '@proton/components/containers';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import { orderAddress } from '@proton/shared/lib/api/addresses';
 import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
@@ -16,13 +21,6 @@ import type { Address, CachedOrganizationKey, Member, UserModel } from '@proton/
 import { getIsNonDefault, sortAddresses } from '@proton/shared/lib/mail/addresses';
 import move from '@proton/utils/move';
 
-import {
-    OrderableTable,
-    OrderableTableBody,
-    OrderableTableHeader,
-    OrderableTableRow,
-    useModalState,
-} from '../../components';
 import { useAddresses, useApi, useEventManager, useNotifications } from '../../hooks';
 import AddressActions from './AddressActions';
 import AddressStatus from './AddressStatus';

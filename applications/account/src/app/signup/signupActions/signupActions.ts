@@ -1,9 +1,9 @@
 import { format } from 'date-fns';
 
 import { MAX_CHARS_API } from '@proton/account';
+import { getInitialStorage, getStorageRange } from '@proton/components';
 import type { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
 import type { AppIntent } from '@proton/components/containers/login/interface';
-import { getInitialStorage, getStorageRange } from '@proton/components/containers/members/MemberStorageSelector';
 import type { V5PaymentToken } from '@proton/payments';
 import { isTokenPayment, isWrappedPaymentsVersion } from '@proton/payments';
 import type { generatePDFKit } from '@proton/recovery-kit';

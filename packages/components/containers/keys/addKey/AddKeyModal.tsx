@@ -1,6 +1,11 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { AlgorithmInfo } from '@proton/crypto';
 import useLoading from '@proton/hooks/useLoading';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '@proton/shared/lib/constants';
@@ -8,8 +13,6 @@ import type { KeyGenConfig } from '@proton/shared/lib/interfaces';
 import { getAlgorithmExists } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import type { ModalProps } from '../../../components';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import useNotifications from '../../../hooks/useNotifications';
 
 interface Props extends ModalProps {

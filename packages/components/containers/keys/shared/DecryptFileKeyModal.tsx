@@ -4,6 +4,14 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Modal from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
@@ -11,17 +19,6 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
 import generateUID from '@proton/utils/generateUID';
 import noop from '@proton/utils/noop';
-
-import type { ModalProps } from '../../../components';
-import {
-    InputFieldTwo,
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-    PasswordInputTwo,
-    useFormErrors,
-} from '../../../components';
 
 interface Props extends ModalProps {
     privateKeyInfo: ArmoredKeyWithInfo;

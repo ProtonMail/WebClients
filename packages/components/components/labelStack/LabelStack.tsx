@@ -2,9 +2,9 @@ import type { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import clsx from '@proton/utils/clsx';
 
-import Tooltip from '../tooltip/Tooltip';
 import LabelStackItem from './LabelStackItem';
 
 export interface LabelDescription {

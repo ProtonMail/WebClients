@@ -3,15 +3,15 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
+import SearchInput from '@proton/components/components/input/SearchInput';
 import { orderContactGroups } from '@proton/shared/lib/helpers/contactGroups';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
-import { SearchInput } from '../../../components';
 import { useContactEmails, useContactGroups, useMailSettings, useNotifications, useUser } from '../../../hooks';
-import { useItemsSelection } from '../../items';
+import useItemsSelection from '../../items/useItemsSelection';
 import type { ContactGroupDeleteProps } from '../group/ContactGroupDeleteModal';
 import type { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import ContactsGroupsList from '../lists/ContactsGroupsList';

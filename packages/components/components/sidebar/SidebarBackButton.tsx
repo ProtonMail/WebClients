@@ -5,9 +5,8 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
-
-import type { AppLinkProps } from '../link/AppLink';
-import AppLink from '../link/AppLink';
+import type { AppLinkProps } from '@proton/components/components/link/AppLink';
+import AppLink from '@proton/components/components/link/AppLink';
 
 const SidebarBackButton = ({ children, ...rest }: AppLinkProps, ref: Ref<HTMLAnchorElement>) => {
     return (

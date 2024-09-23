@@ -1,7 +1,7 @@
+import { useModalTwo, useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { useModalTwo, useModalTwoStatic } from '../../../components/modalTwo/useModalTwo';
 import type { ContactEditProps } from '../edit/ContactEditModal';
 import ContactEditModal from '../edit/ContactEditModal';
 import type { ContactEmailSettingsProps } from '../email/ContactEmailSettingsModal';

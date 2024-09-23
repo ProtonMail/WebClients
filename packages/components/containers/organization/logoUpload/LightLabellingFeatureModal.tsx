@@ -1,11 +1,13 @@
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import { FeatureCode, useFeature } from '@proton/features';
 import illustration from '@proton/styles/assets/img/illustrations/light-labelling-feature-modal.svg';
-
-import type { ModalProps } from '../../../components';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, SettingsLink } from '../../../components';
 
 interface Props extends ModalProps {}
 

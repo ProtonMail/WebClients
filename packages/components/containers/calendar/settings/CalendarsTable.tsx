@@ -4,6 +4,15 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import Info from '@proton/components/components/link/Info';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
+import TableRow from '@proton/components/components/table/TableRow';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { getCalendarStatusBadges } from '@proton/shared/lib/calendar/badges';
 import { getCalendarSubpagePath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS } from '@proton/shared/lib/constants';
@@ -12,17 +21,6 @@ import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import type { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
-import {
-    Info,
-    SettingsLink,
-    Table,
-    TableBody,
-    TableCell,
-    TableHeader,
-    TableHeaderCell,
-    TableRow,
-    Tooltip,
-} from '../../../components';
 import CalendarSelectIcon from '../../../components/calendarSelect/CalendarSelectIcon';
 import CalendarBadge from './CalendarBadge';
 

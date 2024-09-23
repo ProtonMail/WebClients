@@ -3,8 +3,13 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
-import { User, isBilledUser } from '@proton/shared/lib/interfaces';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import type { User } from '@proton/shared/lib/interfaces';
+import { isBilledUser } from '@proton/shared/lib/interfaces';
 
 import { billedUserWarning } from './billedUserWarning';
 

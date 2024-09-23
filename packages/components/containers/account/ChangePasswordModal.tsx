@@ -5,6 +5,15 @@ import { c } from 'ttag';
 import { signoutAction } from '@proton/account';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Modal from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { useDispatch } from '@proton/redux-shared-store';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
@@ -24,17 +33,6 @@ import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
 import { srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
-import type { ModalProps } from '../../components';
-import {
-    InputFieldTwo,
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-    PasswordInputTwo,
-    SettingsLink,
-    useFormErrors,
-} from '../../components';
 import {
     useApi,
     useAuthentication,

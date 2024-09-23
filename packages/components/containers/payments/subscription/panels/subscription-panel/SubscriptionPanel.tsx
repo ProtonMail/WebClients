@@ -1,8 +1,10 @@
 import { c } from 'ttag';
 
-import { StripedItem, StripedList } from '@proton/components';
 import Icon, { type IconName } from '@proton/components/components/icon/Icon';
+import Price from '@proton/components/components/price/Price';
 import Meter from '@proton/components/components/progress/Meter';
+import StripedItem from '@proton/components/components/stripedList/StripedItem';
+import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import type { APP_NAMES, PLANS } from '@proton/shared/lib/constants';
 import {
     APPS,
@@ -42,7 +44,6 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
 
-import { Price } from '../../../../../components';
 import { getBasicFeatures, getVersionHistory } from '../../../features/drive';
 import { getSentinel } from '../../../features/highlights';
 import {

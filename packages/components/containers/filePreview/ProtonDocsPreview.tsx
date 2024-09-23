@@ -2,11 +2,11 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
+import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import { getOpenInDocsString } from '@proton/shared/lib/drive/translations';
 import unsupportedPreviewSvg from '@proton/styles/assets/img/errors/preview-unavailable.svg';
 import clsx from '@proton/utils/clsx';
 
-import { PrimaryButton } from '../../components';
 import { useActiveBreakpoint } from '../../hooks';
 
 interface Props {

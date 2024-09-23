@@ -1,6 +1,11 @@
 import type { ReactNode } from 'react';
 import { createContext, useContext, useRef } from 'react';
 
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { BilledUserModal } from '@proton/components/payments/client-extensions/billed-user';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
@@ -11,7 +16,6 @@ import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useModalState } from '../../../components';
 import { useOrganization, usePaymentStatus, usePlans, useSubscription, useUser } from '../../../hooks';
 import { useHasInboxDesktopInAppPayments } from '../../desktop/useHasInboxDesktopInAppPayments';
 import { useRedirectToAccountApp } from '../../desktop/useRedirectToAccountApp';

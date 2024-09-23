@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Toggle } from '@proton/components';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { useApi, useEventManager, useMailSettings, useNotifications, useToggle } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { updateDisplayUnreadFavicon } from '@proton/shared/lib/api/mailSettings';

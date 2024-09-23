@@ -2,17 +2,14 @@ import { formatDistanceToNow } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import type { ModalProps } from '@proton/components';
-import {
-    AppLink,
-    Icon,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    useConfig,
-    useKeyTransparencyContext,
-} from '@proton/components';
+import { useConfig, useKeyTransparencyContext } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
+import AppLink from '@proton/components/components/link/AppLink';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type {
     AddressAuditWarningDetails,
     LocalStorageAuditResult,

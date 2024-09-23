@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components/modalTwo';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import type { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';

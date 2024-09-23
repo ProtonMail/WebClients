@@ -3,8 +3,10 @@ import type { FormEvent } from 'react';
 import { c } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
-import { DateInput, Option, SelectTwo } from '@proton/components/components';
 import Icon from '@proton/components/components/icon/Icon';
+import DateInput from '@proton/components/components/input/DateInput';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import useLoading from '@proton/hooks/useLoading';
 
 import type { FilterModel } from './Pass/PassEvents';

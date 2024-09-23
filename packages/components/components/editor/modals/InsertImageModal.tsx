@@ -4,16 +4,19 @@ import { useCallback, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import FileButton from '@proton/components/components/button/FileButton';
+import PrimaryButton from '@proton/components/components/button/PrimaryButton';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
 import debounce from '@proton/utils/debounce';
 import generateUID from '@proton/utils/generateUID';
 
-import { PrimaryButton } from '../../button';
-import FileButton from '../../button/FileButton';
 import Form from '../../form/Form';
 import Input from '../../input/Input';
 import Label from '../../label/Label';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../modalTwo';
 
 enum ImageState {
     Initial,

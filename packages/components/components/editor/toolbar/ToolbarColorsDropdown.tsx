@@ -4,11 +4,11 @@ import { c } from 'ttag';
 
 import ColorSelector from '@proton/components/components/color/ColorSelector';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import { FONT_COLORNAMES } from '@proton/components/components/editor/constants';
+import Icon from '@proton/components/components/icon/Icon';
+import Tabs from '@proton/components/components/tabs/Tabs';
 import { COMPOSER_TOOLBAR_ICON_SIZE } from '@proton/shared/lib/constants';
 
-import Icon from '../../icon/Icon';
-import { Tabs } from '../../tabs';
-import { FONT_COLORNAMES } from '../constants';
 import ToolbarDropdown from './ToolbarDropdown';
 
 interface Props {

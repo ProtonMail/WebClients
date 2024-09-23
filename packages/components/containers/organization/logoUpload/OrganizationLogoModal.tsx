@@ -7,6 +7,13 @@ import { Button, CircleLoader } from '@proton/atoms';
 import Dropzone from '@proton/components/components/dropzone/Dropzone';
 import Form from '@proton/components/components/form/Form';
 import Icon from '@proton/components/components/icon/Icon';
+import FileInput from '@proton/components/components/input/FileInput';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Modal from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { updateOrganizationLogo, updateOrganizationSettings } from '@proton/shared/lib/api/organization';
@@ -19,15 +26,6 @@ import type { Organization } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import type { ModalProps } from '../../../components';
-import {
-    FileInput,
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-    useFormErrors,
-} from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import SidebarPreview from './SidebarPreview';
 import useOrgLogoUploadTelemetry from './useOrgLogoUploadTelemetry';

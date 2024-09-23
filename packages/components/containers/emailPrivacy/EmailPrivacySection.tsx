@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import Info from '@proton/components/components/link/Info';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { DEFAULT_MAILSETTINGS, IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
 
-import { Info } from '../../components/link';
 import { useFeatures, useMailSettings } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';

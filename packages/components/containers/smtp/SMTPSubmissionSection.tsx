@@ -5,24 +5,24 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import {
-    Loader,
-    SettingsParagraph,
-    SettingsSection,
-    SettingsSectionWide,
-    Table,
-    TableBody,
-    TableHeader,
-    TableRow,
     UpgradeBanner,
     useActiveBreakpoint,
     useAddresses,
     useApi,
-    useModalState,
     useNotifications,
     useOrganization,
     useUser,
 } from '@proton/components';
+import Loader from '@proton/components/components/loader/Loader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableRow from '@proton/components/components/table/TableRow';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { useLoading } from '@proton/hooks';
 import { deleteToken, getTokens, isTokenEligible } from '@proton/shared/lib/api/smtptokens';
 import {

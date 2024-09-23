@@ -1,5 +1,8 @@
 import { c } from 'ttag';
 
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import UpgradeBanner from '@proton/components/containers/account/UpgradeBanner';
 import {
     APP_UPSELL_REF_PATH,
     BRAND_NAME,
@@ -13,7 +16,6 @@ import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { useUser } from '../../hooks';
-import { SettingsParagraph, SettingsSectionWide, UpgradeBanner } from '../account';
 
 const CatchAllSection = () => {
     const [{ isAdmin, isSubUser }] = useUser();

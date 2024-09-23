@@ -3,8 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
-import { Banner, useApi, useDrawer } from '@proton/components';
-import { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
+import { Banner, BannerBackgroundColor, useApi, useDrawer } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import {

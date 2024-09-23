@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { Card } from '@proton/atoms';
-import { Table, TableBody, TableHeader, TableHeaderCell, TableRow } from '@proton/components/components/table';
+import { Table, TableBody, TableHeader, TableHeaderCell, TableRow } from '@proton/components';
 import type { LoginItem } from '@proton/pass/types';
 
 import { BreachUsageRow } from './BreachUsageRow';

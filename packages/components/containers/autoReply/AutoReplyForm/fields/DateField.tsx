@@ -1,6 +1,7 @@
 import { isValid } from 'date-fns';
 
-import { DateInput } from '../../../../components';
+import DateInput from '@proton/components/components/input/DateInput';
+
 import SettingsLayout from '../../../account/SettingsLayout';
 import SettingsLayoutLeft from '../../../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../../../account/SettingsLayoutRight';

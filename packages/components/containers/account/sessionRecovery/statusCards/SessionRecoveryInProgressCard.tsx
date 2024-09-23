@@ -2,10 +2,10 @@ import { format } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
-import { useModalState } from '../../../../components';
 import { useSessionRecoveryGracePeriodHoursRemaining, useUser } from '../../../../hooks';
 import ConfirmSessionRecoveryCancellationModal from '../ConfirmSessionRecoveryCancellationModal';
 import SessionRecoveryStatusTitle from './SessionRecoveryStatusTitle';

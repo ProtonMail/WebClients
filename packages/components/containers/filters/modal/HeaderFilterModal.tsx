@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Breadcrumb } from '../../../components';
+import Breadcrumb from '../../../components/breadcrumb/Breadcrumb';
 import type { Errors, SimpleFilterModalModel } from '../interfaces';
 import { Step } from '../interfaces';
 

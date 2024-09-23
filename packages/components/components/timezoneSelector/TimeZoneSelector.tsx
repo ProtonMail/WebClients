@@ -2,8 +2,12 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import type { Unit } from '@proton/components/components/dropdown/utils';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import Option from '@proton/components/components/option/Option';
+import type { SearcheableSelectProps } from '@proton/components/components/selectTwo/SearchableSelect';
+import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { TelemetryCalendarEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import type { AbbreviatedTimezone } from '@proton/shared/lib/date/timezone';
 import { getAbbreviatedTimezoneName, getTimeZoneOptions, getTimezoneAndOffset } from '@proton/shared/lib/date/timezone';
@@ -11,13 +15,9 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 
 import { useApi } from '../../hooks';
-import { Option } from '../option';
-import { SearchableSelect } from '../selectTwo';
-import type { Props as SearchableSelectProps } from '../selectTwo/SearchableSelect';
-import type { Props as SelectProps } from '../selectTwo/SelectTwo';
-import { Tooltip } from '../tooltip';
+import type { SelectTwoProps } from '../selectTwo/SelectTwo';
 
-interface Props extends Omit<SelectProps<string>, 'onChange' | 'children'> {
+interface Props extends Omit<SelectTwoProps<string>, 'onChange' | 'children'> {
     timezone?: string;
     onChange: (tzid: string) => void;
     className?: string;
@@ -70,7 +70,7 @@ export const TimeZoneSelector = ({
         onChange(value);
     };
 
-    const searchableSelectProps: SearchableSelectProps<string> = {
+    const searchableSelectProps: SearcheableSelectProps<string> = {
         disabled: loading || disabled,
         title: c('Action').t`Select time zone`,
         value: timezone,

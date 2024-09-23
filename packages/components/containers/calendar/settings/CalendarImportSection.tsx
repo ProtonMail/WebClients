@@ -4,6 +4,10 @@ import { EasySwitchOauthImportButton, EasySwitchProvider } from '@proton/activat
 import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activation/src/interface';
 import { Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import PrimaryButton from '@proton/components/components/button/PrimaryButton';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { getProbablyActiveCalendars, getWritableCalendars } from '@proton/shared/lib/calendar/calendar';
 import { IMPORT_CALENDAR_FAQ_URL } from '@proton/shared/lib/calendar/constants';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
@@ -12,8 +16,6 @@ import type { UserModel } from '@proton/shared/lib/interfaces';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { useFlag } from '@proton/unleash';
 
-import { PrimaryButton, useModalState } from '../../../components';
-import { SettingsParagraph, SettingsSection } from '../../account';
 import { ImportModal } from '../importModal';
 
 interface Props {

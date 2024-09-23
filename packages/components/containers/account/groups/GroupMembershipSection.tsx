@@ -1,10 +1,16 @@
 import { c } from 'ttag';
 
 import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
+import Loader from '@proton/components/components/loader/Loader';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableRow from '@proton/components/components/table/TableRow';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import type { GroupMembership } from '@proton/shared/lib/interfaces';
 
-import { Loader, Table, TableBody, TableCell, TableHeader, TableRow } from '../../../components';
-import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import GroupActions from './GroupActions';
 import GroupState from './GroupState';
 

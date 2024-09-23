@@ -6,7 +6,7 @@ import { Input } from '@proton/atoms';
 import { useNotifications } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
-import { Field } from '../../../components';
+import Field from '../../../components/container/Field';
 import type { AdvancedSimpleFilterModalModel, SimpleFilterModalModel } from '../interfaces';
 import { Step } from '../interfaces';
 

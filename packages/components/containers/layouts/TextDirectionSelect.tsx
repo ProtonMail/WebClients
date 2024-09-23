@@ -2,9 +2,8 @@ import type { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
+import Select from '@proton/components/components/select/Select';
 import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
-
-import { Select } from '../../components';
 
 const { LEFT_TO_RIGHT, RIGHT_TO_LEFT } = DIRECTION;
 

@@ -2,13 +2,14 @@ import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import Bordered from '@proton/components/components/container/Bordered';
+import Details from '@proton/components/components/container/Details';
+import Summary from '@proton/components/components/container/Summary';
 import DynamicProgress from '@proton/components/components/progress/DynamicProgress';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { ExportCalendarModel, ExportError } from '@proton/shared/lib/interfaces/calendar';
 import { EXPORT_ERRORS, EXPORT_EVENT_ERROR_TYPES } from '@proton/shared/lib/interfaces/calendar';
 import partition from '@proton/utils/partition';
-
-import { Bordered, Details, Summary } from '../../../components';
 
 const getErrorMessage = (hasMultiplePasswordResetErrors: boolean) => (type: EXPORT_EVENT_ERROR_TYPES) => {
     const errorMessagesMap: { [key in EXPORT_EVENT_ERROR_TYPES]: string } = {

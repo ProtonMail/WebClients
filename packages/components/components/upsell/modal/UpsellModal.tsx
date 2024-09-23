@@ -3,9 +3,14 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
-import type { ModalSize, ModalStateProps } from '@proton/components/components';
-import { Info, ModalTwo, ModalTwoContent, ModalTwoHeader, SettingsLink } from '@proton/components/components';
 import Icon, { type IconSize } from '@proton/components/components/icon/Icon';
+import Info from '@proton/components/components/link/Info';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import type { ModalSize } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import calendarHeaderImage from '@proton/styles/assets/img/illustrations/upsell-calendar-header.svg';
 import composerAssistantImage from '@proton/styles/assets/img/illustrations/upsell-composer-assistant.svg';
 import mailHeaderImage from '@proton/styles/assets/img/illustrations/upsell-mail-header.svg';

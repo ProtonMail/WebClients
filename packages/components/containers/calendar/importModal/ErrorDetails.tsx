@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
+import Bordered from '@proton/components/components/container/Bordered';
+import Details from '@proton/components/components/container/Details';
+import Summary from '@proton/components/components/container/Summary';
 import { MAX_UID_CHARS_DISPLAY } from '@proton/shared/lib/calendar/constants';
 import type { ImportEventError } from '@proton/shared/lib/calendar/icsSurgery/ImportEventError';
 import { truncateMore } from '@proton/shared/lib/helpers/string';
-
-import { Bordered, Details, Summary } from '../../../components';
 
 const getComponentText = (component: string) => {
     if (component === 'vevent') {

@@ -1,5 +1,6 @@
 import { format } from 'date-fns';
 
+import RemoteImage from '@proton/components/components/image/RemoteImage';
 import { OTHER_INFORMATION_FIELDS } from '@proton/shared/lib/contacts/constants';
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
 import { isDateTextValue, isValidDateValue } from '@proton/shared/lib/contacts/vcard';
@@ -13,7 +14,6 @@ import type {
 } from '@proton/shared/lib/interfaces/contacts/VCard';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { RemoteImage } from '../../../../components';
 import { ContactViewProperties } from './ContactViewProperties';
 import ContactViewProperty from './ContactViewProperty';
 

@@ -5,42 +5,42 @@ import { useLocation } from 'react-router';
 import { addDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { signoutAction } from '@proton/account';
+import { signoutAction, useUserSettings } from '@proton/account';
 import { useGetScheduleCall } from '@proton/account/scheduleCall/hooks';
 import { Button, ButtonLike, CircleLoader, NotificationDot } from '@proton/atoms';
 import { ThemeColor } from '@proton/colors';
-import {
-    AppLink,
-    ConfirmSignOutModal,
-    FeatureCode,
-    Icon,
-    Logo,
-    ReferralSpotlight,
-    SettingsLink,
-    Tooltip,
+import ConfirmSignOutModal, {
     shouldShowConfirmSignOutModal,
-    useActiveBreakpoint,
-    useAuthentication,
-    useConfig,
-    useFeature,
-    useIsSecurityCheckupAvailable,
-    useIsSentinelUser,
-    useModalState,
-    useNotifications,
-    useOrganization,
-    usePopperAnchor,
-    useSecurityCheckup,
-    useSessionRecoveryState,
-    useSettingsLink,
-    useSpotlightOnFeature,
-    useSpotlightShow,
-    useSubscription,
-    useUser,
-    useUserSettings,
-} from '@proton/components';
+} from '@proton/components/components/confirmSignOutModal/ConfirmSignOutModal';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import Icon from '@proton/components/components/icon/Icon';
+import AppLink from '@proton/components/components/link/AppLink';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import useSettingsLink from '@proton/components/components/link/useSettingsLink';
+import Logo from '@proton/components/components/logo/Logo';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import { ReferralSpotlight } from '@proton/components/containers/referral/ReferralSpotlight';
+import {
+    useActiveBreakpoint,
+    useAuthentication,
+    useIsSecurityCheckupAvailable,
+    useIsSentinelUser,
+    useNotifications,
+    useOrganization,
+    useSecurityCheckup,
+    useSessionRecoveryState,
+    useSpotlightOnFeature,
+    useSubscription,
+    useUser,
+} from '@proton/components/hooks';
+import useConfig from '@proton/components/hooks/useConfig';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppHref, getAppShortName } from '@proton/shared/lib/apps/helper';
@@ -75,7 +75,7 @@ import generateUID from '@proton/utils/generateUID';
 
 import ProductLink from '../../containers/app/ProductLink';
 import SessionRecoverySignOutConfirmPrompt from '../account/sessionRecovery/SessionRecoverySignOutConfirmPrompt';
-import { AuthenticatedBugModal } from '../support';
+import AuthenticatedBugModal from '../support/AuthenticatedBugModal';
 import type { Props as UserDropdownButtonProps } from './UserDropdownButton';
 import UserDropdownButton from './UserDropdownButton';
 

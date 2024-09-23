@@ -2,17 +2,15 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Modal from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
-import type { ModalProps } from '../../components';
-import {
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoHeader as ModalHeader,
-    SettingsLink,
-    useModalState,
-} from '../../components';
-import { AuthenticatedBugModal } from '../support';
+import AuthenticatedBugModal from '../support/AuthenticatedBugModal';
 
 export interface Props {
     onClose: ModalProps['onClose'];

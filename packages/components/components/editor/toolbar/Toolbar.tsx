@@ -4,13 +4,13 @@ import { Suspense, lazy } from 'react';
 import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms';
+import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import { ErrorBoundary } from '@proton/components/containers';
 import { COMPOSER_TOOLBAR_ICON_SIZE } from '@proton/shared/lib/constants';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { useActiveBreakpoint } from '../../../hooks';
-import { ButtonGroup } from '../../button';
 import Icon from '../../icon/Icon';
 import { DEFAULT_FONT_FACE_ID, DEFAULT_FONT_SIZE } from '../constants';
 import type { ToolbarConfig } from '../helpers/getToolbarConfig';

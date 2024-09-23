@@ -4,6 +4,9 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import Label from '@proton/components/components/label/Label';
+import Info from '@proton/components/components/link/Info';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { CryptoProxy } from '@proton/crypto';
 import type { CONTACT_PGP_SCHEMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -12,7 +15,8 @@ import type { ContactPublicKeyModelWithApiKeySource, MailSettings } from '@proto
 import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
 import { getIsValidForSending, getKeyEncryptionCapableStatus } from '@proton/shared/lib/keys/publicKeys';
 
-import { Field, Info, Label, Row, Toggle } from '../../../components';
+import Field from '../../../components/container/Field';
+import Row from '../../../components/container/Row';
 import { useNotifications } from '../../../hooks';
 import SelectKeyFiles from '../../keys/shared/SelectKeyFiles';
 import ContactKeysTable from './ContactKeysTable';

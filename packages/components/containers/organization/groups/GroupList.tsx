@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { Button, Input, Scroll } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
-import { GroupPermissions } from '@proton/shared/lib/interfaces';
 import type { Group } from '@proton/shared/lib/interfaces';
+import { GroupPermissions } from '@proton/shared/lib/interfaces';
 
 import GroupItem from './GroupItem';
 import type { GroupsManagementReturn } from './types';

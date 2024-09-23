@@ -1,6 +1,8 @@
 import { addWeeks, eachDayOfInterval, endOfWeek, isSameDay, startOfMonth, startOfWeek, subWeeks } from 'date-fns';
 
-import type { DateTuple, WeekStartsOn } from './index.d';
+import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
+
+import type { DateTuple } from './interface';
 
 /**
  * Get all days to display in the mini calendar for a given date.

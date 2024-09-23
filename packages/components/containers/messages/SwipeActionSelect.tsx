@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { SWIPE_ACTION } from '@proton/shared/lib/mail/mailSettings';
-
-import { Option, SelectTwo } from '../../components';
 
 export interface SwipeActionSelectProps {
     onChange: (swipeAction: SWIPE_ACTION) => void;

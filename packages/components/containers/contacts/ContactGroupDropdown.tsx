@@ -8,6 +8,11 @@ import { Button } from '@proton/atoms';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import Icon from '@proton/components/components/icon/Icon';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import SearchInput from '@proton/components/components/input/SearchInput';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import {
     getContactGroupsDelayedSaveChanges,
     hasReachedContactGroupMembersLimit,
@@ -19,12 +24,7 @@ import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/c
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
-import Icon from '../../components/icon/Icon';
-import Checkbox from '../../components/input/Checkbox';
-import SearchInput from '../../components/input/SearchInput';
-import { usePopperAnchor } from '../../components/popper';
 import Mark from '../../components/text/Mark';
-import Tooltip from '../../components/tooltip/Tooltip';
 import { useContactEmails, useContactGroups, useMailSettings, useUser } from '../../hooks';
 import type { ContactGroupEditProps } from './group/ContactGroupEditModal';
 import useApplyGroups from './hooks/useApplyGroups';

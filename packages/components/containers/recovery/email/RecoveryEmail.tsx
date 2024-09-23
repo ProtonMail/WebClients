@@ -6,6 +6,9 @@ import { c } from 'ttag';
 import type { Input } from '@proton/atoms';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useLoading from '@proton/hooks/useLoading';
 import { updateEmail } from '@proton/shared/lib/api/settings';
 import { emailValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -14,7 +17,6 @@ import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { InputFieldTwo, useFormErrors, useModalState } from '../../../components';
 import type { InputFieldProps } from '../../../components/v2/field/InputField';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import ConfirmRemoveEmailModal from './ConfirmRemoveEmailModal';

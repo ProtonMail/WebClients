@@ -1,6 +1,6 @@
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 
-import { SettingsSection } from '../../account';
 import AutoDetectPrimaryTimezoneSection from './AutoDetectPrimaryTimezoneSection';
 import PrimaryTimezoneSection from './PrimaryTimezoneSection';
 import SecondaryTimezoneSection from './SecondaryTimezoneSection';

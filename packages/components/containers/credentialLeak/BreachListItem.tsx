@@ -1,9 +1,9 @@
 import { Button } from '@proton/atoms';
+import type { FetchedBreaches } from '@proton/components/containers/credentialLeak/models';
 import clsx from '@proton/utils/clsx';
 
 import ReadableDate from './ReadableDate';
 import { getBreachIcon } from './helpers';
-import type { FetchedBreaches } from './models';
 
 import './BreachListItem.scss';
 

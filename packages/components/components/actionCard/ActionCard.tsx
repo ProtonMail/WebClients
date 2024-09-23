@@ -2,8 +2,7 @@ import type { ComponentPropsWithoutRef } from 'react';
 
 import { ButtonLike } from '@proton/atoms';
 import Icon, { type IconName } from '@proton/components/components/icon/Icon';
-
-import { Loader } from '../loader';
+import Loader from '@proton/components/components/loader/Loader';
 
 interface ActionCardProps extends ComponentPropsWithoutRef<'button'> {
     onClick: () => void;

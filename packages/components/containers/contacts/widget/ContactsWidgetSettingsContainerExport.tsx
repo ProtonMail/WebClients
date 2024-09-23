@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { Label, PrimaryButton, Tooltip } from '@proton/components';
+import PrimaryButton from '@proton/components/components/button/PrimaryButton';
+import Label from '@proton/components/components/label/Label';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { useContacts } from '@proton/components/hooks';
 
 interface ExportButtonProps {

@@ -1,23 +1,21 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import type { ModalProps } from '@proton/components/components';
-import {
-    Cell,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    Table,
-    TableBody,
-    TableCell,
-    TableRow,
-    useModalTwoStatic,
-} from '@proton/components/components';
 import Form from '@proton/components/components/form/Form';
 import Icon from '@proton/components/components/icon/Icon';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
+import Cell from '@proton/components/components/table/Cell';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableRow from '@proton/components/components/table/TableRow';
 import { MAX_IPS_ADDON } from '@proton/shared/lib/constants';
 import range from '@proton/utils/range';
 

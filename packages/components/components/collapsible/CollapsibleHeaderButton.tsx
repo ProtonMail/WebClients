@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import type { ButtonProps } from '@proton/atoms';
 import { Button } from '@proton/atoms';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 
-import { Tooltip } from '../tooltip';
 import CollapsibleContext from './CollapsibleContext';
 
 export interface CollapsibleHeaderButtonProps extends ButtonProps {

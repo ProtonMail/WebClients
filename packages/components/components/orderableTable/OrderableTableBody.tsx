@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { TableBody } from '../table';
+import TableBody from '@proton/components/components/table/TableBody';
 
 interface Props {
     children?: ReactNode;

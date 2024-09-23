@@ -3,7 +3,7 @@ import type { MouseEvent, ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { ContactImage, useNotifications } from '@proton/components';
-import { Copy } from '@proton/components/components';
+import Copy from '@proton/components/components/button/Copy';
 import ProtonBadgeType from '@proton/components/components/protonBadge/ProtonBadgeType';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { Recipient } from '@proton/shared/lib/interfaces';

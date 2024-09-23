@@ -2,12 +2,12 @@ import { Fragment } from 'react';
 
 import { c } from 'ttag';
 
+import Copy from '@proton/components/components/button/Copy';
 import { cleanAddressFromCommas } from '@proton/shared/lib/contacts/helpers/address';
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
 import type { VCardAddress, VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { Copy } from '../../../../components';
 import { useNotifications } from '../../../../hooks';
 import { ContactViewProperties } from './ContactViewProperties';
 import ContactViewProperty from './ContactViewProperty';

@@ -5,16 +5,21 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms';
 import {
     GenericError,
-    Icon,
-    Loader,
     SUBSCRIPTION_STEPS,
-    Toggle,
     useErrorHandler,
-    useModalStateObject,
     useSubscriptionModal,
     useUser,
     useUserSettings,
 } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
+import Loader from '@proton/components/components/loader/Loader';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
+import Toggle from '@proton/components/components/toggle/Toggle';
+import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
+import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
+import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { useApi, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { getBreaches, updateBreachState } from '@proton/shared/lib/api/breaches';
@@ -35,13 +40,6 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { useActiveBreakpoint } from '../../hooks';
-import {
-    SettingsLayout,
-    SettingsLayoutLeft,
-    SettingsLayoutRight,
-    SettingsParagraph,
-    SettingsSectionWide,
-} from '../account';
 import BreachInformationCard from './BreachInformationCard';
 import BreachModal from './BreachModal';
 import BreachesList from './BreachesList';

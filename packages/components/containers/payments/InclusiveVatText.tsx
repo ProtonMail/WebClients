@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
+import Price from '@proton/components/components/price/Price';
 import type { Currency, Tax } from '@proton/shared/lib/interfaces';
 import withDecimalPrecision from '@proton/utils/withDecimalPrecision';
-
-import { Price } from '../../components/price';
 
 interface Props {
     tax: Tax;

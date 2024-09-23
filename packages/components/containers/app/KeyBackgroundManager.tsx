@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 
+import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
+import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import { serverTime, wasServerTimeEverUpdated } from '@proton/crypto';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import { createKeyMigrationKTVerifier } from '@proton/shared/lib/keyTransparency';
@@ -28,7 +30,6 @@ import {
     useGetUserKeys,
 } from '../../hooks';
 import useApi from '../../hooks/useApi';
-import { useKTActivation, useKTVerifier } from '../keyTransparency';
 
 interface Props {
     hasPrivateMemberKeyGeneration?: boolean;

@@ -2,7 +2,8 @@ import { useMemo } from 'react';
 
 import { SelectionRangeTypes } from 'roosterjs-editor-types';
 
-import type { ModalStateProps } from '../../../modalTwo';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+
 import type { ModalLinkProps } from '../../hooks/interface';
 import InsertLinkModalComponent from './InsertLinkModalComponent';
 

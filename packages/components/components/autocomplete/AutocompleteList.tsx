@@ -5,9 +5,9 @@ import { c, msgid } from 'ttag';
 
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import { verticalPopperPlacements } from '@proton/components/components/popper/utils';
 
-import type { Props as OptionProps } from '../option/Option';
-import { verticalPopperPlacements } from '../popper/utils';
+import type { OptionProps } from '../option/Option';
 
 interface Props<V> {
     id: string;

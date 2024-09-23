@@ -1,9 +1,8 @@
 import type { CSSProperties, ChangeEvent } from 'react';
 
+import Checkbox from '@proton/components/components/input/Checkbox';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import clsx from '@proton/utils/clsx';
-
-import { Checkbox } from '../../../components';
 
 interface Props {
     style: CSSProperties;

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { fireEvent, render } from '@testing-library/react';
 
-import InlineLinkButton from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import { InlineLinkButton } from '@proton/atoms';
 
 describe('<InlineLinkButton />', () => {
     it('should render with default classnames', () => {

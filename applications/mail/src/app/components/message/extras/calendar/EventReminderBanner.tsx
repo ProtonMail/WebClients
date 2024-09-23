@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
-import { Banner } from '@proton/components';
-import { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
+import { Banner, BannerBackgroundColor } from '@proton/components';
 
 import EventReminderText from './EventReminderText';
 

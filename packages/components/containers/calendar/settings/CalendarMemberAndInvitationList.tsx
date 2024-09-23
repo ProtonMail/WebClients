@@ -1,6 +1,12 @@
 import { c, msgid } from 'ttag';
 
+import { useContactEmailsCache } from '@proton/components';
 import Alert from '@proton/components/components/alert/Alert';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
+import TableRow from '@proton/components/components/table/TableRow';
 import { useApi, useNotifications } from '@proton/components/hooks';
 import { updateInvitation, updateMemberPermission } from '@proton/shared/lib/api/calendars';
 import { MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
@@ -8,8 +14,6 @@ import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import type { CalendarMember, CalendarMemberInvitation } from '@proton/shared/lib/interfaces/calendar';
 import { MEMBER_INVITATION_STATUS } from '@proton/shared/lib/interfaces/calendar';
 
-import { Table, TableBody, TableHeader, TableHeaderCell, TableRow } from '../../../components';
-import { useContactEmailsCache } from '../../contacts/ContactEmailsProvider';
 import CalendarMemberRow from './CalendarMemberRow';
 
 interface MemberAndInvitationListProps {

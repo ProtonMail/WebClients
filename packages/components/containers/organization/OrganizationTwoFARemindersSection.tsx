@@ -2,13 +2,17 @@ import { c } from 'ttag';
 
 import { useMemberAddresses } from '@proton/account';
 import { Button } from '@proton/atoms';
-import { Info, useConfig, useMembers, useModalState } from '@proton/components';
+import { useConfig, useMembers } from '@proton/components';
+import Label from '@proton/components/components/label/Label';
+import Info from '@proton/components/components/link/Info';
+import Loader from '@proton/components/components/loader/Loader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
-import { Label, Loader, Row } from '../../components';
-import { SettingsParagraph } from '../account';
+import Row from '../../components/container/Row';
 import SendEmailReminderTwoFAModal from './SendEmailReminderTwoFAModal';
 
 interface Props {

@@ -5,6 +5,11 @@ import { c } from 'ttag';
 
 import { useInactiveKeys } from '@proton/account';
 import { Button } from '@proton/atoms';
+import Loader from '@proton/components/components/loader/Loader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import type { AlgorithmInfo } from '@proton/crypto';
 import type { KeyGenConfig } from '@proton/shared/lib/interfaces';
 import type { OnKeyImportCallback } from '@proton/shared/lib/keys';
@@ -18,7 +23,6 @@ import {
 } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import { Loader, useModalState } from '../../components';
 import {
     useAddresses,
     useAddressesKeys,
@@ -29,8 +33,6 @@ import {
     useUser,
     useUserKeys,
 } from '../../hooks';
-import { SettingsParagraph, SettingsSectionWide } from '../account';
-import { useKTVerifier } from '../keyTransparency';
 import useResignSKLWithPrimaryKey from '../keyTransparency/useResignSKLWithPrimaryKey';
 import AddressKeysHeaderActions from './AddressKeysHeaderActions';
 import KeysTable from './KeysTable';

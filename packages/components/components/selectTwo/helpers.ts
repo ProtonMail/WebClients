@@ -1,6 +1,6 @@
 import { normalize } from '@proton/shared/lib/helpers/string';
 
-import type { Props as OptionProps } from '../option/Option';
+import type { OptionProps } from '../option/Option';
 
 export const includesString = (str1: string, str2: string | undefined) =>
     normalize(str1, true).includes(normalize(str2, true));

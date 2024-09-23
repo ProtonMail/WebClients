@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
 import { getAppVersion } from '../../helpers';
 import { useConfig, useEarlyAccess, useNotifications } from '../../hooks';
-import { Tooltip } from '../tooltip';
 
 interface Props {
     appVersion?: string;

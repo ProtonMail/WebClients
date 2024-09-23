@@ -3,7 +3,6 @@ import { useCallback, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { InputFieldTwo, Option, SearchableSelect } from '@proton/components/components';
 import type { CountryOption } from '@proton/components/components/country/helpers';
 import {
     PRESELECTED_COUNTRY_OPTION_SUFFIX,
@@ -13,8 +12,11 @@ import {
     isPreselectedOption,
     optionToPreselectedOption,
 } from '@proton/components/components/country/helpers';
-import type { Props as OptionProps } from '@proton/components/components/option/Option';
-import type { Props as SearchableSelectProps } from '@proton/components/components/selectTwo/SearchableSelect';
+import type { OptionProps } from '@proton/components/components/option/Option';
+import Option from '@proton/components/components/option/Option';
+import type { SearcheableSelectProps } from '@proton/components/components/selectTwo/SearchableSelect';
+import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { getFlagSvg } from '@proton/components/components/v2/phone/flagSvgs';
 import generateUID from '@proton/utils/generateUID';
 
@@ -56,7 +58,7 @@ interface Props {
     /**
      * Custom searchable select
      */
-    as?: (props: SearchableSelectProps<string>) => JSX.Element;
+    as?: (props: SearcheableSelectProps<string>) => JSX.Element;
     /**
      * Whether selector should have a label or not
      */

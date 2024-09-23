@@ -2,7 +2,8 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { FormModal } from '../../components';
+import FormModal from '@proton/components/components/modal/FormModal';
+
 import { GenericError } from '../error';
 import ErrorBoundary from './ErrorBoundary';
 
