@@ -10,6 +10,7 @@ import { APPS, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/c
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
+import { usePublicSessionUser } from '../../../store';
 import {
     needPublicRedirectSpotlight,
     publicRedirectSpotlightWasShown,
@@ -22,12 +23,13 @@ export interface Props {
     alreadyBookmarked: boolean;
     className?: string;
     loading?: boolean;
-    isLoggedIn: boolean;
+    customPassword?: string;
 }
-export const SaveToDriveButton = ({ className, alreadyBookmarked, loading, onClick, isLoggedIn }: Props) => {
+export const SaveToDriveButton = ({ className, alreadyBookmarked, customPassword, loading, onClick }: Props) => {
     const [isAdding, withAdding] = useLoading();
     const [signupFlowModal, showSignupFlowModal] = useSignupFlowModal();
     const [showSpotlight, setShowSpotlight] = useState(needPublicRedirectSpotlight());
+    const { user } = usePublicSessionUser();
     const buttonText = alreadyBookmarked
         ? c('drive:action').t`Open in ${DRIVE_SHORT_APP_NAME}`
         : c('drive:action').t`Save for later`;
@@ -56,8 +58,8 @@ export const SaveToDriveButton = ({ className, alreadyBookmarked, loading, onCli
                         loading={loading || isAdding}
                         className={clsx('flex items-center', className)}
                         onClick={async () => {
-                            if (!isLoggedIn) {
-                                showSignupFlowModal({});
+                            if (!user) {
+                                showSignupFlowModal({ customPassword });
                             } else if (alreadyBookmarked) {
                                 openNewTab(getAppHref('/shared-with-me', APPS.PROTONDRIVE));
                             } else {

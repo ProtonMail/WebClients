@@ -2,38 +2,31 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { useApi } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
-import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import usePublicToken from '../../hooks/drive/usePublicToken';
 import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
-import { usePublicSession } from '../_api';
 import { useDriveShareURLBookmarkingFeatureFlag } from '../_bookmarks';
 import { useBookmarks } from '../_bookmarks/useBookmarks';
+import { usePublicSessionUser } from '../_user';
 
 export interface Props {
     customPassword?: string;
-    user?: UserModel;
-    isAuthLoading: boolean;
 }
 
-export const useBookmarksPublicView = ({ customPassword, user, isAuthLoading }: Props) => {
-    const { getSessionInfo } = usePublicSession();
+export const useBookmarksPublicView = ({ customPassword }: Props) => {
     const { listBookmarks, addBookmark } = useBookmarks();
     const [bookmarksTokens, setBookmarksTokens] = useState<Set<string>>(new Set());
-    const [isLoading, withLoading, setIsLoading] = useLoading(true);
+    const [isLoading, withLoading] = useLoading(false);
     const isDriveShareUrlBookmarkingEnabled = useDriveShareURLBookmarkingFeatureFlag();
     const api = useApi();
     const { token, urlPassword } = usePublicToken();
+    const { user, UID } = usePublicSessionUser();
 
     useEffect(() => {
-        if (!user || !isDriveShareUrlBookmarkingEnabled) {
-            setIsLoading(isAuthLoading && !user);
+        if (!user || !isDriveShareUrlBookmarkingEnabled || !UID) {
             return;
         }
-        const UID = getSessionInfo()?.sessionUid;
-        if (!UID) {
-            return;
-        }
+
         const abortControler = new AbortController();
         void withLoading(async () => {
             // TODO: We need to find a better way of doing this
@@ -44,7 +37,7 @@ export const useBookmarksPublicView = ({ customPassword, user, isAuthLoading }: 
         return () => {
             abortControler.abort();
         };
-    }, [user, isAuthLoading, isDriveShareUrlBookmarkingEnabled]);
+    }, [user, isDriveShareUrlBookmarkingEnabled, UID]);
 
     const isAlreadyBookmarked = useMemo(() => {
         return bookmarksTokens.has(token);
@@ -52,10 +45,15 @@ export const useBookmarksPublicView = ({ customPassword, user, isAuthLoading }: 
 
     const handleAddBookmark = async () => {
         const abortSignal = new AbortController().signal;
-        await addBookmark(abortSignal, { token, urlPassword: urlPassword + customPassword });
+        await addBookmark(abortSignal, { token, urlPassword: urlPassword + (customPassword ?? '') });
         setBookmarksTokens((prevState) => new Set([...prevState, token]));
         countActionWithTelemetry(Actions.AddToBookmark);
     };
 
-    return { isLoading, isLoggedIn: !!user, addBookmark: handleAddBookmark, isAlreadyBookmarked };
+    return {
+        isLoading,
+        customPassword, // We return customPassword to be able to access it easily in the public page
+        addBookmark: handleAddBookmark,
+        isAlreadyBookmarked,
+    };
 };

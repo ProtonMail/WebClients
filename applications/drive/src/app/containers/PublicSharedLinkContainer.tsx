@@ -79,7 +79,7 @@ function PublicShareLinkInitContainer() {
     const [[publicShareError, publicShareErrorMessage], setError] = useState<ErrorTuple>([, '']);
     const [link, setLink] = useState<DecryptedLink>();
     const { loadPublicShare, user } = usePublicShare();
-    const bookmarksPublicView = useBookmarksPublicView({ customPassword, user, isAuthLoading: isLoading });
+    const bookmarksPublicView = useBookmarksPublicView({ customPassword });
     const [signUpFlowModal, showSignUpFlowModal] = useSignupFlowModal();
     const [renderUpsellFloatingModal] = useUpsellFloatingModal();
 
@@ -185,9 +185,9 @@ function PublicShareLinkInitContainer() {
     useEffect(() => {
         /** If the navigation appears from a non proton user and the flag is enabled, we display a sign-up flow modal */
         if (isDriveShareUrlBookmarkingEnabled && !isLoggedIn && !isLoading) {
-            showSignUpFlowModal({});
+            showSignUpFlowModal({ customPassword });
         }
-    }, [isDriveShareUrlBookmarkingEnabled, isLoggedIn, isLoading]);
+    }, [isDriveShareUrlBookmarkingEnabled, isLoggedIn, isLoading, customPassword]);
 
     if (isPasswordNeeded) {
         return <PasswordPage submitPassword={submitPassword} />;

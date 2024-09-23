@@ -2,15 +2,14 @@ import { c, msgid } from 'ttag';
 
 import type { useConfirmActionModal } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
-import { SharedURLFlags } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { partialPublicViewKey } from '../../hooks/util/usePartialPublicView';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
-import { getUrlPassword } from '../../utils/url/password';
+import { getUrlPassword, getUrlPasswordWithCustomPassword } from '../../utils/url/password';
 import { useLinksListing } from '../_links';
-import { getSharedLink, splitGeneratedAndCustomPassword } from '../_shares';
+import { getSharedLink } from '../_shares';
 import { useBookmarks } from './useBookmarks';
 
 export const useBookmarksActions = () => {
@@ -48,11 +47,7 @@ export const useBookmarksActions = () => {
     };
 
     const handleOpenBookmark = async ({ token, urlPassword }: { token: string; urlPassword: string }) => {
-        // Since we can have custom password in urlPassword we retrieve the generated password from it to open link without it
-        // We can force type 2 of flags as we hide bookmarking feature to legacy shared url pages
-        const [password] = splitGeneratedAndCustomPassword(urlPassword, {
-            flags: SharedURLFlags.GeneratedPasswordWithCustom,
-        });
+        const password = getUrlPasswordWithCustomPassword(urlPassword);
         const url = getSharedLink({ token, password });
         if (!url) {
             throw new EnrichedError(
