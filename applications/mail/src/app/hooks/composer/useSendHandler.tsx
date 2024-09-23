@@ -125,7 +125,7 @@ export const useSendHandler = ({
             };
         } catch {
             hideNotification(notifManager.ID);
-            onCompose({ type: ComposeTypes.existingDraft, existingDraft: getModelMessage(), fromUndo: true });
+            await onCompose({ type: ComposeTypes.existingDraft, existingDraft: getModelMessage(), fromUndo: true });
             return;
         }
 
@@ -255,7 +255,11 @@ export const useSendHandler = ({
                         type: 'error',
                     });
                     console.error('Error while uploading attachments.', error);
-                    onCompose({ type: ComposeTypes.existingDraft, existingDraft: getModelMessage(), fromUndo: true });
+                    await onCompose({
+                        type: ComposeTypes.existingDraft,
+                        existingDraft: getModelMessage(),
+                        fromUndo: true,
+                    });
                     throw error;
                 }
             }
