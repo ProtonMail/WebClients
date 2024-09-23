@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { Props as OptionProps } from '@proton/components/components/option/Option';
+import type { OptionProps } from '@proton/components/components/option/Option';
 
 type CurrencyOption<S extends string, T extends { Symbol: S; Name: string }> = T & {
     type: 'option';

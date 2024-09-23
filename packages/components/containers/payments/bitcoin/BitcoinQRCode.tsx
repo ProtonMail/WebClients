@@ -2,9 +2,8 @@ import type { ComponentProps } from 'react';
 
 import { CircleLoader } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import QRCode from '@proton/components/components/image/QRCode';
 import clsx from '@proton/utils/clsx';
-
-import { QRCode } from '../../../components';
 
 import './BitcoinQRCode.scss';
 

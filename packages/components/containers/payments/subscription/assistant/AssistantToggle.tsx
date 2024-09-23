@@ -3,8 +3,6 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import {
-    Badge,
-    Icon,
     getScribeUpsellLearnMore,
     useAssistantSubscriptionStatus,
     useAssistantUpsellConfig,
@@ -14,6 +12,8 @@ import {
     useSubscription,
     useSubscriptionModal,
 } from '@proton/components';
+import Badge from '@proton/components/components/badge/Badge';
+import Icon from '@proton/components/components/icon/Icon';
 import { getIsB2CUserAbleToRunScribe } from '@proton/components/components/upsell/modal/types/ComposerAssistantUpsellModal.helpers';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';

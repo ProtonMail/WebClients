@@ -3,14 +3,16 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
-import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
-import type { OnKeyImportCallback } from '@proton/shared/lib/keys';
+import type { ArmoredKeyWithInfo, OnKeyImportCallback } from '@proton/shared/lib/keys';
 import getRandomString from '@proton/utils/getRandomString';
 
-import type { ModalProps } from '../../../components';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import { useModals, useNotifications } from '../../../hooks';
 import GenericError from '../../error/GenericError';
 import DecryptFileKeyModal from '../shared/DecryptFileKeyModal';

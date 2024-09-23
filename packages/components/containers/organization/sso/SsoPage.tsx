@@ -1,23 +1,24 @@
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { PromotionBanner } from '@proton/components';
+import Info from '@proton/components/components/link/Info';
+import Loader from '@proton/components/components/loader/Loader';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
+import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
+import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
 import TestSamlModal from '@proton/components/containers/organization/sso/TestSamlModal';
 import { PLANS } from '@proton/shared/lib/constants';
 import type { Domain, SSO } from '@proton/shared/lib/interfaces';
 import securityUpsellSvg from '@proton/styles/assets/img/illustrations/security-upsell.svg';
 
-import type { ModalStateProps } from '../../../components';
-import { Info, InputFieldTwo, Loader, useModalState } from '../../../components';
 import { useCustomDomains, useOrganization, useSamlSSO, useUser } from '../../../hooks';
-import {
-    SettingsLayout,
-    SettingsLayoutLeft,
-    SettingsLayoutRight,
-    SettingsParagraph,
-    SettingsSectionWide,
-} from '../../account';
-import { SubSettingsSection } from '../../layout';
+import SubSettingsSection from '../../layout/SubSettingsSection';
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '../../payments';
 import ConfigureSamlModal from './ConfigureSamlModal';
 import DomainVerificationState from './DomainVerificationState';

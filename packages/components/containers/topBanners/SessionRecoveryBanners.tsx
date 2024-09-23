@@ -1,9 +1,13 @@
 import { c, msgid } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import PasswordResetAvailableAccountModal from '@proton/components/containers/account/sessionRecovery/PasswordResetAvailableAccountModal';
+import SessionRecoveryInProgressModal from '@proton/components/containers/account/sessionRecovery/SessionRecoveryInProgressModal';
+import { useSessionRecoveryLocalStorage } from '@proton/components/containers/account/sessionRecovery/SessionRecoveryLocalStorageManager';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { SettingsLink, useModalState } from '../../components';
 import {
     useConfig,
     useIsSessionRecoveryInitiatedByCurrentSession,
@@ -14,9 +18,6 @@ import {
     useShouldNotifySessionRecoveryInProgress,
     useUser,
 } from '../../hooks';
-import { SessionRecoveryInProgressModal } from '../account';
-import PasswordResetAvailableAccountModal from '../account/sessionRecovery/PasswordResetAvailableAccountModal';
-import { useSessionRecoveryLocalStorage } from '../account/sessionRecovery/SessionRecoveryLocalStorageManager';
 import TopBanner from './TopBanner';
 
 const SessionRecoveryInProgressBanner = () => {

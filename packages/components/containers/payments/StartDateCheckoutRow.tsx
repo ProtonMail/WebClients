@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Info, Time } from '../../components';
+import Info from '@proton/components/components/link/Info';
+import Time from '@proton/components/components/time/Time';
 
 export interface Props {
     nextSubscriptionStart: number;

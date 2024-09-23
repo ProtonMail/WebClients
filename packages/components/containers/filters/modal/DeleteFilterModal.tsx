@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
-
-import type { ModalProps } from '../../../components';
 
 interface Props extends ModalProps {
     filterName: string;

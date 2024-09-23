@@ -3,10 +3,9 @@ import { useEffect, useState } from 'react';
 
 import type { DropdownProps } from '@proton/components/components/dropdown/Dropdown';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import type { PopperPosition } from '@proton/components/components/popper/interface';
+import { cornerPopperPlacements } from '@proton/components/components/popper/utils';
 import generateUID from '@proton/utils/generateUID';
-
-import type { PopperPosition } from '../popper';
-import { cornerPopperPlacements } from '../popper';
 
 export interface ContextMenuProps {
     anchorRef: RefObject<HTMLElement>;

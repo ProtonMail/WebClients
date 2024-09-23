@@ -4,9 +4,8 @@ import { useMemo, useRef, useState } from 'react';
 import { getISOWeek } from 'date-fns';
 import { c } from 'ttag';
 
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import clsx from '@proton/utils/clsx';
-
-import { Tooltip } from '../tooltip';
 
 /*
     ISO weeks always start on Monday, and they won't match user custom weeks starting on Saturday/Sunday.

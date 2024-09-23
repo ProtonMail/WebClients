@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { INVOICE_STATE, type Invoice } from '@proton/payments';
-
-import { Badge } from '../../components';
+import Badge from '@proton/components/components/badge/Badge';
+import type { Invoice } from '@proton/payments';
+import { INVOICE_STATE } from '@proton/payments';
 
 const TYPES = {
     [INVOICE_STATE.UNPAID]: 'error',

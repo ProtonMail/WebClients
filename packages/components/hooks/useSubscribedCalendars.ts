@@ -31,7 +31,7 @@ import addItem from '@proton/utils/addItem';
 import removeItem from '@proton/utils/removeIndex';
 import updateItem from '@proton/utils/updateItem';
 
-import { useCalendarModelEventManager } from '../containers/eventManager/calendar';
+import { useCalendarModelEventManager } from '../containers/eventManager/calendar/CalendarModelEventManagerProvider';
 import useApi from './useApi';
 import useEventManager from './useEventManager';
 

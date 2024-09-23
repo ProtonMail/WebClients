@@ -1,16 +1,16 @@
 import { c } from 'ttag';
 
+import Info from '@proton/components/components/link/Info';
+import Toggle from '@proton/components/components/toggle/Toggle';
+import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
+import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
+import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { ColorScheme, ThemeModeSetting, getThemes } from '@proton/shared/lib/themes/themes';
 
-import { Info, Toggle, useNotifications } from '../..';
-import {
-    SettingsLayout,
-    SettingsLayoutLeft,
-    SettingsLayoutRight,
-    SettingsParagraph,
-    SettingsSectionWide,
-} from '../account';
+import { useNotifications } from '../..';
 import ThemeCards from './ThemeCards';
 import { useTheme } from './ThemeProvider';
 import ThemeSyncModeCard from './ThemeSyncModeCard';

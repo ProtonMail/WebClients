@@ -3,8 +3,8 @@ import type { MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { Tooltip } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { useLoading } from '@proton/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';

@@ -3,9 +3,9 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import Select from '@proton/components/components/select/Select';
 import { getTimeZoneOptions } from '@proton/shared/lib/date/timezone';
 
-import { Select } from '../../../../components';
 import SettingsLayout from '../../../account/SettingsLayout';
 import SettingsLayoutLeft from '../../../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../../../account/SettingsLayoutRight';

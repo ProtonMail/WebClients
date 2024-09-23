@@ -9,12 +9,12 @@ import {
     SelectTwo,
     usePopperAnchor,
 } from '@proton/components';
-import type { Props as SelectProps } from '@proton/components/components/selectTwo/SelectTwo';
+import type { SelectTwoProps } from '@proton/components/components/selectTwo/SelectTwo';
 import { FREQUENCY } from '@proton/shared/lib/calendar/constants';
 
 const { ONCE, DAILY, WEEKLY, MONTHLY, YEARLY, CUSTOM } = FREQUENCY;
 
-interface Props extends Omit<SelectProps<FREQUENCY>, 'onChange' | 'children'> {
+interface Props extends Omit<SelectTwoProps<FREQUENCY>, 'onChange' | 'children'> {
     value: FREQUENCY;
     frequencyInputType?: 'dropdown' | 'select';
     onChange: (value: FREQUENCY) => void;

@@ -1,6 +1,7 @@
 import camelCase from 'lodash/camelCase';
 import { c } from 'ttag';
 
+import type { SampleBreach } from '@proton/components/containers/credentialLeak/models';
 import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
 import breachIconAlertBig from '@proton/styles/assets/img/breach-alert/shield-bolt-danger-big.svg';
 import breachIconAlertSmall from '@proton/styles/assets/img/breach-alert/shield-bolt-danger-small.svg';
@@ -9,7 +10,6 @@ import breachIconResolvedSmall from '@proton/styles/assets/img/breach-alert/shie
 import breachIconWarningBig from '@proton/styles/assets/img/breach-alert/shield-bolt-warning-big.svg';
 import breachIconWarningSmall from '@proton/styles/assets/img/breach-alert/shield-bolt-warning-small.svg';
 
-import type { SampleBreach } from '.';
 import { BREACH_STATE } from './models';
 
 export const enum SEVERITY_LEVELS {

@@ -5,6 +5,17 @@ import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Modal from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import { useLoading } from '@proton/hooks';
 import { createAddress } from '@proton/shared/lib/api/addresses';
 import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
@@ -28,18 +39,6 @@ import {
 } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import type { ModalProps } from '../../components';
-import {
-    InputFieldTwo,
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-    Option,
-    PasswordInputTwo,
-    SelectTwo,
-    useFormErrors,
-} from '../../components';
 import {
     useAddresses,
     useApi,
@@ -52,7 +51,6 @@ import {
     useProtonDomains,
     useUser,
 } from '../../hooks';
-import { useKTVerifier } from '../keyTransparency';
 
 const keyGenConfig = KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE];
 

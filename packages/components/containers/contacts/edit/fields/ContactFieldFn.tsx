@@ -5,11 +5,10 @@ import { c } from 'ttag';
 
 import type { InputProps } from '@proton/atoms';
 import { Input } from '@proton/atoms';
+import ErrorZone from '@proton/components/components/text/ErrorZone';
 import { isContactNameValid } from '@proton/shared/lib/contacts/property';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
-
-import { ErrorZone } from '../../../../components';
 
 interface Props extends Omit<InputProps, 'onChange'> {
     vCardContact: VCardContact;

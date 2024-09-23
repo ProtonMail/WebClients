@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 
-import { Option } from '@proton/components/components';
-import type { Props as SearchableSelectProps } from '@proton/components/components/selectTwo/SearchableSelect';
+import Option from '@proton/components/components/option/Option';
+import type { SearcheableSelectProps } from '@proton/components/components/selectTwo/SearchableSelect';
 import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
 import { defaultFilterFunction } from '@proton/components/components/selectTwo/helpers';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
@@ -45,7 +45,7 @@ const CountriesDropdown = ({ onChange, selectedCountryCode, ...rest }: Props) =>
     const { countries, getCountryByCode } = useCountries();
     const selectedCountryItem = getCountryByCode(selectedCountryCode);
 
-    const searchableSelectProps: SearchableSelectProps<CountryItem> = {
+    const searchableSelectProps: SearcheableSelectProps<CountryItem> = {
         onChange: ({ value: countryItem }: SelectChangeEvent<CountryItem>) => {
             if (countryItem.value === DEFAULT_SEPARATOR.value) {
                 return;

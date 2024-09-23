@@ -4,20 +4,18 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import Form from '@proton/components/components/form/Form';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import { useLoading } from '@proton/hooks';
 import { updateInvoiceText } from '@proton/shared/lib/api/settings';
 
-import type { ModalProps } from '../../components';
-import {
-    InputFieldTwo,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    PrimaryButton,
-    TextAreaTwo,
-} from '../../components';
 import { useApi, useEventManager, useNotifications, useUserSettings } from '../../hooks';
 
 export interface Props {

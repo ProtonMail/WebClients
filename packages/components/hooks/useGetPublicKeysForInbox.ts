@@ -4,7 +4,7 @@ import getPublicKeysEmailHelper from '@proton/shared/lib/api/helpers/getPublicKe
 import { MINUTE } from '@proton/shared/lib/constants';
 import type { GetPublicKeysForInbox } from '@proton/shared/lib/interfaces/hooks/GetPublicKeysForInbox';
 
-import { useKeyTransparencyContext } from '../containers/keyTransparency';
+import { useKeyTransparencyContext } from '../containers/keyTransparency/useKeyTransparencyContext';
 import useApi from './useApi';
 import useCache from './useCache';
 import { getPromiseValue } from './useCachedModelResult';

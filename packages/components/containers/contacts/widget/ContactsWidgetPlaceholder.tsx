@@ -6,7 +6,7 @@ import { InlineLinkButton } from '@proton/atoms';
 import noResultsImg from '@proton/styles/assets/img/illustrations/empty-search.svg';
 import noContactsImg from '@proton/styles/assets/img/illustrations/no-contacts.svg';
 
-import { IllustrationPlaceholder } from '../../illustration';
+import IllustrationPlaceholder from '../../illustration/IllustrationPlaceholder';
 
 export enum EmptyType {
     All,

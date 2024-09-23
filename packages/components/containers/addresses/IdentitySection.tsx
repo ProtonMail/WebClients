@@ -2,18 +2,22 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import Info from '@proton/components/components/link/Info';
+import Loader from '@proton/components/components/loader/Loader';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import UpsellIcon from '@proton/components/components/upsell/UpsellIcon';
+import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
+import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
+import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import type { Address } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { Info, Loader, Option, SelectTwo } from '../../components';
 import { useAddresses, useMailSettings, useUser, useUserSettings } from '../../hooks';
-import { SettingsParagraph, SettingsSectionWide } from '../account';
-import SettingsLayout from '../account/SettingsLayout';
-import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import EditAddressesSection from './EditAddressesSection';
 import PMSignature from './PMSignatureField';
 

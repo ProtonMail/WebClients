@@ -1,11 +1,11 @@
 import type { ChangeEvent, DetailedHTMLProps, Ref, TextareaHTMLAttributes } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
+import ErrorZone from '@proton/components/components/text/ErrorZone';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
 import useAutoGrow from '../../hooks/useAutoGrow';
-import ErrorZone from '../text/ErrorZone';
 import useInput from './useInput';
 
 export interface Props extends DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement> {

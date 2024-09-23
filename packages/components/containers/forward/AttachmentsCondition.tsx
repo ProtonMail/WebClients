@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Radio } from '../../components';
+import Radio from '@proton/components/components/input/Radio';
+
 import type { Condition } from '../filters/interfaces';
 import { ConditionComparator } from '../filters/interfaces';
 

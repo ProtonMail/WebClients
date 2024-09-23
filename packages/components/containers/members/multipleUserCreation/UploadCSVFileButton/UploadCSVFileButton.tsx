@@ -6,10 +6,10 @@ import { c, msgid } from 'ttag';
 import type { ButtonProps } from '@proton/atoms';
 import { InlineLinkButton } from '@proton/atoms';
 import { useModals, useNotifications } from '@proton/components';
+import FileInput from '@proton/components/components/input/FileInput';
 import { MIN_PASSWORD_LENGTH } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-import { FileInput } from '../../../../components';
 import type { CsvConfig } from '../csv';
 import { downloadSampleCSV, parseMultiUserCsv } from '../csv';
 import CsvConversionError, { CSV_CONVERSION_ERROR_TYPE } from '../errors/CsvConversionError';

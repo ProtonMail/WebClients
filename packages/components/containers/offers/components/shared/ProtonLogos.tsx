@@ -1,4 +1,4 @@
-import { CalendarLogo, DriveLogo, MailLogo, VpnLogo } from '@proton/components/components';
+import { CalendarLogo, DriveLogo, MailLogo, VpnLogo } from '@proton/components';
 
 const ProtonLogos = () => (
     <div className="text-center">

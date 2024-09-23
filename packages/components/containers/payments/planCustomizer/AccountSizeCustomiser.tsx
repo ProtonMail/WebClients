@@ -2,11 +2,11 @@ import type { ReactElement, ReactNode } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import Info from '@proton/components/components/link/Info';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { Plan } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { Info } from '../../../components';
 import { contactHref } from './helpers';
 
 export type AccountTypeKey = 'drive' | 'org-size' | 'users' | 'gpt-seats';

@@ -4,7 +4,7 @@ import type { Middleware } from '@floating-ui/dom';
 import { shift as mockedShift } from '@floating-ui/dom';
 import { act, render, screen } from '@testing-library/react';
 
-import type { PopperPlacement } from '@proton/components/components';
+import type { PopperPlacement } from '@proton/components/components/popper/interface';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import usePopper from './usePopper';

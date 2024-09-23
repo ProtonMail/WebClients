@@ -5,6 +5,16 @@ import { c } from 'ttag';
 import { Button, Href } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import Icon from '@proton/components/components/icon/Icon';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib';
 import { CryptoProxy } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
@@ -20,18 +30,6 @@ import { addAddressKeysProcess, getEmailFromKey, splitKeys } from '@proton/share
 import illustration from '@proton/styles/assets/img/illustrations/forward-email-verification.svg';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import { useKTVerifier } from '..';
-import type { ModalProps } from '../../components';
-import {
-    InputFieldTwo,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    Option,
-    SelectTwo,
-    useFormErrors,
-} from '../../components';
 import {
     useAddressFlags,
     useAddresses,

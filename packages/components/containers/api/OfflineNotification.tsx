@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
+import UnderlineButton from '@proton/components/components/button/UnderlineButton';
 import { useLoading } from '@proton/hooks';
-
-import { UnderlineButton } from '../../components';
 
 interface Props {
     onRetry: () => Promise<void>;

@@ -11,10 +11,10 @@ import {
     Icon,
     IconRow,
     Info,
+    useContactEmailsCache,
     useContactModals,
     useMailSettings,
 } from '@proton/components';
-import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { getIsCalendarDisabled, getIsSubscribedCalendar } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';

@@ -1,5 +1,5 @@
-import { StripedItem } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
+import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import clsx from '@proton/utils/clsx';
 
 import type { Item } from './Item';

@@ -4,6 +4,7 @@ import { forwardRef, useEffect, useRef } from 'react';
 import { c, msgid } from 'ttag';
 
 import type { ButtonProps } from '@proton/atoms';
+import FileInput from '@proton/components/components/input/FileInput';
 import { useCombinedRefs } from '@proton/hooks';
 import { KEY_FILE_EXTENSION } from '@proton/shared/lib/constants';
 import { readFileAsString } from '@proton/shared/lib/helpers/file';
@@ -12,7 +13,6 @@ import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
 import { parseKeys } from '@proton/shared/lib/keys';
 import { parseRecoveryFiles } from '@proton/shared/lib/recoveryFile/recoveryFile';
 
-import FileInput from '../../../components/input/FileInput';
 import { useNotifications } from '../../../hooks';
 
 const RECOVERY_FILE_EXPR = /-----BEGIN PGP MESSAGE-----(?:(?!-----)[\s\S])*-----END PGP MESSAGE-----/g;

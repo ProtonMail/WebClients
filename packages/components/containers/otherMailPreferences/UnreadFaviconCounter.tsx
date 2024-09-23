@@ -1,7 +1,10 @@
 import { c } from 'ttag';
 
-import { Info } from '../../components';
-import { SettingsLayout, SettingsLayoutLeft, SettingsLayoutRight } from '../account';
+import Info from '@proton/components/components/link/Info';
+import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
+import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
+import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
+
 import { UnreadFaviconCounterToggle } from './UnreadFaviconCounterToggle';
 
 export const UnreadFaviconCounter = () => {

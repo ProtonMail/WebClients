@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { useModalTwoStatic } from '@proton/components/components';
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import { labelContactEmails, unLabelContactEmails } from '@proton/shared/lib/api/contacts';
 import { hasReachedContactGroupMembersLimit } from '@proton/shared/lib/contacts/helpers/contactGroup';
 import type { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';

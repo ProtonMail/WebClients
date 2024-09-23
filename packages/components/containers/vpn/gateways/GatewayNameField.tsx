@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { InputFieldTwo } from '@proton/components/components';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { maxLengthValidator, minLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import type { GatewayDto } from './GatewayDto';

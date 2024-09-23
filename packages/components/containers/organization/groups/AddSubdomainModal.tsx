@@ -4,18 +4,13 @@ import { c } from 'ttag';
 
 import { addSubdomain } from '@proton/account/groups/actions';
 import { Button, Href } from '@proton/atoms';
-import type { ModalProps } from '@proton/components';
-import {
-    InputFieldTwo,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    useApi,
-    useEventManager,
-    useFormErrors,
-} from '@proton/components';
+import { InputFieldTwo, useApi, useEventManager, useFormErrors } from '@proton/components';
 import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';

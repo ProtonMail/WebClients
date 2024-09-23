@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { UnderlineButton } from '../../components';
+import UnderlineButton from '@proton/components/components/button/UnderlineButton';
+
 import type { Condition, FilterStatement } from '../filters/interfaces';
 import useFilterConditions from '../filters/modal/useFilterConditions';
 import ForwardCondition from './ForwardCondition';

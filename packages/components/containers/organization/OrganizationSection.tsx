@@ -1,7 +1,21 @@
 import { c } from 'ttag';
 
 import { Button, ButtonLike, CircleLoader, InlineLinkButton } from '@proton/atoms';
+import ButtonGroup from '@proton/components/components/button/ButtonGroup';
+import PrimaryButton from '@proton/components/components/button/PrimaryButton';
+import Row from '@proton/components/components/container/Row';
 import Icon from '@proton/components/components/icon/Icon';
+import Label from '@proton/components/components/label/Label';
+import Info from '@proton/components/components/link/Info';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import Loader from '@proton/components/components/loader/Loader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
+import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
+import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import useLoading from '@proton/hooks/useLoading';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
@@ -18,17 +32,6 @@ import { getOrganizationDenomination } from '@proton/shared/lib/organization/hel
 import type { Credentials } from '@proton/shared/lib/srp';
 
 import {
-    ButtonGroup,
-    Info,
-    Label,
-    Loader,
-    PrimaryButton,
-    Row,
-    SettingsLink,
-    Tooltip,
-    useModalState,
-} from '../../components';
-import {
     useApi,
     useAuthentication,
     useConfig,
@@ -40,13 +43,6 @@ import {
     useSubscription,
     useUser,
 } from '../../hooks';
-import {
-    SettingsLayout,
-    SettingsLayoutLeft,
-    SettingsLayoutRight,
-    SettingsParagraph,
-    SettingsSection,
-} from '../account';
 import DomainModal from '../domains/DomainModal';
 import AuthModal from '../password/AuthModal';
 import EditOrganizationIdentityModal from './EditOrganizationIdentityModal';

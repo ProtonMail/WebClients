@@ -1,4 +1,4 @@
-import type { GroupsWithContactsMap } from '@proton/components/containers/contacts/ContactEmailsProvider';
+import type { GroupsWithContactsMap } from '@proton/components';
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 
 /**

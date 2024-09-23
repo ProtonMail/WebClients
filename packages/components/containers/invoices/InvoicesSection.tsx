@@ -4,28 +4,28 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
-import { INVOICE_STATE, type Invoice } from '@proton/payments';
+import ButtonGroup from '@proton/components/components/button/ButtonGroup';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Pagination from '@proton/components/components/pagination/Pagination';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableRow from '@proton/components/components/table/TableRow';
+import Time from '@proton/components/components/time/Time';
+import MozillaInfoPanel from '@proton/components/containers/account/MozillaInfoPanel';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import type { Invoice } from '@proton/payments';
+import { INVOICE_STATE } from '@proton/payments';
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { InvoiceDocument, getInvoice } from '@proton/shared/lib/api/payments';
 import { INVOICE_OWNER, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
-import {
-    ButtonGroup,
-    Pagination,
-    Table,
-    TableBody,
-    TableCell,
-    TableHeader,
-    TableRow,
-    Time,
-    useModalState,
-} from '../../components';
 import { useApi, useSubscribeEventManager, useSubscription, useUser } from '../../hooks';
 import { useChargebeeUserStatusTracker } from '../../payments/client-extensions/useChargebeeContext';
-import { SettingsParagraph, SettingsSectionWide } from '../account';
-import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import InvoiceActions from './InvoiceActions';
 import InvoiceAmount from './InvoiceAmount';
 import InvoiceState from './InvoiceState';

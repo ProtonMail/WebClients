@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { getPrivatizeError } from '@proton/account/organizationKey/actions';
 import { Button, Card, Href } from '@proton/atoms';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Member } from '@proton/shared/lib/interfaces';
@@ -18,7 +19,6 @@ import {
     getOrganizationKeyInfo,
 } from '@proton/shared/lib/organization/helper';
 
-import { useModalState } from '../../components';
 import { useAddresses, useMembers, useNotifications, useOrganization, useOrganizationKey, useUser } from '../../hooks';
 import ActivatePasswordlessOrganizationKey from './ActivatePasswordlessOrganizationKey';
 import AdministratorList from './AdministratorList';

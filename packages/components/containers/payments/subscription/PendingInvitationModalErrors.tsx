@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { BugModal, useUser } from '@proton/components';
-import { SettingsLink, useModalState } from '@proton/components/components';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { AcceptInvitationValidation, PendingInvitation } from '@proton/shared/lib/interfaces';

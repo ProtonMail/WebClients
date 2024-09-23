@@ -4,6 +4,8 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import Alert from '@proton/components/components/alert/Alert';
+import Loader from '@proton/components/components/loader/Loader';
+import Price from '@proton/components/components/price/Price';
 import type { ThemeCode, ViewPaymentMethod } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
 import type { BitcoinHook } from '@proton/components/payments/react-extensions/useBitcoin';
@@ -24,7 +26,6 @@ import type { ChargebeeEnabled, Currency, User } from '@proton/shared/lib/interf
 import { isBilledUser } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { Loader, Price } from '../../components';
 import { useConfig } from '../../hooks';
 import type { CbIframeHandles } from '../../payments/chargebee/ChargebeeIframe';
 import { ChargebeeCreditCardWrapper, ChargebeeSavedCardWrapper } from '../../payments/chargebee/ChargebeeWrapper';

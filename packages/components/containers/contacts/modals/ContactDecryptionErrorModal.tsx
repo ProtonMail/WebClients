@@ -4,21 +4,19 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import Copy from '@proton/components/components/button/Copy';
+import UnderlineButton from '@proton/components/components/button/UnderlineButton';
+import useSettingsLink from '@proton/components/components/link/useSettingsLink';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKeyUsedForContact } from '@proton/shared/lib/contacts/keyVerifications';
 import type { Key } from '@proton/shared/lib/interfaces';
 import type { Contact } from '@proton/shared/lib/interfaces/contacts';
 
-import type { ModalProps } from '../../../components';
-import {
-    Copy,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    UnderlineButton,
-    useSettingsLink,
-} from '../../../components';
 import { useNotifications, useUser } from '../../../hooks';
 import useContact from '../hooks/useContact';
 import type { ContactClearDataConfirmProps } from './ContactClearDataConfirmModal';

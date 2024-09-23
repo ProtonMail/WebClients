@@ -5,7 +5,7 @@ import { addDays } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button, Kbd } from '@proton/atoms';
-import type { Breakpoints } from '@proton/components';
+import type { Breakpoints, ContactEditProps } from '@proton/components';
 import {
     ButtonGroup,
     DropdownMenu,
@@ -21,7 +21,6 @@ import {
     useNotifications,
     useUser,
 } from '@proton/components';
-import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import type { WorkerDecryptionResult } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

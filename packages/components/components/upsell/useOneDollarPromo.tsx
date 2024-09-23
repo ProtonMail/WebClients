@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Price } from '@proton/components/components';
+import Price from '@proton/components/components/price/Price';
 import { useUser } from '@proton/components/hooks';
 import { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
 import type { Currency } from '@proton/shared/lib/interfaces';

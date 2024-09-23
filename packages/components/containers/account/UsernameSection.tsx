@@ -4,8 +4,13 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button, Card, CircleLoader, Href, InlineLinkButton } from '@proton/atoms';
-import { PromotionBanner } from '@proton/components';
+import Badge from '@proton/components/components/badge/Badge';
 import Icon from '@proton/components/components/icon/Icon';
+import AppLink from '@proton/components/components/link/AppLink';
+import Info from '@proton/components/components/link/Info';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
 import useLoading from '@proton/hooks/useLoading';
 import { postVerifySend } from '@proton/shared/lib/api/verify';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -28,7 +33,6 @@ import type { Address } from '@proton/shared/lib/interfaces';
 import { AddressConfirmationState, SessionRecoveryState, UserType } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { AppLink, Badge, Info, Tooltip, useModalState } from '../../components';
 import { getVerificationSentText } from '../../containers/recovery/email/VerifyRecoveryEmailModal';
 import getBoldFormattedText from '../../helpers/getBoldFormattedText';
 import {

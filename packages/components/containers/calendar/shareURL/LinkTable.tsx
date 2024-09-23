@@ -5,6 +5,11 @@ import { c } from 'ttag';
 
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import Icon from '@proton/components/components/icon/Icon';
+import Info from '@proton/components/components/link/Info';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableRow from '@proton/components/components/table/TableRow';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import type { CalendarLink } from '@proton/shared/lib/interfaces/calendar';
@@ -12,8 +17,6 @@ import { ACCESS_LEVEL } from '@proton/shared/lib/interfaces/calendar';
 import type { Nullable, SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
-
-import { Info, Table, TableBody, TableHeader, TableRow } from '../../../components';
 
 interface Props {
     links: CalendarLink[];

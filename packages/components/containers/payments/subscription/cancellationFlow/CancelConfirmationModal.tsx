@@ -1,16 +1,15 @@
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
-import { StripedItem, StripedList } from '@proton/components';
-import type { ModalProps } from '@proton/components/components';
-import {
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    SettingsLink,
-} from '@proton/components/components';
 import Icon from '@proton/components/components/icon/Icon';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import StripedItem from '@proton/components/components/stripedList/StripedItem';
+import { StripedList } from '@proton/components/components/stripedList/StripedList';
 
 import type { ConfirmationModal } from './interface';
 import useCancellationTelemetry from './useCancellationTelemetry';

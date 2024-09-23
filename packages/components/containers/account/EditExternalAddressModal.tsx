@@ -4,6 +4,13 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Modal from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { useLoading } from '@proton/hooks';
 import { renameExternalAddress } from '@proton/shared/lib/api/addresses';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
@@ -11,15 +18,6 @@ import { confirmEmailValidator, emailValidator, requiredValidator } from '@proto
 import type { Address } from '@proton/shared/lib/interfaces';
 import { getRenamedAddressKeys } from '@proton/shared/lib/keys';
 
-import type { ModalProps } from '../../components';
-import {
-    InputFieldTwo,
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-    useFormErrors,
-} from '../../components';
 import { useApi, useEventManager, useGetOrganizationKey, useGetUserKeys, useNotifications } from '../../hooks';
 
 interface Props extends ModalProps<'form'> {

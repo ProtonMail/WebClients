@@ -4,7 +4,18 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href, InlineLinkButton } from '@proton/atoms';
+import Copy from '@proton/components/components/button/Copy';
 import Form from '@proton/components/components/form/Form';
+import QRCode from '@proton/components/components/image/QRCode';
+import Loader from '@proton/components/components/loader/Loader';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Modal from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import TotpInput from '@proton/components/components/v2/input/TotpInput';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { TOTP_WRONG_ERROR, setupTotp } from '@proton/shared/lib/api/settings';
@@ -16,19 +27,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getTOTPData } from '@proton/shared/lib/settings/twoFactor';
 import noop from '@proton/utils/noop';
 
-import type { ModalProps } from '../../../components';
-import {
-    Copy,
-    InputFieldTwo,
-    Loader,
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-    QRCode,
-    TotpInput,
-    useFormErrors,
-} from '../../../components';
 import { useApi, useConfig, useEventManager, useNotifications, useUser } from '../../../hooks';
 import AuthModal from '../../password/AuthModal';
 

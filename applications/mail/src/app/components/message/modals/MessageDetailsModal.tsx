@@ -12,7 +12,7 @@ import {
     useFeatures,
     useFolders,
 } from '@proton/components';
-import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
+import type { ContactEditProps } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { MailSettings } from '@proton/shared/lib/interfaces';

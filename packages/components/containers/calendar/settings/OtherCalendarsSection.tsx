@@ -5,8 +5,12 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike, Card, Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import PrimaryButton from '@proton/components/components/button/PrimaryButton';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { SharedCalendarsSection } from '@proton/components/containers';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import { removeCalendar } from '@proton/shared/lib/api/calendars';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
 import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
@@ -21,10 +25,8 @@ import type {
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
 
-import { PrimaryButton, SettingsLink, useModalState } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import { useModalsMap } from '../../../hooks/useModalsMap';
-import { SettingsParagraph } from '../../account';
 import HolidaysCalendarModal from '../calendarModal/holidaysCalendarModal/HolidaysCalendarModal';
 import { PersonalCalendarModal } from '../calendarModal/personalCalendarModal/PersonalCalendarModal';
 import SubscribedCalendarModal from '../calendarModal/subscribedCalendarModal/SubscribedCalendarModal';

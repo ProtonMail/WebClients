@@ -5,6 +5,15 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
+import Loader from '@proton/components/components/loader/Loader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableRow from '@proton/components/components/table/TableRow';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import UpgradeBanner from '@proton/components/containers/account/UpgradeBanner';
 import { useLoading } from '@proton/hooks';
 import { CacheType } from '@proton/redux-utilities';
 import { getDomain } from '@proton/shared/lib/api/domains';
@@ -22,7 +31,6 @@ import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { Loader, Table, TableBody, TableHeader, TableRow, useModalState } from '../../components';
 import {
     useApi,
     useCustomDomains,
@@ -31,7 +39,6 @@ import {
     useOrganization,
     useUser,
 } from '../../hooks';
-import { SettingsParagraph, SettingsSectionWide, UpgradeBanner } from '../account';
 import useOrganizationModals from '../organization/useOrganizationModals';
 import CatchAllModal from './CatchAllModal';
 import DeleteDomainModal from './DeleteDomainModal';

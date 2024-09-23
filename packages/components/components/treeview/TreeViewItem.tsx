@@ -18,7 +18,7 @@ export interface Props {
     title?: string;
 }
 
-const TreeView = ({
+const TreeViewItem = ({
     draggable = false,
     onDragEnd,
     onDragStart,
@@ -70,4 +70,4 @@ const TreeView = ({
     );
 };
 
-export default TreeView;
+export default TreeViewItem;

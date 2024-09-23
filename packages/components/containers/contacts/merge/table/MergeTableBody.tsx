@@ -1,10 +1,10 @@
 import type { ComponentProps } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
+import OrderableTableBody from '@proton/components/components/orderableTable/OrderableTableBody';
 import type { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
-import { OrderableTableBody } from '../../../../components';
 import MergeTableBodyRow from './MergeTableBodyRow';
 
 interface Props extends Omit<ComponentProps<typeof OrderableTableBody>, 'colSpan'> {

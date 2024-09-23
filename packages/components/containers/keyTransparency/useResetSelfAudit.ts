@@ -1,3 +1,4 @@
+import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import type { VerifiedEpoch } from '@proton/key-transparency/lib';
 import { fetchLatestEpoch, ktSentryReportError, uploadVerifiedEpoch } from '@proton/key-transparency/lib';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -7,7 +8,6 @@ import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 
 import { useApi } from '../../hooks';
-import useKTActivation from './useKTActivation';
 
 /**
  *

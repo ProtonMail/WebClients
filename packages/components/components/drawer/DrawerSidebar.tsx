@@ -5,7 +5,8 @@ import { c } from 'ttag';
 
 import clsx from '@proton/utils/clsx';
 
-import { useDrawer, useTheme } from '../..';
+import { useDrawer } from '../..';
+import { useTheme } from '../../containers/themes/ThemeProvider';
 
 import './DrawerSidebar.scss';
 

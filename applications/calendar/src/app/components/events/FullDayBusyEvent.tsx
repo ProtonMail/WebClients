@@ -1,8 +1,7 @@
 import type { CSSProperties, Ref } from 'react';
 import { useMemo } from 'react';
 
-import { Icon } from '@proton/components';
-import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
+import { Icon, useContactEmailsCache } from '@proton/components';
 import { getContactDisplayNameEmail } from '@proton/shared/lib/contacts/contactEmail';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import clsx from '@proton/utils/clsx';

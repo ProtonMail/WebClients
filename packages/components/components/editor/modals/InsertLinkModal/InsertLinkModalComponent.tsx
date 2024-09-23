@@ -4,20 +4,23 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href, Input } from '@proton/atoms';
+import PrimaryButton from '@proton/components/components/button/PrimaryButton';
+import Field from '@proton/components/components/container/Field';
+import Row from '@proton/components/components/container/Row';
 import Form from '@proton/components/components/form/Form';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { useMailSettings } from '@proton/components/hooks';
 import { LINK_TYPES } from '@proton/shared/lib/constants';
 import { addLinkPrefix, linkToType } from '@proton/shared/lib/helpers/url';
 
 import { useLinkHandler } from '../../../../hooks/useLinkHandler';
-import { PrimaryButton } from '../../../button';
-import Field from '../../../container/Field';
-import Row from '../../../container/Row';
 import Label from '../../../label/Label';
-import type { ModalStateProps } from '../../../modalTwo';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../modalTwo';
-import { Option } from '../../../option';
-import { SelectTwo } from '../../../selectTwo';
 import type { InsertLinkSelectionType } from './InsertLinkModal';
 
 export interface InsertLinkModalProps {

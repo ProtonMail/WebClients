@@ -2,6 +2,9 @@ import { c } from 'ttag';
 
 import { ButtonLike, Href } from '@proton/atoms';
 import Icon, { type IconName } from '@proton/components/components/icon/Icon';
+import AppLink from '@proton/components/components/link/AppLink';
+import Loader from '@proton/components/components/loader/Loader';
+import SettingsSectionTitle from '@proton/components/containers/account/SettingsSectionTitle';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -10,7 +13,6 @@ import SecurityCheckupCohort from '@proton/shared/lib/interfaces/securityCheckup
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { AppLink, Loader, SubTitle } from '../../components';
 import {
     useHasOutdatedRecoveryFile,
     useIsDataRecoveryAvailable,
@@ -24,7 +26,6 @@ import {
     useUserSettings,
 } from '../../hooks';
 import { useIsRecoveryFileAvailable } from '../../hooks/recoveryFile';
-import { SettingsSectionTitle } from '../account';
 import type { RecoveryCardStatusProps } from './RecoveryCardStatus';
 import RecoveryCardStatus from './RecoveryCardStatus';
 import getSentinelRecoveryProps from './getSentinelRecoveryProps';
@@ -285,7 +286,7 @@ const GenericSecurityCheckupCard = ({
                     <Icon name={icon} size={10} />
                 </div>
                 <div>
-                    <SubTitle className="h3 text-bold mb-0">{title}</SubTitle>
+                    <h2 className="h3 text-bold mb-0">{title}</h2>
                     <div className="color-weak max-w-custom">{subtitle}</div>
                 </div>
             </div>

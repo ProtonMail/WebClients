@@ -5,10 +5,9 @@ import type { DropdownProps } from '@proton/components/components/dropdown/Dropd
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import type { DropdownButtonProps } from '@proton/components/components/dropdown/DropdownButton';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { useCombinedRefs } from '@proton/hooks';
 import generateUID from '@proton/utils/generateUID';
-
-import { usePopperAnchor } from '../popper';
 
 interface ContentProps extends HTMLAttributes<HTMLDivElement> {
     ref?: RefObject<HTMLDivElement>;

@@ -49,7 +49,7 @@ describe('OnboardingChecklistWrapper', () => {
         const { container } = await render(<MailSidebar {...props} />);
 
         const nav = container.querySelector('nav');
-        expect(nav?.childNodes.length).toEqual(2);
+        expect(nav?.childNodes.length).toEqual(3);
 
         const laterButton = getByText('Maybe later');
         fireEvent.click(laterButton);

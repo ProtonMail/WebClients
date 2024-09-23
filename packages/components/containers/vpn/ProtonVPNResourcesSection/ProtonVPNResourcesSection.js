@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
+import Field from '@proton/components/components/container/Field';
+import Row from '@proton/components/components/container/Row';
+import Label from '@proton/components/components/label/Label';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
-
-import { Field, Label, Row } from '../../../components';
 
 const ProtonVPNResourcesSection = () => {
     return (

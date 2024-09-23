@@ -6,6 +6,12 @@ import { Button } from '@proton/atoms';
 import Editor from '@proton/components/components/editor/Editor';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import type { EditorActions } from '@proton/components/components/editor/interface';
+import Toggle from '@proton/components/components/toggle/Toggle';
+import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
+import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
+import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { useLoading } from '@proton/hooks';
 import { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
 import {
@@ -21,7 +27,6 @@ import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
 
-import { Toggle } from '../../components';
 import {
     useApi,
     useErrorHandler,
@@ -31,10 +36,6 @@ import {
     useNotifications,
     useUser,
 } from '../../hooks';
-import { SettingsParagraph, SettingsSectionWide } from '../account';
-import SettingsLayout from '../account/SettingsLayout';
-import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import UpgradeBanner from '../account/UpgradeBanner';
 import AutoReplyFormDaily from './AutoReplyForm/AutoReplyFormDaily';
 import AutoReplyFormFixed from './AutoReplyForm/AutoReplyFormFixed';

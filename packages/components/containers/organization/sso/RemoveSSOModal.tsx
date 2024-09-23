@@ -1,16 +1,12 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import type { ModalProps } from '@proton/components';
-import {
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    useApi,
-    useEventManager,
-    useNotifications,
-} from '@proton/components';
+import { useApi, useEventManager, useNotifications } from '@proton/components';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useLoading from '@proton/hooks/useLoading';
 import { removeSAMLConfig } from '@proton/shared/lib/api/samlSSO';
 import type { SSO } from '@proton/shared/lib/interfaces';

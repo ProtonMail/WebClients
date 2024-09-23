@@ -16,13 +16,11 @@ import {
     VpnLogo,
     getBlackFridayRenewalNoticeText,
     getCheckoutRenewNoticeText,
+    isBlackFridayPeriod as getIsBlackFridayPeriod,
+    isCyberWeekPeriod as getIsCyberWeekPeriod,
     useModalState,
 } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import {
-    isBlackFridayPeriod as getIsBlackFridayPeriod,
-    isCyberWeekPeriod as getIsCyberWeekPeriod,
-} from '@proton/components/containers/offers/helpers/offerPeriods';
 import Alert3ds from '@proton/components/containers/payments/Alert3ds';
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';

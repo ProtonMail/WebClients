@@ -3,12 +3,11 @@ import { cloneElement, forwardRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import Icon from '@proton/components/components/icon/Icon';
+import useInput from '@proton/components/components/input/useInput';
+import ErrorZone from '@proton/components/components/text/ErrorZone';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
-
-import Icon from '../icon/Icon';
-import ErrorZone from '../text/ErrorZone';
-import useInput from './useInput';
 
 export interface Props extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     ref?: Ref<HTMLInputElement>; // override ref so that LegacyRef isn't used

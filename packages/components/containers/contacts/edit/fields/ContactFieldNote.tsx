@@ -1,9 +1,8 @@
 import type { ChangeEvent } from 'react';
 
+import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import { getAllFieldLabels } from '@proton/shared/lib/helpers/contacts';
 import type { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
-
-import { TextAreaTwo } from '../../../../components';
 
 interface Props {
     vCardProperty: VCardProperty<string>;

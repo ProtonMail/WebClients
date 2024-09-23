@@ -1,10 +1,9 @@
 import type { ButtonHTMLAttributes, ReactElement, ReactNode, Ref } from 'react';
 import { cloneElement, forwardRef } from 'react';
 
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
-
-import { Tooltip } from '../tooltip';
 
 interface Props extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'title'> {
     icon?: ReactElement;

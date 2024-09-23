@@ -1,10 +1,13 @@
 import { c } from 'ttag';
 
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableRow from '@proton/components/components/table/TableRow';
 import type { SavedPaymentMethod } from '@proton/payments';
 import { isPaypalDetails } from '@proton/payments';
 import orderBy from '@proton/utils/orderBy';
 
-import { Table, TableBody, TableHeader, TableRow } from '../../../components';
 import PaymentMethodActions from './PaymentMethodActions';
 import PaymentMethodState from './PaymentMethodState';
 

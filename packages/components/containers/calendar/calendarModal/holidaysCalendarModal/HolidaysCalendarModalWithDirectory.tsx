@@ -4,6 +4,16 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
+import ColorPicker from '@proton/components/components/input/ColorPicker';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import InputField from '@proton/components/components/v2/field/InputField';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { getCalendarModalSize } from '@proton/components/containers/calendar/calendarModal/helpers';
 import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
 import { useLoading } from '@proton/hooks';
@@ -36,18 +46,6 @@ import type {
 } from '@proton/shared/lib/interfaces/calendar';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import type { ModalProps } from '../../../../components';
-import {
-    ColorPicker,
-    InputFieldTwo as InputField,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    Option,
-    SelectTwo as Select,
-    useFormErrors,
-} from '../../../../components';
 import CountrySelect from '../../../../components/country/CountrySelect';
 import {
     useApi,
@@ -58,7 +56,7 @@ import {
     useNotifications,
     useReadCalendarBootstrap,
 } from '../../../../hooks';
-import { useCalendarModelEventManager } from '../../../eventManager';
+import { useCalendarModelEventManager } from '../../../eventManager/calendar/CalendarModelEventManagerProvider';
 import Notifications from '../../notifications/Notifications';
 import BusySlotsCheckbox from '../BusySlotsCheckbox';
 import { getDefaultModel } from '../personalCalendarModal/calendarModalState';
@@ -432,7 +430,7 @@ const HolidaysCalendarModalWithDirectory = ({
                 {computedCalendar && filteredLanguageOptions.length > 1 && isComplete && (
                     <InputField
                         id="languageSelect"
-                        as={Select}
+                        as={SelectTwo}
                         label={c('Label').t`Language`}
                         value={computedCalendar.Language}
                         onChange={handleSelectLanguage}

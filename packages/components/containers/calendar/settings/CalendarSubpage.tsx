@@ -3,13 +3,11 @@ import { useHistory, useParams } from 'react-router';
 
 import { c } from 'ttag';
 
-import {
-    PrivateMainArea,
-    SettingsPageTitle,
-    SettingsParagraph,
-    SettingsSection,
-    SettingsSectionTitle,
-} from '@proton/components/containers';
+import { PrivateMainArea } from '@proton/components';
+import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
+import SettingsSectionTitle from '@proton/components/containers/account/SettingsSectionTitle';
 import CalendarSettingsBreadcrumbs from '@proton/components/containers/calendar/settings/CalendarSettingsBreadcrumbs';
 import { useApi, useGetCalendarBootstrap, useNotifications } from '@proton/components/hooks';
 import { getAllMembers, getCalendarInvitations } from '@proton/shared/lib/api/calendars';

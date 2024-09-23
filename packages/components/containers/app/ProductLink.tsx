@@ -1,14 +1,14 @@
 import type { ReactNode } from 'react';
 
+import type { AppLinkProps } from '@proton/components/components/link/AppLink';
+import AppLink from '@proton/components/components/link/AppLink';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { getAppStaticUrl } from '@proton/shared/lib/helpers/url';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
-
-import type { AppLinkProps } from '../../components';
-import { AppLink, SettingsLink } from '../../components';
 
 interface ProductLinkProps {
     ownerApp: APP_NAMES;

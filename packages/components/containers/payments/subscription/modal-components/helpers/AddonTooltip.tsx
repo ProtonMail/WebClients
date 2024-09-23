@@ -2,11 +2,11 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import Info from '@proton/components/components/link/Info';
+import Price from '@proton/components/components/price/Price';
 import { isDomainAddon, isIpAddon, isMemberAddon } from '@proton/shared/lib/helpers/addons';
 import type { AddonDescription } from '@proton/shared/lib/helpers/checkout';
 import type { Currency } from '@proton/shared/lib/interfaces';
-
-import { Info, Price } from '../../../../../components';
 
 export const AddonTooltip = ({
     addon,

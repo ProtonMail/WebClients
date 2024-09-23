@@ -6,12 +6,12 @@ import { c } from 'ttag';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import type { DropdownSize } from '@proton/components/components/dropdown/utils';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import SearchInput from '@proton/components/components/input/SearchInput';
+import type { PopperPlacement } from '@proton/components/components/popper/interface';
 import clsx from '@proton/utils/clsx';
 
-import SearchInput from '../input/SearchInput';
-import type { Props as OptionProps } from '../option/Option';
+import type { OptionProps } from '../option/Option';
 import Option from '../option/Option';
-import type { PopperPlacement } from '../popper';
 import SelectButton from './SelectButton';
 import { SelectDisplayValue } from './SelectDisplayValue';
 import SelectOptions from './SelectOptions';
@@ -19,7 +19,7 @@ import { defaultFilterFunction } from './helpers';
 import type { SelectProps } from './select';
 import useSelect, { SelectProvider } from './useSelect';
 
-export interface Props<V> extends SelectProps<V> {
+export interface SearcheableSelectProps<V> extends SelectProps<V> {
     search?: boolean | ((option: OptionProps<V>, keyword?: string) => void);
     searchPlaceholder?: string;
     noSearchResults?: ReactNode;
@@ -57,7 +57,7 @@ const SearchableSelect = <V extends any>({
     caretClassName,
     anchorRef: maybeAnchorRef,
     ...rest
-}: Props<V>) => {
+}: SearcheableSelectProps<V>) => {
     const [searchValue, setSearchValue] = useState('');
 
     const anchorRef = useRef<HTMLButtonElement | null>(null);

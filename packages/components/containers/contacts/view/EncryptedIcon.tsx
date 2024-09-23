@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
 import Icon from '@proton/components/components/icon/Icon';
-
-import { Tooltip } from '../../../components';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 
 interface Props {
     isSignatureVerified: boolean;

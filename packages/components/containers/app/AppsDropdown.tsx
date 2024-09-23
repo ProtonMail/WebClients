@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 import Icon from '@proton/components/components/icon/Icon';
+import type { AppLinkProps } from '@proton/components/components/link/AppLink';
 import { useConfig, useUser } from '@proton/components/hooks';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -13,7 +14,6 @@ import { isElectronMail, isElectronOnInboxApps, isElectronOnMac } from '@proton/
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 
-import type { AppLinkProps } from '../../components';
 import { InboxDesktopAppSwitcher } from '../desktop';
 import ProductIcon from './ProductIcon';
 import ProductLink from './ProductLink';

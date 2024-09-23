@@ -1,11 +1,17 @@
 import { c } from 'ttag';
 
 import Alert from '@proton/components/components/alert/Alert';
+import Info from '@proton/components/components/link/Info';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableRow from '@proton/components/components/table/TableRow';
+import Time from '@proton/components/components/time/Time';
 import type { AuthLog } from '@proton/shared/lib/authlog';
 import { SETTINGS_LOG_AUTH_STATE, SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { Info, Table, TableBody, TableCell, TableHeader, TableRow, Time } from '../../components';
 import AppVersionCell from './AppVersionCell';
 import DeviceCell from './DeviceCell';
 import EventCell from './EventCell';

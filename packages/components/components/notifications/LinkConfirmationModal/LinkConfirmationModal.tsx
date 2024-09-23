@@ -4,14 +4,18 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { updateConfirmLink } from '@proton/shared/lib/api/mailSettings';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import { CONFIRM_LINK } from '@proton/shared/lib/mail/mailSettings';
 
 import { useApi, useEventManager } from '../../../hooks';
-import type { ModalProps, ModalStateProps } from '../../modalTwo';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../modalTwo';
 import LinkConfirmationModalLink from './LinkConfirmationModalLink';
 import LinkConfirmationModalPhishing from './LinkConfirmationModalPhishing';
 

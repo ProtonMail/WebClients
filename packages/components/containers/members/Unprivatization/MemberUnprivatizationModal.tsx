@@ -2,6 +2,12 @@ import { c } from 'ttag';
 
 import { memberAcceptUnprivatization, memberRejectUnprivatization } from '@proton/account/member/actions';
 import { Button, InlineLinkButton } from '@proton/atoms';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -11,14 +17,6 @@ import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import type { Member } from '@proton/shared/lib/interfaces';
 import { type ParsedUnprivatizationData } from '@proton/shared/lib/keys';
 
-import {
-    type ModalProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    useModalState,
-} from '../../../components/modalTwo';
 import AuthModal from '../../password/AuthModal';
 
 interface Props extends Omit<ModalProps<'div'>, 'children' | 'buttons'> {
