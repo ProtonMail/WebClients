@@ -29,7 +29,10 @@ import usePublicToken from '../../../hooks/drive/usePublicToken';
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { deleteStoredUrlPassword, saveUrlPasswordForRedirection } from '../../../utils/url/password';
 
-export const SignupFlowModal = ({ onClose, ...modalProps }: ModalStateProps) => {
+export interface Props {
+    customPassword?: string;
+}
+export const SignupFlowModal = ({ customPassword, onClose, ...modalProps }: Props & ModalStateProps) => {
     const [email, setEmail] = useState('');
     const [error, setError] = useState('');
     const api = useApi();
@@ -59,7 +62,7 @@ export const SignupFlowModal = ({ onClose, ...modalProps }: ModalStateProps) => 
             // Email is verified and available to use
             // We redirect to DRIVE_SIGNUP
             if (Code === 1000) {
-                saveUrlPasswordForRedirection(urlPassword);
+                saveUrlPasswordForRedirection(urlPassword + (customPassword ?? ''));
                 countActionWithTelemetry(Actions.SignUpFlowModal);
                 const returnUrlSearchParams = new URLSearchParams();
                 returnUrlSearchParams.append('token', token);
@@ -78,7 +81,7 @@ export const SignupFlowModal = ({ onClose, ...modalProps }: ModalStateProps) => 
             const { code, message } = getApiError(err);
             // Email is already in use, we redirect to SIGN_IN
             if (API_CUSTOM_ERROR_CODES.ALREADY_USED === code) {
-                saveUrlPasswordForRedirection(urlPassword);
+                saveUrlPasswordForRedirection(urlPassword + (customPassword ?? ''));
                 countActionWithTelemetry(Actions.SignInFlowModal);
                 const returnUrlSearchParams = new URLSearchParams();
                 returnUrlSearchParams.append('token', token);
