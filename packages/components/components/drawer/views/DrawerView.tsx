@@ -1,7 +1,7 @@
 import type { AnimationEvent, HTMLAttributes, ReactNode } from 'react';
 
+import { DrawerAppFooter, DrawerAppHeader } from '@proton/components';
 import DrawerHeaderTitleDropdown from '@proton/components/components/drawer/views/DrawerHeaderTitleDropdown';
-import { DrawerAppFooter, DrawerAppHeader } from '@proton/components/containers';
 import clsx from '@proton/utils/clsx';
 
 export interface SelectedDrawerOption {

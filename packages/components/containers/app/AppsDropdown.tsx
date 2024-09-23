@@ -14,7 +14,7 @@ import { isElectronMail, isElectronOnInboxApps, isElectronOnMac } from '@proton/
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 
-import { InboxDesktopAppSwitcher } from '../desktop';
+import { InboxDesktopAppSwitcher } from '../desktop/InboxDesktopAppSwitcher';
 import ProductIcon from './ProductIcon';
 import ProductLink from './ProductLink';
 
