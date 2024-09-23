@@ -9,7 +9,10 @@ import isEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { pick } from '@proton/shared/lib/helpers/object';
 
 import { apiWalletTransactionDataThunk, selectApiWalletTransactionData } from '../slices';
-import { type WalletTransactionsThunkArg, type WalletTransactionByHashedTxId } from '../slices/apiWalletTransactionData';
+import {
+    type WalletTransactionByHashedTxId,
+    type WalletTransactionsThunkArg,
+} from '../slices/apiWalletTransactionData';
 
 const hooks = createHooks(apiWalletTransactionDataThunk, selectApiWalletTransactionData);
 
@@ -24,7 +27,18 @@ export const useGetApiWalletTransactionData = () => {
     );
 };
 
-export const useApiWalletTransactionData = (args: WalletTransactionsThunkArg) => {
+/**
+ * This hook retrieves and selects wallet transaction data based on the provided arguments.
+ * It can accept either a WalletTransactionsThunkArg object or an array of string representing hashed transaction IDs.
+ *
+ * If an object is provided, it will fetch the transaction data for the specified networkTransactionByHashedTxId.
+ * If an array is provided, it will only return (without fetching) data found inside the store
+ *
+ * The hook returns an array containing the selected transaction data and a boolean indicating if the data is loading.
+ *
+ * It also handles refetching the data if the arguments change.
+ */
+export const useApiWalletTransactionData = (args: WalletTransactionsThunkArg | string[]) => {
     const getApiWalletTransactionData = useGetApiWalletTransactionData();
     const [, loading] = hooks.useValue();
 
@@ -32,14 +46,16 @@ export const useApiWalletTransactionData = (args: WalletTransactionsThunkArg) =>
         selectApiWalletTransactionData,
         (result): [WalletTransactionByHashedTxId | undefined, boolean] => {
             const { value } = result;
-            return [value && pick(value, Object.keys(args.networkTransactionByHashedTxId)), loading];
+            const hashedTxIdToPick = Array.isArray(args) ? args : Object.keys(args.networkTransactionByHashedTxId);
+
+            return [value && pick(value, hashedTxIdToPick), loading];
         }
     );
 
     const previousArgs = usePrevious(args);
 
     useEffect(() => {
-        if (!isEqual(args, previousArgs)) {
+        if (!isEqual(args, previousArgs) && !Array.isArray(args)) {
             void getApiWalletTransactionData(args);
         }
     }, [args, getApiWalletTransactionData, previousArgs]);
