@@ -6,7 +6,7 @@ import { useDrawer } from '@proton/components/hooks';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import type { Optional } from '@proton/shared/lib/interfaces';
 
-import { ContactsDrawerLogo } from '../drawerIcons';
+import ContactsDrawerLogo from '../drawerIcons/ContactsDrawerLogo';
 
 const ContactDrawerAppButton = ({
     onClick,

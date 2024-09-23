@@ -18,7 +18,7 @@ import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import aliasSampleSvg from '@proton/styles/assets/img/illustrations/pass-aliases-alias-sample.svg';
 import clsx from '@proton/utils/clsx';
 
-import { DrawerAppSection } from '../../shared';
+import DrawerAppSection from '../../shared/DrawerAppSection';
 import { DRAWER_PASS_ALIASES_CREATE_ALIAS_MODAL_CTA_ID } from '../constants';
 import { sendSecurityCenterReport } from '../securityCenterTelemetry';
 import AliasesList from './AliasesList';

@@ -7,13 +7,13 @@ import { Href } from '@proton/atoms';
 import {
     ErrorBoundary,
     FeatureCode,
+    PassAliasesProvider,
     useAddresses,
     useFeature,
     useMailSettings,
     useOrganization,
     useUser,
 } from '@proton/components';
-import { PassAliasesProvider } from '@proton/components/components/drawer/views/SecurityCenter/PassAliases/PassAliasesProvider';
 import { useFolders, useLabels } from '@proton/components/hooks/useCategories';
 import useUserSettings from '@proton/components/hooks/useUserSettings';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';

@@ -7,6 +7,7 @@ import {
     ContactDrawerAppButton,
     DrawerApp,
     DrawerSidebar,
+    DrawerVisibilityButton,
     PrivateAppContainer,
     PrivateMainArea,
     QuickSettingsAppButton,
@@ -17,7 +18,6 @@ import {
     useToggle,
     useUser,
 } from '@proton/components';
-import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
 import { APPS } from '@proton/shared/lib/constants';
 import { isAppInView } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';

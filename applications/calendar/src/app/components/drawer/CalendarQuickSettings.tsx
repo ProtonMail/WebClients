@@ -1,18 +1,19 @@
 import { c } from 'ttag';
 
-import { Info, Loader, Toggle, useConfirmActionModal } from '@proton/components';
 import {
     DefaultQuickSettings,
-    QuickSettingsButtonSection,
-    QuickSettingsSectionRow,
-} from '@proton/components/components/drawer/views/quickSettings';
-import DrawerAllSettingsView from '@proton/components/components/drawer/views/quickSettings/DrawerAllSettingsView';
-import DrawerDownloadApps from '@proton/components/components/drawer/views/quickSettings/DrawerDownloadApps';
-import {
+    DrawerAllSettingsView,
     DrawerAppHeadline,
     DrawerAppScrollContainer,
     DrawerAppSection,
-} from '@proton/components/components/drawer/views/shared';
+    DrawerDownloadApps,
+    Info,
+    Loader,
+    QuickSettingsButtonSection,
+    QuickSettingsSectionRow,
+    Toggle,
+    useConfirmActionModal,
+} from '@proton/components';
 import PrimaryTimezoneSelector from '@proton/components/containers/calendar/settings/PrimaryTimezoneSelector';
 import SecondaryTimezoneSelector from '@proton/components/containers/calendar/settings/SecondaryTimezoneSelector';
 import ShowSecondaryTimezoneToggle from '@proton/components/containers/calendar/settings/ShowSecondaryTimezoneToggle';

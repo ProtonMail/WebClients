@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { DRAWER_PASS_ALIASES_CREATE_ALIAS_MODAL_CTA_ID } from '@proton/components/components/drawer/views/SecurityCenter/constants';
+import { DRAWER_PASS_ALIASES_CREATE_ALIAS_MODAL_CTA_ID } from '@proton/components';
 import { useDrawer } from '@proton/components/hooks';
 import connectSimpleLoginSvg from '@proton/styles/assets/img/illustrations/connect-simple-login.svg';
 
