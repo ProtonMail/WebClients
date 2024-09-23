@@ -8,6 +8,8 @@ import {
     getHasExternalMemberCapableB2BPlan,
     getHasMemberCapablePlan,
     getHasVpnB2BPlan,
+    hasBundlePro,
+    hasBundlePro2024,
     hasVpnBusiness,
 } from '@proton/shared/lib/helpers/subscription';
 import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/support';
@@ -22,6 +24,7 @@ interface Props {
     canDisplayB2BLogsVPN: boolean;
     isUserGroupsFeatureEnabled: boolean;
     isB2BAuthLogsEnabled: boolean;
+    showGatewaysForBundlePlan: boolean;
 }
 
 const groupsCompatiblePlans = new Set([
@@ -40,6 +43,7 @@ export const getOrganizationAppRoutes = ({
     canDisplayB2BLogsVPN,
     isUserGroupsFeatureEnabled,
     isB2BAuthLogsEnabled,
+    showGatewaysForBundlePlan,
 }: Props) => {
     const isAdmin = user.isAdmin && !user.isSubUser;
 
@@ -48,7 +52,7 @@ export const getOrganizationAppRoutes = ({
     const isOrgActive = organization?.State === ORGANIZATION_STATE.ACTIVE;
     const hasActiveOrganizationKey = isOrgActive && hasOrganizationKey;
     const hasActiveOrganization = isOrgActive && hasOrganization;
-    const hasMemberCapablePlan = getHasMemberCapablePlan(organization, subscription);
+    const hasMemberCapablePlan = getHasMemberCapablePlan(organization, subscription, { showGatewaysForBundlePlan });
 
     const canHaveOrganization = !user.isMember && !!organization && isAdmin;
     const canSchedulePhoneCalls = canScheduleOrganizationPhoneCalls({ organization, user });
@@ -168,7 +172,9 @@ export const getOrganizationAppRoutes = ({
                 text: c('Title').t`Gateways`,
                 to: '/gateways',
                 icon: 'servers',
-                available: hasVpnB2BPlan,
+                available:
+                    hasVpnB2BPlan ||
+                    (showGatewaysForBundlePlan && (hasBundlePro2024(subscription) || hasBundlePro(subscription))),
                 subsections: [
                     {
                         id: 'servers',

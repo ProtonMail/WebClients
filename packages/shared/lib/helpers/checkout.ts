@@ -16,7 +16,7 @@ import { getPlanFromCheckout } from './planIDs';
 import {
     INCLUDED_IP_PRICING,
     customCycles,
-    getMaxValue,
+    getAddonMultiplier,
     getMembersFromPlanIDs,
     getPricePerCycle,
     getPricingPerMember,
@@ -43,9 +43,16 @@ const getAddonQuantity = (addon: Plan, quantity: number) => {
         maxKey = 'MaxAI';
     }
 
-    const multiplier = maxKey ? getMaxValue(addon, maxKey) : 0;
+    /**
+     * Workaround specifically for MaxIPs property. There is an upcoming mirgation in payments API v5
+     * That will structure all these Max* properties in a different way.
+     * For now, we need to handle MaxIPs separately.
+     * See {@link MaxKeys} and {@link Plan}. Note that all properties from MaxKeys must be present in Plan
+     * with the exception of MaxIPs.
+     */
+    const addonMultiplier = maxKey ? getAddonMultiplier(maxKey, addon) : 0;
 
-    return quantity * multiplier;
+    return quantity * addonMultiplier;
 };
 
 export const getAddonTitle = (addonName: ADDON_NAMES, quantity: number, planIDs: PlanIDs) => {
