@@ -4,7 +4,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 
 import { getSharedLink } from '../../store/_shares';
-import { getUrlPassword } from '../../utils/url/password';
+import { deleteStoredUrlPassword, getUrlPassword } from '../../utils/url/password';
 
 const redirectToPublicKey = 'redirectToPublic';
 
@@ -22,17 +22,19 @@ export const useRedirectToPublicPage = () => {
         const newUrlSearchParams = new URLSearchParams(location.search);
         newUrlSearchParams.delete(redirectToPublicKey);
         newUrlSearchParams.delete('token');
+        deleteStoredUrlPassword();
         history.replace({
             search: newUrlSearchParams.toString(),
         });
     };
 
     const redirectToPublicPage = (token: string) => {
-        const urlPassword = getUrlPassword({ readOnly: true });
+        const urlPassword = getUrlPassword({ readOnly: true, filterCustom: true });
         if (!urlPassword) {
             cleanupUrl();
             return;
         }
+
         const url = getSharedLink({ token, password: urlPassword });
         if (!url) {
             cleanupUrl();

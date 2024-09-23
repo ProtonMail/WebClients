@@ -5,9 +5,9 @@ import useApi from '@proton/components/hooks/useApi';
 import useLoading from '@proton/hooks/useLoading';
 
 import usePublicToken from '../../hooks/drive/usePublicToken';
-import { usePublicSession } from '../_api';
 import { useDriveShareURLBookmarkingFeatureFlag } from '../_bookmarks';
 import { useBookmarks } from '../_bookmarks/useBookmarks';
+import { usePublicSessionUser } from '../_user';
 import { useBookmarksPublicView } from './useBookmarksPublicView';
 
 jest.mock('../_bookmarks');
@@ -21,10 +21,6 @@ const mockedSetIsLoading = jest.fn();
 jest.mocked(useLoading).mockReturnValue([true, mockedWithLoading, mockedSetIsLoading]);
 
 jest.mock('../_api');
-const mockedGetSessionInfo = jest.fn().mockReturnValue({ sessionUid: undefined });
-jest.mocked(usePublicSession).mockReturnValue({
-    getSessionInfo: mockedGetSessionInfo as any,
-} as any);
 
 jest.mock('@proton/components/hooks/useApi');
 jest.mocked(useApi).mockReturnValue({ UID: undefined } as any);
@@ -36,6 +32,13 @@ jest.mocked(useBookmarks).mockReturnValue({
     listBookmarks: mockedListBookmarks as any,
     addBookmark: mockedAddBookmarks as any,
     deleteBookmark: jest.fn().mockResolvedValue({}) as any,
+});
+
+jest.mock('../_user');
+const mockedUsePublicSessionUser = jest.mocked(usePublicSessionUser).mockReturnValue({
+    user: undefined,
+    localID: undefined,
+    UID: '',
 });
 
 const mockedToken = 'token';
@@ -51,8 +54,6 @@ jest.mock('@proton/shared/lib/authentication/persistedSessionHelper', () => {
 });
 
 const defaultProps = {
-    isAuthLoading: false,
-    user: 'user' as any,
     customPassword: undefined,
 };
 const UID = 'UID';
@@ -66,47 +67,28 @@ describe('useBookmarksPublicView', () => {
     });
     it('Should not list bookmarks if user or UID is undefined or if FF disabled', () => {
         const { rerender, result } = renderHook((props) => useBookmarksPublicView(props), {
-            initialProps: {
-                ...defaultProps,
-                user: undefined,
-            },
+            initialProps: defaultProps,
         });
 
         expect(mockedWithLoading).not.toHaveBeenCalled();
         expect(mockedListBookmarks).not.toHaveBeenCalled();
-        expect(mockedGetSessionInfo).not.toHaveBeenCalled();
+        expect(result.current.isAlreadyBookmarked).toBe(false);
 
         rerender(defaultProps);
         expect(mockedWithLoading).not.toHaveBeenCalled();
         expect(mockedListBookmarks).not.toHaveBeenCalled();
-        expect(mockedGetSessionInfo).toHaveBeenCalled();
-        expect(result.current.isLoggedIn).toBe(true);
+        expect(result.current.isAlreadyBookmarked).toBe(false);
 
-        mockedGetSessionInfo.mockReturnValueOnce({ sessionUid: UID });
+        mockedUsePublicSessionUser.mockReturnValueOnce({ user: 'user', UID } as any);
         mockedUseDriveShareURLBookmarkingFeatureFlag.mockReturnValueOnce(false);
         rerender(defaultProps);
         expect(mockedWithLoading).not.toHaveBeenCalled();
         expect(mockedListBookmarks).not.toHaveBeenCalled();
-        expect(mockedGetSessionInfo).toHaveBeenCalled();
-        expect(result.current.isLoggedIn).toBe(true);
-    });
-
-    it('Should set loading to false only if isAuthLoading and user are false', async () => {
-        const { rerender } = renderHook((props) => useBookmarksPublicView(props), {
-            initialProps: {
-                ...defaultProps,
-                user: undefined,
-                isAuthLoading: true,
-            },
-        });
-        expect(mockedSetIsLoading).toHaveBeenCalledWith(true);
-
-        rerender({ ...defaultProps, user: undefined, isAuthLoading: false });
-        expect(mockedSetIsLoading).toHaveBeenCalledWith(false);
+        expect(result.current.isAlreadyBookmarked).toBe(false);
     });
 
     it('Should set bookmarks tokens from listing', async () => {
-        mockedGetSessionInfo.mockReturnValueOnce({ sessionUid: UID });
+        mockedUsePublicSessionUser.mockReturnValueOnce({ user: 'user', UID } as any);
         mockedListBookmarks.mockResolvedValueOnce([
             {
                 token: { Token: mockedToken },
@@ -114,6 +96,7 @@ describe('useBookmarksPublicView', () => {
         ]);
 
         const { result } = renderHook(() => useBookmarksPublicView(defaultProps));
+        await waitFor(() => expect(mockedListBookmarks).toHaveBeenCalled());
         await waitFor(() => expect(result.current.isAlreadyBookmarked).toBe(true));
         expect(mockedWithLoading).toHaveBeenCalled();
     });
