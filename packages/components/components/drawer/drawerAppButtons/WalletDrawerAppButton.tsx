@@ -6,7 +6,7 @@ import useAppLink from '@proton/components/components/link/useAppLink';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Optional } from '@proton/shared/lib/interfaces';
 
-import { WalletDrawerLogo } from '../drawerIcons';
+import WalletDrawerLogo from '../drawerIcons/WalletDrawerLogo';
 
 const WalletDrawerAppButton = ({
     onClick,

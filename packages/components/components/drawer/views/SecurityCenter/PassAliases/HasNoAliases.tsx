@@ -6,7 +6,7 @@ import { Href } from '@proton/atoms';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import aliasSampleSvg from '@proton/styles/assets/img/illustrations/pass-aliases-alias-sample.svg';
 
-import { DrawerAppHeadline } from '../../shared';
+import DrawerAppHeadline from '../../shared/DrawerAppHeadline';
 
 const HasNoAliases = () => {
     const learnMoreLink = (

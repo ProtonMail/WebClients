@@ -8,7 +8,7 @@ import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import ProtonSentinelPlusLogo from '@proton/styles/assets/img/illustrations/sentinel-shield-bolt-breach-alert.svg';
 
-import { DrawerAppSection } from '../../shared';
+import DrawerAppSection from '../../shared/DrawerAppSection';
 
 interface Props {
     onToggleBreaches: () => void;

@@ -1,10 +1,10 @@
-import { useConfirmActionModal } from '@proton/components';
 import {
     DefaultQuickSettings,
+    DrawerAllSettingsView,
+    DrawerAppScrollContainer,
     QuickSettingsButtonSection,
-} from '@proton/components/components/drawer/views/quickSettings';
-import DrawerAllSettingsView from '@proton/components/components/drawer/views/quickSettings/DrawerAllSettingsView';
-import { DrawerAppScrollContainer } from '@proton/components/components/drawer/views/shared';
+    useConfirmActionModal,
+} from '@proton/components';
 
 import ClearSearchDataButton from '../layout/search/ClearSearchDataButton';
 

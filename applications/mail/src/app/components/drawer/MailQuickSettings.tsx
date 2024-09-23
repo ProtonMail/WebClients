@@ -4,10 +4,18 @@ import { c } from 'ttag';
 
 import type { IconName } from '@proton/components';
 import {
+    DefaultQuickSettings,
+    DrawerAllSettingsView,
+    DrawerAppScrollContainer,
+    DrawerAppSection,
+    DrawerDownloadApps,
     Icon,
     Info,
     MailShortcutsModal,
     Option,
+    QuickSettingsButton,
+    QuickSettingsButtonSection,
+    QuickSettingsSectionRow,
     SelectTwo,
     ShortcutsToggle,
     ToggleAssistant,
@@ -16,15 +24,6 @@ import {
     useKeyTransparencyContext,
     useModalState,
 } from '@proton/components';
-import {
-    DefaultQuickSettings,
-    QuickSettingsButton,
-    QuickSettingsButtonSection,
-    QuickSettingsSectionRow,
-} from '@proton/components/components/drawer/views/quickSettings';
-import DrawerAllSettingsView from '@proton/components/components/drawer/views/quickSettings/DrawerAllSettingsView';
-import DrawerDownloadApps from '@proton/components/components/drawer/views/quickSettings/DrawerDownloadApps';
-import { DrawerAppScrollContainer, DrawerAppSection } from '@proton/components/components/drawer/views/shared';
 import { KeyTransparencyDetailsModal } from '@proton/components/components/keyTransparency';
 import { useApi, useEventManager, useNotifications, useUserSettings } from '@proton/components/hooks';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
