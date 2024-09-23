@@ -26,7 +26,7 @@ import { emailValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getUrlWithReturnUrl } from '@proton/shared/lib/helpers/url';
 
 import usePublicToken from '../../../hooks/drive/usePublicToken';
-import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
+import { Actions, countActionWithTelemetry, traceTelemetry } from '../../../utils/telemetry';
 import { deleteStoredUrlPassword, saveUrlPasswordForRedirection } from '../../../utils/url/password';
 
 export interface Props {
@@ -64,6 +64,7 @@ export const SignupFlowModal = ({ customPassword, onClose, ...modalProps }: Prop
             if (Code === 1000) {
                 saveUrlPasswordForRedirection(urlPassword + (customPassword ?? ''));
                 countActionWithTelemetry(Actions.SignUpFlowModal);
+                traceTelemetry(Actions.SignUpFlowAndRedirectCompleted).start();
                 const returnUrlSearchParams = new URLSearchParams();
                 returnUrlSearchParams.append('token', token);
                 const returnUrl = `/shared-with-me?`.concat(returnUrlSearchParams.toString());
