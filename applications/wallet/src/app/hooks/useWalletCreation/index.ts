@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import { flushSync } from 'react-dom';
 import { useHistory } from 'react-router-dom';
 
 import first from 'lodash/first';
@@ -362,7 +363,7 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
             });
 
             if (decryptedWallet) {
-                dispatch(walletCreation(decryptedWallet));
+                flushSync(() => dispatch(walletCreation(decryptedWallet)));
             }
 
             if (isFirstCreation) {
