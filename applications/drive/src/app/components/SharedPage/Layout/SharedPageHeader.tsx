@@ -31,7 +31,7 @@ export default function SharedPageHeader({
     const isDownloadScanEnabled = useDownloadScanFlag();
     const { viewportWidth } = useActiveBreakpoint();
     const selectionControls = useSelection();
-    const { isLoggedIn, isAlreadyBookmarked, addBookmark, isLoading } = bookmarksPublicView;
+    const { isAlreadyBookmarked, addBookmark, isLoading, customPassword } = bookmarksPublicView;
 
     const selectedItems = getSelectedItems(items || [], selectionControls?.selectedItemIds || []);
 
@@ -60,7 +60,7 @@ export default function SharedPageHeader({
                             loading={isLoading}
                             onClick={addBookmark}
                             alreadyBookmarked={isAlreadyBookmarked}
-                            isLoggedIn={isLoggedIn}
+                            customPassword={customPassword}
                             className="ml-4"
                         />
                     )}
