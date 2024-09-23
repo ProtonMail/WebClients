@@ -67,6 +67,7 @@ type Props = {
   onInteractionModeChange: (mode: DocumentInteractionMode) => void
   setEditorRef: (instance: LexicalEditor | null) => void
   username: string
+  isSuggestionsFeatureEnabled: boolean
 
   showTreeView: boolean
 }
@@ -88,6 +89,7 @@ export function Editor({
   setEditorRef,
   username,
   showTreeView,
+  isSuggestionsFeatureEnabled,
 }: Props) {
   const yjsWebsockProvider = useMemo(() => {
     const baseProvider = (): Provider => {
@@ -200,11 +202,13 @@ export function Editor({
         {showTreeView && <TreeViewPlugin />}
         <MarkNodesProvider>
           <CommentPlugin controller={clientInvoker} username={username} />
-          <SuggestionModePlugin
-            isSuggestionMode={isSuggestionMode}
-            controller={clientInvoker}
-            onInteractionModeChange={onInteractionModeChange}
-          />
+          {isSuggestionsFeatureEnabled && (
+            <SuggestionModePlugin
+              isSuggestionMode={isSuggestionMode}
+              controller={clientInvoker}
+              onInteractionModeChange={onInteractionModeChange}
+            />
+          )}
         </MarkNodesProvider>
       </SafeLexicalComposer>
     </CollaborationContext.Provider>

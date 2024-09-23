@@ -423,6 +423,7 @@ export function App({ nonInteractiveMode = false }: Props) {
           setEditorRef={setEditorRef}
           username={initialConfig.username}
           showTreeView={showTreeView}
+          isSuggestionsFeatureEnabled={isSuggestionsFeatureEnabled}
         />
       </ApplicationProvider>
       <Icons />
