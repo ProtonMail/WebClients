@@ -72,6 +72,7 @@
   --interaction-default-hover: rgb(194 194 194 / 0.2);
   --interaction-default-active: rgb(194 194 194 / 0.4);
   --shadow-norm-opacity: 0.16;
+  --shadow-raised-opacity: 0.18;
   --shadow-lifted-opacity: 0.2;
   --backdrop-norm: rgb(0 0 0 / 0.15);
   --optional-field-placeholder-color: var(--text-weak);
@@ -79,6 +80,37 @@
   --focus-outline: var(--interaction-norm-major-2);
   --focus-ring: var(--interaction-norm-minor-1);
   --search-field-focus-background: #ffffff;
+  --vault-unspecified: 140 140 147;
+  --vault-custom: 136 73 255;
+  --vault-heliotrope: 136 73 255;
+  --vault-mauvelous: 255 73 73;
+  --vault-marigold-yellow: 204 98 0;
+  --vault-de-york: 0 102 120;
+  --vault-jordy-blue: 59 136 252;
+  --vault-lavender-magenta: 221 17 176;
+  --vault-chestnut-rose: 203 1 38;
+  --vault-porsche: 255 122 0;
+  --vault-mercury: 117 117 117;
+  --vault-water-leaf: 20 154 161;
+  --pass-box-shadow: rgb(0 0 0 / 0.15);
+  --pass-content-box-shadow: rgb(14 14 14 / 0.4);
+  --pass-scroll-color: rgb(14 14 14 / 0.1);
+  --pass-loby-background: radial-gradient(
+      61.86% 61.86% at 50% 0%,
+      rgb(255 255 255 / 0.16) 0%,
+      rgb(48 45 69 / 0.2) 100%
+    ),
+    #f6f5f8;
+  --pass-scroll-gradient-start: linear-gradient(
+    180deg,
+    var(--pass-scroll-color),
+    transparent
+  );
+  --pass-scroll-gradient-end: linear-gradient(
+    0deg,
+    var(--pass-scroll-color),
+    transparent
+  );
 }
 
 .ui-violet {
