@@ -282,11 +282,6 @@ const ContactGroupDropdown = ({
                                                 checked={model[ID] === CHECKED}
                                                 indeterminate={model[ID] === INDETERMINATE}
                                                 onChange={handleCheck(ID)}
-                                            />
-                                            <label
-                                                htmlFor={checkboxId}
-                                                className="flex items-center flex-1 flex-nowrap"
-                                                data-testid={`contact-group-dropdown:item-${Name}`}
                                             >
                                                 <Icon
                                                     name="circle-filled"
@@ -297,7 +292,7 @@ const ContactGroupDropdown = ({
                                                 <span className="flex-1 text-ellipsis" title={Name}>
                                                     <Mark value={keyword}>{Name}</Mark>
                                                 </span>
-                                            </label>
+                                            </Checkbox>
                                         </li>
                                     );
                                 })}
