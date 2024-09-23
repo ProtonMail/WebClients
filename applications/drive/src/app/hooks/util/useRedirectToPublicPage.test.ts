@@ -79,7 +79,7 @@ describe('useRedirectToPublicPage', () => {
 
     it('should redirect if both urlPassword and sharedLink are truthy', () => {
         const mockSharedLink = `https://drive.proton.me/urls/${mockToken}#${mockPassword}`;
-        when(mockedGetUrlPassword).calledWith({ readOnly: true }).mockReturnValueOnce(mockPassword);
+        when(mockedGetUrlPassword).calledWith({ readOnly: true, filterCustom: true }).mockReturnValueOnce(mockPassword);
         when(mockedGetSharedLink)
             .calledWith({ token: mockToken, password: mockPassword })
             .mockReturnValue(mockSharedLink);

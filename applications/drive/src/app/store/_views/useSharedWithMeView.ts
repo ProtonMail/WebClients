@@ -223,7 +223,7 @@ export default function useSharedWithMeView(shareId: string) {
                 await linksListing.loadLinksBookmarks(abortSignal, shareId);
             }).catch(sendErrorReport);
         }
-    }, []);
+    }, [isDriveShareUrlBookmarkingEnabled]);
 
     return {
         layout,
