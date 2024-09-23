@@ -2,6 +2,7 @@ import { useEffect, useMemo } from 'react';
 
 import { useApi } from '@proton/components/hooks';
 import createApi from '@proton/shared/lib/api/createApi';
+import localStorageWithExpiry from '@proton/shared/lib/api/helpers/localStorageWithExpiry';
 import { TelemetryDriveWebFeature, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { randomHexString4 } from '@proton/shared/lib/helpers/uid';
@@ -9,6 +10,7 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import * as config from '../config';
+import { LAST_ACTIVE_PING } from '../store/_user/useActivePing';
 import { sendErrorReport } from './errorHandling';
 import { EnrichedError } from './errorHandling/EnrichedError';
 import { getLastActivePersistedUserSession } from './lastActivePersistedUserSession';
@@ -53,6 +55,11 @@ export const sendTelemetryFeaturePerformance = (
     treatment: ExperimentGroup,
     additionalValues: PerformanceTelemetryAdditionalValues = {}
 ) => {
+    // TODO: https://jira.protontech.ch/browse/DD-7
+    // This is ugly and hacky, but it's a cheap way for the metric (without calling /users and without hooks)
+    // Proper back-end solution will be done as part of https://jira.protontech.ch/browse/DD-7
+    const loggedInRecently = localStorageWithExpiry.getData(LAST_ACTIVE_PING) ? 'true' : 'false';
+
     void sendTelemetryReport({
         api: api,
         measurementGroup: TelemetryMeasurementGroups.driveWebFeaturePerformance,
@@ -62,6 +69,7 @@ export const sendTelemetryFeaturePerformance = (
             ...additionalValues,
         },
         dimensions: {
+            isLoggedIn: window.location.pathname.startsWith('/urls') ? loggedInRecently : 'true',
             experimentGroup: treatment,
             featureName,
         },
@@ -203,6 +211,11 @@ export const countActionWithTelemetry = (action: Actions, count: number = 1): vo
         apiInstance.UID = persistedSession?.UID;
     }
 
+    // TODO: https://jira.protontech.ch/browse/DD-7
+    // This is ugly and hacky, but it's a cheap way for the metric (without calling /users and without hooks)
+    // Proper back-end solution will be done as part of https://jira.protontech.ch/browse/DD-7
+    const loggedInRecently = localStorageWithExpiry.getData(LAST_ACTIVE_PING) ? 'true' : 'false';
+
     void sendTelemetryReport({
         api: apiInstance,
         measurementGroup: TelemetryMeasurementGroups.driveWebActions,
@@ -211,6 +224,7 @@ export const countActionWithTelemetry = (action: Actions, count: number = 1): vo
             count,
         },
         dimensions: {
+            isLoggedIn: window.location.pathname.startsWith('/urls') ? loggedInRecently : 'true',
             name: action,
         },
     });
