@@ -11,6 +11,7 @@ import {
   FORMAT_TEXT_COMMAND,
   INDENT_CONTENT_COMMAND,
   OUTDENT_CONTENT_COMMAND,
+  PASTE_COMMAND,
   REDO_COMMAND,
   SELECTION_INSERT_CLIPBOARD_NODES_COMMAND,
   UNDO_COMMAND,
@@ -318,6 +319,16 @@ export function SuggestionModePlugin({
         BEFOREINPUT_EVENT_COMMAND,
         (event) => {
           return $handleBeforeInputEvent(editor, event, addCreatedIDtoSet, suggestionModeLogger)
+        },
+        COMMAND_PRIORITY_CRITICAL,
+      ),
+      editor.registerCommand(
+        // Overriding paste event just in case, although this is usually
+        // never triggered when in suggestion mode, except for when pasting
+        // a file like an image, which will be handled in a separate task (DRVDOC-1055)
+        PASTE_COMMAND,
+        (event) => {
+          return true
         },
         COMMAND_PRIORITY_CRITICAL,
       ),
