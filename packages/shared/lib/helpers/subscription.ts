@@ -840,6 +840,20 @@ export const getMaxValue = (plan: Plan, key: MaxKeys): number => {
     return result ?? 0;
 };
 
+export function getAddonMultiplier(addonMaxKey: MaxKeys, addon: Plan): number {
+    let addonMultiplier: number;
+    if (addonMaxKey === 'MaxIPs') {
+        addonMultiplier = getPlanMaxIPs(addon);
+        if (addonMultiplier === 0) {
+            addonMultiplier = 1;
+        }
+    } else {
+        addonMultiplier = getMaxValue(addon, addonMaxKey);
+    }
+
+    return addonMultiplier;
+}
+
 export function isTaxInclusive(checkResponse?: Pick<SubscriptionCheckResponse, 'TaxInclusive'>): boolean {
     return checkResponse?.TaxInclusive === TaxInclusive.INCLUSIVE;
 }
