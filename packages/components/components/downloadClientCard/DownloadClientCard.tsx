@@ -3,12 +3,10 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike, Href } from '@proton/atoms';
+import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
-import { type IconName } from '@proton/components/components/icon/Icon';
-import Icon from '@proton/components/components/icon/Icon';
-
-import { ButtonGroup } from '../button';
+import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 
 interface Props {
     title: string;

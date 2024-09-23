@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Label from '@proton/components/components/label/Label';
 
-import { Label } from '../../components';
 import Field from '../../components/container/Field';
 import Row from '../../components/container/Row';
 import ShortcutsToggle from './ShortcutsToggle';

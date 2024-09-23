@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button, Input } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import Radio from '@proton/components/components/input/Radio';
+import Label from '@proton/components/components/label/Label';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -13,7 +14,6 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { isDomain } from '@proton/shared/lib/helpers/validators';
 
-import { Label } from '../../../../components';
 import Field from '../../../../components/container/Field';
 import Row from '../../../../components/container/Row';
 import type { SpamLocation } from '../Spams.interfaces';

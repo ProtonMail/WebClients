@@ -1,5 +1,5 @@
-import type { AppLinkProps } from '@proton/components';
-import { AppLink } from '@proton/components';
+import type { AppLinkProps } from '@proton/components/components/link/AppLink';
+import AppLink from '@proton/components/components/link/AppLink';
 import clsx from '@proton/utils/clsx';
 
 import { useConfig } from '../../hooks';

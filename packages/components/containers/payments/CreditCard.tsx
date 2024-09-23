@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import { Input } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import Label from '@proton/components/components/label/Label';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
@@ -17,7 +18,6 @@ import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 import clsx from '@proton/utils/clsx';
 
-import { Label } from '../../components';
 import { DEFAULT_SEPARATOR, getFullList } from '../../helpers/countries';
 
 import './CreditCard.scss';

@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Label } from '@proton/components/components';
 import Alert from '@proton/components/components/alert/Alert';
 import Collapsible from '@proton/components/components/collapsible/Collapsible';
 import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
@@ -12,6 +11,7 @@ import CollapsibleHeaderIconButton from '@proton/components/components/collapsib
 import Field from '@proton/components/components/container/Field';
 import Row from '@proton/components/components/container/Row';
 import Icon from '@proton/components/components/icon/Icon';
+import Label from '@proton/components/components/label/Label';
 import Info from '@proton/components/components/link/Info';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';

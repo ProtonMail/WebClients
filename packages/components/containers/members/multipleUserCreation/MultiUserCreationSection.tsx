@@ -3,8 +3,8 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Tooltip } from '@proton/components';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

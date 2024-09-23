@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useSettingsLink } from '@proton/components/components';
+import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useUid from '@proton/components/hooks/useUid';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

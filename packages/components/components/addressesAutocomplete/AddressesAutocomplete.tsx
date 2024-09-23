@@ -1,7 +1,8 @@
 import type { KeyboardEvent, RefObject } from 'react';
 import { forwardRef, useCallback, useMemo, useRef, useState } from 'react';
 
-import { AutocompleteList, useAutocomplete, useAutocompleteFilter } from '@proton/components';
+import AutocompleteList from '@proton/components/components/autocomplete/AutocompleteList';
+import { useAutocomplete, useAutocompleteFilter } from '@proton/components/components/autocomplete/useAutocomplete';
 import Icon from '@proton/components/components/icon/Icon';
 import Option from '@proton/components/components/option/Option';
 import Marks from '@proton/components/components/text/Marks';

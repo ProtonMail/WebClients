@@ -3,18 +3,16 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
-import {
-    SUBSCRIPTION_STEPS,
-    useActiveBreakpoint,
-    useConfig,
-    useSettingsLink,
-    useSubscription,
-    useUser,
-} from '@proton/components';
+import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
 import { freeTrialUpgradeClick } from '@proton/components/containers/desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
 import { useRedirectToAccountApp } from '@proton/components/containers/desktop/useRedirectToAccountApp';
+import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useConfig from '@proton/components/hooks/useConfig';
+import useSubscription from '@proton/components/hooks/useSubscription';
+import useUser from '@proton/components/hooks/useUser';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';

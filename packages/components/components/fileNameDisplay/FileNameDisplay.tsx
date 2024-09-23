@@ -1,9 +1,8 @@
 import type { HTMLProps } from 'react';
 
+import MiddleEllipsis from '@proton/components/components/ellipsis/MiddleEllipsis';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
-
-import { MiddleEllipsis } from '../ellipsis';
 
 const CHARACTERS_BEFORE_EXTENSION = 3;
 

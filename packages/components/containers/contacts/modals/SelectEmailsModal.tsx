@@ -6,6 +6,7 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import Checkbox from '@proton/components/components/input/Checkbox';
+import Label from '@proton/components/components/label/Label';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -14,7 +15,6 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { Label } from '../../../components';
 import Field from '../../../components/container/Field';
 import Row from '../../../components/container/Row';
 import { useContactGroups } from '../../../hooks';

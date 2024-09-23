@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import ErrorButton from '@proton/components/components/button/ErrorButton';
 import Form from '@proton/components/components/form/Form';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -18,6 +19,7 @@ import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import AuthModal from '@proton/components/containers/password/AuthModal';
 import { useLoading } from '@proton/hooks';
 import { leaveOrganisation } from '@proton/shared/lib/api/organization';
 import { canDelete, deleteUser, unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -30,8 +32,6 @@ import { getOrganizationDenomination } from '@proton/shared/lib/organization/hel
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { ErrorButton } from '../../components';
-import { AuthModal } from '../../containers';
 import {
     useApi,
     useAuthentication,
