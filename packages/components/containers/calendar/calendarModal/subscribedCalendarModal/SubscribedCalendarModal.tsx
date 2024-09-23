@@ -19,7 +19,7 @@ import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { CALENDAR_SUBSCRIPTION_STATUS } from '@proton/shared/lib/interfaces/calendar';
 
 import { useApi } from '../../../../hooks';
-import { GenericError } from '../../../error';
+import GenericError from '../../../error/GenericError';
 import useGetCalendarActions from '../../hooks/useGetCalendarActions';
 import useGetCalendarSetup from '../../hooks/useGetCalendarSetup';
 import BusySlotsCheckbox from '../BusySlotsCheckbox';

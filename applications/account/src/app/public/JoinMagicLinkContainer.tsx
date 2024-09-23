@@ -3,14 +3,21 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
-import { Icon, useConfig, useKTActivation } from '@proton/components';
-import { InputFieldTwo, PasswordInputTwo, useFormErrors } from '@proton/components';
+import {
+    GenericError,
+    Icon,
+    InputFieldTwo,
+    PasswordInputTwo,
+    useApi,
+    useConfig,
+    useFormErrors,
+    useKTActivation,
+} from '@proton/components';
 import type { OnLoginCallback } from '@proton/components/containers';
-import { GenericError } from '@proton/components/containers';
 import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
 import { AuthStep, AuthType } from '@proton/components/containers/login/interface';
 import { handleLogin, handleNextLogin } from '@proton/components/containers/login/loginActions';
-import { useApi, useErrorHandler, useNotifications } from '@proton/components/hooks';
+import { useErrorHandler, useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { authJwt } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';

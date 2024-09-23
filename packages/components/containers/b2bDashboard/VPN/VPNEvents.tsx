@@ -17,9 +17,9 @@ import { getVPNLogs } from '@proton/shared/lib/api/b2blogs';
 import type { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
 import noop from '@proton/utils/noop';
 
-import { GenericError } from '../..';
 import { getCountryOptions } from '../../../helpers/countries';
 import { toCamelCase } from '../../credentialLeak/helpers';
+import GenericError from '../../error/GenericError';
 import { FilterAndSortEventsBlock } from '../FilterAndSortEventBlock';
 import { ALL_EVENTS_DEFAULT, PAGINATION_LIMIT, getLocalTimeStringFromDate, getSearchType } from '../Pass/helpers';
 import TogglingMonitoringModal from './TogglingMonitoringModal';
