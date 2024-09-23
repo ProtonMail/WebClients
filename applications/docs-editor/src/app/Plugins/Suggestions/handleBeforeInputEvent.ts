@@ -1,8 +1,8 @@
-import { $insertDataTransferForRichText } from '@lexical/clipboard'
+import { $generateNodesFromSerializedNodes, $insertGeneratedNodes } from '@lexical/clipboard'
 import { $isCodeNode } from '@lexical/code'
 import { $findMatchingParent } from '@lexical/utils'
 import { GenerateUUID } from '@proton/docs-core'
-import type { LexicalEditor, ElementNode, RangeSelection } from 'lexical'
+import type { LexicalEditor, ElementNode, RangeSelection, LexicalNode } from 'lexical'
 import {
   UNDO_COMMAND,
   REDO_COMMAND,
@@ -14,6 +14,8 @@ import {
   $isTextNode,
   $insertNodes,
   $isLineBreakNode,
+  $createTabNode,
+  $createParagraphNode,
 } from 'lexical'
 import { $isBlock } from '../../Utils/isBlock'
 import { $splitNodeAtPoint } from '../../Utils/splitNodeAtPoint'
@@ -27,6 +29,7 @@ import {
   $mergeWithExistingSuggestionNode,
   $isWholeSelectionInsideSuggestion,
 } from './Utils'
+import { $generateNodesFromDOM } from '@lexical/html'
 import type { Logger } from '@proton/utils/logs'
 
 /**
@@ -56,6 +59,7 @@ export function $handleBeforeInputEvent(
 
   const selection = $getSelection()
   if (!$isRangeSelection(selection)) {
+    logger?.info('Current selection is not a range selection')
     return true
   }
 
@@ -187,6 +191,7 @@ function $handleInsertInput(
 
   const latestSelection = $getSelection()
   if (!$isRangeSelection(latestSelection)) {
+    logger?.info('Latest selection is not range selection')
     return true
   }
 
@@ -205,8 +210,9 @@ function $handleInsertInput(
   }
 
   if (data === null && dataTransfer !== null) {
-    logger?.info('Inserting data transfer')
-    $insertDataTransferForRichText(dataTransfer, latestSelection, editor)
+    const types = dataTransfer.types
+    logger?.info('Inserting data transfer', types)
+    $insertDataTransferAsSuggestion(dataTransfer, latestSelection, editor)
     return true
   }
 
@@ -352,4 +358,67 @@ function $handleInsertTextData(
 
   onSuggestionCreation(suggestionNode.getSuggestionIdOrThrow())
   return true
+}
+
+/**
+ * Generates nodes from a given dataTransfer and inserts them in the
+ * current selection as a suggestion using the `SELECTION_INSERT_CLIPBOARD_NODES_COMMAND`
+ * command.
+ *
+ * Adapted from https://github.com/facebook/lexical/blob/main/packages/lexical-clipboard/src/clipboard.ts#L131
+ * since the original function doesn't trigger the aforementioned command when the data transfer
+ * only has plaintext data.
+ */
+function $insertDataTransferAsSuggestion(dataTransfer: DataTransfer, selection: RangeSelection, editor: LexicalEditor) {
+  const lexicalString = dataTransfer.getData('application/x-lexical-editor')
+
+  if (lexicalString) {
+    try {
+      const payload = JSON.parse(lexicalString)
+      if (payload.namespace === editor._config.namespace && Array.isArray(payload.nodes)) {
+        const nodes = $generateNodesFromSerializedNodes(payload.nodes)
+        return $insertGeneratedNodes(editor, nodes, selection)
+      }
+    } catch {
+      // Fail silently.
+    }
+  }
+
+  const htmlString = dataTransfer.getData('text/html')
+  if (htmlString) {
+    try {
+      const parser = new DOMParser()
+      const dom = parser.parseFromString(htmlString, 'text/html')
+      const nodes = $generateNodesFromDOM(editor, dom)
+      return $insertGeneratedNodes(editor, nodes, selection)
+    } catch {
+      // Fail silently.
+    }
+  }
+
+  // Multi-line plain text in rich text mode pasted as separate paragraphs
+  // instead of single paragraph with linebreaks.
+  // Webkit-specific: Supports read 'text/uri-list' in clipboard.
+  const text = dataTransfer.getData('text/plain') || dataTransfer.getData('text/uri-list')
+  if (!text) {
+    return
+  }
+  const parts = text.split(/\r?\n/)
+  if (parts[parts.length - 1] === '') {
+    parts.pop()
+  }
+  const nodes: LexicalNode[] = []
+  for (const part of parts) {
+    const paragraph = $createParagraphNode()
+    const splitByTabs = part.split(/(\t)/)
+    for (const split of splitByTabs) {
+      if (split === '\t') {
+        paragraph.append($createTabNode())
+      } else {
+        paragraph.append($createTextNode(split))
+      }
+    }
+    nodes.push(paragraph)
+  }
+  $insertGeneratedNodes(editor, nodes, selection)
 }
