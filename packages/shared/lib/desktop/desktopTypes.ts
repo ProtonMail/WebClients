@@ -48,7 +48,7 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'setTheme'; payload: ThemeSetting }
     | { type: 'earlyAccess'; payload: Environment | undefined }
     | { type: 'checkDefaultMailtoAndSignal'; payload?: undefined }
-    | { type: 'defaultMailtoTelemetryReported'; payload?: undefined };
+    | { type: 'defaultMailtoTelemetryReported'; payload: number };
 export type IPCInboxClientUpdateMessageType = IPCInboxClientUpdateMessage['type'];
 export type IPCInboxHostUpdateMessage =
     | {
@@ -66,6 +66,8 @@ export type IPCInboxHostUpdateMessage =
       };
 export type IPCInboxHostUpdateMessageType = IPCInboxHostUpdateMessage['type'];
 
+export type IPCInboxHostUpdateListenerRemover = { removeListener: () => void };
+
 /**
  * Electron injects an object in the window object
  * This object can then be used to communicate from the web app to the desktop app
@@ -81,7 +83,7 @@ export type IPCInboxMessageBroker = {
     on?: <T extends IPCInboxHostUpdateMessageType>(
         type: T,
         callback: (payload: Extract<IPCInboxHostUpdateMessage, { type: T }>['payload']) => void
-    ) => { removeListener: () => void };
+    ) => IPCInboxHostUpdateListenerRemover;
     send?: <T extends IPCInboxClientUpdateMessageType>(
         type: T,
         payload: Extract<IPCInboxClientUpdateMessage, { type: T }>['payload']

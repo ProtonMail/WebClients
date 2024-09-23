@@ -332,16 +332,6 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
         view.webContents.on("did-navigate-in-page", handleLoadFinish);
         view.webContents.on("did-fail-load", handleLoadError);
 
-        // FIXME:jcuth pure hack
-        // - uknown reason why the mailto url don't return `did-finish-load`
-        //   within 30s even when actually composer is loaded.
-        // - it blocks the next url load for view so decided to reduce cooldown time to 5s
-        // - reduce to 500ms
-        //
-        // loadingTimeoutID = setTimeout(handleLoadTimeout, urlHasMailto(url) ? 500 : 30000);
-        //
-        // - try to listen to in page navigation
-        // - seems to work.. adding it to next build for furhter testing
         loadingTimeoutID = setTimeout(handleLoadTimeout, 30000);
         view.webContents.loadURL(url);
     });

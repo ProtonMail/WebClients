@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { differenceInDays } from 'date-fns';
+import { differenceInDays, getUnixTime } from 'date-fns';
 
 import { useApi } from '@proton/components/hooks';
 import { TelemetryMailDefaultMailto, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
@@ -8,18 +8,26 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import type { DefaultProtocol } from './DefaultProtocol';
+import type { IPCInboxHostUpdateListenerRemover } from './desktopTypes';
 import { getInboxDesktopInfo, hasInboxDesktopFeature, invokeInboxDesktopIPC } from './ipcHelpers';
 
-const HOUR_INTERVAL = 3600000;
+// FIXME(jcuth) : const HOUR_INTERVAL = 3600000;
+const HOUR_INTERVAL = 36000;
 
 const getDefaultMailto = () => getInboxDesktopInfo('defaultMailto');
 const checkDefaultMailto = () => invokeInboxDesktopIPC({ type: 'checkDefaultMailtoAndSignal' });
-const defaultMailtoTelemetryReported = () => invokeInboxDesktopIPC({ type: 'defaultMailtoTelemetryReported' });
+const defaultMailtoTelemetryReported = (timestamp: number) =>
+    invokeInboxDesktopIPC({ type: 'defaultMailtoTelemetryReported', payload: timestamp });
 
 function checkMailtoTelemetryIsNeeded() {
+    if (!hasInboxDesktopFeature('MailtoTelemetry')) {
+        return;
+    }
+
     const data = getDefaultMailto();
-    const now = new Date();
-    if (differenceInDays(now, data.lastReport.timestamp) < 1) {
+    const now = getUnixTime(new Date());
+    const days = differenceInDays(now, data.lastReport.timestamp);
+    if (days == 0) {
         return;
     }
 
@@ -55,28 +63,24 @@ function sendMailtoTelemetry(api: Api, data: DefaultProtocol) {
         dimensions,
     });
 
-    defaultMailtoTelemetryReported();
+    defaultMailtoTelemetryReported(getUnixTime(new Date()));
 }
 
 export function useInboxDesktopHeartbeat() {
     const api = useApi();
 
     useEffect(() => {
-        if (!hasInboxDesktopFeature('MailtoTelemetry')) {
-            return;
-        }
+        const defaultMailtoChecked: IPCInboxHostUpdateListenerRemover = hasInboxDesktopFeature('MailtoTelemetry')
+            ? window.ipcInboxMessageBroker!.on!('defaultMailtoChecked', (payload) => sendMailtoTelemetry(api, payload))
+            : { removeListener: () => {} };
 
-        const checked = window.ipcInboxMessageBroker!.on!('defaultMailtoChecked', (payload) =>
-            sendMailtoTelemetry(api, payload)
-        );
-
+        checkMailtoTelemetryIsNeeded();
         const intervalFunction = setInterval(() => {
             checkMailtoTelemetryIsNeeded();
-            // TODO(jcuth): sendDesktopSettingsTelemetryIfNeeded();
         }, HOUR_INTERVAL);
 
         return () => {
-            checked.removeListener();
+            defaultMailtoChecked.removeListener();
             clearInterval(intervalFunction);
         };
     }, [api]);

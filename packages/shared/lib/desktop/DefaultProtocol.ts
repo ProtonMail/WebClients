@@ -8,6 +8,11 @@ const zDefaultProtocolActual = z.object({
 });
 export type DefaultProtocolActual = z.infer<typeof zDefaultProtocolActual>;
 
+export const UNCHECKED_PROTOCOL: DefaultProtocolActual = {
+    isDefault: false,
+    wasChecked: false,
+};
+
 const zDefaultProtocolStored = z.object({
     shouldBeDefault: z.boolean(),
     wasDefaultInPast: z.boolean(),
