@@ -85,28 +85,31 @@ const ContactEditModal = ({
     const nameProperty = getSortedProperties(vCardContact, 'n')[0] as VCardProperty<VcardNValue>;
     const photoProperty = getSortedProperties(vCardContact, 'photo')[0] as VCardProperty<string>;
 
-    const getContactEmail = (email: string) => {
-        return contactEmails.find((contactEmail) => {
+    const getContactEmail = (email: string) =>
+        contactEmails.find((contactEmail) => {
             if (contactID) {
                 return (
                     contactEmail.ContactID === contactID &&
                     canonicalizeEmail(contactEmail.Email) === canonicalizeEmail(email)
                 );
             }
-            // If the contact did not exist before adding contact group to of his addresses, contactID is not defined, and we have no ways to get it.
-            // If we rely on thi contactID, adding contact groups would become impossible.
-            // => To avoid adding to the wrong contact, check the contact name + the email instead
-            // This is still not perfect, because creating a new contact with the same name and same address than a one existing
+            // If the contact does not exist before adding to contact group, contactID is not defined, and we have no way of getting it.
+            // If we rely on contactID, adding contact groups would become impossible.
+            // To avoid adding to the wrong contact, check the contact name + the email instead of contactID.
+            // This is still not perfect, because creating a new contact with the same name and same address than one existing
             // might (depending on the first one found in the list) add the group to the older contact.
-            // That's a super rare case, so I will suggest to live with this "bug"
+            // That's a super rare case, so I will suggest we live with this "bug".
             // ---
-            // We also need to trim the value, contactEmails names are trimmed when we save a new contact, but we might have an extra space in the input
+            // We also need to trim the value, as form values aren't trimmed until we save the new contact.
+            const { familyNames, givenNames } = nameProperty.value;
+            const fullName = `${givenNames.join(' ').trim()} ${familyNames.join(' ').trim()}`.trim();
+            const displayName = displayNameProperty.value.trim();
+
             return (
-                displayNameProperty.value.trim() === contactEmail.Name &&
+                (fullName === contactEmail.Name || displayName === contactEmail.Name) &&
                 canonicalizeEmail(contactEmail.Email) === canonicalizeEmail(email)
             );
         });
-    };
 
     useEffect(() => {
         if (loadingContactEmails) {
@@ -255,7 +258,6 @@ const ContactEditModal = ({
         });
     };
 
-    // eslint-disable-next-line @typescript-eslint/no-misused-promises
     const saveContactGroups = useHandler(async () => {
         await Promise.all(
             Object.values(modelContactEmails).map(async (modelContactEmail) => {
