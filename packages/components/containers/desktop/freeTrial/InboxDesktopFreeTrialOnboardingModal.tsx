@@ -15,7 +15,7 @@ import protonDesktop from '@proton/styles/assets/img/illustrations/proton-deskto
 import { freeTrialUpgradeClick } from '../openExternalLink';
 import useInboxFreeTrial from './useInboxFreeTrial';
 
-const InboxDesktopFreeTrialOnboardingModal = () => {
+export const InboxDesktopFreeTrialOnboardingModal = () => {
     const { firstLogin, startFreeTrial } = useInboxFreeTrial();
     const [user] = useUser();
     const [modalState, setModalState, render] = useModalState();
@@ -78,5 +78,3 @@ const InboxDesktopFreeTrialOnboardingModal = () => {
         </>
     );
 };
-
-export default InboxDesktopFreeTrialOnboardingModal;

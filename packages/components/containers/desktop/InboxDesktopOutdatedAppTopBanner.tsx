@@ -88,7 +88,7 @@ const DisplayTopBanner = ({ displayTopBanner, link }: { displayTopBanner: boolea
     );
 };
 
-const InboxDesktopOutdatedAppTopBanner = () => {
+export const InboxDesktopOutdatedAppTopBanner = () => {
     const version = electronAppVersion;
     const { windowsApp, macosApp, linuxApp, loading } = useInboxDesktopVersion();
     const isUpdateBannerDisabled = useFlag('InboxDesktopManualUpdateBannerDisabled');
@@ -121,5 +121,3 @@ const InboxDesktopOutdatedAppTopBanner = () => {
         </>
     );
 };
-
-export default InboxDesktopOutdatedAppTopBanner;
