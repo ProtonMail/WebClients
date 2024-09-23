@@ -110,7 +110,7 @@ const DownloadCard = ({ version, icon, platform, isBeta, children }: DownloadSec
     );
 };
 
-const InboxDesktopSettingsSection = () => {
+export const InboxDesktopSettingsSection = () => {
     const { windowsApp, macosApp, linuxApp } = useInboxDesktopVersion();
     const isWindowsAppOK = windowsApp && windowsApp.File[0]?.Url && windowsApp.Version;
     const isMacosAppOK = macosApp && macosApp.File[0]?.Url && macosApp.Version;
@@ -156,5 +156,3 @@ const InboxDesktopSettingsSection = () => {
         </SettingsSectionWide>
     );
 };
-
-export default InboxDesktopSettingsSection;
