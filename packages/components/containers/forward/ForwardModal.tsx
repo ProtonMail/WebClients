@@ -31,7 +31,6 @@ import illustration from '@proton/styles/assets/img/illustrations/forward-email-
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import {
-    useAddressFlags,
     useAddresses,
     useApi,
     useAuthentication,
@@ -43,6 +42,7 @@ import {
     useGetUserKeys,
     useNotifications,
 } from '../../hooks';
+import useAddressFlags from '../../hooks/useAddressFlags';
 import type { Condition } from '../filters/interfaces';
 import { FilterStatement } from '../filters/interfaces';
 import ForwardConditions from './ForwardConditions';

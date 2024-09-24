@@ -1,10 +1,7 @@
 export { default as useActiveBreakpoint } from './useActiveBreakpoint';
 export * from './useActiveBreakpoint';
-export { default as useElementBreakpoints } from './useElementBreakpoints';
-export { default as useActiveWindow } from './useActiveWindow';
 export { default as useAddresses, useGetAddresses } from './useAddresses';
 export { useAddressesKeys, useGetAddressKeys } from './useAddressesKeys';
-export { default as useAddressFlags } from './useAddressFlags';
 export { default as useApi } from './useApi';
 export { default as useApiResult } from './useApiResult';
 export { default as useApiWithoutResult } from './useApiWithoutResult';
