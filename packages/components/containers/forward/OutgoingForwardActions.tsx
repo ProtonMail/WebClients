@@ -15,13 +15,13 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import {
     useActiveBreakpoint,
-    useAddressFlags,
     useApi,
     useEventManager,
     useGetAddressKeys,
     useGetPublicKeysForInbox,
     useNotifications,
 } from '../../hooks';
+import useAddressFlags from '../../hooks/useAddressFlags';
 import ConfirmDeleteForwarding from './ConfirmDeleteForwarding';
 import ForwardModal from './ForwardModal';
 import { enableForwarding, isLastOutgoingNonE2EEForwarding } from './helpers';

@@ -2,7 +2,8 @@ import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { useElementBreakpoints, useFolders, useLabels } from '@proton/components/hooks';
+import { useElementBreakpoints } from '@proton/components';
+import { useFolders, useLabels } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
 import { useMailSelector } from 'proton-mail/store/hooks';
