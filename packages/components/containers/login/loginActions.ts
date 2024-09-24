@@ -46,7 +46,7 @@ import { srpVerify } from '@proton/shared/lib/srp';
 import { AUTH_VERSION } from '@proton/srp';
 import noop from '@proton/utils/noop';
 
-import type { ChallengeResult } from '../challenge';
+import type { ChallengeResult } from '../challenge/interface';
 import type { AuthActionResponse, AuthCacheResult, AuthSession, AuthType } from './interface';
 import { AuthStep } from './interface';
 import { getAuthTypes, handleUnlockKey } from './loginHelper';
