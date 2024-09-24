@@ -4,21 +4,24 @@ import { validateFormCredentials } from 'proton-pass-extension/lib/utils/form-en
 import { c } from 'ttag';
 
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import { hasUserIdentifier } from '@proton/pass/lib/items/item.predicates';
+import { hasUserIdentifier, matchesLoginPassword, matchesLoginURL } from '@proton/pass/lib/items/item.predicates';
 import { intoLoginItemPreview } from '@proton/pass/lib/items/item.utils';
 import { itemCreationIntent, itemCreationSuccess, itemEditIntent, itemEditSuccess } from '@proton/pass/store/actions';
 import { selectAutosaveCandidate, selectItem, selectWritableVaults } from '@proton/pass/store/selectors';
 import type { AutosavePrompt, FormEntry } from '@proton/pass/types';
 import { AutosaveMode, WorkerMessageType } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
+import { and } from '@proton/pass/utils/fp/predicates';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { sanitizeURL } from '@proton/pass/utils/url/sanitize';
+import { parseUrl } from '@proton/pass/utils/url/parser';
+import { intoDomainWithPort } from '@proton/pass/utils/url/utils';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
 export const createAutoSaveService = () => {
-    const resolve = withContext<(entry: FormEntry) => AutosavePrompt>((ctx, { type, data, domain, subdomain }) => {
+    const resolve = withContext<(entry: FormEntry) => AutosavePrompt>((ctx, options) => {
+        const { type, data, domain } = options;
+
         /* If credentials are not valid for the form type : exit early */
         if (!validateFormCredentials(data, { type, partial: false })) return { shouldPrompt: false };
 
@@ -27,9 +30,13 @@ export const createAutoSaveService = () => {
         const shareIds = selectWritableVaults(state).map(prop('shareId'));
 
         if (type === 'register') {
-            const candidates = selectAutosaveCandidate({ domain, subdomain, userIdentifier: '', shareIds })(state);
-            const pwMatch = candidates.filter((item) => deobfuscate(item.data.content.password) === password);
-            const fullMatch = Boolean(userIdentifier) && pwMatch.some(hasUserIdentifier(userIdentifier));
+            const candidates = selectAutosaveCandidate({ domain, userIdentifier: '', shareIds })(state);
+            const pwMatch = candidates.filter(matchesLoginPassword(password));
+
+            /** Full match must account for userIdentifier & current URL */
+            const fullMatch =
+                Boolean(userIdentifier) &&
+                pwMatch.some(and(hasUserIdentifier(userIdentifier), matchesLoginURL(options)));
 
             /* The credentials may have been saved during the password-autosuggest autosave
              * sequence - as such ensure we don't have an exact username/password match */
@@ -44,12 +51,12 @@ export const createAutoSaveService = () => {
 
         /* If no login items found for the current domain & the
          * current username - prompt for autosaving a new entry */
-        const candidates = selectAutosaveCandidate({ domain, subdomain, userIdentifier, shareIds })(state);
+        const candidates = selectAutosaveCandidate({ domain, userIdentifier, shareIds })(state);
         if (candidates.length === 0) return { shouldPrompt: true, data: { type: AutosaveMode.NEW } };
 
         /* If we cannot find an entry which also matches the current submission's
          * password then we should prompt for update */
-        const match = candidates.some((item) => deobfuscate(item.data.content.password) === password);
+        const match = candidates.some(and(matchesLoginPassword(password), matchesLoginURL(options)));
 
         return match
             ? { shouldPrompt: false }
@@ -61,28 +68,28 @@ export const createAutoSaveService = () => {
 
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.AUTOSAVE_REQUEST,
-        withContext(async (ctx, { payload }) => {
+        withContext(async (ctx, { payload }, sender) => {
             const state = ctx.service.store.getState();
-            const { valid, url } = sanitizeURL(payload.domain);
+
+            const { domain, subdomain, port, protocol } = parseUrl(sender.tab?.url);
+            const url = intoDomainWithPort({ domain: subdomain ?? domain, port, protocol });
 
             if (payload.type === AutosaveMode.NEW) {
                 const item = itemBuilder('login');
+                const content = item.get('content');
 
                 item.get('metadata')
                     .set('name', payload.name)
-                    .set('note', c('Info').t`Autosaved on ${payload.domain}`);
+                    .set('note', c('Info').t`Autosaved on ${url}`);
 
-                item.get('content')
+                content
                     .set('password', payload.password)
-                    .set('urls', valid ? [url] : [])
+                    .set('urls', url ? [url] : [])
                     .set('passkeys', payload.passkey ? [payload.passkey] : []);
 
                 // TODO: migrate to use Rust's email validation
-                if (validateEmailAddress(payload.userIdentifier)) {
-                    item.get('content').set('itemEmail', payload.userIdentifier);
-                } else {
-                    item.get('content').set('itemUsername', payload.userIdentifier);
-                }
+                if (validateEmailAddress(payload.userIdentifier)) content.set('itemEmail', payload.userIdentifier);
+                else content.set('itemUsername', payload.userIdentifier);
 
                 return new Promise<boolean>((resolve) =>
                     ctx.service.store.dispatch(
@@ -107,20 +114,20 @@ export const createAutoSaveService = () => {
                 if (!currentItem) throw new Error(c('Error').t`Item does not exist`);
 
                 const item = itemBuilder('login', currentItem.data);
+                const content = item.get('content');
                 const { passkey } = payload;
 
                 item.get('metadata').set('name', payload.name);
 
-                item.get('content')
+                content
                     .set('password', (password) => (passkey ? password : payload.password))
-                    .set('urls', (urls) => Array.from(new Set(urls.concat(valid ? [url] : []))))
+                    .set('urls', (urls) => (url ? Array.from(new Set(urls.concat(url))) : urls))
                     .set('passkeys', (passkeys) => (passkey ? [...passkeys, passkey] : passkeys));
 
                 // TODO: migrate to use Rust's email validation
                 const isEmail = validateEmailAddress(payload.userIdentifier);
                 const userIdKey = isEmail ? 'itemEmail' : 'itemUsername';
-
-                item.get('content').set(userIdKey, (value) => (passkey ? value : payload.userIdentifier));
+                content.set(userIdKey, (value) => (passkey ? value : payload.userIdentifier));
 
                 return new Promise<boolean>((resolve) =>
                     ctx.service.store.dispatch(
