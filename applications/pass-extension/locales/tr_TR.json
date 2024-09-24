@@ -116,10 +116,10 @@
       "Create": [
         "Ekle"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Bir ${ BRAND_NAME } hesabı açın"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Bir ${ BRAND_NAME } hesabı açın"
       ],
       "Create a new vault to share": [
@@ -634,6 +634,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } dosyası işlenemedi. ${ errorDetail }"
       ],
+      "[Error] an item could not be parsed": [
+        "[hata] bir öge işlenemedi"
+      ],
       "Alias could not be updated at the moment. Please try again later": [
         "Takma ad şu anda güncellenemedi. Lütfen bir süre sonra yeniden deneyin"
       ],
@@ -897,6 +900,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Güvenli bağlantı kaldırılırken bir hata oluştu. Lütfen birkaç dakika içinde tekrar deneyin."
       ],
+      "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
+        "Bu durum, ${ PASS_SHORT_APP_NAME } uygulamasını uzun süre kullanmamanızdan veya Safari geçmişinizi temizlemenizden kaynaklanabilir."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Çok fazla sayıda başarısız deneme yapıldı. Lütfen yeniden oturum açın."
       ],
@@ -956,6 +962,9 @@
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Şu anda çevrim dışısınız. ${ PASS_SHORT_APP_NAME } kilidini açmak için lütfen yeniden bağlanın."
+      ],
+      "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
+        "Tarayıcınız ${ PASS_APP_NAME } uygulamasını etkinleştirmekte sorun yaşıyor."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN kodunuz başka bir ${ PASS_APP_NAME } istemcisi tarafından kaldırıldı"
@@ -1051,7 +1060,7 @@
         "${ PASS_APP_NAME } yalnızca oturum açma, not, kredi kartı ve kimlik kayıtlarını içe aktarır."
       ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
-        "${ PASS_APP_NAME }, oluşturulan parolalar otomatik olarak doldurulduğunda size bilgi verir."
+        "${ PASS_APP_NAME }, oluşturulan parolalar otomatik olarak doldurulduğunda size bilgi verecek."
       ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } kimlik doğrulama bilgilerinizi kaydetmeyi ya da güncellemeyi soracak."
@@ -1104,6 +1113,9 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "İçe aktarma işlemi tamamlandığında, güvende kalmak için parolalarınızın bulunduğu dosyayı silebilirsiniz."
+      ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "SimpleLogin takma ad yönetimi özellikleri yakında geliyor!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Takma ad kullanımdan kaldırıldı. Artık ${ item.aliasEmail } adresine gönderilen e-postaları almayacaksınız"
@@ -1725,6 +1737,9 @@
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "İçe aktarılan verilerinizi gözden geçirmek için tarayıcınızın araç çubuğundaki Proton Pass simgesine tıklayın."
       ],
+      "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
+        "Eklentiyi yeniden yüklemeyi ya da yeniden kurmayı deneyin ve tarayıcınızın ve ${ PASS_SHORT_APP_NAME } uygulamasının güncel olduğundan emin olun."
+      ],
       "Unable to copy to clipboard": [
         "Panoya kopyalanamadı"
       ],
@@ -1957,6 +1972,9 @@
       "Alias address": [
         "Takma ad adresi"
       ],
+      "Alias management": [
+        "Takma ad yönetimi"
+      ],
       "Aliases": [
         "Takma adlar"
       ],
@@ -1993,8 +2011,8 @@
       "Autosave": [
         "Otomatik kaydet"
       ],
-      "Autosave vault": [
-        "Kasa otomatik kaydedilsin"
+      "Autosuggest": [
+        "Otomatik öneri"
       ],
       "Biometrics": [
         "Biyometri"
@@ -2663,9 +2681,6 @@
       "MM/YY": [
         "AA/YY"
       ],
-      "Other": [
-        "Diğer"
-      ],
       "Password": [
         "Parola"
       ],
@@ -2722,6 +2737,9 @@
       ]
     },
     "Title": {
+      "${ PASS_APP_NAME } Settings": [
+        "${ PASS_APP_NAME } ayarları"
+      ],
       "Auto-lock update": [
         "Ootmatik kilitleme güncellemesi"
       ],
