@@ -1,31 +1,12 @@
 import { parse } from 'tldts';
 import type { Runtime } from 'webextension-polyfill';
 
-import type { MaybeNull, RequiredNonNull, TabId } from '@proton/pass/types';
-
-import { isValidURL } from './is-valid-url';
-
-export type ParsedUrl = {
-    /* domain without suffix */
-    displayName: MaybeNull<string>;
-    /* widest top-level domain */
-    domain: MaybeNull<string>;
-    /* subdomain if any */
-    subdomain: MaybeNull<string>;
-    /* hostname of the URL */
-    hostname: MaybeNull<string>;
-    /* protocol */
-    protocol: MaybeNull<string>;
-    /* URL matches top-level domain */
-    isTopLevelDomain: boolean;
-    /* private domain from public suffix list */
-    isPrivate: boolean;
-    /* matches `https:` protocol */
-    isSecure: boolean;
-};
+import { sanitizeURL } from './sanitize';
+import type { ParsedSender, ParsedUrl } from './types';
+import { isSupportedSenderUrl } from './utils';
 
 export const parseUrl = (url?: string): ParsedUrl => {
-    const check = isValidURL(url ?? '');
+    const check = sanitizeURL(url ?? '');
 
     if (!check.valid) {
         return {
@@ -33,6 +14,7 @@ export const parseUrl = (url?: string): ParsedUrl => {
             domain: null,
             subdomain: null,
             protocol: null,
+            port: null,
             hostname: null,
             isTopLevelDomain: false,
             isPrivate: false,
@@ -51,19 +33,13 @@ export const parseUrl = (url?: string): ParsedUrl => {
         domain: domain ?? hostname /* fallback on hostname for localhost support */,
         subdomain: subdomain && subdomain !== 'www' ? hostname : null,
         protocol: check.protocol,
+        port: check.port,
         hostname,
         isTopLevelDomain: !subdomain || subdomain === 'www',
         isPrivate: isPrivate ?? subdomain !== null,
         isSecure: check.url.startsWith('https://'),
     };
 };
-
-type ParsedSenderUrl = RequiredNonNull<ParsedUrl, 'domain' | 'protocol'>;
-
-export type ParsedSender = { tabId: TabId; url: ParsedSenderUrl };
-
-const isSupportedSenderUrl = (parsedUrl: ParsedUrl): parsedUrl is ParsedSenderUrl =>
-    parsedUrl.domain !== null && parsedUrl.protocol !== null;
 
 /* Safely parses the sender information, providing compatibility
  * for non-Chromium browsers: if available, uses the MessageSender origin
