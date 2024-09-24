@@ -466,9 +466,6 @@
       "Edit name": [
         "Name bearbeiten"
       ],
-      "Edit organization identity": [
-        "Organisationsidentität bearbeiten"
-      ],
       "Edit organization name": [
         "Organisationsname bearbeiten"
       ],
@@ -891,6 +888,9 @@
       ],
       "Resume": [
         "Fortsetzen"
+      ],
+      "Resume membership": [
+        "Mitgliedschaft fortsetzen"
       ],
       "Retry": [
         "Erneut versuchen"
@@ -1463,6 +1463,9 @@
       ],
       "Fast and secure. No logs are kept.": [
         "Schnell und sicher. Ohne Protokollierung."
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Auf ${ BRAND_NAME }-Servern ausführen"
       ],
       "Run on device": [
         "Auf dem Gerät ausführen"
@@ -3565,6 +3568,17 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Hilf uns, besser zu werden"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Bestätige den Verlust des ${ PASS_APP_NAME }-Sonderrabatts"
+      ],
+      "Remove discount": [
+        "Rabatt entfernen"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Dein ${ PLAN_NAMES[PLANS.PASS] }-Abonnement hat einen Sonderpreis von ${ price } pro Jahr. Durch ein Downgrade auf ein kostenloses Abonnement verlierst du den Rabatt dauerhaft, auch wenn du in Zukunft wieder ein Upgrade durchführst."
       ]
     },
     "Download link": {
@@ -6799,9 +6813,6 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Bist du sicher, dass du die Domain ${ boldDomain } entfernen möchtest?"
       ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Bitte den Administrator deiner Organisation, Gateways einzurichten."
-      ],
       "Attention required": [
         "Aufmerksamkeit erforderlich"
       ],
@@ -7049,6 +7060,9 @@
       "Disable recovery by ${ type }": [
         "Wiederherstellung über ${ type } deaktivieren"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Deaktiviert seit ${ formattedDateAndTime }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Wenn du die Zwei-Faktor-Authentifizierung deaktivierst, wird dein Konto weniger sicher. Fahre nur fort, wenn es unbedingt notwendig ist."
       ],
@@ -7163,6 +7177,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Aktiviere TLS oder SSL für den externen Dienst, falls dies unterstützt wird."
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Aktiviert seit ${ formattedDateAndTime }"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Wenn du die Wiederherstellung mittels Phrase erneut aktivierst, wird eine neue Wiederherstellungsphrase generiert."
@@ -7942,6 +7959,9 @@
       ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Sei dir darüber im Klaren, dass wenn du diesen Filter ${ nameDeleted } löschst, wir alle automatischen Aktionen, die damit verbunden sind, aufheben."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ remainingCreditsFormatted } Guthaben auf deinem Konto verbleiben."
       ],
       "please open a support ticket": [
         "öffne bitte ein Support-Ticket"
@@ -9926,9 +9946,6 @@
       "Current email": [
         "Aktuelle E-Mail-Adresse"
       ],
-      "Current organization identity": [
-        "Aktuelle Organisationsidentität"
-      ],
       "Daily email notifications": [
         "Tägliche E-Mail-Benachrichtigungen"
       ],
@@ -10018,9 +10035,6 @@
       ],
       "Email or username": [
         "E‐Mail‐Adresse oder Benutzername"
-      ],
-      "Email settings": [
-        "E-Mail-Einstellungen"
       ],
       "Emails": [
         "E-Mails"
@@ -10253,9 +10267,6 @@
       "New login password": [
         "Neues Anmeldepasswort"
       ],
-      "New organization identity": [
-        "Neue Organisationsidentität"
-      ],
       "New organization password": [
         "Neues Organisationspasswort"
       ],
@@ -10303,9 +10314,6 @@
       ],
       "Or": [
         "Oder"
-      ],
-      "Organization identity": [
-        "Organisationsidentität"
       ],
       "Organization name": [
         "Name der Organisation"
@@ -11028,6 +11036,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-Schreibassistent hinzufügen"
       ],
@@ -11266,11 +11277,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Brasilianischer Real"
+      ],
       "Euro": [
         "Euro"
       ],
       "Swiss franc": [
         "Schweizer Franken"
+      ],
+      "US Dollar": [
+        "US-Dollar"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -15319,6 +15336,11 @@
         "Dein Abonnement wurde über eine iOS App gekauft. Um Änderungen an deinem Abonnement oder deinen Zahlungsdetails durchführen zu können, musst du zum Apple App Store gehen."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Das Abonnement wird am Ende des Abrechnungszeitraums herabgestuft."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Für ${ totalPrice }"
@@ -15858,9 +15880,6 @@
       "Organization activated": [
         "Organisation aktiviert"
       ],
-      "Organization identity updated": [
-        "Organisationsidentität aktualisiert"
-      ],
       "Organization logo removed": [
         "Organisationslogo entfernt"
       ],
@@ -15896,6 +15915,9 @@
       ],
       "Premium address created": [
         "Premium-Adresse erstellt"
+      ],
+      "Problem reported": [
+        "Problem gemeldet"
       ],
       "Resuming import": [
         "Import wird fortgesetzt"
@@ -16228,9 +16250,6 @@
       "Account recovery": [
         "Kontowiederherstellung"
       ],
-      "Account settings": [
-        "Konto-Einstellungen"
-      ],
       "Account suspended": [
         "Konto gesperrt"
       ],
@@ -16493,9 +16512,6 @@
       "Custom filters": [
         "Benutzerdefinierte Filter"
       ],
-      "Custom folders and labels": [
-        "Benutzerdefinierte Ordner und Kategorien"
-      ],
       "Custom selection of users": [
         "Individuelle Auswahl von Nutzern"
       ],
@@ -16634,9 +16650,6 @@
       ],
       "Edit invoice details": [
         "Rechnungsdetails bearbeiten"
-      ],
-      "Edit organization identity": [
-        "Organisationsidentität bearbeiten"
       ],
       "Edit profile": [
         "Profil bearbeiten"
@@ -16985,9 +16998,6 @@
       "Privacy and data collection": [
         "Privatsphäre und Datenerfassung"
       ],
-      "Privacy and security": [
-        "Datenschutz und Sicherheit"
-      ],
       "Processing...": [
         "Wird verarbeitet..."
       ],
@@ -17170,9 +17180,6 @@
       ],
       "Sort labels alphabetically": [
         "Kategorien alphabetisch sortieren"
-      ],
-      "Spam filters": [
-        "Spamfilter"
       ],
       "Spam, block, and allow lists": [
         "Listen gesperrter und zugelassener Absender"

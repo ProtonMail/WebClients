@@ -466,9 +466,6 @@
       "Edit name": [
         "სახელის ჩასწორება"
       ],
-      "Edit organization identity": [
-        "ორგანიზაციის იდენტიფიკატორის ჩასწორება"
-      ],
       "Edit organization name": [
         "ორგანიზაციის სახელის ჩასწორება"
       ],
@@ -3577,6 +3574,17 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "დაგვეხმარეთ, გავუმჯობესდეთ"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "დაადასტურეთ ${ PASS_APP_NAME }-ის სპეციალური ფასდაკლების დაკარგვა"
+      ],
+      "Remove discount": [
+        "ფასდაკლების წაშლა"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "თქვენი ${ PLAN_NAMES[PLANS.PASS] }-ის გამოწერა წელიწადში სპეციალური ${ price } ღირს. Free სატარიფო გეგმაზე ჩამოწევით ფასადკლებას სამუდამოდ დაკარგავთ იმის მიუხედავად, ასწევთ თუ არა სატარიფო გეგმას მომავალში."
       ]
     },
     "Download link": {
@@ -6823,9 +6831,6 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ დომენი ${ boldDomain }?"
       ],
-      "Ask your organisation admin to setup Gateways.": [
-        "სთხოვეთ ორგანიზაციის ადმინისტრატორს, რაუტერები დააყენოს."
-      ],
       "Attention required": [
         "საჭიროა ყურადღება"
       ],
@@ -9959,9 +9964,6 @@
       "Current email": [
         "მიმდინარე ელფოსტა"
       ],
-      "Current organization identity": [
-        "მიმდინარე ორგანიზაციის იდენტიფიკატორი"
-      ],
       "Daily email notifications": [
         "ელფოსტის დღიური გაფრთხილებები"
       ],
@@ -10051,9 +10053,6 @@
       ],
       "Email or username": [
         "ელფოსტა ან მომხმარებლის სახელი"
-      ],
-      "Email settings": [
-        "ელფოსტის მორგება"
       ],
       "Emails": [
         "ელფოსტები"
@@ -10286,9 +10285,6 @@
       "New login password": [
         "ახალი შესვლის პაროლი"
       ],
-      "New organization identity": [
-        "ახალი ორგანიზაციის იდენტიფიკატორი"
-      ],
       "New organization password": [
         "ორგანიზაციის ახალი პაროლი"
       ],
@@ -10336,9 +10332,6 @@
       ],
       "Or": [
         "ან"
-      ],
-      "Organization identity": [
-        "ორგანიზაციის იდენტიფიკატორი"
       ],
       "Organization name": [
         "ორგანიზაციის სახელი"
@@ -15373,6 +15366,11 @@
         "თქვენი გეგმა iOS-ის აპით იქნა შეძენილი. იმისთვის, რომ თქვენს გეგმაში ცვლილებები შეიტნოთ, ან განაახლოთ გადახდის დეტალები, Apple App Store-ზე უნდა გადახვიდეთ."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "გამოწერის სატარიფო გეგმა ჩამოიწევა გადახდის ციკლის ბოლოს."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice }-თვის"
@@ -15912,9 +15910,6 @@
       "Organization activated": [
         "ორგანიზაცია გააქტიურდა"
       ],
-      "Organization identity updated": [
-        "ორგანიზაციის იდენტიფიკატორი განახლდა"
-      ],
       "Organization logo removed": [
         "ორგანიზაციის ლოგო წაიშალა"
       ],
@@ -16285,9 +16280,6 @@
       "Account recovery": [
         "ანგარიშის აღდგენა"
       ],
-      "Account settings": [
-        "ანგარიშის მორგება"
-      ],
       "Account suspended": [
         "ანგარიში შეჩერებულია"
       ],
@@ -16550,9 +16542,6 @@
       "Custom filters": [
         "მორგებული ფილტრები"
       ],
-      "Custom folders and labels": [
-        "მორგებული საქაღალდეები და ჭდეები"
-      ],
       "Custom selection of users": [
         "ხელით მითითებული მომხმარებლები"
       ],
@@ -16691,9 +16680,6 @@
       ],
       "Edit invoice details": [
         "ინვოისის დეტალების ჩასწორება"
-      ],
-      "Edit organization identity": [
-        "ორგანიზაციის იდენტიფიკატორის ჩასწორება"
       ],
       "Edit profile": [
         "პროფილის შეცვლა"
@@ -17042,9 +17028,6 @@
       "Privacy and data collection": [
         "კონფიდენციალურობა და მონაცემების შეგროვება"
       ],
-      "Privacy and security": [
-        "კონფიდენციალობა და უსაფრთხოება"
-      ],
       "Processing...": [
         "დამუშავება..."
       ],
@@ -17227,9 +17210,6 @@
       ],
       "Sort labels alphabetically": [
         "ჭდეების ანბანით დალაგება"
-      ],
-      "Spam filters": [
-        "სპამის ფილტრები"
       ],
       "Spam, block, and allow lists": [
         "სპამი, დაბლოკვა და დაშვებული სიები"

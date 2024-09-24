@@ -466,9 +466,6 @@
       "Edit name": [
         "Editar nombre"
       ],
-      "Edit organization identity": [
-        "Editar la identidad de la organización"
-      ],
       "Edit organization name": [
         "Editar el nombre de la organización"
       ],
@@ -3587,7 +3584,7 @@
         "Eliminar descuento"
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
-        "La suscripción del plan ${ PLAN_NAMES[PLANS.PASS] } tiene un precio especial de ${ price } al año. Al cambiar al plan Free perderá el descuento permanentemente incluso si actualiza el plan en el futuro."
+        "La suscripción del plan ${ PLAN_NAMES[PLANS.PASS] } tiene un precio especial de ${ price } al año. Al cambiar al plan Free perderá el descuento permanentemente incluso si mejora el plan en el futuro."
       ]
     },
     "Download link": {
@@ -4722,6 +4719,11 @@
       ],
       "Zero keys reactivated": [
         "Ninguna clave reactivada"
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "Ingrese una dirección de correo electrónico"
       ]
     },
     "Error importing calendar": {
@@ -6837,7 +6839,7 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "¿Está seguro de que quiere quitar el dominio ${ boldDomain }?"
       ],
-      "Ask your organisation admin to setup Gateways.": [
+      "Ask your organization admin to setup Gateways.": [
         "Pregunte al administrador de la organización para configurar puertas de enlace."
       ],
       "Attention required": [
@@ -8154,6 +8156,9 @@
       ],
       "SCIM token active": [
         "Token SCIM activo"
+      ],
+      "Search by an email address to begin": [
+        "Busque por dirección de correo electrónico para empezar."
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Asegure la cuenta de ${ BRAND_NAME }"
@@ -9976,9 +9981,6 @@
       "Current email": [
         "Correo electrónico actual"
       ],
-      "Current organization identity": [
-        "Identidad actual de la organización"
-      ],
       "Daily email notifications": [
         "Notificaciones diarias por correo electrónico"
       ],
@@ -10068,9 +10070,6 @@
       ],
       "Email or username": [
         "Correo o nombre de usuario"
-      ],
-      "Email settings": [
-        "Ajustes del correo"
       ],
       "Emails": [
         "Correos"
@@ -10303,9 +10302,6 @@
       "New login password": [
         "Contraseña nueva de inicio de sesión"
       ],
-      "New organization identity": [
-        "Nueva identidad de la organización"
-      ],
       "New organization password": [
         "Contraseña nueva de la organización"
       ],
@@ -10353,9 +10349,6 @@
       ],
       "Or": [
         "O"
-      ],
-      "Organization identity": [
-        "Identidad de la organización"
       ],
       "Organization name": [
         "Nombre de la organización"
@@ -10461,6 +10454,9 @@
       ],
       "Reveal password": [
         "Mostrar contraseña"
+      ],
+      "Search by email": [
+        "Buscar por correo electrónico"
       ],
       "Second password": [
         "Segunda contraseña"
@@ -13051,6 +13047,29 @@
         "Los usuarios verán el logo en lugar del ícono de ${ BRAND_NAME } cuando inicien sesión en la aplicación web."
       ]
     },
+    "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify } su dirección de correo electrónico ${ email } para establecer la identidad de la organización."
+      ],
+      "Current organization identity": [
+        "Identidad actual de la organización"
+      ],
+      "Edit organization identity": [
+        "Editar la identidad de la organización"
+      ],
+      "New organization identity": [
+        "Nueva identidad de la organización"
+      ],
+      "Organization identity": [
+        "Identidad de la organización"
+      ],
+      "Organization identity updated": [
+        "Se actualizó la identidad de la organización."
+      ],
+      "Verify": [
+        "Verificar"
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (para Debian/Ubuntu)"
@@ -15392,7 +15411,7 @@
     },
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
-        "La suscripción se degradará al finalizar el ciclo de facturación."
+        "Pasará a un plan inferior al finalizar el ciclo de facturación."
       ]
     },
     "Subscription price": {
@@ -15934,9 +15953,6 @@
       "Organization activated": [
         "Organización activada"
       ],
-      "Organization identity updated": [
-        "Identidad de la organización actualizada"
-      ],
       "Organization logo removed": [
         "Logo de la organización eliminado"
       ],
@@ -16307,9 +16323,6 @@
       "Account recovery": [
         "Recuperación de cuenta"
       ],
-      "Account settings": [
-        "Ajustes de la cuenta"
-      ],
       "Account suspended": [
         "Cuenta suspendida"
       ],
@@ -16572,9 +16585,6 @@
       "Custom filters": [
         "Filtros personalizados"
       ],
-      "Custom folders and labels": [
-        "Carpetas y etiquetas personalizadas"
-      ],
       "Custom selection of users": [
         "Selección personalizada de usuarios"
       ],
@@ -16713,9 +16723,6 @@
       ],
       "Edit invoice details": [
         "Editar los datos de la factura"
-      ],
-      "Edit organization identity": [
-        "Editar la identidad de la organización"
       ],
       "Edit profile": [
         "Editar perfil"
@@ -17067,9 +17074,6 @@
       "Privacy and data collection": [
         "Privacidad y recolección de datos"
       ],
-      "Privacy and security": [
-        "Privacidad y seguridad"
-      ],
       "Processing...": [
         "Procesando..."
       ],
@@ -17252,9 +17256,6 @@
       ],
       "Sort labels alphabetically": [
         "Ordenar las etiquetas alfabéticamente"
-      ],
-      "Spam filters": [
-        "Filtros de spam"
       ],
       "Spam, block, and allow lists": [
         "Listas de direcciones permitidas, bloqueadas y spam"
@@ -17611,6 +17612,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si compó un código de regalo o recibió uno de nuestro equipo de soporte, puede ingresarlo aquí."
       ],
+      "IP address (Internet Service Provider)": [
+        "Dirección IP (proveedor de servicios de internet)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Los miembros que no usan 2FA recibirán un correo electrónico pidiéndoles que la activen tan pronto como sea posible."
       ],
@@ -17797,6 +17801,12 @@
       ]
     },
     "unprivatization": {
+      "Administrator access enabled": [
+        "Se activó el acceso de administrador."
+      ],
+      "Administrator access rejected": [
+        "Se rechazó acceso de administrador."
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Los administradores no pueden acceder a los datos de usuarios privados y no pueden restablecer sus contraseñas."
       ],
@@ -17856,6 +17866,9 @@
       ],
       "Send request": [
         "Enviar solicitud"
+      ],
+      "Something went wrong enabling administrator access: ${ error }": [
+        "Occurió un error al activar el acceso de administrador: ${ error }"
       ],
       "The user must have an address to request data access": [
         "El usuario debe tener una dirección para solicitar acceso a los datos"

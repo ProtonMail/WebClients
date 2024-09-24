@@ -466,9 +466,6 @@
       "Edit name": [
         "Muokkaa nimeä"
       ],
-      "Edit organization identity": [
-        "Muokkaa organisaation identiteettiä"
-      ],
       "Edit organization name": [
         "Muokkaa organisaation nimeä"
       ],
@@ -891,6 +888,9 @@
       ],
       "Resume": [
         "Jatka"
+      ],
+      "Resume membership": [
+        "Jatka jäsenyyttä"
       ],
       "Retry": [
         "Yritä uudelleen"
@@ -3576,6 +3576,17 @@
         "Auta meitä parantamaan"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Vahvista ${ PASS_APP_NAME }in erikoisalennuksen menettäminen."
+      ],
+      "Remove discount": [
+        "Poista alennus"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "${ PLAN_NAMES[PLANS.PASS] }-tilauksesi on erityishintaan ${ price } vuodessa. Jos vaihdat maksuttomaan tilaukseen, menetät alennuksen ikuisesti, vaikka päivittäisit uudelleen tulevaisuudessa."
+      ]
+    },
     "Download link": {
       ".deb for Debian / Ubuntu": [
         ".deb Debianille/Ubuntulle"
@@ -5145,6 +5156,9 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-ryhmää"
       ],
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Vain yksi ilmainen kokeilujakso käyttäjää kohden. Normaali hinnoittelu on voimassa sen jälkeen."
+      ],
       "Accounts with custom domains cannot join a group plan.": [
         "Omia verkkotunnuksia käyttävät tilit eivät voi liittyä ryhmätilaukseen."
       ],
@@ -5206,6 +5220,9 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Tilaus laskutetaan tämän tilauksen ensisijaiselta ylläpitäjältä."
       ],
+      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
+        "Helpottaaksemme siirtymää tarjoamme sinulle 30 päivän maksuttoman kokeilujakson ${ BRAND_NAME } Unlimitediin.*"
+      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Sinut on kutsuttu liittymään organisaatioon ${ invite.OrganizationName }"
       ],
@@ -5255,6 +5272,12 @@
       ]
     },
     "familyOffer_2023:Info": {
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Vain yksi ilmainen kokeilujakso käyttäjää kohden. Normaali hinnoittelu on voimassa sen jälkeen."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "Poistuttaan tilauksestasi, tämä käyttäjä siirretään ${ BRAND_NAME }  Unlimited -tilaukseen 30 päivän maksuttomalla kokeilujaksolla.*"
+      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Oletuksena myönnämme ${ formattedStorage } tallennustilaa ylläpitäjän tilille. Voit hallita lisäkäyttäjien kesken jaettua tallennustilaa myöhemmin."
       ],
@@ -6808,9 +6831,6 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Haluatko varmasti poistaa verkkotunnuksen ${ boldDomain }?"
       ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Pyydä organisaatiosi ylläpitoa määrittämään yhdyskäytävät."
-      ],
       "Attention required": [
         "Huomiota vaaditaan"
       ],
@@ -7058,6 +7078,9 @@
       "Disable recovery by ${ type }": [
         "Poista palautuksen ${ type }"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Pois käytöstä ${ formattedDateAndTime } lähtien"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Kaksivaiheisen tunnistautumisen käytöstä poistaminen heikentää tilisi suojausta. Jatka vain, jos se on välttämätöntä."
       ],
@@ -7172,6 +7195,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Ota TLS tai SSL käyttöön ulkoisessa palvelussa, jos sitä tuetaan."
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Käytössä ${ formattedDateAndTime } lähtien"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Palautuslausekkeen uusi käyttöönotto luo uuden palautuslausekkeen."
@@ -8950,6 +8976,9 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Voit käyttää todennuslokia nähdäksesi milloin ja mistä IP-osoitteista tiliäsi on käytetty. Tallennamme tilin avanneen IP-osoitteen, ajan sekä epäonnistuneet yritykset."
       ],
+      "You can enable the Photos section from the interface using the toggle below.": [
+        "Voit ottaa Kuvat-osion käyttöön käyttöliittymän alla olevalla painikkeella."
+      ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Voit avata yllä olevan määrityksen heti lisäämällä ${ specificCountryCount } tilauksesi IP-osoitteiden määrään tai ottamalla meihin yhteyttä räätälöityjä ratkaisuja varten."
       ],
@@ -9338,7 +9367,7 @@
         "Jos luot uuden avaimen, koska uskot, että nykyinen avaimesi on vaarantunut, merkitse nykyinen avaimesi vaarantuneeksi uuden avaimen luomisen jälkeen."
       ],
       "Key successfully generated.": [
-        "Avain luotu onnistuneesti."
+        "Avain on luotu."
       ],
       "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
         "Huomioi: Sinulla on jo samaa algoritmia käyttävä avain tälle osoitteelle. Jos se avain ei ole vaarantunut, voi uuden avaimen luonti olla tarpeetonta ja saattaa vain hidastaa tilisi toimintaa."
@@ -9935,9 +9964,6 @@
       "Current email": [
         "Nykyinen sähköpostiosoite"
       ],
-      "Current organization identity": [
-        "Nykyinen organisaation identiteetti"
-      ],
       "Daily email notifications": [
         "Päivittäiset sähköposti-ilmoitukset"
       ],
@@ -10027,9 +10053,6 @@
       ],
       "Email or username": [
         "Sähköpostiosoite tai käyttäjätunnus"
-      ],
-      "Email settings": [
-        "Sähköpostiasetukset"
       ],
       "Emails": [
         "Viestit"
@@ -10262,9 +10285,6 @@
       "New login password": [
         "Uusi kirjautumisen salasana"
       ],
-      "New organization identity": [
-        "Uusi organisaation identiteetti"
-      ],
       "New organization password": [
         "Uusi organisaation salasana"
       ],
@@ -10312,9 +10332,6 @@
       ],
       "Or": [
         "Tai"
-      ],
-      "Organization identity": [
-        "Organisaation identiteetti"
       ],
       "Organization name": [
         "Organisaation nimi"
@@ -11040,6 +11057,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Lisää ${ BRAND_NAME } Scribe kirjoitusavustaja"
       ],
@@ -11278,11 +11298,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Brasilian real"
+      ],
       "Euro": [
         "euroa"
       ],
       "Swiss franc": [
         "Sveitsin frangia"
+      ],
+      "US Dollar": [
+        "Yhdysvaltain dollari"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -13555,6 +13581,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Käsittelemme laskua koskevaa maksuasi. Odota maksun suoritusta, ennen kuin teet muutoksia tilaukseesi tai päivität maksutietojasi. Kiitos kärsivällisyydestäsi."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "${ amountToCharge } veloitetaan valitsemaltasi maksutavalta."
       ]
     },
     "Payments.Error": {
@@ -14719,6 +14748,11 @@
         "Salasanan nollauspyyntö"
       ]
     },
+    "Setting": {
+      "Enable Photos section": [
+        "Ota Kuvat-osio käyttöön"
+      ]
+    },
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Viimeistele siirtyminen yksityisyyteen turvallisilla tuonti- ja ohjaustyökaluillamme."
@@ -15332,6 +15366,11 @@
         "Tilauksesi ostettiin iOS-sovelluksella. Jos haluat muuttaa tilaustasi tai päivittää maksutietojasi, sinun on siirryttävä Apple App Storeen."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Tilaus alennetaan laskutusjakson päättyessä."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Hintaan ${ totalPrice }"
@@ -15871,9 +15910,6 @@
       "Organization activated": [
         "Organisaatio aktivoitiin"
       ],
-      "Organization identity updated": [
-        "Organisaation identiteetti päivitettiin"
-      ],
       "Organization logo removed": [
         "Organisaation logo poistettiin"
       ],
@@ -15962,7 +15998,7 @@
         "Kirjoitusavustajan asetukset päivitettiin"
       ],
       "You have successfully canceled your subscription.": [
-        "Olet onnistuneesti perunut tilauksesi."
+        "Olet perunut tilauksesi."
       ],
       "You have successfully unsubscribed": [
         "Tilauksesi on lopetettu"
@@ -16244,9 +16280,6 @@
       "Account recovery": [
         "Tilin palautus"
       ],
-      "Account settings": [
-        "Tilin asetukset"
-      ],
       "Account suspended": [
         "Tili on jäädytetty"
       ],
@@ -16509,9 +16542,6 @@
       "Custom filters": [
         "Omat suodattimet"
       ],
-      "Custom folders and labels": [
-        "Omat kansiot ja tunnisteet"
-      ],
       "Custom selection of users": [
         "Mukautettu käyttäjävalinta"
       ],
@@ -16650,9 +16680,6 @@
       ],
       "Edit invoice details": [
         "Muokkaa laskun tietoja"
-      ],
-      "Edit organization identity": [
-        "Muokkaa organisaation identiteettiä"
       ],
       "Edit profile": [
         "Muokkaa profiilia"
@@ -17001,9 +17028,6 @@
       "Privacy and data collection": [
         "Yksityisyys ja tiedonkeruu"
       ],
-      "Privacy and security": [
-        "Yksityisyys ja turvallisuus"
-      ],
       "Processing...": [
         "Käsitellään..."
       ],
@@ -17186,9 +17210,6 @@
       ],
       "Sort labels alphabetically": [
         "Jätjestä tunnisteet aakkosellisesti"
-      ],
-      "Spam filters": [
-        "Roskapostisuodattimet"
       ],
       "Spam, block, and allow lists": [
         "Roskapostin, estettyjen ja sallittujen listat"
