@@ -268,6 +268,9 @@
       "Link copied to clipboard": [
         "Link gekopieerd naar klembord"
       ],
+      "Link expires after": [
+        "Link verloopt na"
+      ],
       "Lock ${ PASS_APP_NAME }": [
         "Vergrendel ${ PASS_APP_NAME }"
       ],
@@ -291,6 +294,9 @@
       ],
       "Mark as resolved": [
         "Markeren als opgelost"
+      ],
+      "Maximum views": [
+        "Maximum aantal weergaven"
       ],
       "More info: ${ safeTitle }": [
         "Meer informatie: ${ safeTitle }"
@@ -447,6 +453,9 @@
       ],
       "Submitting report...": [
         "Rapport verzenden..."
+      ],
+      "Sync aliases": [
+        "Synchroniseer aliassen"
       ],
       "Transfer ownership": [
         "Eigendom overdragen"
@@ -1902,6 +1911,9 @@
       "Hide password": [
         "Wachtwoord verbergen"
       ],
+      "https://example.com": [
+        "https://voorbeeld.com"
+      ],
       "Identities": [
         "Identiteiten"
       ],
@@ -1967,6 +1979,9 @@
       ],
       "Learn more": [
         "Meer informatie"
+      ],
+      "License": [
+        "Licentie"
       ],
       "License number": [
         "Licentienummer"
@@ -2172,6 +2187,9 @@
       "Type": [
         "Soort"
       ],
+      "Unknown": [
+        "Onbekend"
+      ],
       "Unlock with": [
         "Ontgrendelen met"
       ],
@@ -2231,6 +2249,9 @@
       ],
       "X handle": [
         "X-gebruikersnaam"
+      ],
+      "Yahoo account": [
+        "Yahoo-account"
       ],
       "You are about to create": [
         "U staat op het punt volgende aan te maken"
@@ -2328,6 +2349,9 @@
       "Enter a prefix": [
         "Voorvoegsel invoeren"
       ],
+      "Enter email": [
+        "E-mailadres invoeren"
+      ],
       "Enter password": [
         "Vul wachtwoord in"
       ],
@@ -2339,9 +2363,6 @@
       ],
       "MM/YY": [
         "MM/JJ"
-      ],
-      "Other": [
-        "Anders"
       ],
       "Password": [
         "Wachtwoord"
@@ -2776,6 +2797,9 @@
       "Missing alias suffix": [
         "Ontbrekend alias-achtervoegsel"
       ],
+      "Move to trash": [
+        "Verplaats naar prullenbak"
+      ],
       "No items": [
         "Geen items"
       ],
@@ -2829,6 +2853,9 @@
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "Het aliasvoorvoegsel mag niet langer zijn dan 40 tekens"
+      ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "Deze alias \"${ aliasEmail }\" wordt momenteel gebruikt in de login \"${ relatedLoginName }\""
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Dit e-mailadres zal niet langer worden gemonitord op datalekken."

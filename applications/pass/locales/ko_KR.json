@@ -662,6 +662,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } 파일을 분석할 수 없습니다. ${ errorDetail }"
       ],
+      "[Error] an item could not be parsed": [
+        "[오류] 항목을 파싱할 수 없습니다"
+      ],
       "Alias could not be updated at the moment. Please try again later": [
         "현재 별칭을 업데이트할 수 없습니다. 다시 시도해주세요."
       ],
@@ -1103,6 +1106,9 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "데이터를 성공적으로 불러오면, 보안을 위해 비밀번호를 포함하는 CSV 파일을 지울 수 있습니다."
+      ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "SimpleLogin의 별칭 관리 기능이 곧 찾아옵니다!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "별칭이 성공적으로 비활성화되었습니다. 더 이상 ${ item.aliasEmail }(으)로 이메일을 전송할 수 없게 됩니다."
@@ -1952,6 +1958,9 @@
       "Alias address": [
         "별칭 주소"
       ],
+      "Alias management": [
+        "별칭 관리"
+      ],
       "Aliases": [
         "별칭"
       ],
@@ -2486,6 +2495,9 @@
       "Type": [
         "유형"
       ],
+      "Unknown": [
+        "알 수 없음"
+      ],
       "Unlock with": [
         "다음으로 잠금 해제:"
       ],
@@ -2664,9 +2676,6 @@
       ],
       "MM/YY": [
         "MM/YY (월/년)"
-      ],
-      "Other": [
-        "기타"
       ],
       "Password": [
         "비밀번호"
