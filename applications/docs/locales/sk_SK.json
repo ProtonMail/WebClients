@@ -2093,6 +2093,17 @@
         "Pomôžte nám zlepšiť sa"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Potvrďte stratu špeciálnej zľavy na ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Odstrániť zľavu"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Vaše predplatné ${ PLAN_NAMES[PLANS.PASS] } je za špeciálnu cenu ${ price } ročne. Znížením ceny na bezplatný plán natrvalo stratíte zľavu, a to aj v prípade, že v budúcnosti opäť prejdete na vyšší plán."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Rozšírená história verzií"
@@ -7759,6 +7770,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Váš plán bol zakúpený pomocou aplikácie pre iOS. Ak chcete vykonať zmeny vo svojom pláne alebo aktualizovať podrobnosti o platbe, budete musieť prejsť do obchodu Apple App Store."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Na konci fakturačného cyklu sa predplatné zníži."
       ]
     },
     "Subscription price": {
