@@ -3,6 +3,9 @@ import type { Item, ItemExtraField, ItemRevision, ItemType, LoginItem, UniqueIte
 import { ItemFlag, ItemState } from '@proton/pass/types';
 import { and, not, or } from '@proton/pass/utils/fp/predicates';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
+import { parseUrl } from '@proton/pass/utils/url/parser';
+import type { URLComponents } from '@proton/pass/utils/url/types';
+import { urlEq } from '@proton/pass/utils/url/utils';
 
 export const isAliasItem = (item: Item): item is Item<'alias'> => item.type === 'alias';
 export const isCCItem = (item: Item): item is Item<'creditCard'> => item.type === 'creditCard';
@@ -31,6 +34,16 @@ export const belongsToShares =
     (shareIds?: string[]) =>
     <T extends UniqueItem>(item: T): boolean =>
         shareIds ? shareIds.includes(item.shareId) : true;
+
+export const matchesLoginPassword =
+    (password: string) =>
+    (item: ItemRevision<'login'>): boolean =>
+        deobfuscate(item.data.content.password) === password;
+
+export const matchesLoginURL = (url: URLComponents) => (item: ItemRevision<'login'>) => {
+    if (item.data.content.urls.length === 0) return false;
+    return item.data.content.urls.some((itemURL) => urlEq(url, parseUrl(itemURL)));
+};
 
 export const isTrashed = ({ state }: ItemRevision) => state === ItemState.Trashed;
 export const isActive = not(isTrashed);
