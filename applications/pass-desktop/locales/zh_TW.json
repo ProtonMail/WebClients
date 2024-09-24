@@ -5,6 +5,21 @@
   },
   "contexts": {
     "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "偵測到 ${ name } 及 ${ remainingCount } 個其他潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情並採取行動。${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "偵測到 ${ name } 及 1 個其他潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情並採取行動。${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "偵測到 ${ name } 的潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情並採取行動。${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "偵測到來自 ${ name } 的潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情並採取行動。${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "偵測到來自 ${ name } 的潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情。${ link }"
+      ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "您的資料在最少一次的資料外洩之中被發現。開啟 ${ DARK_WEB_MONITORING_NAME } 來瀏覽詳細資料及採取行動。 ${ link }"
       ]
@@ -1926,9 +1941,6 @@
       ],
       "MM/YY": [
         "月月/年年"
-      ],
-      "Other": [
-        "其它"
       ],
       "Password": [
         "密碼"
