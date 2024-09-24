@@ -1,10 +1,11 @@
 import cloneDeep from 'lodash/cloneDeep';
+import type { Runtime } from 'webextension-polyfill';
 
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import type { SanitizedPasskey } from '@proton/pass/lib/passkeys/types';
 import { type ShareItem, rootReducer } from '@proton/pass/store/reducers';
 import type { State } from '@proton/pass/store/types';
-import type { Item, ItemRevision } from '@proton/pass/types';
+import type { Item, ItemRevision, TabId } from '@proton/pass/types';
 import { ContentFormatVersion, ItemState, ShareRole, ShareType } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
@@ -67,3 +68,7 @@ export const getMockState = (): State => {
      * with regards to selector memoisation in tests */
     return cloneDeep(mockState);
 };
+
+export let sender: Runtime.MessageSender;
+export const setMockMessageSender = (url: string, tabId: TabId = -1) =>
+    (sender = { tab: { id: tabId, url }, url } as unknown as Runtime.MessageSender);
