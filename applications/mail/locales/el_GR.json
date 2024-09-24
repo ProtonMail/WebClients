@@ -1237,6 +1237,9 @@
       "Tomorrow": [
         "Αύριο"
       ],
+      "Tracker protection prevented some images from loading. Load them if you trust the sender.": [
+        "Η προστασία του ιχνηλάτη εμπόδισε τη φόρτωση ορισμένων εικόνων. Φορτώστε τα εάν εμπιστεύεστε τον αποστολέα."
+      ],
       "Trust": [
         "Αξιόπιστο"
       ],
@@ -3586,6 +3589,17 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Βοηθήστε μας να βελτιωθούμε"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Επιβεβαιώστε την απώλεια ειδικής έκπτωσης για το ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Αφαίρεση έκπτωσης"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Η ${ PLAN_NAMES[PLANS.PASS] } συνδρομή είναι σε ειδική τιμή ${ price } ανά έτος. Με την υποβάθμιση στο Free πλάνο, θα χάσετε οριστικά την έκπτωση, ακόμα και αν κάνετε αναβάθμιση ξανά στο μέλλον."
       ]
     },
     "Download attachments": {
@@ -10875,6 +10889,14 @@
         "Υπογράψτε"
       ]
     },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Πιο γρήγορα στην εφαρμογή"
+      ],
+      "Private, fast, and organized": [
+        "Ιδιωτικό, γρήγορο και οργανωμένο"
+      ]
+    },
     "Snooze message": {
       "Snooze Message": [
         "Αναβολή Μηνύματος"
@@ -11315,6 +11337,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Το πρόγραμμά σας αγοράστηκε χρησιμοποιώντας μια εφαρμογή iOS. Επομένως, για να κάνετε αλλαγές στο πρόγραμμά σας ή να ενημερώσετε τα στοιχεία πληρωμής σας, θα πρέπει να μεταβείτε στο Apple App Store."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Η συνδρομή θα υποβαθμιστεί στο τέλος του κύκλου χρέωσης."
       ]
     },
     "Subscription price": {

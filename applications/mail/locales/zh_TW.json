@@ -13,6 +13,21 @@
       ]
     },
     "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "偵測到 ${ name } 及 ${ remainingCount } 個其他潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情並採取行動。${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "偵測到 ${ name } 及 1 個其他潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情並採取行動。${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "偵測到 ${ name } 的潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情並採取行動。${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "偵測到來自 ${ name } 的潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情並採取行動。${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "偵測到來自 ${ name } 的潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情。${ link }"
+      ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "您的資料在最少一次的資料外洩之中被發現。開啟 ${ DARK_WEB_MONITORING_NAME } 來瀏覽詳細資料及採取行動。 ${ link }"
       ]
@@ -3433,6 +3448,12 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "開啟電郵追蹤程式保護以避免廣告商或其他人追踪您的地點或網上活動。"
       ],
+      "Unlock custom message scheduling and more premium features when you upgrade.": [
+        "升級後解鎖自訂訊息調度和更多的頂級質子版功能。"
+      ],
+      "Unlock custom snooze times and more premium features when you upgrade.": [
+        "升級後解鎖自訂延後時間和更多的頂級質子版功能。"
+      ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "透過升級付費版解鎖短電子郵件位址功能和其他服務"
       ],
@@ -3537,6 +3558,11 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "幫助我們改善"
+      ]
+    },
+    "Downgrade warning": {
+      "Remove discount": [
+        "移除折扣"
       ]
     },
     "Download attachments": {
@@ -4660,6 +4686,9 @@
       ],
       "You have successfully joined the family group": [
         "您已成功加入家庭群組"
+      ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "您有未付款發票。請在加入群組方案前繳付。"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "我們邀請您將您的 ${ BRAND_NAME } 帳號連結至此群組方案，並一起享受所有 ${ BRAND_NAME_TWO } 進階功能。"
@@ -9396,6 +9425,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP 支援僅限透過 ${ MAIL_APP_NAME } Bridge 使用桌面應用程式 (例如 Outlook、Apple Mail、Thunderbird)。目前不支援雲端型 IMAP 整合。"
       ],
+      "Increase or reallocate storage for a user": [
+        "替位使用者增加或重新配置儲存空間"
+      ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "使用加密日曆讓您的方案對您和您的家人保密"
       ],
@@ -10459,6 +10491,11 @@
         "取消密碼重設？"
       ]
     },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "密碼重設需求已取消 (${ user.Email })。若您並未做出此需求，${ changePasswordLink }。"
+      ]
+    },
     "session_recovery:cancelled:link": {
       "change your password now": [
         "立刻變更您的密碼"
@@ -10570,6 +10607,14 @@
         "簽章"
       ]
     },
+    "SmartBanner": {
+      "Faster on the app": [
+        "在應用程式比較快"
+      ],
+      "Private, fast, and organized": [
+        "隱私、快速和有組織"
+      ]
+    },
     "Snooze message": {
       "Snooze Message": [
         "緩辦郵件"
@@ -10669,6 +10714,11 @@
       ],
       "Support online privacy": [
         "支援線上隱私"
+      ]
+    },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "此訂購授權將每 2 年自動以相同的費用續訂，直到被取消為止。"
       ]
     },
     "specialoffer: Link": {
@@ -11058,6 +11108,9 @@
       "Add any new files": [
         "新增任何檔案"
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "在您的${ planName }訂購授權到期，您將會被降級至${ BRAND_NAME }Free，這僅提供最多1GB的Mail儲存量和最多5GB的Drive儲存量。您也會失去之前任何額外給予您的儲存量。"
+      ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
         "在 ${ planName } 訂閱過期後，您將會被降級至 ${ BRAND_NAME } 免費方案，提供最多 1GB 信箱與 5GB Drive 儲存空間。您的團隊將面臨業務中斷，因為免費方案不支援額外的使用者。"
       ],
@@ -11163,11 +11216,17 @@
       "Watch the interview": [
         "瀏覽訪談"
       ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "在您取消${ planName }訂購，您將會被降級至${ BRAND_NAME }Free，這僅提供最多1GB的Mail儲存量和最多5GB的Drive儲存量。您也會失去之前任何額外給予您的儲存量。"
+      ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
         "當你取消 ${ planName } 後，您將會被降級至 ${ BRAND_NAME } 免費方案，提供最多 1GB 信箱與 5GB Drive 儲存空間。您的團隊將面臨業務中斷，因為免費方案不支援額外的使用者。"
       ],
       "Yearly free storage bonuses": [
         "年度免費儲存加成"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "您的${ planName }訂購授權還剩餘${ expiryDate }。我們將會在您的剩餘時間，給您的${ BRAND_NAME }帳號添加可用額度。在取消前，確保您沒有超出免費方案的限度。${ learnMoreLink }"
       ],
       "Your own custom email domain": [
         "您持有的自訂電子郵件網域名稱"

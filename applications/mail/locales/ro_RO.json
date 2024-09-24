@@ -76,7 +76,7 @@
         "Adăugare grup"
       ],
       "Add note": [
-        "Adăugare notă"
+        "Adăugare notiță"
       ],
       "Add participant": [
         "Adăugare participant"
@@ -1240,6 +1240,9 @@
       ],
       "Tomorrow": [
         "Mâine"
+      ],
+      "Tracker protection prevented some images from loading. Load them if you trust the sender.": [
+        "Protecția împotriva urmăririi a împiedicat încărcarea unor imagini. Încărcați-le dacă aveți încredere în expeditor."
       ],
       "Trust": [
         "Aprobare"
@@ -2454,7 +2457,7 @@
         "Nume"
       ],
       "Note": [
-        "Observații"
+        "Notiță"
       ],
       "Organization": [
         "Organizația"
@@ -3605,6 +3608,17 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Ajutați-ne să îmbunătățim"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Confirmați renunțarea la reducerea specială pentru ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Renunțare la reducere"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Abonamentul pentru ${ PLAN_NAMES[PLANS.PASS] } este la un preț special de ${ price } pe an. Dacă treceți la un plan gratuit, veți pierde definitiv reducerea, chiar dacă reveniți la acest tip de plan în viitor."
       ]
     },
     "Download attachments": {
@@ -6437,7 +6451,7 @@
         "Importare mesaje"
       ],
       "Important note": [
-        "Notă importantă"
+        "Observație importantă"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Se importă datele de la ${ fromEmail } la ${ toEmail }."
@@ -8267,7 +8281,7 @@
         "Nu este corect din punct de vedere faptic"
       ],
       "Note": [
-        "Notă"
+        "Notiță"
       ],
       "Notification": [
         "Notificare"
@@ -11065,6 +11079,14 @@
         "Semnare"
       ]
     },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Mai rapid în aplicație"
+      ],
+      "Private, fast, and organized": [
+        "Privat, rapid și organizat"
+      ]
+    },
     "Snooze message": {
       "Snooze Message": [
         "Amânare mesaj"
@@ -11517,6 +11539,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Abonamentul a fost achiziționat din aplicația iOS. Pentru a face modificări la acesta sau a actualiza detaliile de plată, va trebui să o faceți din App Store de la Apple."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Abonamentul va fi retrogradat la sfârșitul perioadei de facturare."
       ]
     },
     "Subscription price": {
@@ -12928,7 +12955,7 @@
         "Adresă ce nu acceptă răspunsuri detectată"
       ],
       "Notes": [
-        "Note"
+        "Notițe"
       ],
       "Open actions dropdown": [
         "Deschidere meniu acțiuni"
