@@ -466,9 +466,6 @@
       "Edit name": [
         "Modifica nome"
       ],
-      "Edit organization identity": [
-        "Modifica l'identità dell'organizzazione"
-      ],
       "Edit organization name": [
         "Modifica il nome dell'organizzazione"
       ],
@@ -3577,6 +3574,17 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Aiutaci a migliorare"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Conferma la perdita dello sconto speciale ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Rimuovi sconto"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Il tuo abbonamento ${ PLAN_NAMES[PLANS.PASS] } ha un prezzo speciale di ${ price } all'anno. Effettuando il downgrade a un piano gratuito, perderai definitivamente lo sconto, anche se eseguirai nuovamente l'upgrade in futuro."
       ]
     },
     "Download link": {
@@ -6823,9 +6831,6 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Sei sicuro di voler rimuovere il dominio ${ boldDomain }?"
       ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Chiedi all'amministratore della tua organizzazione di configurare i gateway."
-      ],
       "Attention required": [
         "Attenzione"
       ],
@@ -9965,9 +9970,6 @@
       "Current email": [
         "Email attuale"
       ],
-      "Current organization identity": [
-        "Identità dell'organizzazione attuale"
-      ],
       "Daily email notifications": [
         "Notifiche email giornaliere"
       ],
@@ -10057,9 +10059,6 @@
       ],
       "Email or username": [
         "Email o nome utente"
-      ],
-      "Email settings": [
-        "Impostazioni dell'email"
       ],
       "Emails": [
         "Email"
@@ -10292,9 +10291,6 @@
       "New login password": [
         "Nuova password di accesso"
       ],
-      "New organization identity": [
-        "Nuova identità dell'organizzazione"
-      ],
       "New organization password": [
         "Nuova password dell'organizzazione"
       ],
@@ -10342,9 +10338,6 @@
       ],
       "Or": [
         "O"
-      ],
-      "Organization identity": [
-        "Identità dell'organizzazione"
       ],
       "Organization name": [
         "Nome dell'organizzazione"
@@ -15406,6 +15399,11 @@
         "Il piano è stato acquistato dall'app per iOS. Per modificare il piano o aggiornare le informazioni di pagamento devi farlo attraverso l'Apple App Store."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "L'abbonamento verrà declassato alla fine del ciclo di fatturazione."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Per ${ totalPrice }"
@@ -15945,9 +15943,6 @@
       "Organization activated": [
         "Organizzazione attivata"
       ],
-      "Organization identity updated": [
-        "Identità dell'organizzazione aggiornata"
-      ],
       "Organization logo removed": [
         "Logo dell'organizzazione rimosso"
       ],
@@ -16318,9 +16313,6 @@
       "Account recovery": [
         "Recupero dell'account"
       ],
-      "Account settings": [
-        "Impostazioni dell'account"
-      ],
       "Account suspended": [
         "Account sospeso"
       ],
@@ -16583,9 +16575,6 @@
       "Custom filters": [
         "Filtri personalizzati"
       ],
-      "Custom folders and labels": [
-        "Cartelle ed etichette personalizzate"
-      ],
       "Custom selection of users": [
         "Selezione personalizzata degli utenti"
       ],
@@ -16724,9 +16713,6 @@
       ],
       "Edit invoice details": [
         "Modifica i dettagli delle fatture"
-      ],
-      "Edit organization identity": [
-        "Modifica l'identità dell'organizzazione"
       ],
       "Edit profile": [
         "Modifica profilo"
@@ -17078,9 +17064,6 @@
       "Privacy and data collection": [
         "Privacy e raccolta dati"
       ],
-      "Privacy and security": [
-        "Privacy e sicurezza"
-      ],
       "Processing...": [
         "Elaborazione..."
       ],
@@ -17263,9 +17246,6 @@
       ],
       "Sort labels alphabetically": [
         "Ordina etichette alfabeticamente"
-      ],
-      "Spam filters": [
-        "Filtri spam"
       ],
       "Spam, block, and allow lists": [
         "Liste di spam, blocco e consenso"

@@ -466,9 +466,6 @@
       "Edit name": [
         "Editar nome"
       ],
-      "Edit organization identity": [
-        "Editar identidade da organização"
-      ],
       "Edit organization name": [
         "Editar nome da organização"
       ],
@@ -3584,13 +3581,13 @@
     },
     "Downgrade warning": {
       "Confirm loss of ${ PASS_APP_NAME } special discount": [
-        "Confirme a perda de ${ PASS_APP_NAME } desconto\nespecial"
+        "Confirmar a perda do desconto especial do ${ PASS_APP_NAME }"
       ],
       "Remove discount": [
-        "Remover o desconto"
+        "Tirar o desconto"
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
-        "A sua ${ PLAN_NAMES[PLANS.PASS] } Assinatura, está a um preço especial de ${ price } por ano. Rebaixando para um plano Livre, você perderá o desconto para sempre, mesmo se você fizer um upgrade de novo no futuro."
+        "Sua assinatura ${ PLAN_NAMES[PLANS.PASS] } está com um preço especial de ${ price } por ano. Ao reduzi-la para um plano gratuito, você perderá o desconto de forma definitiva, mesmo que volte a fazer um upgrade no futuro."
       ]
     },
     "Download link": {
@@ -3708,7 +3705,7 @@
     },
     "duoplan2024: SubTitle": {
       "All of ${ BRAND_NAME }, for 2.": [
-        "Todos os recursos da ${ BRAND_NAME }, para 2 pessoas."
+        "Todos os recursos de ${ BRAND_NAME }, para 2 pessoas."
       ],
       "Double your storage": [
         "Dobre seu armazenamento"
@@ -5202,8 +5199,8 @@
         "Gerenciar contas de usuário"
       ],
       "Only ${ n } accepted invitation are allowed in a 6-month period.": [
-        "Somente ${ n } convite aceito é permitido em um período de 6 meses.",
-        "Somente ${ n } convites aceitos são permitidos em um período de 6 meses."
+        "Apenas ${ n } convite pode ser aceito em um período de 6 meses.",
+        "Apenas ${ n } convites podem ser aceitos em um período de 6 meses."
       ],
       "Owners of a plan with members cannot join another group plan.": [
         "Proprietários de um plano com membros não podem participar de outro plano de grupo."
@@ -5242,7 +5239,7 @@
         "Você foi convidado a participar de ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months.": [
-        "Você atingiu o limite de ${ n } convite aceitos em 6 meses.",
+        "Você atingiu o limite de ${ n } convite aceito em 6 meses.",
         "Você atingiu o limite de ${ n } convites aceitos em 6 meses."
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
@@ -6848,9 +6845,6 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Você tem certeza que deseja remover o domínio ${ boldDomain }?"
-      ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Peça ao administrador da sua organização para configurar Gateways."
       ],
       "Attention required": [
         "Atenção necessária"
@@ -9988,9 +9982,6 @@
       "Current email": [
         "E-mail atual"
       ],
-      "Current organization identity": [
-        "Identidade atual da organização"
-      ],
       "Daily email notifications": [
         "Notificações diárias por e-mail"
       ],
@@ -10080,9 +10071,6 @@
       ],
       "Email or username": [
         "E-mail ou nome de usuário"
-      ],
-      "Email settings": [
-        "Configurações do e-mail"
       ],
       "Emails": [
         "E-mails"
@@ -10315,9 +10303,6 @@
       "New login password": [
         "Nova senha"
       ],
-      "New organization identity": [
-        "Nova identidade da organização"
-      ],
       "New organization password": [
         "Nova senha da organização"
       ],
@@ -10365,9 +10350,6 @@
       ],
       "Or": [
         "Ou"
-      ],
-      "Organization identity": [
-        "Identidade da organização"
       ],
       "Organization name": [
         "Nome da organização"
@@ -11972,7 +11954,7 @@
         "Servidores em ${ vpnServersCountData.paid.countries }+ países"
       ],
       "Share files with no size limit": [
-        "Compartilhamento de arquivos sem limite de tamanho"
+        "Compartilhe arquivos sem limite de tamanho"
       ],
       "Sign in as user": [
         "Início de sessão como usuário"
@@ -12303,7 +12285,7 @@
         "${ CALENDAR_APP_NAME }: Proteja sua agenda com criptografia de ponta a ponta. Inclui suporte para calendários personalizados, compartilhamento de calendário e muito mais."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Proteja seus arquivos com armazenamento em nuvem criptografado. Inclui sincronização automática, compartilhamento de arquivos criptografados e muito mais."
+        "${ DRIVE_APP_NAME }: proteja seus arquivos criptografados com armazenamento na nuvem. Inclui sincronização automática, compartilhamento de arquivos criptografados e muito mais."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Proteja seus e-mails com criptografia de ponta a ponta. Inclui suporte para domínios de e-mail personalizados, 15 endereços de e-mail, aliases ilimitados hide-my-email e muito mais."
@@ -15440,7 +15422,7 @@
     },
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
-        "A assinatura será rebaixada no final do ciclo de cobrança."
+        "A assinatura será rebaixada ao final do ciclo de cobrança."
       ]
     },
     "Subscription price": {
@@ -15956,7 +15938,7 @@
         "Importação de registro excluído"
       ],
       "Invitation rejected": [
-        "Convite rejeitado"
+        "Convite recusado"
       ],
       "Invitation sent": [
         "Convite enviado"
@@ -15981,9 +15963,6 @@
       ],
       "Organization activated": [
         "Organização ativada"
-      ],
-      "Organization identity updated": [
-        "Identidade da organização atualizada"
       ],
       "Organization logo removed": [
         "Logotipo da organização removido"
@@ -16358,9 +16337,6 @@
       "Account recovery": [
         "Recuperação de conta"
       ],
-      "Account settings": [
-        "Configurações da conta"
-      ],
       "Account suspended": [
         "Conta suspensa"
       ],
@@ -16623,9 +16599,6 @@
       "Custom filters": [
         "Filtros personalizados"
       ],
-      "Custom folders and labels": [
-        "Pastas e marcadores personalizados"
-      ],
       "Custom selection of users": [
         "Seleção personalizada de usuários"
       ],
@@ -16764,9 +16737,6 @@
       ],
       "Edit invoice details": [
         "Editar de fatura de crédito"
-      ],
-      "Edit organization identity": [
-        "Editar identidade da organização"
       ],
       "Edit profile": [
         "Editar perfil"
@@ -17121,9 +17091,6 @@
       "Privacy and data collection": [
         "Privacidade e coleta de dados"
       ],
-      "Privacy and security": [
-        "Privacidade e segurança"
-      ],
       "Processing...": [
         "Processando..."
       ],
@@ -17306,9 +17273,6 @@
       ],
       "Sort labels alphabetically": [
         "Ordenar marcadores alfabeticamente"
-      ],
-      "Spam filters": [
-        "Filtros de spam"
       ],
       "Spam, block, and allow lists": [
         "Listas de endereços permitidos, bloqueados e spam"

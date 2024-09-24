@@ -466,9 +466,6 @@
       "Edit name": [
         "Modifier le nom"
       ],
-      "Edit organization identity": [
-        "Modifier l'identité de l’organisation"
-      ],
       "Edit organization name": [
         "Modifier le nom de l'organisation"
       ],
@@ -4724,6 +4721,11 @@
         "Aucune clé n'est réactivée."
       ]
     },
+    "error": {
+      "Enter an email address": [
+        "Saisissez une adresse e-mail."
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Une erreur s'est produite lors de la lecture de votre fichier ${ formattedFilename }. Le fichier n'a pas le bon format."
@@ -6837,8 +6839,8 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Voulez-vous vraiment retirer le domaine ${ boldDomain } ?"
       ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Demandez à l'administrateur de votre organisation de configurer des Passerelles."
+      "Ask your organization admin to setup Gateways.": [
+        "Demandez à l'administrateur de votre organisation de configurer des passerelles."
       ],
       "Attention required": [
         "Attention requise"
@@ -8154,6 +8156,9 @@
       ],
       "SCIM token active": [
         "Jeton SCIM actif"
+      ],
+      "Search by an email address to begin": [
+        "Recherchez par adresse e-mail pour commencer."
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Sécurisez votre compte ${ BRAND_NAME }"
@@ -9976,9 +9981,6 @@
       "Current email": [
         "Adresse e-mail actuelle"
       ],
-      "Current organization identity": [
-        "Identité de l’organisation actuelle"
-      ],
       "Daily email notifications": [
         "Notifications quotidiennes par e-mail"
       ],
@@ -10068,9 +10070,6 @@
       ],
       "Email or username": [
         "E-mail ou nom d'utilisateur"
-      ],
-      "Email settings": [
-        "Paramètres du message"
       ],
       "Emails": [
         "Messages"
@@ -10303,9 +10302,6 @@
       "New login password": [
         "Nouveau mot de passe de connexion"
       ],
-      "New organization identity": [
-        "Nouvelle identité de l'organisation"
-      ],
       "New organization password": [
         "Nouveau mot de passe de l'organisation"
       ],
@@ -10353,9 +10349,6 @@
       ],
       "Or": [
         "Ou"
-      ],
-      "Organization identity": [
-        "Identité de l'organisation"
       ],
       "Organization name": [
         "Nom de l'organisation"
@@ -10461,6 +10454,9 @@
       ],
       "Reveal password": [
         "Afficher le mot de passe"
+      ],
+      "Search by email": [
+        "Rechercher par e-mail"
       ],
       "Second password": [
         "Second mot de passe"
@@ -13049,6 +13045,29 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Les utilisateurs verront votre logo au lieu de l'icône ${ BRAND_NAME } lorsqu'ils se connecteront à nos applications web."
+      ]
+    },
+    "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify } votre adresse e-mail ${ email } pour définir l'identité de l'organisation."
+      ],
+      "Current organization identity": [
+        "Identité de l’organisation actuelle"
+      ],
+      "Edit organization identity": [
+        "Modifier l'identité de l’organisation"
+      ],
+      "New organization identity": [
+        "Nouvelle identité de l'organisation"
+      ],
+      "Organization identity": [
+        "Identité de l'organisation"
+      ],
+      "Organization identity updated": [
+        "L'identité de l'organisation a été mise à jour."
+      ],
+      "Verify": [
+        "Vérifier"
       ]
     },
     "OS compatibility": {
@@ -15934,9 +15953,6 @@
       "Organization activated": [
         "L'organisation a été activée."
       ],
-      "Organization identity updated": [
-        "L'identité de l'organisation a été mise à jour."
-      ],
       "Organization logo removed": [
         "Le logo de l'organisation a été retiré."
       ],
@@ -16202,7 +16218,7 @@
         "Statut"
       ],
       "Time": [
-        "Temps"
+        "Heure"
       ],
       "Total storage": [
         "Espace de stockage total"
@@ -16306,9 +16322,6 @@
       ],
       "Account recovery": [
         "Récupération du compte"
-      ],
-      "Account settings": [
-        "Paramètres du compte"
       ],
       "Account suspended": [
         "Compte suspendu"
@@ -16572,9 +16585,6 @@
       "Custom filters": [
         "Filtres personnalisés"
       ],
-      "Custom folders and labels": [
-        "Dossiers et labels personnalisés"
-      ],
       "Custom selection of users": [
         "Sélection personnalisée des utilisateurs"
       ],
@@ -16713,9 +16723,6 @@
       ],
       "Edit invoice details": [
         "Modifier les informations de la facture"
-      ],
-      "Edit organization identity": [
-        "Modifier l'identité de l’organisation"
       ],
       "Edit profile": [
         "Modifier le profil"
@@ -17067,9 +17074,6 @@
       "Privacy and data collection": [
         "Vie privée et collecte de données"
       ],
-      "Privacy and security": [
-        "Vie privée et sécurité"
-      ],
       "Processing...": [
         "Traitement en cours…"
       ],
@@ -17252,9 +17256,6 @@
       ],
       "Sort labels alphabetically": [
         "Trier les labels par ordre alphabétique"
-      ],
-      "Spam filters": [
-        "Filtres anti-indésirables/spam"
       ],
       "Spam, block, and allow lists": [
         "Indésirables/spam, adresses bloquées et autorisées"
@@ -17597,7 +17598,7 @@
         "Fonctionnalité en avant-première"
       ],
       "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
-        "Obtenez des conseils de productivité et de sécurité pour vous aider à tirer le meilleur parti de ${ MAIL_APP_NAME } et au-delà."
+        "Obtenez des conseils de productivité et de sécurité pour vous aider à tirer le meilleur parti de ${ MAIL_APP_NAME } et bien plus encore."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail catégorise automatiquement certains messages comme « Réseau sociaux » ou « Promotions ». Vous pouvez sélectionner où importer ces messages."
@@ -17610,6 +17611,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si vous avez acheté un code-cadeau ou si vous en avez reçu un de notre équipe support, vous pouvez le saisir ici."
+      ],
+      "IP address (Internet Service Provider)": [
+        "Adresse IP (FAI)"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Les membres qui n'utilisent pas l'authentification à deux facteurs (A2F) recevront un message leur demandant de l'activer dès que possible."
@@ -17797,6 +17801,12 @@
       ]
     },
     "unprivatization": {
+      "Administrator access enabled": [
+        "L'accès administrateur a été activé."
+      ],
+      "Administrator access rejected": [
+        "L'accès administrateur a été rejeté."
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Les administrateurs ne peuvent pas accéder aux données des utilisateurs privés et ne peuvent pas réinitialiser leur mot de passe."
       ],
@@ -17816,16 +17826,16 @@
         "Supprimer la demande"
       ],
       "Delete request to access user data?": [
-        "Supprimer la demande d'accès aux données de l'utilisateur ?"
+        "Voulez-vous supprimer la demande d'accès aux données de l'utilisateur ?"
       ],
       "Enable admin access?": [
-        "Activer l'accès administrateur ?"
+        "Voulez-vous activer l'accès administrateur ?"
       ],
       "Enable administrator access": [
-        "Autoriser l'accès administrateur"
+        "Activer l'accès administrateur"
       ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
-        "Si vous perdez l'accès à vos identifiants, les administrateurs de votre organisation pourront réinitialiser votre mot de passe et rétablir l'accès à votre compte."
+        "Si vous n'avez plus accès à vos identifiants, les administrateurs de votre organisation pourront réinitialiser votre mot de passe et rétablir l'accès à votre compte."
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Une fois que l'utilisateur a donné son accord, vous pourrez l'aider à retrouver l'accès à son compte ou à gérer ses données."
@@ -17846,16 +17856,19 @@
         "La demande de gestion du compte a été envoyée. L'approbation de l'utilisateur est attente."
       ],
       "Request user permission for data access": [
-        "Demander l'autorisation de l'utilisateur pour l'accès aux données"
+        "Demander l'autorisation à l'utilisateur pour accéder aux données"
       ],
       "Revoke access": [
         "Révoquer l'accès"
       ],
       "Revoke administrator access?": [
-        "Révoquer l'accès administrateur ?"
+        "Voulez-vous révoquer l'accès administrateur ?"
       ],
       "Send request": [
         "Envoyer une demande"
+      ],
+      "Something went wrong enabling administrator access: ${ error }": [
+        "Une erreur s'est produite lors de l'activation de l'accès administrateur :${ error }"
       ],
       "The user must have an address to request data access": [
         "L'utilisateur doit disposer d'une adresse pour demander l'accès aux données."

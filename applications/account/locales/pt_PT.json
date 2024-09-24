@@ -454,9 +454,6 @@
       "Edit name": [
         "Editar o nome"
       ],
-      "Edit organization identity": [
-        "Editar a identidade da organização"
-      ],
       "Edit organization name": [
         "Editar o nome da organização"
       ],
@@ -2594,6 +2591,9 @@
       "Kiribati": [
         "Quiribati"
       ],
+      "Korea (Republic of)": [
+        "Coreia (República da)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -3374,6 +3374,11 @@
       ],
       "Priority support": [
         "Apoio ao cliente prioritário"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "Double your storage": [
+        "Duplicar o seu armazenamento"
       ]
     },
     "Duration": {
@@ -4711,6 +4716,9 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Convidado por: ${ inviteEmail }"
+      ],
+      "Leave Family plan": [
+        "Deixar o plano Family"
       ],
       "Manage addresses.": [
         "Gerir endereços."
@@ -6192,9 +6200,6 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Tem a certeza de que deseja remover os privilégios administrativos deste utilizador?"
-      ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Peça ao administrador da sua organização para configurar os Gateways."
       ],
       "Attention required": [
         "Atenção Requerida"
@@ -9219,9 +9224,6 @@
       "New login password": [
         "Nova palavra-passe de início"
       ],
-      "New organization identity": [
-        "Nova identidade da organização"
-      ],
       "New organization password": [
         "Nova palavra-passe da organização"
       ],
@@ -9269,9 +9271,6 @@
       ],
       "Or": [
         "Ou"
-      ],
-      "Organization identity": [
-        "Identidade da organização"
       ],
       "Organization name": [
         "Nome da organização"
@@ -10112,6 +10111,9 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Real brasileiro"
+      ],
       "Euro": [
         "Euro"
       ],
@@ -12316,6 +12318,21 @@
         "Utilizador"
       ]
     },
+    "Safety review": {
+      "Your Recovery Kit": [
+        "O seu kit de recuperação"
+      ]
+    },
+    "saml: Info": {
+      "Details": [
+        "Detalhes"
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "E-mail"
+      ]
+    },
     "scim: Action": {
       "Configure SCIM": [
         "Configurar SCIM"
@@ -13522,6 +13539,9 @@
       "Import record deleted": [
         "Registo de importação eliminado"
       ],
+      "Invitation rejected": [
+        "O convite foi rejeitado."
+      ],
       "Invitation sent": [
         "O convite foi enviado."
       ],
@@ -13780,6 +13800,9 @@
       "Status": [
         "Estado"
       ],
+      "Time": [
+        "Hora"
+      ],
       "Total storage": [
         "Armazenamento total"
       ],
@@ -13882,9 +13905,6 @@
       ],
       "Account recovery": [
         "Recuperação de conta"
-      ],
-      "Account settings": [
-        "Definições de conta"
       ],
       "Account suspended": [
         "Conta suspensa"
@@ -14145,9 +14165,6 @@
       "Custom filters": [
         "Filtros personalizados"
       ],
-      "Custom folders and labels": [
-        "Pastas e etiquetas personalizadas"
-      ],
       "Custom selection of users": [
         "Seleção personalizada de utilizadores"
       ],
@@ -14286,9 +14303,6 @@
       ],
       "Edit invoice details": [
         "Editar os detalhes da fatura"
-      ],
-      "Edit organization identity": [
-        "Editar a identidade da organização"
       ],
       "Edit profile": [
         "Editar o perfil"
@@ -14628,9 +14642,6 @@
       "Privacy and data collection": [
         "Privacidade e recolha de dados"
       ],
-      "Privacy and security": [
-        "Privacidade e segurança"
-      ],
       "Processing...": [
         "A processar..."
       ],
@@ -14810,9 +14821,6 @@
       ],
       "Sort labels alphabetically": [
         "Ordenar etiquetas alfabeticamente"
-      ],
-      "Spam filters": [
-        "Filtros de spam"
       ],
       "Spam, block, and allow lists": [
         "Listas de endereços permitidos, bloqueados e spam"
