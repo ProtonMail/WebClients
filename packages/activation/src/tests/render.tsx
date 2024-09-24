@@ -10,13 +10,13 @@ import EasySwitchStoreProvider from '@proton/activation/src/logic/StoreProvider'
 import {
     ApiProvider,
     CacheProvider,
+    ConfigProvider,
     EventManagerProvider,
     FeatureCode,
     ModalsChildren,
     ModalsProvider,
     NotificationsContext,
 } from '@proton/components';
-import ConfigProvider from '@proton/components/containers/config/Provider';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';
 import { APPS } from '@proton/shared/lib/constants';

@@ -717,3 +717,4 @@ export { DRAWER_PASS_ALIASES_CREATE_ALIAS_MODAL_CTA_ID } from './components/draw
 export { startAccountSecurityListener } from './components/drawer/views/SecurityCenter/AccountSecurity/slice/accountSecurityListener';
 export { securityCenterReducer } from './components/drawer/views/SecurityCenter/AccountSecurity/slice/accountSecuritySlice';
 export { default as DrawerAppButton } from './components/drawer/drawerAppButtons/DrawerAppButton';
+export { default as ConfigProvider } from './containers/config/Provider';
