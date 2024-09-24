@@ -988,7 +988,7 @@
     },
     "Feature": {
       "Dark Web Monitoring": [
-        "Overvåking av mørkt nett"
+        "Overvåking av det mørke nettet"
       ],
       "Integrated 2FA authenticator": [
         "Integrert 2FA-autentisering"
@@ -1117,6 +1117,9 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Når du har importert dataene dine, kan du av sikkerhetsgrunner slette CSV-filen som inneholder passordene dine."
+      ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "Aliasadministrasjonsfunksjoner fra SimpleLogin kommer snart!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias er deaktivert. Du vil ikke lenger motta e-poster sendt til ${ item.aliasEmail }"
@@ -1980,6 +1983,9 @@
       "Alias address": [
         "Aliasadresse"
       ],
+      "Alias management": [
+        "Aliasadministrasjon"
+      ],
       "Aliases": [
         "Aliaser"
       ],
@@ -2695,9 +2701,6 @@
       "MM/YY": [
         "MM/ÅÅ"
       ],
-      "Other": [
-        "Annet"
-      ],
       "Password": [
         "Passord"
       ],
@@ -2820,7 +2823,7 @@
         "Tilpassede e-poster"
       ],
       "Dark Web Monitoring": [
-        "Overvåking av mørkt nett"
+        "Overvåking av det mørke nettet"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Slett hvelv \"${ vaultName }\" ?"
