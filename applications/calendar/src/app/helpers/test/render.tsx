@@ -6,8 +6,7 @@ import { render as originalRender } from '@testing-library/react';
 import { renderHook as originalRenderHook } from '@testing-library/react-hooks';
 import { createMemoryHistory } from 'history';
 
-import { CacheProvider, ModalsChildren, ModalsProvider } from '@proton/components';
-import ConfigProvider from '@proton/components/containers/config/Provider';
+import { CacheProvider, ConfigProvider, ModalsChildren, ModalsProvider } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
