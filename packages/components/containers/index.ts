@@ -3,7 +3,6 @@ export * from './api';
 export * from './app';
 export * from './authentication';
 export * from './calendar';
-export * from './challenge';
 export * from './features';
 export * from './password';
 export * from './payments';
