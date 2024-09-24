@@ -8,6 +8,7 @@ import type { MaybeNull } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
+import { resolveDomain } from '@proton/pass/utils/url/utils';
 
 import { createDropdown } from './dropdown';
 import { createNotification } from './notification';
@@ -37,12 +38,14 @@ export const createIFrameService = (elements: PassElementsConfig) => {
     /* only re-init the iframe sub-apps if the extension context port has changed */
     const onAttached: <T extends IFrameAppService<any>>(app: T) => void = withContext((ctx, app) => {
         const port = ctx?.getExtensionContext().port;
+        const url = ctx?.getExtensionContext()?.url;
 
-        if (port && app.getState().port !== port) {
+        if (url && port && app.getState().port !== port) {
             app.init(port, {
+                appState: ctx.getState(),
+                domain: resolveDomain(url) ?? '',
                 features: ctx.getFeatureFlags(),
                 settings: ctx.getSettings(),
-                workerState: ctx.getState(),
             });
         }
     });

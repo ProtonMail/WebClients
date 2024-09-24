@@ -34,6 +34,7 @@ import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import noop from '@proton/utils/noop';
 
 export type IFrameContextValue = {
+    domain: string;
     endpoint: string;
     features: RecursivePartial<FeatureFlagState>;
     port: MaybeNull<Runtime.Port>;
@@ -66,6 +67,7 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
     const [features, setFeatures] = useState<RecursivePartial<FeatureFlagState>>({});
     const [userEmail, setUserEmail] = useState<MaybeNull<string>>(null);
     const [visible, setVisible] = useState<boolean>(false);
+    const [domain, setDomain] = useState<string>('');
 
     const activityProbe = useExtensionActivityProbe();
 
@@ -145,9 +147,10 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
             port.onMessage.addListener((message: Maybe<IFrameMessage>) => {
                 switch (message?.type) {
                     case IFramePortMessageType.IFRAME_INIT:
-                        app.setState(message.payload.workerState);
+                        app.setState(message.payload.appState);
                         setSettings(message.payload.settings);
                         setFeatures(message.payload.features);
+                        setDomain(message.payload.domain);
                         /** immediately set the locale on iframe init : the `IFramContextProvider`
                          * does not use the standard `ExtensionApp` wrapper which takes care of
                          * hydrating the initial locale and watching for language changes */
@@ -244,6 +247,7 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
     return (
         <IFrameContext.Provider
             value={{
+                domain,
                 endpoint,
                 features,
                 port,

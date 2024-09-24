@@ -22,8 +22,14 @@ import type { NotificationActions } from './notification';
 
 export type IFramePosition = Partial<Rect>;
 export type IFrameEndpoint = 'notification' | 'dropdown';
-export type IFrameInitPayload = { workerState: AppState; settings: ProxiedSettings; features: FeatureFlagState };
 export type IFrameCloseOptions = { discard?: boolean; event?: Event; refocus?: boolean };
+
+export type IFrameInitPayload = {
+    domain: string;
+    features: FeatureFlagState;
+    settings: ProxiedSettings;
+    appState: AppState;
+};
 
 export type IFrameState<A> = {
     action: MaybeNull<A>;
