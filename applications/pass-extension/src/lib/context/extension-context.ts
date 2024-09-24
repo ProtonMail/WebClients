@@ -9,7 +9,7 @@ import { contextHandlerFactory } from '@proton/pass/utils/context';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger, registerLoggerEffect } from '@proton/pass/utils/logger';
-import type { ParsedUrl } from '@proton/pass/utils/url/parser';
+import type { ParsedUrl } from '@proton/pass/utils/url/types';
 
 import.meta.webpackHot?.decline();
 

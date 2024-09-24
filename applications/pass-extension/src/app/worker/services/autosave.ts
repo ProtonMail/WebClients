@@ -14,7 +14,7 @@ import { prop } from '@proton/pass/utils/fp/lens';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { isValidURL } from '@proton/pass/utils/url/is-valid-url';
+import { sanitizeURL } from '@proton/pass/utils/url/sanitize';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
 export const createAutoSaveService = () => {
@@ -63,7 +63,7 @@ export const createAutoSaveService = () => {
         WorkerMessageType.AUTOSAVE_REQUEST,
         withContext(async (ctx, { payload }) => {
             const state = ctx.service.store.getState();
-            const { valid, url } = isValidURL(payload.domain);
+            const { valid, url } = sanitizeURL(payload.domain);
 
             if (payload.type === AutosaveMode.NEW) {
                 const item = itemBuilder('login');

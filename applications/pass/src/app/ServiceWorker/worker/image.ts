@@ -7,7 +7,7 @@ import {
 } from '@proton/pass/lib/api/cache';
 import { createNetworkError } from '@proton/pass/lib/api/fetch-controller';
 import { API_BODYLESS_STATUS_CODES } from '@proton/pass/lib/api/utils';
-import { globToRegExp } from '@proton/pass/utils/url/glob';
+import { globToRegExp } from '@proton/pass/utils/url/utils';
 import noop from '@proton/utils/noop';
 
 import { fetchController } from './fetch-controller';
