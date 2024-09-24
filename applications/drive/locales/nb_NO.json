@@ -2398,6 +2398,25 @@
         "Hjelp oss å bli bedre"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Bekreft tap av spesialrabatt for ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Fjern rabatt"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Abonnementet ditt på ${ PLAN_NAMES[PLANS.PASS] } har en spesiell pris på ${ price } i året. Hvis du nedgraderer til Free, mister du rabatten for godt, selv om du oppgraderer på nytt i fremtiden."
+      ]
+    },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Åpne i ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Save for later": [
+        "Lagre til senere"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Utvidet versjonshistorikk"
@@ -7731,6 +7750,12 @@
       "Subfolder failed to be loaded": [
         "Undermappen kunne ikke lastes inn"
       ],
+      "The item was not added to your drive": [
+        "Elementet ble ikke lagt til i din Drive"
+      ],
+      "The item was succefully added to your drive": [
+        "Elementet ble lagt til i din Drive"
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Koblingen til \"${ name }\" kunne ikke slettes"
       ],
@@ -8737,6 +8762,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "En kobling til dette elementet er lagret i din Drive. Du får tilgang til koblingen senere fra seksjonen \"Delt med meg\"."
+      ],
       "Encrypted search is here": [
         "Kryptert søk er her"
       ],
@@ -8928,6 +8956,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Planen din ble kjøpt med en iOS-app. Så for å gjøre endringer i planen din eller oppdatere betalingsinformasjonen din, må du gå til Apple App Store."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Abonnementet vil bli nedgradert på slutten av faktureringssyklusen."
       ]
     },
     "Subscription price": {

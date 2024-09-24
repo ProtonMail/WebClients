@@ -2398,6 +2398,25 @@
         "Βοηθήστε μας να βελτιωθούμε"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Επιβεβαιώστε την απώλεια ειδικής έκπτωσης για το ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Αφαίρεση έκπτωσης"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Η ${ PLAN_NAMES[PLANS.PASS] } συνδρομή είναι σε ειδική τιμή ${ price } ανά έτος. Με την υποβάθμιση στο Free πλάνο, θα χάσετε οριστικά την έκπτωση, ακόμα και αν κάνετε αναβάθμιση ξανά στο μέλλον."
+      ]
+    },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Άνοιγμα σε ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Save for later": [
+        "Αποθήκευση για αργότερα"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Εκτεταμένο ιστορικό εκδόσεων"
@@ -7674,6 +7693,12 @@
       "Subfolder failed to be loaded": [
         "Ο υποφάκελος απέτυχε να φορτώσει"
       ],
+      "The item was not added to your drive": [
+        "Το στοιχείο δεν προστέθηκε στη μονάδα δίσκου σας"
+      ],
+      "The item was succefully added to your drive": [
+        "Το στοιχείο προστέθηκε με επιτυχία στη μονάδα δίσκου σας"
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Αποτυχία διαγραφής συνδέσμου προς το \"${ name }\""
       ],
@@ -8680,6 +8705,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "Ένας σύνδεσμος προς αυτό το στοιχείο έχει αποθηκευτεί στη μονάδα δίσκου σας. Μπορείτε να αποκτήσετε πρόσβαση σε αυτό αργότερα στην ενότητα \"Κοινή χρήση με εμένα\"."
+      ],
       "Encrypted search is here": [
         "Η κρυπτογραφημένη αναζήτηση έφτασε"
       ],
@@ -8871,6 +8899,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Το πρόγραμμά σας αγοράστηκε χρησιμοποιώντας μια εφαρμογή iOS. Επομένως, για να κάνετε αλλαγές στο πρόγραμμά σας ή να ενημερώσετε τα στοιχεία πληρωμής σας, θα πρέπει να μεταβείτε στο Apple App Store."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Η συνδρομή θα υποβαθμιστεί στο τέλος του κύκλου χρέωσης."
       ]
     },
     "Subscription price": {

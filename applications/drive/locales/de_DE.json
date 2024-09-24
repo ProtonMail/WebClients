@@ -223,6 +223,9 @@
       "Create and copy alias": [
         "Erstellen und Alias kopieren"
       ],
+      "Create free account": [
+        "Kostenloses Konto erstellen"
+      ],
       "Create link": [
         "Link erstellen"
       ],
@@ -389,6 +392,9 @@
       ],
       "Get verification code": [
         "Verifizierungscode anfordern"
+      ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Zu ${ DRIVE_SHORT_APP_NAME } gehen"
       ],
       "Go to label": [
         "Zu Kategorie wechseln"
@@ -2384,6 +2390,25 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Hilf uns, besser zu werden"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Bestätige den Verlust des ${ PASS_APP_NAME }-Sonderrabatts"
+      ],
+      "Remove discount": [
+        "Rabatt entfernen"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Dein ${ PLAN_NAMES[PLANS.PASS] }-Abonnement hat einen Sonderpreis von ${ price } pro Jahr. Durch ein Downgrade auf ein kostenloses Abonnement verlierst du den Rabatt dauerhaft, auch wenn du in Zukunft wieder ein Upgrade durchführst."
+      ]
+    },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "In ${ DRIVE_SHORT_APP_NAME } öffnen"
+      ],
+      "Save for later": [
+        "Für später speichern"
       ]
     },
     "driveplus2024: Deal details": {
@@ -4764,6 +4789,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bitte beachte, dass dieser Vorgang (je nach Größe deines Adressbuchs) einige Zeit dauern kann."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ remainingCreditsFormatted } Guthaben auf deinem Konto verbleiben."
+      ],
       "Please open the document to view it.": [
         "Bitte öffne das Dokument, um es anzusehen."
       ],
@@ -4833,6 +4861,9 @@
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Die private Suche ist aktiviert. Du kannst nun diesen Dialog schließen und nach Dateien und Ordnern suchen."
+      ],
+      "Public link": [
+        "Öffentlicher Link"
       ],
       "Public sharing of documents is not yet supported.": [
         "Die öffentliche Freigabe von Dokumenten wird noch nicht unterstützt."
@@ -7712,6 +7743,10 @@
       "The link to your item was deleted": [
         "Der Link zu deinem Element wurde gelöscht"
       ],
+      "This item was succefully removed from your list": [
+        "Dieser Eintrag wurde erfolgreich aus deiner Liste entfernt",
+        "Alle Einträge wurde erfolgreich aus deiner Liste entfernt"
+      ],
       "Trash failed to be emptied": [
         "Der Papierkorb konnte nicht geleert werden"
       ],
@@ -8695,6 +8730,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "Ein Link zu diesem Element wurde in deinem Drive gespeichert. Du kannst ihn später im Bereich „Mit mir geteilt“ aufrufen."
+      ],
       "Encrypted search is here": [
         "Die verschlüsselte Suche ist da"
       ],
@@ -8886,6 +8924,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Dein Abonnement wurde über eine iOS App gekauft. Um Änderungen an deinem Abonnement oder deinen Zahlungsdetails durchführen zu können, musst du zum Apple App Store gehen."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Das Abonnement wird am Ende des Abrechnungszeitraums herabgestuft."
       ]
     },
     "Subscription price": {
@@ -9356,6 +9399,9 @@
       "Preferences saved": [
         "Einstellungen gespeichert"
       ],
+      "Problem reported": [
+        "Problem gemeldet"
+      ],
       "Recovery has started": [
         "Wiederherstellung wurde gestartet"
       ],
@@ -9567,6 +9613,10 @@
       ],
       "Are you sure you want to close the preview?": [
         "Möchtest du die Vorschau wirklich schließen?"
+      ],
+      "Are you sure you want to remove this item from your list?": [
+        "Bist du dir sicher, dass du diesen Eintrag aus deiner Liste entfernen möchtest?",
+        "Bist du dir sicher, dass du diese Einträge aus deiner Liste entfernen möchtest?"
       ],
       "Billing cycle": [
         "Abrechnungszeitraum"

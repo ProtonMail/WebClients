@@ -4557,13 +4557,13 @@
         "Niepowodzenie"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
-        "Nie udało się wygenerować linku. Powodem jest: ${ error }"
+        "Nie udało się wygenerować linku. ${ error }"
       ],
       "Failed to generate a secure link. Try again later": [
         "Nie udało się wygenerować linku. Spróbuj ponownie później"
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
-        "Nie udało się otworzyć linku. Powodem jest: ${ error }"
+        "Nie udało się otworzyć linku. ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
         "Plik \"${ name }\" został usunięty podczas pobierania"
