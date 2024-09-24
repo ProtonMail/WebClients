@@ -726,3 +726,11 @@ export { default as ProtonVPNResourcesSection } from './containers/vpn/ProtonVPN
 export { default as TVContainer } from './containers/vpn/tv/TVContainer';
 export { default as WireGuardConfigurationSection } from './containers/vpn/WireGuardConfigurationSection/WireGuardConfigurationSection';
 export { default as useNewFeatureOnboarding } from './hooks/useNewFeatureOnboarding';
+export { default as AddressActions } from './containers/addresses/AddressActions';
+export { default as AddressModal } from './containers/addresses/AddressModal';
+export { default as AddressesSection } from './containers/addresses/AddressesSection';
+export { default as AddressesWithMembers } from './containers/addresses/AddressesWithMembers';
+export { default as AddressesWithUser } from './containers/addresses/AddressesWithUser';
+export { default as AliasPromotionSection } from './containers/addresses/AliasPromotionSection';
+export { default as EditAddressModal } from './containers/addresses/EditAddressModal';
+export { default as IdentitySection } from './containers/addresses/IdentitySection';
