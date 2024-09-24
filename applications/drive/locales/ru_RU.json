@@ -2424,6 +2424,17 @@
         "Помогите нам совершенствоваться"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Подтвердите потерю специальной скидки ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Удалить скидку"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Вы подписаны на ${ PLAN_NAMES[PLANS.PASS] } по специальной цене ${ price } в год. Перейдя на бесплатный план, вы навсегда потеряете скидку, даже если вы улучшите снова в будущем."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Подробная история версий"
@@ -4234,6 +4245,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Вы уверены, что хотите безвозвратно удалить выбранные элементы из корзины?"
       ],
+      "Are you sure you want to proceed?": [
+        "Вы уверены, что хотите продолжить?"
+      ],
       "Attention required": [
         "Требуется внимание"
       ],
@@ -5005,6 +5019,9 @@
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Конфиденциальный поиск включен. Теперь вы можете закрыть этот диалог и начать поиск файлов и папок."
       ],
+      "Public link": [
+        "Публичная ссылка"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Публичный обмен документами пока не поддерживается."
       ],
@@ -5478,6 +5495,9 @@
       ],
       "You already have a free account": [
         "У вас уже есть бесплатная учётная запись"
+      ],
+      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Вы собираетесь покинуть общий элемент. Вы не сможете получить доступ снова, пока владелец не поделится им с вами."
       ],
       "You are about to open another browser tab and visit:": [
         "Вы собираетесь открыть другую вкладку браузера и посетить:"
@@ -7925,6 +7945,12 @@
       "Subfolder failed to be loaded": [
         "Не удалось загрузить подпапку"
       ],
+      "The item was not added to your drive": [
+        "Элемент не был добавлен в хранилище"
+      ],
+      "The item was succefully added to your drive": [
+        "Элемент был успешно добавлен в хранилище"
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Не удалось удалить ссылку на \"${ name }\""
       ],
@@ -9190,6 +9216,11 @@
         "Ваш тариф был приобретён в приложении iOS. Поэтому для изменения тарифа или способа оплаты вам нужно зайти в Apple App Store."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Подписка будет понижена в конце платежного периода."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "За ${ totalPrice }"
@@ -9961,6 +9992,9 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Подтвердите потерю бонусов ${ BRAND_NAME }"
+      ],
+      "Confirmation required?": [
+        "Требуется подтверждение?"
       ],
       "Contact Details": [
         "Контактные данные"
