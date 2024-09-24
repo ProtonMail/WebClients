@@ -145,7 +145,7 @@ const useApplyGroups = (
                     }
 
                     if (!preventNotification && contactGroupName) {
-                        const notificationText = c('Info').t`Contact unassigned to group ${contactGroupName}`;
+                        const notificationText = c('Info').t`Contact unassigned from group ${contactGroupName}`;
                         createNotification({ text: notificationText });
                     }
 
