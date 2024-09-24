@@ -116,10 +116,10 @@
       "Create": [
         "Стварыць"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Стварыць уліковы запіс ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Стварыць уліковы запіс ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
@@ -300,7 +300,7 @@
         "Спасылка міне праз"
       ],
       "Lock extension": [
-        "Блакіраваць пашырэнне"
+        "Заблакіраваць пашырэнне"
       ],
       "Make admin": [
         "Можа адміністраваць"
@@ -636,6 +636,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Не атрымалася прааналізаваць файл ${ provider }. ${ errorDetail }"
       ],
+      "[Error] an item could not be parsed": [
+        "[Памылка] немагчыма прааналізаваць элемент"
+      ],
       "Alias could not be updated at the moment. Please try again later": [
         "У цяперашні момант немагчыма абнавіць псеўданім. Паспрабуйце яшчэ раз пазней"
       ],
@@ -903,6 +906,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Адбылася памылка падчас выдалення бяспечнай спасылкі. Паспрабуйце яшчэ раз праз некалькі хвілін."
       ],
+      "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
+        "Прычынай можа быць тое, што вы доўгі час не карысталіся ${ PASS_SHORT_APP_NAME } або ачысцілі гісторыю Safari."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Занадта шмат няўдалых спроб. Увайдзіце яшчэ раз."
       ],
@@ -962,6 +968,9 @@
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "У цяперашні момант вы па-за сеткай. Узнавіце падключэнне, каб разблакіраваць ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
+        "У вашага браўзера ўзніклі праблемы пры актывацыі ${ PASS_APP_NAME }"
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN-код быў выдалены ў іншым кліенце ${ PASS_APP_NAME }"
@@ -1080,16 +1089,16 @@
         "${ PASS_APP_NAME } прапануе вам, як толькі згенерыраваныя паролі будуць запоўнены аўтаматычна."
       ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
-        "${ PASS_APP_NAME } не будзе прапаноўваць вам захоўваць або абнаўляць уліковыя даныя."
+        "${ PASS_APP_NAME } прапануе вам захаваць або абнавіць уліковыя даныя."
       ],
       "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
         "${ PASS_APP_NAME } прапануе прайсці аўтэнтыфікацыю з дапамогай захаваных ключоў доступу"
       ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
-        "${ PASS_APP_NAME } будзе прапаноўваць стварыць псеўданім электроннай пошты на формах рэгістрацыі."
+        "${ PASS_APP_NAME } прапануе стварыць псеўданім электроннай пошты на формах рэгістрацыі."
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
-        "${ PASS_APP_NAME } не будзе прапаноўваць ствараць надзейныя паролі на формах рэгістрацыі."
+        "${ PASS_APP_NAME } прапануе стварыць надзейныя паролі на формах рэгістрацыі."
       ],
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } прапануе захаваць ключы доступу."
@@ -1132,6 +1141,9 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Вы можаце выдаліць файл CSV, які змяшчае вашы паролі ў мэтах бяспекі пасля таго, як вашы даныя будуць паспяхова імпартаваны."
+      ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "Неўзабаве з'явіцца функцыя кіравання псеўданімам з SimpleLogin!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Псеўданім паспяхова адключаны. Вы больш не будзеце атрымліваць лісты адпраўленыя на ${ item.aliasEmail }"
@@ -1218,7 +1230,7 @@
         "Закрываць гэта акно ў выпадку выкарыстання ключа бяспекі або іншага ключа доступу."
       ],
       "Close this window in order to use another passkey manager.": [
-        "Закрываць гэта акно ў выпадку выкарыстання іншага менеджара ключоў доступу"
+        "Закрываць гэта акно ў выпадку выкарыстання іншага менеджара ключоў доступу."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Пацвердзіце свой дадатковы пароль, каб працягнуць яго выдаленне."
@@ -1257,7 +1269,7 @@
         "Адключэнне рэжыму па-за сеткай..."
       ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "Пазнаёмцеся з усімі функцыямі ${ PASS_APP_NAME } з дапамогай відэа на YouTube"
+        "Пазнаёмцеся з усімі функцыямі ${ PASS_APP_NAME } паглядзеўшы відэа на YouTube"
       ],
       "Drop file here to upload": [
         "Перацягніце файл сюды, каб запампаваць"
@@ -1488,7 +1500,7 @@
         "Ніколі"
       ],
       "No identity item found": [
-        "Элемент пасведчання не знойдзены"
+        "Элемент ідэнтычнасці не знойдзены"
       ],
       "No login found": [
         "Запіс уваходу не знойдзены"
@@ -1542,7 +1554,7 @@
         "Незваротнае выдаленне выбраных элементаў"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Замацуйце ${ PASS_APP_NAME } на панэлі інструментаў"
+        "Замацаваць ${ PASS_APP_NAME } на панэлі інструментаў"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-код паспяхова зарэгістраваны. Вы можаце выкарыстоўваць яго, каб разблакіраваць ${ PASS_APP_NAME }"
@@ -1647,7 +1659,7 @@
         "Захаваць запіс уваходу"
       ],
       "Save passkey": [
-        "Захаванне ключа доступу"
+        "Захаваць ключ доступу"
       ],
       "Secure links": [
         "Бяспечныя спасылкі"
@@ -1762,6 +1774,9 @@
       ],
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "Для прагляду імпартаваных даных, націсніце на значок Pass на панэлі інструментаў свайго браўзера."
+      ],
+      "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
+        "Паспрабуйце перазагрузіць або паўторна ўсталяваць пашырэнне і пераканайцеся, што версія вашага браўзера і ${ PASS_SHORT_APP_NAME } знаходзяцца ў актуальным стане."
       ],
       "Unable to copy to clipboard": [
         "Немагчыма скапіяваць у буфер абмену"
@@ -2011,6 +2026,9 @@
       "Alias address": [
         "Адрас псеўданіма"
       ],
+      "Alias management": [
+        "Кіраванне псеўданімамі"
+      ],
       "Aliases": [
         "Псеўданімы"
       ],
@@ -2047,8 +2065,8 @@
       "Autosave": [
         "Аўтазахаванне"
       ],
-      "Autosave vault": [
-        "Аўтаматычнае захаванне сховішча"
+      "Autosuggest": [
+        "Аўтапрапанова"
       ],
       "Biometrics": [
         "Біяметрыя"
@@ -2435,7 +2453,7 @@
         "Запыт на аўтазахаванне"
       ],
       "Prompt for auto-save when generating passwords": [
-        "Прапануе для аўтаматычнага захавання пры генерацыі пароляў"
+        "Прапануе для аўтазахавання пры генерацыі пароляў"
       ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Абарона ${ PASS_APP_NAME } з дапамогай дадатковага пароля"
@@ -2565,6 +2583,9 @@
       ],
       "Type": [
         "Тып"
+      ],
+      "Unknown": [
+        "Невядома"
       ],
       "Unlock ${ PASS_APP_NAME }": [
         "Разблакіраваць ${ PASS_APP_NAME }"
@@ -2721,9 +2742,6 @@
       "MM/YY": [
         "ММ/ГГ"
       ],
-      "Other": [
-        "Іншае"
-      ],
       "Password": [
         "Пароль"
       ],
@@ -2782,6 +2800,9 @@
       ]
     },
     "Title": {
+      "${ PASS_APP_NAME } Settings": [
+        "Налады ${ PASS_APP_NAME }"
+      ],
       "Auto-lock update": [
         "Абнаўленне аўтаблакіравання"
       ],
@@ -2837,7 +2858,7 @@
         "Пачаць працу"
       ],
       "Get the mobile apps": [
-        "Атрымайце мабільныя праграмы"
+        "Атрымаць мабільныя праграмы"
       ],
       "Grant permissions": [
         "Даць дазволы"
@@ -2951,7 +2972,7 @@
         "Прапановы"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
-        "Перайсці на ${ PASS_APP_NAME }?"
+        "Пераключыцца на ${ PASS_APP_NAME }?"
       ],
       "Sync alias": [
         "Сінхранізацыя псеўданімаў"

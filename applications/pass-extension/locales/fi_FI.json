@@ -116,10 +116,10 @@
       "Create": [
         "Luo"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Luo ${ BRAND_NAME }-tili"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Luo ${ BRAND_NAME }-tili"
       ],
       "Create a new vault to share": [
@@ -391,6 +391,9 @@
       ],
       "Reject invitation": [
         "Kieltäydy kutsusta"
+      ],
+      "Reload extension": [
+        "Lataa laajennus uudelleen"
       ],
       "Remove": [
         "Poista"
@@ -1990,8 +1993,8 @@
       "Autosave": [
         "Automaattitallennus"
       ],
-      "Autosave vault": [
-        "Automaattitallennukseen käytettävä holvi"
+      "Autosuggest": [
+        "Automaattiehdotus"
       ],
       "Biometrics": [
         "Biometria"
@@ -2660,9 +2663,6 @@
       "MM/YY": [
         "KK/VV"
       ],
-      "Other": [
-        "Muu"
-      ],
       "Password": [
         "Salasana"
       ],
@@ -2719,6 +2719,9 @@
       ]
     },
     "Title": {
+      "${ PASS_APP_NAME } Settings": [
+        "${ PASS_APP_NAME } -asetukset"
+      ],
       "Auto-lock update": [
         "Muuta automaattilukitusta"
       ],

@@ -116,10 +116,10 @@
       "Create": [
         "Skapa"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Skapa ett ${ BRAND_NAME }-konto"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Skapa ett ${ BRAND_NAME }-konto"
       ],
       "Create a new vault to share": [
@@ -894,6 +894,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Det uppstod ett fel när den säkra länken skulle tas bort. Försök igen om några minuter."
       ],
+      "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
+        "Detta kan inträffa efter en lång tid av att du inte har använt ${ PASS_SHORT_APP_NAME } eller rensat din Safari-historik."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "För många misslyckade försök. Logga in igen."
       ],
@@ -953,6 +956,9 @@
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Du är för närvarande offline. Återuppta anslutning för att låsa upp ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
+        "Din webbläsare har problem att aktivera ${ PASS_APP_NAME }"
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Din PIN-kod togs bort av en annan ${ PASS_APP_NAME }-klient"
@@ -1701,6 +1707,9 @@
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "För att granska dina importerade data, klicka på Pass-ikonen i webbläsarens verktygsfält."
       ],
+      "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
+        "Prova ladda om eller installera om utökningen och se till att din webbläsare och ${ PASS_SHORT_APP_NAME } är uppdaterade."
+      ],
       "Unable to copy to clipboard": [
         "Kan inte kopiera till urklipp"
       ],
@@ -1923,6 +1932,9 @@
       "Alias address": [
         "Alias-adress"
       ],
+      "Alias management": [
+        "Aliashantering"
+      ],
       "Aliases": [
         "Alias"
       ],
@@ -1959,8 +1971,8 @@
       "Autosave": [
         "Spara automatiskt"
       ],
-      "Autosave vault": [
-        "Spara valv automatiskt"
+      "Autosuggest": [
+        "Föreslå automatiskt"
       ],
       "Biometrics": [
         "Biometri"
@@ -2473,6 +2485,9 @@
       "Type": [
         "Typ"
       ],
+      "Unknown": [
+        "Okänd"
+      ],
       "Unlock ${ PASS_APP_NAME }": [
         "Lås upp ${ PASS_APP_NAME }"
       ],
@@ -2626,9 +2641,6 @@
       "MM/YY": [
         "MM/ÅÅ"
       ],
-      "Other": [
-        "Annat"
-      ],
       "Password": [
         "Lösenord"
       ],
@@ -2685,6 +2697,9 @@
       ]
     },
     "Title": {
+      "${ PASS_APP_NAME } Settings": [
+        "Inställningar för ${ PASS_APP_NAME }"
+      ],
       "Auto-lock update": [
         "Uppdatering av autolås"
       ],
