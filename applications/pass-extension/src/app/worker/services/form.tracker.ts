@@ -11,6 +11,8 @@ import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
 import { requestHasBodyFormData } from '@proton/pass/utils/requests';
 import { parseSender } from '@proton/pass/utils/url/parser';
+import type { URLComponents } from '@proton/pass/utils/url/types';
+import { urlEq } from '@proton/pass/utils/url/utils';
 import noop from '@proton/utils/noop';
 
 import { createMainFrameRequestTracker } from './main-frame.tracker';
@@ -18,9 +20,19 @@ import { createXMLHTTPRequestTracker } from './xmlhttp-request.tracker';
 
 export const createFormTrackerService = () => {
     /** Track form entries for each tab */
-    const submissions: Map<TabId, FormEntry> = new Map();
+    const entries: Map<TabId, FormEntry> = new Map();
 
-    /** Notifies the tab of the current status of the form. If no XMLHttpRequests
+    const get = (tabId: TabId, url: URLComponents): Maybe<FormEntry> => {
+        const submission = entries.get(tabId);
+        if (submission && urlEq(submission, url)) return submission;
+    };
+
+    const clear = () => {
+        logger.info(`[FormTracker::Clear]: removing every submission`);
+        entries.clear();
+    };
+
+    /** Notifies a tabId of the current status of the form. If no XMLHttpRequests
      * were intercepted, we will rely on a content-script timeout to infer the
      * submission. Else we ping the tab to clear the timeout and wait for the
      * form loading state to resolve via the `onIdle` callback of the tracker */
@@ -30,21 +42,16 @@ export const createFormTrackerService = () => {
             .catch(noop);
     };
 
-    const get = (tabId: TabId, domain: string): Maybe<FormEntry> => {
-        const submission = submissions.get(tabId);
-        if (submission && submission.domain === domain) return submission;
-    };
-
     const stash = (tabId: TabId, reason: string): void => {
-        if (submissions.has(tabId)) {
+        if (entries.has(tabId)) {
             logger.info(`[FormTracker::Stash]: on tab ${tabId} {${reason}}`);
-            submissions.delete(tabId);
+            entries.delete(tabId);
         }
     };
 
     const stage = (tabId: TabId, submission: FormEntryBase, reason: string): FormEntry => {
         logger.info(`[FormTracker::Stage]: on tab ${tabId} for domain "${submission.domain}" {${reason}}`);
-        const pending = get(tabId, submission.domain);
+        const pending = get(tabId, submission);
         const updatedAt = Date.now();
         const submittedAt = submission.submit ? updatedAt : null;
 
@@ -68,21 +75,22 @@ export const createFormTrackerService = () => {
             }
         })();
 
-        submissions.set(tabId, staging);
+        entries.set(tabId, staging);
         return staging;
     };
-    const commit = (tabId: TabId, domain: string, reason: string): Maybe<FormEntry<FormEntryStatus.COMMITTED>> => {
-        const pending = get(tabId, domain);
+
+    const commit = (tabId: TabId, url: URLComponents, reason: string): Maybe<FormEntry<FormEntryStatus.COMMITTED>> => {
+        const pending = get(tabId, url);
 
         if (pending && pending.status === FormEntryStatus.STAGING) {
-            logger.info(`[FormTracker::Commit] on tab ${tabId} for domain "${domain}" {${reason}}`);
+            logger.info(`[FormTracker::Commit] on tab ${tabId} for domain "${url.domain}" {${reason}}`);
             return setFormEntryStatus(pending, FormEntryStatus.COMMITTED);
         } else stash(tabId, 'INVALID_COMMIT');
     };
 
     const XMLHttpTracker = createXMLHTTPRequestTracker({
         acceptRequest: (details) => {
-            const submission = submissions.get(details.tabId);
+            const submission = entries.get(details.tabId);
             if (!submission) return false;
 
             /* only start tracking requests if the form entry was submitted
@@ -99,8 +107,8 @@ export const createFormTrackerService = () => {
 
             return false;
         },
-        onFailed: ({ tabId, domain }) => {
-            const submission = get(tabId, domain);
+        onFailed: ({ tabId, ...url }) => {
+            const submission = get(tabId, url);
             if (submission && submission.status === FormEntryStatus.STAGING) {
                 submission.submittedAt = null;
                 syncFormStatus(tabId, { formId: submission.formId, status: 'error' });
@@ -111,7 +119,7 @@ export const createFormTrackerService = () => {
              * entry, notify the tab that the form may have been successfully submitted.
              * At this point, failure inference may not be possible. Add a small timout
              * between each resolved request in order to handle concurrent requests */
-            const submission = submissions.get(tabId);
+            const submission = entries.get(tabId);
 
             if (submission && submission.loading) {
                 submission.loading = false;
@@ -125,12 +133,12 @@ export const createFormTrackerService = () => {
         onTabUpdate: (tabId) => XMLHttpTracker.reset(tabId),
         onTabDelete: (tabId) => stash(tabId, 'TAB_DELETED'),
         onTabError: (tabId) => stash(tabId, 'TAB_ERRORED'),
-        onTabLoaded: (tabId, method, domain) => {
+        onTabLoaded: (tabId, method, url) => {
             /** If the tab was loaded for a `POST` request and we
              * were tracking a form, we can assume something
              * was submitted as part of the form action */
-            const submission = get(tabId, domain ?? '');
-            if (submission?.domain !== domain) stash(tabId, 'DOMAIN_SWITCH');
+            const submission = get(tabId, url);
+            if (!(submission && urlEq(submission, url))) stash(tabId, 'DOMAIN_SWITCH');
             else {
                 submission.loading = false;
                 if (method === 'POST') submission.submit = true;
@@ -145,8 +153,8 @@ export const createFormTrackerService = () => {
 
             if (ctx.getState().authorized) {
                 const { tabId, url } = parseSender(sender);
-                const { domain, subdomain, protocol: scheme } = url;
-                const staged = stage(tabId, { domain, subdomain, scheme, ...staging }, reason);
+                const { domain, protocol, port } = url;
+                const staged = stage(tabId, { domain, protocol, port, ...staging }, reason);
                 const autosave = ctx.service.autosave.resolve(staged);
 
                 return { submission: merge(staged, { autosave }) };
@@ -177,7 +185,7 @@ export const createFormTrackerService = () => {
             if (ctx.getState().authorized) {
                 const { tabId, url } = parseSender(sender);
                 if (url.domain) {
-                    const committed = commit(tabId, url.domain, reason);
+                    const committed = commit(tabId, url, reason);
 
                     if (committed) {
                         const autosave = ctx.service.autosave.resolve(committed);
@@ -206,7 +214,7 @@ export const createFormTrackerService = () => {
                 const { tabId, url } = parseSender(sender);
 
                 if (url.domain) {
-                    const submission = get(tabId, url.domain);
+                    const submission = get(tabId, url);
 
                     if (!submission) {
                         stash(tabId, 'REQUEST');
@@ -228,11 +236,6 @@ export const createFormTrackerService = () => {
             return { submission: null };
         })
     );
-
-    const clear = () => {
-        logger.info(`[FormTracker::Clear]: removing every submission`);
-        submissions.clear();
-    };
 
     return { get, stage, stash, commit, clear };
 };

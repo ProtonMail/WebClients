@@ -6,13 +6,14 @@ import { isFailedRequest } from '@proton/pass/utils/requests';
 import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 import { epochToMs, getEpoch } from '@proton/pass/utils/time/epoch';
 import { parseUrl } from '@proton/pass/utils/url/parser';
+import type { URLComponents } from '@proton/pass/utils/url/types';
 
 const filter: WebRequest.RequestFilter = {
     urls: ['<all_urls>'],
     types: ['xmlhttprequest'],
 };
 
-type TrackedRequestData = { tabId: TabId; domain: string; requestedAt: number };
+type TrackedRequestData = { tabId: TabId; requestedAt: number } & URLComponents;
 
 type XMLHTTPRequestTrackerOptions = {
     acceptRequest: (request: WebRequest.OnBeforeRequestDetailsType) => boolean;
@@ -82,8 +83,16 @@ export const createXMLHTTPRequestTracker = ({ acceptRequest, onIdle, onFailed }:
                 const tab = await browser.tabs.get(tabId);
                 if (tab.url !== undefined) {
                     onRequestPending(tabId);
-                    const { domain } = parseUrl(tab.url);
-                    if (domain) requests.set(requestId, { tabId, domain, requestedAt: request.timeStamp });
+                    const { domain, port, protocol } = parseUrl(tab.url);
+                    if (domain) {
+                        requests.set(requestId, {
+                            tabId,
+                            domain,
+                            port,
+                            protocol,
+                            requestedAt: request.timeStamp,
+                        });
+                    }
                 }
             } catch (_) {}
         }
