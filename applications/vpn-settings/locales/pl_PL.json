@@ -253,9 +253,6 @@
       "Edit name": [
         "Edytuj nazwę"
       ],
-      "Edit organization identity": [
-        "Edytuj tożsamość organizacji"
-      ],
       "Edit organization name": [
         "Edytuj nazwę organizacji"
       ],
@@ -496,6 +493,9 @@
       "Restore": [
         "Przywróć"
       ],
+      "Resume membership": [
+        "Wznów członkostwo"
+      ],
       "Retry": [
         "Spróbuj ponownie"
       ],
@@ -681,6 +681,9 @@
       ],
       "Use authentication code": [
         "Użyj kodu uwierzytelniającego"
+      ],
+      "Use group sending permissions": [
+        "Użyj uprawnienia grupy"
       ],
       "Use recovery code": [
         "Użyj kodu odzyskiwania"
@@ -3257,6 +3260,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "Wersja aplikacji"
+      ],
       "Best deal": [
         "Najlepsza oferta"
       ],
@@ -3269,11 +3275,20 @@
       "Create your account": [
         "Utwórz konto"
       ],
+      "Device": [
+        "Urządzenie"
+      ],
+      "Event": [
+        "Zdarzenie"
+      ],
       "IP address": [
         "Adres IP"
       ],
       "Key type": [
         "Typ klucza"
+      ],
+      "Location": [
+        "Lokalizacja"
       ],
       "Members": [
         "Użytkownicy"
@@ -3283,6 +3298,9 @@
       ],
       "Organization key fingerprint": [
         "Odcisk klucza organizacji"
+      ],
+      "Protection": [
+        "Ochrona"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Zaoszczędź dzięki najlepszym ofertom ${ VPN_APP_NAME }"
@@ -3304,6 +3322,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "User": [
+        "Użytkownik"
       ]
     },
     "Header for addresses table": {
@@ -3622,9 +3643,6 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Czy na pewno chcesz usunąć domenę ${ boldDomain }?"
-      ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Poproś administratora swojej organizacji, aby skonfigurował bramy."
       ],
       "Attention required": [
         "Wymagana uwaga"
@@ -5443,9 +5461,6 @@
       "Current email": [
         "Obecny adres"
       ],
-      "Current organization identity": [
-        "Obecna tożsamość organizacji"
-      ],
       "Default language": [
         "Język domyślny"
       ],
@@ -5566,9 +5581,6 @@
       "New login password": [
         "Nowe hasło logowania"
       ],
-      "New organization identity": [
-        "Nowa tożsamość organizacji"
-      ],
       "New organization password": [
         "Nowe hasło organizacji"
       ],
@@ -5598,9 +5610,6 @@
       ],
       "Optional": [
         "Opcjonalnie"
-      ],
-      "Organization identity": [
-        "Tożsamość organizacji"
       ],
       "Organization name": [
         "Nazwa organizacji"
@@ -6150,23 +6159,6 @@
         "Umiarkowana prędkość VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Usuń konto"
@@ -6188,6 +6180,23 @@
       ],
       "Switch plan": [
         "Zmień plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
       ]
     },
     "new_plans: feature": {
@@ -9403,9 +9412,6 @@
       "Organization activated": [
         "Organizacja została aktywowana"
       ],
-      "Organization identity updated": [
-        "Tożsamość organizacji została zaktualizowana"
-      ],
       "Organization logo removed": [
         "Logo organizacji zostało usunięte"
       ],
@@ -9900,9 +9906,6 @@
       "Edit invoice details": [
         "Edytuj szczegóły faktury"
       ],
-      "Edit organization identity": [
-        "Edytuj tożsamość organizacji"
-      ],
       "Edit servers": [
         "Edytuj serwery"
       ],
@@ -10125,6 +10128,9 @@
       "SAML authentication": [
         "Uwierzytelnianie SAML"
       ],
+      "Security events": [
+        "Logi bezpieczeństwa"
+      ],
       "Select a plan": [
         "Wybierz plan"
       ],
@@ -10334,6 +10340,12 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "Administratorzy mogą zmieniać Twoją subskrypcję, zarządzać kontami użytkowników, hasłami oraz przyznawać uprawnienia innym użytkownikom."
       ],
+      "An approximate location of the IP address": [
+        "Przybliżona lokalizacja adresu IP"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Zastosowane zabezpieczenia do podejrzanej aktywności"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Przełączaj się między motywami na dzień i noc, synchronizując je z systemowymi trybami dziennymi i nocnymi"
       ],
@@ -10342,6 +10354,9 @@
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Kopiuj i wklej adres URL do pola identyfikatora jednostki u swojego dostawcy tożsamości"
+      ],
+      "Device information such as operating system": [
+        "Informacje o urządzeniu jak system operacyjny"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Adres URL punktu końcowego od dostawcy tożsamości (np. https://idp.przyklad.pl/sso/saml)"

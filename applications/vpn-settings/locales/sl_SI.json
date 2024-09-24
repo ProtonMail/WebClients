@@ -244,9 +244,6 @@
       "Edit name": [
         "Uredi ime"
       ],
-      "Edit organization identity": [
-        "Uredite identiteto organizacije"
-      ],
       "Edit organization name": [
         "Uredite ime organizacije"
       ],
@@ -800,6 +797,9 @@
       ],
       "External": [
         "Zunanji"
+      ],
+      "Inactive": [
+        "Neaktivno"
       ],
       "No E2EE mail": [
         "Brez šifriranja E2E"
@@ -3171,6 +3171,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "Različica aplikacije"
+      ],
       "Best deal": [
         "Najboljša ponudba"
       ],
@@ -3183,11 +3186,20 @@
       "Create your account": [
         "Ustvarite svoj račun"
       ],
+      "Device": [
+        "Naprava"
+      ],
+      "Event": [
+        "Dogodek"
+      ],
       "IP address": [
         "IP naslov"
       ],
       "Key type": [
         "Vrsta ključa"
+      ],
+      "Location": [
+        "Lokacija"
       ],
       "Members": [
         "Člani"
@@ -3197,6 +3209,9 @@
       ],
       "Organization key fingerprint": [
         "Prstni odtis organizacijskega ključa"
+      ],
+      "Protection": [
+        "Zaščita"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Izkoristite najboljše ponudbe ${ VPN_APP_NAME } in prihranite"
@@ -3218,6 +3233,9 @@
       ],
       "Status": [
         "Stanje"
+      ],
+      "User": [
+        "Uporabnik"
       ]
     },
     "Header for addresses table": {
@@ -3512,9 +3530,6 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Ali ste prepričani, da želite odstraniti domeno ${ boldDomain }?"
-      ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Prosite skrbnika v organizaciji, da nastavi prehode."
       ],
       "Attention required": [
         "Pozornost!"
@@ -4843,6 +4858,9 @@
       ]
     },
     "invitation status": {
+      "Declined": [
+        "Zavrnjeno"
+      ],
       "Pending": [
         "V teku"
       ]
@@ -5071,9 +5089,6 @@
       "Current email": [
         "Trenutna e-pošta"
       ],
-      "Current organization identity": [
-        "Trenutna identiteta organizacije"
-      ],
       "Default language": [
         "Privzeti jezik"
       ],
@@ -5188,9 +5203,6 @@
       "New login password": [
         "Novo geslo za prijavo"
       ],
-      "New organization identity": [
-        "Nova identiteta organizacije"
-      ],
       "New organization password": [
         "Novo geslo organizacije"
       ],
@@ -5220,9 +5232,6 @@
       ],
       "Optional": [
         "Neobvezno"
-      ],
-      "Organization identity": [
-        "Identiteta organizacije"
       ],
       "Organization name": [
         "Ime organizacije"
@@ -5745,23 +5754,6 @@
         "Srednja hitrost VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Raziščite vse pakete ${ BRAND_NAME }."
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Nadgradnja"
-      ],
-      "Upgrade now": [
-        "Nadgradi zdaj"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Izbriši račun"
@@ -5783,6 +5775,23 @@
       ],
       "Switch plan": [
         "Zamenjaj paket"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Raziščite vse pakete ${ BRAND_NAME }."
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Nadgradnja"
+      ],
+      "Upgrade now": [
+        "Nadgradi zdaj"
       ]
     },
     "new_plans: feature": {
@@ -9180,9 +9189,6 @@
       "Edit invoice details": [
         "Uredite podrobnosti računa"
       ],
-      "Edit organization identity": [
-        "Uredi identiteto organizacije"
-      ],
       "Edit servers": [
         "Uredi strežnike"
       ],
@@ -9465,6 +9471,9 @@
       "Switch to two-password mode": [
         "Preklopite na dvojno geslo"
       ],
+      "Text": [
+        "Besedilo"
+      ],
       "Time": [
         "Čas"
       ],
@@ -9599,6 +9608,12 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "Skrbniki lahko spreminjajo vašo naročnino, upravljajo z uporabniškimi računi in gesli ter dodeljujejo upravljavske pravice drugim uporabnikom."
       ],
+      "An approximate location of the IP address": [
+        "Približna lokacija IP naslova"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Katera koli zaščita, ki je uporabljena za sumljive aktivnosti"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Samodejno preklapljajte med svojimi prednostnimi temami za dan in noč v skladu z dnevnim in nočnim načinom vašega sistema"
       ],
@@ -9607,6 +9622,9 @@
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Kopirajte in prilepite ta URL v polje ID entitete vašega ponudnika identitete"
+      ],
+      "Device information such as operating system": [
+        "Informacije o napravi, kot je operacijski sistem"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL končne točke ponudnika identitete (npr. https://idp.example.com/sso/saml)"

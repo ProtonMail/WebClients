@@ -253,9 +253,6 @@
       "Edit name": [
         "Rediger navn"
       ],
-      "Edit organization identity": [
-        "Rediger organisationsidentitet"
-      ],
       "Edit organization name": [
         "Rediger organisationsnavn"
       ],
@@ -3208,6 +3205,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "App-version"
+      ],
       "Best deal": [
         "Bedste tilbud"
       ],
@@ -3220,11 +3220,20 @@
       "Create your account": [
         "Opret din konto"
       ],
+      "Device": [
+        "Enhed"
+      ],
+      "Event": [
+        "Begivenhed"
+      ],
       "IP address": [
         "IP-adresse"
       ],
       "Key type": [
         "Nøgletype"
+      ],
+      "Location": [
+        "Placering"
       ],
       "Members": [
         "Medlemmer"
@@ -3234,6 +3243,9 @@
       ],
       "Organization key fingerprint": [
         "Organisationsnøgle-fingeraftryk"
+      ],
+      "Protection": [
+        "Beskyttelse"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Spar stort på de bedste ${ VPN_APP_NAME }-tilbud"
@@ -3255,6 +3267,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "User": [
+        "Bruger"
       ]
     },
     "Header for addresses table": {
@@ -3545,9 +3560,6 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Er du sikker på, at du vil fjerne domænet ${ boldDomain }?"
-      ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Bed din organisationsadministrator om at indstille gateways."
       ],
       "Attention required": [
         "Opmærksomhed påkrævet"
@@ -5323,9 +5335,6 @@
       "Current email": [
         "Nuværende e-mailadresse"
       ],
-      "Current organization identity": [
-        "Nuværende organisationsidentitet"
-      ],
       "Default language": [
         "Standardsporg"
       ],
@@ -5446,9 +5455,6 @@
       "New login password": [
         "Ny login-adgangskode"
       ],
-      "New organization identity": [
-        "Ny organisationsidentitet"
-      ],
       "New organization password": [
         "Ny organisationsadgangskode"
       ],
@@ -5478,9 +5484,6 @@
       ],
       "Optional": [
         "Valgfrit"
-      ],
-      "Organization identity": [
-        "Organisationsidentitet"
       ],
       "Organization name": [
         "Organisationsnavn"
@@ -6022,23 +6025,6 @@
         "Mellem VPN-hastighed"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Udforsk alle ${ BRAND_NAME }-abonnementer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Slet konto"
@@ -6060,6 +6046,23 @@
       ],
       "Switch plan": [
         "Skift abonnement"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Udforsk alle ${ BRAND_NAME }-abonnementer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
       ]
     },
     "new_plans: feature": {
@@ -9133,9 +9136,6 @@
       "Organization activated": [
         "Organisation aktiveret"
       ],
-      "Organization identity updated": [
-        "Organisationens identitet opdateret"
-      ],
       "Organization logo removed": [
         "Organisationens logo fjernet"
       ],
@@ -9626,9 +9626,6 @@
       "Edit invoice details": [
         "Rediger fakturadetaljer"
       ],
-      "Edit organization identity": [
-        "Rediger organisationsidentitet"
-      ],
       "Edit servers": [
         "Redigér servere"
       ],
@@ -9849,6 +9846,9 @@
       "SAML authentication": [
         "SAML-godkendelse"
       ],
+      "Security events": [
+        "Sikkerhedsbegivenheder"
+      ],
       "Select a plan": [
         "Vælg et abonnement"
       ],
@@ -10056,6 +10056,12 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "Admins kan foretage ændringer i dit abonnement, administrere brugerkonti og adgangskoder og give administratorrettigheder til andre brugere."
       ],
+      "An approximate location of the IP address": [
+        "En omtrentlig placering af IP-adressen"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Enhver form for beskyttelse mod mistænkelig aktivitet"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Skift automatisk mellem dine foretrukne temaer for dag og nat synkront med dit systems dag- og nattilstande"
       ],
@@ -10064,6 +10070,9 @@
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Kopiér og indsæt denne URL i feltet Entity ID hos din identitetsudbyder"
+      ],
+      "Device information such as operating system": [
+        "Enhedsoplysninger, som f.eks. operativsystem"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL-adresse til slutpunkt fra identitetsudbyder (f.eks. https://idp.example.com/sso/saml)"

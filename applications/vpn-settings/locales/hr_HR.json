@@ -2055,17 +2055,29 @@
       ]
     },
     "Header": {
+      "App version": [
+        "Verzija aplikacije"
+      ],
       "Best deal": [
         "Najbolja ponuda"
       ],
       "Country": [
         "Država"
       ],
+      "Device": [
+        "Uređaj"
+      ],
+      "Event": [
+        "Događaj"
+      ],
       "IP address": [
         "IP adresa"
       ],
       "Key type": [
         "Vrsta ključa"
+      ],
+      "Location": [
+        "Lokacija"
       ],
       "Members": [
         "Članovi"
@@ -2075,6 +2087,9 @@
       ],
       "Organization key fingerprint": [
         "Jedinstveni ključ organizacije"
+      ],
+      "Protection": [
+        "Zaštita"
       ],
       "Server": [
         "Poslužitelj"
@@ -2087,6 +2102,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "User": [
+        "Korisnik"
       ]
     },
     "Header for addresses table": {
@@ -3198,14 +3216,6 @@
         "Najviša VPN brzina"
       ]
     },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -3215,6 +3225,14 @@
       ],
       "Get ${ planName }": [
         "Nabavite ${ planName }"
+      ]
+    },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Upgrade now": [
+        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {

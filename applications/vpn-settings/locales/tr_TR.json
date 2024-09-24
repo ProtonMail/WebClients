@@ -253,9 +253,6 @@
       "Edit name": [
         "Adı düzenle"
       ],
-      "Edit organization identity": [
-        "Kuruluş kimliğini düzenle"
-      ],
       "Edit organization name": [
         "Kuruluş adını düzenle"
       ],
@@ -2243,6 +2240,17 @@
         "Kendimizi geliştirmemize yardımcı olun"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Özel ${ PASS_APP_NAME } indirimini kaybedeceğinizi onaylayın"
+      ],
+      "Remove discount": [
+        "İndirimi kaldır"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "${ PLAN_NAMES[PLANS.PASS] } aboneliğinizi yıllık ${ price } özel fiyatı ile kullanıyorsunuz. Free tarifesine geçtikten sonra, gelecekte yeniden tarifenizi yükseltseniz bile indirim hakkınızı kalıcı olarak kaybedersiniz."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Genişletilmiş sürüm geçmişi"
@@ -3217,6 +3225,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "Uygulama sürümü"
+      ],
       "Best deal": [
         "En iyi teklif"
       ],
@@ -3229,11 +3240,20 @@
       "Create your account": [
         "Hesabınızı açın"
       ],
+      "Device": [
+        "Aygıt"
+      ],
+      "Event": [
+        "Etkinlik"
+      ],
       "IP address": [
         "IP adresi"
       ],
       "Key type": [
         "Anahtar türü"
+      ],
+      "Location": [
+        "Konum"
       ],
       "Members": [
         "Üyeler"
@@ -3243,6 +3263,9 @@
       ],
       "Organization key fingerprint": [
         "Kuruluş anahtarı parmak izi"
+      ],
+      "Protection": [
+        "Koruma"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "En iyi ${ VPN_APP_NAME } fırsatlarıyla büyük indirim kazanın"
@@ -3264,6 +3287,9 @@
       ],
       "Status": [
         "Durum"
+      ],
+      "User": [
+        "Kullanıcı"
       ]
     },
     "Header for addresses table": {
@@ -3554,9 +3580,6 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "${ boldDomain } etki alanını kaldırmak istediğinize emin misiniz?"
-      ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Kuruluş yöneticinizden ağ geçitlerini kurmasını isteyin."
       ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
@@ -5338,9 +5361,6 @@
       "Current email": [
         "Geçerli e-posta"
       ],
-      "Current organization identity": [
-        "Geçerli kuruluş kimliği"
-      ],
       "Default language": [
         "Varsayılan dil"
       ],
@@ -5461,9 +5481,6 @@
       "New login password": [
         "Yeni oturum açma parolası"
       ],
-      "New organization identity": [
-        "Yeni kuruluş kimliği"
-      ],
       "New organization password": [
         "Yeni kuruluş parolası"
       ],
@@ -5493,9 +5510,6 @@
       ],
       "Optional": [
         "İsteğe bağlı"
-      ],
-      "Organization identity": [
-        "Kuruluş kimliği"
       ],
       "Organization name": [
         "Kuruluş adı"
@@ -6043,23 +6057,6 @@
         "Orta VPN hızı"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
-      ],
-      "From ${ price }": [
-        "${ price } ile başlar"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Hesabı sil"
@@ -6081,6 +6078,23 @@
       ],
       "Switch plan": [
         "Tarifeyi değiştir"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
+      ],
+      "From ${ price }": [
+        "${ price } ile başlar"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
       ]
     },
     "new_plans: feature": {
@@ -8657,6 +8671,11 @@
         "Tarifeniz bir iOS uygulaması kullanılarak satın alınmış. Bu nedenle, tarifenizde değişiklik yapmak ya da ödeme bilgilerinizi güncellemek için Apple App Store uygulamasını kullanmalısınız."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Abonelik tarifeniz fatura döneminin sonunda düşürülecek."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } için"
@@ -9157,9 +9176,6 @@
       "Organization activated": [
         "Kuruluş kullanıma alındı"
       ],
-      "Organization identity updated": [
-        "Kuruluş kimliği güncellendi"
-      ],
       "Organization logo removed": [
         "Kuruluş logosu kaldırıldı"
       ],
@@ -9650,9 +9666,6 @@
       "Edit invoice details": [
         "Fatura ayrıntılarını düzenle"
       ],
-      "Edit organization identity": [
-        "Kuruluş kimliğini düzenle"
-      ],
       "Edit servers": [
         "Sunucuları düzenle"
       ],
@@ -9873,6 +9886,9 @@
       "SAML authentication": [
         "SAML kimlik doğrulaması"
       ],
+      "Security events": [
+        "Güvenlik olayları"
+      ],
       "Select a plan": [
         "Bir tarife seçin"
       ],
@@ -10080,6 +10096,12 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "Yöneticiler aboneliğinizde değişiklik yapabilir, kullanıcı hesaplarını ve parolaları yönetebilir ve diğer kullanıcılara yönetici yetkisi verebilir."
       ],
+      "An approximate location of the IP address": [
+        "IP adresinin yaklaşık konumu"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Şüpheli etkinliğe uygulanan herhangi bir koruma"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Sisteminizin gündüz ve gece durumuna uyarak gündüz ve gece için seçtiğiniz temalar arasında otomatik olarak geçiş yapın"
       ],
@@ -10088,6 +10110,9 @@
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Bu adresi kopyalayıp kimlik hizmeti sağlayıcınızın varlık kimliği alanına yapıştırın"
+      ],
+      "Device information such as operating system": [
+        "İşletim sistemi gibi aygıt bilgileri"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Kimlik hizmeti sağlayıcınızın uç nokta adresi (örnek: https://idp.ornek.com/sso/saml)"
