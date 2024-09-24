@@ -1689,6 +1689,17 @@
         "Hilf uns, besser zu werden"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Bestätige den Verlust des ${ PASS_APP_NAME }-Sonderrabatts"
+      ],
+      "Remove discount": [
+        "Rabatt entfernen"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Dein ${ PLAN_NAMES[PLANS.PASS] }-Abonnement hat einen Sonderpreis von ${ price } pro Jahr. Durch ein Downgrade auf ein kostenloses Abonnement verlierst du den Rabatt dauerhaft, auch wenn du in Zukunft wieder ein Upgrade durchführst."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Erweiterter Versionsverlauf"
@@ -2271,6 +2282,9 @@
       "Please authenticate your payment in the verification tab.": [
         "Bitte authentifiziere deine Zahlung im Verifikationstab."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ remainingCreditsFormatted } Guthaben auf deinem Konto verbleiben."
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Bitte versuche es mit einer anderen Zahlungsmethode erneut oder kontaktiere deine Bank."
       ],
@@ -2632,6 +2646,22 @@
       ],
       "What’s this?": [
         "Was ist das?"
+      ]
+    },
+    "Loader": {
+      "Loading": [
+        "Wird geladen"
+      ],
+      "Loading data": [
+        "Daten werden geladen"
+      ],
+      "Loading message": [
+        "Nachricht wird geladen"
+      ]
+    },
+    "Loading": {
+      "Amount": [
+        "Betrag"
       ]
     },
     "mail_signup_2024: Info": {
@@ -4028,6 +4058,11 @@
         "Dein Abonnement wurde über eine iOS App gekauft. Um Änderungen an deinem Abonnement oder deinen Zahlungsdetails durchführen zu können, musst du zum Apple App Store gehen."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Das Abonnement wird am Ende des Abrechnungszeitraums herabgestuft."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Für ${ totalPrice }"
@@ -4092,6 +4127,9 @@
       ],
       "Payment method updated": [
         "Zahlungsmethode aktualisiert"
+      ],
+      "Problem reported": [
+        "Problem gemeldet"
       ],
       "Verification successful": [
         "Verifizierung erfolgreich"
@@ -4370,6 +4408,9 @@
       ]
     },
     "Wallet": {
+      "An error occurred": [
+        "Ein Fehler ist aufgetreten."
+      ],
       "Close": [
         "Schließen"
       ],
@@ -4381,6 +4422,9 @@
       ],
       "Explore other ${ BRAND_NAME } products": [
         "Entdecke weitere ${ BRAND_NAME }-Produkte"
+      ],
+      "Syncing new data": [
+        "Neue Daten werden synchronisiert"
       ],
       "Upgrade to Visionary": [
         "Auf Visionary upgraden"
@@ -4889,9 +4933,6 @@
       "Account name changed": [
         "Kontoname geändert"
       ],
-      "Account name could not be change": [
-        "Kontoname konnte nicht geändert werden"
-      ],
       "Account was deleted": [
         "Konto wurde gelöscht"
       ],
@@ -4903,9 +4944,6 @@
       ],
       "Could not be replaced": [
         "Konnte nicht ersetzt werden"
-      ],
-      "Could not fill the pool after email address adition": [
-        "Nachdem die E-Mail-Adresse hinzugefügt wurde, konnte der Pool nicht gefüllt werden"
       ],
       "Could not fill the pool after email address replacement": [
         "Nachdem die E-Mail-Adresse ersetzt wurde, konnte der Pool nicht gefüllt werden"
@@ -5183,6 +5221,9 @@
       "Network fee": [
         "Netzwerkgebühr"
       ],
+      "Note": [
+        "Notiz"
+      ],
       "Note to self": [
         "Notiz an mich selbst"
       ],
@@ -5235,6 +5276,11 @@
       ],
       "Transaction label successfully updated": [
         "Transaktionsbezeichnung erfolgreich aktualisiert"
+      ]
+    },
+    "Wallet Transaction List": {
+      "Page ${ pageNumber }": [
+        "Seite ${ pageNumber }"
       ]
     },
     "Wallet transactions": {
