@@ -441,6 +441,12 @@
       "Expand composer": [
         "広げる"
       ],
+      "Expand navigation bar to see folders": [
+        "ナビゲーションバーを展開してフォルダーを表示"
+      ],
+      "Expand navigation bar to see labels": [
+        "ナビゲーションバーを展開してラベルを表示"
+      ],
       "Expand URL": [
         "URL を展開"
       ],
@@ -3324,11 +3330,26 @@
       "Bugs or quality issue": [
         "バグまたは品質の問題"
       ],
+      "I do not wish to share": [
+        "共有しない"
+      ],
+      "I found a cheaper VPN": [
+        "より安価な VPN を見つけた"
+      ],
+      "I found a VPN with better features": [
+        "より優れた機能を持つ VPN を見つけた"
+      ],
+      "I only needed a VPN short-term": [
+        "VPN が短期間のみ必要だった"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "別の ${ BRAND_NAME } アカウントを使っている"
       ],
       "Missing feature(s)": [
         "機能が不足している"
+      ],
+      "Other reason (please comment)": [
+        "その他の理由 (コメントしてください)"
       ],
       "Subscription is too expensive": [
         "サブスクリプションが高すぎる"
@@ -3338,6 +3359,9 @@
       ],
       "Temporary need, may come back in the future": [
         "一時的な理由で、将来的に再度使用する予定"
+      ],
+      "The VPN is too slow": [
+        "VPN の通信速度が遅かった"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -6438,6 +6462,12 @@
       "Unlock message": [
         "メッセージのロックを解除"
       ],
+      "Unread conversations": [
+        "未読の会話"
+      ],
+      "Unread messages": [
+        "未読のメッセージ"
+      ],
       "Unsaved changes": [
         "未保存の変更"
       ],
@@ -7575,6 +7605,9 @@
       "What happened?": [
         "どのような問題が発生しましたか?"
       ],
+      "What is your main reason for canceling or downgrading?": [
+        "キャンセルまたはダウングレードの主な理由は何ですか？"
+      ],
       "With attachment": [
         "添付ファイルあり"
       ],
@@ -8296,6 +8329,9 @@
       ],
       "1 user": [
         "1ユーザー"
+      ],
+      "15 GB storage": [
+        "15 GB のストレージ"
       ],
       "24/7 account management support": [
         "24時間365日のアカウント管理サポート"
@@ -10175,11 +10211,20 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME } の唯一の収益源はユーザーのサブスクリプションです。皆様のご支援により、私たちは独立性を維持し、プライバシーをオンラインのデフォルトにするという使命を前進させ、プライバシーと自由のために戦う活動家や組織を支援し続けることができます。"
       ],
+      "${ CALENDAR_APP_NAME } with calendar sharing and availability": [
+        "${ CALENDAR_APP_NAME } のカレンダー共有と可用性"
+      ],
       "${ dayDiff } day left": [
         "残り ${ dayDiff } 日"
       ],
+      "${ DRIVE_APP_NAME } with version history": [
+        "${ DRIVE_APP_NAME } のバージョン履歴"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
+      ],
+      "${ MAIL_APP_NAME } with automatic email forwarding": [
+        "${ MAIL_APP_NAME } の自動メール転送"
       ],
       "${ MaxCalendars } calendar per user": [
         "ユーザーあたり ${ MaxCalendars } 個のカレンダー"
@@ -10190,6 +10235,9 @@
       "${ maxEmails } email address per user": [
         "1 ユーザーあたり ${ maxEmails } 件のメールアドレス"
       ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } の ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "${ planMaxSpace } storage per user": [
         "1 ユーザーあたり ${ planMaxSpace } のストレージ"
       ],
@@ -10198,6 +10246,9 @@
       ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME }プログラム"
+      ],
+      "${ VPN_APP_NAME } with malware and ad-blocking": [
+        "${ VPN_APP_NAME } のマルウェアと広告ブロック"
       ],
       "10 email addresses": [
         "10個のメールアドレス"
@@ -10223,6 +10274,9 @@
       "Early access to new apps and features": [
         "新しいアプリや機能への早期アクセス"
       ],
+      "Email productivity features": [
+        "メールの生産性機能"
+      ],
       "Helping activists in Hong Kong": [
         "香港の活動家を支援"
       ],
@@ -10240,6 +10294,9 @@
       ],
       "Priority support": [
         "優先サポート"
+      ],
+      "Productivity features": [
+        "生産性機能"
       ],
       "Read the story": [
         "ストーリーを読む"

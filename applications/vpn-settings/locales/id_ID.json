@@ -253,9 +253,6 @@
       "Edit name": [
         "Sunting nama"
       ],
-      "Edit organization identity": [
-        "Edit identitas organisasi"
-      ],
       "Edit organization name": [
         "Edit nama organisasi"
       ],
@@ -2234,6 +2231,17 @@
         "Bantu kami menjadi lebih baik"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Konfirmasi hilangnya diskon spesial ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Hapus diskon"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Langganan ${ PLAN_NAMES[PLANS.PASS] } Anda saat ini berlaku dengan harga khusus ${ price } per tahun. Dengan menurunkan ke paket Free, Anda akan kehilangan diskon ini secara permanen, bahkan apabila Anda meningkatkan kembali akun Anda di masa yang akan datang."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Riwayat versi yang terperinci"
@@ -3195,6 +3203,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "Versi aplikasi"
+      ],
       "Best deal": [
         "Penawaran terbaik"
       ],
@@ -3207,11 +3218,20 @@
       "Create your account": [
         "Buat akun Anda"
       ],
+      "Device": [
+        "Perangkat"
+      ],
+      "Event": [
+        "Peristiwa"
+      ],
       "IP address": [
         "Alamat IP"
       ],
       "Key type": [
         "Jenis kunci"
+      ],
+      "Location": [
+        "Lokasi"
       ],
       "Members": [
         "Anggota"
@@ -3221,6 +3241,9 @@
       ],
       "Organization key fingerprint": [
         "Sidik jari kunci organisasi"
+      ],
+      "Protection": [
+        "Perlindungan"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Dapatkan potongan harga besar-besaran untuk penawaran ${ VPN_APP_NAME }"
@@ -3242,6 +3265,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "User": [
+        "Pengguna"
       ]
     },
     "Header for addresses table": {
@@ -3519,9 +3545,6 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Apakah Anda yakin untuk menghapus domain ${ boldDomain }?"
       ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Mintalah admin organisasi Anda untuk mengatur Gateway."
-      ],
       "Attention required": [
         "Diperlukan perhatian"
       ],
@@ -3660,6 +3683,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "Menghapus ${ deletedServerCount } server gateway"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Dinonaktifkan sejak ${ formattedDateAndTime }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Menonaktifkan autentikasi dua faktor akan membuat akun Anda kurang aman. Hanya lanjutkan jika benar-benar diperlukan."
       ],
@@ -3740,6 +3766,9 @@
       ],
       "Enable single sign-on to keep your organization safe": [
         "Aktifkan single sign-on untuk menjaga organisasi Anda tetap aman"
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Diaktifkan sejak ${ formattedDateAndTime }"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL endpoint yang diperoleh dari penyedia identitas Anda (mis. https://idp.contoh.com/sso/saml)."
@@ -5276,9 +5305,6 @@
       "Current email": [
         "Email saat ini"
       ],
-      "Current organization identity": [
-        "Identitas organisasi saat ini"
-      ],
       "Default language": [
         "Bahasa bawaan"
       ],
@@ -5399,9 +5425,6 @@
       "New login password": [
         "Kata sandi masuk baru"
       ],
-      "New organization identity": [
-        "Identitas organisasi baru"
-      ],
       "New organization password": [
         "Kata sandi organisasi baru"
       ],
@@ -5431,9 +5454,6 @@
       ],
       "Optional": [
         "Opsional"
-      ],
-      "Organization identity": [
-        "Identitas organisasi"
       ],
       "Organization name": [
         "Nama organisasi"
@@ -5901,7 +5921,7 @@
     },
     "Message": {
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
-        "Hubungkan domain khusus Anda ke ${ BRAND_NAME } untuk dapat membuat dan mengatur alamat email khusus (cth. anda@perusahaananda.com). Kami akan memandu Anda dalam prosesnya."
+        "Hubungkan domain khusus Anda ke ${ BRAND_NAME } untuk mengatur alamat email khusus (cth. anda@perusahaananda.com). Wisaya kami akan memandu Anda dalam prosesnya."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Masa uji coba gratis Anda telah berakhir. Akses menuju akun Anda akan segera dinonaktifkan. ${ action }"
@@ -5977,23 +5997,6 @@
         "Kecepatan VPN sedang"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Telusuri seluruh paket ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Dari ${ price }"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Hapus akun"
@@ -6015,6 +6018,23 @@
       ],
       "Switch plan": [
         "Ganti paket"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Telusuri seluruh paket ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Dari ${ price }"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
       ]
     },
     "new_plans: feature": {
@@ -6562,7 +6582,7 @@
         "Akun gratis yang dirancang untuk menyediakan privasi sebagai hal yang baku bagi semua."
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
-        "Privasi tak terbatas dan lebih banyak penyimpanan sampai dengan 2 orang."
+        "Privasi tanpa batas dan ruang penyimpanan yang lebih untuk hingga 2 orang pengguna."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menghapus akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon apabila Anda membuat akun baru."
@@ -8525,6 +8545,11 @@
         "Paket langganan Anda dibeli melalui aplikasi iOS. Oleh karenanya, Anda harus membuka Apple App Store untuk mengubah paket langganan atau memperbarui rincian pembayaran Anda."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Langganan akan diturunkan pada akhir siklus tagihan."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Untuk ${ totalPrice }"
@@ -8811,7 +8836,7 @@
         "Tanpa batasan jumlah folder, label, dan filter"
       ],
       "Unlimited privacy for two": [
-        "Privasi tak terbatas untuk dua pengguna"
+        "Privasi tanpa batas untuk dua orang pengguna"
       ],
       "Users won’t be able to manage their calendars": [
         "Pengguna tidak akan dapat mengelola kalendernya"
@@ -9020,9 +9045,6 @@
       ],
       "Organization activated": [
         "Organisasi berhasil diaktifkan"
-      ],
-      "Organization identity updated": [
-        "Identitas organisasi diperbarui"
       ],
       "Organization logo removed": [
         "Logo organisasi dihapus"
@@ -9512,9 +9534,6 @@
       "Edit invoice details": [
         "Sunting rincian faktur"
       ],
-      "Edit organization identity": [
-        "Sunting identitas organisasi"
-      ],
       "Edit servers": [
         "Sunting server"
       ],
@@ -9734,6 +9753,9 @@
       "SAML authentication": [
         "Autentikasi SAML"
       ],
+      "Security events": [
+        "Peristiwa keamanan"
+      ],
       "Select a plan": [
         "Pilih paket"
       ],
@@ -9940,6 +9962,12 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "Admin memiliki hak untuk mengubah paket langganan Anda, mengelola akun dan kata sandi pengguna, serta memberikan kuasa admin kepada pengguna lain."
       ],
+      "An approximate location of the IP address": [
+        "Estimasi lokasi alamat IP"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Segala bentuk perlindungan terhadap aktivitas yang mencurigakan"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Sesuaikan tema aplikasi dengan mode terang dan gelap pada sistem Anda secara otomatis"
       ],
@@ -9948,6 +9976,9 @@
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Salin dan tempel URL ini ke kolom ID entitas milik penyedia identitas Anda"
+      ],
+      "Device information such as operating system": [
+        "Informasi seputar perangkat, seperti sistem operasi yang digunakan"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL endpoint dari penyedia identitas (mis. https://idp.contoh.com/sso/saml)"

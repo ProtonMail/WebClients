@@ -238,9 +238,6 @@
       "Edit name": [
         "名前の編集"
       ],
-      "Edit organization identity": [
-        "組織IDを編集"
-      ],
       "Edit organization name": [
         "組織名を編集"
       ],
@@ -2045,11 +2042,26 @@
       "Bugs or quality issue": [
         "バグまたは品質の問題"
       ],
+      "I do not wish to share": [
+        "共有しない"
+      ],
+      "I found a cheaper VPN": [
+        "より安価な VPN を見つけた"
+      ],
+      "I found a VPN with better features": [
+        "より優れた機能を持つ VPN を見つけた"
+      ],
+      "I only needed a VPN short-term": [
+        "VPN が短期間のみ必要だった"
+      ],
       "I use a different ${ BRAND_NAME } account": [
         "別の ${ BRAND_NAME } アカウントを使っている"
       ],
       "Missing feature(s)": [
         "機能が不足している"
+      ],
+      "Other reason (please comment)": [
+        "その他の理由 (コメントしてください)"
       ],
       "Subscription is too expensive": [
         "サブスクリプションが高すぎる"
@@ -2059,6 +2071,9 @@
       ],
       "Temporary need, may come back in the future": [
         "一時的な理由で、将来的に再度使用する予定"
+      ],
+      "The VPN is too slow": [
+        "VPN の通信速度が遅かった"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -2914,6 +2929,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "アプリのバージョン"
+      ],
       "Best deal": [
         "最高の取引"
       ],
@@ -2926,11 +2944,20 @@
       "Create your account": [
         "アカウントを作成"
       ],
+      "Device": [
+        "デバイス"
+      ],
+      "Event": [
+        "イベント"
+      ],
       "IP address": [
         "IPアドレス"
       ],
       "Key type": [
         "鍵の種類"
+      ],
+      "Location": [
+        "場所"
       ],
       "Members": [
         "メンバー"
@@ -2940,6 +2967,9 @@
       ],
       "Organization key fingerprint": [
         "組織用の鍵のフィンガープリント"
+      ],
+      "Protection": [
+        "保護"
       ],
       "Select your deal": [
         "取引を選択してください"
@@ -2958,6 +2988,9 @@
       ],
       "Status": [
         "状態"
+      ],
+      "User": [
+        "ユーザー"
       ]
     },
     "Header for addresses table": {
@@ -3210,9 +3243,6 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "ドメイン ${ boldDomain } を削除してもよろしいですか?"
-      ],
-      "Ask your organisation admin to setup Gateways.": [
-        "ゲートウェイをセットアップするよう、組織の管理者に依頼してください。"
       ],
       "Attention required": [
         "注意が必要です"
@@ -4734,9 +4764,6 @@
       "Current email": [
         "現在のメール"
       ],
-      "Current organization identity": [
-        "現在の組織ID"
-      ],
       "Default language": [
         "デフォルトの言語"
       ],
@@ -4854,9 +4881,6 @@
       "New login password": [
         "新しいログインパスワード"
       ],
-      "New organization identity": [
-        "新しい組織ID"
-      ],
       "New organization password": [
         "新しい組織のパスワード"
       ],
@@ -4886,9 +4910,6 @@
       ],
       "Optional": [
         "任意"
-      ],
-      "Organization identity": [
-        "組織 ID"
       ],
       "Organization name": [
         "組織名"
@@ -5018,6 +5039,9 @@
       ],
       "What is the main reason you are deleting your account?": [
         "アカウントを削除する主な理由は何ですか?"
+      ],
+      "What is your main reason for canceling or downgrading?": [
+        "キャンセルまたはダウングレードの主な理由は何ですか？"
       ],
       "Why would you like to cancel?": [
         "なぜキャンセルしたいのですか？"
@@ -5384,23 +5408,6 @@
         "中程度の VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "すべての ${ BRAND_NAME } プランを表示"
-      ],
-      "From ${ price }": [
-        "${ price } から"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "アカウントを削除"
@@ -5422,6 +5429,23 @@
       ],
       "Switch plan": [
         "プランを変更"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "すべての ${ BRAND_NAME } プランを表示"
+      ],
+      "From ${ price }": [
+        "${ price } から"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade now": [
+        "今すぐアップグレード"
       ]
     },
     "new_plans: feature": {
@@ -5490,6 +5514,9 @@
       ],
       "1 user": [
         "1ユーザー"
+      ],
+      "15 GB storage": [
+        "15 GB のストレージ"
       ],
       "24/7 account management support": [
         "24時間365日のアカウント管理サポート"
@@ -7595,11 +7622,20 @@
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME } の唯一の収益源はユーザーのサブスクリプションです。皆様のご支援により、私たちは独立性を維持し、プライバシーをオンラインのデフォルトにするという使命を前進させ、プライバシーと自由のために戦う活動家や組織を支援し続けることができます。"
       ],
+      "${ CALENDAR_APP_NAME } with calendar sharing and availability": [
+        "${ CALENDAR_APP_NAME } のカレンダー共有と可用性"
+      ],
       "${ dayDiff } day left": [
         "残り ${ dayDiff } 日"
       ],
+      "${ DRIVE_APP_NAME } with version history": [
+        "${ DRIVE_APP_NAME } のバージョン履歴"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
+      ],
+      "${ MAIL_APP_NAME } with automatic email forwarding": [
+        "${ MAIL_APP_NAME } の自動メール転送"
       ],
       "${ MaxCalendars } calendar per user": [
         "ユーザーあたり ${ MaxCalendars } 個のカレンダー"
@@ -7610,6 +7646,9 @@
       "${ maxEmails } email address per user": [
         "1 ユーザーあたり ${ maxEmails } 件のメールアドレス"
       ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } の ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "${ planMaxSpace } storage per user": [
         "1 ユーザーあたり ${ planMaxSpace } のストレージ"
       ],
@@ -7618,6 +7657,9 @@
       ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME }プログラム"
+      ],
+      "${ VPN_APP_NAME } with malware and ad-blocking": [
+        "${ VPN_APP_NAME } のマルウェアと広告ブロック"
       ],
       "10 email addresses": [
         "10個のメールアドレス"
@@ -7652,6 +7694,9 @@
       "Early access to new apps and features": [
         "新しいアプリや機能への早期アクセス"
       ],
+      "Email productivity features": [
+        "メールの生産性機能"
+      ],
       "Have a question?": [
         "質問がありますか？"
       ],
@@ -7678,6 +7723,9 @@
       ],
       "Priority support": [
         "優先サポート"
+      ],
+      "Productivity features": [
+        "生産性機能"
       ],
       "Reactivate": [
         "再アクティブ化"
@@ -7832,9 +7880,6 @@
       ],
       "Organization activated": [
         "組織が有効になりました"
-      ],
-      "Organization identity updated": [
-        "組織IDが更新されました"
       ],
       "Organization name updated": [
         "組織名が更新されました"
@@ -8288,9 +8333,6 @@
       "Edit invoice details": [
         "請求書の詳細を編集する"
       ],
-      "Edit organization identity": [
-        "組織IDを編集"
-      ],
       "Edit servers": [
         "サーバー編集"
       ],
@@ -8498,6 +8540,9 @@
       "SAML authentication": [
         "SAML認証"
       ],
+      "Security events": [
+        "セキュリティイベント"
+      ],
       "Select a plan": [
         "プランを選択"
       ],
@@ -8689,6 +8734,12 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "管理者は、サブスクリプションの変更、ユーザーアカウントとパスワードの管理、他のユーザーへの管理者権限の付与を行うことができます。"
       ],
+      "An approximate location of the IP address": [
+        "IPアドレスのおおよその位置"
+      ],
+      "Any protection applied to suspicious activity": [
+        "疑わしいアクティビティに適用される保護"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "システムの昼夜モードと同期して、昼と夜のお好みのテーマを自動的に切り替える"
       ],
@@ -8697,6 +8748,9 @@
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "このURLをコピーして、ユーザー情報ロバイダーのエンティティIDフィールドに貼り付ける。"
+      ],
+      "Device information such as operating system": [
+        "オペレーティングシステムなどのデバイス情報"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "ユーザー情報プロバイダーからのエンドポイントURL（例：https://idp.example.com/sso/saml）"

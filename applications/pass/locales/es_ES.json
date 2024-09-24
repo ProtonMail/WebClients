@@ -663,6 +663,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "No se ha podido analizar el archivo de ${ provider }. ${ errorDetail }"
       ],
+      "[Error] an item could not be parsed": [
+        "[Error] No se ha podido analizar un elemento."
+      ],
       "Alias could not be updated at the moment. Please try again later": [
         "Los alias no se pueden actualizar en este momento. Inténtalo más tarde"
       ],
@@ -1117,6 +1120,9 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Después de importar tus datos, puedes eliminar el archivo CSV que contiene tus contraseñas por seguridad."
+      ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "¡Las funciones de administración de alias de SimpleLogin llegarán pronto!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias deshabilitado satisfactoriamente. No recibirás correos electrónicos de ${ item.aliasEmail }"
@@ -1980,6 +1986,9 @@
       "Alias address": [
         "Dirección de alias"
       ],
+      "Alias management": [
+        "Administración de los alias"
+      ],
       "Aliases": [
         "Alias"
       ],
@@ -2515,6 +2524,9 @@
       "Type": [
         "Tipo"
       ],
+      "Unknown": [
+        "Desconocido"
+      ],
       "Unlock with": [
         "Desbloquear con"
       ],
@@ -2694,9 +2706,6 @@
       ],
       "MM/YY": [
         "MM/AA"
-      ],
-      "Other": [
-        "Otro"
       ],
       "Password": [
         "Contraseña"

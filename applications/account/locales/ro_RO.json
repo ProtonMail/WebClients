@@ -466,9 +466,6 @@
       "Edit name": [
         "Editare nume"
       ],
-      "Edit organization identity": [
-        "Editare identitate organizație"
-      ],
       "Edit organization name": [
         "Editare nume organizație"
       ],
@@ -2362,7 +2359,7 @@
         "Nume"
       ],
       "Note": [
-        "Observații"
+        "Notiță"
       ],
       "Organization": [
         "Organizația"
@@ -3591,6 +3588,17 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Ajutați-ne să îmbunătățim"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Confirmați renunțarea la reducerea specială pentru ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Renunțare la reducere"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Abonamentul pentru ${ PLAN_NAMES[PLANS.PASS] } este la un preț special de ${ price } pe an. Dacă treceți la un plan gratuit, veți pierde definitiv reducerea, chiar dacă reveniți la acest tip de plan în viitor."
       ]
     },
     "Download link": {
@@ -6889,9 +6897,6 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Sigur doriți să eliminați domeniul ${ boldDomain }?"
       ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Solicitați administratorului organizației să seteze porți de acces."
-      ],
       "Attention required": [
         "Necesită atenție"
       ],
@@ -9459,10 +9464,10 @@
         "Cheia a fost generată."
       ],
       "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Notă: aveți deja o cheie cu același algoritm pentru această adresă. Cu excepția cazului în care cheia respectivă a fost compromisă, poate fi inutil să generați o cheie nouă, iar acest lucru vă poate încetini contul."
+        "Observație: aveți deja o cheie cu același algoritm pentru această adresă. Cu excepția cazului în care cheia respectivă a fost compromisă, poate fi inutil să generați o cheie nouă, iar acest lucru vă poate încetini contul."
       ],
       "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Notă: aveți deja o cheie cu același algoritm pentru acest utilizator. Cu excepția cazului în care cheia respectivă a fost compromisă, poate fi inutil să generați o cheie nouă, iar acest lucru vă poate încetini contul."
+        "Observație: aveți deja o cheie cu același algoritm pentru acest utilizator. Cu excepția cazului în care cheia respectivă a fost compromisă, poate fi inutil să generați o cheie nouă, iar acest lucru vă poate încetini contul."
       ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "Aceasta va genera o nouă cheie, care va fi folosită pentru a cripta viitoarele detalii de contact, cheile de criptare a e-mailului și alte date."
@@ -10057,9 +10062,6 @@
       "Current email": [
         "E-mail actual"
       ],
-      "Current organization identity": [
-        "Identitate organizație actuală"
-      ],
       "Daily email notifications": [
         "Notificări zilnice pe e-mail"
       ],
@@ -10149,9 +10151,6 @@
       ],
       "Email or username": [
         "E-mail sau utilizator"
-      ],
-      "Email settings": [
-        "Setări e-mail"
       ],
       "Emails": [
         "Mesaje"
@@ -10384,9 +10383,6 @@
       "New login password": [
         "Parola nouă de conectare"
       ],
-      "New organization identity": [
-        "Identitate nouă organizație"
-      ],
       "New organization password": [
         "Parolă nouă organizație"
       ],
@@ -10435,9 +10431,6 @@
       "Or": [
         "Sau"
       ],
-      "Organization identity": [
-        "Identitate organizație"
-      ],
       "Organization name": [
         "Nume organizație"
       ],
@@ -10472,13 +10465,13 @@
         "Fraza conține 12 cuvinte unice într-o anumită ordine"
       ],
       "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
-        "Adăugați toate trei câmpurile CNAME. Notă: înregistrările DNS au nevoie de câteva ore pentru a se actualiza."
+        "Adăugați toate trei câmpurile CNAME. Observație: înregistrările DNS au nevoie de câteva ore pentru a se actualiza."
       ],
       "Please add the following two MX records. Note: DNS records can take several hours to update.": [
         "Adăugați următoarele două înregistrări MX. Notă: înregistrările DNS au nevoie de câteva ore pentru a se actualiza."
       ],
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
-        "Adăugați următoarea înregistrare TXT. Notă: înregistrările DNS au nevoie de câteva ore pentru a se actualiza."
+        "Adăugați următoarea înregistrare TXT. Observație: înregistrările DNS au nevoie de câteva ore pentru a se actualiza."
       ],
       "Please select files to upload": [
         "Selectați fișierele de încărcat"
@@ -13390,7 +13383,7 @@
         "Manager de parole criptate care vă protejează și identitatea"
       ],
       "End-to-end encrypted notes": [
-        "Note criptate în ambele sensuri"
+        "Notițe criptate în ambele sensuri"
       ],
       "End-to-end encryption": [
         "Criptare bilaterală"
@@ -15578,6 +15571,11 @@
         "Abonamentul a fost achiziționat din aplicația iOS. Pentru a face modificări la acesta sau a actualiza detaliile de plată, va trebui să o faceți din App Store de la Apple."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Abonamentul va fi retrogradat la sfârșitul perioadei de facturare."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Pentru ${ totalPrice }"
@@ -16121,9 +16119,6 @@
       "Organization activated": [
         "Organizație activată"
       ],
-      "Organization identity updated": [
-        "S-a actualizat identitatea organizației"
-      ],
       "Organization logo removed": [
         "S-a eliminat sigla organizației"
       ],
@@ -16500,9 +16495,6 @@
       "Account recovery": [
         "Recuperare cont"
       ],
-      "Account settings": [
-        "Setări cont"
-      ],
       "Account suspended": [
         "Cont suspendat"
       ],
@@ -16766,9 +16758,6 @@
       "Custom filters": [
         "Filtre proprii"
       ],
-      "Custom folders and labels": [
-        "Foldere și etichete personale"
-      ],
       "Custom selection of users": [
         "Selectare utilizatori preferați"
       ],
@@ -16908,9 +16897,6 @@
       ],
       "Edit invoice details": [
         "Editare detalii factură"
-      ],
-      "Edit organization identity": [
-        "Editare identitate organizație"
       ],
       "Edit profile": [
         "Editare profil"
@@ -17261,9 +17247,6 @@
       "Privacy and data collection": [
         "Confidențialitate și colectare de date"
       ],
-      "Privacy and security": [
-        "Confidențialitate și securitate"
-      ],
       "Processing...": [
         "Se procesează..."
       ],
@@ -17446,9 +17429,6 @@
       ],
       "Sort labels alphabetically": [
         "Sortare alfabetică etichete"
-      ],
-      "Spam filters": [
-        "Filtre mesaje nedorite"
       ],
       "Spam, block, and allow lists": [
         "Listă adrese blocate și permise"

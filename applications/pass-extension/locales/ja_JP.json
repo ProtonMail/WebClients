@@ -113,11 +113,11 @@
       "Create": [
         "作成"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "${ BRAND_NAME } アカウントを作成する"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } アカウントを作成"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } アカウントを作成する"
       ],
       "Create a new vault to share": [
         "共有する新しい保管庫を作成する"
@@ -564,6 +564,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } ファイルを解析できませんでした。 ${ errorDetail }"
       ],
+      "Alias could not be updated at the moment. Please try again later": [
+        "エイリアスを更新できませんでした。しばらくしてからもう一度お試しください"
+      ],
       "Alias options could not be resolved": [
         "エイリアス オプションを解決できませんでした"
       ],
@@ -690,6 +693,9 @@
       "Failed to restore items from trash": [
         "アイテムをごみ箱から復元できませんでした"
       ],
+      "Failed to sync aliases": [
+        "エイリアスの同期に失敗しました"
+      ],
       "Failed to transfer this vault's ownership.": [
         "このフォルダーの所有権の移行に失敗しました。"
       ],
@@ -722,6 +728,9 @@
       ],
       "Importing items failed": [
         "アイテムのインポートに失敗しました"
+      ],
+      "Inactive secure links could not be removed.": [
+        "アクティブでないセキュアリンクを削除できませんでした。"
       ],
       "Invalid password manager": [
         "無効なパスワードマネージャーです"
@@ -783,6 +792,12 @@
       "Restoring trashed items failed": [
         "ごみ箱の項目の復元に失敗しました"
       ],
+      "Secure link could not be created.": [
+        "セキュアリンクを作成できませんでした。"
+      ],
+      "Secure link could not be opened.": [
+        "セキュアリンクを開けませんでした。"
+      ],
       "Settings update failed": [
         "設定の更新に失敗しました"
       ],
@@ -803,6 +818,9 @@
       ],
       "The URL is in the list": [
         "URLはリストにあります\n"
+      ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "セキュアリンクの削除中にエラーが発生しました。数分後にもう一度お試しください。"
       ],
       "Too many failed attempts. Please sign in again.": [
         "失敗が多すぎます。もう一度サインインしてください。"
@@ -857,6 +875,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "PINコードが違います。もう一度やり直してください。"
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "現在オフラインです。 ${ PASS_SHORT_APP_NAME }のロックを解除するためにネットワークに接続してください。"
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "あなたのPIN コードは他のクライアント${ PASS_APP_NAME }にって削除されました"
@@ -995,6 +1016,12 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "データが正常にインポートされた後、セキュリティのためにパスワードを含む CSV ファイルを削除できます。"
       ],
+      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "エイリアスを無効にしました。 ${ item.aliasEmail }に送信されたメールは受信できなくなります"
+      ],
+      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "エイリアスを有効にしました。 ${ item.aliasEmail }に送信されたメールを受信できるようになりました"
+      ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
         "${ BRAND_NAME } アカウントと SimpleLogin アカウント間のエイリアス同期が有効です。"
       ],
@@ -1006,6 +1033,9 @@
       ],
       "All breaches for this address were resolved": [
         "このアドレスの侵害はすべて解決されました"
+      ],
+      "All inactive secure links were removed": [
+        "すべての非アクティブなセキュアリンクが削除されました"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "「${ payload.content.name }」のすべてのアイテムが正常に移動されました"
@@ -1030,6 +1060,9 @@
       ],
       "Autosaved on ${ payload.domain }": [
         "${ payload.domain } に自動保存されました"
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "生体認証ロックが正常に登録されました。 ${ PASS_APP_NAME }のロック解除に使用してください"
       ],
       "Biometrics will be disabled and will need to be enabled again.": [
         "生体認証は無効化され、再び有効化する必要があります。"
@@ -1133,6 +1166,12 @@
       "Enable auto-locking to secure your data": [
         "自動ロックを有効にしてデータを保護します"
       ],
+      "Enabling biometrics auto-lock": [
+        "生体認証の自動ロックを有効にする"
+      ],
+      "Enabling biometrics lock failed": [
+        "生体認証ロックを有効化できませんでした"
+      ],
       "Enabling offline mode...": [
         "オフラインモードを有効にしています..."
       ],
@@ -1159,6 +1198,12 @@
       ],
       "Expires in ${ remainingTime }": [
         "${ remainingTime } で期限が切れます"
+      ],
+      "Extra password successfuly created": [
+        "追加パスワードを作成しました"
+      ],
+      "Extra password successfuly removed": [
+        "追加パスワードを削除しました"
       ],
       "Fill in the CSV with your data": [
         "CSV にデータを入力します"
@@ -1370,6 +1415,9 @@
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "追加パスワードで自動ロックするには、追加パスワードを確認してください。"
       ],
+      "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
+        "${ PASS_APP_NAME } のデータをエクスポートするには、追加パスワードを確認してください。"
+      ],
       "Please confirm your extra password in order to update the auto-lock time.": [
         "自動ロック時間を更新するには、追加パスワードを確認してください。"
       ],
@@ -1397,6 +1445,9 @@
       "Please consider leaving a review.": [
         "レビューを残すことを検討してください。"
       ],
+      "Please do not close this window": [
+        "このウィンドウを閉じないでください"
+      ],
       "Please enter your current PIN code to continue": [
         "続行するには、現在の PIN コードを入力してください"
       ],
@@ -1412,8 +1463,20 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "高度なアカウント保護プログラムである ${ PROTON_SENTINEL_LINK } によって保護されています"
       ],
+      "Registering extra password...": [
+        "追加パスワードを登録中..."
+      ],
       "Registering PIN lock failed": [
         "PINロックを登録できませんでした"
+      ],
+      "Removing all inactive secure links...": [
+        "すべての非アクティブなセキュアリンクを削除中..."
+      ],
+      "Removing extra password...": [
+        "追加パスワードを削除中..."
+      ],
+      "Removing secure link...": [
+        "セキュアリンクを削除中..."
       ],
       "Restoring items from trash": [
         "ゴミ箱からアイテムを復元する"
@@ -1507,6 +1570,9 @@
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "次の ${ result.ignored.length } つのアイテムをインポート出来ませんでした:"
+      ],
+      "The secure link has been removed": [
+        "セキュアリンクは削除されました"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "貼り付けようとしているテキストは、許容される最大長の ${ maxLength } 文字を超えています。"
@@ -1607,6 +1673,9 @@
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "SimpleLogin に ${ aliasCount } 個のエイリアスが存在しますが、 ${ PASS_APP_NAME }に見つかりませんでした。インポートしますか？"
       ],
+      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
+        "${ PASS_APP_NAME } でログインを作成/編集するとき、'ユーザー名' 入力を常に表示します。"
+      ],
       "You are about to create:": [
         "作成されるメールアドレス:"
       ],
@@ -1654,6 +1723,9 @@
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "${ PASS_APP_NAME } セッションはロックされています"
+      ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "組織が 2 要素認証を導入しているため、アカウントは制限されています。 アカウント設定で 2 要素認証を有効にするか、管理者にお問い合わせください。"
       ],
       "Your files will be encrypted and then saved": [
         "ファイルは暗号化して保存されます"
@@ -1732,6 +1804,9 @@
       "Account": [
         "アカウント"
       ],
+      "Add section": [
+        "セクションの追加"
+      ],
       "Alias": [
         "エイリアス"
       ],
@@ -1770,9 +1845,6 @@
       ],
       "Autosave": [
         "自動保存"
-      ],
-      "Autosave vault": [
-        "自動保存フォルダー"
       ],
       "Autosuggest": [
         "オートサジェスト"
@@ -1825,11 +1897,23 @@
       "Create an encrypted note": [
         "暗号化されたノートを作成"
       ],
+      "Create an Identity": [
+        "ユーザー情報を作成する"
+      ],
       "Create new vault": [
         "新しい保管庫を作る"
       ],
       "Created": [
         "作成日時"
+      ],
+      "Created at": [
+        "作成日時"
+      ],
+      "Custom hidden field": [
+        "カスタム非表示フィールド"
+      ],
+      "Custom text field": [
+        "カスタムテキストフィールド"
       ],
       "Device": [
         "デバイス"
@@ -1842,6 +1926,9 @@
       ],
       "Domains": [
         "ドメイン"
+      ],
+      "Don't remind me again": [
+        "次回からこのメッセージを表示しない"
       ],
       "Download logs": [
         "過去ログのダウンロード"
@@ -1863,6 +1950,9 @@
       ],
       "Empty trash": [
         "ごみ箱を空にする"
+      ],
+      "Enter email or username": [
+        "メールアドレスまたはユーザー名を入力"
       ],
       "Expiration date": [
         "有効期限"
@@ -2298,9 +2388,6 @@
       "MM/YY": [
         "MM/YY (月/年)"
       ],
-      "Other": [
-        "その他"
-      ],
       "Password": [
         "パスワード"
       ],
@@ -2361,6 +2448,9 @@
       ],
       "Autofill": [
         "自動入力"
+      ],
+      "Confirm extra password": [
+        "追加パスワードの確認"
       ],
       "Confirm PIN code": [
         "PINコードの確認"
@@ -2449,8 +2539,20 @@
       "Modified": [
         "更新日時"
       ],
+      "Move all items to \"${ vaultName }\"?": [
+        "すべてのアイテムを \"${ vaultName }\" に移動しますか？"
+      ],
+      "Move item to \"${ vaultName }\"?": [
+        "アイテムを \"${ vaultName }\" に移動しますか？"
+      ],
+      "Move items to \"${ vaultName }\"?": [
+        "アイテムを \"${ vaultName }\" に移動しますか？"
+      ],
       "No items selected": [
         "項目が選択されていません"
+      ],
+      "No shared secure links": [
+        "共有セキュアリンクはありません"
       ],
       "Our welcome gift to you": [
         "あなたへのウェルカムギフト"
@@ -2472,6 +2574,12 @@
       ],
       "Pinned (${ items.length })": [
         "ピン留め (${ items.length })"
+      ],
+      "Remove extra password": [
+        "追加パスワードを削除"
+      ],
+      "Remove secure link?": [
+        "セキュアリンクを削除しますか？"
       ],
       "Restore this version?": [
         "このバージョンを復元?"
@@ -2502,6 +2610,9 @@
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } に切り替えますか?"
+      ],
+      "Sync alias": [
+        "エイリアスを同期"
       ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } をインストールしていただきありがとうございます"

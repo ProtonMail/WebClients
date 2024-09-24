@@ -116,11 +116,11 @@
       "Create": [
         "Δημιουργία"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Δημιουργία ενός ${ BRAND_NAME } Λογαριασμού"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Δημιουργία ενός ${ BRAND_NAME } λογαριασμού"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Δημιουργία ενός ${ BRAND_NAME } Λογαριασμού"
       ],
       "Create a new vault to share": [
         "Δημιουργία νέας κρύπτης για κοινή χρήση"
@@ -897,6 +897,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Παρουσιάστηκε σφάλμα κατά την κατάργηση του ασφαλούς συνδέσμου. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά."
       ],
+      "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
+        "Αυτό μπορεί να συμβεί μετά από μεγάλο χρονικό διάστημα μη χρήσης ${ PASS_SHORT_APP_NAME } ή εκκαθάρισης του ιστορικού Safari."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Πάρα πολλές αποτυχημένες προσπάθειες. Παρακαλούμε συνδεθείτε ξανά."
       ],
@@ -956,6 +959,9 @@
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Αυτήν τη στιγμή είστε εκτός σύνδεσης. Παρακαλούμε συνεχίστε τη συνδεσιμότητα για να ξεκλειδώσετε ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
+        "Το πρόγραμμα περιήγησής σας αντιμετωπίζει δυσκολίες στην ενεργοποίηση του ${ PASS_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ο κωδικός PIN σας καταργήθηκε από μία άλλη ${ PASS_APP_NAME } εφαρμογή"
@@ -1104,6 +1110,9 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Μετά την επιτυχή εισαγωγή των δεδομένων σας, μπορείτε να διαγράψετε το αρχείο CSV που περιέχει τους κωδικούς πρόσβασής σας για λόγους ασφαλείας."
+      ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "Οι δυνατότητες διαχείρισης ψευδωνύμων από το SimpleLogin έρχονται σύντομα!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Το ψευδώνυμο απενεργοποιήθηκε με επιτυχία. Δε θα λαμβάνετε πλέον μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται στο ${ item.aliasEmail }"
@@ -1725,6 +1734,9 @@
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "Για να ελέγξετε τα εισαγόμενα δεδομένα σας, κάντε κλικ στο εικονίδιο Pass στη γραμμή εργαλείων του προγράμματος περιήγησής σας."
       ],
+      "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
+        "Δοκιμάστε να φορτώσετε ξανά ή να εγκαταστήσετε ξανά την επέκταση και βεβαιωθείτε ότι το πρόγραμμα περιήγησής σας και το ${ PASS_SHORT_APP_NAME } είναι ενημερωμένα."
+      ],
       "Unable to copy to clipboard": [
         "Αδυναμία αντιγραφής στο πρόχειρο"
       ],
@@ -1957,6 +1969,9 @@
       "Alias address": [
         "Ψευδώνυμη διεύθυνση"
       ],
+      "Alias management": [
+        "Διαχείρισης ψευδωνύμων"
+      ],
       "Aliases": [
         "Ψευδώνυμα"
       ],
@@ -1992,9 +2007,6 @@
       ],
       "Autosave": [
         "Αυτόματη αποθήκευση"
-      ],
-      "Autosave vault": [
-        "Αυτόματη αποθήκευση κρύπτης"
       ],
       "Autosuggest": [
         "Αυτόματη πρόταση"
@@ -2666,9 +2678,6 @@
       "MM/YY": [
         "ΜΜ/ΕΕ"
       ],
-      "Other": [
-        "Άλλο"
-      ],
       "Password": [
         "Κωδικός πρόσβασης"
       ],
@@ -2725,6 +2734,9 @@
       ]
     },
     "Title": {
+      "${ PASS_APP_NAME } Settings": [
+        "Ρυθμίσεις ${ PASS_APP_NAME }"
+      ],
       "Auto-lock update": [
         "Ενημέρωση αυτόματου κλειδώματος"
       ],

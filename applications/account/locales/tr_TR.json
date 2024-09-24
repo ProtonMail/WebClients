@@ -466,9 +466,6 @@
       "Edit name": [
         "Adı düzenle"
       ],
-      "Edit organization identity": [
-        "Kuruluş kimliğini düzenle"
-      ],
       "Edit organization name": [
         "Kuruluş adını düzenle"
       ],
@@ -3577,6 +3574,17 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Kendimizi geliştirmemize yardımcı olun"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Özel ${ PASS_APP_NAME } indirimini kaybedeceğinizi onaylayın"
+      ],
+      "Remove discount": [
+        "İndirimi kaldır"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "${ PLAN_NAMES[PLANS.PASS] } aboneliğinizi yıllık ${ price } özel fiyatı ile kullanıyorsunuz. Free tarifesine geçtikten sonra, gelecekte yeniden tarifenizi yükseltseniz bile indirim hakkınızı kalıcı olarak kaybedersiniz."
       ]
     },
     "Download link": {
@@ -6823,9 +6831,6 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "${ boldDomain } etki alanını kaldırmak istediğinize emin misiniz?"
       ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Kuruluş yöneticinizden ağ geçitlerini kurmasını isteyin."
-      ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
       ],
@@ -9959,9 +9964,6 @@
       "Current email": [
         "Geçerli e-posta"
       ],
-      "Current organization identity": [
-        "Geçerli kuruluş kimliği"
-      ],
       "Daily email notifications": [
         "E-postalar günlük olarak bildirilsin"
       ],
@@ -10051,9 +10053,6 @@
       ],
       "Email or username": [
         "E-posta adresi ya da kullanıcı adı"
-      ],
-      "Email settings": [
-        "E-posta ayarları"
       ],
       "Emails": [
         "E-postalar"
@@ -10286,9 +10285,6 @@
       "New login password": [
         "Yeni oturum açma parolası"
       ],
-      "New organization identity": [
-        "Yeni kuruluş kimliği"
-      ],
       "New organization password": [
         "Yeni kuruluş parolası"
       ],
@@ -10336,9 +10332,6 @@
       ],
       "Or": [
         "Veya"
-      ],
-      "Organization identity": [
-        "Kuruluş kimliği"
       ],
       "Organization name": [
         "Kuruluş adı"
@@ -15373,6 +15366,11 @@
         "Tarifeniz bir iOS uygulaması kullanılarak satın alınmış. Bu nedenle, tarifenizde değişiklik yapmak ya da ödeme bilgilerinizi güncellemek için Apple App Store uygulamasını kullanmalısınız."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Abonelik tarifeniz fatura döneminin sonunda düşürülecek."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } için"
@@ -15912,9 +15910,6 @@
       "Organization activated": [
         "Kuruluş kullanıma alındı"
       ],
-      "Organization identity updated": [
-        "Kuruluş kimliği güncellendi"
-      ],
       "Organization logo removed": [
         "Kuruluş logosu kaldırıldı"
       ],
@@ -16285,9 +16280,6 @@
       "Account recovery": [
         "Hesap kurtarma"
       ],
-      "Account settings": [
-        "Hesap ayarları"
-      ],
       "Account suspended": [
         "Hesap askıya alınmış"
       ],
@@ -16550,9 +16542,6 @@
       "Custom filters": [
         "Özel süzgeçler"
       ],
-      "Custom folders and labels": [
-        "Özel klasörler ve etiketler"
-      ],
       "Custom selection of users": [
         "Özel kullanıcı seçimi"
       ],
@@ -16691,9 +16680,6 @@
       ],
       "Edit invoice details": [
         "Fatura ayrıntılarını düzenle"
-      ],
-      "Edit organization identity": [
-        "Kuruluş kimliğini düzenle"
       ],
       "Edit profile": [
         "Profili düzenle"
@@ -17042,9 +17028,6 @@
       "Privacy and data collection": [
         "Gizlilik ve veri toplama"
       ],
-      "Privacy and security": [
-        "Gizlilik ve güvenlik"
-      ],
       "Processing...": [
         "İşleniyor..."
       ],
@@ -17227,9 +17210,6 @@
       ],
       "Sort labels alphabetically": [
         "Etiketler alfabetik olarak sıralansın"
-      ],
-      "Spam filters": [
-        "İstenmeyen süzgeçleri"
       ],
       "Spam, block, and allow lists": [
         "Engellenen ve izin verilen adresler listesi"

@@ -1237,6 +1237,9 @@
       "Tomorrow": [
         "I morgen"
       ],
+      "Tracker protection prevented some images from loading. Load them if you trust the sender.": [
+        "Sporingsbeskyttelse forhindret at noen bilder ble lastet inn. Last dem inn hvis du stoler på avsenderen."
+      ],
       "Trust": [
         "Klarér"
       ],
@@ -3586,6 +3589,17 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Hjelp oss å bli bedre"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Bekreft tap av spesialrabatt for ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Fjern rabatt"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Abonnementet ditt på ${ PLAN_NAMES[PLANS.PASS] } har en spesiell pris på ${ price } i året. Hvis du nedgraderer til Free, mister du rabatten for godt, selv om du oppgraderer på nytt i fremtiden."
       ]
     },
     "Download attachments": {
@@ -10875,6 +10889,14 @@
         "Signer"
       ]
     },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Raskere på appen"
+      ],
+      "Private, fast, and organized": [
+        "Privat, raskt og organisert"
+      ]
+    },
     "Snooze message": {
       "Snooze Message": [
         "Slumre/utsett melding"
@@ -11315,6 +11337,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Planen din ble kjøpt med en iOS-app. Så for å gjøre endringer i planen din eller oppdatere betalingsinformasjonen din, må du gå til Apple App Store."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Abonnementet vil bli nedgradert på slutten av faktureringssyklusen."
       ]
     },
     "Subscription price": {

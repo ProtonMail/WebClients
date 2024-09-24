@@ -253,9 +253,6 @@
       "Edit name": [
         "Rediger navn"
       ],
-      "Edit organization identity": [
-        "Rediger organisasjonsidentitet"
-      ],
       "Edit organization name": [
         "Rediger organisasjonsnavn"
       ],
@@ -2243,6 +2240,17 @@
         "Hjelp oss å bli bedre"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Bekreft tap av spesialrabatt for ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Fjern rabatt"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Abonnementet ditt på ${ PLAN_NAMES[PLANS.PASS] } har en spesiell pris på ${ price } i året. Hvis du nedgraderer til Free, mister du rabatten for godt, selv om du oppgraderer på nytt i fremtiden."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Utvidet versjonshistorikk"
@@ -3217,6 +3225,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "App-versjon"
+      ],
       "Best deal": [
         "Beste avtale"
       ],
@@ -3229,11 +3240,20 @@
       "Create your account": [
         "Opprett konto"
       ],
+      "Device": [
+        "Enhet"
+      ],
+      "Event": [
+        "Hendelse"
+      ],
       "IP address": [
         "IP-adresse"
       ],
       "Key type": [
         "Nøkkeltype"
+      ],
+      "Location": [
+        "Plassering"
       ],
       "Members": [
         "Medlemmer"
@@ -3243,6 +3263,9 @@
       ],
       "Organization key fingerprint": [
         "Organisasjonsnøkkelfingeravtrykk"
+      ],
+      "Protection": [
+        "Beskyttelse"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Spar stort på de beste ${ VPN_APP_NAME }-tilbudene"
@@ -3264,6 +3287,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "User": [
+        "Bruker"
       ]
     },
     "Header for addresses table": {
@@ -3554,9 +3580,6 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Er du sikker på at du ønsker å fjerne domenet ${ boldDomain }?"
-      ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Be organisasjonsadministratoren om å konfigurere mellomtjenere."
       ],
       "Attention required": [
         "Oppmerksomhet kreves"
@@ -5341,9 +5364,6 @@
       "Current email": [
         "Nåværende e-post"
       ],
-      "Current organization identity": [
-        "Gjeldende organisasjonsidentitet"
-      ],
       "Default language": [
         "Standard språk"
       ],
@@ -5464,9 +5484,6 @@
       "New login password": [
         "Nytt påloggingspassord"
       ],
-      "New organization identity": [
-        "Ny organisasjonsidentitet"
-      ],
       "New organization password": [
         "Nytt organisasjonspassord"
       ],
@@ -5496,9 +5513,6 @@
       ],
       "Optional": [
         "Valgfritt"
-      ],
-      "Organization identity": [
-        "Organisasjonsidentitet"
       ],
       "Organization name": [
         "Organisasjonsnavn"
@@ -6049,23 +6063,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforsk alle ${ BRAND_NAME }-planer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade now": [
-        "Oppgrader nå"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Slett konto"
@@ -6087,6 +6084,23 @@
       ],
       "Switch plan": [
         "Bytt plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforsk alle ${ BRAND_NAME }-planer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade now": [
+        "Oppgrader nå"
       ]
     },
     "new_plans: feature": {
@@ -8684,6 +8698,11 @@
         "Planen din ble kjøpt med en iOS-app. Så for å gjøre endringer i planen din eller oppdatere betalingsinformasjonen din, må du gå til Apple App Store."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Abonnementet vil bli nedgradert på slutten av faktureringssyklusen."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "For ${ totalPrice }"
@@ -9184,9 +9203,6 @@
       "Organization activated": [
         "Organisasjon aktivert"
       ],
-      "Organization identity updated": [
-        "Organisasjonsidentitet oppdatert"
-      ],
       "Organization logo removed": [
         "Organisasjonslogo fjernet"
       ],
@@ -9674,9 +9690,6 @@
       "Edit invoice details": [
         "Rediger fakturadetaljer"
       ],
-      "Edit organization identity": [
-        "Rediger organisasjonsidentitet"
-      ],
       "Edit servers": [
         "Rediger tjenere"
       ],
@@ -9897,6 +9910,9 @@
       "SAML authentication": [
         "SAML-autentisering"
       ],
+      "Security events": [
+        "Sikkerhetshendelser"
+      ],
       "Select a plan": [
         "Velg en plan"
       ],
@@ -10104,6 +10120,12 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "Administratorer kan gjøre endringer i abonnementet ditt, behandle brukerkontoer og passord, og gi administratorrettigheter til andre brukere."
       ],
+      "An approximate location of the IP address": [
+        "En omtrentlig plassering til IP-adressen"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Enhver beskyttelse som brukes på mistenkelig aktivitet"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Bytt automatisk mellom foretrukket tema for dag og natt synkronisert med systemets dag- og nattmodus."
       ],
@@ -10112,6 +10134,9 @@
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Kopier og lim inn denne URL-adressen i enhets-ID-feltet for identitetsleverandøren."
+      ],
+      "Device information such as operating system": [
+        "Enhetsinformasjon slik som operativsystem"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL-adresse for endepunkt fra identitetsleverandøren (f.eks. https://idp.eksempel.com/sso/saml)."
