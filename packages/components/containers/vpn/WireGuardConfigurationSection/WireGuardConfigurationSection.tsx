@@ -18,9 +18,9 @@ import { useModalTwoStatic } from '@proton/components/components/modalTwo/useMod
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { readableTime } from '@proton/shared/lib/helpers/time';
@@ -32,7 +32,6 @@ import { getObjectKeys } from '../../../helpers';
 import { getCountryOptions, getLocalizedCountryByAbbr } from '../../../helpers/countries';
 import {
     useApi,
-    useApiResult,
     useModals,
     useNotifications,
     useUser,
@@ -40,6 +39,7 @@ import {
     useUserVPN,
     useVPNLogicals,
 } from '../../../hooks';
+import useApiResult from '../../../hooks/useApiResult';
 import type { Certificate } from '../Certificate';
 import { CATEGORY } from '../OpenVPNConfigurationSection/ConfigsTable';
 import OpenVPNConfigurationSection from '../OpenVPNConfigurationSection/OpenVPNConfigurationSection';

@@ -23,7 +23,8 @@ import { getSentryError } from '@proton/shared/lib/keys';
 
 import Field from '../../components/container/Field';
 import Row from '../../components/container/Row';
-import { useApiResult, useEventManager, useNotifications, useSubscription, useUser } from '../../hooks';
+import { useEventManager, useNotifications, useSubscription, useUser } from '../../hooks';
+import useApiResult from '../../hooks/useApiResult';
 import PaymentWrapper from '../payments/PaymentWrapper';
 import StyledPayPalButton from '../payments/StyledPayPalButton';
 import { getInvoicePaymentsVersion } from './helpers';
