@@ -1699,10 +1699,10 @@
         "Confirmar a perda do desconto especial do ${ PASS_APP_NAME }"
       ],
       "Remove discount": [
-        "Remover o desconto"
+        "Tirar o desconto"
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
-        "Sua assinatura ${ PLAN_NAMES[PLANS.PASS] } está com um preço especial de ${ price } por ano. Ao fazer downgrade para um plano Free, você perderá o desconto de forma definitiva, mesmo que faça upgrade novamente no futuro."
+        "Sua assinatura ${ PLAN_NAMES[PLANS.PASS] } está com um preço especial de ${ price } por ano. Ao reduzi-la para um plano gratuito, você perderá o desconto de forma definitiva, mesmo que volte a fazer um upgrade no futuro."
       ]
     },
     "driveplus2024: Deal details": {
@@ -2665,6 +2665,9 @@
       ],
       "Loading message": [
         "Carregando mensagem"
+      ],
+      "Loading send from label": [
+        "Carregando envio a partir de etiqueta"
       ]
     },
     "Loading": {
@@ -3045,7 +3048,7 @@
         "Enviar e receber convites"
       ],
       "Share files with no size limit": [
-        "Compartilhamento de arquivos sem limite de tamanho"
+        "Compartilhe arquivos sem limite de tamanho"
       ],
       "Sign in as user": [
         "Início de sessão como usuário"
@@ -3258,7 +3261,7 @@
         "${ CALENDAR_APP_NAME }: Proteja sua agenda com criptografia de ponta a ponta. Inclui suporte para calendários personalizados, compartilhamento de calendário e muito mais."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Proteja seus arquivos com armazenamento em nuvem criptografado. Inclui sincronização automática, compartilhamento de arquivos criptografados e muito mais."
+        "${ DRIVE_APP_NAME }: proteja seus arquivos criptografados com armazenamento na nuvem. Inclui sincronização automática, compartilhamento de arquivos criptografados e muito mais."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Proteja seus e-mails com criptografia de ponta a ponta. Inclui suporte para domínios de e-mail personalizados, 15 endereços de e-mail, aliases ilimitados hide-my-email e muito mais."
@@ -4093,7 +4096,7 @@
     },
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
-        "A assinatura será rebaixada no final do ciclo de cobrança."
+        "A assinatura será rebaixada ao final do ciclo de cobrança."
       ]
     },
     "Subscription price": {
@@ -4966,9 +4969,6 @@
       "Account name changed": [
         "Nome de conta alterado"
       ],
-      "Account name could not be change": [
-        "Não foi possível alterar o nome da conta"
-      ],
       "Account was deleted": [
         "A conta foi excluída"
       ],
@@ -4980,9 +4980,6 @@
       ],
       "Could not be replaced": [
         "Não foi possível substituir"
-      ],
-      "Could not fill the pool after email address adition": [
-        "Não foi possível preencher o conjunto após a adição do endereço de e-mail"
       ],
       "Could not fill the pool after email address replacement": [
         "Não foi possível preencher o conjunto após a substituição do endereço de e-mail"
