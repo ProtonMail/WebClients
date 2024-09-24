@@ -466,9 +466,6 @@
       "Edit name": [
         "Editar nombre"
       ],
-      "Edit organization identity": [
-        "Editar la identidad de la organización"
-      ],
       "Edit organization name": [
         "Editar el nombre de la organización"
       ],
@@ -3579,6 +3576,17 @@
         "Ayúdanos a mejorar"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Confirmar la pérdida del descuento especial de ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Eliminar el descuento"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "La suscripción del plan ${ PLAN_NAMES[PLANS.PASS] } tiene un precio especial de ${ price } al año. Al cambiar al plan Free perderás el descuento permanentemente incluso si mejoras el plan en el futuro."
+      ]
+    },
     "Download link": {
       ".deb for Debian / Ubuntu": [
         ".deb para Debian / Ubuntu"
@@ -4711,6 +4719,11 @@
       ],
       "Zero keys reactivated": [
         "Ninguna clave reactivada"
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "Ingresa una dirección de correo electrónico"
       ]
     },
     "Error importing calendar": {
@@ -6826,8 +6839,8 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "¿Estás seguro de que quieres borrar el dominio ${ boldDomain }?"
       ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Pregunta al administrador de tu organización para configurar puertas de enlace."
+      "Ask your organization admin to setup Gateways.": [
+        "Pregunta al administrador de la organización para configurar puertas de enlace."
       ],
       "Attention required": [
         "Atención requerida"
@@ -8143,6 +8156,9 @@
       ],
       "SCIM token active": [
         "Token SCIM activo"
+      ],
+      "Search by an email address to begin": [
+        "Busca por dirección de correo electrónico para empezar."
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Asegura tu cuenta de ${ BRAND_NAME }"
@@ -9965,9 +9981,6 @@
       "Current email": [
         "Correo electrónico actual"
       ],
-      "Current organization identity": [
-        "Identidad actual de la organización"
-      ],
       "Daily email notifications": [
         "Notificaciones diarias por correo electrónico"
       ],
@@ -10057,9 +10070,6 @@
       ],
       "Email or username": [
         "Dirección de correo electrónico o nombre de usuario"
-      ],
-      "Email settings": [
-        "Ajustes del correo"
       ],
       "Emails": [
         "Correos electrónicos"
@@ -10292,9 +10302,6 @@
       "New login password": [
         "Nueva contraseña de inicio de sesión"
       ],
-      "New organization identity": [
-        "Nueva identidad de la organización"
-      ],
       "New organization password": [
         "Nueva contraseña de la organización"
       ],
@@ -10342,9 +10349,6 @@
       ],
       "Or": [
         "O"
-      ],
-      "Organization identity": [
-        "Identidad de la organización"
       ],
       "Organization name": [
         "Nombre de la organización"
@@ -10450,6 +10454,9 @@
       ],
       "Reveal password": [
         "Mostrar contraseña"
+      ],
+      "Search by email": [
+        "Buscar por correo electrónico"
       ],
       "Second password": [
         "Segunda contraseña"
@@ -13040,6 +13047,29 @@
         "Los usuarios verán tu logo en lugar del ícono de ${ BRAND_NAME } cuando inicien sesión en las aplicaciones web."
       ]
     },
+    "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify } tu dirección de correo electrónico ${ email } para establecer la identidad de la organización."
+      ],
+      "Current organization identity": [
+        "Identidad actual de la organización"
+      ],
+      "Edit organization identity": [
+        "Editar la identidad de la organización"
+      ],
+      "New organization identity": [
+        "Nueva identidad de la organización"
+      ],
+      "Organization identity": [
+        "Identidad de la organización"
+      ],
+      "Organization identity updated": [
+        "Se ha actualizado la identidad de la organización."
+      ],
+      "Verify": [
+        "Verificar"
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (para Debian/Ubuntu)"
@@ -15379,6 +15409,11 @@
         "Has comprado tu plan usando una app de iOS. Para realizar cambios a tu plan o actualizar tus datos de pago necesitarás conectarte a la App Store de Apple."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Pasarás a un plan inferior al finalizar el ciclo de facturación."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Por ${ totalPrice }"
@@ -15918,9 +15953,6 @@
       "Organization activated": [
         "Organización activada"
       ],
-      "Organization identity updated": [
-        "Se ha actualizado la identidad de la organización."
-      ],
       "Organization logo removed": [
         "Se ha borrado el logo de la organización."
       ],
@@ -16291,9 +16323,6 @@
       "Account recovery": [
         "Recuperación de cuenta"
       ],
-      "Account settings": [
-        "Ajustes de cuenta"
-      ],
       "Account suspended": [
         "Cuenta suspendida"
       ],
@@ -16556,9 +16585,6 @@
       "Custom filters": [
         "Filtros personalizados"
       ],
-      "Custom folders and labels": [
-        "Carpetas y etiquetas personalizadas"
-      ],
       "Custom selection of users": [
         "Selección personalizada de usuarios"
       ],
@@ -16697,9 +16723,6 @@
       ],
       "Edit invoice details": [
         "Editar los datos de la factura"
-      ],
-      "Edit organization identity": [
-        "Editar la identidad de la organización"
       ],
       "Edit profile": [
         "Editar el perfil"
@@ -17051,9 +17074,6 @@
       "Privacy and data collection": [
         "Privacidad y recopilación de datos"
       ],
-      "Privacy and security": [
-        "Privacidad y seguridad"
-      ],
       "Processing...": [
         "Procesando..."
       ],
@@ -17236,9 +17256,6 @@
       ],
       "Sort labels alphabetically": [
         "Ordenar las etiquetas alfabéticamente"
-      ],
-      "Spam filters": [
-        "Filtros de spam"
       ],
       "Spam, block, and allow lists": [
         "Listas de direcciones permitidas, bloqueadas y spam"
@@ -17595,6 +17612,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si has comprado un código de regalo o recibido uno de nuestro equipo de soporte, puedes introducirlo aquí."
       ],
+      "IP address (Internet Service Provider)": [
+        "Dirección IP (proveedor de servicios de internet)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Los miembros que no utilizan 2FA recibirán un correo electrónico pidiéndoles que la activen tan pronto como sea posible."
       ],
@@ -17781,6 +17801,12 @@
       ]
     },
     "unprivatization": {
+      "Administrator access enabled": [
+        "Se ha activado el acceso de administrador."
+      ],
+      "Administrator access rejected": [
+        "Se ha rechazado el acceso de administrador."
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Los administradores no pueden acceder a los datos de usuarios privados y no pueden restablecer sus contraseñas."
       ],
@@ -17840,6 +17866,9 @@
       ],
       "Send request": [
         "Enviar una solicitud"
+      ],
+      "Something went wrong enabling administrator access: ${ error }": [
+        "Se ha producido un error al activar el acceso de administrador: ${ error }"
       ],
       "The user must have an address to request data access": [
         "El usuario debe tener una dirección para solicitar acceso a los datos"

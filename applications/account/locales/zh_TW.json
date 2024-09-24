@@ -44,6 +44,21 @@
       ]
     },
     "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "偵測到 ${ name } 及 ${ remainingCount } 個其他潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情並採取行動。${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "偵測到 ${ name } 及 1 個其他潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情並採取行動。${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "偵測到 ${ name } 的潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情並採取行動。${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "偵測到來自 ${ name } 的潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情並採取行動。${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "偵測到來自 ${ name } 的潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情。${ link }"
+      ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "您的資料在最少一次的資料外洩之中被發現。開啟 ${ DARK_WEB_MONITORING_NAME } 來瀏覽詳細資料及採取行動。 ${ link }"
       ]
@@ -442,9 +457,6 @@
       "Edit name": [
         "編輯名稱"
       ],
-      "Edit organization identity": [
-        "編輯組織機構身分"
-      ],
       "Edit organization name": [
         "編輯組織名稱"
       ],
@@ -657,6 +669,9 @@
       ],
       "Loading verification": [
         "正在載入驗證"
+      ],
+      "Lost access to your 2FA device?": [
+        "失去存取雙重驗證裝置?"
       ],
       "Make admin": [
         "設為管理員"
@@ -3481,6 +3496,11 @@
         "幫助我們改善"
       ]
     },
+    "Downgrade warning": {
+      "Remove discount": [
+        "移除折扣"
+      ]
+    },
     "Download link": {
       ".deb for Debian / Ubuntu": [
         ".deb 適用於 Debian / Ubuntu"
@@ -5014,6 +5034,9 @@
       "You have successfully joined the family group": [
         "您已成功加入家庭群組"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "您有未付款發票。請在加入群組方案前繳付。"
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "您需要先架構自訂網域，才能加入多位使用者。"
       ],
@@ -6362,6 +6385,9 @@
       "Admin account allocation": [
         "管理員帳號指派"
       ],
+      "Affected user is on row": [
+        "受影響的使用者"
+      ],
       "Align left": [
         "靠左對齊"
       ],
@@ -6473,9 +6499,6 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "您確定要移除網域${ boldDomain }?"
       ],
-      "Ask your organisation admin to setup Gateways.": [
-        "請聯絡貴組織的的管理員以設定閘道。"
-      ],
       "Attention required": [
         "需要您的處理"
       ],
@@ -6547,6 +6570,9 @@
       ],
       "Breach Custom Email Created": [
         "外洩自訂電子郵件已創建"
+      ],
+      "Breach Custom Email Deleted": [
+        "外洩自訂電子郵件已刪除"
       ],
       "Breach Custom Email Validated": [
         "外洩自訂電子郵件已驗證"
@@ -6710,6 +6736,9 @@
       "Disable recovery by ${ type }": [
         "透過${ type }停用復原"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "自從${ formattedDateAndTime }關閉"
+      ],
       "Discount": [
         "折扣"
       ],
@@ -6821,6 +6850,9 @@
       "Enable TLS or SSL on the external service if it is supported.": [
         "若外部服務支援，啟用TLS或SSL。"
       ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "自從${ formattedDateAndTime }啟用"
+      ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "再次啟用短語回復方案將會生成新的短語。"
       ],
@@ -6919,6 +6951,12 @@
       ],
       "Gateways": [
         "閘道器"
+      ],
+      "Gateways monitoring is disabled.": [
+        "閘道器監控已關閉。"
+      ],
+      "Gateways monitoring is enabled.": [
+        "閘道器監控已啟用。"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "產生新的復原短語並廢棄舊的。"
@@ -8027,11 +8065,17 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "這將永久刪除您的帳號以及其一切的資料。您將無法重新啟用此帳號。"
       ],
+      "This will remove any enabled 2FA methods.": [
+        "此將移除任何啟用的雙重驗證方法。"
+      ],
       "This will remove SSO for ${ boldDomainName }.": [
         "這將移除 ${ boldDomainName } 的 SSO。"
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "這將取代您的臨時密碼。日後存取您的 ${ BRAND_NAME } 帳號時，您將會使用此密碼。"
+      ],
+      "This will send a new invite to **${ email }**.": [
+        "此將傳送新的邀請至**${ email }**。"
       ],
       "This will sign you out of all accounts currently logged in.": [
         "這麼做會把您所有已登入的帳號登出。"
@@ -9355,9 +9399,6 @@
       "Current email": [
         "目前的電子郵件"
       ],
-      "Current organization identity": [
-        "目前組織機構身分"
-      ],
       "Daily email notifications": [
         "每日電子郵件通知"
       ],
@@ -9441,9 +9482,6 @@
       ],
       "Email or username": [
         "電郵位址或使用者名稱"
-      ],
-      "Email settings": [
-        "郵件設置"
       ],
       "Emails": [
         "電郵"
@@ -9568,6 +9606,9 @@
       "Issuer ID": [
         "簽發者 ID"
       ],
+      "Keep emails in Sent/Drafts": [
+        "保留郵件於已傳送/草稿中"
+      ],
       "Keep me signed in": [
         "保持登入"
       ],
@@ -9670,9 +9711,6 @@
       "New login password": [
         "新的登入密碼"
       ],
-      "New organization identity": [
-        "新組織機構身分"
-      ],
       "New organization password": [
         "新的組織密碼"
       ],
@@ -9717,9 +9755,6 @@
       ],
       "Or": [
         "或"
-      ],
-      "Organization identity": [
-        "組織機構身分"
       ],
       "Organization name": [
         "組織名稱"
@@ -11591,6 +11626,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP 支援僅限透過 ${ MAIL_APP_NAME } Bridge 使用桌面應用程式 (例如 Outlook、Apple Mail、Thunderbird)。目前不支援雲端型 IMAP 整合。"
       ],
+      "Increase or reallocate storage for a user": [
+        "替位使用者增加或重新配置儲存空間"
+      ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "使用加密日曆讓您的方案對您和您的家人保密"
       ],
@@ -13063,8 +13101,14 @@
       "Check account security": [
         "檢查帳號安全"
       ],
+      "Code sent to ${ boldValue }": [
+        "驗證碼已發送至 ${ boldValue }"
+      ],
       "Continue to Safety Review": [
         "繼續安全檢查"
+      ],
+      "Download ${ size }": [
+        "下載 ${ size }"
       ],
       "Download your Recovery Kit": [
         "下載復原包"
@@ -13077,6 +13121,9 @@
       ],
       "Enable recovery by phone": [
         "啟用透過手機復原"
+      ],
+      "Invalid code": [
+        "代碼無效"
       ],
       "Recovery email address": [
         "復原電郵位址"
@@ -13096,6 +13143,12 @@
       "Safeguard your account further": [
         "更深度的保護您的帳號安全"
       ],
+      "Safety review": [
+        "安全檢核"
+      ],
+      "Send a new code": [
+        "傳送新的代碼"
+      ],
       "Show more": [
         "顯示更多"
       ],
@@ -13104,6 +13157,12 @@
       ],
       "Update your Recovery Kit": [
         "更新復原包"
+      ],
+      "Update your Recovery Kit?": [
+        "更新復原包?"
+      ],
+      "Verify": [
+        "驗證"
       ],
       "Verify your recovery email address": [
         "驗證復原電子郵件地址"
@@ -13114,11 +13173,17 @@
       "You can disable this at any time.": [
         "您可隨時關閉此。"
       ],
+      "You have recommended actions.": [
+        "您有推薦的行動。"
+      ],
       "You recovery email address is:": [
         "您的備援電子郵件地址為："
       ],
       "You recovery phone number is:": [
         "您的復原電話號碼:"
+      ],
+      "Your account is fully secure.": [
+        "你的帳號是完整安全的。"
       ],
       "Your account is secure.": [
         "你的帳號是安全的。"
@@ -13345,6 +13410,11 @@
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "取消密碼重設？"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "密碼重設需求已取消 (${ user.Email })。若您並未做出此需求，${ changePasswordLink }。"
       ]
     },
     "session_recovery:cancelled:link": {
@@ -13734,6 +13804,11 @@
       ],
       "Support online privacy": [
         "支援線上隱私"
+      ]
+    },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "此訂購授權將每 2 年自動以相同的費用續訂，直到被取消為止。"
       ]
     },
     "specialoffer: Link": {
@@ -14157,6 +14232,9 @@
       "Add any new files": [
         "新增任何檔案"
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "在您的${ planName }訂購授權到期，您將會被降級至${ BRAND_NAME }Free，這僅提供最多1GB的Mail儲存量和最多5GB的Drive儲存量。您也會失去之前任何額外給予您的儲存量。"
+      ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
         "在 ${ planName } 訂閱過期後，您將會被降級至 ${ BRAND_NAME } 免費方案，提供最多 1GB 信箱與 5GB Drive 儲存空間。您的團隊將面臨業務中斷，因為免費方案不支援額外的使用者。"
       ],
@@ -14286,11 +14364,17 @@
       "Watch the interview": [
         "瀏覽訪談"
       ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "在您取消${ planName }訂購，您將會被降級至${ BRAND_NAME }Free，這僅提供最多1GB的Mail儲存量和最多5GB的Drive儲存量。您也會失去之前任何額外給予您的儲存量。"
+      ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
         "當你取消 ${ planName } 後，您將會被降級至 ${ BRAND_NAME } 免費方案，提供最多 1GB 信箱與 5GB Drive 儲存空間。您的團隊將面臨業務中斷，因為免費方案不支援額外的使用者。"
       ],
       "Yearly free storage bonuses": [
         "年度免費儲存加成"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "您的${ planName }訂購授權還剩餘${ expiryDate }。我們將會在您的剩餘時間，給您的${ BRAND_NAME }帳號添加可用額度。在取消前，確保您沒有超出免費方案的限度。${ learnMoreLink }"
       ],
       "Your own custom email domain": [
         "您持有的自訂電子郵件網域名稱"
@@ -14490,9 +14574,6 @@
       ],
       "Organization activated": [
         "組織機構已啟用"
-      ],
-      "Organization identity updated": [
-        "組織身分已更新"
       ],
       "Organization logo removed": [
         "組織標誌已移除"
@@ -14855,9 +14936,6 @@
       "Account recovery": [
         "帳號救援"
       ],
-      "Account settings": [
-        "帳號設定"
-      ],
       "Account suspended": [
         "帳號已被停用"
       ],
@@ -15116,9 +15194,6 @@
       "Custom filters": [
         "自訂篩選器"
       ],
-      "Custom folders and labels": [
-        "自訂資料夾和標籤"
-      ],
       "Custom selection of users": [
         "自選使用者"
       ],
@@ -15256,9 +15331,6 @@
       ],
       "Edit invoice details": [
         "編輯發票詳細資料"
-      ],
-      "Edit organization identity": [
-        "編輯組織機構身分"
       ],
       "Edit profile": [
         "編輯個人資料"
@@ -15605,9 +15677,6 @@
       "Privacy and data collection": [
         "隱私與資料蒐集"
       ],
-      "Privacy and security": [
-        "隱私及安全"
-      ],
       "Processing...": [
         "處理中..."
       ],
@@ -15790,9 +15859,6 @@
       ],
       "Sort labels alphabetically": [
         "依照字母排序標籤"
-      ],
-      "Spam filters": [
-        "垃圾郵件篩選器"
       ],
       "Spam, block, and allow lists": [
         "垃圾郵件、攔截和允許清單"
