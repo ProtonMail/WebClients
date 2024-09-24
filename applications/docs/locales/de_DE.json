@@ -288,6 +288,9 @@
       "Get verification code": [
         "Verifizierungscode anfordern"
       ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Zu ${ DRIVE_SHORT_APP_NAME } gehen"
+      ],
       "Go to label": [
         "Zu Kategorie wechseln"
       ],
@@ -545,6 +548,9 @@
       ],
       "Switch or add account": [
         "Konto wechseln oder hinzufügen"
+      ],
+      "Take out of trash": [
+        "Aus dem Papierkorb holen"
       ],
       "Trust": [
         "Vertrauen"
@@ -2058,6 +2064,17 @@
         "Hilf uns, besser zu werden"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Bestätige den Verlust des ${ PASS_APP_NAME }-Sonderrabatts"
+      ],
+      "Remove discount": [
+        "Rabatt entfernen"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Dein ${ PLAN_NAMES[PLANS.PASS] }-Abonnement hat einen Sonderpreis von ${ price } pro Jahr. Durch ein Downgrade auf ein kostenloses Abonnement verlierst du den Rabatt dauerhaft, auch wenn du in Zukunft wieder ein Upgrade durchführst."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Erweiterter Versionsverlauf"
@@ -2227,6 +2244,12 @@
       ],
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Fehler beim Duplizieren des Dokuments. Bitte versuche es erneut."
+      ],
+      "An error occurred while attempting to restore the document. Please try again.": [
+        "Fehler beim Wiederherstellen des Dokuments. Bitte versuche es erneut."
+      ],
+      "An error occurred while attempting to trash the document. Please try again.": [
+        "Fehler beim Verschieben des Dokuments in den Papierkorb. Bitte versuche es erneut."
       ],
       "An error occurred while creating a new document. Please try again.": [
         "Fehler beim Erstellen eines neuen Dokuments. Bitte versuche es erneut."
@@ -3407,6 +3430,12 @@
       ]
     },
     "Info": {
+      "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
+        "\"${ documentTitle }\" wurde in den Papierkorb verschoben. Es wird dort verbleiben, bis es wiederhergestellt oder dauerhaft gelöscht wurde."
+      ],
+      "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
+        "\"${ documentTitle }\" ist im Papierkorb und wird dort verbleiben, bis es wiederhergestellt oder dauerhaft gelöscht wurde."
+      ],
       "${ addressCount } email address": [
         "${ addressCount } E-Mail-Adresse",
         "${ addressCount } E-Mail-Adressen"
@@ -3695,6 +3724,12 @@
       ],
       "Display word count": [
         "Zeige Anzahl Wörter"
+      ],
+      "Document is in trash": [
+        "Dokument ist im Papierkorb"
+      ],
+      "Document moved to trash": [
+        "Dokument in den Papierkorb verschoben"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Es passiert nichts? Denke daran, deine Pop-up-Blocker zu deaktivieren."
@@ -4064,6 +4099,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bitte beachte, dass dieser Vorgang (je nach Größe deines Adressbuchs) einige Zeit dauern kann."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ remainingCreditsFormatted } Guthaben auf deinem Konto verbleiben."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Bitte gib einen Namen und eine E-Mail-Adresse an, um eine Gruppe zu erstellen."
@@ -7514,6 +7552,11 @@
         "Dein Abonnement wurde über eine iOS App gekauft. Um Änderungen an deinem Abonnement oder deinen Zahlungsdetails durchführen zu können, musst du zum Apple App Store gehen."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Das Abonnement wird am Ende des Abrechnungszeitraums herabgestuft."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Für ${ totalPrice }"
@@ -7629,6 +7672,9 @@
       ],
       "Preferences saved": [
         "Einstellungen gespeichert"
+      ],
+      "Problem reported": [
+        "Problem gemeldet"
       ],
       "Secure link copied": [
         "Sicherer Link kopiert"

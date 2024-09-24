@@ -253,9 +253,6 @@
       "Edit name": [
         "Modifier le nom"
       ],
-      "Edit organization identity": [
-        "Modifier l'identité de l’organisation"
-      ],
       "Edit organization name": [
         "Modifier le nom de l'organisation"
       ],
@@ -2634,6 +2631,11 @@
         "Votre compte ou organisation a une facture en retard. Nous vous invitons à régler les factures impayées."
       ]
     },
+    "error": {
+      "Enter an email address": [
+        "Saisissez une adresse e-mail."
+      ]
+    },
     "Error importing users": {
       "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
         "Une erreur s'est produite lors de la lecture de votre fichier « ${ formattedFilename } ». Le fichier n'a pas le bon format."
@@ -3228,6 +3230,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "Version de l'application"
+      ],
       "Best deal": [
         "Meilleure offre"
       ],
@@ -3240,11 +3245,20 @@
       "Create your account": [
         "Créez votre compte"
       ],
+      "Device": [
+        "Appareil"
+      ],
+      "Event": [
+        "Événement"
+      ],
       "IP address": [
         "Adresse IP"
       ],
       "Key type": [
         "Type de clé"
+      ],
+      "Location": [
+        "Emplacement"
       ],
       "Members": [
         "Membres"
@@ -3254,6 +3268,9 @@
       ],
       "Organization key fingerprint": [
         "Empreinte de la clé de l'organisation"
+      ],
+      "Protection": [
+        "Protection"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Faites de belles économies en profitant des meilleures offres de ${ VPN_APP_NAME }"
@@ -3275,6 +3292,9 @@
       ],
       "Status": [
         "État"
+      ],
+      "User": [
+        "Utilisateur"
       ]
     },
     "Header for addresses table": {
@@ -3566,8 +3586,8 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Voulez-vous vraiment retirer le domaine ${ boldDomain } ?"
       ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Demandez à l'administrateur de votre organisation de configurer des Passerelles."
+      "Ask your organization admin to setup Gateways.": [
+        "Demandez à l'administrateur de votre organisation de configurer des passerelles."
       ],
       "Attention required": [
         "Attention requise"
@@ -4408,6 +4428,9 @@
       ],
       "SCIM token active": [
         "Jeton SCIM actif"
+      ],
+      "Search by an email address to begin": [
+        "Recherchez par adresse e-mail pour commencer."
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Sécurisez votre compte ${ BRAND_NAME }"
@@ -5349,9 +5372,6 @@
       "Current email": [
         "Adresse e-mail actuelle"
       ],
-      "Current organization identity": [
-        "Identité de l’organisation actuelle"
-      ],
       "Default language": [
         "Langue par défaut"
       ],
@@ -5472,9 +5492,6 @@
       "New login password": [
         "Nouveau mot de passe de connexion"
       ],
-      "New organization identity": [
-        "Nouvelle identité de l'organisation"
-      ],
       "New organization password": [
         "Nouveau mot de passe de l'organisation"
       ],
@@ -5504,9 +5521,6 @@
       ],
       "Optional": [
         "Facultatif"
-      ],
-      "Organization identity": [
-        "Identité de l'organisation"
       ],
       "Organization name": [
         "Nom de l'organisation"
@@ -5579,6 +5593,9 @@
       ],
       "Reveal password": [
         "Afficher le mot de passe"
+      ],
+      "Search by email": [
+        "Rechercher par e-mail"
       ],
       "Second password": [
         "Second mot de passe"
@@ -6054,23 +6071,6 @@
         "Vitesse VPN moyenne"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passer à ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Découvrir tous les abonnements ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "À partir de ${ price }"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade now": [
-        "Changer d'abonnement"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Supprimer le compte"
@@ -6091,6 +6091,23 @@
         "Conserver le compte"
       ],
       "Switch plan": [
+        "Changer d'abonnement"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passer à ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Découvrir tous les abonnements ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "À partir de ${ price }"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade now": [
         "Changer d'abonnement"
       ]
     },
@@ -7178,6 +7195,29 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Les utilisateurs verront votre logo au lieu de l'icône ${ BRAND_NAME } lorsqu'ils se connecteront à nos applications web."
+      ]
+    },
+    "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify } votre adresse e-mail ${ email } pour définir l'identité de l'organisation."
+      ],
+      "Current organization identity": [
+        "Identité de l’organisation actuelle"
+      ],
+      "Edit organization identity": [
+        "Modifier l'identité de l’organisation"
+      ],
+      "New organization identity": [
+        "Nouvelle identité de l'organisation"
+      ],
+      "Organization identity": [
+        "Identité de l'organisation"
+      ],
+      "Organization identity updated": [
+        "L'identité de l'organisation a été mise à jour."
+      ],
+      "Verify": [
+        "Vérifier"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9173,9 +9213,6 @@
       "Organization activated": [
         "L'organisation a été activée."
       ],
-      "Organization identity updated": [
-        "L'identité de l'organisation a été mise à jour."
-      ],
       "Organization logo removed": [
         "Le logo de l'organisation a été retiré."
       ],
@@ -9666,9 +9703,6 @@
       "Edit invoice details": [
         "Modifier les informations de la facture"
       ],
-      "Edit organization identity": [
-        "Modifier l'identité de l’organisation"
-      ],
       "Edit servers": [
         "Modifier les serveurs"
       ],
@@ -9889,6 +9923,9 @@
       "SAML authentication": [
         "Authentification SAML"
       ],
+      "Security events": [
+        "Événements de sécurité"
+      ],
       "Select a plan": [
         "Choisir un abonnement"
       ],
@@ -10096,6 +10133,12 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "Les administrateurs peuvent modifier votre abonnement, gérer les comptes utilisateurs et mots de passe, ainsi qu'accorder des droits d'administrateur à d'autres utilisateurs."
       ],
+      "An approximate location of the IP address": [
+        "Un emplacement approximatif de l'adresse IP"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Toute protection appliquée aux activités suspectes"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Basculez automatiquement entre vos thèmes préférés pour le jour et la nuit, en synchronisation avec les modes jour et nuit de votre système."
       ],
@@ -10104,6 +10147,9 @@
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Copiez et collez cette URL dans le champ ID de l'émetteur de votre fournisseur d'identité."
+      ],
+      "Device information such as operating system": [
+        "Informations sur l'appareil, comme le système d'exploitation"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "L'URL du point de terminaison de votre fournisseur d'identité (par ex. https://idp.exemple.fr/sso/saml)"
@@ -10116,6 +10162,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si vous avez acheté un code-cadeau ou si vous en avez reçu un de notre équipe support, vous pouvez le saisir ici."
+      ],
+      "IP address (Internet Service Provider)": [
+        "Adresse IP (FAI)"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Les membres qui n'utilisent pas l'authentification à deux facteurs (A2F) recevront un message leur demandant de l'activer dès que possible."
@@ -10201,7 +10250,7 @@
         "Supprimer la demande"
       ],
       "Delete request to access user data?": [
-        "Supprimer la demande d'accès aux données de l'utilisateur ?"
+        "Voulez-vous supprimer la demande d'accès aux données de l'utilisateur ?"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Une fois que l'utilisateur a donné son accord, vous pourrez l'aider à retrouver l'accès à son compte ou à gérer ses données."
@@ -10219,16 +10268,19 @@
         "La demande de gestion du compte a été envoyée. L'approbation de l'utilisateur est attente."
       ],
       "Request user permission for data access": [
-        "Demander l'autorisation de l'utilisateur pour l'accès aux données"
+        "Demander l'autorisation à l'utilisateur pour accéder aux données"
       ],
       "Revoke access": [
         "Révoquer l'accès"
       ],
       "Revoke administrator access?": [
-        "Révoquer l'accès administrateur ?"
+        "Voulez-vous révoquer l'accès administrateur ?"
       ],
       "Send request": [
         "Envoyer une demande"
+      ],
+      "Something went wrong enabling administrator access: ${ error }": [
+        "Une erreur s'est produite lors de l'activation de l'accès administrateur :${ error }"
       ],
       "The user must have an address to request data access": [
         "L'utilisateur doit disposer d'une adresse pour demander l'accès aux données."

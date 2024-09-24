@@ -1237,6 +1237,9 @@
       "Tomorrow": [
         "ხვალ"
       ],
+      "Tracker protection prevented some images from loading. Load them if you trust the sender.": [
+        "ტრეკერისგან დაცვამ ზოგიერთი გამოსახულების ჩატვირთვა აკრძალა. ჩატვირთეთ ისინი, თუ გამომგზავნს ენდობით."
+      ],
       "Trust": [
         "ნდობა"
       ],
@@ -3586,6 +3589,17 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "დაგვეხმარეთ, გავუმჯობესდეთ"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "დაადასტურეთ ${ PASS_APP_NAME }-ის სპეციალური ფასდაკლების დაკარგვა"
+      ],
+      "Remove discount": [
+        "ფასდაკლების წაშლა"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "თქვენი ${ PLAN_NAMES[PLANS.PASS] }-ის გამოწერა წელიწადში სპეციალური ${ price } ღირს. Free სატარიფო გეგმაზე ჩამოწევით ფასადკლებას სამუდამოდ დაკარგავთ იმის მიუხედავად, ასწევთ თუ არა სატარიფო გეგმას მომავალში."
       ]
     },
     "Download attachments": {
@@ -10875,6 +10889,14 @@
         "ხელმოწერა"
       ]
     },
+    "SmartBanner": {
+      "Faster on the app": [
+        "უფრო სწრაფია აპში"
+      ],
+      "Private, fast, and organized": [
+        "კონფიდენციალური, სწრაფი და დალაგებული"
+      ]
+    },
     "Snooze message": {
       "Snooze Message": [
         "შეტყობინების დროებით დადუმება"
@@ -11315,6 +11337,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "თქვენი გეგმა iOS-ის აპით იქნა შეძენილი. იმისთვის, რომ თქვენს გეგმაში ცვლილებები შეიტნოთ, ან განაახლოთ გადახდის დეტალები, Apple App Store-ზე უნდა გადახვიდეთ."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "გამოწერის სატარიფო გეგმა ჩამოიწევა გადახდის ციკლის ბოლოს."
       ]
     },
     "Subscription price": {

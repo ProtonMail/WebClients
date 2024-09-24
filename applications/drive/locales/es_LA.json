@@ -2406,7 +2406,15 @@
         "Eliminar descuento"
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
-        "La suscripción del plan ${ PLAN_NAMES[PLANS.PASS] } tiene un precio especial de ${ price } al año. Al cambiar al plan Free perderá el descuento permanentemente incluso si actualiza el plan en el futuro."
+        "La suscripción del plan ${ PLAN_NAMES[PLANS.PASS] } tiene un precio especial de ${ price } al año. Al cambiar al plan Free perderá el descuento permanentemente incluso si mejora el plan en el futuro."
+      ]
+    },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Abrir en ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Save for later": [
+        "Guardar para después"
       ]
     },
     "driveplus2024: Deal details": {
@@ -7745,6 +7753,12 @@
       "Subfolder failed to be loaded": [
         "Error al cargar la subcarpeta"
       ],
+      "The item was not added to your drive": [
+        "El elemento no se añadió a su drive"
+      ],
+      "The item was succefully added to your drive": [
+        "El elemento se añadió a su drive con éxito"
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Error al eliminar el enlace a \"${ name }\""
       ],
@@ -8751,6 +8765,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "Se guardó un enlace a este elemento en su drive. Puede acceder a él después en la sección «Compartido conmigo»."
+      ],
       "Encrypted search is here": [
         "La búsqueda cifrada está aquí"
       ],
@@ -8946,7 +8963,7 @@
     },
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
-        "La suscripción se degradará al finalizar el ciclo de facturación."
+        "Pasará a un plan inferior al finalizar el ciclo de facturación."
       ]
     },
     "Subscription price": {

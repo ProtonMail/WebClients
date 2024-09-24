@@ -5,6 +5,21 @@
   },
   "contexts": {
     "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "偵測到 ${ name } 及 ${ remainingCount } 個其他潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情並採取行動。${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "偵測到 ${ name } 及 1 個其他潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情並採取行動。${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "偵測到 ${ name } 的潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情並採取行動。${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "偵測到來自 ${ name } 的潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情並採取行動。${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "偵測到來自 ${ name } 的潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情。${ link }"
+      ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "您的資料在最少一次的資料外洩之中被發現。開啟 ${ DARK_WEB_MONITORING_NAME } 來瀏覽詳細資料及採取行動。 ${ link }"
       ]
@@ -229,9 +244,6 @@
       "Edit name": [
         "編輯名稱"
       ],
-      "Edit organization identity": [
-        "編輯組織機構身分"
-      ],
       "Edit organization name": [
         "編輯組織名稱"
       ],
@@ -342,6 +354,9 @@
       ],
       "Loading verification": [
         "正在載入驗證"
+      ],
+      "Lost access to your 2FA device?": [
+        "失去存取雙重驗證裝置?"
       ],
       "Make admin": [
         "設為管理員"
@@ -2171,6 +2186,11 @@
         "幫助我們改善"
       ]
     },
+    "Downgrade warning": {
+      "Remove discount": [
+        "移除折扣"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "展開版本紀錄"
@@ -2710,6 +2730,9 @@
       "You have successfully joined the family group": [
         "您已成功加入家庭群組"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "您有未付款發票。請在加入群組方案前繳付。"
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "您需要先架構自訂網域，才能加入多位使用者。"
       ],
@@ -3090,6 +3113,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "應用程式版本"
+      ],
       "Best deal": [
         "至划算"
       ],
@@ -3102,11 +3128,20 @@
       "Create your account": [
         "創建您的帳號"
       ],
+      "Device": [
+        "裝置"
+      ],
+      "Event": [
+        "行程"
+      ],
       "IP address": [
         "IP 位址"
       ],
       "Key type": [
         "金鑰類型"
+      ],
+      "Location": [
+        "位置"
       ],
       "Members": [
         "成員"
@@ -3116,6 +3151,9 @@
       ],
       "Organization key fingerprint": [
         "組織金鑰指紋"
+      ],
+      "Protection": [
+        "安全"
       ],
       "Select your deal": [
         "請選擇您的優惠"
@@ -3134,6 +3172,9 @@
       ],
       "Status": [
         "狀態"
+      ],
+      "User": [
+        "使用者"
       ]
     },
     "Header for addresses table": {
@@ -3345,6 +3386,9 @@
       "Admin account allocation": [
         "管理員帳號指派"
       ],
+      "Affected user is on row": [
+        "受影響的使用者"
+      ],
       "All Events ": [
         "所有事件 "
       ],
@@ -3387,9 +3431,6 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "您確定要移除網域${ boldDomain }?"
       ],
-      "Ask your organisation admin to setup Gateways.": [
-        "請聯絡貴組織的的管理員以設定閘道。"
-      ],
       "Attention required": [
         "需要您的處理"
       ],
@@ -3428,6 +3469,9 @@
       ],
       "Breach Custom Email Created": [
         "外洩自訂電子郵件已創建"
+      ],
+      "Breach Custom Email Deleted": [
+        "外洩自訂電子郵件已刪除"
       ],
       "Breach Custom Email Validated": [
         "外洩自訂電子郵件已驗證"
@@ -3522,6 +3566,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "正在刪除 ${ deletedServerCount } 台閘道伺服器"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "自從${ formattedDateAndTime }關閉"
+      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 標誌"
       ],
@@ -3600,6 +3647,9 @@
       "Enable single sign-on to keep your organization safe": [
         "開啟單一登入 (SSO) 來保障你的組織安全"
       ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "自從${ formattedDateAndTime }啟用"
+      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "由您的身分提供者提供的端點 URL (範例：https://idp.example.com/sso/saml)。"
       ],
@@ -3674,6 +3724,12 @@
       ],
       "Gateways": [
         "閘道器"
+      ],
+      "Gateways monitoring is disabled.": [
+        "閘道器監控已關閉。"
+      ],
+      "Gateways monitoring is enabled.": [
+        "閘道器監控已啟用。"
       ],
       "Get ${ upsellPlanName }": [
         "取得 ${ upsellPlanName }"
@@ -4362,11 +4418,17 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "這將永久刪除您的帳號以及其一切的資料。您將無法重新啟用此帳號。"
       ],
+      "This will remove any enabled 2FA methods.": [
+        "此將移除任何啟用的雙重驗證方法。"
+      ],
       "This will remove SSO for ${ boldDomainName }.": [
         "這將移除 ${ boldDomainName } 的 SSO。"
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "這將取代您的臨時密碼。日後存取您的 ${ BRAND_NAME } 帳號時，您將會使用此密碼。"
+      ],
+      "This will send a new invite to **${ email }**.": [
+        "此將傳送新的邀請至**${ email }**。"
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "這將會使您登出所有裝置並停用雙重驗證。"
@@ -5015,9 +5077,6 @@
       "Current email": [
         "目前的電子郵件"
       ],
-      "Current organization identity": [
-        "目前組織機構身分"
-      ],
       "Default language": [
         "預設語言"
       ],
@@ -5138,9 +5197,6 @@
       "New login password": [
         "新的登入密碼"
       ],
-      "New organization identity": [
-        "新組織機構身分"
-      ],
       "New organization password": [
         "新的組織密碼"
       ],
@@ -5167,9 +5223,6 @@
       ],
       "Optional": [
         "自由列席"
-      ],
-      "Organization identity": [
-        "組織機構身分"
       ],
       "Organization name": [
         "組織名稱"
@@ -5698,23 +5751,6 @@
         "一般 VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "探索其他 ${ BRAND_NAME } 方案"
-      ],
-      "From ${ price }": [
-        "${ price }起"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "刪除帳號"
@@ -5736,6 +5772,23 @@
       ],
       "Switch plan": [
         "切換方案"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "探索其他 ${ BRAND_NAME } 方案"
+      ],
+      "From ${ price }": [
+        "${ price }起"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
       ]
     },
     "new_plans: feature": {
@@ -6385,6 +6438,9 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP 支援僅限透過 ${ MAIL_APP_NAME } Bridge 使用桌面應用程式 (例如 Outlook、Apple Mail、Thunderbird)。目前不支援雲端型 IMAP 整合。"
+      ],
+      "Increase or reallocate storage for a user": [
+        "替位使用者增加或重新配置儲存空間"
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "使用加密日曆讓您的方案對您和您的家人保密"
@@ -7373,6 +7429,11 @@
         "取消密碼重設？"
       ]
     },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "密碼重設需求已取消 (${ user.Email })。若您並未做出此需求，${ changePasswordLink }。"
+      ]
+    },
     "session_recovery:cancelled:link": {
       "change your password now": [
         "立刻變更您的密碼"
@@ -7623,6 +7684,11 @@
       ],
       "Support online privacy": [
         "支援線上隱私"
+      ]
+    },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "此訂購授權將每 2 年自動以相同的費用續訂，直到被取消為止。"
       ]
     },
     "specialoffer: Link": {
@@ -7999,6 +8065,9 @@
       "Add any new files": [
         "新增任何檔案"
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "在您的${ planName }訂購授權到期，您將會被降級至${ BRAND_NAME }Free，這僅提供最多1GB的Mail儲存量和最多5GB的Drive儲存量。您也會失去之前任何額外給予您的儲存量。"
+      ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
         "在 ${ planName } 訂閱過期後，您將會被降級至 ${ BRAND_NAME } 免費方案，提供最多 1GB 信箱與 5GB Drive 儲存空間。您的團隊將面臨業務中斷，因為免費方案不支援額外的使用者。"
       ],
@@ -8128,11 +8197,17 @@
       "Watch the interview": [
         "瀏覽訪談"
       ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "在您取消${ planName }訂購，您將會被降級至${ BRAND_NAME }Free，這僅提供最多1GB的Mail儲存量和最多5GB的Drive儲存量。您也會失去之前任何額外給予您的儲存量。"
+      ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
         "當你取消 ${ planName } 後，您將會被降級至 ${ BRAND_NAME } 免費方案，提供最多 1GB 信箱與 5GB Drive 儲存空間。您的團隊將面臨業務中斷，因為免費方案不支援額外的使用者。"
       ],
       "Yearly free storage bonuses": [
         "年度免費儲存加成"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "您的${ planName }訂購授權還剩餘${ expiryDate }。我們將會在您的剩餘時間，給您的${ BRAND_NAME }帳號添加可用額度。在取消前，確保您沒有超出免費方案的限度。${ learnMoreLink }"
       ],
       "Your own custom email domain": [
         "您持有的自訂電子郵件網域名稱"
@@ -8293,9 +8368,6 @@
       ],
       "Organization activated": [
         "組織機構已啟用"
-      ],
-      "Organization identity updated": [
-        "組織身分已更新"
       ],
       "Organization logo removed": [
         "組織標誌已移除"
@@ -8782,9 +8854,6 @@
       "Edit invoice details": [
         "編輯發票詳細資料"
       ],
-      "Edit organization identity": [
-        "編輯組織機構身分"
-      ],
       "Edit servers": [
         "編輯伺服器"
       ],
@@ -9004,6 +9073,9 @@
       "SAML authentication": [
         "SAML 驗證"
       ],
+      "Security events": [
+        "安全事件"
+      ],
       "Select a plan": [
         "請選擇一個方案"
       ],
@@ -9210,6 +9282,12 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "系統管理員可以更改訂購授權、管理使用者帳號與密碼、授予系統管理權限給其他使用者。"
       ],
+      "An approximate location of the IP address": [
+        "IP 位址的大概位置"
+      ],
+      "Any protection applied to suspicious activity": [
+        "針對可疑活動所採取的保護措施"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "與系統的日夜模式同步，在白天和晚上的偏好布景主題之間自動切換"
       ],
@@ -9218,6 +9296,9 @@
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "請複製此 URL 並到您的身分提供者提示的實體 ID 欄位中貼上"
+      ],
+      "Device information such as operating system": [
+        "裝置資訊如作業系統"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "來自身分提供商(例如 e.g. https://idp.example.com/sso/saml)端點網址"

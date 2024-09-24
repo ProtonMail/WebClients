@@ -253,9 +253,6 @@
       "Edit name": [
         "Editar nombre"
       ],
-      "Edit organization identity": [
-        "Editar la identidad de la organización"
-      ],
       "Edit organization name": [
         "Editar el nombre de la organización"
       ],
@@ -2243,6 +2240,17 @@
         "Ayúdanos a mejorar"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Confirmar la pérdida del descuento especial de ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Eliminar el descuento"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "La suscripción del plan ${ PLAN_NAMES[PLANS.PASS] } tiene un precio especial de ${ price } al año. Al cambiar al plan Free perderás el descuento permanentemente incluso si mejoras el plan en el futuro."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Historial de versiones extendido"
@@ -2621,6 +2629,11 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Tu cuenta u organización tiene una factura vencida. Tienes que pagar todas las facturas impagadas."
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "Ingresa una dirección de correo electrónico"
       ]
     },
     "Error importing users": {
@@ -3217,6 +3230,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "Versión de la aplicación"
+      ],
       "Best deal": [
         "Mejor oferta"
       ],
@@ -3229,11 +3245,20 @@
       "Create your account": [
         "Crea tu cuenta"
       ],
+      "Device": [
+        "Dispositivo"
+      ],
+      "Event": [
+        "Evento"
+      ],
       "IP address": [
         "Dirección IP"
       ],
       "Key type": [
         "Tipo de clave"
+      ],
+      "Location": [
+        "Ubicación"
       ],
       "Members": [
         "Miembros"
@@ -3243,6 +3268,9 @@
       ],
       "Organization key fingerprint": [
         "Huella digital de la clave de la organización"
+      ],
+      "Protection": [
+        "Protección"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Ahorra en grande con las mejores ofertas de ${ VPN_APP_NAME }"
@@ -3264,6 +3292,9 @@
       ],
       "Status": [
         "Estado"
+      ],
+      "User": [
+        "Usuario"
       ]
     },
     "Header for addresses table": {
@@ -3555,8 +3586,8 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "¿Estás seguro de que quieres borrar el dominio ${ boldDomain }?"
       ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Pregunta al administrador de tu organización para configurar puertas de enlace."
+      "Ask your organization admin to setup Gateways.": [
+        "Pregunta al administrador de la organización para configurar puertas de enlace."
       ],
       "Attention required": [
         "Atención requerida"
@@ -4397,6 +4428,9 @@
       ],
       "SCIM token active": [
         "Token SCIM activo"
+      ],
+      "Search by an email address to begin": [
+        "Busca por dirección de correo electrónico para empezar."
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Asegura tu cuenta de ${ BRAND_NAME }"
@@ -5338,9 +5372,6 @@
       "Current email": [
         "Correo electrónico actual"
       ],
-      "Current organization identity": [
-        "Identidad actual de la organización"
-      ],
       "Default language": [
         "Idioma por defecto"
       ],
@@ -5461,9 +5492,6 @@
       "New login password": [
         "Nueva contraseña de inicio de sesión"
       ],
-      "New organization identity": [
-        "Nueva identidad de la organización"
-      ],
       "New organization password": [
         "Nueva contraseña de la organización"
       ],
@@ -5493,9 +5521,6 @@
       ],
       "Optional": [
         "Opcional"
-      ],
-      "Organization identity": [
-        "Identidad de la organización"
       ],
       "Organization name": [
         "Nombre de la organización"
@@ -5568,6 +5593,9 @@
       ],
       "Reveal password": [
         "Mostrar contraseña"
+      ],
+      "Search by email": [
+        "Buscar por correo electrónico"
       ],
       "Second password": [
         "Segunda contraseña"
@@ -6043,23 +6071,6 @@
         "Velocidad VPN media"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Pasar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ver todos los planes de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Desde ${ price }"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade now": [
-        "Mejorar ahora"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Eliminar cuenta"
@@ -6081,6 +6092,23 @@
       ],
       "Switch plan": [
         "Cambiar plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Pasar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ver todos los planes de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Desde ${ price }"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade now": [
+        "Mejorar ahora"
       ]
     },
     "new_plans: feature": {
@@ -7167,6 +7195,29 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Los usuarios verán tu logo en lugar del ícono de ${ BRAND_NAME } cuando inicien sesión en las aplicaciones web."
+      ]
+    },
+    "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify } tu dirección de correo electrónico ${ email } para establecer la identidad de la organización."
+      ],
+      "Current organization identity": [
+        "Identidad actual de la organización"
+      ],
+      "Edit organization identity": [
+        "Editar la identidad de la organización"
+      ],
+      "New organization identity": [
+        "Nueva identidad de la organización"
+      ],
+      "Organization identity": [
+        "Identidad de la organización"
+      ],
+      "Organization identity updated": [
+        "Se ha actualizado la identidad de la organización."
+      ],
+      "Verify": [
+        "Verificar"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -8657,6 +8708,11 @@
         "Has comprado tu plan usando una app de iOS. Para realizar cambios a tu plan o actualizar tus datos de pago necesitarás conectarte a la App Store de Apple."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Pasarás a un plan inferior al finalizar el ciclo de facturación."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Por ${ totalPrice }"
@@ -9157,9 +9213,6 @@
       "Organization activated": [
         "Organización activada"
       ],
-      "Organization identity updated": [
-        "Se ha actualizado la identidad de la organización."
-      ],
       "Organization logo removed": [
         "Se ha borrado el logo de la organización."
       ],
@@ -9650,9 +9703,6 @@
       "Edit invoice details": [
         "Editar los datos de la factura"
       ],
-      "Edit organization identity": [
-        "Editar la identidad de la organización"
-      ],
       "Edit servers": [
         "Editar servidores"
       ],
@@ -9873,6 +9923,9 @@
       "SAML authentication": [
         "Autenticación SAML"
       ],
+      "Security events": [
+        "Eventos de seguridad"
+      ],
       "Select a plan": [
         "Selecciona un plan"
       ],
@@ -10080,6 +10133,12 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "Los administradores pueden realizar cambios a tu suscripción, gestionar cuentas de usuario y contraseñas y dar privilegios de administración a otros usuarios."
       ],
+      "An approximate location of the IP address": [
+        "Una ubicación aproximada de la dirección IP"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Cualquier protección aplicada a una actividad sospechosa"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Cambia automáticamente entre tus temas preferidos para el día y la noche en sincronía con los modos de día y noche de tu sistema."
       ],
@@ -10088,6 +10147,9 @@
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Copia y pega esta URL en el campo ID de entidad de tu proveedor de identidad."
+      ],
+      "Device information such as operating system": [
+        "Información del dispositivo como el sistema operativo"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL de punto final de tu proveedor de identidad (por ejemplo, https://idp.ejemplo.es/sso/saml)"
@@ -10100,6 +10162,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si has comprado un código de regalo o recibido uno de nuestro equipo de soporte, puedes introducirlo aquí."
+      ],
+      "IP address (Internet Service Provider)": [
+        "Dirección IP (proveedor de servicios de internet)"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Los miembros que no utilizan 2FA recibirán un correo electrónico pidiéndoles que la activen tan pronto como sea posible."
@@ -10213,6 +10278,9 @@
       ],
       "Send request": [
         "Enviar una solicitud"
+      ],
+      "Something went wrong enabling administrator access: ${ error }": [
+        "Se ha producido un error al activar el acceso de administrador: ${ error }"
       ],
       "The user must have an address to request data access": [
         "El usuario debe tener una dirección para solicitar acceso a los datos"

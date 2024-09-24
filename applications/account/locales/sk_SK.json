@@ -466,9 +466,6 @@
       "Edit name": [
         "Upraviť názov"
       ],
-      "Edit organization identity": [
-        "Upraviť identitu organizácie"
-      ],
       "Edit organization name": [
         "Upraviť názov organizácie"
       ],
@@ -3605,6 +3602,17 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Pomôžte nám zlepšiť sa"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Potvrďte stratu špeciálnej zľavy na ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Odstrániť zľavu"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Vaše predplatné ${ PLAN_NAMES[PLANS.PASS] } je za špeciálnu cenu ${ price } ročne. Znížením ceny na bezplatný plán natrvalo stratíte zľavu, a to aj v prípade, že v budúcnosti opäť prejdete na vyšší plán."
       ]
     },
     "Download link": {
@@ -6955,9 +6963,6 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Skutočne chcete odstrániť doménu ${ boldDomain }?"
       ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Požiadajte správcu organizácie o nastavenie brány."
-      ],
       "Attention required": [
         "Vyžaduje sa pozornosť"
       ],
@@ -10149,9 +10154,6 @@
       "Current email": [
         "Súčasný email"
       ],
-      "Current organization identity": [
-        "Aktuálna identita organizácie"
-      ],
       "Daily email notifications": [
         "Denné emailové notifikácie"
       ],
@@ -10241,9 +10243,6 @@
       ],
       "Email or username": [
         "Email alebo používateľské meno"
-      ],
-      "Email settings": [
-        "Nastavenie e-mailu"
       ],
       "Emails": [
         "Emaily"
@@ -10476,9 +10475,6 @@
       "New login password": [
         "Nové prihlasovacie heslo"
       ],
-      "New organization identity": [
-        "Nová identita organizácie"
-      ],
       "New organization password": [
         "Nové heslo organizácie"
       ],
@@ -10526,9 +10522,6 @@
       ],
       "Or": [
         "Alebo"
-      ],
-      "Organization identity": [
-        "Identita organizácie"
       ],
       "Organization name": [
         "Názov organizácie"
@@ -15729,6 +15722,11 @@
         "Váš plán bol zakúpený pomocou aplikácie pre iOS. Ak chcete vykonať zmeny vo svojom pláne alebo aktualizovať podrobnosti o platbe, budete musieť prejsť do obchodu Apple App Store."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Na konci fakturačného cyklu sa predplatné zníži."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
@@ -16276,9 +16274,6 @@
       "Organization activated": [
         "Organizácia bola aktivovaná"
       ],
-      "Organization identity updated": [
-        "Identita organizácie aktualizovaná"
-      ],
       "Organization logo removed": [
         "Logo organizácie odstránené"
       ],
@@ -16661,9 +16656,6 @@
       "Account recovery": [
         "Obnovenie účtu"
       ],
-      "Account settings": [
-        "Nastavenie účtu"
-      ],
       "Account suspended": [
         "Účet pozastavený"
       ],
@@ -16785,7 +16777,7 @@
         "Blokovať trackery a malware"
       ],
       "Bridge for ${ platform }": [
-        "Most pre ${ platform }"
+        "Bridge pre ${ platform }"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Zrušiť predplatné ${ MAIL_SHORT_APP_NAME }"
@@ -16928,9 +16920,6 @@
       "Custom filters": [
         "Vlastné filtre"
       ],
-      "Custom folders and labels": [
-        "Vlastné priečinky a štítky"
-      ],
       "Custom selection of users": [
         "Vlastný výber používateľov"
       ],
@@ -17071,9 +17060,6 @@
       ],
       "Edit invoice details": [
         "Upraviť fakturačné údaje"
-      ],
-      "Edit organization identity": [
-        "Upraviť identitu organizácie"
       ],
       "Edit profile": [
         "Upraviť profil"
@@ -17426,9 +17412,6 @@
       "Privacy and data collection": [
         "Ochrana a zber osobných údajov"
       ],
-      "Privacy and security": [
-        "Súkromie a bezpečnosť"
-      ],
       "Processing...": [
         "Prebieha spracovanie..."
       ],
@@ -17611,9 +17594,6 @@
       ],
       "Sort labels alphabetically": [
         "Zoradiť štítky abecedne"
-      ],
-      "Spam filters": [
-        "Filtre nevyžiadanej pošty"
       ],
       "Spam, block, and allow lists": [
         "Spam, blokované a povolené"

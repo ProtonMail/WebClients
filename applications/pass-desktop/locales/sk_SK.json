@@ -206,7 +206,7 @@
         "Zapnúť monitorovanie Dark Webu"
       ],
       "Enable this alias to receive emails sent to this alias": [
-        "Zapnite tento alias na prijímanie emailov zasielaných na tento alias"
+        "Zapnite tento alias, ak chcete prijímať emaily zasielané na tento alias"
       ],
       "Entire vault": [
         "Celý trezor"
@@ -690,6 +690,9 @@
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } súbor nebolo možné analyzovať. ${ errorDetail }"
+      ],
+      "[Error] an item could not be parsed": [
+        "[Chyba] položku nebolo možné analyzovať"
       ],
       "Alias could not be updated at the moment. Please try again later": [
         "Alias nebolo momentálne možné aktualizovať. Skúste to neskôr, prosím"
@@ -1199,6 +1202,9 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po úspešnom importe údajov môžete z bezpečnostných dôvodov odstrániť CSV súbor obsahujúci vaše heslá."
+      ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "Funkcie správy aliasov od SimpleLogin prídu čoskoro!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias bol úspešne vypnutý. Už nebudete dostávať emaily odoslané na adresu ${ item.aliasEmail }"
@@ -1921,7 +1927,7 @@
         "Odoslali sme overovací kód na adresu ${ email }. Zadajte ho, prosím, nižšie:"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
-        "Pri vytváraní/úprave prihlásenia na ${ PASS_APP_NAME } bude vždy viditeľné vstupné pole 'používateľské meno'."
+        "Pri vytváraní/úprave prihlásenia na ${ PASS_APP_NAME } bude vstupné pole 'používateľské meno' vždy viditeľné ."
       ],
       "You are about to create:": [
         "Chystáte sa vytvoriť:"
@@ -2098,6 +2104,9 @@
       ],
       "Alias address": [
         "Adresa aliasu"
+      ],
+      "Alias management": [
+        "Správa aliasov"
       ],
       "Aliases": [
         "Aliasy"
@@ -2636,6 +2645,9 @@
       "Type": [
         "Typ"
       ],
+      "Unknown": [
+        "Neznáme"
+      ],
       "Unlock with": [
         "Odomknúť pomocou"
       ],
@@ -2831,9 +2843,6 @@
       ],
       "MM/YY": [
         "MM/RR"
-      ],
-      "Other": [
-        "Iné"
       ],
       "Password": [
         "Heslo"

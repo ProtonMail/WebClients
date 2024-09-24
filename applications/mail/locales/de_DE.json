@@ -549,6 +549,9 @@
       "Hide": [
         "Ausblenden"
       ],
+      "Hide ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent ausblenden"
+      ],
       "Hide advanced PGP settings": [
         "Erweiterte PGP-Einstellungen ausblenden"
       ],
@@ -1015,6 +1018,9 @@
       "Revert to original display": [
         "Zurück zur ursprünglichen Darstellung"
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Auf ${ BRAND_NAME }-Servern ausführen"
+      ],
       "Save": [
         "Speichern"
       ],
@@ -1125,6 +1131,9 @@
       ],
       "Show": [
         "Anzeigen"
+      ],
+      "Show ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent anzeigen"
       ],
       "Show advanced PGP settings": [
         "Erweiterte PGP-Einstellungen anzeigen"
@@ -1546,6 +1555,9 @@
       ],
       "No logs are kept to protect your privacy. Faster processing.": [
         "Es werden keine Protokolle gespeichert, um deine Privatsphäre zu schützen. Schnellere Verarbeitung."
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Auf ${ BRAND_NAME }-Servern ausführen"
       ],
       "Run on device": [
         "Auf dem Gerät ausführen"
@@ -3567,6 +3579,17 @@
         "Hilf uns, besser zu werden"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Bestätige den Verlust des ${ PASS_APP_NAME }-Sonderrabatts"
+      ],
+      "Remove discount": [
+        "Rabatt entfernen"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Dein ${ PLAN_NAMES[PLANS.PASS] }-Abonnement hat einen Sonderpreis von ${ price } pro Jahr. Durch ein Downgrade auf ein kostenloses Abonnement verlierst du den Rabatt dauerhaft, auch wenn du in Zukunft wieder ein Upgrade durchführst."
+      ]
+    },
     "Download attachments": {
       "Download all": [
         "Alle herunterladen"
@@ -4141,6 +4164,9 @@
       ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Der Versand von Anhängen ist eingeschränkt, bis du die Grenzen deines Abonnements erfüllst oder ein Upgrade durchgeführt hast."
+      ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.": [
+        "Der Versand von Anhängen ist eingeschränkt, solange du die Grenzen deines Abonnements überschreitest oder bis du ein Upgrade deines Abonnements durchgeführt hast."
       ],
       "Signature not verified": [
         "Signatur nicht bestätigt"
@@ -6597,6 +6623,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bitte beachte, dass dieser Vorgang (je nach Größe deines Adressbuchs) einige Zeit dauern kann."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ remainingCreditsFormatted } Guthaben auf deinem Konto verbleiben."
       ],
       "Please open the document to view it.": [
         "Bitte öffne das Dokument, um es anzusehen."
@@ -10842,6 +10871,14 @@
         "Signieren"
       ]
     },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Schneller in der App"
+      ],
+      "Private, fast, and organized": [
+        "Privat, schnell, und organisiert"
+      ]
+    },
     "Snooze message": {
       "Snooze Message": [
         "Nachricht aufschieben"
@@ -11282,6 +11319,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Dein Abonnement wurde über eine iOS App gekauft. Um Änderungen an deinem Abonnement oder deinen Zahlungsdetails durchführen zu können, musst du zum Apple App Store gehen."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Das Abonnement wird am Ende des Abrechnungszeitraums herabgestuft."
       ]
     },
     "Subscription price": {
@@ -11938,6 +11980,9 @@
       ],
       "Preferences saved": [
         "Einstellungen gespeichert"
+      ],
+      "Problem reported": [
+        "Problem gemeldet"
       ],
       "Public key trusted": [
         "Öffentlicher Schlüssel vertrauenswürdig"

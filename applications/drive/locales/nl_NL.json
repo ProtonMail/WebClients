@@ -2389,6 +2389,11 @@
         "Help ons verbeteren"
       ]
     },
+    "drive:action": {
+      "Save for later": [
+        "Opslaan voor later"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Uitgebreide versiegeschiedenis bekijken"
@@ -4540,6 +4545,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "Bevestig uw keuze en wij doen de rest."
       ],
+      "Keep your files secure with end-to-end encryption.": [
+        "Houd uw bestanden veilig met end-to-end encryptie."
+      ],
       "Key fingerprint": [
         "Digitale vingerafdruk"
       ],
@@ -6654,7 +6662,7 @@
         "${ n } VPN-verbindingen"
       ],
       "${ options }-day file version history": [
-        "Bestandsversiegeschiedenis van ${ options } dagen",
+        "Bestandsversiegeschiedenis van ${ options } dag",
         "Bestandsversiegeschiedenis van ${ options } dagen"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
@@ -6684,6 +6692,9 @@
       ],
       "10 email addresses/aliases": [
         "10 e-mailadressen/aliassen"
+      ],
+      "10-year file version history": [
+        "10-jarige bestandsversiegeschiedenis"
       ],
       "15 GB storage": [
         "15 GB opslagruimte"
@@ -7664,6 +7675,9 @@
       ]
     },
     "Onboarding Info": {
+      "Collaborate on documents": [
+        "Samenwerken aan documenten"
+      ],
       "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
         "Creëer en werk samen aan documenten. Alles is beschermd door end-to-end versleuteling."
       ],
@@ -7681,6 +7695,9 @@
       ],
       "Share a file": [
         "Een bestand delen"
+      ],
+      "Share files & folders": [
+        "Deel bestanden & mappen"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Vul eenvoudigweg het volgende vandaag nog in:",
@@ -9452,6 +9469,10 @@
       ],
       "Are you sure you want to close the preview?": [
         "Weet u zeker dat u het voorbeeld wil sluiten?"
+      ],
+      "Are you sure you want to remove this item from your list?": [
+        "Weet u zeker dat u dit item uit uw lijst wilt verwijderen?",
+        "Weet u zeker dat u deze items uit uw lijst wilt verwijderen?"
       ],
       "Billing cycle": [
         "Factuurperiode"

@@ -466,9 +466,6 @@
       "Edit name": [
         "Sunting nama"
       ],
-      "Edit organization identity": [
-        "Edit identitas organisasi"
-      ],
       "Edit organization name": [
         "Edit nama organisasi"
       ],
@@ -3563,6 +3560,17 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Bantu kami menjadi lebih baik"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Konfirmasi hilangnya diskon spesial ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Hapus diskon"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Langganan ${ PLAN_NAMES[PLANS.PASS] } Anda saat ini berlaku dengan harga khusus ${ price } per tahun. Dengan menurunkan ke paket Free, Anda akan kehilangan diskon ini secara permanen, bahkan apabila Anda meningkatkan kembali akun Anda di masa yang akan datang."
       ]
     },
     "Download link": {
@@ -6757,9 +6765,6 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Apakah Anda yakin untuk menghapus domain ${ boldDomain }?"
       ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Mintalah admin organisasi Anda untuk mengatur Gateway."
-      ],
       "Attention required": [
         "Diperlukan perhatian"
       ],
@@ -7003,6 +7008,9 @@
       "Disable recovery by ${ type }": [
         "Nonaktifkan pemulihan melalui ${ type }"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Dinonaktifkan sejak ${ formattedDateAndTime }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Menonaktifkan autentikasi dua faktor akan membuat akun Anda kurang aman. Hanya lanjutkan jika benar-benar diperlukan."
       ],
@@ -7116,6 +7124,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Aktifkan TLS atau SSL pada layanan eksternal apabila didukung."
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Diaktifkan sejak ${ formattedDateAndTime }"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Mengaktifkan ulang frasa pemulihan akan membuat frasa pemulihan baru."
@@ -8881,6 +8892,9 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Anda dapat mengaktifkan login autentikasi untuk melihat kapan saja dan oleh alamat IP mana saja akun Anda diakses. Kami akan mencatat alamat IP yang mengakses akun Anda dan waktunya, beserta dengan seluruh upaya akses yang gagal."
       ],
+      "You can enable the Photos section from the interface using the toggle below.": [
+        "Anda dapat mengaktifkan bagian Foto dari antarmuka menggunakan saklar di bawah."
+      ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Anda dapat segera membuka kunci penyiapan di atas dengan menambahkan ${ specificCountryCount } ke jumlah alamat IP dalam paket Anda atau hubungi kami untuk solusi yang dibuat khusus untuk Anda."
       ],
@@ -9855,9 +9869,6 @@
       "Current email": [
         "Email saat ini"
       ],
-      "Current organization identity": [
-        "Identitas organisasi saat ini"
-      ],
       "Daily email notifications": [
         "Notifikasi email harian"
       ],
@@ -9947,9 +9958,6 @@
       ],
       "Email or username": [
         "Email atau nama pengguna"
-      ],
-      "Email settings": [
-        "Pengaturan email"
       ],
       "Emails": [
         "Email"
@@ -10182,9 +10190,6 @@
       "New login password": [
         "Kata sandi masuk baru"
       ],
-      "New organization identity": [
-        "Identitas organisasi baru"
-      ],
       "New organization password": [
         "Kata sandi organisasi baru"
       ],
@@ -10232,9 +10237,6 @@
       ],
       "Or": [
         "Atau"
-      ],
-      "Organization identity": [
-        "Identitas organisasi"
       ],
       "Organization name": [
         "Nama organisasi"
@@ -11100,7 +11102,7 @@
         "Seluruh tindakan filter akan diterapkan kepada seluruh pesan yang terdapat pada akun ${ MAIL_APP_NAME } Anda. Email balasan otomatis tidak akan dikirimkan."
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
-        "Hubungkan domain khusus Anda ke ${ BRAND_NAME } untuk dapat membuat dan mengatur alamat email khusus (cth. anda@perusahaananda.com). Kami akan memandu Anda dalam prosesnya."
+        "Hubungkan domain khusus Anda ke ${ BRAND_NAME } untuk mengatur alamat email khusus (cth. anda@perusahaananda.com). Wisaya kami akan memandu Anda dalam prosesnya."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Masa uji coba gratis Anda telah berakhir. Akses menuju akun Anda akan segera dinonaktifkan. ${ action }"
@@ -12027,7 +12029,7 @@
         "Akun gratis yang dirancang untuk menyediakan privasi sebagai hal yang baku bagi semua."
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
-        "Privasi tak terbatas dan lebih banyak penyimpanan sampai dengan 2 orang."
+        "Privasi tanpa batas dan ruang penyimpanan yang lebih untuk hingga 2 orang pengguna."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menghapus akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon apabila Anda membuat akun baru."
@@ -15183,6 +15185,11 @@
         "Paket langganan Anda dibeli melalui aplikasi iOS. Oleh karenanya, Anda harus membuka Apple App Store untuk mengubah paket langganan atau memperbarui rincian pembayaran Anda."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Langganan akan diturunkan pada akhir siklus tagihan."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Untuk ${ totalPrice }"
@@ -15469,7 +15476,7 @@
         "Tanpa batasan jumlah folder, label, dan filter"
       ],
       "Unlimited privacy for two": [
-        "Privasi tak terbatas untuk dua pengguna"
+        "Privasi tanpa batas untuk dua orang pengguna"
       ],
       "Users won’t be able to manage their calendars": [
         "Pengguna tidak akan dapat mengelola kalendernya"
@@ -15717,9 +15724,6 @@
       ],
       "Organization activated": [
         "Organisasi berhasil diaktifkan"
-      ],
-      "Organization identity updated": [
-        "Identitas organisasi diperbarui"
       ],
       "Organization logo removed": [
         "Logo organisasi dihapus"
@@ -16085,9 +16089,6 @@
       "Account recovery": [
         "Pemulihan akun"
       ],
-      "Account settings": [
-        "Pengaturan akun"
-      ],
       "Account suspended": [
         "Akun ditangguhkan"
       ],
@@ -16349,9 +16350,6 @@
       "Custom filters": [
         "Filter khusus"
       ],
-      "Custom folders and labels": [
-        "Folder dan label baru"
-      ],
       "Custom selection of users": [
         "Pengguna yang dipilih secara tertentu"
       ],
@@ -16489,9 +16487,6 @@
       ],
       "Edit invoice details": [
         "Sunting rincian faktur"
-      ],
-      "Edit organization identity": [
-        "Sunting identitas organisasi"
       ],
       "Edit profile": [
         "Sunting profil"
@@ -16838,9 +16833,6 @@
       "Privacy and data collection": [
         "Privasi dan pengumpulan data"
       ],
-      "Privacy and security": [
-        "Privasi dan keamanan"
-      ],
       "Processing...": [
         "Memproses..."
       ],
@@ -17023,9 +17015,6 @@
       ],
       "Sort labels alphabetically": [
         "Urut label sesuai abjad"
-      ],
-      "Spam filters": [
-        "Filter spam"
       ],
       "Spam, block, and allow lists": [
         "Daftar spam, blokir, dan izin"

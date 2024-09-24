@@ -146,7 +146,7 @@
         "Creați un articol"
       ],
       "Create note": [
-        "Creare notă"
+        "Creare notiță"
       ],
       "Create vault": [
         "Creare seif"
@@ -1092,7 +1092,7 @@
         "${ PASS_APP_NAME } va afișa fișierul favicon prin proxy-ul de imagini anonim ${ BRAND_NAME }."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
-        "${ PASS_APP_NAME } va importa doar date de conectare, note, carduri de credit și identități."
+        "${ PASS_APP_NAME } va importa doar date de conectare, notițe, carduri de plată și identități."
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } vă va solicita parola ${ BRAND_NAME } pentru a accesa datele deconectat."
@@ -1131,6 +1131,9 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "După reușirea importării datelor, puteți șterge fișierul CSV care conține parolele pentru a vă păstra securitatea."
+      ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "Funcțiile pentru gestionare aliasuri din SimpleLogin vor sosi în curând!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Aliasul a fost dezactivat. Nu veți mai primi mesaje trimise către ${ item.aliasEmail }."
@@ -1690,7 +1693,7 @@
         "Setările s-au actualizat."
       ],
       "Share your logins, secure notes, with up to 10 people": [
-        "Partajați-vă datele de conectare și notele securizate, cu până la 10 persoane"
+        "Partajați-vă datele de conectare și notițele securizate, cu până la 10 persoane"
       ],
       "Sign in to your account": [
         "Conectare la cont"
@@ -2008,6 +2011,9 @@
       "Alias address": [
         "Adresă alias"
       ],
+      "Alias management": [
+        "Gestionare aliasuri"
+      ],
       "Aliases": [
         "Aliasuri"
       ],
@@ -2087,7 +2093,7 @@
         "Creare autentificare"
       ],
       "Create an encrypted note": [
-        "Creare notă criptată"
+        "Creare notiță criptată"
       ],
       "Create an Identity": [
         "Creare identitate"
@@ -2354,10 +2360,10 @@
         "Niciuna"
       ],
       "Note": [
-        "Notă"
+        "Notiță"
       ],
       "Notes": [
-        "Note"
+        "Notiță"
       ],
       "Offline mode": [
         "Mod deconectat"
@@ -2557,7 +2563,7 @@
         "Element fără nume"
       ],
       "Unnamed note": [
-        "Notă fără nume"
+        "Notiță fără nume"
       ],
       "Untitled": [
         "Fără nume"
@@ -2693,7 +2699,7 @@
         "Adăugare text ascuns"
       ],
       "Add note": [
-        "Adăugare notă"
+        "Adăugare notiță"
       ],
       "Add text": [
         "Adăugare text"
@@ -2702,7 +2708,7 @@
         "Adresă e-mail"
       ],
       "Enter a note...": [
-        "Introduceți o notă…"
+        "Introduceți o notiță…"
       ],
       "Enter a prefix": [
         "Introduceți un prefix"
@@ -2724,9 +2730,6 @@
       ],
       "MM/YY": [
         "LL/AA"
-      ],
-      "Other": [
-        "Altele"
       ],
       "Password": [
         "Parola"
@@ -2771,7 +2774,7 @@
         "Folosit la ${ url }"
       ],
       "Write your note": [
-        "Scrieți-vă nota"
+        "Scrieți-vă notița"
       ]
     },
     "Security Center - Info": {
@@ -3160,7 +3163,7 @@
         "Adresa de e-mail este obligatorie."
       ],
       "Empty note": [
-        "Notă goală."
+        "Notiță goală"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Data de expirare nu este în format LL/AA."

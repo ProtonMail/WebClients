@@ -253,9 +253,6 @@
       "Edit name": [
         "Рэдагаваць назву"
       ],
-      "Edit organization identity": [
-        "Рэдагаваць ідэнтычнасць арганізацыі"
-      ],
       "Edit organization name": [
         "Рэдагаваць назву арганізацыі"
       ],
@@ -2261,6 +2258,17 @@
         "Дапамажыце нам палепшыць наш сэрвіс"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Пацвердзіць страту спецыяльнай скідкі ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Выдаліць скідку"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Ваша падпіска ${ PLAN_NAMES[PLANS.PASS] } па спецыяльнай цане ${ price } у год. Перайшоўшы на бясплатны тарыфны план, вы назаўсёды страціце скідку, нават калі ў будучыні зноў палепшыце сваю падпіску."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Пашыраная гісторыя версій"
@@ -3261,6 +3269,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "Версія праграмы"
+      ],
       "Best deal": [
         "Лепшая прапанова"
       ],
@@ -3273,11 +3284,20 @@
       "Create your account": [
         "Стварэнне ўліковага запісу"
       ],
+      "Device": [
+        "Прылада"
+      ],
+      "Event": [
+        "Падзея"
+      ],
       "IP address": [
         "IP-адрас"
       ],
       "Key type": [
         "Тып ключа"
+      ],
+      "Location": [
+        "Месцазнаходжанне"
       ],
       "Members": [
         "Удзельнікі"
@@ -3287,6 +3307,9 @@
       ],
       "Organization key fingerprint": [
         "Адбітак ключа арганізацыі"
+      ],
+      "Protection": [
+        "Абарона"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Зэканомце больш з лепшымі прапановамі ${ VPN_APP_NAME }"
@@ -3308,6 +3331,9 @@
       ],
       "Status": [
         "Статус"
+      ],
+      "User": [
+        "Карыстальнік"
       ]
     },
     "Header for addresses table": {
@@ -3626,9 +3652,6 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Вы ўпэўнены, што хочаце выдаліць дамен ${ boldDomain }?"
-      ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Папрасіце адміністратара сваёй арганізацыі наладзіць шлюзы."
       ],
       "Attention required": [
         "Патрабуецца ўвага"
@@ -5450,9 +5473,6 @@
       "Current email": [
         "Бягучая электронная пошта"
       ],
-      "Current organization identity": [
-        "Бягучая ідэнтычнасць арганізацыі"
-      ],
       "Default language": [
         "Прадвызначаная мова"
       ],
@@ -5573,9 +5593,6 @@
       "New login password": [
         "Новы пароль уваходу"
       ],
-      "New organization identity": [
-        "Новая ідэнтычнасць арганізацыі"
-      ],
       "New organization password": [
         "Новы пароль арганізацыі"
       ],
@@ -5605,9 +5622,6 @@
       ],
       "Optional": [
         "Неабавязкова"
-      ],
-      "Organization identity": [
-        "Ідэнтычнасць арганізацыі"
       ],
       "Organization name": [
         "Назва арганізацыі"
@@ -6157,23 +6171,6 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Ад ${ price }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Выдаліць уліковы запіс"
@@ -6195,6 +6192,23 @@
       ],
       "Switch plan": [
         "Змяніць тарыфны план"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Ад ${ price }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
       ]
     },
     "new_plans: feature": {
@@ -8903,6 +8917,11 @@
         "Ваш тарыфны план куплены з дапамогай праграмы для iOS. Такім чынам, каб унесці змены ў яго або абнавіць рэквізіты плацяжу, вам неабходна зайсці ў Apple App Store."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Падпіска будзе паніжана ў канцы перыяду аплаты."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "За ${ totalPrice }"
@@ -9411,9 +9430,6 @@
       "Organization activated": [
         "Арганізацыя актывавана"
       ],
-      "Organization identity updated": [
-        "Ідэнтычнасць арганізацыі абноўлена"
-      ],
       "Organization logo removed": [
         "Лагатып арганізацыі выдалены"
       ],
@@ -9908,9 +9924,6 @@
       "Edit invoice details": [
         "Рэдагаваць падрабязнасці рахунка"
       ],
-      "Edit organization identity": [
-        "Рэдагаваць ідэнтычнасць арганізацыі"
-      ],
       "Edit servers": [
         "Рэдагаваць серверы"
       ],
@@ -10133,6 +10146,9 @@
       "SAML authentication": [
         "Аўтэнтыфікацыя SAML"
       ],
+      "Security events": [
+        "Бяспечныя падзеі"
+      ],
       "Select a plan": [
         "Выбар тарыфнага плана"
       ],
@@ -10342,6 +10358,12 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "Адміністратары могуць змяняць вашу падпіску, кіраваць уліковымі запісамі карыстальнікаў, паролямі і даваць правы адміністратара іншым карыстальнікам."
       ],
+      "An approximate location of the IP address": [
+        "Прыблізнае месцазнаходжанне IP-адраса"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Любая абарона ўжываецца да падазронай актыўнасці"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Аўтаматычна пераключацца паміж вашымі пажаданымі тэмамі для дня і ночы згодна з начным і дзённым рэжымам вашай сістэмы."
       ],
@@ -10350,6 +10372,9 @@
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Скапіюйце і ўстаўце гэты URL-адрас у поле Entity ID вашага пастаўшчыка пасведчанняў"
+      ],
+      "Device information such as operating system": [
+        "Звесткі пра прыладу, такія як аперацыйная сістэма"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL-адрас канцавога пункта ад пастаўшчыка пасведчанняў (напрыклад, https://idp.example.com/sso/saml)"

@@ -92,10 +92,10 @@
       "Create": [
         "創建"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "創建一個${ BRAND_NAME } 帳號"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "創建一個${ BRAND_NAME } 帳號"
       ],
       "Create a new vault to share": [
@@ -1129,6 +1129,9 @@
       "Please enter your current PIN code to continue": [
         "輸入 PIN 碼以繼續"
       ],
+      "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
+        "請輸入您的額外密碼字元以便開始使用${ PASS_SHORT_APP_NAME }。"
+      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "請升級以提早存取${ PASS_APP_NAME }網頁"
       ],
@@ -1409,9 +1412,6 @@
       ],
       "Autosave": [
         "自動儲存"
-      ],
-      "Autosave vault": [
-        "自動處存保管庫"
       ],
       "Autosuggest": [
         "自動建議"
@@ -1924,9 +1924,6 @@
       ],
       "MM/YY": [
         "月月/年年"
-      ],
-      "Other": [
-        "其它"
       ],
       "Password": [
         "密碼"

@@ -466,9 +466,6 @@
       "Edit name": [
         "Rediger navn"
       ],
-      "Edit organization identity": [
-        "Rediger organisasjonsidentitet"
-      ],
       "Edit organization name": [
         "Rediger organisasjonsnavn"
       ],
@@ -3577,6 +3574,17 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Hjelp oss å bli bedre"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Bekreft tap av spesialrabatt for ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Fjern rabatt"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Abonnementet ditt på ${ PLAN_NAMES[PLANS.PASS] } har en spesiell pris på ${ price } i året. Hvis du nedgraderer til Free, mister du rabatten for godt, selv om du oppgraderer på nytt i fremtiden."
       ]
     },
     "Download link": {
@@ -6823,9 +6831,6 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Er du sikker på at du ønsker å fjerne domenet ${ boldDomain }?"
       ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Be organisasjonsadministratoren om å konfigurere mellomtjenere."
-      ],
       "Attention required": [
         "Oppmerksomhet kreves"
       ],
@@ -9962,9 +9967,6 @@
       "Current email": [
         "Nåværende e-post"
       ],
-      "Current organization identity": [
-        "Gjeldende organisasjonsidentitet"
-      ],
       "Daily email notifications": [
         "Daglige e-postvarslinger"
       ],
@@ -10054,9 +10056,6 @@
       ],
       "Email or username": [
         "E-post eller brukernavn"
-      ],
-      "Email settings": [
-        "Innstillinger for e-post"
       ],
       "Emails": [
         "E-poster"
@@ -10289,9 +10288,6 @@
       "New login password": [
         "Nytt påloggingspassord"
       ],
-      "New organization identity": [
-        "Ny organisasjonsidentitet"
-      ],
       "New organization password": [
         "Nytt organisasjonspassord"
       ],
@@ -10339,9 +10335,6 @@
       ],
       "Or": [
         "Eller"
-      ],
-      "Organization identity": [
-        "Organisasjonsidentitet"
       ],
       "Organization name": [
         "Organisasjonsnavn"
@@ -15400,6 +15393,11 @@
         "Planen din ble kjøpt med en iOS-app. Så for å gjøre endringer i planen din eller oppdatere betalingsinformasjonen din, må du gå til Apple App Store."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Abonnementet vil bli nedgradert på slutten av faktureringssyklusen."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "For ${ totalPrice }"
@@ -15939,9 +15937,6 @@
       "Organization activated": [
         "Organisasjon aktivert"
       ],
-      "Organization identity updated": [
-        "Organisasjonsidentitet oppdatert"
-      ],
       "Organization logo removed": [
         "Organisasjonslogo fjernet"
       ],
@@ -16309,9 +16304,6 @@
       "Account recovery": [
         "Kontogjenoppretting"
       ],
-      "Account settings": [
-        "Kontoinnstillinger"
-      ],
       "Account suspended": [
         "Kontoen er suspendert"
       ],
@@ -16574,9 +16566,6 @@
       "Custom filters": [
         "Tilpassede filtre"
       ],
-      "Custom folders and labels": [
-        "Egendefinerte mapper og etiketter"
-      ],
       "Custom selection of users": [
         "Tilpasset valg av brukere"
       ],
@@ -16715,9 +16704,6 @@
       ],
       "Edit invoice details": [
         "Rediger fakturadetaljer"
-      ],
-      "Edit organization identity": [
-        "Rediger organisasjonsidentitet"
       ],
       "Edit profile": [
         "Rediger profil"
@@ -17066,9 +17052,6 @@
       "Privacy and data collection": [
         "Personvern og datainnsamling"
       ],
-      "Privacy and security": [
-        "Personvern og sikkerhet"
-      ],
       "Processing...": [
         "Behandler..."
       ],
@@ -17251,9 +17234,6 @@
       ],
       "Sort labels alphabetically": [
         "Sorter etiketter alfabetisk"
-      ],
-      "Spam filters": [
-        "Søppelpostfiltre"
       ],
       "Spam, block, and allow lists": [
         "Lister over søppelpost, blokkeringer og tillatelser"

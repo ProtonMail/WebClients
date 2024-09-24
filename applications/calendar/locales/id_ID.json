@@ -479,10 +479,10 @@
       "Not now": [
         "Tidak sekarang"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -2577,6 +2577,17 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Bantu kami menjadi lebih baik"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Konfirmasi hilangnya diskon spesial ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Hapus diskon"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Langganan ${ PLAN_NAMES[PLANS.PASS] } Anda saat ini berlaku dengan harga khusus ${ price } per tahun. Dengan menurunkan ke paket Free, Anda akan kehilangan diskon ini secara permanen, bahkan apabila Anda meningkatkan kembali akun Anda di masa yang akan datang."
       ]
     },
     "driveplus2024: Deal details": {
@@ -6692,7 +6703,7 @@
         "Akun gratis yang dirancang untuk menyediakan privasi sebagai hal yang baku bagi semua."
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
-        "Privasi tak terbatas dan lebih banyak penyimpanan sampai dengan 2 orang."
+        "Privasi tanpa batas dan ruang penyimpanan yang lebih untuk hingga 2 orang pengguna."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menghapus akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon apabila Anda membuat akun baru."
@@ -8304,6 +8315,11 @@
         "Paket langganan Anda dibeli melalui aplikasi iOS. Oleh karenanya, Anda harus membuka Apple App Store untuk mengubah paket langganan atau memperbarui rincian pembayaran Anda."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Langganan akan diturunkan pada akhir siklus tagihan."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Untuk ${ totalPrice }"
@@ -8563,7 +8579,7 @@
         "Tanpa batasan jumlah folder, label, dan filter"
       ],
       "Unlimited privacy for two": [
-        "Privasi tak terbatas untuk dua pengguna"
+        "Privasi tanpa batas untuk dua orang pengguna"
       ],
       "Users won’t be able to manage their calendars": [
         "Pengguna tidak akan dapat mengelola kalendernya"

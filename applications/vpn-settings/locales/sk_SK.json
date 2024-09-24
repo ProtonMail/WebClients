@@ -253,9 +253,6 @@
       "Edit name": [
         "Upraviť názov"
       ],
-      "Edit organization identity": [
-        "Upraviť identitu organizácie"
-      ],
       "Edit organization name": [
         "Upraviť názov organizácie"
       ],
@@ -2261,6 +2258,17 @@
         "Pomôžte nám zlepšiť sa"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Potvrďte stratu špeciálnej zľavy na ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Odstrániť zľavu"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Vaše predplatné ${ PLAN_NAMES[PLANS.PASS] } je za špeciálnu cenu ${ price } ročne. Znížením ceny na bezplatný plán natrvalo stratíte zľavu, a to aj v prípade, že v budúcnosti opäť prejdete na vyšší plán."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Rozšírená história verzií"
@@ -3261,6 +3269,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "Verzia aplikácie"
+      ],
       "Best deal": [
         "Najlepšia ponuka"
       ],
@@ -3273,11 +3284,20 @@
       "Create your account": [
         "Vytvoriť svoj účet"
       ],
+      "Device": [
+        "Zariadenie"
+      ],
+      "Event": [
+        "Udalosť"
+      ],
       "IP address": [
         "IP adresa"
       ],
       "Key type": [
         "Typ kľúča"
+      ],
+      "Location": [
+        "Poloha"
       ],
       "Members": [
         "Členovia"
@@ -3287,6 +3307,9 @@
       ],
       "Organization key fingerprint": [
         "Odtlačok kľúča organizácie"
+      ],
+      "Protection": [
+        "Ochrana"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Ušetrite množstvo peňazí na najlepších ponukách ${ VPN_APP_NAME }"
@@ -3308,6 +3331,9 @@
       ],
       "Status": [
         "Stav"
+      ],
+      "User": [
+        "Používateľ"
       ]
     },
     "Header for addresses table": {
@@ -3626,9 +3652,6 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Skutočne chcete odstrániť doménu ${ boldDomain }?"
-      ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Požiadajte správcu organizácie o nastavenie brány."
       ],
       "Attention required": [
         "Vyžaduje sa pozornosť"
@@ -5450,9 +5473,6 @@
       "Current email": [
         "Súčasný email"
       ],
-      "Current organization identity": [
-        "Aktuálna identita organizácie"
-      ],
       "Default language": [
         "Predvolený jazyk"
       ],
@@ -5573,9 +5593,6 @@
       "New login password": [
         "Nové prihlasovacie heslo"
       ],
-      "New organization identity": [
-        "Nová identita organizácie"
-      ],
       "New organization password": [
         "Nové heslo organizácie"
       ],
@@ -5605,9 +5622,6 @@
       ],
       "Optional": [
         "Voliteľné"
-      ],
-      "Organization identity": [
-        "Identita organizácie"
       ],
       "Organization name": [
         "Názov organizácie"
@@ -6157,23 +6171,6 @@
         "Stredná VPN rýchlosť"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Preskúmajte všetky plány ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
-      ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Zmazať účet"
@@ -6195,6 +6192,23 @@
       ],
       "Switch plan": [
         "Zmeniť plán"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Preskúmajte všetky plány ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
       ]
     },
     "new_plans: feature": {
@@ -8903,6 +8917,11 @@
         "Váš plán bol zakúpený pomocou aplikácie pre iOS. Ak chcete vykonať zmeny vo svojom pláne alebo aktualizovať podrobnosti o platbe, budete musieť prejsť do obchodu Apple App Store."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Na konci fakturačného cyklu sa predplatné zníži."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
@@ -9411,9 +9430,6 @@
       "Organization activated": [
         "Organizácia bola aktivovaná"
       ],
-      "Organization identity updated": [
-        "Identita organizácie aktualizovaná"
-      ],
       "Organization logo removed": [
         "Logo organizácie odstránené"
       ],
@@ -9908,9 +9924,6 @@
       "Edit invoice details": [
         "Upraviť fakturačné údaje"
       ],
-      "Edit organization identity": [
-        "Upraviť identitu organizácie"
-      ],
       "Edit servers": [
         "Upraviť servery"
       ],
@@ -10133,6 +10146,9 @@
       "SAML authentication": [
         "SAML overenie"
       ],
+      "Security events": [
+        "Bezpečnostné udalosti"
+      ],
       "Select a plan": [
         "Vyberte plán"
       ],
@@ -10342,6 +10358,12 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "Správcovia môžu vykonávať zmeny vo vašom predplatnom, spravovať používateľské účty a heslá a udeľovať oprávnenia správcu iným používateľom."
       ],
+      "An approximate location of the IP address": [
+        "Približná poloha IP adresy"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Akákoľvek ochrana použitá proti podozrivej činnosti"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automaticky prepínať medzi preferovanými motívmi počas dňa a noci, synchronizovane s motívmi vášho systému"
       ],
@@ -10350,6 +10372,9 @@
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Skopírujte a vložte túto URL do poľa ID subjektu poskytovateľa identity"
+      ],
+      "Device information such as operating system": [
+        "Informácie o zariadení, ako je operačný systém"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Adresa URL koncového bodu od poskytovateľa identity (napr. https://idp.example.com/sso/saml)"

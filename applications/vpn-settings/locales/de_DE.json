@@ -253,9 +253,6 @@
       "Edit name": [
         "Name bearbeiten"
       ],
-      "Edit organization identity": [
-        "Organisationsidentität bearbeiten"
-      ],
       "Edit organization name": [
         "Organisationsname bearbeiten"
       ],
@@ -495,6 +492,9 @@
       ],
       "Restore": [
         "Wiederherstellen"
+      ],
+      "Resume membership": [
+        "Mitgliedschaft fortsetzen"
       ],
       "Retry": [
         "Erneut versuchen"
@@ -2240,6 +2240,17 @@
         "Hilf uns, besser zu werden"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Bestätige den Verlust des ${ PASS_APP_NAME }-Sonderrabatts"
+      ],
+      "Remove discount": [
+        "Rabatt entfernen"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Dein ${ PLAN_NAMES[PLANS.PASS] }-Abonnement hat einen Sonderpreis von ${ price } pro Jahr. Durch ein Downgrade auf ein kostenloses Abonnement verlierst du den Rabatt dauerhaft, auch wenn du in Zukunft wieder ein Upgrade durchführst."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Erweiterter Versionsverlauf"
@@ -3208,6 +3219,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "App-Version"
+      ],
       "Best deal": [
         "Bestes Angebot"
       ],
@@ -3220,11 +3234,20 @@
       "Create your account": [
         "Erstelle dein Konto"
       ],
+      "Device": [
+        "Gerät"
+      ],
+      "Event": [
+        "Ereignis"
+      ],
       "IP address": [
         "IP-Adresse"
       ],
       "Key type": [
         "Schlüsseltyp"
+      ],
+      "Location": [
+        "Standort"
       ],
       "Members": [
         "Mitglieder"
@@ -3234,6 +3257,9 @@
       ],
       "Organization key fingerprint": [
         "Fingerabdruck des Organisationsschlüssels"
+      ],
+      "Protection": [
+        "Schutz"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Spare mit den besten ${ VPN_APP_NAME }-Angeboten"
@@ -3255,6 +3281,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "User": [
+        "Benutzer"
       ]
     },
     "Header for addresses table": {
@@ -3546,9 +3575,6 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Bist du sicher, dass du die Domain ${ boldDomain } entfernen möchtest?"
       ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Bitte den Administrator deiner Organisation, Gateways einzurichten."
-      ],
       "Attention required": [
         "Aufmerksamkeit erforderlich"
       ],
@@ -3690,6 +3716,9 @@
         "${ deletedServerCount } Gateway-Server wird gelöscht",
         "${ deletedServerCount } Gateway-Server werden gelöscht"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Deaktiviert seit ${ formattedDateAndTime }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Wenn du die Zwei-Faktor-Authentifizierung deaktivierst, wird dein Konto weniger sicher. Fahre nur fort, wenn es unbedingt notwendig ist."
       ],
@@ -3771,6 +3800,9 @@
       ],
       "Enable single sign-on to keep your organization safe": [
         "Aktiviere Single Sign-on, um die Sicherheit deines Unternehmens zu gewährleisten."
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Aktiviert seit ${ formattedDateAndTime }"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Endpunkt-URL, die du von deinem Identitätsanbieter erhalten hast (z.B. https://idp.beispiel.com/sso/saml)."
@@ -4277,6 +4309,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Bitte gib die aus 12 Wörtern bestehende Wiederherstellungsphrase ein, die mit deinem Konto verknüpft ist."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ remainingCreditsFormatted } Guthaben auf deinem Konto verbleiben."
       ],
       "please open a support ticket": [
         "öffne bitte ein Support-Ticket"
@@ -5320,9 +5355,6 @@
       "Current email": [
         "Aktuelle E-Mail-Adresse"
       ],
-      "Current organization identity": [
-        "Aktuelle Organisationsidentität"
-      ],
       "Default language": [
         "Standardsprache"
       ],
@@ -5443,9 +5475,6 @@
       "New login password": [
         "Neues Anmeldepasswort"
       ],
-      "New organization identity": [
-        "Neue Organisationsidentität"
-      ],
       "New organization password": [
         "Neues Organisationspasswort"
       ],
@@ -5475,9 +5504,6 @@
       ],
       "Optional": [
         "Optional"
-      ],
-      "Organization identity": [
-        "Organisationsidentität"
       ],
       "Organization name": [
         "Name der Organisation"
@@ -5987,11 +6013,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Brasilianischer Real"
+      ],
       "Euro": [
         "Euro"
       ],
       "Swiss franc": [
         "Schweizer Franken"
+      ],
+      "US Dollar": [
+        "US-Dollar"
       ]
     },
     "Navigation": {
@@ -6019,23 +6051,6 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Alle ${ BRAND_NAME }-Abonnements entdecken"
-      ],
-      "From ${ price }": [
-        "Ab ${ price }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Jetzt upgraden"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Konto löschen"
@@ -6057,6 +6072,23 @@
       ],
       "Switch plan": [
         "Abonnement wechseln"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Alle ${ BRAND_NAME }-Abonnements entdecken"
+      ],
+      "From ${ price }": [
+        "Ab ${ price }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Jetzt upgraden"
       ]
     },
     "new_plans: feature": {
@@ -8624,6 +8656,11 @@
         "Dein Abonnement wurde über eine iOS App gekauft. Um Änderungen an deinem Abonnement oder deinen Zahlungsdetails durchführen zu können, musst du zum Apple App Store gehen."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Das Abonnement wird am Ende des Abrechnungszeitraums herabgestuft."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Für ${ totalPrice }"
@@ -9124,9 +9161,6 @@
       "Organization activated": [
         "Organisation aktiviert"
       ],
-      "Organization identity updated": [
-        "Organisationsidentität aktualisiert"
-      ],
       "Organization logo removed": [
         "Organisationslogo entfernt"
       ],
@@ -9156,6 +9190,9 @@
       ],
       "Preference saved": [
         "Einstellung gespeichert"
+      ],
+      "Problem reported": [
+        "Problem gemeldet"
       ],
       "SPF value copied to clipboard": [
         "SPF-Wert wurde in die Zwischenablage kopiert"
@@ -9614,9 +9651,6 @@
       "Edit invoice details": [
         "Rechnungsdetails bearbeiten"
       ],
-      "Edit organization identity": [
-        "Organisationsidentität bearbeiten"
-      ],
       "Edit servers": [
         "Server bearbeiten"
       ],
@@ -9837,6 +9871,9 @@
       "SAML authentication": [
         "SAML-Authentifizierung"
       ],
+      "Security events": [
+        "Sicherheitsereignisse"
+      ],
       "Select a plan": [
         "Abonnement auswählen"
       ],
@@ -10044,6 +10081,12 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "Administratoren können Änderungen an deinem Abonnement vornehmen, Benutzerkonten und Passwörter verwalten und anderen Benutzern Administratorrechte erteilen."
       ],
+      "An approximate location of the IP address": [
+        "Eine ungefähre Lage der IP-Adresse."
+      ],
+      "Any protection applied to suspicious activity": [
+        "Jeder angewendeter Schutz vor verdächtigen Aktivitäten"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatisches Umschalten zwischen deinen bevorzugten Farbschemata für Tag und Nacht, synchron mit dem Tag- und Nachtmodus deines Systems."
       ],
@@ -10052,6 +10095,9 @@
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Kopiere diese URL und füge sie in das Feld für die Entitäts-ID deines Identitätsanbieters ein."
+      ],
+      "Device information such as operating system": [
+        "Geräteinformationen wie das Betriebssystem"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Endpunkt-URL des Identitätsanbieters (z.B. https://idp.beispiel.com/sso/saml)"

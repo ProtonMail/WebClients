@@ -1118,6 +1118,9 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Μετά την επιτυχή εισαγωγή των δεδομένων σας, μπορείτε να διαγράψετε το αρχείο CSV που περιέχει τους κωδικούς πρόσβασής σας για λόγους ασφαλείας."
       ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "Οι δυνατότητες διαχείρισης ψευδωνύμων από το SimpleLogin έρχονται σύντομα!"
+      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Το ψευδώνυμο απενεργοποιήθηκε με επιτυχία. Δε θα λαμβάνετε πλέον μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται στο ${ item.aliasEmail }"
       ],
@@ -1980,6 +1983,9 @@
       "Alias address": [
         "Ψευδώνυμη διεύθυνση"
       ],
+      "Alias management": [
+        "Διαχείρισης ψευδωνύμων"
+      ],
       "Aliases": [
         "Ψευδώνυμα"
       ],
@@ -2694,9 +2700,6 @@
       ],
       "MM/YY": [
         "ΜΜ/ΕΕ"
-      ],
-      "Other": [
-        "Άλλο"
       ],
       "Password": [
         "Κωδικός πρόσβασης"

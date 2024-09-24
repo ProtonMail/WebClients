@@ -2424,6 +2424,25 @@
         "Pomôžte nám zlepšiť sa"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Potvrďte stratu špeciálnej zľavy na ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Odstrániť zľavu"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Vaše predplatné ${ PLAN_NAMES[PLANS.PASS] } je za špeciálnu cenu ${ price } ročne. Znížením ceny na bezplatný plán natrvalo stratíte zľavu, a to aj v prípade, že v budúcnosti opäť prejdete na vyšší plán."
+      ]
+    },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Otvoriť v ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Save for later": [
+        "Uložiť na neskôr"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Rozšírená história verzií"
@@ -4595,7 +4614,7 @@
         "Na dosiahnutie najlepších výsledkov sa vyhnite streamovaniu a činnostiam náročným na pamäť alebo rozdeľte nahrávanie na menšie časti."
       ],
       "Free 5GB encrypted storage to get started": [
-        "Bezplatné 5GB šifrované úložisko na začiatok"
+        "5 GB bezplatného šifrovaného úložného priestoru"
       ],
       "from the version history?": [
         "z histórie verzií?"
@@ -7940,6 +7959,12 @@
       "Subfolder failed to be loaded": [
         "Nepodarilo sa načítať podpriečinok"
       ],
+      "The item was not added to your drive": [
+        "Položka nebola pridaná na váš disk"
+      ],
+      "The item was succefully added to your drive": [
+        "Položka bola úspešne pridaná na váš disk"
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Odkaz na „${ name }“ sa nepodarilo zmazať"
       ],
@@ -8045,7 +8070,7 @@
         "Zdieľať súbor"
       ],
       "Share files & folders": [
-        "Zdieľanie súborov a priečinkov"
+        "Zdieľajte súbory a priečinky"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Stačí počas nasledujúceho ${ expiresInDays } dňa splniť nasledujúce:",
@@ -9000,6 +9025,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "Odkaz na túto položku bol uložený na vašom disku. Prístup k nemu môžete získať neskôr v časti \"Zdieľané so mnou\"."
+      ],
       "Encrypted search is here": [
         "Vyhľadávanie v šifrovaných dátach je tu"
       ],
@@ -9203,6 +9231,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Váš plán bol zakúpený pomocou aplikácie pre iOS. Ak chcete vykonať zmeny vo svojom pláne alebo aktualizovať podrobnosti o platbe, budete musieť prejsť do obchodu Apple App Store."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Na konci fakturačného cyklu sa predplatné zníži."
       ]
     },
     "Subscription price": {

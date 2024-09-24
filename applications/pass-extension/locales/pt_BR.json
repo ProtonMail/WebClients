@@ -116,11 +116,11 @@
       "Create": [
         "Criar"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Criar uma conta na ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Criar uma conta no ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Criar uma conta na ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
         "Criar um cofre para compartilhar"
@@ -195,10 +195,10 @@
         "Descartar"
       ],
       "Do not show on this website": [
-        "Não mostrar esse site"
+        "Não mostrar nesse site"
       ],
       "Do not suggest on this website": [
-        "Não sugerir esse site"
+        "Não sugerir nesse site"
       ],
       "Done": [
         "Concluído"
@@ -225,7 +225,7 @@
         "Exportar"
       ],
       "Feedback & Help": [
-        "Feedback e ajuda"
+        "Feedback & Ajuda"
       ],
       "Fill password": [
         "Preencher senha"
@@ -634,6 +634,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "O arquivo ${ provider } não pôde ser analisado ${ errorDetail }"
       ],
+      "[Error] an item could not be parsed": [
+        "[Erro] um item não pôde ser analisado"
+      ],
       "Alias could not be updated at the moment. Please try again later": [
         "O alias não pôde ser atualizado no momento. Por favor, tente novamente mais tarde"
       ],
@@ -892,7 +895,7 @@
         "O arquivo que você está tentando importar está vazio"
       ],
       "The URL is in the list": [
-        "Esse URL já está no filtro"
+        "A URL está na lista"
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Ocorreu um erro ao remover o link seguro. Tente novamente em alguns minutos."
@@ -1111,6 +1114,9 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Após importar seus dados com sucesso, você pode excluir o arquivo CSV que contém suas senhas por segurança."
       ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "Os recursos de gerenciamento de alias do SimpleLogin serão lançados em breve!"
+      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "O alias foi desativado com sucesso. Você não mais receberá e-mails enviados para ${ item.aliasEmail }"
       ],
@@ -1190,7 +1196,7 @@
         "Escolha uma chave de acesso salva para iniciar sessão em ${ domain }"
       ],
       "Click the icon to open it anytime.": [
-        "Clique no ícone em qualquer momento para abrir."
+        "Clique no ícone para abri-lo a qualquer momento."
       ],
       "Close this window in order to use a security key or another passkey.": [
         "Feche esta janela para usar uma chave de segurança ou outra chave de acesso."
@@ -1316,7 +1322,7 @@
         "Siga estas etapas para importar seus dados com um CSV genérico:"
       ],
       "For easy access to your passwords and more.": [
-        "Para acesso rápido para as suas senhas e mais."
+        "Para facilitar o acesso às suas senhas e muito mais."
       ],
       "For security reason, your access needs to be confirmed": [
         "Por motivos de segurança, é necessário confirmar seu acesso"
@@ -1335,7 +1341,7 @@
         "Obtenha aliases ilimitados, aproveite os recursos exclusivos e nos suporte assinando o Pass Plus."
       ],
       "Here you will find all the necessary information to get you started.": [
-        "Aqui, você encontrará todas as informações necessárias para começar."
+        "Aqui você encontrará todas as informações necessárias para começar."
       ],
       "Import in progress:": [
         "Importação em progresso:"
@@ -1590,7 +1596,7 @@
         "Preenchimento automático de tokens A2F."
       ],
       "Quickly autofill your identities.": [
-        "Preenchimento automático rapidamente de suas identidades."
+        "Preencha rapidamente suas identidades."
       ],
       "Registering extra password...": [
         "Registrando senha adicional..."
@@ -1731,6 +1737,9 @@
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "Para revisar seus dados importados, clique no ícone do Proton Pass na barra de ferramentas de seu navegador."
       ],
+      "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
+        "Tente recarregar ou reinstalar a extensão e verifique se o navegador e o ${ PASS_SHORT_APP_NAME } estão atualizados."
+      ],
       "Unable to copy to clipboard": [
         "Não é possível copiar para a área de transferência"
       ],
@@ -1765,7 +1774,7 @@
         "Atualizar início de sessão"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
-        "Atualizar o ${ PASS_APP_NAME }"
+        "Faça o upgrade do ${ PASS_APP_NAME }"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Faça upgrade agora para desbloquear recursos premium"
@@ -1963,6 +1972,9 @@
       "Alias address": [
         "Endereço de alias"
       ],
+      "Alias management": [
+        "Gerenciamento de alias"
+      ],
       "Aliases": [
         "Aliases"
       ],
@@ -1982,7 +1994,7 @@
         "Registros do aplicativo"
       ],
       "Authenticate with passkeys": [
-        "Autenticação com chaves de aceso"
+        "Autenticação com chaves de acesso"
       ],
       "Auto-lock after": [
         "Bloqueio automático após"
@@ -1994,13 +2006,10 @@
         "Preenchimento automático de A2F"
       ],
       "Automatically open autofill when a login field is focused": [
-        "Abrir preenchimento automático automaticamente quando um campo de login estiver em foco"
+        "Abrir automaticamente o autopreenchimento quando o campo de login estiver focalizado"
       ],
       "Autosave": [
         "Salvar automaticamente"
-      ],
-      "Autosave vault": [
-        "Salvar automaticamente o cofre"
       ],
       "Autosuggest": [
         "Sugestão automática"
@@ -2522,6 +2531,9 @@
       "Type": [
         "Tipo"
       ],
+      "Unknown": [
+        "Desconhecido"
+      ],
       "Unlock ${ PASS_APP_NAME }": [
         "Desbloquear ${ PASS_APP_NAME }"
       ],
@@ -2675,9 +2687,6 @@
       "MM/YY": [
         "MM/AA"
       ],
-      "Other": [
-        "Outro"
-      ],
       "Password": [
         "Senha"
       ],
@@ -2734,6 +2743,9 @@
       ]
     },
     "Title": {
+      "${ PASS_APP_NAME } Settings": [
+        "Configurações do ${ PASS_APP_NAME }"
+      ],
       "Auto-lock update": [
         "Atualização de bloqueio automático"
       ],
@@ -2795,7 +2807,7 @@
         "Conceder permissões"
       ],
       "Hide my email": [
-        "Hide my email"
+        "Ocultar meu e-mail"
       ],
       "History": [
         "Histórico"
@@ -3154,7 +3166,7 @@
         "Seu plano não permite que você crie mais aliases"
       ],
       "Your plan only allows you to autofill from your first two vaults": [
-        "Seu plano só permite o preenchimento automático dos dois primeiros cofres"
+        "Seu plano só permite que você faça o preenchimento automático a partir dos seus dois primeiros cofres"
       ],
       "Your session could not be authorized.": [
         "Sua sessão não pôde ser autorizada."

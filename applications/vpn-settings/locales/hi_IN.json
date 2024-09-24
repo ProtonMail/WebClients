@@ -229,9 +229,6 @@
       "Edit name": [
         "नाम बदलें"
       ],
-      "Edit organization identity": [
-        "संगठन पहचान बदलें"
-      ],
       "Edit organization name": [
         "संगठन नाम बदलें"
       ],
@@ -2799,6 +2796,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "ऐप संस्करण"
+      ],
       "Best deal": [
         "सबसे अच्छा सौदा"
       ],
@@ -2811,11 +2811,20 @@
       "Create your account": [
         "अपना खाता बनाएं"
       ],
+      "Device": [
+        "डिवाइस"
+      ],
+      "Event": [
+        "इवेंट"
+      ],
       "IP address": [
         "IP पता"
       ],
       "Key type": [
         "कुंजी प्रकार"
+      ],
+      "Location": [
+        "स्थान"
       ],
       "Members": [
         "सदस्य"
@@ -2825,6 +2834,9 @@
       ],
       "Organization key fingerprint": [
         "संगठन कुंजी फिंगरप्रिंट"
+      ],
+      "Protection": [
+        "सुरक्षा"
       ],
       "Select your deal": [
         "अपनी डील चुनें"
@@ -2843,6 +2855,9 @@
       ],
       "Status": [
         "स्थिति"
+      ],
+      "User": [
+        "यूज़र"
       ]
     },
     "Header for addresses table": {
@@ -3100,9 +3115,6 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "क्या वाकई डोमेन ${ boldDomain } हटाना चाहते हैं?"
-      ],
-      "Ask your organisation admin to setup Gateways.": [
-        "संगठन एडमिन से गेटवे सेटअप करने के लिए कहें।"
       ],
       "Attention required": [
         "ध्यान देने की आवश्यकता है"
@@ -4606,9 +4618,6 @@
       "Current email": [
         "वर्तमान ईमेल"
       ],
-      "Current organization identity": [
-        "वर्तमान संगठन पहचान"
-      ],
       "Default language": [
         "डिफ़ॉल्ट भाषा"
       ],
@@ -4720,9 +4729,6 @@
       "New login password": [
         "नया लॉगिन पासवर्ड"
       ],
-      "New organization identity": [
-        "नये संगठन की पहचान"
-      ],
       "New organization password": [
         "नया संगठन पासवर्ड"
       ],
@@ -4752,9 +4758,6 @@
       ],
       "Optional": [
         "वैकल्पिक"
-      ],
-      "Organization identity": [
-        "संगठन पहचान"
       ],
       "Organization name": [
         "संगठन का नाम"
@@ -5198,23 +5201,6 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "सारे ${ BRAND_NAME } प्लान देखे"
-      ],
-      "From ${ price }": [
-        "${ price } से"
-      ],
-      "Upgrade": [
-        "अपग्रेड"
-      ],
-      "Upgrade now": [
-        "अभी अपग्रेड करें"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "खाता हटा दो"
@@ -5236,6 +5222,23 @@
       ],
       "Switch plan": [
         "प्लान बदले"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } पे डाउनग्रेड करें"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "सारे ${ BRAND_NAME } प्लान देखे"
+      ],
+      "From ${ price }": [
+        "${ price } से"
+      ],
+      "Upgrade": [
+        "अपग्रेड"
+      ],
+      "Upgrade now": [
+        "अभी अपग्रेड करें"
       ]
     },
     "new_plans: feature": {
@@ -7684,9 +7687,6 @@
       "Edit invoice details": [
         "रसीद विवरण संपादित करें"
       ],
-      "Edit organization identity": [
-        "संगठन पहचान बदलें"
-      ],
       "Edit servers": [
         "सर्वर बदलें"
       ],
@@ -8087,11 +8087,20 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "व्यवस्थापक आपकी सदस्यता में परिवर्तन कर सकते हैं, उपयोगकर्ता खातों और पासवर्डों का प्रबंधन कर सकते हैं, तथा अन्य उपयोगकर्ताओं को प्रशासनिक विशेषाधिकार दे सकते हैं।"
       ],
+      "An approximate location of the IP address": [
+        "IP ​​पते का अनुमानित स्थान"
+      ],
+      "Any protection applied to suspicious activity": [
+        "संदिग्ध गतिविधि पर लागू कोई भी सुरक्षा"
+      ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "इस यूआरएल को कॉपी करके अपने पहचान प्रदाता के ACS (अभिकथन उपभोक्ता सेवा) यूआरएल फील्ड में पेस्ट करें"
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "इस यूआरएल को कॉपी करके अपने पहचान प्रदाता के इकाई आईडी फील्ड में पेस्ट करें"
+      ],
+      "Device information such as operating system": [
+        "डिवाइस की जानकारी जैसे ऑपरेटिंग सिस्टम"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "पहचान प्रदाता से एंडपॉइंट URL (उदा. https://idp.udaaharan.in/sso/saml)"

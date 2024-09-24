@@ -70,7 +70,7 @@
         "Adăugare grup"
       ],
       "Add note": [
-        "Adăugare notă"
+        "Adăugare notiță"
       ],
       "Add people or groups to share": [
         "Adăugare persoane sau grupuri pentru partajare"
@@ -1401,7 +1401,7 @@
         "Nume"
       ],
       "Note": [
-        "Observații"
+        "Notiță"
       ],
       "Organization": [
         "Organizația"
@@ -2409,6 +2409,25 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Ajutați-ne să îmbunătățim"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Confirmați renunțarea la reducerea specială pentru ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Renunțare la reducere"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Abonamentul pentru ${ PLAN_NAMES[PLANS.PASS] } este la un preț special de ${ price } pe an. Dacă treceți la un plan gratuit, veți pierde definitiv reducerea, chiar dacă reveniți la acest tip de plan în viitor."
+      ]
+    },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Deschidere în ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Save for later": [
+        "Salvare pentru mai târziu"
       ]
     },
     "driveplus2024: Deal details": {
@@ -4583,7 +4602,7 @@
         "Importare mesaje"
       ],
       "Important note": [
-        "Notă importantă"
+        "Observație importantă"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Se importă datele de la ${ fromEmail } la ${ toEmail }."
@@ -4768,7 +4787,7 @@
         "Nu au fost transferate toate fișierele. Încercați să încărcați sau să descărcați din nou fișierele."
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
-        "Notă: este posibil ca datele să fie încă disponibile local pe dispozitivele pe care ați instalat ${ DRIVE_APP_NAME }."
+        "Observație: este posibil ca datele să fie încă disponibile local pe dispozitivele pe care ați instalat ${ DRIVE_APP_NAME }."
       ],
       "Nothing here yet": [
         "Nimic aici încă"
@@ -6004,7 +6023,7 @@
         "Parola nouă"
       ],
       "Note": [
-        "Notă"
+        "Notiță"
       ],
       "Notification": [
         "Notificare"
@@ -7807,6 +7826,12 @@
       "Subfolder failed to be loaded": [
         "Subfolderul nu s-a putut încărca."
       ],
+      "The item was not added to your drive": [
+        "Articolul nu a fost adăugat la Drive."
+      ],
+      "The item was succefully added to your drive": [
+        "Articolul a fost adăugat la Drive."
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Legătura către „${ name }” nu a putut fi ștearsă."
       ],
@@ -8840,6 +8865,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "O legătură web a acestui articol a fost salvată în Drive. O puteți accesa mai târziu în secțiunea „Partajate cu mine”."
+      ],
       "Encrypted search is here": [
         "Căutarea criptată este aici"
       ],
@@ -9037,6 +9065,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Abonamentul a fost achiziționat din aplicația iOS. Pentru a face modificări la acesta sau a actualiza detaliile de plată, va trebui să o faceți din App Store de la Apple."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Abonamentul va fi retrogradat la sfârșitul perioadei de facturare."
       ]
     },
     "Subscription price": {
@@ -10043,7 +10076,7 @@
         "Nu s-au găsit rezultate."
       ],
       "Notes": [
-        "Note"
+        "Notițe"
       ],
       "Number of items": [
         "Număr de articole"

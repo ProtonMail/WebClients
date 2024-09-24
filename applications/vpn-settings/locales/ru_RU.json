@@ -253,9 +253,6 @@
       "Edit name": [
         "Изменить имя"
       ],
-      "Edit organization identity": [
-        "Изменить личные данные организации"
-      ],
       "Edit organization name": [
         "Изменить название организации"
       ],
@@ -2258,6 +2255,17 @@
         "Помогите нам совершенствоваться"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Подтвердите потерю специальной скидки ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Удалить скидку"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Вы подписаны на ${ PLAN_NAMES[PLANS.PASS] } по специальной цене ${ price } в год. Перейдя на бесплатный план, вы навсегда потеряете скидку, даже если вы улучшите снова в будущем."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Подробная история версий"
@@ -3244,6 +3252,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "Версия приложения"
+      ],
       "Best deal": [
         "Лучшее предложение"
       ],
@@ -3256,11 +3267,20 @@
       "Create your account": [
         "Создать аккаунт"
       ],
+      "Device": [
+        "Устройство"
+      ],
+      "Event": [
+        "Событие"
+      ],
       "IP address": [
         "IP-адрес"
       ],
       "Key type": [
         "Тип ключа"
+      ],
+      "Location": [
+        "Расположение"
       ],
       "Members": [
         "Участники"
@@ -3270,6 +3290,9 @@
       ],
       "Organization key fingerprint": [
         "Отпечаток ключа организации"
+      ],
+      "Protection": [
+        "Защита"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Экономьте много на лучших предложениях ${ VPN_APP_NAME }"
@@ -3291,6 +3314,9 @@
       ],
       "Status": [
         "Состояние"
+      ],
+      "User": [
+        "Пользователь"
       ]
     },
     "Header for addresses table": {
@@ -3609,9 +3635,6 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Вы уверены, что хотите удалить домен ${ boldDomain }?"
-      ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Попросите администратора вашей организации настроить Шлюзы."
       ],
       "Attention required": [
         "Требуется внимание"
@@ -5422,9 +5445,6 @@
       "Current email": [
         "Текущая электронная почта"
       ],
-      "Current organization identity": [
-        "Текущие личные данные организации"
-      ],
       "Default language": [
         "Язык по умолчанию"
       ],
@@ -5545,9 +5565,6 @@
       "New login password": [
         "Новый пароль для входа"
       ],
-      "New organization identity": [
-        "Новые личные данные организации"
-      ],
       "New organization password": [
         "Новый пароль организации"
       ],
@@ -5577,9 +5594,6 @@
       ],
       "Optional": [
         "Необязательно"
-      ],
-      "Organization identity": [
-        "Личные данные организации"
       ],
       "Organization name": [
         "Название организации"
@@ -6129,23 +6143,6 @@
         "Средняя скорость VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "От: ${ price }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Удалить аккаунт"
@@ -6167,6 +6164,23 @@
       ],
       "Switch plan": [
         "Сменить тариф"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "От: ${ price }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
       ]
     },
     "new_plans: feature": {
@@ -7890,6 +7904,15 @@
     "saml: Info": {
       "Details": [
         "Информация"
+      ],
+      "Test in progress...": [
+        "Выполняется проверка..."
+      ],
+      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
+        "Чтобы проверить эту конфигурацию SAML, пожалуйста, введите учётные данные для пользователя, связанного с **${ domainName }**"
+      ],
+      "We’re testing your configuration to ensure SSO is working.": [
+        "Мы проверяем вашу конфигурацию, чтобы убедиться, что SSO работает."
       ]
     },
     "saml: Label": {
@@ -8833,6 +8856,11 @@
         "Ваш тариф был приобретён в приложении iOS. Поэтому для изменения тарифа или способа оплаты вам нужно зайти в Apple App Store."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Подписка будет понижена в конце платежного периода."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "За ${ totalPrice }"
@@ -9341,9 +9369,6 @@
       "Organization activated": [
         "Организация активирована"
       ],
-      "Organization identity updated": [
-        "Личные данные организации обновлены"
-      ],
       "Organization logo removed": [
         "Логотип организации удалён"
       ],
@@ -9835,9 +9860,6 @@
       "Edit invoice details": [
         "Изменение информации счета-фактуры"
       ],
-      "Edit organization identity": [
-        "Изменить личные данные организации"
-      ],
       "Edit servers": [
         "Изменить серверы"
       ],
@@ -10060,6 +10082,9 @@
       "SAML authentication": [
         "Аутентификация SAML"
       ],
+      "Security events": [
+        "События безопасности"
+      ],
       "Select a plan": [
         "Выбор тарифа"
       ],
@@ -10269,6 +10294,12 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "Администраторы могут вносить изменения в вашу подписку, управлять аккаунтами и паролями пользователей, а также предоставлять права администратора другим пользователям."
       ],
+      "An approximate location of the IP address": [
+        "Примерное местонахождение IP-адреса"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Любая защита, применяемая в отношении подозрительных действий"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Автоматически переключаться между вашими предпочтительными темами для дня и ночи синхронно с системными дневным и ночным режимами."
       ],
@@ -10277,6 +10308,9 @@
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Скопируйте и вставьте этот адрес URL в поле ID субъекта вашего провайдера личных данных"
+      ],
+      "Device information such as operating system": [
+        "Информация об устройстве, например операционная система"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL конечной точки поставщика личных данных (например, https://idp.primer.com/sso/saml)."
