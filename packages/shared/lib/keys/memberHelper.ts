@@ -25,12 +25,12 @@ export const getMemberUnprivatizationMode = (member?: Member) => {
                 member.Unprivatization.State === MemberUnprivatizationState.Pending ||
                 member.Unprivatization.State === MemberUnprivatizationState.Ready,
             mode: (() => {
+                if (member.SSO) {
+                    return MemberUnprivatizationMode.GSSO;
+                }
                 const isMemberSetup = getIsMemberSetup(member);
                 if (isMemberSetup) {
                     return MemberUnprivatizationMode.AdminAccess;
-                }
-                if (member.SSO) {
-                    return MemberUnprivatizationMode.GSSO;
                 }
                 return MemberUnprivatizationMode.MagicLinkInvite;
             })(),
