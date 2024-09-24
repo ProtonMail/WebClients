@@ -87,8 +87,7 @@ function usePublicSessionProvider() {
             If user is logged-in, re-use the current session UID
             This inform the backend of who is accessing the public session
         */
-        const persistedSession = getLastActivePersistedUserSession();
-        const UID = persistedSession?.UID;
+        const UID = auth.getUID();
 
         const response = await srpAuth({
             api,
