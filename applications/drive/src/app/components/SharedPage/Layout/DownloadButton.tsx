@@ -1,8 +1,6 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import type { ThemeColorUnion } from '@proton/colors/types';
 import {
     ButtonGroup,
@@ -11,13 +9,9 @@ import {
     DropdownMenu,
     DropdownMenuButton,
     DropdownSizeUnit,
+    Icon,
     usePopperAnchor,
 } from '@proton/components';
-import { Spotlight } from '@proton/components';
-import Icon from '@proton/components/components/icon/Icon';
-import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import clsx from '@proton/utils/clsx';
 
 import usePublicToken from '../../../hooks/drive/usePublicToken';
 import type { DecryptedLink } from '../../../store';
@@ -27,6 +21,7 @@ import { isTransferActive, isTransferPaused } from '../../../utils/transfer';
 import { useSelection } from '../../FileBrowser';
 import { getSelectedItems } from '../../sections/helpers';
 import type { PublicLink } from '../interface';
+import { ScanAndDownloadSpotlightButton } from './ScanAndDownloadSpotlight';
 import { useDownloadNotifications } from './useDownloadNotifications';
 
 export interface DownloadButtonProps {
@@ -36,64 +31,9 @@ export interface DownloadButtonProps {
     isScanAndDownload?: boolean;
     color?: ThemeColorUnion;
     disabled?: boolean;
-    partialView?: boolean;
 }
 
-const SpotlightContent = () => (
-    <div>
-        <h5 className="text-semibold mb-3 flex items-center">
-            <Icon name="info-circle" size={5} className="mr-2" />
-            {c('Info').t`File scanning in Drive`}
-        </h5>
-        <div className="mb-6">
-            {c('Info')
-                .t`To help protect you, ${DRIVE_APP_NAME} can scan and block malicious files. You should still only download files from people you trust.`}{' '}
-            <Href className="text-no-decoration" href={getKnowledgeBaseUrl('/proton-drive-malware-protection')}>
-                {c('Link').t`Learn more`}
-            </Href>
-        </div>
-    </div>
-);
-
-const SpotlightFooter = () => (
-    <div className="bg-white">
-        <div className="flex flex-row items-center">
-            <Icon name="lock-check-filled" size={6} className="mr-2 color-disabled" />
-            <span className="color-disabled">{c('Info').t`End-to-End Encrypted`}.</span>
-            <Href className="color-disabled ml-1" href={getKnowledgeBaseUrl('/proton-drive-malware-protection')}>
-                {c('Link').t`Learn more`}
-            </Href>
-        </div>
-    </div>
-);
-const InfoIcon = ({ className }: { className?: string }) => {
-    const [show, setShow] = useState(false);
-    const toggleSpotlight = () => setShow((current) => !current);
-    const handleClose = () => setShow(false);
-
-    return (
-        <Spotlight
-            content={<SpotlightContent />}
-            footer={<SpotlightFooter />}
-            show={show}
-            onClose={handleClose}
-            originalPlacement="bottom-end"
-            size="large"
-        >
-            <Button
-                icon
-                shape="ghost"
-                className={className}
-                onClick={toggleSpotlight}
-                aria-label={c('Action').t`Open scan and download info`}
-            >
-                <Icon name="info-circle" size={4} data-testid="scan-and-download-tooltip" />
-            </Button>
-        </Spotlight>
-    );
-};
-
-export function DownloadButton({ items, rootItem, isScanAndDownload, disabled, partialView }: DownloadButtonProps) {
+export function DownloadButton({ items, rootItem, isScanAndDownload, disabled }: DownloadButtonProps) {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLDivElement>();
     const { token } = usePublicToken();
     const selectionControls = useSelection();
@@ -162,8 +102,8 @@ export function DownloadButton({ items, rootItem, isScanAndDownload, disabled, p
     }
 
     return (
-        <div className={clsx('flex flex-nowrap items-center gap-4', partialView && 'gap-8 flex-row-reverse')}>
-            <InfoIcon className="hidden md:block" />
+        <div className="flex flex-nowrap items-center gap-4">
+            <ScanAndDownloadSpotlightButton className="hidden md:block" />
             <div ref={anchorRef}>
                 <ButtonGroup>
                     <Button
