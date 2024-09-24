@@ -70,6 +70,7 @@ import { SetupOrgSpotlight } from '../../account/spotlights/passB2bOnboardingSpo
 import { AddressModal } from '../../addresses';
 import CreateMissingKeysAddressModal from '../../addresses/missingKeys/CreateMissingKeysAddressModal';
 import useOrganizationModals from '../../organization/useOrganizationModals';
+import useOrganizationUnprivatizationModals from '../../organization/useOrganizationUnprivatizationModals';
 import ChangeMemberPasswordModal from '../ChangeMemberPasswordModal';
 import InviteUserCreateSubUserModal from '../InviteUserCreateSubUserModal';
 import LoginMemberModal from '../LoginMemberModal';
@@ -110,6 +111,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const hasSetupActiveOrganizationWithKeys =
         organization?.State === ORGANIZATION_STATE.ACTIVE && hasOrganizationSetupWithKeys(organization);
     const organizationModals = useOrganizationModals(onceRef);
+    const organizationUnprivatizationModals = useOrganizationUnprivatizationModals();
 
     const {
         passOnboardingSpotlights: { setupOrgSpotlight },
@@ -360,6 +362,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     return (
         <SettingsSectionWide>
             {organizationModals.info}
+            {organizationUnprivatizationModals.memberInfo}
             {organizationModals.modals}
             <SettingsParagraph large className="flex items-center mb-6 gap-2">
                 <UserAndAddressesSectionIntro />
@@ -606,7 +609,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                                                 return (
                                                                     <Tooltip
                                                                         title={c('unprivatization')
-                                                                            .t`Something went wrong enabling administrator access: ${error}`}
+                                                                            .t`Could not enable administrator access: ${error}`}
                                                                         openDelay={0}
                                                                     >
                                                                         <Icon
