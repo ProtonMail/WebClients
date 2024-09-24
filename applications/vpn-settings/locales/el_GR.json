@@ -253,9 +253,6 @@
       "Edit name": [
         "Επεξεργασία ονόματος"
       ],
-      "Edit organization identity": [
-        "Επεξεργασία ταυτότητας οργανισμού"
-      ],
       "Edit organization name": [
         "Επεξεργασία ονόματος οργανισμού"
       ],
@@ -2243,6 +2240,17 @@
         "Βοηθήστε μας να βελτιωθούμε"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Επιβεβαιώστε την απώλεια ειδικής έκπτωσης για το ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Αφαίρεση έκπτωσης"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Η ${ PLAN_NAMES[PLANS.PASS] } συνδρομή είναι σε ειδική τιμή ${ price } ανά έτος. Με την υποβάθμιση στο Free πλάνο, θα χάσετε οριστικά την έκπτωση, ακόμα και αν κάνετε αναβάθμιση ξανά στο μέλλον."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Εκτεταμένο ιστορικό εκδόσεων"
@@ -3217,6 +3225,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "Έκδοση εφαρμογής"
+      ],
       "Best deal": [
         "Η καλύτερη προσφορά"
       ],
@@ -3229,11 +3240,20 @@
       "Create your account": [
         "Δημιουργήστε τον λογαριασμό σας."
       ],
+      "Device": [
+        "Συσκευή"
+      ],
+      "Event": [
+        "Γεγονός"
+      ],
       "IP address": [
         "Διεύθυνση IP"
       ],
       "Key type": [
         "Τύπος κλειδιού"
+      ],
+      "Location": [
+        "Τοποθεσία"
       ],
       "Members": [
         "Μέλη"
@@ -3243,6 +3263,9 @@
       ],
       "Organization key fingerprint": [
         "Αποτύπωμα κλειδιού οργανισμού"
+      ],
+      "Protection": [
+        "Προστασία"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Εξοικονομήστε χρήματα στις καλύτερες ${ VPN_APP_NAME } προσφορές"
@@ -3264,6 +3287,9 @@
       ],
       "Status": [
         "Κατάσταση"
+      ],
+      "User": [
+        "Χρήστης"
       ]
     },
     "Header for addresses table": {
@@ -3554,9 +3580,6 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Είστε βέβαιοι ότι θέλετε να καταργήσετε τον τομέα ${ boldDomain };"
-      ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Ζητήστε από τον διαχειριστή του οργανισμού σας να ρυθμίσει τις Πύλες."
       ],
       "Attention required": [
         "Χρειάζεται προσοχή"
@@ -5338,9 +5361,6 @@
       "Current email": [
         "Τρέχουσα διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
-      "Current organization identity": [
-        "Ταυτότητα τρέχον οργανισμού"
-      ],
       "Default language": [
         "Προεπιλεγμένη γλώσσα"
       ],
@@ -5461,9 +5481,6 @@
       "New login password": [
         "Νέος κωδικός σύνδεσης"
       ],
-      "New organization identity": [
-        "Ταυτότητα νέου οργανισμού"
-      ],
       "New organization password": [
         "Νέος κωδικός οργανισμού"
       ],
@@ -5493,9 +5510,6 @@
       ],
       "Optional": [
         "Προαιρετικό"
-      ],
-      "Organization identity": [
-        "Ταυτότητα οργανισμού"
       ],
       "Organization name": [
         "Όνομα οργανισμού"
@@ -6043,23 +6057,6 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Από ${ price }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Διαγραφή λογαριασμού"
@@ -6081,6 +6078,23 @@
       ],
       "Switch plan": [
         "Αλλαγή προγράμματος"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Από ${ price }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
       ]
     },
     "new_plans: feature": {
@@ -8657,6 +8671,11 @@
         "Το πρόγραμμά σας αγοράστηκε χρησιμοποιώντας μια εφαρμογή iOS. Επομένως, για να κάνετε αλλαγές στο πρόγραμμά σας ή να ενημερώσετε τα στοιχεία πληρωμής σας, θα πρέπει να μεταβείτε στο Apple App Store."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Η συνδρομή θα υποβαθμιστεί στο τέλος του κύκλου χρέωσης."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Για ${ totalPrice }"
@@ -9157,9 +9176,6 @@
       "Organization activated": [
         "Ο οργανισμός ενεργοποιήθηκε"
       ],
-      "Organization identity updated": [
-        "Η ταυτότητα του οργανισμού ενημερώθηκε"
-      ],
       "Organization logo removed": [
         "Το λογότυπο του οργανισμού καταργήθηκε"
       ],
@@ -9647,9 +9663,6 @@
       "Edit invoice details": [
         "Επεξεργασία στοιχείων τιμολογίου"
       ],
-      "Edit organization identity": [
-        "Επεξεργασία ταυτότητας οργανισμού"
-      ],
       "Edit servers": [
         "Επεξεργασία διακομιστών"
       ],
@@ -9870,6 +9883,9 @@
       "SAML authentication": [
         "Ταυτοποίηση SAML"
       ],
+      "Security events": [
+        "Συμβάντα ασφαλείας"
+      ],
       "Select a plan": [
         "Επιλέξτε ένα πλάνο"
       ],
@@ -10077,6 +10093,12 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "Οι διαχειριστές μπορούν να κάνουν αλλαγές στη συνδρομή σας, να διαχειρίζονται λογαριασμούς χρηστών και κωδικούς πρόσβασης και να εκχωρούν δικαιώματα διαχειριστή σε άλλους χρήστες."
       ],
+      "An approximate location of the IP address": [
+        "Μια κατά προσέγγιση τοποθεσία της διεύθυνσης IP"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Οποιαδήποτε προστασία εφαρμόζεται σε ύποπτη δραστηριότητα"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Αυτόματη εναλλαγή μεταξύ των προτιμώμενων θεμάτων ημέρας και νύχτας σε συγχρονισμό με τις λειτουργίες ημέρας και νύχτας του συστήματός σας"
       ],
@@ -10085,6 +10107,9 @@
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Αντιγράψτε και επικολλήστε αυτήν τη διεύθυνση URL στο πεδίο αναγνωριστικού οντότητας της υπηρεσίας παροχής ταυτότητάς σας"
+      ],
+      "Device information such as operating system": [
+        "Πληροφορίες συσκευής, όπως λειτουργικό σύστημα"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL τελικού σημείου από πάροχο ταυτότητας (π.χ. https://idp.example.com/sso/saml)"

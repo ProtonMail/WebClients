@@ -253,9 +253,6 @@
       "Edit name": [
         "Editare nume"
       ],
-      "Edit organization identity": [
-        "Editare identitate organizație"
-      ],
       "Edit organization name": [
         "Editare nume organizație"
       ],
@@ -2252,6 +2249,17 @@
         "Ajutați-ne să îmbunătățim"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Confirmați renunțarea la reducerea specială pentru ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Renunțare la reducere"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Abonamentul pentru ${ PLAN_NAMES[PLANS.PASS] } este la un preț special de ${ price } pe an. Dacă treceți la un plan gratuit, veți pierde definitiv reducerea, chiar dacă reveniți la acest tip de plan în viitor."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Istoric extins versiuni"
@@ -3239,6 +3247,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "Versiune aplicație"
+      ],
       "Best deal": [
         "Cea mai rentabilă"
       ],
@@ -3251,11 +3262,20 @@
       "Create your account": [
         "Creați-vă contul"
       ],
+      "Device": [
+        "Dispozitiv"
+      ],
+      "Event": [
+        "Eveniment"
+      ],
       "IP address": [
         "Adresa IP"
       ],
       "Key type": [
         "Tip cheie"
+      ],
+      "Location": [
+        "Amplasare"
       ],
       "Members": [
         "Membri"
@@ -3265,6 +3285,9 @@
       ],
       "Organization key fingerprint": [
         "Amprentă cheie organizație"
+      ],
+      "Protection": [
+        "Protecție"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Economisiți mult la cele mai bune oferte de ${ VPN_APP_NAME }"
@@ -3286,6 +3309,9 @@
       ],
       "Status": [
         "Stare"
+      ],
+      "User": [
+        "Utilizator"
       ]
     },
     "Header for addresses table": {
@@ -3590,9 +3616,6 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Sigur doriți să eliminați domeniul ${ boldDomain }?"
-      ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Solicitați administratorului organizației să seteze porți de acces."
       ],
       "Attention required": [
         "Necesită atenție"
@@ -5397,9 +5420,6 @@
       "Current email": [
         "E-mail actual"
       ],
-      "Current organization identity": [
-        "Identitate organizație actuală"
-      ],
       "Default language": [
         "Limba implicită"
       ],
@@ -5520,9 +5540,6 @@
       "New login password": [
         "Parola nouă de conectare"
       ],
-      "New organization identity": [
-        "Identitate nouă organizație"
-      ],
       "New organization password": [
         "Parolă nouă organizație"
       ],
@@ -5553,9 +5570,6 @@
       "Optional": [
         "Opțional"
       ],
-      "Organization identity": [
-        "Identitate organizație"
-      ],
       "Organization name": [
         "Nume organizație"
       ],
@@ -5584,13 +5598,13 @@
         "Fraza conține 12 cuvinte unice într-o anumită ordine"
       ],
       "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
-        "Adăugați toate trei câmpurile CNAME. Notă: înregistrările DNS au nevoie de câteva ore pentru a se actualiza."
+        "Adăugați toate trei câmpurile CNAME. Observație: înregistrările DNS au nevoie de câteva ore pentru a se actualiza."
       ],
       "Please add the following two MX records. Note: DNS records can take several hours to update.": [
         "Adăugați următoarele două înregistrări MX. Notă: înregistrările DNS au nevoie de câteva ore pentru a se actualiza."
       ],
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
-        "Adăugați următoarea înregistrare TXT. Notă: înregistrările DNS au nevoie de câteva ore pentru a se actualiza."
+        "Adăugați următoarea înregistrare TXT. Observație: înregistrările DNS au nevoie de câteva ore pentru a se actualiza."
       ],
       "Please share any feedback to help us improve.": [
         "Vă rugăm să ne spuneți orice pentru a ne ajuta la îmbunătățirea serviciilor."
@@ -6106,23 +6120,6 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorați toate planurile ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "De la ${ price }"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ștergere cont"
@@ -6144,6 +6141,23 @@
       ],
       "Switch plan": [
         "Schimbare plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorați toate planurile ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "De la ${ price }"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
       ]
     },
     "new_plans: feature": {
@@ -8807,6 +8821,11 @@
         "Abonamentul a fost achiziționat din aplicația iOS. Pentru a face modificări la acesta sau a actualiza detaliile de plată, va trebui să o faceți din App Store de la Apple."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Abonamentul va fi retrogradat la sfârșitul perioadei de facturare."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Pentru ${ totalPrice }"
@@ -9311,9 +9330,6 @@
       "Organization activated": [
         "Organizație activată"
       ],
-      "Organization identity updated": [
-        "S-a actualizat identitatea organizației"
-      ],
       "Organization logo removed": [
         "S-a eliminat sigla organizației"
       ],
@@ -9806,9 +9822,6 @@
       "Edit invoice details": [
         "Editare detalii factură"
       ],
-      "Edit organization identity": [
-        "Editare identitate organizație"
-      ],
       "Edit servers": [
         "Editare servere"
       ],
@@ -10030,6 +10043,9 @@
       "SAML authentication": [
         "Autentificare SAML"
       ],
+      "Security events": [
+        "Evenimente de securitate"
+      ],
       "Select a plan": [
         "Selectare plan"
       ],
@@ -10238,6 +10254,12 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "Administratorii pot face modificări abonamentului, pot gestiona conturile de utilizator și parolele și pot acorda privilegii de administrator altor utilizatori."
       ],
+      "An approximate location of the IP address": [
+        "Un loc aproximativ al adresei IP."
+      ],
+      "Any protection applied to suspicious activity": [
+        "Tipul de protecție aplicat activităților suspecte."
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Comutare automată a temei preferate sincron cu modul luminos sau întunecat setat al sistemului."
       ],
@@ -10246,6 +10268,9 @@
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Copiați și lipiți această adresă URL în câmpul ID-ului entității furnizorului de identitate."
+      ],
+      "Device information such as operating system": [
+        "Informații despre dispozitiv cum ar fi sistemul de operare."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Adresa URL a punctului final de la furnizorul de identitate (ex. https://idp.exemplu.com/sso/saml)"

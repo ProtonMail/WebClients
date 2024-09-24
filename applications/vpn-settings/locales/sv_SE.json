@@ -253,9 +253,6 @@
       "Edit name": [
         "Redigera namn"
       ],
-      "Edit organization identity": [
-        "Redigera organisationsidentitet"
-      ],
       "Edit organization name": [
         "Redigera organisationsnamn"
       ],
@@ -3209,6 +3206,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "App-version"
+      ],
       "Best deal": [
         "Bästa erbjudandet"
       ],
@@ -3221,11 +3221,20 @@
       "Create your account": [
         "Skapa ditt konto"
       ],
+      "Device": [
+        "Enhet"
+      ],
+      "Event": [
+        "Händelse"
+      ],
       "IP address": [
         "IP-adress"
       ],
       "Key type": [
         "Nyckeltyp"
+      ],
+      "Location": [
+        "Plats"
       ],
       "Members": [
         "Medlemmar"
@@ -3235,6 +3244,9 @@
       ],
       "Organization key fingerprint": [
         "Organisations nyckelfingeravtryck"
+      ],
+      "Protection": [
+        "Skydd"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Spara stort på det bästa erbjudandet för ${ VPN_APP_NAME }"
@@ -3256,6 +3268,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "User": [
+        "Användare"
       ]
     },
     "Header for addresses table": {
@@ -3549,9 +3564,6 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Är det säker på att du vill ta bort domänen ${ boldDomain }?"
-      ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Be din organisations administratör att ställa in gateways."
       ],
       "Attention required": [
         "Uppmärksamhet krävs"
@@ -5271,9 +5283,6 @@
       "Current email": [
         "Nuvarande e-post"
       ],
-      "Current organization identity": [
-        "Nuvarande organisationsidentitet"
-      ],
       "Default language": [
         "Standardspråk"
       ],
@@ -5394,9 +5403,6 @@
       "New login password": [
         "Nytt inloggningslösenord"
       ],
-      "New organization identity": [
-        "Ny organisationsidentitet"
-      ],
       "New organization password": [
         "Nytt organisationslösenord"
       ],
@@ -5426,9 +5432,6 @@
       ],
       "Optional": [
         "Valfritt"
-      ],
-      "Organization identity": [
-        "Organisationsidentitet"
       ],
       "Organization name": [
         "Organisationsnamn"
@@ -5943,6 +5946,9 @@
       ],
       "Swiss franc": [
         "Schweizisk franc"
+      ],
+      "US Dollar": [
+        "Amerikansk dollar"
       ]
     },
     "Navigation": {
@@ -5970,23 +5976,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforska alla ${ BRAND_NAME }-paket"
-      ],
-      "From ${ price }": [
-        "Från ${ price }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ta bort konto"
@@ -6008,6 +5997,23 @@
       ],
       "Switch plan": [
         "Byt paket"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforska alla ${ BRAND_NAME }-paket"
+      ],
+      "From ${ price }": [
+        "Från ${ price }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
       ]
     },
     "new_plans: feature": {
@@ -9063,9 +9069,6 @@
       "Organization activated": [
         "Organisation aktiverad"
       ],
-      "Organization identity updated": [
-        "Organisationsidentitet uppdaterad"
-      ],
       "Organization logo removed": [
         "Organisationens logga borttagen"
       ],
@@ -9556,9 +9559,6 @@
       "Edit invoice details": [
         "Redigera fakturadetaljer"
       ],
-      "Edit organization identity": [
-        "Redigera organisationsidentitet"
-      ],
       "Edit servers": [
         "Redigera servrar"
       ],
@@ -9779,6 +9779,9 @@
       "SAML authentication": [
         "SAML-autentisering"
       ],
+      "Security events": [
+        "Säkerhetshändelser"
+      ],
       "Select a plan": [
         "Välj ett paket"
       ],
@@ -9986,6 +9989,12 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "Administratörer kan göra ändringar i din prenumeration, hantera användarkonton och lösenord och ge administratörsbehörigheter till andra användare."
       ],
+      "An approximate location of the IP address": [
+        "En ungefärlig plats för IP-adressen"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Allt skydd tillämpat till misstänkt aktivitet"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Växla automatiskt mellan dina föredragna teman för dag och natt i synk med ditt systems dag- och nattlägen"
       ],
@@ -9994,6 +10003,9 @@
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Kopiera och klistra in denna URL i fältet för entity-ID för din identitetsleverantör"
+      ],
+      "Device information such as operating system": [
+        "Enhetsinformation såsom operativsystem"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Ändpunkts-URL från identitetsleverantör (t.ex. https://idp.example.com/sso/saml)"

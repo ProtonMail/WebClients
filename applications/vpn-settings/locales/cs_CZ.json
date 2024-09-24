@@ -253,9 +253,6 @@
       "Edit name": [
         "Upravit název"
       ],
-      "Edit organization identity": [
-        "Upravit identitu organizace"
-      ],
       "Edit organization name": [
         "Upravit název organizace"
       ],
@@ -3272,6 +3269,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "Verze aplikace"
+      ],
       "Best deal": [
         "Nejlepší nabídka"
       ],
@@ -3284,11 +3284,20 @@
       "Create your account": [
         "Vytvořte si účet"
       ],
+      "Device": [
+        "Zařízení"
+      ],
+      "Event": [
+        "Událost"
+      ],
       "IP address": [
         "IP adresa"
       ],
       "Key type": [
         "Typ klíče"
+      ],
+      "Location": [
+        "Umístění"
       ],
       "Members": [
         "Členové"
@@ -3298,6 +3307,9 @@
       ],
       "Organization key fingerprint": [
         "Otisk klíče organizace"
+      ],
+      "Protection": [
+        "Ochrana"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Využijte velké slevy na ${ VPN_APP_NAME }"
@@ -3319,6 +3331,9 @@
       ],
       "Status": [
         "Stav"
+      ],
+      "User": [
+        "Uživatel"
       ]
     },
     "Header for addresses table": {
@@ -3637,9 +3652,6 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Opravdu chcete odebrat doménu ${ boldDomain }?"
-      ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Požádejte správce organizace o nastavení bran."
       ],
       "Attention required": [
         "Vyžadována pozornost"
@@ -5464,9 +5476,6 @@
       "Current email": [
         "Stávající e-mail"
       ],
-      "Current organization identity": [
-        "Stávající identita organizace"
-      ],
       "Default language": [
         "Výchozí jazyk"
       ],
@@ -5587,9 +5596,6 @@
       "New login password": [
         "Nové přihlašovací heslo"
       ],
-      "New organization identity": [
-        "Nová identita organizace"
-      ],
       "New organization password": [
         "Nové heslo organizace"
       ],
@@ -5619,9 +5625,6 @@
       ],
       "Optional": [
         "Volitelné"
-      ],
-      "Organization identity": [
-        "Identita organizace"
       ],
       "Organization name": [
         "Název organizace"
@@ -6174,23 +6177,6 @@
         "Střední rychlost VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Objevte všechny ${ BRAND_NAME } tarify"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Smazat účet"
@@ -6212,6 +6198,23 @@
       ],
       "Switch plan": [
         "Změnit tarif"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Objevte všechny ${ BRAND_NAME } tarify"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
       ]
     },
     "new_plans: feature": {
@@ -9454,9 +9457,6 @@
       "Organization activated": [
         "Organizace byla aktivována"
       ],
-      "Organization identity updated": [
-        "Identita organizace aktualizována"
-      ],
       "Organization logo removed": [
         "Logo organizace odebráno"
       ],
@@ -9951,9 +9951,6 @@
       "Edit invoice details": [
         "Upravit fakturační údaje"
       ],
-      "Edit organization identity": [
-        "Upravit identitu organizace"
-      ],
       "Edit servers": [
         "Upravit servery"
       ],
@@ -10176,6 +10173,9 @@
       "SAML authentication": [
         "Ověření SAML"
       ],
+      "Security events": [
+        "Bezpečnostní události"
+      ],
       "Select a plan": [
         "Vyberte tarif"
       ],
@@ -10385,6 +10385,12 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "Správci mohou provádět změny v předplatném, spravovat uživatelské účty a hesla a udělovat práva správce ostatním uživatelům."
       ],
+      "An approximate location of the IP address": [
+        "Přibližné umístění IP adresy"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Jakákoli ochrana uplatňovaná na podezřelou aktivitu"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatické přepínání mezi preferovanými denními a nočními motivy v synchronizaci s denním a nočním režimem systému."
       ],
@@ -10393,6 +10399,9 @@
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Zkopírujte a vložte tuto URL adresu do pole ID subjektu u svého poskytovatele identity"
+      ],
+      "Device information such as operating system": [
+        "Informace o zařízení, jako je operační systém"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL adresa endpointu od poskytovatele identity (např. https://idp.example.com/sso/saml)"
