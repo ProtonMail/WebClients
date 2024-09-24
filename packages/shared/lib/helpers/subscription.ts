@@ -459,18 +459,6 @@ export const getHasMemberCapablePlan = (
     return (organization?.MaxMembers || 0) > 1 || (Object.keys(supportedAddons) as ADDON_NAMES[]).some(isMemberAddon);
 };
 
-const blackFridayDiscountCoupons: Set<string> = new Set([
-    COUPON_CODES.BLACK_FRIDAY_2022,
-    COUPON_CODES.MAIL_BLACK_FRIDAY_2022,
-    COUPON_CODES.VPN_BLACK_FRIDAY_2022,
-]);
-export const hasBlackFridayDiscount = (subscription: Subscription | undefined) => {
-    if (!subscription || !subscription.CouponCode) {
-        return false;
-    }
-    return blackFridayDiscountCoupons.has(subscription.CouponCode);
-};
-
 const endOfYearDiscountCoupons: Set<string> = new Set([
     COUPON_CODES.END_OF_YEAR_2023,
     COUPON_CODES.BLACK_FRIDAY_2023,
@@ -481,14 +469,6 @@ export const getHas2023OfferCoupon = (coupon: string | undefined | null): boolea
         return false;
     }
     return endOfYearDiscountCoupons.has(coupon);
-};
-
-export const hasVPNBlackFridayDiscount = (subscription: Subscription | undefined) => {
-    return subscription?.CouponCode === COUPON_CODES.VPN_BLACK_FRIDAY_2022;
-};
-
-export const hasMailBlackFridayDiscount = (subscription: Subscription | undefined) => {
-    return subscription?.CouponCode === COUPON_CODES.MAIL_BLACK_FRIDAY_2022;
 };
 
 export const allCycles = Object.freeze(
