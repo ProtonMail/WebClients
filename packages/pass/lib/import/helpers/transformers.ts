@@ -10,7 +10,7 @@ import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { epochToDate } from '@proton/pass/utils/time/format';
-import { isValidURL } from '@proton/pass/utils/url/is-valid-url';
+import { sanitizeURL } from '@proton/pass/utils/url/sanitize';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
 export const getImportedVaultName = (vaultName?: string) => {
@@ -47,7 +47,7 @@ export const importLoginItem = (options: {
 }): ItemImportIntent<'login'> => {
     const urls = [...new Set((options.urls ?? []).filter(truthy))]
         .map((uri) => {
-            const { valid, url } = isValidURL(uri);
+            const { valid, url } = sanitizeURL(uri);
             return valid ? new URL(url) : undefined;
         })
         .filter(truthy);

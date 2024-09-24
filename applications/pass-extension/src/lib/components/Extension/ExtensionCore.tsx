@@ -27,7 +27,7 @@ import { isProtonPassEncryptedImport } from '@proton/pass/lib/import/reader';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { type ClientEndpoint, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
-import type { ParsedUrl } from '@proton/pass/utils/url/parser';
+import type { ParsedUrl } from '@proton/pass/utils/url/types';
 import createStore from '@proton/shared/lib/helpers/store';
 import noop from '@proton/utils/noop';
 

@@ -4,12 +4,12 @@ import { c } from 'ttag';
 import type { UrlGroupValues } from '@proton/pass/types';
 import { duplicates } from '@proton/pass/utils/array/duplicate';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
-import { isValidURL } from '@proton/pass/utils/url/is-valid-url';
+import { sanitizeURL } from '@proton/pass/utils/url/sanitize';
 
 /* validates the active URL input field */
 export const validateUrl = <V extends UrlGroupValues>({ url, urls }: V) => {
     if (!isEmptyString(url)) {
-        const { valid: validURL, url: safeUrl } = isValidURL(url);
+        const { valid: validURL, url: safeUrl } = sanitizeURL(url);
         const urlExists = urls.map(({ url }) => url).includes(safeUrl);
 
         if (!validURL) return { url: c('Validation').t`Url is invalid` };
@@ -25,7 +25,7 @@ export const validateUrls = <V extends UrlGroupValues>({ urls }: V) => {
 
     const urlsErrors = urls.map(({ url }) => {
         const isEmpty = isEmptyString(url);
-        const { valid: validURL, url: safeUrl } = isValidURL(url);
+        const { valid: validURL, url: safeUrl } = sanitizeURL(url);
 
         if (isEmpty) return { url: c('Validation').t`URL cannot be empty` };
         if (!validURL) return { url: c('Validation').t`URL is invalid` };
