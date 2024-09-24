@@ -34,7 +34,7 @@ import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { isValidURL } from '@proton/pass/utils/url/is-valid-url';
+import { sanitizeURL } from '@proton/pass/utils/url/sanitize';
 
 const FORM_ID = 'new-login';
 
@@ -52,7 +52,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
 
     const initialValues: LoginItemFormValues = useMemo(() => {
         const maybeUrl = subdomain ?? domain ?? '';
-        const { valid, url } = isValidURL(maybeUrl);
+        const { valid, url } = sanitizeURL(maybeUrl);
 
         return {
             aliasPrefix: '',

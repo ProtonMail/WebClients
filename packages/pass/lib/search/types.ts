@@ -1,5 +1,5 @@
 import type { FormSubmission, ItemRevision, ItemSortFilter, ItemType, MaybeNull } from '@proton/pass/types';
-import type { ParsedUrl } from '@proton/pass/utils/url/parser';
+import type { ParsedUrl } from '@proton/pass/utils/url/types';
 
 export type ItemMatchFuncMap = { [T in ItemType]: ItemMatchFunc<T> };
 

@@ -13,7 +13,7 @@ import type { MonitorService } from '@proton/pass/lib/monitor/service';
 import type { ApiState, ClientEndpoint, Maybe, MaybeNull, MaybePromise, OnboardingMessage } from '@proton/pass/types';
 import type { B2BEvent } from '@proton/pass/types/data/b2b';
 import type { TelemetryEvent, TelemetryEventName, TelemetryPlatform } from '@proton/pass/types/data/telemetry';
-import type { ParsedUrl } from '@proton/pass/utils/url/parser';
+import type { ParsedUrl } from '@proton/pass/utils/url/types';
 import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 

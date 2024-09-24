@@ -4,7 +4,7 @@ import type { MaybeNull, OtpCode } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object/merge';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { isTotpUri } from '@proton/pass/utils/url/totp';
+import { isTotpUri } from '@proton/pass/utils/url/utils';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
 
 import { PatchedSecret } from './patch';
