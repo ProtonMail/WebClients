@@ -1,11 +1,5 @@
 import ReactTestUtils from 'react-dom/test-utils';
 
-import { getTimezone } from '@proton/shared/lib/date/timezone';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
-
-import type { ChallengeLog } from './interface';
-
 // Select option is broken on react. Correct the HTML here.
 export const normalizeSelectOptions = (el: HTMLElement) => {
     el.querySelectorAll('select').forEach((selectEl) => {
@@ -90,24 +84,5 @@ export const getStyleSrcsData = (styleSrcUrls: string[]) => {
         })
     ).then((results) => {
         return results.join('');
-    });
-};
-
-export const captureChallengeMessage = (message: string, logs: ChallengeLog[]) => {
-    if (
-        !logs.some(({ type }) => {
-            return type === 'error';
-        })
-    ) {
-        return;
-    }
-    captureMessage(message, {
-        level: 'error',
-        extra: {
-            logs,
-            locale: getBrowserLocale(),
-            timezone: getTimezone(),
-            time: new Date().toString(),
-        },
     });
 };
