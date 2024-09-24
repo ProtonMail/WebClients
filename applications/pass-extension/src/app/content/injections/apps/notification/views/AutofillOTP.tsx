@@ -2,6 +2,7 @@ import { type FC } from 'react';
 
 import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
+import type { NotificationAction, NotificationActions } from 'proton-pass-extension/app/content/types';
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
 
@@ -11,21 +12,16 @@ import { OTPDonut } from '@proton/pass/components/Otp/OTPDonut';
 import { OTPValue } from '@proton/pass/components/Otp/OTPValue';
 import { usePeriodicOtpCode } from '@proton/pass/hooks/usePeriodicOtpCode';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
-import { type SelectedItem } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
 import { NotificationHeader } from '../components/NotificationHeader';
 
-type Props = { hostname: string; item: SelectedItem };
+type Props = Extract<NotificationActions, { action: NotificationAction.OTP }>;
 
-export const AutofillOTP: FC<Props> = ({ hostname, item }) => {
+export const AutofillOTP: FC<Props> = ({ item }) => {
     const { generateOTP } = usePassCore();
-    const { close, forwardMessage, visible } = useIFrameContext();
-
-    const [otp, percent] = usePeriodicOtpCode({
-        generate: generateOTP,
-        payload: { type: 'item', item },
-    });
+    const { close, forwardMessage, visible, domain } = useIFrameContext();
+    const [otp, percent] = usePeriodicOtpCode({ generate: generateOTP, payload: { type: 'item', item } });
 
     useTelemetryEvent(TelemetryEventName.TwoFADisplay, {}, {})([visible]);
 
@@ -36,7 +32,7 @@ export const AutofillOTP: FC<Props> = ({ hostname, item }) => {
                 extra={
                     <PauseListDropdown
                         criteria="Autofill2FA"
-                        hostname={hostname}
+                        hostname={domain}
                         label={c('Action').t`Do not show on this website`}
                     />
                 }
