@@ -471,6 +471,11 @@
         "Trình quản lý mật khẩu của bạn không có ở đây sao? Hãy yêu cầu nó."
       ]
     },
+    "App menu": {
+      "Reload": [
+        "Tải lại"
+      ]
+    },
     "bf2023: Info": {
       "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
         "Tiết kiệm thông minh. Nhận một năm Pass Plus chỉ với ${ relativePrice } hàng tháng."
@@ -873,6 +878,9 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } sẽ hỏi mật khẩu ${ BRAND_NAME } để có thể truy cập dữ liệu ngoại tuyến."
       ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } rò rỉ đã dược phát hiện"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 ngày miễn phí để dùng thử các tính năng cao cấp. Chỉ trong tuần đầu của bạn với ${ BRAND_NAME }"
       ],
@@ -885,11 +893,17 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Truy cập vào ${ PASS_APP_NAME } sẽ luôn yêu cầu mật khẩu ${ BRAND_NAME } của bạn."
       ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "Truy cập vào ${ PASS_APP_NAME } sẽ cần vân tay hoặc mã PIN thiết bị của bạn."
+      ],
       "Admin": [
         "Quản trị viên"
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Sau khi nhập thành công dữ liệu của bạn, bạn có thể xóa tệp CSV chứa mật khẩu của mình để bảo đảm an toàn."
+      ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "Tính năng quản lý bí danh từ SimpleLogin sắp đến!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Bí danh \"${ item.aliasEmail }\" đã bị vô hiệu hóa. Bạn sẽ không nhận được email nào gửi đến địa chỉ này nữa."
@@ -926,6 +940,9 @@
       ],
       "An item previously shared with you was removed": [
         "Một nội dung đã được chia sẽ cho bạn trước đây đã bị gỡ bỏ"
+      ],
+      "Are you sure you want to remove the link?": [
+        "Bạn có chắc muốn loại bỏ liên kết này không?"
       ],
       "Auto-lock successfully disabled.": [
         "Đã vô hiệu hóa Tự động khóa thành công."
@@ -992,6 +1009,9 @@
       ],
       "Emptying trash...": [
         "Đang dọn sạch thùng rác..."
+      ],
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "Bật ${ PASS_SHORT_APP_NAME } beta"
       ],
       "Enable auto-locking to secure your data": [
         "Bật tự động khóa để bảo vệ dữ liệu của bạn"
@@ -1134,11 +1154,17 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Đang chuyển tất cả nội dung từ \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Chuyển một nội dung tới kho lưu trữ khác sẽ xóa lịch sử của nó và các đường dẫn an toàn."
+      ],
       "Moving an item to another vault will erase its history.": [
         "Chuyển một nội dung tới kho lưu trữ khác sẽ xóa lịch sử của nó."
       ],
       "Moving items": [
         "Đang chuyển nội dung"
+      ],
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Chuyển các nội dung tới kho lưu trữ khác sẽ xóa lịch sử của nó và các đường dẫn an toàn."
       ],
       "Moving items to another vault will erase their history.": [
         "Chuyển các nội dung tới kho lưu trữ khác sẽ xóa lịch sử của nó."
@@ -1173,6 +1199,9 @@
       "Offline support successfully disabled": [
         "Truy cập ngoại tuyến đã được tắt"
       ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "Truy cập trực tuyến vào ${ PASS_APP_NAME } sẽ cần mã PIN của bạn. Bạn sẽ bị đăng xuất sau 3 lần thử thất bại."
+      ],
       "Owner": [
         "Chủ sở hữu"
       ],
@@ -1188,6 +1217,9 @@
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Đã đăng ký thành công khóa bằng mật khẩu. Sử dụng nó để mở khóa ${ PASS_APP_NAME }"
       ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Mật khẩu cũ hơn ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tuần sẽ bị tự động xóa trong lịch sử."
+      ],
       "Paused": [
         "Đã ngừng"
       ],
@@ -1199,6 +1231,27 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Vui lòng xác nhận mật khẩu ${ BRAND_NAME } để bật chê độ ngoại tuyến"
+      ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Vui lòng xác nhận mật khẩu của bạn để tự động khóa bằng mật khẩu cấp 2."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Vui lòng xác nhận mật khẩu cấp 2 của bạn để cập nhật thời gian tự động khóa."
+      ],
+      "Please confirm your password": [
+        "Xin vui lòng xác nhận mật khẩu của bạn"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Vui lòng xác nhận mật khẩu của bạn để tự động khóa bằng sinh trắc học."
+      ],
+      "Please confirm your password in order to auto-lock with your password.": [
+        "Vui lòng xác nhận mật khẩu của bạn để tự động khóa bằng mật khẩu."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "Vui lòng xác nhận mật khẩu của bạn để hủy đăng ký phương thức khóa hiện tại."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "Vui lòng xác nhận mật khẩu của bạn để cập nhật thời gian tự động khóa."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Vui lòng xác nhận mã PIN của bạn để hủy đăng ký phương thức khóa hiện tại."
@@ -1257,6 +1310,9 @@
       "Selected items successfully restored from trash": [
         "Các nội dung được chọn đã được khôi phục từ thùng rác"
       ],
+      "Set by your organization": [
+        "Được thiết lập bới tổ chức của bạn"
+      ],
       "Settings successfully updated": [
         "Đã cập nhật cài đặt"
       ],
@@ -1305,6 +1361,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "File xuất này sẽ không được mã hóa và tất cả những người có thể truy cập vào file xuất này sẽ thấy được mật khẩu của bạn. Vì lý do an toàn, vui lòng xóa file này khi bạn đã sử dụng xong."
       ],
+      "This option is currently not available on your device.": [
+        "Tùy chọn này hiện không khả dụng trên thiết bị của bạn."
+      ],
       "This setting is disabled on the organization level": [
         "Tùy chọn này bị tắt ở cấp độ tổ chức"
       ],
@@ -1326,8 +1385,14 @@
       "Unlimited hide-my-email aliases": [
         "Không giới hạn bí danh Hide-my-email"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Mở khóa ${ PASS_SHORT_APP_NAME } với sinh trắc học."
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Mở khóa ${ PASS_SHORT_APP_NAME } với mật khẩu ${ BRAND_NAME } của bạn."
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "Mở khóa ${ PASS_SHORT_APP_NAME } với mật khẩu cấp 2 của bạn."
       ],
       "Unverified": [
         "Chưa xác minh"
@@ -1392,6 +1457,9 @@
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Bạn đã đạt giới hạn bí danh bạn có thể tạo. Tạo không giới hạn bí danh khi bạn nâng cấp gói đăng ký của mình."
       ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "Bạn đã đạt giới hạn thẻ bạn có thể tạo. Tạo không giới hạn thẻ khi bạn nâng cấp gói đăng ký của mình."
+      ],
       "You have reached the limit of vaults you can create.": [
         "Bạn đã đạt đến giới hạn số lượng kho lưu trữ có thể tạo."
       ],
@@ -1406,6 +1474,9 @@
       ],
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
         "Tài khoản bị hạn chế vì tổ chức của bạn yêu cầu xác minh 2FA. Vui lòng bật xác minh 2FA trong mục cài đặt tài khoản hoặc liên hệ với quản trị viên."
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Tổ chức của bạn yêu cầu phải bảo mật truy cập của bạn tới ${ PASS_APP_NAME }"
       ]
     },
     "Label": {
@@ -1429,6 +1500,9 @@
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "phiên bản ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } đăng nhập"
       ],
       "1 hour": [
         "1 giờ"
@@ -1895,6 +1969,9 @@
       "Text": [
         "Văn bản"
       ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "Kho lưu trữ của nội dung hiện được chia sẽ với ${ targetMembers } người dùng"
+      ],
       "Title": [
         "Tiêu đề"
       ],
@@ -2080,9 +2157,6 @@
       ],
       "MM/YY": [
         "Tháng/Năm"
-      ],
-      "Other": [
-        "Khác"
       ],
       "Password": [
         "Mật khẩu"
