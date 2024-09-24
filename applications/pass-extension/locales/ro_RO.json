@@ -90,7 +90,7 @@
         "Confirmare acces"
       ],
       "Connect your ${ BRAND_NAME } Account": [
-        "Conectați-vă la contul ${ BRAND_NAME }"
+        "Conectați-vă contul ${ BRAND_NAME }"
       ],
       "Continue": [
         "Continuare"
@@ -116,11 +116,11 @@
       "Create": [
         "Creare"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Creare cont ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Creare cont ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Creați un cont ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
         "Creați un seif nou pentru partajare"
@@ -141,10 +141,10 @@
         "Creare autentificare"
       ],
       "Create new login": [
-        "Crearea unei noi autentificări"
+        "Creare autentificare"
       ],
       "Create note": [
-        "Creare notă"
+        "Creare notiță"
       ],
       "Create vault": [
         "Creare seif"
@@ -441,7 +441,7 @@
         "Se salvează"
       ],
       "Saving passkey...": [
-        "Salvarea cheii de acces..."
+        "Se salvează cheia de acces..."
       ],
       "Section name": [
         "Nume secțiune"
@@ -648,10 +648,10 @@
         "Autentificare eșuată. Confirmați-vă parola ${ BRAND_NAME } pentru a continua exportarea."
       ],
       "Authentication failure: ${ message }": [
-        "Eșec de autentificare: ${ message }"
+        "Eșuare autentificare: ${ message }"
       ],
       "Cannot create alias (${ error }).": [
-        "Nu se poate crea aliasul. ${ error }."
+        "Aliasul nu se poate crea. (${ error })."
       ],
       "Cannot send invitation at the moment": [
         "Invitația nu poate fi trimisă momentan.",
@@ -856,7 +856,7 @@
         "Fixați extensia sau selectați „Continuare fără fixare”."
       ],
       "Registration failure: ${ message }": [
-        "Eșec de înregistrare: ${ message }"
+        "Eșuare înregistrare: ${ message }"
       ],
       "Request timed out": [
         "Solicitarea a expirat"
@@ -899,6 +899,9 @@
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "A existat o eroare în timpul eliminării legăturii web securizate. Reîncercați peste câteva minute."
+      ],
+      "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
+        "Acest lucru se poate întâmpla după o perioadă lungă de timp în care nu ați folosit ${ PASS_SHORT_APP_NAME } sau dacă nu ați șters istoricul din Safari."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Prea multe încercări eșuate. Reconectați-vă."
@@ -959,6 +962,9 @@
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Nu aveți conexiune. Reconectați-vă pentru a debloca ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
+        "Navigatorul web întâmpină dificultăți la activarea ${ PASS_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Codul dvs. PIN a fost eliminat de către alt utilizator al ${ PASS_APP_NAME }."
@@ -1061,10 +1067,10 @@
         "${ PASS_APP_NAME } va afișa fișierul favicon prin proxy-ul de imagini anonim ${ BRAND_NAME }."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
-        "${ PASS_APP_NAME } va importa doar date de conectare, note, carduri de credit și identități."
+        "${ PASS_APP_NAME } va importa doar date de conectare, notițe, carduri de plată și identități."
       ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
-        "${ PASS_APP_NAME } va solicita autosalvarea parolelor autogenerate imediat după completate."
+        "${ PASS_APP_NAME } vă va solicita autosalvarea parolelor autogenerate imediat după completate."
       ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } vă va solicita să salvați sau să vă actualizați acreditările."
@@ -1118,6 +1124,9 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "După reușirea importării datelor, puteți șterge fișierul CSV care conține parolele pentru a vă păstra securitatea."
+      ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "Funcțiile pentru gestionare aliasuri din SimpleLogin vor sosi în curând!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Aliasul a fost dezactivat. Nu veți mai primi mesaje trimise către ${ item.aliasEmail }."
@@ -1198,7 +1207,7 @@
         "Alegeți o cheie de acces salvată pentru a vă conecta la ${ domain }"
       ],
       "Click the icon to open it anytime.": [
-        "Faceți clic pe pictogramă pentru a-l deschide."
+        "Faceți clic pe pictogramă pentru deschide aplicația."
       ],
       "Close this window in order to use a security key or another passkey.": [
         "Închideți această fereastră pentru a utiliza o cheie de securitate sau o altă cheie de acces."
@@ -1327,7 +1336,7 @@
         "Pentru acces ușor la parole și alte informații."
       ],
       "For security reason, your access needs to be confirmed": [
-        "Din motive de securitate, accesul trebuie să vă fie confirmat."
+        "Din motive de securitate, trebuie să vă confirmăm accesul."
       ],
       "For security reasons, your access needs to be confirmed": [
         "Din motive de securitate, accesul trebuie să vă fie confirmat."
@@ -1471,10 +1480,10 @@
         "Niciodată"
       ],
       "No identity item found": [
-        "Nu a fost găsit niciun articol de identitate."
+        "Nu s-au găsit articole de identitate."
       ],
       "No login found": [
-        "Nu există date de autentificare"
+        "Nu există date de autentificare."
       ],
       "None": [
         "Fără"
@@ -1668,7 +1677,7 @@
         "Setările s-au actualizat."
       ],
       "Share your logins, secure notes, with up to 10 people": [
-        "Partajați-vă datele de conectare și notele securizate, cu până la 10 persoane"
+        "Partajați-vă datele de conectare și notițele securizate, cu până la 10 persoane"
       ],
       "Sign in or create an account to continue.": [
         "Conectați-vă sau creați un cont pentru a continua."
@@ -1744,6 +1753,9 @@
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "Pentru a revizui datele importate, faceți clic pe pictograma Proton Pass din bara de utilitare a navigatorului."
       ],
+      "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
+        "Încercați să reîncărcați sau să reinstalați extensia și asigurați-vă că navigatorul web și ${ PASS_SHORT_APP_NAME } sunt actualizate."
+      ],
       "Unable to copy to clipboard": [
         "Nu se poate copia în memorie."
       ],
@@ -1751,10 +1763,10 @@
         "Aliasuri nelimitate hide-my-email"
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Deblocați ${ PASS_APP_NAME } cu codul PIN pentru a accesa parolele dvs."
+        "Deblocați ${ PASS_APP_NAME } cu codul PIN pentru a vă accesa parolele."
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Deblocați ${ PASS_APP_NAME } cu codul PIN pentru a salva această cheie de acces"
+        "Deblocați ${ PASS_APP_NAME } cu codul PIN pentru a salva această cheie de acces."
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Deblocați ${ PASS_SHORT_APP_NAME } cu date biometrice"
@@ -1778,7 +1790,7 @@
         "Actualizare autentificare"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
-        "Actualizare ${ PASS_APP_NAME }"
+        "Modificare ${ PASS_APP_NAME }"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Modificați-vă acum contul pentru a debloca funcțiile premium"
@@ -1984,6 +1996,9 @@
       "Alias address": [
         "Adresă alias"
       ],
+      "Alias management": [
+        "Gestionare aliasuri"
+      ],
       "Aliases": [
         "Aliasuri"
       ],
@@ -2019,9 +2034,6 @@
       ],
       "Autosave": [
         "Autosalvare"
-      ],
-      "Autosave vault": [
-        "Autosalvare seif"
       ],
       "Autosuggest": [
         "Sugestie automată"
@@ -2081,7 +2093,7 @@
         "Creare autentificare"
       ],
       "Create an encrypted note": [
-        "Creare notă criptată"
+        "Creare notiță criptată"
       ],
       "Create an Identity": [
         "Creare identitate"
@@ -2111,7 +2123,7 @@
         "Afișare"
       ],
       "Display ${ PASS_APP_NAME } icon on autofillable fields": [
-        "Afișare pictograma ${ PASS_APP_NAME } pe câmpurile de conectare"
+        "Afișare pictogramă ${ PASS_APP_NAME } pe câmpurile de completare automată"
       ],
       "Domain": [
         "Domeniu"
@@ -2135,7 +2147,7 @@
         "E-mail (alias nou)"
       ],
       "Email aliases": [
-        "De aliasuri De e-mail"
+        "Aliasuri e-mail"
       ],
       "Email or username": [
         "E-mail sau utilizator"
@@ -2345,10 +2357,10 @@
         "Niciuna"
       ],
       "Note": [
-        "Notă"
+        "Notiță"
       ],
       "Notes": [
-        "Note"
+        "Notiță"
       ],
       "Old-New": [
         "De la vechi la noi"
@@ -2557,7 +2569,7 @@
         "Element fără nume"
       ],
       "Unnamed note": [
-        "Notă fără nume"
+        "Notiță fără nume"
       ],
       "Untitled": [
         "Fără nume"
@@ -2569,7 +2581,7 @@
         "Nume utilizator"
       ],
       "Username/email": [
-        "Nume de utilizator/E-mail"
+        "Nume de utilizator/e-mail"
       ],
       "Vault ID": [
         "ID seif"
@@ -2666,7 +2678,7 @@
         "Adăugare text ascuns"
       ],
       "Add note": [
-        "Adăugare notă"
+        "Adăugare notiță"
       ],
       "Add text": [
         "Adăugare text"
@@ -2675,7 +2687,7 @@
         "Adresă e-mail"
       ],
       "Enter a note...": [
-        "Introduceți o notă…"
+        "Introduceți o notiță…"
       ],
       "Enter a prefix": [
         "Introduceți un prefix"
@@ -2694,9 +2706,6 @@
       ],
       "MM/YY": [
         "LL/AA"
-      ],
-      "Other": [
-        "Altele"
       ],
       "Password": [
         "Parola"
@@ -2741,7 +2750,7 @@
         "Folosit la ${ url }"
       ],
       "Write your note": [
-        "Scrieți-vă nota"
+        "Scrieți-vă notița"
       ]
     },
     "Success": {
@@ -3045,7 +3054,7 @@
         "Adrese de e-mail duplicate."
       ],
       "Empty note": [
-        "Notă goală."
+        "Notiță goală"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Data de expirare nu este în format LL/AA."
@@ -3143,7 +3152,7 @@
         "Transferați proprietatea acestui seif către ${ email }?"
       ],
       "Unable to save": [
-        "Nu se poate salva."
+        "Nu se poate salva"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Nu se poate conecta la ${ PASS_APP_NAME }. ${ additionalMessage }"

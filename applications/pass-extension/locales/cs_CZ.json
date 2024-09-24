@@ -116,11 +116,11 @@
       "Create": [
         "Vytvořit"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Vytvořte účet ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Vytvořit účet ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Vytvořte účet ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
         "Vytvořit nový trezor ke sdílení"
@@ -392,6 +392,9 @@
       "Reject invitation": [
         "Odmítnout pozvánku"
       ],
+      "Reload extension": [
+        "Znovu načíst rozšíření"
+      ],
       "Remove": [
         "Odstranit"
       ],
@@ -611,7 +614,7 @@
         "${ total } jiných přihlášení používá stejné heslo"
       ],
       "A checked box means the feature is disabled.": [
-        "Zaškrtnuté políčko znamená, že je funkce zakázána."
+        "Zaškrtnuté políčko znamená, že je funkce deaktivována."
       ],
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "Sledování Dark webu je k dispozici s placeným tarifem. Navyšte tarif pro okamžitý přístup."
@@ -631,7 +634,10 @@
     },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
-        "${ provider } soubor se nepodařilo zpracovat. ${ errorDetail }"
+        "${ provider } soubor se nepodařilo analyzovat. ${ errorDetail }"
+      ],
+      "[Error] an item could not be parsed": [
+        "[Chyba] položku se nepodařilo analyzovat"
       ],
       "Alias could not be updated at the moment. Please try again later": [
         "Alias nelze v současné době aktualizovat. Zkuste to prosím později"
@@ -814,7 +820,7 @@
         "Neplatný správce hesel"
       ],
       "Invalid URL": [
-        "Neplatná adresa URL"
+        "Neplatná URL"
       ],
       "Invitation could not be accepted": [
         "Pozvánku nebylo možné přijmout"
@@ -895,10 +901,13 @@
         "Soubor, který se snažíte importovat, je prázdný"
       ],
       "The URL is in the list": [
-        "URL adresa je na seznamu"
+        "URL je na seznamu"
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Došlo k chybě při odebírání bezpečného odkazu. Zkuste to prosím znovu za několik minut."
+      ],
+      "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
+        "K tomu může dojít po delší době nepoužívání ${ PASS_SHORT_APP_NAME } nebo po smazání historie v Safari."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Příliš mnoho neúspěšných pokusů. Přihlaste se znovu."
@@ -959,6 +968,9 @@
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Momentálně jste offline. Prosím obnovte připojení pro odemčení ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
+        "Váš prohlížeč má potíže s aktivací ${ PASS_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Váš kód PIN byl odstraněn jiným klientem ${ PASS_APP_NAME }"
@@ -1130,6 +1142,9 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po úspěšném importu vašich dat můžete z bezpečnostních důvodů smazat CSV soubor obsahující vaše hesla."
       ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "Funkce správy aliasů od SimpleLogin budou brzy dostupné!"
+      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias byl úspěšně deaktivován. E-maily odeslané na adresu ${ item.aliasEmail } již nebudete dostávat."
       ],
@@ -1206,7 +1221,7 @@
         "Může zobrazovat položky v tomto trezoru."
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
-        "Vyberte uložený přístupový klíč pro přihlášení do ${ domain }"
+        "Vyberte uložený přístupový klíč pro přihlášení k ${ domain }"
       ],
       "Click the icon to open it anytime.": [
         "Otevřete kdykoli kliknutím na ikonu."
@@ -1760,6 +1775,9 @@
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "Chcete-li si prohlédnout importovaná data, klikněte na ikonu Pass v panelu nástrojů svého prohlížeče."
       ],
+      "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
+        "Zkuste znovu načíst nebo přeinstalovat rozšíření a zkontrolujte, zda jsou váš prohlížeč a ${ PASS_SHORT_APP_NAME } aktuální."
+      ],
       "Unable to copy to clipboard": [
         "Nelze kopírovat do schránky"
       ],
@@ -1770,7 +1788,7 @@
         "Odemkněte ${ PASS_APP_NAME } pomocí kódu PIN a získejte přístup ke svým přístupovým klíčům"
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Pro uložení tohoto přístupového klíče, odemkněte ${ PASS_APP_NAME } pomocí vašeho PIN kódu"
+        "Pro uložení tohoto přístupového klíče odemkněte ${ PASS_APP_NAME } pomocí vašeho PIN kódu"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Odemkněte ${ PASS_SHORT_APP_NAME } pomocí biometrie"
@@ -2008,6 +2026,9 @@
       "Alias address": [
         "Alias adresa"
       ],
+      "Alias management": [
+        "Správa aliasů"
+      ],
       "Aliases": [
         "Aliasy"
       ],
@@ -2043,9 +2064,6 @@
       ],
       "Autosave": [
         "Automatické uložení"
-      ],
-      "Autosave vault": [
-        "Automatické ukládání trezoru"
       ],
       "Autosuggest": [
         "Automatické doporučení"
@@ -2566,6 +2584,9 @@
       "Type": [
         "Typ"
       ],
+      "Unknown": [
+        "Neznámé"
+      ],
       "Unlock ${ PASS_APP_NAME }": [
         "Odemknout ${ PASS_APP_NAME }"
       ],
@@ -2720,9 +2741,6 @@
       ],
       "MM/YY": [
         "MM/RR"
-      ],
-      "Other": [
-        "Ostatní"
       ],
       "Password": [
         "Heslo"

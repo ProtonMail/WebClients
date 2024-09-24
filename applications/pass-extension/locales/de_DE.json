@@ -116,10 +116,10 @@
       "Create": [
         "Erstellen"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "${ BRAND_NAME }-Konto erstellen"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-Konto erstellen"
       ],
       "Create a new vault to share": [
@@ -897,6 +897,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Fehler beim Entfernen des sicheren Links. Bitte versuche es in einigen Minuten erneut."
       ],
+      "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
+        "Dies kann auftreten, wenn du ${ PASS_SHORT_APP_NAME } lange Zeit nicht verwendet oder deinen Safari-Verlauf gelöscht hast."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Zu viele Fehlversuche! Bitte melde dich erneut an."
       ],
@@ -956,6 +959,9 @@
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Du bist offline. Bitte stelle die Verbindung wieder her, um ${ PASS_SHORT_APP_NAME } zu entsperren."
+      ],
+      "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
+        "Dein Browser hat Schwierigkeiten, ${ PASS_APP_NAME } zu aktivieren."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Dein PIN-Code wurde von einem anderen ${ PASS_APP_NAME }-Client entfernt"
@@ -1104,6 +1110,9 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Nachdem du deine Daten erfolgreich importiert hast, kannst du die CSV-Datei mit deinen Passwörtern zur Sicherheit löschen."
+      ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "Die Alias-Verwaltungsfunktionen von SimpleLogin kommen bald!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Der Alias wurde erfolgreich deaktiviert. Du wirst keine E-Mails mehr erhalten, die an ${ item.aliasEmail } gesendet werden."
@@ -1722,6 +1731,9 @@
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "Klicke auf das Pass-Symbol in der Symbolleiste deines Browsers, um deine importierten Daten zu überprüfen."
       ],
+      "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
+        "Versuche, die Erweiterung neu zu laden oder zu installieren und stelle sicher, dass dein Browser und ${ PASS_SHORT_APP_NAME } auf dem neuesten Stand sind."
+      ],
       "Unable to copy to clipboard": [
         "Kopieren in die Zwischenablage nicht möglich"
       ],
@@ -1954,6 +1966,9 @@
       "Alias address": [
         "Alias-Adresse"
       ],
+      "Alias management": [
+        "Aliasverwaltung"
+      ],
       "Aliases": [
         "Aliasse"
       ],
@@ -1989,9 +2004,6 @@
       ],
       "Autosave": [
         "Auto-Speichern"
-      ],
-      "Autosave vault": [
-        "Tresor automatisch speichern"
       ],
       "Autosuggest": [
         "Auto-Vorschlagen"
@@ -2507,6 +2519,9 @@
       "Type": [
         "Typ"
       ],
+      "Unknown": [
+        "Unbekannt"
+      ],
       "Unlock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } entsperren"
       ],
@@ -2660,9 +2675,6 @@
       "MM/YY": [
         "MM/JJ"
       ],
-      "Other": [
-        "Weitere"
-      ],
       "Password": [
         "Passwort"
       ],
@@ -2719,6 +2731,9 @@
       ]
     },
     "Title": {
+      "${ PASS_APP_NAME } Settings": [
+        "${ PASS_APP_NAME }-Einstellungen"
+      ],
       "Auto-lock update": [
         "Aktualisieren der automatischen Sperre"
       ],

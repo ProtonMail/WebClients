@@ -116,10 +116,10 @@
       "Create": [
         "შექმნა"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
       ],
       "Create a new vault to share": [
@@ -391,6 +391,9 @@
       ],
       "Reject invitation": [
         "მოსაწვევის უარყოფა"
+      ],
+      "Reload extension": [
+        "გაფართოების თავიდან ჩატვირთვა"
       ],
       "Remove": [
         "წაშლა"
@@ -894,6 +897,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "შეცდომა დაცული ბმულის წაშლისას. თავიდან სცადეთ რამდენიმე წუთში."
       ],
+      "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
+        "ეს, შეიძლება, ${ PASS_SHORT_APP_NAME }-ის დიდი ხნით არგამოყენებამ, ან Safari-ის ისტორიის გასუფთავებამ გამოიწვიოს."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "მეტისმეტად ბევრი ჩავარდნილი მცდელობა. თავიდან შედით."
       ],
@@ -953,6 +959,9 @@
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "ახლა ქსელის გარეშე მუშაობთ. აღადგინეთ მიერთება, რომ ${ PASS_SHORT_APP_NAME } განბლოკოთ."
+      ],
+      "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
+        "თქვენს ბრაუზერს ${ PASS_APP_NAME }-ის აქტივაციის პრობლემები აქვს."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "თქვენი PIN-კოდი წაშლილია სხვა ${ PASS_APP_NAME }-ის კლიენტის მიერ"
@@ -1101,6 +1110,9 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "თქვენი მონაცემების წარმატებით შემოტანის შემდეგ, შეგიძლიათ CSV ფაილი, რომელიც თქვენს პაროლებს შეიცავს, უსაფრთხოებისთვის წაშალოთ."
+      ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "ფსევდონიმების მართვის ფუნქციები SimpleLogin-სგან სულ მალე!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "ფსევდონიმი წარმატებით გაითიშა. ახლა ელფოსტებს, რომელსაც ${ item.aliasEmail }-ზე გააგზავნიან, ვეღარ მიიღებთ"
@@ -1722,6 +1734,9 @@
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "შემოტანილი მონაცემების სანახავად დააწკაპუნეთ Pass-ის ხატულაზე თქვენი ბრაუზერის პანელზე."
       ],
+      "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
+        "სცადეთ, თავიდან ჩატვირთოთ ან თავიდან დააყენოთ გააფართოება, რომ დარწმუნდეთ, რომ თქვენი ბრაუზერი და ${ PASS_SHORT_APP_NAME } უკანასკნელი ვერსიითაა."
+      ],
       "Unable to copy to clipboard": [
         "ბუფერში დაკოპირება შეუძლებელია"
       ],
@@ -1954,6 +1969,9 @@
       "Alias address": [
         "ფსევდონიმის მისამართი"
       ],
+      "Alias management": [
+        "ფსევდონიმების მართვა"
+      ],
       "Aliases": [
         "ფსევდონიმები"
       ],
@@ -1989,9 +2007,6 @@
       ],
       "Autosave": [
         "ავტომატური შენახვა"
-      ],
-      "Autosave vault": [
-        "საცავის ავტომატური შენახვა"
       ],
       "Autosuggest": [
         "ავტომატური რჩევა"
@@ -2510,6 +2525,9 @@
       "Type": [
         "ტიპი"
       ],
+      "Unknown": [
+        "უცნობი"
+      ],
       "Unlock ${ PASS_APP_NAME }": [
         "განბლოკეთ ${ PASS_APP_NAME }"
       ],
@@ -2663,9 +2681,6 @@
       "MM/YY": [
         "თთ/წწ"
       ],
-      "Other": [
-        "სხვა"
-      ],
       "Password": [
         "პაროლი"
       ],
@@ -2722,6 +2737,9 @@
       ]
     },
     "Title": {
+      "${ PASS_APP_NAME } Settings": [
+        "${ PASS_APP_NAME }-ის მორგება"
+      ],
       "Auto-lock update": [
         "ავტომატური დაბლოკვის განახლება"
       ],
