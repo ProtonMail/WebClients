@@ -33,7 +33,7 @@ import {
 
 import ApiContext from '../../api/apiContext';
 import AuthenticationProvider from '../../authentication/Provider';
-import { ConfigProvider } from '../../config';
+import ConfigProvider from '../../config/Provider';
 import EventManagerContext from '../../eventManager/context';
 import NotificationsContext from '../../notifications/notificationsContext';
 import ContactProvider from '../ContactProvider';

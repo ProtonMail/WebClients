@@ -1,7 +1,7 @@
 import type { FC, PropsWithChildren } from 'react';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
-import { ConfigProvider } from '@proton/components/containers/config';
+import ConfigProvider from '@proton/components/containers/config/Provider';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import type { UsePeriodOtpCodeOptions } from '@proton/pass/hooks/usePeriodicOtpCode';
 import { type AuthStore } from '@proton/pass/lib/auth/store';
