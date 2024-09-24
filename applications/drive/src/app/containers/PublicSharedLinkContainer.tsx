@@ -194,7 +194,7 @@ function PublicShareLinkInitContainer() {
     }
 
     if (showLoadingPage) {
-        return <LoadingPage />;
+        return <LoadingPage haveCustomPassword={!!customPassword} />;
     }
 
     if (showErrorPage || !link) {

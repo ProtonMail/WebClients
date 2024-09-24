@@ -40,31 +40,27 @@ export default function SharedPageHeader({
         (selectedItems.length > 0 && selectedItems.every((item) => item.isFile && isProtonDocument(item.mimeType)));
 
     return (
-        <div className={clsx('flex flex-nowrap shrink-0 justify-space-between items-center', className)}>
+        <div className={clsx('flex flex-nowrap shrink-0 justify-space-between items-center gap-4', className)}>
             <div className="flex flex-nowrap flex-1 items-center mb-0 pb-0 mr-4 shared-page-layout-header">
                 {children}
             </div>
-            {viewportWidth['<=small'] || items.length === 0 ? null : (
-                <>
-                    <DownloadButton
-                        className="ml-4"
-                        rootItem={rootItem}
-                        items={items}
-                        isScanAndDownload={isDownloadScanEnabled}
-                        disabled={hasOnlyDocuments}
-                        partialView={partialView}
-                    />
-                    {partialView && <ClosePartialPublicViewButton className="ml-5" />}
-                    {!hideSaveToDrive && !partialView && (
-                        <SaveToDriveButton
-                            loading={isLoading}
-                            onClick={addBookmark}
-                            alreadyBookmarked={isAlreadyBookmarked}
-                            customPassword={customPassword}
-                            className="ml-4"
-                        />
-                    )}
-                </>
+            {!!items.length && !viewportWidth['<=small'] && (
+                <DownloadButton
+                    rootItem={rootItem}
+                    items={items}
+                    isScanAndDownload={isDownloadScanEnabled}
+                    disabled={hasOnlyDocuments}
+                />
+            )}
+            {partialView && <ClosePartialPublicViewButton />}
+            {!hideSaveToDrive && !partialView && !viewportWidth['<=small'] && (
+                <SaveToDriveButton
+                    loading={isLoading}
+                    onClick={addBookmark}
+                    alreadyBookmarked={isAlreadyBookmarked}
+                    customPassword={customPassword}
+                    className="ml-4"
+                />
             )}
         </div>
     );

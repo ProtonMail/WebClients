@@ -228,6 +228,7 @@ export default function SharedFolder({
                         items={fileBrowserItems}
                         bookmarksPublicView={bookmarksPublicView}
                         hideSaveToDrive={hideSaveToDrive}
+                        partialView={partialView}
                     />
                 }
             >
