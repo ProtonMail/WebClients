@@ -227,54 +227,24 @@ const stateMock = {
     },
 } as unknown as State;
 
+const filter = { protocol: null, port: null, isPrivate: false };
+
 describe('item selectors', () => {
     describe('selectItemsByURL', () => {
         test('should return nothing if url is not valid or no match', () => {
-            expect(
-                selectItemsByDomain(null, {
-                    protocol: null,
-                    isPrivate: false,
-                })(stateMock)
-            ).toEqual([]);
-
-            expect(selectItemsByDomain('', { protocol: null, isPrivate: false })(stateMock)).toEqual([]);
-
-            expect(
-                selectItemsByDomain('http::://invalid.com', {
-                    protocol: null,
-                    isPrivate: false,
-                })(stateMock)
-            ).toEqual([]);
+            expect(selectItemsByDomain(null, filter)(stateMock)).toEqual([]);
+            expect(selectItemsByDomain('', filter)(stateMock)).toEqual([]);
+            expect(selectItemsByDomain('http::://invalid.com', filter)(stateMock)).toEqual([]);
         });
 
         test('should return nothing if no items match url', () => {
-            expect(
-                selectItemsByDomain('proton.ch', {
-                    protocol: null,
-                    isPrivate: false,
-                })(stateMock)
-            ).toEqual([]);
-
-            expect(
-                selectItemsByDomain('unknown.proton.me', {
-                    protocol: null,
-                    isPrivate: false,
-                })(stateMock)
-            ).toEqual([]);
-
-            expect(
-                selectItemsByDomain('proton.me/secret/path', {
-                    protocol: null,
-                    isPrivate: false,
-                })(stateMock)
-            ).toEqual([]);
+            expect(selectItemsByDomain('proton.ch', filter)(stateMock)).toEqual([]);
+            expect(selectItemsByDomain('unknown.proton.me', filter)(stateMock)).toEqual([]);
+            expect(selectItemsByDomain('proton.me/secret/path', filter)(stateMock)).toEqual([]);
         });
 
         test('should return only active items on direct match', () => {
-            const items = selectItemsByDomain('proton.me', {
-                protocol: null,
-                isPrivate: false,
-            })(stateMock);
+            const items = selectItemsByDomain('proton.me', filter)(stateMock);
 
             expect(items.length).toEqual(4);
             expect(items[0]).toEqual(withOptimistics(stateMock.items.byShareId.share1.item1));
@@ -284,10 +254,7 @@ describe('item selectors', () => {
         });
 
         test('should return only active items on direct match', () => {
-            const items = selectItemsByDomain('proton.me', {
-                protocol: null,
-                isPrivate: false,
-            })(stateMock);
+            const items = selectItemsByDomain('proton.me', filter)(stateMock);
 
             expect(items.length).toEqual(4);
             expect(items[0]).toEqual(withOptimistics(stateMock.items.byShareId.share1.item1));
@@ -297,65 +264,41 @@ describe('item selectors', () => {
         });
 
         test('should return only share matches if shareId filter', () => {
-            const itemsShare1 = selectItemsByDomain('proton.me', {
-                protocol: null,
-                isPrivate: false,
-                shareIds: ['share1'],
-            })(stateMock);
-
+            const itemsShare1 = selectItemsByDomain('proton.me', { ...filter, shareIds: ['share1'] })(stateMock);
             expect(itemsShare1.length).toEqual(2);
             expect(itemsShare1[0]).toEqual(withOptimistics(stateMock.items.byShareId.share1.item1));
             expect(itemsShare1[1]).toEqual(withOptimistics(stateMock.items.byShareId.share1.item2));
 
-            const itemsShare2 = selectItemsByDomain('proton.me', {
-                protocol: null,
-                isPrivate: false,
-                shareIds: ['share2'],
-            })(stateMock);
-
+            const itemsShare2 = selectItemsByDomain('proton.me', { ...filter, shareIds: ['share2'] })(stateMock);
             expect(itemsShare2.length).toEqual(1);
             expect(itemsShare2[0]).toEqual(withOptimistics(stateMock.items.byShareId.share2.item2));
 
-            const itemsShare3 = selectItemsByDomain('proton.me', {
-                protocol: null,
-                isPrivate: false,
-                shareIds: ['share3'],
-            })(stateMock);
-
+            const itemsShare3 = selectItemsByDomain('proton.me', { ...filter, shareIds: ['share3'] })(stateMock);
             expect(itemsShare3.length).toEqual(1);
             expect(itemsShare3[0]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item1));
 
-            const itemsShare4 = selectItemsByDomain('proton.me', {
-                protocol: null,
-                isPrivate: false,
-                shareIds: ['share4'],
-            })(stateMock);
-
+            const itemsShare4 = selectItemsByDomain('proton.me', { ...filter, shareIds: ['share4'] })(stateMock);
             expect(itemsShare4.length).toEqual(0);
         });
 
         test('should use protocol filter if any', () => {
-            const itemsHTTPS = selectItemsByDomain('proton.me', { protocol: 'https:', isPrivate: false })(stateMock);
-
+            const itemsHTTPS = selectItemsByDomain('proton.me', { ...filter, protocol: 'https:' })(stateMock);
             expect(itemsHTTPS.length).toEqual(1);
             expect(itemsHTTPS[0]).toEqual(withOptimistics(stateMock.items.byShareId.share1.item1));
 
-            const itemsHTTP = selectItemsByDomain('proton.me', { protocol: 'http:', isPrivate: false })(stateMock);
-
+            const itemsHTTP = selectItemsByDomain('proton.me', { ...filter, protocol: 'http:' })(stateMock);
             expect(itemsHTTP.length).toEqual(2);
             expect(itemsHTTP[0]).toEqual(withOptimistics(stateMock.items.byShareId.share1.item2));
             expect(itemsHTTP[1]).toEqual(withOptimistics(stateMock.items.byShareId.share2.item2));
 
-            const itemsAny = selectItemsByDomain('proton.me', { protocol: null, isPrivate: false })(stateMock);
-
+            const itemsAny = selectItemsByDomain('proton.me', filter)(stateMock);
             expect(itemsAny.length).toEqual(4);
             expect(itemsAny[0]).toEqual(withOptimistics(stateMock.items.byShareId.share1.item1));
             expect(itemsAny[1]).toEqual(withOptimistics(stateMock.items.byShareId.share1.item2));
             expect(itemsAny[2]).toEqual(withOptimistics(stateMock.items.byShareId.share2.item2));
             expect(itemsAny[3]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item1));
 
-            const itemsFTP = selectItemsByDomain('proton.me', { protocol: 'ftp:', isPrivate: false })(stateMock);
-
+            const itemsFTP = selectItemsByDomain('proton.me', { ...filter, protocol: 'ftp:' })(stateMock);
             expect(itemsFTP.length).toEqual(1);
             expect(itemsFTP[0]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item1));
         });
