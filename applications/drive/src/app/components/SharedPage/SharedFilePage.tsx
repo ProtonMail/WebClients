@@ -48,6 +48,7 @@ export default function SharedFilePage({
                         items={[{ id: link.linkId, ...link }]}
                         bookmarksPublicView={bookmarksPublicView}
                         hideSaveToDrive={hideSaveToDrive}
+                        partialView={partialView}
                     />
                 }
             >
