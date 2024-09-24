@@ -1,9 +1,10 @@
 import type { WebRequest } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
-import type { MaybeNull, TabId } from '@proton/pass/types';
+import type { TabId } from '@proton/pass/types';
 import { isFailedRequest } from '@proton/pass/utils/requests';
 import { parseUrl } from '@proton/pass/utils/url/parser';
+import type { ParsedUrl } from '@proton/pass/utils/url/types';
 
 /**
  * There is currently no way to retrieve the status
@@ -17,8 +18,8 @@ import { parseUrl } from '@proton/pass/utils/url/parser';
  */
 type MainFrameRequestTrackerOptions = {
     onTabDelete: (tabId: TabId) => void;
-    onTabError: (tabId: TabId, domain: MaybeNull<string>) => void;
-    onTabLoaded: (tabId: TabId, method: string, domain: MaybeNull<string>) => void;
+    onTabError: (tabId: TabId, url: ParsedUrl) => void;
+    onTabLoaded: (tabId: TabId, method: string, url: ParsedUrl) => void;
     onTabUpdate: (tabId: TabId) => void;
 };
 
@@ -35,9 +36,9 @@ export const createMainFrameRequestTracker = ({
 }: MainFrameRequestTrackerOptions) => {
     const onMainFrameCompleted = (req: WebRequest.OnCompletedDetailsType) => {
         onTabUpdate(req.tabId);
-        const domain = parseUrl(req.url).domain;
-        if (isFailedRequest(req)) onTabError(req.tabId, domain);
-        else onTabLoaded(req.tabId, req.method, domain);
+        const url = parseUrl(req.url);
+        if (isFailedRequest(req)) onTabError(req.tabId, url);
+        else onTabLoaded(req.tabId, req.method, url);
     };
 
     const onMainFrameDeleted = (tabId: TabId) => {

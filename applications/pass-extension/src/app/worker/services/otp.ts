@@ -55,7 +55,7 @@ export const createOTPService = () => {
         WorkerMessageType.AUTOFILL_OTP_CHECK,
         onContextReady((ctx, _, sender) => {
             const { url, tabId } = parseSender(sender);
-            const submission = ctx.service.formTracker.get(tabId, url?.domain ?? '');
+            const submission = ctx.service.formTracker.get(tabId, url);
             const state = ctx.service.store.getState();
             const match = selectOTPCandidate({ ...url, submission })(state);
             return match
