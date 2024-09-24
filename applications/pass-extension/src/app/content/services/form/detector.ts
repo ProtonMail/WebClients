@@ -216,7 +216,7 @@ export const createDetectorService = () => {
             await sendMessage
                 .onSuccess(contentScriptMessage({ type: WorkerMessageType.WEBSITE_RULES_REQUEST }), ({ rules }) => {
                     if (rules !== null) {
-                        logger.info('[Detector] Resolved website detection rules');
+                        logger.debug('[Detector] Resolved website detection rules');
                         state.rules = rules;
                     }
                 })
