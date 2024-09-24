@@ -13,6 +13,7 @@ import { first } from '@proton/pass/utils/array/first';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
+import { resolveDomain } from '@proton/pass/utils/url/utils';
 
 import { autofillIdentityFields } from './autofill.identity';
 
@@ -100,7 +101,6 @@ export const createAutofillService = () => {
         const url = ctx?.getExtensionContext().url;
         if (!url) return;
 
-        const { domain, subdomain, hostname } = url;
         form.getFieldsFor(FieldType.PASSWORD_NEW).forEach((field) => field.autofill(password));
 
         void sendMessage(
@@ -110,7 +110,7 @@ export const createAutofillService = () => {
                     action: passwordSave({
                         id: uniqueId(),
                         value: password,
-                        origin: subdomain ?? domain ?? hostname,
+                        origin: resolveDomain(url),
                         createTime: getEpoch(),
                     }),
                 },
@@ -172,10 +172,13 @@ export const createAutofillService = () => {
         return sendMessage.on(contentScriptMessage({ type: WorkerMessageType.AUTOFILL_OTP_CHECK }), (res) => {
             if (res.type === 'success' && res.shouldPrompt) {
                 const url = ctx.getExtensionContext().url;
+                const hostname = url ? resolveDomain(url) : null;
+                if (!hostname) return false;
+
                 ctx?.service.iframe.attachNotification()?.open({
                     action: NotificationAction.OTP,
                     item: { shareId: res.shareId, itemId: res.itemId },
-                    hostname: url?.subdomain ?? url?.domain ?? '',
+                    hostname,
                 });
 
                 return true;
