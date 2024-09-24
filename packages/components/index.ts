@@ -366,6 +366,8 @@ export { default as TotpInputs } from './containers/account/totp/TotpInputs';
 export { default as TwoFactorSection } from './containers/account/TwoFactorSection';
 export { default as UpgradeBanner } from './containers/account/UpgradeBanner';
 export { default as UsernameSection } from './containers/account/UsernameSection';
+export { default as AuthenticationProvider } from './containers/authentication/Provider';
+export { default as UnAuthenticated } from './containers/authentication/UnAuthenticated';
 export { AutoReplySection } from './containers/autoReply/AutoReplySection';
 export type { PassEvent } from './containers/b2bDashboard/Pass/interface';
 export { PassEvents } from './containers/b2bDashboard/Pass/PassEvents';

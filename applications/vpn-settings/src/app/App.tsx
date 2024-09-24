@@ -3,8 +3,7 @@ import { Router } from 'react-router-dom';
 import { createBrowserHistory as createHistory } from 'history';
 
 import * as bootstrap from '@proton/account/bootstrap';
-import { ApiProvider, ErrorBoundary, ProtonApp, StandardErrorPage } from '@proton/components';
-import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
+import { ApiProvider, AuthenticationProvider, ErrorBoundary, ProtonApp, StandardErrorPage } from '@proton/components';
 import useInstance from '@proton/hooks/useInstance';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';
