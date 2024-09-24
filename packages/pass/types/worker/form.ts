@@ -1,5 +1,6 @@
 import type { FormType } from '@proton/pass/fathom';
-import type { MaybeNull } from '@proton/pass/types/utils';
+import type { MaybeNull, RequiredNonNull } from '@proton/pass/types/utils';
+import type { URLComponents } from '@proton/pass/utils/url/types';
 
 import type { WithAutosavePrompt } from './autosave';
 import type { TabId } from './runtime';
@@ -29,7 +30,7 @@ export type FormSubmission = {
 export type FormSubmitPayload = FormSubmission & { reason: string };
 export type FormIdentifier = `${TabId}:${string}`;
 export type FormCredentials = { userIdentifier: string; password: string };
-export type FormEntryBase = FormSubmission & { domain: string; scheme?: string; subdomain: MaybeNull<string> };
+export type FormEntryBase = FormSubmission & RequiredNonNull<URLComponents, 'domain' | 'protocol'>;
 
 export type FormEntry<T extends FormEntryStatus = FormEntryStatus> = FormEntryBase & {
     status: T;
