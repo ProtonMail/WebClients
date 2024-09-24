@@ -171,14 +171,9 @@ export const createAutofillService = () => {
 
         return sendMessage.on(contentScriptMessage({ type: WorkerMessageType.AUTOFILL_OTP_CHECK }), (res) => {
             if (res.type === 'success' && res.shouldPrompt) {
-                const url = ctx.getExtensionContext().url;
-                const hostname = url ? resolveDomain(url) : null;
-                if (!hostname) return false;
-
                 ctx?.service.iframe.attachNotification()?.open({
                     action: NotificationAction.OTP,
                     item: { shareId: res.shareId, itemId: res.itemId },
-                    hostname,
                 });
 
                 return true;
