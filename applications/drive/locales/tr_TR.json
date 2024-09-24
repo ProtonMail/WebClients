@@ -2398,6 +2398,25 @@
         "Kendimizi geliştirmemize yardımcı olun"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Özel ${ PASS_APP_NAME } indirimini kaybedeceğinizi onaylayın"
+      ],
+      "Remove discount": [
+        "İndirimi kaldır"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "${ PLAN_NAMES[PLANS.PASS] } aboneliğinizi yıllık ${ price } özel fiyatı ile kullanıyorsunuz. Free tarifesine geçtikten sonra, gelecekte yeniden tarifenizi yükseltseniz bile indirim hakkınızı kalıcı olarak kaybedersiniz."
+      ]
+    },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } uygulamasında aç"
+      ],
+      "Save for later": [
+        "Sonrası için kaydet"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Genişletilmiş sürüm geçmişi"
@@ -7674,6 +7693,12 @@
       "Subfolder failed to be loaded": [
         "Alt klasör yüklenemedi"
       ],
+      "The item was not added to your drive": [
+        "Öge Drive depolama alanınıza eklenmedi"
+      ],
+      "The item was succefully added to your drive": [
+        "Öge Drive depolama alanınıza eklendi"
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "${ name }\" bağlantısı silinemedi"
       ],
@@ -8680,6 +8705,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "Bu ögenin bağlantısı Drive depolama alanınıza kaydedildi. Daha sonra 'Benimle paylaşılan' bölümünden erişebilirsiniz."
+      ],
       "Encrypted search is here": [
         "Şifrelenmiş aramayı deneyimleyin"
       ],
@@ -8871,6 +8899,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Tarifeniz bir iOS uygulaması kullanılarak satın alınmış. Bu nedenle, tarifenizde değişiklik yapmak ya da ödeme bilgilerinizi güncellemek için Apple App Store uygulamasını kullanmalısınız."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Abonelik tarifeniz fatura döneminin sonunda düşürülecek."
       ]
     },
     "Subscription price": {

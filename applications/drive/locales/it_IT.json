@@ -2398,6 +2398,25 @@
         "Aiutaci a migliorare"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Conferma la perdita dello sconto speciale ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Rimuovi sconto"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Il tuo abbonamento ${ PLAN_NAMES[PLANS.PASS] } ha un prezzo speciale di ${ price } all'anno. Effettuando il downgrade a un piano gratuito, perderai definitivamente lo sconto, anche se eseguirai nuovamente l'upgrade in futuro."
+      ]
+    },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Apri in ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Save for later": [
+        "Salva per dopo"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Cronologia estesa della versione"
@@ -7728,6 +7747,12 @@
       "Subfolder failed to be loaded": [
         "Caricamento della sottocartella non riuscito"
       ],
+      "The item was not added to your drive": [
+        "L'elemento non è stato aggiunto al tuo spazio"
+      ],
+      "The item was succefully added to your drive": [
+        "L'elemento è stato aggiunto correttamente al tuo spazio"
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Eliminazione del link a \"${ name }\" non riuscita"
       ],
@@ -8734,6 +8759,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "Un collegamento a questo elemento è stato salvato nel tuo spazio. Potrai accedervi in ​​seguito nella sezione \"Condivisi con me\"."
+      ],
       "Encrypted search is here": [
         "La ricerca crittografata è qui"
       ],
@@ -8925,6 +8953,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Il piano è stato acquistato dall'app per iOS. Per modificare il piano o aggiornare le informazioni di pagamento devi farlo attraverso l'Apple App Store."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "L'abbonamento verrà declassato alla fine del ciclo di fatturazione."
       ]
     },
     "Subscription price": {

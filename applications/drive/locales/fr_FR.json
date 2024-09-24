@@ -2409,6 +2409,14 @@
         "Votre abonnement ${ PLAN_NAMES[PLANS.PASS] } est au prix réduit de ${ price } par an. En passant à un abonnement gratuit, vous perdrez définitivement cette remise, même si vous décidez ensuite de passer à nouveau à un abonnement payant."
       ]
     },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Ouvrir dans ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Save for later": [
+        "Enregistrer pour plus tard"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Historique des versions plus détaillé"
@@ -8697,6 +8705,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "Un lien vers cet élément a été enregistré dans votre drive. Vous pourrez y accéder ultérieurement dans la section « Partagé avec moi »."
+      ],
       "Encrypted search is here": [
         "La recherche chiffrée se trouve ici."
       ],

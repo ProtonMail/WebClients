@@ -2403,13 +2403,13 @@
     },
     "Downgrade warning": {
       "Confirm loss of ${ PASS_APP_NAME } special discount": [
-        "Confirme a perda de ${ PASS_APP_NAME } desconto\nespecial"
+        "Confirmar a perda do desconto especial do ${ PASS_APP_NAME }"
       ],
       "Remove discount": [
-        "Remover o desconto"
+        "Tirar o desconto"
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
-        "A sua ${ PLAN_NAMES[PLANS.PASS] } Assinatura, está a um preço especial de ${ price } por ano. Rebaixando para um plano Livre, você perderá o desconto para sempre, mesmo se você fizer um upgrade de novo no futuro."
+        "Sua assinatura ${ PLAN_NAMES[PLANS.PASS] } está com um preço especial de ${ price } por ano. Ao reduzi-la para um plano gratuito, você perderá o desconto de forma definitiva, mesmo que volte a fazer um upgrade no futuro."
       ]
     },
     "drive:action": {
@@ -2417,7 +2417,7 @@
         "Abrir em ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Save for later": [
-        "Salvar para mais tarde"
+        "Salvar para depois"
       ]
     },
     "driveplus2024: Deal details": {
@@ -2460,7 +2460,7 @@
     },
     "duoplan2024: SubTitle": {
       "All of ${ BRAND_NAME }, for 2.": [
-        "Todos os recursos da ${ BRAND_NAME }, para 2 pessoas."
+        "Todos os recursos de ${ BRAND_NAME }, para 2 pessoas."
       ],
       "Double your storage": [
         "Dobre seu armazenamento"
@@ -7005,7 +7005,7 @@
         "Enviar e receber convites"
       ],
       "Share files with no size limit": [
-        "Compartilhamento de arquivos sem limite de tamanho"
+        "Compartilhe arquivos sem limite de tamanho"
       ],
       "Sign in as user": [
         "Início de sessão como usuário"
@@ -7238,7 +7238,7 @@
         "${ CALENDAR_APP_NAME }: Proteja sua agenda com criptografia de ponta a ponta. Inclui suporte para calendários personalizados, compartilhamento de calendário e muito mais."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Proteja seus arquivos com armazenamento em nuvem criptografado. Inclui sincronização automática, compartilhamento de arquivos criptografados e muito mais."
+        "${ DRIVE_APP_NAME }: proteja seus arquivos criptografados com armazenamento na nuvem. Inclui sincronização automática, compartilhamento de arquivos criptografados e muito mais."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Proteja seus e-mails com criptografia de ponta a ponta. Inclui suporte para domínios de e-mail personalizados, 15 endereços de e-mail, aliases ilimitados hide-my-email e muito mais."
@@ -7715,10 +7715,10 @@
         "Não foi possível carregar a subpasta."
       ],
       "The item was not added to your drive": [
-        "O item não foi adicionado à sua unidade"
+        "O item não foi adicionado ao seu drive"
       ],
       "The item was succefully added to your drive": [
-        "O item foi adicionado com sucesso\nà sua unidade"
+        "O item foi adicionado ao seu drive \ncom sucesso"
       ],
       "The link to \"${ name }\" failed to be deleted": [
         "Não foi possível excluir o link para \"${ name }\"."
@@ -7812,7 +7812,7 @@
         "Gerenciar acesso"
       ],
       "Securely store, manage, and share your business-critical files with confidence.": [
-        "Armazene, gerencie e compartilhe com segurança seus arquivos essenciais aos negócios com confiança."
+        "Armazene, gerencie e compartilhe seus arquivos de negócios essenciais de forma segura e confiável."
       ],
       "Set a recovery method": [
         "Definir um método de recuperação"
@@ -8732,6 +8732,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "Um link para este item foi salvo no seu drive. Você pode acessá-lo mais tarde na seção “Compartilhados comigo”."
+      ],
       "Encrypted search is here": [
         "A pesquisa criptografada está aqui"
       ],
@@ -8927,7 +8930,7 @@
     },
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
-        "A assinatura será rebaixada no final do ciclo de cobrança."
+        "A assinatura será rebaixada ao final do ciclo de cobrança."
       ]
     },
     "Subscription price": {
@@ -9378,7 +9381,7 @@
         "Importação de registro excluído"
       ],
       "Invitation rejected": [
-        "Convite rejeitado"
+        "Convite recusado"
       ],
       "Last modified aliases stored in your oldest vault": [
         "Últimos pseudônimos modificados armazenados em seu cofre mais antigo"
@@ -10000,7 +10003,7 @@
         "Restaurar seus arquivos"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
-        "Salve-o para mais tarde em ${ DRIVE_APP_NAME }"
+        "Salvar para depois em ${ DRIVE_APP_NAME }"
       ],
       "Search results": [
         "Resultados da pesquisa"
@@ -10192,7 +10195,7 @@
     },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
-        "Adicione esse arquivo compartilhado ao seu ${ DRIVE_APP_NAME } para facilitar o acesso posteriormente."
+        "Adicione este arquivo compartilhado ao seu ${ DRIVE_APP_NAME } para facilitar o acesso posteriormente."
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Indica automaticamente o formato no compositor que é usado para enviar para este usuário. Texto simples indica que a mensagem será sempre convertida em texto simples (sem formatação) no envio."
