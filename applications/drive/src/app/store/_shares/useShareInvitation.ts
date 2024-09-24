@@ -371,6 +371,9 @@ export const useShareInvitation = () => {
         }
         const { shareId: contextShareId, volumeId } = await getDefaultShare();
 
+        // TODO: Using default share will not work for invitations to items
+        // from other shares (Photos / Devices).
+        // https://jira.protontech.ch/browse/DRVWEB-4257
         const link = await getLink(abortSignal, contextShareId, linkId);
         if (!link.shareId) {
             throw new EnrichedError('Cannot load the share', {
@@ -397,7 +400,7 @@ export const useShareInvitation = () => {
         if (currentExternalInvitation.state !== SHARE_EXTERNAL_INVITATION_STATE.USER_REGISTERED) {
             throw new Error(c('Error').t`The invitation cannot be completed yet. Please try again later.`);
         }
-        const inviterAddressKey = await getShareCreatorKeys(abortSignal, link.shareId);
+        const inviterAddressKey = await getShareCreatorKeys(abortSignal, contextShareId);
         const inviteePublicKey = await driveCrypto.getVerificationKey(currentExternalInvitation.inviteeEmail);
 
         if (!inviteePublicKey.length) {
@@ -411,7 +414,7 @@ export const useShareInvitation = () => {
             });
         }
 
-        const linkPrivateKey = await getLinkPrivateKey(abortSignal, link.shareId, linkId);
+        const linkPrivateKey = await getLinkPrivateKey(abortSignal, contextShareId, linkId);
         const sessionKey = await getShareSessionKey(abortSignal, link.shareId, linkPrivateKey);
         const { verified } = await CryptoProxy.verifyMessage({
             binaryData: sessionKey.data,
@@ -439,7 +442,7 @@ export const useShareInvitation = () => {
                 publicKey: inviteePublicKey[0],
             },
             inviter: {
-                inviterEmail: currentExternalInvitation.inviterEmail,
+                inviterEmail: inviterAddressKey.address.Email,
                 addressKey: inviterAddressKey.privateKey,
             },
             permissions: currentExternalInvitation.permissions,
