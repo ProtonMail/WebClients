@@ -1241,7 +1241,7 @@
         "Amanhã"
       ],
       "Tracker protection prevented some images from loading. Load them if you trust the sender.": [
-        "A proteção do rastreador impediu que algumas imagens fossem carregadas. Carregue-as se você confiar no remetente."
+        "A proteção contra rastreadores impediu o carregamento de algumas imagens. Se você confia no remetente, carregue-as."
       ],
       "Trust": [
         "Confiar"
@@ -3599,13 +3599,13 @@
     },
     "Downgrade warning": {
       "Confirm loss of ${ PASS_APP_NAME } special discount": [
-        "Confirme a perda de ${ PASS_APP_NAME } desconto\nespecial"
+        "Confirmar a perda do desconto especial do ${ PASS_APP_NAME }"
       ],
       "Remove discount": [
-        "Remover o desconto"
+        "Tirar o desconto"
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
-        "A sua ${ PLAN_NAMES[PLANS.PASS] } Assinatura, está a um preço especial de ${ price } por ano. Rebaixando para um plano Livre, você perderá o desconto para sempre, mesmo se você fizer um upgrade de novo no futuro."
+        "Sua assinatura ${ PLAN_NAMES[PLANS.PASS] } está com um preço especial de ${ price } por ano. Ao reduzi-la para um plano gratuito, você perderá o desconto de forma definitiva, mesmo que volte a fazer um upgrade no futuro."
       ]
     },
     "Download attachments": {
@@ -3653,7 +3653,7 @@
     },
     "duoplan2024: SubTitle": {
       "All of ${ BRAND_NAME }, for 2.": [
-        "Todos os recursos da ${ BRAND_NAME }, para 2 pessoas."
+        "Todos os recursos de ${ BRAND_NAME }, para 2 pessoas."
       ],
       "Double your storage": [
         "Dobre seu armazenamento"
@@ -9367,7 +9367,7 @@
         "Enviar e receber convites"
       ],
       "Share files with no size limit": [
-        "Compartilhamento de arquivos sem limite de tamanho"
+        "Compartilhe arquivos sem limite de tamanho"
       ],
       "Sign in as user": [
         "Início de sessão como usuário"
@@ -9600,7 +9600,7 @@
         "${ CALENDAR_APP_NAME }: Proteja sua agenda com criptografia de ponta a ponta. Inclui suporte para calendários personalizados, compartilhamento de calendário e muito mais."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Proteja seus arquivos com armazenamento em nuvem criptografado. Inclui sincronização automática, compartilhamento de arquivos criptografados e muito mais."
+        "${ DRIVE_APP_NAME }: proteja seus arquivos criptografados com armazenamento na nuvem. Inclui sincronização automática, compartilhamento de arquivos criptografados e muito mais."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Proteja seus e-mails com criptografia de ponta a ponta. Inclui suporte para domínios de e-mail personalizados, 15 endereços de e-mail, aliases ilimitados hide-my-email e muito mais."
@@ -10924,7 +10924,7 @@
         "Mais rápido no aplicativo"
       ],
       "Private, fast, and organized": [
-        "Privado, rápido, e organizado"
+        "Confidencial, rápido e organizado"
       ]
     },
     "Snooze message": {
@@ -11371,7 +11371,7 @@
     },
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
-        "A assinatura será rebaixada no final do ciclo de cobrança."
+        "A assinatura será rebaixada ao final do ciclo de cobrança."
       ]
     },
     "Subscription price": {
@@ -11944,7 +11944,7 @@
         "Importação de registro excluído"
       ],
       "Invitation rejected": [
-        "Convite rejeitado"
+        "Convite recusado"
       ],
       "Keyboard shortcuts preferences updated": [
         "Preferências de atalhos de teclado atualizadas"

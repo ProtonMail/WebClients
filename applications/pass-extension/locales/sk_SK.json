@@ -116,11 +116,11 @@
       "Create": [
         "Vytvoriť"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Vytvoriť ${ BRAND_NAME } účet"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Vytvoriť účet ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Vytvoriť ${ BRAND_NAME } účet"
       ],
       "Create a new vault to share": [
         "Vytvoriť nový trezor na zdieľanie"
@@ -213,7 +213,7 @@
         "Upraviť trezor"
       ],
       "Enable this alias to receive emails sent to this alias": [
-        "Zapnite tento alias na prijímanie emailov zasielaných na tento alias"
+        "Zapnite tento alias, ak chcete prijímať emaily zasielané na tento alias"
       ],
       "Entire vault": [
         "Celý trezor"
@@ -636,6 +636,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } súbor nebolo možné analyzovať. ${ errorDetail }"
       ],
+      "[Error] an item could not be parsed": [
+        "[Chyba] položku nebolo možné analyzovať"
+      ],
       "Alias could not be updated at the moment. Please try again later": [
         "Alias nebolo momentálne možné aktualizovať. Skúste to neskôr, prosím"
       ],
@@ -903,6 +906,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Pri odstraňovaní bezpečného odkazu došlo k chybe. Skúste to o niekoľko minút znova, prosím."
       ],
+      "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
+        "Môže sa to stať po dlhšom čase nepoužívania ${ PASS_SHORT_APP_NAME } alebo po vymazaní histórie Safari."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Priveľa neúspešných pokusov. Prihláste sa, prosím znova."
       ],
@@ -962,6 +968,9 @@
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Momentálne ste offline. Obnovte, prosím, pripojenie, aby ste mohli odomknúť ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
+        "Váš prehliadač má problémy s aktiváciou ${ PASS_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Váš PIN kód bol odstránený iným klientom ${ PASS_APP_NAME }"
@@ -1132,6 +1141,9 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po úspešnom importe údajov môžete z bezpečnostných dôvodov odstrániť CSV súbor obsahujúci vaše heslá."
+      ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "Funkcie správy aliasov od SimpleLogin prídu čoskoro!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias bol úspešne vypnutý. Už nebudete dostávať emaily odoslané na adresu ${ item.aliasEmail }"
@@ -1763,6 +1775,9 @@
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "Ak chcete skontrolovať importované údaje, kliknite na ikonu Pass v nástrojovom paneli prehliadača."
       ],
+      "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
+        "Skúste znovu načítať alebo nainštalovať rozšírenie a uistite sa, že váš prehliadač a ${ PASS_SHORT_APP_NAME } sú aktuálne."
+      ],
       "Unable to copy to clipboard": [
         "Nedá sa kopírovať do schránky"
       ],
@@ -1839,7 +1854,7 @@
         "Zaznamenali sme, že máte ${ aliasCount } aliasov, ktoré sú prítomné v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich importovať?"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
-        "Pri vytváraní/úprave prihlásenia na ${ PASS_APP_NAME } bude vždy viditeľné vstupné pole 'používateľské meno'."
+        "Pri vytváraní/úprave prihlásenia na ${ PASS_APP_NAME } bude vstupné pole 'používateľské meno' vždy viditeľné ."
       ],
       "You are about to create:": [
         "Chystáte sa vytvoriť:"
@@ -2011,6 +2026,9 @@
       "Alias address": [
         "Adresa aliasu"
       ],
+      "Alias management": [
+        "Správa aliasov"
+      ],
       "Aliases": [
         "Aliasy"
       ],
@@ -2046,9 +2064,6 @@
       ],
       "Autosave": [
         "Automatické ukladanie"
-      ],
-      "Autosave vault": [
-        "Automatické ukladanie trezora"
       ],
       "Autosuggest": [
         "Automatické navrhovanie"
@@ -2569,6 +2584,9 @@
       "Type": [
         "Typ"
       ],
+      "Unknown": [
+        "Neznáme"
+      ],
       "Unlock ${ PASS_APP_NAME }": [
         "Odomknúť ${ PASS_APP_NAME }"
       ],
@@ -2723,9 +2741,6 @@
       ],
       "MM/YY": [
         "MM/RR"
-      ],
-      "Other": [
-        "Iné"
       ],
       "Password": [
         "Heslo"

@@ -116,10 +116,10 @@
       "Create": [
         "Opprett"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Opprett en ${ BRAND_NAME }-konto"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Opprett en ${ BRAND_NAME }-konto"
       ],
       "Create a new vault to share": [
@@ -897,6 +897,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Det oppstod en feil under fjerning av den sikre koblingen. Vennligst prøv igjen om noen minutter."
       ],
+      "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
+        "Dette kan oppstå etter en stund hvis du ikke bruker ${ PASS_SHORT_APP_NAME } eller tømmer historikken i Safari."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "For mange mislykkede forsøk. Vennligst logg på igjen."
       ],
@@ -956,6 +959,9 @@
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Du er frakoblet. Gjenoppta tilkoblingen for å låse opp ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
+        "Nettleseren har problemer med å aktivere ${ PASS_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN-koden ble fjernet av en annen ${ PASS_APP_NAME }-klient"
@@ -1104,6 +1110,9 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Når du har importert dataene dine, kan du av sikkerhetsgrunner slette CSV-filen som inneholder passordene dine."
+      ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "Aliasadministrasjonsfunksjoner fra SimpleLogin kommer snart!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias er deaktivert. Du vil ikke lenger motta e-poster sendt til ${ item.aliasEmail }"
@@ -1725,6 +1734,9 @@
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "For å se gjennom de importerte dataene dine, klikk på Pass-ikonet i nettleserens verktøylinje."
       ],
+      "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
+        "Prøv å laste inn eller installere utvidelsen på nytt, og sørg for at nettleseren og ${ PASS_SHORT_APP_NAME } er oppdatert."
+      ],
       "Unable to copy to clipboard": [
         "Ikke i stand til å kopiere til utklippstavlen"
       ],
@@ -1786,7 +1798,7 @@
         "Hvelv \"${ share.content.name }\" ble fjernet."
       ],
       "Verification code": [
-        "Bekreftelseskode"
+        "Verifiseringskode"
       ],
       "Viewer": [
         "Leser"
@@ -1886,7 +1898,7 @@
         "${ minutes } minutter"
       ],
       "${ PASS_SHORT_APP_NAME } monitor": [
-        "${ PASS_SHORT_APP_NAME }-overvåking"
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME }-versjon"
@@ -1957,6 +1969,9 @@
       "Alias address": [
         "Aliasadresse"
       ],
+      "Alias management": [
+        "Aliasadministrasjon"
+      ],
       "Aliases": [
         "Aliaser"
       ],
@@ -1992,9 +2007,6 @@
       ],
       "Autosave": [
         "Automatisk lagring"
-      ],
-      "Autosave vault": [
-        "Autolagringshvelv"
       ],
       "Autosuggest": [
         "Foreslå automatisk"
@@ -2666,9 +2678,6 @@
       "MM/YY": [
         "MM/ÅÅ"
       ],
-      "Other": [
-        "Annet"
-      ],
       "Password": [
         "Passord"
       ],
@@ -2726,7 +2735,7 @@
     },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
-        "${ PASS_APP_NAME }-innstillinger"
+        "Innstillinger for ${ PASS_APP_NAME }"
       ],
       "Auto-lock update": [
         "Oppdatering av autolås"

@@ -2424,6 +2424,25 @@
         "Дапамажыце нам палепшыць наш сэрвіс"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Пацвердзіць страту спецыяльнай скідкі ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Выдаліць скідку"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Ваша падпіска ${ PLAN_NAMES[PLANS.PASS] } па спецыяльнай цане ${ price } у год. Перайшоўшы на бясплатны тарыфны план, вы назаўсёды страціце скідку, нават калі ў будучыні зноў палепшыце сваю падпіску."
+      ]
+    },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Адкрыць у ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Save for later": [
+        "Захаваць на потым"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Пашыраная гісторыя версій"
@@ -7991,6 +8010,12 @@
       "Subfolder failed to be loaded": [
         "Не ўдалося загрузіць падпапкі"
       ],
+      "The item was not added to your drive": [
+        "Элемент не быў дадзены ў ваш дыск"
+      ],
+      "The item was succefully added to your drive": [
+        "Элемент паспяхова дадзены ў ваш дыск"
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Не ўдалося выдаліць спасылку на \"${ name }\""
       ],
@@ -8568,7 +8593,7 @@
         "Паспрабуйце ${ PASS_APP_NAME }"
       ],
       "Used on amazon for shopping, etc.": [
-        "Выкарыстоўвайце на Amazon для пакупак і г.д."
+        "Выкарыстоўваецца на Amazon для пакупак і г.д."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Дайце гэты псеўданім замест таго, каб уводзіць ваш сапраўдны адрас электроннай пошты. Псеўданімы забяспечваюцца ${ passLink }."
@@ -9051,6 +9076,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "Спасылка на гэты элемент захавана ў вашым дыску. Вы зможаце атрымаць доступ да яе ў раздзеле \"Абагуленыя са мной\"."
+      ],
       "Encrypted search is here": [
         "Зашыфраваны пошук тут"
       ],
@@ -9254,6 +9282,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Ваш тарыфны план куплены з дапамогай праграмы для iOS. Такім чынам, каб унесці змены ў яго або абнавіць рэквізіты плацяжу, вам неабходна зайсці ў Apple App Store."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Падпіска будзе паніжана ў канцы перыяду аплаты."
       ]
     },
     "Subscription price": {

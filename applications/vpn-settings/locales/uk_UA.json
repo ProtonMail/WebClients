@@ -244,9 +244,6 @@
       "Edit name": [
         "Змінити назву"
       ],
-      "Edit organization identity": [
-        "Редагувати ідентифікатор організації"
-      ],
       "Edit organization name": [
         "Редагувати назву організації"
       ],
@@ -3152,6 +3149,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "Версія програми"
+      ],
       "Best deal": [
         "Найкраща пропозиція"
       ],
@@ -3164,11 +3164,20 @@
       "Create your account": [
         "Створіть обліковий запис"
       ],
+      "Device": [
+        "Пристрій"
+      ],
+      "Event": [
+        "Подія"
+      ],
       "IP address": [
         "IP-адреса"
       ],
       "Key type": [
         "Тип ключа"
+      ],
+      "Location": [
+        "Розташування"
       ],
       "Members": [
         "Учасники"
@@ -3178,6 +3187,9 @@
       ],
       "Organization key fingerprint": [
         "Відбиток ключа організації"
+      ],
+      "Protection": [
+        "Захист"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Заощаджуйте на найкращих пропозиціях ${ VPN_APP_NAME }"
@@ -3199,6 +3211,9 @@
       ],
       "Status": [
         "Стан"
+      ],
+      "User": [
+        "Користувач"
       ]
     },
     "Header for addresses table": {
@@ -3508,9 +3523,6 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Ви дійсно хочете вилучити домен ${ boldDomain }?"
-      ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Попросіть адміністратора вашої організації налаштувати мережеві шлюзи."
       ],
       "Attention required": [
         "Потребує уваги"
@@ -5267,9 +5279,6 @@
       "Current email": [
         "Поточна адреса електронної пошти"
       ],
-      "Current organization identity": [
-        "Тотожність поточної організації"
-      ],
       "Default language": [
         "Мова"
       ],
@@ -5390,9 +5399,6 @@
       "New login password": [
         "Новий пароль входу"
       ],
-      "New organization identity": [
-        "Тотожність нової організації"
-      ],
       "New organization password": [
         "Новий пароль організації"
       ],
@@ -5422,9 +5428,6 @@
       ],
       "Optional": [
         "Необов'язково"
-      ],
-      "Organization identity": [
-        "Тотожність нової організації"
       ],
       "Organization name": [
         "Назва організації"
@@ -5968,23 +5971,6 @@
         "Середня швидкість VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Переглянути всі тарифні плани ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Від ${ price }"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade now": [
-        "Покращити"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Видалити обліковий запис"
@@ -6006,6 +5992,23 @@
       ],
       "Switch plan": [
         "Змінити тарифний план"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Переглянути всі тарифні плани ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Від ${ price }"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade now": [
+        "Покращити"
       ]
     },
     "new_plans: feature": {
@@ -9427,9 +9430,6 @@
       "Edit invoice details": [
         "Змінити подробиці рахунку"
       ],
-      "Edit organization identity": [
-        "Редагувати тотожність організації"
-      ],
       "Edit servers": [
         "Редагувати сервери"
       ],
@@ -9852,6 +9852,12 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "Адміністратори можуть змінювати ваш тарифний план, керувати обліковими записами та паролями користувачів, а також надавати адміністраторські повноваження іншим користувачам."
       ],
+      "An approximate location of the IP address": [
+        "Приблизне розташування IP-адреси"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Будь-який захист, застосований до підозрілої активності"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Автоматичне перемикання між вашими улюбленими темами дня і ночі синхронізовано з денним і нічним режимами вашої системи"
       ],
@@ -9860,6 +9866,9 @@
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Скопіюйте і вставте цю URL-адресу в поле Entity ID вашого провайдера ідентифікації"
+      ],
+      "Device information such as operating system": [
+        "Інформація про пристрій, наприклад, операційна система"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL-адреса кінцевої точки провайдера ідентифікації (наприклад, https://idp.example.com/sso/saml)"

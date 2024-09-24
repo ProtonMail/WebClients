@@ -116,10 +116,10 @@
       "Create": [
         "Opret"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Opret en ${ BRAND_NAME }-konto"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Opret en ${ BRAND_NAME }-konto"
       ],
       "Create a new vault to share": [
@@ -391,6 +391,9 @@
       ],
       "Reject invitation": [
         "Afvis invitation"
+      ],
+      "Reload extension": [
+        "Indlæs udvidelse igen"
       ],
       "Remove": [
         "Fjern"
@@ -894,6 +897,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Der opstod en fejl under fjernelse af det sikre link. Prøv igen om et par minutter."
       ],
+      "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
+        "Det kan ske efter lang tid uden brug af ${ PASS_SHORT_APP_NAME }, eller rydning af din Safari-historik."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "For mange mislykkede forsøg. Log venligst ind igen."
       ],
@@ -953,6 +959,9 @@
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Du er i øjeblikket offline. Genopret venligst forbindelsen for at oplåse ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
+        "Din browser har problemer med at aktivere ${ PASS_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Din pinkode blev fjernet af en anden ${ PASS_APP_NAME }-klient"
@@ -1722,6 +1731,9 @@
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "For at gennemgå dine importerede data skal du klikke på Pass-ikonet i din browsers værktøjslinje."
       ],
+      "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
+        "Prøv at genindlæse eller geninstallere udvidelsen, og sørg for, at din browser og ${ PASS_SHORT_APP_NAME } er opdateret."
+      ],
       "Unable to copy to clipboard": [
         "Kunne ikke kopiere til udklipsholder"
       ],
@@ -1989,9 +2001,6 @@
       ],
       "Autosave": [
         "Gem automatisk"
-      ],
-      "Autosave vault": [
-        "Autogem boks"
       ],
       "Autosuggest": [
         "Auto-forslag"
@@ -2663,9 +2672,6 @@
       "MM/YY": [
         "MM/ÅÅ"
       ],
-      "Other": [
-        "Andet"
-      ],
       "Password": [
         "Adgangskode"
       ],
@@ -2722,6 +2728,9 @@
       ]
     },
     "Title": {
+      "${ PASS_APP_NAME } Settings": [
+        "${ PASS_APP_NAME }-indstillinger"
+      ],
       "Auto-lock update": [
         "Autolås-opdatering"
       ],

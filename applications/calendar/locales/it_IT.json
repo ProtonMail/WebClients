@@ -482,11 +482,11 @@
       "Not now": [
         "Non ora"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Apri impostazioni ${ CALENDAR_APP_NAME }"
@@ -2598,6 +2598,17 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Aiutaci a migliorare"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Conferma la perdita dello sconto speciale ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Rimuovi sconto"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Il tuo abbonamento ${ PLAN_NAMES[PLANS.PASS] } ha un prezzo speciale di ${ price } all'anno. Effettuando il downgrade a un piano gratuito, perderai definitivamente lo sconto, anche se eseguirai nuovamente l'upgrade in futuro."
       ]
     },
     "driveplus2024: Deal details": {
@@ -8477,6 +8488,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Il piano è stato acquistato dall'app per iOS. Per modificare il piano o aggiornare le informazioni di pagamento devi farlo attraverso l'Apple App Store."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "L'abbonamento verrà declassato alla fine del ciclo di fatturazione."
       ]
     },
     "Subscription price": {

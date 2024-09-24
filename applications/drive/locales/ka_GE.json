@@ -2398,9 +2398,23 @@
         "დაგვეხმარეთ, გავუმჯობესდეთ"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "დაადასტურეთ ${ PASS_APP_NAME }-ის სპეციალური ფასდაკლების დაკარგვა"
+      ],
+      "Remove discount": [
+        "ფასდაკლების წაშლა"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "თქვენი ${ PLAN_NAMES[PLANS.PASS] }-ის გამოწერა წელიწადში სპეციალური ${ price } ღირს. Free სატარიფო გეგმაზე ჩამოწევით ფასადკლებას სამუდამოდ დაკარგავთ იმის მიუხედავად, ასწევთ თუ არა სატარიფო გეგმას მომავალში."
+      ]
+    },
     "drive:action": {
       "Open in ${ DRIVE_SHORT_APP_NAME }": [
         "${ DRIVE_SHORT_APP_NAME }-ში გახსნა"
+      ],
+      "Save for later": [
+        "შენახვა შემდგომისთვის"
       ]
     },
     "driveplus2024: Deal details": {
@@ -7679,6 +7693,12 @@
       "Subfolder failed to be loaded": [
         "ქვესაქაღალდის ჩატვირთვის შეცდომა"
       ],
+      "The item was not added to your drive": [
+        "ელემენტი არ დამატებულა თქვენს Drive-ზე"
+      ],
+      "The item was succefully added to your drive": [
+        "ელემენტი წარმატებით დაემატა თქვენს Drive-ზე"
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "\"${ name }\"-მდე ბმულის წაშლის შეცდომა"
       ],
@@ -8685,6 +8705,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "ბმული ამ ელემენტამდე შენახულია თქვენს Drive-ზე. მასზე წვდომა მოგვიანებით, 'ჩემთან გაზიარებულების' სექციაში შეგეძლებათ."
+      ],
       "Encrypted search is here": [
         "დაშიფრული ძებნა აქაა"
       ],
@@ -8876,6 +8899,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "თქვენი გეგმა iOS-ის აპით იქნა შეძენილი. იმისთვის, რომ თქვენს გეგმაში ცვლილებები შეიტნოთ, ან განაახლოთ გადახდის დეტალები, Apple App Store-ზე უნდა გადახვიდეთ."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "გამოწერის სატარიფო გეგმა ჩამოიწევა გადახდის ციკლის ბოლოს."
       ]
     },
     "Subscription price": {

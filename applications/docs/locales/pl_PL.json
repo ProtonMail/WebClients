@@ -3911,13 +3911,13 @@
         "Wygasła"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
-        "Nie udało się wygenerować linku. Powodem jest: ${ error }"
+        "Nie udało się wygenerować linku. ${ error }"
       ],
       "Failed to generate a secure link. Try again later": [
         "Nie udało się wygenerować linku. Spróbuj ponownie później"
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
-        "Nie udało się otworzyć linku. Powodem jest: ${ error }"
+        "Nie udało się otworzyć linku. ${ error }"
       ],
       "Failing signatures will be re-signed by you": [
         "W przypadku braku podpisu zostanie on ponownie podpisany przez Ciebie"

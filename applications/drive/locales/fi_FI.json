@@ -2398,6 +2398,25 @@
         "Auta meitä parantamaan"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Vahvista ${ PASS_APP_NAME }in erikoisalennuksen menettäminen."
+      ],
+      "Remove discount": [
+        "Poista alennus"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "${ PLAN_NAMES[PLANS.PASS] }-tilauksesi on erityishintaan ${ price } vuodessa. Jos vaihdat maksuttomaan tilaukseen, menetät alennuksen ikuisesti, vaikka päivittäisit uudelleen tulevaisuudessa."
+      ]
+    },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Avaa ${ DRIVE_SHORT_APP_NAME }ssä"
+      ],
+      "Save for later": [
+        "Tallenna myöhemmäksi"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Laajennettu versiohistoria"
@@ -5128,7 +5147,7 @@
         "Tuodaksesi tapahtumia, luo ensin ${ CALENDAR_APP_NAME }iin kalenteri, johon tapahtumat lisätään."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Allekirjoittaaksesi yhteystietosi uudelleen, on jokainen yhteystieto tarkistettava tilisi salausavainluetteloa vasten. Jos vastaavuutta ei löydy, allekirjoitetaan yhteystietosi ensisijaisella salausavaimella."
+        "Allekirjoittaaksesi yhteystietosi uudelleen, on jokainen yhteystieto tarkistettava tilisi salausavainlistaa vasten. Jos vastaavuutta ei löydy, allekirjoitetaan yhteystietosi ensisijaisella salausavaimella."
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "Tietojesi palauttamiseksi, sinun on aktivoitava uudelleen se tiliavain, joka oli käytössä kun tiedot luotiin. Sinun on myös muistettava avaimen luontihetkellä käytetty salasana."
@@ -7674,6 +7693,12 @@
       "Subfolder failed to be loaded": [
         "Alikansion lataus epäonnistui"
       ],
+      "The item was not added to your drive": [
+        "Kohdetta ei lisätty Driveesi"
+      ],
+      "The item was succefully added to your drive": [
+        "Kohde lisättiin tallennustilaasi"
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Kohteen \"${ name }\" linkin poisto epäonnistui"
       ],
@@ -7687,12 +7712,12 @@
         "Kohteen linkki poistettiin"
       ],
       "This item was not removed from your list": [
-        "Kohdetta ei poistettu luettelostasi",
-        "Joitakin kohteita ei voitu poistaa luettelostasi"
+        "Kohdetta ei poistettu listaltasi",
+        "Joitakin kohteita ei voitu poistaa listaltasi"
       ],
       "This item was succefully removed from your list": [
-        "Kohde poistettiin onnistuneesti luettelostasi",
-        "Kaikki kohteet poistettiin onnistuneesti luettelostasi"
+        "Kohde poistettiin listaltasi",
+        "Kaikki kohteet poistettiin listaltasi"
       ],
       "Trash failed to be emptied": [
         "Roskakorin tyhjennys epäonnistui"
@@ -8680,6 +8705,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "Linkki tähän kohteeseen on tallennettu Driveesi. Pääset siihen myöhemmin käsiksi ”Jaettu minulle” -osiossa."
+      ],
       "Encrypted search is here": [
         "Salattu haku löytyy tästä"
       ],
@@ -8871,6 +8899,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Tilauksesi ostettiin iOS-sovelluksella. Jos haluat muuttaa tilaustasi tai päivittää maksutietojasi, sinun on siirryttävä Apple App Storeen."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Tilaus alennetaan laskutusjakson päättyessä."
       ]
     },
     "Subscription price": {
@@ -9360,7 +9393,7 @@
         "Vahvistus onnistui"
       ],
       "You have successfully canceled your subscription.": [
-        "Olet onnistuneesti perunut tilauksesi."
+        "Olet perunut tilauksesi."
       ],
       "You have successfully unsubscribed": [
         "Tilauksesi on lopetettu"
@@ -9557,8 +9590,8 @@
         "Haluatko varmasti sulkea esikatselun?"
       ],
       "Are you sure you want to remove this item from your list?": [
-        "Haluatko varmasti poistaa tämän kohteen luettelostasi?",
-        "Haluatko varmasti poistaa nämä kohteet luettelostasi?"
+        "Haluatko varmasti poistaa tämän kohteen listaltasi?",
+        "Haluatko varmasti poistaa nämä kohteet listaltasi?"
       ],
       "Billing cycle": [
         "Laskutusjakso"

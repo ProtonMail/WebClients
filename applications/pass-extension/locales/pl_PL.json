@@ -116,10 +116,10 @@
       "Create": [
         "Utwórz"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Utwórz konto ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Utwórz konto ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
@@ -636,6 +636,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Plik eksportu danych ${ provider } nie mógł zostać przetworzony. ${ errorDetail }"
       ],
+      "[Error] an item could not be parsed": [
+        "[Błąd] Element nie mógł zostać przetworzony"
+      ],
       "Alias could not be updated at the moment. Please try again later": [
         "Alias nie może zostać zaktualizowany. Spróbuj ponownie później"
       ],
@@ -903,6 +906,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Wystąpił błąd podczas usuwania linku. Spróbuj ponownie za kilka minut."
       ],
+      "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
+        "Może to nastąpić po długim czasie nieużywania ${ PASS_SHORT_APP_NAME } lub wyczyszczeniu historii Safari."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Zbyt wiele nieudanych prób. Zaloguj się ponownie."
       ],
@@ -962,6 +968,9 @@
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Jesteś w trybie offline. Wznów połączenie, aby odblokować ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
+        "Twoja przeglądarka ma problemy z aktywacją ${ PASS_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Kod PIN został usunięty przez inną aplikację ${ PASS_APP_NAME }"
@@ -1129,6 +1138,9 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po zaimportowaniu danych możesz usunąć plik CSV zawierający hasła."
+      ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "Funkcja zarządzania aliasami SimpleLogin będzie dostępna wkrótce!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias został wyłączony. Nie będziesz otrzymywać wiadomości wysłanych na adres ${ item.aliasEmail }"
@@ -1760,6 +1772,9 @@
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "Kliknij ikonę Proton Pass na pasku narzędzi przeglądarki, aby przejrzeć zaimportowane dane."
       ],
+      "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
+        "Spróbuj ponownie załadować lub zainstalować rozszerzenie i upewnij się, że przeglądarka oraz ${ PASS_SHORT_APP_NAME } są aktualne."
+      ],
       "Unable to copy to clipboard": [
         "Nie można skopiować do schowka"
       ],
@@ -2008,6 +2023,9 @@
       "Alias address": [
         "Alias"
       ],
+      "Alias management": [
+        "Zarządzanie aliasami"
+      ],
       "Aliases": [
         "Aliasy"
       ],
@@ -2044,8 +2062,8 @@
       "Autosave": [
         "Automatyczne zapisywanie"
       ],
-      "Autosave vault": [
-        "Automatyczne zapisywanie sejfu"
+      "Autosuggest": [
+        "Automatyczne sugestie"
       ],
       "Biometrics": [
         "Biometria"
@@ -2715,9 +2733,6 @@
       "MM/YY": [
         "MM/RR"
       ],
-      "Other": [
-        "Inna"
-      ],
       "Password": [
         "Hasło"
       ],
@@ -2776,6 +2791,9 @@
       ]
     },
     "Title": {
+      "${ PASS_APP_NAME } Settings": [
+        "Ustawienia ${ PASS_APP_NAME }"
+      ],
       "Auto-lock update": [
         "Aktualizacja automatycznej blokady"
       ],

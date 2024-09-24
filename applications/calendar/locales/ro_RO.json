@@ -75,7 +75,7 @@
         "Adăugare grup"
       ],
       "Add note": [
-        "Adăugare notă"
+        "Adăugare notiță"
       ],
       "Add notification": [
         "Adăugare notificare"
@@ -485,10 +485,10 @@
       "Not now": [
         "Nu acum"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -1492,7 +1492,7 @@
         "Nume"
       ],
       "Note": [
-        "Observații"
+        "Notiță"
       ],
       "Organization": [
         "Organizația"
@@ -2619,6 +2619,17 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Ajutați-ne să îmbunătățim"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Confirmați renunțarea la reducerea specială pentru ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Renunțare la reducere"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Abonamentul pentru ${ PLAN_NAMES[PLANS.PASS] } este la un preț special de ${ price } pe an. Dacă treceți la un plan gratuit, veți pierde definitiv reducerea, chiar dacă reveniți la acest tip de plan în viitor."
       ]
     },
     "driveplus2024: Deal details": {
@@ -4652,7 +4663,7 @@
         "Importare mesaje"
       ],
       "Important note": [
-        "Notă importantă"
+        "Observație importantă"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Se importă datele de la ${ fromEmail } la ${ toEmail }."
@@ -5666,7 +5677,7 @@
         "Parola nouă"
       ],
       "Note": [
-        "Notă"
+        "Notiță"
       ],
       "Notification": [
         "Notificare"
@@ -8642,6 +8653,11 @@
         "Abonamentul a fost achiziționat din aplicația iOS. Pentru a face modificări la acesta sau a actualiza detaliile de plată, va trebui să o faceți din App Store de la Apple."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Abonamentul va fi retrogradat la sfârșitul perioadei de facturare."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Pentru ${ totalPrice }"
@@ -9648,7 +9664,7 @@
         "Nu există divulgări"
       ],
       "Notes": [
-        "Note"
+        "Notițe"
       ],
       "Open actions dropdown": [
         "Deschidere meniu acțiuni"

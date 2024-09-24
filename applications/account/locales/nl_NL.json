@@ -457,9 +457,6 @@
       "Edit name": [
         "Naam bewerken"
       ],
-      "Edit organization identity": [
-        "Identiteit organisatie bewerken"
-      ],
       "Edit organization name": [
         "Naam organisatie bewerken"
       ],
@@ -6614,6 +6611,9 @@
       "All keys successfully reactivated": [
         "Alle sleutels zijn succesvol geheractiveerd"
       ],
+      "All members have been added.": [
+        "Alle leden zijn toegevoegd."
+      ],
       "All your changes will be lost.": [
         "Alle wijzigingen gaan verloren."
       ],
@@ -6716,9 +6716,6 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Weet u zeker dat u het domein ${ boldDomain } wilt verwijderen?"
-      ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Vraag de beheerder van uw organisatie om Gateways in te stellen."
       ],
       "Attention required": [
         "Aandacht vereist"
@@ -9782,9 +9779,6 @@
       "Current email": [
         "Huidige e-mail"
       ],
-      "Current organization identity": [
-        "Huidige organisatie-identiteit"
-      ],
       "Daily email notifications": [
         "Dagelijkse e-mailmeldingen"
       ],
@@ -9874,9 +9868,6 @@
       ],
       "Email or username": [
         "E-mailadres of gebruikersnaam"
-      ],
-      "Email settings": [
-        "E-mailinstellingen"
       ],
       "Emails": [
         "E-mails"
@@ -10103,9 +10094,6 @@
       "New login password": [
         "Nieuw inlogwachtwoord"
       ],
-      "New organization identity": [
-        "Nieuwe organisatie-identiteit"
-      ],
       "New organization password": [
         "Nieuw organisatiewachtwoord"
       ],
@@ -10153,9 +10141,6 @@
       ],
       "Or": [
         "Of"
-      ],
-      "Organization identity": [
-        "Organisatie-identiteit"
       ],
       "Organization name": [
         "Organisatienaam"
@@ -11431,7 +11416,7 @@
         "${ n } VPN-verbindingen"
       ],
       "${ options }-day file version history": [
-        "Bestandsversiegeschiedenis van ${ options } dagen",
+        "Bestandsversiegeschiedenis van ${ options } dag",
         "Bestandsversiegeschiedenis van ${ options } dagen"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
@@ -11461,6 +11446,9 @@
       ],
       "10 email addresses/aliases": [
         "10 e-mailadressen/aliassen"
+      ],
+      "10-year file version history": [
+        "10-jarige bestandsversiegeschiedenis"
       ],
       "15 GB storage": [
         "15 GB opslagruimte"
@@ -15780,9 +15768,6 @@
       "Account recovery": [
         "Accountherstel"
       ],
-      "Account settings": [
-        "Accountinstellingen"
-      ],
       "Account suspended": [
         "Account opgeschort"
       ],
@@ -16036,9 +16021,6 @@
       "Custom filters": [
         "Aangepaste filters"
       ],
-      "Custom folders and labels": [
-        "Aangepaste mappen en labels"
-      ],
       "Custom selection of users": [
         "Aangepaste selectie van gebruikers"
       ],
@@ -16177,9 +16159,6 @@
       ],
       "Edit invoice details": [
         "Factuurgegevens wijzigen"
-      ],
-      "Edit organization identity": [
-        "Identiteit organisatie bewerken"
       ],
       "Edit profile": [
         "Profiel bewerken"
@@ -16708,9 +16687,6 @@
       "Sort labels alphabetically": [
         "Labels alfabetisch sorteren"
       ],
-      "Spam filters": [
-        "Spamfilters"
-      ],
       "Spam, block, and allow lists": [
         "Spam, blokkeer en accepteer lijsten"
       ],
@@ -17231,6 +17207,14 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Deze versie van Tor Browser wordt niet ondersteund. Werk de browser bij tot de meest recente versie ${ stableRelease }"
+      ]
+    },
+    "unprivatization": {
+      "Cancel": [
+        "Annuleren"
+      ],
+      "View request": [
+        "Aanvraag bekijken"
       ]
     },
     "Update font modal": {

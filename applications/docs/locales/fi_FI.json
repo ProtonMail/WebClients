@@ -2067,6 +2067,17 @@
         "Auta meitä parantamaan"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Vahvista ${ PASS_APP_NAME }in erikoisalennuksen menettäminen."
+      ],
+      "Remove discount": [
+        "Poista alennus"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "${ PLAN_NAMES[PLANS.PASS] }-tilauksesi on erityishintaan ${ price } vuodessa. Jos vaihdat maksuttomaan tilaukseen, menetät alennuksen ikuisesti, vaikka päivittäisit uudelleen tulevaisuudessa."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Laajennettu versiohistoria"
@@ -2232,10 +2243,16 @@
         "Summa on vähimmäismäärää pienempi (${ minimumAmount })."
       ],
       "An error occurred while attempting to convert the document. Please try again.": [
-        "Dokumentin muuntamisessa tapahtui virhe. Yritä uudelleen."
+        "Virhe muunnettaessa dokumenttia. Yritä uudelleen."
       ],
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Virhe kopioitaessa dokumenttia. Yritä uudelleen."
+      ],
+      "An error occurred while attempting to restore the document. Please try again.": [
+        "Virhe dokumenttia palautettaessa. Yritä uudelleen."
+      ],
+      "An error occurred while attempting to trash the document. Please try again.": [
+        "Virhe dokumenttia roskakoriin siirrettäessä. Yritä uudelleen."
       ],
       "An error occurred while creating a new document. Please try again.": [
         "Virhe luotaessa uuttaa dokumenttia. Yritä uudelleen."
@@ -4287,7 +4304,7 @@
         "Tuodaksesi tapahtumia, luo ensin ${ CALENDAR_APP_NAME }iin kalenteri, johon tapahtumat lisätään."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Allekirjoittaaksesi yhteystietosi uudelleen, on jokainen yhteystieto tarkistettava tilisi salausavainluetteloa vasten. Jos vastaavuutta ei löydy, allekirjoitetaan yhteystietosi ensisijaisella salausavaimella."
+        "Allekirjoittaaksesi yhteystietosi uudelleen, on jokainen yhteystieto tarkistettava tilisi salausavainlistaa vasten. Jos vastaavuutta ei löydy, allekirjoitetaan yhteystietosi ensisijaisella salausavaimella."
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "Tietojesi palauttamiseksi, sinun on aktivoitava uudelleen se tiliavain, joka oli käytössä kun tiedot luotiin. Sinun on myös muistettava avaimen luontihetkellä käytetty salasana."
@@ -7487,6 +7504,11 @@
         "Tilauksesi ostettiin iOS-sovelluksella. Jos haluat muuttaa tilaustasi tai päivittää maksutietojasi, sinun on siirryttävä Apple App Storeen."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Tilaus alennetaan laskutusjakson päättyessä."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Hintaan ${ totalPrice }"
@@ -7619,7 +7641,7 @@
         "Vahvistus onnistui"
       ],
       "You have successfully canceled your subscription.": [
-        "Olet onnistuneesti perunut tilauksesi."
+        "Olet perunut tilauksesi."
       ],
       "You have successfully unsubscribed": [
         "Tilauksesi on lopetettu"

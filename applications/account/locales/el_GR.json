@@ -466,9 +466,6 @@
       "Edit name": [
         "Επεξεργασία ονόματος"
       ],
-      "Edit organization identity": [
-        "Επεξεργασία ταυτότητας οργανισμού"
-      ],
       "Edit organization name": [
         "Επεξεργασία ονόματος οργανισμού"
       ],
@@ -3577,6 +3574,17 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Βοηθήστε μας να βελτιωθούμε"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Επιβεβαιώστε την απώλεια ειδικής έκπτωσης για το ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Αφαίρεση έκπτωσης"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Η ${ PLAN_NAMES[PLANS.PASS] } συνδρομή είναι σε ειδική τιμή ${ price } ανά έτος. Με την υποβάθμιση στο Free πλάνο, θα χάσετε οριστικά την έκπτωση, ακόμα και αν κάνετε αναβάθμιση ξανά στο μέλλον."
       ]
     },
     "Download link": {
@@ -6823,9 +6831,6 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Είστε βέβαιοι ότι θέλετε να καταργήσετε τον τομέα ${ boldDomain };"
       ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Ζητήστε από τον διαχειριστή του οργανισμού σας να ρυθμίσει τις Πύλες."
-      ],
       "Attention required": [
         "Χρειάζεται προσοχή"
       ],
@@ -9959,9 +9964,6 @@
       "Current email": [
         "Τρέχουσα διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
-      "Current organization identity": [
-        "Ταυτότητα τρέχον οργανισμού"
-      ],
       "Daily email notifications": [
         "Καθημερινές ειδοποιήσεις ηλεκτρονικού ταχυδρομείου"
       ],
@@ -10051,9 +10053,6 @@
       ],
       "Email or username": [
         "Διεύθυνση ή όνομα χρήστη"
-      ],
-      "Email settings": [
-        "Ρυθμίσεις Email"
       ],
       "Emails": [
         "Μηνύματα"
@@ -10286,9 +10285,6 @@
       "New login password": [
         "Νέος κωδικός σύνδεσης"
       ],
-      "New organization identity": [
-        "Ταυτότητα νέου οργανισμού"
-      ],
       "New organization password": [
         "Νέος κωδικός οργανισμού"
       ],
@@ -10336,9 +10332,6 @@
       ],
       "Or": [
         "Ή"
-      ],
-      "Organization identity": [
-        "Ταυτότητα οργανισμού"
       ],
       "Organization name": [
         "Όνομα οργανισμού"
@@ -15373,6 +15366,11 @@
         "Το πρόγραμμά σας αγοράστηκε χρησιμοποιώντας μια εφαρμογή iOS. Επομένως, για να κάνετε αλλαγές στο πρόγραμμά σας ή να ενημερώσετε τα στοιχεία πληρωμής σας, θα πρέπει να μεταβείτε στο Apple App Store."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Η συνδρομή θα υποβαθμιστεί στο τέλος του κύκλου χρέωσης."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Για ${ totalPrice }"
@@ -15912,9 +15910,6 @@
       "Organization activated": [
         "Ο οργανισμός ενεργοποιήθηκε"
       ],
-      "Organization identity updated": [
-        "Η ταυτότητα του οργανισμού ενημερώθηκε"
-      ],
       "Organization logo removed": [
         "Το λογότυπο του οργανισμού καταργήθηκε"
       ],
@@ -16282,9 +16277,6 @@
       "Account recovery": [
         "Ανάκτηση λογαριασμού"
       ],
-      "Account settings": [
-        "Ρυθμίσεις λογαριασμού"
-      ],
       "Account suspended": [
         "Ο λογαριασμός έχει ανασταλεί"
       ],
@@ -16547,9 +16539,6 @@
       "Custom filters": [
         "Προσαρμοσμένα φίλτρα"
       ],
-      "Custom folders and labels": [
-        "Προσαρμοσμένοι φάκελοι και ετικέτες"
-      ],
       "Custom selection of users": [
         "Προσαρμοσμένη επιλογή χρηστών"
       ],
@@ -16688,9 +16677,6 @@
       ],
       "Edit invoice details": [
         "Επεξεργασία στοιχείων τιμολογίου"
-      ],
-      "Edit organization identity": [
-        "Επεξεργασία ταυτότητας οργανισμού"
       ],
       "Edit profile": [
         "Επεξεργασία προφίλ"
@@ -17039,9 +17025,6 @@
       "Privacy and data collection": [
         "Απόρρητο και συλλογή δεδομένων"
       ],
-      "Privacy and security": [
-        "Απόρρητο και Ασφάλεια"
-      ],
       "Processing...": [
         "Γίνεται επεξεργασία..."
       ],
@@ -17224,9 +17207,6 @@
       ],
       "Sort labels alphabetically": [
         "Ταξινόμηση ετικετών αλφαβητικά"
-      ],
-      "Spam filters": [
-        "Φίλτρα Ανεπιθύμητων"
       ],
       "Spam, block, and allow lists": [
         "Λίστες ανεπιθύμητης αλληλογραφίας, αποκλεισμού και αποδοχής"
