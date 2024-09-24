@@ -46,7 +46,7 @@ import { deduplicate } from '@proton/pass/utils/array/duplicate';
 import { first } from '@proton/pass/utils/array/first';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { and, not, truthy } from '@proton/pass/utils/fp/predicates';
+import { and, not } from '@proton/pass/utils/fp/predicates';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
@@ -179,12 +179,13 @@ export const selectItemsByDomain = (domain: MaybeNull<string>, options: SelectIt
                   selectItemsWithOptimistic,
                   () => domain,
                   () => options.protocol,
+                  () => options.port,
                   () => options.isPrivate,
                   () => options.shareIds,
                   () => options.sortOn ?? 'lastUseTime',
                   () => options.strict,
               ],
-              (items, domain, protocol, isPrivate, shareIds, sortOn, strict) =>
+              (items, domain, protocol, port, isPrivate, shareIds, sortOn, strict) =>
                   items
                       .reduce<{ item: ItemRevisionWithOptimistic<'login'>; priority: ItemUrlMatch }[]>(
                           (matches, item) => {
@@ -201,9 +202,10 @@ export const selectItemsByDomain = (domain: MaybeNull<string>, options: SelectIt
                                   /* `getItemPriorityForUrl` will apply strict domain matching */
                                   const { data } = item;
                                   const priority = getItemPriorityForUrl(data)(domain, {
-                                      protocolFilter: [protocol].filter(truthy),
                                       isPrivate,
+                                      protocol,
                                       strict,
+                                      port,
                                   });
 
                                   /* if negative priority : this item does not match the criteria */
@@ -239,20 +241,39 @@ export const selectItemsByDomain = (domain: MaybeNull<string>, options: SelectIt
  * the other subdomain matches excluding any previously matched direct subdomain matches.
  * If we have no subdomain : return all matches (top level and other possible subdomain
  * matches) with top-level domain matches first. Pushes subdomain matches on top */
-export const selectAutofillLoginCandidates = (options: SelectAutofillCandidatesOptions) => {
-    const { domain, subdomain, isPrivate, isSecure, shareIds, strict } = options;
-    const protocol = !isSecure && options.protocol ? options.protocol : null;
-
-    return domain === null
+export const selectAutofillLoginCandidates = ({
+    domain,
+    subdomain,
+    port,
+    isPrivate,
+    isSecure,
+    protocol,
+    shareIds,
+    strict,
+}: SelectAutofillCandidatesOptions) =>
+    domain === null
         ? NOOP_LIST_SELECTOR<ItemRevisionWithOptimistic<'login'>>
         : createSelector(
               [
-                  selectItemsByDomain(domain, { protocol, isPrivate, shareIds, sortOn: 'priority', strict }),
-                  selectItemsByDomain(subdomain, { protocol, isPrivate, shareIds, sortOn: 'lastUseTime', strict }),
+                  selectItemsByDomain(domain, {
+                      isPrivate,
+                      port,
+                      protocol: !isSecure && protocol ? protocol : null,
+                      shareIds,
+                      sortOn: 'priority',
+                      strict,
+                  }),
+                  selectItemsByDomain(subdomain ?? '', {
+                      isPrivate,
+                      port,
+                      protocol: !isSecure && protocol ? protocol : null,
+                      shareIds,
+                      sortOn: 'lastUseTime',
+                      strict,
+                  }),
               ],
               (domainMatches, subdomainMatches) => deduplicate(subdomainMatches.concat(domainMatches), itemEq)
           );
-};
 
 export const selectAutofillIdentityCandidates = (shareIds?: string[]) =>
     createSelector(selectIdentityItems, (items) =>
@@ -262,12 +283,15 @@ export const selectAutofillIdentityCandidates = (shareIds?: string[]) =>
 export const selectAutosaveCandidate = (options: SelectAutosaveCandidatesOptions) =>
     createSelector(
         [
-            selectItemsByDomain(options.subdomain, { protocol: null, isPrivate: false, shareIds: options.shareIds }),
-            selectItemsByDomain(options.domain, { protocol: null, isPrivate: false, shareIds: options.shareIds }),
+            selectItemsByDomain(options.domain, {
+                isPrivate: false,
+                port: null,
+                protocol: null,
+                shareIds: options.shareIds,
+            }),
             () => options.userIdentifier,
         ],
-        (subdomainItems, domainItems, userIdentifier) => {
-            const candidates = deduplicate(subdomainItems.concat(domainItems), itemEq);
+        (candidates, userIdentifier) => {
             if (!userIdentifier) return candidates;
             return candidates.filter(hasUserIdentifier(userIdentifier));
         }
