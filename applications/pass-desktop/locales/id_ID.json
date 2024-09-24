@@ -688,6 +688,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Berkas ${ provider } tidak dapat diurai. ${ errorDetail }"
       ],
+      "[Error] an item could not be parsed": [
+        "[Kesalahan] terdapat item yang tidak dapat diurai"
+      ],
       "Alias could not be updated at the moment. Please try again later": [
         "Alias tidak dapat diperbaharui sekarang. Tolong coba lagi nanti"
       ],
@@ -1157,6 +1160,9 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Setelah data Anda berhasil diimpor, Anda dapat menghapus berkas CSV yang mengandung kata sandi ini demi keamanan Anda."
+      ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "Fitur pengelolaan alias dari SimpleLogin akan segera hadir!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias berhasil di-nonaktifkan. Kamu tidak akan menerima email yang terkirim ke ${ item.aliasEmail } lagi."
@@ -2015,6 +2021,9 @@
       "Alias address": [
         "Alamat alias"
       ],
+      "Alias management": [
+        "Pengelolaan alias"
+      ],
       "Aliases": [
         "Alias"
       ],
@@ -2549,6 +2558,9 @@
       "Type": [
         "Jenis"
       ],
+      "Unknown": [
+        "Tidak diketahui"
+      ],
       "Unlock with": [
         "Buka dengan"
       ],
@@ -2741,9 +2753,6 @@
       ],
       "MM/YY": [
         "BB/TT"
-      ],
-      "Other": [
-        "Lainnya"
       ],
       "Password": [
         "Kata sandi"

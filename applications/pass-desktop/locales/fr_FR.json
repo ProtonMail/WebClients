@@ -185,7 +185,7 @@
         "Désactiver à la place"
       ],
       "Disable this alias to stop receiving emails sent to this alias": [
-        "Désactiver cet alias pour ne plus recevoir les messages envoyés qui lui sont adressés"
+        "Désactivez cet alias pour ne plus recevoir les messages envoyés qui lui sont adressés."
       ],
       "Discard": [
         "Abandonner"
@@ -206,7 +206,7 @@
         "Activer la surveillance du dark web"
       ],
       "Enable this alias to receive emails sent to this alias": [
-        "Activer cet alias pour qu'il reçoive les messages qui lui sont adressés"
+        "Activez cet alias pour recevoir les messages qui lui sont adressés."
       ],
       "Entire vault": [
         "Tout le coffre-fort"
@@ -689,8 +689,11 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Le fichier ${ provider } n'a pu être analysé. ${ errorDetail }"
       ],
+      "[Error] an item could not be parsed": [
+        "[Erreur] Un élément n'a pas pu être analysé."
+      ],
       "Alias could not be updated at the moment. Please try again later": [
-        "Les alias n'ont pas pu être mis à jour pour le moment. Veuillez réessayer plus tard"
+        "Les alias n'ont pas pu être mis à jour pour le moment. Veuillez réessayer plus tard."
       ],
       "Alias options could not be resolved": [
         "Les options d'alias n'ont pas pu être obtenues."
@@ -821,7 +824,7 @@
         "Les éléments de la corbeille n'ont pas pu être restaurés."
       ],
       "Failed to sync aliases": [
-        "Échec de la synchronisation des alias"
+        "La synchronisation des alias n'a pas abouti."
       ],
       "Failed to transfer this vault's ownership.": [
         "Le transfert de la propriété de ce coffre-fort n'a pas abouti."
@@ -1172,11 +1175,14 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Après avoir importé vos données, vous pouvez supprimer le fichier CSV contenant vos mots de passe pour des raisons de sécurité."
       ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "Les fonctions de gestion des alias de SimpleLogin arrivent bientôt !"
+      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
-        "Alias désactivé avec succès. Vous ne recevrez plus les messages envoyés à ${ item.aliasEmail }"
+        "L'alias a été désactivé. Vous ne recevrez plus les messages envoyés à ${ item.aliasEmail }"
       ],
       "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
-        "Alias activé avec succès. Vous pouvez maintenant recevoir les messages envoyés à ${ item.aliasEmail }"
+        "L'alias est activé. Vous pouvez maintenant recevoir les messages envoyés à ${ item.aliasEmail }"
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
         "La synchronisation des alias entre vos comptes ${ BRAND_NAME } et SimpleLogin est active."
@@ -1881,7 +1887,7 @@
         "Nous avons envoyé un code de vérification à ${ email }. Veuillez le saisir ci-dessous :"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
-        "Lors de la création/modification d'un login sur ${ PASS_APP_NAME }, le champ ' nom d'utilisateur ' sera toujours visible."
+        "Lors de la création ou de la modification d'un identifiant sur ${ PASS_APP_NAME }, le champ Nom d'utilisateur sera toujours visible."
       ],
       "You are about to create:": [
         "Vous êtes sur le point de créer :"
@@ -2043,6 +2049,9 @@
       "Alias address": [
         "Adresse de l'alias"
       ],
+      "Alias management": [
+        "Gestion des alias"
+      ],
       "Aliases": [
         "Alias"
       ],
@@ -2056,7 +2065,7 @@
         "Ordre alphabétique"
       ],
       "Always show username field": [
-        "Toujours afficher le champ de nom utilisateur"
+        "Toujours afficher le champ Nom d'utilisateur"
       ],
       "Application logs": [
         "Journaux de l'application"
@@ -2158,7 +2167,7 @@
         "Domaine"
       ],
       "Don't remind me again": [
-        "Ne plus me rappeler"
+        "Ne plus me le rappeler"
       ],
       "Download logs": [
         "Télécharger les journaux"
@@ -2488,7 +2497,7 @@
         "Sélectionnez la langue souhaitée"
       ],
       "Select the vault where SimpleLogin aliases will be imported into": [
-        "Sélectionnez le coffre-fort dans lequel les alias SimpleLogin seront importés"
+        "Sélectionnez le coffre-fort dans lequel les alias SimpleLogin seront importés."
       ],
       "Select your password manager": [
         "Sélectionnez votre gestionnaire de mots de passe"
@@ -2577,6 +2586,9 @@
       ],
       "Type": [
         "Type"
+      ],
+      "Unknown": [
+        "Inconnu"
       ],
       "Unlock with": [
         "Déverrouiller avec"
@@ -2772,9 +2784,6 @@
       "MM/YY": [
         "MM/AA"
       ],
-      "Other": [
-        "Autre"
-      ],
       "Password": [
         "Mot de passe"
       ],
@@ -2837,7 +2846,7 @@
     },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
-        "La synchronisation des alias a été activée avec succès. La synchronisation des alias SimpleLogin peut prendre un certain temps."
+        "La synchronisation des alias a été activée. La synchronisation des alias SimpleLogin peut prendre un certain temps."
       ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Les coffres-forts ne peuvent pas compter plus de ${ vault.targetMaxMembers } utilisateur.",
@@ -3311,7 +3320,7 @@
         "Le préfixe de l'alias ne peut pas dépasser 40 caractères."
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
-        "Cet alias « ${ aliasEmail } » est actuellement utilisé dans le login « ${ relatedLoginName } »."
+        "Cet alias « ${ aliasEmail } » est actuellement utilisé dans l'identifiant « ${ relatedLoginName } »."
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Cette adresse e-mail ne sera plus surveillée en cas de fuites de données."
