@@ -250,9 +250,6 @@
       "Edit name": [
         "Edita el nom"
       ],
-      "Edit organization identity": [
-        "Edita la identitat de l'organització"
-      ],
       "Edit organization name": [
         "Edita el nom de l’organització"
       ],
@@ -3150,6 +3147,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "Versió de l'aplicació"
+      ],
       "Best deal": [
         "Millor oferta"
       ],
@@ -3162,11 +3162,20 @@
       "Create your account": [
         "Creeu el vostre compte"
       ],
+      "Device": [
+        "Dispositiu"
+      ],
+      "Event": [
+        "Esdeveniment"
+      ],
       "IP address": [
         "Adreça IP"
       ],
       "Key type": [
         "Tipus de clau"
+      ],
+      "Location": [
+        "Ubicació"
       ],
       "Members": [
         "Membres"
@@ -3176,6 +3185,9 @@
       ],
       "Organization key fingerprint": [
         "Clau d'identificació de la clau d'organització"
+      ],
+      "Protection": [
+        "Protecció"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Gran estalvi en les millors ofertes de ${ VPN_APP_NAME }"
@@ -3197,6 +3209,9 @@
       ],
       "Status": [
         "Estat"
+      ],
+      "User": [
+        "Usuari"
       ]
     },
     "Header for addresses table": {
@@ -3472,9 +3487,6 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Segur que voleu esborrar el domini «${ boldDomain }»?"
-      ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Demaneu a l'administrador de l'organització que configuri passarel·les."
       ],
       "Attention required": [
         "Es requereix la vostra atenció"
@@ -5187,9 +5199,6 @@
       "Current email": [
         "Correu electrònic actual"
       ],
-      "Current organization identity": [
-        "Identitat de l'organització actual"
-      ],
       "Default language": [
         "Idioma per defecte"
       ],
@@ -5310,9 +5319,6 @@
       "New login password": [
         "Nova contrasenya d'inici de sessió"
       ],
-      "New organization identity": [
-        "Nova identitat de l'organització"
-      ],
       "New organization password": [
         "Nova contrasenya de l'organització"
       ],
@@ -5342,9 +5348,6 @@
       ],
       "Optional": [
         "Opcional"
-      ],
-      "Organization identity": [
-        "Identitat de l'organització"
       ],
       "Organization name": [
         "Nom de l'organització"
@@ -5889,23 +5892,6 @@
         "Velocitat VPN mitjana"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explora tots els plans de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Des de ${ price }"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade now": [
-        "Millora ara"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Elimina el compte"
@@ -5927,6 +5913,23 @@
       ],
       "Switch plan": [
         "Canvia de pla"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explora tots els plans de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Des de ${ price }"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade now": [
+        "Millora ara"
       ]
     },
     "new_plans: feature": {
@@ -8899,9 +8902,6 @@
       "Organization activated": [
         "Organització activada"
       ],
-      "Organization identity updated": [
-        "S'ha actualitzat la identitat de l'organització"
-      ],
       "Password copied to clipboard": [
         "La contrasenya s'ha copiat al porta-retalls"
       ],
@@ -9368,9 +9368,6 @@
       "Edit invoice details": [
         "Edita les dades de la factura"
       ],
-      "Edit organization identity": [
-        "Edita la identitat de l'organització"
-      ],
       "Edit servers": [
         "Edita els servidors"
       ],
@@ -9591,6 +9588,9 @@
       "SAML authentication": [
         "Autenticació SAML"
       ],
+      "Security events": [
+        "Esdeveniments de seguretat"
+      ],
       "Select a plan": [
         "Seleccioneu un pla"
       ],
@@ -9798,6 +9798,12 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "Els administradors poden fer canvis a la vostra subscripció, gestionar comptes d'usuari i contrasenyes i donar privilegis d'administrador a altres usuaris."
       ],
+      "An approximate location of the IP address": [
+        "Una ubicació aproximada de l'adreça IP"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Qualsevol protecció aplicada a l'activitat sospitosa"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Canvia automàticament entre els temes preferits per a dia i nit en sincronització amb els modes de dia i nit del sistema"
       ],
@@ -9806,6 +9812,9 @@
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Copieu i enganxeu aquest URL al camp ID de l'entitat del vostre proveïdor d'identitat"
+      ],
+      "Device information such as operating system": [
+        "Informació del dispositiu com ara el sistema operatiu"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL del punt final del proveïdor d'identitat (p. ex. https://idp.exemple.cat/sso/saml)"

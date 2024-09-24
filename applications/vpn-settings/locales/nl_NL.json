@@ -247,9 +247,6 @@
       "Edit name": [
         "Naam bewerken"
       ],
-      "Edit organization identity": [
-        "Identiteit organisatie bewerken"
-      ],
       "Edit organization name": [
         "Naam organisatie bewerken"
       ],
@@ -3187,6 +3184,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "App versie"
+      ],
       "Best deal": [
         "Beste deal"
       ],
@@ -3199,11 +3199,20 @@
       "Create your account": [
         "Maak uw account aan"
       ],
+      "Device": [
+        "Apparaat"
+      ],
+      "Event": [
+        "Gebeurtenis"
+      ],
       "IP address": [
         "IP-adres"
       ],
       "Key type": [
         "Sleuteltype"
+      ],
+      "Location": [
+        "Locatie"
       ],
       "Members": [
         "Leden"
@@ -3213,6 +3222,9 @@
       ],
       "Organization key fingerprint": [
         "Vingerafdruk van organisatiesleutel"
+      ],
+      "Protection": [
+        "Bescherming"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Bespaar fors op de beste ${ VPN_APP_NAME } deals"
@@ -3234,6 +3246,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "User": [
+        "Gebruiker"
       ]
     },
     "Header for addresses table": {
@@ -3474,6 +3489,9 @@
       "All Events ": [
         "Alle Gebeurtenissen"
       ],
+      "All members have been added.": [
+        "Alle leden zijn toegevoegd."
+      ],
       "All your changes will be lost.": [
         "Alle wijzigingen gaan verloren."
       ],
@@ -3518,9 +3536,6 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Weet u zeker dat u het domein ${ boldDomain } wilt verwijderen?"
-      ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Vraag de beheerder van uw organisatie om Gateways in te stellen."
       ],
       "Attention required": [
         "Aandacht vereist"
@@ -5252,9 +5267,6 @@
       "Current email": [
         "Huidige e-mail"
       ],
-      "Current organization identity": [
-        "Huidige organisatie-identiteit"
-      ],
       "Default language": [
         "Standaardtaal"
       ],
@@ -5375,9 +5387,6 @@
       "New login password": [
         "Nieuw inlogwachtwoord"
       ],
-      "New organization identity": [
-        "Nieuwe organisatie-identiteit"
-      ],
       "New organization password": [
         "Nieuw organisatiewachtwoord"
       ],
@@ -5407,9 +5416,6 @@
       ],
       "Optional": [
         "Optioneel"
-      ],
-      "Organization identity": [
-        "Organisatie-identiteit"
       ],
       "Organization name": [
         "Organisatienaam"
@@ -5951,23 +5957,6 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Bekijk alle ${ BRAND_NAME }-abonnementen"
-      ],
-      "From ${ price }": [
-        "Vanaf ${ price }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Account verwijderen"
@@ -5989,6 +5978,23 @@
       ],
       "Switch plan": [
         "Van abonnement wisselen"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Bekijk alle ${ BRAND_NAME }-abonnementen"
+      ],
+      "From ${ price }": [
+        "Vanaf ${ price }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Upgrade nu"
       ]
     },
     "new_plans: feature": {
@@ -6059,7 +6065,7 @@
         "${ n } VPN-verbindingen"
       ],
       "${ options }-day file version history": [
-        "Bestandsversiegeschiedenis van ${ options } dagen",
+        "Bestandsversiegeschiedenis van ${ options } dag",
         "Bestandsversiegeschiedenis van ${ options } dagen"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
@@ -6089,6 +6095,9 @@
       ],
       "10 email addresses/aliases": [
         "10 e-mailadressen/aliassen"
+      ],
+      "10-year file version history": [
+        "10-jarige bestandsversiegeschiedenis"
       ],
       "15 GB storage": [
         "15 GB opslagruimte"
@@ -9490,9 +9499,6 @@
       "Edit invoice details": [
         "Factuurgegevens wijzigen"
       ],
-      "Edit organization identity": [
-        "Identiteit organisatie bewerken"
-      ],
       "Edit servers": [
         "Servers bewerken"
       ],
@@ -9920,6 +9926,12 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "Beheerders kunnen wijzigingen aanbrengen in je abonnement, gebruikersaccounts en wachtwoorden beheren, en beheerdersrechten toekennen aan andere gebruikers."
       ],
+      "An approximate location of the IP address": [
+        "Een geschatte locatie van het IP-adres"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Enige verdediging toegepast tot verdachte activiteit"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatisch wisselen tussen uw favoriete thema's voor dag en nacht met de dag- en nachtmodus van uw systeem"
       ],
@@ -9928,6 +9940,9 @@
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Kopieer en plak deze URL in het entiteitID-veld van uw identiteitsprovider"
+      ],
+      "Device information such as operating system": [
+        "Toestelinformatie zoals operating system"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Eindpunt URL van identiteitsprovider (bv. https://idp.example.com/sso/saml)"

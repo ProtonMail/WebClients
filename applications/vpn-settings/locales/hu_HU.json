@@ -221,9 +221,6 @@
       "Edit name": [
         "Név szerkesztése"
       ],
-      "Edit organization identity": [
-        "Szervezet azonosítójának szerkesztése"
-      ],
       "Edit organization name": [
         "Szervezet nevének szerkesztése"
       ],
@@ -2883,6 +2880,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "Alkalmazás verzió"
+      ],
       "Best deal": [
         "Legjobb üzlet"
       ],
@@ -2895,11 +2895,20 @@
       "Create your account": [
         "Fiók létrehozása"
       ],
+      "Device": [
+        "Eszköz"
+      ],
+      "Event": [
+        "Esemény"
+      ],
       "IP address": [
         "IP-cím"
       ],
       "Key type": [
         "Kulcs típusa"
+      ],
+      "Location": [
+        "Hely"
       ],
       "Members": [
         "Tagok"
@@ -2909,6 +2918,9 @@
       ],
       "Organization key fingerprint": [
         "Szervezeti kulcs ujjlenyomata"
+      ],
+      "Protection": [
+        "Védelem"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Kapja meg a legjobb ${ VPN_APP_NAME } üzleteket"
@@ -2930,6 +2942,9 @@
       ],
       "Status": [
         "Állapot"
+      ],
+      "User": [
+        "Felhasználó"
       ]
     },
     "Header for addresses table": {
@@ -4756,9 +4771,6 @@
       "Current email": [
         "Jelenlegi e-mail"
       ],
-      "Current organization identity": [
-        "Jelenlegi szervezeti azonosító"
-      ],
       "Default language": [
         "Alapértelmezett nyelv"
       ],
@@ -4861,9 +4873,6 @@
       "New login password": [
         "Új bejelentkezési jelszó"
       ],
-      "New organization identity": [
-        "Új szervezeti azonosító"
-      ],
       "New organization password": [
         "Új szervezeti jelszó"
       ],
@@ -4893,9 +4902,6 @@
       ],
       "Optional": [
         "Választható"
-      ],
-      "Organization identity": [
-        "Szervezet azonosítója"
       ],
       "Organization name": [
         "Szervezet neve"
@@ -5340,23 +5346,6 @@
         "Közepes VPN sebesség"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "További ${ BRAND_NAME } csomagok megismerése"
-      ],
-      "From ${ price }": [
-        "Már ${ price }-tól"
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Fiók törlése"
@@ -5378,6 +5367,23 @@
       ],
       "Switch plan": [
         "Csomag váltása"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "További ${ BRAND_NAME } csomagok megismerése"
+      ],
+      "From ${ price }": [
+        "Már ${ price }-tól"
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -7356,12 +7362,24 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME } with calendar sharing and availability": [
+        "${ CALENDAR_APP_NAME } naptármegosztással és elérhetőséggel"
+      ],
       "${ dayDiff } day left": [
         "${ dayDiff } nap van hátra",
         "${ dayDiff } nap van hátra"
       ],
+      "${ DRIVE_APP_NAME } with version history": [
+        "${ DRIVE_APP_NAME } verzióelőzményekkel"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } asztali alkalmazás"
+      ],
+      "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
+        "A ${ MAIL_APP_NAME } biztonságban tartja üzleti adatait, és bárkinek titkosított e-maileket küldhet"
+      ],
+      "${ MAIL_APP_NAME } with automatic email forwarding": [
+        "${ MAIL_APP_NAME } automatikus e-mail-átirányítással"
       ],
       "${ MaxCalendars } calendar per user": [
         "${ MaxCalendars } naptár felhasználónként",
@@ -7375,20 +7393,41 @@
         "${ maxEmails } e-mail cím felhasználónként",
         "${ maxEmails } e-mail cím felhasználónként"
       ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } a következővel: ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } tárhely felhasználónként"
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } teljes tárhely"
       ],
+      "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
+        "A ${ planName } a ${ BRAND_NAME } összes alkalmazásához és prémium funkcióihoz való hozzáféréssel biztosítja csapatának azt, amire szükségük van ahhoz, hogy hatékonyabban és szervezettebben dolgozhassanak."
+      ],
+      "${ planName } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
+        "A ${ planName } megadja csapatának azt, amire szükségük van ahhoz, hogy produktívabbak, szervezettebbek legyenek, és kézben tartsák beérkező leveleiket, ütemezésüket és sok mást."
+      ],
       "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
         "${ planName } segít a családtagjai — és adataik — védelmében, amikor csak online vannak."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
+        "A ${ planName } ${ planMaxSpace } tárhelyet kínál felhasználónként e-mailek, mellékletek, események és fájlok számára. Ezenkívül jogosult éves tárolási bónuszokra."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
+        "A ${ planName } ${ planMaxSpace } tárhelyet kínál felhasználónként e-mailek, mellékletek, események, fájlok és jelszavak számára. Ezenkívül jogosult éves tárolási bónuszokra."
       ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } program"
       ],
+      "${ VPN_APP_NAME } with malware and ad-blocking": [
+        "${ VPN_APP_NAME } rosszindulatú program és hirdetésblokkolóval"
+      ],
       "10 email addresses": [
         "10 e-mail cím"
+      ],
+      "20 email addresses per user": [
+        "20 e-mail cím felhasználónként"
       ],
       "25 calendars per user": [
         "25 naptár felhasználónként"
@@ -7396,11 +7435,20 @@
       "6 users": [
         "6 felhasználó"
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "A ${ planName } előfizetés lejárta után visszaminősítjük a ${ BRAND_NAME } ingyenesre, amely legfeljebb 1 GB Mail-tárhelyet és legfeljebb 5 GB Drive-tárhelyet kínál. Csapata munkája megszakításokat fog tapasztalni, mivel az ingyenes csomag nem támogatja a további felhasználókat."
+      ],
       "All you need for your business": [
         "Minden, amire az üzlethez szüksége van"
       ],
+      "Any custom email domains will be disabled": [
+        "Minden egyéni e-mail domain le lesz tiltva"
+      ],
       "Automatic email forwarding": [
         "Automatikus e-mail továbbítás"
+      ],
+      "Build trust and brand recognition with professional email addresses at your own domain.": [
+        "Építsen bizalmat és a márka ismertségét professzionális e-mail címekkel a saját domainjében!"
       ],
       "Calendar sharing": [
         "Naptár megosztás"
@@ -7411,20 +7459,56 @@
       "Cancel subscription?": [
         "Előfizetés lemondása?"
       ],
+      "Catch-all email address": [
+        "Mindenre kiterjedő e-mail cím"
+      ],
       "Close": [
         "Bezárás"
+      ],
+      "Desktop app and email client support (via IMAP)": [
+        "Asztali alkalmazás és e-mail kliens támogatás (IMAP-on keresztül)"
+      ],
+      "Email productivity features": [
+        "Email hatékonysági funciók"
+      ],
+      "Extra storage and users": [
+        "Extra tárhely és további felhasználók"
+      ],
+      "Invited members will be removed from your organization": [
+        "A meghívott tagokat eltávolítjuk a szervezetből."
       ],
       "Keep ${ config.planName }": [
         "Maradjon ${ config.planName }"
       ],
+      "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
+        "Tartsa biztonságban csapatát útközben is webes, iOS-, Android-, Windows-, Mac- és Linux-alkalmazásainkkal."
+      ],
       "Learn more": [
         "További információk"
+      ],
+      "Make your business stand out": [
+        "Emelje ki vállalkozását!"
       ],
       "Online privacy, for your whole family": [
         "Online adatvédelem az egész családnak"
       ],
+      "Organizations, additional users, and custom email domains are not supported on the free plan. This means:": [
+        "Az ingyenes csomag nem támogatja a szervezeteket, a további felhasználókat és az egyéni e-mail-domaineket. Ez azt jelenti:"
+      ],
       "Priority support": [
         "Elsőbbségi támogatás"
+      ],
+      "Productivity features": [
+        "Hatékonysági funkciók"
+      ],
+      "See your colleagues’ availability": [
+        "Nézze meg kollégái elérhetőségét!"
+      ],
+      "Stay secure and connected anywhere": [
+        "Maradjon biztonságban és kapcsolatban bárhol!"
+      ],
+      "Support your compliance objectives": [
+        "Támogassa megfelelési céljait"
       ],
       "Unlimited folders and labels": [
         "Korlátlan mappa és címke"
@@ -7432,11 +7516,23 @@
       "Unlimited folders, labels and filters": [
         "Korlátlan számú mappa, címke és szűrő"
       ],
+      "Users won’t be able to manage their calendars": [
+        "A felhasználók nem tudják majd kezelni a naptáraikat"
+      ],
       "Users won’t be able to send emails": [
         "Felhasználók nem fognak tudni e-maileket küldeni"
       ],
+      "Users won’t be able to sync files on their devices": [
+        "A felhasználók nem tudják majd szinkronizálni a fájlokat eszközeiken"
+      ],
       "Version history": [
         "Verziótörténet"
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "A ${ planName } előfizetés lejárta után visszaminősítjük a ${ BRAND_NAME } ingyenesre, amely legfeljebb 1 GB Mail-tárhelyet és legfeljebb 5 GB Drive-tárhelyet kínál. Csapata munkája megszakításokat fog tapasztalni, mivel az ingyenes csomag nem támogatja a további felhasználókat."
+      ],
+      "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
+        "${ planName } csomagunk nem csak az üzleti adatait és kommunikációját tartja biztonságban. Támogatja megfelelőségi céljait, kiemeli vállalkozását, és kapcsolatot tart a csapattal."
       ]
     },
     "subscription reminder": {
@@ -7549,9 +7645,6 @@
       ],
       "Organization activated": [
         "Szervezet aktiválva"
-      ],
-      "Organization identity updated": [
-        "Szervezet azonosítója frissítve"
       ],
       "Organization logo removed": [
         "Szervezet logója eltávolítva"
@@ -8004,9 +8097,6 @@
       "Edit invoice details": [
         "Számlázási adatok szerkesztése"
       ],
-      "Edit organization identity": [
-        "Szervezet azonosítójának szerkesztése"
-      ],
       "Edit user": [
         "Felhasználó szerkesztése"
       ],
@@ -8190,6 +8280,9 @@
       ],
       "Revoke certificate": [
         "Tanúsítvány visszavonása"
+      ],
+      "Security events": [
+        "Biztonsági események"
       ],
       "Select a plan": [
         "Csomag kiválasztása"
@@ -8389,8 +8482,17 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "Adminisztrátorok meg tudják változtatni az előfizetését, kezelhetik a felhasználói fiókokat és jelszókat, és tudnak adminisztrátor jogokat adni más felhasználóknak."
       ],
+      "An approximate location of the IP address": [
+        "Az IP cím hozzávetőleges helyzete"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Bármilyen védelem alkalmazása gyanús tevékenységre"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatikus váltás az Ön által preferált nappali és éjszakai témák között a rendszer nappali és éjszakai üzemmódjával szinkronban."
+      ],
+      "Device information such as operating system": [
+        "Eszközinformáció, mint például az operációs rendszer"
       ],
       "Feature in early access": [
         "A funkció korai hozzáférésben van"

@@ -253,9 +253,6 @@
       "Edit name": [
         "Modifica nome"
       ],
-      "Edit organization identity": [
-        "Modifica l'identità dell'organizzazione"
-      ],
       "Edit organization name": [
         "Modifica il nome dell'organizzazione"
       ],
@@ -2243,6 +2240,17 @@
         "Aiutaci a migliorare"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Conferma la perdita dello sconto speciale ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Rimuovi sconto"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Il tuo abbonamento ${ PLAN_NAMES[PLANS.PASS] } ha un prezzo speciale di ${ price } all'anno. Effettuando il downgrade a un piano gratuito, perderai definitivamente lo sconto, anche se eseguirai nuovamente l'upgrade in futuro."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Cronologia estesa della versione"
@@ -3217,6 +3225,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "Versione applicazione"
+      ],
       "Best deal": [
         "Miglior offerta"
       ],
@@ -3229,11 +3240,20 @@
       "Create your account": [
         "Crea il tuo account"
       ],
+      "Device": [
+        "Dispositivo"
+      ],
+      "Event": [
+        "Evento"
+      ],
       "IP address": [
         "Indirizzo IP"
       ],
       "Key type": [
         "Tipo di chiave"
+      ],
+      "Location": [
+        "Localizzazione"
       ],
       "Members": [
         "Membri"
@@ -3243,6 +3263,9 @@
       ],
       "Organization key fingerprint": [
         "Impronta digitale della chiave dell'organizzazione"
+      ],
+      "Protection": [
+        "Protezione"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Risparmia alla grande sulle migliori offerte ${ VPN_APP_NAME }"
@@ -3264,6 +3287,9 @@
       ],
       "Status": [
         "Stato"
+      ],
+      "User": [
+        "Utente"
       ]
     },
     "Header for addresses table": {
@@ -3554,9 +3580,6 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Sei sicuro di voler rimuovere il dominio ${ boldDomain }?"
-      ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Chiedi all'amministratore della tua organizzazione di configurare i gateway."
       ],
       "Attention required": [
         "Attenzione"
@@ -5341,9 +5364,6 @@
       "Current email": [
         "Email attuale"
       ],
-      "Current organization identity": [
-        "Identità dell'organizzazione attuale"
-      ],
       "Default language": [
         "Lingua predefinita"
       ],
@@ -5464,9 +5484,6 @@
       "New login password": [
         "Nuova password di accesso"
       ],
-      "New organization identity": [
-        "Nuova identità dell'organizzazione"
-      ],
       "New organization password": [
         "Nuova password dell'organizzazione"
       ],
@@ -5496,9 +5513,6 @@
       ],
       "Optional": [
         "Facoltativo"
-      ],
-      "Organization identity": [
-        "Identità dell'organizzazione"
       ],
       "Organization name": [
         "Nome dell'organizzazione"
@@ -6049,23 +6063,6 @@
         "Media velocità della VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Scopri tutti i piani ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Da ${ price }"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade now": [
-        "Effettua l'upgrade ora"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Elimina l'account"
@@ -6087,6 +6084,23 @@
       ],
       "Switch plan": [
         "Cambia piano"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Scopri tutti i piani ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Da ${ price }"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade now": [
+        "Effettua l'upgrade ora"
       ]
     },
     "new_plans: feature": {
@@ -8687,6 +8701,11 @@
         "Il piano è stato acquistato dall'app per iOS. Per modificare il piano o aggiornare le informazioni di pagamento devi farlo attraverso l'Apple App Store."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "L'abbonamento verrà declassato alla fine del ciclo di fatturazione."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Per ${ totalPrice }"
@@ -9187,9 +9206,6 @@
       "Organization activated": [
         "Organizzazione attivata"
       ],
-      "Organization identity updated": [
-        "Identità dell'organizzazione aggiornata"
-      ],
       "Organization logo removed": [
         "Logo dell'organizzazione rimosso"
       ],
@@ -9680,9 +9696,6 @@
       "Edit invoice details": [
         "Modifica i dettagli delle fatture"
       ],
-      "Edit organization identity": [
-        "Modifica l'identità dell'organizzazione"
-      ],
       "Edit servers": [
         "Modifica server"
       ],
@@ -9903,6 +9916,9 @@
       "SAML authentication": [
         "Autenticazione SAML"
       ],
+      "Security events": [
+        "Eventi di sicurezza"
+      ],
       "Select a plan": [
         "Seleziona un piano"
       ],
@@ -10110,6 +10126,12 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "Gli amministratori possono apportare modifiche all'abbonamento, gestire account utente e password e concedere privilegi di amministratore ad altri utenti."
       ],
+      "An approximate location of the IP address": [
+        "Una posizione approssimativa dell'indirizzo IP"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Qualsiasi protezione applicata alle attività sospette"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Passa automaticamente tra i tuoi temi preferiti per il giorno e per la notte sincronizzandoli con le modalità di giorno e di notte del tuo sistema."
       ],
@@ -10118,6 +10140,9 @@
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Copia e incolla questo URL nel campo Entity ID del tuo fornitore di identità"
+      ],
+      "Device information such as operating system": [
+        "Informazioni sul dispositivo come il sistema operativo"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Endpoint URL dal fornitore d'identità (es. https://idp.esempio.it/sso/saml)"

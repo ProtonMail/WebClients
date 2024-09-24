@@ -253,9 +253,6 @@
       "Edit name": [
         "이름 편집"
       ],
-      "Edit organization identity": [
-        "조직 신원을 편집합니다"
-      ],
       "Edit organization name": [
         "조직 이름 편집하기"
       ],
@@ -3206,6 +3203,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "앱 버전"
+      ],
       "Best deal": [
         "초특가"
       ],
@@ -3218,11 +3218,20 @@
       "Create your account": [
         "계정 만들기"
       ],
+      "Device": [
+        "기기"
+      ],
+      "Event": [
+        "이벤트"
+      ],
       "IP address": [
         "IP 주소"
       ],
       "Key type": [
         "키 유형"
+      ],
+      "Location": [
+        "위치"
       ],
       "Members": [
         "구성원"
@@ -3232,6 +3241,9 @@
       ],
       "Organization key fingerprint": [
         "조직 키 지문"
+      ],
+      "Protection": [
+        "보호"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "최고의 ${ VPN_APP_NAME } 특가로 크게 절약하세요"
@@ -3253,6 +3265,9 @@
       ],
       "Status": [
         "상태"
+      ],
+      "User": [
+        "사용자"
       ]
     },
     "Header for addresses table": {
@@ -3529,9 +3544,6 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "이 도메인 ${ boldDomain }을(를) 정말 제거하시겠습니까?"
-      ],
-      "Ask your organisation admin to setup Gateways.": [
-        "게이트웨이를 설정하도록 조직의 관리자에 연락하십시오."
       ],
       "Attention required": [
         "주의 필요"
@@ -5296,9 +5308,6 @@
       "Current email": [
         "현재 이메일"
       ],
-      "Current organization identity": [
-        "지금의 조직 신원"
-      ],
       "Default language": [
         "기본 언어"
       ],
@@ -5419,9 +5428,6 @@
       "New login password": [
         "새 로그인 비밀번호"
       ],
-      "New organization identity": [
-        "새로운 조직 신원"
-      ],
       "New organization password": [
         "새 조직 비밀번호"
       ],
@@ -5451,9 +5457,6 @@
       ],
       "Optional": [
         "선택 사항"
-      ],
-      "Organization identity": [
-        "조직 신원"
       ],
       "Organization name": [
         "조직 이름"
@@ -6003,23 +6006,6 @@
         "중간 VPN 속도"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
-      ],
-      "From ${ price }": [
-        "시작 가격: ${ price }"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "계정 삭제"
@@ -6041,6 +6027,23 @@
       ],
       "Switch plan": [
         "플랜 변경"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
+      ],
+      "From ${ price }": [
+        "시작 가격: ${ price }"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
       ]
     },
     "new_plans: feature": {
@@ -9053,7 +9056,7 @@
         "초대 거부됨"
       ],
       "Invitation sent": [
-        "초대 전송"
+        "초대를 전송했습니다."
       ],
       "Invoice customized": [
         "청구성 맞춤설정됨"
@@ -9072,9 +9075,6 @@
       ],
       "Organization activated": [
         "조직 활성화됨"
-      ],
-      "Organization identity updated": [
-        "조직 신원이 업데이트 됨"
       ],
       "Organization logo removed": [
         "조직 로고가 제거 됨"
@@ -9561,9 +9561,6 @@
       "Edit invoice details": [
         "신용 청구서 세부 정보 편집"
       ],
-      "Edit organization identity": [
-        "조직 신원 편집하기"
-      ],
       "Edit servers": [
         "서버 편집"
       ],
@@ -9783,6 +9780,9 @@
       "SAML authentication": [
         "SAML 인증"
       ],
+      "Security events": [
+        "보안 이벤트"
+      ],
       "Select a plan": [
         "플랜 선택"
       ],
@@ -9989,6 +9989,12 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "관리자는 구독을 변경하고, 사용자 계정과 비밀번호를 관리하고, 다른 사용자에게 관리자 권한을 부여할 수 있습니다."
       ],
+      "An approximate location of the IP address": [
+        "IP 주소의 대략적인 위치"
+      ],
+      "Any protection applied to suspicious activity": [
+        "의심스러운 활동에 적용되는 모든 보호"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "시스템의 주/야간 모드와 동기화하여 선호하는 테마를 주/야간에 맞춰 자동으로 전환합니다"
       ],
@@ -9997,6 +10003,9 @@
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "사용자의 인증 제공자의 엔티티 ID 입력란에 URL 값을 복사 후 붙여놓기 하세요."
+      ],
+      "Device information such as operating system": [
+        "운영체제와 같은 디바이스 정보"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "사용자의 인증 제공자로 부터 받은 엔드포인트 URL (예: https://idp.example.com/sso/saml)"

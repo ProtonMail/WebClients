@@ -253,9 +253,6 @@
       "Edit name": [
         "Muokkaa nimeä"
       ],
-      "Edit organization identity": [
-        "Muokkaa organisaation identiteettiä"
-      ],
       "Edit organization name": [
         "Muokkaa organisaation nimeä"
       ],
@@ -495,6 +492,9 @@
       ],
       "Restore": [
         "Palauta"
+      ],
+      "Resume membership": [
+        "Jatka jäsenyyttä"
       ],
       "Retry": [
         "Yritä uudelleen"
@@ -2240,6 +2240,17 @@
         "Auta meitä parantamaan"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Vahvista ${ PASS_APP_NAME }in erikoisalennuksen menettäminen."
+      ],
+      "Remove discount": [
+        "Poista alennus"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "${ PLAN_NAMES[PLANS.PASS] }-tilauksesi on erityishintaan ${ price } vuodessa. Jos vaihdat maksuttomaan tilaukseen, menetät alennuksen ikuisesti, vaikka päivittäisit uudelleen tulevaisuudessa."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Laajennettu versiohistoria"
@@ -2827,6 +2838,12 @@
       ]
     },
     "familyOffer_2023:Info": {
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Vain yksi ilmainen kokeilujakso käyttäjää kohden. Normaali hinnoittelu on voimassa sen jälkeen."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "Poistuttaan tilauksestasi, tämä käyttäjä siirretään ${ BRAND_NAME }  Unlimited -tilaukseen 30 päivän maksuttomalla kokeilujaksolla.*"
+      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Oletuksena myönnämme ${ formattedStorage } tallennustilaa ylläpitäjän tilille. Voit hallita lisäkäyttäjien kesken jaettua tallennustilaa myöhemmin."
       ],
@@ -3208,6 +3225,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "Sovellusversio"
+      ],
       "Best deal": [
         "Paras tarjous"
       ],
@@ -3220,11 +3240,20 @@
       "Create your account": [
         "Luo oma tilisi"
       ],
+      "Device": [
+        "Laite"
+      ],
+      "Event": [
+        "Tapahtuma"
+      ],
       "IP address": [
         "IP-osoite"
       ],
       "Key type": [
         "Avaimen tyyppi"
+      ],
+      "Location": [
+        "Sijainti"
       ],
       "Members": [
         "Jäsenet"
@@ -3234,6 +3263,9 @@
       ],
       "Organization key fingerprint": [
         "Organisaation avaimen sormenjälki"
+      ],
+      "Protection": [
+        "Suojaus"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Isoja säästöjä parhailla ${ VPN_APP_NAME } -tarjouksilla"
@@ -3255,6 +3287,9 @@
       ],
       "Status": [
         "Tila"
+      ],
+      "User": [
+        "Käyttäjä"
       ]
     },
     "Header for addresses table": {
@@ -3546,9 +3581,6 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Haluatko varmasti poistaa verkkotunnuksen ${ boldDomain }?"
       ],
-      "Ask your organisation admin to setup Gateways.": [
-        "Pyydä organisaatiosi ylläpitoa määrittämään yhdyskäytävät."
-      ],
       "Attention required": [
         "Huomiota vaaditaan"
       ],
@@ -3690,6 +3722,9 @@
         "Poistetaan ${ deletedServerCount } yhdyskäytäväpalvelinta",
         "Poistetaan ${ deletedServerCount } yhdyskäytäväpalvelinta"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Pois käytöstä ${ formattedDateAndTime } lähtien"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Kaksivaiheisen tunnistautumisen käytöstä poistaminen heikentää tilisi suojausta. Jatka vain, jos se on välttämätöntä."
       ],
@@ -3771,6 +3806,9 @@
       ],
       "Enable single sign-on to keep your organization safe": [
         "Suojaaa organisaatiotasi ottamalla kertakirjautuminen käyttöön"
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Käytössä ${ formattedDateAndTime } lähtien"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Identiteetin tarjoajalta (esim. https://idp.esimerkki.fi/sso/saml) saatu päätepisteen URL-osoite."
@@ -5323,9 +5361,6 @@
       "Current email": [
         "Nykyinen sähköpostiosoite"
       ],
-      "Current organization identity": [
-        "Nykyinen organisaation identiteetti"
-      ],
       "Default language": [
         "Oletuskieli"
       ],
@@ -5446,9 +5481,6 @@
       "New login password": [
         "Uusi kirjautumisen salasana"
       ],
-      "New organization identity": [
-        "Uusi organisaation identiteetti"
-      ],
       "New organization password": [
         "Uusi organisaation salasana"
       ],
@@ -5478,9 +5510,6 @@
       ],
       "Optional": [
         "Valinnainen"
-      ],
-      "Organization identity": [
-        "Organisaation identiteetti"
       ],
       "Organization name": [
         "Organisaation nimi"
@@ -5990,11 +6019,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Brasilian real"
+      ],
       "Euro": [
         "euroa"
       ],
       "Swiss franc": [
         "Sveitsin frangia"
+      ],
+      "US Dollar": [
+        "Yhdysvaltain dollari"
       ]
     },
     "Navigation": {
@@ -6022,23 +6057,6 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
-      ],
-      "From ${ price }": [
-        "Alkaen ${ price }"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade now": [
-        "Päivitä tilaus nyt"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Poista tili"
@@ -6060,6 +6078,23 @@
       ],
       "Switch plan": [
         "Vaihda tilausta"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
+      ],
+      "From ${ price }": [
+        "Alkaen ${ price }"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade now": [
+        "Päivitä tilaus nyt"
       ]
     },
     "new_plans: feature": {
@@ -7445,6 +7480,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Käsittelemme laskua koskevaa maksuasi. Odota maksun suoritusta, ennen kuin teet muutoksia tilaukseesi tai päivität maksutietojasi. Kiitos kärsivällisyydestäsi."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "${ amountToCharge } veloitetaan valitsemaltasi maksutavalta."
       ]
     },
     "Payments.Error": {
@@ -8633,6 +8671,11 @@
         "Tilauksesi ostettiin iOS-sovelluksella. Jos haluat muuttaa tilaustasi tai päivittää maksutietojasi, sinun on siirryttävä Apple App Storeen."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Tilaus alennetaan laskutusjakson päättyessä."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Hintaan ${ totalPrice }"
@@ -9133,9 +9176,6 @@
       "Organization activated": [
         "Organisaatio aktivoitiin"
       ],
-      "Organization identity updated": [
-        "Organisaation identiteetti päivitettiin"
-      ],
       "Organization logo removed": [
         "Organisaation logo poistettiin"
       ],
@@ -9188,7 +9228,7 @@
         "Vahvistus onnistui"
       ],
       "You have successfully canceled your subscription.": [
-        "Olet onnistuneesti perunut tilauksesi."
+        "Olet perunut tilauksesi."
       ],
       "You have successfully unsubscribed": [
         "Tilauksesi on lopetettu"
@@ -9626,9 +9666,6 @@
       "Edit invoice details": [
         "Muokkaa laskun tietoja"
       ],
-      "Edit organization identity": [
-        "Muokkaa organisaation identiteettiä"
-      ],
       "Edit servers": [
         "Muokkaa palvelimia"
       ],
@@ -9849,6 +9886,9 @@
       "SAML authentication": [
         "SAML-todennus"
       ],
+      "Security events": [
+        "Suojaustapahtumat"
+      ],
       "Select a plan": [
         "Valitse tilaus"
       ],
@@ -10056,6 +10096,12 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "Ylläpitäjät voivat tehdä muutoksia tilaukseesi, hallita käyttäjätilejä ja salasanoja sekä myöntää ylläpito-oikeudet muille käyttäjille."
       ],
+      "An approximate location of the IP address": [
+        "IP-osoitteen arvioitu sijainti"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Epäilyttävään toimintaan kohdistetut suojaustoimenpiteet"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Vaihda valitsemiesi päivä- ja yöteemojen välillä automaattisesti järjestelmäsi päivä-/yötilan mukaisesti"
       ],
@@ -10064,6 +10110,9 @@
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Kopio ja liitä tämä URL identiteetinhallintasi Entiteetin ID -kenttään."
+      ],
+      "Device information such as operating system": [
+        "Muun muassa käyttöjärjestelmän kaltaisia tietoja käytetystä laitteesta"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Identiteetin tarjoajan (esim. https://idp.esimerkki.fi/sso/saml) päätepisteen URL-osoite."

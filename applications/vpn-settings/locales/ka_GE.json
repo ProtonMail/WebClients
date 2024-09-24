@@ -253,9 +253,6 @@
       "Edit name": [
         "სახელის ჩასწორება"
       ],
-      "Edit organization identity": [
-        "ორგანიზაციის იდენტიფიკატორის ჩასწორება"
-      ],
       "Edit organization name": [
         "ორგანიზაციის სახელის ჩასწორება"
       ],
@@ -2243,6 +2240,17 @@
         "დაგვეხმარეთ, გავუმჯობესდეთ"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "დაადასტურეთ ${ PASS_APP_NAME }-ის სპეციალური ფასდაკლების დაკარგვა"
+      ],
+      "Remove discount": [
+        "ფასდაკლების წაშლა"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "თქვენი ${ PLAN_NAMES[PLANS.PASS] }-ის გამოწერა წელიწადში სპეციალური ${ price } ღირს. Free სატარიფო გეგმაზე ჩამოწევით ფასადკლებას სამუდამოდ დაკარგავთ იმის მიუხედავად, ასწევთ თუ არა სატარიფო გეგმას მომავალში."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "გაფართოებული ვერსიის ისტორია"
@@ -3217,6 +3225,9 @@
       ]
     },
     "Header": {
+      "App version": [
+        "აპის ვერსია"
+      ],
       "Best deal": [
         "საუკეთესო შემოთავაზება"
       ],
@@ -3229,11 +3240,20 @@
       "Create your account": [
         "შექმენით თქვენი ანგარიში"
       ],
+      "Device": [
+        "მოწყობილობა"
+      ],
+      "Event": [
+        "მოვლენა"
+      ],
       "IP address": [
         "IP მისამართი"
       ],
       "Key type": [
         "გასაღების ტიპი"
+      ],
+      "Location": [
+        "მდებარეობა"
       ],
       "Members": [
         "წევრები"
@@ -3243,6 +3263,9 @@
       ],
       "Organization key fingerprint": [
         "ორგანიზაციის გასაღების ანაბეჭდი"
+      ],
+      "Protection": [
+        "დაცვა"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "დაზოგეთ კარგად ${ VPN_APP_NAME }-ის სატარიფო გეგმებით"
@@ -3264,6 +3287,9 @@
       ],
       "Status": [
         "სტატუსი"
+      ],
+      "User": [
+        "მომხმარებელი"
       ]
     },
     "Header for addresses table": {
@@ -3554,9 +3580,6 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ დომენი ${ boldDomain }?"
-      ],
-      "Ask your organisation admin to setup Gateways.": [
-        "სთხოვეთ ორგანიზაციის ადმინისტრატორს, რაუტერები დააყენოს."
       ],
       "Attention required": [
         "საჭიროა ყურადღება"
@@ -5338,9 +5361,6 @@
       "Current email": [
         "მიმდინარე ელფოსტა"
       ],
-      "Current organization identity": [
-        "მიმდინარე ორგანიზაციის იდენტიფიკატორი"
-      ],
       "Default language": [
         "ნაგულისხმები ენა"
       ],
@@ -5461,9 +5481,6 @@
       "New login password": [
         "ახალი შესვლის პაროლი"
       ],
-      "New organization identity": [
-        "ახალი ორგანიზაციის იდენტიფიკატორი"
-      ],
       "New organization password": [
         "ორგანიზაციის ახალი პაროლი"
       ],
@@ -5493,9 +5510,6 @@
       ],
       "Optional": [
         "არასავალდებულო"
-      ],
-      "Organization identity": [
-        "ორგანიზაციის იდენტიფიკატორი"
       ],
       "Organization name": [
         "ორგანიზაციის სახელი"
@@ -6043,23 +6057,6 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
-      ],
-      "From ${ price }": [
-        "${ price }-დან"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade now": [
-        "ახლა გაუმჯობესება"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "ანგარიშის წაშლა"
@@ -6081,6 +6078,23 @@
       ],
       "Switch plan": [
         "სატარიფო გეგმის გადართვა"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
+      ],
+      "From ${ price }": [
+        "${ price }-დან"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade now": [
+        "ახლა გაუმჯობესება"
       ]
     },
     "new_plans: feature": {
@@ -8657,6 +8671,11 @@
         "თქვენი გეგმა iOS-ის აპით იქნა შეძენილი. იმისთვის, რომ თქვენს გეგმაში ცვლილებები შეიტნოთ, ან განაახლოთ გადახდის დეტალები, Apple App Store-ზე უნდა გადახვიდეთ."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "გამოწერის სატარიფო გეგმა ჩამოიწევა გადახდის ციკლის ბოლოს."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice }-თვის"
@@ -9157,9 +9176,6 @@
       "Organization activated": [
         "ორგანიზაცია გააქტიურდა"
       ],
-      "Organization identity updated": [
-        "ორგანიზაციის იდენტიფიკატორი განახლდა"
-      ],
       "Organization logo removed": [
         "ორგანიზაციის ლოგო წაიშალა"
       ],
@@ -9650,9 +9666,6 @@
       "Edit invoice details": [
         "ინვოისის დეტალების ჩასწორება"
       ],
-      "Edit organization identity": [
-        "ორგანიზაციის იდენტიფიკატორის ჩასწორება"
-      ],
       "Edit servers": [
         "სერვერების ჩასწორება"
       ],
@@ -9873,6 +9886,9 @@
       "SAML authentication": [
         "SAML ავთენტიკაცია"
       ],
+      "Security events": [
+        "უსაფრთხოების მოვლენები"
+      ],
       "Select a plan": [
         "აირჩეთ გეგმა"
       ],
@@ -10080,6 +10096,12 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "ადმინისტრატორებს, შეუძლიათ, შეცვალონ თქვენი გამოწერა, მართონ მომხმარებლის ანგარიშები და პარლები და სხვა მომხმარებლებს ადმინსტრატორის პრივილეგიები მიანიჭონ."
       ],
+      "An approximate location of the IP address": [
+        "IP მისამართის დაახლოებითი მდებარეობა"
+      ],
+      "Any protection applied to suspicious activity": [
+        "ნებისმიერი დაცვა, რომელიც საეჭვო აქტივობაზე გადატარდება"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "ავტომატურად გადაერთეთ რჩეულ თემებს შორის დღისა და ღამისთვის თქვენი სისტემის დღისა და ღამის რეჟიმებთან ერთად"
       ],
@@ -10088,6 +10110,9 @@
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "დააკოპირეთ და ჩასვით ეს ბმული თქვენი იდენტიფიკატორის მომწოდებლის ერთეულის ID-ის ველში"
+      ],
+      "Device information such as operating system": [
+        "მოწყობილობის ინფორმაცია, როგორიცაა ოპერაციული სისტემა"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "ბოლოწერტილის ბმული იდენტიფიკატორის მომწოდებლისგან (მაგ: https://idp.example.com/sso/saml)"
