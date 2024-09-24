@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 
 import { useGetUser } from '@proton/components';
-import { formatUser } from '@proton/shared/lib/user/helpers';
 import type { User } from '@proton/shared/lib/interfaces';
+import { formatUser } from '@proton/shared/lib/user/helpers';
+
+import { getIsPublicContext } from '../../utils/getIsPublicContext';
 
 let isPaidCached: boolean | undefined = undefined;
 
@@ -11,19 +12,17 @@ let isPaidCached: boolean | undefined = undefined;
 // In public context it assumes that user is free and must be reconsidered in the future.
 export function useIsPaid() {
     const getUser = useGetUser();
-    const { pathname } = useLocation();
-    const isPublicContext = pathname.startsWith('/urls');
-
+    const isPublicContext = getIsPublicContext();
     const [isPaid, setIsPaid] = useState(false);
 
     useEffect(() => {
         if (isPaidCached !== undefined || isPublicContext) {
             return;
         }
-        getUser().then((user: User) => {
+        void getUser().then((user: User) => {
             setIsPaid(formatUser(user).isPaid);
         });
-    }, []);
+    }, [getUser, isPublicContext]);
 
     if (isPaidCached !== undefined) {
         return isPaidCached;
