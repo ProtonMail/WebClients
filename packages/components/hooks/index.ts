@@ -3,7 +3,6 @@ export * from './useActiveBreakpoint';
 export { default as useAddresses, useGetAddresses } from './useAddresses';
 export { useAddressesKeys, useGetAddressKeys } from './useAddressesKeys';
 export { default as useApi } from './useApi';
-export { default as useApiResult } from './useApiResult';
 export { default as useApiWithoutResult } from './useApiWithoutResult';
 export { default as useAppTitle } from './useAppTitle';
 export { default as useAuthentication } from './useAuthentication';
