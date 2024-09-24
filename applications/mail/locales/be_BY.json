@@ -1027,7 +1027,7 @@
         "Вярнуць арыгінальны выгляд"
       ],
       "Run on ${ BRAND_NAME } servers": [
-        "Выканаць на серверах ${ BRAND_NAME }"
+        "Выконваецца на серверах ${ BRAND_NAME }"
       ],
       "Save": [
         "Захаваць"
@@ -1244,6 +1244,9 @@
       ],
       "Tomorrow": [
         "Заўтра"
+      ],
+      "Tracker protection prevented some images from loading. Load them if you trust the sender.": [
+        "Абарона ад праграм сачэння прадухіляе загрузку некаторых відарысаў. Загрузіце іх, калі давяраеце адпраўніку."
       ],
       "Trust": [
         "Давяраць"
@@ -1572,10 +1575,10 @@
         "Журналы не захоўваюцца, каб абараніць вашу прыватнасць. Хутчэйшая апрацоўка."
       ],
       "Run on ${ BRAND_NAME } servers": [
-        "Выканаць на серверах ${ BRAND_NAME }"
+        "Выконваецца на серверах ${ BRAND_NAME }"
       ],
       "Run on device": [
-        "Выканаць на прыладзе"
+        "Выконваецца на прыладзе"
       ],
       "Securely run on ${ BRAND_NAME } servers": [
         "Бяспечна працуе на серверах ${ BRAND_NAME }"
@@ -3624,6 +3627,17 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Дапамажыце нам палепшыць наш сэрвіс"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Пацвердзіць страту спецыяльнай скідкі ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Выдаліць скідку"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Ваша падпіска ${ PLAN_NAMES[PLANS.PASS] } па спецыяльнай цане ${ price } у год. Перайшоўшы на бясплатны тарыфны план, вы назаўсёды страціце скідку, нават калі ў будучыні зноў палепшыце сваю падпіску."
       ]
     },
     "Download attachments": {
@@ -10863,7 +10877,7 @@
         "Паспрабуйце ${ PASS_APP_NAME }"
       ],
       "Used on amazon for shopping, etc.": [
-        "Выкарыстоўвайце на Amazon для пакупак і г.д."
+        "Выкарыстоўваецца на Amazon для пакупак і г.д."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Дайце гэты псеўданім замест таго, каб уводзіць ваш сапраўдны адрас электроннай пошты. Псеўданімы забяспечваюцца ${ passLink }."
@@ -11253,6 +11267,14 @@
       ],
       "Sign": [
         "Падпісаць"
+      ]
+    },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Хутчэй у праграме"
+      ],
+      "Private, fast, and organized": [
+        "Прыватны, хуткі і арганізаваны"
       ]
     },
     "Snooze message": {
@@ -11719,6 +11741,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Ваш тарыфны план куплены з дапамогай праграмы для iOS. Такім чынам, каб унесці змены ў яго або абнавіць рэквізіты плацяжу, вам неабходна зайсці ў Apple App Store."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Падпіска будзе паніжана ў канцы перыяду аплаты."
       ]
     },
     "Subscription price": {
