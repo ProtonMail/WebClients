@@ -91,7 +91,7 @@
         "Ajouter au groupe"
       ],
       "Adds it above your existing message": [
-        "L'ajoute au-dessus de votre message existant"
+        "L'ajoute au-dessus de votre message existant."
       ],
       "Align center": [
         "Centrer"
@@ -1236,6 +1236,9 @@
       ],
       "Tomorrow": [
         "Demain"
+      ],
+      "Tracker protection prevented some images from loading. Load them if you trust the sender.": [
+        "La protection contre les traqueurs a empêché le chargement de certaines images. Chargez-les si vous faites confiance à l'expéditeur."
       ],
       "Trust": [
         "Faire confiance"
@@ -3422,7 +3425,7 @@
         "Pour importer à partir d'un fichier CSV ou VCF, assurez-vous que le fichier ne dépasse pas ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus volumineux, divisez-le en plusieurs fichiers plus petits. ${ learnMoreLink }"
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
-        "Pour un accès illimité à l'assistant d'écriture et plus encore, changez d'abonnement pour ${ BRAND_NAME } Duo."
+        "Pour un accès illimité à l'assistant d'écriture et plus encore, passez à l'abonnement ${ BRAND_NAME } Duo."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Obtenez un nombre illimité d'alias et 500 Go d'espace de stockage avec l'offre groupée ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -7977,6 +7980,9 @@
       ],
       "Don't like the style": [
         "Je n'aime pas le style"
+      ],
+      "Don't show again": [
+        "Ne plus afficher"
       ],
       "Don't show this again": [
         "Ne plus afficher"
