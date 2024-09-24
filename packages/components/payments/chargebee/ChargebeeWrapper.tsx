@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { CircleLoader, Input } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Label from '@proton/components/components/label/Label';
-import { useElementBreakpoints } from '@proton/components/hooks';
+import useElementBreakpoints from '@proton/components/hooks/useElementBreakpoints';
 import type { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
 import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import type { ChargeableV5PaymentToken, NonChargeableV5PaymentToken, PAYMENT_METHOD_TYPES } from '@proton/payments';
