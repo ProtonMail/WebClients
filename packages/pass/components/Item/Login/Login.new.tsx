@@ -35,14 +35,14 @@ import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { sanitizeURL } from '@proton/pass/utils/url/sanitize';
+import { intoDomainWithPort, resolveDomain } from '@proton/pass/utils/url/utils';
 
 const FORM_ID = 'new-login';
 
-export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel, onSubmit }) => {
+export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentUrl, onCancel, onSubmit }) => {
     const { vaultTotalCount } = useSelector(selectVaultLimits);
     const { needsUpgrade } = useSelector(selectTOTPLimits);
 
-    const { domain, subdomain } = url ?? {};
     const { search } = useLocation();
     const history = useHistory();
     const { ParentPortal, openPortal } = usePortal();
@@ -51,8 +51,9 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
     const showUsernameField = useSelector(selectShowUsernameField);
 
     const initialValues: LoginItemFormValues = useMemo(() => {
-        const maybeUrl = subdomain ?? domain ?? '';
-        const { valid, url } = sanitizeURL(maybeUrl);
+        const domain = currentUrl ? resolveDomain(currentUrl) : '';
+        const domainWithPort = currentUrl ? (intoDomainWithPort({ ...currentUrl, domain }) ?? '') : '';
+        const { url, valid } = sanitizeURL(domainWithPort);
 
         return {
             aliasPrefix: '',
@@ -61,7 +62,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
             itemEmail: searchParams.get('email') ?? '',
             itemUsername: '',
             mailboxes: [],
-            name: maybeUrl,
+            name: domain ?? '',
             note: '',
             passkeys: [],
             password: '',

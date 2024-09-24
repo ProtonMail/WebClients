@@ -27,11 +27,11 @@ import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
+import { resolveDomain } from '@proton/pass/utils/url/utils';
 
 const FORM_ID = 'new-alias';
 
 export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit, onCancel }) => {
-    const { domain, subdomain } = url ?? {};
     const { needsUpgrade } = useSelector(selectAliasLimits);
     const { vaultTotalCount } = useSelector(selectVaultLimits);
     const userVerified = useSelector(selectUserVerified);
@@ -40,10 +40,10 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
     const { ParentPortal, openPortal } = usePortal();
 
     const { aliasPrefix: defaultAliasPrefix, ...defaults } = useMemo(() => {
-        const url = subdomain ?? domain;
+        const domain = url ? resolveDomain(url) : null;
 
-        return url
-            ? { name: url, note: c('Placeholder').t`Used on ${url}`, aliasPrefix: deriveAliasPrefix(url) }
+        return domain
+            ? { name: domain, note: c('Placeholder').t`Used on ${url}`, aliasPrefix: deriveAliasPrefix(domain) }
             : { name: '', note: '', aliasPrefix: '' };
     }, []);
 
