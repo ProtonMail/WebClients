@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { LoaderPage } from '@proton/components/containers';
+import LoaderPage from '@proton/components/containers/app/LoaderPage';
 import { useApi } from '@proton/components/hooks';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { UnleashFlagProvider } from '@proton/unleash';

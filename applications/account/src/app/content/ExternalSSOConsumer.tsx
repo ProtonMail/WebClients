@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
-import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
+import { StandardLoadErrorPage } from '@proton/components';
 import { ExternalSSOFlow } from '@proton/components/containers/login/interface';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { wait } from '@proton/shared/lib/helpers/promise';

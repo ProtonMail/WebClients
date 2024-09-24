@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
-import { ErrorBoundary } from '@proton/components/containers';
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import { COMPOSER_TOOLBAR_ICON_SIZE } from '@proton/shared/lib/constants';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';

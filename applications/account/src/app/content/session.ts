@@ -1,4 +1,4 @@
-import type { OnLoginCallbackArguments } from '@proton/components/containers/app/interface';
+import type { OnLoginCallbackArguments } from '@proton/components';
 import type { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
 
