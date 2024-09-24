@@ -12,15 +12,9 @@ export enum NotificationAction {
 
 export type NotificationActions =
     | { action: NotificationAction.AUTOSAVE; data: AutosavePayload }
-    | { action: NotificationAction.OTP; item: SelectedItem; hostname: string }
-    | {
-          action: NotificationAction.PASSKEY_GET;
-          domain: string;
-          request: string;
-          token: string;
-          passkeys: SelectedPasskey[];
-      }
-    | { action: NotificationAction.PASSKEY_CREATE; domain: string; request: string; token: string };
+    | { action: NotificationAction.OTP; item: SelectedItem }
+    | { action: NotificationAction.PASSKEY_GET; request: string; token: string; passkeys: SelectedPasskey[] }
+    | { action: NotificationAction.PASSKEY_CREATE; request: string; token: string };
 
 export type AutosaveRequest = { item: Item<'login'>; submission: AutosaveFormEntry };
 
