@@ -2067,6 +2067,17 @@
         "Kendimizi geliştirmemize yardımcı olun"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Özel ${ PASS_APP_NAME } indirimini kaybedeceğinizi onaylayın"
+      ],
+      "Remove discount": [
+        "İndirimi kaldır"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "${ PLAN_NAMES[PLANS.PASS] } aboneliğinizi yıllık ${ price } özel fiyatı ile kullanıyorsunuz. Free tarifesine geçtikten sonra, gelecekte yeniden tarifenizi yükseltseniz bile indirim hakkınızı kalıcı olarak kaybedersiniz."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Genişletilmiş sürüm geçmişi"
@@ -7491,6 +7502,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Tarifeniz bir iOS uygulaması kullanılarak satın alınmış. Bu nedenle, tarifenizde değişiklik yapmak ya da ödeme bilgilerinizi güncellemek için Apple App Store uygulamasını kullanmalısınız."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Abonelik tarifeniz fatura döneminin sonunda düşürülecek."
       ]
     },
     "Subscription price": {
