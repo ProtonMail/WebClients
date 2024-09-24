@@ -4,7 +4,12 @@ import { BrowserRouter, Redirect, Route, Switch, useHistory } from 'react-router
 import type * as H from 'history';
 
 import * as bootstrap from '@proton/account/bootstrap';
-import type { OnLoginCallback, OnLoginCallbackResult } from '@proton/components';
+import type {
+    OnLoginCallback,
+    OnLoginCallbackArguments,
+    OnLoginCallbackResult,
+    ProtonLoginCallback,
+} from '@proton/components';
 import {
     ApiProvider,
     AuthenticationProvider,
@@ -19,7 +24,6 @@ import {
 } from '@proton/components';
 import type { ProduceForkData } from '@proton/components/containers/app/SSOForkProducer';
 import { SSOType } from '@proton/components/containers/app/SSOForkProducer';
-import type { OnLoginCallbackArguments, ProtonLoginCallback } from '@proton/components/containers/app/interface';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
 import type { AppIntent, AuthSession } from '@proton/components/containers/login/interface';
 import { AuthType } from '@proton/components/containers/login/interface';

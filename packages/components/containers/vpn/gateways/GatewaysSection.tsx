@@ -18,7 +18,7 @@ import gatewaysEmptyStateAdminsSvg from '@proton/styles/assets/img/illustrations
 import gatewaysEmptyStateUsersSvg from '@proton/styles/assets/img/illustrations/gateways-empty-state-users.svg';
 
 import SettingsSectionWide from '../../../containers/account/SettingsSectionWide';
-import { EmptyViewContainer } from '../../../containers/app';
+import EmptyViewContainer from '../../../containers/app/EmptyViewContainer';
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '../../../containers/payments';
 import { getCountryOptions } from '../../../helpers/countries';
 import { useApi, useNotifications, useSortedList, useSubscription, useUser, useUserSettings } from '../../../hooks';

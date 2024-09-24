@@ -366,6 +366,35 @@ export { default as TotpInputs } from './containers/account/totp/TotpInputs';
 export { default as TwoFactorSection } from './containers/account/TwoFactorSection';
 export { default as UpgradeBanner } from './containers/account/UpgradeBanner';
 export { default as UsernameSection } from './containers/account/UsernameSection';
+export { default as AddressActions } from './containers/addresses/AddressActions';
+export { default as AddressesSection } from './containers/addresses/AddressesSection';
+export { default as AddressesWithMembers } from './containers/addresses/AddressesWithMembers';
+export { default as AddressesWithUser } from './containers/addresses/AddressesWithUser';
+export { default as AddressModal } from './containers/addresses/AddressModal';
+export { default as AliasPromotionSection } from './containers/addresses/AliasPromotionSection';
+export { default as EditAddressModal } from './containers/addresses/EditAddressModal';
+export { default as IdentitySection } from './containers/addresses/IdentitySection';
+export { default as AppsDropdown, UnAuthenticatedAppsDropdown } from './containers/app/AppsDropdown';
+export { default as DelinquentContainer } from './containers/app/DelinquentContainer';
+export { default as EmptyViewContainer } from './containers/app/EmptyViewContainer';
+export { default as ErrorBoundary } from './containers/app/ErrorBoundary';
+export type {
+    OnLoginCallback,
+    OnLoginCallbackArguments,
+    OnLoginCallbackResult,
+    PrivateAuthenticationStore,
+    ProtonLoginCallback,
+    PublicAuthenticationStore,
+} from './containers/app/interface';
+export { default as LoaderPage } from './containers/app/LoaderPage';
+export { default as LocationErrorBoundary } from './containers/app/LocationErrorBoundary';
+export { default as PrivateAppContainer } from './containers/app/PrivateAppContainer';
+export { default as ProtonApp } from './containers/app/ProtonApp';
+export { default as SSOForkProducer } from './containers/app/SSOForkProducer';
+export { default as StandardErrorPage } from './containers/app/StandardErrorPage';
+export { default as StandardLoadErrorPage } from './containers/app/StandardLoadErrorPage';
+export { default as StandardPrivateApp } from './containers/app/StandardPrivateApp';
+export { default as StandardPublicApp } from './containers/app/StandardPublicApp';
 export { default as AuthenticationProvider } from './containers/authentication/Provider';
 export { default as UnAuthenticated } from './containers/authentication/UnAuthenticated';
 export { AutoReplySection } from './containers/autoReply/AutoReplySection';
@@ -726,11 +755,3 @@ export { default as ProtonVPNResourcesSection } from './containers/vpn/ProtonVPN
 export { default as TVContainer } from './containers/vpn/tv/TVContainer';
 export { default as WireGuardConfigurationSection } from './containers/vpn/WireGuardConfigurationSection/WireGuardConfigurationSection';
 export { default as useNewFeatureOnboarding } from './hooks/useNewFeatureOnboarding';
-export { default as AddressActions } from './containers/addresses/AddressActions';
-export { default as AddressModal } from './containers/addresses/AddressModal';
-export { default as AddressesSection } from './containers/addresses/AddressesSection';
-export { default as AddressesWithMembers } from './containers/addresses/AddressesWithMembers';
-export { default as AddressesWithUser } from './containers/addresses/AddressesWithUser';
-export { default as AliasPromotionSection } from './containers/addresses/AliasPromotionSection';
-export { default as EditAddressModal } from './containers/addresses/EditAddressModal';
-export { default as IdentitySection } from './containers/addresses/IdentitySection';
