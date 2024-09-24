@@ -42,6 +42,7 @@ const DRIVE_EVENT_MANAGER_FUNCTIONS_STUB = {
 };
 
 export function useDriveEventManagerProvider(api: Api, generalEventManager: EventManager) {
+    const isPollingManually = useRef(false);
     const eventHandlers = useRef(new Map<string, EventHandler>());
     const eventManagers = useRef(new Map<string, EventManager>());
     const eventsMetrics = useMemo(() => new EventsMetrics(), [api, generalEventManager]);
@@ -59,7 +60,15 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
         eventHandlers.current.forEach((handler) => {
             handlerPromises.push(
                 handler(volumeId, driveEventsResultToDriveEvents(driveEvents), (eventId: string, event: DriveEvent) => {
-                    eventsMetrics.processed(eventId, event);
+                    // Our app is depending on the events but it could avoid it
+                    // completely if we update local state after receiving OK
+                    // from the backend. Web polls extensively for this reason
+                    // and any poll should be ignored from processed events
+                    // because those are the events we could technically avoid.
+                    // We want to know how many such events it is.
+                    if (!isPollingManually.current) {
+                        eventsMetrics.processed(eventId, event);
+                    }
                 })
             );
         });
@@ -151,6 +160,8 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
         volumeIds: string | string[],
         params: { includeCommon: boolean } = { includeCommon: false }
     ) => {
+        isPollingManually.current = true;
+
         const volumeIdsArray = Array.isArray(volumeIds) ? volumeIds : [volumeIds];
         const pollingTasks = [];
 
@@ -160,13 +171,19 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
 
         pollingTasks.push(...volumeIdsArray.map((volumeId) => pollVolume(volumeId)));
 
-        await Promise.all(pollingTasks).catch(logError);
+        await Promise.all(pollingTasks)
+            .catch(logError)
+            .finally(() => {
+                isPollingManually.current = false;
+            });
     };
 
     /**
      *  Polls drive events for all subscribed volumes
      */
     const pollDriveEvents = async (params: { includeCommon: boolean } = { includeCommon: false }): Promise<void> => {
+        isPollingManually.current = true;
+
         const pollingPromises: Promise<unknown>[] = [];
         if (params.includeCommon) {
             pollingPromises.push(generalEventManager.call());
@@ -174,7 +191,12 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
         eventManagers.current.forEach((eventManager) => {
             pollingPromises.push(eventManager.call());
         });
-        await Promise.all(pollingPromises).catch(logError);
+
+        await Promise.all(pollingPromises)
+            .catch(logError)
+            .finally(() => {
+                isPollingManually.current = false;
+            });
     };
 
     /**
