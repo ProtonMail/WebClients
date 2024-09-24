@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
-import type { OnLoginCallbackResult } from '@proton/components/containers';
+import type { OnLoginCallbackResult } from '@proton/components/containers/app/interface';
 import type { AuthSession } from '@proton/components/containers/login/interface';
 import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';

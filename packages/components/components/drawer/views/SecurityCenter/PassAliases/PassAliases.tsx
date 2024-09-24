@@ -6,7 +6,7 @@ import { Button, ButtonLike } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
-import { ErrorBoundary } from '@proton/components/containers';
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import { GenericErrorDisplay } from '@proton/components/containers/error/GenericError';
 import { useApi, useAuthentication } from '@proton/components/hooks';
 import { encodeFilters } from '@proton/pass/components/Navigation/routing';
