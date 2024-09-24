@@ -323,6 +323,11 @@
         "Porta la produttività delle email a nuovi livelli. Lascia che ${ BRAND_NAME } Scribe ti aiuti a scrivere, rispondere e correggere le tue email."
       ]
     },
+    "Balance": {
+      "Loading balance": [
+        "Caricamento bilancio"
+      ]
+    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } di archiviazione"
@@ -1674,6 +1679,17 @@
         "Aiutaci a migliorare"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Conferma la perdita dello sconto speciale ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Rimuovi sconto"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Il tuo abbonamento ${ PLAN_NAMES[PLANS.PASS] } ha un prezzo speciale di ${ price } all'anno. Effettuando il downgrade a un piano gratuito, perderai definitivamente lo sconto, anche se eseguirai nuovamente l'upgrade in futuro."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Cronologia estesa della versione"
@@ -2620,6 +2636,28 @@
       ],
       "What’s this?": [
         "Cos'è questo?"
+      ]
+    },
+    "Loader": {
+      "Loading": [
+        "Caricamento"
+      ],
+      "Loading data": [
+        "Caricamento dati in corso"
+      ],
+      "Loading message": [
+        "Caricamento messaggio"
+      ],
+      "Loading send from label": [
+        "Caricamento invio da etichetta"
+      ]
+    },
+    "Loading": {
+      "Amount": [
+        "Importo"
+      ],
+      "Secondary amount": [
+        "Importo secondario"
       ]
     },
     "mail_signup_2024: Info": {
@@ -4027,6 +4065,11 @@
         "Il piano è stato acquistato dall'app per iOS. Per modificare il piano o aggiornare le informazioni di pagamento devi farlo attraverso l'Apple App Store."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "L'abbonamento verrà declassato alla fine del ciclo di fatturazione."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Per ${ totalPrice }"
@@ -4372,6 +4415,9 @@
       ]
     },
     "Wallet": {
+      "An error occurred": [
+        "Si è verificato un errore"
+      ],
       "Close": [
         "Chiudi"
       ],
@@ -4383,6 +4429,9 @@
       ],
       "Explore other ${ BRAND_NAME } products": [
         "Esplora altri prodotti ${ BRAND_NAME }"
+      ],
+      "Syncing new data": [
+        "Sincronizzazione di nuovi dati"
       ],
       "Upgrade to Visionary": [
         "Effettua l'upgrade a Visionary"
@@ -4891,9 +4940,6 @@
       "Account name changed": [
         "Nome account modificato"
       ],
-      "Account name could not be change": [
-        "Impossibile modificare il nome dell'account"
-      ],
       "Account was deleted": [
         "L'account è stato eliminato."
       ],
@@ -4905,9 +4951,6 @@
       ],
       "Could not be replaced": [
         "Impossibile effettuare la sostituzione"
-      ],
-      "Could not fill the pool after email address adition": [
-        "Impossibile riempire il pool dopo l'aggiunta dell'indirizzo email"
       ],
       "Could not fill the pool after email address replacement": [
         "Impossibile riempire il pool dopo la sostituzione dell'indirizzo email"
@@ -5179,11 +5222,17 @@
       "Loading": [
         "Caricamento in corso"
       ],
+      "Loading balance": [
+        "Caricamento bilancio"
+      ],
       "Message to recipient": [
         "Messaggio al destinatario"
       ],
       "Network fee": [
         "Commissione di rete"
+      ],
+      "Note": [
+        "Nota"
       ],
       "Note to self": [
         "Promemoria"
@@ -5224,6 +5273,9 @@
       "View more": [
         "Mostra di più"
       ],
+      "We are currently experiencing difficulties in calculating network fees. Please try again later. If the issue persists, contact our support team for assistance.": [
+        "Attualmente stiamo riscontrando difficoltà nel calcolo delle tariffe di rete. Per favore riprova più tardi. Se il problema persiste, contatta il nostro team di supporto per assistenza."
+      ],
       "You received": [
         "Hai ricevuto"
       ],
@@ -5237,6 +5289,11 @@
       ],
       "Transaction label successfully updated": [
         "Etichetta della transazione aggiornata correttamente"
+      ]
+    },
+    "Wallet Transaction List": {
+      "Page ${ pageNumber }": [
+        "Pagina ${ pageNumber }"
       ]
     },
     "Wallet transactions": {

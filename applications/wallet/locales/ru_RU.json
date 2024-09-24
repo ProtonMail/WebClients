@@ -1692,6 +1692,17 @@
         "Помогите нам совершенствоваться"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Подтвердите потерю специальной скидки ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Удалить скидку"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Вы подписаны на ${ PLAN_NAMES[PLANS.PASS] } по специальной цене ${ price } в год. Перейдя на бесплатный план, вы навсегда потеряете скидку, даже если вы улучшите снова в будущем."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Подробная история версий"
@@ -4136,6 +4147,11 @@
         "Ваш тариф был приобретён в приложении iOS. Поэтому для изменения тарифа или способа оплаты вам нужно зайти в Apple App Store."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Подписка будет понижена в конце платежного периода."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "За ${ totalPrice }"
@@ -5016,9 +5032,6 @@
       "Account name changed": [
         "Название счёта изменено"
       ],
-      "Account name could not be change": [
-        "Не удалось изменить название счёта"
-      ],
       "Account was deleted": [
         "Счёт был удалён"
       ],
@@ -5030,9 +5043,6 @@
       ],
       "Could not be replaced": [
         "Не удалить сменить"
-      ],
-      "Could not fill the pool after email address adition": [
-        "Не удалось заполнить пул после добавления адреса эл. почты"
       ],
       "Could not fill the pool after email address replacement": [
         "Не удалось заполнить пул после смены адреса эл. почты"
