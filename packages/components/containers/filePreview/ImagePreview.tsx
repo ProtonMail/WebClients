@@ -217,7 +217,7 @@ const ImagePreview = ({
                                 }}
                             />
                         )}
-                        {!isLoading && (
+                        {!isLoading && !!imageData.src && (
                             <img
                                 ref={imageHiResRef}
                                 onLoad={handleFullImageLoaded}
