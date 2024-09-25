@@ -1,6 +1,5 @@
 import type { NodeMeta } from '@proton/drive-store'
-import type { RealtimeUrlAndToken } from '@proton/docs-shared'
-import { ApiResult } from '../Domain/Result/ApiResult'
+import { ApiResult, type RealtimeUrlAndToken } from '@proton/docs-shared'
 import type { DocsApi } from '../Api/DocsApi'
 
 export class GetRealtimeUrlAndToken {

@@ -10,7 +10,7 @@ type BaseWebsocketPayload = {
 
 export type WebsocketConnectionEventPayloads = {
   [WebsocketConnectionEvent.Connecting]: BaseWebsocketPayload
-  [WebsocketConnectionEvent.Connected]: BaseWebsocketPayload & {
+  [WebsocketConnectionEvent.ConnectedAndReady]: BaseWebsocketPayload & {
     readinessInformation?: ConnectionReadyPayload
   }
   [WebsocketConnectionEvent.FailedToGetTokenCommitIdOutOfSync]: BaseWebsocketPayload
@@ -34,4 +34,5 @@ export type WebsocketConnectionEventPayloads = {
   }
   [WebsocketConnectionEvent.Saving]: BaseWebsocketPayload
   [WebsocketConnectionEvent.Saved]: BaseWebsocketPayload
+  [WebsocketConnectionEvent.ConnectionEstablishedButNotYetReady]: BaseWebsocketPayload
 }

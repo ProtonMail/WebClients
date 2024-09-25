@@ -1,11 +1,10 @@
 import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils'
 import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
-import type { WebsocketCallbacks } from '../../Realtime/WebsocketCallbacks'
 import type { EncryptMessage } from '../../UseCase/EncryptMessage'
 import type { EncryptionMetadata } from '../../Types/EncryptionMetadata'
 import type { LoggerInterface } from '@proton/utils/logs'
 import { WebsocketConnection } from '../../Realtime/WebsocketConnection'
-import type { InternalEventBusInterface, WebsocketConnectionInterface } from '@proton/docs-shared'
+import type { InternalEventBusInterface, WebsocketConnectionInterface, WebsocketCallbacks } from '@proton/docs-shared'
 import { BroadcastSource, ProcessedIncomingRealtimeEventMessage, assertUnreachableAndLog } from '@proton/docs-shared'
 import type { GetRealtimeUrlAndToken } from '../../UseCase/CreateRealtimeValetToken'
 import type { WebsocketServiceInterface } from './WebsocketServiceInterface'
@@ -28,6 +27,7 @@ import {
   DocumentUpdateVersion,
   CreateClientMessageWithDocumentUpdates,
   ConnectionCloseReason,
+  DecryptedValue,
 } from '@proton/docs-proto'
 import { c } from 'ttag'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
@@ -118,6 +118,17 @@ export class WebsocketService implements WebsocketServiceInterface {
       onConnecting: () => {
         this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Connecting]>({
           type: WebsocketConnectionEvent.Connecting,
+          payload: {
+            document: document,
+          },
+        })
+      },
+
+      onOpen: () => {
+        this.eventBus.publish<
+          WebsocketConnectionEventPayloads[WebsocketConnectionEvent.ConnectionEstablishedButNotYetReady]
+        >({
+          type: WebsocketConnectionEvent.ConnectionEstablishedButNotYetReady,
           payload: {
             document: document,
           },
@@ -229,8 +240,8 @@ export class WebsocketService implements WebsocketServiceInterface {
       this.logger.error('Unable to parse content from ConnectionReady message')
     }
 
-    this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Connected]>({
-      type: WebsocketConnectionEvent.Connected,
+    this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.ConnectedAndReady]>({
+      type: WebsocketConnectionEvent.ConnectedAndReady,
       payload: {
         document: record.document,
         readinessInformation: readinessInformation,
@@ -338,7 +349,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     metrics.docs_document_updates_total.increment({})
   }
 
-  async sendDocumentUpdateMessage(document: NodeMeta, rawContent: Uint8Array): Promise<void> {
+  async sendDocumentUpdateMessage(document: NodeMeta, rawContent: Uint8Array | Uint8Array[]): Promise<void> {
     const record = this.getConnectionRecord(document.linkId)
     if (!record) {
       throw new Error('Connection not found')
@@ -346,7 +357,9 @@ export class WebsocketService implements WebsocketServiceInterface {
 
     const { debouncer } = record
 
-    debouncer.addUpdate(rawContent)
+    debouncer.addUpdates(
+      Array.isArray(rawContent) ? rawContent.map((c) => new DecryptedValue(c)) : [new DecryptedValue(rawContent)],
+    )
   }
 
   async sendEventMessage(
