@@ -26,12 +26,12 @@ export interface RootSagaOptions {
     endpoint: ClientEndpoint;
 
     getAppState: () => AppState;
-    setAppStatus: (status: AppStatus) => void;
-
-    getAuthStore: () => AuthStore;
     getAuthService: () => AuthService;
+    getAuthStore: () => AuthStore;
     getSettings: () => MaybePromise<ProxiedSettings>;
     getTelemetry: () => MaybeNull<Telemetry>;
+
+    setAppStatus: (status: AppStatus) => void;
 
     /** Fine-tune the event channel polling interval - this will
      * be called after each polling run to set the next value */
@@ -65,7 +65,7 @@ export interface RootSagaOptions {
     onNotification?: (notification: Notification) => void;
 
     /** Callback for propagating feature flags updates */
-    onFeatureFlagsUpdated?: (features: FeatureFlagState) => void;
+    onFeatureFlags?: (features: FeatureFlagState) => void;
 
     /** Called whenever some changes were committed to the items state */
     onItemsUpdated?: () => void;

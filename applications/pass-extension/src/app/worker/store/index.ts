@@ -112,7 +112,7 @@ const options: RootSagaOptions = {
         } else if (res.clearCache) await ctx.service.storage.local.removeItems(['salt', 'state', 'snapshot']);
     }),
 
-    onFeatureFlagsUpdated: (features) =>
+    onFeatureFlags: (features) =>
         WorkerMessageBroker.ports.broadcast(
             backgroundMessage({
                 type: WorkerMessageType.FEATURE_FLAGS_UPDATE,
