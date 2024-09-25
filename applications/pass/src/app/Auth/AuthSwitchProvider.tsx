@@ -18,6 +18,13 @@ export const SessionsContext = createContext<SwitchableSession[]>([]);
 export const useAuthSwitch = createUseContext(AuthSwitchContext);
 export const useSessions = () => useContext(SessionsContext);
 
+/** Moving the auth switch feature behind a feature flag requires an additional
+ * flag in local storage. Since the `PassAccountSwitchV1` flag is user-based,
+ * we propagate it to all other active sessions if it's enabled in any session. */
+export const AUTH_SWITCH_FLAG = 'pass::auth_switch';
+export const checkAuthSwitch = () => localStorage.getItem(AUTH_SWITCH_FLAG) === '1';
+export const enableAuthSwitch = () => localStorage.setItem(AUTH_SWITCH_FLAG, '1');
+
 export const useAvailableSessions = () => {
     const sessions = useSessions();
     const authStore = useAuthStore();
