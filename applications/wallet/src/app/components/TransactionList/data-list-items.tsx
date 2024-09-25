@@ -210,6 +210,7 @@ export const AmountDataListItem = ({
             amount={value}
             withPositiveSign
             signClassName={value < 0 ? 'color-danger' : 'color-success'}
+            wrapperClassName="items-baseline"
         />
     );
 
@@ -227,8 +228,12 @@ export const AmountDataListItem = ({
                     loading={loadingLabel}
                     placeholder={<div className="ml-auto text-ellipsis">{c('Loading').t`Amount`}</div>}
                 >
-                    <div className={clsx('ml-auto flex flex-row flex-nowrap', loadingLabel && 'skeleton-loader')}>
-                        {loadingLabel ? <span>{c('Wallet transaction').t`Loading`}</span> : <div>{primaryAmount}</div>}
+                    <div className="ml-auto flex flex-row flex-nowrap">
+                        {loadingLabel ? (
+                            <span>{c('Wallet transaction').t`Loading`}</span>
+                        ) : (
+                            <div className="text-ellipsis">{primaryAmount}</div>
+                        )}
                     </div>
                 </Skeleton>
             }
@@ -238,7 +243,13 @@ export const AmountDataListItem = ({
                         loading={loading || loadingLabel}
                         placeholder={<div className="ml-auto text-ellipsis">{c('Loading').t`Secondary amount`}</div>}
                     >
-                        <div>{secondaryAmount}</div>
+                        <div className="block ml-auto color-hint flex flex-row flex-nowrap">
+                            {loadingLabel ? (
+                                <span>{c('Wallet transaction').t`Loading`}</span>
+                            ) : (
+                                <div className="text-ellipsis">{secondaryAmount}</div>
+                            )}
+                        </div>
                     </Skeleton>
                 )
             }
