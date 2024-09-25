@@ -102,7 +102,7 @@ describe('Composer expiration', () => {
         const dayInput = getByTestId('composer:expiration-days') as HTMLInputElement;
         const hoursInput = getByTestId('composer:expiration-hours') as HTMLInputElement;
 
-        const time = expirationDate.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+        const time = expirationDate.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', hour12: true });
 
         // Check if default expiration is in 7 days and at 9 o'clock
         expect(dayInput.value).toEqual(datePlaceholder);

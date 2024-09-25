@@ -88,7 +88,9 @@ export const useScheduleSend = ({
             setWaitBeforeScheduleModalOpen(true);
         } else {
             try {
-                await preliminaryVerifications(modelMessage);
+                await preliminaryVerifications(modelMessage, {
+                    noReplyEmail: false, // Skip no-reply email detection, checked in handleScheduleSend
+                });
                 setInnerModal(ComposerInnerModal.ScheduleSend);
             } catch {
                 /* Nothing to do but an error is expected if preliminaryVerifications fails
