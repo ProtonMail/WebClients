@@ -31,12 +31,20 @@ const determineCustomFontsUsed = (nodes: PDFDataNode[]): Set<string> => {
 
     if (Array.isArray(style)) {
       style.forEach((s) => {
-        if (s.fontFamily && AvailableCustomFontNames.includes(s.fontFamily)) {
-          customFontsUsed.add(s.fontFamily)
+        const fonts = Array.isArray(s.fontFamily) ? s.fontFamily : [s.fontFamily]
+        fonts.forEach((font) => {
+          if (font && AvailableCustomFontNames.includes(font)) {
+            customFontsUsed.add(font)
+          }
+        })
+      })
+    } else {
+      const fonts = Array.isArray(style.fontFamily) ? style.fontFamily : [style.fontFamily]
+      fonts.forEach((font) => {
+        if (font && AvailableCustomFontNames.includes(font)) {
+          customFontsUsed.add(font)
         }
       })
-    } else if (style.fontFamily && AvailableCustomFontNames.includes(style.fontFamily)) {
-      customFontsUsed.add(style.fontFamily)
     }
   })
 
