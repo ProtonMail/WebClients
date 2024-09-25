@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { useModalState, useModalStateWithData } from '@proton/components';
 import { useOrganization } from '@proton/components/hooks';
 import type { IWasmApiWalletData } from '@proton/wallet';
+import { DEFAULT_MAX_SUB_WALLETS, DEFAULT_MAX_WALLETS } from '@proton/wallet';
 import { useUserEligibility, useUserWalletSettings } from '@proton/wallet/store';
 
 import type { ModalData } from '.';
@@ -17,7 +18,6 @@ import { WalletEarlyAccessUpgradePrompt } from '../../components/WalletEarlyAcce
 import type { WalletUpgradeModalOwnProps } from '../../components/WalletUpgradeModal';
 import { WalletUpgradeModal } from '../../components/WalletUpgradeModal';
 import { WalletWelcomePrompt } from '../../components/WalletWelcomePrompt';
-import { DEFAULT_MAX_SUB_WALLETS, DEFAULT_MAX_WALLETS } from '../../constants/wallet';
 import { SubTheme } from '../../utils';
 import { useBitcoinBlockchainContext } from '../BitcoinBlockchainContext';
 
