@@ -11,7 +11,7 @@
 
 .field,
 .field-icon-container {
-	border-color: var(--border-weak);
+	border-color: var(--border-norm);
 }
 
 .field-two-container:has(input:placeholder-shown, textarea:placeholder-shown) {
@@ -24,7 +24,7 @@
 // _checkbox.scss override
 .checkbox-fakecheck,
 .radio-fakeradio {
-	border-color: var(--border-weak);
+	border-color: var(--border-norm);
 
 	&:hover {
 		background-color: var(--background-weak);

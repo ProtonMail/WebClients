@@ -35,11 +35,11 @@ export const BreachGroupList: FC<Props> = ({ actions, data, displayLimit, title,
                     {seeAll && <Link to={seeAllHref}>{c('Action').t`See all`}</Link>}
                 </header>
             )}
-            <Card rounded>
+            <Card rounded className="border-weak">
                 {empty ? (
                     <div className="color-weak">{c('Label').t`None`}</div>
                 ) : (
-                    <Table hasActions className="mb-2">
+                    <Table hasActions borderWeak className="mb-2">
                         <TableHeader>
                             <TableRow>
                                 <TableHeaderCell>{c('Label').t`Email`}</TableHeaderCell>

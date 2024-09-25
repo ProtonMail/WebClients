@@ -89,7 +89,7 @@ export const PauseList: FC = () => {
                 .t`List of domains where certain auto functions in ${PASS_SHORT_APP_NAME} (Autofill, Autosuggest, Autosave) should not be run.${infoText}`}
         >
             {Object.keys(disallowedDomains).length > 0 && (
-                <Table responsive="cards" hasActions>
+                <Table responsive="cards" hasActions borderWeak>
                     <TableHeader>
                         <TableRow>
                             <TableHeaderCell className="w-1/4">

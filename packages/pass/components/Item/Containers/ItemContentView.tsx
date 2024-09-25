@@ -27,7 +27,7 @@ export const ItemContentView: FC<ItemContentProps> = ({ revision, secureLinkItem
     const { heading } = presentListItem(revision);
 
     return (
-        <Card className="border border-norm">
+        <Card className="border border-weak">
             <section className={clsx('text-left', itemTypeToSubThemeClassName[item.type])}>
                 <h3 className="text-bold mb-4">{capitalize(heading)}</h3>
                 <Component revision={revision} secureLinkItem={secureLinkItem} />

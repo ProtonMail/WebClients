@@ -3,7 +3,7 @@
 	block-size: 100%;
 	flex-shrink: 0;
 	background-color: var(--background-norm);
-	border-inline-start: 1px solid var(--border-norm);
+	border-inline-start: 1px solid var(--border-weak);
 
 	// When the Content is empty, hide it completely
 	// let the sidebar take full-width.

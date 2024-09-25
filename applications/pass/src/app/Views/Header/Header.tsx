@@ -46,7 +46,7 @@ export const Header: FC<Props> = ({ hamburger }) => {
         <Switch>
             <Route path={getLocalPath('monitor')}>
                 {(subRoute) => (
-                    <CoreHeader className="border-bottom h-auto p-2">
+                    <CoreHeader className="border-bottom border-weak h-auto p-2">
                         <div className="flex items-center gap-2">
                             {hamburger}
                             <MonitorHeader {...subRoute} />
@@ -56,7 +56,7 @@ export const Header: FC<Props> = ({ hamburger }) => {
             </Route>
 
             <Route path={getLocalPath('settings')}>
-                <CoreHeader className="border-bottom h-auto p-2">
+                <CoreHeader className="border-bottom border-weak h-auto p-2">
                     <div className="flex items-center gap-2">
                         {hamburger}
                         <Button
@@ -81,7 +81,7 @@ export const Header: FC<Props> = ({ hamburger }) => {
 
             <Route>
                 <>
-                    <CoreHeader className="border-bottom h-auto p-2">
+                    <CoreHeader className="border-bottom border-weak h-auto p-2">
                         <div className="flex items-center gap-x-2 w-full">
                             {hamburger}
                             <SearchBar initial={filters.search} disabled={matchOnboarding} />

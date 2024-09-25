@@ -128,7 +128,7 @@ export const MonitorSummary: FC = () => {
                             open={upsellModalOpen}
                             onClose={() => setUpsellModalOpen(false)}
                             features={
-                                <div className="border border-norm p-4 w-full rounded-xl">
+                                <div className="border border-weak p-4 w-full rounded-xl">
                                     {features.map(({ label, icon }) => (
                                         <CardContent
                                             key={label}

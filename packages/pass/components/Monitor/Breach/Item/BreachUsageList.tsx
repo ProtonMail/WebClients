@@ -18,11 +18,11 @@ export const BreachUsageList: FC<Props> = ({ data }) => {
             <header className="mb-2 flex justify-space-between">
                 <span className="text-bold">{c('Label').t`Used in`}</span>
             </header>
-            <Card rounded>
+            <Card rounded className="border-weak">
                 {empty ? (
                     <div className="color-weak">{c('Label').t`None`}</div>
                 ) : (
-                    <Table hasActions className="mb-2">
+                    <Table hasActions borderWeak className="mb-2">
                         <TableHeader>
                             <TableRow>
                                 <TableHeaderCell>{c('Label').t`Title`}</TableHeaderCell>

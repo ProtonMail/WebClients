@@ -178,7 +178,7 @@ export const MenuDropdown: FC = () => {
                             </div>
                         )}
 
-                        <hr className="dropdown-item-hr mb-2 mx-4" aria-hidden="true" />
+                        <hr className="mb-2 mx-4" aria-hidden="true" />
 
                         <VaultMenu
                             dense
@@ -207,7 +207,7 @@ export const MenuDropdown: FC = () => {
                                         </span>
                                     </CollapsibleHeader>
                                     <CollapsibleContent as="ul" className="unstyled mx-2">
-                                        <hr className="dropdown-item-hr my-2 mx-2" aria-hidden="true" />
+                                        <hr className="my-2 mx-2" aria-hidden="true" />
                                         {menu}
                                         <div className="mt-2 mb-4 w-full">
                                             <Button
@@ -230,7 +230,7 @@ export const MenuDropdown: FC = () => {
                             onClick={withClose(() => navigate(getLocalPath('secure-links')))}
                         />
 
-                        <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
+                        <hr className="my-2 mx-4" aria-hidden="true" />
 
                         <DropdownMenuButton
                             onClick={withClose(() => {
@@ -277,7 +277,7 @@ export const MenuDropdown: FC = () => {
                         />
 
                         <Submenu icon="notepad-checklist" label={c('Action').t`Advanced`} items={menu.advanced} />
-                        <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
+                        <hr className="my-2 mx-4" aria-hidden="true" />
                         <Submenu icon="bug" label={c('Action').t`Feedback & Help`} items={menu.feedback} />
                         <Submenu icon="mobile" label={c('Action').t`Get mobile apps`} items={menu.download} />
                         <Submenu icon="user" label={c('Action').t`Account`} items={accountMenuItems} />
