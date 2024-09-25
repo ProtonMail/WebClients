@@ -37,7 +37,6 @@ export { default as useEventManager } from './useEventManager';
 export { default as useFeature } from './useFeature';
 export { default as useFeatures } from './useFeatures';
 export { default as useProgressiveRollout } from './useProgressiveRollout';
-export * from './useFilters';
 export { default as useFolderColor } from './useFolderColor';
 export { default as useForceRefresh } from './useForceRefresh';
 export {
