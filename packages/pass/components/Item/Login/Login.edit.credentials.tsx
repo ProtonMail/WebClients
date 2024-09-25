@@ -18,7 +18,7 @@ import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
 import { type LoginItemFormValues } from '@proton/pass/types';
 import { merge, withMerge } from '@proton/pass/utils/object/merge';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
-import { intoCleanHostname } from '@proton/pass/utils/url/is-valid-url';
+import { intoCleanHostname } from '@proton/pass/utils/url/utils';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
 import './Login.edit.credentials.scss';

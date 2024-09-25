@@ -2,7 +2,7 @@ import { getCache } from '@proton/pass/lib/api/cache';
 import { createNetworkError, getUID } from '@proton/pass/lib/api/fetch-controller';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
-import { globToRegExp } from '@proton/pass/utils/url/glob';
+import { globToRegExp } from '@proton/pass/utils/url/utils';
 import noop from '@proton/utils/noop';
 
 import { fetchController } from './fetch-controller';

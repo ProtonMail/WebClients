@@ -36,6 +36,7 @@ import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
+import { resolveDomain } from '@proton/pass/utils/url/utils';
 
 const FORM_ID = 'edit-login';
 
@@ -44,7 +45,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
     const { needsUpgrade } = useSelector(selectTOTPLimits);
     const showUsernameField = useSelector(selectShowUsernameField);
 
-    const { domain, subdomain } = url ?? {};
+    const domain = url ? resolveDomain(url) : null;
     const { shareId } = vault;
     const { data: item, itemId, revision: lastRevision } = revision;
     const { metadata, content, extraFields, ...uneditable } = useDeobfuscatedItem(item);
@@ -163,11 +164,11 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
     });
 
     const showQuickAddUrl =
-        (subdomain || domain) &&
+        domain &&
         !form.values.urls
             .map(prop('url'))
             .concat(form.values.url)
-            .some((url) => url.includes(subdomain ?? domain!));
+            .some((url) => url.includes(domain));
 
     const { aliasOptions } = useAliasForLoginModal(form);
 
@@ -267,7 +268,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
                                                       key="add-current-url"
                                                       title={c('Action').t`Add current URL`}
                                                       className="flex items-center gap-1"
-                                                      onClick={() => handleAdd(subdomain ?? domain!)}
+                                                      onClick={() => handleAdd(domain)}
                                                   >
                                                       <Icon name="plus" /> {c('Action').t`Add current URL`}
                                                   </Button>

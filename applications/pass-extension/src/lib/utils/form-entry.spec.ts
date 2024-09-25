@@ -13,12 +13,13 @@ const getMockFormSubmission = (status: FormEntryStatus, type: FormType, data?: F
     data: data ?? getMockCredentials('john@proton.me', '123'),
     domain: 'proton.me',
     formId: uniqueId(),
+    port: null,
+    protocol: 'https',
     status,
-    subdomain: null,
     submit: false,
+    submittedAt: -1,
     type,
     updatedAt: -1,
-    submittedAt: -1,
 });
 
 describe('Form entry utils', () => {

@@ -3,7 +3,7 @@ import { type CSSProperties, type FC, useEffect, useRef, useState } from 'react'
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useEnsureMounted } from '@proton/pass/hooks/useEnsureMounted';
 import type { Maybe } from '@proton/pass/types';
-import { intoDomainImageHostname } from '@proton/pass/utils/url/is-valid-url';
+import { intoDomainImageHostname } from '@proton/pass/utils/url/utils';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 

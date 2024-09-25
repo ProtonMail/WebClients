@@ -23,9 +23,9 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 type Props = Extract<NotificationActions, { action: NotificationAction.PASSKEY_GET }>;
 
-const PasskeyGetView: FC<Props> = ({ domain, request, token, passkeys }) => {
+const PasskeyGetView: FC<Props> = ({ request, token, passkeys }) => {
     const { onTelemetry } = usePassCore();
-    const { postMessage, close } = useIFrameContext();
+    const { postMessage, close, domain } = useIFrameContext();
     const { createNotification } = useNotifications();
 
     const authenticate = (passkey: SelectedPasskey) => {
@@ -85,8 +85,7 @@ const PasskeyGetView: FC<Props> = ({ domain, request, token, passkeys }) => {
 };
 
 export const PasskeyGet: FC<Props> = (props) => {
-    const { postMessage } = useIFrameContext();
-    const { token, domain } = props;
+    const { postMessage, domain } = useIFrameContext();
 
     return (
         <div className="ui-violet flex flex-column flex-nowrap justify-space-between h-full gap-2 anime-fade-in">
@@ -96,7 +95,7 @@ export const PasskeyGet: FC<Props> = (props) => {
                     postMessage(
                         createBridgeResponse<WorkerMessageType.PASSKEY_GET>(
                             { type: 'success', intercept: false },
-                            token
+                            props.token
                         )
                     )
                 }
