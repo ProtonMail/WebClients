@@ -1,5 +1,5 @@
-import type { ComponentProps, Ref } from 'react';
-import { forwardRef } from 'react';
+import type { ComponentProps } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -27,24 +27,21 @@ interface Props extends Omit<ComponentProps<typeof OrderableTableBody>, 'colSpan
     onClickCheckbox: (ID: string) => void;
     onClickDetails: (ID: string) => void;
     onToggleDelete: (ID: string) => void;
-    isIntersecting: boolean;
 }
 
-const MergeTableBodyRow = (
-    {
-        index,
-        ID,
-        Contact,
-        highlightedID,
-        isChecked,
-        beDeleted,
-        onClickCheckbox,
-        onClickDetails,
-        onToggleDelete,
-        isIntersecting,
-    }: Props,
-    ref: Ref<any>
-) => {
+const MergeTableBodyRow = ({
+    index,
+    ID,
+    Contact,
+    highlightedID,
+    isChecked,
+    beDeleted,
+    onClickCheckbox,
+    onClickDetails,
+    onToggleDelete,
+}: Props) => {
+    const rowRef = useRef<any>(null);
+    const [isIntersecting, setIsIntersecting] = useState(false);
     const { Name, emails } = Contact;
     const [userKeysList] = useUserKeys();
     // Allow to control when we fetch contacts and avoid fetching them when the row is not visible
@@ -54,6 +51,19 @@ const MergeTableBodyRow = (
     const { viewportWidth } = useActiveBreakpoint();
 
     const deleted = beDeleted[ID];
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) => {
+            setIsIntersecting(entry.isIntersecting);
+        });
+
+        observer.observe(rowRef.current?.node);
+
+        return () => {
+            observer.disconnect();
+        };
+    }, [setIsIntersecting]);
+
     const options = [
         !deleted && {
             text: c('Action').t`View`,
@@ -102,8 +112,8 @@ const MergeTableBodyRow = (
     return deleted ? (
         <TableRow key={`${ID}`} cells={[null, ...cells]} />
     ) : (
-        <OrderableTableRow key={`${ID}`} index={index} cells={cells} ref={ref} />
+        <OrderableTableRow key={`${ID}`} index={index} cells={cells} ref={rowRef} />
     );
 };
 
-export default forwardRef(MergeTableBodyRow);
+export default MergeTableBodyRow;
