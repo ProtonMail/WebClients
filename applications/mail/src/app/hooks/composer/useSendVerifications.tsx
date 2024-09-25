@@ -30,6 +30,23 @@ import type { MessageStateWithData } from '../../store/messages/messagesTypes';
 import { useContactsMap } from '../contact/useContacts';
 import { useGetMessage } from '../message/useMessage';
 
+interface Verifications {
+    alreadySent?: boolean;
+    noRecipients?: boolean;
+    noSubject?: boolean;
+    noReplyEmail?: boolean;
+    noAttachments?: boolean;
+}
+
+// By default, all verifications are enabled
+const defaultVerifications: Verifications = {
+    alreadySent: true,
+    noRecipients: true,
+    noSubject: true,
+    noReplyEmail: true,
+    noAttachments: true,
+};
+
 export const useSendVerifications = (
     handleNoRecipients?: () => void,
     handleNoSubjects?: () => void,
@@ -43,56 +60,63 @@ export const useSendVerifications = (
     const contactsMap = useContactsMap();
     const dontShowNoReplyAgain = getItem(NO_REPLY_EMAIL_DONT_SHOW_AGAIN_KEY) === 'true';
 
-    const preliminaryVerifications = useCallback(async (message: MessageStateWithData): Promise<void> => {
-        const { draftFlags } = getMessage(message.localID) as MessageStateWithData;
-        const { isSentDraft } = draftFlags || {};
+    const preliminaryVerifications = useCallback(
+        async (message: MessageStateWithData, optionalVerifications: Verifications = {}): Promise<void> => {
+            const verifications = {
+                ...defaultVerifications,
+                ...optionalVerifications,
+            };
+            const { draftFlags } = getMessage(message.localID) as MessageStateWithData;
+            const { isSentDraft } = draftFlags || {};
 
-        // Message already sent
-        if (isSentDraft) {
-            throw new Error(MESSAGE_ALREADY_SENT_INTERNAL_ERROR);
-        }
-
-        // No recipients
-        if (!getRecipients(message.data).length) {
-            if (handleNoRecipients) {
-                await handleNoRecipients();
+            // Message already sent
+            if (verifications.alreadySent && isSentDraft) {
+                throw new Error(MESSAGE_ALREADY_SENT_INTERNAL_ERROR);
             }
-        }
 
-        // Skip no-reply email detection if the user has already dismissed the modal
-        if (!dontShowNoReplyAgain) {
-            // Detect if the user tries to send a message to a no-reply email address
-            const emails = getRecipientsAddresses(message.data);
-            const noReplyEmail = emails.find((email) => isNoReplyEmail(email));
-
-            // If a no-reply email address is detected, display a modal asking the user if they want to send the message anyway
-            if (noReplyEmail) {
-                if (handleNoReplyEmail) {
-                    await handleNoReplyEmail(noReplyEmail);
+            // No recipients
+            if (verifications.noRecipients && !getRecipients(message.data).length) {
+                if (handleNoRecipients) {
+                    await handleNoRecipients();
                 }
             }
-        }
 
-        // Empty subject
-        if (!message.data.Subject) {
-            if (handleNoSubjects) {
-                await handleNoSubjects();
-            }
-        }
+            // Skip no-reply email detection if the user has already dismissed the modal
+            if (verifications.noReplyEmail && !dontShowNoReplyAgain) {
+                // Detect if the user tries to send a message to a no-reply email address
+                const emails = getRecipientsAddresses(message.data);
+                const noReplyEmail = emails.find((email) => isNoReplyEmail(email));
 
-        if (!isPlainText(message.data)) {
-            const [contentBeforeBlockquote] = locateBlockquote(message.messageDocument?.document);
-            const normalized = normalize(`${message.data.Subject} ${contentBeforeBlockquote || ''}`);
-            const [keyword] = mentionAttachment(normalized) || [];
-
-            // Attachment word without attachments
-            if (keyword && !message.data.Attachments.length) {
-                if (handleNoAttachments) {
-                    await handleNoAttachments(keyword);
+                // If a no-reply email address is detected, display a modal asking the user if they want to send the message anyway
+                if (noReplyEmail) {
+                    if (handleNoReplyEmail) {
+                        await handleNoReplyEmail(noReplyEmail);
+                    }
                 }
             }
-        }
-    }, []);
+
+            // Empty subject
+            if (verifications.noSubject && !message.data.Subject) {
+                if (handleNoSubjects) {
+                    await handleNoSubjects();
+                }
+            }
+
+            if (verifications.noAttachments && !isPlainText(message.data)) {
+                const [contentBeforeBlockquote] = locateBlockquote(message.messageDocument?.document);
+                const normalized = normalize(`${message.data.Subject} ${contentBeforeBlockquote || ''}`);
+                const [keyword] = mentionAttachment(normalized) || [];
+
+                // Attachment word without attachments
+                if (keyword && !message.data.Attachments.length) {
+                    if (handleNoAttachments) {
+                        await handleNoAttachments(keyword);
+                    }
+                }
+            }
+        },
+        []
+    );
 
     const extendedVerifications = useCallback(
         async (
