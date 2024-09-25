@@ -39,7 +39,6 @@ const defaultState: {
 
 const App = () => {
     const [state, setState] = useState(defaultState);
-
     useEffectOnce(() => {
         (async () => {
             try {
