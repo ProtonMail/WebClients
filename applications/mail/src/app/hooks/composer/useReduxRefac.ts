@@ -32,14 +32,14 @@ const useReduxRefac = ({ composerID, modelMessage, handleChange, handleChangeCon
             return;
         }
 
-        if (composer.senderEmailAddress !== modelMessage.data?.Sender.Address) {
-            const prevAddress = getAddressFromEmail(addresses, modelMessage.data?.Sender.Address);
+        if (composer?.senderEmailAddress !== modelMessage.data?.Sender?.Address) {
             const newAddress = getAddressFromEmail(addresses, composer.senderEmailAddress);
 
             if (!newAddress || !composer.senderEmailAddress) {
                 return;
             }
 
+            const prevAddress = getAddressFromEmail(addresses, modelMessage.data?.Sender.Address);
             const Sender = newAddress
                 ? { Name: newAddress.DisplayName, Address: composer.senderEmailAddress }
                 : undefined;
@@ -62,8 +62,11 @@ const useReduxRefac = ({ composerID, modelMessage, handleChange, handleChangeCon
 
         const recipientTypes = ['ToList', 'CCList', 'BCCList'] as RecipientType[];
         for (const type of recipientTypes) {
-            if (composer.recipients[type] !== modelMessage.data?.[type]) {
-                handleChange({ data: { [type]: composer.recipients[type] } });
+            const storeRecipientType = composer?.recipients?.[type];
+            const modelRecipientType = modelMessage?.data?.[type];
+
+            if (storeRecipientType !== modelRecipientType) {
+                handleChange({ data: { [type]: storeRecipientType } });
             }
         }
     }, [composer?.changesCount]);
