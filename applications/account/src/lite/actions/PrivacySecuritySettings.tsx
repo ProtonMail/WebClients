@@ -6,11 +6,11 @@ import {
     SenderImagesToggle,
     useApi,
     useEventManager,
-    useMailSettings,
     useNotifications,
 } from '@proton/components';
 import PreventTrackingToggle from '@proton/components/containers/emailPrivacy/PreventTrackingToggle';
 import useLoading from '@proton/hooks/useLoading';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { updateRemoveImageMetadata } from '@proton/shared/lib/api/mailSettings';
 import type { REMOVE_IMAGE_METADATA } from '@proton/shared/lib/mail/mailSettings';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';

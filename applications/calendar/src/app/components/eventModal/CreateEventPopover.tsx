@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { PrimaryButton, useBusySlotsAvailable, useMailSettings } from '@proton/components';
+import { PrimaryButton, useBusySlotsAvailable } from '@proton/components';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import type { Address } from '@proton/shared/lib/interfaces';

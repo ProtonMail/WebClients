@@ -7,11 +7,12 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { useLoading } from '@proton/hooks';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { updateViewLayout } from '@proton/shared/lib/api/mailSettings';
 import type { VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
-import { useApi, useEventManager, useMailSettings, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useNotifications } from '../../hooks';
 import ViewLayoutCards from '../layouts/ViewLayoutCards';
 
 import './ModalSettingsLayoutCards.scss';

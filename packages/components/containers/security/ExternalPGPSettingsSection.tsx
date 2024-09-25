@@ -12,12 +12,13 @@ import SettingsLayoutRight from '@proton/components/containers/account/SettingsL
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { useLoading } from '@proton/hooks';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { updateAttachPublicKey, updatePGPScheme, updateSign } from '@proton/shared/lib/api/mailSettings';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { ATTACH_PUBLIC_KEY, DEFAULT_MAILSETTINGS, SIGN } from '@proton/shared/lib/mail/mailSettings';
 
-import { useApi, useEventManager, useMailSettings, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useNotifications } from '../../hooks';
 import { PGPSchemeSelect } from './PGPSchemeSelect';
 
 interface AutomaticallySignModalProps extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {
