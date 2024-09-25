@@ -31,6 +31,7 @@ import {
     useWalletApiClients,
     wordCountToNumber,
 } from '@proton/wallet';
+import { DEFAULT_MAX_SUB_WALLETS } from '@proton/wallet';
 import {
     acceptTermsAndConditions,
     useFiatCurrencies,
@@ -39,7 +40,6 @@ import {
     walletCreation,
 } from '@proton/wallet/store';
 
-import { DEFAULT_MAX_SUB_WALLETS } from '../../constants/wallet';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { isUndefined } from '../../utils';
 

@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
-import type { WasmSortOrder, WasmTransactionDetails } from '@proton/andromeda';
+import type { WasmSortOrder } from '@proton/andromeda';
 import { useModalStateWithData } from '@proton/components/components/modalTwo/useModalState';
 import { useUserKeys } from '@proton/components/hooks';
 import {
@@ -36,9 +36,13 @@ export const useTransactionTable = ({
 
     const { currentPage, handleNext, handlePrev, handleGoFirst } = useLocalPagination();
 
-    const [transactions, setTransactions] = useState<WasmTransactionDetails[]>([]);
-    // transactions length can be ITEMS_PER_PAGE + 1 if there is another page after current one. We want to cut displayed transactions to ITEMS_PER_PAGE
-    const slicedTransactions = useMemo(() => transactions.slice(0, ITEMS_PER_PAGE), [transactions]);
+    const [apiWalletTransactionDataArg, setApiWalletTransactionDataArg] = useState<WalletTransactionsThunkArg>({
+        networkTransactionByHashedTxId: {},
+        walletId: wallet.Wallet.ID,
+        walletKey: wallet.WalletKey?.DecryptedKey,
+        walletHmacKey: undefined,
+        accountIDByDerivationPathByWalletID,
+    });
 
     const [userKeys] = useUserKeys();
 
@@ -47,11 +51,23 @@ export const useTransactionTable = ({
     }, [walletId, walletAccountId, handleGoFirst]);
 
     useEffect(() => {
+        const { WalletKey } = wallet;
+
+        if (!userKeys || !WalletKey) {
+            return;
+        }
+
         // We take one more item than page size to check if we should allow user to go on next page
         const pagination = { skip: currentPage * ITEMS_PER_PAGE, take: ITEMS_PER_PAGE + 1 };
         const abortController = new AbortController();
 
         const run = async () => {
+            const walletHmacKey = await decryptWalletKeyForHmac(
+                WalletKey.WalletKey,
+                WalletKey.WalletKeySignature,
+                userKeys
+            );
+
             if (walletId) {
                 const transactions = await (() => {
                     if (walletAccountId) {
@@ -68,10 +84,21 @@ export const useTransactionTable = ({
                 })();
 
                 if (!abortController.signal.aborted) {
-                    setTransactions(transactions);
+                    // transactions length can be ITEMS_PER_PAGE + 1 if there is another page after current one. We want to cut displayed transactions to ITEMS_PER_PAGE
+                    const slicedTransactions = transactions.slice(0, ITEMS_PER_PAGE);
+                    const networkTransactionByHashedTxId = await buildNetworkTransactionByHashedTxId(
+                        slicedTransactions,
+                        walletHmacKey
+                    );
+
+                    setApiWalletTransactionDataArg({
+                        networkTransactionByHashedTxId,
+                        walletId: wallet.Wallet.ID,
+                        walletKey: wallet.WalletKey?.DecryptedKey,
+                        walletHmacKey,
+                        accountIDByDerivationPathByWalletID,
+                    });
                 }
-            } else {
-                setTransactions([]);
             }
         };
 
@@ -79,55 +106,25 @@ export const useTransactionTable = ({
         return () => {
             abortController.abort();
         };
-    }, [currentPage, sortOrder, walletAccountId, walletId, walletsChainData]);
-
-    const canGoNext = (transactions?.length ?? 0) > ITEMS_PER_PAGE;
-    // We display pagination if we aren't on the first page anymore OR if there are transaction
-    const shouldDisplayPaginator = currentPage > 0 || canGoNext;
-
-    const [apiWalletTransactionDataArg, setApiWalletTransactionDataArg] = useState<WalletTransactionsThunkArg>({
-        networkTransactionByHashedTxId: {},
-        walletId: wallet.Wallet.ID,
-        walletKey: wallet.WalletKey?.DecryptedKey,
-        walletHmacKey: undefined,
+    }, [
         accountIDByDerivationPathByWalletID,
-    });
-
-    const { networkTransactionByHashedTxId } = apiWalletTransactionDataArg;
-
-    useEffect(() => {
-        const run = async () => {
-            const { WalletKey } = wallet;
-
-            if (!userKeys || !WalletKey) {
-                return;
-            }
-
-            const walletHmacKey = await decryptWalletKeyForHmac(
-                WalletKey.WalletKey,
-                WalletKey.WalletKeySignature,
-                userKeys
-            );
-
-            const networkTransactionByHashedTxId = await buildNetworkTransactionByHashedTxId(
-                slicedTransactions,
-                walletHmacKey
-            );
-
-            setApiWalletTransactionDataArg({
-                networkTransactionByHashedTxId,
-                walletId: wallet.Wallet.ID,
-                walletKey: wallet.WalletKey?.DecryptedKey,
-                walletHmacKey,
-                accountIDByDerivationPathByWalletID,
-            });
-        };
-
-        void run();
-    }, [accountIDByDerivationPathByWalletID, wallet, slicedTransactions, userKeys]);
+        currentPage,
+        sortOrder,
+        userKeys,
+        wallet,
+        walletAccountId,
+        walletId,
+        walletsChainData,
+    ]);
 
     const [apiWalletTransactionData, loadingApiWalletTransactionData] =
         useApiWalletTransactionData(apiWalletTransactionDataArg);
+
+    const { networkTransactionByHashedTxId } = apiWalletTransactionDataArg;
+
+    const canGoNext = (Object.keys(networkTransactionByHashedTxId)?.length ?? 0) > ITEMS_PER_PAGE;
+    // We display pagination if we aren't on the first page anymore OR if there are transaction
+    const shouldDisplayPaginator = currentPage > 0 || canGoNext;
 
     const [noteModalState, setNoteModalState] = useModalStateWithData<{ hashedTxId: string }>();
     const [unknownSenderModal, setUnknownSenderModal] = useModalStateWithData<{ hashedTxId: string }>();

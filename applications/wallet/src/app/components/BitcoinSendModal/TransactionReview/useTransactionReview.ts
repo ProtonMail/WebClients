@@ -6,9 +6,8 @@ import { c } from 'ttag';
 import type { WasmApiExchangeRate, WasmApiWalletAccount } from '@proton/andromeda';
 import { useAddressesKeys, useGetAddressKeys, useNotifications } from '@proton/components/hooks';
 import type { DecryptedAddressKey, SimpleMap } from '@proton/shared/lib/interfaces';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import { ANONYMOUS_SENDER_ADDRESS_ID, type IWasmApiWalletData } from '@proton/wallet';
 
-import { ANONYMOUS_SENDER_ADDRESS_ID } from '../../../constants/wallet';
 import { usePsbt } from '../../../hooks/usePsbt';
 import type { TxBuilderHelper } from '../../../hooks/useTxBuilder';
 import type { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
