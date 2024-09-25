@@ -4,6 +4,7 @@ import {
     BRAND_NAME,
     DUO_MAX_USERS,
     FAMILY_MAX_USERS,
+    PASS_SHORT_APP_NAME,
     PLANS,
     PLAN_NAMES,
     VPN_CONNECTIONS,
@@ -295,6 +296,19 @@ export const getPassEssentialsSignupPlan = (plan?: Plan): ShortPlan => {
         title,
         label: '',
         description: '',
+        cta: getCTA(title),
+        features: [getLoginsAndNotes('paid'), getDevicesAndAliases(), get2FAAuthenticator(true)],
+    };
+};
+
+export const getPassFamilyPlan = (plan?: Plan): ShortPlan => {
+    const title = plan?.Title || '';
+    return {
+        plan: PLANS.PASS_FAMILY,
+        title,
+        label: '',
+        description: c('new_plans: info')
+            .t`Protect your family with all premium features of ${PASS_SHORT_APP_NAME} Plus for 6 users.`,
         cta: getCTA(title),
         features: [getLoginsAndNotes('paid'), getDevicesAndAliases(), get2FAAuthenticator(true)],
     };
@@ -752,6 +766,8 @@ export const getShortPlan = (
             return getVPNBusinessPlan(planData, vpnServers);
         case PLANS.PASS_PRO:
             return getPassProPlan(planData);
+        case PLANS.PASS_FAMILY:
+            return getPassFamilyPlan(planData);
         case PLANS.PASS_BUSINESS:
             return getPassBusinessPlan(planData);
         case PLANS.WALLET:

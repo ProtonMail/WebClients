@@ -1,9 +1,12 @@
+import type { PLANS } from '../constants';
+
 export interface PendingInvitation {
     ID: string;
     InviterEmail: string;
     MaxSpace: number;
     OrganizationName: string;
     Validation: AcceptInvitationValidation;
+    OrganizationPlanName?: PLANS;
 }
 
 export interface AcceptInvitationValidation {

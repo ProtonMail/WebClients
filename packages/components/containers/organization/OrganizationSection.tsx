@@ -29,7 +29,7 @@ import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import innerMutatePassword from '@proton/shared/lib/authentication/mutate';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, DRIVE_APP_NAME, MAIL_APP_NAME, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
-import { getHasMemberCapablePlan, hasDuo, hasFamily } from '@proton/shared/lib/helpers/subscription';
+import { getHasMemberCapablePlan, hasDuo, hasFamily, hasPassFamily } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { createPreAuthKTVerifier } from '@proton/shared/lib/keyTransparency';
@@ -159,6 +159,8 @@ const OrganizationSection = ({ app, organization }: Props) => {
                     let learnMoreLink = '/proton-for-business';
                     if (hasFamily(subscription)) {
                         learnMoreLink = '/get-started-proton-family';
+                    } else if (hasPassFamily(subscription)) {
+                        learnMoreLink = '/get-started-proton-pass-family';
                     } else if (hasDuo(subscription)) {
                         learnMoreLink = '/get-started-proton-duo';
                     }
@@ -166,8 +168,10 @@ const OrganizationSection = ({ app, organization }: Props) => {
                     return (
                         <>
                             <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl(learnMoreLink)}>
-                                {c('familyOffer_2023:Info')
-                                    .t`Create and manage family members and assign them storage space shared between ${DRIVE_APP_NAME} and ${MAIL_APP_NAME}.`}
+                                {hasPassFamily(subscription)
+                                    ? c('familyOffer_2023:Info').t`Create and manage family members.`
+                                    : c('familyOffer_2023:Info')
+                                          .t`Create and manage family members and assign them storage space shared between ${DRIVE_APP_NAME} and ${MAIL_APP_NAME}.`}
                             </SettingsParagraph>
                             <PrimaryButton
                                 onClick={async () => {

@@ -72,7 +72,7 @@ interface Props {
     layout: (children: ReactNode, props: any) => ReactNode;
 }
 
-const plusPlans = [PLANS.VPN, PLANS.MAIL, PLANS.DRIVE, PLANS.PASS, PLANS.VPN_PASS_BUNDLE];
+const plusPlans = [PLANS.VPN, PLANS.VPN2024, PLANS.MAIL, PLANS.DRIVE, PLANS.PASS, PLANS.VPN_PASS_BUNDLE];
 
 const SubscribeAccount = ({ app, redirect, searchParams, loader, layout }: Props) => {
     const onceCloseRef = useRef(false);
