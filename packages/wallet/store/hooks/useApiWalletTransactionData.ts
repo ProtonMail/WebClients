@@ -40,9 +40,6 @@ export const useGetApiWalletTransactionData = () => {
  */
 export const useApiWalletTransactionData = (args: WalletTransactionsThunkArg | string[]) => {
     const getApiWalletTransactionData = useGetApiWalletTransactionData();
-    const [, loading] = hooks.useValue();
-
-    console.log('loadingloadingloading', loading);
 
     const apiWalletTransactionDataSimpleSelector = createSelector(
         selectApiWalletTransactionData,
