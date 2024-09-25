@@ -161,10 +161,10 @@ export const UnknownSenderModal = ({ hashedTxId, ...modalProps }: Props) => {
     };
 
     return (
-        <Modal size="small" {...modalProps}>
+        <Modal size="medium" {...modalProps}>
             <div className="flex flex-column items-center">
-                <img src={walletNotFoundImg} alt="" className="mb-7" style={{ width: '3rem' }} />
-                <h1 className={clsx('text-bold text-break text-3xl mb-2')}>{c('Unknown sender').t`Unknown sender`}</h1>
+                <img src={walletNotFoundImg} alt="" className="mb-7" style={{ width: '5rem' }} />
+                <h1 className={clsx('text-bold text-break text-4xl mb-2')}>{c('Unknown sender').t`Unknown sender`}</h1>
                 <ModalParagraph>
                     <p>{c('Unknown sender').t`Not a Bitcoin via Email transaction.`}</p>
                     <p>{c('Unknown sender').t`Add a name so you can remember who it was from.`}</p>
@@ -220,7 +220,7 @@ export const UnknownSenderModal = ({ hashedTxId, ...modalProps }: Props) => {
 
                 <Button
                     fullWidth
-                    className="my-8 mx-auto"
+                    className="mt-8 mx-auto"
                     size="large"
                     shape="solid"
                     color="norm"
