@@ -4,8 +4,8 @@ import {
   WebsocketConnection,
 } from './WebsocketConnection'
 import { getWebSocketServerURL } from './getWebSocketServerURL'
-import type { WebsocketCallbacks } from './WebsocketCallbacks'
 import type { LoggerInterface } from '@proton/utils/logs'
+import type { WebsocketCallbacks } from '@proton/docs-shared'
 import { Result } from '../Domain/Result/Result'
 
 const setWindowLocationHref = (href: string) => {

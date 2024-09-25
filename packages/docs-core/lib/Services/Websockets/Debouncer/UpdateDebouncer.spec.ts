@@ -1,3 +1,4 @@
+import { DecryptedValue } from '@proton/docs-proto'
 import type { NodeMeta } from '@proton/drive-store/lib'
 import { UpdateDebouncer } from './UpdateDebouncer'
 import { DocumentDebounceMode } from './DocumentDebounceMode'
@@ -46,18 +47,18 @@ describe('UpdateDebouncer', () => {
   describe('addUpdate', () => {
     it('should add to buffer regardless of mode', () => {
       debouncer.setMode(DocumentDebounceMode.SinglePlayer)
-      debouncer.addUpdate(new Uint8Array())
+      debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
 
       expect(debouncer.buffer.length).toBe(1)
 
       debouncer.setMode(DocumentDebounceMode.Realtime)
-      debouncer.addUpdate(new Uint8Array())
+      debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
 
       expect(debouncer.buffer.length).toBe(2)
     })
 
     it('should post WillFlush event', () => {
-      debouncer.addUpdate(new Uint8Array())
+      debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
 
       expect(onEvent).toHaveBeenCalledTimes(1)
     })
@@ -69,7 +70,7 @@ describe('UpdateDebouncer', () => {
 
       const previousTimeout = debouncer.singlePlayerIdleTimeout
 
-      debouncer.addUpdate(new Uint8Array())
+      debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
 
       expect(debouncer.singlePlayerIdleTimeout).not.toBe(previousTimeout)
     })
@@ -80,7 +81,7 @@ describe('UpdateDebouncer', () => {
       debouncer.flush = jest.fn()
 
       debouncer.setMode(DocumentDebounceMode.SinglePlayer)
-      debouncer.addUpdate(new Uint8Array())
+      debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
 
       jest.advanceTimersByTime(debouncer.singlePlayerDebouncePeriod)
 
@@ -89,7 +90,7 @@ describe('UpdateDebouncer', () => {
 
     it('should increment current buffer size', () => {
       const data = new Uint8Array([1, 2, 3, 4, 5])
-      debouncer.addUpdate(data)
+      debouncer.addUpdates([new DecryptedValue(data)])
 
       expect(debouncer.currentBufferSize).toBe(data.byteLength)
     })
@@ -99,7 +100,7 @@ describe('UpdateDebouncer', () => {
 
       const maxSize = debouncer.maxSizeBeforeFlush
 
-      debouncer.addUpdate(new Uint8Array(maxSize - 1))
+      debouncer.addUpdates([new DecryptedValue(new Uint8Array(maxSize - 1))])
 
       expect(debouncer.flush).not.toHaveBeenCalled()
     })
@@ -109,7 +110,7 @@ describe('UpdateDebouncer', () => {
 
       const maxSize = debouncer.maxSizeBeforeFlush
 
-      debouncer.addUpdate(new Uint8Array(maxSize))
+      debouncer.addUpdates([new DecryptedValue(new Uint8Array(maxSize))])
 
       expect(debouncer.flush).toHaveBeenCalledTimes(1)
     })
@@ -121,7 +122,7 @@ describe('UpdateDebouncer', () => {
     })
 
     it('should return true if buffer has updates', () => {
-      debouncer.addUpdate(new Uint8Array())
+      debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
 
       expect(debouncer.hasPendingUpdates()).toBe(true)
     })
@@ -136,7 +137,7 @@ describe('UpdateDebouncer', () => {
 
     it('should abort if not ready to flush', () => {
       debouncer.isReadyToFlush = false
-      debouncer.addUpdate(new Uint8Array())
+      debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
 
       onEvent = jest.fn()
       debouncer.flush()
@@ -145,7 +146,7 @@ describe('UpdateDebouncer', () => {
     })
 
     it('should reset the current buffer size', () => {
-      debouncer.addUpdate(new Uint8Array([1]))
+      debouncer.addUpdates([new DecryptedValue(new Uint8Array([1]))])
 
       expect(debouncer.currentBufferSize).toBeGreaterThan(0)
 
@@ -155,7 +156,7 @@ describe('UpdateDebouncer', () => {
     })
 
     it('should flush buffer', () => {
-      debouncer.addUpdate(new Uint8Array())
+      debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
       debouncer.flush()
 
       expect(onEvent).toHaveBeenCalledTimes(2)
@@ -215,7 +216,7 @@ describe('UpdateDebouncer', () => {
 
       debouncer.flush = jest.fn()
 
-      debouncer.addUpdate(new Uint8Array())
+      debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
 
       jest.advanceTimersByTime(debouncer.singlePlayerDebouncePeriod)
 
@@ -227,11 +228,11 @@ describe('UpdateDebouncer', () => {
 
       debouncer.flush = jest.fn()
 
-      debouncer.addUpdate(new Uint8Array())
+      debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
 
       jest.advanceTimersByTime(debouncer.singlePlayerDebouncePeriod - 100)
 
-      debouncer.addUpdate(new Uint8Array())
+      debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
 
       jest.advanceTimersByTime(debouncer.singlePlayerDebouncePeriod - 100)
 
@@ -243,11 +244,11 @@ describe('UpdateDebouncer', () => {
 
       jest.useFakeTimers()
 
-      debouncer.addUpdate(new Uint8Array())
+      debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
 
       jest.advanceTimersByTime(debouncer.singlePlayerDebouncePeriod / 2)
 
-      debouncer.addUpdate(new Uint8Array())
+      debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
 
       jest.advanceTimersByTime(debouncer.singlePlayerDebouncePeriod / 2)
 

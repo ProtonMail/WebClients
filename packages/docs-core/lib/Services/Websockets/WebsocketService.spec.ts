@@ -1,7 +1,7 @@
 import { stringToUtf8Array } from '@proton/crypto/lib/utils'
 import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import type { ServerMessageWithDocumentUpdates, ServerMessageWithEvents } from '@proton/docs-proto'
-import { EventTypeEnum } from '@proton/docs-proto'
+import { DecryptedValue, EventTypeEnum } from '@proton/docs-proto'
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { GetRealtimeUrlAndToken } from '../../UseCase/CreateRealtimeValetToken'
 import type { DecryptMessage } from '../../UseCase/DecryptMessage'
@@ -13,8 +13,9 @@ import { Result } from '../../Domain/Result/Result'
 import type { EncryptionMetadata } from '../../Types/EncryptionMetadata'
 import type { DocumentConnectionRecord } from './DocumentConnectionRecord'
 import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
-import type { UpdateDebouncer } from './Debouncer/UpdateDebouncer'
+import { type UpdateDebouncer } from './Debouncer/UpdateDebouncer'
 import { DocumentDebounceMode } from './Debouncer/DocumentDebounceMode'
+import type { PrivateKeyReference, SessionKey } from '@proton/crypto'
 
 const mockOnReadyContentPayload = new TextEncoder().encode(
   JSON.stringify({ connectionId: '12345678', clientUpgradeRecommended: true, clientUpgradeRequired: true }),
@@ -28,8 +29,26 @@ describe('WebsocketService', () => {
   let connection: WebsocketConnectionInterface
   let record: DocumentConnectionRecord
   let logger: LoggerInterface
+  let document: NodeMeta
+  let keys: DocumentKeys
 
-  const createService = () => {
+  const createService = async (mode: DocumentDebounceMode) => {
+    if (service) {
+      service.destroy()
+    }
+
+    if (debouncer) {
+      debouncer.destroy()
+    }
+
+    document = { linkId: 'link-id-123', volumeId: 'volume-id-456' } as NodeMeta
+
+    keys = {
+      documentContentKey: 'key-123' as unknown as SessionKey,
+      userAddressPrivateKey: 'private-key-123' as unknown as PrivateKeyReference,
+      userOwnAddress: 'foo',
+    }
+
     eventBus = {
       publish: jest.fn(),
     } as unknown as jest.Mocked<InternalEventBusInterface>
@@ -54,46 +73,54 @@ describe('WebsocketService', () => {
       eventBus,
       '0.0.0.0',
     )
+
+    service.createConnection(document, keys, {
+      commitId: () => undefined,
+    })
+
+    record = service.getConnectionRecord('link-id-123')!
+
+    debouncer = record.debouncer
+    debouncer.setMode(mode)
+    debouncer.markAsReadyToFlush()
+
+    connection = record.connection
+    connection.broadcastMessage = jest.fn()
+    connection.canBroadcastMessages = jest.fn().mockReturnValue(true)
   }
 
-  beforeEach(() => {
-    createService()
-
-    connection = {
-      broadcastMessage: jest.fn(),
-      markAsReadyToAcceptMessages: jest.fn(),
-      canBroadcastMessages: jest.fn().mockReturnValue(true),
-    } as unknown as WebsocketConnectionInterface
-
-    debouncer = {
-      addUpdate: jest.fn(),
-      getMode: jest.fn(),
-      markAsReadyToFlush: jest.fn(),
-    } as unknown as UpdateDebouncer
-
-    record = {
-      connection,
-      keys: {
-        userOwnAddress: 'foo',
-      } as DocumentKeys,
-      debouncer: debouncer,
-      document: {} as NodeMeta,
-    }
-
-    service.getConnectionRecord = jest.fn().mockReturnValue(record)
+  beforeEach(async () => {
+    await createService(DocumentDebounceMode.Realtime)
   })
 
   afterEach(() => {
     jest.resetAllMocks()
 
     service.destroy()
+
+    debouncer.destroy()
+  })
+
+  describe('createConnection', () => {
+    it('should post ConnectionEstablishedButNotYetReady when connection is opened', async () => {
+      connection.callbacks.onOpen()
+
+      expect(eventBus.publish).toHaveBeenCalledWith({
+        type: WebsocketConnectionEvent.ConnectionEstablishedButNotYetReady,
+        payload: {
+          document: record.document,
+        },
+      })
+    })
   })
 
   describe('sendDocumentUpdateMessage', () => {
     it('should add to buffer', async () => {
-      await service.sendDocumentUpdateMessage({} as NodeMeta, new Uint8Array())
+      debouncer.addUpdates = jest.fn()
 
-      expect(debouncer.addUpdate).toHaveBeenCalled()
+      service.sendDocumentUpdateMessage(document, new Uint8Array())
+
+      expect(debouncer.addUpdates).toHaveBeenCalled()
     })
   })
 
@@ -101,13 +128,13 @@ describe('WebsocketService', () => {
     it('should encrypt updates', async () => {
       const encryptMock = (service.encryptMessage = jest.fn())
 
-      await service.handleDocumentUpdateDebouncerFlush({} as NodeMeta, new Uint8Array())
+      await service.handleDocumentUpdateDebouncerFlush(document, new Uint8Array())
 
       expect(encryptMock).toHaveBeenCalled()
     })
 
     it('should broadcast message', async () => {
-      await service.handleDocumentUpdateDebouncerFlush({} as NodeMeta, new Uint8Array())
+      await service.handleDocumentUpdateDebouncerFlush(document, new Uint8Array())
 
       expect(connection.broadcastMessage).toHaveBeenCalled()
     })
@@ -115,7 +142,7 @@ describe('WebsocketService', () => {
     it('should add message to ack ledger', async () => {
       service.ledger.messagePosted = jest.fn()
 
-      await service.handleDocumentUpdateDebouncerFlush({} as NodeMeta, new Uint8Array())
+      await service.handleDocumentUpdateDebouncerFlush(document, new Uint8Array())
 
       expect(service.ledger.messagePosted).toHaveBeenCalled()
     })
@@ -133,6 +160,8 @@ describe('WebsocketService', () => {
 
   describe('onDocumentConnectionReadyToBroadcast', () => {
     it('should mark connection as ready to broadcast', async () => {
+      connection.markAsReadyToAcceptMessages = jest.fn()
+
       service.onDocumentConnectionReadyToBroadcast(record, mockOnReadyContentPayload)
 
       expect(connection.markAsReadyToAcceptMessages).toHaveBeenCalled()
@@ -157,7 +186,7 @@ describe('WebsocketService', () => {
     it('should pass readiness information to eventBus', () => {
       service.onDocumentConnectionReadyToBroadcast(record, mockOnReadyContentPayload)
       expect(eventBus.publish).toHaveBeenCalledWith({
-        type: WebsocketConnectionEvent.Connected,
+        type: WebsocketConnectionEvent.ConnectedAndReady,
         payload: {
           document: record.document,
           readinessInformation: {
@@ -173,7 +202,7 @@ describe('WebsocketService', () => {
       service.onDocumentConnectionReadyToBroadcast(record, new TextEncoder().encode('not parsable'))
       expect(logger.error).toHaveBeenCalledWith('Unable to parse content from ConnectionReady message')
       expect(eventBus.publish).toHaveBeenCalledWith({
-        type: WebsocketConnectionEvent.Connected,
+        type: WebsocketConnectionEvent.ConnectedAndReady,
         payload: {
           document: record.document,
           readinessInformation: undefined,
@@ -186,23 +215,13 @@ describe('WebsocketService', () => {
     it('should get ledger unacknowledged updates', async () => {
       service.ledger.getUnacknowledgedUpdates = jest.fn().mockReturnValue([])
 
-      service.retryFailedDocumentUpdatesForDoc({ linkId: '123' } as NodeMeta)
+      service.retryFailedDocumentUpdatesForDoc(document)
 
       expect(service.ledger.getUnacknowledgedUpdates).toHaveBeenCalled()
     })
   })
 
   describe('handleWindowUnload', () => {
-    beforeEach(() => {
-      service.destroy()
-
-      createService()
-
-      service.createConnection({ linkId: '123' } as NodeMeta, {} as DocumentKeys, { commitId: () => undefined })
-
-      debouncer = service.getConnectionRecord('123')!.debouncer
-    })
-
     it('should not prevent leaving if no unsaved changes', async () => {
       const event = { preventDefault: jest.fn() } as unknown as BeforeUnloadEvent
 
@@ -212,7 +231,7 @@ describe('WebsocketService', () => {
     })
 
     it('should prevent leaving if unsaved changes', async () => {
-      debouncer.addUpdate(new Uint8Array())
+      debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
 
       const event = { preventDefault: jest.fn() } as unknown as BeforeUnloadEvent
 
@@ -224,7 +243,7 @@ describe('WebsocketService', () => {
     it('should immediately flush a buffer that has pending changes', async () => {
       debouncer.flush = jest.fn()
 
-      debouncer.addUpdate(new Uint8Array())
+      debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
 
       const event = { preventDefault: jest.fn() } as unknown as BeforeUnloadEvent
 
@@ -245,20 +264,10 @@ describe('WebsocketService', () => {
   })
 
   describe('flushPendingUpdates', () => {
-    beforeEach(() => {
-      service.destroy()
-
-      createService()
-
-      service.createConnection({ linkId: '123' } as NodeMeta, {} as DocumentKeys, { commitId: () => undefined })
-
-      debouncer = service.getConnectionRecord('123')!.debouncer
-    })
-
     it('should immediately flush a buffer that has pending changes', async () => {
       debouncer.flush = jest.fn()
 
-      debouncer.addUpdate(new Uint8Array())
+      debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
 
       service.flushPendingUpdates()
 
@@ -271,7 +280,7 @@ describe('WebsocketService', () => {
       const encryptMock = (service.encryptMessage = jest.fn().mockReturnValue(stringToUtf8Array('123')))
 
       await service.sendEventMessage(
-        {} as NodeMeta,
+        document,
         stringToUtf8Array('123'),
         EventTypeEnum.ClientHasSentACommentMessage,
         BroadcastSource.AwarenessUpdateHandler,
@@ -284,7 +293,7 @@ describe('WebsocketService', () => {
       debouncer.getMode = jest.fn().mockReturnValue(DocumentDebounceMode.SinglePlayer)
 
       await service.sendEventMessage(
-        {} as NodeMeta,
+        document,
         stringToUtf8Array('123'),
         EventTypeEnum.ClientIsBroadcastingItsPresenceState,
         BroadcastSource.AwarenessUpdateHandler,
@@ -297,7 +306,7 @@ describe('WebsocketService', () => {
       debouncer.getMode = jest.fn().mockReturnValue(DocumentDebounceMode.SinglePlayer)
 
       await service.sendEventMessage(
-        {} as NodeMeta,
+        document,
         stringToUtf8Array('123'),
         EventTypeEnum.ClientHasSentACommentMessage,
         BroadcastSource.AwarenessUpdateHandler,
@@ -310,7 +319,7 @@ describe('WebsocketService', () => {
       Object.defineProperty(debouncer, 'isBufferEnabled', { value: false })
 
       await service.sendEventMessage(
-        {} as NodeMeta,
+        document,
         stringToUtf8Array('123'),
         EventTypeEnum.ClientIsBroadcastingItsPresenceState,
         BroadcastSource.AwarenessUpdateHandler,
@@ -323,7 +332,7 @@ describe('WebsocketService', () => {
       connection.canBroadcastMessages = jest.fn().mockReturnValue(false)
 
       await service.sendEventMessage(
-        {} as NodeMeta,
+        document,
         stringToUtf8Array('123'),
         EventTypeEnum.ClientIsBroadcastingItsPresenceState,
         BroadcastSource.AwarenessUpdateHandler,
@@ -416,6 +425,8 @@ describe('WebsocketService', () => {
         events: [{ type: EventTypeEnum.ServerIsReadyToAcceptClientMessages }],
       } as unknown as ServerMessageWithEvents
 
+      connection.markAsReadyToAcceptMessages = jest.fn()
+
       await service.handleIncomingEventsMessage(record, events)
 
       expect(connection.markAsReadyToAcceptMessages).toHaveBeenCalled()
@@ -435,8 +446,6 @@ describe('WebsocketService', () => {
 
   describe('encryptMessage', () => {
     it('should publish encryption error event if failed to encrypt', async () => {
-      const document = {} as NodeMeta
-
       encryptMessage.execute = jest.fn().mockReturnValue(Result.fail('error'))
 
       const spy = (eventBus.publish = jest.fn())
@@ -446,7 +455,7 @@ describe('WebsocketService', () => {
           stringToUtf8Array('123'),
           {} as EncryptionMetadata,
           document,
-          {} as DocumentKeys,
+          keys,
           BroadcastSource.AwarenessUpdateHandler,
         )
       } catch (error) {}
