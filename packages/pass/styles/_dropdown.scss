@@ -2,7 +2,7 @@
 
 .dropdown {
 	background-color: var(--background-weak);
-	border: 1px solid var(--border-norm);
+	border: 1px solid var(--border-weak);
 
 	.dropdown-content {
 		background-color: var(--background-weak);
@@ -11,14 +11,5 @@
 	.dropdown-content::before,
 	.dropdown-content::after {
 		background-color: var(--background-weak);
-		block-size: 0.5rem;
-	}
-
-	.dropdown-item--is-selected,
-	.dropdown-item--is-selected:active,
-	.dropdown-item--is-selected:focus,
-	.dropdown-item--is-selected:hover {
-		background-color: var(--field-norm);
-		color: var(--text-norm);
 	}
 }
