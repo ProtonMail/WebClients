@@ -1,15 +1,14 @@
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 
+import { useGetUserInvitations, useUserInvitations } from '@proton/account/userInvitations/hooks';
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import {
     useAddresses,
     useCache,
     useCalendars,
     useConfig,
-    useGetUserInvitations,
     useOrganization,
     usePaymentStatus,
-    usePendingUserInvitations,
     usePlans,
     useSubscription,
     useUser,
@@ -76,8 +75,8 @@ jest.mock('@proton/components/hooks/useVPNServersCount');
 const mockUseVPNServersCount = useVPNServersCount as jest.MockedFunction<any>;
 mockUseVPNServersCount.mockReturnValue([vpnServersCount, false]);
 
-jest.mock('@proton/components/hooks/usePendingUserInvitations');
-const mockUsePendingUserInvitations = usePendingUserInvitations as jest.MockedFunction<any>;
+jest.mock('@proton/account/userInvitations/hooks');
+const mockUsePendingUserInvitations = useUserInvitations as jest.MockedFunction<any>;
 mockUsePendingUserInvitations.mockReturnValue([[], false]);
 const mockUseGetPendingUserInvitations = useGetUserInvitations as jest.MockedFunction<any>;
 mockUseGetPendingUserInvitations.mockReturnValue(async () => []);
