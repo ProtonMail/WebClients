@@ -10,6 +10,7 @@ import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
+import AuthModal from '@proton/components/containers/password/AuthModal';
 import { useLoading } from '@proton/hooks';
 import { reactivateMnemonicPhrase, updateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -19,7 +20,6 @@ import { generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/share
 import noop from '@proton/utils/noop';
 
 import { useApi, useEventManager, useGetUserKeys, useUser } from '../../hooks';
-import AuthModal from '../password/AuthModal';
 import { MnemonicPhraseStepButtons, MnemonicPhraseStepContent } from './MnemonicPhraseStep';
 
 enum STEPS {

@@ -4,10 +4,10 @@ import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
+import AuthModal from '@proton/components/containers/password/AuthModal';
 import { disableMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 
 import { useEventManager, useNotifications } from '../../hooks';
-import AuthModal from '../password/AuthModal';
 
 interface DisableMnemonicModalProps {
     onClose: ModalProps['onClose'];
