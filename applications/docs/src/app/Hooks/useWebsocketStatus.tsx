@@ -33,12 +33,12 @@ export function useWebSocketStatus(document?: NodeMeta) {
   useEffect(() => {
     const disposer = mergeRegister(
       application.eventBus.addEventCallback(
-        (payload: WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Connected]) => {
+        (payload: WebsocketConnectionEventPayloads[WebsocketConnectionEvent.ConnectedAndReady]) => {
           if (!document || areNodeMetasEqual(document, payload.document)) {
-            setCurrentStatus({ state: WebsocketConnectionEvent.Connected })
+            setCurrentStatus({ state: WebsocketConnectionEvent.ConnectedAndReady })
           }
         },
-        WebsocketConnectionEvent.Connected,
+        WebsocketConnectionEvent.ConnectedAndReady,
       ),
 
       application.eventBus.addEventCallback(
