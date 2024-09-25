@@ -156,15 +156,20 @@ export const validateInvitationData = async ({
 export const validateInvitationDataValues = async ({
     invitationData,
     invitationAddress,
-    expectRevisionChange,
+    options,
 }: {
     invitationData: MemberInvitationData;
     invitationAddress: Address;
-    expectRevisionChange: boolean;
+    options: {
+        validateRevision: boolean;
+        newMemberCreation: boolean;
+    };
 }) => {
-    const revision = (invitationAddress.SignedKeyList?.Revision ?? 0) + (expectRevisionChange ? 1 : 0);
-    if (revision !== invitationData.Revision) {
-        throw new Error('Invalid invitation signed key list revision state');
+    if (options.validateRevision) {
+        const revision = (invitationAddress.SignedKeyList?.Revision ?? 0) + (options.newMemberCreation ? 1 : 0);
+        if (revision !== invitationData.Revision) {
+            throw new Error('Invalid invitation signed key list revision state');
+        }
     }
 };
 
@@ -221,12 +226,12 @@ export const validateUnprivatizationData = async ({
     api,
     verifyOutboundPublicKeys,
     parsedUnprivatizationData,
-    expectRevisionChange,
+    options,
 }: {
     api: Api;
     verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
     parsedUnprivatizationData: ParsedUnprivatizationData;
-    expectRevisionChange: boolean;
+    options: Parameters<typeof validateInvitationDataValues>[0]['options'];
 }) => {
     if (parsedUnprivatizationData.type === 'private') {
         return;
@@ -264,7 +269,7 @@ export const validateUnprivatizationData = async ({
     await validateInvitationDataValues({
         invitationAddress,
         invitationData,
-        expectRevisionChange,
+        options,
     });
 };
 

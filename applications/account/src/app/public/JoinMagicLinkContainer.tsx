@@ -127,7 +127,10 @@ const JoinMagicLinkContainer = ({ onLogin, onUsed, toApp, productParam }: Props)
                     api: authApi,
                     verifyOutboundPublicKeys,
                     parsedUnprivatizationData,
-                    expectRevisionChange: true,
+                    options: {
+                        validateRevision: true,
+                        newMemberCreation: true,
+                    },
                 });
                 dataRef.current = {
                     user,
