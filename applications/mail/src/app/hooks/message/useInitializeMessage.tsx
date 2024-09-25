@@ -2,8 +2,9 @@ import { useCallback } from 'react';
 
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-import { FeatureCode, useApi, useAuthentication, useFeature, useProgressiveRollout } from '@proton/components';
+import { useApi, useAuthentication, useProgressiveRollout } from '@proton/components';
 import type { WorkerDecryptionResult } from '@proton/crypto';
+import { FeatureCode, useFeature } from '@proton/features';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';

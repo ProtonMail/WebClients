@@ -2,12 +2,11 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import { FeatureCode, useFeature } from '@proton/features';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
-import { FeatureCode } from '../../containers';
-import useFeature from '../../hooks/useFeature';
 import { useSubscription } from '../../hooks/useSubscription';
 import useUser from '../../hooks/useUser';
 

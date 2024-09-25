@@ -2,7 +2,7 @@ import { act, findByTestId, fireEvent } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
-import { FeatureCode } from '@proton/components/containers/features';
+import { FeatureCode } from '@proton/features';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { MailSettings } from '@proton/shared/lib/interfaces';

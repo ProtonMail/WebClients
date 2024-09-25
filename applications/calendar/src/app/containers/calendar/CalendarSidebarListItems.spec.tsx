@@ -47,7 +47,7 @@ jest.mock('@proton/components/hooks/useApi', () => ({
     default: () => jest.fn(() => Promise.resolve([])),
 }));
 
-jest.mock('@proton/components/hooks/useFeature', () => () => ({ feature: { Value: true } }));
+jest.mock('@proton/features/useFeature', () => () => ({ feature: { Value: true } }));
 
 jest.mock('@proton/components/hooks/useNotifications', () => () => ({ createNotification: jest.fn() }));
 

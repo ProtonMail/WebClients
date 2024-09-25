@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
-import { FeatureCode, useFeature } from '@proton/components';
+import { FeatureCode, useFeature } from '@proton/features';
 import clsx from '@proton/utils/clsx';
 
 import InviteHowItWorks from './InviteHowItWorks';

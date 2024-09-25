@@ -3,16 +3,8 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    ErrorButton,
-    FeatureCode,
-    Prompt,
-    useApi,
-    useEventManager,
-    useFeature,
-    useModalState,
-    useNotifications,
-} from '@proton/components';
+import { ErrorButton, Prompt, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
+import { FeatureCode, useFeature } from '@proton/features';
 import { deleteConversations } from '@proton/shared/lib/api/conversations';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

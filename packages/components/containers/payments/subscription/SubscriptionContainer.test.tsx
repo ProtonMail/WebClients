@@ -45,7 +45,7 @@ jest.mock('@proton/components/hooks/useSubscription', () => ({
     useGetSubscription: jest.fn(() => [{}, false]),
 }));
 
-jest.mock('@proton/components/hooks/useFeature', () => ({
+jest.mock('@proton/features/useFeature', () => ({
     __esModule: true,
     default: jest.fn(() => [{}, false]),
     useFeature: jest.fn(() => [{}, false]),

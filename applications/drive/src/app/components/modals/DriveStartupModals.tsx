@@ -2,10 +2,8 @@ import { useEffect, useRef } from 'react';
 
 import {
     CancellationReminderModal,
-    FeatureCode,
     LightLabellingFeatureModal,
     getShouldOpenReferralModal,
-    useFeature,
     useModalState,
     useNewFeatureOnboarding,
     useShowLightLabellingFeatureModal,
@@ -14,6 +12,7 @@ import {
 } from '@proton/components';
 import type { ReminderFlag } from '@proton/components/containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
 import { shouldOpenReminderModal } from '@proton/components/containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
+import { FeatureCode, useFeature } from '@proton/features';
 import { OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
 
 import { useDriveDocsFeatureFlag } from '../../store/_documents';

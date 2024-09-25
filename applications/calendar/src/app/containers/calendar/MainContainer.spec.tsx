@@ -177,7 +177,7 @@ jest.mock('@proton/components/hooks/useAuthentication', () => () => ({}));
 jest.mock('@proton/components/hooks/useConfig', () => () => ({ APP_NAME: 'proton-calendar', APP_VERSION: 'test' }));
 jest.mock('@proton/components/hooks/useSubscribedCalendars', () => () => ({}));
 jest.mock('@proton/components/hooks/useContactEmails', () => () => []);
-jest.mock('@proton/components/hooks/useFeature', () => () => ({}));
+jest.mock('@proton/features/useFeature', () => () => ({}));
 jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
 jest.mock('@proton/components/hooks/useWelcomeFlags', () => ({ useWelcomeFlags: () => [{}] }));
 jest.mock('@proton/components/hooks/useCachedModelResult', () => () => [{}]);

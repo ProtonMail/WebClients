@@ -29,7 +29,7 @@ const defaultUseUser = [
 jest.mock('@proton/components/hooks/useUser');
 const mockUseUser = useUser as jest.MockedFunction<any>;
 
-jest.mock('@proton/components/hooks/useFeature', () => () => {
+jest.mock('@proton/features/useFeature', () => () => {
     return {
         feature: {
             Code: 'EasySwitch',
