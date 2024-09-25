@@ -35,7 +35,6 @@ export const persistReducer: Partial<{ [key in keyof AccountState]: any }> = {
     incomingAddressForwarding: selectPersistModel,
     outgoingAddressForwarding: selectPersistModel,
     calendarUserSettings: selectPersistModel,
-    calendars: selectPersistModel,
     holidaysDirectory: selectPersistModel,
     sso: selectPersistModel,
 };
