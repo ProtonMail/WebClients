@@ -19,6 +19,7 @@ import type {
     MemberUnprivatization,
     MemberUnprivatizationOutput,
     MemberUnprivatizationReadyForUnprivatization,
+    MemberUnprivatizationReadyForUnprivatizationApproval,
     PrivateMemberUnprivatizationOutput,
     PublicMemberUnprivatizationOutput,
     Unwrap,
@@ -89,17 +90,18 @@ const getDecryptedOrganizationActivationToken = async ({
     decryptionKeys,
 }: {
     armoredMessage: string;
-    verificationKeys: PublicKeyReference[];
+    verificationKeys: PublicKeyReference[] | null;
     decryptionKeys: PrivateKeyReference[];
 }) => {
     const { data: decryptedToken, verified } = await CryptoProxy.decryptMessage({
         armoredMessage,
         decryptionKeys,
-        verificationKeys,
+        // No verification in Global SSO case
+        verificationKeys: verificationKeys === null ? undefined : verificationKeys,
         context: { value: MEMBER_SIGNATURE_CONTEXT.KEY_TOKEN_SIGNATURE_CONTEXT, required: true },
     });
 
-    if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+    if (verificationKeys !== null && verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
         const error = new Error(c('Error').t`Signature verification failed`);
         error.name = 'SignatureError';
         throw error;
@@ -154,15 +156,20 @@ export const validateInvitationData = async ({
 export const validateInvitationDataValues = async ({
     invitationData,
     invitationAddress,
-    expectRevisionChange,
+    options,
 }: {
     invitationData: MemberInvitationData;
     invitationAddress: Address;
-    expectRevisionChange: boolean;
+    options: {
+        validateRevision: boolean;
+        newMemberCreation: boolean;
+    };
 }) => {
-    const revision = (invitationAddress.SignedKeyList?.Revision ?? 0) + (expectRevisionChange ? 1 : 0);
-    if (revision !== invitationData.Revision) {
-        throw new Error('Invalid invitation signed key list revision state');
+    if (options.validateRevision) {
+        const revision = (invitationAddress.SignedKeyList?.Revision ?? 0) + (options.newMemberCreation ? 1 : 0);
+        if (revision !== invitationData.Revision) {
+            throw new Error('Invalid invitation signed key list revision state');
+        }
     }
 };
 
@@ -219,12 +226,12 @@ export const validateUnprivatizationData = async ({
     api,
     verifyOutboundPublicKeys,
     parsedUnprivatizationData,
-    expectRevisionChange,
+    options,
 }: {
     api: Api;
     verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
     parsedUnprivatizationData: ParsedUnprivatizationData;
-    expectRevisionChange: boolean;
+    options: Parameters<typeof validateInvitationDataValues>[0]['options'];
 }) => {
     if (parsedUnprivatizationData.type === 'private') {
         return;
@@ -262,7 +269,7 @@ export const validateUnprivatizationData = async ({
     await validateInvitationDataValues({
         invitationAddress,
         invitationData,
-        expectRevisionChange,
+        options,
     });
 };
 
@@ -430,51 +437,41 @@ export const getMemberReadyForUnprivatization = (
     );
 };
 
-export const unprivatizeMember = async ({
-    verifyOutboundPublicKeys,
-    api,
-    member,
-    memberAddresses,
+export const getMemberReadyForUnprivatizationApproval = (
+    unprivatizationData: MemberUnprivatization | null
+): unprivatizationData is MemberUnprivatizationReadyForUnprivatizationApproval => {
+    return Boolean(
+        unprivatizationData?.State === MemberUnprivatizationState.Ready &&
+            !unprivatizationData.PrivateIntent &&
+            !unprivatizationData.InvitationData &&
+            !unprivatizationData.InvitationSignature &&
+            !unprivatizationData.InvitationSignature &&
+            unprivatizationData.ActivationToken &&
+            (unprivatizationData.PrivateKeys?.length || 0) > 0
+    );
+};
+
+export const unprivatizeMemberHelper = async ({
+    data: { ActivationToken, PrivateKeys },
+    verificationKeys,
     organizationKey,
+    memberAddresses,
 }: {
-    api: Api;
-    member: MemberReadyForUnprivatization;
+    data: {
+        ActivationToken: string;
+        PrivateKeys: string[];
+    };
     memberAddresses: Address[];
+    verificationKeys: PublicKeyReference[] | null;
     organizationKey?: PrivateKeyReference;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
-}): Promise<UnprivatizeMemberResult> => {
+}) => {
     if (!organizationKey) {
         throw new Error('Invalid requirements');
     }
-    const unprivatizationData = member.Unprivatization;
-    const { InvitationData, InvitationSignature, ActivationToken, PrivateKeys } = unprivatizationData;
-    await validateInvitationData({
-        textData: InvitationData,
-        armoredSignature: InvitationSignature,
-        verificationKeys: [organizationKey],
-    });
-    const data = parseInvitationData(InvitationData);
-
-    const verifiedApiKeys = await getAndVerifyApiKeys({
-        api,
-        email: data.Address,
-        verifyOutboundPublicKeys,
-        internalKeysOnly: false,
-        noCache: true,
-    }).catch(noop);
-
-    if (!verifiedApiKeys) {
-        throw new Error('Unable to fetch public keys of invitee');
-    }
-    if (verifiedApiKeys.Address.SignedKeyList?.Revision !== data.Revision) {
-        throw new Error('Unexpected revision');
-    }
-    const verifiedPublicKeys = verifiedApiKeys.addressKeys.map(({ publicKey }) => publicKey);
-
     const token = await getDecryptedOrganizationActivationToken({
         armoredMessage: ActivationToken,
         decryptionKeys: [organizationKey],
-        verificationKeys: verifiedPublicKeys,
+        verificationKeys,
     });
     const userPrivateKeys = await Promise.all(
         PrivateKeys.map((privateKey) => {
@@ -533,4 +530,64 @@ export const unprivatizeMember = async ({
         UserKeys,
         AddressKeys,
     };
+};
+
+export class UnprivatizationRevisionError extends Error {}
+
+export const unprivatizeMember = async ({
+    verifyOutboundPublicKeys,
+    api,
+    member,
+    memberAddresses,
+    organizationKey,
+    options = {
+        ignoreRevisionCheck: false,
+    },
+}: {
+    api: Api;
+    member: MemberReadyForUnprivatization;
+    memberAddresses: Address[];
+    organizationKey?: PrivateKeyReference;
+    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
+    options?: {
+        ignoreRevisionCheck: boolean;
+    };
+}): Promise<UnprivatizeMemberResult> => {
+    if (!organizationKey) {
+        throw new Error('Invalid requirements');
+    }
+    const unprivatizationData = member.Unprivatization;
+    const { InvitationData, InvitationSignature, ActivationToken, PrivateKeys } = unprivatizationData;
+    await validateInvitationData({
+        textData: InvitationData,
+        armoredSignature: InvitationSignature,
+        verificationKeys: [organizationKey],
+    });
+    const data = parseInvitationData(InvitationData);
+
+    const verifiedApiKeys = await getAndVerifyApiKeys({
+        api,
+        email: data.Address,
+        verifyOutboundPublicKeys,
+        internalKeysOnly: false,
+        noCache: true,
+    }).catch(noop);
+
+    if (!verifiedApiKeys) {
+        throw new Error('Unable to fetch public keys');
+    }
+    if (!options.ignoreRevisionCheck && verifiedApiKeys.Address.SignedKeyList?.Revision !== data.Revision) {
+        throw new UnprivatizationRevisionError('Unexpected revision');
+    }
+    const verifiedPublicKeys = verifiedApiKeys.addressKeys.map(({ publicKey }) => publicKey);
+
+    return unprivatizeMemberHelper({
+        data: {
+            ActivationToken,
+            PrivateKeys,
+        },
+        memberAddresses,
+        verificationKeys: verifiedPublicKeys,
+        organizationKey,
+    });
 };
