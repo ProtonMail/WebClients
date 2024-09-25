@@ -7,10 +7,13 @@ import { Button } from '@proton/atoms';
 import {
     AppVersion,
     AppsDropdown,
+    CalendarLimitReachedModal,
     CollapsibleSidebarSpotlight,
     DropdownMenu,
     DropdownMenuButton,
+    HolidaysCalendarModal,
     Icon,
+    PersonalCalendarModal,
     Sidebar,
     SidebarDrawerItems,
     SidebarList,
@@ -20,6 +23,7 @@ import {
     SidebarPrimaryButton,
     SimpleDropdown,
     SimpleSidebarListItemHeader,
+    SubscribedCalendarModal,
     Tooltip,
     useActiveBreakpoint,
     useApi,
@@ -28,10 +32,6 @@ import {
     useModalState,
     useUser,
 } from '@proton/components';
-import CalendarLimitReachedModal from '@proton/components/containers/calendar/CalendarLimitReachedModal';
-import HolidaysCalendarModal from '@proton/components/containers/calendar/calendarModal/holidaysCalendarModal/HolidaysCalendarModal';
-import { PersonalCalendarModal } from '@proton/components/containers/calendar/calendarModal/personalCalendarModal/PersonalCalendarModal';
-import SubscribedCalendarModal from '@proton/components/containers/calendar/calendarModal/subscribedCalendarModal/SubscribedCalendarModal';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
 import { useLoadingByKey } from '@proton/hooks/useLoading';

@@ -16,7 +16,7 @@ import type { UserModel } from '@proton/shared/lib/interfaces';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { useFlag } from '@proton/unleash';
 
-import { ImportModal } from '../importModal';
+import ImportModal from '../importModal/ImportModal';
 
 interface Props {
     calendars: VisualCalendar[];

@@ -1,5 +1,4 @@
-import type { ChallengeResult } from '@proton/components';
-import type { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
+import type { ChallengeResult, VerificationModel } from '@proton/components';
 import type { AddressGeneration, AppIntent, AuthSession } from '@proton/components/containers/login/interface';
 import type { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
 import type { PAYMENT_METHOD_TYPES, PaymentMethodStatusExtended, SavedPaymentMethod } from '@proton/payments';

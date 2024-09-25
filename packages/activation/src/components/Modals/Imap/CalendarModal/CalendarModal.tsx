@@ -1,4 +1,4 @@
-import { ImportModal } from '@proton/components/containers/calendar/importModal';
+import ImportModal from '@proton/components/containers/calendar/importModal/ImportModal';
 import { useCalendarUserSettings, useCalendars } from '@proton/components/hooks';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS as DEFAULT_SETTINGS,

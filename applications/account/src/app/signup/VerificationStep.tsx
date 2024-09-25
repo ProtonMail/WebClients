@@ -1,5 +1,5 @@
 import { HumanVerificationForm, useConfig } from '@proton/components';
-import type { HumanVerificationFormProps } from '@proton/components/containers/api/humanVerification/HumanVerificationForm';
+import type { HumanVerificationFormProps } from '@proton/components';
 import metrics, { observeApiError } from '@proton/metrics';
 
 import Content from '../public/Content';

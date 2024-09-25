@@ -5,8 +5,7 @@ import { c } from 'ttag';
 
 import { Step, Stepper } from '@proton/atoms';
 import type { OnLoginCallback } from '@proton/components';
-import { HumanVerificationSteps, useKTActivation } from '@proton/components';
-import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
+import { HumanVerificationSteps, startUnAuthFlow, useKTActivation } from '@proton/components';
 import {
     useApi,
     useConfig,

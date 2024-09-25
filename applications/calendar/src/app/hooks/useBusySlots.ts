@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import { getUnixTime } from 'date-fns';
 
-import useBusySlotsAvailable from '@proton/components/containers/calendar/hooks/useBusySlotsAvailable';
+import { useBusySlotsAvailable } from '@proton/components';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 
 import type { CalendarViewEventTemporaryEvent } from '../containers/calendar/interface';

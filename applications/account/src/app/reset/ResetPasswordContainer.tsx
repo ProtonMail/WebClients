@@ -7,6 +7,7 @@ import { Button, ButtonLike, CircleLoader, Href } from '@proton/atoms';
 import type { OnLoginCallback } from '@proton/components';
 import {
     GenericError,
+    startUnAuthFlow,
     useApi,
     useConfig,
     useErrorHandler,
@@ -17,7 +18,6 @@ import {
     useResetSelfAudit,
     useSearchParamsEffect,
 } from '@proton/components';
-import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import type {
     ResetActionResponse,
     ResetCacheResult,
