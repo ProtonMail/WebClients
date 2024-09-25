@@ -277,7 +277,7 @@ export const AmountDataItem = ({
     return (
         <div className="w-full">
             <span className="color-weak flex items-center gap-2 my-1">
-                {label}amount
+                {label}
                 {infoTitle && <Info title={infoTitle} className="color-hint" />}
             </span>
             <div className="flex flex-row flex-nowrap items-center text-lg my-1">
