@@ -5,13 +5,13 @@ import Label from '@proton/components/components/label/Label';
 import Info from '@proton/components/components/link/Info';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { getColorName } from '@proton/shared/lib/colors';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label as tsLabel } from '@proton/shared/lib/interfaces/Label';
 
-import { useMailSettings } from '../../hooks';
 import ParentFolderSelector from './ParentFolderSelector';
 
 interface Props {

@@ -59,7 +59,6 @@ export { default as useIsClosing } from './useIsClosing';
 export { default as useKeyPress } from './useKeyPress';
 export { default as useLoad } from './useLoad';
 export { default as useLocalState } from './useLocalState';
-export * from './useMailSettings';
 export { default as useMainArea, MainAreaContext } from './useMainArea';
 export * from './useMember';
 export * from './useMembers';

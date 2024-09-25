@@ -1,4 +1,4 @@
-import { useMailSettings } from '@proton/components/hooks';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 
 type MailModel = 'MailSettings';
 

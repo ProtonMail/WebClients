@@ -11,8 +11,8 @@ import {
     Summary,
     useBusySlotsAvailable,
     useContactEmailsCache,
-    useMailSettings,
 } from '@proton/components';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { ICAL_ATTENDEE_ROLE } from '@proton/shared/lib/calendar/constants';
