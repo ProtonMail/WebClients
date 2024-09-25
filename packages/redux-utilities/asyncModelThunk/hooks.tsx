@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useCallback, useContext, useEffect, useRef } from 'react';
+import { type ReactNode, createContext, useCallback, useContext, useEffect, useRef } from 'react';
 
 import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 import { createSelector } from '@reduxjs/toolkit';

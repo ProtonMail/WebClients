@@ -42,13 +42,22 @@ export const useApiWalletTransactionData = (args: WalletTransactionsThunkArg | s
     const getApiWalletTransactionData = useGetApiWalletTransactionData();
     const [, loading] = hooks.useValue();
 
-    const ApiWalletTransactionDataSimpleSelector = createSelector(
+    console.log('loadingloadingloading', loading);
+
+    const apiWalletTransactionDataSimpleSelector = createSelector(
         selectApiWalletTransactionData,
         (result): [WalletTransactionByHashedTxId | undefined, boolean] => {
             const { value } = result;
             const hashedTxIdToPick = Array.isArray(args) ? args : Object.keys(args.networkTransactionByHashedTxId);
 
-            return [value && pick(value, hashedTxIdToPick), loading];
+            if (!value) {
+                return [{}, true];
+            }
+
+            const pickedItems = pick(value, hashedTxIdToPick);
+            const isLoading = Object.values(pickedItems).filter(Boolean).length !== hashedTxIdToPick.length;
+
+            return [pickedItems, isLoading];
         }
     );
 
@@ -60,5 +69,5 @@ export const useApiWalletTransactionData = (args: WalletTransactionsThunkArg | s
         }
     }, [args, getApiWalletTransactionData, previousArgs]);
 
-    return baseUseSelector(ApiWalletTransactionDataSimpleSelector);
+    return baseUseSelector(apiWalletTransactionDataSimpleSelector);
 };

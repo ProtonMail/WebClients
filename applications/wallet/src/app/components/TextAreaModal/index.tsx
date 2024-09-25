@@ -9,6 +9,7 @@ interface Props extends ModalOwnProps {
     title: string;
     buttonText: string;
     inputLabel: string;
+    loading?: boolean;
     value: string;
     onSubmit: (value: string) => void;
     maxLength?: number;
@@ -18,6 +19,7 @@ export const TextAreaModal = ({
     title,
     buttonText,
     inputLabel,
+    loading,
     value: baseValue,
     onSubmit,
     maxLength,
@@ -39,9 +41,17 @@ export const TextAreaModal = ({
                 value={value}
                 onValue={(v: string) => setValue(v)}
                 maxLength={maxLength}
+                disabled={loading}
             />
 
-            <Button color="norm" shape="solid" className="mt-6" fullWidth onClick={() => onSubmit(value)}>
+            <Button
+                color="norm"
+                shape="solid"
+                className="mt-6"
+                fullWidth
+                disabled={loading}
+                onClick={() => onSubmit(value)}
+            >
                 {buttonText}
             </Button>
         </Modal>
