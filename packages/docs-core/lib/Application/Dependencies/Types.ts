@@ -8,6 +8,7 @@ export const App_TYPES = {
   WebsocketService: Symbol.for('WebsocketService'),
   RealtimeEncryptionService: Symbol.for('RealtimeEncryptionService'),
   CommentsEncryptionService: Symbol.for('CommentsEncryptionService'),
+  MetricService: Symbol.for('MetricService'),
 
   // Use cases
   SquashDocument: Symbol.for('SquashDocument'),
