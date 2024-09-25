@@ -27,6 +27,7 @@ import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import initLogicalProperties from '@proton/shared/lib/logical/logical';
 import noop from '@proton/utils/noop';
 
 import { registerMailToProtocolHandler } from 'proton-mail/helpers/url';
@@ -46,6 +47,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     bootstrap.init({ config, authentication, locales });
     setupGuestCrossStorage();
     initElectronClassnames();
+    initLogicalProperties();
     initSafariFontFixClassnames();
     // If the browser is Chromium based, register automatically the mailto protocol handler
     if (isChromiumBased()) {
