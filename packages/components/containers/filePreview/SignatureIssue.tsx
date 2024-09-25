@@ -4,8 +4,7 @@ import { c } from 'ttag';
 
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import Icon from '@proton/components/components/icon/Icon';
-
-import { useActiveBreakpoint } from '../../hooks';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 
 const SignatureIssue = ({
     signatureConfirmation,

@@ -1,11 +1,10 @@
 import { c } from 'ttag';
 
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import corruptedPreviewSvg from '@proton/styles/assets/img/errors/broken-image.svg';
 import unsupportedPreviewSvg from '@proton/styles/assets/img/errors/preview-unavailable.svg';
 import clsx from '@proton/utils/clsx';
-
-import { useActiveBreakpoint } from '../../hooks';
 
 interface Props {
     type?: 'file' | 'image' | 'video' | 'audio';

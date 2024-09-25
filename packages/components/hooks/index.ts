@@ -1,5 +1,3 @@
-export { default as useActiveBreakpoint } from './useActiveBreakpoint';
-export * from './useActiveBreakpoint';
 export { default as useAddresses, useGetAddresses } from './useAddresses';
 export { useAddressesKeys, useGetAddressKeys } from './useAddressesKeys';
 export { default as useApi } from './useApi';

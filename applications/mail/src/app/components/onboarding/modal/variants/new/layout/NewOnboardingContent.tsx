@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { useActiveBreakpoint } from '@proton/components/hooks';
+import { useActiveBreakpoint } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 export interface Props {
