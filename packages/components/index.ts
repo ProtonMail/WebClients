@@ -742,6 +742,7 @@ export { default as useUnprivatizeMembers } from './containers/organization/useU
 export { OtherMailPreferencesSection } from './containers/otherMailPreferences/OtherMailPreferencesSection';
 export { default as IndexSection } from './containers/overview/IndexSection';
 export { default as SummarySection } from './containers/overview/SummarySection';
+export { default as AuthModal } from './containers/password/AuthModal';
 export { default as CrashReportsToggle } from './containers/privacy/CrashReportsToggle';
 export { default as PrivacySection } from './containers/privacy/PrivacySection';
 export { default as TelemetryToggle } from './containers/privacy/TelemetryToggle';

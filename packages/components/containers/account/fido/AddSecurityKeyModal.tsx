@@ -15,6 +15,7 @@ import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import RegisterSecurityKeyContent from '@proton/components/containers/account/fido/RegisterSecurityKeyContent';
+import AuthModal from '@proton/components/containers/password/AuthModal';
 import { useLoading } from '@proton/hooks';
 import { getSecurityKeyChallenge, registerSecurityKey } from '@proton/shared/lib/api/settings';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -26,7 +27,6 @@ import type { RegisterCredentials } from '@proton/shared/lib/webauthn/interface'
 import physicalKeyRegistered from '@proton/styles/assets/img/illustrations/physical-key-registered.svg';
 
 import { useApi, useErrorHandler, useEventManager } from '../../../hooks';
-import AuthModal from '../../password/AuthModal';
 import { maxSecurityKeyNameLength } from './constants';
 
 enum Steps {

@@ -15,6 +15,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import AuthModal from '@proton/components/containers/password/AuthModal';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -22,7 +23,6 @@ import type { CachedOrganizationKey } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { useErrorHandler, useEventManager, useNotifications } from '../../hooks';
-import AuthModal from '../password/AuthModal';
 
 interface Props extends ModalProps {
     hasOtherAdmins: boolean;
