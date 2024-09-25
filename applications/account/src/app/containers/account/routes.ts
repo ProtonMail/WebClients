@@ -18,6 +18,7 @@ import {
     getHasExternalMemberCapableB2BPlan,
     getHasVpnB2BPlan,
     hasCancellablePlan,
+    isCancellableOnlyViaSupport,
 } from '@proton/shared/lib/helpers/subscription';
 import type {
     Address,
@@ -77,6 +78,7 @@ export const getAccountAppRoutes = ({
     const hasExternalMemberCapableB2BPlan = getHasExternalMemberCapableB2BPlan(subscription);
 
     const cancellablePlan = hasCancellablePlan(subscription, user);
+    const cancellableOnlyViaSupport = isCancellableOnlyViaSupport(subscription);
 
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
     const hasSplitStorage =
@@ -141,18 +143,27 @@ export const getAccountAppRoutes = ({
                     {
                         text: c('Title').t`Cancel subscription`,
                         id: 'cancel-subscription',
-                        available: isPaid && canPay && cancellablePlan && subscription?.Renew === Renew.Enabled,
+                        available:
+                            isPaid &&
+                            canPay &&
+                            cancellablePlan &&
+                            subscription?.Renew === Renew.Enabled &&
+                            !cancellableOnlyViaSupport,
                     },
                     {
                         text: c('Title').t`Cancel subscription`,
-                        id: 'cancel-b2b-subscription',
-                        // B2B cancellation has a different flow, so we don't consider it a classic cancellable plan
-                        available: isPaid && canPay && !cancellablePlan && hasExternalMemberCapableB2BPlan,
+                        id: 'cancel-via-support',
+                        available: isPaid && canPay && cancellableOnlyViaSupport,
                     },
                     {
                         text: c('Title').t`Cancel subscription`,
                         id: 'downgrade-account',
-                        available: isPaid && canPay && !cancellablePlan && !hasExternalMemberCapableB2BPlan,
+                        available:
+                            isPaid &&
+                            canPay &&
+                            !cancellablePlan &&
+                            !hasExternalMemberCapableB2BPlan &&
+                            !cancellableOnlyViaSupport,
                     },
                 ],
             },

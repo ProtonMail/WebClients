@@ -12,8 +12,8 @@ import {
     AuthenticatedBugModal,
     AutomaticSubscriptionModal,
     type BugModalMode,
-    CancelB2bSubscriptionSection,
     CancelSubscriptionSection,
+    CancelSubscriptionViaSupportSection,
     CancellationReminderSection,
     CreditsSection,
     DeleteSection,
@@ -258,7 +258,7 @@ const MainContainer: FunctionComponent = () => {
                                             <InvoicesSection />
                                             <CancelSubscriptionSection app={app} />
                                             <DowngradeSubscriptionSection app={app} />
-                                            <CancelB2bSubscriptionSection />
+                                            <CancelSubscriptionViaSupportSection />
                                         </PrivateMainSettingsArea>
                                     </SubscriptionModalProvider>
                                 </Route>

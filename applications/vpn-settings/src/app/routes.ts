@@ -2,7 +2,11 @@ import { c } from 'ttag';
 
 import type { SectionConfig } from '@proton/components';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
-import { getHasVpnB2BPlan, hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
+import {
+    getHasVpnB2BPlan,
+    hasCancellablePlan,
+    isCancellableOnlyViaSupport,
+} from '@proton/shared/lib/helpers/subscription';
 import type { Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import { Renew } from '@proton/shared/lib/interfaces';
 import { getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
@@ -15,6 +19,7 @@ interface Arguments {
 export const getRoutes = ({ user, subscription }: Arguments) => {
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
     const cancellablePlan = hasCancellablePlan(subscription, user);
+    const cancellableOnlyViaSupport = isCancellableOnlyViaSupport(subscription);
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
 
     return {
@@ -62,7 +67,11 @@ export const getRoutes = ({ user, subscription }: Arguments) => {
                 {
                     text: c('Title').t`Cancel subscription`,
                     id: 'cancel-subscription',
-                    available: user.isPaid && cancellablePlan && subscription?.Renew === Renew.Enabled,
+                    available:
+                        user.isPaid &&
+                        cancellablePlan &&
+                        subscription?.Renew === Renew.Enabled &&
+                        !cancellableOnlyViaSupport,
                 },
                 {
                     text: c('Title').t`Downgrade account`,
@@ -71,13 +80,18 @@ export const getRoutes = ({ user, subscription }: Arguments) => {
                     // that depend on subscription are correctly computed before the first rendering.
                     // Otherwise the component will be mounted and immediately unmounted which can cause memory leaks due
                     // to async calls that started in a rendering cycle.
-                    available: !!subscription && user.isPaid && !cancellablePlan && !hasVpnB2BPlan,
+                    available:
+                        !!subscription &&
+                        user.isPaid &&
+                        !cancellablePlan &&
+                        !hasVpnB2BPlan &&
+                        !cancellableOnlyViaSupport,
                 },
                 {
                     text: c('Title').t`Cancel subscription`,
-                    id: 'cancel-b2b-subscription',
+                    id: 'cancel-via-support',
                     // B2B cancellation has a different flow, so we don't consider it a classic cancellable plan
-                    available: user.isPaid && !cancellablePlan && hasVpnB2BPlan,
+                    available: user.isPaid && cancellableOnlyViaSupport,
                 },
             ],
         },
