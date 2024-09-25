@@ -3,9 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { VAULT_COLOR_MAP } from '@proton/pass/components/Vault/constants';
 import { selectTrashedItems } from '@proton/pass/store/selectors';
-import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
 import clsx from '@proton/utils/clsx';
 
 import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
@@ -26,11 +24,8 @@ export const TrashItem: FC<Props> = ({ dense, selected, handleTrashRestore, hand
             label={c('Label').t`Trash`}
             icon="trash"
             onClick={onSelect}
-            className={clsx(!dense && 'py-3')}
-            parentClassName={clsx('pass-vault-submenu-vault-item w-full', selected && 'selected')}
-            style={{
-                '--vault-icon-color': VAULT_COLOR_MAP[VaultColor.COLOR_UNSPECIFIED],
-            }}
+            className={clsx(selected && 'sidebar-item-selected', !dense && 'py-3')}
+            parentClassName={clsx('pass-vault-submenu-vault-item w-full')}
             quickActions={[
                 <DropdownMenuButton
                     key="trash-restore"

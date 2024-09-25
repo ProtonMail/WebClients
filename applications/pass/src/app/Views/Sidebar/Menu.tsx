@@ -79,7 +79,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                 {onboarding.type === OnboardingType.B2B && onboarding.enabled && <OnboardingButton />}
                 <SecureLinkButton
                     className="rounded"
-                    activeClassName="color-primary bg-weak"
+                    activeClassName="sidebar-item-selected"
                     parentClassName="mx-3"
                     onClick={() => navigate(getLocalPath('secure-links'))}
                 />
