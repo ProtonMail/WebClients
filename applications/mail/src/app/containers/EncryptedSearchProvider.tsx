@@ -5,17 +5,15 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import {
-    FeatureCode,
     useAddresses,
     useApi,
-    useFeature,
+    useGetMessageCounts,
     useGetUserKeys,
     useISESEnabledElectron,
     useSubscribeEventManager,
     useUser,
     useWelcomeFlags,
 } from '@proton/components';
-import { useGetMessageCounts } from '@proton/components/hooks';
 import {
     checkVersionedESDB,
     contentIndexingProgress,
@@ -23,6 +21,7 @@ import {
     useEncryptedSearch,
     wrappedGetOldestInfo,
 } from '@proton/encrypted-search';
+import { FeatureCode, useFeature } from '@proton/features';
 import { SECOND } from '@proton/shared/lib/constants';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { isMobile } from '@proton/shared/lib/helpers/browser';

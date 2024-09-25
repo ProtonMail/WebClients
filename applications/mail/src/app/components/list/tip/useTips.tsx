@@ -6,16 +6,15 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms';
 import {
     ErrorBoundary,
-    FeatureCode,
     PassAliasesProvider,
     useAddresses,
-    useFeature,
     useMailSettings,
     useOrganization,
     useUser,
 } from '@proton/components';
 import { useFolders, useLabels } from '@proton/components/hooks/useCategories';
 import useUserSettings from '@proton/components/hooks/useUserSettings';
+import { FeatureCode, useFeature } from '@proton/features';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { PassBridgeProvider } from '@proton/pass/lib/bridge/PassBridgeProvider';
 import {

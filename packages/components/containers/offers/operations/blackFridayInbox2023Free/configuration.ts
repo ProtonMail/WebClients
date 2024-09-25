@@ -1,6 +1,6 @@
+import { FeatureCode } from '@proton/features';
 import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
-import { FeatureCode } from '../../../../containers/features';
 import {
     getMailPlusInboxFeatures,
     getUnlimitedInboxFeatures,

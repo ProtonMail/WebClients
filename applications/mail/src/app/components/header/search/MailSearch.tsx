@@ -4,7 +4,6 @@ import type { Location } from 'history';
 
 import type { Breakpoints } from '@proton/components';
 import {
-    FeatureCode,
     TopNavbarListItemSearchButton,
     useAddresses,
     useFolders,
@@ -14,6 +13,7 @@ import {
     useToggle,
     useUser,
 } from '@proton/components';
+import { FeatureCode } from '@proton/features';
 import generateUID from '@proton/utils/generateUID';
 
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT } from '../../../constants';

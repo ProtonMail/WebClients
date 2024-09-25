@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
 import type { SettingsAreaConfig } from '@proton/components';
-import { FeatureCode, Loader } from '@proton/components';
+import { Loader } from '@proton/components';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import PrivateMainSettingsArea, {
     PrivateMainSettingsAreaBase,
 } from '@proton/components/containers/layout/PrivateMainSettingsArea';
-import { useFeature } from '@proton/components/hooks';
+import { FeatureCode, useFeature } from '@proton/features';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 

@@ -1,9 +1,9 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import ProtonBadgeType from '@proton/components/components/protonBadge/ProtonBadgeType';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 
-jest.mock('@proton/components/hooks/useFeature', () => jest.fn(() => ({ feature: { Value: true } })));
+jest.mock('@proton/features/useFeature', () => jest.fn(() => ({ feature: { Value: true } })));
 
 describe('ProtonBadgeType', () => {
     it('should show a verified badge', async () => {
@@ -13,9 +13,9 @@ describe('ProtonBadgeType', () => {
             IsProton: 1,
         };
 
-        const { getByTestId } = render(<ProtonBadgeType recipient={verifiedRecipient} />);
+        render(<ProtonBadgeType recipient={verifiedRecipient} />);
 
-        getByTestId('proton-badge');
+        screen.getByTestId('proton-badge');
     });
 
     it('should not show a verified badge', async () => {
@@ -25,9 +25,9 @@ describe('ProtonBadgeType', () => {
             IsProton: 0,
         };
 
-        const { queryByTestId } = render(<ProtonBadgeType recipient={normalRecipient} />);
+        render(<ProtonBadgeType recipient={normalRecipient} />);
 
-        const protonBadge = queryByTestId('proton-badge');
+        const protonBadge = screen.queryByTestId('proton-badge');
         expect(protonBadge).toBeNull();
     });
 });
