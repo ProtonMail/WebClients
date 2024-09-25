@@ -9,6 +9,13 @@ export const getHasStorageSplit = (user: User) => {
     return user.MaxBaseSpace !== undefined;
 };
 
+export const getUsedSpace = (user: User) => {
+    if (getHasStorageSplit(user)) {
+        return user.UsedBaseSpace + user.UsedDriveSpace;
+    }
+    return user.UsedSpace;
+};
+
 export const getSpace = (user: User) => {
     const usedSpace = user.UsedSpace ?? 0;
     const maxSpace = user.MaxSpace ?? 0;

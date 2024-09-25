@@ -20,10 +20,15 @@ export const getMemberHasMissingOrgKey = (member: Member) => member.AccessToOrgK
 
 export const isOrganizationDuo = (organization?: Organization) => organization?.PlanName === PLANS.DUO;
 export const isOrganizationFamily = (organization?: Organization) => organization?.PlanName === PLANS.FAMILY;
+export const isOrganizationPassFamily = (organization?: Organization) => organization?.PlanName === PLANS.PASS_FAMILY;
 export const isOrganizationVisionary = (organization?: Organization) => organization?.PlanName === PLANS.VISIONARY;
 
 export const getOrganizationDenomination = (organization?: Organization) => {
-    if (isOrganizationDuo(organization) || isOrganizationFamily(organization)) {
+    if (
+        isOrganizationDuo(organization) ||
+        isOrganizationFamily(organization) ||
+        isOrganizationPassFamily(organization)
+    ) {
         return 'familyGroup';
     }
     return 'organization';
@@ -38,6 +43,7 @@ export const isOrganizationB2B = (organization?: Organization) => {
         PLANS.BUNDLE_PRO_2024,
         PLANS.ENTERPRISE,
         PLANS.FAMILY,
+        PLANS.PASS_FAMILY,
         PLANS.DUO,
         PLANS.VISIONARY,
     ].includes(organization?.PlanName as PLANS);
@@ -46,6 +52,7 @@ export const isOrganizationB2B = (organization?: Organization) => {
 /** True if user is part of an organization (works also for org admins) */
 export const isOrganization = (organization?: Organization) =>
     isOrganizationFamily(organization) ||
+    isOrganizationPassFamily(organization) ||
     isOrganizationDuo(organization) ||
     isOrganizationB2B(organization) ||
     isOrganizationVisionary(organization);

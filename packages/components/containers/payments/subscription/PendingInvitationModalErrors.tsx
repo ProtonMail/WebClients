@@ -8,6 +8,7 @@ import BugModal from '@proton/components/containers/support/BugModal';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { AcceptInvitationValidation, PendingInvitation } from '@proton/shared/lib/interfaces';
+import { getUsedSpace } from '@proton/shared/lib/user/storage';
 
 interface Props {
     invite: PendingInvitation;
@@ -20,7 +21,7 @@ const PendingInvitationModalErrors = ({ errors, invite, onClose }: Props) => {
     const [bugReportModal, setBugReportOpen, render] = useModalState();
 
     const inviteSpace = humanSize({ bytes: invite.MaxSpace, withoutUnit: false, fraction: 0 });
-    const usedSpace = humanSize({ bytes: user.UsedSpace, withoutUnit: false, fraction: 0 });
+    const usedSpace = humanSize({ bytes: getUsedSpace(user), withoutUnit: false, fraction: 0 });
 
     let errorDescription: string | string[] = '';
 

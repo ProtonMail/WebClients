@@ -952,6 +952,7 @@ export enum PLANS {
     VPN_PASS_BUNDLE = 'vpnpass2023',
     PASS_PRO = 'passpro2024',
     PASS_BUSINESS = 'passbiz2024',
+    PASS_FAMILY = 'passfamily2024',
 }
 
 export const isStringPLAN = (value: string): value is PLANS => Object.values(PLANS).includes(value as PLANS);
@@ -981,6 +982,7 @@ export const PLAN_NAMES = {
     [PLANS.VPN_PASS_BUNDLE]: 'VPN and Pass bundle',
     [PLANS.PASS_PRO]: 'Pass Essentials',
     [PLANS.PASS_BUSINESS]: 'Pass Professional',
+    [PLANS.PASS_FAMILY]: 'Pass Family',
 };
 
 export enum COUPON_CODES {

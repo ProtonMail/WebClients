@@ -51,12 +51,19 @@ export const getFreeTitle = (appName: string) => {
 };
 
 export const getHasBusinessUpsell = (subscribedPlan: PLANS | ADDON_NAMES | undefined) => {
-    const proPlansWithoutPass = [PLANS.MAIL_PRO, PLANS.DRIVE_PRO, PLANS.VPN_PRO];
+    const proPlansWithoutPass = [
+        PLANS.MAIL_PRO,
+        PLANS.MAIL_BUSINESS,
+        PLANS.DRIVE_PRO,
+        PLANS.DRIVE_BUSINESS,
+        PLANS.VPN_PRO,
+        PLANS.VPN_BUSINESS,
+    ];
     return proPlansWithoutPass.some((plan) => plan === subscribedPlan);
 };
 
 export const getHasAnyPlusPlan = (subscribedPlan: PLANS | ADDON_NAMES | undefined) => {
-    return [PLANS.MAIL, PLANS.DRIVE, PLANS.VPN, PLANS.PASS, PLANS.VPN_PASS_BUNDLE].some(
+    return [PLANS.MAIL, PLANS.DRIVE, PLANS.VPN, PLANS.VPN2024, PLANS.PASS, PLANS.VPN_PASS_BUNDLE].some(
         (plan) => plan === subscribedPlan
     );
 };
