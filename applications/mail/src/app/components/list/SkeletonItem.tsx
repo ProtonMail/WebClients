@@ -1,7 +1,7 @@
 import { memo } from 'react';
 
+import type { Breakpoints } from '@proton/components';
 import { ItemCheckbox } from '@proton/components';
-import type { Breakpoints } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
 import type { Element } from '../../models/element';

@@ -9,7 +9,7 @@ import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import { upgradeButtonClick } from '@proton/components/containers/desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
-import { useActiveBreakpoint } from '@proton/components/hooks';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import type { PLANS } from '@proton/shared/lib/constants';
 import { CYCLE } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';

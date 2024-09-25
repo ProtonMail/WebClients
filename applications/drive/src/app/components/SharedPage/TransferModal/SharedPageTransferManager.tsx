@@ -3,8 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
-import { FileIcon, Icon, Tooltip, useToggle } from '@proton/components';
-import { useActiveBreakpoint } from '@proton/components/hooks';
+import { FileIcon, Icon, Tooltip, useActiveBreakpoint, useToggle } from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { DRIVE_PRICING_PAGE } from '@proton/shared/lib/drive/urls';
 import clsx from '@proton/utils/clsx';

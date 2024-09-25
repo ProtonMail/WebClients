@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { useActiveBreakpoint } from '@proton/components/hooks';
+import { useActiveBreakpoint } from '@proton/components';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import clsx from '@proton/utils/clsx';
 

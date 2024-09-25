@@ -4,7 +4,7 @@ import { forwardRef } from 'react';
 import type { ButtonLikeProps } from '@proton/atoms';
 import { ButtonLike, CircleLoader } from '@proton/atoms';
 import Icon, { type IconName, type IconSize } from '@proton/components/components/icon/Icon';
-import { useActiveBreakpoint } from '@proton/components/hooks';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useUid from '@proton/components/hooks/useUid';
 import type { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
