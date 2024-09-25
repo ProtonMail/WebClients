@@ -1,5 +1,4 @@
 import type { ComponentProps } from 'react';
-import { useEffect, useRef, useState } from 'react';
 
 import OrderableTableBody from '@proton/components/components/orderableTable/OrderableTableBody';
 import type { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
@@ -28,33 +27,10 @@ const MergeTableBody = ({
     onToggleDelete,
     ...rest
 }: Props) => {
-    const ref = useRef<any>(null);
-    const observerRef = useRef<IntersectionObserver | null>(null);
-    const [isIntersecting, setIsIntersecting] = useState(false);
-
-    useEffect(() => {
-        observerRef.current = new IntersectionObserver(([entry]) => setIsIntersecting(entry.isIntersecting));
-    }, []);
-
-    useEffect(() => {
-        if (!observerRef.current || !ref.current) {
-            return;
-        }
-
-        observerRef.current.observe(ref.current?.node);
-
-        return () => {
-            if (observerRef.current) {
-                observerRef.current.disconnect();
-            }
-        };
-    }, [ref]);
-
     return (
         <OrderableTableBody colSpan={4} {...rest} data-testid="merge-model:merge-table">
             {contacts.map((Contact, i) => (
                 <MergeTableBodyRow
-                    ref={ref}
                     index={i}
                     key={Contact.ID}
                     ID={Contact.ID}
@@ -65,7 +41,6 @@ const MergeTableBody = ({
                     onClickCheckbox={onClickCheckbox}
                     onClickDetails={onClickDetails}
                     onToggleDelete={onToggleDelete}
-                    isIntersecting={isIntersecting}
                 />
             ))}
         </OrderableTableBody>
