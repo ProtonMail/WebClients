@@ -19,7 +19,7 @@ export const MonitorButton: FC = () => {
     return (
         <DropdownMenuButton
             icon={`pass-shield-monitoring-${breachCount ? 'warning' : 'ok'}`}
-            className={clsx('rounded', isActive && 'color-primary bg-weak')}
+            className={clsx('rounded', isActive && 'sidebar-item-selected')}
             ellipsis
             label={c('Action').t`Pass Monitor`}
             extra={

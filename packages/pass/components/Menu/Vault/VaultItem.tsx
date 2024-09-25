@@ -6,7 +6,6 @@ import { c } from 'ttag';
 import { ButtonLike } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
-import { VAULT_COLOR_MAP } from '@proton/pass/components/Vault/constants';
 import { UpsellRef } from '@proton/pass/constants';
 import { isVaultMemberLimitReached, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { type ShareItem } from '@proton/pass/store/reducers';
@@ -14,7 +13,6 @@ import { selectPassPlan } from '@proton/pass/store/selectors';
 import type { ShareType } from '@proton/pass/types';
 import { ShareRole } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
-import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import clsx from '@proton/utils/clsx';
 
@@ -69,14 +67,9 @@ export const VaultItem: FC<Props> = ({
             label={<span className="block text-ellipsis">{label}</span>}
             parentClassName={clsx(
                 'pass-vault-submenu-vault-item w-full',
-                selected && 'selected',
                 !withActions && 'pass-vault-submenu-vault-item--no-actions'
             )}
-            className={clsx(!dense && 'py-3')}
-            style={{
-                '--vault-icon-color': VAULT_COLOR_MAP[vault?.content.display.color ?? VaultColor.COLOR1],
-                '--max-h-custom': '1.25rem',
-            }}
+            className={clsx(selected && 'sidebar-item-selected', !dense && 'py-3')}
             extra={
                 <>
                     {shared && (

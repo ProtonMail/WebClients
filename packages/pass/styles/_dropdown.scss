@@ -13,3 +13,13 @@
 		background-color: var(--background-weak);
 	}
 }
+
+.dropdown,
+#pass-sidebar {
+	.sidebar-item-selected,
+	.sidebar-item-selected:active,
+	.sidebar-item-selected:focus,
+	.sidebar-item-selected:hover {
+		background-color: var(--sidebar-item-selected-background-color);
+	}
+}
