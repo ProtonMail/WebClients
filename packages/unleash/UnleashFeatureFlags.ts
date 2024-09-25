@@ -55,6 +55,7 @@ enum AccountFlag {
     DashboardRegionalCurrency = 'DashboardRegionalCurrency',
     B2BAuthenticationLogs = 'B2BAuthenticationLogs',
     ShowGatewaysForBundlePlan = 'ShowGatewaysForBundlePlan',
+    EasySwitchConsentExperiment = 'EasySwitchConsentExperiment',
 }
 
 enum CalendarFeatureFlag {
