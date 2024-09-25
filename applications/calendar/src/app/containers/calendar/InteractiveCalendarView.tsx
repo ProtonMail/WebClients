@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import {
     Dropzone,
+    ImportModal,
     useApi,
     useBeforeUnload,
     useCalendarModelEventManager,
@@ -21,7 +22,6 @@ import {
     useRelocalizeText,
     useUser,
 } from '@proton/components';
-import { ImportModal } from '@proton/components/containers/calendar/importModal';
 import { useReadCalendarBootstrap } from '@proton/components/hooks/useGetCalendarBootstrap';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';

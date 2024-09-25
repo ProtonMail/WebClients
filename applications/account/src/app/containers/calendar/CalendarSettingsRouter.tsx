@@ -7,9 +7,11 @@ import { useLoadAllowedTimeZones } from '@proton/calendar/timezones';
 import {
     CalendarExportSection,
     CalendarImportSection,
+    CalendarInvitationsSection,
     CalendarLayoutSection,
     CalendarSubpage,
     CalendarTimeSection,
+    CalendarsSettingsSection,
     InboxDesktopSettingsSection,
     MobileAppSettingsSection,
     PrivateMainAreaLoading,
@@ -21,8 +23,6 @@ import {
     useIsInboxElectronApp,
     useSubscribedCalendars,
 } from '@proton/components';
-import CalendarInvitationsSection from '@proton/components/containers/calendar/settings/CalendarInvitationsSection';
-import CalendarsSettingsSection from '@proton/components/containers/calendar/settings/CalendarsSettingsSection';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,

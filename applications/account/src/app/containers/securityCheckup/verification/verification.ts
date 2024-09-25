@@ -1,7 +1,4 @@
-import type {
-    VerificationDataResult,
-    VerificationTokenResult,
-} from '@proton/components/containers/api/humanVerification/interface';
+import type { VerificationDataResult, VerificationTokenResult } from '@proton/components';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import {
     getVerificationDataRoute,
