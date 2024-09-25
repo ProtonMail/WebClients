@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import type { ModalOwnProps } from '@proton/components';
 import { useNotifications, useUserKeys } from '@proton/components/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { encryptWalletDataWithWalletKey, useWalletApi } from '@proton/wallet';
 import { updateWalletTransaction, useApiWalletTransactionData, useWalletDispatch } from '@proton/wallet/store';
@@ -19,6 +20,7 @@ interface Props extends ModalOwnProps {
 export const TransactionNoteModal = ({ apiWalletData, hashedTxId, ...modalProps }: Props) => {
     const [walletTransactions] = useApiWalletTransactionData([hashedTxId]);
     const apiWalletTransaction = walletTransactions?.[hashedTxId];
+    const [loading, withLoading] = useLoading();
 
     const baseLabel = apiWalletTransaction?.Label ?? '';
     const dispatch = useWalletDispatch();
@@ -88,7 +90,10 @@ export const TransactionNoteModal = ({ apiWalletData, hashedTxId, ...modalProps 
             inputLabel={c('Wallet transaction').t`Note to self`}
             buttonText={c('Wallet transaction').t`Save note`}
             value={baseLabel}
-            onSubmit={(value) => handleSaveNote(value)}
+            loading={loading}
+            onSubmit={(value) => {
+                void withLoading(handleSaveNote(value));
+            }}
             {...modalProps}
             maxLength={TEXT_AREA_MAX_LENGTH}
         />
