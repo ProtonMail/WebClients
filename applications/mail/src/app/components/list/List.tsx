@@ -4,7 +4,8 @@ import { Fragment, forwardRef, memo, useEffect, useMemo } from 'react';
 import { c, msgid } from 'ttag';
 
 import type { Breakpoints } from '@proton/components';
-import { useConversationCounts, useItemsDraggable, useLabels, useMessageCounts } from '@proton/components';
+import { useItemsDraggable, useLabels, useMessageCounts } from '@proton/components';
+import { useConversationCounts } from '@proton/mail/counts/conversationCounts';
 import { DENSITY } from '@proton/shared/lib/constants';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';

@@ -11,7 +11,6 @@ import {
     SidebarListItem,
     SimpleSidebarListItemHeader,
     Tooltip,
-    useConversationCounts,
     useFolders,
     useHotkeys,
     useLabels,
@@ -20,6 +19,7 @@ import {
     useSystemFolders,
     useUser,
 } from '@proton/components';
+import { useConversationCounts } from '@proton/mail/counts/conversationCounts';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { SOURCE_EVENT } from '@proton/shared/lib/helpers/collapsibleSidebar';
