@@ -236,7 +236,7 @@ export const getOrganizationAppRoutes = ({
                     {
                         text: c('Title').t`Security events`,
                         id: 'security-events',
-                        available: isB2BAuthLogsEnabled,
+                        available: isB2BAuthLogsEnabled && !isPartOfFamily,
                     },
                 ],
             },
