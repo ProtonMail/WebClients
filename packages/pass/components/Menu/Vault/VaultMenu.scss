@@ -6,20 +6,4 @@
 	> button {
 		border-radius: var(--border-radius-md);
 	}
-
-	&.selected {
-		> button {
-			background-color: rgb(var(--vault-icon-color) / 0.16);
-			color: rgb(var(--vault-icon-color));
-
-			.pass-vault-icon {
-				--vault-icon-color: rgb(var(--vault-icon-color));
-			}
-		}
-
-		svg,
-		.pass-vault--count {
-			color: rgb(var(--vault-icon-color)) !important;
-		}
-	}
 }
