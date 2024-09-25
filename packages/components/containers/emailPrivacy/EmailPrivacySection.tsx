@@ -4,10 +4,10 @@ import { c } from 'ttag';
 
 import Info from '@proton/components/components/link/Info';
 import { FeatureCode, useFeatures } from '@proton/features';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { DEFAULT_MAILSETTINGS, IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
 
-import { useMailSettings } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';

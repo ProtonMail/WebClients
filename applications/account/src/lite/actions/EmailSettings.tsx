@@ -9,11 +9,11 @@ import {
     SwipeActionSelect,
     useApi,
     useEventManager,
-    useMailSettings,
     useNotifications,
     useUser,
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import {
     updateAutoDelete,
     updateNextMessageOnMove,

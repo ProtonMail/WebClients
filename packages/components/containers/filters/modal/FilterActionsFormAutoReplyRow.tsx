@@ -8,10 +8,11 @@ import { useToolbar } from '@proton/components/components/editor/hooks/useToolba
 import type { EditorActions } from '@proton/components/components/editor/interface';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { AUTO_REPLY_CHARACTER_COUNT_LIMIT } from '@proton/shared/lib/mail/constants';
 import noop from '@proton/utils/noop';
 
-import { useMailSettings, useUser } from '../../../hooks';
+import { useUser } from '../../../hooks';
 import type { Actions } from '../interfaces';
 
 interface Props {

@@ -11,6 +11,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
 import { singleExport } from '@proton/shared/lib/contacts/helpers/export';
@@ -19,14 +20,7 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
-import {
-    useAddresses,
-    useConfig,
-    useContactGroups,
-    useMailSettings,
-    useNotifications,
-    useUserKeys,
-} from '../../../hooks';
+import { useAddresses, useConfig, useContactGroups, useNotifications, useUserKeys } from '../../../hooks';
 import { useLinkHandler } from '../../../hooks/useLinkHandler';
 import ErrorBoundary from '../../app/ErrorBoundary';
 import GenericError from '../../error/GenericError';

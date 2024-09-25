@@ -9,6 +9,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import ShortcutsSectionView from '@proton/components/components/shortcuts/ShortcutsSectionView';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { getShortcuts } from '@proton/shared/lib/shortcuts/mail';
@@ -16,7 +17,6 @@ import clsx from '@proton/utils/clsx';
 
 import Field from '../../components/container/Field';
 import Row from '../../components/container/Row';
-import { useMailSettings } from '../../hooks';
 import ShortcutsToggle from '../general/ShortcutsToggle';
 
 import './MailShortcutsModal.scss';

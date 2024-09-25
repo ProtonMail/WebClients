@@ -17,7 +17,6 @@ import {
     useGetAddressKeys,
     useGetCalendarEventRaw,
     useGetEncryptionPreferences,
-    useGetMailSettings,
     useNotifications,
     useRelocalizeText,
     useUser,
@@ -29,6 +28,7 @@ import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMa
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
 import useSendIcs from '@proton/components/hooks/useSendIcs';
 import { serverTime } from '@proton/crypto';
+import { useGetMailSettings } from '@proton/mail/mailSettings/hooks';
 import {
     attendeeDeleteSingleEdit,
     updateAttendeePartstat,
