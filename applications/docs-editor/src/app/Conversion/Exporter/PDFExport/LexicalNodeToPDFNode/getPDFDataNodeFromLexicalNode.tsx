@@ -62,18 +62,19 @@ export const getPDFDataNodeFromLexicalNode = async (
         type: 'Text',
         children: node.getTextContent(),
         style: {
-          fontFamily: fontFamily,
+          backgroundColor: isInlineCode ? '#f1f1f1' : isHighlight ? 'rgb(255,255,0)' : undefined,
           color: stylesMap.color as string,
+          fontFamily: fontFamily,
+          fontSize: pdfFontSize,
+          fontStyle: isItalic ? 'italic' : 'normal',
+          fontWeight: isBold ? 'bold' : 'normal',
+          textAlign: $isElementNode(parent) ? getNodeTextAlignment(parent) : 'left',
           // eslint-disable-next-line no-nested-ternary
           textDecoration: node.hasFormat('underline')
             ? 'underline'
             : node.hasFormat('strikethrough')
               ? 'line-through'
               : undefined,
-          // eslint-disable-next-line no-nested-ternary
-          backgroundColor: isInlineCode ? '#f1f1f1' : isHighlight ? 'rgb(255,255,0)' : undefined,
-          fontSize: pdfFontSize,
-          textAlign: $isElementNode(parent) ? getNodeTextAlignment(parent) : 'left',
         },
       }
     })
