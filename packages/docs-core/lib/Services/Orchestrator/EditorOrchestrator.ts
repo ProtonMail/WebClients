@@ -1,7 +1,7 @@
 import type {
   CommentInterface,
   CommentThreadInterface,
-  CommentServiceInterface,
+  CommentControllerInterface,
   ClientRequiresEditorMethods,
   RtsMessagePayload,
   DocumentMetaInterface,
@@ -22,7 +22,7 @@ import { PostApplicationError } from '../../Application/ApplicationEvent'
  */
 export class EditorOrchestrator implements EditorOrchestratorInterface {
   constructor(
-    private readonly comments: CommentServiceInterface,
+    private readonly comments: CommentControllerInterface,
     private readonly docs: DocControllerInterface,
     private readonly docsApi: DocsApi,
     private readonly eventBus: InternalEventBusInterface,
