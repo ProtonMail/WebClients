@@ -11,6 +11,7 @@ import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/me
 import type { AutosaveFormEntry } from '@proton/pass/types';
 import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
+import { urlEq } from '@proton/pass/utils/url/utils';
 import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 
@@ -18,12 +19,12 @@ export const createAutosaveService = () => {
     /** Checks the user's settings and prompts for autosave accordingly.
      * Returns wether the autosave prompt was shown or not. */
     const promptAutoSave: (submission: AutosaveFormEntry) => boolean = withContext(
-        (ctx, { domain, subdomain, autosave, data, submittedAt }) => {
+        (ctx, { autosave, data, submittedAt }) => {
             if (!autosave.shouldPrompt || !ctx?.getFeatures().Autosave) return false;
 
             ctx.service.iframe.attachNotification()?.open({
                 action: NotificationAction.AUTOSAVE,
-                data: { domain: subdomain ?? domain, ...autosave.data, ...data, submittedAt },
+                data: { ...autosave.data, ...data, submittedAt },
             });
 
             return true;
@@ -43,9 +44,9 @@ export const createAutosaveService = () => {
             /* no submissions : early return */
             if (!submission) return false;
 
-            const { status, domain, type, data, formId, submittedAt } = submission;
-            const currentDomain = ctx?.getExtensionContext().url?.domain;
-            const domainmatch = currentDomain !== undefined && currentDomain === domain;
+            const { status, type, data, formId, submittedAt } = submission;
+            const currentURL = ctx?.getExtensionContext().url;
+            const domainmatch = currentURL && urlEq(currentURL, submission);
 
             /** Check if any of the currently tracked forms match the
              * submission's form type and are not currently submitting.

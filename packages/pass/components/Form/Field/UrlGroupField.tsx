@@ -10,7 +10,7 @@ import { maybeErrorMessage } from '@proton/pass/hooks/useFieldControl';
 import type { UrlGroupValues, UrlItem } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { isValidURL } from '@proton/pass/utils/url/is-valid-url';
+import { sanitizeURL } from '@proton/pass/utils/url/sanitize';
 
 import { FieldBox } from './Layout/FieldBox';
 
@@ -23,7 +23,7 @@ export type UrlGroupProps<V extends UrlGroupValues = UrlGroupValues> = {
     }) => ReactNode;
 };
 
-export const createNewUrl = (url: string) => ({ id: uniqueId(), url: isValidURL(url).valid ? url : '' });
+export const createNewUrl = (url: string) => ({ id: uniqueId(), url: sanitizeURL(url).valid ? url : '' });
 
 export const UrlGroupField = <T extends UrlGroupValues>({ form, renderExtraActions }: UrlGroupProps<T>) => {
     const inputRef = useRef<HTMLInputElement>(null);
@@ -57,7 +57,7 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form, renderExtraActio
                         helpers.replace(index, { id: values.urls[index].id, url });
 
                     const handleAdd = (url: string) => {
-                        helpers.push(createNewUrl(isValidURL(url).url));
+                        helpers.push(createNewUrl(sanitizeURL(url).url));
                         return form.setFieldValue('url', '');
                     };
 
@@ -69,7 +69,7 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form, renderExtraActio
                                         <InputFieldTwo
                                             error={(errors.urls?.[index] as FormikErrors<UrlItem>)?.url}
                                             onValue={handleReplace(index)}
-                                            onBlur={() => handleReplace(index)(isValidURL(url).url)}
+                                            onBlur={() => handleReplace(index)(sanitizeURL(url).url)}
                                             value={url}
                                             unstyled
                                             assistContainerClassName="empty:hidden"

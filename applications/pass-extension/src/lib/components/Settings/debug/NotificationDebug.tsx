@@ -33,11 +33,11 @@ export const NotificationDebug: FC = () => {
                 <MockIFrameContainer
                     width={NOTIFICATION_WIDTH}
                     height={NOTIFICATION_HEIGHT}
+                    domain="proton.me"
                     payload={{
                         action: NotificationAction.AUTOSAVE,
                         data: {
                             submittedAt: -1,
-                            domain: 'proton.me',
                             type: AutosaveMode.NEW,
                             userIdentifier: 'nobody@proton.me',
                             password: 'proton123',
@@ -50,11 +50,11 @@ export const NotificationDebug: FC = () => {
                 <MockIFrameContainer
                     width={NOTIFICATION_WIDTH}
                     height={NOTIFICATION_HEIGHT}
+                    domain="netflix.com"
                     payload={{
                         action: NotificationAction.AUTOSAVE,
                         data: {
                             submittedAt: -1,
-                            domain: 'netflix.com',
                             type: AutosaveMode.UPDATE,
                             userIdentifier: 'nobody@proton.me',
                             password: 'password',
@@ -75,11 +75,11 @@ export const NotificationDebug: FC = () => {
                 <MockIFrameContainer
                     width={NOTIFICATION_WIDTH}
                     height={NOTIFICATION_HEIGHT}
+                    domain="netflix.com"
                     payload={{
                         action: NotificationAction.AUTOSAVE,
                         data: {
                             submittedAt: -1,
-                            domain: 'netflix.com',
                             type: AutosaveMode.UPDATE,
                             candidates: [
                                 {
@@ -108,9 +108,9 @@ export const NotificationDebug: FC = () => {
                 <MockIFrameContainer
                     width={NOTIFICATION_WIDTH}
                     height={NOTIFICATION_HEIGHT}
+                    domain="webauthn.io"
                     payload={{
                         action: NotificationAction.PASSKEY_GET,
-                        domain: 'webauthn.io',
                         token: 'some-token',
                         request: JSON.stringify({}),
                         passkeys: [],
@@ -122,9 +122,9 @@ export const NotificationDebug: FC = () => {
                 <MockIFrameContainer
                     width={NOTIFICATION_WIDTH}
                     height={NOTIFICATION_HEIGHT}
+                    domain="webauthn.io"
                     payload={{
                         action: NotificationAction.PASSKEY_CREATE,
-                        domain: 'webauthn.io',
                         token: 'some-token',
                         request: JSON.stringify({
                             rp: {
@@ -152,10 +152,10 @@ export const NotificationDebug: FC = () => {
                     <MockIFrameContainer
                         width={NOTIFICATION_WIDTH}
                         height={NOTIFICATION_HEIGHT_SM}
+                        domain="proton.me"
                         payload={{
                             action: NotificationAction.OTP,
                             item: { shareId: otpItem.shareId, itemId: otpItem.itemId },
-                            hostname: 'proton.me',
                         }}
                     >
                         <Notification />

@@ -40,15 +40,14 @@ type FormValues = { name: string; step: Step; selectedItem?: SelectedItem; share
 const formId = 'create-passkey';
 
 type PasskeyCreateViewProps = {
-    domain: string;
     form: FormikContextType<FormValues>;
     loading: boolean;
     username: string;
 };
 
-const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ domain, form, loading, username }) => {
+const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ form, loading, username }) => {
     const { onTelemetry } = usePassCore();
-    const { close, settings } = useIFrameContext();
+    const { close, settings, domain } = useIFrameContext();
     const [items, setItems] = useMountedState<MaybeNull<LoginItemPreview[]>>(null);
 
     useEffect(() => {
@@ -160,10 +159,10 @@ const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ domain, form, loading, 
 
 type Props = Extract<NotificationActions, { action: NotificationAction.PASSKEY_CREATE }>;
 
-export const PasskeyCreate: FC<Props> = ({ domain, request, token }) => {
+export const PasskeyCreate: FC<Props> = ({ request, token }) => {
     const [loading, setLoading] = useMountedState(false);
     const { onTelemetry, config } = usePassCore();
-    const { close, postMessage } = useIFrameContext();
+    const { close, postMessage, domain } = useIFrameContext();
     const { createNotification } = useNotifications();
 
     const publicKey = useMemo(() => JSON.parse(request) as SanitizedPublicKeyCreate, [request]);
@@ -205,7 +204,6 @@ export const PasskeyCreate: FC<Props> = ({ domain, request, token }) => {
                         name,
                         userIdentifier: username,
                         password: '',
-                        domain,
                         passkey,
                     };
 
@@ -292,12 +290,7 @@ export const PasskeyCreate: FC<Props> = ({ domain, request, token }) => {
                                             .t`Close this window in order to use another passkey manager.`}</div>
                                     </div>
                                 ) : (
-                                    <PasskeyCreateView
-                                        domain={domain}
-                                        form={form}
-                                        loading={loading}
-                                        username={username}
-                                    />
+                                    <PasskeyCreateView form={form} loading={loading} username={username} />
                                 )
                             }
                         </WithPinUnlock>

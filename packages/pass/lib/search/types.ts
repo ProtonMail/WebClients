@@ -1,5 +1,5 @@
 import type { FormSubmission, ItemRevision, ItemSortFilter, ItemType, MaybeNull } from '@proton/pass/types';
-import type { ParsedUrl } from '@proton/pass/utils/url/parser';
+import type { ParsedUrl } from '@proton/pass/utils/url/types';
 
 export type ItemMatchFuncMap = { [T in ItemType]: ItemMatchFunc<T> };
 
@@ -15,6 +15,7 @@ export type SelectItemsOptions = {
 
 export type SelectItemsByDomainOptions = {
     isPrivate: boolean;
+    port: MaybeNull<string>;
     protocol: MaybeNull<string>;
     shareIds?: string[];
     sortOn?: 'priority' | 'lastUseTime';
@@ -23,10 +24,4 @@ export type SelectItemsByDomainOptions = {
 
 export type SelectAutofillCandidatesOptions = ParsedUrl & { shareIds?: string[]; strict?: boolean };
 export type SelectOTPAutofillCandidateOptions = ParsedUrl & { submission?: FormSubmission };
-
-export type SelectAutosaveCandidatesOptions = {
-    domain: string;
-    subdomain: MaybeNull<string>;
-    userIdentifier: string;
-    shareIds?: string[];
-};
+export type SelectAutosaveCandidatesOptions = { domain: string; userIdentifier: string; shareIds?: string[] };

@@ -8,7 +8,7 @@ import type {
     ItemType,
     MaybeNull,
 } from '@proton/pass/types';
-import type { ParsedUrl } from '@proton/pass/utils/url/parser';
+import type { ParsedUrl } from '@proton/pass/utils/url/types';
 
 export type ItemViewProps<T extends ItemType = ItemType> = {
     revision: ItemRevisionWithOptimistic<T>;

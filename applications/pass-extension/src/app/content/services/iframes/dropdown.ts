@@ -19,6 +19,7 @@ import { animatePositionChange } from '@proton/pass/utils/dom/position';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
+import { resolveDomain } from '@proton/pass/utils/url/utils';
 import { getScrollParent } from '@proton/shared/lib/helpers/dom';
 import noop from '@proton/utils/noop';
 
@@ -83,7 +84,9 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
 
             const { authorized } = ctx.getState();
             const { url } = ctx.getExtensionContext();
-            const domain = url?.subdomain ?? url?.domain ?? '';
+            const domain = url ? resolveDomain(url) : null;
+
+            if (!domain) return;
 
             switch (action) {
                 case DropdownAction.AUTOFILL_IDENTITY: {

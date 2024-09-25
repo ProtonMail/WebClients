@@ -7,6 +7,7 @@ import { useIFrameContext } from 'proton-pass-extension/app/content/injections/a
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
 import { NotificationHeader } from 'proton-pass-extension/app/content/injections/apps/notification/components/NotificationHeader';
+import type { NotificationAction, NotificationActions } from 'proton-pass-extension/app/content/types/notification';
 import { c } from 'ttag';
 
 import { Button, Scroll } from '@proton/atoms';
@@ -28,29 +29,28 @@ import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { withMerge } from '@proton/pass/utils/object/merge';
 import noop from '@proton/utils/noop';
 
-type Props = { data: AutosavePayload };
+type Props = Extract<NotificationActions, { action: NotificationAction.AUTOSAVE }>;
 type AutosaveFormValues = AutosaveRequest & { step: 'select' | 'edit' };
 
-const getInitialValues = ({ userIdentifier, password, domain, type }: AutosavePayload): AutosaveFormValues =>
+const getInitialValues = ({ userIdentifier, password, type }: AutosavePayload, domain: string): AutosaveFormValues =>
     type === AutosaveMode.UPDATE
-        ? { domain, itemId: '', name: domain, password, shareId: '', step: 'select', type, userIdentifier }
-        : { domain, name: domain, password, shareId: '', step: 'edit', type, userIdentifier };
+        ? { itemId: '', name: domain, password, shareId: '', step: 'select', type, userIdentifier }
+        : { name: domain, password, shareId: '', step: 'edit', type, userIdentifier };
 
 export const Autosave: FC<Props> = ({ data }) => {
-    const { settings, visible, close } = useIFrameContext();
+    const { settings, visible, close, domain } = useIFrameContext();
     const { onTelemetry } = usePassCore();
     const { createNotification } = useNotifications();
 
     const [busy, setBusy] = useMountedState(false);
     const shouldUpdate = usePrevious(data) !== data;
-    const { domain } = data;
 
     /** if the autosave prompt was shown before an actual form
      * submission : do not discard the form data */
     const shouldDiscard = data.submittedAt !== null;
 
     const form = useFormik<AutosaveFormValues>({
-        initialValues: getInitialValues(data),
+        initialValues: getInitialValues(data, domain),
         validateOnChange: true,
         validate: (values) => {
             const errors: FormikErrors<AutosaveFormValues> = {};
@@ -107,7 +107,7 @@ export const Autosave: FC<Props> = ({ data }) => {
     useTelemetryEvent(TelemetryEventName.AutosaveDisplay, {}, {})([visible]);
 
     useEffect(() => {
-        if (shouldUpdate) form.setValues(getInitialValues(data)).catch(noop);
+        if (shouldUpdate) form.setValues(getInitialValues(data, domain)).catch(noop);
     }, [shouldUpdate, data]);
 
     return (

@@ -10,6 +10,7 @@ import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { isEditItemDraft, isNewItemDraft } from '@proton/pass/lib/items/item.predicates';
 import { popupTabStateSave } from '@proton/pass/store/actions/creators/popup';
 import { selectLatestDraft } from '@proton/pass/store/selectors';
+import { resolveDomain } from '@proton/pass/utils/url/utils';
 
 /** Handles syncing the popup state for the current tab whenever
  * filters or selected item changes. Takes care of handling the
@@ -36,7 +37,7 @@ export const usePopupStateEffects = () => {
     const popupTabState = useMemo(() => {
         const url = getCurrentTabUrl?.();
         return {
-            domain: url?.subdomain ?? url?.domain ?? null,
+            domain: url ? resolveDomain(url) : null,
             filters: { search, sort, type, selectedShareId },
             search,
             selectedItem: selectedItem ? { shareId: selectedItem.shareId, itemId: selectedItem.itemId } : null,

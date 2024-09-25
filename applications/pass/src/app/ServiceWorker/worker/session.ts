@@ -7,7 +7,7 @@
  * These measures mitigate potential pitfalls and race conditions that may arise
  * when users stress the web application by accessing it from multiple tabs.
  */
-import { globToRegExp } from '@proton/pass/utils/url/glob';
+import { globToRegExp } from '@proton/pass/utils/url/utils';
 
 import { fetchController } from './fetch-controller';
 import { requestLockFactory, requestQueueFactory } from './utils';
