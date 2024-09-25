@@ -65,8 +65,8 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
     }, [scheduleDateTime]);
 
     const handleSubmit = () => {
+        onClose(); // Close the modal first (see MAILWEB-5895)
         onSubmit(getUnixTime(scheduleDateTime));
-        onClose();
     };
 
     const handleCancel = () => {
