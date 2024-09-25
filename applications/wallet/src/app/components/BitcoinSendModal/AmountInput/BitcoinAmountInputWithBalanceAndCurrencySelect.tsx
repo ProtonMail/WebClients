@@ -84,7 +84,9 @@ export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
     };
 
     const exchangeRateOrBitcoinUnit = exchangeRate ?? getExchangeRateFromBitcoinUnit(settings.BitcoinUnit);
-    const exchangeRateSymbolOrBitcoinUnit = exchangeRate?.FiatCurrency;
+    const exchangeRateSymbolOrBitcoinUnit = exchangeRate
+        ? exchangeRateOrBitcoinUnit.FiatCurrency
+        : exchangeRateOrBitcoinUnit.BitcoinUnit;
 
     const price = <Price key="available-amount" amount={remainingBalance} unit={exchangeRateOrBitcoinUnit} />;
 
