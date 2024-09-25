@@ -2,7 +2,7 @@ import { createNetworkError } from '@proton/pass/lib/api/fetch-controller';
 import type { Maybe } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
-import { globToRegExp } from '@proton/pass/utils/url/glob';
+import { globToRegExp } from '@proton/pass/utils/url/utils';
 import noop from '@proton/utils/noop';
 
 import { fetchController } from './fetch-controller';

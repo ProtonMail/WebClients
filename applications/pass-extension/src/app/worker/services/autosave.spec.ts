@@ -1,6 +1,12 @@
 import WorkerMessageBroker from 'proton-pass-extension/__mocks__/app/worker/channel';
 import store from 'proton-pass-extension/__mocks__/app/worker/store';
-import { getMockItem, getMockPasskey, getMockState, mockShareId } from 'proton-pass-extension/__mocks__/mocks';
+import {
+    getMockItem,
+    getMockPasskey,
+    getMockState,
+    mockShareId,
+    setMockMessageSender,
+} from 'proton-pass-extension/__mocks__/mocks';
 
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
@@ -30,9 +36,10 @@ describe('AutosaveService [worker]', () => {
         const submission: FormEntry<FormEntryStatus.COMMITTED> = {
             data: { userIdentifier: 'test@proton.me', password: 'p4ssw0rd' },
             domain: 'domain.com',
+            port: null,
+            protocol: 'https:',
             formId: uniqueId(),
             status: FormEntryStatus.COMMITTED,
-            subdomain: 'domain.com',
             submit: false,
             type: 'login',
             updatedAt: -1,
@@ -142,9 +149,44 @@ describe('AutosaveService [worker]', () => {
 
             expect(autosave.resolve(submission)).toEqual({ shouldPrompt: false });
         });
+
+        test.each([
+            { label: 'same url different port', value: 'https://domain.com:3000/' },
+            { label: 'same url different protocol', value: 'http://domain.com/' },
+        ])('should prompt if credentials match on $label', (testCase) => {
+            const item = itemBuilder('login');
+            item.get('metadata').set('name', 'Domain.com');
+            item.get('content')
+                .set('itemEmail', submission.data.userIdentifier)
+                .set('password', submission.data.password) /* same password */
+                .set('urls', [testCase.value]);
+
+            const revision = getMockItem(item.data);
+            const state = getMockState();
+            state.items.byShareId[mockShareId][revision.itemId] = revision;
+            store.getState.mockReturnValueOnce(state);
+
+            expect(autosave.resolve(submission)).toEqual({
+                shouldPrompt: true,
+                data: {
+                    type: AutosaveMode.UPDATE,
+                    candidates: [
+                        {
+                            itemId: revision.itemId,
+                            shareId: mockShareId,
+                            name: 'Domain.com',
+                            url: testCase.value,
+                            userIdentifier: 'test@proton.me',
+                        },
+                    ],
+                },
+            });
+        });
     });
 
     describe('`AUTOSAVE_REQUEST`', () => {
+        beforeEach(() => setMockMessageSender('https://proton.me'));
+
         test('should setup message handler', () => {
             const [type] = WorkerMessageBroker.registerMessage.mock.calls[0];
             expect(type).toEqual(WorkerMessageType.AUTOSAVE_REQUEST);
@@ -159,7 +201,6 @@ describe('AutosaveService [worker]', () => {
                         shareId: mockShareId,
                         userIdentifier: 'john@proton.me',
                         password: '123',
-                        domain: 'proton.me',
                         name: 'Test item',
                     },
                 })
@@ -194,7 +235,6 @@ describe('AutosaveService [worker]', () => {
                         shareId: mockShareId,
                         userIdentifier: 'john',
                         password: '123',
-                        domain: 'proton.me',
                         name: 'Test item',
                     },
                 })
@@ -231,7 +271,6 @@ describe('AutosaveService [worker]', () => {
                         shareId: mockShareId,
                         userIdentifier: passkey.userName,
                         password: '',
-                        domain: 'proton.me',
                         passkey,
                         name: 'Test passkey',
                     },
@@ -275,7 +314,6 @@ describe('AutosaveService [worker]', () => {
                 contentScriptMessage({
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
                     payload: {
-                        domain: 'proton.me',
                         itemId: 'unknown-item-id',
                         name: 'Domain.com#Update',
                         password: 'new-password',
@@ -293,7 +331,8 @@ describe('AutosaveService [worker]', () => {
             });
         });
 
-        test('should handle item update', async () => {
+        test('should handle item update for subdomain', async () => {
+            setMockMessageSender('https://sub.domain.com');
             const item = itemBuilder('login');
             const passkey = getMockPasskey();
 
@@ -312,7 +351,6 @@ describe('AutosaveService [worker]', () => {
                 contentScriptMessage({
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
                     payload: {
-                        domain: 'sub.domain.com',
                         itemId: revision.itemId,
                         name: 'Domain.com#Update',
                         password: 'new-password',
@@ -345,6 +383,8 @@ describe('AutosaveService [worker]', () => {
         });
 
         test('should handle item update with passkey', async () => {
+            setMockMessageSender('https://domain.com');
+
             const item = itemBuilder('login');
             const passkey = getMockPasskey();
             const newPasskey = getMockPasskey();
@@ -365,7 +405,6 @@ describe('AutosaveService [worker]', () => {
                 contentScriptMessage({
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
                     payload: {
-                        domain: 'domain.com',
                         itemId: revision.itemId,
                         name: 'Domain.com#Update',
                         passkey: newPasskey,
@@ -396,6 +435,42 @@ describe('AutosaveService [worker]', () => {
             );
 
             await expect(request).resolves.toBe(true);
+        });
+
+        test('should handle new item in url with port', async () => {
+            setMockMessageSender('https://localhost:3000');
+
+            const response = sendMessage(
+                contentScriptMessage({
+                    type: WorkerMessageType.AUTOSAVE_REQUEST,
+                    payload: {
+                        type: AutosaveMode.NEW,
+                        shareId: mockShareId,
+                        userIdentifier: 'john@proton.me',
+                        password: '123',
+                        name: 'Test item',
+                    },
+                })
+            );
+
+            const action = store.dispatch.mock.lastCall[0] as ReturnType<typeof itemCreationIntent>;
+            const created = action.payload as ItemCreateIntent<'login'>;
+
+            expect(itemCreationIntent.match(action)).toBe(true);
+            expect(created.metadata.name).toEqual('Test item');
+            expect(created.content.urls).toEqual(['https://localhost:3000/']);
+            expect(deobfuscate(created.content.itemEmail)).toEqual('john@proton.me');
+            expect(deobfuscate(created.content.password)).toEqual('123');
+
+            action.meta.callback?.(
+                itemCreationSuccess({
+                    optimisticId: 'test-optimstic-id',
+                    shareId: mockShareId,
+                    item: getMockItem(action.payload),
+                })
+            );
+
+            await expect(response).resolves.toBe(true);
         });
     });
 });

@@ -15,8 +15,9 @@ import { getInitialSettings } from '@proton/pass/store/reducers/settings';
 import { type AppState, AppStatus } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
-const createMockIFrameContext = (payload?: any): IFrameContextValue => ({
+const createMockIFrameContext = (payload?: any, domain?: string): IFrameContextValue => ({
     endpoint: 'test',
+    domain: domain ?? 'proton.test',
     features: {},
     port: null,
     settings: getInitialSettings(),
@@ -42,11 +43,12 @@ const createMockIFrameContext = (payload?: any): IFrameContextValue => ({
 
 export const MockIFrameContainer: FC<{
     children: ReactNode;
+    domain?: string;
     appState?: Partial<AppState>;
     payload?: NotificationActions | DropdownActions;
     height?: number;
     width: number;
-}> = ({ children, appState, payload, height, width }) => (
+}> = ({ children, domain, appState, payload, height, width }) => (
     <div
         style={{
             width: '100%',
@@ -69,7 +71,7 @@ export const MockIFrameContainer: FC<{
                 ...appState,
             }}
         >
-            <IFrameContext.Provider value={createMockIFrameContext(payload)}>{children}</IFrameContext.Provider>
+            <IFrameContext.Provider value={createMockIFrameContext(payload, domain)}>{children}</IFrameContext.Provider>
         </AppStateProvider>
     </div>
 );
