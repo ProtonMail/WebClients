@@ -21,7 +21,7 @@ export const SettingsPanel: FC<PropsWithChildren<Props>> = ({
     <Card
         rounded
         className={clsx(
-            'pass-settings--panel flex flex-nowrap flex-column p-5 mb-4 relative max-w-custom *:min-size-auto',
+            'pass-settings--panel flex flex-nowrap flex-column p-5 mb-4 relative max-w-custom *:min-size-auto border-weak',
             className
         )}
         background={false}
@@ -31,7 +31,7 @@ export const SettingsPanel: FC<PropsWithChildren<Props>> = ({
             <div className="shrink-0">{actions}</div>
         </div>
         {subTitle && <em className="block text-sm color-weak mb-2">{subTitle}</em>}
-        <hr className="mt-2 mb-0 border-weak shrink-0" />
+        <hr className="mt-2 mb-0 shrink-0" />
         <div className={contentClassname}>{children}</div>
     </Card>
 );

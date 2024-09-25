@@ -30,7 +30,7 @@ export const Header: FC = () => {
     return (
         <VaultActionsProvider>
             <AuthDeviceTopBanner />
-            <CoreHeader className="border-bottom h-auto p-2">
+            <CoreHeader className="border-bottom border-weak h-auto p-2">
                 <div className="flex items-center gap-x-2 w-full">
                     <MenuDropdown />
                     <SearchBar disabled={!ready} initial={initial.search} />

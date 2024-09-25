@@ -68,7 +68,7 @@ export const ReportAProblem: FC = () => {
             <FormikProvider value={form}>
                 <Form>
                     <TextAreaTwo
-                        className="mb-4"
+                        className="border-norm mb-4"
                         id="description"
                         onChange={form.handleChange}
                         placeholder={c('Placeholder').t`Please describe the problem and include any error messages`}

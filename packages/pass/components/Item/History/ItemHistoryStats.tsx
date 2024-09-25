@@ -21,7 +21,7 @@ export const ItemHistoryStats: FC<Props> = ({ createTime, modifyTime, lastUseTim
     const passPlan = useSelector(selectPassPlan);
 
     return (
-        <div className="flex flex-column border rounded-xl px-4 py-3 gap-3">
+        <div className="flex flex-column border border-weak rounded-xl px-4 py-3 gap-3">
             {lastUseTime !== undefined && (
                 <CardContent
                     icon="magic-wand"

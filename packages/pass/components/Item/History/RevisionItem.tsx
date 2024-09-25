@@ -14,7 +14,7 @@ export const RevisionItem: FC<Props> = ({ onClick, ...cardProps }) => {
             fullWidth
             size="medium"
             className={clsx(
-                'bg-weak border-norm flex justify-space-between flex-nowrap items-center rounded-xl',
+                'bg-weak border-weak flex justify-space-between flex-nowrap items-center rounded-xl',
                 !onClick && 'pointer-events-none cursor-default'
             )}
             onClick={onClick}

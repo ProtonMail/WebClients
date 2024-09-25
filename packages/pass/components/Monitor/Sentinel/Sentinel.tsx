@@ -39,7 +39,7 @@ export const Sentinel: FC<Props> = ({ onUpsell }) => {
 
     return (
         <CardContent
-            className="p-6 bg-weak rounded-xl border border-norm"
+            className="p-6 bg-weak rounded-xl border border-weak"
             title={PROTON_SENTINEL_NAME}
             titleClassname="text-lg text-bold mb-1"
             subtitle={
