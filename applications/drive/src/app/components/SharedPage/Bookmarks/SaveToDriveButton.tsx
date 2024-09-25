@@ -71,6 +71,7 @@ export const SaveToDriveButton = ({ className, alreadyBookmarked, customPassword
                             }
                         }}
                         color="norm"
+                        data-testid="save-in-drive-button"
                     >
                         {!isAdding && <Icon className="mr-2" name="folder-arrow-in" />}
                         {isAdding ? c('Info').t`Saving...` : buttonText}

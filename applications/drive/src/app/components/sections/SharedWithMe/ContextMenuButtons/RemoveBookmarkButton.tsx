@@ -20,7 +20,7 @@ export const RemoveBookmarkButton = ({ showConfirmModal, token, linkId, close }:
             name={c('Action').t`Remove`}
             action={() => deleteBookmark(new AbortController().signal, showConfirmModal, { token, linkId })}
             close={close}
-            testId="shared-with-me-remove-bookmark"
+            testId="context-menu-remove-bookmark"
         />
     );
 };
