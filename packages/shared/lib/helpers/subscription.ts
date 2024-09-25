@@ -752,6 +752,24 @@ export const getHasCoupon = (subscription: Subscription | undefined, coupon: str
     return [subscription?.CouponCode, subscription?.UpcomingSubscription?.CouponCode].includes(coupon);
 };
 
+export function isCancellableOnlyViaSupport(subscription: Subscription | undefined) {
+    const vpnB2BPlans = [PLANS.VPN_BUSINESS, PLANS.VPN_PRO];
+    const isVpnB2BPlan = vpnB2BPlans.includes(getPlanName(subscription) as PLANS);
+    if (isVpnB2BPlan) {
+        return true;
+    }
+
+    const otherPlansWithIpAddons = [PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024];
+    if (otherPlansWithIpAddons.includes(getPlanName(subscription) as PLANS)) {
+        const hasIpAddons = (Object.keys(getPlanIDs(subscription)) as (PLANS | ADDON_NAMES)[]).some((plan) =>
+            isIpAddon(plan)
+        );
+        return hasIpAddons;
+    }
+
+    return false;
+}
+
 /**
  * Checks if subscription can be cancelled by a user. Cancellation means that the user will be downgraded at the end
  * of the current billing cycle. In contrast, "Downgrade subscription" button means that the user will be downgraded
@@ -759,6 +777,10 @@ export const getHasCoupon = (subscription: Subscription | undefined, coupon: str
  * we don't consider B2B subscriptions cancellable for the purpose of this function.
  */
 export const hasCancellablePlan = (subscription: Subscription | undefined, user: UserModel) => {
+    if (isCancellableOnlyViaSupport(subscription)) {
+        return false;
+    }
+
     // These plans are can be cancelled inhouse too
     const cancellablePlan = getHasConsumerVpnPlan(subscription) || hasPass(subscription);
 

@@ -55,7 +55,7 @@ const reasons: { [key in REASON]: { tag: string; label: string } } = {
 
 export interface Props extends ModalProps {}
 
-const CancelB2bSubscriptionModal = ({ open, onClose, ...rest }: Props) => {
+const CancelSubscriptionViaSupportModal = ({ open, onClose, ...rest }: Props) => {
     const api = useApi();
     const [user] = useUser();
     const { APP_NAME, APP_VERSION, CLIENT_TYPE } = useConfig();
@@ -163,4 +163,4 @@ const CancelB2bSubscriptionModal = ({ open, onClose, ...rest }: Props) => {
     );
 };
 
-export default CancelB2bSubscriptionModal;
+export default CancelSubscriptionViaSupportModal;
