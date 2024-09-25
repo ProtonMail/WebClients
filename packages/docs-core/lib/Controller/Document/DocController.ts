@@ -114,7 +114,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   ) {
     eventBus.addEventHandler(this, WebsocketConnectionEvent.Connecting)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.FailedToConnect)
-    eventBus.addEventHandler(this, WebsocketConnectionEvent.Connected)
+    eventBus.addEventHandler(this, WebsocketConnectionEvent.ConnectedAndReady)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.Disconnected)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.DocumentUpdateMessage)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.EventMessage)
@@ -211,7 +211,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       )
     } else if (event.type === WebsocketConnectionEvent.FailedToConnect) {
       this.handleWebsocketFailedToConnectEvent()
-    } else if (event.type === WebsocketConnectionEvent.Connected) {
+    } else if (event.type === WebsocketConnectionEvent.ConnectedAndReady) {
       this.handleWebsocketConnectedEvent()
     } else if (event.type === WebsocketConnectionEvent.Connecting) {
       this.handleWebsocketConnectingEvent()

@@ -3,6 +3,7 @@ import type { LoggerInterface } from '@proton/utils/logs'
 import { mergeUpdates } from 'yjs'
 import { DocumentDebounceMode } from './DocumentDebounceMode'
 import { UpdateDebouncerEventType } from './UpdateDebouncerEventType'
+import type { DecryptedValue } from '@proton/docs-proto'
 
 /** When in realtime, we will perform a flush every 100ms, without waiting for inactivity. */
 const REALTIME_STREAMING_PERIOD = 300
@@ -26,7 +27,7 @@ type UpdateDebouncerEventPayload =
  * An object that collects document updates and occasionally dispatches them, merging them into one update before so.
  */
 export class UpdateDebouncer {
-  readonly buffer: Uint8Array[] = []
+  readonly buffer: DecryptedValue<Uint8Array>[] = []
   realtimeStreamingInterval: ReturnType<typeof setInterval> | null = null
   singlePlayerIdleTimeout: ReturnType<typeof setTimeout> | null = null
   private mode: DocumentDebounceMode = DocumentDebounceMode.SinglePlayer
@@ -87,10 +88,12 @@ export class UpdateDebouncer {
     this.logger.info(`Setting debounce mode to ${DocumentDebounceMode[mode]}`)
   }
 
-  public addUpdate(update: Uint8Array): void {
-    this.buffer.push(update)
+  public addUpdates(updates: DecryptedValue<Uint8Array>[]): void {
+    for (const update of updates) {
+      this.buffer.push(update)
 
-    this.currentBufferSize += update.byteLength
+      this.currentBufferSize += update.decryptedValue.byteLength
+    }
 
     this.onEvent({
       type: UpdateDebouncerEventType.WillFlush,
@@ -141,7 +144,7 @@ export class UpdateDebouncer {
 
     this.currentBufferSize = 0
 
-    const merged = mergeUpdates(updates)
+    const merged = mergeUpdates(updates.map((update) => update.decryptedValue))
 
     this.onEvent({
       type: UpdateDebouncerEventType.DidFlush,

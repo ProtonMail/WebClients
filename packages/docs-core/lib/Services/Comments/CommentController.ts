@@ -1,6 +1,6 @@
 import type {
   AnyCommentMessageData,
-  CommentServiceInterface,
+  CommentControllerInterface,
   CommentThreadInterface,
   CommentInterface,
   InternalEventHandlerInterface,
@@ -27,8 +27,12 @@ import metrics from '@proton/metrics'
 import { EventTypeEnum } from '@proton/docs-proto'
 import type { DocsApi } from '../../Api/DocsApi'
 import { CommentThreadType } from '@proton/docs-shared'
+import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
 
-export class CommentService implements CommentServiceInterface, InternalEventHandlerInterface {
+/**
+ * Controls comments for a single document.
+ */
+export class CommentController implements CommentControllerInterface, InternalEventHandlerInterface {
   private localCommentsState: LocalCommentsState
 
   public readonly liveComments: LiveComments = new LiveComments(
@@ -54,13 +58,14 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
   ) {
     this.localCommentsState = new LocalCommentsState(eventBus)
     eventBus.addEventHandler(this, DocControllerEvent.RealtimeCommentMessageReceived)
+    eventBus.addEventHandler(this, WebsocketConnectionEvent.ConnectionEstablishedButNotYetReady)
   }
 
   get userDisplayName(): string {
     return this.keys.userOwnAddress
   }
 
-  public initialize(): void {
+  public fetchAllComments(): void {
     void this._loadThreads.execute({
       lookup: this.document,
       keys: this.keys,
@@ -98,13 +103,13 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
   }
 
   async handleEvent(event: InternalEventInterface): Promise<void> {
-    if (event.type !== DocControllerEvent.RealtimeCommentMessageReceived) {
-      return
+    if (event.type === WebsocketConnectionEvent.ConnectionEstablishedButNotYetReady) {
+      void this.fetchAllComments()
+    } else if (event.type === DocControllerEvent.RealtimeCommentMessageReceived) {
+      const { message } = event.payload as DocControllerEventPayloads[DocControllerEvent.RealtimeCommentMessageReceived]
+
+      this._handleRealtimeEvent.execute(this.localCommentsState, this.liveComments, message)
     }
-
-    const { message } = event.payload as DocControllerEventPayloads[DocControllerEvent.RealtimeCommentMessageReceived]
-
-    this._handleRealtimeEvent.execute(this.localCommentsState, this.liveComments, message)
   }
 
   getAllThreads(): CommentThreadInterface[] {

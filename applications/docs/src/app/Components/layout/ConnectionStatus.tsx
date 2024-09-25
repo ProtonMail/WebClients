@@ -51,7 +51,7 @@ export const ConnectionStatus = () => {
       connectingTimeoutRef.current = setTimeout(() => {
         setShouldShowConnecting(true)
       }, DURATION_BEFORE_CONNECTING_STATUS_SHOWN)
-    } else if (status.state === WebsocketConnectionEvent.Connected) {
+    } else if (status.state === WebsocketConnectionEvent.ConnectedAndReady) {
       if (connectingTimeoutRef.current) {
         clearTimeout(connectingTimeoutRef.current)
       }

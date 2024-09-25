@@ -3,10 +3,10 @@ import type { CommentThreadInterface } from './CommentThreadInterface'
 import type { InternalEventBusInterface } from './Events/InternalEventBusInterface'
 import type { SuggestionThreadStateAction } from './SuggestionThreadStateAction'
 
-export interface CommentServiceInterface {
+export interface CommentControllerInterface {
   userDisplayName: string
   readonly eventBus: InternalEventBusInterface
-  initialize(): void
+  fetchAllComments(): void
 
   getAllThreads(): CommentThreadInterface[]
 
