@@ -9,6 +9,7 @@ import {
     getTotalFromPricing,
 } from '@proton/shared/lib/helpers/planIDs';
 import type {
+    Plan,
     PlanIDs,
     PlansMap,
     Subscription,
@@ -1432,8 +1433,6 @@ describe('hasCancellablePlan', () => {
             PLANS.PASS_BUSINESS,
             PLANS.PASS_PRO,
             PLANS.VISIONARY,
-            PLANS.VPN_BUSINESS,
-            PLANS.VPN_PRO,
             PLANS.WALLET,
         ];
 
@@ -1468,8 +1467,6 @@ describe('hasCancellablePlan', () => {
             PLANS.PASS_BUSINESS,
             PLANS.PASS_PRO,
             PLANS.VISIONARY,
-            PLANS.VPN_BUSINESS,
-            PLANS.VPN_PRO,
             PLANS.WALLET,
         ];
 
@@ -1479,6 +1476,42 @@ describe('hasCancellablePlan', () => {
         testCases.forEach((plan) => {
             subscription.Plans[0].Name = plan;
             expect(hasCancellablePlan(subscription, user)).withContext(`plan: ${plan}`).toEqual(true);
+        });
+    });
+
+    it('should not be cancellable if plan is non-cancellable', () => {
+        const testCases = [PLANS.VPN_BUSINESS, PLANS.VPN_PRO];
+
+        const subscription = getSubscriptionMock({ BillingPlatform: BillingPlatform.Proton });
+        const user = getUserMock({ ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED, ChargebeeUserExists: 1 });
+
+        testCases.forEach((plan) => {
+            subscription.Plans[0].Name = plan;
+            expect(hasCancellablePlan(subscription, user)).withContext(`plan: ${plan}`).toEqual(false);
+        });
+    });
+
+    it('should not be cancellable if plan is bundle pro with IP addon', () => {
+        const subscription = getSubscriptionMock({ BillingPlatform: BillingPlatform.Proton });
+        const user = getUserMock({ ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED, ChargebeeUserExists: 1 });
+
+        const testCases = [
+            {
+                plan: PLANS.BUNDLE_PRO,
+                addon: ADDON_NAMES.IP_BUNDLE_PRO,
+            },
+            {
+                plan: PLANS.BUNDLE_PRO_2024,
+                addon: ADDON_NAMES.IP_BUNDLE_PRO_2024,
+            },
+        ];
+
+        testCases.forEach((testCase) => {
+            subscription.Plans[0].Name = testCase.plan;
+            subscription.Plans.push({ Name: testCase.addon, Quantity: 1 } as Plan);
+            expect(hasCancellablePlan(subscription, user))
+                .withContext(`plan: ${testCase.plan}, addon: ${testCase.addon}`)
+                .toEqual(false);
         });
     });
 });
