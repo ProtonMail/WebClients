@@ -4,6 +4,21 @@ import { getPDFDataNodeFromLexicalNode } from './getPDFDataNodeFromLexicalNode'
 import { $isImageNode } from '../../../../Plugins/Image/ImageNode'
 import type { ExporterRequiredCallbacks } from '../../EditorExporter'
 
+jest.mock('@react-pdf/renderer', () => ({
+  StyleSheet: {
+    create: jest.fn().mockReturnValue({
+      page: {},
+      block: {},
+      wrap: {},
+      row: {},
+      column: {},
+      listMarker: {},
+      collapsibleTitle: {},
+      quote: {},
+    }),
+  },
+}))
+
 jest.mock('lexical', () => ({
   ...jest.requireActual('lexical'),
   $isParagraphNode: jest.fn(),
