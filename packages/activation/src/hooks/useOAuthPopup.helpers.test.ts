@@ -17,9 +17,9 @@ describe('OAuth url generation', () => {
             'importer.outlook.client_id': 'string',
         };
 
-        expect(() => getOAuthAuthorizationUrl({ provider: ImportProvider.DEFAULT, scope: '', config })).toThrowError(
-            'Provider does not exist'
-        );
+        expect(() =>
+            getOAuthAuthorizationUrl({ provider: ImportProvider.DEFAULT, scope: '', config, consentExperiment: false })
+        ).toThrowError('Provider does not exist');
     });
 
     it('Should return appropriate number for each supported providers', () => {
@@ -64,13 +64,23 @@ describe('OAuth url generation', () => {
             'importer.outlook.client_id': 'string',
         };
 
-        const outlookMailsRedirect = getOAuthAuthorizationUrl({ provider, scope: scopesMail.join(' '), config });
+        const outlookMailsRedirect = getOAuthAuthorizationUrl({
+            provider,
+            scope: scopesMail.join(' '),
+            config,
+            consentExperiment: false,
+        });
         expect(outlookMailsRedirect).toStrictEqual(
             'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+User.Read+offline_access+Mail.read&prompt=consent&client_id=string'
         );
 
         const scopesContact = getScopeFromProvider(provider, [ImportType.CONTACTS]);
-        const outlookContactsRedirect = getOAuthAuthorizationUrl({ provider, scope: scopesContact.join(' '), config });
+        const outlookContactsRedirect = getOAuthAuthorizationUrl({
+            provider,
+            scope: scopesContact.join(' '),
+            config,
+            consentExperiment: false,
+        });
         expect(outlookContactsRedirect).toStrictEqual(
             'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+User.Read+offline_access+Contacts.read&prompt=consent&client_id=string'
         );
@@ -80,6 +90,7 @@ describe('OAuth url generation', () => {
             scope: scopesContact.join(' '),
             config,
             loginHint: 'login hint',
+            consentExperiment: false,
         });
         expect(outlookHintRedirect).toStrictEqual(
             'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+User.Read+offline_access+Contacts.read&prompt=consent&client_id=string'
@@ -90,6 +101,7 @@ describe('OAuth url generation', () => {
             provider,
             scope: scopesCalendars.join(' '),
             config,
+            consentExperiment: false,
         });
         expect(outlookCalendarsRedirect).toStrictEqual(
             'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+User.Read+offline_access+Calendars.read&prompt=consent&client_id=string'
@@ -100,6 +112,7 @@ describe('OAuth url generation', () => {
             provider,
             scope: scopesAll.join(' '),
             config,
+            consentExperiment: false,
         });
         expect(outlookAllScopes).toStrictEqual(
             'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+User.Read+offline_access+Mail.read+Calendars.read+Contacts.read&prompt=consent&client_id=string'
@@ -114,7 +127,12 @@ describe('OAuth url generation', () => {
             'importer.outlook.client_id': 'string',
         };
 
-        const googleMailsRedirect = getOAuthAuthorizationUrl({ provider, scope: scopesMail.join(' '), config });
+        const googleMailsRedirect = getOAuthAuthorizationUrl({
+            provider,
+            scope: scopesMail.join(' '),
+            config,
+            consentExperiment: false,
+        });
         expect(googleMailsRedirect).toStrictEqual(
             'https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgmail.readonly&prompt=consent&access_type=offline&client_id=string'
         );
@@ -124,6 +142,7 @@ describe('OAuth url generation', () => {
             provider,
             scope: scopesContact.join(' '),
             config,
+            consentExperiment: false,
         });
         expect(googleContactsRedirect).toStrictEqual(
             'https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcontacts.readonly&prompt=consent&access_type=offline&client_id=string'
@@ -134,6 +153,7 @@ describe('OAuth url generation', () => {
             scope: scopesContact.join(' '),
             config,
             loginHint: 'login hint',
+            consentExperiment: false,
         });
         expect(googleHintRedirect).toStrictEqual(
             'https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcontacts.readonly&prompt=consent&access_type=offline&client_id=string&login_hint=login+hint'
@@ -144,6 +164,7 @@ describe('OAuth url generation', () => {
             provider,
             scope: scopesCalendars.join(' '),
             config,
+            consentExperiment: false,
         });
         expect(googleCalendarsRedirect).toStrictEqual(
             'https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcalendar.readonly&prompt=consent&access_type=offline&client_id=string'
@@ -154,6 +175,7 @@ describe('OAuth url generation', () => {
             provider,
             scope: scopesAll.join(' '),
             config,
+            consentExperiment: false,
         });
         expect(googleAllScopes).toStrictEqual(
             'https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgmail.readonly+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcalendar.readonly+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcontacts.readonly&prompt=consent&access_type=offline&client_id=string'

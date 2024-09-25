@@ -7,6 +7,7 @@ import useApiEnvironmentConfig from '@proton/components/hooks/useApiEnvironmentC
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
+import { useFlag } from '@proton/unleash';
 
 import { getOAuthAuthorizationUrl, getOAuthRedirectURL, getProviderNumber } from './useOAuthPopup.helpers';
 
@@ -52,6 +53,9 @@ const useOAuthPopup = ({ errorMessage }: Props) => {
     const [config, loadingConfig] = useApiEnvironmentConfig();
     const stateId = useRef<string>();
 
+    // We need to investigage Outlook b2b oAuth modal params
+    const consentExperiment = useFlag('EasySwitchConsentExperiment');
+
     const triggerOAuthPopup = ({
         provider,
         scope,
@@ -68,7 +72,7 @@ const useOAuthPopup = ({ errorMessage }: Props) => {
             return;
         }
         let interval: number;
-        const authorizationUrl = getOAuthAuthorizationUrl({ provider, scope, config, loginHint });
+        const authorizationUrl = getOAuthAuthorizationUrl({ provider, scope, config, loginHint, consentExperiment });
         const RedirectUri = getOAuthRedirectURL(provider);
 
         const uid = generateProtonWebUID();
