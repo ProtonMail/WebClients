@@ -99,6 +99,7 @@ export const BIOMETRICS_KEY = 'offlineKey_biometrics';
  * fallback if the feature flag endpoint is unavailable.
  * FIXME: Remove feature flags that are permanently enabled */
 export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
+    [PassFeature.PassAccountSwitchV1]: true,
     [PassFeature.PassDesktopBiometrics]: false,
     [PassFeature.PassEnableDesktopAutoUpdate]: false,
     [PassFeature.PassIdentityV1]: true,
