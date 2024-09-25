@@ -71,7 +71,11 @@ export const getPendingUnprivatizationRequest = ({
             api: silentApi,
             verifyOutboundPublicKeys,
             parsedUnprivatizationData,
-            expectRevisionChange: false,
+            // For unprivatization (subuser side) it's not necessary to validate revision
+            options: {
+                validateRevision: false,
+                newMemberCreation: false,
+            },
         });
 
         return {

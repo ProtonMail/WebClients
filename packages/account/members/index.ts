@@ -34,14 +34,26 @@ enum ValueType {
 export type UnprivatizationMemberSuccess = {
     type: 'success';
 };
+export type UnprivatizationMemberApproval = {
+    type: 'approval';
+};
 export type UnprivatizationMemberFailure = {
     type: 'error';
     error: string;
+    revision: boolean;
 };
 
 interface UnprivatizationMemberState {
     members: {
-        [id: string]: UnprivatizationMemberSuccess | UnprivatizationMemberFailure | undefined;
+        [id: string]:
+            | UnprivatizationMemberSuccess
+            | UnprivatizationMemberFailure
+            | UnprivatizationMemberApproval
+            | undefined;
+    };
+    loading: {
+        approval: boolean;
+        automatic: boolean;
     };
 }
 
@@ -78,7 +90,7 @@ const initialState: SliceState = {
         fetchedAt: 0,
         fetchedEphemeral: undefined,
     },
-    unprivatization: { members: {} },
+    unprivatization: { members: {}, loading: { approval: false, automatic: false } },
 };
 const slice = createSlice({
     name,

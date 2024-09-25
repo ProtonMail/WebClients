@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
-import { unprivatizeMembers } from '@proton/account/members/unprivatizeMembers';
-import { useApi, useMembers } from '@proton/components/hooks';
+import { unprivatizeMembersBackground } from '@proton/account/members/unprivatizeMembers';
+import { useMembers, useOrganizationKey } from '@proton/components/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import noop from '@proton/utils/noop';
 
@@ -10,21 +10,24 @@ import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPub
 // TODO: This hook should be migrated fully to redux once all the KT hooks have been migrated.
 const useUnprivatizeMembers = () => {
     const dispatch = useDispatch();
-    const api = useApi();
     const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
     const [members] = useMembers();
+    const [organizationKey] = useOrganizationKey();
 
     useEffect(() => {
-        if (!members?.length) {
+        if (!members?.length || !organizationKey?.privateKey) {
             return;
         }
         dispatch(
-            unprivatizeMembers({
-                api,
+            unprivatizeMembersBackground({
                 verifyOutboundPublicKeys,
+                target: {
+                    type: 'background',
+                    members,
+                },
             })
         ).catch(noop);
-    }, [members]);
+    }, [members, organizationKey?.privateKey]);
 };
 
 export default useUnprivatizeMembers;
