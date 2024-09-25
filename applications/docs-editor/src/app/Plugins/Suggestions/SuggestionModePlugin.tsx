@@ -5,6 +5,7 @@ import {
   $getNodeByKey,
   $getSelection,
   $isRangeSelection,
+  $isRootOrShadowRoot,
   $isTextNode,
   COMMAND_PRIORITY_CRITICAL,
   FORMAT_ELEMENT_COMMAND,
@@ -18,7 +19,6 @@ import {
 } from 'lexical'
 import { useEffect, useRef, useState } from 'react'
 import { ProtonNode, $isSuggestionNode } from './ProtonNode'
-import { $unwrapSuggestionNode } from './Utils'
 import type { SuggestionID } from './Types'
 import { BEFOREINPUT_EVENT_COMMAND } from '../../Commands/Events'
 import { type EditorRequiresClientMethods } from '@proton/docs-shared'
@@ -421,12 +421,17 @@ export function SuggestionModePlugin({
 
               const match = textContent.match(regExp)
               if (match && match[0].length === anchorOffset) {
-                const nextSiblings = anchorNode.getNextSiblings()
-                const [leadingNode, remainderNode] = anchorNode.splitText(anchorOffset)
-                leadingNode.remove()
-                const siblings = remainderNode ? [remainderNode, ...nextSiblings] : nextSiblings
                 const actualParent = parent.getParent()!
-                $unwrapSuggestionNode(parent)
+                const isActualParentBlockLevel = $isRootOrShadowRoot(actualParent.getParent())
+                // We don't want this to run if, for e.g, you type
+                // `- ` at the start of a nested list item
+                if (!isActualParentBlockLevel) {
+                  break
+                }
+                const nextSiblings = parent.getNextSiblings()
+                const [leadingNode] = anchorNode.splitText(anchorOffset)
+                leadingNode.remove()
+                const siblings = [parent, ...nextSiblings]
                 replace(actualParent, siblings, match, false)
                 break
               }
