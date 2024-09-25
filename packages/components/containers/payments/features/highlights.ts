@@ -15,6 +15,18 @@ import { Audience } from '@proton/shared/lib/interfaces';
 import { getStorage } from './drive';
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
+export const getNUsersAdminText = ({ n, admins, users }: { n: number; admins: number; users: number }) => {
+    const adminsText = c('new_plans: feature highlight').ngettext(msgid`${admins} admin`, `${admins} admins`, admins);
+    const usersText = c('new_plans: feature highlight').ngettext(msgid`${users} user`, `${users} users`, users);
+
+    // translator: Full text: "Up to 6 users (1 admin, 5 users)"
+    return c('new_plans: feature').ngettext(
+        msgid`Up to ${n} user (${adminsText}, ${usersText})`,
+        `Up to ${n} users (${adminsText}, ${usersText})`,
+        n
+    );
+};
+
 export const getNUsersText = (n: number) => {
     return c('new_plans: feature').ngettext(msgid`Up to ${n} user`, `Up to ${n} users`, n);
 };
@@ -54,6 +66,11 @@ const getUsers = (): PlanCardFeature => {
             [PLANS.BUNDLE_PRO]: null,
             [PLANS.BUNDLE_PRO_2024]: null,
             [PLANS.PASS_PRO]: null,
+            [PLANS.PASS_FAMILY]: {
+                text: getNUsersAdminText({ n: FAMILY_MAX_USERS, admins: 1, users: FAMILY_MAX_USERS - 1 }),
+                included: true,
+                highlight: true,
+            },
             [PLANS.PASS_BUSINESS]: null,
             [PLANS.VPN_PRO]: null,
             [PLANS.VPN_BUSINESS]: null,
@@ -97,14 +114,6 @@ export const get24x7Support = (): PlanCardFeatureDefinition => ({
     included: true,
     text: c('new_plans: feature').t`24/7 account management support`,
 });
-
-const getEasySwitch = (): PlanCardFeatureDefinition => {
-    return {
-        text: c('new_plans: feature').t`Easy Switch import assistant`,
-        tooltip: c('new_plans: tooltip').t`Quickly transfer your emails, calendars or contacts from any provider`,
-        included: true,
-    };
-};
 
 export const getSentinel = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
@@ -171,6 +180,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.BUNDLE_PRO]: getSupport('priority'),
                 [PLANS.BUNDLE_PRO_2024]: getSupport('priority', 'all'),
                 [PLANS.PASS_PRO]: get24x7Support(),
+                [PLANS.PASS_FAMILY]: getSupport('priority'),
                 [PLANS.PASS_BUSINESS]: get24x7Support(),
                 [PLANS.VPN_PRO]: getSupport('priority'),
                 [PLANS.VPN_BUSINESS]: getSupport('priority'),
@@ -194,6 +204,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.BUNDLE_PRO]: getSentinel(true),
                 [PLANS.BUNDLE_PRO_2024]: getSentinel(true),
                 [PLANS.PASS_PRO]: getSentinel(),
+                [PLANS.PASS_FAMILY]: getSentinel(true),
                 [PLANS.PASS_BUSINESS]: getSentinel(true),
                 [PLANS.VPN_PRO]: getSentinel(),
                 [PLANS.VPN_BUSINESS]: getSentinel(true),
@@ -217,30 +228,8 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.BUNDLE_PRO]: getCustomBranding(true),
                 [PLANS.BUNDLE_PRO_2024]: getCustomBranding(true),
                 [PLANS.PASS_PRO]: null,
+                [PLANS.PASS_FAMILY]: null,
                 [PLANS.PASS_BUSINESS]: null,
-                [PLANS.VPN_PRO]: null,
-                [PLANS.VPN_BUSINESS]: null,
-            },
-        },
-        {
-            name: 'easy-switch',
-            plans: {
-                [PLANS.FREE]: getEasySwitch(),
-                [PLANS.BUNDLE]: getEasySwitch(),
-                [PLANS.MAIL]: getEasySwitch(),
-                [PLANS.VPN]: getEasySwitch(),
-                [PLANS.DRIVE]: null,
-                [PLANS.DRIVE_BUSINESS]: null,
-                [PLANS.PASS]: getEasySwitch(),
-                [PLANS.WALLET]: getEasySwitch(),
-                [PLANS.FAMILY]: getEasySwitch(),
-                [PLANS.DUO]: getEasySwitch(),
-                [PLANS.MAIL_PRO]: getEasySwitch(),
-                [PLANS.MAIL_BUSINESS]: getEasySwitch(),
-                [PLANS.BUNDLE_PRO]: getEasySwitch(),
-                [PLANS.BUNDLE_PRO_2024]: getEasySwitch(),
-                [PLANS.PASS_PRO]: getEasySwitch(),
-                [PLANS.PASS_BUSINESS]: getEasySwitch(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },
@@ -264,6 +253,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.BUNDLE_PRO]: null,
                 [PLANS.BUNDLE_PRO_2024]: null,
                 [PLANS.PASS_PRO]: getAdminPanel(),
+                [PLANS.PASS_FAMILY]: getAdminPanel(),
                 [PLANS.PASS_BUSINESS]: getAdminPanel(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,

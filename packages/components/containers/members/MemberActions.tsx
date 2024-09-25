@@ -133,6 +133,7 @@ interface Props {
     onRevoke: (member: EnhancedMember) => Promise<void>;
     onSetup: (member: EnhancedMember) => void;
     permissions: ReturnType<typeof getMemberPermissions>;
+    disableEdit: boolean;
 }
 
 const MemberActions = ({
@@ -144,6 +145,7 @@ const MemberActions = ({
     onSetup,
     onChangePassword,
     onRevoke,
+    disableEdit,
     permissions: {
         canEdit,
         canAddAddress,
@@ -160,7 +162,7 @@ const MemberActions = ({
     const list = [
         canEdit && {
             text: c('Member action').t`Edit`,
-            disabled: isOrganizationDelinquent,
+            disabled: isOrganizationDelinquent || disableEdit,
             onClick: () => {
                 onEdit(member);
             },

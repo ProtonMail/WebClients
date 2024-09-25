@@ -418,7 +418,11 @@ const SingleSignupContainerV2 = ({
             });
         }
         if (getIsPassApp(toApp)) {
+            const currentPlanName = model.session?.organization?.PlanName;
+            const showPassFamily = currentPlanName === PLANS.PASS || currentPlanName === undefined;
+
             return getPassConfiguration({
+                showPassFamily,
                 audience,
                 isLargeViewport: viewportWidth['>=large'],
                 vpnServersCountData,
@@ -435,7 +439,9 @@ const SingleSignupContainerV2 = ({
                     PLANS.PASS,
                     PLANS.PASS_BUSINESS,
                     PLANS.PASS_PRO,
+                    PLANS.PASS_FAMILY,
                 ].some((plan) => planIDs[plan]),
+                plan,
             });
         }
         if (toApp === APPS.PROTONWALLET) {

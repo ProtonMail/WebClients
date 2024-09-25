@@ -33,6 +33,7 @@ export interface PlanCardFeature {
         [PLANS.BUNDLE_PRO]: PlanCardFeatureDefinition | null;
         [PLANS.BUNDLE_PRO_2024]: PlanCardFeatureDefinition | null;
         [PLANS.PASS_PRO]: PlanCardFeatureDefinition | null;
+        [PLANS.PASS_FAMILY]: PlanCardFeatureDefinition | null;
         [PLANS.PASS_BUSINESS]: PlanCardFeatureDefinition | null;
         [PLANS.VPN_PRO]: PlanCardFeatureDefinition | null;
         [PLANS.VPN_BUSINESS]: PlanCardFeatureDefinition | null;
@@ -62,6 +63,7 @@ export interface ShortPlan {
         | PLANS.DRIVE_BUSINESS
         | PLANS.PASS
         | PLANS.PASS_PRO
+        | PLANS.PASS_FAMILY
         | PLANS.PASS_BUSINESS
         | PLANS.BUNDLE_PRO
         | PLANS.BUNDLE_PRO_2024

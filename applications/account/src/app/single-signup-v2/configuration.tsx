@@ -19,6 +19,7 @@ import {
     getMailProPlan,
     getPassBusinessSignupPlan,
     getPassEssentialsSignupPlan,
+    getPassFamilyPlan,
     getPassPlan,
     getVPNPlan,
     getVisionaryPlan,
@@ -36,7 +37,7 @@ import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
 
 import bundleVpnPass from './bundle-vpn-pass.svg';
 import bundle from './bundle.svg';
-import { getCustomPassFeatures } from './pass/configuration';
+import { getCustomPassFamilyFeatures, getCustomPassFeatures } from './pass/configuration';
 
 export const getSummaryPlan = ({
     plan,
@@ -77,6 +78,16 @@ export const getSummaryPlan = ({
             ...shortPlan,
             plan,
             features: [],
+        };
+    }
+
+    if (plan && plan?.Name === PLANS.PASS_FAMILY) {
+        const shortPlan = getPassFamilyPlan(plan);
+        return {
+            logo: <PassLogo variant="glyph-only" size={iconSize} />,
+            ...shortPlan,
+            plan,
+            features: getCustomPassFamilyFeatures(),
         };
     }
 

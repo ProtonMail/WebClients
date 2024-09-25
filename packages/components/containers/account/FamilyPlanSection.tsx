@@ -1,5 +1,3 @@
-import { useMemo } from 'react';
-
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
@@ -9,7 +7,12 @@ import { useCalendars } from '@proton/calendar/calendars/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useMember, useOrganization } from '@proton/components/hooks';
-import { isOrganizationDuo, isOrganizationFamily } from '@proton/shared/lib/organization/helper';
+import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import {
+    isOrganizationDuo,
+    isOrganizationFamily,
+    isOrganizationPassFamily,
+} from '@proton/shared/lib/organization/helper';
 
 import { UsagePanel } from '../payments/subscription/panels';
 import LeaveFamilyModal from './LeaveFamilyModal';
@@ -28,17 +31,21 @@ const FamilyPlanSection = () => {
         !organization || organisationLoading || userLoading || calendarsLoading || addressLoading || memberLoading;
 
     const isFamilyPlan = isOrganizationFamily(organization);
+    const isPassFamilyPlan = isOrganizationPassFamily(organization);
     const isDuoPlan = isOrganizationDuo(organization);
 
-    const content = useMemo(() => {
+    const content = (() => {
         if (isFamilyPlan) {
             return c('familyOffer_2023:Family plan').t`Leave Family plan`;
+        }
+        if (isPassFamilyPlan) {
+            return c('familyOffer_2023:Family plan').t`Leave ${PASS_SHORT_APP_NAME} Family plan`;
         }
         if (isDuoPlan) {
             return c('familyOffer_2023:Family plan').t`Leave Duo plan`;
         }
         return c('familyOffer_2023:Family plan').t`Leave Visionary plan`;
-    }, [isFamilyPlan, isDuoPlan]);
+    })();
 
     return isLoading ? (
         <Loader />
