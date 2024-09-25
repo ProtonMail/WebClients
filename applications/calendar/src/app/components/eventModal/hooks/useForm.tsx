@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { NOTIFICATION_ID } from '@proton/components/containers/calendar/notifications/Notifications';
+import { NOTIFICATION_ID } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { TITLE_INPUT_ID } from '@proton/shared/lib/calendar/constants';
 import type { EventModelErrors } from '@proton/shared/lib/interfaces/calendar';

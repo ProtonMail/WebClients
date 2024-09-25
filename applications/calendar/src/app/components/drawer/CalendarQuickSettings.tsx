@@ -9,16 +9,16 @@ import {
     DrawerDownloadApps,
     Info,
     Loader,
+    PrimaryTimezoneSelector,
     QuickSettingsButtonSection,
     QuickSettingsSectionRow,
+    SecondaryTimezoneSelector,
+    ShowSecondaryTimezoneToggle,
     Toggle,
+    ViewPreferenceSelector,
+    WeekStartSelector,
     useConfirmActionModal,
 } from '@proton/components';
-import PrimaryTimezoneSelector from '@proton/components/containers/calendar/settings/PrimaryTimezoneSelector';
-import SecondaryTimezoneSelector from '@proton/components/containers/calendar/settings/SecondaryTimezoneSelector';
-import ShowSecondaryTimezoneToggle from '@proton/components/containers/calendar/settings/ShowSecondaryTimezoneToggle';
-import ViewPreferenceSelector from '@proton/components/containers/calendar/settings/ViewPreferenceSelector';
-import WeekStartSelector from '@proton/components/containers/calendar/settings/WeekStartSelector';
 import { useApi, useCalendarUserSettings, useEventManager, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';

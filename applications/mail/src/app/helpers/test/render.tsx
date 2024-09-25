@@ -12,6 +12,7 @@ import { getModelState } from '@proton/account/test';
 import { createCalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
 import type { PrivateAuthenticationStore } from '@proton/components';
 import {
+    ApiContext,
     CacheProvider,
     CalendarModelEventManagerProvider,
     ConfigProvider,
@@ -19,7 +20,6 @@ import {
     ModalsProvider,
     SpotlightProvider,
 } from '@proton/components';
-import ApiContext from '@proton/components/containers/api/apiContext';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';

@@ -5,6 +5,7 @@ import type { OnLoginCallback } from '@proton/components';
 import {
     StandardLoadErrorPage,
     UnAuthenticated,
+    startUnAuthFlow,
     useActiveBreakpoint,
     useApi,
     useConfig,
@@ -13,7 +14,6 @@ import {
     useGetPlans,
     useKTActivation,
 } from '@proton/components';
-import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import { getIsVPNPassPromotion, getIsVpn2024Deal } from '@proton/components/containers/payments/subscription/helpers';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
