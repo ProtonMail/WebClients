@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
 import { FeatureCode, useFeature } from '@proton/features';
+import { useConversationCounts } from '@proton/mail/counts/conversationCounts';
 
-import { useConversationCounts } from './useConversationCounts';
 import useIsInboxElectronApp from './useIsInboxElectronApp';
 
 /**

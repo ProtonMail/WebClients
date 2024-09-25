@@ -22,7 +22,6 @@ export { default as useConfig } from './useConfig';
 export { default as useContactEmails } from './useContactEmails';
 export { default as useContactEmailsSortedByName } from './useContactEmailsSortedByName';
 export { default as useContacts } from './useContacts';
-export * from './useConversationCounts';
 export { default as useDocumentTitle } from './useDocumentTitle';
 export * from './useCustomDomains';
 export * from './useDomainsAddresses';
