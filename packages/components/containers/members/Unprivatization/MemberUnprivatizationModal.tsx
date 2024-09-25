@@ -8,6 +8,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import AuthModal from '@proton/components/containers/password/AuthModal';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -16,8 +17,6 @@ import { useDispatch } from '@proton/redux-shared-store';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import type { Member } from '@proton/shared/lib/interfaces';
 import { type ParsedUnprivatizationData } from '@proton/shared/lib/keys';
-
-import AuthModal from '../../password/AuthModal';
 
 interface Props extends Omit<ModalProps<'div'>, 'children' | 'buttons'> {
     onChange: () => void;

@@ -17,6 +17,7 @@ import SettingsLayoutRight from '@proton/components/containers/account/SettingsL
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
+import AuthModal from '@proton/components/containers/password/AuthModal';
 import useLoading from '@proton/hooks/useLoading';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -45,7 +46,6 @@ import {
     useUser,
 } from '../../hooks';
 import DomainModal from '../domains/DomainModal';
-import AuthModal from '../password/AuthModal';
 import EditOrganizationIdentityModal from './EditOrganizationIdentityModal';
 import OrganizationNameModal from './OrganizationNameModal';
 import OrganizationSectionUpsell from './OrganizationSectionUpsell';

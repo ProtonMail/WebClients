@@ -12,6 +12,7 @@ import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import AuthModal from '@proton/components/containers/password/AuthModal';
 import {
     useAuthentication,
     useBeforeUnload,
@@ -45,7 +46,6 @@ import { formatUser } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
 import GenericError from '../error/GenericError';
-import { AuthModal } from '../password';
 
 interface Inputs {
     newPassword: string;

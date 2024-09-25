@@ -6,11 +6,11 @@ import SettingsLayout from '@proton/components/containers/account/SettingsLayout
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
+import AuthModal from '@proton/components/containers/password/AuthModal';
 import { useLoading } from '@proton/hooks';
 import { updateResetEmail, updateResetPhone } from '@proton/shared/lib/api/settings';
 
 import { useEventManager, useModals, useMyCountry, useNotifications, useUserSettings } from '../../hooks';
-import AuthModal from '../password/AuthModal';
 import RecoveryEmail from './email/RecoveryEmail';
 import RecoveryPhone from './phone/RecoveryPhone';
 
