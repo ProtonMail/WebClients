@@ -230,9 +230,20 @@
 		&::after {
 			content: '';
 			display: inline-block;
-			inline-size: 1ch;
 			block-size: 100%;
+			font-size: 0.8rem;
+			pointer-events: none;
+			user-select: none;
 		}
+	}
+
+	&.split::after {
+		content: '↵';
+	}
+
+	&.join::after {
+		content: '↵';
+		scale: 1 -1;
 	}
 
 	.Lexical__link {
