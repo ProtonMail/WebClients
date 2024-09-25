@@ -9,7 +9,11 @@ export interface WebsocketServiceInterface {
     options: { commitId: () => string | undefined },
   ): WebsocketConnectionInterface
 
-  sendDocumentUpdateMessage(document: NodeMeta, rawContent: Uint8Array, source: BroadcastSource): Promise<void>
+  sendDocumentUpdateMessage(
+    document: NodeMeta,
+    rawContent: Uint8Array | Uint8Array[],
+    source: BroadcastSource,
+  ): Promise<void>
   sendEventMessage(
     document: NodeMeta,
     rawContent: Uint8Array,

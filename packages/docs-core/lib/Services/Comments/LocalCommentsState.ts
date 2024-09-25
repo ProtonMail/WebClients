@@ -33,18 +33,24 @@ export class LocalCommentsState {
   }
 
   addThread(thread: CommentThreadInterface, markUnread = false) {
+    this.threads = this.threads.filter((existing) => existing.id !== thread.id)
+
     this.threads.push(thread)
+
     if (markUnread) {
       this.unreadThreadIDs.add(thread.id)
     }
+
     this.notifyLocalListeners()
   }
 
   deleteThread(id: string): void {
     this.threads = this.threads.filter((thread) => thread.id !== id)
+
     if (this.unreadThreadIDs.has(id)) {
       this.unreadThreadIDs.delete(id)
     }
+
     this.notifyLocalListeners()
   }
 

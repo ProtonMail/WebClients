@@ -1,6 +1,7 @@
 export enum WebsocketConnectionEvent {
   Connecting = 'connecting',
-  Connected = 'connected',
+  ConnectionEstablishedButNotYetReady = 'connection-established-but-not-yet-ready',
+  ConnectedAndReady = 'connected-and-ready',
   Disconnected = 'disconnected',
   FailedToConnect = 'failed-to-connect',
   DocumentUpdateMessage = 'du-message',

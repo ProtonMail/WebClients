@@ -1,7 +1,7 @@
 import type { LoggerInterface } from '@proton/utils/logs'
 import { DocController } from '../../Controller/Document/DocController'
 import type { SquashDocument } from '../../UseCase/SquashDocument'
-import type { InternalEventBusInterface, CommentServiceInterface } from '@proton/docs-shared'
+import type { InternalEventBusInterface, CommentControllerInterface } from '@proton/docs-shared'
 import type { EncryptComment } from '../../UseCase/EncryptComment'
 import type { DuplicateDocument } from '../../UseCase/DuplicateDocument'
 import type { CreateNewDocument } from '../../UseCase/CreateNewDocument'
@@ -17,7 +17,7 @@ import type { LoadThreads } from '../../UseCase/LoadThreads'
 import type { DocLoaderInterface } from './DocLoaderInterface'
 import type { EditorOrchestratorInterface } from '../Orchestrator/EditorOrchestratorInterface'
 import type { DocControllerInterface } from '../../Controller/Document/DocControllerInterface'
-import { CommentService } from '../Comments/CommentService'
+import { CommentController } from '../Comments/CommentController'
 import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
 import type { LoadCommit } from '../../UseCase/LoadCommit'
 import type { ExportAndDownload } from '../../UseCase/ExportAndDownload'
@@ -30,7 +30,7 @@ export type StatusObserver = {
 
 export class DocLoader implements DocLoaderInterface {
   private docController?: DocControllerInterface
-  private commentsController?: CommentServiceInterface
+  private commentsController?: CommentControllerInterface
   private orchestrator?: EditorOrchestratorInterface
   private readonly statusObservers: StatusObserver[] = []
 
@@ -91,7 +91,7 @@ export class DocLoader implements DocLoaderInterface {
 
     const { entitlements } = result.getValue()
 
-    this.commentsController = new CommentService(
+    this.commentsController = new CommentController(
       lookup,
       entitlements.keys,
       this.websocketSerivce,
@@ -105,7 +105,7 @@ export class DocLoader implements DocLoaderInterface {
       this.logger,
     )
 
-    this.commentsController.initialize()
+    this.commentsController.fetchAllComments()
 
     this.orchestrator = new EditorOrchestrator(this.commentsController, this.docController, this.docsApi, this.eventBus)
 

@@ -1,12 +1,10 @@
 import type { LoggerInterface } from '@proton/utils/logs'
 import { ConnectionCloseReason, SERVER_HEARTBEAT_INTERVAL } from '@proton/docs-proto'
-import type { WebsocketCallbacks } from './WebsocketCallbacks'
-import type { WebsocketConnectionInterface } from '@proton/docs-shared'
+import { ApiResult, type WebsocketConnectionInterface, type WebsocketCallbacks } from '@proton/docs-shared'
 import type { WebsocketStateInterface } from './WebsocketState'
 import { WebsocketState } from './WebsocketState'
 import metrics from '@proton/metrics'
 import { isLocalEnvironment } from '../Util/isDevOrBlack'
-import { ApiResult } from '../Domain/Result/ApiResult'
 import { ConnectionCloseMetrics } from './ConnectionCloseMetrics'
 import { getWebSocketServerURL } from './getWebSocketServerURL'
 
@@ -199,6 +197,8 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
       this.heartbeat()
 
       this.state.didOpen()
+
+      this.callbacks.onOpen()
     }
 
     this.socket.onmessage = async (event) => {

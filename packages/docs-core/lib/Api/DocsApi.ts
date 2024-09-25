@@ -1,5 +1,5 @@
 import type { Commit, SquashCommit } from '@proton/docs-proto'
-import type { DocumentMetaInterface, SuggestionThreadStateAction } from '@proton/docs-shared'
+import { ApiResult, type DocumentMetaInterface, type SuggestionThreadStateAction } from '@proton/docs-shared'
 import type { NodeMeta } from '@proton/drive-store'
 import {
   addCommentToThreadInDocument,
@@ -23,7 +23,6 @@ import {
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper'
 import { forgeImageURL } from '@proton/shared/lib/helpers/image'
 import type { Api } from '@proton/shared/lib/interfaces'
-import { ApiResult } from '../Domain/Result/ApiResult'
 import { Result } from '../Domain/Result/Result'
 import { getErrorString } from '../Util/GetErrorString'
 import type { AddCommentToThreadResponse } from './Types/AddCommentToThreadResponse'
