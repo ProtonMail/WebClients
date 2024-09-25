@@ -2,8 +2,7 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton, useElementBreakpoints } from '@proton/components';
-import { useActiveBreakpoint } from '@proton/components/hooks';
+import { Icon, ToolbarButton, useActiveBreakpoint, useElementBreakpoints } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { getToolbarResponsiveSizes } from '../../helpers/toolbar/getToolbarResponsiveSizes';

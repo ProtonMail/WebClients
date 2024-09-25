@@ -1,9 +1,9 @@
 import { Fragment, useMemo } from 'react';
 
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { omit } from '@proton/shared/lib/helpers/object';
 import clsx from '@proton/utils/clsx';
 
-import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import Icon from '../icon/Icon';
 import Breadcrumb from './Breadcrumb';
 import CollapsedBreadcrumbs from './CollapsedBreadcrumbs';

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
-import { useActiveBreakpoint } from '@proton/components/hooks';
+import { useActiveBreakpoint } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { type OnlineService } from '../constants';

@@ -5,9 +5,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import type { IconName } from '@proton/components';
-import { Icon, InputFieldTwo, Tooltip } from '@proton/components';
+import { Icon, InputFieldTwo, Tooltip, useActiveBreakpoint } from '@proton/components';
 import TextArea from '@proton/components/components/v2/input/TextArea';
-import { useActiveBreakpoint } from '@proton/components/hooks';
 import { ASSISTANT_PROMPT_SIZE_LIMIT } from '@proton/llm/lib';
 
 interface Props {

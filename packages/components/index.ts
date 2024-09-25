@@ -802,6 +802,8 @@ export { default as ProtonVPNCredentialsSection } from './containers/vpn/ProtonV
 export { default as ProtonVPNResourcesSection } from './containers/vpn/ProtonVPNResourcesSection/ProtonVPNResourcesSection';
 export { default as TVContainer } from './containers/vpn/tv/TVContainer';
 export { default as WireGuardConfigurationSection } from './containers/vpn/WireGuardConfigurationSection/WireGuardConfigurationSection';
+export { default as useActiveBreakpoint } from './hooks/useActiveBreakpoint';
+export type { Breakpoints } from './hooks/useActiveBreakpoint';
 export { default as useAddressFlags } from './hooks/useAddressFlags';
 export { default as useApiResult } from './hooks/useApiResult';
 export { default as useElementBreakpoints } from './hooks/useElementBreakpoints';

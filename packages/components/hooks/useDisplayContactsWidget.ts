@@ -1,4 +1,5 @@
-import { useActiveBreakpoint, useConfig } from '@proton/components/hooks';
+import { useConfig } from '@proton/components/hooks';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { getDisplayContactsInDrawer } from '@proton/shared/lib/drawer/helpers';
 
 const useDisplayContactsWidget = () => {

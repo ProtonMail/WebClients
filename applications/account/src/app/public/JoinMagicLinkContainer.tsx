@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
+import type { OnLoginCallback } from '@proton/components';
 import {
     GenericError,
     Icon,
@@ -13,7 +14,6 @@ import {
     useFormErrors,
     useKTActivation,
 } from '@proton/components';
-import type { OnLoginCallback } from '@proton/components/containers';
 import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
 import { AuthStep, AuthType } from '@proton/components/containers/login/interface';
 import { handleLogin, handleNextLogin } from '@proton/components/containers/login/loginActions';
