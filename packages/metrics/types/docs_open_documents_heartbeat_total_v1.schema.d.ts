@@ -6,12 +6,11 @@
  */
 
 /**
- * Measures number of unecessary/skipped event updates (not event fetches)
+ * Counter for number of open documents using a heartbeat mechanism (pinging every x seconds)
  */
-export interface HttpsProtonMeDriveSyncEventUpdatesUnecessaryTotalV1SchemaJson {
+export interface HttpsProtonMeDocsOpenDocumentsHeartbeatTotalV1SchemaJson {
   Labels: {
-    type: "create" | "delete" | "update";
-    volumeType: "own" | "shared";
+    browser: "chrome" | "firefox" | "safari" | "edge" | "native-ios" | "native-android" | "other";
   };
   Value: number;
 }

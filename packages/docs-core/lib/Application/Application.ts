@@ -11,6 +11,7 @@ import type { WebsocketServiceInterface } from '../Services/Websockets/Websocket
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { ImageProxyParams } from '../Api/Types/ImageProxyParams'
 import type { CustomWindow } from './Window'
+import type { MetricService } from '../Services/Metrics/MetricService'
 
 declare const window: CustomWindow
 
@@ -22,7 +23,9 @@ export class Application implements ApplicationInterface {
     private imageProxyParams: ImageProxyParams,
     private driveCompat: DriveCompat,
     private appVersion: string,
-  ) {}
+  ) {
+    this.deps.get<MetricService>(App_TYPES.MetricService).initialize()
+  }
 
   destroy(): void {
     this.logger.info('Destroying application')
