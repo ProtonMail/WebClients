@@ -99,7 +99,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                     />
                 )}
                 {org && org.b2bAdmin && <AdminPanelButton {...org.organization} />}
-                <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
+                <hr className="my-2 mx-4" aria-hidden="true" />
                 <MonitorButton />
                 <Submenu
                     icon="bolt"
@@ -122,7 +122,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                     headerClassname="mx-3 pr-2 py-1"
                     contentClassname="mx-3"
                 />
-                <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
+                <hr className="my-2 mx-4" aria-hidden="true" />
 
                 <div className="flex justify-space-between items-center flex-nowrap gap-1 pl-3 pr-5">
                     <AccountSwitcherTooltip sessions={authSwitchEnabled ? sessions : []}>
