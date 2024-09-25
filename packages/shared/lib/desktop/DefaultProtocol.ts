@@ -23,7 +23,7 @@ const zDefaultProtocolStored = z.object({
 });
 export type DefaultProtocolStored = z.infer<typeof zDefaultProtocolStored>;
 
-const zDefaultProtocol = zDefaultProtocolActual.merge(zDefaultProtocolStored);
+export const zDefaultProtocol = zDefaultProtocolActual.merge(zDefaultProtocolStored);
 
 export type DefaultProtocol = z.infer<typeof zDefaultProtocol>;
 
