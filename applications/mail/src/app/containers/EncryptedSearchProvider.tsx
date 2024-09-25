@@ -9,13 +9,13 @@ import {
     useAddresses,
     useApi,
     useFeature,
-    useGetMessageCounts,
     useGetUserKeys,
     useISESEnabledElectron,
     useSubscribeEventManager,
     useUser,
     useWelcomeFlags,
 } from '@proton/components';
+import { useGetMessageCounts } from '@proton/components/hooks';
 import {
     checkVersionedESDB,
     contentIndexingProgress,
