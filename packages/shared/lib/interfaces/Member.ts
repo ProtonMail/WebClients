@@ -87,6 +87,16 @@ export type MemberUnprivatizationReadyForUnprivatization = {
     InvitationEmail: string;
 };
 
+export type MemberUnprivatizationReadyForUnprivatizationApproval = {
+    State: MemberUnprivatizationState.Ready;
+    PrivateKeys: string[];
+    ActivationToken: string;
+    PrivateIntent: false;
+    InvitationData: null;
+    InvitationSignature: null;
+    InvitationEmail: null;
+};
+
 export interface Member {
     ID: string;
     Role: MEMBER_ROLE;
@@ -113,6 +123,10 @@ export interface Member {
 }
 
 export interface MemberReadyForUnprivatization extends Member {
+    Unprivatization: MemberUnprivatizationReadyForUnprivatization;
+}
+
+export interface MemberReadyForUnprivatizationApproval extends Member {
     Unprivatization: MemberUnprivatizationReadyForUnprivatization;
 }
 
