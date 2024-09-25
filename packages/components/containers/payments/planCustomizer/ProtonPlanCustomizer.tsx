@@ -22,6 +22,8 @@ import {
     getAddonMultiplier,
     getMaxValue,
     getVPNDedicatedIPs,
+    hasBundlePro,
+    hasBundlePro2024,
     hasVpnBusiness,
 } from '@proton/shared/lib/helpers/subscription';
 import type { Audience, Currency, Cycle, Plan, PlanIDs, Subscription } from '@proton/shared/lib/interfaces';
@@ -151,7 +153,12 @@ const AddonCustomizer = ({
 
         // Existing users of VPN Business can't downgrade the number of IP addons, it must be done by contacting
         // customer support.
-        if (isIpAddon(addonNameKey) && hasVpnBusiness(latestSubscription)) {
+        if (
+            isIpAddon(addonNameKey) &&
+            (hasVpnBusiness(latestSubscription) ||
+                hasBundlePro(latestSubscription) ||
+                hasBundlePro2024(latestSubscription))
+        ) {
             const minNumberOfServers = getVPNDedicatedIPs(latestSubscription);
             return applyForbiddenModificationLimitation(minNumberOfServers);
         }
