@@ -36,11 +36,13 @@ export const getOAuthAuthorizationUrl = ({
     scope,
     config,
     loginHint,
+    consentExperiment,
 }: {
     provider: ImportProvider;
     scope: string;
     config: ApiEnvironmentConfig;
     loginHint?: string;
+    consentExperiment: boolean;
 }) => {
     const params = new URLSearchParams();
 
@@ -48,14 +50,19 @@ export const getOAuthAuthorizationUrl = ({
     params.append('response_type', 'code');
     params.append('scope', scope);
 
-    // force user to consent again so that we can always get a refresh token
-    params.append('prompt', 'consent');
-
     if (provider === ImportProvider.GOOGLE) {
+        // force user to consent again so that we can always get a refresh token
+        params.append('prompt', 'consent');
         return generateGoogleOAuthUrl(params, config, loginHint);
     }
 
     if (provider === ImportProvider.OUTLOOK) {
+        // The flag is present to control if we add the prompt params
+        // The flag mustbe off to add the consent params
+        if (!consentExperiment) {
+            params.append('prompt', 'consent');
+        }
+
         return generateOutlookOAuthUrl(params, config);
     }
 
