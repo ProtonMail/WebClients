@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { FeatureCode, Icon } from '@proton/components';
+import { Icon } from '@proton/components';
 import {
     useApi,
     useAssistantSubscriptionStatus,
@@ -14,6 +14,7 @@ import {
 } from '@proton/components/hooks';
 import { ASSISTANT_TRIAL_TIME_DAYS } from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
+import { FeatureCode } from '@proton/features';
 import useLoading from '@proton/hooks/useLoading';
 import { useAssistant } from '@proton/llm/lib';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';

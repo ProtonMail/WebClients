@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Spotlight, useSpotlightShow } from '@proton/components';
 import { useActiveBreakpoint, useSpotlightOnFeature, useUser, useWelcomeFlags } from '@proton/components/hooks';
-import { FeatureCode } from '@proton/features/interface';
+import { FeatureCode } from '@proton/features';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import spotlightImg from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 

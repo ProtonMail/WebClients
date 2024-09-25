@@ -3,11 +3,9 @@ import { useEffect, useRef } from 'react';
 import { EasySwitchProvider } from '@proton/activation';
 import {
     CancellationReminderModal,
-    FeatureCode,
     InboxDesktopFreeTrialOnboardingModal,
     LightLabellingFeatureModal,
     getShouldOpenReferralModal,
-    useFeature,
     useModalState,
     useShowLightLabellingFeatureModal,
     useSubscription,
@@ -16,6 +14,7 @@ import {
 } from '@proton/components';
 import type { ReminderFlag } from '@proton/components/containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
 import { shouldOpenReminderModal } from '@proton/components/containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
+import { FeatureCode, useFeature } from '@proton/features';
 import { OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 

@@ -2,8 +2,9 @@ import type { FocusEvent, FocusEventHandler, Ref, RefObject } from 'react';
 import { forwardRef, memo, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 
 import type { Breakpoints } from '@proton/components';
-import { FeatureCode, useFeature, useKeyTransparencyContext } from '@proton/components';
+import { useKeyTransparencyContext } from '@proton/components';
 import createScrollIntoView from '@proton/components/helpers/createScrollIntoView';
+import { FeatureCode, useFeature } from '@proton/features';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Label } from '@proton/shared/lib/interfaces/Label';

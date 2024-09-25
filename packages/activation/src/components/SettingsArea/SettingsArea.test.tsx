@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/dom';
 
-import useFeature from '@proton/components/hooks/useFeature';
+import { useFeature } from '@proton/features';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { easySwitchRender } from '../../tests/render';
@@ -28,7 +28,7 @@ const settingsAreaConfig = {
     ],
 };
 
-jest.mock('@proton/components/hooks/useFeature');
+jest.mock('@proton/features/useFeature');
 const mockUseFeature = useFeature as jest.MockedFunction<any>;
 
 describe('SettingsArea', () => {

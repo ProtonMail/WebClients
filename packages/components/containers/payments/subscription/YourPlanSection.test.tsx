@@ -6,7 +6,6 @@ import {
     useCache,
     useCalendars,
     useConfig,
-    useFeature,
     useGetUserInvitations,
     useOrganization,
     usePaymentStatus,
@@ -16,6 +15,7 @@ import {
     useUser,
     useVPNServersCount,
 } from '@proton/components/hooks';
+import { useFeature } from '@proton/features';
 import { type PaymentMethodStatusExtended } from '@proton/payments';
 import { APPS, ORGANIZATION_STATE, PLANS } from '@proton/shared/lib/constants';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -90,7 +90,7 @@ jest.mock('./SubscriptionModalProvider', () => ({
     useSubscriptionModal: () => [mockOpenSubscriptionModal],
 }));
 
-jest.mock('@proton/components/hooks/useFeature');
+jest.mock('@proton/features/useFeature');
 const mockUseFeature = useFeature as jest.MockedFunction<any>;
 mockUseFeature.mockReturnValue({ feature: { Value: true } });
 

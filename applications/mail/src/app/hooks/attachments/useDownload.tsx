@@ -1,8 +1,9 @@
 import { useCallback } from 'react';
 
-import { FeatureCode, useApi, useFeature } from '@proton/components';
+import { useApi } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import type { WorkerDecryptionResult } from '@proton/crypto';
+import { FeatureCode, useFeature } from '@proton/features';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getAttachments } from '@proton/shared/lib/mail/messages';

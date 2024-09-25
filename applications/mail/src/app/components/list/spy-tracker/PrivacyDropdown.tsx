@@ -3,9 +3,10 @@ import { useEffect } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { Dropdown, FeatureCode, Icon, useModalState, usePopperAnchor } from '@proton/components';
+import { Dropdown, Icon, useModalState, usePopperAnchor } from '@proton/components';
 import PreventTrackingToggle from '@proton/components/containers/emailPrivacy/PreventTrackingToggle';
 import { useApi, useSpotlightOnFeature } from '@proton/components/hooks';
+import { FeatureCode } from '@proton/features';
 import { TelemetryMailEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import noTrackersImage from '@proton/styles/assets/img/illustrations/no-trackers-found.svg';

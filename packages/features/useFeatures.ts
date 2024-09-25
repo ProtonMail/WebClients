@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from '@proton/redux-shared-store';
 import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
 
-import { Feature, FeatureCode } from './interface';
+import type { Feature, FeatureCode } from './interface';
 import { fetchFeatures, isValidFeature, selectFeatures, updateFeature } from './reducer';
 
 let codeQueue: FeatureCode[] = [];

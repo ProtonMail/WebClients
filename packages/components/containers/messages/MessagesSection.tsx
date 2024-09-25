@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import Info from '@proton/components/components/link/Info';
+import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { updateSpamAction, updateStickyLabels, updateViewMode } from '@proton/shared/lib/api/mailSettings';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -10,11 +11,10 @@ import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import { DEFAULT_MAILSETTINGS, STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { useFlag } from '@proton/unleash';
 
-import { useApi, useEventManager, useFeature, useMailSettings, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useMailSettings, useNotifications } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
-import { FeatureCode } from '../features';
 import StickyLabelsToggle from '../layouts/StickyLabelsToggle';
 import ViewModeToggle from '../layouts/ViewModeToggle';
 import AlmostAllMailToggle from './AlmostAllMailToggle';

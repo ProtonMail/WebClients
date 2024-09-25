@@ -65,7 +65,7 @@ jest.mock('@proton/components/hooks/useEventManager', () => ({
     })),
 }));
 
-jest.mock('@proton/components/hooks/useFeature', () => () => ({}));
+jest.mock('@proton/features/useFeature', () => () => ({}));
 
 jest.mock('@proton/components/hooks/useWelcomeFlags', () => ({
     __esModule: true,

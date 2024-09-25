@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
+import { FeatureCode } from '@proton/features';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
-import { FeatureCode } from '../../../../containers/features';
 import { getUnlimitedDealFeatures } from '../../helpers/offerCopies';
 import type { OfferConfig } from '../../interface';
 import Layout from './Layout';

@@ -2,12 +2,10 @@ import { useCallback, useMemo, useState } from 'react';
 
 import useEarlyAccess from '@proton/components/hooks/useEarlyAccess';
 import useUser from '@proton/components/hooks/useUser';
+import { type FeatureCode, useFeature } from '@proton/features';
 import { SECOND } from '@proton/shared/lib/constants';
 import { getEnvironmentDate } from '@proton/shared/lib/spotlight/helpers';
 import type { SpotlightDate } from '@proton/shared/lib/spotlight/interface';
-
-import type { FeatureCode } from '../containers/features';
-import useFeature from './useFeature';
 
 /**
  * This hook is used to leverage from our FeatureFlag system in order to display only once the spotlight to the user.

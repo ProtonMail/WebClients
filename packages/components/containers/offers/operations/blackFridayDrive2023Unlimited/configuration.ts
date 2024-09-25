@@ -1,6 +1,6 @@
+import { FeatureCode } from '@proton/features';
 import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
-import { FeatureCode } from '../../../../containers/features';
 import { getFamilyDriveFeatures } from '../../helpers/offerCopies';
 import type { OfferConfig } from '../../interface';
 import sideImage from './BF-Drive-App-Modal-400x1200.png';

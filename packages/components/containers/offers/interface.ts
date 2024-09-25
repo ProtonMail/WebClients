@@ -1,7 +1,8 @@
 import type { JSXElementConstructor, ReactNode } from 'react';
 
 import type { ButtonLikeShape, ButtonLikeSize } from '@proton/atoms';
-import type { FeatureCode, IconName } from '@proton/components';
+import type { IconName } from '@proton/components';
+import type { FeatureCode } from '@proton/features';
 import type { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
 import type { Currency, Optional, PlanIDs } from '@proton/shared/lib/interfaces';
 

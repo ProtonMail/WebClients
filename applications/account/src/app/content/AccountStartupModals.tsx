@@ -1,14 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 
 import {
-    FeatureCode,
     LightLabellingFeatureModal,
     getShouldOpenReferralModal,
-    useFeature,
     useModalState,
     useShowLightLabellingFeatureModal,
     useSubscription,
 } from '@proton/components';
+import { FeatureCode, useFeature } from '@proton/features';
 import { domIsBusy } from '@proton/shared/lib/busy';
 import { OPEN_OFFER_MODAL_EVENT, SECOND } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
