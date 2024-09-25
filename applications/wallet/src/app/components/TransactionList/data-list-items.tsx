@@ -165,10 +165,7 @@ export const NoteDataListItem = ({
                 </Skeleton>
             }
             bottomNode={
-                <Skeleton
-                    loading={loading}
-                    placeholder={<div className="py-0.5 px-2">{c('Loader').t`Loading data`}</div>}
-                >
+                <Skeleton loading={loading}>
                     <div className="flex items-center">
                         <Tooltip title={tx?.apiData?.Label}>
                             <button

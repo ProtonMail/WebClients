@@ -7,14 +7,15 @@ import set from 'lodash/set';
 import { c } from 'ttag';
 
 import { WasmWallet, getDefaultStopGap } from '@proton/andromeda';
+import usePrevious from '@proton/hooks/usePrevious';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import generateUID from '@proton/utils/generateUID';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { POOL_FILLING_THRESHOLD } from '@proton/wallet';
+import { SYNCING_MINIMUM_COOLDOWN_MINUTES } from '@proton/wallet';
 import { useGetBitcoinNetwork } from '@proton/wallet/store';
 
-import { SYNCING_MINIMUM_COOLDOWN_MINUTES } from '../../constants/wallet';
 import { useBlockchainClient } from '../../hooks/useBlockchainClient';
 import { useMirroredRef } from '../../hooks/useMirrorredRef';
 import type {
@@ -23,7 +24,6 @@ import type {
     WalletChainDataByWalletId,
 } from '../../types';
 import { removeMasterPrefix } from '../../utils';
-import usePrevious from '@proton/hooks/usePrevious';
 
 export type SyncingMetadata = { syncing: boolean; count: number; lastSyncing: number; error: string | null };
 
