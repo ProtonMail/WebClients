@@ -561,6 +561,7 @@ describe('resolveUpsellsToDisplay', () => {
                 } as Subscription,
                 app: APPS.PROTONACCOUNT,
                 isFree: false,
+                showBundleUpsellFromVPNBiz: true,
             });
 
             expect(upsell1).toMatchObject(vpnEnterpriseUpsell);
