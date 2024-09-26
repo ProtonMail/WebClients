@@ -8,6 +8,8 @@ import { formatFolderName } from '@proton/shared/lib/helpers/folder';
 import type { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import clsx from '@proton/utils/clsx';
 
+import type { ApplyLabelsParams } from '../../hooks/actions/label/useApplyLabels';
+import type { MoveParams } from '../../hooks/actions/move/useMoveToFolder';
 import SidebarItem from './SidebarItem';
 import SidebarLabelActions from './SidebarLabelActions';
 
@@ -21,6 +23,8 @@ interface Props {
     onFocus: (id: string) => void;
     id: string;
     treeMode?: boolean;
+    moveToFolder: (params: MoveParams) => void;
+    applyLabels: (params: ApplyLabelsParams) => void;
 }
 
 const SidebarFolder = ({
@@ -33,6 +37,8 @@ const SidebarFolder = ({
     onFocus,
     id,
     treeMode = true,
+    moveToFolder,
+    applyLabels,
 }: Props) => {
     const [isOptionDropdownOpened, setIsOptionDropdownOpened] = useState(false);
     const shortcutHandlers: HotkeyTuple[] = [
@@ -65,6 +71,8 @@ const SidebarFolder = ({
             text={folder.Name}
             unreadCount={unreadCount}
             shortcutHandlers={shortcutHandlers}
+            moveToFolder={moveToFolder}
+            applyLabels={applyLabels}
             id={id}
             onFocus={onFocus}
             isOptionDropdownOpened={isOptionDropdownOpened}
