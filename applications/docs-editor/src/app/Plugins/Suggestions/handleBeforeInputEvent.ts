@@ -242,26 +242,30 @@ function $handleInsertParagraph(
     return true
   }
 
-  const splitStart = $createSuggestionNode(suggestionID, 'split')
+  const splitNode = $createSuggestionNode(suggestionID, 'split')
   const prevSibling = insertedNode.getPreviousSibling()
   if (!$isElementNode(prevSibling)) {
     return false
   }
 
-  prevSibling.append(splitStart)
+  prevSibling.append(splitNode)
 
-  const splitSuggestionPrevSibling = splitStart.getPreviousSibling()
-  if ($isSuggestionNode(splitSuggestionPrevSibling)) {
-    splitStart.setSuggestionId(splitSuggestionPrevSibling.getSuggestionIdOrThrow())
+  const splitSuggestionPrevSibling = splitNode.getPreviousSibling()
+  const shouldUseSameSuggestionAsPrevSibling = $isSuggestionNode(splitSuggestionPrevSibling)
+  const isSplitNodeFirstChild = splitNode.getPreviousSibling() === null
+  if (shouldUseSameSuggestionAsPrevSibling) {
+    splitNode.setSuggestionId(splitSuggestionPrevSibling.getSuggestionIdOrThrow())
   } else if ($isElementNode(currentNonInlineElement.getPreviousSibling())) {
     const lastChild = currentNonInlineElement.getPreviousSibling<ElementNode>()!.getLastChild()
-    if ($isSuggestionNode(lastChild) && lastChild.getSuggestionTypeOrThrow() === 'split') {
-      splitStart.setSuggestionId(lastChild.getSuggestionIdOrThrow())
+    const isConsecutiveSplit =
+      $isSuggestionNode(lastChild) && lastChild.getSuggestionTypeOrThrow() === 'split' && isSplitNodeFirstChild
+    if (isConsecutiveSplit) {
+      splitNode.setSuggestionId(lastChild.getSuggestionIdOrThrow())
     }
   }
 
   logger?.info('Created new paragraph by splitting existing one and added split suggestion to the previous')
-  onSuggestionCreation(splitStart.getSuggestionIdOrThrow())
+  onSuggestionCreation(splitNode.getSuggestionIdOrThrow())
 
   return true
 }
