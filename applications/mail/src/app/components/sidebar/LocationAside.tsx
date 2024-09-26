@@ -9,7 +9,6 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 
 interface Props {
     unreadCount?: number;
-    active?: boolean;
     weak?: boolean;
     refreshing?: boolean;
     itemOptions?: React.ReactNode;
@@ -25,7 +24,6 @@ const UNREAD_LIMIT = 9999;
 
 const LocationAside = ({
     unreadCount = 0,
-    active = false,
     refreshing = false,
     onRefresh,
     weak = false,
@@ -55,9 +53,9 @@ const LocationAside = ({
 
     return (
         <>
-            {active && !collapsed && (
+            {!collapsed && (
                 <ReloadSpinner
-                    className={clsx([unreadCount > 0 ? 'mr-2' : 'mr-0.5'])}
+                    className={clsx(['reload-spinner hidden', unreadCount > 0 ? 'mr-2' : 'mr-0.5'])}
                     refreshing={refreshing}
                     onRefresh={onRefresh}
                     data-testid="navigation-link:refresh-folder"
