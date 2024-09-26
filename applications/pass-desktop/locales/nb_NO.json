@@ -689,6 +689,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-fil kunne ikke tolkes. ${ errorDetail }"
       ],
+      "[Error] an item could not be parsed": [
+        "[Feil] et element kunne ikke analyseres"
+      ],
       "Alias could not be updated at the moment. Please try again later": [
         "Alias kunne ikke oppdateres for øyeblikket. Vennligst prøv igjen senere"
       ],
@@ -2583,6 +2586,9 @@
       ],
       "Type": [
         "Type"
+      ],
+      "Unknown": [
+        "Ukjent"
       ],
       "Unlock with": [
         "Lås opp med"
