@@ -468,7 +468,7 @@ const setupKeys = async ({
     // array, and keys won't be setup.
     const addresses = await getAllAddresses(api);
 
-    const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(ktActivation, api);
+    const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(ktActivation);
 
     let keySetupData = {
         keyPassword: '',
@@ -489,7 +489,7 @@ const setupKeys = async ({
     }
 
     const user = await api<{ User: User }>(getUser()).then(({ User }) => User);
-    await preAuthKTCommit(user.ID);
+    await preAuthKTCommit(user.ID, api);
     return { keySetupData, user, addresses };
 };
 

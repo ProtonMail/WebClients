@@ -12,9 +12,8 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { AuthResponse, AuthVersion, Fido2Data, InfoResponse } from '@proton/shared/lib/authentication/interface';
 import loginWithFallback from '@proton/shared/lib/authentication/loginWithFallback';
 import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import type { APP_NAMES} from '@proton/shared/lib/constants';
-import { MINUTE } from '@proton/shared/lib/constants';
-import { APPS } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, MINUTE } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
@@ -23,6 +22,7 @@ import type {
     Api,
     KeyTransparencyActivation,
     UserSettings,
+    VerifyOutboundPublicKeys,
     Address as tsAddress,
     KeySalt as tsKeySalt,
     User as tsUser,
@@ -47,7 +47,7 @@ import { AUTH_VERSION } from '@proton/srp';
 import noop from '@proton/utils/noop';
 
 import type { ChallengeResult } from '../challenge';
-import type { AuthActionResponse, AuthCacheResult, AuthSession } from './interface';
+import type { AuthActionResponse, AuthCacheResult, AuthSession, AuthType } from './interface';
 import { AuthStep } from './interface';
 import { getAuthTypes, handleUnlockKey } from './loginHelper';
 
@@ -195,7 +195,7 @@ const finalizeLogin = async ({
         trusted,
     });
 
-    await preAuthKTVerifier.preAuthKTCommit(user.ID);
+    await preAuthKTVerifier.preAuthKTCommit(user.ID, api);
 
     return {
         to: AuthStep.DONE,
@@ -390,6 +390,7 @@ export const handleSetupPassword = async ({ cache, newPassword }: { cache: AuthC
         cache,
         loginPassword: newPassword,
         keyPassword,
+        clearKeyPassword: newPassword,
     });
 };
 
@@ -499,6 +500,7 @@ export const handleLogin = async ({
 };
 
 export const handleNextLogin = async ({
+    authType,
     authResponse,
     authVersion,
     username,
@@ -511,7 +513,9 @@ export const handleNextLogin = async ({
     setupVPN,
     ktActivation,
     productParam,
+    verifyOutboundPublicKeys,
 }: {
+    authType: AuthType;
     authVersion: AuthVersion;
     authResponse: AuthResponse;
     username: string;
@@ -524,8 +528,10 @@ export const handleNextLogin = async ({
     setupVPN: boolean;
     ktActivation: KeyTransparencyActivation;
     productParam: ProductParam;
+    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
 }): Promise<AuthActionResponse> => {
     const cache: AuthCacheResult = {
+        authType,
         authResponse,
         authVersion,
         appName,
@@ -533,14 +539,15 @@ export const handleNextLogin = async ({
         productParam,
         data: {},
         api,
+        verifyOutboundPublicKeys,
         authTypes: getAuthTypes(authResponse, appName),
         username,
         persistent,
         loginPassword: password,
         ignoreUnlock,
         setupVPN,
-        preAuthKTVerifier: createPreAuthKTVerifier(ktActivation, api),
-        keyMigrationKTVerifier: createKeyMigrationKTVerifier(ktActivation, api),
+        preAuthKTVerifier: createPreAuthKTVerifier(ktActivation),
+        keyMigrationKTVerifier: createKeyMigrationKTVerifier(ktActivation),
     };
     return next({ cache, from: AuthStep.LOGIN });
 };
