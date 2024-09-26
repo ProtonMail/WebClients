@@ -2398,6 +2398,25 @@
         "Hjælp os med at blive bedre"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Bekræft tab af ${ PASS_APP_NAME } særrabat"
+      ],
+      "Remove discount": [
+        "Fjern rabat"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Dit ${ PLAN_NAMES[PLANS.PASS] }-abonnement er til en særpris på ${ price } pr. år. Hvis du nedgraderer til et gratis abonnement, mister du rabatten permanent, selv hvis du opgraderer igen engang i fremtiden."
+      ]
+    },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Åbn i ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Save for later": [
+        "Gem til senere"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Udvidet versionshistorik"
@@ -4175,9 +4194,6 @@
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilføjet til gruppen ${ contactGroupName }"
       ],
-      "Contact unassigned to group ${ contactGroupName }": [
-        "Kontakt fjernet fra gruppen ${ contactGroupName }"
-      ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Fortsæt med at bruge ${ DRIVE_APP_NAME } og lås op for drev senere"
       ],
@@ -4355,9 +4371,6 @@
       "End-to-end encrypted": [
         "End-to-end krypteret"
       ],
-      "End-to-End Encrypted": [
-        "End-to-End Krypteret"
-      ],
       "Enter password": [
         "Indtast adgangskode"
       ],
@@ -4412,9 +4425,6 @@
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Filen mangler sin signatur. Vi kunne ikke verificere, hvem der uploadede ${ fileName }."
-      ],
-      "File scanning in Drive": [
-        "Filscanning i Drive"
       ],
       "File will not be updated": [
         "Filen vil ikke blive opdateret"
@@ -5120,9 +5130,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
-      ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
-        "For at hjælpe med at beskytte dig, kan ${ DRIVE_APP_NAME } scanne og blokere farlige filer. Du bør stadig kun downloade filer fra folk, du stoler på."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "For at importere begivenheder, skal du først oprette en kalender i ${ CALENDAR_APP_NAME }. Det er her, at begivenhederne vises efter importen."
@@ -7674,6 +7681,12 @@
       "Subfolder failed to be loaded": [
         "Undermappe kunne ikke indlæses"
       ],
+      "The item was not added to your drive": [
+        "Elementet blev ikke tilføjet dit drev"
+      ],
+      "The item was succefully added to your drive": [
+        "Elementet blev tilføjet dit drev"
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Linket til \"${ name }\" kunne ikke slettes"
       ],
@@ -8680,6 +8693,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "Et link til dette element er blevet gemt på dit drev. Du kan få adgang til det senere i sektionen 'Delt med mig'."
+      ],
       "Encrypted search is here": [
         "Nu med krypteret søgning"
       ],
@@ -8871,6 +8887,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Dit abonnement blev købt via en iOS app. For at lave ændringer i dit abonnement eller opdatere dine betalingsoplysninger, skal du gå til Apple App Store."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Abonnementet vil blive nedgraderet ved udgangen af faktureringscyklussen."
       ]
     },
     "Subscription price": {

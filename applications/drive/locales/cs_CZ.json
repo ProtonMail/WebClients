@@ -4304,6 +4304,9 @@
       "Change your password": [
         "Změňte své heslo"
       ],
+      "Check for malicious files": [
+        "Kontrola škodlivých souborů"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Kontroluji kontakt ${ progress } z ${ max }..."
       ],
@@ -4334,7 +4337,7 @@
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt byl přiřazen do skupiny ${ contactGroupName }"
       ],
-      "Contact unassigned to group ${ contactGroupName }": [
+      "Contact unassigned from group ${ contactGroupName }": [
         "Kontakt byl odebrán ze skupiny ${ contactGroupName }"
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
@@ -4520,9 +4523,6 @@
       "End-to-end encrypted": [
         "Koncově šifrováno"
       ],
-      "End-to-End Encrypted": [
-        "Koncově šifrováno"
-      ],
       "Enter password": [
         "Zadejte heslo"
       ],
@@ -4579,9 +4579,6 @@
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Souboru chybí podpis. Nemohli jsme ověřit, kdo nahrál ${ fileName }."
-      ],
-      "File scanning in Drive": [
-        "Skenováni souboru na disku"
       ],
       "File will not be updated": [
         "Soubor nebude aktualizován"
@@ -5243,6 +5240,9 @@
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Tento soubor mohl být smazán, přesunut nebo znepřístupněn. Zkuste se obrátit na vlastníka souboru."
       ],
+      "This folder is empty": [
+        "Tato složka je prázdná"
+      ],
       "This item already exists in your library": [
         "Tato položka již ve vaší knihovně existuje"
       ],
@@ -5300,8 +5300,8 @@
       "To fight spam and abuse, please verify you are human.": [
         "Abyste zamezili spamu a obtěžování, potvrďte, že jste člověk."
       ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
-        "Aby jsme vás ochránili, ${ DRIVE_APP_NAME } umí skenovat a blokovat nebezpečné soubory. Měli byste stahovat soubory jen od lidí, kterým věříte."
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources.": [
+        "Abyste byli chráněni, může ${ DRIVE_APP_NAME } skenovat vaše soubory způsobem, který zachovává soukromí, a blokuje škodlivé soubory. Přesto je lepší stahovat soubory pouze z důvěryhodných zdrojů."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Chcete-li importovat události, nejprve vytvořte kalendář v ${ CALENDAR_APP_NAME }. Po importu se zde zobrazí události."

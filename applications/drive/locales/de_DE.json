@@ -4185,9 +4185,6 @@
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt der Gruppe ${ contactGroupName } zugewiesen."
       ],
-      "Contact unassigned to group ${ contactGroupName }": [
-        "Zuweisung des Kontaktes für Gruppe ${ contactGroupName } entfernt."
-      ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "${ DRIVE_APP_NAME } weiter verwenden und Laufwerk später entsperren"
       ],
@@ -4365,9 +4362,6 @@
       "End-to-end encrypted": [
         "Ende-zu-Ende-verschlüsselt"
       ],
-      "End-to-End Encrypted": [
-        "Ende-zu-Ende-verschlüsselt"
-      ],
       "Enter password": [
         "Passwort eingeben"
       ],
@@ -4422,9 +4416,6 @@
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Bei der Datei fehlt die Signatur. Wir konnten nicht überprüfen, wer ${ fileName } hochgeladen hat."
-      ],
-      "File scanning in Drive": [
-        "Dateisuche in Drive"
       ],
       "File will not be updated": [
         "Datei wird nicht aktualisiert."
@@ -5130,9 +5121,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
-      ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
-        "Um dich zu schützen, kann ${ DRIVE_APP_NAME } bösartige Dateien scannen und blockieren. Du solltest trotzdem nur Dateien von Personen herunterladen, denen du vertraust."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Um Termine zu importieren, erstelle zuerst einen Kalender in ${ CALENDAR_APP_NAME }. Dort werden die Termine nach dem Import angezeigt."
