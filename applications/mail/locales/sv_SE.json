@@ -217,6 +217,9 @@
       "Click here.": [
         "Klicka här."
       ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "Klicka för att kopiera ${ defaultEmailAddress } till urklipp"
+      ],
       "Close": [
         "Stäng"
       ],
@@ -1326,6 +1329,9 @@
       ],
       "Use recovery code": [
         "Använd återställningskod"
+      ],
+      "Use this": [
+        "Använd detta"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Använd din mus för att ändra storlek på vyn. Om du använder ditt tangentbord kan du använda piltangenterna för vänster- och höger för att ändra storlek."
@@ -4751,6 +4757,9 @@
       "Configure your family account and invite users ": [
         "Konfigurera ditt familjekonto och bjud in användare "
       ],
+      "Invite members and get everything up and running.": [
+        "Bjud in medlemmar och få igång allt."
+      ],
       "Set up your family": [
         "Ställ in din familj"
       ],
@@ -5996,9 +6005,6 @@
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilldelad till grupp ${ contactGroupName }"
       ],
-      "Contact unassigned to group ${ contactGroupName }": [
-        "Kontakt borttagen från grupp ${ contactGroupName }"
-      ],
       "Copied to clipboard": [
         "Kopierad till urklipp"
       ],
@@ -6154,6 +6160,9 @@
       ],
       "Email address": [
         "E-postadress"
+      ],
+      "Email copied to clipboard": [
+        "E-post kopierat till urklipp"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "E-postlagring för 10 anpassade e-postdomännamn är inkluderat gratis. Ytterligare domäner kan läggas till för ${ price }."
@@ -6703,6 +6712,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Uppdatera sidan eller ${ link } kommer automatiskt att lösa de flesta problemen."
+      ],
+      "Remember to update this in your password manager or wherever you keep your account and login information.": [
+        "Kom ihåg att uppdatera detta i din lösenordshanterare eller var du än förvarar ditt konto och inloggningsinformation."
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Tar bort all data associerad med denna app (inklusive nedladdade meddelanden, …)"
@@ -7963,6 +7975,9 @@
       ],
       "Don't like the style": [
         "Gillar inte stilen"
+      ],
+      "Don't show again": [
+        "Visa inte igen"
       ],
       "Don't show this again": [
         "Visa inte detta igen"
@@ -9870,7 +9885,39 @@
         "Välj vad ${ BRAND_NAME } har åtkomst till: visa dina e-postmeddelanden och inställningar, visa och ladda ner dina kontakter, visa och ladda ner alla agendor du kommer åt från Google Agenda."
       ]
     },
+    "Onboarding List Placeholder": {
+      "Finance": [
+        "Ekonomi"
+      ],
+      "I have moved my logins to ${ BRAND_NAME }": [
+        "Jag har flyttat mina inloggningar till ${ BRAND_NAME }"
+      ],
+      "Privacy for all your online accounts": [
+        "Integritet för alla dina konton online"
+      ],
+      "Social media": [
+        "Sociala medier"
+      ],
+      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
+        "Använd din ${ MAIL_APP_NAME }-adress för att logga in på tjänster online för att undvika att bli spårad och profilerad. Ändra din e-post för populära tjänster nu. ${ learnMoreLink }"
+      ]
+    },
     "Onboarding modal": {
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "${ advancedEncryptionTitle } säkerställer att endast du och avsedda mottagare kan komma åt din e-post"
+      ],
+      "Activate premium features": [
+        "Aktivera premiumfunktioner"
+      ],
+      "Activate selected": [
+        "Aktivera valda"
+      ],
+      "Advanced encryption": [
+        "Avancerad kryptering"
+      ],
+      "App Store": [
+        "App Store"
+      ],
       "Automatically forward emails": [
         "Vidarebefordra e-post automatiskt"
       ],
@@ -9880,8 +9927,20 @@
       "Block unsavory senders": [
         "Blockera otrevliga avsändare"
       ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Rensa bort borttagna e-postmeddelanden och skräppost efter 30 dagar."
+      ],
       "Congratulations on choosing privacy": [
         "Grattis till att du väljer integritet"
+      ],
+      "Dark Web Monitoring": [
+        "Övervakning mörka webben"
+      ],
+      "Download the desktop app": [
+        "Ladda ner appen för stationär dator"
+      ],
+      "Download the desktop app and continue": [
+        "Ladda ner appen för stationär dator och fortsätt"
       ],
       "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
         "Kryptering så stark att endast du och avsedda mottagare kan visa dina e-postmeddelanden. ${ kbLinkEncryption }"
@@ -9892,6 +9951,30 @@
       "Forward Gmail messages to your inbox.": [
         "Vidarebefordra Gmail-meddelanden till din inkorg."
       ],
+      "Get the desktop app": [
+        "Skaffa appen för stationär dator"
+      ],
+      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
+        "Skaffa mobilappen från ${ mobileAppAppStoreLink } eller ${ mobileAppGooglePlayLink }."
+      ],
+      "Google Play": [
+        "Google Play"
+      ],
+      "Industry-leading spam protection": [
+        "Branschledande skräppostskydd"
+      ],
+      "Let's get started": [
+        "Låt oss börja"
+      ],
+      "Make the most of your paid plan.": [
+        "Få ut det mesta av ditt betalda paket."
+      ],
+      "Maybe later": [
+        "Kanske senare"
+      ],
+      "More ways to experience ${ MAIL_APP_NAME }": [
+        "Fler sätt att uppleva ${ MAIL_APP_NAME }"
+      ],
       "Next": [
         "Nästa"
       ],
@@ -9901,16 +9984,37 @@
       "Skip": [
         "Hoppa över"
       ],
+      "Start using ${ BRAND_NAME }": [
+        "Börja använda ${ BRAND_NAME }"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Börja använda den kortare, klatschigare versionen av din e-postadress."
+      ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "Vi stoppar annonsörer och datainsamlare från att profilera dig. ${ kbLinkPrivacy }"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Välkommen till ${ MAIL_APP_NAME }"
+      ],
+      "Where privacy is default.": [
+        "Där integritet är standard."
       ]
     },
     "Onboarding Proton": {
+      "Choose your preferred look and feel.": [
+        "Välj ditt föredragna utseende och känsla."
+      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Konfigurera din organisation, länka ditt domännamn och skapa konton för att säkerställa att alla medlemmar i din organisation är skyddade."
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Upptäck alla ${ BRAND_NAME }-tjänster"
+      ],
+      "Link your domain name and create accounts for all members of your organization.": [
+        "Länka ditt domännamn och skapa konton för alla medlemmar i din organisation."
+      ],
+      "Make it your own": [
+        "Gör den till din egen"
       ],
       "Pick a theme": [
         "Välj ett tema"
@@ -11133,6 +11237,20 @@
       ],
       "Unsubscribed": [
         "Prenumeration avslutad"
+      ]
+    },
+    "Step": {
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "Ange din ${ MAIL_APP_NAME }-adress som den nya adressen och spara, bekräfta eller verifiera ändringen"
+      ],
+      "In the account settings, look for the option to edit or change your email address ": [
+        "I kontoinställningarna letar du efter alternativet att redigera eller ändra din e-postadress "
+      ],
+      "Select service to update": [
+        "Välj tjänst att uppdatera"
+      ],
+      "Sign in to the service": [
+        "Logga in på tjänsten"
       ]
     },
     "Step in filter modal": {
@@ -12505,6 +12623,9 @@
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Dölj din e-post med ${ PASS_APP_NAME }"
+      ],
+      "How to update your email address": [
+        "Hur man uppdaterar din e-postadress"
       ],
       "Human verification": [
         "Mänsklig verifiering"

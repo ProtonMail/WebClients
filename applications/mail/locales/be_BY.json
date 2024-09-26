@@ -222,6 +222,9 @@
       "Click here.": [
         "Націсніце тут."
       ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "Націсніце, каб скапіяваць ${ defaultEmailAddress } у буфер абмену"
+      ],
       "Close": [
         "Закрыць"
       ],
@@ -1334,6 +1337,9 @@
       ],
       "Use recovery code": [
         "Выкарыстоўваць код аднаўлення"
+      ],
+      "Use this": [
+        "Выкарыстоўваць гэта"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Выкарыстоўвайце мышку, каб змяніць памер акна прагляду. Калі выкарыстоўваеце клавіятуру, то можаце змяняць памер стрэлкамі ўлева/управа."
@@ -6207,8 +6213,8 @@
       "Contact assigned to group ${ contactGroupName }": [
         "Кантакт прызначаны групе ${ contactGroupName }"
       ],
-      "Contact unassigned to group ${ contactGroupName }": [
-        "Кантакт не прызначаны групе ${ contactGroupName }"
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Прызначэнен кантакту скасавана ў групе ${ contactGroupName }"
       ],
       "Copied to clipboard": [
         "Скапіявана ў буфер абмену"
@@ -6371,6 +6377,9 @@
       ],
       "Email address": [
         "Адрас электроннай пошты"
+      ],
+      "Email copied to clipboard": [
+        "Электронная пошта скапіявана ў буфер абмену"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Размяшчэнне электроннай пошты для 10 карыстальніцкіх даменных імён электроннай пошты даецца карыстальніку бясплатна. За дадатковыя дамены будзе спаганяцца плата ў памеры ${ price }."
@@ -8248,6 +8257,9 @@
       ],
       "Don't like the style": [
         "Не падабаецца стыль"
+      ],
+      "Don't show again": [
+        "Больш не паказваць"
       ],
       "Don't show this again": [
         "Больш не паказваць"
@@ -13035,6 +13047,9 @@
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Схавайце сваю электронную пошту з дапамогай ${ PASS_APP_NAME }"
+      ],
+      "How to update your email address": [
+        "Як абнавіць адрас электроннай пошты"
       ],
       "Human verification": [
         "Антыспамавая праверка"
