@@ -4124,9 +4124,6 @@
       "Contact assigned to group ${ contactGroupName }": [
         "연락처가 ${ contactGroupName } 그룹에 할당되었습니다"
       ],
-      "Contact unassigned to group ${ contactGroupName }": [
-        "연락처가 ${ contactGroupName } 그룹에 할당 취소되었습니다"
-      ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "${ DRIVE_APP_NAME }를 계속 사용하고 다음에 드라이브 잠금을 해제하세요"
       ],
@@ -4301,9 +4298,6 @@
       "End-to-end encrypted": [
         "종단간 암호화됨"
       ],
-      "End-to-End Encrypted": [
-        "종단간 암호화됨"
-      ],
       "Enter password": [
         "비밀번호 입력"
       ],
@@ -4357,9 +4351,6 @@
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "파일에 서명이 없습니다. 누가 ${ fileName }을(를) 업로드했는지 인증할 수 없습니다."
-      ],
-      "File scanning in Drive": [
-        "Drive에서 파일 검사 중"
       ],
       "File will not be updated": [
         "파일이 업로드되지 않습니다"
@@ -5059,9 +5050,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "스팸과 남용의 방지를 위해 사람임을 확인해 주세요."
-      ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
-        "${ DRIVE_APP_NAME }가 회원님을 보호하기 위해 의심스러운 파일을 검사하고 차단합니다. 하지만 여전히 신뢰하는 사용자의 파일만 다운로드해야 합니다."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "이벤트를 불러오려면, ${ CALENDAR_APP_NAME } 에서 캘린더를 생성하세요. 이벤트가 어디에 생성되었는지 처리 후 표시됩니다."

@@ -4094,6 +4094,9 @@
       "Change your password": [
         "Ubah kata sandi Anda"
       ],
+      "Check for malicious files": [
+        "Pindai berkas berbahaya"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Memeriksa kontak ${ progress } dari ${ max }..."
       ],
@@ -4123,9 +4126,6 @@
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontak ditetapkan ke grup ${ contactGroupName }"
-      ],
-      "Contact unassigned to group ${ contactGroupName }": [
-        "Kontak tidak lagi ditetapkan ke grup ${ contactGroupName }"
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Lanjut gunakan ${ DRIVE_APP_NAME } tanpa membuka kunci berkas"
@@ -4301,9 +4301,6 @@
       "End-to-end encrypted": [
         "Terenkripsi secara end-to-end"
       ],
-      "End-to-End Encrypted": [
-        "Terenkripsi End-to-End"
-      ],
       "Enter password": [
         "Masukkan kata sandi"
       ],
@@ -4357,9 +4354,6 @@
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Berkas ini tidak ditandatangani. Kami tidak dapat memverifikasi siapa yang mengunggah ${ fileName }."
-      ],
-      "File scanning in Drive": [
-        "Pemindaian berkas di Drive"
       ],
       "File will not be updated": [
         "Berkas tidak akan diperbarui"
@@ -5006,6 +5000,9 @@
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Berkas ini mungkin telah dihapus, dipindahkan, atau tidak lagi tersedia. Cobalah untuk menghubungi pemilik berkas yang bersangkutan."
       ],
+      "This folder is empty": [
+        "Folder ini kosong"
+      ],
       "This item already exists in your library": [
         "Item ini telah ada pada pustaka Anda"
       ],
@@ -5060,8 +5057,8 @@
       "To fight spam and abuse, please verify you are human.": [
         "Untuk melawan spam dan penyalahgunaan, mohon verifikasi bahwa Anda memang manusia."
       ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
-        "Untuk membantu melindungi Anda, ${ DRIVE_APP_NAME } dapat memindai dan memblokir berkas yang berbahaya. Anda tetap disarankan untuk hanya mengunduh berkas dari orang-orang yang Anda percayai."
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources.": [
+        "Untuk membantu melindungi Anda, ${ DRIVE_APP_NAME } dapat memindai berkas Anda tanpa mengusik privasi dan memblokir berkas yang berbahaya. Meskipun demikian, Anda tetap disarankan untuk hanya mengunduh berkas dari sumber yang dipercaya."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Untuk mengimpor acara, buatlah kalender di ${ CALENDAR_APP_NAME } terlebih dahulu. Acara yang diimpor akan muncul pada kalender ini."

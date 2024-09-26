@@ -4194,7 +4194,7 @@
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilordnet gruppe ${ contactGroupName }"
       ],
-      "Contact unassigned to group ${ contactGroupName }": [
+      "Contact unassigned from group ${ contactGroupName }": [
         "Kontakt fjernet fra gruppe ${ contactGroupName }"
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
@@ -4374,9 +4374,6 @@
       "End-to-end encrypted": [
         "Ende-til-ende-kryptert"
       ],
-      "End-to-End Encrypted": [
-        "Ende-til-ende-kryptert"
-      ],
       "Enter password": [
         "Skriv inn passord"
       ],
@@ -4431,9 +4428,6 @@
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Fil mangler signatur. Vi kan ikke bekrefte hvem som lastet opp ${ fileName }."
-      ],
-      "File scanning in Drive": [
-        "Filskanning i Drive"
       ],
       "File will not be updated": [
         "Filen blir ikke oppdatert"
@@ -5139,9 +5133,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For å bekjempe søppelpost og misbruk, vennligst verifiser at du er et menneske."
-      ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
-        "For å beskytte deg, kan ${ DRIVE_APP_NAME } skanne og blokkere ondsinnede filer. Du bør fortsatt bare laste ned filer fra personer du stoler på."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "For å importere hendelser, først opprett en kalender i ${ CALENDAR_APP_NAME }. Dette er hvor hendelsene vil vises etter importen."
