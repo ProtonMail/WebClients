@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { Tabs } from '@proton/components';
 import Alert from '@proton/components/components/alert/Alert';
+import Tabs from '@proton/components/components/tabs/Tabs';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 

@@ -2,9 +2,9 @@ import type { ReactElement, RefObject } from 'react';
 
 import { c } from 'ttag';
 
-import { Spotlight } from '@proton/components';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
+import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import { APPS, BRAND_NAME, DEFAULT_CURRENCY, REFERRAL_PROGRAM_MAX_AMOUNT } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import starImg from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';

@@ -4,8 +4,9 @@ import { endOfDay, isAfter, isBefore, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Pagination, usePaginationAsync } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
+import Pagination from '@proton/components/components/pagination/Pagination';
+import usePaginationAsync from '@proton/components/components/pagination/usePaginationAsync';
 import { useApi, useErrorHandler, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { getPassLogs } from '@proton/shared/lib/api/b2blogs';

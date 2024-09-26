@@ -4,6 +4,8 @@ import { useCallback, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
+import Field from '@proton/components/components/container/Field';
+import Row from '@proton/components/components/container/Row';
 import Form from '@proton/components/components/form/Form';
 import FileInput from '@proton/components/components/input/FileInput';
 import Label from '@proton/components/components/label/Label';
@@ -18,8 +20,6 @@ import { resizeImage } from '@proton/shared/lib/helpers/image';
 import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
 import debounce from '@proton/utils/debounce';
 
-import Field from '../../../components/container/Field';
-import Row from '../../../components/container/Row';
 import { useNotifications } from '../../../hooks';
 
 export interface ContactImageProps extends Omit<ModalProps<typeof Form>, 'onSubmit'> {

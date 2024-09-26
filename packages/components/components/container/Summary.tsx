@@ -1,6 +1,6 @@
 import type { HTMLProps, ReactNode } from 'react';
 
-import Icon from '../icon/Icon';
+import Icon from '@proton/components/components/icon/Icon';
 
 interface Props extends HTMLProps<HTMLElement> {
     children: ReactNode;

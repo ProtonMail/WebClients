@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import ButtonLike from '@proton/atoms/Button/ButtonLike';
 import { Checkbox, Icon, RadioGroup, Table, TableBody, TableCell, TableHeader, TableRow } from '@proton/components';
 
 import mdx from './Button.mdx';

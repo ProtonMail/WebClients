@@ -2,12 +2,18 @@ import { type ReactElement, useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { CalendarLogo, DriveLogo, MailLogo, PassLogo, Tabs, VpnLogo, WalletLogo } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
+import CalendarLogo from '@proton/components/components/logo/CalendarLogo';
+import DriveLogo from '@proton/components/components/logo/DriveLogo';
+import MailLogo from '@proton/components/components/logo/MailLogo';
+import PassLogo from '@proton/components/components/logo/PassLogo';
+import VpnLogo from '@proton/components/components/logo/VpnLogo';
+import WalletLogo from '@proton/components/components/logo/WalletLogo';
 import Option from '@proton/components/components/option/Option';
 import Price from '@proton/components/components/price/Price';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import Tabs from '@proton/components/components/tabs/Tabs';
 import { useUser } from '@proton/components/hooks';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { type PaymentMethodStatusExtended, getPlansMap, isRegionalCurrency, mainCurrencies } from '@proton/payments';

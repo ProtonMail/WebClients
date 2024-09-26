@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Scroll } from '@proton/atoms';
-import { Tabs } from '@proton/components';
+import Tabs from '@proton/components/components/tabs/Tabs';
 import type { FetchedBreaches } from '@proton/components/containers/credentialLeak/models';
 
 import { useAddresses } from '../..';
