@@ -110,5 +110,4 @@ export { default as useGroups, useGetGroups } from './useGroups';
 export { default as useIsSentinelUser } from './useIsSentinelUser';
 export { default as useGroupMemberships } from './useGroupMemberships';
 export * from './drive';
-export * from './usePaymentStatus';
 export * from './usePreferredPlansMap';

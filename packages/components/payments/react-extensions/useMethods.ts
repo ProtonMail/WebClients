@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { useGetPaymentStatus } from '@proton/components/hooks';
+import { useGetPaymentStatus } from '@proton/account/paymentStatus/hooks';
 import type {
     AvailablePaymentMethod,
     PaymentMethodFlows,
