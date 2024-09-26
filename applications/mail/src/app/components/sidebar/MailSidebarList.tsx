@@ -35,6 +35,8 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { LABEL_IDS_TO_HUMAN } from '../../constants';
 import { getCounterMap } from '../../helpers/elements';
+import { useApplyLabels } from '../../hooks/actions/label/useApplyLabels';
+import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
 import { LabelActionsContextProvider } from './EditLabelContext';
 import MailSidebarListActions from './MailSidebarListActions';
@@ -72,7 +74,9 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
     const [focusedItem, setFocusedItem] = useState<string | null>(null);
     const [foldersUI, setFoldersUI] = useState<Folder[]>([]);
     const foldersTreeview = useMemo(() => buildTreeview(foldersUI), [foldersUI]);
-
+    const { applyLabels, applyLabelsToAllModal } = useApplyLabels();
+    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal, selectAllMoveModal } =
+        useMoveToFolder();
     const mailboxCount = mailSettings.ViewMode === VIEW_MODE.GROUP ? conversationCounts : messageCounts;
 
     const foldersUnread = !!mailboxCount?.find((labelCount) => {
@@ -298,6 +302,8 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                         showSnoozed={showSnoozed}
                         onToggleMoreItems={toggleDisplayMoreItems}
                         collapsed={collapsed}
+                        applyLabels={applyLabels}
+                        moveToFolder={moveToFolder}
                     />
 
                     {collapsed ? (
@@ -348,6 +354,8 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                                     updateFocusItem={updateFocusItem}
                                     handleToggleFolder={handleToggleFolder}
                                     foldersTreeview={foldersTreeview}
+                                    applyLabels={applyLabels}
+                                    moveToFolder={moveToFolder}
                                 />
                             )}
                         </>
@@ -397,6 +405,8 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                                     counterMap={counterMap}
                                     labels={labels || []}
                                     updateFocusItem={updateFocusItem}
+                                    applyLabels={applyLabels}
+                                    moveToFolder={moveToFolder}
                                 />
                             )}
                         </>
@@ -405,6 +415,11 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                     {postItems}
                 </SidebarList>
             </div>
+            {moveScheduledModal}
+            {moveSnoozedModal}
+            {moveToSpamModal}
+            {selectAllMoveModal}
+            {applyLabelsToAllModal}
         </LabelActionsContextProvider>
     );
 };
