@@ -1,4 +1,4 @@
-import { isSafari } from '@proton/shared/lib/helpers/browser';
+import { isDuckDuckGo, isSafari } from '@proton/shared/lib/helpers/browser';
 
 const getIframeSandboxAttributes = (isPrint: boolean) => {
     /**
@@ -25,7 +25,7 @@ const getIframeSandboxAttributes = (isPrint: boolean) => {
         'allow-popups',
         'allow-popups-to-escape-sandbox',
         ...(isPrint ? ['allow-modals'] : []),
-        ...(isSafari() ? ['allow-scripts'] : []),
+        ...(isSafari() || isDuckDuckGo() ? ['allow-scripts'] : []),
     ].join(' ');
 
     return sandboxAttributes;
