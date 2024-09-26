@@ -15,7 +15,6 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AuthModal from '@proton/components/containers/password/AuthModal';
 import {
     useAuthentication,
-    useBeforeUnload,
     useEventManager,
     useGetAddressKeys,
     useGetAddresses,
@@ -24,6 +23,7 @@ import {
     useNotifications,
 } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
+import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { authMember } from '@proton/shared/lib/api/members';

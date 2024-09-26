@@ -9,6 +9,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import DynamicProgress from '@proton/components/components/progress/DynamicProgress';
+import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
 import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import { CATEGORIES, OVERWRITE } from '@proton/shared/lib/contacts/constants';
 import type { ImportContactError } from '@proton/shared/lib/contacts/errors/ImportContactError';
@@ -21,7 +22,7 @@ import type {
 import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/contacts/Import';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 
-import { useApi, useBeforeUnload, useEventManager, useGetUserKeys } from '../../../../hooks';
+import { useApi, useEventManager, useGetUserKeys } from '../../../../hooks';
 import { extractTotals, processContactsInBatches } from '../encryptAndSubmit';
 
 interface Props {
