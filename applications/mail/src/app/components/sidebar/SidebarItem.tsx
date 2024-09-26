@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { memo, useRef } from 'react';
+import { memo, useCallback, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import type { HotkeyTuple, IconName, IconSize } from '@proton/components';
@@ -8,7 +8,6 @@ import {
     SidebarListItemContent,
     SidebarListItemContentIcon,
     SidebarListItemLink,
-    Tooltip,
     useEventManager,
     useHotkeys,
     useItemsDroppable,
@@ -26,14 +25,16 @@ import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
 import { LABEL_IDS_TO_HUMAN } from '../../constants';
 import { shouldDisplayTotal } from '../../helpers/labels';
-import { useApplyLabels } from '../../hooks/actions/label/useApplyLabels';
-import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
+import type { ApplyLabelsParams } from '../../hooks/actions/label/useApplyLabels';
+import type { MoveParams } from '../../hooks/actions/move/useMoveToFolder';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import LocationAside from './LocationAside';
 
+import './SidebarItem.scss';
+
 const { ALL_MAIL, ALMOST_ALL_MAIL, ALL_DRAFTS, ALL_SENT, SCHEDULED, SNOOZED, OUTBOX } = MAILBOX_LABEL_IDS;
 
-const NO_DROP: string[] = [ALL_MAIL, ALMOST_ALL_MAIL, ALL_DRAFTS, ALL_SENT, SCHEDULED, SNOOZED, OUTBOX];
+const NO_DROP_SET: Set<string> = new Set([ALL_MAIL, ALMOST_ALL_MAIL, ALL_DRAFTS, ALL_SENT, SCHEDULED, SNOOZED, OUTBOX]);
 
 const defaultShortcutHandlers: HotkeyTuple[] = [];
 
@@ -57,6 +58,8 @@ interface Props {
     isOptionDropdownOpened?: boolean;
     id?: string;
     collapsed?: boolean;
+    moveToFolder: (params: MoveParams) => void;
+    applyLabels: (params: ApplyLabelsParams) => void;
 }
 
 const SidebarItem = ({
@@ -79,6 +82,8 @@ const SidebarItem = ({
     id,
     isOptionDropdownOpened,
     collapsed = false,
+    moveToFolder,
+    applyLabels,
 }: Props) => {
     const { call } = useEventManager();
     const history = useHistory();
@@ -89,17 +94,10 @@ const SidebarItem = ({
 
     const [refreshing, withRefreshing] = useLoading(false);
 
-    const { applyLabels, applyLabelsToAllModal } = useApplyLabels();
-    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal, selectAllMoveModal } =
-        useMoveToFolder();
-
     const humanID = LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS]
         ? LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS]
         : labelID;
     const link = `/${humanID}`;
-
-    const isActive = labelID === currentLabelID;
-    const ariaCurrent = isActive ? 'page' : undefined;
 
     const needsTotalDisplay = shouldDisplayTotal(labelID);
 
@@ -120,35 +118,39 @@ const SidebarItem = ({
         void withRefreshing(Promise.all([call(), wait(1000)]));
     };
 
-    const canDrop = () => {
-        const isNonDroppableFolder = NO_DROP.includes(labelID);
-        return !isActive && !isNonDroppableFolder;
-    };
+    const dragFilter = useCallback(() => {
+        return !(labelID === currentLabelID) && !NO_DROP_SET.has(labelID);
+    }, [currentLabelID, labelID]);
 
-    const { dragOver, dragProps, handleDrop } = useItemsDroppable(canDrop, isFolder ? 'move' : 'link', (itemIDs) => {
-        const elements = getElementsFromIDs(itemIDs);
+    const dropCallback = useCallback(
+        (itemIDs: string[]) => {
+            const elements = getElementsFromIDs(itemIDs);
 
-        if (canDrop()) {
-            if (isFolder) {
-                void moveToFolder({
-                    elements,
-                    sourceLabelID: currentLabelID,
-                    destinationLabelID: labelID,
-                    folderName: text,
-                    selectAll,
-                    onCheckAll: checkAllRef?.current ? checkAllRef.current : undefined,
-                });
-            } else {
-                void applyLabels({
-                    elements,
-                    changes: { [labelID]: true },
-                    labelID: currentLabelID,
-                    selectAll,
-                    onCheckAll: checkAllRef?.current ? checkAllRef.current : undefined,
-                });
+            if (dragFilter()) {
+                if (isFolder) {
+                    void moveToFolder({
+                        elements,
+                        sourceLabelID: currentLabelID,
+                        destinationLabelID: labelID,
+                        folderName: text,
+                        selectAll,
+                        onCheckAll: checkAllRef?.current ? checkAllRef.current : undefined,
+                    });
+                } else {
+                    void applyLabels({
+                        elements,
+                        changes: { [labelID]: true },
+                        labelID: currentLabelID,
+                        selectAll,
+                        onCheckAll: checkAllRef?.current ? checkAllRef.current : undefined,
+                    });
+                }
             }
-        }
-    });
+        },
+        [applyLabels, dragFilter, checkAllRef, currentLabelID, getElementsFromIDs, isFolder, labelID, selectAll]
+    );
+
+    const { dragOver, dragProps, handleDrop } = useItemsDroppable(dragFilter, isFolder ? 'move' : 'link', dropCallback);
 
     const elementRef = useRef<HTMLAnchorElement>(null);
     useHotkeys(elementRef, shortcutHandlers);
@@ -164,62 +166,54 @@ const SidebarItem = ({
             ])}
             data-testid={`sidebar-label:${text}`}
         >
-            <Tooltip originalPlacement="right" title={collapsed ? tooltipText : null}>
-                <SidebarListItemLink
-                    aria-current={ariaCurrent}
-                    to={link}
-                    onClick={handleClick}
-                    {...dragProps}
-                    onDrop={handleDrop}
-                    ref={elementRef}
-                    data-testid={`navigation-link:${humanID}`}
-                    data-shortcut-target={['navigation-link', id].filter(isTruthy).join(' ')}
-                    onFocus={() => onFocus(id || '')}
-                >
-                    <SidebarListItemContent
-                        collapsed={collapsed}
-                        left={
-                            icon ? (
-                                <SidebarListItemContentIcon
-                                    className={clsx([
-                                        collapsed && 'flex mx-auto',
-                                        isLabel && 'navigation-icon--fixAliasing',
-                                    ])}
-                                    name={icon}
-                                    color={color}
-                                    size={iconSize}
-                                />
-                            ) : undefined
-                        }
-                        right={
-                            <LocationAside
-                                unreadCount={needsTotalDisplay ? totalMessagesCount : unreadCount}
-                                weak={labelID !== MAILBOX_LABEL_IDS.INBOX}
-                                active={isActive}
-                                refreshing={refreshing}
-                                onRefresh={handleRefresh}
-                                shouldDisplayTotal={needsTotalDisplay}
-                                hideCountOnHover={hideCountOnHover}
-                                itemOptions={itemOptions}
-                                isOptionDropdownOpened={isOptionDropdownOpened}
-                                collapsed={collapsed}
+            <SidebarListItemLink
+                title={tooltipText}
+                to={link}
+                onClick={handleClick}
+                {...dragProps}
+                onDrop={handleDrop}
+                ref={elementRef}
+                data-testid={`navigation-link:${humanID}`}
+                data-shortcut-target={['navigation-link', id].filter(isTruthy).join(' ')}
+                onFocus={() => onFocus(id || '')}
+            >
+                <SidebarListItemContent
+                    collapsed={collapsed}
+                    left={
+                        icon ? (
+                            <SidebarListItemContentIcon
+                                className={clsx([
+                                    collapsed && 'flex mx-auto',
+                                    isLabel && 'navigation-icon--fixAliasing',
+                                ])}
+                                name={icon}
+                                color={color}
+                                size={iconSize}
                             />
-                        }
+                        ) : undefined
+                    }
+                    right={
+                        <LocationAside
+                            unreadCount={needsTotalDisplay ? totalMessagesCount : unreadCount}
+                            weak={labelID !== MAILBOX_LABEL_IDS.INBOX}
+                            refreshing={refreshing}
+                            onRefresh={handleRefresh}
+                            shouldDisplayTotal={needsTotalDisplay}
+                            hideCountOnHover={hideCountOnHover}
+                            itemOptions={itemOptions}
+                            isOptionDropdownOpened={isOptionDropdownOpened}
+                            collapsed={collapsed}
+                        />
+                    }
+                >
+                    <span
+                        className={clsx('text-ellipsis', collapsed && 'sr-only')}
+                        title={collapsed ? undefined : titleText}
                     >
-                        <span
-                            className={clsx('text-ellipsis', collapsed && 'sr-only')}
-                            title={collapsed ? undefined : titleText}
-                        >
-                            {content}
-                        </span>
-                    </SidebarListItemContent>
-                </SidebarListItemLink>
-            </Tooltip>
-            {moveScheduledModal}
-            {moveSnoozedModal}
-            {moveToSpamModal}
-            {selectAllMoveModal}
-            {applyLabelsToAllModal}
+                        {content}
+                    </span>
+                </SidebarListItemContent>
+            </SidebarListItemLink>
         </SidebarListItem>
     );
 };
