@@ -116,10 +116,10 @@
       "Create": [
         "Luo"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Luo ${ BRAND_NAME }-tili"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Luo ${ BRAND_NAME }-tili"
       ],
       "Create a new vault to share": [
@@ -634,6 +634,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } -tiedostoa ei voitu jäsentää. ${ errorDetail }"
       ],
+      "[Error] an item could not be parsed": [
+        "[Virhe] kohdetta ei voitu jäsentää"
+      ],
       "Alias could not be updated at the moment. Please try again later": [
         "Aliasta ei voitu päivittää tällä hetkellä. Yritä uudelleen myöhemmin"
       ],
@@ -957,6 +960,9 @@
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Olet tällä hetkellä yhteydettömässä tilassa. Palauta yhteys avataksesi ${ PASS_SHORT_APP_NAME }in."
       ],
+      "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
+        "Selaimellasi on vaikeuksia ottaa ${ PASS_APP_NAME } käyttöön."
+      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN-koodisi poistettiin toiselta ${ PASS_APP_NAME } -päätteeltä"
       ]
@@ -1105,6 +1111,9 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Kun tietosi on tuotu, on suositeltavaa suojata tietosi poistamalla salasanasi sisältävän CSV-tiedosto."
       ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "SimpleLoginin aliashallintaominaisuudet ovat tulossa pian!"
+      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias on poistettu käytöstä. Et enää vastaanota osoitteeseen ${ item.aliasEmail } lähetettyjä sähköposteja"
       ],
@@ -1149,9 +1158,6 @@
       ],
       "Automatically copy the generated password to the clipboard": [
         "Kopioi luotu salasana leikepöydälle automaattisesti."
-      ],
-      "Autosaved on ${ payload.domain }": [
-        "Automaattitallennettiin osoitteesta ${ payload.domain }"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Ennen kuin viet tietosi tässä muodossa, avaa Safarin asetukset -> \"Yleiset\" -välilehti -> poista asetus \"Avaa turvalliset tiedostot lataamisen jälkeen\" käytöstä. Tämä estää Safaria purkamasta vietyjä tiedostoja virheellisesti."
@@ -1725,6 +1731,9 @@
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "Voit tarkastella tuotuja tietoja klikkaamalla selaimen työkalurivin Pass-kuvaketta."
       ],
+      "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
+        "Yritä ladata tai asentaa laajennus uudelleen ja varmista, että selaimesi ja ${ PASS_SHORT_APP_NAME } ovat ajan tasalla."
+      ],
       "Unable to copy to clipboard": [
         "Leikepöydälle kopiointi epäonnistui"
       ],
@@ -1956,6 +1965,9 @@
       ],
       "Alias address": [
         "Aliaksen osoite"
+      ],
+      "Alias management": [
+        "Aliashallinta"
       ],
       "Aliases": [
         "Aliakset"
@@ -2509,6 +2521,9 @@
       ],
       "Type": [
         "Tyyppi"
+      ],
+      "Unknown": [
+        "Tuntematon"
       ],
       "Unlock ${ PASS_APP_NAME }": [
         "Avaa ${ PASS_APP_NAME }"
