@@ -6,11 +6,11 @@
  */
 
 /**
- * Measures number of event updates (not event fetches)
+ * Latency of DOMContentLoaded event
  */
-export interface HttpsProtonMeDriveSyncEventUpdatesTotalV1SchemaJson {
+export interface HttpsProtonMeWebDrivePerformanceDomcontentloadedHistogramV1SchemaJson {
   Labels: {
-    volumeType: "own" | "shared";
+    pageType: "filebrowser" | "computers" | "photos" | "shared_by_me" | "shared_with_me" | "trash" | "public_page";
   };
   Value: number;
 }
