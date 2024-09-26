@@ -3,11 +3,11 @@ import { flushSync } from 'react-dom';
 import type { History } from 'history';
 import type { ServiceWorkerClient } from 'proton-pass-web/app/ServiceWorker/client/client';
 import { store } from 'proton-pass-web/app/Store/store';
-import { B2BEvents, getB2BEventsStorageKey } from 'proton-pass-web/lib/b2b';
+import { B2BEvents } from 'proton-pass-web/lib/b2b';
 import { deletePassDB } from 'proton-pass-web/lib/database';
 import { onboarding } from 'proton-pass-web/lib/onboarding';
-import { getSettingsStorageKey, settings } from 'proton-pass-web/lib/settings';
-import { getTelemetryStorageKey, telemetry } from 'proton-pass-web/lib/telemetry';
+import { clearUserLocalData, localGarbageCollect } from 'proton-pass-web/lib/storage';
+import { telemetry } from 'proton-pass-web/lib/telemetry';
 
 import type { CreateNotificationOptions } from '@proton/components';
 import type { AppStateContextValue } from '@proton/pass/components/Core/AppStateProvider';
@@ -54,8 +54,9 @@ import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import {
     getDefaultLocalID,
+    getPersistedLocalIDsForUserID,
     getPersistedSession,
-    getPersistedSessionsForUserID,
+    getPersistedSessions,
     getSessionKey,
     getStateKey,
 } from './sessions';
@@ -90,6 +91,9 @@ export const createAuthService = ({
         getPersistedSession,
 
         onInit: async (options) => {
+            const sessions = getPersistedSessions();
+            await localGarbageCollect(sessions);
+
             const activeLocalID = authStore.getLocalID();
             const pathLocalID = getLocalIDFromPathname(history.location.pathname);
 
@@ -98,7 +102,7 @@ export const createAuthService = ({
              * mutates the local path in the URL */
             if (pathLocalID && activeLocalID !== pathLocalID) authStore.clear();
 
-            const localID = pathLocalID ?? authStore.getLocalID() ?? getDefaultLocalID();
+            const localID = pathLocalID ?? authStore.getLocalID() ?? getDefaultLocalID(sessions);
             const error = getRouteError(history.location.search);
 
             if (error !== null) {
@@ -215,7 +219,6 @@ export const createAuthService = ({
             onboarding.reset();
             telemetry.stop();
             B2BEvents.stop();
-            void settings.clear();
 
             store.dispatch(cacheCancel());
             store.dispatch(stopEventPolling());
@@ -224,8 +227,8 @@ export const createAuthService = ({
         onLogoutComplete: async (userID, localID, broadcast) => {
             if (broadcast) sw?.send({ type: 'unauthorized', localID, broadcast });
             if (userID) deletePassDB(userID).catch(noop);
+            if (localID) clearUserLocalData(localID);
 
-            localStorage.removeItem(getSessionKey(localID));
             await authSwitch.sync({ revalidate: false });
 
             setSentryUID(undefined);
@@ -259,17 +262,12 @@ export const createAuthService = ({
             /** If any on-going persisted sessions are present for the forked
              * UserID session : delete them and wipe the local database. This
              * ensures incoming forks always take precedence */
-            const sessionsForUserID = getPersistedSessionsForUserID(UserID);
+            const localIDs = getPersistedLocalIDsForUserID(UserID);
 
-            if (sessionsForUserID.length > 0) {
+            if (localIDs.length > 0) {
                 logger.info(`[AuthServiceProvider] clearing sessions for user ${UserID}`);
                 await deletePassDB(UserID).catch(noop);
-                sessionsForUserID.forEach((key) => {
-                    localStorage.removeItem(key);
-                    localStorage.removeItem(getSettingsStorageKey(LocalID));
-                    localStorage.removeItem(getTelemetryStorageKey(LocalID));
-                    localStorage.removeItem(getB2BEventsStorageKey(LocalID));
-                });
+                localIDs.forEach(clearUserLocalData);
             }
 
             sw?.send({ type: 'fork', localID: LocalID, userID: UserID, broadcast: true });
