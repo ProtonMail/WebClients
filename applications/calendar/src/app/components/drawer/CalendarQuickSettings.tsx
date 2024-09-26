@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import {
     DefaultQuickSettings,
     DrawerAllSettingsView,
@@ -19,7 +20,7 @@ import {
     WeekStartSelector,
     useConfirmActionModal,
 } from '@proton/components';
-import { useApi, useCalendarUserSettings, useEventManager, useNotifications } from '@proton/components/hooks';
+import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { DEFAULT_CALENDAR_USER_SETTINGS } from '@proton/shared/lib/calendar/calendar';

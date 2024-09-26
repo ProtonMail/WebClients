@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useGetHolidaysDirectory } from '@proton/calendar/holidaysDirectory/hooks';
 import {
     LoaderPage,
@@ -8,7 +9,6 @@ import {
     useEventManager,
     useGetAddressKeys,
     useGetAddresses,
-    useGetCalendarUserSettings,
     useGetCalendars,
 } from '@proton/components';
 import { CacheType } from '@proton/redux-utilities';
