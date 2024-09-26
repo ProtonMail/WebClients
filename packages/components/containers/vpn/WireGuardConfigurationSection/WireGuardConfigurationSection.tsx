@@ -23,13 +23,13 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import { getCountryOptions, getLocalizedCountryByAbbr } from '@proton/components/helpers/countries';
+import { getObjectKeys } from '@proton/components/helpers/getObjectKeys';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { readableTime } from '@proton/shared/lib/helpers/time';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
 
-import { getObjectKeys } from '../../../helpers';
-import { getCountryOptions, getLocalizedCountryByAbbr } from '../../../helpers/countries';
 import {
     useApi,
     useModals,
