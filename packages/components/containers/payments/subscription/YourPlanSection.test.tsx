@@ -6,13 +6,13 @@ import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import {
     useAddresses,
-    useCache,
     useConfig,
     usePlans,
     useSubscription,
     useUser,
     useVPNServersCount,
 } from '@proton/components/hooks';
+import useCache from '@proton/components/hooks/useCache';
 import { useOrganization } from '@proton/components/hooks/useOrganization';
 import { useFeature } from '@proton/features';
 import { type PaymentMethodStatusExtended } from '@proton/payments';
