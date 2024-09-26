@@ -12,7 +12,6 @@ interface Props {
     loading: boolean;
     group: Group | undefined; // needs to be removed once GroupMemberItem doesn't need it
     edit?: boolean;
-    canOnlyDelete: boolean;
 }
 
 const compareMemberNames = (a: GroupMember, b: GroupMember) => a.Email.localeCompare(b.Email);
@@ -20,7 +19,7 @@ const getSortedMembers = (members: GroupMember[]) => {
     return [...members].sort(compareMemberNames);
 };
 
-const GroupMemberList = ({ groupMembers, loading, group, edit = false, canOnlyDelete }: Props) => {
+const GroupMemberList = ({ groupMembers, loading, group, edit = false }: Props) => {
     const [members] = useMembers();
 
     const sortedMembers = getSortedMembers(groupMembers);
@@ -54,7 +53,6 @@ const GroupMemberList = ({ groupMembers, loading, group, edit = false, canOnlyDe
                                 memberName={memberName}
                                 group={group}
                                 key={memberData.ID}
-                                canOnlyDelete={canOnlyDelete}
                             />
                         );
                     })}

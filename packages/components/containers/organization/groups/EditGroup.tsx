@@ -62,9 +62,6 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
         selectedGroup,
         members,
     } = groupsManagement;
-    // Since we're editing a group (EditGroup component), it's implied that deletion isn't the only option
-    // Thus, canOnlyDelete is always false in this context
-    const canOnlyDelete = false;
 
     const { resetForm, dirty, values: formValues, setFieldValue, isValid, errors } = form;
     const { loadingCustomDomains, selectedDomain, setSelectedDomain, customDomains } = domainData;
@@ -306,7 +303,6 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                         loading={loadingGroupMembers}
                         group={selectedGroup}
                         edit
-                        canOnlyDelete={canOnlyDelete}
                     />
                 </div>
             </Panel>
