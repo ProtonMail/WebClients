@@ -4,16 +4,16 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Price } from '@proton/components';
-import Icon from '@proton/components/components/icon/Icon';
 import {
     Alert3ds,
     CurrencySelector,
+    Price,
     StyledPayPalButton,
     SubscriptionCheckoutCycleItem,
     SubscriptionCycleSelector,
     getCheckoutRenewNoticeText,
-} from '@proton/components/containers/payments';
+} from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import type { OnBillingAddressChange } from '@proton/components/containers/payments/TaxCountrySelector';

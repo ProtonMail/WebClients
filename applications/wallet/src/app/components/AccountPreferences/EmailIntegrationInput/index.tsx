@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import type { WasmApiEmailAddress, WasmApiWalletAccount } from '@proton/andromeda';
 import { Info, Prompt, Toggle, useModalState } from '@proton/components';
-import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
+import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import { useAddresses, useOrganization, useUser } from '@proton/components/hooks';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { type IWasmApiWalletData } from '@proton/wallet';

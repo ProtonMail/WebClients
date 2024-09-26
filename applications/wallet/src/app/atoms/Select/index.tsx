@@ -1,7 +1,7 @@
 import type { MutableRefObject, ReactNode } from 'react';
 import { useRef } from 'react';
 
-import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
+import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import Option from '@proton/components/components/option/Option';
 import { verticalPopperPlacements } from '@proton/components/components/popper/utils';
 import type { SearcheableSelectProps as _CoreSearchableSelectProps } from '@proton/components/components/selectTwo/SearchableSelect';
