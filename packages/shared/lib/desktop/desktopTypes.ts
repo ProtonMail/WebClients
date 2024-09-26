@@ -1,4 +1,3 @@
-// import { z } from 'zod';
 import type { Environment } from '@proton/shared/lib/interfaces';
 
 import type { ThemeModeSetting, ThemeSetting, ThemeTypes } from '../themes/themes';
@@ -52,26 +51,8 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'defaultMailtoTelemetryReported'; payload: number };
 export type IPCInboxClientUpdateMessageType = IPCInboxClientUpdateMessage['type'];
 
-/*
-const zCaptureMessage = z.object({
-    type: z.literal('captureMessage'),
-    payload: z.object({
-        messages: z.string(),
-        level: z.literal('error').or(z.literal('warning')),
-        tags: z.record(z.string(), z.string().or(z.number())),
-        extra: z.record(z.string(), z.string().or(z.number())),
-    }),
-});
-const zDefaultMailtoChecked = z.object({
-    type: z.literal('defaultMailtoChecked'),
-    payload: zDefaultProtocol,
-});
-const zIPCInboxHostUpdateMessage = z.union([zCaptureMessage, zDefaultMailtoChecked]);
-
-export const isValidHostUpdateMessage = zIPCInboxHostUpdateMessage.safeParse;
-export type IPCInboxHostUpdateMessage = z.infer<typeof zIPCInboxHostUpdateMessage>;
-*/
-
+// WARNING: DO NOT EXTEND THIS WITH OTHER UNION. IT IS NOT EASY AND EVENTS WON'T BE TYPESAFE
+// INDA-309
 export type IPCInboxHostUpdateMessage =
     | {
           type: 'captureMessage';
@@ -82,30 +63,27 @@ export type IPCInboxHostUpdateMessage =
               extra: Record<string, string | number>;
           };
       }
-    | {
-          type: 'defaultMailtoChecked';
-          payload: DefaultProtocol;
-      };
-
+    | { type: 'defaultMailtoChecked'; payload: DefaultProtocol };
 export type IPCInboxHostUpdateMessageType = string & IPCInboxHostUpdateMessage['type'];
-export type PayloadOfIPCInboxHostUpdateType<T extends IPCInboxHostUpdateMessageType> = Extract<
-    IPCInboxHostUpdateMessage,
-    { type: T }
->['payload'];
-export type IPCInboxHostUpdateListener<T extends IPCInboxHostUpdateMessageType> = (
-    data: PayloadOfIPCInboxHostUpdateType<T>
-) => void;
-
-export type IPCInboxHostUpdateListenerAdder<T extends IPCInboxHostUpdateMessageType> = (
-    type: T,
-    callback: IPCInboxHostUpdateListener<T>
-) => IPCInboxHostUpdateListenerRemover;
+export type IPCInboxHostUpdateMessagePayload = IPCInboxHostUpdateMessage['payload'];
+export type IPCInboxHostUpdateListener = (payload: IPCInboxHostUpdateMessagePayload) => void;
 export type IPCInboxHostUpdateListenerRemover = { removeListener: () => void };
 
+// THIS NEEDS REFACTOR: INDA-309
+// The orininal idea for `on` function was that this type will be defined by
+// generic T extends IPCInboxHostUpdateMessageType, but it makes it messy
+// because generic doesn't pick one value but also union of all possible types
+// and therefore payload and callback need to accpet all.
+export type IPCInboxHostUpdateListenerAdder = (
+    eventType: IPCInboxHostUpdateMessageType,
+    callback: IPCInboxHostUpdateListener
+) => IPCInboxHostUpdateListenerRemover;
+
+// THIS NEEDS REFACTOR: INDA-309
+// Either avoid this function completelly or at least implemet it in zod.
 export function isValidHostUpdateMessage(
     data: unknown
 ): { success: false; error: string } | { success: true; data: IPCInboxHostUpdateMessage } {
-    // FIXME(jcuth): implement at least some level of checks
     if (!data) {
         return { success: false, error: 'is null' };
     }
@@ -117,15 +95,17 @@ export function isValidHostUpdateMessage(
         return { success: false, error: 'not have type' };
     }
 
+    if (typeof data.type !== 'string') {
+        return { success: false, error: 'have non-string type' };
+    }
+
     if (!('payload' in data)) {
         return { success: false, error: 'not have payload' };
     }
 
-    switch (data.type) {
-        case 'captureMessage':
-            return { success: true, data: data as IPCInboxHostUpdateMessage };
-        case 'defaultMailtoChecked':
-            return { success: true, data: data as IPCInboxHostUpdateMessage };
+    const allowedTypes = ['captureMessage', 'defaultMailtoChecked'];
+    if (allowedTypes.indexOf(data.type) > -1) {
+        return { success: true, data: data as IPCInboxHostUpdateMessage };
     }
 
     return { success: false, error: `unknown type ${data.type}` };
@@ -143,14 +123,31 @@ export type IPCInboxMessageBroker = {
     getInfo?: <T extends IPCInboxGetInfoMessage['type']>(
         type: T
     ) => Extract<IPCInboxGetInfoMessage, { type: T }>['result'];
-    // THIS DOESN'T WORK: on?: IPCInboxHostUpdateListenerAdder<IPCInboxHostUpdateMessageType>;
-    // THIS DOESN'T WORK: on?: IPCInboxHostUpdateListenerAdder<'captureMessage'> | IPCInboxHostUpdateListenerAdder<'defaultMailtoChecked'>;
-    on?: IPCInboxHostUpdateListenerAdder<IPCInboxHostUpdateMessageType>;
+    on?: IPCInboxHostUpdateListenerAdder;
     send?: <T extends IPCInboxClientUpdateMessageType>(
         type: T,
         payload: Extract<IPCInboxClientUpdateMessage, { type: T }>['payload']
     ) => void;
 };
+
+export type PayloadOfHostUpdateType<T extends IPCInboxHostUpdateMessageType> = Extract<
+    IPCInboxHostUpdateMessage,
+    { type: T }
+>['payload'];
+
+// Assuming that broker was added as window object.
+export function addIPCHostUpdateListener<T extends IPCInboxHostUpdateMessageType>(
+    eventType: T,
+    callback: (payload: PayloadOfHostUpdateType<T>) => void
+): IPCInboxHostUpdateListenerRemover {
+    // THIS NEEDS REFACTOR INDA-30
+    // This shouldn't be needed, better to avoid it with custom type-safe event emmiter
+    //
+    // With generic T we make sure first correct callback type is added to
+    // correct event type. But the `on` function must accept union of callbacks.
+    const unsafeCallback = callback as IPCInboxHostUpdateListener;
+    return window.ipcInboxMessageBroker!.on!(eventType, unsafeCallback);
+}
 
 export const END_OF_TRIAL_KEY = 'endOfTrial';
 
