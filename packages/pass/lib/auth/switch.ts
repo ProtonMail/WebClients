@@ -6,11 +6,12 @@ import noop from '@proton/utils/noop';
 import { getActiveSessions } from './session';
 
 export type SwitchableSession = {
+    DisplayName: string;
     lastUsedAt?: number;
     LocalID: number;
     PrimaryEmail: string;
-    DisplayName: string;
     UID: string;
+    UserID: string;
 };
 
 type AuthSwitchConfig = {

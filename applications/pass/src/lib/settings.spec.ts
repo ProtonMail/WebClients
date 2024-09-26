@@ -1,8 +1,10 @@
+import { SETTINGS_STORAGE_KEY, getSettingsStorageKey } from 'proton-pass-web/lib/storage';
+
 import { authStore, createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import createStore from '@proton/shared/lib/helpers/store';
 
-import { LEGACY_SETTINGS_KEY, getSettingsStorageKey, resolveSettings, settings } from './settings';
+import { resolveSettings, settings } from './settings';
 
 const setDesktopBuild = (value: boolean) => ((global as any).DESKTOP_BUILD = value);
 
@@ -22,20 +24,20 @@ describe('settings', () => {
 
     afterAll(() => setDesktopBuild(false));
 
-    describe('storage key', () => {
-        test('[web] should index by `LocalID`', () => {
+    describe('Storage key', () => {
+        test('[web] should be indexed by `LocalID`', () => {
             expect(getSettingsStorageKey(42)).toEqual('settings::42');
             expect(getSettingsStorageKey()).toEqual('settings');
         });
 
-        test('[desktop] should NOT index by `LocalID`', () => {
+        test('[desktop] should be indexed by `LocalID`', () => {
             setDesktopBuild(true);
-            expect(getSettingsStorageKey(42)).toEqual('settings');
+            expect(getSettingsStorageKey(42)).toEqual('settings::42');
             expect(getSettingsStorageKey()).toEqual('settings');
         });
     });
 
-    describe('[web] settings service', () => {
+    describe('Settings service', () => {
         test('settings::clear should clear storage for current LocalID', async () => {
             authStore.setLocalID(42);
             await settings.clear();
@@ -62,14 +64,14 @@ describe('settings', () => {
 
             getItem.mockImplementation((key) => {
                 if (key === getSettingsStorageKey(0)) return null;
-                if (key === LEGACY_SETTINGS_KEY) return legacySettings;
+                if (key === SETTINGS_STORAGE_KEY) return legacySettings;
             });
 
             authStore.setLocalID(0);
             const result = resolveSettings();
 
             expect(result).toEqual(legacySettings);
-            expect(removeItem).toHaveBeenCalledWith(LEGACY_SETTINGS_KEY);
+            expect(removeItem).toHaveBeenCalledWith(SETTINGS_STORAGE_KEY);
         });
 
         test('settings::resolve should return settings', () => {
@@ -77,14 +79,14 @@ describe('settings', () => {
 
             getItem.mockImplementation((key) => {
                 if (key === getSettingsStorageKey(0)) return storedSettings;
-                if (key === LEGACY_SETTINGS_KEY) return null;
+                if (key === SETTINGS_STORAGE_KEY) return null;
             });
 
             authStore.setLocalID(0);
             const result = resolveSettings();
 
             expect(result).toEqual(storedSettings);
-            expect(removeItem).toHaveBeenCalledWith(LEGACY_SETTINGS_KEY);
+            expect(removeItem).toHaveBeenCalledWith(SETTINGS_STORAGE_KEY);
         });
     });
 });

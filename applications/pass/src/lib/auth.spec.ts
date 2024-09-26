@@ -11,6 +11,7 @@ import createStore from '@proton/shared/lib/helpers/store';
 
 import * as auth from './auth';
 import * as sessions from './sessions';
+import * as storage from './storage';
 
 jest.mock('proton-pass-web/app/Store/store', () => ({ store: { dispatch: jest.fn() } }));
 jest.mock('proton-pass-web/lib/telemetry', () => ({ telemetry: { stop: jest.fn() } }));
@@ -41,7 +42,9 @@ describe('AuthService', () => {
     exposeApi({ subscribe } as any);
 
     jest.spyOn(sessions, 'getDefaultLocalID').mockImplementation(() => undefined);
-    jest.spyOn(sessions, 'getPersistedSessionsForUserID').mockImplementation(() => []);
+    jest.spyOn(sessions, 'getPersistedLocalIDsForUserID').mockImplementation(() => []);
+    jest.spyOn(storage, 'clearUserLocalData').mockImplementation(() => []);
+    jest.spyOn(storage, 'localGarbageCollect').mockImplementation(() => Promise.resolve());
 
     beforeEach(() => {
         authStore.clear();

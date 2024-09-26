@@ -1,7 +1,9 @@
 import type { FC, PropsWithChildren } from 'react';
 import { createContext, useContext, useMemo, useState } from 'react';
 
-import { getAllLocalSessions, getPersistedSession, getSessionKey } from 'proton-pass-web/lib/sessions';
+import { deletePassDB } from 'proton-pass-web/lib/database';
+import { getPersistedSession, getSessionKey, getSwitchableSessions } from 'proton-pass-web/lib/sessions';
+import { clearUserLocalData } from 'proton-pass-web/lib/storage';
 
 import useInstance from '@proton/hooks/useInstance';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
@@ -11,6 +13,7 @@ import { api } from '@proton/pass/lib/api/api';
 import { encodeUserData } from '@proton/pass/lib/auth/store';
 import { type AuthSwitchService, type SwitchableSession, createAuthSwitchService } from '@proton/pass/lib/auth/switch';
 import { type MaybeNull } from '@proton/pass/types';
+import noop from '@proton/utils/noop';
 
 export const AuthSwitchContext = createContext<MaybeNull<AuthSwitchService>>(null);
 export const SessionsContext = createContext<SwitchableSession[]>([]);
@@ -50,7 +53,7 @@ export const AuthSwitchProvider: FC<PropsWithChildren> = ({ children }) => {
                 reloadHref(`/u/${LocalID}`);
             },
 
-            getLocalSessions: getAllLocalSessions,
+            getSessions: getSwitchableSessions,
 
             onActiveSession: ({ LocalID, PrimaryEmail, DisplayName }) => {
                 /** Sync the current auth store session  */
@@ -68,9 +71,8 @@ export const AuthSwitchProvider: FC<PropsWithChildren> = ({ children }) => {
 
             onInactiveSession: (session) => {
                 setSessions((prev) => prev.filter(({ UID }) => session.UID !== UID));
-                /** FIXME: on inactive session detection,
-                 * we should delete the persisted session,
-                 * the Pass DB and all data for the userID */
+                deletePassDB(session.UserID).catch(noop);
+                clearUserLocalData(session.LocalID);
             },
 
             onSessionsSynced: setSessions,
