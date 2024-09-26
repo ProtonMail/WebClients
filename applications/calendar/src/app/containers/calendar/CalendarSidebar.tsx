@@ -30,10 +30,10 @@ import {
     useEventManager,
     useLocalState,
     useModalState,
+    useSubscribedCalendars,
     useUser,
 } from '@proton/components';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
-import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
 import { useLoadingByKey } from '@proton/hooks/useLoading';
 import { updateMember } from '@proton/shared/lib/api/calendars';
 import { groupCalendarsByTaxonomy, sortCalendars } from '@proton/shared/lib/calendar/calendar';

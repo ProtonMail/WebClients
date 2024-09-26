@@ -51,7 +51,7 @@ jest.mock('@proton/features/useFeature', () => ({
     useFeature: jest.fn(() => [{}, false]),
 }));
 
-jest.mock('@proton/components/hooks/useCalendars', () => ({
+jest.mock('@proton/calendar/calendars/hooks', () => ({
     useCalendars: jest.fn(),
     useGetCalendars: jest.fn(() => []),
 }));

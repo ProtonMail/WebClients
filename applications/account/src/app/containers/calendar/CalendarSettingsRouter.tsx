@@ -3,6 +3,7 @@ import { useEffect, useMemo } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
+import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { useGetHolidaysDirectory } from '@proton/calendar/holidaysDirectory/hooks';
 import { useLoadAllowedTimeZones } from '@proton/calendar/timezones';
 import {
@@ -18,7 +19,6 @@ import {
     PrivateMainAreaLoading,
     PrivateMainSettingsArea,
     useAddresses,
-    useCalendars,
     useCalendarsInfoListener,
     useIsInboxElectronApp,
     useSubscribedCalendars,

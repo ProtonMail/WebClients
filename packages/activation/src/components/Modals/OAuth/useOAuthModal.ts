@@ -12,7 +12,8 @@ import {
     selectOauthImportStateScopes,
 } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { useAddresses, useCalendars, useFolders, useLabels, useUser } from '@proton/components';
+import { useCalendars } from '@proton/calendar/calendars/hooks';
+import { useAddresses, useFolders, useLabels, useUser } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 
 const useOAuthModal = () => {

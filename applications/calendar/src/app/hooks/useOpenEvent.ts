@@ -2,7 +2,8 @@ import { useCallback } from 'react';
 
 import { getUnixTime } from 'date-fns';
 
-import { useApi, useGetCalendars } from '@proton/components';
+import { useGetCalendars } from '@proton/calendar/calendars/hooks';
+import { useApi } from '@proton/components';
 import { CacheType } from '@proton/redux-utilities';
 import { getEvent, updateMember } from '@proton/shared/lib/api/calendars';
 import { MAXIMUM_DATE, MINIMUM_DATE } from '@proton/shared/lib/calendar/constants';

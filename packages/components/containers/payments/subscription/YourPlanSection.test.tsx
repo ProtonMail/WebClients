@@ -2,11 +2,11 @@ import { fireEvent, render, screen, waitFor, within } from '@testing-library/rea
 
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { useGetUserInvitations, useUserInvitations } from '@proton/account/userInvitations/hooks';
+import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import {
     useAddresses,
     useCache,
-    useCalendars,
     useConfig,
     usePlans,
     useSubscription,
@@ -59,7 +59,7 @@ jest.mock('@proton/components/hooks/useAddresses');
 const mockUseAddresses = useAddresses as jest.MockedFunction<any>;
 mockUseAddresses.mockReturnValue([addresses, false]);
 
-jest.mock('@proton/components/hooks/useCalendars');
+jest.mock('@proton/calendar/calendars/hooks');
 const mockUseCalendars = useCalendars as jest.MockedFunction<any>;
 mockUseCalendars.mockReturnValue([calendars, false]);
 
