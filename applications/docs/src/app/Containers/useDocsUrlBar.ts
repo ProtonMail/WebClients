@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react'
-import { useAuthentication } from '@proton/components/hooks'
+import { useAuthentication } from '@proton/components'
 import { useLocation } from 'react-router-dom'
 import type { DocumentAction } from '@proton/drive-store'
 import { useDriveCompat } from '@proton/drive-store'

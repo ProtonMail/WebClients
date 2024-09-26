@@ -1,4 +1,4 @@
-import { useAuthentication } from '@proton/components/hooks';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 

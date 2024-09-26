@@ -3,12 +3,13 @@ import { forwardRef } from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { getAppHref, getAppHrefBundle } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, VPN_HOSTNAME } from '@proton/shared/lib/constants';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 
-import { useAuthentication, useConfig } from '../../hooks';
+import { useConfig } from '../../hooks';
 
 export interface AppLinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'color'> {
     to: string;

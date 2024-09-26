@@ -17,7 +17,6 @@ import {
     Tooltip,
     shouldShowConfirmSignOutModal,
     useActiveBreakpoint,
-    useAuthentication,
     useConfig,
     useIsSecurityCheckupAvailable,
     useIsSentinelUser,
@@ -39,6 +38,7 @@ import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';

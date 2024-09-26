@@ -1,13 +1,8 @@
 import type { Dispatch, ReactNode, SetStateAction } from 'react';
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 
-import {
-    useApi,
-    useAuthentication,
-    useDrawerLocalStorage,
-    useGetUser,
-    useToggleDrawerApp,
-} from '@proton/components/hooks';
+import { useApi, useDrawerLocalStorage, useGetUser, useToggleDrawerApp } from '@proton/components/hooks';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { versionCookieAtLoad } from '@proton/components/hooks/useEarlyAccess';
 import { serverTime } from '@proton/crypto';
 import { getClientID } from '@proton/shared/lib/apps/helper';

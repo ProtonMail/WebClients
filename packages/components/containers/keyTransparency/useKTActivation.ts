@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useGetMailSettings } from '@proton/mail/mailSettings/hooks';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -8,7 +9,7 @@ import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import { KEY_TRANSPARENCY_SETTING } from '@proton/shared/lib/mail/mailSettings';
 import { useFlag, useGetFlag } from '@proton/unleash';
 
-import { useAuthentication, useConfig } from '../../hooks';
+import { useConfig } from '../../hooks';
 import { KtFeatureEnum, isKTActive } from './ktStatus';
 
 const getKTFlag = ({ logOnly, showUI }: { logOnly: boolean; showUI: boolean }): KtFeatureEnum => {
