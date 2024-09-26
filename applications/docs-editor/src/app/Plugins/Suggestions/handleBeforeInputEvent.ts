@@ -354,6 +354,15 @@ function $handleInsertTextData(
     if (suggestionSiblingType === 'insert') {
       $mergeWithExistingSuggestionNode(suggestionNode, suggestionSibling, isNextSiblingSuggestion)
       logger?.info('Merged with existing insert suggestion sibling')
+      if (isNextSiblingSuggestion) {
+        logger?.info('Updating cursor position after merging')
+        const selection = suggestionSibling.selectStart()
+        if (!$isRangeSelection(selection) || !selection.isCollapsed()) {
+          throw new Error('Latest selection is not correct')
+        }
+        selection.anchor.offset += data.length
+        selection.focus.offset = selection.anchor.offset
+      }
     } else if (suggestionSiblingType !== 'property-change') {
       suggestionNode.setSuggestionId(suggestionSibling.getSuggestionIdOrThrow())
     }
