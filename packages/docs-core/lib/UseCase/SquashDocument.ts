@@ -23,6 +23,7 @@ import type { SquashVerificationObjectionCallback } from '../Types/SquashVerific
 import { SquashVerificationObjectionDecision } from '../Types/SquashVerificationObjection'
 import { GenerateUUID } from '../Util/GenerateUuid'
 import { metricsBucketNumberForUpdateCount } from '../Util/bucketNumberForUpdateCount'
+import type { LoggerInterface } from '@proton/utils/logs'
 
 export type SquashDocumentDTO = {
   docMeta: DocumentMetaInterface
@@ -41,6 +42,7 @@ export class SquashDocument implements UseCaseInterface<boolean> {
     private decryptCommit: DecryptCommit,
     private verifyCommit: VerifyCommit,
     private squashAlgoritm: SquashAlgorithm,
+    private logger: LoggerInterface,
   ) {}
 
   async execute(dto: SquashDocumentDTO): Promise<Result<boolean>> {
@@ -48,12 +50,16 @@ export class SquashDocument implements UseCaseInterface<boolean> {
 
     const { docMeta, commitId, keys } = dto
 
+    this.logger.info('[Squash] Locking document...')
+
     const lockResult = await this.docsApi.lockDocument(docMeta, commitId)
     if (lockResult.isFailed()) {
       return Result.fail(lockResult.getError())
     }
 
     const squashLock = SquashLock.deserializeBinary(lockResult.getValue())
+
+    this.logger.info('[Squash] Decrypting commit...')
 
     const decryptionResult = await this.decryptCommit.execute({
       commit: squashLock.commit,
@@ -83,6 +89,8 @@ export class SquashDocument implements UseCaseInterface<boolean> {
 
     const squashCommit = squashCommitResult.getValue()
 
+    this.logger.info('[Squash] Sending squash commit to API...')
+
     const commitResult = await this.docsApi.squashCommit(docMeta, decryptedCommit.commitId, squashCommit)
     if (commitResult.isFailed()) {
       return Result.fail(commitResult.getError())
@@ -90,6 +98,8 @@ export class SquashDocument implements UseCaseInterface<boolean> {
 
     const endTime = Date.now()
     const timeToSquashInSeconds = Math.floor((endTime - startTime) / 1000)
+
+    this.logger.info(`[Squash] Took ${timeToSquashInSeconds} seconds to complete successfully`)
 
     metrics.docs_squashes_latency_histogram.observe({
       Labels: {
@@ -113,6 +123,8 @@ export class SquashDocument implements UseCaseInterface<boolean> {
       decrypted: update,
     }))
 
+    this.logger.info('[Squash] Executing squash algorithm...')
+
     const squashResult = await this.squashAlgoritm.execute(updatePairs, {
       limit: GetCommitDULimit(),
       factor: SQUASH_FACTOR,
@@ -126,6 +138,8 @@ export class SquashDocument implements UseCaseInterface<boolean> {
     if (!squashValue.updatesAsSquashed) {
       return Result.fail('Squash failed; nothing to squash.')
     }
+
+    this.logger.info('[Squash] Encrypting squash result...')
 
     const encryptedResult = await this.encryptSquashResult(squashValue, keys)
     if (encryptedResult.isFailed()) {
@@ -149,6 +163,8 @@ export class SquashDocument implements UseCaseInterface<boolean> {
   }
 
   async performVerification(commit: DecryptedCommit): Promise<Result<true>> {
+    this.logger.info('[Squash] Verifying commit...')
+
     const verificationResult = await this.verifyCommit.execute({
       commit,
     })
