@@ -1,5 +1,6 @@
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 
+import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { useGetUserInvitations, useUserInvitations } from '@proton/account/userInvitations/hooks';
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import {
@@ -8,7 +9,6 @@ import {
     useCalendars,
     useConfig,
     useOrganization,
-    usePaymentStatus,
     usePlans,
     useSubscription,
     useUser,
@@ -45,7 +45,7 @@ jest.mock('@proton/components/hooks/usePlans');
 const mockUsePlans = usePlans as jest.MockedFunction<any>;
 mockUsePlans.mockReturnValue([{ plans: getLongTestPlans(), freePlan: FREE_PLAN }, false]);
 
-jest.mock('@proton/components/hooks/usePaymentStatus');
+jest.mock('@proton/account/paymentStatus/hooks');
 const mockUsePaymentStatus = usePaymentStatus as jest.MockedFunction<any>;
 mockUsePaymentStatus.mockReturnValue([
     {

@@ -1,8 +1,8 @@
+import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { type FullPlansMap, getPlansMap as getPlansMapInner } from '@proton/payments';
 import { type Currency } from '@proton/shared/lib/interfaces';
 
 import { type GetPreferredCurrencyParams, useCurrencies } from '../payments/client-extensions/useCurrencies';
-import { usePaymentStatus } from './usePaymentStatus';
 import usePlans from './usePlans';
 import useSubscription from './useSubscription';
 import useUser from './useUser';

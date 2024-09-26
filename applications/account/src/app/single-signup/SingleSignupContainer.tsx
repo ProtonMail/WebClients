@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
+import { useGetPaymentStatus } from '@proton/account/paymentStatus/hooks';
 import type { OnLoginCallback } from '@proton/components';
 import {
     StandardLoadErrorPage,
@@ -10,7 +11,6 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
-    useGetPaymentStatus,
     useGetPlans,
     useKTActivation,
 } from '@proton/components';
