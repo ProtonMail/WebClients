@@ -9,6 +9,7 @@ import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInp
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import TotpInputs from '@proton/components/containers/account/totp/TotpInputs';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
+import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
 import { useLoading } from '@proton/hooks';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -22,6 +23,7 @@ import type { ChallengeRef, ChallengeResult } from '../challenge';
 import { Challenge, ChallengeError } from '../challenge';
 import AbuseModal from './AbuseModal';
 import type { AuthActionResponse, AuthCacheResult } from './interface';
+import { AuthType } from './interface';
 import { AuthStep } from './interface';
 import { handleLogin, handleNextLogin, handleTotp, handleUnlock } from './loginActions';
 
@@ -271,6 +273,7 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
     const { APP_NAME } = useConfig();
     const { createNotification } = useNotifications();
     const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
+    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
 
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
@@ -343,6 +346,7 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
                                 api: silentApi,
                             });
                             const result = await handleNextLogin({
+                                authType: AuthType.SRP,
                                 authResponse: loginResult.authResult.result,
                                 authVersion: loginResult.authResult.authVersion,
                                 appName: APP_NAME,
@@ -351,6 +355,7 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
                                 username,
                                 password,
                                 api: silentApi,
+                                verifyOutboundPublicKeys,
                                 ignoreUnlock,
                                 persistent: false,
                                 setupVPN: false,

@@ -112,6 +112,7 @@ describe('key migration', () => {
         const { User, Addresses, userKeys, addressKeys, organizationKey } = await getSetup1();
 
         const migratedKeys = await migrateAddressKeys({
+            api: (async () => {}) as any,
             user: User,
             addresses: Addresses,
             keyPassword: DEFAULT_KEYPASSWORD,
@@ -154,6 +155,7 @@ describe('key migration', () => {
         addressKeys[2].length = 0;
 
         const migratedKeys = await migrateAddressKeys({
+            api: (async () => {}) as any,
             user: User,
             addresses: Addresses,
             keyPassword: DEFAULT_KEYPASSWORD,
@@ -189,6 +191,7 @@ describe('key migration', () => {
         const { User, Addresses, userKeys, addressKeys, organizationKey } = await getSetup1();
 
         const migratedKeys = await migrateAddressKeys({
+            api: (async () => {}) as any,
             user: User,
             addresses: Addresses,
             organizationKey: organizationKey.Key,

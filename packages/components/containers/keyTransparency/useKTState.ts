@@ -16,7 +16,6 @@ const useKTState = (): [boolean, KeyTransparencyState, React.Dispatch<React.SetS
 
     const [{ ID: userID }] = useUser();
     const { APP_NAME: appName } = useConfig();
-    const ktLSAPIPromise = getKTLocalStorage(appName);
     const getUserKeys = useGetUserKeys();
 
     useEffect(() => {
@@ -24,6 +23,7 @@ const useKTState = (): [boolean, KeyTransparencyState, React.Dispatch<React.SetS
             // Loads the kt state from local storage and decrypts it with the user keys.
             const userKeys = await getUserKeys();
             const userPrivateKeys = userKeys.map(({ privateKey }) => privateKey);
+            const ktLSAPIPromise = getKTLocalStorage(appName);
             const ktLSAPI = await ktLSAPIPromise;
             const selfAuditResult = await getAuditResult(userID, userPrivateKeys, ktLSAPI);
             if (selfAuditResult) {
@@ -42,6 +42,7 @@ const useKTState = (): [boolean, KeyTransparencyState, React.Dispatch<React.SetS
             }
             // Encrypts the kt state with the primary user key and stores it in local storage.
             const userKeys = await getUserKeys();
+            const ktLSAPIPromise = getKTLocalStorage(appName);
             const ktLSAPI = await ktLSAPIPromise;
             const { publicKey: userPrimaryPublicKey } = getPrimaryKey(userKeys) || {};
             if (userPrimaryPublicKey) {

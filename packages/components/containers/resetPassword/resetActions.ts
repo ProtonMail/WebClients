@@ -64,7 +64,7 @@ export const handleNewPassword = async ({
     }
     const { Addresses: addresses } = resetResponse;
 
-    const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(ktActivation, api);
+    const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(ktActivation);
 
     const { passphrase, salt } = await generateKeySaltAndPassphrase(password);
     const { addressKeysPayload, userKeyPayload, onSKLPublishSuccess } = await getResetAddressesKeysV2({
@@ -173,7 +173,7 @@ export const handleNewPassword = async ({
         api,
     });
 
-    await preAuthKTCommit(user.ID);
+    await preAuthKTCommit(user.ID, api);
     await resetSelfAudit(user, keyPassword, addresses);
 
     return {

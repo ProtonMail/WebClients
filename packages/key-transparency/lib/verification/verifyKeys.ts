@@ -1,12 +1,13 @@
 import type { KeyReference, PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+import { saveSKLToLS } from '@proton/key-transparency/lib';
 import type {
     Api,
     FetchedSignedKeyList,
     GetLatestEpoch,
+    KTUserContext,
     KeyTransparencyVerificationResult,
     ProcessedApiKey,
-    SaveSKLToLS,
     SignedKeyListItem,
 } from '@proton/shared/lib/interfaces';
 import { KT_VERIFICATION_STATUS } from '@proton/shared/lib/interfaces';
@@ -38,7 +39,7 @@ export const parseKeyList = async (keyList: KeyWithFlags[]): Promise<SignedKeyLi
         keyList.map(async ({ key, flags, primary }, index) => ({
             Fingerprint: key.getFingerprint(),
             SHA256Fingerprints: await CryptoProxy.getSHA256Fingerprints({ key }),
-            Primary: primary ?? index === 0 ? 1 : 0,
+            Primary: (primary ?? index === 0) ? 1 : 0,
             Flags: flags,
         }))
     );
@@ -106,6 +107,7 @@ interface KeyWithFlags {
     flags: number;
     primary?: 1 | 0;
 }
+
 /**
  * Check that the given keys mirror what's inside the given SKL Data.
  */
@@ -141,19 +143,28 @@ export const verifySKLSignature = async (
 /**
  * Verify that public keys associated to an email address are correctly stored in KT
  */
-const verifyPublicKeys = async (
-    apiKeys: ProcessedApiKey[],
-    email: string,
-    signedKeyList: FetchedSignedKeyList | null,
-    api: Api,
-    saveSKLToLS: SaveSKLToLS,
-    getLatestEpoch: GetLatestEpoch,
+const verifyPublicKeys = async ({
+    userContext,
+    apiKeys,
+    email,
+    api,
+    signedKeyList,
+    getLatestEpoch,
+    skipVerificationOfExternalDomains,
+    isCatchall,
+}: {
+    userContext: KTUserContext;
+    apiKeys: ProcessedApiKey[];
+    email: string;
+    signedKeyList: FetchedSignedKeyList | null;
+    api: Api;
+    getLatestEpoch: GetLatestEpoch;
     /**
      * Optimisations for apps where users with external domains do not have valid keys (e.g. Mail)
      */
-    skipVerificationOfExternalDomains: boolean,
-    isCatchall?: boolean
-): Promise<KeyTransparencyVerificationResult> => {
+    skipVerificationOfExternalDomains: boolean;
+    isCatchall: boolean;
+}): Promise<KeyTransparencyVerificationResult> => {
     try {
         if (!signedKeyList || !signedKeyList.Signature) {
             // Absent or obsolete address
@@ -194,14 +205,15 @@ const verifyPublicKeys = async (
                 return throwKTError("SKL doesn't have data or obsolescence token", { email, signedKeyList });
             }
             await sklVerificationPromise;
-            await saveSKLToLS(
+            await saveSKLToLS({
+                userContext,
                 email,
                 data,
-                signedKeyList.Revision,
-                signedKeyList.ExpectedMinEpochID,
-                undefined,
-                isCatchall
-            );
+                revision: signedKeyList.Revision,
+                expectedMinEpochID: signedKeyList.ExpectedMinEpochID,
+                addressID: undefined,
+                isCatchall,
+            });
             if (signedKeyList.ObsolescenceToken) {
                 return { status: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS, keysChangedRecently: true };
             } else {
@@ -269,45 +281,54 @@ const verifyPublicKeys = async (
     }
 };
 
-export const verifyPublicKeysAddressAndCatchall = async (
-    api: Api,
-    saveSKLToLS: SaveSKLToLS,
-    getLatestEpoch: GetLatestEpoch,
-    email: string,
-    skipVerificationOfExternalDomains: boolean,
+export const verifyPublicKeysAddressAndCatchall = async ({
+    api,
+    getLatestEpoch,
+    address,
+    email,
+    catchAll,
+    userContext,
+    skipVerificationOfExternalDomains,
+}: {
+    userContext: KTUserContext;
+    api: Api;
+    getLatestEpoch: GetLatestEpoch;
+    email: string;
+    skipVerificationOfExternalDomains: boolean;
     address: {
         keyList: ProcessedApiKey[];
         signedKeyList: FetchedSignedKeyList | null;
-    },
+    };
     catchAll?: {
         keyList: ProcessedApiKey[];
         signedKeyList: FetchedSignedKeyList | null;
-    }
-): Promise<{
+    };
+}): Promise<{
     addressKTResult?: KeyTransparencyVerificationResult;
     catchAllKTResult?: KeyTransparencyVerificationResult;
 }> => {
-    const addressKTStatusPromise = verifyPublicKeys(
-        address.keyList,
+    const addressKTStatusPromise = verifyPublicKeys({
+        userContext,
+        apiKeys: address.keyList,
         email,
-        address.signedKeyList,
+        signedKeyList: address.signedKeyList,
         api,
-        saveSKLToLS,
         getLatestEpoch,
-        skipVerificationOfExternalDomains
-    );
+        skipVerificationOfExternalDomains,
+        isCatchall: false,
+    });
     let catchAllKTStatusPromise: Promise<KeyTransparencyVerificationResult> | undefined;
     if (address.keyList.length == 0 || catchAll) {
-        catchAllKTStatusPromise = verifyPublicKeys(
-            catchAll?.keyList ?? [],
+        catchAllKTStatusPromise = verifyPublicKeys({
+            userContext,
+            apiKeys: catchAll?.keyList ?? [],
             email,
-            catchAll?.signedKeyList ?? null,
+            signedKeyList: catchAll?.signedKeyList ?? null,
             api,
-            saveSKLToLS,
             getLatestEpoch,
             skipVerificationOfExternalDomains,
-            true
-        );
+            isCatchall: true,
+        });
     }
     const [addressKTStatus, catchAllKTStatus] = await Promise.all([addressKTStatusPromise, catchAllKTStatusPromise]);
     return {
