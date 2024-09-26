@@ -4,6 +4,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import type { Breakpoints, CommanderItemInterface } from '@proton/components';
 import {
     Commander,
@@ -12,7 +13,6 @@ import {
     ErrorBoundary,
     InboxQuickSettingsAppButton,
     PrivateMainArea,
-    useCalendarUserSettings,
     useCalendars,
     useCalendarsInfoCoreListener,
     useFolders,

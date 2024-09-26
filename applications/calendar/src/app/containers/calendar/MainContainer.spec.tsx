@@ -158,7 +158,8 @@ jest.mock('@proton/components/hooks/useGetCalendarBootstrap', () => ({
         },
     ]),
 }));
-jest.mock('@proton/components/hooks/useCalendarUserSettings', () => ({
+
+jest.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
     useGetCalendarUserSettings: jest.fn(),
     useCalendarUserSettings: jest.fn(() => [
         {
