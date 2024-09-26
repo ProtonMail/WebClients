@@ -1,6 +1,8 @@
 import type { FC, PropsWithChildren } from 'react';
-import { createContext, useContext, useMemo, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
+import { useServiceWorker } from 'proton-pass-web/app/ServiceWorker/client/ServiceWorkerProvider';
+import type { ServiceWorkerClientMessageHandler } from 'proton-pass-web/app/ServiceWorker/client/client';
 import { deletePassDB } from 'proton-pass-web/lib/database';
 import { getPersistedSession, getSessionKey, getSwitchableSessions } from 'proton-pass-web/lib/sessions';
 import { clearUserLocalData } from 'proton-pass-web/lib/storage';
@@ -10,7 +12,7 @@ import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { reloadHref } from '@proton/pass/components/Navigation/routing';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { api } from '@proton/pass/lib/api/api';
-import { encodeUserData } from '@proton/pass/lib/auth/store';
+import { decodeUserData, encodeUserData } from '@proton/pass/lib/auth/store';
 import { type AuthSwitchService, type SwitchableSession, createAuthSwitchService } from '@proton/pass/lib/auth/switch';
 import { type MaybeNull } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
@@ -43,6 +45,7 @@ export const useAvailableSessions = () => {
 export const AuthSwitchProvider: FC<PropsWithChildren> = ({ children }) => {
     const authStore = useAuthStore();
     const [sessions, setSessions] = useState<SwitchableSession[]>([]);
+    const sw = useServiceWorker();
 
     const service = useInstance(() =>
         createAuthSwitchService({
@@ -73,11 +76,48 @@ export const AuthSwitchProvider: FC<PropsWithChildren> = ({ children }) => {
                 setSessions((prev) => prev.filter(({ UID }) => session.UID !== UID));
                 deletePassDB(session.UserID).catch(noop);
                 clearUserLocalData(session.LocalID);
+                sw?.send({ type: 'unauthorized', localID: session.LocalID, broadcast: true });
             },
 
-            onSessionsSynced: setSessions,
+            onSessionsSynced: (data) => {
+                setSessions(data);
+                sw?.send({ type: 'sessions_synced', data, broadcast: true });
+            },
         })
     );
+
+    useEffect(() => {
+        const onSessionsSynced: ServiceWorkerClientMessageHandler<'sessions_synced'> = ({ data }) => setSessions(data);
+
+        /** When a new session is forked from another tab,
+         * update the local switchable sessions */
+        const onSession: ServiceWorkerClientMessageHandler<'session'> = ({
+            data: { UID, LocalID, UserID, userData, lastUsedAt },
+        }) => {
+            if (UID && LocalID !== undefined && UserID && userData) {
+                const { PrimaryEmail = '', DisplayName = '' } = decodeUserData(userData);
+                setSessions((prev) =>
+                    prev
+                        .filter((session) => session.LocalID !== LocalID)
+                        .concat([{ DisplayName, lastUsedAt, LocalID, PrimaryEmail, UID, UserID }])
+                );
+            }
+        };
+
+        const onUnauthorized: ServiceWorkerClientMessageHandler<'unauthorized'> = ({ localID }) => {
+            setSessions((prev) => prev.filter((session) => session.LocalID !== localID));
+        };
+
+        sw?.on('sessions_synced', onSessionsSynced);
+        sw?.on('session', onSession);
+        sw?.on('unauthorized', onUnauthorized);
+
+        return () => {
+            sw?.off('sessions_synced', onSessionsSynced);
+            sw?.off('session', onSession);
+            sw?.off('unauthorized', onUnauthorized);
+        };
+    }, []);
 
     return (
         <AuthSwitchContext.Provider value={service}>
