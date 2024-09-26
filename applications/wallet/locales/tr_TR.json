@@ -118,6 +118,9 @@
       "Increase": [
         "Artır"
       ],
+      "Input passphrase": [
+        "Parola ifadesini yazın"
+      ],
       "Keep my subscription": [
         "Aboneliğimi sürdür"
       ],
@@ -4574,6 +4577,12 @@
     "Wallet header": {
       "Secure your wallet": [
         "Cüzdanınızı koruyun"
+      ],
+      "The current fingerprint doesn't match stored one.": [
+        "Geçerli parmak izi kayıtlı olanla eşleşmiyor."
+      ],
+      "This wallet needs a passphrase to be used.": [
+        "Bu cüzdanı kullanabilmek için bir parola ifadesi gereklidir."
       ]
     },
     "Wallet import": {
@@ -4665,6 +4674,9 @@
       ],
       "My wallet passphrase": [
         "Cüzdanımın parola ifadesi"
+      ],
+      "To use this wallet, you need to input the passphrase": [
+        "Bu cüzdanı kullanabilmek için parola ifadesini yazmalısınız"
       ],
       "Wallet passphrase": [
         "Cüzdan parola ifadesi"
@@ -4935,6 +4947,9 @@
       "Account name changed": [
         "Hesap adı değiştirildi"
       ],
+      "Account name could not be changed": [
+        "Hesap adı değiştirilemez"
+      ],
       "Account was deleted": [
         "Hesap silindi"
       ],
@@ -4946,6 +4961,9 @@
       ],
       "Could not be replaced": [
         "Değiştirilemedi"
+      ],
+      "Could not fill the pool after email address addition": [
+        "E-posta adresi eklendikten sonra havuz doldurulamadı"
       ],
       "Could not fill the pool after email address replacement": [
         "E-posta adresi değiştirildikten sonra havuz doldurulamadı"
