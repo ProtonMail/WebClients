@@ -809,3 +809,4 @@ export { default as useAddressFlags } from './hooks/useAddressFlags';
 export { default as useApiResult } from './hooks/useApiResult';
 export { default as useElementBreakpoints } from './hooks/useElementBreakpoints';
 export { default as useNewFeatureOnboarding } from './hooks/useNewFeatureOnboarding';
+export { default as useAppTitle } from './hooks/useAppTitle';
