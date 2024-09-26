@@ -116,10 +116,10 @@
       "Create": [
         "Crear"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Crear una cuenta de ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Crear una cuenta de ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
@@ -489,7 +489,7 @@
         "Mostrar las opciones avanzadas"
       ],
       "Sign back in": [
-        "Volver a iniciar sesión"
+        "Volver al inicio de sesión"
       ],
       "Sign in": [
         "Iniciar sesión"
@@ -510,7 +510,7 @@
         "Enviando informe..."
       ],
       "Sync aliases": [
-        "Sincronizar alias"
+        "Sincronizar los alias"
       ],
       "Transfer ownership": [
         "Transferir la propiedad"
@@ -769,7 +769,7 @@
         "Error al restaurar elementos en la papelera"
       ],
       "Failed to sync aliases": [
-        "Error al sincronizar alias"
+        "Error al sincronizar los alias"
       ],
       "Failed to transfer this vault's ownership.": [
         "Error al transferir la propiedad de esta caja fuerte."
@@ -1162,8 +1162,8 @@
       "Automatically copy the generated password to the clipboard": [
         "Copiar automáticamente la contraseña generada al portapapeles"
       ],
-      "Autosaved on ${ payload.domain }": [
-        "Guardado automáticamente en ${ payload.domain }"
+      "Autosaved on ${ url }": [
+        "Guardado automáticamente en ${ url }"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Antes de exportar tus datos con este formato, abre y desactiva Ajustes de Safari -> General -> Abrir archivos seguros al descargarlos. Esto evitará que Safari extraiga el archivo exportado de manera incorrecta."
@@ -2000,7 +2000,7 @@
         "Bloqueo automático después de"
       ],
       "Autofill": [
-        "Autocompletar"
+        "Relleno automático"
       ],
       "Autofill 2FA": [
         "Rellenar automáticamente 2FA"
@@ -2198,7 +2198,7 @@
         "DNI"
       ],
       "ID Card number": [
-        "Número del DNI"
+        "Número de DNI"
       ],
       "Identities": [
         "Identidades"
@@ -2351,7 +2351,7 @@
         "Clave de acceso"
       ],
       "Passkeys": [
-        "Clave de acceso"
+        "Claves de acceso"
       ],
       "Passphrase": [
         "Frase de contraseña"

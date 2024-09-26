@@ -587,6 +587,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } ファイルを解析できませんでした。 ${ errorDetail }"
       ],
+      "[Error] an item could not be parsed": [
+        "[Error] アイテムを解析できませんでした"
+      ],
       "Alias could not be updated at the moment. Please try again later": [
         "エイリアスを更新できませんでした。しばらくしてからもう一度お試しください"
       ],
@@ -1802,6 +1805,9 @@
       "15 minutes": [
         "15 分"
       ],
+      "2 minutes": [
+        "2分"
+      ],
       "24 hours": [
         "24 時間"
       ],
@@ -1835,11 +1841,17 @@
       "Add section": [
         "セクションの追加"
       ],
+      "Additional details": [
+        "その他の詳細"
+      ],
       "Alias": [
         "エイリアス"
       ],
       "Alias address": [
         "エイリアスのアドレス"
+      ],
+      "Alias management": [
+        "エイリアスの管理"
       ],
       "Aliases": [
         "エイリアス"
@@ -1853,6 +1865,9 @@
       "Alphabetical": [
         "アルファベット順"
       ],
+      "Always show username field": [
+        "ユーザー名フィールドを常に表示"
+      ],
       "Application logs": [
         "アプリケーションのログ"
       ],
@@ -1861,6 +1876,12 @@
       ],
       "Beta Access": [
         "ベータ版アクセス"
+      ],
+      "Biometrics": [
+        "生体認証"
+      ],
+      "Birthdate": [
+        "生年月日"
       ],
       "Capital letters (A-Z)": [
         "大文字のアルファベット (A ～ Z)"
@@ -1897,6 +1918,9 @@
       ],
       "Country or Region": [
         "国または地域"
+      ],
+      "County": [
+        "国"
       ],
       "Create a credit card": [
         "クレジットカード情報を作成"
@@ -1976,11 +2000,17 @@
       "Expired": [
         "有効期限切れ"
       ],
+      "Expired link": [
+        "有効期限切れのリンク"
+      ],
       "Export": [
         "エクスポート"
       ],
       "Extra password": [
         "追加パスワード"
+      ],
+      "Facebook account": [
+        "Facebook アカウント"
       ],
       "Field name": [
         "フィールド名"
@@ -1990,6 +2020,9 @@
       ],
       "First name": [
         "名"
+      ],
+      "Floor, apartment, building": [
+        "階、アパート・建物名"
       ],
       "Forwards to": [
         "転送先"
@@ -2006,6 +2039,9 @@
       "General": [
         "一般"
       ],
+      "Generate a secure link for this item": [
+        "このアイテムのセキュアリンクを生成する"
+      ],
       "Generic CSV": [
         "汎用CSV"
       ],
@@ -2017,6 +2053,9 @@
       ],
       "Hide password": [
         "パスワードを隠す"
+      ],
+      "https://example.com": [
+        "https://example.com"
       ],
       "Identities": [
         "ユーザー情報"
@@ -2042,11 +2081,17 @@
       "Include numbers (0-9)": [
         "数字を含める (0 〜 9)"
       ],
+      "Instagram handle": [
+        "Instagram ユーザー名"
+      ],
       "Invitations": [
         "招待"
       ],
       "Item ID": [
         "アイテム ID"
+      ],
+      "Job title": [
+        "役職"
       ],
       "Key": [
         "鍵"
@@ -2078,6 +2123,12 @@
       "Learn more": [
         "より詳しく"
       ],
+      "License number": [
+        "免許証番号"
+      ],
+      "LinkedIn account": [
+        "LinkedIn アカウント"
+      ],
       "Login": [
         "ログイン"
       ],
@@ -2093,8 +2144,14 @@
       "Make all viewers": [
         "全ての閲覧者を対象に"
       ],
+      "max views reached": [
+        "閲覧回数の上限に達しました"
+      ],
       "Members": [
         "メンバー"
+      ],
+      "Middle name": [
+        "ミドルネーム"
       ],
       "Modified": [
         "更新日時"
@@ -2177,11 +2234,17 @@
       "Prefix": [
         "プレフィックス"
       ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "追加のパスワードで${ PASS_APP_NAME } を保護"
+      ],
       "Rate us": [
         "評価"
       ],
       "Recent": [
         "最近"
+      ],
+      "Reddit handle": [
+        "Reddit ユーザー名"
       ],
       "Remove link": [
         "リンクを削除"
@@ -2216,6 +2279,12 @@
       "Share": [
         "共有"
       ],
+      "Share this vault or create a new vault": [
+        "この保管庫を共有または新しい保管庫を作成"
+      ],
+      "Shared link": [
+        "共有リンク"
+      ],
       "Show website favicons": [
         "ウェブサイトのファビコンを表示する"
       ],
@@ -2234,6 +2303,9 @@
       "Street address": [
         "番地"
       ],
+      "Street address, P.O. box": [
+        "番地住所、宅配BOX"
+      ],
       "Strong": [
         "強い"
       ],
@@ -2248,6 +2320,12 @@
       ],
       "The item's vault is currently shared with ${ targetMembers } person": [
         "アイテムの保管庫は現在 ${ targetMembers } 人と共有されています"
+      ],
+      "The URL has been copied to the clipboard": [
+        "URLをクリップボードにコピーしました"
+      ],
+      "This item will remain accessible until ${ remaining }": [
+        "このアイテムは ${ remaining }までアクセス可能です"
       ],
       "Title": [
         "タイトル"
@@ -2270,8 +2348,17 @@
       "Type": [
         "種類"
       ],
+      "Unknown": [
+        "不明"
+      ],
+      "Unlock with": [
+        "ロック解除方法"
+      ],
       "Unnamed Credit Card": [
         "無名のクレジットカード"
+      ],
+      "Unnamed identity": [
+        "名前のないユーザー情報"
       ],
       "Unnamed item": [
         "名前のないアイテム"
@@ -2315,8 +2402,17 @@
       "Websites": [
         "ウェブサイト"
       ],
+      "X handle": [
+        "X ユーザー名"
+      ],
+      "Yahoo account": [
+        "Yahooアカウント"
+      ],
       "You are about to create": [
         "作成されるメールアドレス"
+      ],
+      "ZIP or Postal code": [
+        "郵便番号"
       ]
     },
     "Link": {

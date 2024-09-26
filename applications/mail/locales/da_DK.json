@@ -1237,6 +1237,9 @@
       "Tomorrow": [
         "I morgen"
       ],
+      "Tracker protection prevented some images from loading. Load them if you trust the sender.": [
+        "Tracker-beskyttelse forhindrede nogle billeder i at blive indlæst. Indlæs dem, hvis du stoler på afsenderen."
+      ],
       "Trust": [
         "Hav tillid til"
       ],
@@ -3586,6 +3589,17 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Hjælp os med at blive bedre"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Bekræft tab af ${ PASS_APP_NAME } særrabat"
+      ],
+      "Remove discount": [
+        "Fjern rabat"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Dit ${ PLAN_NAMES[PLANS.PASS] }-abonnement er til en særpris på ${ price } pr. år. Hvis du nedgraderer til et gratis abonnement, mister du rabatten permanent, selv hvis du opgraderer igen engang i fremtiden."
       ]
     },
     "Download attachments": {
@@ -5998,9 +6012,6 @@
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilføjet til gruppen ${ contactGroupName }"
-      ],
-      "Contact unassigned to group ${ contactGroupName }": [
-        "Kontakt fjernet fra gruppen ${ contactGroupName }"
       ],
       "Copied to clipboard": [
         "Kopieret til udklipsholder"
@@ -10875,6 +10886,14 @@
         "Signér"
       ]
     },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Hurtigere på appen"
+      ],
+      "Private, fast, and organized": [
+        "Privat, hurtigt og velorganiseret"
+      ]
+    },
     "Snooze message": {
       "Snooze Message": [
         "Udsæt besked"
@@ -11315,6 +11334,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Dit abonnement blev købt via en iOS app. For at lave ændringer i dit abonnement eller opdatere dine betalingsoplysninger, skal du gå til Apple App Store."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Abonnementet vil blive nedgraderet ved udgangen af faktureringscyklussen."
       ]
     },
     "Subscription price": {

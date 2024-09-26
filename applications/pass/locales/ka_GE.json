@@ -663,6 +663,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-ის ფაილის დამუშავების შეცდომა. ${ errorDetail }"
       ],
+      "[Error] an item could not be parsed": [
+        "[შეცდომა] ელემენტის დამუშავება შეუძლებელია"
+      ],
       "Alias could not be updated at the moment. Please try again later": [
         "ამჟამად ფსევდონიმის განახლება შეუძლებელია. მოგვიანებით სცადეთ"
       ],

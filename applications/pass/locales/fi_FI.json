@@ -663,6 +663,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } -tiedostoa ei voitu jäsentää. ${ errorDetail }"
       ],
+      "[Error] an item could not be parsed": [
+        "[Virhe] kohdetta ei voitu jäsentää"
+      ],
       "Alias could not be updated at the moment. Please try again later": [
         "Aliasta ei voitu päivittää tällä hetkellä. Yritä uudelleen myöhemmin"
       ],
@@ -1117,6 +1120,9 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Kun tietosi on tuotu, on suositeltavaa suojata tietosi poistamalla salasanasi sisältävän CSV-tiedosto."
+      ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "SimpleLoginin aliashallintaominaisuudet ovat tulossa pian!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias on poistettu käytöstä. Et enää vastaanota osoitteeseen ${ item.aliasEmail } lähetettyjä sähköposteja"
@@ -1980,6 +1986,9 @@
       "Alias address": [
         "Aliaksen osoite"
       ],
+      "Alias management": [
+        "Aliashallinta"
+      ],
       "Aliases": [
         "Aliakset"
       ],
@@ -2514,6 +2523,9 @@
       ],
       "Type": [
         "Tyyppi"
+      ],
+      "Unknown": [
+        "Tuntematon"
       ],
       "Unlock with": [
         "Lukituksen avaustapa"
