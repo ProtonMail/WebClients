@@ -3,7 +3,8 @@ import { useCallback, useContext } from 'react';
 import { getContact } from '@proton/shared/lib/api/contacts';
 import type { Contact } from '@proton/shared/lib/interfaces/contacts/Contact';
 
-import { useApi, useCachedModelResult } from '../../../hooks';
+import { useApi } from '../../../hooks';
+import useCachedModelResult from '../../../hooks/useCachedModelResult';
 import ContactProviderContext from '../ContactProviderContext';
 
 const fetchStack = new Set<string>();
