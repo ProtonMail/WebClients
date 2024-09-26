@@ -3,6 +3,7 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
+import useFlag from '@proton/unleash/useFlag';
 
 import { useLoad, usePlans, usePreferredPlansMap, useSubscription, useUser, useVPNServersCount } from '../../../hooks';
 import { useSubscriptionModal } from './SubscriptionModalProvider';
@@ -24,6 +25,8 @@ const UpgradeVpnSection = ({ app }: Props) => {
     const [serversCount, serversCountLoading] = useVPNServersCount();
     const { plansMap } = usePreferredPlansMap();
 
+    const showBundleUpsellFromVPNBiz = useFlag('ShowBundleUpsellFromVPNBiz');
+
     useLoad();
 
     const loading = loadingSubscription || loadingPlans || serversCountLoading;
@@ -39,6 +42,7 @@ const UpgradeVpnSection = ({ app }: Props) => {
         freePlan,
         serversCount,
         openSubscriptionModal,
+        showBundleUpsellFromVPNBiz,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
     });
 

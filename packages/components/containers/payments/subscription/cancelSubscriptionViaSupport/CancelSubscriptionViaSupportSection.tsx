@@ -6,9 +6,9 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { useSubscription } from '@proton/components/hooks';
 
-import CancelB2bSubscriptionModal from './CancelB2bSubscriptionModal';
+import CancelSubscriptionViaSupportModal from './CancelSubscriptionViaSupportModal';
 
-const CancelB2bSubscriptionSection = () => {
+const CancelSubscriptionViaSupportSection = () => {
     const [subscription, loadingSubscription] = useSubscription();
 
     const [modalProps, setModalOpen, render] = useModalState();
@@ -19,7 +19,7 @@ const CancelB2bSubscriptionSection = () => {
 
     return (
         <>
-            {render && <CancelB2bSubscriptionModal {...modalProps} />}
+            {render && <CancelSubscriptionViaSupportModal {...modalProps} />}
             <SettingsSection>
                 <SettingsParagraph>
                     {c('Info').t`To cancel your subscription, please reach out to us.`}
@@ -32,4 +32,4 @@ const CancelB2bSubscriptionSection = () => {
     );
 };
 
-export default CancelB2bSubscriptionSection;
+export default CancelSubscriptionViaSupportSection;

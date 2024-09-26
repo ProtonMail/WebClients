@@ -5,6 +5,7 @@ import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { getTestPlans } from '@proton/testing/data';
 
 import {
+    bundle2024Upsell,
     drivePlusUpsell,
     duoUpsell,
     familyUpsell,
@@ -547,8 +548,8 @@ describe('resolveUpsellsToDisplay', () => {
     });
 
     describe('VPN Business', () => {
-        it('should return VPN Enterprise upsell', () => {
-            const [upsell] = resolveUpsellsToDisplay({
+        it('should return VPN Enterprise and bundle pro upsells', () => {
+            const [upsell1, upsell2] = resolveUpsellsToDisplay({
                 ...base,
                 subscription: {
                     Plans: [
@@ -560,14 +561,21 @@ describe('resolveUpsellsToDisplay', () => {
                 } as Subscription,
                 app: APPS.PROTONACCOUNT,
                 isFree: false,
+                showBundleUpsellFromVPNBiz: true,
             });
 
-            expect(upsell).toMatchObject(vpnEnterpriseUpsell);
-            expect(upsell.ignoreDefaultCta).toEqual(true);
-            expect(upsell.otherCtas).toHaveLength(1);
+            expect(upsell1).toMatchObject(vpnEnterpriseUpsell);
+            expect(upsell1.ignoreDefaultCta).toEqual(true);
+            expect(upsell1.otherCtas).toHaveLength(1);
 
-            upsell.onUpgrade();
+            upsell1.onUpgrade();
             expect(mockedOpenSubscriptionModal).not.toHaveBeenCalled();
+
+            expect(upsell2).toMatchObject(bundle2024Upsell);
+            expect(upsell2.otherCtas).toHaveLength(0);
+
+            upsell2.onUpgrade();
+            expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
         });
     });
 });
