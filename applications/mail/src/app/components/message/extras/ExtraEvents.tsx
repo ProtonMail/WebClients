@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import {
     useAddresses,
     useApi,
@@ -8,7 +9,6 @@ import {
     useGetAddressKeys,
     useGetCalendarEventRaw,
     useGetCalendarInfo,
-    useGetCalendarUserSettings,
     useGetCalendars,
     useUser,
     useUserSettings,
