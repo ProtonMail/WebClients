@@ -1,8 +1,10 @@
 import type { ElementNode, LexicalEditor, ParagraphNode, RangeSelection, TextNode } from 'lexical'
 import {
+  $insertNodes,
   $isParagraphNode,
   $isTabNode,
   $isTextNode,
+  $nodesOfType,
   $setSelection,
   COMMAND_PRIORITY_CRITICAL,
   SELECTION_INSERT_CLIPBOARD_NODES_COMMAND,
@@ -10,7 +12,7 @@ import {
 import { $createParagraphNode, $createTextNode, $getRoot, $getSelection, $isRangeSelection } from 'lexical'
 import { AllNodes } from '../../AllNodes'
 import { $handleBeforeInputEvent } from './handleBeforeInputEvent'
-import type { ProtonNode } from './ProtonNode'
+import { ProtonNode } from './ProtonNode'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 import { polyfillSelectionRelatedThingsForTests } from './TestUtils'
 import type { Root } from 'react-dom/client'
@@ -220,90 +222,190 @@ describe('$handleBeforeInputEvent', () => {
       })
     })
 
-    test('should insert paragraph above current if at start of block', async () => {
-      await update(() => {
-        const paragraph = $createParagraphNode().append($createTextNode('Hello'))
-        $getRoot().append(paragraph)
-        paragraph.selectStart()
-        $handleBeforeInputEvent(
-          editor!,
-          {
-            inputType: 'insertParagraph',
-            data: null,
-            dataTransfer: null,
-          } as InputEvent,
-          onSuggestionCreation,
-        )
-      })
-      editor!.read(() => {
-        const root = $getRoot()
-        expect(root.getChildrenSize()).toBe(2)
-        const paragraph1 = root.getChildAtIndex<ElementNode>(0)
-        expect($isParagraphNode(paragraph1)).toBe(true)
-        expect($isSuggestionNode(paragraph1?.getFirstChild())).toBe(true)
-        expect(paragraph1?.getFirstChildOrThrow<ProtonNode>().getSuggestionTypeOrThrow()).toBe('split')
-        const paragraph2 = root.getChildAtIndex<ElementNode>(1)
-        expect($isParagraphNode(paragraph2)).toBe(true)
-        expect(paragraph2?.getTextContent()).toBe('Hello')
-      })
-    })
+    describe('Insert paragraph', () => {
+      let initialParagraph: ParagraphNode
 
-    test('should split paragraph when "insertParagraph" in the middle', async () => {
-      await update(() => {
-        const paragraph = $createParagraphNode().append($createTextNode('Hello'))
-        $getRoot().append(paragraph)
-        paragraph.getFirstChildOrThrow<TextNode>().select(3, 3)
-        $handleBeforeInputEvent(
-          editor!,
-          {
-            inputType: 'insertParagraph',
-            data: null,
-            dataTransfer: null,
-          } as InputEvent,
-          onSuggestionCreation,
-        )
+      beforeEach(async () => {
+        await update(() => {
+          initialParagraph = $createParagraphNode().append($createTextNode('Hello'))
+          $getRoot().append(initialParagraph)
+        })
       })
-      editor!.read(() => {
-        const root = $getRoot()
-        expect(root.getChildrenSize()).toBe(2)
-        const paragraph1 = root.getChildAtIndex<ElementNode>(0)
-        expect($isParagraphNode(paragraph1)).toBe(true)
-        expect($isTextNode(paragraph1?.getFirstChild())).toBe(true)
-        expect(paragraph1?.getFirstChildOrThrow().getTextContent()).toBe('Hel')
-        expect($isSuggestionNode(paragraph1?.getLastChild())).toBe(true)
-        expect(paragraph1?.getLastChildOrThrow<ProtonNode>().getSuggestionTypeOrThrow()).toBe('split')
-        const paragraph2 = root.getChildAtIndex<ElementNode>(1)
-        expect($isParagraphNode(paragraph2)).toBe(true)
-        expect(paragraph2?.getTextContent()).toBe('lo')
-      })
-    })
 
-    test('should insert paragraph below when "insertParagraph" at the end', async () => {
-      await update(() => {
-        const paragraph = $createParagraphNode().append($createTextNode('Hello'))
-        $getRoot().append(paragraph)
-        paragraph.selectEnd()
-        $handleBeforeInputEvent(
-          editor!,
-          {
-            inputType: 'insertParagraph',
-            data: null,
-            dataTransfer: null,
-          } as InputEvent,
-          onSuggestionCreation,
-        )
+      describe('At start of block', () => {
+        beforeEach(async () => {
+          await update(() => {
+            initialParagraph.selectStart()
+            $handleBeforeInputEvent(
+              editor!,
+              {
+                inputType: 'insertParagraph',
+                data: null,
+                dataTransfer: null,
+              } as InputEvent,
+              onSuggestionCreation,
+            )
+          })
+        })
+
+        test('root should have 2 children', () => {
+          editor!.read(() => {
+            expect($getRoot().getChildrenSize()).toBe(2)
+          })
+        })
+
+        test('first paragraph should have split node only', () => {
+          editor!.read(() => {
+            const root = $getRoot()
+            const paragraph1 = root.getChildAtIndex<ElementNode>(0)
+            expect($isParagraphNode(paragraph1)).toBe(true)
+            expect(paragraph1?.getChildrenSize()).toBe(1)
+            const child = paragraph1?.getFirstChild<ProtonNode>()
+            expect($isSuggestionNode(child)).toBe(true)
+            expect(child?.getSuggestionTypeOrThrow()).toBe('split')
+          })
+        })
+
+        test('second paragraph should have text', () => {
+          editor!.read(() => {
+            const root = $getRoot()
+            const paragraph2 = root.getChildAtIndex<ElementNode>(1)
+            expect($isParagraphNode(paragraph2)).toBe(true)
+            expect($isTextNode(paragraph2?.getFirstChild())).toBe(true)
+            expect(paragraph2?.getTextContent()).toBe('Hello')
+          })
+        })
       })
-      editor!.read(() => {
-        const root = $getRoot()
-        expect(root.getChildrenSize()).toBe(2)
-        const paragraph1 = root.getChildAtIndex<ElementNode>(0)
-        expect($isParagraphNode(paragraph1)).toBe(true)
-        expect($isTextNode(paragraph1?.getFirstChild())).toBe(true)
-        expect($isSuggestionNode(paragraph1?.getLastChild())).toBe(true)
-        expect(paragraph1?.getLastChildOrThrow<ProtonNode>().getSuggestionTypeOrThrow()).toBe('split')
-        const paragraph2 = root.getChildAtIndex<ElementNode>(1)
-        expect($isParagraphNode(paragraph2)).toBe(true)
-        expect(paragraph2?.getChildrenSize()).toBe(0)
+
+      describe('In middle of block', () => {
+        beforeEach(async () => {
+          await update(() => {
+            initialParagraph.getFirstChildOrThrow<TextNode>().select(3, 3)
+            $handleBeforeInputEvent(
+              editor!,
+              {
+                inputType: 'insertParagraph',
+                data: null,
+                dataTransfer: null,
+              } as InputEvent,
+              onSuggestionCreation,
+            )
+          })
+        })
+
+        test('root should have 2 children', () => {
+          editor!.read(() => {
+            expect($getRoot().getChildrenSize()).toBe(2)
+          })
+        })
+
+        test('first paragraph should have part of initial text and split node', () => {
+          editor!.read(() => {
+            const paragraph1 = $getRoot().getChildAtIndex<ElementNode>(0)
+            expect($isParagraphNode(paragraph1)).toBe(true)
+            expect(paragraph1?.getChildrenSize()).toBe(2)
+            const text = paragraph1?.getFirstChild()
+            expect($isTextNode(text)).toBe(true)
+            expect(text?.getTextContent()).toBe('Hel')
+            const suggestion = paragraph1?.getLastChildOrThrow<ProtonNode>()
+            expect($isSuggestionNode(suggestion)).toBe(true)
+            expect(suggestion?.getSuggestionTypeOrThrow()).toBe('split')
+          })
+        })
+
+        test('second paragraph should have rest of initial text', () => {
+          editor!.read(() => {
+            const paragraph2 = $getRoot().getChildAtIndex<ElementNode>(1)
+            expect($isParagraphNode(paragraph2)).toBe(true)
+            expect(paragraph2?.getTextContent()).toBe('lo')
+          })
+        })
+      })
+
+      describe('At end of block', () => {
+        beforeEach(async () => {
+          await update(() => {
+            initialParagraph.selectEnd()
+            $handleBeforeInputEvent(
+              editor!,
+              {
+                inputType: 'insertParagraph',
+                data: null,
+                dataTransfer: null,
+              } as InputEvent,
+              onSuggestionCreation,
+            )
+          })
+        })
+
+        test('root should have 2 children', () => {
+          editor!.read(() => {
+            expect($getRoot().getChildrenSize()).toBe(2)
+          })
+        })
+
+        test('first paragraph should have text and split node', () => {
+          editor!.read(() => {
+            const paragraph1 = $getRoot().getChildAtIndex<ElementNode>(0)
+            expect($isParagraphNode(paragraph1)).toBe(true)
+            expect($isTextNode(paragraph1?.getFirstChild())).toBe(true)
+            expect($isSuggestionNode(paragraph1?.getLastChild())).toBe(true)
+            expect(paragraph1?.getLastChildOrThrow<ProtonNode>().getSuggestionTypeOrThrow()).toBe('split')
+          })
+        })
+
+        test('second paragraph should be empty', () => {
+          editor!.read(() => {
+            const paragraph2 = $getRoot().getChildAtIndex<ElementNode>(1)
+            expect($isParagraphNode(paragraph2)).toBe(true)
+            expect(paragraph2?.getChildrenSize()).toBe(0)
+          })
+        })
+
+        test('consecutive splits should use same ID', async () => {
+          await update(() => {
+            $handleBeforeInputEvent(
+              editor!,
+              {
+                inputType: 'insertParagraph',
+                data: null,
+                dataTransfer: null,
+              } as InputEvent,
+              onSuggestionCreation,
+            )
+          })
+
+          editor!.read(() => {
+            const nodes = $nodesOfType(ProtonNode).filter($isSuggestionNode)
+            expect(nodes.length).toBe(2)
+            const first = nodes[0]
+            const second = nodes[1]
+            expect(first.getSuggestionIdOrThrow()).toBe(second.getSuggestionIdOrThrow())
+          })
+        })
+
+        test('non-consecutive splits should not use same ID', async () => {
+          await update(() => {
+            $insertNodes([$createTextNode('World')])
+            $handleBeforeInputEvent(
+              editor!,
+              {
+                inputType: 'insertParagraph',
+                data: null,
+                dataTransfer: null,
+              } as InputEvent,
+              onSuggestionCreation,
+            )
+          })
+
+          editor!.read(() => {
+            const nodes = $nodesOfType(ProtonNode).filter($isSuggestionNode)
+            expect(nodes.length).toBe(2)
+            const first = nodes[0]
+            const second = nodes[1]
+            expect(first.getSuggestionIdOrThrow()).not.toBe(second.getSuggestionIdOrThrow())
+          })
+        })
       })
     })
 
