@@ -7,7 +7,6 @@ import { protocolLogger } from "../log";
 
 export const checkDefaultMailtoClientWindows = (): DefaultProtocolActual => {
     const regExe = getRegExe();
-    // FIXME(jcuth)
     // Need to check we have class registered
     // spawn reg query HKCU\Software\Classes\ProtonMail.Url.mailto\shell\open\command
     //   should contain `Proton Mail.exe`
@@ -32,7 +31,7 @@ export const checkDefaultMailtoClientWindows = (): DefaultProtocolActual => {
     // "Progid"="ProtonMail.Url.mailto"
     try {
         const result = execSync(
-            `"${regExe}" quuery HKCU\\Software\\Microsoft\\Windows\\Shell\\Associations\\UrlAssociations\\mailto\\UserChoice \\v ProgId`,
+            `"${regExe}" query HKCU\\Software\\Microsoft\\Windows\\Shell\\Associations\\UrlAssociations\\mailto\\UserChoice /v ProgId`,
         );
 
         return {

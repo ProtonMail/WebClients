@@ -9,6 +9,7 @@ import type { Api } from '@proton/shared/lib/interfaces';
 
 import type { DefaultProtocol } from './DefaultProtocol';
 import type { IPCInboxHostUpdateListenerRemover } from './desktopTypes';
+import { addIPCHostUpdateListener } from './desktopTypes';
 import { getInboxDesktopInfo, hasInboxDesktopFeature, invokeInboxDesktopIPC } from './ipcHelpers';
 
 // FIXME(jcuth) : const HOUR_INTERVAL = 3600000;
@@ -71,7 +72,7 @@ export function useInboxDesktopHeartbeat() {
 
     useEffect(() => {
         const defaultMailtoChecked: IPCInboxHostUpdateListenerRemover = hasInboxDesktopFeature('MailtoTelemetry')
-            ? window.ipcInboxMessageBroker!.on!('defaultMailtoChecked', (payload) => sendMailtoTelemetry(api, payload))
+            ? addIPCHostUpdateListener('defaultMailtoChecked', (payload) => sendMailtoTelemetry(api, payload))
             : { removeListener: () => {} };
 
         checkMailtoTelemetryIsNeeded();

@@ -41,8 +41,6 @@ export const handleIPCCalls = () => {
                 break;
             }
             case "defaultMailto": {
-                // FIXME(jcuth): send DefaultProtocol runtime value for mailto
-                // * [ ] check it works (devtools)
                 event.returnValue = getDefaultMailto();
                 break;
             }
@@ -109,10 +107,6 @@ export const handleIPCCalls = () => {
                 break;
             }
             case "checkDefaultMailtoAndSignal": {
-                // FIXME(jcuth):
-                // * [x] check default mailto
-                // * [x] send signal defaultMailtoChecked
-                // * [ ] test it works
                 checkDefaultMailto();
                 const defaultMailto = getDefaultMailto();
 
@@ -123,9 +117,6 @@ export const handleIPCCalls = () => {
                 break;
             }
             case "defaultMailtoTelemetryReported": {
-                // FIXME(jcuth):
-                // Just update stored
-                // * [ ] test it works
                 setDefaultMailtoTelemetryReported(payload);
                 break;
             }

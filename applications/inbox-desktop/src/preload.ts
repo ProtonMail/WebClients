@@ -5,7 +5,6 @@ import {
     IPCInboxMessageBroker,
     IPCInboxHostUpdateMessageType,
     IPCInboxHostUpdateListener,
-    PayloadOfIPCInboxHostUpdateType,
 } from "@proton/shared/lib/desktop/desktopTypes";
 
 contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
@@ -24,29 +23,21 @@ contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
     },
 } satisfies IPCInboxMessageBroker);
 
-function addHostUpdateListener<T extends IPCInboxHostUpdateMessageType>(
-    eventType: T,
-    callback: IPCInboxHostUpdateListener<T>,
-) {
+function addHostUpdateListener(eventType: IPCInboxHostUpdateMessageType, callback: IPCInboxHostUpdateListener) {
     const handleHostUpdate = (_event: IpcRendererEvent, message: unknown) => {
         const parsed = isValidHostUpdateMessage(message);
         if (!parsed.success) {
-            ipcLogger.error("Invalid host update message format", parsed.error);
-            return;
-        }
-
-        if (!parsed || !parsed.data || !parsed.data.payload) {
-            ipcLogger.warn(`Skipping ${eventType} due to missing payload`, message);
+            ipcLogger.error("Invalid host update message format:", parsed.error);
             return;
         }
 
         if (parsed.data.type != eventType) {
-            ipcLogger.debug(`Skipping ${eventType} for event ${parsed.data.type} payload`);
+            // Needs refactor INDA-309
+            // for tracing do: ipcLogger.debug(`Skipping ${eventType} for event ${parsed.data.type} payload`);
             return;
         }
 
-        const payload = parsed.data.payload as unknown as PayloadOfIPCInboxHostUpdateType<T>;
-        callback(payload);
+        callback(parsed.data.payload);
     };
 
     ipcRenderer.on("hostUpdate", handleHostUpdate);

@@ -35,9 +35,9 @@ export function checkDefaultMailto() {
         defaultMailto.isDefault = actualMailto.isDefault;
 
         if (actualMailto.isDefault) {
-            const store = !defaultMailto.wasDefaultInPast;
+            const shouldUpdateStore = !defaultMailto.wasDefaultInPast;
             defaultMailto.wasDefaultInPast = true;
-            if (store) {
+            if (shouldUpdateStore) {
                 storeDefaultProtocol("mailto", defaultMailto);
             }
         }
@@ -47,11 +47,6 @@ export function checkDefaultMailto() {
 }
 
 export function setDefaultMailtoTelemetryReported(timestamp: number) {
-    // FIXME(jcuth):
-    // Just update stored
-    // * [x] new timestamp
-    // * [x] set wasDefault as current isDefault
-    // * [x] store it
     defaultMailto.lastReport.timestamp = timestamp;
     if (defaultMailto.wasChecked) {
         defaultMailto.lastReport.wasDefault = defaultMailto.isDefault;
