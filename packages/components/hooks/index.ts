@@ -2,7 +2,6 @@ export { default as useAddresses, useGetAddresses } from './useAddresses';
 export { useAddressesKeys, useGetAddressKeys } from './useAddressesKeys';
 export { default as useApi } from './useApi';
 export { default as useApiWithoutResult } from './useApiWithoutResult';
-export { default as useAppTitle } from './useAppTitle';
 export { default as useAuthentication } from './useAuthentication';
 export { default as useAutocompleteAriaProps } from './useAutocompleteAriaProps';
 export { default as useBeforeUnload } from './useBeforeUnload';
