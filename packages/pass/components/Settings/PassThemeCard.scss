@@ -1,0 +1,11 @@
+@import '~@proton/styles/scss/lib';
+
+.pass-theme-card-button {
+	padding: 0 !important;
+	border-width: 4px !important;
+	border-color: transparent;
+
+	&.is-active {
+		border-color: var(--interaction-norm);
+	}
+}

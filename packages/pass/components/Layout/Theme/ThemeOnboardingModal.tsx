@@ -5,9 +5,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/index';
 import { ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/index';
-import { PillBadge } from '@proton/pass/components/Layout/Badge/PillBadge';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { ThemeSelector } from '@proton/pass/components/Settings/ThemeSelector';
+import { PassThemeCardList } from '@proton/pass/components/Settings/PassThemeCardList';
 import { selectTheme } from '@proton/pass/store/selectors';
 
 import { PASS_DEFAULT_THEME } from '../../../constants';
@@ -31,22 +30,15 @@ export const ThemeOnboardingModal: FC = () => {
 
     return (
         <PassModal size="large" open onClose={handleClose} disableCloseOnEscape>
-            <ModalTwoHeader
-                title={
-                    <>
-                        {c('Info').t`Choose a theme`}
-                        <PillBadge className="text-semibold ml-2 py-2" label={c('Badge').t`New`} />
-                    </>
-                }
-            />
-            <ModalTwoContent className="flex flex-column items-center pt-4">
-                <ThemeSelector className="mb-4" />
-                <div className="color-weak">{c('Info').t`You can always change your theme later in the settings.`}</div>
+            <ModalTwoHeader title={c('Info').t`Make it your own`} hasClose={false} className="flex justify-center" />
+            <ModalTwoContent className="flex flex-column items-center">
+                <div className="color-weak mb-4">{c('Info').t`Choose your preferred look and feel.`}</div>
+                <PassThemeCardList />
             </ModalTwoContent>
 
             <ModalTwoFooter className="flex flex-column items-stretch text-center">
-                <Button pill size="large" shape="solid" onClick={handleClose}>
-                    {c('Action').t`Done`}
+                <Button pill size="large" shape="solid" color="norm" onClick={handleClose}>
+                    {c('Action').t`Select`}
                 </Button>
             </ModalTwoFooter>
         </PassModal>
