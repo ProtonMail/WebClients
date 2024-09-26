@@ -1,5 +1,4 @@
-import type { DocumentUpdate } from '../Generated'
-import { Commit } from '../Generated'
+import { Commit, type DocumentUpdate } from '../Generated'
 import type { CommitVersion } from '../Version'
 import { CreateDocumentUpdateArray } from './CreateDocumentUpdateArray'
 
