@@ -131,6 +131,56 @@ describe('useDownloadMetrics', () => {
         });
     });
 
+    it('should observe downloads and update metrics correctly for retried downloads', () => {
+        mockGetShare.mockReturnValue({ type: ShareType.default });
+
+        const { result } = renderHook(() => useDownloadMetrics('download'));
+
+        const testDownloads: Download[] = [
+            {
+                id: '2',
+                state: TransferState.Error,
+                links: [{ shareId: 'share2' }],
+                error: { statusCode: 500 },
+            },
+        ] as unknown as Download[];
+
+        act(() => {
+            result.current.observe(testDownloads);
+        });
+
+        expect(metrics.drive_download_success_rate_total.increment).toHaveBeenCalledWith({
+            status: 'failure',
+            retry: 'false',
+            shareType: 'main',
+        });
+
+        expect(metrics.drive_download_errors_total.increment).toHaveBeenCalledWith({
+            type: '5xx',
+            initiator: 'download',
+            shareType: 'main',
+        });
+
+        act(() => {
+            const testDownloadsDone: Download[] = [
+                {
+                    id: '2',
+                    state: TransferState.Done,
+                    links: [{ shareId: 'share2' }],
+                    error: null,
+                    retries: 1,
+                },
+            ] as unknown as Download[];
+            result.current.observe(testDownloadsDone);
+        });
+
+        expect(metrics.drive_download_success_rate_total.increment).toHaveBeenCalledWith({
+            status: 'success',
+            retry: 'true',
+            shareType: 'main',
+        });
+    });
+
     it('should not process the same download twice', () => {
         mockGetShare.mockReturnValue({ type: ShareType.default });
 
