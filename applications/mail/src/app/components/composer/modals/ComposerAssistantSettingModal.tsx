@@ -6,13 +6,14 @@ import { Button, Href } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import {
     useApi,
-    useAssistantSubscriptionStatus,
     useEventManager,
     useNotifications,
     useSpotlightOnFeature,
     useUserSettings,
 } from '@proton/components/hooks';
-import { ASSISTANT_TRIAL_TIME_DAYS } from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
+import useAssistantSubscriptionStatus, {
+    ASSISTANT_TRIAL_TIME_DAYS,
+} from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { FeatureCode } from '@proton/features';
 import useLoading from '@proton/hooks/useLoading';

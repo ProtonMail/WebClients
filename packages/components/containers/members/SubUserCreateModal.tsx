@@ -28,6 +28,7 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
+import AssistantUpdateSubscriptionButton from '@proton/components/containers/payments/subscription/assistant/AssistantUpdateSubscriptionButton';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -65,7 +66,6 @@ import {
     useSubscription,
 } from '../../hooks';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
-import { AssistantUpdateSubscriptionButton } from '../payments';
 import MemberStorageSelector, { getInitialStorage, getStorageRange, getTotalStorage } from './MemberStorageSelector';
 import MemberToggleContainer from './MemberToggleContainer';
 import SubUserBulkCreateModal from './SubUserBulkCreateModal';

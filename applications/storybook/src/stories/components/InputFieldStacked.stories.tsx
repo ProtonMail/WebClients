@@ -1,6 +1,11 @@
-import { InputFieldTwo, Option, SelectTwo, TextAreaTwo } from '@proton/components';
-import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
-import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
+import {
+    InputFieldStacked,
+    InputFieldStackedGroup,
+    InputFieldTwo,
+    Option,
+    SelectTwo,
+    TextAreaTwo,
+} from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
 import mdx from './InputFieldStacked.mdx';

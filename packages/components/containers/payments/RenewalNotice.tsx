@@ -13,7 +13,7 @@ import Price from '../../components/price/Price';
 import { getMonths } from './SubscriptionsSection';
 import type { CheckoutModifiers } from './subscription/useCheckoutModifiers';
 
-export type RenewalNoticeProps = {
+type RenewalNoticeProps = {
     cycle: number;
     subscription?: Subscription;
 } & Partial<CheckoutModifiers>;
@@ -66,7 +66,7 @@ export const getBlackFridayRenewalNoticeText = ({
         .jt`The specially discounted price of ${discountedPrice} is valid for ${discountedMonths}. Then it will automatically be renewed at the discounted price of ${nextPrice} for ${nextMonths}. You can cancel at any time.`;
 };
 
-export const getRegularRenewalNoticeText = ({
+const getRegularRenewalNoticeText = ({
     cycle,
     isCustomBilling,
     isScheduledSubscription,
