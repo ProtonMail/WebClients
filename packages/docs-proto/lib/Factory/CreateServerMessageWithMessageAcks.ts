@@ -1,5 +1,4 @@
-import type { ClientMessageWithDocumentUpdates } from '../Generated'
-import { ServerMessageWithMessageAcks } from '../Generated'
+import { ServerMessageWithMessageAcks, type ClientMessageWithDocumentUpdates } from '../Generated'
 import { CreateMessageAck } from './CreateMessageAck'
 
 export function CreateServerMessageWithMessageAcks(
