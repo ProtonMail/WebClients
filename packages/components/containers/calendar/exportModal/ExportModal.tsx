@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import BasicModal from '@proton/components/components/modalTwo/BasicModal';
+import { getAppVersion } from '@proton/components/helpers/appVersion';
 import { createExportIcs } from '@proton/shared/lib/calendar/export/createExportIcs';
 import { getProdIdFromNameAndVersion } from '@proton/shared/lib/calendar/vcalConfig';
 import { getUniqueVtimezones } from '@proton/shared/lib/calendar/vtimezoneHelper';
@@ -18,7 +19,6 @@ import type {
 import { EXPORT_ERRORS, EXPORT_STEPS } from '@proton/shared/lib/interfaces/calendar';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
-import { getAppVersion } from '../../..';
 import { useConfig, useGetCalendarUserSettings, useUserSettings } from '../../../hooks';
 import { useGetVtimezonesMap } from '../../../hooks/useGetVtimezonesMap';
 import ExportSummaryModalContent from './ExportSummaryModalContent';

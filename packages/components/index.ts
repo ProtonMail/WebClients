@@ -2,7 +2,6 @@ import './typings/css.d';
 import './typings/index.d';
 
 export * from './containers';
-export * from './helpers';
 export * from './hooks';
 
 export { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
@@ -723,8 +722,8 @@ export { default as OnboardingContent } from './containers/onboarding/Onboarding
 export { default as OnboardingModal } from './containers/onboarding/OnboardingModal';
 export { default as OnboardingStep } from './containers/onboarding/OnboardingStep';
 export { default as AuthenticationLogs } from './containers/organization/AuthenticationLogs';
-export { default as OrganizationGroupsManagementSection } from './containers/organization/groups/OrganizationGroupsManagementSection';
 export { default as canUseGroups } from './containers/organization/groups/canUseGroups';
+export { default as OrganizationGroupsManagementSection } from './containers/organization/groups/OrganizationGroupsManagementSection';
 export { default as LightLabellingFeatureModal } from './containers/organization/logoUpload/LightLabellingFeatureModal';
 export { useOrganizationTheme } from './containers/organization/logoUpload/useOrganizationTheme';
 export { useShowLightLabellingFeatureModal } from './containers/organization/logoUpload/useShowLightLabellingFeatureModal';
@@ -803,6 +802,9 @@ export { default as ProtonVPNCredentialsSection } from './containers/vpn/ProtonV
 export { default as ProtonVPNResourcesSection } from './containers/vpn/ProtonVPNResourcesSection/ProtonVPNResourcesSection';
 export { default as TVContainer } from './containers/vpn/tv/TVContainer';
 export { default as WireGuardConfigurationSection } from './containers/vpn/WireGuardConfigurationSection/WireGuardConfigurationSection';
+export { getAppVersion } from './helpers/appVersion';
+export { getCustomSizingClasses } from './helpers/getCustomSizingClasses';
+export { getObjectKeys } from './helpers/getObjectKeys';
 export { default as useActiveBreakpoint } from './hooks/useActiveBreakpoint';
 export type { Breakpoints } from './hooks/useActiveBreakpoint';
 export { default as useAddressFlags } from './hooks/useAddressFlags';
