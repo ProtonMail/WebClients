@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { useMemberAddresses } from '@proton/account';
 import { Button } from '@proton/atoms';
 import { useConfig, useMembers } from '@proton/components';
+import Row from '@proton/components/components/container/Row';
 import Label from '@proton/components/components/label/Label';
 import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
@@ -12,7 +13,6 @@ import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
-import Row from '../../components/container/Row';
 import SendEmailReminderTwoFAModal from './SendEmailReminderTwoFAModal';
 
 interface Props {

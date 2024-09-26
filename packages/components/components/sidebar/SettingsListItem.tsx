@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { NotificationDot } from '@proton/atoms';
 import type { ThemeColor } from '@proton/colors';
+import type { IconName } from '@proton/components/components/icon/Icon';
 
-import type { IconName } from '../icon/Icon';
 import SidebarListItem from './SidebarListItem';
 import SidebarListItemContent from './SidebarListItemContent';
 import SidebarListItemContentIcon from './SidebarListItemContentIcon';

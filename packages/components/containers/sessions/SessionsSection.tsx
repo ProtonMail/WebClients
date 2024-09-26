@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Pagination, usePagination } from '@proton/components';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Pagination from '@proton/components/components/pagination/Pagination';
+import usePagination from '@proton/components/components/pagination/usePagination';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';

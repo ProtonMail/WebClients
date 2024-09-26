@@ -8,7 +8,9 @@ import { c } from 'ttag';
 import { Button, CircleLoader, Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import ErrorButton from '@proton/components/components/button/ErrorButton';
+import Details from '@proton/components/components/container/Details';
 import Row from '@proton/components/components/container/Row';
+import Summary from '@proton/components/components/container/Summary';
 import Icon from '@proton/components/components/icon/Icon';
 import Radio from '@proton/components/components/input/Radio';
 import TextArea from '@proton/components/components/input/TextArea';
@@ -26,8 +28,6 @@ import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shar
 import { readableTime } from '@proton/shared/lib/helpers/time';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
 
-import Details from '../../../components/container/Details';
-import Summary from '../../../components/container/Summary';
 import { getObjectKeys } from '../../../helpers';
 import { getCountryOptions, getLocalizedCountryByAbbr } from '../../../helpers/countries';
 import {

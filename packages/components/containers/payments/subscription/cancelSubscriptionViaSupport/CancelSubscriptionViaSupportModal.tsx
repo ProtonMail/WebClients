@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Form, useApi, useConfig, useErrorHandler, useFormErrors, useUser } from '@proton/components';
+import { useApi, useConfig, useErrorHandler, useFormErrors, useUser } from '@proton/components';
+import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';

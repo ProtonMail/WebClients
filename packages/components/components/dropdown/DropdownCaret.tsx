@@ -1,7 +1,7 @@
+import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 
 import type { IconName, IconSize } from '../icon/Icon';
-import Icon from '../icon/Icon';
 
 interface Props {
     className?: string;
