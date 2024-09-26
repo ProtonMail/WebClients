@@ -35,6 +35,7 @@ import { bootIntent, cacheCancel, lockSync, stateDestroy, stopEventPolling } fro
 import { AppStatus, type MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { objectHandler } from '@proton/pass/utils/object/handler';
+import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import {
@@ -191,6 +192,11 @@ export const createAuthService = ({
             app.setAuthorized(true);
             setSentryUID(authStore.getUID());
             onboarding.init().catch(noop);
+
+            /** Repersist the session if sufficient time has elapsed since last use */
+            if (getEpoch() - authStore.getLastUsedAt() > UNIX_MINUTE) {
+                await auth.persistSession({ regenerateClientKey: false }).catch(noop);
+            }
 
             if (app.state.booted) app.setStatus(AppStatus.READY);
             else {

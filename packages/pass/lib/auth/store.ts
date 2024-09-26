@@ -73,7 +73,7 @@ export const createAuthStore = (store: Store) => {
             encryptedOfflineKD: authStore.getEncryptedOfflineKD(),
             extraPassword: authStore.getExtraPassword(),
             keyPassword: authStore.getPassword() ?? '',
-            lastUsedAt: authStore.getLastUsedDate(),
+            lastUsedAt: authStore.getLastUsedAt(),
             LocalID: authStore.getLocalID(),
             lockMode: authStore.getLockMode(),
             lockTTL: authStore.getLockTTL(),
@@ -119,7 +119,7 @@ export const createAuthStore = (store: Store) => {
             if (session.encryptedOfflineKD) authStore.setEncryptedOfflineKD(session.encryptedOfflineKD);
             if (session.extraPassword) authStore.setExtraPassword(true);
             if (session.keyPassword) authStore.setPassword(session.keyPassword);
-            if (session.lastUsedAt !== undefined) authStore.setLastUsedDate(session.lastUsedAt);
+            if (session.lastUsedAt !== undefined) authStore.setLastUsedAt(session.lastUsedAt);
             if (session.LocalID !== undefined) authStore.setLocalID(session.LocalID);
             if (session.lockMode) authStore.setLockMode(session.lockMode);
             if (session.lockTTL) authStore.setLockTTL(session.lockTTL);
@@ -187,9 +187,8 @@ export const createAuthStore = (store: Store) => {
         setLockLastExtendTime: (extendTime: Maybe<number>): void => store.set(PASS_LOCK_EXTEND_TIME_KEY, extendTime),
         getLockLastExtendTime: (): Maybe<number> => store.get(PASS_LOCK_EXTEND_TIME_KEY),
 
-        /** Last successful login / resuming */
-        setLastUsedDate: (lastUsedAt: number): void => store.set(PASS_LAST_USED_AT, lastUsedAt),
-        getLastUsedDate: (): number => store.get(PASS_LAST_USED_AT) ?? 0,
+        setLastUsedAt: (lastUsedAt: number): void => store.set(PASS_LAST_USED_AT, lastUsedAt),
+        getLastUsedAt: (): number => store.get(PASS_LAST_USED_AT) ?? 0,
 
         setUnlockRetryCount: (count: number): void => store.set(PASS_UNLOCK_RETRY_KEY, count),
         getUnlockRetryCount: (): number => store.get(PASS_UNLOCK_RETRY_KEY) ?? 0,
