@@ -466,6 +466,12 @@ export const vpnEnterpriseUpsell = {
     description: 'Tailor-made solutions for larger organizations with specific security needs',
 };
 
+export const bundle2024Upsell = {
+    planKey: 'bundlepro2024',
+    title: 'Proton Business Suite',
+    description: 'All Proton business apps and premium features to protect your entire business.',
+};
+
 export const subscription = {
     Plans: [
         {
