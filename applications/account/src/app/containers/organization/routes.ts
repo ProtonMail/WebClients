@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
+import { canUseGroups } from '@proton/components';
 import type { SectionConfig } from '@proton/components';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING, PLANS } from '@proton/shared/lib/constants';
+import { APPS, ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import {
     getHasExternalMemberCapableB2BPlan,
@@ -13,7 +14,7 @@ import {
     hasVpnBusiness,
 } from '@proton/shared/lib/helpers/subscription';
 import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/support';
-import type { Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { Group, Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 
 interface Props {
@@ -25,15 +26,8 @@ interface Props {
     isUserGroupsFeatureEnabled: boolean;
     isB2BAuthLogsEnabled: boolean;
     showGatewaysForBundlePlan: boolean;
+    groups: Group[] | undefined;
 }
-
-const groupsCompatiblePlans = new Set([
-    PLANS.MAIL_BUSINESS,
-    PLANS.BUNDLE_PRO,
-    PLANS.BUNDLE_PRO_2024,
-    PLANS.VISIONARY,
-    PLANS.ENTERPRISE,
-]);
 
 export const getOrganizationAppRoutes = ({
     app,
@@ -44,6 +38,7 @@ export const getOrganizationAppRoutes = ({
     isUserGroupsFeatureEnabled,
     isB2BAuthLogsEnabled,
     showGatewaysForBundlePlan,
+    groups,
 }: Props) => {
     const isAdmin = user.isAdmin && !user.isSubUser;
 
@@ -73,8 +68,7 @@ export const getOrganizationAppRoutes = ({
     const canShowGroupsSection =
         isUserGroupsFeatureEnabled &&
         !!organization &&
-        hasActiveOrganizationKey &&
-        groupsCompatiblePlans.has(organization?.PlanName);
+        ((hasActiveOrganizationKey && canUseGroups(organization?.PlanName)) || (groups?.length ?? 0) > 0);
 
     const canShowUsersAndAddressesSection =
         // The user must have a plan that supports multi-user

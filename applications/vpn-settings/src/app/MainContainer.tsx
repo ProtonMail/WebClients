@@ -53,6 +53,7 @@ import {
     YourPlanSection,
     useActiveBreakpoint,
     useConvertExternalAddresses,
+    useGroups,
     useModalState,
     useOrganization,
     useSubscription,
@@ -94,6 +95,7 @@ const MainContainer: FunctionComponent = () => {
     const canDisplayB2BLogsVPN = useFlag('B2BLogsVPN');
     const isB2BAuthLogsEnabled = useFlag('B2BAuthenticationLogs');
     const showGatewaysForBundlePlan = useFlag('ShowGatewaysForBundlePlan');
+    const [groups, loadingGroups] = useGroups();
 
     const vpnRoutes = getRoutes({
         user,
@@ -109,6 +111,7 @@ const MainContainer: FunctionComponent = () => {
         canDisplayB2BLogsVPN,
         isB2BAuthLogsEnabled,
         showGatewaysForBundlePlan,
+        groups,
     });
     useConvertExternalAddresses();
     useUnprivatizeMembers();
@@ -220,7 +223,7 @@ const MainContainer: FunctionComponent = () => {
     const email = user.Email || userSettings?.Email?.Value;
 
     const redirect =
-        loadingSubscription || loadingOrganization ? (
+        loadingSubscription || loadingOrganization || loadingGroups ? (
             <PrivateMainAreaLoading />
         ) : (
             <Redirect
