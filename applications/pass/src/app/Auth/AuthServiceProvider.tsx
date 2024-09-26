@@ -95,7 +95,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 });
             } else {
                 await checkConnectivity?.();
-                return authService.init({ forceLock: true });
+                return authService.init({ forceLock: true, forcePersist: true });
             }
         };
 

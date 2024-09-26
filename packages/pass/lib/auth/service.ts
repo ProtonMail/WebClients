@@ -401,6 +401,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
 
                 /* If the clientKey resolution sequence triggered a refresh,
                  * make sure we persist the session with the new tokens */
+                session.lastUsedAt = getEpoch();
                 const syncedSession = syncAuthSession(session, authStore);
                 const encryptedSession = await encryptPersistedSessionWithKey(syncedSession, clientKey);
 
@@ -530,7 +531,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             const { offlineConfig, offlineKD } = await getOfflineComponents(password);
             await registerExtraPassword({ password });
 
-            // Clear biometrics
+            /* Clear biometrics */
             if (authStore.getLockMode() === LockMode.BIOMETRICS) {
                 authStore.setEncryptedOfflineKD(undefined);
                 authStore.setLockMode(LockMode.PASSWORD);

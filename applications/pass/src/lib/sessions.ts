@@ -1,15 +1,12 @@
 import { authStore, decodeUserData } from '@proton/pass/lib/auth/store';
 import type { SwitchableSession } from '@proton/pass/lib/auth/switch';
 import type { Maybe } from '@proton/pass/types/utils';
+import { first } from '@proton/pass/utils/array/first';
+import { sortOn } from '@proton/pass/utils/fp/sort';
 import { STORAGE_PREFIX } from '@proton/shared/lib/authentication/persistedSessionStorage';
 
 export const getSessionKey = (localId?: number) => `${STORAGE_PREFIX}${localId ?? 0}`;
 export const getStateKey = (state: string) => `f${state}`;
-
-export const getDefaultLocalID = (): Maybe<number> => {
-    const defaultKey = Object.keys(localStorage).find((key) => key.startsWith(STORAGE_PREFIX));
-    if (defaultKey) return parseInt(defaultKey.replace(STORAGE_PREFIX, ''), 10);
-};
 
 export const getPersistedSession = (localID: Maybe<number>) => {
     const encryptedSession = localStorage.getItem(getSessionKey(localID));
@@ -61,3 +58,6 @@ export const getAllLocalSessions = (): SwitchableSession[] =>
 
             return sessions;
         }, []);
+
+/** Resolves the most recent used localID */
+export const getDefaultLocalID = (): Maybe<number> => first(getAllLocalSessions().sort(sortOn('lastUsedAt')))?.LocalID;
