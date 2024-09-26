@@ -116,11 +116,11 @@
       "Create": [
         "Criar"
       ],
-      "Create a ${ BRAND_NAME } account": [
-        "Criar uma conta no ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Criar uma conta na ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Criar uma conta no ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
         "Criar um cofre para compartilhar"
@@ -1161,9 +1161,6 @@
       ],
       "Automatically copy the generated password to the clipboard": [
         "Copiar automaticamente a senha gerada para a área de transferência"
-      ],
-      "Autosaved on ${ payload.domain }": [
-        "Salvo automaticamente em ${ payload.domain }"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Antes de exportar seus dados com esse formato, abra as configurações do Safari -> guia “Geral” -> desative a opção “Abrir arquivos seguros após o download”. Isso evitará que o Safari extraia incorretamente o arquivo exportado."

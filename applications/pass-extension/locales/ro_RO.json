@@ -116,11 +116,11 @@
       "Create": [
         "Creare"
       ],
-      "Create a ${ BRAND_NAME } account": [
-        "Creare cont ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Creați un cont ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Creare cont ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
         "Creați un seif nou pentru partajare"
@@ -634,6 +634,9 @@
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } nu a putut fi analizat. ${ errorDetail }"
+      ],
+      "[Error] an item could not be parsed": [
+        "[Eroare] Un articol nu a putut fi analizat."
       ],
       "Alias could not be updated at the moment. Please try again later": [
         "Aliasurile nu au putut fi actualizate momentan. Reîncercați mai târziu."
@@ -1172,9 +1175,6 @@
       ],
       "Automatically copy the generated password to the clipboard": [
         "Copiați automat parola generată în memorie."
-      ],
-      "Autosaved on ${ payload.domain }": [
-        "Autosalvat la ${ payload.domain }"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Înainte de a vă exporta datele cu acest format, accesați Setări Safari -> fila „General” -> dezactivați opțiunea „Deschidere fișiere sigure după descărcare”. Acest lucru va împiedica Safari să extragă incorect fișierul exportat."
@@ -2552,6 +2552,9 @@
       ],
       "Type": [
         "Tip"
+      ],
+      "Unknown": [
+        "Necunoscut"
       ],
       "Unlock ${ PASS_APP_NAME }": [
         "Deblocare ${ PASS_APP_NAME }"
