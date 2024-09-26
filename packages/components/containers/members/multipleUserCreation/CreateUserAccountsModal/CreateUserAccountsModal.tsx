@@ -8,7 +8,6 @@ import validateAddUser from '@proton/account/members/validateAddUser';
 import { Button, Input } from '@proton/atoms';
 import {
     useApi,
-    useBeforeUnload,
     useEventManager,
     useGetAddresses,
     useGetOrganization,
@@ -32,6 +31,7 @@ import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import Marks from '@proton/components/components/text/Marks';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
+import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
