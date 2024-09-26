@@ -154,6 +154,124 @@ describe('$handleBeforeInputEvent', () => {
       })
     })
 
+    describe('Insert text next to insert-suggestion sibling', () => {
+      let paragraph: ParagraphNode
+      let suggestion: ProtonNode
+
+      beforeEach(async () => {
+        await update(() => {
+          paragraph = $createParagraphNode().append($createTextNode('Hello'))
+          suggestion = $createSuggestionNode('test', 'insert').append($createTextNode('World'))
+          paragraph.append(suggestion)
+          $getRoot().append(paragraph)
+        })
+      })
+
+      describe('Previous sibling', () => {
+        beforeEach(async () => {
+          await update(() => {
+            suggestion.selectEnd()
+            $handleBeforeInputEvent(
+              editor!,
+              {
+                inputType: 'insertText',
+                data: '!',
+                dataTransfer: null,
+              } as InputEvent,
+              onSuggestionCreation,
+            )
+          })
+        })
+
+        test('paragraph should only have 2 children', () => {
+          editor!.read(() => {
+            expect(paragraph.getChildrenSize()).toBe(2)
+            expect($isTextNode(paragraph.getFirstChild())).toBe(true)
+            expect($isSuggestionNode(paragraph.getLastChild())).toBe(true)
+          })
+        })
+
+        test('inserted text should be merged at the end', () => {
+          editor!.read(() => {
+            expect(suggestion.getTextContent()).toBe('World!')
+          })
+        })
+
+        test('selection should be at end of suggestion', () => {
+          editor!.read(() => {
+            const selection = $getSelection() as RangeSelection
+            expect($isRangeSelection(selection)).toBe(true)
+            expect(selection.isCollapsed()).toBe(true)
+            const suggestionTextNode = suggestion.getFirstChildOrThrow()
+            const focus = selection.focus.getNode()
+            expect(focus.is(suggestionTextNode)).toBe(true)
+            expect(selection.focus.offset).toBe(suggestionTextNode.getTextContentSize())
+          })
+        })
+      })
+
+      describe('Next sibling', () => {
+        beforeEach(async () => {
+          await update(() => {
+            suggestion.selectStart()
+            $handleBeforeInputEvent(
+              editor!,
+              {
+                inputType: 'insertText',
+                data: 'F',
+                dataTransfer: null,
+              } as InputEvent,
+              onSuggestionCreation,
+            )
+            $handleBeforeInputEvent(
+              editor!,
+              {
+                inputType: 'insertText',
+                data: 'o',
+                dataTransfer: null,
+              } as InputEvent,
+              onSuggestionCreation,
+            )
+            $handleBeforeInputEvent(
+              editor!,
+              {
+                inputType: 'insertText',
+                data: 'o',
+                dataTransfer: null,
+              } as InputEvent,
+              onSuggestionCreation,
+            )
+          })
+        })
+
+        test('paragraph should only have 2 children', () => {
+          editor!.read(() => {
+            expect(paragraph.getChildrenSize()).toBe(2)
+            expect($isTextNode(paragraph.getFirstChild())).toBe(true)
+            expect($isSuggestionNode(paragraph.getLastChild())).toBe(true)
+          })
+        })
+
+        test('inserted text should be merged at the start', () => {
+          editor!.read(() => {
+            expect(suggestion.getTextContent()).toBe('FooWorld')
+          })
+        })
+
+        test('selection should be after the inserted text', () => {
+          editor!.read(() => {
+            const selection = $getSelection() as RangeSelection
+            expect($isRangeSelection(selection)).toBe(true)
+            expect(selection.isCollapsed()).toBe(true)
+            const suggestionTextNode = suggestion.getFirstChildOrThrow()
+            const focus = selection.focus.getNode()
+            expect(focus.is(suggestionTextNode)).toBe(true)
+            expect(selection.focus.offset).toBe('Foo'.length)
+          })
+        })
+      })
+    })
+
     test('should insert text into existing insert suggestion and move selection accordingly', async () => {
       const suggestionID = 'test'
       await update(() => {
