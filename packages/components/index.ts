@@ -850,6 +850,7 @@ export { default as useApiResult } from './hooks/useApiResult';
 export { default as useAppTitle } from './hooks/useAppTitle';
 export { default as useAutocompleteAriaProps } from './hooks/useAutocompleteAriaProps';
 export { default as useBeforeUnload } from './hooks/useBeforeUnload';
+export { default as useCache } from './hooks/useCache';
 export { default as useCachedModelResult } from './hooks/useCachedModelResult';
 export { default as useElementBreakpoints } from './hooks/useElementBreakpoints';
 export { default as useNewFeatureOnboarding } from './hooks/useNewFeatureOnboarding';

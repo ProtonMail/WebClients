@@ -4,9 +4,8 @@ import { differenceInDays } from 'date-fns';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { ErrorBoundary, PassAliasesProvider, useAddresses, useUser } from '@proton/components';
+import { ErrorBoundary, PassAliasesProvider, useAddresses, useOrganization, useUser } from '@proton/components';
 import { useFolders, useLabels } from '@proton/components/hooks/useCategories';
-import { useOrganization } from '@proton/components/hooks/useOrganization';
 import useUserSettings from '@proton/components/hooks/useUserSettings';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';

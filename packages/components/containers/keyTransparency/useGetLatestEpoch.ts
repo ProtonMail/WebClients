@@ -6,7 +6,8 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { HOUR } from '@proton/shared/lib/constants';
 import type { GetLatestEpoch } from '@proton/shared/lib/interfaces';
 
-import { useApi, useCache } from '../../hooks';
+import { useApi } from '../../hooks';
+import useCache from '../../hooks/useCache';
 
 export const CACHE_KEY = 'KEY_TRANSPARENCY_EPOCH';
 
