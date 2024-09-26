@@ -1,4 +1,5 @@
 import { useUserInvitations } from '@proton/account/userInvitations/hooks';
+import { useCalendars } from '@proton/calendar/calendars/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import MozillaInfoPanel from '@proton/components/containers/account/MozillaInfoPanel';
 import SettingsSectionExtraWide from '@proton/components/containers/account/SettingsSectionExtraWide';
@@ -13,7 +14,6 @@ import clsx from '@proton/utils/clsx';
 
 import {
     useAddresses,
-    useCalendars,
     useLoad,
     useOrganization,
     usePlans,

@@ -4,7 +4,6 @@ export { default as useApi } from './useApi';
 export { default as useApiWithoutResult } from './useApiWithoutResult';
 export { default as useAuthentication } from './useAuthentication';
 export { default as useCache } from './useCache';
-export { default as useCalendars, useGetCalendars } from './useCalendars';
 export { default as useSubscribedCalendars } from './useSubscribedCalendars';
 export { default as useCalendarShareInvitations } from './useCalendarShareInvitations';
 export { default as useCalendarShareInvitationActions } from './useCalendarShareInvitationActions';
