@@ -587,6 +587,7 @@ export { default as OnboardingStep } from './containers/onboarding/OnboardingSte
 export { ONBOARDING_THEMES } from './containers/onboarding/constants';
 export { default as AuthenticationLogs } from './containers/organization/AuthenticationLogs';
 export { default as OrganizationGroupsManagementSection } from './containers/organization/groups/OrganizationGroupsManagementSection';
+export { default as canUseGroups } from './containers/organization/groups/canUseGroups';
 export { default as LightLabellingFeatureModal } from './containers/organization/logoUpload/LightLabellingFeatureModal';
 export { useOrganizationTheme } from './containers/organization/logoUpload/useOrganizationTheme';
 export { useShowLightLabellingFeatureModal } from './containers/organization/logoUpload/useShowLightLabellingFeatureModal';

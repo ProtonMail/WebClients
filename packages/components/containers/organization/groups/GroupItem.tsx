@@ -15,14 +15,17 @@ interface Props {
     onClick?: () => void;
     isNew?: boolean;
     onDeleteGroup?: () => void;
+    canOnlyDelete: boolean;
 }
 
 const GroupItem = ({
     active,
     groupData: { ID, MemberCount, Address: address, Name },
+    groupData: group,
     onClick,
     isNew,
     onDeleteGroup,
+    canOnlyDelete,
 }: Props) => {
     const api = useApi();
 
@@ -76,8 +79,10 @@ const GroupItem = ({
                     {!isNew && (
                         <div className="shrink-0">
                             <GroupItemMoreOptionsDropdown
+                                group={group}
                                 handleDeleteGroup={handleDeleteGroup}
                                 handleDeleteAllGroupMembers={handleDeleteAllGroupMembers}
+                                canOnlyDelete={canOnlyDelete}
                             />
                         </div>
                     )}
