@@ -35,6 +35,7 @@ export class ConnectionCloseReason extends ValueObject<ConnectionCloseReasonProp
     DOCUMENT_RECREATING: 3011,
     DOCUMENT_PARTICIPANT_LIMIT_REACHED: 3012,
     CLIENT_VERSION_NOT_SUPPORTED: 3013,
+    USER_PERMISSIONS_TO_DOCUMENT_CHANGED: 3014,
   }
 
   static messages: Record<number, string> = {
@@ -64,10 +65,12 @@ export class ConnectionCloseReason extends ValueObject<ConnectionCloseReasonProp
     [ConnectionCloseReason.CODES.TRAFFIC_ABUSE_MAX_DU_SIZE]: 'Traffic abuse: max DU size exceeded',
     [ConnectionCloseReason.CODES.KILL_SWITCH_ENABLED]: 'Server is not accepting new connection.',
     [ConnectionCloseReason.CODES.DOCUMENT_CAPACITY_REACHED]: 'Document capacity reached',
-    [ConnectionCloseReason.CODES.DOCUMENT_RECREATING]: 'Document is being recreated',
+    [ConnectionCloseReason.CODES.DOCUMENT_RECREATING]:
+      'We are optimizing your document. It will be available again in a moment.',
     [ConnectionCloseReason.CODES.DOCUMENT_PARTICIPANT_LIMIT_REACHED]: 'Document active participants limit reached',
     [ConnectionCloseReason.CODES.CLIENT_VERSION_NOT_SUPPORTED]:
       'Client version not supported. Please upgrade your client.',
+    [ConnectionCloseReason.CODES.USER_PERMISSIONS_TO_DOCUMENT_CHANGED]: 'User permissions to document changed',
   }
 
   static create(props: ConnectionCloseReasonProps): ConnectionCloseReason {
