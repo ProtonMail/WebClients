@@ -5,6 +5,7 @@ import type { API_KEY_SOURCE } from '../../constants';
 import type {
     Api,
     FetchedSignedKeyList,
+    KTUserContext,
     KeyTransparencyVerificationResult,
     ProcessedApiKey,
     VerifyOutboundPublicKeys,
@@ -61,12 +62,14 @@ export const getAndVerifyApiKeys = async ({
     skipVerificationOfExternalDomains = false,
     silence = false,
     noCache = false,
+    userContext,
 }: {
     api: Api;
     email: string;
     internalKeysOnly: boolean;
     /** KT verification function, or `null` for legacy use-case where KT is disabled */
     verifyOutboundPublicKeys: VerifyOutboundPublicKeys | null;
+    userContext?: KTUserContext;
     /** Optimisations _only_ for apps where users with external domains do not have valid keys (e.g. Mail) */
     skipVerificationOfExternalDomains?: boolean;
     silence?: boolean;
@@ -97,12 +100,14 @@ export const getAndVerifyApiKeys = async ({
     const unverifiedKeys = Unverified ? await importKeys(Unverified.Keys, true) : undefined;
     const catchAllKeys = CatchAll ? await importKeys(CatchAll.Keys) : undefined;
     const ktResult = verifyOutboundPublicKeys
-        ? await verifyOutboundPublicKeys(
+        ? await verifyOutboundPublicKeys({
+              userContext,
+              api,
               email,
               skipVerificationOfExternalDomains,
-              { keyList: addressKeys, signedKeyList: Address.SignedKeyList },
-              CatchAll ? { keyList: catchAllKeys!, signedKeyList: CatchAll.SignedKeyList } : undefined
-          )
+              address: { keyList: addressKeys, signedKeyList: Address.SignedKeyList },
+              catchAll: CatchAll ? { keyList: catchAllKeys!, signedKeyList: CatchAll.SignedKeyList } : undefined,
+          })
         : {};
     return {
         Address,

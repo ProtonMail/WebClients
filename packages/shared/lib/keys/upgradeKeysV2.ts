@@ -225,12 +225,13 @@ export const upgradeV2KeysV2 = async ({
                 },
                 [[], []]
             );
-            const [signedKeyList, onSKLPublishSuccess] = await createSignedKeyListForMigration(
+            const [signedKeyList, onSKLPublishSuccess] = await createSignedKeyListForMigration({
+                api,
                 address,
                 decryptedKeys,
                 keyTransparencyVerify,
-                keyMigrationKTVerifier
-            );
+                keyMigrationKTVerifier,
+            });
             return {
                 address,
                 addressKeys,

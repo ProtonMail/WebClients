@@ -13,13 +13,14 @@ import { setupKeys } from '../api/keys';
 import type {
     Address,
     Api,
-    KeyTransparencyActivation,
+    KTUserContext,
     MemberInvitationData,
     MemberReadyForUnprivatization,
     MemberUnprivatization,
     MemberUnprivatizationOutput,
     MemberUnprivatizationReadyForUnprivatization,
     MemberUnprivatizationReadyForUnprivatizationApproval,
+    PreAuthKTVerifier,
     PrivateMemberUnprivatizationOutput,
     PublicMemberUnprivatizationOutput,
     Unwrap,
@@ -27,7 +28,6 @@ import type {
     VerifyOutboundPublicKeys,
 } from '../interfaces';
 import { MemberUnprivatizationState } from '../interfaces';
-import { createPreAuthKTVerifier } from '../keyTransparency';
 import { srpVerify } from '../srp';
 import { generateKeySaltAndPassphrase } from './keys';
 import { getVerifiedPublicKeys, validateOrganizationKeySignature } from './organizationKeys';
@@ -190,6 +190,14 @@ export const parseUnprivatizationData = async ({
               invitationAddress: Address;
           };
       }
+    | {
+          type: 'gsso';
+          payload: {
+              orgPublicKey: PublicKeyReference;
+              unprivatizationData: PublicMemberUnprivatizationOutput;
+              invitationAddress: Address;
+          };
+      }
 > => {
     if (unprivatizationData.PrivateIntent) {
         return {
@@ -200,9 +208,24 @@ export const parseUnprivatizationData = async ({
         };
     }
     const { OrgPublicKey, InvitationData } = unprivatizationData;
-    const invitationData = parseInvitationData(InvitationData);
     const orgPublicKey = await CryptoProxy.importPublicKey({ armoredKey: OrgPublicKey });
 
+    if (InvitationData === null) {
+        const invitationAddress = addresses.at(0);
+        if (!invitationAddress) {
+            throw new Error('Invalid invitation address');
+        }
+        return {
+            type: 'gsso',
+            payload: {
+                orgPublicKey,
+                invitationAddress,
+                unprivatizationData,
+            },
+        };
+    }
+
+    const invitationData = parseInvitationData(InvitationData);
     const invitationEmail = invitationData.Address;
 
     const invitationAddress = addresses.find(({ Email }) => Email === invitationEmail);
@@ -225,11 +248,13 @@ export type ParsedUnprivatizationData = Unwrap<ReturnType<typeof parseUnprivatiz
 export const validateUnprivatizationData = async ({
     api,
     verifyOutboundPublicKeys,
+    userContext,
     parsedUnprivatizationData,
     options,
 }: {
     api: Api;
     verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
+    userContext: KTUserContext | undefined;
     parsedUnprivatizationData: ParsedUnprivatizationData;
     options: Parameters<typeof validateInvitationDataValues>[0]['options'];
 }) => {
@@ -240,13 +265,13 @@ export const validateUnprivatizationData = async ({
     const {
         orgPublicKey,
         unprivatizationData: { AdminEmail, InvitationData, InvitationSignature, OrgKeyFingerprintSignature },
-        invitationData,
         invitationAddress,
     } = parsedUnprivatizationData.payload;
     const verifiedPublicKeysResult = await getVerifiedPublicKeys({
         api,
         verifyOutboundPublicKeys,
         email: AdminEmail,
+        userContext,
     }).catch(noop);
     if (!verifiedPublicKeysResult) {
         throw new Error('Unable to fetch public keys of admin');
@@ -260,11 +285,18 @@ export const validateUnprivatizationData = async ({
         verificationKeys: verifiedPublicKeys,
     });
 
+    // There is no invitation data in the global sso case so we can stop here
+    if (parsedUnprivatizationData.type === 'gsso') {
+        return;
+    }
+
     await validateInvitationData({
         textData: InvitationData,
         armoredSignature: InvitationSignature,
         verificationKeys: [orgPublicKey],
     });
+
+    const invitationData = parsedUnprivatizationData.payload.invitationData;
 
     await validateInvitationDataValues({
         invitationAddress,
@@ -307,28 +339,25 @@ export const acceptUnprivatization = async ({
 };
 
 export const setupKeysWithUnprivatization = async ({
-    user,
     addresses,
     api,
     password,
     parsedUnprivatizationData,
-    ktActivation,
+    preAuthKTVerifier,
 }: {
     user: User;
     addresses: Address[];
     api: Api;
     password: string;
     parsedUnprivatizationData: ParsedUnprivatizationData;
-    ktActivation: KeyTransparencyActivation;
+    preAuthKTVerifier: PreAuthKTVerifier;
 }) => {
     const { passphrase, salt } = await generateKeySaltAndPassphrase(password);
-
-    const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(ktActivation, api);
 
     const { privateKeys, userKeyPayload, addressKeysPayload, onSKLPublishSuccess } = await getResetAddressesKeysV2({
         addresses,
         passphrase,
-        preAuthKTVerify,
+        preAuthKTVerify: preAuthKTVerifier.preAuthKTVerify,
     });
 
     if (!privateKeys || !userKeyPayload || !addressKeysPayload) {
@@ -337,7 +366,7 @@ export const setupKeysWithUnprivatization = async ({
 
     const product = 'generic';
 
-    if (parsedUnprivatizationData.type === 'public') {
+    if (parsedUnprivatizationData.type === 'public' || parsedUnprivatizationData.type === 'gsso') {
         const { orgPublicKey } = parsedUnprivatizationData.payload;
         const token = generateActivationToken();
         const primaryUserKey = privateKeys.userKey;
@@ -385,7 +414,9 @@ export const setupKeysWithUnprivatization = async ({
 
     await onSKLPublishSuccess();
 
-    await preAuthKTCommit(user.ID);
+    return {
+        passphrase,
+    };
 };
 
 export const reencryptAddressKeyToken = async ({

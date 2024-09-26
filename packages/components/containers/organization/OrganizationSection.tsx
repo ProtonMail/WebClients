@@ -242,7 +242,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
                                                     Domains: string[];
                                                 }>(queryAvailableDomains('signup')).then(({ Domains }) => Domains),
                                             ]);
-                                            const preAuthKTVerifier = createPreAuthKTVerifier(ktActivation, api);
+                                            const preAuthKTVerifier = createPreAuthKTVerifier(ktActivation);
                                             const passphrase = await handleSetupAddressKeys({
                                                 addresses,
                                                 api,
@@ -259,7 +259,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
                                                 clearKeyPassword: credentials.password,
                                                 User: user,
                                             });
-                                            await preAuthKTVerifier.preAuthKTCommit(user.ID);
+                                            await preAuthKTVerifier.preAuthKTCommit(user.ID, api);
                                         }
 
                                         createModal(<SetupOrganizationModal />);

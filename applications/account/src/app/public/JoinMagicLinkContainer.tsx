@@ -3,21 +3,18 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
-import { Icon, useKTActivation } from '@proton/components';
+import { Icon, useConfig, useKTActivation } from '@proton/components';
 import { InputFieldTwo, PasswordInputTwo, useFormErrors } from '@proton/components';
 import type { OnLoginCallback } from '@proton/components/containers';
 import { GenericError } from '@proton/components/containers';
 import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
-import { AuthStep } from '@proton/components/containers/login/interface';
+import { AuthStep, AuthType } from '@proton/components/containers/login/interface';
 import { handleLogin, handleNextLogin } from '@proton/components/containers/login/loginActions';
 import { useApi, useErrorHandler, useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
-import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { authJwt } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAuthAPI, getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { queryMemberUnprivatizationInfo } from '@proton/shared/lib/api/members';
-import { getOrganization, getOrganizationLogo, getOrganizationSettings } from '@proton/shared/lib/api/organization';
 import { getUser } from '@proton/shared/lib/api/user';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getToAppFromSubscribed } from '@proton/shared/lib/authentication/apps';
@@ -29,20 +26,15 @@ import {
     getMinPasswordLengthMessage,
     passwordLengthValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import type {
-    Address,
-    Api,
-    MemberUnprivatizationOutput,
-    Organization,
-    OrganizationSettings,
-    User,
-} from '@proton/shared/lib/interfaces';
+import type { Address, Api, Organization, User } from '@proton/shared/lib/interfaces';
+import { createPreAuthKTVerifier } from '@proton/shared/lib/keyTransparency';
 import type { ParsedUnprivatizationData } from '@proton/shared/lib/keys/unprivatization';
 import {
     parseUnprivatizationData,
     setupKeysWithUnprivatization,
     validateUnprivatizationData,
 } from '@proton/shared/lib/keys/unprivatization';
+import { getUnprivatizationContextData } from '@proton/shared/lib/keys/unprivatization/helper';
 
 import { getTerms } from '../signup/terms';
 import ExpiredError from './ExpiredError';
@@ -69,6 +61,7 @@ const JoinMagicLinkContainer = ({ onLogin, onUsed, toApp, productParam }: Props)
     const api = useApi();
     const silentApi = getSilentApi(api);
     const [error, setError] = useState<{ type: ErrorType } | null>(null);
+    const { APP_NAME: appName } = useConfig();
     const { validator, onFormSubmit } = useFormErrors();
     const handleError = useErrorHandler();
     const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
@@ -105,25 +98,19 @@ const JoinMagicLinkContainer = ({ onLogin, onUsed, toApp, productParam }: Props)
             const authApi = getAuthAPI(UID, AccessToken, silentApi);
 
             const prepareData = async () => {
-                const [user, organization, organizationLogoUrl, addresses, unprivatizationData] = await Promise.all([
-                    authApi<{ User: User }>(getUser()).then(({ User }) => User),
-                    authApi<{ Organization: Organization }>(getOrganization()).then(({ Organization }) => Organization),
-                    authApi<OrganizationSettings>(getOrganizationSettings())
-                        .then(async ({ LogoID }): Promise<null | string> => {
-                            if (!LogoID) {
-                                return null;
-                            }
-                            const result = await authApi<Blob>({ ...getOrganizationLogo(LogoID), output: 'blob' });
-                            return URL.createObjectURL(result);
-                        })
-                        .catch(() => {
-                            return null;
-                        }),
-                    getAllAddresses(authApi),
-                    authApi<MemberUnprivatizationOutput>(queryMemberUnprivatizationInfo()),
-                ]);
+                const [user, { organization, organizationLogoUrl, addresses, data: unprivatizationData }] =
+                    await Promise.all([
+                        authApi<{ User: User }>(getUser()).then(({ User }) => User),
+                        getUnprivatizationContextData({ api: authApi }),
+                    ]);
                 const parsedUnprivatizationData = await parseUnprivatizationData({ unprivatizationData, addresses });
                 await validateUnprivatizationData({
+                    userContext: {
+                        appName,
+                        getUser: async () => user,
+                        getUserKeys: async () => [], // User keys do not exist in this case
+                        getAddressKeys: async () => [], // Address keys do not exist in this context
+                    },
                     api: authApi,
                     verifyOutboundPublicKeys,
                     parsedUnprivatizationData,
@@ -180,13 +167,14 @@ const JoinMagicLinkContainer = ({ onLogin, onUsed, toApp, productParam }: Props)
             throw new Error('missing data');
         }
         const { user, authApi, addresses, parsedUnprivatizationData } = dataRef.current;
+        const preAuthKTVerifier = createPreAuthKTVerifier(ktActivation);
         await setupKeysWithUnprivatization({
             user,
             api: authApi,
             addresses,
             password: newPassword,
             parsedUnprivatizationData,
-            ktActivation,
+            preAuthKTVerifier,
         });
 
         const username = addresses?.[0]?.Email;
@@ -204,6 +192,8 @@ const JoinMagicLinkContainer = ({ onLogin, onUsed, toApp, productParam }: Props)
             api: silentApi,
         });
 
+        await preAuthKTVerifier.preAuthKTCommit(user.ID, silentApi);
+
         const result = await handleNextLogin({
             api: silentApi,
             appName: APPS.PROTONACCOUNT,
@@ -214,9 +204,11 @@ const JoinMagicLinkContainer = ({ onLogin, onUsed, toApp, productParam }: Props)
             username: data.username,
             password: data.password,
             persistent: data.persistent,
+            authType: AuthType.SRP,
             authResponse: initialLoginResult.authResult.result,
             authVersion: initialLoginResult.authResult.authVersion,
             productParam,
+            verifyOutboundPublicKeys,
         });
         if (result.to === AuthStep.DONE) {
             const subscribedToApp = toApp || getToAppFromSubscribed(user);
@@ -250,7 +242,7 @@ const JoinMagicLinkContainer = ({ onLogin, onUsed, toApp, productParam }: Props)
 
     const data = dataRef.current;
     const { adminEmail, username, organizationName } = ((): {
-        type: 'public' | 'private';
+        type: 'public' | 'private' | 'gsso';
         adminEmail: string;
         username: string;
         organizationName: string;

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
+import { useGetKTActivation } from '@proton/components/containers/keyTransparency/useKTActivation';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import { serverTime, wasServerTimeEverUpdated } from '@proton/crypto';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
@@ -17,7 +17,7 @@ import {
     migrateUser,
     updateActiveKeys,
 } from '@proton/shared/lib/keys';
-import { useFlag } from '@proton/unleash';
+import { useGetFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import {
@@ -52,8 +52,8 @@ const KeyBackgroundManager = ({
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(silentApi, getUser);
-    const ktActivation = useKTActivation();
-    const runActiveKeysCheckFlag = useFlag('CryptoDisableUndecryptableKeys');
+    const getKTActivation = useGetKTActivation();
+    const getFlag = useGetFlag();
 
     useEffect(() => {
         const run = async () => {
@@ -120,7 +120,8 @@ const KeyBackgroundManager = ({
 
             const keyPassword = authentication.getPassword();
             let hasMigratedAddressKeys = getHasMigratedAddressKeys(addresses);
-            const keyMigrationKTVerifier = createKeyMigrationKTVerifier(ktActivation, silentApi);
+            const ktActivation = await getKTActivation();
+            const keyMigrationKTVerifier = createKeyMigrationKTVerifier(ktActivation);
 
             const hasDoneMigration = await migrateUser({
                 api: silentApi,
@@ -155,6 +156,7 @@ const KeyBackgroundManager = ({
         };
 
         const runActiveKeysCheck = async () => {
+            const runActiveKeysCheckFlag = getFlag('CryptoDisableUndecryptableKeys');
             if (!runActiveKeysCheckFlag) {
                 return;
             }
