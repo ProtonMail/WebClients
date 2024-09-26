@@ -4,7 +4,10 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
-import { getScribeUpsellLearnMore, getScribeUpsellText } from '@proton/components/containers';
+import {
+    getScribeUpsellLearnMore,
+    getScribeUpsellText,
+} from '@proton/components/containers/payments/subscription/assistant/helpers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { Plan } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';

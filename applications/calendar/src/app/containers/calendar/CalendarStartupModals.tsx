@@ -5,12 +5,12 @@ import {
     CancellationReminderModal,
     LightLabellingFeatureModal,
     getShouldOpenReferralModal,
+    shouldOpenReminderModal,
     useModalState,
     useShowLightLabellingFeatureModal,
     useSubscription,
 } from '@proton/components';
 import type { ReminderFlag } from '@proton/components/containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
-import { shouldOpenReminderModal } from '@proton/components/containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
 import { FeatureCode, useFeature } from '@proton/features';
 import { OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';

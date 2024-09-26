@@ -1,7 +1,6 @@
 import './typings/css.d';
 import './typings/index.d';
 
-export * from './containers';
 export * from './hooks';
 
 export { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
@@ -165,6 +164,8 @@ export { default as SearchInput } from './components/input/SearchInput';
 export { default as TextArea } from './components/input/TextArea';
 export { default as TimeInput } from './components/input/TimeInput';
 export { default as useDebounceInput } from './components/input/useDebounceInput';
+export { default as InputFieldStacked } from './components/inputFieldStacked/InputFieldStacked';
+export { default as InputFieldStackedGroup } from './components/inputFieldStacked/InputFieldStackedGroup';
 export { default as Label } from './components/label/Label';
 export { default as LabelStack } from './components/labelStack/LabelStack';
 export { default as AppLink } from './components/link/AppLink';
@@ -742,6 +743,43 @@ export { OtherMailPreferencesSection } from './containers/otherMailPreferences/O
 export { default as IndexSection } from './containers/overview/IndexSection';
 export { default as SummarySection } from './containers/overview/SummarySection';
 export { default as AuthModal } from './containers/password/AuthModal';
+export { default as Alert3ds } from './containers/payments/Alert3ds';
+export { default as CreditsSection } from './containers/payments/CreditsSection';
+export { default as CurrencySelector } from './containers/payments/CurrencySelector';
+export { default as CycleSelector } from './containers/payments/CycleSelector';
+export { default as GiftCodeSection } from './containers/payments/GiftCodeSection';
+export { default as PaymentMethodSelector } from './containers/payments/methods/PaymentMethodSelector';
+export { default as PaymentMethodsSection } from './containers/payments/methods/PaymentMethodsSection';
+export { default as PayPalButton } from './containers/payments/PayPalButton';
+export { default as PlansSection } from './containers/payments/PlansSection';
+export { getBlackFridayRenewalNoticeText, getCheckoutRenewNoticeText } from './containers/payments/RenewalNotice';
+export { default as StyledPayPalButton } from './containers/payments/StyledPayPalButton';
+export { default as AssistantIncompatibleBrowserModal } from './containers/payments/subscription/assistant/AssistantIncompatibleBrowserModal';
+export { default as AssistantIncompatibleHardwareModal } from './containers/payments/subscription/assistant/AssistantIncompatibleHardwareModal';
+export { default as AssistantToggle } from './containers/payments/subscription/assistant/AssistantToggle';
+export { default as AutomaticSubscriptionModal } from './containers/payments/subscription/AutomaticSubscriptionModal';
+export { CancellationReminderSection } from './containers/payments/subscription/cancellationFlow/CancellationReminderSection';
+export { shouldOpenReminderModal } from './containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
+export { default as CancellationReminderModal } from './containers/payments/subscription/cancellationReminder/CancellationReminderModal';
+export { CancelSubscriptionSection } from './containers/payments/subscription/cancelSubscription';
+export { default as CancelSubscriptionViaSupportSection } from './containers/payments/subscription/cancelSubscriptionViaSupport/CancelSubscriptionViaSupportSection';
+export { SUBSCRIPTION_STEPS } from './containers/payments/subscription/constants';
+export { default as SubscriptionCheckoutCycleItem } from './containers/payments/subscription/cycle-selector/SubscriptionCheckoutCycleItem';
+export { default as SubscriptionCycleSelector } from './containers/payments/subscription/cycle-selector/SubscriptionCycleSelector';
+export { default as DowngradeSubscriptionSection } from './containers/payments/subscription/DowngradeSubscriptionSection';
+export { default as PlanSelection } from './containers/payments/subscription/PlanSelection';
+export {
+    default as SubscriptionModalProvider,
+    useSubscriptionModal,
+} from './containers/payments/subscription/SubscriptionModalProvider';
+export type {
+    OpenCallbackProps,
+    OpenSubscriptionModalCallback,
+} from './containers/payments/subscription/SubscriptionModalProvider';
+export { default as UpgradeVpnSection } from './containers/payments/subscription/UpgradeVpnSection';
+export { default as YourPlanSection } from './containers/payments/subscription/YourPlanSection';
+export { default as YourStorageSection } from './containers/payments/subscription/YourStorageSection';
+export { default as SubscriptionsSection } from './containers/payments/SubscriptionsSection';
 export { default as CrashReportsToggle } from './containers/privacy/CrashReportsToggle';
 export { default as PrivacySection } from './containers/privacy/PrivacySection';
 export { default as TelemetryToggle } from './containers/privacy/TelemetryToggle';

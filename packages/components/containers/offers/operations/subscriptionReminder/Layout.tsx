@@ -1,6 +1,6 @@
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments';
+import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { APPS, APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 

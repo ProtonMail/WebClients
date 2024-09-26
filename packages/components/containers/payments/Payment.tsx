@@ -35,7 +35,8 @@ import CreditCard from './CreditCard';
 import PayPalView from './PayPalView';
 import Bitcoin from './bitcoin/Bitcoin';
 import BitcoinInfoMessage from './bitcoin/BitcoinInfoMessage';
-import { PaymentMethodDetails, PaymentMethodSelector } from './methods';
+import PaymentMethodDetails from './methods/PaymentMethodDetails';
+import PaymentMethodSelector from './methods/PaymentMethodSelector';
 import { BILLING_ADDRESS_VALID, type BillingAddressStatus } from './subscription/helpers';
 
 export interface Props {

@@ -12,6 +12,7 @@ import {
     MailLogo,
     PassLogo,
     ProtonLogo,
+    SUBSCRIPTION_STEPS,
     Tooltip,
     VpnLogo,
     useOrganization,
@@ -22,7 +23,6 @@ import {
 import PaymentSwitcher from '@proton/components/containers/payments/PaymentSwitcher';
 import { InAppText } from '@proton/components/containers/payments/subscription/InAppPurchaseModal';
 import SubscriptionContainer from '@proton/components/containers/payments/subscription/SubscriptionContainer';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { type PaymentMethodStatusExtended } from '@proton/payments';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';

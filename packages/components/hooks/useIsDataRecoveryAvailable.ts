@@ -1,4 +1,5 @@
-import { useIsRecoveryFileAvailable } from './recoveryFile';
+import useIsRecoveryFileAvailable from '@proton/components/hooks/recoveryFile/useIsRecoveryFileAvailable';
+
 import useIsMnemonicAvailable from './useIsMnemonicAvailable';
 
 const useIsDataRecoveryAvailable = () => {

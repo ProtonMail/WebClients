@@ -98,7 +98,7 @@ import { RenewalEnableNote } from './RenewalEnableNote';
 import SubscriptionSubmitButton from './SubscriptionSubmitButton';
 import { useCancelSubscriptionFlow } from './cancelSubscription';
 import { SUBSCRIPTION_STEPS } from './constants';
-import { SubscriptionCheckoutCycleItem } from './cycle-selector';
+import SubscriptionCheckoutCycleItem from './cycle-selector/SubscriptionCheckoutCycleItem';
 import SubscriptionCycleSelector from './cycle-selector/SubscriptionCycleSelector';
 import type { SelectedProductPlans } from './helpers';
 import { exclude24Months, getAutoCoupon, getDefaultSelectedProductPlans } from './helpers';
