@@ -1,25 +1,20 @@
 .pass-onboarding-button {
 	--gradient-start: 100% 800%;
 	--gradient-end: 20% 280%;
+	--onboarding-padding-color-1: var(--background-strong);
+	--onboarding-padding-color-2: var(--background-strong);
+	--onboarding-border-color-1: #9834ff;
+	--onboarding-border-color-2: #fcd38d;
 
 	& &--gradient {
 		color: var(--text-norm);
 		border-radius: var(--border-radius-md);
 		padding: 1px;
-		background: radial-gradient(
-				var(--gradient-start) at var(--gradient-end),
-				#ffd580 0%,
-				#f6c592 9.37%,
-				#ebb6a2 20.5%,
-				#dfa5af 32.45%,
-				#d397be 42.87%,
-				#c486cb 53.37%,
-				#b578d9 64.87%,
-				#a166e5 77.12%,
-				#8b57f2 89.12%,
-				#704cff 100%
-			),
-			linear-gradient(267.92deg, rgb(246 197 146 / 0.7) 9.8%, rgb(167 121 255 / 0.7) 91.9%), #30284a;
+		border: 1px solid transparent;
+		background:
+			linear-gradient(to right, var(--onboarding-padding-color-1), var(--onboarding-padding-color-2)) padding-box,
+			linear-gradient(87.72deg, var(--onboarding-border-color-1) 0.25%, var(--onboarding-border-color-2) 100%)
+				border-box;
 
 		&:hover {
 			--gradient-start: 100% 600%;
@@ -28,24 +23,13 @@
 
 		> button {
 			border-radius: var(--border-radius-md);
-			color: var(--text-norm);
-			background: var(--backdrop-norm);
-		}
-
-		svg {
-			color: var(--text-norm);
 		}
 	}
 
 	& &--active {
-		color: var(--interaction-norm-contrast);
-
-		> button {
-			background: transparent;
-		}
-
-		svg {
-			color: var(--interaction-norm-contrast);
-		}
+		--onboarding-padding-color-1: #f6c59233;
+		--onboarding-padding-color-2: #a779ff33;
+		--onboarding-border-color-1: #9a34ff71;
+		--onboarding-border-color-2: #fcd38d76;
 	}
 }
