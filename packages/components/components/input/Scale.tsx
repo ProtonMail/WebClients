@@ -2,10 +2,10 @@ import type { ChangeEvent, ComponentPropsWithoutRef } from 'react';
 
 import type { InputButtonProps } from '@proton/components/components/input/InputButton';
 import InputButton from '@proton/components/components/input/InputButton';
+import { concatStringProp } from '@proton/components/helpers/component';
 import clsx from '@proton/utils/clsx';
 import range from '@proton/utils/range';
 
-import { concatStringProp } from '../../helpers';
 import useUid from '../../hooks/useUid';
 import ScaleLabel from './ScaleLabel';
 
