@@ -219,6 +219,9 @@
       "Click here.": [
         "Klik di sini."
       ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "Klik untuk menyalin ${ defaultEmailAddress } ke papan klip"
+      ],
       "Close": [
         "Tutup"
       ],
@@ -1322,6 +1325,9 @@
       ],
       "Use recovery code": [
         "Gunakan kode pemulihan"
+      ],
+      "Use this": [
+        "Gunakan tema ini"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Gunakan mouse Anda untuk mengatur ukuran layar. Apabila Anda menggunakan keyboard, Anda juga dapat menggunakan tombol panah kiri dan panah kanan untuk mengatur ukuran layar."
@@ -3477,6 +3483,9 @@
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Tingkatkan akun Anda untuk mengaktifkan ${ PROTON_SENTINEL_NAME }, solusi keamanan mutakhir berbasis AI kami dengan dukungan ahli yang tersedia 24/7."
+      ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "Gunakan ${ MAIL_APP_NAME } untuk masuk ke berbagai layanan onlin karena (tidak seperti layanan penyedia email lainnya) kami tidak akan pernah melacak data Anda dan membagikan data ini dengan pihak ketiga."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Seret-lepas untuk mengurutkan prioritas penggabungan kontak. Tandai kontak yang ingin digabung."
@@ -5916,9 +5925,6 @@
       "Contact assigned to group ${ contactGroupName }": [
         "Kontak ditetapkan ke grup ${ contactGroupName }"
       ],
-      "Contact unassigned to group ${ contactGroupName }": [
-        "Kontak tidak lagi ditetapkan ke grup ${ contactGroupName }"
-      ],
       "Copied to clipboard": [
         "Disalin ke papan klip"
       ],
@@ -6071,6 +6077,9 @@
       ],
       "Email address": [
         "Alamat email"
+      ],
+      "Email copied to clipboard": [
+        "Email disalin ke papan klip"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Layanan hosting email gratis untuk domain khusus terbatas hanya pada 10 domain. Anda dapat membeli domain tambahan dengan harga ${ price } per domainnya."
@@ -6617,6 +6626,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
+      ],
+      "Remember to update this in your password manager or wherever you keep your account and login information.": [
+        "Jangan lupa untuk memperbarui rincian ini pada pengelola kata sandi Anda atau di mana pun itu Anda menyimpan informasi akun dan entri masuk Anda."
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Menghapus seluruh data yang terhubung dengan aplikasi ini (yang meliputi pesan yang diunduh, …)"
@@ -7846,6 +7858,9 @@
       ],
       "Don't like the style": [
         "Tidak suka gayanya"
+      ],
+      "Don't show again": [
+        "Jangan tampilkan lagi"
       ],
       "Don't show this again": [
         "Jangan tampilkan lagi"
@@ -9731,7 +9746,33 @@
         "Tentukan apa-apa saja yang akan dapat diakses oleh ${ BRAND_NAME }: melihat isi pesan dan pengaturan email Anda, melihat dan mengunduh kontak Anda, serta melihat dan mengunduh seluruh agenda yang Anda akses dari Google Agenda."
       ]
     },
+    "Onboarding List Placeholder": {
+      "Finance": [
+        "Keuangan"
+      ],
+      "I have moved my logins to ${ BRAND_NAME }": [
+        "Saya telah memindahkan entri masuk saya ke ${ BRAND_NAME }"
+      ],
+      "Privacy for all your online accounts": [
+        "Privasi untuk seluruh akun online Anda"
+      ]
+    },
     "Onboarding modal": {
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "${ advancedEncryptionTitle } memastikan bahwa hanya Anda dan para penerima yang dapat mengakses email Anda."
+      ],
+      "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
+        "${ protectionFromTrackersTitle } berarti bahwa Anda tidak akan lagi diikuti di internet."
+      ],
+      "Activate premium features": [
+        "Aktifkan fitur premium"
+      ],
+      "Advanced encryption": [
+        "Enkripsi tingkat lanjut"
+      ],
+      "App Store": [
+        "App Store"
+      ],
       "Automatically forward emails": [
         "Teruskan email secara otomatis"
       ],
@@ -9744,6 +9785,12 @@
       "Congratulations on choosing privacy": [
         "Selamat karena telah memilih privasi"
       ],
+      "Dark Web Monitoring": [
+        "Pemantauan Dark Web"
+      ],
+      "Download the desktop app": [
+        "Unduh aplikasi desktop"
+      ],
       "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
         "Enkripsi yang teramat kuat, sampai-sampai hanya Anda dan para penerima yang dapat membaca isi email Anda. ${ kbLinkEncryption }"
       ],
@@ -9752,6 +9799,27 @@
       ],
       "Forward Gmail messages to your inbox.": [
         "Teruskan pesan Gmail ke kotak masuk Anda."
+      ],
+      "Get notified if your password is compromised.": [
+        "Dapatkan notifikasi pada saat kata sandi Anda dibocorkan."
+      ],
+      "Google Play": [
+        "Google Play"
+      ],
+      "Industry-leading spam protection": [
+        "Perlindungan spam yang terdepan di industri"
+      ],
+      "Let's get started": [
+        "Mari kita mulai"
+      ],
+      "Make the most of your paid plan.": [
+        "Maksimalkan paket berbayar Anda."
+      ],
+      "Maybe later": [
+        "Mungkin nanti"
+      ],
+      "More ways to experience ${ MAIL_APP_NAME }": [
+        "Lebih banyak cara untuk merasakan pengalaman ${ MAIL_APP_NAME }"
       ],
       "Next": [
         "Berikutnya"
@@ -9762,16 +9830,34 @@
       "Skip": [
         "Lewati"
       ],
+      "Start using ${ BRAND_NAME }": [
+        "Mulai gunakan ${ BRAND_NAME }"
+      ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "Kami menghentikan para pengiklan dan pengumpul data untuk dapat memprofil Anda. ${ kbLinkPrivacy }"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Selamat datang di ${ MAIL_APP_NAME }"
+      ],
+      "Where privacy is default.": [
+        "Di mana privasi merupakan hal yang baku."
       ]
     },
     "Onboarding Proton": {
+      "Choose your preferred look and feel.": [
+        "Pilih tampilan dan nuansa yang Anda kehendaki."
+      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Atur organisasi Anda, tautkan nama domain Anda, dan buat akun untuk memastikan seluruh anggota organisasi Anda terlindungi."
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Telusuri seluruh layanan ${ BRAND_NAME }"
+      ],
+      "Link your domain name and create accounts for all members of your organization.": [
+        "Tautkan nama domain Anda dan buat akun untuk seluruh anggota organisasi Anda."
+      ],
+      "Make it your own": [
+        "Jadikan aplikasi ini milik Anda"
       ],
       "Pick a theme": [
         "Pilih tema"
@@ -10960,6 +11046,17 @@
       ],
       "Unsubscribed": [
         "Langganan dihentikan"
+      ]
+    },
+    "Step": {
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "Masukkan alamat ${ MAIL_APP_NAME } Anda sebagai alamat yang baru, lalu simpan, konfirmasi, atau verifikasi perubahan ini"
+      ],
+      "Select service to update": [
+        "Pilih layanan untuk diperbarui"
+      ],
+      "Sign in to the service": [
+        "Masuk ke layanan"
       ]
     },
     "Step in filter modal": {
@@ -12297,6 +12394,9 @@
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Sembunyikan email Anda dengan ${ PASS_APP_NAME }"
+      ],
+      "How to update your email address": [
+        "Cara untuk memperbarui alamat email Anda"
       ],
       "Human verification": [
         "Verifikasi manusia"

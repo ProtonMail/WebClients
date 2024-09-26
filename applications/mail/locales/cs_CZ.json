@@ -222,6 +222,9 @@
       "Click here.": [
         "Klikněte zde."
       ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "Kliknutím zkopírujete ${ defaultEmailAddress } do schránky"
+      ],
       "Close": [
         "Zavřít"
       ],
@@ -1334,6 +1337,9 @@
       ],
       "Use recovery code": [
         "Použít kód pro obnovení"
+      ],
+      "Use this": [
+        "Použít toto"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Pomocí myši změňte velikost zobrazení. Pokud používáte klávesnici, můžete ke změně velikosti použít klávesy se šipkami doleva a doprava."
@@ -3535,6 +3541,9 @@
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Navyšte svůj účet a aktivujte ${ PROTON_SENTINEL_NAME }, naše špičkové bezpečnostní řešení s umělou inteligencí a specializovanou odbornou podporou 24 hodin denně, 7 dní v týdnu."
       ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "Pro přihlášení k online službám používejte ${ MAIL_APP_NAME }, protože na rozdíl od jiných poskytovatelů e-mailových služeb nikdy nesledujeme vaše údaje a nesdílíme je s třetími stranami."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocí myši táhněte a pusťte pro změnu priority spojení kontaktů. Odškrtněte kontakty, které nechcete sloučit."
       ],
@@ -4847,6 +4856,9 @@
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users ": [
         "Nastavte váš rodinný účet a pozvěte uživatele "
+      ],
+      "Invite members and get everything up and running.": [
+        "Pozvěte členy a vše uveďte do chodu."
       ],
       "Set up your family": [
         "Nastavte si vaši rodinu"
@@ -6207,7 +6219,7 @@
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt byl přiřazen do skupiny ${ contactGroupName }"
       ],
-      "Contact unassigned to group ${ contactGroupName }": [
+      "Contact unassigned from group ${ contactGroupName }": [
         "Kontakt byl odebrán ze skupiny ${ contactGroupName }"
       ],
       "Copied to clipboard": [
@@ -6371,6 +6383,9 @@
       ],
       "Email address": [
         "E-mailová adresa"
+      ],
+      "Email copied to clipboard": [
+        "E-mail zkopírován do schránky"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "E-mailový hosting pro 10 vlastních e-mailových domén je zahrnut zdarma. Další domény lze přidat za ${ price }."
@@ -6944,6 +6959,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
+      ],
+      "Remember to update this in your password manager or wherever you keep your account and login information.": [
+        "Nezapomeňte ho aktualizovat ve správci hesel nebo kdekoli jinde, kde uchováváte údaje o svém účtu a přihlašovací informace."
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Odebere všechna data související s touto aplikací (včetně stažených zpráv, …)"
@@ -8248,6 +8266,9 @@
       ],
       "Don't like the style": [
         "Nelíbí se mi styl"
+      ],
+      "Don't show again": [
+        "Příště nezobrazovat"
       ],
       "Don't show this again": [
         "Příště nezobrazovat"
@@ -10226,7 +10247,54 @@
         "Vyberte, k čemu může ${ BRAND_NAME } přistupovat: zobrazit e-mailové zprávy a nastavení, zobrazit a stáhnout kontakty, zobrazit a stáhnout všechny denní události, ke kterým máte přístup z kalendáře Google."
       ]
     },
+    "Onboarding List Placeholder": {
+      "Finance": [
+        "Peníze"
+      ],
+      "I have moved my logins to ${ BRAND_NAME }": [
+        "Přesunul(a) jsem své přihlašovací údaje do ${ BRAND_NAME }"
+      ],
+      "Privacy for all your online accounts": [
+        "Ochrana soukromí všech vašich online účtů"
+      ],
+      "Shopping": [
+        "Nakupování"
+      ],
+      "Social media": [
+        "Sociální sítě"
+      ],
+      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
+        "Pro přihlášení k online službám používejte svou adresu ${ MAIL_APP_NAME }, abyste se vyhnuli sledování a profilování. Změňte si nyní e-mail u vašich oblíbených služeb. ${ learnMoreLink }"
+      ]
+    },
     "Onboarding modal": {
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "${ advancedEncryptionTitle } zajistí, že k vašim e-mailům budete mít přístup pouze vy a určení příjemci."
+      ],
+      "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
+        "${ industryLeadingSpamProtectionTitle } zabrání podvodným e-mailům dostat se do vaší schránky."
+      ],
+      "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
+        "${ protectionFromTrackersTitle } znamená, že už nebudete sledováni na internetu."
+      ],
+      "Access email and calendar right from your desktop with the desktop app.": [
+        "Přistupujte k e-mailu a kalendáři přímo z počítače pomocí desktopové aplikace."
+      ],
+      "Activate premium features": [
+        "Aktivujte prémiové funkce"
+      ],
+      "Activate selected": [
+        "Aktivujte vybrané"
+      ],
+      "Advanced encryption": [
+        "Pokročilé šifrování"
+      ],
+      "App Store": [
+        "App Store"
+      ],
+      "Auto-delete spam and trash": [
+        "Automatické smazání spamu a koše"
+      ],
       "Automatically forward emails": [
         "Automaticky přeposílat e-maily"
       ],
@@ -10236,11 +10304,26 @@
       "Block unsavory senders": [
         "Blokování nevhodných odesílatelů"
       ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Smazání odstraněných e-mailů a spamu po 30 dnech."
+      ],
       "Congratulations on choosing privacy": [
         "Gratulujeme k volbě soukromí"
       ],
+      "Dark Web Monitoring": [
+        "Sledování Dark webu"
+      ],
+      "Download the desktop app": [
+        "Stáhněte si desktopovou aplikaci"
+      ],
+      "Download the desktop app and continue": [
+        "Stáhněte si desktopovou aplikaci a pokračujte"
+      ],
       "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
         "Šifrování je tak silné, že e-maily můžete zobrazit pouze vy a určení příjemci. ${ kbLinkEncryption }"
+      ],
+      "Fixed and focused": [
+        "Pevně a soustředěně"
       ],
       "For your eyes only": [
         "Pouze pro vaše oči"
@@ -10248,8 +10331,38 @@
       "Forward Gmail messages to your inbox.": [
         "Přeposílat Gmail zprávy do složky Doručená pošta."
       ],
+      "Get notified if your password is compromised.": [
+        "Dostávejte upozornění, pokud dojde ke kompromitaci vašeho hesla."
+      ],
+      "Get the desktop app": [
+        "Získejte desktopovou aplikaci"
+      ],
+      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
+        "Získejte mobilní aplikaci z ${ mobileAppAppStoreLink } nebo ${ mobileAppGooglePlayLink }."
+      ],
+      "Google Play": [
+        "Obchod Play"
+      ],
+      "Industry-leading spam protection": [
+        "Špičková ochrana proti spamu"
+      ],
+      "Let's get started": [
+        "Pojďme na to"
+      ],
+      "Make the most of your paid plan.": [
+        "Využijte svůj placený tarif na maximum."
+      ],
+      "Maybe later": [
+        "Možná později"
+      ],
+      "More ways to experience ${ MAIL_APP_NAME }": [
+        "Další možnosti využití ${ MAIL_APP_NAME }"
+      ],
       "Next": [
         "Další"
+      ],
+      "On the move": [
+        "Na cestách"
       ],
       "Protection from trackers": [
         "Ochrana před sledováním"
@@ -10257,16 +10370,37 @@
       "Skip": [
         "Přeskočit"
       ],
+      "Start using ${ BRAND_NAME }": [
+        "Začněte používat ${ BRAND_NAME }"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Začněte používat kratší verzi své e-mailové adresy."
+      ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "Zabraňujeme inzerentům a sběračům dat v tom, aby vás profilovali. ${ kbLinkPrivacy }"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Vítejte v ${ MAIL_APP_NAME }"
+      ],
+      "Where privacy is default.": [
+        "Kde je soukromí na prvním místě."
       ]
     },
     "Onboarding Proton": {
+      "Choose your preferred look and feel.": [
+        "Vyberte si svůj oblíbený vzhled."
+      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Proveďte konfiguraci své organizace, přiřaďte doménové jméno a vytvořte účty členů, aby všichni byli chráněni."
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Objevte všechny služby ${ BRAND_NAME }"
+      ],
+      "Link your domain name and create accounts for all members of your organization.": [
+        "Propojte název domény a vytvořte účty pro všechny členy organizace."
+      ],
+      "Make it your own": [
+        "Přizpůsobte podle potřeby"
       ],
       "Pick a theme": [
         "Vyberte si motiv"
@@ -11548,6 +11682,20 @@
       ],
       "Unsubscribed": [
         "Odběr byl odhlášen"
+      ]
+    },
+    "Step": {
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "Zadejte svou adresu ${ MAIL_APP_NAME } jako novou adresu, uložte, potvrďte nebo ověřte změnu"
+      ],
+      "In the account settings, look for the option to edit or change your email address ": [
+        "V nastavení účtu vyhledejte možnost upravit nebo změnit e-mailovou adresu "
+      ],
+      "Select service to update": [
+        "Vyberte službu, kterou chcete aktualizovat"
+      ],
+      "Sign in to the service": [
+        "Přihlaste se do služby"
       ]
     },
     "Step in filter modal": {
@@ -13035,6 +13183,9 @@
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Skryjte svůj e-mail pomocí ${ PASS_APP_NAME }"
+      ],
+      "How to update your email address": [
+        "Jak aktualizovat e-mailovou adresu"
       ],
       "Human verification": [
         "Lidské ověření"
