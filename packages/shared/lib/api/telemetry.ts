@@ -41,6 +41,7 @@ export enum TelemetryMailOnboardingEvents {
     select_theme = 'select_theme',
     enable_gmail_forwarding = 'enable_gmail_forwarding',
     change_login = 'change_login',
+    change_login_checklist = 'change_login_checklist',
     finish_change_login = 'finish_change_login',
     download_desktop_app = 'download_desktop_app',
     premium_features = 'premium_features',

@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import type { ModalStateProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 import { useUser, useUserSettings } from '@proton/components/hooks';
+import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { ChecklistKey } from '@proton/shared/lib/interfaces';
 
@@ -14,11 +15,13 @@ import {
     saveCheckedItemsForUser,
 } from 'proton-mail/helpers/checklist/checkedItemsStorage';
 
+import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
 import ServiceItem from './AccountsLoginModalServiceItem';
 import { getOnlineServices } from './getOnlineServices';
 
 const AccountsLoginModal = (props: ModalStateProps) => {
     const { items, markItemsAsDone } = useGetStartedChecklist();
+    const [sendMailOnboardingTelemetry] = useMailOnboardingTelemetry();
     const [user] = useUser();
 
     const [{ Locale }] = useUserSettings();
@@ -33,6 +36,11 @@ const AccountsLoginModal = (props: ModalStateProps) => {
     }, []);
 
     const handleDoneClick = async (serviceKey: string, hideItem: boolean) => {
+        void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.change_login_checklist, {
+            // @ts-expect-error - serviceKey is not typed enought
+            service_checklist: serviceKey,
+            service_checklist_button: hideItem ? 'done' : 'change_email',
+        });
         if (hideItem) {
             const newCheckedItems = [...checkedItems, serviceKey];
             setCheckedItems(newCheckedItems);
