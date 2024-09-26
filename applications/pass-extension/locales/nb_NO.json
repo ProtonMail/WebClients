@@ -116,10 +116,10 @@
       "Create": [
         "Opprett"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Opprett en ${ BRAND_NAME }-konto"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Opprett en ${ BRAND_NAME }-konto"
       ],
       "Create a new vault to share": [
@@ -633,6 +633,9 @@
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-fil kunne ikke tolkes. ${ errorDetail }"
+      ],
+      "[Error] an item could not be parsed": [
+        "[Feil] et element kunne ikke analyseres"
       ],
       "Alias could not be updated at the moment. Please try again later": [
         "Alias kunne ikke oppdateres for øyeblikket. Vennligst prøv igjen senere"
@@ -1158,9 +1161,6 @@
       ],
       "Automatically copy the generated password to the clipboard": [
         "Kopier automatisk det genererte passordet til utklippstavlen"
-      ],
-      "Autosaved on ${ payload.domain }": [
-        "Autolagret på ${ payload.domain }"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Før du eksporterer dataene dine med dette formatet, må du åpne Safari-innstillinger -> kategorien \"Generelt\" -> deaktivere alternativet \"Åpne sikre filer etter nedlasting\". Dette forhindrer at Safari trekker ut den eksporterte filen feil."
@@ -2524,6 +2524,9 @@
       ],
       "Type": [
         "Type"
+      ],
+      "Unknown": [
+        "Ukjent"
       ],
       "Unlock ${ PASS_APP_NAME }": [
         "Lås opp ${ PASS_APP_NAME }"

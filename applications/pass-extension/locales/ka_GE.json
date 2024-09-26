@@ -116,10 +116,10 @@
       "Create": [
         "შექმნა"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
       ],
       "Create a new vault to share": [
@@ -633,6 +633,9 @@
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-ის ფაილის დამუშავების შეცდომა. ${ errorDetail }"
+      ],
+      "[Error] an item could not be parsed": [
+        "[შეცდომა] ელემენტის დამუშავება შეუძლებელია"
       ],
       "Alias could not be updated at the moment. Please try again later": [
         "ამჟამად ფსევდონიმის განახლება შეუძლებელია. მოგვიანებით სცადეთ"
@@ -1158,9 +1161,6 @@
       ],
       "Automatically copy the generated password to the clipboard": [
         "გენერირებული პაროლების ავტომატური დაკოპირება ბუფერში."
-      ],
-      "Autosaved on ${ payload.domain }": [
-        "ავტომატურად შენახულია ბმულზე ${ payload.domain }"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "თქვენი მონაცემების ამ ფორმატში გატანამდე გახსენთ Safari-ის პარამეტრებ -> \"ზოგადი\" ჩანართი -> გათიშეთ პარამეტრი \"Safari-ის ფაილების გახსნა მათი გამოწერის შემდეგ\". ეს Safari-ი ხელს შეუშლის, გატანილი ფაილი გააფუჭოს."

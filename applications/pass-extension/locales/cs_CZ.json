@@ -116,11 +116,11 @@
       "Create": [
         "Vytvořit"
       ],
-      "Create a ${ BRAND_NAME } account": [
-        "Vytvořit účet ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Vytvořte účet ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Vytvořit účet ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
         "Vytvořit nový trezor ke sdílení"
@@ -1189,9 +1189,6 @@
       ],
       "Automatically copy the generated password to the clipboard": [
         "Automaticky zkopírovat vygenerované heslo do schránky"
-      ],
-      "Autosaved on ${ payload.domain }": [
-        "Automaticky uloženo na ${ payload.domain }"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Před exportem dat v tomto formátu otevřete nastavení Safari -> záložku \"Obecné\" -> vypněte možnost \"Bezpečné soubory po stažení otevírat\". Tím zabráníte tomu, aby Safari nesprávně extrahoval exportovaný soubor."
@@ -2585,7 +2582,7 @@
         "Typ"
       ],
       "Unknown": [
-        "Neznámé"
+        "Není známo"
       ],
       "Unlock ${ PASS_APP_NAME }": [
         "Odemknout ${ PASS_APP_NAME }"
