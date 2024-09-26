@@ -7,6 +7,8 @@ import { c } from 'ttag';
 import type { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
 import { getUnreadCount } from '../../helpers/sidebar';
+import type { ApplyLabelsParams } from '../../hooks/actions/label/useApplyLabels';
+import type { MoveParams } from '../../hooks/actions/move/useMoveToFolder';
 import type { UnreadCounts } from './MailSidebarList';
 import SidebarFolder from './SidebarFolder';
 
@@ -18,6 +20,8 @@ interface Props {
     updateFocusItem: (item: string) => void;
     handleToggleFolder: (folder: Folder, expanded: boolean) => void;
     foldersTreeview: FolderWithSubFolders[];
+    moveToFolder: (params: MoveParams) => void;
+    applyLabels: (params: ApplyLabelsParams) => void;
 }
 
 const SidebarFolders = ({
@@ -28,6 +32,8 @@ const SidebarFolders = ({
     updateFocusItem,
     handleToggleFolder,
     foldersTreeview,
+    moveToFolder,
+    applyLabels,
 }: Props) => {
     const onlyOneLevel = foldersTreeview.every((folder) => !folder.subfolders?.length);
     const emptyFolders = !loadingFolders && !folders?.length;
@@ -45,6 +51,8 @@ const SidebarFolders = ({
                 id={folder.ID}
                 onFocus={updateFocusItem}
                 treeMode={!onlyOneLevel}
+                moveToFolder={moveToFolder}
+                applyLabels={applyLabels}
             />
         );
 

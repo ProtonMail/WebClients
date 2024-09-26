@@ -10,6 +10,7 @@ import type { MailSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { isConversationMode } from '../../helpers/mailSettings';
+import type { MoveParams } from '../../hooks/actions/move/useMoveToFolder';
 import useMoveSystemFolders, { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
 import type { UnreadCounts } from './MailSidebarList';
 import SidebarItem from './SidebarItem';
@@ -26,6 +27,8 @@ interface Props {
     showSnoozed: boolean;
     onToggleMoreItems: (display: boolean) => void;
     collapsed?: boolean;
+    moveToFolder: (params: MoveParams) => void;
+    applyLabels: (params: any) => void;
 }
 
 const DND_MORE_FOLDER_ID = 'DND_MORE_FOLDER_ID';
@@ -57,6 +60,8 @@ const MailSidebarSystemFolders = ({
     displayMoreItems,
     onToggleMoreItems,
     collapsed = false,
+    moveToFolder,
+    applyLabels,
 }: Props) => {
     const { ShowMoved, AlmostAllMail } = mailSettings;
     const [sidebarElements, moveSidebarElement] = useMoveSystemFolders({
@@ -247,6 +252,8 @@ const MailSidebarSystemFolders = ({
                             shortcutText={element.shortcutText}
                             text={element.text}
                             collapsed={collapsed}
+                            moveToFolder={moveToFolder}
+                            applyLabels={applyLabels}
                         />
                     </DnDElementWrapper>
                 ))}
@@ -293,6 +300,8 @@ const MailSidebarSystemFolders = ({
                                   shortcutText={element.shortcutText}
                                   text={element.text}
                                   collapsed={collapsed}
+                                  moveToFolder={moveToFolder}
+                                  applyLabels={applyLabels}
                               />
                           </DnDElementWrapper>
                       ))
