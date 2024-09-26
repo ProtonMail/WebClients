@@ -70,11 +70,11 @@
       "Accept": [
         "Accepteren"
       ],
-      "activate": [
-        "activeer"
-      ],
       "Activate": [
         "Activeren"
+      ],
+      "activate": [
+        "activeer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activeer ${ user.Name }@pm.me"
@@ -156,6 +156,9 @@
       ],
       "Allow": [
         "Toestaan"
+      ],
+      "Always allow sending": [
+        "Verzenden altijd toestaan"
       ],
       "Apply": [
         "Toepassen"
@@ -670,6 +673,9 @@
       "Loading verification": [
         "Verificatie laden"
       ],
+      "Lost access to your 2FA device?": [
+        "Geen toegang meer tot uw 2FA-apparaat?"
+      ],
       "Make admin": [
         "Tot beheerder benoemen"
       ],
@@ -730,11 +736,11 @@
       "No, thanks": [
         "Nee, bedankt"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open": [
         "Open"
@@ -7187,6 +7193,12 @@
       "Gateways": [
         "Gateways"
       ],
+      "Gateways monitoring is disabled.": [
+        "Gateways monitoring is uitgeschakeld."
+      ],
+      "Gateways monitoring is enabled.": [
+        "Gateways monitoring is ingeschakeld."
+      ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Als u een nieuwe herstelzin genereert, wordt uw oude zin gedeactiveerd."
       ],
@@ -10228,6 +10240,9 @@
       ],
       "Recovery phrase": [
         "Herstelzin"
+      ],
+      "Remove image metadata": [
+        "Metagegevens van afbeelding verwijderen"
       ],
       "Repeat password": [
         "Wachtwoord herhalen"
@@ -13730,6 +13745,9 @@
       ]
     },
     "Safety review": {
+      "Add a recovery email address": [
+        "Voeg een herstel-e-mailadres toe"
+      ],
       "Add a recovery phone number": [
         "Een telefoonnummer voor herstel toevoegen"
       ],
@@ -14267,6 +14285,11 @@
     "session_recovery:status:title": {
       "Password reset request": [
         "Aanvraag wijziging wachtwoord"
+      ]
+    },
+    "Setting": {
+      "Enable Photos section": [
+        "Foto's sectie inschakelen"
       ]
     },
     "Settings description": {
@@ -15664,6 +15687,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "Time": [
+        "Tijd"
       ],
       "Total storage": [
         "Totale opslagruimte"
