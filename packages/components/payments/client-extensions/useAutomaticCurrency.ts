@@ -1,4 +1,5 @@
-import { usePaymentStatus, usePlans, useSubscription, useUser } from '@proton/components/hooks';
+import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
+import { usePlans, useSubscription, useUser } from '@proton/components/hooks';
 
 import { useCurrencies } from './useCurrencies';
 

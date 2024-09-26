@@ -145,7 +145,7 @@ jest.mock('@proton/components/hooks/usePlans', () => ({
     useGetPlans: jest.fn(),
 }));
 
-jest.mock('@proton/components/hooks/usePaymentStatus', () => ({
+jest.mock('@proton/account/paymentStatus/hooks', () => ({
     __esModule: true,
     usePaymentStatus: jest.fn(),
     useGetPaymentStatus: jest.fn().mockReturnValue(() => ({

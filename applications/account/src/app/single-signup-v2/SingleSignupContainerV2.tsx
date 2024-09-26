@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useGetPaymentStatus } from '@proton/account/paymentStatus/hooks';
 import type { OnLoginCallback } from '@proton/components';
 import {
     StandardLoadErrorPage,
@@ -13,7 +14,6 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
-    useGetPaymentStatus,
     useGetPlans,
     useKTActivation,
     useModalState,
