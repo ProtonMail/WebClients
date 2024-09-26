@@ -64,18 +64,19 @@ export default function useDownloadQueue(log: LogCallback) {
                     callback?.(download);
                     const newState = newStateCallback(download);
 
-                    // download is considering retry if there is a manual retry
+                    // download is considered retry if there is a manual retry
                     // This can be two way:
                     // - downloads retry restartDownloads()
                     // - download resume after a failure state resumeDownloads()
                     // It is considered retry if the download goes from an Error state to a pending/progress state
+                    // download is also considered retry if we automatically retry after coming back online and having some downloads failures
+
                     const downloadIsARetry =
                         retry ||
                         ([TransferState.Error, TransferState.NetworkError].includes(download.state) &&
                         [TransferState.Pending, TransferState.Progress].includes(newState)
                             ? true
                             : false);
-
                     // If pause is set twice, prefer resumeState set already before
                     // to not be locked in paused state forever.
                     download.resumeState =
