@@ -6201,9 +6201,6 @@
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt został przypisany do grupy ${ contactGroupName }"
       ],
-      "Contact unassigned to group ${ contactGroupName }": [
-        "Kontakt został usunięty z grupy ${ contactGroupName }"
-      ],
       "Copied to clipboard": [
         "Skopiowano do schowka"
       ],
@@ -10215,6 +10212,9 @@
       ]
     },
     "Onboarding modal": {
+      "App Store": [
+        "App Store"
+      ],
       "Automatically forward emails": [
         "Automatyczne przekierowanie wiadomości"
       ],
@@ -10235,6 +10235,15 @@
       ],
       "Forward Gmail messages to your inbox.": [
         "Przekierowanie wiadomości z Gmaila do skrzynki odbiorczej."
+      ],
+      "Get the desktop app": [
+        "Pobierz aplikację desktopową"
+      ],
+      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
+        "Uzyskaj aplikację mobilną ze sklepu ${ mobileAppAppStoreLink } lub ${ mobileAppGooglePlayLink }."
+      ],
+      "Google Play": [
+        "Google Play"
       ],
       "Next": [
         "Dalej"

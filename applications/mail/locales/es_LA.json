@@ -220,6 +220,9 @@
       "Click here.": [
         "Haga clic aquí."
       ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "Haga clic para copiar ${ defaultEmailAddress } al portapapeles"
+      ],
       "Close": [
         "Cerrar"
       ],
@@ -1326,6 +1329,9 @@
       ],
       "Use recovery code": [
         "Usar código de recuperación"
+      ],
+      "Use this": [
+        "Usar esto"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Use el ratón para cambiar el tamaño de la vista. Si está usando el teclado, puede usar las teclas de flecha izquierda y derecha para cambiar el tamaño."
@@ -3497,6 +3503,9 @@
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Mejore la cuenta para activar ${ PROTON_SENTINEL_NAME }, nuestra solución de seguridad de vanguardia basada en IA con soporte experto dedicado las 24 horas, los 7 días de la semana."
       ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "Use ${ MAIL_APP_NAME } para iniciar sesión en servicios en línea, a diferencia de otros proveedores de correo electrónico, nosotros nunca rastrearemos sus datos ni los compartiremos con terceros."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Use arrastrar y soltar para clasificar la prioridad entre contactos. Desmarque los contactos que no quiere combinar."
       ],
@@ -4782,6 +4791,9 @@
       "Configure your family account and invite users ": [
         "Configure la cuenta familiar e invite usuarios "
       ],
+      "Invite members and get everything up and running.": [
+        "Invite a otros miembros y comienze de inmediato."
+      ],
       "Set up your family": [
         "Configure su familia"
       ],
@@ -6013,8 +6025,8 @@
       "Contact assigned to group ${ contactGroupName }": [
         "Contacto asignado al grupo ${ contactGroupName }"
       ],
-      "Contact unassigned to group ${ contactGroupName }": [
-        "Contacto no asignado al grupo ${ contactGroupName }"
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Se eliminó el contacto del grupo ${ contactGroupName }."
       ],
       "Copied to clipboard": [
         "Copiado al portapapeles"
@@ -6171,6 +6183,9 @@
       ],
       "Email address": [
         "Dirección de correo"
+      ],
+      "Email copied to clipboard": [
+        "Correo electrónico copiado al portapapeles"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "El alojamiento de correo electrónico para 10 nombres de dominio de correo personalizados se incluye de forma gratuita. Se pueden añadir dominios adicionales por ${ price }."
@@ -6726,6 +6741,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
+      ],
+      "Remember to update this in your password manager or wherever you keep your account and login information.": [
+        "Recuerde actualizarlo en su gestor de contraseñas o donde guarde su información de inicio de sesión."
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Borra todos los datos asociados con esta aplicación (incluyendo los mensajes descargados, etc…)"
@@ -9902,7 +9920,54 @@
         "Seleccione a lo que ${ BRAND_NAME } puede acceder: ver los correos y ajustes, ver y descargar los contactos, ver y descargar todas las agendas a las que usted accede en Google Agenda."
       ]
     },
+    "Onboarding List Placeholder": {
+      "Finance": [
+        "Finanzas"
+      ],
+      "I have moved my logins to ${ BRAND_NAME }": [
+        "Transferí mis inicios de sesión a ${ BRAND_NAME }."
+      ],
+      "Privacy for all your online accounts": [
+        "Privacidad para todas sus cuentas en línea"
+      ],
+      "Shopping": [
+        "Compras"
+      ],
+      "Social media": [
+        "Redes sociales"
+      ],
+      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
+        "Use su dirección ${ MAIL_APP_NAME } para iniciar sesión en sus servicios en línea sin ser rastreado. Cambie su dirección de correo electrónico para sus servicios más usados ahora. ${ learnMoreLink }"
+      ]
+    },
     "Onboarding modal": {
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "${ advancedEncryptionTitle } asegura que solo usted y los remitentes esperados pueden acceder a sus correos electrónicos."
+      ],
+      "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
+        "${ industryLeadingSpamProtectionTitle } mantiene los correos electrónicos de spam fuera de su bandeja de entrada."
+      ],
+      "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
+        "${ protectionFromTrackersTitle } significa no más seguimiento a través de internet."
+      ],
+      "Access email and calendar right from your desktop with the desktop app.": [
+        "Acceda al correo electrónico o calendario directamente desde el escritorio con la aplicación de escritorio."
+      ],
+      "Activate premium features": [
+        "Activar las funciones premium"
+      ],
+      "Activate selected": [
+        "Activar la selección"
+      ],
+      "Advanced encryption": [
+        "Cifrado avanzado"
+      ],
+      "App Store": [
+        "App Store"
+      ],
+      "Auto-delete spam and trash": [
+        "Eliminación automática del spam y la papelera"
+      ],
       "Automatically forward emails": [
         "Reenvíe correos automáticamente"
       ],
@@ -9912,11 +9977,26 @@
       "Block unsavory senders": [
         "Bloquee remitentes no deseados"
       ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Borre los correos electrónicos de spam eliminados después de 30 días."
+      ],
       "Congratulations on choosing privacy": [
         "Felicitaciones por elegir la privacidad"
       ],
+      "Dark Web Monitoring": [
+        "Monitoreo de la Dark Web"
+      ],
+      "Download the desktop app": [
+        "Descargue la aplicación de escritorio"
+      ],
+      "Download the desktop app and continue": [
+        "Descargue la aplicación de escritorio y continúe"
+      ],
       "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
         "Cifrado tan sólido que solo usted y los destinatarios pueden ver los correos electrónicos. ${ kbLinkEncryption }"
+      ],
+      "Fixed and focused": [
+        "Fijo y concentrado"
       ],
       "For your eyes only": [
         "Solo para usted"
@@ -9924,8 +10004,38 @@
       "Forward Gmail messages to your inbox.": [
         "Reenvíe los mensajes de Gmail a el buzón."
       ],
+      "Get notified if your password is compromised.": [
+        "Obtenga notificaciones si su contraseña es comprometida."
+      ],
+      "Get the desktop app": [
+        "Obtenga la aplicación de escritorio"
+      ],
+      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
+        "Obtenga la aplicación móvil de ${ mobileAppAppStoreLink } o ${ mobileAppGooglePlayLink }."
+      ],
+      "Google Play": [
+        "Google Play"
+      ],
+      "Industry-leading spam protection": [
+        "Protección contra spam líder en la industria"
+      ],
+      "Let's get started": [
+        "¡Comencemos!"
+      ],
+      "Make the most of your paid plan.": [
+        "Aproveche al máximo su plan de pago."
+      ],
+      "Maybe later": [
+        "Quizás más tarde"
+      ],
+      "More ways to experience ${ MAIL_APP_NAME }": [
+        "Más formas de disfrutar de ${ MAIL_APP_NAME }"
+      ],
       "Next": [
         "Siguiente"
+      ],
+      "On the move": [
+        "Mientras se desplaza"
       ],
       "Protection from trackers": [
         "Protección contra rastreadores"
@@ -9933,16 +10043,37 @@
       "Skip": [
         "Omitir"
       ],
+      "Start using ${ BRAND_NAME }": [
+        "Comience a usar ${ BRAND_NAME }"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Empiece a usar la versión más corta y atractiva de su dirección de correo."
+      ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "Impedimos que los anunciantes y recopiladores de datos le perfilen. ${ kbLinkPrivacy }"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Le damos la bienvenida a ${ MAIL_APP_NAME }"
+      ],
+      "Where privacy is default.": [
+        "Donde la privacidad es por defecto."
       ]
     },
     "Onboarding Proton": {
+      "Choose your preferred look and feel.": [
+        "Elija su aspecto preferido."
+      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configure la organización, vincule el nombre de dominio y cree cuentas para asegurarse de que todos los miembros de la organización estén protegidos."
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Descubra todos los servicios de ${ BRAND_NAME }"
+      ],
+      "Link your domain name and create accounts for all members of your organization.": [
+        "Enlace su nombre de dominio y cree cuentas para todos los miembros de su organización."
+      ],
+      "Make it your own": [
+        "Personalice la aplicación"
       ],
       "Pick a theme": [
         "Elija un tema"
@@ -11162,6 +11293,20 @@
       ],
       "Unsubscribed": [
         "Suscripción cancelada"
+      ]
+    },
+    "Step": {
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "Ingrese su dirección ${ MAIL_APP_NAME } como nueva dirección y guarde, confirme o verifique el cambio"
+      ],
+      "In the account settings, look for the option to edit or change your email address ": [
+        "En los ajustes de la cuenta, busque la opción editar o cambie su dirección de correo "
+      ],
+      "Select service to update": [
+        "Seleccionar el servicio para actualizar"
+      ],
+      "Sign in to the service": [
+        "Inicie sesión en el servicio"
       ]
     },
     "Step in filter modal": {
@@ -12549,6 +12694,9 @@
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Oculte su correo electrónico con ${ PASS_APP_NAME }"
+      ],
+      "How to update your email address": [
+        "Cómo actualizar su dirección de correo electrónico"
       ],
       "Human verification": [
         "Verificación humana"

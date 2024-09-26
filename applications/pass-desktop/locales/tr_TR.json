@@ -690,7 +690,7 @@
         "${ provider } dosyası işlenemedi. ${ errorDetail }"
       ],
       "[Error] an item could not be parsed": [
-        "[hata] bir öge işlenemedi"
+        "[Error] bir öge işlenemedi"
       ],
       "Alias could not be updated at the moment. Please try again later": [
         "Takma ad şu anda güncellenemedi. Lütfen bir süre sonra yeniden deneyin"
@@ -2586,6 +2586,9 @@
       ],
       "Type": [
         "Tür"
+      ],
+      "Unknown": [
+        "Bilinmiyor"
       ],
       "Unlock with": [
         "Kilit şununla açılsın:"

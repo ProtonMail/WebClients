@@ -1335,6 +1335,9 @@
       "Use recovery code": [
         "Použiť kód pre obnovenie"
       ],
+      "Use this": [
+        "Použiť tento"
+      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Pomocou myši môžete zmeniť veľkosť zobrazenia. Ak používate klávesnicu, môžete na zmenu veľkosti použiť klávesy so šípkami vľavo a vpravo."
       ],
@@ -6207,9 +6210,6 @@
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt priradený k skupine ${ contactGroupName }"
       ],
-      "Contact unassigned to group ${ contactGroupName }": [
-        "Kontakt odobraný zo skupiny ${ contactGroupName }"
-      ],
       "Copied to clipboard": [
         "Skopírované do schránky"
       ],
@@ -8249,6 +8249,9 @@
       "Don't like the style": [
         "Nepáči sa mi štýl"
       ],
+      "Don't show again": [
+        "Viac nezobrazovať"
+      ],
       "Don't show this again": [
         "Nabudúce nezobrazovať"
       ],
@@ -10226,7 +10229,21 @@
         "Vyberte, k čomu môže ${ BRAND_NAME } pristupovať: prezerajte si emailové správy a nastavenia, prezerajte a sťahujte svoje kontakty, zobrazujte a sťahujte všetky agendy, ku ktorým máte prístup z Agendy Google."
       ]
     },
+    "Onboarding List Placeholder": {
+      "Finance": [
+        "Financie"
+      ],
+      "Shopping": [
+        "Nakupovanie"
+      ],
+      "Social media": [
+        "Sociálne médiá"
+      ]
+    },
     "Onboarding modal": {
+      "App Store": [
+        "App Store"
+      ],
       "Automatically forward emails": [
         "Automaticky preposielajte emaily"
       ],
@@ -10247,6 +10264,9 @@
       ],
       "Forward Gmail messages to your inbox.": [
         "Preposielajte Gmail správy do vašej doručenej pošty."
+      ],
+      "Google Play": [
+        "Google Play"
       ],
       "Next": [
         "Ďalej"

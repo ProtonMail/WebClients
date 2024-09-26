@@ -4164,6 +4164,9 @@
       "Change your password": [
         "Cambie la contraseña"
       ],
+      "Check for malicious files": [
+        "Buscar archivos maliciosos"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Verificando contacto ${ progress } de ${ max }..."
       ],
@@ -4194,8 +4197,8 @@
       "Contact assigned to group ${ contactGroupName }": [
         "Contacto asignado al grupo ${ contactGroupName }"
       ],
-      "Contact unassigned to group ${ contactGroupName }": [
-        "Contacto no asignado al grupo ${ contactGroupName }"
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Se eliminó el contacto del grupo ${ contactGroupName }."
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Continuar usando ${ DRIVE_APP_NAME } y desbloquear la unidad después"
@@ -4374,9 +4377,6 @@
       "End-to-end encrypted": [
         "Cifrado de extremo a extremo"
       ],
-      "End-to-End Encrypted": [
-        "Cifrado de extremo a extremo"
-      ],
       "Enter password": [
         "Ingrese la contraseña"
       ],
@@ -4431,9 +4431,6 @@
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Falta la firma del archivo. No pudimos verificar quién cargó ${ fileName }."
-      ],
-      "File scanning in Drive": [
-        "Escaneo de archivos en Drive"
       ],
       "File will not be updated": [
         "El archivo no se actualizará"
@@ -5085,6 +5082,9 @@
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Es posible que este archivo se haya eliminado, movido o dejado de estar disponible. Póngase en contacto con el propietario del archivo."
       ],
+      "This folder is empty": [
+        "Esta carpeta está vacía."
+      ],
       "This item already exists in your library": [
         "Este elemento ya existe en su librería"
       ],
@@ -5140,8 +5140,8 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
       ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
-        "Para ayudarle a protegerse, ${ DRIVE_APP_NAME } puede escanear y bloquear archivos maliciosos. Solo debería descargar archivos de personas de confianza."
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources.": [
+        "Para ayudarle a protegerse, ${ DRIVE_APP_NAME } puede escanear sus archivos de forma que mantenga su privacidad y bloquear archivos maliciosos. Sin embargo, sigue siendo mejor descargar archivos solo de fuentes confiables."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Para importar eventos, primero cree un calendario en ${ CALENDAR_APP_NAME }. Aquí es donde aparecerán los eventos tras la importación."

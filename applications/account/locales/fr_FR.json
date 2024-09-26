@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "activate": [
-        "activer"
-      ],
       "Activate": [
         "Activer"
+      ],
+      "activate": [
+        "activer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activer ${ user.Name }@pm.me"
@@ -742,10 +742,10 @@
       "No, thanks": [
         "Non merci"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open": [
@@ -17801,6 +17801,10 @@
       ]
     },
     "unprivatization": {
+      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
+        "${ n } utilisateur a rejoint votre organisation par le biais de votre fournisseur d'identité. Veuillez approuver ou rejeter ses comptes :",
+        "${ n } utilisateurs ont rejoint votre organisation par le biais de votre fournisseur d'identité. Veuillez approuver ou rejeter leurs comptes :"
+      ],
       "Administrator access enabled": [
         "L'accès administrateur a été activé."
       ],
@@ -17816,11 +17820,21 @@
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "Un administrateur de l'organisation **${ orgName }** (**${ adminEmail }**) souhaite activer l'accès administrateur pour votre compte."
       ],
+      "Approve all": [
+        "Tout approuver"
+      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "En rendant l'utilisateur privé, vous ne pourrez pas l'aider à retrouver l'accès à ses données ou à son compte."
       ],
       "Cancel": [
         "Annuler"
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "L'accès administrateur n'a pas pu être activé pour ${ n } utilisateur car ses clés de chiffrement ont été entre-temps mises à jour :",
+        "L'accès administrateur n'a pas pu être activé pour ${ n } utilisateurs car leurs clés de chiffrement ont été entre-temps mises à jour :"
+      ],
+      "Could not enable administrator access: ${ error }": [
+        "Une erreur s'est produite lors de l'activation de l'accès administrateur : ${ error }"
       ],
       "Delete request": [
         "Supprimer la demande"
@@ -17833,6 +17847,9 @@
       ],
       "Enable administrator access": [
         "Activer l'accès administrateur"
+      ],
+      "Enable manually": [
+        "Activer manuellement"
       ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "Si vous n'avez plus accès à vos identifiants, les administrateurs de votre organisation pourront réinitialiser votre mot de passe et rétablir l'accès à votre compte."
@@ -17866,9 +17883,6 @@
       ],
       "Send request": [
         "Envoyer une demande"
-      ],
-      "Something went wrong enabling administrator access: ${ error }": [
-        "Une erreur s'est produite lors de l'activation de l'accès administrateur :${ error }"
       ],
       "The user must have an address to request data access": [
         "L'utilisateur doit disposer d'une adresse pour demander l'accès aux données."
