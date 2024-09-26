@@ -8,7 +8,8 @@ import {
     selectOauthImportStateProducts,
 } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { useApi, useCalendars, useErrorHandler, useEventManager, useGetAddressKeys } from '@proton/components';
+import { useCalendars } from '@proton/calendar/calendars/hooks';
+import { useApi, useErrorHandler, useEventManager, useGetAddressKeys } from '@proton/components';
 
 import { createImporterTask } from './useStepLoadingImporting.helpers';
 

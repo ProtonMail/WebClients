@@ -11,7 +11,7 @@ import type {
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
 
-import { useCalendarShareInvitations } from '../../../hooks';
+import useCalendarShareInvitations from '../../../hooks/useCalendarShareInvitations';
 import MyCalendarsSection from '../../calendar/settings/MyCalendarsSection';
 import PrivateMainAreaLoading from '../../layout/PrivateMainAreaLoading';
 import PrivateMainSettingsArea from '../../layout/PrivateMainSettingsArea';

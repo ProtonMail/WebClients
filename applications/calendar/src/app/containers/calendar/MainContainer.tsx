@@ -1,7 +1,8 @@
 import { useMemo, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { useAddresses, useCalendars, useSubscription, useUser, useWelcomeFlags } from '@proton/components';
+import { useCalendars } from '@proton/calendar/calendars/hooks';
+import { useAddresses, useSubscription, useUser, useWelcomeFlags } from '@proton/components';
 import { useDrawerParent } from '@proton/components/hooks';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { FeatureCode, useFeatures } from '@proton/features';
