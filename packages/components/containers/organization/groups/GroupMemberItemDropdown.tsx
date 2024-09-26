@@ -30,16 +30,19 @@ const Option = ({
     option,
     isSelected,
     onSelect,
+    disabled,
 }: {
     option: PermissionOption;
     isSelected?: boolean;
     onSelect: (value: GROUP_MEMBER_PERMISSIONS) => void;
+    disabled: boolean;
 }) => {
     return (
         <DropdownMenuButton
             className="text-left flex justify-space-between items-center"
             key={option.value}
             onClick={() => onSelect(option.value)}
+            disabled={disabled}
         >
             <span className="flex items-center mr-14">{option.label}</span>
             {isSelected ? <Icon className="color-primary" name="checkmark" /> : null}
@@ -50,9 +53,10 @@ const Option = ({
 interface Props {
     member: GroupMember;
     group: Group; // needs to be removed once backend doesn't need Group.ID
+    canOnlyDelete: boolean;
 }
 
-const GroupMemberItemDropdown = ({ member, group }: Props) => {
+const GroupMemberItemDropdown = ({ member, group, canOnlyDelete }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const api = useApi();
     const handleError = useErrorHandler();
@@ -142,15 +146,24 @@ const GroupMemberItemDropdown = ({ member, group }: Props) => {
                             option={option}
                             isSelected={option.value === overrideGroupPermissions}
                             onSelect={handleOverrideGroupPermissions}
+                            disabled={canOnlyDelete}
                         />
                     ))}
                     <hr className="mt-2 mb-0" />
                     {isPaused && (
-                        <DropdownMenuButton className="text-left" onClick={handleResumeInvitation}>
+                        <DropdownMenuButton
+                            className="text-left"
+                            onClick={handleResumeInvitation}
+                            disabled={canOnlyDelete}
+                        >
                             {c('Action').t`Resume membership`}
                         </DropdownMenuButton>
                     )}
-                    <DropdownMenuButton className="text-left color-danger" onClick={handleRevokeInvitation}>
+                    <DropdownMenuButton
+                        className="text-left color-danger"
+                        onClick={handleRevokeInvitation}
+                        disabled={canOnlyDelete}
+                    >
                         {c('Action').t`Revoke invitation`}
                     </DropdownMenuButton>
                 </DropdownMenu>

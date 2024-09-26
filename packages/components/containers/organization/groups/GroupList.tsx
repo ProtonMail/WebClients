@@ -12,6 +12,7 @@ import type { GroupsManagementReturn } from './types';
 
 interface Props {
     groupsManagement: GroupsManagementReturn;
+    canOnlyDelete: boolean;
 }
 
 const compareGroupNames = (a: Group, b: Group) => a.Name.localeCompare(b.Name);
@@ -28,6 +29,7 @@ const getSortedGroups = (input: string, groups: Group[]) => {
 
 const GroupList = ({
     groupsManagement: { uiState, form, setUiState, setSelectedGroup, groups, selectedGroup, domainData, onDeleteGroup },
+    canOnlyDelete,
 }: Props) => {
     const { selectedDomain } = domainData;
     const { resetForm, values: formValues } = form;
@@ -75,7 +77,9 @@ const GroupList = ({
             </div>
             {uiState !== 'new' && groups.length === 0 && sideBarPlaceholder}
             <Scroll className="mr-4">
-                {uiState === 'new' && <GroupItem key="new" active groupData={newGroupData} isNew={true} />}
+                {uiState === 'new' && (
+                    <GroupItem key="new" active groupData={newGroupData} isNew={true} canOnlyDelete={canOnlyDelete} />
+                )}
                 {sortedGroups.map((groupData) => (
                     <GroupItem
                         key={groupData.ID}
@@ -97,6 +101,7 @@ const GroupList = ({
                             });
                         }}
                         onDeleteGroup={onDeleteGroup}
+                        canOnlyDelete={canOnlyDelete}
                     />
                 ))}
             </Scroll>

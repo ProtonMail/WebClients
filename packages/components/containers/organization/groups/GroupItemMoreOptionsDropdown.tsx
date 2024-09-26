@@ -7,18 +7,37 @@ import DropdownMenuButton from '@proton/components/components/dropdown/DropdownM
 import Icon from '@proton/components/components/icon/Icon';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import type { Group } from '@proton/shared/lib/interfaces';
 
 import GroupItemActionPrompt from './GroupItemActionPrompt';
 
 interface Props {
+    group: Group;
     handleDeleteGroup: () => Promise<void>;
     handleDeleteAllGroupMembers: () => Promise<void>;
+    canOnlyDelete: boolean;
 }
 
-const GroupItemMoreOptionsDropdown = ({ handleDeleteGroup, handleDeleteAllGroupMembers }: Props) => {
+const GroupItemMoreOptionsDropdown = ({
+    group,
+    handleDeleteGroup,
+    handleDeleteAllGroupMembers,
+    canOnlyDelete,
+}: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const deleteGroupPrompt = useModalStateObject();
     const removeAllMembersPrompt = useModalStateObject();
+    const displayGroupName = (
+        <strong key="group-name" className="text-break">
+            {group.Name}
+        </strong>
+    );
+
+    const displayGroupAddressEmail = (
+        <strong key="group-email" className="text-break">
+            {group.Address.Email}
+        </strong>
+    );
 
     return (
         <>
@@ -35,23 +54,43 @@ const GroupItemMoreOptionsDropdown = ({ handleDeleteGroup, handleDeleteAllGroupM
                 <GroupItemActionPrompt
                     title={c('Title').t`Delete group?`}
                     buttonTitle={c('Action').t`Delete group`}
-                    children={c('Info')
-                        .t`Are you sure you want to delete this group. The group address won't be working anymore.`}
+                    children={
+                        <>
+                            {c('Delete group prompt')
+                                .jt`Please note that if you delete the group ${displayGroupName} (with address ${displayGroupAddressEmail}), you will no longer be able to receive emails using its address.`}
+                            <br />
+                            <br />
+                            {c('Delete group prompt').t`Are you sure you want to delete this group?`}
+                        </>
+                    }
                     onConfirm={handleDeleteGroup}
                     {...deleteGroupPrompt.modalProps}
                 />
             )}
-            <Button
-                shape="ghost"
-                size="small"
-                icon
-                ref={anchorRef}
-                onClick={toggle}
-                title={c('Action').t`More options`}
-                aria-expanded={isOpen}
-            >
-                <Icon name="three-dots-vertical" alt={c('Action').t`More options`} />
-            </Button>
+            {!canOnlyDelete && (
+                <Button
+                    shape="ghost"
+                    size="small"
+                    icon
+                    ref={anchorRef}
+                    onClick={toggle}
+                    title={c('Action').t`More options`}
+                    aria-expanded={isOpen}
+                >
+                    <Icon name="three-dots-vertical" alt={c('Action').t`More options`} />
+                </Button>
+            )}
+            {canOnlyDelete && (
+                <Button
+                    shape="ghost"
+                    size="small"
+                    icon
+                    onClick={() => deleteGroupPrompt.openModal(true)}
+                    title={c('Action').t`Delete group`}
+                >
+                    <Icon name="trash" alt={c('Action').t`Delete group`} />
+                </Button>
+            )}
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom-start">
                 <DropdownMenu>
                     <DropdownMenuButton
