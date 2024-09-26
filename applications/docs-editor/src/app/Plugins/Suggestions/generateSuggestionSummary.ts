@@ -4,9 +4,13 @@ import type { SuggestionType } from './Types'
 import { $isSuggestionNode } from './ProtonNode'
 import { getFormatsForFlag } from '../../Utils/TextFormatUtils'
 
-export type SuggestionSummaryContent = { type: SuggestionType | 'replace'; content: string }[]
+type SummaryType = SuggestionType | 'replace'
+
+export type SuggestionSummaryContent = { type: SummaryType; content: string }[]
 
 const TextContentLimit = 80
+
+const TypesToPrioritize: SummaryType[] = ['insert', 'delete', 'replace']
 
 export function generateSuggestionSummary(
   editor: LexicalEditor,
@@ -29,7 +33,9 @@ export function generateSuggestionSummary(
       }
 
       const currentType = node.getSuggestionTypeOrThrow()
+
       let content = node.getTextContent().slice(0, TextContentLimit)
+
       if (currentType === 'property-change') {
         const firstChild = node.getFirstChild()
         const currentFormat = $isTextNode(firstChild) ? firstChild.getFormat() : 0
@@ -39,6 +45,17 @@ export function generateSuggestionSummary(
       const lastItem = summary[summary.length - 1]
       if (!lastItem) {
         summary.push({ type: currentType, content })
+        continue
+      }
+
+      const shouldPrioritizeLastItem = TypesToPrioritize.includes(lastItem.type)
+      const shouldPrioritizeCurrentItem = TypesToPrioritize.includes(currentType)
+      if (!shouldPrioritizeLastItem && shouldPrioritizeCurrentItem) {
+        lastItem.type = currentType
+        lastItem.content = content
+        continue
+      }
+      if (shouldPrioritizeLastItem && !shouldPrioritizeCurrentItem) {
         continue
       }
 
