@@ -70,11 +70,11 @@
       "Accept": [
         "Aceptar"
       ],
-      "activate": [
-        "activar"
-      ],
       "Activate": [
         "Activar"
+      ],
+      "activate": [
+        "activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activar ${ user.Name }@pm.me"
@@ -742,10 +742,10 @@
       "No, thanks": [
         "No, gracias"
       ],
-      "OK": [
+      "Ok": [
         "Aceptar"
       ],
-      "Ok": [
+      "OK": [
         "Aceptar"
       ],
       "Open": [
@@ -890,7 +890,7 @@
         "Reanudar"
       ],
       "Resume membership": [
-        "Reanudar membresía"
+        "Reanudar la membresía"
       ],
       "Retry": [
         "Reintentar"
@@ -9727,7 +9727,7 @@
         "Agregar todos los miembros de la organización"
       ],
       "Add group member": [
-        "Agregar un miembro al grupo"
+        "Añadir un miembro al grupo"
       ],
       "Address": [
         "Dirección"
@@ -11319,7 +11319,7 @@
     },
     "Monetary unit": {
       "Brazilian real": [
-        "Real Brasileño"
+        "Real brasileño"
       ],
       "Euro": [
         "Euro"
@@ -11328,7 +11328,7 @@
         "Franco suizo"
       ],
       "US Dollar": [
-        "Dólar Estadounidense"
+        "Dólar estadounidense "
       ]
     },
     "Monthly recurring event, frequency": {
@@ -14793,7 +14793,7 @@
     },
     "Setting": {
       "Enable Photos section": [
-        "Habilitar la sección Fotos"
+        "Activar la sección Fotos"
       ]
     },
     "Settings description": {
@@ -17816,6 +17816,9 @@
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "Un administrador de la organización **${ orgName }** (**${ adminEmail }**) quiere activar el acceso de administrador para tu cuenta."
       ],
+      "Approve all": [
+        "Aprobar todo"
+      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Al hacer privado al usuario, no podrás ayudarle a recuperar el acceso a sus datos o cuenta."
       ],
@@ -17833,6 +17836,9 @@
       ],
       "Enable administrator access": [
         "Activar el acceso de administrador"
+      ],
+      "Enable manually": [
+        "Activar manualmente"
       ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "Si pierdes acceso a sus credenciales, los administradores de la organización pueden restablecer tu contraseña y restaurar el acceso a tu cuenta."
@@ -17866,9 +17872,6 @@
       ],
       "Send request": [
         "Enviar una solicitud"
-      ],
-      "Something went wrong enabling administrator access: ${ error }": [
-        "Se ha producido un error al activar el acceso de administrador: ${ error }"
       ],
       "The user must have an address to request data access": [
         "El usuario debe tener una dirección para solicitar acceso a los datos"
