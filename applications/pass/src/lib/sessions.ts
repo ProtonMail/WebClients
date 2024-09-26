@@ -1,3 +1,6 @@
+import { clearUserLocalData } from 'proton-pass-web/lib/storage';
+
+import type { EncryptedAuthSession } from '@proton/pass/lib/auth/session';
 import { authStore, decodeUserData } from '@proton/pass/lib/auth/store';
 import type { SwitchableSession } from '@proton/pass/lib/auth/switch';
 import type { Maybe } from '@proton/pass/types/utils';
@@ -7,6 +10,7 @@ import { STORAGE_PREFIX } from '@proton/shared/lib/authentication/persistedSessi
 
 export const getSessionKey = (localId?: number) => `${STORAGE_PREFIX}${localId ?? 0}`;
 export const getStateKey = (state: string) => `f${state}`;
+export const getLocalIDFromSessionKey = (key: string) => parseInt(key.replace(STORAGE_PREFIX, ''), 10);
 
 export const getPersistedSession = (localID: Maybe<number>) => {
     const encryptedSession = localStorage.getItem(getSessionKey(localID));
@@ -20,44 +24,56 @@ export const getPersistedSession = (localID: Maybe<number>) => {
     }
 };
 
-export const getPersistedSessionsForUserID = (UserID: string): string[] =>
-    Object.keys(localStorage).filter((key) => {
-        if (!key.startsWith(STORAGE_PREFIX)) return false;
-        try {
-            const data = localStorage.getItem(key);
-            if (!data) return false;
-            const session = JSON.parse(data);
-            return session.UserID === UserID;
-        } catch {
-            return false;
-        }
-    });
+export const getPersistedLocalIDsForUserID = (UserID: string): number[] =>
+    Object.keys(localStorage)
+        .filter((key) => {
+            if (!key.startsWith(STORAGE_PREFIX)) return false;
+            try {
+                const data = localStorage.getItem(key);
+                if (!data) return false;
+                const session = JSON.parse(data);
+                return session.UserID === UserID;
+            } catch {
+                return false;
+            }
+        })
+        .map((key) => parseInt(key.replace(STORAGE_PREFIX, ''), 10));
 
-export const getAllLocalSessions = (): SwitchableSession[] =>
+/** NOTE: as a side-effect this will wipe any user-data if
+ * an invalid persisted session is detected. */
+export const getPersistedSessions = (): EncryptedAuthSession[] =>
     Object.keys(localStorage)
         .filter((key) => key.startsWith(STORAGE_PREFIX))
-        .reduce<SwitchableSession[]>((sessions, key) => {
+        .reduce<EncryptedAuthSession[]>((sessions, key) => {
             try {
                 const rawSession = localStorage.getItem(key)!;
                 const encryptedSession = JSON.parse(rawSession);
 
                 if (!authStore.validPersistedSession(encryptedSession)) throw new Error('Invalid persisted session');
-                const { userData, LocalID, lastUsedAt } = encryptedSession;
-                const { PrimaryEmail = '', DisplayName = '' } = userData ? decodeUserData(userData) : {};
-
-                sessions.push({
-                    DisplayName,
-                    lastUsedAt,
-                    LocalID: LocalID!,
-                    PrimaryEmail,
-                    UID: encryptedSession.UID,
-                });
+                sessions.push(encryptedSession);
             } catch (err) {
-                localStorage.removeItem(key);
+                const localID = getLocalIDFromSessionKey(key);
+                clearUserLocalData(localID);
             }
 
             return sessions;
         }, []);
 
+export const getSwitchableSessions = (): SwitchableSession[] =>
+    getPersistedSessions().map<SwitchableSession>((encryptedSession) => {
+        const { userData, LocalID, lastUsedAt } = encryptedSession;
+        const { PrimaryEmail = '', DisplayName = '' } = userData ? decodeUserData(userData) : {};
+
+        return {
+            DisplayName,
+            lastUsedAt,
+            LocalID: LocalID!,
+            PrimaryEmail,
+            UID: encryptedSession.UID,
+            UserID: encryptedSession.UserID,
+        };
+    });
+
 /** Resolves the most recent used localID */
-export const getDefaultLocalID = (): Maybe<number> => first(getAllLocalSessions().sort(sortOn('lastUsedAt')))?.LocalID;
+export const getDefaultLocalID = (sessions: EncryptedAuthSession[]): Maybe<number> =>
+    first(sessions.sort(sortOn('lastUsedAt')))?.LocalID;

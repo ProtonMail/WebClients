@@ -2,6 +2,8 @@ import { type DBSchema, type IDBPDatabase, deleteDB, openDB } from 'idb';
 
 import { type Maybe } from '@proton/pass/types/utils';
 import { type EncryptedPassCache } from '@proton/pass/types/worker/cache';
+import { prop } from '@proton/pass/utils/fp/lens';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
@@ -15,10 +17,13 @@ export interface PassDB extends DBSchema {
 }
 
 export const CACHE_DB_VERSION = 1;
+export const CACHE_DB_PREFIX = 'pass:db::';
 
-/** DB is created for each userID for future-proofing account switching
- * capabilities. */
-export const getPassDBName = (userID: string) => `pass:db::${userID}`;
+export const getPassDBs = async () => (await indexedDB.databases()).map(prop('name')).filter(truthy);
+
+/** DB is created for each userID for account switching capabilities. */
+export const getPassDBName = (userID: string) => `${CACHE_DB_PREFIX}${userID}`;
+export const getPassDBUserID = (dbName: string) => dbName.replace(CACHE_DB_PREFIX, '');
 
 export const deletePassDB = async (userID: Maybe<string>) => {
     if (userID) await deleteDB(getPassDBName(userID)).catch(noop);
