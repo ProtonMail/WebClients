@@ -11,6 +11,7 @@ import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Tabs from '@proton/components/components/tabs/Tabs';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useLoading from '@proton/hooks/useLoading';
 import { getMnemonicAuthInfo, reauthMnemonic } from '@proton/shared/lib/api/auth';
 import { reauthByEmailVerification, reauthBySmsVerification } from '@proton/shared/lib/api/verify';
@@ -21,13 +22,7 @@ import { srpAuth } from '@proton/shared/lib/srp';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import {
-    useApi,
-    useAuthentication,
-    useIsSessionRecoveryInitiationAvailable,
-    useUser,
-    useUserSettings,
-} from '../../hooks';
+import { useApi, useIsSessionRecoveryInitiationAvailable, useUser, useUserSettings } from '../../hooks';
 import MnemonicInputField, { useMnemonicInputValidation } from '../mnemonic/MnemonicInputField';
 
 interface Props extends ModalProps {

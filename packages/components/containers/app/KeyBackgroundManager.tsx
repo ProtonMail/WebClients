@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 
 import { useGetKTActivation } from '@proton/components/containers/keyTransparency/useKTActivation';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { serverTime, wasServerTimeEverUpdated } from '@proton/crypto';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import { createKeyMigrationKTVerifier } from '@proton/shared/lib/keyTransparency';
@@ -21,7 +22,6 @@ import { useGetFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import {
-    useAuthentication,
     useEventManager,
     useGetAddressKeys,
     useGetAddresses,
