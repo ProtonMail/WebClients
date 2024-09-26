@@ -2,6 +2,7 @@ import type { ThemeColor } from '@proton/colors';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type {
     Address,
+    Group,
     GroupMembershipReturn,
     Organization,
     Subscription,
@@ -35,6 +36,7 @@ interface Arguments {
     canDisplayB2BLogsPass: boolean;
     canDisplayB2BLogsVPN: boolean;
     memberships: GroupMembershipReturn[] | undefined;
+    groups: Group[] | undefined;
     isUserGroupsMembershipFeatureEnabled: boolean;
     isB2BDrive: boolean;
     isB2BAuthLogsEnabled: boolean;
@@ -58,6 +60,7 @@ export const getRoutes = ({
     canDisplayB2BLogsPass,
     canDisplayB2BLogsVPN,
     memberships,
+    groups,
     isUserGroupsMembershipFeatureEnabled,
     isB2BDrive,
     isB2BAuthLogsEnabled,
@@ -99,6 +102,7 @@ export const getRoutes = ({
             isUserGroupsFeatureEnabled,
             isB2BAuthLogsEnabled,
             showGatewaysForBundlePlan,
+            groups,
         }),
         vpn: getVpnAppRoutes({ app }),
         wallet: getWalletAppRoutes(),
