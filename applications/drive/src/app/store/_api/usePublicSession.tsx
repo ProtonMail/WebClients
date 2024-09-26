@@ -51,7 +51,7 @@ function usePublicSessionProvider() {
         const persistedSession = getLastActivePersistedUserSession();
         if (persistedSession) {
             try {
-                metrics.setAuthHeaders(persistedSession?.UID);
+                metrics.setAuthHeaders(persistedSession.UID);
                 const resumedSession = await resumeSession({ api, localID: persistedSession.localID });
                 if (resumedSession) {
                     auth.setPassword(resumedSession.keyPassword);
