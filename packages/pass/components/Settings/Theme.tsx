@@ -2,13 +2,13 @@ import { type FC } from 'react';
 
 import { c } from 'ttag';
 
+import { PassThemeCardList } from './PassThemeCardList';
 import { SettingsPanel } from './SettingsPanel';
-import { ThemeSelector } from './ThemeSelector';
 
 export const Theme: FC = () => {
     return (
         <SettingsPanel title={c('Label').t`Theme`}>
-            <ThemeSelector />
+            <PassThemeCardList />
         </SettingsPanel>
     );
 };
