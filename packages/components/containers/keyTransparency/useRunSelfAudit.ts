@@ -26,51 +26,29 @@ import {
 } from '../../hooks';
 import useGetLatestEpoch from './useGetLatestEpoch';
 import useReportSelfAuditErrors from './useReportSelfAuditErrors';
-import useSaveSKLToLS from './useSaveSKLToLS';
-import useUploadMissingSKL from './useUploadMissingSKL';
 
 const SELF_AUDIT_MAX_TRIALS = 6;
+
+const ignoreError = (error: any): boolean => {
+    return error instanceof StaleEpochError;
+};
+
+const reportError = (error: any, tooManyRetries: boolean) => {
+    if (tooManyRetries || !ignoreError(error)) {
+        ktSentryReportError(error, { context: 'runSelfAudit' });
+    }
+};
 
 const useRunSelfAudit = () => {
     const getUser = useGetUser();
     const getAddresses = useGetAddresses();
     const getUserKeys = useGetUserKeys();
     const getLatestEpoch = useGetLatestEpoch();
-    const api = getSilentApi(useApi());
+    const normalApi = useApi();
     const { APP_NAME: appName } = useConfig();
-    const ktLSAPIPromise = getKTLocalStorage(appName);
-    const uploadMissingSKL = useUploadMissingSKL();
-    const saveSKLToLS = useSaveSKLToLS();
     const reportSelfAuditErrors = useReportSelfAuditErrors();
     const getAddressKeys = useGetAddressKeys();
-    const selfAuditBaseInterval = getSelfAuditInterval();
     const { subscribe } = useEventManager();
-
-    /*
-     * Wait for the event loop to return an event with no address change
-     * At this point self audit can be sure to have the latest version of addresses.
-     */
-    const waitForAddressUpdates = async () => {
-        let resolve: () => void;
-        const eventPromise = new Promise<void>((_resolve) => (resolve = _resolve));
-        const unsubscribe = subscribe((data) => {
-            if (!data.Addresses) {
-                resolve();
-            }
-        });
-        await Promise.any([eventPromise, wait(5 * INTERVAL_EVENT_TIMER)]);
-        unsubscribe();
-    };
-
-    const ignoreError = (error: any): boolean => {
-        return error instanceof StaleEpochError;
-    };
-
-    const reportError = (error: any, tooManyRetries: boolean) => {
-        if (tooManyRetries || !ignoreError(error)) {
-            ktSentryReportError(error, { context: 'runSelfAudit' });
-        }
-    };
 
     const createSelfAuditStateUserKeys = useCallback(async (): Promise<KeyPair[]> => {
         const userKeys = await getUserKeys();
@@ -100,9 +78,25 @@ const useRunSelfAudit = () => {
         } finally {
             exportedUserKeys.forEach((privateKey) => privateKey.fill(0));
         }
-    }, [getUserKeys]);
+    }, []);
 
     const createSelfAuditStateAddressKeys = useCallback(async () => {
+        /*
+         * Wait for the event loop to return an event with no address change
+         * At this point self audit can be sure to have the latest version of addresses.
+         */
+        const waitForAddressUpdates = async () => {
+            let resolve: () => void;
+            const eventPromise = new Promise<void>((_resolve) => (resolve = _resolve));
+            const unsubscribe = subscribe((data) => {
+                if (!data.Addresses) {
+                    resolve();
+                }
+            });
+            await Promise.any([eventPromise, wait(5 * INTERVAL_EVENT_TIMER)]);
+            unsubscribe();
+        };
+
         await waitForAddressUpdates();
         const addressesWithoutKeys = await getAddresses();
         const addressesKeys = await Promise.all(addressesWithoutKeys.map((address) => getAddressKeys(address.ID)));
@@ -155,19 +149,22 @@ const useRunSelfAudit = () => {
         } finally {
             exportedAddressesKeys.forEach((keys) => keys.forEach(({ privateKey }) => privateKey.fill(0)));
         }
-    }, [getAddresses, getAddressKeys]);
+    }, []);
 
-    const createSelfAuditState = async (lastSelfAudit: SelfAuditResult | undefined): Promise<SelfAuditState> => {
-        const [userKeys, addressKeys] = await Promise.all([
-            createSelfAuditStateUserKeys(),
-            createSelfAuditStateAddressKeys(),
-        ]);
-        return {
-            userKeys,
-            lastSelfAudit,
-            ...addressKeys,
-        };
-    };
+    const createSelfAuditState = useCallback(
+        async (lastSelfAudit: SelfAuditResult | undefined): Promise<SelfAuditState> => {
+            const [userKeys, addressKeys] = await Promise.all([
+                createSelfAuditStateUserKeys(),
+                createSelfAuditStateAddressKeys(),
+            ]);
+            return {
+                userKeys,
+                lastSelfAudit,
+                ...addressKeys,
+            };
+        },
+        []
+    );
 
     const clearSelfAuditState = useCallback(async (state: SelfAuditState) => {
         const clearUserKeysPromise = Promise.all(
@@ -181,22 +178,25 @@ const useRunSelfAudit = () => {
         await Promise.all([clearUserKeysPromise, clearAddressKeysPromise]);
     }, []);
 
-    const runSelfAuditWithState = async (state: SelfAuditState) => {
+    const runSelfAuditWithState = useCallback(async (state: SelfAuditState) => {
+        const ktLSAPIPromise = getKTLocalStorage(appName);
         const ktLSAPI = await ktLSAPIPromise;
-        const userID = (await getUser()).ID;
         if (state.userKeys.length === 0) {
             throw new Error('User has no user keys');
         }
         try {
-            const selfAuditResult = await selfAudit(
-                userID,
+            const selfAuditResult = await selfAudit({
+                userContext: {
+                    getUser,
+                    getUserKeys,
+                    getAddressKeys,
+                    appName,
+                },
                 state,
-                api,
+                api: getSilentApi(normalApi),
                 ktLSAPI,
-                saveSKLToLS,
-                uploadMissingSKL,
-                getLatestEpoch
-            );
+                getLatestEpoch,
+            });
 
             // Update local storage value
             document.dispatchEvent(
@@ -213,6 +213,7 @@ const useRunSelfAudit = () => {
             const failedTrials = (state.lastSelfAudit?.error?.failedTrials ?? 0) + 1;
             const tooManyRetries = failedTrials >= SELF_AUDIT_MAX_TRIALS;
             const currentTime = +serverTime();
+            const selfAuditBaseInterval = getSelfAuditInterval();
             const nextSelfAuditInterval = tooManyRetries
                 ? selfAuditBaseInterval
                 : Math.min(Math.pow(2, failedTrials) * MINUTE, selfAuditBaseInterval);
@@ -228,16 +229,16 @@ const useRunSelfAudit = () => {
             await reportSelfAuditErrors(selfAuditResult);
             return { selfAuditResult };
         }
-    };
+    }, []);
 
-    const runSelfAudit = async (lastSelfAudit: SelfAuditResult | undefined) => {
+    const runSelfAudit = useCallback(async (lastSelfAudit: SelfAuditResult | undefined) => {
         const state = await createSelfAuditState(lastSelfAudit);
         try {
             return await runSelfAuditWithState(state);
         } finally {
             await clearSelfAuditState(state);
         }
-    };
+    }, []);
 
     return runSelfAudit;
 };

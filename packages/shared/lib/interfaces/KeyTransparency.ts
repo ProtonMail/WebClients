@@ -1,7 +1,9 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import type { Epoch, SelfAuditResult } from '@proton/key-transparency/lib';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import type { Address } from './Address';
+import type { Api } from './Api';
 import type { ProcessedApiKey } from './EncryptionPreferences';
 import type { DecryptedAddressKey, DecryptedKey, KeyPair } from './Key';
 import type { FetchedSignedKeyList, SignedKeyList } from './SignedKeyList';
@@ -49,41 +51,52 @@ export type KeyTransparencyCommit = (userKeys: DecryptedKey[]) => Promise<void>;
 
 export interface PreAuthKTVerifier {
     preAuthKTVerify: PreAuthKTVerify;
-    preAuthKTCommit: (userID: string) => Promise<void>;
+    preAuthKTCommit: (userID: string, api: Api) => Promise<void>;
 }
 
-export type VerifyOutboundPublicKeys = (
-    email: string,
+export interface KTUserContext {
+    appName: APP_NAMES;
+    getUser: () => Promise<User>;
+    getUserKeys: () => Promise<DecryptedKey[]>;
+    getAddressKeys: (addressID: string) => Promise<DecryptedKey[]>;
+}
+
+export type VerifyOutboundPublicKeys = (data: {
+    userContext?: KTUserContext;
+    email: string;
     /**
      * Optimisations for apps where users with external domains do not have valid keys (e.g. Mail)
      */
-    skipVerificationOfExternalDomains: boolean,
+    skipVerificationOfExternalDomains: boolean;
     address: {
         keyList: ProcessedApiKey[];
         signedKeyList: FetchedSignedKeyList | null;
-    },
+    };
     catchAll?: {
         keyList: ProcessedApiKey[];
         signedKeyList: FetchedSignedKeyList | null;
-    }
-) => Promise<{
+    };
+    api: Api;
+}) => Promise<{
     addressKTResult?: KeyTransparencyVerificationResult;
     catchAllKTResult?: KeyTransparencyVerificationResult;
 }>;
 
-export type SaveSKLToLS = (
-    email: string,
-    data: string,
-    revision: number,
-    expectedMinEpochID: number,
-    addressID?: string,
-    isCatchall?: boolean
-) => Promise<void>;
+export type SaveSKLToLS = (data: {
+    userContext: KTUserContext;
+    email: string;
+    data: string;
+    revision: number;
+    expectedMinEpochID: number;
+    addressID?: string;
+    isCatchall: boolean;
+}) => Promise<void>;
 
-export type KeyMigrationKTVerifier = (
-    email: string,
-    signedKeyList: Partial<FetchedSignedKeyList> | null | undefined
-) => Promise<void>;
+export type KeyMigrationKTVerifier = (options: {
+    email: string;
+    signedKeyList: Partial<FetchedSignedKeyList> | null | undefined;
+    api: Api;
+}) => Promise<void>;
 
 export enum KeyTransparencyActivation {
     DISABLED,
@@ -91,7 +104,7 @@ export enum KeyTransparencyActivation {
     SHOW_UI,
 }
 
-export type GetLatestEpoch = (forceRefresh?: boolean) => Epoch;
+export type GetLatestEpoch = (forceRefresh?: boolean) => Promise<Epoch>;
 
 export enum KT_VERIFICATION_STATUS {
     VERIFIED_KEYS,
@@ -104,7 +117,12 @@ export interface KeyTransparencyVerificationResult {
     keysChangedRecently?: boolean;
 }
 
-export type UploadMissingSKL = (address: Address, epoch: Epoch, saveSKLToLS: SaveSKLToLS) => Promise<void>;
+export type UploadMissingSKL = (data: {
+    address: Address;
+    epoch: Epoch;
+    userContext: KTUserContext;
+    api: Api;
+}) => Promise<void>;
 
 export type ResetSelfAudit = (user: User, keyPassword: string, addressesBeforeReset: Address[]) => Promise<void>;
 

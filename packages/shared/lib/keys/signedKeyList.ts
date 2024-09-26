@@ -7,6 +7,7 @@ import { getIsAddressDisabled } from '../helpers/address';
 import type {
     ActiveKey,
     Address,
+    Api,
     DecryptedKey,
     KeyMigrationKTVerifier,
     KeyTransparencyVerify,
@@ -105,18 +106,25 @@ export const getSignedKeyList = async (
     return signedKeyList;
 };
 
-export const createSignedKeyListForMigration = async (
-    address: Address,
-    decryptedKeys: DecryptedKey[],
-    keyTransparencyVerify: KeyTransparencyVerify,
-    keyMigrationKTVerifier: KeyMigrationKTVerifier
-): Promise<[SignedKeyList | undefined, OnSKLPublishSuccess | undefined]> => {
+export const createSignedKeyListForMigration = async ({
+    address,
+    decryptedKeys,
+    keyMigrationKTVerifier,
+    keyTransparencyVerify,
+    api,
+}: {
+    api: Api;
+    address: Address;
+    decryptedKeys: DecryptedKey[];
+    keyTransparencyVerify: KeyTransparencyVerify;
+    keyMigrationKTVerifier: KeyMigrationKTVerifier;
+}): Promise<[SignedKeyList | undefined, OnSKLPublishSuccess | undefined]> => {
     let signedKeyList: SignedKeyList | undefined;
     let onSKLPublishSuccess: OnSKLPublishSuccess | undefined;
     if (!address.SignedKeyList || address.SignedKeyList.ObsolescenceToken) {
         // Only create a new signed key list if the address does not have one already
         // or the signed key list is obsolete.
-        await keyMigrationKTVerifier(address.Email, address.SignedKeyList);
+        await keyMigrationKTVerifier({ email: address.Email, signedKeyList: address.SignedKeyList, api });
         const activeKeys = getNormalizedActiveKeys(
             address,
             await getActiveKeys(address, address.SignedKeyList, address.Keys, decryptedKeys)

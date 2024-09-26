@@ -183,6 +183,8 @@ export const getMemberKeyPayload = async ({
             api,
             verifyOutboundPublicKeys: mode.verifyOutboundPublicKeys,
             email,
+            // In app context, can use default
+            userContext: undefined,
         })
     )[0]?.publicKey;
     if (!memberPublicKey) {
@@ -791,6 +793,8 @@ export const prepareAcceptOrganizationKeyInvite = ({
                 api,
                 email: adminEmail,
                 verifyOutboundPublicKeys,
+                // In app context, can use default
+                userContext: undefined,
             })
         ).map(({ publicKey }) => publicKey);
         if (!adminEmailPublicKeys.length) {

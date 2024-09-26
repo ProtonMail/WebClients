@@ -70,6 +70,8 @@ export const getPendingUnprivatizationRequest = ({
         await validateUnprivatizationData({
             api: silentApi,
             verifyOutboundPublicKeys,
+            // In app, can use default context
+            userContext: undefined,
             parsedUnprivatizationData,
             // For unprivatization (subuser side) it's not necessary to validate revision
             options: {

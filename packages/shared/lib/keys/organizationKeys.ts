@@ -13,6 +13,7 @@ import type { UpdateOrganizationKeysPayloadLegacy, UpdateOrganizationKeysPayload
 import type {
     Address,
     Api,
+    KTUserContext,
     KeyGenConfig,
     KeyPair,
     Member,
@@ -404,10 +405,12 @@ export const getVerifiedPublicKeys = async ({
     api,
     email,
     verifyOutboundPublicKeys,
+    userContext,
 }: {
     email: string;
     api: Api;
     verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
+    userContext: KTUserContext | undefined;
 }) => {
     if (!email) {
         throw new Error('Missing email');
@@ -417,6 +420,7 @@ export const getVerifiedPublicKeys = async ({
         api,
         email,
         verifyOutboundPublicKeys,
+        userContext,
         internalKeysOnly: false,
         noCache: true,
     });
@@ -552,6 +556,8 @@ export const validateOrganizationSignatureHelper = async ({
             api: silentApi,
             email,
             verifyOutboundPublicKeys,
+            // In app context, can use default
+            userContext: undefined,
         })
     ).map(({ publicKey }) => publicKey);
 
