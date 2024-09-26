@@ -4,18 +4,15 @@ import type { GroupsManagementReturn } from './types';
 
 interface Props {
     groupsManagement: GroupsManagementReturn;
-    canOnlyDelete: boolean;
 }
 
-const GroupForm = ({ groupsManagement, groupsManagement: { uiState, selectedGroup }, canOnlyDelete }: Props) => {
+const GroupForm = ({ groupsManagement, groupsManagement: { uiState, selectedGroup } }: Props) => {
     if (uiState === 'empty' || selectedGroup === undefined) {
         return;
     }
 
     if (uiState === 'view') {
-        return (
-            <ViewGroup groupsManagement={groupsManagement} groupData={selectedGroup} canOnlyDelete={canOnlyDelete} />
-        );
+        return <ViewGroup groupsManagement={groupsManagement} groupData={selectedGroup} />;
     }
 
     return <EditGroup groupsManagement={groupsManagement} groupData={selectedGroup} />;

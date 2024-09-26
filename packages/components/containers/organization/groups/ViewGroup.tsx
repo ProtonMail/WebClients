@@ -12,7 +12,6 @@ import type { GroupsManagementReturn } from './types';
 interface Props {
     groupsManagement: GroupsManagementReturn;
     groupData: Group;
-    canOnlyDelete: boolean;
 }
 
 const ViewGroup = ({
@@ -24,7 +23,6 @@ const ViewGroup = ({
         form: { resetForm },
     },
     groupData,
-    canOnlyDelete,
 }: Props) => {
     const { createNotification } = useNotifications();
 
@@ -45,7 +43,6 @@ const ViewGroup = ({
                     actions={(() => {
                         return [
                             <Button
-                                disabled={canOnlyDelete}
                                 className="flex items-center"
                                 key="button-edit"
                                 onClick={() => {
@@ -92,12 +89,7 @@ const ViewGroup = ({
                     </div>
                 )}
                 <div className="gap-2">
-                    <GroupMemberList
-                        groupMembers={groupMembers}
-                        loading={loadingGroupMembers}
-                        group={selectedGroup}
-                        canOnlyDelete={canOnlyDelete}
-                    />
+                    <GroupMemberList groupMembers={groupMembers} loading={loadingGroupMembers} group={selectedGroup} />
                 </div>
             </div>
         </Panel>
