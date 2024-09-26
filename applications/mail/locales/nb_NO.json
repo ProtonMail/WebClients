@@ -220,6 +220,9 @@
       "Click here.": [
         "Klikk her"
       ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "Klikk for å kopiere ${ defaultEmailAddress } til utklippstavlen"
+      ],
       "Close": [
         "Lukk"
       ],
@@ -1326,6 +1329,9 @@
       ],
       "Use recovery code": [
         "Bruk gjenopprettingskode"
+      ],
+      "Use this": [
+        "Bruk dette"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Bruk musen for å endre størrelsen på visningen. Bruker du tastaturet, kan du bruke venstre og høyre piltast for å endre størrelsen."
@@ -3497,6 +3503,9 @@
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Oppgrader kontoen din for å aktivere ${ PROTON_SENTINEL_NAME }, vår banebrytende AI-drevne sikkerhetsløsning med dedikert 24/7 ekspertstøtte."
       ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "Bruk ${ MAIL_APP_NAME } for å logge på nettjenester, siden vi, i motsetning til andre e-postleverandører, aldri vil spore dataene dine og dele dem med tredjeparter."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Bruk 'dra' og 'slipp' til å rangere sammenslåingsprioritet mellom kontakter. Fjern merket for kontaktene du ikke vil slå sammen."
       ],
@@ -4782,6 +4791,9 @@
       "Configure your family account and invite users ": [
         "Konfigurer familiekontoen din og inviter brukere "
       ],
+      "Invite members and get everything up and running.": [
+        "Inviter medlemmer og få alt i gang."
+      ],
       "Set up your family": [
         "Sett opp familien din"
       ],
@@ -6013,7 +6025,7 @@
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilordnet gruppe ${ contactGroupName }"
       ],
-      "Contact unassigned to group ${ contactGroupName }": [
+      "Contact unassigned from group ${ contactGroupName }": [
         "Kontakt fjernet fra gruppe ${ contactGroupName }"
       ],
       "Copied to clipboard": [
@@ -6171,6 +6183,9 @@
       ],
       "Email address": [
         "E-postadresse"
+      ],
+      "Email copied to clipboard": [
+        "E-post kopiert til utklippstavlen"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "E-posthotell for 10 egendefinerte e-postdomenenavn er gratis inkludert. Ytterligere domener kan legges til for ${ price }."
@@ -6726,6 +6741,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Oppdatering av siden eller ${ link } løser automatisk de fleste problemer."
+      ],
+      "Remember to update this in your password manager or wherever you keep your account and login information.": [
+        "Husk å oppdatere dette i passordbehandleren din eller der du oppbevarer konto- og påloggingsinformasjonen din."
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Fjerner alle data knyttet til denne appen (inkludert nedlastede meldinger, …)"
@@ -7980,6 +7998,9 @@
       ],
       "Don't like the style": [
         "Liker ikke stilen"
+      ],
+      "Don't show again": [
+        "Ikke vis igjen"
       ],
       "Don't show this again": [
         "Ikke vis dette igjen"
@@ -9896,7 +9917,54 @@
         "Velg hva ${ BRAND_NAME } kan få tilgang til: se e-postmeldinger og innstillinger, se og last ned kontaktene dine, se og last ned alle agendaer du får tilgang til fra Google Agenda."
       ]
     },
+    "Onboarding List Placeholder": {
+      "Finance": [
+        "Finans"
+      ],
+      "I have moved my logins to ${ BRAND_NAME }": [
+        "Jeg har flyttet påloggingene mine til ${ BRAND_NAME }"
+      ],
+      "Privacy for all your online accounts": [
+        "Personvern for alle nettkontoene dine"
+      ],
+      "Shopping": [
+        "Shopping"
+      ],
+      "Social media": [
+        "Sosiale medier"
+      ],
+      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
+        "Bruk ${ MAIL_APP_NAME }-adressen din til å logge på nettjenester for å unngå å bli sporet og profilert. Endre e-postadressen din for populære tjenester nå. ${ learnMoreLink }."
+      ]
+    },
     "Onboarding modal": {
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "${ advancedEncryptionTitle } sikrer at bare du og tiltenkte mottakere har tilgang til e-postene dine."
+      ],
+      "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
+        "${ industryLeadingSpamProtectionTitle } hindrer svindel-e-poster fra å nå innboksen din."
+      ],
+      "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
+        "${ protectionFromTrackersTitle } betyr at du ikke lenger blir fulgt over internett."
+      ],
+      "Access email and calendar right from your desktop with the desktop app.": [
+        "Få tilgang til e-post og kalender direkte fra skrivebordet med skrivebordsappen."
+      ],
+      "Activate premium features": [
+        "Aktiver premiumfunksjoner"
+      ],
+      "Activate selected": [
+        "Aktiver valgte"
+      ],
+      "Advanced encryption": [
+        "Avansert kryptering"
+      ],
+      "App Store": [
+        "App Store"
+      ],
+      "Auto-delete spam and trash": [
+        "Auto-slett søppelpost og meldinger i papirkurven"
+      ],
       "Automatically forward emails": [
         "Videresend e-post automatisk"
       ],
@@ -9906,11 +9974,26 @@
       "Block unsavory senders": [
         "Blokkér uønskede avsendere"
       ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Fjern slettede e-poster og søppelpost-e-poster etter 30 dager."
+      ],
       "Congratulations on choosing privacy": [
         "Gratulerer med valg av personvern"
       ],
+      "Dark Web Monitoring": [
+        "Overvåking av det mørke nettet"
+      ],
+      "Download the desktop app": [
+        "Last ned skrivebordsappen"
+      ],
+      "Download the desktop app and continue": [
+        "Last ned skrivebordsappen og fortsett"
+      ],
       "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
         "Kryptering så sterk, bare du og tiltenkte mottakere kan se e-postene dine. ${ kbLinkEncryption }"
+      ],
+      "Fixed and focused": [
+        "Fast og fokusert"
       ],
       "For your eyes only": [
         "Kun for dine øyne"
@@ -9918,8 +10001,38 @@
       "Forward Gmail messages to your inbox.": [
         "Videresend Gmail-meldinger til innboksen."
       ],
+      "Get notified if your password is compromised.": [
+        "Bli varslet hvis passordet ditt er kompromittert."
+      ],
+      "Get the desktop app": [
+        "Få skrivebordsappen"
+      ],
+      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
+        "Få mobilappen fra ${ mobileAppAppStoreLink } eller ${ mobileAppGooglePlayLink }."
+      ],
+      "Google Play": [
+        "Google Play"
+      ],
+      "Industry-leading spam protection": [
+        "Bransjeledende beskyttelse mot søppelpost"
+      ],
+      "Let's get started": [
+        "La oss komme i gang"
+      ],
+      "Make the most of your paid plan.": [
+        "Få mest mulig ut av den betalte planen din."
+      ],
+      "Maybe later": [
+        "Kanskje senere"
+      ],
+      "More ways to experience ${ MAIL_APP_NAME }": [
+        "Flere måter å oppleve ${ MAIL_APP_NAME } på"
+      ],
       "Next": [
         "Neste"
+      ],
+      "On the move": [
+        "På farten"
       ],
       "Protection from trackers": [
         "Beskyttelse mot sporere"
@@ -9927,16 +10040,37 @@
       "Skip": [
         "Hopp over"
       ],
+      "Start using ${ BRAND_NAME }": [
+        "Begynn å bruke ${ BRAND_NAME }"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Begynn å bruke den kortere, mer fengende versjonen av e-postadressen din."
+      ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "Vi stopper annonsører og datainnsamlere fra å profilere deg. ${ kbLinkPrivacy }"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Velkommen til ${ MAIL_APP_NAME }"
+      ],
+      "Where privacy is default.": [
+        "Der personvern er standard."
       ]
     },
     "Onboarding Proton": {
+      "Choose your preferred look and feel.": [
+        "Velg ditt foretrukne utseende og følelse."
+      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Konfigurer organisasjonen, koble domenenavnet ditt og opprett kontoer for å sikre at alle medlemmer i organisasjonen er beskyttet."
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Oppdag alle ${ BRAND_NAME }-tjenester"
+      ],
+      "Link your domain name and create accounts for all members of your organization.": [
+        "Koble til domenenavnet ditt og opprett kontoer for alle medlemmer av organisasjonen."
+      ],
+      "Make it your own": [
+        "Gjør det til ditt eget"
       ],
       "Pick a theme": [
         "Velg et tema"
@@ -11156,6 +11290,20 @@
       ],
       "Unsubscribed": [
         "Avsluttet abonnement"
+      ]
+    },
+    "Step": {
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "Skriv inn ${ MAIL_APP_NAME }-adressen din som den nye adressen, og lagre, bekreft eller verifiser endringen"
+      ],
+      "In the account settings, look for the option to edit or change your email address ": [
+        "I kontoinnstillingene ser du etter alternativet for å redigere eller endre e-postadressen din "
+      ],
+      "Select service to update": [
+        "Velg tjeneste som skal oppdateres"
+      ],
+      "Sign in to the service": [
+        "Logg på tjenesten"
       ]
     },
     "Step in filter modal": {
@@ -12543,6 +12691,9 @@
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Skjul e-posten din med ${ PASS_APP_NAME }"
+      ],
+      "How to update your email address": [
+        "Slik oppdaterer du e-postadressen din"
       ],
       "Human verification": [
         "Menneskelig verifisering"

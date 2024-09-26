@@ -116,10 +116,10 @@
       "Create": [
         "Ekle"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Bir ${ BRAND_NAME } hesabı açın"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Bir ${ BRAND_NAME } hesabı açın"
       ],
       "Create a new vault to share": [
@@ -635,7 +635,7 @@
         "${ provider } dosyası işlenemedi. ${ errorDetail }"
       ],
       "[Error] an item could not be parsed": [
-        "[hata] bir öge işlenemedi"
+        "[Error] bir öge işlenemedi"
       ],
       "Alias could not be updated at the moment. Please try again later": [
         "Takma ad şu anda güncellenemedi. Lütfen bir süre sonra yeniden deneyin"
@@ -1161,9 +1161,6 @@
       ],
       "Automatically copy the generated password to the clipboard": [
         "Oluşturulan parola otomatik olarak panoya kopyalansın"
-      ],
-      "Autosaved on ${ payload.domain }": [
-        "${ payload.domain } üzerinden otomatik olarak kaydedildi"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Verilerinizi bu biçimde dışa aktarmadan önce lütfen Safari -> Ayarlar -> \"Genel\" sekmesini açın ve \"Güvenli dosyaları indirdikten sonra aç\" seçeneğini kapatın. Böylece, dışa aktarılan dosyanın Safari tarafından yanlış bir şekilde ayıklanması engellenir."
@@ -2527,6 +2524,9 @@
       ],
       "Type": [
         "Tür"
+      ],
+      "Unknown": [
+        "Bilinmiyor"
       ],
       "Unlock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } kilidini aç"

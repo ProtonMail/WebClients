@@ -10240,17 +10240,34 @@
       ]
     },
     "unprivatization": {
+      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
+        "${ n } utilisateur a rejoint votre organisation par le biais de votre fournisseur d'identité. Veuillez approuver ou rejeter ses comptes :",
+        "${ n } utilisateurs ont rejoint votre organisation par le biais de votre fournisseur d'identité. Veuillez approuver ou rejeter leurs comptes :"
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Les administrateurs ne peuvent pas accéder aux données des utilisateurs privés et ne peuvent pas réinitialiser leur mot de passe."
       ],
+      "Approve all": [
+        "Tout approuver"
+      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "En rendant l'utilisateur privé, vous ne pourrez pas l'aider à retrouver l'accès à ses données ou à son compte."
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "L'accès administrateur n'a pas pu être activé pour ${ n } utilisateur car ses clés de chiffrement ont été entre-temps mises à jour :",
+        "L'accès administrateur n'a pas pu être activé pour ${ n } utilisateurs car leurs clés de chiffrement ont été entre-temps mises à jour :"
+      ],
+      "Could not enable administrator access: ${ error }": [
+        "Une erreur s'est produite lors de l'activation de l'accès administrateur : ${ error }"
       ],
       "Delete request": [
         "Supprimer la demande"
       ],
       "Delete request to access user data?": [
         "Voulez-vous supprimer la demande d'accès aux données de l'utilisateur ?"
+      ],
+      "Enable manually": [
+        "Activer manuellement"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Une fois que l'utilisateur a donné son accord, vous pourrez l'aider à retrouver l'accès à son compte ou à gérer ses données."
@@ -10278,9 +10295,6 @@
       ],
       "Send request": [
         "Envoyer une demande"
-      ],
-      "Something went wrong enabling administrator access: ${ error }": [
-        "Une erreur s'est produite lors de l'activation de l'accès administrateur :${ error }"
       ],
       "The user must have an address to request data access": [
         "L'utilisateur doit disposer d'une adresse pour demander l'accès aux données."
