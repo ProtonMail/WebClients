@@ -663,6 +663,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-fil kunne ikke fortolkes. ${ errorDetail }"
       ],
+      "[Error] an item could not be parsed": [
+        "[Fejl] et element kunne ikke håndteres"
+      ],
       "Alias could not be updated at the moment. Please try again later": [
         "Alias kunne ikke opdateres i øjeblikket. Prøv igen senere."
       ],
@@ -1117,6 +1120,9 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Når du har importeret dine data, kan du slette CSV-filen med dine adgangskoder for en sikkerheds skyld."
+      ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "Alias-administrationsfunktioner fra SimpleLogin kommer snart!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias er blevet deaktiveret. Du vil ikke længere modtage mails sendt til ${ item.aliasEmail }"
@@ -1980,6 +1986,9 @@
       "Alias address": [
         "Alias-adresse"
       ],
+      "Alias management": [
+        "Alias-administration"
+      ],
       "Aliases": [
         "Aliasser"
       ],
@@ -2514,6 +2523,9 @@
       ],
       "Type": [
         "Type"
+      ],
+      "Unknown": [
+        "Ukendt"
       ],
       "Unlock with": [
         "Lås op med"

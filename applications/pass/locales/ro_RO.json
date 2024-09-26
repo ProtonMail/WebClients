@@ -664,6 +664,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } nu a putut fi analizat. ${ errorDetail }"
       ],
+      "[Error] an item could not be parsed": [
+        "[Eroare] Un articol nu a putut fi analizat."
+      ],
       "Alias could not be updated at the moment. Please try again later": [
         "Aliasurile nu au putut fi actualizate momentan. Reîncercați mai târziu."
       ],
@@ -2549,6 +2552,9 @@
       ],
       "Type": [
         "Tip"
+      ],
+      "Unknown": [
+        "Necunoscut"
       ],
       "Unlock with": [
         "Deblocare cu"
