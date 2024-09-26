@@ -46,5 +46,11 @@ export const handleSetupAddressKeys = async ({
     const addressesToUse =
         addresses?.length > 0 ? addresses : await handleSetupAddress({ api, domain: domains[0], username });
 
-    return handleSetupKeys({ api, addresses: addressesToUse, password, preAuthKTVerify, product: productParam });
+    return handleSetupKeys({
+        api,
+        addresses: addressesToUse,
+        password,
+        preAuthKTVerify,
+        product: productParam,
+    });
 };

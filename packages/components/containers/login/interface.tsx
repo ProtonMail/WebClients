@@ -7,6 +7,7 @@ import type {
     Api,
     KeyMigrationKTVerifier,
     PreAuthKTVerifier,
+    VerifyOutboundPublicKeys,
     Address as tsAddress,
     KeySalt as tsKeySalt,
     User as tsUser,
@@ -40,9 +41,11 @@ export interface AuthCacheResult {
     toApp: APP_NAMES | undefined;
     productParam: ProductParam;
     shouldSetup?: boolean;
+    authType: AuthType;
     authVersion: AuthVersion;
     authResponse: AuthResponse;
     api: Api;
+    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
     data: { user?: tsUser; salts?: tsKeySalt[]; addresses?: Address[] };
     authTypes: AuthTypes;
     username: string;

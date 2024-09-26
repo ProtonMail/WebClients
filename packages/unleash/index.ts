@@ -8,6 +8,8 @@ export {
     createUnleashReadyPromise,
     getUnleashConfig,
 } from './UnleashFlagProvider';
+export { useUnleashClient } from '@unleash/proxy-client-react';
 export { default as useFlag } from './useFlag';
+export { default as useGetFlag } from './useGetFlag';
 export { default as useFlagsReady } from './useFlagsReady';
 export { default as useVariant } from './useVariant';
