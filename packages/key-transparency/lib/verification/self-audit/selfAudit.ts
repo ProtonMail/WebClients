@@ -4,9 +4,8 @@ import type {
     Api,
     GetLatestEpoch,
     KTLocalStorageAPI,
-    SaveSKLToLS,
+    KTUserContext,
     SelfAuditState,
-    UploadMissingSKL,
 } from '@proton/shared/lib/interfaces';
 
 import { getSelfAuditInterval } from '../../helpers';
@@ -18,21 +17,26 @@ import { checkLSBlobs } from './verifyLocalStorage';
  * Audit both the user's own SKLs and any SKL the user has used
  * to send messages to
  */
-export const selfAudit = async (
-    userID: string,
-    state: SelfAuditState,
-    api: Api,
-    ktLSAPI: KTLocalStorageAPI,
-    saveSKLToLS: SaveSKLToLS,
-    uploadMissingSKL: UploadMissingSKL,
-    getLatestEpoch: GetLatestEpoch
-): Promise<SelfAuditResult> => {
+export const selfAudit = async ({
+    userContext,
+    getLatestEpoch,
+    api,
+    ktLSAPI,
+    state,
+}: {
+    userContext: KTUserContext;
+    state: SelfAuditState;
+    api: Api;
+    ktLSAPI: KTLocalStorageAPI;
+    getLatestEpoch: GetLatestEpoch;
+}): Promise<SelfAuditResult> => {
     const epoch = await getLatestEpoch(true);
 
     const userPrivateKeys = state.userKeys.map(({ privateKey }) => privateKey);
 
     const ownEmails = state.addresses.map(({ address }) => address.Email);
 
+    const userID = (await userContext.getUser()).ID;
     const localStorageAuditResults = await checkLSBlobs(userID, userPrivateKeys, ktLSAPI, epoch, api);
 
     const localStorageAuditResultsOwnAddress = localStorageAuditResults.filter(({ email }) =>
@@ -46,15 +50,14 @@ export const selfAudit = async (
         state.addresses
             .filter(({ address }) => !getIsAddressDisabled(address))
             .map((address) => {
-                return auditAddress(
-                    address.address,
-                    state.userKeys,
-                    address.addressKeys,
+                return auditAddress({
+                    userContext,
+                    address: address.address,
+                    userKeys: state.userKeys,
+                    addressKeys: address.addressKeys,
                     epoch,
-                    saveSKLToLS,
                     api,
-                    uploadMissingSKL
-                );
+                });
             })
     );
     const currentTime = +serverTime();

@@ -269,10 +269,7 @@ const SetupAddressContainer = () => {
                     data={generateAddress}
                     onSubmit={async (payload) => {
                         try {
-                            const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(
-                                ktActivation,
-                                normalApi
-                            );
+                            const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(ktActivation);
 
                             const user = await getUser();
 
@@ -305,7 +302,7 @@ const SetupAddressContainer = () => {
                                 });
                             }
 
-                            await preAuthKTCommit(user.ID);
+                            await preAuthKTCommit(user.ID, silentApi);
 
                             handleToApp();
                         } catch (e: any) {

@@ -1,51 +1,45 @@
-import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
+import { useConfig, useGetAddressKeys, useGetUser, useGetUserKeys } from '@proton/components';
+import { useGetKTActivation } from '@proton/components/containers/keyTransparency/useKTActivation';
 import { ktSentryReportError, verifyPublicKeysAddressAndCatchall } from '@proton/key-transparency/lib';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import type {
-    FetchedSignedKeyList,
-    KeyTransparencyVerificationResult,
-    ProcessedApiKey,
-    VerifyOutboundPublicKeys,
-} from '@proton/shared/lib/interfaces';
+import type { VerifyOutboundPublicKeys } from '@proton/shared/lib/interfaces';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
-import { useApi } from '../../hooks';
 import useGetLatestEpoch from './useGetLatestEpoch';
-import useSaveSKLToLS from './useSaveSKLToLS';
 
 const useVerifyOutboundPublicKeys = () => {
-    const ktActivation = useKTActivation();
-    const saveSKLToLS = useSaveSKLToLS();
-    const api = getSilentApi(useApi());
+    const getKTActivation = useGetKTActivation();
     const getLatestEpoch = useGetLatestEpoch();
+    const getUserKeys = useGetUserKeys();
+    const getUser = useGetUser();
+    const getAddressKeys = useGetAddressKeys();
+    const { APP_NAME } = useConfig();
 
-    const verifyOutboundPublicKeys: VerifyOutboundPublicKeys = async (
-        email: string,
-        skipVerificationOfExternalDomains: boolean,
-        address: {
-            keyList: ProcessedApiKey[];
-            signedKeyList: FetchedSignedKeyList | null;
-        },
-        catchAll?: {
-            keyList: ProcessedApiKey[];
-            signedKeyList: FetchedSignedKeyList | null;
-        }
-    ): Promise<{
-        addressKTResult?: KeyTransparencyVerificationResult;
-        catchAllKTResult?: KeyTransparencyVerificationResult;
-    }> => {
+    const verifyOutboundPublicKeys: VerifyOutboundPublicKeys = async ({
+        userContext,
+        api,
+        email,
+        skipVerificationOfExternalDomains,
+        address,
+        catchAll,
+    }) => {
+        const ktActivation = await getKTActivation();
         if (ktActivation === KeyTransparencyActivation.DISABLED) {
             return {};
         }
-        return verifyPublicKeysAddressAndCatchall(
+        return verifyPublicKeysAddressAndCatchall({
+            userContext: userContext ?? {
+                appName: APP_NAME,
+                getUserKeys,
+                getAddressKeys,
+                getUser,
+            },
             api,
-            saveSKLToLS,
             getLatestEpoch,
             email,
             skipVerificationOfExternalDomains,
             address,
-            catchAll
-        ).catch((error) => {
+            catchAll,
+        }).catch((error) => {
             ktSentryReportError(error, { context: 'VerifyOutboundPublicKeys' });
             return {};
         });

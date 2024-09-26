@@ -14,6 +14,7 @@ import {
     useKTActivation,
 } from '@proton/components';
 import ElectronBlockedContainer from '@proton/components/containers/app/ElectronBlockedContainer';
+import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
 import type {
     AuthActionResponse,
     AuthCacheResult,
@@ -130,6 +131,7 @@ const LoginContainer = ({
     const { isElectronDisabled } = useIsInboxElectronApp();
     const loginFormRef = useRef<LoginFormRef>();
     const searchParams = new URLSearchParams(location.search);
+    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
 
     useMetaTags(metaTags);
 
@@ -282,9 +284,11 @@ const LoginContainer = ({
                                                 ignoreUnlock: data.authType === AuthType.ExternalSSO,
                                                 setupVPN,
                                                 ktActivation,
+                                                verifyOutboundPublicKeys,
                                                 username: data.username,
                                                 password: data.password,
                                                 persistent: data.persistent,
+                                                authType: data.authType,
                                                 authResponse: data.authResponse,
                                                 authVersion: data.authVersion,
                                                 productParam,

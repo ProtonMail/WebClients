@@ -1,6 +1,6 @@
-import { useRef } from 'react';
+import { useCallback, useRef } from 'react';
 
-import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
+import { useGetKTActivation } from '@proton/components/containers/keyTransparency/useKTActivation';
 import { serverTime } from '@proton/crypto';
 import {
     commitSKLToLS,
@@ -22,38 +22,43 @@ import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
 import { useConfig } from '../../hooks';
 
+interface CreatedSKL {
+    address: Address;
+    revision?: number;
+    signedKeyList: SignedKeyList;
+    creationTimestamp: number;
+}
+
 /**
  * Return a KT verifier for when the state exists, i.e. we are inside the apps
  * and therefore self audit could run and the normal flow of verification can be performed
  */
 const useKTVerifier = (api: Api, getUser: () => Promise<UserModel>) => {
     const { APP_NAME } = useConfig();
-    const ktLSAPIPromise = getKTLocalStorage(APP_NAME);
-    const ktActivation = useKTActivation();
+    const getKTActivation = useGetKTActivation();
 
-    interface CreatedSKL {
-        address: Address;
-        revision?: number;
-        signedKeyList: SignedKeyList;
-        creationTimestamp: number;
-    }
     const createdSKLs = useRef<CreatedSKL[]>([]);
 
-    const keyTransparencyVerify: KeyTransparencyVerify = async (address: Address, signedKeyList: SignedKeyList) => {
-        if (ktActivation === KeyTransparencyActivation.DISABLED) {
-            return;
-        }
+    const keyTransparencyVerify: KeyTransparencyVerify = useCallback(
+        async (address: Address, signedKeyList: SignedKeyList) => {
+            const ktActivation = await getKTActivation();
+            if (ktActivation === KeyTransparencyActivation.DISABLED) {
+                return;
+            }
 
-        createdSKLs.current.push({
-            address,
-            revision: address.SignedKeyList?.Revision,
-            signedKeyList,
-            creationTimestamp: +serverTime(),
-        });
-    };
+            createdSKLs.current.push({
+                address,
+                revision: address.SignedKeyList?.Revision,
+                signedKeyList,
+                creationTimestamp: +serverTime(),
+            });
+        },
+        []
+    );
 
-    const keyTransparencyCommit: KeyTransparencyCommit = async (userKeys: DecryptedKey[]) => {
+    const keyTransparencyCommit: KeyTransparencyCommit = useCallback(async (userKeys: DecryptedKey[]) => {
         try {
+            const ktActivation = await getKTActivation();
             if (ktActivation === KeyTransparencyActivation.DISABLED) {
                 return;
             }
@@ -66,6 +71,7 @@ const useKTVerifier = (api: Api, getUser: () => Promise<UserModel>) => {
 
             const privateKeys = userKeys.map(({ privateKey }) => privateKey);
 
+            const ktLSAPIPromise = getKTLocalStorage(APP_NAME);
             const ktLSAPI = await ktLSAPIPromise;
             for (const savedSKL of createdSKLs.current) {
                 const allSKLs = await fetchSignedKeyLists(api, savedSKL?.revision ?? 0, savedSKL.address.Email);
@@ -89,7 +95,7 @@ const useKTVerifier = (api: Api, getUser: () => Promise<UserModel>) => {
         } catch (error: any) {
             ktSentryReportError(error, { context: 'KeyTransparencyCommit' });
         }
-    };
+    }, []);
 
     return {
         keyTransparencyVerify,
