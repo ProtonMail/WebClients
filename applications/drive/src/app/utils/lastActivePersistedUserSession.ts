@@ -9,7 +9,11 @@ export const getLastActivePersistedUserSession = () => {
         // Last Active Persisted Session in any apps
         let persistedSession: PersistedSessionWithLocalID | null = null;
         for (const data of getPersistedSessions()) {
-            if (persistedSession === null || data.persistedAt > persistedSession.persistedAt) {
+            if (
+                persistedSession === null ||
+                !persistedSession.persistent ||
+                data.persistedAt > persistedSession.persistedAt
+            ) {
                 persistedSession = data;
             }
         }
