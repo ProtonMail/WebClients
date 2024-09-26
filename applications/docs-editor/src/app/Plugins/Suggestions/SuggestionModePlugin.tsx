@@ -135,7 +135,10 @@ export function SuggestionModePlugin({
           suggestionModeLogger.info(`Creating new thread for suggestion ${id}`)
           controller
             .createSuggestionThread(id)
-            .then(() => createdSuggestionIDs.delete(id))
+            .then(() => {
+              createdSuggestionIDs.delete(id)
+              suggestionModeLogger.info(`Removed id ${id} from set ${[...createdSuggestionIDs]}`)
+            })
             .catch(sendErrorMessage)
         }
       }),
