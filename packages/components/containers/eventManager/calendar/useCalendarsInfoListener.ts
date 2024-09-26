@@ -5,7 +5,8 @@ import {
     updateBootstrapMembers,
 } from '@proton/shared/lib/eventManager/calendar/calendarBootstrap';
 
-import { useCache, useEventManager } from '../../../hooks';
+import { useEventManager } from '../../../hooks';
+import useCache from '../../../hooks/useCache';
 import { KEY as CALENDAR_BOOTSTRAP_CACHE } from '../../../hooks/useGetCalendarBootstrap';
 import { CACHE_KEY as CALENDAR_KEYS_CACHE } from '../../../hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import { useCalendarModelEventManager } from './CalendarModelEventManagerProvider';
