@@ -25,6 +25,7 @@ import {
     useDrivePlan,
     useFeatures,
     useGroupMemberships,
+    useGroups,
     useIsDataRecoveryAvailable,
     useOrganization,
     useOrganizationTheme,
@@ -163,6 +164,7 @@ const MainContainer = () => {
 
     const organizationTheme = useOrganizationTheme();
     const [memberships, loadingGroupMembership] = useGroupMemberships();
+    const [groups, loadingGroups] = useGroups();
 
     const { isB2B: isB2BDrive } = useDrivePlan();
 
@@ -183,6 +185,7 @@ const MainContainer = () => {
         canDisplayB2BLogsPass,
         canDisplayB2BLogsVPN,
         memberships,
+        groups,
         isUserGroupsMembershipFeatureEnabled,
         isB2BDrive,
         isB2BAuthLogsEnabled,
@@ -289,7 +292,8 @@ const MainContainer = () => {
             loadingSubscription ||
             loadingDataRecovery ||
             loadingIsSessionRecoveryAvailable ||
-            loadingGroupMembership
+            loadingGroupMembership ||
+            loadingGroups
         ) {
             return <PrivateMainAreaLoading />;
         }

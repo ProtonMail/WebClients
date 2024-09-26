@@ -31,6 +31,7 @@ interface Props {
     groupMember: GroupMember;
     memberName?: string;
     group: Group; // needs to be removed once GroupMemberItemDropdown does not need it
+    canOnlyDelete: boolean;
 }
 
 export const GroupMemberItem = ({
@@ -38,6 +39,7 @@ export const GroupMemberItem = ({
     groupMember: { Email, State, AddressID },
     memberName,
     group,
+    canOnlyDelete,
 }: Props) => {
     const hasKeys = !!AddressID;
     const badge = getInvitationBadgeMap()[State];
@@ -60,7 +62,7 @@ export const GroupMemberItem = ({
                     )}
                 </div>
                 <div>
-                    <GroupMemberItemDropdown member={groupMember} group={group} />
+                    <GroupMemberItemDropdown member={groupMember} group={group} canOnlyDelete={canOnlyDelete} />
                 </div>
             </GroupMemberItemWrapper>
         </>
