@@ -3972,9 +3972,6 @@
       "Contact assigned to group ${ contactGroupName }": [
         "联系人已加入 ${ contactGroupName } 群组"
       ],
-      "Contact unassigned to group ${ contactGroupName }": [
-        "联系人已从 ${ contactGroupName } 群组中移除"
-      ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "继续使用 ${ DRIVE_APP_NAME } 并稍后解锁网盘"
       ],
@@ -4146,9 +4143,6 @@
       "End-to-end encrypted": [
         "端到端加密"
       ],
-      "End-to-End Encrypted": [
-        "端到端加密"
-      ],
       "Enter password": [
         "输入密码"
       ],
@@ -4202,9 +4196,6 @@
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "文件缺少签名，我们无法验证 ${ fileName } 由谁上传。"
-      ],
-      "File scanning in Drive": [
-        "云盘中的文件扫描"
       ],
       "File will not be updated": [
         "文件不会被更新"
@@ -4886,9 +4877,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用行为，请进行人机验证。"
-      ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
-        "为了保护您的安全，${ DRIVE_APP_NAME } 可以扫描和阻止恶意文件。您仍然应该只从您信任的人那里下载文件。"
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "导入日程需要先在 ${ CALENDAR_APP_NAME } 中创建日历，作为日程导入后的存放位置。"

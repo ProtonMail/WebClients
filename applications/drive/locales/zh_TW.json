@@ -4089,8 +4089,8 @@
       "Contact assigned to group ${ contactGroupName }": [
         "指派通訊錄給群組 ${ contactGroupName }"
       ],
-      "Contact unassigned to group ${ contactGroupName }": [
-        "取消指派通訊錄給群組 ${ contactGroupName }"
+      "Contact unassigned from group ${ contactGroupName }": [
+        "聯絡資訊已從${ contactGroupName }群裡移除"
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "繼續使用 ${ DRIVE_APP_NAME } 並在稍後解鎖雲端硬碟"
@@ -4263,9 +4263,6 @@
       "End-to-end encrypted": [
         "端到端加密"
       ],
-      "End-to-End Encrypted": [
-        "點對點加密"
-      ],
       "Enter password": [
         "輸入密碼"
       ],
@@ -4319,9 +4316,6 @@
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "檔案遺失簽章。我們無法驗證 ${ fileName } 由誰上載。"
-      ],
-      "File scanning in Drive": [
-        "檔案正在雲端磁碟掃描中"
       ],
       "File will not be updated": [
         "將不會上傳檔案"
@@ -5009,9 +5003,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "為防止垃圾郵件及濫用行為，請驗證您是真人。"
-      ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
-        "為保護您，${ DRIVE_APP_NAME } 可以掃描並封鎖惡意檔案。建議您只下載來自可信寄件者的郵件附檔。"
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "若要匯入行程，須先在 ${ CALENDAR_APP_NAME } 創建新的行事曆。匯入後的行程，都會在此顯示。"

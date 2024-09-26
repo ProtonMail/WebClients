@@ -4188,9 +4188,6 @@
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilldelad till grupp ${ contactGroupName }"
       ],
-      "Contact unassigned to group ${ contactGroupName }": [
-        "Kontakt borttagen från grupp ${ contactGroupName }"
-      ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Fortsätt använda ${ DRIVE_APP_NAME } och lås upp Drive senare"
       ],
@@ -4368,9 +4365,6 @@
       "End-to-end encrypted": [
         "End-to-end-krypterat"
       ],
-      "End-to-End Encrypted": [
-        "End-to-end krypterad"
-      ],
       "Enter password": [
         "Ange lösenord"
       ],
@@ -4425,9 +4419,6 @@
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Fil saknar signatur. Vi kunde inte verifiera vem som laddade upp ${ fileName }."
-      ],
-      "File scanning in Drive": [
-        "Filskanning i Drive"
       ],
       "File will not be updated": [
         "Fil kommer inte att uppdateras"
@@ -5073,6 +5064,9 @@
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Denna fil kan ha tagits bort, flyttats eller gjorts otillgänglig. Försök att kontakta filägaren."
       ],
+      "This folder is empty": [
+        "Denna mapp är tom"
+      ],
       "This item already exists in your library": [
         "Detta objekt finns redan i ditt bibliotek"
       ],
@@ -5127,9 +5121,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
-      ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
-        "För att skydda dig kan ${ DRIVE_APP_NAME } skanna och blockera skadliga filer. Du bör fortfarande bara ladda ner filer från personer du litar på."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "För att importera händelser, skapa först en kalender i ${ CALENDAR_APP_NAME }. Det är här händelserna kommer att visas efter importen."
