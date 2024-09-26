@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
 import { type IconName } from '@proton/components/components/icon/Icon';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import type { AvailablePaymentMethod, PaymentMethodFlows, SavedPaymentMethod } from '@proton/payments';
 import { PAYMENT_METHOD_TYPES, isSignupFlow } from '@proton/payments';
 
-import { useApi, useAuthentication } from '../../hooks';
+import { useApi } from '../../hooks';
 import type { MethodsHook, Props } from '../react-extensions/useMethods';
 import { useMethods as _useMethods } from '../react-extensions/useMethods';
 

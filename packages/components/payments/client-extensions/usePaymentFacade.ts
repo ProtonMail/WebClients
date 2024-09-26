@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import type {
     BillingAddress,
     ChargeablePaymentParameters,
@@ -27,7 +28,7 @@ import type {
 } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { useApi, useAuthentication, useConfig, useModals } from '../../hooks';
+import { useApi, useConfig, useModals } from '../../hooks';
 import { useCbIframe } from '../chargebee/ChargebeeIframe';
 import type { OnMethodChangedHandler, Operations, OperationsData } from '../react-extensions';
 import { usePaymentFacade as useInnerPaymentFacade } from '../react-extensions';

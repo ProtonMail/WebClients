@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Application } from '@proton/docs-core'
-import { useApi, useAuthentication, useConfig } from '@proton/components/hooks'
+import { useApi, useConfig } from '@proton/components/hooks'
+import { useAuthentication } from '@proton/components'
 import { DocsLayout } from '../Components'
 import { Route, Switch } from 'react-router-dom'
 import ApplicationProvider from './ApplicationProvider'

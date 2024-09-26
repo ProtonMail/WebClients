@@ -8,12 +8,12 @@ import {
     useCache,
     useCalendars,
     useConfig,
-    useOrganization,
     usePlans,
     useSubscription,
     useUser,
     useVPNServersCount,
 } from '@proton/components/hooks';
+import { useOrganization } from '@proton/components/hooks/useOrganization';
 import { useFeature } from '@proton/features';
 import { type PaymentMethodStatusExtended } from '@proton/payments';
 import { APPS, ORGANIZATION_STATE, PLANS } from '@proton/shared/lib/constants';
