@@ -5,8 +5,7 @@ import { c } from 'ttag';
 
 import type { InputProps } from '@proton/atoms';
 import { Button, Input } from '@proton/atoms';
-
-import Icon from '../../icon/Icon';
+import Icon from '@proton/components/components/icon/Icon';
 
 type PasswordType = 'password' | 'text';
 

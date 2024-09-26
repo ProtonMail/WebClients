@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react';
 
+import Icon from '@proton/components/components/icon/Icon';
+
 import type { IconName, IconSize } from '../icon/Icon';
-import Icon from '../icon/Icon';
 
 interface Props {
     icon?: IconName;

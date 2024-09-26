@@ -3,10 +3,10 @@ import type { KeyboardEvent } from 'react';
 import { c } from 'ttag';
 
 import { Input } from '@proton/atoms';
+import Field from '@proton/components/components/container/Field';
 import { useNotifications } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
-import Field from '../../../components/container/Field';
 import type { AdvancedSimpleFilterModalModel, SimpleFilterModalModel } from '../interfaces';
 import { Step } from '../interfaces';
 

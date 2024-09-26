@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
+import Field from '@proton/components/components/container/Field';
+import Row from '@proton/components/components/container/Row';
 import Input from '@proton/components/components/input/Input';
 import Label from '@proton/components/components/label/Label';
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
@@ -21,8 +23,6 @@ import type { Currency } from '@proton/shared/lib/interfaces';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 
-import Field from '../../components/container/Field';
-import Row from '../../components/container/Row';
 import { useEventManager, useNotifications, useSubscription, useUser } from '../../hooks';
 import useApiResult from '../../hooks/useApiResult';
 import PaymentWrapper from '../payments/PaymentWrapper';

@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import Row from '@proton/components/components/container/Row';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -11,7 +12,6 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { Key } from '@proton/shared/lib/interfaces';
 
-import Row from '../../../components/container/Row';
 import type { ContactClearDataExecutionProps } from './ContactClearDataExecutionModal';
 
 export interface ContactClearDataConfirmProps {

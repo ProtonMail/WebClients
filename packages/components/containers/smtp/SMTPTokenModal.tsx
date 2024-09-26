@@ -3,9 +3,10 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { Form, useApi, useFormErrors, useNotifications } from '@proton/components';
+import { useApi, useFormErrors, useNotifications } from '@proton/components';
 import Copy from '@proton/components/components/button/Copy';
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
+import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';

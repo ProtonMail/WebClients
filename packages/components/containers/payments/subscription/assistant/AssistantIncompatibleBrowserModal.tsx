@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import type { ModalProps } from '@proton/components';
 import { useApi, useEventManager, useNotifications } from '@proton/components';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useLoading from '@proton/hooks/useLoading';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
