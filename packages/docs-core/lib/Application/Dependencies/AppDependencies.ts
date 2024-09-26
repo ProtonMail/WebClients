@@ -98,7 +98,7 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.SquashAlgorithm, () => {
-      return new SquashAlgorithm()
+      return new SquashAlgorithm(this.get<LoggerInterface>(App_TYPES.Logger))
     })
 
     this.bind(App_TYPES.SquashDocument, () => {
@@ -108,6 +108,7 @@ export class AppDependencies extends DependencyContainer {
         this.get<DecryptCommit>(App_TYPES.DecryptCommit),
         this.get<VerifyCommit>(App_TYPES.VerifyCommit),
         this.get<SquashAlgorithm>(App_TYPES.SquashAlgorithm),
+        this.get<LoggerInterface>(App_TYPES.Logger),
       )
     })
 

@@ -7,6 +7,7 @@ import type { SquashDocumentDTO } from './SquashDocument'
 import { SquashDocument } from './SquashDocument'
 import type { VerifyCommit } from './VerifyCommit'
 import { SquashVerificationObjectionDecision } from '../Types/SquashVerificationObjection'
+import type { LoggerInterface } from '@proton/utils/logs'
 
 jest.mock('@proton/docs-proto', () => ({
   ...jest.requireActual('@proton/docs-proto'),
@@ -29,6 +30,7 @@ describe('SquashDocument', () => {
   let verifyCommit: VerifyCommit
   let squashAlgorithm: SquashAlgorithm
   let encryptMessage: EncryptMessage
+  let logger: LoggerInterface
 
   const dto: SquashDocumentDTO = {
     docMeta: {} as any,
@@ -68,7 +70,11 @@ describe('SquashDocument', () => {
       ),
     } as unknown as SquashAlgorithm
 
-    usecase = new SquashDocument(docsApi, encryptMessage, decryptCommit, verifyCommit, squashAlgorithm)
+    logger = {
+      info: jest.fn(),
+    } as unknown as LoggerInterface
+
+    usecase = new SquashDocument(docsApi, encryptMessage, decryptCommit, verifyCommit, squashAlgorithm, logger)
   })
 
   afterEach(() => {
