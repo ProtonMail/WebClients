@@ -7,6 +7,7 @@ import { ShortcutLabel } from '../KeyboardShortcuts/ShortcutLabel'
 import SpeechBubblePenIcon from '../../Icons/SpeechBubblePenIcon'
 import { useApplication } from '../../ApplicationProvider'
 import { TOGGLE_SUGGESTION_MODE_COMMAND } from '../Suggestions/Commands'
+import clsx from '@proton/utils/clsx'
 
 export function FloatingQuickActions({
   anchorKey,
@@ -80,7 +81,10 @@ export function FloatingQuickActions({
           >
             <button
               aria-label={suggestionToggleLabel}
-              className="flex cursor-pointer items-center justify-center rounded-lg border-0 bg-none p-2.5 hover:bg-[--background-weak]"
+              className={clsx(
+                'flex cursor-pointer items-center justify-center rounded-lg border-0 bg-none p-2.5 hover:bg-[--background-weak]',
+                isSuggestionMode && 'bg-[--interaction-default-active]',
+              )}
               onClick={() => {
                 editor.dispatchCommand(TOGGLE_SUGGESTION_MODE_COMMAND, undefined)
               }}

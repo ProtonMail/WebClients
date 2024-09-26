@@ -350,10 +350,11 @@ function $handleInsertTextData(
   const suggestionSibling = isPrevSiblingSuggestion ? prevSibling : isNextSiblingSuggestion ? nextSibling : null
 
   if (suggestionSibling) {
-    if (suggestionSibling.getSuggestionTypeOrThrow() === 'insert') {
+    const suggestionSiblingType = suggestionSibling.getSuggestionTypeOrThrow()
+    if (suggestionSiblingType === 'insert') {
       $mergeWithExistingSuggestionNode(suggestionNode, suggestionSibling, isNextSiblingSuggestion)
       logger?.info('Merged with existing insert suggestion sibling')
-    } else {
+    } else if (suggestionSiblingType !== 'property-change') {
       suggestionNode.setSuggestionId(suggestionSibling.getSuggestionIdOrThrow())
     }
   } else if (!prevSibling && $isSuggestionNode(lastChildOfPrevBlock)) {
