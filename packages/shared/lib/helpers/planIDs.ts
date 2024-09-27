@@ -185,12 +185,15 @@ export const switchPlan = ({
 
         if (isIpAddon(addon) && plan && organization) {
             if (planID === PLANS.BUNDLE_PRO || PLANS.BUNDLE_PRO_2024) {
+                const isCurrentPlanVpnBiz = !!planIDs[PLANS.VPN_BUSINESS];
+
                 newPlanIDs[addon] = Math.max(
                     // VPN business includes a dedicated IP, whereas other plans do not.
                     // So when switching to bundle we need to accommodate for this
                     planIDs[ADDON_NAMES.IP_VPN_BUSINESS] ? planIDs[ADDON_NAMES.IP_VPN_BUSINESS] + 1 : 0,
                     planIDs[ADDON_NAMES.IP_BUNDLE_PRO] || 0,
-                    planIDs[ADDON_NAMES.IP_BUNDLE_PRO_2024] || 0
+                    planIDs[ADDON_NAMES.IP_BUNDLE_PRO_2024] || 0,
+                    isCurrentPlanVpnBiz ? 1 : 0
                 );
             }
 
