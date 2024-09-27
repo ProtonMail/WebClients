@@ -14,7 +14,7 @@ Website URL: example.com
 Login name: Account title 2
 Login: john2@example.com
 Password: pass
-Comment: 
+Comment:
 
 ---
 
@@ -24,38 +24,51 @@ Application: Proton Pass.app
 Login name: App login
 Login: john
 Password: pass
-Comment: 
+Comment:
 
 ---
 
 Other Accounts
 
 Account name: New account
-Login name: 
+Login name:
 Login: john2
-Password: 
-Comment: 
+Password:
+Comment:
 
 ---
 
 Account name: New account
-Login name: 
+Login name:
 Login: john
-Password: 
-Comment: 
+Password:
+Comment:
 
 ---
 
 Notes
 
 Name: New note title
-Text: 
+Text:
 
 ---
 Name: New note title 2
 Text: line 1
 line 2
 line 3",,,
+
+---
+
+Name: Note 3
+Text: Props note
+Login data on a multiline note:
+
+Username: RiverPlate1
+Password: hdwd823gahfb12!sopdf
+WEBSITE_NAME: https://amazing-website.com
+APPLICATION: FiveStarsApp
+
+End of note
 
 ---
 
