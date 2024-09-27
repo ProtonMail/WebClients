@@ -31,53 +31,58 @@ export const copyDomToClipboard = async (element: HTMLElement) => {
         return;
     }
 
-    // Try to use the Clipboard API if available
-    if (navigator.clipboard && typeof navigator.clipboard.write === 'function') {
-        const type = 'text/html';
-        const blob = new Blob([element.innerHTML], { type });
-        const data = [new ClipboardItem({ [type]: blob })];
-        await navigator.clipboard.write(data);
-    } else {
-        const activeElement = document.activeElement;
+    /** Try to use the Clipboard API if available */
+    /*
+     * Commenting the clipboard API solution for now because of 2 "issues"
+     * 1- The current solution is copying HTML only. However, we would need to copy plaintext too for editors that are not supporting HTML
+     * 2- When using the clipboard API, the content is sanitized, meaning that some parts of the content are dropped, such as classes
+     */
+    // if (navigator.clipboard && typeof navigator.clipboard.write === 'function') {
+    //     const type = 'text/html';
+    //     const blob = new Blob([element.innerHTML], { type });
+    //     const data = [new ClipboardItem({ [type]: blob })];
+    //     await navigator.clipboard.write(data);
+    // } else {
+    const activeElement = document.activeElement;
 
-        // Create an off-screen container for the element's HTML content
-        const tempContainer = document.createElement('div');
-        tempContainer.style.position = 'absolute';
-        tempContainer.style.left = '-9999px';
-        tempContainer.innerHTML = element.innerHTML;
+    // Create an off-screen container for the element's HTML content
+    const tempContainer = document.createElement('div');
+    tempContainer.style.position = 'absolute';
+    tempContainer.style.left = '-9999px';
+    tempContainer.innerHTML = element.innerHTML;
 
-        document.body.appendChild(tempContainer);
+    document.body.appendChild(tempContainer);
 
-        const selection = window.getSelection();
-        if (!selection) {
-            console.error('Failed to get selection');
-            document.body.removeChild(tempContainer);
-            return;
-        }
-
-        // Select the contents of the temporary container
-        const range = document.createRange();
-        range.selectNodeContents(tempContainer);
-
-        selection.removeAllRanges();
-        selection.addRange(range);
-
-        // Copy the selected content to the clipboard
-        try {
-            document.execCommand('copy');
-        } catch (err) {
-            console.error('Failed to copy content', err);
-        }
-
-        // Clean up
+    const selection = window.getSelection();
+    if (!selection) {
+        console.error('Failed to get selection');
         document.body.removeChild(tempContainer);
-        selection.removeAllRanges();
-
-        // Restore previous focus
-        if (activeElement instanceof HTMLElement) {
-            activeElement.focus();
-        }
+        return;
     }
+
+    // Select the contents of the temporary container
+    const range = document.createRange();
+    range.selectNodeContents(tempContainer);
+
+    selection.removeAllRanges();
+    selection.addRange(range);
+
+    // Copy the selected content to the clipboard
+    try {
+        document.execCommand('copy');
+    } catch (err) {
+        console.error('Failed to copy content', err);
+    }
+
+    // Clean up
+    document.body.removeChild(tempContainer);
+    selection.removeAllRanges();
+
+    // Restore previous focus
+    if (activeElement instanceof HTMLElement) {
+        activeElement.focus();
+    }
+    // }
 };
 
 export const getOS = () => {

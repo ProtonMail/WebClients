@@ -5,10 +5,10 @@ import { markdownToHTML } from './markdown';
 import { restoreURLs } from './url';
 
 // Prepare generated markdown result before displaying it
-export const parseModelResult = (markdownReceived: string) => {
+export const parseModelResult = (markdownReceived: string, messageID: string) => {
     const html = markdownToHTML(markdownReceived);
     const dom = parseStringToDOM(html);
-    const domWithRestoredURLs = restoreURLs(dom);
+    const domWithRestoredURLs = restoreURLs(dom, messageID);
     const sanitized = message(domWithRestoredURLs.body.innerHTML);
     return sanitized;
 };
