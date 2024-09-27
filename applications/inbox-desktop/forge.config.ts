@@ -43,7 +43,9 @@ const config: ForgeConfig = {
         // Change category type of the application on macOS
         appCategoryType: "public.app-category.productivity",
         appBundleId: pkg.config.appBundleId,
-        osxSign: {},
+        osxSign: {
+            identity: `Developer ID Application: Proton AG (${process.env.APPLE_TEAM_ID!})`,
+        },
         osxNotarize: {
             appleId: process.env.APPLE_ID!,
             appleIdPassword: process.env.APPLE_PASSWORD!,
