@@ -1,10 +1,10 @@
 import { app } from "electron";
-import { DefaultProtocol } from "./types";
+import { DefaultProtocolActual } from "@proton/shared/lib/desktop/DefaultProtocol";
 
 // Electron app protocol isDefaultProtocolClient for mailto works correctly only for macOS.
-export const checkDefaultMailtoClientMac = (): DefaultProtocol => ({
+export const checkDefaultMailtoClientMac = (): DefaultProtocolActual => ({
     isDefault: app.isDefaultProtocolClient("mailto"),
-    isChecked: true,
+    wasChecked: true,
 });
 
 // Electron app protocol setAsDefaultProtocolClient for mailto works correctly only for macOS.
