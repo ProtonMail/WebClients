@@ -1,7 +1,7 @@
+import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
 import clsx from '@proton/utils/clsx';
 
-import Icon from '../icon/Icon';
 import Progress from './Progress';
 
 interface Props {

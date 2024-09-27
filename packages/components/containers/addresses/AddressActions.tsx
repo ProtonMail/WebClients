@@ -14,7 +14,8 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import EditExternalAddressModal from '../../containers/account/EditExternalAddressModal';
 import EditInternalAddressModal from '../../containers/addresses/EditInternalAddressModal';
-import { useAddressFlags, useEventManager, useNotifications, useOrganizationKey } from '../../hooks';
+import { useEventManager, useNotifications, useOrganizationKey } from '../../hooks';
+import useAddressFlags from '../../hooks/useAddressFlags';
 import DeleteAddressPrompt from './DeleteAddressPrompt';
 import DisableAddressModal from './DisableAddressModal';
 import type { AddressPermissions } from './helper';

@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 
-import { FeatureCode, useProgressiveRollout } from '@proton/components';
+import { useProgressiveRollout } from '@proton/components';
+import { FeatureCode } from '@proton/features';
 import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';

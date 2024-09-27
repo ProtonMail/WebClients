@@ -4,6 +4,7 @@ import { getFontFaceIdFromValue, getFontFaceValueFromId } from '@proton/componen
 import Label from '@proton/components/components/label/Label';
 import Info from '@proton/components/components/link/Info';
 import { useLoading } from '@proton/hooks';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import {
     updateDraftType,
     updateFontFace,
@@ -15,7 +16,7 @@ import type { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../../components/editor/constants';
-import { useApi, useEventManager, useMailSettings, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useNotifications } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';

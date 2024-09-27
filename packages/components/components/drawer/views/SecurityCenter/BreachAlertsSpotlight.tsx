@@ -6,13 +6,13 @@ import { c } from 'ttag';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import {
-    useActiveBreakpoint,
     useOrganization,
     useSpotlightOnFeature,
     useSubscription,
     useUser,
     useWelcomeFlags,
 } from '@proton/components/hooks';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { FeatureCode } from '@proton/features';
 import { DARK_WEB_MONITORING_NAME, PLANS } from '@proton/shared/lib/constants';
 import spotlightImg from '@proton/styles/assets/img/illustrations/sentinel-shield-bolt-breach-alert.svg';

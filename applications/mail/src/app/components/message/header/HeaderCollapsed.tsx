@@ -2,7 +2,7 @@ import type { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
-import type { Breakpoints } from '@proton/components/hooks';
+import type { Breakpoints } from '@proton/components';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import {

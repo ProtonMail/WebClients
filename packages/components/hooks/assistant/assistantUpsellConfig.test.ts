@@ -1,9 +1,9 @@
+import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { SelectedPlan } from '@proton/payments';
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { PLANS_MAP } from '@proton/testing/data';
 
-import { SUBSCRIPTION_STEPS } from '../..';
 import { getAssistantUpsellConfig } from './assistantUpsellConfig';
 
 const baseConfig: any = {

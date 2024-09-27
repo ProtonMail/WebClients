@@ -10,7 +10,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
-import { ExportModal } from '@proton/components/containers/calendar/exportModal';
+import ExportModal from '@proton/components/containers/calendar/exportModal/ExportModal';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 

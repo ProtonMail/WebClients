@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 
+import type { FeatureCode } from '@proton/features';
+import { useFeature } from '@proton/features';
 import { getUserByte } from '@proton/shared/lib/user/helpers';
 
-import type { FeatureCode } from '../containers/features';
-import useFeature from './useFeature';
 import useUser from './useUser';
 
 const useProgressiveRollout = (code: FeatureCode) => {

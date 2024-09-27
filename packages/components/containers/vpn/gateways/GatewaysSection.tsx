@@ -9,6 +9,8 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
+import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { PLANS, SERVER_FEATURES, SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { getVPNDedicatedIPs } from '@proton/shared/lib/helpers/subscription';
@@ -18,8 +20,7 @@ import gatewaysEmptyStateAdminsSvg from '@proton/styles/assets/img/illustrations
 import gatewaysEmptyStateUsersSvg from '@proton/styles/assets/img/illustrations/gateways-empty-state-users.svg';
 
 import SettingsSectionWide from '../../../containers/account/SettingsSectionWide';
-import { EmptyViewContainer } from '../../../containers/app';
-import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '../../../containers/payments';
+import EmptyViewContainer from '../../../containers/app/EmptyViewContainer';
 import { getCountryOptions } from '../../../helpers/countries';
 import { useApi, useNotifications, useSortedList, useSubscription, useUser, useUserSettings } from '../../../hooks';
 import type { Gateway } from './Gateway';

@@ -1,7 +1,6 @@
-import { FeatureCode } from '@proton/components/containers/features';
 import useConfig from '@proton/components/hooks/useConfig';
-import useFeature from '@proton/components/hooks/useFeature';
 import { useUser } from '@proton/components/hooks/useUser';
+import { FeatureCode, useFeature } from '@proton/features';
 
 import useOfferFlags from '../../hooks/useOfferFlags';
 import type { Operation } from '../../interface';

@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import type { ModalProps } from '@proton/components';
 import {
+    DRAWER_PASS_ALIASES_CREATE_ALIAS_MODAL_CTA_ID,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -9,7 +10,6 @@ import {
     PrimaryButton,
     useDrawer,
 } from '@proton/components';
-import { DRAWER_PASS_ALIASES_CREATE_ALIAS_MODAL_CTA_ID } from '@proton/components/components/drawer/views/SecurityCenter/constants';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import passIconSvg from '@proton/styles/assets/img/pass/protonpass-icon.svg';
 

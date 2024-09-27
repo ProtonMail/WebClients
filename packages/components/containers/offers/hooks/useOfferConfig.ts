@@ -1,6 +1,5 @@
-import { useFeatures } from '@proton/components/hooks';
+import { FeatureCode, useFeatures } from '@proton/features';
 
-import { FeatureCode } from '../../features';
 import type { OfferConfig, OfferId, Operation } from '../interface';
 import { blackFriday2023DriveFreeConfig, useBlackFriday2023DriveFree } from '../operations/blackFridayDrive2023Free';
 import { blackFriday2023DrivePlusConfig, useBlackFriday2023DrivePlus } from '../operations/blackFridayDrive2023Plus';

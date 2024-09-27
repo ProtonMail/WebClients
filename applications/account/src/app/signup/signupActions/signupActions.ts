@@ -2,7 +2,7 @@ import { format } from 'date-fns';
 
 import { MAX_CHARS_API } from '@proton/account';
 import { getInitialStorage, getStorageRange } from '@proton/components';
-import type { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
+import type { VerificationModel } from '@proton/components';
 import type { AppIntent } from '@proton/components/containers/login/interface';
 import type { V5PaymentToken } from '@proton/payments';
 import { isTokenPayment, isWrappedPaymentsVersion } from '@proton/payments';

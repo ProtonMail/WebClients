@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
 import FiltersUpsellModal from '@proton/components/components/upsell/modal/types/FiltersUpsellModal';
-import { useFilters } from '@proton/components/hooks';
+import { useFilters } from '@proton/mail/filters/hooks';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
 
 import useUser from '../../hooks/useUser';

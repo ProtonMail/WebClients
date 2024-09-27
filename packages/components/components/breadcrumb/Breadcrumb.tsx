@@ -1,9 +1,8 @@
 import type { ReactNode } from 'react';
 import { Fragment } from 'react';
 
+import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
-
-import Icon from '../icon/Icon';
 
 interface Props {
     onClick: (index: number) => void;

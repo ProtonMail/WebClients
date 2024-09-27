@@ -3,8 +3,9 @@ import { forwardRef, useEffect, useImperativeHandle, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { FeatureCode, Spotlight, useSpotlightShow } from '@proton/components';
+import { Spotlight, useSpotlightShow } from '@proton/components';
 import { useSpotlightOnFeature, useUser } from '@proton/components/hooks';
+import { FeatureCode } from '@proton/features';
 import { useAssistant } from '@proton/llm/lib';
 
 interface Props {

@@ -3,6 +3,8 @@ import { useCallback, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
+import CountrySelect from '@proton/components/components/country/CountrySelect';
 import Form from '@proton/components/components/form/Form';
 import ColorPicker from '@proton/components/components/input/ColorPicker';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -46,10 +48,8 @@ import type {
 } from '@proton/shared/lib/interfaces/calendar';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import CountrySelect from '../../../../components/country/CountrySelect';
 import {
     useApi,
-    useCalendarUserSettings,
     useEventManager,
     useGetAddressKeys,
     useGetAddresses,

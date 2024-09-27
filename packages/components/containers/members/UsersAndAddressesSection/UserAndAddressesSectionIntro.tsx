@@ -1,6 +1,8 @@
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { useMembers, useOrganization, useSubscription, useUser } from '@proton/components/hooks';
 import { MEMBER_SUBSCRIBER } from '@proton/shared/lib/constants';
 import {
@@ -9,8 +11,6 @@ import {
     hasAnyBundlePro,
 } from '@proton/shared/lib/helpers/subscription';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
-
-import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '../../payments';
 
 const UserAndAddressesSectionIntro = () => {
     const [user] = useUser();

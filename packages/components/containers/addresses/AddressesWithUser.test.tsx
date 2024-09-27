@@ -3,7 +3,6 @@ import type { ComponentPropsWithoutRef } from 'react';
 import { fireEvent, render } from '@testing-library/react';
 
 import {
-    OrderableTable,
     useAddresses,
     useAddressesKeys,
     useApi,
@@ -12,6 +11,7 @@ import {
     useOrganizationKey,
     useUser,
 } from '@proton/components';
+import OrderableTable from '@proton/components/components/orderableTable/OrderableTable';
 import { orderAddress } from '@proton/shared/lib/api/addresses';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';

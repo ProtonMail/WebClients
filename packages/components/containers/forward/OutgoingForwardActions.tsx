@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import {
     deleteForwarding,
     pauseForwarding,
@@ -13,15 +14,8 @@ import type { Address, OutgoingAddressForwarding, UserModel } from '@proton/shar
 import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import {
-    useActiveBreakpoint,
-    useAddressFlags,
-    useApi,
-    useEventManager,
-    useGetAddressKeys,
-    useGetPublicKeysForInbox,
-    useNotifications,
-} from '../../hooks';
+import { useApi, useEventManager, useGetAddressKeys, useGetPublicKeysForInbox, useNotifications } from '../../hooks';
+import useAddressFlags from '../../hooks/useAddressFlags';
 import ConfirmDeleteForwarding from './ConfirmDeleteForwarding';
 import ForwardModal from './ForwardModal';
 import { enableForwarding, isLastOutgoingNonE2EEForwarding } from './helpers';

@@ -4,10 +4,11 @@ import { c } from 'ttag';
 
 import { getOrganizationTokenThunk } from '@proton/account';
 import { Button, ButtonLike, Href } from '@proton/atoms';
-import Prompt from '@proton/components/components/prompt/Prompt';
 import type { PromptProps } from '@proton/components/components/prompt/Prompt';
-import { useAuthentication } from '@proton/components/hooks';
+import Prompt from '@proton/components/components/prompt/Prompt';
+import AuthModal from '@proton/components/containers/password/AuthModal';
 import useApi from '@proton/components/hooks/useApi';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useDispatch } from '@proton/redux-shared-store';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { authMember } from '@proton/shared/lib/api/members';
@@ -23,8 +24,6 @@ import type { User } from '@proton/shared/lib/interfaces';
 import type { Member } from '@proton/shared/lib/interfaces/Member';
 import { getMemberEmailOrName } from '@proton/shared/lib/keys/memberHelper';
 import noop from '@proton/utils/noop';
-
-import { AuthModal } from '../password';
 
 interface Props extends Omit<PromptProps, 'title' | 'children' | 'buttons'> {
     member: Member;

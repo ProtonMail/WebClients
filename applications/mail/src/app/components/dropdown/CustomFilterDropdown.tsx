@@ -13,10 +13,10 @@ import {
     PrimaryButton,
     computeTree,
     newFilter,
-    useFilters,
     useModalState,
     useUser,
 } from '@proton/components';
+import { useFilters } from '@proton/mail/filters/hooks';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import identity from '@proton/utils/identity';

@@ -20,7 +20,7 @@ import type { OrganizationSettings } from '@proton/pass/types/data/organization'
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash';
 
-import { GenericError } from '../error';
+import GenericError from '../error/GenericError';
 
 const getPolicies = (): { setting: keyof OrganizationSettings; label: string; tooltip: string }[] => [
     {

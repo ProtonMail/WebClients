@@ -1,12 +1,11 @@
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
 import type { CryptoProcessingError } from '@proton/shared/lib/contacts/decrypt';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
-
-import Icon from '../../../components/icon/Icon';
 
 const { SIGNATURE_NOT_VERIFIED, FAIL_TO_READ, FAIL_TO_LOAD, FAIL_TO_DECRYPT } = CRYPTO_PROCESSING_TYPES;
 

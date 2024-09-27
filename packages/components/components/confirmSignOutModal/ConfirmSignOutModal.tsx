@@ -11,7 +11,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { User } from '@proton/shared/lib/interfaces';
 import { getHasRecoveryMessage } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 
-import type { PrivateAuthenticationStore } from '../../containers';
+import type { PrivateAuthenticationStore } from '../../containers/app/interface';
 
 export const shouldShowConfirmSignOutModal = ({
     user,

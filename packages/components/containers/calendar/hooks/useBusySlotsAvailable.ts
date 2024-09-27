@@ -1,5 +1,6 @@
-import { useActiveBreakpoint, useOrganization } from '@proton/components';
+import { useOrganization } from '@proton/components';
 import { isUserEligibleForBusySlots } from '@proton/components/helpers/busySlots';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { useFlag } from '@proton/unleash';
 

@@ -4,8 +4,7 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { useDrawer, useNotifications } from '@proton/components';
-import { useAddEvents } from '@proton/components/containers/calendar/hooks';
+import { useAddEvents, useDrawer, useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { getVeventWithDefaultCalendarAlarms } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';

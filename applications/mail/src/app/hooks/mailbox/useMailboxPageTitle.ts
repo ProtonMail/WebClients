@@ -2,15 +2,9 @@ import { useEffect } from 'react';
 
 import type { Location } from 'history';
 
-import {
-    FeatureCode,
-    useConversationCounts,
-    useFeature,
-    useFolders,
-    useLabels,
-    useMessageCounts,
-    useUser,
-} from '@proton/components';
+import { useFolders, useLabels, useMessageCounts, useUser } from '@proton/components';
+import { FeatureCode, useFeature } from '@proton/features';
+import { useConversationCounts } from '@proton/mail/counts/conversationCounts';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';

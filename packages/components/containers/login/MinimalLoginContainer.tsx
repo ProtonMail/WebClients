@@ -18,8 +18,9 @@ import noop from '@proton/utils/noop';
 
 import { useApi, useConfig, useErrorHandler, useNotifications } from '../../hooks';
 import type { OnLoginCallback } from '../app/interface';
-import type { ChallengeRef, ChallengeResult } from '../challenge';
-import { Challenge, ChallengeError } from '../challenge';
+import Challenge from '../challenge/Challenge';
+import ChallengeError from '../challenge/ChallengeError';
+import type { ChallengeRef, ChallengeResult } from '../challenge/interface';
 import AbuseModal from './AbuseModal';
 import type { AuthActionResponse, AuthCacheResult } from './interface';
 import { AuthType } from './interface';

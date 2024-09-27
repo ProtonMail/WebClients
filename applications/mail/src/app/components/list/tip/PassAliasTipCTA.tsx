@@ -1,11 +1,13 @@
 import { useMemo } from 'react';
 
 import { InlineLinkButton } from '@proton/atoms';
-import { useModalStateObject } from '@proton/components';
-import { usePassAliasesContext } from '@proton/components/components/drawer/views/SecurityCenter/PassAliases/PassAliasesProvider';
-import CreatePassAliasesForm from '@proton/components/components/drawer/views/SecurityCenter/PassAliases/modals/CreatePassAliasesForm/CreatePassAliasesForm';
-import PassAliasesUpsellModal from '@proton/components/components/drawer/views/SecurityCenter/PassAliases/modals/PassAliasesUpsellModal';
-import { useAuthentication } from '@proton/components/hooks';
+import {
+    CreatePassAliasesForm,
+    PassAliasesUpsellModal,
+    useModalStateObject,
+    usePassAliasesContext,
+} from '@proton/components';
+import { useAuthentication } from '@proton/components';
 import { encodeFilters } from '@proton/pass/components/Navigation/routing';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';

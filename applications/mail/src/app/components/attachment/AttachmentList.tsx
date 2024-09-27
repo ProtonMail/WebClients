@@ -3,7 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { FeatureCode, Icon, Tooltip, useFeature } from '@proton/components';
+import { Icon, Tooltip } from '@proton/components';
+import { FeatureCode, useFeature } from '@proton/features';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import type { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';

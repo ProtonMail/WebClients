@@ -1,4 +1,4 @@
-import type { PrivateAuthenticationStore } from '@proton/components';
+import type { PrivateAuthenticationStore } from '@proton/components/containers/app/interface';
 import * as useAuthenticationModule from '@proton/components/hooks/useAuthentication';
 
 export const mockUseAuthentication = (value?: Partial<PrivateAuthenticationStore>) => {

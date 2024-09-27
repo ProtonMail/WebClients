@@ -1,7 +1,8 @@
 import { useMemo } from 'react';
 import { useLocation } from 'react-router';
 
-import { useConversationCounts, useMessageCounts } from '@proton/components';
+import { useMessageCounts } from '@proton/components';
+import { useConversationCounts } from '@proton/mail/counts/conversationCounts';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 

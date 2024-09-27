@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import type { IconName } from '@proton/components/components/icon/Icon';
 import type { Unwrap } from '@proton/shared/lib/interfaces';
 import { OrganizationSignatureState, validateOrganizationSignatureHelper } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import type { IconName } from '../../components/icon/Icon';
 import { useApi, useOrganizationKey } from '../../hooks';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 

@@ -4,8 +4,7 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { getUnixTime } from 'date-fns';
 import { createMemoryHistory } from 'history';
 
-import { CacheProvider } from '@proton/components';
-import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
+import { CacheProvider, useSubscribedCalendars } from '@proton/components';
 import {
     CALENDAR_FLAGS,
     CALENDAR_TYPE,
@@ -24,14 +23,7 @@ import CalendarSidebar from './CalendarSidebar';
 
 jest.mock('@proton/components/containers/calendar/calendarModal/personalCalendarModal/PersonalCalendarModal', () => ({
     __esModule: true,
-    PersonalCalendarModal: jest.fn(({ open }) => <span>{open ? 'PersonalCalendarModal' : null}</span>),
-    // It's not great having to mock this export manually, but the only alternative would be
-    // to move the enum definition somewhere else. Ideally we shouldn't mock PersonalCalendarModal at all
-    CALENDAR_MODAL_TYPE: {
-        COMPLETE: 0,
-        SHARED: 1,
-        VISUAL: 2,
-    },
+    default: jest.fn(({ open }) => <span>{open ? 'PersonalCalendarModal' : null}</span>),
 }));
 
 jest.mock(
@@ -65,7 +57,7 @@ jest.mock('@proton/components/hooks/useEventManager', () => ({
     })),
 }));
 
-jest.mock('@proton/components/hooks/useFeature', () => () => ({}));
+jest.mock('@proton/features/useFeature', () => () => ({}));
 
 jest.mock('@proton/components/hooks/useWelcomeFlags', () => ({
     __esModule: true,

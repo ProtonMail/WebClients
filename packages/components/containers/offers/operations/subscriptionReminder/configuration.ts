@@ -1,4 +1,5 @@
-import { FeatureCode } from '../../../../containers/features';
+import { FeatureCode } from '@proton/features';
+
 import type { OfferConfig } from '../../interface';
 import Layout from './Layout';
 

@@ -1,15 +1,10 @@
 import { useState } from 'react';
 
-
-
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Checkbox } from '@proton/components';
-
-
 
 import Card from './Card';
 import mdx from './Card.mdx';
-
 
 export default {
     component: Card,

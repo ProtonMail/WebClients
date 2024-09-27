@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
 import { useContext, useEffect, useRef, useState } from 'react';
 
-import type { ChallengeRef } from '@proton/components/containers';
-import { Challenge } from '@proton/components/containers';
+import Challenge from '@proton/components/containers/challenge/Challenge';
+import type { ChallengeRef } from '@proton/components/containers/challenge/interface';
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 

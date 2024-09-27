@@ -11,9 +11,10 @@ import {
     CheckListMobileStores,
     CheckListProtectInbox,
     GmailSyncModal,
+    useActiveBreakpoint,
     useModalState,
 } from '@proton/components';
-import { useActiveBreakpoint, useLocalState, useUser } from '@proton/components/hooks';
+import { useLocalState, useUser } from '@proton/components/hooks';
 import { CHECKLIST_DISPLAY_TYPE, ChecklistKey } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';

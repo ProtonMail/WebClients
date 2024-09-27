@@ -4,15 +4,9 @@ import { c } from 'ttag';
 
 import type { EasySwitchFeatureFlag } from '@proton/activation/src/interface';
 import { ImportType } from '@proton/activation/src/interface';
-import {
-    FeatureCode,
-    Loader,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoHeader,
-    useCalendars,
-    useFeature,
-} from '@proton/components';
+import { useCalendars } from '@proton/calendar/calendars/hooks';
+import { Loader, ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
+import { FeatureCode, useFeature } from '@proton/features';
 import {
     getProbablyActiveCalendars,
     getVisualCalendars,

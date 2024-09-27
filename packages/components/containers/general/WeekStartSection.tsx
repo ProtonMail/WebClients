@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
-import {WeekStartSelector} from "../calendar/settings";
+import WeekStartSelector from '../calendar/settings/WeekStartSelector';
 
 const WeekStartSection = () => {
     return (
@@ -14,7 +14,7 @@ const WeekStartSection = () => {
                 </label>
             </SettingsLayoutLeft>
             <SettingsLayoutRight>
-               <WeekStartSelector/>
+                <WeekStartSelector />
             </SettingsLayoutRight>
         </SettingsLayout>
     );

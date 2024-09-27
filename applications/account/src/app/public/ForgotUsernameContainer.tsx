@@ -8,13 +8,13 @@ import {
     InputFieldTwo,
     PhoneInput,
     Tabs,
+    startUnAuthFlow,
     useApi,
     useErrorHandler,
     useFormErrors,
     useMyCountry,
     useNotifications,
 } from '@proton/components';
-import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import { useLoading } from '@proton/hooks';
 import { requestUsername } from '@proton/shared/lib/api/reset';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

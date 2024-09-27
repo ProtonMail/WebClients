@@ -3,19 +3,11 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useGetPaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { Step, Stepper } from '@proton/atoms';
 import type { OnLoginCallback } from '@proton/components';
-import { HumanVerificationSteps, useKTActivation } from '@proton/components';
-import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
-import {
-    useApi,
-    useConfig,
-    useErrorHandler,
-    useGetPaymentStatus,
-    useGetPlans,
-    useLocalState,
-    useMyCountry,
-} from '@proton/components/hooks';
+import { HumanVerificationSteps, startUnAuthFlow, useKTActivation } from '@proton/components';
+import { useApi, useConfig, useErrorHandler, useGetPlans, useLocalState, useMyCountry } from '@proton/components/hooks';
 import { useCurrencies } from '@proton/components/payments/client-extensions';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';

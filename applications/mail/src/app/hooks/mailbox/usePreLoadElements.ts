@@ -2,8 +2,7 @@ import { useEffect } from 'react';
 
 import { unwrapResult } from '@reduxjs/toolkit';
 
-import { FeatureCode } from '@proton/components';
-import { useFeature } from '@proton/components/hooks';
+import { FeatureCode, useFeature } from '@proton/features';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
 import { isConversation } from 'proton-mail/helpers/elements';

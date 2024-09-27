@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { useActiveBreakpoint } from '@proton/components/hooks';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import clsx from '@proton/utils/clsx';
 
 import type { OfferProps } from '../../../interface';
