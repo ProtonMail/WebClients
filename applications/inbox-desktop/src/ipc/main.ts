@@ -5,10 +5,17 @@ import { IPCInboxClientUpdateMessage, IPCInboxGetInfoMessage } from "@proton/sha
 import { clearStorage } from "../utils/helpers";
 import { ipcLogger } from "../utils/log";
 import { getTheme, isEqualTheme, setTheme } from "../utils/themes";
-import { reloadHiddenViews, resetHiddenViews, showEndOfTrial, showView } from "../utils/view/viewManagement";
+import {
+    reloadHiddenViews,
+    resetHiddenViews,
+    showEndOfTrial,
+    showView,
+    getMailView,
+} from "../utils/view/viewManagement";
 import { DESKTOP_FEATURES } from "./ipcConstants";
 import { handleIPCBadge, resetBadge, showNotification } from "./notification";
 import { setInstallSourceReported, getInstallSource } from "../store/installInfoStore";
+import { checkDefaultMailto, getDefaultMailto, setDefaultMailtoTelemetryReported } from "../utils/protocol/default";
 
 function isValidClientUpdateMessage(message: unknown): message is IPCInboxClientUpdateMessage {
     return Boolean(message && typeof message === "object" && "type" in message && "payload" in message);
@@ -31,6 +38,10 @@ export const handleIPCCalls = () => {
                 const installSource = getInstallSource();
                 event.returnValue = installSource;
                 setInstallSourceReported();
+                break;
+            }
+            case "defaultMailto": {
+                event.returnValue = getDefaultMailto();
                 break;
             }
             default:
@@ -93,6 +104,20 @@ export const handleIPCCalls = () => {
             }
             case "earlyAccess": {
                 setReleaseCategory(payload);
+                break;
+            }
+            case "checkDefaultMailtoAndSignal": {
+                checkDefaultMailto();
+                const defaultMailto = getDefaultMailto();
+
+                getMailView()?.webContents?.send("hostUpdate", {
+                    type: "defaultMailtoChecked",
+                    payload: defaultMailto,
+                });
+                break;
+            }
+            case "defaultMailtoTelemetryReported": {
+                setDefaultMailtoTelemetryReported(payload);
                 break;
             }
             default:
