@@ -12,7 +12,9 @@ import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
 import { is4xx, is5xx, isCryptoEnrichedError } from '../../../utils/errorHandling/apiErrors';
-import type { DownloadErrorCategoryType, MetricShareType } from '../../../utils/type/MetricTypes';
+import { getIsPublicContext } from '../../../utils/getIsPublicContext';
+import type { DownloadErrorCategoryType, MetricShareTypeWithPublic } from '../../../utils/type/MetricTypes';
+import { MetricSharePublicType } from '../../../utils/type/MetricTypes';
 import { DownloadErrorCategory } from '../../../utils/type/MetricTypes';
 import useSharesState from '../../_shares/useSharesState';
 import { getShareType } from '../../_uploads/UploadProvider/useUploadMetrics';
@@ -47,12 +49,12 @@ export const useDownloadMetrics = (
     const [processed, setProcessed] = useState<Set<string>>(new Set());
     const lastErroringUserReport = useRef(0);
 
-    const getShareIdType = (shareId: string): MetricShareType => {
+    const getShareIdType = (shareId: string): MetricShareTypeWithPublic => {
         const share = getShare(shareId);
-        return getShareType(share);
+        return getIsPublicContext() ? MetricSharePublicType.SharedPublic : getShareType(share);
     };
 
-    const logDownloadError = (shareType: MetricShareType, state: TransferState, error?: Error) => {
+    const logDownloadError = (shareType: MetricShareTypeWithPublic, state: TransferState, error?: Error) => {
         const errorCategory = getErrorCategory(state, error);
         metrics.drive_download_errors_total.increment({
             type: errorCategory,
@@ -61,7 +63,7 @@ export const useDownloadMetrics = (
         });
     };
 
-    const logSuccessRate = (shareType: MetricShareType, state: TransferState, retry: boolean) => {
+    const logSuccessRate = (shareType: MetricShareTypeWithPublic, state: TransferState, retry: boolean) => {
         metrics.drive_download_success_rate_total.increment({
             status: state === TransferState.Done ? 'success' : 'failure',
             retry: retry ? 'true' : 'false',
@@ -69,7 +71,7 @@ export const useDownloadMetrics = (
         });
     };
 
-    const maybeLogUserError = (shareType: MetricShareType, isError: boolean) => {
+    const maybeLogUserError = (shareType: MetricShareTypeWithPublic, isError: boolean) => {
         if (isError && Date.now() - lastErroringUserReport.current > REPORT_ERROR_USERS_EVERY) {
             metrics.drive_download_erroring_users_total.increment({
                 plan: user ? (user.isPaid ? 'paid' : 'free') : 'unknown',
@@ -79,7 +81,12 @@ export const useDownloadMetrics = (
         }
     };
 
-    const logDownloadMetrics = (shareType: MetricShareType, state: TransferState, retry: boolean, error?: Error) => {
+    const logDownloadMetrics = (
+        shareType: MetricShareTypeWithPublic,
+        state: TransferState,
+        retry: boolean,
+        error?: Error
+    ) => {
         logSuccessRate(shareType, state, retry);
         // These 2 states are final Error states
         const isError = [TransferState.Error, TransferState.NetworkError].includes(state);
