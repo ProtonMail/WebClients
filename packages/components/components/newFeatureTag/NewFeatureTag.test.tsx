@@ -13,10 +13,11 @@ const mockedRemoveItem = jest.mocked(removeItem);
 
 const SPOTLIGHT_ID = 'this-is-a-mocked-spotlight';
 const NEW_FEATURE_TAG_ID = 'this-is-a-test-instance-of-new-feature-tag';
-jest.mock('@proton/components', () => ({
+jest.mock('@proton/components/components/spotlight/Spotlight', () => ({
     __esModule: true,
-    Spotlight: () => <div data-testid={SPOTLIGHT_ID}></div>,
+    default: () => <div data-testid={SPOTLIGHT_ID}></div>,
 }));
+
 describe('NewFeatureTag component', () => {
     const featureKey = 'feature-key';
     const localStorageKey = `${featureKey}-new-tag`;

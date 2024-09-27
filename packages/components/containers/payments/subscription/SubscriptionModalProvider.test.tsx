@@ -23,7 +23,7 @@ import SubscriptionModalProvider, { useSubscriptionModal } from './SubscriptionM
 jest.mock('@proton/components/hooks/useModals');
 jest.mock('@proton/components/components/portal/Portal');
 jest.mock('@proton/components/containers/payments/subscription/SubscriptionContainer');
-jest.mock('@proton/components/hooks/useFeature', () => () => ({}));
+jest.mock('@proton/features/useFeature', () => () => ({}));
 
 beforeEach(() => {
     mockSubscriptionApi();

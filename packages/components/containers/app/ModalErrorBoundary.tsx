@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import FormModal from '@proton/components/components/modal/FormModal';
 
-import { GenericError } from '../error';
+import GenericError from '../error/GenericError';
 import ErrorBoundary from './ErrorBoundary';
 
 interface Props {

@@ -1,15 +1,14 @@
 import { c } from 'ttag';
 
 import { ThemeColor } from '@proton/colors';
+import useIsRecoveryFileAvailable from '@proton/components/hooks/recoveryFile/useIsRecoveryFileAvailable';
+import { FeatureCode, useFeature } from '@proton/features';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import { getLikelyHasKeysToReactivate } from '@proton/shared/lib/keys/getInactiveKeys';
 
 import useSecurityCenter from '../components/drawer/views/SecurityCenter/useSecurityCenter';
-import { FeatureCode } from '../containers/features';
 import { getOverallStatus } from '../containers/recovery/getOverallStatus';
-import { useIsRecoveryFileAvailable } from './recoveryFile';
 import useAddresses from './useAddresses';
-import useFeature from './useFeature';
 import useHasOutdatedRecoveryFile from './useHasOutdatedRecoveryFile';
 import useIsDataRecoveryAvailable from './useIsDataRecoveryAvailable';
 import useIsMnemonicAvailable from './useIsMnemonicAvailable';

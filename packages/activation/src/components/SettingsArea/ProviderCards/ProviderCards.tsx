@@ -12,8 +12,8 @@ import {
 import { startImapDraft } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.actions';
 import { startOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
-import { FeatureCode } from '@proton/components';
-import { useFeature, useUser } from '@proton/components/hooks';
+import { useUser } from '@proton/components/hooks';
+import { FeatureCode, useFeature } from '@proton/features';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 

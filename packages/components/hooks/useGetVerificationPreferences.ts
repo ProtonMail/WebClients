@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 
 import type { PublicKeyReference } from '@proton/crypto';
+import { useGetMailSettings } from '@proton/mail/mailSettings/hooks';
 import getPublicKeysVcardHelper from '@proton/shared/lib/api/helpers/getPublicKeysVcardHelper';
 import { ADDRESS_STATUS, KEY_FLAG, MINUTE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
@@ -18,7 +19,6 @@ import useApi from './useApi';
 import useCache from './useCache';
 import { getPromiseValue } from './useCachedModelResult';
 import useGetPublicKeysForInbox from './useGetPublicKeysForInbox';
-import { useGetMailSettings } from './useMailSettings';
 import { useGetUserKeys } from './useUserKeys';
 
 export const CACHE_KEY = 'VERIFICATION_PREFERENCES';

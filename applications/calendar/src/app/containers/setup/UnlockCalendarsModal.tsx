@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
+import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import {
     GenericError,
     ModalTwo as Modal,
@@ -17,7 +18,6 @@ import {
     useDrawer,
     useGetAddressKeys,
     useGetAddresses,
-    useGetCalendars,
     useModalState,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';

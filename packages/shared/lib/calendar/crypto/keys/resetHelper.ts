@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import type { useGetAddressKeys, useGetAddresses, useGetCalendars } from '@proton/components';
+import type { useGetCalendars } from '@proton/calendar/calendars/hooks';
+import type { useGetAddressKeys, useGetAddresses } from '@proton/components';
 import { CacheType } from '@proton/redux-utilities';
 
 import { getSilentApi } from '../../../api/helpers/customConfig';

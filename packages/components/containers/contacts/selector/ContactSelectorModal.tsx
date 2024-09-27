@@ -14,13 +14,14 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import clsx from '@proton/utils/clsx';
 
-import { useActiveBreakpoint, useContactEmailsSortedByName, useUserSettings } from '../../../hooks';
+import { useContactEmailsSortedByName, useUserSettings } from '../../../hooks';
 import { useContactGroups } from '../../../hooks/useCategories';
 import type { ContactEditProps } from '../edit/ContactEditModal';
 import ContactSelectorEmptyContacts from './ContactSelectorEmptyContacts';

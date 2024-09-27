@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { AttachedFile } from '@proton/components';
+import AttachedFile from '@proton/components/components/attachedFile/AttachedFile';
 import { ICAL_METHODS_ATTENDEE } from '@proton/shared/lib/calendar/constants';
 import { extractTotals } from '@proton/shared/lib/calendar/import/import';
 import { BRAND_NAME, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';

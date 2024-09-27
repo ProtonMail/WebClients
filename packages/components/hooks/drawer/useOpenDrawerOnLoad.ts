@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 
-import { useAuthentication, useConfig, useDrawer, useOnline, useUser } from '@proton/components/hooks';
+import { useConfig, useDrawer, useOnline, useUser } from '@proton/components/hooks';
 import useApiStatus from '@proton/components/hooks/useApiStatus';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

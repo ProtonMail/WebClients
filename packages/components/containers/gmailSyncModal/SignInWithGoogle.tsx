@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
-
-import { useActiveBreakpoint } from '../..';
 
 import './SignInWithGoogle.scss';
 

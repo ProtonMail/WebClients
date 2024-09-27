@@ -19,6 +19,7 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { hasReachedContactGroupMembersLimit } from '@proton/shared/lib/contacts/helpers/contactGroup';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
@@ -27,7 +28,7 @@ import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import diff from '@proton/utils/diff';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useContactEmails, useContactGroups, useMailSettings } from '../../../hooks';
+import { useContactEmails, useContactGroups } from '../../../hooks';
 import useUpdateGroup from '../hooks/useUpdateGroup';
 import ContactGroupTable from './ContactGroupTable';
 

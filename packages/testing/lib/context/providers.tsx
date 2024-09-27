@@ -4,7 +4,7 @@ import ApiContext from '@proton/components/containers/api/apiContext';
 import type { Props as AuthenticationProviderProps } from '@proton/components/containers/authentication/Provider';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import { CacheProvider } from '@proton/components/containers/cache/Provider';
-import { ConfigProvider } from '@proton/components/containers/config';
+import ConfigProvider from '@proton/components/containers/config/Provider';
 import EventManagerContext from '@proton/components/containers/eventManager/context';
 import ModalsContext from '@proton/components/containers/modals/modalsContext';
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';

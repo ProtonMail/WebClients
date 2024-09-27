@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 
-import { useConversationCounts, useMailSettings, useMessageCounts } from '@proton/components/hooks';
+import { useMessageCounts } from '@proton/components/hooks';
+import { useConversationCounts } from '@proton/mail/counts/conversationCounts';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';

@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import Icon from '@proton/components/components/icon/Icon';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
@@ -77,7 +78,6 @@ import {
     useApi,
     useConfig,
     useEventManager,
-    useGetCalendars,
     useHandler,
     useNotifications,
     useUser,
@@ -98,7 +98,7 @@ import { RenewalEnableNote } from './RenewalEnableNote';
 import SubscriptionSubmitButton from './SubscriptionSubmitButton';
 import { useCancelSubscriptionFlow } from './cancelSubscription';
 import { SUBSCRIPTION_STEPS } from './constants';
-import { SubscriptionCheckoutCycleItem } from './cycle-selector';
+import SubscriptionCheckoutCycleItem from './cycle-selector/SubscriptionCheckoutCycleItem';
 import SubscriptionCycleSelector from './cycle-selector/SubscriptionCycleSelector';
 import type { SelectedProductPlans } from './helpers';
 import { exclude24Months, getAutoCoupon, getDefaultSelectedProductPlans } from './helpers';

@@ -67,7 +67,7 @@ import {
     useUser,
 } from '../../../hooks';
 import { SetupOrgSpotlight } from '../../account/spotlights/passB2bOnboardingSpotlights/PassB2bOnboardingSpotlights';
-import { AddressModal } from '../../addresses';
+import AddressModal from '../../addresses/AddressModal';
 import CreateMissingKeysAddressModal from '../../addresses/missingKeys/CreateMissingKeysAddressModal';
 import useOrganizationModals from '../../organization/useOrganizationModals';
 import useOrganizationUnprivatizationModals from '../../organization/useOrganizationUnprivatizationModals';

@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
+import Field from '@proton/components/components/container/Field';
+import Row from '@proton/components/components/container/Row';
 import Form from '@proton/components/components/form/Form';
 import Radio from '@proton/components/components/input/Radio';
 import Label from '@proton/components/components/label/Label';
@@ -14,8 +16,6 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { isDomain } from '@proton/shared/lib/helpers/validators';
 
-import Field from '../../../../components/container/Field';
-import Row from '../../../../components/container/Row';
 import type { SpamLocation } from '../Spams.interfaces';
 
 export type SpamMode = 'email' | 'domain';

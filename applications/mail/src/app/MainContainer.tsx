@@ -4,15 +4,14 @@ import { Route, Switch } from 'react-router-dom';
 
 import {
     DrawerThemeInjector,
-    FeatureCode,
     ModalsChildren,
     SubscriptionModalProvider,
     useActiveBreakpoint,
     useConfig,
-    useFeatures,
 } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { useInboxDesktopMessageForward } from '@proton/components/hooks/useInboxDesktopMessageForward';
+import { FeatureCode, useFeatures } from '@proton/features';
 import AssistantProvider from '@proton/llm/lib/providers/AssistantProvider';
 import { useFlag } from '@proton/unleash';
 import { useWalletAutoCreate } from '@proton/wallet/hooks/useWalletAutoCreate';

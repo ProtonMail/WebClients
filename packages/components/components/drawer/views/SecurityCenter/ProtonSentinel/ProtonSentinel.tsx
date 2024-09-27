@@ -18,7 +18,7 @@ import { isProtonSentinelEligible } from '@proton/shared/lib/helpers/userSetting
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 import ProtonSentinelLogo from '@proton/styles/assets/img/illustrations/proton-sentinel-shield.svg';
 
-import { DrawerAppSection } from '../../shared';
+import DrawerAppSection from '../../shared/DrawerAppSection';
 import { sendSecurityCenterReport } from '../securityCenterTelemetry';
 import ProtonSentinelUpsellModal from './modal/ProtonSentinelUpsellModal';
 

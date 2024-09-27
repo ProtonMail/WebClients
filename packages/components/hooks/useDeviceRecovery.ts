@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 
+import useIsRecoveryFileAvailable from '@proton/components/hooks/recoveryFile/useIsRecoveryFileAvailable';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { getIsDeviceRecoveryEnabled, syncDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 import noop from '@proton/utils/noop';
 
-import { useIsRecoveryFileAvailable } from './recoveryFile';
 import { useGetAddresses } from './useAddresses';
 import useApi from './useApi';
 import useConfig from './useConfig';

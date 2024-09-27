@@ -39,7 +39,7 @@ import ProtonSentinelPlusLogo from '@proton/styles/assets/img/illustrations/sent
 import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
-import { DrawerAppSection } from '../../shared';
+import DrawerAppSection from '../../shared/DrawerAppSection';
 import BreachCard from './BreachCard';
 import FreeUserBreachToggle from './FreeUserBreachToggle';
 import {

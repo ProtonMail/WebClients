@@ -7,7 +7,7 @@ import useDynamicMonthDay from '@proton/components/hooks/useDynamicMonthDay';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import type { Optional } from '@proton/shared/lib/interfaces';
 
-import { CalendarDrawerLogo } from '../drawerIcons';
+import CalendarDrawerLogo from '../drawerIcons/CalendarDrawerLogo';
 
 const CalendarDrawerAppButton = ({
     onClick,

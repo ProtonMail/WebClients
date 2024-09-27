@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom';
 import { c, msgid } from 'ttag';
 
 import { Button, CircleLoader, Href, InlineLinkButton, Vr } from '@proton/atoms';
-import type { IconSize } from '@proton/components';
+import type { Breakpoints, IconSize } from '@proton/components';
 import {
+    Alert3ds,
     CurrencySelector,
     Icon,
     PayPalButton,
@@ -21,7 +22,6 @@ import {
     useModalState,
 } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import Alert3ds from '@proton/components/containers/payments/Alert3ds';
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { WrappedTaxCountrySelector } from '@proton/components/containers/payments/TaxCountrySelector';
@@ -53,7 +53,6 @@ import {
 } from '@proton/components/containers/payments/features/vpn';
 import { getTotalBillingText } from '@proton/components/containers/payments/helper';
 import { getBillingAddressStatus } from '@proton/components/containers/payments/subscription/helpers';
-import type { Breakpoints } from '@proton/components/hooks';
 import { useApi } from '@proton/components/hooks';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';

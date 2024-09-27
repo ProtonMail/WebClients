@@ -4,12 +4,14 @@ import { format } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { FeatureCode, ReferralFeaturesList, useFeature, useSettingsLink } from '@proton/components';
+import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import { ReferralFeaturesList } from '@proton/components/containers/referral/ReferralFeaturesList';
+import { FeatureCode, useFeature } from '@proton/features';
 import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import emptyMailboxSvg from '@proton/styles/assets/img/illustrations/empty-mailbox.svg';

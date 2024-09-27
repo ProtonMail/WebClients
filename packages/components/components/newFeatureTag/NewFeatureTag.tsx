@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { isPast } from 'date-fns';
 import { c } from 'ttag';
 
-import type { SpotlightProps } from '@proton/components';
-import { Spotlight } from '@proton/components';
+import type { SpotlightProps } from '@proton/components/components/spotlight/Spotlight';
+import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import { versionCookieAtLoad } from '@proton/components/hooks/useEarlyAccess';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import type { EnvironmentExtended } from '@proton/shared/lib/interfaces';

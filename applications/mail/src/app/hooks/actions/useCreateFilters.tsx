@@ -2,17 +2,17 @@ import { useCallback, useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import type { Filter } from '@proton/components';
 import {
     NotificationButton,
     createDefaultLabelsFilter,
     useAddresses,
     useApi,
     useAppLink,
-    useFilters,
     useNotifications,
 } from '@proton/components';
-import type { Filter } from '@proton/components';
 import { useGetFolders, useGetLabels } from '@proton/components/hooks/useCategories';
+import { useFilters } from '@proton/mail/filters/hooks';
 import { addTreeFilter, deleteFilter } from '@proton/shared/lib/api/filters';
 import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';

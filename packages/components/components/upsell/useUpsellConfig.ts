@@ -1,11 +1,11 @@
 import type { ReactNode } from 'react';
 
-import type { SUBSCRIPTION_STEPS } from '@proton/components/containers';
-import { useSubscriptionModal } from '@proton/components/containers';
 import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
+import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import type { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { useConfig, useSubscription, useUser } from '@proton/components/hooks';
-import { APPS } from '@proton/shared/lib/constants';
 import type { CYCLE } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
 import { useFlag } from '@proton/unleash';

@@ -6,4 +6,4 @@ export enum SUBSCRIPTION_STEPS {
     THANKS,
 }
 
-export const subscriptionModalClassName = 'subscription-modal';
+export const subscriptionModalClassName = 'subscription-modal' as const;

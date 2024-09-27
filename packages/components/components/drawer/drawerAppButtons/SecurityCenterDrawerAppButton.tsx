@@ -9,7 +9,7 @@ import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import type { Optional } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 
-import { SecurityCenterDrawerLogo } from '../drawerIcons';
+import SecurityCenterDrawerLogo from '../drawerIcons/SecurityCenterDrawerLogo';
 import {
     selectAccountSecurityElements,
     selectAccountSecurityIssuesCount,

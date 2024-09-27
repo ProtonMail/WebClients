@@ -21,7 +21,7 @@ import {
     getStorageFull,
 } from '@proton/shared/lib/user/storage';
 
-import { DrawerAppSection } from '../shared';
+import DrawerAppSection from '../shared/DrawerAppSection';
 
 const getTitle = (details: ReturnType<typeof getCompleteSpaceDetails>) => {
     if (details.base.type === SpaceState.Danger && details.drive.type === SpaceState.Danger) {

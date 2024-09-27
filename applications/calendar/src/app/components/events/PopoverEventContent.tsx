@@ -13,9 +13,9 @@ import {
     Info,
     useContactEmailsCache,
     useContactModals,
-    useMailSettings,
 } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { getIsCalendarDisabled, getIsSubscribedCalendar } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { escapeInvalidHtmlTags, restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';

@@ -2,7 +2,8 @@ import { useCallback } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { FeatureCode, useApi, useEventManager, useFeature, useNotifications } from '@proton/components';
+import { useApi, useEventManager, useNotifications } from '@proton/components';
+import { FeatureCode, useFeature } from '@proton/features';
 import { useGetLabels } from '@proton/mail';
 import { labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';

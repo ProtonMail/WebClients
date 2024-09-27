@@ -11,11 +11,11 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
-import { FeatureCode } from '@proton/components/containers/features';
-import { useFeature, useSubscription, useUser } from '@proton/components/hooks';
+import { REACTIVATE_SOURCE } from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationTelemetry';
+import { useSubscription, useUser } from '@proton/components/hooks';
+import { FeatureCode, useFeature } from '@proton/features';
 import subscriptionEnding from '@proton/styles/assets/img/illustrations/subscription_ending.svg';
 
-import { REACTIVATE_SOURCE } from '../cancellationFlow';
 import { getReminderPageConfig } from '../cancellationFlow/reminderPageConfig';
 import type { ReminderFlag } from './cancellationReminderHelper';
 import { markRemindersAsSeen } from './cancellationReminderHelper';

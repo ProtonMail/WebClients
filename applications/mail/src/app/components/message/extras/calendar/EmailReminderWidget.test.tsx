@@ -6,9 +6,13 @@ import { HttpResponse, http } from 'msw';
 import { setupServer } from 'msw/node';
 
 import { getModelState } from '@proton/account/test';
-import { useAddresses, useGetAddresses, useUserSettings } from '@proton/components';
-import { CacheProvider } from '@proton/components';
-import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
+import {
+    AuthenticationProvider,
+    CacheProvider,
+    useAddresses,
+    useGetAddresses,
+    useUserSettings,
+} from '@proton/components';
 import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
 import useApi from '@proton/components/hooks/useApi';
 import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEventRaw';
@@ -84,7 +88,7 @@ jest.mock('@proton/components/hooks/useUser', () => ({
     ),
 }));
 
-jest.mock('@proton/components/hooks/useMailSettings', () => ({
+jest.mock('@proton/mail/mailSettings/hooks', () => ({
     useMailSettings: jest.fn(() => [{}, false]),
 }));
 

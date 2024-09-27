@@ -1,6 +1,7 @@
 import type { MutableRefObject, ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import type { CalledKillSwitchString } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import {
     PaymentSwitcherContext,
@@ -14,7 +15,7 @@ import { getItem } from '@proton/shared/lib/helpers/storage';
 import type { User } from '@proton/shared/lib/interfaces';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
-import { useAuthentication, useConfig, useGetUser } from '../../hooks';
+import { useConfig, useGetUser } from '../../hooks';
 
 const forceEnableChargebeeInDev = (): boolean => {
     const isProd = isProduction(window.location.host);

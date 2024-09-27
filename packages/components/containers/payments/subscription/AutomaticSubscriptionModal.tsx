@@ -3,13 +3,13 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { Button } from '@proton/atoms';
 import type { ModalProps, OpenCallbackProps } from '@proton/components';
 import {
     useConfig,
     useLastSubscriptionEnd,
     useLoad,
-    usePaymentStatus,
     usePlans,
     useSubscription,
     useSubscriptionModal,

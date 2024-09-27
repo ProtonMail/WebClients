@@ -3,9 +3,11 @@ import { useRef } from 'react';
 import { addDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { Spotlight, useSpotlightShow } from '@proton/components';
-import { useActiveBreakpoint, useSpotlightOnFeature, useUser, useWelcomeFlags } from '@proton/components/hooks';
-import { FeatureCode } from '@proton/features/interface';
+import { useSpotlightShow } from '@proton/components';
+import Spotlight from '@proton/components/components/spotlight/Spotlight';
+import { useSpotlightOnFeature, useUser, useWelcomeFlags } from '@proton/components/hooks';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import { FeatureCode } from '@proton/features';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import spotlightImg from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 

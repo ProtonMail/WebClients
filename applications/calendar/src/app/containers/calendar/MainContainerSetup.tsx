@@ -1,10 +1,10 @@
 import { useMemo, useRef, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router';
 
+import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import {
     ContactEmailsProvider,
     useActiveBreakpoint,
-    useCalendarUserSettings,
     useCalendarsInfoListener,
     useUserSettings,
 } from '@proton/components';

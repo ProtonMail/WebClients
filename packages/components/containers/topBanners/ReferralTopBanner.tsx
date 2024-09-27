@@ -3,6 +3,10 @@ import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
+import SubscriptionModalProvider, {
+    useSubscriptionModal,
+} from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
@@ -24,7 +28,6 @@ import {
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import { SUBSCRIPTION_STEPS, SubscriptionModalProvider, useSubscriptionModal } from '..';
 import { useConfig, useSubscription, useUser } from '../../hooks';
 import TopBanner from './TopBanner';
 

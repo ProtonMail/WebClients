@@ -1,6 +1,8 @@
 import { useCallback } from 'react';
 
+import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { serverTime } from '@proton/crypto';
+import { useGetMailSettings } from '@proton/mail/mailSettings/hooks';
 import { syncMultipleEvents as syncMultipleEventsRoute } from '@proton/shared/lib/api/calendars';
 import { getHasDefaultNotifications, getHasSharedEventContent } from '@proton/shared/lib/calendar/apiModels';
 import { getAttendeeEmail, withPmAttendees } from '@proton/shared/lib/calendar/attendees';
@@ -35,9 +37,7 @@ import {
     useGetAddressKeys,
     useGetAddresses,
     useGetCalendarInfo,
-    useGetCalendarUserSettings,
     useGetEncryptionPreferences,
-    useGetMailSettings,
     useRelocalizeText,
 } from '../../../hooks';
 import { useGetCanonicalEmailsMap } from '../../../hooks/useGetCanonicalEmailsMap';

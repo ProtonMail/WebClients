@@ -15,6 +15,7 @@ import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib';
 import { CryptoProxy } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
@@ -31,10 +32,8 @@ import illustration from '@proton/styles/assets/img/illustrations/forward-email-
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import {
-    useAddressFlags,
     useAddresses,
     useApi,
-    useAuthentication,
     useContactEmails,
     useEventManager,
     useGetAddressKeys,
@@ -43,6 +42,7 @@ import {
     useGetUserKeys,
     useNotifications,
 } from '../../hooks';
+import useAddressFlags from '../../hooks/useAddressFlags';
 import type { Condition } from '../filters/interfaces';
 import { FilterStatement } from '../filters/interfaces';
 import ForwardConditions from './ForwardConditions';

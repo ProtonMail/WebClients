@@ -3,8 +3,7 @@ import { useEffect, useRef } from 'react';
 import { c } from 'ttag';
 
 import { Button, Vr } from '@proton/atoms';
-import { Icon, Tooltip } from '@proton/components';
-import { useActiveBreakpoint } from '@proton/components/hooks';
+import { Icon, Tooltip, useActiveBreakpoint } from '@proton/components';
 import { ASSISTANT_SERVER_THROTTLE_TIMEOUT, useAssistant } from '@proton/llm/lib';
 import type { ActionType } from '@proton/llm/lib/types';
 import { wait } from '@proton/shared/lib/helpers/promise';

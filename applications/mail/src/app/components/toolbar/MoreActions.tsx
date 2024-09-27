@@ -2,8 +2,8 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { DropdownMenu, DropdownMenuButton, FeatureCode, Icon } from '@proton/components';
-import { useFeature } from '@proton/components/hooks';
+import { DropdownMenu, DropdownMenuButton, Icon } from '@proton/components';
+import { FeatureCode, useFeature } from '@proton/features';
 import noop from '@proton/utils/noop';
 
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { useApiResult } from '../../../hooks';
+import useApiResult from '../../../hooks/useApiResult';
 import type { CertificateDTO } from './Certificate';
 import { CertificateMode, queryCertificates } from './api';
 

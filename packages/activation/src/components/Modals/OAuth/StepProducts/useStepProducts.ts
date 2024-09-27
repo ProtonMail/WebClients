@@ -13,7 +13,7 @@ import {
     selectOauthImportStateProducts,
 } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { FeatureCode, useFeature } from '@proton/components';
+import { FeatureCode, useFeature } from '@proton/features';
 
 import { getEnabledFeature } from '../OAuthModal.helpers';
 import { getScopeFromProvider } from './useStepProducts.helpers';

@@ -8,7 +8,6 @@ import {
     CancellationReminderSection,
     ContactEmailsProvider,
     CustomLogo,
-    FeatureCode,
     Logo,
     PassForBusinessLogo,
     PrivateAppContainer,
@@ -23,7 +22,6 @@ import {
     useConvertExternalAddresses,
     useDeviceRecovery,
     useDrivePlan,
-    useFeatures,
     useGroupMemberships,
     useGroups,
     useIsDataRecoveryAvailable,
@@ -40,6 +38,7 @@ import { getIsSectionAvailable, getRoutePaths } from '@proton/components/contain
 import UnprivatizationRequestTopBanner from '@proton/components/containers/members/Unprivatization/UnprivatizationRequestTopBanner';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import { useIsSessionRecoveryAvailable, useShowThemeSelection } from '@proton/components/hooks';
+import { FeatureCode, useFeatures } from '@proton/features';
 import { getPublicUserProtonAddressApps, getSSOVPNOnlyAccountApps } from '@proton/shared/lib/apps/apps';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToApp } from '@proton/shared/lib/authentication/apps';

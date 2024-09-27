@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { useElementBreakpoints } from '@proton/components/hooks';
+import { useElementBreakpoints } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import type { Props as ListSettingsProps } from '../list/ListSettings';

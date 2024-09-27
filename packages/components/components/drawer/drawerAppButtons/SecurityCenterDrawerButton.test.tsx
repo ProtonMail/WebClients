@@ -6,7 +6,7 @@ import { useDrawer } from '@proton/components/hooks';
 import { baseUseSelector } from '@proton/react-redux-store';
 import { useFlag } from '@proton/unleash';
 
-import { SecurityCenterDrawerAppButton } from '..';
+import SecurityCenterDrawerAppButton from '../drawerAppButtons/SecurityCenterDrawerAppButton';
 import {
     selectAccountSecurityElements,
     selectAccountSecurityIssuesCount,
@@ -40,7 +40,7 @@ jest.mock('@proton/components/hooks', () => ({
 jest.mock('../views/SecurityCenter/useSecurityCenter', () => jest.fn());
 jest.mock('@proton/components/components/drawer/drawerAppButtons/DrawerAppButton', () => jest.fn(() => null));
 jest.mock('../views/SecurityCenter/BreachAlertsSpotlight', () => jest.fn(({ children }) => <div>{children}</div>));
-jest.mock('../drawerIcons', () => ({
+jest.mock('../drawerIcons/SecurityCenterDrawerLogo', () => ({
     SecurityCenterDrawerLogo: jest.fn(() => <div>SecurityCenterDrawerLogo</div>),
 }));
 

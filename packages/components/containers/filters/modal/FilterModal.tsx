@@ -12,13 +12,14 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useLoading } from '@proton/hooks';
+import { useFilters } from '@proton/mail/filters/hooks';
 import { addTreeFilter, applyFilters, updateFilter } from '@proton/shared/lib/api/filters';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { AUTO_REPLY_CHARACTER_COUNT_LIMIT } from '@proton/shared/lib/mail/constants';
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
 import generateUID from '@proton/utils/generateUID';
 
-import { useApi, useEventManager, useFilters, useFolders, useLabels, useNotifications } from '../../../hooks';
+import { useApi, useEventManager, useFolders, useLabels, useNotifications } from '../../../hooks';
 import { getDefaultFolders, noFolderValue } from '../constants';
 import type {
     Actions,

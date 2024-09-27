@@ -1,7 +1,7 @@
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import type { ThemeCode, usePaymentFacade } from '@proton/components/payments/client-extensions';
 import type { PAYMENT_METHOD_TYPES } from '@proton/payments';
 
-import { useAuthentication } from '../../hooks';
 import { PaymentsNoApi } from './Payment';
 import type { BillingAddressStatus } from './subscription/helpers';
 

@@ -3,8 +3,8 @@ import type { RefObject } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 
-import Icon from '../../components/icon/Icon';
 import { useHotkeys } from '../../hooks';
 
 interface Props {

@@ -1,21 +1,20 @@
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 
+import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
+import { useGetUserInvitations, useUserInvitations } from '@proton/account/userInvitations/hooks';
+import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import {
     useAddresses,
-    useCache,
-    useCalendars,
     useConfig,
-    useFeature,
-    useGetUserInvitations,
-    useOrganization,
-    usePaymentStatus,
-    usePendingUserInvitations,
     usePlans,
     useSubscription,
     useUser,
     useVPNServersCount,
 } from '@proton/components/hooks';
+import useCache from '@proton/components/hooks/useCache';
+import { useOrganization } from '@proton/components/hooks/useOrganization';
+import { useFeature } from '@proton/features';
 import { type PaymentMethodStatusExtended } from '@proton/payments';
 import { APPS, ORGANIZATION_STATE, PLANS } from '@proton/shared/lib/constants';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -46,7 +45,7 @@ jest.mock('@proton/components/hooks/usePlans');
 const mockUsePlans = usePlans as jest.MockedFunction<any>;
 mockUsePlans.mockReturnValue([{ plans: getLongTestPlans(), freePlan: FREE_PLAN }, false]);
 
-jest.mock('@proton/components/hooks/usePaymentStatus');
+jest.mock('@proton/account/paymentStatus/hooks');
 const mockUsePaymentStatus = usePaymentStatus as jest.MockedFunction<any>;
 mockUsePaymentStatus.mockReturnValue([
     {
@@ -60,7 +59,7 @@ jest.mock('@proton/components/hooks/useAddresses');
 const mockUseAddresses = useAddresses as jest.MockedFunction<any>;
 mockUseAddresses.mockReturnValue([addresses, false]);
 
-jest.mock('@proton/components/hooks/useCalendars');
+jest.mock('@proton/calendar/calendars/hooks');
 const mockUseCalendars = useCalendars as jest.MockedFunction<any>;
 mockUseCalendars.mockReturnValue([calendars, false]);
 
@@ -76,8 +75,8 @@ jest.mock('@proton/components/hooks/useVPNServersCount');
 const mockUseVPNServersCount = useVPNServersCount as jest.MockedFunction<any>;
 mockUseVPNServersCount.mockReturnValue([vpnServersCount, false]);
 
-jest.mock('@proton/components/hooks/usePendingUserInvitations');
-const mockUsePendingUserInvitations = usePendingUserInvitations as jest.MockedFunction<any>;
+jest.mock('@proton/account/userInvitations/hooks');
+const mockUsePendingUserInvitations = useUserInvitations as jest.MockedFunction<any>;
 mockUsePendingUserInvitations.mockReturnValue([[], false]);
 const mockUseGetPendingUserInvitations = useGetUserInvitations as jest.MockedFunction<any>;
 mockUseGetPendingUserInvitations.mockReturnValue(async () => []);
@@ -90,7 +89,7 @@ jest.mock('./SubscriptionModalProvider', () => ({
     useSubscriptionModal: () => [mockOpenSubscriptionModal],
 }));
 
-jest.mock('@proton/components/hooks/useFeature');
+jest.mock('@proton/features/useFeature');
 const mockUseFeature = useFeature as jest.MockedFunction<any>;
 mockUseFeature.mockReturnValue({ feature: { Value: true } });
 

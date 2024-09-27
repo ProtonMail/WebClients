@@ -7,7 +7,7 @@ import DropdownActions from '@proton/components/components/dropdown/DropdownActi
 import type OrderableTableBody from '@proton/components/components/orderableTable/OrderableTableBody';
 import OrderableTableRow from '@proton/components/components/orderableTable/OrderableTableRow';
 import TableRow from '@proton/components/components/table/TableRow';
-import { useActiveBreakpoint } from '@proton/components/hooks';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useUserKeys } from '@proton/components/hooks/useUserKeys';
 import type { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
 import isTruthy from '@proton/utils/isTruthy';

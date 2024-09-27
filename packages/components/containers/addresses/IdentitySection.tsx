@@ -12,12 +12,13 @@ import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLa
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import type { Address } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { useAddresses, useMailSettings, useUser, useUserSettings } from '../../hooks';
+import { useAddresses, useUser, useUserSettings } from '../../hooks';
 import EditAddressesSection from './EditAddressesSection';
 import PMSignature from './PMSignatureField';
 

@@ -4,9 +4,9 @@ import { act, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { createMemoryHistory } from 'history';
 
+import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { CacheProvider, useContactEmailsCache } from '@proton/components';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
-import useCalendars from '@proton/components/hooks/useCalendars';
 import { CALENDAR_DISPLAY, CALENDAR_FLAGS, CALENDAR_TYPE, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
@@ -158,7 +158,8 @@ jest.mock('@proton/components/hooks/useGetCalendarBootstrap', () => ({
         },
     ]),
 }));
-jest.mock('@proton/components/hooks/useCalendarUserSettings', () => ({
+
+jest.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
     useGetCalendarUserSettings: jest.fn(),
     useCalendarUserSettings: jest.fn(() => [
         {
@@ -177,7 +178,7 @@ jest.mock('@proton/components/hooks/useAuthentication', () => () => ({}));
 jest.mock('@proton/components/hooks/useConfig', () => () => ({ APP_NAME: 'proton-calendar', APP_VERSION: 'test' }));
 jest.mock('@proton/components/hooks/useSubscribedCalendars', () => () => ({}));
 jest.mock('@proton/components/hooks/useContactEmails', () => () => []);
-jest.mock('@proton/components/hooks/useFeature', () => () => ({}));
+jest.mock('@proton/features/useFeature', () => () => ({}));
 jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
 jest.mock('@proton/components/hooks/useWelcomeFlags', () => ({ useWelcomeFlags: () => [{}] }));
 jest.mock('@proton/components/hooks/useCachedModelResult', () => () => [{}]);
@@ -200,7 +201,7 @@ jest.mock('@proton/components/containers/contacts/ContactEmailsProvider', () => 
     default: ({ children }: any) => <>{children}</>,
 }));
 jest.mock('../../containers/alarms/useCalendarAlarmsEventListener', () => () => ({}));
-jest.mock('@proton/components/hooks/useCalendars', () =>
+jest.mock('@proton/calendar/calendars/hooks', () =>
     jest.fn(() => [
         [
             {

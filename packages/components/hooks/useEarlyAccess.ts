@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import type { Feature } from '@proton/features';
-import { FeatureCode } from '@proton/features';
+import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { updateEarlyAccess } from '@proton/shared/lib/api/settings';
 import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
@@ -10,7 +10,6 @@ import { deleteCookie, getCookie, setCookie } from '@proton/shared/lib/helpers/c
 import type { Environment } from '@proton/shared/lib/interfaces';
 
 import useApi from './useApi';
-import useFeature from './useFeature';
 import useUserSettings from './useUserSettings';
 
 export const getVersionCookieIsValid = (

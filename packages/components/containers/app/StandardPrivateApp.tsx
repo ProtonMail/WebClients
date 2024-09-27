@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 
-import { ContactProvider, EventNotices } from '@proton/components';
+import ContactProvider from '@proton/components/containers/contacts/ContactProvider';
+import EventNotices from '@proton/components/containers/eventManager/EventNotices';
 import NotificationsChildren from '@proton/components/containers/notifications/Children';
 
 import { useConfig, useIsInboxElectronApp } from '../../hooks';

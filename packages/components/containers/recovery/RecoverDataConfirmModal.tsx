@@ -6,9 +6,7 @@ import { Button } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { PromptProps } from '@proton/components/components/prompt/Prompt';
 import Prompt from '@proton/components/components/prompt/Prompt';
-
-import { useFeature } from '../../hooks';
-import { FeatureCode } from '../features';
+import { FeatureCode, useFeature } from '@proton/features';
 
 const RecoverDataConfirmModal = (props: Omit<PromptProps, 'open' | 'title' | 'buttons' | 'children'>) => {
     const [dismissing, setDismissing] = useState(false);

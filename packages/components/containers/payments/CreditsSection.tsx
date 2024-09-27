@@ -3,6 +3,7 @@ import { useLocation } from 'react-router';
 
 import { c } from 'ttag';
 
+import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { Button } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -17,7 +18,7 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import { BillingPlatform, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
-import { usePaymentStatus, useSubscription, useUser } from '../../hooks';
+import { useSubscription, useUser } from '../../hooks';
 import { openLinkInBrowser } from '../desktop/openExternalLink';
 import CreditsModal from './CreditsModal';
 import InAppPurchaseModal from './subscription/InAppPurchaseModal';

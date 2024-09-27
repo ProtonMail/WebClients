@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import corruptedPreviewSvg from '@proton/styles/assets/img/errors/broken-image.svg';
 import clsx from '@proton/utils/clsx';
-
-import { useActiveBreakpoint } from '../../hooks';
 
 type Props = {
     error: string;

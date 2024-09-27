@@ -1,4 +1,4 @@
-import { useActiveBreakpoint } from '@proton/components/hooks';
+import { useActiveBreakpoint } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import type { useBookmarksPublicView } from '../../../store';
