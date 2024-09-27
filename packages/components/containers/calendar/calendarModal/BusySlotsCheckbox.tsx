@@ -2,9 +2,8 @@ import { c } from 'ttag';
 
 import Info from '@proton/components/components/link/Info';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import useBusySlotsAvailable from '@proton/components/containers/calendar/hooks/useBusySlotsAvailable';
 import { CALENDAR_SHARE_BUSY_TIME_SLOTS } from '@proton/shared/lib/calendar/constants';
-
-import useBusySlotsAvailable from '../hooks/useBusySlotsAvailable';
 
 interface Props {
     value: CALENDAR_SHARE_BUSY_TIME_SLOTS | undefined;

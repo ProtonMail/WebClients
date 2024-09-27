@@ -3,9 +3,10 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { TreeViewContainer, TreeViewItem } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
+import TreeViewContainer from '@proton/components/components/treeview/TreeViewContainer';
+import TreeViewItem from '@proton/components/components/treeview/TreeViewItem';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useLoading } from '@proton/hooks';
 import { orderFolders, updateLabel } from '@proton/shared/lib/api/labels';

@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
+import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
+import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
+import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 
-import SettingsLayout from '../../account/SettingsLayout';
-import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../../account/SettingsLayoutRight';
 import ShowSecondaryTimezoneToggle from './ShowSecondaryTimezoneToggle';
 
 interface Props {

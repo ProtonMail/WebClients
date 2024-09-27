@@ -6,13 +6,12 @@ import SettingsLayout from '@proton/components/containers/account/SettingsLayout
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
+import ViewPreferenceSelector from '@proton/components/containers/calendar/settings/ViewPreferenceSelector';
+import WeekStartSection from '@proton/components/containers/general/WeekStartSection';
+import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
-
-import { useApi, useEventManager, useNotifications } from '../../../hooks';
-import WeekStartSection from '../../general/WeekStartSection';
-import ViewPreferenceSelector from './ViewPreferenceSelector';
 
 interface Props {
     calendarUserSettings: CalendarUserSettings;

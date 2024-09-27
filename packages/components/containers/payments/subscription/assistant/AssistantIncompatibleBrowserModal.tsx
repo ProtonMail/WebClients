@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { useApi, useEventManager, useNotifications } from '@proton/components';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
+import { useApi, useEventManager } from '@proton/components/hooks';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME } from '@proton/shared/lib/constants';

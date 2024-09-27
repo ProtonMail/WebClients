@@ -3,8 +3,8 @@ import { useRef } from 'react';
 import { addDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { useSpotlightShow } from '@proton/components';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
+import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import { useSpotlightOnFeature, useUser, useWelcomeFlags } from '@proton/components/hooks';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { FeatureCode } from '@proton/features';

@@ -6,8 +6,8 @@ import type { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import { PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
 import clsx from '@proton/utils/clsx';
 
-import { ThemeCards } from '../..';
 import type { Theme } from './ThemeCards';
+import ThemeCards from './ThemeCards';
 import type { ThemeSvgSize } from './ThemeSvg';
 
 interface Props {

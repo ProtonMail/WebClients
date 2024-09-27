@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-import { useTheme } from '@proton/components';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { useConfig } from '@proton/components/hooks';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 

@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useApi } from '@proton/components';
 import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
 import Toggle from '@proton/components/components/toggle/Toggle';
@@ -16,7 +15,7 @@ import { hasTwoFARequiredForAdminOnly, hasTwoFARequiredForAll } from '@proton/sh
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
-import { useConfig, useNotifications } from '../../hooks';
+import { useApi, useConfig, useNotifications } from '../../hooks';
 
 interface Props {
     organization?: Organization;

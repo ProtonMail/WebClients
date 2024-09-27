@@ -2,12 +2,17 @@ import { differenceInDays, format, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import {
+    FIRST_REMINDER_DAYS,
+    SECOND_REMINDER_DAYS,
+    THIRD_REMINDER_DAYS,
+} from '@proton/components/containers/desktop/freeTrial/constants';
 import TopBanner from '@proton/components/containers/topBanners/TopBanner';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 
 import { freeTrialUpgradeClick } from '../openExternalLink';
-import useInboxFreeTrial, { FIRST_REMINDER_DAYS, SECOND_REMINDER_DAYS, THIRD_REMINDER_DAYS } from './useInboxFreeTrial';
+import useInboxFreeTrial from './useInboxFreeTrial';
 
 const UpgradeButton = () => {
     const upsellRef = getUpsellRef({

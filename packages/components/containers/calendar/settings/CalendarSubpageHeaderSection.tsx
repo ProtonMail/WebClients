@@ -7,6 +7,10 @@ import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import HolidaysCalendarModal from '@proton/components/containers/calendar/calendarModal/holidaysCalendarModal/HolidaysCalendarModal';
+import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
+import PersonalCalendarModal from '@proton/components/containers/calendar/calendarModal/personalCalendarModal/PersonalCalendarModal';
+import CalendarBadge from '@proton/components/containers/calendar/settings/CalendarBadge';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { CALENDAR_STATUS_TYPE, getCalendarStatusBadges } from '@proton/shared/lib/calendar/badges';
 import { getIsHolidaysCalendar } from '@proton/shared/lib/calendar/calendar';
@@ -18,11 +22,6 @@ import { getCalendarHasSubscriptionParameters } from '@proton/shared/lib/calenda
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
-
-import HolidaysCalendarModal from '../calendarModal/holidaysCalendarModal/HolidaysCalendarModal';
-import { CALENDAR_MODAL_TYPE } from '../calendarModal/interface';
-import { PersonalCalendarModal } from '../calendarModal/personalCalendarModal/PersonalCalendarModal';
-import CalendarBadge from './CalendarBadge';
 
 interface Props {
     calendar: VisualCalendar | SubscribedCalendar;

@@ -1,8 +1,8 @@
 import { c, msgid } from 'ttag';
 
 import { Card } from '@proton/atoms';
-import { useMembers } from '@proton/components';
 import Loader from '@proton/components/components/loader/Loader';
+import { useMembers } from '@proton/components/hooks/useMembers';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
 interface Props {
