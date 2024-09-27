@@ -1,14 +1,14 @@
 import ReactDOM from 'react-dom';
 
 import '@proton/polyfill';
-import { reportWebVitals } from '@proton/shared/lib/metrics/webvitals';
 
 import App from './App';
 import UrlsApp from './UrlsApp';
 import './style';
+import { initializePerformanceMetrics } from './utils/performance';
 
-const publicUrl = window.location.pathname.startsWith('/urls');
+const isPublicUrl = window.location.pathname.startsWith('/urls');
 
-reportWebVitals(publicUrl ? 'public' : 'private');
+initializePerformanceMetrics(isPublicUrl);
 
-ReactDOM.render(publicUrl ? <UrlsApp /> : <App />, document.querySelector('.app-root'));
+ReactDOM.render(isPublicUrl ? <UrlsApp /> : <App />, document.querySelector('.app-root'));
