@@ -5,40 +5,38 @@ import { useLocation } from 'react-router';
 import { addDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { signoutAction } from '@proton/account';
+import { signoutAction, useUserSettings } from '@proton/account';
 import { useGetScheduleCall } from '@proton/account/scheduleCall/hooks';
 import { Button, ButtonLike, CircleLoader, NotificationDot } from '@proton/atoms';
 import { ThemeColor } from '@proton/colors';
-import {
-    AppLink,
-    ConfirmSignOutModal,
-    Logo,
-    ReferralSpotlight,
-    Tooltip,
+import ConfirmSignOutModal, {
     shouldShowConfirmSignOutModal,
-    useActiveBreakpoint,
-    useAuthentication,
-    useConfig,
-    useIsSecurityCheckupAvailable,
-    useIsSentinelUser,
-    useNotifications,
-    useOrganization,
-    usePopperAnchor,
-    useSecurityCheckup,
-    useSessionRecoveryState,
-    useSettingsLink,
-    useSpotlightOnFeature,
-    useSpotlightShow,
-    useSubscription,
-    useUser,
-    useUserSettings,
-} from '@proton/components';
+} from '@proton/components/components/confirmSignOutModal/ConfirmSignOutModal';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Icon from '@proton/components/components/icon/Icon';
+import AppLink from '@proton/components/components/link/AppLink';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
+import useSettingsLink from '@proton/components/components/link/useSettingsLink';
+import Logo from '@proton/components/components/logo/Logo';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import { ReferralSpotlight } from '@proton/components/containers/referral/ReferralSpotlight';
+import useIsSecurityCheckupAvailable from '@proton/components/hooks/securityCheckup/useIsSecurityCheckupAvailable';
+import useSecurityCheckup from '@proton/components/hooks/securityCheckup/useSecurityCheckup';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
+import useConfig from '@proton/components/hooks/useConfig';
+import useIsSentinelUser from '@proton/components/hooks/useIsSentinelUser';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import { useOrganization } from '@proton/components/hooks/useOrganization';
+import { useSessionRecoveryState } from '@proton/components/hooks/useSessionRecovery';
+import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
+import useSubscription from '@proton/components/hooks/useSubscription';
+import useUser from '@proton/components/hooks/useUser';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';

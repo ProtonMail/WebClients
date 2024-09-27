@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import { useGetUser } from '@proton/components/hooks';
+import { useGetUser } from '@proton/components/hooks/useUser';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { getLocalStorageUserDrawerKey } from '@proton/shared/lib/drawer/helpers';
 import type { DrawerApp, DrawerLocalStorageValue, IframeSrcMap } from '@proton/shared/lib/drawer/interfaces';

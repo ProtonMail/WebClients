@@ -5,11 +5,12 @@ import { fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Pagination, usePaginationAsync } from '@proton/components';
 import Alert from '@proton/components/components/alert/Alert';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import ConfirmModal from '@proton/components/components/modal/Confirm';
+import Pagination from '@proton/components/components/pagination/Pagination';
+import usePaginationAsync from '@proton/components/components/pagination/usePaginationAsync';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';

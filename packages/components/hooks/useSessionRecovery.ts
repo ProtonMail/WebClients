@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 
 import { differenceInMilliseconds } from 'date-fns';
 
+import { useSessionRecoveryLocalStorage } from '@proton/components/containers/account/sessionRecovery/SessionRecoveryLocalStorageManager';
 import { useInterval } from '@proton/hooks';
 import { APPS, DAY, HOUR, MINUTE, SECOND } from '@proton/shared/lib/constants';
 import { MNEMONIC_STATUS, SessionRecoveryState } from '@proton/shared/lib/interfaces';
 import { getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useSessionRecoveryLocalStorage } from '../containers/account/sessionRecovery/SessionRecoveryLocalStorageManager';
 import useAddresses from './useAddresses';
 import useAuthentication from './useAuthentication';
 import useConfig from './useConfig';

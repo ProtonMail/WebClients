@@ -1,4 +1,4 @@
-export { default as useDrawer, DrawerProvider } from './useDrawer';
+export { DrawerProvider, default as useDrawer } from './useDrawer';
 export { default as useDrawerLocalStorage } from './useDrawerLocalStorage';
 export { default as useDrawerParent } from './useDrawerParent';
 export { default as useDrawerWidth } from './useDrawerWidth';

@@ -3,9 +3,14 @@ import { cloneElement, isValidElement } from 'react';
 
 import { c } from 'ttag';
 
-import { CalendarLogo, DriveLogo, MailLogo, PassLogo, VpnLogo, WalletLogo } from '@proton/components';
 import Icon, { type IconSize } from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
+import CalendarLogo from '@proton/components/components/logo/CalendarLogo';
+import DriveLogo from '@proton/components/components/logo/DriveLogo';
+import MailLogo from '@proton/components/components/logo/MailLogo';
+import PassLogo from '@proton/components/components/logo/PassLogo';
+import VpnLogo from '@proton/components/components/logo/VpnLogo';
+import WalletLogo from '@proton/components/components/logo/WalletLogo';
 import { PLANS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';

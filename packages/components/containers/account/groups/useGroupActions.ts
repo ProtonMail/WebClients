@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { acceptMembership, declineOrLeaveMembership } from '@proton/account';
+import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import {
-    useApi,
     useErrorHandler,
     useEventManager,
     useGetAddressKeys,
@@ -10,8 +10,8 @@ import {
     useGetUser,
     useGetUserKeys,
     useNotifications,
-} from '@proton/components';
-import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
+} from '@proton/components/hooks';
+import useApi from '@proton/components/hooks/useApi';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { baseUseDispatch } from '@proton/react-redux-store';
