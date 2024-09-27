@@ -490,7 +490,7 @@ const DocumentTitleDropdown = ({
             <span className="align-middle">{c('Info').t`End-to-end encrypted.`} </span>
             <a
               data-connection-popover
-              className="align-middle underline hover:underline"
+              className="inline-block align-middle underline hover:underline"
               href="https://proton.me/security/end-to-end-encryption"
               target="_blank"
             >
