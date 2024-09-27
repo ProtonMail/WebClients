@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import noop from 'lodash/noop';
 import { c } from 'ttag';
 
 import type { WasmApiExchangeRate, WasmNetwork } from '@proton/andromeda';
@@ -50,15 +49,20 @@ export const FeesModal = ({
     const [feeOptions, setFeeOptions] = useState<[IconName, string, number, number][]>([]);
 
     useEffect(() => {
-        Promise.all([
+        const options: [IconName, string, number, number][] = [];
+        // Fetch with `allSettled` to get fee options even if some of them fail
+        Promise.allSettled([
             getFeeOption('chevron-up', c('Wallet send').t`High priority`, 1),
             getFeeOption('minus', c('Wallet send').t`Median priority`, 5),
             getFeeOption('chevron-down', c('Wallet send').t`Low priority`, 10),
-        ])
-            .then((options) => {
-                setFeeOptions(options);
+        ]).then((results) =>
+            results.forEach((result) => {
+                if (result.status === 'fulfilled') {
+                    options.push(result.value);
+                }
             })
-            .catch(noop);
+        );
+        setFeeOptions(options);
     }, [getFeeOption]);
 
     const handleFeesSelection = async (feeRate: number) => {
