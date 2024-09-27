@@ -129,7 +129,7 @@ const ItemRowLayout = ({
 
                 <div
                     className={clsx('item-subject flex items-center flex-nowrap', loading && 'w-custom')}
-                    style={loading ? { '--w-custom': '15rem' } : {}}
+                    style={loading ? { '--w-custom': '35rem' } : {}}
                 >
                     <div className="flex flex-column inline-block">
                         <span
@@ -163,7 +163,7 @@ const ItemRowLayout = ({
                     </div>
                 </div>
 
-                <span className="m-auto" />
+                <span className="m-auto"></span>
 
                 <span className="flex flex-nowrap items-center shrink-0 justify-end">
                     <ItemHoverButtons
