@@ -1,8 +1,8 @@
 import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { AttachedFile } from '@proton/components';
 import Alert from '@proton/components/components/alert/Alert';
+import AttachedFile from '@proton/components/components/attachedFile/AttachedFile';
 import { IMPORT_CALENDAR_UNSUPPORTED_FAQ_URL } from '@proton/shared/lib/calendar/constants';
 import { extractTotals } from '@proton/shared/lib/calendar/import/import';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';

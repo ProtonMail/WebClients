@@ -4,15 +4,12 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import {
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleHeader,
-    CollapsibleHeaderIconButton,
-    Form,
-    useFormErrors,
-} from '@proton/components';
+import Collapsible from '@proton/components/components/collapsible/Collapsible';
+import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
+import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
+import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import Form from '@proton/components/components/form/Form';
 import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
@@ -23,6 +20,7 @@ import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { reportBug } from '@proton/shared/lib/api/reports';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, CLIENT_TYPES } from '@proton/shared/lib/constants';

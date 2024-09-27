@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import type { Input } from '@proton/atoms';
 import { Button, CircleLoader, Href } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
-import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
+import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';

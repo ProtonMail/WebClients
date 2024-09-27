@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
+import Icon from '@proton/components/components/icon/Icon';
 import TopNavbarListItemButton from '@proton/components/components/topnavbar/TopNavbarListItemButton';
-
-import Icon from '../../components/icon/Icon';
 
 interface Props {
     onClick: () => void;

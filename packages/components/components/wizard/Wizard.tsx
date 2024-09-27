@@ -1,6 +1,5 @@
+import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
-
-import Icon from '../icon/Icon';
 
 interface Props {
     // current step

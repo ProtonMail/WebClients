@@ -4,21 +4,21 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useGetPaymentStatus } from '@proton/account/paymentStatus/hooks';
 import type { OnLoginCallback } from '@proton/components';
 import {
     StandardLoadErrorPage,
     UnAuthenticated,
+    startUnAuthFlow,
     useActiveBreakpoint,
     useApi,
     useConfig,
     useErrorHandler,
-    useGetPaymentStatus,
     useGetPlans,
     useKTActivation,
     useModalState,
 } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import type { AuthSession } from '@proton/components/containers/login/interface';
 import { useIsChargebeeEnabled } from '@proton/components/containers/payments/PaymentSwitcher';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';

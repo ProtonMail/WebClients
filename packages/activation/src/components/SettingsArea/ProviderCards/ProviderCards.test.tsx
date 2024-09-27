@@ -29,7 +29,7 @@ const defaultUseUser = [
 jest.mock('@proton/components/hooks/useUser');
 const mockUseUser = useUser as jest.MockedFunction<any>;
 
-jest.mock('@proton/components/hooks/useFeature', () => () => {
+jest.mock('@proton/features/useFeature', () => () => {
     return {
         feature: {
             Code: 'EasySwitch',
@@ -66,7 +66,8 @@ jest.mock('@proton/components/hooks/useFeature', () => () => {
     };
 });
 
-jest.mock('@proton/components/hooks/useCalendarUserSettings', () => ({
+jest.mock('@proton/calendar/calendars/hooks', () => {});
+jest.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
     useCalendarUserSettings: () => [],
     useGetCalendarUserSettings: () => () => [],
 }));
@@ -75,39 +76,42 @@ jest.mock('@proton/components/containers/eventManager/calendar/CalendarModelEven
         subscribe: jest.fn(),
     })),
 }));
-jest.mock('@proton/components/hooks/useCalendars', () => () => [
-    [
-        {
-            ID: 'calendarId',
-            Name: 'testing@proton.ch',
-            Description: '',
-            Type: 0,
-            Owner: {
-                Email: 'testing@proton.ch',
-            },
-            Flags: 1,
-            Members: [
-                {
-                    ID: 'memberId',
-                    Permissions: 127,
+jest.mock('@proton/calendar/calendars/hooks', () => ({
+    useCalendars: jest.fn().mockReturnValue([
+        [
+            {
+                ID: 'calendarId',
+                Name: 'testing@proton.ch',
+                Description: '',
+                Type: 0,
+                Owner: {
                     Email: 'testing@proton.ch',
-                    AddressID: 'addressID',
-                    CalendarID: 'calendarId',
-                    Name: 'testing@proton.ch',
-                    Description: '',
-                    Color: '#273EB2',
-                    Display: 1,
-                    Flags: 1,
                 },
-            ],
-            Color: '#273EB2',
-            Display: 1,
-            Email: 'testing@proton.ch',
-            Permissions: 127,
-        },
-    ],
-    false,
-]);
+                Flags: 1,
+                Members: [
+                    {
+                        ID: 'memberId',
+                        Permissions: 127,
+                        Email: 'testing@proton.ch',
+                        AddressID: 'addressID',
+                        CalendarID: 'calendarId',
+                        Name: 'testing@proton.ch',
+                        Description: '',
+                        Color: '#273EB2',
+                        Display: 1,
+                        Flags: 1,
+                    },
+                ],
+                Color: '#273EB2',
+                Display: 1,
+                Email: 'testing@proton.ch',
+                Permissions: 127,
+            },
+        ],
+        false,
+    ]),
+    useGetCalendars: jest.fn(),
+}));
 
 const server = setupServer(
     http.get('/core/v4/features', () => {

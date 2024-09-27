@@ -6,6 +6,7 @@ import { Href } from '@proton/atoms';
 import {
     GenericError,
     SUBSCRIPTION_STEPS,
+    useApi,
     useErrorHandler,
     useSubscriptionModal,
     useUser,
@@ -20,10 +21,10 @@ import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLa
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import { useApi, useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useLoading } from '@proton/hooks';
-import { getBreaches, updateBreachState } from '@proton/shared/lib/api/breaches';
-import { updateBreachEmailNotificationsState } from '@proton/shared/lib/api/breaches';
+import { getBreaches, updateBreachEmailNotificationsState, updateBreachState } from '@proton/shared/lib/api/breaches';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { disableBreachAlert, enableBreachAlert } from '@proton/shared/lib/api/settings';
 import {
@@ -46,7 +47,6 @@ import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { useActiveBreakpoint } from '../../hooks';
 import BreachEmailToggle from './BreachEmailToggle';
 import BreachInformationCard from './BreachInformationCard';
 import BreachModal from './BreachModal';

@@ -4,11 +4,17 @@ import { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Prompt, useApi, useModalState, useNotifications, useSettingsLink } from '@proton/components';
-import HolidaysCalendarModal from '@proton/components/containers/calendar/calendarModal/holidaysCalendarModal/HolidaysCalendarModal';
+import {
+    HolidaysCalendarModal,
+    ImportModal,
+    PersonalCalendarModal,
+    Prompt,
+    useApi,
+    useModalState,
+    useNotifications,
+    useSettingsLink,
+} from '@proton/components';
 import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
-import { PersonalCalendarModal } from '@proton/components/containers/calendar/calendarModal/personalCalendarModal/PersonalCalendarModal';
-import { ImportModal } from '@proton/components/containers/calendar/importModal';
 import ShareCalendarModal from '@proton/components/containers/calendar/shareProton/ShareCalendarModal';
 import ShareLinkModal from '@proton/components/containers/calendar/shareURL/ShareLinkModal';
 import ShareLinkSuccessModal from '@proton/components/containers/calendar/shareURL/ShareLinkSuccessModal';

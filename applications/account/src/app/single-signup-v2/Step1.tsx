@@ -6,10 +6,16 @@ import { c } from 'ttag';
 
 import { Button, Href, InlineLinkButton, Vr } from '@proton/atoms';
 import type { IconName } from '@proton/components';
-import { CurrencySelector, CycleSelector, Icon, getCheckoutRenewNoticeText, useModalState } from '@proton/components';
+import {
+    CurrencySelector,
+    CycleSelector,
+    Icon,
+    getBlackFridayRenewalNoticeText,
+    getCheckoutRenewNoticeText,
+    useModalState,
+} from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { useIsChargebeeEnabled } from '@proton/components/containers/payments/PaymentSwitcher';
-import { getBlackFridayRenewalNoticeText } from '@proton/components/containers/payments/RenewalNotice';
 import { getShortBillingText } from '@proton/components/containers/payments/helper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';

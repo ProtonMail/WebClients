@@ -13,10 +13,11 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useLoading } from '@proton/hooks';
+import { useFilters } from '@proton/mail/filters/hooks';
 import { addTreeFilter, checkSieveFilter, updateFilter } from '@proton/shared/lib/api/filters';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { useApi, useEventManager, useFilters, useNotifications } from '../../../../hooks';
+import { useApi, useEventManager, useNotifications } from '../../../../hooks';
 import { FILTER_VERSION } from '../../constants';
 import type { AdvancedSimpleFilterModalModel, CreateFilter, ErrorsSieve, Filter } from '../../interfaces';
 import { convertModel, sieveTemplates } from '../../utils';

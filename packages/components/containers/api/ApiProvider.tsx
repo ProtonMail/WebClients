@@ -1,14 +1,15 @@
 import type { ReactNode } from 'react';
 import { useEffect, useReducer, useState } from 'react';
 
+import AuthModal from '@proton/components/containers/password/AuthModal';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import type { ApiListenerCallback, ApiWithListener } from '@proton/shared/lib/api/createApi';
 import { handleInvalidSession } from '@proton/shared/lib/authentication/logout';
 import { UNPAID_STATE } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
-import { useAuthentication, useConfig, useModals, useNotifications } from '../../hooks';
+import { useConfig, useModals, useNotifications } from '../../hooks';
 import UnlockModal from '../login/UnlockModal';
-import AuthModal from '../password/AuthModal';
 import DelinquentModal from './DelinquentModal';
 import ApiContext from './apiContext';
 import ApiServerTimeContext from './apiServerTimeContext';

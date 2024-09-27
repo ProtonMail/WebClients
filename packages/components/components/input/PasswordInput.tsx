@@ -2,7 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import Icon from '../icon/Icon';
+import Icon from '@proton/components/components/icon/Icon';
+
 import type { Props } from './Input';
 import Input from './Input';
 

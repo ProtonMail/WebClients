@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Time from '@proton/components/components/time/Time';
+import { REACTIVATE_SOURCE } from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationTelemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { useConfig, useSubscription } from '../../hooks';
-import { REACTIVATE_SOURCE } from '../payments/subscription';
 import { subscriptionExpires } from '../payments/subscription/helpers';
 import TopBanner from './TopBanner';
 

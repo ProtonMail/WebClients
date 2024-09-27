@@ -5,13 +5,12 @@ import { isFocusable } from 'tabbable';
 
 import { Input } from '@proton/atoms';
 import { FormContext } from '@proton/components/components/form/Form';
+import Icon from '@proton/components/components/icon/Icon';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useInstance from '@proton/hooks/useInstance';
 import type { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
-
-import Icon from '../../icon/Icon';
 
 export type NodeOrBoolean = ReactNode | boolean;
 

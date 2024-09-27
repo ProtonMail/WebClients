@@ -15,12 +15,12 @@ import {
     InputFieldTwo,
     Label,
     PasswordInputTwo,
+    startUnAuthFlow,
     useErrorHandler,
     useFormErrors,
     useLocalState,
     useNotifications,
 } from '@proton/components';
-import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import { AuthType, ExternalSSOFlow } from '@proton/components/containers/login/interface';
 import { handleExternalSSOLogin, handleLogin } from '@proton/components/containers/login/loginActions';
 import { useLoading } from '@proton/hooks';

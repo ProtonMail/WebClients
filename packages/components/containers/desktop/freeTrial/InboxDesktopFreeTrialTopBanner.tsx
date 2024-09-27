@@ -2,7 +2,7 @@ import { differenceInDays, format, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { TopBanner } from '@proton/components';
+import TopBanner from '@proton/components/containers/topBanners/TopBanner';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 

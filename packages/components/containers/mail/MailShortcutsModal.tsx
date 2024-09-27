@@ -2,6 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import Field from '@proton/components/components/container/Field';
+import Row from '@proton/components/components/container/Row';
 import Label from '@proton/components/components/label/Label';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -9,14 +11,12 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import ShortcutsSectionView from '@proton/components/components/shortcuts/ShortcutsSectionView';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { getShortcuts } from '@proton/shared/lib/shortcuts/mail';
 import clsx from '@proton/utils/clsx';
 
-import Field from '../../components/container/Field';
-import Row from '../../components/container/Row';
-import { useMailSettings } from '../../hooks';
 import ShortcutsToggle from '../general/ShortcutsToggle';
 
 import './MailShortcutsModal.scss';

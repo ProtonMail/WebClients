@@ -1,11 +1,10 @@
 import { useEffect } from 'react';
 
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { PASSWORD_CHANGE_MESSAGE_TYPE, getIsSelf, getMessage } from '@proton/shared/lib/helpers/crossTab';
-
-import { useAuthentication } from '../../hooks';
 
 const StorageListener = () => {
     const authentication = useAuthentication();

@@ -13,6 +13,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import AuthModal from '@proton/components/containers/password/AuthModal';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
@@ -43,7 +44,6 @@ import {
     useUser,
 } from '../../../hooks';
 import MnemonicInputField, { useMnemonicInputValidation } from '../../mnemonic/MnemonicInputField';
-import { AuthModal } from '../../password';
 import RecoveryFileTabContent from './RecoveryFileTabContent';
 import { getReactivatedKeys } from './reactivateHelper';
 

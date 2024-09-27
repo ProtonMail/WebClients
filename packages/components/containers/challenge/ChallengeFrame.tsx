@@ -1,9 +1,9 @@
 import type { DetailedHTMLProps, IframeHTMLAttributes, MutableRefObject, ReactNode } from 'react';
 import { useLayoutEffect, useMemo, useRef, useState } from 'react';
 
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { ICONS_ID } from '@proton/icons/constants';
 
-import { useActiveBreakpoint } from '../../hooks';
 import { THEME_ID } from '../themes/ThemeProvider';
 import { getStyleSrcUrls, getStyleSrcsData, handleEvent } from './challengeHelper';
 import type { ChallengeLog, ChallengeLogType, ChallengeRef, ChallengeResult } from './interface';

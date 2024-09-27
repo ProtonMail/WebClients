@@ -4,9 +4,8 @@ import { addDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { Spotlight, useSpotlightShow } from '@proton/components';
-import useBusySlotsAvailable from '@proton/components/containers/calendar/hooks/useBusySlotsAvailable';
-import { useActiveBreakpoint, useSpotlightOnFeature, useUser, useWelcomeFlags } from '@proton/components/hooks';
+import { Spotlight, useActiveBreakpoint, useBusySlotsAvailable, useSpotlightShow } from '@proton/components';
+import { useSpotlightOnFeature, useUser, useWelcomeFlags } from '@proton/components/hooks';
 import { FeatureCode } from '@proton/features';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

@@ -2,25 +2,19 @@ import { format } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import {
-    getScribeUpsellLearnMore,
-    useAssistantSubscriptionStatus,
-    useAssistantUpsellConfig,
-    useMember,
-    useOrganization,
-    usePlans,
-    useSubscription,
-    useSubscriptionModal,
-} from '@proton/components';
+import { useMember, useOrganization, usePlans, useSubscription } from '@proton/components';
 import Badge from '@proton/components/components/badge/Badge';
 import Icon from '@proton/components/components/icon/Icon';
 import { getIsB2CUserAbleToRunScribe } from '@proton/components/components/upsell/modal/types/ComposerAssistantUpsellModal.helpers';
+import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
+import useAssistantSubscriptionStatus from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
+import useAssistantUpsellConfig from '@proton/components/hooks/assistant/useAssistantUpsellConfig';
 import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { hasPlanWithAIAssistantIncluded } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 
-import { getScribeUpsellText } from './helpers';
+import { getScribeUpsellLearnMore, getScribeUpsellText } from './helpers';
 import useAssistantToggle from './useAssistantToggle';
 
 const AssistantToggle = () => {

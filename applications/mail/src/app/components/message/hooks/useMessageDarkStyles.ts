@@ -1,7 +1,8 @@
 import type { RefObject } from 'react';
 import { useEffect, useMemo } from 'react';
 
-import { FeatureCode, useFeature, useTheme } from '@proton/components';
+import { useTheme } from '@proton/components';
+import { FeatureCode, useFeature } from '@proton/features';
 import { isNewsLetter, isPlainText } from '@proton/shared/lib/mail/messages';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';

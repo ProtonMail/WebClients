@@ -1,15 +1,17 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { useConversationCounts, useMessageCounts } from '@proton/components';
+import { useMessageCounts } from '@proton/components';
+import { useConversationCounts } from '@proton/mail/counts/conversationCounts';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import * as desktopHelpers from '@proton/shared/lib/helpers/desktop';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import { useInboxDesktopBadgeCount, useMailSettings } from './';
+import { useInboxDesktopBadgeCount } from './';
 
-jest.mock('@proton/components/hooks/useConversationCounts');
+jest.mock('@proton/mail/mailSettings/hooks');
+jest.mock('@proton/mail/counts/conversationCounts');
 jest.mock('@proton/components/hooks/useMessageCounts');
-jest.mock('@proton/components/hooks/useMailSettings');
 jest.mock('@proton/shared/lib/helpers/desktop');
 const desktopHelpersMock = desktopHelpers as jest.MockedObject<typeof desktopHelpers>;
 

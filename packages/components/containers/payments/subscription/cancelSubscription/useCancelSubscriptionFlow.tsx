@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import { isSplittedUser, onSessionMigrationPaymentsVersion } from '@proton/payments';
@@ -26,7 +27,6 @@ import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import {
     useApi,
     useEventManager,
-    useGetCalendars,
     useGetSubscription,
     useGetUser,
     useNotifications,

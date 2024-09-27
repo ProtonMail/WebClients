@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import { FeatureCode, FileNameDisplay, useFeature } from '@proton/components';
+import { FileNameDisplay } from '@proton/components';
+import { FeatureCode, useFeature } from '@proton/features';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';

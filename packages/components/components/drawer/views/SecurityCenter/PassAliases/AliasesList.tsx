@@ -6,7 +6,7 @@ import Info from '@proton/components/components/link/Info';
 import { useNotifications } from '@proton/components/hooks';
 import type { PassBridgeAliasItem } from '@proton/pass/lib/bridge/types';
 
-import { DrawerAppHeadline } from '../../shared';
+import DrawerAppHeadline from '../../shared/DrawerAppHeadline';
 
 type FilteredAlias = { name: string; alias: string };
 const getFilteredAliases = (items: PassBridgeAliasItem[]): FilteredAlias[] => {

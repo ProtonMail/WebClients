@@ -3,11 +3,10 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { getOpenInDocsString } from '@proton/shared/lib/drive/translations';
 import unsupportedPreviewSvg from '@proton/styles/assets/img/errors/preview-unavailable.svg';
 import clsx from '@proton/utils/clsx';
-
-import { useActiveBreakpoint } from '../../hooks';
 
 interface Props {
     isPublic?: boolean;

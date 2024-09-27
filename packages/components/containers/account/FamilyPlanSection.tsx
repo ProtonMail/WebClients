@@ -3,9 +3,10 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useCalendars } from '@proton/calendar/calendars/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { useAddresses, useCalendars, useMember, useOrganization, useUser } from '@proton/components/hooks';
+import { useAddresses, useMember, useOrganization, useUser } from '@proton/components/hooks';
 import { isOrganizationDuo, isOrganizationFamily } from '@proton/shared/lib/organization/helper';
 
 import { UsagePanel } from '../payments/subscription/panels';

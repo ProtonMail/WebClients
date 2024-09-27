@@ -5,7 +5,8 @@ import { c } from 'ttag';
 
 import DrawerContactView from '@proton/components/components/drawer/views/DrawerContactView';
 import DrawerSettingsView from '@proton/components/components/drawer/views/DrawerSettingsView';
-import { ErrorBoundary, StandardErrorPage } from '@proton/components/containers';
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
 import type { CustomAction } from '@proton/components/containers/contacts/widget/types';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import type { Recipient } from '@proton/shared/lib/interfaces';

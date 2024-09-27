@@ -4,12 +4,15 @@ import { c } from 'ttag';
 
 import { EASY_SWITCH_SEARCH_SOURCES } from '@proton/activation/src/interface';
 import { Button, Href } from '@proton/atoms';
-import { Alert, AttachedFile, Dropzone } from '@proton/components';
+import Alert from '@proton/components/components/alert/Alert';
+import AttachedFile from '@proton/components/components/attachedFile/AttachedFile';
+import Dropzone from '@proton/components/components/dropzone/Dropzone';
 import FileInput from '@proton/components/components/input/FileInput';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import { FeatureCode, useFeature } from '@proton/features';
 import { APPS } from '@proton/shared/lib/constants';
 import {
     MAX_CONTACTS_PER_USER,
@@ -27,8 +30,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
 import { EXTENSION, IMPORT_STEPS } from '@proton/shared/lib/interfaces/contacts/Import';
 
-import { useFeature } from '../../../../hooks';
-import { FeatureCode } from '../../../features';
 import { getInitialState } from '../ContactImportModal';
 
 const { CSV, VCF } = EXTENSION;

@@ -1,10 +1,10 @@
 import type { ReactNode } from 'react';
-import React from 'react';
 
 import { c } from 'ttag';
 
 import { NotificationDot } from '@proton/atoms';
 import { ThemeColor } from '@proton/colors/types';
+import type { IconName } from '@proton/components/components/icon/Icon';
 import SidebarListItemContent from '@proton/components/components/sidebar/SidebarListItemContent';
 import SidebarListItemContentIcon from '@proton/components/components/sidebar/SidebarListItemContentIcon';
 import { baseUseSelector } from '@proton/react-redux-store';
@@ -12,7 +12,6 @@ import type { OpenDrawerArgs } from '@proton/shared/lib/drawer/interfaces';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 
 import useDrawer from '../../hooks/drawer/useDrawer';
-import type { IconName } from '../icon/Icon';
 import { selectHasAccountSecurityIssue } from './views/SecurityCenter/AccountSecurity/slice/accountSecuritySlice';
 import useSecurityCenter from './views/SecurityCenter/useSecurityCenter';
 

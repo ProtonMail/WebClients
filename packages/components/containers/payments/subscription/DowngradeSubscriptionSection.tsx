@@ -3,13 +3,13 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
+import useCancellationFlow from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationFlow';
 import useLoading from '@proton/hooks/useLoading';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME, PLANS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import { useCancelSubscriptionFlow } from './cancelSubscription';
-import { useCancellationFlow } from './cancellationFlow';
 import useCancellationTelemetry from './cancellationFlow/useCancellationTelemetry';
 
 const DowngradeSubscriptionSection = ({ app }: { app: APP_NAMES }) => {

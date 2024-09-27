@@ -4,10 +4,9 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
-import { DriveLogo, Icon, Tooltip, useModalTwoStatic } from '@proton/components';
+import { DriveLogo, Icon, Tooltip, useActiveBreakpoint, useModalTwoStatic } from '@proton/components';
 import Dialog from '@proton/components/components/dialog/Dialog';
 import { Portal } from '@proton/components/components/portal';
-import { useActiveBreakpoint } from '@proton/components/hooks';
 import usePrevious from '@proton/hooks/usePrevious';
 import { modalTwoRootClassName } from '@proton/shared/lib/busy';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';

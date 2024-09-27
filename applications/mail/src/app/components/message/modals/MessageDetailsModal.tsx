@@ -2,17 +2,9 @@ import { c, msgid } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
-import {
-    FeatureCode,
-    Icon,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    useFeatures,
-    useFolders,
-} from '@proton/components';
+import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useFolders } from '@proton/components';
 import type { ContactEditProps } from '@proton/components';
+import { FeatureCode, useFeatures } from '@proton/features';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { MailSettings } from '@proton/shared/lib/interfaces';

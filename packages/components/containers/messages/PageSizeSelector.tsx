@@ -3,11 +3,12 @@ import { c } from 'ttag';
 import type { DropdownProps } from '@proton/components/components/dropdown/Dropdown';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { updatePageSize } from '@proton/shared/lib/api/mailSettings';
 import { DEFAULT_MAIL_PAGE_SIZE } from '@proton/shared/lib/constants';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 
-import { useApi, useEventManager, useMailSettings, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useNotifications } from '../../hooks';
 
 interface Props {
     id?: string;

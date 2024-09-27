@@ -12,9 +12,9 @@ import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import AuthModal from '@proton/components/containers/password/AuthModal';
 import {
     useAuthentication,
-    useBeforeUnload,
     useEventManager,
     useGetAddressKeys,
     useGetAddresses,
@@ -23,6 +23,7 @@ import {
     useNotifications,
 } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
+import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { authMember } from '@proton/shared/lib/api/members';
@@ -44,8 +45,7 @@ import { srpVerify } from '@proton/shared/lib/srp';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
-import { GenericError } from '../error';
-import { AuthModal } from '../password';
+import GenericError from '../error/GenericError';
 
 interface Inputs {
     newPassword: string;

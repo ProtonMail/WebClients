@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { useCard } from '@proton/components/payments/react-extensions';
+import { useCard } from '@proton/components/payments/react-extensions/useCard';
 import { apiMock } from '@proton/testing';
 
 import type { Props } from './CreditCard';

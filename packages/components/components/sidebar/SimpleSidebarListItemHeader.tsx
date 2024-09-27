@@ -1,12 +1,12 @@
 import type { ReactNode, Ref } from 'react';
 import { useRef } from 'react';
 
+import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import type { HotkeyTuple } from '../../hooks';
 import { useHotkeys } from '../../hooks';
-import Icon from '../icon/Icon';
 import SidebarListItem from './SidebarListItem';
 
 interface Props {

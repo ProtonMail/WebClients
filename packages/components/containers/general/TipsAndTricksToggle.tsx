@@ -3,11 +3,10 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
-import { FeatureCode } from '@proton/components/containers/features';
 import useApi from '@proton/components/hooks/useApi';
-import useFeature from '@proton/components/hooks/useFeature';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useToggle from '@proton/components/hooks/useToggle';
+import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { TelemetryMeasurementGroups, TelemetryProtonTipsEvents } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';

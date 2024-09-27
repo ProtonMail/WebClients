@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import {
     Dropzone,
+    ImportModal,
     useApi,
     useBeforeUnload,
     useCalendarModelEventManager,
@@ -16,12 +17,10 @@ import {
     useGetAddressKeys,
     useGetCalendarEventRaw,
     useGetEncryptionPreferences,
-    useGetMailSettings,
     useNotifications,
     useRelocalizeText,
     useUser,
 } from '@proton/components';
-import { ImportModal } from '@proton/components/containers/calendar/importModal';
 import { useReadCalendarBootstrap } from '@proton/components/hooks/useGetCalendarBootstrap';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
@@ -29,6 +28,7 @@ import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMa
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
 import useSendIcs from '@proton/components/hooks/useSendIcs';
 import { serverTime } from '@proton/crypto';
+import { useGetMailSettings } from '@proton/mail/mailSettings/hooks';
 import {
     attendeeDeleteSingleEdit,
     updateAttendeePartstat,

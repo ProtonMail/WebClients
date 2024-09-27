@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
 import { useCombinedRefs, useLoading } from '@proton/hooks';
 import busy from '@proton/shared/lib/busy';
 import { isMinimumSafariVersion, isSafari } from '@proton/shared/lib/helpers/browser';
@@ -19,7 +20,7 @@ import {
 } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable, isPreviewTooLarge } from '@proton/shared/lib/helpers/preview';
 
-import { useBeforeUnload, useHotkeys } from '../../hooks';
+import { useHotkeys } from '../../hooks';
 import AudioPreview from './AudioPreview';
 import CloseModal from './CloseModal';
 import type { SharedStatus } from './Header';

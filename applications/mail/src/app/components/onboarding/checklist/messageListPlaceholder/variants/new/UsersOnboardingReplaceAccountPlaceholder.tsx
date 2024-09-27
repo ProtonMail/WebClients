@@ -3,8 +3,15 @@ import { memo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike, type ButtonLikeSize } from '@proton/atoms';
-import { Icon, Tooltip, useModalStateObject } from '@proton/components';
-import { useActiveBreakpoint, useAddresses, useMyCountry, useNotifications } from '@proton/components/hooks';
+import {
+    Icon,
+    Tooltip,
+    useActiveBreakpoint,
+    useAddresses,
+    useModalStateObject,
+    useMyCountry,
+    useNotifications,
+} from '@proton/components';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';

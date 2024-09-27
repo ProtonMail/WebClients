@@ -1,24 +1,26 @@
 import { c } from 'ttag';
 
-import { Info, Loader, Toggle, useConfirmActionModal } from '@proton/components';
+import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import {
     DefaultQuickSettings,
-    QuickSettingsButtonSection,
-    QuickSettingsSectionRow,
-} from '@proton/components/components/drawer/views/quickSettings';
-import DrawerAllSettingsView from '@proton/components/components/drawer/views/quickSettings/DrawerAllSettingsView';
-import DrawerDownloadApps from '@proton/components/components/drawer/views/quickSettings/DrawerDownloadApps';
-import {
+    DrawerAllSettingsView,
     DrawerAppHeadline,
     DrawerAppScrollContainer,
     DrawerAppSection,
-} from '@proton/components/components/drawer/views/shared';
-import PrimaryTimezoneSelector from '@proton/components/containers/calendar/settings/PrimaryTimezoneSelector';
-import SecondaryTimezoneSelector from '@proton/components/containers/calendar/settings/SecondaryTimezoneSelector';
-import ShowSecondaryTimezoneToggle from '@proton/components/containers/calendar/settings/ShowSecondaryTimezoneToggle';
-import ViewPreferenceSelector from '@proton/components/containers/calendar/settings/ViewPreferenceSelector';
-import WeekStartSelector from '@proton/components/containers/calendar/settings/WeekStartSelector';
-import { useApi, useCalendarUserSettings, useEventManager, useNotifications } from '@proton/components/hooks';
+    DrawerDownloadApps,
+    Info,
+    Loader,
+    PrimaryTimezoneSelector,
+    QuickSettingsButtonSection,
+    QuickSettingsSectionRow,
+    SecondaryTimezoneSelector,
+    ShowSecondaryTimezoneToggle,
+    Toggle,
+    ViewPreferenceSelector,
+    WeekStartSelector,
+    useConfirmActionModal,
+} from '@proton/components';
+import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { DEFAULT_CALENDAR_USER_SETTINGS } from '@proton/shared/lib/calendar/calendar';

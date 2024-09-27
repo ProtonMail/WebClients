@@ -5,6 +5,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import useIsRecoveryFileAvailable from '@proton/components/hooks/recoveryFile/useIsRecoveryFileAvailable';
 import { useGetUserSettings } from '@proton/components/hooks/useUserSettings';
 import { useLoading } from '@proton/hooks';
 import { updateDeviceRecovery } from '@proton/shared/lib/api/settingsRecovery';
@@ -24,7 +25,6 @@ import {
     useGetUserKeys,
     useHasOutdatedRecoveryFile,
     useIsMnemonicAvailable,
-    useIsRecoveryFileAvailable,
     useRecoverySecrets,
     useSearchParamsEffect,
     useUser,

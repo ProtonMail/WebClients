@@ -1,5 +1,6 @@
 import { selectOrganization, selectUser } from '@proton/account';
-import { useIsOrganizationBeforeBackfill, useScribePaymentsEnabled } from '@proton/components/containers';
+import { useIsOrganizationBeforeBackfill } from '@proton/components/containers/payments/subscription/assistant/useIsOrganizationBeforeBackfill';
+import useScribePaymentsEnabled from '@proton/components/containers/payments/subscription/assistant/useScribePaymentsEnabled';
 import { baseUseSelector } from '@proton/react-redux-store';
 import { PLANS } from '@proton/shared/lib/constants';
 import type { Organization } from '@proton/shared/lib/interfaces';

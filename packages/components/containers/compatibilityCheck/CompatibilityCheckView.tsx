@@ -10,7 +10,7 @@ import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import unsupportedBrowserSettings from '@proton/styles/assets/img/errors/unsupported-browser.svg';
 
-import { useAppTitle } from '../../hooks';
+import useAppTitle from '../../hooks/useAppTitle';
 
 interface Props {
     appName: APP_NAMES;

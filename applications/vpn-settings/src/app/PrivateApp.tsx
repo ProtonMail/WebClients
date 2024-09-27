@@ -10,8 +10,8 @@ import {
     LoaderPage,
     StandardErrorPage,
     StandardLoadErrorPage,
+    StandardPrivateApp,
 } from '@proton/components';
-import StandardPrivateApp from '@proton/components/containers/app/StandardPrivateApp';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';

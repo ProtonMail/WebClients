@@ -11,17 +11,16 @@ import {
     DropdownMenu,
     DropdownMenuButton,
     DropdownSizeUnit,
-    FeatureCode,
     Icon,
     Tooltip,
     useApi,
-    useFeature,
     useFolders,
     useModalState,
     useNotifications,
     useUser,
 } from '@proton/components';
 import type { WorkerDecryptionResult } from '@proton/crypto';
+import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';

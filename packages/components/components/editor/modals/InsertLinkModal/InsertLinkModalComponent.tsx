@@ -15,7 +15,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import { useMailSettings } from '@proton/components/hooks';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { LINK_TYPES } from '@proton/shared/lib/constants';
 import { addLinkPrefix, linkToType } from '@proton/shared/lib/helpers/url';
 

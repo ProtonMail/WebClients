@@ -2,27 +2,27 @@ import type { ReactNode } from 'react';
 import { useEffect, useMemo } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
+import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
+import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { useGetHolidaysDirectory } from '@proton/calendar/holidaysDirectory/hooks';
 import { useLoadAllowedTimeZones } from '@proton/calendar/timezones';
 import {
     CalendarExportSection,
     CalendarImportSection,
+    CalendarInvitationsSection,
     CalendarLayoutSection,
     CalendarSubpage,
     CalendarTimeSection,
+    CalendarsSettingsSection,
     InboxDesktopSettingsSection,
     MobileAppSettingsSection,
     PrivateMainAreaLoading,
     PrivateMainSettingsArea,
     useAddresses,
-    useCalendarUserSettings,
-    useCalendars,
     useCalendarsInfoListener,
     useIsInboxElectronApp,
     useSubscribedCalendars,
 } from '@proton/components';
-import CalendarInvitationsSection from '@proton/components/containers/calendar/settings/CalendarInvitationsSection';
-import CalendarsSettingsSection from '@proton/components/containers/calendar/settings/CalendarsSettingsSection';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,

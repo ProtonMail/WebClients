@@ -16,6 +16,7 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useLoading } from '@proton/hooks';
 import { createAddress } from '@proton/shared/lib/api/addresses';
 import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
@@ -42,7 +43,6 @@ import noop from '@proton/utils/noop';
 import {
     useAddresses,
     useApi,
-    useAuthentication,
     useCustomDomains,
     useEventManager,
     useGetOrganizationKey,

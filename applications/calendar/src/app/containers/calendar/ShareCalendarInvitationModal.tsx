@@ -5,15 +5,15 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import {
+    CalendarLimitReachedModal,
     Prompt,
+    ShareCalendarWithSignatureVerificationErrorModal,
     useCalendarShareInvitationActions,
     useContactEmailsCache,
     useModalState,
     useNotifications,
     useSettingsLink,
 } from '@proton/components';
-import CalendarLimitReachedModal from '@proton/components/containers/calendar/CalendarLimitReachedModal';
-import ShareCalendarWithSignatureVerificationErrorModal from '@proton/components/containers/calendar/shareProton/ShareCalendarWithSignatureVerificationErrorModal';
 import { useLoading } from '@proton/hooks';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';

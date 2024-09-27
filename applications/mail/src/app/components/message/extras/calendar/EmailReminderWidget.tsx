@@ -4,6 +4,7 @@ import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { ButtonLike, Href } from '@proton/atoms';
+import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import {
     AppLink,
     Banner,
@@ -16,7 +17,6 @@ import {
     useGetAddressKeys,
     useGetAddresses,
     useGetCalendarEventRaw,
-    useGetCalendars,
     useNotifications,
 } from '@proton/components';
 import { BannerBackgroundColor } from '@proton/components/components/banner/Banner';

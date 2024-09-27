@@ -8,8 +8,7 @@ import { render as originalRender } from '@testing-library/react';
 import type { MemoryHistory } from 'history';
 import { createMemoryHistory } from 'history';
 
-import { CacheProvider, ConfigProvider, ModalsChildren, ModalsProvider } from '@proton/components';
-import ApiContext from '@proton/components/containers/api/apiContext';
+import { ApiContext, CacheProvider, ConfigProvider, ModalsChildren, ModalsProvider } from '@proton/components';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { registerFeatureFlagsApiMock } from '@proton/testing/lib/features';
 

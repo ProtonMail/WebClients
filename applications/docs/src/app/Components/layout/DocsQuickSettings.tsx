@@ -1,6 +1,4 @@
-import { DefaultQuickSettings } from '@proton/components/components/drawer/views/quickSettings'
-import DrawerAllSettingsView from '@proton/components/components/drawer/views/quickSettings/DrawerAllSettingsView'
-import { DrawerAppScrollContainer } from '@proton/components/components/drawer/views/shared'
+import { DrawerAppScrollContainer, DefaultQuickSettings, DrawerAllSettingsView } from '@proton/components'
 
 const DocsQuickSettings = () => {
   return (

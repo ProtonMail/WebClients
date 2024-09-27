@@ -4,16 +4,16 @@ import { Router } from 'react-router-dom';
 
 import {
     AccountSpotlightsProvider,
+    ApiProvider,
     AuthenticationProvider,
     CalendarModelEventManagerProvider,
     ErrorBoundary,
     EventManagerProvider,
     ProtonApp,
     StandardErrorPage,
+    StandardLoadErrorPage,
+    StandardPrivateApp,
 } from '@proton/components';
-import ApiProvider from '@proton/components/containers/api/ApiProvider';
-import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
-import StandardPrivateApp from '@proton/components/containers/app/StandardPrivateApp';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';

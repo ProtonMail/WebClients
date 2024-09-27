@@ -13,6 +13,7 @@ import Checkbox from '@proton/components/components/input/Checkbox';
 import SearchInput from '@proton/components/components/input/SearchInput';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import {
     getContactGroupsDelayedSaveChanges,
     hasReachedContactGroupMembersLimit,
@@ -25,7 +26,7 @@ import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
 import Mark from '../../components/text/Mark';
-import { useContactEmails, useContactGroups, useMailSettings, useUser } from '../../hooks';
+import { useContactEmails, useContactGroups, useUser } from '../../hooks';
 import type { ContactGroupEditProps } from './group/ContactGroupEditModal';
 import useApplyGroups from './hooks/useApplyGroups';
 import type { ContactGroupLimitReachedProps } from './modals/ContactGroupLimitReachedModal';

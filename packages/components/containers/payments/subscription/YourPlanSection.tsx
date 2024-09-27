@@ -1,3 +1,5 @@
+import { useUserInvitations } from '@proton/account/userInvitations/hooks';
+import { useCalendars } from '@proton/calendar/calendars/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import MozillaInfoPanel from '@proton/components/containers/account/MozillaInfoPanel';
 import SettingsSectionExtraWide from '@proton/components/containers/account/SettingsSectionExtraWide';
@@ -12,10 +14,8 @@ import clsx from '@proton/utils/clsx';
 
 import {
     useAddresses,
-    useCalendars,
     useLoad,
     useOrganization,
-    usePendingUserInvitations,
     usePlans,
     usePreferredPlansMap,
     useSubscription,
@@ -43,7 +43,7 @@ const YourPlanSection = ({ app }: Props) => {
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
     const [serversCount, serversCountLoading] = useVPNServersCount();
-    const [invites = []] = usePendingUserInvitations();
+    const [invites = []] = useUserInvitations();
     const [openSubscriptionModal] = useSubscriptionModal();
     const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
     const { plansMap } = usePreferredPlansMap();

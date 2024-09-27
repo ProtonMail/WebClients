@@ -14,6 +14,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import AuthModal from '@proton/components/containers/password/AuthModal';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { updateBackupKey } from '@proton/shared/lib/api/organization';
@@ -22,7 +23,6 @@ import { getBackupKeyData } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import { useEventManager, useNotifications } from '../../hooks';
-import AuthModal from '../password/AuthModal';
 
 interface Props extends ModalProps {
     hasOtherAdmins: boolean;

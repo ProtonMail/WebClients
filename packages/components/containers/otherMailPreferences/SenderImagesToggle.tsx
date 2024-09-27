@@ -2,9 +2,10 @@ import { c } from 'ttag';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { useLoading } from '@proton/hooks';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { updateHideSenderImages } from '@proton/shared/lib/api/mailSettings';
 
-import { useApi, useEventManager, useMailSettings, useNotifications, useToggle } from '../../hooks';
+import { useApi, useEventManager, useNotifications, useToggle } from '../../hooks';
 
 interface Props {
     id?: string;
