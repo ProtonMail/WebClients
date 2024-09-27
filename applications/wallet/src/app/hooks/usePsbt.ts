@@ -42,7 +42,7 @@ const getNowTimestamp = (): string => {
 export const usePsbt = ({ txBuilderHelpers }: { txBuilderHelpers: TxBuilderHelper }, shouldCreatePsbt = false) => {
     const blockchainClient = useBlockchainClient();
 
-    const { incrementSyncKey, walletsChainData, network } = useBitcoinBlockchainContext();
+    const { walletsChainData, network, syncSingleWalletAccount } = useBitcoinBlockchainContext();
     const [loadingBroadcast, withLoadingBroadcast] = useLoading();
     const [psbt, setPsbt] = useState<WasmPsbt>();
     const [broadcastedTxId, setBroadcastedTxId] = useState<string>();
@@ -149,8 +149,11 @@ export const usePsbt = ({ txBuilderHelpers }: { txBuilderHelpers: TxBuilderHelpe
                     bveData
                 );
 
-                await wasmAccount.account.insertUnconfirmedTransaction(psbt);
-                incrementSyncKey(apiAccount.WalletID, apiAccount.ID);
+                void syncSingleWalletAccount({
+                    walletId: apiAccount.WalletID,
+                    accountId: apiAccount.ID,
+                    manual: true,
+                });
 
                 setBroadcastedTxId(txId);
             } catch (error: any) {
