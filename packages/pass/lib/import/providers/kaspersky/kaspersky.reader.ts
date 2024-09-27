@@ -37,6 +37,7 @@ const parseLine = (line: string): MaybeNull<[key: KasperskyItemKey, value: strin
 const processLine = (state: LineReaderState, line: string): LineReaderState => {
     const newSection = line.trim() === '---' || state.current === null;
     const parsedLine = parseLine(line);
+    const isNote = KasperskyItemKey.TEXT in (state.current ?? {});
 
     if (newSection) {
         /* If this is a new section, create a new item */
@@ -44,9 +45,10 @@ const processLine = (state: LineReaderState, line: string): LineReaderState => {
         state.items.push(item);
         state.current = item;
         state.property = null;
-    } else if (parsedLine && state.current) {
+    } else if (parsedLine && state.current && !isNote) {
         /* if the line was successfully parsed, append
-         * the new property to the current item */
+         * the new property to the current item,
+         * only if it's not a Note */
         const [property, value] = parsedLine;
         state.current[property] = value.trim();
         state.property = property;
