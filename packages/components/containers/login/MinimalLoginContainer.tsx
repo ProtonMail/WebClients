@@ -9,7 +9,6 @@ import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInp
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import TotpInputs from '@proton/components/containers/account/totp/TotpInputs';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
-import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
 import { useLoading } from '@proton/hooks';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -273,7 +272,6 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
     const { APP_NAME } = useConfig();
     const { createNotification } = useNotifications();
     const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
-    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
 
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
@@ -355,7 +353,7 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
                                 username,
                                 password,
                                 api: silentApi,
-                                verifyOutboundPublicKeys,
+                                verifyOutboundPublicKeys: null,
                                 ignoreUnlock,
                                 persistent: false,
                                 setupVPN: false,
