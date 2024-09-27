@@ -18,6 +18,7 @@ import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 import { decryptPassphrase, getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
+import { getIsPublicContext } from '../../utils/getIsPublicContext';
 import { tokenIsValid } from '../../utils/url/token';
 import { linkMetaToEncryptedLink, revisionPayloadToRevision, useDebouncedRequest } from '../_api';
 import type { IntegrityMetrics, VerificationKey } from '../_crypto';
@@ -31,6 +32,7 @@ import {
     useDefaultShare,
     useShare,
 } from '../_shares';
+import { useDirectSharingInfo } from '../_shares/useDirectSharingInfo';
 import { useIsPaid } from '../_user';
 import { useDebouncedFunction } from '../_utils';
 import { decryptExtendedAttributes } from './extendedAttributes';
@@ -76,6 +78,7 @@ export default function useLink() {
     const { getVerificationKey } = useDriveCrypto();
     const { getSharePrivateKey, getShare } = useShare();
     const { getDefaultShareAddressEmail } = useDefaultShare();
+    const { getDirectSharingInfo } = useDirectSharingInfo();
     const isPaid = useIsPaid();
 
     const debouncedRequest = useDebouncedRequest();
@@ -104,6 +107,7 @@ export default function useLink() {
         getSharePrivateKey,
         getShare,
         getDefaultShareAddressEmail,
+        getDirectSharingInfo,
         isPaid,
         integrityMetrics,
         CryptoProxy.importPrivateKey
@@ -130,6 +134,7 @@ export function useLinkInner(
     getSharePrivateKey: ReturnType<typeof useShare>['getSharePrivateKey'],
     getShare: ReturnType<typeof useShare>['getShare'],
     getDefaultShareAddressEmail: ReturnType<typeof useDefaultShare>['getDefaultShareAddressEmail'],
+    getDirectSharingInfo: ReturnType<typeof useDirectSharingInfo>['getDirectSharingInfo'],
     userIsPaid: boolean,
     integrityMetrics: IntegrityMetrics,
     importPrivateKey: typeof CryptoProxy.importPrivateKey // passed as arg for easier mocking when testing
@@ -627,6 +632,14 @@ export function useLinkInner(
                     ? share || (await getShare(abortSignal, shareId))
                     : undefined;
 
+                // Sharing info will only be get in case the share is not own by the current user
+                // Also we only want it in the shared with me root view, so we need to check if parentLinkId is not present
+                // TODO: Improve that as we remove the parentLinkId for now, but it will be present in the future
+                let sharingInfo =
+                    !getIsPublicContext() && encryptedLink.sharingDetails && !encryptedLink.parentLinkId
+                        ? await getDirectSharingInfo(abortSignal, encryptedLink.sharingDetails?.shareId)
+                        : undefined;
+
                 let displayName = name;
                 if (shareResult?.type === ShareType.default) {
                     displayName = c('Title').t`My files`;
@@ -636,6 +649,7 @@ export function useLinkInner(
 
                 return {
                     ...encryptedLink,
+                    ...(sharingInfo ? { sharedOn: sharingInfo.sharedOn, sharedBy: sharingInfo.sharedBy } : undefined),
                     encryptedName: encryptedLink.name,
                     name: displayName,
                     fileModifyTime: fileModifyTime,

@@ -8,7 +8,7 @@ import { sendErrorReport } from '../../../utils/errorHandling';
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { useDebouncedRequest } from '../../_api';
 import { useDriveCrypto } from '../../_crypto';
-import { useShare } from '../../_shares';
+import { useDirectSharingInfo } from '../../_shares/useDirectSharingInfo';
 import { useVolumesState } from '../../_volumes';
 import type { DecryptedLink } from '../interface';
 import useLinksState from '../useLinksState';
@@ -29,7 +29,7 @@ export function useSharedWithMeLinksListingByVolume() {
     const linksState = useLinksState();
     const volumesState = useVolumesState();
     const { getVerificationKey } = useDriveCrypto();
-    const { getSharePrivateKey } = useShare();
+    const { getDirectSharingInfo } = useDirectSharingInfo();
     const shareIdsState = useRef<Set<string>>();
 
     const setShareIdsState = (shareIds: string[]) => {
@@ -120,20 +120,48 @@ export function useSharedWithMeLinksListingByVolume() {
         const shareIds = new Set(Object.values(results).flatMap(Object.keys));
         const sharesQueue = [...shareIds].map((shareId) => {
             return () =>
-                getSharePrivateKey(signal, shareId).catch((e) => {
-                    // If we can't get the share private key, continue to load the rest of shares
-                    const error = new EnrichedError(e.message, {
-                        tags: { shareId },
-                        extra: { e },
+                getDirectSharingInfo(signal, shareId)
+                    .then((shareInfo) => ({
+                        ...shareInfo,
+                        shareId,
+                    }))
+                    .catch((e) => {
+                        // If we can't get the share info, continue to load the rest of shares
+                        const error = new EnrichedError(e.message, {
+                            tags: { shareId },
+                            extra: { e },
+                        });
+                        sendErrorReport(error);
+                        return {
+                            shareId,
+                            sharedOn: undefined,
+                            sharedBy: undefined,
+                        };
                     });
-                    sendErrorReport(error);
-                });
         });
-        await runInQueue(sharesQueue, BATCH_PROCESSING);
+        const shareInfoResults = await runInQueue(sharesQueue, BATCH_PROCESSING);
 
-        for (const result of results) {
+        // Create a map for quick lookup of shareInfo
+        const shareInfoMap = new Map(shareInfoResults.map((info) => [info.shareId, info]));
+
+        // Sort results based on sharedOn date in descending order
+        const sortedResults = Object.entries(results).sort((a, b) => {
+            const getSharedOnDate = (entry: [string, any]) => {
+                const shareId = Object.keys(entry[1])[0];
+                return shareInfoMap.get(shareId)?.sharedOn || 0;
+            };
+            return getSharedOnDate(b) - getSharedOnDate(a);
+        });
+
+        for (const [, result] of sortedResults) {
             for (const [shareId, { links, parents }] of Object.entries(result)) {
-                await cacheLoadedLinks(signal, shareId, links, parents);
+                const shareInfo = shareInfoMap.get(shareId);
+                const linksWithShareInfo = links.map((link) => ({
+                    ...link,
+                    sharedOn: shareInfo?.sharedOn,
+                    sharedBy: shareInfo?.sharedBy,
+                }));
+                await cacheLoadedLinks(signal, shareId, linksWithShareInfo, parents);
             }
         }
     };
