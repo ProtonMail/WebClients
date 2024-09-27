@@ -125,35 +125,6 @@ describe('$handleBeforeInputEvent', () => {
       })
     })
 
-    test('should merge with existing insertion suggestion sibling', async () => {
-      const suggestionID = 'test'
-      await update(() => {
-        const paragraph = $createParagraphNode().append(
-          $createTextNode('Hello'),
-          $createSuggestionNode(suggestionID, 'insert').append($createTextNode('World')),
-        )
-        $getRoot().append(paragraph)
-        paragraph.selectEnd()
-        $handleBeforeInputEvent(
-          editor!,
-          {
-            inputType: 'insertText',
-            data: '!',
-            dataTransfer: null,
-          } as InputEvent,
-          onSuggestionCreation,
-        )
-      })
-      editor!.read(() => {
-        const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
-        expect(paragraph.getChildrenSize()).toBe(2)
-        const suggestionNode = paragraph.getChildAtIndex<ProtonNode>(1)
-        expect($isSuggestionNode(suggestionNode)).toBe(true)
-        expect(suggestionNode?.getSuggestionIdOrThrow()).toBe(suggestionID)
-        expect(suggestionNode?.getTextContent()).toBe('World!')
-      })
-    })
-
     describe('Insert text next to insert-suggestion sibling', () => {
       let paragraph: ParagraphNode
       let suggestion: ProtonNode
@@ -594,6 +565,207 @@ describe('$handleBeforeInputEvent', () => {
 
       afterEach(() => {
         commandDisposer()
+      })
+    })
+
+    describe('Inline code', () => {
+      describe('Outside of suggestion', () => {
+        let paragraph: ParagraphNode
+        let inlineCodeOutsideOfSuggestion: TextNode
+
+        beforeEach(async () => {
+          await update(() => {
+            inlineCodeOutsideOfSuggestion = $createTextNode('Foo').toggleFormat('code')
+            paragraph = $createParagraphNode().append(inlineCodeOutsideOfSuggestion)
+            $getRoot().append(paragraph)
+          })
+        })
+
+        describe('Inserting non-whitespace text should split node and create suggestion', () => {
+          beforeEach(async () => {
+            await update(() => {
+              inlineCodeOutsideOfSuggestion.select(1, 1)
+              $handleBeforeInputEvent(
+                editor!,
+                {
+                  inputType: 'insertText',
+                  data: 'Baz',
+                  dataTransfer: null,
+                } as InputEvent,
+                onSuggestionCreation,
+              )
+            })
+          })
+
+          test('paragraph should have 3 children', () => {
+            editor!.read(() => {
+              expect(paragraph.getChildrenSize()).toBe(3)
+            })
+          })
+
+          test('first and last node should be text nodes', () => {
+            editor!.read(() => {
+              const first = paragraph.getFirstChild()
+              const last = paragraph.getLastChild()
+              expect($isTextNode(first)).toBe(true)
+              expect($isTextNode(last)).toBe(true)
+            })
+          })
+
+          test('middle node should be suggestion with inserted text', () => {
+            editor!.read(() => {
+              const suggestion = paragraph.getChildAtIndex<ProtonNode>(1)
+              expect($isSuggestionNode(suggestion)).toBe(true)
+              expect(suggestion?.getSuggestionTypeOrThrow()).toBe('insert')
+              const text = suggestion?.getFirstChild<TextNode>()
+              expect($isTextNode(text)).toBe(true)
+              expect(text?.getTextContent()).toBe('Baz')
+            })
+          })
+        })
+
+        describe('Inserting whitespace at end should create suggestion after node', () => {
+          beforeEach(async () => {
+            await update(() => {
+              inlineCodeOutsideOfSuggestion.selectEnd()
+              $handleBeforeInputEvent(
+                editor!,
+                {
+                  inputType: 'insertText',
+                  data: ' ',
+                  dataTransfer: null,
+                } as InputEvent,
+                onSuggestionCreation,
+              )
+            })
+          })
+
+          test('paragraph should have 2 children', () => {
+            editor!.read(() => {
+              expect(paragraph.getChildrenSize()).toBe(2)
+            })
+          })
+
+          test('first child should be text node with all existing text', () => {
+            editor!.read(() => {
+              const first = paragraph.getFirstChild()
+              expect($isTextNode(first)).toBe(true)
+              expect(first?.getTextContent()).toBe('Foo')
+            })
+          })
+
+          test('last child should be suggestion with whitespace text node', () => {
+            editor!.read(() => {
+              const last = paragraph.getLastChild<ProtonNode>()
+              expect($isSuggestionNode(last)).toBe(true)
+              expect(last?.getSuggestionTypeOrThrow()).toBe('insert')
+              const text = last?.getFirstChild()
+              expect($isTextNode(text)).toBe(true)
+              expect(text?.getTextContent()).toBe(' ')
+            })
+          })
+        })
+      })
+
+      describe('Inside of insert-suggestion', () => {
+        let paragraph: ParagraphNode
+        let inlineCodeInsideInsertSuggestion: TextNode
+
+        beforeEach(async () => {
+          await update(() => {
+            inlineCodeInsideInsertSuggestion = $createTextNode('Bar').toggleFormat('code')
+            paragraph = $createParagraphNode().append(
+              $createSuggestionNode('test', 'insert').append(inlineCodeInsideInsertSuggestion),
+            )
+            $getRoot().append(paragraph)
+          })
+        })
+
+        describe('Inserting non-whitespace text should just insert it', () => {
+          beforeEach(async () => {
+            await update(() => {
+              inlineCodeInsideInsertSuggestion.select(1, 1)
+              $handleBeforeInputEvent(
+                editor!,
+                {
+                  inputType: 'insertText',
+                  data: 'Baz',
+                  dataTransfer: null,
+                } as InputEvent,
+                onSuggestionCreation,
+              )
+            })
+          })
+
+          test('paragraph should have one child', () => {
+            editor!.read(() => {
+              expect(paragraph.getChildrenSize()).toBe(1)
+            })
+          })
+
+          test('suggestion should contain inserted text', () => {
+            editor!.read(() => {
+              const suggestion = paragraph.getFirstChild<ProtonNode>()
+              expect($isSuggestionNode(suggestion)).toBe(true)
+              expect(suggestion?.getChildrenSize()).toBe(1)
+              expect(suggestion?.getTextContent()).toBe('BBazar')
+            })
+          })
+
+          test('selection should be in correct place', () => {
+            editor!.read(() => {
+              const selection = $getSelection() as RangeSelection
+              expect($isRangeSelection(selection)).toBe(true)
+              expect(selection.isCollapsed()).toBe(true)
+              expect(selection.focus.key).toBe(inlineCodeInsideInsertSuggestion.__key)
+              expect(selection.focus.offset).toBe(4)
+            })
+          })
+        })
+
+        describe('Inserting whitespace at end should insert it as separate text node after current', () => {
+          beforeEach(async () => {
+            await update(() => {
+              inlineCodeInsideInsertSuggestion.selectEnd()
+              $handleBeforeInputEvent(
+                editor!,
+                {
+                  inputType: 'insertText',
+                  data: ' ',
+                  dataTransfer: null,
+                } as InputEvent,
+                onSuggestionCreation,
+              )
+            })
+          })
+
+          test('paragraph should have one child', () => {
+            editor!.read(() => {
+              expect(paragraph.getChildrenSize()).toBe(1)
+            })
+          })
+
+          test('suggestion should have 2 children', () => {
+            editor!.read(() => {
+              const suggestion = paragraph.getFirstChild<ProtonNode>()
+              expect(suggestion?.getChildrenSize()).toBe(2)
+            })
+          })
+
+          test('whitespace should be added as separate text node', () => {
+            editor!.read(() => {
+              const suggestion = paragraph.getFirstChild<ProtonNode>()
+              const first = suggestion?.getFirstChild<TextNode>()
+              expect($isTextNode(first)).toBe(true)
+              expect(first?.hasFormat('code')).toBe(true)
+              expect(first?.getTextContent()).toBe('Bar')
+              const second = suggestion?.getLastChild<TextNode>()
+              expect($isTextNode(second)).toBe(true)
+              expect(second?.hasFormat('code')).toBe(false)
+              expect(second?.getTextContent()).toBe(' ')
+            })
+          })
+        })
       })
     })
   })
