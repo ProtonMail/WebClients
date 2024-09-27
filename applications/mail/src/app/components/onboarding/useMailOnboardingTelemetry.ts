@@ -89,6 +89,10 @@ type Options =
           dimensions: Pick<Dimensions, 'plan' | 'variant' | 'service'>;
       }
     | {
+          event: TelemetryMailOnboardingEvents.change_login_checklist;
+          dimensions: Pick<Dimensions, 'plan' | 'variant' | 'service_checklist' | 'service_checklist_button'>;
+      }
+    | {
           event: TelemetryMailOnboardingEvents.finish_change_login;
           dimensions: Pick<Dimensions, 'plan' | 'variant'>;
       }
@@ -110,6 +114,8 @@ type Dimensions = {
     theme: `${ThemeTypes}`;
     is_default_theme: 'yes' | 'no';
     service: AllowedServices;
+    service_checklist: OnlineServicesKey;
+    service_checklist_button: 'done' | 'change_email';
     feature_short_domain: 'yes' | 'no';
     feature_dark_web_monitoring: 'yes' | 'no';
     feature_auto_delete: 'yes' | 'no';
