@@ -218,7 +218,7 @@ $item-container-height: rem(64);
 
 		.item-senddate-row {
 			&::before {
-				inline-size: 70%;
+				inline-size: 100%;
 			}
 		}
 
@@ -232,7 +232,7 @@ $item-container-height: rem(64);
 
 		.item-subject {
 			&::before {
-				inline-size: 60%;
+				inline-size: 100%;
 			}
 		}
 	}
