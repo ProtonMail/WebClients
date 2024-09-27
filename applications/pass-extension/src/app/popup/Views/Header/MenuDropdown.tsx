@@ -230,8 +230,6 @@ export const MenuDropdown: FC = () => {
                             onClick={withClose(() => navigate(getLocalPath('secure-links')))}
                         />
 
-                        <hr className="my-2 mx-4" aria-hidden="true" />
-
                         <DropdownMenuButton
                             onClick={withClose(() => {
                                 void onboardingAcknowledge?.(OnboardingMessage.PASS_MONITOR);
@@ -251,6 +249,8 @@ export const MenuDropdown: FC = () => {
                             icon={'pass-shield-warning'}
                             className="pt-1.5 pb-1.5"
                         />
+
+                        <hr className="my-2 mx-4" aria-hidden="true" />
 
                         <DropdownMenuButton
                             onClick={withClose(() => openSettings())}
