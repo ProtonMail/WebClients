@@ -26,6 +26,7 @@ enum CommonFeatureFlag {
     WalletAutoSetup = 'WalletAutoSetup',
     SentinelRecoverySettings = 'SentinelRecoverySettings',
     InboxDesktopWinLinNewAppSwitcher = 'InboxDesktopWinLinNewAppSwitcher',
+    DarkWebEmailNotifications = 'DarkWebEmailNotifications',
 }
 
 enum AccountFlag {

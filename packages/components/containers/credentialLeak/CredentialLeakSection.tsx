@@ -23,6 +23,7 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import { useApi, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { getBreaches, updateBreachState } from '@proton/shared/lib/api/breaches';
+import { updateBreachEmailNotificationsState } from '@proton/shared/lib/api/breaches';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { disableBreachAlert, enableBreachAlert } from '@proton/shared/lib/api/settings';
 import {
@@ -34,14 +35,22 @@ import {
 } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import {
+    DARK_WEB_MONITORING_ELIGIBILITY_STATE,
+    DARK_WEB_MONITORING_EMAILS_STATE,
+    DARK_WEB_MONITORING_STATE,
+} from '@proton/shared/lib/interfaces';
 import freeUserBreachImg from '@proton/styles/assets/img/breach-alert/img-breaches-found.svg';
 import freeUserNoBreachImg from '@proton/styles/assets/img/breach-alert/img-no-breaches-found-inactive.svg';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { useActiveBreakpoint } from '../../hooks';
+import BreachEmailToggle from './BreachEmailToggle';
 import BreachInformationCard from './BreachInformationCard';
 import BreachModal from './BreachModal';
+import BreachMonitoringToggle from './BreachMonitoringToggle';
 import BreachesList from './BreachesList';
 import EmptyBreachListCard from './EmptyBreachListCard';
 import NoBreachesView from './NoBreachesView';
@@ -56,15 +65,17 @@ const LIST_STATES_MAP: Record<ListType, BREACH_STATE[]> = {
 };
 
 const CredentialLeakSection = () => {
+    const canDisplayDWMEmailToggle = useFlag('DarkWebEmailNotifications');
     const handleError = useErrorHandler();
     const [loading, withLoading] = useLoading();
     const [breachesLoading] = useLoading();
     const [toggleLoading, withToggleLoading] = useLoading();
     const [actionLoading, withActionLoading] = useLoading();
+    const [emailToggleLoading, withEmailToggleLoading] = useLoading();
     const [openSubscriptionModal] = useSubscriptionModal();
     const api = useApi();
     const [user] = useUser();
-    const [userSettings] = useUserSettings();
+    const [{ BreachAlerts }] = useUserSettings();
     const { createNotification } = useNotifications();
     const breachModal = useModalStateObject();
     const { viewportWidth } = useActiveBreakpoint();
@@ -80,7 +91,11 @@ const CredentialLeakSection = () => {
 
     // TODO: change nums to constants
     const [hasAlertsEnabled, setHasAlertsEnabled] = useState<boolean>(
-        userSettings.BreachAlerts.Eligible === 1 && userSettings.BreachAlerts.Value === 1
+        BreachAlerts.Eligible === DARK_WEB_MONITORING_ELIGIBILITY_STATE.PAID &&
+            BreachAlerts.Value === DARK_WEB_MONITORING_STATE.ENABLED
+    );
+    const [hasEmailsEnabled, setHasEmailsEnabled] = useState<boolean>(
+        BreachAlerts.EmailNotifications === DARK_WEB_MONITORING_EMAILS_STATE.ENABLED
     );
     const isPaidUser = user.isPaid;
 
@@ -114,6 +129,7 @@ const CredentialLeakSection = () => {
                 }
             }
         };
+
         withLoading(fetchLeakData()).catch(noop);
     }, [hasAlertsEnabled]);
 
@@ -173,6 +189,9 @@ const CredentialLeakSection = () => {
     };
 
     const handleEnableBreachAlertToggle = async (newToggleState: boolean) => {
+        if (newToggleState === hasAlertsEnabled) {
+            return;
+        }
         try {
             const [action, notification] = newToggleState
                 ? [enableBreachAlert, c('Notification').t`Dark Web Monitoring has been enabled`]
@@ -181,6 +200,19 @@ const CredentialLeakSection = () => {
             await withToggleLoading(api(action()));
             createNotification({ text: notification });
             setHasAlertsEnabled(newToggleState);
+        } catch (e) {
+            handleError(e);
+        }
+    };
+
+    const handleEmailNotificationsToggle = async (newState: boolean) => {
+        const notification = newState
+            ? c('Notification').t`Email notifications have been enabled`
+            : c('Notification').t`Email notifications have been disabled`;
+        try {
+            await withEmailToggleLoading(api(updateBreachEmailNotificationsState({ Enabled: newState })));
+            createNotification({ text: notification });
+            setHasEmailsEnabled(newState);
         } catch (e) {
             handleError(e);
         }
@@ -326,25 +358,18 @@ const CredentialLeakSection = () => {
                         <>
                             {breachAlertIntroText}
                             {breachAlertInfoSharing}
-
-                            <SettingsLayout>
-                                <SettingsLayoutLeft>
-                                    <label className="text-semibold" htmlFor="data-breach-toggle">
-                                        <span className="mr-2">{getEnableString(DARK_WEB_MONITORING_NAME)}</span>
-                                    </label>
-                                </SettingsLayoutLeft>
-                                <SettingsLayoutRight isToggleContainer>
-                                    <Toggle
-                                        id="data-breach-toggle"
-                                        disabled={false}
-                                        checked={hasAlertsEnabled}
-                                        loading={toggleLoading}
-                                        onChange={({ target }) => {
-                                            void handleEnableBreachAlertToggle(target.checked);
-                                        }}
-                                    />
-                                </SettingsLayoutRight>
-                            </SettingsLayout>
+                            <BreachMonitoringToggle
+                                enabled={hasAlertsEnabled}
+                                loading={toggleLoading}
+                                onToggle={handleEnableBreachAlertToggle}
+                            />
+                            {canDisplayDWMEmailToggle && (
+                                <BreachEmailToggle
+                                    enabled={hasEmailsEnabled}
+                                    loading={emailToggleLoading}
+                                    onToggle={handleEmailNotificationsToggle}
+                                />
+                            )}
                             {hasAlertsEnabled &&
                                 (total === 0 ? (
                                     <NoBreachesView />
