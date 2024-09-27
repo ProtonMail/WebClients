@@ -1,5 +1,6 @@
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { traceError } from '@proton/shared/lib/helpers/sentry';
+import { getCookie } from '@proton/shared/lib/helpers/cookies';
+import { isProduction, traceError } from '@proton/shared/lib/helpers/sentry';
 
 import type { EnrichedError } from './EnrichedError';
 import { isEnrichedError } from './EnrichedError';
@@ -47,7 +48,18 @@ export function sendErrorReport(error: Error | EnrichedError | unknown) {
         errorForReporting.stack = error.stack;
     }
 
-    const context = isEnrichedError(error) ? error.context : undefined;
+    const context = isEnrichedError(error) ? error.context || {} : {};
+
+    if (isProduction(window.location.host)) {
+        const cookieTag = getCookie('Tag') || 'prod';
+        if (cookieTag) {
+            if (context.tags) {
+                context.tags.stage = cookieTag;
+            } else {
+                context.tags = { stage: cookieTag };
+            }
+        }
+    }
 
     console.warn(error, context);
     traceError(errorForReporting, context);
