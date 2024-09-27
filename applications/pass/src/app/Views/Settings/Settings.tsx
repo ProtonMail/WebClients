@@ -71,7 +71,7 @@ export const SettingsTabs: FC<RouteChildrenProps> = (props) => {
 
     return (
         <Tabs
-            className="w-full shrink-0"
+            className="shrink-0 max-w-custom"
             contentClassName="p-0"
             navContainerClassName="pass-settings--tabs mb-2 pt-4 sticky top-0 z-up"
             onChange={handleOnChange}
