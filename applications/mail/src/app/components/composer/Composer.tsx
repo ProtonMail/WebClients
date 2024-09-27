@@ -333,7 +333,12 @@ const Composer = (
     }, []);
 
     const handleInsertGeneratedTextInEditor = (textToInsert: string) => {
-        const cleanedText = prepareContentToInsert(textToInsert, metadata.isPlainText, canKeepFormatting);
+        const cleanedText = prepareContentToInsert(
+            textToInsert,
+            metadata.isPlainText,
+            canKeepFormatting,
+            modelMessage.localID
+        );
         const needsSeparator = !!removeLineBreaks(getContentBeforeBlockquote());
         const newBody = insertTextBeforeContent(modelMessage, cleanedText, mailSettings, needsSeparator);
 
@@ -360,7 +365,7 @@ const Composer = (
 
     const handleSetEditorSelection = (textToInsert: string) => {
         if (editorRef.current) {
-            const cleanedText = prepareContentToInsert(textToInsert, metadata.isPlainText, false);
+            const cleanedText = prepareContentToInsert(textToInsert, metadata.isPlainText, false, modelMessage.localID);
 
             editorRef.current.setSelectionContent(cleanedText);
         }
@@ -429,6 +434,7 @@ const Composer = (
                             onUseGeneratedText={handleInsertGeneratedTextInEditor}
                             onUseRefinedText={handleSetEditorSelection}
                             setAssistantStateRef={setAssistantStateRef}
+                            messageID={modelMessage.localID}
                         />
                     )}
                     <ComposerContent
