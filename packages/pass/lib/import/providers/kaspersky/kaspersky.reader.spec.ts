@@ -22,6 +22,8 @@ describe('Import Kaspersky TXT', () => {
 
         const { items } = vaultData;
 
+        expect(items.length).toStrictEqual(8);
+
         /* Website item */
         const websiteItem = items[0] as ItemImportIntent<'login'>;
         expect(websiteItem.type).toEqual('login');
@@ -80,6 +82,17 @@ describe('Import Kaspersky TXT', () => {
         expect(noteItemMultipleLines.type).toEqual('note');
         expect(noteItemMultipleLines.metadata.name).toEqual('New note title 2');
         expect(deobfuscate(noteItemMultipleLines.metadata.note)).toEqual('line 1\nline 2\nline 3",,,');
+
+        expect(payload.ignored.length).toEqual(0);
+        expect(payload.warnings.length).toEqual(0);
+
+        /* Note item with multiple lines and possible properties */
+        const noteItemMultipleLinesAndProperties = items[7] as ItemImportIntent<'note'>;
+        expect(noteItemMultipleLinesAndProperties.type).toEqual('note');
+        expect(noteItemMultipleLinesAndProperties.metadata.name).toEqual('Note 3');
+        expect(deobfuscate(noteItemMultipleLinesAndProperties.metadata.note)).toEqual(
+            'Props note\nLogin data on a multiline note:\n\nUsername: RiverPlate1\nPassword: hdwd823gahfb12!sopdf\nWEBSITE_NAME: https://amazing-website.com\nAPPLICATION: FiveStarsApp\n\nEnd of note'
+        );
 
         expect(payload.ignored.length).toEqual(0);
         expect(payload.warnings.length).toEqual(0);
