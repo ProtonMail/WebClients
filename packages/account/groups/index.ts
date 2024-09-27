@@ -5,13 +5,15 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getGroups } from '@proton/shared/lib/api/groups';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { Group } from '@proton/shared/lib/interfaces';
+import type { Group, Organization, UserModel } from '@proton/shared/lib/interfaces';
 
 import type { DomainsState } from '../domains';
 import { serverEvent } from '../eventLoop';
 import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
+import { organizationThunk } from '../organization';
 import type { OrganizationKeyState } from '../organizationKey';
+import { userThunk } from '../user';
 
 const name = 'groups';
 
@@ -26,8 +28,16 @@ const initialState: SliceState = getInitialModelState<Group[]>();
 
 export const selectGroups = (state: GroupsState) => state[name];
 
+const canFetch = (user: UserModel, organization: Organization) => {
+    return user.isAdmin && organization?.ID; // just need an org ID to get groups
+};
+
 const modelThunk = createAsyncModelThunk<Model, GroupsState, ProtonThunkArguments>(`${name}/fetch`, {
-    miss: async ({ extraArgument }) => {
+    miss: async ({ extraArgument, dispatch }) => {
+        const [user, organization] = await Promise.all([dispatch(userThunk()), dispatch(organizationThunk())]);
+        if (!canFetch(user, organization)) {
+            return [];
+        }
         return extraArgument
             .api(getGroups())
             .then(({ Groups }: { Groups: Group[] }) => Groups)
