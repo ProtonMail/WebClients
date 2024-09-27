@@ -312,9 +312,24 @@ function $handleInsertTextData(
 
   const isInsideExistingInsertSuggestion =
     existingParentSuggestion && existingParentSuggestion.getSuggestionTypeOrThrow() === 'insert'
+
+  const isFocusNodeText = $isTextNode(focusNode)
+  const isAtEndOfInlineCode =
+    isFocusNodeText && focusNode.hasFormat('code') && selection.focus.offset === focusNode.getTextContentSize()
+  const shouldExitInlineCode = isAtEndOfInlineCode && data === ' '
+  if (shouldExitInlineCode) {
+    const textNode = $createTextNode(data)
+    const node = isInsideExistingInsertSuggestion
+      ? textNode
+      : $createSuggestionNode(suggestionID, 'insert').append(textNode)
+    focusNode.insertAfter(node)
+    node.selectEnd()
+    return true
+  }
+
   if (isInsideExistingInsertSuggestion) {
     logger?.info('Will just insert text as already inside insert suggestion')
-    if ($isTextNode(focusNode)) {
+    if (isFocusNodeText) {
       const latestFocusOffset = selection.focus.offset
       focusNode.spliceText(latestFocusOffset, 0, data)
       const newOffset = latestFocusOffset + data.length
