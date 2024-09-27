@@ -4,12 +4,34 @@ import type { SectionConfig } from '@proton/components';
 import { CALENDAR_SETTINGS_ROUTE, CALENDAR_SETTINGS_SECTION_ID } from '@proton/shared/lib/calendar/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
+import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
+import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
+import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
+
+interface Props {
+    app: APP_NAMES;
+    user: UserModel;
+    isZoomIntegrationEnabled: boolean;
+    organization?: Organization;
+}
 
 /**
  * Calendar config is coupled to CalendarSidebar.
  * Any additional section must also be added to CalendarSidebar.
  */
-export const getCalendarAppRoutes = ({ app }: { app: APP_NAMES }) => {
+export const getCalendarAppRoutes = ({ app, user, organization, isZoomIntegrationEnabled }: Props) => {
+    const isB2BAudience = getIsB2BAudienceFromPlan(organization?.PlanName);
+    const isFamilyOrg = !!organization && getOrganizationDenomination(organization) === 'familyGroup';
+
+    const isMultiAccount = isB2BAudience || isFamilyOrg;
+    const baseAccess = user.isAdmin && !user.isMember && user.hasPaidMail;
+
+    const canDisableZoomIntegration = isMultiAccount
+        ? // Organizations not setup should be able to disable the zoom integration feature
+          // Setup organization manage the feature from the dedicated page in the settings
+          baseAccess && !organization?.Name
+        : baseAccess;
+
     return <const>{
         available: app === APPS.PROTONCALENDAR,
         header: CALENDAR_APP_NAME,
@@ -39,6 +61,11 @@ export const getCalendarAppRoutes = ({ app }: { app: APP_NAMES }) => {
                     {
                         text: c('Title').t`Invitations`,
                         id: CALENDAR_SETTINGS_SECTION_ID.INVITATIONS,
+                    },
+                    {
+                        text: c('Title').t`Integrations`,
+                        id: CALENDAR_SETTINGS_SECTION_ID.INTEGRATIONS,
+                        available: isZoomIntegrationEnabled && canDisableZoomIntegration,
                     },
                 ],
             },

@@ -5,23 +5,24 @@ import type {
     CalendarSettings,
     CalendarUserSettings,
 } from '../interfaces/calendar';
-import type {
-    CalendarCreateArguments,
-    CalendarCreateOrUpdateEventBlobData,
-    CalendarEventsIDsQuery,
-    CalendarEventsQuery,
-    CalendarExportEventsQuery,
-    CalendarKeysResetData,
-    CalendarSetupData,
-    CreateCalendarMemberData,
-    CreatePublicLinks,
-    CreateSinglePersonalEventData,
-    GetBusySlotsParams,
-    GetEventByUIDArguments,
-    QueryCalendarAlarms,
-    SyncMultipleEventsData,
-    UpdateCalendarInviteData,
-    UpdateCalendarMemberData,
+import {
+    type CalendarCreateArguments,
+    type CalendarCreateOrUpdateEventBlobData,
+    type CalendarEventsIDsQuery,
+    type CalendarEventsQuery,
+    type CalendarExportEventsQuery,
+    type CalendarKeysResetData,
+    type CalendarSetupData,
+    type CreateCalendarMemberData,
+    type CreatePublicLinks,
+    type CreateSinglePersonalEventData,
+    type GetBusySlotsParams,
+    type GetEventByUIDArguments,
+    type QueryCalendarAlarms,
+    type SyncMultipleEventsData,
+    type UpdateCalendarInviteData,
+    type UpdateCalendarMemberData,
+    VIDEO_CONFERENCE_PROVIDER,
 } from '../interfaces/calendar/Api';
 import type { Nullable, RequireOnly } from '../interfaces/utils';
 import type { PaginationParams } from './interface';
@@ -396,4 +397,13 @@ export const getBusySlots = (emailAddress: string, params: GetBusySlotsParams) =
     url: `${CALENDAR_V1}/${emailAddress}/busy-schedule`,
     method: 'get',
     params,
+});
+
+/**
+ * Only Zoom is supported for the moment
+ */
+export const createZoomMeeting = () => ({
+    url: `${CALENDAR_V1}/videoconferences`,
+    method: 'post',
+    data: { Provider: VIDEO_CONFERENCE_PROVIDER.ZOOM },
 });

@@ -116,6 +116,11 @@ export interface VcalStringProperty {
     value: string;
 }
 
+export interface VcalStringProperyWithParams {
+    value: string;
+    parameters: { [key: string]: string };
+}
+
 export interface VcalNumberProperty {
     value: number;
 }
@@ -277,6 +282,8 @@ export interface VcalVeventComponent {
     'x-pm-shared-event-id'?: VcalStringProperty;
     'x-yahoo-yid'?: VcalStringProperty;
     'x-yahoo-user-status'?: VcalStringProperty;
+    'x-pm-conference-id'?: VcalStringProperyWithParams;
+    'x-pm-conference-url'?: VcalStringProperyWithParams;
     color?: VcalStringProperty;
 }
 

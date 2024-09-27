@@ -24,6 +24,7 @@ describe('Zoom location helpers', () => {
             joiningInstructions: undefined,
             meetingId: '83674139672',
             password: '8Rbz0DfJeacG99xbU9R6sR9DEMCYsM.1',
+            service: 'zoom',
         });
     });
 
@@ -35,6 +36,7 @@ describe('Zoom location helpers', () => {
             joiningInstructions: undefined,
             meetingId: undefined,
             password: undefined,
+            service: 'zoom',
         });
     });
 
@@ -46,6 +48,7 @@ describe('Zoom location helpers', () => {
             joiningInstructions: undefined,
             meetingId: undefined,
             password: undefined,
+            service: 'zoom',
         });
     });
 });
@@ -78,6 +81,7 @@ describe('Zoom description helpers', () => {
             meetingId: '83674139672',
             meetingUrl: 'https://us05web.zoom.us/j/83674139672?pwd=8Rbz0DfJeacG99xbU9R6sR9DEMCYsM.1',
             password: '6Z3fiV',
+            service: 'zoom',
         });
     });
 });

@@ -10,6 +10,7 @@ import {
     CollapsibleHeaderIconButton,
     Copy,
     Icon,
+    IconRow,
     useNotifications,
 } from '@proton/components';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
@@ -17,29 +18,32 @@ import googleLogo from '@proton/styles/assets/img/video-conferencing/google-meet
 import zoomLogo from '@proton/styles/assets/img/video-conferencing/zoom.svg';
 import clsx from '@proton/utils/clsx';
 
+import type { BaseMeetingUrls } from './constants';
+import { VIDEO_CONF_SERVICES } from './constants';
+
 import './VideoConferencing.scss';
 
 export type VideoConferenceLocation = 'calendar' | 'mail-headers';
 
 interface Props {
-    service: 'zoom' | 'google-meet';
     location: VideoConferenceLocation;
-    meetingUrl?: string;
-    meetingId?: string;
-    joiningInstructions?: string;
-    password?: string;
+    data: BaseMeetingUrls;
 }
 
-export const VideoConferencingWidget = ({
-    service,
-    meetingUrl,
-    meetingId,
-    joiningInstructions,
-    password,
-    location,
-}: Props) => {
+const getIcon = (service: VIDEO_CONF_SERVICES) => {
+    switch (service) {
+        case VIDEO_CONF_SERVICES.ZOOM:
+            return zoomLogo;
+        case VIDEO_CONF_SERVICES.GOOGLE_MEET:
+            return googleLogo;
+    }
+};
+
+export const VideoConferencingWidget = ({ data, location }: Props) => {
     const { createNotification } = useNotifications();
     const [isExpanded, setIsExpanded] = useState(false);
+
+    const { meetingUrl, meetingId, joiningInstructions, password, service } = data;
     if (!meetingUrl) {
         return null;
     }
@@ -55,15 +59,7 @@ export const VideoConferencingWidget = ({
     const joinText = service === 'zoom' ? c('Zoom Meeting').t`Join Zoom Meeting` : c('Google Meet').t`Join Google Meet`;
 
     return (
-        <div className="video-conferencing-grid block overflow-hidden w-full mb-4">
-            <div className="label inline-flex pt-1">
-                <img
-                    src={service === 'zoom' ? zoomLogo : googleLogo}
-                    className="w-custom h-custom pt-0.5"
-                    style={{ '--w-custom': '1.25rem', '--h-custom': '1.25rem' }}
-                    alt=""
-                />
-            </div>
+        <IconRow icon={<img src={getIcon(service)} className="w-6 h-6" alt="" />} className="items-center">
             <div className="group-hover-opacity-container">
                 <div
                     className={clsx(
@@ -87,6 +83,7 @@ export const VideoConferencingWidget = ({
                 </div>
                 {password && (
                     <button
+                        type="button"
                         className="m-0 mb-2 text-sm color-weak max-w-full text-ellipsis"
                         onClick={handlePasscodeClick}
                     >{c('Zoom Meeting').t`Passcode: ${password}`}</button>
@@ -132,6 +129,6 @@ export const VideoConferencingWidget = ({
                     </Collapsible>
                 )}
             </div>
-        </div>
+        </IconRow>
     );
 };

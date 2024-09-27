@@ -1,4 +1,4 @@
-import type { BaseMeetingUrls } from '../constants';
+import { type BaseMeetingUrls, VIDEO_CONF_SERVICES } from '../constants';
 
 const ZOOM_REGEX_LOCATION =
     /(?:https?:\/\/)?(?:[a-zA-Z0-9.-]+)\.zoom\.us\/j\/([a-zA-Z0-9]+)(?:\?pwd=([a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)?))?/;
@@ -7,14 +7,11 @@ const ZOOM_REGEX_PASSCODE = /passcode: (\w+)/;
 const ZOOM_REGEX_JOINING_INSTRUCTIONS =
     /Joining instructions: (https:\/\/www\.google\.com\/url\?q=https:\/\/applications\.zoom\.us\/addon\/invitation\/detail\?[^ ]+)/;
 
-export interface ZoomUrls extends BaseMeetingUrls {
-    password?: string;
-}
-
-export const getZoomDataFromLocation = (location: string): ZoomUrls => {
+export const getZoomDataFromLocation = (location: string): BaseMeetingUrls => {
     const match = location.match(ZOOM_REGEX_LOCATION);
 
     return {
+        service: VIDEO_CONF_SERVICES.ZOOM,
         meetingUrl: match?.[0],
         meetingId: match?.[1],
         password: match?.[2],
@@ -22,10 +19,11 @@ export const getZoomDataFromLocation = (location: string): ZoomUrls => {
     };
 };
 
-export const getZoomFromDescription = (description: string): ZoomUrls => {
+export const getZoomFromDescription = (description: string): BaseMeetingUrls => {
     const match = description.match(ZOOM_REGEX_LOCATION);
 
     return {
+        service: VIDEO_CONF_SERVICES.ZOOM,
         meetingUrl: match?.[0],
         meetingId: match?.[1],
         password: description.match(ZOOM_REGEX_PASSCODE)?.[1].trim(),

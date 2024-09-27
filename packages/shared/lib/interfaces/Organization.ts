@@ -59,6 +59,7 @@ export interface OrganizationSettings {
     ShowName: boolean;
     LogoID: string | null;
     ShowScribeWritingAssistant: boolean;
+    VideoConferencingEnabled: boolean;
 }
 
 export interface OrganizationWithSettings extends Organization {

@@ -3,6 +3,7 @@ import { useEffect, useMemo } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { VideoConferenceToggle } from '@proton/calendar';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { useGetHolidaysDirectory } from '@proton/calendar/holidaysDirectory/hooks';
@@ -113,6 +114,7 @@ const CalendarSettingsRouter = ({ user, subscription, calendarAppRoutes, redirec
                     <CalendarTimeSection calendarUserSettings={calendarUserSettings} />
                     <CalendarLayoutSection calendarUserSettings={calendarUserSettings} />
                     <CalendarInvitationsSection calendarUserSettings={calendarUserSettings} locales={locales} />
+                    <VideoConferenceToggle withInfo />
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, desktop)}>
