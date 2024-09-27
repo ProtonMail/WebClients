@@ -1,7 +1,8 @@
 import type { Dispatch, SetStateAction } from 'react';
 
-import { useConfig, useOnline } from '@proton/components/hooks';
 import useApiStatus from '@proton/components/hooks/useApiStatus';
+import useConfig from '@proton/components/hooks/useConfig';
+import useOnline from '@proton/components/hooks/useOnline';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { addParentAppToUrl, getIsIframedDrawerApp, postMessageToIframe } from '@proton/shared/lib/drawer/helpers';

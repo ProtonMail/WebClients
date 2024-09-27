@@ -8,8 +8,9 @@ import {
     unprivatizeMembersBackground,
 } from '@proton/account/members/unprivatizeMembers';
 import { Button, Card } from '@proton/atoms';
-import { Icon, useOrganizationKey } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
 import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
+import useOrganizationKey from '@proton/components/hooks/useOrganizationKey';
 import { useDispatch, useSelector } from '@proton/redux-shared-store';
 import { getMemberEmailOrName } from '@proton/shared/lib/keys/memberHelper';
 

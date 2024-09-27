@@ -3,9 +3,9 @@ import { cloneElement, useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import clsx from '@proton/utils/clsx';
 
-import { useDrawer } from '../..';
 import { useTheme } from '../../containers/themes/ThemeProvider';
 
 import './DrawerSidebar.scss';

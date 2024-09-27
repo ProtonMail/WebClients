@@ -4,20 +4,18 @@ import type { FormikErrors } from 'formik';
 import { useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { addGroup, removeGroup, updateGroup } from '@proton/account';
-import { updateMembersAfterEdit } from '@proton/account';
+import { addGroup, removeGroup, updateGroup, updateMembersAfterEdit } from '@proton/account';
 import { useGroupMembers } from '@proton/account/groupMembers/hooks';
 import { createGroup, editGroup } from '@proton/account/groups/actions';
-import {
-    useApi,
-    useCustomDomains,
-    useErrorHandler,
-    useGetUser,
-    useGroups,
-    useKTVerifier,
-    useMembers,
-    useNotifications,
-} from '@proton/components';
+import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
+import useAddGroupMember from '@proton/components/containers/organization/groups/useAddGroupMember';
+import useApi from '@proton/components/hooks/useApi';
+import { useCustomDomains } from '@proton/components/hooks/useCustomDomains';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useGroups from '@proton/components/hooks/useGroups';
+import { useMembers } from '@proton/components/hooks/useMembers';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import { useGetUser } from '@proton/components/hooks/useUser';
 import { useDispatch } from '@proton/redux-shared-store';
 import { deleteGroup } from '@proton/shared/lib/api/groups';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -27,7 +25,6 @@ import type { Address, Group, GroupMember, Organization } from '@proton/shared/l
 import { GroupFlags, GroupPermissions } from '@proton/shared/lib/interfaces';
 
 import type { GroupsManagementReturn } from './types';
-import useAddGroupMember from './useAddGroupMember';
 import usePmMeDomain from './usePmMeDomain';
 
 export type GROUPS_STATE = 'empty' | 'view' | 'new' | 'edit';

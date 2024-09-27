@@ -4,9 +4,11 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { useApi, useContactEmails, useNotifications } from '@proton/components';
 import AddressesAutocomplete from '@proton/components/components/addressesAutocomplete/AddressesAutocomplete';
 import Icon from '@proton/components/components/icon/Icon';
+import useApi from '@proton/components/hooks/useApi';
+import { useContactEmails } from '@proton/components/hooks/useContactEmails';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { sendEmailInvitation } from '@proton/shared/lib/api/core/referrals';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';

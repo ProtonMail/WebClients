@@ -6,17 +6,6 @@ import { c, msgid } from 'ttag';
 import { InvalidAddressesError, UnavailableAddressesError, createMember } from '@proton/account';
 import validateAddUser from '@proton/account/members/validateAddUser';
 import { Button, Input } from '@proton/atoms';
-import {
-    useApi,
-    useEventManager,
-    useGetAddresses,
-    useGetOrganization,
-    useGetOrganizationKey,
-    useGetUser,
-    useGetUserKeys,
-    useNotifications,
-    useSubscription,
-} from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -31,7 +20,16 @@ import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import Marks from '@proton/components/components/text/Marks';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
+import { useGetAddresses } from '@proton/components/hooks/useAddresses';
+import useApi from '@proton/components/hooks/useApi';
 import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import { useGetOrganization } from '@proton/components/hooks/useOrganization';
+import { useGetOrganizationKey } from '@proton/components/hooks/useOrganizationKey';
+import useSubscription from '@proton/components/hooks/useSubscription';
+import { useGetUser } from '@proton/components/hooks/useUser';
+import { useGetUserKeys } from '@proton/components/hooks/useUserKeys';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';

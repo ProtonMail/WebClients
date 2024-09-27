@@ -1,26 +1,26 @@
-import isTruthy from '@proton/utils/isTruthy';
-import unary from '@proton/utils/unary';
-
-import { updateCalendarSettings, updateMember } from '../api/calendars';
-import { hasBit, toggleBit } from '../helpers/bitset';
-import type { Address, Api } from '../interfaces';
+import { updateCalendarSettings, updateMember } from '@proton/shared/lib/api/calendars';
+import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
+import { CALENDAR_FLAGS, CALENDAR_TYPE, SETTINGS_VIEW } from '@proton/shared/lib/calendar/constants';
+import { reactivateCalendarsKeys } from '@proton/shared/lib/calendar/crypto/keys/reactivateCalendarKeys';
+import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
+import { getCanWrite } from '@proton/shared/lib/calendar/permissions';
+import { hasBit, toggleBit } from '@proton/shared/lib/helpers/bitset';
+import type { Api } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
 import type {
     Calendar,
-    CalendarCreateData,
     CalendarNotificationSettings,
     CalendarSettings,
     CalendarUserSettings,
     CalendarWithOwnMembers,
-    SubscribedCalendar,
     VisualCalendar,
-} from '../interfaces/calendar';
-import type { GetAddressKeys } from '../interfaces/hooks/GetAddressKeys';
-import type { GetAddresses } from '../interfaces/hooks/GetAddresses';
-import { getHasUserReachedCalendarsLimit } from './calendarLimits';
-import { CALENDAR_FLAGS, CALENDAR_TYPE, SETTINGS_VIEW } from './constants';
-import { reactivateCalendarsKeys } from './crypto/keys/reactivateCalendarKeys';
-import { getMemberAndAddress } from './members';
-import { getCanWrite } from './permissions';
+} from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar/Subscription';
+import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
+import type { GetAddresses } from '@proton/shared/lib/interfaces/hooks/GetAddresses';
+import isTruthy from '@proton/utils/isTruthy';
+import unary from '@proton/utils/unary';
 
 export const getIsCalendarActive = ({ Flags } = { Flags: 0 }) => {
     return hasBit(Flags, CALENDAR_FLAGS.ACTIVE);

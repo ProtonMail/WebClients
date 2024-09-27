@@ -1,13 +1,14 @@
-import { useApi, useEventManager, useGetMembers, useGetOrganizationKey, useNotifications } from '@proton/components';
+import { useEventManager, useGetMembers, useGetOrganizationKey } from '@proton/components/hooks';
+import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib';
 import { CryptoProxy } from '@proton/crypto/lib';
 import type { GroupMemberParameters } from '@proton/shared/lib/api/groups';
 import { addGroupMember as addGroupMemberApi } from '@proton/shared/lib/api/groups';
 import { getAllPublicKeys, replaceAddressTokens } from '@proton/shared/lib/api/keys';
 import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
-import { RECIPIENT_TYPES } from '@proton/shared/lib/constants';
-import { MEMBER_PRIVATE, MEMBER_TYPE } from '@proton/shared/lib/constants';
+import { MEMBER_PRIVATE, MEMBER_TYPE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { encryptionDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import type {
