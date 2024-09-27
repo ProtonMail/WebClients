@@ -15,6 +15,7 @@ import { FeatureCode, useFeatures } from '@proton/features';
 import AssistantProvider from '@proton/llm/lib/providers/AssistantProvider';
 import { useFlag } from '@proton/unleash';
 import { useWalletAutoCreate } from '@proton/wallet/hooks/useWalletAutoCreate';
+import { useInboxDesktopHeartbeat } from '@proton/shared/lib/desktop/heartbeat';
 
 import { CheckAllRefProvider } from 'proton-mail/containers/CheckAllRefProvider';
 
@@ -45,6 +46,7 @@ const MainContainer: FunctionComponent = () => {
     useWalletAutoCreate({ higherLevelPilot: shouldAutoSetupWallet });
 
     useInboxDesktopMessageForward();
+    useInboxDesktopHeartbeat();
 
     // Service Worker registration
     // Including a kill switch with a feature flag

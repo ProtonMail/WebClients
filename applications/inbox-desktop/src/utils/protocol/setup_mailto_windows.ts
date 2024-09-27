@@ -52,8 +52,11 @@ function createRegFile(): string {
     }
 }
 
+export const getRegExe = () =>
+    process.env.SystemRoot ? resolve(process.env.SystemRoot, "System32", "reg.exe") : "reg.exe";
+
 async function spawnRegImport(regFile: string) {
-    const regExe = process.env.SystemRoot ? resolve(process.env.SystemRoot, "System32", "reg.exe") : "reg.exe";
+    const regExe = getRegExe();
 
     const args = ["import", regFile];
     protocolLogger.log(`Spawing reg process: ${regExe} ${args.join(" ")}`);

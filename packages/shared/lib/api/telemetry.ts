@@ -23,6 +23,7 @@ export enum TelemetryMeasurementGroups {
     mailSignup = 'mail.web.signup',
     mailComposerAssistant = 'mail.web.composer_assistant',
     mailProtonTips = 'mail.web.proton_tips',
+    mailDesktopDefaultMailto = 'mail.desktop.default_mailto',
     /** Setting it to any even if mail only ATM. We will expand it to other apps soon */
     securityCenter = 'any.web.security_center',
     paymentsFlow = 'payments.flow',
@@ -168,6 +169,10 @@ export enum TelemetryMailHeartbeatEvents {
     mail_heartbeat = 'mail_heartbeat',
 }
 
+export enum TelemetryMailDefaultMailto {
+    mailto_heartbeat = 'mailto_heartbeat',
+}
+
 export enum TelemetryChangelog {
     opened = 'opened',
 }
@@ -230,7 +235,8 @@ export type TelemetryEvents =
     | TelemetryProtonTipsEvents
     | TelemetryMailHeartbeatEvents
     | TelemetrySmartBannerEvents
-    | TelemetryDesktopEvents;
+    | TelemetryDesktopEvents
+    | TelemetryMailDefaultMailto;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
