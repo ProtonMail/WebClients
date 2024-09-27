@@ -528,7 +528,7 @@ export const handleNextLogin = async ({
     setupVPN: boolean;
     ktActivation: KeyTransparencyActivation;
     productParam: ProductParam;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
+    verifyOutboundPublicKeys: VerifyOutboundPublicKeys | null;
 }): Promise<AuthActionResponse> => {
     const cache: AuthCacheResult = {
         authType,
