@@ -4,7 +4,7 @@ import type { SharedURLInfo } from '@proton/shared/lib/interfaces/drive/sharing'
 import { computeKeyPassword } from '@proton/srp/lib';
 
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
-import { type DecryptedLinkWithShareInfo, useLink } from './../_links';
+import { type DecryptedLink, useLink } from './../_links';
 import useLinksState from './../_links/useLinksState';
 import { ShareState, ShareType } from './interface';
 import useSharesKeys from './useSharesKeys';
@@ -29,7 +29,7 @@ export const useDecryptPublicShareLink = () => {
             token: string;
             shareUrlInfo: SharedURLInfo;
             publicPage?: boolean;
-            additionnalDecryptedLinkInfo?: Partial<DecryptedLinkWithShareInfo>;
+            additionnalDecryptedLinkInfo?: Partial<DecryptedLink>;
         }
     ) => {
         const computedPassword = await computeKeyPassword(urlPassword, shareUrlInfo.SharePasswordSalt).catch((e) =>
