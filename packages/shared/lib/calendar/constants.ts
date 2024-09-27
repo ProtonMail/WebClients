@@ -283,6 +283,7 @@ export const TITLE_INPUT_ID = 'event-title-input';
 export const FREQUENCY_INPUT_ID = 'event-frequency-input';
 export const LOCATION_INPUT_ID = 'event-location-input';
 export const NOTIFICATION_INPUT_ID = 'event-notification-input';
+export const VIDEO_CONFERENCE_INPUT_ID = 'event-video-conference-input';
 export const CALENDAR_INPUT_ID = 'event-calendar-input';
 export const DESCRIPTION_INPUT_ID = 'event-description-input';
 export const DATE_INPUT_ID = 'event-date-input';
@@ -311,6 +312,7 @@ export const SHARED_SIGNED_FIELDS = [
     'exdate',
     'organizer',
     'sequence',
+    'x-pm-conference-id',
 ] as const;
 export const SHARED_ENCRYPTED_FIELDS = ['uid', 'dtstamp', 'created', 'description', 'summary', 'location'] as const;
 
@@ -384,6 +386,7 @@ export const CALENDAR_SETTINGS_SECTION_ID = {
     SHARE_PUBLICLY: 'share-publicly',
     MOBILE_APP: 'mobile-app',
     DESKTOP_APP: 'desktop-app',
+    INTEGRATIONS: 'integrations',
 };
 
 /** Visual limit of the attendees busy slots we display */

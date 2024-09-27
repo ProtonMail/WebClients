@@ -20,6 +20,7 @@ describe('Google meet locations', () => {
             meetingUrl,
             joiningInstructions: undefined,
             meetingId: 'xxx-yyyy-zzz',
+            service: 'google-meet',
         });
     });
 
@@ -30,6 +31,7 @@ describe('Google meet locations', () => {
             meetingUrl: undefined,
             joiningInstructions: undefined,
             meetingId: undefined,
+            service: 'google-meet',
         });
     });
 
@@ -40,6 +42,7 @@ describe('Google meet locations', () => {
             meetingUrl: undefined,
             joiningInstructions: undefined,
             meetingId: undefined,
+            service: 'google-meet',
         });
     });
 });

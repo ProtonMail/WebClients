@@ -42,6 +42,7 @@ interface Arguments {
     isB2BAuthLogsEnabled: boolean;
     isGlobalSSOEnabled: boolean;
     isScribeEnabled: boolean;
+    isZoomIntegrationEnabled: boolean;
 }
 
 export const getRoutes = ({
@@ -67,6 +68,7 @@ export const getRoutes = ({
     isB2BAuthLogsEnabled,
     isGlobalSSOEnabled,
     isScribeEnabled,
+    isZoomIntegrationEnabled,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -91,7 +93,7 @@ export const getRoutes = ({
             addresses,
             organization,
         }),
-        calendar: getCalendarAppRoutes({ app }),
+        calendar: getCalendarAppRoutes({ app, user, organization, isZoomIntegrationEnabled }),
         drive: getDriveAppRoutes({ app, isB2BDrive }),
         docs: getDocsAppRoutes(),
         pass: getPassAppRoutes({ app, user, organization, subscription, canDisplayB2BLogsPass }),
@@ -106,6 +108,7 @@ export const getRoutes = ({
             isGlobalSSOEnabled,
             groups,
             isScribeEnabled,
+            isZoomIntegrationEnabled,
         }),
         vpn: getVpnAppRoutes({ app }),
         wallet: getWalletAppRoutes(),

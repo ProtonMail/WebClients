@@ -20,7 +20,7 @@ interface Props {
     children?: ReactNode;
 }
 
-const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStartsOn, endError, children }: Props) => {
+export const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStartsOn, endError, children }: Props) => {
     const {
         handleChangeStartDate,
         handleChangeStartTime,
@@ -115,4 +115,3 @@ const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStartsOn, e
         </IconRow>
     );
 };
-export default MiniDateTimeRows;
