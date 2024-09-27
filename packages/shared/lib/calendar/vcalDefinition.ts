@@ -88,6 +88,8 @@ export const UNIQUE_PROPERTIES = new Set([
     'x-pm-session-key',
     'x-pm-shared-event-id',
     'x-pm-proton-reply',
+    'x-pm-conference-id',
+    'x-pm-conference-url',
     'x-yahoo-yid',
     'x-yahoo-user-status',
     'version',

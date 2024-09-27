@@ -2029,7 +2029,21 @@ const InteractiveCalendarView = ({
                                               delete tmpData.rest['recurrence-id'];
                                           }
 
+                                          // Zoom data should be removed when duplicating an event
+                                          if (tmpData.rest['x-pm-conference-id']) {
+                                              delete tmpData.rest['x-pm-conference-id'];
+                                          }
+
+                                          if (tmpData.rest['x-pm-conference-url']) {
+                                              delete tmpData.rest['x-pm-conference-url'];
+                                          }
+
                                           delete tmpData.uid;
+                                          delete tmpData.conferenceId;
+                                          delete tmpData.conferenceUrl;
+                                          delete tmpData.conferencePasscode;
+                                          delete tmpData.conferenceCreator;
+
                                           tmpData.attendees.forEach((attendee) => {
                                               attendee.partstat = ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
                                               // attendee tokens should not be duplicated as the UID has changed

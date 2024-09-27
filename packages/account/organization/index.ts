@@ -16,7 +16,7 @@ import { getOrganization, getOrganizationSettings } from '@proton/shared/lib/api
 import { APPS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
-import type { OrganizationWithSettings, Organization, OrganizationSettings, User } from '@proton/shared/lib/interfaces';
+import type { Organization, OrganizationSettings, OrganizationWithSettings, User } from '@proton/shared/lib/interfaces';
 import { UserLockedFlags } from '@proton/shared/lib/interfaces';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
@@ -139,6 +139,7 @@ const modelThunk = (options?: {
                     ShowName: false,
                     LogoID: null,
                     ShowScribeWritingAssistant: true,
+                    VideoConferencingEnabled: false,
                 };
 
                 const [Organization, OrganizationSettings] = await Promise.all([
@@ -151,7 +152,12 @@ const modelThunk = (options?: {
                         ? defaultSettings
                         : extraArgument
                               .api<OrganizationSettings>(getOrganizationSettings())
-                              .then(({ ShowName, LogoID, ShowScribeWritingAssistant }) => ({ ShowName, LogoID, ShowScribeWritingAssistant }))
+                              .then(({ ShowName, LogoID, ShowScribeWritingAssistant, VideoConferencingEnabled }) => ({
+                                  ShowName,
+                                  LogoID,
+                                  ShowScribeWritingAssistant,
+                                  VideoConferencingEnabled,
+                              }))
                               .catch(() => {
                                   return defaultSettings;
                               }),

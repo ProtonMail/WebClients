@@ -116,6 +116,33 @@ const modelToAttendeeProperties = ({ attendees }: EventModel) => {
     };
 };
 
+const modelToVideoConferenceProperties = ({
+    conferenceId,
+    conferencePasscode,
+    conferenceUrl,
+    conferenceCreator,
+}: Partial<EventModel>) => {
+    if (!conferenceId || !conferenceUrl) {
+        return;
+    }
+
+    return {
+        'x-pm-conference-id': {
+            value: conferenceId,
+            parameters: {
+                provider: '1',
+                ...(conferenceCreator && { creator: conferenceCreator }),
+            },
+        },
+        'x-pm-conference-url': {
+            value: conferenceUrl,
+            parameters: {
+                ...(conferencePasscode && { passcode: conferencePasscode }),
+            },
+        },
+    };
+};
+
 export const modelToValarmComponents = ({ isAllDay, fullDayNotifications, partDayNotifications }: EventModel) =>
     dedupeNotifications(isAllDay ? fullDayNotifications : partDayNotifications).map((notification) =>
         modelToValarmComponent(notification)
@@ -128,8 +155,7 @@ export const modelToVeventComponent = (model: EventModel) => {
     const attendeeProperties = modelToAttendeeProperties(model);
     const generalProperties = modelToGeneralProperties(model);
     const valarmComponents = modelToValarmComponents(model);
-
-    const components = [...valarmComponents];
+    const videoConferenceProperties = modelToVideoConferenceProperties(model);
 
     return withRequiredProperties({
         ...generalProperties,
@@ -137,7 +163,8 @@ export const modelToVeventComponent = (model: EventModel) => {
         ...dateProperties,
         ...organizerProperties,
         ...attendeeProperties,
+        ...videoConferenceProperties,
         component: 'vevent',
-        components,
+        components: [...valarmComponents],
     });
 };

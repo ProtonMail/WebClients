@@ -31,7 +31,7 @@ interface Props {
     tzid: string;
 }
 
-const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endError, tzid }: Props) => {
+export const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endError, tzid }: Props) => {
     const { start, end, frequencyModel, isAllDay } = model;
     const {
         handleChangeStartDate,
@@ -201,5 +201,3 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
         </IconRow>
     );
 };
-
-export default DateTimeRow;
