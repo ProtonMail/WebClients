@@ -54,6 +54,7 @@ describe('useLink', () => {
     const mockGetSharePrivateKey = jest.fn();
     const mockGetShare = jest.fn();
     const mockGetDefaultShareAddressEmail = jest.fn();
+    const mockGetDirectSharingInfo = jest.fn();
     const mockDecryptPrivateKey = jest.fn();
     const mockIntegrityMetricsDecryptionError = jest.fn();
     const mockIntegrityMetricsSignatureVerificationError = jest.fn();
@@ -101,6 +102,7 @@ describe('useLink', () => {
                 mockGetSharePrivateKey,
                 mockGetShare,
                 mockGetDefaultShareAddressEmail,
+                mockGetDirectSharingInfo,
                 isPaid,
                 {
                     nodeDecryptionError: mockIntegrityMetricsDecryptionError,
