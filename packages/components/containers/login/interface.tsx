@@ -45,7 +45,7 @@ export interface AuthCacheResult {
     authVersion: AuthVersion;
     authResponse: AuthResponse;
     api: Api;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
+    verifyOutboundPublicKeys: VerifyOutboundPublicKeys | null;
     data: { user?: tsUser; salts?: tsKeySalt[]; addresses?: Address[] };
     authTypes: AuthTypes;
     username: string;
