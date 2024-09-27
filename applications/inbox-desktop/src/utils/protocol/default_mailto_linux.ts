@@ -1,19 +1,30 @@
-import { DefaultProtocol } from "./types";
+import { existsSync } from "node:fs";
+import { execSync } from "node:child_process";
 
-export const checkDefaultMailtoClientLinux = (): DefaultProtocol => ({
-    // FIXME:jcuth
-    // Need to check desktop file exists:
-    // /usr/share/applications/proton-mail.desktop
-    //
-    // Need to check is default:
-    // spawn xdg-mime query default x-scheme-handler/mailto
-    // answer should be `proton-mail.desktop`
-    isDefault: false,
-    isChecked: false,
-});
+import { protocolLogger } from "../log";
+
+import { DefaultProtocolActual, UNCHECKED_PROTOCOL } from "@proton/shared/lib/desktop/DefaultProtocol";
+
+export const checkDefaultMailtoClientLinux = (): DefaultProtocolActual => {
+    try {
+        if (!existsSync("/usr/share/applications/proton-mail.desktop")) {
+            protocolLogger.error("Missing proton-mail.desktop file");
+            return UNCHECKED_PROTOCOL;
+        }
+
+        const result = execSync("xdg-mime query default x-scheme-handler/mailto");
+        return {
+            isDefault: result.toString() == "proton-mail.desktop\n",
+            wasChecked: true,
+        };
+    } catch (e) {
+        protocolLogger.error("Cannot check default mailto:", e);
+        return UNCHECKED_PROTOCOL;
+    }
+};
 
 export const setDefaultMailtoLinux = () => {
-    // FIXME:jcuth
+    // TODO:jcuth
     // check there is .desktop file
     // use xdg to set default
 };
