@@ -55,6 +55,7 @@ interface Props {
     prompt: string;
     setPrompt: (value: string) => void;
     setAssistantStatus: (assistantID: string, status: OpenedAssistantStatus) => void;
+    messageID: string;
 }
 
 const useComposerAssistantGenerate = ({
@@ -76,6 +77,7 @@ const useComposerAssistantGenerate = ({
     setContentBeforeBlockquote,
     prompt,
     setPrompt,
+    messageID,
 }: Props) => {
     // Contains the current generation result that is visible in the assistant context
     const [generationResult, setGenerationResult] = useState('');
@@ -256,7 +258,7 @@ const useComposerAssistantGenerate = ({
             composerContent = removeLineBreaks(contentBeforeBlockquote);
         } else {
             const uid = authentication.getUID();
-            composerContent = prepareContentToModel(contentBeforeBlockquote, uid);
+            composerContent = prepareContentToModel(contentBeforeBlockquote, uid, messageID);
         }
 
         if (expanded && generationResult) {

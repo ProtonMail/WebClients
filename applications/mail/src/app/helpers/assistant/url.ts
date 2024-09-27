@@ -2,30 +2,46 @@ import { encodeImageUri, forgeImageURL } from '@proton/shared/lib/helpers/image'
 
 import { API_URL } from 'proton-mail/config';
 
-const LinksURLs: { [key: string]: string } = {};
+const LinksURLs: {
+    [key: string]: {
+        messageID: string;
+        url: string;
+        class?: string;
+        style?: string;
+    };
+} = {};
 const ImageURLs: {
     [key: string]: {
+        messageID: string;
         src: string;
         'proton-src'?: string;
         class?: string;
+        style?: string;
         id?: string;
         'data-embedded-img'?: string;
     };
 } = {};
-export const ASSISTANT_IMAGE_PREFIX = '#'; // Prefix to generate unique IDs
+export const ASSISTANT_IMAGE_PREFIX = '^'; // Prefix to generate unique IDs
 let indexURL = 0; // Incremental index to generate unique IDs
 
 // Replace URLs by a unique ID and store the original URL
-export const replaceURLs = (dom: Document, uid: string): Document => {
+export const replaceURLs = (dom: Document, uid: string, messageID: string): Document => {
     // Find all links in the DOM
     const links = dom.querySelectorAll('a[href]');
 
     // Replace URLs in links
     links.forEach((link) => {
         const hrefValue = link.getAttribute('href') || '';
+        const classValue = link.getAttribute('class');
+        const styleValue = link.getAttribute('style');
         if (hrefValue) {
             const key = `${ASSISTANT_IMAGE_PREFIX}${indexURL++}`;
-            LinksURLs[key] = hrefValue;
+            LinksURLs[key] = {
+                messageID,
+                url: hrefValue,
+                class: classValue ? classValue : undefined,
+                style: styleValue ? styleValue : undefined,
+            };
             link.setAttribute('href', key);
         }
     });
@@ -74,17 +90,20 @@ export const replaceURLs = (dom: Document, uid: string): Document => {
         const srcValue = image.getAttribute('src');
         const protonSrcValue = image.getAttribute('proton-src');
         const classValue = image.getAttribute('class');
+        const styleValue = image.getAttribute('style');
         const dataValue = image.getAttribute('data-embedded-img');
         const idValue = image.getAttribute('id');
 
         const commonAttributes = {
             class: classValue ? classValue : undefined,
+            style: styleValue ? styleValue : undefined,
             'data-embedded-img': dataValue ? dataValue : undefined,
             id: idValue ? idValue : undefined,
         };
         if (srcValue && protonSrcValue) {
             const key = `${ASSISTANT_IMAGE_PREFIX}${indexURL++}`;
             ImageURLs[key] = {
+                messageID,
                 src: srcValue,
                 'proton-src': protonSrcValue,
                 ...commonAttributes,
@@ -93,6 +112,7 @@ export const replaceURLs = (dom: Document, uid: string): Document => {
         } else if (srcValue) {
             const key = `${ASSISTANT_IMAGE_PREFIX}${indexURL++}`;
             ImageURLs[key] = {
+                messageID,
                 src: srcValue,
                 ...commonAttributes,
             };
@@ -119,6 +139,7 @@ export const replaceURLs = (dom: Document, uid: string): Document => {
             });
 
             ImageURLs[key] = {
+                messageID,
                 src: proxyImage,
                 'proton-src': protonSrcValue,
                 class: classValue ? classValue : undefined,
@@ -133,35 +154,67 @@ export const replaceURLs = (dom: Document, uid: string): Document => {
 };
 
 // Restore URLs (in links and images) from unique IDs
-export const restoreURLs = (dom: Document): Document => {
+export const restoreURLs = (dom: Document, messageID: string): Document => {
     // Find all links and image in the DOM
     const links = dom.querySelectorAll('a[href]');
     const images = dom.querySelectorAll('img[src]');
 
+    // Before replacing urls, we are making sure the link has the correct messageID.
+    // We want to avoid cases where the model would refine using another placeholder ID that would already exist for another message
+    // This would lead to insert in the wrong message a link, which could be a privacy issue
+
     // Restore URLs in links
     links.forEach((link) => {
-        const hrefValue = link.getAttribute('href') || '';
-        if (hrefValue && LinksURLs[hrefValue]) {
-            link.setAttribute('href', LinksURLs[hrefValue]);
+        // We need to decode the href because the placeholder "^" is being encoded during markdown > html conversion
+        const hrefValue = decodeURIComponent(link.getAttribute('href') || '');
+        if (hrefValue) {
+            if (LinksURLs[hrefValue]?.url && LinksURLs[hrefValue]?.messageID === messageID) {
+                link.setAttribute('href', LinksURLs[hrefValue].url);
+                if (LinksURLs[hrefValue].class) {
+                    link.setAttribute('class', LinksURLs[hrefValue].class);
+                }
+                if (LinksURLs[hrefValue].style) {
+                    link.setAttribute('style', LinksURLs[hrefValue].style);
+                }
+            } else {
+                // Replace the link with its inner content
+                const parent = link.parentNode;
+                if (parent) {
+                    // Move all children of the link before the link
+                    while (link.firstChild) {
+                        parent.insertBefore(link.firstChild, link);
+                    }
+                    // Then remove the empty link
+                    parent.removeChild(link);
+                }
+            }
         }
     });
 
     // Restore URLs in images
     images.forEach((image) => {
-        const srcValue = image.getAttribute('src') || '';
-        if (srcValue && ImageURLs[srcValue]) {
-            image.setAttribute('src', ImageURLs[srcValue].src);
-            if (ImageURLs[srcValue]['proton-src']) {
-                image.setAttribute('proton-src', ImageURLs[srcValue]['proton-src']);
-            }
-            if (ImageURLs[srcValue].class) {
-                image.setAttribute('class', ImageURLs[srcValue].class);
-            }
-            if (ImageURLs[srcValue]['data-embedded-img']) {
-                image.setAttribute('data-embedded-img', ImageURLs[srcValue]['data-embedded-img']);
-            }
-            if (ImageURLs[srcValue].id) {
-                image.setAttribute('id', ImageURLs[srcValue].id);
+        // We need to decode the href because the placeholder "^" is being encoded during markdown > html conversion
+        const srcValue = decodeURIComponent(image.getAttribute('src') || '');
+        if (srcValue) {
+            if (ImageURLs[srcValue] && ImageURLs[srcValue]?.messageID === messageID) {
+                image.setAttribute('src', ImageURLs[srcValue].src);
+                if (ImageURLs[srcValue]['proton-src']) {
+                    image.setAttribute('proton-src', ImageURLs[srcValue]['proton-src']);
+                }
+                if (ImageURLs[srcValue].class) {
+                    image.setAttribute('class', ImageURLs[srcValue].class);
+                }
+                if (ImageURLs[srcValue].style) {
+                    image.setAttribute('style', ImageURLs[srcValue].style);
+                }
+                if (ImageURLs[srcValue]['data-embedded-img']) {
+                    image.setAttribute('data-embedded-img', ImageURLs[srcValue]['data-embedded-img']);
+                }
+                if (ImageURLs[srcValue].id) {
+                    image.setAttribute('id', ImageURLs[srcValue].id);
+                }
+            } else {
+                image.remove();
             }
         }
     });

@@ -74,6 +74,7 @@ const INSTRUCTIONS_REFINE_WHOLE = [
     'You write a revised version of this email, in the same language.',
     'Identify the user language and maintain it in your response.',
     "If the user's request is unethical or harmful, you do not replace the part to modify.",
+    'Do not modify markdown link references.',
 ].join(' ');
 
 let INSTRUCTIONS_REFINE_USER_PREFIX_SPAN =
@@ -314,7 +315,7 @@ export function formatPromptCustomRefine(action: CustomRefineAction): string {
         },
         {
             role: 'assistant',
-            contents: `Sure, here's your modified email. I rewrote it in the same language as the original:\n\n\`\`\`${assistantOutputFormat}\n${newEmailStart}`,
+            contents: `Sure, here's your modified email. I rewrote it in the same language as the original, and I kept numbers ^0, ^1, ... in the markdown links:\n\n\`\`\`${assistantOutputFormat}\n${newEmailStart}`,
         },
     ];
 
