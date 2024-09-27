@@ -31,12 +31,14 @@ export const simplifyHTML = (dom: Document): Document => {
 
         // Remove style attribute
         if (element.hasAttribute('style')) {
-            element.removeAttribute('style');
+            if (!['img', 'a'].includes(element.tagName.toLowerCase())) {
+                element.removeAttribute('style');
+            }
         }
 
         // Remove class attribute
         if (element.hasAttribute('class')) {
-            if (element.tagName.toLowerCase() !== 'img') {
+            if (!['img', 'a'].includes(element.tagName.toLowerCase())) {
                 element.removeAttribute('class');
             }
         }
