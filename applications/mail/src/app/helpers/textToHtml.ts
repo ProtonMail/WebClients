@@ -13,7 +13,11 @@ const OPTIONS = {
     linkify: true,
 };
 
-const md = markdownit('default', OPTIONS).disable(['lheading', 'heading', 'list', 'code', 'fence', 'hr']);
+export const DEFAULT_TAGS_TO_DISABLE = ['lheading', 'heading', 'list', 'code', 'fence', 'hr'];
+
+const getMD = (tagsToDisable = DEFAULT_TAGS_TO_DISABLE) => {
+    return markdownit('default', OPTIONS).disable([...tagsToDisable]);
+};
 
 /**
  * This function generates a random string that is not included in the input text.
@@ -79,12 +83,13 @@ const removeNewLinePlaceholder = (html: string, placeholder: string) => html.rep
  */
 const escapeBackslash = (text = '') => text.replace(/\\/g, '\\\\');
 
-export const prepareConversionToHTML = (content: string) => {
+export const prepareConversionToHTML = (content: string, tagsToDisable?: string[]) => {
     // We want empty new lines to behave as if they were not empty (this is non-standard markdown behaviour)
     // It's more logical though for users that don't know about markdown.
     const placeholder = generatePlaceHolder(content);
     // We don't want to treat backslash as a markdown escape since it removes backslashes. So escape all backslashes with a backslash.
     const withPlaceholder = addNewLinePlaceholders(escapeBackslash(content), placeholder);
+    const md = getMD(tagsToDisable);
     const rendered = md.render(withPlaceholder);
     return removeNewLinePlaceholder(rendered, placeholder);
 };
