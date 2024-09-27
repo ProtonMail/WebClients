@@ -26,6 +26,21 @@ export enum SETTINGS_PROTON_SENTINEL_STATE {
     ENABLED = 1,
 }
 
+export enum DARK_WEB_MONITORING_STATE {
+    DISABLED = 0,
+    ENABLED = 1,
+}
+
+export enum DARK_WEB_MONITORING_EMAILS_STATE {
+    DISABLED = 0,
+    ENABLED = 1,
+}
+
+export enum DARK_WEB_MONITORING_ELIGIBILITY_STATE {
+    NONPAID = 0,
+    PAID = 1,
+}
+
 export enum SETTINGS_WEEK_START {
     LOCALE_DEFAULT = 0,
     MONDAY = 1,
@@ -156,6 +171,7 @@ export interface UserSettings {
     BreachAlerts: {
         Eligible: number; // 0 for free user, 1 for paid user
         Value: number; // 0 for disabled, 1 for enabled
+        EmailNotifications: number;
     };
     Checklists?: ChecklistId[];
     CrashReports: 1 | 0;
