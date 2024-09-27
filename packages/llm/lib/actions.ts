@@ -14,23 +14,15 @@ import {
     formatPromptShorten,
     formatPromptWriteFullEmail,
     friendlyActionToCustomRefineAction,
-    proofreadActionToCustomRefineAction,
-    makeRefineCleanup,
     getCustomStopStringsForAction,
+    makeRefineCleanup,
+    proofreadActionToCustomRefineAction,
 } from '@proton/llm/lib/formatPrompt';
 
-import {
-    CACHING_FAILED,
-    GENERAL_STOP_STRINGS,
-    IFRAME_COMMUNICATION_TIMEOUT,
-} from './constants';
+import { CACHING_FAILED, GENERAL_STOP_STRINGS, IFRAME_COMMUNICATION_TIMEOUT } from './constants';
 import type { AppCaches, CacheId } from './downloader';
 import { getCachedFiles, storeInCache } from './downloader';
-import {
-    isAssistantPostMessage,
-    makeTransformWriteFullEmail,
-    postMessageParentToIframe,
-} from './helpers';
+import { isAssistantPostMessage, makeTransformWriteFullEmail, postMessageParentToIframe } from './helpers';
 import { BaseRunningAction } from './runningAction';
 import type {
     Action,
@@ -429,7 +421,14 @@ export function prepareServerAssistantInteraction(action: Action): ServerAssista
     const rawLlmPrompt = getPromptForAction(action);
     const transformCallback = getTransformForAction(action);
     const customStopStrings = getCustomStopStringsForAction(action);
-    const stopStrings = [...GENERAL_STOP_STRINGS, ...customStopStrings];
+    const baseStopStrings = [...GENERAL_STOP_STRINGS, ...customStopStrings];
+
+    // HACK: Llama.cpp has a bug which does not handle well the stop-string "```".
+    // Consequently, we're not supplying this stop-string to llama.cpp. Note it will
+    // still be used locally in makeRefineCleanup, such that all text we receive
+    // after this stop-string is still ignored locally.
+    const STOPSTRINGS_DISABLED_ON_SERVER = ['```'];
+    const stopStrings = baseStopStrings.filter((stopString) => !STOPSTRINGS_DISABLED_ON_SERVER.includes(stopString));
 
     return {
         rawLlmPrompt,

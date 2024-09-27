@@ -36,6 +36,7 @@ interface Props {
     onResetPrompt: () => void;
     onResetGeneration: () => void;
     showReplaceButton: boolean;
+    messageID: string;
 }
 
 const ComposerAssistantExpanded = ({
@@ -55,6 +56,7 @@ const ComposerAssistantExpanded = ({
     onResetPrompt,
     onResetGeneration,
     showReplaceButton,
+    messageID,
 }: Props) => {
     const { createNotification } = useNotifications();
     const { sendNotUseAnswerAssistantReport } = useAssistantTelemetry();
@@ -127,6 +129,7 @@ const ComposerAssistantExpanded = ({
                                     result={generationResult}
                                     assistantID={assistantID}
                                     isComposerPlainText={isComposerPlainText}
+                                    messageID={messageID}
                                 />
                             </div>
 

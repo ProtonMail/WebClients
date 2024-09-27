@@ -85,6 +85,7 @@ type SetContentBeforeBlockquoteOptions = (
            */
           wrapperDivStyles: string;
           canKeepFormatting: boolean;
+          messageID: string;
       }
 ) & {
     /** Content to add */
@@ -100,7 +101,7 @@ export const setMessageContentBeforeBlockquote = (args: SetContentBeforeBlockquo
     }
 
     if ('html' === editorType) {
-        const { wrapperDivStyles, canKeepFormatting } = args;
+        const { wrapperDivStyles, canKeepFormatting, messageID } = args;
         const editorContentRootDiv = new DOMParser().parseFromString(editorContent, 'text/html').body as HTMLElement;
         let shouldDelete = true;
 
@@ -127,7 +128,7 @@ export const setMessageContentBeforeBlockquote = (args: SetContentBeforeBlockquo
 
         const divEl = document.createElement('div');
         divEl.setAttribute('style', wrapperDivStyles);
-        divEl.innerHTML = canKeepFormatting ? prepareContentToInsert(content, false, true) : content;
+        divEl.innerHTML = canKeepFormatting ? prepareContentToInsert(content, false, true, messageID) : content;
         divEl.appendChild(document.createElement('br'));
         divEl.appendChild(document.createElement('br'));
 

@@ -38,6 +38,7 @@ interface Props {
     recipients: Recipient[];
     sender: Recipient | undefined;
     setAssistantStateRef: MutableRefObject<() => void>;
+    messageID: string;
 }
 
 const ComposerAssistant = ({
@@ -52,6 +53,7 @@ const ComposerAssistant = ({
     recipients,
     sender,
     setAssistantStateRef,
+    messageID,
 }: Props) => {
     const [prompt, setPrompt] = useState('');
     const [feedbackSubmitted, setFeedbackSubmitted] = useState(false);
@@ -118,6 +120,7 @@ const ComposerAssistant = ({
         prompt,
         setPrompt,
         setAssistantStatus,
+        messageID,
     });
 
     const handleResetToPreviousPrompt = () => {
@@ -197,6 +200,7 @@ const ComposerAssistant = ({
                     onResetPrompt={() => setPrompt('')}
                     onResetGeneration={handleResetGeneration}
                     showReplaceButton={hasComposerContent}
+                    messageID={messageID}
                 />
             )}
 

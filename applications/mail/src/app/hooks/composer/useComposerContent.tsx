@@ -520,6 +520,7 @@ export const useComposerContent = (args: EditorArgs) => {
             wrapperDivStyles: getComposerDefaultFontStyles(mailSettings),
             addressSignature,
             canKeepFormatting: args.canKeepFormatting,
+            messageID: modelMessage.localID,
         });
 
         return handleChangeContent(nextContent, true);
