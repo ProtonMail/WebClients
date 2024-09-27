@@ -183,6 +183,24 @@ describe('switchPlan', () => {
         });
     });
 
+    it('should transfer IP addons when switching from vpn biz to bundle pro when no IP addons have been included', () => {
+        const planIDs = { [PLANS.VPN_BUSINESS]: 1 };
+        const planID = PLANS.BUNDLE_PRO_2024;
+        expect(
+            switchPlan({
+                planIDs,
+                planID,
+                plans: getTestPlans(),
+                organization: MOCK_ORGANIZATION,
+                user,
+                showGatewaysForBundlePlan: true,
+            })
+        ).toEqual({
+            [PLANS.BUNDLE_PRO_2024]: 1,
+            [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 1, // 1 IP is included in vpnbiz, so we need to add this
+        });
+    });
+
     it('should transfer IP addons when switching from bundle pro to vpn biz', () => {
         const planIDs = { [PLANS.BUNDLE_PRO_2024]: 1, [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 5 };
         const planID = PLANS.VPN_BUSINESS;
