@@ -1,5 +1,6 @@
 import type { AuthSession } from '@proton/pass/lib/auth/session';
-import { type ApiAuth, type ApiCallFn, AuthMode, type Maybe, type MaybePromise } from '@proton/pass/types';
+import type { ApiAuth, ApiCallFn, ApiOptions, Maybe, MaybePromise } from '@proton/pass/types';
+import { AuthMode } from '@proton/pass/types';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
 import { setRefreshCookies as refreshTokens, setRefreshCookies } from '@proton/shared/lib/api/auth';
@@ -16,80 +17,71 @@ import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 type RefreshCookieResponse = { LocalID?: number; RefreshCounter: number; RefreshTime: number; UID: string };
 
 export type RefreshSessionData = Pick<AuthSession, 'UID' | 'AccessToken' | 'RefreshToken' | 'RefreshTime' | 'cookies'>;
-export type RefreshHandler = (response: Response) => Promise<void>;
+export type RefreshHandler = (response: Response, options: ApiOptions) => Promise<void>;
 export type OnRefreshCallback = (response: RefreshSessionData) => MaybePromise<void>;
 
 export type DynamicRefreshResult =
     | { type: AuthMode.COOKIE; response: { json: () => Promise<RefreshCookieResponse> } }
     | { type: AuthMode.TOKEN; response: { json: () => Promise<RefreshSessionResponse> } };
 
-type CreateRefreshHandlerOptions = {
-    call: ApiCallFn;
-    getAuth: () => Maybe<ApiAuth>;
-    onRefresh: OnRefreshCallback;
-};
+type CreateRefreshHandlerConfig = { call: ApiCallFn; getAuth: () => Maybe<ApiAuth>; onRefresh: OnRefreshCallback };
 
-/**
- * Handle refresh token. Happens when the access token has expired.
+/** Handle refresh token. Happens when the access token has expired.
  * Multiple calls can fail, so this ensures the refresh route is called once.
- * Needs to re-handle errors here for that reason.
- */
-const refresh = async (options: {
-    getAuth: () => Maybe<ApiAuth>;
-    call: ApiCallFn;
-    attempt: number;
-    maxAttempts: number;
-}): Promise<DynamicRefreshResult> => {
-    const { call, getAuth, attempt, maxAttempts } = options;
-    const auth = getAuth();
-    if (auth === undefined) throw InactiveSessionError();
+ * Needs to re-handle errors here for that reason. */
+const refreshFactory = (call: ApiCallFn, getAuth: () => Maybe<ApiAuth>) => {
+    const next = async (maxAttempts: number, attempt: number = 1): Promise<DynamicRefreshResult> => {
+        const auth = getAuth();
+        if (auth === undefined) throw InactiveSessionError();
 
-    try {
-        return {
-            type: auth.type,
-            response: await call(
-                auth.type === AuthMode.COOKIE
-                    ? withUIDHeaders(auth.UID, setRefreshCookies())
-                    : withAuthHeaders(auth.UID, auth.AccessToken, refreshTokens({ RefreshToken: auth.RefreshToken }))
-            ),
-        };
-    } catch (error: any) {
-        if (attempt >= maxAttempts) throw error;
+        try {
+            return {
+                type: auth.type,
+                response: await call(
+                    auth.type === AuthMode.COOKIE
+                        ? withUIDHeaders(auth.UID, setRefreshCookies())
+                        : withAuthHeaders(
+                              auth.UID,
+                              auth.AccessToken,
+                              refreshTokens({ RefreshToken: auth.RefreshToken })
+                          )
+                ),
+            };
+        } catch (error: any) {
+            if (attempt >= maxAttempts) throw error;
+            const { status, name } = error;
 
-        const { status, name } = error;
-        const next = (max: number) => refresh({ call, getAuth, attempt: attempt + 1, maxAttempts: max });
+            if (['OfflineError', 'TimeoutError'].includes(name)) {
+                if (attempt > OFFLINE_RETRY_ATTEMPTS_MAX) throw error;
+                await wait(name === 'OfflineError' ? OFFLINE_RETRY_DELAY : 0);
+                return next(OFFLINE_RETRY_ATTEMPTS_MAX, attempt + 1);
+            }
 
-        if (['OfflineError', 'TimeoutError'].includes(name)) {
-            if (attempt > OFFLINE_RETRY_ATTEMPTS_MAX) throw error;
-            await wait(name === 'OfflineError' ? OFFLINE_RETRY_DELAY : 0);
-            return next(OFFLINE_RETRY_ATTEMPTS_MAX);
+            if (status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
+                await retryHandler(error);
+                return next(maxAttempts, attempt + 1);
+            }
+
+            throw error;
         }
+    };
 
-        if (status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
-            await retryHandler(error);
-            return next(maxAttempts);
-        }
-
-        throw error;
-    }
+    return next;
 };
 
-export const refreshHandlerFactory = ({ call, getAuth, onRefresh }: CreateRefreshHandlerOptions) =>
+export const refreshHandlerFactory = (config: CreateRefreshHandlerConfig) =>
     asyncLock<RefreshHandler>(
-        async (response) => {
-            const auth = getAuth();
-            if (auth === undefined) throw InactiveSessionError();
+        async (response, options) => {
+            /** Override the default `getAuth` if an `auth` option was passed
+             * to the underlying API request that triggered the refresh. */
+            const getAuth = () => options.auth ?? config.getAuth();
+            const refresh = refreshFactory(config.call, getAuth);
 
             const responseDate = getDateHeader(response.headers);
             const lastRefreshDate = getAuth()?.RefreshTime;
 
             if (lastRefreshDate === undefined || +(responseDate ?? new Date()) > lastRefreshDate) {
-                const result = await refresh({
-                    call,
-                    getAuth,
-                    attempt: 1,
-                    maxAttempts: RETRY_ATTEMPTS_MAX,
-                });
+                const result = await refresh(RETRY_ATTEMPTS_MAX);
                 const RefreshTime = +(getDateHeader(response.headers) ?? new Date());
 
                 const refreshData = await (async (): Promise<RefreshSessionData> => {
@@ -107,9 +99,9 @@ export const refreshHandlerFactory = ({ call, getAuth, onRefresh }: CreateRefres
 
                 logger.info('[API] Successfully refreshed session tokens');
 
-                await onRefresh(refreshData);
+                await config.onRefresh(refreshData);
                 await wait(randomIntFromInterval(500, 2000));
             }
         },
-        { key: () => getAuth()?.UID ?? '' }
+        { key: (_, options) => options.auth?.UID ?? config.getAuth()?.UID ?? '' }
     );

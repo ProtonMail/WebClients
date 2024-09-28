@@ -32,10 +32,13 @@ export const withApiHandlers = ({ state, call, getAuth, refreshHandler }: ApiHan
         } = options ?? {};
 
         const next = async (attempts: number, maxAttempts?: number): Promise<any> => {
+            if (state.get('appVersionBad')) throw AppVersionBadError();
+
+            /** Unauthenticated API calls should not be
+             * blocked by the current API error state. */
             if (!options.unauthenticated) {
                 if (state.get('sessionInactive')) throw InactiveSessionError();
                 if (state.get('sessionLocked')) throw LockedSessionError();
-                if (state.get('appVersionBad')) throw AppVersionBadError();
             }
 
             try {
@@ -44,8 +47,11 @@ export const withApiHandlers = ({ state, call, getAuth, refreshHandler }: ApiHan
                 if (options.signal?.aborted) throw new Error('Aborted');
 
                 const config = (() => {
-                    const auth = getAuth();
+                    /** If the request was passed a custom UID - use it
+                     * instead of the standard authentication store value */
+                    const auth = options.auth ?? getAuth();
                     if (!auth) return options;
+
                     return auth.type === AuthMode.COOKIE
                         ? withUIDHeaders(auth.UID, options)
                         : withAuthHeaders(auth.UID, auth.AccessToken, options);
@@ -93,7 +99,7 @@ export const withApiHandlers = ({ state, call, getAuth, refreshHandler }: ApiHan
 
                     try {
                         state.set('refreshing', true);
-                        await refreshHandler(response);
+                        await refreshHandler(response, options);
                         return await next(attempts + 1, RETRY_ATTEMPTS_MAX);
                     } catch (err: any) {
                         if (err.status >= 400 && err.status <= 499) throw InactiveSessionError();

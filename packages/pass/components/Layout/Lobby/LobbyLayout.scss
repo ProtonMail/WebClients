@@ -2,8 +2,6 @@
 @import '~@proton/pass/styles/lobby';
 
 .pass-lobby {
-	-webkit-app-region: drag;
-
 	&--content::before {
 		content: '';
 		display: block;
@@ -11,13 +9,25 @@
 		flex-shrink: 0;
 	}
 
-	&--content {
-		-webkit-app-region: no-drag;
-	}
-
 	&--logo {
 		&-hidden {
 			display: none;
+		}
+	}
+}
+
+// Only allow dragging the app window from the
+// lobby when grabbing the edges of the screen
+.is-electron {
+	.pass-lobby {
+		-webkit-app-region: drag;
+
+		&::before {
+			content: '';
+			display: block;
+			inset: rem(25);
+			position: absolute;
+			-webkit-app-region: no-drag;
 		}
 	}
 }

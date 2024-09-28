@@ -3,11 +3,11 @@ import { flushSync } from 'react-dom';
 import type { History } from 'history';
 import type { ServiceWorkerClient } from 'proton-pass-web/app/ServiceWorker/client/client';
 import { store } from 'proton-pass-web/app/Store/store';
-import { B2BEvents, getB2BEventsStorageKey } from 'proton-pass-web/lib/b2b';
+import { B2BEvents } from 'proton-pass-web/lib/b2b';
 import { deletePassDB } from 'proton-pass-web/lib/database';
 import { onboarding } from 'proton-pass-web/lib/onboarding';
-import { getSettingsStorageKey, settings } from 'proton-pass-web/lib/settings';
-import { getTelemetryStorageKey, telemetry } from 'proton-pass-web/lib/telemetry';
+import { clearUserLocalData, localGarbageCollect } from 'proton-pass-web/lib/storage';
+import { telemetry } from 'proton-pass-web/lib/telemetry';
 
 import type { CreateNotificationOptions } from '@proton/components';
 import type { AppStateContextValue } from '@proton/pass/components/Core/AppStateProvider';
@@ -27,13 +27,15 @@ import { AppStatusFromLockMode, LockMode } from '@proton/pass/lib/auth/lock/type
 import { createAuthService as createCoreAuthService } from '@proton/pass/lib/auth/service';
 import { getPersistedSessionKey } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
+import type { AuthSwitchService } from '@proton/pass/lib/auth/switch';
 import { getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
 import { canLocalUnlock } from '@proton/pass/lib/cache/utils';
 import { clientBooted, clientOffline } from '@proton/pass/lib/client';
 import { bootIntent, cacheCancel, lockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
-import { AppStatus, type Maybe, type MaybeNull } from '@proton/pass/types';
+import { AppStatus, type MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { objectHandler } from '@proton/pass/utils/object/handler';
+import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import {
@@ -41,7 +43,6 @@ import {
     getLocalIDFromPathname,
     stripLocalBasenameFromPathname,
 } from '@proton/shared/lib/authentication/pathnameHelper';
-import { STORAGE_PREFIX } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { APPS } from '@proton/shared/lib/constants';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
@@ -51,29 +52,18 @@ import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
-export const getSessionKey = (localId?: number) => `${STORAGE_PREFIX}${localId ?? 0}`;
-export const getStateKey = (state: string) => `f${state}`;
-
-export const getDefaultLocalID = (): Maybe<number> => {
-    const defaultKey = Object.keys(localStorage).find((key) => key.startsWith(STORAGE_PREFIX));
-    if (defaultKey) return parseInt(defaultKey.replace(STORAGE_PREFIX, ''), 10);
-};
-
-export const getPersistedSessionsForUserID = (UserID: string): string[] =>
-    Object.keys(localStorage).filter((key) => {
-        if (!key.startsWith(STORAGE_PREFIX)) return false;
-        try {
-            const data = localStorage.getItem(key);
-            if (!data) return false;
-            const session = JSON.parse(data);
-            return session.UserID === UserID;
-        } catch {
-            return false;
-        }
-    });
+import {
+    getDefaultLocalID,
+    getPersistedLocalIDsForUserID,
+    getPersistedSession,
+    getPersistedSessions,
+    getSessionKey,
+    getStateKey,
+} from './sessions';
 
 type AuthServiceBindings = {
     app: AppStateContextValue;
+    authSwitch: AuthSwitchService;
     config: PassConfig;
     history: History<MaybeNull<AuthRouteState>>;
     sw: MaybeNull<ServiceWorkerClient>;
@@ -84,6 +74,7 @@ type AuthServiceBindings = {
 
 export const createAuthService = ({
     app,
+    authSwitch,
     config,
     history,
     sw,
@@ -97,19 +88,12 @@ export const createAuthService = ({
         api,
         authStore,
 
-        getPersistedSession: (localID) => {
-            const encryptedSession = localStorage.getItem(getSessionKey(localID));
-            if (!encryptedSession) return null;
-
-            try {
-                const persistedSession = JSON.parse(encryptedSession);
-                return authStore.validPersistedSession(persistedSession) ? persistedSession : null;
-            } catch {
-                return null;
-            }
-        },
+        getPersistedSession,
 
         onInit: async (options) => {
+            const sessions = getPersistedSessions();
+            await localGarbageCollect(sessions);
+
             const activeLocalID = authStore.getLocalID();
             const pathLocalID = getLocalIDFromPathname(history.location.pathname);
 
@@ -118,7 +102,7 @@ export const createAuthService = ({
              * mutates the local path in the URL */
             if (pathLocalID && activeLocalID !== pathLocalID) authStore.clear();
 
-            const localID = pathLocalID ?? authStore.getLocalID() ?? getDefaultLocalID();
+            const localID = pathLocalID ?? authStore.getLocalID() ?? getDefaultLocalID(sessions);
             const error = getRouteError(history.location.search);
 
             if (error !== null) {
@@ -137,16 +121,19 @@ export const createAuthService = ({
                 authStore.setSession(persistedSession);
                 const cookieUpgrade = authStore.shouldCookieUpgrade(persistedSession);
 
-                /** If no cookie upgrade is required, then the persisted session is now
-                 * cookie-based. As such, if the user is online, resolve the `clientKey`
-                 * as soon as possible in order to make an authenticated API call before
-                 * applying the `forceLock` option. This allows detecting stale sessions
-                 * before allowing the user to password unlock. */
-                if (!cookieUpgrade && getOnline()) {
-                    await getPersistedSessionKey(api, authStore).catch((err) => {
-                        app.setStatus(AppStatus.ERROR);
-                        throw err;
-                    });
+                if (getOnline()) {
+                    /** If no cookie upgrade is required, then the persisted session is now
+                     * cookie-based. As such, if the user is online, resolve the `clientKey`
+                     * as soon as possible in order to make an authenticated API call before
+                     * applying the `forceLock` option. This allows detecting stale sessions
+                     * before allowing the user to password unlock. */
+                    if (!cookieUpgrade) {
+                        await authSwitch.sync({ revalidate: true });
+                        await getPersistedSessionKey(api, authStore).catch((err) => {
+                            app.setStatus(AppStatus.ERROR);
+                            throw err;
+                        });
+                    }
                 }
             }
 
@@ -210,6 +197,11 @@ export const createAuthService = ({
             setSentryUID(authStore.getUID());
             onboarding.init().catch(noop);
 
+            /** Repersist the session if sufficient time has elapsed since last use */
+            if (getEpoch() - authStore.getLastUsedAt() > UNIX_MINUTE) {
+                await auth.persistSession({ regenerateClientKey: false }).catch(noop);
+            }
+
             if (app.state.booted) app.setStatus(AppStatus.READY);
             else {
                 const redirect = stripLocalBasenameFromPathname(route.get('redirectPath'));
@@ -227,17 +219,18 @@ export const createAuthService = ({
             onboarding.reset();
             telemetry.stop();
             B2BEvents.stop();
-            void settings.clear();
 
             store.dispatch(cacheCancel());
             store.dispatch(stopEventPolling());
         },
 
-        onLogoutComplete: (userID, localID, broadcast) => {
+        onLogoutComplete: async (userID, localID, broadcast) => {
             if (broadcast) sw?.send({ type: 'unauthorized', localID, broadcast });
             if (userID) deletePassDB(userID).catch(noop);
+            if (localID) clearUserLocalData(localID);
 
-            localStorage.removeItem(getSessionKey(localID));
+            await authSwitch.sync({ revalidate: false });
+
             setSentryUID(undefined);
 
             flushSync(() => {
@@ -269,17 +262,12 @@ export const createAuthService = ({
             /** If any on-going persisted sessions are present for the forked
              * UserID session : delete them and wipe the local database. This
              * ensures incoming forks always take precedence */
-            const sessionsForUserID = getPersistedSessionsForUserID(UserID);
+            const localIDs = getPersistedLocalIDsForUserID(UserID);
 
-            if (sessionsForUserID.length > 0) {
+            if (localIDs.length > 0) {
                 logger.info(`[AuthServiceProvider] clearing sessions for user ${UserID}`);
                 await deletePassDB(UserID).catch(noop);
-                sessionsForUserID.forEach((key) => {
-                    localStorage.removeItem(key);
-                    localStorage.removeItem(getSettingsStorageKey(LocalID));
-                    localStorage.removeItem(getTelemetryStorageKey(LocalID));
-                    localStorage.removeItem(getB2BEventsStorageKey(LocalID));
-                });
+                localIDs.forEach(clearUserLocalData);
             }
 
             sw?.send({ type: 'fork', localID: LocalID, userID: UserID, broadcast: true });
@@ -291,6 +279,9 @@ export const createAuthService = ({
                 session.offlineVerifier = await getOfflineVerifier(stringToUint8Array(offlineKD));
                 authStore.setLockLastExtendTime(getEpoch());
             }
+
+            authStore.setSession(session);
+            await authSwitch.sync({ revalidate: false });
         },
 
         onForkInvalid: () => history.replace('/'),
