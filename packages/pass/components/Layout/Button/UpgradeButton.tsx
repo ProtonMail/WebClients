@@ -1,4 +1,4 @@
-import type { CSSProperties, FC } from 'react';
+import type { CSSProperties, FC, MouseEventHandler } from 'react';
 
 import { c } from 'ttag';
 
@@ -37,15 +37,15 @@ export const UpgradeButton: FC<UpgradeButtonProps> = ({
     upsellRef,
 }) => {
     const ButtonComponent = inline ? InlineLinkButton : Button;
-    const buttonProps = { pill: true, shape: 'solid' } as const;
+    const buttonProps = inline ? { as: 'a' } : ({ pill: true, shape: 'solid' } as const);
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef, path });
 
     /** `onClick` may trigger async wrapped code - since `navigateToUpgrade`
      * will close the popup, ensure we execute `navigateToUpgrade` on next tick */
-    const handleClick = async () => {
+    const handleClick: MouseEventHandler = (evt) => {
+        evt.stopPropagation();
         onClick?.();
-        await wait(0);
-        navigateToUpgrade();
+        void wait(0).then(() => navigateToUpgrade());
     };
 
     return (
@@ -55,7 +55,7 @@ export const UpgradeButton: FC<UpgradeButtonProps> = ({
             onClick={handleClick}
             size={buttonSize}
             style={style}
-            {...(!inline && buttonProps)}
+            {...buttonProps}
         >
             {label || c('Action').t`Upgrade`}
             {!hideIcon && <Icon className="ml-2" name="arrow-out-square" size={iconSize} />}
