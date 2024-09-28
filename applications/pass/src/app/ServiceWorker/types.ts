@@ -2,6 +2,7 @@ import type { Action } from 'redux';
 
 import type { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthSession } from '@proton/pass/lib/auth/session';
+import type { SwitchableSession } from '@proton/pass/lib/auth/switch';
 import type { MaybePromise } from '@proton/pass/types';
 
 export type ServiceWorkerMessageBase = {
@@ -23,6 +24,7 @@ export type ServiceWorkerMessage = ServiceWorkerMessageBase &
         | { type: 'lock_deleted'; mode: LockMode }
         | { type: 'locked'; mode: LockMode }
         | { type: 'session'; data: Partial<AuthSession> }
+        | { type: 'sessions_synced'; data: SwitchableSession[] }
         | { type: 'unauthorized' }
     );
 

@@ -42,6 +42,7 @@ type Props = {
     onRegister: () => void;
     renderError: (error: string) => ReactNode;
     renderFooter?: () => ReactNode;
+    renderAccountSwitcher?: () => ReactNode;
 };
 
 export const LobbyContent: FC<Props> = ({
@@ -55,6 +56,7 @@ export const LobbyContent: FC<Props> = ({
     onRegister,
     renderError,
     renderFooter,
+    renderAccountSwitcher,
 }) => {
     const { getOfflineEnabled } = usePassCore();
     const online = useConnectivity();
@@ -163,7 +165,8 @@ export const LobbyContent: FC<Props> = ({
                 </Card>
             )}
 
-            <div className="flex-1 mt-8 flex flex-column gap-2">
+            <div className={clsx('flex-1 flex flex-column gap-2 mt-6')}>
+                {renderAccountSwitcher?.()}
                 {(() => {
                     switch (status) {
                         case AppStatus.MISSING_SCOPE:

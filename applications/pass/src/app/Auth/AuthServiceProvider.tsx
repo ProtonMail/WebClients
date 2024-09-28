@@ -4,7 +4,8 @@ import { useHistory, useRouteMatch } from 'react-router-dom';
 
 import { useServiceWorker } from 'proton-pass-web/app/ServiceWorker/client/ServiceWorkerProvider';
 import { type ServiceWorkerClientMessageHandler } from 'proton-pass-web/app/ServiceWorker/client/client';
-import { createAuthService, getStateKey } from 'proton-pass-web/lib/auth';
+import { createAuthService } from 'proton-pass-web/lib/auth';
+import { getStateKey } from 'proton-pass-web/lib/sessions';
 
 import { useNotifications } from '@proton/components/hooks';
 import useInstance from '@proton/hooks/useInstance';
@@ -14,6 +15,7 @@ import { useCheckConnectivity, useConnectivityRef } from '@proton/pass/component
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { reloadHref } from '@proton/pass/components/Navigation/routing';
 import { type AuthRouteState, isUnauthorizedPath } from '@proton/pass/components/Navigation/routing';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { useContextProxy } from '@proton/pass/hooks/useContextProxy';
@@ -21,7 +23,7 @@ import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhan
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { getConsumeForkParameters } from '@proton/pass/lib/auth/fork';
 import { AppStatusFromLockMode, LockMode, type UnlockDTO } from '@proton/pass/lib/auth/lock/types';
-import { type AuthService } from '@proton/pass/lib/auth/service';
+import type { AuthService } from '@proton/pass/lib/auth/service';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { type MaybeNull } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
@@ -29,6 +31,8 @@ import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { logger } from '@proton/pass/utils/logger';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
+
+import { useAuthSwitch } from './AuthSwitchProvider';
 
 export const AuthServiceContext = createContext<MaybeNull<AuthService>>(null);
 export const useAuthService = createUseContext(AuthServiceContext);
@@ -39,22 +43,23 @@ export const useAuthService = createUseContext(AuthServiceContext);
  * authentication service to an event-bus architecture.. */
 export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
     const { getOfflineEnabled } = usePassCore();
+    const { createNotification } = useNotifications();
+    const { getCurrentLocation } = useNavigation();
     const sw = useServiceWorker();
     const app = useContextProxy(AppStateContext);
     const history = useHistory<MaybeNull<AuthRouteState>>();
     const config = usePassConfig();
     const online = useConnectivityRef();
+    const authSwitch = useAuthSwitch();
     const checkConnectivity = useCheckConnectivity();
-
-    const { createNotification } = useNotifications();
     const enhance = useNotificationEnhancer();
-    const { getCurrentLocation } = useNavigation();
 
     const matchConsumeFork = useRouteMatch(SSO_PATHS.FORK);
 
     const authService = useInstance(() =>
         createAuthService({
             app,
+            authSwitch,
             config,
             history,
             sw,
@@ -90,7 +95,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 });
             } else {
                 await checkConnectivity?.();
-                return authService.init({ forceLock: true });
+                return authService.init({ forceLock: true, forcePersist: true });
             }
         };
 
@@ -101,7 +106,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
         const handleFork: ServiceWorkerClientMessageHandler<'fork'> = ({ userID, localID }) => {
             if (authStore.getUserID() === userID) {
                 authStore.clear();
-                window.location.href = `/u/${localID}?error=fork`;
+                reloadHref(`/u/${localID}?error=fork`);
             }
         };
 

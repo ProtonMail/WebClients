@@ -6,6 +6,9 @@ const contextBridgeApi: ContextBridgeApi = {
     /* clipboard */
     writeToClipboard: (text: string) => ipcRenderer.invoke('clipboard:writeText', text),
 
+    /* routing */
+    navigate: (href: string) => ipcRenderer.invoke('router:navigate', href),
+
     /* secrets */
     canCheckPresence: () => ipcRenderer.invoke('biometrics:canCheckPresence'),
     checkPresence: (reason?: string) => ipcRenderer.invoke('biometrics:checkPresence', reason),

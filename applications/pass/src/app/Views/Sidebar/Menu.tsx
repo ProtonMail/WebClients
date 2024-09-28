@@ -1,13 +1,14 @@
-import { type FC } from 'react';
+import { type FC, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
+import { AccountSwitcherTooltip } from 'proton-pass-web/app/Auth/AccountSwitcher';
 import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
-import { SettingsDropdown } from 'proton-pass-web/app/Views/Settings/SettingsDropdown';
+import { checkAuthSwitch, useAvailableSessions } from 'proton-pass-web/app/Auth/AuthSwitchProvider';
 import { c } from 'ttag';
 
-import { Button, Scroll } from '@proton/atoms';
+import { Button, ButtonLike, Scroll } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
+import { UserPanel } from '@proton/pass/components/Account/UserPanel';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { AdminPanelButton } from '@proton/pass/components/Menu/B2B/AdminPanelButton';
 import { OnboardingButton } from '@proton/pass/components/Menu/B2B/OnboardingButton';
@@ -20,14 +21,14 @@ import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
-import { UpsellRef } from '@proton/pass/constants';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { selectLockMode, selectPassPlan, selectPlanDisplayName, selectUser } from '@proton/pass/store/selectors';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-import clsx from '@proton/utils/clsx';
+
+import { MenuActions } from './MenuActions';
 
 export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const authService = useAuthService();
@@ -37,14 +38,18 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const menu = useMenuItems({ onAction: onToggle });
     const vaultActions = useVaultActions();
 
+    const accountSwitchEnabled = useFeatureFlag(PassFeature.PassAccountSwitchV1);
+    const authSwitchEnabled = useMemo(() => accountSwitchEnabled || checkAuthSwitch(), [accountSwitchEnabled]);
+    const sessions = useAvailableSessions();
+
     const { navigate, filters, matchTrash } = useNavigation();
     const { selectedShareId } = filters;
 
+    const user = useSelector(selectUser);
+    const lockMode = useSelector(selectLockMode);
     const passPlan = useSelector(selectPassPlan);
     const planDisplayName = useSelector(selectPlanDisplayName);
-    const user = useSelector(selectUser);
 
-    const lockMode = useSelector(selectLockMode);
     const canLock = lockMode !== LockMode.NONE;
 
     return (
@@ -68,7 +73,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                 </div>
             </Scroll>
 
-            <div className="flex flex-column flex-nowrap pb-4">
+            <div className="flex flex-column flex-nowrap pb-2">
                 <SecureLinkButton
                     className="rounded"
                     activeClassName="color-primary bg-weak"
@@ -116,27 +121,21 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                     contentClassname="mx-3"
                 />
                 <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
-                <div className="flex items-center justify-space-between shrink-0 flex-nowrap gap-2 mt-2 pl-4 pr-2 mx-3">
-                    <span className={clsx('flex items-center flex-nowrap', isPaidPlan(passPlan) && 'ui-orange')}>
-                        <Icon name="star" className="mr-3 shrink-0" color="var(--interaction-norm)" />
-                        <span className="text-left">
-                            <div className="text-sm text-ellipsis">{user?.Email}</div>
-                            <div
-                                className={clsx('text-sm', org && 'text-ellipsis')}
-                                style={{ color: 'var(--interaction-norm)' }}
-                            >
-                                {planDisplayName}
-                                {passPlan === UserPassPlan.FREE && (
-                                    <>
-                                        {' · '}
-                                        <UpgradeButton upsellRef={UpsellRef.MENU} hideIcon inline />
-                                    </>
-                                )}
-                                {org && ` · ${org.organization.Name}`}
-                            </div>
-                        </span>
-                    </span>
-                    <SettingsDropdown />
+
+                <div className="flex justify-space-between items-center flex-nowrap gap-1 pl-3 pr-5">
+                    <AccountSwitcherTooltip sessions={authSwitchEnabled ? sessions : []}>
+                        {({ anchorRef, toggle }) => (
+                            <ButtonLike ref={anchorRef} onClick={toggle} shape="ghost" className="flex-1" size="small">
+                                <UserPanel
+                                    email={user?.Email ?? ''}
+                                    name={user?.DisplayName ?? ''}
+                                    plan={passPlan}
+                                    planName={planDisplayName}
+                                />
+                            </ButtonLike>
+                        )}
+                    </AccountSwitcherTooltip>
+                    <MenuActions />
                 </div>
             </div>
         </div>

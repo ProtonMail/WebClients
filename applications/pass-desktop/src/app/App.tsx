@@ -3,6 +3,7 @@ import { Router } from 'react-router-dom';
 import { createHashHistory } from 'history';
 import { AppGuard } from 'proton-pass-web/app/AppGuard';
 import { AuthServiceProvider } from 'proton-pass-web/app/Auth/AuthServiceProvider';
+import { AuthSwitchProvider } from 'proton-pass-web/app/Auth/AuthSwitchProvider';
 import { StoreProvider } from 'proton-pass-web/app/Store/StoreProvider';
 import { store } from 'proton-pass-web/app/Store/store';
 import { B2BEvents } from 'proton-pass-web/lib/b2b';
@@ -129,17 +130,19 @@ export const App = () => {
                             >
                                 <Router history={history}>
                                     <NavigationProvider>
-                                        <AuthServiceProvider>
-                                            <StoreProvider>
-                                                <Localized>
-                                                    <AppGuard />
-                                                </Localized>
-                                                <Portal>
-                                                    <ModalsChildren />
-                                                    <NotificationsChildren />
-                                                </Portal>
-                                            </StoreProvider>
-                                        </AuthServiceProvider>
+                                        <AuthSwitchProvider>
+                                            <AuthServiceProvider>
+                                                <StoreProvider>
+                                                    <Localized>
+                                                        <AppGuard />
+                                                    </Localized>
+                                                    <Portal>
+                                                        <ModalsChildren />
+                                                        <NotificationsChildren />
+                                                    </Portal>
+                                                </StoreProvider>
+                                            </AuthServiceProvider>
+                                        </AuthSwitchProvider>
                                     </NavigationProvider>
                                 </Router>
                             </ConnectivityProvider>

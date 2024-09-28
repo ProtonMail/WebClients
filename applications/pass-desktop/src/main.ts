@@ -3,6 +3,7 @@ import logger from 'electron-log/main';
 import { join } from 'path';
 
 import type { MaybeNull } from '@proton/pass/types';
+import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 import { getAppUrlFromApiUrl, getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
@@ -14,6 +15,7 @@ import biometrics from './lib/biometrics';
 import clipboard from './lib/clipboard';
 import { migrateSameSiteCookies, upgradeSameSiteCookies } from './lib/cookies';
 import { ARCH } from './lib/env';
+import navigation from './lib/navigation';
 import { setApplicationMenu } from './menu-view/application-menu';
 import { startup } from './startup';
 import { certificateVerifyProc } from './tls';
@@ -24,8 +26,9 @@ export type PassElectronContext = { window: MaybeNull<BrowserWindow>; quitting: 
 export const ctx: PassElectronContext = { window: null, quitting: false };
 
 biometrics(() => ctx.window);
+navigation(() => ctx.window);
 clipboard();
-startup();
+void startup();
 
 const DOMAIN = getSecondLevelDomain(new URL(config.API_URL).hostname);
 
@@ -248,7 +251,7 @@ app.addListener('web-contents-created', (_, contents) => {
         }
 
         // Open Create account externally
-        if (url.searchParams.has('t')) {
+        if (url.searchParams.has('t') && url.searchParams.get('t') === ForkType.SIGNUP) {
             evt.preventDefault();
             logger.warn(`[will-navigate] openExternal: ${url.toString()}`);
             return shell.openExternal(href).catch(noop);

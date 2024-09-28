@@ -1,31 +1,24 @@
+import { SETTINGS_STORAGE_KEY, getSettingsStorageKey } from 'proton-pass-web/lib/storage';
+
 import { authStore } from '@proton/pass/lib/auth/store';
 import { createSettingsService } from '@proton/pass/lib/settings/service';
 
-export const LEGACY_SETTINGS_KEY = 'settings';
-
-/** Get the appropriate settings key based on the environment
- * and localID. Desktop apps use the `LEGACY_SETTINGS_KEY`. */
-export const getSettingsStorageKey = (localID?: number) =>
-    localID !== undefined && !DESKTOP_BUILD ? `settings::${localID}` : LEGACY_SETTINGS_KEY;
-
+/** Resolving the setting will wipe the non-indexed
+ * `settings` storage when legacy settings still stored. This is
+ * done outside  */
 export const resolveSettings = (): string => {
     const localID = authStore.getLocalID();
+    if (localID === undefined) throw new Error('Missing LocalID');
+
     const settings = localStorage.getItem(getSettingsStorageKey(localID));
+    const legacySettings = localStorage.getItem(SETTINGS_STORAGE_KEY);
 
-    if (!DESKTOP_BUILD) {
-        if (localID === undefined) throw new Error('Missing LocalID');
-
-        /** For web, check for legacy settings and migrate if found */
-        const legacySettings = localStorage.getItem(LEGACY_SETTINGS_KEY);
-
-        if (legacySettings) {
-            localStorage.removeItem(LEGACY_SETTINGS_KEY);
-            return settings ?? legacySettings;
-        }
+    if (legacySettings) {
+        localStorage.removeItem(SETTINGS_STORAGE_KEY);
+        return settings ?? legacySettings;
     }
 
     if (!settings) throw new Error('Settings not found');
-
     return settings;
 };
 
