@@ -1,5 +1,6 @@
 export type ContextBridgeApi = {
     writeToClipboard: (text: string) => Promise<void>;
+    navigate: (href: string) => Promise<void>;
     canCheckPresence: () => Promise<boolean>;
     checkPresence: (reason?: string) => Promise<boolean>;
     getDecryptionKey: (challenge: string) => Promise<Buffer | null>;
