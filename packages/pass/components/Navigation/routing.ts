@@ -120,3 +120,12 @@ const pathMatchesRoute = (path: string, routeTemplate: string): boolean => {
 
 export const isUnauthorizedPath = ({ pathname }: Location): boolean =>
     Object.values(UnauthorizedRoutes).some((route) => pathMatchesRoute(pathname, route));
+
+/** In Electron, direct `location.href` mutations don't work due
+ * to custom URL schemes. We use IPC via the `ContextBridgeApi` to
+ * properly reload the page in desktop builds. For non-desktop,
+ * standard `window.location.href` assignment is used. */
+export const reloadHref = (href: string) => {
+    if (DESKTOP_BUILD) void window?.ctxBridge?.navigate(href);
+    else window.location.href = href;
+};
