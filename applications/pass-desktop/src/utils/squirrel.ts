@@ -29,7 +29,7 @@ export async function handleSquirrelEvents() {
         case SQUIRREL_UPDATED:
             squirrelLogger.info('Updated:', process.argv);
             // During update the path to exe can change. Therefore we want to
-            // update the lnk if they exists.
+            // update the lnk if it exists.
             await handleUpdatedShortcuts();
             break;
         case SQUIRREL_UNINSTALL: {
