@@ -1,5 +1,5 @@
 import type { FormEvent } from 'react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -49,6 +49,14 @@ const prepareLabel = (label: LabelModel) => {
     return label;
 };
 
+const getDefaultLabel = (type: 'label' | 'folder') => ({
+    Name: '',
+    Color: getRandomAccentColor(),
+    Type: type === 'folder' ? LABEL_TYPE.MESSAGE_FOLDER : LABEL_TYPE.MESSAGE_LABEL,
+    ParentID: type === 'folder' ? ROOT_FOLDER : undefined,
+    Notify: type === 'folder' ? 1 : 0,
+});
+
 const EditLabelModal = ({
     label,
     mode = 'create',
@@ -64,30 +72,8 @@ const EditLabelModal = ({
     const api = useApi();
     const [loading, withLoading] = useLoading();
     const { validator, onFormSubmit } = useFormErrors();
-
     const { onClose } = rest;
-
-    const [model, setModel] = useState<LabelModel>(
-        label || {
-            Name: '',
-            Color: getRandomAccentColor(),
-            Type: type === 'folder' ? LABEL_TYPE.MESSAGE_FOLDER : LABEL_TYPE.MESSAGE_LABEL,
-            ParentID: type === 'folder' ? ROOT_FOLDER : undefined,
-            Notify: type === 'folder' ? 1 : 0,
-        }
-    );
-
-    useEffect(() => {
-        setModel(
-            label || {
-                Name: '',
-                Color: getRandomAccentColor(),
-                Type: type === 'folder' ? LABEL_TYPE.MESSAGE_FOLDER : LABEL_TYPE.MESSAGE_LABEL,
-                ParentID: type === 'folder' ? ROOT_FOLDER : undefined,
-                Notify: type === 'folder' ? 1 : 0,
-            }
-        );
-    }, [type]);
+    const [model, setModel] = useState<LabelModel>(label || getDefaultLabel(type));
 
     const handleClose = () => {
         onCloseCustomAction?.();

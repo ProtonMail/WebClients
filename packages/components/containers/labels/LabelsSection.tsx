@@ -41,7 +41,7 @@ function LabelsSection() {
 
     const canCreateLabel = !hasReachedLabelLimit(user, labels);
 
-    const [editLabelProps, setEditLabelModalOpen] = useModalState();
+    const [editLabelProps, setEditLabelModalOpen, renderEditLabelModal] = useModalState();
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
     /**
@@ -111,7 +111,7 @@ function LabelsSection() {
                     </div>
                     {localLabels.length ? <LabelSortableList items={localLabels} onSortEnd={onSortEnd} /> : null}
 
-                    <EditLabelModal {...editLabelProps} type="label" />
+                    {renderEditLabelModal && <EditLabelModal {...editLabelProps} type="label" />}
 
                     {renderUpsellModal && (
                         <LabelsUpsellModal
