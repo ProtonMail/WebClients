@@ -17,7 +17,7 @@ export const ListItem: FC<
         disabled?: boolean;
         subTheme?: SubTheme;
         subTitle: ReactNode;
-        title?: string;
+        title?: ReactNode;
         onClick?: () => void;
     } & ListItemIconProps
 > = ({ onClick, className, title, subTitle, icon, url, disabled, autogrow, subTheme = SubTheme.VIOLET }) => (
