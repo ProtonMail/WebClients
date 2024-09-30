@@ -44,6 +44,16 @@ export enum Actions {
     PublicLinkVisit = 'publicLinkVisit',
     DeleteBookmarkFromSharedWithMe = 'DeleteBookmarkFromSharedWithMe',
     SignUpFlowAndRedirectCompleted = 'signUpFlowAndRedirectCompleted',
+    // onboarding actions
+    OnboardingV2Shown = 'onboardingV2Shown',
+    OnboardingV2InstallMacApp = 'onboardingV2InstallMacApp',
+    OnboardingV2InstallWindowsApp = 'onboardingV2InstallWindowsApp',
+    OnboardingV2InstallSkip = 'onboardingV2InstallSkip',
+    OnboardingV2B2BInvite = 'onboardingV2B2BInvite',
+    OnboardingV2B2BInviteSkip = 'onboardingV2B2BInviteSkip',
+    OnboardingV2UploadFile = 'onboardingV2UploadFile',
+    OnboardingV2UploadFolder = 'onboardingV2UploadFolder',
+    OnboardingV2UploadSkip = 'onboardingV2UploadSkip',
 }
 
 type PerformanceTelemetryAdditionalValues = {
