@@ -10,10 +10,11 @@ import { ExtensionCore } from './ExtensionCore';
 type Props = {
     endpoint: ClientEndpoint;
     children: ReactNode;
+    darkThemeOnly?: boolean;
 };
 
-export const ExtensionRoot: FC<Props> = ({ endpoint, children }) => (
-    <ExtensionCore endpoint={endpoint}>
+export const ExtensionRoot: FC<Props> = ({ endpoint, children, darkThemeOnly }) => (
+    <ExtensionCore endpoint={endpoint} darkThemeOnly={darkThemeOnly}>
         <Icons />
         <NotificationsProvider>
             <ModalsProvider>
