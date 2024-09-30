@@ -18,9 +18,22 @@ import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 import { decryptPassphrase, getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
+import { getIsPublicContext } from '../../utils/getIsPublicContext';
+import { tokenIsValid } from '../../utils/url/token';
 import { linkMetaToEncryptedLink, revisionPayloadToRevision, useDebouncedRequest } from '../_api';
-import { useDriveCrypto } from '../_crypto';
-import { type Share, ShareType, type ShareWithKey, useShare } from '../_shares';
+import type { IntegrityMetrics, VerificationKey } from '../_crypto';
+import { integrityMetrics, useDriveCrypto } from '../_crypto';
+import {
+    type Share,
+    ShareType,
+    type ShareTypeString,
+    type ShareWithKey,
+    getShareTypeString,
+    useDefaultShare,
+    useShare,
+} from '../_shares';
+import { useDirectSharingInfo } from '../_shares/useDirectSharingInfo';
+import { useIsPaid } from '../_user';
 import { useDebouncedFunction } from '../_utils';
 import { decryptExtendedAttributes } from './extendedAttributes';
 import type { DecryptedLink, EncryptedLink, SignatureIssueLocation, SignatureIssues } from './interface';
@@ -64,6 +77,9 @@ export default function useLink() {
     const linksState = useLinksState();
     const { getVerificationKey } = useDriveCrypto();
     const { getSharePrivateKey, getShare } = useShare();
+    const { getDefaultShareAddressEmail } = useDefaultShare();
+    const { getDirectSharingInfo } = useDirectSharingInfo();
+    const isPaid = useIsPaid();
 
     const debouncedRequest = useDebouncedRequest();
     const fetchLink = async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<EncryptedLink> => {
@@ -90,6 +106,10 @@ export default function useLink() {
         getVerificationKey,
         getSharePrivateKey,
         getShare,
+        getDefaultShareAddressEmail,
+        getDirectSharingInfo,
+        isPaid,
+        integrityMetrics,
         CryptoProxy.importPrivateKey
     );
 }
@@ -113,6 +133,10 @@ export function useLinkInner(
     getVerificationKey: ReturnType<typeof useDriveCrypto>['getVerificationKey'],
     getSharePrivateKey: ReturnType<typeof useShare>['getSharePrivateKey'],
     getShare: ReturnType<typeof useShare>['getShare'],
+    getDefaultShareAddressEmail: ReturnType<typeof useDefaultShare>['getDefaultShareAddressEmail'],
+    getDirectSharingInfo: ReturnType<typeof useDirectSharingInfo>['getDirectSharingInfo'],
+    userIsPaid: boolean,
+    integrityMetrics: IntegrityMetrics,
     importPrivateKey: typeof CryptoProxy.importPrivateKey // passed as arg for easier mocking when testing
 ) {
     const debouncedFunction = useDebouncedFunction();
@@ -144,6 +168,58 @@ export function useLinkInner(
         });
     };
 
+    const loadShareTypeString = async (shareId: string): Promise<ShareTypeString> => {
+        return (
+            getShare(new AbortController().signal, shareId)
+                .then(getShareTypeString)
+                // getShare should be fast call as share is already cached by this time.
+                // In case of failure, fallback 'shared' is good assumption as it might
+                // mean some edge case for sharing.
+                // After refactor, this should be handled better.
+                .catch(() => 'shared')
+        );
+    };
+
+    const handleDecryptionError = (shareId: string, encryptedLink: EncryptedLink) => {
+        loadShareTypeString(shareId).then((shareType) => {
+            const options = {
+                isPaid: userIsPaid,
+                createTime: encryptedLink.createTime,
+            };
+            integrityMetrics.nodeDecryptionError(encryptedLink.linkId, shareType, options);
+        });
+    };
+
+    const reportSignatureError = (shareId: string, encryptedLink: EncryptedLink, location: SignatureIssueLocation) => {
+        // This means that the shareId is a token for a public link (bookmarking) and does not need signatureCheck
+        // Exemple:
+        // - shareId: D4TVgdFKidFgQWd5IeXYyegjDNV9KWF1HDwjxZlesUo-Wc2NTL8mUQc6IlYwowznc5vHQkTL4iUbn6K0CorrjQ==
+        // - token: 2NR85F8NSC
+        if (tokenIsValid(shareId)) {
+            return;
+        }
+        loadShareTypeString(shareId).then(async (shareType) => {
+            const email = await getDefaultShareAddressEmail();
+            const verificationKey = {
+                passphrase: 'SignatureEmail',
+                hash: 'NodeKey',
+                name: 'NameSignatureEmail',
+                xattrs: 'SignatureEmail',
+                contentKeyPacket: 'NodeKey',
+                blocks: 'NodeKey',
+                thumbnail: 'NodeKey',
+                manifest: 'NodeKey',
+            }[location] as VerificationKey;
+
+            const options = {
+                isPaid: userIsPaid,
+                createTime: encryptedLink.createTime,
+                addressMatchingDefaultShare: encryptedLink.signatureAddress === email,
+            };
+            integrityMetrics.signatureVerificationError(encryptedLink.linkId, shareType, verificationKey, options);
+        });
+    };
+
     const handleSignatureCheck = (
         shareId: string,
         encryptedLink: EncryptedLink,
@@ -161,6 +237,8 @@ export function useLinkInner(
                     },
                 },
             ]);
+
+            reportSignatureError(shareId, encryptedLink, location);
         }
     };
 
@@ -444,23 +522,34 @@ export function useLinkInner(
     ): Promise<DecryptedLink> => {
         return debouncedFunction(
             async (abortSignal: AbortSignal): Promise<DecryptedLink> => {
-                const namePromise = decryptSigned({
-                    armoredMessage: encryptedLink.name,
-                    privateKey: !encryptedLink.parentLinkId
-                        ? await getSharePrivateKey(abortSignal, shareId)
-                        : await getLinkPrivateKey(abortSignal, shareId, encryptedLink.parentLinkId),
-                    // nameSignatureAddress is missing for some old files.
-                    // Fallback to signatureAddress might result in failed
-                    // signature check, but no one reported it so far so
-                    // we should be good. Important is that user can access
-                    // the file and the verification do not hard fail.
-                    // If we find out that it doesnt work for some user,
-                    // we could skip the verification instead. But the best
-                    // would be to fix it properly in the database.
-                    publicKey: await getVerificationKey(
-                        encryptedLink.nameSignatureAddress || encryptedLink.signatureAddress
-                    ),
-                }).then(({ data, verified }) => ({ name: data, nameVerified: verified }));
+                const namePromise = new Promise<{ name: string; nameVerified: VERIFICATION_STATUS }>(
+                    async (resolve, reject) => {
+                        try {
+                            const privateKey = !encryptedLink.parentLinkId
+                                ? await getSharePrivateKey(abortSignal, shareId)
+                                : await getLinkPrivateKey(abortSignal, shareId, encryptedLink.parentLinkId);
+                            const publicKey = await getVerificationKey(
+                                encryptedLink.nameSignatureAddress || encryptedLink.signatureAddress
+                            );
+                            const { data, verified } = await decryptSigned({
+                                armoredMessage: encryptedLink.name,
+                                privateKey,
+                                // nameSignatureAddress is missing for some old files.
+                                // Fallback to signatureAddress might result in failed
+                                // signature check, but no one reported it so far so
+                                // we should be good. Important is that user can access
+                                // the file and the verification do not hard fail.
+                                // If we find out that it doesnt work for some user,
+                                // we could skip the verification instead. But the best
+                                // would be to fix it properly in the database.
+                                publicKey,
+                            });
+                            resolve({ name: data, nameVerified: verified });
+                        } catch (error) {
+                            reject(error);
+                        }
+                    }
+                );
 
                 const revision = !!revisionId
                     ? await getLinkRevision(abortSignal, { shareId, linkId: encryptedLink.linkId, revisionId })
@@ -509,6 +598,7 @@ export function useLinkInner(
                 const [nameResult, xattrResult] = await Promise.allSettled([namePromise, xattrPromise]);
 
                 if (nameResult.status === 'rejected') {
+                    handleDecryptionError(shareId, encryptedLink);
                     return generateCorruptDecryptedLink(encryptedLink, '�');
                 }
 
@@ -521,16 +611,19 @@ export function useLinkInner(
                     (nameVerified === VERIFICATION_STATUS.NOT_SIGNED &&
                         isAfter(fromUnixTime(encryptedLink.createTime), new Date(2021, 0, 1)))
                 ) {
+                    reportSignatureError(shareId, encryptedLink, 'name');
                     signatureIssues.name = nameVerified;
                 }
 
                 if (xattrResult.status === 'rejected') {
+                    handleDecryptionError(shareId, encryptedLink);
                     return generateCorruptDecryptedLink(encryptedLink, name);
                 }
                 const { fileModifyTimeVerified, fileModifyTime, originalSize, originalDimensions, digests, duration } =
                     xattrResult.value;
 
                 if (fileModifyTimeVerified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                    reportSignatureError(shareId, encryptedLink, 'xattrs');
                     signatureIssues.xattrs = fileModifyTimeVerified;
                 }
 
@@ -538,6 +631,14 @@ export function useLinkInner(
                 const shareResult = !encryptedLink.parentLinkId
                     ? share || (await getShare(abortSignal, shareId))
                     : undefined;
+
+                // Sharing info will only be get in case the share is not own by the current user
+                // Also we only want it in the shared with me root view, so we need to check if parentLinkId is not present
+                // TODO: Improve that as we remove the parentLinkId for now, but it will be present in the future
+                let sharingInfo =
+                    !getIsPublicContext() && encryptedLink.sharingDetails && !encryptedLink.parentLinkId
+                        ? await getDirectSharingInfo(abortSignal, encryptedLink.sharingDetails?.shareId)
+                        : undefined;
 
                 let displayName = name;
                 if (shareResult?.type === ShareType.default) {
@@ -548,6 +649,7 @@ export function useLinkInner(
 
                 return {
                     ...encryptedLink,
+                    ...(sharingInfo ? { sharedOn: sharingInfo.sharedOn, sharedBy: sharingInfo.sharedBy } : undefined),
                     encryptedName: encryptedLink.name,
                     name: displayName,
                     fileModifyTime: fileModifyTime,
@@ -727,6 +829,22 @@ export function useLinkInner(
                 },
             },
         ]);
+
+        const locations = Object.keys(signatureIssues) as SignatureIssueLocation[];
+        if (locations.length) {
+            // Signature issues can have multiple sources.
+            // If the problem comes from NodeKey, its more important,
+            // as that is more serious bug than when it comes from
+            // user key.
+            const hasSignatureIssueForNodeKey = (
+                ['hash', 'contentKeyPacket', 'blocks', 'thumbnail', 'manifest'] as SignatureIssueLocation[]
+            ).some((location) => locations.includes(location));
+            // But if its not due to NodeKey, we take random source
+            // of issue, as it doesnt matter that much.
+            const location = hasSignatureIssueForNodeKey ? 'hash' : locations[0];
+
+            reportSignatureError(shareId, link, location);
+        }
     };
 
     return {

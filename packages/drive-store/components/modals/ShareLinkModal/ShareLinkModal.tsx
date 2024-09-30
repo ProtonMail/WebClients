@@ -136,8 +136,7 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
     };
 
     const handleDeleteLink = async () => {
-        await deleteLink();
-        await deleteShareIfEmpty();
+        await deleteLink(deleteShareIfEmpty);
     };
 
     const renderModalState = () => {

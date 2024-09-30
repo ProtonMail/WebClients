@@ -242,13 +242,7 @@ export const SharedOnCell = ({ item }: { item: SharedWithMeItem }) => {
     const time = item.bookmarkDetails?.createTime || item.sharedOn;
     return (
         <TableCell className="flex items-center m-0 w-1/6" data-testid="column-share-created">
-            {time && (
-                <TimeCell
-                    time={time}
-                    options={item.isBookmark ? { month: 'long', day: 'numeric', year: 'numeric' } : undefined}
-                    sameDayOptions={item.isBookmark ? { month: 'long', day: 'numeric', year: 'numeric' } : undefined}
-                />
-            )}
+            {time && <TimeCell time={time} />}
         </TableCell>
     );
 };

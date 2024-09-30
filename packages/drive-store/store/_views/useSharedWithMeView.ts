@@ -8,23 +8,24 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import type { SortParams } from '../../components/FileBrowser';
 import type { SharedWithMeItem } from '../../components/sections/SharedWithMe/SharedWithMe';
+import { useRedirectToPublicPage } from '../../hooks/util/useRedirectToPublicPage';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
-import { useDriveShareURLBookmarkingFeatureFlag } from '../_bookmarks';
+import { getTokenFromSearchParams } from '../../utils/url/token';
+import { useBookmarksActions, useDriveShareURLBookmarkingFeatureFlag } from '../_bookmarks';
 import { useLink, useLinksListing } from '../_links';
 import { usePendingInvitationsListing } from '../_links/useLinksListing/usePendingInvitationsListing';
 import { useUserSettings } from '../_settings';
 import { useShareInvitation } from '../_shares';
 import { useDirectSharingInfo } from '../_shares/useDirectSharingInfo';
-import { useLoadLinksShareInfo } from '../_shares/useLoadLinksShareInfo';
 import { useVolumesState } from '../_volumes';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder, useSortingWithDefault } from './utils';
 import { sortItemsWithPositions } from './utils/sortItemsWithPositions';
 import type { SortField } from './utils/useSorting';
 
 const DEFAULT_SORT = {
-    sortField: 'name' as SortField,
-    sortOrder: SORT_DIRECTION.ASC,
+    sortField: 'sharedOn' as SortField,
+    sortOrder: SORT_DIRECTION.DESC,
 };
 
 /**
@@ -53,28 +54,22 @@ export default function useSharedWithMeView(shareId: string) {
         updatePendingInvitation,
         loadPendingInvitations,
     } = usePendingInvitationsListing();
+    const { addBookmarkFromPrivateApp } = useBookmarksActions();
+    const { cleanupUrl } = useRedirectToPublicPage();
 
     const loadSharedWithMeLinks = useCallback(async (signal: AbortSignal) => {
         await linksListing.loadLinksSharedWithMeLink(signal);
     }, []); //TODO: No deps params as too much work needed in linksListing
-    const abortSignal = useAbortSignal([]);
-    const { links: sharedLinks, isDecrypting } = linksListing.getCachedSharedWithMeLink(abortSignal);
+    const abortSignalForCache = useAbortSignal([]);
+    const { links: sharedLinks, isDecrypting } = linksListing.getCachedSharedWithMeLink(abortSignalForCache);
     const { links: bookmarksLinks, isDecrypting: isDecryptingBookmarks } =
-        linksListing.getCachedBookmarksLinks(abortSignal);
+        linksListing.getCachedBookmarksLinks(abortSignalForCache);
 
     const cachedSharedLinks = useMemoArrayNoMatterTheOrder(sharedLinks.concat(bookmarksLinks));
 
     const { layout } = useUserSettings();
 
-    const { isLoading: isShareInfoLoading, linksWithShareInfo } = useLoadLinksShareInfo({
-        shareId,
-        links: cachedSharedLinks,
-        areLinksLoading: isDecrypting || isLoading,
-    });
-    const { sortedList, sortParams, setSorting } = useSortingWithDefault(
-        isShareInfoLoading ? cachedSharedLinks : linksWithShareInfo,
-        DEFAULT_SORT
-    );
+    const { sortedList, sortParams, setSorting } = useSortingWithDefault(cachedSharedLinks, DEFAULT_SORT);
 
     const browserItems: SharedWithMeItem[] = sortedList.reduce<SharedWithMeItem[]>((acc, item) => {
         // rootShareId is equivalent of token in this context
@@ -202,16 +197,28 @@ export default function useSharedWithMeView(shareId: string) {
     };
 
     useEffect(() => {
+        const abortController = new AbortController();
         // Even if the user is going into a folder, we keep shared with me items decryption ongoing in the background
         // This is due to issue with how we decrypt stuff, to prevent infinite loop
-        void withLoading(async () => loadSharedWithMeLinks(abortSignal)).catch(sendErrorReport);
-        void withPendingLoading(async () => loadPendingInvitations(abortSignal)).catch(sendErrorReport);
+        void withLoading(async () => loadSharedWithMeLinks(abortController.signal)).catch(sendErrorReport);
+        void withPendingLoading(async () => loadPendingInvitations(abortController.signal)).catch(sendErrorReport);
         if (isDriveShareUrlBookmarkingEnabled) {
-            void withBookmarksLoading(async () => linksListing.loadLinksBookmarks(abortSignal, shareId)).catch(
-                sendErrorReport
-            );
+            void withBookmarksLoading(async () => {
+                // In case the user Sign-up from public page we will add the file to bookmarks and let him on shared-with-me section
+                // For Sign-in with redirection to public page logic, check MainContainer
+                const token = getTokenFromSearchParams();
+                if (token) {
+                    await addBookmarkFromPrivateApp(abortController.signal, { token });
+                }
+                // Cleanup if there any token or redirectToPublic key in search params
+                cleanupUrl();
+                await linksListing.loadLinksBookmarks(abortController.signal, shareId);
+            }).catch(sendErrorReport);
         }
-    }, []);
+        return () => {
+            abortController.abort();
+        };
+    }, [isDriveShareUrlBookmarkingEnabled]);
 
     return {
         layout,
@@ -227,12 +234,6 @@ export default function useSharedWithMeView(shareId: string) {
         },
         acceptPendingInvitation,
         rejectPendingInvitation,
-        isLoading:
-            isLoading ||
-            isPendingLoading ||
-            isDecrypting ||
-            isShareInfoLoading ||
-            isBookmarksLoading ||
-            isDecryptingBookmarks,
+        isLoading: isLoading || isPendingLoading || isDecrypting || isBookmarksLoading || isDecryptingBookmarks,
     };
 }
