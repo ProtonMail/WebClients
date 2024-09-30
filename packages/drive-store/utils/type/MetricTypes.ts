@@ -5,6 +5,12 @@ export enum MetricShareType {
     Shared = 'shared',
 }
 
+export enum MetricSharePublicType {
+    SharedPublic = 'shared_public',
+}
+
+export type MetricShareTypeWithPublic = MetricSharePublicType | MetricShareType;
+
 enum BaseErrorCategory {
     NetworkError = 'network_error',
     ServerError = 'server_error',

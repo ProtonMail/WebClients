@@ -4,12 +4,17 @@ import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 import { decryptPassphrase } from '@proton/shared/lib/keys/drivePassphrase';
 
+import { tokenIsValid } from '../../utils/url/token';
+import type { IntegrityMetrics } from '../_crypto';
 import { ShareType } from '../_shares';
 import { useLinkInner } from './useLink';
 
 jest.mock('@proton/shared/lib/keys/driveKeys');
 
 jest.mock('@proton/shared/lib/keys/drivePassphrase');
+
+jest.mock('../../utils/url/token');
+const mockedTokenIsValid = jest.mocked(tokenIsValid).mockReturnValue(false);
 
 const mockRequest = jest.fn();
 jest.mock('../_api/useDebouncedRequest', () => {
@@ -48,8 +53,13 @@ describe('useLink', () => {
     const mockGetVerificationKey = jest.fn();
     const mockGetSharePrivateKey = jest.fn();
     const mockGetShare = jest.fn();
+    const mockGetDefaultShareAddressEmail = jest.fn();
+    const mockGetDirectSharingInfo = jest.fn();
     const mockDecryptPrivateKey = jest.fn();
+    const mockIntegrityMetricsDecryptionError = jest.fn();
+    const mockIntegrityMetricsSignatureVerificationError = jest.fn();
 
+    const isPaid = false;
     const abortSignal = new AbortController().signal;
 
     let hook: {
@@ -91,6 +101,13 @@ describe('useLink', () => {
                 mockGetVerificationKey,
                 mockGetSharePrivateKey,
                 mockGetShare,
+                mockGetDefaultShareAddressEmail,
+                mockGetDirectSharingInfo,
+                isPaid,
+                {
+                    nodeDecryptionError: mockIntegrityMetricsDecryptionError,
+                    signatureVerificationError: mockIntegrityMetricsSignatureVerificationError,
+                } as unknown as IntegrityMetrics,
                 mockDecryptPrivateKey
             )
         );
@@ -354,6 +371,12 @@ describe('useLink', () => {
                 },
             },
         });
+        mockGetShare.mockImplementation((_, shareId) =>
+            Promise.resolve({
+                shareId,
+                type: ShareType.default,
+            })
+        );
         mockRequest.mockReturnValue({
             ThumbnailBareURL: 'bareUrl',
             ThumbnailToken: 'token',
@@ -376,6 +399,7 @@ describe('useLink', () => {
                 }),
             }),
         ]);
+        expect(mockIntegrityMetricsSignatureVerificationError).toHaveBeenCalled();
     });
 
     describe('decrypts link meta data with signature issues', () => {
@@ -409,6 +433,12 @@ describe('useLink', () => {
                     verified: 2,
                 })
             );
+            mockGetShare.mockImplementation((_, shareId) =>
+                Promise.resolve({
+                    shareId,
+                    type: ShareType.default,
+                })
+            );
 
             await act(async () => {
                 await hook.current.getLink(abortSignal, 'shareId', 'link');
@@ -423,6 +453,33 @@ describe('useLink', () => {
                     }),
                 ]);
             });
+            expect(mockIntegrityMetricsSignatureVerificationError).toHaveBeenCalled();
+        });
+
+        it('should not call integrityMetricsSignature in case this is a bookmark', async () => {
+            mockedTokenIsValid.mockReturnValue(true);
+            // @ts-ignore
+            decryptPassphrase.mockReset();
+            // @ts-ignore
+            decryptPassphrase.mockImplementation(({ armoredPassphrase }) =>
+                Promise.resolve({
+                    decryptedPassphrase: `decPass:${armoredPassphrase}`,
+                    sessionKey: `sessionKey:${armoredPassphrase}`,
+                    verified: 2,
+                })
+            );
+            mockGetShare.mockImplementation((_, shareId) =>
+                Promise.resolve({
+                    shareId,
+                    type: ShareType.default,
+                })
+            );
+
+            await act(async () => {
+                await hook.current.getLink(abortSignal, 'shareId', 'link');
+            });
+
+            expect(mockIntegrityMetricsSignatureVerificationError).not.toHaveBeenCalled();
         });
 
         it('decrypts badly signed hash', async () => {
@@ -433,6 +490,12 @@ describe('useLink', () => {
                 Promise.resolve({ data: `dec:${armoredMessage}`, verified: 2 })
             );
             mockGetVerificationKey.mockReturnValue([]);
+            mockGetShare.mockImplementation((_, shareId) =>
+                Promise.resolve({
+                    shareId,
+                    type: ShareType.default,
+                })
+            );
 
             await act(async () => {
                 await hook.current.getLinkHashKey(abortSignal, 'shareId', 'parent');
@@ -445,6 +508,7 @@ describe('useLink', () => {
                     }),
                 }),
             ]);
+            expect(mockIntegrityMetricsSignatureVerificationError).toHaveBeenCalled();
         });
 
         it('decrypts badly signed name', async () => {
@@ -453,6 +517,12 @@ describe('useLink', () => {
             // @ts-ignore
             decryptSigned.mockImplementation(({ armoredMessage }) =>
                 Promise.resolve({ data: `dec:${armoredMessage}`, verified: 2 })
+            );
+            mockGetShare.mockImplementation((_, shareId) =>
+                Promise.resolve({
+                    shareId,
+                    type: ShareType.default,
+                })
             );
 
             await act(async () => {
@@ -466,6 +536,7 @@ describe('useLink', () => {
                     }),
                 }),
             ]);
+            expect(mockIntegrityMetricsSignatureVerificationError).toHaveBeenCalled();
         });
     });
 });
