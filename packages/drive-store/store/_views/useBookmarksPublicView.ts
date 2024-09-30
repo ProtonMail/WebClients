@@ -5,30 +5,28 @@ import useLoading from '@proton/hooks/useLoading';
 
 import usePublicToken from '../../hooks/drive/usePublicToken';
 import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
-import { usePublicSession } from '../_api';
 import { useDriveShareURLBookmarkingFeatureFlag } from '../_bookmarks';
 import { useBookmarks } from '../_bookmarks/useBookmarks';
-import { usePublicShare } from '../_shares';
+import { usePublicSessionUser } from '../_user';
 
-export const useBookmarksPublicView = (customPassword?: string) => {
-    const { user, isUserLoading } = usePublicShare();
-    const { getSessionInfo } = usePublicSession();
+export interface Props {
+    customPassword?: string;
+}
+
+export const useBookmarksPublicView = ({ customPassword }: Props) => {
     const { listBookmarks, addBookmark } = useBookmarks();
     const [bookmarksTokens, setBookmarksTokens] = useState<Set<string>>(new Set());
-    const [isLoading, withLoading, setIsLoading] = useLoading(true);
+    const [isLoading, withLoading] = useLoading(false);
     const isDriveShareUrlBookmarkingEnabled = useDriveShareURLBookmarkingFeatureFlag();
     const api = useApi();
     const { token, urlPassword } = usePublicToken();
+    const { user, UID } = usePublicSessionUser();
 
     useEffect(() => {
-        if (!user || !isDriveShareUrlBookmarkingEnabled) {
-            setIsLoading(isUserLoading && !user);
+        if (!user || !isDriveShareUrlBookmarkingEnabled || !UID) {
             return;
         }
-        const UID = getSessionInfo()?.sessionUid;
-        if (!UID) {
-            return;
-        }
+
         const abortControler = new AbortController();
         void withLoading(async () => {
             // TODO: We need to find a better way of doing this
@@ -39,7 +37,7 @@ export const useBookmarksPublicView = (customPassword?: string) => {
         return () => {
             abortControler.abort();
         };
-    }, [user, isUserLoading, isDriveShareUrlBookmarkingEnabled]);
+    }, [user, isDriveShareUrlBookmarkingEnabled, UID]);
 
     const isAlreadyBookmarked = useMemo(() => {
         return bookmarksTokens.has(token);
@@ -47,15 +45,14 @@ export const useBookmarksPublicView = (customPassword?: string) => {
 
     const handleAddBookmark = async () => {
         const abortSignal = new AbortController().signal;
-        await addBookmark(abortSignal, { token, urlPassword: urlPassword + customPassword });
+        await addBookmark(abortSignal, { token, urlPassword: urlPassword + (customPassword ?? '') });
         setBookmarksTokens((prevState) => new Set([...prevState, token]));
         countActionWithTelemetry(Actions.AddToBookmark);
     };
 
     return {
-        urlPassword,
         isLoading,
-        isLoggedIn: !!user,
+        customPassword, // We return customPassword to be able to access it easily in the public page
         addBookmark: handleAddBookmark,
         isAlreadyBookmarked,
     };

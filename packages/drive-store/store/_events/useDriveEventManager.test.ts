@@ -1,5 +1,4 @@
-import { act } from 'react-dom/test-utils';
-
+import { act } from '@testing-library/react';
 import type { RenderResult } from '@testing-library/react-hooks';
 import { renderHook } from '@testing-library/react-hooks';
 

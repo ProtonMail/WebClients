@@ -1,20 +1,18 @@
 import { createContext, useContext, useRef, useState } from 'react';
 
-import { useApi } from '@proton/components';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
+import { useApi, useAuthentication } from '@proton/components';
 import metrics from '@proton/metrics';
 import { queryInitSRPHandshake, queryShareURLAuth } from '@proton/shared/lib/api/drive/sharing';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getUIDHeaders, withAuthHeaders } from '@proton/shared/lib/fetch/headers';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 import type { SRPHandshakeInfo } from '@proton/shared/lib/interfaces/drive/sharing';
 import { srpAuth } from '@proton/shared/lib/srp';
+import { formatUser } from '@proton/shared/lib/user/helpers';
 
-import {
-    getLastActivePersistedUserSessionUID,
-    getLastPersistedLocalID,
-} from '../../utils/lastActivePersistedUserSession';
+import { getLastActivePersistedUserSession } from '../../utils/lastActivePersistedUserSession';
 import retryOnError from '../../utils/retryOnError';
 import { hasCustomPassword, hasGeneratedPasswordIncluded, isLegacySharedUrl } from '../_shares';
 import useDebouncedRequest from './useDebouncedRequest';
@@ -42,6 +40,7 @@ function usePublicSessionProvider() {
     const [hasSession, setHasSession] = useState(false);
     const sessionInfo = useRef<SessionInfo>();
     const auth = useAuthentication();
+    const [user, setUser] = useState<UserModel>();
 
     const initHandshake = async (token: string) => {
         /*
@@ -49,16 +48,21 @@ function usePublicSessionProvider() {
             Metrics to be authenticated either needs a persisted session (default, as below) or an access token set in initSession().
             In case you neither have persisted session or access token, you will be 401 Unauthorized to call metrics.
         */
-        const UID = getLastActivePersistedUserSessionUID();
-        if (UID) {
-            metrics.setAuthHeaders(UID);
-        }
-
-        const localID = getLastPersistedLocalID();
-        if (localID !== null) {
-            const resumedSession = await resumeSession({ api, localID });
-            if (resumedSession.keyPassword) {
-                auth.setPassword(resumedSession.keyPassword);
+        const persistedSession = getLastActivePersistedUserSession();
+        if (persistedSession) {
+            try {
+                metrics.setAuthHeaders(persistedSession.UID);
+                const resumedSession = await resumeSession({ api, localID: persistedSession.localID });
+                if (resumedSession) {
+                    auth.setPassword(resumedSession.keyPassword);
+                    auth.setUID(persistedSession.UID);
+                    auth.setLocalID(persistedSession.localID);
+                }
+                setUser(formatUser(resumedSession.User));
+            } catch (e) {
+                // TODO: Probably getLastPersistedLocalID is the source of issue
+                // Investigate why later
+                console.warn('Cannot resume session');
             }
         }
 
@@ -83,7 +87,7 @@ function usePublicSessionProvider() {
             If user is logged-in, re-use the current session UID
             This inform the backend of who is accessing the public session
         */
-        const UID = getLastActivePersistedUserSessionUID();
+        const UID = auth.getUID();
 
         const response = await srpAuth({
             api,
@@ -161,20 +165,13 @@ function usePublicSessionProvider() {
 
     const getSessionInfo = () => sessionInfo.current;
 
-    /*
-     *   If sessionInfo includes accessToken and UID, the customer is not a logged in Proton user
-     *   If sessionInfo includes only UID, the customer is logged in Proton user (cookie based authentification)
-     */
-    const isSessionProtonUser = (): boolean =>
-        Boolean(sessionInfo.current && !sessionInfo.current.accessToken && sessionInfo.current.sessionUid);
-
     return {
+        user,
         hasSession,
         initHandshake,
         initSession,
         request,
         getSessionInfo,
-        isSessionProtonUser,
     };
 }
 

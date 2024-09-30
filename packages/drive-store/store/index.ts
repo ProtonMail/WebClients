@@ -2,7 +2,7 @@ export { DriveProvider, PublicDriveProvider } from './DriveProvider';
 export { useActions, useSharedWithMeActions } from './_actions';
 
 export { usePublicAuth } from './_api';
-export { useActivePing, useGetPublicKeysForEmail } from './_user';
+export { useActivePing, useGetPublicKeysForEmail, usePublicSessionUser } from './_user';
 export { useDriveEventManager } from './_events';
 export { validateLinkNameField, formatLinkName, splitLinkName } from './_links';
 export { useRevisions } from './_revisions';
@@ -19,7 +19,7 @@ export * from './_revisions/interface';
 export * from './_actions/interface';
 export * from './_views';
 export { useSearchLibrary } from './_search';
-export { usePhotos, usePhotosFeatureFlag, usePhotosRecovery, isDecryptedLink } from './_photos';
+export { usePhotos, usePhotosRecovery, isDecryptedLink } from './_photos';
 export * from './_photos/interface';
 export { useDriveShareURLBookmarkingFeatureFlag, useBookmarksActions } from './_bookmarks';
 export * from './_bookmarks/interface';

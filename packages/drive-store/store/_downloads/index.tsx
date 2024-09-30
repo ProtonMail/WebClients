@@ -1,7 +1,6 @@
 import { useUser } from '@proton/components/hooks';
 import { VERIFICATION_STATUS } from '@proton/srp/lib/constants';
 
-import { useUserIfAuthenticated } from '../../hooks/util/useUserIfAuthenticated';
 import { usePublicSession } from '../_api';
 import { DownloadProvider } from './DownloadProvider';
 import { ThumbnailsDownloadProvider } from './ThumbnailDownloadProvider';
@@ -52,8 +51,7 @@ export function DownloadsProvider({ children }: { children: React.ReactNode }) {
 
 export function PublicDownloadsProvider({ children }: { children: React.ReactNode }) {
     const { initDownload, downloadThumbnail } = usePublicDownload();
-    const { getSessionInfo, isSessionProtonUser } = usePublicSession();
-    const { user } = useUserIfAuthenticated(isSessionProtonUser(), getSessionInfo()?.sessionUid);
+    const { user } = usePublicSession();
 
     const downloadThumbnailsCb = async (
         signal: AbortSignal,

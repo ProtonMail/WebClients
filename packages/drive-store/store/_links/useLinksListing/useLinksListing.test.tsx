@@ -47,6 +47,13 @@ jest.mock('../../_events/useDriveEventManager', () => {
     };
 });
 
+jest.mock('../../_crypto/useDriveCrypto', () => {
+    const useDriveCrypto = () => {
+        return {};
+    };
+    return useDriveCrypto;
+});
+
 jest.mock('../../_shares/useShare', () => {
     const useShare = () => {
         return {};

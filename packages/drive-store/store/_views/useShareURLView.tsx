@@ -14,6 +14,7 @@ import type { DecryptedLink } from '../_links';
 import { useLink } from '../_links';
 import type { ShareURL } from '../_shares';
 import { getSharedLink, splitGeneratedAndCustomPassword, useShareActions, useShareUrl } from '../_shares';
+import type useShareMemberView from './useShareMemberView';
 
 const getLoadingMessage = (isLinkLoading: boolean, haveShareUrl: boolean, isFile: boolean) => {
     if (isLinkLoading) {
@@ -218,7 +219,8 @@ export default function useShareURLView(shareId: string, linkId: string) {
         return updatedFields;
     };
 
-    const deleteLink = async () => {
+    // TODO: Remove this parameter when we will have share events
+    const deleteLink = async (deleteIfEmptyCallback: ReturnType<typeof useShareMemberView>['deleteShareIfEmpty']) => {
         if (!link || !shareUrl) {
             return;
         }
@@ -242,6 +244,7 @@ export default function useShareURLView(shareId: string, linkId: string) {
                     });
                 });
             await updateLinkState(abortController.signal);
+            await deleteIfEmptyCallback();
         });
     };
 
