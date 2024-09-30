@@ -10,6 +10,7 @@ import type { ExportOptions } from '@proton/pass/lib/export/types';
 import type { I18nService } from '@proton/pass/lib/i18n/service';
 import type { ImportReaderPayload } from '@proton/pass/lib/import/types';
 import type { MonitorService } from '@proton/pass/lib/monitor/service';
+import type { SettingsService } from '@proton/pass/lib/settings/service';
 import type { ApiState, ClientEndpoint, Maybe, MaybeNull, MaybePromise, OnboardingMessage } from '@proton/pass/types';
 import type { B2BEvent } from '@proton/pass/types/data/b2b';
 import type { TelemetryEvent, TelemetryEventName, TelemetryPlatform } from '@proton/pass/types/data/telemetry';
@@ -31,10 +32,10 @@ export type PassCoreContextValue = {
     locale: string;
     /** PassMonitor service */
     monitor: MonitorService;
+    /** Settings service */
+    settings: SettingsService;
     /** Resolves a users */
     exportData: (options: ExportOptions) => Promise<File>;
-    /** Checks if offline-mode is enabled */
-    getOfflineEnabled?: () => Promise<boolean>;
     /** In the extension: leverage worker communication to generate
      * a token. In the web-app: use the OTP utils in-place */
     generateOTP: UsePeriodOtpCodeOptions['generate'];

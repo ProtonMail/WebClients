@@ -72,6 +72,7 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     endpoint: 'desktop',
     i18n: i18n(locales),
     monitor,
+    settings,
 
     exportData: async (options) => {
         const state = store.getState();
@@ -82,8 +83,6 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     generateOTP: (payload) => (payload.type === 'uri' ? generateTOTPCode(payload.totpUri) : null),
 
     getApiState: api.getState,
-
-    getOfflineEnabled: async () => (await settings.resolve()).offlineEnabled ?? false,
 
     getDomainImage: async (domain, signal) => {
         const url = `${PASS_CONFIG.API_URL}/core/v4/images/logo?Domain=${domain}&Size=32&Mode=light&MaxScaleUpFactor=4`;

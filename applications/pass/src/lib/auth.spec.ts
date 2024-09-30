@@ -56,6 +56,7 @@ describe('AuthService', () => {
             app,
             authSwitch: {} as any,
             config,
+            core: {} as any,
             history,
             sw,
             getOnline,

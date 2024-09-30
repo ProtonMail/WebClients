@@ -58,11 +58,15 @@ export const LobbyContent: FC<Props> = ({
     renderFooter,
     renderAccountSwitcher,
 }) => {
-    const { getOfflineEnabled } = usePassCore();
+    const { settings } = usePassCore();
     const online = useConnectivity();
+    const authStore = useAuthStore();
     const [criticalError, setCriticalError] = useState<Maybe<string>>(undefined);
     const [unlocking, setUnlocking] = useState(false);
     const [offlineEnabled, setOfflineEnabled] = useState<Maybe<boolean>>(undefined);
+
+    const localID = authStore?.getLocalID();
+    const hasExtraPassword = Boolean(authStore?.getExtraPassword());
 
     const stale = clientStale(status);
     const locked = clientSessionLocked(status);
@@ -71,7 +75,6 @@ export const LobbyContent: FC<Props> = ({
     const missingScope = clientMissingScope(status);
     const busy = clientBusy(status);
     const canSignOut = errored || locked || passwordLocked || missingScope;
-    const hasExtraPassword = Boolean(useAuthStore()?.getExtraPassword());
 
     useEffect(() => {
         if (error) return setCriticalError(error);
@@ -85,7 +88,7 @@ export const LobbyContent: FC<Props> = ({
 
     useEffect(() => {
         (async () => {
-            const enabled = (await getOfflineEnabled?.()) ?? false;
+            const enabled = (await settings.resolve(localID))?.offlineEnabled ?? false;
             setOfflineEnabled(enabled);
         })().catch(noop);
     }, [online]);
