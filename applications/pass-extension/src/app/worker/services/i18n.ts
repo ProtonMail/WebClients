@@ -33,10 +33,6 @@ export const createI18nService = () => {
         }),
     });
 
-    WorkerMessageBroker.registerMessage(WorkerMessageType.LOCALE_REQUEST, async () => ({
-        locale: await service.getLocale(),
-    }));
-
     return { ...service, init: () => service.getLocale().then(service.setLocale) };
 };
 
