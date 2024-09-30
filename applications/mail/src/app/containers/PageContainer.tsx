@@ -39,7 +39,7 @@ interface Props {
 const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints }: Props, ref: Ref<HTMLDivElement>) => {
     const [userSettings] = useUserSettings();
     const mailSettings = useMailModel('MailSettings');
-    const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
+    const [mailShortcutsProps, setMailShortcutsModalOpen, renderMailShortcutsModal] = useModalState();
 
     useOpenDrawerOnLoad();
 
@@ -74,7 +74,7 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints 
                     messageID={messageID}
                 />
             </LabelActionsContextProvider>
-            <MailShortcutsModal {...mailShortcutsProps} />
+            {renderMailShortcutsModal && <MailShortcutsModal {...mailShortcutsProps} />}
             <AssistantIframe />
         </PrivateLayout>
     );
