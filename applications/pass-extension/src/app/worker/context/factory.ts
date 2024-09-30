@@ -17,6 +17,7 @@ import { createMonitorService } from 'proton-pass-extension/app/worker/services/
 import { createOnboardingService } from 'proton-pass-extension/app/worker/services/onboarding';
 import { createOTPService } from 'proton-pass-extension/app/worker/services/otp';
 import { createPasskeyService } from 'proton-pass-extension/app/worker/services/passkey';
+import { createSentryService } from 'proton-pass-extension/app/worker/services/sentry';
 import { createSettingsService } from 'proton-pass-extension/app/worker/services/settings';
 import { createStorageService } from 'proton-pass-extension/app/worker/services/storage';
 import { createStoreService } from 'proton-pass-extension/app/worker/services/store';
@@ -88,6 +89,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
             onboarding: createOnboardingService(storage.local, store),
             otp: createOTPService(),
             passkey: createPasskeyService(),
+            sentry: createSentryService(),
             settings: createSettingsService(),
             storage,
             store,
