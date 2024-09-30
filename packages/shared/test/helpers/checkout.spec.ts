@@ -651,7 +651,7 @@ describe('getUsersAndAddons()', () => {
             users: 2,
             viewUsers: 2,
             usersPricing: {
-                [CYCLE.MONTHLY]: 1199,
+                [CYCLE.MONTHLY]: 1190,
                 [CYCLE.YEARLY]: 11988,
                 [CYCLE.TWO_YEARS]: 21576,
             },
@@ -688,7 +688,7 @@ describe('getUsersAndAddons()', () => {
             users: 6,
             viewUsers: 6,
             usersPricing: {
-                [CYCLE.MONTHLY]: 1199,
+                [CYCLE.MONTHLY]: 1190,
                 [CYCLE.YEARLY]: 11988,
                 [CYCLE.TWO_YEARS]: 21576,
             },
@@ -725,7 +725,7 @@ describe('getUsersAndAddons()', () => {
             users: 2,
             viewUsers: 2,
             usersPricing: {
-                [CYCLE.MONTHLY]: 1199,
+                [CYCLE.MONTHLY]: 1190,
                 [CYCLE.YEARLY]: 11988,
                 [CYCLE.TWO_YEARS]: 21576,
             },
@@ -763,7 +763,7 @@ describe('getUsersAndAddons()', () => {
             users: 6,
             viewUsers: 6,
             usersPricing: {
-                [CYCLE.MONTHLY]: 1199,
+                [CYCLE.MONTHLY]: 1190,
                 [CYCLE.YEARLY]: 11988,
                 [CYCLE.TWO_YEARS]: 21576,
             },
