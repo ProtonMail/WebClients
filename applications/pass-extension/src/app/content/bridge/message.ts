@@ -3,14 +3,13 @@ import { waitForPageReady } from '@proton/pass/utils/dom/state';
 import { type Awaiter, awaiter } from '@proton/pass/utils/fp/promises';
 import { error, throwError } from '@proton/pass/utils/fp/throw';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { CLIENT_SCRIPT_READY_EVENT } from '../constants.static';
 import { ALLOWED_MESSAGES, BRIDGE_ABORT, BRIDGE_DISCONNECT, BRIDGE_REQUEST, BRIDGE_RESPONSE } from './constants';
 import type { BridgeMessage, BridgeMessageType, BridgeRequest, BridgeResponse } from './types';
 
 type BridgeState = { connected: boolean; ready: Awaiter<void> };
-export const BRIDGE_INIT_TIMEOUT = 1_500;
+export const BRIDGE_INIT_TIMEOUT = 5_000;
 
 export const createBridgeAbortSignal = (token: string) => ({ token, type: BRIDGE_ABORT });
 export const createBridgeDisconnectSignal = () => ({ type: BRIDGE_DISCONNECT });
@@ -34,8 +33,6 @@ export const isBridgeRequest = (data: any): data is BridgeRequest =>
     data?.type === BRIDGE_REQUEST &&
     ALLOWED_MESSAGES.includes(data?.request?.type);
 
-const bridgeTimeout = () => wait(BRIDGE_INIT_TIMEOUT).then(() => throwError({ name: 'BridgeTimeout' }));
-
 export const createMessageBridge = () => {
     const state: BridgeState = { connected: true, ready: awaiter<void>() };
 
@@ -58,7 +55,21 @@ export const createMessageBridge = () => {
                 state.connected = false;
                 throwError({ name: 'BridgeDisconnected' });
             })
-            .then(() => Promise.race([state.ready, bridgeTimeout()]))
+            .then(() => {
+                const initTimeout = awaiter<void>();
+                const timer = setTimeout(
+                    () => initTimeout.reject(error({ name: 'BridgeTimeout' })),
+                    BRIDGE_INIT_TIMEOUT
+                );
+
+                return Promise.race([
+                    initTimeout,
+                    state.ready.then(() => {
+                        clearTimeout(timer);
+                        initTimeout.resolve();
+                    }),
+                ]);
+            })
             .catch(state.ready.reject);
     };
 
