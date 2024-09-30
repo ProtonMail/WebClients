@@ -40,10 +40,8 @@ export default function FoldersSection() {
     const { call } = useEventManager();
     const api = useApi();
     const { createNotification } = useNotifications();
-
     const canCreateFolder = !hasReachedFolderLimit(user, folders);
-
-    const [editLabelProps, setEditLabelModalOpen] = useModalState();
+    const [editLabelModalProps, setEditLabelModalOpen, renderEditLabelModal] = useModalState();
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
     const handleSortAllFolders = async () => {
@@ -116,7 +114,7 @@ export default function FoldersSection() {
                         </ScrollWrapper>
                     ) : null}
 
-                    <EditLabelModal {...editLabelProps} type="folder" />
+                    {renderEditLabelModal && <EditLabelModal {...editLabelModalProps} type="folder" />}
 
                     {renderUpsellModal && (
                         <LabelsUpsellModal
