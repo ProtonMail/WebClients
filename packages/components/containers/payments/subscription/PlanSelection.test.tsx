@@ -201,20 +201,6 @@ describe('useAccessiblePlans', () => {
     });
 
     it('should render BRL plans if country code is BR', () => {
-        mockUseFlag.mockImplementation((flag: string) => {
-            if (flag === 'WalletPlan') {
-                return false;
-            }
-
-            if (
-                flag === 'VpnSignupRegionalCurrency' ||
-                flag === 'V2SignupRegionalCurrency' ||
-                flag === 'DashboardRegionalCurrency'
-            ) {
-                return true;
-            }
-        });
-
         const plans = [
             ...getTestPlans('USD'),
             ...getTestPlans('CHF'),
@@ -267,20 +253,6 @@ describe('useAccessiblePlans', () => {
     });
 
     it('should render BRL currency option when USD plans are rendered and country code is BR', () => {
-        mockUseFlag.mockImplementation((flag: string) => {
-            if (flag === 'WalletPlan') {
-                return false;
-            }
-
-            if (
-                flag === 'VpnSignupRegionalCurrency' ||
-                flag === 'V2SignupRegionalCurrency' ||
-                flag === 'DashboardRegionalCurrency'
-            ) {
-                return true;
-            }
-        });
-
         const plans = [
             ...getTestPlans('USD'),
             ...getTestPlans('CHF'),
