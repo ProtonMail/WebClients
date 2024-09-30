@@ -56,11 +56,11 @@ export const viewCreationAppStartup = (session: Session) => {
         showView("mail");
     }, delay);
 
-    const debouncedUpdateWindowBounds = debounce(() => saveWindowBounds(mainWindow!), 1000);
-    mainWindow.on("move", debouncedUpdateWindowBounds);
-    mainWindow.on("resize", debouncedUpdateWindowBounds);
-    mainWindow.on("maximize", debouncedUpdateWindowBounds);
-    mainWindow.on("unmaximize", debouncedUpdateWindowBounds);
+    const debouncedSaveWindowBounds = debounce(() => saveWindowBounds(mainWindow!), 1000);
+    mainWindow.on("move", debouncedSaveWindowBounds);
+    mainWindow.on("resize", debouncedSaveWindowBounds);
+    mainWindow.on("maximize", debouncedSaveWindowBounds);
+    mainWindow.on("unmaximize", debouncedSaveWindowBounds);
 
     const updateViewsBounds = () => {
         for (const viewID of Object.keys(browserViewMap) as ViewID[]) {
@@ -72,6 +72,12 @@ export const viewCreationAppStartup = (session: Session) => {
 
     mainWindow.on("maximize", updateViewsBounds);
     mainWindow.on("unmaximize", updateViewsBounds);
+
+    // We need to delay the update until the next tick, otherwise
+    // mainWindow.isFullScreen() value is not correctly updated.
+    const debouncedUpdateViewsBounds = debounce(() => updateViewsBounds(), 0);
+    mainWindow.on("enter-full-screen", debouncedUpdateViewsBounds);
+    mainWindow.on("leave-full-screen", debouncedUpdateViewsBounds);
 
     mainWindow.on("close", (event) => {
         // We don't want to prevent the close event if the update is downloaded
@@ -149,7 +155,9 @@ const createViews = (session: Session) => {
     const config = getConfig();
 
     const mailto = readAndClearMailtoArgs();
-    loadURL("mail", config.url.mail + (mailto ? `/inbox#mailto=${mailto}` : ""));
+    loadURL("mail", config.url.mail + (mailto ? `/inbox#mailto=${mailto}` : "")).then(() => {
+        updateViewBounds("mail");
+    });
 };
 
 const createBrowserWindow = (session: Session) => {
