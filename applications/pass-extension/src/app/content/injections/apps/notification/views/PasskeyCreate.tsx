@@ -60,7 +60,7 @@ const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ form, loading, username
             );
 
             const candidates = response.type === 'success' ? response.items : [];
-            await form.setFieldValue('step', candidates.length > 0 ? 'items' : 'passkey');
+            await form.setFieldValue('step', candidates.length > 0 ? 'select' : 'passkey');
             setItems(candidates);
             onTelemetry(TelemetryEventName.PasskeyCreateDisplay, {}, {});
         };
