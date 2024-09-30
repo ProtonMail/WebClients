@@ -12,6 +12,7 @@ import { ItemIcon, ItemIconIndicators, SafeItemIcon } from '@proton/pass/compone
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { useBulkInFlight } from '@proton/pass/hooks/useBulkInFlight';
+import { useCanDragListItems } from '@proton/pass/hooks/useCanDragListItems';
 import { bulkSelectionIntoArray, concatShareIdItemId } from '@proton/pass/lib/items/item.utils';
 import { matchChunks } from '@proton/pass/lib/search/match-chunks';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
@@ -52,6 +53,7 @@ const ItemsListItemRaw: FC<Props> = ({
     const bulkInFlight = useBulkInFlight(item);
     const loading = optimistic || bulkInFlight;
     const writable = (vault && isWritableVault(vault)) ?? false;
+    const canDrag = useCanDragListItems();
 
     const { handleDragStart, handleDragEnd } = useItemsDraggable(
         emptyArray,
@@ -66,13 +68,13 @@ const ItemsListItemRaw: FC<Props> = ({
         }
     );
 
-    const dragProps = EXTENSION_BUILD
-        ? {}
-        : {
+    const dragProps = canDrag
+        ? {
               draggable: true,
               onDragStart: (event: DragEvent) => handleDragStart(event, { ID: concatShareIdItemId(item) }),
               onDragEnd: handleDragEnd,
-          };
+          }
+        : {};
 
     return (
         <div className={clsx(bulk.enabled && 'px-1 py-0.5')}>
