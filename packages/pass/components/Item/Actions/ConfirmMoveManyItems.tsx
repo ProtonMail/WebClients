@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import { useSelector } from 'react-redux';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import {
     ConfirmationPrompt,
@@ -18,6 +18,7 @@ type Props = ConfirmationPromptHandles & {
 
 export const ConfirmMoveManyItems: FC<Props> = ({ open, selected, shareId, onCancel, onConfirm }) => {
     const hasLinks = Boolean(useSelector(selectSecureLinksByItems(selected)).length);
+    const count = Object.values(selected).reduce((acc, items) => acc + Object.keys(items).length, 0);
 
     return (
         <WithVault shareId={shareId} onFallback={onCancel}>
@@ -26,11 +27,23 @@ export const ConfirmMoveManyItems: FC<Props> = ({ open, selected, shareId, onCan
                     open={open}
                     onConfirm={onConfirm}
                     onCancel={onCancel}
-                    title={c('Title').t`Move items to "${vaultName}"?`}
+                    title={c('Title').ngettext(
+                        msgid`Move ${count} item to ${vaultName}`,
+                        `Move ${count} items to ${vaultName}`,
+                        count
+                    )}
                     message={
                         hasLinks
-                            ? c('Info').t`Moving items to another vault will erase their history and all secure links.`
-                            : c('Info').t`Moving items to another vault will erase their history.`
+                            ? c('Info').ngettext(
+                                  msgid`Moving an item to another vault will erase its history and all secure links.`,
+                                  `Moving items to another vault will erase their history and all secure links.`,
+                                  count
+                              )
+                            : c('Info').ngettext(
+                                  msgid`Moving an item to another vault will erase its history.`,
+                                  `Moving items to another vault will erase their history.`,
+                                  count
+                              )
                     }
                 />
             )}
