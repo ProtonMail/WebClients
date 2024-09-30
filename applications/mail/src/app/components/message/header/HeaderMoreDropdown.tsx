@@ -120,11 +120,12 @@ const HeaderMoreDropdown = ({
     const { Shortcuts } = useMailModel('MailSettings');
     const [CustomExpirationModalProps, openCustomExpirationModal, renderCustomExpirationModal] = useModalState();
 
-    const [messageDetailsModalProps, setMessageDetailsModalOpen] = useModalState();
-    const [messageHeaderModalProps, setMessageHeaderModalOpen] = useModalState();
+    const [messageDetailsModalProps, setMessageDetailsModalOpen, renderMessageDetailsModal] = useModalState();
+    const [messageHeaderModalProps, setMessageHeaderModalOpen, renderMessageHeaderModal] = useModalState();
     const [messagePrintModalProps, setMessagePrintModalOpen, renderPrintModal] = useModalState();
-    const [messagePhishingModalProps, setMessagePhishingModalOpen] = useModalState();
-    const [messagePermanentDeleteModalProps, setMessagePermanentDeleteModalOpen] = useModalState();
+    const [messagePhishingModalProps, setMessagePhishingModalOpen, renderMessagePhishingModal] = useModalState();
+    const [messagePermanentDeleteModalProps, setMessagePermanentDeleteModalOpen, renderMessagePermanentDeleteModal] =
+        useModalState();
     const canExpire = canSetExpiration(feature?.Value, user, message);
     const isStarred = IsMessageStarred(message.data || ({} as Element));
     const messageID = message.data?.ID || '';
@@ -644,17 +645,19 @@ const HeaderMoreDropdown = ({
                     }}
                 </HeaderDropdown>
             </ButtonGroup>
-            <MessageDetailsModal
-                labelID={labelID}
-                message={message}
-                mailSettings={mailSettings}
-                messageViewIcons={messageViewIcons}
-                messageLoaded={messageLoaded}
-                onContactDetails={onContactDetails}
-                onContactEdit={onContactEdit}
-                {...messageDetailsModalProps}
-            />
-            <MessageHeadersModal message={message.data} {...messageHeaderModalProps} />
+            {renderMessageDetailsModal && (
+                <MessageDetailsModal
+                    labelID={labelID}
+                    message={message}
+                    mailSettings={mailSettings}
+                    messageViewIcons={messageViewIcons}
+                    messageLoaded={messageLoaded}
+                    onContactDetails={onContactDetails}
+                    onContactEdit={onContactEdit}
+                    {...messageDetailsModalProps}
+                />
+            )}
+            {renderMessageHeaderModal && <MessageHeadersModal message={message.data} {...messageHeaderModalProps} />}
             {renderPrintModal && (
                 <MessagePrintModal
                     message={message as MessageStateWithData}
@@ -662,11 +665,15 @@ const HeaderMoreDropdown = ({
                     {...messagePrintModalProps}
                 />
             )}
-            <MessagePhishingModal message={message} onBack={onBack} {...messagePhishingModalProps} />
-            <MessagePermanentDeleteModal
-                message={message.data as MessageWithOptionalBody}
-                {...messagePermanentDeleteModalProps}
-            />
+            {renderMessagePhishingModal && (
+                <MessagePhishingModal message={message} onBack={onBack} {...messagePhishingModalProps} />
+            )}
+            {renderMessagePermanentDeleteModal && (
+                <MessagePermanentDeleteModal
+                    message={message.data as MessageWithOptionalBody}
+                    {...messagePermanentDeleteModalProps}
+                />
+            )}
             {moveScheduledModal}
             {moveSnoozedModal}
             {moveToSpamModal}

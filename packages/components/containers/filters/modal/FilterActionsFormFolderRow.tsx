@@ -72,7 +72,7 @@ const FilterActionsFormFolderRow = ({ folders, actions, handleUpdateActions }: P
     const { moveTo } = actions;
     const { isOpen } = moveTo;
 
-    const [editLabelProps, setEditLabelModalOpen] = useModalState();
+    const [editLabelProps, setEditLabelModalOpen, renderEditLabelModal] = useModalState();
 
     const folderOptions = options.map((option) => {
         const { type, text, value, disabled } = option;
@@ -170,7 +170,9 @@ const FilterActionsFormFolderRow = ({ folders, actions, handleUpdateActions }: P
                                 {c('Action').t`Create folder`}
                             </Button>
                         )}
-                        <EditLabelModal {...editLabelProps} onAdd={handleCreateFolder} type="folder" />
+                        {renderEditLabelModal && (
+                            <EditLabelModal {...editLabelProps} onAdd={handleCreateFolder} type="folder" />
+                        )}
                     </div>
                 ) : (
                     renderClosed()
