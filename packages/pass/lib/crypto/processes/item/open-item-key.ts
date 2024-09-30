@@ -1,4 +1,4 @@
-import { decryptData, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import type { ItemKey, ItemKeyResponse, VaultKey } from '@proton/pass/types';
 import { PassEncryptionTag } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
@@ -17,7 +17,7 @@ export const openItemKey = async ({
 
     return {
         raw: itemKey,
-        key: await getSymmetricKey(itemKey),
+        key: await importSymmetricKey(itemKey),
         rotation: KeyRotation,
     };
 };

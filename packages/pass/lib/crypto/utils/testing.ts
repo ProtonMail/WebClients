@@ -6,7 +6,7 @@ import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import { type Address, AddressConfirmationState, type DecryptedKey } from '@proton/shared/lib/interfaces';
 
 import { createVault } from '../processes/vault/create-vault';
-import { generateKey, getSymmetricKey } from './crypto-helpers';
+import { generateKey, importSymmetricKey } from './crypto-helpers';
 
 /* Load Crypto API outside of web workers, for testing purposes.
  * Dynamic import to avoid loading the library unless required */
@@ -146,6 +146,6 @@ export const createRandomShare = <T extends ShareType>(targetType: T): TypedOpen
 
 export const createRandomVaultKey = async (rotation: number): Promise<VaultKey> => {
     const raw = generateKey();
-    const key = await getSymmetricKey(raw);
+    const key = await importSymmetricKey(raw);
     return { key, raw, rotation, userKeyId: undefined };
 };
