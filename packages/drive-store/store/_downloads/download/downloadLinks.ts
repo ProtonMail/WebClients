@@ -1,7 +1,6 @@
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 import type { Api } from '@proton/shared/lib/interfaces';
 
-import { ExperimentGroup, Features, measureFeaturePerformance } from '../../../utils/telemetry';
 import type {
     DownloadCallbacks,
     DownloadStreamControls,
@@ -26,28 +25,20 @@ export default function initDownloadLinks(
     links: LinkDownload[],
     callbacks: DownloadCallbacks,
     log: LogCallback,
-    isNewFolderTreeAlgorithmEnabled: boolean,
     api: Api,
     options?: { virusScan?: boolean }
 ): DownloadStreamControls {
     const folderLoaders: Map<String, FolderTreeLoader> = new Map();
     const concurrentIterator = new ConcurrentIterator();
     const archiveGenerator = new ArchiveGenerator();
-    const measureTotalSizeComputation = measureFeaturePerformance(
-        api,
-        Features.totalSizeComputation,
-        isNewFolderTreeAlgorithmEnabled ? ExperimentGroup.treatment : ExperimentGroup.control
-    );
 
     const cancel = () => {
         Array.from(folderLoaders.values()).forEach((folderLoader) => folderLoader.cancel());
         archiveGenerator.cancel();
         concurrentIterator.cancel();
-        measureTotalSizeComputation.clear();
     };
 
     const start = () => {
-        measureTotalSizeComputation.start();
         // To get link into progresses right away so potentially loader can be displayed.
         callbacks.onProgress?.(
             links.map(({ linkId }) => linkId),
@@ -59,20 +50,15 @@ export default function initDownloadLinks(
             folderLoaders,
             log,
             callbacks.getChildren,
-            isNewFolderTreeAlgorithmEnabled,
             callbacks.onInit,
             callbacks.onSignatureIssue,
             callbacks.onProgress,
             callbacks.onContainsDocument
-        )
-            .then(({ linkSizes }) => {
-                measureTotalSizeComputation.end({ quantity: Object.keys(linkSizes).length });
-            })
-            .catch((err: Error) => {
-                log(`initDownloadLinks => loadTotalSize failed: ${err}`);
-                callbacks.onError?.(err);
-                cancel();
-            });
+        ).catch((err: Error) => {
+            log(`initDownloadLinks => loadTotalSize failed: ${err}`);
+            callbacks.onError?.(err);
+            cancel();
+        });
 
         const linksIterator = iterateAllLinks(links, folderLoaders, callbacks.onContainsDocument);
         const linksWithStreamsIterator = concurrentIterator.iterate(linksIterator, callbacks, log, options);
@@ -102,7 +88,6 @@ function loadTotalSize(
     folderLoaders: Map<String, FolderTreeLoader>,
     log: LogCallback,
     getChildren: GetChildrenCallback,
-    isNewFolderTreeAlgorithmEnabled: boolean,
     onInit?: OnInitCallback,
     onSignatureIssue?: OnSignatureIssueCallback,
     onProgress?: OnProgressCallback,
@@ -117,7 +102,7 @@ function loadTotalSize(
         if (link.isFile) {
             return { size: link.size, linkSizes: Object.fromEntries([[link.linkId, link.size]]) };
         }
-        const folderLoader = new FolderTreeLoader(link, log, isNewFolderTreeAlgorithmEnabled);
+        const folderLoader = new FolderTreeLoader(link, log);
         folderLoaders.set(link.shareId + link.linkId, folderLoader);
         const result = await folderLoader.load(getChildren, onSignatureIssue, onProgress, onContainsDocument);
         result.linkSizes[link.linkId] = result.size;

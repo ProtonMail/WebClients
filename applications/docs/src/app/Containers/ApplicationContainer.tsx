@@ -9,7 +9,7 @@ import { DocumentViewer } from '../Components/DocumentViewer'
 import { CircleLoader } from '@proton/atoms'
 import { c } from 'ttag'
 import { DocumentConverter } from '../Components/DocumentConverter'
-import type { DocumentAction, DriveCompat } from '@proton/drive-store'
+import type { DocumentAction, DriveCompat, NodeMeta } from '@proton/drive-store'
 import { useDriveCompat } from '@proton/drive-store'
 import type { FileToDocConversionResult } from '@proton/docs-core'
 import type { EditorInitializationConfig, FileToDocPendingConversion } from '@proton/docs-shared'
@@ -180,14 +180,14 @@ function Content({
     )
   }
 
-  if (!openAction || openAction.mode === 'create') {
+  if (!openAction || openAction.mode === 'create' || !openAction.volumeId || !openAction.linkId) {
     return (
       <div className="m-auto">{c('Info')
         .jt`No document supplied in URL. Return to ${DRIVE_APP_NAME} and select a document.`}</div>
     )
   }
 
-  const lookup = {
+  const lookup: NodeMeta = {
     volumeId: openAction.volumeId,
     linkId: openAction.linkId,
   }

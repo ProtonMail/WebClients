@@ -181,6 +181,7 @@ export function shareMetaShortToShare(share: ShareMetaShort): Share {
         possibleKeyPackets: (share.PossibleKeyPackets || []).map(({ KeyPacket }) => KeyPacket),
         type: share.Type,
         state: share.State,
+        createTime: share.CreateTime,
     };
 }
 

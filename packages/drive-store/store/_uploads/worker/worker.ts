@@ -111,7 +111,7 @@ async function start(
                 addressPrivateKey,
                 privateKey,
                 sessionKey,
-                (e) => uploadWorker.postNotifySentry(e),
+                (retryHelped) => uploadWorker.notifyVerificationError(retryHelped),
                 hashInstance,
                 verifier,
                 log

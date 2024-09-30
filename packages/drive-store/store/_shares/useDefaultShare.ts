@@ -4,6 +4,7 @@ import { queryUserShares } from '@proton/shared/lib/api/drive/share';
 import type { UserShareResult } from '@proton/shared/lib/interfaces/drive/share';
 
 import { shareMetaShortToShare, useDebouncedRequest } from '../_api';
+import { useDriveCrypto } from '../_crypto';
 import { useDebouncedFunction } from '../_utils';
 import { useVolumesState } from '../_volumes';
 import type { Share, ShareWithKey } from './interface';
@@ -22,6 +23,7 @@ export default function useDefaultShare() {
     const { getShare, getShareWithKey } = useShare();
     const { createVolume } = useVolume();
     const volumesState = useVolumesState();
+    const { getOwnAddressAndPrimaryKeys } = useDriveCrypto();
 
     const loadUserShares = useCallback(async (): Promise<Share[]> => {
         const { Shares } = await debouncedRequest<UserShareResult>(queryUserShares());
@@ -67,6 +69,15 @@ export default function useDefaultShare() {
         [sharesState.getDefaultShareId, getShareWithKey]
     );
 
+    const getDefaultShareAddressEmail = useCallback(
+        async (abortSignal?: AbortSignal): Promise<string> => {
+            const share = await getDefaultShare(abortSignal);
+            const { address } = await getOwnAddressAndPrimaryKeys(share.addressId);
+            return address.Email;
+        },
+        [getDefaultShare]
+    );
+
     const getDefaultPhotosShare = useCallback(
         async (abortSignal?: AbortSignal): Promise<ShareWithKey | undefined> => {
             return debouncedFunction(
@@ -110,6 +121,7 @@ export default function useDefaultShare() {
 
     return {
         getDefaultShare,
+        getDefaultShareAddressEmail,
         getDefaultPhotosShare,
         isShareAvailable,
     };

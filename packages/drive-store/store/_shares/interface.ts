@@ -11,6 +11,10 @@ type WithSRPPayload<T extends any> = T & {
     urlPasswordSalt: string;
 };
 
+// Share type string used in metrics context, do not confuse with ShareType enum.
+export type ShareTypeString = 'main' | 'device' | 'photo' | 'shared';
+export type ShareTypeStringWithPublic = ShareTypeString | 'shared_public';
+
 export enum ShareType {
     default = 1,
     standard,
@@ -35,6 +39,7 @@ export interface Share {
     possibleKeyPackets: string[];
     type: ShareType;
     state: ShareState;
+    createTime: number;
 }
 
 export interface ShareWithKey extends Share {

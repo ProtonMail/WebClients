@@ -5,7 +5,6 @@ import { CryptoProxy } from '@proton/crypto';
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 import { generateContentHash } from '@proton/shared/lib/keys/driveKeys';
 
-import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import ChunkFileReader from '../ChunkFileReader';
 import { MAX_BLOCK_VERIFICATION_RETRIES } from '../constants';
 import type { EncryptedBlock, ThumbnailEncryptedBlock } from '../interface';
@@ -25,7 +24,7 @@ export async function* generateEncryptedBlocks(
     addressPrivateKey: PrivateKeyReference,
     privateKey: PrivateKeyReference,
     sessionKey: SessionKey,
-    postNotifySentry: (e: Error) => void,
+    notifyVerificationError: (retryHelped: boolean) => void,
     hashInstance: ReturnType<typeof sha1.create>,
     verifier: Verifier,
     log: LogCallback
@@ -45,7 +44,7 @@ export async function* generateEncryptedBlocks(
             privateKey,
             sessionKey,
             verifier,
-            postNotifySentry,
+            notifyVerificationError,
             log
         );
     }
@@ -108,7 +107,7 @@ async function encryptBlock(
     privateKey: PrivateKeyReference,
     sessionKey: SessionKey,
     verifyBlock: Verifier,
-    postNotifySentry: (e: Error) => void,
+    notifyVerificationError: (retryHelped: boolean) => void,
     log: LogCallback
 ): Promise<EncryptedBlock> {
     const tryEncrypt = async (retryCount: number): Promise<EncryptedBlock> => {
@@ -134,19 +133,21 @@ async function encryptBlock(
         try {
             verificationToken = await verifyBlock(encryptedData);
         } catch (e) {
-            // Only trace the error to sentry once
-            if (retryCount === 0) {
-                postNotifySentry(new EnrichedError('Verification failed and retried', { extra: { e } }));
-            }
-
             if (retryCount < MAX_BLOCK_VERIFICATION_RETRIES) {
                 log(`Block verification failed, retrying: ${e}`);
                 return tryEncrypt(retryCount + 1);
             }
 
             log(`Block verification failed: ${e}`);
+            notifyVerificationError(false);
             // Give up after max retries reached, something's wrong
             throw new VerificationError({ extra: { e } });
+        }
+
+        // When retry count is higher, verification failed before that
+        // must be reported with info that retry helped.
+        if (retryCount > 0) {
+            notifyVerificationError(true);
         }
 
         // Encrypt the block signature after verification

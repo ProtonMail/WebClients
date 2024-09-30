@@ -137,9 +137,9 @@ type ErrorMessage = {
     error: SafeErrorObject;
 };
 
-type NotifySentryMessage = {
-    command: 'notify_sentry';
-    error: SafeErrorObject;
+type NotifyVerificationError = {
+    command: 'notify_verification_error';
+    retryHelped: boolean;
 };
 
 type HeartbeatMessage = {
@@ -167,7 +167,7 @@ type WorkerEvent = {
         | DoneMessage
         | NetworkErrorMessage
         | ErrorMessage
-        | NotifySentryMessage
+        | NotifyVerificationError
         | HeartbeatMessage
         | WorkerAliveMessage
         | LogMessage;
@@ -188,6 +188,7 @@ interface WorkerControllerHandlers {
     onHeartbeatTimeout: () => void;
     onCancel: () => void;
     notifySentry: (error: Error) => void;
+    notifyVerificationError: (retryHelped: boolean) => void;
 }
 
 /**
@@ -230,8 +231,6 @@ export class UploadWorker {
                             );
                         } catch (e: any) {
                             console.warn(e);
-                            this.postNotifySentry(e);
-
                             this.postError(new RefreshError());
                             return;
                         }
@@ -401,11 +400,11 @@ export class UploadWorker {
         } satisfies ErrorMessage);
     }
 
-    postNotifySentry(error: Error) {
+    notifyVerificationError(retryHelped: boolean) {
         this.worker.postMessage({
-            command: 'notify_sentry',
-            error: getSafeErrorObject(error),
-        } satisfies NotifySentryMessage);
+            command: 'notify_verification_error',
+            retryHelped,
+        } satisfies NotifyVerificationError);
     }
 
     postHeartbeat() {
@@ -462,6 +461,7 @@ export class UploadWorkerController {
             onError,
             onCancel,
             notifySentry,
+            notifyVerificationError,
             onHeartbeatTimeout,
         }: WorkerControllerHandlers
     ) {
@@ -523,9 +523,8 @@ export class UploadWorkerController {
 
                     onError(convertSafeError(data.error));
                     break;
-                case 'notify_sentry':
-                    log(`Notifying Sentry with: ${JSON.stringify(data.error)}`);
-                    notifySentry(convertSafeError(data.error));
+                case 'notify_verification_error':
+                    notifyVerificationError(data.retryHelped);
                     break;
                 case 'heartbeat':
                     log('Got heartbeat');

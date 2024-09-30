@@ -25,7 +25,15 @@ class TransferRetry extends Error {
 export function initUploadFileWorker(
     file: File,
     isForPhotos: boolean,
-    { initialize, createFileRevision, createBlockLinks, getVerificationData, finalize, onError }: UploadCallbacks,
+    {
+        initialize,
+        createFileRevision,
+        createBlockLinks,
+        getVerificationData,
+        finalize,
+        onError,
+        notifyVerificationError,
+    }: UploadCallbacks,
     log: LogCallback
 ): UploadFileControls {
     const abortController = new AbortController();
@@ -106,6 +114,9 @@ export function initUploadFileWorker(
                 },
                 notifySentry: (error: Error) => {
                     sendErrorReport(error);
+                },
+                notifyVerificationError: (retryHelped: boolean) => {
+                    notifyVerificationError(retryHelped);
                 },
                 onCancel: () => {
                     reject(new TransferCancel({ message: `Transfer canceled for ${file.name}` }));
