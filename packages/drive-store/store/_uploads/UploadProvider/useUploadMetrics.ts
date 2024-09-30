@@ -89,8 +89,8 @@ export default function useUploadMetrics(isPaid: boolean, metricsModule = metric
         }
         // Type of error
         metricsModule.drive_upload_errors_total.increment({
-            shareType,
             type: errorCategory,
+            shareType: shareType,
             initiator: 'explicit',
         });
 

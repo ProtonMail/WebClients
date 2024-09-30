@@ -9,6 +9,8 @@ import type { DriveFileRevision } from '../../store';
 import { useContextMenuControls } from '../FileBrowser';
 import { RevisionsItemContextMenu } from './RevisionsItemContextMenu';
 
+import './RevisionListItem.scss';
+
 const RevisionListItem = ({
     revision,
     formatType = 'date',

@@ -3,7 +3,6 @@ import type { ReadableStream } from 'web-streams-polyfill';
 import { querySharedURLFileRevision, querySharedURLSecurity } from '@proton/shared/lib/api/drive/sharing';
 import type { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
 import type { SharedFileScan, SharedURLRevision, ThumbnailURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
-import { useFlag } from '@proton/unleash';
 
 import { usePublicSession } from '../_api';
 import type { DecryptedLink } from '../_links';
@@ -30,8 +29,6 @@ export default function usePublicDownload() {
     const { getLinkPrivateKey, getLinkSessionKey } = useLink();
     const { loadChildren, getCachedChildren } = usePublicLinksListing();
 
-    // TODO: DRVWEB-4064 - Clean this up
-    const isNewFolderTreeAlgorithmEnabled = useFlag('DriveWebDownloadNewFolderLoaderAlgorithm');
     const getChildren = async (abortSignal: AbortSignal, token: string, linkId: string): Promise<DecryptedLink[]> => {
         await loadChildren(abortSignal, token, linkId, false);
         const { links } = getCachedChildren(abortSignal, token, linkId);
@@ -109,7 +106,6 @@ export default function usePublicDownload() {
                 onSignatureIssue: undefined,
             },
             log,
-            isNewFolderTreeAlgorithmEnabled,
             request,
             options
         );
@@ -152,7 +148,6 @@ export default function usePublicDownload() {
                 scanFilesHash,
                 ...eventCallbacks,
             },
-            isNewFolderTreeAlgorithmEnabled,
             request
         );
         const stream = controls.start();
