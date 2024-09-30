@@ -22,6 +22,7 @@ import { Button, CoreButton, Input, Modal } from '../../atoms';
 import { CurrencySelect } from '../../atoms/CurrencySelect';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
 import { ModalSectionHeader } from '../../atoms/ModalSection';
+import { PASSWORD_MANAGER_IGNORE_PROPS } from '../../constants';
 import { useWalletCreation } from '../../hooks/useWalletCreation';
 import type { SubTheme } from '../../utils';
 import { getTermAndConditionsSentence } from '../../utils/legal';
@@ -102,6 +103,7 @@ export const WalletCreationModal = ({ theme, isFirstCreation, onWalletCreate, ..
                             label={c('Wallet setup').t`Name`}
                             id="wallet-name-input"
                             placeholder={c('Wallet setup').t`Give a name to this wallet`}
+                            {...PASSWORD_MANAGER_IGNORE_PROPS}
                             value={walletName}
                             disabled={loadingWalletSubmit}
                             onChange={(event: ChangeEvent<HTMLInputElement>) => {
