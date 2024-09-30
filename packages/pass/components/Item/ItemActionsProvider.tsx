@@ -1,12 +1,20 @@
-import { type FC, type PropsWithChildren, createContext, useContext, useMemo } from 'react';
-import { useDispatch } from 'react-redux';
+import { type FC, type PropsWithChildren, createContext, useCallback, useContext, useMemo } from 'react';
+import { useDispatch, useStore } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
-import { ConfirmDeleteAliases } from '@proton/pass/components/Item/Actions/ConfirmDeleteAliases';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { ConfirmTrashAlias } from '@proton/pass/components/Item/Actions/ConfirmAliasActions';
+import {
+    ConfirmDeleteManyItems,
+    ConfirmMoveManyItems,
+    ConfirmTrashManyItems,
+} from '@proton/pass/components/Item/Actions/ConfirmBulkActions';
+import { ConfirmDeleteItem, ConfirmMoveItem } from '@proton/pass/components/Item/Actions/ConfirmItemActions';
 import { VaultSelect, VaultSelectMode, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
+import { isAliasDisabled, isAliasItem } from '@proton/pass/lib/items/item.predicates';
 import {
     itemBulkDeleteIntent,
     itemBulkMoveIntent,
@@ -17,11 +25,10 @@ import {
     itemRestoreIntent,
     itemTrashIntent,
 } from '@proton/pass/store/actions';
-import type { BulkSelectionDTO, ItemRevision, MaybeNull } from '@proton/pass/types';
+import { selectLoginItemByEmail } from '@proton/pass/store/selectors';
+import type { State } from '@proton/pass/store/types';
+import { type BulkSelectionDTO, type ItemRevision, type MaybeNull, OnboardingMessage } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-
-import { ConfirmMoveItem } from './Actions/ConfirmMoveItem';
-import { ConfirmMoveManyItems } from './Actions/ConfirmMoveManyItems';
 
 /** Ongoing: move every item action definition to this
  * context object. This context should be loosely connected */
@@ -40,49 +47,92 @@ type ItemActionsContextType = {
 const ItemActionsContext = createContext<MaybeNull<ItemActionsContextType>>(null);
 
 export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
-    const dispatch = useDispatch();
+    const core = usePassCore();
     const bulk = useBulkSelect();
+    const dispatch = useDispatch();
+    const store = useStore<State>();
 
     const { closeVaultSelect, openVaultSelect, modalState } = useVaultSelectModalHandles();
 
-    const moveItem = useConfirm((options: { item: ItemRevision; shareId: string }) => {
-        const optimisticId = uniqueId();
-        dispatch(itemMoveIntent({ ...options, optimisticId }));
-    });
+    const moveItem = useConfirm(
+        useCallback(
+            (options: { item: ItemRevision; shareId: string }) =>
+                dispatch(
+                    itemMoveIntent({
+                        ...options,
+                        optimisticId: uniqueId(),
+                    })
+                ),
+            []
+        )
+    );
 
-    const moveManyItems = useConfirm((options: { selected: BulkSelectionDTO; shareId: string }) => {
-        dispatch(itemBulkMoveIntent(options));
-        bulk.disable();
-    });
+    const moveManyItems = useConfirm(
+        useCallback(
+            (options: { selected: BulkSelectionDTO; shareId: string }) => {
+                dispatch(itemBulkMoveIntent(options));
+                bulk.disable();
+            },
+            [bulk]
+        )
+    );
 
-    const trashItem = (item: ItemRevision) => {
-        dispatch(itemTrashIntent({ itemId: item.itemId, shareId: item.shareId, item }));
-    };
+    const trashItem = useConfirm(
+        useCallback(
+            (item: ItemRevision) =>
+                dispatch(
+                    itemTrashIntent({
+                        itemId: item.itemId,
+                        shareId: item.shareId,
+                        item,
+                    })
+                ),
+            []
+        )
+    );
 
-    const trashManyItems = (selected: BulkSelectionDTO) => {
-        dispatch(itemBulkTrashIntent({ selected }));
-        bulk.disable();
-    };
+    const trashManyItems = useConfirm(
+        useCallback((selected: BulkSelectionDTO) => {
+            dispatch(itemBulkTrashIntent({ selected }));
+            bulk.disable();
+        }, [])
+    );
 
-    const deleteItem = (item: ItemRevision) => {
-        dispatch(itemDeleteIntent({ itemId: item.itemId, shareId: item.shareId, item }));
-    };
+    const deleteItem = useConfirm(
+        useCallback((item: ItemRevision) => {
+            dispatch(
+                itemDeleteIntent({
+                    itemId: item.itemId,
+                    shareId: item.shareId,
+                    item,
+                })
+            );
+        }, [])
+    );
 
-    const deleteManyItems = (options: { selected: BulkSelectionDTO }) => {
-        dispatch(itemBulkDeleteIntent(options));
-        bulk.disable();
-    };
+    const deleteManyItems = useConfirm(
+        useCallback((selected: BulkSelectionDTO) => {
+            dispatch(itemBulkDeleteIntent({ selected }));
+            bulk.disable();
+        }, [])
+    );
 
-    const confirmDeleteAliases = useConfirm(deleteManyItems);
+    const restoreItem = useCallback(
+        (item: ItemRevision) =>
+            dispatch(
+                itemRestoreIntent({
+                    itemId: item.itemId,
+                    shareId: item.shareId,
+                    item,
+                })
+            ),
+        []
+    );
 
-    const restoreItem = (item: ItemRevision) => {
-        dispatch(itemRestoreIntent({ itemId: item.itemId, shareId: item.shareId, item }));
-    };
-
-    const restoreManyItems = (selected: BulkSelectionDTO) => {
+    const restoreManyItems = useCallback((selected: BulkSelectionDTO) => {
         dispatch(itemBulkRestoreIntent({ selected }));
         bulk.disable();
-    };
+    }, []);
 
     const context = useMemo<ItemActionsContextType>(() => {
         return {
@@ -104,14 +154,24 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                         closeVaultSelect();
                     },
                 }),
-            moveFromDragAndDrop: (selected, shareId) => {
-                moveManyItems.prompt({ selected, shareId });
+            moveFromDragAndDrop: (selected, shareId) => moveManyItems.prompt({ selected, shareId }),
+            trash: (item) => {
+                if (isAliasItem(item.data)) {
+                    const aliasEmail = item.aliasEmail!;
+                    const relatedLogin = selectLoginItemByEmail(aliasEmail)(store.getState());
+                    if (isAliasDisabled(item) && !relatedLogin) trashItem.call(item);
+                    else {
+                        Promise.resolve(core.onboardingCheck?.(OnboardingMessage.ALIAS_TRASH_CONFIRM) ?? false)
+                            .then((prompt) => (prompt ? trashItem.prompt(item) : trashItem.call(item)))
+                            .catch(() => trashItem.call(item));
+                    }
+                }
+
+                trashItem.call(item);
             },
-            trash: trashItem,
-            trashMany: trashManyItems,
-            delete: deleteItem,
-            deleteMany: (selected) =>
-                bulk.aliasCount ? confirmDeleteAliases.prompt({ selected }) : deleteManyItems({ selected }),
+            trashMany: trashManyItems.prompt,
+            delete: deleteItem.prompt,
+            deleteMany: deleteManyItems.prompt,
             restore: restoreItem,
             restoreMany: restoreManyItems,
         };
@@ -147,11 +207,39 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                 />
             )}
 
-            {confirmDeleteAliases.pending && (
-                <ConfirmDeleteAliases
+            {trashItem.pending && (
+                <ConfirmTrashAlias
                     open
-                    onConfirm={confirmDeleteAliases.confirm}
-                    onCancel={confirmDeleteAliases.cancel}
+                    onCancel={trashItem.cancel}
+                    onConfirm={trashItem.confirm}
+                    item={trashItem.param}
+                />
+            )}
+
+            {trashManyItems.pending && (
+                <ConfirmTrashManyItems
+                    open
+                    onCancel={trashManyItems.cancel}
+                    onConfirm={trashManyItems.confirm}
+                    selected={trashManyItems.param}
+                />
+            )}
+
+            {deleteItem.pending && (
+                <ConfirmDeleteItem
+                    open
+                    onCancel={deleteItem.cancel}
+                    onConfirm={deleteItem.confirm}
+                    item={deleteItem.param}
+                />
+            )}
+
+            {deleteManyItems.pending && (
+                <ConfirmDeleteManyItems
+                    open
+                    onCancel={deleteItem.cancel}
+                    onConfirm={deleteItem.confirm}
+                    selected={deleteManyItems.param}
                 />
             )}
         </ItemActionsContext.Provider>
