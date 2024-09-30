@@ -43,6 +43,7 @@ const SubmenuItems: FC<{ items: MenuItem[] }> = ({ items }) => {
             size="small"
             key={label}
             label={label}
+            title={label}
             icon={icon}
             ref={idx === items.length - 1 ? last : undefined}
         />
