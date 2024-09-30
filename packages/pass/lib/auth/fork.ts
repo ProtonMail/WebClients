@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { ARGON2_PARAMS } from '@proton/crypto/lib';
 import type { TabId } from '@proton/pass/types';
+import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
 import { type Api, AuthMode, type MaybeNull } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -9,7 +10,6 @@ import { pullForkSession, setRefreshCookies as refreshTokens, setCookies } from 
 import { getUser } from '@proton/shared/lib/api/user';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
-import { getKey } from '@proton/shared/lib/authentication/cryptoHelper';
 import { InvalidForkConsumeError } from '@proton/shared/lib/authentication/error';
 import { getForkDecryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
 import { ForkSearchParameters, type ForkType } from '@proton/shared/lib/authentication/fork/constants';
@@ -150,7 +150,7 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<Consumed
             : await (async () => {
                   try {
                       const { payloadVersion, key } = payload;
-                      const clientKey = await getKey(key!);
+                      const clientKey = await importKey(key!);
                       const decryptedBlob = await getForkDecryptedBlob(clientKey, Payload, payloadVersion);
                       if (!decryptedBlob?.keyPassword) throw new Error('Missing `keyPassword`');
 
