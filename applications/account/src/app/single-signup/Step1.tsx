@@ -420,7 +420,7 @@ const Step1 = ({
     const [loadingSignup, withLoadingSignup] = useLoading();
     const [loadingPaymentDetails, withLoadingPaymentDetails] = useLoading();
     const [changingCurrency, withChangingCurrency] = useLoading();
-    const { getAvailableCurrencies } = useCurrencies('vpn');
+    const { getAvailableCurrencies } = useCurrencies();
 
     const showGatewaysForBundlePlan = useFlag('ShowGatewaysForBundlePlan');
 

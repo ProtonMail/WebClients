@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import Badge from '@proton/components/components/badge/Badge';
 import Info from '@proton/components/components/link/Info';
-import { useCurrencies } from '@proton/components/payments/client-extensions';
 import type { FullPlansMap, PaymentMethodStatusExtended } from '@proton/payments';
 import { getAvailableCurrencies } from '@proton/payments';
 import { APPS, PLANS } from '@proton/shared/lib/constants';
@@ -62,7 +61,6 @@ type Props = {
 export const useAvailableCurrenciesForPlan = (plan: Plan | null, subscription: SubscriptionModel) => {
     const [user] = useUser();
     const [paymentStatus] = usePaymentStatus();
-    const { dashboardRegionalCurrencyEnabled } = useCurrencies();
     const [plansResult] = usePlans();
     const plans: Plan[] = plansResult?.plans ?? [];
 
@@ -70,7 +68,6 @@ export const useAvailableCurrenciesForPlan = (plan: Plan | null, subscription: S
         status: paymentStatus,
         subscription,
         user,
-        regionalCurrenciesEnabled: dashboardRegionalCurrencyEnabled,
         plans,
         selectedPlanName: plan?.Name,
     });

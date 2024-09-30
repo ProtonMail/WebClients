@@ -189,7 +189,7 @@ const Step1 = ({
     const accountDetailsRef = useRef<AccountStepDetailsRef>();
     const accountStepPaymentRef = useRef<AccountStepPaymentRef>();
     const theme = usePublicTheme();
-    const { getAvailableCurrencies } = useCurrencies('v2-signup');
+    const { getAvailableCurrencies } = useCurrencies();
 
     const availableCurrencies = getAvailableCurrencies({
         status: model.paymentMethodStatusExtended,

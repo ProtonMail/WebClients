@@ -167,7 +167,7 @@ const SignupContainer = ({
             ignoreHandler: [API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED],
         });
     const { getPaymentsApi } = usePaymentsApi();
-    const { getPreferredCurrency } = useCurrencies('v2-signup');
+    const { getPreferredCurrency } = useCurrencies();
     const paymentsSilentApi = getPaymentsApi(silentApi);
     const getPlans = useGetPlans();
     const getPaymentStatus = useGetPaymentStatus();
