@@ -1,29 +1,30 @@
+import type { ActivationService } from 'proton-pass-extension/app/worker/services/activation';
+import type { AliasService } from 'proton-pass-extension/app/worker/services/alias';
+import type { APIProxyService } from 'proton-pass-extension/app/worker/services/api-proxy';
+import type { AutoFillService } from 'proton-pass-extension/app/worker/services/autofill';
+import type { AutoSaveService } from 'proton-pass-extension/app/worker/services/autosave';
+import type { B2BEventsService } from 'proton-pass-extension/app/worker/services/b2b';
+import type { ExportService } from 'proton-pass-extension/app/worker/services/export';
+import type { FormTrackerService } from 'proton-pass-extension/app/worker/services/form.tracker';
+import type { I18NService } from 'proton-pass-extension/app/worker/services/i18n';
+import type { ImportService } from 'proton-pass-extension/app/worker/services/import';
+import type { InjectionService } from 'proton-pass-extension/app/worker/services/injection';
+import type { LoggerService } from 'proton-pass-extension/app/worker/services/logger';
+import type { OnboardingService } from 'proton-pass-extension/app/worker/services/onboarding';
+import type { OTPService } from 'proton-pass-extension/app/worker/services/otp';
+import type { Passkeyservice } from 'proton-pass-extension/app/worker/services/passkey';
+import type { SentryService } from 'proton-pass-extension/app/worker/services/sentry';
+import type { SettingsService } from 'proton-pass-extension/app/worker/services/settings';
+import type { StorageService } from 'proton-pass-extension/app/worker/services/storage';
+import type { StoreService } from 'proton-pass-extension/app/worker/services/store';
+import type { TelemetryService } from 'proton-pass-extension/app/worker/services/telemetry';
+import type { VaultsService } from 'proton-pass-extension/app/worker/services/vaults';
+
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import type { PassCoreProxy } from '@proton/pass/lib/core/types';
 import type { MonitorService } from '@proton/pass/lib/monitor/service';
 import type { AppState, AppStatus, MaybeNull } from '@proton/pass/types';
-
-import type { ActivationService } from '../services/activation';
-import type { AliasService } from '../services/alias';
-import type { APIProxyService } from '../services/api-proxy';
-import type { AutoFillService } from '../services/autofill';
-import type { AutoSaveService } from '../services/autosave';
-import type { B2BEventsService } from '../services/b2b';
-import type { ExportService } from '../services/export';
-import type { FormTrackerService } from '../services/form.tracker';
-import type { I18NService } from '../services/i18n';
-import type { ImportService } from '../services/import';
-import type { InjectionService } from '../services/injection';
-import type { LoggerService } from '../services/logger';
-import type { OnboardingService } from '../services/onboarding';
-import type { OTPService } from '../services/otp';
-import type { Passkeyservice } from '../services/passkey';
-import type { SettingsService } from '../services/settings';
-import type { StorageService } from '../services/storage';
-import type { StoreService } from '../services/store';
-import type { TelemetryService } from '../services/telemetry';
-import type { VaultsService } from '../services/vaults';
 
 export type WorkerInitOptions = {
     sync?: boolean /* will clear local storage */;
@@ -40,6 +41,7 @@ export interface WorkerContextInterface {
         auth: AuthService;
         autofill: AutoFillService;
         autosave: AutoSaveService;
+        b2bEvents: MaybeNull<B2BEventsService>;
         core: PassCoreProxy;
         export: ExportService;
         formTracker: FormTrackerService;
@@ -51,11 +53,11 @@ export interface WorkerContextInterface {
         onboarding: OnboardingService;
         otp: OTPService;
         passkey: Passkeyservice;
+        sentry: SentryService;
         settings: SettingsService;
         storage: StorageService;
         store: StoreService;
         telemetry: MaybeNull<TelemetryService>;
-        b2bEvents: MaybeNull<B2BEventsService>;
         vaults: VaultsService;
     };
     /* status update : side-effects will be triggered */
