@@ -56,11 +56,11 @@ export const createImageProxyHandler = (api: Api) => async (url: string, signal?
 
             if (err instanceof ApiError) {
                 const { status } = getApiError(err);
-                const res = err.response ?? createEmptyResponse(status);
+                const res = err?.response?.bodyUsed ? createEmptyResponse(err.response) : createEmptyResponse();
 
                 if (status === 422) {
                     const response = new Response('Unprocessable Content', {
-                        status: res.status,
+                        status,
                         statusText: res.statusText,
                         headers: withMaxAgeHeaders(res, CACHED_IMAGE_FALLBACK_MAX_AGE),
                     });
