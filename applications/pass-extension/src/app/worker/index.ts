@@ -11,7 +11,6 @@ import 'proton-pass-extension/lib/utils/polyfills';
 import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
 import { WorkerMessageType } from '@proton/pass/types';
-import sentry from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 
 import WorkerMessageBroker from './channel';
@@ -25,7 +24,7 @@ if (typeof browser !== 'undefined') {
         const globalScope = self as any as ServiceWorkerGlobalScope;
 
         const localeChunks = Object.keys(config.LOCALES).map((locale: string) => `chunk.locales/${locale}-json.js`);
-        const cryptoChunks = ['chunk.crypto-worker-api.js', 'chunk.crypto-argon2.js'];
+        const cryptoChunks = ['chunk.crypto-worker-api.js', 'chunk.crypto-argon2.js', 'chunk.pass-core.js'];
 
         const chunks = localeChunks.concat(cryptoChunks);
 
@@ -54,17 +53,6 @@ if (typeof browser !== 'undefined') {
             setTimeout(() => browser.runtime.reload(), 250);
         }, '[DEV] Reloading runtime');
     }
-
-    sentry({
-        config,
-        sentryConfig: {
-            host: new URL(config.API_URL).host,
-            release: config.APP_VERSION,
-            environment: `browser-pass::worker`,
-        },
-        ignore: () => false,
-        denyUrls: [],
-    });
 
     const context = createWorkerContext(config);
     const { activation } = context.service;
