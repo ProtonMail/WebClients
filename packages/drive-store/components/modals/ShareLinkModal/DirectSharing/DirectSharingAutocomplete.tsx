@@ -80,7 +80,11 @@ export const DirectSharingAutocomplete = ({
                             recipients={recipients}
                             onAddRecipients={(newRecipients) => onAdd(recipientsToInvitees(newRecipients))}
                             className="min-w-5 unstyled"
-                            inputClassName={clsx([!count && 'my-0.5', !!count && 'p-0 rounded-none'])}
+                            inputClassName={clsx([
+                                'outline-none--at-all',
+                                !count && 'my-0.5',
+                                !!count && 'p-0 rounded-none',
+                            ])}
                             placeholder={recipients.length && count ? '' : addressesInputText}
                             data-testid="address-input-field"
                         />
