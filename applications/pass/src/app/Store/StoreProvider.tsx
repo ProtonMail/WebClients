@@ -61,7 +61,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 getAuthStore: () => authStore,
                 getCache: () => getDBCache(authStore.getUserID()),
                 getPollingInterval: () => ACTIVE_POLLING_TIMEOUT,
-                getSettings: settings.resolve,
+                getSettings: () => settings.resolve(authStore.getLocalID()),
                 getTelemetry: () => telemetry,
 
                 onBoot: async (res) => {
@@ -112,7 +112,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                     if (!checkAuthSwitch() && features.PassAccountSwitchV1) enableAuthSwitch();
                 },
 
-                onSettingsUpdated: settings.sync,
+                onSettingsUpdated: (update) => settings.sync(update, authStore.getLocalID()),
 
                 setCache: async (encryptedCache) => {
                     const userID = authStore.getUserID();

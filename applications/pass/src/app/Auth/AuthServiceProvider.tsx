@@ -15,8 +15,7 @@ import { useCheckConnectivity, useConnectivityRef } from '@proton/pass/component
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import { reloadHref } from '@proton/pass/components/Navigation/routing';
-import { type AuthRouteState, isUnauthorizedPath } from '@proton/pass/components/Navigation/routing';
+import { type AuthRouteState, isUnauthorizedPath, reloadHref } from '@proton/pass/components/Navigation/routing';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { useContextProxy } from '@proton/pass/hooks/useContextProxy';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
@@ -42,7 +41,7 @@ export const useAuthService = createUseContext(AuthServiceContext);
  * notifications handler. Ideally this could live outside of react-land by moving the
  * authentication service to an event-bus architecture.. */
 export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
-    const { getOfflineEnabled } = usePassCore();
+    const core = usePassCore();
     const { createNotification } = useNotifications();
     const { getCurrentLocation } = useNavigation();
     const sw = useServiceWorker();
@@ -61,9 +60,9 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             app,
             authSwitch,
             config,
+            core,
             history,
             sw,
-            getOfflineEnabled,
             getOnline: () => online.current,
             onNotification: (notification) =>
                 createNotification(

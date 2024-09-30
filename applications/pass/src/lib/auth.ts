@@ -11,6 +11,7 @@ import { telemetry } from 'proton-pass-web/lib/telemetry';
 
 import type { CreateNotificationOptions } from '@proton/components';
 import type { AppStateContextValue } from '@proton/pass/components/Core/AppStateProvider';
+import type { PassCoreContextValue } from '@proton/pass/components/Core/PassCoreProvider';
 import {
     type AuthRouteState,
     getBootRedirectPath,
@@ -65,9 +66,9 @@ type AuthServiceBindings = {
     app: AppStateContextValue;
     authSwitch: AuthSwitchService;
     config: PassConfig;
+    core: PassCoreContextValue;
     history: History<MaybeNull<AuthRouteState>>;
     sw: MaybeNull<ServiceWorkerClient>;
-    getOfflineEnabled?: () => Promise<boolean>;
     getOnline: () => boolean;
     onNotification: (notification: CreateNotificationOptions) => void;
 };
@@ -76,9 +77,9 @@ export const createAuthService = ({
     app,
     authSwitch,
     config,
+    core,
     history,
     sw,
-    getOfflineEnabled,
     getOnline,
     onNotification,
 }: AuthServiceBindings) => {
@@ -150,7 +151,7 @@ export const createAuthService = ({
                     offline: !getOnline(),
                     offlineConfig: authStore.getOfflineConfig(),
                     offlineVerifier: authStore.getOfflineVerifier(),
-                    offlineEnabled: (await getOfflineEnabled?.()) ?? false,
+                    offlineEnabled: (await core.settings.resolve(localID))?.offlineEnabled ?? false,
                     encryptedOfflineKD: authStore.getEncryptedOfflineKD(),
                 };
 
@@ -347,7 +348,7 @@ export const createAuthService = ({
             }
 
             if ([LockMode.PASSWORD, LockMode.BIOMETRICS].includes(mode)) {
-                const offlineEnabled = (await getOfflineEnabled?.()) ?? false;
+                const offlineEnabled = (await core.settings.resolve(localID))?.offlineEnabled ?? false;
                 if (!getOnline() && offlineEnabled) store.dispatch(bootIntent({ offline: true }));
                 else {
                     /** User may have resumed connection while trying to offline-unlock,
