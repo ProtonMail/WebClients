@@ -56,7 +56,7 @@ import noop from '@proton/utils/noop';
 const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
     height: DropdownSizeUnit.Dynamic,
     maxHeight: '30em',
-    width: `22em`,
+    width: `24em`,
 };
 
 export const MenuDropdown: FC = () => {
@@ -155,6 +155,7 @@ export const MenuDropdown: FC = () => {
                     onClose={close}
                     availablePlacements={verticalPopperPlacements}
                     size={DROPDOWN_SIZE}
+                    style={{ '--custom-max-width': DROPDOWN_SIZE.width }}
                 >
                     <DropdownMenu>
                         <div className="flex items-center justify-space-between flex-nowrap gap-2 py-2 px-4">
