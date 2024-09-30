@@ -30,6 +30,7 @@ type ItemActionsContextType = {
     deleteMany: (items: BulkSelectionDTO) => void;
     move: (item: ItemRevision, mode: VaultSelectMode) => void;
     moveMany: (items: BulkSelectionDTO) => void;
+    moveFromDragAndDrop: (selected: BulkSelectionDTO, shareId: string) => void;
     restore: (item: ItemRevision) => void;
     restoreMany: (items: BulkSelectionDTO) => void;
     trash: (item: ItemRevision) => void;
@@ -103,6 +104,9 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                         closeVaultSelect();
                     },
                 }),
+            moveFromDragAndDrop: (selected, shareId) => {
+                moveManyItems.prompt({ selected, shareId });
+            },
             trash: trashItem,
             trashMany: trashManyItems,
             delete: deleteItem,
