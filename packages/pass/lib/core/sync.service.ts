@@ -1,20 +1,25 @@
+import type { MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
 import type { PassCore, PassCoreService } from './types';
 
-let core: PassCore;
-
 export const createPassCoreSyncService = (): PassCoreService => {
+    let wasmPromise: MaybeNull<Promise<PassCore>> = null;
+
+    const loadWASM = async () =>
+        (wasmPromise = wasmPromise ?? import(/* webpackChunkName: "pass-core" */ '@protontech/pass-rust-core'));
+
     const service: PassCoreService = {
-        exec: (method, ...args) => {
-            if (!core) throw new Error('PassCore not initialized');
-            return (core[method] as any)(...args);
+        exec: async (method, ...args) => {
+            try {
+                const core = await loadWASM();
+                return (core[method] as any)(...args);
+            } catch (err) {
+                logger.warn(`[PassCore] Failed executing ${method}`, err);
+                throw new Error('PassCore not initialized');
+            }
         },
     };
-
-    import('@protontech/pass-rust-core')
-        .then((module) => (core = module))
-        .catch(() => logger.error('Failed loading PassCore'));
 
     return service;
 };
