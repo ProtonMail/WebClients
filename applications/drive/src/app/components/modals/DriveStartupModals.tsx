@@ -14,15 +14,23 @@ import {
 import type { ReminderFlag } from '@proton/components/containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
 import { FeatureCode, useFeature } from '@proton/features';
 import { OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
+import useFlag from '@proton/unleash/useFlag';
 
 import { useDriveDocsFeatureFlag } from '../../store/_documents';
 import DriveDocsOnboardingModal from './DriveDocsOnboardingModal';
 import { DriveOnboardingModal } from './DriveOnboardingModal';
+import { DriveOnboardingV2Modal } from './DriveOnboardingV2Modal';
 
 const DriveStartupModals = () => {
-    // Drive welcome modal
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
-    const showWelcomeModal = !welcomeFlags.isDone;
+    const isOnboardingV2 = useFlag('DriveWebOnboardingV2');
+
+    // Drive onboarding V2
+    const showWelcomeV2Modal = !welcomeFlags.isDone && isOnboardingV2;
+    const [welcomeV2Modal, setWelcomeV2Modal, renderWelcomeV2Modal] = useModalState();
+
+    // Drive welcome modal
+    const showWelcomeModal = !welcomeFlags.isDone && !isOnboardingV2;
     const [welcomeModal, setWelcomeModal, renderWelcomeModal] = useModalState();
 
     // Docs welcome modal
@@ -70,6 +78,7 @@ const DriveStartupModals = () => {
         // Modals by order of priority, top-most will be prioritized
         const modals: [boolean, (value: boolean) => void][] = [
             // Drive modals
+            [showWelcomeV2Modal, setWelcomeV2Modal],
             [showWelcomeModal, setWelcomeModal],
             [showDocsOnboarding, setDocsModal],
             // Account modals
@@ -86,11 +95,19 @@ const DriveStartupModals = () => {
                 break;
             }
         }
-    }, [showWelcomeModal, showDocsOnboarding, showReminderModal, showReferralModal, showLightLabellingFeatureModal]);
+    }, [
+        showWelcomeV2Modal,
+        showWelcomeModal,
+        showDocsOnboarding,
+        showReminderModal,
+        showReferralModal,
+        showLightLabellingFeatureModal,
+    ]);
 
     return (
         <>
             {/* Drive modals */}
+            {renderWelcomeV2Modal && <DriveOnboardingV2Modal {...welcomeV2Modal} />}
             {renderWelcomeModal && <DriveOnboardingModal {...welcomeModal} onDone={setWelcomeFlagsDone} />}
             {renderDocsModal && <DriveDocsOnboardingModal {...docsModal} />}
 

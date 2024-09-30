@@ -1,3 +1,5 @@
+import type { CSSProperties } from 'react';
+
 export type ThemeSvgSize = 'small' | 'medium-wide' | 'medium' | 'large';
 export type ThemeSvgColors = { prominent: string; standard: string; primary: string; weak: string };
 
@@ -5,9 +7,10 @@ interface Props {
     size?: ThemeSvgSize;
     colors: ThemeSvgColors;
     className?: string;
+    style?: CSSProperties;
 }
 
-const ThemeSvg = ({ size = 'medium-wide', colors, className }: Props) => {
+const ThemeSvg = ({ size = 'medium-wide', colors, className, style }: Props) => {
     const dimensions = {
         small: { width: 50, height: 32 },
         'medium-wide': { width: 106, height: 44 },
@@ -19,6 +22,7 @@ const ThemeSvg = ({ size = 'medium-wide', colors, className }: Props) => {
         <svg
             xmlns="http://www.w3.org/2000/svg"
             className={className}
+            style={style}
             fill="none"
             viewBox={`0 0 ${dimensions.width} ${dimensions.height}`}
         >

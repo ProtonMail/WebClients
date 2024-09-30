@@ -87,6 +87,8 @@ enum DriveFeatureFlag {
     // Bookmarks
     DriveShareURLBookmarking = 'DriveShareURLBookmarking',
     DriveShareURLBookmarksDisabled = 'DriveShareURLBookmarksDisabled',
+    // New onboarding
+    DriveWebOnboardingV2 = 'DriveWebOnboardingV2',
     // TODO: DRVWEB-4064 - Clean this up
     DriveWebDownloadNewFolderLoaderAlgorithm = 'DriveWebDownloadNewFolderLoaderAlgorithm',
 }
