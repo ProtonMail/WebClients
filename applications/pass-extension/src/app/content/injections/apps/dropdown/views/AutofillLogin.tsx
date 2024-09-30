@@ -13,11 +13,13 @@ import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
+import { Marks } from '@proton/components';
 import { UpsellRef } from '@proton/pass/constants';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
+import { matchChunks } from '@proton/pass/lib/search/match-chunks';
 import type { MaybeNull } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
@@ -90,30 +92,35 @@ export const AutofillLogin: FC<Props> = ({ domain, startsWith }) => {
                               autogrow
                           />
                       ),
-                      ...filteredItems.map(({ shareId, itemId, userIdentifier, name, url }) => (
-                          <ListItem
-                              key={itemId}
-                              title={name}
-                              subTitle={userIdentifier}
-                              url={settings.loadDomainImages ? url : undefined}
-                              icon="user"
-                              onClick={() =>
-                                  sendMessage.onSuccess(
-                                      contentScriptMessage({
-                                          type: WorkerMessageType.AUTOFILL_LOGIN,
-                                          payload: { shareId, itemId },
-                                      }),
-                                      ({ userIdentifier, password }) => {
-                                          forwardMessage({
-                                              type: IFramePortMessageType.DROPDOWN_AUTOFILL_LOGIN,
-                                              payload: { userIdentifier, password },
-                                          });
-                                          close({ refocus: false });
-                                      }
-                                  )
-                              }
-                          />
-                      )),
+                      ...filteredItems.map(({ shareId, itemId, userIdentifier, name, url }) => {
+                          const nameChunks = matchChunks(name, filter);
+                          const userChunks = matchChunks(userIdentifier, filter);
+
+                          return (
+                              <ListItem
+                                  key={itemId}
+                                  title={<Marks chunks={nameChunks}>{name}</Marks>}
+                                  subTitle={<Marks chunks={userChunks}>{userIdentifier}</Marks>}
+                                  url={settings.loadDomainImages ? url : undefined}
+                                  icon="user"
+                                  onClick={() =>
+                                      sendMessage.onSuccess(
+                                          contentScriptMessage({
+                                              type: WorkerMessageType.AUTOFILL_LOGIN,
+                                              payload: { shareId, itemId },
+                                          }),
+                                          ({ userIdentifier, password }) => {
+                                              forwardMessage({
+                                                  type: IFramePortMessageType.DROPDOWN_AUTOFILL_LOGIN,
+                                                  payload: { userIdentifier, password },
+                                              });
+                                              close({ refocus: false });
+                                          }
+                                      )
+                                  }
+                              />
+                          );
+                      }),
                   ].filter(truthy)
                 : [],
         [state, filter, forwardMessage]
