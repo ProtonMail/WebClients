@@ -35,11 +35,11 @@ export const createAbortResponse = () =>
         headers: { 'Content-Type': 'text/plain' },
     });
 
-export const createEmptyResponse = (status: number = 204) =>
+export const createEmptyResponse = (res?: Response) =>
     new Response('Empty', {
-        status,
-        statusText: 'No content',
-        headers: { 'Content-Type': 'text/plain' },
+        status: res?.status ?? 204,
+        statusText: res?.statusText ?? 'No content',
+        headers: res?.headers ?? { 'Content-Type': 'text/plain' },
     });
 
 /** Service-worker network errors should conform to the
