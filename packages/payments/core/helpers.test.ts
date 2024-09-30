@@ -28,7 +28,6 @@ describe('payments core helpers', () => {
                 getPreferredCurrency({
                     status,
                     paramCurrency: currency,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual(currency);
         });
@@ -43,7 +42,6 @@ describe('payments core helpers', () => {
                 getPreferredCurrency({
                     status,
                     paramCurrency: 'BRL',
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual('BRL');
         });
@@ -58,7 +56,6 @@ describe('payments core helpers', () => {
                 getPreferredCurrency({
                     status,
                     paramCurrency: 'BRL',
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual('EUR');
         });
@@ -83,7 +80,6 @@ describe('payments core helpers', () => {
                         status,
                         paramCurrency: Currency,
                         user,
-                        regionalCurrenciesEnabled: true,
                     })
                 ).toEqual(Currency);
             }
@@ -112,7 +108,6 @@ describe('payments core helpers', () => {
                         paramCurrency: Currency,
                         user,
                         subscription,
-                        regionalCurrenciesEnabled: true,
                     })
                 ).toEqual(Currency);
             }
@@ -137,7 +132,6 @@ describe('payments core helpers', () => {
                 getPreferredCurrency({
                     status,
                     plans,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual('BRL');
         });
@@ -158,7 +152,6 @@ describe('payments core helpers', () => {
                 getPreferredCurrency({
                     status,
                     plans,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual('USD');
         });
@@ -179,12 +172,11 @@ describe('payments core helpers', () => {
                 getPreferredCurrency({
                     status,
                     plans,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual(DEFAULT_CURRENCY);
         });
 
-        it('should return main currency from the plan as a fallback - regional currencies enabled', () => {
+        it('should return main currency from the plan as a fallback', () => {
             const status: PaymentMethodStatusExtended = {
                 CountryCode: 'US',
                 VendorStates: {} as any,
@@ -203,36 +195,9 @@ describe('payments core helpers', () => {
                 getPreferredCurrency({
                     status,
                     plans,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual('USD');
         });
-
-        it('should return main currency from the plan as a fallback - regional currencies disabled', () => {
-            const status: PaymentMethodStatusExtended = {
-                CountryCode: 'US',
-                VendorStates: {} as any,
-            };
-
-            const plans = [
-                {
-                    Currency: 'JPY' as any,
-                },
-                {
-                    Currency: 'USD' as any,
-                },
-            ] as Plan[];
-
-            expect(
-                getPreferredCurrency({
-                    status,
-                    plans,
-                    regionalCurrenciesEnabled: false,
-                })
-            ).toEqual('USD');
-        });
-
-        // user > subscription > plans > default
 
         it('should return the subscription currency if subscription is present', () => {
             const status: PaymentMethodStatusExtended = {
@@ -248,7 +213,6 @@ describe('payments core helpers', () => {
                 getPreferredCurrency({
                     status,
                     subscription,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual('USD');
         });
@@ -277,7 +241,6 @@ describe('payments core helpers', () => {
                     status,
                     plans,
                     subscription,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual('JPY');
         });
@@ -297,7 +260,6 @@ describe('payments core helpers', () => {
                 getPreferredCurrency({
                     status,
                     user,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual('USD');
         });
@@ -317,7 +279,6 @@ describe('payments core helpers', () => {
                 getPreferredCurrency({
                     status,
                     user,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual('BRL');
         });
@@ -338,7 +299,6 @@ describe('payments core helpers', () => {
                 getPreferredCurrency({
                     status,
                     user,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual('USD');
         });
@@ -359,7 +319,6 @@ describe('payments core helpers', () => {
                 getPreferredCurrency({
                     status,
                     user,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual('BRL');
         });
@@ -389,61 +348,8 @@ describe('payments core helpers', () => {
                     status,
                     plans,
                     user,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual('JPY');
-        });
-
-        it('should not return regional currency if regional currencies are disabled and it only available from status', () => {
-            const status: PaymentMethodStatusExtended = {
-                CountryCode: 'BR',
-                VendorStates: {} as any,
-            };
-
-            expect(
-                getPreferredCurrency({
-                    status,
-                    regionalCurrenciesEnabled: false,
-                    subscription: {
-                        Currency: 'USD',
-                    } as Subscription,
-                })
-            ).toEqual('USD');
-        });
-
-        it('should return regional currency if regional currencies are disabled and it is available from subscription', () => {
-            const status: PaymentMethodStatusExtended = {
-                CountryCode: 'BR',
-                VendorStates: {} as any,
-            };
-
-            expect(
-                getPreferredCurrency({
-                    status,
-                    regionalCurrenciesEnabled: false,
-                    subscription: {
-                        Currency: 'BRL',
-                    } as Subscription,
-                })
-            ).toEqual('BRL');
-        });
-
-        it('should return regional currency if regional currencies are disabled and it is available from user', () => {
-            const status: PaymentMethodStatusExtended = {
-                CountryCode: 'BR',
-                VendorStates: {} as any,
-            };
-
-            expect(
-                getPreferredCurrency({
-                    status,
-                    regionalCurrenciesEnabled: false,
-                    user: {
-                        Currency: 'BRL',
-                        isPaid: true,
-                    } as UserModel,
-                })
-            ).toEqual('BRL');
         });
 
         it('should not show regional currencies to inhouse forced users', () => {
@@ -455,7 +361,7 @@ describe('payments core helpers', () => {
             expect(
                 getPreferredCurrency({
                     status,
-                    regionalCurrenciesEnabled: true,
+
                     user: {
                         Currency: 'USD',
                         ChargebeeUser: ChargebeeEnabled.INHOUSE_FORCED,
@@ -487,7 +393,6 @@ describe('payments core helpers', () => {
                     status,
                     plans,
                     paramPlanName: PLANS.VPN_BUSINESS,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual('USD');
         });
@@ -514,7 +419,7 @@ describe('payments core helpers', () => {
                     status,
                     plans,
                     paramPlanName: PLANS.VPN_BUSINESS,
-                    regionalCurrenciesEnabled: true,
+
                     paramCurrency: 'BRL',
                 })
             ).toEqual('USD');
@@ -576,7 +481,6 @@ describe('payments core helpers', () => {
                     user,
                     plans,
                     paramPlanName,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual('EUR');
         });
@@ -592,7 +496,6 @@ describe('payments core helpers', () => {
             expect(
                 getAvailableCurrencies({
                     status,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
@@ -613,7 +516,6 @@ describe('payments core helpers', () => {
                 getAvailableCurrencies({
                     status,
                     plans,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual(['USD', 'EUR', 'CHF']);
         });
@@ -634,7 +536,6 @@ describe('payments core helpers', () => {
                 getAvailableCurrencies({
                     status,
                     plans,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
@@ -653,7 +554,6 @@ describe('payments core helpers', () => {
                 getAvailableCurrencies({
                     status,
                     user,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
@@ -679,7 +579,6 @@ describe('payments core helpers', () => {
                     status,
                     user,
                     plans,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual(['USD', 'EUR', 'CHF']);
         });
@@ -705,7 +604,6 @@ describe('payments core helpers', () => {
                     status,
                     user,
                     plans,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
@@ -724,7 +622,6 @@ describe('payments core helpers', () => {
                 getAvailableCurrencies({
                     status,
                     subscription,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
@@ -750,7 +647,6 @@ describe('payments core helpers', () => {
                     status,
                     subscription,
                     plans,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual(['USD', 'EUR', 'CHF']);
         });
@@ -776,7 +672,6 @@ describe('payments core helpers', () => {
                     status,
                     subscription,
                     plans,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
@@ -795,7 +690,6 @@ describe('payments core helpers', () => {
                 getAvailableCurrencies({
                     status,
                     user,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL', 'ARS']);
         });
@@ -816,7 +710,7 @@ describe('payments core helpers', () => {
                     getAvailableCurrencies({
                         status,
                         user,
-                        regionalCurrenciesEnabled: true,
+
                         paramCurrency: mainCurrencyParam,
                     })
                 ).toEqual(['USD', 'EUR', 'CHF']);
@@ -825,66 +719,6 @@ describe('payments core helpers', () => {
     });
 
     describe('getSupportedRegionalCurrencies', () => {
-        it('should return empty array if regional currencies are disabled', () => {
-            const status: PaymentMethodStatusExtended = {
-                CountryCode: 'BR',
-                VendorStates: {} as any,
-            };
-
-            expect(
-                getSupportedRegionalCurrencies({
-                    status,
-                    user: {
-                        Currency: 'USD' as any,
-                    } as User,
-                    subscription: {
-                        Currency: 'USD',
-                    } as Subscription,
-                    regionalCurrenciesEnabled: false,
-                })
-            ).toEqual([]);
-        });
-
-        it('should return ergional currency if FF is disabled but user already has it', () => {
-            const status: PaymentMethodStatusExtended = {
-                CountryCode: 'BR',
-                VendorStates: {} as any,
-            };
-
-            expect(
-                getSupportedRegionalCurrencies({
-                    status,
-                    user: {
-                        Currency: 'BRL' as any,
-                    } as User,
-                    subscription: {
-                        Currency: 'USD',
-                    } as Subscription,
-                    regionalCurrenciesEnabled: false,
-                })
-            ).toEqual(['BRL']);
-        });
-
-        it('should return ergional currency if FF is disabled but subscription already has it', () => {
-            const status: PaymentMethodStatusExtended = {
-                CountryCode: 'BR',
-                VendorStates: {} as any,
-            };
-
-            expect(
-                getSupportedRegionalCurrencies({
-                    status,
-                    user: {
-                        Currency: 'USD' as any,
-                    } as User,
-                    subscription: {
-                        Currency: 'BRL',
-                    } as Subscription,
-                    regionalCurrenciesEnabled: false,
-                })
-            ).toEqual(['BRL']);
-        });
-
         it('should return empty arre if user inhouse forced', () => {
             const status: PaymentMethodStatusExtended = {
                 CountryCode: 'BR',
@@ -898,12 +732,11 @@ describe('payments core helpers', () => {
                         Currency: 'ARS' as any,
                         ChargebeeUser: ChargebeeEnabled.INHOUSE_FORCED,
                     } as User,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual([]);
         });
 
-        it('should return regional currency if regional currencies are enabled', () => {
+        it('should return regional currency if regional currencies', () => {
             const status: PaymentMethodStatusExtended = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
@@ -912,12 +745,11 @@ describe('payments core helpers', () => {
             expect(
                 getSupportedRegionalCurrencies({
                     status,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual(['BRL']);
         });
 
-        it('should return regional currency if regional currencies are enabled and user has it', () => {
+        it('should return regional currency if user has it', () => {
             const status: PaymentMethodStatusExtended = {
                 CountryCode: 'US',
                 VendorStates: {} as any,
@@ -931,12 +763,11 @@ describe('payments core helpers', () => {
                 getSupportedRegionalCurrencies({
                     status,
                     user,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual(['BRL']);
         });
 
-        it('should return regional currency if regional currencies are enabled and subscription has it', () => {
+        it('should return regional currency if subscription has it', () => {
             const status: PaymentMethodStatusExtended = {
                 CountryCode: 'US',
                 VendorStates: {} as any,
@@ -950,12 +781,11 @@ describe('payments core helpers', () => {
                 getSupportedRegionalCurrencies({
                     status,
                     subscription,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual(['BRL']);
         });
 
-        it('should return regional currency if regional currencies are enabled and plans have it', () => {
+        it('should return regional currency if plans have it', () => {
             const status: PaymentMethodStatusExtended = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
@@ -971,7 +801,6 @@ describe('payments core helpers', () => {
                 getSupportedRegionalCurrencies({
                     status,
                     plans,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual(['BRL']);
         });
@@ -992,7 +821,6 @@ describe('payments core helpers', () => {
                 getSupportedRegionalCurrencies({
                     status,
                     plans,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual([]);
         });
@@ -1013,7 +841,6 @@ describe('payments core helpers', () => {
                 getSupportedRegionalCurrencies({
                     status,
                     plans,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual([]);
         });
@@ -1188,7 +1015,6 @@ describe('payments core helpers', () => {
                     user,
                     subscription,
                     plans,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual(expected);
         });
@@ -1231,7 +1057,6 @@ describe('payments core helpers', () => {
                     user,
                     subscription,
                     plans,
-                    regionalCurrenciesEnabled: true,
                 })
             ).toEqual(['ARS', 'BRL']);
         });
