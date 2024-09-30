@@ -9,9 +9,11 @@ import {
     handleUninstallShortcuts,
     handleUpdatedShortcuts,
     isSquirrelStartup,
+    parseInstallArguments,
     squirrelLogger,
 } from '@proton/shared/lib/squirrel/squirrel';
 
+import { setInstallSource } from '../lib/install-info';
 import { spawnUninstallProcess } from '../uninstallers/windows/squirrel';
 
 export async function handleSquirrelEvents() {
@@ -25,6 +27,7 @@ export async function handleSquirrelEvents() {
         case SQUIRREL_INSTALL:
             squirrelLogger.info('Install:', process.argv);
             await handleInstallShortcuts();
+            setInstallSource(parseInstallArguments(process.argv).source || 'own');
             break;
         case SQUIRREL_UPDATED:
             squirrelLogger.info('Updated:', process.argv);
