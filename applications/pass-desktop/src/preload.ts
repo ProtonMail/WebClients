@@ -16,6 +16,10 @@ const contextBridgeApi: ContextBridgeApi = {
     getSecret: (key: string) => ipcRenderer.invoke('biometrics:getSecret', key),
     setSecret: (key: string, data: string) => ipcRenderer.invoke('biometrics:setSecret', key, data),
     deleteSecret: (key: string) => ipcRenderer.invoke('biometrics:deleteSecret', key),
+
+    /* install info */
+    getInstallInfo: () => ipcRenderer.invoke('installInfo:getInfo'),
+    setInstallSourceReported: () => ipcRenderer.invoke('installInfo:setInstallSourceReported'),
 };
 
 contextBridge.exposeInMainWorld('ctxBridge', contextBridgeApi);

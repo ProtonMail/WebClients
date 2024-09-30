@@ -7,4 +7,6 @@ export type ContextBridgeApi = {
     getSecret: (key: string) => Promise<string>;
     setSecret: (key: string, data: string) => Promise<void>;
     deleteSecret: (key: string) => Promise<void>;
+    getInstallInfo: () => Promise<{ installSource: string | null }>;
+    setInstallSourceReported: () => Promise<void>;
 };
