@@ -125,6 +125,7 @@ const MessageBodyIframe = ({
                 data-subject={message.data?.Subject}
                 sandbox={getIframeSandboxAttributes(isPrint)}
                 allowFullScreen={false}
+                translate="yes"
             />
             {initStatus !== 'start' && (
                 <MessageBodyImages
