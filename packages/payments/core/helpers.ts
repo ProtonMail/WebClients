@@ -96,21 +96,18 @@ export function getSupportedRegionalCurrencies({
     selectedPlanName,
     user,
     subscription,
-    regionalCurrenciesEnabled,
 }: {
     status?: PaymentMethodStatusExtended;
     plans?: Plan[];
     selectedPlanName?: PLANS | ADDON_NAMES;
     user?: User;
     subscription?: Subscription | FreeSubscription;
-    regionalCurrenciesEnabled: boolean;
 }): Currency[] {
     if (user?.ChargebeeUser === ChargebeeEnabled.INHOUSE_FORCED) {
         return [];
     }
 
-    const statusCurrency =
-        !!status && !!regionalCurrenciesEnabled ? mapCountryToRegionalCurrency(status.CountryCode) : undefined;
+    const statusCurrency = !!status ? mapCountryToRegionalCurrency(status.CountryCode) : undefined;
 
     const currencies = [statusCurrency, subscription?.Currency, user?.Currency]
         .filter(isTruthy)
@@ -127,6 +124,7 @@ export function getSupportedRegionalCurrencies({
     return Array.from(new Set(currencies));
 }
 
+export type GetPreferredCurrencyParams = Parameters<typeof getPreferredCurrency>[0];
 export function getPreferredCurrency({
     status,
     plans,
@@ -134,7 +132,6 @@ export function getPreferredCurrency({
     paramPlanName,
     user,
     subscription,
-    regionalCurrenciesEnabled,
     selectedPlan,
 }: {
     status?: PaymentMethodStatusExtended;
@@ -144,10 +141,9 @@ export function getPreferredCurrency({
     paramPlanName?: string;
     user?: UserModel;
     subscription?: Subscription | FreeSubscription;
-    regionalCurrenciesEnabled: boolean;
 }): Currency {
     const statusCurrency =
-        status && regionalCurrenciesEnabled && user?.ChargebeeUser !== ChargebeeEnabled.INHOUSE_FORCED
+        status && user?.ChargebeeUser !== ChargebeeEnabled.INHOUSE_FORCED
             ? mapCountryToRegionalCurrency(status.CountryCode)
             : undefined;
 
@@ -212,7 +208,6 @@ export function getAvailableCurrencies({
     subscription,
     plans,
     selectedPlanName,
-    regionalCurrenciesEnabled,
     paramCurrency,
 }: {
     status?: PaymentMethodStatusExtended;
@@ -220,7 +215,6 @@ export function getAvailableCurrencies({
     subscription?: Subscription | FreeSubscription;
     plans?: Plan[];
     selectedPlanName?: PLANS | ADDON_NAMES;
-    regionalCurrenciesEnabled: boolean;
     paramCurrency?: Currency;
 }): readonly Currency[] {
     if (paramCurrency && isMainCurrency(paramCurrency)) {
@@ -233,7 +227,6 @@ export function getAvailableCurrencies({
         selectedPlanName,
         user,
         subscription,
-        regionalCurrenciesEnabled,
     });
 
     return [...mainCurrencies, ...regionalCurrencies];
