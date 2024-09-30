@@ -1,7 +1,7 @@
 import type { MaybeNull, MaybePromise } from '@proton/pass/types';
 
 export type StorageQuery<T, K extends (keyof T)[]> = Partial<Pick<T, K[number]>>;
-type StorageData = Record<string, any>;
+export type StorageData = Record<string, any>;
 
 export type GetItem<T = StorageData> = <K extends keyof T>(key: K) => Promise<MaybeNull<T[K]>>;
 export type GetItems<T = StorageData, K extends (keyof T)[] = (keyof T)[]> = (keys: K) => Promise<StorageQuery<T, K>>;

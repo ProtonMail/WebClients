@@ -91,7 +91,6 @@ export enum WorkerMessageType {
     FORM_STATUS = 'FORM_STATUS',
     IMPORT_DECRYPT = 'IMPORT_DECRYPT',
     LOAD_CONTENT_SCRIPT = 'LOAD_CONTENT_SCRIPT',
-    LOCALE_REQUEST = 'LOCALE_REQUEST',
     LOCALE_UPDATED = 'LOCALE_UPDATED',
     LOG_EVENT = 'LOG_EVENT',
     LOG_REQUEST = 'LOG_REQUEST',
@@ -163,7 +162,6 @@ export type FormEntryStashMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STA
 export type FormStatusMessage = WithPayload<WorkerMessageType.FORM_STATUS, FormStatusPayload>;
 export type ImportDecryptMessage = WithPayload<WorkerMessageType.IMPORT_DECRYPT, ImportReaderPayload>;
 export type LoadContentScriptMessage = { type: WorkerMessageType.LOAD_CONTENT_SCRIPT };
-export type LocaleRequestMessage = { type: WorkerMessageType.LOCALE_REQUEST };
 export type LocaleUpdatedMessage = WithPayload<WorkerMessageType.LOCALE_UPDATED, { locale: string }>;
 export type LogEventMessage = WithPayload<WorkerMessageType.LOG_EVENT, { log: string }>;
 export type LogRequestMessage = { type: WorkerMessageType.LOG_REQUEST };
@@ -234,7 +232,6 @@ export type WorkerMessage =
     | ImportDecryptMessage
     | WebsiteRulesMessage
     | LoadContentScriptMessage
-    | LocaleRequestMessage
     | LocaleUpdatedMessage
     | LogEventMessage
     | LogRequestMessage
@@ -298,7 +295,6 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.FORM_ENTRY_STAGE]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.IMPORT_DECRYPT]: { payload: ImportReaderPayload };
     [WorkerMessageType.WEBSITE_RULES_REQUEST]: { rules: MaybeNull<ExclusionRules> };
-    [WorkerMessageType.LOCALE_REQUEST]: { locale: string };
     [WorkerMessageType.LOG_REQUEST]: { logs: string[] };
     [WorkerMessageType.MONITOR_2FAS]: { result: UniqueItem[] };
     [WorkerMessageType.MONITOR_WEAK_PASSWORDS]: { result: UniqueItem[] };
