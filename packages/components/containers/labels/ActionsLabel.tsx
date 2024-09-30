@@ -12,8 +12,8 @@ interface Props {
 }
 
 function ActionsLabel({ label }: Props) {
-    const [editLabelProps, setEditLabelModalOpen] = useModalState();
-    const [deleteLabelProps, setDeleteLabelModalOpen] = useModalState();
+    const [editLabelProps, setEditLabelModalOpen, renderEditLabelModal] = useModalState();
+    const [deleteLabelProps, setDeleteLabelModalOpen, renderDeleteLabelModal] = useModalState();
 
     const list = [
         {
@@ -32,8 +32,8 @@ function ActionsLabel({ label }: Props) {
     return (
         <>
             <DropdownActions size="small" list={list} />
-            <EditLabelModal {...editLabelProps} label={label} mode="edition" />
-            <DeleteLabelModal label={label} {...deleteLabelProps} />
+            {renderEditLabelModal && <EditLabelModal {...editLabelProps} label={label} mode="edition" />}
+            {renderDeleteLabelModal && <DeleteLabelModal label={label} {...deleteLabelProps} />}
         </>
     );
 }
