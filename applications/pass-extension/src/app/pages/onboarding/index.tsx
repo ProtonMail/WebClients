@@ -11,7 +11,7 @@ const container = document.getElementById('root');
 const root = createRoot(container!);
 
 root.render(
-    <ExtensionRoot endpoint="page">
+    <ExtensionRoot endpoint="page" darkThemeOnly>
         <ExtensionSetup>
             <Onboarding />
         </ExtensionSetup>

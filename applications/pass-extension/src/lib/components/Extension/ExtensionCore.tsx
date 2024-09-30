@@ -15,7 +15,6 @@ import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCor
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
-import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { getRequestIDHeaders } from '@proton/pass/lib/api/fetch-controller';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
@@ -38,7 +37,11 @@ import type { ParsedUrl } from '@proton/pass/utils/url/types';
 import createStore from '@proton/shared/lib/helpers/store';
 import noop from '@proton/utils/noop';
 
-const getExtensionCoreProps = (endpoint: ClientEndpoint, config: PassConfig): PassCoreProviderProps => {
+const getExtensionCoreProps = (
+    endpoint: ClientEndpoint,
+    config: PassConfig,
+    darkThemeOnly?: boolean
+): PassCoreProviderProps => {
     const messageFactory = resolveMessageFactory(endpoint);
 
     /** Read-only settings service */
@@ -106,15 +109,11 @@ const getExtensionCoreProps = (endpoint: ClientEndpoint, config: PassConfig): Pa
             return fetch(requestUrl, { signal, headers }).then(imageResponsetoDataURL);
         },
 
-        getTheme: () => {
-            /* Always use dark theme for onboarding installation pages */
-            if (window.location.href.includes('/onboarding.html#/')) {
-                return PassThemeOption.PassDark;
-            }
-            return getExtensionLocalStorage<LocalStoreData>()
-                .getItem('settings')
-                .then((setting) => (setting ? JSON.parse(setting)?.theme : PASS_DEFAULT_THEME))
-                .catch(noop);
+        getTheme: async () => {
+            try {
+                /* Always use dark theme for onboarding installation pages */
+                return darkThemeOnly ? PassThemeOption.PassDark : (await settings.resolve()).theme;
+            } catch {}
         },
 
         getLogs: () =>
@@ -192,9 +191,14 @@ const getExtensionCoreProps = (endpoint: ClientEndpoint, config: PassConfig): Pa
     };
 };
 
-export const ExtensionCore: FC<PropsWithChildren<{ endpoint: ClientEndpoint }>> = ({ children, endpoint }) => {
+type Props = {
+    endpoint: ClientEndpoint;
+    darkThemeOnly?: boolean;
+};
+
+export const ExtensionCore: FC<PropsWithChildren<Props>> = ({ children, endpoint, darkThemeOnly }) => {
     const currentTabUrl = useRef<MaybeNull<ParsedUrl>>(null);
-    const coreProps = useMemo(() => getExtensionCoreProps(endpoint, config), []);
+    const coreProps = useMemo(() => getExtensionCoreProps(endpoint, config, darkThemeOnly), []);
     const authStore = useInstance(() => exposeAuthStore(createAuthStore(createStore())));
     const message = resolveMessageFactory(endpoint);
 

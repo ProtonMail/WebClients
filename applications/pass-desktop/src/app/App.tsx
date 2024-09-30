@@ -12,6 +12,7 @@ import { i18n } from 'proton-pass-web/lib/i18n';
 import { logStore } from 'proton-pass-web/lib/logger';
 import { monitor } from 'proton-pass-web/lib/monitor';
 import { onboarding } from 'proton-pass-web/lib/onboarding';
+import { getDefaultLocalID, getPersistedSessions } from 'proton-pass-web/lib/sessions';
 import { settings } from 'proton-pass-web/lib/settings';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 
@@ -34,7 +35,6 @@ import { PassExtensionLink } from '@proton/pass/components/Core/PassExtensionLin
 import { ThemeConnect } from '@proton/pass/components/Layout/Theme/ThemeConnect';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import { api, exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
 import { createImageProxyHandler, imageResponsetoDataURL } from '@proton/pass/lib/api/images';
@@ -95,10 +95,13 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
         return imageResponsetoDataURL(res);
     },
 
-    getTheme: () => {
+    getTheme: async () => {
         try {
-            const settings = localStorage.getItem('settings');
-            return settings ? JSON.parse(settings).theme : PASS_DEFAULT_THEME;
+            // Handle case when authService did not init yet so localID isn't set
+            const { theme } = await settings.resolve(
+                authStore.getLocalID() ?? getDefaultLocalID(getPersistedSessions())
+            );
+            return theme;
         } catch {}
     },
 
