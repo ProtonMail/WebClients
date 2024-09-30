@@ -40,7 +40,6 @@ export default function initDownload(
     links: LinkDownload[],
     callbacks: DownloadCallbacks,
     log: LogCallback,
-    isNewFolderTreeAlgorithmEnabled: boolean,
     api: Api,
     options?: { virusScan?: boolean }
 ): DownloadControls {
@@ -103,7 +102,6 @@ export default function initDownload(
             },
         },
         log,
-        isNewFolderTreeAlgorithmEnabled,
         api,
         options
     );
@@ -155,22 +153,16 @@ export default function initDownload(
     };
 }
 
-export function initDownloadStream(
-    links: LinkDownload[],
-    callbacks: DownloadCallbacks,
-    isNewFolderTreeAlgorithmEnabled: boolean,
-    api: Api
-) {
+export function initDownloadStream(links: LinkDownload[], callbacks: DownloadCallbacks, api: Api) {
     // Stream is used in direct preview. There we do not support logs just yet.
     const noLog = () => {};
-    return getControls(links, callbacks, noLog, isNewFolderTreeAlgorithmEnabled, api);
+    return getControls(links, callbacks, noLog, api);
 }
 
 function getControls(
     links: LinkDownload[],
     callbacks: DownloadCallbacks,
     log: LogCallback,
-    isNewFolderTreeAlgorithmEnabled: boolean,
     api: Api,
     options?: { virusScan?: boolean }
 ): DownloadStreamControls {
@@ -179,9 +171,9 @@ function getControls(
         if (link.isFile) {
             return initDownloadLinkFile(link, callbacks, log, options);
         }
-        return initDownloadLinkFolder(link, callbacks, log, isNewFolderTreeAlgorithmEnabled, api, options);
+        return initDownloadLinkFolder(link, callbacks, log, api, options);
     }
-    return initDownloadLinks(links, callbacks, log, isNewFolderTreeAlgorithmEnabled, api, options);
+    return initDownloadLinks(links, callbacks, log, api, options);
 }
 
 /**

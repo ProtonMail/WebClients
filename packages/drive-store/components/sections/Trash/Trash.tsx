@@ -3,12 +3,15 @@ import { useCallback, useMemo, useRef } from 'react';
 import { c } from 'ttag';
 
 import { useActiveBreakpoint } from '@proton/components';
+import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import useNavigate from '../../../hooks/drive/useNavigate';
 import type { EncryptedLink, LinkShareUrl } from '../../../store';
 import { useThumbnailsDownload } from '../../../store';
 import type { useTrashView } from '../../../store';
+import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
+import { sendErrorReport } from '../../../utils/errorHandling';
 import FileBrowser, { Cells, GridHeader, useItemContextMenu, useSelection } from '../../FileBrowser';
 import type { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
 import { GridViewItem } from '../FileBrowser/GridViewItemLink';
@@ -72,7 +75,7 @@ const headerItemsSmallScreen: ListViewHeaderItem[] = [
 type TrashSortFields = Extract<SortField, SortField.name | SortField.size | SortField.trashed>;
 const SORT_FIELDS: TrashSortFields[] = [SortField.name, SortField.trashed, SortField.size];
 
-function Trash({ trashView }: Props) {
+function Trash({ trashView, shareId }: Props) {
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
 
     const { navigateToLink } = useNavigate();
@@ -80,6 +83,8 @@ function Trash({ trashView }: Props) {
     const thumbnails = useThumbnailsDownload();
     const selectionControls = useSelection();
     const { viewportWidth } = useActiveBreakpoint();
+    const { canUseDocs } = useDriveDocsFeatureFlag();
+    const { openDocument } = useDocumentActions();
 
     const { layout, items, sortParams, setSorting, isLoading } = trashView;
 
@@ -98,6 +103,24 @@ function Trash({ trashView }: Props) {
                 return;
             }
             document.getSelection()?.removeAllRanges();
+
+            if (isProtonDocument(item.mimeType)) {
+                void canUseDocs(shareId)
+                    .then((canUse) => {
+                        if (!canUse) {
+                            return;
+                        }
+
+                        return openDocument({
+                            linkId: id,
+                            shareId,
+                            openBehavior: 'tab',
+                        });
+                    })
+                    .catch(sendErrorReport);
+                return;
+            }
+
             if (!item.isFile) {
                 return;
             }

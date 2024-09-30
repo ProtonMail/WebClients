@@ -1,7 +1,9 @@
 import { useEffect, useMemo } from 'react';
 
 import { useApi } from '@proton/components/hooks';
+import { CryptoProxy } from '@proton/crypto';
 import createApi from '@proton/shared/lib/api/createApi';
+import localStorageWithExpiry from '@proton/shared/lib/api/helpers/localStorageWithExpiry';
 import { TelemetryDriveWebFeature, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { randomHexString4 } from '@proton/shared/lib/helpers/uid';
@@ -9,9 +11,10 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import * as config from '../config';
+import { LAST_ACTIVE_PING } from '../store/_user/useActivePing';
 import { sendErrorReport } from './errorHandling';
 import { EnrichedError } from './errorHandling/EnrichedError';
-import { getLastActivePersistedUserSessionUID } from './lastActivePersistedUserSession';
+import { getLastActivePersistedUserSession } from './lastActivePersistedUserSession';
 
 export enum ExperimentGroup {
     control = 'control',
@@ -40,6 +43,7 @@ export enum Actions {
     PublicDownload = 'publicDownload',
     PublicLinkVisit = 'publicLinkVisit',
     DeleteBookmarkFromSharedWithMe = 'DeleteBookmarkFromSharedWithMe',
+    SignUpFlowAndRedirectCompleted = 'signUpFlowAndRedirectCompleted',
 }
 
 type PerformanceTelemetryAdditionalValues = {
@@ -53,6 +57,11 @@ export const sendTelemetryFeaturePerformance = (
     treatment: ExperimentGroup,
     additionalValues: PerformanceTelemetryAdditionalValues = {}
 ) => {
+    // TODO: https://jira.protontech.ch/browse/DD-7
+    // This is ugly and hacky, but it's a cheap way for the metric (without calling /users and without hooks)
+    // Proper back-end solution will be done as part of https://jira.protontech.ch/browse/DD-7
+    const loggedInRecently = localStorageWithExpiry.getData(LAST_ACTIVE_PING) ? 'true' : 'false';
+
     void sendTelemetryReport({
         api: api,
         measurementGroup: TelemetryMeasurementGroups.driveWebFeaturePerformance,
@@ -62,6 +71,7 @@ export const sendTelemetryFeaturePerformance = (
             ...additionalValues,
         },
         dimensions: {
+            isLoggedIn: window.location.pathname.startsWith('/urls') ? loggedInRecently : 'true',
             experimentGroup: treatment,
             featureName,
         },
@@ -196,12 +206,17 @@ export const useMeasureFeaturePerformanceOnMount = (features: Features) => {
 const apiInstance = createApi({ config, sendLocaleHeaders: true });
 
 export const countActionWithTelemetry = (action: Actions, count: number = 1): void => {
-    const uid = getLastActivePersistedUserSessionUID();
+    const persistedSession = getLastActivePersistedUserSession();
 
-    if (uid) {
+    if (persistedSession?.UID) {
         // API calls will now be Authenticated with x-pm-uid header
-        apiInstance.UID = uid;
+        apiInstance.UID = persistedSession?.UID;
     }
+
+    // TODO: https://jira.protontech.ch/browse/DD-7
+    // This is ugly and hacky, but it's a cheap way for the metric (without calling /users and without hooks)
+    // Proper back-end solution will be done as part of https://jira.protontech.ch/browse/DD-7
+    const loggedInRecently = localStorageWithExpiry.getData(LAST_ACTIVE_PING) ? 'true' : 'false';
 
     void sendTelemetryReport({
         api: apiInstance,
@@ -211,7 +226,65 @@ export const countActionWithTelemetry = (action: Actions, count: number = 1): vo
             count,
         },
         dimensions: {
+            isLoggedIn: window.location.pathname.startsWith('/urls') ? loggedInRecently : 'true',
             name: action,
         },
     });
+};
+
+const TEN_MINUTES = 10 * 60 * 1000;
+
+export async function getTimeBasedHash(str: string, interval: number = TEN_MINUTES) {
+    const timeBase = Math.floor(Date.now() / interval) * interval;
+
+    const encoder = new TextEncoder();
+    const data = encoder.encode(str + timeBase.toString());
+    const hashBuffer = await CryptoProxy.computeHash({ algorithm: 'SHA256', data });
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
+
+    return hashHex;
+}
+
+/**
+ * Tracks user actions within a specified time window, typically used for flows involving redirections.
+ *
+ * This function is useful when you want to log an action only if the user starts at point A
+ * and finishes at point B within a given time window. It's particularly helpful in scenarios
+ * where there are redirections in the middle of a flow and passing query parameters through
+ * all redirections is not feasible.
+ *
+ * @example
+ * // Sign-Up Modal flow:
+ * // 1. Sign-Up Modal appears (start A)
+ * // 2. User signs up, pays, redirects
+ * // 3. User goes back to shared-with-me page (end B)
+ * // If this happens within the time window, the flow is logged as completed.
+ *
+ * @param {Actions} action - The action to be tracked.
+ * @param {number} [duration=TEN_MINUTES] - The time window for tracking the action, default is 10 minutes.
+ *
+ * @returns {Object} An object with start and end methods to initiate and complete the tracking.
+ */
+export const traceTelemetry = (action: Actions, duration: number = TEN_MINUTES) => {
+    return {
+        start: async () => {
+            const session = getLastActivePersistedUserSession();
+            if (session) {
+                localStorageWithExpiry.storeData(
+                    `telemetry-trace-${action}`,
+                    await getTimeBasedHash(session.UID, duration),
+                    duration
+                );
+            }
+        },
+        end: async () => {
+            const data = localStorageWithExpiry.getData(`telemetry-trace-${action}`);
+            const session = getLastActivePersistedUserSession();
+            if (data && session && data === (await getTimeBasedHash(session.UID, duration))) {
+                countActionWithTelemetry(action);
+            }
+            localStorageWithExpiry.deleteData(`telemetry-trace-${action}`);
+        },
+    };
 };
