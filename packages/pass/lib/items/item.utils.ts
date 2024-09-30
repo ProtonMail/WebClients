@@ -226,3 +226,7 @@ export const itemsIntoBulkSelectionDTO = (items: UniqueItem[]): BulkSelectionDTO
         return dto;
     }, {});
 };
+
+export const getCountOfBulkSelectionDTO = (selected: BulkSelectionDTO) => {
+    return Object.values(selected).reduce((acc, items) => acc + Object.keys(items).length, 0);
+};
