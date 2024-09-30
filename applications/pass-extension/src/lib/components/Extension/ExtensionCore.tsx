@@ -30,6 +30,7 @@ import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import type { LocalStoreData } from '@proton/pass/types';
 import { type ClientEndpoint, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
+import { prop } from '@proton/pass/utils/fp/lens';
 import type { ParsedUrl } from '@proton/pass/utils/url/types';
 import createStore from '@proton/shared/lib/helpers/store';
 import noop from '@proton/utils/noop';
@@ -55,13 +56,7 @@ const getExtensionCoreProps = (endpoint: ClientEndpoint, config: PassConfig): Pa
         i18n: createI18nService({
             locales,
             loadDateLocale: true,
-            /* resolve the extension locale through the I18nService instead of reading
-             * from the store as some extension sub-apps are not redux connected but
-             * should be aware of the current localisation setting */
-            getLocale: () =>
-                sendMessage.on(resolveMessageFactory(endpoint)({ type: WorkerMessageType.LOCALE_REQUEST }), (res) =>
-                    res.type === 'success' ? res.locale : undefined
-                ),
+            getLocale: () => settings.resolve().then(prop('locale')).catch(noop),
         }),
         monitor: createMonitorBridge(messageFactory),
         settings,

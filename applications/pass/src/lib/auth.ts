@@ -120,6 +120,7 @@ export const createAuthService = ({
                 /** Configure the authentication store partially in order to
                  * hydrate the userID and offline salts before resuming session. */
                 authStore.setSession(persistedSession);
+                core.i18n.setLocale().catch(noop);
                 const cookieUpgrade = authStore.shouldCookieUpgrade(persistedSession);
 
                 if (getOnline()) {
