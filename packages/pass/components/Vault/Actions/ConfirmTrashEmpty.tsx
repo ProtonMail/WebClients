@@ -26,11 +26,10 @@ export const ConfirmTrashEmpty: FC<ConfirmationPromptHandles> = ({ open, onCance
                     {aliasCount > 0 && (
                         <Alert className="mb-4" type="error">
                             {c('Title').ngettext(
-                                msgid`You’re about to permanently delete ${aliasCount} alias`,
-                                `You’re about to permanently delete ${aliasCount} aliases`,
+                                msgid`You’re about to permanently delete ${aliasCount} alias.`,
+                                `You’re about to permanently delete ${aliasCount} aliases.`,
                                 aliasCount
-                            )}
-                            {'. '}
+                            )}{' '}
                             {c('Title').ngettext(
                                 msgid`Please note that once deleted, the alias can't be restored.`,
                                 `Please note that once once deleted, the aliases can't be restored.`,
