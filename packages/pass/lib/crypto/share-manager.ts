@@ -10,7 +10,7 @@ import type {
 import { ShareType } from '@proton/pass/types';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
-import { getSymmetricKey } from './utils/crypto-helpers';
+import { importSymmetricKey } from './utils/crypto-helpers';
 import { PassCryptoShareError, PassCryptoVaultError } from './utils/errors';
 
 export const createShareManager = <T extends ShareType = ShareType>(
@@ -142,7 +142,7 @@ createShareManager.fromSnapshot = async (snapshot: SerializedCryptoContext<Share
                 {
                     rotation: vaultKey.rotation,
                     raw: rawKey,
-                    key: await getSymmetricKey(rawKey),
+                    key: await importSymmetricKey(rawKey),
                     userKeyId: vaultKey.userKeyId,
                 },
             ];

@@ -1,4 +1,4 @@
-import { decryptData, generateKey, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { decryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { type ItemKey, PassEncryptionTag, type VaultKey } from '@proton/pass/types';
 
 import { createSecureLink } from './create-secure-link';
@@ -9,13 +9,13 @@ describe('createSecureLink crypto process', () => {
         const rawVaultKey = generateKey();
 
         const itemKey: ItemKey = {
-            key: await getSymmetricKey(rawItemKey),
+            key: await importSymmetricKey(rawItemKey),
             raw: rawItemKey,
             rotation: 1,
         };
 
         const vaultKey: VaultKey = {
-            key: await getSymmetricKey(rawVaultKey),
+            key: await importSymmetricKey(rawVaultKey),
             raw: rawVaultKey,
             rotation: 1,
             userKeyId: 'userkey-id',
@@ -27,7 +27,7 @@ describe('createSecureLink crypto process', () => {
         expect(result.secureLinkKey instanceof Uint8Array).toBe(true);
         expect(result.encryptedLinkKey instanceof Uint8Array).toBe(true);
 
-        const secureLinkKey = await getSymmetricKey(result.secureLinkKey);
+        const secureLinkKey = await importSymmetricKey(result.secureLinkKey);
         const decryptedItemKey = await decryptData(secureLinkKey, result.encryptedItemKey, PassEncryptionTag.ItemKey);
         const decryptedLinkKey = await decryptData(vaultKey.key, result.encryptedLinkKey, PassEncryptionTag.LinkKey);
 
