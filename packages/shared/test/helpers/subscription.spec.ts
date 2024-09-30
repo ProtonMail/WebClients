@@ -645,14 +645,14 @@ describe('getPricingFromPlanIDs', () => {
         const plansMap: PlansMap = pick(PLANS_MAP, [PLANS.VPN_BUSINESS]);
 
         // VPN Business has 2 members and 1 IP by default.
-        // monthly: each user currently costs 11.99 and IP 49.99.
+        // monthly: each user currently costs 11.90 and IP 49.99.
         // yearly: (2*9.99 + 39.99) * 12
         // 2 years: (2*8.99 + 35.99) * 24
         const expected: AggregatedPricing = {
-            defaultMonthlyPrice: 7397,
-            defaultMonthlyPriceWithoutAddons: 7397,
+            defaultMonthlyPrice: 7379,
+            defaultMonthlyPriceWithoutAddons: 7379,
             all: {
-                '1': 7397,
+                '1': 7379,
                 '3': 0,
                 '12': 71964,
                 '15': 0,
@@ -662,7 +662,7 @@ describe('getPricingFromPlanIDs', () => {
             },
             membersNumber: 2,
             members: {
-                '1': 2398,
+                '1': 2380,
                 '3': 0,
                 '12': 23976,
                 '15': 0,
@@ -671,7 +671,7 @@ describe('getPricingFromPlanIDs', () => {
                 '30': 0,
             },
             plans: {
-                '1': 7397,
+                '1': 7379,
                 '3': 0,
                 '12': 71964,
                 '15': 0,
@@ -700,14 +700,14 @@ describe('getPricingFromPlanIDs', () => {
         ]);
 
         // VPN Business has 2 members and 1 IP by default.
-        // monthly: each user currently costs 11.99 and IP 49.99.
+        // monthly: each user currently costs 11.90 and IP 49.99.
         // yearly: (2*9.99 + 39.99) * 12
         // 2 years: (2*8.99 + 35.99) * 24
         const expected: AggregatedPricing = {
-            defaultMonthlyPrice: 30787,
-            defaultMonthlyPriceWithoutAddons: 7397,
+            defaultMonthlyPrice: 30706,
+            defaultMonthlyPriceWithoutAddons: 7379,
             all: {
-                '1': 30787,
+                '1': 30706,
                 '3': 0,
                 '12': 299844,
                 '15': 0,
@@ -718,7 +718,7 @@ describe('getPricingFromPlanIDs', () => {
             // Pricing for 9 members
             membersNumber: 9,
             members: {
-                '1': 10791,
+                '1': 10710,
                 '3': 0,
                 '12': 107892,
                 '15': 0,
@@ -727,7 +727,7 @@ describe('getPricingFromPlanIDs', () => {
                 '30': 0,
             },
             plans: {
-                '1': 7397,
+                '1': 7379,
                 '3': 0,
                 '12': 71964,
                 '15': 0,
