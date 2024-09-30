@@ -19,6 +19,7 @@ import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import { Browser } from './Browser';
 import { PauseList } from './PauseList';
 
 type SettingDefinition = {
@@ -211,6 +212,7 @@ export const Behaviors: FC = () => {
                 </SettingsPanel>
             ))}
 
+            {BUILD_TARGET !== 'safari' && <Browser />}
             <PauseList />
         </>
     );
