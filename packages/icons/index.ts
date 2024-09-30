@@ -118,6 +118,7 @@ export type IconName =
     | 'circle-half-filled'
     | 'circle-slash'
     | 'clock'
+    | 'clock-circle-filled'
     | 'clock-paper-plane'
     | 'clock-rotate-left'
     | 'cloud'
@@ -480,6 +481,7 @@ export { IcCircleFilled } from './icons/IcCircleFilled';
 export { IcCircleHalfFilled } from './icons/IcCircleHalfFilled';
 export { IcCircleSlash } from './icons/IcCircleSlash';
 export { IcClock } from './icons/IcClock';
+export { IcClockCircleFilled } from './icons/IcClockCircleFilled';
 export { IcClockPaperPlane } from './icons/IcClockPaperPlane';
 export { IcClockRotateLeft } from './icons/IcClockRotateLeft';
 export { IcCloud } from './icons/IcCloud';
