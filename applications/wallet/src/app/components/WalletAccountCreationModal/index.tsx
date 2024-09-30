@@ -33,6 +33,7 @@ import { useWalletDispatch, walletAccountCreation } from '@proton/wallet/store';
 import { Button, CoreButtonLike, Input, Modal, Select } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
 import { ModalSectionHeader } from '../../atoms/ModalSection';
+import { PASSWORD_MANAGER_IGNORE_PROPS } from '../../constants';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import type { SubTheme } from '../../utils';
 import { getDescriptionByScriptType, getLabelByScriptType, isUndefined } from '../../utils';
@@ -152,6 +153,7 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
                 label={c('Wallet Account').t`Name`}
                 id="account-label-input"
                 placeholder={c('Wallet Account').t`Savings for holiday`}
+                {...PASSWORD_MANAGER_IGNORE_PROPS}
                 value={label}
                 disabled={loading}
                 onChange={(event: ChangeEvent<HTMLInputElement>) => {
