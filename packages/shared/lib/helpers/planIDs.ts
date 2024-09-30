@@ -1,6 +1,6 @@
-import type { SelectedPlan } from '@proton/payments';
+import { SelectedPlan } from '@proton/payments';
 
-import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from '../constants';
+import { ADDON_NAMES, CYCLE, DEFAULT_CURRENCY, PLANS, PLAN_TYPES } from '../constants';
 import type {
     BasePlansMap,
     Currency,
@@ -184,28 +184,14 @@ export const switchPlan = ({
         }
 
         if (isIpAddon(addon) && plan && organization) {
-            if (planID === PLANS.BUNDLE_PRO || PLANS.BUNDLE_PRO_2024) {
-                const isCurrentPlanVpnBiz = !!planIDs[PLANS.VPN_BUSINESS];
+            // cycle and currency don't matter in this case
+            const currentPlan = new SelectedPlan(planIDs, plans, CYCLE.MONTHLY, DEFAULT_CURRENCY);
+            const newPlan = new SelectedPlan(newPlanIDs, plans, CYCLE.MONTHLY, DEFAULT_CURRENCY);
 
-                newPlanIDs[addon] = Math.max(
-                    // VPN business includes a dedicated IP, whereas other plans do not.
-                    // So when switching to bundle we need to accommodate for this
-                    planIDs[ADDON_NAMES.IP_VPN_BUSINESS] ? planIDs[ADDON_NAMES.IP_VPN_BUSINESS] + 1 : 0,
-                    planIDs[ADDON_NAMES.IP_BUNDLE_PRO] || 0,
-                    planIDs[ADDON_NAMES.IP_BUNDLE_PRO_2024] || 0,
-                    isCurrentPlanVpnBiz ? 1 : 0
-                );
-            }
+            const totalIPs = currentPlan.getTotalIPs();
+            const ipAddonsRequired = totalIPs - newPlan.getIncludedIPs();
 
-            if (planID === PLANS.VPN_BUSINESS) {
-                newPlanIDs[addon] = Math.max(
-                    // VPN business includes a dedicated IP, whereas other plans do not.
-                    // So when switching to VPN_BUSINESS we need to accommodate for this
-                    planIDs[ADDON_NAMES.IP_VPN_BUSINESS] || 0,
-                    planIDs[ADDON_NAMES.IP_BUNDLE_PRO] ? planIDs[ADDON_NAMES.IP_BUNDLE_PRO] - 1 : 0,
-                    planIDs[ADDON_NAMES.IP_BUNDLE_PRO_2024] ? planIDs[ADDON_NAMES.IP_BUNDLE_PRO_2024] - 1 : 0
-                );
-            }
+            newPlanIDs[addon] = ipAddonsRequired;
         }
     });
 
