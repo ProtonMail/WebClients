@@ -1,7 +1,6 @@
 import { Router } from 'react-router-dom';
 
 import * as config from 'proton-pass-web/app/config';
-import { getDefaultLocalID } from 'proton-pass-web/lib/auth';
 import { B2BEvents } from 'proton-pass-web/lib/b2b';
 import { PASS_WEB_COMPAT } from 'proton-pass-web/lib/compatibility';
 import { core } from 'proton-pass-web/lib/core';
@@ -10,8 +9,8 @@ import { i18n } from 'proton-pass-web/lib/i18n';
 import { logStore } from 'proton-pass-web/lib/logger';
 import { monitor } from 'proton-pass-web/lib/monitor';
 import { onboarding } from 'proton-pass-web/lib/onboarding';
+import { getDefaultLocalID, getPersistedSessions } from 'proton-pass-web/lib/sessions';
 import { settings } from 'proton-pass-web/lib/settings';
-import { getSettingsStorageKey } from 'proton-pass-web/lib/storage';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 
 import {
@@ -34,12 +33,12 @@ import { PassExtensionLink } from '@proton/pass/components/Core/PassExtensionLin
 import { ThemeConnect } from '@proton/pass/components/Layout/Theme/ThemeConnect';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath, history } from '@proton/pass/components/Navigation/routing';
-import { API_CONCURRENCY_TRESHOLD, PASS_DEFAULT_THEME } from '@proton/pass/constants';
+import { API_CONCURRENCY_TRESHOLD } from '@proton/pass/constants';
 import { api, exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
 import { getRequestIDHeaders } from '@proton/pass/lib/api/fetch-controller';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
-import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
+import { authStore, createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { createPassExport } from '@proton/pass/lib/export/export';
@@ -114,11 +113,13 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
         },
 
         getTheme: async () => {
-            // Handle case when authService did not init yet so localID isn't set and settings.resolve() can't be used
-            const settings = localStorage.getItem(getSettingsStorageKey(getDefaultLocalID()));
-            const theme = settings ? JSON.parse(settings).theme : PASS_DEFAULT_THEME;
-
-            return theme;
+            try {
+                // Handle case when authService did not init yet so localID isn't set
+                const { theme } = await settings.resolve(
+                    authStore.getLocalID() ?? getDefaultLocalID(getPersistedSessions())
+                );
+                return theme;
+            } catch {}
         },
 
         getLogs: logStore.read,
