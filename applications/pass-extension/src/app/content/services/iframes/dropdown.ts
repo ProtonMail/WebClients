@@ -97,10 +97,9 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
                 }
 
                 case DropdownAction.AUTOFILL_LOGIN: {
-                    const startsWith = field.value.trim();
-                    if (!authorized) return { action, domain: '', startsWith };
+                    if (!authorized) return { action, domain: '', startsWith: '' };
                     if (autofocused && !(await ctx.service.autofill.getCredentialsCount())) return;
-                    return { action, domain, startsWith };
+                    return { action, domain, startsWith: '' };
                 }
                 case DropdownAction.AUTOSUGGEST_ALIAS: {
                     if (!url?.displayName) throw new Error();
