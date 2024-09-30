@@ -20,19 +20,34 @@ import type { UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import { createPassCoreProxy } from '@proton/pass/lib/core/proxy';
 import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message/send-message';
+import { getExtensionLocalStorage } from '@proton/pass/lib/extension/storage';
 import { getWebStoreUrl } from '@proton/pass/lib/extension/utils/browser';
 import browser from '@proton/pass/lib/globals/browser';
 import { createI18nService } from '@proton/pass/lib/i18n/service';
 import { isProtonPassEncryptedImport } from '@proton/pass/lib/import/reader';
+import { createSettingsService } from '@proton/pass/lib/settings/service';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
+import type { LocalStoreData } from '@proton/pass/types';
 import { type ClientEndpoint, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
+import { prop } from '@proton/pass/utils/fp/lens';
 import type { ParsedUrl } from '@proton/pass/utils/url/types';
 import createStore from '@proton/shared/lib/helpers/store';
 import noop from '@proton/utils/noop';
 
 const getExtensionCoreProps = (endpoint: ClientEndpoint, config: PassConfig): PassCoreProviderProps => {
     const messageFactory = resolveMessageFactory(endpoint);
+
+    /** Read-only settings service */
+    const settings = createSettingsService({
+        clear: noop,
+        sync: noop,
+        resolve: async () => {
+            const data = await getExtensionLocalStorage<LocalStoreData>().getItem('settings');
+            if (!data) throw new Error('Missing settings');
+            return JSON.parse(data);
+        },
+    });
 
     return {
         config,
@@ -41,15 +56,10 @@ const getExtensionCoreProps = (endpoint: ClientEndpoint, config: PassConfig): Pa
         i18n: createI18nService({
             locales,
             loadDateLocale: true,
-            /* resolve the extension locale through the I18nService instead of reading
-             * from the store as some extension sub-apps are not redux connected but
-             * should be aware of the current localisation setting */
-            getLocale: () =>
-                sendMessage.on(resolveMessageFactory(endpoint)({ type: WorkerMessageType.LOCALE_REQUEST }), (res) =>
-                    res.type === 'success' ? res.locale : undefined
-                ),
+            getLocale: () => settings.resolve().then(prop('locale')).catch(noop),
         }),
         monitor: createMonitorBridge(messageFactory),
+        settings,
 
         exportData: (payload) =>
             sendMessage.on(messageFactory({ type: WorkerMessageType.EXPORT_REQUEST, payload }), (res) => {

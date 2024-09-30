@@ -75,6 +75,7 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
         endpoint: 'web',
         i18n: i18n(locales),
         monitor,
+        settings,
 
         exportData: async (options) => {
             const state = store.getState();
@@ -85,8 +86,6 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
         generateOTP: (payload) => (payload.type === 'uri' ? generateTOTPCode(payload.totpUri) : null),
 
         getApiState: api.getState,
-
-        getOfflineEnabled: async () => (await settings.resolve()).offlineEnabled ?? false,
 
         /** If service worker support is unavailable, use a fallback caching strategy for
          * domain images. When service worker is enabled, utilize abort message passing to
