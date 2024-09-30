@@ -18,7 +18,7 @@ import {
 } from '@proton/components';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryCheckEmailAvailability } from '@proton/shared/lib/api/user';
-import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+import { DRIVE_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 import { DRIVE_SIGNIN, DRIVE_SIGNUP } from '@proton/shared/lib/drive/urls';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
@@ -71,6 +71,7 @@ export const SignupFlowModal = ({ customPassword, onClose, ...modalProps }: Prop
                 const url = new URL(DRIVE_SIGNUP);
                 // This autofill the sign-up email input
                 url.searchParams.append('email', email);
+                url.searchParams.append('plan', PLANS.FREE);
                 replaceUrl(
                     getUrlWithReturnUrl(url.toString(), {
                         returnUrl,
