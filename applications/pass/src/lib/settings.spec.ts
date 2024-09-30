@@ -1,8 +1,6 @@
 import { SETTINGS_STORAGE_KEY, getSettingsStorageKey } from 'proton-pass-web/lib/storage';
 
-import { authStore, createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import createStore from '@proton/shared/lib/helpers/store';
 
 import { resolveSettings, settings } from './settings';
 
@@ -12,11 +10,9 @@ describe('settings', () => {
     let getItem: jest.SpyInstance;
     let setItem: jest.SpyInstance;
     let removeItem: jest.SpyInstance;
-    exposeAuthStore(createAuthStore(createStore()));
 
     beforeEach(() => {
         setDesktopBuild(false);
-        authStore.clear();
         getItem = jest.spyOn(Storage.prototype, 'getItem');
         setItem = jest.spyOn(Storage.prototype, 'setItem');
         removeItem = jest.spyOn(Storage.prototype, 'removeItem');
@@ -39,24 +35,22 @@ describe('settings', () => {
 
     describe('Settings service', () => {
         test('settings::clear should clear storage for current LocalID', async () => {
-            authStore.setLocalID(42);
-            await settings.clear();
+            await settings.clear(42);
             expect(removeItem).toHaveBeenCalledWith('settings::42');
         });
 
         test('settings::sync should write settings to storage for current LocalID', async () => {
-            authStore.setLocalID(42);
             const update = { test: true } as unknown as ProxiedSettings;
-            await settings.sync(update);
+            await settings.sync(update, 42);
             expect(setItem).toHaveBeenCalledWith('settings::42', JSON.stringify(update));
         });
 
-        test('settings::resolve should throw if no valid LocalID or no settings found', () => {
-            authStore.setLocalID(undefined);
+        test('settings::resolve should throw if no valid LocalID', () => {
             expect(resolveSettings).toThrow();
+        });
 
-            authStore.setLocalID(0);
-            expect(resolveSettings).toThrow();
+        test('settings::resolve should throw if no settings found', () => {
+            expect(() => resolveSettings(0)).toThrow();
         });
 
         test('settings::resolve should migrate legacy settings', () => {
@@ -67,9 +61,7 @@ describe('settings', () => {
                 if (key === SETTINGS_STORAGE_KEY) return legacySettings;
             });
 
-            authStore.setLocalID(0);
-            const result = resolveSettings();
-
+            const result = resolveSettings(0);
             expect(result).toEqual(legacySettings);
             expect(removeItem).toHaveBeenCalledWith(SETTINGS_STORAGE_KEY);
         });
@@ -82,9 +74,7 @@ describe('settings', () => {
                 if (key === SETTINGS_STORAGE_KEY) return null;
             });
 
-            authStore.setLocalID(0);
-            const result = resolveSettings();
-
+            const result = resolveSettings(0);
             expect(result).toEqual(storedSettings);
             expect(removeItem).toHaveBeenCalledWith(SETTINGS_STORAGE_KEY);
         });
