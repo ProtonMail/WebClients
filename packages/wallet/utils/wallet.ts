@@ -164,9 +164,9 @@ export const migrateWallet = async ({
         return;
     }
 
-    const userKeyToUse = userKeys.find((k) => k.ID === WalletKey.UserKeyID);
+    const userKeyToUse = userKeys.find((k) => k.ID === WalletKey.UserKeyID) ?? userKeys.at(0);
 
-    // We won't migrate wallets whose user key is not available anymore
+    // We won't migrate wallets from a user with no key
     if (!userKeyToUse) {
         return;
     }
@@ -188,7 +188,6 @@ export const migrateWallet = async ({
 
     const migratedWalletAccounts = new WasmMigratedWalletAccounts();
     const migratedWalletTransactions = new WasmMigratedWalletTransactions();
-    const migratedHashedTransactionIds = new Set<string>();
 
     for (const account of WalletAccounts) {
         const [encryptedLabel] = await encryptWalletDataWithWalletKey([account.Label], newWalletKey);
@@ -213,20 +212,18 @@ export const migrateWallet = async ({
                 addressKeys.map((k) => k.privateKey)
             );
 
+            const { TransactionID } = decryptedTransaction;
+
             // Typeguard: no transaction should have empty wallet account id or transaction id
-            if (!decryptedTransaction.WalletAccountID || !decryptedTransaction.TransactionID) {
+            if (!decryptedTransaction.WalletAccountID || !TransactionID) {
                 continue;
             }
 
-            const hashedTxIdBuffer = await hmac(hmacKey, decryptedTransaction.TransactionID);
-            const hashedTxId = uint8ArrayToBase64String(new Uint8Array(hashedTxIdBuffer));
+            const hashedTxIdBuffer = decryptedTransaction.HashedTransactionID
+                ? await hmac(hmacKey, TransactionID)
+                : null;
 
-            // We don't want to migrate a row coupled to the same transaction twice
-            if (migratedHashedTransactionIds.has(hashedTxId)) {
-                continue;
-            }
-
-            migratedHashedTransactionIds.add(hashedTxId);
+            const hashedTxId = hashedTxIdBuffer ? uint8ArrayToBase64String(new Uint8Array(hashedTxIdBuffer)) : null;
 
             const [encryptedLabel] = decryptedTransaction.Label
                 ? await encryptWalletDataWithWalletKey([decryptedTransaction.Label], newWalletKey)
