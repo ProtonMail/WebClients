@@ -74,7 +74,6 @@ const thunk = ({
                 status,
                 user,
                 subscription,
-                regionalCurrenciesEnabled: true,
             });
 
             return availableCurrencies.filter((currency) => isRegionalCurrency(currency));

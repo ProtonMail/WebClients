@@ -103,7 +103,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
 
     const getPlans = useGetPlans();
 
-    const { getPreferredCurrency } = useCurrencies('vpn');
+    const { getPreferredCurrency } = useCurrencies();
 
     useMetaTags(metaTags);
 

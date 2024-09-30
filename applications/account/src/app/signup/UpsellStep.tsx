@@ -144,7 +144,7 @@ const UpsellStep = ({
     // If there's a feature with a checkmark, don't show any icons
     const noIcon = hasNoIcon(shortFreePlan?.features || []) || hasNoIcon(upsellShortPlan?.features || []);
 
-    const { getAvailableCurrencies } = useCurrencies('v2-signup');
+    const { getAvailableCurrencies } = useCurrencies();
 
     const availableCurrencies = getAvailableCurrencies({
         status: paymentStatus,
