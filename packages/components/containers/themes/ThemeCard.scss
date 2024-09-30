@@ -43,6 +43,8 @@
 	}
 
 	&.is-active {
+		box-shadow: 0 0 0 1px var(--button-active-border-color);
+
 		// fix ghost case
 		&.button-ghost-norm {
 			.theme-card-image {
@@ -51,8 +53,6 @@
 				box-shadow: 0 0 0 2px var(--button-active-border-color);
 			}
 		}
-
-		box-shadow: 0 0 0 1px var(--button-active-border-color);
 
 		&::after {
 			border: 1px solid var(--button-active-border-color);
