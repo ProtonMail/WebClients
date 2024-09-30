@@ -89,6 +89,14 @@ export class SelectedPlan {
         return this.getTotalAddons(isIpAddon, 'MaxIPs');
     }
 
+    getIncludedIPs(): number {
+        return this.getCountInPlan('MaxIPs');
+    }
+
+    getAdditionalIPs(): number {
+        return this.getCountInAddons(isIpAddon, 'MaxIPs');
+    }
+
     getTotalDomains(): number {
         return this.getTotalAddons(isDomainAddon, 'MaxDomains');
     }
