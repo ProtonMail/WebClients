@@ -31,7 +31,7 @@ const FilterActionsFormLabelsRow = ({ actions, handleUpdateActions, labels }: Pr
     const { labelAs } = actions;
     const { isOpen } = labelAs;
 
-    const [editLabelProps, setEditLabelModalOpen] = useModalState();
+    const [editLabelProps, setEditLabelModalOpen, renderEditLabelModal] = useModalState();
 
     const canCreateLabel = !hasReachedLabelLimit(user, labels);
 
@@ -140,7 +140,9 @@ const FilterActionsFormLabelsRow = ({ actions, handleUpdateActions, labels }: Pr
                                 {c('Action').t`Create label`}
                             </Button>
                         )}
-                        <EditLabelModal {...editLabelProps} onAdd={handleCreateLabel} type="label" />
+                        {renderEditLabelModal && (
+                            <EditLabelModal {...editLabelProps} onAdd={handleCreateLabel} type="label" />
+                        )}
                     </>
                 ) : (
                     <div>{renderClosed()}</div>
