@@ -255,7 +255,7 @@ const SingleSignupContainerV2 = ({
     const { getPaymentsApi } = usePaymentsApi();
     const getPlans = useGetPlans();
     const getPaymentStatus = useGetPaymentStatus();
-    const { getPreferredCurrency } = useCurrencies('v2-signup');
+    const { getPreferredCurrency } = useCurrencies();
     const isChargebeeEnabled = useIsChargebeeEnabled();
     const { reportPaymentSuccess, reportPaymentFailure } = usePaymentsTelemetry({
         flow: 'signup-pass',

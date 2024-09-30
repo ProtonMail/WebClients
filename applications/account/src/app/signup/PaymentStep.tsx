@@ -226,7 +226,7 @@ const PaymentStep = ({
         minimumCycle: subscriptionData.minimumCycle,
     });
 
-    const { getAvailableCurrencies } = useCurrencies('v2-signup');
+    const { getAvailableCurrencies } = useCurrencies();
 
     const availableCurrencies = getAvailableCurrencies({
         status: paymentStatus,

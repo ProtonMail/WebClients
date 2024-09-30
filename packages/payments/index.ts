@@ -47,6 +47,7 @@ export {
     isWrappedPaymentsVersion,
     mainCurrencies,
     methodMatches,
+    type GetPreferredCurrencyParams,
 } from './core/helpers';
 export type {
     AmountAndCurrency,
