@@ -9,6 +9,12 @@ const browser = {
             return false;
         }),
     },
+    privacy: {
+        services: {
+            autofillAddressEnabled: { get: jest.fn(), set: jest.fn() },
+            passwordSavingEnabled: { get: jest.fn(), set: jest.fn() },
+        },
+    },
 };
 
 export default browser;
