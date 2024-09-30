@@ -1,9 +1,12 @@
 import { ARGON2_PARAMS, CryptoProxy } from '@proton/crypto/lib';
-import { encryptData, generateKey, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import {
+    KEY_LENGTH_BYTES as AES_GCM_KEY_LENGTH_IN_BYTES,
+    ENCRYPTION_ALGORITHM,
+} from '@proton/crypto/lib/subtle/aesGcm';
+import { encryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import { type Maybe, PassEncryptionTag } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { ENCRYPTION_ALGORITHM } from '@proton/shared/lib/authentication/cryptoHelper';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 type Argon2Params = (typeof ARGON2_PARAMS)[keyof typeof ARGON2_PARAMS];
@@ -22,7 +25,7 @@ export type OfflineComponents = {
     offlineVerifier: string;
 };
 
-const KEY_ALGORITHM = { name: 'AES-GCM', length: 256 };
+const KEY_ALGORITHM = { name: 'AES-GCM', length: AES_GCM_KEY_LENGTH_IN_BYTES * 8 };
 export const CACHE_SALT_LENGTH = 32;
 
 const HKDF_PARAMS: Omit<HkdfParams, 'salt'> = {
@@ -88,13 +91,13 @@ export const getOfflineKeyDerivation = async (
 /** Encrypts the raw cache key with the offline key */
 export const encryptOfflineCacheKey = async (cacheKey: CryptoKey, offlineKD: Uint8Array): Promise<Uint8Array> => {
     const rawCacheKey = await crypto.subtle.exportKey('raw', cacheKey);
-    const offlineKey = await getSymmetricKey(offlineKD);
+    const offlineKey = await importSymmetricKey(offlineKD);
 
     return encryptData(offlineKey, new Uint8Array(rawCacheKey), PassEncryptionTag.Offline);
 };
 
 export const getOfflineVerifier = async (offlineKD: Uint8Array): Promise<string> => {
-    const offlineKey = await getSymmetricKey(offlineKD);
+    const offlineKey = await importSymmetricKey(offlineKD);
     const verifier = generateKey();
     const offlineVerifier = await encryptData(offlineKey, verifier, PassEncryptionTag.Offline);
 

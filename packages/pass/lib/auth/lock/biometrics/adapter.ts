@@ -4,7 +4,12 @@ import { BIOMETRICS_KEY } from '@proton/pass/constants';
 import { type LockAdapter, LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import { getOfflineComponents } from '@proton/pass/lib/cache/crypto';
-import { decryptData, encryptData, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import {
+    decryptData,
+    encryptData,
+    generateKey,
+    importSymmetricKey,
+} from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import { PassEncryptionTag } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
@@ -71,10 +76,10 @@ export const biometricsLockAdapterFactory = (auth: AuthService): LockAdapter => 
             const offlineKD = authStore.getOfflineKD();
             if (!offlineKD) throw new Error('Missing offline KD');
 
-            const keyBytes = crypto.getRandomValues(new Uint8Array(32));
+            const keyBytes = generateKey();
             await window.ctxBridge?.setSecret(BIOMETRICS_KEY, uint8ArrayToString(keyBytes));
 
-            const key = await getSymmetricKey(keyBytes);
+            const key = await importSymmetricKey(keyBytes);
             const encryptedOfflineKD = await encryptData(
                 key,
                 stringToUint8Array(offlineKD),
@@ -147,13 +152,13 @@ export const biometricsLockAdapterFactory = (auth: AuthService): LockAdapter => 
                     throw new PassCryptoError('Invalid biometric lock');
                 }
 
-                const biometricsCryptoKey = await getSymmetricKey(stringToUint8Array(biometricsSecret));
+                const biometricsCryptoKey = await importSymmetricKey(stringToUint8Array(biometricsSecret));
                 const offlineKD = await decryptData(
                     biometricsCryptoKey,
                     stringToUint8Array(offlineEncryptedKD),
                     PassEncryptionTag.BiometricOfflineKD
                 );
-                const offlineKey = await getSymmetricKey(offlineKD);
+                const offlineKey = await importSymmetricKey(offlineKD);
 
                 /** this will throw if the derived offlineKD is incorrect */
                 await decryptData(offlineKey, stringToUint8Array(offlineVerifier), PassEncryptionTag.Offline);

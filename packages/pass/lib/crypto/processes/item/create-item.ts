@@ -1,4 +1,4 @@
-import { encryptData, generateKey, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { encryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoItemError } from '@proton/pass/lib/crypto/utils/errors';
 import { validateItemContentSize } from '@proton/pass/lib/crypto/utils/validators';
 import type { ItemCreateRequest, VaultKey } from '@proton/pass/types';
@@ -17,7 +17,7 @@ export const createItem = async ({ content, vaultKey }: CreateItemProcessParams)
     }
 
     const key = generateKey();
-    const itemKey = await getSymmetricKey(key);
+    const itemKey = await importSymmetricKey(key);
     const encryptedItemContent = await encryptData(itemKey, content, PassEncryptionTag.ItemContent);
     const encryptedItemKey = await encryptData(vaultKey.key, key, PassEncryptionTag.ItemKey);
 

@@ -1,4 +1,4 @@
-import { decryptData, generateKey, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { decryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoVaultError } from '@proton/pass/lib/crypto/utils/errors';
 import { TEST_USER_KEY_ID, randomContents } from '@proton/pass/lib/crypto/utils/testing';
 import type { VaultKey } from '@proton/pass/types';
@@ -10,7 +10,7 @@ import { updateVault } from './update-vault';
 describe('updateVault crypto process', () => {
     test('should re-encrypt vault content with supplied vault key', async () => {
         const key = generateKey();
-        const shareKey = await getSymmetricKey(key);
+        const shareKey = await importSymmetricKey(key);
         const content = randomContents();
 
         const vaultKey: VaultKey = {
@@ -35,7 +35,7 @@ describe('updateVault crypto process', () => {
 
     test('should throw when provided with empty content', async () => {
         const key = generateKey();
-        const shareKey = await getSymmetricKey(key);
+        const shareKey = await importSymmetricKey(key);
 
         const vaultKey: VaultKey = {
             key: shareKey,

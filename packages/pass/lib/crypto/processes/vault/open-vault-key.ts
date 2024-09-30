@@ -1,5 +1,5 @@
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
-import { getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoVaultError } from '@proton/pass/lib/crypto/utils/errors';
 import type { ShareKeyResponse, VaultKey } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
@@ -27,7 +27,7 @@ export const openVaultKey = async ({ shareKey, userKeys }: OpenVaultKeyProcessPa
 
     return {
         raw: vaultKey,
-        key: await getSymmetricKey(vaultKey),
+        key: await importSymmetricKey(vaultKey),
         rotation: KeyRotation,
         userKeyId: UserKeyID,
     };
