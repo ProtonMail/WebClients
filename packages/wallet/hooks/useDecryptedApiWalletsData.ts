@@ -169,8 +169,12 @@ const migrateWallet = async ({
                 addressKeys.map((k) => k.privateKey)
             );
 
-            // Typeguard: no transaction should have empty wallet account id or transaction id
-            if (!decryptedTransaction.WalletAccountID || !decryptedTransaction.TransactionID) {
+            // Typeguard: no transaction should have empty wallet account id or transaction id or hashed transaction id (might be duplicate transaction)
+            if (
+                !decryptedTransaction.WalletAccountID ||
+                !decryptedTransaction.TransactionID ||
+                (!decryptedTransaction.HashedTransactionID && !decryptedTransaction.Label)
+            ) {
                 continue;
             }
 
