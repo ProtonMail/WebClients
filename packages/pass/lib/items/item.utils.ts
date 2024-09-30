@@ -1,9 +1,11 @@
 import { c } from 'ttag';
 
+import type { BulkSelection } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
 import PassCoreUI from '@proton/pass/lib/core/core.ui';
 import type { Draft } from '@proton/pass/store/reducers';
 import type {
+    BulkSelectionDTO,
     IdentityItemPreview,
     ItemRevision,
     ItemRevisionID,
@@ -190,4 +192,37 @@ export const getSanitizedUserIdentifiers = ({
 
     /* If `itemEmail` is valid, keep it; otherwise, move it to username field */
     return validEmail ? { email: itemEmail, username: '' } : { email: '', username: itemEmail };
+};
+
+const SHAREID_ITEMID_SEPARATOR = '::::';
+
+type ConcatShareIdItemId = string;
+
+export const concatShareIdItemId = ({ shareId, itemId }: UniqueItem): ConcatShareIdItemId =>
+    `${shareId}${SHAREID_ITEMID_SEPARATOR}${itemId}`;
+
+export const deconcatShareIdItemId = (value: ConcatShareIdItemId): MaybeNull<UniqueItem> => {
+    const [shareId, itemId] = value.split(SHAREID_ITEMID_SEPARATOR);
+    if (!shareId || !itemId) return null;
+    return { shareId, itemId };
+};
+
+export const bulkSelectionIntoArray = (bulkSelection: BulkSelection): ConcatShareIdItemId[] => {
+    const result: string[] = [];
+    bulkSelection.forEach((value, key) => {
+        value.forEach((value) => {
+            result.push(concatShareIdItemId({ shareId: key, itemId: value }));
+        });
+    });
+    return result;
+};
+
+export const itemsIntoBulkSelectionDTO = (items: UniqueItem[]): BulkSelectionDTO => {
+    return items.reduce<BulkSelectionDTO>((dto, { shareId, itemId }) => {
+        if (!dto[shareId]) {
+            dto[shareId] = {};
+        }
+        dto[shareId][itemId] = true;
+        return dto;
+    }, {});
 };
