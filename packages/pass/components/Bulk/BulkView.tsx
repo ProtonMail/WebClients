@@ -1,13 +1,15 @@
-import { type VFC } from 'react';
+import { type FC } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useCanDragListItems } from '@proton/pass/hooks/useCanDragListItems';
 
 import { useBulkSelect } from './BulkSelectProvider';
 
-export const BulkView: VFC = () => {
+export const BulkView: FC = () => {
     const { count, clear } = useBulkSelect();
+    const canDrag = useCanDragListItems();
 
     const semiboldText = (
         <span className="text-semibold" key="bulk-count">
@@ -35,7 +37,7 @@ export const BulkView: VFC = () => {
                                     c('Message').jt`You selected ${semiboldText} in this vault.`
                                 }
                             </div>
-                            {!EXTENSION_BUILD && (
+                            {canDrag && (
                                 <div>
                                     {c('Message').ngettext(
                                         msgid`You can drag and drop the selected item to another vault`,
