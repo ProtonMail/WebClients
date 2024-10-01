@@ -50,7 +50,7 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.MetricService, () => {
-      return new MetricService()
+      return new MetricService(api)
     })
 
     this.bind(App_TYPES.RealtimeEncryptionService, () => {
@@ -172,6 +172,7 @@ export class AppDependencies extends DependencyContainer {
       return new DocLoader(
         this.get<WebsocketService>(App_TYPES.WebsocketService),
         driveCompat,
+        this.get<MetricService>(App_TYPES.MetricService),
         this.get<DocsApi>(App_TYPES.DocsApi),
         this.get<SquashDocument>(App_TYPES.SquashDocument),
         this.get<SeedInitialCommit>(App_TYPES.CreateInitialCommit),
