@@ -2128,6 +2128,14 @@
         "Veuillez noter que si vous supprimez le domaine ${ domainName }, toutes les adresses y étant associées seront désactivées."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Voulez-vous vraiment supprimer ce groupe ?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Veuillez noter que si vous supprimez le groupe ${ displayGroupName } (avec l'adresse ${ displayGroupAddressEmail }), vous ne pourrez plus recevoir d'e-mails à l'aide de cette adresse"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Facture impayée"
@@ -3568,9 +3576,6 @@
       "Are you sure you want to cancel editing the group?": [
         "Êtes-vous sûr de vouloir annuler la modification du groupe ?"
       ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "Êtes-vous sûr de vouloir supprimer ce groupe ? L'adresse du groupe ne fonctionnera plus."
-      ],
       "Are you sure you want to discard your changes?": [
         "Voulez-vous vraiment abandonner vos modifications ?"
       ],
@@ -4576,6 +4581,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Le format de votre fichier CSV n'est pas correct."
+      ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "La fonction de groupes n'est pas prise en charge par votre abonnement actuel. Les groupes créés précédemment sont désactivés et peuvent uniquement être supprimés."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Le nom sera visible par vos utilisateurs quand ils seront connectés."
@@ -6179,8 +6187,8 @@
         "${ n } connexions VPN"
       ],
       "${ options }-day file version history": [
-        "Historique des versions de fichier datant d'${ options } jour",
-        "Historique des versions de fichier datant de ${ options } jours"
+        "Historique des versions de fichiers datant d'${ options } jour",
+        "Historique des versions de fichiers datant de ${ options } jours"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } avec ${ n } alias « hide-my-email »",
@@ -6217,7 +6225,7 @@
         "10 adresses e-mail/alias"
       ],
       "10-year file version history": [
-        "Historique des versions de fichier sur 10 ans"
+        "Historique des versions des fichiers sur 10 ans"
       ],
       "15 GB storage": [
         "15 Go d'espace de stockage"

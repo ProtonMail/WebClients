@@ -2228,6 +2228,11 @@
         "Ajudeu-nos a millorar"
       ]
     },
+    "Downgrade warning": {
+      "Remove discount": [
+        "Suprimeix el descompte"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Historial de versions ampliat"
@@ -2590,6 +2595,11 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "El vostre compte o organització té una factura vençuda. Pagueu totes les factures pendents."
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "Introduïu una adreça de correu electrònic."
       ]
     },
     "Error importing users": {
@@ -4961,6 +4971,11 @@
         "Assistent amb intel·ligència artificial per ajudar-vos a crear millors correus electrònics, de manera ràpida i sense esforç."
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "No és una adreça de correu electrònic vàlida."
+      ]
+    },
     "invitation status": {
       "Declined": [
         "Rebutjat"
@@ -5420,6 +5435,9 @@
       ],
       "Reveal password": [
         "Mostra la contrasenya"
+      ],
+      "Search by email": [
+        "Cerca per correu electrònic"
       ],
       "Second password": [
         "Segona contrasenya"
@@ -6204,6 +6222,9 @@
       "Password-protected Emails": [
         "Correus protegits amb contrasenya"
       ],
+      "Phone support (20+ users)": [
+        "Suport telefònic (a partir de 20 usuaris)"
+      ],
       "Priority email support": [
         "Suport prioritari per correu electrònic"
       ],
@@ -6954,6 +6975,20 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Els usuaris veuran el vostre logo en lloc de la icona de ${ BRAND_NAME } quan iniciïn la sessió a les nostres aplicacions web."
+      ]
+    },
+    "orgidentity": {
+      "Edit organization identity": [
+        "Edita la identitat de l'organització"
+      ],
+      "New organization identity": [
+        "Nova identitat de l'organització"
+      ],
+      "Organization identity": [
+        "Identitat de l'organització"
+      ],
+      "Verify": [
+        "Verifica"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -8902,6 +8937,15 @@
       "Organization activated": [
         "Organització activada"
       ],
+      "Organization logo removed": [
+        "S'ha esborrat el logo de l'organització."
+      ],
+      "Organization logo updated": [
+        "S'ha actualitzat el logo de l'organització."
+      ],
+      "Organization name updated": [
+        "S'ha actualitzat el nom de l'organització."
+      ],
       "Password copied to clipboard": [
         "La contrasenya s'ha copiat al porta-retalls"
       ],
@@ -9887,8 +9931,14 @@
       ]
     },
     "unprivatization": {
+      "Approve all": [
+        "Aprova tot"
+      ],
       "Delete request": [
         "Elimina la sol·licitud"
+      ],
+      "Enable manually": [
+        "Activa manualment"
       ],
       "Pending admin access": [
         "Accés com a administrador pendent"
