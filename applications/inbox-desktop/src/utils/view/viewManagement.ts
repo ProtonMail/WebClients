@@ -364,7 +364,11 @@ export async function showNetworkErrorPage(viewID: ViewID): Promise<void> {
         return;
     }
 
-    await view.webContents.loadFile(join(app.getAppPath(), "assets/error-network/error.html"), {
+    const filePath = app.isPackaged
+        ? join(process.resourcesPath, "error-network.html")
+        : join(app.getAppPath(), "assets/error-network.html");
+
+    await view.webContents.loadFile(filePath, {
         query: {
             theme: nativeTheme.shouldUseDarkColors ? "dark" : "light",
             title: c("error screen").t`Cannot establish connection`,
@@ -384,7 +388,11 @@ async function showLoadingPage(viewID: ViewID): Promise<void> {
         return;
     }
 
-    await view.webContents.loadFile(join(app.getAppPath(), "assets/loading/loading.html"), {
+    const filePath = app.isPackaged
+        ? join(process.resourcesPath, "loading.html")
+        : join(app.getAppPath(), "assets/loading.html");
+
+    await view.webContents.loadFile(filePath, {
         query: {
             message: c("loading screen").t`Loading ${viewTitleMap[viewID]}…`,
             theme: nativeTheme.shouldUseDarkColors ? "dark" : "light",
