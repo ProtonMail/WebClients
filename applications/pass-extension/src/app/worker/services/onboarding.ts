@@ -6,6 +6,7 @@ import browser from '@proton/pass/lib/globals/browser';
 import {
     createAliasTrashConfirmRule,
     createBlackFridayRule,
+    createFamilyPlanPromo2024Rule,
     createMonitorRule,
     createPendingShareAccessRule,
     createPermissionsRule,
@@ -32,6 +33,7 @@ export const createOnboardingService = (storage: ExtensionStorage<OnboardingStor
             createPermissionsRule(withContext((ctx) => ctx.service.activation.getPermissionsGranted())),
             createStorageIssueRule(withContext((ctx) => ctx.service.storage.getState().storageFull)),
             createUpdateRule(withContext((ctx) => ctx.service.activation.getAvailableUpdate())),
+            createFamilyPlanPromo2024Rule(store),
             createTrialRule(store),
             createBlackFridayRule(store),
             createSecurityRule(store),

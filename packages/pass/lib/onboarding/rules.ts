@@ -5,13 +5,16 @@ import { api } from '@proton/pass/lib/api/api';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
     selectCreatedItemsCount,
+    selectFeatureFlag,
     selectLockEnabled,
     selectPassPlan,
+    selectUserPlan,
     selectUserState,
 } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
-import { OnboardingMessage } from '@proton/pass/types';
+import { OnboardingMessage, PlanType } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { merge } from '@proton/pass/utils/object/merge';
 import { UNIX_DAY } from '@proton/pass/utils/time/constants';
@@ -128,4 +131,20 @@ export const createAliasTrashConfirmRule = () =>
     createOnboardingRule({
         message: OnboardingMessage.ALIAS_TRASH_CONFIRM,
         when: (previous) => !previous,
+    });
+
+export const createFamilyPlanPromo2024Rule = (store: Store<State>) =>
+    createOnboardingRule({
+        message: OnboardingMessage.FAMILY_PLAN_PROMO_2024,
+        when: (previous) => {
+            if (previous) return false;
+
+            const state = store.getState();
+            const enabled = selectFeatureFlag(PassFeature.PassFamilyPlanPromo2024)(state);
+            const plan = selectUserPlan(state);
+            const cohortPass2023 = plan?.InternalName === 'pass2023';
+            const cohortPassFree = plan?.Type === PlanType.free;
+
+            return enabled && (cohortPass2023 || cohortPassFree);
+        },
     });
