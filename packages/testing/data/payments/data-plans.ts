@@ -20,7 +20,7 @@ function deepFreeze(object: any) {
 
 const plans: Plan[] = deepFreeze([
     {
-        ID: 'lY2ZCYkVNfl_osze70PRoqzg34MQI64mE3-pLc-yMp_6KXthkV1paUsyS276OdNwucz9zKoWKZL_TgtKxOPb0w==',
+        ID: 'pIJGEYyNFsPEb61otAc47_X8eoSeAfMSokny6dmg3jg2JrcdohiRuWSN2i1rgnkEnZmolVx4Np96IcwxJh1WNw==',
         ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
         Type: 1,
         Name: 'drivelite2024',
@@ -42,7 +42,7 @@ const plans: Plan[] = deepFreeze([
             '1': 100,
         },
         PeriodEnd: {
-            '1': 1726305642,
+            '1': 1730287229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -52,7 +52,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -61,7 +61,7 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: '0WjWEbOmKh7F2a1Snx2FJKA7a3Fm05p-nIZ0TqiHjDDUa6oHnsyWeeVXgSuzumCmFE8_asJsom9ZzGbx-eDecw==',
+        ID: 'uMjs3RbhmCfyC6d1w-xjPzjvji-PjVbL8YST3eBzr5I0-3UKmZv9Q9l_sGUf422xNkLtlsh7ZHoYS1poeYsRVQ==',
         ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
         Type: 1,
         Name: 'mail2022',
@@ -87,9 +87,9 @@ const plans: Plan[] = deepFreeze([
             '24': 8376,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -99,7 +99,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -108,7 +108,7 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'FK4MKKIVJqOC9Pg_sAxCjNWf8PM9yGzrXO3eXq8sk5RJB6HtaRBNUEcnvJBrQVPAtrDSoTNq4Du3FpqIxyMhHQ==',
+        ID: 'ABjkEfZ8_V7gPZk51B3Eglz2ArAEYFfpdeSAsVoov8hWVVajJq_jOxIqVfQoRbdw-bx_nWUOpqQaSV_-i9c4vw==',
         ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
         Type: 1,
         Name: 'passpro2024',
@@ -134,9 +134,9 @@ const plans: Plan[] = deepFreeze([
             '24': 8376,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -146,7 +146,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -155,7 +155,7 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: '1e_hLDsjEBCzrXfR6u6QT5MXbIzmOVuIhlSEcsF88t5Q7GXF66gxo-V8vzddFjRuL-3a1yGPm4nR3rsxQdD5kw==',
+        ID: 'BKiAUbkGnUPiy2c3b0sBCK557OBnWD7ACqqX3VPoZqOOyeMdupoWcjrPDBHy3ANfFKHnJs6qdQrdvHj7zjon_g==',
         ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
         Type: 1,
         Name: 'passbiz2024',
@@ -181,9 +181,9 @@ const plans: Plan[] = deepFreeze([
             '24': 11976,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -193,7 +193,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -202,7 +202,186 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'UVhawo1URvrpvbnp1FaDO2RhoaENS5Ge8bJ4PT4U4ATqZeZTNGrVD1vM2JpeQP8tMMQQ9iqDEIz2u4werNZIRw==',
+        ID: 'rNcUGBVpjiJI5SmgadVxMRR21_AoE1twQUrhpDZe0-qRNigMCeuxnVHNusVQpbHuDiTWa-wscVxISe-u7hnZEQ==',
+        ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
+        Type: 1,
+        Name: 'passfamily2024',
+        Title: 'Pass Family',
+        MaxDomains: 0,
+        MaxAddresses: 0,
+        MaxCalendars: 0,
+        MaxSpace: 0,
+        MaxMembers: 0,
+        MaxVPN: 0,
+        MaxTier: 0,
+        Services: 8,
+        Features: 0,
+        State: 1,
+        Pricing: {
+            '1': 699,
+            '12': 5988,
+        },
+        DefaultPricing: {
+            '1': 699,
+            '12': 5988,
+        },
+        PeriodEnd: {
+            '1': 1730287229,
+            '12': 1759231229,
+        },
+        Currency: 'CHF',
+        Quantity: 1,
+        Offers: [],
+        Cycle: 1,
+        Amount: 699,
+        Vendors: {
+            Google: {
+                Plans: {},
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
+            },
+            Apple: {
+                Plans: {},
+                CustomerID: '',
+            },
+        },
+    },
+    {
+        ID: 'otkpEZzG--8dMXvwyLXLQWB72hhBhNGzINjH14rUDfywvOyeN01cDxDrS3Koifxf6asA7Xcwtldm0r_MCmWiAQ==',
+        ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
+        Type: 1,
+        Name: 'drivebiz2024',
+        Title: 'Drive Professional',
+        MaxDomains: 0,
+        MaxAddresses: 1,
+        MaxCalendars: 0,
+        MaxSpace: 1099511627776,
+        MaxMembers: 1,
+        MaxVPN: 0,
+        MaxTier: 0,
+        Services: 2,
+        Features: 0,
+        State: 1,
+        Pricing: {
+            '1': 999,
+            '12': 9588,
+        },
+        DefaultPricing: {
+            '1': 999,
+            '12': 9588,
+        },
+        PeriodEnd: {
+            '1': 1730287229,
+            '12': 1759231229,
+        },
+        Currency: 'CHF',
+        Quantity: 1,
+        Offers: [],
+        Cycle: 1,
+        Amount: 999,
+        Vendors: {
+            Google: {
+                Plans: {},
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
+            },
+            Apple: {
+                Plans: {},
+                CustomerID: '',
+            },
+        },
+    },
+    {
+        ID: 'flz6WyEo9y0dPsnUy2wRabn7cOA3jjx2xQQt_3hYPH2j3mAKy9kgzozLulWJyKD3VpOQy8fSiZDGXgSvFyXsHg==',
+        ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
+        Type: 1,
+        Name: 'duo2024',
+        Title: 'Proton Duo',
+        MaxDomains: 3,
+        MaxAddresses: 30,
+        MaxCalendars: 50,
+        MaxSpace: 1099511627776,
+        MaxMembers: 2,
+        MaxVPN: 20,
+        MaxTier: 2,
+        Services: 31,
+        Features: 1,
+        State: 1,
+        Pricing: {
+            '1': 1999,
+            '12': 17988,
+            '24': 28776,
+        },
+        DefaultPricing: {
+            '1': 1999,
+            '12': 17988,
+            '24': 28776,
+        },
+        PeriodEnd: {
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
+        },
+        Currency: 'CHF',
+        Quantity: 1,
+        Offers: [],
+        Cycle: 1,
+        Amount: 1999,
+        Vendors: {
+            Google: {
+                Plans: {},
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
+            },
+            Apple: {
+                Plans: {},
+                CustomerID: '',
+            },
+        },
+    },
+    {
+        ID: 'omEO5MKvD9YpM9taod_z1DrWpKBBXYWXxpsxG7D4hyX8SjkutHq2x_bPvIio0FfbpoGorUK4OrOV2xpco5nh6Q==',
+        ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
+        Type: 1,
+        Name: 'jade2024',
+        Title: 'Jade',
+        MaxDomains: 0,
+        MaxAddresses: 0,
+        MaxCalendars: 0,
+        MaxSpace: 0,
+        MaxMembers: 0,
+        MaxVPN: 0,
+        MaxTier: 0,
+        Services: 0,
+        Features: 0,
+        State: 1,
+        Pricing: {
+            '1': 2299,
+            '12': 22070,
+        },
+        DefaultPricing: {
+            '1': 2299,
+            '12': 22070,
+        },
+        PeriodEnd: {
+            '1': 1730287229,
+            '12': 1759231229,
+        },
+        Currency: 'CHF',
+        Quantity: 1,
+        Offers: [],
+        Cycle: 1,
+        Amount: 2299,
+        Vendors: {
+            Google: {
+                Plans: {},
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
+            },
+            Apple: {
+                Plans: {},
+                CustomerID: '',
+            },
+        },
+    },
+    {
+        ID: '0WjWEbOmKh7F2a1Snx2FJKA7a3Fm05p-nIZ0TqiHjDDUa6oHnsyWeeVXgSuzumCmFE8_asJsom9ZzGbx-eDecw==',
         ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
         Type: 1,
         Name: 'drive2022',
@@ -226,8 +405,8 @@ const plans: Plan[] = deepFreeze([
             '12': 4788,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
+            '1': 1730287229,
+            '12': 1759231229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -237,7 +416,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -246,7 +425,7 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: '-Bpgivr5H2qGDRiUQ4-7gm5YLf215MEgZCdzOtLW5psxgB8oNc8OnoFRykab4Z23EGEW1ka3GtQPF9xwx9-VUA==',
+        ID: 'l8vWAXHBQmv0u7OVtPbcqMa4iwQaBqowINSQjPrxAr-Da8fVPKUkUcqAq30_BCxj1X0nW70HQRmAa-rIvzmKUA==',
         ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
         Type: 1,
         Name: 'wallet2024',
@@ -270,8 +449,8 @@ const plans: Plan[] = deepFreeze([
             '12': 4788,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
+            '1': 1730287229,
+            '12': 1759231229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -281,7 +460,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -290,7 +469,7 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'fT-fHNQexHafNYev4Qz49aetYhhjFOJCD8E8GYYOMY6o0U9WwINhnI76D9k7f6WB8_GaMISfd3a_cxe6vEUGxw==',
+        ID: '39hry1jlHiPzhXRXrWjfS6t3fqA14QbYfrbF30l2PYYWOhVpyJ33nhujM4z4SHtfuQqTx6e7oSQokrqhLMD8LQ==',
         ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
         Type: 1,
         Name: 'pass2023',
@@ -316,9 +495,9 @@ const plans: Plan[] = deepFreeze([
             '24': 7176,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -328,7 +507,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -337,7 +516,7 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: '39hry1jlHiPzhXRXrWjfS6t3fqA14QbYfrbF30l2PYYWOhVpyJ33nhujM4z4SHtfuQqTx6e7oSQokrqhLMD8LQ==',
+        ID: 'q6fRrEIn0nyJBE_-YSIiVf80M2VZhOuUHW5In4heCyOdV_nGibV38tK76fPKm7lTHQLcDiZtEblk0t55wbuw4w==',
         ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
         Type: 1,
         Name: 'vpn2022',
@@ -367,11 +546,11 @@ const plans: Plan[] = deepFreeze([
             '30': 29970,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '15': 1763112042,
-            '24': 1786699242,
-            '30': 1802596842,
+            '1': 1730287229,
+            '12': 1759231229,
+            '15': 1767093629,
+            '24': 1790767229,
+            '30': 1806405629,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -381,7 +560,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -390,7 +569,7 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'ABjkEfZ8_V7gPZk51B3Eglz2ArAEYFfpdeSAsVoov8hWVVajJq_jOxIqVfQoRbdw-bx_nWUOpqQaSV_-i9c4vw==',
+        ID: 'lY2ZCYkVNfl_osze70PRoqzg34MQI64mE3-pLc-yMp_6KXthkV1paUsyS276OdNwucz9zKoWKZL_TgtKxOPb0w==',
         ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
         Type: 1,
         Name: 'mailbiz2024',
@@ -414,8 +593,8 @@ const plans: Plan[] = deepFreeze([
             '12': 11988,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
+            '1': 1730287229,
+            '12': 1759231229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -425,7 +604,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -434,7 +613,7 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'dRs2Vv64Vru392SbvvG1MbEt3Ep5P_EWz8WbHVAOl_6h_Ty9jItyktkVcfz9-xRvCGwFq_TW7i8FtJaGyFEq0g==',
+        ID: 'hCjg4nXWswD5EhdgWrKr2xP3D-99QRPot3H3hg7yBfLZ9GOrjBEJuc3-rO7u-0WevfX4WSFcfgps8O3qKJAZxQ==',
         ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
         Type: 1,
         Name: 'mailpro2022',
@@ -460,9 +639,9 @@ const plans: Plan[] = deepFreeze([
             '24': 15576,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -472,7 +651,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -481,7 +660,7 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'uMjs3RbhmCfyC6d1w-xjPzjvji-PjVbL8YST3eBzr5I0-3UKmZv9Q9l_sGUf422xNkLtlsh7ZHoYS1poeYsRVQ==',
+        ID: 'FK4MKKIVJqOC9Pg_sAxCjNWf8PM9yGzrXO3eXq8sk5RJB6HtaRBNUEcnvJBrQVPAtrDSoTNq4Du3FpqIxyMhHQ==',
         ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
         Type: 1,
         Name: 'vpnpass2023',
@@ -511,11 +690,11 @@ const plans: Plan[] = deepFreeze([
             '30': 17970,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '15': 1763112042,
-            '24': 1786699242,
-            '30': 1802596842,
+            '1': 1730287229,
+            '12': 1759231229,
+            '15': 1767093629,
+            '24': 1790767229,
+            '30': 1806405629,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -525,7 +704,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -534,7 +713,7 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: '41hQawnzVJ0Pj5idTMbsjzAWIsI8jDN3tBlmjUDhPK6RWM929TCv-8sAiy9XS3eBdWytwVnLbj1KPO6Io_xSNg==',
+        ID: '6QeHIh44j9R3b8kckYBHvp84UGeLt3yliLxZWhqVULXfuSNRDRwULijb5e4kpr5wvfluBXmtyCHWe0nYweWRpg==',
         ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
         Type: 1,
         Name: 'bundle2022',
@@ -560,9 +739,9 @@ const plans: Plan[] = deepFreeze([
             '24': 19176,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -572,7 +751,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -581,7 +760,7 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: '6QeHIh44j9R3b8kckYBHvp84UGeLt3yliLxZWhqVULXfuSNRDRwULijb5e4kpr5wvfluBXmtyCHWe0nYweWRpg==',
+        ID: 'dRs2Vv64Vru392SbvvG1MbEt3Ep5P_EWz8WbHVAOl_6h_Ty9jItyktkVcfz9-xRvCGwFq_TW7i8FtJaGyFEq0g==',
         ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
         Type: 1,
         Name: 'drivepro2022',
@@ -607,9 +786,9 @@ const plans: Plan[] = deepFreeze([
             '24': 19176,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -619,7 +798,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -628,7 +807,7 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'hCjg4nXWswD5EhdgWrKr2xP3D-99QRPot3H3hg7yBfLZ9GOrjBEJuc3-rO7u-0WevfX4WSFcfgps8O3qKJAZxQ==',
+        ID: 'UVhawo1URvrpvbnp1FaDO2RhoaENS5Ge8bJ4PT4U4ATqZeZTNGrVD1vM2JpeQP8tMMQQ9iqDEIz2u4werNZIRw==',
         ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
         Type: 1,
         Name: 'bundlepro2022',
@@ -636,7 +815,7 @@ const plans: Plan[] = deepFreeze([
         MaxDomains: 10,
         MaxAddresses: 15,
         MaxCalendars: 25,
-        MaxSpace: 536870912000,
+        MaxSpace: 1099511627776,
         MaxMembers: 1,
         MaxVPN: 10,
         MaxTier: 2,
@@ -654,9 +833,9 @@ const plans: Plan[] = deepFreeze([
             '24': 23976,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -666,7 +845,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -675,7 +854,7 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'dw-RwOdh4DWxBXnVoGO48PV_qEfG5T_j0fph6fSEBYetVdpX4v9ReAlusIcj7GUazufLnMTa0cOTvWCF7qWX3g==',
+        ID: 'kBZYBzgHWtjW5igU33BXqwVZ66GBdJi4ycXPzZjyUmp840-O2yXyNEO0ayRveZKNnASS_btzUY-WkI_mcvNuOg==',
         ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
         Type: 1,
         Name: 'vpnpro2023',
@@ -701,9 +880,9 @@ const plans: Plan[] = deepFreeze([
             '24': 28752,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -713,7 +892,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -722,54 +901,7 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'l8vWAXHBQmv0u7OVtPbcqMa4iwQaBqowINSQjPrxAr-Da8fVPKUkUcqAq30_BCxj1X0nW70HQRmAa-rIvzmKUA==',
-        ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
-        Type: 1,
-        Name: 'duo2024',
-        Title: 'Proton Duo',
-        MaxDomains: 3,
-        MaxAddresses: 30,
-        MaxCalendars: 50,
-        MaxSpace: 1073741824000,
-        MaxMembers: 2,
-        MaxVPN: 20,
-        MaxTier: 2,
-        Services: 31,
-        Features: 1,
-        State: 1,
-        Pricing: {
-            '1': 1999,
-            '12': 17988,
-            '24': 28776,
-        },
-        DefaultPricing: {
-            '1': 1999,
-            '12': 17988,
-            '24': 28776,
-        },
-        PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
-        },
-        Currency: 'CHF',
-        Quantity: 1,
-        Offers: [],
-        Cycle: 1,
-        Amount: 1999,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
-    },
-    {
-        ID: 'UOZXnOXW6gC7xjRiJC14rn0UazL4M7wuHDdMILF1H6xnTW41x2ka_MY4XikenQOyBAk4r6ra5jfPzs2FybDKTg==',
+        ID: '-Bpgivr5H2qGDRiUQ4-7gm5YLf215MEgZCdzOtLW5psxgB8oNc8OnoFRykab4Z23EGEW1ka3GtQPF9xwx9-VUA==',
         ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
         Type: 1,
         Name: 'bundlepro2024',
@@ -777,7 +909,7 @@ const plans: Plan[] = deepFreeze([
         MaxDomains: 15,
         MaxAddresses: 20,
         MaxCalendars: 25,
-        MaxSpace: 536870912000,
+        MaxSpace: 1099511627776,
         MaxMembers: 1,
         MaxVPN: 10,
         MaxTier: 2,
@@ -795,9 +927,9 @@ const plans: Plan[] = deepFreeze([
             '24': 31176,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -807,7 +939,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -816,7 +948,7 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'xkrV_w__I12hcO3_nKwxDOV4YbKpkMBRNEuwENLv9Eei6DWGOojvPX60squGbSDos5pncJCdNZI1P9Q-A4feIQ==',
+        ID: 'dw-RwOdh4DWxBXnVoGO48PV_qEfG5T_j0fph6fSEBYetVdpX4v9ReAlusIcj7GUazufLnMTa0cOTvWCF7qWX3g==',
         ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
         Type: 1,
         Name: 'enterprise2022',
@@ -842,9 +974,9 @@ const plans: Plan[] = deepFreeze([
             '24': 31176,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -854,7 +986,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -863,7 +995,7 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'WStPKICb69ynQxIR5GXm6OuK4okqkADvrnC-K4D8VfZ4f0fbSnqNDek6XrfygCqAvRdZX43YAWG8M-xjF8IDDQ==',
+        ID: '41hQawnzVJ0Pj5idTMbsjzAWIsI8jDN3tBlmjUDhPK6RWM929TCv-8sAiy9XS3eBdWytwVnLbj1KPO6Io_xSNg==',
         ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
         Type: 1,
         Name: 'family2022',
@@ -889,9 +1021,9 @@ const plans: Plan[] = deepFreeze([
             '24': 47976,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -901,7 +1033,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -910,7 +1042,7 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'BKiAUbkGnUPiy2c3b0sBCK557OBnWD7ACqqX3VPoZqOOyeMdupoWcjrPDBHy3ANfFKHnJs6qdQrdvHj7zjon_g==',
+        ID: 'UOZXnOXW6gC7xjRiJC14rn0UazL4M7wuHDdMILF1H6xnTW41x2ka_MY4XikenQOyBAk4r6ra5jfPzs2FybDKTg==',
         ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
         Type: 1,
         Name: 'vpn2024',
@@ -944,13 +1076,13 @@ const plans: Plan[] = deepFreeze([
             '30': 29970,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '3': 1731576042,
-            '12': 1755163242,
-            '15': 1763112042,
-            '18': 1771060842,
-            '24': 1786699242,
-            '30': 1802596842,
+            '1': 1730287229,
+            '3': 1735557629,
+            '12': 1759231229,
+            '15': 1767093629,
+            '18': 1774869629,
+            '24': 1790767229,
+            '30': 1806405629,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -960,7 +1092,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -969,7 +1101,54 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'kBZYBzgHWtjW5igU33BXqwVZ66GBdJi4ycXPzZjyUmp840-O2yXyNEO0ayRveZKNnASS_btzUY-WkI_mcvNuOg==',
+        ID: 'xkrV_w__I12hcO3_nKwxDOV4YbKpkMBRNEuwENLv9Eei6DWGOojvPX60squGbSDos5pncJCdNZI1P9Q-A4feIQ==',
+        ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
+        Type: 1,
+        Name: 'visionary2022',
+        Title: 'Visionary',
+        MaxDomains: 10,
+        MaxAddresses: 100,
+        MaxCalendars: 150,
+        MaxSpace: 6597069766656,
+        MaxMembers: 6,
+        MaxVPN: 60,
+        MaxTier: 2,
+        Services: 31,
+        Features: 1,
+        State: 1,
+        Pricing: {
+            '1': 3999,
+            '12': 35988,
+            '24': 67176,
+        },
+        DefaultPricing: {
+            '1': 3999,
+            '12': 35988,
+            '24': 67176,
+        },
+        PeriodEnd: {
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
+        },
+        Currency: 'CHF',
+        Quantity: 1,
+        Offers: [],
+        Cycle: 1,
+        Amount: 3999,
+        Vendors: {
+            Google: {
+                Plans: {},
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
+            },
+            Apple: {
+                Plans: {},
+                CustomerID: '',
+            },
+        },
+    },
+    {
+        ID: 'fT-fHNQexHafNYev4Qz49aetYhhjFOJCD8E8GYYOMY6o0U9WwINhnI76D9k7f6WB8_GaMISfd3a_cxe6vEUGxw==',
         ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
         Type: 1,
         Name: 'vpnbiz2023',
@@ -985,29 +1164,29 @@ const plans: Plan[] = deepFreeze([
         Features: 0,
         State: 1,
         Pricing: {
-            '1': 7397,
+            '1': 7379,
             '12': 71964,
             '24': 129528,
         },
         DefaultPricing: {
-            '1': 7397,
+            '1': 7379,
             '12': 71964,
             '24': 129528,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
-        Amount: 7397,
+        Amount: 7379,
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -1016,8 +1195,184 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'W6E2R1LyNeueUxuR_1VjbM3M2UoGKPqPrRhGwrqRlLyoweZNyLx4xGKqw6f6hUXPDdaBUzoDUQpmC689IaZccw==',
+        ID: 'LT-J579mD-u0AvvVi5j5D-yIJuNLCLF6psVnbgorqIG1OE_2hhabKCUX3q2FeROuSQvfSKqnVVa1YyOhdSMnCw==',
+        ParentMetaPlanID: 'otkpEZzG--8dMXvwyLXLQWB72hhBhNGzINjH14rUDfywvOyeN01cDxDrS3Koifxf6asA7Xcwtldm0r_MCmWiAQ==',
+        Type: 0,
+        Name: '1member-drivebiz2024',
+        Title: '+1 User Drive Professional',
+        MaxDomains: 0,
+        MaxAddresses: 1,
+        MaxCalendars: 0,
+        MaxSpace: 1099511627776,
+        MaxMembers: 1,
+        MaxVPN: 0,
+        MaxTier: 0,
+        Services: 2,
+        Features: 0,
+        State: 1,
+        Pricing: {
+            '1': 999,
+            '12': 9588,
+        },
+        DefaultPricing: {
+            '1': 999,
+            '12': 9588,
+        },
+        PeriodEnd: {
+            '1': 1730287229,
+            '12': 1759231229,
+        },
+        Currency: 'CHF',
+        Quantity: 1,
+        Offers: [],
+        Cycle: 1,
+        Amount: 999,
+        Vendors: {
+            Google: {
+                Plans: {},
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
+            },
+            Apple: {
+                Plans: {},
+                CustomerID: '',
+            },
+        },
+    },
+    {
+        ID: 'EA_L-n90xfylILgsibUjIwl6bDAYucrmE60M1QuR73IVCZ8WZjPlY-mSXVGOjJ55HxZpaZt0YgWrb9Namn7-Dw==',
+        ParentMetaPlanID: 'uMjs3RbhmCfyC6d1w-xjPzjvji-PjVbL8YST3eBzr5I0-3UKmZv9Q9l_sGUf422xNkLtlsh7ZHoYS1poeYsRVQ==',
+        Type: 0,
+        Name: '1jade-mail2022',
+        Title: '+1 Jade Seat Mail Plus',
+        MaxDomains: 0,
+        MaxAddresses: 0,
+        MaxCalendars: 0,
+        MaxSpace: 0,
+        MaxMembers: 0,
+        MaxVPN: 0,
+        MaxTier: 0,
+        Services: 0,
+        Features: 0,
+        State: 1,
+        Pricing: {
+            '1': 2000,
+            '12': 19200,
+        },
+        DefaultPricing: {
+            '1': 2000,
+            '12': 19200,
+        },
+        PeriodEnd: {
+            '1': 1730287229,
+            '12': 1759231229,
+        },
+        Currency: 'CHF',
+        Quantity: 1,
+        Offers: [],
+        Cycle: 1,
+        Amount: 2000,
+        Vendors: {
+            Google: {
+                Plans: {},
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
+            },
+            Apple: {
+                Plans: {},
+                CustomerID: '',
+            },
+        },
+    },
+    {
+        ID: '4gbJEHDhhIVWJTLVOofIW1lkVzYWLSU9KR5B4NuW1ExeU_R9Dvl6ar8AZOUDiBbOAT0MHSCafhSmu5t1LC3oEA==',
+        ParentMetaPlanID: 'lY2ZCYkVNfl_osze70PRoqzg34MQI64mE3-pLc-yMp_6KXthkV1paUsyS276OdNwucz9zKoWKZL_TgtKxOPb0w==',
+        Type: 0,
+        Name: '1jade-mailbiz2024',
+        Title: '+1 Jade Seat Mail Professional',
+        MaxDomains: 0,
+        MaxAddresses: 0,
+        MaxCalendars: 0,
+        MaxSpace: 0,
+        MaxMembers: 0,
+        MaxVPN: 0,
+        MaxTier: 0,
+        Services: 0,
+        Features: 0,
+        State: 1,
+        Pricing: {
+            '1': 2000,
+            '12': 19200,
+        },
+        DefaultPricing: {
+            '1': 2000,
+            '12': 19200,
+        },
+        PeriodEnd: {
+            '1': 1730287229,
+            '12': 1759231229,
+        },
+        Currency: 'CHF',
+        Quantity: 1,
+        Offers: [],
+        Cycle: 1,
+        Amount: 2000,
+        Vendors: {
+            Google: {
+                Plans: {},
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
+            },
+            Apple: {
+                Plans: {},
+                CustomerID: '',
+            },
+        },
+    },
+    {
+        ID: '7JP3Xj9juDMcJfvGMKKxmfXCyMkjygkOfPdoOh1eKLpPV6wtIL5NNDz8cCoqh4cbFtVUtWHedrey503XE08NOA==',
         ParentMetaPlanID: 'hCjg4nXWswD5EhdgWrKr2xP3D-99QRPot3H3hg7yBfLZ9GOrjBEJuc3-rO7u-0WevfX4WSFcfgps8O3qKJAZxQ==',
+        Type: 0,
+        Name: '1jade-mailpro2022',
+        Title: '+1 Jade Seat Mail Essentials',
+        MaxDomains: 0,
+        MaxAddresses: 0,
+        MaxCalendars: 0,
+        MaxSpace: 0,
+        MaxMembers: 0,
+        MaxVPN: 0,
+        MaxTier: 0,
+        Services: 0,
+        Features: 0,
+        State: 1,
+        Pricing: {
+            '1': 2000,
+            '12': 19200,
+        },
+        DefaultPricing: {
+            '1': 2000,
+            '12': 19200,
+        },
+        PeriodEnd: {
+            '1': 1730287229,
+            '12': 1759231229,
+        },
+        Currency: 'CHF',
+        Quantity: 1,
+        Offers: [],
+        Cycle: 1,
+        Amount: 2000,
+        Vendors: {
+            Google: {
+                Plans: {},
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
+            },
+            Apple: {
+                Plans: {},
+                CustomerID: '',
+            },
+        },
+    },
+    {
+        ID: 'FV6FNtAc6lgP6R7dM7YB5N3LzHuoBMyivBSqjPcDfIbuMf5MdvXlCmMMcBY57-wdG-hQk4qhFb5lDEJyxjySpQ==',
+        ParentMetaPlanID: 'UVhawo1URvrpvbnp1FaDO2RhoaENS5Ge8bJ4PT4U4ATqZeZTNGrVD1vM2JpeQP8tMMQQ9iqDEIz2u4werNZIRw==',
         Type: 0,
         Name: '1domain-bundlepro2022',
         Title: '+1 Domain Proton Business',
@@ -1042,9 +1397,9 @@ const plans: Plan[] = deepFreeze([
             '24': 3120,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -1054,7 +1409,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -1063,8 +1418,8 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'LBNdqc0lK6KGsm-RvzaJY6ER2N2idlL6q65Nztx96qGNRR7GuYrEy69oNz8mpy4j8Su-E4FJxlQaBIg8vlomWw==',
-        ParentMetaPlanID: 'UOZXnOXW6gC7xjRiJC14rn0UazL4M7wuHDdMILF1H6xnTW41x2ka_MY4XikenQOyBAk4r6ra5jfPzs2FybDKTg==',
+        ID: 'ZbRviYhlvtC-15xXg7TxrS17FdBvjnTBIu4miJUAn1bgj6UZxDcHc9fSrRjbuswG7Q0fTQmoJ_TgTQvO5mjNdw==',
+        ParentMetaPlanID: '-Bpgivr5H2qGDRiUQ4-7gm5YLf215MEgZCdzOtLW5psxgB8oNc8OnoFRykab4Z23EGEW1ka3GtQPF9xwx9-VUA==',
         Type: 0,
         Name: '1domain-bundlepro2024',
         Title: '+1 Domain Proton Business Suite',
@@ -1089,9 +1444,9 @@ const plans: Plan[] = deepFreeze([
             '24': 3360,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -1101,7 +1456,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -1110,8 +1465,8 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'ZbRviYhlvtC-15xXg7TxrS17FdBvjnTBIu4miJUAn1bgj6UZxDcHc9fSrRjbuswG7Q0fTQmoJ_TgTQvO5mjNdw==',
-        ParentMetaPlanID: 'ABjkEfZ8_V7gPZk51B3Eglz2ArAEYFfpdeSAsVoov8hWVVajJq_jOxIqVfQoRbdw-bx_nWUOpqQaSV_-i9c4vw==',
+        ID: '0ucec3A_M5iwoSaddbGOH-z82AzOaaSgw9pHFyWfOSxADYod1tgnPDmNtJMtEkmm1UnflPHd9zPnhopooJ68gg==',
+        ParentMetaPlanID: 'lY2ZCYkVNfl_osze70PRoqzg34MQI64mE3-pLc-yMp_6KXthkV1paUsyS276OdNwucz9zKoWKZL_TgtKxOPb0w==',
         Type: 0,
         Name: '1scribe-mailbiz2024',
         Title: '+1 Proton Scribe Writing Assistant for Mail Professional',
@@ -1134,8 +1489,8 @@ const plans: Plan[] = deepFreeze([
             '12': 3588,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
+            '1': 1730287229,
+            '12': 1759231229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -1145,7 +1500,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -1154,8 +1509,8 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'No8eOZyFdCPyzrEVUg0ux6ZaxlY97bJCDhKeQirzWAqGFwObxxaHMoD_9ejwwkO83_2d9RYKc_Q_e_Bh22sciQ==',
-        ParentMetaPlanID: 'FK4MKKIVJqOC9Pg_sAxCjNWf8PM9yGzrXO3eXq8sk5RJB6HtaRBNUEcnvJBrQVPAtrDSoTNq4Du3FpqIxyMhHQ==',
+        ID: 'aJZHNZE_fd_rWygalcsahpc8ihMinUHUFGWXq8K0eoGH72CbCXp2KS82uvTPwdOw04ufbLk8zDyRDj7oNPrQCA==',
+        ParentMetaPlanID: 'ABjkEfZ8_V7gPZk51B3Eglz2ArAEYFfpdeSAsVoov8hWVVajJq_jOxIqVfQoRbdw-bx_nWUOpqQaSV_-i9c4vw==',
         Type: 0,
         Name: '1member-passpro2024',
         Title: '+1 User Pass Essentials',
@@ -1180,9 +1535,9 @@ const plans: Plan[] = deepFreeze([
             '24': 8376,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -1192,7 +1547,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -1201,8 +1556,55 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'Ofmpv8MnCIKFyK7HLtzPXKyreZDuooT93dAi5PGTiIiSHexH8cI5237KDJ0sTxKJvxpt6I0SPQ2Y2hmg3hnefg==',
-        ParentMetaPlanID: 'hCjg4nXWswD5EhdgWrKr2xP3D-99QRPot3H3hg7yBfLZ9GOrjBEJuc3-rO7u-0WevfX4WSFcfgps8O3qKJAZxQ==',
+        ID: 'ky3hcqtSCqCFLiuoZdo2MjxpON8oYrBejgjwERagF379FFEdFJfKex5s10W6TupaI-nwDs8cKJid-B30GkiqCQ==',
+        ParentMetaPlanID: 'UVhawo1URvrpvbnp1FaDO2RhoaENS5Ge8bJ4PT4U4ATqZeZTNGrVD1vM2JpeQP8tMMQQ9iqDEIz2u4werNZIRw==',
+        Type: 0,
+        Name: '1ip-bundlepro2022',
+        Title: '+1 IP Proton Business',
+        MaxDomains: 0,
+        MaxAddresses: 0,
+        MaxCalendars: 0,
+        MaxSpace: 0,
+        MaxMembers: 0,
+        MaxVPN: 0,
+        MaxTier: 0,
+        Services: 0,
+        Features: 0,
+        State: 1,
+        Pricing: {
+            '1': 4999,
+            '12': 47988,
+            '24': 86376,
+        },
+        DefaultPricing: {
+            '1': 4999,
+            '12': 47988,
+            '24': 86376,
+        },
+        PeriodEnd: {
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
+        },
+        Currency: 'CHF',
+        Quantity: 1,
+        Offers: [],
+        Cycle: 1,
+        Amount: 4999,
+        Vendors: {
+            Google: {
+                Plans: {},
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
+            },
+            Apple: {
+                Plans: {},
+                CustomerID: '',
+            },
+        },
+    },
+    {
+        ID: '3btuMuFufrV5jWDLk8inzlfWV-Flg63Me0vjfx8KvQscZE_ehSFggddMq97DzXDHirQ2BNhBjbcipuXjovCPqg==',
+        ParentMetaPlanID: 'UVhawo1URvrpvbnp1FaDO2RhoaENS5Ge8bJ4PT4U4ATqZeZTNGrVD1vM2JpeQP8tMMQQ9iqDEIz2u4werNZIRw==',
         Type: 0,
         Name: '1scribe-bundlepro2022',
         Title: '+1 Scribe Seat Proton Business',
@@ -1227,9 +1629,9 @@ const plans: Plan[] = deepFreeze([
             '24': 7176,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -1239,7 +1641,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -1248,8 +1650,8 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'rll2xwI6pLPLiU6XWTkFRfKhUH_Ddw4TdzriEX0MBeat9Pg8wkQz-G3tQVYzlIR9whVcOgz_O0xlZwYyAHk4HQ==',
-        ParentMetaPlanID: 'UOZXnOXW6gC7xjRiJC14rn0UazL4M7wuHDdMILF1H6xnTW41x2ka_MY4XikenQOyBAk4r6ra5jfPzs2FybDKTg==',
+        ID: 'q6PiQMq2FU0RnxzC2ly5cRQ7AjB1A-3IvKOmKUT4vwmPxGqJuXUvshsnor2q59pgXUISYBjycLu7WcNj_gt7-A==',
+        ParentMetaPlanID: '-Bpgivr5H2qGDRiUQ4-7gm5YLf215MEgZCdzOtLW5psxgB8oNc8OnoFRykab4Z23EGEW1ka3GtQPF9xwx9-VUA==',
         Type: 0,
         Name: '1scribe-bundlepro2024',
         Title: '+1 Scribe Seat Proton Business Suite',
@@ -1274,9 +1676,9 @@ const plans: Plan[] = deepFreeze([
             '24': 7176,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -1286,7 +1688,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -1295,8 +1697,8 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'D4TVgdFKidFgQWd5IeXYyegjDNV9KWF1HDwjxZlesUo-Wc2NTL8mUQc6IlYwowznc5vHQkTL4iUbn6K0CorrjQ==',
-        ParentMetaPlanID: 'xkrV_w__I12hcO3_nKwxDOV4YbKpkMBRNEuwENLv9Eei6DWGOojvPX60squGbSDos5pncJCdNZI1P9Q-A4feIQ==',
+        ID: '8o1CUlLq9oqj7XeFY6dTJY-6SQ3G9kqN08sRByDiRO3hRbwSacuJeU5x9X88sFv26D-zohr4j_Mk2St65LGATA==',
+        ParentMetaPlanID: 'dw-RwOdh4DWxBXnVoGO48PV_qEfG5T_j0fph6fSEBYetVdpX4v9ReAlusIcj7GUazufLnMTa0cOTvWCF7qWX3g==',
         Type: 0,
         Name: '1scribe-enterprise2022',
         Title: '+1 Scribe Seat Enterprise',
@@ -1321,9 +1723,9 @@ const plans: Plan[] = deepFreeze([
             '24': 7176,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -1333,7 +1735,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -1342,8 +1744,8 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: '4G2c49-RqRrmtM-RmWUVBu9Kd7EM6ZrhBahV_mDp1GXczHauFj_2loHTmxjweLGi2Mlsx2kcfRYUVEp9P0tWkg==',
-        ParentMetaPlanID: 'dRs2Vv64Vru392SbvvG1MbEt3Ep5P_EWz8WbHVAOl_6h_Ty9jItyktkVcfz9-xRvCGwFq_TW7i8FtJaGyFEq0g==',
+        ID: 'rll2xwI6pLPLiU6XWTkFRfKhUH_Ddw4TdzriEX0MBeat9Pg8wkQz-G3tQVYzlIR9whVcOgz_O0xlZwYyAHk4HQ==',
+        ParentMetaPlanID: 'hCjg4nXWswD5EhdgWrKr2xP3D-99QRPot3H3hg7yBfLZ9GOrjBEJuc3-rO7u-0WevfX4WSFcfgps8O3qKJAZxQ==',
         Type: 0,
         Name: '1scribe-mailpro2022',
         Title: '+1 Proton Scribe Writing Assistant for Mail Essentials',
@@ -1368,9 +1770,9 @@ const plans: Plan[] = deepFreeze([
             '24': 7176,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -1380,7 +1782,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -1389,8 +1791,8 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: '6CucpHSMwAfHV3iSUEdbrmI4VLCzM3lWd1NR5C2DGUmfx5Ljq2LEkynoD3y-15stpnTFqWMedJs-pwUUJH1waQ==',
-        ParentMetaPlanID: '1e_hLDsjEBCzrXfR6u6QT5MXbIzmOVuIhlSEcsF88t5Q7GXF66gxo-V8vzddFjRuL-3a1yGPm4nR3rsxQdD5kw==',
+        ID: 'WStPKICb69ynQxIR5GXm6OuK4okqkADvrnC-K4D8VfZ4f0fbSnqNDek6XrfygCqAvRdZX43YAWG8M-xjF8IDDQ==',
+        ParentMetaPlanID: 'BKiAUbkGnUPiy2c3b0sBCK557OBnWD7ACqqX3VPoZqOOyeMdupoWcjrPDBHy3ANfFKHnJs6qdQrdvHj7zjon_g==',
         Type: 0,
         Name: '1scribe-passbiz2024',
         Title: '+1 Scribe Seat Pass Business',
@@ -1415,9 +1817,9 @@ const plans: Plan[] = deepFreeze([
             '24': 7176,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -1427,7 +1829,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -1436,8 +1838,8 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'q6PiQMq2FU0RnxzC2ly5cRQ7AjB1A-3IvKOmKUT4vwmPxGqJuXUvshsnor2q59pgXUISYBjycLu7WcNj_gt7-A==',
-        ParentMetaPlanID: 'FK4MKKIVJqOC9Pg_sAxCjNWf8PM9yGzrXO3eXq8sk5RJB6HtaRBNUEcnvJBrQVPAtrDSoTNq4Du3FpqIxyMhHQ==',
+        ID: 'Zr8DfG3ogE8GI-UeHMx2NC94NyuNKRlV4Ntve1IUmbZMayrFUL1kvr0WtdFctYma-g25ObSDlXNXpl30oH-VEQ==',
+        ParentMetaPlanID: 'ABjkEfZ8_V7gPZk51B3Eglz2ArAEYFfpdeSAsVoov8hWVVajJq_jOxIqVfQoRbdw-bx_nWUOpqQaSV_-i9c4vw==',
         Type: 0,
         Name: '1scribe-passpro2024',
         Title: '+1 Scribe Seat Pass Essentials',
@@ -1462,9 +1864,9 @@ const plans: Plan[] = deepFreeze([
             '24': 7176,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -1474,7 +1876,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -1483,8 +1885,8 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: '3btuMuFufrV5jWDLk8inzlfWV-Flg63Me0vjfx8KvQscZE_ehSFggddMq97DzXDHirQ2BNhBjbcipuXjovCPqg==',
-        ParentMetaPlanID: 'kBZYBzgHWtjW5igU33BXqwVZ66GBdJi4ycXPzZjyUmp840-O2yXyNEO0ayRveZKNnASS_btzUY-WkI_mcvNuOg==',
+        ID: 'D4TVgdFKidFgQWd5IeXYyegjDNV9KWF1HDwjxZlesUo-Wc2NTL8mUQc6IlYwowznc5vHQkTL4iUbn6K0CorrjQ==',
+        ParentMetaPlanID: 'fT-fHNQexHafNYev4Qz49aetYhhjFOJCD8E8GYYOMY6o0U9WwINhnI76D9k7f6WB8_GaMISfd3a_cxe6vEUGxw==',
         Type: 0,
         Name: '1scribe-vpnbiz2023',
         Title: '+1 Scribe Seat VPN Business',
@@ -1509,9 +1911,9 @@ const plans: Plan[] = deepFreeze([
             '24': 7176,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -1521,7 +1923,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -1530,8 +1932,8 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: '0ucec3A_M5iwoSaddbGOH-z82AzOaaSgw9pHFyWfOSxADYod1tgnPDmNtJMtEkmm1UnflPHd9zPnhopooJ68gg==',
-        ParentMetaPlanID: 'dw-RwOdh4DWxBXnVoGO48PV_qEfG5T_j0fph6fSEBYetVdpX4v9ReAlusIcj7GUazufLnMTa0cOTvWCF7qWX3g==',
+        ID: '6CucpHSMwAfHV3iSUEdbrmI4VLCzM3lWd1NR5C2DGUmfx5Ljq2LEkynoD3y-15stpnTFqWMedJs-pwUUJH1waQ==',
+        ParentMetaPlanID: 'kBZYBzgHWtjW5igU33BXqwVZ66GBdJi4ycXPzZjyUmp840-O2yXyNEO0ayRveZKNnASS_btzUY-WkI_mcvNuOg==',
         Type: 0,
         Name: '1scribe-vpnpro2023',
         Title: '+1 Scribe Seat VPN Essentials',
@@ -1556,9 +1958,9 @@ const plans: Plan[] = deepFreeze([
             '24': 7176,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -1568,7 +1970,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -1577,8 +1979,8 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: '5ztbWptW77nXp6NuTGMUtmdTu32Rbu7zjiPPI4ZVWqzkXS10E7P9W8210y2VONkgO8fj8OyH3sxAb9SVxwL4Ew==',
-        ParentMetaPlanID: '1e_hLDsjEBCzrXfR6u6QT5MXbIzmOVuIhlSEcsF88t5Q7GXF66gxo-V8vzddFjRuL-3a1yGPm4nR3rsxQdD5kw==',
+        ID: 'LBNdqc0lK6KGsm-RvzaJY6ER2N2idlL6q65Nztx96qGNRR7GuYrEy69oNz8mpy4j8Su-E4FJxlQaBIg8vlomWw==',
+        ParentMetaPlanID: 'BKiAUbkGnUPiy2c3b0sBCK557OBnWD7ACqqX3VPoZqOOyeMdupoWcjrPDBHy3ANfFKHnJs6qdQrdvHj7zjon_g==',
         Type: 0,
         Name: '1member-passbiz2024',
         Title: '+1 User Pass Business',
@@ -1603,9 +2005,9 @@ const plans: Plan[] = deepFreeze([
             '24': 11976,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -1615,7 +2017,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -1624,8 +2026,8 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'FuN6X5phsMc70T-bWtyoFKWrtMNmN_5KK0dbbkY7Mxbbm6TEi2WrpqGuH8MVUMlVRayNPTvEA0w8EGLpQWFx6g==',
-        ParentMetaPlanID: 'ABjkEfZ8_V7gPZk51B3Eglz2ArAEYFfpdeSAsVoov8hWVVajJq_jOxIqVfQoRbdw-bx_nWUOpqQaSV_-i9c4vw==',
+        ID: '4G2c49-RqRrmtM-RmWUVBu9Kd7EM6ZrhBahV_mDp1GXczHauFj_2loHTmxjweLGi2Mlsx2kcfRYUVEp9P0tWkg==',
+        ParentMetaPlanID: 'lY2ZCYkVNfl_osze70PRoqzg34MQI64mE3-pLc-yMp_6KXthkV1paUsyS276OdNwucz9zKoWKZL_TgtKxOPb0w==',
         Type: 0,
         Name: '1member-mailbiz2024',
         Title: '+1 User Mail Professional',
@@ -1648,8 +2050,8 @@ const plans: Plan[] = deepFreeze([
             '12': 11988,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
+            '1': 1730287229,
+            '12': 1759231229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -1659,7 +2061,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -1668,8 +2070,8 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: '2PSfielrhNuR2Fb8LLK72FSrz_XQMuXed4L2zht5KB9qyBb5JycR0m0mBZpxbdMLRauS-FdgT2rnR6AsoNuuVQ==',
-        ParentMetaPlanID: 'dw-RwOdh4DWxBXnVoGO48PV_qEfG5T_j0fph6fSEBYetVdpX4v9ReAlusIcj7GUazufLnMTa0cOTvWCF7qWX3g==',
+        ID: 'W6E2R1LyNeueUxuR_1VjbM3M2UoGKPqPrRhGwrqRlLyoweZNyLx4xGKqw6f6hUXPDdaBUzoDUQpmC689IaZccw==',
+        ParentMetaPlanID: 'kBZYBzgHWtjW5igU33BXqwVZ66GBdJi4ycXPzZjyUmp840-O2yXyNEO0ayRveZKNnASS_btzUY-WkI_mcvNuOg==',
         Type: 0,
         Name: '1member-vpnpro2023',
         Title: '+1 User VPN Essentials',
@@ -1694,9 +2096,9 @@ const plans: Plan[] = deepFreeze([
             '24': 14376,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -1706,7 +2108,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -1715,8 +2117,8 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'FV6FNtAc6lgP6R7dM7YB5N3LzHuoBMyivBSqjPcDfIbuMf5MdvXlCmMMcBY57-wdG-hQk4qhFb5lDEJyxjySpQ==',
-        ParentMetaPlanID: 'dRs2Vv64Vru392SbvvG1MbEt3Ep5P_EWz8WbHVAOl_6h_Ty9jItyktkVcfz9-xRvCGwFq_TW7i8FtJaGyFEq0g==',
+        ID: 'FuN6X5phsMc70T-bWtyoFKWrtMNmN_5KK0dbbkY7Mxbbm6TEi2WrpqGuH8MVUMlVRayNPTvEA0w8EGLpQWFx6g==',
+        ParentMetaPlanID: 'hCjg4nXWswD5EhdgWrKr2xP3D-99QRPot3H3hg7yBfLZ9GOrjBEJuc3-rO7u-0WevfX4WSFcfgps8O3qKJAZxQ==',
         Type: 0,
         Name: '1member-mailpro2022',
         Title: '+1 User Mail Essentials',
@@ -1741,9 +2143,9 @@ const plans: Plan[] = deepFreeze([
             '24': 15576,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -1753,7 +2155,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -1762,8 +2164,8 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'LLz8ysmVxwr4dF6mWpClePT0SpSWOEvzTdq17RydSl4ndMckvY1K63HeXDzn03BJQwKYvgf-eWT8Qfd9WVuIEQ==',
-        ParentMetaPlanID: '6QeHIh44j9R3b8kckYBHvp84UGeLt3yliLxZWhqVULXfuSNRDRwULijb5e4kpr5wvfluBXmtyCHWe0nYweWRpg==',
+        ID: 'No8eOZyFdCPyzrEVUg0ux6ZaxlY97bJCDhKeQirzWAqGFwObxxaHMoD_9ejwwkO83_2d9RYKc_Q_e_Bh22sciQ==',
+        ParentMetaPlanID: 'dRs2Vv64Vru392SbvvG1MbEt3Ep5P_EWz8WbHVAOl_6h_Ty9jItyktkVcfz9-xRvCGwFq_TW7i8FtJaGyFEq0g==',
         Type: 0,
         Name: '1member-drivepro2022',
         Title: '+1 User Drive Essentials',
@@ -1788,9 +2190,9 @@ const plans: Plan[] = deepFreeze([
             '24': 19176,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -1800,7 +2202,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -1809,8 +2211,8 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'ijGdLd_QSNsnw4y2kfBZj5T9aFrCXAGMDAXPa5YRHJuikOAvP63cSrJ1tTzViC2_cWMmqOZebNik7-LOE7jRRw==',
-        ParentMetaPlanID: 'kBZYBzgHWtjW5igU33BXqwVZ66GBdJi4ycXPzZjyUmp840-O2yXyNEO0ayRveZKNnASS_btzUY-WkI_mcvNuOg==',
+        ID: 'QVcbf04GzTJosFX36v47-82MiZqyItZKjbWdo5O8O5WAJQHPKlnGBfmf290e2jpbWRL3U5415dWDUSwXoWJJHQ==',
+        ParentMetaPlanID: 'fT-fHNQexHafNYev4Qz49aetYhhjFOJCD8E8GYYOMY6o0U9WwINhnI76D9k7f6WB8_GaMISfd3a_cxe6vEUGxw==',
         Type: 0,
         Name: '1member-vpnbiz2023',
         Title: '+1 User VPN Business',
@@ -1825,29 +2227,29 @@ const plans: Plan[] = deepFreeze([
         Features: 0,
         State: 1,
         Pricing: {
-            '1': 1199,
+            '1': 1190,
             '12': 11988,
             '24': 21576,
         },
         DefaultPricing: {
-            '1': 1199,
+            '1': 1190,
             '12': 11988,
             '24': 21576,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
         Cycle: 1,
-        Amount: 1199,
+        Amount: 1190,
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -1856,15 +2258,15 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'BvbqbySUPo9uWW_eR8tLA13NUsQMz3P4Zhw4UnpvrKqURnrHlE6L2Au0nplHfHlVXFgGz4L4hJ9-BYllOL-L5g==',
-        ParentMetaPlanID: 'hCjg4nXWswD5EhdgWrKr2xP3D-99QRPot3H3hg7yBfLZ9GOrjBEJuc3-rO7u-0WevfX4WSFcfgps8O3qKJAZxQ==',
+        ID: '5ztbWptW77nXp6NuTGMUtmdTu32Rbu7zjiPPI4ZVWqzkXS10E7P9W8210y2VONkgO8fj8OyH3sxAb9SVxwL4Ew==',
+        ParentMetaPlanID: 'UVhawo1URvrpvbnp1FaDO2RhoaENS5Ge8bJ4PT4U4ATqZeZTNGrVD1vM2JpeQP8tMMQQ9iqDEIz2u4werNZIRw==',
         Type: 0,
         Name: '1member-bundlepro2022',
         Title: '+1 User Proton Business',
         MaxDomains: 0,
         MaxAddresses: 15,
         MaxCalendars: 25,
-        MaxSpace: 536870912000,
+        MaxSpace: 1099511627776,
         MaxMembers: 1,
         MaxVPN: 10,
         MaxTier: 2,
@@ -1882,9 +2284,9 @@ const plans: Plan[] = deepFreeze([
             '24': 23976,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -1894,7 +2296,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -1903,8 +2305,8 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'IlnTbqicN-2HfUGIn-ki8bqZfLqNj5ErUB0z24Qx5g-4NvrrIc6GLvEpj2EPfwGDv28aKYVRRrSgEFhR_zhlkA==',
-        ParentMetaPlanID: 'xkrV_w__I12hcO3_nKwxDOV4YbKpkMBRNEuwENLv9Eei6DWGOojvPX60squGbSDos5pncJCdNZI1P9Q-A4feIQ==',
+        ID: 'BvbqbySUPo9uWW_eR8tLA13NUsQMz3P4Zhw4UnpvrKqURnrHlE6L2Au0nplHfHlVXFgGz4L4hJ9-BYllOL-L5g==',
+        ParentMetaPlanID: 'dw-RwOdh4DWxBXnVoGO48PV_qEfG5T_j0fph6fSEBYetVdpX4v9ReAlusIcj7GUazufLnMTa0cOTvWCF7qWX3g==',
         Type: 0,
         Name: '1domain-enterprise2022',
         Title: '+1 Domain Enterprise',
@@ -1929,9 +2331,9 @@ const plans: Plan[] = deepFreeze([
             '24': 31176,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -1941,7 +2343,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -1950,15 +2352,15 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'aJZHNZE_fd_rWygalcsahpc8ihMinUHUFGWXq8K0eoGH72CbCXp2KS82uvTPwdOw04ufbLk8zDyRDj7oNPrQCA==',
-        ParentMetaPlanID: 'UOZXnOXW6gC7xjRiJC14rn0UazL4M7wuHDdMILF1H6xnTW41x2ka_MY4XikenQOyBAk4r6ra5jfPzs2FybDKTg==',
+        ID: 'Ofmpv8MnCIKFyK7HLtzPXKyreZDuooT93dAi5PGTiIiSHexH8cI5237KDJ0sTxKJvxpt6I0SPQ2Y2hmg3hnefg==',
+        ParentMetaPlanID: '-Bpgivr5H2qGDRiUQ4-7gm5YLf215MEgZCdzOtLW5psxgB8oNc8OnoFRykab4Z23EGEW1ka3GtQPF9xwx9-VUA==',
         Type: 0,
         Name: '1member-bundlepro2024',
         Title: '+1 User Proton Business Suite',
         MaxDomains: 0,
         MaxAddresses: 15,
         MaxCalendars: 25,
-        MaxSpace: 536870912000,
+        MaxSpace: 1099511627776,
         MaxMembers: 1,
         MaxVPN: 10,
         MaxTier: 2,
@@ -1976,9 +2378,9 @@ const plans: Plan[] = deepFreeze([
             '24': 31176,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -1988,7 +2390,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -1997,8 +2399,8 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'QVcbf04GzTJosFX36v47-82MiZqyItZKjbWdo5O8O5WAJQHPKlnGBfmf290e2jpbWRL3U5415dWDUSwXoWJJHQ==',
-        ParentMetaPlanID: 'xkrV_w__I12hcO3_nKwxDOV4YbKpkMBRNEuwENLv9Eei6DWGOojvPX60squGbSDos5pncJCdNZI1P9Q-A4feIQ==',
+        ID: 'LLz8ysmVxwr4dF6mWpClePT0SpSWOEvzTdq17RydSl4ndMckvY1K63HeXDzn03BJQwKYvgf-eWT8Qfd9WVuIEQ==',
+        ParentMetaPlanID: 'dw-RwOdh4DWxBXnVoGO48PV_qEfG5T_j0fph6fSEBYetVdpX4v9ReAlusIcj7GUazufLnMTa0cOTvWCF7qWX3g==',
         Type: 0,
         Name: '1member-enterprise2022',
         Title: '+1 User Enterprise',
@@ -2023,9 +2425,9 @@ const plans: Plan[] = deepFreeze([
             '24': 31176,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -2035,7 +2437,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -2044,8 +2446,55 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'xZLizr66ZlJwAfcVTwiH5ewAQ3a5h6IptTBHdtP-mpuv4Sqqy5B3S8KfD-7_W8i0jxBd976glUl8q5eMAo4JCw==',
-        ParentMetaPlanID: 'kBZYBzgHWtjW5igU33BXqwVZ66GBdJi4ycXPzZjyUmp840-O2yXyNEO0ayRveZKNnASS_btzUY-WkI_mcvNuOg==',
+        ID: 'hV3hqRbJT90DTSp8-3EGxaYWEoszOmA365hv4ZU1KGefKKTihjhCy1OQRCUovbgjPUmk-A-iOorkge2g2GdowA==',
+        ParentMetaPlanID: '-Bpgivr5H2qGDRiUQ4-7gm5YLf215MEgZCdzOtLW5psxgB8oNc8OnoFRykab4Z23EGEW1ka3GtQPF9xwx9-VUA==',
+        Type: 0,
+        Name: '1ip-bundlepro2024',
+        Title: '+1 IP Proton Business Suite',
+        MaxDomains: 0,
+        MaxAddresses: 0,
+        MaxCalendars: 0,
+        MaxSpace: 0,
+        MaxMembers: 0,
+        MaxVPN: 0,
+        MaxTier: 0,
+        Services: 0,
+        Features: 0,
+        State: 1,
+        Pricing: {
+            '1': 4999,
+            '12': 47988,
+            '24': 86376,
+        },
+        DefaultPricing: {
+            '1': 4999,
+            '12': 47988,
+            '24': 86376,
+        },
+        PeriodEnd: {
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
+        },
+        Currency: 'CHF',
+        Quantity: 1,
+        Offers: [],
+        Cycle: 1,
+        Amount: 4999,
+        Vendors: {
+            Google: {
+                Plans: {},
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
+            },
+            Apple: {
+                Plans: {},
+                CustomerID: '',
+            },
+        },
+    },
+    {
+        ID: 'IlnTbqicN-2HfUGIn-ki8bqZfLqNj5ErUB0z24Qx5g-4NvrrIc6GLvEpj2EPfwGDv28aKYVRRrSgEFhR_zhlkA==',
+        ParentMetaPlanID: 'fT-fHNQexHafNYev4Qz49aetYhhjFOJCD8E8GYYOMY6o0U9WwINhnI76D9k7f6WB8_GaMISfd3a_cxe6vEUGxw==',
         Type: 0,
         Name: '1ip-vpnbiz2023',
         Title: '+1 IP VPN Business',
@@ -2070,9 +2519,9 @@ const plans: Plan[] = deepFreeze([
             '24': 86376,
         },
         PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
+            '1': 1730287229,
+            '12': 1759231229,
+            '24': 1790767229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -2082,7 +2531,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},
@@ -2091,7 +2540,7 @@ const plans: Plan[] = deepFreeze([
         },
     },
     {
-        ID: 'q6fRrEIn0nyJBE_-YSIiVf80M2VZhOuUHW5In4heCyOdV_nGibV38tK76fPKm7lTHQLcDiZtEblk0t55wbuw4w==',
+        ID: '1e_hLDsjEBCzrXfR6u6QT5MXbIzmOVuIhlSEcsF88t5Q7GXF66gxo-V8vzddFjRuL-3a1yGPm4nR3rsxQdD5kw==',
         ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
         Type: 1,
         Name: 'drivepass2023',
@@ -2113,7 +2562,7 @@ const plans: Plan[] = deepFreeze([
             '1': 1199,
         },
         PeriodEnd: {
-            '1': 1726305642,
+            '1': 1730287229,
         },
         Currency: 'CHF',
         Quantity: 1,
@@ -2123,101 +2572,7 @@ const plans: Plan[] = deepFreeze([
         Vendors: {
             Google: {
                 Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
-    },
-    {
-        ID: 'pIJGEYyNFsPEb61otAc47_X8eoSeAfMSokny6dmg3jg2JrcdohiRuWSN2i1rgnkEnZmolVx4Np96IcwxJh1WNw==',
-        ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
-        Type: 1,
-        Name: 'protonduo2024',
-        Title: 'Proton Duo',
-        MaxDomains: 3,
-        MaxAddresses: 15,
-        MaxCalendars: 25,
-        MaxSpace: 536870912000,
-        MaxMembers: 1,
-        MaxVPN: 10,
-        MaxTier: 2,
-        Services: 31,
-        Features: 1,
-        State: 0,
-        Pricing: {
-            '1': 1999,
-            '12': 17988,
-            '24': 28776,
-        },
-        DefaultPricing: {
-            '1': 1999,
-            '12': 17988,
-            '24': 28776,
-        },
-        PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
-        },
-        Currency: 'CHF',
-        Quantity: 1,
-        Offers: [],
-        Cycle: 1,
-        Amount: 1999,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
-            },
-            Apple: {
-                Plans: {},
-                CustomerID: '',
-            },
-        },
-    },
-    {
-        ID: '8o1CUlLq9oqj7XeFY6dTJY-6SQ3G9kqN08sRByDiRO3hRbwSacuJeU5x9X88sFv26D-zohr4j_Mk2St65LGATA==',
-        ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
-        Type: 1,
-        Name: 'visionary2022',
-        Title: 'Visionary',
-        MaxDomains: 10,
-        MaxAddresses: 100,
-        MaxCalendars: 150,
-        MaxSpace: 6597069766656,
-        MaxMembers: 6,
-        MaxVPN: 60,
-        MaxTier: 2,
-        Services: 31,
-        Features: 1,
-        State: 0,
-        Pricing: {
-            '1': 3999,
-            '12': 35988,
-            '24': 67176,
-        },
-        DefaultPricing: {
-            '1': 3999,
-            '12': 35988,
-            '24': 67176,
-        },
-        PeriodEnd: {
-            '1': 1726305642,
-            '12': 1755163242,
-            '24': 1786699242,
-        },
-        Currency: 'CHF',
-        Quantity: 1,
-        Offers: [],
-        Cycle: 1,
-        Amount: 3999,
-        Vendors: {
-            Google: {
-                Plans: {},
-                CustomerID: 'cus_google_YSsbWT7RGmNJT9-sEJ36',
+                CustomerID: 'cus_google_3bl13eEgHvNKGuucxMZI',
             },
             Apple: {
                 Plans: {},

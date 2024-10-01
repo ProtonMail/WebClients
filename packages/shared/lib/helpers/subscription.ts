@@ -817,7 +817,11 @@ export const getMaximumCycleForApp = (app: ProductParam, currency?: Currency) =>
 };
 
 export const getPlanMaxIPs = (plan: Plan) => {
-    if (plan.Name === PLANS.VPN_BUSINESS || plan.Name === ADDON_NAMES.IP_VPN_BUSINESS) {
+    if (plan.Name === PLANS.VPN_BUSINESS) {
+        return 1;
+    }
+
+    if (isIpAddon(plan.Name)) {
         return 1;
     }
 
