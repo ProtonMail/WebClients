@@ -1,5 +1,6 @@
 import metrics from '@proton/metrics'
 import { MetricService } from './MetricService'
+import type { Api } from '@proton/shared/lib/interfaces'
 
 jest.mock('@proton/metrics')
 
@@ -7,7 +8,9 @@ describe('MetricService', () => {
   let metricService: MetricService
 
   beforeEach(() => {
-    metricService = new MetricService()
+    const api = {} as unknown as Api
+
+    metricService = new MetricService(api)
 
     jest.useFakeTimers()
   })

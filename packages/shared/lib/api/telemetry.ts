@@ -34,6 +34,8 @@ export enum TelemetryMeasurementGroups {
     collapsibleLeftSidebar = 'any.web.collapsible_left_sidebar',
     smartBanner = 'any.web.smart_banner',
     clientInstalls = 'common.any.client_installs',
+    /** Docs */
+    docsSuggestions = 'common.web.suggestions',
 }
 
 export enum TelemetryMailOnboardingEvents {
@@ -212,6 +214,12 @@ export enum TelemetrySmartBannerEvents {
     clickAppStoreLink = 'click_app_store_link',
 }
 
+export enum TelemetryDocsEvents {
+    suggestion_created = 'suggestion.created',
+    suggestion_resolved = 'suggestion.resolved',
+    suggestion_commented = 'suggestion.comment',
+}
+
 export type TelemetryEvents =
     | TelemetrySubscriptionModalEvents
     | TelemetryMailTrial2024UpsellModal
@@ -236,7 +244,8 @@ export type TelemetryEvents =
     | TelemetryMailHeartbeatEvents
     | TelemetrySmartBannerEvents
     | TelemetryDesktopEvents
-    | TelemetryMailDefaultMailto;
+    | TelemetryMailDefaultMailto
+    | TelemetryDocsEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;

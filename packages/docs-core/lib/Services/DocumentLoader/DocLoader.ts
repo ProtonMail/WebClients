@@ -22,6 +22,7 @@ import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceIn
 import type { LoadCommit } from '../../UseCase/LoadCommit'
 import type { ExportAndDownload } from '../../UseCase/ExportAndDownload'
 import type { DocsApi } from '../../Api/DocsApi'
+import type { MetricService } from '../Metrics/MetricService'
 
 export type StatusObserver = {
   onSuccess: (orchestrator: EditorOrchestratorInterface) => void
@@ -37,6 +38,7 @@ export class DocLoader implements DocLoaderInterface {
   constructor(
     private websocketSerivce: WebsocketServiceInterface,
     private driveCompat: DriveCompat,
+    private metricService: MetricService,
     private docsApi: DocsApi,
     private squashDoc: SquashDocument,
     private createInitialCommit: SeedInitialCommit,
@@ -95,6 +97,7 @@ export class DocLoader implements DocLoaderInterface {
       lookup,
       entitlements.keys,
       this.websocketSerivce,
+      this.metricService,
       this.docsApi,
       this.encryptComment,
       this.createThread,
