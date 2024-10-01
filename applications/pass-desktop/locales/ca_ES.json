@@ -28,6 +28,9 @@
       "Add": [
         "Afegeix"
       ],
+      "Add account": [
+        "Afegeix un compte"
+      ],
       "Add current URL": [
         "Afegeix l'URL actual"
       ],
@@ -180,6 +183,9 @@
       ],
       "Deselect": [
         "Anul·la la selecció"
+      ],
+      "Disable instead": [
+        "Desactiva en lloc"
       ],
       "Discard": [
         "Descarta"
@@ -366,6 +372,9 @@
       ],
       "Pin item": [
         "Ancora l'element"
+      ],
+      "Please retry": [
+        "Reintenta"
       ],
       "Refresh the page": [
         "Refresca la pàgina"
@@ -1626,6 +1635,9 @@
       "Session timed out": [
         "S'ha esgotat el temps de sessió"
       ],
+      "Set by your organization": [
+        "Configurat per la vostra organització"
+      ],
       "Settings successfully updated": [
         "S'han actualitzat les preferències"
       ],
@@ -1831,6 +1843,10 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } àlies",
+        "${ aliasCount } àlies"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } caràcter",
         "${ config.options.length } caràcters"
@@ -1920,6 +1936,9 @@
       ],
       "Alias address": [
         "Adreça d'àlies"
+      ],
+      "Alias management": [
+        "Gestió dels àlies"
       ],
       "Aliases": [
         "Àlies"
@@ -2013,6 +2032,9 @@
       ],
       "Created at": [
         "Creat a"
+      ],
+      "Custom hidden field": [
+        "Camp amagat personalitzat"
       ],
       "Custom text field": [
         "Camp de text personalitzat"
@@ -2440,6 +2462,9 @@
       ],
       "Type": [
         "Tipus"
+      ],
+      "Unknown": [
+        "Desconegut"
       ],
       "Unlock with": [
         "Desbloqueja amb"
@@ -2933,6 +2958,9 @@
       ],
       "Suggestions": [
         "Suggeriments"
+      ],
+      "Switch to": [
+        "Canvia a"
       ],
       "Sync alias": [
         "Sincronitza l'àlies"

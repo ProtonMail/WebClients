@@ -220,6 +220,9 @@
       "Click here.": [
         "Klik her."
       ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "Klik for at kopiere ${ defaultEmailAddress } til udklipsholderen"
+      ],
       "Close": [
         "Luk"
       ],
@@ -1326,6 +1329,9 @@
       ],
       "Use recovery code": [
         "Brug gendannelseskode"
+      ],
+      "Use this": [
+        "Brug dette"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Brug din mus til at ændre på størrelsen af visningen. Hvis du bruger dit tastatur, kan du bruge venstre og højre piletast til at ændre størrelsen."
@@ -3496,6 +3502,9 @@
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Opgrader din konto for at aktivere ${ PROTON_SENTINEL_NAME }, vores banebrydende AI-dreven sikkerhedsløsning med ekspert døgn support."
+      ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "Brug ${ MAIL_APP_NAME } til at logge ind på onlinetjenester, da vi i modsætning til andre e-mailudbydere aldrig sporer dine data og deler dem med tredjeparter."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Benyt Træk og Slip for at rangordne fletningsprioritet mellem kontakter. Afmarkér de kontakter du ikke vil sammenflette."
@@ -6169,6 +6178,9 @@
       "Email address": [
         "E-mail"
       ],
+      "Email copied to clipboard": [
+        "E-mail kopieret til udklipsholder"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "E-mail-hosting til 10 brugerdefinerede mail-domænenavne er inkluderet gratis. Yderligere domæner kan tilføjes for ${ price }."
       ],
@@ -7977,6 +7989,9 @@
       ],
       "Don't like the style": [
         "Synes ikke om stilen"
+      ],
+      "Don't show again": [
+        "Vis ikke igen"
       ],
       "Don't show this again": [
         "Vis ikke dette igen"
@@ -9906,6 +9921,9 @@
       "Congratulations on choosing privacy": [
         "Tillykke med valget af et beskyttet privatliv"
       ],
+      "Dark Web Monitoring": [
+        "Monitorering af det mørke net"
+      ],
       "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
         "Kryptering så stærk, at kun du og de tiltænkte modtagere kan se dine e-mails. ${ kbLinkEncryption }"
       ],
@@ -9929,11 +9947,20 @@
       ]
     },
     "Onboarding Proton": {
+      "Choose your preferred look and feel.": [
+        "Vælg dit foretrukne udseende og stil."
+      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Konfigurer din organisation, link dit domænenavn og opret konti for at sikre, at alle medlemmer af din organisation er beskyttet."
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Udforsk alle ${ BRAND_NAME }-tjenester"
+      ],
+      "Link your domain name and create accounts for all members of your organization.": [
+        "Link dit domænenavn, og opret konti til alle medlemmer af din organisation."
+      ],
+      "Make it your own": [
+        "Gør det til dit eget"
       ],
       "Pick a theme": [
         "Vælg et tema"
@@ -12540,6 +12567,9 @@
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Skjul din e-mail med ${ PASS_APP_NAME }"
+      ],
+      "How to update your email address": [
+        "Sådan opdaterer du din e-mailadresse"
       ],
       "Human verification": [
         "Menneskelig bekræftelse"

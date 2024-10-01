@@ -942,7 +942,7 @@
       "${ n } month": [
         "${ n } місяць",
         "перші ${ n } місяці",
-        "перших ${ n } місяців",
+        "перші ${ n } місяців",
         "перших ${ n } місяців"
       ],
       "the first month": [
@@ -3506,9 +3506,6 @@
       "Are you sure you want to cancel editing the group?": [
         "Ви дійсно бажаєте скасувати редагування групи?"
       ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "Ви впевнені, що хочете видалити цю групу. Ця адреса групи більше не працюватиме."
-      ],
       "Are you sure you want to discard your changes?": [
         "Ви справді хочете відхилити зміни?"
       ],
@@ -3523,6 +3520,9 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Ви дійсно хочете вилучити домен ${ boldDomain }?"
+      ],
+      "Ask your organization admin to setup Gateways.": [
+        "Попросіть адміністратора вашої організації налаштувати Gateways."
       ],
       "Attention required": [
         "Потребує уваги"
@@ -9714,6 +9714,9 @@
       ],
       "Switch to two-password mode": [
         "Перемкнутися на двопарольний режим"
+      ],
+      "Text": [
+        "Текст"
       ],
       "There are no groups": [
         "Групи відсутні"

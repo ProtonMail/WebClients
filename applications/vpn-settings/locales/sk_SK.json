@@ -2146,6 +2146,14 @@
         "Upozorňujeme, že ak vymažete doménu ${ domainName }, všetky s ňou spojené adresy budú deaktivované."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Naozaj chcete vymazať túto skupinu?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Upozorňujeme, že ak odstránite skupinu ${ displayGroupName } (s adresou ${ displayGroupAddressEmail }), nebudete už môcť prijímať emaily používajúce jej adresu."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Faktúra po splatnosti"
@@ -2647,6 +2655,11 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Vo vašom účte alebo organizácii sú vedené faktúry po splatnosti. Zaplaťte prosím všetky neuhradené faktúry."
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "Zadajte emailovú adresu"
       ]
     },
     "Error importing users": {
@@ -3635,9 +3648,6 @@
       "Are you sure you want to cancel editing the group?": [
         "Skutočne chcete zrušiť úpravy skupiny?"
       ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "Skutočne chcete vymazať túto skupinu? Adresa skupiny prestane fungovať."
-      ],
       "Are you sure you want to discard your changes?": [
         "Naozaj chcete zahodiť všetky zmeny?"
       ],
@@ -3652,6 +3662,9 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Skutočne chcete odstrániť doménu ${ boldDomain }?"
+      ],
+      "Ask your organization admin to setup Gateways.": [
+        "Požiadajte správcu organizácie o nastavenie brány."
       ],
       "Attention required": [
         "Vyžaduje sa pozornosť"
@@ -4505,6 +4518,9 @@
       "SCIM token active": [
         "SCIM token aktívny"
       ],
+      "Search by an email address to begin": [
+        "Začnite vyhľadávať podľa emailovej adresy"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Zabezpečte svoj účet ${ BRAND_NAME }"
       ],
@@ -4657,6 +4673,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Formát CSV súboru je nesprávny."
+      ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "Funkcia skupín nie je vo vašom aktuálnom predplatnom podporovaná. V minulosti vytvorené skupiny sú deaktivované a môžete ich iba odstrániť."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Meno bude viditeľné pre vašich používateľov, keď budú prihlásení."
@@ -5694,6 +5713,9 @@
       ],
       "Reveal password": [
         "Odkryť heslo"
+      ],
+      "Search by email": [
+        "Hľadať podľa emailu"
       ],
       "Second password": [
         "Druhé heslo"
@@ -7349,6 +7371,29 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Používatelia uvidia vaše logo namiesto ikony ${ BRAND_NAME }, keď sa prihlásia do našich webových aplikácií."
+      ]
+    },
+    "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify } svoju emailovú adresu ${ email } pre nastavenie identity organizácie."
+      ],
+      "Current organization identity": [
+        "Aktuálna identita organizácie"
+      ],
+      "Edit organization identity": [
+        "Upraviť identitu organizácie"
+      ],
+      "New organization identity": [
+        "Nová identita organizácie"
+      ],
+      "Organization identity": [
+        "Identita organizácie"
+      ],
+      "Organization identity updated": [
+        "Identita organizácie aktualizovaná"
+      ],
+      "Verify": [
+        "Overiť"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -10388,6 +10433,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Ak ste zakúpili darčekový kód alebo ste ho obdržali od našej podpory, môžete ho sem vložiť."
       ],
+      "IP address (Internet Service Provider)": [
+        "IP adresa (poskytovateľ internetových služieb)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Členovia, ktorí nepoužívajú 2FA dostanú email s výzvou, aby 2FA čo najskôr povolili "
       ],
@@ -10462,17 +10510,38 @@
       ]
     },
     "unprivatization": {
+      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
+        "${ n } používateľ sa pripojil k vašej organizácii prostredníctvom poskytovateľa identity. Schváľte alebo zamietnite jeho účet:",
+        "${ n } používatelia sa pripojili k vašej organizácii prostredníctvom poskytovateľa identity. Schváľte alebo zamietnite ich účet:",
+        "${ n } používateľov sa pripojilo k vašej organizácii prostredníctvom poskytovateľa identity. Schváľte alebo zamietnite ich účet:",
+        "${ n } používateľov sa pripojilo k vašej organizácii prostredníctvom poskytovateľa identity. Schváľte alebo zamietnite ich účet:"
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Správcovia nemajú prístup k dátam súkromných používateľov a nemôžu resetovať ich heslo."
       ],
+      "Approve all": [
+        "Schváliť všetko"
+      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Vytvorením súkromného používateľského účtu mu nebudete môcť pomôcť získať späť prístup k jeho údajom alebo účtu."
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Nepodarilo sa automaticky povoliť prístup správcu pre ${ n } používateľa, pretože jeho šifrovacie kľúče boli medzitým aktualizované:",
+        "Nepodarilo sa automaticky povoliť prístup správcu pre ${ n } používateľov, pretože ich šifrovacie kľúče boli medzitým aktualizované:",
+        "Nepodarilo sa automaticky povoliť prístup správcu pre ${ n } používateľov, pretože ich šifrovacie kľúče boli medzitým aktualizované:",
+        "Nepodarilo sa automaticky povoliť prístup správcu pre ${ n } používateľov, pretože ich šifrovacie kľúče boli medzitým aktualizované:"
+      ],
+      "Could not enable administrator access: ${ error }": [
+        "Nepodarilo sa povoliť prístup správcu: ${ error }"
       ],
       "Delete request": [
         "Vymazať žiadosť"
       ],
       "Delete request to access user data?": [
         "Vymazať žiadosť na prístup k dátam používateľa?"
+      ],
+      "Enable manually": [
+        "Povoliť ručne"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Akonáhle používateľ súhlasí, budete mu môcť pomôcť obnoviť prístup k účtu alebo spravovať jeho údaje."

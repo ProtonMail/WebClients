@@ -220,6 +220,9 @@
       "Click here.": [
         "Κάντε κλικ εδώ."
       ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "Κάντε κλικ για να αντιγράψετε το ${ defaultEmailAddress } στο πρόχειρο"
+      ],
       "Close": [
         "Κλείσιμο"
       ],
@@ -1326,6 +1329,9 @@
       ],
       "Use recovery code": [
         "Χρησιμοποιήστε κωδικό ανάκτησης"
+      ],
+      "Use this": [
+        "Χρησιμοποιήστε αυτό"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Χρησιμοποιήστε το ποντίκι σας για να αλλάξετε το μέγεθος της προβολής. Εάν χρησιμοποιείτε το πληκτρολόγιό σας, μπορείτε να χρησιμοποιήσετε τα πλήκτρα αριστερού και δεξιού βέλους για να αλλάξετε το μέγεθος."
@@ -3497,6 +3503,9 @@
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Αναβαθμίστε τον λογαριασμό σας για να ενεργοποιήσετε το ${ PROTON_SENTINEL_NAME }, την πρωτοποριακή λύση ασφάλειας που βασίζεται στην τεχνητή νοημοσύνη με αποκλειστική 24/7 εξειδικευμένη υποστήριξη."
       ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "Χρησιμοποιήστε ${ MAIL_APP_NAME } για να συνδεθείτε σε ηλεκτρονικές υπηρεσίες, καθώς, σε αντίθεση με άλλους παρόχους email, δε θα παρακολουθούμε ποτέ τα δεδομένα σας και δε θα τα μοιραζόμαστε με τρίτους."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Χρησιμοποιήστε την επιλογή \"Drag and Drop\" για να ταξινομήσετε τη προτεραιότητα συγχώνευσης μεταξύ των επαφών. Καταργήστε την επιλογή των επαφών που δεν θέλετε να συγχωνεύσετε."
       ],
@@ -4782,6 +4791,9 @@
       "Configure your family account and invite users ": [
         "Ρυθμίστε τις παραμέτρους του οικογενειακού λογαριασμού σας και προσκαλέστε χρήστες "
       ],
+      "Invite members and get everything up and running.": [
+        "Προσκαλέστε μέλη και ξεκινήστε τα πάντα."
+      ],
       "Set up your family": [
         "Ρύθμιση της οικογένειάς σας"
       ],
@@ -6013,6 +6025,9 @@
       "Contact assigned to group ${ contactGroupName }": [
         "Η επαφή προστέθηκε στην ομάδα ${ contactGroupName }"
       ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Η επαφή αφαιρέθηκε από την ομάδα ${ contactGroupName }"
+      ],
       "Copied to clipboard": [
         "Αντιγράφηκε στο πρόχειρο"
       ],
@@ -6168,6 +6183,9 @@
       ],
       "Email address": [
         "Διεύθυνση E-mail"
+      ],
+      "Email copied to clipboard": [
+        "Το email αντιγράφτηκε στο πρόχειρο"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Η φιλοξενία email για 10 προσαρμοσμένους τομείς email συμπεριλαμβάνεται δωρεάν. Επιπρόσθετοι τομείς μπορούν να προστεθούν έναντι ${ price }."
@@ -6723,6 +6741,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
+      ],
+      "Remember to update this in your password manager or wherever you keep your account and login information.": [
+        "Θυμηθείτε να το ενημερώσετε στον διαχειριστή κωδικών πρόσβασης σας ή οπουδήποτε διατηρείτε τον λογαριασμό και τα στοιχεία σύνδεσής σας."
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Καταργεί όλα τα δεδομένα που σχετίζονται με αυτήν την εφαρμογή, (συμπεριλαμβανομένων των ληφθέντων μηνυμάτων, …)"
@@ -7977,6 +7998,9 @@
       ],
       "Don't like the style": [
         "Δεν μου αρέσει το στυλ"
+      ],
+      "Don't show again": [
+        "Να μην εμφανιστεί ξανά"
       ],
       "Don't show this again": [
         "Να μην εμφανιστεί ξανά"
@@ -9893,7 +9917,36 @@
         "Επιλέξτε σε τι μπορεί να έχει πρόσβαση το ${ BRAND_NAME }: δείτε τα μηνύματα ηλεκτρονικού ταχυδρομείου και τις ρυθμίσεις σας, προβάλετε και κατεβάστε τις επαφές σας, προβάλετε και κατεβάστε όλες τις ατζέντες στις οποίες έχετε πρόσβαση από την Ατζέντα Google."
       ]
     },
+    "Onboarding List Placeholder": {
+      "Finance": [
+        "Οικονομικά"
+      ],
+      "Privacy for all your online accounts": [
+        "Απόρρητο για όλους τους λογαριασμούς σας στο διαδίκτυο"
+      ],
+      "Shopping": [
+        "Ψώνια"
+      ],
+      "Social media": [
+        "Μέσα κοινωνικής δικτύωσης"
+      ]
+    },
     "Onboarding modal": {
+      "Activate premium features": [
+        "Ενεργοποιήστε premium χαρακτηριστικά"
+      ],
+      "Activate selected": [
+        "Ενεργοποίηση επιλεγμένων"
+      ],
+      "Advanced encryption": [
+        "Προηγμένη κρυπτογράφηση"
+      ],
+      "App Store": [
+        "App Store"
+      ],
+      "Auto-delete spam and trash": [
+        "Αυτόματη διαγραφή ανεπιθύμητων και διαγεγραμμένων μηνυμάτων"
+      ],
       "Automatically forward emails": [
         "Αυτόματη προώθηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
       ],
@@ -9903,8 +9956,20 @@
       "Block unsavory senders": [
         "Αποκλεισμός δυσάρεστων αποστολέων"
       ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Διαγράψτε τα διαγραμμένα και ανεπιθύμητα μηνύματα ηλεκτρονικού ταχυδρομείου μετά από 30 ημέρες."
+      ],
       "Congratulations on choosing privacy": [
         "Συγχαρητήρια για την προτίμησή σας στην ιδωτικότητα"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
+      ],
+      "Download the desktop app": [
+        "Κατεβάστε την εφαρμογή για υπολογιστές"
+      ],
+      "Download the desktop app and continue": [
+        "Κατεβάστε την εφαρμογή για υπολογιστές και συνεχίστε"
       ],
       "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
         "Τόσο ισχυρή κρυπτογράφηση, που μόνο εσείς και οι παραλήπτες για τους οποίους προορίζεστε μπορείτε να δείτε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας. ${ kbLinkEncryption }"
@@ -9914,6 +9979,18 @@
       ],
       "Forward Gmail messages to your inbox.": [
         "Προωθήστε μηνύματα Gmail στα εισερχόμενά σας."
+      ],
+      "Get the desktop app": [
+        "Λήψη της εφαρμογής για υπολογιστές"
+      ],
+      "Google Play": [
+        "Google Play"
+      ],
+      "Let's get started": [
+        "Ας αρχίσουμε"
+      ],
+      "Maybe later": [
+        "Ίσως αργότερα"
       ],
       "Next": [
         "Επόμενο"
@@ -9926,14 +10003,26 @@
       ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "Σταματάμε τους διαφημιζόμενους και τους συλλέκτες δεδομένων από το να δημιουργούν το προφίλ σας. ${ kbLinkPrivacy }"
+      ],
+      "Where privacy is default.": [
+        "Όπου το απόρρητο είναι προεπιλεγμένο."
       ]
     },
     "Onboarding Proton": {
+      "Choose your preferred look and feel.": [
+        "Επιλέξτε την εμφάνιση και την αίσθηση που προτιμάτε."
+      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Ρυθμίστε τις παραμέτρους του οργανισμού σας, συνδέστε το όνομα τομέα σας και δημιουργήστε λογαριασμούς για να διασφαλίσετε ότι όλα τα μέλη του οργανισμού σας προστατεύονται."
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Ανακαλύψτε όλες τις υπηρεσίες του ${ BRAND_NAME }"
+      ],
+      "Link your domain name and create accounts for all members of your organization.": [
+        "Συνδέστε το όνομα τομέα σας και δημιουργήστε λογαριασμούς για όλα τα μέλη του οργανισμού σας."
+      ],
+      "Make it your own": [
+        "Κάντε το δικό σας"
       ],
       "Pick a theme": [
         "Επιλέξτε ένα θέμα"
@@ -11153,6 +11242,14 @@
       ],
       "Unsubscribed": [
         "Έγινε κατάργηση εγγραφής"
+      ]
+    },
+    "Step": {
+      "In the account settings, look for the option to edit or change your email address ": [
+        "Στις ρυθμίσεις λογαριασμού, αναζητήστε την επιλογή επεξεργασίας ή αλλαγής της διεύθυνσης ηλεκτρονικού ταχυδρομείου σας "
+      ],
+      "Select service to update": [
+        "Επιλέξτε υπηρεσία για ενημέρωση"
       ]
     },
     "Step in filter modal": {
@@ -12540,6 +12637,9 @@
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Αποκρύψτε το email σας με ${ PASS_APP_NAME }"
+      ],
+      "How to update your email address": [
+        "Πώς να ενημερώσετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας"
       ],
       "Human verification": [
         "Ανθρώπινη Επαλήθευση"

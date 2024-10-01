@@ -220,6 +220,9 @@
       "Click here.": [
         "Paina tästä."
       ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "Kopioi ${ defaultEmailAddress } leikepöydälle klikkaamalla"
+      ],
       "Close": [
         "Sulje"
       ],
@@ -1326,6 +1329,9 @@
       ],
       "Use recovery code": [
         "Käytä palautuskoodia"
+      ],
+      "Use this": [
+        "Käytä tätä"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Muuta näkymän kokoa hiirellä. Jos käytät näppäimistöä, voit muuttaa kokoa vasemmalla ja oikealla nuolipainikkeella."
@@ -3497,6 +3503,9 @@
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Päivitä tilisi aktivoidaksesi huippumoderniin tekoälyyn perustuvan ${ PROTON_SENTINEL_NAME } -tietoturvaratkaisumme, johon sisältyy myös 24/7 asiantuntijatuki."
       ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "Käytä ${ MAIL_APP_NAME }ia verkkopalveluihin kirjautumiseen, koska toisin kuin muut sähköpostipalveluntarjoajat, me emme koskaan seuraa tietojasi tai jaa niitä kolmansille osapuolille."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Määritä yhdistettävien yhteystietojen painotusjärjestys vetämällä ja pudottamalla. Poista niiden valinta, joita et halua yhdistää."
       ],
@@ -4782,6 +4791,9 @@
       "Configure your family account and invite users ": [
         "Määritä perhetilisi ja kutsu käyttäjiä "
       ],
+      "Invite members and get everything up and running.": [
+        "Kutsu jäseniä ja aloita käyttö."
+      ],
       "Set up your family": [
         "Määritä perheesi"
       ],
@@ -5882,7 +5894,7 @@
         "Haluatko varmasti poistaa kaikki tällä tunnisteella merkityt viestit?"
       ],
       "Are you sure you want to delete this folder?": [
-        "Haluatko varmasti poistaa tämän kansion?"
+        "Haluatko varmasti poistaa kansion?"
       ],
       "Are you sure you want to delete this label?": [
         "Haluatko varmasti poistaa tunnisteen?"
@@ -6012,6 +6024,9 @@
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Yhteystieto lisättiin ryhmään ${ contactGroupName }"
+      ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Yhteystieto poistettiin ryhmästä ${ contactGroupName }"
       ],
       "Copied to clipboard": [
         "Kopioitiin leikepöydälle"
@@ -6168,6 +6183,9 @@
       ],
       "Email address": [
         "Sähköpostiosoite"
+      ],
+      "Email copied to clipboard": [
+        "Sähköpostiosoite kopioitiin leikepöydälle"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Sisältää sähköpostin isännöinnin 10 omalla verkkotunnuksella veloituksetta. Lisää verkkotunnuksia voidaan lisätä ${ price } kappalehintaan."
@@ -6723,6 +6741,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sivun päivitys tai ${ link } korjaa useimmat ongelmat automaattisesti."
+      ],
+      "Remember to update this in your password manager or wherever you keep your account and login information.": [
+        "Muista päivittää nämä tiedot salasanahallintaasi tai missä tahansa säilytätkin tili- ja kirjautumistietojasi."
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Poistaa kaikki tähän sovellukseen liittyvät tiedot (mukaan lukien ladatut viestit, …)"
@@ -7977,6 +7998,9 @@
       ],
       "Don't like the style": [
         "En pidä tyylistä"
+      ],
+      "Don't show again": [
+        "Älä näytä uudelleen"
       ],
       "Don't show this again": [
         "Älä näytä tätä uudelleen"
@@ -9893,7 +9917,45 @@
         "Valitse, mitä ${ BRAND_NAME } voi käyttää: tarkastele sähköpostiviestejäsi ja -asetuksiasi, tarkastele ja lataa yhteystietojasi, tarkastele ja lataa kaikkia esityslistoja, joita käytät Google Agendasta."
       ]
     },
+    "Onboarding List Placeholder": {
+      "Finance": [
+        "Talous"
+      ],
+      "I have moved my logins to ${ BRAND_NAME }": [
+        "Olen siirätnyt kirjautumistietoni ${ BRAND_NAME }iin"
+      ],
+      "Privacy for all your online accounts": [
+        "Yksityisyyttä kaikille verkkotileillesi"
+      ],
+      "Shopping": [
+        "Ostokset"
+      ],
+      "Social media": [
+        "Sosiaalinen media"
+      ]
+    },
     "Onboarding modal": {
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "${ advancedEncryptionTitle } varmistaa, että vain sinä ja määritetyt vastaanottajat näkevät sähköpostisi."
+      ],
+      "Access email and calendar right from your desktop with the desktop app.": [
+        "Käytä sähköpostia ja kalenteria suoraan työpöydältäsi työpöytäsovelluksella."
+      ],
+      "Activate premium features": [
+        "Aktivoi premium-ominaisuudet"
+      ],
+      "Activate selected": [
+        "Aktivoi valitut"
+      ],
+      "Advanced encryption": [
+        "Edistynyt salaus"
+      ],
+      "App Store": [
+        "App Store"
+      ],
+      "Auto-delete spam and trash": [
+        "Tyhjennä roskaposti ja roskakori automaattisesti"
+      ],
       "Automatically forward emails": [
         "Ohjaa sähköpostit automaattisesti"
       ],
@@ -9903,11 +9965,26 @@
       "Block unsavory senders": [
         "Estä epämiellyttävät lähettäjät"
       ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Tyhjennä roskaposti ja roskakori automaattisesti 30 päivän kuluttua."
+      ],
       "Congratulations on choosing privacy": [
         "Onnittelut yksityisyyden valinnasta"
       ],
+      "Dark Web Monitoring": [
+        "Pimeän verkon valvonta"
+      ],
+      "Download the desktop app": [
+        "Lataa työpöytäsovellus"
+      ],
+      "Download the desktop app and continue": [
+        "Lataa työpöytäsovellus ja jatka"
+      ],
       "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
         "Salaus on niin vahva, että vain sinä ja tarkoitetut vastaanottajat näkevät viestisi. ${ kbLinkEncryption }"
+      ],
+      "Fixed and focused": [
+        "Kiinteä ja keskittynyt"
       ],
       "For your eyes only": [
         "Vain silmillesi"
@@ -9915,8 +9992,38 @@
       "Forward Gmail messages to your inbox.": [
         "Oohjaa Gmail-viestit postilaatikkoosi."
       ],
+      "Get notified if your password is compromised.": [
+        "Saat ilmoituksen, jos salasanasi on vaarantunut."
+      ],
+      "Get the desktop app": [
+        "Hanki työpöytäsovellus"
+      ],
+      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
+        "Hanki mobiilisovellukset ${ mobileAppAppStoreLink }sta tai ${ mobileAppGooglePlayLink }sta"
+      ],
+      "Google Play": [
+        "Google Play"
+      ],
+      "Industry-leading spam protection": [
+        "Markkinoiden johtava roskapostisuojaus"
+      ],
+      "Let's get started": [
+        "Aloitetaan"
+      ],
+      "Make the most of your paid plan.": [
+        "Ota kaikki irti maksullisesta tilauksestasi."
+      ],
+      "Maybe later": [
+        "Ehkä myöhemmin"
+      ],
+      "More ways to experience ${ MAIL_APP_NAME }": [
+        "Lisää tapoja kokea ${ MAIL_APP_NAME }"
+      ],
       "Next": [
         "Seuraava"
+      ],
+      "On the move": [
+        "Liikkeessä"
       ],
       "Protection from trackers": [
         "Suojaus jäljittäjiltä"
@@ -9924,16 +10031,37 @@
       "Skip": [
         "Ohita"
       ],
+      "Start using ${ BRAND_NAME }": [
+        "Aloita ${ BRAND_NAME }n käyttö"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Aloita sähköpostiosoitteesi lyhyemmän ja tarttuvamman version käyttäminen."
+      ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "Estämme mainostajia ja tiedonkerääjiä profiloimasta sinua. ${ kbLinkPrivacy }"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Tervetuloa ${ MAIL_APP_NAME }iin"
+      ],
+      "Where privacy is default.": [
+        "Missä yksityisyys on olennaista."
       ]
     },
     "Onboarding Proton": {
+      "Choose your preferred look and feel.": [
+        "Valitse haluamasi ulkoasu ja tunnelma."
+      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Määritä organisaatiosi, liitä oma verkkotunnuksesi ja luo käyttäjätilit varmistaaksesi, että kaikki organisaatiosi jäsenet on suojattu."
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Tutustu kaikkiin ${ BRAND_NAME }-palveluihin"
+      ],
+      "Link your domain name and create accounts for all members of your organization.": [
+        "Yhdistä verkkotunnuksesi ja luo tilit kaikille organisaatiosi jäsenille."
+      ],
+      "Make it your own": [
+        "Tee siitä omasi"
       ],
       "Pick a theme": [
         "Valitse teema"
@@ -11153,6 +11281,20 @@
       ],
       "Unsubscribed": [
         "Tilaus on lopetettu"
+      ]
+    },
+    "Step": {
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "Syötä ${ MAIL_APP_NAME } -osoitteesi uudeksi osoitteeksi ja tallenna muutos."
+      ],
+      "In the account settings, look for the option to edit or change your email address ": [
+        "Etsi tiliasetuksista valinta muokata tai muuttaa sähköpostiosoitettasi "
+      ],
+      "Select service to update": [
+        "Valitse muokattava palvelu"
+      ],
+      "Sign in to the service": [
+        "Kirjaudu palveluun"
       ]
     },
     "Step in filter modal": {
@@ -12540,6 +12682,9 @@
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Piilota sähköpostisi ${ PASS_APP_NAME }:lla"
+      ],
+      "How to update your email address": [
+        "Miten vaihdat sähköpostiosoitteesi"
       ],
       "Human verification": [
         "Ihmisvahvistus"

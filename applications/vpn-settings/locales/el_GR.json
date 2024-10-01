@@ -2128,6 +2128,11 @@
         "Λάβετε υπόψη ότι εάν διαγράψετε αυτόν τον τομέα ${ domainName }, όλες οι διευθύνσεις που σχετίζονται με αυτόν θα απενεργοποιηθούν."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Είστε βέβαιος ότι θέλετε να διαγράψετε αυτή την ομάδα;"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Καθυστερημένο τιμολόγιο"
@@ -2629,6 +2634,11 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Ο λογαριασμός ή ο οργανισμός σας έχει μια εκπρόθεσμη οικονομική εκκρεμότητα. Παρακαλούμε πληρώστε όλες τις εκκρεμότητες."
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "Εισάγετε μια διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ]
     },
     "Error importing users": {
@@ -3562,9 +3572,6 @@
       ],
       "Are you sure you want to cancel editing the group?": [
         "Είστε βέβαιοι ότι θέλετε να ακυρώσετε την επεξεργασία της ομάδας;"
-      ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτήν την ομάδα. Η διεύθυνση ομάδας δε θα λειτουργεί πλέον."
       ],
       "Are you sure you want to discard your changes?": [
         "Θέλετε σίγουρα να απορρίψετε τις αλλαγές σας;"
@@ -5583,6 +5590,9 @@
       "Reveal password": [
         "Εμφάνιση κωδικού"
       ],
+      "Search by email": [
+        "Αναζήτηση μέσω email"
+      ],
       "Second password": [
         "Δεύτερος κωδικός πρόσβασης"
       ],
@@ -7181,6 +7191,20 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Οι χρήστες θα βλέπουν το λογότυπό σας αντί για το εικονίδιο του ${ BRAND_NAME } όταν είναι συνδεδεμένοι στις εφαρμογές ιστού μας."
+      ]
+    },
+    "orgidentity": {
+      "Current organization identity": [
+        "Ταυτότητα τρέχον οργανισμού"
+      ],
+      "New organization identity": [
+        "Ταυτότητα νέου οργανισμού"
+      ],
+      "Organization identity": [
+        "Ταυτότητα οργανισμού"
+      ],
+      "Verify": [
+        "Επαλήθευση"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -10199,6 +10223,9 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Οι διαχειριστές δεν μπορούν να έχουν πρόσβαση στα δεδομένα των ιδιωτών χρηστών και δεν μπορούν να επαναφέρουν τον κωδικό πρόσβασής τους."
+      ],
+      "Approve all": [
+        "Έγκριση όλων"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Κάνοντας τον χρήστη ιδιωτικό, δε θα μπορείτε να τον βοηθήσετε να ανακτήσει την πρόσβαση στα δεδομένα ή τον λογαριασμό του."

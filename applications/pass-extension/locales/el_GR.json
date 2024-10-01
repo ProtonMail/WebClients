@@ -634,6 +634,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Δεν ήταν δυνατή η ανάλυση του αρχείου ${ provider }. ${ errorDetail }"
       ],
+      "[Error] an item could not be parsed": [
+        "[Σφάλμα] δεν ήταν δυνατή η ανάλυση ενός στοιχείου"
+      ],
       "Alias could not be updated at the moment. Please try again later": [
         "Δεν ήταν δυνατή η ενημέρωση του ψευδωνύμου προς το παρόν. Παρακαλούμε προσπαθήστε ξανά αργότερα"
       ],
@@ -1158,6 +1161,9 @@
       ],
       "Automatically copy the generated password to the clipboard": [
         "Αυτόματη αντιγραφή του κωδικού πρόσβασης που δημιουργήθηκε στο πρόχειρο"
+      ],
+      "Autosaved on ${ url }": [
+        "Αυτόματη αποθήκευση στο ${ url }"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Πριν εξαγάγετε τα δεδομένα σας με αυτήν τη μορφή, ανοίξτε τις ρυθμίσεις Safari -> καρτέλα \"Γενικά\" -> απενεργοποιήστε την επιλογή \"Άνοιγμα ασφαλών αρχείων μετά τη λήψη\". Αυτό θα αποτρέψει το Safari από την εσφαλμένη εξαγωγή του εξαγόμενου αρχείου."
@@ -2521,6 +2527,9 @@
       ],
       "Type": [
         "Τύπος"
+      ],
+      "Unknown": [
+        "Άγνωστο"
       ],
       "Unlock ${ PASS_APP_NAME }": [
         "Ξεκλειδώστε το ${ PASS_APP_NAME }"
