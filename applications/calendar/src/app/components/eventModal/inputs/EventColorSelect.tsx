@@ -2,12 +2,13 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Badge, ColorPicker, Spotlight, UpsellModal, useModalState, useSpotlightShow } from '@proton/components';
+import { Badge, ColorPicker, Spotlight, UpsellModal, NewUpsellModal, useModalState, useSpotlightShow } from '@proton/components';
 import { useSpotlightOnFeature, useUser, useWelcomeFlags } from '@proton/components/hooks';
 import { FeatureCode } from '@proton/features';
-import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { APP_UPSELL_REF_PATH, APPS, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { addUpsellPath, getUpgradePath, getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
+import paintImg from '@proton/styles/assets/img/illustrations/new-upsells-img/paint.svg';
 
 interface Props {
     model: EventModel;
@@ -54,6 +55,50 @@ const EventColorSelect = ({ model, setModel, isSmallViewport, isDrawerApp }: Pro
         }
     };
 
+    const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
+
+    const modal = displayNewUpsellModalsVariant ? (
+        <NewUpsellModal
+            data-testid="color-per-event:upsell-modal"
+            titleModal={c('Title').t`Add some color to your day`}
+            description={c('Description')
+                .t`Color-code events to make it easier to organize your day, track your time, and prioritize tasks.`}
+            modalProps={upsellModalProps}
+            sourceEvent="BUTTON_COLOR_PER_EVENT"
+            application={APPS.PROTONCALENDAR}
+            upgradePath={addUpsellPath(
+                getUpgradePath({ user }),
+                getUpsellRef({
+                    app: APP_UPSELL_REF_PATH.CALENDAR_UPSELL_REF_PATH,
+                    component: UPSELL_COMPONENT.MODAL,
+                    feature: CALENDAR_UPSELL_PATHS.COLOR_PER_EVENT,
+                })
+            )}
+            illustration={paintImg}
+        />
+    ) : (
+        <UpsellModal
+            data-testid="color-per-event:upsell-modal"
+            modalProps={upsellModalProps}
+            features={['more-storage', 'more-email-addresses', 'more-calendars', 'calendar-sharing']}
+            description={c('Description')
+                .t`Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.`}
+            title={c('Title').t`Add some color to your day`}
+            sourceEvent="BUTTON_COLOR_PER_EVENT"
+            application={APPS.PROTONCALENDAR}
+            upgradePath={addUpsellPath(
+                getUpgradePath({ user }),
+                getUpsellRef({
+                    app: APP_UPSELL_REF_PATH.CALENDAR_UPSELL_REF_PATH,
+                    component: UPSELL_COMPONENT.MODAL,
+                    feature: CALENDAR_UPSELL_PATHS.COLOR_PER_EVENT,
+                })
+            )}
+            headerType="calendar"
+            hideInfo={isDrawerApp}
+        />
+    );
+
     // Wrap the children in a div to show spotlight
     return (
         <>
@@ -85,26 +130,7 @@ const EventColorSelect = ({ model, setModel, isSmallViewport, isDrawerApp }: Pro
                 </div>
             </Spotlight>
 
-            {renderUpsellModal && (
-                <UpsellModal
-                    data-testid="color-per-event:upsell-modal"
-                    modalProps={upsellModalProps}
-                    features={['more-storage', 'more-email-addresses', 'more-calendars', 'calendar-sharing']}
-                    description={c('Description')
-                        .t`Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.`}
-                    title={c('Title').t`Add some color to your day`}
-                    upgradePath={addUpsellPath(
-                        getUpgradePath({ user }),
-                        getUpsellRef({
-                            app: APP_UPSELL_REF_PATH.CALENDAR_UPSELL_REF_PATH,
-                            component: UPSELL_COMPONENT.MODAL,
-                            feature: CALENDAR_UPSELL_PATHS.COLOR_PER_EVENT,
-                        })
-                    )}
-                    headerType="calendar"
-                    hideInfo={isDrawerApp}
-                />
-            )}
+            {renderUpsellModal && modal}
         </>
     );
 };
