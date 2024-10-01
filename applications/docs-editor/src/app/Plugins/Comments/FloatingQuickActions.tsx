@@ -29,11 +29,10 @@ export function FloatingQuickActions({
     const anchorElement = editor.getElementByKey(anchorKey)
 
     if (boxElem !== null && rootElement !== null && anchorElement !== null && rootElementParent) {
-      const paddingRight = parseFloat(getComputedStyle(rootElementParent).paddingRight)
       const { right } = rootElement.getBoundingClientRect()
       const { top } = anchorElement.getBoundingClientRect()
       const { top: rootTop } = rootElementParent.getBoundingClientRect()
-      boxElem.style.left = `${right - (paddingRight / 2 || 0)}px`
+      boxElem.style.left = `${right + 10}px`
       boxElem.style.top = `${top - rootTop + rootElementParent.scrollTop}px`
     }
   }, [anchorKey, editor])

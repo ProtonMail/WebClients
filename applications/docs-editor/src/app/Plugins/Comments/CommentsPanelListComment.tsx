@@ -174,12 +174,30 @@ export function CommentsPanelListComment({
           {isSuggestionComment && isSuggestionsFeatureEnabled && thread.state === CommentThreadState.Active && (
             <>
               <Tooltip title={c('Action').t`Decline suggestion`} onClick={rejectSuggestion}>
-                <Button icon pill className="flex-shrink-0" shape="ghost" size="small">
+                <Button
+                  icon
+                  pill
+                  shape="ghost"
+                  size="small"
+                  className={clsx(
+                    'pointer-events-auto flex-shrink-0 opacity-0 hover:opacity-100 focus:opacity-100 group-hover/comment:opacity-100',
+                    isFirstComment && 'group-focus-within/thread:opacity-100',
+                  )}
+                >
                   <Icon size={4.5} name="cross" />
                 </Button>
               </Tooltip>
               <Tooltip title={c('Action').t`Accept suggestion`} onClick={acceptSuggestion}>
-                <Button icon pill className="flex-shrink-0" shape="ghost" size="small">
+                <Button
+                  icon
+                  pill
+                  shape="ghost"
+                  size="small"
+                  className={clsx(
+                    'pointer-events-auto flex-shrink-0 opacity-0 hover:opacity-100 focus:opacity-100 group-hover/comment:opacity-100',
+                    isFirstComment && 'group-focus-within/thread:opacity-100',
+                  )}
+                >
                   <Icon size={4.5} name="checkmark" />
                 </Button>
               </Tooltip>
