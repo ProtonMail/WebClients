@@ -21,7 +21,19 @@
       ]
     },
     "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } e ${ remainingCount } outras potenciais fugas detetadas. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes e tomar medidas. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } e 1 outra potencial fuga detetada. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes e tomar medidas. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Foi detetada uma potencial fuga de ${ name }. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes e tomar medidas. ${ link }"
+      ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Foi detetada uma potencial fuga de ${ name }. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes e tomar medidas. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Foi detetada uma potencial fuga de ${ name }. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes e tomar medidas. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
@@ -802,6 +814,10 @@
       ],
       "${ price } per user": [
         "${ price } por utilizador"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } licença de assistente de escrita",
+        "${ seats } licenças de assistente de escrita"
       ],
       "${ users } user": [
         "${ users } utilizador",
@@ -2325,6 +2341,9 @@
       ]
     },
     "Description": {
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "A A2F acrescenta uma camada de segurança adicional, impedindo o acesso não autorizado."
+      ],
       "Availability unknown": [
         "Disponibilidade desconhecida"
       ],
@@ -2337,11 +2356,17 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "A eliminar contactos... Isto pode levar alguns minutos. Quando o processo for concluído, pode fechar esta janela."
       ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "Concebido para utilizadores que procuram uma maior proteção para as suas contas."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "A encriptar e importar contactos... Pode levar alguns minutos. Quando o processo terminar, poderá fechar este diálogo."
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Para importar via ficheiro CSV e VCF, certifique-se de que o ficheiro não excede ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contactos. Se o seu ficheiro for maior, divida-o em ficheiros mais pequenos. ${ learnMoreLink }."
+      ],
+      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Obtenha aliases ilimitados e 500 GB de armazenamento com ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contactos que está a importar já contém grupos. Reveja como esses grupos devem ser importados."
@@ -2352,14 +2377,26 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "A unir contactos... Pode levar alguns minutos. Quando o processo terminar, poderá fechar este diálogo."
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Poupe tempo enviando e-mails a todos de uma só vez com os grupos de contactos. Desbloqueie esta e outras funcionalidades premium ao atualizar."
+      ],
+      "Set a data recovery method to prevent data loss.": [
+        "Definir um método de recuperação de dados para evitar a perda de dados."
+      ],
       "Set a recovery method to prevent losing access to your account.": [
         "Defina um método de recuperação para evitar a perda de acesso à sua conta."
       ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Isso pode levar alguns minutos. Entretanto, pode continuar a usar o calendário normalmente."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Para garantir a maior segurança possível da sua conta, defina uma frase de recuperação."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar os seus contactos do Google e Outlook, ${ easySwitchLink }."
+      ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "Actualize a sua conta para ativar o ${ PROTON_SENTINEL_NAME }, a nossa solução de segurança de ponta baseada em IA com suporte especializado dedicado 24 horas por dia, 7 dias por semana."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arraste e largue para alterar a prioridade de união entre contactos. Desmarque os contactos que não deseja unir."
@@ -2369,6 +2406,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Pode marcar para eliminação os contactos que não deseja unir nem manter. A eliminação só ocorrerá depois de clicar no botão de união"
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "A sua conta e os métodos de recuperação de dados estão definidos e a A2F está ativada."
+      ],
+      "Your account and data recovery methods are set.": [
+        "A sua conta e os métodos de recuperação de dados estão definidos."
       ]
     },
     "description": {
@@ -3247,6 +3290,9 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Não é possível carregar esta página. Por favor, actualize a página ou verifique a sua ligação à Internet."
       ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Quando a palavra-passe extra está ativada, a gestão de alias só pode ser feita no ${ PASS_APP_NAME }."
+      ],
       "You need an active personal calendar to import events": [
         "É necessário um calendário pessoal ativo para importar eventos"
       ]
@@ -3436,6 +3482,9 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Foi convidado a juntar-se a ${ bannerOrganization }. ${ viewInviteButton }"
       ],
+      "You have successfully joined the family group": [
+        "Entrou com sucesso no grupo de família"
+      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Está convidado a associar a sua conta ${ BRAND_NAME } a este plano de grupo e a usufruir em conjunto de todas as funcionalidades premium ${ BRAND_NAME_TWO }."
       ],
@@ -3444,6 +3493,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "A sua conta está a utilizar ${ usedSpace } de armazenamento, o que excede o ${ inviteSpace } que lhe foi atribuído. Elimine alguns dados ou peça ao administrador do plano para aumentar o seu armazenamento."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Não pode aceitar este convite com o seu plano atual."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4475,6 +4527,9 @@
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Outros utilizadores da sua organização verão as suas faixas horárias ocupadas. Não são partilhados quaisquer detalhes do evento."
       ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Os nossos alertas são mais cautelosos. Se não reconhece nenhuma das informações violadas, pode ignorar este relatório em segurança."
+      ],
       "password": [
         "palavra-passe"
       ],
@@ -4501,6 +4556,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Note que este processo pode levar algum tempo dependendo do tamanho do seu livro de endereços."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Tenha em atenção que, ao clicar no botão Confirmar, a sua conta terá ${ remainingCreditsFormatted } créditos restantes."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Indique um nome e um endereço de e-mail para criar um grupo."
@@ -4846,6 +4904,9 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Rejeitou anteriormente este convite. Pergunte ao proprietário para reenviar o convite"
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Perderá o acesso às funcionalidades ${ planTitle } nesta data."
       ],
       "You will lose all unsaved changes.": [
         "Perderá todas as alterações por guardar."
@@ -5459,6 +5520,9 @@
       ],
       "What happened?": [
         "O que é que aconteceu?"
+      ],
+      "What is your main reason for canceling or downgrading?": [
+        "Qual o principal motivo para cancelar ou reverter para um plano inferior?"
       ],
       "Your alias": [
         "O seu alias"
@@ -7071,6 +7135,9 @@
       "Select state": [
         "Selecionar estado"
       ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Partilhe o que pensa que poderia tornar a ${ BRAND_NAME } melhor"
+      ],
       "Start typing an email address": [
         "Comece a escrever um endereço de e-mail"
       ]
@@ -7215,6 +7282,9 @@
       ],
       "Used on amazon for shopping, etc.": [
         "Usado na Amazon para compras, etc."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Quando lhe for pedido o seu endereço de e-mail, forneça este alias. Os aliases são fornecidos pelo ${ passLink }."
       ]
     },
     "Security Center (link to Pass App)": {
@@ -7228,8 +7298,26 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } e ${ remainingCount } outras potenciais fugas detetadas. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } e 1 outra potencial fuga detetada. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Foi detetada uma potencial fuga de ${ name }. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes. ${ link }"
+      ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Seja notificado se a sua palavra-passe ou outros dados tiverem sido divulgados por um serviço de terceiros. ${ learnMoreLink }"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "A nossa solução de segurança de ponta baseada em IA, concebida para utilizadores que procuram uma maior proteção para as suas contas. ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "O Sentinel está **ativo** e a salvaguardar a sua conta."
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "As suas informações foram encontradas em pelo menos uma fuga de dados. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes. ${ link }"
       ]
     },
     "Select files": {
@@ -8173,11 +8261,17 @@
       "Preferences saved": [
         "Preferências guardadas"
       ],
+      "Problem reported": [
+        "Problema comunicado"
+      ],
       "Undo in progress": [
         "Desfazer em curso"
       ],
       "Verification successful": [
         "A verificação é terminada."
+      ],
+      "You have successfully canceled your subscription.": [
+        "A sua subscrição foi cancelada com sucesso."
       ],
       "You have successfully unsubscribed": [
         "A sua subscrição foi cancelada."
@@ -8426,6 +8520,9 @@
       "Continue with partial import?": [
         "Continue com uma importação parcial?"
       ],
+      "Coupon": [
+        "Cupão"
+      ],
       "Create contact": [
         "Criar contacto"
       ],
@@ -8515,6 +8612,9 @@
       "Encrypted event": [
         "Evento encriptado"
       ],
+      "Enter 2FA code": [
+        "Insira o código 2FA"
+      ],
       "Enter your password": [
         "Introduza a sua palavra-passe"
       ],
@@ -8560,6 +8660,9 @@
       ],
       "Import failed": [
         "Erro na importação"
+      ],
+      "Import groups": [
+        "Importar grupos"
       ],
       "Invalid verification code": [
         "O código de verificação não é válido."
