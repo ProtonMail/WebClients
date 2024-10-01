@@ -109,6 +109,7 @@ const ComposerAssistantB2BUpsellModal = ({ modalProps, isOrgUser }: Props) => {
             submitPosition="outside"
             hideFeaturesListBorder={true}
             iconSize={4}
+            sourceEvent="BUTTON_SCRIBE"
         />
     );
 };

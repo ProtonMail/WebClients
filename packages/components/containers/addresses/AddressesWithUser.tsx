@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
+import { NewUpsellModal } from '@proton/components';
 import Alert from '@proton/components/components/alert/Alert';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import OrderableTable from '@proton/components/components/orderableTable/OrderableTable';
@@ -15,10 +16,16 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import { orderAddress } from '@proton/shared/lib/api/addresses';
 import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import {
+    addUpsellPath,
+    getUpgradePath,
+    getUpsellRef,
+    useNewUpsellModalVariant,
+} from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address, CachedOrganizationKey, Member, UserModel } from '@proton/shared/lib/interfaces';
 import { getIsNonDefault, sortAddresses } from '@proton/shared/lib/mail/addresses';
+import addressesImg from '@proton/styles/assets/img/illustrations/new-upsells-img/addresses.svg';
 import move from '@proton/utils/move';
 
 import { useAddresses, useApi, useEventManager, useNotifications } from '../../hooks';
@@ -41,6 +48,8 @@ const AddressesUser = ({ user, organizationKey, member, hasDescription = true, a
     const { call } = useEventManager();
     const [addresses, loadingAddresses] = useAddresses();
     const [list, setAddresses] = useState<Address[]>(() => sortAddresses(addresses || []));
+
+    const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
 
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
@@ -114,6 +123,28 @@ const AddressesUser = ({ user, organizationKey, member, hasDescription = true, a
         return <Alert className="mb-4">{c('Info').t`No addresses exist`}</Alert>;
     }
 
+    const modal = displayNewUpsellModalsVariant ? (
+        <NewUpsellModal
+            titleModal={c('Title').t`An address for each role`}
+            description={c('Description')
+                .t`Keep different parts of your life separate and your inbox organized with additional addresses.`}
+            modalProps={upsellModalProps}
+            upgradePath={addUpsellPath(getUpgradePath({ user }), upsellRef)}
+            illustration={addressesImg}
+            sourceEvent="BUTTON_MORE_ADDRESSES"
+        />
+    ) : (
+        <UpsellModal
+            title={c('Title').t`Increase your privacy with more addresses`}
+            description={c('Description')
+                .t`Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.`}
+            modalProps={upsellModalProps}
+            upgradePath={addUpsellPath(getUpgradePath({ user }), upsellRef)}
+            sourceEvent="BUTTON_MORE_ADDRESSES"
+            features={['more-storage', 'more-email-addresses', 'unlimited-folders-and-labels', 'custom-email-domains']}
+        />
+    );
+
     return (
         <>
             {hasDescription && (
@@ -135,7 +166,7 @@ const AddressesUser = ({ user, organizationKey, member, hasDescription = true, a
 
             <OrderableTable
                 onSortEnd={handleSortEnd}
-                className="simple-table--has-actions"
+                className="simple-table--has-actions mt-4"
                 helperClassname="simple-table--has-actions"
             >
                 <OrderableTableHeader
@@ -184,21 +215,7 @@ const AddressesUser = ({ user, organizationKey, member, hasDescription = true, a
                 </OrderableTableBody>
             </OrderableTable>
 
-            {renderUpsellModal && (
-                <UpsellModal
-                    title={c('Title').t`Increase your privacy with more addresses`}
-                    description={c('Description')
-                        .t`Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.`}
-                    modalProps={upsellModalProps}
-                    upgradePath={addUpsellPath(getUpgradePath({ user }), upsellRef)}
-                    features={[
-                        'more-storage',
-                        'more-email-addresses',
-                        'unlimited-folders-and-labels',
-                        'custom-email-domains',
-                    ]}
-                />
-            )}
+            {renderUpsellModal && modal}
         </>
     );
 };

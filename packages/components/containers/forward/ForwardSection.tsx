@@ -5,17 +5,23 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import { Tabs } from '@proton/components';
+import { NewUpsellModal, UpsellModal } from '@proton/components';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
-import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { useIncomingAddressForwardings, useOutgoingAddressForwardings } from '@proton/components/hooks';
-import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import {
+    addUpsellPath,
+    getUpgradePath,
+    getUpsellRef,
+    useNewUpsellModalVariant,
+} from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import forwardImg from '@proton/styles/assets/img/illustrations/new-upsells-img/forward.svg';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useAddresses, useUser } from '../../hooks';
@@ -60,6 +66,36 @@ const ForwardSection = () => {
             location.hash = '';
         }
     }, [hash, isIncomingTableAvailable, isOutgoingTableAvailable]);
+
+    const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
+
+    const modal = displayNewUpsellModalsVariant ? (
+        <NewUpsellModal
+            titleModal={c('Title').t`Ready, set, forward`}
+            description={c('Description')
+                .t`Set up auto-forwarding to redirect incoming emails to another email address.`}
+            modalProps={upsellModalProps}
+            upgradePath={addUpsellPath(getUpgradePath({ user }), upsellRef)}
+            illustration={forwardImg}
+            sourceEvent="BUTTON_FORWARD_EMAILS"
+        />
+    ) : (
+        <UpsellModal
+            title={c('Title').t`Personalise your e-mail footer`}
+            description={c('Description')
+                .t`To remove the ${MAIL_APP_NAME} footer, upgrade and unlock even more premium features.`}
+            modalProps={upsellModalProps}
+            upgradePath={addUpsellPath(getUpgradePath({ user }), upsellRef)}
+            sourceEvent="BUTTON_FORWARD_EMAILS"
+            features={[
+                'unlimited-folders-and-labels',
+                'search-message-content',
+                'more-storage',
+                'more-email-addresses',
+                'custom-email-domains',
+            ]}
+        />
+    );
 
     return (
         <SettingsSectionWide className="overflow-hidden">
@@ -116,21 +152,7 @@ const ForwardSection = () => {
                 />
             </SettingsSection>
             {forwardModal}
-            {renderUpsellModal && (
-                <UpsellModal
-                    title={c('email_forwarding_2023: Title').t`Automatically forward emails to other accounts`}
-                    description={c('email_forwarding_2023: Description')
-                        .t`Unlock email forwarding to easily manage incoming information and more premium features when you upgrade.`}
-                    modalProps={upsellModalProps}
-                    upgradePath={addUpsellPath(getUpgradePath({ user }), upsellRef)}
-                    features={[
-                        'more-storage',
-                        'more-email-addresses',
-                        'unlimited-folders-and-labels',
-                        'custom-email-domains',
-                    ]}
-                />
-            )}
+            {renderUpsellModal && modal}
         </SettingsSectionWide>
     );
 };

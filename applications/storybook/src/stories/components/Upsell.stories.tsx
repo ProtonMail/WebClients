@@ -73,6 +73,7 @@ export const Basic = () => {
                     features={selectedFeatures}
                     title="A title"
                     upgradePath="/upgrade?ref=account-banner"
+                    sourceEvent="BUTTON_MORE_ADDRESSES"
                 />
                 <Button
                     className="mx-auto"

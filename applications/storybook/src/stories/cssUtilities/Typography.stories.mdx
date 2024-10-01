@@ -18,9 +18,8 @@ For a visual overview of all available **[font weights](?path=/docs/core-concept
         To be used with <code>max-w-full</code> and <code>inline-block</code> (or with flexbox helpers).
         <br />
         <br />
-        If you need a multiline ellipsis, use <code>text-ellipsis-four-lines</code>/<code>
-            text-ellipsis-two-lines
-        </code> helper.
+        If you need a multiline ellipsis, use <code>text-ellipsis-four-lines</code>/<code>text-ellipsis-two-lines</code>{' '}
+        helper.
     </div>
     <div class="w-1/2">
         <Source
@@ -438,6 +437,27 @@ and long      spaces</p>
             format
             code={`
 <p className="text-pre">A text with  spaces</p>
+`}
+        />
+    </div>
+</div>
+
+<br />
+<br />
+
+<div class="flex justify-space-between mb-8 flex-column md:flex-row">
+    <div class="w-1/2 self-center">
+        <p class="text-wrap-balance">
+            A text on a few lines, gets better distribution with <code>text-wrap-balance</code>
+        </p>
+    </div>
+    <div class="w-1/2">
+        <Source
+            language="html"
+            light
+            format
+            code={`
+<p className="text-wrap-balance">A text on a few lines, gets better distribution with <code>text-wrap-balance</code></p>
 `}
         />
     </div>

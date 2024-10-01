@@ -1,14 +1,21 @@
 import { c } from 'ttag';
 
+import { NewUpsellModal } from '@proton/components';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import { useLoading } from '@proton/hooks';
 import { updatePMSignature } from '@proton/shared/lib/api/mailSettings';
 import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import {
+    addUpsellPath,
+    getUpgradePath,
+    getUpsellRef,
+    useNewUpsellModalVariant,
+} from '@proton/shared/lib/helpers/upsell';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
+import signatureImg from '@proton/styles/assets/img/illustrations/new-upsells-img/tools.svg';
 
 import { useApi, useEventManager, useNotifications, useToggle, useUser } from '../../hooks';
 
@@ -44,6 +51,35 @@ const PMSignature = ({ id, mailSettings = {}, userSettings = {} }: Props) => {
         createNotification({ text: c('Success').t`Preference saved` });
     };
 
+    const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
+
+    const modal = displayNewUpsellModalsVariant ? (
+        <NewUpsellModal
+            titleModal={c('Title').t`Personalize your email footer`}
+            description={c('Description').t`Make your email footer your own — showcase your unique brand, not ours.`}
+            modalProps={upsellModalProps}
+            upgradePath={addUpsellPath(getUpgradePath({ user }), upsellRef)}
+            illustration={signatureImg}
+            sourceEvent="BUTTON_MAIL_FOOTER"
+        />
+    ) : (
+        <UpsellModal
+            title={c('Title').t`Personalise your e-mail footer`}
+            description={c('Description')
+                .t`To remove the ${MAIL_APP_NAME} footer, upgrade and unlock even more premium features.`}
+            modalProps={upsellModalProps}
+            upgradePath={addUpsellPath(getUpgradePath({ user }), upsellRef)}
+            sourceEvent="BUTTON_MAIL_FOOTER"
+            features={[
+                'unlimited-folders-and-labels',
+                'search-message-content',
+                'more-storage',
+                'more-email-addresses',
+                'custom-email-domains',
+            ]}
+        />
+    );
+
     return (
         <div className="flex flex-1">
             <div
@@ -71,22 +107,7 @@ const PMSignature = ({ id, mailSettings = {}, userSettings = {} }: Props) => {
                 />
             </div>
 
-            {renderUpsellModal && (
-                <UpsellModal
-                    title={c('Title').t`Personalise your e-mail footer`}
-                    description={c('Description')
-                        .t`To remove the ${MAIL_APP_NAME} footer, upgrade and unlock even more premium features.`}
-                    modalProps={upsellModalProps}
-                    upgradePath={addUpsellPath(getUpgradePath({ user }), upsellRef)}
-                    features={[
-                        'unlimited-folders-and-labels',
-                        'search-message-content',
-                        'more-storage',
-                        'more-email-addresses',
-                        'custom-email-domains',
-                    ]}
-                />
-            )}
+            {renderUpsellModal && modal}
         </div>
     );
 };

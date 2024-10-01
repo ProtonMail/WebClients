@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import Price from '@proton/components/components/price/Price';
 import { useUser } from '@proton/components/hooks';
 import { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
+import { useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
 import type { Currency } from '@proton/shared/lib/interfaces';
 import useFlag from '@proton/unleash/useFlag';
 
@@ -10,6 +11,7 @@ const useOneDollarConfig = () => {
     const [user] = useUser();
     const currency: Currency = user?.Currency || 'USD';
     const ABTestInboxUpsellOneDollarEnabled = useFlag('ABTestInboxUpsellOneDollar');
+    const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
 
     if (ABTestInboxUpsellOneDollarEnabled) {
         const price = (
@@ -17,6 +19,14 @@ const useOneDollarConfig = () => {
                 1
             </Price>
         );
+
+        if (displayNewUpsellModalsVariant) {
+            return {
+                footerText: c('new_plans: Title').jt`Starting from ${price}`,
+                cycle: CYCLE.MONTHLY,
+                coupon: COUPON_CODES.TRYMAILPLUS0724,
+            };
+        }
 
         return {
             submitText: c('new_plans: Action').jt`Get started for ${price}`,
