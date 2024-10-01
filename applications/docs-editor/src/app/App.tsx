@@ -35,6 +35,7 @@ import type { DocumentInteractionMode } from './DocumentInteractionMode'
 import debounce from '@proton/utils/debounce'
 import { loadLocales } from '@proton/account/bootstrap'
 import Icons from '@proton/icons/Icons'
+import clsx from '@proton/utils/clsx'
 
 type Props = {
   nonInteractiveMode: boolean
@@ -391,9 +392,11 @@ export function App({ nonInteractiveMode = false }: Props) {
     return null
   }
 
+  const isSuggestionMode = interactionMode === 'suggest'
+
   return (
     <div
-      className="relative grid h-full w-full overflow-hidden bg-[white]"
+      className={clsx('relative grid h-full w-full overflow-hidden bg-[white]', isSuggestionMode && 'suggestion-mode')}
       style={{
         '--comments-width': 'max(20.5vw, 300px)',
         gridTemplateRows: 'min-content 1fr',
@@ -403,7 +406,7 @@ export function App({ nonInteractiveMode = false }: Props) {
       <ThemeStyles />
       <ApplicationProvider
         application={application}
-        isSuggestionMode={interactionMode === 'suggest'}
+        isSuggestionMode={isSuggestionMode}
         isSuggestionsFeatureEnabled={isSuggestionsFeatureEnabled}
       >
         <Editor

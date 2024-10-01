@@ -39,7 +39,7 @@ export function generateSuggestionSummary(
       if (currentType === 'property-change') {
         const firstChild = node.getFirstChild()
         const currentFormat = $isTextNode(firstChild) ? firstChild.getFormat() : 0
-        content = getFormatsForFlag(currentFormat).join(', ') + ' on ' + content
+        content = getFormatsForFlag(currentFormat).join(', ')
       }
 
       const lastItem = summary[summary.length - 1]
