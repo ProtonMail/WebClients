@@ -25,6 +25,7 @@ import locales from './locales';
 import type { DriveStore } from './redux-store/store';
 import { extendStore, setupStore } from './redux-store/store';
 import { extraThunkArguments } from './redux-store/thunk';
+import { logPerformanceMarker } from './utils/performance';
 
 const bootstrapApp = async () => {
     const authentication = bootstrap.createAuthentication({ initialAuth: false });
@@ -48,6 +49,7 @@ const UrlsApp = () => {
             try {
                 const { store } = await bootstrapApp();
                 setState({ store });
+                logPerformanceMarker('drive_performance_clicktobootstrapped_histogram');
             } catch (error: any) {
                 setState({
                     error: getNonEmptyErrorMessage(error),
