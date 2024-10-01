@@ -56,8 +56,10 @@ export const initRoosterEditor = async (element: HTMLDivElement, options: Option
         moveCurrentSnapshot,
         setDirection,
         createLink,
+        ImageEdit,
     } = await import(/* webpackChunkName: "roosterjs", webpackPreload: true */ 'roosterjs');
 
+    const borderColor = getComputedStyle(document.documentElement).getPropertyValue('--primary');
     const plugins: EditorPlugin[] = [
         new ContentEdit({
             indentWhenAltShiftRight: !isMac(),
@@ -68,6 +70,14 @@ export const initRoosterEditor = async (element: HTMLDivElement, options: Option
         new HyperLink(),
         new EditorEventListener(options.onEditorEvent),
         new EditorCustomPastePlugin(options.onPasteImage),
+        new ImageEdit({
+            disableRotate: true,
+            preserveRatio: true,
+            borderColor,
+            minWidth: 20,
+            minHeight: 20,
+            disableSideResize: true,
+        }),
     ];
 
     const fontSize = options.mailSettings?.FontSize ? `${options.mailSettings.FontSize}px` : `${DEFAULT_FONT_SIZE}px`;
