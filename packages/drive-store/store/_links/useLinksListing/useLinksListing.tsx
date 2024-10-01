@@ -1,15 +1,12 @@
 import { createContext, useCallback, useContext, useRef } from 'react';
 
-import { useApi } from '@proton/components/hooks';
 import { queryFolderChildren } from '@proton/shared/lib/api/drive/folder';
 import { queryLinkMetaBatch, queryVolumeLinkMetaBatch } from '@proton/shared/lib/api/drive/link';
 import { BATCH_REQUEST_SIZE } from '@proton/shared/lib/drive/constants';
 import type { LinkChildrenResult, LinkMetaBatchPayload } from '@proton/shared/lib/interfaces/drive/link';
-import { useFlag } from '@proton/unleash';
 import chunk from '@proton/utils/chunk';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { ExperimentGroup, Features, measureFeaturePerformance } from '../../../utils/telemetry';
 import { linkMetaToEncryptedLink, useDebouncedRequest } from '../../_api';
 import { waitFor } from '../../_utils';
 import type { DecryptedLink, EncryptedLink } from './../interface';
@@ -19,7 +16,6 @@ import { useBookmarksLinksListing } from './useBookmarksLinksListing';
 import type { FetchMeta, FetchResponse, SortParams } from './useLinksListingHelpers';
 import { PAGE_SIZE, sortParamsToServerSortArgs, useLinksListingHelpers } from './useLinksListingHelpers';
 import { useSharedLinksListing } from './useSharedLinksListing';
-import { useSharedWithMeLinksListing } from './useSharedWithMeLinksListing';
 import { useSharedWithMeLinksListingByVolume } from './useSharedWithMeLinksListingByVolume';
 import { useTrashedLinksListing } from './useTrashedLinksListing';
 
@@ -71,13 +67,8 @@ export function useLinksListingProvider() {
     const linksState = useLinksState();
     const trashedLinksListing = useTrashedLinksListing();
     const sharedLinksListing = useSharedLinksListing();
-    const sharedWithMeLinksListing = useSharedWithMeLinksListing();
     const bookmarksLinksListing = useBookmarksLinksListing();
-
-    // TODO: Update this code after experiment is done - DRVWEB-4102
     const sharedWithMeLinksListingByVolume = useSharedWithMeLinksListingByVolume();
-    const sharingLoadLinksByVolume = useFlag('DriveWebSharingLoadLinksByVolume');
-    const api = useApi();
 
     const { cacheLoadedLinks, fetchNextPageWithSortingHelper, loadFullListing, getDecryptedLinksAndDecryptRest } =
         useLinksListingHelpers();
@@ -424,19 +415,8 @@ export function useLinksListingProvider() {
         loadLinksSharedByMeLink: (signal: AbortSignal, volumeId: string) => {
             return sharedLinksListing.loadSharedByMeLinks(signal, volumeId, loadLinksMeta);
         },
-        // TODO: Update this code after experiment is done - DRVWEB-4102
         loadLinksSharedWithMeLink: async (signal: AbortSignal) => {
-            const { start, end, clear } = measureFeaturePerformance(
-                api,
-                Features.sharingLoadLinksByVolume,
-                sharingLoadLinksByVolume ? ExperimentGroup.treatment : ExperimentGroup.control
-            );
-            start();
-            const linksListing = await (sharingLoadLinksByVolume
-                ? sharedWithMeLinksListingByVolume.loadSharedWithMeLinks(signal, loadLinksMetaByVolume)
-                : sharedWithMeLinksListing.loadSharedWithMeLinks(signal, loadLinksMeta));
-            end({ quantity: linksListing?.Count });
-            clear();
+            return sharedWithMeLinksListingByVolume.loadSharedWithMeLinks(signal, loadLinksMetaByVolume);
         },
         loadLinksBookmarks: async (signal: AbortSignal, shareId: string) => {
             return bookmarksLinksListing.loadLinksBookmarks(signal, shareId);
@@ -446,17 +426,13 @@ export function useLinksListingProvider() {
         getCachedChildrenCount,
         getCachedTrashed: trashedLinksListing.getCachedTrashed,
         getCachedSharedByLink: sharedLinksListing.getCachedSharedLinks,
-        getCachedSharedWithMeLink: sharingLoadLinksByVolume
-            ? sharedWithMeLinksListingByVolume.getCachedSharedWithMeLinks
-            : sharedWithMeLinksListing.getCachedSharedWithMeLinks,
+        getCachedSharedWithMeLink: sharedWithMeLinksListingByVolume.getCachedSharedWithMeLinks,
         getCachedBookmarksLinks: bookmarksLinksListing.getCachedBookmarksLinks,
         getCachedBookmarkDetails: bookmarksLinksListing.getCachedBookmarkDetails,
         getCachedLinks,
 
         //TODO: Removed when events for shares and invitations
-        setSharedWithMeShareIdsState: sharingLoadLinksByVolume
-            ? sharedWithMeLinksListingByVolume.setShareIdsState
-            : sharedWithMeLinksListing.setShareIdsState,
+        setSharedWithMeShareIdsState: sharedWithMeLinksListingByVolume.setShareIdsState,
         // TODO: remove when we will have events for bookmarks
         removeCachedBookmarkLink: bookmarksLinksListing.removeCachedBookmarkLink,
     };
