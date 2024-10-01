@@ -4015,6 +4015,9 @@
       "Username must end with a letter or digit": [
         "Felhasználónévnek betűvel vagy számmal kell végződnie"
       ],
+      "Wrong second password": [
+        "Rossz második jelszó"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Nem küldhet emailt több, mint ${ maxContacts } címzettnek",
         "Nem küldhet emailt több, mint ${ maxContacts } címzettnek"
@@ -9612,8 +9615,14 @@
       "Create an alias": [
         "E-mail álnév létrehozása"
       ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Készítsen álneveket menet közben, és könnyen kezelje álneveit és jelszavait."
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email álnevek"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email álnevek lehetővé teszik, hogy online feliratkozzon dolgokra anélkül, hogy megosztaná az e-mail címét. ${ learnMoreLink }"
       ],
       "New alias": [
         "Új e-mail álnév"

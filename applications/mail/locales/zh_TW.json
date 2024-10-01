@@ -219,6 +219,9 @@
       "Click here.": [
         "點擊此處。"
       ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "點擊複製 ${ defaultEmailAddress } 至剪貼簿"
+      ],
       "Close": [
         "關閉"
       ],
@@ -1320,6 +1323,9 @@
       "Use recovery code": [
         "使用復原代碼"
       ],
+      "Use this": [
+        "使用此"
+      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "使用您的滑鼠調整檢視大小。若您使用鍵盤，您也可以使用左右方向鍵來調整。"
       ],
@@ -1537,6 +1543,9 @@
       ],
       "Fast and secure. No logs are kept.": [
         "塊和安全。無紀錄被保存。"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "在${ BRAND_NAME }伺服器運行"
       ],
       "Run on device": [
         "在裝置上執行"
@@ -3466,6 +3475,9 @@
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "升級您的帳號以啟動 ${ PROTON_SENTINEL_NAME }，我們最新的 AI 安全方案，包含24小時的專家支援服務。"
       ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "使用 ${ MAIL_APP_NAME } 登入線上服務，與其他郵件服務商不同的地方，我們不會追踪您的資料或與第三方分享"
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖動以調整聯絡人合併的優先次序。未勾選的聯絡人將不會被合併。"
       ],
@@ -3561,6 +3573,9 @@
       ]
     },
     "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "確認失去${ PASS_APP_NAME }的特別折扣"
+      ],
       "Remove discount": [
         "移除折扣"
       ]
@@ -6046,6 +6061,9 @@
       "Email address": [
         "電郵位址"
       ],
+      "Email copied to clipboard": [
+        "已複製電子郵件至剪貼簿"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "免費提供 10 個自訂電郵網域名稱的託管服務。 亦可加入更多網域，現在只需 ${ price }。"
       ],
@@ -6591,6 +6609,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "重新整理此頁面或${ link }將自動解決大部分問題。"
+      ],
+      "Remember to update this in your password manager or wherever you keep your account and login information.": [
+        "請記得更新您此次修改至密碼管理器或是另外保存好您的登入資訊"
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "請刪除這應用程式與相關資料(包括已下載訊息…)"
@@ -7820,6 +7841,9 @@
       ],
       "Don't like the style": [
         "不喜歡此風格"
+      ],
+      "Don't show again": [
+        "不要再顯示"
       ],
       "Don't show this again": [
         "不再顯示此內容"
@@ -9657,7 +9681,36 @@
         "選取 ${ BRAND_NAME } 可以存取的內容：檢視您的電子郵件與設定、檢視與下載您的聯絡人、檢視與下載來自 Google 日曆您可存取的所有行事曆。"
       ]
     },
+    "Onboarding List Placeholder": {
+      "Finance": [
+        "金融"
+      ],
+      "I have moved my logins to ${ BRAND_NAME }": [
+        "我已經轉移我的登入至${ BRAND_NAME }"
+      ],
+      "Privacy for all your online accounts": [
+        "給予您的所有在線帳號隱私"
+      ],
+      "Shopping": [
+        "購物"
+      ],
+      "Social media": [
+        "社群媒體"
+      ]
+    },
     "Onboarding modal": {
+      "Activate selected": [
+        "啟用已選取"
+      ],
+      "Advanced encryption": [
+        "進階加密"
+      ],
+      "App Store": [
+        "App Store"
+      ],
+      "Auto-delete spam and trash": [
+        "自動刪除垃圾郵件和垃圾桶"
+      ],
       "Automatically forward emails": [
         "自動轉寄信件"
       ],
@@ -9670,6 +9723,9 @@
       "Congratulations on choosing privacy": [
         "恭喜您選擇了隱私"
       ],
+      "Dark Web Monitoring": [
+        "黑暗網路監測"
+      ],
       "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
         "強式加密，只有您及其他收件者可查看內容。 ${ kbLinkEncryption }"
       ],
@@ -9679,8 +9735,26 @@
       "Forward Gmail messages to your inbox.": [
         "將 Gmail 電郵轉寄到您的信箱"
       ],
+      "Get notified if your password is compromised.": [
+        "獲得提醒，當您的密碼處於危害。"
+      ],
+      "Get the desktop app": [
+        "取得桌面應用程式"
+      ],
+      "Google Play": [
+        "Google Play"
+      ],
+      "Let's get started": [
+        "讓我們開始吧"
+      ],
+      "Maybe later": [
+        "稍後再說"
+      ],
       "Next": [
         "下一步"
+      ],
+      "On the move": [
+        "移動中"
       ],
       "Protection from trackers": [
         "保護免於追蹤"
@@ -9688,16 +9762,28 @@
       "Skip": [
         "跳過"
       ],
+      "Start using ${ BRAND_NAME }": [
+        "開始使用 ${ BRAND_NAME }"
+      ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "我們阻止廣告商與數據蒐集者建立您的分析檔案。${ kbLinkPrivacy }"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "歡迎使用 ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding Proton": {
+      "Choose your preferred look and feel.": [
+        "選擇您喜歡的外觀與感覺。"
+      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "設置您的組織、連結您的網域名稱，並創建各個帳號以確保您的組織中所有成員均得到保護。"
       ],
       "Discover all ${ BRAND_NAME } services": [
         "探索所有 ${ BRAND_NAME } 服務"
+      ],
+      "Make it your own": [
+        "讓它專屬於您"
       ],
       "Pick a theme": [
         "選擇主題"
@@ -9838,6 +9924,9 @@
       ],
       "MM/YY": [
         "MM/YY"
+      ],
+      "More plans are available in other currencies": [
+        "其他貨幣有更多的方案"
       ],
       "Payment Processing": [
         "付款處理中"
@@ -10870,6 +10959,14 @@
         "已取消訂閱"
       ]
     },
+    "Step": {
+      "Select service to update": [
+        "選取更新服務"
+      ],
+      "Sign in to the service": [
+        "登入服務"
+      ]
+    },
     "Step in filter modal": {
       "Actions": [
         "操作"
@@ -11186,6 +11283,9 @@
       "Read the story": [
         "已讀的訊息"
       ],
+      "See your colleagues’ availability": [
+        "瀏覽您的同事時間"
+      ],
       "Stay secure and connected anywhere": [
         "保護安全和連接至任何地方"
       ],
@@ -11209,6 +11309,9 @@
       ],
       "Users won’t be able to send emails": [
         "使用者將無法傳送電子郵件"
+      ],
+      "Users won’t be able to sync files on their devices": [
+        "用戶不能在他們的裝置同步文件"
       ],
       "Version history": [
         "版本歷史紀錄"
@@ -12077,6 +12180,9 @@
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "使用${ PASS_APP_NAME }隱藏您的電子郵件"
+      ],
+      "How to update your email address": [
+        "如何更新電子郵件地址"
       ],
       "Human verification": [
         "真人身分驗證"

@@ -220,6 +220,9 @@
       "Click here.": [
         "დააწკაპუნეთ აქ."
       ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "დააწკაპუნეთ ${ defaultEmailAddress }-ის ბუფერში დასაკოპირებლად"
+      ],
       "Close": [
         "დახურვა"
       ],
@@ -1326,6 +1329,9 @@
       ],
       "Use recovery code": [
         "აღდგენის კოდის გამოყენება"
+      ],
+      "Use this": [
+        "ამის გამოყენება"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "ზომის შესაცვლელად გამოიყენეთ თაგუნა. კლავიატურით იმავეს მიღწევა მარცხნივ და მარჯვნივ ისრებით შეგიძლიათ."
@@ -4782,6 +4788,9 @@
       "Configure your family account and invite users ": [
         "მოირგეთ თქვენი საოჯახო ანგარიში და მოიწვიეთ მომხმარებლები "
       ],
+      "Invite members and get everything up and running.": [
+        "მოიწვიეთ წევრები და აამუშავეთ ყველაფერი."
+      ],
       "Set up your family": [
         "მოირგეთ თქვენი ოჯახი"
       ],
@@ -6013,6 +6022,9 @@
       "Contact assigned to group ${ contactGroupName }": [
         "კონტაქტი მინიჭებულია ჯგუფზე ${ contactGroupName }"
       ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "კონტაქტი მოხსნილია ჯგუფიდან ${ contactGroupName }"
+      ],
       "Copied to clipboard": [
         "დაკოპირდა გაცვლის ბაფერში"
       ],
@@ -6168,6 +6180,9 @@
       ],
       "Email address": [
         "ელ-ფოსტის მისამართი"
+      ],
+      "Email copied to clipboard": [
+        "ელფოსტა დაკოპირდა გაცვლის ბუფერში"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "ელფოსტის ჰოსტინგი 10 ხელით მითითებული დომენის სახელით უფასოა. დამატებითი დომენების შეძენის ფასია ${ price }."
@@ -6723,6 +6738,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ამ გვერდის განახლება ან ${ link } პრობლემების უმრავლესობას ავტომატურად წყვეტს."
+      ],
+      "Remember to update this in your password manager or wherever you keep your account and login information.": [
+        "დაიმახსოვრეთ, რომ განაახლოთ ეს პაროლების მმართველში, ან სადაც პაროლებს ინახავთ."
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "წაშლის ამ აპთან ასოცირებულ ყველა მონაცემს (გადმოწერილი შეტყობინებების ჩათვლით …)"
@@ -7977,6 +7995,9 @@
       ],
       "Don't like the style": [
         "არ მომწონს სტილი"
+      ],
+      "Don't show again": [
+        "აღარ მაჩვენო"
       ],
       "Don't show this again": [
         "აღარ მაჩვენო"
@@ -9893,7 +9914,51 @@
         "აირჩიეთ, რასთან აქვს ${ BRAND_NAME }-ს წვდომა: ნახოს თქვენი ელფოსტის შეტყობინებები დ პარამეტრები, ნახოს და გადმოწეროს თქვენი კონტაქტები; გადმოწეროს და ნახოს ყველა გეგმა Google Agenda-დან."
       ]
     },
+    "Onboarding List Placeholder": {
+      "Finance": [
+        "ფინანსები"
+      ],
+      "I have moved my logins to ${ BRAND_NAME }": [
+        "მე გადავიტანე ჩემი შესვლის დეტალები ${ BRAND_NAME }-ზე"
+      ],
+      "Privacy for all your online accounts": [
+        "კონფიდენციალობა ყველა თქვენი ინტერნეტ-ანგარიშებისთვის"
+      ],
+      "Shopping": [
+        "შოპინგი"
+      ],
+      "Social media": [
+        "სოციალური მედია"
+      ]
+    },
     "Onboarding modal": {
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "${ advancedEncryptionTitle } უზრუნველჰყოფს, რომ თქვენს ელფოსტებთან წვდომა, მხოლოდ, თქვენ და სასურველ პიროვნებებს ჰქონდეთ."
+      ],
+      "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
+        "${ industryLeadingSpamProtectionTitle } სკამერების ელფოსტებს თქვენს საფოსტო ყუთამდე მოსვლაში უშლის ხელს."
+      ],
+      "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
+        "${ protectionFromTrackersTitle } ნიშნავს, რომ ინტერნეტში ვერავინ აგედევნებათ."
+      ],
+      "Access email and calendar right from your desktop with the desktop app.": [
+        "იქონიეთ წვდომა ელფოსტასთან და კალენდართან კომპიუტერზე, კომპიუტერის აპლიკაციით."
+      ],
+      "Activate premium features": [
+        "ფასიანი ფუნქციების ჩართვა"
+      ],
+      "Activate selected": [
+        "მონიშნულის გააქტიურება"
+      ],
+      "Advanced encryption": [
+        "დამატებითი დაშიფვრა"
+      ],
+      "App Store": [
+        "App Store"
+      ],
+      "Auto-delete spam and trash": [
+        "სპამისა და ნაგვის ყუთის ავტოწაშლა"
+      ],
       "Automatically forward emails": [
         "ელფოსტების ავტომატური გადაგზავნა"
       ],
@@ -9903,11 +9968,26 @@
       "Block unsavory senders": [
         "დაბლოკეთ უსიამოვნო მგზავნლები"
       ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "წაშლილი და სპამი ელფოსტების გასუფთავება 30 დღის შემდეგ."
+      ],
       "Congratulations on choosing privacy": [
         "გილოცავთ კონფიდენციალობის დაცვის არჩევას"
       ],
+      "Dark Web Monitoring": [
+        "Dark Web-ის მონიტორინგი"
+      ],
+      "Download the desktop app": [
+        "გადმოწერეთ კომპიუტერის აპები"
+      ],
+      "Download the desktop app and continue": [
+        "კომპიუტერის აპის გადმოწერა და გაგრძელება"
+      ],
       "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
         "დაშიფვრა, რომელიც ისეთი ძლიერია, რომ თქვენი ელფოსტების გახსნა, მხოლოდ, მისთვის განკუთვნილ მიმღებებს შეუძლიათ. ${ kbLinkEncryption }"
+      ],
+      "Fixed and focused": [
+        "ფიქსირებული და დაფოკუსებული"
       ],
       "For your eyes only": [
         "მხოლოდ, თქვენს დასანახად"
@@ -9915,8 +9995,38 @@
       "Forward Gmail messages to your inbox.": [
         "გადმოაგზავნეთ Gmail-ის შეტყობინებები თქვენს საფოსტო ყუთში."
       ],
+      "Get notified if your password is compromised.": [
+        "მიიღეთ გაფრთხილება, თუ თქვენი პაროლი გაჟონავს."
+      ],
+      "Get the desktop app": [
+        "მიიღეთ კომპიუტერის აპი"
+      ],
+      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
+        "გადმოწერეთ მობილურის აპი ${ mobileAppAppStoreLink }-დან ან ${ mobileAppGooglePlayLink }-დან."
+      ],
+      "Google Play": [
+        "Google Play"
+      ],
+      "Industry-leading spam protection": [
+        "მოწინავე სპამისგან დაცვის ტექნოლოგიები"
+      ],
+      "Let's get started": [
+        "დავიწყოთ"
+      ],
+      "Make the most of your paid plan.": [
+        "გამოიყენეთ თქვენი ფასიანი სატარიფო გეგმა მაქსიმალურად"
+      ],
+      "Maybe later": [
+        "შესაძლოა მოგვიანებით"
+      ],
+      "More ways to experience ${ MAIL_APP_NAME }": [
+        "მეტი გზა ${ MAIL_APP_NAME }-ის სანახავად"
+      ],
       "Next": [
         "შემდეგი"
+      ],
+      "On the move": [
+        "გზაშივე"
       ],
       "Protection from trackers": [
         "ტრეკერებისგან დაცვა"
@@ -9924,16 +10034,37 @@
       "Skip": [
         "გამოტოვება"
       ],
+      "Start using ${ BRAND_NAME }": [
+        "${ BRAND_NAME }-ის გამოყენების დაწყება"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "დაიწყეთ თქვენი ელფოსტის უფრო მოკლე და გასაგები ვერსიის გამოყენება."
+      ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "ჩვენ ხელს ვუშლით რეკლამის გამავრცელებლებს და მონაცემების შემგროვებლებს თქვენს პროფილირებაში. ${ kbLinkPrivacy }"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "კეთილი იყოს თქვენი მობრძანება ${ MAIL_APP_NAME }-ში"
+      ],
+      "Where privacy is default.": [
+        "სადაც კონფიდენციალობა ნაგულისხმევია"
       ]
     },
     "Onboarding Proton": {
+      "Choose your preferred look and feel.": [
+        "აირჩიეთ სასურველი გარეგნობა."
+      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "მოირგეთ თქვენი ორგანიზაცია, მიაბით თქვენი დომენური სახელი და შექმენით ანგარშები, რომ დარწმუნდეთ, რომ თქვენი ორგანიზაციის ყველა წევრი დაცულია."
       ],
       "Discover all ${ BRAND_NAME } services": [
         "აღმოაჩინეთ ${ BRAND_NAME }-ის ყველა სერვისი"
+      ],
+      "Link your domain name and create accounts for all members of your organization.": [
+        "მიავით თქვენი დომენის სახელი და შექმენით ანგარიში ორგანიზაციის ყველა წევრისთვის."
+      ],
+      "Make it your own": [
+        "გახადეთ ის თქვენი"
       ],
       "Pick a theme": [
         "აირჩიეთ თემა"
@@ -11153,6 +11284,20 @@
       ],
       "Unsubscribed": [
         "გამოწერა გაუქმებულია"
+      ]
+    },
+    "Step": {
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "შეიყვანეთ თქვენი ${ MAIL_APP_NAME }-ის მისამართი, როგორც ახალი, შეინახეთ, დაადასტურეთ ან გადაამოწმეთ ცვლილება"
+      ],
+      "In the account settings, look for the option to edit or change your email address ": [
+        "ანგარიშის მორგების ფანჯარაში მოძებნეთ პარამეტრი, რომ ჩაასწოროთ ან შეცვალოთ თქვენი ელფოსტის მისამართი "
+      ],
+      "Select service to update": [
+        "აირჩიეთ სერვერი განახლებისთვის"
+      ],
+      "Sign in to the service": [
+        "შესვლა სერვისში"
       ]
     },
     "Step in filter modal": {
@@ -12540,6 +12685,9 @@
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "დამალეთ თქვენი ელფოსტა ${ PASS_APP_NAME }-თან ერთად"
+      ],
+      "How to update your email address": [
+        "როგორ განაახლოთ თქვენი ელფოსტის მისამართი"
       ],
       "Human verification": [
         "ადამიანის შემოწმება"

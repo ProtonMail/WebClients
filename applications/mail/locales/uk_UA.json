@@ -1628,7 +1628,7 @@
       "${ n } month": [
         "${ n } місяць",
         "перші ${ n } місяці",
-        "перших ${ n } місяців",
+        "перші ${ n } місяців",
         "перших ${ n } місяців"
       ],
       "the first month": [
@@ -6329,7 +6329,7 @@
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "Спробуйте безкоштовно протягом ${ ASSISTANT_TRIAL_TIME_DAYS } дня",
         "Спробуйте безкоштовно протягом ${ ASSISTANT_TRIAL_TIME_DAYS } днів",
-        "Спробуйте безкоштовно протягом ${ ASSISTANT_TRIAL_TIME_DAYS } днІв",
+        "Спробуйте безкоштовно протягом ${ ASSISTANT_TRIAL_TIME_DAYS } днів",
         "Спробуйте безкоштовно протягом ${ ASSISTANT_TRIAL_TIME_DAYS } днів"
       ],
       "From": [
@@ -9948,6 +9948,11 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
         "Оберіть, до чого ${ BRAND_NAME } може мати доступ: переглядати ваші поштові повідомлення та налаштування, переглядати й завантажувати ваші контакти, переглядати й завантажувати усі заплановані події з календаря Google."
+      ]
+    },
+    "Onboarding List Placeholder": {
+      "Social media": [
+        "Соціальні мережі"
       ]
     },
     "Onboarding modal": {
