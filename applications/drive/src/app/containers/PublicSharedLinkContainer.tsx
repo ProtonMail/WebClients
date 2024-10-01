@@ -9,6 +9,7 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CODES, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { handleDocsCustomPassword } from '@proton/shared/lib/drive/sharing/publicDocsSharing';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+import * as storage from '@proton/shared/lib/helpers/storage';
 
 import { ErrorPage, LoadingPage, PasswordPage, SharedFilePage, SharedFolderPage } from '../components/SharedPage';
 import { useSignupFlowModal } from '../components/modals/SignupFlowModal/SignupFlowModal';
@@ -18,6 +19,7 @@ import { usePartialPublicView } from '../hooks/util/usePartialPublicView';
 import type { DecryptedLink } from '../store';
 import { PublicDriveProvider, useBookmarksPublicView, useDownload, usePublicAuth, usePublicShare } from '../store';
 import { useDriveShareURLBookmarkingFeatureFlag } from '../store/_bookmarks/useDriveShareURLBookmarking';
+import { useDriveWebShareURLSignupModal } from '../store/_bookmarks/useDriveWebShareURLSignupModal';
 import { useDriveDocsPublicSharingFF, useOpenDocument } from '../store/_documents';
 import { sendErrorReport } from '../utils/errorHandling';
 import { is4xx, is5xx, isCryptoEnrichedError } from '../utils/errorHandling/apiErrors';
@@ -57,6 +59,7 @@ export default function PublicSharedLinkContainer() {
         </LocationErrorBoundary>
     );
 }
+export const PUBLIC_SHARE_SIGNUP_MODAL_KEY = 'public-share-signup-modal';
 
 /**
  * PublicShareLinkInitContainer initiate public session for shared link.
@@ -75,6 +78,7 @@ function PublicShareLinkInitContainer() {
         submitPassword,
     } = usePublicAuth(token, urlPassword);
     const isDriveShareUrlBookmarkingEnabled = useDriveShareURLBookmarkingFeatureFlag();
+    const isDriveWebShareUrlSignupModalEnabled = useDriveWebShareURLSignupModal();
     const [isLoadingDecrypt, withLoading, setLoading] = useLoading(true);
     const [[publicShareError, publicShareErrorMessage], setError] = useState<ErrorTuple>([, '']);
     const [link, setLink] = useState<DecryptedLink>();
@@ -183,11 +187,19 @@ function PublicShareLinkInitContainer() {
     }, [token, isLoading, authErrorMessage, isPasswordNeeded]);
 
     useEffect(() => {
+        const modalHasBeenShown = !!storage.getItem(PUBLIC_SHARE_SIGNUP_MODAL_KEY);
         /** If the navigation appears from a non proton user and the flag is enabled, we display a sign-up flow modal */
-        if (isDriveShareUrlBookmarkingEnabled && !isLoggedIn && !isLoading) {
+        if (
+            isDriveShareUrlBookmarkingEnabled &&
+            !isLoggedIn &&
+            !isLoading &&
+            !modalHasBeenShown &&
+            isDriveWebShareUrlSignupModalEnabled
+        ) {
             showSignUpFlowModal({ customPassword });
+            storage.setItem(PUBLIC_SHARE_SIGNUP_MODAL_KEY, 'true');
         }
-    }, [isDriveShareUrlBookmarkingEnabled, isLoggedIn, isLoading, customPassword]);
+    }, [isDriveWebShareUrlSignupModalEnabled, isLoggedIn, isLoading, customPassword]);
 
     if (isPasswordNeeded) {
         return <PasswordPage submitPassword={submitPassword} />;
@@ -212,7 +224,9 @@ function PublicShareLinkInitContainer() {
     return (
         <>
             {link.isFile ? <SharedFilePage {...props} link={link} /> : <SharedFolderPage {...props} rootLink={link} />}
-            {isDriveShareUrlBookmarkingEnabled ? signUpFlowModal : renderUpsellFloatingModal}
+            {isDriveShareUrlBookmarkingEnabled && isDriveWebShareUrlSignupModalEnabled
+                ? signUpFlowModal
+                : renderUpsellFloatingModal}
         </>
     );
 }
