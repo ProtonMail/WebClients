@@ -12,6 +12,7 @@ import type { CreateComment } from '../../UseCase/CreateComment'
 import type { LoadThreads } from '../../UseCase/LoadThreads'
 import type { HandleRealtimeCommentsEvent } from '../../UseCase/HandleRealtimeCommentsEvent'
 import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
+import type { MetricService } from '../Metrics/MetricService'
 
 describe('CommentController', () => {
   let controller: CommentController
@@ -72,10 +73,13 @@ describe('CommentController', () => {
       execute: jest.fn(),
     } as unknown as jest.Mocked<HandleRealtimeCommentsEvent>
 
+    const metricService = {} as unknown as jest.Mocked<MetricService>
+
     controller = new CommentController(
       document,
       keys,
       websocketService,
+      metricService,
       api,
       encryptComment,
       createThread,
