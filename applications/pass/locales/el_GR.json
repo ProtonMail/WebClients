@@ -28,6 +28,9 @@
       "Add": [
         "Προσθήκη"
       ],
+      "Add account": [
+        "Προσθήκη λογαριασμού"
+      ],
       "Add current URL": [
         "Προσθήκη τρέχουσας διεύθυνσης URL"
       ],
@@ -662,6 +665,9 @@
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Δεν ήταν δυνατή η ανάλυση του αρχείου ${ provider }. ${ errorDetail }"
+      ],
+      "[Error] an item could not be parsed": [
+        "[Σφάλμα] δεν ήταν δυνατή η ανάλυση ενός στοιχείου"
       ],
       "Alias could not be updated at the moment. Please try again later": [
         "Δεν ήταν δυνατή η ενημέρωση του ψευδωνύμου προς το παρόν. Παρακαλούμε προσπαθήστε ξανά αργότερα"
@@ -2521,6 +2527,9 @@
       "Type": [
         "Τύπος"
       ],
+      "Unknown": [
+        "Άγνωστο"
+      ],
       "Unlock with": [
         "Ξεκλείδωμα με"
       ],
@@ -3011,6 +3020,9 @@
       ],
       "Suggestions": [
         "Προτάσεις"
+      ],
+      "Switch to": [
+        "Αλλάξτε σε"
       ],
       "Sync alias": [
         "Συγχρονισμός ψευδώνυμου"
