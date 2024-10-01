@@ -91,6 +91,8 @@ enum DriveFeatureFlag {
     DriveWebOnboardingV2 = 'DriveWebOnboardingV2',
     // TODO: DRVWEB-4064 - Clean this up
     DriveWebDownloadNewFolderLoaderAlgorithm = 'DriveWebDownloadNewFolderLoaderAlgorithm',
+    // Temp
+    DriveDecryptionErrorDebugging = 'DriveDecryptionErrorDebugging',
 }
 
 enum MailFeatureFlag {
