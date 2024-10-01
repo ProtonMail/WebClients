@@ -118,6 +118,9 @@
       "Increase": [
         "Zwiększ"
       ],
+      "Input passphrase": [
+        "Wpisz hasło"
+      ],
       "Keep my subscription": [
         "Zachowaj subskrypcję"
       ],
@@ -4705,6 +4708,12 @@
     "Wallet header": {
       "Secure your wallet": [
         "Zabezpiecz portfel"
+      ],
+      "The current fingerprint doesn't match stored one.": [
+        "Odcisk palca nie pasuje do zapisanego."
+      ],
+      "This wallet needs a passphrase to be used.": [
+        "Ten portfel wymaga wpisania hasła."
       ]
     },
     "Wallet import": {
@@ -4798,6 +4807,9 @@
       ],
       "My wallet passphrase": [
         "Hasło portfela"
+      ],
+      "To use this wallet, you need to input the passphrase": [
+        "Wpisz hasło, aby użyć tego portfela"
       ],
       "Wallet passphrase": [
         "Hasło portfela"
@@ -5068,6 +5080,9 @@
       "Account name changed": [
         "Nazwa konta została zmieniona"
       ],
+      "Account name could not be changed": [
+        "Nie można zmienić nazwy konta"
+      ],
       "Account was deleted": [
         "Konto zostało usunięte"
       ],
@@ -5079,6 +5094,9 @@
       ],
       "Could not be replaced": [
         "Nie można zmienić adresu"
+      ],
+      "Could not fill the pool after email address addition": [
+        "Nie można uzupełnić puli po dodaniu adresu e-mail"
       ],
       "Could not fill the pool after email address replacement": [
         "Nie można uzupełnić puli po zmianie adresu e-mail"
