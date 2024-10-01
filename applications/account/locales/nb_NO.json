@@ -70,11 +70,11 @@
       "Accept": [
         "Aksepter"
       ],
-      "Activate": [
-        "Aktiver"
-      ],
       "activate": [
         "aktiver"
+      ],
+      "Activate": [
+        "Aktiver"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiver ${ user.Name }@pm.me"
@@ -742,10 +742,10 @@
       "No, thanks": [
         "Nei, takk"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -3371,6 +3371,14 @@
         "Vennligst vær oppmerksom på dersom du sletter dette domenet, ${ domainName }, vil alle adresser forbundet med det bli deaktivert."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Er du sikker på at du vil slette denne gruppen?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Vær oppmerksom på at hvis du sletter gruppen ${ displayGroupName } (med adresse ${ displayGroupAddressEmail }), vil du ikke lenger kunne motta e-post ved hjelp av adressen."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Forfalt faktura"
@@ -4719,6 +4727,11 @@
       ],
       "Zero keys reactivated": [
         "Null nøkler aktivert på nytt"
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "Skriv inn en e-postadresse"
       ]
     },
     "Error importing calendar": {
@@ -6804,9 +6817,6 @@
       "Are you sure you want to delete this folder?": [
         "Er du sikker på at du vil slette denne mappen?"
       ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "Er du sikker på at du vil slette denne gruppen? Gruppeadressen vil ikke fungere lenger."
-      ],
       "Are you sure you want to delete this label?": [
         "Er du sikker på at du vil slette denne etiketten?"
       ],
@@ -6830,6 +6840,9 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Er du sikker på at du ønsker å fjerne domenet ${ boldDomain }?"
+      ],
+      "Ask your organization admin to setup Gateways.": [
+        "Be organisasjonsadministratoren om å konfigurere mellomtjenere."
       ],
       "Attention required": [
         "Oppmerksomhet kreves"
@@ -7186,6 +7199,9 @@
       ],
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "E-postmeldinger merket med etiketten, ${ nameDeleted }, vil ikke bli slettet og kan fortsatt bli funnet i den respektive mappen."
+      ],
+      "Enable email notifications": [
+        "Aktiver e-postvarsler"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Aktiver enkel pålogging for å holde organisasjonen din trygg"
@@ -8149,6 +8165,9 @@
       "SCIM token active": [
         "SCIM-token aktiv"
       ],
+      "Search by an email address to begin": [
+        "Søk etter en e-postadresse for å begynne"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Sikre din ${ BRAND_NAME }-konto"
       ],
@@ -8380,6 +8399,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Formatet til din CSV-fil er ikke riktig."
+      ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "Gruppefunksjonen støttes ikke på det gjeldende abonnementet. Tidligere opprettede grupper er deaktivert og kan bare slettes."
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Koblingen for å rapportere at du ikke konfigurerte en ${ BRAND_NAME }-konto er utløpt. Vennligst kom i kontakt med vår kundestøtte for å løse denne saken."
@@ -10440,6 +10462,9 @@
       ],
       "Reveal password": [
         "Avslør passord"
+      ],
+      "Search by email": [
+        "Søk etter e-post"
       ],
       "Second password": [
         "Andre passord"
@@ -12562,6 +12587,12 @@
       "Downloaded 2FA recovery codes": [
         "Nedlastede 2FA-gjenopprettingskoder"
       ],
+      "Email notifications have been disabled": [
+        "E-postvarsler er deaktivert"
+      ],
+      "Email notifications have been enabled": [
+        "E-postvarsler er aktivert"
+      ],
       "Invalid code": [
         "Ugyldig kode"
       ],
@@ -13052,6 +13083,29 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Brukere vil se logoen din i stedet for ${ BRAND_NAME }-ikonet når de er logget på nettappene våre."
+      ]
+    },
+    "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify } e-postadressen din, ${ email }, for å angi organisasjonsidentitet."
+      ],
+      "Current organization identity": [
+        "Gjeldende organisasjonsidentitet"
+      ],
+      "Edit organization identity": [
+        "Rediger organisasjonsidentitet"
+      ],
+      "New organization identity": [
+        "Ny organisasjonsidentitet"
+      ],
+      "Organization identity": [
+        "Organisasjonsidentitet"
+      ],
+      "Organization identity updated": [
+        "Organisasjonsidentitet oppdatert"
+      ],
+      "Verify": [
+        "Verifiser"
       ]
     },
     "OS compatibility": {
@@ -17590,6 +17644,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Hvis du kjøpte en gavekode eller mottok en fra vår kundestøtte, kan du angi den her."
       ],
+      "IP address (Internet Service Provider)": [
+        "IP-adresse (Internett-leverandør)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Medlemmer som ikke bruker 2FA vil få en e-post som ber dem om å aktivere den så snart som mulig."
       ],
@@ -17776,6 +17833,16 @@
       ]
     },
     "unprivatization": {
+      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
+        "${ n } bruker har blitt med i organisasjonen via identitetsleverandøren. Godkjenn eller avvis kontoene deres nå:",
+        "${ n } brukere har blitt med i organisasjonen via identitetsleverandøren. Godkjenn eller avvis kontoene deres nå:"
+      ],
+      "Administrator access enabled": [
+        "Administratortilgang aktivert"
+      ],
+      "Administrator access rejected": [
+        "Administratortilgang avvist"
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorer har ikke tilgang til dataene til private brukere og kan ikke tilbakestille passordet deres."
       ],
@@ -17785,11 +17852,21 @@
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "En administrator for **${ orgName }**-organisasjonen (**${ adminEmail }**) ønsker å aktivere administratortilgang for kontoen din."
       ],
+      "Approve all": [
+        "Godkjenn alle"
+      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Ved å gjøre brukeren privat vil du ikke kunne hjelpe dem med å få tilgang til dataene eller kontoen sin igjen."
       ],
       "Cancel": [
         "Avbryt"
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Kunne ikke automatisk aktivere administratortilgang for ${ n } bruker, fordi krypteringsnøklene deres har blitt oppdatert i mellomtiden:",
+        "Kunne ikke automatisk aktivere administratortilgang for ${ n } brukere, fordi krypteringsnøklene deres har blitt oppdatert i mellomtiden:"
+      ],
+      "Could not enable administrator access: ${ error }": [
+        "Kunne ikke aktivere administratortilgang: ${ error }"
       ],
       "Delete request": [
         "Slett forespørsel"
@@ -17802,6 +17879,9 @@
       ],
       "Enable administrator access": [
         "Aktiver administratortilgang"
+      ],
+      "Enable manually": [
+        "Aktiver manuelt"
       ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "Hvis du mister tilgangen til legitimasjonen din, kan organisasjonens administratorer tilbakestille passordet og gjenopprette tilgangen til kontoen din."
