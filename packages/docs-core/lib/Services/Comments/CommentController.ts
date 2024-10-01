@@ -28,6 +28,8 @@ import { EventTypeEnum } from '@proton/docs-proto'
 import type { DocsApi } from '../../Api/DocsApi'
 import { CommentThreadType } from '@proton/docs-shared'
 import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
+import type { MetricService } from '../Metrics/MetricService'
+import { TelemetryDocsEvents } from '@proton/shared/lib/api/telemetry'
 
 /**
  * Controls comments for a single document.
@@ -47,6 +49,7 @@ export class CommentController implements CommentControllerInterface, InternalEv
     private readonly document: NodeMeta,
     private readonly keys: DocumentKeys,
     private readonly websocketService: WebsocketServiceInterface,
+    private readonly metricService: MetricService,
     private api: DocsApi,
     private _encryptComment: EncryptComment,
     private _createThread: CreateThread,
@@ -159,6 +162,8 @@ export class CommentController implements CommentControllerInterface, InternalEv
       return undefined
     }
 
+    this.metricService.reportSuggestionsTelemetry(TelemetryDocsEvents.suggestion_created)
+
     const thread = threadResult.getValue()
 
     this.broadcastCommentMessage(CommentsMessageType.AddThread, thread.asPayload())
@@ -178,6 +183,11 @@ export class CommentController implements CommentControllerInterface, InternalEv
     if (commentResult.isFailed()) {
       this.logger.error(commentResult.getError())
       return undefined
+    }
+
+    const thread = this.localCommentsState.findThreadById(threadID)
+    if (thread && thread.type === CommentThreadType.Suggestion) {
+      this.metricService.reportSuggestionsTelemetry(TelemetryDocsEvents.suggestion_commented)
     }
 
     const comment = commentResult.getValue()
@@ -312,6 +322,10 @@ export class CommentController implements CommentControllerInterface, InternalEv
     const thread = this.localCommentsState.changeThreadState(threadId, state)
     if (!thread) {
       return false
+    }
+
+    if (state === CommentThreadState.Accepted || state === CommentThreadState.Rejected) {
+      this.metricService.reportSuggestionsTelemetry(TelemetryDocsEvents.suggestion_resolved)
     }
 
     return true
