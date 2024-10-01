@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Accept suggestion": [
+        "Принять рекомендацию"
+      ],
       "Add comment": [
         "Добавить комментарий"
       ],
@@ -65,6 +68,9 @@
       "Copy link": [
         "Копировать ссылку"
       ],
+      "Decline suggestion": [
+        "Отклонить рекомендацию"
+      ],
       "Delete": [
         "Удалить"
       ],
@@ -91,6 +97,9 @@
       ],
       "Edit link": [
         "Изменить ссылку"
+      ],
+      "Exit Suggestion": [
+        "Выйти из предложения"
       ],
       "Fit table to page width": [
         "Подогнать таблицу к ширине страницы"
@@ -190,6 +199,9 @@
       ],
       "Submit": [
         "Отправить"
+      ],
+      "Suggestion Mode": [
+        "Режим предложений"
       ],
       "Table options": [
         "Параметры таблицы"
@@ -472,6 +484,9 @@
       "Something went wrong:": [
         "Что-то пошло не так:"
       ],
+      "Suggesting": [
+        "Рекомендация"
+      ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "Содержимое, которое вы пытаетесь вставить, слишком велико для одновременной вставки. Попробуйте еще раз, вставляя небольшие фрагменты за раз."
       ],
@@ -489,6 +504,18 @@
       "Delete": [
         "Удалить"
       ],
+      "Delete paragraph": [
+        "Удалить абзац"
+      ],
+      "Format": [
+        "Формат"
+      ],
+      "Insert": [
+        "Вставить"
+      ],
+      "Insert paragraph": [
+        "Вставить абзац"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Комбинация клавиш: ${ shortcut }"
       ],
@@ -500,6 +527,9 @@
       ],
       "More options": [
         "Дополнительные параметры"
+      ],
+      "Replace": [
+        "Заменить"
       ],
       "Text colour": [
         "Цвет текста"
