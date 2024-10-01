@@ -88,8 +88,6 @@ enum DriveFeatureFlag {
     DriveWebShareURLSignupModal = 'DriveWebShareURLSignupModal',
     // New onboarding
     DriveWebOnboardingV2 = 'DriveWebOnboardingV2',
-    // TODO: DRVWEB-4064 - Clean this up
-    DriveWebDownloadNewFolderLoaderAlgorithm = 'DriveWebDownloadNewFolderLoaderAlgorithm',
     // Temp
     DriveDecryptionErrorDebugging = 'DriveDecryptionErrorDebugging',
 }
