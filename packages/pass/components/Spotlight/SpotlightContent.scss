@@ -2,6 +2,7 @@
 
 .pass-spotlight-content {
 	background: var(--interaction-norm);
+	overflow: hidden;
 
 	&.weak {
 		background: var(--interaction-norm-minor-1);

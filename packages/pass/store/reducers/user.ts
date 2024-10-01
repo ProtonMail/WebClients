@@ -67,8 +67,8 @@ export type UserState = {
     userSettings: MaybeNull<UserSettingsState>;
 } & UserAccessState;
 
-export type HydratedUserState = RequiredNonNull<UserState, Exclude<keyof UserState, 'organization'>>;
-export type HydratedAccessState = RequiredNonNull<UserAccessState>;
+export type HydratedUserState = RequiredNonNull<UserState, Exclude<keyof UserState, 'organization' | 'monitor'>>;
+export type HydratedAccessState = RequiredNonNull<UserAccessState, Exclude<keyof UserAccessState, 'monitor'>>;
 
 const getInitialState = (): UserState => ({
     addresses: {},
