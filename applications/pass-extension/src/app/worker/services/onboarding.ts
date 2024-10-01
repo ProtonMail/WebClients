@@ -33,7 +33,7 @@ export const createOnboardingService = (storage: ExtensionStorage<OnboardingStor
             createPermissionsRule(withContext((ctx) => ctx.service.activation.getPermissionsGranted())),
             createStorageIssueRule(withContext((ctx) => ctx.service.storage.getState().storageFull)),
             createUpdateRule(withContext((ctx) => ctx.service.activation.getAvailableUpdate())),
-            createFamilyPlanPromo2024Rule(store),
+            ...(BUILD_TARGET !== 'safari' ? [createFamilyPlanPromo2024Rule(store)] : []),
             createTrialRule(store),
             createBlackFridayRule(store),
             createSecurityRule(store),
