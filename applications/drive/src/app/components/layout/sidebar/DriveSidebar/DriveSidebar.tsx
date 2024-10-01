@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { AppsDropdown, Sidebar, SidebarDrawerItems, SidebarNav } from '@proton/components';
 import SidebarStorageUpsell from '@proton/components/containers/payments/subscription/SidebarStorageUpsell';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
+import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { APPS } from '@proton/shared/lib/constants';
 
 import useActiveShare from '../../../../hooks/drive/useActiveShare';
@@ -12,6 +13,7 @@ import type { ShareWithKey } from '../../../../store';
 import { useDefaultShare } from '../../../../store';
 import { useCreateDevice } from '../../../../store/_shares/useCreateDevice';
 import { useCreatePhotos } from '../../../../store/_shares/useCreatePhotos';
+import { logPerformanceMarker } from '../../../../utils/performance';
 import DriveSidebarFooter from './DriveSidebarFooter';
 import DriveSidebarList from './DriveSidebarList';
 
@@ -31,6 +33,9 @@ const DriveSidebar = ({ logo, primary, isHeaderExpanded, toggleHeaderExpanded }:
     const { createDevice } = useCreateDevice();
     const { createPhotosShare } = useCreatePhotos();
 
+    useEffectOnce(() => {
+        logPerformanceMarker('drive_performance_clicktonavrendered_histogram');
+    });
     useEffect(() => {
         void getDefaultShare().then(setDefaultShare);
     }, [getDefaultShare]);

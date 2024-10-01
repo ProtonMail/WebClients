@@ -109,7 +109,14 @@ import type { WebCoreVpnSingleSignupStep4Setup2Total } from './types/web_core_vp
 import type { WebCoreVpnSingleSignupStep4SetupTotal } from './types/web_core_vpn_single_signup_step4_setup_total_v1.schema';
 import type { HttpsProtonMeWebCoreWebvitalsTotalV1SchemaJson } from './types/web_core_webvitals_total_v1.schema';
 import type { WebCryptoKeyTransparencyErrorsTotal } from './types/web_crypto_keytransparency_errors_total_v1.schema';
+import type { HttpsProtonMeWebDrivePerformanceAveragetimeperitemHistogramV1SchemaJson } from './types/web_drive_performance_averagetimeperitem_histogram_v1.schema';
+import type { HttpsProtonMeWebDrivePerformanceClicktobootstrappedHistogramV1SchemaJson } from './types/web_drive_performance_clicktobootstrapped_histogram_v1.schema';
+import type { HttpsProtonMeWebDrivePerformanceClicktofirstitemrenderedHistogramV1SchemaJson } from './types/web_drive_performance_clicktofirstitemrendered_histogram_v1.schema';
+import type { HttpsProtonMeWebDrivePerformanceClicktofirstpagerenderedHistogramV1SchemaJson } from './types/web_drive_performance_clicktofirstpagerendered_histogram_v1.schema';
+import type { HttpsProtonMeWebDrivePerformanceClicktolastitemrenderedHistogramV1SchemaJson } from './types/web_drive_performance_clicktolastitemrendered_histogram_v1.schema';
+import type { HttpsProtonMeWebDrivePerformanceClicktonavrenderedHistogramV1SchemaJson } from './types/web_drive_performance_clicktonavrendered_histogram_v1.schema';
 import type { HttpsProtonMeWebDrivePerformanceDomcontentloadedHistogramV1SchemaJson } from './types/web_drive_performance_domcontentloaded_histogram_v1.schema';
+import type { HttpsProtonMeWebDrivePerformanceLoadHistogramV1SchemaJson } from './types/web_drive_performance_load_histogram_v1.schema';
 import type { HttpsProtonMeWebDrivePublicShareLoadErrorTotalV1SchemaJson } from './types/web_drive_public_share_load_error_total_v1.schema';
 import type { HttpsProtonMeWebDrivePublicShareLoadSuccessTotalV1SchemaJson } from './types/web_drive_public_share_load_success_total_v1.schema';
 import type { WebPaymentsSubscriptionStepsTotal } from './types/web_payments_subscription_steps_total_v1.schema';
@@ -316,7 +323,21 @@ class Metrics extends MetricsBase {
 
     public crypto_keytransparency_errors_total: Counter<WebCryptoKeyTransparencyErrorsTotal>;
 
+    public drive_performance_averagetimeperitem_histogram: Histogram<HttpsProtonMeWebDrivePerformanceAveragetimeperitemHistogramV1SchemaJson>;
+
+    public drive_performance_clicktobootstrapped_histogram: Histogram<HttpsProtonMeWebDrivePerformanceClicktobootstrappedHistogramV1SchemaJson>;
+
+    public drive_performance_clicktofirstitemrendered_histogram: Histogram<HttpsProtonMeWebDrivePerformanceClicktofirstitemrenderedHistogramV1SchemaJson>;
+
+    public drive_performance_clicktofirstpagerendered_histogram: Histogram<HttpsProtonMeWebDrivePerformanceClicktofirstpagerenderedHistogramV1SchemaJson>;
+
+    public drive_performance_clicktolastitemrendered_histogram: Histogram<HttpsProtonMeWebDrivePerformanceClicktolastitemrenderedHistogramV1SchemaJson>;
+
+    public drive_performance_clicktonavrendered_histogram: Histogram<HttpsProtonMeWebDrivePerformanceClicktonavrenderedHistogramV1SchemaJson>;
+
     public drive_performance_domcontentloaded_histogram: Histogram<HttpsProtonMeWebDrivePerformanceDomcontentloadedHistogramV1SchemaJson>;
+
+    public drive_performance_load_histogram: Histogram<HttpsProtonMeWebDrivePerformanceLoadHistogramV1SchemaJson>;
 
     public drive_public_share_load_error_total: Counter<HttpsProtonMeWebDrivePublicShareLoadErrorTotalV1SchemaJson>;
 
@@ -862,9 +883,51 @@ class Metrics extends MetricsBase {
             this.requestService
         );
 
+        this.drive_performance_averagetimeperitem_histogram =
+            new Histogram<HttpsProtonMeWebDrivePerformanceAveragetimeperitemHistogramV1SchemaJson>(
+                { name: 'web_drive_performance_averagetimeperitem_histogram', version: 1 },
+                this.requestService
+            );
+
+        this.drive_performance_clicktobootstrapped_histogram =
+            new Histogram<HttpsProtonMeWebDrivePerformanceClicktobootstrappedHistogramV1SchemaJson>(
+                { name: 'web_drive_performance_clicktobootstrapped_histogram', version: 1 },
+                this.requestService
+            );
+
+        this.drive_performance_clicktofirstitemrendered_histogram =
+            new Histogram<HttpsProtonMeWebDrivePerformanceClicktofirstitemrenderedHistogramV1SchemaJson>(
+                { name: 'web_drive_performance_clicktofirstitemrendered_histogram', version: 1 },
+                this.requestService
+            );
+
+        this.drive_performance_clicktofirstpagerendered_histogram =
+            new Histogram<HttpsProtonMeWebDrivePerformanceClicktofirstpagerenderedHistogramV1SchemaJson>(
+                { name: 'web_drive_performance_clicktofirstpagerendered_histogram', version: 1 },
+                this.requestService
+            );
+
+        this.drive_performance_clicktolastitemrendered_histogram =
+            new Histogram<HttpsProtonMeWebDrivePerformanceClicktolastitemrenderedHistogramV1SchemaJson>(
+                { name: 'web_drive_performance_clicktolastitemrendered_histogram', version: 1 },
+                this.requestService
+            );
+
+        this.drive_performance_clicktonavrendered_histogram =
+            new Histogram<HttpsProtonMeWebDrivePerformanceClicktonavrenderedHistogramV1SchemaJson>(
+                { name: 'web_drive_performance_clicktonavrendered_histogram', version: 1 },
+                this.requestService
+            );
+
         this.drive_performance_domcontentloaded_histogram =
             new Histogram<HttpsProtonMeWebDrivePerformanceDomcontentloadedHistogramV1SchemaJson>(
                 { name: 'web_drive_performance_domcontentloaded_histogram', version: 1 },
+                this.requestService
+            );
+
+        this.drive_performance_load_histogram =
+            new Histogram<HttpsProtonMeWebDrivePerformanceLoadHistogramV1SchemaJson>(
+                { name: 'web_drive_performance_load_histogram', version: 1 },
                 this.requestService
             );
 
