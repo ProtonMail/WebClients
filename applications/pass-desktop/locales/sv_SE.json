@@ -28,6 +28,9 @@
       "Add": [
         "Lägg till"
       ],
+      "Add account": [
+        "Lägg till konto"
+      ],
       "Add current URL": [
         "Lägg till nuvarande URL"
       ],
@@ -688,6 +691,9 @@
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-fil kunde inte analyseras. ${ errorDetail }"
+      ],
+      "[Error] an item could not be parsed": [
+        "[Fel] ett objekt kunde inte analyseras"
       ],
       "Alias could not be updated at the moment. Please try again later": [
         "Alias ​​kunde inte uppdateras just nu. Försök igen senare"
@@ -3057,6 +3063,9 @@
       ],
       "Suggestions": [
         "Förslag"
+      ],
+      "Switch to": [
+        "Byt till"
       ],
       "Sync alias": [
         "Synkronisera alias"
