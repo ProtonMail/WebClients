@@ -23,6 +23,7 @@ export {
 export {
     extendStatus,
     getAvailableCurrencies,
+    getCurrencyRate,
     getFallbackCurrency,
     getPreferredCurrency,
     isCardPayment,
