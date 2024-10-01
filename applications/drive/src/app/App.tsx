@@ -29,6 +29,7 @@ import * as config from './config';
 import type { DriveStore } from './redux-store/store';
 import { extraThunkArguments } from './redux-store/thunk';
 import { UserSettingsProvider } from './store';
+import { logPerformanceMarker } from './utils/performance';
 
 const defaultState: {
     initialUser?: UserModel;
@@ -60,6 +61,7 @@ const App = () => {
                     initialUser: user,
                     store,
                 });
+                logPerformanceMarker('drive_performance_clicktobootstrapped_histogram');
             } catch (error: any) {
                 setState({
                     error: {
