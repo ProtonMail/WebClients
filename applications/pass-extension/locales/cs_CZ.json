@@ -1190,6 +1190,9 @@
       "Automatically copy the generated password to the clipboard": [
         "Automaticky zkopírovat vygenerované heslo do schránky"
       ],
+      "Autosaved on ${ url }": [
+        "Automaticky uloženo na ${ url }"
+      ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Před exportem dat v tomto formátu otevřete nastavení Safari -> záložku \"Obecné\" -> vypněte možnost \"Bezpečné soubory po stažení otevírat\". Tím zabráníte tomu, aby Safari nesprávně extrahoval exportovaný soubor."
       ],
@@ -2582,7 +2585,7 @@
         "Typ"
       ],
       "Unknown": [
-        "Není známo"
+        "Neznámé"
       ],
       "Unlock ${ PASS_APP_NAME }": [
         "Odemknout ${ PASS_APP_NAME }"
