@@ -4,6 +4,7 @@ import {
     createAliasTrashConfirmRule,
     createB2BRule,
     createBlackFridayRule,
+    createFamilyPlanPromo2024Rule,
     createMonitorLearnMoreRule,
     createPendingShareAccessRule,
     createSecurityRule,
@@ -15,6 +16,7 @@ export const onboarding = createOnboardingService({
     storage: localStorage,
     rules: [
         createPendingShareAccessRule(store),
+        createFamilyPlanPromo2024Rule(store),
         createTrialRule(store),
         createBlackFridayRule(store),
         createSecurityRule(store),

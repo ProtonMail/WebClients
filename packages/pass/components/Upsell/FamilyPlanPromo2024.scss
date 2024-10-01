@@ -1,0 +1,42 @@
+.pass-family-plan-banner {
+	background: radial-gradient(
+		91.25% 182.4% at 100% 107.06%,
+		rgb(235 181 164 / 0.8) 0%,
+		rgb(55 37 128 / 0.8) 47.5%,
+		rgb(27 19 64 / 0.8) 100%
+	) !important;
+
+	&--img {
+		position: absolute;
+		inset-inline-end: 0;
+		inset-block: 0;
+		block-size: 100%;
+		z-index: 0;
+	}
+
+	&--btn {
+		&#{&} {
+			&,
+			&:hover,
+			&:focus {
+				--text-norm: white;
+
+				border: 0;
+				background: linear-gradient(
+					90deg,
+					#edb590 0%,
+					#d2aaa8 4.17%,
+					#c099b8 9.9%,
+					#af88c7 17.19%,
+					#a67fcf 27.6%,
+					#9d77d7 31.25%,
+					#946edf 36.46%,
+					#8b66e7 42.19%,
+					#825def 56.77%,
+					#7955f7 75%,
+					#704cff 95.83%
+				) !important;
+			}
+		}
+	}
+}

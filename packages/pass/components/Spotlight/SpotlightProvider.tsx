@@ -99,6 +99,7 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
         () =>
             latestInvite && !latestInvite.fromNewUser
                 ? {
+                      type: 'default',
                       id: latestInvite.token,
                       weak: true,
                       dense: false,

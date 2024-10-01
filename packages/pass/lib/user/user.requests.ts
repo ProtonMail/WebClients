@@ -1,7 +1,6 @@
 import { DEFAULT_PASS_FEATURES } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
 import type { FeatureFlagState, HydratedAccessState, HydratedUserState } from '@proton/pass/store/reducers';
-import { type ApiOptions } from '@proton/pass/types';
 import type { FeatureFlagsResponse } from '@proton/pass/types/api/features';
 import { PassFeaturesValues } from '@proton/pass/types/api/features';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -23,15 +22,16 @@ export const getFeatureFlags = async (): Promise<FeatureFlagState> => {
     }, {});
 };
 
-export const getUserAccess = async (apiOptions: ApiOptions = {}): Promise<HydratedAccessState> => {
+export const getUserAccess = async (): Promise<HydratedAccessState> => {
     logger.info(`[User] Syncing access & plan`);
-    const { Access } = await api({ url: 'pass/v1/user/access', method: 'get', ...apiOptions });
+    const { Access } = await api({ url: 'pass/v1/user/access', method: 'get' });
+
     return {
         plan: Access!.Plan,
         waitingNewUserInvites: Access!.WaitingNewUserInvites,
-        monitor: Access!.Monitor,
+        monitor: Access!.Monitor ?? null,
         userData: {
-            defaultShareId: Access!.UserData.DefaultShareID,
+            defaultShareId: Access!.UserData.DefaultShareID ?? null,
             aliasSyncEnabled: Access!.UserData.AliasSyncEnabled,
             pendingAliasToSync: Access!.UserData.PendingAliasToSync,
         },

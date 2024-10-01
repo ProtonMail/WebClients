@@ -1,3 +1,6 @@
+/** Note: Do not change the order of these enum
+ * values as they are referenced by their respective
+ * indexes in the onboarding state */
 export enum OnboardingMessage {
     WELCOME /* welcome to Proton Pass */,
     TRIAL,
@@ -13,6 +16,7 @@ export enum OnboardingMessage {
     PASS_MONITOR,
     PASS_MONITOR_LEARN_MORE,
     ALIAS_TRASH_CONFIRM /* confirm moving an alias to trash and suggest to disable it instead */,
+    FAMILY_PLAN_PROMO_2024,
 }
 
 export type OnboardingAcknowledgment = {
