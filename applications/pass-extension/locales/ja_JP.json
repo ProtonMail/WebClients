@@ -26,6 +26,9 @@
       "Add new item": [
         "新しいアイテムを追加"
       ],
+      "Add section": [
+        "セクションの追加"
+      ],
       "Add username field": [
         "ユーザー名フィールドを追加"
       ],
@@ -131,6 +134,9 @@
       "Create card": [
         "カードの作成"
       ],
+      "Create identity": [
+        "ユーザー情報を作成"
+      ],
       "Create login": [
         "ログインを作成"
       ],
@@ -145,6 +151,9 @@
       ],
       "Creating vault": [
         "保管庫を作成中"
+      ],
+      "Custom section": [
+        "カスタムセクション"
       ],
       "Customize": [
         "カスタマイズ"
@@ -173,6 +182,12 @@
       "Disable autosave on this website": [
         "ウェブサイトでの自動保存を無効化"
       ],
+      "Disable instead": [
+        "代わりに無効にする"
+      ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "エイリアスを無効にして、このエイリアスに送信されたメールの受信を停止する"
+      ],
       "Discard": [
         "破棄"
       ],
@@ -196,6 +211,12 @@
       ],
       "Edit vault": [
         "保管庫を編集"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "エイリアスを有効にして、このエイリアスに送信されたメールを受信する"
+      ],
+      "Entire vault": [
+        "保管庫全体"
       ],
       "Exclude from monitoring": [
         "監視対象から除外する"
@@ -283,6 +304,9 @@
       ],
       "Manage access": [
         "アクセス管理"
+      ],
+      "Manage vault access": [
+        "保管庫へのアクセスを管理"
       ],
       "Manually sync your data": [
         "手動でデータを同期する"
@@ -392,6 +416,9 @@
       "Saving passkey...": [
         "パスキーを保存しています..."
       ],
+      "Section name": [
+        "セクション名"
+      ],
       "See all": [
         "すべてを見る"
       ],
@@ -481,6 +508,9 @@
       ],
       "Upgrade now to share with more people": [
         "今すぐアップグレードしてより多くの人と共有しましょう"
+      ],
+      "Via secure link": [
+        "セキュアリンク経由で"
       ],
       "View app logs": [
         "アプリのログを表示する"
@@ -1018,6 +1048,9 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "データが正常にインポートされた後、セキュリティのためにパスワードを含む CSV ファイルを削除できます。"
+      ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "SimpleLoginのエイリアス管理機能は近日公開されます！"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "エイリアスを無効にしました。 ${ item.aliasEmail }に送信されたメールは受信できなくなります"
@@ -1813,6 +1846,9 @@
       "Additional details": [
         "その他の詳細"
       ],
+      "Address details": [
+        "住所の詳細"
+      ],
       "Alias": [
         "エイリアス"
       ],
@@ -1920,6 +1956,9 @@
       ],
       "Create an Identity": [
         "ユーザー情報を作成する"
+      ],
+      "Create lock": [
+        "ロックを作成"
       ],
       "Create new vault": [
         "新しい保管庫を作る"
@@ -2200,6 +2239,12 @@
       "Pause list": [
         "一時停止リスト"
       ],
+      "Personal details": [
+        "ユーザーの詳細"
+      ],
+      "Personal website": [
+        "個人ウェブサイト"
+      ],
       "PGP-encrypted JSON (recommended)": [
         "PGP 暗号化 JSON (推奨)"
       ],
@@ -2260,6 +2305,9 @@
       "Select preferred language": [
         "お好みの言語を選択"
       ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        "SimpleLoginエイリアスをインポートする保管庫を選択してください"
+      ],
       "Select your password manager": [
         "パスワードマネージャーを選択"
       ],
@@ -2304,6 +2352,9 @@
       ],
       "Support": [
         "サポート"
+      ],
+      "Sync aliases with SimpleLogin": [
+        "SimpleLoginとエイリアスを同期"
       ],
       "Text": [
         "テキスト"
@@ -2385,6 +2436,15 @@
       ],
       "Websites": [
         "ウェブサイト"
+      ],
+      "Work details": [
+        "仕事の詳細"
+      ],
+      "Work email": [
+        "仕事用のメールアドレス"
+      ],
+      "Work phone number": [
+        "仕事用の電話番号"
       ],
       "X handle": [
         "X ユーザー名"
@@ -2765,6 +2825,9 @@
       ],
       "OTP secret or URI required": [
         "OTP シークレットまたは URI が必要です"
+      ],
+      "Section name cannot be empty": [
+        "セクション名は空欄にできません"
       ],
       "Url already exists": [
         "Url は既に存在します"

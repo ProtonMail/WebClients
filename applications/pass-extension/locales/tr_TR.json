@@ -369,10 +369,10 @@
         "İnternet uygulamasını aç"
       ],
       "Pass for Android": [
-        "Proton Pass Android uygulaması"
+        "Android için Proton Pass"
       ],
       "Pass for iOS": [
-        "Proton Pass iOS uygulaması"
+        "iOS için Proton Pass"
       ],
       "Pin item": [
         "Ögeyi sabitle"
@@ -552,7 +552,7 @@
         "Güvenli bağlantı ile"
       ],
       "View app logs": [
-        "Uygulama günlüklerini görüntüle"
+        "Uygulama günlüğünü görüntüle"
       ],
       "View history": [
         "Geçmişi görüntüle"
@@ -627,7 +627,7 @@
         "Bu hizmet iki adımlı doğrulama sağlıyor. Hesap güvenliğini artırmak için bunu kullanın."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
-        "Çevrim içi varlığınızı korumak için gelişmiş güvenlik özellikleri ile ayrıntılı günlüklere erişin."
+        "Çevrim içi varlığınızı korumak için gelişmiş güvenlik özellikleri ile ayrıntılı günlük kayıtlarına erişin."
       ]
     },
     "Error": {
@@ -1161,6 +1161,9 @@
       ],
       "Automatically copy the generated password to the clipboard": [
         "Oluşturulan parola otomatik olarak panoya kopyalansın"
+      ],
+      "Autosaved on ${ url }": [
+        "${ url } üzerinden otomatik olarak kaydedildi"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Verilerinizi bu biçimde dışa aktarmadan önce lütfen Safari -> Ayarlar -> \"Genel\" sekmesini açın ve \"Güvenli dosyaları indirdikten sonra aç\" seçeneğini kapatın. Böylece, dışa aktarılan dosyanın Safari tarafından yanlış bir şekilde ayıklanması engellenir."
@@ -1988,7 +1991,7 @@
         "Kullanıcı adı alanı her zaman görüntülensin"
       ],
       "Application logs": [
-        "Uygulama günlükleri"
+        "Uygulama günlüğü"
       ],
       "Authenticate with passkeys": [
         "Geçiş anahtarları ile kimlik doğrulama"
@@ -2108,7 +2111,7 @@
         "Bir daha hatırlatma"
       ],
       "Download logs": [
-        "Günlükleri indir"
+        "Günlüğü indir"
       ],
       "Email": [
         "E-posta"
@@ -2565,7 +2568,7 @@
         "Bilgileri görüntüle"
       ],
       "View logs": [
-        "Günlükleri görüntüle"
+        "Günlüğü görüntüle"
       ],
       "Vulnerable": [
         "Çok zayıf"
