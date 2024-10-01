@@ -8,6 +8,7 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { FiveStarIcon, ShieldIcon } from '@proton/pass/components/Spotlight/SpotlightIcon';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { FamilyPlanPromo2024 } from '@proton/pass/components/Upsell/FamilyPlanPromo2024';
 import { PASS_BF_MONTHLY_PRICE, PASS_LEARN_MORE_URL, UpsellRef } from '@proton/pass/constants';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { selectUser } from '@proton/pass/store/selectors';
@@ -178,6 +179,13 @@ export const useOnboardingMessages = () => {
                 message: c('Info').t`Please upgrade to have early access ${PASS_APP_NAME} web app`,
                 weak: true,
                 onClose: () => acknowledge(OnboardingMessage.EARLY_ACCESS, () => setUpselling(null)),
+            },
+            [OnboardingMessage.FAMILY_PLAN_PROMO_2024]: {
+                type: 'custom',
+                component: FamilyPlanPromo2024,
+                id: 'family-plan-promo-2024',
+                className: 'ui-violet pass-family-plan-banner',
+                onClose: () => acknowledge(OnboardingMessage.FAMILY_PLAN_PROMO_2024),
             },
         }),
         [user]
