@@ -28,7 +28,6 @@ type ImportVaultsPickerProps = Omit<ModalProps, 'onSubmit'> & {
     payload: ImportPayload;
     onSubmit: (payload: ImportPayload) => void;
 };
-export type ImportVaultsPickerHandle = { submit: () => void };
 
 const FORM_ID = 'vault-picker';
 
@@ -56,8 +55,8 @@ export const ImportVaultsPickerModal: FC<ImportVaultsPickerProps> = ({ payload, 
             vaults: payload.vaults.map(
                 (vault): VaultPickerValue => ({
                     ...vault,
-                    shareId: defaultVault.shareId,
-                    name: defaultVault.content.name,
+                    shareId: defaultVault?.shareId ?? '',
+                    name: defaultVault?.content.name ?? '',
                     selected: true,
                 })
             ),
