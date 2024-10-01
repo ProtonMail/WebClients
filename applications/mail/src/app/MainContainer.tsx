@@ -13,9 +13,9 @@ import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/
 import { useInboxDesktopMessageForward } from '@proton/components/hooks/useInboxDesktopMessageForward';
 import { FeatureCode, useFeatures } from '@proton/features';
 import AssistantProvider from '@proton/llm/lib/providers/AssistantProvider';
+import { useInboxDesktopHeartbeat } from '@proton/shared/lib/desktop/heartbeat';
 import { useFlag } from '@proton/unleash';
 import { useWalletAutoCreate } from '@proton/wallet/hooks/useWalletAutoCreate';
-import { useInboxDesktopHeartbeat } from '@proton/shared/lib/desktop/heartbeat';
 
 import { CheckAllRefProvider } from 'proton-mail/containers/CheckAllRefProvider';
 
@@ -47,6 +47,19 @@ const MainContainer: FunctionComponent = () => {
 
     useInboxDesktopMessageForward();
     useInboxDesktopHeartbeat();
+
+    /**
+     * @description React has an issue regarding DOM changed by Gtranslate from Chrome
+     * The only part not tracked by React is the message view which is great.
+     * Check MAILWEB-4981 to get more details.
+     * Github issue: https://github.com/facebook/react/issues/11538
+     */
+    useEffect(() => {
+        document.querySelector('body')?.setAttribute('translate', 'no');
+        return () => {
+            document.querySelector('body')?.removeAttribute('translate');
+        };
+    }, []);
 
     // Service Worker registration
     // Including a kill switch with a feature flag
