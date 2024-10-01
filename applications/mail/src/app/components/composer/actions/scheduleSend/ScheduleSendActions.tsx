@@ -8,6 +8,7 @@ import { Button } from '@proton/atoms';
 import {
     DropdownMenu,
     DropdownMenuButton,
+    NewUpsellModal,
     SimpleDropdown,
     UpsellModal,
     useModalState,
@@ -16,9 +17,10 @@ import {
 import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { YEAR_REGEX } from '@proton/shared/lib/date/date';
-import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import plusLogo from '@proton/styles/assets/img/illustrations/mail-plus-logo.svg';
+import scheduleSendImg from '@proton/styles/assets/img/illustrations/new-upsells-img/paperplane-clock.svg';
 import clsx from '@proton/utils/clsx';
 
 import { selectComposer } from 'proton-mail/store/composers/composerSelectors';
@@ -177,6 +179,38 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
         const oneDollarConfig = useOneDollarConfig();
         const upsellConfig = useUpsellConfig({ upsellRef, ...oneDollarConfig });
 
+        const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
+
+        const modal = displayNewUpsellModalsVariant ? (
+            <NewUpsellModal
+                data-testid="composer:schedule-send:upsell-modal"
+                titleModal={c('Title').t`Schedule now, send later`}
+                description={c('Description')
+                    .t`Don’t want to send your email right now? Schedule it for exactly the right time.`}
+                modalProps={upsellModalProps}
+                illustration={scheduleSendImg}
+                sourceEvent="BUTTON_SCHEDULE_SEND"
+                {...upsellConfig}
+            />
+        ) : (
+            <UpsellModal
+                data-testid="composer:schedule-send:upsell-modal"
+                title={c('Title').t`Set your own schedule`}
+                description={c('Description')
+                    .t`Unlock custom message scheduling and more premium features when you upgrade.`}
+                modalProps={upsellModalProps}
+                sourceEvent="BUTTON_SCHEDULE_SEND"
+                features={[
+                    'schedule-messages',
+                    'more-storage',
+                    'more-email-addresses',
+                    'unlimited-folders-and-labels',
+                    'custom-email-domains',
+                ]}
+                {...upsellConfig}
+            />
+        );
+
         return (
             <>
                 <SimpleDropdown
@@ -201,23 +235,7 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
                         onUpsellModalShow={handleShowUpsellModal}
                     />
                 </SimpleDropdown>
-                {renderUpsellModal && (
-                    <UpsellModal
-                        data-testid="composer:schedule-send:upsell-modal"
-                        title={c('Title').t`Set your own schedule`}
-                        description={c('Description')
-                            .t`Unlock custom message scheduling and more premium features when you upgrade.`}
-                        modalProps={upsellModalProps}
-                        features={[
-                            'schedule-messages',
-                            'more-storage',
-                            'more-email-addresses',
-                            'unlimited-folders-and-labels',
-                            'custom-email-domains',
-                        ]}
-                        {...upsellConfig}
-                    />
-                )}
+                {renderUpsellModal && modal}
             </>
         );
     }
