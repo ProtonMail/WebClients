@@ -25,8 +25,10 @@ export const createAliasService = () => {
         WorkerMessageType.ALIAS_OPTIONS,
         onContextReady((ctx) => {
             const state = ctx.service.store.getState();
+            const shareId = selectAutosaveVault(state)?.shareId;
+            if (!shareId) throw new Error("Could not resolve user's default vault.");
+
             const { needsUpgrade } = selectAliasLimits(state);
-            const { shareId } = selectAutosaveVault(state);
 
             return new Promise((resolve) => {
                 ctx.service.store.dispatch(
@@ -50,7 +52,10 @@ export const createAliasService = () => {
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.ALIAS_CREATE,
         onContextReady(async (ctx, message) => {
-            const { shareId } = selectAutosaveVault(ctx.service.store.getState());
+            const state = ctx.service.store.getState();
+            const shareId = selectAutosaveVault(state)?.shareId;
+            if (!shareId) throw new Error("Could not resolve user's default vault.");
+
             const { url, alias } = message.payload;
             const { mailboxes, prefix, signedSuffix, aliasEmail } = alias;
             const optimisticId = uniqueId();

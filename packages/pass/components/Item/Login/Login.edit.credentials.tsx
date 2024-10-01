@@ -205,7 +205,6 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
 
             <AliasModal
                 form={form}
-                shareId={form.values.shareId}
                 aliasOptions={aliasOptions.value}
                 loading={aliasOptions.loading}
                 open={aliasModal.open}

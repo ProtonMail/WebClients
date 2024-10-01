@@ -20,12 +20,7 @@ import { selectAliasLimits } from '@proton/pass/store/selectors';
 import type { AliasFormValues, MaybeNull } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
-export type AliasModalRef = {
-    open: () => void;
-};
-
 type AliasModalProps<T extends AliasFormValues> = {
-    shareId: string;
     form: FormikContextType<T>;
     aliasOptions: MaybeNull<SanitizedAliasOptions>;
     loading: boolean;
@@ -35,7 +30,6 @@ type AliasModalProps<T extends AliasFormValues> = {
 export const AliasModal = <T extends AliasFormValues>({
     open,
     form,
-    shareId,
     aliasOptions,
     loading,
     handleSubmitClick,
