@@ -8,6 +8,7 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { FiveStarIcon, ShieldIcon } from '@proton/pass/components/Spotlight/SpotlightIcon';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { FamilyPlanPromo2024 } from '@proton/pass/components/Upsell/FamilyPlanPromo2024';
 import { PASS_BF_MONTHLY_PRICE, PASS_LEARN_MORE_URL, UpsellRef } from '@proton/pass/constants';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { selectUser } from '@proton/pass/store/selectors';
@@ -25,6 +26,7 @@ export const useOnboardingMessages = () => {
     return useMemo<Partial<Record<OnboardingMessage, SpotlightMessageDefinition>>>(
         () => ({
             [OnboardingMessage.PENDING_SHARE_ACCESS]: {
+                type: 'default',
                 id: 'welcome',
                 hidden: true,
                 title: c('Title').t`Pending access to the shared data`,
@@ -33,6 +35,7 @@ export const useOnboardingMessages = () => {
                 onClose: () => acknowledge(OnboardingMessage.PENDING_SHARE_ACCESS, () => setPendingShareAccess(false)),
             },
             [OnboardingMessage.WELCOME]: {
+                type: 'default',
                 id: 'welcome',
                 title: c('Title').t`Why ${PASS_APP_NAME}?`,
                 message: c('Info').t`Privacy is a big concern for us. Learn why ${PASS_APP_NAME} is different.`,
@@ -46,6 +49,7 @@ export const useOnboardingMessages = () => {
                 },
             },
             [OnboardingMessage.TRIAL]: {
+                type: 'default',
                 id: 'trial',
                 title: c('Title').t`Our welcome gift to you`,
                 message: c('Info')
@@ -65,6 +69,7 @@ export const useOnboardingMessages = () => {
                 },
             },
             [OnboardingMessage.SECURE_EXTENSION]: {
+                type: 'default',
                 id: 'pin',
                 title: c('Title').t`Secure your data`,
                 message: c('Info').t`Enable auto-locking to secure your data`,
@@ -78,6 +83,7 @@ export const useOnboardingMessages = () => {
                 },
             },
             [OnboardingMessage.UPDATE_AVAILABLE]: {
+                type: 'default',
                 id: 'update',
                 title: c('Title').t`Update available`,
                 message: c('Info')
@@ -91,6 +97,7 @@ export const useOnboardingMessages = () => {
                 },
             },
             [OnboardingMessage.PERMISSIONS_REQUIRED]: {
+                type: 'default',
                 id: 'permissions',
                 title: c('Title').t`Grant permissions`,
                 message: c('Info')
@@ -104,6 +111,7 @@ export const useOnboardingMessages = () => {
                 },
             },
             [OnboardingMessage.USER_RATING]: {
+                type: 'default',
                 id: 'rating',
                 title: c('Title').t`Enjoying ${PASS_APP_NAME}?`,
                 message: c('Info').t`Please consider leaving a review.`,
@@ -118,6 +126,7 @@ export const useOnboardingMessages = () => {
                 },
             },
             [OnboardingMessage.STORAGE_ISSUE]: {
+                type: 'default',
                 id: 'storage',
                 title: c('Title').t`Low disk space`,
                 message: c('Info')
@@ -131,6 +140,7 @@ export const useOnboardingMessages = () => {
                 },
             },
             [OnboardingMessage.BLACK_FRIDAY_OFFER]: {
+                type: 'default',
                 id: 'black-friday',
                 title: c('bf2023: Title').t`Black Friday offer`,
                 message: (() => {
@@ -153,6 +163,7 @@ export const useOnboardingMessages = () => {
                 },
             },
             [OnboardingMessage.B2B_ONBOARDING]: {
+                type: 'default',
                 id: 'b2b',
                 title: c('Title').t`Get Started`,
                 message: '',
@@ -161,12 +172,20 @@ export const useOnboardingMessages = () => {
                 onClose: () => acknowledge(OnboardingMessage.B2B_ONBOARDING),
             },
             [OnboardingMessage.EARLY_ACCESS]: {
+                type: 'default',
                 id: 'early-access',
                 hidden: true,
                 title: c('Title').t`Upgrade to Unlock Premium Features`,
                 message: c('Info').t`Please upgrade to have early access ${PASS_APP_NAME} web app`,
                 weak: true,
                 onClose: () => acknowledge(OnboardingMessage.EARLY_ACCESS, () => setUpselling(null)),
+            },
+            [OnboardingMessage.FAMILY_PLAN_PROMO_2024]: {
+                type: 'custom',
+                component: FamilyPlanPromo2024,
+                id: 'family-plan-promo-2024',
+                className: 'ui-violet pass-family-plan-banner',
+                onClose: () => acknowledge(OnboardingMessage.FAMILY_PLAN_PROMO_2024),
             },
         }),
         [user]
