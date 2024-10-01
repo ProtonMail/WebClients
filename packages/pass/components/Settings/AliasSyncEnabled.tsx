@@ -9,19 +9,17 @@ import { VaultPickerField } from '@proton/pass/components/Form/Field/VaultPicker
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { aliasSyncEnable } from '@proton/pass/store/actions';
-import { selectDefaultVault, selectUserDefaultShareId } from '@proton/pass/store/selectors';
+import { selectUserDefaultShareID } from '@proton/pass/store/selectors';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 type FormValues = { shareId: string };
 
 export const AliasSyncEnabled: FC = () => {
-    const serverDefaultShareId = useSelector(selectUserDefaultShareId);
-    const localDefaultShareId = useSelector(selectDefaultVault).shareId;
-    const shareId = serverDefaultShareId ?? localDefaultShareId;
+    const shareId = useSelector(selectUserDefaultShareID);
     const { loading, dispatch } = useRequest(aliasSyncEnable, {});
 
     const form = useFormik<FormValues>({
-        initialValues: { shareId },
+        initialValues: { shareId: shareId ?? '' },
         enableReinitialize: true,
         onSubmit: ({ shareId }) => dispatch(shareId),
     });

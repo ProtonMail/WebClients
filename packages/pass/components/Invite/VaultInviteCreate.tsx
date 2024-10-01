@@ -39,10 +39,10 @@ export type VaultInviteCreateValues<T extends boolean = boolean> = Omit<
 export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
     const { close, manageAccess } = useInviteContext();
     const org = useOrganization({ sync: true });
+    const defaultVault = useSelector(selectDefaultVault);
 
-    const defaultShareId = useSelector(selectDefaultVault).shareId;
-    const shareId = props.withVaultCreation ? defaultShareId : props.vault.shareId;
-    const addressValidator = useValidateInviteAddresses(shareId);
+    const shareId = props.withVaultCreation ? defaultVault?.shareId : props.vault.shareId;
+    const addressValidator = useValidateInviteAddresses(shareId ?? '');
     const validateAddresses = !org?.b2bAdmin && org?.settings.ShareMode === BitField.ACTIVE;
     const emailFieldRef = useRef<HTMLInputElement>(null);
 
