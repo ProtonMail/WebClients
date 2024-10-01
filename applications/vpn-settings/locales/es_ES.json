@@ -2128,6 +2128,14 @@
         "Toma en cuenta que si eliminas este dominio ${ domainName }, todas las direcciones asociadas serán desactivadas."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "¿Estás seguro de que quieres eliminar este grupo?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Ten en cuenta que si eliminas el grupo ${ displayGroupName } (con la dirección ${ displayGroupAddressEmail }), ya no podrás recibir correos electrónicos usando esta dirección."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Factura atrasada"
@@ -3568,9 +3576,6 @@
       "Are you sure you want to cancel editing the group?": [
         "¿Estás seguro de que quieres cancelar la edición del grupo?"
       ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "¿Estás seguro de que quieres eliminar este grupo? La dirección del grupo dejará de funcionar."
-      ],
       "Are you sure you want to discard your changes?": [
         "¿Estás seguro de que quieres descartar los cambios?"
       ],
@@ -4576,6 +4581,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "El formato de tu archivo CSV es incorrecto."
+      ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "La función de grupos no está disponible en tu suscripción actual. Los grupos creados anteriormente están desactivados y solo pueden ser eliminados."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Tus usuarios verán el nombre mientras estén conectados."
@@ -10240,6 +10248,10 @@
       ]
     },
     "unprivatization": {
+      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
+        "${ n } usuario se ha unido a tu organización a través de tu proveedor de identidad. Aprueba o rechaza sus cuentas ahora.",
+        "${ n } usuarios se han unido a tu organización a través de tu proveedor de identidad. Aprueba o rechaza sus cuentas ahora."
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Los administradores no pueden acceder a los datos de usuarios privados y no pueden restablecer sus contraseñas."
       ],
@@ -10248,6 +10260,13 @@
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Al hacer privado al usuario, no podrás ayudarle a recuperar el acceso a sus datos o cuenta."
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "No se ha podido activar automáticamente el acceso de administrador para ${ n } usuario porque sus claves de cifrado han sido actualizadas mientras tanto.",
+        "No se ha podido activar automáticamente el acceso de administrador para ${ n } usuarios porque sus claves de cifrado han sido actualizadas mientras tanto."
+      ],
+      "Could not enable administrator access: ${ error }": [
+        "No se ha podido activar el acceso de administrador: ${ error }"
       ],
       "Delete request": [
         "Eliminar la solicitud"

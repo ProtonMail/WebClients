@@ -903,6 +903,9 @@
       "${ count } view": [
         "${ count } lượt xem"
       ],
+      "${ count }/${ maxReads } views": [
+        "${ count }/${ maxReads } lượt xem"
+      ],
       "${ memberCount } member": [
         "${ memberCount } thành viên"
       ],
@@ -1005,8 +1008,14 @@
       "Automatically copy the generated password to the clipboard": [
         "Tự động sao chép các mật khẩu được tạo vào bộ nhớ đệm"
       ],
+      "Autosaved on ${ url }": [
+        "Đã tự đông lưu trên ${ url }"
+      ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Trước khi trích xuất dữ liệu của bạn với định dạng này, vui lòng mở tùy chỉnh Safari -> \"Tổng quan\" -> tắt tùy chọn \"Mở các tập tin an toàn sau khi tải về\". Điều này sẽ giúp trình duyệt Safari tránh khỏi trích xuất sai tập tin."
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Sinh trắc học đã bị vô hiệu hóa và cần được mở lại."
       ],
       "Built in 2FA authenticator": [
         "Trình xác thực 2 bước tích hợp"
@@ -1037,6 +1046,9 @@
       ],
       "Close this window in order to use another passkey manager.": [
         "Đóng cửa sổ này để dùng một trình quản lý khóa truy cập khác."
+      ],
+      "Confirm your extra password to proceed with its removal.": [
+        "Xác nhận mật khẩu cấp hai của bạn để tiếp tục với việc gỡ bỏ nó."
       ],
       "Congratulations, your access has been confirmed": [
         "Chúc mừng, truy cập của bạn đã được xác nhận"
@@ -1446,6 +1458,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Tệp xuất của bạn được mã hóa bằng PGP và cần một mật khẩu mạnh."
       ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "Mật khẩu cấp hai sẽ được yêu cầu để sử dụng ${ PASS_APP_NAME }. Nó hoạt động như là một mật khẩu khác ngoài mật khẩu ${ BRAND_NAME }của bạn."
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } nội dung không thể nhập vào:"
       ],
@@ -1502,6 +1517,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Mở khóa bằng mã PIN của bạn để truy cập các cài đặt"
+      ],
+      "Unlock with biometrics": [
+        "Mở khóa bằng sinh trắc học"
       ],
       "Update login": [
         "Cập nhật đăng nhập"
@@ -1580,6 +1598,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Bạn đã đạt đến độ dài tối đa cho phép là ${ maxLength } ký tự."
+      ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "Bạn sẽ bị đăng xuất và phải đăng nhập lại trên các thiết bị khác."
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Bạn sẽ sử dụng mã PIN này để mở khóa ${ PASS_APP_NAME } một khi nó tự động khóa sau một khoảng thời gian không sử dụng."

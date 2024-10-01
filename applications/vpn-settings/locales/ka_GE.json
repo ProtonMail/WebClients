@@ -2128,6 +2128,11 @@
         "დაიმახსოვრეთ, რომ თუ წაშლით დომენს ${ domainName }, მასზე მიბმული ყველა მისამართი გაითიშება."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "დარწმუნებული ბრძანდებით, რომ გნებავთ მონიშნული ჯგუფის წაშლა?"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "ინვოისი გადაცილებულია"
@@ -2629,6 +2634,11 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "ანგარიშს ან ორგანიზაციას გადაცილებული ინვოისი აქვს. საჭიროა ყველა ინვოისის გადახდა."
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "შეიყვანეთ ელფოსტის მისამართი"
       ]
     },
     "Error importing users": {
@@ -3563,9 +3573,6 @@
       "Are you sure you want to cancel editing the group?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ ჯგუფის ჩასწორების გაუქმება?"
       ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ ეს ჯგუფი? ჯგუფის მისამართი აღარ იმუშავებს."
-      ],
       "Are you sure you want to discard your changes?": [
         "გნებავთ თქვენი ცვლილებების გაუქმება?"
       ],
@@ -3580,6 +3587,9 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ დომენი ${ boldDomain }?"
+      ],
+      "Ask your organization admin to setup Gateways.": [
+        "სთხოვეთ ორგანიზაციის ადმინისტრატორს, რაუტერები დააყენოს."
       ],
       "Attention required": [
         "საჭიროა ყურადღება"
@@ -4421,6 +4431,9 @@
       "SCIM token active": [
         "SCIM კოდი აქტიურია"
       ],
+      "Search by an email address to begin": [
+        "დასაწყებად მოძებნეთ ელფოსტის მისამართი"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "დაიცავით თქვენი ${ BRAND_NAME }-ის ანგარიში"
       ],
@@ -4565,6 +4578,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "თვენი CSV ფაილის ფორმატი არასწორია."
+      ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "ჯგუფების ფუნქცია თქვენს მიმდინარე სატარიფო გეგმაში მხარდაჭერილი არაა. ადრე შექმნილი ჯგუფები გათიშულია და მათი, მხოლოდ, წაშლა შეგიძლიათ."
       ],
       "The name will be visible to your users while they are signed in.": [
         "სახელი, რომელიც გამოჩნდება, როცა თქვენი მომხმარებლები სისტემაში შედიან."
@@ -5582,6 +5598,9 @@
       ],
       "Reveal password": [
         "პაროლის ჩვენება"
+      ],
+      "Search by email": [
+        "ძებნა ელფოსტით"
       ],
       "Second password": [
         "მეორე პაროლი"
@@ -7181,6 +7200,29 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "მომხმარებლები ჩვენს ვებ-აპებში შესვლისას ${ BRAND_NAME }-ის ხატულას მაგიერ თქვენს ლოგოს დაინახავენ."
+      ]
+    },
+    "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify } თქვენი ელფოსტის მისამართი ${ email }, რომ დააყენოთ ორგანიზაციის იდენტიფიკატორი."
+      ],
+      "Current organization identity": [
+        "მიმდინარე ორგანიზაციის იდენტიფიკატორი"
+      ],
+      "Edit organization identity": [
+        "ორგანიზაციის იდენტიფიკატორის ჩასწორება"
+      ],
+      "New organization identity": [
+        "ახალი ორგანიზაციის იდენტიფიკატორი"
+      ],
+      "Organization identity": [
+        "ორგანიზაციის იდენტიფიკატორი"
+      ],
+      "Organization identity updated": [
+        "ორგანიზაციის იდენტიფიკატორი განახლდა"
+      ],
+      "Verify": [
+        "გადამოწმება"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -10126,6 +10168,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "თუ შეიძინეთ სასაჩუქრე ბარათი ან ის ჩვენი მხარდაჭერის გუნდისგან მიიღეთ, ის აქ შეგიძლიათ, შეიყვანოთ."
       ],
+      "IP address (Internet Service Provider)": [
+        "IP მისამართი (ინტერნეტპროვაიდერი)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "წევრები, რომლებც 2FA-ს არ იყენებენ, მიიღებენ ელფოსტას, რომელიც მისი გამოყენების, რაც შეიძლება, მალე ჩართვას მოსთხოვს."
       ],
@@ -10200,17 +10245,30 @@
       ]
     },
     "unprivatization": {
+      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
+        "${ n } მომხმარებელი შემოუერთდა თქვენს ორგანიზაციას თქვენი იდენტეიფიკატორების მომწოდებლით. დაადასტურეთ ან უარჰყავთი მათი ანგარიშები ახლა:",
+        "${ n } მომხმარებელი შემოუერთდა თქვენს ორგანიზაციას თქვენი იდენტეიფიკატორების მომწოდებლით. დაადასტურეთ ან უარჰყავთი მათი ანგარიშები ახლა:"
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "ადმინებს კონფიდენციალური მომხმარებლების მონაცემებთაან წვდომა არ აქვთ და ვერც მათ პაროლს ჩამოყრიან."
       ],
+      "Approve all": [
+        "ყველას დამტკიცება"
+      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "მომხმარებლის კონფიდენციალურად გამოცხადებით მათ თავის ანგარიშზე არსებულ მონაცემების აღდგენაში ვეღარ დაეხმარებით."
+      ],
+      "Could not enable administrator access: ${ error }": [
+        "ვერ ჩავრთე ადმინისტრატორის წვდომა: ${ error }"
       ],
       "Delete request": [
         "მოთხოვნის წაშლა"
       ],
       "Delete request to access user data?": [
         "წავშალო მოთხოვნა მომხმარებლის მონაცემებთან წვდომაზე?"
+      ],
+      "Enable manually": [
+        "ხელით ჩართვა"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "მომხმარებლის თანხმობის შემდეგ საშუალება გექნებათ, დაეხმაროთ მათ, დაიბრუნონ წვდომა ან მართონ თავიანთი მონაცემები"

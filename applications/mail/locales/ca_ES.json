@@ -1312,6 +1312,9 @@
       "Use recovery code": [
         "Utilitza un codi de recuperació"
       ],
+      "Use this": [
+        "Usa això"
+      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Utilitzeu el ratolí per redimensionar la vista. Si esteu utilitzant el teclat, podeu utilitzar les tecles d'esquerra i dreta per redimensionar."
       ],
@@ -3541,6 +3544,11 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Ajudeu-nos a millorar"
+      ]
+    },
+    "Downgrade warning": {
+      "Remove discount": [
+        "Suprimeix el descompte"
       ]
     },
     "Download attachments": {
@@ -6054,6 +6062,9 @@
       "Email address": [
         "Adreça de correu electrònic"
       ],
+      "Email copied to clipboard": [
+        "S'ha copiat el correu electrònic al porta-retalls."
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "S'inclou gratuïtament l'allotjament de correu electrònic per a 10 noms de domini de correu electrònic personalitzats. Es poden afegir dominis addicionals per ${ price }."
       ],
@@ -7847,6 +7858,9 @@
       "Don't like the style": [
         "No m'agrada l'estil."
       ],
+      "Don't show again": [
+        "No ho tornis a mostrar"
+      ],
       "Don't show this again": [
         "No ho tornis a mostrar"
       ],
@@ -9127,6 +9141,9 @@
       "Password-protected Emails": [
         "Correus protegits amb contrasenya"
       ],
+      "Phone support (20+ users)": [
+        "Suport telefònic (a partir de 20 usuaris)"
+      ],
       "Priority email support": [
         "Suport prioritari per correu electrònic"
       ],
@@ -9698,7 +9715,30 @@
         "Seleccioneu a què pot accedir ${ BRAND_NAME }: visualitzeu els vostres missatges de correu electrònic i la vostra configuració, visualitzeu i baixeu els vostres contactes, visualitzeu i baixeu totes les agendes a les quals accediu des de Google Calendar."
       ]
     },
+    "Onboarding List Placeholder": {
+      "Finance": [
+        "Finances"
+      ],
+      "Shopping": [
+        "Compres"
+      ],
+      "Social media": [
+        "Xarxes socials"
+      ]
+    },
     "Onboarding modal": {
+      "Activate premium features": [
+        "Activeu les característiques prèmium"
+      ],
+      "Advanced encryption": [
+        "Xifratge avançat"
+      ],
+      "App Store": [
+        "App Store"
+      ],
+      "Auto-delete spam and trash": [
+        "Neteja automàticament el correu brossa i la paperera"
+      ],
       "Automatically forward emails": [
         "Reenvieu correus electrònics automàticament."
       ],
@@ -9711,6 +9751,12 @@
       "Congratulations on choosing privacy": [
         "Felicitats per triar la privacitat"
       ],
+      "Dark Web Monitoring": [
+        "Monitoratge de la web fosca"
+      ],
+      "Download the desktop app": [
+        "Descarregueu l'aplicació d'escriptori"
+      ],
       "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
         "Xifratge tan fort que només vós i els destinataris escollits poden veure els vostres correus electrònics. ${ kbLinkEncryption }"
       ],
@@ -9719,6 +9765,18 @@
       ],
       "Forward Gmail messages to your inbox.": [
         "Reenvieu els missatges de Gmail a la vostra safata d'entrada."
+      ],
+      "Get the desktop app": [
+        "Obteniu l'aplicació d'escriptori"
+      ],
+      "Google Play": [
+        "Google Play"
+      ],
+      "Let's get started": [
+        "Comencem"
+      ],
+      "Maybe later": [
+        "Potser després"
       ],
       "Next": [
         "Següent"
@@ -9731,6 +9789,9 @@
       ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "Impedim que els anunciants i els recopiladors de dades us perfilin. ${ kbLinkPrivacy }"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Us donem la benvinguda a ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding Proton": {

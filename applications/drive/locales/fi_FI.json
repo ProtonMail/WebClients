@@ -4164,6 +4164,9 @@
       "Change your password": [
         "Vaihda salasanasi"
       ],
+      "Check for malicious files": [
+        "Tarkista haitallisten tiedostojen varalta"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Tarkistetaan yhteystietoa ${ progress }/${ max }..."
       ],
@@ -4193,6 +4196,9 @@
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Yhteystieto lisättiin ryhmään ${ contactGroupName }"
+      ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Yhteystieto poistettiin ryhmästä ${ contactGroupName }"
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Jatka ${ DRIVE_APP_NAME }n käyttämistä ja avaa levy myöhemmin"
@@ -5075,6 +5081,9 @@
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Tiedosto on saatettu poistaa, siirtää tai poistaa käytettävistä. Ota yhteyttä sen omistajaan."
+      ],
+      "This folder is empty": [
+        "Kansio on tyhjä"
       ],
       "This item already exists in your library": [
         "Kohde löytyy jo kirjastostasi"
@@ -9578,7 +9587,7 @@
         "Haluatko varmasti sulkea esikatselun?"
       ],
       "Are you sure you want to remove this item from your list?": [
-        "Haluatko varmasti poistaa tämän kohteen listaltasi?",
+        "Haluatko varmasti poistaa kohteen listaltasi?",
         "Haluatko varmasti poistaa nämä kohteet listaltasi?"
       ],
       "Billing cycle": [

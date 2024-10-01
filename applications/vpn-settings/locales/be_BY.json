@@ -2146,6 +2146,14 @@
         "Звярніце ўвагу, што калі вы выдаліце дамен з назвай ${ domainName }, то ўсе адрасы звязаныя з ім будуць адключаны."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Вы сапраўды хочаце выдаліць гэту групу?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Звярніце ўвагу, што калі вы выдаліце групу ${ displayGroupName } (з адрасам ${ displayGroupAddressEmail }), то ў вас больш не будзе магчымасці атрымліваць лісты з выкарыстаннем гэтага адраса."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Пратэрмінаваны рахунак"
@@ -2647,6 +2655,11 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Ваш уліковы запіс або арганізацыя мае пратэрмінаваны рахунак. Аплаціце ўсе неаплачаныя рахункі."
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "Увядзіце адрас электроннай пошты"
       ]
     },
     "Error importing users": {
@@ -3635,9 +3648,6 @@
       "Are you sure you want to cancel editing the group?": [
         "Вы сапраўды хочаце скасаваць рэдагаванне групы?"
       ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "Вы сапраўды хочаце выдаліць гэту групу? Адрас групы больш не будзе працаваць."
-      ],
       "Are you sure you want to discard your changes?": [
         "Вы сапраўды хочаце адхіліць змены?"
       ],
@@ -3652,6 +3662,9 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Вы ўпэўнены, што хочаце выдаліць дамен ${ boldDomain }?"
+      ],
+      "Ask your organization admin to setup Gateways.": [
+        "Папрасіце адміністратара сваёй арганізацыі наладзіць шлюзы."
       ],
       "Attention required": [
         "Патрабуецца ўвага"
@@ -4505,6 +4518,9 @@
       "SCIM token active": [
         "Токен SCIM актыўны"
       ],
+      "Search by an email address to begin": [
+        "Пачніце пошук па адрасе электроннай пошты"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Абараніце свой уліковы запіс ${ BRAND_NAME }"
       ],
@@ -4657,6 +4673,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Няправільны фармат вашага файла CSV."
+      ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "Функцыя груп не падтрымліваюцца вашай бягучай падпіскай. Папярэдне створаныя групы адключаны і могуць быць толькі выдалены."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Гэта імя ўбачаць вашы карыстальнікі, калі яны ўвойдуць у сістэму."
@@ -5694,6 +5713,9 @@
       ],
       "Reveal password": [
         "Паказаць пароль"
+      ],
+      "Search by email": [
+        "Пошук па электроннай пошце"
       ],
       "Second password": [
         "Другі пароль"
@@ -7349,6 +7371,29 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Карыстальнікі будуць бачыць ваш лагатып замест значка ${ BRAND_NAME } пры ўваходзе ў нашу вэб-праграму."
+      ]
+    },
+    "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify } свой адрас электроннай пошты ${ email }, каб задаць ідэнтычнасць арганізацыі."
+      ],
+      "Current organization identity": [
+        "Бягучая ідэнтычнасць арганізацыі"
+      ],
+      "Edit organization identity": [
+        "Рэдагаваць ідэнтычнасць арганізацыі"
+      ],
+      "New organization identity": [
+        "Новая ідэнтычнасць арганізацыі"
+      ],
+      "Organization identity": [
+        "Ідэнтычнасць арганізацыі"
+      ],
+      "Organization identity updated": [
+        "Ідэнтычнасць арганізацыі абноўлена"
+      ],
+      "Verify": [
+        "Праверыць"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -10388,6 +10433,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Калі вы купілі падарункавы код або атрымалі яго ад нашай каманды падтрымкі, то яго можна ўвесці тут."
       ],
+      "IP address (Internet Service Provider)": [
+        "IP-адрас (пастаўшчык паслуг інтэрнэту)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Удзельнікі, якія не выкарыстоўваць 2ФА, атрымаюць ліст з просьбай як мага хутчэй уключыць двухфактарную аўтэнтыфікацыю."
       ],
@@ -10462,17 +10510,38 @@
       ]
     },
     "unprivatization": {
+      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
+        "${ n } карыстальнік далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Ухваліце або адхіліце яго/іх уліковыя запісы:",
+        "${ n } карыстальнікі далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Ухваліце або адхіліце іх уліковыя запісы:",
+        "${ n } карыстальнікаў далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Ухваліце або адхіліце іх уліковыя запісы:",
+        "${ n } карыстальнікаў далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Ухваліце або адхіліце іх уліковыя запісы:"
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Адміністратары не могуць атрымліваць доступ да даных прыватных карыстальнікаў, а таксама аднаўляць іх паролі."
       ],
+      "Approve all": [
+        "Зацвердзіць усе"
+      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "У вас больш не будзе магчымасці дапамагаць карыстальніку аднавіць доступ да яго даных або ўліковага запісу, калі ён стане прыватным."
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Немагчыма аўтаматычна ўключыць доступ адміністратара для ${ n } карыстальніка, бо яго ключы шыфравання ў гэты час былі абноўлены:",
+        "Немагчыма аўтаматычна ўключыць доступ адміністратара для ${ n } карыстальнікаў, бо іх ключы шыфравання ў гэты час былі абноўлены:",
+        "Немагчыма аўтаматычна ўключыць доступ адміністратара для ${ n } карыстальнікаў, бо іх ключы шыфравання ў гэты час былі абноўлены:",
+        "Немагчыма аўтаматычна ўключыць доступ адміністратара для ${ n } карыстальнікаў, бо іх ключы шыфравання ў гэты час былі абноўлены:"
+      ],
+      "Could not enable administrator access: ${ error }": [
+        "Немагчыма ўключыць доступ для адміністратара: ${ error }"
       ],
       "Delete request": [
         "Выдаліць запыт"
       ],
       "Delete request to access user data?": [
         "Выдаліць запыт на доступ да даных карыстальніка?"
+      ],
+      "Enable manually": [
+        "Уключыць уручную"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Як толькі карыстальнік пагадзіцца, вы зможаце дапамагчы яму аднавіць доступ да ўліковага запісу або кіраваць яго данымі."

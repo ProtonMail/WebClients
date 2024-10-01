@@ -2119,6 +2119,14 @@
         "${ domainName } 도메인을 삭제할 경우 도메인과 관련된 모든 주소도 비활성화됩니다."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "이 그룹을 정말 삭제하시겠어요?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "그룹 ${ displayGroupName } (${ displayGroupAddressEmail } 주소)을(를) 삭제하면 해당 주소로 이메일 수신이 더 이상 불가능해집니다."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "기한이 지난 청구서"
@@ -2620,6 +2628,11 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "사용자의 계정 및 조직에 연체된 요금이 존재합니다. 연체된 요금을 지불해 주세요."
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "이메일 주소 입력"
       ]
     },
     "Error importing users": {
@@ -3527,9 +3540,6 @@
       "Are you sure you want to cancel editing the group?": [
         "편집 중인 그룹을 정말 삭제하시겠어요?"
       ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "이 그룹을 정말 삭제하시겠어요? 그룹 주소를 더 이상 사용할 수 없습니다."
-      ],
       "Are you sure you want to discard your changes?": [
         "사용자의 변경사항을 취소하시겠습니까?"
       ],
@@ -3544,6 +3554,9 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "이 도메인 ${ boldDomain }을(를) 정말 제거하시겠습니까?"
+      ],
+      "Ask your organization admin to setup Gateways.": [
+        "게이트웨이를 설정하려면 조직 관리자에 문의하십시오."
       ],
       "Attention required": [
         "주의 필요"
@@ -4382,6 +4395,9 @@
       "SCIM token active": [
         "SCIM 토큰 활성화"
       ],
+      "Search by an email address to begin": [
+        "시작하려면 이메일 주소로 검색하기"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 계정 보호하기"
       ],
@@ -4522,6 +4538,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "CSV 파일의 포맷이 올바르지 않습니다."
+      ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "그룹 기능은 현재 구독에서 지원하지 않습니다. 최근에 생성된 그룹이 비활성화되었으며 삭제로만 제한됩니다."
       ],
       "The name will be visible to your users while they are signed in.": [
         "유저들이 로그인하고 있을 경우 그들에게 이름이 보여집니다."
@@ -5529,6 +5548,9 @@
       ],
       "Reveal password": [
         "비밀번호 표시"
+      ],
+      "Search by email": [
+        "이메일로 검색"
       ],
       "Second password": [
         "2단계 비밀번호"
@@ -7124,6 +7146,29 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "다른 사용자가 웹 앱에 로그인했을 때 사용자의 ${ BRAND_NAME } 아이콘 대신 로고를 보게 됩니다."
+      ]
+    },
+    "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "조직 신원을 설정하려면 사용자의 이메일 주소 ${ email }를 ${ verify }하십시오."
+      ],
+      "Current organization identity": [
+        "현재 조직 신원"
+      ],
+      "Edit organization identity": [
+        "조직 신원 편집하기"
+      ],
+      "New organization identity": [
+        "새로운 조직 신원"
+      ],
+      "Organization identity": [
+        "조직 신원"
+      ],
+      "Organization identity updated": [
+        "조직 신원 업데이트됨"
+      ],
+      "Verify": [
+        "인증"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -10019,6 +10064,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "기프트 코드를 구매하셨거나 서포트 팀에서 받으셨다면, 여기에 입력하실 수 있습니다."
       ],
+      "IP address (Internet Service Provider)": [
+        "IP 주소 (인터넷 서비스 제공자)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "2단계 인증을 사용하지 않는 회원들은 가능한 한 빨리 활성화하라는 메일을 받게 됩니다."
       ],
@@ -10093,17 +10141,32 @@
       ]
     },
     "unprivatization": {
+      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
+        "${ n }명 사용자가 신원 제공자를 통해 조직에 참가했습니다. 해당 계정을 수락 및 거절하십시오:"
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "관리자가 비공개 사용자의 데이터 접근이 불가하며 비밀번호 또한 재설정이 불가합니다."
       ],
+      "Approve all": [
+        "모두 승인"
+      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "사용자를 비공개로 전환하면 해당 사용자가 데이터나 계정을 손실하면 지원할 수 없게 됩니다."
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "${ n }명 사용자에 대한 관리자 접근 자동 활성화가 불가능합니다. 해당 사용자들의 암호화 키가 다음 도중에 업데이트되었습니다:"
+      ],
+      "Could not enable administrator access: ${ error }": [
+        "조직 접근 활성화 불가 : ${ error }"
       ],
       "Delete request": [
         "삭제 요청"
       ],
       "Delete request to access user data?": [
         "사용자 데이터 접근 요청을 삭제합니까?"
+      ],
+      "Enable manually": [
+        "수동 활성화"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "사용자가 동의하면, 해당 사용자가 계정 접근 권한을 되찾거나 데이터를 관리할 수 있도록 도울 수 있습니다."

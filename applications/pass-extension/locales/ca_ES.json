@@ -182,6 +182,9 @@
       "Disable autosave on this website": [
         "Desactiva el desament automàtic en aquest lloc web"
       ],
+      "Disable instead": [
+        "Desactiva en lloc"
+      ],
       "Discard": [
         "Descarta"
       ],
@@ -367,6 +370,9 @@
       ],
       "Pin item": [
         "Ancora l'element"
+      ],
+      "Please retry": [
+        "Reintenta"
       ],
       "Refresh the page": [
         "Refresca la pàgina"
@@ -1105,6 +1111,9 @@
       "Auto-lock successfully disabled.": [
         "El bloqueig automàtic s'ha desactivat correctament."
       ],
+      "Autosaved on ${ url }": [
+        "S'ha desat automàticament en ${ url }"
+      ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Abans d'exportar les vostres dades en aquest format, obreu i desactiveu l'opció següent: Paràmetres de Safari -> General -> Obrir els fitxers segurs després de la descàrrega. Això evitarà que Safari extraguí el fitxer exportat de manera incorrecta."
       ],
@@ -1544,6 +1553,9 @@
       "Session timed out": [
         "S'ha esgotat el temps de sessió"
       ],
+      "Set by your organization": [
+        "Configurat per la vostra organització"
+      ],
       "Settings successfully updated": [
         "S'han actualitzat les preferències"
       ],
@@ -1743,6 +1755,10 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } àlies",
+        "${ aliasCount } àlies"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } caràcter",
         "${ config.options.length } caràcters"
@@ -1834,6 +1850,9 @@
       ],
       "Alias address": [
         "Adreça d'àlies"
+      ],
+      "Alias management": [
+        "Gestió dels àlies"
       ],
       "Aliases": [
         "Àlies"
@@ -1942,6 +1961,9 @@
       ],
       "Created at": [
         "Creat a"
+      ],
+      "Custom hidden field": [
+        "Camp amagat personalitzat"
       ],
       "Custom text field": [
         "Camp de text personalitzat"
@@ -2370,6 +2392,9 @@
       "Type": [
         "Tipus"
       ],
+      "Unknown": [
+        "Desconegut"
+      ],
       "Unlock ${ PASS_APP_NAME }": [
         "Desbloqueja ${ PASS_APP_NAME }"
       ],
@@ -2576,6 +2601,9 @@
       ]
     },
     "Title": {
+      "${ PASS_APP_NAME } Settings": [
+        "Preferències de ${ PASS_APP_NAME }"
+      ],
       "Auto-lock update": [
         "Actualització del bloqueig automàtic"
       ],

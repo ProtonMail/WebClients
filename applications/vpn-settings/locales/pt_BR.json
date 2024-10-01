@@ -2128,6 +2128,14 @@
         "Observe que se você excluir este domínio ${ domainName }, todos os endereços associados serão desativados."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Você tem certeza de que deseja excluir esse grupo?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Observe que se você excluir o grupo ${ displayGroupName } (com o endereço ${ displayGroupAddressEmail }), você não poderá mais receber e-mails usando esse endereço."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Fatura vencida"
@@ -2629,6 +2637,11 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Sua conta ou organização tem uma fatura vencida. Pague todas as faturas pendentes."
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "Insira um endereço de e-mail"
       ]
     },
     "Error importing users": {
@@ -3569,9 +3582,6 @@
       "Are you sure you want to cancel editing the group?": [
         "Tem certeza de que deseja cancelar a edição do grupo?"
       ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "Você tem certeza que quer excluir o grupo? O endereço do grupo não funcionará mais."
-      ],
       "Are you sure you want to discard your changes?": [
         "Você tem certeza que deseja descartar suas alterações?"
       ],
@@ -3586,6 +3596,9 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Você tem certeza que deseja remover o domínio ${ boldDomain }?"
+      ],
+      "Ask your organization admin to setup Gateways.": [
+        "Peça ao administrador de sua organização para configurar os 'Gateways'."
       ],
       "Attention required": [
         "Atenção necessária"
@@ -4430,6 +4443,9 @@
       "SCIM token active": [
         "Token SCIM ativo"
       ],
+      "Search by an email address to begin": [
+        "Para começar, pesquise um endereço de e-mail"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Proteja sua conta da ${ BRAND_NAME }."
       ],
@@ -4574,6 +4590,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "O formato de seu arquivo CSV é incorreto."
+      ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "O recurso de grupos não é compatível com sua assinatura atual. Os grupos criados previamente estão desativados e só podem ser excluídos."
       ],
       "The name will be visible to your users while they are signed in.": [
         "O nome será visível aos seus usuários enquanto eles estiverem conectados."
@@ -5591,6 +5610,9 @@
       ],
       "Reveal password": [
         "Mostrar senha"
+      ],
+      "Search by email": [
+        "Pesquisa por e-mail"
       ],
       "Second password": [
         "Segunda senha"
@@ -7205,6 +7227,29 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Os usuários verão o seu logotipo em vez do ícone da ${ BRAND_NAME } quando conectados nos nossos aplicativos web."
+      ]
+    },
+    "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify } seu endereço de e-mail ${ email } para definir a identidade da organização."
+      ],
+      "Current organization identity": [
+        "Identidade da organização vigente"
+      ],
+      "Edit organization identity": [
+        "Editar a identidade da organização"
+      ],
+      "New organization identity": [
+        "Nova identidade da organização"
+      ],
+      "Organization identity": [
+        "Identidade da organização"
+      ],
+      "Organization identity updated": [
+        "Identidade da organização atualizada"
+      ],
+      "Verify": [
+        "Verificar"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -10156,6 +10201,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se você comprou um código de vale-presente ou recebeu um da nossa equipe de suporte, você pode inserir o código aqui."
       ],
+      "IP address (Internet Service Provider)": [
+        "Endereço IP (provedor de serviços de Internet)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Os membros que não usam A2F receberão um e-mail pedindo que eles ativem o mais rápido possível."
       ],
@@ -10230,17 +10278,34 @@
       ]
     },
     "unprivatization": {
+      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
+        "${ n } usuário entrou na sua organização por meio do seu provedor de identidade. Aprove ou rejeite a conta dele:",
+        "${ n } usuários entraram na sua organização por meio do seu provedor de identidade. Aprove ou rejeite as contas deles:"
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Os administradores não podem acessar os dados de usuários privados e não podem redefinir suas senhas."
       ],
+      "Approve all": [
+        "Aprovar todos"
+      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Ao tornar o usuário privado, você não poderá ajudá-lo a recuperar o acesso aos seus dados ou conta."
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Não foi possível habilitar automaticamente o acesso de administrador para ${ n } usuário, porque as chaves de criptografia dele foram atualizadas nesse meio tempo:",
+        "Não foi possível habilitar automaticamente o acesso de administrador para ${ n } usuários, porque as chaves de criptografia deles foram atualizadas nesse meio tempo:"
+      ],
+      "Could not enable administrator access: ${ error }": [
+        "Não foi possível habilitar o acesso de administrador: ${ error }"
       ],
       "Delete request": [
         "Excluir solicitação"
       ],
       "Delete request to access user data?": [
         "Excluir solicitação para acessar dados do usuário?"
+      ],
+      "Enable manually": [
+        "Ativar manualmente"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Após o consentimento do usuário, você poderá ajudá-lo a recuperar o acesso à conta ou gerenciar seus dados."

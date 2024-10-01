@@ -70,10 +70,10 @@
       "Accept": [
         "接受"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -402,6 +402,9 @@
       ],
       "Discard changes": [
         "放棄變更"
+      ],
+      "Domain name": [
+        "網域名稱"
       ],
       "Don't show again": [
         "日後免再顯示"
@@ -733,11 +736,11 @@
       "No, thanks": [
         "不用了，謝謝"
       ],
-      "Ok": [
-        "確定"
-      ],
       "OK": [
         "好"
+      ],
+      "Ok": [
+        "確定"
       ],
       "Open": [
         "開啟"
@@ -880,6 +883,9 @@
       "Resume": [
         "繼續"
       ],
+      "Resume membership": [
+        "接續會員"
+      ],
       "Retry": [
         "重試"
       ],
@@ -897,6 +903,9 @@
       ],
       "Revoke all other sessions": [
         "撤銷所有其它工作階段"
+      ],
+      "Revoke invitation": [
+        "取消邀请"
       ],
       "Revoke this invitation": [
         "撤銷此邀請"
@@ -1432,6 +1441,9 @@
       ],
       "Fast and secure. No logs are kept.": [
         "塊和安全。無紀錄被保存。"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "在${ BRAND_NAME }伺服器運行"
       ],
       "Run on device": [
         "在裝置上執行"
@@ -3497,6 +3509,9 @@
       ]
     },
     "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "確認失去${ PASS_APP_NAME }的特別折扣"
+      ],
       "Remove discount": [
         "移除折扣"
       ]
@@ -3976,6 +3991,11 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "警告"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "取消命名"
       ]
     },
     "eof2023: Deal details": {
@@ -4536,6 +4556,11 @@
       ],
       "Zero keys reactivated": [
         "重新啟動 0 把金鑰"
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "輸入電子郵件地址"
       ]
     },
     "Error importing calendar": {
@@ -5114,6 +5139,9 @@
       ],
       "An error occurred, please try again": [
         "發生錯誤，請再試一次"
+      ],
+      "Family name updated": [
+        "已更新姓氏名稱"
       ],
       "Member updated": [
         "成員已更新"
@@ -6840,6 +6868,9 @@
       ],
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "帶有此標籤${ nameDeleted }的電子郵件不會被刪除，仍可在對應的資料夾中找到。"
+      ],
+      "Enable email notifications": [
+        "啟用電子郵件通知"
       ],
       "Enable single sign-on to keep your organization safe": [
         "開啟單一登入 (SSO) 來保障你的組織安全"
@@ -8757,6 +8788,11 @@
         "AI驅動撰寫功能以創建更好電子郵件，快速地和有效地。"
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "非有效的電子郵件地址"
+      ]
+    },
     "Input label": {
       "Link label (optional)": [
         "連結標籤 (選擇性)"
@@ -8765,6 +8801,11 @@
     "Input placeholder": {
       "Add label": [
         "加入標籤"
+      ]
+    },
+    "invitation status": {
+      "Pending": [
+        "審理"
       ]
     },
     "Invoice state display as badge": {
@@ -9360,6 +9401,9 @@
       "Confirm password": [
         "確認密碼"
       ],
+      "Confirm second password": [
+        "確認第二密碼"
+      ],
       "Contacts": [
         "聯絡人"
       ],
@@ -9648,6 +9692,9 @@
       "Link label (optional)": [
         "連結標籤 (選擇性)"
       ],
+      "Lock app after inactivity": [
+        "於未使用後鎖定應用程式"
+      ],
       "Logo": [
         "標誌"
       ],
@@ -9716,6 +9763,9 @@
       ],
       "New password": [
         "新密碼"
+      ],
+      "New second password": [
+        "新的第二密碼"
       ],
       "No filter": [
         "無篩選器"
@@ -9860,6 +9910,9 @@
       ],
       "Reveal password": [
         "顯示密碼"
+      ],
+      "Search by email": [
+        "透過電子郵件搜尋"
       ],
       "Second password": [
         "第二密碼"
@@ -12267,6 +12320,14 @@
         "至少 128 像素的正方形圖片"
       ]
     },
+    "orgidentity": {
+      "New organization identity": [
+        "新組織機構身分"
+      ],
+      "Verify": [
+        "驗證"
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb（適用於 Debian/Ubuntu）"
@@ -12670,6 +12731,9 @@
       ],
       "MM/YY": [
         "MM/YY"
+      ],
+      "More plans are available in other currencies": [
+        "其他貨幣有更多的方案"
       ],
       "Payment Processing": [
         "付款處理中"
@@ -13208,6 +13272,40 @@
       ],
       "Your recovery phone is set": [
         "你的復原手機已設置"
+      ]
+    },
+    "saml: Action": {
+      "Cancel": [
+        "取消"
+      ]
+    },
+    "saml: Error": {
+      "Something went wrong": [
+        "發生錯誤"
+      ]
+    },
+    "saml: Info": {
+      "Details": [
+        "詳細資訊"
+      ],
+      "Test in progress...": [
+        "測試進行中..."
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "電子郵件"
+      ]
+    },
+    "saml: Title": {
+      "It works!": [
+        "成功了！"
+      ],
+      "Test SAML configuration": [
+        "測試SAML的設置"
+      ],
+      "Testing SAML configuration": [
+        "測試SAML的設置"
       ]
     },
     "scim: Action": {
@@ -14331,6 +14429,9 @@
       "Read the story": [
         "已讀的訊息"
       ],
+      "See your colleagues’ availability": [
+        "瀏覽您的同事時間"
+      ],
       "Stay secure and connected anywhere": [
         "保護安全和連接至任何地方"
       ],
@@ -14357,6 +14458,9 @@
       ],
       "Users won’t be able to send emails": [
         "使用者將無法傳送電子郵件"
+      ],
+      "Users won’t be able to sync files on their devices": [
+        "用戶不能在他們的裝置同步文件"
       ],
       "Version history": [
         "版本歷史紀錄"
@@ -16367,6 +16471,44 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "此版本的 Tor 瀏覽器已不受支援，請更新至最新版本 ${ stableRelease } 。"
+      ]
+    },
+    "unprivatization": {
+      "Administrator access enabled": [
+        "已啟用管理員存取權"
+      ],
+      "Administrator access rejected": [
+        "已拒絕管理員存取權"
+      ],
+      "Approve all": [
+        "批准全部"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Delete request": [
+        "刪除請求"
+      ],
+      "Enable admin access?": [
+        "啟用管理員存取權?"
+      ],
+      "Enable administrator access": [
+        "啟用管理員存取權"
+      ],
+      "Pending admin access": [
+        "審理管理員存取權"
+      ],
+      "Private user": [
+        "私人用戶"
+      ],
+      "reject": [
+        "拒絕"
+      ],
+      "Send request": [
+        "傳送請求"
+      ],
+      "View request": [
+        "檢視請求"
       ]
     },
     "Update font modal": {

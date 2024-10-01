@@ -6110,6 +6110,9 @@
       "Email address": [
         "E-mailadres"
       ],
+      "Email copied to clipboard": [
+        "E-mail gekopieerd naar klembord"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "E-mailhosting is gratis inbegrepen voor 10 eigen domeinnamen. Extra domeinen kunnen toegevoegd worden voor ${ price }."
       ],
@@ -9793,7 +9796,27 @@
         "Selecteer waar ${ BRAND_NAME } toegang toe heeft: uw e-mailberichten en -instellingen bekijken, uw contacten bekijken en downloaden, al uw agenda's bekijken en downloaden die u gebruikt vanuit Google Calendar."
       ]
     },
+    "Onboarding List Placeholder": {
+      "I have moved my logins to ${ BRAND_NAME }": [
+        "Ik heb mijn inloggegevens verplaatst naar ${ BRAND_NAME }"
+      ],
+      "Shopping": [
+        "Winkelen"
+      ],
+      "Social media": [
+        "Social media"
+      ]
+    },
     "Onboarding modal": {
+      "Activate selected": [
+        "Activeer geselecteerde"
+      ],
+      "Advanced encryption": [
+        "Geavanceerde versleuteling"
+      ],
+      "App Store": [
+        "App Store"
+      ],
       "Automatically forward emails": [
         "Berichten automatisch doorsturen"
       ],
@@ -9806,6 +9829,12 @@
       "Congratulations on choosing privacy": [
         "Gefeliciteerd om voor privacy te kiezen"
       ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
+      ],
+      "Download the desktop app": [
+        "Download de desktop-app"
+      ],
       "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
         "Versleuteling zo sterk dat alleen u en de beoogde ontvangers uw e-mails kunnen bekijken. ${ kbLinkEncryption }"
       ],
@@ -9814,6 +9843,15 @@
       ],
       "Forward Gmail messages to your inbox.": [
         "Gmail berichten automatisch doorsturen naar inbox."
+      ],
+      "Get the desktop app": [
+        "Download de desktop-app"
+      ],
+      "Google Play": [
+        "Google Play"
+      ],
+      "Maybe later": [
+        "Misschien later"
       ],
       "Next": [
         "Volgende"
@@ -9826,6 +9864,9 @@
       ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "We stoppen adverteerders en gegevens verzamelaars om een profiel van u te maken. ${ kbLinkPrivacy }"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Welkom bij ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding Proton": {
@@ -10778,6 +10819,11 @@
         "Ondertekenen"
       ]
     },
+    "SmartBanner": {
+      "Private, fast, and organized": [
+        "Privé, snel en georganiseerd"
+      ]
+    },
     "Snooze message": {
       "Snooze Message": [
         "Bericht snoozen"
@@ -11018,6 +11064,9 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "We laden afbeelding nu standaard en blokkeren trackers van afzenders. Dit kan gewijzigd worden via de ${ settingsLink }."
+      ],
+      "You can now collapse the navigation bar.": [
+        "U kunt nu de navigatiebalk inklappen."
       ],
       "You can now schedule your messages to be sent later": [
         "U kunt nu uw berichten plannen om ze later te versturen"

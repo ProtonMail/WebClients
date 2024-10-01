@@ -4298,6 +4298,9 @@
       "Change your password": [
         "Zmień hasło"
       ],
+      "Check for malicious files": [
+        "Sprawdź pod kątem złośliwych plików"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Sprawdzanie kontaktów... (${ progress } z ${ max })"
       ],
@@ -4327,6 +4330,9 @@
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt został przypisany do grupy ${ contactGroupName }"
+      ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Kontakt został usunięty z grupy ${ contactGroupName }"
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Kontynuuj używanie ${ DRIVE_APP_NAME } i odblokuj dysk później"
@@ -5222,6 +5228,9 @@
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Plik mógł zostać usunięty, przeniesiony lub jest niedostępny. Skontaktuj się z właścicielem pliku."
       ],
+      "This folder is empty": [
+        "Folder jest pusty"
+      ],
       "This item already exists in your library": [
         "Ten element już istnieje"
       ],
@@ -5278,6 +5287,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Weryfikacja antyspamowa i nadużyć. Udowodnij, że jesteś człowiekiem."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources.": [
+        "${ DRIVE_APP_NAME } może skanować pliki w sposób chroniący prywatność, aby chronić użytkownika i blokować złośliwe pliki. Jednak nadal najlepiej jest pobierać pliki tylko z zaufanych źródeł."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Aby zaimportować wydarzenia, utwórz kalendarz w ${ CALENDAR_APP_NAME }. W utworzonym kalendarzu pojawią się zaimportowane wydarzenia."
@@ -5554,6 +5566,12 @@
       ],
       "You will lose all unsaved changes.": [
         "Stracisz wszystkie niezapisane zmiany."
+      ],
+      "You will need to save it again from the public link page.": [
+        "Musisz ponownie zapisać z linku.",
+        "Musisz ponownie zapisać z linku",
+        "Musisz ponownie zapisać z linku",
+        "Musisz ponownie zapisać z linku"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "W celu zweryfikowania płatności wkrótce zostaniesz przekierowany na stronę firmy PayPal."
