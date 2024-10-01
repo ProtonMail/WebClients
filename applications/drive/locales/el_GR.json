@@ -4194,6 +4194,9 @@
       "Contact assigned to group ${ contactGroupName }": [
         "Η επαφή προστέθηκε στην ομάδα ${ contactGroupName }"
       ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Η επαφή αφαιρέθηκε από την ομάδα ${ contactGroupName }"
+      ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Συνέχιση χρήσης ${ DRIVE_APP_NAME } και ξεκλείδωμα αρχειοθήκης αργότερα."
       ],
@@ -5075,6 +5078,9 @@
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Αυτό το αρχείο ενδέχεται να έχει διαγραφεί, μετακινηθεί ή να μην είναι διαθέσιμο. Δοκιμάστε να επικοινωνήσετε με τον κάτοχο του αρχείου."
+      ],
+      "This folder is empty": [
+        "Αυτός ο φάκελος είναι κενός"
       ],
       "This item already exists in your library": [
         "Αυτό το στοιχείο υπάρχει ήδη στη βιβλιοθήκη σας"
@@ -7685,7 +7691,7 @@
         "Το στοιχείο δεν προστέθηκε στη μονάδα δίσκου σας"
       ],
       "The item was succefully added to your drive": [
-        "Το στοιχείο προστέθηκε με επιτυχία στη μονάδα δίσκου σας"
+        "Το στοιχείο προστέθηκε με επιτυχία στo Drive σας"
       ],
       "The link to \"${ name }\" failed to be deleted": [
         "Αποτυχία διαγραφής συνδέσμου προς το \"${ name }\""
