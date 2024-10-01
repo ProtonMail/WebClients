@@ -1,0 +1,71 @@
+<svg fill="none" height="128" width="156" xmlns="http://www.w3.org/2000/svg">
+    <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="14.998" x2="59.683" y1="-7.004" y2="81.427">
+        <stop offset="0" stop-color="#a5b3c3" />
+        <stop offset=".035" stop-color="#d5dade" />
+        <stop offset=".228" stop-color="#a5b3c3" />
+        <stop offset="1" stop-color="#8591a8" />
+    </linearGradient>
+    <linearGradient id="b" gradientUnits="userSpaceOnUse" x1="91.912" x2="74.599" y1="60.654" y2="103.035">
+        <stop offset="0" stop-color="#ffd7b3" />
+        <stop offset="1" stop-color="#ffb39b" />
+    </linearGradient>
+    <linearGradient id="c" gradientUnits="userSpaceOnUse" x1="116.754" x2="78.973" y1="1.458" y2="39.238">
+        <stop offset="0" stop-color="#a9b8c6" />
+        <stop offset="1" stop-color="#8793aa" />
+    </linearGradient>
+    <linearGradient id="d" gradientUnits="userSpaceOnUse" x1="126.532" x2="3.878" y1="8.89" y2="115.138">
+        <stop offset="0" stop-color="#d5dade" />
+        <stop offset=".228" stop-color="#a5b3c3" />
+        <stop offset="1" stop-color="#8591a8" />
+    </linearGradient>
+    <linearGradient id="e" gradientUnits="userSpaceOnUse" x1="88.609" x2="18.252" y1="51.303" y2="104.69">
+        <stop offset="0" stop-color="#6d7a92" />
+        <stop offset="1" stop-color="#7e8ba5" />
+    </linearGradient>
+    <linearGradient id="g" gradientUnits="userSpaceOnUse" x1="103.084" x2="103.084" y1="29.908" y2="34.908">
+        <stop offset="0" stop-color="#a8b7c6" />
+        <stop offset="1" stop-color="#6e7c94" />
+    </linearGradient>
+    <linearGradient id="h" gradientUnits="userSpaceOnUse" x1="102.752" x2="91.084" y1="33.625" y2="41.05">
+        <stop offset="0" stop-color="#6e7b94" />
+        <stop offset="1" stop-color="#6e7b94" />
+    </linearGradient>
+    <clipPath id="f">
+        <rect height="8" rx="4" transform="rotate(45 91.084 26.908)" width="24" x="91.084" y="26.908" />
+    </clipPath>
+    <path
+        d="m31.262 16.331-7.071-9.9 4.242-4.242 9.9 7.07.094.66a13 13 0 0 0 3.677 7.355l54.919 54.918-2.829 2.829-54.918-54.919a13 13 0 0 0-7.354-3.677z"
+        fill="url(#a)"
+    />
+    <path
+        d="M90.345 83.253c-2.323-1.29-2.765-4.446-.886-6.325l9.47-9.471c1.88-1.88 5.035-1.437 6.326.886l.416.749c.361.65.811 1.246 1.336 1.771l3.451 3.45 33.941 31.113 2.121 2.122a8 8 0 0 1 0 11.313l-5.657 5.657a7.998 7.998 0 0 1-11.313 0l-2.122-2.121-31.112-33.941-3.45-3.45a8 8 0 0 0-1.772-1.337z"
+        fill="url(#b)"
+    />
+    <path d="m91.366 83.506 14.142-14.142 1.414 1.414L92.78 84.92z" fill="#ffb59d" />
+    <path
+        d="M99.114 85.657A2.041 2.041 0 0 1 102 82.771l31.748 30.479a2.94 2.94 0 1 1-4.156 4.156zM104.77 80a2.041 2.041 0 0 1 2.887-2.886l31.748 30.479a2.94 2.94 0 1 1-4.156 4.156z"
+        fill="#fdad94"
+    />
+    <path
+        clip-rule="evenodd"
+        d="M120.039 4.743C109.991.805 98.126 2.896 90.007 11.015c-10.05 10.05-10.864 25.84-2.439 36.818z"
+        fill="url(#c)"
+        fill-rule="evenodd"
+    />
+    <path
+        clip-rule="evenodd"
+        d="M83.037 13.247c-3.86 6.032-5.179 13.221-3.955 20.043l-.019-.018a10.025 10.025 0 0 1 .143.664 9.973 9.973 0 0 1-2.964 9l-64.083 60.618c-5.57 5.27-5.693 14.098-.27 19.52 5.421 5.423 14.25 5.3 19.52-.271l60.618-64.082a9.973 9.973 0 0 1 9.664-2.822l-.02-.02c8.717 1.564 18.032-1.022 24.768-7.758 10.141-10.142 10.877-26.127 2.208-37.116L111.05 34.356zM26.03 108.932a6 6 0 1 0-8.485 8.486 6 6 0 0 0 8.485-8.486z"
+        fill="url(#d)"
+        fill-rule="evenodd"
+    />
+    <path d="M79.02 48.784a5.062 5.062 0 0 1 7.158 7.158l-48.887 50.11a5.927 5.927 0 1 1-8.38-8.38z" fill="url(#e)" />
+    <g clip-path="url(#f)">
+        <rect fill="url(#g)" height="8" rx="4" transform="rotate(45 91.084 26.908)" width="24" x="91.084" y="26.908" />
+        <path
+            clip-rule="evenodd"
+            d="M96.591 29.68a1 1 0 0 1-.503 1.322l-10.253 4.596a1 1 0 0 1-.819-1.825l10.253-4.596a1 1 0 0 1 1.322.503zm2.829 2.829a1 1 0 0 1-.504 1.321l-10.253 4.597a1 1 0 0 1-.818-1.825l10.253-4.597a1 1 0 0 1 1.321.504zm2.324 4.15a1 1 0 1 0-.818-1.825L90.673 39.43a1 1 0 1 0 .818 1.825zm2.625 2.214a1 1 0 0 1-.503 1.321L93.613 44.79a1 1 0 1 1-.818-1.824l10.253-4.597a1 1 0 0 1 1.321.504zm2.325 4.15a1 1 0 1 0-.818-1.825l-10.253 4.596a1 1 0 0 0 .818 1.825z"
+            fill="url(#h)"
+            fill-rule="evenodd"
+        />
+    </g>
+</svg>
