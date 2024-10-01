@@ -24,11 +24,11 @@ export const AliasSyncModal: FC<Props> = ({ aliasCount, onClose }) => {
     const { loading, dispatch } = useRequest(aliasSyncEnable, {});
 
     const form = useFormik<AliasSyncFormValues>({
+        initialValues: { shareId: defaultVault?.shareId ?? '' },
         onSubmit: ({ shareId }) => {
             dispatch(shareId);
             onClose?.();
         },
-        initialValues: { shareId: defaultVault.shareId },
     });
 
     return (

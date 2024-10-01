@@ -9,7 +9,7 @@ import {
     itemCreationSuccess,
 } from '@proton/pass/store/actions';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { selectAliasLimits, selectMostRecentVault } from '@proton/pass/store/selectors';
+import { selectAliasLimits, selectMostRecentVaultShareID } from '@proton/pass/store/selectors';
 import type { ItemCreateIntent } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -25,8 +25,10 @@ export const createAliasService = () => {
         WorkerMessageType.ALIAS_OPTIONS,
         onContextReady((ctx) => {
             const state = ctx.service.store.getState();
+            const shareId = selectMostRecentVaultShareID(state) ?? '';
+            if (!shareId) throw new Error("Could not resolve user's default vault.");
+
             const { needsUpgrade } = selectAliasLimits(state);
-            const shareId = selectMostRecentVault(state);
 
             return new Promise((resolve) => {
                 ctx.service.store.dispatch(
@@ -50,7 +52,10 @@ export const createAliasService = () => {
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.ALIAS_CREATE,
         onContextReady(async (ctx, message) => {
-            const shareId = selectMostRecentVault(ctx.service.store.getState());
+            const state = ctx.service.store.getState();
+            const shareId = selectMostRecentVaultShareID(state);
+            if (!shareId) throw new Error("Could not resolve user's default vault.");
+
             const { url, alias } = message.payload;
             const { mailboxes, prefix, signedSuffix, aliasEmail } = alias;
             const optimisticId = uniqueId();
