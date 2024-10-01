@@ -85,6 +85,7 @@ export enum UpsellRef {
     SETTING = 'setting',
     PASS_MONITOR = 'pass_monitor',
     PASS_BIOMETRICS = 'pass_biometrics',
+    PASS_FAMILY_PLAN_2024 = 'pass_family_plan_2024',
 }
 
 export const MAX_LOCAL_STORAGE_SIZE = 5 * 1024 * 1024; /* 5MB */
@@ -102,6 +103,7 @@ export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.PassAccountSwitchV1]: true,
     [PassFeature.PassDesktopBiometrics]: false,
     [PassFeature.PassEnableDesktopAutoUpdate]: false,
+    [PassFeature.PassFamilyPlanPromo2024]: false,
     [PassFeature.PassIdentityV1]: true,
     [PassFeature.PassSimpleLoginAliasesSync]: false,
     [PassFeature.PassWebInternalAlpha]: false,
