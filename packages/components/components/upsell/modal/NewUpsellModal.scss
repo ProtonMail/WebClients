@@ -1,0 +1,28 @@
+@use 'sass:map';
+@import '~@proton/styles/scss/lib';
+
+.modal-two--twocolors {
+	--size: #{rem(360)};
+
+	.modal-two-dialog-container {
+		background-color: var(--optional-background-lowered);
+	}
+
+	.modal-two-content-container {
+		background-color: var(--background-norm);
+	}
+
+	.modal-two-header {
+		margin: 0;
+
+		&-actions {
+			margin-block-start: var(--space-3);
+			margin-inline-end: var(--space-3);
+			z-index: map.get($z-indexes, 'up');
+		}
+	}
+
+	.modal-two-illustration-container {
+		inset-block-start: rem(-24);
+	}
+}

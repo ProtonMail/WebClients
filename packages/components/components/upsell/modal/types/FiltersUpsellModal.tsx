@@ -4,9 +4,11 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
+import filterImg from '@proton/styles/assets/img/illustrations/new-upsells-img/arrows-to-folder-trash.svg';
 
 import useOneDollarConfig from '../../useOneDollarPromo';
+import NewUpsellModal from '../NewUpsellModal';
 
 interface Props {
     modalProps: ModalStateProps;
@@ -27,6 +29,23 @@ const FiltersUpsellModal = ({ modalProps, onCloseCustomAction, isSettings = fals
     const oneDollarConfig = useOneDollarConfig();
     const upsellConfig = useUpsellConfig({ upsellRef, ...oneDollarConfig });
 
+    const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
+
+    if (displayNewUpsellModalsVariant) {
+        return (
+            <NewUpsellModal
+                titleModal={c('Title').t`Filter for more focus`}
+                description={c('Description')
+                    .t`Automatically sort your incoming messages before they reach your inbox.`}
+                modalProps={modalProps}
+                illustration={filterImg}
+                onClose={onCloseCustomAction}
+                sourceEvent="BUTTON_CUSTOM_FILTERS"
+                {...upsellConfig}
+            />
+        );
+    }
+
     return (
         <UpsellModal
             title={c('Title').t`Save time with email filters`}
@@ -35,6 +54,7 @@ const FiltersUpsellModal = ({ modalProps, onCloseCustomAction, isSettings = fals
             modalProps={modalProps}
             features={['more-storage', 'more-email-addresses', 'unlimited-folders-and-labels', 'custom-email-domains']}
             onClose={onCloseCustomAction}
+            sourceEvent="BUTTON_CUSTOM_FILTERS"
             {...upsellConfig}
         />
     );

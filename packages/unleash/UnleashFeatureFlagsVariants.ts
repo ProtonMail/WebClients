@@ -5,7 +5,11 @@ import { type FeatureFlag } from './UnleashFeatureFlags';
 /**
  * List of feature flags with a variant.
  */
-export const FLAGS_WITH_VARIANT = ['MailOnboarding'] satisfies FeatureFlag[];
+export const FLAGS_WITH_VARIANT = [
+    'MailOnboarding',
+    'ABTestInboxUpsellOneDollar',
+    'InboxNewUpsellModals',
+] satisfies FeatureFlag[];
 
 /**
  * Flags with variants variants.
@@ -14,6 +18,7 @@ export const FLAGS_WITH_VARIANT = ['MailOnboarding'] satisfies FeatureFlag[];
  * Naming convention: `${FlagName}Variant`
  */
 export type MailOnboardingVariant = 'none' | 'old' | 'new';
+export type InboxNewUpsellModalsVariant = 'old' | 'new';
 
 /**
  * @description Union type of the list of feature flags with a variant.
@@ -33,6 +38,7 @@ type VariantReturnType<TVariantNameValue extends string> = Partial<
  */
 type FeatureFlagVariantMap = {
     MailOnboarding: VariantReturnType<MailOnboardingVariant>;
+    InboxNewUpsellModals: VariantReturnType<InboxNewUpsellModalsVariant>;
 };
 
 /**

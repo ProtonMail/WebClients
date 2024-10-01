@@ -1,0 +1,126 @@
+<svg fill="none" height="128" width="170" xmlns="http://www.w3.org/2000/svg">
+    <filter
+        id="a"
+        color-interpolation-filters="sRGB"
+        filterUnits="userSpaceOnUse"
+        height="11"
+        width="66"
+        x="12"
+        y="105"
+    >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feGaussianBlur result="effect1_foregroundBlur_41699_47478" stdDeviation="2" />
+    </filter>
+    <filter
+        id="c"
+        color-interpolation-filters="sRGB"
+        filterUnits="userSpaceOnUse"
+        height="14"
+        width="41"
+        x="112"
+        y="107"
+    >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feGaussianBlur result="effect1_foregroundBlur_41699_47478" stdDeviation="2" />
+    </filter>
+    <linearGradient id="b" gradientUnits="userSpaceOnUse" x1="118.5" x2="115.542" y1="14.5" y2="57.817">
+        <stop offset="0" stop-color="#ffd7b3" />
+        <stop offset="1" stop-color="#ffb39b" />
+    </linearGradient>
+    <radialGradient
+        id="d"
+        cx="0"
+        cy="0"
+        gradientTransform="matrix(-39.0001 38.96336 -37.3045 -37.33967 154.5 75.439)"
+        gradientUnits="userSpaceOnUse"
+        r="1"
+    >
+        <stop offset="0" stop-color="#faebff" />
+        <stop offset="1" stop-color="#ebaaff" />
+    </radialGradient>
+    <linearGradient id="e" gradientUnits="userSpaceOnUse" x1="135" x2="135.448" y1="70.5" y2="81.732">
+        <stop offset="0" stop-color="#a171fa" />
+        <stop offset="1" stop-color="#ebaaff" />
+    </linearGradient>
+    <linearGradient id="f" gradientUnits="userSpaceOnUse" x1="142.5" x2="141.5" y1="67.5" y2="75.25">
+        <stop offset="0" stop-color="#a171fa" />
+        <stop offset="1" stop-color="#8750ee" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="g" gradientUnits="userSpaceOnUse" x1="169.904" x2="115.904" y1="100.79" y2="115.768">
+        <stop offset="0" stop-color="#f7dbff" />
+        <stop offset="1" stop-color="#e89dff" />
+    </linearGradient>
+    <radialGradient
+        id="h"
+        cx="0"
+        cy="0"
+        gradientTransform="rotate(90 24 121) scale(14.75)"
+        gradientUnits="userSpaceOnUse"
+        r="1"
+    >
+        <stop offset="0" />
+        <stop offset="1" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="i" gradientUnits="userSpaceOnUse" x1="71.262" x2="32.745" y1="67.048" y2="120.206">
+        <stop offset="0" stop-color="#8bd4eb" />
+        <stop offset="1" stop-color="#106cd7" />
+    </linearGradient>
+    <linearGradient id="j" gradientUnits="userSpaceOnUse" x1="81.049" x2="57.942" y1="77.752" y2="127.722">
+        <stop offset="0" stop-color="#bdefff" />
+        <stop offset="1" stop-color="#1fa7f3" />
+    </linearGradient>
+    <g filter="url(#a)"><ellipse cx="45" cy="110.5" fill="#1a4b7b" fill-opacity=".2" rx="29" ry="1.5" /></g>
+    <path
+        clip-rule="evenodd"
+        d="M89.5 10a2 2 0 0 1 2 2v20h33c7.18 0 13 5.82 13 13v4.172l2.086-2.086a2 2 0 1 1 2.828 2.828l-4.793 4.793a3 3 0 0 1-4.242 0l-4.793-4.793a2 2 0 0 1 2.828-2.828l2.086 2.086V45a9 9 0 0 0-9-9h-69a9 9 0 0 0-9 9v4.172l2.086-2.086a2 2 0 1 1 2.828 2.828l-4.793 4.793a3 3 0 0 1-4.242 0l-4.793-4.793a2 2 0 1 1 2.828-2.828l2.086 2.086V45c0-7.18 5.82-13 13-13h32V12a2 2 0 0 1 2-2z"
+        fill="url(#b)"
+        fill-rule="evenodd"
+    />
+    <g filter="url(#c)"><ellipse cx="132.5" cy="114" fill="#9f6cf7" fill-opacity=".2" rx="16.5" ry="3" /></g>
+    <path
+        clip-rule="evenodd"
+        d="M154.5 70.5h-39l5 40.5c0 2.485 6.492 4.5 14.5 4.5s14.5-2.015 14.5-4.5z"
+        fill="url(#d)"
+        fill-rule="evenodd"
+    />
+    <ellipse cx="135" cy="70.5" fill="url(#e)" rx="19.5" ry="3" />
+    <path
+        clip-rule="evenodd"
+        d="M135.069 73.5c1.688-2.386 3.828-4.381 6.283-5.837 7.651.405 13.148 1.522 13.148 2.837 0 1.653-8.693 2.994-19.431 3z"
+        fill="url(#f)"
+        fill-rule="evenodd"
+    />
+    <path
+        d="M153.803 70.295c.153.115.188.185.195.205-.007.02-.042.09-.195.205-.202.152-.533.32-1.006.493-.942.342-2.332.66-4.084.93-3.497.537-8.346.872-13.713.872s-10.216-.335-13.713-.873c-1.752-.27-3.142-.587-4.084-.93-.473-.171-.804-.34-1.006-.492-.153-.115-.188-.185-.195-.205.007-.02.042-.09.195-.205.202-.152.533-.32 1.006-.493.942-.342 2.332-.66 4.084-.93C124.784 68.336 129.633 68 135 68s10.216.335 13.713.873c1.752.27 3.142.587 4.084.93.473.171.804.34 1.006.492z"
+        stroke="#f8e2ff"
+    />
+    <g fill="#ebaaff">
+        <path
+            d="M134.009 82.5a.99.99 0 1 1 1.982 0l-.234 24.75a.758.758 0 0 1-1.514 0zM124.093 81.573a.988.988 0 1 1 1.969-.152l1.634 24.273a.756.756 0 0 1-1.506.116zM143.438 81.921a.988.988 0 1 1 1.969.152l-2.097 24.237a.756.756 0 0 1-1.506-.116z"
+        />
+    </g>
+    <path
+        clip-rule="evenodd"
+        d="M149.846 108.194c-4.303 2.095-9.393 3.306-14.846 3.306s-10.543-1.211-14.846-3.306L120.5 111c0 2.485 6.492 4.5 14.5 4.5s14.5-2.015 14.5-4.5z"
+        fill="url(#g)"
+        fill-rule="evenodd"
+    />
+    <path
+        clip-rule="evenodd"
+        d="M149.846 108.194c-4.303 2.095-9.393 3.306-14.846 3.306s-10.543-1.211-14.846-3.306L120.5 111c0 2.485 6.492 4.5 14.5 4.5s14.5-2.015 14.5-4.5z"
+        fill="url(#h)"
+        fill-opacity=".2"
+        fill-rule="evenodd"
+    />
+    <path
+        d="M19 68.835c0-1.014.822-1.835 1.835-1.835h11.834a3.67 3.67 0 0 1 2.064.635c.609.414 1.173 2.095 1.955 2.73.78.635 1.327.635 2.063.635h30.414C70.179 71 71 71.82 71 72.835v27.598a9.48 9.48 0 0 1-9.48 9.481H21.751C19 110 19 108.681 19 107.161z"
+        fill="url(#i)"
+    />
+    <path
+        d="M27.274 79.765A2.447 2.447 0 0 1 29.624 78H78.54a1.835 1.835 0 0 1 1.76 2.357L72.02 108.25a2.447 2.447 0 0 1-2.346 1.75h-48.73a1.835 1.835 0 0 1-1.763-2.346z"
+        fill="url(#j)"
+    />
+    <path d="M20.201 104.231h53.192l-.417 1.443H19.792z" fill="#fff" fill-opacity=".1" />
+</svg>

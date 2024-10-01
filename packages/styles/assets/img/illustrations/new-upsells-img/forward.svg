@@ -1,0 +1,73 @@
+<svg fill="none" height="128" width="192" xmlns="http://www.w3.org/2000/svg">
+    <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="55" x2="5.652" y1="2" y2="56.406">
+        <stop offset="0" stop-color="#bdefff" />
+        <stop offset="1" stop-color="#1fa7f3" />
+    </linearGradient>
+    <linearGradient id="b" gradientUnits="userSpaceOnUse" x1="124" x2="127.201" y1="82.325" y2="128.334">
+        <stop offset="0" stop-color="#95407d" />
+        <stop offset="1" stop-color="#ffa24d" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="c" gradientUnits="userSpaceOnUse" x1="159.994" x2="142.294" y1="30.753" y2="91.457">
+        <stop offset="0" stop-color="#ffd7b3" />
+        <stop offset="1" stop-color="#ec8872" />
+    </linearGradient>
+    <linearGradient id="d" gradientUnits="userSpaceOnUse" x1="124" x2="84" y1="48.5" y2="73.5">
+        <stop offset="0" stop-color="#4b2323" />
+        <stop offset="1" stop-color="#8a1c1c" />
+    </linearGradient>
+    <linearGradient id="e" gradientUnits="userSpaceOnUse" x1="82.802" x2="82.802" y1="53.94" y2="79.922">
+        <stop offset="0" stop-color="#c1cdf8" />
+        <stop offset="1" stop-color="#e7ecfa" />
+    </linearGradient>
+    <linearGradient id="f" gradientUnits="userSpaceOnUse" x1="82.802" x2="82.802" y1="45.671" y2="68.505">
+        <stop offset="0" stop-color="#dedef7" />
+        <stop offset="1" stop-color="#fff" />
+    </linearGradient>
+    <linearGradient id="g" gradientUnits="userSpaceOnUse" x1="163.358" x2="135.054" y1="3.854" y2="66.123">
+        <stop offset="0" stop-color="#fa8d7e" />
+        <stop offset="1" stop-color="#e02626" />
+    </linearGradient>
+    <linearGradient id="h" gradientUnits="userSpaceOnUse" x1="112.064" x2="104.021" y1="86.15" y2="115.2">
+        <stop offset="0" stop-color="#ffb39b" />
+        <stop offset="1" stop-color="#ffd7b3" />
+    </linearGradient>
+    <path d="M3 28C3 13.64 14.64 2 29 2s26 11.64 26 26v26H29C14.64 54 3 42.36 3 28z" fill="url(#a)" />
+    <path
+        clip-rule="evenodd"
+        d="M30.626 14.084a1 1 0 0 1 1.079.18l11.972 11a1 1 0 0 1 0 1.472l-11.972 11A1 1 0 0 1 30.028 37v-6.04c-2.146.022-7.728.69-12.134 6.596a1.025 1.025 0 0 1-1.516.138 1.016 1.016 0 0 1-.317-.648c-.032-.346-.18-2.218.146-4.51.324-2.274 1.132-5.097 3.117-7.22 1.79-1.912 4.247-2.958 6.378-3.54 1.75-.477 3.35-.66 4.326-.731V15a1 1 0 0 1 .598-.916zm1.402 3.193V21.6c0 .763-.603 1.378-1.352 1.41-.739.032-2.498.163-4.447.695-1.963.536-4.015 1.45-5.444 2.978-1.58 1.689-2.3 4.037-2.598 6.135a18.791 18.791 0 0 0-.15 1.488c5.164-5.317 11.107-5.413 12.69-5.332.769.04 1.301.68 1.301 1.38v4.37L41.522 26z"
+        fill="#fff"
+        fill-rule="evenodd"
+    />
+    <path d="m140 86-16 .525V128h16z" fill="url(#b)" />
+    <path
+        d="M183.522 86.846H82.916A2.914 2.914 0 0 1 80 83.93V55.479C80 42.496 90.527 32 103.479 32h56.503c12.982 0 23.479 10.527 23.479 23.479v31.305c0 .034.027.061.061.061z"
+        fill="url(#c)"
+    />
+    <path
+        d="M124.473 86.619h-40.85V55.191c0-11.264 9.146-20.41 20.41-20.41s20.41 9.146 20.41 20.41v31.428z"
+        fill="url(#d)"
+    />
+    <path
+        d="M104.823 87.008H60.799C59.246 87.008 58 85.73 58 84.18V56.768c0-1.55 1.265-2.829 2.8-2.829h44.004c1.553 0 2.799 1.279 2.799 2.829V84.18a2.789 2.789 0 0 1-2.78 2.828z"
+        fill="url(#e)"
+    />
+    <path
+        d="M80.992 72.98a2.842 2.842 0 0 0 3.601 0l22.224-18.298a2.832 2.832 0 0 0-1.907-.743H60.695c-.732 0-1.406.285-1.907.743z"
+        fill="url(#f)"
+    />
+    <path
+        clip-rule="evenodd"
+        d="M144.3 21.18h17.557c.982 0 1.78-.798 1.78-1.78v-8.62c0-.982-.798-1.78-1.78-1.78h-22.159c-.982 0-1.78.798-1.78 1.78v5.715h-.002v43.759a3.21 3.21 0 0 0 3.192 3.192 3.19 3.19 0 0 0 3.192-3.192z"
+        fill="url(#g)"
+        fill-rule="evenodd"
+    />
+    <path
+        d="M124.474 86.62h-3.959v1.78H83.624l-10.16 7.304s-2.608 1.903-3.375 4.573l-.215-.246v1.719c0 1.32.552 2.793 2.056 4.235 4.788 4.052 22.252 5.279 35.173-4.45 12.89-9.729 17.371-13.166 17.371-13.166z"
+        fill="#fbab7e"
+    />
+    <path
+        d="m83.623 86.62-10.159 7.304s-6.936 5.094-1.534 10.312c4.788 4.051 22.251 5.279 35.172-4.45 12.921-9.73 17.371-13.167 17.371-13.167z"
+        fill="url(#h)"
+    />
+    <path d="M141.108 61.85a1.504 1.504 0 1 0 0-3.008 1.504 1.504 0 0 0 0 3.008z" fill="#fff" />
+</svg>

@@ -28,6 +28,7 @@ const IncreasePrivacyUpsellModal = ({ modalProps, upsellComponent }: Props) => {
             modalProps={modalProps}
             upgradePath={addUpsellPath(getUpgradePath({ user }), upsellRef)}
             features={['more-storage', 'more-email-addresses', 'unlimited-folders-and-labels', 'custom-email-domains']}
+            sourceEvent="BUTTON_MORE_ADDRESSES"
         />
     );
 };

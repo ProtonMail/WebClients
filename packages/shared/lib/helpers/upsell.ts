@@ -1,7 +1,58 @@
 import type { APP_NAMES, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { APPS, APP_UPSELL_REF_PATH, PLANS } from '@proton/shared/lib/constants';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
-import type { Audience, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { Api, Audience, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import useVariant from '@proton/unleash/useVariant';
+
+import { TelemetryMeasurementGroups, TelemetryUpsellModalsEvents } from '../api/telemetry';
+import { sendTelemetryReport } from './metrics';
+
+export const useNewUpsellModalVariant = () => {
+    const InboxNewUpsellModalsVariant = useVariant('InboxNewUpsellModals');
+
+    if (InboxNewUpsellModalsVariant?.payload?.value === 'old') {
+        return false;
+    }
+
+    return true;
+};
+
+export const enum UPSELL_MODALS {
+    CLICK = 'CLICK',
+}
+
+export const enum UPSELL_MODALS_TYPE {
+    OLD = 'OLD-MODALS',
+    NEW = 'NEW-MODALS',
+}
+
+export type SourceEventUpsell = 'BUTTON_SCHEDULE_SEND' | 'BUTTON_CONTACT_GROUPS' | 'BUTTON_CONTACT_GROUPS' | 'BUTTON_SHORT_DOMAIN' | 'BUTTON_AUTO_DELETE' | 'BUTTON_MORE_LABELS_FOLDERS'| 'BUTTON_MORE_ADDRESSES'| 'BUTTON_CUSTOM_FILTERS'| 'BUTTON_MAIL_FOOTER' |  'BUTTON_SNOOZE' | 'BUTTON_FORWARD_EMAILS' | 'BUTTON_PASS_ALIASES' |  'BUTTON_COLOR_PER_EVENT' | 'BUTTON_SENTINEL' | 'BUTTON_SCRIBE';
+
+export const sendRequestUpsellModalReport = ({
+    api,
+    action = UPSELL_MODALS.CLICK,
+    application,
+    sourceEvent,
+    upsellModalType,
+}: {
+    api: Api;
+    action?: UPSELL_MODALS;
+    application: APP_NAMES;
+    sourceEvent: SourceEventUpsell;
+    upsellModalType: UPSELL_MODALS_TYPE;
+}) => {
+    void sendTelemetryReport({
+        api,
+        measurementGroup: TelemetryMeasurementGroups.upsellModals,
+        event: TelemetryUpsellModalsEvents.clickUpsellModals,
+        dimensions: {
+            action,
+            application,
+            sourceEvent,
+            upsellModalType,
+        },
+    });
+};
 
 /**
  * Add an upsell ref param to a URL

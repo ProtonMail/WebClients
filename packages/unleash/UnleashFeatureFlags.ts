@@ -27,6 +27,7 @@ enum CommonFeatureFlag {
     SentinelRecoverySettings = 'SentinelRecoverySettings',
     InboxDesktopWinLinNewAppSwitcher = 'InboxDesktopWinLinNewAppSwitcher',
     DarkWebEmailNotifications = 'DarkWebEmailNotifications',
+    InboxNewUpsellModals = 'InboxNewUpsellModals',
 }
 
 enum AccountFlag {

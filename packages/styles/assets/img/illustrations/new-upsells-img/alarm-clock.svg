@@ -1,0 +1,65 @@
+<svg fill="none" height="128" width="128" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <filter
+        id="b"
+        color-interpolation-filters="sRGB"
+        filterUnits="userSpaceOnUse"
+        height="12"
+        width="118"
+        x="5"
+        y="116"
+    >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feGaussianBlur result="effect1_foregroundBlur_41699_47530" stdDeviation="2" />
+    </filter>
+    <linearGradient id="a">
+        <stop offset="0" stop-color="#fcebdc" />
+        <stop offset="1" stop-color="#ffb39b" />
+    </linearGradient>
+    <linearGradient id="c" gradientUnits="userSpaceOnUse" x1="103" x2="32.5" xlink:href="#a" y1="2" y2="99.5" />
+    <linearGradient id="d" gradientUnits="userSpaceOnUse" x1="64" x2="64" y1="21" y2="94.02">
+        <stop offset="0" stop-color="#4b2323" />
+        <stop offset="1" stop-color="#8a1c1c" />
+    </linearGradient>
+    <linearGradient id="e" gradientUnits="userSpaceOnUse" x1="93.484" x2="32.484" y1="30" y2="96">
+        <stop offset="0" stop-color="#ec7454" />
+        <stop offset="1" stop-color="#fff" />
+    </linearGradient>
+    <linearGradient
+        id="f"
+        gradientUnits="userSpaceOnUse"
+        x1="125.903"
+        x2="109.504"
+        xlink:href="#a"
+        y1="15.592"
+        y2="25.226"
+    />
+    <linearGradient
+        id="g"
+        gradientUnits="userSpaceOnUse"
+        x1="26.223"
+        x2="27.165"
+        xlink:href="#a"
+        y1="4.267"
+        y2="28.07"
+    />
+    <g filter="url(#b)"><ellipse cx="64" cy="122" fill="#873f2c" fill-opacity=".15" rx="55" ry="2" /></g>
+    <path d="M64 11V5m0 0h-4m4 0h4" stroke="#ed795a" stroke-linecap="round" stroke-width="4" />
+    <path
+        d="M108.5 22.5 64 67m0 0L19.5 22.5M64 67l50 50M64 67l-50 50"
+        stroke="#ed795a"
+        stroke-linecap="round"
+        stroke-width="6"
+    />
+    <rect fill="url(#c)" height="112" rx="56" width="112" x="8" y="9" />
+    <path
+        d="M106 65c0 12.045-5.068 22.903-13.193 30.564C85.285 102.656 75.152 107 64 107c-11.151 0-21.283-4.343-28.805-11.434C27.07 87.905 22 77.046 22 65c0-11.146 4.339-21.273 11.423-28.794C41.085 28.073 51.948 23 64 23c12.052 0 22.916 5.074 30.577 13.207C101.662 43.727 106 53.855 106 65z"
+        fill="url(#d)"
+        stroke="url(#e)"
+        stroke-linecap="round"
+        stroke-width="4"
+    />
+    <path d="M64 42v24.759L73.5 78.5" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" />
+    <path d="M94.811 10.728c7.03-7.03 18.427-7.03 25.456 0s7.029 18.426 0 25.456z" fill="url(#f)" />
+    <path d="M7.728 36.728c-7.03-7.03-7.03-18.427 0-25.456 7.03-7.03 18.426-7.03 25.456 0z" fill="url(#g)" />
+</svg>

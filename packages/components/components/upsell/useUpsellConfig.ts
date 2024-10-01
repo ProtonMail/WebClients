@@ -23,6 +23,7 @@ interface Props {
     onSubscribed?: () => void;
     submitText?: ReactNode;
     title?: ReactNode;
+    footerText?: ReactNode;
 }
 
 // Return config properties to inject in the subscription modal
@@ -33,6 +34,7 @@ const useUpsellConfig = ({
     cycle,
     planIDs,
     submitText,
+    footerText,
     title,
     onSubscribed,
 }: Props): Partial<UpsellModalProps> & Required<Pick<UpsellModalProps, 'upgradePath'>> => {
@@ -61,6 +63,7 @@ const useUpsellConfig = ({
             // We are spreading the returned object on UpsellModal which could erase props set manually on it
             ...(title && { title }),
             ...(submitText && { submitText }),
+            ...(footerText && { footerText }),
             onUpgrade() {
                 // Generate a mocked request to track upsell activity
                 const urlParameters = { ref: upsellRef, load: 'modalOpen' };

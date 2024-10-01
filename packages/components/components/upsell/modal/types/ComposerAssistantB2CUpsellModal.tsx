@@ -64,6 +64,7 @@ const ComposerAssistantB2CUpsellModal = ({ modalProps }: Props) => {
             hideFeaturesListBorder={true}
             footerText={c('Description').jt`Starting from ${price}`}
             iconSize={4}
+            sourceEvent="BUTTON_SCRIBE"
             {...upsellConfig}
         />
     );

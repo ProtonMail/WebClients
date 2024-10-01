@@ -1,0 +1,54 @@
+<svg fill="none" height="129" width="129" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <filter
+        id="b"
+        color-interpolation-filters="sRGB"
+        filterUnits="userSpaceOnUse"
+        height="20"
+        width="66"
+        x="15"
+        y="100"
+    >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feGaussianBlur result="effect1_foregroundBlur_41699_47358" stdDeviation="4" />
+    </filter>
+    <linearGradient id="a">
+        <stop offset="0" stop-color="#bdefff" />
+        <stop offset="1" stop-color="#1fa7f3" />
+    </linearGradient>
+    <linearGradient id="c" gradientUnits="userSpaceOnUse" x1="101.5" x2="68.241" xlink:href="#a" y1="45" y2="146.563" />
+    <linearGradient id="d" gradientUnits="userSpaceOnUse" x1="50" x2="101.556" xlink:href="#a" y1="-29.5" y2="-20.13" />
+    <linearGradient
+        id="e"
+        gradientUnits="userSpaceOnUse"
+        x1="49.999"
+        x2="-90.025"
+        xlink:href="#a"
+        y1="2.5"
+        y2="47.964"
+    />
+    <linearGradient id="f" gradientUnits="userSpaceOnUse" x1="37" x2="-2.383" xlink:href="#a" y1="34.5" y2="33.075" />
+    <linearGradient id="g" gradientUnits="userSpaceOnUse" x1="116" x2="76.25" y1="72.25" y2="126.5">
+        <stop offset="0" stop-color="#ffd7b3" />
+        <stop offset="1" stop-color="#ffb39b" />
+    </linearGradient>
+    <linearGradient id="h" gradientUnits="userSpaceOnUse" x1="101.008" x2="101.008" y1="79.5" y2="116.01">
+        <stop offset="0" stop-color="#4b2323" />
+        <stop offset="1" stop-color="#8a1c1c" />
+    </linearGradient>
+    <linearGradient id="i" gradientUnits="userSpaceOnUse" x1="115.75" x2="85.25" y1="84" y2="117">
+        <stop offset="0" stop-color="#ec7454" />
+        <stop offset="1" stop-color="#fff" />
+    </linearGradient>
+    <g filter="url(#b)"><ellipse cx="48" cy="110" fill="#1a4b7b" fill-opacity=".2" rx="25" ry="2" /></g>
+    <path d="M49.999 2.5 63 87h33z" fill="url(#c)" />
+    <path d="M50 102.5V2.75L63 87z" fill="url(#d)" />
+    <path d="M49.999 2.5 37 87H2z" fill="url(#e)" />
+    <path d="M49.998 102.5V2.5L37 87z" fill="url(#f)" />
+    <rect fill="url(#g)" height="55" rx="12" width="55" x="73.5" y="73.5" />
+    <circle cx="101.008" cy="101.5" fill="#0095d5" r="22" />
+    <g stroke-width="2">
+        <circle cx="101.008" cy="101.5" fill="url(#h)" r="21" stroke="url(#i)" />
+        <path d="M101 88.5v13.879l6.25 7.371" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" />
+    </g>
+</svg>
