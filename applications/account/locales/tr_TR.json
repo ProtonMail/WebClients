@@ -70,11 +70,11 @@
       "Accept": [
         "Kabul et"
       ],
-      "Activate": [
-        "Kullanıma al"
-      ],
       "activate": [
         "kullanıma al"
+      ],
+      "Activate": [
+        "Kullanıma al"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me adresini kullanıma al"
@@ -512,7 +512,7 @@
         "Dışa aktar"
       ],
       "Export key": [
-        "Anahtarı dışa aktar"
+        "Anahtarı indir"
       ],
       "Export key before deleting": [
         "Anahtar silinmeden önce dışa aktarılsın"
@@ -742,10 +742,10 @@
       "No, thanks": [
         "Hayır, teşekkürler"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
       "Open": [
@@ -938,7 +938,7 @@
         "Ülke ara"
       ],
       "Search settings": [
-        "Arama ayarları"
+        "Ayar arayın"
       ],
       "See DNS TXT record": [
         "DNS TXT kaydını görüntüle"
@@ -1333,7 +1333,7 @@
         "Kullanımdan kaldır"
       ],
       "Disable E2EE mail": [
-        "E2EE e-postasını kapat"
+        "E2EE e-postayı kapat"
       ],
       "Disallow unsigned mail": [
         "İmzasız e-posta kullanma"
@@ -1348,7 +1348,7 @@
         "Kullanıma al"
       ],
       "Enable E2EE mail": [
-        "E2EE e-postasını aç"
+        "E2EE e-postayı aç"
       ],
       "Generate missing keys": [
         "Eksik anahtarları oluştur"
@@ -1380,7 +1380,7 @@
         "Kapalı"
       ],
       "No E2EE mail": [
-        "E2EE e-postası yok"
+        "E2EE e-posta yok"
       ],
       "Orphan": [
         "Sahipsiz"
@@ -3371,6 +3371,14 @@
         "${ domainName } etki alanını silerseniz, ilişkili tüm adreslerin kullanımdan kaldırılacağını lütfen unutmayın."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Bu grubu silmek istediğinize emin misiniz?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "${ displayGroupName } grubunu (adresi ${ displayGroupAddressEmail } olan) silerseniz, artık bu adresi kullanarak e-posta alamayacağınızı unutmayın."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Süresi geçmiş fatura"
@@ -4719,6 +4727,11 @@
       ],
       "Zero keys reactivated": [
         "Hiç bir anahtar yeniden kullanıma alınmadı"
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "Bir e-posta adresi yazın"
       ]
     },
     "Error importing calendar": {
@@ -6804,9 +6817,6 @@
       "Are you sure you want to delete this folder?": [
         "Bu dosyayı silmek istediğinize emin misiniz?"
       ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "Bu grubu silmek istediğinize emin misiniz? Artık grup adresi kullanılamayacak."
-      ],
       "Are you sure you want to delete this label?": [
         "Bu etiketi silmek istediğinize emin misiniz?"
       ],
@@ -6830,6 +6840,9 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "${ boldDomain } etki alanını kaldırmak istediğinize emin misiniz?"
+      ],
+      "Ask your organization admin to setup Gateways.": [
+        "Kuruluş yöneticinizden ağ geçitlerini kurmasını isteyin."
       ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
@@ -7186,6 +7199,9 @@
       ],
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Bu ${ nameDeleted } etiketi ile işaretlenmiş e-postalar silinmeyecek ve hala ilgili klasörde bulunabilecek."
+      ],
+      "Enable email notifications": [
+        "E-posta bildirimlerini aç"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Kuruluşunuzu güvende tutmak için tek oturum açmayı etkinleştirin"
@@ -8146,6 +8162,9 @@
       "SCIM token active": [
         "SCIM kodu etkin"
       ],
+      "Search by an email address to begin": [
+        "Başlamak için bir e-posta adresi ile arayın"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } hesabınızın güvenliğini sağlayın"
       ],
@@ -8378,6 +8397,9 @@
       "The format of your CSV file is incorrect.": [
         "CSV dosyanız doğru biçimde değil."
       ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "Gruplar özelliği geçerli tarifenizde bulunmuyor. Daha önce oluşturulmuş gruplar kullanılamaz ve yalnızca silinebilir."
+      ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "${ BRAND_NAME } hesabı oluşturmadığınızı bildiren bağlantının süresi dolmuş. Bu sorunu çözmek için lütfen destek ekibimizle görüşün."
       ],
@@ -8526,7 +8548,7 @@
         "**${ domainName }** etki alanının SAML tek oturum açma kullanmasını sağlamak için, aşağıdaki DNS TXT kaydını DNS hizmeti sağlayıcınıza ekleyerek etki alanının sahibi olduğunuzu doğrulamanız gerekir."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
-        "Veri kaybını engellemek için bu anahtarı, yalnızca ne yaptığınızdan eminseniz ya da dışa aktardıysanız silin."
+        "Veri kaybını engellemek için bu anahtarı, yalnızca ne yaptığınızdan eminseniz ya da indirdiyseniz silin."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Aboneliğinizi iptal etmek için lütfen bizimle görüşün."
@@ -9071,7 +9093,7 @@
         "Etkinliklerinizi ICS dosyasından içe aktarmak için etkin bir kişisel takviminiz olmalıdır."
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
-        "Şifrelenmiş verileri geri yüklemeniz gerekirse kullanmak için bu anahtarın yedeğini dışa aktarmalısınız."
+        "Şifrelenmiş verileri geri yüklemeniz gerekirse kullanmak için bu anahtarı indirerek yedeklemelisiniz."
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Düzenleyicinin yanıtınızı görebilmesi için yine de davetleri yanıtlamanız gerekir."
@@ -9606,10 +9628,10 @@
         "Bu anahtarla imza doğrulama ve şifreleme yapılır"
       ],
       "Export private key": [
-        "Kişisel anahtarı dışa aktar"
+        "Kişisel anahtarı indir"
       ],
       "Export public key": [
-        "Herkese açık anahtarı dışa aktar"
+        "Herkese açık anahtarı indir"
       ],
       "Make primary": [
         "Birincil yap"
@@ -9878,7 +9900,7 @@
         "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
       ],
       "Collect usage diagnostics": [
-        "Kullanım tanılama verileri toplansın"
+        "Kullanım verileri toplansın"
       ],
       "Color": [
         "Renk"
@@ -10437,6 +10459,9 @@
       ],
       "Reveal password": [
         "Parolayı görüntüle"
+      ],
+      "Search by email": [
+        "E-posta ile ara"
       ],
       "Second password": [
         "İkinci parola"
@@ -12448,7 +12473,7 @@
         "Dilerseniz siz@sirketiniz.com gibi kendi etki alanınızla e-posta adresleri oluşturun"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "Çevrim içi yaptıklarınızla ilgili oturum kullanım günlükleri tutmuyoruz ve gizliliğinizi tehlikeye atabilecek üst verilerin kaydını tutmuyoruz"
+        "Çevrim içi yaptıklarınızla ilgili oturum kullanım günlüğü ve gizliliğinizi tehlikeye atabilecek üst verilerin kaydını tutmuyoruz"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "HIPAA/HITECH düzenlemelerine tabi olan müşterilere, korunan sağlık bilgilerini (PHI) koruma konusunda yardımcı olmaya kararlıyız. İmzalı BAA sözleşmeleri, tüm ${ BRAND_NAME } for Business müşterileri tarafından kullanılabilir."
@@ -12555,6 +12580,12 @@
       ],
       "Downloaded 2FA recovery codes": [
         "İki adımlı doğrulama kodları indirildi"
+      ],
+      "Email notifications have been disabled": [
+        "E-posta bildirimleri kapatıldı"
+      ],
+      "Email notifications have been enabled": [
+        "E-posta bildirimleri açıldı"
       ],
       "Invalid code": [
         "Kod geçersiz"
@@ -13025,6 +13056,29 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Kullanıcılar internet uygulamalarımızda oturum açtıklarında ${ BRAND_NAME } simgesi yerine logonuzu görecekler."
+      ]
+    },
+    "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "Kuruluş kimliğini ayarlamak için ${ email } e-posta adresinizden ${ verify } işlemi yapın."
+      ],
+      "Current organization identity": [
+        "Geçerli kuruluş kimliği"
+      ],
+      "Edit organization identity": [
+        "Kuruluş kimliğini düzenle"
+      ],
+      "New organization identity": [
+        "Yeni kuruluş kimliği"
+      ],
+      "Organization identity": [
+        "Kuruluş kimliği"
+      ],
+      "Organization identity updated": [
+        "Kuruluş kimliği güncellendi"
+      ],
+      "Verify": [
+        "Doğrula"
       ]
     },
     "OS compatibility": {
@@ -16398,7 +16452,7 @@
         "Fatura dönemi"
       ],
       "Block trackers and malware": [
-        "İzleyicileri ve zararlı yazılımları engelle"
+        "İzleyicileri ve zararlı yazılımları engelleyin"
       ],
       "Bridge for ${ platform }": [
         "${ platform } için Bridge"
@@ -16751,10 +16805,10 @@
         "Takvimi dışa aktar"
       ],
       "Export private key": [
-        "Kişisel anahtarı dışa aktar"
+        "Kişisel anahtarı indir"
       ],
       "Export public key": [
-        "Herkese açık anahtarı dışa aktar"
+        "Herkese açık anahtarı indir"
       ],
       "External PGP settings": [
         "Dış PGP ayarları"
@@ -17119,7 +17173,7 @@
         "Güvenlik olayları"
       ],
       "Security logs": [
-        "Güvenlik günlükleri"
+        "Güvenlik günlüğü"
       ],
       "Select a plan": [
         "Bir tarife seçin"
@@ -17566,6 +17620,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
       ],
+      "IP address (Internet Service Provider)": [
+        "IP adresi (internet hizmeti sağlayıcı)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "İki adımlı doğrulama kullanmayan üyelere bu özelliği en kısa sürede açmalarını isteyen bir e-posta gönderilecek."
       ],
@@ -17752,6 +17809,16 @@
       ]
     },
     "unprivatization": {
+      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
+        "Kuruluşunuza kimlik hizmeti sağlayıcınız üzerinden ${ n } kullanıcı katıldı. Bu hesapları kabul edin ya da reddedin:",
+        "Kuruluşunuza kimlik hizmeti sağlayıcınız üzerinden ${ n } kullanıcı katıldı. Bu hesapları kabul edin ya da reddedin:"
+      ],
+      "Administrator access enabled": [
+        "Yönetici yetkisi verildi"
+      ],
+      "Administrator access rejected": [
+        "Yönetici yetkisi reddedildi"
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Yöneticiler gizli kullanıcıların verilerine erişemez ve parolalarını sıfırlayamaz."
       ],
@@ -17761,11 +17828,21 @@
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "**${ orgName }** kuruluşunun bir yöneticisi (**${ adminEmail }**) hesabınıza yönetici erişimine izin vermenizi istiyor."
       ],
+      "Approve all": [
+        "Tümünü onayla"
+      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Kullanıcıyı gizli kullanıcıya dönüştürdüğünüzde, verilerine veya hesabına erişerek yardımcı olamayacaksınız."
       ],
       "Cancel": [
         "İptal"
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Aradan geçen zamanda şifreleme anahtarları güncellenmiş olduğundan ${ n } kullanıcıya otomatik olarak yönetici yetkisi verilemedi:",
+        "Aradan geçen zamanda şifreleme anahtarları güncellenmiş olduğundan ${ n } kullanıcıya otomatik olarak yönetici yetkisi verilemedi:"
+      ],
+      "Could not enable administrator access: ${ error }": [
+        "Yönetici yetkisi verilemedi: ${ error }"
       ],
       "Delete request": [
         "İsteği sil"
@@ -17778,6 +17855,9 @@
       ],
       "Enable administrator access": [
         "Yönetici erişimine izin ver"
+      ],
+      "Enable manually": [
+        "El ile kullanıma al"
       ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "Kimlik bilgilerinize erişiminizi kaybederseniz kuruluşunuzun yöneticileri parolanızı sıfırlayabilir ve hesabınıza yeniden erişmenizi sağlayabilir."

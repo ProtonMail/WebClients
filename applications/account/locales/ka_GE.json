@@ -70,10 +70,10 @@
       "Accept": [
         "დასტური"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -742,10 +742,10 @@
       "No, thanks": [
         "არა, მადლობა"
       ],
-      "Ok": [
+      "OK": [
         "დიახ"
       ],
-      "OK": [
+      "Ok": [
         "დიახ"
       ],
       "Open": [
@@ -3371,6 +3371,11 @@
         "დაიმახსოვრეთ, რომ თუ წაშლით დომენს ${ domainName }, მასზე მიბმული ყველა მისამართი გაითიშება."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "დარწმუნებული ბრძანდებით, რომ გნებავთ მონიშნული ჯგუფის წაშლა?"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "ინვოისი გადაცილებულია"
@@ -4719,6 +4724,11 @@
       ],
       "Zero keys reactivated": [
         "თავიდან გააქტიურდა 0 გასაღები"
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "შეიყვანეთ ელფოსტის მისამართი"
       ]
     },
     "Error importing calendar": {
@@ -6804,9 +6814,6 @@
       "Are you sure you want to delete this folder?": [
         "მართლა გნებავთ ამ საქაღლდის წაშლა?"
       ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ ეს ჯგუფი? ჯგუფის მისამართი აღარ იმუშავებს."
-      ],
       "Are you sure you want to delete this label?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ მონიშნული ჭდის წაშლა?"
       ],
@@ -6830,6 +6837,9 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ დომენი ${ boldDomain }?"
+      ],
+      "Ask your organization admin to setup Gateways.": [
+        "სთხოვეთ ორგანიზაციის ადმინისტრატორს, რაუტერები დააყენოს."
       ],
       "Attention required": [
         "საჭიროა ყურადღება"
@@ -7186,6 +7196,9 @@
       ],
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "ჭდით ${ nameDeleted } მონიშნული ელფოსტები არ წაიშლება და ჯერ კიდევ შეგიძლიათ იპოვოთ შესაბამის საქაღალდეში."
+      ],
+      "Enable email notifications": [
+        "ელფოსტის გაფრთხილებების ჩართვა"
       ],
       "Enable single sign-on to keep your organization safe": [
         "ჩართეთ SSO, რომ თქვენი ორგანიზაცია უსაფრთხოდ გყავდეთ"
@@ -8146,6 +8159,9 @@
       "SCIM token active": [
         "SCIM კოდი აქტიურია"
       ],
+      "Search by an email address to begin": [
+        "დასაწყებად მოძებნეთ ელფოსტის მისამართი"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "დაიცავით თქვენი ${ BRAND_NAME }-ის ანგარიში"
       ],
@@ -8377,6 +8393,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "თვენი CSV ფაილის ფორმატი არასწორია."
+      ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "ჯგუფების ფუნქცია თქვენს მიმდინარე სატარიფო გეგმაში მხარდაჭერილი არაა. ადრე შექმნილი ჯგუფები გათიშულია და მათი, მხოლოდ, წაშლა შეგიძლიათ."
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "ბმულს, რომელის გაფრთხილებდათ, რომ ${ BRAND_NAME }-ის ანგარიში არ გაგიმართავთ, ვადა ამოეწურა. პრობლემის გადასაწყვეტად დაუკავშირდით ჩვენს მხარდაჭერის გუნდს."
@@ -10437,6 +10456,9 @@
       ],
       "Reveal password": [
         "პაროლის ჩვენება"
+      ],
+      "Search by email": [
+        "ძებნა ელფოსტით"
       ],
       "Second password": [
         "მეორე პაროლი"
@@ -12556,6 +12578,12 @@
       "Downloaded 2FA recovery codes": [
         "2FA აღდგენის კოდების გადმოწერა"
       ],
+      "Email notifications have been disabled": [
+        "ელფოსტის გაფრთხილებები გამორთულია"
+      ],
+      "Email notifications have been enabled": [
+        "ელფოსტის გაფრთხილებები ჩართულია"
+      ],
       "Invalid code": [
         "არასწორი კოდი"
       ],
@@ -13025,6 +13053,29 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "მომხმარებლები ჩვენს ვებ-აპებში შესვლისას ${ BRAND_NAME }-ის ხატულას მაგიერ თქვენს ლოგოს დაინახავენ."
+      ]
+    },
+    "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify } თქვენი ელფოსტის მისამართი ${ email }, რომ დააყენოთ ორგანიზაციის იდენტიფიკატორი."
+      ],
+      "Current organization identity": [
+        "მიმდინარე ორგანიზაციის იდენტიფიკატორი"
+      ],
+      "Edit organization identity": [
+        "ორგანიზაციის იდენტიფიკატორის ჩასწორება"
+      ],
+      "New organization identity": [
+        "ახალი ორგანიზაციის იდენტიფიკატორი"
+      ],
+      "Organization identity": [
+        "ორგანიზაციის იდენტიფიკატორი"
+      ],
+      "Organization identity updated": [
+        "ორგანიზაციის იდენტიფიკატორი განახლდა"
+      ],
+      "Verify": [
+        "გადამოწმება"
       ]
     },
     "OS compatibility": {
@@ -17566,6 +17617,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "თუ შეიძინეთ სასაჩუქრე ბარათი ან ის ჩვენი მხარდაჭერის გუნდისგან მიიღეთ, ის აქ შეგიძლიათ, შეიყვანოთ."
       ],
+      "IP address (Internet Service Provider)": [
+        "IP მისამართი (ინტერნეტპროვაიდერი)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "წევრები, რომლებც 2FA-ს არ იყენებენ, მიიღებენ ელფოსტას, რომელიც მისი გამოყენების, რაც შეიძლება, მალე ჩართვას მოსთხოვს."
       ],
@@ -17752,6 +17806,16 @@
       ]
     },
     "unprivatization": {
+      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
+        "${ n } მომხმარებელი შემოუერთდა თქვენს ორგანიზაციას თქვენი იდენტეიფიკატორების მომწოდებლით. დაადასტურეთ ან უარჰყავთი მათი ანგარიშები ახლა:",
+        "${ n } მომხმარებელი შემოუერთდა თქვენს ორგანიზაციას თქვენი იდენტეიფიკატორების მომწოდებლით. დაადასტურეთ ან უარჰყავთი მათი ანგარიშები ახლა:"
+      ],
+      "Administrator access enabled": [
+        "ადმინისტრატორის წვდომა ჩართულია"
+      ],
+      "Administrator access rejected": [
+        "ადმინისტრატორის წვდომა უარყოფილია"
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "ადმინებს კონფიდენციალური მომხმარებლების მონაცემებთაან წვდომა არ აქვთ და ვერც მათ პაროლს ჩამოყრიან."
       ],
@@ -17761,11 +17825,17 @@
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "**${ orgName }** ორგანიზაციის ადმინს (**${ adminEmail }**) თქვენს ანგარიშზე ადმინის წვდომის ჩართვა სურს."
       ],
+      "Approve all": [
+        "ყველას დამტკიცება"
+      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "მომხმარებლის კონფიდენციალურად გამოცხადებით მათ თავის ანგარიშზე არსებულ მონაცემების აღდგენაში ვეღარ დაეხმარებით."
       ],
       "Cancel": [
         "გაუქმება"
+      ],
+      "Could not enable administrator access: ${ error }": [
+        "ვერ ჩავრთე ადმინისტრატორის წვდომა: ${ error }"
       ],
       "Delete request": [
         "მოთხოვნის წაშლა"
@@ -17778,6 +17848,9 @@
       ],
       "Enable administrator access": [
         "ადმინისტრატორის წვდომის ჩართვა"
+      ],
+      "Enable manually": [
+        "ხელით ჩართვა"
       ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "თუ თქვენს ავტორიზაციის დეტალებთან წვდომა დაკარგეთ, ორგანიზაციის ავტორებს თქვენი პაროლის ჩამოყრა და თქვენს მონაცემებთან წვდომის აღდგენა შეეძლებათ."

@@ -70,11 +70,11 @@
       "Accept": [
         "Aceptar"
       ],
-      "Activate": [
-        "Activar"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activar ${ user.Name }@pm.me"
@@ -742,10 +742,10 @@
       "No, thanks": [
         "No, gracias"
       ],
-      "Ok": [
+      "OK": [
         "Aceptar"
       ],
-      "OK": [
+      "Ok": [
         "Aceptar"
       ],
       "Open": [
@@ -3369,6 +3369,14 @@
       ],
       "Please note that if you delete this domain ${ domainName }, all the addresses associated with it will be disabled.": [
         "Toma en cuenta que si eliminas este dominio ${ domainName }, todas las direcciones asociadas serán desactivadas."
+      ]
+    },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "¿Estás seguro de que quieres eliminar este grupo?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Ten en cuenta que si eliminas el grupo ${ displayGroupName } (con la dirección ${ displayGroupAddressEmail }), ya no podrás recibir correos electrónicos usando esta dirección."
       ]
     },
     "Delinquent modal title": {
@@ -6812,9 +6820,6 @@
       "Are you sure you want to delete this folder?": [
         "¿Estás seguro de que quieres eliminar esta carpeta?"
       ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "¿Estás seguro de que quieres eliminar este grupo? La dirección del grupo dejará de funcionar."
-      ],
       "Are you sure you want to delete this label?": [
         "¿Estás seguro de que quieres eliminar esta etiqueta?"
       ],
@@ -7197,6 +7202,9 @@
       ],
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Los correos electrónicos etiquetados con esta etiqueta ${ nameDeleted } no se eliminarán y se podrán encontrar en sus respectivas carpetas."
+      ],
+      "Enable email notifications": [
+        "Activar las notificaciones de correo electrónico"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Activa el inicio de sesión único para mantener segura tu organización."
@@ -8394,6 +8402,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "El formato de tu archivo CSV es incorrecto."
+      ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "La función de grupos no está disponible en tu suscripción actual. Los grupos creados anteriormente están desactivados y solo pueden ser eliminados."
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "El enlace para notificar que no has configurado una cuenta de ${ BRAND_NAME } ha expirado. Pónte en contacto con nuestro equipo de soporte para resolver este problema."
@@ -10438,7 +10449,7 @@
         "Frase de recuperación"
       ],
       "Remove image metadata": [
-        "Eliminar metadatos de la imagen"
+        "Eliminar los metadatos de la imagen"
       ],
       "Repeat password": [
         "Repetir contraseña"
@@ -12575,6 +12586,12 @@
       ],
       "Downloaded 2FA recovery codes": [
         "Códigos de recuperación 2FA descargados"
+      ],
+      "Email notifications have been disabled": [
+        "Se han desactivado las notificaciones de correo electrónico."
+      ],
+      "Email notifications have been enabled": [
+        "Se han activado las notificaciones de correo electrónico."
       ],
       "Invalid code": [
         "Código no válido"
@@ -17801,6 +17818,10 @@
       ]
     },
     "unprivatization": {
+      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
+        "${ n } usuario se ha unido a tu organización a través de tu proveedor de identidad. Aprueba o rechaza sus cuentas ahora.",
+        "${ n } usuarios se han unido a tu organización a través de tu proveedor de identidad. Aprueba o rechaza sus cuentas ahora."
+      ],
       "Administrator access enabled": [
         "Se ha activado el acceso de administrador."
       ],
@@ -17824,6 +17845,13 @@
       ],
       "Cancel": [
         "Cancelar"
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "No se ha podido activar automáticamente el acceso de administrador para ${ n } usuario porque sus claves de cifrado han sido actualizadas mientras tanto.",
+        "No se ha podido activar automáticamente el acceso de administrador para ${ n } usuarios porque sus claves de cifrado han sido actualizadas mientras tanto."
+      ],
+      "Could not enable administrator access: ${ error }": [
+        "No se ha podido activar el acceso de administrador: ${ error }"
       ],
       "Delete request": [
         "Eliminar la solicitud"
