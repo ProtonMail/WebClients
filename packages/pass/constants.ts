@@ -102,6 +102,7 @@ export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.PassAccountSwitchV1]: true,
     [PassFeature.PassDesktopBiometrics]: false,
     [PassFeature.PassEnableDesktopAutoUpdate]: false,
+    [PassFeature.PassFamilyPlanPromo2024]: false,
     [PassFeature.PassIdentityV1]: true,
     [PassFeature.PassSimpleLoginAliasesSync]: false,
     [PassFeature.PassWebInternalAlpha]: false,
