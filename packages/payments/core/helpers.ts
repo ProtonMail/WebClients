@@ -345,3 +345,15 @@ export function isCurrencyConversionInvoice(invoice: Pick<Invoice, 'ID'>): boole
 export function isRegularInvoice(invoice: Pick<Invoice, 'ID'>): boolean {
     return !isCreditNoteInvoice(invoice) && !isCurrencyConversionInvoice(invoice);
 }
+
+/**
+ * That's a naïve currency conversion. Can't be used in any critical applications. But can be used for cases that are
+ * updated rare. For example, the buttons that pre-select the number of credit to top up.
+ */
+export function getCurrencyRate(currency: Currency): number {
+    if (currency === 'BRL') {
+        return 5;
+    }
+
+    return 1;
+}
