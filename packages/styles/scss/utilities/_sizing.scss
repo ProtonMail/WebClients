@@ -26,7 +26,9 @@ $dummy-map: ();
 		$propname: dash-join($boundary, $property, 'size');
 
 		// Framework
-		@each $sizingname, $size in ('0': 0, 'px': '1px', '2': 8, '4': 16, 'full': 100%, 'auto': 'auto', 'none': 'none') {
+		@each $sizingname,
+			$size in ('0': 0, 'px': '1px', '2': 8, '4': 16, '6': 20, 'full': 100%, 'auto': 'auto', 'none': 'none')
+		{
 			@if not(($sizingname == 'auto' and $boundary != '') or ($sizingname == 'none' and $boundary == '')) {
 				$classname: dash-join($boundary, $direction, $sizingname);
 				$value: pixel-to-rem($size);
