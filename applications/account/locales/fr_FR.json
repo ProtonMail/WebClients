@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "Activate": [
-        "Activer"
-      ],
       "activate": [
         "activer"
+      ],
+      "Activate": [
+        "Activer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activer ${ user.Name }@pm.me"
@@ -742,10 +742,10 @@
       "No, thanks": [
         "Non merci"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -1229,7 +1229,7 @@
         "Voir le détail des abonnements"
       ],
       "View recovery settings": [
-        "Voir les paramètres de récupération"
+        "Afficher les paramètres de récupération"
       ],
       "Void": [
         "Annulée"
@@ -3369,6 +3369,14 @@
       ],
       "Please note that if you delete this domain ${ domainName }, all the addresses associated with it will be disabled.": [
         "Veuillez noter que si vous supprimez le domaine ${ domainName }, toutes les adresses y étant associées seront désactivées."
+      ]
+    },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Voulez-vous vraiment supprimer ce groupe ?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Veuillez noter que si vous supprimez le groupe ${ displayGroupName } (avec l'adresse ${ displayGroupAddressEmail }), vous ne pourrez plus recevoir d'e-mails à l'aide de cette adresse"
       ]
     },
     "Delinquent modal title": {
@@ -6812,9 +6820,6 @@
       "Are you sure you want to delete this folder?": [
         "Voulez-vous vraiment supprimer ce dossier ?"
       ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "Êtes-vous sûr de vouloir supprimer ce groupe ? L'adresse du groupe ne fonctionnera plus."
-      ],
       "Are you sure you want to delete this label?": [
         "Voulez-vous vraiment supprimer ce label ?"
       ],
@@ -7197,6 +7202,9 @@
       ],
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Les messages marqués avec le label ${ nameDeleted } ne seront pas effacés et pourront toujours être retrouvés dans leurs dossiers respectifs."
+      ],
+      "Enable email notifications": [
+        "Activer les notifications par e-mail"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Activez l'authentification unique afin d'assurer la sécurité de votre organisation."
@@ -8394,6 +8402,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Le format de votre fichier CSV n'est pas correct."
+      ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "La fonction de groupes n'est pas prise en charge par votre abonnement actuel. Les groupes créés précédemment sont désactivés et peuvent uniquement être supprimés."
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Le lien permettant de signaler que vous n'avez pas créé de compte ${ BRAND_NAME } a expiré. Nous vous invitons à prendre contact avec notre équipe support pour résoudre ce problème."
@@ -11651,8 +11662,8 @@
         "${ n } connexions VPN"
       ],
       "${ options }-day file version history": [
-        "Historique des versions de fichier datant d'${ options } jour",
-        "Historique des versions de fichier datant de ${ options } jours"
+        "Historique des versions de fichiers datant d'${ options } jour",
+        "Historique des versions de fichiers datant de ${ options } jours"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } avec ${ n } alias « hide-my-email »",
@@ -11689,7 +11700,7 @@
         "10 adresses e-mail/alias"
       ],
       "10-year file version history": [
-        "Historique des versions de fichier sur 10 ans"
+        "Historique des versions des fichiers sur 10 ans"
       ],
       "15 GB storage": [
         "15 Go d'espace de stockage"
@@ -12575,6 +12586,12 @@
       ],
       "Downloaded 2FA recovery codes": [
         "Télécharger les codes de récupération A2F"
+      ],
+      "Email notifications have been disabled": [
+        "Les notifications par e-mail ont été désactivées."
+      ],
+      "Email notifications have been enabled": [
+        "Les notifications par e-mail ont été activées."
       ],
       "Invalid code": [
         "Le code n’est pas valide."

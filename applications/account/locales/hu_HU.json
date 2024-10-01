@@ -70,11 +70,11 @@
       "Accept": [
         "Elfogadás"
       ],
-      "Activate": [
-        "Aktiválás"
-      ],
       "activate": [
         "aktiválás"
+      ],
+      "Activate": [
+        "Aktiválás"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktiválása"
@@ -715,10 +715,10 @@
       "No, thanks": [
         "Köszönöm, nem"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -3223,7 +3223,7 @@
         "Évente csak egy címet törölhet"
       ],
       "You've reached the limit of address deletions for this user.": [
-        "Elérte a címtörlési limitet ennél a felhasználónál."
+        "Nem törölhet több címet ennél a felhasználónál."
       ]
     },
     "Delete calendar section description": {
@@ -6434,9 +6434,6 @@
       "Are you sure you want to delete this folder?": [
         "Biztos, hogy törölni szeretné ezt a mappát?"
       ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "Biztosan törli ezt a csoportot? A csoportcímek ezután nem fognak működni."
-      ],
       "Are you sure you want to delete this label?": [
         "Biztosan törli ezt a címkét?"
       ],
@@ -6766,6 +6763,9 @@
       ],
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "A ${ nameDeleted } címkével ellátott e-mailek nem kerülnek törlésre, és továbbra is megtalálhatók az adott mappában."
+      ],
+      "Enable email notifications": [
+        "E-mail értesítések engedélyezése"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Engedélyezze az egyszeri bejelentkezést szervezete biztonsága érdekében"
@@ -9817,6 +9817,9 @@
       "Reveal password": [
         "Jelszó felfedése"
       ],
+      "Search by email": [
+        "Keresés e-mail szerint"
+      ],
       "Second password": [
         "Második jelszó"
       ],
@@ -12135,6 +12138,17 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "A felhasználók az ön logóját fogják látni a ${ BRAND_NAME } ikon helyet, amikor a webes alkalmazást használják."
+      ]
+    },
+    "orgidentity": {
+      "New organization identity": [
+        "Új szervezeti azonosító"
+      ],
+      "Organization identity": [
+        "Szervezet azonosítója"
+      ],
+      "Verify": [
+        "Megerősítés"
       ]
     },
     "OS compatibility": {
@@ -16134,6 +16148,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Itt adhatja meg a vásárolt, vagy a rendszertámogató csapattól kapott ajándékutalvány kódját."
       ],
+      "IP address (Internet Service Provider)": [
+        "IP cím (Internetszolgáltató)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Azok a tagok akinek nincs bekapcsolva a kétlépcsős hitelesítés, egy e-mailt fognak kapni, hogy minél előbb kapcsolják be."
       ],
@@ -16300,6 +16317,15 @@
       ]
     },
     "unprivatization": {
+      "Administrator access enabled": [
+        "Adminisztrátori hozzáférés bekapcsolva"
+      ],
+      "Administrator access rejected": [
+        "Adminisztrátori hozzáférés elutasítva"
+      ],
+      "Approve all": [
+        "Összes jóváhagyása"
+      ],
       "Cancel": [
         "Mégsem"
       ],
