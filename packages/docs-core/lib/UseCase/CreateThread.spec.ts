@@ -9,6 +9,7 @@ import type { DecryptComment } from './DecryptComment'
 import type { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
 import { CreateThread } from './CreateThread'
 import type { DocsApi } from '../Api/DocsApi'
+import type { LoggerInterface } from '@proton/utils/logs'
 
 jest.mock('../Util/GenerateUuid', () => ({
   GenerateUUID: jest.fn(),
@@ -43,6 +44,10 @@ const mockCommentsState = {
   replacePlaceholderThread: jest.fn(),
 }
 
+const logger = {
+  error: jest.fn(),
+} as unknown as jest.Mocked<LoggerInterface>
+
 const mockEventBus = {
   publish: jest.fn(),
 }
@@ -67,6 +72,7 @@ describe('CreateThread', () => {
       mockEncryptComment as unknown as EncryptComment,
       mockDecryptComment as unknown as DecryptComment,
       mockEventBus as unknown as InternalEventBusInterface,
+      logger,
     )
     ;(GenerateUUID as jest.Mock).mockReturnValue('uuid')
     ServerTime.now = jest.fn()

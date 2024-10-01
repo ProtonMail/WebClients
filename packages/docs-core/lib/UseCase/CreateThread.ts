@@ -11,6 +11,7 @@ import type { LocalCommentsState } from '../Services/Comments/LocalCommentsState
 import type { DocsApi } from '../Api/DocsApi'
 import metrics from '@proton/metrics'
 import type { CommentThreadType } from '@proton/docs-shared'
+import type { LoggerInterface } from '@proton/utils/logs'
 
 /**
  * Creates a new comment thread with the API, supplying and encrypting an initial comment.
@@ -21,6 +22,7 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
     private encryptComment: EncryptComment,
     private decryptComment: DecryptComment,
     private eventBus: InternalEventBusInterface,
+    private logger: LoggerInterface,
   ) {}
 
   async execute(dto: {
@@ -118,12 +120,28 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
       }),
     )
 
+    const successfulComments = comments.filter((result) => !result.isFailed())
+
+    const failedComments = comments.filter((result) => result.isFailed())
+    if (failedComments.length > 0) {
+      metrics.docs_comments_download_error_total.increment(
+        {
+          reason: 'decryption_error',
+        },
+        failedComments.length,
+      )
+
+      for (const failed of failedComments) {
+        this.logger.error(`[CreateThread] Failed to decrypt comment: ${failed.getError()}`)
+      }
+    }
+
     const thread = new CommentThread(
       response.CommentThread.CommentThreadID,
       new ServerTime(response.CommentThread.CreateTime),
       new ServerTime(response.CommentThread.ModifyTime),
       response.CommentThread.Mark,
-      comments.map((result) => result.getValue()),
+      successfulComments.map((result) => result.getValue()),
       false,
       response.CommentThread.State,
       response.CommentThread.Type,
