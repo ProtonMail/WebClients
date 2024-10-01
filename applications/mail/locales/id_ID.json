@@ -4758,6 +4758,9 @@
       "Configure your family account and invite users ": [
         "Atur akun keluarga Anda dan undang pengguna "
       ],
+      "Invite members and get everything up and running.": [
+        "Undang anggota dan jalankan semua."
+      ],
       "Set up your family": [
         "Siapkan keluarga Anda"
       ],
@@ -5924,6 +5927,9 @@
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontak ditetapkan ke grup ${ contactGroupName }"
+      ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Kaitan kontak dihilangkan dari grup ${ contactGroupName }"
       ],
       "Copied to clipboard": [
         "Disalin ke papan klip"
@@ -9755,23 +9761,44 @@
       ],
       "Privacy for all your online accounts": [
         "Privasi untuk seluruh akun online Anda"
+      ],
+      "Shopping": [
+        "Belanja"
+      ],
+      "Social media": [
+        "Media sosial"
+      ],
+      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
+        "Gunakan alamat ${ MAIL_APP_NAME } Anda untuk masuk ke layanan daring untuk mencegah pelacakan dan pemrofilan. Ubah email Anda untuk layanan populer sekarang. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
         "${ advancedEncryptionTitle } memastikan bahwa hanya Anda dan para penerima yang dapat mengakses email Anda."
       ],
+      "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
+        "${ industryLeadingSpamProtectionTitle } mencegah email penipuan sampai di kotak masuk Anda."
+      ],
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle } berarti bahwa Anda tidak akan lagi diikuti di internet."
       ],
+      "Access email and calendar right from your desktop with the desktop app.": [
+        "Akses email dan kalender dari desktop Anda dengan aplikasi desktop."
+      ],
       "Activate premium features": [
         "Aktifkan fitur premium"
+      ],
+      "Activate selected": [
+        "Aktifkan dipilih"
       ],
       "Advanced encryption": [
         "Enkripsi tingkat lanjut"
       ],
       "App Store": [
         "App Store"
+      ],
+      "Auto-delete spam and trash": [
+        "Kosongkan spam dan sampah secara otomatis"
       ],
       "Automatically forward emails": [
         "Teruskan email secara otomatis"
@@ -9782,6 +9809,9 @@
       "Block unsavory senders": [
         "Blokir pengirim yang tidak dikehendaki"
       ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Kosongkan email terhapus dan spam setelah 30 hari."
+      ],
       "Congratulations on choosing privacy": [
         "Selamat karena telah memilih privasi"
       ],
@@ -9791,8 +9821,14 @@
       "Download the desktop app": [
         "Unduh aplikasi desktop"
       ],
+      "Download the desktop app and continue": [
+        "Unduh aplikasi desktop dan lanjutkan"
+      ],
       "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
         "Enkripsi yang teramat kuat, sampai-sampai hanya Anda dan para penerima yang dapat membaca isi email Anda. ${ kbLinkEncryption }"
+      ],
+      "Fixed and focused": [
+        "Bertetap dan terfokus"
       ],
       "For your eyes only": [
         "Khusus untuk Anda"
@@ -9802,6 +9838,12 @@
       ],
       "Get notified if your password is compromised.": [
         "Dapatkan notifikasi pada saat kata sandi Anda dibocorkan."
+      ],
+      "Get the desktop app": [
+        "Dapatkan aplikasi desktop"
+      ],
+      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
+        "Dapatkan aplikasi ponsel dari ${ mobileAppAppStoreLink } atau ${ mobileAppGooglePlayLink }."
       ],
       "Google Play": [
         "Google Play"
@@ -9824,6 +9866,9 @@
       "Next": [
         "Berikutnya"
       ],
+      "On the move": [
+        "Saat bepergian"
+      ],
       "Protection from trackers": [
         "Perlindungan pelacak"
       ],
@@ -9832,6 +9877,9 @@
       ],
       "Start using ${ BRAND_NAME }": [
         "Mulai gunakan ${ BRAND_NAME }"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Mulai menggunakan alamat email Anda yang lebih pendek dan menarik."
       ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "Kami menghentikan para pengiklan dan pengumpul data untuk dapat memprofil Anda. ${ kbLinkPrivacy }"
@@ -11051,6 +11099,9 @@
     "Step": {
       "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
         "Masukkan alamat ${ MAIL_APP_NAME } Anda sebagai alamat yang baru, lalu simpan, konfirmasi, atau verifikasi perubahan ini"
+      ],
+      "In the account settings, look for the option to edit or change your email address ": [
+        "Dalam pengaturan akun, lihat pilihan untuk menyunting atau mengubah alamat email Anda "
       ],
       "Select service to update": [
         "Pilih layanan untuk diperbarui"

@@ -13,7 +13,19 @@
       ]
     },
     "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } e ${ remainingCount } outras potenciais fugas detetadas. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes e tomar medidas. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } e 1 outra potencial fuga detetada. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes e tomar medidas. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Foi detetada uma potencial fuga de ${ name }. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes e tomar medidas. ${ link }"
+      ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Foi detetada uma potencial fuga de ${ name }. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes e tomar medidas. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Foi detetada uma potencial fuga de ${ name }. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes e tomar medidas. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
@@ -1367,6 +1379,10 @@
       ],
       "${ price } per user": [
         "${ price } por utilizador"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } licença de assistente de escrita",
+        "${ seats } licenças de assistente de escrita"
       ],
       "${ users } user": [
         "${ users } utilizador",
@@ -3203,11 +3219,20 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } nas definições."
       ],
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "A A2F acrescenta uma camada de segurança adicional, impedindo o acesso não autorizado."
+      ],
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Elimine automaticamente o spam e as mensagens do lixo e desbloqueie mais funcionalidades premium ao atualizar."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "A desencriptar os contactos... Isto pode demorar alguns minutos. Quando o processo estiver concluído, poderá transferir o ficheiro com todos os seus contactos exportados."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "A eliminar contactos... Isto pode levar alguns minutos. Quando o processo for concluído, pode fechar esta janela."
+      ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "Concebido para utilizadores que procuram uma maior proteção para as suas contas."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "A encriptar e importar contactos... Pode levar alguns minutos. Quando o processo terminar, poderá fechar este diálogo."
@@ -3217,6 +3242,9 @@
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Para acesso ilimitado ao assistente de escrita e mais, atualize para ${ BRAND_NAME } Duo."
+      ],
+      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Obtenha aliases ilimitados e 500 GB de armazenamento com ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contactos que está a importar já contém grupos. Reveja como esses grupos devem ser importados."
@@ -3237,8 +3265,14 @@
       "No labels": [
         "Sem etiquetas"
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Poupe tempo enviando e-mails a todos de uma só vez com os grupos de contactos. Desbloqueie esta e outras funcionalidades premium ao atualizar."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separe diferentes aspetos da sua vida com vários endereços de e-mail e desbloqueie mais recursos premium ao atualizar."
+      ],
+      "Set a data recovery method to prevent data loss.": [
+        "Definir um método de recuperação de dados para evitar a perda de dados."
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Defina um método de recuperação para evitar a perda de acesso à sua conta."
@@ -3246,11 +3280,26 @@
       "Starting from ${ price }": [
         "A partir de ${ price }"
       ],
+      "To continue to use the writing assistant, add it to your subscription.": [
+        "Para continuar a utilizar o assistente de escrita, adicione-o à sua subscrição."
+      ],
+      "To continue to use the writing assistant, request access from your admin.": [
+        "Para continuar a utilizar o assistente de escrita, solicite o acesso ao seu administrador."
+      ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Para garantir a maior segurança possível da sua conta, defina uma frase de recuperação."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar os seus contactos do Google e Outlook, ${ easySwitchLink }."
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Ative a proteção contra os rastreadores de e-mail para evitar que anunciantes e outros rastreiem a sua localização e atividade online."
+      ],
+      "Unlock custom message scheduling and more premium features when you upgrade.": [
+        "Desbloqueie o agendamento de mensagens personalizadas e mais funcionalidades premium ao atualizar."
+      ],
+      "Unlock custom snooze times and more premium features when you upgrade.": [
+        "Desbloqueie tempos de snooze personalizados e mais funcionalidades premium ao atualizar."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Consiga endereços de e-mail mais curtos e outras funcionalidades premium ao atualizar o seu plano."
@@ -3260,6 +3309,12 @@
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Desbloqueie pastas ilimitadas, etiquetas e mais funcionalidades premium ao actualizar."
+      ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "Actualize a sua conta para ativar o ${ PROTON_SENTINEL_NAME }, a nossa solução de segurança de ponta baseada em IA com suporte especializado dedicado 24 horas por dia, 7 dias por semana."
+      ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "Utilize o ${ MAIL_APP_NAME } para iniciar sessão em serviços online, visto que, ao contrário de outros fornecedores de e-mail, nunca rastreamos os seus dados nem os partilhamos com terceiros."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arraste e largue para alterar a prioridade de união entre contactos. Desmarque os contactos que não deseja unir."
@@ -3275,6 +3330,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Pode marcar para eliminação os contactos que não deseja unir nem manter. A eliminação só ocorrerá depois de clicar no botão de união"
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "A sua conta e os métodos de recuperação de dados estão definidos e a A2F está ativada."
+      ],
+      "Your account and data recovery methods are set.": [
+        "A sua conta e os métodos de recuperação de dados estão definidos."
       ]
     },
     "description": {
@@ -3847,6 +3908,12 @@
       "Require at least one condition": [
         "Requer pelo menos uma condição"
       ],
+      "Sending attachments is restricted until you meet your plan limits or upgrade.": [
+        "O envio de anexos é restrito até atingir os limites do seu plano ou atualizar."
+      ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.": [
+        "O envio de anexos é restrito enquanto exceder os limites do seu plano ou até atualizar o seu plano."
+      ],
       "Signature not verified": [
         "Assinatura não verificada"
       ],
@@ -3991,6 +4058,9 @@
       ],
       "Username must end with a letter or digit": [
         "O nome de utilizador deve acabar com uma letra ou algarismo"
+      ],
+      "Wrong second password": [
+        "Segunda palavra-passe errada"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Não pode enviar um e-mail para mais de ${ maxContacts } destinatário.",
@@ -4217,6 +4287,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Os aliases não podem ser utilizados quando uma palavra-passe extra está ativada no ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "Aplicação indisponível no momento"
       ],
@@ -4246,6 +4319,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Não é possível carregar esta página. Por favor, actualize a página ou verifique a sua ligação à Internet."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Quando a palavra-passe extra está ativada, a gestão de alias só pode ser feita no ${ PASS_APP_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Ainda não tem contactos. Comece por criar um contacto"
@@ -4389,6 +4465,9 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Foi convidado a juntar-se a ${ bannerOrganization }. ${ viewInviteButton }"
       ],
+      "You have successfully joined the family group": [
+        "Entrou com sucesso no grupo de família"
+      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Está convidado a associar a sua conta ${ BRAND_NAME } a este plano de grupo e a usufruir em conjunto de todas as funcionalidades premium ${ BRAND_NAME_TWO }."
       ],
@@ -4397,6 +4476,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "A sua conta está a utilizar ${ usedSpace } de armazenamento, o que excede o ${ inviteSpace } que lhe foi atribuído. Elimine alguns dados ou peça ao administrador do plano para aumentar o seu armazenamento."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Não pode aceitar este convite com o seu plano atual."
       ]
     },
     "familyOffer_2023:Label": {
@@ -5474,6 +5556,9 @@
       "and": [
         "e"
       ],
+      "Another tip will be displayed next time you open Mail": [
+        "Será apresentada outra dica da próxima vez que abrir o Mail"
+      ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Todas as mensagens agendadas ou adiadas serão canceladas."
       ],
@@ -5564,6 +5649,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Impulsione a identidade da sua organização e crie uma experiência online mais consistente para os seus utilizadores."
       ],
+      "Browser not supported": [
+        "Navegador não suportado"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao regredir para um plano gratuito, perderá permanentemente estes benefícios, mesmo que venha a atualizar de novo no futuro."
       ],
@@ -5612,6 +5700,9 @@
       "Confirm phishing report": [
         "Confirmar o relatório de phishing"
       ],
+      "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
+        "Considere qual é a melhor altura para o destinatário receber o seu e-mail e programe o seu envio para essa altura."
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Contacto atribuído ao grupo ${ contactGroupName }"
       ],
@@ -5627,6 +5718,9 @@
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Criar ${ calendarsToBeCreatedCount } calendário",
         "Criar ${ calendarsToBeCreatedCount } calendários"
+      ],
+      "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
+        "Crie uma pasta como “${ suggestedFolderName }” para guardar todos os seus recibos online num único local."
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Escolha uma etiqueta para as mensagens importadas, um intervalo de tempo para a importação e as pastas que deseja importar."
@@ -5683,6 +5777,12 @@
       "Default email application": [
         "Aplicação de e-mail padrão"
       ],
+      "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
+        "Sabia que tem armazenamento encriptado na nuvem incluído na sua conta ${ BRAND_NAME }? Aceda a ${ DRIVE_APP_NAME } e tire o máximo partido do seu espaço. É gratuito."
+      ],
+      "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
+        "Sabia que? Reservámos um endereço de e-mail mais curto só para si. É o seu nome de utilizador seguido de “@${ PM_DOMAIN }”."
+      ],
       "Discover ProtectBuy logo": [
         "Logotipo do Discover ProtectBuy"
       ],
@@ -5699,6 +5799,9 @@
       "Don't forget to share the password with the recipient": [
         "Não se esqueça de partilhar a palavra-passe com o destinatário."
       ],
+      "Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.": [
+        "Não tem tempo para tratar de um e-mail importante agora, mas não se quer esquecer dele? Defina uma hora melhor para que ele apareça na sua caixa de entrada."
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Não está a ver nada? Lembre-se de desativar os bloqueadores de pop-ups."
       ],
@@ -5711,8 +5814,14 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Transfira hoje a sua aplicação favorita e usufrua de privacidade onde quer que vá."
       ],
+      "Downloading assistant… ${ progressDisplay } GB": [
+        "A descarregar assistente... ${ progressDisplay } GB"
+      ],
       "Downloading paused": [
         "Transferência em pausa"
+      ],
+      "Downloading paused: ${ progressDisplay } GB": [
+        "Descarregamento em pausa: ${ progressDisplay } GB"
       ],
       "Draft": [
         "Rascunho"
@@ -5752,6 +5861,9 @@
       ],
       "Email address": [
         "Endereço de e-mail"
+      ],
+      "Email copied to clipboard": [
+        "E-mail copiado para a área de transferência"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "O alojamento de e-mails para 10 nomes de domínio de e-mail personalizado está incluído gratuitamente. Pode adicionar domínios adicionais por ${ price }."
@@ -5855,6 +5967,9 @@
       "Generate text": [
         "Gerar texto"
       ],
+      "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
+        "Atribua às faturas recebidas uma etiqueta com um código de cores, como “${ suggestedLabelName }”. Quando forem pagas, altere a etiqueta para “${ suggestedPaidLabelName }”."
+      ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Tem ${ numAttachments } anexo (${ numAttachmentsSize })",
         "Tem ${ numAttachments } anexos (${ numAttachmentsSize })"
@@ -5895,6 +6010,9 @@
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Se o seu alias for vendido, divulgado ou utilizado de forma abusiva, basta desativá-lo para deixar de receber spam."
       ],
+      "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
+        "Se a sua palavra-passe for parar à dark web, ${ BRAND_NAME } pode dizer-lhe de que serviço os seus dados foram divulgados e como parar os danos."
+      ],
       "Image description": [
         "Descrição da imagem"
       ],
@@ -5929,6 +6047,9 @@
       "Include Spam/Trash.": [
         "Incluir Spam/Lixeira."
       ],
+      "Include your prompt and the response to help us improve accuracy.": [
+        "Inclua seu prompt e a resposta para nos ajudar a melhorar a precisão."
+      ],
       "Inherited from parent folder": [
         "Herdado da pasta principal"
       ],
@@ -5958,6 +6079,12 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Confirme apenas a sua seleção e faremos o resto."
+      ],
+      "Keep your login and credit card details safe but always on hand by adding it to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Mantenha os seus dados de início de sessão e de cartão de crédito seguros, mas sempre à mão, adicionando-os ao ${ PASS_APP_NAME }. É gratuito e está incluído na sua conta ${ BRAND_NAME }."
+      ],
+      "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
+        "Mantenha a sua caixa de correio arrumada, eliminando automaticamente o lixo e o spam que lá se encontram há mais de 30 dias."
       ],
       "Key fingerprint": [
         "Impressão digital da chave"
@@ -6073,6 +6200,9 @@
       "Monthly ${ onDayString }": [
         "Mensalmente ${ onDayString }"
       ],
+      "More refine actions": [
+        "Mais ações de refinamento"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nomeie a sua nova pasta e selecione a pasta principal onde deseja colocá-la. Se não selecionar uma pasta principal, esta nova pasta será criada como uma pasta de nível superior."
       ],
@@ -6145,6 +6275,9 @@
       "Organization size": [
         "Tamanho da organização"
       ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Os nossos alertas são mais cautelosos. Se não reconhece nenhuma das informações violadas, pode ignorar este relatório em segurança."
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "O nosso sistema sinalizou esta mensagem como uma tentativa de phishing. Verifique se é legítima."
       ],
@@ -6172,6 +6305,9 @@
       "Please add at least one recipient.": [
         "Adicione pelo menos um destinatário."
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Por favor, peça ao proprietário para convidá-lo diretamente para o documento."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Autentique o seu cartão no separador de verificação."
       ],
@@ -6190,6 +6326,12 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Note que este processo pode levar algum tempo dependendo do tamanho do seu livro de endereços."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Tenha em atenção que, ao clicar no botão Confirmar, a sua conta terá ${ remainingCreditsFormatted } créditos restantes."
+      ],
+      "Please open the document to view it.": [
+        "Por favor, abra o documento para o visualizar."
+      ],
       "Please provide a name and an email address for creating a group.": [
         "Indique um nome e um endereço de e-mail para criar um grupo."
       ],
@@ -6205,6 +6347,12 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selecione os e-mails a adicionar a ${ groupName }."
+      ],
+      "Please share what the issue is": [
+        "Por favor, partilhe qual é o problema"
+      ],
+      "Please share what you expected": [
+        "Por favor, partilhe as suas expectativas"
       ],
       "Please try again in a few moments": [
         "Por favor, tente novamente dentro de alguns momentos"
@@ -6236,6 +6384,9 @@
       "Preview for this file type is not supported": [
         "A pré-visualização deste tipo de ficheiro não é suportada"
       ],
+      "Preview of documents is not yet supported.": [
+        "A pré-visualização de documentos ainda não é suportada."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "O preço inclui todos os descontos aplicáveis com base no ciclo e cupões não expirados guardados na sua conta."
       ],
@@ -6254,6 +6405,9 @@
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Evite que o seu e-mail seja incluído em listas de e-mail ou apropriado por spammers com ${ maskMyEmailButton }."
       ],
+      "Public sharing of documents is not yet supported.": [
+        "A partilha pública de documentos ainda não é suportada."
+      ],
       "Recipient: ": [
         "Destinatário: "
       ],
@@ -6262,6 +6416,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
+      ],
+      "Remember to update this in your password manager or wherever you keep your account and login information.": [
+        "Não se esqueça de atualizar esta informação no seu gestor de palavras-passe ou onde quer que guarde a sua conta e informações de início de sessão."
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Reportar uma mensagem como tentativa de phishing, enviará a mensagem para nós, para que possamos analisá-la e melhorar os nossos filtros. Isto significa que poderemos ver o conteúdo da mensagem na íntegra."
@@ -6298,6 +6455,9 @@
       ],
       "Scheduling message...": [
         "Programação da mensagem..."
+      ],
+      "Scribe panel": [
+        "Painel Scribe"
       ],
       "Search option that lets you securely search for keywords in the body of email messages.": [
         "Opção de pesquisa que lhe permite pesquisar com segurança palavras-chave no corpo das mensagens de e-mail."
@@ -6425,11 +6585,17 @@
       "The download count includes both actual downloads and instances when files are previewed.": [
         "A contagem de transferências inclui ambas transferências reais e instâncias em que os ficheiros são pré-visualizados."
       ],
+      "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
+        "O endereço de e-mail ${ boldNoReplyEmail } parece não aceitar respostas. Tem a certeza de que pretende enviar a sua mensagem?"
+      ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Os dados encriptados são ligeiramente maiores devido à encriptação e às assinaturas, que garantem a segurança dos seus dados."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "As informações expostas foram divulgadas por um serviço de terceiros. As suas informações da conta ${ BRAND_NAME } permanecem seguras e encriptadas. ${ learnMoreLink }"
+      ],
+      "The initial setup may take a few minutes.": [
+        "A configuração inicial pode demorar alguns minutos."
       ],
       "The local database is being prepared": [
         "A base de dados local está em preparação"
@@ -6455,6 +6621,9 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "O processo de verificação abrirá um novo separador do navegador. Desative quaisquer bloqueadores de pop-ups ativos."
+      ],
+      "The writing assistant needs to finish downloading before it can be used.": [
+        "O assistente de escrita precisa de terminar o descarregamento antes de poder ser utilizado."
       ],
       "Themes can give your inbox a new look.": [
         "Os temas podem dar uma nova aparência à sua caixa de entrada."
@@ -6495,6 +6664,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "Este convite está guardado num calendário desativado."
+      ],
+      "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
+        "O objetivo é servir de ajuda à escrita. Verifique a exatidão do texto sugerido. ${ learnMoreResult }"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Esta hiperligação leva a um website que pode tentar roubar a sua informação, como palavras-passe e números de cartão de crédito."
@@ -6560,6 +6732,9 @@
       "This message will expire tomorrow at ${ value }": [
         "Esta mensagem vai expirar amanhã às ${ value }"
       ],
+      "This only needs to be done once.": [
+        "Isto só precisa de ser feito uma vez."
+      ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Esta chave pública será utilizada automaticamente para encriptar e-mails enviados para este endereço."
       ],
@@ -6568,6 +6743,9 @@
       ],
       "to ${ destinationElement } folder.": [
         "para a pasta ${ destinationElement }."
+      ],
+      "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
+        "Para evitar ser desviado pelos separadores abertos no seu navegador, utilize a aplicação para computador."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Para completar o seu pagamento, envie ${ btcAmountBold } para o endereço abaixo."
@@ -6689,6 +6867,9 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
+      "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
+        "Utilize endereços de e-mail diferentes para fins diferentes, para poder separar facilmente os seus e-mails por trabalho, pessoal ou outras áreas."
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Utilize os atalhos de teclado para gerir o seu e-mail mais rapidamente."
       ],
@@ -6775,6 +6956,12 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Após a configuração da autenticação de dois factores, serão fornecidos códigos de recuperação que poderá usar para se autenticar, no caso de perder o acesso à aplicação de autenticação."
+      ],
+      "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
+        "Quando se inscrever para receber uma newsletter, utilize um alias em vez do seu endereço de e-mail. A sua identidade permanece oculta e pode desativar o alias em qualquer altura."
+      ],
+      "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
+        "Quando estiver a viajar ou a utilizar uma rede Wi-Fi pública, ligue-se a ${ VPN_APP_NAME } para impedir que alguém siga a sua atividade online ou roube os seus dados. É grátis."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Deseja receber um novo código de verificação ou usar um método de verificação alternativo?"
@@ -6916,6 +7103,9 @@
         "Selecionou **${ elementsCount } mensagem**.",
         "Selecionou **${ elementsCount } mensagens**."
       ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Perderá o acesso às funcionalidades ${ planTitle } nesta data."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Será brevemente redirecionado para o PayPal para verificar o pagamento."
       ],
@@ -6946,6 +7136,9 @@
       "Your account will be updated once the payment is cleared.": [
         "A conta será atualizada assim que o pagamento for aprovado."
       ],
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "O seu navegador não suporta o assistente de escrita. Tente executá-lo em servidores."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Os seus dados estão prontos para serem importados de ${ importedEmailAddressStrong } para a sua conta ${ BRAND_NAME }."
       ],
@@ -6960,6 +7153,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Os seus ficheiros serão encriptados e depois guardados."
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
+        "O seu hardware não suporta a execução do assistente de escrita localmente. Tente executá-lo em servidores."
       ],
       "Your information was found on ${ displayedDate }": [
         "As suas informações foram encontradas em ${ displayedDate }"
@@ -7439,11 +7635,20 @@
       "Density": [
         "Densidade"
       ],
+      "Did not follow instructions": [
+        "As instruções não foram seguidas"
+      ],
       "Do you have any suggestions for our team?": [
         "Tem algumas sugestões para a nossa equipa?"
       ],
       "Don't ask again": [
         "Não perguntar novamente"
+      ],
+      "Don't like the style": [
+        "Não gosto do estilo"
+      ],
+      "Don't show again": [
+        "Não mostrar novamente"
       ],
       "Don't show this again": [
         "Não mostrar novamente"
@@ -7607,6 +7812,9 @@
       "No label found": [
         "Nenhuma etiqueta encontrada"
       ],
+      "Not factually correct": [
+        "Não é factualmente correto"
+      ],
       "Note": [
         "Nota"
       ],
@@ -7760,6 +7968,9 @@
       "Undisclosed Recipients": [
         "Destinatários não divulgados"
       ],
+      "Unsafe or problematic": [
+        "Inseguro ou problemático"
+      ],
       "Upload picture": [
         "Enviar imagem"
       ],
@@ -7772,11 +7983,17 @@
       "What happened?": [
         "O que é que aconteceu?"
       ],
+      "What is your main reason for canceling or downgrading?": [
+        "Qual o principal motivo para cancelar ou reverter para um plano inferior?"
+      ],
       "With attachment": [
         "Com anexo"
       ],
       "Without attachment": [
         "Sem anexo"
+      ],
+      "Writing assistant": [
+        "Assistente de escrita"
       ],
       "Your alias": [
         "O seu alias"
@@ -9332,6 +9549,9 @@
       "A way to contact you": [
         "Uma forma de o contactar"
       ],
+      "Describe what to change": [
+        "Descreva o que deve ser alterado"
+      ],
       "E.g., ": [
         "Ex., "
       ],
@@ -9352,6 +9572,9 @@
       ],
       "First name": [
         "Primeiro nome"
+      ],
+      "Generating": [
+        "A gerar"
       ],
       "Gift code": [
         "Código de oferta"
@@ -9389,6 +9612,9 @@
       "Please insert link first": [
         "Introduza primeiro a hiperligação"
       ],
+      "Please share what you expected": [
+        "Por favor, partilhe as suas expectativas"
+      ],
       "Search date, name, email address, or subject line": [
         "Data de pesquisa, nome, endereço de e-mail ou linha de assunto"
       ],
@@ -9416,6 +9642,9 @@
       "Select state": [
         "Selecionar estado"
       ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Partilhe o que pensa que poderia tornar a ${ BRAND_NAME } melhor"
+      ],
       "Start date": [
         "Data de início"
       ],
@@ -9424,6 +9653,24 @@
       ],
       "Subject": [
         "Assunto"
+      ],
+      "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Diga ao assistente de escrita o que deve escrever. Exemplo: “Anunciar os próximos eventos numa newsletter”"
+      ],
+      "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
+        "Diga ao assistente de escrita o que deve escrever. Exemplo: “Cancelar a minha inscrição no ginásio”"
+      ],
+      "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
+        "Diga ao assistente de escrita o que deve escrever. Exemplo: “Convide a Joana para a minha festa”"
+      ],
+      "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
+        "Diga ao assistente de escrita o que deve escrever. Exemplo: “Agradecer ao meu colega de trabalho pela ajuda num projeto”"
+      ],
+      "Tell the writing assistant what to write. Example: “Write a cover letter for an internship”": [
+        "Diga ao assistente de escrita o que deve escrever. Exemplo: “Escrever uma carta de apresentação para um estágio”"
+      ],
+      "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
+        "Diga ao assistente de escrita o que deve escrever. Exemplo: “Escrever um e-mail de acompanhamento para um cliente”"
       ],
       "Text": [
         "Texto"
@@ -9649,6 +9896,9 @@
       ],
       "Used on amazon for shopping, etc.": [
         "Usado na Amazon para compras, etc."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Quando lhe for pedido o seu endereço de e-mail, forneça este alias. Os aliases são fornecidos pelo ${ passLink }."
       ]
     },
     "Security Center (link to Pass App)": {
@@ -9662,8 +9912,26 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } e ${ remainingCount } outras potenciais fugas detetadas. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } e 1 outra potencial fuga detetada. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Foi detetada uma potencial fuga de ${ name }. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes. ${ link }"
+      ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Seja notificado se a sua palavra-passe ou outros dados tiverem sido divulgados por um serviço de terceiros. ${ learnMoreLink }"
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "A nossa solução de segurança de ponta baseada em IA, concebida para utilizadores que procuram uma maior proteção para as suas contas. ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "O Sentinel está **ativo** e a salvaguardar a sua conta."
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "As suas informações foram encontradas em pelo menos uma fuga de dados. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes. ${ link }"
       ]
     },
     "Select files": {
@@ -10666,6 +10934,9 @@
       "Contacts deleted": [
         "Contactos eliminados"
       ],
+      "Content copied to clipboard": [
+        "Conteúdo copiado para a área de transferência"
+      ],
       "Conversation added to ${ labelName }.": [
         "Conversa adicionada a ${ labelName }."
       ],
@@ -10800,6 +11071,9 @@
       "Preferences saved": [
         "Preferências guardadas"
       ],
+      "Problem reported": [
+        "Problema comunicado"
+      ],
       "Public key trusted": [
         "Chave pública confiada"
       ],
@@ -10820,6 +11094,9 @@
       ],
       "Verification successful": [
         "A verificação é terminada."
+      ],
+      "You have successfully canceled your subscription.": [
+        "A sua subscrição foi cancelada com sucesso."
       ],
       "You have successfully unsubscribed": [
         "A sua subscrição foi cancelada."
@@ -11127,6 +11404,9 @@
       "Conversation list": [
         "Lista de conversas"
       ],
+      "Coupon": [
+        "Cupão"
+      ],
       "Craft better emails": [
         "Crie e-mails melhores"
       ],
@@ -11264,6 +11544,9 @@
       "Enable message content search": [
         "Ativar pesquisa de conteúdo de mensagem"
       ],
+      "Enter 2FA code": [
+        "Insira o código 2FA"
+      ],
       "Enter your password": [
         "Introduza a sua palavra-passe"
       ],
@@ -11300,6 +11583,12 @@
       "Groups": [
         "Grupos"
       ],
+      "Hide your email with ${ PASS_APP_NAME }": [
+        "Oculte o seu e-mail com ${ PASS_APP_NAME }"
+      ],
+      "How to update your email address": [
+        "Como atualizar o seu endereço de e-mail"
+      ],
       "Human verification": [
         "Verificação humana"
       ],
@@ -11318,6 +11607,9 @@
       ],
       "Import failed": [
         "Erro na importação"
+      ],
+      "Import groups": [
+        "Importar grupos"
       ],
       "Increase your privacy with more addresses": [
         "Aumente a sua privacidade com mais endereços"
@@ -11456,6 +11748,9 @@
       ],
       "No trackers found": [
         "Nenhum rastreador encontrado"
+      ],
+      "No-reply address detected": [
+        "Endereço de não responder detetado"
       ],
       "Notes": [
         "Notas"

@@ -70,11 +70,11 @@
       "Accept": [
         "Принять"
       ],
-      "Activate": [
-        "Активировать"
-      ],
       "activate": [
         "включить"
+      ],
+      "Activate": [
+        "Активировать"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активировать ${ user.Name }@pm.me"
@@ -742,10 +742,10 @@
       "No, thanks": [
         "Нет, спасибо"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -6877,9 +6877,6 @@
       "Are you sure you want to delete this folder?": [
         "Вы уверены, что хотите удалить эту папку?"
       ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "Вы уверены, что хотите удалить эту группу? Адрес группы больше не будет работать."
-      ],
       "Are you sure you want to delete this label?": [
         "Вы уверены, что хотите удалить этот ярлык?"
       ],
@@ -6903,6 +6900,9 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Вы уверены, что хотите удалить домен ${ boldDomain }?"
+      ],
+      "Ask your organization admin to setup Gateways.": [
+        "Попросите администратора вашей организации настроить Шлюзы."
       ],
       "Attention required": [
         "Требуется внимание"
@@ -7269,6 +7269,9 @@
       ],
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Письма, помеченные этим ярлыком ${ nameDeleted }, не будут удалены и по-прежнему могут быть найдены в соответствующей папке."
+      ],
+      "Enable email notifications": [
+        "Включить уведомления по электронной почте"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Включите единый вход для обеспечения безопасности вашей организации"
@@ -12739,6 +12742,12 @@
       ],
       "Downloaded 2FA recovery codes": [
         "Скачать коды восстановления двухфакторной аутентификации"
+      ],
+      "Email notifications have been disabled": [
+        "Уведомления по электронной почте отключены"
+      ],
+      "Email notifications have been enabled": [
+        "Уведомления по электронной почте включены"
       ],
       "Invalid code": [
         "Недействительный код"

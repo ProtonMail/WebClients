@@ -70,11 +70,11 @@
       "Accept": [
         "Hyväksy"
       ],
-      "Activate": [
-        "Ota käyttöön"
-      ],
       "activate": [
         "ota käyttöön"
+      ],
+      "Activate": [
+        "Ota käyttöön"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivoi ${ user.Name }@pm.me"
@@ -742,10 +742,10 @@
       "No, thanks": [
         "Ei kiitos"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -3320,7 +3320,7 @@
     },
     "Delete address prompt": {
       "Are you sure you want to delete this address?": [
-        "Haluatko varmasti poistaa tämän osoitteen?"
+        "Haluatko varmasti poistaa osoitteen?"
       ],
       "Delete address": [
         "Poista osoite"
@@ -3369,6 +3369,14 @@
       ],
       "Please note that if you delete this domain ${ domainName }, all the addresses associated with it will be disabled.": [
         "Huomioithan, että verkkotunnuksen ${ domainName } poisto poistaa myös kaikki sitä käyttävät osoitteet käytöstä."
+      ]
+    },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Haluatko varmasti poistaa ryhmän?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Huomaa, että jos poistat ryhmän ${ displayGroupName } (osoite ${ displayGroupAddressEmail }), et voi enää vastaanottaa sen osoitetta käyttäviä sähköposteja."
       ]
     },
     "Delinquent modal title": {
@@ -3476,7 +3484,7 @@
     },
     "Disable address prompt": {
       "Are you sure you want to disable this address?": [
-        "Haluatko varmasti poistaa tämän osoitteen käytöstä?"
+        "Haluatko varmasti poistaa osoitteen käytöstä?"
       ],
       "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
         "Poistamalla osoitteen ${ address } käytöstä, et voi enää lähettää tai vastaanottaa sähköposteja sitä käyttäen, ja kaikki siihen liitetyt ${ BRAND_NAME } -tuotteet poistetaan käytöstä."
@@ -4719,6 +4727,11 @@
       ],
       "Zero keys reactivated": [
         "Yhtään avainta ei aktivoitu uudelleen"
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "Syötä sähköpostiosoite"
       ]
     },
     "Error importing calendar": {
@@ -6787,7 +6800,7 @@
         "Haluatko varmasti perua ryhmän muokkauksen?"
       ],
       "Are you sure you want to delete this calendar?": [
-        "Haluatko varmasti poistaa tämän kalenterin?"
+        "Haluatko varmasti poistaa kalenterin?"
       ],
       "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
         "Haluatko varmasti poistaa kalenterin? Myös kaikki osoitteet, joille olet jakanut kalenterin menettävät pääsyn siihen."
@@ -6799,13 +6812,10 @@
         "Haluatko varmasti poistaa kalenterin? Voit lisätä yleiset vapaapäivät myöhemmin uudelleen."
       ],
       "Are you sure you want to delete this filter?": [
-        "Haluatko varmasti poistaa tämän suodattimen?"
+        "Haluatko varmasti poistaa suodattimen?"
       ],
       "Are you sure you want to delete this folder?": [
-        "Haluatko varmasti poistaa tämän kansion?"
-      ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "Haluatko varmasti poistaa tämän ryhmän? Ryhmän osoite ei enää toimi."
+        "Haluatko varmasti poistaa kansion?"
       ],
       "Are you sure you want to delete this label?": [
         "Haluatko varmasti poistaa tunnisteen?"
@@ -6830,6 +6840,9 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Haluatko varmasti poistaa verkkotunnuksen ${ boldDomain }?"
+      ],
+      "Ask your organization admin to setup Gateways.": [
+        "Pyydä organisaatiosi ylläpitoa määrittämään yhdyskäytävät."
       ],
       "Attention required": [
         "Huomiota vaaditaan"
@@ -7186,6 +7199,9 @@
       ],
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Tällä ${ nameDeleted } -tunnisteella merkittyjä sähköposteja ei poisteta, ja ne löytyvät edelleen vastaavasta kansiosta."
+      ],
+      "Enable email notifications": [
+        "Ota sähköposti-ilmoitukset käyttöön"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Suojaaa organisaatiotasi ottamalla kertakirjautuminen käyttöön"
@@ -8377,6 +8393,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "CSV-tiedoston muoto on virheellinen."
+      ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "Nykyinen tilauksesi ei tue ryhmäominaisuutta. Aiemmin luodut ryhmät on poistettu käytöstä, ja ne voi vain poistaa."
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Linkki, jolla ilmoitetaan, ettet määrittänyt ${ BRAND_NAME }-tiliä on vanhentunut. Ota yhteyttä asiakaspalveluun ongelman ratkaisemiseksi."
@@ -10437,6 +10456,9 @@
       ],
       "Reveal password": [
         "Näytä salasana"
+      ],
+      "Search by email": [
+        "Hae sähköpostilla"
       ],
       "Second password": [
         "Toinen salasana"
@@ -12556,6 +12578,12 @@
       "Downloaded 2FA recovery codes": [
         "Lataa 2FA-palautuskoodit"
       ],
+      "Email notifications have been disabled": [
+        "Sähköposti-ilmoitukset eivät ole käytössä"
+      ],
+      "Email notifications have been enabled": [
+        "Sähköposti-ilmoitukset ovat käytössä"
+      ],
       "Invalid code": [
         "Virheellinen koodi"
       ],
@@ -13025,6 +13053,29 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Ollessaan kirjautuneina verkkosovelluksiimme, käyttäjät näkevät ${ BRAND_NAME }-kuvakkeen tilalla oman logosi."
+      ]
+    },
+    "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify } sähköpostiosoitteesi ${ email } asettaaksesi organisaation identiteetti"
+      ],
+      "Current organization identity": [
+        "Nykyinen organisaation identiteetti"
+      ],
+      "Edit organization identity": [
+        "Muokkaa organisaation identiteettiä"
+      ],
+      "New organization identity": [
+        "Uusi organisaation identiteetti"
+      ],
+      "Organization identity": [
+        "Organisaation identiteetti"
+      ],
+      "Organization identity updated": [
+        "Organisaation identiteettiä muutettiin"
+      ],
+      "Verify": [
+        "Vahvista"
       ]
     },
     "OS compatibility": {
@@ -17566,6 +17617,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Mikäli ostit lahjakoodin tai sait sellaisen tueltamme, voit syöttää sen tähän."
       ],
+      "IP address (Internet Service Provider)": [
+        "IP-osoite (Internet-palveluntarjoaja)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Jäsenet, jotka eivät käytä 2FA:ta, saavat sähköpostin, jossa heitä pyydetään ottamaan se käyttöön mahdollisimman pian."
       ],
@@ -17761,6 +17815,9 @@
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "Organisaation **${ orgName }** ylläpitäjä (**${ adminEmail }**) haluaa antaa tilillesi ylläpitäjän oikeudet."
       ],
+      "Approve all": [
+        "Hyväksy kaikki"
+      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Jos teet käyttäjästä yksityisen, et voi enää auttaa häntä tietojen tai käyttäjätilin palautuksessa."
       ],
@@ -17778,6 +17835,9 @@
       ],
       "Enable administrator access": [
         "Ota ylläpitäjän oikeudet käyttöön"
+      ],
+      "Enable manually": [
+        "Ota käyttöön manuaalisesti"
       ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "Jos menetät kirjautumistietosi, organisaatiosi ylläpitäjä voi nollata salasanasi ja palauttaa pääsysi tilillesi."
@@ -18216,7 +18276,7 @@
         "Haluatko varmasti poistaa puhelinnumeron?"
       ],
       "Are you sure you want to delete this address?": [
-        "Haluatko varmasti poistaa tämän osoitteen?"
+        "Haluatko varmasti poistaa osoitteen?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Jos poistat tämän osoitteen, et voi enää vastaanottaa päivittäisiä sähköposti-ilmoituksia."

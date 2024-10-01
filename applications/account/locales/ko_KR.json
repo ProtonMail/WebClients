@@ -70,10 +70,10 @@
       "Accept": [
         "수락"
       ],
-      "Activate": [
+      "activate": [
         "활성화"
       ],
-      "activate": [
+      "Activate": [
         "활성화"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -742,10 +742,10 @@
       "No, thanks": [
         "아니요, 괜찮아요"
       ],
-      "Ok": [
+      "OK": [
         "확인"
       ],
-      "OK": [
+      "Ok": [
         "확인"
       ],
       "Open": [
@@ -3357,6 +3357,14 @@
         "${ domainName } 도메인을 삭제할 경우 도메인과 관련된 모든 주소도 비활성화됩니다."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "이 그룹을 정말 삭제하시겠어요?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "그룹 ${ displayGroupName } (${ displayGroupAddressEmail } 주소)을(를) 삭제하면 해당 주소로 이메일 수신이 더 이상 불가능해집니다."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "기한이 지난 청구서"
@@ -4700,6 +4708,11 @@
       ],
       "Zero keys reactivated": [
         "제로 키 재활성화됨"
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "이메일 주소 입력"
       ]
     },
     "Error importing calendar": {
@@ -6738,9 +6751,6 @@
       "Are you sure you want to delete this folder?": [
         "이 폴더를 삭제하는 것이 확실합니까?"
       ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "이 그룹을 정말 삭제하시겠어요? 그룹 주소를 더 이상 사용할 수 없습니다."
-      ],
       "Are you sure you want to delete this label?": [
         "이 라벨을 정말 제거하시겠어요?"
       ],
@@ -6764,6 +6774,9 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "이 도메인 ${ boldDomain }을(를) 정말 제거하시겠습니까?"
+      ],
+      "Ask your organization admin to setup Gateways.": [
+        "게이트웨이를 설정하려면 조직 관리자에 문의하십시오."
       ],
       "Attention required": [
         "주의 필요"
@@ -7115,6 +7128,9 @@
       ],
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "라벨 ${ nameDeleted }로 태그된 이메일들은 삭제되지 않으며 해당하는 폴더에서 여전히 찾을 수 있습니다."
+      ],
+      "Enable email notifications": [
+        "이메일 알림 활성화"
       ],
       "Enable single sign-on to keep your organization safe": [
         "사용자의 조직이 안전하도록 통합 인증을 활성화하십시오"
@@ -8073,6 +8089,9 @@
       "SCIM token active": [
         "SCIM 토큰 활성화"
       ],
+      "Search by an email address to begin": [
+        "시작하려면 이메일 주소로 검색하기"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 계정 보호하기"
       ],
@@ -8300,6 +8319,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "CSV 파일의 포맷이 올바르지 않습니다."
+      ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "그룹 기능은 현재 구독에서 지원하지 않습니다. 최근에 생성된 그룹이 비활성화되었으며 삭제로만 제한됩니다."
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "${ BRAND_NAME } 계정을 설정하지 않았다고 보고하는 링크가 만료되었습니다. 이 문제를 해결하기 위해 저희 지원팀에 연락해 주세요."
@@ -10345,6 +10367,9 @@
       ],
       "Reveal password": [
         "비밀번호 표시"
+      ],
+      "Search by email": [
+        "이메일로 검색"
       ],
       "Second password": [
         "2단계 비밀번호"
@@ -12432,6 +12457,12 @@
       "Downloaded 2FA recovery codes": [
         "다운로드한 2FA 복구 코드"
       ],
+      "Email notifications have been disabled": [
+        "이메일 알림이 비활성화되었습니다."
+      ],
+      "Email notifications have been enabled": [
+        "이메일 알림이 활성화되었습니다."
+      ],
       "Invalid code": [
         "잘못된 코드입니다."
       ],
@@ -12914,6 +12945,29 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "다른 사용자가 웹 앱에 로그인했을 때 사용자의 ${ BRAND_NAME } 아이콘 대신 로고를 보게 됩니다."
+      ]
+    },
+    "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "조직 신원을 설정하려면 사용자의 이메일 주소 ${ email }를 ${ verify }하십시오."
+      ],
+      "Current organization identity": [
+        "현재 조직 신원"
+      ],
+      "Edit organization identity": [
+        "조직 신원 편집하기"
+      ],
+      "New organization identity": [
+        "새로운 조직 신원"
+      ],
+      "Organization identity": [
+        "조직 신원"
+      ],
+      "Organization identity updated": [
+        "조직 신원 업데이트됨"
+      ],
+      "Verify": [
+        "인증"
       ]
     },
     "OS compatibility": {
@@ -17397,6 +17451,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "기프트 코드를 구매하셨거나 서포트 팀에서 받으셨다면, 여기에 입력하실 수 있습니다."
       ],
+      "IP address (Internet Service Provider)": [
+        "IP 주소 (인터넷 서비스 제공자)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "2단계 인증을 사용하지 않는 회원들은 가능한 한 빨리 활성화하라는 메일을 받게 됩니다."
       ],
@@ -17583,6 +17640,15 @@
       ]
     },
     "unprivatization": {
+      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
+        "${ n }명 사용자가 신원 제공자를 통해 조직에 참가했습니다. 해당 계정을 수락 및 거절하십시오:"
+      ],
+      "Administrator access enabled": [
+        "조직 접근 활성화됨"
+      ],
+      "Administrator access rejected": [
+        "조직 접근 비활성화됨"
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "관리자가 비공개 사용자의 데이터 접근이 불가하며 비밀번호 또한 재설정이 불가합니다."
       ],
@@ -17592,11 +17658,20 @@
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "**${ orgName }** 조직의 관리자(**${ adminEmail }**)가 사용자의 계정에 대한 관리자 권한 활성화를 요청했습니다."
       ],
+      "Approve all": [
+        "모두 승인"
+      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "사용자를 비공개로 전환하면 해당 사용자가 데이터나 계정을 손실하면 지원할 수 없게 됩니다."
       ],
       "Cancel": [
         "취소"
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "${ n }명 사용자에 대한 관리자 접근 자동 활성화가 불가능합니다. 해당 사용자들의 암호화 키가 다음 도중에 업데이트되었습니다:"
+      ],
+      "Could not enable administrator access: ${ error }": [
+        "조직 접근 활성화 불가 : ${ error }"
       ],
       "Delete request": [
         "삭제 요청"
@@ -17609,6 +17684,9 @@
       ],
       "Enable administrator access": [
         "관리자 권환 활성화"
+      ],
+      "Enable manually": [
+        "수동 활성화"
       ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "만약 회원님의 자격 증명에 접근할 수 없는 상황이 발생한다면, 조직의 관리자가 회원님 계정의 비밀번호를 재설정하고 접근을 복원할 수 있습니다."

@@ -70,11 +70,11 @@
       "Accept": [
         "Αποδοχή"
       ],
-      "Activate": [
-        "Ενεργοποίηση"
-      ],
       "activate": [
         "ενεργοποιήστε"
+      ],
+      "Activate": [
+        "Ενεργοποίηση"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ενεργοποίηση ${ user.Name }@pm.me"
@@ -742,11 +742,11 @@
       "No, thanks": [
         "Όχι, ευχαριστώ"
       ],
-      "Ok": [
-        "OK"
-      ],
       "OK": [
         "ΟΚ"
+      ],
+      "Ok": [
+        "OK"
       ],
       "Open": [
         "Άνοιγμα"
@@ -3371,6 +3371,11 @@
         "Λάβετε υπόψη ότι εάν διαγράψετε αυτόν τον τομέα ${ domainName }, όλες οι διευθύνσεις που σχετίζονται με αυτόν θα απενεργοποιηθούν."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Είστε βέβαιος ότι θέλετε να διαγράψετε αυτή την ομάδα;"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Καθυστερημένο τιμολόγιο"
@@ -4719,6 +4724,11 @@
       ],
       "Zero keys reactivated": [
         "Τα Μηδενικά κλειδιά ενεργοποιήθηκαν ξανά"
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "Εισάγετε μια διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ]
     },
     "Error importing calendar": {
@@ -6804,9 +6814,6 @@
       "Are you sure you want to delete this folder?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτόν το φάκελο;"
       ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτήν την ομάδα. Η διεύθυνση ομάδας δε θα λειτουργεί πλέον."
-      ],
       "Are you sure you want to delete this label?": [
         "Θέλετε σίγουρα να διαγράψετε αυτήν την ετικέτα;"
       ],
@@ -7186,6 +7193,9 @@
       ],
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Τα μηνύματα ηλεκτρονικού ταχυδρομείου με ετικέτα ${ nameDeleted } δε θα διαγραφούν και μπορούν ακόμα να βρεθούν στον αντίστοιχο φάκελο."
+      ],
+      "Enable email notifications": [
+        "Ενεργοποίηση ειδοποιήσεων email"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Ενεργοποιήστε την καθολική σύνδεση για να διατηρήσετε τον οργανισμό σας ασφαλή"
@@ -10438,6 +10448,9 @@
       "Reveal password": [
         "Εμφάνιση κωδικού"
       ],
+      "Search by email": [
+        "Αναζήτηση μέσω email"
+      ],
       "Second password": [
         "Δεύτερος κωδικός πρόσβασης"
       ],
@@ -13025,6 +13038,20 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Οι χρήστες θα βλέπουν το λογότυπό σας αντί για το εικονίδιο του ${ BRAND_NAME } όταν είναι συνδεδεμένοι στις εφαρμογές ιστού μας."
+      ]
+    },
+    "orgidentity": {
+      "Current organization identity": [
+        "Ταυτότητα τρέχον οργανισμού"
+      ],
+      "New organization identity": [
+        "Ταυτότητα νέου οργανισμού"
+      ],
+      "Organization identity": [
+        "Ταυτότητα οργανισμού"
+      ],
+      "Verify": [
+        "Επαλήθευση"
       ]
     },
     "OS compatibility": {
@@ -17749,6 +17776,12 @@
       ]
     },
     "unprivatization": {
+      "Administrator access enabled": [
+        "Η πρόσβαση διαχειριστή ενεργοποιήθηκε"
+      ],
+      "Administrator access rejected": [
+        "Η πρόσβαση διαχειριστή απορρίφθηκε"
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Οι διαχειριστές δεν μπορούν να έχουν πρόσβαση στα δεδομένα των ιδιωτών χρηστών και δεν μπορούν να επαναφέρουν τον κωδικό πρόσβασής τους."
       ],
@@ -17757,6 +17790,9 @@
       ],
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "Ένας διαχειριστής του οργανισμού **${ orgName }** (**${ adminEmail }**) θέλει να ενεργοποιήσει την πρόσβαση διαχειριστή για τον λογαριασμό σας."
+      ],
+      "Approve all": [
+        "Έγκριση όλων"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Κάνοντας τον χρήστη ιδιωτικό, δε θα μπορείτε να τον βοηθήσετε να ανακτήσει την πρόσβαση στα δεδομένα ή τον λογαριασμό του."

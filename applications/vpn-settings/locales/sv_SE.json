@@ -2121,6 +2121,11 @@
         "Observera att om du tar bort denna domän ${ domainName }, kommer alla adresser som är associerade med den att inaktiveras."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Är du säker på att du vill ta bort denna grupp?"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Försenad faktura"
@@ -2608,6 +2613,11 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Ditt konto eller organisation har en förfallen faktura. Vänligen betala alla obetalda fakturor."
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "Ange en e-postadress"
       ]
     },
     "Error importing users": {
@@ -3547,9 +3557,6 @@
       "Are you sure you want to cancel editing the group?": [
         "Är du säker på att du vill avbryta redigeringen av gruppen?"
       ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "Är du säker på att du vill ta bort denna grupp? Gruppadressen kommer inte att fungera längre."
-      ],
       "Are you sure you want to discard your changes?": [
         "Är du säker på att du vill ignorera dina ändringar?"
       ],
@@ -4366,6 +4373,9 @@
       "SCIM token active": [
         "SCIM-token aktiv"
       ],
+      "Search by an email address to begin": [
+        "Sök efter en e-postadress för att börja"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Skydda ditt ${ BRAND_NAME }-konto"
       ],
@@ -4507,6 +4517,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Formatet på din CSV-fil är felaktigt."
+      ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "Gruppfunktionen stöds inte på din nuvarande prenumeration. Tidigare skapade grupper är inaktiverade och kan endast tas bort."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Namnet kommer att vara synligt för dina användare när de är inloggade."
@@ -5504,6 +5517,9 @@
       ],
       "Reveal password": [
         "Visa lösenord"
+      ],
+      "Search by email": [
+        "Sök efter e-post"
       ],
       "Second password": [
         "Andra lösenord"
@@ -7115,6 +7131,29 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Användare kommer att se din logga istället för ${ BRAND_NAME }-ikonen när de är inloggade på våra webbappar."
+      ]
+    },
+    "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify } din e-postadress ${ email } för att ställa in organisationens identitet."
+      ],
+      "Current organization identity": [
+        "Nuvarande organisationsidentitet"
+      ],
+      "Edit organization identity": [
+        "Redigera organisationsidentitet"
+      ],
+      "New organization identity": [
+        "Ny organisationsidentitet"
+      ],
+      "Organization identity": [
+        "Organisationsidentitet"
+      ],
+      "Organization identity updated": [
+        "Organisationsidentitet uppdaterad"
+      ],
+      "Verify": [
+        "Verifiera"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -10019,6 +10058,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Om du har köpt en presentkod eller fått en från vårt supportteam kan du ange den här."
       ],
+      "IP address (Internet Service Provider)": [
+        "IP-adress (internetleverantör)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Medlemmar som inte använder 2FA kommer få ett e-postmeddelande som ber dem att aktivera det så fort som möjligt."
       ],
@@ -10096,14 +10138,23 @@
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratörer kan inte komma åt privata användares data och kan inte återställa deras lösenord."
       ],
+      "Approve all": [
+        "Godkänn alla"
+      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Genom att göra användaren privat kommer du inte att kunna hjälpa dem att återfå åtkomst till sin data eller sitt konto."
+      ],
+      "Could not enable administrator access: ${ error }": [
+        "Kunde inte aktivera administratörsåtkomst: ${ error }"
       ],
       "Delete request": [
         "Ta bort begäran"
       ],
       "Delete request to access user data?": [
         "Ta bort begäran om åtkomst till användardata?"
+      ],
+      "Enable manually": [
+        "Aktivera manuellt"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "När användaren samtycker kommer du att kunna hjälpa dem att återfå kontoåtkomst eller hantera deras data."

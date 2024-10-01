@@ -2085,7 +2085,7 @@
     },
     "Delete address prompt": {
       "Are you sure you want to delete this address?": [
-        "Haluatko varmasti poistaa tämän osoitteen?"
+        "Haluatko varmasti poistaa osoitteen?"
       ],
       "Delete address": [
         "Poista osoite"
@@ -2128,6 +2128,14 @@
         "Huomioithan, että verkkotunnuksen ${ domainName } poisto poistaa myös kaikki sitä käyttävät osoitteet käytöstä."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Haluatko varmasti poistaa ryhmän?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Huomaa, että jos poistat ryhmän ${ displayGroupName } (osoite ${ displayGroupAddressEmail }), et voi enää vastaanottaa sen osoitetta käyttäviä sähköposteja."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Erääntynyt lasku"
@@ -2140,7 +2148,7 @@
     },
     "Disable address prompt": {
       "Are you sure you want to disable this address?": [
-        "Haluatko varmasti poistaa tämän osoitteen käytöstä?"
+        "Haluatko varmasti poistaa osoitteen käytöstä?"
       ],
       "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
         "Poistamalla osoitteen ${ address } käytöstä, et voi enää lähettää tai vastaanottaa sähköposteja sitä käyttäen, ja kaikki siihen liitetyt ${ BRAND_NAME } -tuotteet poistetaan käytöstä."
@@ -2629,6 +2637,11 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Tililläsi tai organisaatiollasi on erääntynyt lasku. Maksa kaikki maksamattomat laskut."
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "Syötä sähköpostiosoite"
       ]
     },
     "Error importing users": {
@@ -3563,9 +3576,6 @@
       "Are you sure you want to cancel editing the group?": [
         "Haluatko varmasti perua ryhmän muokkauksen?"
       ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "Haluatko varmasti poistaa tämän ryhmän? Ryhmän osoite ei enää toimi."
-      ],
       "Are you sure you want to discard your changes?": [
         "Haluatko varmasti hylätä muutokset?"
       ],
@@ -3580,6 +3590,9 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Haluatko varmasti poistaa verkkotunnuksen ${ boldDomain }?"
+      ],
+      "Ask your organization admin to setup Gateways.": [
+        "Pyydä organisaatiosi ylläpitoa määrittämään yhdyskäytävät."
       ],
       "Attention required": [
         "Huomiota vaaditaan"
@@ -4565,6 +4578,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "CSV-tiedoston muoto on virheellinen."
+      ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "Nykyinen tilauksesi ei tue ryhmäominaisuutta. Aiemmin luodut ryhmät on poistettu käytöstä, ja ne voi vain poistaa."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Nimi näkyy käyttäjillesi, kun he ovat kirjautuneena."
@@ -5582,6 +5598,9 @@
       ],
       "Reveal password": [
         "Näytä salasana"
+      ],
+      "Search by email": [
+        "Hae sähköpostilla"
       ],
       "Second password": [
         "Toinen salasana"
@@ -7181,6 +7200,29 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Ollessaan kirjautuneina verkkosovelluksiimme, käyttäjät näkevät ${ BRAND_NAME }-kuvakkeen tilalla oman logosi."
+      ]
+    },
+    "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify } sähköpostiosoitteesi ${ email } asettaaksesi organisaation identiteetti"
+      ],
+      "Current organization identity": [
+        "Nykyinen organisaation identiteetti"
+      ],
+      "Edit organization identity": [
+        "Muokkaa organisaation identiteettiä"
+      ],
+      "New organization identity": [
+        "Uusi organisaation identiteetti"
+      ],
+      "Organization identity": [
+        "Organisaation identiteetti"
+      ],
+      "Organization identity updated": [
+        "Organisaation identiteettiä muutettiin"
+      ],
+      "Verify": [
+        "Vahvista"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -10126,6 +10168,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Mikäli ostit lahjakoodin tai sait sellaisen tueltamme, voit syöttää sen tähän."
       ],
+      "IP address (Internet Service Provider)": [
+        "IP-osoite (Internet-palveluntarjoaja)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Jäsenet, jotka eivät käytä 2FA:ta, saavat sähköpostin, jossa heitä pyydetään ottamaan se käyttöön mahdollisimman pian."
       ],
@@ -10203,6 +10248,9 @@
       "Admins can't access the data of private users and can't reset their password.": [
         "Ylläpitäjillä ei ole pääsyä yksityisten käyttäjien tietoihin, eivätkä he voi nollata heidän salasanojaan."
       ],
+      "Approve all": [
+        "Hyväksy kaikki"
+      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Jos teet käyttäjästä yksityisen, et voi enää auttaa häntä tietojen tai käyttäjätilin palautuksessa."
       ],
@@ -10211,6 +10259,9 @@
       ],
       "Delete request to access user data?": [
         "Poistetaanko käyttäjän tietojen käsittelyoikeuspyyntö?"
+      ],
+      "Enable manually": [
+        "Ota käyttöön manuaalisesti"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Kun käyttäjä on antanyt suostumuksen, voit auttaa heitä samaan takaisin tilinkäyttöoikeuden tai hallinnoimaan heidän tietojaan."
@@ -10525,7 +10576,7 @@
         "Haluatko varmasti poistaa puhelinnumeron?"
       ],
       "Are you sure you want to delete this address?": [
-        "Haluatko varmasti poistaa tämän osoitteen?"
+        "Haluatko varmasti poistaa osoitteen?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Jos poistat tämän osoitteen, et voi enää vastaanottaa päivittäisiä sähköposti-ilmoituksia."

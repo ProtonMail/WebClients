@@ -70,11 +70,11 @@
       "Accept": [
         "Accepta"
       ],
-      "Activate": [
-        "Activa"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activa"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activa ${ user.Name }@pm.me"
@@ -736,10 +736,10 @@
       "No, thanks": [
         "No, gràcies"
       ],
-      "Ok": [
+      "OK": [
         "D'acord"
       ],
-      "OK": [
+      "Ok": [
         "D'acord"
       ],
       "Open": [
@@ -3549,6 +3549,11 @@
         "Ajudeu-nos a millorar"
       ]
     },
+    "Downgrade warning": {
+      "Remove discount": [
+        "Suprimeix el descompte"
+      ]
+    },
     "Download link": {
       ".deb for Debian / Ubuntu": [
         ".deb per a Debian / Ubuntu"
@@ -4630,6 +4635,11 @@
       ],
       "Zero keys reactivated": [
         "Cap clau s'ha reactivat"
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "Introduïu una adreça de correu electrònic."
       ]
     },
     "Error importing calendar": {
@@ -5721,8 +5731,22 @@
       ]
     },
     "group_invitation: Success": {
+      "Group invitation accepted": [
+        "S'ha acceptat la invitació del grup."
+      ],
+      "Group invitation declined": [
+        "S'ha rebutjat la invitació del grup."
+      ],
       "Left group": [
         "Deixa el grup"
+      ]
+    },
+    "group_invite_2024: Title": {
+      "Group invitation accepted": [
+        "S'ha acceptat la invitació del grup."
+      ],
+      "Group invitation declined": [
+        "S'ha rebutjat la invitació del grup."
       ]
     },
     "Header": {
@@ -6985,6 +7009,9 @@
       ],
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Els correus electrònics amb aquesta etiqueta ${ nameDeleted } no s'eliminaran i continuaran trobant-se a la carpeta respectiva."
+      ],
+      "Enable email notifications": [
+        "Activa les notificacions per correu electrònic"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Habiliteu l'inici de sessió únic per a mantenir segura la vostra organització"
@@ -8993,6 +9020,11 @@
         "Assistent amb intel·ligència artificial per ajudar-vos a crear millors correus electrònics, de manera ràpida i sense esforç."
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "No és una adreça de correu electrònic vàlida."
+      ]
+    },
     "Input label": {
       "Link label (optional)": [
         "Etiqueta de l'enllaç (opcional)"
@@ -9893,6 +9925,9 @@
       "Issuer ID": [
         "ID de l'emissor"
       ],
+      "Keep emails in Sent/Drafts": [
+        "Mantén els correus electrònics a Enviats/Esborranys"
+      ],
       "Keep me signed in": [
         "Mantén la sessió iniciada"
       ],
@@ -10147,6 +10182,9 @@
       ],
       "Reveal password": [
         "Mostra la contrasenya"
+      ],
+      "Search by email": [
+        "Cerca per correu electrònic"
       ],
       "Second password": [
         "Segona contrasenya"
@@ -11536,6 +11574,9 @@
       "Password-protected Emails": [
         "Correus protegits amb contrasenya"
       ],
+      "Phone support (20+ users)": [
+        "Suport telefònic (a partir de 20 usuaris)"
+      ],
       "Priority email support": [
         "Suport prioritari per correu electrònic"
       ],
@@ -12657,6 +12698,20 @@
         "Els usuaris veuran el vostre logo en lloc de la icona de ${ BRAND_NAME } quan iniciïn la sessió a les nostres aplicacions web."
       ]
     },
+    "orgidentity": {
+      "Edit organization identity": [
+        "Edita la identitat de l'organització"
+      ],
+      "New organization identity": [
+        "Nova identitat de l'organització"
+      ],
+      "Organization identity": [
+        "Identitat de l'organització"
+      ],
+      "Verify": [
+        "Verifica"
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (per a Debian/Ubuntu)"
@@ -13599,8 +13654,14 @@
       "Add a recovery email address": [
         "Afegeix una adreça de correu electrònic de recuperació"
       ],
+      "Add a recovery phone number": [
+        "Afegeix un número de telèfon de recuperació"
+      ],
       "Check account security": [
         "Comprova la seguretat del compte"
+      ],
+      "Code sent to ${ boldValue }": [
+        "S'ha enviat el codi a ${ boldValue }."
       ],
       "Device-based recovery enabled": [
         "S'ha activat la recuperació basada en un dispositiu"
@@ -15310,6 +15371,15 @@
       ],
       "Organization activated": [
         "Organització activada"
+      ],
+      "Organization logo removed": [
+        "S'ha esborrat el logo de l'organització."
+      ],
+      "Organization logo updated": [
+        "S'ha actualitzat el logo de l'organització."
+      ],
+      "Organization name updated": [
+        "S'ha actualitzat el nom de l'organització."
       ],
       "Password copied to clipboard": [
         "La contrasenya s'ha copiat al porta-retalls"
@@ -17105,6 +17175,9 @@
       ]
     },
     "unprivatization": {
+      "Approve all": [
+        "Aprova tot"
+      ],
       "Cancel": [
         "Cancel·la"
       ],
@@ -17113,6 +17186,9 @@
       ],
       "Enable admin access?": [
         "Voleu activar l'accés d'administrador?"
+      ],
+      "Enable manually": [
+        "Activa manualment"
       ],
       "Pending admin access": [
         "Accés com a administrador pendent"

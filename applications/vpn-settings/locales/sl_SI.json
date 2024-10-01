@@ -205,6 +205,9 @@
       "Discard changes": [
         "Zavrzi spremembe"
       ],
+      "Domain name": [
+        "Ime domene"
+      ],
       "Done": [
         "Opravljeno"
       ],
@@ -3486,6 +3489,9 @@
         "Prizadeti uporabniki so v vrsticah",
         "Prizadeti uporabniki so v vrsticah"
       ],
+      "All Events ": [
+        "Vsi dogodki "
+      ],
       "All your changes will be lost.": [
         "Vse vaše spremembe bodo izgubljene."
       ],
@@ -3512,9 +3518,6 @@
       ],
       "Are you sure you want to cancel editing the group?": [
         "Ali ste prepričani, da želite preklicati urejanje skupine?"
-      ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "Ali ste prepričani, da želite izbrisati to skupino? Naslov skupine ne bo več deloval."
       ],
       "Are you sure you want to discard your changes?": [
         "Ali ste prepričani, da želite zavreči spremembe?"
@@ -3830,6 +3833,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Obiščite svojega ponudnika identitete, pridobite metapodatke SAML za ${ appName } in jih uvozite sem."
+      ],
+      "Group deleted": [
+        "Skupina izbrisana"
       ],
       "here": [
         "tukaj"
@@ -4861,6 +4867,9 @@
       "Declined": [
         "Zavrnjeno"
       ],
+      "Paused": [
+        "Začasno zaustavljeno"
+      ],
       "Pending": [
         "V teku"
       ]
@@ -5727,6 +5736,9 @@
       ],
       "Swiss franc": [
         "Švicarski frank"
+      ],
+      "US Dollar": [
+        "Ameriški dolar"
       ]
     },
     "Navigation": {
@@ -5902,6 +5914,9 @@
       ],
       "1 user": [
         "En uporabnik"
+      ],
+      "15 GB storage": [
+        "15 GB prostora za shranjevanje"
       ],
       "24/7 account management support": [
         "24/7 podpora za upravljanje računa"
@@ -6819,6 +6834,11 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Uporabniki bodo videli vaš logotip namesto ikone ${ BRAND_NAME }, ko bodo prijavljeni v naše spletne aplikacije."
+      ]
+    },
+    "orgidentity": {
+      "Verify": [
+        "Preveri"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9353,6 +9373,9 @@
       ],
       "Processing...": [
         "Obdelovanje ..."
+      ],
+      "QRCode": [
+        "QR koda"
       ],
       "Recommended": [
         "Priporočeno"
