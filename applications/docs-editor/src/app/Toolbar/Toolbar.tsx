@@ -90,6 +90,7 @@ import './Toolbar.scss'
 import ToolbarTooltip from './ToolbarTooltip'
 import SpeechBubblePenIcon from '../Icons/SpeechBubblePenIcon'
 import { useApplication } from '../ApplicationProvider'
+import { InteractionDropdownButton } from './InteractionDropdownButton'
 
 type BlockType = keyof typeof blockTypeToBlockName
 
@@ -1432,43 +1433,40 @@ export default function DocumentEditorToolbar({
           <DropdownMenu>
             {hasEditAccess && (
               <>
-                <DropdownMenuButton
-                  className={clsx('flex items-center gap-2 text-left text-sm', isEditMode && 'active')}
+                <InteractionDropdownButton
+                  isActive={isEditMode}
                   onClick={() => {
                     onInteractionModeChange('edit')
                   }}
+                  icon={<Icon name="pencil" size={4} />}
+                  label={c('Info').t`Editing`}
+                  description={c('Description').t`Edit document directly`}
                   data-testid="edit-dropdown-button"
-                >
-                  <Icon name="pencil" size={4.5} />
-                  {c('Info').t`Editing`}
-                  {isEditMode && <Icon name="checkmark" className="ml-auto" size={4.5} />}
-                </DropdownMenuButton>
+                />
                 {canShowSuggestionsButton && (
-                  <DropdownMenuButton
-                    className={clsx('flex items-center gap-2 text-left text-sm', isSuggestionMode && 'active')}
+                  <InteractionDropdownButton
+                    isActive={isSuggestionMode}
+                    icon={<SpeechBubblePenIcon className="h-4 w-4" />}
+                    label={c('Info').t`Suggesting`}
+                    description={c('Description').t`Edits become suggestion`}
                     onClick={() => {
                       onInteractionModeChange('suggest')
                     }}
                     data-testid="suggest-dropdown-button"
-                  >
-                    <SpeechBubblePenIcon className="h-4 w-4" />
-                    {c('Info').t`Suggesting`}
-                    {isSuggestionMode && <Icon name="checkmark" className="ml-auto" size={4.5} />}
-                  </DropdownMenuButton>
+                  />
                 )}
               </>
             )}
-            <DropdownMenuButton
-              className={clsx('flex items-center gap-2 text-left text-sm', isViewMode && 'active')}
+            <InteractionDropdownButton
+              isActive={isViewMode}
+              label={c('Info').t`Viewing`}
+              icon={<Icon name="eye" size={4} />}
+              description={c('Description').t`Read or print final document`}
               onClick={() => {
                 onInteractionModeChange('view')
               }}
               data-testid="view-dropdown-button"
-            >
-              <Icon name="eye" size={4.5} />
-              {c('Info').t`Viewing`}
-              {isViewMode && <Icon name="checkmark" className="ml-auto" size={4.5} />}
-            </DropdownMenuButton>
+            />
           </DropdownMenu>
         </SimpleDropdown>
       </div>
