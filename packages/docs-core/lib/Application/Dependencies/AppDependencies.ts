@@ -213,6 +213,7 @@ export class AppDependencies extends DependencyContainer {
         this.get<EncryptComment>(App_TYPES.EncryptComment),
         this.get<DecryptComment>(App_TYPES.DecryptComment),
         this.get<InternalEventBusInterface>(App_TYPES.EventBus),
+        this.get<LoggerInterface>(App_TYPES.Logger),
       )
     })
 
