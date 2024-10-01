@@ -2128,6 +2128,14 @@
         "Tome en cuenta que si elimina este dominio ${ domainName }, todas las direcciones asociadas serán desactivadas."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "¿Está seguro de que quiere eliminar este grupo?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Tenga en cuenta que si elimina el grupo ${ displayGroupName } (con la dirección ${ displayGroupAddressEmail }), ya no podrá recibir correos electrónicos usando esta dirección."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Factura atrasada"
@@ -2633,7 +2641,7 @@
     },
     "error": {
       "Enter an email address": [
-        "Ingrese una dirección de correo electrónico"
+        "Ingrese una dirección de correo"
       ]
     },
     "Error importing users": {
@@ -3568,9 +3576,6 @@
       "Are you sure you want to cancel editing the group?": [
         "¿En verdad desea cancelar la edición de el grupo?"
       ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "¿En verdad desea eliminar este grupo? La dirección del grupo no funcionará más."
-      ],
       "Are you sure you want to discard your changes?": [
         "¿Está seguro que quiere descartar los cambios?"
       ],
@@ -4430,7 +4435,7 @@
         "Token SCIM activo"
       ],
       "Search by an email address to begin": [
-        "Busque por dirección de correo electrónico para empezar."
+        "Busque por dirección de correo para empezar."
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Asegure la cuenta de ${ BRAND_NAME }"
@@ -4576,6 +4581,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "El formato del archivo CSV es incorrecto."
+      ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "La función de grupos no está disponible en su suscripción actual. Los grupos creados anteriormente están desactivados y solo pueden ser eliminados."
       ],
       "The name will be visible to your users while they are signed in.": [
         "El nombre será visible para sus usuarios mientras inicien sesión."
@@ -7199,7 +7207,7 @@
     },
     "orgidentity": {
       "${ verify } your email address ${ email } to set organization identity.": [
-        "${ verify } su dirección de correo electrónico ${ email } para establecer la identidad de la organización."
+        "${ verify } su dirección de correo ${ email } para establecer la identidad de la organización."
       ],
       "Current organization identity": [
         "Identidad actual de la organización"
@@ -10240,17 +10248,34 @@
       ]
     },
     "unprivatization": {
+      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
+        "${ n } usuario se ha unido a su organización a través de su proveedor de identidad. Apruebe o rechace su cuenta ahora.",
+        "${ n } usuarios se han unido a su organización a través de su proveedor de identidad. Apruebe o rechace sus cuentas ahora."
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Los administradores no pueden acceder a los datos de usuarios privados y no pueden restablecer sus contraseñas."
       ],
+      "Approve all": [
+        "Aprobar todo"
+      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Al hacer privado al usuario, no podrá ayudarle a recuperar el acceso a sus datos o cuenta."
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "No se pudo activar automáticamente el acceso de administrador para ${ n } usuario porque sus claves de cifrado han sido actualizadas mientras tanto.",
+        "No se pudo activar automáticamente el acceso de administrador para ${ n } usuarios porque sus claves de cifrado han sido actualizadas mientras tanto."
+      ],
+      "Could not enable administrator access: ${ error }": [
+        "No se pudo activar el acceso de administrador: ${ error }"
       ],
       "Delete request": [
         "Eliminar solicitud"
       ],
       "Delete request to access user data?": [
         "¿Eliminar solicitud de acceso a los datos del usuario?"
+      ],
+      "Enable manually": [
+        "Activar manualmente"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Una vez que el usuario acepte, podrá ayudarle a recuperar el acceso a la cuenta o gestionar sus datos."

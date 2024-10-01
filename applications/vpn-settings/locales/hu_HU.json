@@ -2001,7 +2001,7 @@
         "Évente csak egy címet törölhet"
       ],
       "You've reached the limit of address deletions for this user.": [
-        "Elérte a címtörlési limitet ennél a felhasználónál."
+        "Nem törölhet több címet ennél a felhasználónál."
       ]
     },
     "Delete domain prompt": {
@@ -3276,9 +3276,6 @@
       ],
       "Are you sure you want to cancel editing the group?": [
         "Megszakítja a csoport szerkesztését?"
-      ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "Biztosan törli ezt a csoportot? A csoportcímek ezután nem fognak működni."
       ],
       "Are you sure you want to discard your changes?": [
         "Biztos abban, hogy elveti a módosításokat?"
@@ -5073,6 +5070,9 @@
       "Reveal password": [
         "Jelszó felfedése"
       ],
+      "Search by email": [
+        "Keresés e-mail szerint"
+      ],
       "Second password": [
         "Második jelszó"
       ],
@@ -6403,6 +6403,17 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "A felhasználók az ön logóját fogják látni a ${ BRAND_NAME } ikon helyet, amikor a webes alkalmazást használják."
+      ]
+    },
+    "orgidentity": {
+      "New organization identity": [
+        "Új szervezeti azonosító"
+      ],
+      "Organization identity": [
+        "Szervezet azonosítója"
+      ],
+      "Verify": [
+        "Megerősítés"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -8828,6 +8839,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Itt adhatja meg a vásárolt, vagy a rendszertámogató csapattól kapott ajándékutalvány kódját."
       ],
+      "IP address (Internet Service Provider)": [
+        "IP cím (Internetszolgáltató)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Azok a tagok akinek nincs bekapcsolva a kétlépcsős hitelesítés, egy e-mailt fognak kapni, hogy minél előbb kapcsolják be."
       ],
@@ -8882,6 +8896,9 @@
       ]
     },
     "unprivatization": {
+      "Approve all": [
+        "Összes jóváhagyása"
+      ],
       "Delete request": [
         "Kérelem törlése"
       ],

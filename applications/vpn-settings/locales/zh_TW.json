@@ -205,6 +205,9 @@
       "Discard changes": [
         "放棄變更"
       ],
+      "Domain name": [
+        "網域名稱"
+      ],
       "Done": [
         "完成"
       ],
@@ -484,6 +487,9 @@
       "Restore": [
         "還原"
       ],
+      "Resume membership": [
+        "接續會員"
+      ],
       "Retry": [
         "重試"
       ],
@@ -498,6 +504,9 @@
       ],
       "Revoke ${ name }": [
         "撤銷 ${ name }"
+      ],
+      "Revoke invitation": [
+        "取消邀请"
       ],
       "Save": [
         "儲存"
@@ -2187,6 +2196,9 @@
       ]
     },
     "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "確認失去${ PASS_APP_NAME }的特別折扣"
+      ],
       "Remove discount": [
         "移除折扣"
       ]
@@ -2266,6 +2278,11 @@
     "Email verification": {
       "Verification email sent to ${ address }": [
         "驗證電子郵件已傳送至 ${ address }"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "取消命名"
       ]
     },
     "eof2023: Deal details": {
@@ -2558,6 +2575,11 @@
         "您的帳號或組織有待繳清的繳款單。請儘速繳納所有未付繳款單。"
       ]
     },
+    "error": {
+      "Enter an email address": [
+        "輸入電子郵件地址"
+      ]
+    },
     "Error importing users": {
       "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
         "讀取您的檔案「${ formattedFilename }」時發生錯誤。檔案格式不正確。"
@@ -2807,6 +2829,9 @@
       ],
       "An error occurred, please try again": [
         "發生錯誤，請再試一次"
+      ],
+      "Family name updated": [
+        "已更新姓氏名稱"
       ],
       "Member updated": [
         "成員已更新"
@@ -4862,6 +4887,16 @@
         "AI驅動撰寫功能以創建更好電子郵件，快速地和有效地。"
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "非有效的電子郵件地址"
+      ]
+    },
+    "invitation status": {
+      "Pending": [
+        "審理"
+      ]
+    },
     "Invoice state display as badge": {
       "Gifted": [
         "禮物"
@@ -5053,6 +5088,9 @@
       "Confirm password": [
         "確認密碼"
       ],
+      "Confirm second password": [
+        "確認第二密碼"
+      ],
       "Copy": [
         "複製"
       ],
@@ -5203,6 +5241,9 @@
       "New password": [
         "新密碼"
       ],
+      "New second password": [
+        "新的第二密碼"
+      ],
       "No filter": [
         "無篩選器"
       ],
@@ -5295,6 +5336,9 @@
       ],
       "Reveal password": [
         "顯示密碼"
+      ],
+      "Search by email": [
+        "透過電子郵件搜尋"
       ],
       "Second password": [
         "第二密碼"
@@ -6770,6 +6814,14 @@
         "至少 128 像素的正方形圖片"
       ]
     },
+    "orgidentity": {
+      "New organization identity": [
+        "新組織機構身分"
+      ],
+      "Verify": [
+        "驗證"
+      ]
+    },
     "Pass B2B onboarding spotlight": {
       "Go to your vault to manage your passwords, aliases, and more.": [
         "移至你的保管庫管理密碼、別名和更多項目。"
@@ -6952,6 +7004,9 @@
       ],
       "MM/YY": [
         "MM/YY"
+      ],
+      "More plans are available in other currencies": [
+        "其他貨幣有更多的方案"
       ],
       "Payment Processing": [
         "付款處理中"
@@ -7239,6 +7294,40 @@
     "Safety review": {
       "Review your account safety": [
         "查看您的帳號安全"
+      ]
+    },
+    "saml: Action": {
+      "Cancel": [
+        "取消"
+      ]
+    },
+    "saml: Error": {
+      "Something went wrong": [
+        "發生錯誤"
+      ]
+    },
+    "saml: Info": {
+      "Details": [
+        "詳細資訊"
+      ],
+      "Test in progress...": [
+        "測試進行中..."
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "電子郵件"
+      ]
+    },
+    "saml: Title": {
+      "It works!": [
+        "成功了！"
+      ],
+      "Test SAML configuration": [
+        "測試SAML的設置"
+      ],
+      "Testing SAML configuration": [
+        "測試SAML的設置"
       ]
     },
     "scim: Action": {
@@ -8164,6 +8253,9 @@
       "Read the story": [
         "已讀的訊息"
       ],
+      "See your colleagues’ availability": [
+        "瀏覽您的同事時間"
+      ],
       "Stay secure and connected anywhere": [
         "保護安全和連接至任何地方"
       ],
@@ -8190,6 +8282,9 @@
       ],
       "Users won’t be able to send emails": [
         "使用者將無法傳送電子郵件"
+      ],
+      "Users won’t be able to sync files on their devices": [
+        "用戶不能在他們的裝置同步文件"
       ],
       "Version history": [
         "版本歷史紀錄"
@@ -9359,6 +9454,23 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "此版本的 Tor 瀏覽器已不受支援，請更新至最新版本 ${ stableRelease } 。"
+      ]
+    },
+    "unprivatization": {
+      "Approve all": [
+        "批准全部"
+      ],
+      "Delete request": [
+        "刪除請求"
+      ],
+      "Pending admin access": [
+        "審理管理員存取權"
+      ],
+      "Private user": [
+        "私人用戶"
+      ],
+      "Send request": [
+        "傳送請求"
       ]
     },
     "upsell panel": {

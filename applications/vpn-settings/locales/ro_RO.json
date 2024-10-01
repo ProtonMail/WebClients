@@ -2137,6 +2137,14 @@
         "Dacă ștergeți domeniul ${ domainName }, toate adresele asociate acestuia vor fi dezactivate."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Sigur doriți să ștergeți acest grup?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Rețineți că, dacă ștergeți grupul ${ displayGroupName } (cu adresa ${ displayGroupAddressEmail }), nu veți mai putea primi mesaje folosind adresa acestuia."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Factură restantă"
@@ -2638,6 +2646,11 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Contul sau organizația are o factură restantă. Vă rugăm să plătiți toate facturile neplătite."
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "Introduceți o adresă de e-mail"
       ]
     },
     "Error importing users": {
@@ -3599,9 +3612,6 @@
       "Are you sure you want to cancel editing the group?": [
         "Sigur doriți să anulați editarea grupului?"
       ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "Sigur doriți să ștergeți acest grup. Adresa grupului nu va mai funcționa."
-      ],
       "Are you sure you want to discard your changes?": [
         "Sigur doriți să renunțați la modificări?"
       ],
@@ -3616,6 +3626,9 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Sigur doriți să eliminați domeniul ${ boldDomain }?"
+      ],
+      "Ask your organization admin to setup Gateways.": [
+        "Solicitați administratorului organizației să seteze porțile de acces."
       ],
       "Attention required": [
         "Necesită atenție"
@@ -4466,6 +4479,9 @@
       "SCIM token active": [
         "Cod SCIM activ"
       ],
+      "Search by an email address to begin": [
+        "Căutați după o adresă de e-mail pentru a începe"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Asigurați-vă contul ${ BRAND_NAME }"
       ],
@@ -4614,6 +4630,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Formatul fișierului CSV nu este corect."
+      ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "Funcția de grupuri nu este acceptată de abonamentul actual. Grupurile create anterior sunt dezactivate și pot fi doar șterse."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Numele va fi vizibil utilizatorilor când sunt conectați."
@@ -5641,6 +5660,9 @@
       ],
       "Reveal password": [
         "Afișare parolă"
+      ],
+      "Search by email": [
+        "Caută după e-mail"
       ],
       "Second password": [
         "Parola secundară"
@@ -7292,6 +7314,29 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Utilizatorii vor vedea logoul dvs. în loc de pictograma ${ BRAND_NAME } atunci când sunt conectați în aplicațiile noastre web."
+      ]
+    },
+    "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify }-vă adresa de e-mail ${ email } pentru a seta identitatea organizației."
+      ],
+      "Current organization identity": [
+        "Identitate actuală organizație"
+      ],
+      "Edit organization identity": [
+        "Editare identitate organizație"
+      ],
+      "New organization identity": [
+        "Identitate nouă organizație"
+      ],
+      "Organization identity": [
+        "Identitate organizație"
+      ],
+      "Organization identity updated": [
+        "Identitatea organizației s-a actualizat."
+      ],
+      "Verify": [
+        "Verificați"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -10284,6 +10329,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Dacă ați cumpărat un cod cadou sau ați primit unul de la echipa de asistență, îl puteți folosi aici."
       ],
+      "IP address (Internet Service Provider)": [
+        "Adresa IP (Furnizor de servicii de internet)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Membrii care nu folosesc A2F vor primi un mesaj pe e-mail solicitându-le să o activeze cât mai curând."
       ],
@@ -10358,17 +10406,36 @@
       ]
     },
     "unprivatization": {
+      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
+        "Organizației i s-a alăturat ${ n } utilizator prin furnizorul de identitate. Aprobați-i sau respingeți-i contul acum:",
+        "Organizației i s-au alăturat ${ n } utilizatori prin furnizorul de identitate. Aprobați-le sau respingeți-le contul acum:",
+        "Organizației i s-au alăturat ${ n } de utilizatori prin furnizorul de identitate. Aprobați-le sau respingeți-le contul acum:"
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorii nu pot accesa datele utilizatorilor privați și nu le pot reseta parola."
       ],
+      "Approve all": [
+        "Aproba toate"
+      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Făcând utilizatorul privat, nu îl veți putea ajuta să-și recâștige accesul la date sau la cont."
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Nu s-a putut activa automat accesul de administrator pentru ${ n } utilizator, deoarece cheile sale de criptare au fost actualizate între timp:",
+        "Nu s-a putut activa automat accesul de administrator pentru ${ n } utilizatori, deoarece cheile lor de criptare au fost actualizate între timp:",
+        "Nu s-a putut activa automat accesul de administrator pentru ${ n } de utilizatori, deoarece cheile lor de criptare au fost actualizate între timp:"
+      ],
+      "Could not enable administrator access: ${ error }": [
+        "Nu s-a putut activa accesul de administrator: ${ error }"
       ],
       "Delete request": [
         "Anulare cerere"
       ],
       "Delete request to access user data?": [
         "Anulați solicitarea de acces la datele utilizatorului?"
+      ],
+      "Enable manually": [
+        "Activare manuală"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "După ce utilizatorul își dă acordul, îl veți putea ajuta să recâștige accesul la cont sau să-și gestioneze datele."

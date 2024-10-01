@@ -2140,6 +2140,14 @@
         "Pamiętaj, że po usunięciu domeny ${ domainName } powiązane z nią adresy zostaną wyłączone."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Czy na pewno chcesz usunąć tę grupę?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Pamiętaj, że po usunięciu grupy ${ displayGroupName } (z adresem ${ displayGroupAddressEmail }) stracisz możliwość odbierania wiadomości z tego adresu."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Zaległa faktura"
@@ -2643,6 +2651,11 @@
         "Twoje konto lub organizacja posiada obecnie zaległe faktury. Ureguluj wszystkie zobowiązania."
       ]
     },
+    "error": {
+      "Enter an email address": [
+        "Wpisz adres e-mail"
+      ]
+    },
     "Error importing users": {
       "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
         "Wystąpił błąd podczas odczytywania pliku \"${ formattedFilename }\". Format pliku jest nieprawidłowy."
@@ -2858,6 +2871,9 @@
     "familyOffer_2023:Info": {
       "*Only one free trial per user. Regular pricing applies thereafter.": [
         "* Tylko jedna darmowa wersja próbna na użytkownika. Później obowiązuje normalna cena."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "Po opuszczeniu planu użytkownik zostanie przeniesiony do 30-dniowej darmowej wersji próbnej planu ${ BRAND_NAME } Unlimited.*"
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Domyślne przypiszemy ${ formattedStorage } przestrzeni dyskowej do konta administratora. Możesz zarządzać przypisaną przestrzenią dyskową w celu rozdysponowania jej wśród dodatkowych użytkowników w późniejszym czasie."
@@ -3626,9 +3642,6 @@
       "Are you sure you want to cancel editing the group?": [
         "Czy na pewno chcesz anulować edytowanie grupy?"
       ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "Czy na pewno chcesz usunąć tę grupę? Adres grupy nie będzie już działał."
-      ],
       "Are you sure you want to discard your changes?": [
         "Czy na pewno chcesz odrzucić wprowadzone zmiany?"
       ],
@@ -3643,6 +3656,9 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Czy na pewno chcesz usunąć domenę ${ boldDomain }?"
+      ],
+      "Ask your organization admin to setup Gateways.": [
+        "Poproś administratora organizacji, aby skonfigurował bramy."
       ],
       "Attention required": [
         "Wymagana uwaga"
@@ -3711,10 +3727,10 @@
         "Kliknij przycisk \"Poproś o nowy kod\", aby otrzymać nowy kod weryfikacyjny na numer telefonu ${ strong }. Jeśli numer jest nieprawidłowy, kliknij przycisk \"Edytuj\", aby go poprawić."
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
-        "Skonfiguruj uwierzytelnianie SAML dla swojej organizacji przy pomocy dostawcy tożsamości (IdP). Spowoduje to włączenie SAML dla całej organizacji."
+        "Skonfiguruj uwierzytelnianie SAML dla swojej organizacji za pomocą dostawcy tożsamości (IdP). Spowoduje to włączenie SAML dla całej organizacji."
       ],
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
-        "Skonfiguruj uwierzytelnianie SAML dla swojej organizacji za pośrednictwem dostawcy tożsamości, takiego jak Okta, Microsoft Azure lub Google Identity Platform. Spowoduje to włączenie SAML dla całej organizacji."
+        "Skonfiguruj uwierzytelnianie SAML dlaorganizacji za pomocą dostawcy tożsamości, takiego jak Okta, Microsoft Azure lub Google Identity Platform. Spowoduje to włączenie SAML dla całej organizacji."
       ],
       "Continue with ${ freeName }": [
         "Kontynuuj z planem ${ freeName }"
@@ -4496,6 +4512,9 @@
       "SCIM token active": [
         "Token SCIM jest aktywny"
       ],
+      "Search by an email address to begin": [
+        "Szukaj adresu e-mail"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Zabezpiecz konto ${ BRAND_NAME }"
       ],
@@ -4645,6 +4664,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Format pliku CSV jest nieprawidłowy."
+      ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "Funkcja grup nie jest obsługiwana w obecnej subskrypcji. Wcześniej utworzone grupy zostały wyłączone i można je jedynie usunąć."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Nazwa będzie widoczna dla użytkowników po zalogowaniu."
@@ -5682,6 +5704,9 @@
       ],
       "Reveal password": [
         "Pokaż hasło"
+      ],
+      "Search by email": [
+        "Szukaj adresu e-mail"
       ],
       "Second password": [
         "Drugie hasło"
@@ -7339,6 +7364,29 @@
         "Użytkownicy zobaczą logo zamiast ikony ${ BRAND_NAME } po zalogowaniu się do aplikacji internetowej."
       ]
     },
+    "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify } adres e-mail ${ email }, aby skonfigurować tożsamość organizacji."
+      ],
+      "Current organization identity": [
+        "Obecna tożsamość organizacji"
+      ],
+      "Edit organization identity": [
+        "Edytuj tożsamość organizacji"
+      ],
+      "New organization identity": [
+        "Nowa tożsamość organizacji"
+      ],
+      "Organization identity": [
+        "Tożsamość organizacji"
+      ],
+      "Organization identity updated": [
+        "Tożsamość organizacji została zaktualizowana"
+      ],
+      "Verify": [
+        "Zweryfikuj"
+      ]
+    },
     "Pass B2B onboarding spotlight": {
       "Go to your vault to manage your passwords, aliases, and more.": [
         "Przejdź do sejfu, aby zarządzać hasłami i aliasami."
@@ -7637,6 +7685,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Przetwarzamy płatność za fakturę. Przed zmianą planu lub zaktualizowaniem szczegółów płatności poczekaj na zakończenie płatności. Dziękujemy za cierpliwość."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Kwota ${ amountToCharge } zostanie pobrana z wybranej metody płatności."
       ]
     },
     "Payments.Error": {
@@ -10370,6 +10421,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Kupiony lub otrzymany kod podarunkowy możesz wpisać tutaj."
       ],
+      "IP address (Internet Service Provider)": [
+        "Adres IP (ISP)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Użytkownicy, którzy nie korzystają z uwierzytelniania dwustopniowego, otrzymają wiadomość z prośbą o jej włączenie."
       ],
@@ -10444,17 +10498,38 @@
       ]
     },
     "unprivatization": {
+      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
+        "${ n } użytkownik dołączył do organizacji za pomocą dostawcy tożsamości. Zatwierdź lub odrzuć konto:",
+        "${ n } użytkowników dołączyło do organizacji za pomocą dostawcy tożsamości. Zatwierdź lub odrzuć konta:",
+        "${ n } użytkowników dołączyło do organizacji za pomocą dostawcy tożsamości. Zatwierdź lub odrzuć konta:",
+        "${ n } użytkowników dołączyło do organizacji za pomocą dostawcy tożsamości. Zatwierdź lub odrzuć konta:"
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorzy nie mają dostępu do danych prywatnych użytkowników i nie mogą zresetować ich haseł."
       ],
+      "Approve all": [
+        "Zatwierdź wszystkie"
+      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Ustawiając użytkownika jako prywatnego, nie będziesz w stanie pomóc mu odzyskać dostępu do jego danych lub konta."
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Nie można automatycznie włączyć dostępu administratora dla ${ n } użytkownika, ponieważ jego klucze szyfrowania zostały w międzyczasie zaktualizowane:",
+        "Nie można automatycznie włączyć dostępu administratora dla ${ n } użytkowników, ponieważ ich klucze szyfrowania zostały w międzyczasie zaktualizowane:",
+        "Nie można automatycznie włączyć dostępu administratora dla ${ n } użytkowników, ponieważ ich klucze szyfrowania zostały w międzyczasie zaktualizowane:",
+        "Nie można automatycznie włączyć dostępu administratora dla ${ n } użytkowników, ponieważ ich klucze szyfrowania zostały w międzyczasie zaktualizowane:"
+      ],
+      "Could not enable administrator access: ${ error }": [
+        "Nie można włączyć dostępu administratora: ${ error }"
       ],
       "Delete request": [
         "Usuń żądanie"
       ],
       "Delete request to access user data?": [
         "Usunąć żądanie dostępu do danych użytkownika?"
+      ],
+      "Enable manually": [
+        "Włącz ręcznie"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Jeśli użytkownik wyrazi zgodę, uzyskasz dostęp do konta użytkownika i zarządzania jego danymi."
@@ -10464,6 +10539,9 @@
       ],
       "Pending admin access": [
         "Oczekiwanie na dostęp administratora"
+      ],
+      "Private user": [
+        "Prywatny użytkownik"
       ],
       "Request to manage account sent, awaiting user approval": [
         "Żądanie do zarządzania kontem zostało wysłane. Oczekiwanie na jego zaakceptowanie"
@@ -10482,6 +10560,9 @@
       ],
       "The user must have an address to request data access": [
         "Użytkownik musi mieć adres, aby żądać dostępu do danych"
+      ],
+      "This will delete the pending request for administrator access to the user’s data or password reset.": [
+        "Spowoduje to usunięcie oczekującego żądania dostępu administratora do danych użytkownika lub zresetowania hasła."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Spowoduje to unieważnienie dostępu administratora do zarządzania kontem użytkownika."
