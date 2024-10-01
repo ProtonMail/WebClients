@@ -1,4 +1,4 @@
-import { getTestPlans } from '@proton/testing/data';
+import { getLongTestPlans } from '@proton/testing/data';
 
 import { ADDON_NAMES, PLANS } from '../../lib/constants';
 import {
@@ -119,7 +119,7 @@ describe('switchPlan', () => {
             switchPlan({
                 planIDs,
                 planID,
-                plans: getTestPlans(),
+                plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
                 user,
                 showGatewaysForBundlePlan: false,
@@ -136,7 +136,7 @@ describe('switchPlan', () => {
             switchPlan({
                 planIDs,
                 planID,
-                plans: getTestPlans(),
+                plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
                 user,
                 showGatewaysForBundlePlan: false,
@@ -154,7 +154,7 @@ describe('switchPlan', () => {
             switchPlan({
                 planIDs,
                 planID,
-                plans: getTestPlans(),
+                plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
                 user,
                 showGatewaysForBundlePlan: false,
@@ -168,11 +168,12 @@ describe('switchPlan', () => {
     it('should transfer IP addons when switching from vpn biz to bundle pro', () => {
         const planIDs = { [PLANS.VPN_BUSINESS]: 1, [ADDON_NAMES.IP_VPN_BUSINESS]: 5 };
         const planID = PLANS.BUNDLE_PRO_2024;
+
         expect(
             switchPlan({
                 planIDs,
                 planID,
-                plans: getTestPlans(),
+                plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
                 user,
                 showGatewaysForBundlePlan: true,
@@ -183,6 +184,24 @@ describe('switchPlan', () => {
         });
     });
 
+    it('should transfer IP addons when switching from vpn biz to bundle pro when no IP addons have been included', () => {
+        const planIDs = { [PLANS.VPN_BUSINESS]: 1 };
+        const planID = PLANS.BUNDLE_PRO_2024;
+        expect(
+            switchPlan({
+                planIDs,
+                planID,
+                plans: getLongTestPlans(),
+                organization: MOCK_ORGANIZATION,
+                user,
+                showGatewaysForBundlePlan: true,
+            })
+        ).toEqual({
+            [PLANS.BUNDLE_PRO_2024]: 1,
+            [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 1, // 1 IP is included in vpnbiz, so we need to add this
+        });
+    });
+
     it('should transfer IP addons when switching from bundle pro to vpn biz', () => {
         const planIDs = { [PLANS.BUNDLE_PRO_2024]: 1, [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 5 };
         const planID = PLANS.VPN_BUSINESS;
@@ -190,7 +209,7 @@ describe('switchPlan', () => {
             switchPlan({
                 planIDs,
                 planID,
-                plans: getTestPlans(),
+                plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
                 user,
                 showGatewaysForBundlePlan: true,
@@ -208,7 +227,7 @@ describe('switchPlan', () => {
             switchPlan({
                 planIDs,
                 planID,
-                plans: getTestPlans(),
+                plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
                 user,
                 showGatewaysForBundlePlan: false,
@@ -223,7 +242,14 @@ describe('switchPlan', () => {
         const organization = { UsedAddresses: 16, UsedDomains: 11 } as Organization;
         const planID = PLANS.BUNDLE_PRO;
         expect(
-            switchPlan({ planIDs, planID, plans: getTestPlans(), organization, user, showGatewaysForBundlePlan: false })
+            switchPlan({
+                planIDs,
+                planID,
+                plans: getLongTestPlans(),
+                organization,
+                user,
+                showGatewaysForBundlePlan: false,
+            })
         ).toEqual({
             [PLANS.BUNDLE_PRO]: 1,
             [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 1,
@@ -247,7 +273,7 @@ describe('switchPlan', () => {
             switchPlan({
                 planIDs,
                 planID: planId,
-                plans: getTestPlans(),
+                plans: getLongTestPlans(),
                 organization,
                 user,
                 showGatewaysForBundlePlan: false,
@@ -278,7 +304,7 @@ describe('switchPlan', () => {
             switchPlan({
                 planIDs,
                 planID: planId,
-                plans: getTestPlans(),
+                plans: getLongTestPlans(),
                 organization,
                 user,
                 showGatewaysForBundlePlan: false,

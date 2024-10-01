@@ -505,4 +505,46 @@ describe('SelectedPlan', () => {
             expect(selectedPlan.getPlan()).toEqual(FREE_PLAN);
         });
     });
+
+    it('should return included and additional IPs - VPN_BUSINESS', () => {
+        const planIDs = {
+            [PLANS.VPN_BUSINESS]: 1,
+            [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 2,
+            [ADDON_NAMES.IP_VPN_BUSINESS]: 4,
+        };
+
+        const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+
+        expect(selectedPlan.getIncludedIPs()).toBe(1);
+        expect(selectedPlan.getAdditionalIPs()).toBe(4);
+        expect(selectedPlan.getTotalIPs()).toBe(5);
+    });
+
+    it('should return included and additional IPs - BUNDLE_PRO', () => {
+        const planIDs = {
+            [PLANS.BUNDLE_PRO]: 1,
+            [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 2,
+            [ADDON_NAMES.IP_BUNDLE_PRO]: 4,
+        };
+
+        const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+
+        expect(selectedPlan.getIncludedIPs()).toBe(0);
+        expect(selectedPlan.getAdditionalIPs()).toBe(4);
+        expect(selectedPlan.getTotalIPs()).toBe(4);
+    });
+
+    it('should return included and additional IPs - BUNDLE_PRO_2024', () => {
+        const planIDs = {
+            [PLANS.BUNDLE_PRO_2024]: 1,
+            [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 2,
+            [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 4,
+        };
+
+        const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+
+        expect(selectedPlan.getIncludedIPs()).toBe(0);
+        expect(selectedPlan.getAdditionalIPs()).toBe(4);
+        expect(selectedPlan.getTotalIPs()).toBe(4);
+    });
 });
