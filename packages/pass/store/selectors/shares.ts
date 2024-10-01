@@ -5,6 +5,7 @@ import { isActive } from '@proton/pass/lib/items/item.predicates';
 import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { isOwnVault, isSharedVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import type { Maybe, MaybeNull, ShareType } from '@proton/pass/types';
+import { first } from '@proton/pass/utils/array/first';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { and, not } from '@proton/pass/utils/fp/predicates';
 import { sortOn } from '@proton/pass/utils/fp/sort';
@@ -51,27 +52,6 @@ export const selectVaultsWithItemsCount = createVaultsWithItemsCountSelector(sel
 export const selectWritableVaultsWithItemsCount = createVaultsWithItemsCountSelector(selectWritableVaults);
 export const selectWritableSharedVaultsWithItemsCount = createVaultsWithItemsCountSelector(selectWritableSharedVaults);
 
-/* The default vault should be the oldest vault I own and can write to */
-export const selectDefaultVault = createSelector(
-    selectOwnWritableVaults,
-    (ownWritableVaults) => ownWritableVaults.filter((share) => share.owner).sort(sortOn('createTime', 'ASC'))[0]
-);
-
-/* If autosave vault is not set, fallback to default vault */
-export const selectAutosaveVault = createSelector(
-    [selectShares, selectProxiedSettings, selectDefaultVault],
-    (shares, settings, defaultVault): ShareItem<ShareType.Vault> => {
-        const autosaveVaultId = settings.autosave.shareId;
-
-        if (autosaveVaultId) {
-            const share = shares[autosaveVaultId];
-            if (share && isVaultShare(share)) return share;
-        }
-
-        return defaultVault;
-    }
-);
-
 export const selectShare =
     <T extends ShareType = ShareType>(shareId?: MaybeNull<string>) =>
     ({ shares }: State) =>
@@ -105,7 +85,37 @@ export const selectVaultSharedWithEmails = (shareId: string) =>
             )
     );
 
-export const selectMostRecentVault = createSelector(
-    [selectAllItems, selectDefaultVault],
-    (items, defaultVault) => items.slice().sort(sortOn('createTime'))?.[0]?.shareId ?? defaultVault.shareId
+/* The default vault should be the oldest vault I own and can write to */
+export const selectDefaultVault = createSelector(
+    selectOwnWritableVaults,
+    (ownWritableVaults): Maybe<VaultShareItem> => first(ownWritableVaults.sort(sortOn('createTime', 'ASC')))
+);
+
+/** Resolves the most recently used vault:
+ * - Returns shareId of the latest item in user's writable vaults, sorted by creation time
+ * - Falls back to user's default vault shareId if no writable items found */
+export const selectMostRecentVaultShareID = createSelector(
+    [selectOwnWritableVaults, selectAllItems, selectDefaultVault],
+    (vaults, items, defaultVault): Maybe<string> => {
+        const shareIds = new Set(vaults.map(prop('shareId')));
+        return (
+            items.filter((item) => shareIds.has(item.shareId)).sort(sortOn('createTime'))?.[0]?.shareId ??
+            defaultVault?.shareId
+        );
+    }
+);
+
+/* If autosave vault is not set, fallback to default vault */
+export const selectAutosaveVault = createSelector(
+    [selectShares, selectProxiedSettings, selectDefaultVault],
+    (shares, settings, defaultVault): Maybe<VaultShareItem> => {
+        const autosaveVaultId = settings.autosave.shareId;
+
+        if (autosaveVaultId) {
+            const share = shares[autosaveVaultId];
+            if (share && isVaultShare(share)) return share;
+        }
+
+        return defaultVault;
+    }
 );

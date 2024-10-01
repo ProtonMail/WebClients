@@ -72,6 +72,8 @@ export const createAutoSaveService = () => {
 
             if (payload.type === AutosaveMode.NEW) {
                 const selectedVault = selectAutosaveVault(state);
+                if (!selectedVault) throw new Error("Could not resolve user's default vault.");
+
                 const item = itemBuilder('login');
 
                 item.get('metadata')
