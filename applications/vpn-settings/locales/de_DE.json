@@ -2128,6 +2128,14 @@
         "Bitte beachte, dass beim Löschen der Domain ${ domainName } alle damit verbundenen Adressen deaktiviert werden."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Möchtest du diese Gruppe wirklich löschen?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Bitte beachte, dass du mit dem Löschen der Gruppe ${ displayGroupName } (mit der Adresse ${ displayGroupAddressEmail }) keine E-Mails mehr mit dieser Adresse empfangen kannst."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Überfällige Rechnung"
@@ -3557,9 +3565,6 @@
       "Are you sure you want to cancel editing the group?": [
         "Bist du sicher, dass du die Bearbeitung dieser Gruppe abbrechen willst?"
       ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "Bist du sicher, dass du diese Gruppe löschen willst? Die Gruppenadresse wird nicht mehr funktionieren."
-      ],
       "Are you sure you want to discard your changes?": [
         "Möchtest du deine Änderungen wirklich verwerfen?"
       ],
@@ -4559,6 +4564,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Das Format der CSV-Datei ist ungültig."
+      ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "Die Gruppenfunktion wird von deinem aktuellen Abonnement nicht unterstützt. Zuvor erstellte Gruppen sind deaktiviert und können nur gelöscht werden."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Der Name wird für deine Benutzer sichtbar sein, solange sie angemeldet sind."

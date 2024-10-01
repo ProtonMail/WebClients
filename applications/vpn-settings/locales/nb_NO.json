@@ -2128,6 +2128,14 @@
         "Vennligst vær oppmerksom på dersom du sletter dette domenet, ${ domainName }, vil alle adresser forbundet med det bli deaktivert."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Er du sikker på at du vil slette denne gruppen?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Vær oppmerksom på at hvis du sletter gruppen ${ displayGroupName } (med adresse ${ displayGroupAddressEmail }), vil du ikke lenger kunne motta e-post ved hjelp av adressen."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Forfalt faktura"
@@ -2629,6 +2637,11 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Din konto eller organisasjon har en forfalt faktura. Vennligst betal alle ubetalte fakturaer."
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "Skriv inn en e-postadresse"
       ]
     },
     "Error importing users": {
@@ -3563,9 +3576,6 @@
       "Are you sure you want to cancel editing the group?": [
         "Er du sikker å at du vil avbryte redigeringen av gruppen?"
       ],
-      "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "Er du sikker på at du vil slette denne gruppen? Gruppeadressen vil ikke fungere lenger."
-      ],
       "Are you sure you want to discard your changes?": [
         "Er du sikker på at du vil forkaste de ulagrede endringene dine?"
       ],
@@ -3580,6 +3590,9 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Er du sikker på at du ønsker å fjerne domenet ${ boldDomain }?"
+      ],
+      "Ask your organization admin to setup Gateways.": [
+        "Be organisasjonsadministratoren om å konfigurere mellomtjenere."
       ],
       "Attention required": [
         "Oppmerksomhet kreves"
@@ -4424,6 +4437,9 @@
       "SCIM token active": [
         "SCIM-token aktiv"
       ],
+      "Search by an email address to begin": [
+        "Søk etter en e-postadresse for å begynne"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Sikre din ${ BRAND_NAME }-konto"
       ],
@@ -4568,6 +4584,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Formatet til din CSV-fil er ikke riktig."
+      ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "Gruppefunksjonen støttes ikke på det gjeldende abonnementet. Tidligere opprettede grupper er deaktivert og kan bare slettes."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Navnet vil være synlig for brukerne dine mens de er innlogget."
@@ -5585,6 +5604,9 @@
       ],
       "Reveal password": [
         "Avslør passord"
+      ],
+      "Search by email": [
+        "Søk etter e-post"
       ],
       "Second password": [
         "Andre passord"
@@ -7208,6 +7230,29 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Brukere vil se logoen din i stedet for ${ BRAND_NAME }-ikonet når de er logget på nettappene våre."
+      ]
+    },
+    "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify } e-postadressen din, ${ email }, for å angi organisasjonsidentitet."
+      ],
+      "Current organization identity": [
+        "Gjeldende organisasjonsidentitet"
+      ],
+      "Edit organization identity": [
+        "Rediger organisasjonsidentitet"
+      ],
+      "New organization identity": [
+        "Ny organisasjonsidentitet"
+      ],
+      "Organization identity": [
+        "Organisasjonsidentitet"
+      ],
+      "Organization identity updated": [
+        "Organisasjonsidentitet oppdatert"
+      ],
+      "Verify": [
+        "Verifiser"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -10150,6 +10195,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Hvis du kjøpte en gavekode eller mottok en fra vår kundestøtte, kan du angi den her."
       ],
+      "IP address (Internet Service Provider)": [
+        "IP-adresse (Internett-leverandør)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Medlemmer som ikke bruker 2FA vil få en e-post som ber dem om å aktivere den så snart som mulig."
       ],
@@ -10224,17 +10272,34 @@
       ]
     },
     "unprivatization": {
+      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
+        "${ n } bruker har blitt med i organisasjonen via identitetsleverandøren. Godkjenn eller avvis kontoene deres nå:",
+        "${ n } brukere har blitt med i organisasjonen via identitetsleverandøren. Godkjenn eller avvis kontoene deres nå:"
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorer har ikke tilgang til dataene til private brukere og kan ikke tilbakestille passordet deres."
       ],
+      "Approve all": [
+        "Godkjenn alle"
+      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Ved å gjøre brukeren privat vil du ikke kunne hjelpe dem med å få tilgang til dataene eller kontoen sin igjen."
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Kunne ikke automatisk aktivere administratortilgang for ${ n } bruker, fordi krypteringsnøklene deres har blitt oppdatert i mellomtiden:",
+        "Kunne ikke automatisk aktivere administratortilgang for ${ n } brukere, fordi krypteringsnøklene deres har blitt oppdatert i mellomtiden:"
+      ],
+      "Could not enable administrator access: ${ error }": [
+        "Kunne ikke aktivere administratortilgang: ${ error }"
       ],
       "Delete request": [
         "Slett forespørsel"
       ],
       "Delete request to access user data?": [
         "Slette forespørsel om tilgang til brukerdata?"
+      ],
+      "Enable manually": [
+        "Aktiver manuelt"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Når brukeren samtykker, vil du kunne hjelpe dem med å få kontotilgang eller administrere dataene deres."

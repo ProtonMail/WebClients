@@ -5,7 +5,19 @@
   },
   "contexts": {
     "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } e ${ remainingCount } outras potenciais fugas detetadas. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes e tomar medidas. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } e 1 outra potencial fuga detetada. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes e tomar medidas. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Foi detetada uma potencial fuga de ${ name }. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes e tomar medidas. ${ link }"
+      ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Foi detetada uma potencial fuga de ${ name }. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes e tomar medidas. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Foi detetada uma potencial fuga de ${ name }. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes e tomar medidas. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
@@ -716,6 +728,10 @@
       ],
       "${ price } per user": [
         "${ price } por utilizador"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } licença de assistente de escrita",
+        "${ seats } licenças de assistente de escrita"
       ],
       "${ users } user": [
         "${ users } utilizador",
@@ -2508,6 +2524,9 @@
         "Atingiu o limite de ${ n } convite aceite em 6 meses.",
         "Atingiu o limite de ${ n } convites aceites em 6 meses."
       ],
+      "You have successfully joined the family group": [
+        "Entrou com sucesso no grupo de família"
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "É necessário configurar um domínio personalizado antes de adicionar vários utilizadores."
       ],
@@ -2522,6 +2541,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "A sua conta está a utilizar ${ usedSpace } de armazenamento, o que excede o ${ inviteSpace } que lhe foi atribuído. Elimine alguns dados ou peça ao administrador do plano para aumentar o seu armazenamento."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Não pode aceitar este convite com o seu plano atual."
       ]
     },
     "familyOffer_2023:Info": {
@@ -3767,6 +3789,9 @@
         "Adicione um endereço de e-mail para este utilizador na linha.",
         "Adicione um endereço de e-mail para estes utilizadores na linha."
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Por favor, peça ao proprietário para convidá-lo diretamente para o documento."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Autentique o seu cartão no separador de verificação."
       ],
@@ -3781,6 +3806,12 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Introduza a frase de recuperação de 12 palavras associada à sua conta."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Tenha em atenção que, ao clicar no botão Confirmar, a sua conta terá ${ remainingCreditsFormatted } créditos restantes."
+      ],
+      "Please open the document to view it.": [
+        "Por favor, abra o documento para o visualizar."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Tente novamente utilizando um método de pagamento diferente ou contacte o seu banco."
@@ -3812,11 +3843,17 @@
       "Preview for this file type is not supported": [
         "A pré-visualização deste tipo de ficheiro não é suportada"
       ],
+      "Preview of documents is not yet supported.": [
+        "A pré-visualização de documentos ainda não é suportada."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "O preço inclui todos os descontos aplicáveis com base no ciclo e cupões não expirados guardados na sua conta."
       ],
       "Protected by Swiss privacy laws": [
         "Protegido pelas leis de privacidade suíças"
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "A partilha pública de documentos ainda não é suportada."
       ],
       "read our two-factor authentication guide first": [
         "leia primeiro o nosso guia de autenticação de dois fatores"
@@ -4336,6 +4373,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Irá ser redirecionado para ${ destination } após iniciar sessão."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Perderá o acesso às funcionalidades ${ planTitle } nesta data."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Precisará de um endereço da ${ BRAND_NAME } para usar o ${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
@@ -4899,6 +4939,9 @@
       ],
       "What is the main reason you are deleting your account?": [
         "Qual o principal motivo pelo qual está a eliminar a conta?"
+      ],
+      "What is your main reason for canceling or downgrading?": [
+        "Qual o principal motivo para cancelar ou reverter para um plano inferior?"
       ],
       "Why would you like to cancel?": [
         "Por que motivo pretende cancelar?"
@@ -6420,6 +6463,9 @@
       "Select state": [
         "Selecionar estado"
       ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Partilhe o que pensa que poderia tornar a ${ BRAND_NAME } melhor"
+      ],
       "Start date": [
         "Data de início"
       ],
@@ -6596,6 +6642,20 @@
       ],
       "Generate new SCIM token?": [
         "Gerar um novo token SCIM?"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } e ${ remainingCount } outras potenciais fugas detetadas. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } e 1 outra potencial fuga detetada. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Foi detetada uma potencial fuga de ${ name }. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "As suas informações foram encontradas em pelo menos uma fuga de dados. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes. ${ link }"
       ]
     },
     "Select file": {
@@ -7588,6 +7648,9 @@
       "Preference saved": [
         "Preferência guardada"
       ],
+      "Problem reported": [
+        "Problema comunicado"
+      ],
       "SPF value copied to clipboard": [
         "Valor SPF copiado para a área de transferência"
       ],
@@ -7605,6 +7668,9 @@
       ],
       "Verification successful": [
         "A verificação é terminada."
+      ],
+      "You have successfully canceled your subscription.": [
+        "A sua subscrição foi cancelada com sucesso."
       ],
       "You have successfully unsubscribed": [
         "A sua subscrição foi cancelada."
@@ -7923,6 +7989,9 @@
       "Couldn’t create accounts": [
         "Não é possível criar contas."
       ],
+      "Coupon": [
+        "Cupão"
+      ],
       "Create ${ selectedUserIds.length } user": [
         "Criar o utilizador ${ selectedUserIds.length }",
         "Criar os utilizadores ${ selectedUserIds.length }"
@@ -8053,6 +8122,9 @@
       ],
       "Email subscriptions": [
         "Subscrições de e-mail"
+      ],
+      "Enter 2FA code": [
+        "Insira o código 2FA"
       ],
       "Enter SAML metadata": [
         "Introduzir os metadados SAML"
