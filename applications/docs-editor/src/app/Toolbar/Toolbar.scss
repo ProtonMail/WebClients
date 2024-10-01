@@ -8,4 +8,16 @@
 	> button[aria-expanded='true']:not([aria-controls]) {
 		color: var(--text-norm);
 	}
+
+	.suggestion-mode & > button {
+		--bg: 75 185 157;
+
+		&:hover {
+			background-color: rgba(var(--bg) / 0.15);
+		}
+
+		&.active {
+			background-color: rgba(var(--bg) / 0.35);
+		}
+	}
 }
