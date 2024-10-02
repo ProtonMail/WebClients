@@ -26,6 +26,13 @@ git config --local user.email "${GIT_COMMIT_EMAIL}"
 # Update metadata
 python3 "${CWD}/applications/pass-desktop/tools/update-metadata.py" "$PLATFORM" "$CHANNEL"
 
+# Copy over RELEASES
+if [ "$PLATFORM" = "windows" ]; then
+  cp "$CWD/applications/pass-desktop/out/make/squirrel.windows/x64/RELEASES" .
+elif [ "$PLATFORM" = "macos" ]; then
+  cp "$CWD/applications/pass-desktop/out/make/zip/darwin/universal/RELEASES.json" .
+fi
+
 # Deploy metadata
 git checkout -b "$BRANCH_NAME"
 git add .
