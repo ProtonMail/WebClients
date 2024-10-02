@@ -120,7 +120,7 @@ export const useLinkHandler: UseLinkHandler = (
         if (src.raw.startsWith('#')) {
             const id = src.raw.replace('#', '');
             if (wrapperRef.current) {
-                const elementInMail = wrapperRef.current.querySelector(`a[name="${id}"], a[id="${id}"]`);
+                const elementInMail = wrapperRef.current.querySelector(`[name="${id}"], [id="${id}"]`);
                 if (elementInMail) {
                     elementInMail.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
