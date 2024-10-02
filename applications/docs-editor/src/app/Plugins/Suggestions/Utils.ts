@@ -1,6 +1,6 @@
 import type { ElementNode, LexicalNode, RangeSelection, TextNode } from 'lexical'
 import { $isDecoratorNode, $isElementNode, $isTextNode } from 'lexical'
-import type { SuggestionType } from './Types'
+import type { SuggestionProperties, SuggestionType } from './Types'
 import { $isImageNode } from '../Image/ImageNode'
 import type { ProtonNode } from './ProtonNode'
 import { $isSuggestionNode, $createSuggestionNode } from './ProtonNode'
@@ -16,6 +16,7 @@ export function $wrapSelectionInSuggestionNode(
   isBackward: boolean,
   id: string,
   type: SuggestionType,
+  changedProperties?: SuggestionProperties['nodePropertiesChanged'],
 ): ProtonNode[] {
   const nodes = selection.getNodes()
   const anchorOffset = selection.anchor.offset
@@ -106,7 +107,7 @@ export function $wrapSelectionInSuggestionNode(
 
       if (lastCreatedMarkNode === null) {
         // If we don't have a created mark node, we can make one
-        lastCreatedMarkNode = $createSuggestionNode(id, type)
+        lastCreatedMarkNode = $createSuggestionNode(id, type, changedProperties)
         targetNode.insertBefore(lastCreatedMarkNode)
         createdMarkNodes.push(lastCreatedMarkNode)
       }
