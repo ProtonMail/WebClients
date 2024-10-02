@@ -4,6 +4,8 @@ import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { transformLinkify } from '@proton/shared/lib/mail/transformLinkify';
 import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
+import { transformAnchors } from 'proton-mail/helpers/transforms/transforAnchors';
+
 import type { Base64Cache } from '../../hooks/useBase64Cache';
 import type {
     LoadEmbeddedResults,
@@ -49,6 +51,8 @@ export const prepareHtml = async (
     transformBase(document);
 
     transformLinks(document, onCleanUTMTrackers, canCleanUTMTrackers);
+
+    transformAnchors(document);
 
     const { showEmbeddedImages, hasEmbeddedImages, embeddedImages } = await transformEmbedded(
         { ...message, messageDocument: { document } },
