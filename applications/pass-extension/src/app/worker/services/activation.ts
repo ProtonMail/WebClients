@@ -126,10 +126,15 @@ export const createActivationService = () => {
         /** NOTE: Safari might trigger the `install` event when clearing the
          * browser cookies/history on the next service-worker reload */
         if (details.reason === 'install') {
-            const url = browser.runtime.getURL('/onboarding.html#/success');
-            await browser.tabs.create({ url }).catch(noop);
-            void ctx.service.settings.onInstall();
-            void ctx.service.onboarding.onInstall();
+            const hasSession = (await ctx.service.storage.local.getItem('ps')) !== null;
+
+            if (!hasSession) {
+                const url = browser.runtime.getURL('/onboarding.html#/success');
+                await browser.tabs.create({ url }).catch(noop);
+                void ctx.service.settings.onInstall();
+                void ctx.service.onboarding.onInstall();
+            }
+
             void ctx.service.injection.updateInjections();
         }
     });
