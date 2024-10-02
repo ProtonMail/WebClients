@@ -153,8 +153,13 @@ export function useSharedWithMeLinksListingByVolume() {
             return getSharedOnDate(b) - getSharedOnDate(a);
         });
 
+        // We will break the loop in case the signal is aborted (unmount of the component)
+        // This is to prevent too many rerender of the file browser due to update of linksState
         for (const [, result] of sortedResults) {
             for (const [shareId, { links, parents }] of Object.entries(result)) {
+                if (signal.aborted) {
+                    break;
+                }
                 const shareInfo = shareInfoMap.get(shareId);
                 const linksWithShareInfo = links.map((link) => ({
                     ...link,
@@ -162,6 +167,9 @@ export function useSharedWithMeLinksListingByVolume() {
                     sharedBy: shareInfo?.sharedBy,
                 }));
                 await cacheLoadedLinks(signal, shareId, linksWithShareInfo, parents);
+            }
+            if (signal.aborted) {
+                break;
             }
         }
     };
@@ -205,14 +213,11 @@ export function useSharedWithMeLinksListingByVolume() {
      */
     const loadSharedWithMeLinks = async (
         signal: AbortSignal,
-        loadLinksMetaByVolume: FetchLoadLinksMetaByVolume,
-        resetFetchStatus: boolean = false
+        loadLinksMetaByVolume: FetchLoadLinksMetaByVolume
     ): Promise<{ Count?: number } | void> => {
-        // TODO: Remove this when we will have share events in place
-        // This allow us to retrigger the loadSharedWithMeLinks call
-        if (resetFetchStatus) {
-            fetchMeta.current.isEverythingFetched = false;
-        }
+        // This function (loadSharedWithMeLinks) will be called only once (in useEffect of useSharedWithMeView).
+        // We reset the state of fetchMeta to allow fetching new items in case of tab change for exemple
+        fetchMeta.current.isEverythingFetched = false;
         const callback = (AnchorID?: string) => fetchSharedLinksNextPage(signal, loadLinksMetaByVolume, AnchorID);
         return loadFullListingWithAnchor(callback);
     };
