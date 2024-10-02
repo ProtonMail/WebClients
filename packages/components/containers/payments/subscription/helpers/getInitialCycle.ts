@@ -18,7 +18,7 @@ export function getInitialCycle(
     maximumCycle: Cycle | undefined,
     currency: Currency,
     allowDowncycling: boolean,
-    defaultCycles: Cycle[] | undefined
+    defaultCycles?: Cycle[]
 ): Cycle {
     let cycle = (() => {
         if (isPlanSelection) {
