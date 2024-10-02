@@ -41,6 +41,8 @@ import { $selectionInsertClipboardNodes } from './selectionInsertClipboardNodes'
 import type { DocumentInteractionMode } from '../../DocumentInteractionMode'
 import { KEYBOARD_SHORTCUT_COMMAND } from '../KeyboardShortcuts/Command'
 import { getShortcutFromKeyboardEvent } from '../KeyboardShortcuts/Utils'
+import { LINK_CHANGE_COMMAND } from '../Link/LinkPlugin'
+import { $handleLinkChangeSuggestion } from './handleLinkChangeSuggestion'
 
 const LIST_TRANSFORMERS = [UNORDERED_LIST, ORDERED_LIST, CHECK_LIST]
 
@@ -445,6 +447,13 @@ export function SuggestionModePlugin({
             tag: 'suggestion-md-transform',
           })
         },
+      ),
+      editor.registerCommand(
+        LINK_CHANGE_COMMAND,
+        (payload) => {
+          return $handleLinkChangeSuggestion(editor, payload, suggestionModeLogger, addCreatedIDtoSet)
+        },
+        COMMAND_PRIORITY_CRITICAL,
       ),
     )
   }, [controller, editor, isSuggestionMode, suggestionModeLogger])

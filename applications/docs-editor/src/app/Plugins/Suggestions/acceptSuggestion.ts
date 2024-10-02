@@ -39,6 +39,8 @@ export function $acceptSuggestion(suggestionID: string): boolean {
         parent.append(child)
       }
       parentNextSibling.remove()
+    } else if (suggestionType === 'link-change') {
+      $unwrapSuggestionNode(node)
     } else {
       node.remove()
     }
