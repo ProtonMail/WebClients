@@ -1,0 +1,13 @@
+# Proton styles packages
+
+To generate CSS builds for mobile resets:
+
+- `cd packages/styles`
+- `yarn install` if needed
+- `yarn run build:reset`
+
+It will:
+
+- take .scss files in `scss/specifics/`
+- process them and generate a minified CSS version in `assets/css/`
+
