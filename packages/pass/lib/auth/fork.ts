@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { ARGON2_PARAMS } from '@proton/crypto/lib';
+import type { TabId } from '@proton/pass/types';
 import { type Api, AuthMode, type MaybeNull } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -66,24 +67,34 @@ export const requestFork = ({
     return { url: `${host}${SSO_PATHS.AUTHORIZE}?${searchParams.toString()}`, state };
 };
 
+export type PullForkCall = (payload: ConsumeForkPayload) => Promise<PullForkResponse>;
+export type ConsumedFork = { session: AuthSession; Scopes: string[] };
 export type ConsumeForkParameters = ReturnType<typeof getConsumeForkParameters>;
-export type ConsumeForkOptions = { api: Api; apiUrl?: string; payload: ConsumeForkPayload };
+
+export type ConsumeForkOptions = {
+    apiUrl?: string;
+    payload: ConsumeForkPayload;
+    api: Api;
+    pullFork?: PullForkCall;
+};
+
 export type ConsumeForkPayload =
     | {
           mode: 'sso';
-          localState: MaybeNull<string>;
-          state: string;
-          selector: string;
           key?: Uint8Array;
-          persistent: boolean;
+          localState: MaybeNull<string>;
           payloadVersion: AuthSessionVersion;
+          persistent: boolean;
+          selector: string;
+          state: string;
       }
     | {
           mode: 'secure';
-          state: string;
-          selector: string;
           keyPassword: string;
           persistent: boolean;
+          selector: string;
+          state: string;
+          tabId: TabId;
           /** FIXME: support passing offline key components
            * when consuming a "secure" extension fork */
       };
@@ -95,7 +106,7 @@ export type ConsumeForkPayload =
  * extension messaging where `keyPassword` can safely be passed.
  * ⚠️ Only validates the fork state in SSO mode.
  */
-export const consumeFork = async (options: ConsumeForkOptions): Promise<{ session: AuthSession; Scopes: string[] }> => {
+export const consumeFork = async (options: ConsumeForkOptions): Promise<ConsumedFork> => {
     const { payload, apiUrl, api } = options;
     const cookies = AUTH_MODE === AuthMode.COOKIE;
 
@@ -104,12 +115,17 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<{ sessio
         payload.selector &&
         payload.state;
 
-    if (!validFork) throw new InvalidForkConsumeError(`Invalid fork state`);
+    if (!validFork) throw new InvalidForkConsumeError('Invalid fork state');
 
-    const pullForkParams = pullForkSession(payload.selector);
-    pullForkParams.url = apiUrl ? `${apiUrl}/${pullForkParams.url}` : pullForkParams.url;
+    const pullFork: PullForkCall =
+        options.pullFork ??
+        (({ selector }) => {
+            const pullForkParams = pullForkSession(selector);
+            pullForkParams.url = apiUrl ? `${apiUrl}/${pullForkParams.url}` : pullForkParams.url;
+            return api<PullForkResponse>(pullForkParams);
+        });
 
-    const { UID, RefreshToken, LocalID, Payload, Scopes } = await api<PullForkResponse>(pullForkParams);
+    const { UID, RefreshToken, LocalID, Payload, Scopes } = await pullFork(payload);
     const refresh = await api<RefreshSessionResponse>(withUIDHeaders(UID, refreshTokens({ RefreshToken })));
     const { User } = await api<{ User: User }>(withAuthHeaders(UID, refresh.AccessToken, getUser()));
 
@@ -122,7 +138,7 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<{ sessio
                     UID,
                     RefreshToken: refresh.RefreshToken,
                     State: getRandomString(24),
-                    Persistent: options.payload.persistent,
+                    Persistent: payload.persistent,
                 })
             )
         );
@@ -180,7 +196,7 @@ export enum AccountForkResponse {
 }
 
 export const getAccountForkResponsePayload = (type: AccountForkResponse, error?: any) => {
-    const additionalMessage = error?.message ?? '';
+    const additionalMessage = getErrorMessage(error);
 
     const payload = (() => {
         switch (type) {
