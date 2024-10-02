@@ -173,3 +173,10 @@ export const getExchangeRateFromBitcoinUnit = (unit: WasmBitcoinUnit): WasmApiEx
 export const isExchangeRateFromBitcoinUnit = (rate: WasmApiExchangeRate) => {
     return ['BTC', 'SATS', 'MBTC'].includes(rate.FiatCurrency);
 };
+
+export const formatNumberForDisplay = (num: number, decimalPlaces: number) => {
+    // Use a multiplier to shift the decimal point
+    let multiplier = Math.pow(10, decimalPlaces);
+    // Format the number without scientific notation
+    return Math.round(num * multiplier) / multiplier;
+};
