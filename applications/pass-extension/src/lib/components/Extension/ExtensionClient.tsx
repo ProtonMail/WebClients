@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useExtensionActivityProbe';
 import { useExtensionState } from 'proton-pass-extension/lib/hooks/useExtensionState';
+import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
 
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
@@ -19,6 +20,7 @@ import type { MaybeNull, WorkerMessageWithSender } from '@proton/pass/types';
 import { AppStatus } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import sentry, { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
+import noop from '@proton/utils/noop';
 
 import { useExtensionContext } from './ExtensionSetup';
 
@@ -51,7 +53,8 @@ export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
 
     useExtensionState(
         useCallback((state) => {
-            setSentryUID(state.UID);
+            if (state.criticalRuntimeError) reloadManager.runtimeReload().catch(noop);
+
             if (clientErrored(state.status) || state.criticalRuntimeError) {
                 onTelemetry(
                     TelemetryEventName.ErrorResumingSession,
@@ -62,6 +65,8 @@ export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
                     }
                 );
             }
+
+            setSentryUID(state.UID);
         }, [])
     );
 

@@ -6,7 +6,7 @@ import { isPopupPort } from 'proton-pass-extension/lib/utils/port';
 import { isVivaldiBrowser } from 'proton-pass-extension/lib/utils/vivaldi';
 import { type Runtime } from 'webextension-polyfill';
 
-import { MIN_CACHE_VERSION } from '@proton/pass/constants';
+import { MIN_CACHE_VERSION, RUNTIME_RELOAD_THROTTLE } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
 import { clientCanBoot, clientErrored, clientStale } from '@proton/pass/lib/client';
 import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message/message-broker';
@@ -33,7 +33,6 @@ type ActivationServiceState = {
     permissionsGranted: boolean;
 };
 
-export const RUNTIME_RELOAD_THROTTLE = 10; /* seconds */
 const UPDATE_ALARM_NAME = 'PassUpdateAlarm';
 
 export const createActivationService = () => {
