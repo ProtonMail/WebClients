@@ -6,6 +6,7 @@ import Checkbox from '@proton/components/components/input/Checkbox';
 import Label from '@proton/components/components/label/Label';
 import { useNotifications } from '@proton/components/hooks';
 import { isEdge, isIE11 } from '@proton/shared/lib/helpers/browser';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 interface Props {
@@ -25,10 +26,14 @@ const LinkConfirmationModalLink = ({ link, isPunnyCoded, value, onToggle, isOuts
         });
     };
 
+    const description = isElectronMail
+        ? c('Info').t`You are about to open your default browser and visit:`
+        : c('Info').t`You are about to open another browser tab and visit:`;
+
     return (
         <>
-            {`${c('Info').t`You are about to open another browser tab and visit:`} `}
-            <span className="text-bold text-break">{link}</span>
+            {`${description}`}
+            <span className="text-bold text-break pl-1">{link}</span>
             <Copy
                 className="ml-2"
                 size="small"

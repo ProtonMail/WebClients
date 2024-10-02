@@ -2,6 +2,7 @@ import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { VideoConferencingWidgetConfig } from '@proton/calendar';
 import { IconRow } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
@@ -78,6 +79,13 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
                     <span dangerouslySetInnerHTML={{ __html: sanitizedAndUrlifiedLocation }} />
                 </IconRow>
             )}
+            <div className="mb-4">
+                <VideoConferencingWidgetConfig
+                    location={trimmedLocation}
+                    description={vevent.description?.value}
+                    widgetLocation="mail-headers"
+                />
+            </div>
             {!!participantsList.length && (
                 <IconRow title={c('Label').t`Participants`} icon="users" labelClassName="inline-flex pt-0.5">
                     <ExtraEventParticipants list={participantsList} />
