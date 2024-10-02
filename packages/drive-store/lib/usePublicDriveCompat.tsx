@@ -1,5 +1,5 @@
 import { useDriveDocsFeatureFlag } from '../store/_documents';
-import { type DocumentKeys, useDocuments } from './_documents';
+import { type DocumentKeys } from './_documents';
 import { usePublicNode } from './_nodes';
 import type { DecryptedNode } from './_nodes/interface';
 import { usePublicDocsToken } from './_shares';
@@ -29,7 +29,7 @@ export interface PublicDriveCompat {
     /**
      * Gets the keys for a given document node.
      */
-    getDocumentKeys: (meta: PublicNodeMeta) => Promise<DocumentKeys>;
+    getDocumentKeys: (meta: PublicNodeMeta) => Promise<Pick<DocumentKeys, 'documentContentKey'>>;
 }
 
 export const usePublicDriveCompat = (): PublicDriveCompat => {
@@ -37,14 +37,15 @@ export const usePublicDriveCompat = (): PublicDriveCompat => {
 
     const { isReady, isError } = usePublicDocsToken();
 
-    const { getNode } = usePublicNode();
-    const { getDocumentKeys } = useDocuments();
+    const { getNode, getNodeContentKey } = usePublicNode();
 
     return {
         isDocsEnabled,
         isReady,
         isError,
-        getDocumentKeys: ({ token, linkId }) => getDocumentKeys({ shareId: token, linkId }),
+        getDocumentKeys: async (nodeMeta) => ({
+            documentContentKey: await getNodeContentKey(nodeMeta),
+        }),
         getNode,
     };
 };
