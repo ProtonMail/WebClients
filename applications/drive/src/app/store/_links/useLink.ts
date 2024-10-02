@@ -602,6 +602,12 @@ export function useLinkInner(
                 const [nameResult, xattrResult] = await Promise.allSettled([namePromise, xattrPromise]);
 
                 if (nameResult.status === 'rejected') {
+                    // 'AbortError' signify the user has navigated away mid-decryption
+                    // We don't count this as error in our metrics
+                    if (nameResult.reason instanceof Error && nameResult.reason.name === 'AbortError') {
+                        return generateCorruptDecryptedLink(encryptedLink, '�');
+                    }
+
                     // Temp: debugging decryption issues
                     try {
                         if (isDecryptionErrorDebuggingEnabled) {
@@ -643,6 +649,12 @@ export function useLinkInner(
                 }
 
                 if (xattrResult.status === 'rejected') {
+                    // 'AbortError' signify the user has navigated away mid-decryption
+                    // We don't count this as error in our metrics
+                    if (xattrResult.reason instanceof Error && xattrResult.reason.name === 'AbortError') {
+                        return generateCorruptDecryptedLink(encryptedLink, name);
+                    }
+
                     // Temp: debugging decryption issues
                     try {
                         if (isDecryptionErrorDebuggingEnabled) {
