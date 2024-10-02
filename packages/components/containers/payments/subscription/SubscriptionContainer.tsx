@@ -101,7 +101,7 @@ import { SUBSCRIPTION_STEPS } from './constants';
 import SubscriptionCheckoutCycleItem from './cycle-selector/SubscriptionCheckoutCycleItem';
 import SubscriptionCycleSelector from './cycle-selector/SubscriptionCycleSelector';
 import type { SelectedProductPlans } from './helpers';
-import { exclude24Months, getAutoCoupon, getDefaultSelectedProductPlans } from './helpers';
+import { getAutoCoupon, getDefaultSelectedProductPlans } from './helpers';
 import { getAllowedCycles } from './helpers/getAllowedCycles';
 import { getInitialCycle } from './helpers/getInitialCycle';
 import { getInitialCheckoutStep } from './helpers/initialCheckoutStep';
@@ -308,17 +308,6 @@ const SubscriptionContainer = ({
 
     const coupon = maybeCoupon || subscription.CouponCode || undefined;
 
-    const defaultCycles = exclude24Months(planIDs, subscription, [
-        PLANS.VPN_PRO,
-        PLANS.VPN_BUSINESS,
-        PLANS.PASS_PRO,
-        PLANS.PASS_BUSINESS,
-        PLANS.MAIL_PRO,
-        PLANS.MAIL_BUSINESS,
-        PLANS.BUNDLE_PRO,
-        PLANS.BUNDLE_PRO_2024,
-    ]);
-
     const [model, setModel] = useState<Model>(() => {
         const step = getInitialCheckoutStep(planIDs, maybeStep);
 
@@ -334,8 +323,7 @@ const SubscriptionContainer = ({
             minimumCycle,
             maximumCycle,
             currency,
-            allowDowncycling,
-            defaultCycles
+            allowDowncycling
         );
 
         const model: Model = {
@@ -565,7 +553,6 @@ const SubscriptionContainer = ({
             subscription,
             minimumCycle,
             maximumCycle,
-            defaultCycles,
             currency: selectedPlanCurrency,
             planIDs,
             plansMap,
