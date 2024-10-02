@@ -109,10 +109,11 @@ function PublicShareLinkInitContainer() {
         openDocumentWindow({
             mode: 'open-url',
             token,
+            urlPassword,
             linkId: link.linkId,
             window: w.handle,
         });
-    }, [isDocsPublicSharingEnabled, link, error, token, customPassword]);
+    }, [isDocsPublicSharingEnabled, link, error, token, urlPassword, customPassword]);
 
     // This hook automatically redirects to Docs when opening a document.
     useEffect(() => {
