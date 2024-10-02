@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useExtensionActivityProbe';
 import { useWorkerStateEvents } from 'proton-pass-extension/lib/hooks/useWorkerStateEvents';
+import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
@@ -75,6 +76,8 @@ export const ExtensionConnect = <T extends ClientEndpoint>({
         endpoint,
         messageFactory,
         onWorkerStateChange: (workerState) => {
+            if (workerState.criticalRuntimeError) reloadManager.runtimeReload().catch(noop);
+
             setSentryUID(workerState.UID);
             setState((prevState) => ({ ...prevState, ...workerState }));
             authStore.setLocalID(workerState.localID);

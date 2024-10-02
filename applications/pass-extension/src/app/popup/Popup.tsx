@@ -8,6 +8,7 @@ import { ExtensionError } from 'proton-pass-extension/lib/components/Extension/E
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 import { usePopupSizeSurgery } from 'proton-pass-extension/lib/hooks/usePopupSizeSurgery';
 import { createClientStore } from 'proton-pass-extension/lib/store/client-store';
+import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
 
 import { ErrorBoundary } from '@proton/components';
 import { Localized } from '@proton/pass/components/Core/Localized';
@@ -23,7 +24,7 @@ const Popup = () => {
     const store = useRef<ReturnType<typeof createClientStore>>();
 
     return (
-        <ExtensionApp endpoint="popup" onDisconnect={() => window.location.reload()}>
+        <ExtensionApp endpoint="popup" onDisconnect={reloadManager.appReload}>
             {(ready) =>
                 ready && (
                     <ReduxProvider

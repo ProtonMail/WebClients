@@ -13,6 +13,7 @@ import {
 import { Portal } from '@proton/components/components/portal';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
 import { type ClientEndpoint } from '@proton/pass/types';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import noop from '@proton/utils/noop';
 
 import { ExtensionCore } from './ExtensionCore';
@@ -23,16 +24,13 @@ type Props = {
     onDisconnect?: () => void;
 };
 
-export const ExtensionApp: FC<Props> = ({ endpoint, children, onDisconnect }) => {
+export const ExtensionApp: FC<Props> = ({ endpoint, children, onDisconnect = noop }) => {
     const [ready, setReady] = useState(false);
 
     useEffect(() => {
         setupExtensionContext({
             endpoint,
-            onDisconnect: () => {
-                onDisconnect?.();
-                return { recycle: false };
-            },
+            onDisconnect: pipe(onDisconnect, () => ({ recycle: false })),
             onRecycle: noop,
         })
             .then(() => setReady(true))

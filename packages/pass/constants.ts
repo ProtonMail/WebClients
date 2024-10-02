@@ -108,3 +108,8 @@ export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.PassWebInternalAlpha]: false,
     [PassFeature.PassWebOfflineMode]: false,
 };
+
+/** NOTE: Timeout mostly used to avoid Safari extension
+ * limbo state when the service-worker is corrupted */
+export const RUNTIME_RELOAD_TIMEOUT = 2_000; /* ms */
+export const RUNTIME_RELOAD_THROTTLE = 10; /* seconds */

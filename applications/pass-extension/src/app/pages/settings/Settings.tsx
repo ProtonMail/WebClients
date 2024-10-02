@@ -9,6 +9,7 @@ import { ExtensionConnect, useExtensionConnect } from 'proton-pass-extension/lib
 import { ExtensionHead } from 'proton-pass-extension/lib/components/Extension/ExtensionHead';
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 import { createClientStore } from 'proton-pass-extension/lib/store/client-store';
+import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
 import { c, msgid } from 'ttag';
 
 import { Avatar } from '@proton/atoms/Avatar';
@@ -219,7 +220,7 @@ export const Settings: FC = () => {
 
     return (
         <>
-            <ExtensionApp endpoint="page" onDisconnect={() => window.location.reload()}>
+            <ExtensionApp endpoint="page" onDisconnect={reloadManager.appReload}>
                 {(ready) =>
                     ready && (
                         <ReduxProvider
