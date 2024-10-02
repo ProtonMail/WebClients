@@ -9,8 +9,9 @@ import {
     vaultDeleteSuccess,
 } from '@proton/pass/store/actions';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { selectUserDefaultShareId } from '@proton/pass/store/selectors';
+import { selectUserDefaultShareID } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
+import type { Maybe } from '@proton/pass/types';
 
 function* deleteVaultWorker(
     { onItemsUpdated, getAuthStore }: RootSagaOptions,
@@ -23,7 +24,7 @@ function* deleteVaultWorker(
         /* Handle edge case when the alias sync vault is deleted:
          * we check the new alias sync vault from BE in the user access route */
         const userID = getAuthStore().getUserID();
-        const aliasSyncShareId: string = yield select(selectUserDefaultShareId);
+        const aliasSyncShareId: Maybe<string> = yield select(selectUserDefaultShareID);
         if (shareId === aliasSyncShareId) yield put(withRevalidate(getUserAccessIntent(userID!)));
 
         yield put(vaultDeleteSuccess(meta.request.id, { shareId, content }));

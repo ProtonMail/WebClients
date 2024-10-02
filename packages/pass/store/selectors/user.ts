@@ -67,7 +67,7 @@ export const selectFeatureFlag =
 
 /* User default vault shareId, currently used for SimpleLogin aliases sync.
  * If the user data has not been synced yet - fallback to the default share. */
-export const selectUserDefaultShareId = createSelector(
+export const selectUserDefaultShareID = createSelector(
     [selectUserData, selectDefaultVault],
-    (userData, defaultShare) => userData?.defaultShareId ?? defaultShare.shareId
+    (userData, defaultShare): Maybe<string> => userData?.defaultShareId ?? defaultShare?.shareId
 );
