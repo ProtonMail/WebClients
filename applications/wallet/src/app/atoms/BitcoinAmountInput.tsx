@@ -1,10 +1,10 @@
-import { type ChangeEvent, useRef } from 'react';
+import { type ChangeEvent, useRef, useState } from 'react';
 
 import type { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
 import type { InputProps } from '@proton/atoms';
 import type { InputFieldOwnProps } from '@proton/components/components/v2/field/InputField';
 
-import { formatNumberForDisplay, getDecimalStepByUnit, getPrecision } from '../utils';
+import { countDecimal, formatNumberForDisplay, getDecimalStepByUnit, getPrecision } from '../utils';
 import { CoreInput } from './Input';
 
 interface Props extends InputFieldOwnProps, InputProps {
@@ -41,9 +41,15 @@ export const BitcoinAmountInput = ({
 }: Props) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const safeMin = min ?? 0;
-
+    const [digitsAfterDecimalPoint, setDigitsAfterDecimalPoint] = useState<number>(countDecimal(value.toString()));
     const onChange = (event: ChangeEvent<HTMLInputElement>) => {
-        onValueChange?.(Number(event.target.value));
+        const newValue = event.target.value;
+        const countDigit = countDecimal(newValue);
+        if (countDigit > getPrecision(unit)) {
+            return;
+        }
+        setDigitsAfterDecimalPoint(countDecimal(newValue));
+        onValueChange?.(Number(newValue));
     };
 
     return (
@@ -51,7 +57,7 @@ export const BitcoinAmountInput = ({
             ref={inputRef}
             dense={dense}
             type="number"
-            value={`${formatNumberForDisplay(value, getPrecision(unit))}`}
+            value={`${formatNumberForDisplay(value, getPrecision(unit), digitsAfterDecimalPoint)}`}
             min={safeMin}
             max={accountBalance}
             step={getDecimalStepByUnit(unit)}
