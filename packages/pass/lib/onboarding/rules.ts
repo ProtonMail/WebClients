@@ -13,7 +13,7 @@ import {
 } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
-import { OnboardingMessage, PlanType } from '@proton/pass/types';
+import { OnboardingMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { merge } from '@proton/pass/utils/object/merge';
@@ -143,7 +143,7 @@ export const createFamilyPlanPromo2024Rule = (store: Store<State>) =>
             const enabled = selectFeatureFlag(PassFeature.PassFamilyPlanPromo2024)(state);
             const plan = selectUserPlan(state);
             const cohortPass2023 = plan?.InternalName === 'pass2023';
-            const cohortPassFree = plan?.Type === PlanType.free;
+            const cohortPassFree = plan?.InternalName === 'free';
 
             return enabled && (cohortPass2023 || cohortPassFree);
         },
