@@ -22,6 +22,7 @@ import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import noop from '@proton/utils/noop';
 
+import type { PullForkCall } from './fork';
 import {
     type ConsumeForkPayload,
     type RequestForkOptions,
@@ -68,6 +69,12 @@ export interface AuthServiceConfig {
     api: Api;
     /** Store holding the active session data */
     authStore: AuthStore;
+
+    /** Override the default pull fork call. This is mostly
+     * required for safari extensions which will not include
+     * cookies set by account when requesting a fork sw-side. */
+    pullFork?: PullForkCall;
+
     /** The in-memory session is used to store the session data securely.
      * It allows resuming a session without any API calls to re-authenticate.
      * In most cases you can omit the implementation and rely on the `authStore` */
@@ -240,7 +247,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
         consumeFork: async (payload: ConsumeForkPayload, apiUrl?: string): Promise<boolean> => {
             try {
                 config.onLoginStart?.();
-                const { session, Scopes } = await consumeFork({ api, payload, apiUrl });
+                const { session, Scopes } = await consumeFork({ api, apiUrl, payload, pullFork: config.pullFork });
                 const validScope = Scopes.includes('pass');
 
                 if (!validScope) {
@@ -270,7 +277,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                 if (locked) await api.reset();
                 if (loggedIn || locked) await authService.persistSession({ regenerateClientKey: true });
 
-                return loggedIn;
+                return true;
             } catch (error: unknown) {
                 const reason = error instanceof Error ? ` (${getApiErrorMessage(error) ?? error?.message})` : '';
 
@@ -282,7 +289,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                 config.onForkInvalid?.();
                 await authService.logout({ soft: true, broadcast: false });
 
-                return false;
+                throw error;
             }
         },
 

@@ -2,8 +2,7 @@
 import { SSO_URL } from 'proton-pass-extension/app/config';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
-import { sendSafariMessage } from 'proton-pass-extension/lib/utils/safari';
-import { c } from 'ttag';
+import { safariPullFork, sendSafariMessage } from 'proton-pass-extension/lib/utils/safari';
 
 import { SESSION_RESUME_MAX_RETRIES, SESSION_RESUME_RETRY_TIMEOUT } from '@proton/pass/constants';
 import { AccountForkResponse, getAccountForkResponsePayload } from '@proton/pass/lib/auth/fork';
@@ -34,7 +33,7 @@ import { or } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { epochToMs, getEpoch } from '@proton/pass/utils/time/epoch';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
-import { FIBONACCI_LIST, PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { FIBONACCI_LIST } from '@proton/shared/lib/constants';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
@@ -74,6 +73,8 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             if (clientAuthorized(ctx.status)) return true;
             return ctx.service.auth.resumeSession(undefined, options);
         }),
+
+        ...(BUILD_TARGET === 'safari' ? { pullFork: safariPullFork } : {}),
 
         getPersistedSession: withContext(async (ctx, _localID) => {
             const ps = await ctx.service.storage.local.getItem('ps');
@@ -249,20 +250,14 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
     });
 
     const handleAccountFork = withContext<MessageHandlerCallback<WorkerMessageType.ACCOUNT_FORK>>(
-        async ({ service, status }, { payload }) => {
+        async ({ service, status }, { payload }, { tab }) => {
             if (authStore.hasSession()) throw getAccountForkResponsePayload(AccountForkResponse.CONFLICT);
 
             try {
-                await authService.consumeFork({ mode: 'secure', ...payload }, `${SSO_URL}/api`);
+                await authService.consumeFork({ mode: 'secure', tabId: tab?.id!, ...payload }, `${SSO_URL}/api`);
                 if (clientSessionLocked(status)) await service.storage.session.setItems(authStore.getSession());
                 return getAccountForkResponsePayload(AccountForkResponse.SUCCESS);
             } catch (error: unknown) {
-                authService.logout({ soft: true }).catch(noop);
-
-                const additionalMessage = error instanceof Error ? error.message : '';
-                const text = c('Warning').t`Unable to sign in to ${PASS_APP_NAME}. ${additionalMessage}`;
-                authService.config.onNotification?.({ text, type: 'error' });
-
                 throw getAccountForkResponsePayload(AccountForkResponse.ERROR, error);
             }
         }
