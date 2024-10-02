@@ -222,7 +222,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
             ?.focus();
     });
 
-    const onTabMessage = async (message: WorkerMessageWithSender) => {
+    const onTabMessage = (message: WorkerMessageWithSender) => {
         if (message?.sender === 'background' && message.type === WorkerMessageType.FORM_STATUS) {
             const { formId, status } = message.payload;
 
