@@ -4,6 +4,7 @@ import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { ButtonLike, Href } from '@proton/atoms';
+import { VideoConferencingWidgetConfig } from '@proton/calendar';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import {
     AppLink,
@@ -401,6 +402,14 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                         <IconRow title={c('Label').t`Calendar`} icon="calendar-grid" labelClassName={labelClassName}>
                             <span className="text-break">{Name}</span>
                         </IconRow>
+
+                        <div className="mb-4">
+                            <VideoConferencingWidgetConfig
+                                location={vevent.location?.value?.trim()}
+                                description={vevent.description?.value}
+                                widgetLocation="mail-headers"
+                            />
+                        </div>
                         {!!sanitizedAndUrlifiedLocation && (
                             <IconRow title={c('Label').t`Location`} icon="map-pin" labelClassName={labelClassName}>
                                 <span dangerouslySetInnerHTML={{ __html: sanitizedAndUrlifiedLocation }} />

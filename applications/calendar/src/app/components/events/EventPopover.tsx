@@ -2,8 +2,14 @@ import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Badge, CalendarInviteButtons, Loader, useReadCalendarBootstrap, useUser } from '@proton/components';
-import { CalendarEventDateHeader } from '@proton/components';
+import {
+    Badge,
+    CalendarEventDateHeader,
+    CalendarInviteButtons,
+    Loader,
+    useReadCalendarBootstrap,
+    useUser,
+} from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import {
     getIsCalendarDisabled,
