@@ -1,10 +1,12 @@
 import { useRef, useState } from 'react';
 
+import type { SessionKey } from 'packages/crypto/lib';
+
 import { querySharedURLMetadata, querySharedURLPath } from '@proton/shared/lib/api/drive/sharing';
 import type { LinkMetaBatchPayload } from '@proton/shared/lib/interfaces/drive/link';
 
 import { linkMetaToEncryptedLink, usePublicSession } from '../../store/_api';
-import type { DecryptedLink } from '../../store/_links';
+import { type DecryptedLink, useLink } from '../../store/_links';
 import { useLinksListingHelpers } from '../../store/_links/useLinksListing/useLinksListingHelpers';
 import { usePublicShare } from '../../store/_shares';
 import { useAbortSignal } from '../../store/_views/utils';
@@ -28,6 +30,7 @@ export const usePublicNode = () => {
     const { loadPublicShare } = usePublicShare();
     const { request } = usePublicSession();
     const { cacheLoadedLinks } = useLinksListingHelpers();
+    const { getLinkSessionKey } = useLink();
 
     const getNode = async (nodeMeta: PublicNodeMeta, force?: boolean): Promise<DecryptedNode> => {
         const cached = cache.current.get(getCacheKey(nodeMeta));
@@ -93,5 +96,23 @@ export const usePublicNode = () => {
         }
     };
 
-    return { getNode };
+    const getNodeContentKey = async (nodeMeta: PublicNodeMeta): Promise<SessionKey> => {
+        const cached = cache.current.get(getCacheKey(nodeMeta));
+
+        if (!cached) {
+            await getNode(nodeMeta);
+        }
+
+        const contentKey = await getLinkSessionKey(abortSignal, nodeMeta.token, nodeMeta.linkId);
+
+        if (!contentKey) {
+            throw new EnrichedError('Could not find node content key', {
+                tags: { ...nodeMeta },
+            });
+        }
+
+        return contentKey;
+    };
+
+    return { getNode, getNodeContentKey };
 };
