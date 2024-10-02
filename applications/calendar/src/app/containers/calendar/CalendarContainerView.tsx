@@ -24,6 +24,7 @@ import {
     PrivateHeader,
     PrivateMainArea,
     QuickSettingsAppButton,
+    SmartBanner,
     ToolbarButton,
     Tooltip,
     TopBanners,
@@ -388,7 +389,9 @@ const CalendarContainerView = ({
         <>
             {isElectronMail && <InboxDesktopOutdatedAppTopBanner />}
             {isElectronMail && !user.hasPaidMail && <InboxDesktopFreeTrialTopBanner />}
-            <TopBanners app={APPS.PROTONCALENDAR} />
+            <TopBanners app={APPS.PROTONCALENDAR}>
+                <SmartBanner app={APPS.PROTONCALENDAR} />
+            </TopBanners>
         </>
     );
 
