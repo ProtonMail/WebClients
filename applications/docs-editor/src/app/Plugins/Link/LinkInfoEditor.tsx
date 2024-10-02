@@ -1,38 +1,14 @@
-import type { LexicalEditor, RangeSelection, TextNode } from 'lexical'
-import {
-  $isTextNode,
-  $createTextNode,
-  COMMAND_PRIORITY_LOW,
-  SELECTION_CHANGE_COMMAND,
-  $getSelection,
-  $isRangeSelection,
-  $insertNodes,
-} from 'lexical'
+import type { LexicalEditor, TextNode } from 'lexical'
+import { COMMAND_PRIORITY_LOW, SELECTION_CHANGE_COMMAND, $getSelection, $isRangeSelection } from 'lexical'
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import type { getSelectedNode } from '../../Utils/getSelectedNode'
 import type { LinkNode } from '@lexical/link'
-import { $createLinkNode, $isLinkNode, TOGGLE_LINK_COMMAND } from '@lexical/link'
 import { getDOMRangeRect } from '../../Utils/getDOMRangeRect'
-import { sanitizeUrl } from '../../Utils/sanitizeUrl'
 import { createPortal } from 'react-dom'
 import { Button, Input } from '@proton/atoms'
 import { Icon } from '@proton/components'
 import { mergeRegister } from '@lexical/utils'
 import { c } from 'ttag'
-
-export const $isLinkTextNode = (
-  node: ReturnType<typeof getSelectedNode>,
-  selection: RangeSelection,
-): node is TextNode => {
-  const parent = node.getParent()
-  return (
-    $isLinkNode(parent) &&
-    parent.getChildrenSize() === 1 &&
-    $isTextNode(node) &&
-    parent.getFirstChild() === node &&
-    selection.anchor.getNode() === selection.focus.getNode()
-  )
-}
+import { LINK_CHANGE_COMMAND } from './LinkPlugin'
 
 export function LinkInfoEditor({
   editor,
@@ -76,36 +52,11 @@ export function LinkInfoEditor({
   }, [editor, linkNode, linkTextNode])
 
   const handleSubmission = useCallback(() => {
-    editor.update(() => {
-      const selection = $getSelection()
-      if (!$isRangeSelection(selection)) {
-        return
-      }
-
-      const sanitizedURL = sanitizeUrl(url.startsWith('http') ? url : 'https://' + url)
-
-      const isSelectionCollapsed = selection.isCollapsed()
-      if (isSelectionCollapsed && !!url && !linkNode) {
-        if (!sanitizedURL) {
-          return
-        }
-        const linkNode = $createLinkNode(sanitizedURL)
-        const textNode = $createTextNode(text || url)
-        linkNode.append(textNode)
-        $insertNodes([linkNode])
-        linkNode.selectEnd()
-        return
-      }
-
-      if (!sanitizedURL) {
-        return
-      }
-
-      editor.dispatchCommand(TOGGLE_LINK_COMMAND, sanitizedURL || null)
-
-      if (linkTextNode !== null && text !== '') {
-        linkTextNode.setTextContent(text)
-      }
+    editor.dispatchCommand(LINK_CHANGE_COMMAND, {
+      linkNode,
+      linkTextNode,
+      url,
+      text,
     })
     setIsEditingLink(false)
   }, [editor, linkNode, linkTextNode, setIsEditingLink, text, url])
@@ -225,6 +176,12 @@ export function LinkInfoEditor({
             placeholder={c('Placeholder').t`Paste link`}
             onChange={(event) => {
               setURL(event.target.value)
+            }}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter') {
+                event.preventDefault()
+                handleSubmission()
+              }
             }}
             ref={focusInputOnMount}
           />

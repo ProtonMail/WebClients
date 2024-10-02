@@ -2,7 +2,7 @@ import { createHeadlessEditor } from '@lexical/headless'
 import { AllNodes } from '../../AllNodes'
 import { $createSuggestionNode } from './ProtonNode'
 import type { ParagraphNode } from 'lexical'
-import { $createParagraphNode, $createTextNode, $getRoot } from 'lexical'
+import { $createParagraphNode, $createTextNode, $getRoot, $isTextNode } from 'lexical'
 import { $acceptSuggestion } from './acceptSuggestion'
 import { $createHeadingNode } from '@lexical/rich-text'
 import { $createListItemNode, $createListNode } from '@lexical/list'
@@ -72,7 +72,7 @@ describe('$acceptSuggestion', () => {
     })
   })
 
-  it('should remove "split" suggestion nodes, and remove temporary line-break sibling if exists', () => {
+  it('should remove "split" suggestion nodes', () => {
     const suggestionID = Math.random().toString()
 
     editor.update(
@@ -138,6 +138,31 @@ describe('$acceptSuggestion', () => {
 
       const paragraph4 = root.getChildAtIndex(2)
       expect(paragraph4?.getTextContent()).toBe('Paragraph 4ListItem1')
+    })
+  })
+
+  describe('link-change', () => {
+    it('should unwrap node', () => {
+      const suggestionID = Math.random().toString()
+
+      editor.update(
+        () => {
+          const paragraph = $createParagraphNode().append(
+            $createSuggestionNode(suggestionID, 'link-change').append($createTextNode('Inserted')),
+          )
+          $getRoot().append(paragraph)
+          $acceptSuggestion(suggestionID)
+        },
+        {
+          discrete: true,
+        },
+      )
+
+      editor.read(() => {
+        const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
+        expect(paragraph.getChildrenSize()).toBe(1)
+        expect($isTextNode(paragraph.getFirstChild())).toBe(true)
+      })
     })
   })
 })
