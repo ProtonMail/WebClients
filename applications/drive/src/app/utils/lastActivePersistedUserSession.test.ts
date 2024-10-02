@@ -1,5 +1,6 @@
 import { STORAGE_PREFIX } from '@proton/shared/lib/authentication/persistedSessionStorage';
 
+import { LAST_ACTIVE_PING } from '../store/_user/useActivePing';
 import { sendErrorReport } from './errorHandling';
 import { getLastActivePersistedUserSession } from './lastActivePersistedUserSession';
 
@@ -9,6 +10,35 @@ const mockedSendErrorReport = jest.mocked(sendErrorReport);
 describe('getLastActivePersistedUserSession', () => {
     afterEach(() => {
         window.localStorage.clear();
+    });
+
+    it('returns session for the last active user based on LAST_ACTIVE_PING', () => {
+        localStorage.setItem(
+            `${STORAGE_PREFIX}0`,
+            JSON.stringify({ UserID: '1234', UID: 'abcd-1234', persistedAt: 123 }) // first session to be persisted
+        );
+        localStorage.setItem(
+            `${STORAGE_PREFIX}1`,
+            JSON.stringify({ UserID: '5678', UID: 'efgh-5678', persistedAt: 567 }) // last session to be persisted
+        );
+
+        // Set last active pings
+        localStorage.setItem(`${LAST_ACTIVE_PING}_1234`, JSON.stringify({ value: 1000 })); // latest session
+        localStorage.setItem(`${LAST_ACTIVE_PING}_5678`, JSON.stringify({ value: 500 })); // previous session
+
+        const result = getLastActivePersistedUserSession();
+        expect(result).toEqual({
+            UserID: '1234',
+            UID: 'abcd-1234',
+            blob: '',
+            isSubUser: false,
+            localID: 0,
+            payloadType: 'default',
+            payloadVersion: 1,
+            persistedAt: 123,
+            persistent: true,
+            trusted: false,
+        });
     });
 
     it('returns persisted session if valid session data exists', () => {
