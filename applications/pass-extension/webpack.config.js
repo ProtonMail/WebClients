@@ -95,6 +95,8 @@ module.exports = {
         ...(BUILD_TARGET !== 'safari' ? { webauthn: './src/app/content/webauthn.ts' } : {}),
         /* FF account communication fallback */
         ...(BUILD_TARGET === 'firefox' ? { account: disableBrowserTrap('./src/app/content/firefox/index.ts') } : {}),
+        /* Safari fork fallback */
+        ...(BUILD_TARGET === 'safari' ? { fork: disableBrowserTrap('./src/app/content/safari/index.ts') } : {}),
     },
     module: {
         strictExportPresence: true,
@@ -224,11 +226,18 @@ module.exports = {
                                     ];
                                     break;
                                 case 'chrome':
-                                case 'safari':
                                     manifest.externally_connectable.matches = [
                                         'https://account.proton.me/*',
                                         'https://pass.proton.me/*',
                                     ];
+                                    break;
+                                case 'safari':
+                                    manifest.content_scripts[1].matches = ['https://account.proton.me/*'];
+                                    manifest.externally_connectable.matches = [
+                                        'https://account.proton.me/*',
+                                        'https://pass.proton.me/*',
+                                    ];
+                                    break;
                             }
                         }
 
