@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { VideoConferencingWidgetConfig } from '@proton/calendar';
 import {
     Collapsible,
     CollapsibleContent,
@@ -273,8 +274,13 @@ const PopoverEventContent = ({
 
     const labelClassName = 'inline-flex pt-1';
 
-    const eventDetailsContent = (
+    return (
         <>
+            <VideoConferencingWidgetConfig
+                description={model.description}
+                location={model.location}
+                widgetLocation="calendar"
+            />
             {sanitizedLocation ? (
                 <IconRow labelClassName={labelClassName} title={c('Label').t`Location`} icon="map-pin">
                     <span className="text-break" dangerouslySetInnerHTML={{ __html: sanitizedLocation }} />
@@ -360,8 +366,6 @@ const PopoverEventContent = ({
             {contactModals}
         </>
     );
-
-    return eventDetailsContent;
 };
 
 export default PopoverEventContent;
