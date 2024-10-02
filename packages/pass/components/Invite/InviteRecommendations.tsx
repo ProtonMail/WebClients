@@ -33,8 +33,8 @@ export const InviteRecommendations: FC<Props> = (props) => {
     const listRef = useRef<List>(null);
 
     const startsWith = useDebouncedValue(autocomplete, 250);
-    const defaultShareId = useSelector(selectDefaultVault)?.shareId;
-    const shareId = props.shareId ?? defaultShareId;
+    const defaultVault = useSelector(selectDefaultVault);
+    const shareId = props.shareId ?? defaultVault?.shareId ?? '';
 
     const { loadMore, state } = useInviteRecommendations(startsWith, { pageSize, shareId });
     const { organization, emails, loading } = state;

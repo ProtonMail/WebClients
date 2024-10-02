@@ -12,8 +12,8 @@ import { aliasSyncEnable, aliasSyncPending, aliasSyncStatus, aliasSyncStatusTogg
 import { userAccessRequest } from '@proton/pass/store/actions/requests';
 import { requestInvalidate } from '@proton/pass/store/request/actions';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
-import { selectUserDefaultShareId } from '@proton/pass/store/selectors';
-import type { AliasPending, ItemRevision, ItemRevisionContentsResponse } from '@proton/pass/types';
+import { selectUserDefaultShareID } from '@proton/pass/store/selectors';
+import type { AliasPending, ItemRevision, ItemRevisionContentsResponse, Maybe } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
 /* Will invalidate the `user-access` request as to re-request it
@@ -34,7 +34,9 @@ const aliasSyncPendingSaga = createRequestSaga({
     actions: aliasSyncPending,
     call: function* () {
         try {
-            const shareId: string = yield select(selectUserDefaultShareId);
+            const shareId: Maybe<string> = yield select(selectUserDefaultShareID);
+            if (!shareId) throw new Error('Could not resolve user default vault');
+
             const pendingAliases: AliasPending[] = yield getPendingAliases();
             const encryptedItems: ItemRevisionContentsResponse[] = yield createAliasesFromPending({
                 shareId,
