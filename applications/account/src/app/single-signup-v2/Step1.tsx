@@ -1087,7 +1087,10 @@ const Step1 = ({
                                                                     <span>
                                                                         {(() => {
                                                                             if (
-                                                                                signupParameters.signIn === 'redirect'
+                                                                                signupParameters.signIn ===
+                                                                                    'redirect' &&
+                                                                                // we don't redirect users if a coupon is present to avoid loosing the offer
+                                                                                !signupParameters.coupon
                                                                             ) {
                                                                                 const searchParams =
                                                                                     new URLSearchParams();
