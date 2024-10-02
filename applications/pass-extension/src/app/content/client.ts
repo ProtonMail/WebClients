@@ -80,7 +80,7 @@ void (async () =>
 
         Promise.resolve(script?.start())
             .then(() => {
-                browser.runtime.onMessage.addListener(async (message: Maybe<WorkerMessageWithSender>) => {
+                browser.runtime.onMessage.addListener((message: Maybe<WorkerMessageWithSender>) => {
                     if (message?.sender === 'background') {
                         switch (message.type) {
                             case WorkerMessageType.START_CONTENT_SCRIPT:
