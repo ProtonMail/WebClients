@@ -120,21 +120,12 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
       }),
     )
 
-    const successfulComments = comments.filter((result) => !result.isFailed())
-
     const failedComments = comments.filter((result) => result.isFailed())
-    if (failedComments.length > 0) {
-      metrics.docs_comments_download_error_total.increment(
-        {
-          reason: 'decryption_error',
-        },
-        failedComments.length,
-      )
-
-      for (const failed of failedComments) {
-        this.logger.error(`[CreateThread] Failed to decrypt comment: ${failed.getError()}`)
-      }
+    for (const failed of failedComments) {
+      this.logger.error(`[CreateThread] Failed to decrypt comment: ${failed.getError()}`)
     }
+
+    const successfulComments = comments.filter((result) => !result.isFailed())
 
     const thread = new CommentThread(
       response.CommentThread.CommentThreadID,

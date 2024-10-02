@@ -70,17 +70,8 @@ export class LoadThreads implements UseCaseInterface<void> {
     )
 
     const failedComments = comments.filter((result) => result.isFailed())
-    if (failedComments.length > 0) {
-      metrics.docs_comments_download_error_total.increment(
-        {
-          reason: 'decryption_error',
-        },
-        failedComments.length,
-      )
-
-      for (const failed of failedComments) {
-        this.logger.error(`[LoadThreads] Failed to decrypt comment: ${failed.getError()}`)
-      }
+    for (const failed of failedComments) {
+      this.logger.error(`[LoadThreads] Failed to decrypt comment: ${failed.getError()}`)
     }
 
     const successfulComments = comments.filter((result) => !result.isFailed())

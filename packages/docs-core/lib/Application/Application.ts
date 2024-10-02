@@ -35,6 +35,10 @@ export class Application implements ApplicationInterface {
     this.eventBus.deinit()
   }
 
+  public get metrics(): MetricService {
+    return this.deps.get<MetricService>(App_TYPES.MetricService)
+  }
+
   public get eventBus(): InternalEventBusInterface {
     return this.deps.get<InternalEventBusInterface>(App_TYPES.EventBus)
   }
