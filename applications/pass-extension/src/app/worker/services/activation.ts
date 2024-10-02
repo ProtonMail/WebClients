@@ -17,13 +17,13 @@ import { selectFeatureFlags, selectItem, selectPopupFilters, selectPopupTabState
 import type { MaybeNull, WorkerMessageWithSender, WorkerWakeUpMessage } from '@proton/pass/types';
 import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
-import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
 import { semver } from '@proton/pass/utils/string/semver';
 import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
 import { getEpoch, msToEpoch } from '@proton/pass/utils/time/epoch';
 import { parseUrl } from '@proton/pass/utils/url/parser';
+import noop from '@proton/utils/noop';
 
 import { getSessionResumeAlarm, getSessionResumeDelay, shouldForceLock } from './auth';
 
@@ -123,15 +123,11 @@ export const createActivationService = () => {
             return ctx.service.auth.init({ forceLock: await shouldForceLock(), retryable: true });
         }
 
+        /** NOTE: Safari might trigger the `install` event when clearing the
+         * browser cookies/history on the next service-worker reload */
         if (details.reason === 'install') {
-            try {
-                await Promise.all([ctx.service.storage.local.clear(), ctx.service.storage.session.clear()]);
-                const url = browser.runtime.getURL('/onboarding.html#/success');
-                await browser.tabs.create({ url });
-            } catch (error: any) {
-                logger.warn(`[Activation] requesting fork failed: ${getErrorMessage(error)}`);
-            }
-
+            const url = browser.runtime.getURL('/onboarding.html#/success');
+            await browser.tabs.create({ url }).catch(noop);
             void ctx.service.settings.onInstall();
             void ctx.service.onboarding.onInstall();
             void ctx.service.injection.updateInjections();
