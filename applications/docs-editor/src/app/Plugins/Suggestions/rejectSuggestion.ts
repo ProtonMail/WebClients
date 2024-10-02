@@ -3,6 +3,7 @@ import type { ElementNode } from 'lexical'
 import { $nodesOfType, $isElementNode } from 'lexical'
 import { $unwrapSuggestionNode } from './Utils'
 import { ProtonNode, $isSuggestionNode } from './ProtonNode'
+import { $createLinkNode, $isLinkNode } from '@lexical/link'
 
 export function $rejectSuggestion(suggestionID: string): boolean {
   const nodes = $nodesOfType(ProtonNode)
@@ -51,6 +52,40 @@ export function $rejectSuggestion(suggestionID: string): boolean {
       parentNextSibling.remove()
     } else if (suggestionType === 'join') {
       node.remove()
+    } else if (suggestionType === 'link-change') {
+      const changedProperties = node.__properties.nodePropertiesChanged
+      if (!changedProperties) {
+        node.remove()
+        continue
+      }
+      const initialURL = changedProperties.__url
+      const linkNode = node.getFirstChildOrThrow()
+      const linkWasRemoved = !$isLinkNode(linkNode)
+      if (linkWasRemoved) {
+        if (initialURL) {
+          const newLinkNode = $createLinkNode(initialURL)
+          const children = node.getChildren()
+          for (const child of children) {
+            newLinkNode.append(child)
+          }
+          node.append(newLinkNode)
+          $unwrapSuggestionNode(node)
+        } else {
+          node.remove()
+        }
+        continue
+      }
+      $unwrapSuggestionNode(node)
+      if (initialURL) {
+        linkNode.setURL(initialURL)
+      } else {
+        const children = linkNode.getChildren()
+        for (const child of children) {
+          linkNode.insertBefore(child)
+        }
+        linkNode.remove()
+        continue
+      }
     } else {
       node.remove()
     }

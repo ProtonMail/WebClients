@@ -4,7 +4,7 @@ export enum ProtonNodeTypes {
 
 export type SuggestionID = string
 
-export type SuggestionType = 'insert' | 'delete' | 'property-change' | 'split' | 'join'
+export type SuggestionType = 'insert' | 'delete' | 'property-change' | 'split' | 'join' | 'link-change'
 
 export type SuggestionProperties = {
   nodeType: ProtonNodeTypes.Suggestion
