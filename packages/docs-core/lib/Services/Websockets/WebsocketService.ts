@@ -30,7 +30,6 @@ import {
   DecryptedValue,
 } from '@proton/docs-proto'
 import { c } from 'ttag'
-import { traceError } from '@proton/shared/lib/helpers/sentry'
 import type { DecryptMessage } from '../../UseCase/DecryptMessage'
 import type { DocumentConnectionRecord } from './DocumentConnectionRecord'
 import { GenerateUUID } from '../../Util/GenerateUuid'
@@ -42,6 +41,7 @@ import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import { UpdateDebouncer } from './Debouncer/UpdateDebouncer'
 import { UpdateDebouncerEventType } from './Debouncer/UpdateDebouncerEventType'
 import { DocumentDebounceMode } from './Debouncer/DocumentDebounceMode'
+import { PostApplicationError } from '../../Application/ApplicationEvent'
 
 type LinkID = string
 
@@ -441,12 +441,12 @@ export class WebsocketService implements WebsocketServiceInterface {
         })
       }
 
-      traceError('Unable to encrypt message', {
-        extra: {
-          errorInfo: {
-            message: result.getError(),
-          },
-        },
+      this.logger.error('Unable to encrypt realtime message', result.getError())
+
+      PostApplicationError(this.eventBus, {
+        translatedError: message,
+        translatedErrorTitle: message,
+        irrecoverable: true,
       })
 
       throw new Error(`Unable to encrypt message: ${result.getError()}`)
