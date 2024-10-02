@@ -32,13 +32,13 @@ export class DecryptComment implements UseCaseInterface<Comment> {
         reason: 'decryption_error',
       })
 
-      return Result.fail(decrypted.getError())
+      return Result.fail(`Comment decryption failed: ${decrypted.getError()}`)
     }
 
     const verificationKey = await this.encryption.getVerificationKey(emailToUse)
 
     if (verificationKey.isFailed()) {
-      return Result.fail(verificationKey.getError())
+      return Result.fail(`Comment verification key failed: ${verificationKey.getError()}`)
     }
 
     const verifyResult = await this.encryption.verifyData(
@@ -49,12 +49,20 @@ export class DecryptComment implements UseCaseInterface<Comment> {
     )
 
     if (verifyResult.isFailed()) {
-      return Result.fail(verifyResult.getError())
+      metrics.docs_comments_download_error_total.increment({
+        reason: 'decryption_error',
+      })
+
+      return Result.fail(`Comment verifyResult is failed: ${verifyResult.getError()}`)
     }
 
     const verifyValue = verifyResult.getValue()
 
     if (verifyValue !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+      metrics.docs_comments_download_error_total.increment({
+        reason: 'decryption_error',
+      })
+
       return Result.fail(`Comment content verification failed: ${verifyValue}`)
     }
 

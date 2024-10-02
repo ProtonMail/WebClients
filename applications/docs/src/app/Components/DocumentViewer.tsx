@@ -34,7 +34,6 @@ import { Availability, AvailabilityTypes } from '@proton/utils/availability'
 import { useAuthentication } from '@proton/components'
 import { useGetUserSettings } from '@proton/components/hooks/useUserSettings'
 import WordCountOverlay from './WordCount/WordCountOverlay'
-import metrics from '@proton/metrics'
 import { useSuggestionsFeatureFlag } from '../Hooks/useSuggestionsFeatureFlag'
 
 type Props = {
@@ -136,7 +135,7 @@ export function DocumentViewer({ lookup, editorInitializationConfig, action }: P
       (payload: GeneralUserDisplayableErrorOccurredPayload) => {
         if (payload.irrecoverable) {
           setError({ message: payload.translatedError, userUnderstandableMessage: true })
-          metrics.docs_alert_modal_total.increment({})
+          application.metrics.reportFullyBlockingErrorModal()
           application.destroy()
           Availability.mark(AvailabilityTypes.CRITICAL)
         } else {
@@ -277,6 +276,7 @@ export function DocumentViewer({ lookup, editorInitializationConfig, action }: P
       },
       onError: (errorMessage) => {
         setError({ message: errorMessage, userUnderstandableMessage: false })
+        application.metrics.reportFullyBlockingErrorModal()
       },
     })
 
