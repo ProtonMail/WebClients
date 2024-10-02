@@ -1328,6 +1328,21 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Collapse navigation bar": [
+        "ナビゲーションバーを閉じる"
+      ],
+      "Display navigation bar": [
+        "ナビゲーションバーを表示する"
+      ],
+      "Get it": [
+        "了解"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "${ BRAND_NAME } サーバー上で実行"
+      ],
+      "Show navigation bar": [
+        "ナビゲーションバーを表示する"
       ]
     },
     "action": {
@@ -1475,6 +1490,9 @@
       ],
       "Securely run on device": [
         "デバイス上で安全に実行"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "${ BRAND_NAME } サーバー上で実行"
       ]
     },
     "Attached ics file error": {
@@ -3118,6 +3136,18 @@
       ],
       "Åland Islands": [
         "オーランド諸島"
+      ],
+      "Islamic Republic of Iran": [
+        "イラン"
+      ],
+      "Korea (Democratic People's Republic of)": [
+        "北朝鮮"
+      ],
+      "Korea (Republic of)": [
+        "韓国"
+      ],
+      "Lao People's Democratic Republic": [
+        "ラオス"
       ]
     },
     "CustomFilter": {
@@ -3385,6 +3415,9 @@
     "duoplan2024: Info": {
       "1 TB storage": [
         "1 TB のストレージ"
+      ],
+      "2 users": [
+        "2 ユーザー"
       ]
     },
     "Email body for description (description part)": {
@@ -3956,6 +3989,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "一致する項目が多すぎるため、検索対象をより絞り込んでもう一度お試しください。"
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "コンテンツ検索を有効にできません。アプリケーションを再起動するか、データを消去してください。"
+      ],
+      "Problem loading the writing assistant to your device. Please try again.": [
+        "執筆アシスタントをデバイスに読み込む際に問題が発生しました。もう一度やり直してください。"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -4784,6 +4823,9 @@
       ],
       "Set up the writing assistant": [
         "執筆アシスタントを設定"
+      ],
+      "Hardware not compatible": [
+        "ハードウェアと互換性がありません"
       ]
     },
     "Hint": {
@@ -6812,6 +6854,9 @@
       ],
       "Your private writing assistant": [
         "あなたのプライベートな執筆アシスタント"
+      ],
+      "Browser not supported": [
+        "このブラウザはサポートされていません"
       ]
     },
     "info": {
@@ -8590,6 +8635,21 @@
       ],
       "Vault sharing (up to ${ n } person)": [
         "保管庫の共有 (最大 ${ n } 人)"
+      ],
+      "10-year file version history": [
+        "10 年間のファイルバージョン履歴"
+      ],
+      "Email groups": [
+        "メールグループ"
+      ],
+      "Password manager": [
+        "パスワードマネージャー"
+      ],
+      "User storage management": [
+        "ユーザーストレージ管理"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "ダークウェブをスキャンして、あなたの ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
       ]
     },
     "new_plans: feature info": {
@@ -8601,6 +8661,9 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
+      ],
+      "1 custom email domain": [
+        "1 件の独自メールドメイン"
       ]
     },
     "new_plans: heading": {
@@ -9013,6 +9076,39 @@
       ],
       "Skip": [
         "スキップ"
+      ],
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "${ advancedEncryptionTitle } は、あなたと意図した宛先のみがメールにアクセスできることを保証します。"
+      ],
+      "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
+        "${ industryLeadingSpamProtectionTitle } は、詐欺メールが受信トレイに届かないようにします。"
+      ],
+      "Advanced encryption": [
+        "高度な暗号化"
+      ],
+      "App Store": [
+        "App Store"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
+      ],
+      "Download the desktop app": [
+        "デスクトップアプリをダウンロード"
+      ],
+      "Download the desktop app and continue": [
+        "デスクトップアプリをダウンロードして続行する"
+      ],
+      "Get the desktop app": [
+        "デスクトップアプリを入手"
+      ],
+      "Google Play": [
+        "Google Play"
+      ],
+      "Industry-leading spam protection": [
+        "業界をリードするスパム対策"
+      ],
+      "Maybe later": [
+        "後で行う"
       ]
     },
     "Onboarding Proton": {
@@ -10134,6 +10230,9 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "無制限のログインとメモ、無制限のhide-my-email エイリアス、20 個の保管庫、および優先サポートにアクセスできなくなります。"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "ファイルをアップロードまたは同期するには、容量を空けるか ${ upgrade } してください"
       ]
     },
     "Subscription": {
@@ -10321,6 +10420,12 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
+      ],
+      "2 users": [
+        "2 ユーザー"
+      ],
+      "Extra storage and users": [
+        "追加のストレージとユーザー"
       ]
     },
     "subscription reminder": {
@@ -10332,6 +10437,12 @@
       ],
       "Upgrade": [
         "アップグレード"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
       ]
     },
     "Subscription renewal state": {
@@ -11974,6 +12085,35 @@
       ],
       "Yearly, ${ untilString }": [
         "毎年、${ untilString }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } はキャンセルされました。"
+      ],
+      "This event was updated.": [
+        "この予定は更新されました。"
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "この予定は更新されました。変更点は下記の通りです。\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "${ eventTitle } に招待されました。\n\n${ eventDetailsText }"
+      ]
+    },
+    "Onboarding List Placeholder": {
+      "Social media": [
+        "ソーシャルメディア"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure vault sharing": [
+        "安全な保管庫共有"
+      ]
+    },
+    "wallet_signup_2024:Action": {
+      "Access Wallet app": [
+        "Wallet アプリにアクセス"
       ]
     }
   }

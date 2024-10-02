@@ -1402,6 +1402,12 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "Kopioi ${ defaultEmailAddress } leikepöydälle klikkaamalla"
+      ],
+      "Use this": [
+        "Käytä tätä"
       ]
     },
     "action": {
@@ -3517,6 +3523,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Tilisi ja tietojesi palautustavat on asetettu."
+      ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "Käytä ${ MAIL_APP_NAME }ia verkkopalveluihin kirjautumiseen, koska toisin kuin muut sähköpostipalveluntarjoajat, me emme koskaan seuraa tietojasi tai jaa niitä kolmansille osapuolille."
       ]
     },
     "description": {
@@ -4072,7 +4081,7 @@
         "Tuotavia sähköpostiviestejä ei löytynyt - tilillä ei ole saapuneet-kansiota"
       ],
       "No external key retrieved for user is valid for sending": [
-        "Mikään käyttäjälle saaduista avaimista ei kelpaa lähetykseen"
+        "Mikään käyttäjälle saaduista avaimista ei kelpaa lähettämiseen"
       ],
       "No valid address found": [
         "Kelvollista osoitetta ei löytynyt"
@@ -4787,6 +4796,9 @@
       ],
       "Set up your family account": [
         "Määritä perhetilisi"
+      ],
+      "Invite members and get everything up and running.": [
+        "Kutsu jäseniä ja aloita käyttö."
       ]
     },
     "familyOffer_2023:Title": {
@@ -5882,7 +5894,7 @@
         "Haluatko varmasti poistaa kaikki tällä tunnisteella merkityt viestit?"
       ],
       "Are you sure you want to delete this folder?": [
-        "Haluatko varmasti poistaa tämän kansion?"
+        "Haluatko varmasti poistaa kansion?"
       ],
       "Are you sure you want to delete this label?": [
         "Haluatko varmasti poistaa tunnisteen?"
@@ -7071,7 +7083,7 @@
         "Tuodaksesi tapahtumia, luo ensin ${ CALENDAR_APP_NAME }iin kalenteri, johon tapahtumat lisätään."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Allekirjoittaaksesi yhteystietosi uudelleen, on jokainen yhteystieto tarkistettava tilisi salausavainlistaa vasten. Jos vastaavuutta ei löydy, allekirjoitetaan yhteystietosi ensisijaisella salausavaimella."
+        "Allekirjoittaaksesi yhteystietosi uudelleen, on jokainen yhteystieto tarkistettava tilisi salausavainluetteloa vasten. Jos vastaavuutta ei löydy, allekirjoitetaan yhteystietosi ensisijaisella salausavaimella."
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "Tietojesi palauttamiseksi, sinun on aktivoitava uudelleen se tiliavain, joka oli käytössä kun tiedot luotiin. Sinun on myös muistettava avaimen luontihetkellä käytetty salasana."
@@ -7510,6 +7522,15 @@
       ],
       "Your private writing assistant": [
         "Yksityinen kirjoittamisen avustajasi"
+      ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Yhteystieto poistettiin ryhmästä ${ contactGroupName }"
+      ],
+      "Email copied to clipboard": [
+        "Sähköpostiosoite kopioitiin leikepöydälle"
+      ],
+      "Remember to update this in your password manager or wherever you keep your account and login information.": [
+        "Muista päivittää nämä tiedot salasanahallintaasi tai missä tahansa säilytätkin tili- ja kirjautumistietojasi."
       ]
     },
     "info": {
@@ -8328,6 +8349,9 @@
       ],
       "Your password (admin)": [
         "Salasanasi (ylläpitäjä)"
+      ],
+      "Don't show again": [
+        "Älä näytä uudelleen"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9926,6 +9950,84 @@
       ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "Estämme mainostajia ja tiedonkerääjiä profiloimasta sinua. ${ kbLinkPrivacy }"
+      ],
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "${ advancedEncryptionTitle } varmistaa, että vain sinä ja määritetyt vastaanottajat näkevät sähköpostisi."
+      ],
+      "Access email and calendar right from your desktop with the desktop app.": [
+        "Käytä sähköpostia ja kalenteria suoraan työpöydältäsi työpöytäsovelluksella."
+      ],
+      "Activate premium features": [
+        "Aktivoi premium-ominaisuudet"
+      ],
+      "Activate selected": [
+        "Aktivoi valitut"
+      ],
+      "Advanced encryption": [
+        "Edistynyt salaus"
+      ],
+      "App Store": [
+        "App Store"
+      ],
+      "Auto-delete spam and trash": [
+        "Tyhjennä roskaposti ja roskakori automaattisesti"
+      ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Tyhjennä roskaposti ja roskakori automaattisesti 30 päivän kuluttua."
+      ],
+      "Dark Web Monitoring": [
+        "Pimeän verkon valvonta"
+      ],
+      "Download the desktop app": [
+        "Lataa työpöytäsovellus"
+      ],
+      "Download the desktop app and continue": [
+        "Lataa työpöytäsovellus ja jatka"
+      ],
+      "Fixed and focused": [
+        "Kiinteä ja keskittynyt"
+      ],
+      "Get notified if your password is compromised.": [
+        "Saat ilmoituksen, jos salasanasi on vaarantunut."
+      ],
+      "Get the desktop app": [
+        "Hanki työpöytäsovellus"
+      ],
+      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
+        "Hanki mobiilisovellukset ${ mobileAppAppStoreLink }sta tai ${ mobileAppGooglePlayLink }sta"
+      ],
+      "Google Play": [
+        "Google Play"
+      ],
+      "Industry-leading spam protection": [
+        "Markkinoiden johtava roskapostisuojaus"
+      ],
+      "Let's get started": [
+        "Aloitetaan"
+      ],
+      "Make the most of your paid plan.": [
+        "Ota kaikki irti maksullisesta tilauksestasi."
+      ],
+      "Maybe later": [
+        "Ehkä myöhemmin"
+      ],
+      "More ways to experience ${ MAIL_APP_NAME }": [
+        "Lisää tapoja kokea ${ MAIL_APP_NAME }"
+      ],
+      "On the move": [
+        "Liikkeessä"
+      ],
+      "Start using ${ BRAND_NAME }": [
+        "Aloita ${ BRAND_NAME }n käyttö"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Aloita sähköpostiosoitteesi lyhyemmän ja tarttuvamman version käyttäminen."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Tervetuloa ${ MAIL_APP_NAME }iin"
+      ],
+      "Where privacy is default.": [
+        "Missä yksityisyys on olennaista."
       ]
     },
     "Onboarding Proton": {
@@ -9946,6 +10048,15 @@
       ],
       "You will be able to change your theme any time in your settings.": [
         "Voit muuttaa teemaasi milloin tahansa asetuksista."
+      ],
+      "Choose your preferred look and feel.": [
+        "Valitse haluamasi ulkoasu ja tunnelma."
+      ],
+      "Link your domain name and create accounts for all members of your organization.": [
+        "Yhdistä verkkotunnuksesi ja luo tilit kaikille organisaatiosi jäsenille."
+      ],
+      "Make it your own": [
+        "Tee siitä omasi"
       ]
     },
     "Online accounts": {
@@ -12954,6 +13065,9 @@
       ],
       "Your free trial has ended": [
         "Ilmainen kokeilujaksosi on päättynyt"
+      ],
+      "How to update your email address": [
+        "Miten vaihdat sähköpostiosoitteesi"
       ]
     },
     "Title subscription": {
@@ -13539,6 +13653,37 @@
       ],
       "Yearly, ${ untilString }": [
         "Vuosittain, ${ untilString }"
+      ]
+    },
+    "Onboarding List Placeholder": {
+      "Finance": [
+        "Talous"
+      ],
+      "I have moved my logins to ${ BRAND_NAME }": [
+        "Olen siirätnyt kirjautumistietoni ${ BRAND_NAME }iin"
+      ],
+      "Privacy for all your online accounts": [
+        "Yksityisyyttä kaikille verkkotileillesi"
+      ],
+      "Shopping": [
+        "Ostokset"
+      ],
+      "Social media": [
+        "Sosiaalinen media"
+      ]
+    },
+    "Step": {
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "Syötä ${ MAIL_APP_NAME } -osoitteesi uudeksi osoitteeksi ja tallenna muutos."
+      ],
+      "In the account settings, look for the option to edit or change your email address ": [
+        "Etsi tiliasetuksista valinta muokata tai muuttaa sähköpostiosoitettasi "
+      ],
+      "Select service to update": [
+        "Valitse muokattava palvelu"
+      ],
+      "Sign in to the service": [
+        "Kirjaudu palveluun"
       ]
     }
   }

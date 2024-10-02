@@ -773,7 +773,7 @@
         "Mover tudo para o arquivo"
       ],
       "Move all to trash": [
-        "Mover tudo para lixeira"
+        "Mover tudo para a lixeira"
       ],
       "move emails to": [
         "mover e-mails para"
@@ -797,7 +797,7 @@
         "Mover para spam e cancelar a inscrição"
       ],
       "Move to trash": [
-        "Mover para lixeira"
+        "Mover para a lixeira"
       ],
       "Move to...": [
         "Mover para..."
@@ -3529,6 +3529,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Sua conta e métodos de recuperação de dados estão definidos."
+      ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "Use ${ MAIL_APP_NAME } para fazer login em serviços on-line, pois, diferentemente de outros provedores de e-mail, nunca rastrearemos seus dados e nem os compartilharemos com terceiros."
       ]
     },
     "description": {
@@ -7537,6 +7540,12 @@
       ],
       "Your private writing assistant": [
         "Seu assistente de escrita privado"
+      ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Contato não atribuído do grupo ${ contactGroupName }"
+      ],
+      "Remember to update this in your password manager or wherever you keep your account and login information.": [
+        "Lembre-se de atualizar isso em seu gerenciador de senhas ou onde quer que você mantenha suas informações de conta e login."
       ]
     },
     "info": {
@@ -7737,7 +7746,7 @@
         "Mover para Spam"
       ],
       "Move to Trash": [
-        "Mover para Lixeira"
+        "Mover para a Lixeira"
       ],
       "Move to...": [
         "Mover para..."
@@ -9949,7 +9958,7 @@
         "Rede social"
       ],
       "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
-        "Use seu endereço do ${ MAIL_APP_NAME } para iniciar sessão em serviços on-line para evitar ser rastreado. Altere seu e-mail para serviços populares agora. ${ learnMoreLink }"
+        "Use seu endereço ${ MAIL_APP_NAME } para iniciar sessão em serviços on-line e evitar que você seja rastreado e traçado. Altere seu e-mail para serviços populares agora. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -10020,7 +10029,7 @@
         "Vamos começar"
       ],
       "Make the most of your paid plan.": [
-        "Aproveite o masso do seu plano pago."
+        "Aproveite ao máximo seu plano pago."
       ],
       "Maybe later": [
         "Talvez mais tarde"
@@ -10032,7 +10041,7 @@
         "Próximo"
       ],
       "On the move": [
-        "Mesmo em movimento"
+        "Em movimento"
       ],
       "Protection from trackers": [
         "Proteção contra rastreadores"
@@ -10041,13 +10050,34 @@
         "Pular"
       ],
       "Start using ${ BRAND_NAME }": [
-        "Começar usando a ${ BRAND_NAME }"
+        "Comece a usar a ${ BRAND_NAME }"
       ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "Nós impedimos que anunciantes e coletores de informações analisem os seus dados. ${ kbLinkPrivacy }"
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Bem-vindo ao ${ MAIL_APP_NAME }"
+      ],
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "${ advancedEncryptionTitle } garante que somente você e os destinatários pretendidos possam acessar seus e-mails."
+      ],
+      "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
+        "${ industryLeadingSpamProtectionTitle } impede que e-mails fraudulentos cheguem à sua caixa de entrada."
+      ],
+      "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
+        "${ protectionFromTrackersTitle } significa que você não será mais rastreado na Internet."
+      ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Limpar os e-mails excluídos e de spam após 30 dias."
+      ],
+      "Industry-leading spam protection": [
+        "O líder do mercado em proteção contra spam"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Comece a usar a versão mais curta e atraente de seu endereço de e-mail."
+      ],
+      "Where privacy is default.": [
+        "Onde a privacidade é o padrão."
       ]
     },
     "Onboarding Proton": {
@@ -11298,6 +11328,12 @@
       ],
       "Sign in to the service": [
         "Inicie sessão no serviço"
+      ],
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "Digite seu endereço ${ MAIL_APP_NAME } como o novo endereço e salve, confirme ou verifique a alteração"
+      ],
+      "In the account settings, look for the option to edit or change your email address ": [
+        "Nas configurações da conta, procure a opção para editar ou alterar seu endereço de e-mail "
       ]
     },
     "Step in filter modal": {
@@ -12645,7 +12681,7 @@
         "Ativar a pesquisa em conteúdo de mensagens"
       ],
       "Enter 2FA code": [
-        "Insira o código 2FA"
+        "Insira o código A2F"
       ],
       "Enter your password": [
         "Digite sua senha"
@@ -12687,7 +12723,7 @@
         "Oculte seu e-mail com ${ PASS_APP_NAME }"
       ],
       "How to update your email address": [
-        "Como atualizar seus endereços de endereço de e-mail"
+        "Como atualizar seu endereço de e-mail"
       ],
       "Human verification": [
         "Verificação humana"
@@ -12814,7 +12850,7 @@
         "Mover para spam"
       ],
       "Move to trash": [
-        "Mover para lixeira"
+        "Mover para a lixeira"
       ],
       "Moving a scheduled message": [
         "Movendo uma mensagem agendada"

@@ -1402,6 +1402,12 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "Κάντε κλικ για να αντιγράψετε το ${ defaultEmailAddress } στο πρόχειρο"
+      ],
+      "Use this": [
+        "Χρησιμοποιήστε αυτό"
       ]
     },
     "action": {
@@ -3517,6 +3523,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Οι μέθοδοι ανάκτησης του λογαριασμού και των δεδομένων σας έχουν οριστεί."
+      ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "Χρησιμοποιήστε ${ MAIL_APP_NAME } για να συνδεθείτε σε ηλεκτρονικές υπηρεσίες, καθώς, σε αντίθεση με άλλους παρόχους email, δε θα παρακολουθούμε ποτέ τα δεδομένα σας και δε θα τα μοιραζόμαστε με τρίτους."
       ]
     },
     "description": {
@@ -4787,6 +4796,9 @@
       ],
       "Set up your family account": [
         "Ρυθμίστε τον οικογενειακό λογαριασμό σας"
+      ],
+      "Invite members and get everything up and running.": [
+        "Προσκαλέστε μέλη και ξεκινήστε τα πάντα."
       ]
     },
     "familyOffer_2023:Title": {
@@ -7510,6 +7522,15 @@
       ],
       "Your private writing assistant": [
         "Ο προσωπικός σας βοηθός γραφής"
+      ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Η επαφή αφαιρέθηκε από την ομάδα ${ contactGroupName }"
+      ],
+      "Email copied to clipboard": [
+        "Το email αντιγράφτηκε στο πρόχειρο"
+      ],
+      "Remember to update this in your password manager or wherever you keep your account and login information.": [
+        "Θυμηθείτε να το ενημερώσετε στον διαχειριστή κωδικών πρόσβασης σας ή οπουδήποτε διατηρείτε τον λογαριασμό και τα στοιχεία σύνδεσής σας."
       ]
     },
     "info": {
@@ -8328,6 +8349,9 @@
       ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
+      ],
+      "Don't show again": [
+        "Να μην εμφανιστεί ξανά"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9926,6 +9950,48 @@
       ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "Σταματάμε τους διαφημιζόμενους και τους συλλέκτες δεδομένων από το να δημιουργούν το προφίλ σας. ${ kbLinkPrivacy }"
+      ],
+      "Activate premium features": [
+        "Ενεργοποιήστε premium χαρακτηριστικά"
+      ],
+      "Activate selected": [
+        "Ενεργοποίηση επιλεγμένων"
+      ],
+      "Advanced encryption": [
+        "Προηγμένη κρυπτογράφηση"
+      ],
+      "App Store": [
+        "App Store"
+      ],
+      "Auto-delete spam and trash": [
+        "Αυτόματη διαγραφή ανεπιθύμητων και διαγεγραμμένων μηνυμάτων"
+      ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Διαγράψτε τα διαγραμμένα και ανεπιθύμητα μηνύματα ηλεκτρονικού ταχυδρομείου μετά από 30 ημέρες."
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
+      ],
+      "Download the desktop app": [
+        "Κατεβάστε την εφαρμογή για υπολογιστές"
+      ],
+      "Download the desktop app and continue": [
+        "Κατεβάστε την εφαρμογή για υπολογιστές και συνεχίστε"
+      ],
+      "Get the desktop app": [
+        "Λήψη της εφαρμογής για υπολογιστές"
+      ],
+      "Google Play": [
+        "Google Play"
+      ],
+      "Let's get started": [
+        "Ας αρχίσουμε"
+      ],
+      "Maybe later": [
+        "Ίσως αργότερα"
+      ],
+      "Where privacy is default.": [
+        "Όπου το απόρρητο είναι προεπιλεγμένο."
       ]
     },
     "Onboarding Proton": {
@@ -9946,6 +10012,15 @@
       ],
       "You will be able to change your theme any time in your settings.": [
         "Θα μπορείτε να αλλάξετε το θέμα σας ανά πάσα στιγμή στις ρυθμίσεις σας."
+      ],
+      "Choose your preferred look and feel.": [
+        "Επιλέξτε την εμφάνιση και την αίσθηση που προτιμάτε."
+      ],
+      "Link your domain name and create accounts for all members of your organization.": [
+        "Συνδέστε το όνομα τομέα σας και δημιουργήστε λογαριασμούς για όλα τα μέλη του οργανισμού σας."
+      ],
+      "Make it your own": [
+        "Κάντε το δικό σας"
       ]
     },
     "Online accounts": {
@@ -12954,6 +13029,9 @@
       ],
       "Your free trial has ended": [
         "Η δωρεάν δοκιμαστική περίοδος σας έχει λήξει."
+      ],
+      "How to update your email address": [
+        "Πώς να ενημερώσετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας"
       ]
     },
     "Title subscription": {
@@ -13539,6 +13617,28 @@
       ],
       "Yearly, ${ untilString }": [
         "Ετησίως, ${ untilString }"
+      ]
+    },
+    "Onboarding List Placeholder": {
+      "Finance": [
+        "Οικονομικά"
+      ],
+      "Privacy for all your online accounts": [
+        "Απόρρητο για όλους τους λογαριασμούς σας στο διαδίκτυο"
+      ],
+      "Shopping": [
+        "Ψώνια"
+      ],
+      "Social media": [
+        "Μέσα κοινωνικής δικτύωσης"
+      ]
+    },
+    "Step": {
+      "In the account settings, look for the option to edit or change your email address ": [
+        "Στις ρυθμίσεις λογαριασμού, αναζητήστε την επιλογή επεξεργασίας ή αλλαγής της διεύθυνσης ηλεκτρονικού ταχυδρομείου σας "
+      ],
+      "Select service to update": [
+        "Επιλέξτε υπηρεσία για ενημέρωση"
       ]
     }
   }

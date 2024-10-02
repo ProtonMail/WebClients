@@ -1394,6 +1394,12 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "點擊複製 ${ defaultEmailAddress } 至剪貼簿"
+      ],
+      "Use this": [
+        "使用此"
       ]
     },
     "action": {
@@ -1546,6 +1552,9 @@
       ],
       "Securely run on device": [
         "於裝置安全執行"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "在${ BRAND_NAME }伺服器運行"
       ]
     },
     "Assistant toggle": {
@@ -3486,6 +3495,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "您的帳戶資料復原方法已就緒。"
+      ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "使用 ${ MAIL_APP_NAME } 登入線上服務，與其他郵件服務商不同的地方，我們不會追踪您的資料或與第三方分享"
       ]
     },
     "description": {
@@ -3563,6 +3575,9 @@
     "Downgrade warning": {
       "Remove discount": [
         "移除折扣"
+      ],
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "確認失去${ PASS_APP_NAME }的特別折扣"
       ]
     },
     "Download attachments": {
@@ -7359,6 +7374,12 @@
       ],
       "Your private writing assistant": [
         "您私人的撰寫幫手"
+      ],
+      "Email copied to clipboard": [
+        "已複製電子郵件至剪貼簿"
+      ],
+      "Remember to update this in your password manager or wherever you keep your account and login information.": [
+        "請記得更新您此次修改至密碼管理器或是另外保存好您的登入資訊"
       ]
     },
     "info": {
@@ -8171,6 +8192,9 @@
       ],
       "Your password (admin)": [
         "您的密碼（管理員）"
+      ],
+      "Don't show again": [
+        "不要再顯示"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9690,6 +9714,48 @@
       ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "我們阻止廣告商與數據蒐集者建立您的分析檔案。${ kbLinkPrivacy }"
+      ],
+      "Activate selected": [
+        "啟用已選取"
+      ],
+      "Advanced encryption": [
+        "進階加密"
+      ],
+      "App Store": [
+        "App Store"
+      ],
+      "Auto-delete spam and trash": [
+        "自動刪除垃圾郵件和垃圾桶"
+      ],
+      "Dark Web Monitoring": [
+        "黑暗網路監測"
+      ],
+      "Download the desktop app": [
+        "下載桌面應用程式"
+      ],
+      "Get notified if your password is compromised.": [
+        "獲得提醒，當您的密碼處於危害。"
+      ],
+      "Get the desktop app": [
+        "取得桌面應用程式"
+      ],
+      "Google Play": [
+        "Google Play"
+      ],
+      "Let's get started": [
+        "讓我們開始吧"
+      ],
+      "Maybe later": [
+        "稍後再說"
+      ],
+      "On the move": [
+        "移動中"
+      ],
+      "Start using ${ BRAND_NAME }": [
+        "開始使用 ${ BRAND_NAME }"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "歡迎使用 ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding Proton": {
@@ -9710,6 +9776,12 @@
       ],
       "You will be able to change your theme any time in your settings.": [
         "您可於設定隨時變更布景主題。"
+      ],
+      "Choose your preferred look and feel.": [
+        "選擇您喜歡的外觀與感覺。"
+      ],
+      "Make it your own": [
+        "讓它專屬於您"
       ]
     },
     "Online accounts": {
@@ -9868,6 +9940,9 @@
       ],
       "Timeout exceeded": [
         "已經逾時"
+      ],
+      "More plans are available in other currencies": [
+        "其他貨幣有更多的方案"
       ]
     },
     "Payments.Error": {
@@ -11233,6 +11308,12 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
+      ],
+      "See your colleagues’ availability": [
+        "瀏覽您的同事時間"
+      ],
+      "Users won’t be able to sync files on their devices": [
+        "用戶不能在他們的裝置同步文件"
       ]
     },
     "subscription reminder": {
@@ -12488,6 +12569,9 @@
       ],
       "Your free trial has ended": [
         "您的免費試用已結束"
+      ],
+      "How to update your email address": [
+        "如何更新電子郵件地址"
       ]
     },
     "Title subscription": {
@@ -13015,6 +13099,31 @@
       ],
       "Yearly, ${ untilString }": [
         "每年，${ untilString }"
+      ]
+    },
+    "Onboarding List Placeholder": {
+      "Finance": [
+        "金融"
+      ],
+      "I have moved my logins to ${ BRAND_NAME }": [
+        "我已經轉移我的登入至${ BRAND_NAME }"
+      ],
+      "Privacy for all your online accounts": [
+        "給予您的所有在線帳號隱私"
+      ],
+      "Shopping": [
+        "購物"
+      ],
+      "Social media": [
+        "社群媒體"
+      ]
+    },
+    "Step": {
+      "Select service to update": [
+        "選取更新服務"
+      ],
+      "Sign in to the service": [
+        "登入服務"
       ]
     }
   }

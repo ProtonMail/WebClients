@@ -1402,6 +1402,12 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "Klik for at kopiere ${ defaultEmailAddress } til udklipsholderen"
+      ],
+      "Use this": [
+        "Brug dette"
       ]
     },
     "action": {
@@ -3517,6 +3523,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Dine konto- og datagendannelsesmetoder er indstillet."
+      ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "Brug ${ MAIL_APP_NAME } til at logge ind på onlinetjenester, da vi i modsætning til andre e-mailudbydere aldrig sporer dine data og deler dem med tredjeparter."
       ]
     },
     "description": {
@@ -7510,6 +7519,9 @@
       ],
       "Your private writing assistant": [
         "Din private skriveassistent"
+      ],
+      "Email copied to clipboard": [
+        "E-mail kopieret til udklipsholder"
       ]
     },
     "info": {
@@ -8328,6 +8340,9 @@
       ],
       "Your password (admin)": [
         "Din adgangskode (admin)"
+      ],
+      "Don't show again": [
+        "Vis ikke igen"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9926,6 +9941,9 @@
       ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "Vi forhindrer annoncører og dataopsamlere i at profilere dig. ${ kbLinkPrivacy }"
+      ],
+      "Dark Web Monitoring": [
+        "Monitorering af det mørke net"
       ]
     },
     "Onboarding Proton": {
@@ -9946,6 +9964,15 @@
       ],
       "You will be able to change your theme any time in your settings.": [
         "Du kan til enhver tid ændre dit tema i dine indstillinger."
+      ],
+      "Choose your preferred look and feel.": [
+        "Vælg dit foretrukne udseende og stil."
+      ],
+      "Link your domain name and create accounts for all members of your organization.": [
+        "Link dit domænenavn, og opret konti til alle medlemmer af din organisation."
+      ],
+      "Make it your own": [
+        "Gør det til dit eget"
       ]
     },
     "Online accounts": {
@@ -12954,6 +12981,9 @@
       ],
       "Your free trial has ended": [
         "Din gratis prøveperiode er slut"
+      ],
+      "How to update your email address": [
+        "Sådan opdaterer du din e-mailadresse"
       ]
     },
     "Title subscription": {

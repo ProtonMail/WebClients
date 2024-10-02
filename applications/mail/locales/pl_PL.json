@@ -1412,6 +1412,12 @@
       ],
       "Zoom out": [
         "Pomniejsz"
+      ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "Kliknij, aby skopiować adres ${ defaultEmailAddress } do schowka"
+      ],
+      "Use this": [
+        "Użyj tego"
       ]
     },
     "action": {
@@ -3549,6 +3555,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Metody odzyskiwania konta i danych są włączone."
+      ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "Użyj ${ MAIL_APP_NAME }, aby zalogować się do usług online, ponieważ w przeciwieństwie do innych dostawców poczty e-mail, nigdy nie będziemy śledzić Twoich danych i udostępniać ich stronom trzecim."
       ]
     },
     "description": {
@@ -4847,6 +4856,9 @@
       ],
       "Set up your family account": [
         "Skonfiguruj konto rodzinne"
+      ],
+      "Invite members and get everything up and running.": [
+        "Zaproś użytkowników i rozpocznij."
       ]
     },
     "familyOffer_2023:Title": {
@@ -7754,6 +7766,15 @@
       ],
       "Your private writing assistant": [
         "Twój prywatny asystent pisania"
+      ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Kontakt został usunięty z grupy ${ contactGroupName }"
+      ],
+      "Email copied to clipboard": [
+        "Adres został skopiowany do schowka"
+      ],
+      "Remember to update this in your password manager or wherever you keep your account and login information.": [
+        "Pamiętaj, aby zaktualizować adres w menedżerze haseł lub miejscu, gdzie przechowujesz swoje konto i dane logowania."
       ]
     },
     "info": {
@@ -8584,6 +8605,9 @@
       ],
       "Your password (admin)": [
         "Twoje hasło (administratora)"
+      ],
+      "Don't show again": [
+        "Nie pokazuj ponownie"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10256,6 +10280,78 @@
       ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "Blokujemy reklamodawców i firmy zbierające dane, które profilują Cię. ${ kbLinkPrivacy }"
+      ],
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "${ advancedEncryptionTitle } zapewnia, że tylko Ty i Twoi odbiorcy mają dostęp do wiadomości."
+      ],
+      "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
+        "${ industryLeadingSpamProtectionTitle } zapobiega przedostawaniu się wyłudzających wiadomości do skrzynki odbiorczej."
+      ],
+      "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
+        "${ protectionFromTrackersTitle } zapewnia koniec śledzenia w Internecie."
+      ],
+      "Access email and calendar right from your desktop with the desktop app.": [
+        "Dostęp do poczty i kalendarza bezpośrednio z pulpitu za pomocą aplikacji desktopowej."
+      ],
+      "Activate premium features": [
+        "Aktywuj funkcje premium"
+      ],
+      "Activate selected": [
+        "Aktywuj zaznaczone"
+      ],
+      "Advanced encryption": [
+        "Zaawansowane szyfrowanie"
+      ],
+      "Auto-delete spam and trash": [
+        "Automatyczne usuwanie Spamu i Kosza"
+      ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Automatycznie usuwaj wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni."
+      ],
+      "Dark Web Monitoring": [
+        "Monitoring dark web"
+      ],
+      "Download the desktop app": [
+        "Pobierz aplikację desktopową"
+      ],
+      "Download the desktop app and continue": [
+        "Pobierz aplikację desktopową i kontynuuj"
+      ],
+      "Fixed and focused": [
+        "Skoncentrowana aplikacja"
+      ],
+      "Get notified if your password is compromised.": [
+        "Otrzymaj powiadomienie, jeśli Twoje hasło zostało naruszone."
+      ],
+      "Industry-leading spam protection": [
+        "Najlepsza w branży ochrona antyspamowa"
+      ],
+      "Let's get started": [
+        "Rozpocznij"
+      ],
+      "Make the most of your paid plan.": [
+        "Wykorzystaj w pełni płatny plan."
+      ],
+      "Maybe later": [
+        "Może później"
+      ],
+      "More ways to experience ${ MAIL_APP_NAME }": [
+        "Więcej sposobów na poznanie ${ MAIL_APP_NAME }"
+      ],
+      "On the move": [
+        "W ruchu"
+      ],
+      "Start using ${ BRAND_NAME }": [
+        "Zacznij korzystać z ${ BRAND_NAME }"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Używaj krótszej i bardziej chwytliwej nazwy swojego adresu e-mail."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Witaj w ${ MAIL_APP_NAME }"
+      ],
+      "Where privacy is default.": [
+        "Gdzie prywatność jest domyślna."
       ]
     },
     "Onboarding Proton": {
@@ -10276,6 +10372,15 @@
       ],
       "You will be able to change your theme any time in your settings.": [
         "Możesz w ustawieniach zmienić motyw w dowolnym momencie."
+      ],
+      "Choose your preferred look and feel.": [
+        "Wybierz preferowany wygląd i styl."
+      ],
+      "Link your domain name and create accounts for all members of your organization.": [
+        "Połącz domenę i utwórz konta dla wszystkich użytkowników organizacji."
+      ],
+      "Make it your own": [
+        "Stwórz własny"
       ]
     },
     "Online accounts": {
@@ -13449,6 +13554,9 @@
       ],
       "Your free trial has ended": [
         "Darmowa wersja próbna zakończyła się"
+      ],
+      "How to update your email address": [
+        "Jak zaktualizować adres e-mail"
       ]
     },
     "Title subscription": {
@@ -14118,6 +14226,40 @@
       ],
       "Yearly, ${ untilString }": [
         "Co rok, ${ untilString }"
+      ]
+    },
+    "Onboarding List Placeholder": {
+      "Finance": [
+        "Finanse"
+      ],
+      "I have moved my logins to ${ BRAND_NAME }": [
+        "Dane logowania zostały przeniesione do ${ BRAND_NAME }"
+      ],
+      "Privacy for all your online accounts": [
+        "Prywatność wszystkich kont online"
+      ],
+      "Shopping": [
+        "Zakupy"
+      ],
+      "Social media": [
+        "Media społecznościowe"
+      ],
+      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
+        "Używaj adresu ${ MAIL_APP_NAME } do logowania się do usług online, aby uniknąć śledzenia i profilowania. Zmień adres e-mail do popularnych usług. ${ learnMoreLink }"
+      ]
+    },
+    "Step": {
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "Wpisz adres e-mail ${ MAIL_APP_NAME } jako nowy adres i zapisz, potwierdź lub zweryfikuj zmianę"
+      ],
+      "In the account settings, look for the option to edit or change your email address ": [
+        "W ustawieniach konta znajdź opcję edycji lub zmiany adresu e-mail "
+      ],
+      "Select service to update": [
+        "Wybierz usługę do zaktualizowania"
+      ],
+      "Sign in to the service": [
+        "Zaloguj się do usługi"
       ]
     }
   }

@@ -1397,6 +1397,12 @@
       ],
       "Zoom out": [
         "축소"
+      ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "클립보드로 ${ defaultEmailAddress }(을)를 복사하려면 클릭"
+      ],
+      "Use this": [
+        "사용하기:"
       ]
     },
     "action": {
@@ -3498,6 +3504,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "사용자의 계정과 데이터 복구 방법이 설정된 상태입니다."
+      ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "${ MAIL_APP_NAME }을 온라인 서비스 로그인시 사용해 보세요. 타 이메일 서비스 제공자와 달리 제3자와 데이터 추적 및 공유하지 않습니다."
       ]
     },
     "description": {
@@ -4754,6 +4763,9 @@
       ],
       "Set up your family account": [
         "가족 계정을 설정하세요"
+      ],
+      "Invite members and get everything up and running.": [
+        "구성원을 초대하고 모든 것을 시작 및 실행하세요"
       ]
     },
     "familyOffer_2023:Title": {
@@ -7382,6 +7394,15 @@
       ],
       "Your private writing assistant": [
         "나만의 개인 글쓰기 도우미"
+      ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "연락처가 ${ contactGroupName } 그룹에 할당 취소되었습니다"
+      ],
+      "Email copied to clipboard": [
+        "내용이 클립보드에 복사되었습니다"
+      ],
+      "Remember to update this in your password manager or wherever you keep your account and login information.": [
+        "계정 및 로그인 정보를 보관하는 곳 또는 비밀번호 관리자에서 이 사항을 업데이트하십시오."
       ]
     },
     "info": {
@@ -8194,6 +8215,9 @@
       ],
       "Your password (admin)": [
         "사용자의 비밀번호 (관리자)"
+      ],
+      "Don't show again": [
+        "다음부터 표시하지 않음"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9761,6 +9785,90 @@
       ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "사용자를 프로파일링하는 광고주와 데이터 수집자들을 차단합니다. ${ kbLinkPrivacy }"
+      ],
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "${ advancedEncryptionTitle }가 나와 지정된 수신자만 이메일에 접근할 수 있도록 보장해 드립니다."
+      ],
+      "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
+        "${ industryLeadingSpamProtectionTitle }가 내 받은 편지함에 날라오는 스캠 이메일을 차단합니다."
+      ],
+      "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
+        "${ protectionFromTrackersTitle }는 인터넷을 통해 더 이상 추적되지 않음을 뜻합니다."
+      ],
+      "Access email and calendar right from your desktop with the desktop app.": [
+        "데스크톱 앱으로 데스크톱 상에서 즉시 이멩리 및 캘린더에 접근하세요."
+      ],
+      "Activate premium features": [
+        "프리미엄 기능 활성화"
+      ],
+      "Activate selected": [
+        "선택 활성화"
+      ],
+      "Advanced encryption": [
+        "향상된 암호화"
+      ],
+      "App Store": [
+        "App Store"
+      ],
+      "Auto-delete spam and trash": [
+        "스팸 및 휴지통 자동 삭제"
+      ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "30일 뒤 삭제되거나 스팸인 이메일을 제거합니다."
+      ],
+      "Dark Web Monitoring": [
+        "다크 웹 모니터링"
+      ],
+      "Download the desktop app": [
+        "데스크톱 앱 다운로드"
+      ],
+      "Download the desktop app and continue": [
+        "데스크톱 앱 다운로드하고 계속하기"
+      ],
+      "Fixed and focused": [
+        "고정되고 집중됨"
+      ],
+      "Get notified if your password is compromised.": [
+        "비밀번호가 유출되면 알림을 받아보세요."
+      ],
+      "Get the desktop app": [
+        "데스크톱 앱 다운로드"
+      ],
+      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
+        "${ mobileAppAppStoreLink } 및 ${ mobileAppGooglePlayLink }에서 모바일 앱을 다운로드하세요."
+      ],
+      "Google Play": [
+        "Google Play"
+      ],
+      "Industry-leading spam protection": [
+        "업계 최고 수준의 스팸 보호"
+      ],
+      "Let's get started": [
+        "시작해 볼까요?"
+      ],
+      "Make the most of your paid plan.": [
+        "유료 플랜을 최대한 활용하세요."
+      ],
+      "Maybe later": [
+        "나중에"
+      ],
+      "More ways to experience ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }을 경험할 더 많은 방법"
+      ],
+      "On the move": [
+        "이동 중"
+      ],
+      "Start using ${ BRAND_NAME }": [
+        "${ BRAND_NAME } 사용 시작하기"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "더 짧고 설득력 있는 버전의 이메일 주소 사용을 시작하세요."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }에 오신 것을 환영해요"
+      ],
+      "Where privacy is default.": [
+        "프라이버시가 기본인 곳."
       ]
     },
     "Onboarding Proton": {
@@ -9781,6 +9889,15 @@
       ],
       "You will be able to change your theme any time in your settings.": [
         "설정에서 테마를 언제든지 바꿀 수 있습니다."
+      ],
+      "Choose your preferred look and feel.": [
+        "원하는 모양과 느낌을 선택하세요."
+      ],
+      "Link your domain name and create accounts for all members of your organization.": [
+        "조직의 모든 구성원을 위해 도메인 이름을 연걸하고 계정을 생성하세요"
+      ],
+      "Make it your own": [
+        "내 것으로 만들기"
       ]
     },
     "Online accounts": {
@@ -12702,6 +12819,9 @@
       ],
       "Your free trial has ended": [
         "무료 체험 기간이 종료되었습니다."
+      ],
+      "How to update your email address": [
+        "이메일 주소 업데이트 방법"
       ]
     },
     "Title subscription": {
@@ -13245,6 +13365,40 @@
       ],
       "Yearly, ${ untilString }": [
         "연간, ${ untilString }"
+      ]
+    },
+    "Onboarding List Placeholder": {
+      "Finance": [
+        "금융"
+      ],
+      "I have moved my logins to ${ BRAND_NAME }": [
+        "${ BRAND_NAME }으로 내 로그인 정보를 이동했어요"
+      ],
+      "Privacy for all your online accounts": [
+        "나의 모든 온라인 계정을 위한 프라이버시"
+      ],
+      "Shopping": [
+        "쇼핑"
+      ],
+      "Social media": [
+        "소셜 미디어"
+      ],
+      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
+        "추적 및 프로파일화를 방지하기 위해 온라인 서비스 로그인시 ${ MAIL_APP_NAME }을 이용해 보세요. 지금 바로 인기 있는 서비스에서 이메일 주소를 변경하세요. ${ learnMoreLink }"
+      ]
+    },
+    "Step": {
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "${ MAIL_APP_NAME } 새 이메일 주소를 입력하고 저장, 확인 후 변경 사항을 인증합니다."
+      ],
+      "In the account settings, look for the option to edit or change your email address ": [
+        "이메일 주소를 편집 및 변경하려면 계정 설정내에서 옵션을 확인하십시오 "
+      ],
+      "Select service to update": [
+        "업데이트할 서비스 선택"
+      ],
+      "Sign in to the service": [
+        "서비스로 로그인"
       ]
     }
   }

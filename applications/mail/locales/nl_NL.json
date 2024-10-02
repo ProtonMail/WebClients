@@ -1551,7 +1551,7 @@
         "Veilig draaien op ${ BRAND_NAME } servers"
       ],
       "Securely run on device": [
-        "Veilig draaien op apparaat"
+        "Veilig op het apparaat draaien"
       ]
     },
     "Assistant toggle": {
@@ -7439,6 +7439,9 @@
       ],
       "Your private writing assistant": [
         "Uw privé schrijfhulp"
+      ],
+      "Email copied to clipboard": [
+        "E-mail gekopieerd naar klembord"
       ]
     },
     "info": {
@@ -9826,6 +9829,33 @@
       ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "We stoppen adverteerders en gegevens verzamelaars om een profiel van u te maken. ${ kbLinkPrivacy }"
+      ],
+      "Activate selected": [
+        "Activeer geselecteerde"
+      ],
+      "Advanced encryption": [
+        "Geavanceerde versleuteling"
+      ],
+      "App Store": [
+        "App Store"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
+      ],
+      "Download the desktop app": [
+        "Download de desktop-app"
+      ],
+      "Get the desktop app": [
+        "Download de desktop-app"
+      ],
+      "Google Play": [
+        "Google Play"
+      ],
+      "Maybe later": [
+        "Misschien later"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Welkom bij ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding Proton": {
@@ -11021,6 +11051,9 @@
       ],
       "You can now schedule your messages to be sent later": [
         "U kunt nu uw berichten plannen om ze later te versturen"
+      ],
+      "You can now collapse the navigation bar.": [
+        "U kunt nu de navigatiebalk inklappen."
       ]
     },
     "State": {
@@ -12376,7 +12409,7 @@
         "Inschakelen van zoeken op berichtinhoud"
       ],
       "Enter 2FA code": [
-        "Voer 2FA code in"
+        "Voer 2FA-code in"
       ],
       "Enter your password": [
         "Voer uw wachtwoord in"
@@ -13410,6 +13443,22 @@
       ],
       "Yearly, ${ untilString }": [
         "Jaarlijks ${ untilString }"
+      ]
+    },
+    "Onboarding List Placeholder": {
+      "I have moved my logins to ${ BRAND_NAME }": [
+        "Ik heb mijn inloggegevens verplaatst naar ${ BRAND_NAME }"
+      ],
+      "Shopping": [
+        "Winkelen"
+      ],
+      "Social media": [
+        "Social media"
+      ]
+    },
+    "SmartBanner": {
+      "Private, fast, and organized": [
+        "Privé, snel en georganiseerd"
       ]
     }
   }

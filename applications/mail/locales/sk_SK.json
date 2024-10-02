@@ -1415,6 +1415,9 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "Kliknutím skopírujete ${ defaultEmailAddress } do schránky"
       ]
     },
     "action": {
@@ -3558,6 +3561,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Váš účet a metódy obnovy údajov sú nastavené."
+      ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "Na prihlasovanie do online služieb používajte ${ MAIL_APP_NAME }, pretože na rozdiel od iných poskytovateľov emailových služieb nikdy nesledujeme vaše údaje a nezdieľame ich s tretími stranami."
       ]
     },
     "description": {
@@ -4856,6 +4862,9 @@
       ],
       "Set up your family account": [
         "Nastavte svoj rodinný účet"
+      ],
+      "Invite members and get everything up and running.": [
+        "Pozvite členov a všetko rozbehnite."
       ]
     },
     "familyOffer_2023:Title": {
@@ -7769,6 +7778,15 @@
       ],
       "Your private writing assistant": [
         "Váš súkromný asistent písania"
+      ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Kontakt bol odobraný zo skupiny ${ contactGroupName }"
+      ],
+      "Email copied to clipboard": [
+        "Email skopírovaný do schránky"
+      ],
+      "Remember to update this in your password manager or wherever you keep your account and login information.": [
+        "Nezabudnite ho aktualizovať v správcovi hesiel alebo kdekoľvek, kde máte uložené údaje o svojom účte a prihlasovacie údaje."
       ]
     },
     "info": {
@@ -10238,6 +10256,15 @@
       ],
       "Social media": [
         "Sociálne médiá"
+      ],
+      "I have moved my logins to ${ BRAND_NAME }": [
+        "Mám presunuté svoje prihlasovacie údaje do ${ BRAND_NAME }"
+      ],
+      "Privacy for all your online accounts": [
+        "Ochrana súkromia všetkých vašich online účtov"
+      ],
+      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
+        "Na prihlásenie do online služieb používajte svoju adresu ${ MAIL_APP_NAME }, aby ste sa vyhli sledovaniu a profilovaniu. Zmeňte si teraz svoj email pre obľúbené služby. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -10279,6 +10306,84 @@
       ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "Zabraňujeme inzerentom a zberačom dát v tom, aby vás profilovali. ${ kbLinkPrivacy }"
+      ],
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "${ advancedEncryptionTitle } zaistí, že k vašim emailom budete mať prístup len vy a určení príjemcovia."
+      ],
+      "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
+        "${ industryLeadingSpamProtectionTitle } zabráni tomu, aby sa podvodné emaily vôbec dostali do vašej schránky."
+      ],
+      "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
+        "${ protectionFromTrackersTitle } znamená, že už vás nebudú sledovať na internete."
+      ],
+      "Access email and calendar right from your desktop with the desktop app.": [
+        "Pristupujte k svojim emailom a kalendáru priamo z počítača pomocou desktopovej aplikácie."
+      ],
+      "Activate premium features": [
+        "Aktivujte prémiové funkcie"
+      ],
+      "Activate selected": [
+        "Aktivovať vybrané"
+      ],
+      "Advanced encryption": [
+        "Pokročilé šifrovanie"
+      ],
+      "Auto-delete spam and trash": [
+        "Automatické mazanie spamu a koša"
+      ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Vymazanie odstránených a nevyžiadaných emailov po 30 dňoch."
+      ],
+      "Dark Web Monitoring": [
+        "Monitorovanie Dark Webu"
+      ],
+      "Download the desktop app": [
+        "Stiahnite si desktopovú aplikáciu"
+      ],
+      "Download the desktop app and continue": [
+        "Stiahnite si desktopovú aplikáciu a pokračujte"
+      ],
+      "Fixed and focused": [
+        "Pevne a sústredene"
+      ],
+      "Get notified if your password is compromised.": [
+        "Dostávajte upozornenia, ak dôjde k úniku vášho hesla."
+      ],
+      "Get the desktop app": [
+        "Získať desktopovú aplikáciu"
+      ],
+      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
+        "Stiahnite si mobilnú aplikáciu z ${ mobileAppAppStoreLink } alebo ${ mobileAppGooglePlayLink }."
+      ],
+      "Industry-leading spam protection": [
+        "Špičková ochrana proti spamu"
+      ],
+      "Let's get started": [
+        "Poďme na to"
+      ],
+      "Make the most of your paid plan.": [
+        "Využite svoj platený plán na maximum."
+      ],
+      "Maybe later": [
+        "Možno neskôr"
+      ],
+      "More ways to experience ${ MAIL_APP_NAME }": [
+        "Ďalšie možnosti využitia ${ MAIL_APP_NAME }"
+      ],
+      "On the move": [
+        "Na cestách"
+      ],
+      "Start using ${ BRAND_NAME }": [
+        "Začnite používať ${ BRAND_NAME }"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Začnite používať kratšiu a výstižnejšiu verziu svojej emailovej adresy."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Vitajte v ${ MAIL_APP_NAME }"
+      ],
+      "Where privacy is default.": [
+        "Kde súkromie je na prvom mieste."
       ]
     },
     "Onboarding Proton": {
@@ -10299,6 +10404,15 @@
       ],
       "You will be able to change your theme any time in your settings.": [
         "Motív môžete kedykoľvek zmeniť v nastaveniach."
+      ],
+      "Choose your preferred look and feel.": [
+        "Vyberte si svoj obľúbený vzhľad."
+      ],
+      "Link your domain name and create accounts for all members of your organization.": [
+        "Pripojte vašu doménu a vytvorte účty pre všetkých členov vašej organizácie."
+      ],
+      "Make it your own": [
+        "Prispôsobte si to podľa seba"
       ]
     },
     "Online accounts": {
@@ -13475,6 +13589,9 @@
       ],
       "Your free trial has ended": [
         "Vaša bezplatná skúšobná verzia vypršala"
+      ],
+      "How to update your email address": [
+        "Ako aktualizovať emailovú adresu"
       ]
     },
     "Title subscription": {
@@ -14144,6 +14261,20 @@
       ],
       "Yearly, ${ untilString }": [
         "Ročne, ${ untilString }"
+      ]
+    },
+    "Step": {
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "Zadajte svoju ${ MAIL_APP_NAME } adresu ako novú adresu a uložte, potvrďte alebo overte zmenu"
+      ],
+      "In the account settings, look for the option to edit or change your email address ": [
+        "V nastaveniach účtu nájdite možnosť upraviť alebo zmeniť emailovú adresu. "
+      ],
+      "Select service to update": [
+        "Vyberte službu, ktorú chcete aktualizovať"
+      ],
+      "Sign in to the service": [
+        "Prihláste sa do služby"
       ]
     }
   }
