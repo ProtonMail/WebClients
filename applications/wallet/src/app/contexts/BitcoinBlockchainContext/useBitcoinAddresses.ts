@@ -303,7 +303,7 @@ export const useBitcoinAddresses = ({
             const { wallet, account, isSyncing } = accountData;
 
             // Make sure account is fully synced before processing bitcoin addresses
-            if (isSyncing || !!bitcoinAddressHelperByWalletAccountId[account.ID]) {
+            if (isSyncing) {
                 return;
             }
 
@@ -323,7 +323,6 @@ export const useBitcoinAddresses = ({
 
                 await manageBitcoinAddressPool({ wallet, account, accountChainData });
 
-                // TODO: check if rerenders don't create bad stuff
                 const receiveBitcoinAddress = await accountChainData.account.getNextReceiveAddress();
 
                 const generateNewReceiveAddress = async () => {
