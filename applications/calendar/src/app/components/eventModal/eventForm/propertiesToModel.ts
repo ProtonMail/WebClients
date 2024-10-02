@@ -46,16 +46,12 @@ export const propertiesToModel = ({
 
     const { start, end } = propertiesToDateTimeModel(dtstart, getDtendProperty(veventComponent), isAllDay, tzid);
     const { selfAttendeeIndex, selfAddress } = selfAddressData || {};
-    const titleString = summary?.value ?? '';
-    const locationString = location?.value ?? '';
-    const descriptionString = description?.value ?? '';
-
     return {
         uid: uid ? uid.value : undefined,
         frequencyModel: propertiesToFrequencyModel(rrule, start),
-        title: truncate(titleString.trim(), MAX_CHARS_API.TITLE),
-        location: truncate(locationString.trim(), MAX_CHARS_API.LOCATION),
-        description: truncate(descriptionString.trim(), MAX_CHARS_API.EVENT_DESCRIPTION),
+        title: truncate((summary?.value ?? '').trim(), MAX_CHARS_API.TITLE),
+        location: truncate((location?.value ?? '').trim(), MAX_CHARS_API.LOCATION),
+        description: truncate((description?.value ?? '').trim(), MAX_CHARS_API.EVENT_DESCRIPTION),
         color: color?.value,
         attendees: propertiesToAttendeeModel(attendee),
         organizer: propertiesToOrganizerModel(organizer),
