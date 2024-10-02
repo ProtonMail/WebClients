@@ -11,7 +11,6 @@ import { UpsellRef } from '@proton/pass/constants';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { selectUser, selectUserPlan } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
-import { PlanType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { DEFAULT_CURRENCY, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
@@ -30,8 +29,8 @@ export const FamilyPlanPromo2024: FC<BaseSpotlightMessage> = ({ onClose = noop }
 
     const cohort = useMemo<MaybeNull<FamilyPlanCohort>>(() => {
         const isPass2023 = userPlan?.InternalName === 'pass2023';
+        const isFree = userPlan?.InternalName === 'free';
         const isPassLaunch = userPlan?.SubscriptionOffer === 'passlaunch';
-        const isFree = userPlan?.Type === PlanType.free;
 
         if (isPass2023 && isPassLaunch) return FamilyPlanCohort.Cohort1;
         if (isPass2023 || isFree) return FamilyPlanCohort.Cohort2;
