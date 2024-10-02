@@ -1,5 +1,5 @@
 import type { LinkNode } from '@lexical/link'
-import { $isAutoLinkNode, TOGGLE_LINK_COMMAND } from '@lexical/link'
+import { $isAutoLinkNode } from '@lexical/link'
 import { mergeRegister } from '@lexical/utils'
 import type { LexicalEditor } from 'lexical'
 import { COMMAND_PRIORITY_EDITOR, COMMAND_PRIORITY_LOW, SELECTION_CHANGE_COMMAND } from 'lexical'
@@ -14,7 +14,7 @@ import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { sanitizeUrl } from '../../Utils/sanitizeUrl'
 import { KEYBOARD_SHORTCUT_COMMAND } from '../KeyboardShortcuts/Command'
-import { useApplication } from '../../ApplicationProvider'
+import { LINK_CHANGE_COMMAND } from './LinkPlugin'
 
 type Props = {
   linkNode: LinkNode
@@ -26,8 +26,6 @@ type Props = {
 export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }: Props) {
   const isEditorEditable = useLexicalEditable()
 
-  const { isSuggestionMode } = useApplication()
-
   const [position, setPosition] = useState<{
     top: number
     left: number
@@ -37,7 +35,8 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
     let linkUrl = ''
     let isAutoLink = false
     editor.getEditorState().read(() => {
-      linkUrl = sanitizeUrl(linkNode.getURL()) || ''
+      const sanitizedURL = sanitizeUrl(linkNode.getURL())
+      linkUrl = sanitizedURL.isFailed() ? '' : sanitizedURL.getValue()
       isAutoLink = $isAutoLinkNode(linkNode)
     })
     return [linkUrl, isAutoLink]
@@ -99,7 +98,7 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
         COMMAND_PRIORITY_EDITOR,
       ),
     )
-  }, [editor, updatePosition])
+  }, [editor, linkUrl, openLink, updatePosition])
 
   const containerElement = editor.getRootElement()?.parentElement
 
@@ -147,7 +146,7 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
             <Icon name="link" />
           </Button>
         </Tooltip>
-        {!isAutoLink && isEditorEditable && !isSuggestionMode && (
+        {!isAutoLink && isEditorEditable && (
           <>
             <Tooltip title={c('Action').t`Edit link`}>
               <Button
@@ -168,7 +167,12 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
                 size="small"
                 shape="ghost"
                 onClick={() => {
-                  editor.dispatchCommand(TOGGLE_LINK_COMMAND, null)
+                  editor.dispatchCommand(LINK_CHANGE_COMMAND, {
+                    linkNode: null,
+                    linkTextNode: null,
+                    url: null,
+                    text: null,
+                  })
                 }}
                 data-testid="hyperlink-delete-button"
               >

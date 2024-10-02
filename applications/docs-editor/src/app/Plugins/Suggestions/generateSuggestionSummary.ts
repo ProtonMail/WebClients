@@ -3,10 +3,11 @@ import { $getNodeByKey, $isTextNode } from 'lexical'
 import type { SuggestionType } from './Types'
 import { $isSuggestionNode } from './ProtonNode'
 import { getFormatsForFlag } from '../../Utils/TextFormatUtils'
+import { $isLinkNode } from '@lexical/link'
 
-type SummaryType = SuggestionType | 'replace'
+type SummaryType = SuggestionType | 'replace' | 'add-link' | 'delete-link'
 
-export type SuggestionSummaryContent = { type: SummaryType; content: string }[]
+export type SuggestionSummaryContent = { type: SummaryType; content: string; replaceWith?: string }[]
 
 const TextContentLimit = 80
 
@@ -34,7 +35,11 @@ export function generateSuggestionSummary(
 
       const currentType = node.getSuggestionTypeOrThrow()
 
+      let type: SummaryType = currentType
+
       let content = node.getTextContent().slice(0, TextContentLimit)
+
+      let replaceWith: string | undefined = undefined
 
       if (currentType === 'property-change') {
         const firstChild = node.getFirstChild()
@@ -42,9 +47,24 @@ export function generateSuggestionSummary(
         content = getFormatsForFlag(currentFormat).join(', ')
       }
 
+      if (currentType === 'link-change') {
+        const firstChild = node.getFirstChild()
+        const initialURL: string | undefined = node.__properties.nodePropertiesChanged?.__url
+        if (!$isLinkNode(firstChild)) {
+          type = 'delete-link'
+          content = `${initialURL}`
+        } else if (!initialURL) {
+          type = 'add-link'
+          content = `${firstChild.getURL()}`
+        } else {
+          content = `${initialURL}`
+          replaceWith = `${firstChild.getURL()}`
+        }
+      }
+
       const lastItem = summary[summary.length - 1]
       if (!lastItem) {
-        summary.push({ type: currentType, content })
+        summary.push({ type, content, replaceWith })
         continue
       }
 
@@ -59,7 +79,10 @@ export function generateSuggestionSummary(
         continue
       }
 
-      if (lastItem.type === currentType && currentType !== 'property-change') {
+      if (lastItem.type === type && type !== 'property-change') {
+        if (lastItem.content === content) {
+          continue
+        }
         lastItem.content = (lastItem.content + content).slice(0, TextContentLimit)
         continue
       }
@@ -68,14 +91,24 @@ export function generateSuggestionSummary(
         (lastItem.type === 'insert' && currentType === 'delete') ||
         (lastItem.type === 'delete' && currentType === 'insert')
       if (isReplace) {
+        const lastItemType = lastItem.type
+        const lastItemContent = lastItem.content
         lastItem.type = 'replace'
         if (currentType === 'delete') {
           lastItem.content = content
+          if (lastItemType === 'insert') {
+            lastItem.replaceWith = lastItemContent
+          }
+        } else if (currentType === 'insert') {
+          lastItem.replaceWith = content
+          if (lastItemType === 'delete') {
+            lastItem.content = lastItemContent
+          }
         }
         continue
       }
 
-      summary.push({ type: currentType, content })
+      summary.push({ type, content, replaceWith })
     }
   })
 

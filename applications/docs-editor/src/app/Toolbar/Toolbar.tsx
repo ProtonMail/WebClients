@@ -934,7 +934,7 @@ export default function DocumentEditorToolbar({
           <>
             <ToolbarButton
               label={<ShortcutLabel shortcut="EDIT_LINK_SHORTCUT" label={c('Action').t`Insert link`} />}
-              disabled={!isEditable || isSuggestionMode}
+              disabled={!isEditable}
               active={isLink}
               onClick={editLink}
               data-testid="link-button"

@@ -1,6 +1,6 @@
 import { CommentThreadState, type CommentInterface, type CommentThreadInterface } from '@proton/docs-shared'
 import type { LexicalEditor } from 'lexical'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Fragment } from 'react'
 import debounce from '@proton/utils/debounce'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { useMarkNodesContext } from '../MarkNodesContext'
@@ -81,7 +81,7 @@ export function useSuggestionCommentContent(
     thread.state,
   ])
 
-  return suggestionContent?.map(({ type, content }, index) => {
+  return suggestionContent?.map(({ type, content, replaceWith }, index) => {
     let title = ''
     let color: 'success' | 'weak' = 'success'
     if (type === 'insert') {
@@ -98,15 +98,27 @@ export function useSuggestionCommentContent(
     } else if (type === 'join') {
       title = c('Label').t`Delete paragraph`
       color = 'weak'
+    } else if (type === 'add-link') {
+      title = c('Label').t`Add link`
+    } else if (type === 'link-change') {
+      title = c('Label').t`Replace link`
+    } else if (type === 'delete-link') {
+      title = c('Label').t`Delete link`
+      color = 'weak'
+    }
+    if (!!replaceWith || type === 'delete') {
+      content = `"${content}"`
     }
     return (
-      <div key={index} className="line-clamp-2">
-        <span className={`color-${color} font-medium`}>
-          {icon} {title}
-          {content.length > 0 && ':'}
-        </span>{' '}
-        {content}
-      </div>
+      <Fragment key={index}>
+        <div className="line-clamp-2">
+          <span className={`color-${color} font-medium`}>
+            {icon} {title}
+            {content.length > 0 && ':'}
+          </span>{' '}
+          {content} {replaceWith && <>{c('Label').t`with "${replaceWith}"`}</>}
+        </div>
+      </Fragment>
     )
   })
 }
