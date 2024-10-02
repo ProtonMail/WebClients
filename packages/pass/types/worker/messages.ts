@@ -22,6 +22,7 @@ import type { B2BEvent } from '@proton/pass/types/data/b2b';
 import type { PauseListEntry } from '@proton/pass/types/worker/settings';
 import type { TransferableFile } from '@proton/pass/utils/file/transferable-file';
 import type { ExtensionForkResultPayload } from '@proton/shared/lib/authentication/fork/extension';
+import type { PullForkResponse } from '@proton/shared/lib/authentication/interface';
 import type { User } from '@proton/shared/lib/interfaces';
 
 import type { ForkPayload } from '../api/fork';
@@ -69,6 +70,8 @@ export enum WorkerMessageType {
     AUTH_CHECK = 'AUTH_CHECK',
     AUTH_CONFIRM_PASSWORD = 'AUTH_CONFIRM_PASSWORD',
     AUTH_INIT = 'AUTH_INIT',
+    AUTH_PULL_FORK_REQ = 'AUTH_PULL_FORK_REQ',
+    AUTH_PULL_FORK_RES = 'AUTH_PULL_FORK_RES',
     AUTH_UNLOCK = 'AUTH_UNLOCK',
     AUTOFILL_IDENTITY = 'AUTOFILL_IDENTITY',
     AUTOFILL_IDENTITY_QUERY = 'AUTOFILL_IDENTITY_QUERY',
@@ -140,6 +143,8 @@ export type AliasOptionsMessage = { type: WorkerMessageType.ALIAS_OPTIONS };
 export type AuthCheckMessage = WithPayload<WorkerMessageType.AUTH_CHECK, { immediate?: boolean }>;
 export type AuthConfirmPasswordMessage = WithPayload<WorkerMessageType.AUTH_CONFIRM_PASSWORD, { password: string }>;
 export type AuthInitMessage = { type: WorkerMessageType.AUTH_INIT; options: AuthOptions };
+export type AuthPullForkRequestMessage = WithPayload<WorkerMessageType.AUTH_PULL_FORK_REQ, { selector: string }>;
+export type AuthPullForkResponseMessage = WithPayload<WorkerMessageType.AUTH_PULL_FORK_RES, Result<PullForkResponse>>;
 export type AuthUnlockMessage = WithPayload<WorkerMessageType.AUTH_UNLOCK, UnlockDTO>;
 export type AutofillIdentityMessage = WithPayload<WorkerMessageType.AUTOFILL_IDENTITY, SelectedItem>;
 export type AutofillIdentityQueryMessage = { type: WorkerMessageType.AUTOFILL_IDENTITY_QUERY };
@@ -209,6 +214,8 @@ export type WorkerMessage =
     | AuthCheckMessage
     | AuthConfirmPasswordMessage
     | AuthInitMessage
+    | AuthPullForkRequestMessage
+    | AuthPullForkResponseMessage
     | AuthUnlockMessage
     | AutofillIdentityMessage
     | AutofillIdentityQueryMessage
