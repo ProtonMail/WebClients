@@ -73,7 +73,7 @@ export class EncryptionService<C extends EncryptionContext> {
 
       return Result.ok(SignedPlaintextContent.deserializeBinary(decryptedData))
     } catch (error) {
-      return Result.fail(`Failed to decrypt data ${JSON.stringify(error)}`)
+      return Result.fail(`Failed to decrypt data ${error}`)
     }
   }
 

@@ -39,4 +39,8 @@ export class MetricService {
       event: event,
     })
   }
+
+  reportFullyBlockingErrorModal(): void {
+    metrics.docs_alert_modal_total.increment({})
+  }
 }
