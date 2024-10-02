@@ -40,8 +40,8 @@ const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) =
 
     const [user] = useUser();
 
-    const handleContactsCompose = (emails: Recipient[], attachments: File[]) => {
-        onCompose({
+    const handleContactsCompose = async (emails: Recipient[], attachments: File[]) => {
+        await onCompose({
             type: ComposeTypes.newMessage,
             action: MESSAGE_ACTIONS.NEW,
             referenceMessage: { data: { ToList: emails }, draftFlags: { initialAttachments: attachments } },
