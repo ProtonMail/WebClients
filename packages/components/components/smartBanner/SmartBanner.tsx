@@ -2,13 +2,13 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
 import Logo from '@proton/components/components/logo/Logo';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
 
+import type { SmartBannerApp } from './types';
 import { useSmartBanner } from './useSmartBanner';
 import { useSmartBannerTelemetry } from './useSmartBannerTelemetry';
 
 interface SmartBannerProps {
-    app: APP_NAMES;
+    app: SmartBannerApp;
     subtitle?: string;
     title?: string;
 }
