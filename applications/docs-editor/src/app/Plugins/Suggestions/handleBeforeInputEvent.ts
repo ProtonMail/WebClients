@@ -125,7 +125,13 @@ function $handleDeleteInput(
     suggestionNodes[0].selectPrevious()
   }
 
-  if (isWholeSelectionInsideExistingSuggestion) {
+  const existingParentSuggestionType = existingParentSuggestion?.getSuggestionTypeOrThrow()
+
+  const shouldActuallyDelete =
+    isWholeSelectionInsideExistingSuggestion &&
+    (existingParentSuggestionType === 'delete' || existingParentSuggestionType === 'insert')
+
+  if (shouldActuallyDelete) {
     for (const node of suggestionNodes) {
       node.remove()
     }
@@ -299,13 +305,23 @@ function $handleInsertTextData(
     }
 
     const nodeToInsertBefore = node.getChildAtIndex(offset)
+    const id =
+      existingParentSuggestion.getSuggestionTypeOrThrow() !== 'link-change'
+        ? existingParentSuggestion.getSuggestionIdOrThrow()
+        : suggestionID
+    const suggestionNode = $createSuggestionNode(id, 'insert')
+    suggestionNode.append(textNode)
+
     if (nodeToInsertBefore) {
-      const suggestionNode = $createSuggestionNode(existingParentSuggestion.getSuggestionIdOrThrow(), 'insert')
-      suggestionNode.append(textNode)
       nodeToInsertBefore.insertBefore(suggestionNode)
-      suggestionNode.selectEnd()
-      onSuggestionCreation(suggestionNode.getSuggestionIdOrThrow())
+    } else {
+      logger?.info('Could not find node to insert before')
+      $insertNodes([suggestionNode])
     }
+
+    suggestionNode.selectEnd()
+
+    onSuggestionCreation(suggestionNode.getSuggestionIdOrThrow())
 
     return true
   }
@@ -366,7 +382,13 @@ function $handleInsertTextData(
 
   if (suggestionSibling) {
     const suggestionSiblingType = suggestionSibling.getSuggestionTypeOrThrow()
-    if (suggestionSiblingType === 'insert') {
+
+    const shouldMergeWithSibling = suggestionSiblingType === 'insert'
+
+    const shouldUseSameIDAsSibling =
+      suggestionSiblingType !== 'property-change' && suggestionSiblingType !== 'link-change'
+
+    if (shouldMergeWithSibling) {
       $mergeWithExistingSuggestionNode(suggestionNode, suggestionSibling, isNextSiblingSuggestion)
       logger?.info('Merged with existing insert suggestion sibling')
       if (isNextSiblingSuggestion) {
@@ -378,7 +400,7 @@ function $handleInsertTextData(
         selection.anchor.offset += data.length
         selection.focus.offset = selection.anchor.offset
       }
-    } else if (suggestionSiblingType !== 'property-change') {
+    } else if (shouldUseSameIDAsSibling) {
       suggestionNode.setSuggestionId(suggestionSibling.getSuggestionIdOrThrow())
     }
   } else if (!prevSibling && $isSuggestionNode(lastChildOfPrevBlock)) {

@@ -2,10 +2,13 @@ import { createHeadlessEditor } from '@lexical/headless'
 import { AllNodes } from '../../AllNodes'
 import { $createSuggestionNode } from './ProtonNode'
 import type { ParagraphNode, TextNode } from 'lexical'
+import { $isTextNode } from 'lexical'
 import { $createParagraphNode, $createTextNode, $getRoot } from 'lexical'
 import { $rejectSuggestion } from './rejectSuggestion'
 import { $createHeadingNode } from '@lexical/rich-text'
 import { $createListItemNode, $createListNode } from '@lexical/list'
+import type { LinkNode } from '@lexical/link'
+import { $createLinkNode, $isLinkNode } from '@lexical/link'
 
 describe('$rejectSuggestion', () => {
   const editor = createHeadlessEditor({
@@ -178,6 +181,127 @@ describe('$rejectSuggestion', () => {
 
       const paragraph4 = root.getChildAtIndex(2)
       expect(paragraph4?.getTextContent()).toBe('Paragraph 4ListItem1')
+    })
+  })
+
+  describe('link-change', () => {
+    describe('No nodePropertiesChanged property', () => {
+      test('should remove node', () => {
+        editor.update(
+          () => {
+            const suggestionID = 'test'
+            $getRoot().append($createParagraphNode().append($createSuggestionNode(suggestionID, 'link-change')))
+            $rejectSuggestion(suggestionID)
+          },
+          {
+            discrete: true,
+          },
+        )
+        editor.read(() => {
+          const paragraph = $getRoot().getFirstChild<ParagraphNode>()
+          expect(paragraph?.getChildrenSize()).toBe(0)
+        })
+      })
+    })
+
+    describe('Added link', () => {
+      const newLink = 'http://foo.com'
+
+      beforeEach(() => {
+        editor.update(
+          () => {
+            const suggestionID = 'test'
+            $getRoot().append(
+              $createParagraphNode().append(
+                $createSuggestionNode(suggestionID, 'link-change', {
+                  __url: null,
+                }).append($createLinkNode(newLink).append($createTextNode('Foo'))),
+              ),
+            )
+            $rejectSuggestion(suggestionID)
+          },
+          { discrete: true },
+        )
+      })
+
+      test('link and suggestion should be unwrapped', () => {
+        editor.read(() => {
+          const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
+          expect(paragraph.getChildrenSize()).toBe(1)
+
+          const first = paragraph.getFirstChildOrThrow<LinkNode>()
+          expect($isTextNode(first)).toBe(true)
+        })
+      })
+    })
+
+    describe('Edited link', () => {
+      const originalLink = 'http://bar.com'
+      const newLink = 'http://foo.com'
+
+      beforeEach(() => {
+        editor.update(
+          () => {
+            const suggestionID = 'test'
+            $getRoot().append(
+              $createParagraphNode().append(
+                $createSuggestionNode(suggestionID, 'link-change', {
+                  __url: originalLink,
+                }).append($createLinkNode(newLink).append($createTextNode('Foo'))),
+              ),
+            )
+            $rejectSuggestion(suggestionID)
+          },
+          { discrete: true },
+        )
+      })
+
+      test('link url should be changed back to original', () => {
+        editor.read(() => {
+          const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
+          expect(paragraph.getChildrenSize()).toBe(1)
+
+          const first = paragraph.getFirstChildOrThrow<LinkNode>()
+          expect($isLinkNode(first)).toBe(true)
+          expect(first.getURL()).toBe(originalLink)
+        })
+      })
+    })
+
+    describe('Removed link', () => {
+      beforeEach(() => {
+        editor.update(
+          () => {
+            const suggestionID = 'test'
+            $getRoot().append(
+              $createParagraphNode().append(
+                $createSuggestionNode(suggestionID, 'link-change', {
+                  __url: 'http://foo.com',
+                }).append($createTextNode('Foo')),
+              ),
+            )
+            $rejectSuggestion(suggestionID)
+          },
+          { discrete: true },
+        )
+      })
+
+      test('link should be recreated', () => {
+        editor.read(() => {
+          const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
+          expect(paragraph.getChildrenSize()).toBe(1)
+
+          const first = paragraph.getFirstChildOrThrow<LinkNode>()
+          expect($isLinkNode(first)).toBe(true)
+        })
+      })
+
+      test('link should have correct url', () => {
+        editor.read(() => {
+          const link = $getRoot().getFirstChildOrThrow<ParagraphNode>().getFirstChildOrThrow<LinkNode>()
+          expect(link.getURL()).toBe('http://foo.com')
+        })
+      })
     })
   })
 })

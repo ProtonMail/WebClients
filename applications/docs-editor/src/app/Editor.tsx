@@ -1,6 +1,5 @@
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ListPlugin } from '@lexical/react/LexicalListPlugin'
-import { LinkPlugin } from '@lexical/react/LexicalLinkPlugin'
 import { HorizontalRulePlugin } from '@lexical/react/LexicalHorizontalRulePlugin'
 import { BuildInitialEditorConfig, ShouldBootstrap } from './InitialEditorConfig'
 import { useCallback, useMemo } from 'react'
@@ -47,6 +46,7 @@ import TreeViewPlugin from './Plugins/TreeView/TreeViewPlugin'
 import { ProtonContentEditable } from './ContentEditable/ProtonContentEditable'
 import { MarkNodesProvider } from './Plugins/MarkNodesContext'
 import clsx from '@proton/utils/clsx'
+import { ProtonLinkPlugin } from './Plugins/Link/LinkPlugin'
 
 const TypingBotEnabled = false
 
@@ -180,7 +180,7 @@ export function Editor({
         <TablePlugin hasCellBackgroundColor hasTabHandler />
         <TableCellResizerPlugin />
         <TabIndentationPlugin />
-        <LinkPlugin />
+        <ProtonLinkPlugin />
         {!nonInteractiveMode && <LinkInfoPlugin openLink={openLink} />}
         <TypingBotPlugin enabled={TypingBotEnabled} position={'beginning'} />
         <CollaborationPlugin
