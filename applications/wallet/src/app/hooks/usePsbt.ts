@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { WasmPsbt } from '@proton/andromeda';
+import type { WasmPsbt, WasmTxBuilder } from '@proton/andromeda';
 import { useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 
@@ -28,22 +28,25 @@ export const usePsbt = ({ txBuilderHelpers }: { txBuilderHelpers: TxBuilderHelpe
 
     const { txBuilder } = txBuilderHelpers;
 
-    const createDraftPsbt = useCallback(async (): Promise<WasmPsbt | null> => {
-        if (!isUndefined(network)) {
-            try {
-                return await txBuilder.createDraftPsbt(network);
-            } catch (err) {
-                console.error('An error occurred when building PSBT', err);
-                throw err;
+    const createDraftPsbt = useCallback(
+        async (txBuilder: WasmTxBuilder): Promise<WasmPsbt | null> => {
+            if (!isUndefined(network)) {
+                try {
+                    return await txBuilder.createDraftPsbt(network);
+                } catch (err) {
+                    console.error('An error occurred when building PSBT', err);
+                    throw err;
+                }
+            } else {
+                throw new Error('missing network');
             }
-        } else {
-            throw new Error('missing network');
-        }
-    }, [network, txBuilder]);
+        },
+        [network]
+    );
 
     useEffect(() => {
         const run = async () => {
-            const psbt = await createDraftPsbt().catch(() => null);
+            const psbt = await createDraftPsbt(txBuilder).catch(() => null);
 
             if (psbt) {
                 setPsbt(psbt);
@@ -53,7 +56,7 @@ export const usePsbt = ({ txBuilderHelpers }: { txBuilderHelpers: TxBuilderHelpe
         if (shouldCreatePsbt) {
             void run();
         }
-    }, [createDraftPsbt, shouldCreatePsbt]);
+    }, [createDraftPsbt, shouldCreatePsbt, txBuilder]);
 
     const broadcastPsbt = ({
         apiWalletData,
