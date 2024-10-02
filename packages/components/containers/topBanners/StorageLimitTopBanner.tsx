@@ -20,7 +20,6 @@ import {
     getPlanToUpsell,
     getSpace,
 } from '@proton/shared/lib/user/storage';
-import { useFlag } from '@proton/unleash';
 
 import { useConfig, useLocalState, useSubscription, useUser } from '../../hooks';
 import LockedStateTopBanner from './LockedStateTopBanner';
@@ -276,7 +275,6 @@ const PooledStorageLimitTopBanner = ({
 };
 
 const StorageLimitTopBanner = ({ app }: Props) => {
-    const lockedStateEnabled = useFlag('LockedState');
     const [user] = useUser();
     const [subscription] = useSubscription();
     const { APP_NAME } = useConfig();
@@ -290,7 +288,7 @@ const StorageLimitTopBanner = ({ app }: Props) => {
         fromApp: app,
     });
 
-    if (lockedStateEnabled && user.LockedFlags) {
+    if (user.LockedFlags) {
         return (
             <LockedStateTopBanner
                 app={app}
