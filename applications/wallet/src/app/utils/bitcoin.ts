@@ -66,6 +66,15 @@ export const getPrecision = (unit: WasmBitcoinUnit | WasmApiExchangeRate) => {
     }
 };
 
+export const countDecimal = (amount: string): number => {
+    if (amount.indexOf('.') !== -1 && amount.indexOf('-') !== -1) {
+        return Number(amount.split('-')[1]) || 0;
+    } else if (amount.indexOf('.') !== -1) {
+        return amount.split('.')[1].length || 0;
+    }
+    return Number(amount.split('-')[1]) || 0;
+};
+
 /**
  * Convert and round amount to correct precision, for amount display we should prefer convertAmountStr to avoid weird numeric format
  */
@@ -174,9 +183,10 @@ export const isExchangeRateFromBitcoinUnit = (rate: WasmApiExchangeRate) => {
     return ['BTC', 'SATS', 'MBTC'].includes(rate.FiatCurrency);
 };
 
-export const formatNumberForDisplay = (num: number, decimalPlaces: number) => {
-    // Use a multiplier to shift the decimal point
-    let multiplier = Math.pow(10, decimalPlaces);
-    // Format the number without scientific notation
-    return Math.round(num * multiplier) / multiplier;
+export const formatNumberForDisplay = (num: number, decimalPlaces: number, digitsAfterDecimalPoint: number) => {
+    // Format the number with toFixed to keep digits precision
+    if (digitsAfterDecimalPoint <= decimalPlaces && digitsAfterDecimalPoint > 0) {
+        return num.toFixed(digitsAfterDecimalPoint);
+    }
+    return num;
 };
