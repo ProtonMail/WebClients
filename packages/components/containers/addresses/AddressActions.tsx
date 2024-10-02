@@ -9,7 +9,6 @@ import { useDispatch } from '@proton/redux-shared-store';
 import { deleteAddress, disableAddress, enableAddress } from '@proton/shared/lib/api/addresses';
 import { ADDRESS_STATUS, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import type { Address, Member, UserModel } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
 import EditExternalAddressModal from '../../containers/account/EditExternalAddressModal';
@@ -125,7 +124,6 @@ const AddressActions = ({
         createNotification({ text: c('Success notification').t`Address disabled` });
     };
 
-    const addressDeletionEnabled = useFlag('AddressDeletion');
     const mustActivateOrganizationKey = member?.Private === MEMBER_PRIVATE.READABLE && !organizationKey?.privateKey;
 
     const list =
@@ -163,8 +161,7 @@ const AddressActions = ({
                           actionType: 'delete',
                           onClick: () => setDeleteAddressModalOpen(true),
                       } as const),
-                  addressDeletionEnabled &&
-                      permissions.canDeleteAddressOncePerYear &&
+                  permissions.canDeleteAddressOncePerYear &&
                       !mustActivateOrganizationKey &&
                       ({
                           text: c('Address action').t`Delete address`,
