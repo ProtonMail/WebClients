@@ -202,6 +202,14 @@ export default function useSharedWithMeView(shareId: string) {
         // This is due to issue with how we decrypt stuff, to prevent infinite loop
         void withLoading(async () => loadSharedWithMeLinks(abortController.signal)).catch(sendErrorReport);
         void withPendingLoading(async () => loadPendingInvitations(abortController.signal)).catch(sendErrorReport);
+
+        return () => {
+            abortController.abort();
+        };
+    }, []);
+
+    useEffect(() => {
+        const abortController = new AbortController();
         if (isDriveShareUrlBookmarkingEnabled) {
             void withBookmarksLoading(async () => {
                 // In case the user Sign-up from public page we will add the file to bookmarks and let him on shared-with-me section
