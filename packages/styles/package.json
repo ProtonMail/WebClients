@@ -13,7 +13,7 @@
     "author": "Proton AG",
     "main": "index.ts",
     "scripts": {
-        "build:reset": "sass --no-source-map --style=compressed scss/specifics/android-reset.scss assets/css/android-reset.css; sass --no-source-map --style=compressed scss/specifics/android-dark-mode.scss assets/css/android-dark-mode.css",
+        "build:reset": "sass --no-source-map --style=compressed scss/specifics/android-v6-reset.scss assets/css/android-v6-reset.css; sass --no-source-map --style=compressed scss/specifics/android-v6-dark-mode.scss assets/css/android-v6-dark-mode.css; sass --no-source-map --style=compressed scss/specifics/android-ios-et-reset.scss assets/css/android-ios-et-reset.css",
         "lint": "yarn run lint:scss && yarn run lint:svg",
         "lint:scss": "stylelint '**/*.scss'",
         "lint:svg": "./tasks/lint-svg.sh"
