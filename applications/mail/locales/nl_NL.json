@@ -220,6 +220,9 @@
       "Click here.": [
         "Klik hier."
       ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "Klik om ${ defaultEmailAddress } naar klembord te kopiëren"
+      ],
       "Close": [
         "Sluiten"
       ],
@@ -548,6 +551,9 @@
       ],
       "Hide": [
         "Verbergen"
+      ],
+      "Hide ${ BRAND_NAME } Scribe writing assistant": [
+        "Verberg ${ BRAND_NAME } Scribe schrijfassistent"
       ],
       "Hide advanced PGP settings": [
         "Geavanceerde PGP-instellingen verbergen"
@@ -1015,6 +1021,9 @@
       "Revert to original display": [
         "Terugkeren naar originele weergave"
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Uitvoeren op ${ BRAND_NAME }-servers"
+      ],
       "Save": [
         "Opslaan"
       ],
@@ -1126,6 +1135,9 @@
       "Show": [
         "Tonen"
       ],
+      "Show ${ BRAND_NAME } Scribe writing assistant": [
+        "Toon ${ BRAND_NAME } Scribe schrijfassistent"
+      ],
       "Show advanced PGP settings": [
         "Geavanceerde PGP-instellingen tonen"
       ],
@@ -1228,6 +1240,9 @@
       "Tomorrow": [
         "Morgen"
       ],
+      "Tracker protection prevented some images from loading. Load them if you trust the sender.": [
+        "Trackerbeveiliging heeft voorkomen dat sommige afbeeldingen werden geladen. Laad ze als u de afzender vertrouwt."
+      ],
       "Trust": [
         "Vertrouwen"
       ],
@@ -1314,6 +1329,9 @@
       ],
       "Use recovery code": [
         "Herstelcode gebruiken"
+      ],
+      "Use this": [
+        "Gebruik dit"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Gebruik uw muis om de grootte van het beeld te wijzigen. Als u uw toetsenbord gebruikt, kunt u de linker en rechter pijltjestoetsen gebruiken om de grootte te wijzigen."
@@ -1551,7 +1569,7 @@
         "Veilig draaien op ${ BRAND_NAME } servers"
       ],
       "Securely run on device": [
-        "Veilig draaien op apparaat"
+        "Veilig op het apparaat draaien"
       ]
     },
     "Assistant toggle": {
@@ -3391,6 +3409,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA voegt een extra beveiligingslaag toe, waardoor onbevoegde toegang wordt voorkomen."
       ],
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Automatisch spam en weggegooide berichten verwijderen en meer premium-functies ontgrendelen als u upgrade."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Contacten decoderen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u het bestand downloaden met al uw geëxporteerde contactpersonen."
       ],
@@ -3431,6 +3452,9 @@
       "No labels": [
         "Geen labels"
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Bespaar tijd door met contactgroepen iedereen tegelijk e-mails te sturen. Ontgrendel deze en andere premium-functies wanneer u upgrade."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Scheid verschillende aspecten van uw leven met meerdere e-mailadressen en ontgrendel meer premiumfuncties wanneer u upgradet."
       ],
@@ -3458,6 +3482,12 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Schakel e-mail tracker beveiliging in om te voorkomen dat adverteerders en anderen uw locatie en online activiteit kunnen volgen."
       ],
+      "Unlock custom message scheduling and more premium features when you upgrade.": [
+        "Ontgrendel aangepaste berichtsplanning en meer premium-functies bij het upgraden."
+      ],
+      "Unlock custom snooze times and more premium features when you upgrade.": [
+        "Ontgrendel aangepaste snoozetijden en meer premium-functies wanneer u upgrade."
+      ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Ontgrendel kortere e-mailadressen en andere premiumfuncties door te upgraden."
       ],
@@ -3469,6 +3499,9 @@
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Upgrade uw account om ${ PROTON_SENTINEL_NAME } te activeren, onze geavanceerde AI-gedreven beveiligingsoplossing met toegewijde 24/7 deskundige ondersteuning."
+      ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "Gebruik ${ MAIL_APP_NAME } om in te loggen bij online diensten, omdat we, in tegenstelling tot andere e-mailproviders, nooit uw gegevens zullen volgen en delen met derden."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Versleep de contactpersonen die u wil samenvoegen om ze op prioriteit te ordenen. Haal het vinkje weg bij de contacten die u niet wilt samenvoegen."
@@ -4136,6 +4169,9 @@
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Het verzenden van bijlagen is beperkt tot het bereiken van het maximum van uw abonnement of door te upgraden."
       ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.": [
+        "Het verzenden van bijlagen is beperkt terwijl u de limieten van uw abonnement overschrijdt of tot u uw abonnement upgrade."
+      ],
       "Signature not verified": [
         "Handtekening niet geverifieerd"
       ],
@@ -4509,6 +4545,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Aliassen kunnen niet worden gebruikt wanneer een extra wachtwoord is ingeschakeld in ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "App momenteel niet beschikbaar"
       ],
@@ -4538,6 +4577,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "We konden deze pagina niet laden. Ververs de pagina of controleer uw internetverbinding."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Wanneer extra wachtwoord is ingeschakeld, kan aliasbeheer alleen worden gedaan in ${ PASS_APP_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "U hebt nog geen contactpersonen. Start met het aanmaken van een contactpersoon"
@@ -5646,6 +5688,9 @@
         "${ numOccurrences } voorval gevonden in de inhoud van de mail",
         "${ numOccurrences } voorvallen gevonden in de inhoud van de mail"
       ],
+      "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "${ PASS_APP_NAME } biedt een eenvoudige manier om logins aan te maken op niet-vertrouwde websites van derden waar u uw werkelijke e-mailadres niet wilt onthullen."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vereist minstens 1 toegewijde server ${ serverPricePerMonth }"
       ],
@@ -5953,6 +5998,9 @@
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Contact toegekend aan groep ${ contactGroupName }"
+      ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Contact verwijderd uit groep ${ contactGroupName }"
       ],
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"
@@ -6526,6 +6574,9 @@
       "Organization size": [
         "Grootte van de organisatie"
       ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Met onze meldingen nemen we het zekere voor het onzekere. Als je de geschonden informatie niet herkent, kun je deze melding veilig negeren."
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Ons systeem heeft dit bericht gemarkeerd als phishing poging. Controleer of het legitiem is."
       ],
@@ -6573,6 +6624,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Houd er rekening mee dat dit proces enige tijd in beslag kan nemen, afhankelijk van de grootte van uw adresboek."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Houd er rekening mee dat, wanneer u op de knop Bevestigen klikt, uw account nog ${ remainingCreditsFormatted } credits over heeft."
       ],
       "Please open the document to view it.": [
         "Open het document om het te bekijken."
@@ -6662,6 +6716,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
       ],
+      "Remember to update this in your password manager or wherever you keep your account and login information.": [
+        "Vergeet niet om dit bij te werken in uw wachtwoordbeheerder of waar u ook uw account- en logingegevens bewaart."
+      ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Verwijder alle gegevens geassocieerd met deze app (inclusief gedownloade berichten, ...)"
       ],
@@ -6700,6 +6757,9 @@
       ],
       "Scheduling message...": [
         "Bericht plannen..."
+      ],
+      "Scribe panel": [
+        "Scribepaneel"
       ],
       "Search option that lets you securely search for keywords in the body of email messages.": [
         "Zoekoptie die u toelaat veilig te zoeken op kernwoorden binnen de hoofdtekst van mailberichten."
@@ -6830,6 +6890,9 @@
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Het aantal downloads omvat zowel daadwerkelijke downloads als exemplaren waarin bestanden worden bekeken."
+      ],
+      "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
+        "Het e-mailadres ${ boldNoReplyEmail } lijkt geen antwoorden te accepteren. Weet u zeker dat u uw bericht wilt versturen?"
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "De versleutelde gegevens zijn iets groter door de extra gegevens voor de versleuteling en de handtekening, die de beveiliging van uw gegevens garanderen."
@@ -9029,6 +9092,12 @@
       "${ size } storage": [
         "${ size } opslagruimte"
       ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Voor ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Voor alle ${ BRAND_NAME } diensten"
+      ],
       "1 TB secure storage": [
         "1 TB veilige opslag"
       ],
@@ -9061,6 +9130,12 @@
       ],
       "All ${ BRAND_NAME } products and features": [
         "Alle ${ BRAND_NAME } producten en functies"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Alle basisdiensten van ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Alle premium ${ BRAND_NAME }-services. Eén simpel abonnement"
       ],
       "Auto-delete Spam and Trash": [
         "Spam en Prullenbak automatisch verwijderen"
@@ -9097,6 +9172,9 @@
       ],
       "Contact groups management": [
         "Beheer van contactgroepen"
+      ],
+      "Custom and secure business email": [
+        "Aangepaste en veilige zakelijke e-mail"
       ],
       "Custom domains for email aliases": [
         "Aangepaste domeinen voor e-mailalliassen"
@@ -9362,6 +9440,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 eigen e-maildomein"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Maak meerdere e-mailadressen aan voor uw online-identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain2 } voor nieuwsabonnementen"
       ],
@@ -10820,6 +10901,9 @@
       ]
     },
     "SmartBanner": {
+      "Faster on the app": [
+        "Sneller in de app"
+      ],
       "Private, fast, and organized": [
         "Privé, snel en georganiseerd"
       ]
@@ -12425,7 +12509,7 @@
         "Inschakelen van zoeken op berichtinhoud"
       ],
       "Enter 2FA code": [
-        "Voer 2FA code in"
+        "Voer 2FA-code in"
       ],
       "Enter your password": [
         "Voer uw wachtwoord in"
@@ -12465,6 +12549,9 @@
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Verberg uw e-mail met ${ PASS_APP_NAME }"
+      ],
+      "How to update your email address": [
+        "Hoe u uw e-mailadres bijwerkt"
       ],
       "Human verification": [
         "Persoonsverificatie"

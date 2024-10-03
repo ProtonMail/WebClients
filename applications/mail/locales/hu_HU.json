@@ -3821,6 +3821,9 @@
       "Please provide either a first name, a last name or a display name": [
         "Adjon meg egy keresztnevet, vezetéknevet vagy megjelenített nevet"
       ],
+      "Please select a category and what went wrong with the generated text": [
+        "Kérem válasszon egy kategóriát és adja meg, mi sikerült félre a létrehozott szöveg kapcsán."
+      ],
       "Please try again or refresh the page.": [
         "Kérjük, próbálja újra, vagy frissítse az oldalt."
       ],
@@ -3869,6 +3872,9 @@
       ],
       "Require at least one condition": [
         "Legalább egy feltétel szükséges"
+      ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.": [
+        "Elérte az Ön által választott csomag által megengedett határokat, ezért a csatolmányok küldése korlátozott lehet, amíg magasabb csomagra nem vált."
       ],
       "Signature not verified": [
         "Aláírás nincs ellenőrizve"
@@ -6921,6 +6927,9 @@
       "Your account will be updated once the payment is cleared.": [
         "A fiókját frissítjük, mihelyst megérkezik a befizetés."
       ],
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "Az Ön böngészője nem támogatja az írási asszisztenst. Pórbálja a mi szervereinken futtatni azt."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Az adatok a ${ BRAND_NAME } fiókjába importálásra készen állnak a(z) ${ importedEmailAddressStrong } címről."
       ],
@@ -6935,6 +6944,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "A fájlok titkosításra majd pedig mentésre kerülnek"
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
+        "Az Ön eszköze nem támogatja, hogy az írási asszisztenst helyben futtassa. Próbálja a mi szervereinken futtatni azt."
       ],
       "Your information was found on ${ displayedDate }": [
         "Az ön információja meg lett találva ezen a napon: ${ displayedDate }"
@@ -10441,6 +10453,9 @@
       ],
       "Desktop app and email client support (via IMAP)": [
         "Asztali alkalmazás és e-mail kliens támogatás (IMAP-on keresztül)"
+      ],
+      "Early access to new apps and features": [
+        "Korai hozzáférés az új alkalmazásokhoz és funkciókhoz"
       ],
       "Email productivity features": [
         "Email hatékonysági funciók"
