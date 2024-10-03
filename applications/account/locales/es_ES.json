@@ -3433,9 +3433,6 @@
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Desbloquea un número ilimitado de carpetas y etiquetas y más funciones premium al mejorar tu plan."
       ],
-      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
-        "Ícono de venta adicional que contiene el logotipo de ${ BRAND_NAME } seguido de un signo más"
-      ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Puedes seguir invitando amigos, pero no podrás ganar más créditos."
       ],
@@ -3944,11 +3941,6 @@
         "Configurar el reenvío de correo electrónico"
       ]
     },
-    "email_forwarding_2023: Description": {
-      "Unlock email forwarding to easily manage incoming information and more premium features when you upgrade.": [
-        "Desbloquea el reenvío de correos para gestionar fácilmente la información entrante y más funciones prémium cuando mejora."
-      ]
-    },
     "email_forwarding_2023: Error": {
       "Condition incomplete, please add a token": [
         "La condición es incompleta. Añade un token."
@@ -4132,9 +4124,6 @@
       ]
     },
     "email_forwarding_2023: Title": {
-      "Automatically forward emails to other accounts": [
-        "Reenviar automáticamente los correos a otras cuentas"
-      ],
       "Delete forwarding?": [
         "¿Eliminar el reenvío?"
       ],
@@ -5170,7 +5159,7 @@
         "grupos ${ BRAND_NAME }"
       ],
       "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Solo una prueba gratuita por usuario. Después se aplican precios usuales."
+        "* Solo una prueba gratuita por usuario. El precio regular se aplica después."
       ],
       "Accounts with custom domains cannot join a group plan.": [
         "Las cuentas con dominios personalizados no pueden unirse a un plan grupal."
@@ -5286,10 +5275,10 @@
     },
     "familyOffer_2023:Info": {
       "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Solo una prueba gratuita por usuario. Después se aplican precios usuales."
+        "* Solo una prueba gratuita por usuario. El precio regular se aplica después."
       ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Tras abandonar tu plan, este usuario se moverá a ${ BRAND_NAME } Plan ilimitado con una prueba gratuita de 30 días.*"
+        "Después de abandonar el plan, este usuario se moverá al plan ${ BRAND_NAME } Unlimited con una prueba gratuita de 30 días.*"
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Asignamos ${ formattedStorage } de almacenamiento a la cuenta del administrador de forma predeterminada. Podrás gestionar más adelante el almacenamiento asignado para distribuirlo entre más usuarios."
@@ -9005,7 +8994,7 @@
         "Puedes activar el registro de inicio de sesión para ver cuándo se accede a tu cuenta y desde qué IP. Registraremos la dirección IP y la hora a la que se accede a la cuenta, así como los intentos fallidos."
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
-        "Puedes habilitar la sección Fotos desde la interfaz usando el selector inferior."
+        "Puedes activar la sección Fotos desde la interfaz usando el selector inferior."
       ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Puedes desbloquear inmediatamente la configuración anterior añadiendo ${ specificCountryCount } al número de direcciones IP en tu plan o comuníquete con nosotros para obtener soluciones personalizadas."
@@ -12280,6 +12269,9 @@
       "Get Mail Plus for ${ price }": [
         "Disfruta de Mail Plus por ${ price }"
       ],
+      "Starting from ${ price }": [
+        "A partir de ${ price }"
+      ],
       "Your account's usage": [
         "Uso de la cuenta"
       ]
@@ -15059,6 +15051,9 @@
       "/ month": [
         "/ mes"
       ],
+      "/month": [
+        "/mes"
+      ],
       "1 year": [
         "1 año"
       ],
@@ -17001,6 +16996,9 @@
       "My calendars": [
         "Mis calendarios"
       ],
+      "Need more labels or folders?": [
+        "¿Necesitas más etiquetas o carpetas?"
+      ],
       "Network error": [
         "Error de red"
       ],
@@ -17072,6 +17070,9 @@
       ],
       "Personalise your e-mail footer": [
         "Personaliza el pie de correo."
+      ],
+      "Personalize your email footer": [
+        "Personaliza tu pie de correo."
       ],
       "Phone": [
         "Teléfono"

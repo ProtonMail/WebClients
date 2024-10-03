@@ -3427,9 +3427,6 @@
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Schalte durch ein Upgrade unbegrenzte Ordner, Kategorien und weitere Premiumfunktionen frei."
       ],
-      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
-        "Upsell-Symbol mit ${ BRAND_NAME }-Logo, gefolgt von einem Pluszeichen"
-      ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Du kannst weiterhin Freunde einladen, aber dadurch kannst du kein weiteres Guthaben verdienen."
       ],
@@ -3938,11 +3935,6 @@
         "E-Mail-Weiterleitung einrichten"
       ]
     },
-    "email_forwarding_2023: Description": {
-      "Unlock email forwarding to easily manage incoming information and more premium features when you upgrade.": [
-        "Schalte die E-Mail-Weiterleitung für die einfache Verwaltung eingehender Informationen und weitere Premium-Funktionen frei, wenn du upgradest."
-      ]
-    },
     "email_forwarding_2023: Error": {
       "Condition incomplete, please add a token": [
         "Bedingung unvollständig, bitte füge einen Token hinzu."
@@ -4126,9 +4118,6 @@
       ]
     },
     "email_forwarding_2023: Title": {
-      "Automatically forward emails to other accounts": [
-        "Leite E-Mails automatisch an andere Konten weiter"
-      ],
       "Delete forwarding?": [
         "Weiterleitung löschen?"
       ],
@@ -5218,6 +5207,9 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Das Abonnement wird dem Hauptadministrator dieses Plans in Rechnung gestellt."
+      ],
+      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
+        "Um dir den Übergang zu erleichtern, bieten wir dir eine kostenlose 30-tägige Testversion von ${ BRAND_NAME } Unlimited*."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du wurdest eingeladen, ${ invite.OrganizationName } beizutreten"
@@ -7173,6 +7165,9 @@
       ],
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "E-Mails, die mit der Kategorie ${ nameDeleted } gekennzeichnet sind, werden nicht gelöscht und sind weiterhin im entsprechenden Ordner zu finden."
+      ],
+      "Enable email notifications": [
+        "E-Mail-Benachrichtigungen aktivieren"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Aktiviere Single Sign-on, um die Sicherheit deines Unternehmens zu gewährleisten."
@@ -13011,6 +13006,23 @@
         "Die Benutzer sehen dein Logo anstelle des ${ BRAND_NAME }-Symbols, wenn sie sich bei unseren Webanwendungen anmelden."
       ]
     },
+    "orgidentity": {
+      "Current organization identity": [
+        "Aktuelle Organisationsidentität"
+      ],
+      "Edit organization identity": [
+        "Organisationsidentität bearbeiten"
+      ],
+      "New organization identity": [
+        "Neue Organisationsidentität"
+      ],
+      "Organization identity": [
+        "Organisationsidentität"
+      ],
+      "Verify": [
+        "Verifizieren"
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (für Debian/Ubuntu)"
@@ -17727,8 +17739,17 @@
       ]
     },
     "unprivatization": {
+      "Administrator access enabled": [
+        "Administratorzugriff aktiviert"
+      ],
+      "Administrator access rejected": [
+        "Administratorzugriff deaktiviert"
+      ],
       "An administrator of ${ orgName } wants to enable admin access for your account.": [
         "Ein Administrator von ${ orgName } möchte Admin-Zugriff für dein Konto aktivieren."
+      ],
+      "Approve all": [
+        "Alle genehmigen"
       ],
       "Cancel": [
         "Abbrechen"
@@ -17744,6 +17765,9 @@
       ],
       "Enable administrator access": [
         "Administrator-Zugriff aktivieren"
+      ],
+      "Enable manually": [
+        "Manuell aktivieren"
       ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "Wenn du den Zugriff auf deine Anmeldedaten verlierst, kann der Administrator deiner Organisation dein Passwort zurücksetzen und den Zugriff auf dein Konto wiederherstellen."

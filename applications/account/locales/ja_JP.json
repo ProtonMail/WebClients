@@ -1418,6 +1418,9 @@
       "Fast and secure. No logs are kept.": [
         "高速で安全です。ログは保持されません。"
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "${ BRAND_NAME } サーバー上で実行"
+      ],
       "Run on device": [
         "デバイス上で実行"
       ]
@@ -2625,6 +2628,9 @@
       "Ireland": [
         "アイルランド"
       ],
+      "Islamic Republic of Iran": [
+        "イラン"
+      ],
       "Isle of Man": [
         "マン島"
       ],
@@ -2655,6 +2661,12 @@
       "Kiribati": [
         "キリバス"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "北朝鮮"
+      ],
+      "Korea (Republic of)": [
+        "韓国"
+      ],
       "Kosovo": [
         "コソボ"
       ],
@@ -2663,6 +2675,9 @@
       ],
       "Kyrgyzstan": [
         "キルギス"
+      ],
+      "Lao People's Democratic Republic": [
+        "ラオス"
       ],
       "Laos": [
         "ラオス"
@@ -3259,9 +3274,6 @@
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "アップグレードすると、フォルダーやラベルを無制限に作成するなどのプレミアム機能が利用できます。"
       ],
-      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
-        "${ BRAND_NAME } ロゴの後にプラス記号が続くアップセル アイコン"
-      ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "友達を招待し続けることはできますが、さらにクレジットを獲得することはできません。"
       ],
@@ -3425,6 +3437,14 @@
     "duoplan2024: Info": {
       "1 TB storage": [
         "1 TB のストレージ"
+      ],
+      "2 users": [
+        "2 ユーザー"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "Double your storage": [
+        "ストレージを 2 倍にしましょう"
       ]
     },
     "Duration": {
@@ -3455,6 +3475,20 @@
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "説明:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } はキャンセルされました。"
+      ],
+      "This event was updated.": [
+        "この予定は更新されました。"
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "この予定は更新されました。変更点は下記の通りです。\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "${ eventTitle } に招待されました。\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (location part)": {
@@ -3592,11 +3626,6 @@
       ],
       "Set up email forwarding": [
         "メール転送の設定"
-      ]
-    },
-    "email_forwarding_2023: Description": {
-      "Unlock email forwarding to easily manage incoming information and more premium features when you upgrade.": [
-        "アップグレードすると、受信情報を簡単に管理できるメール転送機能や、その他のプレミアム機能が利用できるようになります。"
       ]
     },
     "email_forwarding_2023: Error": {
@@ -3782,9 +3811,6 @@
       ]
     },
     "email_forwarding_2023: Title": {
-      "Automatically forward emails to other accounts": [
-        "他のアカウントにメールを自動転送"
-      ],
       "Delete forwarding?": [
         "転送を削除しますか？"
       ],
@@ -7933,6 +7959,9 @@
       "Version history": [
         "バージョン履歴"
       ],
+      "Version number successfully copied to clipboard": [
+        "バージョン番号がクリップボードにコピーされました"
+      ],
       "View, download, and manage your invoices.": [
         "請求書を表示、ダウンロード、管理します。"
       ],
@@ -10560,6 +10589,12 @@
       "1 user": [
         "1ユーザー"
       ],
+      "10 email addresses/aliases": [
+        "10 件のメールアドレス / エイリアス"
+      ],
+      "10-year file version history": [
+        "10 年間のファイルバージョン履歴"
+      ],
       "15 GB storage": [
         "15 GB のストレージ"
       ],
@@ -10653,6 +10688,9 @@
       "Email client support (via IMAP/SMTP)": [
         "メールクライアント対応 (IMAP/SMTP 経由)"
       ],
+      "Email groups": [
+        "メールグループ"
+      ],
       "Enables HIPAA compliance": [
         "HIPAA コンプライアンス準拠"
       ],
@@ -10721,6 +10759,9 @@
       ],
       "Password health": [
         "パスワードの健全性"
+      ],
+      "Password manager": [
+        "パスワードマネージャー"
       ],
       "Password-protected Emails": [
         "パスワードで保護されたメール"
@@ -10848,11 +10889,20 @@
       "User session management": [
         "ユーザーセッション管理"
       ],
+      "User storage management": [
+        "ユーザーストレージ管理"
+      ],
       "Vault sharing (up to ${ n } person)": [
         "保管庫の共有 (最大 ${ n } 人)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "ダークウェブをスキャンして、あなたの ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 件の独自メールドメイン"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "例えば、JohnShopper@${ domain }はショッピングアカウント用、JohnNews@${ domain2 }はニュース購読用です。"
       ],
@@ -12044,6 +12094,9 @@
       ],
       "Save your recovery kit to continue": [
         "続行するにはリカバリ キットを保存してください"
+      ],
+      "Secure vault sharing": [
+        "安全な保管庫共有"
       ],
       "Setting up your organization": [
         "組織の設定"
@@ -13498,6 +13551,9 @@
       "Get more storage": [
         "ストレージを増やす"
       ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "ファイルをアップロードまたは同期するには、容量を空けるか ${ upgrade } してください"
+      ],
       "Try out ${ app } to its full potential": [
         "${ app } を最大限に活用する"
       ],
@@ -13697,6 +13753,9 @@
       "10 email addresses": [
         "10個のメールアドレス"
       ],
+      "2 users": [
+        "2 ユーザー"
+      ],
       "20 email addresses per user": [
         "ユーザーあたり 20 個の電子メール アドレス"
       ],
@@ -13724,11 +13783,17 @@
       "Custom schedule send and snooze times": [
         "カスタムスケジュールの送信時間とスヌーズ時間"
       ],
+      "Desktop app and email client support (via IMAP)": [
+        "デスクトップアプリとメールクライアントのサポート (IMAP 経由)"
+      ],
       "Early access to new apps and features": [
         "新しいアプリや機能への早期アクセス"
       ],
       "Email productivity features": [
         "メールの生産性機能"
+      ],
+      "Extra storage and users": [
+        "追加のストレージとユーザー"
       ],
       "Have a question?": [
         "質問がありますか？"
@@ -13801,8 +13866,14 @@
       "Desktop app": [
         "デスクトップアプリ"
       ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
       "Upgrade": [
         "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
       ]
     },
     "Subscription renewal state": {
@@ -14671,6 +14742,9 @@
       "Edit invoice details": [
         "請求書の詳細を編集する"
       ],
+      "Edit profile": [
+        "プロフィールを編集"
+      ],
       "Edit servers": [
         "サーバー編集"
       ],
@@ -15007,6 +15081,9 @@
       "Profile": [
         "プロフィール"
       ],
+      "QRCode": [
+        "QR コード"
+      ],
       "Recommended": [
         "おすすめ"
       ],
@@ -15213,6 +15290,9 @@
       ],
       "Take precautions to avoid data loss!": [
         "データ紛失に備えましょう!"
+      ],
+      "Text": [
+        "テキスト"
       ],
       "Theme": [
         "テーマ"

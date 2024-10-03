@@ -3461,9 +3461,6 @@
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Разблакіруйце неабмежаваную колькасць папак, метак і іншыя прэміяльныя функцыі пасля паляпшэння."
       ],
-      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
-        "Значок Upsell змяшчае лагатып ${ BRAND_NAME }, які стаіць пасля знака плюс"
-      ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Вы можаце далей запрашаць сяброў, але вы не будзеце больш атрымліваць за гэта крэдыты"
       ],
@@ -3972,11 +3969,6 @@
         "Наладзіць перасылку лістоў"
       ]
     },
-    "email_forwarding_2023: Description": {
-      "Unlock email forwarding to easily manage incoming information and more premium features when you upgrade.": [
-        "Разблакіруйце перасылку лістоў для больш лёгкага кіравання ўваходнымі звесткамі і іншыя прэміяльныя функцыі пасля паляпшэння тарыфнага плана."
-      ]
-    },
     "email_forwarding_2023: Error": {
       "Condition incomplete, please add a token": [
         "Няпоўная ўмова. Дадайце токен."
@@ -4160,9 +4152,6 @@
       ]
     },
     "email_forwarding_2023: Title": {
-      "Automatically forward emails to other accounts": [
-        "Аўтаматычна перасылаць лісты на іншыя ўліковыя запісы"
-      ],
       "Delete forwarding?": [
         "Выдаліць перасылку?"
       ],
@@ -8462,7 +8451,7 @@
         "Адпраўце дэпазіт выкарыстоўваючы наступны адрас або адсканіруйце QR-код. Ваш дэпазіт адлюструецца на вашым рахунку пасля пацвярджэння."
       ],
       "Subscription auto-renews every ${ cycle } months.": [
-        "Падпіска будзе аўтаматычна падаўжацца кожныя ${ cycle } месяцы."
+        "Падпіска будзе аўтаматычна падаўжацца кожныя ${ cycle } месяцаў."
       ],
       "Subscription auto-renews every month.": [
         "Падпіска будзе аўтаматычна падаўжацца кожны месяц."
@@ -8558,7 +8547,7 @@
         "Няправільны фармат вашага файла CSV."
       ],
       "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
-        "Функцыя груп не падтрымліваюцца вашай бягучай падпіскай. Папярэдне створаныя групы адключаны і могуць быць толькі выдалены."
+        "Функцыя груп не падтрымліваюцца вашай бягучай падпіскай. Папярэдне створаныя групы адключаны і іх можна толькі выдалены."
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Тэрмін дзеяння спасылкі для справаздачы пра тое, што вы не наладзілі ўліковы запіс ${ BRAND_NAME } пратэрмінаваны. Звяжыцеся з нашай камандай падтрымкі, каб вырашыць гэту праблему."
@@ -11160,7 +11149,7 @@
         "Паглядзець дапаможнік"
       ],
       "visit our blog": [
-        "наведвайце наш блог"
+        "наведваць наш блог"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Чым адрозніваюцца пратаколы UDP і TCP?"
@@ -12511,7 +12500,7 @@
         "Панізіць уліковы запіс?"
       ],
       "Review subscription and pay": [
-        "Прагледзець падпіску і аплату"
+        "Прагляд падпіскі і аплаты"
       ],
       "Start exploring the ${ BRAND_NAME } universe": [
         "Пачніце знаёмства з сэрвісамі ${ BRAND_NAME }"
@@ -17317,7 +17306,7 @@
         "Імпартаваць ключ"
       ],
       "Import messages": [
-        "Імпартаваць паведамленні"
+        "Імпартаванне паведамленняў"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Імпартаванне праз ${ PRODUCT_NAMES.EASY_SWITCH }"
@@ -18226,7 +18215,7 @@
         "Скасаваць"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Немагчыма аўтаматычна ўключыць доступ адміністратара для ${ n } карыстальніка, бо яго ключы шыфравання ў гэты час былі абноўлены:",
+        "Немагчыма аўтаматычна ўключыць доступ адміністратара для ${ n } карыстальніка, бо яго/іх ключы шыфравання ў гэты час былі абноўлены:",
         "Немагчыма аўтаматычна ўключыць доступ адміністратара для ${ n } карыстальнікаў, бо іх ключы шыфравання ў гэты час былі абноўлены:",
         "Немагчыма аўтаматычна ўключыць доступ адміністратара для ${ n } карыстальнікаў, бо іх ключы шыфравання ў гэты час былі абноўлены:",
         "Немагчыма аўтаматычна ўключыць доступ адміністратара для ${ n } карыстальнікаў, бо іх ключы шыфравання ў гэты час былі абноўлены:"
