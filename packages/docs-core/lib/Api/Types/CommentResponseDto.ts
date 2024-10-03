@@ -1,3 +1,5 @@
+import type { CommentType } from '@proton/docs-shared'
+
 export type CommentResponseDto = {
   CommentID: string
   CreateTime: number
@@ -8,4 +10,5 @@ export type CommentResponseDto = {
   AuthorEmail: string | undefined
   ParentCommentID: string | null
   Comments: CommentResponseDto[]
+  Type: CommentType
 }

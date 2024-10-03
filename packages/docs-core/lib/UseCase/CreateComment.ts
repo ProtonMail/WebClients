@@ -1,7 +1,7 @@
 import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import { Comment } from '../Models'
 import type { CommentInterface } from '@proton/docs-shared'
-import { ServerTime } from '@proton/docs-shared'
+import { CommentType, ServerTime } from '@proton/docs-shared'
 import { GenerateUUID } from '../Util/GenerateUuid'
 import type { EncryptComment } from './EncryptComment'
 import type { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
@@ -25,6 +25,7 @@ export class CreateComment implements UseCaseInterface<CommentInterface> {
     lookup: NodeMeta
     keys: DocumentKeys
     commentsState: LocalCommentsState
+    type: CommentType
   }): Promise<Result<CommentInterface>> {
     const thread = dto.commentsState.findThreadById(dto.threadID)
     if (!thread) {
@@ -40,6 +41,7 @@ export class CreateComment implements UseCaseInterface<CommentInterface> {
       dto.keys.userOwnAddress,
       [],
       true,
+      dto.type,
     )
 
     dto.commentsState.addComment(localComment, dto.threadID)
@@ -60,6 +62,7 @@ export class CreateComment implements UseCaseInterface<CommentInterface> {
       encryptedContent: encryptedValue,
       parentCommentId: null,
       authorEmail: dto.keys.userOwnAddress,
+      type: dto.type,
     })
     if (result.isFailed()) {
       metrics.docs_comments_error_total.increment({
@@ -86,6 +89,7 @@ export class CreateComment implements UseCaseInterface<CommentInterface> {
       emailToUse,
       [],
       false,
+      CommentType.Comment,
     )
     dto.commentsState.replacePlaceholderComment(localComment.id, comment)
 
