@@ -11,6 +11,7 @@ import type { WebsocketServiceInterface } from '../Services/Websockets/Websocket
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { ImageProxyParams } from '../Api/Types/ImageProxyParams'
 import type { CustomWindow } from './Window'
+import type { RecentDocumentsInterface } from '../Services/RecentDocuments/types'
 import type { MetricService } from '../Services/Metrics/MetricService'
 
 declare const window: CustomWindow
@@ -57,6 +58,10 @@ export class Application implements ApplicationInterface {
 
   public get websocketService(): WebsocketServiceInterface {
     return this.deps.get<WebsocketServiceInterface>(App_TYPES.WebsocketService)
+  }
+
+  public get recentDocumentsService(): RecentDocumentsInterface {
+    return this.deps.get<RecentDocumentsInterface>(App_TYPES.RecentDocumentsService)
   }
 
   public get isRunningInNativeMobileWeb(): boolean {
