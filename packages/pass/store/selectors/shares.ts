@@ -113,7 +113,7 @@ export const selectAutosaveVault = createSelector(
 
         if (autosaveVaultId) {
             const share = shares[autosaveVaultId];
-            if (share && isVaultShare(share)) return share;
+            if (share && isVaultShare(share) && isWritableVault(share)) return share;
         }
 
         return defaultVault;
