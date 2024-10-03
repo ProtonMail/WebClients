@@ -11,8 +11,14 @@ import { NoteNew } from '@proton/pass/components/Item/Note/Note.new';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { type ItemNewRouteParams } from '@proton/pass/components/Navigation/routing';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
+import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { itemCreationIntent } from '@proton/pass/store/actions';
-import { selectDefaultVault, selectMostRecentVaultShareID, selectVaultLimits } from '@proton/pass/store/selectors';
+import {
+    selectDefaultVault,
+    selectMostRecentVaultShareID,
+    selectShare,
+    selectVaultLimits,
+} from '@proton/pass/store/selectors';
 import type { ItemCreateIntent, ItemType } from '@proton/pass/types';
 
 const itemNewMap: { [T in ItemType]: FC<ItemNewViewProps<T>> } = {
@@ -32,10 +38,19 @@ export const ItemNew: FC = () => {
     const { type } = useParams<ItemNewRouteParams>();
     const { didDowngrade } = useSelector(selectVaultLimits);
 
-    /* if user downgraded - always auto-select the default vault id */
     const defaultVault = useSelector(selectDefaultVault);
-    const mostRecentVault = useSelector(selectMostRecentVaultShareID);
-    const shareId = didDowngrade ? defaultVault?.shareId : (selectedShareId ?? mostRecentVault);
+    const mostRecentVaultShareID = useSelector(selectMostRecentVaultShareID);
+    const selectedVault = useSelector(selectShare(selectedShareId));
+
+    const shareId = (() => {
+        /**  if user downgraded : always auto-select the default vault id */
+        if (didDowngrade) return defaultVault?.shareId;
+        /** If we have a selected share : ensure it is writable */
+        if (selectedShareId && selectedVault && isWritableVault(selectedVault)) return selectedShareId;
+        /** Else select the most recently used writable/own vault */
+        return mostRecentVaultShareID;
+    })();
+
     if (!shareId) history.goBack();
 
     const handleSubmit = (createIntent: ItemCreateIntent) => {
