@@ -41,8 +41,10 @@ export function $acceptSuggestion(suggestionID: string): boolean {
       parentNextSibling.remove()
     } else if (suggestionType === 'link-change') {
       $unwrapSuggestionNode(node)
+    } else if (suggestionType === 'style-change') {
+      $unwrapSuggestionNode(node)
     } else {
-      node.remove()
+      $unwrapSuggestionNode(node)
     }
   }
   return true
