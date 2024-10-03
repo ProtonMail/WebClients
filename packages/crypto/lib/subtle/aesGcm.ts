@@ -5,12 +5,20 @@ const IV_LENGTH_BYTES = 12;
 export const ENCRYPTION_ALGORITHM = 'AES-GCM';
 export type AesCryptoKey = CryptoKey;
 
+type AesGcmKeyUsage = 'decrypt' | 'encrypt';
+interface AesGcmKeyOptions {
+    /** allowed key operations */
+    keyUsage?: AesGcmKeyUsage[];
+    /** whether the key can be exported using `subtle.crypto.exportKey` */
+    extractable?: boolean;
+}
+
 /**
  * Import an AES-GCM key in order to use it with `encryptData` and `decryptData`.
  */
 export const importKey = async (
     key: Uint8Array,
-    keyUsage: KeyUsage[] = ['decrypt', 'encrypt']
+    keyUsage: AesGcmKeyUsage[] = ['decrypt', 'encrypt']
 ): Promise<AesCryptoKey> => {
     return crypto.subtle.importKey('raw', key, ENCRYPTION_ALGORITHM, false, keyUsage);
 };
@@ -20,6 +28,36 @@ export const importKey = async (
  * The key needs to be imported using `importKey` to used for `encryptData` and `decryptData`.
  */
 export const generateKey = (): Uint8Array => crypto.getRandomValues(new Uint8Array(KEY_LENGTH_BYTES));
+
+/**
+ * Use HKDF to derive AES-GCM key material from some high-entropy secret.
+ * NB: this is NOT designed to derive keys from relatively low-entropy inputs such as passwords.
+ * @param highEntropySecret - input key material for HKDF
+ * @param salt - HKDF salt
+ * @param info - context or application specific information to bind to the derived key
+ */
+export const deriveKey = async (
+    highEntropySecret: Uint8Array,
+    salt: Uint8Array,
+    info: Uint8Array,
+    { keyUsage = ['decrypt', 'encrypt'], extractable = false }: AesGcmKeyOptions = {}
+) => {
+    // This is meant more as a sanity check than a security safe-guard, since entropy might still be
+    // too low even for longer inputs
+    if (highEntropySecret.length < 16) {
+        throw new Error('Unexpected HKDF input size: secret input is too short');
+    }
+
+    const inputKeyMaterial = await crypto.subtle.importKey('raw', highEntropySecret, 'HKDF', false, ['deriveKey']);
+
+    return crypto.subtle.deriveKey(
+        { name: 'HKDF', salt, info, hash: 'SHA-256' },
+        inputKeyMaterial,
+        { name: ENCRYPTION_ALGORITHM, length: KEY_LENGTH_BYTES * 8 },
+        extractable,
+        keyUsage
+    );
+};
 
 /**
  * Encrypt data using AES-GCM

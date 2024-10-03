@@ -4,6 +4,7 @@ import chaiAsPromised from 'chai-as-promised';
 import {
     KEY_LENGTH_BYTES,
     decryptData,
+    deriveKey,
     encryptData,
     encryptDataWith16ByteIV,
     generateKey,
@@ -51,6 +52,37 @@ describe('Subtle - AES-GCM helpers', () => {
         await expect(decryptData(key, encryptedLegacy, context)).to.be.rejected;
         // expect success if support for 16-byte IV is explictly set
         const decrypted = await decryptData(key, encryptedLegacy, context, true);
+
+        expect(decrypted).to.deep.equal(data);
+    });
+
+    it('deriveKey - throws on short secret input', async () => {
+        const context = stringToUtf8Array('@proton/crypto gcm test');
+        const salt = crypto.getRandomValues(new Uint8Array(32));
+        await expect(deriveKey(crypto.getRandomValues(new Uint8Array(8)), salt, context)).to.be.rejectedWith(
+            /too short/
+        );
+    });
+
+    it('deriveKey - extractable key can be exported', async () => {
+        const context = stringToUtf8Array('@proton/crypto gcm test');
+        const salt = crypto.getRandomValues(new Uint8Array(32));
+        const hkdfInput = crypto.getRandomValues(new Uint8Array(16));
+
+        const key = await deriveKey(hkdfInput, salt, context, { extractable: true });
+        const exportedKey = new Uint8Array(await crypto.subtle.exportKey('raw', key));
+        expect(exportedKey).to.have.length(KEY_LENGTH_BYTES);
+    });
+
+    it('deriveKey/encryptData/decryptData - derived key can be used as-is', async () => {
+        const context = stringToUtf8Array('@proton/crypto gcm test');
+        const hkdfSalt = crypto.getRandomValues(new Uint8Array(32));
+        const hkdfInput = crypto.getRandomValues(new Uint8Array(16));
+
+        const key = await deriveKey(hkdfInput, hkdfSalt, context);
+        const data = stringToUtf8Array('hello world');
+        const encrypted = await encryptData(key, data, context);
+        const decrypted = await decryptData(key, encrypted, context);
 
         expect(decrypted).to.deep.equal(data);
     });
