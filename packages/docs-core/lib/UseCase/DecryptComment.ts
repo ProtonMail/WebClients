@@ -76,6 +76,7 @@ export class DecryptComment implements UseCaseInterface<Comment> {
         emailToUse,
         [],
         false,
+        dto.Type,
       ),
     )
   }

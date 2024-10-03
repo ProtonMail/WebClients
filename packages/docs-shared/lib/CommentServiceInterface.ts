@@ -16,9 +16,11 @@ export interface CommentControllerInterface {
     createMarkNode?: boolean,
   ): Promise<CommentThreadInterface | undefined>
 
-  createSuggestionThread(suggestionID: string): Promise<CommentThreadInterface | undefined>
+  createSuggestionThread(suggestionID: string, commentContent: string): Promise<CommentThreadInterface | undefined>
 
   createComment(content: string, threadID: string): Promise<CommentInterface | undefined>
+
+  createSuggestionSummaryComment(content: string, threadID: string): Promise<CommentInterface | undefined>
 
   editComment(threadID: string, commentID: string, content: string): Promise<boolean>
 

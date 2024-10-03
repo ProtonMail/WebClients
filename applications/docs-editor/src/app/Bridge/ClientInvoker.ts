@@ -69,8 +69,11 @@ export class ClientInvoker implements EditorRequiresClientMethods {
     return this.invokeClientMethod('createCommentThread', [commentContent, markID, createMarkNode])
   }
 
-  async createSuggestionThread(suggestionID: string): Promise<CommentThreadInterface | undefined> {
-    return this.invokeClientMethod('createSuggestionThread', [suggestionID])
+  async createSuggestionThread(
+    suggestionID: string,
+    commentContent: string,
+  ): Promise<CommentThreadInterface | undefined> {
+    return this.invokeClientMethod('createSuggestionThread', [suggestionID, commentContent])
   }
 
   async resolveThread(threadId: string): Promise<boolean> {

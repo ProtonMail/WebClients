@@ -45,6 +45,7 @@ import { LINK_CHANGE_COMMAND } from '../Link/LinkPlugin'
 import { $handleLinkChangeSuggestion } from './handleLinkChangeSuggestion'
 import { SET_SELECTION_STYLE_PROPERTY_COMMAND } from '../FormattingPlugin'
 import { $patchStyleAsSuggestion } from './patchStyleAsSuggestion'
+import { generateSuggestionSummary } from './generateSuggestionSummary'
 
 const LIST_TRANSFORMERS = [UNORDERED_LIST, ORDERED_LIST, CHECK_LIST]
 
@@ -137,8 +138,9 @@ export function SuggestionModePlugin({
             continue
           }
           suggestionModeLogger.info(`Creating new thread for suggestion ${id}`)
+          const content = JSON.stringify(generateSuggestionSummary(editor, markNodeMap, id))
           controller
-            .createSuggestionThread(id)
+            .createSuggestionThread(id, content)
             .then(() => {
               createdSuggestionIDs.delete(id)
               suggestionModeLogger.info(`Removed id ${id} from set ${[...createdSuggestionIDs]}`)

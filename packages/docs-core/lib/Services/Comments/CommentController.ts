@@ -9,7 +9,13 @@ import type {
   CommentMarkNodeChangeData,
   SuggestionThreadStateAction,
 } from '@proton/docs-shared'
-import { CommentsMessageType, CommentsEvent, BroadcastSource, CommentThreadState } from '@proton/docs-shared'
+import {
+  CommentsMessageType,
+  CommentsEvent,
+  BroadcastSource,
+  CommentThreadState,
+  CommentType,
+} from '@proton/docs-shared'
 import type { EncryptComment } from '../../UseCase/EncryptComment'
 import type { LoggerInterface } from '@proton/utils/logs'
 import { CreateRealtimeCommentPayload } from './CreateRealtimeCommentPayload'
@@ -146,9 +152,12 @@ export class CommentController implements CommentControllerInterface, InternalEv
     return thread
   }
 
-  async createSuggestionThread(suggestionID: string): Promise<CommentThreadInterface | undefined> {
+  async createSuggestionThread(
+    suggestionID: string,
+    commentContent: string,
+  ): Promise<CommentThreadInterface | undefined> {
     const threadResult = await this._createThread.execute({
-      text: '',
+      text: commentContent,
       keys: this.keys,
       lookup: this.document,
       commentsState: this.localCommentsState,
@@ -178,6 +187,34 @@ export class CommentController implements CommentControllerInterface, InternalEv
       keys: this.keys,
       lookup: this.document,
       commentsState: this.localCommentsState,
+      type: CommentType.Comment,
+    })
+
+    if (commentResult.isFailed()) {
+      this.logger.error(commentResult.getError())
+      return undefined
+    }
+
+    const thread = this.localCommentsState.findThreadById(threadID)
+    if (thread && thread.type === CommentThreadType.Suggestion) {
+      this.metricService.reportSuggestionsTelemetry(TelemetryDocsEvents.suggestion_commented)
+    }
+
+    const comment = commentResult.getValue()
+
+    this.broadcastCommentMessage(CommentsMessageType.AddComment, { comment: comment.asPayload(), threadID })
+
+    return comment
+  }
+
+  async createSuggestionSummaryComment(content: string, threadID: string): Promise<CommentInterface | undefined> {
+    const commentResult = await this._createComment.execute({
+      text: content,
+      threadID,
+      keys: this.keys,
+      lookup: this.document,
+      commentsState: this.localCommentsState,
+      type: CommentType.Suggestion,
     })
 
     if (commentResult.isFailed()) {
