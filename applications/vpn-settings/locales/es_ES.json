@@ -2852,10 +2852,10 @@
     },
     "familyOffer_2023:Info": {
       "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Solo una prueba gratuita por usuario. Después se aplican precios usuales."
+        "* Solo una prueba gratuita por usuario. El precio regular se aplica después."
       ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Tras abandonar tu plan, este usuario se moverá a ${ BRAND_NAME } Plan ilimitado con una prueba gratuita de 30 días.*"
+        "Después de abandonar el plan, este usuario se moverá al plan ${ BRAND_NAME } Unlimited con una prueba gratuita de 30 días.*"
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Asignamos ${ formattedStorage } de almacenamiento a la cuenta del administrador de forma predeterminada. Podrás gestionar más adelante el almacenamiento asignado para distribuirlo entre más usuarios."
@@ -8398,6 +8398,9 @@
       ],
       "/ month": [
         "/ mes"
+      ],
+      "/month": [
+        "/mes"
       ],
       "1 year": [
         "1 año"

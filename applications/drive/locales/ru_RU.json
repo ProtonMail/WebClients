@@ -2435,6 +2435,11 @@
         "Вы подписаны на ${ PLAN_NAMES[PLANS.PASS] } по специальной цене ${ price } в год. Перейдя на бесплатный план, вы навсегда потеряете скидку, даже если вы улучшите снова в будущем."
       ]
     },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Открыть в ${ DRIVE_SHORT_APP_NAME }"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Подробная история версий"
@@ -4296,6 +4301,9 @@
       "Change your password": [
         "Измените пароль"
       ],
+      "Check for malicious files": [
+        "Проверять наличие вредоносных файлов"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Проверка контакта ${ progress } из ${ max }..."
       ],
@@ -5229,6 +5237,9 @@
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Файл возможно был удалён, перемещён или стал недоступен. Обратитесь к владельцу файла."
       ],
+      "This folder is empty": [
+        "Эта папка пуста"
+      ],
       "This item already exists in your library": [
         "Этот элемент уже существует в вашей библиотеке"
       ],
@@ -5285,6 +5296,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources.": [
+        "Чтобы защитить вас, ${ DRIVE_APP_NAME } может сканировать ваши файлы с сохранением конфиденциальности и блокировать вредоносные файлы. Однако все же лучше загружать файлы только из надежных источников."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Чтобы импортировать события, сначала создайте календарь в ${ CALENDAR_APP_NAME }. Именно в нём события будут отображаться после импорта."

@@ -3374,6 +3374,9 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Είστε βέβαιος ότι θέλετε να διαγράψετε αυτή την ομάδα;"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Λάβετε υπόψη ότι εάν διαγράψετε την ομάδα ${ displayGroupName } (με διεύθυνση ${ displayGroupAddressEmail }), δε θα μπορείτε πλέον να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου χρησιμοποιώντας τη διεύθυνσή της."
       ]
     },
     "Delinquent modal title": {
@@ -3429,9 +3432,6 @@
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Ξεκλειδώστε απεριόριστους φακέλους, ετικέτες και περισσότερες premium λειτουργίες κατά την αναβάθμιση."
-      ],
-      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
-        "Εικονίδιο μεταπώλησης που περιέχει λογότυπο ${ BRAND_NAME } ακολουθούμενο από ένα σύμβολο συν"
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Μπορείτε να συνεχίσετε να προσκαλείτε φίλους, αλλά δεν θα μπορείτε να κερδίσετε περισσότερες πιστώσεις"
@@ -3941,11 +3941,6 @@
         "Ρύθμιση προώθησης μηνυμάτων ηλεκτρονικού ταχυδρομείου"
       ]
     },
-    "email_forwarding_2023: Description": {
-      "Unlock email forwarding to easily manage incoming information and more premium features when you upgrade.": [
-        "Ξεκλειδώστε την προώθηση μηνυμάτων ηλεκτρονικού ταχυδρομείου για εύκολη διαχείριση εισερχόμενων πληροφοριών και περισσότερων premium λειτουργιών κατά την αναβάθμιση."
-      ]
-    },
     "email_forwarding_2023: Error": {
       "Condition incomplete, please add a token": [
         "Η προϋπόθεση είναι ελλιπής, παρακαλούμε προσθέστε ένα διακριτικό"
@@ -4129,9 +4124,6 @@
       ]
     },
     "email_forwarding_2023: Title": {
-      "Automatically forward emails to other accounts": [
-        "Αυτόματη προώθηση μηνυμάτων ηλεκτρονικού ταχυδρομείου σε άλλους λογαριασμούς"
-      ],
       "Delete forwarding?": [
         "Διαγραφή προώθησης;"
       ],
@@ -6838,6 +6830,9 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Είστε βέβαιοι ότι θέλετε να καταργήσετε τον τομέα ${ boldDomain };"
       ],
+      "Ask your organization admin to setup Gateways.": [
+        "Ζητήστε από τον διαχειριστή του οργανισμού σας να ρυθμίσει τις Πύλες."
+      ],
       "Attention required": [
         "Χρειάζεται προσοχή"
       ],
@@ -8156,6 +8151,9 @@
       "SCIM token active": [
         "Ενεργό διακριτικό SCIM"
       ],
+      "Search by an email address to begin": [
+        "Αναζήτηση με βάση μια διεύθυνση ηλεκτρονικού ταχυδρομείου για να ξεκινήσετε"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Ασφαλίστε τον ${ BRAND_NAME } Λογαριασμό σας"
       ],
@@ -8387,6 +8385,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Η μορφή του αρχείου CSV είναι εσφαλμένη."
+      ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "Η δυνατότητα ομάδων δεν υποστηρίζεται στην τρέχουσα συνδρομή σας. Οι ομάδες που δημιουργήθηκαν προηγουμένως είναι απενεργοποιημένες και μπορούν να διαγραφούν μόνο."
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Ο σύνδεσμος αναφοράς ότι δε δημιουργήσατε ${ BRAND_NAME } Λογαριασμό έχει λήξει. Παρακαλούμε επικοινωνήστε με την ομάδα υποστήριξής μας για να επιλύσετε αυτό το ζήτημα."
@@ -12569,6 +12570,12 @@
       "Downloaded 2FA recovery codes": [
         "Λήψη κωδικών ανάκτησης 2FA"
       ],
+      "Email notifications have been disabled": [
+        "Οι ειδοποιήσεις μέσω ηλεκτρονικού ταχυδρομείου έχουν απενεργοποιηθεί"
+      ],
+      "Email notifications have been enabled": [
+        "Οι ειδοποιήσεις μέσω ηλεκτρονικού ταχυδρομείου έχουν ενεργοποιηθεί"
+      ],
       "Invalid code": [
         "Μη έγκυρος κωδικός"
       ],
@@ -13041,14 +13048,23 @@
       ]
     },
     "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify } τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας ${ email } για να ορίσετε την ταυτότητα του οργανισμού."
+      ],
       "Current organization identity": [
         "Ταυτότητα τρέχον οργανισμού"
+      ],
+      "Edit organization identity": [
+        "Επεξεργασία ταυτότητας οργανισμού"
       ],
       "New organization identity": [
         "Ταυτότητα νέου οργανισμού"
       ],
       "Organization identity": [
         "Ταυτότητα οργανισμού"
+      ],
+      "Organization identity updated": [
+        "Η ταυτότητα του οργανισμού ενημερώθηκε"
       ],
       "Verify": [
         "Επαλήθευση"
@@ -17590,6 +17606,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Αν έχετε αγοράσει έναν κωδικό δώρου ή έχετε λάβει ένα από την ομάδα υποστήριξης, μπορείτε να τον εισάγετε εδώ."
       ],
+      "IP address (Internet Service Provider)": [
+        "Διεύθυνση IP (Πάροχος Υπηρεσιών Διαδικτύου)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Τα μέλη που δε χρησιμοποιούν το 2FA θα λάβουν ένα email που θα τους ζητά να το ενεργοποιήσουν το συντομότερο δυνατό."
       ],
@@ -17776,6 +17795,10 @@
       ]
     },
     "unprivatization": {
+      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
+        "${ n } χρήστης έχει ενταχθεί στον οργανισμό σας μέσω της υπηρεσίας Παροχής Ταυτότητάς σας. Εγκρίνετε ή απορρίψτε τους λογαριασμούς του τώρα:",
+        "${ n } χρήστες έχουν ενταχθεί στον οργανισμό σας μέσω της υπηρεσίας Παροχής Ταυτότητάς σας. Εγκρίνετε ή απορρίψτε τους λογαριασμούς τους τώρα:"
+      ],
       "Administrator access enabled": [
         "Η πρόσβαση διαχειριστή ενεργοποιήθηκε"
       ],
@@ -17800,6 +17823,13 @@
       "Cancel": [
         "Ακύρωση"
       ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Δεν ήταν δυνατή η αυτόματη ενεργοποίηση της πρόσβασης διαχειριστή για τον ${ n } χρήστη, επειδή τα κλειδιά κρυπτογράφησης έχουν ενημερωθεί στο μεταξύ:",
+        "Δεν ήταν δυνατή η αυτόματη ενεργοποίηση της πρόσβασης διαχειριστή για τους ${ n } χρήστες, επειδή τα κλειδιά κρυπτογράφησης έχουν ενημερωθεί στο μεταξύ:"
+      ],
+      "Could not enable administrator access: ${ error }": [
+        "Δεν ήταν δυνατή η ενεργοποίηση της πρόσβασης διαχειριστή: ${ error }"
+      ],
       "Delete request": [
         "Διαγραφή αίτησης"
       ],
@@ -17811,6 +17841,9 @@
       ],
       "Enable administrator access": [
         "Ενεργοποίηση πρόσβασης διαχειριστή"
+      ],
+      "Enable manually": [
+        "Ενεργοποίηση με μη αυτόματο τρόπο"
       ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "Εάν χάσετε ποτέ την πρόσβαση στα διαπιστευτήριά σας, οι διαχειριστές του οργανισμού σας θα μπορούν να επαναφέρουν τον κωδικό πρόσβασής σας και να επαναφέρουν την πρόσβαση στον λογαριασμό σας."

@@ -186,7 +186,7 @@
         "Desactivar en su lugar"
       ],
       "Disable this alias to stop receiving emails sent to this alias": [
-        "Deshabilitar este alias para dejar de recibir correos electrónicos enviados a este alias"
+        "Desactivar este alias y dejar de recibir correos enviados al mismo"
       ],
       "Discard": [
         "Descartar"
@@ -213,7 +213,7 @@
         "Editar la caja fuerte"
       ],
       "Enable this alias to receive emails sent to this alias": [
-        "Habilitar este alias para recibir correos electrónicos enviados a este alias"
+        "Activar este alias para recibir correos enviados al mismo"
       ],
       "Entire vault": [
         "Caja fuerte completa"
@@ -638,7 +638,7 @@
         "[Error] No se ha podido analizar un elemento."
       ],
       "Alias could not be updated at the moment. Please try again later": [
-        "Los alias no se pueden actualizar en este momento. Inténtalo más tarde"
+        "Los alias no se pueden actualizar en este momento. Inténtalo más tarde."
       ],
       "Alias options could not be resolved": [
         "No se han podido resolver las opciones de alias."
@@ -978,6 +978,17 @@
         "Se ha producido un error."
       ]
     },
+    "FamilyPlanPromo2024": {
+      "Get it for ${ price }/month": [
+        "Obtenlo por ${ price }/mes"
+      ],
+      "Introducing ${ planNameJSX }": [
+        "Presentamos ${ planNameJSX }"
+      ],
+      "Limited-time offer only.": [
+        "Oferta solo por tiempo limitado."
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -1118,19 +1129,19 @@
         "¡Las funciones de administración de alias de SimpleLogin llegarán pronto!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
-        "Alias deshabilitado satisfactoriamente. No recibirás correos electrónicos de ${ item.aliasEmail }"
+        "Se ha desactivado el alias. Ya no recibirás correos enviados a ${ item.aliasEmail }."
       ],
       "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
-        "Alias habilitado satisfactoriamente. Ahora puedes recibir correos electrónicos de ${ item.aliasEmail }"
+        "Se ha activado el alias. Ahora recibirás correos enviados a ${ item.aliasEmail }."
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
         "La sincronización de alias entre ${ BRAND_NAME } y SimpleLogin está activa."
       ],
       "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
-        "Los alias en la papelera seguirán reenviando correos electrónicos. Si quieres dejar de recibir correos electrónicos de esta dirección, deshabilítala."
+        "Los alias en la papelera seguirán reenviando correos electrónicos. Si quieres dejar de recibir correos electrónicos de esta dirección, desactívala."
       ],
       "Aliases out of sync (${ aliasCount })": [
-        "(${ aliasCount }) alias sin sincronizar"
+        "Alias no sincronizados (${ aliasCount })"
       ],
       "All breaches for this address were resolved": [
         "Todas las vulneraciones han sido resueltas para esta dirección."
@@ -1810,11 +1821,11 @@
         "Estamos teniendo problemas en sincronizar los datos a tu almacenamiento local. Asegúrate de tener suficiente espacio en el disco para que ${ PASS_SHORT_APP_NAME } funcione correctamente."
       ],
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Hemos detectado que tienes ${ aliasCount }  alias en SimpleLogin pero no aparece en ${ PASS_APP_NAME }. ¿Quieres importarlo?",
-        "Hemos detectado que tienes ${ aliasCount }  alias en SimpleLogin pero no aparecen en ${ PASS_APP_NAME }. ¿Quieres importarlos?"
+        "Hemos detectado que tienes ${ aliasCount } alias en SimpleLogin pero no aparece en ${ PASS_APP_NAME }. ¿Quieres importarlo?",
+        "Hemos detectado que tienes ${ aliasCount } alias en SimpleLogin pero no aparecen en ${ PASS_APP_NAME }. ¿Quieres importarlos?"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
-        "Cuando creas/editas un inicio de sesión en ${ PASS_APP_NAME } el campo 'nombre de usuario' siempre es visible."
+        "Cuando se cree o edite un inicio de sesión en ${ PASS_APP_NAME }, la entrada de «nombre de usuario» siempre estará visible."
       ],
       "You are about to create:": [
         "Vas a crear:"
@@ -1988,7 +1999,7 @@
         "Por orden alfabético"
       ],
       "Always show username field": [
-        "Mostrar el nombre de usuario siempre"
+        "Mostrar siempre el campo nombre de usuario"
       ],
       "Application logs": [
         "Registros de la aplicación"
@@ -2019,6 +2030,9 @@
       ],
       "Birthdate": [
         "Fecha de nacimiento"
+      ],
+      "Browser settings": [
+        "Ajustes del navegador"
       ],
       "Capital letters (A-Z)": [
         "Letras mayúsculas (A-Z)"
@@ -2132,7 +2146,7 @@
         "Vaciar la papelera"
       ],
       "Enter email or username": [
-        "Introduzca correo electrónico o nombre de usuario"
+        "Ingresar un correo o un nombre de usuario"
       ],
       "Expiration date": [
         "Fecha de expiración"
@@ -2441,7 +2455,7 @@
         "Seleccionar el idioma preferido"
       ],
       "Select the vault where SimpleLogin aliases will be imported into": [
-        "Seleccionar la bóveda de SimpleLogin donde se importarán los alias"
+        "Selecciona la caja fuerte donde se importarán los alias de SimpleLogin"
       ],
       "Select your password manager": [
         "Selecciona tu gestor de contraseñas"
@@ -2555,6 +2569,9 @@
       "Update": [
         "Actualizar"
       ],
+      "Use ${ PASS_APP_NAME } as your browser's default password manager": [
+        "Usa ${ PASS_APP_NAME } como tu gestor de contraseñas por defecto para tu navegador"
+      ],
       "Username": [
         "Nombre de usuario"
       ],
@@ -2599,6 +2616,9 @@
       ],
       "You are about to create": [
         "Estás a punto de crear"
+      ],
+      "Your browser will stop using its built-in password manager.": [
+        "El navegador dejará de usar su gestor de contraseñas integrado."
       ],
       "ZIP or Postal code": [
         "Código postal"
@@ -2732,7 +2752,7 @@
     },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
-        "Sincronización de alias habilitado satisfactoriamente. Los alias de SimpleLogin pueden tardar un tiempo en sincronizarse"
+        "Se ha activado la sincronización de alias. Los alias de SimpleLogin puede tomar un tiempo en sincronizarse."
       ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Las cajas fuertes no pueden contener más de ${ vault.targetMaxMembers } usuario.",
@@ -3118,7 +3138,7 @@
         "El prefijo del alias no puede tener más de 40 caracteres."
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
-        "El alias ${ aliasEmail } está siendo usado por el inicio de sesión ${ relatedLoginName }."
+        "Este alias «${ aliasEmail }» actualmente se usa en el inicio de sesión «${ relatedLoginName }»."
       ],
       "Title is required": [
         "Título no puede estar vacío"

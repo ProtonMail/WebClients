@@ -1195,6 +1195,9 @@
       "Start setup": [
         "Démarrer la configuration"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "À partir de ${ priceUnlimited }"
+      ],
       "Stay": [
         "Rester"
       ],
@@ -1308,6 +1311,9 @@
       ],
       "Upgrade now": [
         "Changer d'abonnement"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Je passe à ${ BRAND_NAME } Unlimited"
       ],
       "Upload picture": [
         "Importer une image"
@@ -3409,11 +3415,23 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } dans les paramètres."
       ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } protège votre compte grâce à une surveillance dédiée 24h/24 et 7j/7 des activités suspectes, incluant l'intervention de spécialistes en sécurité."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "L'authentification A2F ajoute une couche de sécurité supplémentaire, empêchant tout accès non autorisé."
       ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Supprimez automatiquement les messages indésirables et ceux dans la corbeille, et débloquez davantage de fonctionnalités premium lorsque vous améliorez votre abonnement."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Effacez automatiquement les e-mails déplacés dans la corbeille et le dossier Indésirables/spam de plus de 30 jours."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Triez automatiquement vos messages entrants avant qu'ils n'arrivent dans votre boite de réception."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Créez autant de labels et de dossiers dont vous avez besoin pour garder votre boite de réception organisée."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Déchiffrement des contacts en cours… Cela peut prendre quelques minutes. Une fois le processus terminé, vous pourrez télécharger le fichier avec tous vos contacts exportés."
@@ -3423,6 +3441,9 @@
       ],
       "Designed for users seeking heightened protection for their accounts.": [
         "Conçu pour les utilisateurs qui ont besoin d'une protection renforcée de leurs comptes."
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "Vous ne voulez pas envoyer ce message maintenant ? Programmez-le à l'heure précise où vous souhaitez l'envoyer."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Chiffrement et importation des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
@@ -3485,6 +3506,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Activez la protection contre le suivi dans les messages pour empêcher les annonceurs et toute autre personne de suivre votre localisation et vos activités en ligne."
       ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Débloquez ${ activatePmUser } et bénéficiez d'une adresse e-mail originale et facile à saisir."
+      ],
       "Unlock custom message scheduling and more premium features when you upgrade.": [
         "Débloquez l'envoi programmé de messages personnalisé et d'autres fonctionnalités en passant à un abonnement supérieur."
       ],
@@ -3515,6 +3539,12 @@
       "When do you want your message to be sent?": [
         "Quand voulez-vous que votre message soit envoyé ?"
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Grâce aux groupes de contacts, vous pouvez envoyer des e-mails à toutes les personnes du groupe en un seul clic."
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "Grâce à la mise en attente personnalisée, vous pouvez faire en sorte de ne plus voir certains messages et de les voir réapparaitre à un meilleur moment."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Vous pouvez importer des événements au format iCal (fichier ICS). Le fichier peut avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et contenir jusqu'à ${ MAX_IMPORT_EVENTS_STRING } événements. Si votre fichier est plus volumineux, nous vous invitons à le diviser en plusieurs fichiers plus petits."
       ],
@@ -3526,6 +3556,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Vos méthodes de récupération de compte et de données sont définies."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -9001,8 +9034,14 @@
       "Get started for ${ price }": [
         "Commencez pour ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "À partir de ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Changer d'abonnement"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Je passe à ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -9576,6 +9615,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Profitez de Mail Plus pour ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "À partir de ${ price }"
       ]
     },
     "new_plans: title": {
@@ -11158,6 +11200,9 @@
       "/ month": [
         "/mois"
       ],
+      "/month": [
+        "/mois"
+      ],
       "1 year": [
         "1 an"
       ],
@@ -12441,6 +12486,9 @@
       "Attachments": [
         "Pièces jointes"
       ],
+      "Bad time for this email?": [
+        "Le moment est mal choisi pour cet e-mail ?"
+      ],
       "BCC": [
         "Cci"
       ],
@@ -12665,6 +12713,9 @@
       "External encryption": [
         "Chiffrement externe"
       ],
+      "Filter for more focus": [
+        "Filtrez vos messages pour une meilleure concentration"
+      ],
       "Filter name cannot contain only spaces": [
         "Le nom du filtre ne doit pas contenir uniquement des espaces."
       ],
@@ -12691,6 +12742,9 @@
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Dissimulez votre e-mail avec ${ PASS_APP_NAME }"
+      ],
+      "High security for your account": [
+        "Une sécurité renforcée pour votre compte"
       ],
       "How to update your email address": [
         "Comment mettre à jour votre adresse e-mail ?"
@@ -12831,6 +12885,9 @@
       "Need more aliases?": [
         "Besoin de plus d'alias ?"
       ],
+      "Need more labels or folders?": [
+        "Vous avez besoin de plus de dossiers ou de labels ?"
+      ],
       "Network error": [
         "Erreur réseau"
       ],
@@ -12852,6 +12909,9 @@
       "No breaches detected": [
         "Aucune fuite de données n'a été détectée."
       ],
+      "No need to empty the trash": [
+        "Pas besoin de vider la corbeille"
+      ],
       "No trackers found": [
         "Aucun traqueur n'a été trouvé."
       ],
@@ -12860,6 +12920,9 @@
       ],
       "Notes": [
         "Notes"
+      ],
+      "One email, many recipients": [
+        "Un seul e-mail, plusieurs destinataires"
       ],
       "Open actions dropdown": [
         "Ouvrir le menu déroulant des actions"
@@ -12936,8 +12999,14 @@
       "Request new code": [
         "Demander un nouveau code"
       ],
+      "Same inbox, shorter email address": [
+        "La même boite de réception et une adresse e-mail plus courte"
+      ],
       "Save time with email filters": [
         "Gagnez du temps avec les filtres de messagerie"
+      ],
+      "Schedule now, send later": [
+        "Programmez maintenant et envoyez plus tard"
       ],
       "Schedule send": [
         "Programmer l'envoi"
