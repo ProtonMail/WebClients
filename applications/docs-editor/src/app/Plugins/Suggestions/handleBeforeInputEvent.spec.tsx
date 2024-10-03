@@ -1082,5 +1082,66 @@ describe('$handleBeforeInputEvent', () => {
         expect(insertSuggestion?.getTextContent()).toBe('World')
       })
     })
+
+    describe('insertReplacementText', () => {
+      describe('Existing insert suggestion', () => {
+        let text!: TextNode
+
+        beforeEach(async () => {
+          await update(() => {
+            const paragraph = $createParagraphNode()
+            text = $createTextNode('This wrogn word')
+            paragraph.append($createSuggestionNode('test', 'insert').append(text))
+            text.select(6, 6)
+            $getRoot().append(paragraph)
+          })
+          await update(() => {
+            const textNode = editor!.getElementByKey(text.__key)?.childNodes[0]
+            if (!textNode) {
+              throw new Error('No element')
+            }
+            const startOffset = 'This '.length
+            const endOffset = startOffset + 'wrogn'.length
+            $handleBeforeInputEvent(
+              editor!,
+              {
+                inputType: 'insertReplacementText',
+                data: 'wrong',
+                dataTransfer: null,
+                getTargetRanges: () => {
+                  return [
+                    new StaticRange({
+                      startContainer: textNode,
+                      startOffset,
+                      endContainer: textNode,
+                      endOffset,
+                    }),
+                  ]
+                },
+              } as InputEvent,
+              onSuggestionCreation,
+            )
+          })
+        })
+
+        test('Existing text node should be updated with correct text', () => {
+          editor!.read(() => {
+            expect(text.getTextContent()).toBe('This wrong word')
+          })
+        })
+
+        test('Selection should be moved to end of inserted word', () => {
+          editor!.read(() => {
+            const selection = $getSelection()
+            if (!$isRangeSelection(selection)) {
+              throw new Error('Selection is not range selection')
+            }
+            expect(selection.anchor.key).toBe(selection.focus.key)
+            expect(selection.anchor.offset).toBe(selection.focus.offset)
+            expect(selection.anchor.offset).toBe('This wrong'.length)
+          })
+        })
+      })
+    })
   })
 })
