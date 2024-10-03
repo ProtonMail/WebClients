@@ -1,9 +1,10 @@
 import { $isListItemNode, $isListNode } from '@lexical/list'
 import type { ElementNode } from 'lexical'
-import { $nodesOfType, $isElementNode } from 'lexical'
+import { $nodesOfType, $isElementNode, $isTextNode } from 'lexical'
 import { $unwrapSuggestionNode } from './Utils'
 import { ProtonNode, $isSuggestionNode } from './ProtonNode'
 import { $createLinkNode, $isLinkNode } from '@lexical/link'
+import { $patchStyleText } from '@lexical/selection'
 
 export function $rejectSuggestion(suggestionID: string): boolean {
   const nodes = $nodesOfType(ProtonNode)
@@ -20,6 +21,23 @@ export function $rejectSuggestion(suggestionID: string): boolean {
       node.remove()
     } else if (suggestionType === 'delete') {
       $unwrapSuggestionNode(node)
+    } else if (suggestionType === 'style-change') {
+      const children = node.getChildren()
+      $unwrapSuggestionNode(node)
+      const changedProperties = node.__properties.nodePropertiesChanged
+      if (!changedProperties) {
+        continue
+      }
+      for (const child of children) {
+        if (!$isElementNode(child) && !$isTextNode(child)) {
+          continue
+        }
+        const selectionToPatch = child.select(
+          0,
+          $isElementNode(child) ? child.getChildrenSize() : child.getTextContentSize(),
+        )
+        $patchStyleText(selectionToPatch, changedProperties)
+      }
     } else if (suggestionType === 'property-change') {
       const children = node.getChildren()
       const changedProperties = node.__properties.nodePropertiesChanged
