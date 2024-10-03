@@ -3735,7 +3735,7 @@
         "El documento está en la papelera"
       ],
       "Document moved to trash": [
-        "Documento movido a la papelera"
+        "Se movió el documento a la papelera."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "¿No aparece nada? No olvide desactivar los bloqueadores de ventanas emergentes."
@@ -6125,6 +6125,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Obtenga Mail Plus por ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "A partir de ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7320,6 +7323,9 @@
       "${ n } month": [
         "${ n } mes",
         "${ n } meses"
+      ],
+      "/month": [
+        "/mes"
       ],
       "1 year": [
         "1 año"

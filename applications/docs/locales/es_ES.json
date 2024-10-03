@@ -537,6 +537,9 @@
       "Start import": [
         "Iniciar importación"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "A partir de ${ priceUnlimited }"
+      ],
       "Stay": [
         "Permanecer"
       ],
@@ -2249,10 +2252,10 @@
         "Se ha producido un error al intentar duplicar el documento. Inténtalo de nuevo."
       ],
       "An error occurred while attempting to restore the document. Please try again.": [
-        "Ha ocurrido un error intentando restaurar el documento. Inténtalo de nuevo."
+        "Se ha producido un error al intentar restaurar el documento. Inténtalo de nuevo."
       ],
       "An error occurred while attempting to trash the document. Please try again.": [
-        "Ha ocurrido un error intentando eliminar el documento. Inténtalo de nuevo."
+        "Se ha producido un error al intentar enviar el documento a la papelera. Inténtalo de nuevo."
       ],
       "An error occurred while creating a new document. Please try again.": [
         "Se ha producido un error al crear un documento. Inténtalo de nuevo."
@@ -3434,10 +3437,10 @@
     },
     "Info": {
       "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
-        "\"${ documentTitle }\" ha sido movido a la papelera. Permanecerá ahí hasta que lo restaures o elimines permanentemente."
+        "Se ha movido «${ documentTitle }» ha sido movido a la papelera. Permanecerá ahí hasta que lo restaures o lo elimines permanentemente."
       ],
       "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
-        "\"${ documentTitle }\" está en la papelera y permanecerá ahí hasta que lo elimines permanentemente."
+        "«${ documentTitle }» está en la papelera y se mantendrá ahí hasta que lo elimines permanentemente."
       ],
       "${ addressCount } email address": [
         "${ addressCount } dirección de correo electrónico",
@@ -3732,7 +3735,7 @@
         "El documento está en la papelera."
       ],
       "Document moved to trash": [
-        "Documento movido a la papelera"
+        "Se ha movido el documento a la papelera."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "¿No aparece nada? No olvides desactivar los bloqueadores de ventanas emergentes."
@@ -6065,6 +6068,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Disfruta de Mail Plus por ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "A partir de ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7260,6 +7266,9 @@
       "${ n } month": [
         "${ n } mes",
         "${ n } meses"
+      ],
+      "/month": [
+        "/mes"
       ],
       "1 year": [
         "1 año"
