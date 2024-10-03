@@ -221,7 +221,7 @@
         "Haz clic aquí."
       ],
       "Click to copy ${ defaultEmailAddress } to clipboard": [
-        "Haz clic para copiar ${ defaultEmailAddress } al portapapeles"
+        "Haz clic para copiar ${ defaultEmailAddress } al portapapeles."
       ],
       "Close": [
         "Cerrar"
@@ -1194,6 +1194,9 @@
       ],
       "Start setup": [
         "Iniciar la configuración"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "A partir de ${ priceUnlimited }"
       ],
       "Stay": [
         "Permanecer"
@@ -9579,6 +9582,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Disfruta de Mail Plus por ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "A partir de ${ price }"
       ]
     },
     "new_plans: title": {
@@ -9978,7 +9984,7 @@
         "Bloquea los remitentes no deseados"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "Borra los correos electrónicos de spam eliminados después de 30 días."
+        "Borra los correos electrónicos eliminados y spam después de 30 días."
       ],
       "Congratulations on choosing privacy": [
         "Felicitaciones por elegir la privacidad"
@@ -10056,7 +10062,7 @@
         "Te damos la bienvenida a ${ MAIL_APP_NAME }"
       ],
       "Where privacy is default.": [
-        "Dónde la privacidad es por defecto."
+        "Donde la privacidad es por defecto."
       ]
     },
     "Onboarding Proton": {
@@ -11161,6 +11167,9 @@
       "/ month": [
         "/ mes"
       ],
+      "/month": [
+        "/mes"
+      ],
       "1 year": [
         "1 año"
       ],
@@ -11297,7 +11306,7 @@
     },
     "Step": {
       "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
-        "Introduce tu dirección ${ MAIL_APP_NAME } como nueva dirección y guarda, confirma o verifica el cambio"
+        "Introduce tu dirección ${ MAIL_APP_NAME } como nueva dirección y guarda, confirma o verifica el cambio."
       ],
       "In the account settings, look for the option to edit or change your email address ": [
         "En los ajustes de la cuenta, busca la opción editar o cambia tu dirección de correo electrónico "
@@ -12444,6 +12453,9 @@
       "Attachments": [
         "Archivos adjuntos"
       ],
+      "Bad time for this email?": [
+        "¿Mal momento para este correo?"
+      ],
       "BCC": [
         "CCO"
       ],
@@ -12834,6 +12846,9 @@
       "Need more aliases?": [
         "¿Necesitas más alias?"
       ],
+      "Need more labels or folders?": [
+        "¿Necesitas más etiquetas o carpetas?"
+      ],
       "Network error": [
         "Error de red"
       ],
@@ -12941,6 +12956,9 @@
       ],
       "Save time with email filters": [
         "Ahorra tiempo con filtros de correo."
+      ],
+      "Schedule now, send later": [
+        "Programa ahora, envía después"
       ],
       "Schedule send": [
         "Programar envío"

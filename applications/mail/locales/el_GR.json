@@ -9921,6 +9921,9 @@
       "Finance": [
         "Οικονομικά"
       ],
+      "I have moved my logins to ${ BRAND_NAME }": [
+        "Έχω μετακινήσει τα στοιχεία σύνδεσής μου στο ${ BRAND_NAME }"
+      ],
       "Privacy for all your online accounts": [
         "Απόρρητο για όλους τους λογαριασμούς σας στο διαδίκτυο"
       ],
@@ -9929,9 +9932,24 @@
       ],
       "Social media": [
         "Μέσα κοινωνικής δικτύωσης"
+      ],
+      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
+        "Χρησιμοποιήστε τη ${ MAIL_APP_NAME } διεύθυνση σας για να συνδεθείτε σε ηλεκτρονικές υπηρεσίες και να αποφύγετε την παρακολούθηση και το προφίλ. Αλλάξτε το email σας για δημοφιλείς υπηρεσίες τώρα. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "${ advancedEncryptionTitle } διασφαλίζει ότι μόνο εσείς και οι προοριζόμενοι παραλήπτες μπορείτε να έχετε πρόσβαση στα μηνύματα ηλεκτρονικού ταχυδρομείου σας."
+      ],
+      "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
+        "${ industryLeadingSpamProtectionTitle } εμποδίζει τα μηνύματα ηλεκτρονικού ταχυδρομείου απάτης να φτάσουν ποτέ στα εισερχόμενά σας."
+      ],
+      "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
+        "${ protectionFromTrackersTitle } σημαίνει ότι δεν ακολουθείται πλέον στο διαδίκτυο."
+      ],
+      "Access email and calendar right from your desktop with the desktop app.": [
+        "Αποκτήστε πρόσβαση στο ηλεκτρονικό ταχυδρομείο και το ημερολόγιο απευθείας από την επιφάνεια εργασίας σας με την εφαρμογή επιφάνειας εργασίας."
+      ],
       "Activate premium features": [
         "Ενεργοποιήστε premium χαρακτηριστικά"
       ],
@@ -9974,26 +9992,47 @@
       "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
         "Τόσο ισχυρή κρυπτογράφηση, που μόνο εσείς και οι παραλήπτες για τους οποίους προορίζεστε μπορείτε να δείτε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας. ${ kbLinkEncryption }"
       ],
+      "Fixed and focused": [
+        "Σταθερό και εστιασμένο"
+      ],
       "For your eyes only": [
         "Μόνο για τα μάτια σας"
       ],
       "Forward Gmail messages to your inbox.": [
         "Προωθήστε μηνύματα Gmail στα εισερχόμενά σας."
       ],
+      "Get notified if your password is compromised.": [
+        "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας έχει παραβιαστεί."
+      ],
       "Get the desktop app": [
         "Λήψη της εφαρμογής για υπολογιστές"
+      ],
+      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
+        "Αποκτήστε την εφαρμογή για κινητά από το ${ mobileAppAppStoreLink } ή ${ mobileAppGooglePlayLink }."
       ],
       "Google Play": [
         "Google Play"
       ],
+      "Industry-leading spam protection": [
+        "Κορυφαία στον κλάδο προστασία από ανεπιθύμητα μηνύματα"
+      ],
       "Let's get started": [
         "Ας αρχίσουμε"
+      ],
+      "Make the most of your paid plan.": [
+        "Αξιοποιήστε στο έπακρο το πρόγραμμα σας επί πληρωμή."
       ],
       "Maybe later": [
         "Ίσως αργότερα"
       ],
+      "More ways to experience ${ MAIL_APP_NAME }": [
+        "Περισσότεροι τρόποι να βιώσετε το ${ MAIL_APP_NAME }"
+      ],
       "Next": [
         "Επόμενο"
+      ],
+      "On the move": [
+        "Εν κινήσει"
       ],
       "Protection from trackers": [
         "Προστασία από ιχνηλάτες"
@@ -10001,8 +10040,17 @@
       "Skip": [
         "Παράλειψη"
       ],
+      "Start using ${ BRAND_NAME }": [
+        "Αρχίστε να χρησιμοποιείτε το ${ BRAND_NAME }"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Ξεκινήστε να χρησιμοποιείτε τη συντομότερη, πιο πιασάρικη έκδοση της διεύθυνσης ηλεκτρονικού ταχυδρομείου σας."
+      ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "Σταματάμε τους διαφημιζόμενους και τους συλλέκτες δεδομένων από το να δημιουργούν το προφίλ σας. ${ kbLinkPrivacy }"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Καλώς ήρθατε στο ${ MAIL_APP_NAME }"
       ],
       "Where privacy is default.": [
         "Όπου το απόρρητο είναι προεπιλεγμένο."
@@ -11245,11 +11293,17 @@
       ]
     },
     "Step": {
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "Εισαγάγετε τη ${ MAIL_APP_NAME } διεύθυνση σας ως τη νέα διεύθυνση και αποθηκεύστε, επιβεβαιώστε ή επαληθεύστε την αλλαγή"
+      ],
       "In the account settings, look for the option to edit or change your email address ": [
         "Στις ρυθμίσεις λογαριασμού, αναζητήστε την επιλογή επεξεργασίας ή αλλαγής της διεύθυνσης ηλεκτρονικού ταχυδρομείου σας "
       ],
       "Select service to update": [
         "Επιλέξτε υπηρεσία για ενημέρωση"
+      ],
+      "Sign in to the service": [
+        "Συνδεθείτε στην υπηρεσία"
       ]
     },
     "Step in filter modal": {
