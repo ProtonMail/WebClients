@@ -199,16 +199,16 @@ export const getLocalRedirect = (location: H.Location) => {
     if (!path) {
         return undefined;
     }
-    const trimmedPathname = stripLeadingAndTrailingSlash(stripLocalBasenameFromPathname(path));
-    if (!trimmedPathname) {
-        return undefined;
-    }
     // Special case to not add the slug...
     if ([SETUP_ADDRESS_PATH, SECURITY_CHECKUP_PATHS.ROOT].some((p) => path.includes(p))) {
         return {
             path,
             toApp: DEFAULT_APP,
         };
+    }
+    const trimmedPathname = stripLeadingAndTrailingSlash(stripLocalBasenameFromPathname(location.pathname));
+    if (!trimmedPathname) {
+        return undefined;
     }
     const toApp = getAppFromPathname(trimmedPathname);
     if (!toApp) {
