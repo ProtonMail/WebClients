@@ -623,6 +623,7 @@ export function useLinkInner(
                                             linkId: encryptedLink.linkId,
                                             revisionId: revisionId || encryptedLink.activeRevision?.id,
                                         },
+                                        extra: { e: nameResult.reason },
                                     },
                                     'Decryption error'
                                 )
@@ -670,6 +671,7 @@ export function useLinkInner(
                                             linkId: encryptedLink.linkId,
                                             revisionId: revisionId || encryptedLink.activeRevision?.id,
                                         },
+                                        extra: { e: xattrResult.reason },
                                     },
                                     'Decryption error'
                                 )
