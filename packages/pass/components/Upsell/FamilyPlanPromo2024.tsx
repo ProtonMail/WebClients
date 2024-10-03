@@ -46,7 +46,6 @@ export const FamilyPlanPromo2024: FC<BaseSpotlightMessage> = ({ onClose = noop }
         coupon: cohort === FamilyPlanCohort.Cohort1 ? 'PASSEARLYSUPPORTER' : 'PASSFAMILYLAUNCH',
         cycle: '12',
         offer: true,
-        path: 'pass/dashboard',
         plan: 'passfamily2024',
         upsellRef: UpsellRef.PASS_FAMILY_PLAN_2024,
         email: user?.Email,
