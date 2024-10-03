@@ -47,7 +47,7 @@ export const FamilyPlanPromo2024: FC<BaseSpotlightMessage> = ({ onClose = noop }
         cycle: '12',
         offer: true,
         plan: 'passfamily2024',
-        upsellRef: UpsellRef.PASS_FAMILY_PLAN_2024,
+        upsellRef: cohort === FamilyPlanCohort.Cohort1 ? UpsellRef.PASS_FAMILY_1LT_299 : UpsellRef.PASS_FAMILY_FREE_399,
         email: user?.Email,
     });
 
