@@ -479,14 +479,14 @@ const BasePublicApp = ({ onLogin }: Props) => {
             const forkParameters = newForkState.payload.forkParameters;
             const autoSignIn = type === GetActiveSessionType.AutoPick;
 
-            if (autoSignIn && getShouldReAuth(forkParameters, session)) {
-                const reAuthState: ReAuthState = { session, reAuthType: forkParameters.promptType };
-                setLocationState({ type: 'reauth', payload: reAuthState });
-                history.replace(paths.reauth);
-                return inputResult;
-            }
-
             if (autoSignIn && forkParameters.forkType === undefined) {
+                if (getShouldReAuth(forkParameters, session)) {
+                    const reAuthState: ReAuthState = { session, reAuthType: forkParameters.promptType };
+                    setLocationState({ type: 'reauth', payload: reAuthState });
+                    history.replace(paths.reauth);
+                    return inputResult;
+                }
+
                 return handleProduceFork(
                     {
                         type: SSOType.Proton,
