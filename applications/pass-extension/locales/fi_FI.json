@@ -1159,6 +1159,9 @@
       "Automatically copy the generated password to the clipboard": [
         "Kopioi luotu salasana leikepöydälle automaattisesti."
       ],
+      "Autosaved on ${ url }": [
+        "Tallennettiin automaattisesti osoitteesta ${ url }"
+      ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Ennen kuin viet tietosi tässä muodossa, avaa Safarin asetukset -> \"Yleiset\" -välilehti -> poista asetus \"Avaa turvalliset tiedostot lataamisen jälkeen\" käytöstä. Tämä estää Safaria purkamasta vietyjä tiedostoja virheellisesti."
       ],
@@ -2014,6 +2017,9 @@
       "Birthdate": [
         "Syntymäpäivä"
       ],
+      "Browser settings": [
+        "Selaimen asetukset"
+      ],
       "Capital letters (A-Z)": [
         "Isot kirjaimet (A-Z)"
       ],
@@ -2549,6 +2555,9 @@
       "Update": [
         "Päivitä"
       ],
+      "Use ${ PASS_APP_NAME } as your browser's default password manager": [
+        "Käytä ${ PASS_APP_NAME } selaimesi oletussovelluksena salasanojen hallintaan"
+      ],
       "Username": [
         "Käyttäjätunnus"
       ],
@@ -2593,6 +2602,9 @@
       ],
       "You are about to create": [
         "Luot aliasta"
+      ],
+      "Your browser will stop using its built-in password manager.": [
+        "Selaimesi lopettaa käyttämästä sen sisäänrakennettua salasanojen hallintaa"
       ],
       "ZIP or Postal code": [
         "Postinumero"
