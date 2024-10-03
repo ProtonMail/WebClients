@@ -1,39 +1,36 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
-import { Application } from '@proton/docs-core'
-import { useApi, useConfig } from '@proton/components/hooks'
-import { useAuthentication } from '@proton/components'
-import { DocsLayout } from '../Components'
-import { Route, Switch } from 'react-router-dom'
-import ApplicationProvider from './ApplicationProvider'
-import { DocumentViewer } from '../Components/DocumentViewer'
-import { CircleLoader } from '@proton/atoms'
+import { Suspense, lazy, useCallback, useEffect, useMemo, useState } from 'react'
+import { Redirect, Route, Switch } from 'react-router-dom'
+
 import { c } from 'ttag'
-import { DocumentConverter } from '../Components/DocumentConverter'
+
+import { CircleLoader } from '@proton/atoms'
+import { useAuthentication } from '@proton/components'
+import { useApi, useConfig } from '@proton/components/hooks'
+import { Application } from '@proton/docs-core'
+import type { FileToDocConversionResult } from '@proton/docs-core'
+import { getPlatformFriendlyDateForFileName } from '@proton/docs-core'
+import type { EditorInitializationConfig, FileToDocPendingConversion } from '@proton/docs-shared'
 import type { DocumentAction, DriveCompat, NodeMeta } from '@proton/drive-store'
 import { useDriveCompat } from '@proton/drive-store'
-import type { FileToDocConversionResult } from '@proton/docs-core'
-import type { EditorInitializationConfig, FileToDocPendingConversion } from '@proton/docs-shared'
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
-import { getPlatformFriendlyDateForFileName } from '@proton/docs-core'
-import { APP_VERSION } from '../config'
+
+import { DocsLayout } from '../Components'
+import { DocumentConverter } from '../Components/DocumentConverter'
+import { DocumentViewer } from '../Components/DocumentViewer'
+import { useDriveDocsLandingPageFeatureFlag } from '../Components/Homepage/useDriveDocsLandingPageFeatureFlag'
 import { WordCountContextProvider } from '../Components/WordCount/WordCountProvider'
+import { APP_VERSION } from '../config'
+import ApplicationProvider, { useApplication } from './ApplicationProvider'
 import { useDocsUrlBar } from './useDocsUrlBar'
 
-function ApplicationContainer() {
-  void import('../tailwind.scss')
+const HomepageRoute = lazy(() => import('../Components/Homepage/HomepageRoute'))
 
+function ApplicationContainer() {
   const api = useApi()
   const driveCompat = useDriveCompat()
-
   const { API_URL } = useConfig()
   const { UID } = useAuthentication()
-
-  const { openAction, updateParameters } = useDocsUrlBar()
-
-  const [action, setAction] = useState<DocumentAction['mode']>()
-  const [isCreatingNewDocument, setIsCreatingNewDocument] = useState<boolean>(false)
-  const [didCreateNewDocument, setDidCreateNewDocument] = useState<boolean>(false)
-  const [contentToInject, setContentToInject] = useState<FileToDocPendingConversion | undefined>(undefined)
+  const isLandingPageEnabled = useDriveDocsLandingPageFeatureFlag()
 
   const application = useMemo(() => {
     return new Application(
@@ -48,6 +45,50 @@ function ApplicationContainer() {
     // Ensure only one application instance is created
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  return (
+    <ApplicationProvider application={application}>
+      <Switch>
+        <Route path={'/doc'}>
+          <DocsRoute />
+        </Route>
+        <Route path={['/most-recent', '/owned-by-me', '/owned-by-others']}>
+          {isLandingPageEnabled ? (
+            <Suspense>
+              <HomepageRoute />
+            </Suspense>
+          ) : (
+            <Redirect to="/doc" />
+          )}
+        </Route>
+        <Route
+          path="*"
+          render={(props) => {
+            const isOpenDocumentLink = props.location.search.includes('mode=open')
+            return isLandingPageEnabled && !isOpenDocumentLink ? (
+              <Redirect to="/most-recent" />
+            ) : (
+              <Redirect to={{ pathname: '/doc', search: props.location.search }} />
+            )
+          }}
+        />
+      </Switch>
+    </ApplicationProvider>
+  )
+}
+
+function DocsRoute() {
+  void import('../tailwind.scss')
+
+  const driveCompat = useDriveCompat()
+  const application = useApplication()
+
+  const { openAction, updateParameters } = useDocsUrlBar()
+
+  const [action, setAction] = useState<DocumentAction['mode']>()
+  const [isCreatingNewDocument, setIsCreatingNewDocument] = useState<boolean>(false)
+  const [didCreateNewDocument, setDidCreateNewDocument] = useState<boolean>(false)
+  const [contentToInject, setContentToInject] = useState<FileToDocPendingConversion | undefined>(undefined)
 
   const [isAppReady, setIsAppReady] = useState(false)
 
@@ -132,27 +173,20 @@ function ApplicationContainer() {
   if (!isAppReady) {
     return null
   }
-
   return (
-    <ApplicationProvider application={application}>
-      <WordCountContextProvider>
-        <DocsLayout action={action}>
-          <Switch>
-            <Route path={'*'}>
-              <Content
-                onConversionSuccess={onConversionSuccess}
-                openAction={openAction}
-                actionMode={action}
-                isCreatingNewDocument={isCreatingNewDocument}
-                getNodeContents={driveCompat.getNodeContents}
-                editorInitializationConfig={editorInitializationConfig}
-              />
-            </Route>
-          </Switch>
-          {driveCompat.modals}
-        </DocsLayout>
-      </WordCountContextProvider>
-    </ApplicationProvider>
+    <WordCountContextProvider>
+      <DocsLayout action={action}>
+        <Content
+          onConversionSuccess={onConversionSuccess}
+          openAction={openAction}
+          actionMode={action}
+          isCreatingNewDocument={isCreatingNewDocument}
+          getNodeContents={driveCompat.getNodeContents}
+          editorInitializationConfig={editorInitializationConfig}
+        />
+        {driveCompat.modals}
+      </DocsLayout>
+    </WordCountContextProvider>
   )
 }
 
