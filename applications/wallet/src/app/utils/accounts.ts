@@ -50,8 +50,8 @@ export const getWalletsWithChainData = (walletsChainData: WalletChainDataByWalle
 
 export const getAccountWithChainDataFromManyWallets = (
     walletsChainData: WalletChainDataByWalletId,
-    walletId?: string,
-    accountId?: string
+    walletId?: string | null,
+    accountId?: string | null
 ): AccountWithChainData | undefined => {
     if (!walletId || !accountId) {
         return undefined;

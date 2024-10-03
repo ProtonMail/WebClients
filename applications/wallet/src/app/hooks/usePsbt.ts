@@ -2,42 +2,19 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { WasmApiWalletAccount, WasmPsbt } from '@proton/andromeda';
+import type { WasmPsbt } from '@proton/andromeda';
 import { useUserKeys } from '@proton/components/hooks';
-import type { PublicKeyReference } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
-import { SECOND } from '@proton/shared/lib/constants';
-import type { DecryptedAddressKey, SimpleMap } from '@proton/shared/lib/interfaces';
-import type { IWasmApiWalletData } from '@proton/wallet';
-import { encryptPgp, encryptWalletDataWithWalletKey } from '@proton/wallet';
 
 import { useBitcoinBlockchainContext } from '../contexts';
-import { getAccountWithChainDataFromManyWallets, isUndefined } from '../utils';
+import {
+    type BroadcastData,
+    getAccountWithChainDataFromManyWallets,
+    isUndefined,
+    signAndBroadcastPsbt,
+} from '../utils';
 import { useBlockchainClient } from './useBlockchainClient';
 import { type TxBuilderHelper } from './useTxBuilder';
-
-interface BroadcastData
-    extends Required<
-        Pick<{ apiWalletData?: IWasmApiWalletData; apiAccount?: WasmApiWalletAccount }, 'apiAccount' | 'apiWalletData'>
-    > {
-    noteToSelf?: string;
-    exchangeRateId?: string;
-    // BvE data
-    message?: {
-        content: string;
-        encryptionKeys: PublicKeyReference[];
-    };
-    senderAddress?: {
-        ID: string;
-        key: DecryptedAddressKey;
-    };
-    recipients?: SimpleMap<string>;
-    isAnonymousSend?: boolean;
-}
-
-const getNowTimestamp = (): string => {
-    return Math.floor(Date.now() / SECOND).toString();
-};
 
 export const usePsbt = ({ txBuilderHelpers }: { txBuilderHelpers: TxBuilderHelper }, shouldCreatePsbt = false) => {
     const blockchainClient = useBlockchainClient();
@@ -78,7 +55,7 @@ export const usePsbt = ({ txBuilderHelpers }: { txBuilderHelpers: TxBuilderHelpe
         }
     }, [createDraftPsbt, shouldCreatePsbt]);
 
-    const signAndBroadcastPsbt = ({
+    const broadcastPsbt = ({
         apiWalletData,
         apiAccount,
         exchangeRateId,
@@ -87,7 +64,17 @@ export const usePsbt = ({ txBuilderHelpers }: { txBuilderHelpers: TxBuilderHelpe
         message,
         recipients,
         isAnonymousSend,
-    }: BroadcastData) => {
+    }: Pick<
+        BroadcastData,
+        | 'apiWalletData'
+        | 'apiAccount'
+        | 'exchangeRateId'
+        | 'noteToSelf'
+        | 'senderAddress'
+        | 'message'
+        | 'recipients'
+        | 'isAnonymousSend'
+    >) => {
         return withLoadingBroadcast(async () => {
             const wasmAccount = getAccountWithChainDataFromManyWallets(
                 walletsChainData,
@@ -101,61 +88,31 @@ export const usePsbt = ({ txBuilderHelpers }: { txBuilderHelpers: TxBuilderHelpe
 
             const psbt = await txBuilder.createPsbt(network);
 
-            const signed = await psbt.sign(wasmAccount.account, network).catch(() => {
-                throw new Error(c('Wallet Send').t`Could not sign transaction`);
-            });
-
-            const [encryptedNoteToSelf] = noteToSelf
-                ? await encryptWalletDataWithWalletKey([noteToSelf], apiWalletData.WalletKey.DecryptedKey).catch(() => [
-                      null,
-                  ])
-                : [null];
-
-            const getEncryptedBody = async (senderAddressKey: DecryptedAddressKey) => ({
-                body: message?.content
-                    ? await encryptPgp(
-                          message.content,
-                          [senderAddressKey.publicKey, ...message.encryptionKeys],
-                          [senderAddressKey.privateKey]
-                      ).catch(() => null)
-                    : null,
-            });
-
-            const transactionData = {
-                label: encryptedNoteToSelf,
-                exchange_rate_or_transaction_time: exchangeRateId
-                    ? {
-                          key: 'ExchangeRate' as const,
-                          value: exchangeRateId,
-                      }
-                    : { key: 'TransactionTime' as const, value: getNowTimestamp() },
-            };
-
-            const bveData = senderAddress
-                ? {
-                      recipients: (recipients as Record<string, string>) || null,
-                      is_anonymous: isAnonymousSend ? 1 : 0,
-                      address_id: senderAddress.ID,
-                      ...(await getEncryptedBody(senderAddress.key)),
-                  }
-                : undefined;
-
             try {
-                const txId = await blockchainClient.broadcastPsbt(
-                    signed,
-                    apiWalletData.Wallet.ID,
-                    apiAccount.ID,
-                    transactionData,
-                    bveData
-                );
+                await signAndBroadcastPsbt({
+                    psbt,
+                    blockchainClient,
+                    network,
+                    userKeys,
+                    walletsChainData,
+                    apiWalletData,
+                    apiAccount,
+                    exchangeRateId,
+                    noteToSelf,
+                    senderAddress,
+                    message,
+                    recipients,
+                    isAnonymousSend,
+                    onBroadcastedTx: (txId) => {
+                        void syncSingleWalletAccount({
+                            walletId: apiAccount.WalletID,
+                            accountId: apiAccount.ID,
+                            manual: true,
+                        });
 
-                void syncSingleWalletAccount({
-                    walletId: apiAccount.WalletID,
-                    accountId: apiAccount.ID,
-                    manual: true,
+                        setBroadcastedTxId(txId);
+                    },
                 });
-
-                setBroadcastedTxId(txId);
             } catch (error: any) {
                 throw new Error(error?.error ?? c('Wallet Send').t`Could not broadcast transaction`);
             }
@@ -166,5 +123,5 @@ export const usePsbt = ({ txBuilderHelpers }: { txBuilderHelpers: TxBuilderHelpe
         setPsbt(undefined);
     }, []);
 
-    return { psbt, loadingBroadcast, broadcastedTxId, createDraftPsbt, erasePsbt, signAndBroadcastPsbt };
+    return { psbt, loadingBroadcast, broadcastedTxId, createDraftPsbt, erasePsbt, signAndBroadcastPsbt: broadcastPsbt };
 };

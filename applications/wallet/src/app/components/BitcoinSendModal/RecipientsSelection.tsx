@@ -2,20 +2,17 @@ import { c } from 'ttag';
 
 import type { WasmApiWalletAccount, WasmInviteNotificationType } from '@proton/andromeda';
 import { Icon, useContactEmailsCache, useModalStateWithData } from '@proton/components';
-import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
-import { useApi, useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
 import type { PublicKeyReference } from '@proton/crypto/lib';
-import { CryptoProxy } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
-import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import type { ProcessedApiKey, Recipient } from '@proton/shared/lib/interfaces';
-import { getKeyHasFlagsToVerify } from '@proton/shared/lib/keys';
-import { MAX_RECIPIENTS_PER_TRANSACTIONS, useWalletApiClients, verifySignedData } from '@proton/wallet';
+import type { Recipient } from '@proton/shared/lib/interfaces';
+import { MAX_RECIPIENTS_PER_TRANSACTIONS, useWalletApiClients } from '@proton/wallet';
 import { useBitcoinNetwork } from '@proton/wallet/store';
 
 import { Button } from '../../atoms';
+import { useGetRecipientVerifiedAddressKey } from '../../hooks/useGetRecipientVerifiedAddressKey';
 import type { TxBuilderHelper } from '../../hooks/useTxBuilder';
 import { isUndefined, isValidBitcoinAddress } from '../../utils';
 import { EmailOrBitcoinAddressInput } from '../EmailOrBitcoinAddressInput';
@@ -40,33 +37,6 @@ interface WalletNotFoundModalData {
     type: WasmInviteNotificationType;
 }
 
-const getVerifiedAddressKey = async (
-    addressKeys: ProcessedApiKey[],
-    btcAddress: string,
-    btcAddressSignature: string
-): Promise<PublicKeyReference | undefined> => {
-    const keys = await Promise.allSettled(
-        addressKeys
-            .filter((k) => {
-                return getKeyHasFlagsToVerify(k.flags);
-            })
-            .map(async (addressKey) => {
-                const pubkey = await CryptoProxy.importPublicKey({ armoredKey: addressKey.armoredKey });
-                const isVerified = await verifySignedData(btcAddress, btcAddressSignature, 'wallet.bitcoin-address', [
-                    pubkey,
-                ]);
-
-                return isVerified ? pubkey : null;
-            })
-    );
-
-    const [firstAddressKey] = keys
-        .map((result) => ('value' in result ? result.value : undefined))
-        .filter((key): key is PublicKeyReference => !!key);
-
-    return firstAddressKey;
-};
-
 export const RecipientsSelection = ({ apiAccount, recipientHelpers, txBuilderHelpers, onRecipientsConfirm }: Props) => {
     const {
         recipientEmailMap,
@@ -80,7 +50,7 @@ export const RecipientsSelection = ({ apiAccount, recipientHelpers, txBuilderHel
 
     const { updateTxBuilder, txBuilder } = txBuilderHelpers;
 
-    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
+    const getRecipientVerifiedAddressKey = useGetRecipientVerifiedAddressKey();
     const { contactEmails, contactEmailsMap } = useContactEmailsCache();
     const [loadingBitcoinAddressLookup, withLoadingBitcoinAddressLookup] = useLoading();
     const [walletNotFoundModal, setWalletNotFoundModal] = useModalStateWithData<WalletNotFoundModalData>();
@@ -93,7 +63,6 @@ export const RecipientsSelection = ({ apiAccount, recipientHelpers, txBuilderHel
     }>();
     const [network] = useBitcoinNetwork();
     const walletApi = useWalletApiClients();
-    const api = useApi();
 
     const [loading, withLoading] = useLoading();
 
@@ -162,14 +131,10 @@ export const RecipientsSelection = ({ apiAccount, recipientHelpers, txBuilderHel
                     }
 
                     // Bitcoin address signature verification
-                    const { addressKeys } = await getAndVerifyApiKeys({
-                        api,
-                        email: recipientOrBitcoinAddress.Address,
-                        internalKeysOnly: true,
-                        verifyOutboundPublicKeys,
+                    const addressKey = await getRecipientVerifiedAddressKey(recipientOrBitcoinAddress.Address, {
+                        btcAddress,
+                        btcAddressSignature,
                     });
-
-                    const addressKey = await getVerifiedAddressKey(addressKeys, btcAddress, btcAddressSignature);
 
                     if (!addressKey) {
                         addInvalidRecipient(
