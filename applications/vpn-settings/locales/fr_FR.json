@@ -2142,6 +2142,9 @@
       ]
     },
     "Description": {
+      "Keep different parts of your life separate and your inbox organized with additional addresses.": [
+        "Séparez les différentes facettes de votre vie et organisez votre boîte de réception avec des adresses supplémentaires."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "En passant à un abonnement supérieur, vous disposez de plusieurs adresses e-mail qui vous permettent de mieux gérer vos différentes activités et vous bénéficiez de fonctionnalités premium."
       ]
@@ -6112,11 +6115,17 @@
       "From ${ price }": [
         "À partir de ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "À partir de ${ priceMailPlus }"
+      ],
       "Upgrade": [
         "Changer d'abonnement"
       ],
       "Upgrade now": [
         "Changer d'abonnement"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Je passe à ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -8399,6 +8408,9 @@
       "/ month": [
         "/mois"
       ],
+      "/month": [
+        "/mois"
+      ],
       "1 year": [
         "1 an"
       ],
@@ -9513,6 +9525,9 @@
       ],
       "Amount due": [
         "Montant à payer"
+      ],
+      "An address for each role": [
+        "Une adresse pour chaque rôle"
       ],
       "Appearance": [
         "Apparence"
