@@ -66,8 +66,11 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
     return this.docOrchestrator.createCommentThread(commentContent, markID, createMarkNode)
   }
 
-  async createSuggestionThread(suggestionID: string): Promise<CommentThreadInterface | undefined> {
-    return this.docOrchestrator.createSuggestionThread(suggestionID)
+  async createSuggestionThread(
+    suggestionID: string,
+    commentContent: string,
+  ): Promise<CommentThreadInterface | undefined> {
+    return this.docOrchestrator.createSuggestionThread(suggestionID, commentContent)
   }
 
   async resolveThread(threadId: string): Promise<boolean> {

@@ -2,8 +2,8 @@ import { useEffect, useMemo, useState } from 'react'
 import clsx from '@proton/utils/clsx'
 import { CommentsPanelListComment } from './CommentsPanelListComment'
 import { CommentsComposer } from './CommentsComposer'
-import type { CommentThreadInterface, LiveCommentsTypeStatusChangeData } from '@proton/docs-shared'
-import { CommentThreadState, CommentThreadType, LiveCommentsEvent } from '@proton/docs-shared'
+import type { CommentInterface, CommentThreadInterface, LiveCommentsTypeStatusChangeData } from '@proton/docs-shared'
+import { CommentThreadState, CommentThreadType, CommentType, LiveCommentsEvent } from '@proton/docs-shared'
 import { Icon, ToolbarButton } from '@proton/components'
 import { useApplication } from '../../ApplicationProvider'
 import { c, msgid } from 'ttag'
@@ -122,6 +122,24 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
   const canShowReplyBox =
     application.getRole().canComment() && !thread.isPlaceholder && !isDeleting && !isResolved && !isSuggestionClosed
 
+  const [suggestionSummaryComment, regularComments] = useMemo((): [
+    CommentInterface | undefined,
+    CommentInterface[],
+  ] => {
+    const regularComments: CommentInterface[] = []
+    let suggestionSummaryComment: CommentInterface | undefined
+
+    for (const comment of thread.comments) {
+      if (comment.type === CommentType.Suggestion) {
+        suggestionSummaryComment = comment
+      } else {
+        regularComments.push(comment)
+      }
+    }
+
+    return [suggestionSummaryComment, regularComments]
+  }, [thread.comments])
+
   return (
     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/click-events-have-key-events
     <li
@@ -148,12 +166,22 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
         </blockquote>
       )}
       <ul className="my-3 px-3.5">
-        {thread.comments.map((comment, index) => (
+        {suggestionSummaryComment && (
+          <CommentsPanelListComment
+            comment={suggestionSummaryComment}
+            thread={thread}
+            isFirstComment={true}
+            isSuggestionThread={isSuggestionThread}
+            setIsDeletingThread={setIsDeleting}
+            data-testid={'first-comment'}
+          />
+        )}
+        {regularComments.map((comment, index) => (
           <CommentsPanelListComment
             key={comment.id}
             comment={comment}
             thread={thread}
-            isFirstComment={index === 0}
+            isFirstComment={suggestionSummaryComment ? false : index === 0}
             isSuggestionThread={isSuggestionThread}
             setIsDeletingThread={setIsDeleting}
             data-testid={index === 0 ? 'first-comment' : 'thread-comments'}

@@ -4,6 +4,7 @@ import type { EncryptionService } from '../Services/Encryption/EncryptionService
 import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
 import { Result } from '../Domain/Result/Result'
 import type { CommentResponseDto } from '../Api/Types/CommentResponseDto'
+import { CommentType } from '@proton/docs-shared'
 
 describe('DecryptComment', () => {
   let decryptComment: DecryptComment
@@ -20,6 +21,7 @@ describe('DecryptComment', () => {
     AuthorEmail: 'string',
     ParentCommentID: 'string',
     Comments: comments,
+    Type: CommentType.Comment,
   }
 
   const keys = {} as DocumentKeys
