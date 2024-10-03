@@ -10,16 +10,16 @@ type FeeRate = number;
 
 export type FeeRateByBlockTarget = [BlockTarget, FeeRate];
 
-const findNearestBlockTargetFeeRate = (
+export const findNearestBlockTargetFeeRate = (
     blockEstimate: number,
     blockEstimationKeys: [number, number][]
 ): number | undefined => {
     const nearestAbove = blockEstimationKeys.find(([block]) => {
-        return block >= blockEstimate;
+        return Number(block) >= blockEstimate;
     });
 
     const nearestBelow = blockEstimationKeys.findLast(([block]) => {
-        return block <= blockEstimate;
+        return Number(block) <= blockEstimate;
     });
 
     const [first] = blockEstimationKeys;
@@ -27,33 +27,53 @@ const findNearestBlockTargetFeeRate = (
     return (nearestAbove ?? nearestBelow ?? first)?.[1];
 };
 
+export const findQuickestBlock = (feeRate: number, blockEstimationKeys: [number, number][]): number | undefined => {
+    const sorted = [...blockEstimationKeys].sort(([blockA], [blockB]) => blockA - blockB);
+
+    return sorted.find(([, blockFeeRate]) => blockFeeRate <= feeRate)?.[1];
+};
+
+export const feesMapToList = (feesMap: Map<string, number>) => {
+    return (
+        [...feesMap.entries()]
+            // We need to round feeRate because bdk expects a BigInt
+            .map(([block, feeRate]): FeeRateByBlockTarget => [Number(block), Math.round(feeRate)])
+            .filter(([block]) => Number.isFinite(block))
+            .sort(([a], [b]) => a - b)
+    );
+};
+
+export const useFees = () => {
+    const { feesEstimation: feesMap } = useBitcoinBlockchainContext();
+
+    const feesList = useMemo(() => {
+        return feesMapToList(feesMap);
+    }, [feesMap]);
+
+    return {
+        feesList,
+        feesMap,
+    };
+};
+
 export const useFeesInput = (txBuilderHelpers: TxBuilderHelper) => {
     const { txBuilder, updateTxBuilder } = txBuilderHelpers;
-    const { feesEstimation: contextFeesEstimation } = useBitcoinBlockchainContext();
 
-    const feesEstimations = useMemo(() => {
-        return (
-            [...contextFeesEstimation.entries()]
-                // We need to round feeRate because bdk expects a BigInt
-                .map(([block, feeRate]): FeeRateByBlockTarget => [Number(block), Math.round(feeRate)])
-                .filter(([block]) => Number.isFinite(block))
-                .sort(([a], [b]) => a - b)
-        );
-    }, [contextFeesEstimation]);
+    const { feesList } = useFees();
 
     const getFeesByBlockTarget = (blockTarget: number) => {
-        return findNearestBlockTargetFeeRate(blockTarget, feesEstimations);
+        return findNearestBlockTargetFeeRate(blockTarget, feesList);
     };
 
     const feeRate = Number(txBuilder.getFeeRate() ?? 1);
 
     useEffect(() => {
-        const defaultFeeRate = findNearestBlockTargetFeeRate(DEFAULT_TARGET_BLOCK, feesEstimations);
+        const defaultFeeRate = findNearestBlockTargetFeeRate(DEFAULT_TARGET_BLOCK, feesList);
 
         if (defaultFeeRate && !txBuilder.getFeeRate()) {
             updateTxBuilder((txBuilder) => txBuilder.setFeeRate(BigInt(Math.round(defaultFeeRate))));
         }
-    }, [feeRate, feesEstimations, txBuilder, updateTxBuilder]);
+    }, [feeRate, feesList, txBuilder, updateTxBuilder]);
 
     return {
         feeRate,
