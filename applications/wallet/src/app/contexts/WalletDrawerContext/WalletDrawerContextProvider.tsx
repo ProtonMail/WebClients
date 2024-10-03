@@ -95,6 +95,7 @@ export const WalletDrawerContextProvider = ({ children }: Props) => {
                             networkDataAndHashedTxId={drawerData.data.networkDataAndHashedTxId}
                             onClickEditNote={drawerData.data.onClickEditNote}
                             onClickEditSender={drawerData.data.onClickEditSender}
+                            onClose={closeDrawer}
                         />
                     )}
 

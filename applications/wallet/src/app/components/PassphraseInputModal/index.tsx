@@ -72,7 +72,6 @@ export const PassphraseInputModal = ({ wallet, ...modalProps }: Props & ModalSta
                         placeholder={c('Wallet passphrase').t`My wallet passphrase`}
                         value={passphrase}
                         error={error}
-                        disbaled={loading}
                         onChange={(event: ChangeEvent<HTMLInputElement>): void => {
                             setPassphrase(event.target.value);
                         }}
