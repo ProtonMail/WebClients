@@ -3396,6 +3396,14 @@
         "Пожалуйста, обратите внимание, что если вы удалите этот домен ${ domainName }, все адреса, связанные с ним будут отключены."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Вы уверены, что хотите удалить эту группу?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Обратите внимание, что если вы удалите группу ${ displayGroupName } (с адресом ${ displayGroupAddressEmail }), вы больше не сможете получать электронные письма с использованием ее адреса."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Просроченный счёт"
@@ -3449,9 +3457,6 @@
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Разблокируют неограниченные папки, ярлыки и другие премиум функции при обновлении."
-      ],
-      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
-        "Иконка дополнительных услуг с логотипом ${ BRAND_NAME } и знаком плюс"
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Вы можете продолжать приглашать друзей, но не сможете заработать больше кредитов"
@@ -3956,11 +3961,6 @@
         "Настройка пересылки писем"
       ]
     },
-    "email_forwarding_2023: Description": {
-      "Unlock email forwarding to easily manage incoming information and more premium features when you upgrade.": [
-        "Разблокируйте переадресацию электронной почты, чтобы легко управлять входящей информацией, и другие платные функции после улучшения."
-      ]
-    },
     "email_forwarding_2023: Error": {
       "Condition incomplete, please add a token": [
         "Состояние неполное, добавьте токен"
@@ -4144,9 +4144,6 @@
       ]
     },
     "email_forwarding_2023: Title": {
-      "Automatically forward emails to other accounts": [
-        "Автоматическая пересылка электронных писем на другие аккаунты"
-      ],
       "Delete forwarding?": [
         "Удалить пересылку?"
       ],
@@ -4749,6 +4746,11 @@
       ],
       "Zero keys reactivated": [
         "Ноль ключей активировано повторно"
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "Введите адрес электронной почты"
       ]
     },
     "Error importing calendar": {
@@ -5875,6 +5877,11 @@
         "${ memberCount } члена",
         "${ memberCount } членов",
         "${ memberCount } член"
+      ]
+    },
+    "Group state": {
+      "Active": [
+        "Активна"
       ]
     },
     "group_invite_2024: Error message, recovery": {
@@ -8242,6 +8249,9 @@
       "SCIM token active": [
         "Токен SCIM активен"
       ],
+      "Search by an email address to begin": [
+        "Для начала выполните поиск по адресу электронной почты"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Защитите свой аккаунт ${ BRAND_NAME }"
       ],
@@ -8481,6 +8491,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Формат вашего файла CSV неправильный."
+      ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "Функция групп не поддерживается вашей текущей подпиской. Ранее созданные группы отключены и могут быть только удалены."
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Ссылка для сообщения о том, что вы не создали аккаунт ${ BRAND_NAME } истекла. Свяжитесь с нашей службой поддержки, чтобы решить эту проблему."
@@ -10560,6 +10573,9 @@
       ],
       "Reveal password": [
         "Показать пароль"
+      ],
+      "Search by email": [
+        "Выполните поиск по адресу электронной почты"
       ],
       "Second password": [
         "Второй пароль"
@@ -15093,6 +15109,11 @@
         "Подтверждение"
       ]
     },
+    "signup: Action": {
+      "Request trial": [
+        "Запросить пробную версию"
+      ]
+    },
     "signup_2024: Feature": {
       "GDPR and HIPAA compliant": [
         "Соответствие требованиям GDPR и HIPAA."
@@ -17836,6 +17857,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Если вы купили подарочный код или получили его от нашей службы поддержки, вы можете ввести его здесь."
       ],
+      "IP address (Internet Service Provider)": [
+        "IP-адрес (поставщик услуг Интернета)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Члены, не использующие 2ФА, получат письмо с просьбой включить её незамедлительно."
       ],
@@ -18016,6 +18040,18 @@
       ]
     },
     "unprivatization": {
+      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
+        "${ n } пользователь присоединился к вашей организации через провайдера идентификации. Одобрите или отклоните его аккаунт прямо сейчас:",
+        "${ n } пользователя присоединились к вашей организации через провайдера идентификации. Одобрите или отклоните их аккаунты прямо сейчас:",
+        "${ n } пользователей присоединились к вашей организации через провайдера идентификации. Одобрите или отклоните их аккаунты прямо сейчас:",
+        "${ n } пользователей присоединились к вашей организации через провайдера идентификации. Одобрите или отклоните их аккаунты прямо сейчас:"
+      ],
+      "Administrator access enabled": [
+        "Доступ администратора включен"
+      ],
+      "Administrator access rejected": [
+        "Доступ администратора отклонен"
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Администраторы не могут получить доступ к данным частных пользователей и не могут сбросить их пароль."
       ],
@@ -18025,11 +18061,23 @@
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "Администратор организации **${ orgName }** (**${ adminEmail }**) хочет включить доступ администратора к своему аккаунту."
       ],
+      "Approve all": [
+        "Одобрить все"
+      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Сделав пользователя частным, вы не сможете помочь ему восстановить доступ к своим данным или аккаунту."
       ],
       "Cancel": [
         "Отменить"
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Не удалось автоматически включить доступ администратора для ${ n } пользователя, так как его ключи шифрования были обновлены в это время:",
+        "Не удалось автоматически включить доступ администратора для ${ n } пользователей, так как их ключи шифрования были обновлены в это время:",
+        "Не удалось автоматически включить доступ администратора для ${ n } пользователей, так как их ключи шифрования были обновлены в это время:",
+        "Не удалось автоматически включить доступ администратора для ${ n } пользователей, так как их ключи шифрования были обновлены в это время:"
+      ],
+      "Could not enable administrator access: ${ error }": [
+        "Не удалось включить доступ администратора: ${ error }"
       ],
       "Delete request": [
         "Удалить запрос"
@@ -18042,6 +18090,9 @@
       ],
       "Enable administrator access": [
         "Включите доступ администратора"
+      ],
+      "Enable manually": [
+        "Включить вручную"
       ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "Если вы потеряете доступ к своим учетным данным, администраторы вашей организации смогут сбросить пароль и восстановить доступ к вашему аккаунту."

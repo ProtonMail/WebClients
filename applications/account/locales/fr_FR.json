@@ -3388,8 +3388,20 @@
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Supprimez automatiquement les messages indésirables et ceux dans la corbeille, et débloquez davantage de fonctionnalités premium lorsque vous améliorez votre abonnement."
       ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Effacez automatiquement les e-mails déplacés dans la corbeille et le dossier Indésirables/spam de plus de 30 jours."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Triez automatiquement vos messages entrants avant qu'ils n'arrivent dans votre boite de réception."
+      ],
+      "Available with ${ BRAND_NAME } Mail plus": [
+        "Disponible avec ${ BRAND_NAME } Mail Plus"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Bravo ! Vous avez gagné le maximum de ${ rewardsLimit } mois gratuits de ${ plusPlanName }."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Créez autant de labels et de dossiers dont vous avez besoin pour garder votre boite de réception organisée."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Activez ${ PROTON_SENTINEL_NAME } pour accéder à ces fonctionnalités."
@@ -3412,8 +3424,17 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Il semble que la liste de contacts que vous importez contienne des groupes. Nous vous invitons à vérifier comment ces groupes doivent être importés."
       ],
+      "Keep different parts of your life separate and your inbox organized with additional addresses.": [
+        "Séparez les différentes facettes de votre vie et organisez votre boîte de réception avec des adresses supplémentaires."
+      ],
+      "Make your email footer your own — showcase your unique brand, not ours.": [
+        "Faites du pied de page de votre e-mail un reflet distinctif de votre marque, pas de la nôtre."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "En passant à un abonnement supérieur, vous disposez de plusieurs adresses e-mail qui vous permettent de mieux gérer vos différentes activités et vous bénéficiez de fonctionnalités premium."
+      ],
+      "Set up auto-forwarding to redirect incoming emails to another email address.": [
+        "Configurez le transfert automatique pour rediriger les e-mails entrants vers une autre adresse e-mail."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
@@ -3424,6 +3445,9 @@
       "Track the status and activity of your referrals.": [
         "Suivez vos parrainages."
       ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Débloquez ${ activatePmUser } et bénéficiez d'une adresse e-mail originale et facile à saisir."
+      ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Disposez d'adresses e-mail plus courtes et d'autres fonctionnalités premium en changeant d'abonnement."
       ],
@@ -3432,9 +3456,6 @@
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Bénéficiez d'un nombre illimité de dossiers, de labels et d'autres fonctionnalités premium en passant à un abonnement supérieur."
-      ],
-      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
-        "Icône de promotion avec le logo ${ BRAND_NAME } suivi d'un signe plus"
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Vous pouvez continuer à inviter des amis, mais vous ne pourrez plus gagner de crédits."
@@ -3944,11 +3965,6 @@
         "Configurer le transfert automatique des messages"
       ]
     },
-    "email_forwarding_2023: Description": {
-      "Unlock email forwarding to easily manage incoming information and more premium features when you upgrade.": [
-        "Profitez du transfert automatique des messages, qui facilite la gestion des informations entrantes, et d'autres fonctionnalités premium en changeant d'abonnement."
-      ]
-    },
     "email_forwarding_2023: Error": {
       "Condition incomplete, please add a token": [
         "La condition n'est pas remplie. Ajoutez un jeton."
@@ -4132,9 +4148,6 @@
       ]
     },
     "email_forwarding_2023: Title": {
-      "Automatically forward emails to other accounts": [
-        "Transfert automatiquement des messages vers d'autres comptes"
-      ],
       "Delete forwarding?": [
         "Supprimer le transfert ?"
       ],
@@ -11587,11 +11600,17 @@
       "Get started for ${ price }": [
         "Commencez pour ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "À partir de ${ priceMailPlus }"
+      ],
       "Upgrade": [
         "Changer d'abonnement"
       ],
       "Upgrade now": [
         "Changer d'abonnement"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Je passe à ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12279,6 +12298,9 @@
       ],
       "Get Mail Plus for ${ price }": [
         "Profitez de Mail Plus pour ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "À partir de ${ price }"
       ],
       "Your account's usage": [
         "Utilisation de votre compte"
@@ -15059,6 +15081,9 @@
       "/ month": [
         "/mois"
       ],
+      "/month": [
+        "/mois"
+      ],
       "1 year": [
         "1 an"
       ],
@@ -16421,6 +16446,9 @@
       "Amount due": [
         "Montant à payer"
       ],
+      "An address for each role": [
+        "Une adresse pour chaque rôle"
+      ],
       "App": [
         "Application"
       ],
@@ -16823,6 +16851,9 @@
         "${ failedUsers.length } compte d'utilisateur n'a pas pu être créé.",
         "${ failedUsers.length } comptes utilisateur n'ont pas pu être créés."
       ],
+      "Filter for more focus": [
+        "Filtrez vos messages pour une meilleure concentration"
+      ],
       "Filter name cannot contain only spaces": [
         "Le nom du filtre ne doit pas contenir uniquement des espaces."
       ],
@@ -17001,6 +17032,9 @@
       "My calendars": [
         "Mes calendriers"
       ],
+      "Need more labels or folders?": [
+        "Vous avez besoin de plus de dossiers ou de labels ?"
+      ],
       "Network error": [
         "Erreur réseau"
       ],
@@ -17012,6 +17046,9 @@
       ],
       "No account information was found in any data breaches": [
         "Vos informations n'ont été exposées dans aucune fuite de données."
+      ],
+      "No need to empty the trash": [
+        "Pas besoin de vider la corbeille"
       ],
       "No recovery method": [
         "Aucune méthode de récupération"
@@ -17073,6 +17110,9 @@
       "Personalise your e-mail footer": [
         "Personnalisez le pied de page de vos messages."
       ],
+      "Personalize your email footer": [
+        "Personnalisez le pied de page de vos messages."
+      ],
       "Phone": [
         "Téléphone"
       ],
@@ -17099,6 +17139,9 @@
       ],
       "QRCode": [
         "QR Code"
+      ],
+      "Ready, set, forward": [
+        "Prêt ? Configurez et transférez vos messages."
       ],
       "Recommended": [
         "Recommandé"
@@ -17165,6 +17208,9 @@
       ],
       "Revoke certificate": [
         "Révoquer le certificat"
+      ],
+      "Same inbox, shorter email address": [
+        "La même boite de réception et une adresse e-mail plus courte"
       ],
       "SAML authentication": [
         "Authentification SAML"
