@@ -1,17 +1,14 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { NewUpsellModal, useUpsellConfig } from '@proton/components';
 import type { ModalStateProps } from '@proton/components';
-import { NewUpsellModal } from '@proton/components';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import {
-    addUpsellPath,
-    getUpgradePath,
-    getUpsellRef,
-    useNewUpsellModalVariant,
-} from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
 import pmMeImg from '@proton/styles/assets/img/illustrations/new-upsells-img/pm-me.svg';
+
+import useOneDollarConfig from '../../useOneDollarPromo';
 
 interface Props {
     modalProps: ModalStateProps;
@@ -27,6 +24,9 @@ const FiltersUpsellModal = ({ modalProps, upsellComponent }: Props) => {
     const [user] = useUser();
     const activatePmUser = `${user.Name}@pm.me`;
 
+    const oneDollarConfig = useOneDollarConfig();
+    const upsellConfig = useUpsellConfig({ upsellRef, ...oneDollarConfig });
+
     const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
 
     if (displayNewUpsellModalsVariant) {
@@ -38,9 +38,9 @@ const FiltersUpsellModal = ({ modalProps, upsellComponent }: Props) => {
                     c('Description').t`Unlock ${activatePmUser} for a catchy and easy-to-type email address.`
                 }
                 modalProps={modalProps}
-                upgradePath={addUpsellPath(getUpgradePath({}), upsellRef)}
                 illustration={pmMeImg}
                 sourceEvent="BUTTON_SHORT_DOMAIN"
+                {...upsellConfig}
             />
         );
     }
@@ -50,9 +50,9 @@ const FiltersUpsellModal = ({ modalProps, upsellComponent }: Props) => {
             title={c('Title').t`Activate @pm.me`}
             description={c('Description').t`Unlock shorter email addresses and other premium features by upgrading.`}
             modalProps={modalProps}
-            upgradePath={addUpsellPath(getUpgradePath({}), upsellRef)}
             features={['more-storage', 'more-email-addresses', 'unlimited-folders-and-labels', 'custom-email-domains']}
             sourceEvent="BUTTON_SHORT_DOMAIN"
+            {...upsellConfig}
         />
     );
 };
