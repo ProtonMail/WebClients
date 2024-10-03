@@ -1,6 +1,6 @@
 import { type FC, useEffect, useState } from 'react';
 
-import { RUNTIME_RELOAD_THROTTLE } from 'proton-pass-extension/app/worker/services/activation';
+import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
 import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
@@ -8,11 +8,8 @@ import type { IconName } from '@proton/components';
 import { Icon } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
-import browser from '@proton/pass/lib/globals/browser';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { getBrowser } from '@proton/shared/lib/helpers/browser';
-import { wait } from '@proton/shared/lib/helpers/promise';
 
 export const getBrowserIcon = (): IconName => {
     switch (getBrowser().name) {
@@ -45,20 +42,7 @@ export const PromptForReload: FC<Props> = ({ autoReload, browserError, message }
     const [reloadCTA, showReloadCTA] = useState(!autoReload);
 
     useEffect(() => {
-        if (autoReload) {
-            const now = getEpoch();
-
-            browser.storage.local
-                .get('lastReload')
-                .then(async ({ lastReload = 0 }) => {
-                    if (lastReload + RUNTIME_RELOAD_THROTTLE > now) throw new Error();
-
-                    await wait(2_000); /* small delay to avoid safari limbo state */
-                    await browser.storage.local.set({ lastReload: now });
-                    return browser.runtime.reload();
-                })
-                .catch(() => showReloadCTA(true));
-        }
+        if (autoReload) reloadManager.runtimeReload().catch(() => showReloadCTA(true));
     }, [autoReload]);
 
     return reloadCTA ? (
