@@ -134,6 +134,7 @@ export type IconName =
     | 'cross-small'
     | 'density-low'
     | 'density-high'
+    | 'desktop'
     | 'dots'
     | 'drive'
     | 'earth'
@@ -497,6 +498,7 @@ export { IcCrossCircleFilled } from './icons/IcCrossCircleFilled';
 export { IcCrossSmall } from './icons/IcCrossSmall';
 export { IcDensityLow } from './icons/IcDensityLow';
 export { IcDensityHigh } from './icons/IcDensityHigh';
+export { IcDesktop } from './icons/IcDesktop';
 export { IcDots } from './icons/IcDots';
 export { IcDrive } from './icons/IcDrive';
 export { IcEarth } from './icons/IcEarth';
