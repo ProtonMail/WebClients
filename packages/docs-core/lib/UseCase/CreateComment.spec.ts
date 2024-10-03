@@ -38,6 +38,7 @@ describe('CreateComment', () => {
       userOwnAddress: 'foo@bar.com',
     } as DocumentKeys,
     commentsState: mockCommentsState,
+    type: 1,
   }
 
   beforeEach(() => {
@@ -69,6 +70,7 @@ describe('CreateComment', () => {
       encryptedContent: 'encrypted-comment',
       parentCommentId: null,
       authorEmail: 'foo@bar.com',
+      type: 1,
     })
     expect(mockCommentsState.replacePlaceholderComment).toHaveBeenCalled()
   })
