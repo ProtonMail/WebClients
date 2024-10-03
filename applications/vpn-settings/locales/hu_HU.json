@@ -6406,11 +6406,20 @@
       ]
     },
     "orgidentity": {
+      "Current organization identity": [
+        "Jelenlegi szervezeti azonosító"
+      ],
+      "Edit organization identity": [
+        "Szervezet azonosító szerkesztése"
+      ],
       "New organization identity": [
         "Új szervezeti azonosító"
       ],
       "Organization identity": [
         "Szervezet azonosítója"
+      ],
+      "Organization identity updated": [
+        "Szervezet azonosítója frissítve"
       ],
       "Verify": [
         "Megerősítés"
@@ -7762,6 +7771,9 @@
       "Desktop app and email client support (via IMAP)": [
         "Asztali alkalmazás és e-mail kliens támogatás (IMAP-on keresztül)"
       ],
+      "Early access to new apps and features": [
+        "Korai hozzáférés az új alkalmazásokhoz és funkciókhoz"
+      ],
       "Email productivity features": [
         "Email hatékonysági funciók"
       ],
@@ -8899,11 +8911,17 @@
       "Approve all": [
         "Összes jóváhagyása"
       ],
+      "Could not enable administrator access: ${ error }": [
+        "Nem lehetett az adminisztrátori hozzáférést bekapcsolni: ${ error }"
+      ],
       "Delete request": [
         "Kérelem törlése"
       ],
       "Delete request to access user data?": [
         "Adat hozzáférési kérelem törlése?"
+      ],
+      "Enable manually": [
+        "Bekapcsolás manuálisan"
       ],
       "Pending admin access": [
         "Függőben lévő adminisztrátor jogosultság"

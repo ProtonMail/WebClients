@@ -3433,9 +3433,6 @@
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Päivittämällä tilauksesi avaat rajattomasti kansioita, tunnisteita ja muita premium-ominaisuuksia."
       ],
-      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
-        "Lisämyyntikuvake, joka sisältää ${ BRAND_NAME } -logon ja plusmerkin"
-      ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Voit edelleen kutsua kavereita, muttet voi ansaita enempää krediittejä"
       ],
@@ -3944,11 +3941,6 @@
         "Määritä sähköpostin ohjaus"
       ]
     },
-    "email_forwarding_2023: Description": {
-      "Unlock email forwarding to easily manage incoming information and more premium features when you upgrade.": [
-        "Hanki saapuvan tiedonhallintaa parantava viestiohjaus sekä muita premium-ominaisuuksia päivittämällä tilauksesi."
-      ]
-    },
     "email_forwarding_2023: Error": {
       "Condition incomplete, please add a token": [
         "Ehto on puutteellinen. Lisää tunniste."
@@ -4132,9 +4124,6 @@
       ]
     },
     "email_forwarding_2023: Title": {
-      "Automatically forward emails to other accounts": [
-        "Ohjaa viestit automaattisesti muille tileille"
-      ],
       "Delete forwarding?": [
         "Poistetaanko välitys?"
       ],
@@ -4427,7 +4416,7 @@
         "Tuotavia sähköpostiviestejä ei löytynyt - tilillä ei ole saapuneet-kansiota"
       ],
       "No external key retrieved for user is valid for sending": [
-        "Mikään käyttäjälle saaduista avaimista ei kelpaa lähetykseen"
+        "Mikään käyttäjälle saaduista avaimista ei kelpaa lähettämiseen"
       ],
       "No image selected": [
         "Kuvaa ei ole valittu"
@@ -8161,6 +8150,9 @@
       ],
       "SCIM token active": [
         "SCIM-tunniste käytössä"
+      ],
+      "Search by an email address to begin": [
+        "Etsi sähköpostiosoitteella aloittaaksesi"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Suojaa ${ BRAND_NAME }-tilisi"

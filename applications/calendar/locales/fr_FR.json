@@ -665,6 +665,9 @@
       "Start setup": [
         "Démarrer la configuration"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "À partir de ${ priceUnlimited }"
+      ],
       "Stay": [
         "Rester"
       ],
@@ -718,6 +721,9 @@
       ],
       "Upgrade now": [
         "Changer d'abonnement"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Je passe à ${ BRAND_NAME } Unlimited"
       ],
       "Upload picture": [
         "Importer une image"
@@ -2445,6 +2451,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } protège votre compte grâce à une surveillance dédiée 24h/24 et 7j/7 des activités suspectes, incluant l'intervention de spécialistes en sécurité."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "L'authentification A2F ajoute une couche de sécurité supplémentaire, empêchant tout accès non autorisé."
       ],
@@ -2453,6 +2462,9 @@
       ],
       "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
         "Vous pouvez mieux organiser votre journée, gérer votre temps et définir vos priorités. Utilisez des couleurs personnalisées pour les événements de votre calendrier."
+      ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "Attribuez des couleurs à vos événements pour simplifier l'organisation de votre journée, le suivi de votre temps et établir les priorités de vos tâches."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Déchiffrement des contacts en cours… Cela peut prendre quelques minutes. Une fois le processus terminé, vous pourrez télécharger le fichier avec tous vos contacts exportés."
@@ -2505,6 +2517,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne voulez pas fusionner."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Grâce aux groupes de contacts, vous pouvez envoyer des e-mails à toutes les personnes du groupe en un seul clic."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Vous pouvez importer des événements au format iCal (fichier ICS). Le fichier peut avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et contenir jusqu'à ${ MAX_IMPORT_EVENTS_STRING } événements. Si votre fichier est plus volumineux, nous vous invitons à le diviser en plusieurs fichiers plus petits."
       ],
@@ -2516,6 +2531,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Vos méthodes de récupération de compte et de données sont définies."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -6251,8 +6269,14 @@
       "Get started for ${ price }": [
         "Commencez pour ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "À partir de ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Changer d'abonnement"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Je passe à ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6826,6 +6850,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Profitez de Mail Plus pour ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "À partir de ${ price }"
       ]
     },
     "new_plans: title": {
@@ -8085,6 +8112,14 @@
         "Signer"
       ]
     },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Plus rapide sur l'application"
+      ],
+      "Private, fast, and organized": [
+        "Privé, rapide et organisé"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Fermer"
@@ -8188,6 +8223,9 @@
         "${ n } mois"
       ],
       "/ month": [
+        "/mois"
+      ],
+      "/month": [
         "/mois"
       ],
       "1 year": [
@@ -9430,6 +9468,9 @@
       "Hide time zones for event start and end times": [
         "Masquer les fuseaux horaires pour les heures de début et de fin de l’événement"
       ],
+      "High security for your account": [
+        "Une sécurité renforcée pour votre compte"
+      ],
       "Human verification": [
         "Vérification que vous n'êtes pas un robot"
       ],
@@ -9478,6 +9519,9 @@
       ],
       "Notes": [
         "Notes"
+      ],
+      "One email, many recipients": [
+        "Un seul e-mail, plusieurs destinataires"
       ],
       "Open actions dropdown": [
         "Ouvrir le menu déroulant des actions"
