@@ -43,6 +43,8 @@ import { KEYBOARD_SHORTCUT_COMMAND } from '../KeyboardShortcuts/Command'
 import { getShortcutFromKeyboardEvent } from '../KeyboardShortcuts/Utils'
 import { LINK_CHANGE_COMMAND } from '../Link/LinkPlugin'
 import { $handleLinkChangeSuggestion } from './handleLinkChangeSuggestion'
+import { SET_SELECTION_STYLE_PROPERTY_COMMAND } from '../FormattingPlugin'
+import { $patchStyleAsSuggestion } from './patchStyleAsSuggestion'
 
 const LIST_TRANSFORMERS = [UNORDERED_LIST, ORDERED_LIST, CHECK_LIST]
 
@@ -289,6 +291,13 @@ export function SuggestionModePlugin({
         FORMAT_TEXT_COMMAND,
         (payload) => {
           return $formatTextAsSuggestion(payload, addCreatedIDtoSet)
+        },
+        COMMAND_PRIORITY_CRITICAL,
+      ),
+      editor.registerCommand(
+        SET_SELECTION_STYLE_PROPERTY_COMMAND,
+        ({ property, value }) => {
+          return $patchStyleAsSuggestion(property, value, addCreatedIDtoSet, suggestionModeLogger)
         },
         COMMAND_PRIORITY_CRITICAL,
       ),

@@ -13,7 +13,7 @@ import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext
 import { $isDecoratorBlockNode } from '@lexical/react/LexicalDecoratorBlockNode'
 import type { HeadingTagType } from '@lexical/rich-text'
 import { $createHeadingNode, $createQuoteNode, $isHeadingNode, $isQuoteNode } from '@lexical/rich-text'
-import { $getSelectionStyleValueForProperty, $patchStyleText, $setBlocksType } from '@lexical/selection'
+import { $getSelectionStyleValueForProperty, $setBlocksType } from '@lexical/selection'
 import {
   $findMatchingParent,
   $getNearestBlockElementAncestorOrThrow,
@@ -91,6 +91,7 @@ import ToolbarTooltip from './ToolbarTooltip'
 import SpeechBubblePenIcon from '../Icons/SpeechBubblePenIcon'
 import { useApplication } from '../ApplicationProvider'
 import { InteractionDropdownButton } from './InteractionDropdownButton'
+import { SET_SELECTION_STYLE_PROPERTY_COMMAND } from '../Plugins/FormattingPlugin'
 
 type BlockType = keyof typeof blockTypeToBlockName
 
@@ -409,16 +410,7 @@ export default function DocumentEditorToolbar({
 
   const setFontSizeForSelection = useCallback(
     (newFontSize: string) => {
-      activeEditor.update(() => {
-        if (activeEditor.isEditable()) {
-          const selection = $getSelection()
-          if (selection !== null) {
-            $patchStyleText(selection, {
-              'font-size': newFontSize,
-            })
-          }
-        }
-      })
+      activeEditor.dispatchCommand(SET_SELECTION_STYLE_PROPERTY_COMMAND, { property: 'font-size', value: newFontSize })
     },
     [activeEditor],
   )
@@ -517,6 +509,7 @@ export default function DocumentEditorToolbar({
               return activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'left')
             }
             case 'CENTER_ALIGN_SHORTCUT': {
+              // eslint-disable-next-line custom-rules/deprecate-classes
               return activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'center')
             }
             case 'RIGHT_ALIGN_SHORTCUT': {
@@ -675,29 +668,20 @@ export default function DocumentEditorToolbar({
       if (!value) {
         return
       }
-      activeEditor.update(() => {
-        const selection = $getSelection()
-        if (selection !== null) {
-          $patchStyleText(selection, {
-            'font-family': value,
-          })
-        }
+      activeEditor.dispatchCommand(SET_SELECTION_STYLE_PROPERTY_COMMAND, {
+        property: 'font-family',
+        value,
       })
     },
     [activeEditor],
   )
 
-  const applyStyleText = useCallback(
-    (styles: Record<string, string>, skipHistoryStack?: boolean) => {
-      activeEditor.update(
-        () => {
-          const selection = $getSelection()
-          if (selection !== null) {
-            $patchStyleText(selection, styles)
-          }
-        },
-        skipHistoryStack ? { tag: 'historic' } : {},
-      )
+  const updateTextStyle = useCallback(
+    (property: string, value: string | null) => {
+      activeEditor.dispatchCommand(SET_SELECTION_STYLE_PROPERTY_COMMAND, {
+        property,
+        value,
+      })
     },
     [activeEditor],
   )
@@ -807,7 +791,7 @@ export default function DocumentEditorToolbar({
               {fontFamilyLabel}
             </span>
           }
-          disabled={!isEditable || isSuggestionMode}
+          disabled={!isEditable}
           contentProps={DropdownContentProps}
           data-testid="font-family"
         >
@@ -849,7 +833,7 @@ export default function DocumentEditorToolbar({
             color="norm"
             className="px-2 text-left text-sm"
             content={fontSize}
-            disabled={!isEditable || isSuggestionMode}
+            disabled={!isEditable}
             contentProps={DropdownContentProps}
             data-testid="font-size"
           >
@@ -916,15 +900,15 @@ export default function DocumentEditorToolbar({
               type="button"
               className="text-[--text-norm]"
               content={<Icon name="palette" />}
-              disabled={!isEditable || isSuggestionMode}
+              disabled={!isEditable}
               contentProps={DropdownContentProps}
               data-testid="font-color-dropdown"
             >
               <FontColorMenu
                 textColors={TextColors}
-                onTextColorChange={(color) => applyStyleText({ color })}
+                onTextColorChange={(color) => updateTextStyle('color', color)}
                 backgroundColors={BackgroundColors}
-                onBackgroundColorChange={(color) => applyStyleText({ 'background-color': color || '' })}
+                onBackgroundColorChange={(color) => updateTextStyle('background-color', color)}
               />
             </SimpleDropdown>
             <ToolbarSeparator />

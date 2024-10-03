@@ -24,7 +24,7 @@ describe('$acceptSuggestion', () => {
     )
   })
 
-  it('should unwrap "insert" and "property-change" suggestion nodes', () => {
+  it('should unwrap "insert", "property-change", "style-change" suggestion nodes', () => {
     const suggestionID = Math.random().toString()
 
     editor.update(
@@ -33,6 +33,7 @@ describe('$acceptSuggestion', () => {
           $createTextNode('Text'),
           $createSuggestionNode(suggestionID, 'insert').append($createTextNode('Inserted')),
           $createSuggestionNode(suggestionID, 'property-change').append($createTextNode('Changed')),
+          $createSuggestionNode(suggestionID, 'style-change').append($createTextNode('Changed')),
         )
         $getRoot().append(paragraph)
         $acceptSuggestion(suggestionID)
@@ -44,7 +45,9 @@ describe('$acceptSuggestion', () => {
 
     editor.read(() => {
       const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
-      expect(paragraph.getTextContent()).toBe('TextInsertedChanged')
+      expect(paragraph.getChildrenSize()).toBe(1)
+      expect($isTextNode(paragraph.getFirstChild())).toBe(true)
+      expect(paragraph.getTextContent()).toBe('TextInsertedChangedChanged')
     })
   })
 

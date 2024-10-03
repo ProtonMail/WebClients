@@ -47,6 +47,7 @@ import { ProtonContentEditable } from './ContentEditable/ProtonContentEditable'
 import { MarkNodesProvider } from './Plugins/MarkNodesContext'
 import clsx from '@proton/utils/clsx'
 import { ProtonLinkPlugin } from './Plugins/Link/LinkPlugin'
+import { FormattingPlugin } from './Plugins/FormattingPlugin'
 
 const TypingBotEnabled = false
 
@@ -172,6 +173,7 @@ export function Editor({
           placeholder={null}
           ErrorBoundary={LexicalErrorBoundary}
         />
+        <FormattingPlugin />
         <MarkdownShortcutPlugin transformers={MarkdownTransformers} />
         <HorizontalRulePlugin />
         <ListPlugin />
