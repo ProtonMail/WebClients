@@ -111,8 +111,8 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     return this.comments.createCommentThread(commentContent, markID, createMarkNode)
   }
 
-  createSuggestionThread(suggestionID: string): Promise<CommentThreadInterface | undefined> {
-    return this.comments.createSuggestionThread(suggestionID)
+  createSuggestionThread(suggestionID: string, commentContent: string): Promise<CommentThreadInterface | undefined> {
+    return this.comments.createSuggestionThread(suggestionID, commentContent)
   }
 
   resolveThread(threadId: string): Promise<boolean> {

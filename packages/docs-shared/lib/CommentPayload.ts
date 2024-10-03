@@ -1,3 +1,5 @@
+import type { CommentType } from './CommentType'
+
 export type CommentPayload = {
   id: string
   createTime: number
@@ -7,4 +9,5 @@ export type CommentPayload = {
   author: string
   comments: CommentPayload[]
   isPlaceholder: boolean
+  type: CommentType
 }

@@ -3,14 +3,14 @@ import { Result } from '../Domain/Result/Result'
 import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import { Comment, CommentThread } from '../Models'
 import type { CommentMarkNodeChangeData, CommentThreadInterface, InternalEventBusInterface } from '@proton/docs-shared'
-import { CommentThreadState, CommentsEvent, ServerTime } from '@proton/docs-shared'
+import { CommentThreadState, CommentType, CommentsEvent, ServerTime } from '@proton/docs-shared'
 import { GenerateUUID } from '../Util/GenerateUuid'
 import type { EncryptComment } from './EncryptComment'
 import type { DecryptComment } from './DecryptComment'
 import type { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
 import type { DocsApi } from '../Api/DocsApi'
 import metrics from '@proton/metrics'
-import type { CommentThreadType } from '@proton/docs-shared'
+import { CommentThreadType } from '@proton/docs-shared'
 import type { LoggerInterface } from '@proton/utils/logs'
 
 /**
@@ -36,6 +36,8 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
   }): Promise<Result<CommentThreadInterface>> {
     const markID = dto.markID ?? GenerateUUID()
 
+    const commentType = dto.type === CommentThreadType.Suggestion ? CommentType.Suggestion : CommentType.Comment
+
     const comment = new Comment(
       GenerateUUID(),
       ServerTime.now(),
@@ -45,6 +47,7 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
       dto.keys.userOwnAddress,
       [],
       false,
+      commentType,
     )
 
     const localThread = new CommentThread(
@@ -99,6 +102,7 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
       encryptedMainCommentContent: encryptedCommentContent,
       authorEmail: dto.keys.userOwnAddress,
       type: dto.type,
+      commentType,
     })
 
     if (result.isFailed()) {

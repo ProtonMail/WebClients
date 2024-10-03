@@ -39,7 +39,7 @@ import type { ImageProxyParams } from './Types/ImageProxyParams'
 import type { ResolveThreadResponse } from './Types/ResolveThreadResponse'
 import type { SeedInitialCommitApiResponse } from './Types/SeedInitialCommitApiResponse'
 import type { UnresolveThreadResponse } from './Types/UnresolveThreadResponse'
-import type { CommentThreadType } from '@proton/docs-shared'
+import type { CommentThreadType, CommentType } from '@proton/docs-shared'
 
 export class DocsApi {
   constructor(
@@ -209,19 +209,20 @@ export class DocsApi {
     encryptedMainCommentContent: string
     authorEmail: string
     type: CommentThreadType
+    commentType: CommentType
   }): Promise<Result<CreateThreadResponse>> {
     if (!this.protonApi) {
       throw new Error('Proton API not set')
     }
 
-    const { volumeId, linkId, markId, encryptedMainCommentContent, authorEmail, type } = dto
+    const { volumeId, linkId, markId, encryptedMainCommentContent, authorEmail, type, commentType } = dto
 
     try {
       this.inflight++
       const response = await this.protonApi(
         createThreadInDocument(volumeId, linkId, {
           Mark: markId,
-          Comment: { Content: encryptedMainCommentContent, AuthorEmail: authorEmail },
+          Comment: { Content: encryptedMainCommentContent, AuthorEmail: authorEmail, Type: commentType },
           Type: type,
         }),
       )
@@ -272,12 +273,13 @@ export class DocsApi {
     encryptedContent: string
     parentCommentId: string | null
     authorEmail: string
+    type: CommentType
   }): Promise<Result<AddCommentToThreadResponse>> {
     if (!this.protonApi) {
       throw new Error('Proton API not set')
     }
 
-    const { volumeId, linkId, threadId, encryptedContent, parentCommentId, authorEmail } = dto
+    const { volumeId, linkId, threadId, encryptedContent, parentCommentId, authorEmail, type } = dto
 
     try {
       this.inflight++
@@ -286,6 +288,7 @@ export class DocsApi {
           Content: encryptedContent,
           ParentCommentId: parentCommentId,
           AuthorEmail: authorEmail,
+          Type: type,
         }),
       )
       return Result.ok(response)

@@ -1,8 +1,7 @@
-import { CommentThreadState, type CommentInterface, type CommentThreadInterface } from '@proton/docs-shared'
+import { type CommentInterface, type CommentThreadInterface } from '@proton/docs-shared'
 import type { LexicalEditor } from 'lexical'
 import { useState, useEffect, Fragment } from 'react'
 import debounce from '@proton/utils/debounce'
-import { sendErrorMessage } from '../../Utils/errorMessage'
 import { useMarkNodesContext } from '../MarkNodesContext'
 import { type SuggestionSummaryContent, generateSuggestionSummary } from '../Suggestions/generateSuggestionSummary'
 import { useCommentsContext } from './CommentsContext'
@@ -12,10 +11,9 @@ import { c } from 'ttag'
 const icon = <SpeechBubblePenIcon className="inline h-4 w-4 align-middle" />
 
 /**
- * This hook creates the UI nodes from a summary generated from the editor,
- * and updates the comment's "content" if changed. If a summary could not be
- * generated from the editor, which happens if the suggestion is accepted or
- * rejected, then it will try to parse and display existing content.
+ * This hook creates the UI nodes from a summary generated from the editor.
+ * If a summary could not be generated from the editor, which happens if the
+ * suggestion is accepted or rejected, then it will try to parse and display existing content.
  */
 export function useSuggestionCommentContent(
   comment: CommentInterface,
@@ -47,14 +45,6 @@ export function useSuggestionCommentContent(
         return
       }
       setSuggestionContent(content)
-      const isPlaceholder = thread.isPlaceholder || comment.isPlaceholder
-      if (thread.state !== CommentThreadState.Active || isPlaceholder) {
-        return
-      }
-      const stringifiedContent = JSON.stringify(content)
-      if (stringifiedContent !== comment.content) {
-        controller.editComment(thread.id, comment.id, stringifiedContent).catch(sendErrorMessage)
-      }
     }
 
     generateAndSetSuggestionContent()
