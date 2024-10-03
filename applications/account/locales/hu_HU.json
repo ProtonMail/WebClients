@@ -3296,9 +3296,6 @@
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "A csomagváltással korlátlan számú mappát, címkét és további prémium funkciókat érhet el."
       ],
-      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
-        "Reklámozó ikon ${ BRAND_NAME } logóval, amit plusz jel követ"
-      ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Folytathatja a barátok meghívását, de további krediteket nem fog tudni szerezni"
       ],
@@ -3891,6 +3888,9 @@
       "Changes saved": [
         "Változtatások mentve"
       ],
+      "Email sent to ${ forward.ForwardeeEmail }": [
+        "Email elküldve ${ forward.ForwardeeEmail }"
+      ],
       "Email sent to ${ model.forwardeeEmail }.": [
         "Email elküldve ${ model.forwardeeEmail }."
       ],
@@ -3911,9 +3911,6 @@
       ]
     },
     "email_forwarding_2023: Title": {
-      "Automatically forward emails to other accounts": [
-        "E-mailek automatikus továbbítása másik fiókokra"
-      ],
       "Delete forwarding?": [
         "Továbbítás törlése?"
       ],
@@ -12141,11 +12138,20 @@
       ]
     },
     "orgidentity": {
+      "Current organization identity": [
+        "Jelenlegi szervezeti azonosító"
+      ],
+      "Edit organization identity": [
+        "Szervezet azonosító szerkesztése"
+      ],
       "New organization identity": [
         "Új szervezeti azonosító"
       ],
       "Organization identity": [
         "Szervezet azonosítója"
+      ],
+      "Organization identity updated": [
+        "Szervezet azonosítója frissítve"
       ],
       "Verify": [
         "Megerősítés"
@@ -14047,6 +14053,9 @@
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% tele van"
       ],
+      "**${ humanUsedSpace }** of ${ humanMaxSpace }": [
+        "**${ humanUsedSpace }** a ${ humanMaxSpace } tárhelyből"
+      ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "A lemondással elveszít az alábbi előnyöket. Biztos benne, hogy folytatja?"
       ],
@@ -14327,6 +14336,9 @@
       ],
       "Desktop app and email client support (via IMAP)": [
         "Asztali alkalmazás és e-mail kliens támogatás (IMAP-on keresztül)"
+      ],
+      "Early access to new apps and features": [
+        "Korai hozzáférés az új alkalmazásokhoz és funkciókhoz"
       ],
       "Email productivity features": [
         "Email hatékonysági funciók"
@@ -16329,6 +16341,9 @@
       "Cancel": [
         "Mégsem"
       ],
+      "Could not enable administrator access: ${ error }": [
+        "Nem lehetett az adminisztrátori hozzáférést bekapcsolni: ${ error }"
+      ],
       "Delete request": [
         "Kérelem törlése"
       ],
@@ -16340,6 +16355,9 @@
       ],
       "Enable administrator access": [
         "Adminisztrátori hozzáférés engedélyezése"
+      ],
+      "Enable manually": [
+        "Bekapcsolás manuálisan"
       ],
       "Pending admin access": [
         "Függőben lévő adminisztrátor jogosultság"
