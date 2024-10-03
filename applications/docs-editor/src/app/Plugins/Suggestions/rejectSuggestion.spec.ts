@@ -1,5 +1,6 @@
 import { createHeadlessEditor } from '@lexical/headless'
 import { AllNodes } from '../../AllNodes'
+import type { ProtonNode } from './ProtonNode'
 import { $createSuggestionNode } from './ProtonNode'
 import type { ParagraphNode, TextNode } from 'lexical'
 import { $isTextNode } from 'lexical'
@@ -9,6 +10,7 @@ import { $createHeadingNode } from '@lexical/rich-text'
 import { $createListItemNode, $createListNode } from '@lexical/list'
 import type { LinkNode } from '@lexical/link'
 import { $createLinkNode, $isLinkNode } from '@lexical/link'
+import { getStyleObjectFromCSS } from '@lexical/selection'
 
 describe('$rejectSuggestion', () => {
   const editor = createHeadlessEditor({
@@ -71,6 +73,45 @@ describe('$rejectSuggestion', () => {
     editor.read(() => {
       const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
       expect(paragraph.getTextContent()).toBe('TextDeletedAfter')
+    })
+  })
+
+  describe('style-change', () => {
+    let paragraph!: ParagraphNode
+    let suggestion!: ProtonNode
+    let text!: TextNode
+
+    beforeEach(() => {
+      editor.update(
+        () => {
+          paragraph = $createParagraphNode()
+          suggestion = $createSuggestionNode('test', 'style-change', {
+            'font-size': '16px',
+          })
+          text = $createTextNode('Test').setStyle(`font-size: 20px;background-color: #fff;`)
+          paragraph.append(suggestion.append(text))
+          $getRoot().append(paragraph)
+          $rejectSuggestion('test')
+        },
+        {
+          discrete: true,
+        },
+      )
+    })
+
+    test('should unwrap suggestion node', () => {
+      editor.read(() => {
+        expect(paragraph.getChildrenSize()).toBe(1)
+        expect($isTextNode(paragraph.getFirstChild())).toBe(true)
+      })
+    })
+
+    test('should revert style', () => {
+      editor.read(() => {
+        const style = getStyleObjectFromCSS(text.getStyle())
+        expect(style['font-size']).toBe('16px')
+        expect(style['background-color']).toBe('#fff')
+      })
     })
   })
 
