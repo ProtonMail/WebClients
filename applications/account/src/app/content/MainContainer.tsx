@@ -357,7 +357,7 @@ const MainContainer = () => {
                 </Route>
                 <Route path={`/${mailSlug}`}>
                     <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <MailSettingsRouter mailAppRoutes={routes.mail} redirect={redirect} />
+                        <MailSettingsRouter mailAppRoutes={routes.mail} redirect={redirect} app={app} />
                     </Suspense>
                 </Route>
                 <Route path={`/${calendarSlug}`}>
