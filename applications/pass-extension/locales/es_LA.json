@@ -978,6 +978,23 @@
         "Hubo un problema"
       ]
     },
+    "FamilyPlanPromo2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Todos los servicios premium. Seis usuarios. Una sola suscripción."
+      ],
+      "Exclusive offer for ${ PASS_APP_NAME } early supporters.": [
+        "Oferta exclusiva para los primeros seguidores de ${ PASS_APP_NAME }."
+      ],
+      "Get it for ${ price }/month": [
+        "Obténgalo por ${ price }/mes"
+      ],
+      "Introducing ${ planNameJSX }": [
+        "Presentamos ${ planNameJSX }"
+      ],
+      "Limited-time offer only.": [
+        "Oferta solo por tiempo limitado."
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -1118,10 +1135,10 @@
         "¡Las funciones de administración de alias de SimpleLogin llegarán pronto!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
-        "Alias desactivado con éxito. Ya no recibirá correos enviados a ${ item.aliasEmail }."
+        "Se desactivó el alias. Ya no recibirá correos enviados a ${ item.aliasEmail }."
       ],
       "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
-        "Alias activado con éxito. Ahora recibirá correos enviados a ${ item.aliasEmail }."
+        "Se activó el alias. Ahora recibirá correos enviados a ${ item.aliasEmail }."
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
         "La sincronización de alias entre las cuentas de ${ BRAND_NAME } y SimpleLogin está activa."
@@ -2020,6 +2037,9 @@
       "Birthdate": [
         "Fecha de nacimiento"
       ],
+      "Browser settings": [
+        "Ajustes del navegador"
+      ],
       "Capital letters (A-Z)": [
         "Letras mayúsculas (A-Z)"
       ],
@@ -2555,6 +2575,9 @@
       "Update": [
         "Actualizar"
       ],
+      "Use ${ PASS_APP_NAME } as your browser's default password manager": [
+        "Use ${ PASS_APP_NAME } como gestor de contraseñas de su navegador por defecto"
+      ],
       "Username": [
         "Nombre de usuario"
       ],
@@ -2599,6 +2622,9 @@
       ],
       "You are about to create": [
         "Está por crear"
+      ],
+      "Your browser will stop using its built-in password manager.": [
+        "El navegador dejará de usar su gestor de contraseñas integrado."
       ],
       "ZIP or Postal code": [
         "Código postal"
@@ -2732,7 +2758,7 @@
     },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
-        "Sincronización de alias activada con éxito. Los alias de SimpleLogin puede tomar un tiempo en sincronizarse."
+        "Se activó la sincronización de alias. Los alias de SimpleLogin puede tomar un tiempo en sincronizarse."
       ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Las bóvedas no pueden contener más de ${ vault.targetMaxMembers } usuario.",
@@ -3118,7 +3144,7 @@
         "El prefijo del alias no puede tener más de 40 caracteres."
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
-        "Este alias \"${ aliasEmail }\" actualmente se usa en el inicio de sesión \"${ relatedLoginName }\"."
+        "Este alias «${ aliasEmail }» actualmente se usa en el inicio de sesión «${ relatedLoginName }»."
       ],
       "Title is required": [
         "El título es requerido"
