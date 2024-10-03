@@ -234,6 +234,9 @@
       "Close this banner": [
         "このバナーを閉じる"
       ],
+      "Collapse navigation bar": [
+        "ナビゲーションバーを閉じる"
+      ],
       "Collapse URL": [
         "URL を折りたたむ"
       ],
@@ -369,6 +372,9 @@
       "Dismiss": [
         "却下"
       ],
+      "Display navigation bar": [
+        "ナビゲーションバーを表示する"
+      ],
       "Done": [
         "完了"
       ],
@@ -494,6 +500,9 @@
       ],
       "Get in touch": [
         "連絡する"
+      ],
+      "Get it": [
+        "了解"
       ],
       "Get started": [
         "利用開始"
@@ -969,6 +978,9 @@
       "Revert to original display": [
         "元の表示に戻す"
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "${ BRAND_NAME } サーバー上で実行"
+      ],
       "Save": [
         "保存"
       ],
@@ -1094,6 +1106,9 @@
       ],
       "Show more search options": [
         "表示する検索オプションを増やします"
+      ],
+      "Show navigation bar": [
+        "ナビゲーションバーを表示する"
       ],
       "Show preview": [
         "プレビューを表示"
@@ -1256,6 +1271,9 @@
       ],
       "Use recovery code": [
         "回復用コードを使用"
+      ],
+      "Use this": [
+        "これを使用"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "マウスを使うことで表示のサイズを変更することができます。キーボードを使っている場合は、左矢印キーと右矢印キーを使ってサイズを変更することができます。"
@@ -1466,6 +1484,9 @@
       ],
       "No logs are kept to protect your privacy. Faster processing.": [
         "お客様のプライバシーを保護するためにログは保持されません。処理が速くなります。"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "${ BRAND_NAME } サーバー上で実行"
       ],
       "Run on device": [
         "デバイス上で実行"
@@ -2681,6 +2702,9 @@
       "Ireland": [
         "アイルランド"
       ],
+      "Islamic Republic of Iran": [
+        "イラン"
+      ],
       "Isle of Man": [
         "マン島"
       ],
@@ -2711,6 +2735,12 @@
       "Kiribati": [
         "キリバス"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "北朝鮮"
+      ],
+      "Korea (Republic of)": [
+        "韓国"
+      ],
       "Kosovo": [
         "コソボ"
       ],
@@ -2719,6 +2749,9 @@
       ],
       "Kyrgyzstan": [
         "キルギス"
+      ],
+      "Lao People's Democratic Republic": [
+        "ラオス"
       ],
       "Laos": [
         "ラオス"
@@ -3385,11 +3418,33 @@
     "duoplan2024: Info": {
       "1 TB storage": [
         "1 TB のストレージ"
+      ],
+      "2 users": [
+        "2 ユーザー"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "Double your storage": [
+        "ストレージを 2 倍にしましょう"
       ]
     },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "説明:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } はキャンセルされました。"
+      ],
+      "This event was updated.": [
+        "この予定は更新されました。"
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "この予定は更新されました。変更点は下記の通りです。\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "${ eventTitle } に招待されました。\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (location part)": {
@@ -3554,6 +3609,9 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "このブラウザでは、内容の検索を有効にできません。プライベートブラウジングモードを閉じるか別のブラウザーを使用してください。"
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "コンテンツ検索を有効にできません。アプリケーションを再起動するか、データを消去してください。"
       ],
       "Could not open created vault": [
         "作成された保管庫を開けませんでした"
@@ -3770,6 +3828,9 @@
       ],
       "Problem downloading the writing assistant. Please try again.": [
         "執筆アシスタントのダウンロード中に問題が発生しました。もう一度やり直してください。"
+      ],
+      "Problem loading the writing assistant to your device. Please try again.": [
+        "執筆アシスタントをデバイスに読み込む際に問題が発生しました。もう一度やり直してください。"
       ],
       "Process aborted": [
         "処理が中断されました"
@@ -4594,6 +4655,9 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
       ],
+      "14-day desktop app trial.": [
+        "14 日間のデスクトップアプリのトライアルです。"
+      ],
       "No credit card required.": [
         "クレジットカード不要."
       ],
@@ -4769,6 +4833,9 @@
     "Header": {
       "Contacts": [
         "連絡先"
+      ],
+      "Hardware not compatible": [
+        "ハードウェアと互換性がありません"
       ],
       "Report an issue": [
         "問題を報告"
@@ -5415,6 +5482,9 @@
       "Body: ": [
         "本文: "
       ],
+      "Browser not supported": [
+        "このブラウザはサポートされていません"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "FREEプランへダウングレードすると、現在の特典は利用できなくなります。今後アップグレードしても現在の特典は復活しません。"
       ],
@@ -5612,6 +5682,9 @@
       ],
       "Email address": [
         "メールアドレス"
+      ],
+      "Email copied to clipboard": [
+        "メールがクリップボードにコピーされました"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "10個のカスタムメールドメイン名のメールホスティングが無料で含まれています。 追加のドメインを${ price } で追加できます。"
@@ -6057,6 +6130,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "グループ ${ groupName } に追加するメールアドレスを選択してください。"
       ],
+      "Please try again in a few moments": [
+        "しばらくしてからもう一度お試しください"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "別の支払い方法で再度お試しいただくか、銀行へお問い合わせください。"
       ],
@@ -6360,6 +6436,9 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "このメッセージはまだ信頼されていない添付された鍵で署名されています。"
       ],
+      "This message will be automatically deleted at ${ value }": [
+        "このメッセージは ${ value } に自動的に削除されます。"
+      ],
       "This message will be automatically deleted on ${ value }": [
         "このメッセージは ${ value } に自動的に削除されます。"
       ],
@@ -6545,6 +6624,9 @@
       ],
       "Version ${ appVersion }": [
         "バージョン ${ appVersion }"
+      ],
+      "Version number successfully copied to clipboard": [
+        "バージョン番号がクリップボードにコピーされました"
       ],
       "Visa Secure logo": [
         "Visa Secure ロゴ"
@@ -8327,6 +8409,12 @@
       "1 user": [
         "1ユーザー"
       ],
+      "10 email addresses/aliases": [
+        "10 件のメールアドレス / エイリアス"
+      ],
+      "10-year file version history": [
+        "10 年間のファイルバージョン履歴"
+      ],
       "15 GB storage": [
         "15 GB のストレージ"
       ],
@@ -8408,6 +8496,9 @@
       "Email client support (via IMAP/SMTP)": [
         "メールクライアント対応 (IMAP/SMTP 経由)"
       ],
+      "Email groups": [
+        "メールグループ"
+      ],
       "Enables HIPAA compliance": [
         "HIPAA コンプライアンス準拠"
       ],
@@ -8470,6 +8561,9 @@
       ],
       "Password health": [
         "パスワードの健全性"
+      ],
+      "Password manager": [
+        "パスワードマネージャー"
       ],
       "Password-protected Emails": [
         "パスワードで保護されたメール"
@@ -8588,11 +8682,20 @@
       "User session management": [
         "ユーザーセッション管理"
       ],
+      "User storage management": [
+        "ユーザーストレージ管理"
+      ],
       "Vault sharing (up to ${ n } person)": [
         "保管庫の共有 (最大 ${ n } 人)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "ダークウェブをスキャンして、あなたの ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 件の独自メールドメイン"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "例えば、JohnShopper@${ domain }はショッピングアカウント用、JohnNews@${ domain2 }はニュース購読用です。"
       ],
@@ -8992,18 +9095,68 @@
         "${ BRAND_NAME } のアクセス権を選択してください: メールメッセージと設定の閲覧 / 連絡先の閲覧とダウンロード / Google Agendaの全アジェンダの閲覧とダウンロード。"
       ]
     },
+    "Onboarding List Placeholder": {
+      "Social media": [
+        "ソーシャルメディア"
+      ]
+    },
     "Onboarding modal": {
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "${ advancedEncryptionTitle } は、あなたと意図した宛先のみがメールにアクセスできることを保証します。"
+      ],
+      "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
+        "${ industryLeadingSpamProtectionTitle } は、詐欺メールが受信トレイに届かないようにします。"
+      ],
+      "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
+        "${ protectionFromTrackersTitle } は、あなたがこれ以上インターネット上で追いかけ回されないようにします。"
+      ],
+      "Activate premium features": [
+        "プレミアム機能を有効にする"
+      ],
+      "Advanced encryption": [
+        "高度な暗号化"
+      ],
+      "App Store": [
+        "App Store"
+      ],
+      "Auto-delete spam and trash": [
+        "迷惑メールとごみ箱を自動削除"
+      ],
       "Automatically forward emails": [
         "メールの自動転送"
       ],
       "Block unsavory senders": [
         "不適切な送信者をブロックする"
       ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
+      ],
+      "Download the desktop app": [
+        "デスクトップアプリをダウンロード"
+      ],
+      "Download the desktop app and continue": [
+        "デスクトップアプリをダウンロードして続行する"
+      ],
       "For your eyes only": [
         "あなたの目だけに"
       ],
       "Forward Gmail messages to your inbox.": [
         "Gmail のメッセージを、あなたの受信トレイに転送します。"
+      ],
+      "Get the desktop app": [
+        "デスクトップアプリを入手"
+      ],
+      "Google Play": [
+        "Google Play"
+      ],
+      "Industry-leading spam protection": [
+        "業界をリードするスパム対策"
+      ],
+      "Let's get started": [
+        "始めましょう"
+      ],
+      "Maybe later": [
+        "後で行う"
       ],
       "Next": [
         "次へ"
@@ -9013,6 +9166,12 @@
       ],
       "Skip": [
         "スキップ"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } へようこそ"
+      ],
+      "Where privacy is default.": [
+        "プライバシーが最初から組み込まれている場所。"
       ]
     },
     "Onboarding Proton": {
@@ -9105,6 +9264,11 @@
     "Participant name": {
       "You": [
         "あなた"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure vault sharing": [
+        "安全な保管庫共有"
       ]
     },
     "passwordless": {
@@ -10114,6 +10278,9 @@
       "For all ${ BRAND_NAME } services": [
         "すべての ${ BRAND_NAME } サービス向け"
       ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "ファイルをアップロードまたは同期するには、容量を空けるか ${ upgrade } してください"
+      ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "残りの時間分のクレジットが ${ BRAND_NAME } アカウントに追加されます。"
       ],
@@ -10250,6 +10417,9 @@
       "10 email addresses": [
         "10個のメールアドレス"
       ],
+      "2 users": [
+        "2 ユーザー"
+      ],
       "20 email addresses per user": [
         "ユーザーあたり 20 個の電子メール アドレス"
       ],
@@ -10268,11 +10438,17 @@
       "Custom schedule send and snooze times": [
         "カスタムスケジュールの送信時間とスヌーズ時間"
       ],
+      "Desktop app and email client support (via IMAP)": [
+        "デスクトップアプリとメールクライアントのサポート (IMAP 経由)"
+      ],
       "Early access to new apps and features": [
         "新しいアプリや機能への早期アクセス"
       ],
       "Email productivity features": [
         "メールの生産性機能"
+      ],
+      "Extra storage and users": [
+        "追加のストレージとユーザー"
       ],
       "Helping activists in Hong Kong": [
         "香港の活動家を支援"
@@ -10330,8 +10506,14 @@
       "Desktop app": [
         "デスクトップアプリ"
       ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
       "Upgrade": [
         "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
       ]
     },
     "Subscription renewal state": {
@@ -11659,6 +11841,11 @@
       ],
       "Bitcoin via email": [
         "メールで Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:Action": {
+      "Access Wallet app": [
+        "Wallet アプリにアクセス"
       ]
     },
     "wallet_signup_2024:Bug category": {
