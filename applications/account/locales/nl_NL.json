@@ -3359,6 +3359,9 @@
       ]
     },
     "Description": {
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Automatisch spam en weggegooide berichten verwijderen en meer premium-functies ontgrendelen als u upgrade."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Gefeliciteerd! U hebt het maximum van ${ rewardsLimit } gratis maanden ${ plusPlanName } verdiend."
       ],
@@ -3397,9 +3400,6 @@
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Krijg onbeperkt mappen, labels en meer premium functies als u upgrade."
-      ],
-      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
-        "Upsell-pictogram met het ${ BRAND_NAME }-logo gevolgd door een plusteken"
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "U kan vrienden blijven uitnodigen, maar u kan geen tegoed meer ontvangen"
@@ -3858,11 +3858,6 @@
         "E-mail doorsturen instellen"
       ]
     },
-    "email_forwarding_2023: Description": {
-      "Unlock email forwarding to easily manage incoming information and more premium features when you upgrade.": [
-        "Ontgrendel e-mails doorsturen om eenvoudig inkomende informatie te beheren en meer premium functies wanneer u upgrade."
-      ]
-    },
     "email_forwarding_2023: Error": {
       "Condition incomplete, please add a token": [
         "Voorwaarde onvolledig, voeg een token toe"
@@ -4046,9 +4041,6 @@
       ]
     },
     "email_forwarding_2023: Title": {
-      "Automatically forward emails to other accounts": [
-        "Stuur e-mails automatisch door naar andere accounts"
-      ],
       "Delete forwarding?": [
         "Doorsturen verwijderen?"
       ],
@@ -7759,6 +7751,9 @@
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Andere gebruikers binnen uw organisatie zien uw bezette slots. Er worden geen details over het event gedeeld."
       ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Met onze meldingen nemen we het zekere voor het onzekere. Als je de geschonden informatie niet herkent, kun je deze melding veilig negeren."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Verouderd herstelbestand; werk het bij om toegang tot uw gegevens te garanderen"
       ],
@@ -7851,6 +7846,9 @@
       ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Let op, wanneer u dit filter wist ${ nameDeleted } zullen alle geautomatiseerde acties van dit filter niet langer uitgevoerd worden."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Houd er rekening mee dat, wanneer u op de knop Bevestigen klikt, uw account nog ${ remainingCreditsFormatted } credits over heeft."
       ],
       "please open a support ticket": [
         "open een support ticket"
@@ -11450,6 +11448,12 @@
       "${ size } storage": [
         "${ size } opslagruimte"
       ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Voor ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Voor alle ${ BRAND_NAME } diensten"
+      ],
       "1 TB secure storage": [
         "1 TB veilige opslag"
       ],
@@ -11492,6 +11496,12 @@
       "All ${ BRAND_NAME } services": [
         "Voor alle ${ BRAND_NAME }-diensten"
       ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Alle basisdiensten van ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Alle premium ${ BRAND_NAME }-services. Eén simpel abonnement"
+      ],
       "Auto-delete Spam and Trash": [
         "Spam en Prullenbak automatisch verwijderen"
       ],
@@ -11530,6 +11540,9 @@
       ],
       "Contact groups management": [
         "Beheer van contactgroepen"
+      ],
+      "Custom and secure business email": [
+        "Aangepaste en veilige zakelijke e-mail"
       ],
       "Custom domains for email aliases": [
         "Aangepaste domeinen voor e-mailalliassen"
@@ -11820,6 +11833,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 eigen e-maildomein"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Maak meerdere e-mailadressen aan voor uw online-identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain2 } voor nieuwsabonnementen"
       ],
@@ -16223,7 +16239,7 @@
         "Versleuteling en sleutels"
       ],
       "Enter 2FA code": [
-        "Voer 2FA code in"
+        "Voer 2FA-code in"
       ],
       "Enter endpoints into your identity provider": [
         "Voer eindpunten in bij uw identiteitsprovider"
