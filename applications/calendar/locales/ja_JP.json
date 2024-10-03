@@ -149,6 +149,9 @@
       "Close this banner": [
         "このバナーを閉じる"
       ],
+      "Collapse navigation bar": [
+        "ナビゲーションバーを閉じる"
+      ],
       "Compose": [
         "新規作成"
       ],
@@ -247,6 +250,9 @@
       ],
       "Dismiss": [
         "却下"
+      ],
+      "Display navigation bar": [
+        "ナビゲーションバーを表示する"
       ],
       "Done": [
         "完了"
@@ -619,6 +625,9 @@
       ],
       "Show more": [
         "さらに表示"
+      ],
+      "Show navigation bar": [
+        "ナビゲーションバーを表示する"
       ],
       "Show side panel": [
         "サイドパネルを表示"
@@ -1768,6 +1777,9 @@
       "Ireland": [
         "アイルランド"
       ],
+      "Islamic Republic of Iran": [
+        "イラン"
+      ],
       "Isle of Man": [
         "マン島"
       ],
@@ -1798,6 +1810,12 @@
       "Kiribati": [
         "キリバス"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "北朝鮮"
+      ],
+      "Korea (Republic of)": [
+        "韓国"
+      ],
       "Kosovo": [
         "コソボ"
       ],
@@ -1806,6 +1824,9 @@
       ],
       "Kyrgyzstan": [
         "キルギス"
+      ],
+      "Lao People's Democratic Republic": [
+        "ラオス"
       ],
       "Laos": [
         "ラオス"
@@ -2451,6 +2472,14 @@
     "duoplan2024: Info": {
       "1 TB storage": [
         "1 TB のストレージ"
+      ],
+      "2 users": [
+        "2 ユーザー"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "Double your storage": [
+        "ストレージを 2 倍にしましょう"
       ]
     },
     "Duplicate event button tooltip": {
@@ -2480,6 +2509,20 @@
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "説明:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } はキャンセルされました。"
+      ],
+      "This event was updated.": [
+        "この予定は更新されました。"
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "この予定は更新されました。変更点は下記の通りです。\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "${ eventTitle } に招待されました。\n\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (location part)": {
@@ -2608,6 +2651,9 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "このブラウザでは、内容の検索を有効にできません。プライベートブラウジングモードを閉じるか別のブラウザーを使用してください。"
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "コンテンツ検索を有効にできません。アプリケーションを再起動するか、データを消去してください。"
       ],
       "Could not open created vault": [
         "作成された保管庫を開けませんでした"
@@ -4387,6 +4433,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "グループ ${ groupName } に追加するメールアドレスを選択してください。"
       ],
+      "Please try again in a few moments": [
+        "しばらくしてからもう一度お試しください"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "別の支払い方法で再度お試しいただくか、銀行へお問い合わせください。"
       ],
@@ -4563,6 +4612,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "検証のために新しいタブを開きます、ポップアップブロッカーはオフにしてください。この検証作業では課金されません。カードの確認に使用した金額は直ちに返金されます。"
+      ],
+      "Version number successfully copied to clipboard": [
+        "バージョン番号がクリップボードにコピーされました"
       ],
       "Visa Secure logo": [
         "Visa Secure ロゴ"
@@ -5875,6 +5927,12 @@
       "1 user": [
         "1ユーザー"
       ],
+      "10 email addresses/aliases": [
+        "10 件のメールアドレス / エイリアス"
+      ],
+      "10-year file version history": [
+        "10 年間のファイルバージョン履歴"
+      ],
       "15 GB storage": [
         "15 GB のストレージ"
       ],
@@ -5956,6 +6014,9 @@
       "Email client support (via IMAP/SMTP)": [
         "メールクライアント対応 (IMAP/SMTP 経由)"
       ],
+      "Email groups": [
+        "メールグループ"
+      ],
       "Enables HIPAA compliance": [
         "HIPAA コンプライアンス準拠"
       ],
@@ -6018,6 +6079,9 @@
       ],
       "Password health": [
         "パスワードの健全性"
+      ],
+      "Password manager": [
+        "パスワードマネージャー"
       ],
       "Password-protected Emails": [
         "パスワードで保護されたメール"
@@ -6136,11 +6200,20 @@
       "User session management": [
         "ユーザーセッション管理"
       ],
+      "User storage management": [
+        "ユーザーストレージ管理"
+      ],
       "Vault sharing (up to ${ n } person)": [
         "保管庫の共有 (最大 ${ n } 人)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "ダークウェブをスキャンして、あなたの ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 件の独自メールドメイン"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "例えば、JohnShopper@${ domain }はショッピングアカウント用、JohnNews@${ domain2 }はニュース購読用です。"
       ],
@@ -6753,6 +6826,11 @@
     "Participants expand button label": {
       "Expand participants list": [
         "参加者一覧を展開"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure vault sharing": [
+        "安全な保管庫共有"
       ]
     },
     "passwordless": {
@@ -7553,6 +7631,9 @@
       "For all ${ BRAND_NAME } services": [
         "すべての ${ BRAND_NAME } サービス向け"
       ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "ファイルをアップロードまたは同期するには、容量を空けるか ${ upgrade } してください"
+      ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "残りの時間分のクレジットが ${ BRAND_NAME } アカウントに追加されます。"
       ],
@@ -7702,6 +7783,9 @@
       "10 email addresses": [
         "10個のメールアドレス"
       ],
+      "2 users": [
+        "2 ユーザー"
+      ],
       "20 email addresses per user": [
         "ユーザーあたり 20 個の電子メール アドレス"
       ],
@@ -7720,11 +7804,17 @@
       "Custom schedule send and snooze times": [
         "カスタムスケジュールの送信時間とスヌーズ時間"
       ],
+      "Desktop app and email client support (via IMAP)": [
+        "デスクトップアプリとメールクライアントのサポート (IMAP 経由)"
+      ],
       "Early access to new apps and features": [
         "新しいアプリや機能への早期アクセス"
       ],
       "Email productivity features": [
         "メールの生産性機能"
+      ],
+      "Extra storage and users": [
+        "追加のストレージとユーザー"
       ],
       "Helping activists in Hong Kong": [
         "香港の活動家を支援"
@@ -7782,8 +7872,14 @@
       "Desktop app": [
         "デスクトップアプリ"
       ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
       "Upgrade": [
         "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
       ]
     },
     "Subscription renewal state": {
