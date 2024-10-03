@@ -5,15 +5,16 @@ import { c } from 'ttag';
 
 import type { WasmApiExchangeRate, WasmNetwork } from '@proton/andromeda';
 import { Href } from '@proton/atoms';
-import { Icon, Info, MiddleEllipsis, Tooltip } from '@proton/components';
+import { Icon, Info, MiddleEllipsis, Tooltip, useModalState } from '@proton/components';
 import { useAddresses } from '@proton/components/hooks';
 import { SECOND } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 import { COMPUTE_BITCOIN_UNIT, type TransactionData } from '@proton/wallet';
 import { useUserWalletSettings } from '@proton/wallet/store';
 
-import { ButtonLike, CoreButton } from '../../atoms';
+import { Button, ButtonLike, CoreButton } from '../../atoms';
 import { Price } from '../../atoms/Price';
+import { BoostTransactionModal } from '../../components/BoostTransactionModal';
 import type { TxDataListItemProps } from '../../components/TransactionList/data-list-items';
 import { BLOCKCHAIN_EXPLORER_BASE_URL_BY_NETWORK } from '../../constants';
 import {
@@ -179,8 +180,11 @@ export const DateDataItem = ({ tx }: TxDataListItemProps) => {
     );
 };
 
-export const StatusDataItem = ({ tx }: TxDataListItemProps) => {
+export const StatusDataItem = ({ tx, onBoost }: TxDataListItemProps & { onBoost: () => void }) => {
     const isConfirmed = !!tx?.networkData.time.confirmed;
+    const isSentTx = isSentTransaction(tx);
+
+    const [boostTransactionModal, setBoostTransactionModal, renderBoostTransactionModal] = useModalState();
 
     return (
         <div className="flex flex-row items-center w-full">
@@ -196,6 +200,25 @@ export const StatusDataItem = ({ tx }: TxDataListItemProps) => {
                     {isConfirmed ? c('Wallet transaction').t`Confirmed` : c('Wallet transaction').t`In progress`}
                 </span>
             </div>
+
+            {!isConfirmed && isSentTx && (
+                <>
+                    <Button
+                        className="flex flex-row items-center"
+                        size="small"
+                        shape="ghost"
+                        onClick={() => {
+                            setBoostTransactionModal(true);
+                        }}
+                    >
+                        {c('Wallet transaction').t`Boost priority`} <Icon className="ml-1" name="bolt" />
+                    </Button>
+
+                    {renderBoostTransactionModal && tx && (
+                        <BoostTransactionModal transaction={tx} onBoost={onBoost} {...boostTransactionModal} />
+                    )}
+                </>
+            )}
         </div>
     );
 };

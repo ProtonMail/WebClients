@@ -8,10 +8,12 @@ import { useAddressesKeys, useGetAddressKeys, useNotifications } from '@proton/c
 import type { DecryptedAddressKey, SimpleMap } from '@proton/shared/lib/interfaces';
 import { ANONYMOUS_SENDER_ADDRESS_ID, type IWasmApiWalletData } from '@proton/wallet';
 
+import { usePrimaryAddressKey } from '../../../hooks/usePrimaryAddressKey';
 import { usePsbt } from '../../../hooks/usePsbt';
 import type { TxBuilderHelper } from '../../../hooks/useTxBuilder';
 import type { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 
+// Anonymous sender address is discriminated by the absence of a Key field
 export const getAnonymousSenderAddress = () => ({
     Email: c('Wallet send').t`Anonymous sender`,
     ID: ANONYMOUS_SENDER_ADDRESS_ID,
@@ -39,17 +41,7 @@ export const useTransactionReview = ({
     const [addresses] = useAddressesKeys();
 
     // Address that will be used as a fallback when anonymous sender is selected
-    const primaryAddress = useMemo(() => {
-        const primaryAddressId = addresses?.at(0)?.address.ID;
-        const primaryAddressKey = addresses?.at(0)?.keys.at(0);
-
-        if (primaryAddressId && primaryAddressKey) {
-            return {
-                ID: primaryAddressId,
-                key: primaryAddressKey,
-            };
-        }
-    }, [addresses]);
+    const primaryAddress = usePrimaryAddressKey();
 
     const txBuilderRecipients = txBuilder.getRecipients();
     const { createNotification } = useNotifications();
@@ -62,8 +54,6 @@ export const useTransactionReview = ({
     const [noteToSelf, setNoteToSelf] = useState('');
 
     const { psbt, signAndBroadcastPsbt } = usePsbt({ txBuilderHelpers }, true);
-
-    const psbtExpectedSize = psbt?.computeTxSize();
 
     const totalFees = Number(psbt?.total_fees ?? 0);
     const totalSentAmount = txBuilderRecipients.reduce((acc, r) => {
@@ -118,6 +108,8 @@ export const useTransactionReview = ({
     // When user picked anonymous sender, we want to use the fallback address instead of selected one
     const finalSenderAddress = useMemo(() => {
         const { ID, key } = senderAddress ?? {};
+
+        // Anonymous sender won't have key
         if (ID && key) {
             return {
                 ID,
@@ -182,7 +174,6 @@ export const useTransactionReview = ({
         totalSentAmount,
         totalFees,
         totalAmount,
-        psbtExpectedSize,
 
         handleSendTransaction,
     };
