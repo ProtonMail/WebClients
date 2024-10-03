@@ -32,12 +32,14 @@ interface Props {
     networkDataAndHashedTxId: [WasmTransactionDetails, string];
     onClickEditNote: () => void;
     onClickEditSender: () => void;
+    onClose: () => void;
 }
 
 export const WalletTransactionDataDrawer = ({
     networkDataAndHashedTxId: [networkData, hashedTxId],
     onClickEditNote,
     onClickEditSender,
+    onClose,
 }: Props) => {
     const [transactionsFromStore] = useApiWalletTransactionData(compact([hashedTxId]));
     const apiData = transactionsFromStore?.[hashedTxId] ?? null;
@@ -112,7 +114,7 @@ export const WalletTransactionDataDrawer = ({
             <DateDataItem tx={transactionData} />
 
             <hr className="my-4" />
-            <StatusDataItem tx={transactionData} />
+            <StatusDataItem tx={transactionData} onBoost={() => onClose()} />
 
             {apiData?.Body && (
                 <>

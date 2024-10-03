@@ -2,18 +2,37 @@ import { format, isSameWeek, isToday } from 'date-fns';
 import compact from 'lodash/compact';
 import { c } from 'ttag';
 
-import type { WasmTransactionDetails, WasmTxOut } from '@proton/andromeda';
+import type {
+    WasmApiWalletAccount,
+    WasmBlockchainClient,
+    WasmNetwork,
+    WasmPsbt,
+    WasmTransactionDetails,
+    WasmTxOut,
+} from '@proton/andromeda';
+import { type PublicKeyReference } from '@proton/crypto/lib';
 import { SECOND } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import type { Address } from '@proton/shared/lib/interfaces';
-import { type TransactionData } from '@proton/wallet';
+import type { Address, DecryptedAddressKey, DecryptedKey, SimpleMap } from '@proton/shared/lib/interfaces';
+import {
+    type IWasmApiWalletData,
+    type TransactionData,
+    type WalletChainDataByWalletId,
+    encryptPgp,
+    encryptWalletDataWithWalletKey,
+} from '@proton/wallet';
 
 import { type WalletMap } from '../types';
+import { getAccountWithChainDataFromManyWallets } from './accounts';
 import { isSelfAddress } from './email';
 import { formatReadableNameAndEmail, multilineStrToOnelineJsx } from './string';
 
 const toMsTimestamp = (ts: number | BigInt) => {
     return Number(ts) * SECOND;
+};
+
+export const getNowTimestamp = (): string => {
+    return Math.floor(Date.now() / SECOND).toString();
 };
 
 export const getTransactionValue = (tx?: TransactionData) => {
@@ -152,4 +171,107 @@ export const getTransactionMessage = (transaction: TransactionData) => {
     }
 
     return null;
+};
+
+export interface BroadcastData
+    extends Required<
+        Pick<{ apiWalletData?: IWasmApiWalletData; apiAccount?: WasmApiWalletAccount }, 'apiAccount' | 'apiWalletData'>
+    > {
+    psbt: WasmPsbt;
+    blockchainClient: WasmBlockchainClient;
+    network: WasmNetwork;
+    walletsChainData: WalletChainDataByWalletId;
+    userKeys: DecryptedKey[];
+    noteToSelf?: string;
+    exchangeRateId?: string;
+    // BvE data
+    message?: {
+        content: string;
+        encryptionKeys: PublicKeyReference[];
+    };
+    senderAddress?: {
+        ID: string;
+        key: DecryptedAddressKey;
+    };
+    recipients?: SimpleMap<string>;
+    isAnonymousSend?: boolean;
+    onBroadcastedTx: (txid: string) => void;
+}
+
+export const signAndBroadcastPsbt = async ({
+    psbt,
+    blockchainClient,
+    network,
+    userKeys,
+    walletsChainData,
+    apiWalletData,
+    apiAccount,
+    exchangeRateId,
+    noteToSelf,
+    senderAddress,
+    message,
+    recipients,
+    isAnonymousSend,
+    onBroadcastedTx,
+}: BroadcastData) => {
+    const wasmAccount = getAccountWithChainDataFromManyWallets(
+        walletsChainData,
+        apiWalletData?.Wallet.ID,
+        apiAccount?.ID
+    );
+
+    if (!userKeys || !wasmAccount || !apiWalletData.WalletKey?.DecryptedKey) {
+        return;
+    }
+
+    const signed = await psbt.sign(wasmAccount.account, network).catch(() => {
+        throw new Error(c('Wallet Send').t`Could not sign transaction`);
+    });
+
+    const [encryptedNoteToSelf] = noteToSelf
+        ? await encryptWalletDataWithWalletKey([noteToSelf], apiWalletData.WalletKey.DecryptedKey).catch(() => [null])
+        : [null];
+
+    const getEncryptedBody = async (senderAddressKey: DecryptedAddressKey) => ({
+        body: message?.content
+            ? await encryptPgp(
+                  message.content,
+                  [senderAddressKey.publicKey, ...message.encryptionKeys],
+                  [senderAddressKey.privateKey]
+              ).catch(() => null)
+            : null,
+    });
+
+    const transactionData = {
+        label: encryptedNoteToSelf,
+        exchange_rate_or_transaction_time: exchangeRateId
+            ? {
+                  key: 'ExchangeRate' as const,
+                  value: exchangeRateId,
+              }
+            : { key: 'TransactionTime' as const, value: getNowTimestamp() },
+    };
+
+    const bveData = senderAddress
+        ? {
+              recipients: (recipients as Record<string, string>) || null,
+              is_anonymous: isAnonymousSend ? 1 : 0,
+              address_id: senderAddress.ID,
+              ...(await getEncryptedBody(senderAddress.key)),
+          }
+        : undefined;
+
+    try {
+        const txId = await blockchainClient.broadcastPsbt(
+            signed,
+            apiWalletData.Wallet.ID,
+            apiAccount.ID,
+            transactionData,
+            bveData
+        );
+
+        onBroadcastedTx(txId);
+    } catch (error: any) {
+        throw new Error(error?.error ?? c('Wallet Send').t`Could not broadcast transaction`);
+    }
 };
