@@ -7,7 +7,6 @@ import passLightTheme from '@proton/colors/themes/dist/pass-light.theme.css';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
-import type { Maybe } from '@proton/pass/types';
 
 export const THEME_ID = 'pass-theme';
 
@@ -18,7 +17,7 @@ type ThemeConfig = {
 
 const matchMediaDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-const PASS_THEMES_MAP: Partial<Record<PassThemeOption, ThemeConfig>> = {
+const PASS_THEMES_MAP: Record<PassThemeOption, ThemeConfig> = {
     [PassThemeOption.PassDark]: {
         className: 'pass-dark',
         styles: passDarkTheme.toString(),
@@ -33,44 +32,39 @@ const PASS_THEMES_MAP: Partial<Record<PassThemeOption, ThemeConfig>> = {
     },
 };
 
-type Props = { theme?: PassThemeOption };
+type Props = { theme: PassThemeOption };
 
-export const ThemeProvider: FC<Props> = (props) => {
-    const { getTheme } = usePassCore();
-    const [theme, setTheme] = useState<Maybe<PassThemeOption>>(props.theme);
-
-    const config = theme ? PASS_THEMES_MAP[theme] : null;
+export const ThemeProvider: FC<Props> = ({ theme }) => {
+    const { getTheme, setTheme } = usePassCore();
+    const [config, setConfig] = useState<ThemeConfig>(PASS_THEMES_MAP[theme]);
 
     useEffect(() => {
-        if (props.theme) {
-            setTheme(props.theme);
-        }
-    }, [props.theme]);
-
-    useLayoutEffect(() => {
-        if (config) {
-            document.body.classList.add(config.className);
-            return () => document.body.classList.remove(config.className);
-        }
-    }, [config]);
+        setConfig(PASS_THEMES_MAP[theme]);
+    }, [theme]);
 
     useEffect(() => {
+        // Get initial theme stored locally
         (async () => (await getTheme?.()) ?? PASS_DEFAULT_THEME)()
             .then(setTheme)
-            .catch(() => setTheme(PASS_DEFAULT_THEME));
+            .catch(() => setTheme?.(PASS_DEFAULT_THEME));
     }, []);
 
     useLayoutEffect(() => {
-        if (props.theme === PassThemeOption.OS) {
+        document.body.classList.add(config.className);
+        return () => document.body.classList.remove(config.className);
+    }, [config]);
+
+    useLayoutEffect(() => {
+        if (theme === PassThemeOption.OS) {
             const listener = (e: MediaQueryListEvent) => {
-                setTheme(e.matches ? PassThemeOption.PassDark : PassThemeOption.PassLight);
+                setConfig(PASS_THEMES_MAP[e.matches ? PassThemeOption.PassDark : PassThemeOption.PassLight]);
             };
             matchMediaDark.addEventListener?.('change', listener);
             return () => {
                 matchMediaDark.removeEventListener?.('change', listener);
             };
         }
-    }, [props.theme]);
+    }, [theme]);
 
     return <>{config && <style id={THEME_ID}>{config.styles}</style>}</>;
 };

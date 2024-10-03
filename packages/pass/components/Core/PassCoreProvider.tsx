@@ -50,14 +50,14 @@ export type PassCoreContextValue = {
      * cancel the image request if the image component is unmounted,
      * applying back-pressure when users scroll rapidly through items */
     getDomainImage: (domain: string, signal: AbortSignal) => Promise<Maybe<string>>;
-    /** Resolves the initial theme. This is required in order to resolve
-     * the proxied theme setting stored locally before state hydration */
-    getTheme?: () => MaybePromise<Maybe<PassThemeOption>>;
-    setTheme?: (theme: PassThemeOption) => void;
     /** Resolves the locally stored app logs */
     getLogs: () => Promise<string[]>;
     /** Returns the URL that should be opened when prompting for rating */
     getRatingURL?: () => string;
+    /** Resolves the initial theme. This is required in order to resolve
+     * the proxied theme setting stored locally before state hydration */
+    getTheme: () => MaybePromise<Maybe<PassThemeOption>>;
+    setTheme?: (theme: PassThemeOption) => void;
     /** defines how a client handles external links.
      * In extension, this will leverage the `browser.tabs` API
      * whereas in the web-app, we can use `window.location` */
