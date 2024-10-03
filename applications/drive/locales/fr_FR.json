@@ -393,6 +393,9 @@
       "Get verification code": [
         "Obtenir un code de vérification"
       ],
+      "Go back": [
+        "Retour"
+      ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Accéder à ${ DRIVE_SHORT_APP_NAME }"
       ],
@@ -804,6 +807,9 @@
       "Start setup": [
         "Démarrer la configuration"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "À partir de ${ priceUnlimited }"
+      ],
       "Stay": [
         "Rester"
       ],
@@ -869,6 +875,9 @@
       ],
       "Upgrade now": [
         "Changer d'abonnement"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Je passe à ${ BRAND_NAME } Unlimited"
       ],
       "Upload anyway": [
         "Importer quand même"
@@ -2275,6 +2284,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } protège votre compte grâce à une surveillance dédiée 24h/24 et 7j/7 des activités suspectes, incluant l'intervention de spécialistes en sécurité."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "L'authentification A2F ajoute une couche de sécurité supplémentaire, empêchant tout accès non autorisé."
       ],
@@ -2323,6 +2335,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne voulez pas fusionner."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Grâce aux groupes de contacts, vous pouvez envoyer des e-mails à toutes les personnes du groupe en un seul clic."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Vous pouvez importer des événements au format iCal (fichier ICS). Le fichier peut avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et contenir jusqu'à ${ MAX_IMPORT_EVENTS_STRING } événements. Si votre fichier est plus volumineux, nous vous invitons à le diviser en plusieurs fichiers plus petits."
       ],
@@ -2334,6 +2349,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Vos méthodes de récupération de compte et de données sont définies."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -6621,8 +6639,14 @@
       "Get started for ${ price }": [
         "Commencez pour ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "À partir de ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Changer d'abonnement"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Je passe à ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7196,6 +7220,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Profitez de Mail Plus pour ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "À partir de ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7761,34 +7788,145 @@
       ]
     },
     "Onboarding Action": {
+      "Continue": [
+        "Continuer"
+      ],
       "Create new document": [
         "Créer un document"
       ],
+      "Get started": [
+        "Lancez-vous !"
+      ],
+      "Install and continue": [
+        "Installer et continuer"
+      ],
+      "Install later": [
+        "Installez-la plus tard"
+      ],
+      "Invite members": [
+        "Invitez des membres"
+      ],
+      "Maybe later": [
+        "Peut-être plus tard"
+      ],
       "Next": [
         "Suivant"
+      ],
+      "Select theme": [
+        "Sélectionnez un thème"
+      ],
+      "Skip": [
+        "Ignorer"
+      ],
+      "Skip for now": [
+        "Ignorer pour le moment"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Commencer à utiliser ${ DRIVE_APP_NAME }"
       ],
       "Try it later": [
         "Essayer plus tard"
+      ],
+      "Try the app": [
+        "Essayez l'application"
+      ],
+      "Upload file": [
+        "Importez un fichier"
+      ],
+      "Upload folder": [
+        "Importez un dossier"
       ]
     },
     "Onboarding Info": {
+      "Access your files on the go": [
+        "Accédez à vos fichiers où que vous soyez"
+      ],
+      "Back up your photos and memories": [
+        "Sauvegardez vos photos et souvenirs"
+      ],
+      "Backup your photos and memories": [
+        "Sauvegardez vos photos et souvenirs"
+      ],
+      "Choose your favorite theme": [
+        "Choisissez votre thème favori"
+      ],
       "Collaborate on documents": [
         "Collaborer sur des documents"
       ],
       "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
         "Créez et collaborez sur des documents. C'est entièrement sécurisé par le chiffrement de bout en bout."
       ],
+      "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
+        "Préférez-vous ${ DRIVE_APP_NAME } en mode claire ou sombre ? Choisissez la couleur qui vous inspire le plus."
+      ],
+      "Drag and drop your files here": [
+        "Glisser et déposez vos fichiers ici"
+      ],
+      "Edit documents online": [
+        "Éditez vos documents en ligne"
+      ],
+      "End-to-end encrypted storage for your files": [
+        "Stockage chiffré de bout en bout pour vos fichiers"
+      ],
+      "Faster uploads for large or multiple files": [
+        "Des importations plus rapides de vos fichiers, quelle que soit leur taille ou leur nombre."
+      ],
+      "Final approval in progress": [
+        "L'approbation finale est en cours."
+      ],
+      "Final approval pending": [
+        "L'approbation finale est en attente."
+      ],
+      "Free up hard drive space on your computer": [
+        "Libérez de l'espace sur le disque dur de votre ordinateur"
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Commencez à utiliser ${ DRIVE_APP_NAME } et nous augmenterons votre espace de stockage pour atteindre 5 Go !"
+      ],
+      "Get the desktop app": [
+        "Téléchargez l'application de bureau"
+      ],
+      "Get the mobile app": [
+        "Téléchargez l'application mobile"
+      ],
+      "Got an Android? We've got you covered.": [
+        "Vous avez un Android ? On s'occupe de tout."
+      ],
+      "Got an iPhone? We've got you covered.": [
+        "Vous avez un iPhone ? On s'occupe de tout."
+      ],
+      "Hang tight": [
+        "Patientez un instant."
       ],
       "Introducing ${ DOCS_APP_NAME }": [
         "Voici ${ DOCS_APP_NAME }"
       ],
+      "Invitation accepted": [
+        "L'invitation a été acceptée."
+      ],
+      "Invitation received": [
+        "L'invitation a été reçue."
+      ],
+      "Invite team members": [
+        "Invitez les membres de l'équipe"
+      ],
       "Manage access": [
         "Gérer l'accès"
+      ],
+      "Organize files right from your desktop": [
+        "Organisez vos fichiers directement depuis votre bureau"
+      ],
+      "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
+        "Protégez vos documents financiers, cartes d'identité, fichiers de projet, photos et bien plus encore grâce à un chiffrement de bout en bout."
+      ],
+      "Scan the QR code to install the mobile app": [
+        "Scannez le GR code pour installer l'application mobile"
+      ],
+      "Secure your files": [
+        "Sécurisez vos fichiers"
+      ],
+      "Securely share files and folders": [
+        "Partagez en toute sécurité vos fichiers et dossiers"
       ],
       "Securely store, manage, and share your business-critical files with confidence.": [
         "Stockez, gérez et partagez en toute sécurité et confidentialité les fichiers essentiels à vos activités."
@@ -7809,11 +7947,23 @@
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "Stockez vos fichiers et partagez-les en toute sécurité. Commencez par sécuriser vos fichiers les plus confidentiels, comme vos pièces d'identité, vos contrats et vos photos personnelles."
       ],
+      "Sync and access your files from anywhere": [
+        "Synchronisez et accédez à vos fichiers depuis n'importe où"
+      ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Le propriétaire doit confirmer l'accès au partage. Vous recevrez un e-mail une fois que ce sera fait."
       ],
       "Upload a file": [
         "Importer un fichier"
+      ],
+      "Upload your first file": [
+        "Importez votre premier fichier"
+      ],
+      "Work faster, smarter": [
+        "Travaillez plus rapidement et plus efficacement"
+      ],
+      "Work together": [
+        "Travaillez en équipe"
       ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Votre coffre-fort en ligne digne de confiance pour les documents importants et les précieux souvenirs."
@@ -8607,6 +8757,9 @@
         "${ n } mois"
       ],
       "/ month": [
+        "/mois"
+      ],
+      "/month": [
         "/mois"
       ],
       "1 year": [
@@ -9809,6 +9962,9 @@
       "Groups": [
         "Groupes"
       ],
+      "High security for your account": [
+        "Une sécurité renforcée pour votre compte"
+      ],
       "Hm, we couldn't find that one": [
         "Nous n'avons pas trouvé cet élément."
       ],
@@ -9890,6 +10046,9 @@
       ],
       "Number of items": [
         "Nombre d'éléments"
+      ],
+      "One email, many recipients": [
+        "Un seul e-mail, plusieurs destinataires"
       ],
       "Open actions dropdown": [
         "Ouvrir le menu déroulant des actions"
