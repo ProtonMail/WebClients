@@ -32,12 +32,14 @@ import {
     ProtonMailBridgeSection,
     SMTPSubmissionSection,
     SpamFiltersSection,
+    SubscriptionModalProvider,
     UserKeysSection,
     useIsInboxElectronApp,
 } from '@proton/components';
 import ForwardSection from '@proton/components/containers/forward/ForwardSection';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import type { getMailAppRoutes } from './routes';
 import { getHasPmMeAddress } from './routes';
@@ -45,9 +47,11 @@ import { getHasPmMeAddress } from './routes';
 const MailSettingsRouter = ({
     mailAppRoutes,
     redirect,
+    app,
 }: {
     mailAppRoutes: ReturnType<typeof getMailAppRoutes>;
     redirect: ReactNode;
+    app: APP_NAMES;
 }) => {
     const { path } = useRouteMatch();
     useMailSettings(); // Preload mail settings
@@ -63,18 +67,20 @@ const MailSettingsRouter = ({
     return (
         <Switch>
             <Route path={getSectionPath(path, general)}>
-                {loadingAddresses && !Array.isArray(addresses) ? (
-                    <PrivateMainAreaLoading />
-                ) : (
-                    <PrivateMainSettingsArea config={general}>
-                        <PmMeSection isPMAddressActive={getHasPmMeAddress(addresses)} />
-                        <MessagesGeneralSection />
-                        <LayoutsSection />
-                        <MessagesSection />
-                        <MessagesOtherSection />
-                        <OtherMailPreferencesSection />
-                    </PrivateMainSettingsArea>
-                )}
+                <SubscriptionModalProvider app={app}>
+                    {loadingAddresses && !Array.isArray(addresses) ? (
+                        <PrivateMainAreaLoading />
+                    ) : (
+                        <PrivateMainSettingsArea config={general}>
+                            <PmMeSection isPMAddressActive={getHasPmMeAddress(addresses)} />
+                            <MessagesGeneralSection />
+                            <LayoutsSection />
+                            <MessagesSection />
+                            <MessagesOtherSection />
+                            <OtherMailPreferencesSection />
+                        </PrivateMainSettingsArea>
+                    )}
+                </SubscriptionModalProvider>
             </Route>
             <Route path={getSectionPath(path, desktop)}>
                 <PrivateMainSettingsArea config={desktop}>
@@ -83,29 +89,37 @@ const MailSettingsRouter = ({
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, identity)}>
-                <PrivateMainSettingsArea config={identity}>
-                    <IdentitySection />
-                    <AliasPromotionSection />
-                    <AddressesSection isOnlySelf />
-                </PrivateMainSettingsArea>
+                <SubscriptionModalProvider app={app}>
+                    <PrivateMainSettingsArea config={identity}>
+                        <IdentitySection />
+                        <AliasPromotionSection />
+                        <AddressesSection isOnlySelf />
+                    </PrivateMainSettingsArea>
+                </SubscriptionModalProvider>
             </Route>
             <Route path={getSectionPath(path, folder)}>
-                <PrivateMainSettingsArea config={folder}>
-                    <FoldersSection />
-                    <LabelsSection />
-                </PrivateMainSettingsArea>
+                <SubscriptionModalProvider app={app}>
+                    <PrivateMainSettingsArea config={folder}>
+                        <FoldersSection />
+                        <LabelsSection />
+                    </PrivateMainSettingsArea>
+                </SubscriptionModalProvider>
             </Route>
             <Route path={getSectionPath(path, filter)}>
-                <PrivateMainSettingsArea config={filter}>
-                    <FiltersSection />
-                    <SpamFiltersSection />
-                </PrivateMainSettingsArea>
+                <SubscriptionModalProvider app={app}>
+                    <PrivateMainSettingsArea config={filter}>
+                        <FiltersSection />
+                        <SpamFiltersSection />
+                    </PrivateMainSettingsArea>
+                </SubscriptionModalProvider>
             </Route>
             <Route path={getSectionPath(path, autoReply)}>
-                <PrivateMainSettingsArea config={autoReply}>
-                    <ForwardSection />
-                    <AutoReplySection />
-                </PrivateMainSettingsArea>
+                <SubscriptionModalProvider app={app}>
+                    <PrivateMainSettingsArea config={autoReply}>
+                        <ForwardSection />
+                        <AutoReplySection />
+                    </PrivateMainSettingsArea>
+                </SubscriptionModalProvider>
             </Route>
             {getIsSectionAvailable(domainNames) && (
                 <Route path={getSectionPath(path, domainNames)}>
