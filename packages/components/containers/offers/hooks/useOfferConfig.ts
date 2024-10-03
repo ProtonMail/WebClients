@@ -25,6 +25,7 @@ import { duoPlan2024YearlyConfig, useDuoPlan2024Yearly } from '../operations/duo
 import { goUnlimited2022Config, useGoUnlimited2022 } from '../operations/goUnlimited2022';
 import { mailTrial2023Config, useMailTrial2023 } from '../operations/mailTrial2023';
 import { mailTrial2024Config, useMailTrial2024 } from '../operations/mailTrial2024';
+import { passFamilyPlan2024YearlyConfig, usePassFamilyPlan2024Yearly } from '../operations/passFamilyPlan2024Yearly';
 import { subscriptionReminderConfig, useSubscriptionReminder } from '../operations/subscriptionReminder';
 
 const configs: Record<OfferId, OfferConfig> = {
@@ -44,6 +45,7 @@ const configs: Record<OfferId, OfferConfig> = {
     'black-friday-2023-drive-free': blackFriday2023DriveFreeConfig,
     'black-friday-2023-drive-plus': blackFriday2023DrivePlusConfig,
     'black-friday-2023-drive-unlimited': blackFriday2023DriveUnlimitedConfig,
+    'pass-family-plan-2024-yearly': passFamilyPlan2024YearlyConfig,
 };
 
 const OFFERS_FEATURE_FLAGS = Object.values(configs).map(({ featureCode }) => featureCode);
@@ -52,6 +54,7 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
     // Preload FF to avoid single API requests
     useFeatures([FeatureCode.Offers, ...OFFERS_FEATURE_FLAGS]);
 
+    const passFamilyPlan2024Yearly = usePassFamilyPlan2024Yearly();
     const subscriptionReminder = useSubscriptionReminder();
     const duoPlan2024Yearly = useDuoPlan2024Yearly();
     const duoPlan2024TwoYear = useDuoPlanTwoYear2024();
@@ -71,6 +74,7 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
 
     // Offer order matters
     const allOffers: Operation[] = [
+        passFamilyPlan2024Yearly,
         duoPlan2024Yearly,
         duoPlan2024TwoYear,
         blackFriday2023InboxFree,
