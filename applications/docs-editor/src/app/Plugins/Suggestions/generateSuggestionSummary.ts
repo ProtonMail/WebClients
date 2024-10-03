@@ -62,6 +62,11 @@ export function generateSuggestionSummary(
         }
       }
 
+      if (currentType === 'style-change') {
+        const changedProperties = node.__properties.nodePropertiesChanged
+        content = Object.keys(changedProperties || {}).join(',')
+      }
+
       const lastItem = summary[summary.length - 1]
       if (!lastItem) {
         summary.push({ type, content, replaceWith })

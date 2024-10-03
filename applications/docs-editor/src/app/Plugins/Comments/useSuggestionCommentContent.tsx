@@ -91,7 +91,7 @@ export function useSuggestionCommentContent(
       color = 'weak'
     } else if (type === 'replace') {
       title = c('Label').t`Replace`
-    } else if (type === 'property-change') {
+    } else if (type === 'property-change' || type === 'style-change') {
       title = c('Label').t`Format`
     } else if (type === 'split') {
       title = c('Label').t`Insert paragraph`
@@ -108,6 +108,23 @@ export function useSuggestionCommentContent(
     }
     if (!!replaceWith || type === 'delete') {
       content = `"${content}"`
+    }
+    if (type === 'style-change') {
+      content = content
+        .split(',')
+        .map((property) => {
+          switch (property) {
+            case 'background-color':
+              return c('Info').t`Highlight`
+            case 'color':
+              return c('Info').t`Text color`
+            case 'font-size':
+              return c('Info').t`Font size`
+            case 'font-family':
+              return c('Info').t`Font`
+          }
+        })
+        .join(', ')
     }
     return (
       <Fragment key={index}>
