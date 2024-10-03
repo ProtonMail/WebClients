@@ -118,6 +118,9 @@
       "Increase": [
         "Verhogen"
       ],
+      "Input passphrase": [
+        "Voer wachtwoordzin in"
+      ],
       "Keep my subscription": [
         "Mijn abonnement behouden"
       ],
@@ -321,6 +324,11 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Til e-mailproductiviteit naar een hoger niveau. Laat ${ BRAND_NAME } Scribe u helpen bij het schrijven, beantwoorden en proeflezen van uw e-mails."
+      ]
+    },
+    "Balance": {
+      "Loading balance": [
+        "Saldo laden"
       ]
     },
     "bf2023: Deal details": {
@@ -2256,6 +2264,9 @@
       "Please authenticate your payment in the verification tab.": [
         "Authenticeer uw betaling in het verificatietabblad."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Houd er rekening mee dat, wanneer u op de knop Bevestigen klikt, uw account nog ${ remainingCreditsFormatted } credits over heeft."
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Probeer opnieuw met een andere betalingsmethode, of neem contact op met uw bank."
       ],
@@ -2628,11 +2639,17 @@
       ],
       "Loading message": [
         "Bericht wordt geladen"
+      ],
+      "Loading send from label": [
+        "Verzenden vanaf label laden"
       ]
     },
     "Loading": {
       "Amount": [
         "Bedrag"
+      ],
+      "Secondary amount": [
+        "Secundair bedrag"
       ]
     },
     "mail_signup_2024: Info": {
@@ -2792,6 +2809,12 @@
       "${ size } storage": [
         "${ size } opslagruimte"
       ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Voor ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Voor alle ${ BRAND_NAME } diensten"
+      ],
       "1 user": [
         "1 gebruiker"
       ],
@@ -2812,6 +2835,12 @@
       ],
       "Administration Panel": [
         "Beheerderspaneel"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Alle basisdiensten van ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Alle premium ${ BRAND_NAME }-services. Eén simpel abonnement"
       ],
       "Auto-delete Spam and Trash": [
         "Spam en Prullenbak automatisch verwijderen"
@@ -2845,6 +2874,9 @@
       ],
       "Contact groups management": [
         "Beheer van contactgroepen"
+      ],
+      "Custom and secure business email": [
+        "Aangepaste en veilige zakelijke e-mail"
       ],
       "Custom domains for email aliases": [
         "Aangepaste domeinen voor e-mailalliassen"
@@ -4169,7 +4201,7 @@
         "Krediet/debietkaart bewerken"
       ],
       "Enter 2FA code": [
-        "Voer 2FA code in"
+        "Voer 2FA-code in"
       ],
       "Enter your password": [
         "Voer uw wachtwoord in"
@@ -4348,6 +4380,9 @@
       ]
     },
     "Wallet": {
+      "An error occurred": [
+        "Er is een fout opgetreden"
+      ],
       "Close": [
         "Sluiten"
       ],
@@ -4360,8 +4395,14 @@
       "Explore other ${ BRAND_NAME } products": [
         "Ontdek andere ${ BRAND_NAME }-producten"
       ],
+      "Syncing new data": [
+        "Nieuwe gegevens synchroniseren"
+      ],
       "Upgrade to Visionary": [
         "Kies voor Visionary"
+      ],
+      "WebAssembly must be enabled to use ${ WALLET_APP_NAME }": [
+        "WebAssembly moet ingeschakeld zijn om ${ WALLET_APP_NAME } te kunnen gebruiken"
       ]
     },
     "Wallet Account": {
@@ -4503,6 +4544,12 @@
     "Wallet header": {
       "Secure your wallet": [
         "Beveilig uw portemonnee"
+      ],
+      "The current fingerprint doesn't match stored one.": [
+        "De huidige vingerafdruk komt niet overeen met die is opgeslagen."
+      ],
+      "This wallet needs a passphrase to be used.": [
+        "Deze portemonnee moet een wachtwoordzin bevatten."
       ]
     },
     "Wallet import": {
@@ -4595,6 +4642,9 @@
       "My wallet passphrase": [
         "Wachtwoordzin van mijn portemonnee"
       ],
+      "To use this wallet, you need to input the passphrase": [
+        "Om deze portemonnee te gebruiken, dient u de wachtwoordzin in te voeren"
+      ],
       "Wallet passphrase": [
         "Wachtwoordzin van portemonnee"
       ]
@@ -4685,6 +4735,9 @@
       ],
       "Default currency": [
         "Standaardvaluta"
+      ],
+      "For better privacy, we recommend ${ walletAccountCreation } for receiving Bitcoin via Email. ${ learnMore }.": [
+        "Voor betere privacy raden we ${ walletAccountCreation } aan om Bitcoin via e-mail te ontvangen. ${ learnMore }."
       ],
       "Learn more": [
         "Meer informatie"
@@ -4861,6 +4914,9 @@
       "Account name changed": [
         "Accountnaam is gewijzigd"
       ],
+      "Account name could not be changed": [
+        "Accountnaam kon niet gewijzigd worden"
+      ],
       "Account was deleted": [
         "Account is verwijderd"
       ],
@@ -4872,6 +4928,9 @@
       ],
       "Could not be replaced": [
         "Kan niet vervangen worden"
+      ],
+      "Could not fill the pool after email address addition": [
+        "Kon de pool niet invullen na de toevoeging van het e-mailadres"
       ],
       "Could not fill the pool after email address replacement": [
         "Kan de pool niet invullen na de vervanging van het e-mailadres"
@@ -5143,6 +5202,9 @@
       "Loading": [
         "Laden"
       ],
+      "Loading balance": [
+        "Saldo laden"
+      ],
       "Message to recipient": [
         "Bericht aan ontvanger"
       ],
@@ -5191,6 +5253,9 @@
       "View more": [
         "Meer bekijken"
       ],
+      "We are currently experiencing difficulties in calculating network fees. Please try again later. If the issue persists, contact our support team for assistance.": [
+        "We hebben momenteel een probleem met het berekenen van de netwerkkosten. Probeer het later opnieuw. Als dit probleem zich blijft voordoen, neem dan contact op met ons ondersteuningsteam voor hulp."
+      ],
       "You received": [
         "U hebt ontvangen"
       ],
@@ -5204,6 +5269,11 @@
       ],
       "Transaction label successfully updated": [
         "Transactielabel is bijgewerkt"
+      ]
+    },
+    "Wallet Transaction List": {
+      "Page ${ pageNumber }": [
+        "Pagina ${ pageNumber }"
       ]
     },
     "Wallet transactions": {
