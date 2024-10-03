@@ -5,8 +5,8 @@
  * any bundled code that runs immediately when the file is loaded. This includes
  * side-effects such as directly executed statements and exported constants. */
 import * as config from 'proton-pass-extension/app/config';
-import { createDevReloader } from 'proton-pass-extension/lib/utils/dev-reload';
 import 'proton-pass-extension/lib/utils/polyfills';
+import { devReload } from 'proton-pass-extension/lib/utils/reload';
 
 import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
@@ -39,7 +39,7 @@ if (typeof browser !== 'undefined') {
     }
 
     if (BUILD_TARGET !== 'safari' && ENV === 'development') {
-        createDevReloader(async () => {
+        devReload(async () => {
             const tabs = await browser.tabs.query({});
             const csUnloads = tabs
                 .filter((tab) => tab.id !== undefined)

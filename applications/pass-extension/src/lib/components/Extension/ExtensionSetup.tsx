@@ -3,16 +3,14 @@ import { createContext, useEffect, useRef, useState } from 'react';
 
 import { type ExtensionContextType, setupExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 import { WithExtensionLocale } from 'proton-pass-extension/lib/hooks/useExtensionLocale';
+import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import type { MaybeNull } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
-type Props = {
-    children: ReactNode;
-    recycle?: boolean;
-};
+type Props = { children: ReactNode; recycle?: boolean };
 
 export const ExtensionReactContext = createContext<MaybeNull<ExtensionContextType>>(null);
 export const useExtensionContext = createUseContext(ExtensionReactContext);
@@ -30,7 +28,7 @@ export const ExtensionSetup: FC<Props> = ({ children, recycle = false }) => {
             ctx.current = await setupExtensionContext({
                 endpoint,
                 onDisconnect: () => {
-                    if (!recycle) window.location.reload();
+                    if (!recycle) reloadManager.appReload();
                     return { recycle };
                 },
                 onRecycle: noop,

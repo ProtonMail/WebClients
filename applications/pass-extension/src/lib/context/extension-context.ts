@@ -49,8 +49,8 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
         const ctx = ExtensionContext.set({ endpoint, port, tabId, url, destroy });
 
         ctx.port.onDisconnect.addListener(async () => {
-            logger.info('[Context::Extension] port disconnected - reconnecting');
             const { recycle } = onDisconnect?.(ExtensionContext.read());
+            logger.info(`[Context::Extension] port disconnected [reconnect=${recycle}]`);
             return recycle && onRecycle(await setupExtensionContext(options));
         });
 

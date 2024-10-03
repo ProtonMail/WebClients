@@ -7,6 +7,7 @@ import { API_PROXY_URL } from 'proton-pass-extension/app/worker/services/api-pro
 import { createCoreServiceBridge } from 'proton-pass-extension/lib/services/core.bridge';
 import { createMonitorBridge } from 'proton-pass-extension/lib/services/monitor.bridge';
 import { promptForPermissions } from 'proton-pass-extension/lib/utils/permissions';
+import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
 
 import useInstance from '@proton/hooks/useInstance';
 import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
@@ -142,7 +143,9 @@ const getExtensionCoreProps = (endpoint: ClientEndpoint, config: PassConfig): Pa
 
         onForceUpdate: () =>
             sendMessage(messageFactory({ type: WorkerMessageType.WORKER_RELOAD }))
-                .then((res) => res.type === 'error' && res.critical && browser.runtime.reload())
+                .then((res) => {
+                    if (res.type === 'error' && res.critical) void reloadManager.runtimeReload({ immediate: true });
+                })
                 .catch(noop),
 
         openSettings: (page) => {
