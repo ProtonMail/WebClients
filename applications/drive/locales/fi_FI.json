@@ -3987,8 +3987,8 @@
         "${ selectedFoldersCountLocalized } tunnistetta valittu"
       ],
       "${ skippedCount } skipped": [
-        "${ skippedCount } ohitettiin",
-        "${ skippedCount } ohitettiin"
+        "${ skippedCount } ohitettu",
+        "${ skippedCount } ohitettu"
       ],
       "${ speed }/s": [
         "${ speed }/s"
@@ -4463,7 +4463,7 @@
         "Parasta lopputulosta varten, vältä suoratoistoa ja keskusmuistia kuormittavia toimintoja tai jaa tallennuksesi pienempiin eriin."
       ],
       "Free 5GB encrypted storage to get started": [
-        "5 Gt ilmaista salattua tallennustilaa aluksi"
+        "5 Gt ilmaista salattua tallennustilaa päästäksesi alkuun"
       ],
       "from the version history?": [
         "versiohistoriasta?"
@@ -5144,7 +5144,7 @@
         "Tuodaksesi tapahtumia, luo ensin ${ CALENDAR_APP_NAME }iin kalenteri, johon tapahtumat lisätään."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Allekirjoittaaksesi yhteystietosi uudelleen, on jokainen yhteystieto tarkistettava tilisi salausavainlistaa vasten. Jos vastaavuutta ei löydy, allekirjoitetaan yhteystietosi ensisijaisella salausavaimella."
+        "Allekirjoittaaksesi yhteystietosi uudelleen, on jokainen yhteystieto tarkistettava tilisi salausavainluetteloa vasten. Jos vastaavuutta ei löydy, allekirjoitetaan yhteystietosi ensisijaisella salausavaimella."
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "Tietojesi palauttamiseksi, sinun on aktivoitava uudelleen se tiliavain, joka oli käytössä kun tiedot luotiin. Sinun on myös muistettava avaimen luontihetkellä käytetty salasana."
@@ -5383,7 +5383,7 @@
         "Et voi kumota toimintoa."
       ],
       "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
-        "Sinulla on ${ expiresInDays } päivä aikaa lunastaa 3 Gt tervetuliaisetusi ja ",
+        "Sinulla on ${ expiresInDays } päivää aikaa lunastaa 3 Gt tervetuliaisetusi ja ",
         "Sinulla on ${ expiresInDays } päivää aikaa lunastaa 3 Gt tervetuliaisetusi ja "
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
