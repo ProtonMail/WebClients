@@ -56,6 +56,8 @@ export const getCommentThreadInDocument = (volumeId: string, linkId: string, thr
     url: `docs/volumes/${volumeId}/documents/${linkId}/threads/${threadId}`,
 });
 
+type CommentType = 1 | 2;
+
 type CommonCommentData = {
     Content: string;
     AuthorEmail: string;
@@ -66,7 +68,7 @@ type CommentThreadType = 1 | 2;
 export const createThreadInDocument = (
     volumeId: string,
     linkId: string,
-    data: { Mark: string; Comment: CommonCommentData; Type: CommentThreadType }
+    data: { Mark: string; Comment: CommonCommentData & { Type: CommentType }; Type: CommentThreadType }
 ) => ({
     method: 'post',
     url: `docs/volumes/${volumeId}/documents/${linkId}/threads`,
@@ -102,7 +104,7 @@ export const addCommentToThreadInDocument = (
     volumeId: string,
     linkId: string,
     threadId: string,
-    data: CommonCommentData & { ParentCommentId: string | null }
+    data: CommonCommentData & { Type: CommentType; ParentCommentId: string | null }
 ) => ({
     method: 'post',
     url: `docs/volumes/${volumeId}/documents/${linkId}/threads/${threadId}`,

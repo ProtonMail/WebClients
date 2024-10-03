@@ -16,6 +16,7 @@ jest.mock('../Util/GenerateUuid', () => ({
 }))
 
 jest.mock('@proton/docs-shared', () => ({
+  ...jest.requireActual('@proton/docs-shared'),
   ServerTime: jest.fn().mockImplementation(() => ({})),
   CommentThreadState: {
     Active: 'Active',
@@ -106,6 +107,7 @@ describe('CreateThread', () => {
       encryptedMainCommentContent: 'encrypted-comment',
       authorEmail: 'foo@bar.com',
       type: 1,
+      commentType: 1,
     })
     expect(mockDecryptComment.execute).toHaveBeenCalledWith('encrypted-response-comment', 'mark-id', {
       userOwnAddress: 'foo@bar.com',
