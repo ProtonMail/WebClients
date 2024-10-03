@@ -215,6 +215,10 @@ function $handleInsertInput(
     latestSelection.applyDOMRange(targetRange)
   }
 
+  if (inputType === 'insertReplacementText' && existingParentSuggestion?.getSuggestionTypeOrThrow() === 'insert') {
+    return $handleReplacementTextInsideInsertSuggestion(latestSelection, data, dataTransfer, logger)
+  }
+
   if (data === null && dataTransfer !== null) {
     const types = dataTransfer.types
     logger?.info('Inserting data transfer', types)
@@ -459,17 +463,59 @@ function $insertDataTransferAsSuggestion(dataTransfer: DataTransfer, selection: 
     parts.pop()
   }
   const nodes: LexicalNode[] = []
-  for (const part of parts) {
-    const paragraph = $createParagraphNode()
-    const splitByTabs = part.split(/(\t)/)
-    for (const split of splitByTabs) {
-      if (split === '\t') {
-        paragraph.append($createTabNode())
-      } else {
-        paragraph.append($createTextNode(split))
+  if (parts.length === 1) {
+    nodes.push($createTextNode(parts[0]))
+  } else {
+    for (const part of parts) {
+      const paragraph = $createParagraphNode()
+      const splitByTabs = part.split(/(\t)/)
+      for (const split of splitByTabs) {
+        if (split === '\t') {
+          paragraph.append($createTabNode())
+        } else {
+          paragraph.append($createTextNode(split))
+        }
       }
+      nodes.push(paragraph)
     }
-    nodes.push(paragraph)
   }
   $insertGeneratedNodes(editor, nodes, selection)
+}
+
+/**
+ * If we're already inside an insert suggestion, we don't want to create a
+ * replace suggestion when we select a word correction (which is generally
+ * what triggers the `insertReplacementText`)
+ * We only do this if we're inside an insert suggestion because otherwise
+ * we would end up deleting existing text from the document.
+ */
+function $handleReplacementTextInsideInsertSuggestion(
+  selection: RangeSelection,
+  data: string | null,
+  dataTransfer: DataTransfer | null,
+  logger?: Logger,
+): boolean {
+  let newText = ''
+  if (data) {
+    newText = data
+  } else if (dataTransfer) {
+    newText = dataTransfer.getData('text/plain')
+  }
+  if (!newText) {
+    return true
+  }
+  logger?.info('Will insert replacement text', newText)
+  const anchor = selection.anchor
+  const focusOffset = selection.focus.offset
+  const toDelete = focusOffset - anchor.offset
+  selection.focus.set(anchor.key, anchor.offset, anchor.type)
+  const node = anchor.getNode()
+  if (!$isTextNode(node)) {
+    logger?.info('Current anchor node is not text node', node)
+    return true
+  }
+  node.spliceText(anchor.offset, toDelete, newText)
+  const newOffset = anchor.offset + newText.length
+  node.select(newOffset, newOffset)
+  return true
 }

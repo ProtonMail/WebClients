@@ -26,6 +26,8 @@ export function $selectionInsertClipboardNodes(
   onSuggestionCreation: (id: string) => void,
   logger: Logger,
 ): boolean {
+  logger.info('Inserting nodes at current selection', nodes)
+
   const selection = $getSelection()
   if (!$isRangeSelection(selection)) {
     logger.info('Current selection is not range selection')
