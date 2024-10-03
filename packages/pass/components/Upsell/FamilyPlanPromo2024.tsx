@@ -18,9 +18,16 @@ import noop from '@proton/utils/noop';
 import './FamilyPlanPromo2024.scss';
 
 enum FamilyPlanCohort {
-    Cohort1 = 1 /** pass2023 && passlaunch */,
-    Cohort2 = 2 /** pass2023 || free */,
+    EARLY_SUPPORTER = 1,
+    PASS_PLUS = 2,
+    FREE = 3,
 }
+
+const FamilyPlanUpsellRefs = {
+    [FamilyPlanCohort.EARLY_SUPPORTER]: UpsellRef.PASS_FAMILY_1LT_299,
+    [FamilyPlanCohort.PASS_PLUS]: UpsellRef.PASS_FAMILY_PLUS_399,
+    [FamilyPlanCohort.FREE]: UpsellRef.PASS_FAMILY_FREE_399,
+};
 
 export const FamilyPlanPromo2024: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
     const planNameJSX = <strong key="plan-name">{`${PASS_SHORT_APP_NAME} Family`}</strong>;
@@ -32,55 +39,59 @@ export const FamilyPlanPromo2024: FC<BaseSpotlightMessage> = ({ onClose = noop }
         const isFree = userPlan?.InternalName === 'free';
         const isPassLaunch = userPlan?.SubscriptionOffer === 'passlaunch';
 
-        if (isPass2023 && isPassLaunch) return FamilyPlanCohort.Cohort1;
-        if (isPass2023 || isFree) return FamilyPlanCohort.Cohort2;
+        if (isPass2023 && isPassLaunch) return FamilyPlanCohort.EARLY_SUPPORTER;
+        if (isPass2023) return FamilyPlanCohort.PASS_PLUS;
+        if (isFree) return FamilyPlanCohort.FREE;
+
         return null;
     }, [userPlan]);
 
     const price = getSimplePriceString(
         user?.Currency ?? DEFAULT_CURRENCY,
-        cohort === FamilyPlanCohort.Cohort1 ? 299 : 399
+        cohort === FamilyPlanCohort.EARLY_SUPPORTER ? 299 : 399
     );
 
     const upgrade = useNavigateToUpgrade({
-        coupon: cohort === FamilyPlanCohort.Cohort1 ? 'PASSEARLYSUPPORTER' : 'PASSFAMILYLAUNCH',
+        coupon: cohort === FamilyPlanCohort.EARLY_SUPPORTER ? 'PASSEARLYSUPPORTER' : 'PASSFAMILYLAUNCH',
         cycle: '12',
         offer: true,
         plan: 'passfamily2024',
-        upsellRef: UpsellRef.PASS_FAMILY_PLAN_2024,
+        upsellRef: cohort ? FamilyPlanUpsellRefs[cohort] : undefined,
         email: user?.Email,
     });
 
     return (
-        <>
-            <div className="flex items-center w-full z-up">
-                <div className="flex flex-column text-sm gap-2 w-3/5">
-                    <h4>{c('FamilyPlanPromo2024').jt`Introducing ${planNameJSX}`}</h4>
-                    <div>
-                        <span className="block">
-                            {c('FamilyPlanPromo2024').t`All premium features. 6 users. 1 easy subscription.`}
-                        </span>
-                        <span className="block">
-                            {cohort === FamilyPlanCohort.Cohort1
-                                ? c('FamilyPlanPromo2024').t`Exclusive offer for ${PASS_APP_NAME} early supporters.`
-                                : c('FamilyPlanPromo2024').t`Limited-time offer only.`}
-                        </span>
+        cohort && (
+            <>
+                <div className="flex items-center w-full z-up">
+                    <div className="flex flex-column text-sm gap-2 w-3/5">
+                        <h4>{c('FamilyPlanPromo2024').jt`Introducing ${planNameJSX}`}</h4>
+                        <div>
+                            <span className="block">
+                                {c('FamilyPlanPromo2024').t`All premium features. 6 users. 1 easy subscription.`}
+                            </span>
+                            <span className="block">
+                                {cohort === FamilyPlanCohort.EARLY_SUPPORTER
+                                    ? c('FamilyPlanPromo2024').t`Exclusive offer for ${PASS_APP_NAME} early supporters.`
+                                    : c('FamilyPlanPromo2024').t`Limited-time offer only.`}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div className="flex-1 text-center">
+                        <Button
+                            className="button pass-family-plan-banner--btn"
+                            size="medium"
+                            type="button"
+                            onClick={pipe(onClose, upgrade)}
+                            pill
+                        >
+                            {c('FamilyPlanPromo2024').t`Get it for ${price}/month`}
+                        </Button>
                     </div>
                 </div>
-
-                <div className="flex-1 text-center">
-                    <Button
-                        className="button pass-family-plan-banner--btn"
-                        size="medium"
-                        type="button"
-                        onClick={pipe(onClose, upgrade)}
-                        pill
-                    >
-                        {c('FamilyPlanPromo2024').t`Get it for ${price}/month`}
-                    </Button>
-                </div>
-            </div>
-            <img src={img} className="pass-family-plan-banner--img" alt="" />
-        </>
+                <img src={img} className="pass-family-plan-banner--img" alt="" />
+            </>
+        )
     );
 };

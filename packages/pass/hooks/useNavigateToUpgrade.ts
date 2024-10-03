@@ -10,7 +10,7 @@ export const useNavigateToUpgrade = (options: {
     path?: string;
     plan?: string;
     offer?: boolean;
-    upsellRef: UpsellRef;
+    upsellRef?: UpsellRef;
     email?: string;
 }) => {
     const { onLink, config, endpoint } = usePassCore();

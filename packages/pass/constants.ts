@@ -85,7 +85,9 @@ export enum UpsellRef {
     SETTING = 'setting',
     PASS_MONITOR = 'pass_monitor',
     PASS_BIOMETRICS = 'pass_biometrics',
-    PASS_FAMILY_PLAN_2024 = 'pass_family_plan_2024',
+    PASS_FAMILY_FREE_399 = 'pass_family_free_399',
+    PASS_FAMILY_PLUS_399 = 'pass_family_plus_399',
+    PASS_FAMILY_1LT_299 = 'pass_family_1lt_299',
 }
 
 export const MAX_LOCAL_STORAGE_SIZE = 5 * 1024 * 1024; /* 5MB */
