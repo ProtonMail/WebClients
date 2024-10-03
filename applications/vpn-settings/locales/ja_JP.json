@@ -1473,6 +1473,9 @@
       "Ireland": [
         "アイルランド"
       ],
+      "Islamic Republic of Iran": [
+        "イラン"
+      ],
       "Isle of Man": [
         "マン島"
       ],
@@ -1503,6 +1506,12 @@
       "Kiribati": [
         "キリバス"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "北朝鮮"
+      ],
+      "Korea (Republic of)": [
+        "韓国"
+      ],
       "Kosovo": [
         "コソボ"
       ],
@@ -1511,6 +1520,9 @@
       ],
       "Kyrgyzstan": [
         "キルギス"
+      ],
+      "Lao People's Democratic Republic": [
+        "ラオス"
       ],
       "Laos": [
         "ラオス"
@@ -2092,6 +2104,14 @@
     "duoplan2024: Info": {
       "1 TB storage": [
         "1 TB のストレージ"
+      ],
+      "2 users": [
+        "2 ユーザー"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "Double your storage": [
+        "ストレージを 2 倍にしましょう"
       ]
     },
     "Email spam notification": {
@@ -4264,6 +4284,9 @@
       "Version ${ version }": [
         "バージョン ${ version }"
       ],
+      "Version number successfully copied to clipboard": [
+        "バージョン番号がクリップボードにコピーされました"
+      ],
       "View, download, and manage your invoices.": [
         "請求書を表示、ダウンロード、管理します。"
       ],
@@ -5512,6 +5535,12 @@
       "1 user": [
         "1ユーザー"
       ],
+      "10 email addresses/aliases": [
+        "10 件のメールアドレス / エイリアス"
+      ],
+      "10-year file version history": [
+        "10 年間のファイルバージョン履歴"
+      ],
       "15 GB storage": [
         "15 GB のストレージ"
       ],
@@ -5605,6 +5634,9 @@
       "Email client support (via IMAP/SMTP)": [
         "メールクライアント対応 (IMAP/SMTP 経由)"
       ],
+      "Email groups": [
+        "メールグループ"
+      ],
       "Enables HIPAA compliance": [
         "HIPAA コンプライアンス準拠"
       ],
@@ -5673,6 +5705,9 @@
       ],
       "Password health": [
         "パスワードの健全性"
+      ],
+      "Password manager": [
+        "パスワードマネージャー"
       ],
       "Password-protected Emails": [
         "パスワードで保護されたメール"
@@ -5800,11 +5835,20 @@
       "User session management": [
         "ユーザーセッション管理"
       ],
+      "User storage management": [
+        "ユーザーストレージ管理"
+      ],
       "Vault sharing (up to ${ n } person)": [
         "保管庫の共有 (最大 ${ n } 人)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "ダークウェブをスキャンして、あなたの ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 件の独自メールドメイン"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "例えば、JohnShopper@${ domain }はショッピングアカウント用、JohnNews@${ domain2 }はニュース購読用です。"
       ],
@@ -6449,6 +6493,9 @@
       ],
       "Preparing your Recovery Kit": [
         "リカバリーキットの準備"
+      ],
+      "Secure vault sharing": [
+        "安全な保管庫共有"
       ],
       "Setting up your organization": [
         "組織の設定"
@@ -7489,6 +7536,9 @@
       "For all ${ BRAND_NAME } services": [
         "すべての ${ BRAND_NAME } サービス向け"
       ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "ファイルをアップロードまたは同期するには、容量を空けるか ${ upgrade } してください"
+      ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "残りの時間分のクレジットが ${ BRAND_NAME } アカウントに追加されます。"
       ],
@@ -7661,6 +7711,9 @@
       "10 email addresses": [
         "10個のメールアドレス"
       ],
+      "2 users": [
+        "2 ユーザー"
+      ],
       "20 email addresses per user": [
         "ユーザーあたり 20 個の電子メール アドレス"
       ],
@@ -7688,11 +7741,17 @@
       "Custom schedule send and snooze times": [
         "カスタムスケジュールの送信時間とスヌーズ時間"
       ],
+      "Desktop app and email client support (via IMAP)": [
+        "デスクトップアプリとメールクライアントのサポート (IMAP 経由)"
+      ],
       "Early access to new apps and features": [
         "新しいアプリや機能への早期アクセス"
       ],
       "Email productivity features": [
         "メールの生産性機能"
+      ],
+      "Extra storage and users": [
+        "追加のストレージとユーザー"
       ],
       "Have a question?": [
         "質問がありますか？"
@@ -7765,8 +7824,14 @@
       "Desktop app": [
         "デスクトップアプリ"
       ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
       "Upgrade": [
         "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
       ]
     },
     "Subscription renewal state": {
@@ -8489,6 +8554,9 @@
       "Processing...": [
         "処理中..."
       ],
+      "QRCode": [
+        "QR コード"
+      ],
       "Recommended": [
         "おすすめ"
       ],
@@ -8602,6 +8670,9 @@
       ],
       "Switch to two-password mode": [
         "2パスワードモードに切り替える"
+      ],
+      "Text": [
+        "テキスト"
       ],
       "Time": [
         "時刻"

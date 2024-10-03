@@ -2131,6 +2131,9 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Είστε βέβαιος ότι θέλετε να διαγράψετε αυτή την ομάδα;"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Λάβετε υπόψη ότι εάν διαγράψετε την ομάδα ${ displayGroupName } (με διεύθυνση ${ displayGroupAddressEmail }), δε θα μπορείτε πλέον να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου χρησιμοποιώντας τη διεύθυνσή της."
       ]
     },
     "Delinquent modal title": {
@@ -3588,6 +3591,9 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Είστε βέβαιοι ότι θέλετε να καταργήσετε τον τομέα ${ boldDomain };"
       ],
+      "Ask your organization admin to setup Gateways.": [
+        "Ζητήστε από τον διαχειριστή του οργανισμού σας να ρυθμίσει τις Πύλες."
+      ],
       "Attention required": [
         "Χρειάζεται προσοχή"
       ],
@@ -4428,6 +4434,9 @@
       "SCIM token active": [
         "Ενεργό διακριτικό SCIM"
       ],
+      "Search by an email address to begin": [
+        "Αναζήτηση με βάση μια διεύθυνση ηλεκτρονικού ταχυδρομείου για να ξεκινήσετε"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Ασφαλίστε τον ${ BRAND_NAME } Λογαριασμό σας"
       ],
@@ -4572,6 +4581,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Η μορφή του αρχείου CSV είναι εσφαλμένη."
+      ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "Η δυνατότητα ομάδων δεν υποστηρίζεται στην τρέχουσα συνδρομή σας. Οι ομάδες που δημιουργήθηκαν προηγουμένως είναι απενεργοποιημένες και μπορούν να διαγραφούν μόνο."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Το όνομα θα είναι ορατό στους χρήστες σας ενώ είναι συνδεδεμένοι."
@@ -7194,14 +7206,23 @@
       ]
     },
     "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify } τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας ${ email } για να ορίσετε την ταυτότητα του οργανισμού."
+      ],
       "Current organization identity": [
         "Ταυτότητα τρέχον οργανισμού"
+      ],
+      "Edit organization identity": [
+        "Επεξεργασία ταυτότητας οργανισμού"
       ],
       "New organization identity": [
         "Ταυτότητα νέου οργανισμού"
       ],
       "Organization identity": [
         "Ταυτότητα οργανισμού"
+      ],
+      "Organization identity updated": [
+        "Η ταυτότητα του οργανισμού ενημερώθηκε"
       ],
       "Verify": [
         "Επαλήθευση"
@@ -10147,6 +10168,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Αν έχετε αγοράσει έναν κωδικό δώρου ή έχετε λάβει ένα από την ομάδα υποστήριξης, μπορείτε να τον εισάγετε εδώ."
       ],
+      "IP address (Internet Service Provider)": [
+        "Διεύθυνση IP (Πάροχος Υπηρεσιών Διαδικτύου)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Τα μέλη που δε χρησιμοποιούν το 2FA θα λάβουν ένα email που θα τους ζητά να το ενεργοποιήσουν το συντομότερο δυνατό."
       ],
@@ -10221,6 +10245,10 @@
       ]
     },
     "unprivatization": {
+      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
+        "${ n } χρήστης έχει ενταχθεί στον οργανισμό σας μέσω της υπηρεσίας Παροχής Ταυτότητάς σας. Εγκρίνετε ή απορρίψτε τους λογαριασμούς του τώρα:",
+        "${ n } χρήστες έχουν ενταχθεί στον οργανισμό σας μέσω της υπηρεσίας Παροχής Ταυτότητάς σας. Εγκρίνετε ή απορρίψτε τους λογαριασμούς τους τώρα:"
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Οι διαχειριστές δεν μπορούν να έχουν πρόσβαση στα δεδομένα των ιδιωτών χρηστών και δεν μπορούν να επαναφέρουν τον κωδικό πρόσβασής τους."
       ],
@@ -10230,11 +10258,21 @@
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Κάνοντας τον χρήστη ιδιωτικό, δε θα μπορείτε να τον βοηθήσετε να ανακτήσει την πρόσβαση στα δεδομένα ή τον λογαριασμό του."
       ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Δεν ήταν δυνατή η αυτόματη ενεργοποίηση της πρόσβασης διαχειριστή για τον ${ n } χρήστη, επειδή τα κλειδιά κρυπτογράφησης έχουν ενημερωθεί στο μεταξύ:",
+        "Δεν ήταν δυνατή η αυτόματη ενεργοποίηση της πρόσβασης διαχειριστή για τους ${ n } χρήστες, επειδή τα κλειδιά κρυπτογράφησης έχουν ενημερωθεί στο μεταξύ:"
+      ],
+      "Could not enable administrator access: ${ error }": [
+        "Δεν ήταν δυνατή η ενεργοποίηση της πρόσβασης διαχειριστή: ${ error }"
+      ],
       "Delete request": [
         "Διαγραφή αίτησης"
       ],
       "Delete request to access user data?": [
         "Διαγραφή αιτήματος πρόσβασης σε δεδομένα χρήστη;"
+      ],
+      "Enable manually": [
+        "Ενεργοποίηση με μη αυτόματο τρόπο"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Μόλις ο χρήστης συναινέσει, θα μπορείτε να τον βοηθήσετε να ανακτήσει την πρόσβαση στον λογαριασμό του ή να διαχειριστεί τα δεδομένα του."
