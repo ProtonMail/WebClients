@@ -7,10 +7,12 @@ import { getNewWindow } from '@proton/shared/lib/helpers/window';
 import { useLinkSharingModal } from '../components/modals/ShareLinkModal/ShareLinkModal';
 import { useDriveCrypto } from '../store/_crypto';
 import { useDriveDocsFeatureFlag, useOpenDocument } from '../store/_documents';
+import type { PathItem } from '../store/_views/useLinkPath';
 import type { DocumentKeys, DocumentNodeMeta } from './_documents';
 import { useDocuments } from './_documents';
 import type { DecryptedNode } from './_nodes/interface';
 import useNode from './_nodes/useNode';
+import useNodes from './_nodes/useNodes';
 import { useMyFiles, useResolveShareId } from './_shares';
 import type { NodeMeta } from './interface';
 
@@ -29,6 +31,10 @@ export interface DriveCompat {
      * Gets a node, either from cache or fetched.
      */
     getNode: (meta: NodeMeta) => Promise<DecryptedNode>;
+
+    getNodes: (ids: { linkId: string; shareId: string }[]) => Promise<DecryptedNode[]>;
+
+    getShareId: (meta: NodeMeta) => Promise<string>;
 
     /**
      * Gets the contents of a node.
@@ -71,6 +77,8 @@ export interface DriveCompat {
      */
     getDocumentUrl: (meta: NodeMeta) => URL;
 
+    getNodePaths: (ids: { linkId: string; shareId: string }[]) => Promise<PathItem[][]>;
+    getNodesAreShared: (ids: { linkId: string; shareId: string }[]) => Promise<boolean[]>;
     /**
      * Opens a document's sharing modal.
      */
@@ -105,6 +113,7 @@ export const useDriveCompat = (): DriveCompat => {
     const { createDocumentNode, getDocumentKeys, renameDocument, getDocumentUrl, trashDocument, restoreDocument } =
         useDocuments();
     const { getNode, getNodeContents, getNodePermissions, findAvailableNodeName } = useNode();
+    const { getNodes, getNodePaths, getNodesAreShared } = useNodes();
     const { getMyFilesNodeMeta } = useMyFiles();
     const { openDocumentWindow } = useOpenDocument();
     const { getVerificationKey } = useDriveCrypto();
@@ -120,9 +129,13 @@ export const useDriveCompat = (): DriveCompat => {
         canUseDocs: withResolve(({ shareId }) => canUseDocs(shareId)),
         createDocumentNode: withResolve(createDocumentNode),
         getDocumentKeys: withResolve(getDocumentKeys),
+        getNodePaths,
+        getNodesAreShared,
         getNode: withResolve(getNode),
         getNodeContents: withResolve(getNodeContents),
         getNodePermissions: withResolve(getNodePermissions),
+        getNodes,
+        getShareId: withResolve(({ shareId }) => shareId),
         findAvailableNodeName: withResolve(findAvailableNodeName),
         renameDocument: withResolve(renameDocument),
         trashDocument: withResolve(trashDocument),

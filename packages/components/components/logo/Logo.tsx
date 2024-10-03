@@ -4,6 +4,7 @@ import type { IconSize } from '@proton/components/components/icon/Icon';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 
 import CalendarLogo from './CalendarLogo';
+import DocsLogo from './DocsLogo';
 import DriveLogo from './DriveLogo';
 import MailLogo from './MailLogo';
 import PassLogo from './PassLogo';
@@ -44,8 +45,7 @@ const Logo = ({ appName, variant, fallback = null, ...rest }: LogoProps) => {
     }
 
     if (appName === PROTONDOCS) {
-        // TODO: logo for Proton Docs
-        return <DriveLogo variant={variant} {...rest} />;
+        return <DocsLogo variant={variant} {...rest} />;
     }
 
     if (appName === PROTONWALLET) {

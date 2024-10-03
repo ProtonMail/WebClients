@@ -36,6 +36,7 @@ import { LoadCommit } from '../../UseCase/LoadCommit'
 import { ExportAndDownload } from '../../UseCase/ExportAndDownload'
 import type { ImageProxyParams } from '../../Api/Types/ImageProxyParams'
 import { MetricService } from '../../Services/Metrics/MetricService'
+import { StubRecentDocumentsService } from '../../Services/RecentDocuments/RecentDocumentsService'
 
 export class AppDependencies extends DependencyContainer {
   constructor(api: Api, imageProxyParams: ImageProxyParams, driveCompat: DriveCompat, appVersion: string) {
@@ -227,6 +228,10 @@ export class AppDependencies extends DependencyContainer {
 
     this.bind(App_TYPES.HandleRealtimeCommentsEvent, () => {
       return new HandleRealtimeCommentsEvent()
+    })
+
+    this.bind(App_TYPES.RecentDocumentsService, () => {
+      return new StubRecentDocumentsService(this.get<InternalEventBus>(App_TYPES.EventBus), driveCompat)
     })
   }
 }

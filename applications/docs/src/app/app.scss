@@ -2,6 +2,7 @@
 
 :root {
 	--primary-rgb: 109 74 255;
+	--docs-blue-color: #34b8ee;
 }
 
 *:focus,
@@ -43,7 +44,7 @@ input[type='number'] {
 	justify-content: center;
 }
 
-.user-dropdown-button .user-dropdown-text {
+.user-dropdown-text:not(.homepage-wrapper *) {
 	display: none;
 }
 
@@ -72,7 +73,7 @@ input[type='number'] {
 	}
 }
 
-@media (width <= 42.5em) {
+@media (width <=42.5em) {
 	.user-dropdown-button {
 		padding: 0;
 		inline-size: unset;
