@@ -56,6 +56,7 @@ import type { SerializedEditorState } from 'lexical'
 import { metricsBucketNumberForUpdateCount } from '../../Util/bucketNumberForUpdateCount'
 import { MAX_DOC_SIZE } from '../../Models/Constants'
 import type { HttpsProtonMeDocsReadonlyModeDocumentsTotalV1SchemaJson } from '@proton/metrics/types/docs_readonly_mode_documents_total_v1.schema'
+import { RecentDocumentsLocalStorage } from '../../Services/RecentDocuments/RecentDocumentsLocalStorage'
 
 /**
  * @TODO DRVDOC-802
@@ -604,6 +605,13 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     try {
       await this.refreshNodeAndDocMeta()
       this.setTrashState(this.decryptedNode?.trashed ? 'trashed' : 'not_trashed')
+
+      const shareId = await this.driveCompat.getShareId(this.nodeMeta)
+      RecentDocumentsLocalStorage.add({
+        linkId: this.docMeta.linkId,
+        shareId,
+        lastViewed: Date.now(),
+      })
       this.eventBus.publish<DocControllerEventPayloads['DidLoadDocumentTitle']>({
         type: DocControllerEvent.DidLoadDocumentTitle,
         payload: { title: this.docMeta.name },

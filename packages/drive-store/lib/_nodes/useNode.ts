@@ -1,6 +1,7 @@
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
+import { useLinkPath } from '../../store';
 import { useDownload } from '../../store/_downloads';
 import { useLink, validateLinkName } from '../../store/_links';
 import { useDirectSharingInfo } from '../../store/_shares/useDirectSharingInfo';
@@ -14,6 +15,7 @@ import { decryptedLinkToNode } from './utils';
 
 export const useNode = () => {
     const { getLink } = useLink();
+    const { getPath } = useLinkPath();
     const { getSharePermissions } = useDirectSharingInfo();
     const { downloadStream } = useDownload();
     const { findAvailableName } = useUploadHelper();
@@ -56,6 +58,10 @@ export const useNode = () => {
         return getSharePermissions(abortSignal, shareId);
     };
 
+    const getNodePath = async ({ shareId, linkId }: LegacyNodeMeta): Promise<string> => {
+        return getPath(abortSignal, shareId, linkId);
+    };
+
     const findAvailableNodeName = async (
         { shareId, linkId: parentLinkId }: LegacyNodeMeta,
         filename: string
@@ -73,6 +79,7 @@ export const useNode = () => {
 
     return {
         getNode,
+        getNodePath,
         getNodeContents,
         getNodePermissions,
         findAvailableNodeName,

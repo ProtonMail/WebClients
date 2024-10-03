@@ -7,7 +7,7 @@ import useLinksState from '../_links/useLinksState';
 import { ShareType, useShare } from '../_shares';
 import { isLinkReadOnly } from './utils/useIsActiveLinkReadOnly';
 
-type PathItem = {
+export type PathItem = {
     linkId: string;
     name: string;
     isRoot: boolean;
