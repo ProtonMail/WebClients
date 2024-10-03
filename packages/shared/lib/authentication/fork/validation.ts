@@ -35,9 +35,11 @@ export const getValidatedLocalID = (localID = '') => {
     if (!localID) {
         return;
     }
-    const maybeLocalID = parseInt(localID, 10);
-    if (Number.isInteger(maybeLocalID) && maybeLocalID >= 0 && maybeLocalID <= 100000000) {
-        return maybeLocalID;
+    if (/^\d+$/.test(localID)) {
+        const maybeLocalID = Number(localID);
+        if (Number.isInteger(maybeLocalID) && maybeLocalID >= 0 && maybeLocalID <= 100000000) {
+            return maybeLocalID;
+        }
     }
 };
 
