@@ -27,6 +27,7 @@ import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronC
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import initLogicalProperties from '@proton/shared/lib/logical/logical';
 import noop from '@proton/utils/noop';
 
 import { embeddedDrawerAppInfos } from './helpers/drawer';
@@ -51,6 +52,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
     setupGuestCrossStorage();
     initElectronClassnames();
+    initLogicalProperties();
     initSafariFontFixClassnames();
 
     const appName = config.APP_NAME;
