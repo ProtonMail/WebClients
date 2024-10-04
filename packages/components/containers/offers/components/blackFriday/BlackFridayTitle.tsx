@@ -1,18 +1,18 @@
 import { c } from 'ttag';
 
-import { isBlackFridayPeriod, isCyberWeekPeriod } from '../../helpers/offerPeriods';
+// import { isBlackFridayPeriod, isCyberWeekPeriod } from '../../helpers/offerPeriods';
 import OfferTitle from '../shared/OfferTitle';
 
 const BlackFridayTitle = () => {
-    if (isBlackFridayPeriod()) {
+    /*if (isBlackFridayPeriod()) {
         return <OfferTitle>{c('specialoffer: Title').t`Black Friday Sale`}</OfferTitle>;
     }
 
     if (isCyberWeekPeriod()) {
         return <OfferTitle>{c('specialoffer: Title').t`Cyber Week Sale`}</OfferTitle>;
-    }
+    }*/
 
-    return <OfferTitle>{c('specialoffer: Title').t`End of Year Sale`}</OfferTitle>;
+    return <OfferTitle>{c('specialoffer: Title').t`Black Friday Sale`}</OfferTitle>;
 };
 
 export default BlackFridayTitle;
