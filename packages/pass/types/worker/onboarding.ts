@@ -19,6 +19,7 @@ export enum OnboardingMessage {
     FAMILY_PLAN_PROMO_2024,
     ALIAS_SYNC_ENABLE /* shown if user has pending SL aliases to be sync */,
     BLACK_FRIDAY_2024,
+    USER_RENEWAL,
 }
 
 export type OnboardingAcknowledgment = {

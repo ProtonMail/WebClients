@@ -9,16 +9,20 @@ import { AliasSyncIcon, FiveStarIcon, ShieldIcon } from '@proton/pass/components
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { BlackFriday2024Offer } from '@proton/pass/components/Upsell/BlackFriday2024Offer';
 import { PASS_LEARN_MORE_URL, UpsellRef } from '@proton/pass/constants';
-import { selectUser, selectUserData } from '@proton/pass/store/selectors';
+import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
+import { selectUser, selectUserData, selectUserPlan } from '@proton/pass/store/selectors';
 import { OnboardingMessage } from '@proton/pass/types';
+import { epochToRelativeDate } from '@proton/pass/utils/time/format';
 import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 export const useOnboardingMessages = () => {
+    const { SSO_URL } = usePassConfig();
     const { onLink, openSettings, promptForPermissions, getRatingURL, onForceUpdate } = usePassCore();
     const { acknowledge, setPendingShareAccess, setUpselling } = useSpotlight();
-    const user = useSelector(selectUser);
 
+    const user = useSelector(selectUser);
+    const plan = useSelector(selectUserPlan);
     const { pendingAliasToSync: aliasCount } = useSelector(selectUserData);
 
     return useMemo<Partial<Record<OnboardingMessage, SpotlightMessageDefinition>>>(
@@ -186,7 +190,26 @@ export const useOnboardingMessages = () => {
                 className: 'pass-bf2024-banner ui-violet',
                 onClose: () => acknowledge(OnboardingMessage.BLACK_FRIDAY_2024),
             },
+            [OnboardingMessage.USER_RENEWAL]: {
+                type: 'default',
+                id: 'user-renewal',
+                title: c('Title').t`Subscription ending`,
+                message: (() => {
+                    const endDate = epochToRelativeDate(plan?.SubscriptionEnd!);
+                    return c('Info').t`Reactivate by ${endDate} to keep your ${plan?.DisplayName} benefits`;
+                })(),
+                className: 'ui-red',
+                onClose: () => acknowledge(OnboardingMessage.USER_RENEWAL),
+                action: {
+                    label: c('Label').t`Reactivate now`,
+                    type: 'button',
+                    onClick: () =>
+                        acknowledge(OnboardingMessage.USER_RENEWAL, () =>
+                            onLink(`${SSO_URL}/pass/dashboard?source=banner#your-subscriptions`)
+                        ),
+                },
+            },
         }),
-        [user, aliasCount]
+        [user, aliasCount, plan]
     );
 };
