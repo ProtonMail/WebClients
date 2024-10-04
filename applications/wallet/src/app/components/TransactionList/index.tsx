@@ -46,9 +46,9 @@ export const TransactionList = ({ apiWalletData, apiAccount, onClickReceive, onC
                         <Tooltip
                             title={(() => {
                                 if (isSyncingWalletData) {
-                                    return c('Wallet transactions list').t`Syncing is already in progress`;
+                                    return c('Wallet transactions list').t`Syncing in progress. Please wait.`;
                                 } else if (isCoolingDown) {
-                                    return c('Wallet transactions list').t`You need to wait 1 minute between each sync`;
+                                    return c('Wallet transactions list').t`Syncing in progress. Please wait.`;
                                 } else {
                                     return undefined;
                                 }
