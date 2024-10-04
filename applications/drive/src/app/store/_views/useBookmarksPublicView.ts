@@ -2,10 +2,10 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { useApi } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
+import useFlag from '@proton/unleash/useFlag';
 
 import usePublicToken from '../../hooks/drive/usePublicToken';
 import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
-import { useDriveShareURLBookmarkingFeatureFlag } from '../_bookmarks';
 import { useBookmarks } from '../_bookmarks/useBookmarks';
 import { usePublicSessionUser } from '../_user';
 
@@ -16,14 +16,14 @@ export interface Props {
 export const useBookmarksPublicView = ({ customPassword }: Props) => {
     const { listBookmarks, addBookmark } = useBookmarks();
     const [bookmarksTokens, setBookmarksTokens] = useState<Set<string>>(new Set());
+    const bookmarksFeatureDisabled = useFlag('DriveShareURLBookmarksDisabled');
     const [isLoading, withLoading] = useLoading(false);
-    const isDriveShareUrlBookmarkingEnabled = useDriveShareURLBookmarkingFeatureFlag();
     const api = useApi();
     const { token, urlPassword } = usePublicToken();
     const { user, UID } = usePublicSessionUser();
 
     useEffect(() => {
-        if (!user || !isDriveShareUrlBookmarkingEnabled || !UID) {
+        if (!user || bookmarksFeatureDisabled || !UID) {
             return;
         }
 
@@ -37,11 +37,15 @@ export const useBookmarksPublicView = ({ customPassword }: Props) => {
         return () => {
             abortControler.abort();
         };
-    }, [user, isDriveShareUrlBookmarkingEnabled, UID]);
+    }, [user, bookmarksFeatureDisabled, UID]);
 
     const isAlreadyBookmarked = useMemo(() => {
         return bookmarksTokens.has(token);
     }, [bookmarksTokens, token]);
+
+    const haveBookmarks = useMemo(() => {
+        return !!bookmarksTokens.size;
+    }, [bookmarksTokens]);
 
     const handleAddBookmark = async () => {
         const abortSignal = new AbortController().signal;
@@ -55,5 +59,6 @@ export const useBookmarksPublicView = ({ customPassword }: Props) => {
         customPassword, // We return customPassword to be able to access it easily in the public page
         addBookmark: handleAddBookmark,
         isAlreadyBookmarked,
+        haveBookmarks,
     };
 };
