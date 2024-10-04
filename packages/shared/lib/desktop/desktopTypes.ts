@@ -19,6 +19,8 @@ export type ElectronNotification = {
     labelID?: string;
 };
 
+export type ESUserChoice = boolean | null;
+
 // This type must be updated in the Electron application as well
 export type IPCInboxDesktopFeature =
     | 'ThemeSelection'
@@ -27,12 +29,14 @@ export type IPCInboxDesktopFeature =
     | 'MultiAccount'
     | 'LatestVersionCheck'
     | 'InstallSource'
-    | 'MailtoTelemetry';
+    | 'MailtoTelemetry'
+    | 'ESUserChoice';
 export type IPCInboxGetInfoMessage =
     | { type: 'theme'; result: ThemeSetting }
     | { type: 'latestVersion'; result: DesktopVersion | null }
     | { type: 'installSource'; result: string | null }
     | { type: 'defaultMailto'; result: DefaultProtocol };
+export type IPCInboxGetUserInfoMessage = { type: 'esUserChoice'; result: ESUserChoice };
 export type IPCInboxClientUpdateMessage =
     | { type: 'updateNotification'; payload: number }
     | { type: 'userLogin'; payload?: undefined }
@@ -48,7 +52,8 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'setTheme'; payload: ThemeSetting }
     | { type: 'earlyAccess'; payload: Environment | undefined }
     | { type: 'checkDefaultMailtoAndSignal'; payload?: undefined }
-    | { type: 'defaultMailtoTelemetryReported'; payload: number };
+    | { type: 'defaultMailtoTelemetryReported'; payload: number }
+    | { type: 'setESUserChoice'; payload: { userID: string; userChoice: boolean } };
 export type IPCInboxClientUpdateMessageType = IPCInboxClientUpdateMessage['type'];
 
 // WARNING: DO NOT EXTEND THIS WITH OTHER UNION. IT IS NOT EASY AND EVENTS WON'T BE TYPESAFE
@@ -123,6 +128,10 @@ export type IPCInboxMessageBroker = {
     getInfo?: <T extends IPCInboxGetInfoMessage['type']>(
         type: T
     ) => Extract<IPCInboxGetInfoMessage, { type: T }>['result'];
+    getUserInfo?: <T extends IPCInboxGetUserInfoMessage['type']>(
+        type: T,
+        userID: string
+    ) => Extract<IPCInboxGetUserInfoMessage, { type: T }>['result'];
     on?: IPCInboxHostUpdateListenerAdder;
     send?: <T extends IPCInboxClientUpdateMessageType>(
         type: T,
