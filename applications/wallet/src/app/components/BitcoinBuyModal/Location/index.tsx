@@ -24,7 +24,7 @@ export const Location = ({ onConfirm }: Props) => {
     const allCountries = uniqBy(Object.values(countriesByProviders ?? {}).flat(), (country) => country.Code);
     const allCountryOptions = allCountries.map((country) => ({ countryCode: country.Code, countryName: country.Name }));
 
-    const rampLink = <Href href="https://ramp.network">{c('bitcoin buy').t`Ramp`}</Href>;
+    const rampLink = <Href href="https://ramp.network">{c('bitcoin buy').t`Ramp Network`}</Href>;
     const banxaLink = <Href href="https://banxa.com">{c('bitcoin buy').t`Banxa`}</Href>;
     const binanceLink = <Href href="https://binance.com">{c('bitcoin buy').t`Binance`}</Href>;
     const coinbaseLink = <Href href="https://coinbase.com">{c('bitcoin buy').t`Coinbase`}</Href>;

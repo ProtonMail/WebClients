@@ -31,6 +31,7 @@ import type { CoreSearchableSelectProps } from '../../../atoms';
 import { Button, Input, SearchableSelect, Select } from '../../../atoms';
 import { CurrencySelect } from '../../../atoms/CurrencySelect';
 import { useDebounceEffect } from '../../../utils/hooks/useDebouncedEffect';
+import { getGatewayNameByGatewayProvider } from '../../../utils/onramp';
 import { DisclaimerModal } from './DisclaimerModal';
 
 export type QuoteWithProvider = WasmQuote & {
@@ -51,7 +52,7 @@ const getContentForProvider = (provider: WasmGatewayProvider) => {
             };
         case 'Ramp':
             return {
-                title: 'Ramp',
+                title: 'Ramp Network',
                 assetSrc: rampLogo,
             };
         case 'MoonPay':
@@ -212,6 +213,8 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
     const availablePaymentMethods = useMemo(() => {
         return uniq(sortedQuotes.filter((q) => q.provider === selectedPaymentProvider).map((q) => q.PaymentMethod));
     }, [selectedPaymentProvider, sortedQuotes]);
+
+    const providerName = getGatewayNameByGatewayProvider(selectedPaymentProvider);
 
     return (
         <>
@@ -400,7 +403,7 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
                             }}
                         >
                             {!!selectedPaymentProvider
-                                ? c('bitcoin buy').t`Continue with ${selectedPaymentProvider}`
+                                ? c('bitcoin buy').t`Continue with ${providerName}`
                                 : c('bitcoin buy').t`Continue`}
                         </Button>
                     </div>
