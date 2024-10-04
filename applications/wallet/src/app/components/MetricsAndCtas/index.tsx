@@ -175,7 +175,10 @@ export const MetricsAndCtas = ({
             >
                 <Tooltip
                     title={
-                        !canSend ? c('wallet dashboard').t`You need to have a positive balance to send bitcoins` : null
+                        !canSend
+                            ? c('wallet dashboard')
+                                  .t`You need to have a positive bitcoin balance with sufficient funds to transact`
+                            : null
                     }
                 >
                     <CtaButton disabled={localDisabled || !canSend} onClick={() => onClickSend()}>{c('Wallet dashboard')

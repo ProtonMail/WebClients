@@ -250,7 +250,7 @@ export const TransactionReview = ({
                                 title={(() => {
                                     if (!senderAddress) {
                                         return c('Wallet send')
-                                            .t`You cannot send a message to the recipient because you don't have any address setup on your account`;
+                                            .t`Please setup an email address in your account settings in order to send messages`;
                                     }
 
                                     return null;
@@ -294,7 +294,7 @@ export const TransactionReview = ({
                             ) : (
                                 <Card type={'error'}>
                                     {c('Wallet transaction')
-                                        .t`We are currently experiencing difficulties in calculating network fees. Please try again later. If the issue persists, contact our support team for assistance.`}
+                                        .t`We are currently experiencing difficulties in calculating network fees. Please try again later. If issue persists, contact our support team for assistance.`}
                                 </Card>
                             )}
                         </div>

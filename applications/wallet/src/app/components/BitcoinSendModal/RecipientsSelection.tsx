@@ -92,7 +92,9 @@ export const RecipientsSelection = ({ apiAccount, recipientHelpers, txBuilderHel
             createNotification({ text: c('Bitcoin send').t`Invitation sent to the recipient` });
         } catch (error: any) {
             createNotification({
-                text: error?.error ?? c('Bitcoin send').t`Could not send invitation to the recipient`,
+                text:
+                    error?.error ??
+                    c('Bitcoin send').t`Invitation could not be sent to recipient. Please check details and try again.`,
             });
         }
     };
