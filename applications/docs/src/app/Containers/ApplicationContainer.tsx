@@ -50,7 +50,7 @@ function ApplicationContainer() {
     <ApplicationProvider application={application}>
       <Switch>
         <Route path={'/doc'}>
-          <DocsRoute />
+          <DocsRoute driveCompat={driveCompat} />
         </Route>
         <Route path={['/most-recent', '/owned-by-me', '/owned-by-others']}>
           {isLandingPageEnabled ? (
@@ -73,17 +73,17 @@ function ApplicationContainer() {
           }}
         />
       </Switch>
+      {driveCompat.modals}
     </ApplicationProvider>
   )
 }
 
-function DocsRoute() {
+function DocsRoute({ driveCompat }: { driveCompat: DriveCompat }) {
   void import('../tailwind.scss')
 
-  const driveCompat = useDriveCompat()
   const application = useApplication()
 
-  const { openAction, updateParameters } = useDocsUrlBar()
+  const { openAction, updateParameters } = useDocsUrlBar({ driveCompat })
 
   const [action, setAction] = useState<DocumentAction['mode']>()
   const [isCreatingNewDocument, setIsCreatingNewDocument] = useState<boolean>(false)
@@ -184,7 +184,6 @@ function DocsRoute() {
           getNodeContents={driveCompat.getNodeContents}
           editorInitializationConfig={editorInitializationConfig}
         />
-        {driveCompat.modals}
       </DocsLayout>
     </WordCountContextProvider>
   )
