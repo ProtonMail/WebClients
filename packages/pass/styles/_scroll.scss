@@ -16,9 +16,9 @@
 .scroll-outer-vertical .scroll-start-shadow,
 .scroll-outer-vertical .scroll-end-shadow {
 	block-size: 1.5rem;
-	background: var(--pass-scroll-gradient-start);
+	background: linear-gradient(180deg, var(--pass-scroll-shadow-color), transparent);
 }
 
 .scroll-outer-vertical .scroll-end-shadow {
-	background: var(--pass-scroll-gradient-end);
+	background: linear-gradient(0deg, var(--pass-scroll-shadow-color), transparent);
 }
