@@ -30,12 +30,12 @@ const OfferFooter = forwardRef<HTMLDivElement, Props>((props, ref) => {
                     />
                 </div>
             ) : null}
+            {children}
             {props.offer.canBeDisabled ? (
                 <div className="mb-4 text-center">
                     <OfferDisableButton {...props} />
                 </div>
             ) : null}
-            {children}
         </footer>
     );
 });
