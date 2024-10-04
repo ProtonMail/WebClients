@@ -76,7 +76,7 @@ export const RecipientsDataItem = ({
 
                                     <Tooltip title={recipient}>
                                         {isBtcAddress ? (
-                                            <MiddleEllipsis text={recipient} className="w-2/3 text-lg" />
+                                            <MiddleEllipsis text={recipient} className="w-2/3 text-lg my-1" />
                                         ) : (
                                             <span className="block text-left w-full text-ellipsis my-1 text-lg">
                                                 {recipient}
