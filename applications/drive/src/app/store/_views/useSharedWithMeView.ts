@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import useFlag from '@proton/unleash/useFlag';
 
 import type { SortParams } from '../../components/FileBrowser';
 import type { SharedWithMeItem } from '../../components/sections/SharedWithMe/SharedWithMe';
@@ -12,7 +13,7 @@ import { useRedirectToPublicPage } from '../../hooks/util/useRedirectToPublicPag
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { getTokenFromSearchParams } from '../../utils/url/token';
-import { useBookmarksActions, useDriveShareURLBookmarkingFeatureFlag } from '../_bookmarks';
+import { useBookmarksActions } from '../_bookmarks';
 import { useLink, useLinksListing } from '../_links';
 import { usePendingInvitationsListing } from '../_links/useLinksListing/usePendingInvitationsListing';
 import { useUserSettings } from '../_settings';
@@ -38,8 +39,8 @@ const DEFAULT_SORT = {
 export default function useSharedWithMeView(shareId: string) {
     const [isLoading, withLoading] = useLoading(true);
     const [isPendingLoading, withPendingLoading] = useLoading(true);
-    const isDriveShareUrlBookmarkingEnabled = useDriveShareURLBookmarkingFeatureFlag();
-    const [isBookmarksLoading, withBookmarksLoading] = useLoading(isDriveShareUrlBookmarkingEnabled);
+    const bookmarksFeatureDisabled = useFlag('DriveShareURLBookmarksDisabled');
+    const [isBookmarksLoading, withBookmarksLoading] = useLoading(!bookmarksFeatureDisabled);
     const linksListing = useLinksListing();
     const { setVolumeShareIds } = useVolumesState();
     const { getLink } = useLink();
@@ -210,7 +211,7 @@ export default function useSharedWithMeView(shareId: string) {
 
     useEffect(() => {
         const abortController = new AbortController();
-        if (isDriveShareUrlBookmarkingEnabled) {
+        if (!bookmarksFeatureDisabled) {
             void withBookmarksLoading(async () => {
                 // In case the user Sign-up from public page we will add the file to bookmarks and let him on shared-with-me section
                 // For Sign-in with redirection to public page logic, check MainContainer
@@ -226,7 +227,7 @@ export default function useSharedWithMeView(shareId: string) {
         return () => {
             abortController.abort();
         };
-    }, [isDriveShareUrlBookmarkingEnabled]);
+    }, [bookmarksFeatureDisabled]);
 
     return {
         layout,
