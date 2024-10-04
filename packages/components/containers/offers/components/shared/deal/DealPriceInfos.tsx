@@ -1,11 +1,12 @@
 import Price from '@proton/components/components/price/Price';
+import clsx from '@proton/utils/clsx';
 
 import { getDealBilledDescription } from '../../../helpers/offerCopies';
 import { useDealContext } from './DealContext';
 
 const DealPriceInfos = () => {
     const {
-        deal: { cycle, prices, star },
+        deal: { cycle, prices, star, isLifeTime },
         currency,
     } = useDealContext();
     const { withCoupon = 0 } = prices || {};
@@ -24,8 +25,8 @@ const DealPriceInfos = () => {
 
     return (
         <div className="w-full">
-            <small className="w-full color-weak text-left">
-                <span className="block">
+            <small className="offer-deal-price-infos w-full color-weak text-left">
+                <span className={clsx(['block', isLifeTime && 'visibility-hidden'])}>
                     {getDealBilledDescription(cycle, amountDue)} {star ? <sup>{star}</sup> : null}
                 </span>
                 {/* <span className="block">{getStandardPriceDescription(cycle, regularPrice)}</span> */}

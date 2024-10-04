@@ -46,6 +46,7 @@ export type IconName =
     | 'arrows-up-and-left-big'
     | 'at'
     | 'backspace'
+    | 'percent'
     | 'bag-percent'
     | 'bank'
     | 'bell'
@@ -414,6 +415,7 @@ export { IcArrowsUpAndLeft } from './icons/IcArrowsUpAndLeft';
 export { IcArrowsUpAndLeftBig } from './icons/IcArrowsUpAndLeftBig';
 export { IcAt } from './icons/IcAt';
 export { IcBackspace } from './icons/IcBackspace';
+export { IcPercent } from './icons/IcPercent';
 export { IcBagPercent } from './icons/IcBagPercent';
 export { IcBank } from './icons/IcBank';
 export { IcBell } from './icons/IcBell';
