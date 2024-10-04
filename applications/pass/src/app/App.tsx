@@ -9,9 +9,9 @@ import { i18n } from 'proton-pass-web/lib/i18n';
 import { logStore } from 'proton-pass-web/lib/logger';
 import { monitor } from 'proton-pass-web/lib/monitor';
 import { onboarding } from 'proton-pass-web/lib/onboarding';
-import { getDefaultLocalID, getPersistedSessions } from 'proton-pass-web/lib/sessions';
 import { settings } from 'proton-pass-web/lib/settings';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
+import { getInitialTheme } from 'proton-pass-web/lib/theme';
 
 import {
     CompatibilityCheck,
@@ -38,7 +38,7 @@ import { api, exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
 import { getRequestIDHeaders } from '@proton/pass/lib/api/fetch-controller';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
-import { authStore, createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
+import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { createPassExport } from '@proton/pass/lib/export/export';
@@ -112,17 +112,9 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
                 .catch(noop);
         },
 
-        getTheme: async () => {
-            try {
-                // Handle case when authService did not init yet so localID isn't set
-                const { theme } = await settings.resolve(
-                    authStore.getLocalID() ?? getDefaultLocalID(getPersistedSessions())
-                );
-                return theme;
-            } catch {}
-        },
-
         getLogs: logStore.read,
+        getTheme: getInitialTheme,
+
         onboardingAcknowledge: onboarding.acknowledge,
         onboardingCheck: pipe(onboarding.checkMessage, prop('enabled')),
         onLink: (url, options) => window.open(url, options?.replace ? '_self' : '_blank'),

@@ -8,6 +8,7 @@ import { deletePassDB } from 'proton-pass-web/lib/database';
 import { onboarding } from 'proton-pass-web/lib/onboarding';
 import { clearUserLocalData, localGarbageCollect } from 'proton-pass-web/lib/storage';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
+import { getThemeForLocalID } from 'proton-pass-web/lib/theme';
 
 import type { CreateNotificationOptions } from '@proton/components';
 import type { AppStateContextValue } from '@proton/pass/components/Core/AppStateProvider';
@@ -122,7 +123,10 @@ export const createAuthService = ({
                 /** Configure the authentication store partially in order to
                  * hydrate the userID and offline salts before resuming session. */
                 authStore.setSession(persistedSession);
+
+                /** Apply user preferences early */
                 core.i18n.setLocale().catch(noop);
+                core.setTheme?.(await getThemeForLocalID(persistedSession.LocalID));
 
                 const cookieUpgrade = authStore.shouldCookieUpgrade(persistedSession);
                 const onlineAndSessionReady = getOnline() && !cookieUpgrade;
