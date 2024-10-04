@@ -12,11 +12,12 @@ import Input from '@proton/components/components/input/Input';
 import Label from '@proton/components/components/label/Label';
 import FormModal from '@proton/components/components/modal/FormModal';
 import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
 import type { Address } from '@proton/shared/lib/interfaces';
 
-import { useEventManager, useNotifications } from '../../hooks';
+import { useNotifications } from '../../hooks';
 
 const EMPTY_VALUES = [/^(<div><br><\/div>)+$/, /^(<div>\s*<\/div>)+$/];
 

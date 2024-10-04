@@ -11,12 +11,12 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { updateConfirmLink } from '@proton/shared/lib/api/mailSettings';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import { CONFIRM_LINK } from '@proton/shared/lib/mail/mailSettings';
 
-import { useEventManager } from '../../../hooks';
 import LinkConfirmationModalLink from './LinkConfirmationModalLink';
 import LinkConfirmationModalPhishing from './LinkConfirmationModalPhishing';
 

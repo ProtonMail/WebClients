@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { getSubscriptionParameters } from '@proton/shared/lib/api/calendars';
 import { getIsSubscribedCalendar, getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
@@ -33,7 +34,6 @@ import updateItem from '@proton/utils/updateItem';
 
 import { useCalendarModelEventManager } from '../containers/eventManager/calendar/CalendarModelEventManagerProvider';
 import useApi from './useApi';
-import useEventManager from './useEventManager';
 
 const useSubscribedCalendars = (calendars: VisualCalendar[], loadingCalendars = false) => {
     const [subscribedCalendars, setSubscribedCalendars] = useState<SubscribedCalendar[]>([]);

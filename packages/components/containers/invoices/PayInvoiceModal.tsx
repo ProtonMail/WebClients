@@ -9,6 +9,7 @@ import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader'
 import FormModal from '@proton/components/components/modal/FormModal';
 import Price from '@proton/components/components/price/Price';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
@@ -23,7 +24,7 @@ import type { Currency } from '@proton/shared/lib/interfaces';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 
-import { useEventManager, useNotifications, useSubscription, useUser } from '../../hooks';
+import { useNotifications, useSubscription, useUser } from '../../hooks';
 import useApiResult from '../../hooks/useApiResult';
 import PaymentWrapper from '../payments/PaymentWrapper';
 import StyledPayPalButton from '../payments/StyledPayPalButton';

@@ -1,13 +1,13 @@
 import type { ReactNode } from 'react';
 import { useLayoutEffect } from 'react';
 
+import useEventManager from '@proton/components/hooks/useEventManager';
 import useInstance from '@proton/hooks/useInstance';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
 import createLRU from '@proton/shared/lib/helpers/lru';
 import { STATUS } from '@proton/shared/lib/models/cache';
 
-import { useEventManager } from '../../hooks';
 import ContactProviderContext from './ContactProviderContext';
 
 interface Props {

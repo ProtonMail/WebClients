@@ -1,6 +1,6 @@
 import { useGetAddresses } from '@proton/account/addresses/hooks';
-import { UnlockModal, useApi, useAuthentication, useKTVerifier } from '@proton/components';
-import { useEventManager, useGetUserKeys, useModals, useProtonDomains, useUser } from '@proton/components/hooks';
+import { UnlockModal, useApi, useAuthentication, useEventManager, useKTVerifier } from '@proton/components';
+import { useGetUserKeys, useModals, useProtonDomains, useUser } from '@proton/components/hooks';
 import { setupAddress } from '@proton/shared/lib/api/addresses';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '@proton/shared/lib/constants';
 import { missingKeysSelfProcess } from '@proton/shared/lib/keys';

@@ -4,14 +4,9 @@ import { acceptMembership, declineOrLeaveMembership } from '@proton/account';
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
-import {
-    useErrorHandler,
-    useEventManager,
-    useGetUser,
-    useGetUserKeys,
-    useNotifications,
-} from '@proton/components/hooks';
+import { useErrorHandler, useGetUser, useGetUserKeys, useNotifications } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { baseUseDispatch } from '@proton/react-redux-store';

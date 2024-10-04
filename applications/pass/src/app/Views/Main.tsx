@@ -6,8 +6,7 @@ import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Hamburger } from '@proton/components';
-import { useToggle } from '@proton/components/hooks';
+import { Hamburger, useToggle } from '@proton/components';
 import { BulkSelectProvider } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';

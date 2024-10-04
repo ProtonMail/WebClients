@@ -26,6 +26,7 @@ import {
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { baseUseSelector } from '@proton/react-redux-store';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { removeMember, resendUnprivatizationLink, updateRole } from '@proton/shared/lib/api/members';
@@ -56,7 +57,6 @@ import clsx from '@proton/utils/clsx';
 import Tooltip from '../../../components/tooltip/Tooltip';
 import {
     useCustomDomains,
-    useEventManager,
     useGetOrganizationKey,
     useMembers,
     useNotifications,

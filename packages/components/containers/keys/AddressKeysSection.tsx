@@ -14,6 +14,7 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import type { AlgorithmInfo } from '@proton/crypto';
 import type { KeyGenConfig } from '@proton/shared/lib/interfaces';
 import type { OnKeyImportCallback } from '@proton/shared/lib/keys';
@@ -27,7 +28,7 @@ import {
 } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import { useEventManager, useModals, useUser, useUserKeys } from '../../hooks';
+import { useModals, useUser, useUserKeys } from '../../hooks';
 import useResignSKLWithPrimaryKey from '../keyTransparency/useResignSKLWithPrimaryKey';
 import AddressKeysHeaderActions from './AddressKeysHeaderActions';
 import KeysTable from './KeysTable';

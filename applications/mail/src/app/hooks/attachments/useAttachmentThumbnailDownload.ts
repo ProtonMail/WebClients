@@ -1,5 +1,4 @@
-import { useApi, useModalTwo } from '@proton/components';
-import { useGetVerificationPreferences } from '@proton/components/hooks';
+import { useApi, useGetVerificationPreferences, useModalTwo } from '@proton/components';
 import type { WorkerDecryptionResult } from '@proton/crypto';
 import { bigIntToNumber } from '@proton/crypto/lib/bigInteger';
 import { getAttachment as getAttachmentRequest, getAttachmentsMetadata } from '@proton/shared/lib/api/attachments';

@@ -14,6 +14,7 @@ import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
 import { addDomain, getDomain } from '@proton/shared/lib/api/domains';
@@ -23,7 +24,6 @@ import type { Domain } from '@proton/shared/lib/interfaces';
 import { VERIFY_STATE } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { useEventManager } from '../../../hooks';
 import TXTSection from './TXTSection';
 
 enum STEP {

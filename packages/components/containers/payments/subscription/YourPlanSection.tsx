@@ -5,6 +5,7 @@ import Loader from '@proton/components/components/loader/Loader';
 import MozillaInfoPanel from '@proton/components/containers/account/MozillaInfoPanel';
 import SettingsSectionExtraWide from '@proton/components/containers/account/SettingsSectionExtraWide';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import useLoad from '@proton/components/hooks/useLoad';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
@@ -14,7 +15,6 @@ import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import {
-    useLoad,
     useOrganization,
     usePlans,
     usePreferredPlansMap,

@@ -6,13 +6,14 @@ import ErrorButton from '@proton/components/components/button/ErrorButton';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { clearContacts, deleteContacts } from '@proton/shared/lib/api/contacts';
 import { allSucceded } from '@proton/shared/lib/api/helpers/response';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Contact } from '@proton/shared/lib/interfaces/contacts';
 
-import { useContacts, useEventManager, useNotifications } from '../../../hooks';
+import { useContacts, useNotifications } from '../../../hooks';
 import { getDeleteText } from '../../general/helper';
 
 export interface ContactDeleteProps {
