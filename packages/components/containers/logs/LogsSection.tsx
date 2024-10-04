@@ -17,6 +17,7 @@ import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLa
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { clearLogs, queryLogs } from '@proton/shared/lib/api/logs';
@@ -27,7 +28,7 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { SETTINGS_LOG_AUTH_STATE } from '@proton/shared/lib/interfaces';
 
-import { useApi, useModals, useUserSettings } from '../../hooks';
+import { useModals, useUserSettings } from '../../hooks';
 import LogsTable from './LogsTable';
 import WipeLogsButton from './WipeLogsButton';
 import { getAllAuthenticationLogs } from './helper';

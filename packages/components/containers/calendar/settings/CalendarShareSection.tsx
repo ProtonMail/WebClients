@@ -10,7 +10,8 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import CalendarMemberAndInvitationList from '@proton/components/containers/calendar/settings/CalendarMemberAndInvitationList';
 import ShareCalendarModal from '@proton/components/containers/calendar/shareProton/ShareCalendarModal';
 import CalendarShareUrlSection from '@proton/components/containers/calendar/shareURL/CalendarShareUrlSection';
-import { useApi, useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
+import useApi from '@proton/components/hooks/useApi';
 import { removeInvitation, removeMember } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_SETTINGS_SECTION_ID, MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
 import { filterOutAcceptedInvitations } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';

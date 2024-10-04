@@ -3,8 +3,9 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
-import { useAddresses, useApi, useNotifications } from '@proton/components/hooks';
+import { useAddresses, useNotifications } from '@proton/components/hooks';
 import { updateBlockSenderConfirmation } from '@proton/shared/lib/api/mailSettings';
 import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';
 

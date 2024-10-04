@@ -1,4 +1,4 @@
-import { useApi } from '@proton/components/hooks';
+import useApi from '@proton/components/hooks/useApi';
 import type { TelemetryEvents } from '@proton/shared/lib/api/telemetry';
 import { TelemetryMeasurementGroups, TelemtryAccountCancellationEvents } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';

@@ -14,7 +14,8 @@ import CalendarShareSection from '@proton/components/containers/calendar/setting
 import CalendarSubpageHeaderSection from '@proton/components/containers/calendar/settings/CalendarSubpageHeaderSection';
 import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea';
 import { PrivateMainSettingsAreaBase } from '@proton/components/containers/layout/PrivateMainSettingsArea';
-import { useApi, useGetCalendarBootstrap, useNotifications } from '@proton/components/hooks';
+import { useGetCalendarBootstrap, useNotifications } from '@proton/components/hooks';
+import useApi from '@proton/components/hooks/useApi';
 import { getAllMembers, getCalendarInvitations } from '@proton/shared/lib/api/calendars';
 import { getIsOwnedCalendar, getIsPersonalCalendar } from '@proton/shared/lib/calendar/calendar';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';

@@ -4,12 +4,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
-import BasicModal from '@proton/components/components/modalTwo/BasicModal';
 import type { BasicModalProps } from '@proton/components/components/modalTwo/BasicModal';
+import BasicModal from '@proton/components/components/modalTwo/BasicModal';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import { useApi, useGetCalendarInfo, useNotifications } from '@proton/components/hooks';
+import { useGetCalendarInfo, useNotifications } from '@proton/components/hooks';
+import useApi from '@proton/components/hooks/useApi';
 import { createPublicLink } from '@proton/shared/lib/api/calendars';
 import { MAX_CHARS_CLEARTEXT } from '@proton/shared/lib/calendar/constants';
 import { getPrimaryCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';

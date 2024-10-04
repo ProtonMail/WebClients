@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { useApi } from '@proton/components/hooks';
+import { useApi } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 
 import usePublicToken from '../../hooks/drive/usePublicToken';

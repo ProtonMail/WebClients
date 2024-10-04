@@ -11,6 +11,7 @@ import Info from '@proton/components/components/link/Info';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
+import useApi from '@proton/components/hooks/useApi';
 import useLoading from '@proton/hooks/useLoading';
 import { postVerifySend } from '@proton/shared/lib/api/verify';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -37,7 +38,6 @@ import { getVerificationSentText } from '../../containers/recovery/email/VerifyR
 import getBoldFormattedText from '../../helpers/getBoldFormattedText';
 import {
     useAddresses,
-    useApi,
     useConfig,
     useIsSessionRecoveryAvailable,
     useNotifications,

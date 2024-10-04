@@ -2,8 +2,8 @@ import type { ReactNode } from 'react';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { useCalendarModelEventManager, useContactEmailsCache } from '@proton/components';
-import { useApi, useEventManager, useGetCalendarEventRaw, useUser } from '@proton/components/hooks';
+import { useApi, useCalendarModelEventManager, useContactEmailsCache } from '@proton/components';
+import { useEventManager, useGetCalendarEventRaw, useUser } from '@proton/components/hooks';
 import type { IndexingMetrics } from '@proton/encrypted-search';
 import { defaultESContext, useEncryptedSearch } from '@proton/encrypted-search';
 import { TelemetryCalendarEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';

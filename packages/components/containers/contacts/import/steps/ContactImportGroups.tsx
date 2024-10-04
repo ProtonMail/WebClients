@@ -9,6 +9,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import useApi from '@proton/components/hooks/useApi';
 import { FORBIDDEN_LABEL_NAMES } from '@proton/shared/lib/constants';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { normalize } from '@proton/shared/lib/helpers/string';
@@ -16,7 +17,7 @@ import type { ContactGroup, ImportContactsModel } from '@proton/shared/lib/inter
 import { IMPORT_GROUPS_ACTION } from '@proton/shared/lib/interfaces/contacts';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useApi, useEventManager } from '../../../../hooks';
+import { useEventManager } from '../../../../hooks';
 import { submitCategories } from '../encryptAndSubmit';
 
 interface SelectGroupActionProps {

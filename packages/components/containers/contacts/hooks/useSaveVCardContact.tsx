@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
+import useApi from '@proton/components/hooks/useApi';
 import { addContacts, updateContact } from '@proton/shared/lib/api/contacts';
 import { API_CODES } from '@proton/shared/lib/constants';
 import { CATEGORIES, OVERWRITE } from '@proton/shared/lib/contacts/constants';
@@ -14,7 +15,7 @@ import type {
 } from '@proton/shared/lib/interfaces/contacts/ContactApi';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
-import { useApi, useGetUserKeys, useNotifications } from '../../../hooks';
+import { useGetUserKeys, useNotifications } from '../../../hooks';
 
 const { THROW_ERROR_IF_CONFLICT } = OVERWRITE;
 const { INCLUDE, IGNORE } = CATEGORIES;

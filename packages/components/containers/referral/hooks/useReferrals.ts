@@ -1,10 +1,10 @@
 import type { Reducer } from 'react';
 import { useEffect, useReducer } from 'react';
 
+import useApi from '@proton/components/hooks/useApi';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import type { Referral } from '@proton/shared/lib/interfaces';
 
-import { useApi } from '../../../hooks';
 import fetchAllReferralsByOffset from '../helpers/fetchAllReferralsByOffset';
 
 interface ReferralApiResult {

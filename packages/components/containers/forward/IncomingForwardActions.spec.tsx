@@ -1,6 +1,7 @@
 import { fireEvent } from '@testing-library/react';
 
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
+import useApi from '@proton/components/hooks/useApi';
 import { useGetMailSettings } from '@proton/mail/mailSettings/hooks';
 import { rejectForwarding } from '@proton/shared/lib/api/forwardings';
 import type { Address, IncomingAddressForwarding } from '@proton/shared/lib/interfaces';
@@ -15,7 +16,7 @@ import {
     withEventManager,
 } from '@proton/testing';
 
-import { useApi, useGetUserKeys, useNotifications, useUser } from '../../hooks';
+import { useGetUserKeys, useNotifications, useUser } from '../../hooks';
 import IncomingForwardActions from './IncomingForwardActions';
 
 jest.mock('@proton/components/hooks/useApi');

@@ -29,6 +29,7 @@ import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInp
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import AssistantUpdateSubscriptionButton from '@proton/components/containers/payments/subscription/assistant/AssistantUpdateSubscriptionButton';
+import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -57,7 +58,6 @@ import clamp from '@proton/utils/clamp';
 import isTruthy from '@proton/utils/isTruthy';
 
 import {
-    useApi,
     useErrorHandler,
     useEventManager,
     useGetUser,

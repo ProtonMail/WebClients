@@ -1,10 +1,12 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { sub } from 'date-fns';
 
-import { useApi, useUser, useUserSettings } from '../../hooks';
+import useApi from '@proton/components/hooks/useApi';
+
+import { useUser, useUserSettings } from '../../hooks';
 import EditEmailSubscription from './EditEmailSubscription';
 
-jest.mock('../../hooks/useApi');
+jest.mock('@proton/components/hooks/useApi');
 const mockedUseApi = useApi as jest.MockedFunction<any>;
 let mockedApi: ReturnType<typeof mockedUseApi>;
 

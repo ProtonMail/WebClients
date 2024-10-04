@@ -18,12 +18,12 @@ import InputField from '@proton/components/components/v2/field/InputField';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useKeyTransparencyContext } from '@proton/components/containers/keyTransparency/useKeyTransparencyContext';
 import {
-    useApi,
     useGetAddressKeys,
     useGetDecryptedPassphraseAndCalendarKeys,
     useGetEncryptionPreferences,
     useNotifications,
 } from '@proton/components/hooks';
+import useApi from '@proton/components/hooks/useApi';
 import type { PublicKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { addMember } from '@proton/shared/lib/api/calendars';

@@ -8,6 +8,7 @@ import Info from '@proton/components/components/link/Info';
 import TreeViewContainer from '@proton/components/components/treeview/TreeViewContainer';
 import TreeViewItem from '@proton/components/components/treeview/TreeViewItem';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { orderFolders, updateLabel } from '@proton/shared/lib/api/labels';
 import { ROOT_FOLDER } from '@proton/shared/lib/constants';
@@ -15,7 +16,7 @@ import { getParents, order } from '@proton/shared/lib/helpers/folder';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import clsx from '@proton/utils/clsx';
 
-import { useApi, useEventManager } from '../../hooks';
+import { useEventManager } from '../../hooks';
 import ActionsLabel from './ActionsLabel';
 import FolderIcon from './FolderIcon';
 import ToggleNotify from './ToggleNotify';

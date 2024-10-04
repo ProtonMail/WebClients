@@ -9,6 +9,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import useApi from '@proton/components/hooks/useApi';
 import useLoading from '@proton/hooks/useLoading';
 import { updateEmail } from '@proton/shared/lib/api/settings';
 import { emailValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -18,7 +19,7 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { InputFieldProps } from '../../../components/v2/field/InputField';
-import { useApi, useEventManager, useNotifications } from '../../../hooks';
+import { useEventManager, useNotifications } from '../../../hooks';
 import ConfirmRemoveEmailModal from './ConfirmRemoveEmailModal';
 import VerifyRecoveryEmailModal from './VerifyRecoveryEmailModal';
 

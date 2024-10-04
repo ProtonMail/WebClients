@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import DynamicProgress from '@proton/components/components/progress/DynamicProgress';
+import useApi from '@proton/components/hooks/useApi';
 import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
 import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
@@ -26,7 +27,7 @@ import type {
 } from '@proton/shared/lib/interfaces/calendar';
 import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/calendar';
 
-import { useApi, useGetCalendarInfo } from '../../../hooks';
+import { useGetCalendarInfo } from '../../../hooks';
 
 const getEventsWithoutDefaultNotifications = (events: VcalVeventComponent[]) => {
     return events.map((eventComponent) => ({ eventComponent, hasDefaultNotifications: false }));

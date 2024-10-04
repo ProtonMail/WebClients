@@ -3,6 +3,7 @@ import type { Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
 
 import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
+import useApi from '@proton/components/hooks/useApi';
 import { createCalendar, updateCalendarSettings, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import {
     getOwnedPersonalCalendars,
@@ -16,7 +17,6 @@ import type { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 
 import {
-    useApi,
     useEventManager,
     useGetAddressKeys,
     useGetAddresses,

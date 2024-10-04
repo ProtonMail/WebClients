@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 
+import useApi from '@proton/components/hooks/useApi';
 import { CryptoProxy, serverTime } from '@proton/crypto';
 import type { SelfAuditResult } from '@proton/key-transparency/lib';
 import {
@@ -16,7 +17,6 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import type { DecryptedAddressKey, KeyPair, SelfAuditState } from '@proton/shared/lib/interfaces';
 
 import {
-    useApi,
     useConfig,
     useEventManager,
     useGetAddressKeys,

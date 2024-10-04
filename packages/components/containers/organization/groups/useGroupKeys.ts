@@ -1,6 +1,5 @@
 import {
     useAddresses,
-    useApi,
     useGetOrganizationKey,
     useGetPublicKeysForInbox,
     useGetUser,
@@ -8,6 +7,7 @@ import {
     useKTVerifier,
     useNotifications,
 } from '@proton/components';
+import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import type { PrivateKeyReference } from '@proton/crypto/lib';
 import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '@proton/shared/lib/constants';

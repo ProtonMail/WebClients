@@ -14,6 +14,7 @@ import TableRow from '@proton/components/components/table/TableRow';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import UpgradeBanner from '@proton/components/containers/account/UpgradeBanner';
+import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { CacheType } from '@proton/redux-utilities';
 import { getDomain } from '@proton/shared/lib/api/domains';
@@ -31,14 +32,7 @@ import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 
-import {
-    useApi,
-    useCustomDomains,
-    useDomainsAddresses,
-    useGetCustomDomains,
-    useOrganization,
-    useUser,
-} from '../../hooks';
+import { useCustomDomains, useDomainsAddresses, useGetCustomDomains, useOrganization, useUser } from '../../hooks';
 import useOrganizationModals from '../organization/useOrganizationModals';
 import CatchAllModal from './CatchAllModal';
 import DeleteDomainModal from './DeleteDomainModal';

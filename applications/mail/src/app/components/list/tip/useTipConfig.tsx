@@ -6,10 +6,11 @@ import {
     LabelsUpsellModal,
     PmMeUpsellModal,
     ProtonSentinelUpsellModal,
+    useApi,
     useModalStateObject,
 } from '@proton/components';
 import IncreasePrivacyUpsellModal from '@proton/components/components/upsell/modal/types/IncreasePrivacyUpsellModal';
-import { useApi, useEventManager, useNotifications, useUser } from '@proton/components/hooks';
+import { useEventManager, useNotifications, useUser } from '@proton/components/hooks';
 import { useFolders, useLabels } from '@proton/mail';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';

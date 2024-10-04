@@ -12,6 +12,7 @@ import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import useApi from '@proton/components/hooks/useApi';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
 import { abortSessionRecovery } from '@proton/shared/lib/api/sessionRecovery';
@@ -19,7 +20,7 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
-import { useApi, useEventManager, useNotifications, useUser } from '../../../hooks';
+import { useEventManager, useNotifications, useUser } from '../../../hooks';
 import { useSessionRecoveryLocalStorage } from './SessionRecoveryLocalStorageManager';
 
 interface Props extends ModalProps {
