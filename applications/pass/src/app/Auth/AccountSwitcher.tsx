@@ -4,8 +4,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
-import { Dropdown, usePopperAnchor } from '@proton/components';
-import { Icon } from '@proton/components/index';
+import { Dropdown, Icon, usePopperAnchor } from '@proton/components';
 import { UserPanel } from '@proton/pass/components/Account/UserPanel';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';

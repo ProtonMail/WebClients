@@ -76,13 +76,14 @@ export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null, o
                 pill
                 color="norm"
                 disabled={disabled}
+                className="flex gap-1.5 text-sm"
                 onClick={toggle}
                 ref={anchorRef}
-                size="medium"
+                size="small"
                 title={c('Action').t`Add new item`}
             >
-                <Icon className="mr-1" name="plus" alt={c('Action').t`Add new item`} />
-                {c('Action').t`Create item`}
+                <Icon size={3.5} name="plus" alt={c('Action').t`Add new item`} />
+                <span className="hidden md:block">{c('Action').t`Create item`}</span>
             </Button>
             <Dropdown
                 isOpen={isOpen}

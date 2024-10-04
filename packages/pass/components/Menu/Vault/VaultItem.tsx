@@ -5,7 +5,9 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
 import { Icon } from '@proton/components';
+import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { UpsellRef } from '@proton/pass/constants';
 import { isVaultMemberLimitReached, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { type ShareItem } from '@proton/pass/store/reducers';
@@ -15,9 +17,6 @@ import { ShareRole } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import clsx from '@proton/utils/clsx';
-
-import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
-import { VaultIcon } from '../../Vault/VaultIcon';
 
 type Props = {
     count: number;
@@ -70,6 +69,7 @@ export const VaultItem: FC<Props> = ({
                 !withActions && 'pass-vault-submenu-vault-item--no-actions'
             )}
             className={clsx(selected && 'sidebar-item-selected', !dense && 'py-3')}
+            style={{ '--max-h-custom': '1.25rem' }}
             extra={
                 <>
                     {shared && (
