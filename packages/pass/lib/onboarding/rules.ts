@@ -8,6 +8,7 @@ import {
     selectFeatureFlag,
     selectLockEnabled,
     selectPassPlan,
+    selectUserData,
     selectUserPlan,
     selectUserState,
 } from '@proton/pass/store/selectors';
@@ -146,5 +147,17 @@ export const createFamilyPlanPromo2024Rule = (store: Store<State>) =>
             const cohortPassFree = plan?.InternalName === 'free';
 
             return enabled && (cohortPass2023 || cohortPassFree);
+        },
+    });
+
+export const createAliasSyncEnableRule = (store: Store<State>) =>
+    createOnboardingRule({
+        message: OnboardingMessage.ALIAS_SYNC_ENABLE,
+        when: (previous) => {
+            const state = store.getState();
+            const enabled = selectFeatureFlag(PassFeature.PassSimpleLoginAliasesSync)(state);
+            const { pendingAliasToSync } = selectUserData(state);
+
+            return enabled && !previous && pendingAliasToSync > 0;
         },
     });

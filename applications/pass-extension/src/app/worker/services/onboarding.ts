@@ -4,6 +4,7 @@ import type { Store } from 'redux';
 
 import browser from '@proton/pass/lib/globals/browser';
 import {
+    createAliasSyncEnableRule,
     createAliasTrashConfirmRule,
     createBlackFridayRule,
     createFamilyPlanPromo2024Rule,
@@ -29,6 +30,9 @@ export const createOnboardingService = (storage: ExtensionStorage<OnboardingStor
     const { acknowledge, init, setState, getMessage, checkMessage } = createCoreOnboardingService({
         storage,
         rules: [
+            /* The order below defines the priority for spotlight display (first rule with `when` returning `true`).
+             * Rules displayed as spotlight should be defined above the "invisible" rules
+             * otherwise they may never be displayed, as an "invisible" rule may return `true` first */
             createPendingShareAccessRule(store),
             createPermissionsRule(withContext((ctx) => ctx.service.activation.getPermissionsGranted())),
             createStorageIssueRule(withContext((ctx) => ctx.service.storage.getState().storageFull)),
@@ -38,6 +42,9 @@ export const createOnboardingService = (storage: ExtensionStorage<OnboardingStor
             createBlackFridayRule(store),
             createSecurityRule(store),
             createUserRatingRule(store),
+            createAliasSyncEnableRule(store),
+
+            /* "Invisible" rules not displayed as spotlight should be defined at the bottom */
             createMonitorRule(),
             createAliasTrashConfirmRule(),
         ],
