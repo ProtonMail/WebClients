@@ -14,6 +14,7 @@ import ExportModal from '@proton/components/containers/calendar/exportModal/Expo
 import CalendarsSection from '@proton/components/containers/calendar/settings/CalendarsSection';
 import { getNextDefaultCalendar } from '@proton/components/containers/calendar/settings/defaultCalendar';
 import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
 import { removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { getProbablyActiveCalendars } from '@proton/shared/lib/calendar/calendar';
@@ -25,7 +26,7 @@ import type { Address, Subscription, UserModel } from '@proton/shared/lib/interf
 import type { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { useEventManager, useNotifications } from '../../../hooks';
+import { useNotifications } from '../../../hooks';
 
 type ModalsMap = {
     calendarModal: ModalWithProps<{

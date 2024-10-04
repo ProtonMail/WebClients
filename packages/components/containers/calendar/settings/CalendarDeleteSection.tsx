@@ -10,8 +10,9 @@ import Prompt from '@proton/components/components/prompt/Prompt';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { getNextDefaultCalendar } from '@proton/components/containers/calendar/settings/defaultCalendar';
-import { useEventManager, useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import {
     removeCalendar,

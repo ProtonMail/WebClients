@@ -14,6 +14,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Price from '@proton/components/components/price/Price';
 import useConfig from '@proton/components/hooks/useConfig';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useAutomaticCurrency, usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
@@ -37,7 +38,7 @@ import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import { useEventManager, useNotifications, useSubscription, useUser } from '../../hooks';
+import { useNotifications, useSubscription, useUser } from '../../hooks';
 import { ChargebeePaypalWrapper } from '../../payments/chargebee/ChargebeeWrapper';
 import AmountRow from './AmountRow';
 import PaymentInfo from './PaymentInfo';

@@ -10,12 +10,13 @@ import OrderableTableRow from '@proton/components/components/orderableTable/Orde
 import Toggle from '@proton/components/components/toggle/Toggle';
 import FiltersUpsellModal from '@proton/components/components/upsell/modal/types/FiltersUpsellModal';
 import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { deleteFilter, toggleEnable } from '@proton/shared/lib/api/filters';
 import { FILTER_STATUS } from '@proton/shared/lib/constants';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
 
-import { useEventManager, useNotifications, useUser } from '../../hooks';
+import { useNotifications, useUser } from '../../hooks';
 import FilterWarningModal from './FilterWarningModal';
 import type { Filter } from './interfaces';
 import DeleteFilterModal from './modal/DeleteFilterModal';

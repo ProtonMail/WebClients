@@ -3,11 +3,12 @@ import { c } from 'ttag';
 
 import { getEmailSubscriptions } from '@proton/components/containers/account/constants/email-subscriptions';
 import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { patchNews } from '@proton/shared/lib/api/settings';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/constants';
 
-import { useEventManager, useNotifications, useUser, useUserSettings } from '../../hooks';
+import { useNotifications, useUser, useUserSettings } from '../../hooks';
 import type { NewsletterSubscriptionUpdateData } from './EmailSubscriptionToggles';
 import EmailSubscriptionToggles from './EmailSubscriptionToggles';
 

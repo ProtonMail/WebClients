@@ -11,6 +11,7 @@ import SettingsLayout from '@proton/components/containers/account/SettingsLayout
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
 import { updateSAMLConfig } from '@proton/shared/lib/api/samlSSO';
@@ -18,7 +19,7 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Domain, SSO } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 
-import { useEventManager, useNotifications } from '../../../hooks';
+import { useNotifications } from '../../../hooks';
 import type { IdentityProviderEndpointsContentProps } from './IdentityProviderEndpointsContent';
 import ReadonlyFieldWithCopy from './ReadonlyFieldWithCopy';
 

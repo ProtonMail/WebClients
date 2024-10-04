@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import { useEventManager } from '@proton/components';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import { useEventManager } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';

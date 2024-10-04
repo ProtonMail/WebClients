@@ -3,8 +3,9 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
-import { useEventManager, useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { getTimezone } from '@proton/shared/lib/date/timezone';

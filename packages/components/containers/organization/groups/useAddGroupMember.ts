@@ -1,6 +1,7 @@
-import { useEventManager, useGetMembers, useGetOrganizationKey } from '@proton/components/hooks';
+import { useGetMembers, useGetOrganizationKey } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib';
 import { CryptoProxy } from '@proton/crypto/lib';

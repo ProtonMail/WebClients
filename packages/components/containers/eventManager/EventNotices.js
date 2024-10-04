@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { CryptoProxy } from '@proton/crypto';
 import { arrayToHexString, binaryStringToArray, encodeUtf8 } from '@proton/crypto/lib/utils';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
-import { useEventManager, useNotifications, useUser } from '../../hooks';
+import { useNotifications, useUser } from '../../hooks';
 
 const getID = async (text) => {
     const id = arrayToHexString(

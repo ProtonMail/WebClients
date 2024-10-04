@@ -22,11 +22,12 @@ import {
     ToggleAssistantEnvironment,
     Tooltip,
     useApi,
+    useEventManager,
     useKeyTransparencyContext,
     useModalState,
 } from '@proton/components';
 import { KeyTransparencyDetailsModal } from '@proton/components/components/keyTransparency';
-import { useEventManager, useNotifications, useUserSettings } from '@proton/components/hooks';
+import { useNotifications, useUserSettings } from '@proton/components/hooks';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useKeyTransparencyNotification from '@proton/components/hooks/useKeyTransparencyNotification';
 import { useLoading } from '@proton/hooks';

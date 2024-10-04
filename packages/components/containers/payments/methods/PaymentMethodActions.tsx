@@ -6,6 +6,7 @@ import type { DropdownActionProps } from '@proton/components/components/dropdown
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import ConfirmModal from '@proton/components/components/modal/Confirm';
 import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import {
     type CardModel,
     PAYMENT_METHOD_TYPES,
@@ -17,7 +18,7 @@ import {
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { deletePaymentMethod, orderPaymentMethods } from '@proton/shared/lib/api/payments';
 
-import { useEventManager, useModals, useNotifications } from '../../../hooks';
+import { useModals, useNotifications } from '../../../hooks';
 import EditCardModal from '../../payments/EditCardModal';
 
 const toCardModel = ({ Details }: PaymentMethodCardDetails): CardModel => {

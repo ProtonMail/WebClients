@@ -10,6 +10,9 @@ import useIsRecoveryFileAvailable from '@proton/components/hooks/recoveryFile/us
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import useHasOutdatedRecoveryFile from '@proton/components/hooks/useHasOutdatedRecoveryFile';
+import useRecoverySecrets from '@proton/components/hooks/useRecoverySecrets';
 import { useGetUserSettings } from '@proton/components/hooks/useUserSettings';
 import { useLoading } from '@proton/hooks';
 import { updateDeviceRecovery } from '@proton/shared/lib/api/settingsRecovery';
@@ -20,12 +23,9 @@ import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import { syncDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 
 import {
-    useEventManager,
     useGetUser,
     useGetUserKeys,
-    useHasOutdatedRecoveryFile,
     useIsMnemonicAvailable,
-    useRecoverySecrets,
     useSearchParamsEffect,
     useUser,
     useUserSettings,

@@ -1,11 +1,10 @@
 import { useRef } from 'react';
 
-import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import type { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { EventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';
+import type { EventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';
 import isTruthy from '@proton/utils/isTruthy';
-
-import { useEventManager } from '../../hooks';
 
 export type PollEventsProps = {
     subscribeToProperty: string;

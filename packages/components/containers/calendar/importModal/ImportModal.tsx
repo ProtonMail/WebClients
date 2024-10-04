@@ -10,6 +10,7 @@ import BasicModal from '@proton/components/components/modalTwo/BasicModal';
 import { useCalendarModelEventManager } from '@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { updateMember } from '@proton/shared/lib/api/calendars';
 import { getProbablyActiveCalendars, getWritableCalendars } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_METHOD, IMPORT_ERROR_TYPE, MAX_IMPORT_FILE_SIZE } from '@proton/shared/lib/calendar/constants';
@@ -32,7 +33,7 @@ import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/calendar';
 import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
-import { useEventManager, useUser } from '../../../hooks';
+import { useUser } from '../../../hooks';
 import AttachingModalContent from './AttachingModalContent';
 import ImportInvitationModalContent from './ImportInvitationModalContent';
 import ImportSummaryModalContent from './ImportSummaryModalContent';

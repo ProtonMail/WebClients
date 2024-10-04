@@ -17,8 +17,9 @@ import {
     SidebarListItemSettingsLink,
     useModalState,
     useSubscriptionModal,
+    useToggle,
 } from '@proton/components';
-import { useOrganization, useToggle, useUser } from '@proton/components/hooks';
+import { useOrganization, useUser } from '@proton/components/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { PLANS } from '@proton/shared/lib/constants';
 

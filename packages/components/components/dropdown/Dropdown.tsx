@@ -14,13 +14,13 @@ import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
 import type { PopperPlacement, PopperPosition } from '@proton/components/components/popper/interface';
 import usePopper from '@proton/components/components/popper/usePopper';
 import { allPopperPlacements } from '@proton/components/components/popper/utils';
+import useDropdownArrowNavigation from '@proton/components/hooks/useDropdownArrowNavigation';
 import useIsClosing from '@proton/components/hooks/useIsClosing';
 import { useCombinedRefs } from '@proton/hooks';
 import { dropdownRootClassName } from '@proton/shared/lib/busy';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import useDropdownArrowNavigation from '../../hooks/useDropdownArrowNavigation';
 import useElementRect from '../../hooks/useElementRect';
 import type { HotkeyTuple } from '../../hooks/useHotkeys';
 import { useHotkeys } from '../../hooks/useHotkeys';

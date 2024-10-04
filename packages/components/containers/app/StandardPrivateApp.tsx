@@ -4,8 +4,8 @@ import ContactProvider from '@proton/components/containers/contacts/ContactProvi
 import EventNotices from '@proton/components/containers/eventManager/EventNotices';
 import NotificationsChildren from '@proton/components/containers/notifications/Children';
 import useConfig from '@proton/components/hooks/useConfig';
+import useIsInboxElectronApp from '@proton/components/hooks/useIsInboxElectronApp';
 
-import { useIsInboxElectronApp } from '../../hooks';
 import SessionRecoveryLocalStorageManager from '../account/sessionRecovery/SessionRecoveryLocalStorageManager';
 import ForceRefreshProvider from '../forceRefresh/Provider';
 import KeyTransparencyManager from '../keyTransparency/KeyTransparencyManager';

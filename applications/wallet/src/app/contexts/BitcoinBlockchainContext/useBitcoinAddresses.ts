@@ -12,7 +12,7 @@ import {
     type WasmApiWalletAccount,
     type WasmApiWalletBitcoinAddressData,
 } from '@proton/andromeda';
-import { useEventManager } from '@proton/components/hooks';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { type DecryptedAddressKey, type SimpleMap } from '@proton/shared/lib/interfaces';
 import {
     type AccountWithChainData,

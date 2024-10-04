@@ -9,6 +9,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
 import MozillaInfoPanel from '@proton/components/containers/account/MozillaInfoPanel';
 import useApi from '@proton/components/hooks/useApi';
+import useLoad from '@proton/components/hooks/useLoad';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
@@ -28,7 +29,7 @@ import type { Currency, Cycle, PlanIDs } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
-import { useLoad, useOrganization, usePlans, useSubscription, useVPNServersCount } from '../../hooks';
+import { useOrganization, usePlans, useSubscription, useVPNServersCount } from '../../hooks';
 import { openLinkInBrowser, upgradeButtonClick } from '../desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '../desktop/useHasInboxDesktopInAppPayments';
 import PlanSelection from './subscription/PlanSelection';
