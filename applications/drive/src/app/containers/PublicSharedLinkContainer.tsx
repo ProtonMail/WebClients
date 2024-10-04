@@ -214,10 +214,11 @@ function PublicShareLinkInitContainer() {
         return <ErrorPage />;
     }
 
+    const showBookmarks = isDriveShareUrlBookmarkingEnabled || bookmarksPublicView.haveBookmarks;
     const props = {
         bookmarksPublicView,
         token,
-        hideSaveToDrive: !isDriveShareUrlBookmarkingEnabled || isLegacy,
+        hideSaveToDrive: isLegacy || !showBookmarks,
         openInDocs: isDocsPublicSharingEnabled ? openInDocs : undefined,
         partialView: isPartialView,
     };
