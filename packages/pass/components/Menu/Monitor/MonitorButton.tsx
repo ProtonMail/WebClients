@@ -14,12 +14,12 @@ import clsx from '@proton/utils/clsx';
 export const MonitorButton: FC = () => {
     const { navigate } = useNavigation();
     const breachCount = useSelector(selectTotalBreaches) ?? 0;
-    const isActive = useRouteMatch(getLocalPath('monitor'));
+    const isSelected = useRouteMatch(getLocalPath('monitor'));
 
     return (
         <DropdownMenuButton
             icon={`pass-shield-monitoring-${breachCount ? 'warning' : 'ok'}`}
-            className={clsx('rounded', isActive && 'sidebar-item-selected')}
+            className={clsx('rounded', isSelected && 'is-selected')}
             ellipsis
             label={c('Action').t`Pass Monitor`}
             extra={

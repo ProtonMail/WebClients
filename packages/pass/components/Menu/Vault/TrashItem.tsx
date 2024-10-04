@@ -24,7 +24,7 @@ export const TrashItem: FC<Props> = ({ dense, selected, handleTrashRestore, hand
             label={c('Label').t`Trash`}
             icon="trash"
             onClick={onSelect}
-            className={clsx(selected && 'sidebar-item-selected', !dense && 'py-3')}
+            className={clsx(selected && 'is-selected', !dense && 'py-3')}
             parentClassName={clsx('pass-vault-submenu-vault-item w-full')}
             quickActions={[
                 <DropdownMenuButton

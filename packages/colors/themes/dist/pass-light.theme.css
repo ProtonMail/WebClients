@@ -76,8 +76,8 @@
   --shadow-lifted-opacity: 0.2;
   --backdrop-norm: rgb(0 0 0 / 0.15);
   --optional-field-placeholder-color: var(--text-weak);
-  --optional-input-background-color: #ffffff;
-  --optional-sidebar-item-selected-background-color: #ffffff;
+  --optional-field-background-color: #ffffff;
+  --optional-navigation-current-item-background-color: #ffffff;
   --focus-outline: var(--interaction-norm-major-2);
   --focus-ring: var(--interaction-norm-minor-1);
   --search-field-focus-background: #ffffff;
@@ -93,25 +93,13 @@
   --vault-porsche: 255 122 0;
   --vault-mercury: 117 117 117;
   --vault-water-leaf: 20 154 161;
-  --pass-box-shadow: rgb(0 0 0 / 0.15);
-  --pass-content-box-shadow: rgb(14 14 14 / 0.4);
-  --pass-scroll-color: rgb(14 14 14 / 0.1);
-  --pass-loby-background: radial-gradient(
+  --pass-scroll-shadow-color: rgb(14 14 14 / 0.1);
+  --pass-lobby-background-color: radial-gradient(
       61.86% 61.86% at 50% 0%,
-      rgb(255 255 255 / 0.16) 0%,
-      rgb(48 45 69 / 0.2) 100%
+      #f6f5f8 0%,
+      #f3eeff 100%
     ),
     #f6f5f8;
-  --pass-scroll-gradient-start: linear-gradient(
-    180deg,
-    var(--pass-scroll-color),
-    transparent
-  );
-  --pass-scroll-gradient-end: linear-gradient(
-    0deg,
-    var(--pass-scroll-color),
-    transparent
-  );
 }
 
 .ui-violet {

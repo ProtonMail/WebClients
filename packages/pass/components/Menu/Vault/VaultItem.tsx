@@ -68,7 +68,7 @@ export const VaultItem: FC<Props> = ({
                 'pass-vault-submenu-vault-item w-full',
                 !withActions && 'pass-vault-submenu-vault-item--no-actions'
             )}
-            className={clsx(selected && 'sidebar-item-selected', !dense && 'py-3')}
+            className={clsx(selected && 'is-selected', !dense && 'py-3')}
             style={{ '--max-h-custom': '1.25rem' }}
             extra={
                 <>
