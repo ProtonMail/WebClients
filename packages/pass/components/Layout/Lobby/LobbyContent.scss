@@ -2,11 +2,10 @@
 
 .pass-lobby--heading {
 	font-size: rem(24);
-	line-height: 0.9;
+	line-height: 0.95;
 }
 
 .pass-lobby--brand-text {
-	opacity: 0.8;
-	block-size: 1.75rem;
-	fill: var(--logo-text-proton-color);
+	block-size: 1.5rem;
+	fill: var(--text-norm);
 }
