@@ -17,6 +17,7 @@ export enum OnboardingMessage {
     PASS_MONITOR_LEARN_MORE,
     ALIAS_TRASH_CONFIRM /* confirm moving an alias to trash and suggest to disable it instead */,
     FAMILY_PLAN_PROMO_2024,
+    ALIAS_SYNC_ENABLE /* shown if user has pending SL aliases to be sync */,
 }
 
 export type OnboardingAcknowledgment = {

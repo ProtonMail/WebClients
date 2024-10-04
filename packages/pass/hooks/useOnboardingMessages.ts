@@ -1,17 +1,17 @@
 import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlight/SpotlightContent';
-import { FiveStarIcon, ShieldIcon } from '@proton/pass/components/Spotlight/SpotlightIcon';
+import { AliasSyncIcon, FiveStarIcon, ShieldIcon } from '@proton/pass/components/Spotlight/SpotlightIcon';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { FamilyPlanPromo2024 } from '@proton/pass/components/Upsell/FamilyPlanPromo2024';
 import { PASS_BF_MONTHLY_PRICE, PASS_LEARN_MORE_URL, UpsellRef } from '@proton/pass/constants';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
-import { selectUser } from '@proton/pass/store/selectors';
+import { selectUser, selectUserData } from '@proton/pass/store/selectors';
 import { OnboardingMessage } from '@proton/pass/types';
 import { BRAND_NAME, DEFAULT_CURRENCY, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
@@ -22,6 +22,8 @@ export const useOnboardingMessages = () => {
 
     const { SSO_URL } = usePassConfig();
     const user = useSelector(selectUser);
+
+    const { pendingAliasToSync: aliasCount } = useSelector(selectUserData);
 
     return useMemo<Partial<Record<OnboardingMessage, SpotlightMessageDefinition>>>(
         () => ({
@@ -187,7 +189,25 @@ export const useOnboardingMessages = () => {
                 className: 'ui-violet pass-family-plan-banner',
                 onClose: () => acknowledge(OnboardingMessage.FAMILY_PLAN_PROMO_2024),
             },
+            [OnboardingMessage.ALIAS_SYNC_ENABLE]: {
+                type: 'default',
+                id: 'alias-sync',
+                title: c('Title').t`Import your aliases from SimpleLogin`,
+                message: c('Info').ngettext(
+                    msgid`You have ${aliasCount} alias that is present in SimpleLogin but missing in ${PASS_APP_NAME}. Would you like to import it?`,
+                    `You have ${aliasCount} aliases that are present in SimpleLogin but missing in ${PASS_APP_NAME}. Would you like to import them?`,
+                    aliasCount
+                ),
+                className: 'ui-teal',
+                icon: AliasSyncIcon,
+                onClose: () => acknowledge(OnboardingMessage.ALIAS_SYNC_ENABLE),
+                action: {
+                    label: c('Action').ngettext(msgid`Import alias`, `Import aliases`, aliasCount),
+                    type: 'button',
+                    onClick: () => acknowledge(OnboardingMessage.ALIAS_SYNC_ENABLE, () => openSettings?.('aliases')),
+                },
+            },
         }),
-        [user]
+        [user, aliasCount]
     );
 };
