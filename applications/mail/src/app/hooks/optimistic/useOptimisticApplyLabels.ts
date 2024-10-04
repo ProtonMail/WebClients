@@ -1,9 +1,10 @@
-import { useFolders, useHandler } from '@proton/components';
+import { useHandler } from '@proton/components';
 import {
     conversationCountsActions,
     messageCountsActions,
     selectConversationCounts,
     selectMessageCounts,
+    useFolders,
 } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';

@@ -3,7 +3,8 @@ import { memo, useEffect, useRef } from 'react';
 
 import { Scroll } from '@proton/atoms';
 import type { Breakpoints } from '@proton/components';
-import { useLabels, useToggle } from '@proton/components';
+import { useToggle } from '@proton/components';
+import { useLabels } from '@proton/mail';
 import { isEditing } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';

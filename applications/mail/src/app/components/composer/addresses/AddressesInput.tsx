@@ -4,14 +4,8 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    AddressesAutocomplete,
-    Icon,
-    Tooltip,
-    useContactEmails,
-    useContactGroups,
-    useNotifications,
-} from '@proton/components';
+import { AddressesAutocomplete, Icon, Tooltip, useContactEmails, useNotifications } from '@proton/components';
+import { useContactGroups } from '@proton/mail';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';

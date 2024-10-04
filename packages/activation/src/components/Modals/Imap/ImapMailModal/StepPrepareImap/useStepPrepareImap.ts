@@ -16,7 +16,7 @@ import {
 } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.actions';
 import { selectImapDraftMailImport } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { useFolders, useLabels } from '@proton/components';
+import { useFolders, useLabels } from '@proton/mail';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import type { Address, Label, UserModel } from '@proton/shared/lib/interfaces';
 

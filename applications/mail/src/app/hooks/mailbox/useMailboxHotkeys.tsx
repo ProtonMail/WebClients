@@ -4,7 +4,8 @@ import { useHistory } from 'react-router-dom';
 import type { Location } from 'history';
 
 import type { HotkeyTuple } from '@proton/components';
-import { useFolders, useHotkeys } from '@proton/components';
+import { useHotkeys } from '@proton/components';
+import { useFolders } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';

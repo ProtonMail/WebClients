@@ -11,14 +11,12 @@ import {
     SidebarListItem,
     SimpleSidebarListItemHeader,
     Tooltip,
-    useFolders,
     useHotkeys,
-    useLabels,
     useLocalState,
     useMessageCounts,
-    useSystemFolders,
     useUser,
 } from '@proton/components';
+import { useFolders, useLabels, useSystemFolders } from '@proton/mail';
 import { useConversationCounts } from '@proton/mail/counts/conversationCounts';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';

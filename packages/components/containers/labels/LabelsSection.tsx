@@ -11,13 +11,14 @@ import MailUpsellButton from '@proton/components/components/upsell/MailUpsellBut
 import LabelsUpsellModal from '@proton/components/components/upsell/modal/types/LabelsUpsellModal';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { useLoading } from '@proton/hooks';
+import { useLabels } from '@proton/mail';
 import { orderLabels } from '@proton/shared/lib/api/labels';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import type { Label } from '@proton/shared/lib/interfaces';
 
-import { useApi, useEventManager, useLabels, useNotifications, useUser } from '../../hooks';
+import { useApi, useEventManager, useNotifications, useUser } from '../../hooks';
 import LabelSortableList from './LabelSortableList';
 import EditLabelModal from './modals/EditLabelModal';
 

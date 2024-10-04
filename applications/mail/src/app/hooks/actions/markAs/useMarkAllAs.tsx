@@ -1,7 +1,8 @@
 import { useCallback } from 'react';
 
 import { useModalTwo } from '@proton/components';
-import { useApi, useFolders, useNotifications } from '@proton/components/hooks';
+import { useApi, useNotifications } from '@proton/components/hooks';
+import { useFolders } from '@proton/mail';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { useFlag } from '@proton/unleash';

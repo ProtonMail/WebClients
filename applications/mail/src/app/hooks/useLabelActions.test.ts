@@ -1,11 +1,11 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { useFolders, useLabels } from '@proton/components/hooks';
+import { useFolders, useLabels } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { useLabelActions } from './useLabelActions';
 
-jest.mock('@proton/components/hooks/useCategories');
+jest.mock('@proton/mail/labels/hooks');
 
 const {
     TRASH,
