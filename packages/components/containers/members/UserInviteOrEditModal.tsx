@@ -13,6 +13,7 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AssistantUpdateSubscriptionButton from '@proton/components/containers/payments/subscription/assistant/AssistantUpdateSubscriptionButton';
+import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { editMemberInvitation, inviteMember, updateAI } from '@proton/shared/lib/api/members';
 import { MAIL_APP_NAME, MEMBER_ROLE } from '@proton/shared/lib/constants';
@@ -22,7 +23,7 @@ import { hasDuo, hasFamily, hasVisionary } from '@proton/shared/lib/helpers/subs
 import type { Member, Organization } from '@proton/shared/lib/interfaces';
 import clamp from '@proton/utils/clamp';
 
-import { useApi, useEventManager, useNotifications, useSubscription } from '../../hooks';
+import { useEventManager, useNotifications, useSubscription } from '../../hooks';
 import MemberStorageSelector, { getInitialStorage, getStorageRange, getTotalStorage } from './MemberStorageSelector';
 import MemberToggleContainer from './MemberToggleContainer';
 

@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
-import { useApi, useEventManager, useNotifications, useToggle } from '@proton/components/hooks';
+import { useEventManager, useNotifications, useToggle } from '@proton/components/hooks';
+import useApi from '@proton/components/hooks/useApi';
 import useLoading from '@proton/hooks/useLoading';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';

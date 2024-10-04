@@ -6,13 +6,14 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { updateComposerMode } from '@proton/shared/lib/api/mailSettings';
 import type { COMPOSER_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
-import { useApi, useEventManager, useNotifications } from '../../hooks';
+import { useEventManager, useNotifications } from '../../hooks';
 import ComposerModeCards from '../layouts/ComposerModeCards';
 
 import './ModalSettingsLayoutCards.scss';

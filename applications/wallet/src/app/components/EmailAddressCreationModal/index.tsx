@@ -6,10 +6,9 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
 import type { ModalOwnProps } from '@proton/components';
-import { DropdownSizeUnit, Option, SelectTwo, useAuthentication, useKTVerifier } from '@proton/components';
+import { DropdownSizeUnit, Option, SelectTwo, useApi, useAuthentication, useKTVerifier } from '@proton/components';
 import {
     useAddresses,
-    useApi,
     useCustomDomains,
     useMembers,
     useNotifications,

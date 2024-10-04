@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
+import useApi from '@proton/components/hooks/useApi';
 import { isSplittedUser, onSessionMigrationPaymentsVersion } from '@proton/payments';
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { changeRenewState, deleteSubscription } from '@proton/shared/lib/api/payments';
@@ -25,7 +26,6 @@ import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 
 import {
-    useApi,
     useEventManager,
     useGetSubscription,
     useGetUser,

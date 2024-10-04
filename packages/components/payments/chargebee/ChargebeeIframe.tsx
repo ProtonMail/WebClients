@@ -30,7 +30,8 @@ import {
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { useApi, useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
+import useApi from '@proton/components/hooks/useApi';
 import { type ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
 import { type ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import {

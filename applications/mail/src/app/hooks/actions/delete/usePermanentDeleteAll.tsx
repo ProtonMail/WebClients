@@ -1,4 +1,5 @@
-import { useApi, useNotifications } from '@proton/components/hooks';
+import { useApi } from '@proton/components';
+import { useNotifications } from '@proton/components/hooks';
 import { useFolders } from '@proton/mail';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 

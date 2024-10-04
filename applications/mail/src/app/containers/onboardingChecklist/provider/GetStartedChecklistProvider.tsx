@@ -3,7 +3,8 @@ import { createContext, useContext, useEffect, useState } from 'react';
 
 import { fromUnixTime, isBefore } from 'date-fns';
 
-import { useApi, useEventManager } from '@proton/components/hooks';
+import { useApi } from '@proton/components';
+import { useEventManager } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import {
     hidePaidUserChecklist,

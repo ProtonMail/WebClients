@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { updateLocale } from '@proton/shared/lib/api/settings';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
@@ -11,7 +12,7 @@ import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
-import { useApi, useConfig, useEventManager, useForceRefresh, useNotifications, useUserSettings } from '../../hooks';
+import { useConfig, useEventManager, useForceRefresh, useNotifications, useUserSettings } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';

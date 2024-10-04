@@ -15,6 +15,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { addDomain, getDomain } from '@proton/shared/lib/api/domains';
 import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
@@ -29,7 +30,7 @@ import {
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { useApi, useCustomDomains, useEventManager, useNotifications, useStep } from '../../hooks';
+import { useCustomDomains, useEventManager, useNotifications, useStep } from '../../hooks';
 import AddressesSection from './AddressesSection';
 import DKIMSection from './DKIMSection';
 import DMARCSection from './DMARCSection';

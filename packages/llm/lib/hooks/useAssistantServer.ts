@@ -1,4 +1,4 @@
-import { useApi } from '@proton/components/hooks';
+import { useApi } from '@proton/components';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { utf8ArrayToString } from '@proton/crypto/lib/utils';
 import useStateRef from '@proton/hooks/useStateRef';

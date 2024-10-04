@@ -8,13 +8,14 @@ import Editor from '@proton/components/components/editor/Editor';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import type { EditorActions } from '@proton/components/components/editor/interface';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
 import type { Address } from '@proton/shared/lib/interfaces';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
-import { useApi, useEventManager, useHotkeys, useNotifications } from '../../hooks';
+import { useEventManager, useHotkeys, useNotifications } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';

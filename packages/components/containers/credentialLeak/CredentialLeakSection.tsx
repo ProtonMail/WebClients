@@ -15,8 +15,9 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import GenericError from '@proton/components/containers/error/GenericError';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import { useApi, useErrorHandler, useNotifications, useUser, useUserSettings } from '@proton/components/hooks';
+import { useErrorHandler, useNotifications, useUser, useUserSettings } from '@proton/components/hooks';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { getBreaches, updateBreachEmailNotificationsState, updateBreachState } from '@proton/shared/lib/api/breaches';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';

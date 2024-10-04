@@ -4,16 +4,8 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
 import type { ModalSize, ModalStateProps } from '@proton/components';
-import {
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoHeader,
-    Price,
-    SettingsLink,
-    useApi,
-    usePlans,
-    useUser,
-} from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoHeader, Price, SettingsLink, usePlans, useUser } from '@proton/components';
+import useApi from '@proton/components/hooks/useApi';
 import { APPS, type APP_NAMES, CYCLE, MAIL_SHORT_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 import {
     type SourceEventUpsell,

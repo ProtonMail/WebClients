@@ -7,12 +7,13 @@ import AutoDeleteUpsellModal from '@proton/components/components/upsell/modal/ty
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
+import useApi from '@proton/components/hooks/useApi';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 
-import { useApi, useEventManager, useUser } from '../../hooks';
+import { useEventManager, useUser } from '../../hooks';
 import AutoDeleteSpamAndTrashDaysToggle from './AutoDeleteSpamAndTrashDaysToggle';
 
 interface Props {

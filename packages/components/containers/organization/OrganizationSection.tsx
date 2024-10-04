@@ -18,6 +18,7 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import AuthModal from '@proton/components/containers/password/AuthModal';
+import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useLoading from '@proton/hooks/useLoading';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
@@ -35,7 +36,6 @@ import type { Credentials } from '@proton/shared/lib/srp';
 import useFlag from '@proton/unleash/useFlag';
 
 import {
-    useApi,
     useConfig,
     useCustomDomains,
     useGetAddresses,

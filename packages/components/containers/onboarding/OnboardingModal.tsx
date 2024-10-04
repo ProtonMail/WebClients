@@ -5,12 +5,13 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import StepDot from '@proton/components/components/stepDot/StepDot';
 import StepDots from '@proton/components/components/stepDots/StepDots';
+import useApi from '@proton/components/hooks/useApi';
 import { updateFlags, updateWelcomeFlags } from '@proton/shared/lib/api/settings';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 import range from '@proton/utils/range';
 
-import { useApi, useUserSettings, useWelcomeFlags } from '../../hooks';
+import { useUserSettings, useWelcomeFlags } from '../../hooks';
 import type { OnboardingStepComponent, OnboardingStepProps } from './interface';
 import useGenericSteps from './useGenericSteps';
 
