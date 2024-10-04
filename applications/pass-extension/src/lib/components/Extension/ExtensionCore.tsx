@@ -13,7 +13,7 @@ import useInstance from '@proton/hooks/useInstance';
 import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
 import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
-import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
+import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { getRequestIDHeaders } from '@proton/pass/lib/api/fetch-controller';
@@ -40,7 +40,7 @@ import noop from '@proton/utils/noop';
 const getExtensionCoreProps = (
     endpoint: ClientEndpoint,
     config: PassConfig,
-    darkThemeOnly?: boolean
+    theme?: PassThemeOption
 ): PassCoreProviderProps => {
     const messageFactory = resolveMessageFactory(endpoint);
 
@@ -109,12 +109,7 @@ const getExtensionCoreProps = (
             return fetch(requestUrl, { signal, headers }).then(imageResponsetoDataURL);
         },
 
-        getTheme: async () => {
-            try {
-                /* Always use dark theme for onboarding installation pages */
-                return darkThemeOnly ? PassThemeOption.PassDark : (await settings.resolve()).theme;
-            } catch {}
-        },
+        getTheme: async () => theme ?? (await settings.resolve().catch(noop))?.theme,
 
         getLogs: () =>
             sendMessage.on(messageFactory({ type: WorkerMessageType.LOG_REQUEST }), (res) =>
@@ -193,12 +188,12 @@ const getExtensionCoreProps = (
 
 type Props = {
     endpoint: ClientEndpoint;
-    darkThemeOnly?: boolean;
+    theme?: PassThemeOption;
 };
 
-export const ExtensionCore: FC<PropsWithChildren<Props>> = ({ children, endpoint, darkThemeOnly }) => {
+export const ExtensionCore: FC<PropsWithChildren<Props>> = ({ children, endpoint, theme }) => {
     const currentTabUrl = useRef<MaybeNull<ParsedUrl>>(null);
-    const coreProps = useMemo(() => getExtensionCoreProps(endpoint, config, darkThemeOnly), []);
+    const coreProps = useMemo(() => getExtensionCoreProps(endpoint, config, theme), []);
     const authStore = useInstance(() => exposeAuthStore(createAuthStore(createStore())));
     const message = resolveMessageFactory(endpoint);
 
