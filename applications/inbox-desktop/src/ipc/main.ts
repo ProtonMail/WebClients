@@ -1,7 +1,11 @@
 import { IpcMainEvent, ipcMain, shell } from "electron";
 import { setReleaseCategory } from "../store/settingsStore";
 import { cachedLatestVersion } from "../update";
-import { IPCInboxClientUpdateMessage, IPCInboxGetInfoMessage } from "@proton/shared/lib/desktop/desktopTypes";
+import type {
+    IPCInboxClientUpdateMessage,
+    IPCInboxGetInfoMessage,
+    IPCInboxGetUserInfoMessage,
+} from "@proton/shared/lib/desktop/desktopTypes";
 import { clearStorage } from "../utils/helpers";
 import { ipcLogger } from "../utils/log";
 import { getTheme, isEqualTheme, setTheme } from "../utils/themes";
@@ -15,6 +19,7 @@ import {
 import { DESKTOP_FEATURES } from "./ipcConstants";
 import { handleIPCBadge, resetBadge, showNotification } from "./notification";
 import { setInstallSourceReported, getInstallSource } from "../store/installInfoStore";
+import { getESUserChoice, setESUserChoice } from "../store/userSettingsStore";
 import { checkDefaultMailto, getDefaultMailto, setDefaultMailtoTelemetryReported } from "../utils/protocol/default";
 
 function isValidClientUpdateMessage(message: unknown): message is IPCInboxClientUpdateMessage {
@@ -24,6 +29,17 @@ function isValidClientUpdateMessage(message: unknown): message is IPCInboxClient
 export const handleIPCCalls = () => {
     ipcMain.on("hasFeature", (event: IpcMainEvent, message: keyof typeof DESKTOP_FEATURES) => {
         event.returnValue = !!DESKTOP_FEATURES[message];
+    });
+
+    ipcMain.on("getUserInfo", (event: IpcMainEvent, message: IPCInboxGetUserInfoMessage["type"], userID: string) => {
+        switch (message) {
+            case "esUserChoice":
+                event.returnValue = getESUserChoice(userID);
+                break;
+            default:
+                ipcLogger.error(`Invalid getUserInfo message: ${message}`);
+                break;
+        }
     });
 
     ipcMain.on("getInfo", (event: IpcMainEvent, message: IPCInboxGetInfoMessage["type"]) => {
@@ -118,6 +134,10 @@ export const handleIPCCalls = () => {
             }
             case "defaultMailtoTelemetryReported": {
                 setDefaultMailtoTelemetryReported(payload);
+                break;
+            }
+            case "setESUserChoice": {
+                setESUserChoice(payload.userID, payload.userChoice);
                 break;
             }
             default:

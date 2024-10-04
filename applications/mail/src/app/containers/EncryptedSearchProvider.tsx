@@ -23,6 +23,7 @@ import {
 } from '@proton/encrypted-search';
 import { FeatureCode, useFeature } from '@proton/features';
 import { SECOND } from '@proton/shared/lib/constants';
+import { isESEnabledUserChoiceInboxDesktop } from '@proton/shared/lib/desktop/encryptedSearch';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
@@ -156,7 +157,10 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
         // Enable encrypted search for all new users. For paid users only,
         // automatically enable content search too
-        if (isESEnabledInbox || (welcomeFlags.isWelcomeFlow && !isMobile())) {
+        if (
+            (isESEnabledInbox || (welcomeFlags.isWelcomeFlow && !isMobile())) &&
+            isESEnabledUserChoiceInboxDesktop(user.ID)
+        ) {
             return esLibraryFunctions.enableEncryptedSearch({ showErrorNotification: false }).then((success) => {
                 if (success) {
                     return esLibraryFunctions.enableContentSearch({ notify: false });
