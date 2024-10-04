@@ -294,7 +294,18 @@ const pickSessionByEmail = async ({
             const result = await uidApi<{
                 Sessions: LocalSessionResponse[];
             }>(getLocalSessions({ Email: lowerCaseEmail }));
-            const firstMatchingSession = result?.Sessions?.[0];
+            const remoteSessions = result?.Sessions || [];
+            const remoteLocalIDMap = remoteSessions.reduce<{ [key: string]: LocalSessionResponse }>((acc, value) => {
+                acc[value.LocalID] = value;
+                return acc;
+            }, {});
+            const firstMatchingSessionByLocalID = sessions.find(({ remote }) =>
+                Boolean(remoteLocalIDMap[remote.LocalID])
+            );
+            if (firstMatchingSessionByLocalID) {
+                return resumeSession({ api, localID: firstMatchingSessionByLocalID.remote.LocalID });
+            }
+            const firstMatchingSession = remoteSessions[0];
             if (firstMatchingSession && firstMatchingSession.LocalID !== undefined) {
                 return resumeSession({ api, localID: firstMatchingSession.LocalID });
             }
