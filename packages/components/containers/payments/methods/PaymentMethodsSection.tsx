@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
 import type { ButtonProps } from '@proton/atoms';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
@@ -9,6 +10,7 @@ import MozillaInfoPanel from '@proton/components/containers/account/MozillaInfoP
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import useConfig from '@proton/components/hooks/useConfig';
+import useMozillaCheck from '@proton/components/hooks/useMozillaCheck';
 import { useChargebeeEnabledCache } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
 import useLoading from '@proton/hooks/useLoading';
@@ -17,7 +19,7 @@ import { APPS, EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
-import { useMozillaCheck, usePaymentMethods, useSubscription, useUser } from '../../../hooks';
+import { useSubscription, useUser } from '../../../hooks';
 import { useRedirectToAccountApp } from '../../desktop/useRedirectToAccountApp';
 import EditCardModal from '../EditCardModal';
 import { default as PayPalV4Modal, PayPalV5Modal } from '../PayPalModal';

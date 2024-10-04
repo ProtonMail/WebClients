@@ -13,6 +13,7 @@ import SettingsLayoutRight from '@proton/components/containers/account/SettingsL
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
@@ -29,7 +30,7 @@ import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
 
-import { useErrorHandler, useEventManager, useHotkeys, useNotifications, useUser } from '../../hooks';
+import { useErrorHandler, useHotkeys, useNotifications, useUser } from '../../hooks';
 import UpgradeBanner from '../account/UpgradeBanner';
 import AutoReplyFormDaily from './AutoReplyForm/AutoReplyFormDaily';
 import AutoReplyFormFixed from './AutoReplyForm/AutoReplyFormFixed';

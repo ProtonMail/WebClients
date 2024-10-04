@@ -25,6 +25,7 @@ import { getDefaultModel } from '@proton/components/containers/calendar/calendar
 import Notifications from '@proton/components/containers/calendar/notifications/Notifications';
 import { useCalendarModelEventManager } from '@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider';
 import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { removeHolidaysCalendar, updateCalendarSettings } from '@proton/shared/lib/api/calendars';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
@@ -55,7 +56,7 @@ import type {
 } from '@proton/shared/lib/interfaces/calendar';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import { useEventManager, useNotifications, useReadCalendarBootstrap } from '../../../../hooks';
+import { useNotifications, useReadCalendarBootstrap } from '../../../../hooks';
 
 const getInitialCalendarNotifications = (bootstrap?: CalendarBootstrap) => {
     if (!bootstrap) {

@@ -6,12 +6,13 @@ import { Button } from '@proton/atoms';
 import type { PromptProps } from '@proton/components/components/prompt/Prompt';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { deleteDomain } from '@proton/shared/lib/api/domains';
 import type { Domain } from '@proton/shared/lib/interfaces';
 
-import { useEventManager, useNotifications } from '../../../hooks';
+import { useNotifications } from '../../../hooks';
 
 interface Props extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {
     domain: Domain;

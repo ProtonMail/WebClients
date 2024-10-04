@@ -9,12 +9,13 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { onSessionMigrationPaymentsVersion } from '@proton/payments';
 import { buyCredit, validateCredit } from '@proton/shared/lib/api/payments';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
-import { useEventManager, useNotifications, useSubscription, useUser } from '../../hooks';
+import { useNotifications, useSubscription, useUser } from '../../hooks';
 
 const GiftCodeSection = () => {
     const [value, setValue] = useState('');

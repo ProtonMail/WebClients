@@ -1,11 +1,12 @@
 import Loader from '@proton/components/components/loader/Loader';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import useLoad from '@proton/components/hooks/useLoad';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import useFlag from '@proton/unleash/useFlag';
 
-import { useLoad, usePlans, usePreferredPlansMap, useSubscription, useUser, useVPNServersCount } from '../../../hooks';
+import { usePlans, usePreferredPlansMap, useSubscription, useUser, useVPNServersCount } from '../../../hooks';
 import { useSubscriptionModal } from './SubscriptionModalProvider';
 import { resolveUpsellsToDisplay } from './helpers';
 import { UpsellPanels } from './panels';

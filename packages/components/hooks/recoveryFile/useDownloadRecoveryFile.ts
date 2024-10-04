@@ -1,4 +1,6 @@
 import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import usePrimaryRecoverySecret from '@proton/components/hooks/usePrimaryRecoverySecret';
 import { setNewRecoverySecret } from '@proton/shared/lib/api/settingsRecovery';
 import {
     exportRecoveryFile,
@@ -6,7 +8,7 @@ import {
     validateRecoverySecret,
 } from '@proton/shared/lib/recoveryFile/recoveryFile';
 
-import { useEventManager, useGetUserKeys, usePrimaryRecoverySecret } from '../../hooks';
+import { useGetUserKeys } from '../../hooks';
 
 const useDownloadRecoveryFile = () => {
     const api = useApi();

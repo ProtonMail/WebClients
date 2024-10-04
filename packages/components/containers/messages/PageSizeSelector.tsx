@@ -4,12 +4,13 @@ import type { DropdownProps } from '@proton/components/components/dropdown/Dropd
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { updatePageSize } from '@proton/shared/lib/api/mailSettings';
 import { DEFAULT_MAIL_PAGE_SIZE } from '@proton/shared/lib/constants';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 
-import { useEventManager, useNotifications } from '../../hooks';
+import { useNotifications } from '../../hooks';
 
 interface Props {
     id?: string;

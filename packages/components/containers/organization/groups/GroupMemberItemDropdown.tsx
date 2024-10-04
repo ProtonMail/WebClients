@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import { resumeGroupMember as resumeGroupMemberAction, updateOverridePermissions } from '@proton/account';
 import { Button } from '@proton/atoms';
-import { useEventManager } from '@proton/components';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
@@ -10,6 +9,7 @@ import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { baseUseDispatch } from '@proton/react-redux-store';
 import {
     resumeGroupMember as resumeGroupMemberApi,

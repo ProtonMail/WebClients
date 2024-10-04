@@ -8,6 +8,7 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import {
     addVCardProperty,
@@ -27,7 +28,7 @@ import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import isTruthy from '@proton/utils/isTruthy';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
-import { useContactEmails, useEventManager, useHandler, useNotifications } from '../../../hooks';
+import { useContactEmails, useHandler, useNotifications } from '../../../hooks';
 import type { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import useApplyGroups from '../hooks/useApplyGroups';
 import { useSaveVCardContact } from '../hooks/useSaveVCardContact';

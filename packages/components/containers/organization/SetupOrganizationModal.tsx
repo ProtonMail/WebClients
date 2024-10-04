@@ -15,6 +15,7 @@ import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -29,15 +30,7 @@ import { getOrganizationDenomination } from '@proton/shared/lib/organization/hel
 import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
 
-import {
-    useErrorHandler,
-    useEventManager,
-    useMembers,
-    useNotifications,
-    useOrganization,
-    useSubscription,
-    useUser,
-} from '../../hooks';
+import { useErrorHandler, useMembers, useNotifications, useOrganization, useSubscription, useUser } from '../../hooks';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import MemberStorageSelector, {
     getInitialStorage,

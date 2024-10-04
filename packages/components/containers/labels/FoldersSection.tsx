@@ -11,6 +11,7 @@ import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLa
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { useFolders } from '@proton/mail';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
@@ -18,7 +19,7 @@ import { orderAllFolders } from '@proton/shared/lib/api/labels';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
 
-import { useEventManager, useNotifications, useUser } from '../../hooks';
+import { useNotifications, useUser } from '../../hooks';
 import FolderTreeViewList from './FolderTreeViewList';
 import ToggleEnableFolderColor from './ToggleEnableFolderColor';
 import ToggleInheritParentFolderColor from './ToggleInheritParentFolderColor';
