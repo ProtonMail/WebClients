@@ -15,7 +15,7 @@ export const getSilentApiWithAbort = (api: Api, signal: AbortSignal) => {
 };
 
 export const getUIDApi = (UID: string, api: Api) => {
-    return <T>(config: any) => {
+    return <T>(config: any): Promise<T> => {
         // Note: requestUID !== UID means that this config is already set with a UID, so ignore the original one.
         const requestUID = getUIDHeaderValue(config.headers) ?? UID;
         if (requestUID !== UID) {
