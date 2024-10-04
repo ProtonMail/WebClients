@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { PassCryptoError, isPassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import {
+    aliasSyncStatus,
     bootFailure,
     bootIntent,
     bootSuccess,
@@ -75,6 +76,7 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
                 yield put(withRevalidate(getUserSettings.intent(userID)));
                 yield put(withRevalidate(secureLinksGet.intent()));
                 yield put(withRevalidate(getOrganizationSettings.intent()));
+                yield put(withRevalidate(aliasSyncStatus.intent()));
                 if (EXTENSION_BUILD) yield put(resolveWebsiteRules.intent());
             }
         }
