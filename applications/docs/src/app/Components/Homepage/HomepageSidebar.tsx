@@ -57,7 +57,7 @@ export const HomepageSidebar = ({ expanded, onToggle }: { expanded: boolean; onT
               className="hover flex items-center gap-2"
               activeClassName="text-bold "
             >
-              <Icon name="house" /> Owned by me
+              <Icon name="user" /> Owned by me
             </SidebarListItemLink>
           </SidebarListItem>
           <SidebarListItem>
@@ -66,7 +66,7 @@ export const HomepageSidebar = ({ expanded, onToggle }: { expanded: boolean; onT
               className="hover flex items-center gap-2"
               activeClassName="text-bold "
             >
-              <Icon name="house" /> Owned by others
+              <Icon name="users" /> Owned by others
             </SidebarListItemLink>
           </SidebarListItem>
         </SidebarList>
