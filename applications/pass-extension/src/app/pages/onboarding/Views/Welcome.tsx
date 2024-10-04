@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { ButtonLike, Href } from '@proton/atoms';
 import accountSetupImg from '@proton/pass/assets/protonpass-account.svg';
-import PassTextLogo from '@proton/pass/components/Layout/Logo/PassTextLogo';
+import { PassTextLogo } from '@proton/pass/components/Layout/Logo/PassTextLogo';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { SpotlightContent } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { PASS_ANDROID_URL, PASS_IOS_URL, PASS_VIDEO_URL } from '@proton/pass/constants';

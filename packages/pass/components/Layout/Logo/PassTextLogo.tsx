@@ -5,7 +5,7 @@ import generateUID from '@proton/utils/generateUID';
 
 type Props = ComponentPropsWithoutRef<'svg'>;
 
-const PassTextLogo = ({ className, ...rest }: Props) => {
+export const PassTextLogo = ({ className, ...rest }: Props) => {
     // This logo can be several times in the view, ids has to be different each time
     const [uid] = useState(generateUID('logo'));
 
@@ -17,7 +17,6 @@ const PassTextLogo = ({ className, ...rest }: Props) => {
             y="0px"
             viewBox="0 0 162.5 27.6"
             fill="none"
-            role="img"
             className={clsx('logo with-wordmark', className)}
             aria-labelledby={`${uid}-title`}
             {...rest}
@@ -38,5 +37,3 @@ const PassTextLogo = ({ className, ...rest }: Props) => {
         </svg>
     );
 };
-
-export default PassTextLogo;

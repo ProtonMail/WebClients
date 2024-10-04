@@ -7,7 +7,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useNotifications } from '@proton/components';
-import PassTextLogo from '@proton/pass/components/Layout/Logo/PassTextLogo';
+import { PassTextLogo } from '@proton/pass/components/Layout/Logo/PassTextLogo';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { chromeAPI } from '@proton/pass/lib/globals/browser';
 import type { MaybeNull } from '@proton/pass/types';

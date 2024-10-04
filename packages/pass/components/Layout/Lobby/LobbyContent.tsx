@@ -7,7 +7,7 @@ import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
-import PassTextLogo from '@proton/pass/components/Layout/Logo/PassTextLogo';
+import { PassTextLogo } from '@proton/pass/components/Layout/Logo/PassTextLogo';
 import { BiometricsUnlock } from '@proton/pass/components/Lock/BiometricsUnlock';
 import { PasswordConfirm } from '@proton/pass/components/Lock/PasswordConfirm';
 import { PasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlock';
@@ -95,7 +95,7 @@ export const LobbyContent: FC<Props> = ({
         })().catch(noop);
     }, [online, localID]);
 
-    const brandNameJSX = <PassTextLogo key="pass-text-logo" className="pass-lobby--brand-text mx-2 shrink-0 logo" />;
+    const brandNameJSX = <PassTextLogo key="pass-text-logo" className="pass-lobby--brand-text ml-1.5 shrink-0 logo" />;
 
     if (criticalError) return renderError(criticalError);
 
