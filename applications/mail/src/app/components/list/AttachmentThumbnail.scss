@@ -6,7 +6,9 @@
 	--button-default-border-color: var(--border-weak);
 
 	padding-block: rem(5);
-	transition: 0.15s easing(ease-out-quint), border-color 0s;
+	transition:
+		0.15s easing(ease-out-quint),
+		border-color 0s;
 
 	&:not(&--number) {
 		padding-inline: rem(5);
