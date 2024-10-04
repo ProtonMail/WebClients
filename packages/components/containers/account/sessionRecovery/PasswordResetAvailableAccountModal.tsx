@@ -13,6 +13,7 @@ import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import {
     useIsSessionRecoveryInitiatedByCurrentSession,
@@ -34,7 +35,6 @@ import { srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
 import {
-    useApi,
     useErrorHandler,
     useEventManager,
     useGetAddresses,

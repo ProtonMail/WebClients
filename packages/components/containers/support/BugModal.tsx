@@ -21,6 +21,7 @@ import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import useApi from '@proton/components/hooks/useApi';
 import { reportBug } from '@proton/shared/lib/api/reports';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, CLIENT_TYPES } from '@proton/shared/lib/constants';
@@ -31,7 +32,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { getClientName, getReportInfo } from '../../helpers/report';
-import { useApi, useConfig, useNotifications } from '../../hooks';
+import { useConfig, useNotifications } from '../../hooks';
 import type { Screenshot } from './AttachScreenshot';
 import AttachScreenshot from './AttachScreenshot';
 

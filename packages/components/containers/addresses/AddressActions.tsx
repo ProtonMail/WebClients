@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { disableAllowAddressDeletion } from '@proton/account';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { deleteAddress, disableAddress, enableAddress } from '@proton/shared/lib/api/addresses';
@@ -12,7 +13,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import EditExternalAddressModal from '../../containers/account/EditExternalAddressModal';
 import EditInternalAddressModal from '../../containers/addresses/EditInternalAddressModal';
-import { useApi, useEventManager, useNotifications, useOrganizationKey } from '../../hooks';
+import { useEventManager, useNotifications, useOrganizationKey } from '../../hooks';
 import useAddressFlags from '../../hooks/useAddressFlags';
 import DeleteAddressPrompt from './DeleteAddressPrompt';
 import DisableAddressModal from './DisableAddressModal';

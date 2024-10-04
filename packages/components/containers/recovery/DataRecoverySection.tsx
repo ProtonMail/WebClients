@@ -6,6 +6,7 @@ import Info from '@proton/components/components/link/Info';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useIsRecoveryFileAvailable from '@proton/components/hooks/recoveryFile/useIsRecoveryFileAvailable';
+import useApi from '@proton/components/hooks/useApi';
 import { useGetUserSettings } from '@proton/components/hooks/useUserSettings';
 import { useLoading } from '@proton/hooks';
 import { updateDeviceRecovery } from '@proton/shared/lib/api/settingsRecovery';
@@ -16,7 +17,6 @@ import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import { syncDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 
 import {
-    useApi,
     useAuthentication,
     useConfig,
     useEventManager,

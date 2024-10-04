@@ -3,12 +3,13 @@ import type { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
+import useApi from '@proton/components/hooks/useApi';
 import useLoading from '@proton/hooks/useLoading';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { updatePromptPin } from '@proton/shared/lib/api/mailSettings';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
-import { useApi, useEventManager, useNotifications } from '../../hooks';
+import { useEventManager, useNotifications } from '../../hooks';
 
 interface Props {
     id?: string;

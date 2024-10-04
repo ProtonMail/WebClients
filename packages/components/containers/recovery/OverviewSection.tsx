@@ -1,6 +1,7 @@
 import { useInactiveKeys } from '@proton/account';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
+import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { FeatureCode, useFeature } from '@proton/features';
 import { reactivateKeysProcess } from '@proton/shared/lib/keys';
@@ -10,7 +11,6 @@ import noop from '@proton/utils/noop';
 import {
     useAddresses,
     useAddressesKeys,
-    useApi,
     useEventManager,
     useSearchParamsEffect,
     useUser,

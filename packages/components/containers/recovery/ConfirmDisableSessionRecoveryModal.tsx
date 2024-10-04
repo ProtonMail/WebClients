@@ -2,12 +2,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Prompt from '@proton/components/components/prompt/Prompt';
+import useApi from '@proton/components/hooks/useApi';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
 import { updateSessionAccountRecovery } from '@proton/shared/lib/api/sessionRecovery';
 import noop from '@proton/utils/noop';
 
-import { useApi, useEventManager } from '../../hooks';
+import { useEventManager } from '../../hooks';
 
 interface Props {
     onClose: () => void;

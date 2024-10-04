@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
+import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useLoading } from '@proton/hooks';
 import { setupAddress } from '@proton/shared/lib/api/addresses';
@@ -13,7 +14,6 @@ import { missingKeysSelfProcess } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import {
-    useApi,
     useEventManager,
     useGetAddresses,
     useGetUserKeys,

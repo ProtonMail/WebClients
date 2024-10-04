@@ -1,4 +1,4 @@
-import { useApi } from '@proton/components/hooks';
+import useApi from '@proton/components/hooks/useApi';
 import { TelemetryMailComposerAssistantEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import type {
     ASSISTANT_TYPE,

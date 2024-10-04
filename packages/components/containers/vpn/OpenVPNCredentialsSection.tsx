@@ -11,11 +11,12 @@ import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLa
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { resetVPNSettings } from '@proton/shared/lib/api/vpn';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 
-import { useApi, useNotifications, useUserVPN } from '../../hooks';
+import { useNotifications, useUserVPN } from '../../hooks';
 
 interface Props {
     app?: string;

@@ -1,8 +1,8 @@
 import type { Dispatch, SetStateAction } from 'react';
 import { useCallback } from 'react';
 
-import { useModalTwo } from '@proton/components';
-import { useApi, useNotifications } from '@proton/components/hooks';
+import { useApi, useModalTwo } from '@proton/components';
+import { useNotifications } from '@proton/components/hooks';
 import { useFolders, useGetLabels } from '@proton/mail';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

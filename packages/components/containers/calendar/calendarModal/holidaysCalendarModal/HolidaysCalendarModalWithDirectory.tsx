@@ -22,6 +22,7 @@ import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/cale
 import { getDefaultModel } from '@proton/components/containers/calendar/calendarModal/personalCalendarModal/calendarModalState';
 import Notifications from '@proton/components/containers/calendar/notifications/Notifications';
 import { useCalendarModelEventManager } from '@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider';
+import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { removeHolidaysCalendar, updateCalendarSettings } from '@proton/shared/lib/api/calendars';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
@@ -53,7 +54,6 @@ import type {
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import {
-    useApi,
     useEventManager,
     useGetAddressKeys,
     useGetAddresses,

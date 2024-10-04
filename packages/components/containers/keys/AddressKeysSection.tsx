@@ -10,6 +10,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
+import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import type { AlgorithmInfo } from '@proton/crypto';
 import type { KeyGenConfig } from '@proton/shared/lib/interfaces';
@@ -24,7 +25,7 @@ import {
 } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import { useAddresses, useAddressesKeys, useApi, useEventManager, useModals, useUser, useUserKeys } from '../../hooks';
+import { useAddresses, useAddressesKeys, useEventManager, useModals, useUser, useUserKeys } from '../../hooks';
 import useResignSKLWithPrimaryKey from '../keyTransparency/useResignSKLWithPrimaryKey';
 import AddressKeysHeaderActions from './AddressKeysHeaderActions';
 import KeysTable from './KeysTable';

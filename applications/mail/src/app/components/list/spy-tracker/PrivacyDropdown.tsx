@@ -3,9 +3,9 @@ import { useEffect } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { Dropdown, Icon, useModalState, usePopperAnchor } from '@proton/components';
+import { Dropdown, Icon, useApi, useModalState, usePopperAnchor } from '@proton/components';
 import PreventTrackingToggle from '@proton/components/containers/emailPrivacy/PreventTrackingToggle';
-import { useApi, useSpotlightOnFeature } from '@proton/components/hooks';
+import { useSpotlightOnFeature } from '@proton/components/hooks';
 import { FeatureCode } from '@proton/features';
 import { TelemetryMailEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';

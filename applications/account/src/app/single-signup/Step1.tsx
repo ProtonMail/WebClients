@@ -19,6 +19,7 @@ import {
     getCheckoutRenewNoticeText,
     isBlackFridayPeriod as getIsBlackFridayPeriod,
     isCyberWeekPeriod as getIsCyberWeekPeriod,
+    useApi,
     useModalState,
 } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
@@ -53,7 +54,6 @@ import {
 } from '@proton/components/containers/payments/features/vpn';
 import { getTotalBillingText } from '@proton/components/containers/payments/helper';
 import { getBillingAddressStatus } from '@proton/components/containers/payments/subscription/helpers';
-import { useApi } from '@proton/components/hooks';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';

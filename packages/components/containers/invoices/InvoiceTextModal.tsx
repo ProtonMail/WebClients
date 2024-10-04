@@ -13,10 +13,11 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
+import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { updateInvoiceText } from '@proton/shared/lib/api/settings';
 
-import { useApi, useEventManager, useNotifications, useUserSettings } from '../../hooks';
+import { useEventManager, useNotifications, useUserSettings } from '../../hooks';
 
 export interface Props {
     onClose?: () => void;

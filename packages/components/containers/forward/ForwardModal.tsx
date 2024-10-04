@@ -15,6 +15,7 @@ import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
+import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib';
 import { CryptoProxy } from '@proton/crypto/lib';
@@ -33,7 +34,6 @@ import uniqueBy from '@proton/utils/uniqueBy';
 
 import {
     useAddresses,
-    useApi,
     useContactEmails,
     useEventManager,
     useGetAddressKeys,

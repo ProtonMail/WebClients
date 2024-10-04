@@ -5,10 +5,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
+import useApi from '@proton/components/hooks/useApi';
 import { postVerifySend } from '@proton/shared/lib/api/verify';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 
-import { useApi, useNotifications } from '../../../hooks';
+import { useNotifications } from '../../../hooks';
 
 export const getVerificationSentText = (address: string) => {
     return c('Email verification').t`Verification email sent to ${address}`;

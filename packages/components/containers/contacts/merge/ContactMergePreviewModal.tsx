@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { getContact } from '@proton/shared/lib/api/contacts';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
@@ -12,7 +13,7 @@ import type { Contact, ContactMergeModel } from '@proton/shared/lib/interfaces/c
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 
-import { useApi, useEventManager, useUserKeys } from '../../../hooks';
+import { useEventManager, useUserKeys } from '../../../hooks';
 import ContactMergeErrorContent from './ContactMergeErrorContent';
 import ContactMergeViewContent from './ContactMergeViewContent';
 import MergingModalContent from './ContactMergingContent';

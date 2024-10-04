@@ -3,13 +3,14 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
+import useApi from '@proton/components/hooks/useApi';
 import { useContactGroups } from '@proton/mail';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { labelContactEmails, unLabelContactEmails } from '@proton/shared/lib/api/contacts';
 import { hasReachedContactGroupMembersLimit } from '@proton/shared/lib/contacts/helpers/contactGroup';
 import type { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import { useApi, useContactEmails, useContacts, useEventManager, useNotifications } from '../../../hooks';
+import { useContactEmails, useContacts, useEventManager, useNotifications } from '../../../hooks';
 import ContactGroupLimitReachedModal from '../modals/ContactGroupLimitReachedModal';
 import type { SelectEmailsProps } from '../modals/SelectEmailsModal';
 

@@ -11,6 +11,7 @@ import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { renameExternalAddress } from '@proton/shared/lib/api/addresses';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
@@ -18,7 +19,7 @@ import { confirmEmailValidator, emailValidator, requiredValidator } from '@proto
 import type { Address } from '@proton/shared/lib/interfaces';
 import { getRenamedAddressKeys } from '@proton/shared/lib/keys';
 
-import { useApi, useEventManager, useGetOrganizationKey, useGetUserKeys, useNotifications } from '../../hooks';
+import { useEventManager, useGetOrganizationKey, useGetUserKeys, useNotifications } from '../../hooks';
 
 interface Props extends ModalProps<'form'> {
     address: Address;

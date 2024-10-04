@@ -18,6 +18,7 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
+import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
@@ -39,7 +40,6 @@ import { getOrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/
 import noop from '@proton/utils/noop';
 
 import {
-    useApi,
     useErrorHandler,
     useEventManager,
     useGetAddresses,
