@@ -56,7 +56,7 @@ export type PassCoreContextValue = {
     getRatingURL?: () => string;
     /** Resolves the initial theme. This is required in order to resolve
      * the proxied theme setting stored locally before state hydration */
-    getTheme: () => MaybePromise<Maybe<PassThemeOption>>;
+    getTheme: () => Promise<Maybe<PassThemeOption>>;
     setTheme?: (theme: PassThemeOption) => void;
     /** defines how a client handles external links.
      * In extension, this will leverage the `browser.tabs` API
@@ -107,6 +107,11 @@ export const PassCoreProvider: FC<PropsWithChildren<PassCoreProviderProps>> = ({
     const context = useMemo<PassCoreContextValue>(() => ({ ...core, setTheme, locale: appLocale }), [appLocale]);
 
     useEffect(() => {
+        core
+            .getTheme?.()
+            .then((initial) => setTheme(initial ?? PASS_DEFAULT_THEME))
+            .catch(noop);
+
         core.i18n.setLocale().catch(noop);
         core.i18n.subscribe(({ locale }) => setAppLocale(locale));
 
