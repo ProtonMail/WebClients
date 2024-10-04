@@ -12,6 +12,7 @@ import {
     createPendingShareAccessRule,
     createSecurityRule,
     createTrialRule,
+    createUserRenewalRule,
     createWelcomeRule,
 } from '@proton/pass/lib/onboarding/rules';
 import { createOnboardingService } from '@proton/pass/lib/onboarding/service';
@@ -44,6 +45,7 @@ export const onboarding = createOnboardingService({
         createFamilyPlanPromo2024Rule(store),
         createSecurityRule(store),
         createAliasSyncEnableRule(store),
+        createUserRenewalRule(store),
 
         /* "Invisible" rules not displayed as spotlight should be defined at the bottom */
         createWelcomeRule(),
