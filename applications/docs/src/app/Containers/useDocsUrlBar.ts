@@ -2,13 +2,12 @@ import { useCallback, useState } from 'react'
 import { useAuthentication } from '@proton/components'
 import { useLocation } from 'react-router-dom'
 import type { DocumentAction } from '@proton/drive-store'
-import { useDriveCompat } from '@proton/drive-store'
 import { APPS } from '@proton/shared/lib/constants'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
+import type { DriveCompat } from '@proton/drive-store'
 
-export function useDocsUrlBar() {
-  const driveCompat = useDriveCompat()
+export function useDocsUrlBar({ driveCompat }: { driveCompat: DriveCompat }) {
   const { getLocalID } = useAuthentication()
 
   const { search } = useLocation()
