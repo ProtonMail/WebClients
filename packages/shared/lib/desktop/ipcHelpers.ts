@@ -3,6 +3,7 @@ import type {
     IPCInboxClientUpdateMessage,
     IPCInboxDesktopFeature,
     IPCInboxGetInfoMessage,
+    IPCInboxGetUserInfoMessage,
     IPCInboxMessageBroker,
 } from './desktopTypes';
 
@@ -26,6 +27,10 @@ export const canListenInboxDesktopHostMessages =
 
 export function getInboxDesktopInfo<T extends IPCInboxGetInfoMessage['type']>(key: T) {
     return window.ipcInboxMessageBroker!.getInfo!<T>(key);
+}
+
+export function getInboxDesktopUserInfo<T extends IPCInboxGetUserInfoMessage['type']>(key: T, userID: string) {
+    return window.ipcInboxMessageBroker!.getUserInfo!<T>(key, userID);
 }
 
 export const hasInboxDesktopFeature = (feature: IPCInboxDesktopFeature) =>

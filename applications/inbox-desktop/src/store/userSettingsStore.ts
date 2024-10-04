@@ -1,0 +1,49 @@
+import Store from "electron-store";
+
+import type { ESUserChoice } from "@proton/shared/lib/desktop/desktopTypes";
+
+type UserSettings = {
+    esUserChoice?: ESUserChoice;
+};
+
+const defaultUserSettings: UserSettings = {
+    esUserChoice: null,
+};
+
+type UserSettingsStore = { [userID: string]: UserSettings };
+const USER_SETTINGS = "userSettings";
+
+const store = new Store<{ userSettings?: UserSettingsStore }>({});
+
+const getUserSettings = (userID: string): UserSettings | null => {
+    const storedSettings = store.get(USER_SETTINGS);
+
+    if (!storedSettings || !storedSettings[userID]) {
+        return null;
+    }
+
+    return storedSettings[userID];
+};
+
+function changeStoredUserSettings(userID: string, applyChange: (current: UserSettings) => UserSettings) {
+    const storedUserSettings = store.get(USER_SETTINGS) ?? ({} as UserSettingsStore);
+    storedUserSettings[userID] = applyChange(storedUserSettings[userID] ?? defaultUserSettings);
+    store.set(USER_SETTINGS, storedUserSettings);
+}
+
+export function getESUserChoice(userID: string): ESUserChoice {
+    const userSettings = getUserSettings(userID);
+
+    if (userSettings == null || !userSettings.esUserChoice) {
+        return null;
+    }
+
+    return userSettings.esUserChoice;
+}
+
+export function setESUserChoice(userID: string, esUserChoice: boolean) {
+    changeStoredUserSettings(userID, (current) => ({
+        ...current,
+        esUserChoice,
+    }));
+}
