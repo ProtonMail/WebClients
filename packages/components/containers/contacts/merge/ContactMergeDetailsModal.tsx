@@ -10,11 +10,12 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useContactList from '@proton/components/containers/contacts/hooks/useContactList';
+import { useContactGroups } from '@proton/mail';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import noop from '@proton/utils/noop';
 
-import { useAddresses, useContactGroups, useUserKeys } from '../../../hooks';
+import { useAddresses, useUserKeys } from '../../../hooks';
 import useContact from '../hooks/useContact';
 import useVCardContact from '../hooks/useVCardContact';
 import ContactView from '../view/ContactView';

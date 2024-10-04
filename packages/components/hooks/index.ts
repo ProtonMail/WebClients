@@ -8,7 +8,6 @@ export { default as useCalendarShareInvitations } from './useCalendarShareInvita
 export { default as useCalendarShareInvitationActions } from './useCalendarShareInvitationActions';
 export * from './useOutgoingAddressForwardings';
 export * from './useIncomingAddressForwarding';
-export { useLabels, useFolders, useSystemFolders, useContactGroups } from './useCategories';
 export { default as useClickOutside } from './useClickOutside';
 export { default as useConfig } from './useConfig';
 export { default as useContactEmails } from './useContactEmails';

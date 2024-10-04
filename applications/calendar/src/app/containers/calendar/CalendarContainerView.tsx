@@ -29,7 +29,6 @@ import {
     Tooltip,
     TopBanners,
     UserDropdown,
-    useContactGroups,
     useDrawer,
     useNotifications,
     useOpenDrawerOnLoad,
@@ -40,6 +39,7 @@ import CalendarSelectIcon from '@proton/components/components/calendarSelect/Cal
 import type { CustomAction, CustomActionRenderProps } from '@proton/components/containers/contacts/widget/types';
 import { CONTACT_WIDGET_TABS } from '@proton/components/containers/contacts/widget/types';
 import { FeatureCode, useFeature } from '@proton/features';
+import { useContactGroups } from '@proton/mail';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
 import { MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getDefaultView } from '@proton/shared/lib/calendar/getSettings';

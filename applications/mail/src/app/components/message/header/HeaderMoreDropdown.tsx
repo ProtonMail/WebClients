@@ -14,7 +14,6 @@ import {
     Icon,
     Tooltip,
     useApi,
-    useFolders,
     useModalState,
     useNotifications,
     useUser,
@@ -22,6 +21,7 @@ import {
 import type { WorkerDecryptionResult } from '@proton/crypto';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
+import { useFolders } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import type { MailSettings } from '@proton/shared/lib/interfaces';

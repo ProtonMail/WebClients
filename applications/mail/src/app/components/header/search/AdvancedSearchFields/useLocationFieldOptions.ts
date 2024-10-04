@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { IconName } from '@proton/components';
-import { useFolders, useLabels } from '@proton/components';
+import { useFolders, useLabels } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';

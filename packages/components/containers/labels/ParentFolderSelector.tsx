@@ -6,12 +6,12 @@ import Loader from '@proton/components/components/loader/Loader';
 import Option from '@proton/components/components/option/Option';
 import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { useFolders } from '@proton/mail';
 import { ROOT_FOLDER } from '@proton/shared/lib/constants';
 import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';
 import type { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
 import type { OptionProps } from '../../components/select/Select';
-import { useFolders } from '../../hooks';
 
 interface Props {
     id: string;

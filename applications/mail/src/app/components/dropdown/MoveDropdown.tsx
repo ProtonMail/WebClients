@@ -15,11 +15,11 @@ import {
     Radio,
     SearchInput,
     Tooltip,
-    useFolders,
     useModalState,
     useUser,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
+import { useFolders } from '@proton/mail';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { buildTreeview, hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
