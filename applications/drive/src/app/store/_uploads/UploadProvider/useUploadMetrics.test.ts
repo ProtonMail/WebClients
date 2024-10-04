@@ -25,7 +25,7 @@ jest.mock('../../_shares/useSharesState', () => {
 const mockFailedUploadMetadata = (numberOfErrors: number, size: number = 10000) => ({
     shareId: 'defaultShareId',
     numberOfErrors: numberOfErrors,
-    encryptedTotalTransferSize: size + 45000, // random number
+    encryptedTransferSize: size + 45000, // random number
     roundedUnencryptedFileSize: size,
 });
 
@@ -327,18 +327,12 @@ describe('useUploadMetrics::', () => {
         } as FileUploadReady;
 
         it('should calculate metadata correctly', () => {
-            const mockProgresses = {
-                file1: 5000,
-                file2: 7000,
-                file3: 3000,
-            };
-
-            const result = getFailedUploadMetadata(mockFileUploadReady, mockProgresses);
+            const result = getFailedUploadMetadata(mockFileUploadReady, 5000);
 
             const expectedResult: FailedUploadMetadata = {
                 shareId: 'test-share-id',
                 numberOfErrors: 2,
-                encryptedTotalTransferSize: 15000,
+                encryptedTransferSize: 5000,
                 roundedUnencryptedFileSize: 30000,
             };
 
@@ -346,9 +340,9 @@ describe('useUploadMetrics::', () => {
         });
 
         it('should handle empty progresses object', () => {
-            const result = getFailedUploadMetadata(mockFileUploadReady, {});
+            const result = getFailedUploadMetadata(mockFileUploadReady, 0);
 
-            expect(result.encryptedTotalTransferSize).toBe(0);
+            expect(result.encryptedTransferSize).toBe(0);
         });
 
         it('should round up file size to minimum ROUND_BYTES', () => {
@@ -357,7 +351,7 @@ describe('useUploadMetrics::', () => {
                 file: { size: 5000 },
             } as FileUploadReady;
 
-            const result = getFailedUploadMetadata(smallFileUpload, {});
+            const result = getFailedUploadMetadata(smallFileUpload, 0);
 
             expect(result.roundedUnencryptedFileSize).toBe(10000);
         });
@@ -368,7 +362,7 @@ describe('useUploadMetrics::', () => {
                 file: { size: 55000 },
             } as FileUploadReady;
 
-            const result = getFailedUploadMetadata(largeFileUpload, {});
+            const result = getFailedUploadMetadata(largeFileUpload, 0);
 
             expect(result.roundedUnencryptedFileSize).toBe(60000);
         });
