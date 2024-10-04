@@ -110,6 +110,7 @@ export const SignupFlowModal = ({ customPassword, onClose, ...modalProps }: Prop
         <ModalTwo
             as={Form}
             onSubmit={handleSubmit}
+            enableCloseWhenClickOutside
             onClose={() => {
                 countActionWithTelemetry(Actions.DismissSignUpFlowModal);
                 onClose();
