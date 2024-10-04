@@ -22,7 +22,7 @@ import type { FileUploadReady } from './interface';
 export interface FailedUploadMetadata {
     shareId: string;
     numberOfErrors: number;
-    encryptedTotalTransferSize: number;
+    encryptedTransferSize: number;
     roundedUnencryptedFileSize: number;
 }
 
@@ -36,15 +36,10 @@ const REPORT_ERROR_USERS_EVERY = 5 * 60 * 1000; // 5 minutes,
 
 const ROUND_BYTES = 10000; // For privacy we round file.size metrics to 10k bytes
 
-export const getFailedUploadMetadata = (
-    nextFileUpload: FileUploadReady,
-    progresses: {
-        [x: string]: number;
-    }
-): FailedUploadMetadata => ({
+export const getFailedUploadMetadata = (nextFileUpload: FileUploadReady, progress: number): FailedUploadMetadata => ({
     shareId: nextFileUpload.shareId,
     numberOfErrors: nextFileUpload.numberOfErrors,
-    encryptedTotalTransferSize: Object.values(progresses).reduce((sum, value) => sum + value, 0),
+    encryptedTransferSize: progress,
     roundedUnencryptedFileSize: Math.max(Math.round(nextFileUpload.file.size / ROUND_BYTES) * ROUND_BYTES, ROUND_BYTES),
 });
 
@@ -94,17 +89,21 @@ export default function useUploadMetrics(isPaid: boolean, metricsModule = metric
             initiator: 'explicit',
         });
 
-        // How many encrypted bytes were sent before it failed
-        metricsModule.drive_upload_errors_transfer_size_histogram.observe({
-            Value: failedUploadMetadata.encryptedTotalTransferSize,
-            Labels: {},
-        });
+        // If the transfer size is empty that means the upload failed before attempted any transfer
+        // In that case we do not report the sizes
+        if (failedUploadMetadata.encryptedTransferSize) {
+            // How many encrypted bytes were sent before it failed
+            metricsModule.drive_upload_errors_transfer_size_histogram.observe({
+                Value: failedUploadMetadata.encryptedTransferSize,
+                Labels: {},
+            });
 
-        // Rounded unencrypted file size of the file that failed the upload
-        metricsModule.drive_upload_errors_file_size_histogram.observe({
-            Value: failedUploadMetadata.roundedUnencryptedFileSize,
-            Labels: {},
-        });
+            // Rounded unencrypted file size of the file that failed the upload
+            metricsModule.drive_upload_errors_file_size_histogram.observe({
+                Value: failedUploadMetadata.roundedUnencryptedFileSize,
+                Labels: {},
+            });
+        }
 
         if (Date.now() - lastErroringUserReport.current > REPORT_ERROR_USERS_EVERY) {
             metricsModule.drive_upload_erroring_users_total.increment({
