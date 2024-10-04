@@ -4,10 +4,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
-import { useDocumentTitle } from '../../hooks';
 import GenericError from '../error/GenericError';
 
 interface Props {

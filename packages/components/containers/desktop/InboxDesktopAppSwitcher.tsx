@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button, ButtonLike } from '@proton/atoms';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 import Icon from '@proton/components/components/icon/Icon';
-import { useConfig } from '@proton/components/hooks';
+import useConfig from '@proton/components/hooks/useConfig';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import type { CHANGE_VIEW_TARGET } from '@proton/shared/lib/desktop/desktopTypes';

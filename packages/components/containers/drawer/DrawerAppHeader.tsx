@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import useConfig from '@proton/components/hooks/useConfig';
 import {
     closeDrawerFromChildApp,
     getIsDrawerPostMessage,
@@ -17,7 +18,7 @@ import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 
 import Header from '../../components/header/Header';
-import { useConfig, useDrawer, useEventManager, useHotkeys } from '../../hooks';
+import { useDrawer, useEventManager, useHotkeys } from '../../hooks';
 
 import './DrawerAppHeader.scss';
 

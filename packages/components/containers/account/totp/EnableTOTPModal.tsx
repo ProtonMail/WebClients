@@ -18,6 +18,7 @@ import TotpInput from '@proton/components/components/v2/input/TotpInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AuthModal from '@proton/components/containers/password/AuthModal';
 import useApi from '@proton/components/hooks/useApi';
+import useConfig from '@proton/components/hooks/useConfig';
 import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { TOTP_WRONG_ERROR, setupTotp } from '@proton/shared/lib/api/settings';
@@ -29,7 +30,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getTOTPData } from '@proton/shared/lib/settings/twoFactor';
 import noop from '@proton/utils/noop';
 
-import { useConfig, useEventManager, useNotifications, useUser } from '../../../hooks';
+import { useEventManager, useNotifications, useUser } from '../../../hooks';
 
 interface ModalProperties {
     section: ReactNode;

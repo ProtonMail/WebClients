@@ -1,5 +1,5 @@
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetKTActivation } from '@proton/components/containers/keyTransparency/useKTActivation';
-import { useGetAddressKeys } from '@proton/components/hooks/useAddressesKeys';
 import useConfig from '@proton/components/hooks/useConfig';
 import { useGetUser } from '@proton/components/hooks/useUser';
 import { useGetUserKeys } from '@proton/components/hooks/useUserKeys';

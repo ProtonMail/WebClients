@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
 import { acceptMembership, declineOrLeaveMembership } from '@proton/account';
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import {
     useErrorHandler,
     useEventManager,
-    useGetAddressKeys,
-    useGetAddresses,
     useGetUser,
     useGetUserKeys,
     useNotifications,

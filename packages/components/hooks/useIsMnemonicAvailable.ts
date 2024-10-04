@@ -1,6 +1,6 @@
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { getIsMnemonicAvailable } from '@proton/shared/lib/mnemonic';
 
-import useAddresses from './useAddresses';
 import useConfig from './useConfig';
 import useUser from './useUser';
 

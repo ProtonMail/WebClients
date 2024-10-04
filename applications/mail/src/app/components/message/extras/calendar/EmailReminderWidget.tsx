@@ -3,6 +3,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useAddresses, useGetAddresses } from '@proton/account/addresses/hooks';
 import { ButtonLike, Href } from '@proton/atoms';
 import { VideoConferencingWidgetConfig } from '@proton/calendar';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
@@ -12,11 +14,8 @@ import {
     CalendarEventDateHeader,
     Icon,
     IconRow,
-    useAddresses,
     useApi,
     useContactEmails,
-    useGetAddressKeys,
-    useGetAddresses,
     useGetCalendarEventRaw,
     useNotifications,
 } from '@proton/components';

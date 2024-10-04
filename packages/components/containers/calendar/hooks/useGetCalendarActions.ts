@@ -2,6 +2,8 @@ import type { Dispatch, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
 import useApi from '@proton/components/hooks/useApi';
 import { createCalendar, updateCalendarSettings, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
@@ -16,13 +18,7 @@ import type { CalendarSettings, CalendarWithOwnMembers, VisualCalendar } from '@
 import type { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 
-import {
-    useEventManager,
-    useGetAddressKeys,
-    useGetAddresses,
-    useNotifications,
-    useReadCalendarBootstrap,
-} from '../../../hooks';
+import { useEventManager, useNotifications, useReadCalendarBootstrap } from '../../../hooks';
 import { useCalendarModelEventManager } from '../../eventManager/calendar/CalendarModelEventManagerProvider';
 
 interface Props {

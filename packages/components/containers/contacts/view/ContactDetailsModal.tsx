@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
@@ -11,6 +12,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import useConfig from '@proton/components/hooks/useConfig';
 import { useContactGroups } from '@proton/mail';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { APPS } from '@proton/shared/lib/constants';
@@ -21,7 +23,7 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
-import { useAddresses, useConfig, useNotifications, useUserKeys } from '../../../hooks';
+import { useNotifications, useUserKeys } from '../../../hooks';
 import { useLinkHandler } from '../../../hooks/useLinkHandler';
 import ErrorBoundary from '../../app/ErrorBoundary';
 import GenericError from '../../error/GenericError';

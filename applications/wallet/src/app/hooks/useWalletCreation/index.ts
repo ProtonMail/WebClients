@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import first from 'lodash/first';
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import type {
     WasmApiEmailAddress,
     WasmApiWalletAccount,
@@ -14,13 +15,14 @@ import type {
     WasmScriptType,
 } from '@proton/andromeda';
 import { WasmAccount, WasmDerivationPath, WasmMnemonic, WasmWallet } from '@proton/andromeda';
-import { useAddresses, useNotifications, useOrganization, useUserKeys } from '@proton/components/hooks';
+import { useNotifications, useOrganization, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import {
     DEFAULT_FIRST_ACCOUNT_INDEX,
     DEFAULT_FIRST_ACCOUNT_LABEL,
     DEFAULT_FIRST_BVE_ACCOUNT_INDEX,
     DEFAULT_FIRST_BVE_ACCOUNT_LABEL,
+    DEFAULT_MAX_SUB_WALLETS,
     DEFAULT_SCRIPT_TYPE,
     WalletType,
     decryptWallet,
@@ -31,7 +33,6 @@ import {
     useWalletApiClients,
     wordCountToNumber,
 } from '@proton/wallet';
-import { DEFAULT_MAX_SUB_WALLETS } from '@proton/wallet';
 import {
     acceptTermsAndConditions,
     useFiatCurrencies,

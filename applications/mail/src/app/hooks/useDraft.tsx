@@ -1,6 +1,7 @@
 import { useCallback, useEffect } from 'react';
 
-import { useAddresses, useCache, useGetAddresses, useGetUser, useUserSettings } from '@proton/components';
+import { useAddresses, useGetAddresses } from '@proton/account/addresses/hooks';
+import { useCache, useGetUser, useUserSettings } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { useGetMailSettings } from '@proton/mail/mailSettings/hooks';
 import { isPaid } from '@proton/shared/lib/user/helpers';

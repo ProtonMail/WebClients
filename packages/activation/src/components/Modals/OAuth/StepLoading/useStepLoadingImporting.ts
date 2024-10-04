@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import useAvailableAddresses from '@proton/activation/src/hooks/useAvailableAddresses';
 import { ImportProvider } from '@proton/activation/src/interface';
 import {
@@ -9,7 +10,7 @@ import {
 } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
-import { useApi, useErrorHandler, useEventManager, useGetAddressKeys } from '@proton/components';
+import { useApi, useErrorHandler, useEventManager } from '@proton/components';
 
 import { createImporterTask } from './useStepLoadingImporting.helpers';
 

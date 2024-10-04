@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
-import { useAddresses, useUserSettings } from '@proton/components/hooks';
+import { useUserSettings } from '@proton/components/hooks';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailSelector } from 'proton-mail/store/hooks';

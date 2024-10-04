@@ -3,8 +3,9 @@ import { useCallback, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import type { WasmApiWalletAccount, WasmFiatCurrencySymbol } from '@proton/andromeda';
-import { useAddresses, useNotifications, useUserKeys } from '@proton/components/hooks';
+import { useNotifications, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store';
 import type { IWasmApiWalletData } from '@proton/wallet';

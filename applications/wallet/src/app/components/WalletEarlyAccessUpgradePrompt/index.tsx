@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { Href } from '@proton/atoms';
 import type { ModalOwnProps } from '@proton/components';
 import {
@@ -9,7 +10,6 @@ import {
     ProtonForBusinessLogo,
     SUBSCRIPTION_STEPS,
     Tooltip,
-    useAddresses,
     useModalState,
     useSubscriptionModal,
     useUser,

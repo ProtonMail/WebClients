@@ -2,6 +2,8 @@ import { useCallback, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import CountrySelect from '@proton/components/components/country/CountrySelect';
@@ -53,13 +55,7 @@ import type {
 } from '@proton/shared/lib/interfaces/calendar';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import {
-    useEventManager,
-    useGetAddressKeys,
-    useGetAddresses,
-    useNotifications,
-    useReadCalendarBootstrap,
-} from '../../../../hooks';
+import { useEventManager, useNotifications, useReadCalendarBootstrap } from '../../../../hooks';
 
 const getInitialCalendarNotifications = (bootstrap?: CalendarBootstrap) => {
     if (!bootstrap) {

@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import { useConfig, useUserSettings } from '@proton/components/hooks';
+import { useUserSettings } from '@proton/components/hooks';
+import useConfig from '@proton/components/hooks/useConfig';
 import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
 import type { Nullable } from '@proton/shared/lib/interfaces';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';

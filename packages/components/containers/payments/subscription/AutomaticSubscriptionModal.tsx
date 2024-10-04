@@ -53,7 +53,8 @@ import type { OpenCallbackProps } from '@proton/components/containers/payments/s
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { useConfig, useLastSubscriptionEnd, useLoad, usePlans, useSubscription } from '@proton/components/hooks';
+import { useLastSubscriptionEnd, useLoad, usePlans, useSubscription } from '@proton/components/hooks';
+import useConfig from '@proton/components/hooks/useConfig';
 import useUser from '@proton/components/hooks/useUser';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { type PaymentMethodStatusExtended, getPlansMap } from '@proton/payments';

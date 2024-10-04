@@ -1,5 +1,7 @@
 import { useCallback } from 'react';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetMailSettings } from '@proton/mail/mailSettings/hooks';
 import getPublicKeysVcardHelper from '@proton/shared/lib/api/helpers/getPublicKeysVcardHelper';
 import { MINUTE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
@@ -14,8 +16,6 @@ import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { getContactPublicKeyModel, getKeyEncryptionCapableStatus } from '@proton/shared/lib/keys/publicKeys';
 import extractEncryptionPreferences from '@proton/shared/lib/mail/encryptionPreferences';
 
-import { useGetAddresses } from './useAddresses';
-import { useGetAddressKeys } from './useAddressesKeys';
 import useApi from './useApi';
 import useCache from './useCache';
 import { getPromiseValue } from './useCachedModelResult';

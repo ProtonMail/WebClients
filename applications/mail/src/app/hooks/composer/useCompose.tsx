@@ -3,13 +3,13 @@ import { useCallback } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { Button, Href } from '@proton/atoms';
 import {
     ErrorButton,
     Prompt,
     useApi,
     useEventManager,
-    useGetAddresses,
     useGetSubscription,
     useGetUser,
     useHandler,

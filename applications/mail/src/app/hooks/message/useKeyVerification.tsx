@@ -1,4 +1,5 @@
-import { useGetAddresses, useNotifications } from '@proton/components';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useNotifications } from '@proton/components';
 import type { KeyID } from '@proton/crypto';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';

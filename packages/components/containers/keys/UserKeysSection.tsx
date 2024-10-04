@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -13,7 +14,6 @@ import { addUserKeysProcess } from '@proton/shared/lib/keys';
 
 import {
     useEventManager,
-    useGetAddresses,
     useGetOrganizationKey,
     useIsDeviceRecoveryAvailable,
     useIsDeviceRecoveryEnabled,

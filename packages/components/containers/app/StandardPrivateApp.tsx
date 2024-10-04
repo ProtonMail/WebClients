@@ -3,8 +3,9 @@ import type { ReactNode } from 'react';
 import ContactProvider from '@proton/components/containers/contacts/ContactProvider';
 import EventNotices from '@proton/components/containers/eventManager/EventNotices';
 import NotificationsChildren from '@proton/components/containers/notifications/Children';
+import useConfig from '@proton/components/hooks/useConfig';
 
-import { useConfig, useIsInboxElectronApp } from '../../hooks';
+import { useIsInboxElectronApp } from '../../hooks';
 import SessionRecoveryLocalStorageManager from '../account/sessionRecovery/SessionRecoveryLocalStorageManager';
 import ForceRefreshProvider from '../forceRefresh/Provider';
 import KeyTransparencyManager from '../keyTransparency/KeyTransparencyManager';

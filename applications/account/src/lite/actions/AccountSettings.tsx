@@ -2,13 +2,8 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    AccountRecoverySection,
-    CrashReportsToggle,
-    TelemetryToggle,
-    useAddresses,
-    useModalState,
-} from '@proton/components';
+import { useAddresses } from '@proton/account/addresses/hooks';
+import { AccountRecoverySection, CrashReportsToggle, TelemetryToggle, useModalState } from '@proton/components';
 
 import EditProfileModal from '../components/EditProfileModal';
 import MobileSection from '../components/MobileSection';

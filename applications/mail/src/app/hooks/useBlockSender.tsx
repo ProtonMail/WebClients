@@ -3,9 +3,10 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { useApi } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
-import { useAddresses, useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
 import { updateBlockSenderConfirmation } from '@proton/shared/lib/api/mailSettings';
 import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';
 

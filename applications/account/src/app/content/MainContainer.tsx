@@ -3,6 +3,7 @@ import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import {
     AppLink,
     CancellationReminderSection,
@@ -18,7 +19,6 @@ import {
     TopNavbarUpsell,
     UserDropdown,
     useActiveBreakpoint,
-    useAddresses,
     useConvertExternalAddresses,
     useDeviceRecovery,
     useDrivePlan,

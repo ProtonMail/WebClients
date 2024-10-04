@@ -1,8 +1,8 @@
 import { c, msgid } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import type { WasmApiWalletAccount } from '@proton/andromeda';
 import { useModalState, useModalStateWithData } from '@proton/components';
-import { useAddresses } from '@proton/components/hooks';
 import { decrementAvailableInvites, useRemainingInvites, useWalletDispatch } from '@proton/wallet/store';
 
 import { Button } from '../../atoms';

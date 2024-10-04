@@ -1,5 +1,6 @@
+import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
-import { useAddresses, useAddressesKeys } from '@proton/components/hooks';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
 import {
@@ -24,10 +25,10 @@ const OutgoingForwardTableContext = applyHOCs(
     withAuthentication()
 )(OutgoingForwardTable);
 
-jest.mock('@proton/components/hooks/useAddresses');
+jest.mock('@proton/account/addresses/hooks');
 const mockUseAddresses = useAddresses as jest.MockedFunction<any>;
 
-jest.mock('@proton/components/hooks/useAddressesKeys');
+jest.mock('@proton/account/addressKeys/hooks');
 const mockUserAddressesKeys = useAddressesKeys as jest.MockedFunction<any>;
 
 describe('OutgoingForwardTable', () => {

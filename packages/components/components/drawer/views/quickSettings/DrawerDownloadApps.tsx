@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
-import { useConfig } from '@proton/components/hooks';
+import useConfig from '@proton/components/hooks/useConfig';
 import { APPS, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 

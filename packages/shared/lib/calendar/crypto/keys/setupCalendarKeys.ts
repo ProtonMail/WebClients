@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { useGetAddressKeys } from '@proton/components/hooks';
+import type { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 
 import { setupCalendar } from '../../../api/calendars';
 import type { Api } from '../../../interfaces';

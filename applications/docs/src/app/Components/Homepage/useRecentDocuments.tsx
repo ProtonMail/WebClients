@@ -1,18 +1,19 @@
 import {
   DateFormatter,
   type RecentDocumentServiceState,
-  RecentDocumentStateUpdatedEvent,
   type RecentDocumentsSnapshot,
   type RecentDocumentsSnapshotData,
+  RecentDocumentStateUpdatedEvent,
 } from '@proton/docs-core'
 
-import { createContext, type ReactNode, useContext, useEffect, useState } from 'react'
-import { useApplication } from '../../Containers/ApplicationProvider'
-import { APPS } from '@proton/shared/lib/constants'
+import { useAuthentication } from '@proton/components'
+import { useContactEmails, useUser } from '@proton/components/hooks'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
-import { useAuthentication, useContactEmails, useUser } from '@proton/components/hooks'
+import { APPS } from '@proton/shared/lib/constants'
 import type { UserModel } from '@proton/shared/lib/interfaces'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
+import { createContext, type ReactNode, useContext, useEffect, useState } from 'react'
+import { useApplication } from '../../Containers/ApplicationProvider'
 
 const dateFormatter = new DateFormatter()
 

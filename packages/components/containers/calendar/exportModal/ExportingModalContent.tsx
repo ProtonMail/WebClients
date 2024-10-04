@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import DynamicProgress from '@proton/components/components/progress/DynamicProgress';
 import useApi from '@proton/components/hooks/useApi';
@@ -12,7 +14,7 @@ import { processInBatches } from '@proton/shared/lib/calendar/export/export';
 import type { ExportCalendarModel, ExportError, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { EXPORT_ERRORS, EXPORT_STEPS } from '@proton/shared/lib/interfaces/calendar';
 
-import { useGetAddressKeys, useGetAddresses, useGetCalendarInfo, useGetCalendarKeys } from '../../../hooks';
+import { useGetCalendarInfo, useGetCalendarKeys } from '../../../hooks';
 
 interface Props {
     model: ExportCalendarModel;

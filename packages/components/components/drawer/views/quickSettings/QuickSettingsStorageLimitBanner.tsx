@@ -1,7 +1,8 @@
 import { ButtonLike } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
-import { useConfig, useSubscription, useUser } from '@proton/components/hooks';
+import { useSubscription, useUser } from '@proton/components/hooks';
+import useConfig from '@proton/components/hooks/useConfig';
 import {
     DRIVE_SHORT_APP_NAME,
     MAIL_SHORT_APP_NAME,

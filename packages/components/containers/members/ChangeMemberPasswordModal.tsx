@@ -2,6 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -13,16 +15,9 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AuthModal from '@proton/components/containers/password/AuthModal';
-import {
-    useAuthentication,
-    useEventManager,
-    useGetAddressKeys,
-    useGetAddresses,
-    useGetOrganization,
-    useGetOrganizationKey,
-    useNotifications,
-} from '@proton/components/hooks';
+import { useEventManager, useGetOrganization, useGetOrganizationKey, useNotifications } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';

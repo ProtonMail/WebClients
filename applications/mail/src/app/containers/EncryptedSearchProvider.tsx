@@ -4,8 +4,8 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import {
-    useAddresses,
     useApi,
     useGetMessageCounts,
     useGetUserKeys,
