@@ -115,10 +115,6 @@
 		promotion-interaction-hover: rgb(109 74 255 / 0.08),
 		promotion-background-start: rgb(109 74 255 / 0.15),
 		promotion-background-end: rgb(70 26 255 / 0.04),
-
-		input-background-color: var(--background-norm),
-
-		sidebar-item-selected-background-color: var(--interaction-weak),
 	) {
 		// --link-norm: var(--optional-link-norm, var(--interaction-norm));
 		--#{$variable}: var(--optional-#{$variable}, #{$default});

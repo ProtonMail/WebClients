@@ -48,7 +48,7 @@
   --field-norm: rgb(255 255 255 / 0.04);
   --field-disabled: #4c4c65;
   --optional-field-placeholder-color: var(--text-weak);
-  --optional-input-background-color: #1c1c2c;
+  --optional-field-background-color: #1c1c2c;
   --border-norm: #7a7aad;
   --border-weak: #38384c;
   --background-norm: #1f1f31;
@@ -77,6 +77,7 @@
   --shadow-lifted-opacity: 0.4;
   --backdrop-norm: rgb(0 0 0 / 0.5);
   --optional-field-placeholder-color: var(--text-weak);
+  --optional-navigation-current-item-background-color: var(--interaction-weak);
   --focus-outline: var(--interaction-norm-major-2);
   --focus-ring: var(--interaction-norm-minor-1);
   --search-field-focus-background: #0e0e0e;
@@ -92,25 +93,13 @@
   --vault-porsche: 228 163 103;
   --vault-mercury: 230 230 230;
   --vault-water-leaf: 158 226 230;
-  --pass-box-shadow: rgb(0 0 0 / 0.3);
-  --pass-content-box-shadow: rgb(14 14 14 / 0.8);
-  --pass-scroll-color: rgb(14 14 14 / 0.35);
-  --pass-loby-background: radial-gradient(
+  --pass-scroll-shadow-color: rgb(14 14 14 / 0.35);
+  --pass-lobby-background-color: radial-gradient(
       61.86% 61.86% at 50% 0%,
       rgb(255 255 255 / 0.16) 0%,
       rgb(255 255 255 / 0) 100%
     ),
     #191927;
-  --pass-scroll-gradient-start: linear-gradient(
-    180deg,
-    var(--pass-scroll-color),
-    transparent
-  );
-  --pass-scroll-gradient-end: linear-gradient(
-    0deg,
-    var(--pass-scroll-color),
-    transparent
-  );
 }
 @supports (-webkit-hyphens: none) {
   :root,

@@ -5,13 +5,14 @@
 @import 'dropdown';
 @import 'fields';
 @import 'lobby';
+@import 'password';
 @import 'scroll';
+@import 'sidebar';
 @import 'skeletons';
+@import 'table';
 @import 'text';
 @import 'themes';
-@import 'password';
 @import 'utils';
-@import 'table';
 
 :root {
 	--pass-sidebar-size: 22.5em;

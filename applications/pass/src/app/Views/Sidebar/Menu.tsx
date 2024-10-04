@@ -84,7 +84,6 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                 )}
                 <SecureLinkButton
                     className="rounded"
-                    activeClassName="sidebar-item-selected"
                     parentClassName="mx-3"
                     onClick={() => navigate(getLocalPath('secure-links'))}
                 />
