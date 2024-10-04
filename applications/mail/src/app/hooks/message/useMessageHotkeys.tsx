@@ -3,7 +3,8 @@ import { useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import type { HotkeyTuple } from '@proton/components';
-import { useEventManager, useFolders, useHotkeys } from '@proton/components';
+import { useEventManager, useHotkeys } from '@proton/components';
+import { useFolders } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isVisibleOnScreen } from '@proton/shared/lib/helpers/dom';
 import type { MailSettings } from '@proton/shared/lib/interfaces';

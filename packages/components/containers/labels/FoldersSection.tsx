@@ -11,12 +11,13 @@ import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLa
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { useLoading } from '@proton/hooks';
+import { useFolders } from '@proton/mail';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { orderAllFolders } from '@proton/shared/lib/api/labels';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
 
-import { useApi, useEventManager, useFolders, useNotifications, useUser } from '../../hooks';
+import { useApi, useEventManager, useNotifications, useUser } from '../../hooks';
 import FolderTreeViewList from './FolderTreeViewList';
 import ToggleEnableFolderColor from './ToggleEnableFolderColor';
 import ToggleInheritParentFolderColor from './ToggleInheritParentFolderColor';

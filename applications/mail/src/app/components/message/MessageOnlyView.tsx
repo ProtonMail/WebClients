@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 
 import { Scroll } from '@proton/atoms';
 import type { Breakpoints } from '@proton/components';
-import { useHotkeys, useLabels } from '@proton/components';
+import { useHotkeys } from '@proton/components';
+import { useLabels } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';

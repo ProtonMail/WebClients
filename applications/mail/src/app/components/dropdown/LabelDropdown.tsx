@@ -14,11 +14,11 @@ import {
     PrimaryButton,
     SearchInput,
     Tooltip,
-    useLabels,
     useModalState,
     useUser,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
+import { useLabels } from '@proton/mail';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_IDENTIFIERS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';

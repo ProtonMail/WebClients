@@ -2,7 +2,8 @@ import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { useActiveBreakpoint, useElementBreakpoints, useFolders, useLabels } from '@proton/components';
+import { useActiveBreakpoint, useElementBreakpoints } from '@proton/components';
+import { useFolders, useLabels } from '@proton/mail';
 import clsx from '@proton/utils/clsx';
 
 import { getLabelName } from '../../helpers/labels';

@@ -14,8 +14,9 @@ import {
 } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
-import { useFolders, useLabels, useUser } from '@proton/components';
+import { useUser } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
+import { useFolders, useLabels } from '@proton/mail';
 import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 

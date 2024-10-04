@@ -13,7 +13,7 @@ jest.mock('@proton/mail/mailSettings/hooks', () => ({
     ]),
 }));
 
-jest.mock('./useCategories', () => ({
+jest.mock('@proton/mail/labels/hooks', () => ({
     useFolders: () => [
         [
             { ID: 'A', Color: 'red' },

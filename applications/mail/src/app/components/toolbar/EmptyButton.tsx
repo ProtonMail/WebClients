@@ -2,8 +2,9 @@ import { c } from 'ttag';
 
 import { Kbd, Vr } from '@proton/atoms';
 import type { Breakpoints } from '@proton/components';
-import { Icon, ToolbarButton, useLabels } from '@proton/components';
+import { Icon, ToolbarButton } from '@proton/components';
 import { useLoading } from '@proton/hooks';
+import { useLabels } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 
