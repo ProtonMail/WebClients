@@ -16,6 +16,7 @@ import {
     createTrialRule,
     createUpdateRule,
     createUserRatingRule,
+    createUserRenewalRule,
 } from '@proton/pass/lib/onboarding/rules';
 import { createOnboardingService as createCoreOnboardingService } from '@proton/pass/lib/onboarding/service';
 import type { State } from '@proton/pass/store/types';
@@ -46,6 +47,7 @@ export const createOnboardingService = (
                 : []),
             createSecurityRule(store),
             createUserRatingRule(store),
+            createUserRenewalRule(store),
             createAliasSyncEnableRule(store),
 
             /* "Invisible" rules not displayed as spotlight should be defined at the bottom */

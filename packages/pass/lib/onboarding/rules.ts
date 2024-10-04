@@ -13,12 +13,11 @@ import {
     selectUserState,
 } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
-import type { Maybe, MaybeNull } from '@proton/pass/types';
-import { OnboardingMessage } from '@proton/pass/types';
+import { type Maybe, type MaybeNull, OnboardingMessage, PlanType } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { merge } from '@proton/pass/utils/object/merge';
-import { UNIX_DAY } from '@proton/pass/utils/time/constants';
+import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 import { createOnboardingRule } from './service';
@@ -182,5 +181,29 @@ export const createBlackFriday2024Rule = (store: Store<State>) =>
                 default:
                     return false;
             }
+        },
+    });
+
+export const createUserRenewalRule = (store: Store<State>) =>
+    createOnboardingRule({
+        message: OnboardingMessage.USER_RENEWAL,
+        when: (previous) => {
+            const plan = selectUserPlan(store.getState());
+
+            // Do not show if it's free trial or can't manage subscription or is renewing
+            if (plan?.Type === PlanType.free || !plan?.ManageSubscription || plan?.SubscriptionRenewal) return false;
+
+            const now = getEpoch();
+
+            // If acknowledged, show it again after two weeks
+            if (previous) return now - previous.acknowledgedOn > UNIX_WEEK * 2;
+
+            const subscriptionEnd = plan?.SubscriptionEnd ?? 0;
+
+            // Prevent showing the banner if the plan type has not been
+            // updated to 'Free' after the subscription date has passed
+            if (subscriptionEnd > now) return false;
+
+            return subscriptionEnd - now < UNIX_MONTH;
         },
     });
