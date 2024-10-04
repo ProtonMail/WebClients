@@ -36,7 +36,9 @@ export const WalletWelcomePrompt = ({ email, ...modalProps }: Props) => {
             modalProps.onClose?.();
         } catch (error: any) {
             createNotification({
-                text: error?.error ?? c('Wallet terms and conditions').t`Could not accept terms and conditions`,
+                text:
+                    error?.error ??
+                    c('Wallet terms and conditions').t`Error with Terms and Conditions acceptance. Please try again.`,
             });
         }
     };

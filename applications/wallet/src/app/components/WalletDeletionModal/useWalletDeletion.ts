@@ -44,7 +44,7 @@ export const useWalletDeletion = ({ wallet, onDeletion }: { wallet: IWasmApiWall
             } catch (error: any) {
                 createNotification({
                     type: 'error',
-                    text: error?.error ?? c('Wallet Settings').t`Wallet could not be deleted`,
+                    text: error?.error ?? c('Wallet Settings').t`Wallet could not be deleted. Please try again.`,
                 });
             }
         };

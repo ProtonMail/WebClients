@@ -197,7 +197,8 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
 
                     createNotification({
                         type: 'warning',
-                        text: c('Bitcoin buy').t`We could not find any quote for this currency/country pair`,
+                        text: c('Bitcoin buy')
+                            .t`The selected currency is not supported in your country or the requested amount is too low`,
                     });
                 }
             }
