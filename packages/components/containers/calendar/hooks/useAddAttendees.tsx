@@ -1,5 +1,7 @@
 import { useCallback } from 'react';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useGetCalendarInfo from '@proton/components/hooks/useGetCalendarInfo';
@@ -34,7 +36,7 @@ import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 
-import { useGetAddressKeys, useGetAddresses, useGetEncryptionPreferences, useRelocalizeText } from '../../../hooks';
+import { useGetEncryptionPreferences, useRelocalizeText } from '../../../hooks';
 import { useGetCanonicalEmailsMap } from '../../../hooks/useGetCanonicalEmailsMap';
 import { useGetVtimezonesMap } from '../../../hooks/useGetVtimezonesMap';
 import useSendIcs from '../../../hooks/useSendIcs';

@@ -3,7 +3,7 @@ import { cloneElement } from 'react';
 
 import DropzoneContent from '@proton/components/components/dropzone/DropzoneContent';
 import { isDragFile } from '@proton/components/components/dropzone/helpers';
-import { useDragOver } from '@proton/components/hooks';
+import useDragOver from '@proton/components/hooks/useDragOver';
 
 import './Dropzone.scss';
 

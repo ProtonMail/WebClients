@@ -2,8 +2,7 @@ import { Suspense, lazy, useCallback, useEffect, useMemo, useState } from 'react
 import { Redirect, Route, Switch } from 'react-router-dom'
 
 import { CircleLoader } from '@proton/atoms'
-import { useApi, useAuthentication } from '@proton/components'
-import { useConfig } from '@proton/components/hooks'
+import { useApi, useAuthentication, useConfig } from '@proton/components'
 import type { FileToDocConversionResult } from '@proton/docs-core'
 import { Application, getPlatformFriendlyDateForFileName } from '@proton/docs-core'
 import type { EditorInitializationConfig, FileToDocPendingConversion } from '@proton/docs-shared'

@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { useEffect, useMemo } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { useGetHolidaysDirectory } from '@proton/calendar/holidaysDirectory/hooks';
@@ -18,7 +19,6 @@ import {
     MobileAppSettingsSection,
     PrivateMainAreaLoading,
     PrivateMainSettingsArea,
-    useAddresses,
     useCalendarsInfoListener,
     useIsInboxElectronApp,
     useSubscribedCalendars,

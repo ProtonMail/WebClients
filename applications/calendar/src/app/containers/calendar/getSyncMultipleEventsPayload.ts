@@ -1,4 +1,4 @@
-import type { useGetAddressKeys } from '@proton/components';
+import type { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import type { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import type { PublicKeyReference } from '@proton/crypto';
 import { syncMultipleEvents as syncMultipleEventsRoute } from '@proton/shared/lib/api/calendars';

@@ -2,7 +2,8 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { useDocumentTitle } from '../../hooks';
+import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
+
 import GenericError from '../error/GenericError';
 
 interface Props {

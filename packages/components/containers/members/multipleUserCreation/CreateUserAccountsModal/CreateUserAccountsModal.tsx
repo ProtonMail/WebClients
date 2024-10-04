@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { InvalidAddressesError, UnavailableAddressesError, createMember } from '@proton/account';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import validateAddUser from '@proton/account/members/validateAddUser';
 import { Button, Input } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
@@ -20,7 +21,6 @@ import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import Marks from '@proton/components/components/text/Marks';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
-import { useGetAddresses } from '@proton/components/hooks/useAddresses';
 import useApi from '@proton/components/hooks/useApi';
 import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
 import useEventManager from '@proton/components/hooks/useEventManager';

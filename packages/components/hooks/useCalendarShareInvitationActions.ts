@@ -2,8 +2,8 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { useGetAddresses } from '@proton/components/hooks/useAddresses';
-import { useGetAddressKeys } from '@proton/components/hooks/useAddressesKeys';
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';

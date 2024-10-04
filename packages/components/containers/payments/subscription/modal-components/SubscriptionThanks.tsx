@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { CircleLoader, Href } from '@proton/atoms';
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
+import useConfig from '@proton/components/hooks/useConfig';
 import type { PlainPaymentMethodType } from '@proton/payments';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
@@ -9,8 +10,6 @@ import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';
 import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg';
 import mailThanksSvg from '@proton/styles/assets/img/illustrations/thank-you-mail.svg';
 import vpnThanksSvg from '@proton/styles/assets/img/illustrations/thank-you-vpn.svg';
-
-import { useConfig } from '../../../../hooks';
 
 interface Props {
     onClose?: () => void;

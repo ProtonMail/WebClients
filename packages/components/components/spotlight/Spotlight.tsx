@@ -17,13 +17,13 @@ import type { PopperPlacement } from '@proton/components/components/popper/inter
 import usePopper from '@proton/components/components/popper/usePopper';
 import usePopperState from '@proton/components/components/popper/usePopperState';
 import { shouldShowSideRadius } from '@proton/components/components/popper/utils';
+import useIsClosing from '@proton/components/hooks/useIsClosing';
 import { useCombinedRefs } from '@proton/hooks';
 import discoverIllustration from '@proton/styles/assets/img/illustrations/spotlight-binoculars.svg';
 import newIllustration from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
-import { useIsClosing } from '../../hooks';
 import Portal from '../portal/Portal';
 
 type SpotlightType = 'discover' | 'new';

@@ -1,9 +1,10 @@
 import React from 'react';
 
+import useConfig from '@proton/components/hooks/useConfig';
 import { isElectronOnSupportedApps } from '@proton/shared/lib/helpers/desktop';
 import { hasVisionary } from '@proton/shared/lib/helpers/subscription';
 
-import { useConfig, useOrganization, useSubscription, useUser } from '../../hooks';
+import { useOrganization, useSubscription, useUser } from '../../hooks';
 import OnboardingDiscoverApps from './OnboardingDiscoverApps';
 import type OnboardingModal from './OnboardingModal';
 import OnboardingSetupOrganization from './OnboardingSetupOrganization';

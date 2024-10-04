@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
+import useConfig from '@proton/components/hooks/useConfig';
 import { APPS } from '@proton/shared/lib/constants';
 import envelopSvg from '@proton/styles/assets/img/illustrations/welcome-pane.svg';
 
 import Bordered from '../../components/container/Bordered';
-import { useConfig } from '../../hooks';
 
 const Cash = () => {
     const { APP_NAME } = useConfig();

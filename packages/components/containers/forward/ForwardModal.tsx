@@ -2,6 +2,8 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button, Href } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import Icon from '@proton/components/components/icon/Icon';
@@ -33,10 +35,8 @@ import illustration from '@proton/styles/assets/img/illustrations/forward-email-
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import {
-    useAddresses,
     useContactEmails,
     useEventManager,
-    useGetAddressKeys,
     useGetPublicKeysForInbox,
     useGetUser,
     useGetUserKeys,

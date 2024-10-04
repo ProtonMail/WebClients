@@ -3,7 +3,8 @@ import { createContext, useContext } from 'react';
 
 import type { ThemeColor } from '@proton/colors/types';
 import MailQuickSettingsReminderContextProvider from '@proton/components/containers/drawer/MailQuickSettingsReminderContextProvider';
-import { useConfig, useRecoveryNotification } from '@proton/components/hooks';
+import { useRecoveryNotification } from '@proton/components/hooks';
+import useConfig from '@proton/components/hooks/useConfig';
 import { APPS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 

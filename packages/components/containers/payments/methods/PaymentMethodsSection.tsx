@@ -8,6 +8,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import MozillaInfoPanel from '@proton/components/containers/account/MozillaInfoPanel';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
+import useConfig from '@proton/components/hooks/useConfig';
 import { useChargebeeEnabledCache } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
 import useLoading from '@proton/hooks/useLoading';
@@ -16,7 +17,7 @@ import { APPS, EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
-import { useConfig, useMozillaCheck, usePaymentMethods, useSubscription, useUser } from '../../../hooks';
+import { useMozillaCheck, usePaymentMethods, useSubscription, useUser } from '../../../hooks';
 import { useRedirectToAccountApp } from '../../desktop/useRedirectToAccountApp';
 import EditCardModal from '../EditCardModal';
 import { default as PayPalV4Modal, PayPalV5Modal } from '../PayPalModal';

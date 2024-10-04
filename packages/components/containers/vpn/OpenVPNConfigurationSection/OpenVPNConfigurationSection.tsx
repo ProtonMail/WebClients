@@ -11,6 +11,8 @@ import Info from '@proton/components/components/link/Info';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import useUserVPN from '@proton/components/hooks/useUserVPN';
+import useVPNLogicals from '@proton/components/hooks/useVPNLogicals';
 import { PLANS, SORT_DIRECTION, VPN_APP_NAME, VPN_CONNECTIONS, VPN_HOSTNAME } from '@proton/shared/lib/constants';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
 
@@ -20,7 +22,7 @@ import {
     getCountryOptions,
     getLocalizedCountryByAbbr,
 } from '../../../helpers/countries';
-import { usePlans, useSortedList, useUser, useUserSettings, useUserVPN, useVPNLogicals } from '../../../hooks';
+import { usePlans, useSortedList, useUser, useUserSettings } from '../../../hooks';
 import type { EnhancedLogical } from '../OpenVPNConfigurationSection/interface';
 import ConfigsTable, { CATEGORY } from './ConfigsTable';
 import ServerConfigs from './ServerConfigs';

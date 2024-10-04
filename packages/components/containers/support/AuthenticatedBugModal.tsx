@@ -1,4 +1,6 @@
-import { useAddresses, useUser, useUserSettings } from '../../hooks';
+import { useAddresses } from '@proton/account/addresses/hooks';
+
+import { useUser, useUserSettings } from '../../hooks';
 import type { Props } from './BugModal';
 import BugModal from './BugModal';
 

@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { Href } from '@proton/atoms';
 import { NewUpsellModal } from '@proton/components';
 import Alert from '@proton/components/components/alert/Alert';
@@ -29,7 +30,7 @@ import { getIsNonDefault, sortAddresses } from '@proton/shared/lib/mail/addresse
 import addressesImg from '@proton/styles/assets/img/illustrations/new-upsells-img/addresses.svg';
 import move from '@proton/utils/move';
 
-import { useAddresses, useEventManager, useNotifications } from '../../hooks';
+import { useEventManager, useNotifications } from '../../hooks';
 import AddressActions from './AddressActions';
 import AddressStatus from './AddressStatus';
 import { getPermissions, getStatus } from './helper';

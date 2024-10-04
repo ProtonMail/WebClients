@@ -10,6 +10,7 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import TotpInputs from '@proton/components/containers/account/totp/TotpInputs';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useApi from '@proton/components/hooks/useApi';
+import useConfig from '@proton/components/hooks/useConfig';
 import { useLoading } from '@proton/hooks';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -17,7 +18,7 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { useConfig, useErrorHandler, useNotifications } from '../../hooks';
+import { useErrorHandler, useNotifications } from '../../hooks';
 import type { OnLoginCallback } from '../app/interface';
 import Challenge from '../challenge/Challenge';
 import ChallengeError from '../challenge/ChallengeError';

@@ -4,6 +4,7 @@ import { addMonths } from 'date-fns';
 
 import { isSubscriptionUnchanged } from '@proton/components/containers/payments/helper';
 import useApi from '@proton/components/hooks/useApi';
+import useConfig from '@proton/components/hooks/useConfig';
 import {
     type CheckWithAutomaticOptions,
     DEFAULT_TAX_BILLING_ADDRESS,
@@ -25,7 +26,7 @@ import { getPlanName } from '@proton/shared/lib/helpers/subscription';
 import { type Api, ChargebeeEnabled, type SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 
-import { useConfig, usePreferredPlansMap, useSubscription } from '../../hooks';
+import { usePreferredPlansMap, useSubscription } from '../../hooks';
 import { useChargebeeContext, useChargebeeEnabledCache } from '../client-extensions/useChargebeeContext';
 
 const checkSubscription = (data: CheckSubscriptionData, version: PaymentsVersion) => ({

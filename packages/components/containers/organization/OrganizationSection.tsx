@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { Button, ButtonLike, CircleLoader, InlineLinkButton } from '@proton/atoms';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
@@ -20,6 +21,7 @@ import useKTActivation from '@proton/components/containers/keyTransparency/useKT
 import AuthModal from '@proton/components/containers/password/AuthModal';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import useConfig from '@proton/components/hooks/useConfig';
 import useLoading from '@proton/hooks/useLoading';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -36,9 +38,7 @@ import type { Credentials } from '@proton/shared/lib/srp';
 import useFlag from '@proton/unleash/useFlag';
 
 import {
-    useConfig,
     useCustomDomains,
-    useGetAddresses,
     useModals,
     useNotifications,
     useOrganizationKey,

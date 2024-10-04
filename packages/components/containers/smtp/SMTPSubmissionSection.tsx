@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button, Href } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -17,7 +18,6 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import UpgradeBanner from '@proton/components/containers/account/UpgradeBanner';
 import SMTPTokenModal from '@proton/components/containers/smtp/SMTPTokenModal';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useAddresses from '@proton/components/hooks/useAddresses';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useOrganization } from '@proton/components/hooks/useOrganization';

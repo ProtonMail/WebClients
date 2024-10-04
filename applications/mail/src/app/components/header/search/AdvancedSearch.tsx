@@ -6,8 +6,9 @@ import { add, fromUnixTime, getUnixTime, isAfter, isBefore, isEqual, sub } from 
 import type { History } from 'history';
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms';
-import { DateInput, Label, Option, PrimaryButton, SelectTwo, useAddresses, useUser } from '@proton/components';
+import { DateInput, Label, Option, PrimaryButton, SelectTwo, useUser } from '@proton/components';
 import type { ESIndexingState } from '@proton/encrypted-search';
 import { contentIndexingProgress } from '@proton/encrypted-search';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

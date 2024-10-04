@@ -3,10 +3,9 @@ import type { HTMLAttributes } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
+import useConfig from '@proton/components/hooks/useConfig';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-
-import { useConfig } from '../../../hooks';
 
 type Props = HTMLAttributes<HTMLDivElement>;
 

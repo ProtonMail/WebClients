@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { Button, Href } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
@@ -7,6 +8,8 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useIsRecoveryFileAvailable from '@proton/components/hooks/recoveryFile/useIsRecoveryFileAvailable';
 import useApi from '@proton/components/hooks/useApi';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
+import useConfig from '@proton/components/hooks/useConfig';
 import { useGetUserSettings } from '@proton/components/hooks/useUserSettings';
 import { useLoading } from '@proton/hooks';
 import { updateDeviceRecovery } from '@proton/shared/lib/api/settingsRecovery';
@@ -17,10 +20,7 @@ import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import { syncDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 
 import {
-    useAuthentication,
-    useConfig,
     useEventManager,
-    useGetAddresses,
     useGetUser,
     useGetUserKeys,
     useHasOutdatedRecoveryFile,

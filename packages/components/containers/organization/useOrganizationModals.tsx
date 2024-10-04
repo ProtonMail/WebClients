@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { getPrivatizeError } from '@proton/account/organizationKey/actions';
 import { Button, Card, Href } from '@proton/atoms';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -19,7 +20,7 @@ import {
     getOrganizationKeyInfo,
 } from '@proton/shared/lib/organization/helper';
 
-import { useAddresses, useMembers, useNotifications, useOrganization, useOrganizationKey, useUser } from '../../hooks';
+import { useMembers, useNotifications, useOrganization, useOrganizationKey, useUser } from '../../hooks';
 import ActivatePasswordlessOrganizationKey from './ActivatePasswordlessOrganizationKey';
 import AdministratorList from './AdministratorList';
 import ChangeOrganizationKeysModal from './ChangeOrganizationKeysModal';

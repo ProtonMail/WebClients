@@ -1,3 +1,4 @@
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUserInvitations } from '@proton/account/userInvitations/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import Loader from '@proton/components/components/loader/Loader';
@@ -13,7 +14,6 @@ import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import {
-    useAddresses,
     useLoad,
     useOrganization,
     usePlans,

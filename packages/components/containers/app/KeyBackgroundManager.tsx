@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetKTActivation } from '@proton/components/containers/keyTransparency/useKTActivation';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
@@ -21,14 +23,7 @@ import {
 import { useGetFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
-import {
-    useEventManager,
-    useGetAddressKeys,
-    useGetAddresses,
-    useGetOrganization,
-    useGetUser,
-    useGetUserKeys,
-} from '../../hooks';
+import { useEventManager, useGetOrganization, useGetUser, useGetUserKeys } from '../../hooks';
 import useApi from '../../hooks/useApi';
 
 interface Props {

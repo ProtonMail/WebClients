@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -13,7 +14,6 @@ import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import noop from '@proton/utils/noop';
 
-import { useAddresses } from '../../../hooks';
 import useContactList from '../hooks/useContactList';
 import ContactView from '../view/ContactView';
 

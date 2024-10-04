@@ -82,12 +82,12 @@ jest.mock('@proton/components/hooks/useGetEncryptionPreferences', () => ({
     default: jest.fn(),
 }));
 
-jest.mock('@proton/components/hooks/useAddressesKeys', () => ({
+jest.mock('@proton/account/addressKeys/hooks', () => ({
     __esModule: true,
     useGetAddressKeys: jest.fn(),
 }));
 
-jest.mock('@proton/components/hooks/useAddresses', () => ({
+jest.mock('@proton/account/addresses/hooks', () => ({
     __esModule: true,
     useGetAddresses: jest.fn(),
 }));

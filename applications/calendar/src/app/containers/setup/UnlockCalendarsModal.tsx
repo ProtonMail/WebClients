@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { Button, ButtonLike } from '@proton/atoms';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import {
@@ -16,8 +18,6 @@ import {
     useApi,
     useConfig,
     useDrawer,
-    useGetAddressKeys,
-    useGetAddresses,
     useModalState,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';

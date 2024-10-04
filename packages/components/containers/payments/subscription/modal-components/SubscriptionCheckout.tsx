@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import Badge from '@proton/components/components/badge/Badge';
 import Info from '@proton/components/components/link/Info';
+import useConfig from '@proton/components/hooks/useConfig';
 import type { FullPlansMap, PaymentMethodStatusExtended } from '@proton/payments';
 import { getAvailableCurrencies } from '@proton/payments';
 import { APPS, PLANS } from '@proton/shared/lib/constants';
@@ -24,7 +25,7 @@ import type {
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 
-import { useConfig, usePlans, useUser } from '../../../../hooks';
+import { usePlans, useUser } from '../../../../hooks';
 import Checkout from '../../Checkout';
 import { getBlackFridayRenewalNoticeText, getCheckoutRenewNoticeText } from '../../RenewalNotice';
 import StartDateCheckoutRow from '../../StartDateCheckoutRow';

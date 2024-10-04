@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -37,7 +38,6 @@ import noop from '@proton/utils/noop';
 import {
     useErrorHandler,
     useEventManager,
-    useGetAddresses,
     useGetOrganizationKey,
     useGetUserKeys,
     useNotifications,

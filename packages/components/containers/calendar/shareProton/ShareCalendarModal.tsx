@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { Button, Href } from '@proton/atoms';
 import AddressesInput, { AddressesInputItem } from '@proton/components/components/addressesInput/AddressesInput';
 import Icon from '@proton/components/components/icon/Icon';
@@ -18,7 +19,6 @@ import InputField from '@proton/components/components/v2/field/InputField';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useKeyTransparencyContext } from '@proton/components/containers/keyTransparency/useKeyTransparencyContext';
 import {
-    useGetAddressKeys,
     useGetDecryptedPassphraseAndCalendarKeys,
     useGetEncryptionPreferences,
     useNotifications,

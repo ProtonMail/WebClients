@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { getMemberAddresses } from '@proton/account';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -42,7 +43,6 @@ import noop from '@proton/utils/noop';
 import {
     useErrorHandler,
     useEventManager,
-    useGetAddresses,
     useGetOrganization,
     useGetOrganizationKey,
     useGetUser,

@@ -2,8 +2,9 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms';
-import { Prompt, useGetAddresses, useModalState } from '@proton/components';
+import { Prompt, useModalState } from '@proton/components';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import type { Address } from '@proton/shared/lib/interfaces';
 

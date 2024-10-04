@@ -7,6 +7,7 @@ import Loader from '@proton/components/components/loader/Loader';
 import SettingsSectionTitle from '@proton/components/containers/account/SettingsSectionTitle';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useIsRecoveryFileAvailable from '@proton/components/hooks/recoveryFile/useIsRecoveryFileAvailable';
+import useIsSentinelUser from '@proton/components/hooks/useIsSentinelUser';
 import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
@@ -19,7 +20,6 @@ import {
     useIsDataRecoveryAvailable,
     useIsMnemonicAvailable,
     useIsSecurityCheckupAvailable,
-    useIsSentinelUser,
     useRecoverySecrets,
     useRecoveryStatus,
     useSecurityCheckup,

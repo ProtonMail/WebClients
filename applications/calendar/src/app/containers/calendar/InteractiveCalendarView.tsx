@@ -4,6 +4,7 @@ import { Prompt } from 'react-router';
 
 import { c } from 'ttag';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import {
     Dropzone,
     ImportModal,
@@ -14,7 +15,6 @@ import {
     useContactEmails,
     useContactEmailsCache,
     useEventManager,
-    useGetAddressKeys,
     useGetCalendarEventRaw,
     useGetEncryptionPreferences,
     useNotifications,

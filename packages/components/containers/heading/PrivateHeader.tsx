@@ -6,6 +6,7 @@ import TopNavbarList from '@proton/components/components/topnavbar/TopNavbarList
 import TopNavbarListItem from '@proton/components/components/topnavbar/TopNavbarListItem';
 import TopNavbarUpsell from '@proton/components/components/topnavbar/TopNavbarUpsell';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import useConfig from '@proton/components/hooks/useConfig';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
@@ -13,7 +14,7 @@ import clsx from '@proton/utils/clsx';
 
 import type { Props as HeaderProps } from '../../components/header/Header';
 import Header from '../../components/header/Header';
-import { useConfig, useIsPaidUserCookie } from '../../hooks';
+import { useIsPaidUserCookie } from '../../hooks';
 
 interface Props extends HeaderProps {
     settingsButton?: ReactNode;

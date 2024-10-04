@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button, CircleLoader } from '@proton/atoms';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -42,7 +43,6 @@ import {
 import noop from '@proton/utils/noop';
 
 import {
-    useAddresses,
     useCustomDomains,
     useEventManager,
     useGetOrganizationKey,

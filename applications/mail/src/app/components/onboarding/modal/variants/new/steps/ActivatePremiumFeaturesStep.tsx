@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms';
 import {
     OnboardingStep,
@@ -11,7 +12,6 @@ import {
     useApi,
     useAuthentication,
     useEventManager,
-    useGetAddresses,
     useGetUserKeys,
     useKTVerifier,
     useProtonDomains,
