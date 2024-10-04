@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 
 import type { Location } from 'history';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import type { Breakpoints } from '@proton/components';
 import {
     TopNavbarListItemSearchButton,
-    useAddresses,
     usePopperAnchor,
     useProgressiveRollout,
     useToggle,

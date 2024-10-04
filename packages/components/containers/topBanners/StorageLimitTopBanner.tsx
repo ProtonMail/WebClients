@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import SettingsLink from '@proton/components/components/link/SettingsLink';
+import useConfig from '@proton/components/hooks/useConfig';
 import type { APP_NAMES, PLANS } from '@proton/shared/lib/constants';
 import {
     APPS,
@@ -21,7 +22,7 @@ import {
     getSpace,
 } from '@proton/shared/lib/user/storage';
 
-import { useConfig, useLocalState, useSubscription, useUser } from '../../hooks';
+import { useLocalState, useSubscription, useUser } from '../../hooks';
 import LockedStateTopBanner from './LockedStateTopBanner';
 import TopBanner from './TopBanner';
 

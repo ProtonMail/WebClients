@@ -1,5 +1,5 @@
+import { useAddresses } from '@proton/account/addresses/hooks';
 import {
-    useAddresses,
     useGetOrganizationKey,
     useGetPublicKeysForInbox,
     useGetUser,

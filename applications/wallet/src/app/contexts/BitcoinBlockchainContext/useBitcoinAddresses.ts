@@ -4,6 +4,7 @@ import compact from 'lodash/compact';
 import keyBy from 'lodash/keyBy';
 import uniq from 'lodash/uniq';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import {
     type WasmAccount,
     type WasmAddressInfo,
@@ -11,7 +12,7 @@ import {
     type WasmApiWalletAccount,
     type WasmApiWalletBitcoinAddressData,
 } from '@proton/andromeda';
-import { useEventManager, useGetAddressKeys } from '@proton/components/hooks';
+import { useEventManager } from '@proton/components/hooks';
 import { type DecryptedAddressKey, type SimpleMap } from '@proton/shared/lib/interfaces';
 import {
     type AccountWithChainData,

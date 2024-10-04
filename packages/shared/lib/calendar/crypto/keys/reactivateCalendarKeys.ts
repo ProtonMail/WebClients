@@ -1,4 +1,4 @@
-import type { useGetAddressKeys } from '@proton/components';
+import type { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { CryptoProxy } from '@proton/crypto';
 
 import { getAllCalendarKeys, getPassphrases, queryMembers, reactivateCalendarKey } from '../../../api/calendars';

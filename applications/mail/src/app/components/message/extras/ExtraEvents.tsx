@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import {
-    useAddresses,
     useApi,
     useContactEmails,
     useEventManager,
-    useGetAddressKeys,
     useGetCalendarEventRaw,
     useGetCalendarInfo,
     useUser,

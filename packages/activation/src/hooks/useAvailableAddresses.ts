@@ -1,4 +1,4 @@
-import { useAddresses } from '@proton/components/hooks';
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { ADDRESS_STATUS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
 
 const useAvailableAddresses = () => {

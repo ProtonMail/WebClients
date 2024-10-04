@@ -16,6 +16,7 @@ import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import useConfig from '@proton/components/hooks/useConfig';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, BRAND_NAME, SUBSCRIPTION_CANCELLATION_REASONS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -23,7 +24,6 @@ import type { UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import shuffle from '@proton/utils/shuffle';
 
-import { useConfig } from '../../../hooks';
 import useCancellationTelemetry from './cancellationFlow/useCancellationTelemetry';
 
 interface ReasonOption {

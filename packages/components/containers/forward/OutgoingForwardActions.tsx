@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
@@ -15,7 +16,7 @@ import type { Address, OutgoingAddressForwarding, UserModel } from '@proton/shar
 import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useEventManager, useGetAddressKeys, useGetPublicKeysForInbox, useNotifications } from '../../hooks';
+import { useEventManager, useGetPublicKeysForInbox, useNotifications } from '../../hooks';
 import useAddressFlags from '../../hooks/useAddressFlags';
 import ConfirmDeleteForwarding from './ConfirmDeleteForwarding';
 import ForwardModal from './ForwardModal';

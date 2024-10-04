@@ -5,14 +5,10 @@ import isUndefined from 'lodash/isUndefined';
 import noop from 'lodash/noop';
 import { c } from 'ttag';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { Slider } from '@proton/atoms/index';
-import {
-    type ModalStateProps,
-    useAddresses,
-    useGetAddressKeys,
-    useNotifications,
-    useUserKeys,
-} from '@proton/components';
+import { type ModalStateProps, useNotifications, useUserKeys } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { type Address } from '@proton/shared/lib/interfaces';
 import walletClock from '@proton/styles/assets/img/wallet/wallet-clock.jpg';

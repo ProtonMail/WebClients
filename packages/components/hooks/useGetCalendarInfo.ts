@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
-import { useGetAddresses } from '@proton/components/hooks/useAddresses';
-import { useGetAddressKeys } from '@proton/components/hooks/useAddressesKeys';
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import useGetCalendarBootstrap from '@proton/components/hooks/useGetCalendarBootstrap';
 import { useGetDecryptedPassphraseAndCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';

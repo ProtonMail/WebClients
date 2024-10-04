@@ -7,6 +7,7 @@ import SubscriptionModalProvider, {
     useSubscriptionModal,
 } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
+import useConfig from '@proton/components/hooks/useConfig';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
@@ -28,7 +29,7 @@ import {
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import { useConfig, useSubscription, useUser } from '../../hooks';
+import { useSubscription, useUser } from '../../hooks';
 import TopBanner from './TopBanner';
 
 const ModalAction = ({ textAction, upsellRef }: { textAction: string; upsellRef: string | undefined }) => {

@@ -5,6 +5,7 @@ import type { QRCode } from 'jsqr';
 import compact from 'lodash/compact';
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import type { WasmNetwork } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms';
 import type { AddressesAutocompleteItem } from '@proton/components';
@@ -19,7 +20,6 @@ import {
     useModalState,
 } from '@proton/components';
 import { verticalPopperPlacements } from '@proton/components/components/popper/utils';
-import { useAddresses } from '@proton/components/hooks';
 import { canonicalizeEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import type { Address, Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';

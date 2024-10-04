@@ -1,16 +1,17 @@
 import type { MutableRefObject } from 'react';
-import React, { useEffect, useImperativeHandle, useRef, useState } from 'react';
+import { useEffect, useImperativeHandle, useRef, useState } from 'react';
 
 import { addHours } from 'date-fns';
 import { c } from 'ttag';
 
+import useConfig from '@proton/components/hooks/useConfig';
 import { APPS } from '@proton/shared/lib/constants';
 import * as sessionStorageWrapper from '@proton/shared/lib/helpers/sessionStorage';
 import * as localStorageWrapper from '@proton/shared/lib/helpers/storage';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
-import { useConfig, useNotifications } from '../../hooks';
+import { useNotifications } from '../../hooks';
 
 // The sizes for these are hardcoded since the widget calculates it based on the viewport, and since it's in
 // an iframe it needs to have something reasonable.

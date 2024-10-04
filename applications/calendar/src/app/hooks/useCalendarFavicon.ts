@@ -1,4 +1,4 @@
-import { useDynamicFavicon } from '@proton/components/hooks';
+import { useDynamicFavicon } from '@proton/components';
 import useDynamicMonthDay from '@proton/components/hooks/useDynamicMonthDay';
 
 import favicons from '../../assets/favicons';

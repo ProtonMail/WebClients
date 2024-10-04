@@ -17,8 +17,9 @@ jest.mock('@proton/components/components/drawer/views/SecurityCenter/PassAliases
     __esModule: true,
     usePassAliasesSetup: () => {},
 }));
+
 jest.mock('@proton/components/hooks/useNotifications');
-jest.mock('@proton/components/hooks/useAddresses', () => jest.fn().mockImplementation(() => [[], false]));
+jest.mock('@proton/account/addresses/hooks', () => jest.fn().mockImplementation(() => [[], false]));
 jest.mock('@proton/components/hooks/useAuthentication', () => jest.fn().mockImplementation(() => [{}, false]));
 jest.mock('@proton/components/hooks/useUser', () => jest.fn().mockImplementation(() => [{}, false]));
 jest.mock('@proton/components/hooks/useSubscription', () => jest.fn().mockImplementation(() => [{}, false]));

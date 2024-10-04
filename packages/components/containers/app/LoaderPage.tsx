@@ -6,14 +6,14 @@ import { Button, CircleLoader } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import TextLoader from '@proton/components/components/loader/TextLoader';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import useConfig from '@proton/components/hooks/useConfig';
+import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { closeDrawerFromChildApp, getIsAuthorizedApp } from '@proton/shared/lib/drawer/helpers';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import protonSpinner from '@proton/styles/assets/img/loading-spinners/proton-spinner.svg';
 import clsx from '@proton/utils/clsx';
-
-import { useConfig, useDocumentTitle } from '../../hooks';
 
 interface Props {
     documentTitle?: string;

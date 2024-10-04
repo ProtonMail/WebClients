@@ -26,12 +26,14 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import { getCountryOptions, getLocalizedCountryByAbbr } from '@proton/components/helpers/countries';
 import { getObjectKeys } from '@proton/components/helpers/getObjectKeys';
 import useApi from '@proton/components/hooks/useApi';
+import useUserVPN from '@proton/components/hooks/useUserVPN';
+import useVPNLogicals from '@proton/components/hooks/useVPNLogicals';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { readableTime } from '@proton/shared/lib/helpers/time';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
 
-import { useModals, useNotifications, useUser, useUserSettings, useUserVPN, useVPNLogicals } from '../../../hooks';
+import { useModals, useNotifications, useUser, useUserSettings } from '../../../hooks';
 import useApiResult from '../../../hooks/useApiResult';
 import type { Certificate } from '../Certificate';
 import { CATEGORY } from '../OpenVPNConfigurationSection/ConfigsTable';

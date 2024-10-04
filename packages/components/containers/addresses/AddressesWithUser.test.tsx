@@ -2,15 +2,9 @@ import type { ComponentPropsWithoutRef } from 'react';
 
 import { fireEvent, render } from '@testing-library/react';
 
-import {
-    useAddresses,
-    useAddressesKeys,
-    useApi,
-    useKTVerifier,
-    useNotifications,
-    useOrganizationKey,
-    useUser,
-} from '@proton/components';
+import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
+import { useAddresses } from '@proton/account/addresses/hooks';
+import { useApi, useKTVerifier, useNotifications, useOrganizationKey, useUser } from '@proton/components';
 import OrderableTable from '@proton/components/components/orderableTable/OrderableTable';
 import { orderAddress } from '@proton/shared/lib/api/addresses';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
@@ -26,7 +20,7 @@ jest.mock('@proton/components/components/orderableTable/OrderableTable');
 const ActualOrderableTable = jest.requireActual('@proton/components/components/orderableTable/OrderableTable').default;
 const mockedOrderableTable = OrderableTable as jest.MockedFunction<typeof OrderableTable>;
 
-jest.mock('@proton/components/hooks/useAddresses');
+jest.mock('@proton/account/addresses/hooks');
 const mockedUseAddresses = useAddresses as jest.MockedFunction<typeof useAddresses>;
 
 jest.mock('@proton/components/hooks/useApi');
@@ -38,7 +32,7 @@ const mockedUseNotifications = useNotifications as jest.MockedFunction<typeof us
 jest.mock('@proton/components/hooks/useUser');
 const mockedUseUser = useUser as jest.MockedFunction<typeof useUser>;
 
-jest.mock('@proton/components/hooks/useAddressesKeys');
+jest.mock('@proton/account/addressKeys/hooks');
 const mockedUseAddressesKeys = useAddressesKeys as jest.MockedFunction<typeof useAddressesKeys>;
 
 jest.mock('@proton/components/containers/keyTransparency/useKTVerifier');

@@ -2,11 +2,11 @@ import { useCallback, useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import type { Filter } from '@proton/components';
 import {
     NotificationButton,
     createDefaultLabelsFilter,
-    useAddresses,
     useApi,
     useAppLink,
     useNotifications,

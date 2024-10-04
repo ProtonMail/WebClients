@@ -7,8 +7,9 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import { useConfig, useEventManager, useGetOrganization, useNotifications } from '@proton/components/hooks';
+import { useEventManager, useGetOrganization, useNotifications } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
+import useConfig from '@proton/components/hooks/useConfig';
 import { useLoading } from '@proton/hooks';
 import { CacheType } from '@proton/redux-utilities';
 import { acceptInvitation, rejectInvitation } from '@proton/shared/lib/api/user';

@@ -4,11 +4,11 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import noop from 'lodash/noop';
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { CircleLoader } from '@proton/atoms';
 import type { ModalOwnProps } from '@proton/components';
 import { DropdownSizeUnit, Option, SelectTwo, useApi, useAuthentication, useKTVerifier } from '@proton/components';
 import {
-    useAddresses,
     useCustomDomains,
     useMembers,
     useNotifications,

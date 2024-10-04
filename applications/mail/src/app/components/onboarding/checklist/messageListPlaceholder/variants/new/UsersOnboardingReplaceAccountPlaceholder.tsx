@@ -2,12 +2,12 @@ import { memo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button, ButtonLike, type ButtonLikeSize } from '@proton/atoms';
 import {
     Icon,
     Tooltip,
     useActiveBreakpoint,
-    useAddresses,
     useModalStateObject,
     useMyCountry,
     useNotifications,

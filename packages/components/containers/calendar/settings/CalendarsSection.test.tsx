@@ -13,7 +13,7 @@ import ModalsProvider from '../../modals/Provider';
 import type { CalendarsSectionProps } from './CalendarsSection';
 import CalendarsSection from './CalendarsSection';
 
-jest.mock('../../../hooks/useAddresses', () => ({
+jest.mock('@proton/account/addresses/hooks', () => ({
     __esModule: true,
     default: jest.fn(() => [
         [
@@ -33,7 +33,7 @@ jest.mock('../../eventManager/calendar/CalendarModelEventManagerProvider', () =>
     useCalendarModelEventManager: jest.fn(),
 }));
 jest.mock('@proton/components/hooks/useConfig', () => () => ({ APP_NAME: 'proton-calendar', APP_VERSION: 'test' }));
-jest.mock('@proton/components/hooks/useAddresses', () => ({
+jest.mock('@proton/account/addresses/hooks', () => ({
     __esModule: true,
     default: jest.fn(() => [
         [
