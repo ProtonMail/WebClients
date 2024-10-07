@@ -9,6 +9,7 @@ import type {
   ParamsExcludingFunctions,
   RtsMessagePayload,
   BroadcastSource,
+  SuggestionSummaryType,
 } from '@proton/docs-shared'
 import { EditorBridgeMessageType, BridgeOriginProvider } from '@proton/docs-shared'
 import type { UserState } from '@lexical/yjs'
@@ -72,8 +73,9 @@ export class ClientInvoker implements EditorRequiresClientMethods {
   async createSuggestionThread(
     suggestionID: string,
     commentContent: string,
+    suggestionType: SuggestionSummaryType,
   ): Promise<CommentThreadInterface | undefined> {
-    return this.invokeClientMethod('createSuggestionThread', [suggestionID, commentContent])
+    return this.invokeClientMethod('createSuggestionThread', [suggestionID, commentContent, suggestionType])
   }
 
   async resolveThread(threadId: string): Promise<boolean> {

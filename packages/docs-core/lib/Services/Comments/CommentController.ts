@@ -8,6 +8,7 @@ import type {
   InternalEventBusInterface,
   CommentMarkNodeChangeData,
   SuggestionThreadStateAction,
+  SuggestionSummaryType,
 } from '@proton/docs-shared'
 import {
   CommentsMessageType,
@@ -155,6 +156,7 @@ export class CommentController implements CommentControllerInterface, InternalEv
   async createSuggestionThread(
     suggestionID: string,
     commentContent: string,
+    suggestionType: SuggestionSummaryType,
   ): Promise<CommentThreadInterface | undefined> {
     const threadResult = await this._createThread.execute({
       text: commentContent,
@@ -171,11 +173,12 @@ export class CommentController implements CommentControllerInterface, InternalEv
       return undefined
     }
 
-    this.metricService.reportSuggestionsTelemetry(TelemetryDocsEvents.suggestion_created)
-
     const thread = threadResult.getValue()
 
     this.broadcastCommentMessage(CommentsMessageType.AddThread, thread.asPayload())
+
+    this.metricService.reportSuggestionsTelemetry(TelemetryDocsEvents.suggestion_created)
+    this.metricService.reportSuggestionCreated(suggestionType)
 
     return thread
   }
@@ -363,6 +366,7 @@ export class CommentController implements CommentControllerInterface, InternalEv
 
     if (state === CommentThreadState.Accepted || state === CommentThreadState.Rejected) {
       this.metricService.reportSuggestionsTelemetry(TelemetryDocsEvents.suggestion_resolved)
+      this.metricService.reportSuggestionResolved(state === CommentThreadState.Accepted ? 'accepted' : 'rejected')
     }
 
     return true

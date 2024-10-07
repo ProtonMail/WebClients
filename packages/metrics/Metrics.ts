@@ -29,6 +29,8 @@ import type { HttpsProtonMeDocsRealtimeEditLatencyHistogramV1SchemaJson } from '
 import type { HttpsProtonMeDocsRealtimeEditTimeToAckHistogramV1SchemaJson } from './types/docs_realtime_edit_time_to_ack_histogram_v1.schema';
 import type { HttpsProtonMeDocsSquashesLatencyHistogramV1SchemaJson } from './types/docs_squashes_latency_histogram_v1.schema';
 import type { HttpsProtonMeDocsSquashesTotalV1SchemaJson } from './types/docs_squashes_total_v1.schema';
+import type { HttpsProtonMeDocsSuggestionsCreatedTotalV1SchemaJson } from './types/docs_suggestions_created_total_v1.schema';
+import type { HttpsProtonMeDocsSuggestionsResolvedTotalV1SchemaJson } from './types/docs_suggestions_resolved_total_v1.schema';
 import type { HttpsProtonMeDocsTimeLoadDocumentHistogramV1SchemaJson } from './types/docs_time_load_document_histogram_v1.schema';
 import type { HttpsProtonMeDocsUsersSuccessRateTotalV1SchemaJson } from './types/docs_users_success_rate_total_v1.schema';
 import type { HttpsProtonMeDriveDownloadErroringUsersTotalV1SchemaJson } from './types/drive_download_erroring_users_total_v1.schema';
@@ -162,6 +164,10 @@ class Metrics extends MetricsBase {
     public docs_squashes_latency_histogram: Histogram<HttpsProtonMeDocsSquashesLatencyHistogramV1SchemaJson>;
 
     public docs_squashes_total: Counter<HttpsProtonMeDocsSquashesTotalV1SchemaJson>;
+
+    public docs_suggestions_created_total: Counter<HttpsProtonMeDocsSuggestionsCreatedTotalV1SchemaJson>;
+
+    public docs_suggestions_resolved_total: Counter<HttpsProtonMeDocsSuggestionsResolvedTotalV1SchemaJson>;
 
     public docs_time_load_document_histogram: Histogram<HttpsProtonMeDocsTimeLoadDocumentHistogramV1SchemaJson>;
 
@@ -457,6 +463,16 @@ class Metrics extends MetricsBase {
 
         this.docs_squashes_total = new Counter<HttpsProtonMeDocsSquashesTotalV1SchemaJson>(
             { name: 'docs_squashes_total', version: 1 },
+            this.requestService
+        );
+
+        this.docs_suggestions_created_total = new Counter<HttpsProtonMeDocsSuggestionsCreatedTotalV1SchemaJson>(
+            { name: 'docs_suggestions_created_total', version: 1 },
+            this.requestService
+        );
+
+        this.docs_suggestions_resolved_total = new Counter<HttpsProtonMeDocsSuggestionsResolvedTotalV1SchemaJson>(
+            { name: 'docs_suggestions_resolved_total', version: 1 },
             this.requestService
         );
 

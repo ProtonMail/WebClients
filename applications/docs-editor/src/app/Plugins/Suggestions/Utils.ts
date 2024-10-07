@@ -1,6 +1,7 @@
 import type { ElementNode, LexicalNode, RangeSelection, TextNode } from 'lexical'
 import { $isDecoratorNode, $isElementNode, $isTextNode } from 'lexical'
-import type { SuggestionProperties, SuggestionType } from './Types'
+import type { SuggestionProperties } from './Types'
+import type { SuggestionType } from "@proton/docs-shared/lib/SuggestionType"
 import { $isImageNode } from '../Image/ImageNode'
 import type { ProtonNode } from './ProtonNode'
 import { $isSuggestionNode, $createSuggestionNode } from './ProtonNode'
