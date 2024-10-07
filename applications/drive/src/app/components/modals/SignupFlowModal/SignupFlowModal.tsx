@@ -63,8 +63,10 @@ export const SignupFlowModal = ({ customPassword, onClose, ...modalProps }: Prop
             // We redirect to DRIVE_SIGNUP
             if (Code === 1000) {
                 saveUrlPasswordForRedirection(urlPassword + (customPassword ?? ''));
-                countActionWithTelemetry(Actions.SignUpFlowModal);
-                traceTelemetry(Actions.SignUpFlowAndRedirectCompleted).start();
+                await Promise.all([
+                    countActionWithTelemetry(Actions.SignUpFlowModal),
+                    traceTelemetry(Actions.SignUpFlowAndRedirectCompleted).start(),
+                ]);
                 const returnUrlSearchParams = new URLSearchParams();
                 returnUrlSearchParams.append('token', token);
                 const returnUrl = `/shared-with-me?`.concat(returnUrlSearchParams.toString());
@@ -84,7 +86,7 @@ export const SignupFlowModal = ({ customPassword, onClose, ...modalProps }: Prop
             // Email is already in use, we redirect to SIGN_IN
             if (API_CUSTOM_ERROR_CODES.ALREADY_USED === code) {
                 saveUrlPasswordForRedirection(urlPassword + (customPassword ?? ''));
-                countActionWithTelemetry(Actions.SignInFlowModal);
+                await countActionWithTelemetry(Actions.SignInFlowModal);
                 const returnUrlSearchParams = new URLSearchParams();
                 returnUrlSearchParams.append('token', token);
                 // Always return to public page in case of signin. This will be done in MainContainer.tsx on page loading
