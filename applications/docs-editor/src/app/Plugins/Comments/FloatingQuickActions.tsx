@@ -87,7 +87,7 @@ export function FloatingQuickActions({
               onClick={() => {
                 editor.dispatchCommand(TOGGLE_SUGGESTION_MODE_COMMAND, undefined)
               }}
-              data-testid="floating-add-comment-button"
+              data-testid="floating-toggle-suggestion-mode-button"
             >
               <SpeechBubblePenIcon className="h-4 w-4 fill-current" />
             </button>
