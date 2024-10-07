@@ -13,6 +13,7 @@ import { COMPUTE_BITCOIN_UNIT, type TransactionData } from '@proton/wallet';
 import { useUserWalletSettings } from '@proton/wallet/store';
 
 import { Button, ButtonLike, CoreButton } from '../../atoms';
+import { MaybeHiddenAmount } from '../../atoms/MaybeHiddenAmount';
 import { Price } from '../../atoms/Price';
 import { BoostTransactionModal } from '../../components/BoostTransactionModal';
 import type { TxDataListItemProps } from '../../components/TransactionList/data-list-items';
@@ -96,11 +97,13 @@ export const RecipientsDataItem = ({
                                                     'block ml-auto color-hint flex flex-row flex-nowrap justify-end'
                                                 )}
                                             >
-                                                {convertAmountStr(
-                                                    output.value,
-                                                    COMPUTE_BITCOIN_UNIT,
-                                                    settings.BitcoinUnit
-                                                )}{' '}
+                                                <MaybeHiddenAmount>
+                                                    {convertAmountStr(
+                                                        output.value,
+                                                        COMPUTE_BITCOIN_UNIT,
+                                                        settings.BitcoinUnit
+                                                    )}
+                                                </MaybeHiddenAmount>{' '}
                                                 {getLabelByUnit(settings.BitcoinUnit)}
                                             </div>
                                         )}
@@ -308,7 +311,9 @@ export const AmountDataItem = ({
             </div>
             {exchangeRate && (
                 <div className="color-weak">
-                    {convertAmountStr(amount ?? 0, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
+                    <MaybeHiddenAmount>
+                        {convertAmountStr(amount ?? 0, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}
+                    </MaybeHiddenAmount>{' '}
                     {getLabelByUnit(settings.BitcoinUnit)}
                 </div>
             )}

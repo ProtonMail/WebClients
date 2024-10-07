@@ -12,6 +12,7 @@ import { COMPUTE_BITCOIN_UNIT, type TransactionData } from '@proton/wallet';
 import { useApiWalletTransactionData, useUserWalletSettings } from '@proton/wallet/store';
 
 import { CoreButton } from '../../atoms';
+import { MaybeHiddenAmount } from '../../atoms/MaybeHiddenAmount';
 import { Price } from '../../atoms/Price';
 import type { RecipientDetailsModalOwnProps } from '../../components/RecipientDetailsModal';
 import { RecipientDetailsModal } from '../../components/RecipientDetailsModal';
@@ -90,7 +91,9 @@ export const WalletTransactionDataDrawer = ({
 
                 {exchangeRate && (
                     <div className="text-lg color-hint">
-                        {convertAmountStr(value, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
+                        <MaybeHiddenAmount>
+                            {convertAmountStr(value, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}
+                        </MaybeHiddenAmount>{' '}
                         {getLabelByUnit(settings.BitcoinUnit)}
                     </div>
                 )}
