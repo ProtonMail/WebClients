@@ -10,6 +10,7 @@ import { c, msgid } from 'ttag'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { useCommentsContext } from './CommentsContext'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
+import { $getSelection, $isRangeSelection } from 'lexical'
 
 export function CommentsPanelListThread({ thread }: { thread: CommentThreadInterface }) {
   const [editor] = useLexicalComposerContext()
@@ -84,6 +85,47 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
 
   const handleClickThread = () => {
     controller.markThreadAsRead(thread.id).catch(sendErrorMessage)
+    const firstMarkNode = markNodes[0]
+    if (!firstMarkNode) {
+      return
+    }
+    const activeElement = document.activeElement
+    editor.setEditable(false)
+    editor.update(
+      () => {
+        const rootElement = editor.getRootElement()?.parentElement
+        const markNodeElement = editor.getElementByKey(firstMarkNode.getKey())
+        if (markNodeElement && rootElement) {
+          const markRect = markNodeElement.getBoundingClientRect()
+          const rootRect = rootElement.getBoundingClientRect()
+          const shouldScroll = markRect.bottom < rootRect.top || markRect.top > rootRect.bottom
+          if (shouldScroll) {
+            markNodeElement.scrollIntoView({
+              // eslint-disable-next-line custom-rules/deprecate-classes
+              block: 'center',
+              behavior: 'smooth',
+            })
+          }
+        }
+        const selection = $getSelection()
+        if ($isRangeSelection(selection)) {
+          const focus = selection.focus.getNode()
+          if (firstMarkNode.is(focus) || firstMarkNode.isParentOf(focus)) {
+            return
+          }
+        }
+        firstMarkNode.selectStart()
+      },
+      {
+        onUpdate() {
+          editor.setEditable(true)
+          // Restore selection to the previous element
+          if (activeElement !== null) {
+            ;(activeElement as HTMLElement).focus()
+          }
+        },
+      },
+    )
   }
 
   const isActive = activeIDs.includes(markID) || isFocusWithin
