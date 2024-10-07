@@ -10,7 +10,7 @@ import { c, msgid } from 'ttag'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { useCommentsContext } from './CommentsContext'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { $getSelection, $isRangeSelection } from 'lexical'
+import { $getNodeByKey, $getSelection, $isRangeSelection } from 'lexical'
 
 export function CommentsPanelListThread({ thread }: { thread: CommentThreadInterface }) {
   const [editor] = useLexicalComposerContext()
@@ -94,7 +94,12 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
     editor.update(
       () => {
         const rootElement = editor.getRootElement()?.parentElement
-        const markNodeElement = editor.getElementByKey(firstMarkNode.getKey())
+        const nodeKey = firstMarkNode.getKey()
+        const firstMarkNodeLatest = $getNodeByKey(nodeKey)
+        if (!firstMarkNodeLatest) {
+          return
+        }
+        const markNodeElement = editor.getElementByKey(nodeKey)
         if (markNodeElement && rootElement) {
           const markRect = markNodeElement.getBoundingClientRect()
           const rootRect = rootElement.getBoundingClientRect()
@@ -110,11 +115,11 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
         const selection = $getSelection()
         if ($isRangeSelection(selection)) {
           const focus = selection.focus.getNode()
-          if (firstMarkNode.is(focus) || firstMarkNode.isParentOf(focus)) {
+          if (firstMarkNodeLatest.is(focus) || firstMarkNodeLatest.isParentOf(focus)) {
             return
           }
         }
-        firstMarkNode.selectStart()
+        firstMarkNodeLatest.selectStart()
       },
       {
         onUpdate() {
