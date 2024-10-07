@@ -1,4 +1,5 @@
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
+import useApi from '@proton/components/hooks/useApi';
 import type { VerifiedEpoch } from '@proton/key-transparency/lib';
 import { fetchLatestEpoch, ktSentryReportError, uploadVerifiedEpoch } from '@proton/key-transparency/lib';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -6,8 +7,6 @@ import { getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import type { Address, ResetSelfAudit, User } from '@proton/shared/lib/interfaces';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
-
-import { useApi } from '../../hooks';
 
 /**
  *

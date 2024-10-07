@@ -11,6 +11,8 @@ import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { updateOrganizationName } from '@proton/shared/lib/api/organization';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -18,7 +20,7 @@ import type { Organization } from '@proton/shared/lib/interfaces';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import noop from '@proton/utils/noop';
 
-import { useApi, useEventManager, useNotifications } from '../../hooks';
+import { useNotifications } from '../../hooks';
 
 interface Props extends ModalProps {
     organization: Organization;

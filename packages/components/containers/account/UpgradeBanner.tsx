@@ -2,9 +2,10 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike, Card } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
-import { useSubscription, useUser } from '@proton/components/hooks';
+import { useSubscription } from '@proton/components/hooks';
 import { useBundleProPlan } from '@proton/components/hooks/useHasPlan';
 import { PLANS } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';

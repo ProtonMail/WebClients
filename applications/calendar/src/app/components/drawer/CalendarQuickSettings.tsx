@@ -18,9 +18,11 @@ import {
     Toggle,
     ViewPreferenceSelector,
     WeekStartSelector,
+    useApi,
     useConfirmActionModal,
+    useEventManager,
 } from '@proton/components';
-import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { DEFAULT_CALENDAR_USER_SETTINGS } from '@proton/shared/lib/calendar/calendar';

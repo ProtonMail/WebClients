@@ -1,4 +1,4 @@
-import type { useGetAddressKeys } from '@proton/components';
+import type { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 
 import { resetCalendars } from '../../../api/calendars';
 import type { Api } from '../../../interfaces';

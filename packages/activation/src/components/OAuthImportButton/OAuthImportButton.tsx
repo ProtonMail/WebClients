@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import type { EASY_SWITCH_SOURCES, EasySwitchFeatureFlag, ImportType } from '@proton/activation/src/interface';
 import { ImportProvider } from '@proton/activation/src/interface';
 import { startOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
-import { useUser } from '@proton/components/hooks';
 import { FeatureCode, useFeature } from '@proton/features';
 
 import GoogleButton from './GoogleButton';

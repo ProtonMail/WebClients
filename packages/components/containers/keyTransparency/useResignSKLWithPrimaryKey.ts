@@ -1,4 +1,5 @@
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
+import useApi from '@proton/components/hooks/useApi';
 import {
     fetchSignedKeyLists,
     fetchVerifiedEpoch,
@@ -10,8 +11,6 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { ResignSKLWithPrimaryKey, ResignSKLWithPrimaryKeyArguments } from '@proton/shared/lib/interfaces';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import { getSignedKeyListSignature } from '@proton/shared/lib/keys';
-
-import { useApi } from '../../hooks';
 
 const useResignSKLWithPrimaryKey = (): ResignSKLWithPrimaryKey => {
     const api = getSilentApi(useApi());

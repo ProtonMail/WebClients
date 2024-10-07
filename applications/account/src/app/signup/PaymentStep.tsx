@@ -12,6 +12,7 @@ import {
     SubscriptionCheckoutCycleItem,
     SubscriptionCycleSelector,
     getCheckoutRenewNoticeText,
+    useConfig,
 } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
@@ -20,7 +21,7 @@ import type { OnBillingAddressChange } from '@proton/components/containers/payme
 import { WrappedTaxCountrySelector } from '@proton/components/containers/payments/TaxCountrySelector';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
 import { getAllowedCycles, getBillingAddressStatus } from '@proton/components/containers/payments/subscription/helpers';
-import { useConfig, useHandler } from '@proton/components/hooks';
+import { useHandler } from '@proton/components/hooks';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { useCurrencies, usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';

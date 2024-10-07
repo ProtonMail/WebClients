@@ -3,15 +3,15 @@ import { useCallback } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useGetUser } from '@proton/account/user/hooks';
 import { Button, Href } from '@proton/atoms';
 import {
     ErrorButton,
     Prompt,
     useApi,
     useEventManager,
-    useGetAddresses,
     useGetSubscription,
-    useGetUser,
     useHandler,
     useModalState,
     useNotifications,

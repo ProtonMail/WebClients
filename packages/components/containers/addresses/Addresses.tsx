@@ -1,7 +1,7 @@
-import { useAllowAddressDeletion } from '@proton/components';
+import { useUser } from '@proton/account/user/hooks';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
-import { useUser } from '../../hooks';
+import { useAllowAddressDeletion } from '../../hooks';
 import AddressesWithMembers from './AddressesWithMembers';
 import AddressesWithUser from './AddressesWithUser';
 

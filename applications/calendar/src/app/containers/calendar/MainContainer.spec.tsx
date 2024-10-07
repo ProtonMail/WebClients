@@ -15,7 +15,7 @@ import MainContainer from './MainContainer';
 import getSaveEventActions from './eventActions/getSaveEventActions';
 
 jest.mock('./eventActions/getSaveEventActions', () => jest.fn());
-jest.mock('@proton/components/hooks/useAddresses', () => ({
+jest.mock('@proton/account/addresses/hooks', () => ({
     __esModule: true,
     default: jest.fn(() => [
         [

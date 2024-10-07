@@ -1,12 +1,11 @@
 import { useCallback } from 'react';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
+import useGetCalendarBootstrap from '@proton/components/hooks/useGetCalendarBootstrap';
+import { useGetDecryptedPassphraseAndCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import type { GetCalendarInfo } from '@proton/shared/lib/interfaces/hooks/GetCalendarInfo';
-
-import { useGetAddresses } from './useAddresses';
-import { useGetAddressKeys } from './useAddressesKeys';
-import { useGetCalendarBootstrap } from './useGetCalendarBootstrap';
-import { useGetDecryptedPassphraseAndCalendarKeys } from './useGetDecryptedPassphraseAndCalendarKeys';
 
 export const useGetCalendarInfo = (): GetCalendarInfo => {
     const getCalendarBootstrap = useGetCalendarBootstrap();

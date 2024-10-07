@@ -4,8 +4,11 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { getDomainAddressError, useMemberAddresses } from '@proton/account';
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { selectUnprivatizationState } from '@proton/account/members/unprivatizeMembers';
 import { getDomainError } from '@proton/account/members/validateAddUser';
+import { useProtonDomains } from '@proton/account/protonDomains/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { Avatar, Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import SearchInput from '@proton/components/components/input/SearchInput';
@@ -23,6 +26,9 @@ import {
     getInvitationLimit,
 } from '@proton/components/containers/members/UsersAndAddressesSection/helper';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
+import useApi from '@proton/components/hooks/useApi';
+import useConfig from '@proton/components/hooks/useConfig';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { baseUseSelector } from '@proton/react-redux-store';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { removeMember, resendUnprivatizationLink, updateRole } from '@proton/shared/lib/api/members';
@@ -52,19 +58,13 @@ import clsx from '@proton/utils/clsx';
 
 import Tooltip from '../../../components/tooltip/Tooltip';
 import {
-    useAddresses,
-    useApi,
-    useConfig,
     useCustomDomains,
-    useEventManager,
     useGetOrganizationKey,
     useMembers,
     useNotifications,
     useOrganization,
     useOrganizationKey,
-    useProtonDomains,
     useSubscription,
-    useUser,
 } from '../../../hooks';
 import { SetupOrgSpotlight } from '../../account/spotlights/passB2bOnboardingSpotlights/PassB2bOnboardingSpotlights';
 import AddressModal from '../../addresses/AddressModal';

@@ -2,6 +2,9 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useProtonDomains } from '@proton/account/protonDomains/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import {
     OnboardingStep,
@@ -11,11 +14,8 @@ import {
     useApi,
     useAuthentication,
     useEventManager,
-    useGetAddresses,
     useGetUserKeys,
     useKTVerifier,
-    useProtonDomains,
-    useUser,
 } from '@proton/components';
 import { orderAddress, setupAddress } from '@proton/shared/lib/api/addresses';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';

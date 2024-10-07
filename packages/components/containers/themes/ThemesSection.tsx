@@ -7,10 +7,10 @@ import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLa
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { ColorScheme, ThemeModeSetting, getThemes } from '@proton/shared/lib/themes/themes';
 
-import { useNotifications } from '../..';
 import ThemeCards from './ThemeCards';
 import { useTheme } from './ThemeProvider';
 import ThemeSyncModeCard from './ThemeSyncModeCard';

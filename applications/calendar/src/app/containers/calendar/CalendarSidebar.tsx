@@ -3,6 +3,7 @@ import { useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
 import {
@@ -31,7 +32,6 @@ import {
     useLocalState,
     useModalState,
     useSubscribedCalendars,
-    useUser,
 } from '@proton/components';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import { useLoadingByKey } from '@proton/hooks/useLoading';

@@ -1,5 +1,6 @@
+import { useUser } from '@proton/account/user/hooks';
 import { OnboardingModal } from '@proton/components';
-import { useOrganization, useSubscription, useUser } from '@proton/components/hooks';
+import { useOrganization, useSubscription } from '@proton/components/hooks';
 import {
     getIsB2BAudienceFromPlan,
     getIsB2BAudienceFromSubscription,

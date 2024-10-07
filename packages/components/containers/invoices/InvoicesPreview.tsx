@@ -1,10 +1,10 @@
 import type { Ref } from 'react';
 import { forwardRef, useImperativeHandle, useRef, useState } from 'react';
 
+import useApi from '@proton/components/hooks/useApi';
 import type { Invoice } from '@proton/payments';
 import { getInvoice } from '@proton/shared/lib/api/payments';
 
-import { useApi } from '../../hooks';
 import FilePreview from '../filePreview/FilePreview';
 import NavigationControl from '../filePreview/NavigationControl';
 import { getInvoicePaymentsVersion } from './helpers';

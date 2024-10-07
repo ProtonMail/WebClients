@@ -2,7 +2,9 @@ import { c } from 'ttag';
 
 import type { DropdownSizeUnit, Unit } from '@proton/components/components/dropdown/utils';
 import TimeZoneSelector from '@proton/components/components/timezoneSelector/TimeZoneSelector';
-import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import type { AbbreviatedTimezone } from '@proton/shared/lib/date/timezone';

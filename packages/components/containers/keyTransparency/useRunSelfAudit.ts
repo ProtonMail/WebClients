@@ -1,5 +1,11 @@
 import { useCallback } from 'react';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useGetUser } from '@proton/account/user/hooks';
+import useApi from '@proton/components/hooks/useApi';
+import useConfig from '@proton/components/hooks/useConfig';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { CryptoProxy, serverTime } from '@proton/crypto';
 import type { SelfAuditResult } from '@proton/key-transparency/lib';
 import {
@@ -15,15 +21,7 @@ import { KEY_TRANSPARENCY_REMINDER_UPDATE } from '@proton/shared/lib/drawer/inte
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { DecryptedAddressKey, KeyPair, SelfAuditState } from '@proton/shared/lib/interfaces';
 
-import {
-    useApi,
-    useConfig,
-    useEventManager,
-    useGetAddressKeys,
-    useGetAddresses,
-    useGetUser,
-    useGetUserKeys,
-} from '../../hooks';
+import { useGetUserKeys } from '../../hooks';
 import useGetLatestEpoch from './useGetLatestEpoch';
 import useReportSelfAuditErrors from './useReportSelfAuditErrors';
 

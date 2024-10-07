@@ -1,9 +1,13 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { NewUpsellModal } from '@proton/components';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import useToggle from '@proton/components/hooks/useToggle';
 import { useLoading } from '@proton/hooks';
 import { updatePMSignature } from '@proton/shared/lib/api/mailSettings';
 import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
@@ -17,7 +21,7 @@ import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 import signatureImg from '@proton/styles/assets/img/illustrations/new-upsells-img/tools.svg';
 
-import { useApi, useEventManager, useNotifications, useToggle, useUser } from '../../hooks';
+import { useNotifications } from '../../hooks';
 
 interface Props {
     id: string;

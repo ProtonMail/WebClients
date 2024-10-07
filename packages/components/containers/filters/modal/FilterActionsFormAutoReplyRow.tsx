@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import Alert from '@proton/components/components/alert/Alert';
 import Editor from '@proton/components/components/editor/Editor';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
@@ -12,7 +13,6 @@ import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { AUTO_REPLY_CHARACTER_COUNT_LIMIT } from '@proton/shared/lib/mail/constants';
 import noop from '@proton/utils/noop';
 
-import { useUser } from '../../../hooks';
 import type { Actions } from '../interfaces';
 
 interface Props {

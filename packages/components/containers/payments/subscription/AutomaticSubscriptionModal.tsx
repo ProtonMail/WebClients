@@ -4,17 +4,9 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
-import type { ModalProps, OpenCallbackProps } from '@proton/components';
-import {
-    useConfig,
-    useLastSubscriptionEnd,
-    useLoad,
-    usePlans,
-    useSubscription,
-    useSubscriptionModal,
-    useUser,
-} from '@proton/components';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import {
@@ -58,8 +50,14 @@ import {
     blackFriday2023VPNYearlyEligibility,
 } from '@proton/components/containers/offers/operations/blackFridayVPN2023Yearly';
 import { getMonths } from '@proton/components/containers/payments/SubscriptionsSection';
+import type { OpenCallbackProps } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { usePlans, useSubscription } from '@proton/components/hooks';
+import useConfig from '@proton/components/hooks/useConfig';
+import useLastSubscriptionEnd from '@proton/components/hooks/useLastSubscriptionEnd';
+import useLoad from '@proton/components/hooks/useLoad';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { type PaymentMethodStatusExtended, getPlansMap } from '@proton/payments';
 import type { PLANS } from '@proton/shared/lib/constants';

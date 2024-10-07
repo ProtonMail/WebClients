@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button, ButtonLike } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -11,7 +12,6 @@ import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { useSessionRecoveryInsecureTimeRemaining } from '@proton/components/hooks/useSessionRecovery';
 
-import { useUser } from '../../../hooks';
 import ConfirmSessionRecoveryCancellationModal from './ConfirmSessionRecoveryCancellationModal';
 import passwordResetIllustration from './password-reset-illustration.svg';
 

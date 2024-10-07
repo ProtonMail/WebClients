@@ -1,13 +1,8 @@
-import { UnlockModal, useAuthentication, useKTVerifier } from '@proton/components';
-import {
-    useApi,
-    useEventManager,
-    useGetAddresses,
-    useGetUserKeys,
-    useModals,
-    useProtonDomains,
-    useUser,
-} from '@proton/components/hooks';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useProtonDomains } from '@proton/account/protonDomains/hooks';
+import { useUser } from '@proton/account/user/hooks';
+import { UnlockModal, useApi, useAuthentication, useEventManager, useKTVerifier } from '@proton/components';
+import { useGetUserKeys, useModals } from '@proton/components/hooks';
 import { setupAddress } from '@proton/shared/lib/api/addresses';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '@proton/shared/lib/constants';
 import { missingKeysSelfProcess } from '@proton/shared/lib/keys';

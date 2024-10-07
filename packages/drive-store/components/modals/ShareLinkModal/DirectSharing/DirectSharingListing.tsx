@@ -2,8 +2,9 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Avatar, CircleLoader } from '@proton/atoms';
-import { useContactEmails, useSortedList, useUser } from '@proton/components/hooks';
+import { useContactEmails, useSortedList } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';

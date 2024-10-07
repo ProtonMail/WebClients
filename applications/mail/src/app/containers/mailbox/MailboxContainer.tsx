@@ -15,12 +15,11 @@ import {
     InboxQuickSettingsAppButton,
     PrivateMainArea,
     useCalendarsInfoCoreListener,
-    useFolders,
     useInboxDesktopBadgeCount,
     useItemsSelection,
-    useLabels,
     useModalState,
 } from '@proton/components';
+import { useFolders, useLabels } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';

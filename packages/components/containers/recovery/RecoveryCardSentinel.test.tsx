@@ -3,7 +3,11 @@ import { render } from '@testing-library/react';
 import RecoveryCard from './RecoveryCard';
 
 jest.mock('../../hooks/useIsSentinelUser', () => jest.fn());
-jest.mock('../../hooks/useUser', () => jest.fn());
+jest.mock('@proton/account/user/hooks', () => ({
+    __esModule: true,
+    useUser: jest.fn(() => [{ MnemonicStatus: 3, Flags: { sso: false } }, false]),
+    useGetUser: jest.fn(() => [{ MnemonicStatus: 3, Flags: { sso: false } }, false]),
+}));
 jest.mock('../../hooks/useUserSettings', () => jest.fn());
 jest.mock('../../hooks/useRecoveryStatus', () => jest.fn());
 jest.mock('@proton/components/hooks/recoveryFile/useIsRecoveryFileAvailable', () => jest.fn());
@@ -21,7 +25,6 @@ const canDisplayNewSentinelSettings = true; //for feature flag
 
 const setupMocks = (isSentinelUser: boolean) => {
     require('../../hooks/useIsSentinelUser').mockReturnValue([{ isSentinelUser }, false]);
-    require('../../hooks/useUser').mockReturnValue([{ MnemonicStatus: 3, Flags: { sso: false } }, false]);
     require('../../hooks/useUserSettings').mockReturnValue([
         { Email: { Value: '', Status: 0, Notify: 0, Reset: 0 }, Phone: { Value: '', Status: 0, Notify: 0, Reset: 0 } },
         false,

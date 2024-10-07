@@ -4,7 +4,8 @@ import DOMPurify from 'dompurify';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
-import { useDragToScroll, useElementRect } from '@proton/components/hooks';
+import { useElementRect } from '@proton/components/hooks';
+import { useDragToScroll } from '@proton/components/hooks/useDragToScroll';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import { isSVG } from '@proton/shared/lib/helpers/mimetype';

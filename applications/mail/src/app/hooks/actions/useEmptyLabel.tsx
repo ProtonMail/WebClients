@@ -1,11 +1,11 @@
 import { useCallback, useMemo, useState } from 'react';
 
-import { useApi, useEventManager, useFolders, useLabels, useModalTwo } from '@proton/components';
+import { useApi, useEventManager, useModalTwo } from '@proton/components';
+import { useFolders, useLabels } from '@proton/mail';
 import { emptyLabel as emptyLabelRequest } from '@proton/shared/lib/api/messages';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
-
 import SelectAllDeleteModal from 'proton-mail/components/list/select-all/modals/SelectAllDeleteModal';
+import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { isCustomLabel } from '../../helpers/labels';
 import { backendActionFinished, backendActionStarted } from '../../store/elements/elementsActions';

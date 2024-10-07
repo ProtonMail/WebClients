@@ -2,6 +2,7 @@ import { memo, useCallback, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import {
     AppVersion,
     AppsDropdown,
@@ -15,7 +16,6 @@ import {
     useActiveBreakpoint,
     useApi,
     useLocalState,
-    useUser,
 } from '@proton/components';
 import SidebarStorageUpsell from '@proton/components/containers/payments/subscription/SidebarStorageUpsell';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';

@@ -7,7 +7,9 @@ import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Pagination from '@proton/components/components/pagination/Pagination';
 import usePaginationAsync from '@proton/components/components/pagination/usePaginationAsync';
-import { useApi, useErrorHandler, useNotifications } from '@proton/components/hooks';
+import PassEventsTable from '@proton/components/containers/b2bDashboard/Pass/PassEventsTable';
+import { useErrorHandler, useNotifications } from '@proton/components/hooks';
+import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { getPassLogs } from '@proton/shared/lib/api/b2blogs';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
@@ -18,7 +20,6 @@ import SettingsSectionWide from '../../../containers/account/SettingsSectionWide
 import GenericError from '../../../containers/error/GenericError';
 import { toCamelCase } from '../../credentialLeak/helpers';
 import { FilterAndSortEventsBlock } from '../FilterAndSortEventBlock';
-import PassEventsTable from './PassEventsTable';
 import {
     ALL_EVENTS_DEFAULT,
     PAGINATION_LIMIT,

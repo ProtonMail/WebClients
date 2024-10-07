@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 
+import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import type { Api } from '@proton/shared/lib/interfaces';
-
-import { useApi } from '../../../hooks';
 
 const fetchDomains = async (api: Api) => {
     const result = await api<{ Domains: string[] }>(queryAvailableDomains());

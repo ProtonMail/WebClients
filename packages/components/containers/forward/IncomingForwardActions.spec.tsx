@@ -1,6 +1,8 @@
 import { fireEvent } from '@testing-library/react';
 
+import { useUser } from '@proton/account/user/hooks';
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
+import useApi from '@proton/components/hooks/useApi';
 import { useGetMailSettings } from '@proton/mail/mailSettings/hooks';
 import { rejectForwarding } from '@proton/shared/lib/api/forwardings';
 import type { Address, IncomingAddressForwarding } from '@proton/shared/lib/interfaces';
@@ -15,7 +17,7 @@ import {
     withEventManager,
 } from '@proton/testing';
 
-import { useApi, useGetUserKeys, useNotifications, useUser } from '../../hooks';
+import { useGetUserKeys, useNotifications } from '../../hooks';
 import IncomingForwardActions from './IncomingForwardActions';
 
 jest.mock('@proton/components/hooks/useApi');
@@ -25,7 +27,7 @@ jest.mock('@proton/components/hooks/useUserKeys');
 const mockUseGetUserKeys = useGetUserKeys as jest.MockedFunction<any>;
 mockUseGetUserKeys.mockReturnValue(jest.fn());
 
-jest.mock('@proton/components/hooks/useUser');
+jest.mock('@proton/account/user/hooks');
 const mockedUseUser = useUser as jest.MockedFunction<typeof useUser>;
 mockedUseUser.mockReturnValue([{}] as any);
 

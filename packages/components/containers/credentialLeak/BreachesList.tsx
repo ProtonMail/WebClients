@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { Scroll } from '@proton/atoms';
 import Tabs from '@proton/components/components/tabs/Tabs';
 import type { FetchedBreaches } from '@proton/components/containers/credentialLeak/models';
 
-import { useAddresses } from '../..';
 import BreachListItem from './BreachListItem';
 import BreachListUpgradeLink from './BreachListUpgradeLink';
 import EmptyBreachListCard from './EmptyBreachListCard';

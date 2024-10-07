@@ -1,6 +1,5 @@
+import { useUser } from '@proton/account/user/hooks';
 import { getHasOutdatedRecoveryFile } from '@proton/shared/lib/recoveryFile/recoveryFile';
-
-import useUser from './useUser';
 
 const useHasOutdatedRecoveryFile = () => {
     const [{ Keys }] = useUser();

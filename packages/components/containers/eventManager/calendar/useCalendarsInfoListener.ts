@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 
+import useEventManager from '@proton/components/hooks/useEventManager';
 import {
     updateBootstrapKeysAndSettings,
     updateBootstrapMembers,
 } from '@proton/shared/lib/eventManager/calendar/calendarBootstrap';
 
-import { useEventManager } from '../../../hooks';
 import useCache from '../../../hooks/useCache';
 import { KEY as CALENDAR_BOOTSTRAP_CACHE } from '../../../hooks/useGetCalendarBootstrap';
 import { CACHE_KEY as CALENDAR_KEYS_CACHE } from '../../../hooks/useGetDecryptedPassphraseAndCalendarKeys';

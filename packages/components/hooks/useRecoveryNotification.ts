@@ -1,20 +1,20 @@
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { ThemeColor } from '@proton/colors';
 import useIsRecoveryFileAvailable from '@proton/components/hooks/recoveryFile/useIsRecoveryFileAvailable';
+import useHasOutdatedRecoveryFile from '@proton/components/hooks/useHasOutdatedRecoveryFile';
 import { FeatureCode, useFeature } from '@proton/features';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import { getLikelyHasKeysToReactivate } from '@proton/shared/lib/keys/getInactiveKeys';
 
 import useSecurityCenter from '../components/drawer/views/SecurityCenter/useSecurityCenter';
 import { getOverallStatus } from '../containers/recovery/getOverallStatus';
-import useAddresses from './useAddresses';
-import useHasOutdatedRecoveryFile from './useHasOutdatedRecoveryFile';
 import useIsDataRecoveryAvailable from './useIsDataRecoveryAvailable';
 import useIsMnemonicAvailable from './useIsMnemonicAvailable';
 import useIsSentinelUser from './useIsSentinelUser';
 import useRecoveryStatus from './useRecoveryStatus';
-import useUser from './useUser';
 
 const useRecoveryNotification = (
     isLessInvasive: boolean,

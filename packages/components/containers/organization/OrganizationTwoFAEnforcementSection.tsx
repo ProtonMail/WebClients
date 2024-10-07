@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useApi } from '@proton/components';
 import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
 import Toggle from '@proton/components/components/toggle/Toggle';
@@ -10,13 +9,15 @@ import SettingsLayout from '@proton/components/containers/account/SettingsLayout
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import useApi from '@proton/components/hooks/useApi';
+import useConfig from '@proton/components/hooks/useConfig';
 import { queryEnforceTwoFA, queryRemoveTwoFA } from '@proton/shared/lib/api/organization';
 import { APPS, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
 import { hasTwoFARequiredForAdminOnly, hasTwoFARequiredForAll } from '@proton/shared/lib/helpers/organization';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
-import { useConfig, useNotifications } from '../../hooks';
+import { useNotifications } from '../../hooks';
 
 interface Props {
     organization?: Organization;

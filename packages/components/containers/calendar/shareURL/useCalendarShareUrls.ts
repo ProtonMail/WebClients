@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import {
     getIsCalendarUrlEventManagerCreate,
@@ -19,7 +20,7 @@ import type {
 import { splitKeys } from '@proton/shared/lib/keys';
 import updateItem from '@proton/utils/updateItem';
 
-import { useEventManager, useGetCalendarInfo, useNotifications } from '../../../hooks';
+import { useGetCalendarInfo, useNotifications } from '../../../hooks';
 import { useGetCalendarPublicLinks } from '../../../hooks/useGetCalendarPublicLinks';
 import { useCalendarModelEventManager } from '../../eventManager/calendar/CalendarModelEventManagerProvider';
 

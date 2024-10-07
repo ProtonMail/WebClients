@@ -2,9 +2,9 @@ import { fireEvent, screen, waitFor } from '@testing-library/dom';
 import { HttpResponse, http } from 'msw';
 import { setupServer } from 'msw/node';
 
+import { useUser } from '@proton/account/user/hooks';
 import { headers } from '@proton/activation/msw.header';
 import { easySwitchRender } from '@proton/activation/src/tests/render';
-import { useUser } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
 import ProviderCards from './ProviderCards';
@@ -26,7 +26,7 @@ const defaultUseUser = [
     false,
 ];
 
-jest.mock('@proton/components/hooks/useUser');
+jest.mock('@proton/account/user/hooks');
 const mockUseUser = useUser as jest.MockedFunction<any>;
 
 jest.mock('@proton/features/useFeature', () => () => {

@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
@@ -14,7 +15,6 @@ import {
     useAvailableRecoveryMethods,
     useIsSessionRecoveryInitiationAvailable,
     useSearchParamsEffect,
-    useUser,
     useUserSettings,
 } from '../../hooks';
 import ChangePasswordModal, { MODES } from './ChangePasswordModal';

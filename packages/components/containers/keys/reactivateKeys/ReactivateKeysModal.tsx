@@ -2,18 +2,21 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
-import { Tabs } from '@proton/components';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import Tabs from '@proton/components/components/tabs/Tabs';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AuthModal from '@proton/components/containers/password/AuthModal';
+import useApi from '@proton/components/hooks/useApi';
+import useRecoverySecrets from '@proton/components/hooks/useRecoverySecrets';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
@@ -35,14 +38,7 @@ import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
 import { computeKeyPassword } from '@proton/srp';
 import isTruthy from '@proton/utils/isTruthy';
 
-import {
-    useApi,
-    useIsMnemonicAvailable,
-    useModals,
-    useNotifications,
-    useRecoverySecrets,
-    useUser,
-} from '../../../hooks';
+import { useIsMnemonicAvailable, useModals, useNotifications } from '../../../hooks';
 import MnemonicInputField, { useMnemonicInputValidation } from '../../mnemonic/MnemonicInputField';
 import RecoveryFileTabContent from './RecoveryFileTabContent';
 import { getReactivatedKeys } from './reactivateHelper';

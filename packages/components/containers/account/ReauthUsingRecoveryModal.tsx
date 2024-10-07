@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button, InlineLinkButton } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -11,6 +12,7 @@ import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Tabs from '@proton/components/components/tabs/Tabs';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useLoading from '@proton/hooks/useLoading';
 import { getMnemonicAuthInfo, reauthMnemonic } from '@proton/shared/lib/api/auth';
@@ -22,7 +24,7 @@ import { srpAuth } from '@proton/shared/lib/srp';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useApi, useIsSessionRecoveryInitiationAvailable, useUser, useUserSettings } from '../../hooks';
+import { useIsSessionRecoveryInitiationAvailable, useUserSettings } from '../../hooks';
 import MnemonicInputField, { useMnemonicInputValidation } from '../mnemonic/MnemonicInputField';
 
 interface Props extends ModalProps {

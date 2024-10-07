@@ -1,17 +1,19 @@
 import { c, msgid } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import { useContactGroups } from '@proton/mail';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import ModalContent from '../../../components/modalTwo/ModalContent';
 import ModalFooter from '../../../components/modalTwo/ModalFooter';
 import ModalHeader from '../../../components/modalTwo/ModalHeader';
-import { useContactEmails, useContactGroups, useUser } from '../../../hooks';
+import { useContactEmails } from '../../../hooks';
 import type { ContactExportingProps } from '../modals/ContactExportingModal';
 import RecipientDropdownItem from '../view/RecipientDropdownItem';
 import type { ContactGroupDeleteProps } from './ContactGroupDeleteModal';

@@ -3,9 +3,9 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import { useAddresses } from '@proton/components/hooks';
 
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { getReplyRecipientListAsString } from '../../../helpers/message/messageRecipients';

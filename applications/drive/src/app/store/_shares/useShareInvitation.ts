@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { useGetAddressKeys, useGetAddresses } from '@proton/components';
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import {

@@ -2,8 +2,8 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { useAccountSpotlights } from '@proton/components';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
+import { useAccountSpotlights } from '@proton/components/containers/account/spotlights/AccountSpotlightsProvider';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
 

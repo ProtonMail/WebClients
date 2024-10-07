@@ -1,9 +1,9 @@
 import type { MouseEvent } from 'react';
-import React from 'react';
 
 import { isSameDay } from 'date-fns';
 
-import { useAddresses, useUser } from '@proton/components/hooks';
+import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import { format as formatUTC } from '@proton/shared/lib/date-fns-utc';
 import { dateLocale } from '@proton/shared/lib/i18n';

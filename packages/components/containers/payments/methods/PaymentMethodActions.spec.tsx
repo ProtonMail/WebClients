@@ -1,12 +1,14 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import type { SavedPaymentMethod } from '@proton/payments';
 import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { deletePaymentMethod, orderPaymentMethods } from '@proton/shared/lib/api/payments';
 import { mockOnSessionMigration, mockUseSubscription, mockUseUser } from '@proton/testing';
 
-import { useApi, useEventManager, useModals, useNotifications } from '../../../hooks';
+import { useModals, useNotifications } from '../../../hooks';
 import PaymentMethodActions from './PaymentMethodActions';
 
 jest.mock('../../../hooks/useNotifications', () =>
@@ -27,7 +29,7 @@ jest.mock('../../../hooks/useEventManager', () =>
     })
 );
 
-jest.mock('../../../hooks/useApi', () => jest.fn().mockReturnValue(jest.fn()));
+jest.mock('@proton/components/hooks/useApi', () => jest.fn().mockReturnValue(jest.fn()));
 
 jest.mock('../../../components/dropdown/DropdownActions', () =>
     jest.fn().mockImplementation(({ list }) => list.map(({ text }: any) => <span>{text}</span>))

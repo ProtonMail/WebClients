@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import { NewUpsellModal, Price, UpsellModal } from '@proton/components';
+import { useUser } from '@proton/account/user/hooks';
 import type { ModalStateProps } from '@proton/components';
-import { usePlans, useUser } from '@proton/components/hooks';
+import { NewUpsellModal, Price, UpsellModal } from '@proton/components';
+import { usePlans } from '@proton/components/hooks';
 import {
     APP_UPSELL_REF_PATH,
     BRAND_NAME,

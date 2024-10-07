@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { changeOrganizationSignature } from '@proton/account';
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { getIsEligibleOrganizationIdentityAddress } from '@proton/account/organizationKey/actions';
 import { Button } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
@@ -16,7 +17,7 @@ import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import { useAddresses, useErrorHandler, useNotifications } from '@proton/components/hooks';
+import { useErrorHandler, useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getIsAddressConfirmed } from '@proton/shared/lib/helpers/address';

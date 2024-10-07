@@ -1,6 +1,7 @@
 import { useCallback, useRef } from 'react';
 
 import { useGetKTActivation } from '@proton/components/containers/keyTransparency/useKTActivation';
+import useConfig from '@proton/components/hooks/useConfig';
 import { serverTime } from '@proton/crypto';
 import {
     commitSKLToLS,
@@ -19,8 +20,6 @@ import type {
     UserModel,
 } from '@proton/shared/lib/interfaces';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
-
-import { useConfig } from '../../hooks';
 
 interface CreatedSKL {
     address: Address;

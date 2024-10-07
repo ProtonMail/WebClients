@@ -2,14 +2,12 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    useEventManager,
-    useGetAddressKeys,
-    useGetAddresses,
-    useGetEncryptionPreferences,
-    useNotifications,
-} from '@proton/components/hooks';
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import {
     acceptCalendarShareInvitation,

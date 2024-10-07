@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { differenceInCalendarDays, format, isToday } from 'date-fns';
 import { c, msgid } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button, ButtonLike, CircleLoader } from '@proton/atoms';
 import {
     AppLink,
@@ -29,17 +30,16 @@ import {
     Tooltip,
     TopBanners,
     UserDropdown,
-    useContactGroups,
     useDrawer,
     useNotifications,
     useOpenDrawerOnLoad,
     useToggle,
-    useUser,
 } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import type { CustomAction, CustomActionRenderProps } from '@proton/components/containers/contacts/widget/types';
 import { CONTACT_WIDGET_TABS } from '@proton/components/containers/contacts/widget/types';
 import { FeatureCode, useFeature } from '@proton/features';
+import { useContactGroups } from '@proton/mail';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
 import { MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getDefaultView } from '@proton/shared/lib/calendar/getSettings';

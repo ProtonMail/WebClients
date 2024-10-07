@@ -7,9 +7,15 @@ import SettingsPageTitle from '@proton/components/containers/account/SettingsPag
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import SettingsSectionTitle from '@proton/components/containers/account/SettingsSectionTitle';
+import CalendarDeleteSection from '@proton/components/containers/calendar/settings/CalendarDeleteSection';
+import CalendarEventDefaultsSection from '@proton/components/containers/calendar/settings/CalendarEventDefaultsSection';
 import CalendarSettingsBreadcrumbs from '@proton/components/containers/calendar/settings/CalendarSettingsBreadcrumbs';
+import CalendarShareSection from '@proton/components/containers/calendar/settings/CalendarShareSection';
+import CalendarSubpageHeaderSection from '@proton/components/containers/calendar/settings/CalendarSubpageHeaderSection';
 import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea';
-import { useApi, useGetCalendarBootstrap, useNotifications } from '@proton/components/hooks';
+import { PrivateMainSettingsAreaBase } from '@proton/components/containers/layout/PrivateMainSettingsArea';
+import { useGetCalendarBootstrap, useNotifications } from '@proton/components/hooks';
+import useApi from '@proton/components/hooks/useApi';
 import { getAllMembers, getCalendarInvitations } from '@proton/shared/lib/api/calendars';
 import { getIsOwnedCalendar, getIsPersonalCalendar } from '@proton/shared/lib/calendar/calendar';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
@@ -25,12 +31,6 @@ import type {
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
 import { MEMBER_INVITATION_STATUS } from '@proton/shared/lib/interfaces/calendar';
-
-import { PrivateMainSettingsAreaBase } from '../../layout/PrivateMainSettingsArea';
-import CalendarDeleteSection from './CalendarDeleteSection';
-import CalendarEventDefaultsSection from './CalendarEventDefaultsSection';
-import CalendarShareSection from './CalendarShareSection';
-import CalendarSubpageHeaderSection from './CalendarSubpageHeaderSection';
 
 interface Props {
     calendars: VisualCalendar[];

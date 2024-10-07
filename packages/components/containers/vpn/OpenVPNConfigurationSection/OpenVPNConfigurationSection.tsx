@@ -3,6 +3,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import groupBy from 'lodash/groupBy';
 import { c, msgid } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike, Href } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Radio from '@proton/components/components/input/Radio';
@@ -11,6 +12,8 @@ import Info from '@proton/components/components/link/Info';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import useUserVPN from '@proton/components/hooks/useUserVPN';
+import useVPNLogicals from '@proton/components/hooks/useVPNLogicals';
 import { PLANS, SORT_DIRECTION, VPN_APP_NAME, VPN_CONNECTIONS, VPN_HOSTNAME } from '@proton/shared/lib/constants';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
 
@@ -20,7 +23,7 @@ import {
     getCountryOptions,
     getLocalizedCountryByAbbr,
 } from '../../../helpers/countries';
-import { usePlans, useSortedList, useUser, useUserSettings, useUserVPN, useVPNLogicals } from '../../../hooks';
+import { usePlans, useSortedList, useUserSettings } from '../../../hooks';
 import type { EnhancedLogical } from '../OpenVPNConfigurationSection/interface';
 import ConfigsTable, { CATEGORY } from './ConfigsTable';
 import ServerConfigs from './ServerConfigs';

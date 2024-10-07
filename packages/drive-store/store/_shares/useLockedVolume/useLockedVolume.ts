@@ -3,7 +3,9 @@ import { useCallback, useEffect, useState } from 'react';
 import { format } from 'date-fns';
 import { c } from 'ttag';
 
-import { useGetAddressKeys, useGetAddresses, usePreventLeave } from '@proton/components';
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { usePreventLeave } from '@proton/components';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { queryDeleteLockedVolumes, queryRestoreDriveVolume } from '@proton/shared/lib/api/drive/volume';

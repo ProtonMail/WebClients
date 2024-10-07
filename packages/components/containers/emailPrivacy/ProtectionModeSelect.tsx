@@ -3,11 +3,13 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import Select from '@proton/components/components/select/Select';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { updateImageProxy } from '@proton/shared/lib/api/mailSettings';
 import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
 
-import { useApi, useEventManager, useNotifications } from '../../hooks';
+import { useNotifications } from '../../hooks';
 
 interface Props {
     id: string;

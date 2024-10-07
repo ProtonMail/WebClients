@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
+import { useApi } from '@proton/components';
 import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
-import { useApi } from '@proton/components/hooks';
 import { CryptoProxy, type PublicKeyReference } from '@proton/crypto/lib';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { type ProcessedApiKey } from '@proton/shared/lib/interfaces';

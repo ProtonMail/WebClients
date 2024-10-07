@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import { useDriveB2BPhotosEnabledSetting } from '@proton/components';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
+import { useDriveB2BPhotosEnabledSetting } from '@proton/components/hooks/drive/useDriveB2BPhotosEnabledSetting';
 
 export const B2BPhotosSection = () => {
     const { b2bPhotosEnabled, isLoading, isSubmitting, handleChange } = useDriveB2BPhotosEnabledSetting();

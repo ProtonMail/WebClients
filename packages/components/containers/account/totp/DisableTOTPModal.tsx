@@ -5,10 +5,11 @@ import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import AuthModal from '@proton/components/containers/password/AuthModal';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { disableTotp } from '@proton/shared/lib/api/settings';
 
-import { useEventManager, useNotifications } from '../../../hooks';
+import { useNotifications } from '../../../hooks';
 
 const DisableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
     const { call } = useEventManager();

@@ -1,7 +1,7 @@
-import * as React from 'react';
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import { useUser } from '@proton/account/user/hooks';
 import {
     CalendarDrawerAppButton,
     ContactDrawerAppButton,
@@ -16,7 +16,6 @@ import {
     useDrawer,
     useOpenDrawerOnLoad,
     useToggle,
-    useUser,
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { isAppInView } from '@proton/shared/lib/drawer/helpers';

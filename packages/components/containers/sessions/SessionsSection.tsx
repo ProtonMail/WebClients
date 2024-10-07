@@ -14,6 +14,7 @@ import TableRow from '@proton/components/components/table/TableRow';
 import Time from '@proton/components/components/time/Time';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
@@ -21,7 +22,7 @@ import { querySessions, revokeOtherSessions, revokeSession } from '@proton/share
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
-import { useApi, useNotifications } from '../../hooks';
+import { useNotifications } from '../../hooks';
 import SessionAction from './SessionAction';
 import type { Session } from './interface';
 

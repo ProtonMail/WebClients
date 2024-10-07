@@ -1,4 +1,4 @@
-import { useApi } from '@proton/components/hooks';
+import useApi from '@proton/components/hooks/useApi';
 import {
     TelemetryAccountOrganizationLogoUploadEvents,
     TelemetryMeasurementGroups,

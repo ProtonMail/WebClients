@@ -2,11 +2,25 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Badge, ColorPicker, Spotlight, UpsellModal, NewUpsellModal, useModalState, useSpotlightShow } from '@proton/components';
-import { useSpotlightOnFeature, useUser, useWelcomeFlags } from '@proton/components/hooks';
+import { useUser } from '@proton/account/user/hooks';
+import {
+    Badge,
+    ColorPicker,
+    NewUpsellModal,
+    Spotlight,
+    UpsellModal,
+    useModalState,
+    useSpotlightShow,
+} from '@proton/components';
+import { useSpotlightOnFeature, useWelcomeFlags } from '@proton/components/hooks';
 import { FeatureCode } from '@proton/features';
-import { APP_UPSELL_REF_PATH, APPS, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { addUpsellPath, getUpgradePath, getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
+import { APPS, APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import {
+    addUpsellPath,
+    getUpgradePath,
+    getUpsellRef,
+    useNewUpsellModalVariant,
+} from '@proton/shared/lib/helpers/upsell';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
 import paintImg from '@proton/styles/assets/img/illustrations/new-upsells-img/paint.svg';
 

@@ -4,8 +4,8 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
+import useNotifications from '@proton/components/hooks/useNotifications';
 
-import { useNotifications } from '../..';
 import Copy from '../../components/button/Copy';
 import PersonalKeyWarningIcon from '../../components/icon/PersonalKeyWarningIcon';
 import KeysActions from './KeysActions';

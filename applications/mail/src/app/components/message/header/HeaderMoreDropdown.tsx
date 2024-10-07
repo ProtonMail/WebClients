@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { addDays } from 'date-fns';
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button, Kbd } from '@proton/atoms';
 import type { Breakpoints, ContactEditProps } from '@proton/components';
 import {
@@ -14,14 +15,13 @@ import {
     Icon,
     Tooltip,
     useApi,
-    useFolders,
     useModalState,
     useNotifications,
-    useUser,
 } from '@proton/components';
 import type { WorkerDecryptionResult } from '@proton/crypto';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
+import { useFolders } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import type { MailSettings } from '@proton/shared/lib/interfaces';

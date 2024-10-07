@@ -8,7 +8,7 @@ import Loader from '@proton/components/components/loader/Loader';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import { GenericErrorDisplay } from '@proton/components/containers/error/GenericError';
-import { useApi } from '@proton/components/hooks';
+import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { encodeFilters } from '@proton/pass/components/Navigation/routing';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
