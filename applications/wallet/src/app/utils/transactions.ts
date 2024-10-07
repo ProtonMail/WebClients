@@ -272,6 +272,8 @@ export const signAndBroadcastPsbt = async ({
 
         onBroadcastedTx(txId);
     } catch (error: any) {
-        throw new Error(error?.error ?? c('Wallet Send').t`Could not broadcast transaction`);
+        throw new Error(
+            error?.error ?? c('Wallet Send').t`An error occurred broadcasting your transaction. Please try again.`
+        );
     }
 };
