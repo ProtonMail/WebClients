@@ -28,9 +28,9 @@ python3 "${CWD}/applications/pass-desktop/tools/update-metadata.py" "$PLATFORM" 
 
 # Copy over RELEASES
 if [ "$PLATFORM" = "windows" ]; then
-  cp "$CWD/applications/pass-desktop/out/make/squirrel.windows/x64/RELEASES" .
+  cp "$CWD/applications/pass-desktop/out/make/squirrel.windows/x64/RELEASES" "assets/windows/RELEASES"
 elif [ "$PLATFORM" = "macos" ]; then
-  cp "$CWD/applications/pass-desktop/out/make/zip/darwin/universal/RELEASES.json" .
+  cp "$CWD/applications/pass-desktop/out/make/zip/darwin/universal/RELEASES.json" "assets/macos/RELEASES.json"
 fi
 
 # Deploy metadata
