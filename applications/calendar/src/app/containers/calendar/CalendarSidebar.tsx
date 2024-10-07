@@ -4,6 +4,7 @@ import { useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
 import {
     AppVersion,
     AppsDropdown,
@@ -27,7 +28,6 @@ import {
     Tooltip,
     useActiveBreakpoint,
     useApi,
-    useEventManager,
     useLocalState,
     useModalState,
     useSubscribedCalendars,
@@ -35,10 +35,8 @@ import {
 } from '@proton/components';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import { useLoadingByKey } from '@proton/hooks/useLoading';
-import { updateMember } from '@proton/shared/lib/api/calendars';
 import { groupCalendarsByTaxonomy, sortCalendars } from '@proton/shared/lib/calendar/calendar';
 import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
-import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS } from '@proton/shared/lib/constants';
 import {
@@ -51,7 +49,9 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import type { Address } from '@proton/shared/lib/interfaces';
 import type { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
 
+import { useCalendarDispatch } from '../../store/hooks';
 import CalendarSidebarListItems from './CalendarSidebarListItems';
 
 export interface CalendarSidebarProps {
@@ -77,9 +77,9 @@ const CalendarSidebar = ({
     onCreateCalendar,
     isAskUpdateTimezoneModalOpen,
 }: CalendarSidebarProps) => {
-    const { call } = useEventManager();
     const api = useApi();
     const [user] = useUser();
+    const dispatch = useCalendarDispatch();
 
     const [showSideBar, setshowSideBar] = useLocalState(true, `${user.ID}-${APPS.PROTONCALENDAR}-left-nav-opened`);
     const { viewportWidth } = useActiveBreakpoint();
@@ -137,11 +137,8 @@ const CalendarSidebar = ({
 
     const addCalendarText = c('Dropdown action icon tooltip').t`Add calendar`;
 
-    const handleChangeVisibility = async (calendarID: string, checked: boolean) => {
-        const members = calendars.find(({ ID }) => ID === calendarID)?.Members || [];
-        const [{ ID: memberID }] = getMemberAndAddress(addresses, members);
-        await api(updateMember(calendarID, memberID, { Display: checked ? 1 : 0 }));
-        await call();
+    const handleChangeVisibility = async (calendarID: string, display: boolean) => {
+        dispatch(changeCalendarVisiblity({ calendarID, display })).catch(noop);
     };
 
     const handleCreatePersonalCalendar = () => {
