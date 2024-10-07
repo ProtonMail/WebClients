@@ -13,6 +13,7 @@ const RecalculateThreadPositionsEvent = 'RecalculateThreadPositions'
 const dispatchRecalculateEvent = () => {
   document.dispatchEvent(new CustomEvent(RecalculateThreadPositionsEvent))
 }
+const RecalculateSpecificThreadPositionEvent = 'RecalculateSpecificThread'
 const SixtyFPSToMS = 1000 / 60
 
 function ThreadPopoverButton({ thread }: { thread: CommentThreadInterface }) {
@@ -73,14 +74,21 @@ function ThreadPopoverButton({ thread }: { thread: CommentThreadInterface }) {
 function ContextualThread({
   thread,
   position,
+  activePosition,
   isViewportLarge,
 }: {
   thread: CommentThreadInterface
-  position: number | undefined
+  position: number
+  activePosition: number
   isViewportLarge: boolean
 }) {
   const [editor] = useLexicalComposerContext()
   const [element, setElement] = useState<HTMLDivElement | null>(null)
+
+  const activePositionRef = useRef(activePosition)
+  useEffect(() => {
+    activePositionRef.current = activePosition
+  }, [activePosition])
 
   const getThreadRect = useCallback(() => {
     if (!element) {
@@ -93,28 +101,71 @@ function ContextualThread({
     }
 
     const adjust = () => {
+      const activePosition = activePositionRef.current
       const child = element.firstElementChild
       if (!child) {
         return
       }
 
+      const position = parseFloat(element.style.getPropertyValue('--initial-position'))
+
       const previousSibling = element.previousElementSibling
-      if (!previousSibling) {
+
+      const isCurrentActivePosition = activePosition === position
+      if (isCurrentActivePosition) {
         element.style.opacity = '1'
+        element.style.setProperty('--final-position', `${position}px`)
+        if (previousSibling) {
+          previousSibling.dispatchEvent(new CustomEvent(RecalculateSpecificThreadPositionEvent))
+        }
         return
       }
 
       const childRect = child.getBoundingClientRect()
 
-      const previousSiblingRect = previousSibling.getBoundingClientRect()
-
       const containerRect = container.getBoundingClientRect()
       const containerOffset = container.scrollTop - containerRect.top
 
       const trueChildRectTop = childRect.top + containerOffset
+      const trueChildRectBottom = childRect.bottom + containerOffset
+
+      const isAboveActivePosition = activePosition > position
+      if (isAboveActivePosition) {
+        const nextSibling = element.nextElementSibling
+
+        if (nextSibling) {
+          const nextSiblingRect = nextSibling.getBoundingClientRect()
+          const trueNextSiblingTop = nextSiblingRect.top + containerOffset
+          const childCollidesWithActivePosition = trueChildRectBottom > activePosition
+          const childCollidesWithNextSibling = trueChildRectBottom > trueNextSiblingTop
+
+          if (childCollidesWithActivePosition || childCollidesWithNextSibling) {
+            const finalPosition = trueNextSiblingTop - childRect.height - 10
+            element.style.setProperty('--final-position', `${finalPosition}px`)
+            if (trueChildRectTop !== finalPosition) {
+              requestAnimationFrame(adjust)
+              if (previousSibling) {
+                previousSibling.dispatchEvent(new CustomEvent(RecalculateSpecificThreadPositionEvent))
+              }
+            }
+          }
+        }
+
+        return
+      }
+
+      if (!previousSibling) {
+        if (trueChildRectTop !== position) {
+          element.style.setProperty('--final-position', `${position}px`)
+        }
+        element.style.opacity = '1'
+        return
+      }
+
+      const previousSiblingRect = previousSibling.getBoundingClientRect()
+
       const truePrevSiblingBottom = previousSiblingRect.bottom + containerOffset
 
-      const position = parseFloat(element.style.getPropertyValue('--initial-position'))
       let finalPosition = position
       const isChildCollidingWithPreviousThread = trueChildRectTop < truePrevSiblingBottom
       const canUseActualPosition = position && truePrevSiblingBottom < position
@@ -135,7 +186,7 @@ function ContextualThread({
 
   useEffect(() => {
     requestAnimationFrame(getThreadRect)
-  }, [getThreadRect, position])
+  }, [getThreadRect, position, activePosition])
 
   useEffect(() => {
     if (!element) {
@@ -167,6 +218,22 @@ function ContextualThread({
     }
   }, [getThreadRect])
 
+  useEffect(() => {
+    if (!element) {
+      return
+    }
+
+    const listener = debounce(() => {
+      requestAnimationFrame(getThreadRect)
+    }, SixtyFPSToMS)
+
+    element.addEventListener(RecalculateSpecificThreadPositionEvent, listener)
+
+    return () => {
+      element.removeEventListener(RecalculateSpecificThreadPositionEvent, listener)
+    }
+  }, [element, getThreadRect])
+
   return (
     <div
       ref={(element) => {
@@ -177,7 +244,7 @@ function ContextualThread({
         top: 0,
         left: isViewportLarge ? '50%' : undefined,
         right: isViewportLarge ? undefined : 0,
-        transition: 'transform 50ms, opacity 75ms',
+        transition: 'opacity 75ms',
         width: isViewportLarge ? 'calc(100% - 2rem)' : 'auto',
         opacity: 0,
         '--initial-position': `${position}px`,
@@ -214,14 +281,30 @@ function sortThreadByPositionOrTime(a: ThreadWithPosition, b: ThreadWithPosition
 
 export function ContextualComments({ activeThreads }: { activeThreads: CommentThreadInterface[] }) {
   const [editor] = useLexicalComposerContext()
-  const { markNodeMap } = useCommentsContext()
+  const { markNodeMap, activeIDs } = useCommentsContext()
   const [container, setContainer] = useState<HTMLDivElement | null>(null)
+
   const [threadsSortedByPosition, setThreadsSortedByPosition] = useState<
     {
       thread: CommentThreadInterface
       position: number
     }[]
   >([])
+
+  const [activePosition, setActivePosition] = useState(0)
+  useEffect(() => {
+    const id = activeIDs[0]
+    if (!id) {
+      setActivePosition(0)
+      return
+    }
+    const thread = threadsSortedByPosition.find(({ thread }) => thread.markID === id)
+    if (!thread) {
+      setActivePosition(0)
+      return
+    }
+    setActivePosition(thread.position)
+  }, [activeIDs, threadsSortedByPosition])
 
   const [isViewportLarge, setIsViewportLarge] = useState(() => window.innerWidth >= ViewportWidthThreshold)
 
@@ -314,12 +397,16 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
         width: isViewportLarge ? 'var(--comments-width)' : 'max-content',
       }}
     >
-      {threadsSortedByPosition.map((thread) => {
+      {threadsSortedByPosition.map((thread, index) => {
+        const prevThreadPosition = threadsSortedByPosition[index - 1]?.position
+        const threadPosition = thread.position
+        const hasSamePositionAsPrev = prevThreadPosition === threadPosition
         return (
           <ContextualThread
             key={thread.thread.id}
             thread={thread.thread}
-            position={thread.position}
+            position={hasSamePositionAsPrev ? threadPosition + 1 : threadPosition}
+            activePosition={activePosition}
             isViewportLarge={isViewportLarge}
           />
         )
