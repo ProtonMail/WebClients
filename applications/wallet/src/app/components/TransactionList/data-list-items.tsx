@@ -14,6 +14,7 @@ import clsx from '@proton/utils/clsx';
 import { COMPUTE_BITCOIN_UNIT, type TransactionData } from '@proton/wallet';
 import { useUserWalletSettings } from '@proton/wallet/store';
 
+import { MaybeHiddenAmount } from '../../atoms/MaybeHiddenAmount';
 import { Price } from '../../atoms/Price';
 import { Skeleton } from '../../atoms/Skeleton';
 import { useBitcoinBlockchainContext } from '../../contexts';
@@ -216,7 +217,8 @@ export const AmountDataListItem = ({
 
     const secondaryAmount = (
         <span className={clsx('text-ellipsis')}>
-            {convertAmountStr(value, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)} {getLabelByUnit(settings.BitcoinUnit)}
+            <MaybeHiddenAmount>{convertAmountStr(value, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}</MaybeHiddenAmount>{' '}
+            {getLabelByUnit(settings.BitcoinUnit)}
         </span>
     );
 
