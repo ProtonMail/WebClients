@@ -9,8 +9,12 @@ import type { Api } from '@proton/shared/lib/interfaces';
 
 import type { DefaultProtocol } from './DefaultProtocol';
 import type { IPCInboxHostUpdateListenerRemover } from './desktopTypes';
-import { addIPCHostUpdateListener } from './desktopTypes';
-import { getInboxDesktopInfo, hasInboxDesktopFeature, invokeInboxDesktopIPC } from './ipcHelpers';
+import {
+    addIPCHostUpdateListener,
+    getInboxDesktopInfo,
+    hasInboxDesktopFeature,
+    invokeInboxDesktopIPC,
+} from './ipcHelpers';
 
 const HOUR_INTERVAL = 3600000;
 
