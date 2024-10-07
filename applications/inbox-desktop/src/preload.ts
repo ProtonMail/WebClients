@@ -1,11 +1,11 @@
 import { contextBridge, ipcRenderer, IpcRendererEvent } from "electron";
 import { ipcLogger } from "./utils/log";
-import {
-    isValidHostUpdateMessage,
+import type {
     IPCInboxMessageBroker,
     IPCInboxHostUpdateMessageType,
     IPCInboxHostUpdateListener,
 } from "@proton/shared/lib/desktop/desktopTypes";
+import { isValidHostUpdateMessage } from "@proton/shared/lib/desktop/ipcHelpers";
 
 contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
     hasFeature: (feature) => {
