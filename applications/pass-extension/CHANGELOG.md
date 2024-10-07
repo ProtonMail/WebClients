@@ -1,3 +1,12 @@
+### Version 1.23.1
+
+-   Fix autosave vault edge-case when shared and non-writable
+-   Fine-tune alias syncing
+-   Fix errors not being forwarded to account on authentication failures
+-   Improve extension auto-recovery when service-worker is corrupted
+-   Workaround for safari not attaching cookies from service-worker during authentication
+-   Handle Safari bug triggering installation event when cookies/history cleared
+
 ### Version 1.23.0
 
 -   Add support for remote autofill ignore list
@@ -9,6 +18,7 @@
 -   Remove autosave vault in favor of most recent vault
 -   Improve extension bundle size
 -   Fix conflict with AttentiveSMS third-party library
+-   Add background SimpleLogin alias syncing
 
 ### Version 1.22.4 [Safari ONLY]
 
