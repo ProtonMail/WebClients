@@ -3,10 +3,10 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms';
 import type { EditorActions } from '@proton/components';
 import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown } from '@proton/components';
-import { useAddresses } from '@proton/components/hooks';
 
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { getRecipients, getReplyRecipientListAsString } from '../../../helpers/message/messageRecipients';

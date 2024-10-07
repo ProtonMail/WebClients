@@ -1,5 +1,7 @@
 import { useCallback } from 'react';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import {
     decryptPassphrase,
     decryptPassphraseSessionKey,
@@ -13,8 +15,6 @@ import type { GetDecryptedPassphraseAndCalendarKeys } from '@proton/shared/lib/i
 import { splitKeys } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import { useGetAddresses } from './useAddresses';
-import { useGetAddressKeys } from './useAddressesKeys';
 import useCache from './useCache';
 import { getPromiseValue } from './useCachedModelResult';
 import { useGetCalendarBootstrap } from './useGetCalendarBootstrap';

@@ -3,6 +3,8 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { Button, Card, CircleLoader, Href, InlineLinkButton } from '@proton/atoms';
 import Badge from '@proton/components/components/badge/Badge';
 import Icon from '@proton/components/components/icon/Icon';
@@ -11,6 +13,8 @@ import Info from '@proton/components/components/link/Info';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
+import useApi from '@proton/components/hooks/useApi';
+import useConfig from '@proton/components/hooks/useConfig';
 import useLoading from '@proton/hooks/useLoading';
 import { postVerifySend } from '@proton/shared/lib/api/verify';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -36,14 +40,10 @@ import clsx from '@proton/utils/clsx';
 import { getVerificationSentText } from '../../containers/recovery/email/VerifyRecoveryEmailModal';
 import getBoldFormattedText from '../../helpers/getBoldFormattedText';
 import {
-    useAddresses,
-    useApi,
-    useConfig,
     useIsSessionRecoveryAvailable,
     useNotifications,
     useSearchParamsEffect,
     useSessionRecoveryState,
-    useUser,
 } from '../../hooks';
 import EditDisplayNameModal from './EditDisplayNameModal';
 import EditExternalAddressModal from './EditExternalAddressModal';

@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { usePreferredPlansMap } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import Meter from '@proton/components/components/progress/Meter';
+import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
 
 interface Props {

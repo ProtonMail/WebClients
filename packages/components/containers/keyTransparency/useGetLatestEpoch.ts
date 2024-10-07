@@ -1,12 +1,12 @@
 import { useCallback } from 'react';
 
+import useApi from '@proton/components/hooks/useApi';
 import { getPromiseValue } from '@proton/components/hooks/useCachedModelResult';
 import { fetchLatestEpoch } from '@proton/key-transparency/lib';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { HOUR } from '@proton/shared/lib/constants';
 import type { GetLatestEpoch } from '@proton/shared/lib/interfaces';
 
-import { useApi } from '../../hooks';
 import useCache from '../../hooks/useCache';
 
 export const CACHE_KEY = 'KEY_TRANSPARENCY_EPOCH';

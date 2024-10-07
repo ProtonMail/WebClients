@@ -1,3 +1,9 @@
+import MyCalendarsSection from '@proton/components/containers/calendar/settings/MyCalendarsSection';
+import OtherCalendarsSection from '@proton/components/containers/calendar/settings/OtherCalendarsSection';
+import PrivateMainAreaLoading from '@proton/components/containers/layout/PrivateMainAreaLoading';
+import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
+import type { SectionConfig } from '@proton/components/containers/layout/interface';
+import useCalendarShareInvitations from '@proton/components/hooks/useCalendarShareInvitations';
 import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
 import {
     filterOutExpiredInvitations,
@@ -10,13 +16,6 @@ import type {
     SubscribedCalendar,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
-
-import useCalendarShareInvitations from '../../../hooks/useCalendarShareInvitations';
-import MyCalendarsSection from '../../calendar/settings/MyCalendarsSection';
-import PrivateMainAreaLoading from '../../layout/PrivateMainAreaLoading';
-import PrivateMainSettingsArea from '../../layout/PrivateMainSettingsArea';
-import type { SectionConfig } from '../../layout/interface';
-import OtherCalendarsSection from '../settings/OtherCalendarsSection';
 
 export interface CalendarsSettingsSectionProps {
     config: SectionConfig;

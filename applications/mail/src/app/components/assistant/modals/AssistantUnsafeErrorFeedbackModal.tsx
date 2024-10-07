@@ -5,9 +5,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import type { ModalStateProps } from '@proton/components';
-import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useApi } from '@proton/components';
 import TextArea from '@proton/components/components/v2/input/TextArea';
-import { useApi, useNotifications, useUserSettings } from '@proton/components/hooks';
+import { useNotifications, useUserSettings } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { useAssistant } from '@proton/llm/lib';
 import type { AssistantFeedback } from '@proton/shared/lib/api/feedback';

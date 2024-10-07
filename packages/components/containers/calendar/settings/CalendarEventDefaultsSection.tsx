@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { useCalendarModelEventManager } from '@proton/components';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
@@ -13,11 +12,16 @@ import SettingsLayout from '@proton/components/containers/account/SettingsLayout
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import { BusySlotsLabelInfo } from '@proton/components/containers/calendar/calendarModal/BusySlotsCheckbox';
 import {
     getCalendarEventSettingsModel,
     getDefaultModel,
 } from '@proton/components/containers/calendar/calendarModal/personalCalendarModal/calendarModalState';
-import { useApi, useNotifications } from '@proton/components/hooks';
+import useBusySlotsAvailable from '@proton/components/containers/calendar/hooks/useBusySlotsAvailable';
+import Notifications from '@proton/components/containers/calendar/notifications/Notifications';
+import { useCalendarModelEventManager } from '@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider';
+import { useNotifications } from '@proton/components/hooks';
+import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { updateCalendarSettings } from '@proton/shared/lib/api/calendars';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
@@ -30,10 +34,6 @@ import type {
     SubscribedCalendar,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
-
-import { BusySlotsLabelInfo } from '../calendarModal/BusySlotsCheckbox';
-import useBusySlotsAvailable from '../hooks/useBusySlotsAvailable';
-import Notifications from '../notifications/Notifications';
 
 interface Props {
     calendar: VisualCalendar | SubscribedCalendar;

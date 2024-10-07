@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { useGetUser } from '@proton/components';
+import { useGetUser } from '@proton/account/user/hooks';
 import type { User } from '@proton/shared/lib/interfaces';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 

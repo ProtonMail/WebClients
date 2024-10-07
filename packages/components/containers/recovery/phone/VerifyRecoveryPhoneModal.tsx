@@ -5,10 +5,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
+import useApi from '@proton/components/hooks/useApi';
 import { postVerifyPhone } from '@proton/shared/lib/api/verify';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
-
-import { useApi } from '../../../hooks';
 
 interface Props extends ModalProps {
     phone: UserSettings['Phone'];

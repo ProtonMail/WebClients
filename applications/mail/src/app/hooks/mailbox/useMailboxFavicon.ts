@@ -2,7 +2,8 @@ import { useMemo } from 'react';
 
 import type { Location } from 'history';
 
-import { useDynamicFavicon, useMessageCounts } from '@proton/components/hooks';
+import { useDynamicFavicon } from '@proton/components';
+import { useMessageCounts } from '@proton/components/hooks';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useConversationCounts } from '@proton/mail/counts/conversationCounts';
 

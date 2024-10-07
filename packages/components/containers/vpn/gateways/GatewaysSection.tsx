@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button, Href } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
@@ -11,6 +12,7 @@ import TableCell from '@proton/components/components/table/TableCell';
 import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
+import useApi from '@proton/components/hooks/useApi';
 import { PLANS, SERVER_FEATURES, SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { getVPNDedicatedIPs } from '@proton/shared/lib/helpers/subscription';
@@ -22,7 +24,7 @@ import gatewaysEmptyStateUsersSvg from '@proton/styles/assets/img/illustrations/
 import SettingsSectionWide from '../../../containers/account/SettingsSectionWide';
 import EmptyViewContainer from '../../../containers/app/EmptyViewContainer';
 import { getCountryOptions } from '../../../helpers/countries';
-import { useApi, useNotifications, useSortedList, useSubscription, useUser, useUserSettings } from '../../../hooks';
+import { useNotifications, useSortedList, useSubscription, useUserSettings } from '../../../hooks';
 import type { Gateway } from './Gateway';
 import type { GatewayLogical } from './GatewayLogical';
 import GatewayModal from './GatewayModal';

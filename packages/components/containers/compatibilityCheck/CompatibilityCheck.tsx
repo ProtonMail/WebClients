@@ -1,10 +1,10 @@
 import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
+import useConfig from '@proton/components/hooks/useConfig';
 import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 import { decryptData, encryptData, getKey } from '@proton/shared/lib/authentication/cryptoHelper';
 
-import { useConfig } from '../../hooks';
 import CompatibilityCheckView from './CompatibilityCheckView';
 import { getCompatibilityList } from './compatibilityCheckHelper';
 

@@ -2,6 +2,7 @@ import type { MutableRefObject } from 'react';
 
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import Loader from '@proton/components/components/loader/Loader';
@@ -19,7 +20,7 @@ import {
     getOrganizationKeyInfo,
 } from '@proton/shared/lib/organization/helper';
 
-import { useAddresses, useOrganizationKey } from '../../hooks';
+import { useOrganizationKey } from '../../hooks';
 import useDisplayOrganizationKey from './useDisplayOrganizationKey';
 import useOrganizationModals from './useOrganizationModals';
 

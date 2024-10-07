@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 
-import { useCache, useContactEmails, useContactGroups, useEventManager, useUserKeys } from '@proton/components';
+import { useCache, useContactEmails, useEventManager, useUserKeys } from '@proton/components';
 import { CACHE_KEY } from '@proton/components/hooks/useGetEncryptionPreferences';
 import type { PublicKeyReference } from '@proton/crypto';
+import { useContactGroups } from '@proton/mail';
 import { CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { readSigned } from '@proton/shared/lib/contacts/decrypt';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';

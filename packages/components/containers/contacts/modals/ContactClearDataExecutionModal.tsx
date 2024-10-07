@@ -10,10 +10,12 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import DynamicProgress from '@proton/components/components/progress/DynamicProgress';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { dropDataEncryptedWithAKey } from '@proton/shared/lib/contacts/globalOperations';
 import type { Key } from '@proton/shared/lib/interfaces';
 
-import { useApi, useContacts, useEventManager, useGetUserKeys } from '../../../hooks';
+import { useContacts, useGetUserKeys } from '../../../hooks';
 
 export interface ContactClearDataExecutionProps {
     errorKey: Key;

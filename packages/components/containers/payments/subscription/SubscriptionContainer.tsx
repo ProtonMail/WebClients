@@ -3,11 +3,15 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import Icon from '@proton/components/components/icon/Icon';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
+import useApi from '@proton/components/hooks/useApi';
+import useConfig from '@proton/components/hooks/useConfig';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
@@ -74,15 +78,7 @@ import type {
 } from '../../../../components/payments/react-extensions/interface';
 import { usePaymentsApi } from '../../../../components/payments/react-extensions/usePaymentsApi';
 import { useModalTwoPromise } from '../../../components/modalTwo/useModalTwo';
-import {
-    useApi,
-    useConfig,
-    useEventManager,
-    useHandler,
-    useNotifications,
-    useUser,
-    useVPNServersCount,
-} from '../../../hooks';
+import { useHandler, useNotifications, useVPNServersCount } from '../../../hooks';
 import GenericError from '../../error/GenericError';
 import { isSubscriptionUnchanged } from '../../payments/helper';
 import InclusiveVatText from '../InclusiveVatText';

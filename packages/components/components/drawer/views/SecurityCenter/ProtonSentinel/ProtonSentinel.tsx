@@ -8,7 +8,9 @@ import { useModalStateObject } from '@proton/components/components/modalTwo/useM
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { getDisabledString, getEnabledString } from '@proton/components/containers/credentialLeak/helpers';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { useApi, useEventManager, useNotifications, useUserSettings } from '@proton/components/hooks';
+import { useNotifications, useUserSettings } from '@proton/components/hooks';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { disableHighSecurity, enableHighSecurity } from '@proton/shared/lib/api/settings';
 import { TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';

@@ -2,9 +2,10 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import type { ModalStateProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
-import { useUser, useUserSettings } from '@proton/components/hooks';
+import { useUserSettings } from '@proton/components/hooks';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { ChecklistKey } from '@proton/shared/lib/interfaces';

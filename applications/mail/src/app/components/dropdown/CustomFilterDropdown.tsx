@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import {
     Checkbox,
     ConditionComparator,
@@ -14,7 +15,6 @@ import {
     computeTree,
     newFilter,
     useModalState,
-    useUser,
 } from '@proton/components';
 import { useFilters } from '@proton/mail/filters/hooks';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';

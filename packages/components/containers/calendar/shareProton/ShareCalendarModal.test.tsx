@@ -4,7 +4,8 @@ import { mocked } from 'jest-mock';
 import { setupServer } from 'msw/node';
 
 import { CacheProvider } from '@proton/components/containers/cache/Provider';
-import { useApi, useGetEncryptionPreferences, useNotifications } from '@proton/components/hooks';
+import { useGetEncryptionPreferences, useNotifications } from '@proton/components/hooks';
+import useApi from '@proton/components/hooks/useApi';
 import type { PublicKeyReference } from '@proton/crypto';
 import { MIME_TYPES, PGP_SCHEMES } from '@proton/shared/lib/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
@@ -19,7 +20,7 @@ const server = setupServer(...getHandlers());
 jest.mock('@proton/components/hooks/useGetEncryptionPreferences');
 jest.mock('@proton/components/hooks/useNotifications');
 jest.mock('@proton/components/hooks/useApi');
-jest.mock('@proton/components/hooks/useAddresses');
+jest.mock('@proton/account/addresses/hooks');
 jest.mock('../../contacts/ContactEmailsProvider', () => ({
     useContactEmailsCache: () => ({
         contactEmails: [],

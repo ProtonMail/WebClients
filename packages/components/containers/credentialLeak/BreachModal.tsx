@@ -7,10 +7,11 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useApi from '@proton/components/hooks/useApi';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { updateBreachState } from '@proton/shared/lib/api/breaches';
 
-import { useApi, useErrorHandler } from '../..';
 import BreachInfo from './BreachInfo';
 import BreachInfoNote from './BreachInfoNote';
 import BreachRecommendations from './BreachRecommendations';

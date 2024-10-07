@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
-import { useConfig, useDrawer } from '@proton/components/hooks';
+import useDrawer from '@proton/components/hooks/drawer/useDrawer';
+import useConfig from '@proton/components/hooks/useConfig';
 import { postMessageFromIframe } from '@proton/shared/lib/drawer/helpers';
 import type { DrawerApp } from '@proton/shared/lib/drawer/interfaces';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { useUser } from '@proton/components/hooks';
 import { getPlanTitle, isTrial } from '@proton/shared/lib/helpers/subscription';
 import type { SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
 

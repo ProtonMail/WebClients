@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { useDrawer } from '@proton/components/hooks';
+import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 
 const useDrawerWidth = () => {
     const [sidebarWidth, setSidebarWidth] = useState(0);

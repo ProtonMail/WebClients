@@ -3,8 +3,9 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import compact from 'lodash/compact';
 import { c } from 'ttag';
 
+import { useAddressesKeys, useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import type { WasmApiExchangeRate, WasmApiWalletAccount } from '@proton/andromeda';
-import { useAddressesKeys, useGetAddressKeys, useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
 import type { DecryptedAddressKey, SimpleMap } from '@proton/shared/lib/interfaces';
 import { ANONYMOUS_SENDER_ADDRESS_ID, type IWasmApiWalletData } from '@proton/wallet';
 

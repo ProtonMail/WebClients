@@ -1,8 +1,11 @@
 import { c } from 'ttag';
 
+import { useGetUser, useUser } from '@proton/account/user/hooks';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { isSplittedUser, onSessionMigrationPaymentsVersion } from '@proton/payments';
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { changeRenewState, deleteSubscription } from '@proton/shared/lib/api/payments';
@@ -25,16 +28,12 @@ import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 
 import {
-    useApi,
-    useEventManager,
     useGetSubscription,
-    useGetUser,
     useNotifications,
     useOrganization,
     usePlans,
     usePreferredPlansMap,
     useSubscription,
-    useUser,
     useVPNServersCount,
 } from '../../../../hooks';
 import DowngradeModal from '../../DowngradeModal';

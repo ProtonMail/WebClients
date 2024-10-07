@@ -1,12 +1,12 @@
 import { screen } from '@testing-library/dom';
 
-import { useUser } from '@proton/components/hooks/useUser';
+import { useUser } from '@proton/account/user/hooks';
 import { useFlag } from '@proton/unleash';
 
 import { easySwitchRender } from '../../tests/render';
 import GmailForwarding from './GmailForwarding';
 
-jest.mock('@proton/components/hooks/useUser');
+jest.mock('@proton/account/user/hooks');
 const mockUseUser = useUser as jest.MockedFunction<any>;
 
 jest.mock('@proton/unleash');

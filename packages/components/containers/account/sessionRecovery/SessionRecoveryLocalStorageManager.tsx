@@ -1,8 +1,9 @@
 import type { ReactNode } from 'react';
-import { useEffect } from 'react';
-import { createContext, useContext } from 'react';
+import { createContext, useContext, useEffect } from 'react';
 
-import { useLocalState, useSessionRecoveryState, useUser } from '@proton/components/hooks';
+import { useUser } from '@proton/account/user/hooks';
+import useLocalState from '@proton/components/hooks/useLocalState';
+import { useSessionRecoveryState } from '@proton/components/hooks/useSessionRecovery';
 import { removeItem } from '@proton/shared/lib/helpers/storage';
 import { SessionRecoveryState } from '@proton/shared/lib/interfaces';
 

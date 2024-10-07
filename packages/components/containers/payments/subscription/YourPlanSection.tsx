@@ -1,9 +1,12 @@
+import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { useUserInvitations } from '@proton/account/userInvitations/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import MozillaInfoPanel from '@proton/components/containers/account/MozillaInfoPanel';
 import SettingsSectionExtraWide from '@proton/components/containers/account/SettingsSectionExtraWide';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import useLoad from '@proton/components/hooks/useLoad';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
@@ -12,16 +15,7 @@ import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import {
-    useAddresses,
-    useLoad,
-    useOrganization,
-    usePlans,
-    usePreferredPlansMap,
-    useSubscription,
-    useUser,
-    useVPNServersCount,
-} from '../../../hooks';
+import { useOrganization, usePlans, usePreferredPlansMap, useSubscription, useVPNServersCount } from '../../../hooks';
 import { useSubscriptionModal } from './SubscriptionModalProvider';
 import { resolveUpsellsToDisplay } from './helpers';
 import { SubscriptionPanel, UpsellPanels, UsagePanel } from './panels';

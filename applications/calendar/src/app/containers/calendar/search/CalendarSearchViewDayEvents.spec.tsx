@@ -6,12 +6,14 @@ import { mockUseAddresses } from '@proton/testing';
 import CalendarSearchViewDayEvents from './CalendarSearchViewDayEvents';
 import type { VisualSearchItem } from './interface';
 
-jest.mock('@proton/components/hooks/useUser', () => () => [
-    {
-        hasPaidMail: true,
-    },
-    false,
-]);
+jest.mock('@proton/account/user/hooks', () => ({
+    useUser: () => [
+        {
+            hasPaidMail: true,
+        },
+        false,
+    ],
+}));
 
 const dailyEvents = [
     {

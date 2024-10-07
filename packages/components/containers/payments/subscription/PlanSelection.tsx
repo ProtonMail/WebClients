@@ -2,6 +2,7 @@ import { type ReactElement, useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import CalendarLogo from '@proton/components/components/logo/CalendarLogo';
@@ -15,7 +16,6 @@ import Price from '@proton/components/components/price/Price';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Tabs from '@proton/components/components/tabs/Tabs';
 import useCancellationFlow from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationFlow';
-import { useUser } from '@proton/components/hooks';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { type PaymentMethodStatusExtended, getPlansMap, isRegionalCurrency, mainCurrencies } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';

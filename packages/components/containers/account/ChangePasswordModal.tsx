@@ -3,6 +3,9 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { signoutAction } from '@proton/account';
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
@@ -15,7 +18,10 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AuthModal from '@proton/components/containers/password/AuthModal';
+import useApi from '@proton/components/hooks/useApi';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useDispatch } from '@proton/redux-shared-store';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
@@ -35,17 +41,7 @@ import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
 import { srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
-import {
-    useApi,
-    useAuthentication,
-    useEventManager,
-    useGetAddressKeys,
-    useGetAddresses,
-    useGetOrganizationKey,
-    useGetUserKeys,
-    useNotifications,
-    useUser,
-} from '../../hooks';
+import { useGetOrganizationKey, useGetUserKeys, useNotifications } from '../../hooks';
 import GenericError from '../error/GenericError';
 import { handleChangeLoginPassword } from './changePasswordHelper';
 

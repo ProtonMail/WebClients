@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { useAddressesKeys } from '@proton/components/hooks';
+import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
 
 export const usePrimaryAddressKey = () => {
     const [addresses] = useAddressesKeys();

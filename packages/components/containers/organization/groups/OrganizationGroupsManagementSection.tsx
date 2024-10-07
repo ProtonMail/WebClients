@@ -1,8 +1,12 @@
 import { c } from 'ttag';
 
 import { Button, Card, DualPaneContent, DualPaneSidebar } from '@proton/atoms';
-import { Loader, SettingsLink, SettingsParagraph, SettingsSectionWide, canUseGroups } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import Loader from '@proton/components/components/loader/Loader';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import canUseGroups from '@proton/components/containers/organization/groups/canUseGroups';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';

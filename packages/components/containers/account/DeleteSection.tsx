@@ -1,12 +1,14 @@
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button, Href } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import useConfig from '@proton/components/hooks/useConfig';
 import { ADDRESS_TYPE, APPS, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { hasMigrationDiscount, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 
-import { useAddresses, useConfig, useSubscription } from '../../hooks';
+import { useSubscription } from '../../hooks';
 import { DiscountWarningModal, VisionaryWarningModal } from '../payments/subscription/PlanLossWarningModal';
 import DeleteAccountModal from './DeleteAccountModal';
 import MozillaInfoPanel from './MozillaInfoPanel';

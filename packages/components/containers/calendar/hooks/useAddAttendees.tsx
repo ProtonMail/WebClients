@@ -1,6 +1,11 @@
 import { useCallback } from 'react';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
+import useApi from '@proton/components/hooks/useApi';
+import useGetCalendarInfo from '@proton/components/hooks/useGetCalendarInfo';
+import useRelocalizeText from '@proton/components/hooks/useRelocalizeText';
 import { serverTime } from '@proton/crypto';
 import { useGetMailSettings } from '@proton/mail/mailSettings/hooks';
 import { syncMultipleEvents as syncMultipleEventsRoute } from '@proton/shared/lib/api/calendars';
@@ -32,14 +37,7 @@ import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 
-import {
-    useApi,
-    useGetAddressKeys,
-    useGetAddresses,
-    useGetCalendarInfo,
-    useGetEncryptionPreferences,
-    useRelocalizeText,
-} from '../../../hooks';
+import { useGetEncryptionPreferences } from '../../../hooks';
 import { useGetCanonicalEmailsMap } from '../../../hooks/useGetCanonicalEmailsMap';
 import { useGetVtimezonesMap } from '../../../hooks/useGetVtimezonesMap';
 import useSendIcs from '../../../hooks/useSendIcs';

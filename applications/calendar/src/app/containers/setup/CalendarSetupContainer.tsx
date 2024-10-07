@@ -1,16 +1,11 @@
 import { useEffect, useState } from 'react';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import { useGetHolidaysDirectory } from '@proton/calendar/holidaysDirectory/hooks';
-import {
-    LoaderPage,
-    StandardLoadErrorPage,
-    useApi,
-    useEventManager,
-    useGetAddressKeys,
-    useGetAddresses,
-} from '@proton/components';
+import { LoaderPage, StandardLoadErrorPage, useApi, useEventManager } from '@proton/components';
 import { CacheType } from '@proton/redux-utilities';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import setupCalendarHelper from '@proton/shared/lib/calendar/crypto/keys/setupCalendarHelper';

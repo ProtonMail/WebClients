@@ -1,8 +1,6 @@
-import React from 'react';
-
 import { c } from 'ttag';
 
-import { useApi } from '@proton/components/hooks';
+import useApi from '@proton/components/hooks/useApi';
 import { FeatureCode, useFeature } from '@proton/features';
 import { baseUseSelector } from '@proton/react-redux-store';
 import { TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry';

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { useApi } from '@proton/components/hooks';
+import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { getAllInvitations } from '@proton/shared/lib/api/calendars';
 import type { CalendarMemberInvitation } from '@proton/shared/lib/interfaces/calendar';

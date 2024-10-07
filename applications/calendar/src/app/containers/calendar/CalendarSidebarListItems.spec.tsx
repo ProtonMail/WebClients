@@ -3,8 +3,8 @@ import { Router } from 'react-router-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
+import { useUser } from '@proton/account/user/hooks';
 import { CacheProvider } from '@proton/components';
-import useUser from '@proton/components/hooks/useUser';
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { CALENDAR_FLAGS, CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
@@ -66,9 +66,9 @@ jest.mock('@proton/shared/lib/calendar/calendar', () => ({
     getIsCalendarDisabled: jest.fn(),
 }));
 
-jest.mock('@proton/components/hooks/useUser', () => ({
+jest.mock('@proton/account/user/hooks', () => ({
     __esModule: true,
-    default: jest.fn(() => [{ hasPaidMail: true, hasNonDelinquentScope: true }, false]),
+    useUser: jest.fn(() => [{ hasPaidMail: true, hasNonDelinquentScope: true }, false]),
     useGetUser: jest.fn(() => [{ hasPaidMail: true, hasNonDelinquentScope: true }, false]),
 }));
 
@@ -82,12 +82,12 @@ jest.mock('@proton/components/hooks/useGetEncryptionPreferences', () => ({
     default: jest.fn(),
 }));
 
-jest.mock('@proton/components/hooks/useAddressesKeys', () => ({
+jest.mock('@proton/account/addressKeys/hooks', () => ({
     __esModule: true,
     useGetAddressKeys: jest.fn(),
 }));
 
-jest.mock('@proton/components/hooks/useAddresses', () => ({
+jest.mock('@proton/account/addresses/hooks', () => ({
     __esModule: true,
     useGetAddresses: jest.fn(),
 }));

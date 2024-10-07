@@ -4,6 +4,8 @@ import { Prompt } from 'react-router';
 
 import { c } from 'ttag';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import {
     Dropzone,
     ImportModal,
@@ -14,12 +16,10 @@ import {
     useContactEmails,
     useContactEmailsCache,
     useEventManager,
-    useGetAddressKeys,
     useGetCalendarEventRaw,
     useGetEncryptionPreferences,
     useNotifications,
     useRelocalizeText,
-    useUser,
 } from '@proton/components';
 import { useReadCalendarBootstrap } from '@proton/components/hooks/useGetCalendarBootstrap';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';

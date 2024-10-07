@@ -10,7 +10,7 @@ import CalendarMemberAndInvitationList from './CalendarMemberAndInvitationList';
 
 jest.mock('@proton/components/hooks/useGetEncryptionPreferences');
 jest.mock('@proton/components/hooks/useNotifications');
-jest.mock('@proton/components/hooks/useAddresses');
+jest.mock('@proton/account/addresses/hooks');
 
 jest.mock('../../contacts/ContactEmailsProvider', () => ({
     useContactEmailsCache: () => ({

@@ -10,6 +10,7 @@ import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLa
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import {
     MotionModeSetting,
@@ -21,7 +22,6 @@ import {
 } from '@proton/shared/lib/themes/themes';
 import clsx from '@proton/utils/clsx';
 
-import { useNotifications } from '../..';
 import { useTheme } from '../themes/ThemeProvider';
 
 const themeFontFaceEntries = getThemeFontFaceEntries();

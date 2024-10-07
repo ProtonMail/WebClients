@@ -3,15 +3,9 @@ import { useEffect, useState } from 'react';
 import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { Button, Href } from '@proton/atoms';
-import {
-    useActiveBreakpoint,
-    useAddresses,
-    useApi,
-    useNotifications,
-    useOrganization,
-    useUser,
-} from '@proton/components';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
@@ -23,6 +17,11 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import UpgradeBanner from '@proton/components/containers/account/UpgradeBanner';
+import SMTPTokenModal from '@proton/components/containers/smtp/SMTPTokenModal';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useApi from '@proton/components/hooks/useApi';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import { useOrganization } from '@proton/components/hooks/useOrganization';
 import { useLoading } from '@proton/hooks';
 import { deleteToken, getTokens, isTokenEligible } from '@proton/shared/lib/api/smtptokens';
 import {
@@ -45,7 +44,6 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getDeleteText } from '../general/helper';
-import SMTPTokenModal from './SMTPTokenModal';
 
 interface SmtpTokens {
     SmtpTokenID: string;

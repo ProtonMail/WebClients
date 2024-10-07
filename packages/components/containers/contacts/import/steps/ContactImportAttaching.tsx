@@ -12,6 +12,7 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import { getInitialState } from '@proton/components/containers/contacts/import/ContactImportModal';
 import { FeatureCode, useFeature } from '@proton/features';
 import { APPS } from '@proton/shared/lib/constants';
 import {
@@ -29,8 +30,6 @@ import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
 import { EXTENSION, IMPORT_STEPS } from '@proton/shared/lib/interfaces/contacts/Import';
-
-import { getInitialState } from '../ContactImportModal';
 
 const { CSV, VCF } = EXTENSION;
 

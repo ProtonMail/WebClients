@@ -1,8 +1,9 @@
 import type { ReactNode } from 'react';
 import { useEffect, useMemo } from 'react';
 
+import { useUser } from '@proton/account/user/hooks';
 import type { ThemeColor } from '@proton/colors/types';
-import { useLocalState, useUser } from '@proton/components/hooks';
+import { useLocalState } from '@proton/components/hooks';
 import { QuickSettingsRemindersContext } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import useKeyTransparencyNotification from '@proton/components/hooks/useKeyTransparencyNotification';
 import { KEY_TRANSPARENCY_REMINDER_UPDATE } from '@proton/shared/lib/drawer/interfaces';

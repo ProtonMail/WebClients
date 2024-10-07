@@ -1,12 +1,12 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { useAddresses } from '@proton/components';
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 
 import { generateMockAddress, generateMockAddressArray } from '../tests/data/addresses';
 import useAvailableAddresses from './useAvailableAddresses';
 
-jest.mock('@proton/components/hooks/useAddresses');
+jest.mock('@proton/account/addresses/hooks');
 const mockUseAddresses = useAddresses as jest.MockedFunction<any>;
 
 describe('useAvailableAddresses', () => {

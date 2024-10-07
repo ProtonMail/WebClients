@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
+import { useUser } from '@proton/account/user/hooks';
 import type { ImporterCalendar } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
 import { selectOauthImportStateImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
-import { useUser } from '@proton/components';
 import {
     getProbablyActiveCalendars,
     getVisualCalendars,

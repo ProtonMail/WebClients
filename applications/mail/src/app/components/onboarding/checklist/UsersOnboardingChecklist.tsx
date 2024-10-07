@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { EasySwitchProvider } from '@proton/activation';
 import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms';
@@ -14,7 +15,7 @@ import {
     useActiveBreakpoint,
     useModalState,
 } from '@proton/components';
-import { useLocalState, useUser } from '@proton/components/hooks';
+import { useLocalState } from '@proton/components/hooks';
 import { CHECKLIST_DISPLAY_TYPE, ChecklistKey } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';

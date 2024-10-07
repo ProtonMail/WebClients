@@ -9,7 +9,13 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import PersonalCalendarModal from '@proton/components/containers/calendar/calendarModal/personalCalendarModal/PersonalCalendarModal';
+import ExportModal from '@proton/components/containers/calendar/exportModal/ExportModal';
+import CalendarsSection from '@proton/components/containers/calendar/settings/CalendarsSection';
 import { getNextDefaultCalendar } from '@proton/components/containers/calendar/settings/defaultCalendar';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import { useModalsMap } from '@proton/components/hooks/useModalsMap';
 import { removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { getProbablyActiveCalendars } from '@proton/shared/lib/calendar/calendar';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
@@ -20,11 +26,7 @@ import type { Address, Subscription, UserModel } from '@proton/shared/lib/interf
 import type { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { useApi, useEventManager, useNotifications } from '../../../hooks';
-import { useModalsMap } from '../../../hooks/useModalsMap';
-import { PersonalCalendarModal } from '../calendarModal/personalCalendarModal/PersonalCalendarModal';
-import { ExportModal } from '../exportModal/ExportModal';
-import CalendarsSection from './CalendarsSection';
+import { useNotifications } from '../../../hooks';
 
 type ModalsMap = {
     calendarModal: ModalWithProps<{

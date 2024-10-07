@@ -3,14 +3,14 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
 import { updateSessionAccountRecovery } from '@proton/shared/lib/api/sessionRecovery';
 
 import {
-    useApi,
     useAvailableRecoveryMethods,
-    useEventManager,
     useIsSessionRecoveryEnabled,
     useIsSessionRecoveryInitiationAvailable,
     useNotifications,

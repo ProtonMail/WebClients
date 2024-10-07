@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike, Href } from '@proton/atoms';
 import { NewUpsellModal, Price, SettingsLink } from '@proton/components';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -7,7 +8,8 @@ import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import { useApi, usePlans, useUser } from '@proton/components/hooks';
+import { usePlans } from '@proton/components/hooks';
+import useApi from '@proton/components/hooks/useApi';
 import {
     APPS,
     APP_UPSELL_REF_PATH,

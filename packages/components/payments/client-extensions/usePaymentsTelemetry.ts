@@ -1,3 +1,4 @@
+import useApi from '@proton/components/hooks/useApi';
 import type { PaymentMethodFlows } from '@proton/payments';
 import { TelemetryMeasurementGroups, TelemetryPaymentsEvents } from '@proton/shared/lib/api/telemetry';
 import type { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
@@ -5,7 +6,6 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { Api, Cycle } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { useApi } from '../../hooks';
 import { type PaymentProcessorType, getSystemByHookType } from '../react-extensions/interface';
 import { type ChargebeeEnabledString, chargebeeEnabledToString } from './helpers';
 import { type CalledKillSwitchString, useChargebeeContext } from './useChargebeeContext';

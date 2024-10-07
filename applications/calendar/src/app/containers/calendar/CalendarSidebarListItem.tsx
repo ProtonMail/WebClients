@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button, CircleLoader } from '@proton/atoms';
 import {
     Checkbox,
@@ -13,7 +14,6 @@ import {
     SidebarListItemLabel,
     SimpleDropdown,
     Tooltip,
-    useUser,
 } from '@proton/components';
 import {
     getIsCalendarDisabled,

@@ -3,8 +3,8 @@ import { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useModalTwo } from '@proton/components';
-import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
+import { useApi, useEventManager, useModalTwo } from '@proton/components';
+import { useNotifications } from '@proton/components/hooks';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useGetFolders, useGetLabels } from '@proton/mail';
 import { labelConversations } from '@proton/shared/lib/api/conversations';

@@ -7,8 +7,7 @@ import { Button, Input } from '@proton/atoms';
 import UnderlineButton from '@proton/components/components/button/UnderlineButton';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
-
-import { useToggle } from '../../hooks';
+import useToggle from '@proton/components/hooks/useToggle';
 
 interface Props {
     loading?: boolean;

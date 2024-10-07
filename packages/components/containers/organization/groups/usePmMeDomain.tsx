@@ -1,4 +1,4 @@
-import { useProtonDomains } from '@proton/components/hooks';
+import { useProtonDomains } from '@proton/account/protonDomains/hooks';
 
 const usePmMeDomain = () => {
     const [{ premiumDomains }, loadingProtonDomains] = useProtonDomains();

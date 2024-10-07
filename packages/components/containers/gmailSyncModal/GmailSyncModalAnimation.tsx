@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useUser } from '@proton/components';
+import { useUser } from '@proton/account/user/hooks';
 import Icon from '@proton/components/components/icon/Icon';
 import Logo from '@proton/components/components/logo/Logo';
 import { isMobile } from '@proton/shared/lib/helpers/browser';

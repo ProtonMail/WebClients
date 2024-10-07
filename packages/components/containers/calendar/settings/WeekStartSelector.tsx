@@ -3,6 +3,9 @@ import { c } from 'ttag';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import { getAutomaticText } from '@proton/components/containers/general/helper';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { updateWeekStart } from '@proton/shared/lib/api/settings';
 import { dateLocaleCode } from '@proton/shared/lib/i18n';
@@ -11,8 +14,7 @@ import { loadDateLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
 import { getDefaultWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
-import { getAutomaticText } from '../../../containers/general/helper';
-import { useApi, useEventManager, useNotifications, useUserSettings } from '../../../hooks';
+import { useNotifications, useUserSettings } from '../../../hooks';
 
 interface Props {
     className?: string;

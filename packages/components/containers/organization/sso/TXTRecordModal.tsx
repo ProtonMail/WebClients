@@ -6,13 +6,15 @@ import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';
 import { getDomain } from '@proton/shared/lib/api/domains';
 import type { Domain } from '@proton/shared/lib/interfaces';
 import { VERIFY_STATE } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { useApi, useEventManager, useNotifications } from '../../../hooks';
+import { useNotifications } from '../../../hooks';
 import { verifyDomain } from '../../domains/DomainModal';
 import TXTSection from './TXTSection';
 

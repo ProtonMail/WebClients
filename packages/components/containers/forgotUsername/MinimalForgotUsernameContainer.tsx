@@ -6,10 +6,11 @@ import { c } from 'ttag';
 import Alert from '@proton/components/components/alert/Alert';
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import EmailInput from '@proton/components/components/input/EmailInput';
+import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { requestUsername } from '@proton/shared/lib/api/reset';
 
-import { useApi, useNotifications } from '../../hooks';
+import { useNotifications } from '../../hooks';
 
 const MinimalForgotUsernameContainer = () => {
     const api = useApi();

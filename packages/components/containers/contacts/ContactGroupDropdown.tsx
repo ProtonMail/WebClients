@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import type { ButtonProps } from '@proton/atoms';
 import { Button } from '@proton/atoms';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
@@ -13,6 +14,7 @@ import Checkbox from '@proton/components/components/input/Checkbox';
 import SearchInput from '@proton/components/components/input/SearchInput';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import { useContactGroups } from '@proton/mail';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import {
     getContactGroupsDelayedSaveChanges,
@@ -26,7 +28,7 @@ import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
 import Mark from '../../components/text/Mark';
-import { useContactEmails, useContactGroups, useUser } from '../../hooks';
+import { useContactEmails } from '../../hooks';
 import type { ContactGroupEditProps } from './group/ContactGroupEditModal';
 import useApplyGroups from './hooks/useApplyGroups';
 import type { ContactGroupLimitReachedProps } from './modals/ContactGroupLimitReachedModal';

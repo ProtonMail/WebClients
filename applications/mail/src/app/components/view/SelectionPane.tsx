@@ -5,8 +5,9 @@ import type { Location } from 'history';
 import { c, msgid } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { useFolders, useLabels, useModalState } from '@proton/components';
+import { useModalState } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { useFolders, useLabels } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { MailSettings } from '@proton/shared/lib/interfaces';

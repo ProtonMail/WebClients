@@ -7,8 +7,11 @@ import { LAST_ACTIVE_PING, useActivePing } from './useActivePing';
 const mockedApi = jest.fn();
 const mockedUser = { ID: 123 };
 
-jest.mock('@proton/components/hooks', () => ({
+jest.mock('@proton/components', () => ({
     useApi: () => jest.fn().mockImplementation(mockedApi.mockResolvedValue('')),
+}));
+
+jest.mock('@proton/account/user/hooks', () => ({
     useUser: () => [mockedUser],
 }));
 
