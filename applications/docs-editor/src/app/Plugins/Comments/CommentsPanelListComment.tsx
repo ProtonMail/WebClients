@@ -183,6 +183,7 @@ export function CommentsPanelListComment({
                     'pointer-events-auto flex-shrink-0 opacity-0 hover:opacity-100 focus:opacity-100 group-hover/comment:opacity-100',
                     isFirstComment && 'group-focus-within/thread:opacity-100',
                   )}
+                  data-testid="suggestion-reject-button"
                 >
                   <Icon size={4.5} name="cross" />
                 </Button>
@@ -197,6 +198,7 @@ export function CommentsPanelListComment({
                     'pointer-events-auto flex-shrink-0 opacity-0 hover:opacity-100 focus:opacity-100 group-hover/comment:opacity-100',
                     isFirstComment && 'group-focus-within/thread:opacity-100',
                   )}
+                  data-testid="suggestion-accept-button"
                 >
                   <Icon size={4.5} name="checkmark" />
                 </Button>
