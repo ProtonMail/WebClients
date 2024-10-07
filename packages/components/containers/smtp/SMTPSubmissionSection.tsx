@@ -4,6 +4,7 @@ import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { Button, Href } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -21,7 +22,6 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useOrganization } from '@proton/components/hooks/useOrganization';
-import { useUser } from '@proton/components/hooks/useUser';
 import { useLoading } from '@proton/hooks';
 import { deleteToken, getTokens, isTokenEligible } from '@proton/shared/lib/api/smtptokens';
 import {

@@ -18,22 +18,41 @@ jest.mock('@proton/components/hooks/useApiEnvironmentConfig', () => () => [
     false,
 ]);
 
-jest.mock('@proton/components/hooks/useUser', () => () => [
-    {
-        isAdmin: true,
-        isFree: true,
-        isMember: true,
-        isPaid: true,
-        isPrivate: true,
-        isSubUser: true,
-        isDelinquent: true,
-        hasNonDelinquentScope: true,
-        hasPaidMail: true,
-        hasPaidVpn: true,
-        canPay: true,
-    },
-    false,
-]);
+jest.mock('@proton/account/user/hooks', () => ({
+    __esModule: true,
+    useUser: jest.fn(() => [
+        {
+            isAdmin: true,
+            isFree: true,
+            isMember: true,
+            isPaid: true,
+            isPrivate: true,
+            isSubUser: true,
+            isDelinquent: true,
+            hasNonDelinquentScope: true,
+            hasPaidMail: true,
+            hasPaidVpn: true,
+            canPay: true,
+        },
+        false,
+    ]),
+    useGetUser: jest.fn(() => [
+        {
+            isAdmin: true,
+            isFree: true,
+            isMember: true,
+            isPaid: true,
+            isPrivate: true,
+            isSubUser: true,
+            isDelinquent: true,
+            hasNonDelinquentScope: true,
+            hasPaidMail: true,
+            hasPaidVpn: true,
+            canPay: true,
+        },
+        false,
+    ]),
+}));
 
 jest.mock('@proton/components/hooks/useFeature', () => () => {
     return {

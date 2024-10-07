@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import Editor from '@proton/components/components/editor/Editor';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
@@ -30,7 +31,7 @@ import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
 
-import { useErrorHandler, useHotkeys, useNotifications, useUser } from '../../hooks';
+import { useErrorHandler, useHotkeys, useNotifications } from '../../hooks';
 import UpgradeBanner from '../account/UpgradeBanner';
 import AutoReplyFormDaily from './AutoReplyForm/AutoReplyFormDaily';
 import AutoReplyFormFixed from './AutoReplyForm/AutoReplyFormFixed';

@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import Field from '@proton/components/components/container/Field';
 import Row from '@proton/components/components/container/Row';
@@ -24,7 +25,7 @@ import type { Currency } from '@proton/shared/lib/interfaces';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 
-import { useNotifications, useSubscription, useUser } from '../../hooks';
+import { useNotifications, useSubscription } from '../../hooks';
 import useApiResult from '../../hooks/useApiResult';
 import PaymentWrapper from '../payments/PaymentWrapper';
 import StyledPayPalButton from '../payments/StyledPayPalButton';

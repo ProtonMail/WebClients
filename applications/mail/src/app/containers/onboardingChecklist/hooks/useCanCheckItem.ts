@@ -1,4 +1,5 @@
-import { useSubscription, useUser, useUserSettings } from '@proton/components/hooks';
+import { useUser } from '@proton/account/user/hooks';
+import { useSubscription, useUserSettings } from '@proton/components/hooks';
 import { canCheckItemGetStarted, canCheckItemPaidChecklist } from '@proton/shared/lib/helpers/subscription';
 
 // This is used to make sure user can check an item in the checklist and avoid visible errors

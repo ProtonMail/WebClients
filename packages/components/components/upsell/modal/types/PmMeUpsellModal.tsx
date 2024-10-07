@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { NewUpsellModal, useUser } from '@proton/components';
+import { useUser } from '@proton/account/user/hooks';
 import type { ModalStateProps } from '@proton/components';
+import { NewUpsellModal } from '@proton/components';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import {

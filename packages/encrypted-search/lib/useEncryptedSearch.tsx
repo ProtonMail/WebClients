@@ -3,9 +3,9 @@ import { useEffect, useMemo, useRef } from 'react';
 import type { IDBPDatabase } from 'idb';
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import useUser from '@proton/components/hooks/useUser';
 import { useGetUserKeys } from '@proton/components/hooks/useUserKeys';
 import { SECOND } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';

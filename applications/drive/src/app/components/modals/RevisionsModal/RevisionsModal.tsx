@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike, CircleLoader } from '@proton/atoms';
 import type { ModalStateProps } from '@proton/components';
 import {
@@ -12,7 +13,6 @@ import {
     ModalTwoHeader,
     getRetentionLabel,
     useModalTwoStatic,
-    useUser,
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { getIsOwner } from '@proton/shared/lib/drive/permissions';

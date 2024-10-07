@@ -1,8 +1,8 @@
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { getIsMnemonicAvailable } from '@proton/shared/lib/mnemonic';
 
 import useConfig from './useConfig';
-import useUser from './useUser';
 
 const useIsMnemonicAvailable = () => {
     const { APP_NAME } = useConfig();

@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
@@ -15,7 +16,7 @@ import { PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { createTokenV4, setPaymentMethodV4 } from '@proton/shared/lib/api/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
-import { useNotifications, useUser } from '../../hooks';
+import { useNotifications } from '../../hooks';
 
 const PAYMENT_AUTHORIZATION_AMOUNT = 100;
 const PAYMENT_AUTHORIZATION_CURRENCY = 'CHF';

@@ -3,6 +3,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useGetUser } from '@proton/account/user/hooks';
 import {
     AuthenticatedBugModal,
     DropdownMenuButton,
@@ -12,7 +13,6 @@ import {
     useAuthentication,
     useErrorHandler,
     useEventManager,
-    useGetUser,
     useKTActivation,
     useModalState,
     useTheme,

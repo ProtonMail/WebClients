@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button, Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import ErrorButton from '@proton/components/components/button/ErrorButton';
@@ -36,7 +37,7 @@ import { getOrganizationDenomination } from '@proton/shared/lib/organization/hel
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { useGetOrganization, useNotifications, useUser } from '../../hooks';
+import { useGetOrganization, useNotifications } from '../../hooks';
 
 const { DIFFERENT_ACCOUNT, TOO_EXPENSIVE, MISSING_FEATURE, USE_OTHER_SERVICE, OTHER } = ACCOUNT_DELETION_REASONS;
 

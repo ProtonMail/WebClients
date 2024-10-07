@@ -1,7 +1,8 @@
 import type { CSSProperties, Ref } from 'react';
 import { useMemo } from 'react';
 
-import { CalendarEventDateHeader, Icon, useUser } from '@proton/components';
+import { useUser } from '@proton/account/user/hooks';
+import { CalendarEventDateHeader, Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import type { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';

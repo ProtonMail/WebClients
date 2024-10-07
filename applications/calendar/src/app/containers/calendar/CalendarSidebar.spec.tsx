@@ -70,10 +70,10 @@ jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
 
 jest.mock('@proton/components/hooks/useAuthentication', () => () => ({}));
 
-jest.mock('@proton/components/hooks/useUser', () => ({
+jest.mock('@proton/account/user/hooks', () => ({
     __esModule: true,
-    default: jest.fn(() => [{ hasPaidMail: true, Flags: {} }, false]),
-    useGetUser: jest.fn(() => () => [{ hasPaidMail: true, Flags: {} }, false]),
+    useUser: jest.fn(() => [{ hasPaidMail: true, Flags: {} }, false]),
+    useGetUser: jest.fn(() => [{ hasPaidMail: true, Flags: {} }, false]),
 }));
 
 jest.mock('@proton/components/hooks/useSubscribedCalendars', () => ({

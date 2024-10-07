@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -16,7 +17,7 @@ import { deleteFilter, toggleEnable } from '@proton/shared/lib/api/filters';
 import { FILTER_STATUS } from '@proton/shared/lib/constants';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
 
-import { useNotifications, useUser } from '../../hooks';
+import { useNotifications } from '../../hooks';
 import FilterWarningModal from './FilterWarningModal';
 import type { Filter } from './interfaces';
 import DeleteFilterModal from './modal/DeleteFilterModal';

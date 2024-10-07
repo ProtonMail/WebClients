@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Href } from '@proton/atoms';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { useUser } from '../../hooks';
 import TopBanner from './TopBanner';
 
 const SubUserTopBanner = () => {

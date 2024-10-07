@@ -1,5 +1,6 @@
 import { c, msgid } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { InlineLinkButton } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -16,7 +17,6 @@ import {
     useShouldNotifyPasswordResetAvailable,
     useShouldNotifySessionRecoveryCancelled,
     useShouldNotifySessionRecoveryInProgress,
-    useUser,
 } from '../../hooks';
 import TopBanner from './TopBanner';
 

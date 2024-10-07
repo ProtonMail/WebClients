@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import Copy from '@proton/components/components/button/Copy';
@@ -17,7 +18,7 @@ import { getKeyUsedForContact } from '@proton/shared/lib/contacts/keyVerificatio
 import type { Key } from '@proton/shared/lib/interfaces';
 import type { Contact } from '@proton/shared/lib/interfaces/contacts';
 
-import { useNotifications, useUser } from '../../../hooks';
+import { useNotifications } from '../../../hooks';
 import useContact from '../hooks/useContact';
 import type { ContactClearDataConfirmProps } from './ContactClearDataConfirmModal';
 

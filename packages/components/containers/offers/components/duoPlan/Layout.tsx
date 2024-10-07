@@ -2,10 +2,11 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Price from '@proton/components/components/price/Price';
-import { usePreferredPlansMap, useUser } from '@proton/components/hooks';
+import { usePreferredPlansMap } from '@proton/components/hooks';
 import type { AmountAndCurrency } from '@proton/payments';
 import { APPS, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';

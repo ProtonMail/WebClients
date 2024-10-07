@@ -1,11 +1,12 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { useSubscription, useUser, useUserSettings } from '@proton/components/hooks';
+import { useUser } from '@proton/account/user/hooks';
+import { useSubscription, useUserSettings } from '@proton/components/hooks';
 import { PLANS } from '@proton/shared/lib/constants';
 
 import useCanCheckItem from './useCanCheckItem';
 
-jest.mock('@proton/components/hooks/useUser');
+jest.mock('@proton/account/user/hooks');
 jest.mock('@proton/components/hooks/useUserSettings');
 jest.mock('@proton/components/hooks/useSubscription');
 

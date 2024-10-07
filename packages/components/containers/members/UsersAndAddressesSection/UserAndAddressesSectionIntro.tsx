@@ -1,9 +1,10 @@
 import { c, msgid } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import { useMembers, useOrganization, useSubscription, useUser } from '@proton/components/hooks';
+import { useMembers, useOrganization, useSubscription } from '@proton/components/hooks';
 import { MEMBER_SUBSCRIBER } from '@proton/shared/lib/constants';
 import {
     getHasExternalMemberCapableB2BPlan,

@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import type { HotkeyTuple } from '@proton/components';
 import {
     Icon,
@@ -14,7 +15,6 @@ import {
     useHotkeys,
     useLocalState,
     useMessageCounts,
-    useUser,
 } from '@proton/components';
 import { useFolders, useLabels, useSystemFolders } from '@proton/mail';
 import { useConversationCounts } from '@proton/mail/counts/conversationCounts';

@@ -4,6 +4,7 @@ import { useLocation } from 'react-router';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { Button, Href } from '@proton/atoms';
 import { NewUpsellModal, Tabs, UpsellModal } from '@proton/components';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -24,7 +25,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import forwardImg from '@proton/styles/assets/img/illustrations/new-upsells-img/forward.svg';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useUser } from '../../hooks';
 import ForwardModal from './ForwardModal';
 import IncomingForwardTable from './IncomingForwardTable';
 import OutgoingForwardTable from './OutgoingForwardTable';

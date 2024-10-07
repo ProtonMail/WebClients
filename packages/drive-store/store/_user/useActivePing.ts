@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
+import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/components';
-import { useUser } from '@proton/components/hooks';
 import { queryUserActivePing } from '@proton/shared/lib/api/drive/user';
 import localStorageWithExpiry from '@proton/shared/lib/api/helpers/localStorageWithExpiry';
 import { ACTIVE_PING_INTERVAL } from '@proton/shared/lib/drive/constants';

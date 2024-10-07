@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { Button, Card, CircleLoader, Href, InlineLinkButton } from '@proton/atoms';
 import Badge from '@proton/components/components/badge/Badge';
 import Icon from '@proton/components/components/icon/Icon';
@@ -43,7 +44,6 @@ import {
     useNotifications,
     useSearchParamsEffect,
     useSessionRecoveryState,
-    useUser,
 } from '../../hooks';
 import EditDisplayNameModal from './EditDisplayNameModal';
 import EditExternalAddressModal from './EditExternalAddressModal';

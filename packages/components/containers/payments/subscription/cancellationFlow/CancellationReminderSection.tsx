@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button, ButtonLike } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
@@ -9,7 +10,6 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import useAppTitle from '@proton/components/hooks/useAppTitle';
 import useSubscription from '@proton/components/hooks/useSubscription';
-import useUser from '@proton/components/hooks/useUser';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';

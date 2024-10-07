@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { addDays } from 'date-fns';
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button, Kbd } from '@proton/atoms';
 import type { Breakpoints, ContactEditProps } from '@proton/components';
 import {
@@ -16,7 +17,6 @@ import {
     useApi,
     useModalState,
     useNotifications,
-    useUser,
 } from '@proton/components';
 import type { WorkerDecryptionResult } from '@proton/crypto';
 import { FeatureCode, useFeature } from '@proton/features';

@@ -1,7 +1,7 @@
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetUser } from '@proton/account/user/hooks';
 import { useGetKTActivation } from '@proton/components/containers/keyTransparency/useKTActivation';
 import useConfig from '@proton/components/hooks/useConfig';
-import { useGetUser } from '@proton/components/hooks/useUser';
 import { useGetUserKeys } from '@proton/components/hooks/useUserKeys';
 import { ktSentryReportError, verifyPublicKeysAddressAndCatchall } from '@proton/key-transparency/lib';
 import type { VerifyOutboundPublicKeys } from '@proton/shared/lib/interfaces';

@@ -7,6 +7,7 @@ import { c } from 'ttag';
 
 import { signoutAction, useUserSettings } from '@proton/account';
 import { useGetScheduleCall } from '@proton/account/scheduleCall/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { Button, ButtonLike, CircleLoader, NotificationDot } from '@proton/atoms';
 import { ThemeColor } from '@proton/colors';
 import ConfirmSignOutModal, {
@@ -36,7 +37,6 @@ import { useOrganization } from '@proton/components/hooks/useOrganization';
 import { useSessionRecoveryState } from '@proton/components/hooks/useSessionRecovery';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import useSubscription from '@proton/components/hooks/useSubscription';
-import useUser from '@proton/components/hooks/useUser';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';

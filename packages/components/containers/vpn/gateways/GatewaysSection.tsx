@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button, Href } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
@@ -23,7 +24,7 @@ import gatewaysEmptyStateUsersSvg from '@proton/styles/assets/img/illustrations/
 import SettingsSectionWide from '../../../containers/account/SettingsSectionWide';
 import EmptyViewContainer from '../../../containers/app/EmptyViewContainer';
 import { getCountryOptions } from '../../../helpers/countries';
-import { useNotifications, useSortedList, useSubscription, useUser, useUserSettings } from '../../../hooks';
+import { useNotifications, useSortedList, useSubscription, useUserSettings } from '../../../hooks';
 import type { Gateway } from './Gateway';
 import type { GatewayLogical } from './GatewayLogical';
 import GatewayModal from './GatewayModal';

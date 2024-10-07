@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import Price from '@proton/components/components/price/Price';
-import { useUser } from '@proton/components/hooks';
 import { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
 import { useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
 import type { Currency } from '@proton/shared/lib/interfaces';

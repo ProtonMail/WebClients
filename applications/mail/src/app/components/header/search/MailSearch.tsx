@@ -3,14 +3,9 @@ import { useEffect, useState } from 'react';
 import type { Location } from 'history';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import type { Breakpoints } from '@proton/components';
-import {
-    TopNavbarListItemSearchButton,
-    usePopperAnchor,
-    useProgressiveRollout,
-    useToggle,
-    useUser,
-} from '@proton/components';
+import { TopNavbarListItemSearchButton, usePopperAnchor, useProgressiveRollout, useToggle } from '@proton/components';
 import { FeatureCode } from '@proton/features';
 import { useFolders, useLabels } from '@proton/mail';
 import generateUID from '@proton/utils/generateUID';

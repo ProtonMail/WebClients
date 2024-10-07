@@ -1,4 +1,5 @@
-import { useSubscription, useUser } from '@proton/components/hooks';
+import { useUser } from '@proton/account/user/hooks';
+import { useSubscription } from '@proton/components/hooks';
 import { SelectedPlan } from '@proton/payments';
 import type { Plan } from '@proton/shared/lib/interfaces';
 

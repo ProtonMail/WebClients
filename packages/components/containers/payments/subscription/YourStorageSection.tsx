@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
@@ -14,7 +15,7 @@ import Meter from '@proton/components/components/progress/Meter';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { useSubscription, useUser } from '@proton/components/hooks';
+import { useSubscription } from '@proton/components/hooks';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,

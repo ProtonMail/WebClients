@@ -1,7 +1,8 @@
 import { fireEvent, render } from '@testing-library/react';
 import { nextMonday } from 'date-fns';
 
-import { useUser, useUserSettings } from '@proton/components/hooks';
+import { useUser } from '@proton/account/user/hooks';
+import { useUserSettings } from '@proton/components/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
@@ -10,7 +11,7 @@ import useSnooze from '../../../../hooks/actions/useSnooze';
 import type { Element } from '../../../../models/element';
 import SnoozeDropdown from './SnoozeDropdown';
 
-jest.mock('@proton/components/hooks/useUser');
+jest.mock('@proton/account/user/hooks');
 jest.mock('@proton/components/hooks/useUserSettings');
 jest.mock('@proton/components/components/link/useSettingsLink');
 jest.mock('proton-mail/store/hooks', () => ({

@@ -1,6 +1,5 @@
+import { useUser } from '@proton/account/user/hooks';
 import { getPrimaryRecoverySecret } from '@proton/shared/lib/recoveryFile/recoveryFile';
-
-import { useUser } from './useUser';
 
 const usePrimaryRecoverySecret = () => {
     const [{ Keys }] = useUser();

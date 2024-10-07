@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { MailImportPayloadError } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms';
 import {
@@ -11,7 +12,6 @@ import {
     PrimaryButton,
     useModalState,
 } from '@proton/components';
-import { useUser } from '@proton/components/hooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
 

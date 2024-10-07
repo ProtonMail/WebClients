@@ -3,15 +3,10 @@ import { useRef } from 'react';
 import { differenceInDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
-import {
-    useOrganization,
-    useSpotlightOnFeature,
-    useSubscription,
-    useUser,
-    useWelcomeFlags,
-} from '@proton/components/hooks';
+import { useOrganization, useSpotlightOnFeature, useSubscription, useWelcomeFlags } from '@proton/components/hooks';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { FeatureCode } from '@proton/features';
 import { DARK_WEB_MONITORING_NAME, PLANS } from '@proton/shared/lib/constants';

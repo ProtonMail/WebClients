@@ -5,17 +5,12 @@ import noop from 'lodash/noop';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useProtonDomains } from '@proton/account/protonDomains/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { CircleLoader } from '@proton/atoms';
 import type { ModalOwnProps } from '@proton/components';
 import { DropdownSizeUnit, Option, SelectTwo, useApi, useAuthentication, useKTVerifier } from '@proton/components';
-import {
-    useCustomDomains,
-    useMembers,
-    useNotifications,
-    useProtonDomains,
-    useUser,
-    useUserKeys,
-} from '@proton/components/hooks';
+import { useCustomDomains, useMembers, useNotifications, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { createAddress } from '@proton/shared/lib/api/addresses';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '@proton/shared/lib/constants';

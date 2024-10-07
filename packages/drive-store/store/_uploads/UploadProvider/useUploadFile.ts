@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useUser } from '@proton/components';
+import { useUser } from '@proton/account/user/hooks';
 import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import {

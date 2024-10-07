@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
 import Radio from '@proton/components/components/input/Radio';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { useRevisionRetentionDays } from '@proton/components/hooks/drive/useRevisionRetentionDays';
-import useUser from '@proton/components/hooks/useUser';
 import clsx from '@proton/utils/clsx';
 
 import { BusinessUpgradeBanner } from './banner/BusinessUpgradeBanner';

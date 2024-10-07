@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { getMemberAddresses } from '@proton/account';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useGetUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -45,7 +46,6 @@ import {
     useErrorHandler,
     useGetOrganization,
     useGetOrganizationKey,
-    useGetUser,
     useGetUserKeys,
     useNotifications,
 } from '../../../hooks';

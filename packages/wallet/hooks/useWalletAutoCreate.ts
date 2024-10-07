@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import type andromedaModule from '@proton/andromeda';
 import type {
     WasmApiWallet,
@@ -14,7 +15,6 @@ import type {
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
 import { useGetOrganization } from '@proton/components/hooks/useOrganization';
-import { useUser } from '@proton/components/hooks/useUser';
 import { useGetUserKeys } from '@proton/components/hooks/useUserKeys';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getAppVersionStr } from '@proton/shared/lib/fetch/headers';
