@@ -1,4 +1,4 @@
-import { type FC, useMemo } from 'react';
+import { type FC, useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -60,38 +60,41 @@ export const FamilyPlanPromo2024: FC<BaseSpotlightMessage> = ({ onClose = noop }
         email: user?.Email,
     });
 
-    return (
-        cohort && (
-            <>
-                <div className="flex items-center w-full z-up">
-                    <div className="flex flex-column text-sm gap-2 w-3/5">
-                        <h4>{c('FamilyPlanPromo2024').jt`Introducing ${planNameJSX}`}</h4>
-                        <div>
-                            <span className="block">
-                                {c('FamilyPlanPromo2024').t`All premium features. 6 users. 1 easy subscription.`}
-                            </span>
-                            <span className="block">
-                                {cohort === FamilyPlanCohort.EARLY_SUPPORTER
-                                    ? c('FamilyPlanPromo2024').t`Exclusive offer for ${PASS_APP_NAME} early supporters.`
-                                    : c('FamilyPlanPromo2024').t`Limited-time offer only.`}
-                            </span>
-                        </div>
-                    </div>
+    useEffect(() => {
+        /* If the user upgraded in the background */
+        if (!cohort) onClose();
+    }, [cohort]);
 
-                    <div className="flex-1 text-center">
-                        <Button
-                            className="button pass-family-plan-banner--btn"
-                            size="medium"
-                            type="button"
-                            onClick={pipe(onClose, upgrade)}
-                            pill
-                        >
-                            {c('FamilyPlanPromo2024').t`Get it for ${price}/month`}
-                        </Button>
+    return (
+        <>
+            <div className="flex items-center w-full z-up">
+                <div className="flex flex-column text-sm gap-2 w-3/5">
+                    <h4>{c('FamilyPlanPromo2024').jt`Introducing ${planNameJSX}`}</h4>
+                    <div>
+                        <span className="block">
+                            {c('FamilyPlanPromo2024').t`All premium features. 6 users. 1 easy subscription.`}
+                        </span>
+                        <span className="block">
+                            {cohort === FamilyPlanCohort.EARLY_SUPPORTER
+                                ? c('FamilyPlanPromo2024').t`Exclusive offer for ${PASS_APP_NAME} early supporters.`
+                                : c('FamilyPlanPromo2024').t`Limited-time offer only.`}
+                        </span>
                     </div>
                 </div>
-                <img src={img} className="pass-family-plan-banner--img" alt="" />
-            </>
-        )
+
+                <div className="flex-1 text-center">
+                    <Button
+                        className="button pass-family-plan-banner--btn"
+                        size="medium"
+                        type="button"
+                        onClick={pipe(onClose, upgrade)}
+                        pill
+                    >
+                        {c('FamilyPlanPromo2024').t`Get it for ${price}/month`}
+                    </Button>
+                </div>
+            </div>
+            <img src={img} className="pass-family-plan-banner--img" alt="" />
+        </>
     );
 };
