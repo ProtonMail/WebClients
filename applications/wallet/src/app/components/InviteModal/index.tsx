@@ -64,7 +64,11 @@ export const InviteModal = ({ defaultInviterAddressID, onInviteSent, ...modalPro
             onInviteSent(email);
             createNotification({ text: c('Bitcoin send').t`Invitation sent` });
         } catch (error: any) {
-            createNotification({ text: error?.error ?? c('Bitcoin send').t`Could not send invitation` });
+            createNotification({
+                text:
+                    error?.error ??
+                    c('Bitcoin send').t`Invitation could not be sent. Please check details and try again.`,
+            });
         }
     };
 
