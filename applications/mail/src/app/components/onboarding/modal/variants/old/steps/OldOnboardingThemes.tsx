@@ -19,11 +19,16 @@ const OldOnboardingThemes = ({ onNext }: OnboardingStepRenderCallback) => {
     const theme = useTheme();
 
     const handleThemeChange = (newThemeType: ThemeTypes) => {
-        void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.select_theme, {
-            theme: `${newThemeType}`,
-            is_default_theme: newThemeType === 0 ? 'yes' : 'no',
-        });
         theme.setTheme(newThemeType);
+    };
+
+    const handleNext = () => {
+        const themeValue = theme.information.theme;
+        void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.select_theme, {
+            theme: `${themeValue}`,
+            is_default_theme: themeValue === 0 ? 'yes' : 'no',
+        });
+        onNext();
     };
 
     return (
@@ -40,7 +45,7 @@ const OldOnboardingThemes = ({ onNext }: OnboardingStepRenderCallback) => {
                 />
             </OnboardingContent>
             <footer className="flex flex-nowrap">
-                <Button size="large" fullWidth onClick={onNext}>
+                <Button size="large" fullWidth onClick={handleNext}>
                     {c('Action').t`Next`}
                 </Button>
             </footer>
