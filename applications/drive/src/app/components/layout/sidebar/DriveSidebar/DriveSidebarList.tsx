@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { SidebarList } from '@proton/components';
 
-import type { ShareWithKey } from '../../../../store';
-import { useDriveSharingFlags, usePhotos } from '../../../../store';
+import { type ShareWithKey, useDriveSharingFlags, useInvitationsView, usePhotos } from '../../../../store';
 //TODO: This should be removed after full sharing rollout
 import { useSharedWithMeWithoutFF } from '../../../../store/_shares/useSharedWithMeWithoutFF';
 import DriveSidebarDevices from './DriveSidebarDevices';
@@ -20,6 +19,8 @@ interface Props {
 const DriveSidebarList = ({ shareId, userShares }: Props) => {
     const { showPhotosSection } = usePhotos();
 
+    const { invitations } = useInvitationsView();
+
     const [sidebarWidth, setSidebarWidth] = useState('100%');
     const setSidebarLevel = (level: number) => {
         const extraWidth = Math.floor(level / 7) * 50;
@@ -30,6 +31,13 @@ const DriveSidebarList = ({ shareId, userShares }: Props) => {
     // We prevent list shared with me items if kill switch enabled (isDirectSharingDisabled)
     const { haveSharedWithMeItems } = useSharedWithMeWithoutFF(isSharingInviteAvailable || isDirectSharingDisabled);
     const showSharedWithMeSection = (isSharingInviteAvailable || haveSharedWithMeItems) && !isDirectSharingDisabled;
+
+    const invitationsCountTitle = c('Info').ngettext(
+        msgid`${invitations.length} pending invitation`,
+        `${invitations.length} pending invitations`,
+        invitations.length
+    );
+
     return (
         <SidebarList style={{ width: sidebarWidth, maxWidth: sidebarWidth }}>
             {userShares.map((userShare) => (
@@ -65,6 +73,16 @@ const DriveSidebarList = ({ shareId, userShares }: Props) => {
                 >
                     <span className="text-ellipsis" title={c('Link').t`Shared with me`}>{c('Link')
                         .t`Shared with me`}</span>
+                    {!!invitations.length && (
+                        <span
+                            className="drive-sidebar-list--counter bg-primary ml-auto text-xs flex justify-center items-center"
+                            title={invitationsCountTitle}
+                            aria-label={invitationsCountTitle}
+                            data-testid="drive-navigation-link:invitations-count"
+                        >
+                            {invitations.length}
+                        </span>
+                    )}
                 </DriveSidebarListItem>
             )}
             <DriveSidebarListItem

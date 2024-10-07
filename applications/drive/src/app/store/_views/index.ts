@@ -19,5 +19,5 @@ export { default as useDevicesView } from './useDevicesView';
 export { default as usePhotosView } from './usePhotosView';
 export { useBookmarksPublicView } from './useBookmarksPublicView';
 export { useBookmarksView } from './useBookmarksView';
-
+export { useInvitationsView } from './useInvitationsView';
 export * from './useTree';
