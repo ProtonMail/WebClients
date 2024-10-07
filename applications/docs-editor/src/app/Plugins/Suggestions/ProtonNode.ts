@@ -9,7 +9,8 @@ import type {
 } from 'lexical'
 import { $isRangeSelection, $isRootOrShadowRoot, ElementNode } from 'lexical'
 import type { SuggestionProperties } from './Types'
-import { ProtonNodeTypes, type SuggestionType } from './Types'
+import { ProtonNodeTypes } from './Types'
+import { type SuggestionType } from "@proton/docs-shared/lib/SuggestionType"
 import { addClassNamesToElement } from '@lexical/utils'
 
 type ProtonNodeProperties = SuggestionProperties

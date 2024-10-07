@@ -5,6 +5,7 @@ import type {
   EditorRequiresClientMethods,
   InternalEventBusInterface,
   RtsMessagePayload,
+  SuggestionSummaryType,
 } from '@proton/docs-shared'
 import type { WordCountInfoCollection } from '@proton/docs-shared'
 import type { UserState } from '@lexical/yjs'
@@ -69,8 +70,9 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
   async createSuggestionThread(
     suggestionID: string,
     commentContent: string,
+    suggestionType: SuggestionSummaryType,
   ): Promise<CommentThreadInterface | undefined> {
-    return this.docOrchestrator.createSuggestionThread(suggestionID, commentContent)
+    return this.docOrchestrator.createSuggestionThread(suggestionID, commentContent, suggestionType)
   }
 
   async resolveThread(threadId: string): Promise<boolean> {
