@@ -7,6 +7,7 @@ import { PublicSessionProvider } from './_api';
 import { DevicesProvider } from './_devices';
 import { DownloadsProvider, PublicDownloadsProvider } from './_downloads';
 import { DriveEventManagerProvider } from './_events';
+import { InvitationsStateProvider } from './_invitations/useInvitationsState';
 import { LinksProvider, PublicLinksProvider } from './_links';
 import { PhotosProvider } from './_photos';
 import { SearchProvider } from './_search';
@@ -28,7 +29,9 @@ export function DriveProvider({ children }: DriveProviderProps) {
                             <DownloadsProvider>
                                 <UploadProvider>
                                     <SearchProvider>
-                                        <PhotosProvider>{children}</PhotosProvider>
+                                        <PhotosProvider>
+                                            <InvitationsStateProvider>{children}</InvitationsStateProvider>
+                                        </PhotosProvider>
                                     </SearchProvider>
                                 </UploadProvider>
                             </DownloadsProvider>

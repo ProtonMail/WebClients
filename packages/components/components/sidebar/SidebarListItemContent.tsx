@@ -13,9 +13,9 @@ interface Props extends HTMLAttributes<HTMLSpanElement> {
     collapsed?: boolean;
 }
 
-const SidebarListItemContent = ({ left, right, children, collapsed, ...rest }: Props) => {
+const SidebarListItemContent = ({ left, right, children, collapsed, className, ...rest }: Props) => {
     return (
-        <span className={clsx('flex flex-nowrap w-full items-center', !collapsed && 'gap-2')} {...rest}>
+        <span className={clsx('flex flex-nowrap w-full items-center', !collapsed && 'gap-2', className)} {...rest}>
             {left}
             <span className={clsx('flex-1 max-w-full flex items-center flex-nowrap gap-2', collapsed && 'sr-only')}>
                 {children}
