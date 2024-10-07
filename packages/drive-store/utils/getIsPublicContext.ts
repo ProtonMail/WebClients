@@ -1,3 +1,3 @@
 export const getIsPublicContext = () => {
-    return window.location.pathname.startsWith('/urls');
+    return new URLSearchParams(window.location.search).get('mode') === 'open-url';
 };

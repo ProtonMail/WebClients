@@ -1,0 +1,9 @@
+diff --git a/packages/drive-store/utils/getIsPublicContext.ts b/packages/drive-store/utils/getIsPublicContext.ts
+index 286e5698d4..aa2701b73a 100644
+--- a/packages/drive-store/utils/getIsPublicContext.ts
++++ b/packages/drive-store/utils/getIsPublicContext.ts
+@@ -1,3 +1,3 @@
+ export const getIsPublicContext = () => {
+-    return window.location.pathname.startsWith('/urls');
++    return new URLSearchParams(window.location.search).get('mode') === 'open-url';
+ };
