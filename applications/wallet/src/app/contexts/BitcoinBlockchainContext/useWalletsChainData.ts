@@ -189,7 +189,8 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
 
                     incrementSyncKey(walletId, accountId);
                 } catch (error: any) {
-                    const message = error?.error ?? c('Wallet').t`An error occurred`;
+                    const message =
+                        error?.error ?? c('Wallet').t`An error occurred whilst syncing your wallet. Please try again.`;
                     syncingFailed(walletId, accountId, message);
                 } finally {
                     removeSyncing(walletId, accountId);

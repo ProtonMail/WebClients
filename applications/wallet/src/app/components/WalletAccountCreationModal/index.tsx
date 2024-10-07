@@ -134,7 +134,7 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
             modalProps.onClose?.();
         } catch (error: any) {
             createNotification({
-                text: error?.error ?? c('Wallet Account').t`Could not add account to wallet`,
+                text: error?.error ?? c('Wallet Account').t`Error adding account to wallet. Please try again.`,
                 type: 'error',
             });
         }

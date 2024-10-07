@@ -92,8 +92,7 @@ const WalletHeader = ({
                                         <span className="block text-semibold mr-1">
                                             {needPassphrase
                                                 ? c('Wallet header').t`This wallet needs a passphrase to be used.`
-                                                : c('Wallet header')
-                                                      .t`The current fingerprint doesn't match stored one.`}
+                                                : c('Wallet header').t`The passphrase is incorrect. Please try again.`}
                                         </span>
 
                                         <CoreButton

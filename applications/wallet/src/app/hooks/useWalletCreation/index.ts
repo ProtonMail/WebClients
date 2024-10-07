@@ -47,14 +47,16 @@ const parseMnemonic = (value?: string): { mnemonic: WasmMnemonic } | { error: st
     const words = value?.trim().split(' ') ?? [];
 
     if (!Object.values(wordCountToNumber).includes(words.length)) {
-        return { error: c('Wallet setup').t`Mnemonic length is not valid.` };
+        return {
+            error: c('Wallet setup').t`Wallet seed phrase length is invalid. This should be between 12 to 24 words.`,
+        };
     }
 
     try {
         const parsed = WasmMnemonic.fromString(words.join(' '));
         return { mnemonic: parsed };
     } catch {
-        return { error: c('Wallet setup').t`Input mnemonic is invalid, please double check.` };
+        return { error: c('Wallet setup').t`Wallet seed phrase is incorrect. Please check this and try again.` };
     }
 };
 
@@ -292,7 +294,8 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
             for (const [shouldDoBve, ...account] of accountsWithinUserLimit) {
                 const created = await api.wallet.createWalletAccount(Wallet.ID, ...account).catch((error: any) => {
                     createNotification({
-                        text: error?.error ?? c('Wallet setup').t`Could not create wallet account`,
+                        text:
+                            error?.error ?? c('Wallet setup').t`Error creating your wallet account. Please try again.`,
                         type: 'error',
                     });
 
@@ -336,7 +339,10 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
                             });
                         } catch (error: any) {
                             createNotification({
-                                text: error?.error ?? c('Wallet setup').t`Could not link email to wallet account`,
+                                text:
+                                    error?.error ??
+                                    c('Wallet setup')
+                                        .t`Email address could not be linked to wallet account. Please try again.`,
                                 type: 'error',
                             });
                         }
@@ -375,7 +381,7 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
             onSetupFinish({ notCreatedAccounts: accountsAboveLimits.length });
         } catch (error: any) {
             createNotification({
-                text: error?.error ?? c('Wallet setup').t`Could not create wallet`,
+                text: error?.error ?? c('Wallet setup').t`Wallet could not be created. Please try again.`,
                 type: 'error',
             });
         }

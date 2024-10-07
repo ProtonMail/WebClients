@@ -66,7 +66,7 @@ export const useWalletPreferences = (wallet: IWasmApiWalletData, onEmptyWalletAc
             } catch (error: any) {
                 createNotification({
                     type: 'error',
-                    text: error?.error ?? c('Wallet Settings').t`Wallet name could not be changed`,
+                    text: error?.error ?? c('Wallet Settings').t`Wallet name could not be changed. Please try again.`,
                 });
             }
         };
@@ -102,7 +102,9 @@ export const useWalletPreferences = (wallet: IWasmApiWalletData, onEmptyWalletAc
                 } catch (error: any) {
                     createNotification({
                         type: 'error',
-                        text: error?.error ?? c('Wallet Settings').t`Preferred bitcoin unit could not be changed`,
+                        text:
+                            error?.error ??
+                            c('Wallet Settings').t`Preferred bitcoin unit could not be changed. Please try again.`,
                     });
                 }
             };

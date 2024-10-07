@@ -59,7 +59,9 @@ export const useAccountPreferences = (
             } catch (error: any) {
                 createNotification({
                     type: 'error',
-                    text: error?.error ?? c('Wallet Settings').t`Account name could not be changed`,
+                    text:
+                        error?.error ??
+                        c('Wallet Settings').t`Wallet account name could not be changed. Please try again.`,
                 });
             }
         };
@@ -88,7 +90,8 @@ export const useAccountPreferences = (
             } catch (error: any) {
                 createNotification({
                     type: 'error',
-                    text: error?.error ?? c('Wallet Settings').t`Account could not be deleted`,
+                    text:
+                        error?.error ?? c('Wallet Settings').t`Wallet account could not be deleted. Please try again.`,
                 });
             }
         };
@@ -120,7 +123,7 @@ export const useAccountPreferences = (
             } catch (error: any) {
                 createNotification({
                     type: 'error',
-                    text: error?.error ?? c('Wallet Settings').t`New fiat currency could not be applied`,
+                    text: error?.error ?? c('Wallet Settings').t`Fiat currency could not be updated. Please try again.`,
                 });
             }
         };
@@ -167,7 +170,7 @@ export const useAccountPreferences = (
             } catch (error: any) {
                 createNotification({
                     type: 'error',
-                    text: error?.error ?? c('Wallet Settings').t`Could not add email address`,
+                    text: error?.error ?? c('Wallet Settings').t`Email address could not be added. Please try again.`,
                 });
             }
         };
@@ -195,7 +198,7 @@ export const useAccountPreferences = (
             } catch (error: any) {
                 createNotification({
                     type: 'error',
-                    text: error?.error ?? c('Wallet Settings').t`Could not remove email address`,
+                    text: error?.error ?? c('Wallet Settings').t`Email address could not be removed. Please try again.`,
                 });
             }
         };
@@ -245,7 +248,10 @@ export const useAccountPreferences = (
             } catch (error: any) {
                 createNotification({
                     type: 'error',
-                    text: error?.error ?? c('Wallet Settings').t`Could not be replaced`,
+                    text:
+                        error?.error ??
+                        c('Wallet Settings')
+                            .t`An error occurred while modifying with your Bitcoin via Email address. Please check details and try again.`,
                 });
             }
         };
