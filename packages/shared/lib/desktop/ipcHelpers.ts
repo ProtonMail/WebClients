@@ -3,7 +3,11 @@ import type {
     IPCInboxClientUpdateMessage,
     IPCInboxDesktopFeature,
     IPCInboxGetInfoMessage,
+    IPCInboxHostUpdateListener,
+    IPCInboxHostUpdateListenerRemover,
+    IPCInboxHostUpdateMessageType,
     IPCInboxMessageBroker,
+    PayloadOfHostUpdateType,
 } from './desktopTypes';
 
 declare global {
@@ -33,3 +37,16 @@ export const hasInboxDesktopFeature = (feature: IPCInboxDesktopFeature) =>
     !!window.ipcInboxMessageBroker &&
     !!window.ipcInboxMessageBroker!.hasFeature &&
     window.ipcInboxMessageBroker!.hasFeature(feature);
+
+export function addIPCHostUpdateListener<T extends IPCInboxHostUpdateMessageType>(
+    eventType: T,
+    callback: (payload: PayloadOfHostUpdateType<T>) => void
+): IPCInboxHostUpdateListenerRemover {
+    // THIS NEEDS REFACTOR inda-refactor-001
+    // This shouldn't be needed, better to avoid it with custom type-safe event emmiter
+    //
+    // With generic T we make sure first correct callback type is added to
+    // correct event type. But the `on` function must accept union of callbacks.
+    const unsafeCallback = callback as IPCInboxHostUpdateListener;
+    return window.ipcInboxMessageBroker!.on!(eventType, unsafeCallback);
+}
