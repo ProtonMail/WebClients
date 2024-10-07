@@ -1,4 +1,4 @@
-import { useApi } from '@proton/components/hooks';
+import { useApi } from '@proton/components';
 import { UnleashFlagProvider } from '@proton/unleash';
 
 import { PublicSessionProvider } from '../store/_api';
