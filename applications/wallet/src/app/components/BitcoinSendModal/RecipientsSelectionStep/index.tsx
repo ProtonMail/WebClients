@@ -37,7 +37,12 @@ interface WalletNotFoundModalData {
     type: WasmInviteNotificationType;
 }
 
-export const RecipientsSelection = ({ apiAccount, recipientHelpers, txBuilderHelpers, onRecipientsConfirm }: Props) => {
+export const RecipientsSelectionStep = ({
+    apiAccount,
+    recipientHelpers,
+    txBuilderHelpers,
+    onRecipientsConfirm,
+}: Props) => {
     const {
         recipientEmailMap,
         addValidRecipient,
