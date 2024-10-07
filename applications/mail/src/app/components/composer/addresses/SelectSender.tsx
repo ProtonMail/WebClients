@@ -3,7 +3,9 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon, Option, SelectTwo, SettingsLink, useAddresses, useUser } from '@proton/components';
+import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
+import { Icon, Option, SelectTwo, SettingsLink } from '@proton/components';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { APPS } from '@proton/shared/lib/constants';
 import generateUID from '@proton/utils/generateUID';

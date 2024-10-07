@@ -8,6 +8,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import DynamicProgress from '@proton/components/components/progress/DynamicProgress';
+import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { addContacts, deleteContacts, getContact } from '@proton/shared/lib/api/contacts';
 import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
@@ -25,7 +26,7 @@ import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard'
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import chunk from '@proton/utils/chunk';
 
-import { useApi, useUserKeys } from '../../../hooks';
+import { useUserKeys } from '../../../hooks';
 
 const { OVERWRITE_CONTACT } = OVERWRITE;
 const { INCLUDE, IGNORE } = CATEGORIES;

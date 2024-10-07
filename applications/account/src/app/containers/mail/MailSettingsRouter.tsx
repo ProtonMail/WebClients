@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { useRef } from 'react';
 import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { useLoadAllowedTimeZones } from '@proton/calendar/timezones';
 import {
     AddressKeysSection,
@@ -32,7 +33,6 @@ import {
     SMTPSubmissionSection,
     SpamFiltersSection,
     UserKeysSection,
-    useAddresses,
     useIsInboxElectronApp,
 } from '@proton/components';
 import ForwardSection from '@proton/components/containers/forward/ForwardSection';

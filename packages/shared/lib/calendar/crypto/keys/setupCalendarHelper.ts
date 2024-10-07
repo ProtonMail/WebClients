@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { useGetAddressKeys } from '@proton/components';
+import type { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 
 import { createCalendar, updateCalendarUserSettings } from '../../../api/calendars';
 import { getRandomAccentColor } from '../../../colors';

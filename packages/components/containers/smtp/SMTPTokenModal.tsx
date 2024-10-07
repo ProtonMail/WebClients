@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { useApi, useFormErrors, useNotifications } from '@proton/components';
 import Copy from '@proton/components/components/button/Copy';
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import Form from '@proton/components/components/form/Form';
@@ -15,6 +14,9 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import useApi from '@proton/components/hooks/useApi';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { createToken } from '@proton/shared/lib/api/smtptokens';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';

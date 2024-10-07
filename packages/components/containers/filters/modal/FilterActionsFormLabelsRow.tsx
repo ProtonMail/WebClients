@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
@@ -10,7 +11,6 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import type { Actions } from '@proton/components/containers/filters/interfaces';
 import type { LabelModel } from '@proton/components/containers/labels/modals/EditLabelModal';
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
-import { useUser } from '@proton/components/hooks';
 import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import clsx from '@proton/utils/clsx';

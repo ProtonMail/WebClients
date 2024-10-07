@@ -1,4 +1,4 @@
-import { useUser } from '@proton/components/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { VERIFICATION_STATUS } from '@proton/srp/lib/constants';
 
 import { usePublicSession } from '../_api';

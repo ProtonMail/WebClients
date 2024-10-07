@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
 
+import { useUser } from '@proton/account/user/hooks';
 import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
-
-import { useUser } from './useUser';
 
 const COOKIE_NAME = 'no-offer';
 const today = new Date();

@@ -10,9 +10,11 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import DynamicProgress from '@proton/components/components/progress/DynamicProgress';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { resignAllContacts } from '@proton/shared/lib/contacts/globalOperations';
 
-import { useApi, useContacts, useEventManager, useGetUserKeys } from '../../../hooks';
+import { useContacts, useGetUserKeys } from '../../../hooks';
 
 const ContactResignExecutionModal = ({ ...rest }: ModalProps) => {
     const [contacts = [], loadingContacts] = useContacts();

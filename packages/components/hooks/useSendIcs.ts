@@ -1,5 +1,7 @@
 import { useCallback } from 'react';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import useApi from '@proton/components/hooks/useApi';
 import { useGetMailSettings } from '@proton/mail/mailSettings/hooks';
 import { sendMessageDirect } from '@proton/shared/lib/api/messages';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
@@ -20,7 +22,7 @@ import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences'
 import isTruthy from '@proton/utils/isTruthy';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
-import { useApi, useGetAddressKeys, useGetEncryptionPreferences } from './index';
+import { useGetEncryptionPreferences } from './index';
 
 export interface SendIcsParams {
     method: ICAL_METHOD;

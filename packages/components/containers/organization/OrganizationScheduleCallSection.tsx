@@ -1,14 +1,13 @@
 import { c } from 'ttag';
 
 import { useGetScheduleCall } from '@proton/account/scheduleCall/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { Button, Href } from '@proton/atoms';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import useLoading from '@proton/hooks/useLoading';
 import { openCalendlyLink } from '@proton/shared/lib/helpers/support';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import illustration from '@proton/styles/assets/img/illustrations/account-support-phone.svg';
-
-import { useUser } from '../../hooks';
 
 interface Props {
     onOpenChat?: () => void;

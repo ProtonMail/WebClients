@@ -9,7 +9,7 @@ import {
     selectOauthImportStateImporterData,
 } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { useFolders, useLabels } from '@proton/components';
+import { useFolders, useLabels } from '@proton/mail';
 
 interface Props {
     handleCloseCustomizeModal: () => void;

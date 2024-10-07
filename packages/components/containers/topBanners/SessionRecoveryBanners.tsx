@@ -1,22 +1,22 @@
 import { c, msgid } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { InlineLinkButton } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import PasswordResetAvailableAccountModal from '@proton/components/containers/account/sessionRecovery/PasswordResetAvailableAccountModal';
 import SessionRecoveryInProgressModal from '@proton/components/containers/account/sessionRecovery/SessionRecoveryInProgressModal';
 import { useSessionRecoveryLocalStorage } from '@proton/components/containers/account/sessionRecovery/SessionRecoveryLocalStorageManager';
+import useConfig from '@proton/components/hooks/useConfig';
 import { APPS } from '@proton/shared/lib/constants';
 
 import {
-    useConfig,
     useIsSessionRecoveryInitiatedByCurrentSession,
     useSessionRecoveryGracePeriodHoursRemaining,
     useSessionRecoveryInsecureTimeRemaining,
     useShouldNotifyPasswordResetAvailable,
     useShouldNotifySessionRecoveryCancelled,
     useShouldNotifySessionRecoveryInProgress,
-    useUser,
 } from '../../hooks';
 import TopBanner from './TopBanner';
 

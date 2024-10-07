@@ -1,24 +1,24 @@
 import { c } from 'ttag';
 
+import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import type { AlgorithmInfo } from '@proton/crypto';
 import type { KeyGenConfig } from '@proton/shared/lib/interfaces';
 import { addUserKeysProcess } from '@proton/shared/lib/keys';
 
 import {
-    useApi,
-    useEventManager,
-    useGetAddresses,
     useGetOrganizationKey,
     useIsDeviceRecoveryAvailable,
     useIsDeviceRecoveryEnabled,
     useModals,
-    useUser,
     useUserKeys,
 } from '../../hooks';
 import KeysTable from './KeysTable';

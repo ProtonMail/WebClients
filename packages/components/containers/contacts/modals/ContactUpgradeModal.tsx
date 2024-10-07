@@ -5,7 +5,7 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
 import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
-import { useConfig } from '@proton/components/hooks';
+import useConfig from '@proton/components/hooks/useConfig';
 import { SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRefFromApp, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
 import contactGroupsImg from '@proton/styles/assets/img/illustrations/new-upsells-img/book-contact-groups.svg';

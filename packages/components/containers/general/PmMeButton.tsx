@@ -2,9 +2,14 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useProtonDomains } from '@proton/account/protonDomains/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
+import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { setupAddress } from '@proton/shared/lib/api/addresses';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '@proton/shared/lib/constants';
@@ -12,16 +17,7 @@ import type { User } from '@proton/shared/lib/interfaces';
 import { missingKeysSelfProcess } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import {
-    useApi,
-    useEventManager,
-    useGetAddresses,
-    useGetUserKeys,
-    useModals,
-    useNotifications,
-    useProtonDomains,
-    useUser,
-} from '../../hooks';
+import { useGetUserKeys, useModals, useNotifications } from '../../hooks';
 import UnlockModal from '../login/UnlockModal';
 
 export const getActivateString = (user: User) => {

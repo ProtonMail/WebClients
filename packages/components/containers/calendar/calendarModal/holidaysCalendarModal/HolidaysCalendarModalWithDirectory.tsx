@@ -2,6 +2,8 @@ import { useCallback, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import CountrySelect from '@proton/components/components/country/CountrySelect';
@@ -16,8 +18,14 @@ import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputField from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import BusySlotsCheckbox from '@proton/components/containers/calendar/calendarModal/BusySlotsCheckbox';
 import { getCalendarModalSize } from '@proton/components/containers/calendar/calendarModal/helpers';
 import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
+import { getDefaultModel } from '@proton/components/containers/calendar/calendarModal/personalCalendarModal/calendarModalState';
+import Notifications from '@proton/components/containers/calendar/notifications/Notifications';
+import { useCalendarModelEventManager } from '@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { removeHolidaysCalendar, updateCalendarSettings } from '@proton/shared/lib/api/calendars';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
@@ -48,18 +56,7 @@ import type {
 } from '@proton/shared/lib/interfaces/calendar';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import {
-    useApi,
-    useEventManager,
-    useGetAddressKeys,
-    useGetAddresses,
-    useNotifications,
-    useReadCalendarBootstrap,
-} from '../../../../hooks';
-import { useCalendarModelEventManager } from '../../../eventManager/calendar/CalendarModelEventManagerProvider';
-import Notifications from '../../notifications/Notifications';
-import BusySlotsCheckbox from '../BusySlotsCheckbox';
-import { getDefaultModel } from '../personalCalendarModal/calendarModalState';
+import { useNotifications, useReadCalendarBootstrap } from '../../../../hooks';
 
 const getInitialCalendarNotifications = (bootstrap?: CalendarBootstrap) => {
     if (!bootstrap) {

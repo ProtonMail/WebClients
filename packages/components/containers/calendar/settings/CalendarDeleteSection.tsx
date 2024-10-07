@@ -8,8 +8,11 @@ import ErrorButton from '@proton/components/components/button/ErrorButton';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { getNextDefaultCalendar } from '@proton/components/containers/calendar/settings/defaultCalendar';
-import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import {
     removeCalendar,
@@ -28,8 +31,6 @@ import {
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import noop from '@proton/utils/noop';
-
-import SettingsSection from '../../account/SettingsSection';
 
 const getTexts = ({
     isSubscribedCalendar,

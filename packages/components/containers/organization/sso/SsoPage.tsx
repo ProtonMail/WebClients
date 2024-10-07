@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button, Href } from '@proton/atoms';
 import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
@@ -19,7 +20,7 @@ import { PLANS } from '@proton/shared/lib/constants';
 import type { Domain, SSO } from '@proton/shared/lib/interfaces';
 import securityUpsellSvg from '@proton/styles/assets/img/illustrations/security-upsell.svg';
 
-import { useCustomDomains, useOrganization, useSamlSSO, useUser } from '../../../hooks';
+import { useCustomDomains, useOrganization, useSamlSSO } from '../../../hooks';
 import SubSettingsSection from '../../layout/SubSettingsSection';
 import ConfigureSamlModal from './ConfigureSamlModal';
 import DomainVerificationState from './DomainVerificationState';

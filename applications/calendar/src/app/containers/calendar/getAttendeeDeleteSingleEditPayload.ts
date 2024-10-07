@@ -1,4 +1,4 @@
-import type { useGetAddressKeys } from '@proton/components';
+import type { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { CALENDAR_CARD_TYPE } from '@proton/shared/lib/calendar/constants';
 import { signPart } from '@proton/shared/lib/calendar/crypto/encrypt';
 import { getCalendarSignedPartWithExdate } from '@proton/shared/lib/calendar/veventHelper';

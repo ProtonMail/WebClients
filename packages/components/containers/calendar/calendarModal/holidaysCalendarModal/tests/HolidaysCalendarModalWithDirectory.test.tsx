@@ -12,7 +12,7 @@ import { mockNotifications } from '@proton/testing/lib/mockNotifications';
 
 import HolidaysCalendarModalWithDirectory from '../HolidaysCalendarModalWithDirectory';
 
-jest.mock('@proton/components/hooks/useAddresses', () => ({
+jest.mock('@proton/account/addresses/hooks', () => ({
     __esModule: true,
     default: jest.fn(() => []),
     useGetAddresses: jest.fn(),
@@ -26,7 +26,7 @@ jest.mock('@proton/components/hooks/useEventManager', () => () => ({}));
 jest.mock('@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider', () => ({
     useCalendarModelEventManager: jest.fn(() => ({})),
 }));
-jest.mock('@proton/components/hooks/useAddressesKeys', () => ({
+jest.mock('@proton/account/addressKeys/hooks', () => ({
     __esModule: true,
     useAddressesKeys: jest.fn(() => []),
     useGetAddressKeys: jest.fn(() => []),

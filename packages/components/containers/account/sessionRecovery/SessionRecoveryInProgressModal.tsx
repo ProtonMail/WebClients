@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -11,7 +12,7 @@ import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 
-import { useSessionRecoveryGracePeriodHoursRemaining, useUser } from '../../../hooks';
+import { useSessionRecoveryGracePeriodHoursRemaining } from '../../../hooks';
 import ConfirmSessionRecoveryCancellationModal from './ConfirmSessionRecoveryCancellationModal';
 import SessionRecoveryInProgressModalIllustration from './SessionRecoveryInProgressModalIllustration';
 import { useSessionRecoveryLocalStorage } from './SessionRecoveryLocalStorageManager';

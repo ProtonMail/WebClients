@@ -3,8 +3,8 @@ import { useEffect, useMemo } from 'react';
 import keyBy from 'lodash/keyBy';
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { Icon, Tooltip } from '@proton/components';
-import { useAddresses } from '@proton/components/hooks';
 import { ANONYMOUS_SENDER_ADDRESS_ID } from '@proton/wallet';
 
 import { Select } from '../../atoms';

@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { Button, ButtonLike, CircleLoader, InlineLinkButton } from '@proton/atoms';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
@@ -18,7 +20,9 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import AuthModal from '@proton/components/containers/password/AuthModal';
+import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import useConfig from '@proton/components/hooks/useConfig';
 import useLoading from '@proton/hooks/useLoading';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -34,17 +38,7 @@ import { getOrganizationDenomination } from '@proton/shared/lib/organization/hel
 import type { Credentials } from '@proton/shared/lib/srp';
 import useFlag from '@proton/unleash/useFlag';
 
-import {
-    useApi,
-    useConfig,
-    useCustomDomains,
-    useGetAddresses,
-    useModals,
-    useNotifications,
-    useOrganizationKey,
-    useSubscription,
-    useUser,
-} from '../../hooks';
+import { useCustomDomains, useModals, useNotifications, useOrganizationKey, useSubscription } from '../../hooks';
 import DomainModal from '../domains/DomainModal';
 import EditOrganizationIdentityModal from './EditOrganizationIdentityModal';
 import OrganizationNameModal from './OrganizationNameModal';

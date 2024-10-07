@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import UpgradeBanner from '@proton/components/containers/account/UpgradeBanner';
@@ -14,8 +15,6 @@ import {
 } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-
-import { useUser } from '../../hooks';
 
 const CatchAllSection = () => {
     const [{ isAdmin, isSubUser }] = useUser();

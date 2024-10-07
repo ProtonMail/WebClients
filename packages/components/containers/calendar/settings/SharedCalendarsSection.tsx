@@ -18,6 +18,9 @@ import TableRow from '@proton/components/components/table/TableRow';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import CalendarBadge from '@proton/components/containers/calendar/settings/CalendarBadge';
+import ShareCalendarWithSignatureVerificationErrorModal from '@proton/components/containers/calendar/shareProton/ShareCalendarWithSignatureVerificationErrorModal';
+import useCalendarShareInvitationActions from '@proton/components/hooks/useCalendarShareInvitationActions';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import {
@@ -40,8 +43,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import type { CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { useCalendarShareInvitationActions, useEventManager, useNotifications } from '../../../hooks';
-import ShareCalendarWithSignatureVerificationErrorModal from '../../calendar/shareProton/ShareCalendarWithSignatureVerificationErrorModal';
+import { useNotifications } from '../../../hooks';
 
 const SharedCalendarRow = ({ calendar, displayEmail }: { calendar: VisualCalendar; displayEmail: boolean }) => {
     const {

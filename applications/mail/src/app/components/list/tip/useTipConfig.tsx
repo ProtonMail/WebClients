@@ -1,16 +1,19 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import {
     AutoDeleteUpsellModal,
     EditLabelModal,
     LabelsUpsellModal,
     PmMeUpsellModal,
     ProtonSentinelUpsellModal,
+    useApi,
+    useEventManager,
     useModalStateObject,
 } from '@proton/components';
 import IncreasePrivacyUpsellModal from '@proton/components/components/upsell/modal/types/IncreasePrivacyUpsellModal';
-import { useApi, useEventManager, useNotifications, useUser } from '@proton/components/hooks';
-import { useFolders, useLabels } from '@proton/components/hooks/useCategories';
+import { useNotifications } from '@proton/components/hooks';
+import { useFolders, useLabels } from '@proton/mail';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAIL_UPSELL_PATHS, ROOT_FOLDER, UPSELL_COMPONENT } from '@proton/shared/lib/constants';

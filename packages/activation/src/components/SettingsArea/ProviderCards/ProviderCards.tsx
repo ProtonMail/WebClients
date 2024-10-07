@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import type { Location } from 'history';
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import {
     EASY_SWITCH_SEARCH_SOURCES,
     EASY_SWITCH_SOURCES,
@@ -12,7 +13,6 @@ import {
 import { startImapDraft } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.actions';
 import { startOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
-import { useUser } from '@proton/components/hooks';
 import { FeatureCode, useFeature } from '@proton/features';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';

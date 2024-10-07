@@ -3,7 +3,8 @@ import { useHistory } from 'react-router-dom';
 import type { History } from 'history';
 import { c } from 'ttag';
 
-import { useFolders, useSubscribeEventManager } from '@proton/components';
+import { useSubscribeEventManager } from '@proton/components';
+import { useFolders } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { create } from '@proton/shared/lib/helpers/desktopNotification';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';

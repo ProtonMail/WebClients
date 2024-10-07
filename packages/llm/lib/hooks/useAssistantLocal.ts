@@ -2,14 +2,16 @@ import { useCallback, useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { useApi, useNotifications, useUser } from '@proton/components/hooks';
+import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/components';
+import { useNotifications } from '@proton/components/hooks';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import useStateRef from '@proton/hooks/useStateRef';
 import type { AssistantHooksProps, AssistantRunningActions, GenerateAssistantResult } from '@proton/llm/lib';
-import { MODEL_UNLOADED } from '@proton/llm/lib';
 import {
     CACHING_FAILED,
     FAILED_TO_DOWNLOAD,
+    MODEL_UNLOADED,
     PromptRejectedError,
     UNLOAD_ASSISTANT_TIMEOUT,
     buildMLCConfig,

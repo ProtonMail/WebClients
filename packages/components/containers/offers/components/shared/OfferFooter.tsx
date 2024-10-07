@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 
-import { useUser } from '@proton/components';
+import { useUser } from '@proton/account/user/hooks';
 import CurrencySelector from '@proton/components/containers/payments/CurrencySelector';
 import { mainCurrencies } from '@proton/payments';
 

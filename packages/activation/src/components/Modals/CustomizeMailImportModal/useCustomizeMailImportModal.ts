@@ -2,7 +2,7 @@ import type { FormEvent } from 'react';
 import { useMemo, useState } from 'react';
 
 import { getMailMappingErrors } from '@proton/activation/src/helpers/getMailMappingErrors';
-import { useFolders, useLabels } from '@proton/components';
+import { useFolders, useLabels } from '@proton/mail';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
 import type { FolderMapItem, MailImportFields } from './CustomizeMailImportModal.interface';

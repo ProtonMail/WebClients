@@ -11,14 +11,11 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import { useApi } from '@proton/components/hooks';
+import useApi from '@proton/components/hooks/useApi';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import type { SourceEventUpsell} from '@proton/shared/lib/helpers/upsell';
-import {
-    UPSELL_MODALS_TYPE,
-    sendRequestUpsellModalReport,
-} from '@proton/shared/lib/helpers/upsell';
+import type { SourceEventUpsell } from '@proton/shared/lib/helpers/upsell';
+import { UPSELL_MODALS_TYPE, sendRequestUpsellModalReport } from '@proton/shared/lib/helpers/upsell';
 import calendarHeaderImage from '@proton/styles/assets/img/illustrations/upsell-calendar-header.svg';
 import composerAssistantImage from '@proton/styles/assets/img/illustrations/upsell-composer-assistant.svg';
 import mailHeaderImage from '@proton/styles/assets/img/illustrations/upsell-mail-header.svg';

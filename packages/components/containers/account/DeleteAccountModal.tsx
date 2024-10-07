@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button, Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import ErrorButton from '@proton/components/components/button/ErrorButton';
@@ -20,7 +21,10 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AuthModal from '@proton/components/containers/password/AuthModal';
+import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import useConfig from '@proton/components/hooks/useConfig';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { leaveOrganisation } from '@proton/shared/lib/api/organization';
 import { canDelete, deleteUser, unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -33,7 +37,7 @@ import { getOrganizationDenomination } from '@proton/shared/lib/organization/hel
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { useApi, useConfig, useEventManager, useGetOrganization, useNotifications, useUser } from '../../hooks';
+import { useGetOrganization, useNotifications } from '../../hooks';
 
 const { DIFFERENT_ACCOUNT, TOO_EXPENSIVE, MISSING_FEATURE, USE_OTHER_SERVICE, OTHER } = ACCOUNT_DELETION_REASONS;
 

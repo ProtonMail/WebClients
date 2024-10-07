@@ -4,11 +4,13 @@ import { c } from 'ttag';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { updateLabel } from '@proton/shared/lib/api/labels';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 
-import { useApi, useEventManager, useNotifications } from '../../hooks';
+import { useNotifications } from '../../hooks';
 
 interface Props {
     label: Folder;

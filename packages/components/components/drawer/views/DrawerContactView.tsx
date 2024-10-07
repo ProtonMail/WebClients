@@ -2,11 +2,13 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { EasySwitchProvider } from '@proton/activation';
 import { Button } from '@proton/atoms';
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import type { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
 import DrawerView from '@proton/components/components/drawer/views/DrawerView';
+import { CONTACT_TAB } from '@proton/components/components/drawer/views/interface';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import { useContactMergeModals } from '@proton/components/containers/contacts/hooks/useContactMergeModals';
 import { useContactModals } from '@proton/components/containers/contacts/hooks/useContactModals';
@@ -16,16 +18,9 @@ import ContactsWidgetGroupsContainer from '@proton/components/containers/contact
 import ContactsWidgetSettingsContainer from '@proton/components/containers/contacts/widget/ContactsWidgetSettingsContainer';
 import type { CustomAction } from '@proton/components/containers/contacts/widget/types';
 import { CONTACT_WIDGET_TABS } from '@proton/components/containers/contacts/widget/types';
-import { useUser } from '@proton/components/hooks';
 import useDrawerContactFocus from '@proton/components/hooks/useDrawerContactFocus';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
-
-export enum CONTACT_TAB {
-    CONTACT = 'contact',
-    CONTACT_GROUP = 'contact-group',
-    SETTINGS = 'settings',
-}
 
 interface Props {
     onCompose?: (recipients: Recipient[], attachments: File[]) => void;

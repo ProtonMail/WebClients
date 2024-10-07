@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useUser } from '@proton/components/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import clsx from '@proton/utils/clsx';
 
 interface Props {

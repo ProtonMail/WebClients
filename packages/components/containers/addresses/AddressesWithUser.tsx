@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { Href } from '@proton/atoms';
 import { NewUpsellModal } from '@proton/components';
 import Alert from '@proton/components/components/alert/Alert';
@@ -13,6 +14,8 @@ import OrderableTableRow from '@proton/components/components/orderableTable/Orde
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { orderAddress } from '@proton/shared/lib/api/addresses';
 import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
@@ -28,7 +31,7 @@ import { getIsNonDefault, sortAddresses } from '@proton/shared/lib/mail/addresse
 import addressesImg from '@proton/styles/assets/img/illustrations/new-upsells-img/addresses.svg';
 import move from '@proton/utils/move';
 
-import { useAddresses, useApi, useEventManager, useNotifications } from '../../hooks';
+import { useNotifications } from '../../hooks';
 import AddressActions from './AddressActions';
 import AddressStatus from './AddressStatus';
 import { getPermissions, getStatus } from './helper';

@@ -7,7 +7,11 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import { useApi, useNotifications } from '@proton/components/hooks';
+import CalendarMemberAndInvitationList from '@proton/components/containers/calendar/settings/CalendarMemberAndInvitationList';
+import ShareCalendarModal from '@proton/components/containers/calendar/shareProton/ShareCalendarModal';
+import CalendarShareUrlSection from '@proton/components/containers/calendar/shareURL/CalendarShareUrlSection';
+import { useNotifications } from '@proton/components/hooks';
+import useApi from '@proton/components/hooks/useApi';
 import { removeInvitation, removeMember } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_SETTINGS_SECTION_ID, MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
 import { filterOutAcceptedInvitations } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
@@ -24,9 +28,6 @@ import type { Address, Subscription, UserModel } from '@proton/shared/lib/interf
 import type { CalendarMember, CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import SubSettingsSection from '../../layout/SubSettingsSection';
-import ShareCalendarModal from '../shareProton/ShareCalendarModal';
-import CalendarShareUrlSection from '../shareURL/CalendarShareUrlSection';
-import CalendarMemberAndInvitationList from './CalendarMemberAndInvitationList';
 
 import './CalendarMemberGrid.scss';
 

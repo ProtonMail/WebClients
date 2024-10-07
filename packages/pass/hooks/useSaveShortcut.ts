@@ -1,4 +1,4 @@
-import useKeyPress from '@proton/components/hooks/useKeyPress';
+import { useKeyPress } from '@proton/components';
 
 export const useSaveShortcut = (onSave: () => void) => {
     useKeyPress(

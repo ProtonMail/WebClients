@@ -1,18 +1,15 @@
 import { Suspense, lazy, useCallback, useEffect, useMemo, useState } from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
 
-import { c } from 'ttag'
-
 import { CircleLoader } from '@proton/atoms'
-import { useAuthentication } from '@proton/components'
-import { useApi, useConfig } from '@proton/components/hooks'
-import { Application } from '@proton/docs-core'
+import { useApi, useAuthentication, useConfig } from '@proton/components'
 import type { FileToDocConversionResult } from '@proton/docs-core'
-import { getPlatformFriendlyDateForFileName } from '@proton/docs-core'
+import { Application, getPlatformFriendlyDateForFileName } from '@proton/docs-core'
 import type { EditorInitializationConfig, FileToDocPendingConversion } from '@proton/docs-shared'
 import type { DocumentAction, DriveCompat, NodeMeta } from '@proton/drive-store'
 import { useDriveCompat } from '@proton/drive-store'
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
+import { c } from 'ttag'
 
 import { DocsLayout } from '../Components'
 import { DocumentConverter } from '../Components/DocumentConverter'

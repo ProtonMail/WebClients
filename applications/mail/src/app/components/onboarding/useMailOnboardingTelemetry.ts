@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
 
-import { useApi, useOrganization } from '@proton/components/hooks';
-import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
-import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
+import { useApi } from '@proton/components';
+import { useOrganization } from '@proton/components/hooks';
+import { TelemetryMailOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { PLANS } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';

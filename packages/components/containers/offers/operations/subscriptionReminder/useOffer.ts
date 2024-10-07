@@ -1,5 +1,5 @@
+import { useUser } from '@proton/account/user/hooks';
 import useConfig from '@proton/components/hooks/useConfig';
-import { useUser } from '@proton/components/hooks/useUser';
 import { FeatureCode, useFeature } from '@proton/features';
 
 import useOfferFlags from '../../hooks/useOfferFlags';

@@ -1,18 +1,14 @@
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { useGetUserInvitations, useUserInvitations } from '@proton/account/userInvitations/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
-import {
-    useAddresses,
-    useConfig,
-    usePlans,
-    useSubscription,
-    useUser,
-    useVPNServersCount,
-} from '@proton/components/hooks';
+import { usePlans, useSubscription, useVPNServersCount } from '@proton/components/hooks';
 import useCache from '@proton/components/hooks/useCache';
+import useConfig from '@proton/components/hooks/useConfig';
 import { useOrganization } from '@proton/components/hooks/useOrganization';
 import { useFeature } from '@proton/features';
 import { type PaymentMethodStatusExtended } from '@proton/payments';
@@ -38,7 +34,7 @@ jest.mock('@proton/components/hooks/useConfig');
 const mockUseConfig = useConfig as jest.MockedFunction<any>;
 mockUseConfig.mockReturnValue({ APP_NAME: APPS.PROTONMAIL });
 
-jest.mock('@proton/components/hooks/useUser');
+jest.mock('@proton/account/user/hooks');
 const mockUseUser = useUser as jest.MockedFunction<any>;
 
 jest.mock('@proton/components/hooks/usePlans');
@@ -55,7 +51,7 @@ mockUsePaymentStatus.mockReturnValue([
     false,
 ]);
 
-jest.mock('@proton/components/hooks/useAddresses');
+jest.mock('@proton/account/addresses/hooks');
 const mockUseAddresses = useAddresses as jest.MockedFunction<any>;
 mockUseAddresses.mockReturnValue([addresses, false]);
 

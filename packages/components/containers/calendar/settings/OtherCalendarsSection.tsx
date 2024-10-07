@@ -11,6 +11,9 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Prompt from '@proton/components/components/prompt/Prompt';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SharedCalendarsSection from '@proton/components/containers/calendar/settings/SharedCalendarsSection';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import { useModalsMap } from '@proton/components/hooks/useModalsMap';
 import { removeCalendar } from '@proton/shared/lib/api/calendars';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
 import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
@@ -25,8 +28,7 @@ import type {
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
 
-import { useApi, useEventManager, useNotifications } from '../../../hooks';
-import { useModalsMap } from '../../../hooks/useModalsMap';
+import { useNotifications } from '../../../hooks';
 import HolidaysCalendarModal from '../calendarModal/holidaysCalendarModal/HolidaysCalendarModal';
 import { PersonalCalendarModal } from '../calendarModal/personalCalendarModal/PersonalCalendarModal';
 import SubscribedCalendarModal from '../calendarModal/subscribedCalendarModal/SubscribedCalendarModal';

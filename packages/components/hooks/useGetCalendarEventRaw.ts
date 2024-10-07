@@ -1,5 +1,7 @@
 import { useCallback } from 'react';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
 import { getAuthorPublicKeysMap, withNormalizedAuthors } from '@proton/shared/lib/calendar/author';
 import { getCalendarEventDecryptionKeys } from '@proton/shared/lib/calendar/crypto/keys/helpers';
@@ -9,8 +11,6 @@ import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import type { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 
-import { useGetAddresses } from './useAddresses';
-import { useGetAddressKeys } from './useAddressesKeys';
 import { useGetCalendarBootstrap } from './useGetCalendarBootstrap';
 import { useGetCalendarKeys } from './useGetDecryptedPassphraseAndCalendarKeys';
 import useGetVerificationPreferences from './useGetVerificationPreferences';

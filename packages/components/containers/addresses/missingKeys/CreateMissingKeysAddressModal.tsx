@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { getMemberAddresses } from '@proton/account';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useGetUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -18,7 +20,9 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
+import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -39,13 +43,9 @@ import { getOrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/
 import noop from '@proton/utils/noop';
 
 import {
-    useApi,
     useErrorHandler,
-    useEventManager,
-    useGetAddresses,
     useGetOrganization,
     useGetOrganizationKey,
-    useGetUser,
     useGetUserKeys,
     useNotifications,
 } from '../../../hooks';

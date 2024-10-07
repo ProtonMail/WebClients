@@ -1,4 +1,5 @@
-import { useUser } from '../../hooks/useUser';
+import { useUser } from '@proton/account/user/hooks';
+
 import DelinquentModal from '../api/DelinquentModal';
 
 const DelinquentContainer = () => {

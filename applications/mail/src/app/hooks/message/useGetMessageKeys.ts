@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { useGetAddressKeys } from '@proton/components';
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 

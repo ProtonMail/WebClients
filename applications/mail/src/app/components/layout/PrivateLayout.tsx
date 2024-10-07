@@ -2,6 +2,7 @@ import type { ReactNode, Ref } from 'react';
 import { forwardRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import { useUser } from '@proton/account/user/hooks';
 import type { Breakpoints } from '@proton/components';
 import {
     DrawerApp,
@@ -10,7 +11,6 @@ import {
     PrivateAppContainer,
     SmartBanner,
     TopBanners,
-    useUser,
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';

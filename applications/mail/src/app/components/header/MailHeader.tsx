@@ -3,7 +3,8 @@ import { memo, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import type { Breakpoints } from '@proton/components';
-import { FloatingButton, Icon, PrivateHeader, UserDropdown, useFolders, useLabels } from '@proton/components';
+import { FloatingButton, Icon, PrivateHeader, UserDropdown } from '@proton/components';
+import { useFolders, useLabels } from '@proton/mail';
 import { APPS } from '@proton/shared/lib/constants';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';

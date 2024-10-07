@@ -1,10 +1,10 @@
 import { useFlag } from '@unleash/proxy-client-react';
 
+import { useUser } from '@proton/account/user/hooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 
 import useConfig from '../useConfig';
-import useUser from '../useUser';
 
 const useIsSecurityCheckupAvailable = () => {
     const securityCheckupEnabled = useFlag('SecurityCheckup');

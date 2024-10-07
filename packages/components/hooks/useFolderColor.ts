@@ -1,8 +1,7 @@
+import { useFolders } from '@proton/mail';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
-
-import { useFolders } from './useCategories';
 
 const useFolderColor = (folder: Folder) => {
     const [folders] = useFolders();

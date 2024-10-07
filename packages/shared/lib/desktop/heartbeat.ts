@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { differenceInDays, getUnixTime } from 'date-fns';
 
-import { useApi } from '@proton/components/hooks';
+import { useApi } from '@proton/components';
 import { TelemetryMailDefaultMailto, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { Api } from '@proton/shared/lib/interfaces';

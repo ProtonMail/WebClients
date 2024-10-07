@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { useForceRefresh } from '@proton/components/hooks';
+import { useForceRefresh } from '@proton/components';
 import { languageCode } from '@proton/shared/lib/i18n';
 import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';

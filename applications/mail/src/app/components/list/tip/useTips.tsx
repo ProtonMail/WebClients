@@ -3,11 +3,13 @@ import { useEffect, useMemo, useState } from 'react';
 import { differenceInDays } from 'date-fns';
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { Href } from '@proton/atoms';
-import { ErrorBoundary, PassAliasesProvider, useAddresses, useOrganization, useUser } from '@proton/components';
-import { useFolders, useLabels } from '@proton/components/hooks/useCategories';
+import { ErrorBoundary, PassAliasesProvider, useOrganization } from '@proton/components';
 import useUserSettings from '@proton/components/hooks/useUserSettings';
 import { FeatureCode, useFeature } from '@proton/features';
+import { useFolders, useLabels } from '@proton/mail';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { PassBridgeProvider } from '@proton/pass/lib/bridge/PassBridgeProvider';

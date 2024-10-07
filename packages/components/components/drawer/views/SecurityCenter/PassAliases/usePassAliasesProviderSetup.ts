@@ -2,9 +2,11 @@ import { useEffect, useReducer } from 'react';
 
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import { NOTIFICATION_DEFAULT_EXPIRATION_TIME } from '@proton/components/containers/notifications/constants';
-import { useAddresses, useNotifications, useUser } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useAsyncError from '@proton/hooks/useAsyncError';
 import useIsMounted from '@proton/hooks/useIsMounted';

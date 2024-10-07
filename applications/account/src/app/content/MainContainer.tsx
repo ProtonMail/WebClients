@@ -3,6 +3,8 @@ import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import {
     AppLink,
     CancellationReminderSection,
@@ -18,7 +20,6 @@ import {
     TopNavbarUpsell,
     UserDropdown,
     useActiveBreakpoint,
-    useAddresses,
     useConvertExternalAddresses,
     useDeviceRecovery,
     useDrivePlan,
@@ -31,7 +32,6 @@ import {
     useSubscription,
     useToggle,
     useUnprivatizeMembers,
-    useUser,
     useUserSettings,
 } from '@proton/components';
 import { getIsSectionAvailable, getRoutePaths } from '@proton/components/containers/layout/helper';

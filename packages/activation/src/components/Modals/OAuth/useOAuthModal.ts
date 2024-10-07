@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import useAvailableAddresses from '@proton/activation/src/hooks/useAvailableAddresses';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
 import type { OAuthProps } from '@proton/activation/src/interface';
@@ -13,8 +15,8 @@ import {
 } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
-import { useAddresses, useFolders, useLabels, useUser } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
+import { useFolders, useLabels } from '@proton/mail';
 
 const useOAuthModal = () => {
     const [user] = useUser();

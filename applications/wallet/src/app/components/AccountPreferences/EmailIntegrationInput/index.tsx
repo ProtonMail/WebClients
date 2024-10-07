@@ -2,10 +2,12 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import type { WasmApiEmailAddress, WasmApiWalletAccount } from '@proton/andromeda';
 import { Info, Prompt, Toggle, useModalState } from '@proton/components';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
-import { useAddresses, useOrganization, useUser } from '@proton/components/hooks';
+import { useOrganization } from '@proton/components/hooks';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { type IWasmApiWalletData } from '@proton/wallet';
 

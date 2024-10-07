@@ -3,14 +3,8 @@ import { forwardRef, memo } from 'react';
 import { Redirect, useRouteMatch } from 'react-router-dom';
 
 import type { Breakpoints } from '@proton/components';
-import {
-    MailShortcutsModal,
-    useFolders,
-    useLabels,
-    useModalState,
-    useOpenDrawerOnLoad,
-    useUserSettings,
-} from '@proton/components';
+import { MailShortcutsModal, useModalState, useOpenDrawerOnLoad, useUserSettings } from '@proton/components';
+import { useFolders, useLabels } from '@proton/mail';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 

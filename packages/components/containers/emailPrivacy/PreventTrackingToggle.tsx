@@ -1,12 +1,15 @@
 import { c } from 'ttag';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import useToggle from '@proton/components/hooks/useToggle';
 import { useLoading } from '@proton/hooks';
 import { updateImageProxy } from '@proton/shared/lib/api/mailSettings';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
 
-import { useApi, useEventManager, useNotifications, useToggle } from '../../hooks';
+import { useNotifications } from '../../hooks';
 
 interface Props {
     id: string;

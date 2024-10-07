@@ -16,6 +16,8 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import RegisterSecurityKeyContent from '@proton/components/containers/account/fido/RegisterSecurityKeyContent';
 import AuthModal from '@proton/components/containers/password/AuthModal';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { getSecurityKeyChallenge, registerSecurityKey } from '@proton/shared/lib/api/settings';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -26,7 +28,7 @@ import { getCreatePayload } from '@proton/shared/lib/webauthn/create';
 import type { RegisterCredentials } from '@proton/shared/lib/webauthn/interface';
 import physicalKeyRegistered from '@proton/styles/assets/img/illustrations/physical-key-registered.svg';
 
-import { useApi, useErrorHandler, useEventManager } from '../../../hooks';
+import { useErrorHandler } from '../../../hooks';
 import { maxSecurityKeyNameLength } from './constants';
 
 enum Steps {

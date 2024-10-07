@@ -5,13 +5,15 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { deleteMember } from '@proton/shared/lib/api/members';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { Member, Organization } from '@proton/shared/lib/interfaces';
 import { MEMBER_STATE } from '@proton/shared/lib/interfaces';
 
-import { useApi, useEventManager, useNotifications } from '../../hooks';
+import { useNotifications } from '../../hooks';
 
 interface Props extends ModalProps {
     member: Member | undefined;

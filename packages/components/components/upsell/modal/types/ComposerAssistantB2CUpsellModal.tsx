@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import { type ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Price from '@proton/components/components/price/Price';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
-import { usePreferredPlansMap, useUser } from '@proton/components/hooks';
+import { usePreferredPlansMap } from '@proton/components/hooks';
 import {
     APP_UPSELL_REF_PATH,
     BRAND_NAME,

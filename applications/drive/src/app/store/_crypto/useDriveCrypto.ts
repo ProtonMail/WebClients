@@ -2,7 +2,9 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { useAuthentication, useGetAddressKeys, useGetAddresses, useNotifications } from '@proton/components';
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useAuthentication, useNotifications } from '@proton/components';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import type { Address } from '@proton/shared/lib/interfaces/Address';

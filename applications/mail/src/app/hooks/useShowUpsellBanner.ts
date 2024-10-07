@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { useUser } from '@proton/components/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { DAY, MAILBOX_LABEL_IDS, MONTH } from '@proton/shared/lib/constants';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 

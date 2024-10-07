@@ -12,10 +12,11 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     Tooltip,
+    useApi,
     useModalStateObject,
 } from '@proton/components';
 import TextArea from '@proton/components/components/v2/input/TextArea';
-import { useApi, useNotifications, useUserSettings } from '@proton/components/hooks';
+import { useNotifications, useUserSettings } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { useAssistant } from '@proton/llm/lib';
 import type { AssistantFeedback } from '@proton/shared/lib/api/feedback';

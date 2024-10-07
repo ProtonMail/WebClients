@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button, ButtonLike, Href } from '@proton/atoms';
 import {
     Field,
@@ -13,7 +14,6 @@ import {
     Prompt,
     Row,
     Tooltip,
-    useAddresses,
     useApi,
     useEventManager,
     useModalState,

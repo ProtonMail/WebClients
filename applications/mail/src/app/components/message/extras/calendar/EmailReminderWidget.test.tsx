@@ -5,14 +5,9 @@ import { mocked } from 'jest-mock';
 import { HttpResponse, http } from 'msw';
 import { setupServer } from 'msw/node';
 
+import { useAddresses, useGetAddresses } from '@proton/account/addresses/hooks';
 import { getModelState } from '@proton/account/test';
-import {
-    AuthenticationProvider,
-    CacheProvider,
-    useAddresses,
-    useGetAddresses,
-    useUserSettings,
-} from '@proton/components';
+import { AuthenticationProvider, CacheProvider, useUserSettings } from '@proton/components';
 import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
 import useApi from '@proton/components/hooks/useApi';
 import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEventRaw';
@@ -48,8 +43,9 @@ jest.mock('@proton/components/hooks/useNotifications');
 jest.mock('@proton/components/hooks/useModals');
 jest.mock('@proton/components/hooks/useApi');
 jest.mock('@proton/components/hooks/useGetCalendarEventRaw');
-jest.mock('@proton/components/hooks/useAddresses');
 jest.mock('@proton/components/hooks/useUserSettings');
+
+jest.mock('@proton/account/addresses/hooks');
 
 jest.mock('./EventReminderText', () => ({
     __esModule: true,
@@ -67,24 +63,23 @@ jest.mock('@proton/components/hooks/useActiveBreakpoint', () => () => {
     return mockDefaultBreakpoints;
 });
 
-jest.mock('@proton/components/hooks/useUser', () => ({
+jest.mock('@proton/account/user/hooks', () => ({
     __esModule: true,
-    default: jest.fn(() => [
+    useUser: jest.fn(() => [
         [
             {
                 ID: 'id',
             },
         ],
     ]),
-    useGetUser: jest.fn(
-        () => () =>
-            Promise.resolve([
-                [
-                    {
-                        ID: 'id',
-                    },
-                ],
-            ])
+    useGetUser: jest.fn(() =>
+        Promise.resolve([
+            [
+                {
+                    ID: 'id',
+                },
+            ],
+        ])
     ),
 }));
 

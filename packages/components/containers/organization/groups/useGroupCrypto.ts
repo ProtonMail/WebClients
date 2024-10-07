@@ -1,7 +1,11 @@
 import { c } from 'ttag';
 
-import { useApi, useEventManager, useGetUser, useKTVerifier, useNotifications } from '@proton/components';
+import { useGetUser } from '@proton/account/user/hooks';
+import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import { setAddressFlags } from '@proton/components/hooks/helpers/addressFlagsHelper';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PrivateKeyReference } from '@proton/crypto/lib';
 import { CryptoProxy } from '@proton/crypto/lib';
 import { expectSignatureDisabled } from '@proton/shared/lib/helpers/address';
