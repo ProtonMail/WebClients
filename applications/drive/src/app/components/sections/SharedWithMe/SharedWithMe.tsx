@@ -6,14 +6,25 @@ import { ContactEmailsProvider, useActiveBreakpoint } from '@proton/components';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import useNavigate from '../../../hooks/drive/useNavigate';
-import type { EncryptedLink, useSharedWithMeView } from '../../../store';
-import { useBookmarksActions, useThumbnailsDownload } from '../../../store';
+import {
+    type EncryptedLink,
+    type ExtendedInvitationDetails,
+    useBookmarksActions,
+    type useSharedWithMeView,
+    useThumbnailsDownload,
+} from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
-import type { ExtendedInvitationDetails } from '../../../store/_links/useLinksListing/usePendingInvitationsListing';
 import { SortField } from '../../../store/_views/utils/useSorting';
 import { sendErrorReport } from '../../../utils/errorHandling';
-import type { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser';
-import FileBrowser, { Cells, GridHeader, useItemContextMenu, useSelection } from '../../FileBrowser';
+import FileBrowser, {
+    type BrowserItemId,
+    Cells,
+    type FileBrowserBaseItem,
+    GridHeader,
+    type ListViewHeaderItem,
+    useItemContextMenu,
+    useSelection,
+} from '../../FileBrowser';
 import { GridViewItem } from '../FileBrowser/GridViewItemLink';
 import { AcceptOrRejectInviteCell, NameCell, SharedByCell, SharedOnCell } from '../FileBrowser/contentCells';
 import headerItems from '../FileBrowser/headerCells';
@@ -40,8 +51,6 @@ export interface SharedWithMeItem extends FileBrowserBaseItem {
     parentLinkId: string;
     invitationDetails?: ExtendedInvitationDetails;
     bookmarkDetails?: { token: string; createTime: number; urlPassword: string };
-    acceptInvitation?: (invitationId: string) => Promise<void>;
-    rejectInvitation?: (invitationId: string) => Promise<void>;
 }
 
 type Props = {
@@ -90,28 +99,17 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
     const { canUseDocs } = useDriveDocsFeatureFlag();
     const { openBookmark } = useBookmarksActions();
 
-    const { layout, items, sortParams, setSorting, isLoading, acceptPendingInvitation, rejectPendingInvitation } =
-        sharedWithMeView;
-
-    const itemsWithAcceptReject = items.map((item) =>
-        item.isInvitation
-            ? {
-                  ...item,
-                  acceptInvitation: acceptPendingInvitation,
-                  rejectInvitation: rejectPendingInvitation,
-              }
-            : item
-    );
+    const { layout, items, sortParams, setSorting, isLoading } = sharedWithMeView;
 
     const selectedItemIds = selectionControls!.selectedItemIds;
     const selectedBrowserItems = useMemo(
-        () => getSelectedSharedWithMeItems(itemsWithAcceptReject, selectedItemIds),
-        [itemsWithAcceptReject, selectedItemIds]
+        () => getSelectedSharedWithMeItems(items, selectedItemIds),
+        [items, selectedItemIds]
     );
 
     const handleClick = useCallback(
         (id: BrowserItemId) => {
-            const item = itemsWithAcceptReject.find((item) => item.id === id);
+            const item = items.find((item) => item.id === id);
             if (!item || item.isInvitation) {
                 return;
             }
@@ -143,7 +141,7 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
 
             navigateToLink(item.rootShareId, item.linkId, item.isFile);
         },
-        [navigateToLink, itemsWithAcceptReject]
+        [navigateToLink, items]
     );
 
     const handleItemRender = (item: SharedWithMeItem) => {
@@ -192,7 +190,7 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
             />
             <FileBrowser
                 caption={c('Title').t`Shared`}
-                items={itemsWithAcceptReject}
+                items={items}
                 headerItems={headerItems}
                 layout={layout}
                 loading={isLoading}

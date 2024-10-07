@@ -5,17 +5,17 @@ import { queryResolveContextShare } from '@proton/shared/lib/api/drive/share';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { sendErrorReport } from '../../utils/errorHandling';
-import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
+import { useInvitationsActions } from '../_actions';
 import { useDebouncedRequest } from '../_api';
+import { EXTERNAL_INVITATIONS_ERROR_NAMES, useInvitations } from '../_invitations';
 import type { DecryptedLink } from '../_links';
 import { useLink } from '../_links';
 import type { ShareInvitationDetails } from '../_shares';
-import { useShareInvitation } from '../_shares';
-import { EXTERNAL_INVITATIONS_ERROR_NAMES } from '../_shares/useShareInvitation';
 import { useVolumesState } from '../_volumes';
 
 export const useVolumeLinkView = () => {
-    const { getInvitationDetails, acceptInvitation, convertExternalInvitation } = useShareInvitation();
+    const { getInvitationDetails, convertExternalInvitation } = useInvitations();
+    const { acceptInvitation } = useInvitationsActions();
     const debouncedRequest = useDebouncedRequest();
     const { getLink } = useLink();
     const { createNotification } = useNotifications();
@@ -79,27 +79,13 @@ export const useVolumeLinkView = () => {
                 return;
             }
             volumeState.setVolumeShareIds(volumeId, [invitationDetails.share.shareId]);
-            const response = await acceptInvitation(abortSignal, invitationDetails);
-            if (response?.Code === 1000) {
-                createNotification({
-                    type: 'success',
-                    text: c('Notification').t`Share invitation accepted successfully`,
-                });
-                return {
-                    linkId: invitationDetails.link.linkId,
-                    shareId: invitationDetails.share.shareId,
-                    isFile: invitationDetails.link.isFile,
-                    mimeType: invitationDetails.link.mimeType,
-                };
-            } else {
-                throw new EnrichedError(c('Notification').t`Failed to accept share invitation`, {
-                    tags: {
-                        volumeId,
-                        linkId,
-                        invitationId,
-                    },
-                });
-            }
+            await acceptInvitation(abortSignal, invitationDetails.invitation.invitationId);
+            return {
+                linkId: invitationDetails.link.linkId,
+                shareId: invitationDetails.share.shareId,
+                isFile: invitationDetails.link.isFile,
+                mimeType: invitationDetails.link.mimeType,
+            };
         } catch (error) {
             // This is to make TS work with error typing
             let message;
