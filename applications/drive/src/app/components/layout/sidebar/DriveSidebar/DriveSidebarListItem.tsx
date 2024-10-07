@@ -11,6 +11,7 @@ import {
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import clsx from '@proton/utils/clsx';
 
 import { useDriveEventManager } from '../../../../store';
 import { useVolumesState } from '../../../../store/_volumes';
@@ -25,6 +26,7 @@ interface Props {
     onDoubleClick?: () => void;
     style?: React.CSSProperties;
     onClick?: MouseEventHandler<HTMLLIElement>;
+    className?: string;
 }
 
 const DriveSidebarListItem = ({
@@ -37,6 +39,7 @@ const DriveSidebarListItem = ({
     onDoubleClick,
     style,
     onClick,
+    className,
 }: Props) => {
     const driveEventManager = useDriveEventManager();
     const volumeState = useVolumesState();
@@ -61,17 +64,17 @@ const DriveSidebarListItem = ({
     return (
         <SidebarListItem onClick={onClick}>
             <SidebarListItemLink to={to} isActive={isActive}>
-                <div className="flex flex-nowrap" style={style}>
-                    <SidebarListItemContent
-                        onDoubleClick={handleDoubleClick}
-                        left={left}
-                        right={rightIcon}
-                        title={typeof children === 'string' ? children : undefined}
-                        data-testid="sidebar-main-sections"
-                    >
-                        {children}
-                    </SidebarListItemContent>
-                </div>
+                <SidebarListItemContent
+                    className={clsx(className, 'flex flex-nowrap')}
+                    onDoubleClick={handleDoubleClick}
+                    left={left}
+                    right={rightIcon}
+                    title={typeof children === 'string' ? children : undefined}
+                    data-testid="sidebar-main-sections"
+                    style={style}
+                >
+                    {children}
+                </SidebarListItemContent>
             </SidebarListItemLink>
         </SidebarListItem>
     );

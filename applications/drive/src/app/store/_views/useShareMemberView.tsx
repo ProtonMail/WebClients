@@ -7,6 +7,7 @@ import { useLoading } from '@proton/hooks';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 
 import { useDriveEventManager } from '..';
+import { useInvitations } from '../_invitations';
 import { useLink } from '../_links';
 import type {
     ShareExternalInvitation,
@@ -15,7 +16,7 @@ import type {
     ShareInvitee,
     ShareMember,
 } from '../_shares';
-import { useShare, useShareActions, useShareInvitation, useShareMember } from '../_shares';
+import { useShare, useShareActions, useShareMember } from '../_shares';
 
 const useShareMemberView = (rootShareId: string, linkId: string) => {
     const {
@@ -29,7 +30,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         deleteExternalInvitation,
         updateInvitationPermissions,
         updateExternalInvitationPermissions,
-    } = useShareInvitation();
+    } = useInvitations();
     const { updateShareMemberPermissions, getShareMembers, removeShareMember } = useShareMember();
     const { getLink, getLinkPrivateKey, loadFreshLink } = useLink();
     const { createNotification } = useNotifications();

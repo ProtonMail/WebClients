@@ -43,17 +43,21 @@ import {
 import { useDriveCrypto } from '../_crypto';
 import { getOwnAddressKeysWithEmailAsync } from '../_crypto/driveCrypto';
 import { useLink } from '../_links';
-import type { ShareInvitationDetails, ShareInvitationEmailDetails } from './interface';
-import useDefaultShare from './useDefaultShare';
-import { useDriveSharingFlags } from './useDriveSharingFlags';
-import useShare from './useShare';
+import {
+    type ShareInvitationDetails,
+    type ShareInvitationEmailDetails,
+    useDefaultShare,
+    useDriveSharingFlags,
+    useShare,
+} from '../_shares';
+import { useInvitationsState } from './useInvitationsState';
 
 export enum EXTERNAL_INVITATIONS_ERROR_NAMES {
     NOT_FOUND = 'ExternalInvitationsNotFound',
     DISABLED = 'ExternalInvitationsDisabled',
 }
 
-export const useShareInvitation = () => {
+export const useInvitations = () => {
     const debouncedRequest = useDebouncedRequest();
     const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
@@ -62,8 +66,9 @@ export const useShareInvitation = () => {
     const { getShareCreatorKeys, getShareSessionKey } = useShare();
     const { getLink, getLinkPrivateKey } = useLink();
     const { getDefaultShare } = useDefaultShare();
+    const { setInvitations } = useInvitationsState();
 
-    const getShareInvitations = async (
+    const getInvitations = async (
         abortSignal: AbortSignal,
         { volumeId, shareId }: { volumeId: string; shareId: string }
     ) => {
@@ -311,6 +316,7 @@ export const useShareInvitation = () => {
                 Link,
             })
         );
+        setInvitations([invitationDetails]);
         return invitationDetails;
     };
 
@@ -476,7 +482,7 @@ export const useShareInvitation = () => {
     return {
         getInvitationDetails,
         convertExternalInvitation,
-        getShareInvitations,
+        getInvitations,
         inviteProtonUser,
         inviteExternalUser,
         listInvitations,

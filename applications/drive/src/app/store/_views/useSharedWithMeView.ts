@@ -1,8 +1,5 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 
-import { c } from 'ttag';
-
-import { useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import useFlag from '@proton/unleash/useFlag';
@@ -11,15 +8,11 @@ import type { SortParams } from '../../components/FileBrowser';
 import type { SharedWithMeItem } from '../../components/sections/SharedWithMe/SharedWithMe';
 import { useRedirectToPublicPage } from '../../hooks/util/useRedirectToPublicPage';
 import { sendErrorReport } from '../../utils/errorHandling';
-import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { getTokenFromSearchParams } from '../../utils/url/token';
 import { useBookmarksActions } from '../_bookmarks';
-import { useLink, useLinksListing } from '../_links';
-import { usePendingInvitationsListing } from '../_links/useLinksListing/usePendingInvitationsListing';
+import { useLinksListing } from '../_links';
 import { useUserSettings } from '../_settings';
-import { useShareInvitation } from '../_shares';
-import { useDirectSharingInfo } from '../_shares/useDirectSharingInfo';
-import { useVolumesState } from '../_volumes';
+import { useInvitationsView } from './useInvitationsView';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder, useSortingWithDefault } from './utils';
 import { sortItemsWithPositions } from './utils/sortItemsWithPositions';
 import type { SortField } from './utils/useSorting';
@@ -38,23 +31,11 @@ const DEFAULT_SORT = {
  */
 export default function useSharedWithMeView(shareId: string) {
     const [isLoading, withLoading] = useLoading(true);
-    const [isPendingLoading, withPendingLoading] = useLoading(true);
     const bookmarksFeatureDisabled = useFlag('DriveShareURLBookmarksDisabled');
     const [isBookmarksLoading, withBookmarksLoading] = useLoading(!bookmarksFeatureDisabled);
     const linksListing = useLinksListing();
-    const { setVolumeShareIds } = useVolumesState();
-    const { getLink } = useLink();
-    const { acceptInvitation, rejectInvitation } = useShareInvitation();
-    const { getDirectSharingInfo } = useDirectSharingInfo();
-    const { createNotification } = useNotifications();
-    const [acceptedInvitationsPosition, setAcceptedInvitationsPosition] = useState<Map<string, number>>(new Map());
-    const {
-        pendingInvitations,
-        removePendingInvitation,
-        getPendingInvitation,
-        updatePendingInvitation,
-        loadPendingInvitations,
-    } = usePendingInvitationsListing();
+    const invitationsPositions = useRef<Map<string, number>>(new Map());
+    const { invitationsBrowserItems, isLoading: isInvitationsLoading } = useInvitationsView();
     const { addBookmarkFromPrivateApp } = useBookmarksActions();
     const { cleanupUrl } = useRedirectToPublicPage();
 
@@ -84,125 +65,24 @@ export default function useSharedWithMeView(shareId: string) {
         return acc;
     }, []);
 
-    const invitationsBrowserItems: SharedWithMeItem[] = [...pendingInvitations.values()].reduce<SharedWithMeItem[]>(
-        (acc, item) => {
-            acc.push({
-                isFile: item.link.isFile,
-                trashed: null,
-                mimeType: item.link.mimeType,
-                rootShareId: item.share.shareId,
-                id: item.share.shareId,
-                name: item.link.name,
-                invitationDetails: item,
-                sharedBy: item.invitation.inviterEmail,
-                isInvitation: true,
-                size: 0,
-                isLocked: item.isLocked,
-                linkId: item.link.linkId,
-                parentLinkId: '',
-                volumeId: item.share.volumeId,
-            });
-            return acc;
-        },
-        []
-    );
+    useEffect(() => {
+        const newInvitationsPositions = new Map(invitationsPositions.current);
+        invitationsBrowserItems.forEach((item, index) => {
+            newInvitationsPositions.set(item.rootShareId, index);
+        });
+        invitationsPositions.current = newInvitationsPositions;
+    }, [invitationsBrowserItems]);
 
     const sortedItems = useMemo(
-        () => sortItemsWithPositions([...invitationsBrowserItems, ...browserItems], acceptedInvitationsPosition),
-        [invitationsBrowserItems, browserItems, acceptedInvitationsPosition]
+        () => sortItemsWithPositions([...invitationsBrowserItems, ...browserItems], invitationsPositions.current),
+        [invitationsBrowserItems, browserItems, invitationsPositions.current]
     );
-
-    const acceptPendingInvitation = async (invitationId: string) => {
-        const abortSignal = new AbortController().signal;
-        const pendingInvitation = getPendingInvitation(invitationId);
-        updatePendingInvitation({ ...pendingInvitation, isLocked: true });
-        await acceptInvitation(abortSignal, pendingInvitation)
-            .then((response) => {
-                if (response?.Code !== 1000) {
-                    throw new EnrichedError(c('Notification').t`Failed to accept share invitation`, {
-                        tags: {
-                            volumeId: pendingInvitation.share.volumeId,
-                            shareId: pendingInvitation.share.shareId,
-                            linkId: pendingInvitation.link.linkId,
-                            invitationId,
-                        },
-                    });
-                }
-            })
-            .catch((error) => {
-                sendErrorReport(error);
-                createNotification({
-                    type: 'error',
-                    text: error.message,
-                });
-                updatePendingInvitation({ ...pendingInvitation, isLocked: false });
-                throw error;
-            });
-
-        // Preload link's info
-        await Promise.all([
-            getLink(abortSignal, pendingInvitation.share.shareId, pendingInvitation.link.linkId),
-            getDirectSharingInfo(abortSignal, pendingInvitation.share.shareId),
-        ]);
-
-        const index = sortedItems.findIndex((item) => item.rootShareId === pendingInvitation.share.shareId);
-
-        setAcceptedInvitationsPosition((prevState) => {
-            const newState = new Map(prevState);
-            newState.set(pendingInvitation.share.shareId, index);
-            return newState;
-        });
-        // TODO: Remove this when we will have events
-        linksListing.setSharedWithMeShareIdsState([pendingInvitation.share.shareId]);
-        setVolumeShareIds(pendingInvitation.share.volumeId, [pendingInvitation.share.shareId]);
-
-        removePendingInvitation(pendingInvitation.invitation.invitationId);
-        createNotification({
-            type: 'success',
-            text: c('Notification').t`Share invitation accepted successfully`,
-        });
-    };
-
-    const rejectPendingInvitation = async (invitationId: string) => {
-        // When rejecting an invitation, we can optimistically remove it, and if any issue occurs, we add it back.
-        const pendingInvitation = getPendingInvitation(invitationId);
-        removePendingInvitation(invitationId);
-        await rejectInvitation(new AbortController().signal, invitationId)
-            .then((response) => {
-                if (response?.Code !== 1000) {
-                    throw new EnrichedError(c('Notification').t`Failed to reject share invitation`, {
-                        tags: {
-                            volumeId: pendingInvitation.share.volumeId,
-                            shareId: pendingInvitation.share.shareId,
-                            linkId: pendingInvitation.link.linkId,
-                            invitationId,
-                        },
-                    });
-                }
-            })
-            .catch((err) => {
-                createNotification({
-                    type: 'error',
-                    text: err.message,
-                });
-                // Adding invite back if any issue happened
-                if (pendingInvitation) {
-                    updatePendingInvitation(pendingInvitation);
-                }
-                throw err;
-            });
-        createNotification({
-            type: 'success',
-            text: c('Notification').t`Share invitation declined`,
-        });
-    };
 
     useEffect(() => {
         const abortController = new AbortController();
         // Even if the user is going into a folder, we keep shared with me items decryption ongoing in the background
         // This is due to issue with how we decrypt stuff, to prevent infinite loop
         void withLoading(async () => loadSharedWithMeLinks(abortController.signal)).catch(sendErrorReport);
-        void withPendingLoading(async () => loadPendingInvitations(abortController.signal)).catch(sendErrorReport);
 
         return () => {
             abortController.abort();
@@ -238,11 +118,13 @@ export default function useSharedWithMeView(shareId: string) {
         sortParams,
         setSorting: (sortParams: SortParams<SortField>) => {
             // If user wants to sort items we clear the pinnedItemsIds to have the normal sortedList
-            setAcceptedInvitationsPosition(new Map());
+            invitationsPositions.current = new Map(
+                Array.from(invitationsPositions.current).filter(
+                    ([key]) => !browserItems.some((item) => item.rootShareId === key)
+                )
+            );
             return setSorting(sortParams);
         },
-        acceptPendingInvitation,
-        rejectPendingInvitation,
-        isLoading: isLoading || isPendingLoading || isDecrypting || isBookmarksLoading || isDecryptingBookmarks,
+        isLoading: isLoading || isInvitationsLoading || isDecrypting || isBookmarksLoading || isDecryptingBookmarks,
     };
 }
