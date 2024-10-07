@@ -132,7 +132,7 @@ export function PublicLinksListingProvider({ children }: { children: React.React
     return <PublicLinksListingContext.Provider value={value}>{children}</PublicLinksListingContext.Provider>;
 }
 
-export default function useLinksListing() {
+export default function usePublicLinksListing() {
     const state = useContext(PublicLinksListingContext);
     if (!state) {
         throw new Error('Trying to use uninitialized PublicLinksListingProvider');
