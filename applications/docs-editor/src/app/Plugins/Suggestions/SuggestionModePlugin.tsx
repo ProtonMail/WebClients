@@ -137,10 +137,15 @@ export function SuggestionModePlugin({
           if (!keys || keys.size === 0) {
             continue
           }
+
           suggestionModeLogger.info(`Creating new thread for suggestion ${id}`)
-          const content = JSON.stringify(generateSuggestionSummary(editor, markNodeMap, id))
+
+          const summary = generateSuggestionSummary(editor, markNodeMap, id)
+
+          const content = JSON.stringify(summary)
+
           controller
-            .createSuggestionThread(id, content)
+            .createSuggestionThread(id, content, summary[0].type)
             .then(() => {
               createdSuggestionIDs.delete(id)
               suggestionModeLogger.info(`Removed id ${id} from set ${[...createdSuggestionIDs]}`)
