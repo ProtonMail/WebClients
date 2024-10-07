@@ -5,6 +5,7 @@ import type { CommentThreadInterface } from '../CommentThreadInterface'
 import type { RtsMessagePayload } from '../Doc/RtsMessagePayload'
 import type { BroadcastSource } from './BroadcastSource'
 import type { WordCountInfoCollection } from '../WordCount/WordCountTypes'
+import type { SuggestionSummaryType } from '../SuggestionType'
 
 export interface EditorRequiresClientMethods {
   editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void>
@@ -22,7 +23,11 @@ export interface EditorRequiresClientMethods {
     markID?: string,
     createMarkNode?: boolean,
   ): Promise<CommentThreadInterface | undefined>
-  createSuggestionThread(suggestionID: string, commentContent: string): Promise<CommentThreadInterface | undefined>
+  createSuggestionThread(
+    suggestionID: string,
+    commentContent: string,
+    suggestionType: SuggestionSummaryType,
+  ): Promise<CommentThreadInterface | undefined>
 
   resolveThread(threadId: string): Promise<boolean>
   unresolveThread(threadId: string): Promise<boolean>

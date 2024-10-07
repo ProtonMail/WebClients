@@ -9,6 +9,7 @@ import type {
   DocumentRole,
   DataTypesThatDocumentCanBeExportedAs,
   InternalEventBusInterface,
+  SuggestionSummaryType,
 } from '@proton/docs-shared'
 import type { EditorOrchestratorInterface } from './EditorOrchestratorInterface'
 import type { DocControllerInterface } from '../../Controller/Document/DocControllerInterface'
@@ -111,8 +112,12 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     return this.comments.createCommentThread(commentContent, markID, createMarkNode)
   }
 
-  createSuggestionThread(suggestionID: string, commentContent: string): Promise<CommentThreadInterface | undefined> {
-    return this.comments.createSuggestionThread(suggestionID, commentContent)
+  createSuggestionThread(
+    suggestionID: string,
+    commentContent: string,
+    suggestionType: SuggestionSummaryType,
+  ): Promise<CommentThreadInterface | undefined> {
+    return this.comments.createSuggestionThread(suggestionID, commentContent, suggestionType)
   }
 
   resolveThread(threadId: string): Promise<boolean> {
