@@ -190,8 +190,8 @@ export const createUserRenewalRule = (store: Store<State>) =>
         when: (previous) => {
             const plan = selectUserPlan(store.getState());
 
-            // Do not show if it's free trial or can't manage subscription or is renewing
-            if (plan?.Type === PlanType.free || !plan?.ManageSubscription || plan?.SubscriptionRenewal) return false;
+            // Do not show if it's not a Plus plan or can't manage subscription or is already renewing
+            if (plan?.Type !== PlanType.plus || !plan?.ManageSubscription || plan?.SubscriptionRenewal) return false;
 
             const now = getEpoch();
 
