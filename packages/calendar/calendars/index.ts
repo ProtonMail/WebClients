@@ -1,10 +1,12 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
-import { AddressesState, ModelState } from '@proton/account';
+import type { AddressesState, ModelState } from '@proton/account';
 import { getInitialModelState } from '@proton/account/initialModelState';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { queryCalendars } from '@proton/shared/lib/api/calendars';
+import { CALENDAR_DISPLAY } from '@proton/shared/lib/calendar/constants';
 import type { CalendarWithOwnMembers } from '@proton/shared/lib/interfaces/calendar';
 
 export interface CalendarsState extends AddressesState {
@@ -36,6 +38,23 @@ const slice = createSlice({
     name,
     initialState,
     reducers: {
+        updateCalendarVisibility: (
+            state,
+            action: PayloadAction<{ calendarID: string; memberID: string; display: boolean }>
+        ) => {
+            if (!state.value) {
+                return;
+            }
+            const calendar = state.value.find(({ ID }) => ID === action.payload.calendarID);
+            if (!calendar) {
+                return;
+            }
+            const member = calendar.Members.find(({ ID }) => ID === action.payload.memberID);
+            if (!member) {
+                return;
+            }
+            member.Display = action.payload.display ? CALENDAR_DISPLAY.VISIBLE : CALENDAR_DISPLAY.HIDDEN;
+        },
         updateCalendars: (state, action: PayloadAction<CalendarWithOwnMembers[]>) => {
             state.value = action.payload;
             state.error = undefined;
