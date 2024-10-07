@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import type { ModalOwnProps } from '@proton/components';
 import { Prompt, SUBSCRIPTION_STEPS, Tooltip, useSubscriptionModal } from '@proton/components';
-import { useUser } from '@proton/components/hooks';
 import { PLANS } from '@proton/shared/lib/constants';
 import upgradeWalletSrc from '@proton/styles/assets/img/wallet/wallet-bitcoin.jpg';
 

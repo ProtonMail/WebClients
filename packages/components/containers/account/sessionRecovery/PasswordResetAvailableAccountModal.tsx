@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -36,7 +37,7 @@ import { getArmoredPrivateUserKeys, getEncryptedArmoredOrganizationKey } from '@
 import { srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
-import { useErrorHandler, useGetOrganizationKey, useGetUserKeys, useNotifications, useUser } from '../../../hooks';
+import { useErrorHandler, useGetOrganizationKey, useGetUserKeys, useNotifications } from '../../../hooks';
 import ConfirmSessionRecoveryCancellationModal from './ConfirmSessionRecoveryCancellationModal';
 import passwordResetIllustration from './password-reset-illustration.svg';
 

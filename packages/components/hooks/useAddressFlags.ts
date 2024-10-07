@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
 import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/components';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
-import { useNotifications, useUser } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { encryptionDisabled, expectSignatureDisabled } from '@proton/shared/lib/helpers/address';
 import type { Address } from '@proton/shared/lib/interfaces';

@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import Badge from '@proton/components/components/badge/Badge';
 import Info from '@proton/components/components/link/Info';
 import useConfig from '@proton/components/hooks/useConfig';
@@ -25,7 +26,7 @@ import type {
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 
-import { usePlans, useUser } from '../../../../hooks';
+import { usePlans } from '../../../../hooks';
 import Checkout from '../../Checkout';
 import { getBlackFridayRenewalNoticeText, getCheckoutRenewNoticeText } from '../../RenewalNotice';
 import StartDateCheckoutRow from '../../StartDateCheckoutRow';

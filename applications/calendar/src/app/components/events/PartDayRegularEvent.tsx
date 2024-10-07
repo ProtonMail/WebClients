@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 
-import { Icon, useUser } from '@proton/components';
+import { useUser } from '@proton/account/user/hooks';
+import { Icon } from '@proton/components';
 import { MINUTE } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 

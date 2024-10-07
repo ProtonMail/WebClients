@@ -7,6 +7,7 @@ import OrganizationSettingsRouter from 'proton-account/src/app/containers/organi
 import { getOrganizationAppRoutes } from 'proton-account/src/app/containers/organization/routes';
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import {
     AccountRecoverySection,
     AuthenticatedBugModal,
@@ -59,7 +60,6 @@ import {
     useSubscription,
     useToggle,
     useUnprivatizeMembers,
-    useUser,
     useUserSettings,
 } from '@proton/components';
 import { getIsSectionAvailable, getRoutePaths, getSectionPath } from '@proton/components/containers/layout/helper';

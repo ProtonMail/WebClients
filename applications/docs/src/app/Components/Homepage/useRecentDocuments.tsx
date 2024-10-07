@@ -1,3 +1,6 @@
+import { useUser } from '@proton/account/user/hooks'
+import { useAuthentication } from '@proton/components'
+import { useContactEmails } from '@proton/components/hooks'
 import {
   DateFormatter,
   type RecentDocumentServiceState,
@@ -5,9 +8,6 @@ import {
   type RecentDocumentsSnapshotData,
   RecentDocumentStateUpdatedEvent,
 } from '@proton/docs-core'
-
-import { useAuthentication } from '@proton/components'
-import { useContactEmails, useUser } from '@proton/components/hooks'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
 import type { UserModel } from '@proton/shared/lib/interfaces'

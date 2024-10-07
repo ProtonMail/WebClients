@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms';
 import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import Select from '@proton/components/components/select/Select';
@@ -20,8 +21,6 @@ import {
 } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getBridgeURL, getStaticURL } from '@proton/shared/lib/helpers/url';
-
-import { useUser } from '../../hooks';
 
 import './ProtonMailBridgeSection.scss';
 

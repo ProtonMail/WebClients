@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useGetUser } from '@proton/account/user/hooks';
 import { Button, Href } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import Icon from '@proton/components/components/icon/Icon';
@@ -36,7 +37,7 @@ import { addAddressKeysProcess, getEmailFromKey, splitKeys } from '@proton/share
 import illustration from '@proton/styles/assets/img/illustrations/forward-email-verification.svg';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import { useContactEmails, useGetUser, useGetUserKeys, useNotifications } from '../../hooks';
+import { useContactEmails, useGetUserKeys, useNotifications } from '../../hooks';
 import useAddressFlags from '../../hooks/useAddressFlags';
 import type { Condition } from '../filters/interfaces';
 import { FilterStatement } from '../filters/interfaces';

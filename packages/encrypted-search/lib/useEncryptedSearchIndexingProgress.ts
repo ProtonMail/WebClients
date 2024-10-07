@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 
-import { useUser } from '@proton/components/hooks';
+import { useUser } from '@proton/account/user/hooks';
 
 import { defaultESIndexingState as defaultESIndexingProgressState } from './constants';
 import { estimateIndexingProgress } from './esHelpers';

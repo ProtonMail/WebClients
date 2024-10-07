@@ -4,17 +4,9 @@ import { Link, useHistory, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { securityCheckupSlice } from '@proton/account';
+import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms';
-import {
-    AppLink,
-    Icon,
-    Logo,
-    ProtonLogo,
-    PublicTopBanners,
-    useSecurityCheckup,
-    useTheme,
-    useUser,
-} from '@proton/components';
+import { AppLink, Icon, Logo, ProtonLogo, PublicTopBanners, useSecurityCheckup, useTheme } from '@proton/components';
 import { APPS, SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 import { isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import { getInitials } from '@proton/shared/lib/helpers/string';

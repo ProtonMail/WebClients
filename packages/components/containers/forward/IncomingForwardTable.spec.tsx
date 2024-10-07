@@ -1,5 +1,5 @@
+import { useUser } from '@proton/account/user/hooks';
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
-import { useUser } from '@proton/components/hooks';
 import type { Address } from '@proton/shared/lib/interfaces';
 import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
 import {
@@ -14,7 +14,7 @@ import {
 
 import IncomingForwardTable from './IncomingForwardTable';
 
-jest.mock('@proton/components/hooks/useUser');
+jest.mock('@proton/account/user/hooks');
 const mockedUseUser = useUser as jest.MockedFunction<typeof useUser>;
 mockedUseUser.mockReturnValue([{}] as any);
 

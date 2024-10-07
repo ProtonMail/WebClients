@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Href } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
@@ -15,7 +16,7 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import GenericError from '@proton/components/containers/error/GenericError';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import { useErrorHandler, useNotifications, useUser, useUserSettings } from '@proton/components/hooks';
+import { useErrorHandler, useNotifications, useUserSettings } from '@proton/components/hooks';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';

@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button, Scroll } from '@proton/atoms';
 import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
@@ -19,7 +20,7 @@ import { orderAllFolders } from '@proton/shared/lib/api/labels';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
 
-import { useNotifications, useUser } from '../../hooks';
+import { useNotifications } from '../../hooks';
 import FolderTreeViewList from './FolderTreeViewList';
 import ToggleEnableFolderColor from './ToggleEnableFolderColor';
 import ToggleInheritParentFolderColor from './ToggleInheritParentFolderColor';

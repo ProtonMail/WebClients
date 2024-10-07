@@ -2,8 +2,9 @@ import { useCallback, useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/components';
-import { useNotifications, useUser } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import useStateRef from '@proton/hooks/useStateRef';
 import type { AssistantHooksProps, AssistantRunningActions, GenerateAssistantResult } from '@proton/llm/lib';

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -21,7 +22,7 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
-import { useNotifications, useUser } from '../../../hooks';
+import { useNotifications } from '../../../hooks';
 import { useSessionRecoveryLocalStorage } from './SessionRecoveryLocalStorageManager';
 
 interface Props extends ModalProps {

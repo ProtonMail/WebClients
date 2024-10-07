@@ -1,4 +1,5 @@
-import { CheckListGmailForward, GmailSyncModal, useModalState, useUser } from '@proton/components';
+import { useUser } from '@proton/account/user/hooks';
+import { CheckListGmailForward, GmailSyncModal, useModalState } from '@proton/components';
 import { useFlag } from '@proton/unleash';
 
 import { EASY_SWITCH_SOURCES } from '../../interface';

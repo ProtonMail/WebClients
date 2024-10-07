@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import {
     AlmostAllMailToggle,
     AutoDeleteSpamAndTrashDaysToggle,
@@ -10,7 +11,6 @@ import {
     useApi,
     useEventManager,
     useNotifications,
-    useUser,
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';

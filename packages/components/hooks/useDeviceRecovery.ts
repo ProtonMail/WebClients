@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useGetUser } from '@proton/account/user/hooks';
 import useIsRecoveryFileAvailable from '@proton/components/hooks/recoveryFile/useIsRecoveryFileAvailable';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useEventManager from '@proton/components/hooks/useEventManager';
@@ -9,7 +10,6 @@ import noop from '@proton/utils/noop';
 
 import useApi from './useApi';
 import useConfig from './useConfig';
-import { useGetUser } from './useUser';
 import { useGetUserKeys, useUserKeys } from './useUserKeys';
 import useUserSettings, { useGetUserSettings } from './useUserSettings';
 

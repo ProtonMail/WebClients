@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -16,7 +17,6 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { getClientName } from '@proton/components/helpers/report';
-import { useUser } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';

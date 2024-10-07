@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { ThemeColor } from '@proton/colors';
 import useIsRecoveryFileAvailable from '@proton/components/hooks/recoveryFile/useIsRecoveryFileAvailable';
 import useHasOutdatedRecoveryFile from '@proton/components/hooks/useHasOutdatedRecoveryFile';
@@ -14,7 +15,6 @@ import useIsDataRecoveryAvailable from './useIsDataRecoveryAvailable';
 import useIsMnemonicAvailable from './useIsMnemonicAvailable';
 import useIsSentinelUser from './useIsSentinelUser';
 import useRecoveryStatus from './useRecoveryStatus';
-import useUser from './useUser';
 
 const useRecoveryNotification = (
     isLessInvasive: boolean,

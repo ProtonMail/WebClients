@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { EasySwitchProvider } from '@proton/activation';
 import { Button } from '@proton/atoms';
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
@@ -17,7 +18,6 @@ import ContactsWidgetGroupsContainer from '@proton/components/containers/contact
 import ContactsWidgetSettingsContainer from '@proton/components/containers/contacts/widget/ContactsWidgetSettingsContainer';
 import type { CustomAction } from '@proton/components/containers/contacts/widget/types';
 import { CONTACT_WIDGET_TABS } from '@proton/components/containers/contacts/widget/types';
-import { useUser } from '@proton/components/hooks';
 import useDrawerContactFocus from '@proton/components/hooks/useDrawerContactFocus';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';

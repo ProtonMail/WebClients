@@ -2,6 +2,7 @@ import { memo } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button, ButtonLike } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
@@ -19,7 +20,6 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { CountryOptions } from '../../../helpers/countries';
-import { useUser } from '../../../hooks';
 import Country from './Country';
 import LoadIndicator from './LoadIndicator';
 import type { EnhancedLogical } from './interface';

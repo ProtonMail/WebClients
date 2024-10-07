@@ -1,4 +1,4 @@
-import { useUser } from '@proton/components';
+import { useUser } from '@proton/account/user/hooks';
 
 export const UserNameCell = () => {
     const [{ Name }] = useUser();

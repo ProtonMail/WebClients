@@ -4,6 +4,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -57,7 +58,6 @@ import { usePlans, useSubscription } from '@proton/components/hooks';
 import useConfig from '@proton/components/hooks/useConfig';
 import useLastSubscriptionEnd from '@proton/components/hooks/useLastSubscriptionEnd';
 import useLoad from '@proton/components/hooks/useLoad';
-import useUser from '@proton/components/hooks/useUser';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { type PaymentMethodStatusExtended, getPlansMap } from '@proton/payments';
 import type { PLANS } from '@proton/shared/lib/constants';

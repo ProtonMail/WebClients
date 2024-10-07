@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
@@ -21,7 +22,7 @@ import type { MnemonicData } from '@proton/shared/lib/mnemonic';
 import { generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/shared/lib/mnemonic';
 import noop from '@proton/utils/noop';
 
-import { useGetUserKeys, useUser } from '../../hooks';
+import { useGetUserKeys } from '../../hooks';
 import { MnemonicPhraseStepButtons, MnemonicPhraseStepContent } from './MnemonicPhraseStep';
 
 enum STEPS {

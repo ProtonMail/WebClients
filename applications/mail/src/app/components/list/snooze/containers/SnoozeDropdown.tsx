@@ -3,8 +3,8 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Dropdown, DropdownButton, Icon, Tooltip, useApi, useModalState, usePopperAnchor } from '@proton/components';
-import { useUser } from '@proton/components/hooks';
 import { TelemetryMailEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 

@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button, ButtonLike } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
@@ -26,7 +27,6 @@ import {
     getSpace,
 } from '@proton/shared/lib/user/storage';
 
-import { useUser } from '../../../hooks/useUser';
 import upsellStorageDrive from './upsell-storage-drive-full.svg';
 import upsellStorageMail from './upsell-storage-mail.svg';
 

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import type { ButtonProps } from '@proton/atoms';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
@@ -19,7 +20,7 @@ import { APPS, EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
-import { useSubscription, useUser } from '../../../hooks';
+import { useSubscription } from '../../../hooks';
 import { useRedirectToAccountApp } from '../../desktop/useRedirectToAccountApp';
 import EditCardModal from '../EditCardModal';
 import { default as PayPalV4Modal, PayPalV5Modal } from '../PayPalModal';

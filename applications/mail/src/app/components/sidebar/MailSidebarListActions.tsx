@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Icon, LabelsUpsellModal, SidebarListItemHeaderLink, Tooltip, useModalState } from '@proton/components';
-import { useUser } from '@proton/components/hooks';
 import { APPS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedFolderLimit, hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
 import type { Label } from '@proton/shared/lib/interfaces';

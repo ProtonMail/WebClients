@@ -1,13 +1,12 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import Field from '@proton/components/components/container/Field';
 import Row from '@proton/components/components/container/Row';
 import Label from '@proton/components/components/label/Label';
 import { BRAND_NAME, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
-
-import { useUser } from '../../../hooks';
 
 const ProtonVPNCredentialsSection = () => {
     const [user] = useUser();

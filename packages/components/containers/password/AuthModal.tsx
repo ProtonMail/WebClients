@@ -4,6 +4,7 @@ import { flushSync } from 'react-dom';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button, InlineLinkButton } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -31,7 +32,7 @@ import { getAuthentication } from '@proton/shared/lib/webauthn/get';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { useErrorHandler, useUser, useUserSettings } from '../../hooks';
+import { useErrorHandler, useUserSettings } from '../../hooks';
 import TotpInputs from '../account/totp/TotpInputs';
 import { getAuthTypes } from './getAuthTypes';
 

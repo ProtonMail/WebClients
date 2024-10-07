@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { EasySwitchOauthImportButton } from '@proton/activation';
 import type { EASY_SWITCH_SOURCES, EasySwitchFeatureFlag } from '@proton/activation/src/interface';
 import { ImportProvider, ImportType } from '@proton/activation/src/interface';
@@ -7,8 +8,6 @@ import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import Loader from '@proton/components/components/loader/Loader';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useFlag } from '@proton/unleash';
-
-import { useUser } from '../../../hooks';
 
 interface Props {
     onImport: () => void;

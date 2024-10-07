@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import {
@@ -10,7 +11,6 @@ import {
     useEventManager,
     useGetCalendarEventRaw,
     useGetCalendarInfo,
-    useUser,
     useUserSettings,
 } from '@proton/components';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';

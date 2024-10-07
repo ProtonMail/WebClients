@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useProtonDomains } from '@proton/account/protonDomains/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { Button, CircleLoader } from '@proton/atoms';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -43,14 +45,7 @@ import {
 } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import {
-    useCustomDomains,
-    useGetOrganizationKey,
-    useGetUserKeys,
-    useNotifications,
-    useProtonDomains,
-    useUser,
-} from '../../hooks';
+import { useCustomDomains, useGetOrganizationKey, useGetUserKeys, useNotifications } from '../../hooks';
 
 const keyGenConfig = KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE];
 
