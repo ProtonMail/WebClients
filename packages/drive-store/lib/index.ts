@@ -1,4 +1,4 @@
-export { DriveStoreProvider } from './DriveStoreProvider';
+export { DriveStoreProvider, PublicDriveStoreProvider } from './DriveStoreProvider';
 export { useDriveCompat, type DriveCompat } from './useDriveCompat';
 
 export * from './_documents/interface';
