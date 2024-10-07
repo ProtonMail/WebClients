@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useGetUser, useUser } from '@proton/account/user/hooks';
 import { Button, Href } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
@@ -22,14 +23,7 @@ import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import { syncDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 
-import {
-    useGetUser,
-    useGetUserKeys,
-    useIsMnemonicAvailable,
-    useSearchParamsEffect,
-    useUser,
-    useUserSettings,
-} from '../../hooks';
+import { useGetUserKeys, useIsMnemonicAvailable, useSearchParamsEffect, useUserSettings } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';

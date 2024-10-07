@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -18,7 +19,6 @@ import {
     useIsDeviceRecoveryAvailable,
     useIsDeviceRecoveryEnabled,
     useModals,
-    useUser,
     useUserKeys,
 } from '../../hooks';
 import KeysTable from './KeysTable';

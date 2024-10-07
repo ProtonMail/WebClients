@@ -11,7 +11,7 @@ jest.mock('@proton/components', () => ({
     useApi: () => jest.fn().mockImplementation(mockedApi.mockResolvedValue('')),
 }));
 
-jest.mock('@proton/components/hooks', () => ({
+jest.mock('@proton/account/user/hooks', () => ({
     useUser: () => [mockedUser],
 }));
 

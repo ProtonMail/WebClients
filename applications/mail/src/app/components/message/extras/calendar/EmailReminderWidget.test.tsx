@@ -63,24 +63,23 @@ jest.mock('@proton/components/hooks/useActiveBreakpoint', () => () => {
     return mockDefaultBreakpoints;
 });
 
-jest.mock('@proton/components/hooks/useUser', () => ({
+jest.mock('@proton/account/user/hooks', () => ({
     __esModule: true,
-    default: jest.fn(() => [
+    useUser: jest.fn(() => [
         [
             {
                 ID: 'id',
             },
         ],
     ]),
-    useGetUser: jest.fn(
-        () => () =>
-            Promise.resolve([
-                [
-                    {
-                        ID: 'id',
-                    },
-                ],
-            ])
+    useGetUser: jest.fn(() =>
+        Promise.resolve([
+            [
+                {
+                    ID: 'id',
+                },
+            ],
+        ])
     ),
 }));
 

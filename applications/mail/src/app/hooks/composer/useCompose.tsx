@@ -4,6 +4,7 @@ import { useCallback } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useGetUser } from '@proton/account/user/hooks';
 import { Button, Href } from '@proton/atoms';
 import {
     ErrorButton,
@@ -11,7 +12,6 @@ import {
     useApi,
     useEventManager,
     useGetSubscription,
-    useGetUser,
     useHandler,
     useModalState,
     useNotifications,

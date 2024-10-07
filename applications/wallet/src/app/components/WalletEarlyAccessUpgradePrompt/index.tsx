@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { Href } from '@proton/atoms';
 import type { ModalOwnProps } from '@proton/components';
 import {
@@ -12,7 +13,6 @@ import {
     Tooltip,
     useModalState,
     useSubscriptionModal,
-    useUser,
 } from '@proton/components';
 import { CacheType } from '@proton/redux-utilities';
 import { APPS, BRAND_NAME, PLANS, WALLET_APP_NAME } from '@proton/shared/lib/constants';

@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useGetUser, useUser } from '@proton/account/user/hooks';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
@@ -28,13 +29,11 @@ import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 
 import {
     useGetSubscription,
-    useGetUser,
     useNotifications,
     useOrganization,
     usePlans,
     usePreferredPlansMap,
     useSubscription,
-    useUser,
     useVPNServersCount,
 } from '../../../../hooks';
 import DowngradeModal from '../../DowngradeModal';

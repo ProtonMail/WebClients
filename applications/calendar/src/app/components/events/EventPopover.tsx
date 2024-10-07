@@ -2,13 +2,13 @@ import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import {
     Badge,
     CalendarEventDateHeader,
     CalendarInviteButtons,
     Loader,
     useReadCalendarBootstrap,
-    useUser,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import {

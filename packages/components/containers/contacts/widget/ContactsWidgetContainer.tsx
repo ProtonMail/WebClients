@@ -3,10 +3,11 @@ import { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { CircleLoader } from '@proton/atoms';
 import { useGetUserKeys } from '@proton/components';
 import SearchInput from '@proton/components/components/input/SearchInput';
-import { useNotifications, useUser } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { exportContacts } from '@proton/shared/lib/contacts/helpers/export';

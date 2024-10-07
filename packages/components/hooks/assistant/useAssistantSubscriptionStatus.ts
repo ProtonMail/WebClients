@@ -1,11 +1,11 @@
 import { addDays, fromUnixTime, getUnixTime, isAfter, isBefore } from 'date-fns';
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { FeatureCode, useFeature } from '@proton/features';
 
 import useNotifications from '../useNotifications';
-import useUser from '../useUser';
 
 export const ASSISTANT_TRIAL_TIME_DAYS = 14;
 

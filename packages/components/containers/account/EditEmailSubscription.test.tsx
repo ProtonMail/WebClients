@@ -1,9 +1,10 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { sub } from 'date-fns';
 
+import { useUser } from '@proton/account/user/hooks';
 import useApi from '@proton/components/hooks/useApi';
 
-import { useUser, useUserSettings } from '../../hooks';
+import { useUserSettings } from '../../hooks';
 import EditEmailSubscription from './EditEmailSubscription';
 
 jest.mock('@proton/components/hooks/useApi');
@@ -16,7 +17,7 @@ jest.mock('@proton/hooks/useLoading', () => () => [false, jest.fn((fn) => fn())]
 
 jest.mock('../../hooks/useNotifications', () => () => ({ createNotification: jest.fn() }));
 
-jest.mock('../../hooks/useUser');
+jest.mock('@proton/account/user/hooks');
 const mockedUseUser = useUser as jest.MockedFunction<any>;
 
 jest.mock('../../hooks/useUserSettings');

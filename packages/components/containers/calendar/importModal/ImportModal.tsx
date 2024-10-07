@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import BasicModal from '@proton/components/components/modalTwo/BasicModal';
@@ -33,7 +34,6 @@ import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/calendar';
 import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
-import { useUser } from '../../../hooks';
 import AttachingModalContent from './AttachingModalContent';
 import ImportInvitationModalContent from './ImportInvitationModalContent';
 import ImportSummaryModalContent from './ImportSummaryModalContent';

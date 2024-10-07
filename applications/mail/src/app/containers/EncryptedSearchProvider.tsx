@@ -5,13 +5,13 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import {
     useApi,
     useGetMessageCounts,
     useGetUserKeys,
     useISESEnabledElectron,
     useSubscribeEventManager,
-    useUser,
     useWelcomeFlags,
 } from '@proton/components';
 import {

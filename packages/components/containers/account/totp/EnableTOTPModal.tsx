@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button, Href, InlineLinkButton } from '@proton/atoms';
 import Copy from '@proton/components/components/button/Copy';
 import Form from '@proton/components/components/form/Form';
@@ -31,7 +32,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getTOTPData } from '@proton/shared/lib/settings/twoFactor';
 import noop from '@proton/utils/noop';
 
-import { useNotifications, useUser } from '../../../hooks';
+import { useNotifications } from '../../../hooks';
 
 interface ModalProperties {
     section: ReactNode;

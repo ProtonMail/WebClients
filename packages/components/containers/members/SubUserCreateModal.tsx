@@ -11,6 +11,7 @@ import {
     getPrivateAdminError,
     getPrivateText,
 } from '@proton/account';
+import { useGetUser } from '@proton/account/user/hooks';
 import { Button, InlineLinkButton } from '@proton/atoms';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Icon from '@proton/components/components/icon/Icon';
@@ -58,7 +59,7 @@ import { useFlag } from '@proton/unleash';
 import clamp from '@proton/utils/clamp';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useErrorHandler, useGetUser, useNotifications, useOrganizationKey, useSubscription } from '../../hooks';
+import { useErrorHandler, useNotifications, useOrganizationKey, useSubscription } from '../../hooks';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import MemberStorageSelector, { getInitialStorage, getStorageRange, getTotalStorage } from './MemberStorageSelector';
 import MemberToggleContainer from './MemberToggleContainer';

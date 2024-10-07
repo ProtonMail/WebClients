@@ -2,6 +2,7 @@ import type { Dispatch, FormEvent, SetStateAction } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -13,7 +14,6 @@ import { getImportCategoriesModel, haveCategories } from '@proton/shared/lib/con
 import type { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
 import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/contacts/Import';
 
-import { useUser } from '../../../../hooks';
 import { extractTotals } from '../encryptAndSubmit';
 import ContactImportWarningErrorDetails from './ContactImportWarningErrorDetails';
 

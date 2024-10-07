@@ -4,6 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useGetUser } from '@proton/account/user/hooks';
 import { useGetUserSettings } from '@proton/account/userSettings/hooks';
 import { Button, ButtonLike } from '@proton/atoms';
 import {
@@ -11,7 +12,6 @@ import {
     useAuthentication,
     useConfig,
     useEventManager,
-    useGetUser,
     useGetUserKeys,
     useSecurityCheckup,
 } from '@proton/components';

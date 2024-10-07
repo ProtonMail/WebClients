@@ -14,8 +14,9 @@ import {
 } from 'date-fns';
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
-import { useUser, useUserSettings } from '@proton/components/hooks';
+import { useUserSettings } from '@proton/components/hooks';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import plusLogo from '@proton/styles/assets/img/illustrations/mail-plus-logo.svg';

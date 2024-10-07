@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike, Card } from '@proton/atoms';
 import { DownloadClientCard, SettingsLink, SettingsParagraph, SettingsSectionWide } from '@proton/components';
-import { usePlans, useUser } from '@proton/components/hooks';
+import { usePlans } from '@proton/components/hooks';
 import { PASS_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 import { clients } from '@proton/shared/lib/pass/constants';
 import clsx from '@proton/utils/clsx';

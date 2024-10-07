@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { signoutAction } from '@proton/account';
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
@@ -40,7 +41,7 @@ import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
 import { srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
-import { useGetOrganizationKey, useGetUserKeys, useNotifications, useUser } from '../../hooks';
+import { useGetOrganizationKey, useGetUserKeys, useNotifications } from '../../hooks';
 import GenericError from '../error/GenericError';
 import { handleChangeLoginPassword } from './changePasswordHelper';
 

@@ -32,11 +32,10 @@ import SubscriptionContainer from './SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from './constants';
 
 jest.mock('@proton/components/components/portal/Portal');
-jest.mock('@proton/components/hooks/useUser', () => ({
+jest.mock('@proton/account/user/hooks', () => ({
     __esModule: true,
-    default: jest.fn(() => [{}, false]),
     useUser: jest.fn(() => [{}]),
-    useGetUser: jest.fn(() => () => ({})),
+    useGetUser: jest.fn(() => ({})),
 }));
 jest.mock('@proton/components/hooks/useSubscription', () => ({
     __esModule: true,

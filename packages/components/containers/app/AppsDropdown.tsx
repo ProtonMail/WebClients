@@ -3,10 +3,10 @@ import { Fragment, forwardRef } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 import Icon from '@proton/components/components/icon/Icon';
 import type { AppLinkProps } from '@proton/components/components/link/AppLink';
-import { useUser } from '@proton/components/hooks';
 import useConfig from '@proton/components/hooks/useConfig';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

@@ -4,7 +4,8 @@ import { Route, Switch } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { restoreSecurityCheckupSession, securityCheckupSlice } from '@proton/account';
-import { useApi, useAppTitle, useUser } from '@proton/components';
+import { useUser } from '@proton/account/user/hooks';
+import { useApi, useAppTitle } from '@proton/components';
 import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
 import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 

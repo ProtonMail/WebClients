@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import {
     CalendarLogo,
@@ -18,7 +19,6 @@ import {
     useOrganization,
     usePlans,
     useSubscription,
-    useUser,
 } from '@proton/components';
 import PaymentSwitcher from '@proton/components/containers/payments/PaymentSwitcher';
 import { InAppText } from '@proton/components/containers/payments/subscription/InAppPurchaseModal';

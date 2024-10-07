@@ -1,10 +1,11 @@
-import * as React from 'react';
 import type { ReactNode } from 'react';
+import * as React from 'react';
 
 import type { Location } from 'history';
 import { c, msgid } from 'ttag';
 
-import { Loader, useUser } from '@proton/components';
+import { useUser } from '@proton/account/user/hooks';
+import { Loader } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
@@ -79,12 +80,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
         <>
             <Container>
                 <div className="text-rg mb-4">
-                    <img
-                        src={envelope}
-                        width={96}
-                        height={90}
-                        alt=""
-                    />
+                    <img src={envelope} width={96} height={90} alt="" />
                 </div>
                 <h3>{user.DisplayName ? c('Title').jt`Welcome ${userName}` : c('Title').t`Welcome`}</h3>
                 <p className="my-2 p-0 text-keep-space">{labelCount ? counterMessage : null}</p>

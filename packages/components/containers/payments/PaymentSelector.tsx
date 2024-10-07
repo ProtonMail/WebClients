@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import Input from '@proton/components/components/input/Input';
 import Label from '@proton/components/components/label/Label';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
@@ -10,7 +11,7 @@ import { getCurrencyRate } from '@proton/payments/core/helpers';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 import type { Currency } from '@proton/shared/lib/interfaces';
 
-import { useSubscription, useUser } from '../../hooks';
+import { useSubscription } from '../../hooks';
 import AmountButton from './AmountButton';
 import CurrencySelector from './CurrencySelector';
 

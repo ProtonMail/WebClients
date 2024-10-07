@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import Info from '@proton/components/components/link/Info';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import useUser from '@proton/components/hooks/useUser';
 import useUserSettings from '@proton/components/hooks/useUserSettings';
 import { patchNews } from '@proton/shared/lib/api/settings';
 import {

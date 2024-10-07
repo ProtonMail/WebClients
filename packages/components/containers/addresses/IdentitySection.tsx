@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
 import Option from '@proton/components/components/option/Option';
@@ -19,7 +20,7 @@ import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import type { Address } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { useUser, useUserSettings } from '../../hooks';
+import { useUserSettings } from '../../hooks';
 import EditAddressesSection from './EditAddressesSection';
 import PMSignature from './PMSignatureField';
 

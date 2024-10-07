@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import type { ButtonProps } from '@proton/atoms';
 import { Button } from '@proton/atoms';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
@@ -27,7 +28,7 @@ import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
 import Mark from '../../components/text/Mark';
-import { useContactEmails, useUser } from '../../hooks';
+import { useContactEmails } from '../../hooks';
 import type { ContactGroupEditProps } from './group/ContactGroupEditModal';
 import useApplyGroups from './hooks/useApplyGroups';
 import type { ContactGroupLimitReachedProps } from './modals/ContactGroupLimitReachedModal';

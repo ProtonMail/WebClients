@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import type { Breakpoints, IconName, LabelModel } from '@proton/components';
 import {
@@ -16,7 +17,6 @@ import {
     SearchInput,
     Tooltip,
     useModalState,
-    useUser,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { useFolders } from '@proton/mail';

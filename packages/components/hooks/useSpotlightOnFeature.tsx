@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useState } from 'react';
 
+import { useUser } from '@proton/account/user/hooks';
 import useEarlyAccess from '@proton/components/hooks/useEarlyAccess';
-import useUser from '@proton/components/hooks/useUser';
 import { type FeatureCode, useFeature } from '@proton/features';
 import { SECOND } from '@proton/shared/lib/constants';
 import { getEnvironmentDate } from '@proton/shared/lib/spotlight/helpers';
