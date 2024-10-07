@@ -1,9 +1,14 @@
+### Version 1.23.1
+
+-   Fine-tune alias syncing
+
 ### Version 1.23.0
 
 -   Make social security number hidden by default
 -   Improve UX during authentication failures
 -   Improve username/email splitting for login items
 -   Default to most recent vault when creating new items
+-   Add background SimpleLogin alias syncing
 
 ### Version 1.22.3
 
