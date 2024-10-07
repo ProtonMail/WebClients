@@ -215,7 +215,7 @@ export const useMeasureFeaturePerformanceOnMount = (features: Features) => {
 
 const apiInstance = createApi({ config, sendLocaleHeaders: true });
 
-export const countActionWithTelemetry = (action: Actions, count: number = 1): void => {
+export const countActionWithTelemetry = (action: Actions, count: number = 1) => {
     const persistedSession = getLastActivePersistedUserSession();
 
     if (persistedSession?.UID) {
@@ -228,7 +228,7 @@ export const countActionWithTelemetry = (action: Actions, count: number = 1): vo
     // Proper back-end solution will be done as part of https://jira.protontech.ch/browse/DD-7
     const loggedInRecently = localStorageWithExpiry.getData(LAST_ACTIVE_PING) ? 'true' : 'false';
 
-    void sendTelemetryReport({
+    return sendTelemetryReport({
         api: apiInstance,
         measurementGroup: TelemetryMeasurementGroups.driveWebActions,
         event: TelemetryDriveWebFeature.actions,
