@@ -30,12 +30,17 @@ export interface PublicDriveCompat {
      * Gets the keys for a given document node.
      */
     getDocumentKeys: (meta: PublicNodeMeta) => Promise<Pick<DocumentKeys, 'documentContentKey'>>;
+
+    /**
+     * Gets the authentication headers for `useApi()`
+     */
+    getPublicAuthHeaders: () => { [key: string]: string };
 }
 
 export const usePublicDriveCompat = (): PublicDriveCompat => {
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
 
-    const { isReady, isError } = usePublicDocsToken();
+    const { isReady, isError, getPublicAuthHeaders } = usePublicDocsToken();
 
     const { getNode, getNodeContentKey } = usePublicNode();
 
@@ -47,5 +52,6 @@ export const usePublicDriveCompat = (): PublicDriveCompat => {
             documentContentKey: await getNodeContentKey(nodeMeta),
         }),
         getNode,
+        getPublicAuthHeaders,
     };
 };
