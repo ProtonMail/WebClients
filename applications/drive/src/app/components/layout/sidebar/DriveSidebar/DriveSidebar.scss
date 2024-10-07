@@ -22,8 +22,7 @@
 		// In this case we want to have background change only on hover.
 
 		color: var(--text-weak);
-		margin-inline-start: calc(var(--space-1) * -1);
-		margin-inline-end: calc(var(--space-1) * -1);
+		margin-inline: calc(var(--space-1) * -1) calc(var(--space-1) * -1);
 
 		&:first-child {
 			margin-inline-start: calc(var(--space-2) * -1);
@@ -45,6 +44,12 @@
 			color: var(--text-norm);
 		}
 	}
+}
+
+.drive-sidebar-list--counter {
+	inline-size: rem(16);
+	block-size: rem(16);
+	border-radius: rem(8);
 }
 
 .navigation > .navigation-list:last-child,

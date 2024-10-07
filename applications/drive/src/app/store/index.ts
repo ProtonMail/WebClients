@@ -1,5 +1,5 @@
 export { DriveProvider, PublicDriveProvider } from './DriveProvider';
-export { useActions, useSharedWithMeActions } from './_actions';
+export { useActions, useSharedWithMeActions, useInvitationsActions } from './_actions';
 
 export { usePublicAuth } from './_api';
 export { useActivePing, useGetPublicKeysForEmail, usePublicSessionUser } from './_user';
@@ -17,6 +17,7 @@ export * from './_shares/interface';
 export * from './_devices/interface';
 export * from './_revisions/interface';
 export * from './_actions/interface';
+export * from './_invitations/interface';
 export * from './_views';
 export { useSearchLibrary } from './_search';
 export { usePhotos, usePhotosRecovery, isDecryptedLink } from './_photos';

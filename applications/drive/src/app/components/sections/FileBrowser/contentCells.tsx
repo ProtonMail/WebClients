@@ -1,12 +1,19 @@
 import { c } from 'ttag';
 
 import { Avatar, Button } from '@proton/atoms';
-import { FileIcon, Icon, TableCell, useActiveBreakpoint, useContactEmails } from '@proton/components';
+import {
+    FileIcon,
+    Icon,
+    TableCell,
+    useActiveBreakpoint,
+    useConfirmActionModal,
+    useContactEmails,
+} from '@proton/components';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';
-import { useDriveSharingFlags } from '../../../store';
+import { useDriveSharingFlags, useInvitationsActions } from '../../../store';
 import { formatAccessCount } from '../../../utils/formatters';
 import { Cells } from '../../FileBrowser';
 import SignatureIcon from '../../SignatureIcon';
@@ -248,48 +255,60 @@ export const SharedOnCell = ({ item }: { item: SharedWithMeItem }) => {
 };
 
 export const AcceptOrRejectInviteCell = ({ item }: { item: SharedWithMeItem }) => {
+    const { acceptInvitation, rejectInvitation } = useInvitationsActions();
+    const [confirmModal, showConfirmModal] = useConfirmActionModal();
+    const invitationDetails = item.invitationDetails;
     return (
-        <TableCell
-            className="flex flex-nowrap items-center m-0 file-browser-list-item--accept-decline-cell"
-            data-testid="column-share-accept-reject"
-        >
-            {item.invitationDetails && item.acceptInvitation && (
-                <div className="flex flex-nowrap">
-                    <Button
-                        loading={item.invitationDetails.isLocked}
-                        disabled={item.invitationDetails.isLocked}
-                        className="text-ellipsis"
-                        color="norm"
-                        shape="ghost"
-                        size="small"
-                        data-testid="share-accept-button"
-                        onClick={async (e) => {
-                            e.stopPropagation();
-                            await item.acceptInvitation?.(item.invitationDetails?.invitation.invitationId!);
-                        }}
-                    >
-                        <span className="file-browser-list-item--accept-decline-text">{c('Action').t`Accept`}</span>
-                    </Button>
-                    {!item.invitationDetails.isLocked && (
-                        <>
-                            <Button
-                                className="text-ellipsis file-browser-list-item--decline"
-                                color="norm"
-                                shape="ghost"
-                                size="small"
-                                data-testid="share-decline-button"
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    void item.rejectInvitation?.(item.invitationDetails?.invitation.invitationId!);
-                                }}
-                            >
-                                <span className="file-browser-list-item--accept-decline-text">{c('Action')
-                                    .t`Decline`}</span>
-                            </Button>
-                        </>
-                    )}
-                </div>
-            )}
-        </TableCell>
+        <>
+            <TableCell
+                className="flex flex-nowrap items-center m-0 file-browser-list-item--accept-decline-cell"
+                data-testid="column-share-accept-reject"
+            >
+                {invitationDetails && (
+                    <div className="flex flex-nowrap">
+                        <Button
+                            loading={invitationDetails.isLocked}
+                            disabled={invitationDetails.isLocked}
+                            className="text-ellipsis"
+                            color="norm"
+                            shape="ghost"
+                            size="small"
+                            data-testid="share-accept-button"
+                            onClick={async (e) => {
+                                e.stopPropagation();
+                                await acceptInvitation(
+                                    new AbortController().signal,
+                                    invitationDetails.invitation.invitationId
+                                );
+                            }}
+                        >
+                            <span className="file-browser-list-item--accept-decline-text">{c('Action').t`Accept`}</span>
+                        </Button>
+                        {!invitationDetails.isLocked && (
+                            <>
+                                <Button
+                                    className="text-ellipsis file-browser-list-item--decline"
+                                    color="norm"
+                                    shape="ghost"
+                                    size="small"
+                                    data-testid="share-decline-button"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        void rejectInvitation(
+                                            showConfirmModal,
+                                            invitationDetails.invitation.invitationId
+                                        );
+                                    }}
+                                >
+                                    <span className="file-browser-list-item--accept-decline-text">{c('Action')
+                                        .t`Decline`}</span>
+                                </Button>
+                            </>
+                        )}
+                    </div>
+                )}
+            </TableCell>
+            {confirmModal}
+        </>
     );
 };
