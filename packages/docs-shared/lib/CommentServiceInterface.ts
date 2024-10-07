@@ -2,6 +2,7 @@ import type { CommentInterface } from './CommentInterface'
 import type { CommentThreadInterface } from './CommentThreadInterface'
 import type { InternalEventBusInterface } from './Events/InternalEventBusInterface'
 import type { SuggestionThreadStateAction } from './SuggestionThreadStateAction'
+import type { SuggestionSummaryType } from './SuggestionType'
 
 export interface CommentControllerInterface {
   userDisplayName: string
@@ -16,7 +17,11 @@ export interface CommentControllerInterface {
     createMarkNode?: boolean,
   ): Promise<CommentThreadInterface | undefined>
 
-  createSuggestionThread(suggestionID: string, commentContent: string): Promise<CommentThreadInterface | undefined>
+  createSuggestionThread(
+    suggestionID: string,
+    commentContent: string,
+    suggestionType: SuggestionSummaryType,
+  ): Promise<CommentThreadInterface | undefined>
 
   createComment(content: string, threadID: string): Promise<CommentInterface | undefined>
 

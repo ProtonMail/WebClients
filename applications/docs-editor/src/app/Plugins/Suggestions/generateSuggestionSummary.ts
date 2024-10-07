@@ -1,23 +1,21 @@
 import type { NodeKey, LexicalEditor } from 'lexical'
 import { $getNodeByKey, $isTextNode } from 'lexical'
-import type { SuggestionType } from './Types'
+import type { SuggestionSummaryType } from '@proton/docs-shared'
 import { $isSuggestionNode } from './ProtonNode'
 import { getFormatsForFlag } from '../../Utils/TextFormatUtils'
 import { $isLinkNode } from '@lexical/link'
 
-type SummaryType = SuggestionType | 'replace' | 'add-link' | 'delete-link'
-
-export type SuggestionSummaryContent = { type: SummaryType; content: string; replaceWith?: string }[]
+export type SuggestionSummaryContent = { type: SuggestionSummaryType; content: string; replaceWith?: string }[]
 
 const TextContentLimit = 80
 
-const TypesToPrioritize: SummaryType[] = ['insert', 'delete', 'replace']
+const TypesToPrioritize: SuggestionSummaryType[] = ['insert', 'delete', 'replace']
 
 export function generateSuggestionSummary(
   editor: LexicalEditor,
   markNodeMap: Map<string, Set<NodeKey>>,
   suggestionID: string,
-) {
+): SuggestionSummaryContent {
   const summary: SuggestionSummaryContent = []
 
   editor.getEditorState().read(() => {
@@ -35,7 +33,7 @@ export function generateSuggestionSummary(
 
       const currentType = node.getSuggestionTypeOrThrow()
 
-      let type: SummaryType = currentType
+      let type: SuggestionSummaryType = currentType
 
       let content = node.getTextContent().slice(0, TextContentLimit)
 

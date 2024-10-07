@@ -8,6 +8,7 @@ import type {
   BroadcastSource,
   DocumentRole,
   DataTypesThatDocumentCanBeExportedAs,
+  SuggestionSummaryType,
 } from '@proton/docs-shared'
 
 export interface EditorOrchestratorInterface {
@@ -33,7 +34,11 @@ export interface EditorOrchestratorInterface {
     markID?: string,
     createMarkNode?: boolean,
   ): Promise<CommentThreadInterface | undefined>
-  createSuggestionThread(suggestionID: string, commentContent: string): Promise<CommentThreadInterface | undefined>
+  createSuggestionThread(
+    suggestionID: string,
+    commentContent: string,
+    suggestionType: SuggestionSummaryType,
+  ): Promise<CommentThreadInterface | undefined>
   resolveThread(threadId: string): Promise<boolean>
   unresolveThread(threadId: string): Promise<boolean>
   acceptSuggestion(threadId: string): Promise<boolean>

@@ -4,8 +4,26 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics'
 import type { Api } from '@proton/shared/lib/interfaces'
 import type { TelemetryDocsEvents } from '@proton/shared/lib/api/telemetry'
 import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry'
+import type { SuggestionSummaryType } from 'packages/docs-shared/lib/SuggestionType'
 
 const HEARTBEAT_INTERVAL = 60_000
+
+type MetricSuggestionType = 'insertion' | 'replacement' | 'deletion' | 'formatting' | 'style' | 'other'
+
+const SuggestionTypeToMetricSuggestionType: Record<SuggestionSummaryType, MetricSuggestionType> = {
+  insert: 'insertion',
+  delete: 'deletion',
+  'property-change': 'style',
+  split: 'insertion',
+  join: 'deletion',
+  'link-change': 'other',
+  'style-change': 'style',
+  replace: 'replacement',
+  'add-link': 'other',
+  'delete-link': 'other',
+}
+
+type SuggestionResolution = 'accepted' | 'rejected'
 
 export class MetricService {
   private heartbeatInterval: NodeJS.Timeout | null = null
@@ -42,5 +60,14 @@ export class MetricService {
 
   reportFullyBlockingErrorModal(): void {
     metrics.docs_alert_modal_total.increment({})
+  }
+
+  reportSuggestionCreated(type?: SuggestionSummaryType): void {
+    const metricType = type ? SuggestionTypeToMetricSuggestionType[type] : 'other'
+    metrics.docs_suggestions_created_total.increment({ type: metricType })
+  }
+
+  reportSuggestionResolved(resolution: SuggestionResolution): void {
+    metrics.docs_suggestions_resolved_total.increment({ type: resolution })
   }
 }

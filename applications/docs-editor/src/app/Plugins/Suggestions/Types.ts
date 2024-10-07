@@ -1,10 +1,10 @@
+import type { SuggestionType } from '@proton/docs-shared'
+
 export enum ProtonNodeTypes {
   Suggestion = 'suggestion',
 }
 
 export type SuggestionID = string
-
-export type SuggestionType = 'insert' | 'delete' | 'property-change' | 'split' | 'join' | 'link-change' | 'style-change'
 
 export type SuggestionProperties = {
   nodeType: ProtonNodeTypes.Suggestion
