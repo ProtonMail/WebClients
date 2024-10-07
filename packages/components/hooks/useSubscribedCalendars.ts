@@ -238,6 +238,26 @@ const useSubscribedCalendars = (calendars: VisualCalendar[], loadingCalendars = 
         void withLoading(run());
     }, [loadingCalendars]);
 
+    // Refresh subscribed calendars when the list of calendars changes (example: visibility change)
+    useEffect(() => {
+        if (loadingCalendars || loading) {
+            return;
+        }
+
+        setSubscribedCalendars((prevState) => {
+            return prevState.map((calendar) => {
+                const visualCalendar = calendars.find(({ ID }) => ID === calendar.ID);
+                if (!visualCalendar) {
+                    return calendar;
+                }
+                return {
+                    ...calendar,
+                    ...visualCalendar,
+                };
+            });
+        });
+    }, [calendars, loadingCalendars, loading]);
+
     return { subscribedCalendars, loading };
 };
 

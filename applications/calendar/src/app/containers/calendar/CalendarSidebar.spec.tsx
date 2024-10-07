@@ -5,6 +5,8 @@ import { getUnixTime } from 'date-fns';
 import { createMemoryHistory } from 'history';
 
 import { CacheProvider, useSubscribedCalendars } from '@proton/components';
+import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import { baseConfigureStore } from '@proton/redux-shared-store/sharedStore';
 import {
     CALENDAR_FLAGS,
     CALENDAR_TYPE,
@@ -192,11 +194,14 @@ function renderComponent(props?: Partial<CalendarSidebarProps>) {
         onCreateCalendar: noop,
     };
     mockUseAuthentication({} as any);
+    const store = baseConfigureStore();
     return (
         <Router history={createMemoryHistory()}>
-            <CacheProvider cache={createCache()}>
-                <CalendarSidebar {...defaultProps} {...props} />
-            </CacheProvider>
+            <ProtonStoreProvider store={store}>
+                <CacheProvider cache={createCache()}>
+                    <CalendarSidebar {...defaultProps} {...props} />
+                </CacheProvider>
+            </ProtonStoreProvider>
         </Router>
     );
 }
