@@ -10,6 +10,7 @@ import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 
 import { Button } from '../../../atoms';
 import { ModalParagraph } from '../../../atoms/ModalParagraph';
+import { getGatewayNameByGatewayProvider } from '../../../utils/onramp';
 
 interface Props extends ModalOwnProps {
     provider: WasmGatewayProvider;
@@ -44,6 +45,8 @@ export const DisclaimerModal = ({ provider, onConfirm, onClose, ...modalProps }:
     if (provider === 'Unsupported') {
         return null;
     }
+
+    const providerName = getGatewayNameByGatewayProvider(provider);
 
     const websiteLink = (
         <Href key="website-link" href={websiteUrlByGatewayProvider[provider]}>
@@ -110,9 +113,9 @@ export const DisclaimerModal = ({ provider, onConfirm, onClose, ...modalProps }:
             </h1>
             <ModalParagraph>
                 <p>{
-                    // translator: This is generic disclaimer we want to print before redirecting to any provider currently support: Moonpay, Banxa and Ramp. The text contains the name of the provider as well as links to their own policies. An example with Ramp: You are now leaving Proton Wallet for Ramp (https://ramp.network). Services related to card payments, bank transfers, and any other fiat transactions are provided by Ramp, a separate third-party platform. By proceeding and procuring services from Ramp, you acknowledge that you have read and agreed to Ramp's Terms of Service (https://ramp.network/terms-of-service) and Privacy and Cookies Policy (https://ramp.network/cookie-policy). For any questions related to Ramp's services, please contact Ramp at support.ramp.network.
+                    // translator: This is generic disclaimer we want to print before redirecting to any provider currently support: MoonPay, Banxa and Ramp Network. The text contains the name of the provider as well as links to their own policies. An example with Ramp Network: You are now leaving Proton Wallet for Ramp Network (https://ramp.network). Services related to card payments, bank transfers, and any other fiat transactions are provided by Ramp Network, a separate third-party platform. By proceeding and procuring services from Ramp Network, you acknowledge that you have read and agreed to Ramp Network's Terms of Service (https://ramp.network/terms-of-service) and Privacy and Cookies Policy (https://ramp.network/cookie-policy). For any questions related to Ramp Network's services, please contact Ramp Network at support.ramp.network.
                     c('Gateway disclaimer')
-                        .jt`You are now leaving ${WALLET_APP_NAME} for ${provider} (${websiteLink}). Services related to card payments, bank transfers, and any other fiat transactions are provided by ${provider}, a separate third-party platform. By proceeding and procuring services from ${provider}, you acknowledge that you have read and agreed to ${provider}'s Terms of Service (${termOfUseLink}) and Privacy and Cookies Policy (${privacyAndCookiesPolicyLink}). For any questions related to ${provider}'s services, please contact ${provider} at ${supportEmailLink}`
+                        .jt`You are now leaving ${WALLET_APP_NAME} for ${providerName} (${websiteLink}). Services related to card payments, bank transfers, and any other fiat transactions are provided by ${providerName}, a separate third-party platform. By proceeding and procuring services from ${providerName}, you acknowledge that you have read and agreed to ${providerName}'s Terms of Service (${termOfUseLink}) and Privacy and Cookies Policy (${privacyAndCookiesPolicyLink}). For any questions related to ${providerName}'s services, please contact ${providerName} at ${supportEmailLink}`
                 }</p>
             </ModalParagraph>
         </Prompt>
