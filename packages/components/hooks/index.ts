@@ -1,4 +1,3 @@
-export * from './useDomainsAddresses';
 export { default as useElementRect } from './useElementRect';
 export { default as useErrorHandler } from './useErrorHandler';
 export { default as useFeature } from './useFeature';
