@@ -24,13 +24,13 @@ import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error'
 import type { UserModel } from '@proton/shared/lib/interfaces'
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces'
 
-import { bootstrapApp } from './bootstrap'
-import * as config from './config'
-import type { DocsStore } from './ReduxStore/store'
-import { extraThunkArguments } from './ReduxStore/thunk'
+import { bootstrapApp } from './UserBootstrap'
+import * as config from '../../config'
+import type { DocsStore } from '../../ReduxStore/store'
+import { extraThunkArguments } from '../../ReduxStore/thunk'
 import type { AvailabilityReport } from '@proton/utils/availability'
 import { Availability, AvailabilityTypes } from '@proton/utils/availability'
-import { DocsThemeProvider } from './DocsThemeProvider'
+import { DocsThemeProvider } from '../DocsThemeProvider'
 
 const defaultState: {
   initialUser?: UserModel
@@ -43,7 +43,7 @@ const defaultState: {
   showDrawerSidebar: false,
 }
 
-const App = () => {
+const UserApp = () => {
   const [state, setState] = useState(defaultState)
 
   useEffectOnce(() => {
@@ -127,4 +127,4 @@ const App = () => {
   )
 }
 
-export default App
+export default UserApp

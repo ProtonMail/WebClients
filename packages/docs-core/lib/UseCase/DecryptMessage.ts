@@ -1,9 +1,9 @@
 import type { Event } from '@proton/docs-proto'
 import { DocumentUpdate } from '@proton/docs-proto'
 import type { EncryptionService } from '../Services/Encryption/EncryptionService'
-import type { DocumentKeys } from '@proton/drive-store'
 import { GetAssociatedEncryptionDataForRealtimeMessage } from './GetAdditionalEncryptionData'
 import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
+import type { SessionKey } from '@proton/crypto'
 import { VERIFICATION_STATUS } from '@proton/crypto'
 import { DecryptedMessage } from '@proton/docs-shared'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
@@ -11,7 +11,7 @@ import { Result } from '../Domain/Result/Result'
 
 export type DecryptMessageDTO = {
   message: DocumentUpdate | Event
-  keys: DocumentKeys
+  documentContentKey: SessionKey
   verify: boolean
 }
 
@@ -22,7 +22,7 @@ export class DecryptMessage implements UseCaseInterface<DecryptedMessage> {
     const decrypted = await this.encryption.decryptData(
       dto.message instanceof DocumentUpdate ? dto.message.encryptedContent : dto.message.content,
       GetAssociatedEncryptionDataForRealtimeMessage(dto.message),
-      dto.keys.documentContentKey,
+      dto.documentContentKey,
     )
 
     if (decrypted.isFailed()) {

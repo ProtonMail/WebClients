@@ -16,11 +16,11 @@ import type { ProtonConfig } from '@proton/shared/lib/interfaces'
 import noop from '@proton/utils/noop'
 import { sendErrorReport, getRefreshError } from '@proton/drive-store'
 
-import locales from './locales'
-import { extendStore, setupStore } from './ReduxStore/store'
+import locales from '../../locales'
+import { extendStore, setupStore } from '../../ReduxStore/store'
 
 const getAppContainer = () =>
-  import(/* webpackChunkName: "MainContainer" */ './Containers/MainContainer')
+  import(/* webpackChunkName: "MainContainer" */ './UserAppRootContainer')
     .then((result) => result.default)
     .catch((e) => {
       console.warn(e)

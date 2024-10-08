@@ -25,7 +25,7 @@ import { CommentsEvent, LiveCommentsEvent } from '@proton/docs-shared'
 import { EditorFrame } from './EditorFrame'
 import { mergeRegister } from '@lexical/utils'
 import { useSignatureCheckFailedModal } from './Modals/SignatureCheckFailedModal'
-import type { DocumentAction, NodeMeta } from '@proton/drive-store'
+import type { DocumentAction, NodeMeta, PublicNodeMeta } from '@proton/drive-store'
 import { c } from 'ttag'
 import { useGenericAlertModal } from './Modals/GenericAlert'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
@@ -37,7 +37,7 @@ import WordCountOverlay from './WordCount/WordCountOverlay'
 import { useSuggestionsFeatureFlag } from '../Hooks/useSuggestionsFeatureFlag'
 
 type Props = {
-  lookup: NodeMeta
+  lookup: NodeMeta | PublicNodeMeta
   editorInitializationConfig?: EditorInitializationConfig
   action: DocumentAction['mode'] | undefined
 }
@@ -87,10 +87,14 @@ export function DocumentViewer({ lookup, editorInitializationConfig, action }: P
       return
     }
 
+    if (docOrchestrator?.role.isPublicViewer()) {
+      return
+    }
+
     void getUserSettings().then((settings) => {
       void bridge.editorInvoker.loadUserSettings(settings)
     })
-  }, [bridge, getUserSettings])
+  }, [bridge, getUserSettings, docOrchestrator])
 
   useEffect(() => {
     if (!bridge) {
