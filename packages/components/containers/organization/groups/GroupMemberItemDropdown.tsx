@@ -9,6 +9,7 @@ import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import useApi from '@proton/components/hooks/useApi';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { baseUseDispatch } from '@proton/react-redux-store';
 import {
@@ -21,7 +22,7 @@ import { clearBit, hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import type { Group, GroupMember } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_PERMISSIONS, GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
 
-import { useErrorHandler, useNotifications } from '../../../hooks';
+import { useNotifications } from '../../../hooks';
 
 interface PermissionOption {
     label: string;

@@ -853,6 +853,7 @@ export { default as useDynamicFavicon } from './hooks/useDynamicFavicon';
 export { default as useEarlyAccess } from './hooks/useEarlyAccess';
 export { default as useElementBreakpoints } from './hooks/useElementBreakpoints';
 export { default as useElementRect } from './hooks/useElementRect';
+export { default as useErrorHandler } from './hooks/useErrorHandler';
 export { default as useEventManager } from './hooks/useEventManager';
 export { default as useFolderColor } from './hooks/useFolderColor';
 export { default as useForceRefresh } from './hooks/useForceRefresh';
