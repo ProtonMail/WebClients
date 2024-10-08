@@ -4,7 +4,6 @@ import { forwardRef, useCallback, useMemo, useRef, useState } from 'react';
 import AutocompleteList from '@proton/components/components/autocomplete/AutocompleteList';
 import { useAutocomplete, useAutocompleteFilter } from '@proton/components/components/autocomplete/useAutocomplete';
 import Icon from '@proton/components/components/icon/Icon';
-import Option from '@proton/components/components/option/Option';
 import Marks from '@proton/components/components/text/Marks';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { useCombinedRefs } from '@proton/hooks';
@@ -16,6 +15,7 @@ import { handleRecipientInputChange, inputToRecipient } from '@proton/shared/lib
 
 import type { Props as InputProps } from '../input/Input';
 import Input from '../input/Input';
+import AddressesAutocompleteOption from './AddressesAutocompleteOption';
 import type { AddressesAutocompleteItem, GroupsWithContactsMap } from './helper';
 import {
     getContactGroupsAutocompleteItems,
@@ -200,7 +200,7 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
                 <AutocompleteList anchorRef={anchorRef} {...suggestionProps}>
                     {filteredAndSortedOptions.map(({ chunks, text, option }, index) => {
                         return (
-                            <Option
+                            <AddressesAutocompleteOption
                                 key={option.key}
                                 id={getOptionID(index)}
                                 title={option.label}
@@ -229,7 +229,7 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
                                 ) : (
                                     <Marks chunks={chunks}>{text}</Marks>
                                 )}
-                            </Option>
+                            </AddressesAutocompleteOption>
                         );
                     })}
                 </AutocompleteList>
