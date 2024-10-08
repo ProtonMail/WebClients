@@ -808,11 +808,11 @@
       "Refresh status": [
         "Muat ulang status"
       ],
-      "refresh the page": [
-        "muat ulang halaman"
-      ],
       "Refresh the page": [
         "Muat ulang halaman"
+      ],
+      "refresh the page": [
+        "muat ulang halaman"
       ],
       "Reload": [
         "Muat ulang"
@@ -1612,6 +1612,14 @@
         "Pilih penawaran Akhir Tahun Anda"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Tetapi, Anda bisa mendapatkan **diskon ${ discountPercentage } untuk ${ plan.Title }** jika Anda berlangganan selama **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Ruang penyimpanan 6 TB (2x lebih besar dari paket lainnya)"
@@ -1633,14 +1641,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paket ${ plan } kembali dalam waktu yang terbatas"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Tetapi, Anda bisa mendapatkan **diskon ${ discountPercentage } untuk ${ plan.Title }** jika Anda berlangganan selama **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3357,6 +3357,14 @@
         "Mohon diperhatikan bahwa apabila Anda menghapus domain ${ domainName } ini, seluruh alamat yang terhubung dengan domain tersebut akan dinonaktifkan."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Apakah Anda yakin ingin menghapus grup ini?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Mohon diperhatikan bahwa apabila Anda menghapus grup ${ displayGroupName } (dengan alamat ${ displayGroupAddressEmail }), Anda tidak akan lagi dapat menerima email dengan menggunakan alamat ini."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Faktur yang tertunggak"
@@ -4689,6 +4697,11 @@
       ],
       "Zero keys reactivated": [
         "Tidak ada kunci yang diaktifkan ulang"
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "Masukkan alamat email"
       ]
     },
     "Error importing calendar": {
@@ -6751,6 +6764,9 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Apakah Anda yakin untuk menghapus domain ${ boldDomain }?"
       ],
+      "Ask your organization admin to setup Gateways.": [
+        "Mintalah admin organisasi Anda untuk mengatur Gateway."
+      ],
       "Attention required": [
         "Diperlukan perhatian"
       ],
@@ -6973,11 +6989,11 @@
       "Data locked": [
         "Data terkunci"
       ],
-      "Dedicated servers": [
-        "Server khusus"
-      ],
       "dedicated servers": [
         "server khusus"
+      ],
+      "Dedicated servers": [
+        "Server khusus"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Server terdedikasi dengan alamat IP dapat ditambahkan ke gateway privat untuk mengaktifkan pengendalian akses yang sesuai."
@@ -7101,6 +7117,9 @@
       ],
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Email yang ditandai dengan label ${ nameDeleted } tidak akan dihapus dan tetap akan dapat ditemukan pada foldernya masing-masing."
+      ],
+      "Enable email notifications": [
+        "Aktifkan notifikasi email"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Aktifkan single sign-on untuk menjaga organisasi Anda tetap aman"
@@ -8056,6 +8075,9 @@
       "SCIM token active": [
         "Token SCIM aktif"
       ],
+      "Search by an email address to begin": [
+        "Cari berdasarkan alamat email untuk memulai"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Amankan akun ${ BRAND_NAME } Anda"
       ],
@@ -8283,6 +8305,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Format berkas CSV Anda tidak sesuai."
+      ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "Fitur pengelolaan grup tidak didukung pada paket langganan Anda saat ini. Grup yang sebelumnya telah dibuat telah dinonaktifkan dan hanya dapat dihapus."
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Tautan untuk melaporkan bahwa Anda belum menyiapkan Akun ${ BRAND_NAME } telah kedaluwarsa. Silakan hubungi tim layanan dukungan kami untuk menyelesaikan masalah ini."
@@ -10329,6 +10354,9 @@
       "Reveal password": [
         "Perlihatkan kata sandi"
       ],
+      "Search by email": [
+        "Cari melalui email"
+      ],
       "Second password": [
         "Kata sandi kedua"
       ],
@@ -11391,6 +11419,26 @@
         "Kecepatan VPN sedang"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Telusuri seluruh paket ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Dari ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Mulai dengan harga ${ price }"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Lanjut dengan akun Free"
@@ -11418,26 +11466,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Tingkatkan ke ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Telusuri seluruh paket ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Dari ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Mulai dengan harga ${ price }"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
       ]
     },
     "new_plans: feature": {
@@ -12077,6 +12105,17 @@
         "Paket yang Anda pilih: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Uji Coba ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Dapatkan Mail Plus dengan harga ${ price }"
+      ],
+      "Your account's usage": [
+        "Penggunaan akun Anda"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -12095,17 +12134,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Nikmati berbagai fitur premium dengan meningkatkan jenis akun"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Uji Coba ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Dapatkan Mail Plus dengan harga ${ price }"
-      ],
-      "Your account's usage": [
-        "Penggunaan akun Anda"
       ]
     },
     "new_plans: tooltip": {
@@ -12408,6 +12436,12 @@
       ],
       "Downloaded 2FA recovery codes": [
         "Kode pemulihan 2FA terunduh"
+      ],
+      "Email notifications have been disabled": [
+        "Notifikasi email telah dinonaktifkan"
+      ],
+      "Email notifications have been enabled": [
+        "Notifikasi email telah diaktifkan"
       ],
       "Invalid code": [
         "Kode tidak valid"
@@ -12870,6 +12904,29 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Para pengguna Anda akan melihat logo ini alih-alih ikon ${ BRAND_NAME } pada saat mereka terhubung masuk ke aplikasi web kami."
+      ]
+    },
+    "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify } alamat email Anda ${ email } untuk mengatur identitas organisasi."
+      ],
+      "Current organization identity": [
+        "Identitas organisasi saat ini"
+      ],
+      "Edit organization identity": [
+        "Sunting identitas organisasi"
+      ],
+      "New organization identity": [
+        "Identitas organisasi baru"
+      ],
+      "Organization identity": [
+        "Identitas organisasi"
+      ],
+      "Organization identity updated": [
+        "Identitas organisasi diperbarui"
+      ],
+      "Verify": [
+        "Verifikasi"
       ]
     },
     "OS compatibility": {
@@ -16210,11 +16267,11 @@
       "Card verification": [
         "Verifikasi kartu"
       ],
-      "Catch-all address": [
-        "Alamat catch-all"
-      ],
       "Catch-All address": [
         "Alamat Catch-All"
+      ],
+      "Catch-all address": [
+        "Alamat catch-all"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"
@@ -17356,6 +17413,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Apabila Anda telah membeli kode hadiah atau telah menerima kode hadiah dari tim layanan dukungan kami, silakan masukkan kode tersebut di sini."
       ],
+      "IP address (Internet Service Provider)": [
+        "Alamat IP (Penyedia Layanan Internet)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Anggota organisasi yang tidak menggunakan 2FA akan menerima email yang meminta mereka untuk mengaktifkan 2FA sesegera mungkin."
       ],
@@ -17542,6 +17602,15 @@
       ]
     },
     "unprivatization": {
+      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
+        "${ n } pengguna telah bergabung ke organisasi Anda melalui Penyedia Identitas Anda. Terima atau tolak akun mereka sekarang:"
+      ],
+      "Administrator access enabled": [
+        "Akses administrator diterima"
+      ],
+      "Administrator access rejected": [
+        "Akses administrator ditolak"
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Admin tidak dapat mengakses data pengguna pribadi dan tidak dapat mengatur ulang kata sandinya."
       ],
@@ -17551,11 +17620,20 @@
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "Seorsng administrator dari organisasi **${ orgName }** (**${ adminEmail }**) ingin mengaktifkan pengaksesan administrator untuk akun Anda."
       ],
+      "Approve all": [
+        "Setujui semua"
+      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Dengan membuat pengguna pribadi, Anda tidak akan dapat membantunya mendapatkan kembali akses data atau akun."
       ],
       "Cancel": [
         "Batalkan"
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Akses administrator untuk ${ n } pengguna tidak dapat diaktifkan secara otomatis karena kunci enkripsi para pengguna berikut telah diperbarui:"
+      ],
+      "Could not enable administrator access: ${ error }": [
+        "Izin administrator tidak dapat diaktifkan: ${ error }"
       ],
       "Delete request": [
         "Hapus permintaan"
@@ -17568,6 +17646,9 @@
       ],
       "Enable administrator access": [
         "Aktifkan akses administrator"
+      ],
+      "Enable manually": [
+        "Aktifkan secara manual"
       ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "Apabila Anda kehilangan akses ke kredensial Anda, para administrator organisasi Anda akan dapat mengatur ulang kata sandi dan memulihkan akses ke akun Anda."

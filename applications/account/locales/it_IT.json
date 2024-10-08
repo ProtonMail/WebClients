@@ -808,11 +808,11 @@
       "Refresh status": [
         "Aggiorna stato"
       ],
-      "refresh the page": [
-        "aggiorna la pagina"
-      ],
       "Refresh the page": [
         "Aggiorna la pagina"
+      ],
+      "refresh the page": [
+        "aggiorna la pagina"
       ],
       "Reload": [
         "Ricarica"
@@ -1616,6 +1616,14 @@
         "Seleziona la tua offerta della Fine dell'Anno"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Scusa, questa offerta non è disponibile con il tuo piano attuale."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Scusa, questa offerta non è disponibile con il tuo piano attuale. Ma puoi ottenere uno sconto del **${ discountPercentage } su ${ plan.Title }** quando ti abboni per **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB di spazio di archiviazione (2 volte di più rispetto a qualsiasi altro piano)"
@@ -1637,14 +1645,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Il piano ${ plan } è tornato, ma solo per un periodo di tempo limitato"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Scusa, questa offerta non è disponibile con il tuo piano attuale."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Scusa, questa offerta non è disponibile con il tuo piano attuale. Ma puoi ottenere uno sconto del **${ discountPercentage } su ${ plan.Title }** quando ti abboni per **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3388,8 +3388,20 @@
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Elimina automaticamente i messaggi spam e quelli nel cestino e sblocca altre funzionalità premium effettuando l'upgrade."
       ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Elimina automaticamente le email spostate nel Cestino nello Spam da più di 30 giorni."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Riordina automaticamente i tuoi messaggi in arrivo prima che raggiungano la tua casella di posta."
+      ],
+      "Available with ${ BRAND_NAME } Mail plus": [
+        "Disponibile con ${ BRAND_NAME } Mail plus"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Congratulazioni! Hai guadagnato il massimo di ${ rewardsLimit } mesi gratuiti di ${ plusPlanName }."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Crea tutte le etichette e le cartelle che ti servono per mantenere ordinata la tua casella di posta."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Abilita ${ PROTON_SENTINEL_NAME } per accedere a queste funzionalità"
@@ -3412,8 +3424,17 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembra che l'elenco dei contatti che stai importando contenga alcuni gruppi. Verifica come devono essere importati questi gruppi."
       ],
+      "Keep different parts of your life separate and your inbox organized with additional addresses.": [
+        "Mantieni separate le diverse parti della tua vita e organizza la tua casella di posta con indirizzi aggiuntivi."
+      ],
+      "Make your email footer your own — showcase your unique brand, not ours.": [
+        "Personalizza il piè di pagina della tua email: mostra il tuo marchio, non il nostro."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separa diversi aspetti della tua vita con più indirizzi email e sblocca più funzioni premium quando effettui l'upgrade."
+      ],
+      "Set up auto-forwarding to redirect incoming emails to another email address.": [
+        "Imposta l'inoltro automatico per reindirizzare le email in arrivo a un altro indirizzo email."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Per importare i tuoi contatti da Google o Outlook, ${ easySwitchLink }."
@@ -3423,6 +3444,9 @@
       ],
       "Track the status and activity of your referrals.": [
         "Tieni traccia dello stato e dell'attività dei tuoi referral."
+      ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Sblocca ${ activatePmUser } per un indirizzo email accattivante e facile da scrivere."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Sblocca indirizzi email più brevi e altre funzionalità premium effettuando l'upgrade."
@@ -7058,11 +7082,11 @@
       "Data locked": [
         "Dati bloccati"
       ],
-      "Dedicated servers": [
-        "Server dedicati"
-      ],
       "dedicated servers": [
         "server dedicati"
+      ],
+      "Dedicated servers": [
+        "Server dedicati"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "È possibile aggiungere server dedicati con indirizzi IP dedicati ai gateway privati ​​per consentire un controllo degli accessi ottimizzato."
@@ -8946,6 +8970,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Stai per aprire un'altra scheda del browser e visitare:"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Stai per aprire il tuo browser predefinito e visitare:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Al momento hai effettuato l'accesso come ${ user.Name } (${ user.Email })."
@@ -11537,6 +11564,32 @@
         "Media velocità della VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Scopri tutti i piani ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Da ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Inizia per ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "A partire da ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade now": [
+        "Effettua l'upgrade ora"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Passa a ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continua Gratis"
@@ -11564,26 +11617,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Aggiorna a ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Scopri tutti i piani ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Da ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Inizia per ${ price }"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade now": [
-        "Effettua l'upgrade ora"
       ]
     },
     "new_plans: feature": {
@@ -12245,6 +12278,23 @@
         "Il tuo piano selezionato: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Prova"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Ottieni Mail Plus per ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "A partire da ${ price }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "L'utilizzo del tuo account"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -12263,20 +12313,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Sblocca le funzionalità premium effettuando l'upgrade"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Prova"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Ottieni Mail Plus per ${ price }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "L'utilizzo del tuo account"
       ]
     },
     "new_plans: tooltip": {
@@ -15075,6 +15111,9 @@
       "/ month": [
         "/ mese"
       ],
+      "/month": [
+        "/ mese"
+      ],
       "1 year": [
         "1 anno"
       ],
@@ -16437,6 +16476,9 @@
       "Amount due": [
         "Importo da pagare"
       ],
+      "An address for each role": [
+        "Un indirizzo per ogni ruolo"
+      ],
       "App": [
         "Applicazione"
       ],
@@ -16491,11 +16533,11 @@
       "Card verification": [
         "Verifica della carta"
       ],
-      "Catch-all address": [
-        "Indirizzi Catch-all"
-      ],
       "Catch-All address": [
         "Indirizzi catch-all"
+      ],
+      "Catch-all address": [
+        "Indirizzi Catch-all"
       ],
       "Change login password": [
         "Cambia la password di accesso"
@@ -16839,6 +16881,9 @@
         "Creazione dell'account utente ${ failedUsers.length } non riuscita.",
         "Creazione degli account utente ${ failedUsers.length } non riuscita."
       ],
+      "Filter for more focus": [
+        "Filtra per maggiore precisione"
+      ],
       "Filter name cannot contain only spaces": [
         "Il nome del filtro non può contenere solo spazi"
       ],
@@ -17017,6 +17062,9 @@
       "My calendars": [
         "I miei calendari"
       ],
+      "Need more labels or folders?": [
+        "Ti servono più etichette o cartelle?"
+      ],
       "Network error": [
         "Errore di rete"
       ],
@@ -17028,6 +17076,9 @@
       ],
       "No account information was found in any data breaches": [
         "Non sono state trovate informazioni sull'account in alcuna violazione di dati"
+      ],
+      "No need to empty the trash": [
+        "Non c'è bisogno di svuotare il cestino"
       ],
       "No recovery method": [
         "Nessun metodo di recupero"
@@ -17089,6 +17140,9 @@
       "Personalise your e-mail footer": [
         "Personalizza il piè di pagina delle tue email"
       ],
+      "Personalize your email footer": [
+        "Personalizza il piè di pagina delle tue email"
+      ],
       "Phone": [
         "Telefono"
       ],
@@ -17115,6 +17169,9 @@
       ],
       "QRCode": [
         "CodiceQR"
+      ],
+      "Ready, set, forward": [
+        "Pronti, partenza, via"
       ],
       "Recommended": [
         "Consigliato"
@@ -17181,6 +17238,9 @@
       ],
       "Revoke certificate": [
         "Revoca certificato"
+      ],
+      "Same inbox, shorter email address": [
+        "Stessa casella di posta, indirizzo email più corto"
       ],
       "SAML authentication": [
         "Autenticazione SAML"

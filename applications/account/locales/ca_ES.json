@@ -676,6 +676,9 @@
       "Loading verification": [
         "Carregant verificació"
       ],
+      "Lost access to your 2FA device?": [
+        "Heu perdut l'accés al vostre dispositiu de 2FA?"
+      ],
       "Make admin": [
         "Estableix com a administrador"
       ],
@@ -802,11 +805,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "refresh the page": [
-        "refresca la pàgina"
-      ],
       "Refresh the page": [
         "Refresca la pàgina"
+      ],
+      "refresh the page": [
+        "refresca la pàgina"
       ],
       "Reload": [
         "Recarrega"
@@ -1449,8 +1452,14 @@
       ]
     },
     "Assistant option": {
+      "Data stay on your device but requires a one-time download and compatible hardware": [
+        "Les dades es mantenen al dispositiu però requereixen una descàrrega única i un maquinari compatible"
+      ],
       "Fast and secure. No logs are kept.": [
         "Ràpid i segur. No es guarden registres."
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Executa als servidors de ${ BRAND_NAME }"
       ],
       "Run on device": [
         "Executa al dispositiu"
@@ -1598,6 +1607,14 @@
         "Seleccioneu la vostra oferta de final d'any."
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Aquesta oferta no està disponible amb el pla actual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Emmagatzematge de 6 TB (dues vegades més que qualsevol altre pla)"
@@ -1619,14 +1636,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Torna el pla ${ plan } per temps limitat"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Aquesta oferta no està disponible amb el pla actual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3906,7 +3915,7 @@
         "El reenviament està actiu."
       ],
       "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
-        "El reenviament a una adreça sense xifratge d'extrem a extrem desactivarà l'encriptació d'extrem a extrem per a la vostra adreça ${ boldForwarderEmail }, però el xifratge d'accés zero continua habilitat. ${ learnMoreLink }"
+        "El reenviament a una adreça sense xifratge d'extrem a extrem desactivarà l'encriptació d'extrem a extrem per a la vostra adreça ${ boldForwarderEmail }, però el xifratge d'accés zero continua activat. ${ learnMoreLink }"
       ],
       "Forwarding to this address will become active once the recipient accepts the forwarding.": [
         "El reenviament a aquesta adreça s'activarà un cop el destinatari accepti el reenviament."
@@ -4176,7 +4185,7 @@
         "El domini no està disponible, torneu-ho a provar més tard"
       ],
       "Email address disabled": [
-        "Correu electrònic deshabilitada"
+        "Correu electrònic desactivada"
       ],
       "Email address is invalid": [
         "L'adreça de correu electrònic no és vàlida."
@@ -5093,6 +5102,10 @@
       "Manage user accounts": [
         "Gestiona comptes d'usuari"
       ],
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "Només es permet ${ n } invitació acceptada en un període de 6 mesos.",
+        "Només es permeten ${ n } invitacions acceptades en un període de 6 mesos."
+      ],
       "Owners of a plan with members cannot join another group plan.": [
         "Els propietaris d'un pla amb membres no poden unir-se a un altre pla de grup."
       ],
@@ -5122,6 +5135,14 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Se us ha convidat a unir-vos a ${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
+        "Heu arribat al límit de ${ n } invitació acceptada en 6 mesos.",
+        "Heu arribat al límit de ${ n } invitacions acceptades en 6 mesos."
+      ],
+      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
+        "Heu arribat al límit de ${ n } invitació acceptada en 6 mesos. El botó es farà clicable quan pugueu convidar usuaris addicionals.",
+        "Heu arribat al límit de ${ n } invitacions acceptades en 6 mesos. El botó es farà clicable quan pugueu convidar usuaris addicionals."
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Heu de configurar un domini personalitzat abans d'afegir diversos usuaris."
@@ -5730,6 +5751,16 @@
         "Deixa el grup"
       ]
     },
+    "group_invite_2024: Error message, recovery": {
+      "Please try opening the link again.": [
+        "Proveu d'obrir l'enllaç de nou."
+      ]
+    },
+    "group_invite_2024: Info": {
+      "You can safely close this tab.": [
+        "Podeu tancar aquesta pestanya amb seguretat."
+      ]
+    },
     "group_invite_2024: Title": {
       "Group invitation accepted": [
         "S'ha acceptat la invitació del grup."
@@ -6042,16 +6073,16 @@
         "${ BRAND_NAME } no es pot connectar al vostre compte de Yahoo. Assegureu-vos que:"
       ],
       "2-step verification is enabled in your external account.": [
-        "La verificació en dos passos està habilitada al vostre compte extern."
+        "La verificació en dos passos està activada al vostre compte extern."
       ],
       "2-step verification is enabled in your external email account.": [
-        "La verificació en dos passos està habilitada al vostre compte de correu electrònic extern."
+        "La verificació en dos passos està activada al vostre compte de correu electrònic extern."
       ],
       "IMAP access is enabled in your external account.": [
-        "L'accés IMAP està habilitat al vostre compte extern."
+        "L'accés IMAP està activat al vostre compte extern."
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        "L’accés IMAP està habilitat al vostre compte de Yahoo."
+        "L’accés IMAP està activat al vostre compte de Yahoo."
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Masses peticions recents. Torneu-ho a provar d'aquí a una estona."
@@ -6777,10 +6808,10 @@
         "Tanqueu la finestra per sortir."
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
-        "Configureu l'autenticació SAML per a l'organització a través d'un proveïdor d'identitat (IdP). Això habilitarà SAML per a tota l'organització."
+        "Configureu l'autenticació SAML per a l'organització a través d'un proveïdor d'identitat (IdP). Això activarà SAML per a tota l'organització."
       ],
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
-        "Configureu l'autenticació SAML per a la vostra organització mitjançant un proveïdor d'identitat com Okta, Microsoft Azure o Google Identity Platform. Això habilitarà SAML per a tota l'organització."
+        "Configureu l'autenticació SAML per a la vostra organització mitjançant un proveïdor d'identitat com Okta, Microsoft Azure o Google Identity Platform. Això activarà SAML per a tota l'organització."
       ],
       "Continue with ${ freeName }": [
         "Continua amb ${ freeName }"
@@ -6877,11 +6908,11 @@
       "Data locked": [
         "Dades bloquejades"
       ],
-      "Dedicated servers": [
-        "Servidors dedicats"
-      ],
       "dedicated servers": [
         "servidors dedicats"
+      ],
+      "Dedicated servers": [
+        "Servidors dedicats"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a permetre un control d'accés més ajustat."
@@ -7198,7 +7229,7 @@
         "Si perdeu la contrasenya i necessiteu restablir el compte, ${ boldImperative } que teniu un ${ boldAccountAndRecovery } al seu lloc. En cas contrari, és possible que no pugueu accedir a cap dels vostres correus electrònics, contactes o fitxers."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
-        "Si perdeu el dispositiu habilitat per a l'autenticació de dos factors, es poden utilitzar aquests codis en lloc del codi d’autenticació de dos factors de 6 dígits per iniciar la sessió al vostre compte. Cada codi només es pot utilitzar una vegada."
+        "Si perdeu el dispositiu activat per a l'autenticació de dos factors, es poden utilitzar aquests codis en lloc del codi d’autenticació de dos factors de 6 dígits per iniciar la sessió al vostre compte. Cada codi només es pot utilitzar una vegada."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si passeu a un pla inferior, perdreu l'accés a les funcions de pagament de ${ MAIL_APP_NAME } i ${ VPN_APP_NAME }."
@@ -8620,13 +8651,13 @@
         "Enviarem un codi de restabliment al número de telèfon que heu proporcionat per a la recuperació del compte."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
-        "Si s'inhabilita, s'evita que els arxius d'imatge es carreguin al vostre dispositiu sense el vostre coneixement.\t"
+        "Si s'inactiva, s'evita que els arxius d'imatge es carreguin al vostre dispositiu sense el vostre coneixement.\t"
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Quan activeu SAML per a ${ appName } al vostre proveïdor d'identitat, és possible que se us demani que utilitzeu l'URL de la crida de retorn (ACS) i l'identificador de l'emissor. Només cal copiar i enganxar les dades de sota als camps del proveïdor d'identitat."
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
-        "Quan les notificacions estiguin habilitades, enviarem una alerta a la vostra adreça de recuperació si teniu nous missatges al vostre compte de ${ MAIL_APP_NAME }."
+        "Quan les notificacions estiguin activades, enviarem una alerta a la vostra adreça de recuperació si teniu nous missatges al vostre compte de ${ MAIL_APP_NAME }."
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "Quan les persones que recomaneu es registren per obtenir una subscripció, guanyeu crèdits per utilitzar-los per a la vostra subscripció."
@@ -10277,6 +10308,9 @@
       "Time zone": [
         "Zona horària"
       ],
+      "Tips and insights": [
+        "Consells i informació"
+      ],
       "To: ${ toEmail }": [
         "Per a: ${ toEmail }"
       ],
@@ -10752,10 +10786,10 @@
     },
     "Log preference": {
       "Enable ${ reason }": [
-        "Habilita ${ reason }"
+        "Activa ${ reason }"
       ],
       "Enable detailed events": [
-        "Habilita els esdeveniments detallats"
+        "Activa els esdeveniments detallats"
       ],
       "Enable security events": [
         "Activa els esdeveniments de seguretat"
@@ -11236,6 +11270,29 @@
         "Velocitat VPN mitjana"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explora tots els plans de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Des de ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Comenceu per ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Comenceu des de ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade now": [
+        "Millora ara"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continua amb el pla gratuït"
@@ -11263,26 +11320,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Millora a ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explora tots els plans de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Des de ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Comenceu per ${ price }"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade now": [
-        "Millora ara"
       ]
     },
     "new_plans: feature": {
@@ -11574,6 +11611,9 @@
       ],
       "Priority support & live chat": [
         "Suport prioritari i xat en directe"
+      ],
+      "Proofread and refine your emails": [
+        "Corregiu i refineu els vostres correus electrònics"
       ],
       "Protect ${ n } device at a time": [
         "Protegiu ${ n } dispositiu alhora",
@@ -11897,6 +11937,20 @@
         "El vostre pla seleccionat: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prova de ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Obtingueu Mail Plus per ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Comenceu des de ${ price }"
+      ],
+      "Your account's usage": [
+        "Ús del vostre compte"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
@@ -11915,14 +11969,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Milloreu el pla i desbloquegeu funcions prèmium"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prova de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Ús del vostre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -11973,7 +12019,7 @@
         "Creeu fins a ${ n } adreces de correu electrònic o àlies que podeu assignar als membres de la família. Utilitzeu-los per a les identitats en línia, p. ex., JoanCompres@${ domain } per als comptes de compres."
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a habilitar un control d'accés més optimitzat"
+        "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a activar un control d'accés més optimitzat"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defensa contra les amenaces a la privacitat de la VPN passant el vostre trànsit d'internet a través de múltiples servidors"
@@ -12202,7 +12248,7 @@
         "${ reason } s'ha desactivat"
       ],
       "${ reason } has been enabled": [
-        "S'ha habilitat ${ reason } "
+        "S'ha activat ${ reason } "
       ],
       "A disabled address cannot be default": [
         "Una adreça desactivada no pot ser una adreça per defecte."
@@ -12214,7 +12260,7 @@
         "S'ha desactivat la supervisió del web fosc."
       ],
       "Dark Web Monitoring has been enabled": [
-        "S'ha habilitat la supervisió del web fosc"
+        "S'ha activat la supervisió del web fosc"
       ],
       "Invalid code": [
         "El codi no és vàlid."
@@ -12688,6 +12734,9 @@
       ]
     },
     "orgidentity": {
+      "Current organization identity": [
+        "Identitat de l'organització actual"
+      ],
       "Edit organization identity": [
         "Edita la identitat de l'organització"
       ],
@@ -12696,6 +12745,9 @@
       ],
       "Organization identity": [
         "Identitat de l'organització"
+      ],
+      "Organization identity updated": [
+        "S'ha actualitzat la identitat de l'organització."
       ],
       "Verify": [
         "Verifica"
@@ -13124,7 +13176,7 @@
         "S'ha denegat el permís. S'han restringit els privilegis d'administrador."
       ],
       "Please ensure they have an enabled address and invite them separately later.": [
-        "Assegureu-vos que tinguin una adreça habilitada i convideu-los més tard per separat."
+        "Assegureu-vos que tinguin una adreça activada i convideu-los més tard per separat."
       ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Els usuaris privats poden ascendir a administradors quan inicien sessió per primera vegada"
@@ -13194,7 +13246,7 @@
         "Número de la targeta"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
-        "Actualment, la renovació automàtica de la subscripció està desactivada. Si canvieu la subscripció ara, es tornarà a habilitar la renovació automàtica."
+        "Actualment, la renovació automàtica de la subscripció està desactivada. Si canvieu la subscripció ara, es tornarà a activar la renovació automàtica."
       ],
       "CVC": [
         "CVC"
@@ -13646,6 +13698,9 @@
       "Add a recovery phone number": [
         "Afegeix un número de telèfon de recuperació"
       ],
+      "Back to Safety Review": [
+        "Torna a la revisió de seguretat"
+      ],
       "Check account security": [
         "Comprova la seguretat del compte"
       ],
@@ -13679,6 +13734,9 @@
       "Review your account safety": [
         "Reviseu la seguretat del compte"
       ],
+      "Safeguard account now": [
+        "Protegir el compte"
+      ],
       "Safeguard your account": [
         "Protegiu el vostre compte"
       ],
@@ -13694,6 +13752,15 @@
       "Verify": [
         "Verifica"
       ],
+      "Verify your recovery email address": [
+        "Verifiqueu la vostra adreça de correu electrònic"
+      ],
+      "Verify your recovery phone number": [
+        "Verifiqueu el vostre número de telèfon de recuperació"
+      ],
+      "You recovery email address is:": [
+        "La vostra adreça de correu electrònic de recuperació és:"
+      ],
       "You recovery phone number is:": [
         "El número de telèfon de recuperació és:"
       ],
@@ -13706,6 +13773,9 @@
       "Your recovery email": [
         "El vostre correu electrònic de recuperació"
       ],
+      "Your recovery email is set": [
+        "El vostre correu electrònic de recuperació està configurat."
+      ],
       "Your Recovery Kit": [
         "Kit de recuperació"
       ],
@@ -13714,6 +13784,9 @@
       ],
       "Your recovery phone": [
         "El vostre telèfon de recuperació"
+      ],
+      "Your recovery phone is set": [
+        "El vostre telèfon de recuperació està configurat."
       ]
     },
     "saml: Action": {
@@ -13769,7 +13842,7 @@
         "**Prerequisit:** Cal configurar l'autenticació SAML per a activar el subministrament SCIM."
       ],
       "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
-        "**Prerequisit:** per a habilitar el subministrament SCIM, heu de verificar la propietat del domini **${ domainName }**. Aquesta verificació pot trigar fins a una hora."
+        "**Prerequisit:** per a activar el subministrament SCIM, heu de verificar la propietat del domini **${ domainName }**. Aquesta verificació pot trigar fins a una hora."
       ],
       "Enter token into your identity provider": [
         "Introduïu el token al vostre proveïdor d'identitat"
@@ -14311,7 +14384,7 @@
         "S'ha produït un error de verificació de la signatura"
       ],
       "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
-        "Heu habilitat la verificació d'adreces per a ${ boldSenderEmail }. No hem pogut verificar l'autenticitat d'aquesta invitació de calendari. Això pot ser degut a canvis en les claus de xifratge d'aquest contacte. Comproveu-ne les preferències avançades de PGP o sol·liciteu una nova invitació a ${ boldSenderEmail }."
+        "Heu activat la verificació d'adreces per a ${ boldSenderEmail }. No hem pogut verificar l'autenticitat d'aquesta invitació de calendari. Això pot ser degut a canvis en les claus de xifratge d'aquest contacte. Comproveu-ne les preferències avançades de PGP o sol·liciteu una nova invitació a ${ boldSenderEmail }."
       ]
     },
     "Signup label": {
@@ -14457,6 +14530,9 @@
       ],
       "/ month": [
         "/ mes"
+      ],
+      "/month": [
+        "/mes"
       ],
       "1 year": [
         "1 any"
@@ -15224,7 +15300,7 @@
         "Desactiva"
       ],
       "Enable auto-pay support": [
-        "Habilita el suport de pagament automàtic"
+        "Activa el suport de pagament automàtic"
       ],
       "Keep auto-pay": [
         "Mantén el pagament automàtic"
@@ -15397,6 +15473,9 @@
       "Premium address created": [
         "S'ha creat l'adreça prèmium."
       ],
+      "Problem reported": [
+        "S'ha notificat el problema."
+      ],
       "Resuming import": [
         "Reactivant importació"
       ],
@@ -15484,10 +15563,10 @@
         "Adreça eliminada"
       ],
       "Address disabled": [
-        "Adreça deshabilitada"
+        "Adreça desactivada"
       ],
       "Address enabled": [
-        "Adreça habilitada"
+        "Adreça activada"
       ],
       "Certificate ${ name } revoked": [
         "S'ha revocat el certificat ${ name }"
@@ -15770,6 +15849,9 @@
       "Add PayPal payment method": [
         "Afegir PayPal com a mètode de pagament"
       ],
+      "Add pm.me subdomain": [
+        "Afegeix un subdomini pm.me"
+      ],
       "Add servers": [
         "Afegeix servidors"
       ],
@@ -15860,10 +15942,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [
@@ -16066,6 +16148,9 @@
       "Disable two-factor authentication": [
         "Desactiva l'autenticació en dos passos"
       ],
+      "Disable two-factor authentication?": [
+        "Desactiva l'autenticació en dos passos?"
+      ],
       "Discard changes?": [
         "Voleu descartar els canvis?"
       ],
@@ -16195,6 +16280,9 @@
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "No s'ha pogut crear ${ failedUsers.length } compte d'usuari.",
         "No s'han pogut crear ${ failedUsers.length } comptes d'usuari."
+      ],
+      "Filter for more focus": [
+        "Filtreu els vostres missatges per a una millor concentració"
       ],
       "Filter name cannot contain only spaces": [
         "El nom del filtre no pot contenir només espais"
@@ -16374,6 +16462,9 @@
       "My calendars": [
         "Els meus calendaris"
       ],
+      "Need more labels or folders?": [
+        "Necessiteu més etiquetes o carpetes?"
+      ],
       "Network error": [
         "Error de xarxa"
       ],
@@ -16442,6 +16533,12 @@
       ],
       "PayPal verification failed": [
         "La verificació de PayPal no s'ha pogut completar."
+      ],
+      "Personalise your e-mail footer": [
+        "Personalitzeu el peu de pàgina del vostre correu electrònic"
+      ],
+      "Personalize your email footer": [
+        "Personalitzeu el peu de pàgina del vostre correu electrònic"
       ],
       "Phone": [
         "Telèfon"
@@ -16975,6 +17072,9 @@
       "Enable/disable desktop and mobile notifications": [
         "Activa/desactiva les notificacions a l'escriptori i al mòbil"
       ],
+      "Enabling detailed events records the IP address for each event.": [
+        "En activar els esdeveniments detallats, es registrarà l'adreça IP per a cada esdeveniment."
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL del punt final del proveïdor d'identitat (p. ex. https://idp.exemple.cat/sso/saml)"
       ],
@@ -17033,7 +17133,7 @@
         "El nou cicle de subscripció comença el ${ formattedTime }"
       ],
       "The reduce motion setting is already enabled on this device": [
-        "La preferència de reducció de moviment ja està habilitada en aquest dispositiu"
+        "La preferència de reducció de moviment ja està activada en aquest dispositiu"
       ],
       "The selected theme will be active when your system is set to \"dark mode\"": [
         "El tema seleccionat s'activarà quan el sistema estigui en «mode fosc»"
@@ -17087,7 +17187,7 @@
         "Hem aturat la signatura de DKIM per problemes amb la vostra configuració DNS. Seguiu les instruccions a continuació per continuar a signar."
       ],
       "When enabled, animations and transitions will not show": [
-        "Quan està habilitat, les animacions i les transicions no es mostren"
+        "Quan està activat, les animacions i les transicions no es mostren"
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
         "Quan afegiu una etiqueta a un missatge d'una conversa, aquesta s'aplicarà automàticament a tots els missatges futurs que envieu o rebeu dins d'aquesta conversa."
@@ -17164,6 +17264,12 @@
       ]
     },
     "unprivatization": {
+      "Administrator access enabled": [
+        "S'ha activat l'accés com a administrador."
+      ],
+      "Administrator access rejected": [
+        "S'ha rebutjat l'accés com a administrador."
+      ],
       "Approve all": [
         "Aprova tot"
       ],
@@ -17175,6 +17281,9 @@
       ],
       "Enable admin access?": [
         "Voleu activar l'accés d'administrador?"
+      ],
+      "Enable administrator access": [
+        "Activa l'accés com a administrador"
       ],
       "Enable manually": [
         "Activa manualment"
@@ -17503,6 +17612,9 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via correu electrònic"
+      ],
+      "Create ${ BRAND_NAME } Account now": [
+        "Crea un compte de ${ BRAND_NAME }"
       ],
       "Early access to new features": [
         "Accés anticipat a les noves característiques"
