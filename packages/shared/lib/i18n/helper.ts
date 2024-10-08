@@ -34,8 +34,7 @@ export const getIntlLocale = (locale = '') => {
 
 export const getBrowserLanguageTags = (): string[] => {
     const tags = window.navigator?.languages;
-
-    return [...tags] || [];
+    return [...tags];
 };
 
 /**
