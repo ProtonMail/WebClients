@@ -106,10 +106,11 @@ const slice = createSlice({
                 }
 
                 const groupMember = event.GroupMember as GroupMember;
-                const { GroupID: groupId, ID: id } = groupMember;
-                if (!groupId || !id) {
+                const { GroupID, GroupId, ID: id } = groupMember;
+                if (!(GroupId || GroupID) || !id) {
                     continue;
                 }
+                const groupId = GroupId ?? GroupID;
                 const group = state[groupId]?.value;
 
                 if (!group) {
