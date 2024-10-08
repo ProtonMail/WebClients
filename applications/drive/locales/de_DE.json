@@ -393,6 +393,9 @@
       "Get verification code": [
         "Verifizierungscode anfordern"
       ],
+      "Go back": [
+        "Zurück"
+      ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Zu ${ DRIVE_SHORT_APP_NAME } gehen"
       ],
@@ -800,6 +803,9 @@
       ],
       "Start setup": [
         "Einrichtung starten"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Ab ${ priceUnlimited }"
       ],
       "Stay": [
         "Nicht schließen"
@@ -4107,6 +4113,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Bist du sicher, dass die ausgewählten Elemente dauerhaft aus dem Papierkorb gelöscht werden sollen?"
       ],
+      "Are you sure you want to proceed?": [
+        "Möchtest du dich wirklich fortfahren?"
+      ],
       "Attention required": [
         "Aufmerksamkeit erforderlich"
       ],
@@ -6653,6 +6662,9 @@
       "Get started for ${ price }": [
         "Starte für ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Ab ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Jetzt upgraden"
       ]
@@ -7228,6 +7240,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Hol dir Mail Plus für ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Ab ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7780,17 +7795,41 @@
       ]
     },
     "Onboarding Action": {
+      "Continue": [
+        "Fortfahren"
+      ],
       "Create new document": [
         "Neues Dokument erstellen"
       ],
+      "Install later": [
+        "Später installieren"
+      ],
+      "Invite members": [
+        "Mitglieder einladen"
+      ],
+      "Maybe later": [
+        "Vielleicht später"
+      ],
       "Next": [
         "Weiter"
+      ],
+      "Select theme": [
+        "Farbschema auswählen"
+      ],
+      "Skip": [
+        "Überspringen"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Beginnen, ${ DRIVE_APP_NAME } zu verwenden"
       ],
       "Try it later": [
         "Später ausprobieren"
+      ],
+      "Upload file": [
+        "Datei hochladen"
+      ],
+      "Upload folder": [
+        "Ordner hochladen"
       ]
     },
     "Onboarding Info": {
@@ -7803,11 +7842,35 @@
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Fange an, ${ DRIVE_APP_NAME } zu nutzen und wir upgraden deinen kostenlosen Speicherplatz auf 5 GB!"
       ],
+      "Get the desktop app": [
+        "Desktop-App herunterladen"
+      ],
+      "Get the mobile app": [
+        "App herunterladen"
+      ],
+      "Hang tight": [
+        "Einen Moment bitte"
+      ],
       "Introducing ${ DOCS_APP_NAME }": [
         "Wir stellen vor: ${ DOCS_APP_NAME }"
       ],
+      "Invitation accepted": [
+        "Einladung angenommen"
+      ],
+      "Invitation received": [
+        "Einladung erhalten"
+      ],
+      "Invite team members": [
+        "Teammitglieder einladen"
+      ],
       "Manage access": [
         "Zugriff verwalten"
+      ],
+      "Secure your files": [
+        "Schütze deine Dateien"
+      ],
+      "Securely share files and folders": [
+        "Teile sicher Dateien und Ordner"
       ],
       "Securely store, manage, and share your business-critical files with confidence.": [
         "Speichere, verwalte und teile deine unternehmenskritischen Dateien zuversichtlich und sicher."
@@ -7833,6 +7896,9 @@
       ],
       "Upload a file": [
         "Datei hochladen"
+      ],
+      "Upload your first file": [
+        "Lade deine erste Datei hoch"
       ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Dein zuverlässiger Online-Tresor für wichtige Dokumente und wertvolle Erinnerungen."
@@ -8623,6 +8689,9 @@
         "${ n } Monate"
       ],
       "/ month": [
+        "/ Monat"
+      ],
+      "/month": [
         "/ Monat"
       ],
       "1 year": [

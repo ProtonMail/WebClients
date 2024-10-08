@@ -808,10 +808,10 @@
       "Refresh status": [
         "Päivitä tila"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Päivitä sivu"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Päivitä sivu"
       ],
       "Reload": [
@@ -1616,6 +1616,14 @@
         "Valitse vuoden lopun tarjouksesi"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Valitettavasti tätä tarjousta ei ole saatavilla nykyiseen tilaukseesi. Voit kuitenkin saada **${ discountPercentage } alennuksen ${ plan.Title }**, kun tilaat **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 Tt tallennustilaa (2 kertaa enemmän kuin missään muussa tilauksessa)"
@@ -1637,14 +1645,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } -tilaus on taas saatavilla vain rajoitetun ajan"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Valitettavasti tätä tarjousta ei ole saatavilla nykyiseen tilaukseesi. Voit kuitenkin saada **${ discountPercentage } alennuksen ${ plan.Title }**, kun tilaat **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3388,8 +3388,20 @@
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Päivitä tilauksesi poistaaksesi roskapostit ja roskakorissa olevat viestit automaattisesti, ja avataksesi muita premium-ominaisuuksia."
       ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Tyhjennä yli 30 päivää sitten roskakoriin ja -postiin siirretyt sähköpostit automaattisesti."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Lajittele saapuvat viestisi automaattisesti, ennen kuin ne saapuvat postilaatikkoosi."
+      ],
+      "Available with ${ BRAND_NAME } Mail plus": [
+        "Saatavilla ${ BRAND_NAME } Mail Plus -tilauksella"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Onnittelut! Olet ansainnut vapaiden kuukausien enimmäismäärän ${ rewardsLimit } kuukautta ${ plusPlanName }."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Luo niin monta tunnistetta tai kansiota kuin tarvitset postilaatikkosi siistinä pitämiseksi."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Käytä näitä ominaisuuksia ottamalla ${ PROTON_SENTINEL_NAME } käyttöön"
@@ -3412,6 +3424,12 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Yhteystiedot, joita olet tuomassa, näyttävät sisältävän ryhmiä. Määritä miten ryhmät tuodaan."
       ],
+      "Keep different parts of your life separate and your inbox organized with additional addresses.": [
+        "Pidä elämäsi eri osat erillään ja postilaatikkosi järjestyksessä lisäosoitteiden avulla."
+      ],
+      "Make your email footer your own — showcase your unique brand, not ours.": [
+        "Tee sähköpostisi alatunnisteesta omanlaisesi - korosta omaa brändiäsi meidän sijaan."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Erota elämäsi eri alueet useilla sähköpostiosoitteilla ja avaa myös muita premium-ominaisuuksia päivittämällä tilauksesi."
       ],
@@ -3423,6 +3441,9 @@
       ],
       "Track the status and activity of your referrals.": [
         "Seuraa suositustesi tilaa ja tapahtumia."
+      ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Hanki tarttuva ja helposti kirjoitettava ${ activatePmUser } -sähköpostiosoite."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Avaa lyhyemmät sähköpostiosoitteet ja myös muita premium-ominaisuuksia päivittämällä tilauksesi."
@@ -7058,11 +7079,11 @@
       "Data locked": [
         "Tiedot on lukittu"
       ],
-      "Dedicated servers": [
-        "Omat palvelimet"
-      ],
       "dedicated servers": [
         "omia palvelimia"
+      ],
+      "Dedicated servers": [
+        "Omat palvelimet"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Omat palvelimet kiinteillä IP-osoitteilla voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
@@ -8940,6 +8961,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Olet avaamassa uutta selaimen välilehteä sivustolle:"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Olet avaamassa oletusselaintasi sivustolle:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Olet kirjautuneena ${ user.Name } (${ user.Email })."
@@ -11528,6 +11552,32 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
+      ],
+      "From ${ price }": [
+        "Alkaen ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Aloita hintaan ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Alkaen ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade now": [
+        "Päivitä tilaus nyt"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Päivitä ${ MAIL_SHORT_APP_NAME } Plus -tilaukseen"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Jatka ilmaisella"
@@ -11555,26 +11605,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Päivitä ${ upsellPlanHumanSize } -tilaukseen"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
-      ],
-      "From ${ price }": [
-        "Alkaen ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Aloita hintaan ${ price }"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade now": [
-        "Päivitä tilaus nyt"
       ]
     },
     "new_plans: feature": {
@@ -12236,6 +12266,20 @@
         "Valitsemasi tilaus: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-kokeilu"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Hanki Mail Plus hintaan ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Alkaen ${ price }"
+      ],
+      "Your account's usage": [
+        "Tilisi käyttö"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
@@ -12254,17 +12298,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Avaa premium-ominaisuudet päivittämällä tilauksesi"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-kokeilu"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Hanki Mail Plus hintaan ${ price }"
-      ],
-      "Your account's usage": [
-        "Tilisi käyttö"
       ]
     },
     "new_plans: tooltip": {
@@ -15042,6 +15075,9 @@
       "/ month": [
         "kuukaudessa"
       ],
+      "/month": [
+        "/kuukausi"
+      ],
       "1 year": [
         "1 vuosi"
       ],
@@ -15049,7 +15085,7 @@
         "15 kuukautta"
       ],
       "2 years": [
-        "2 vuotta"
+        "Kaksi vuotta"
       ],
       "30 months": [
         "30 kuukautta"
@@ -16404,6 +16440,9 @@
       "Amount due": [
         "Veloitettava summa"
       ],
+      "An address for each role": [
+        "Osoite jokaiselle roolille"
+      ],
       "App": [
         "Sovellus"
       ],
@@ -16458,10 +16497,10 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Nappaa kaikki -osoite"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Nappaa kaikki -osoite"
       ],
       "Change login password": [
@@ -16806,6 +16845,9 @@
         "${ failedUsers.length } käyttäjätilin luonti epäonnistui.",
         "${ failedUsers.length } käyttäjätilin luonti epäonnistui."
       ],
+      "Filter for more focus": [
+        "Suodattimet parantamaan keskittymistäsi"
+      ],
       "Filter name cannot contain only spaces": [
         "Suodattimen nimi ei voi sisältää pelkkiä välilyöntejä"
       ],
@@ -16984,6 +17026,9 @@
       "My calendars": [
         "Omat kalenterit"
       ],
+      "Need more labels or folders?": [
+        "Tarvitsetko enemmän tunnisteita tai kansioita?"
+      ],
       "Network error": [
         "Verkkovirhe"
       ],
@@ -16995,6 +17040,9 @@
       ],
       "No account information was found in any data breaches": [
         "Tilitietoja ei löytynyt tietomurroista"
+      ],
+      "No need to empty the trash": [
+        "Roskia ei tarvitse tyhjentää"
       ],
       "No recovery method": [
         "Palautustapoja ei ole"
@@ -17052,6 +17100,9 @@
       ],
       "PayPal verification failed": [
         "PayPal-vahvistus epäonnistui"
+      ],
+      "Personalize your email footer": [
+        "Mukauta sähköpostiesi alatunnistetta"
       ],
       "Phone": [
         "Puhelin"
@@ -17145,6 +17196,9 @@
       ],
       "Revoke certificate": [
         "Mitätöi varmenne"
+      ],
+      "Same inbox, shorter email address": [
+        "Sama postilaatikko, lyhyempi sähköpostiosoite"
       ],
       "SAML authentication": [
         "SAML-todennus"

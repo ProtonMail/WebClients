@@ -343,13 +343,16 @@
         "activa les notificacions d'escriptori"
       ],
       "Enable drive search": [
-        "Habilita la cerca de la unitat"
+        "Activa la cerca de la unitat"
       ],
       "Expand": [
         "Amplia"
       ],
       "Expand folder": [
         "Amplia la carpeta"
+      ],
+      "Explore on my own": [
+        "Explorar pel vostre compte"
       ],
       "Explore while you wait": [
         "Exploreu mentre espereu"
@@ -392,6 +395,9 @@
       ],
       "Go back": [
         "Torna enrere"
+      ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Aneu a ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Go to label": [
         "Ves a l'etiqueta"
@@ -798,6 +804,9 @@
       "Start setup": [
         "Començar la configuració"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Comenceu des de ${ priceUnlimited }"
+      ],
       "Stay": [
         "Mantenir"
       ],
@@ -863,6 +872,9 @@
       ],
       "Upgrade now": [
         "Millora ara"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Millora a ${ BRAND_NAME } Unlimited"
       ],
       "Upload anyway": [
         "Carrega de totes maneres"
@@ -2318,7 +2330,7 @@
         "Podeu marcar per suprimir els contactes que no voleu ni fusionar ni conservar.\nLa supressió només es farà un cop es faci clic al botó de combinació"
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
-        "El compte i els mètodes de recuperació de dades estan definits i el 2FA està habilitat."
+        "El compte i els mètodes de recuperació de dades estan definits i el 2FA està activat."
       ],
       "Your account and data recovery methods are set.": [
         "El compte i els mètodes de recuperació de dades estan definits."
@@ -2392,6 +2404,9 @@
       ]
     },
     "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Obre a ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Save for later": [
         "Guarda per a després"
       ]
@@ -3640,16 +3655,16 @@
         "${ BRAND_NAME } no es pot connectar al vostre compte de Yahoo. Assegureu-vos que:"
       ],
       "2-step verification is enabled in your external account.": [
-        "La verificació en dos passos està habilitada al vostre compte extern."
+        "La verificació en dos passos està activada al vostre compte extern."
       ],
       "2-step verification is enabled in your external email account.": [
-        "La verificació en dos passos està habilitada al vostre compte de correu electrònic extern."
+        "La verificació en dos passos està activada al vostre compte de correu electrònic extern."
       ],
       "IMAP access is enabled in your external account.": [
-        "L'accés IMAP està habilitat al vostre compte extern."
+        "L'accés IMAP està activat al vostre compte extern."
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        "L’accés IMAP està habilitat al vostre compte de Yahoo."
+        "L’accés IMAP està activat al vostre compte de Yahoo."
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Masses peticions recents. Torneu-ho a provar d'aquí a una estona."
@@ -3984,7 +3999,7 @@
         "Opcions addicionals"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "La verificació d'adreça amb claus de confiança està habilitada per a aquesta adreça. Per tal de poder enviar a aquesta adreça, verifiqueu la confiança en les claus públiques que es poden utilitzar per enviar."
+        "La verificació d'adreça amb claus de confiança està activada per a aquesta adreça. Per tal de poder enviar a aquesta adreça, verifiqueu la confiança en les claus públiques que es poden utilitzar per enviar."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Tot (${ totalFoldersCount } carpeta)",
@@ -4780,7 +4795,7 @@
         "Principal"
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "La cerca privada està habilitada. Ara ja podeu tancar aquest diàleg i cercar fitxers i carpetes."
+        "La cerca privada està activada. Ara ja podeu tancar aquest diàleg i cercar fitxers i carpetes."
       ],
       "Public link": [
         "Enllaç públic"
@@ -4985,7 +5000,7 @@
         "Aquesta acció eliminarà l'enllaç i revocarà l'accés per a tots els usuaris."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Aquesta adreça està inhabilitada. Per tal de poder enviar-hi, el propietari l'ha d'activar en primer lloc."
+        "Aquesta adreça està inactivada. Per tal de poder enviar-hi, el propietari l'ha d'activar en primer lloc."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Aquest navegador no suporta la previsualització de documents PDF. Descarregueu-vos l'arxiu."
@@ -6192,7 +6207,7 @@
     },
     "Log preference": {
       "Enable ${ reason }": [
-        "Habilita ${ reason }"
+        "Activa ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -6522,6 +6537,9 @@
       "Get started for ${ price }": [
         "Comenceu per ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Comenceu des de ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Millora ara"
       ]
@@ -6815,6 +6833,9 @@
       "Priority support & live chat": [
         "Suport prioritari i xat en directe"
       ],
+      "Proofread and refine your emails": [
+        "Corregiu i refineu els vostres correus electrònics"
+      ],
       "Protect ${ n } device at a time": [
         "Protegiu ${ n } dispositiu alhora",
         "Protegiu ${ n } dispositius alhora"
@@ -7047,6 +7068,14 @@
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Obtingueu Mail Plus per ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Comenceu des de ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
@@ -7109,7 +7138,7 @@
         "Creeu fins a ${ n } adreces de correu electrònic o àlies que podeu assignar als membres de la família. Utilitzeu-los per a les identitats en línia, p. ex., JoanCompres@${ domain } per als comptes de compres."
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a habilitar un control d'accés més optimitzat"
+        "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a activar un control d'accés més optimitzat"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defensa contra les amenaces a la privacitat de la VPN passant el vostre trànsit d'internet a través de múltiples servidors"
@@ -7410,7 +7439,7 @@
         "${ reason } s'ha desactivat"
       ],
       "${ reason } has been enabled": [
-        "S'ha habilitat ${ reason } "
+        "S'ha activat ${ reason } "
       ],
       "Access for the member removed": [
         "S'ha esborrat l'accés per al membre"
@@ -7596,14 +7625,29 @@
       "Get started": [
         "Comencem!"
       ],
+      "Install and continue": [
+        "Insta-la i continua"
+      ],
+      "Install later": [
+        "Instal·la més tard"
+      ],
+      "Invite members": [
+        "Invite members"
+      ],
       "Maybe later": [
         "Potser després"
       ],
       "Next": [
         "Següent"
       ],
+      "Select theme": [
+        "Selecciona el tema"
+      ],
       "Skip": [
         "Omet"
+      ],
+      "Skip for now": [
+        "Omet per ara"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Comenceu a utilitzar ${ DRIVE_APP_NAME }"
@@ -7611,13 +7655,34 @@
       "Try it later": [
         "Prova-ho més tard"
       ],
+      "Try the app": [
+        "Proveu l'aplicació"
+      ],
       "Upload file": [
         "Puja un fitxer"
+      ],
+      "Upload folder": [
+        "Carrega una carpeta"
       ]
     },
     "Onboarding Info": {
+      "Collaborate on documents": [
+        "Col·labora en documents"
+      ],
+      "Edit documents online": [
+        "Editeu documents en línia"
+      ],
+      "Final approval pending": [
+        "L'aprovació definitiva està pendent."
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Comenceu a utilitzar ${ DRIVE_APP_NAME } i millorarem el vostre emmagatzematge a 5 GB!"
+      ],
+      "Get the desktop app": [
+        "Obteniu l'aplicació d'escriptori"
+      ],
+      "Get the mobile app": [
+        "Obteniu l'aplicació mòbil"
       ],
       "Hang tight": [
         "Espereu un moment"
@@ -7625,8 +7690,20 @@
       "Introducing ${ DOCS_APP_NAME }": [
         "Presentem ${ DOCS_APP_NAME }"
       ],
+      "Invitation accepted": [
+        "S'ha acceptat la invitació."
+      ],
+      "Invitation received": [
+        "S'ha rebut la invitació."
+      ],
+      "Invite team members": [
+        "Convida els membres de l'equip"
+      ],
       "Manage access": [
         "Gestiona l'accés"
+      ],
+      "Secure your files": [
+        "Assegureu els vostres fitxers"
       ],
       "Set a recovery method": [
         "Configura un mètode de recuperació"
@@ -7646,6 +7723,15 @@
       ],
       "Upload a file": [
         "Puja un fitxer"
+      ],
+      "Upload your first file": [
+        "Carregueu el vostre primer fitxer"
+      ],
+      "Work faster, smarter": [
+        "Treballeu de forma més ràpida i eficient"
+      ],
+      "Work together": [
+        "Treballeu en equip"
       ],
       "Your trusty online vault for vital documents and precious memories.": [
         "La vostra caixa forta en línia de confiança per a documents vitals i records preciosos."
@@ -7761,7 +7847,7 @@
         "Número de la targeta"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
-        "Actualment, la renovació automàtica de la subscripció està desactivada. Si canvieu la subscripció ara, es tornarà a habilitar la renovació automàtica."
+        "Actualment, la renovació automàtica de la subscripció està desactivada. Si canvieu la subscripció ara, es tornarà a activar la renovació automàtica."
       ],
       "CVC": [
         "CVC"
@@ -8429,6 +8515,9 @@
       "/ month": [
         "/ mes"
       ],
+      "/month": [
+        "/mes"
+      ],
       "1 year": [
         "1 any"
       ],
@@ -9087,7 +9176,7 @@
         "Desactiva"
       ],
       "Enable auto-pay support": [
-        "Habilita el suport de pagament automàtic"
+        "Activa el suport de pagament automàtic"
       ],
       "Keep auto-pay": [
         "Mantén el pagament automàtic"
@@ -9182,6 +9271,9 @@
       ],
       "Preferences saved": [
         "Preferències guardades"
+      ],
+      "Problem reported": [
+        "S'ha notificat el problema."
       ],
       "Recovery has started": [
         "Ha començat la recuperació"
@@ -9440,6 +9532,9 @@
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Confirmeu la pèrdua de les bonificacions de ${ BRAND_NAME }"
       ],
+      "Confirmation required?": [
+        "Cal confirmació?"
+      ],
       "Contact Details": [
         "Detalls del contacte"
       ],
@@ -9569,7 +9664,7 @@
         "Activa l'autenticació 2FA"
       ],
       "Enable drive search": [
-        "Habilita la cerca de la unitat"
+        "Activa la cerca de la unitat"
       ],
       "Enter 2FA code": [
         "Introduïu el codi 2FA"

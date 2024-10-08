@@ -403,6 +403,17 @@
         "Descartar comentário?"
       ]
     },
+    "Description": {
+      "Edit document directly": [
+        "Editar o documento diretamente"
+      ],
+      "Edits become suggestion": [
+        "As edições se transformam em sugestões"
+      ],
+      "Read or print final document": [
+        "Ler ou imprimir o documento final"
+      ]
+    },
     "Error": {
       "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
         "Ocorreu um erro durante o carregamento do documento. Para prevenir a corrupção do documento, o editor foi bloqueado. Recarregue a página e tente novamente."
@@ -482,6 +493,15 @@
       "Editing": [
         "Editar"
       ],
+      "Font": [
+        "Fonte"
+      ],
+      "Font size": [
+        "Tamanho da fonte"
+      ],
+      "Highlight": [
+        "Destacar"
+      ],
       "Just now": [
         "Agora mesmo"
       ],
@@ -497,6 +517,9 @@
       "Suggesting": [
         "Sugerindo"
       ],
+      "Text color": [
+        "Cor do texto"
+      ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "O conteúdo que você está tentando colar é muito grande para ser colado de uma só vez. Tente novamente colando partes menores de cada vez."
       ],
@@ -508,11 +531,17 @@
       ]
     },
     "Label": {
+      "Add link": [
+        "Adicionar link"
+      ],
       "Background colour": [
         "Cor de fundo"
       ],
       "Delete": [
         "Excluir"
+      ],
+      "Delete link": [
+        "Excluir link"
       ],
       "Delete paragraph": [
         "Excluir parágrafo"
@@ -541,8 +570,14 @@
       "Replace": [
         "Substituir"
       ],
+      "Replace link": [
+        "Substituir link"
+      ],
       "Text colour": [
         "Cor do texto"
+      ],
+      "with \"${ replaceWith }\"": [
+        "por \"${ replaceWith }\""
       ]
     },
     "Placeholder": {

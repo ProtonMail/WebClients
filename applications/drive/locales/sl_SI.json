@@ -390,6 +390,9 @@
       "Get verification code": [
         "Pridobi kodo za preverjanje"
       ],
+      "Go back": [
+        "Pojdi nazaj"
+      ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Pojdi na ${ DRIVE_SHORT_APP_NAME }"
       ],
@@ -2402,6 +2405,11 @@
         "Prednostna podpora"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Pridobi ${ BRAND_NAME } Duo"
+      ]
+    },
     "duoplan2024: Info": {
       "1 TB storage": [
         "1 TB prostora za shranjevanje"
@@ -2414,6 +2422,11 @@
       ],
       "You save ${ amountSave }": [
         "Prihranite ${ amountSave }"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Predstavljamo ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Email body for description (description part)": {
@@ -6795,6 +6808,9 @@
       "Administration Panel": [
         "Skrbniška plošča"
       ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Vse premijske storitve ${ BRAND_NAME }. Ena preprosta naročnina"
+      ],
       "Auto-delete Spam and Trash": [
         "Samodejno brisanje neželene pošte in smeti"
       ],
@@ -6891,6 +6907,9 @@
       "GDPR data processing agreement": [
         "GDPR pogodba o obdelavi podatkov"
       ],
+      "Generate emails with a prompt": [
+        "Ustvarite e-pošto s pozivom"
+      ],
       "Group management (coming soon)": [
         "Upravljanje skupin (kmalu)"
       ],
@@ -6935,6 +6954,9 @@
       ],
       "Password-protected Emails": [
         "E-pošta, zaščitena z geslom"
+      ],
+      "Phone support (20+ users)": [
+        "Telefonska podpora (20+ uporabnikov)"
       ],
       "Priority email support": [
         "Prednostna podpora po e-pošti"
@@ -7733,16 +7755,46 @@
       ]
     },
     "Onboarding Action": {
+      "Continue": [
+        "Nadaljuj"
+      ],
+      "Create new document": [
+        "Ustvari nov dokument"
+      ],
+      "Get started": [
+        "Začnite"
+      ],
+      "Maybe later": [
+        "Morda kasneje"
+      ],
       "Next": [
         "Naprej"
       ],
+      "Select theme": [
+        "Izberite temo"
+      ],
+      "Skip": [
+        "Preskoči"
+      ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Začnite uporabljati ${ DRIVE_APP_NAME }"
+      ],
+      "Upload file": [
+        "Naloži datoteko"
+      ],
+      "Upload folder": [
+        "Naloži mapo"
       ]
     },
     "Onboarding Info": {
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Začnite uporabljati ${ DRIVE_APP_NAME } in vaš prostor za shranjevanje bomo nadgradili na 5 GB!"
+      ],
+      "Get the desktop app": [
+        "Prenesite program za namizja"
+      ],
+      "Get the mobile app": [
+        "Priskrbite si mobilno aplikacijo"
       ],
       "Introducing ${ DOCS_APP_NAME }": [
         "Predstavljamo ${ DOCS_APP_NAME }"
@@ -8554,6 +8606,9 @@
       "/ month": [
         "/mesec"
       ],
+      "/month": [
+        "/mesec"
+      ],
       "1 year": [
         "1 leto"
       ],
@@ -8902,6 +8957,9 @@
       ],
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } vključno z neomejenimi vzdevki hide-my-email"
+      ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } z ${ DARK_WEB_MONITORING_NAME }"
       ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } shrambe na uporabnika"

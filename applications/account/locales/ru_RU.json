@@ -808,11 +808,11 @@
       "Refresh status": [
         "Обновить статус"
       ],
-      "refresh the page": [
-        "обновить страницу"
-      ],
       "Refresh the page": [
         "Обновить страницу"
+      ],
+      "refresh the page": [
+        "обновить страницу"
       ],
       "Reload": [
         "Перезагрузить"
@@ -1384,6 +1384,9 @@
       "External": [
         "Внешний"
       ],
+      "Inactive": [
+        "Неактивный"
+      ],
       "No E2EE mail": [
         "Нет зашифрованной сквозным методом почты"
       ],
@@ -1621,6 +1624,14 @@
         "Выберите Новогоднее предложение"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Извини, это предложение недоступно с твоим текущим планом."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Хранилище размером 6 ТБ (в 2 раза больше, чем с другими тарифами)"
@@ -1642,14 +1653,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Тариф ${ plan } вернулся на ограниченное время"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Извини, это предложение недоступно с твоим текущим планом."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3413,6 +3416,9 @@
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Автоматически удаляйте спам и сообщения в Корзине, а также откройте дополнительные платные функции при обновлении."
       ],
+      "Available with ${ BRAND_NAME } Mail plus": [
+        "Доступно с помощью ${ BRAND_NAME } Mail plus"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Поздравляем! Вы заработали максимальное количество из ${ rewardsLimit } бесплатных месяцев ${ plusPlanName }."
       ],
@@ -3436,6 +3442,12 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Похоже, что список контактов, который вы импортируете, содержит группы. Пожалуйста, уточните, как их нужно импортировать."
+      ],
+      "Keep different parts of your life separate and your inbox organized with additional addresses.": [
+        "Разделите разные части своей жизни и упорядочьте свой почтовый ящик с помощью дополнительных адресов."
+      ],
+      "Make your email footer your own — showcase your unique brand, not ours.": [
+        "Сделайте свой собственный нижний колонтитул электронной почты — демонстрируйте свой уникальный бренд, а не наш."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Выделите различные аспекты своей жизни с помощью нескольких адресов электронной почты и получите доступ к дополнительным функциям при обновлении тарифа."
@@ -5282,6 +5294,9 @@
       "You need to configure a custom domain before creating a new user.": [
         "Перед регистрацией нового пользователя необходимо настроить пользовательский домен."
       ],
+      "You will lose access to all premium features and storage space included with ${ plan }.": [
+        "Вы потеряете доступ ко всем платным функциям и месту в хранилище, включенным в ${ plan }."
+      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Вам предложили присоединить аккаунт ${ BRAND_NAME } к групповому тарифу для совместного использования всех платных функций ${ BRAND_NAME_TWO }."
       ],
@@ -5296,6 +5311,12 @@
       ]
     },
     "familyOffer_2023:Info": {
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Только одна бесплатная пробная версия для одного пользователя. После этого действуют обычные цены."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "После выхода из вашего тарифа этот пользователь будет переведен на тариф ${ BRAND_NAME } Безлимитный тариф с 30-дневным пробным периодом.*"
+      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "По умолчанию администратору доступно ${ formattedStorage } хранилища. В дальнейшем вы сможете перераспределить доступный объем между дополнительными пользователями."
       ],
@@ -5356,6 +5377,9 @@
       ],
       "An error occurred, please try again": [
         "Произошла ошибка. Попробуйте еще раз"
+      ],
+      "Family name updated": [
+        "Фамилия обновлена"
       ],
       "Member updated": [
         "Участник обновлен"
@@ -5869,6 +5893,11 @@
       ],
       "Services": [
         "Службы"
+      ]
+    },
+    "Group address title": {
+      "Group address": [
+        "Адрес группы"
       ]
     },
     "Group member count": {
@@ -7142,11 +7171,11 @@
       "Data locked": [
         "Данные заблокированы"
       ],
-      "Dedicated servers": [
-        "Выделенные серверы"
-      ],
       "dedicated servers": [
         "выделенные серверы"
+      ],
+      "Dedicated servers": [
+        "Выделенные серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
@@ -9411,6 +9440,11 @@
         "Помощник с искусственным интеллектом поможет вам быстро и без усилий создавать лучшие электронные письма."
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "Недействительный адрес электронной почты"
+      ]
+    },
     "Input label": {
       "Link label (optional)": [
         "Ярлык ссылки (необязательно)"
@@ -9427,6 +9461,12 @@
       ],
       "Paused": [
         "Приостановлено"
+      ],
+      "Pending": [
+        "Ожидающий"
+      ],
+      "Sending invite...": [
+        "Отправка приглашения..."
       ]
     },
     "Invoice state display as badge": {
@@ -11669,6 +11709,26 @@
         "Средняя скорость VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "От: ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Начните с ${ price }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Продолжить с Free"
@@ -11696,26 +11756,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Улучшить до ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "От: ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Начните с ${ price }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
       ]
     },
     "new_plans: feature": {
@@ -12421,6 +12461,17 @@
         "Вы выбрали тариф: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробная версия ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Оформите Mail Plus за ${ price }"
+      ],
+      "Your account's usage": [
+        "Использование вашего аккаунта"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -12439,17 +12490,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Улучшите тариф и разблокируйте платные функции"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробная версия ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Оформите Mail Plus за ${ price }"
-      ],
-      "Your account's usage": [
-        "Использование вашего аккаунта"
       ]
     },
     "new_plans: tooltip": {
@@ -13252,6 +13292,29 @@
         "Пользователи будут видеть ваш логотип вместо значка ${ BRAND_NAME } при входе в наши веб-приложения."
       ]
     },
+    "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify } ваш адрес электронной почты ${ email } для установки личных данных организации."
+      ],
+      "Current organization identity": [
+        "Текущие личные данные организации"
+      ],
+      "Edit organization identity": [
+        "Изменить личные данные организации"
+      ],
+      "New organization identity": [
+        "Новые личные данные организации"
+      ],
+      "Organization identity": [
+        "Личные данные организации"
+      ],
+      "Organization identity updated": [
+        "Личные данные организации обновлены"
+      ],
+      "Verify": [
+        "Проверить"
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (для Debian/Ubuntu)"
@@ -13982,6 +14045,9 @@
       ]
     },
     "placeholder": {
+      "e.g. marketing": [
+        "например, маркетинг"
+      ],
       "Members": [
         "Участники"
       ]
@@ -14462,6 +14528,9 @@
       ]
     },
     "saml: Info": {
+      "An error occurred while testing your SSO configuration.": [
+        "Произошла ошибка при проверке конфигурации SSO."
+      ],
       "Details": [
         "Информация"
       ],
@@ -14470,6 +14539,9 @@
       ],
       "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
         "Чтобы проверить эту конфигурацию SAML, пожалуйста, введите учётные данные для пользователя, связанного с **${ domainName }**"
+      ],
+      "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
+        "Мы получили действительный ответ SAML от вашего поставщика личных данных. SSO включен для вашей организации."
       ],
       "We’re testing your configuration to ensure SSO is working.": [
         "Мы проверяем вашу конфигурацию, чтобы убедиться, что SSO работает."
@@ -14483,6 +14555,12 @@
     "saml: Title": {
       "It works!": [
         "Сработало!"
+      ],
+      "Test SAML configuration": [
+        "Проверить конфигурацию SAML"
+      ],
+      "Testing SAML configuration": [
+        "Проверка конфигурации SAML"
       ]
     },
     "scim: Action": {
@@ -16645,6 +16723,9 @@
       "Amount due": [
         "К оплате"
       ],
+      "An address for each role": [
+        "Адрес для каждой должности"
+      ],
       "App": [
         "Приложение"
       ],
@@ -16699,10 +16780,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [
@@ -17301,6 +17382,9 @@
       ],
       "PayPal verification failed": [
         "Сбой проверки PayPal"
+      ],
+      "Personalize your email footer": [
+        "Персонализируйте нижний колонтитул электронной почты"
       ],
       "Phone": [
         "Телефон"
@@ -17993,6 +18077,9 @@
       ],
       "User declined invitation": [
         "Пользователь отклонил приглашение"
+      ],
+      "Waiting user to accept the invitation": [
+        "Ожидание принятия приглашения пользователем"
       ]
     },
     "Tooltip automatically attach public key": {

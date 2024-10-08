@@ -808,10 +808,10 @@
       "Refresh status": [
         "Odśwież status"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Odśwież stronę"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Odśwież stronę"
       ],
       "Reload": [
@@ -1624,6 +1624,14 @@
         "Wybierz ofertę końcoworoczną"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Oferta nie jest dostępna w obecnym planie."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Oferta nie jest dostępna w obecnym planie. Możesz uzyskać **${ discountPercentage } zniżki na plan ${ plan.Title }** przy subskrypcji na **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB przestrzeni dyskowej (2 razy więcej niż w innych planach)"
@@ -1645,14 +1653,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Plan ${ plan } wraca w ograniczonej czasowo ofercie"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Oferta nie jest dostępna w obecnym planie."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Oferta nie jest dostępna w obecnym planie. Możesz uzyskać **${ discountPercentage } zniżki na plan ${ plan.Title }** przy subskrypcji na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3410,8 +3410,20 @@
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Automatyczne usuwanie Spamu i Kosza oraz odblokowanie funkcji premium po ulepszeniu konta."
       ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Automatyczne usuwanie wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Automatycznie sortuj przychodzące wiadomości, zanim dotrą do skrzynki odbiorczej."
+      ],
+      "Available with ${ BRAND_NAME } Mail plus": [
+        "Funkcja dostępna w planie ${ BRAND_NAME } Mail Plus"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Gratulacje! Przyznano maksymalną liczbę ${ rewardsLimit } darmowych miesięcy planu ${ plusPlanName }."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Utwórz tyle etykiet lub folderów, ile potrzebujesz, aby utrzymać porządek w skrzynce odbiorczej."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Włącz ${ PROTON_SENTINEL_NAME }, aby uzyskać dostęp do tych funkcji"
@@ -3434,6 +3446,12 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Lista kontaktów, którą importujesz, zawiera grupy. Sprawdź, jak te grupy powinny zostać zaimportowane."
       ],
+      "Keep different parts of your life separate and your inbox organized with additional addresses.": [
+        "Rozdziel różne części swojego życia i uporządkuj skrzynkę odbiorczą za pomocą dodatkowych adresów."
+      ],
+      "Make your email footer your own — showcase your unique brand, not ours.": [
+        "Stwórz własną stopkę e-mail - zaprezentuj swoją unikalną markę, a nie naszą."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Oddziel różne aspekty swojego życia dzięki wielu adresom e-mail i odblokuj więcej funkcji premium po ulepszeniu konta."
       ],
@@ -3445,6 +3463,9 @@
       ],
       "Track the status and activity of your referrals.": [
         "Sprawdź status i aktywność linku polecającego."
+      ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Odblokuj ${ activatePmUser }, aby uzyskać łatwy i chwytliwy adres e-mail."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Ulepsza konto, aby odblokować krótsze adresy e-mail i inne funkcje premium."
@@ -6952,7 +6973,7 @@
         "Czy na pewno chcesz usunąć domenę ${ boldDomain }?"
       ],
       "Ask your organization admin to setup Gateways.": [
-        "Poproś administratora organizacji, aby skonfigurował bramy."
+        "Poproś administratora organizacji o skonfigurowanie bram."
       ],
       "Attention required": [
         "Wymagana uwaga"
@@ -7075,10 +7096,10 @@
         "Zamknij te okno, aby wyjść."
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
-        "Skonfiguruj uwierzytelnianie SAML dla swojej organizacji za pomocą dostawcy tożsamości (IdP). Spowoduje to włączenie SAML dla całej organizacji."
+        "Skonfiguruj uwierzytelnianie SAML dla swojej organizacji przy pomocy dostawcy tożsamości (IdP). Spowoduje to włączenie SAML dla całej organizacji."
       ],
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
-        "Skonfiguruj uwierzytelnianie SAML dlaorganizacji za pomocą dostawcy tożsamości, takiego jak Okta, Microsoft Azure lub Google Identity Platform. Spowoduje to włączenie SAML dla całej organizacji."
+        "Skonfiguruj uwierzytelnianie SAML dla organizacji przy pomocy dostawcy tożsamości, takiego jak Okta, Microsoft Azure lub Google Identity Platform. Spowoduje to włączenie SAML dla całej organizacji."
       ],
       "Continue with ${ freeName }": [
         "Kontynuuj z planem ${ freeName }"
@@ -7185,11 +7206,11 @@
       "Data locked": [
         "Dane są zablokowane"
       ],
-      "Dedicated servers": [
-        "Dedykowane serwery"
-      ],
       "dedicated servers": [
         "dedykowane serwery"
+      ],
+      "Dedicated servers": [
+        "Dedykowane serwery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedykowane serwery z dedykowanymi adresami IP można dodać do prywatnych bram, aby precyzyjnie kontrolować dostęp do nich."
@@ -9083,6 +9104,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Uruchomisz nową kartę przeglądarki i przejdziesz do:"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Uruchomisz domyślną przeglądarkę i przejdziesz do:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Zalogowano jako ${ user.Name } (${ user.Email })."
@@ -11723,6 +11747,32 @@
         "Umiarkowana prędkość VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Od ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Od ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Ulepsz plan do wersji ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Kontynuuj z planem Free"
@@ -11750,26 +11800,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Ulepszenie do planu ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
       ]
     },
     "new_plans: feature": {
@@ -12475,6 +12505,20 @@
         "Wybrany plan: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Wersja próbna planu ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Wybierz plan Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Od ${ price }"
+      ],
+      "Your account's usage": [
+        "Użycie konta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -12493,17 +12537,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Odblokuj funkcje premium poprzez ulepszenie"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Wersja próbna planu ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Wybierz plan Mail Plus za ${ price }"
-      ],
-      "Your account's usage": [
-        "Użycie konta"
       ]
     },
     "new_plans: tooltip": {
@@ -14294,7 +14327,7 @@
     },
     "Safety review": {
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
-        "**Włącz odzyskiwanie przez telefon**, aby odzyskać dostęp do konta w przypadku zapomnienia hasła."
+        "**Włącz odzyskiwanie przez telefon**, aby odzyskać dostęp do konta w przypadku utraty hasła."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
         "${ BRAND_NAME } użyje tego adresu do wysłania kodu resetowania hasła."
@@ -14306,7 +14339,7 @@
         "${ enableDeviceRecovery }, aby zapewnić możliwość odzyskania dostępu."
       ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
-        "**Włącz odzyskiwanie przez e-mail**, aby odzyskać dostęp do konta w przypadku zapomnienia hasła."
+        "**Włącz odzyskiwanie przez e-mail**, aby odzyskać dostęp do konta w przypadku utraty hasła."
       ],
       "Account safety review": [
         "Bezpieczeństwo konta"
@@ -14471,10 +14504,10 @@
         "Możesz użyć hasła odzyskiwania z zestawu odzyskiwania, aby przywrócić konto po zresetowaniu hasła. Upewnij się, że przechowujesz je w bezpiecznym miejscu."
       ],
       "You can use your recovery email to regain access to your account if you forget your password.": [
-        "Możesz użyć adresu pomocniczego, aby odzyskać dostęp do konta w przypadku zapomnienia hasła."
+        "Możesz użyć adresu pomocniczego, aby odzyskać dostęp do konta w przypadku utraty hasła."
       ],
       "You can use your recovery phone to regain access to your account if you forget your password.": [
-        "Możesz użyć numeru pomocniczego, aby odzyskać dostęp do konta w przypadku zapomnienia hasła."
+        "Możesz użyć numeru pomocniczego, aby odzyskać dostęp do konta w przypadku utraty hasła."
       ],
       "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
         "Pobrano wcześniej zestaw odzyskiwania. Pobranie nowego **dezaktywuje stary zestaw**."
@@ -15346,6 +15379,9 @@
         "${ n } miesiąca"
       ],
       "/ month": [
+        "/ miesiąc"
+      ],
+      "/month": [
         "/ miesiąc"
       ],
       "1 year": [
@@ -16760,6 +16796,9 @@
       "Amount due": [
         "Do zapłaty"
       ],
+      "An address for each role": [
+        "Adres dla każdej roli"
+      ],
       "App": [
         "Aplikacja"
       ],
@@ -16814,10 +16853,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
       "Change login password": [
@@ -17168,6 +17207,9 @@
         "Nie udało się utworzyć ${ failedUsers.length } kont użytkowników.",
         "Nie udało się utworzyć ${ failedUsers.length } kont użytkowników."
       ],
+      "Filter for more focus": [
+        "Filtruj dla większej przejrzystości"
+      ],
       "Filter name cannot contain only spaces": [
         "Nazwa filtra nie może zawierać tylko spacji"
       ],
@@ -17348,6 +17390,9 @@
       "My calendars": [
         "Moje kalendarze"
       ],
+      "Need more labels or folders?": [
+        "Potrzebujesz więcej etykiet lub folderów?"
+      ],
       "Network error": [
         "Błąd sieci"
       ],
@@ -17359,6 +17404,9 @@
       ],
       "No account information was found in any data breaches": [
         "Brak informacji o koncie w wyciekach danych"
+      ],
+      "No need to empty the trash": [
+        "Nie musisz opróżniać Kosza"
       ],
       "No recovery method": [
         "Brak metody odzyskiwania"
@@ -17417,6 +17465,9 @@
       "PayPal verification failed": [
         "Weryfikacja płatności PayPal nie powiodła się"
       ],
+      "Personalize your email footer": [
+        "Spersonalizuj stopkę wiadomości"
+      ],
       "Phone": [
         "Telefon"
       ],
@@ -17443,6 +17494,9 @@
       ],
       "QRCode": [
         "Kod QR"
+      ],
+      "Ready, set, forward": [
+        "Gotowy, do startu, naprzód"
       ],
       "Recommended": [
         "Zalecany"
@@ -17509,6 +17563,9 @@
       ],
       "Revoke certificate": [
         "Unieważnij certyfikat"
+      ],
+      "Same inbox, shorter email address": [
+        "Ta sama skrzynka odbiorcza, krótszy adres e-mail"
       ],
       "SAML authentication": [
         "Uwierzytelnianie SAML"
@@ -18165,10 +18222,10 @@
     },
     "unprivatization": {
       "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
-        "${ n } użytkownik dołączył do organizacji za pomocą dostawcy tożsamości. Zatwierdź lub odrzuć konto:",
-        "${ n } użytkowników dołączyło do organizacji za pomocą dostawcy tożsamości. Zatwierdź lub odrzuć konta:",
-        "${ n } użytkowników dołączyło do organizacji za pomocą dostawcy tożsamości. Zatwierdź lub odrzuć konta:",
-        "${ n } użytkowników dołączyło do organizacji za pomocą dostawcy tożsamości. Zatwierdź lub odrzuć konta:"
+        "${ n } użytkownik dołączył do organizacji przy pomocy dostawcy tożsamości. Zatwierdź lub odrzuć konto:",
+        "${ n } użytkowników dołączyło do organizacji przy pomocy dostawcy tożsamości. Zatwierdź lub odrzuć konta:",
+        "${ n } użytkowników dołączyło do organizacji przy pomocy dostawcy tożsamości. Zatwierdź lub odrzuć konta:",
+        "${ n } użytkowników dołączyło do organizacji przy pomocy dostawcy tożsamości. Zatwierdź lub odrzuć konta:"
       ],
       "Administrator access enabled": [
         "Dostęp administratora został włączony"

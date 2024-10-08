@@ -1203,6 +1203,9 @@
       "Start setup": [
         "Пачаць наладжванне"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Пачатковы кошт ${ priceUnlimited }"
+      ],
       "Stay": [
         "Застацца"
       ],
@@ -1316,6 +1319,9 @@
       ],
       "Upgrade now": [
         "Палепшыць зараз"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Палепшыць да ${ BRAND_NAME } Unlimited"
       ],
       "Upload picture": [
         "Запампаваць малюнак"
@@ -3445,11 +3451,23 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } у наладах."
       ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс з дапамогай адмысловага кругласутачнага назірання падазроных дзеянняў. Гэты сэрвіс таксама прадугледжвае перадачу спецыялістам па бяспецы."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2ФА дадае дадатковы слой бяспекі, каб прадухіліць неаўтарызаваны доступ."
       ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Аўтаматычнае выдаленне спама і паведамленняў, якія былі перамешчаны ў сметніцу, а таксама разблакіроўка яшчэ большай колькасці прэміяльных функцый пасля паляпшэння тарыфнага плана."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Аўтаматычна ачышчайце лісты, якія перамешчаны ў Сметніцу і Спам больш за 30 дзён таму."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Аўтаматычна сартуйце свае ўваходныя паведамленні перад тым, як яны трапяць у вашу паштовую скрыню."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Стварайце любую колькасць метак або папак, каб падтрымліваць парадак у сваёй паштовай скрыні."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Расшыфроўка кантактаў... Гэта можа заняць некалькі хвілін. Пасля завяршэння працэсу ў вас будзе магчымасць спампаваць файл з усімі экспартаванымі кантактамі."
@@ -3459,6 +3477,9 @@
       ],
       "Designed for users seeking heightened protection for their accounts.": [
         "Распрацаваны для карыстальнікаў, якія шукаюць дадатковую абарону для сваіх уліковых запісаў."
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "Не хочаце адпраўляць ліст цяпер? Заплануйце яго адпраўку на падыходзячы час."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шыфраванне і імпартаванне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
@@ -3523,6 +3544,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Уключыце абарону ад праграм сачэння электроннай пошты, каб прадухіліць рэкламу і іншыя спосабы вызначэння вашага месцазнаходжання і актыўнасці ў інтэрнэце."
       ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Разблакіруйце ${ activatePmUser }, каб атрымаць больш кароткі і просты для ўводу адрас электроннай пошты."
+      ],
       "Unlock custom message scheduling and more premium features when you upgrade.": [
         "Разблакіруйце магчымасць ствараць карыстальніцкі расклад адпраўкі паведамленняў і іншыя прэміяльныя функцыі пасля паляпшэння свайго тарыфнага плана."
       ],
@@ -3553,6 +3577,12 @@
       "When do you want your message to be sent?": [
         "Калі вы хочаце, каб ваша паведамленне было адпраўлена?"
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Вы можаце адпраўляць лісты кожнаму ўдзельніку ў групе адным націскам з дапамогай груп кантактаў."
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "З дапамогай карыстальніцкай адкладання вы можаце хаваць электронныя лісты і задаваць іх паўторнае з'яўленне ў падыходзячы час."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Вы можаце імпартаваць падзеі ў фармаце iCal (файл ICS). Максімальна памер файла павінен быць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець не больш за ${ MAX_IMPORT_EVENTS_STRING } падзей. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі."
       ],
@@ -3564,6 +3594,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Спосабы аднаўлення вашага ўліковага запісу зададзены."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -5290,6 +5323,23 @@
       ],
       "Sign in with Google": [
         "Увайсці праз Google"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Далучыцца да Google Meet"
+      ],
+      "Joining instructions": [
+        "Інструкцыі па далучэнні"
+      ],
+      "Less details": [
+        "Менш падрабязна"
+      ],
+      "Meeting link:": [
+        "Спасылка сустрэчы:"
+      ],
+      "More details": [
+        "Больш падрабязна"
       ]
     },
     "Group": {
@@ -7551,6 +7601,9 @@
       "You are about to open another browser tab and visit:": [
         "Вы збіраецеся адкрыць іншую ўкладку браўзера і наведаць:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Вы збіраецеся адкрыць прадвызначаны браўзер і наведаць:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Вы ўжо ўвайшлі як ${ user.Name } (${ user.Email })."
       ],
@@ -9285,8 +9338,14 @@
       "Get started for ${ price }": [
         "Пачніце з коштам у памеры ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Пачатковы кошт ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Палепшыць зараз"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Палепшыць да ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -9902,6 +9961,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Атрымайце Mail Plus за ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Пачатковы кошт ${ price }"
       ]
     },
     "new_plans: title": {
@@ -10210,6 +10272,9 @@
       ],
       "Link copied to clipboard": [
         "Спасылка скапіявана ў буфер абмену"
+      ],
+      "Passcode copied to clipboard": [
+        "Код доступу скапіяваны ў буфер абмену"
       ],
       "Password has been set successfully": [
         "Пароль быў паспяхова прызначаны"
@@ -11549,6 +11614,9 @@
       ],
       "/ month": [
         "/ месяц"
+      ],
+      "/month": [
+        "/месяц"
       ],
       "1 year": [
         "1 год"
@@ -12923,6 +12991,9 @@
       "Attachments": [
         "Далучэнні"
       ],
+      "Bad time for this email?": [
+        "Не падыходзячы час для гэтага ліста?"
+      ],
       "BCC": [
         "Схаваная копія"
       ],
@@ -13157,6 +13228,9 @@
       "External encryption": [
         "Знешняе шыфраванне"
       ],
+      "Filter for more focus": [
+        "Фільтр для большай канцэнтрацыі"
+      ],
       "Filter name cannot contain only spaces": [
         "Назва фільтра не можа змяшчаць толькі прабелы"
       ],
@@ -13183,6 +13257,9 @@
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Схавайце сваю электронную пошту з дапамогай ${ PASS_APP_NAME }"
+      ],
+      "High security for your account": [
+        "Высокая бяспека для вашага ўліковага запісу"
       ],
       "How to update your email address": [
         "Як абнавіць адрас электроннай пошты"
@@ -13325,6 +13402,9 @@
       "Need more aliases?": [
         "Патрабуецца больш псеўданімаў?"
       ],
+      "Need more labels or folders?": [
+        "Неабходна больш метак або папак?"
+      ],
       "Network error": [
         "Памылка сеткі"
       ],
@@ -13346,6 +13426,9 @@
       "No breaches detected": [
         "Уцечкі не выяўлены"
       ],
+      "No need to empty the trash": [
+        "Няма неабходнасці ачышчаць сметніцу"
+      ],
       "No trackers found": [
         "Праграмы сачэння не знойдзены"
       ],
@@ -13354,6 +13437,9 @@
       ],
       "Notes": [
         "Нататкі"
+      ],
+      "One email, many recipients": [
+        "Адна электронная пошта, шмат атрымальнікаў"
       ],
       "Open actions dropdown": [
         "Адкрыць спіс даступных дзеянняў"
@@ -13430,8 +13516,14 @@
       "Request new code": [
         "Запытаць новы код"
       ],
+      "Same inbox, shorter email address": [
+        "Тая ж паштовая скрыня, карацейшы адрас электроннай пошты"
+      ],
       "Save time with email filters": [
         "Эканомія часу з паштовымі фільтрамі"
+      ],
+      "Schedule now, send later": [
+        "Заплануйце цяпер, а адпраўце пазней"
       ],
       "Schedule send": [
         "Запланаваць адпраўку"
@@ -14275,6 +14367,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Штогод, ${ untilString }"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Далучыцца да сустрэчы ў Zoom"
+      ],
+      "Meeting ID:": [
+        "Ідэнт. сустрэчы:"
+      ],
+      "Passcode: ${ password }": [
+        "Код доступу: ${ password }"
       ]
     }
   }

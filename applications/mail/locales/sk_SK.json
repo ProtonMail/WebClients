@@ -1203,6 +1203,9 @@
       "Start setup": [
         "Spustiť nastavenie"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Cena od ${ priceUnlimited }"
+      ],
       "Stay": [
         "Zostať"
       ],
@@ -1316,6 +1319,9 @@
       ],
       "Upgrade now": [
         "Aktualizovať teraz"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Navýšiť na ${ BRAND_NAME } Unlimited"
       ],
       "Upload picture": [
         "Nahrať obrázok"
@@ -3445,11 +3451,23 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } v nastavení."
       ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } chráni váš účet pomocou nepretržitého monitorovania podozrivých aktivít - vrátane eskalácie na bezpečnostných špecialistov."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA pridáva ďalšiu úroveň zabezpečenia a zabraňuje neoprávnenému prístupu."
       ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Po navýšení je možné automaticky mazať správy zo zložky nevyžiadanej pošty a koša a odomknúť ďalšie prémiové funkcie."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Automatické mazanie emailov presunutých do koša a spamu pred viac než 30 dňami."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Automatické triedenie prichádzajúcich správ pred ich doručením do schránky."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Vytvorte si toľko štítkov alebo priečinkov, koľko potrebujete na udržanie poriadku v doručenej pošte."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifrovanie kontaktov… Táto akcia môže trvať niekoľko minút. Akonáhle bude proces ukončený, budete si môcť stiahnuť súbor s vašimi exportovanými kontaktmi."
@@ -3459,6 +3477,9 @@
       ],
       "Designed for users seeking heightened protection for their accounts.": [
         "Určené pre používateľov, ktorí hľadajú zvýšenú ochranu svojich účtov."
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "Nechcete odoslať váš email hneď teraz? Naplánujte si ho presne na ten správny čas."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrovanie a import kontaktov... Táto akcia môže trvať niekoľko minút. Akonáhle je proces ukončený, môžete zavrieť tento modul."
@@ -3523,6 +3544,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Zapnite ochranu sledovania emailov, aby ste zabránili inzerentom a ostatným v sledovaní vašej polohy a online aktivity."
       ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Odomknite ${ activatePmUser } pre chytľavú a ľahko napísateľnú emailovú adresu."
+      ],
       "Unlock custom message scheduling and more premium features when you upgrade.": [
         "Navýšením si odomknete vlastné plánovanie odoslania správ a ďalšie prémiové funkcie."
       ],
@@ -3553,6 +3577,12 @@
       "When do you want your message to be sent?": [
         "Kedy si prajete odoslať vašu správu?"
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Pomocou skupín kontaktov môžete posielať emaily všetkým členom skupiny jedným kliknutím."
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "Pomocou vlastného odloženia môžete emaily skryť a nastaviť ich opätovné zobrazenie vo vhodnejšom čase."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Môžete importovať udalosti vo formáte iCal (ICS súbor). Tento súbor by mal mať maximálnu veľkosť ${ MAX_IMPORT_FILE_SIZE_STRING } a maximálne ${ MAX_IMPORT_EVENTS_STRING } udalostí. Ak je váš súbor väčší, prosím rozdeľte ho na menšie súbory."
       ],
@@ -3564,6 +3594,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Váš účet a metódy obnovy údajov sú nastavené."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -5290,6 +5323,23 @@
       ],
       "Sign in with Google": [
         "Prihlásiť sa cez Google"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Pripojiť sa ku Google Meet"
+      ],
+      "Joining instructions": [
+        "Pokyny na pripojenie"
+      ],
+      "Less details": [
+        "Menej detailov"
+      ],
+      "Meeting link:": [
+        "Odkaz na schôdzku:"
+      ],
+      "More details": [
+        "Viac detailov"
       ]
     },
     "Group": {
@@ -7551,6 +7601,9 @@
       "You are about to open another browser tab and visit:": [
         "Chystáte sa otvoriť stránku v inom prehliadači:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Chystáte sa otvoriť váš predvolený prehliadač a navštíviť:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Momentálne ste prihlásený ako ${ user.Name } (${ user.Email })."
       ],
@@ -9285,8 +9338,14 @@
       "Get started for ${ price }": [
         "Začnite za ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Cena od ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Aktualizovať teraz"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Navýšte na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -9902,6 +9961,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Získajte Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Cena od ${ price }"
       ]
     },
     "new_plans: title": {
@@ -10211,6 +10273,9 @@
       "Link copied to clipboard": [
         "Odkaz bol skopírovaný do schránky"
       ],
+      "Passcode copied to clipboard": [
+        "Prístupový kód skopírovaný do schránky"
+      ],
       "Password has been set successfully": [
         "Heslo bolo úspešne nastavené"
       ],
@@ -10252,7 +10317,7 @@
         "Financie"
       ],
       "I have moved my logins to ${ BRAND_NAME }": [
-        "Mám presunuté svoje prihlasovacie údaje do ${ BRAND_NAME }"
+        "Presunul som svoje prihlasovacie údaje do ${ BRAND_NAME }"
       ],
       "Privacy for all your online accounts": [
         "Ochrana súkromia všetkých vašich online účtov"
@@ -10383,7 +10448,7 @@
         "Vitajte v ${ MAIL_APP_NAME }"
       ],
       "Where privacy is default.": [
-        "Kde súkromie je na prvom mieste."
+        "Kde je súkromie na prvom mieste."
       ]
     },
     "Onboarding Proton": {
@@ -11549,6 +11614,9 @@
       ],
       "/ month": [
         "/ mesiac"
+      ],
+      "/month": [
+        "/mesiac"
       ],
       "1 year": [
         "1 rok"
@@ -12923,6 +12991,9 @@
       "Attachments": [
         "Prílohy"
       ],
+      "Bad time for this email?": [
+        "Nevhodný čas na tento email?"
+      ],
       "BCC": [
         "Skrytá kópia (BCC)"
       ],
@@ -13157,6 +13228,9 @@
       "External encryption": [
         "Externé šifrovanie"
       ],
+      "Filter for more focus": [
+        "Filtre pre lepšie sústredenie"
+      ],
       "Filter name cannot contain only spaces": [
         "Názov filtra nesmie obsahovať iba medzery"
       ],
@@ -13183,6 +13257,9 @@
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Ukryte svoj email pomocou ${ PASS_APP_NAME }"
+      ],
+      "High security for your account": [
+        "Vysoké zabezpečenie vášho účtu"
       ],
       "How to update your email address": [
         "Ako aktualizovať emailovú adresu"
@@ -13325,6 +13402,9 @@
       "Need more aliases?": [
         "Potrebujete viac aliasov?"
       ],
+      "Need more labels or folders?": [
+        "Potrebujete viac štítkov alebo priečinkov?"
+      ],
       "Network error": [
         "Chyba siete"
       ],
@@ -13346,6 +13426,9 @@
       "No breaches detected": [
         "Nebol zistený únik"
       ],
+      "No need to empty the trash": [
+        "Kôš nie je potrebné vyprázdniť"
+      ],
       "No trackers found": [
         "Neboli nájdené žiadne trackery."
       ],
@@ -13354,6 +13437,9 @@
       ],
       "Notes": [
         "Poznámky"
+      ],
+      "One email, many recipients": [
+        "Jeden email, množstvo príjemcov"
       ],
       "Open actions dropdown": [
         "Otvoriť rozbaľovaciu ponuku"
@@ -13430,8 +13516,14 @@
       "Request new code": [
         "Vyžiadať nový kód"
       ],
+      "Same inbox, shorter email address": [
+        "Rovnaká schránka, kratšia emailová adresa"
+      ],
       "Save time with email filters": [
         "Ušetrite čas pomocou emailových filtrov"
+      ],
+      "Schedule now, send later": [
+        "Naplánujte teraz, odošlite neskôr"
       ],
       "Schedule send": [
         "Naplánovať odoslanie"
@@ -14275,6 +14367,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Ročne, ${ untilString }"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Pripojte sa k stretnutiu na Zoome"
+      ],
+      "Meeting ID:": [
+        "ID schôdzky:"
+      ],
+      "Passcode: ${ password }": [
+        "Prístupový kód: ${ password }"
       ]
     }
   }

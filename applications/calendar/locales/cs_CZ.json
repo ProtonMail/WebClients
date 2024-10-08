@@ -671,6 +671,9 @@
       "Start setup": [
         "Spustit nastavení"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Cena od ${ priceUnlimited }"
+      ],
       "Stay": [
         "Zůstat"
       ],
@@ -724,6 +727,9 @@
       ],
       "Upgrade now": [
         "Navýšit nyní"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Navýšit na ${ BRAND_NAME } Unlimited"
       ],
       "Upload picture": [
         "Nahrát obrázek"
@@ -2487,6 +2493,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } chrání váš účet pomocí nepřetržitého monitorování podezřelých aktivit — včetně eskalace na bezpečnostní specialisty."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA přidává další úroveň zabezpečení a zabraňuje neoprávněnému přístupu."
       ],
@@ -2495,6 +2504,9 @@
       ],
       "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
         "Lépe si zorganizujte den, sledujte svůj čas a určujte priority úkolů. Barevně označte kalendář pomocí vlastních barev událostí."
+      ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "Barevné označení událostí vám usnadní organizaci dne, sledování času a určování priorit úkolů."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifrování kontaktů… Tato akce může trvat několik minut. Jakmile bude proces ukončen, budete si moci stáhnout soubor s vašimi exportovanými kontakty."
@@ -2547,6 +2559,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocí myši táhněte a pusťte pro změnu priority spojení kontaktů. Odškrtněte kontakty, které nechcete sloučit."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Pomocí skupin kontaktů můžete jedním kliknutím odeslat e-maily všem členům skupiny."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Můžete importovat události ve formátu iCal (ICS soubor). Tento soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a maximálně ${ MAX_IMPORT_EVENTS_STRING } událostí. Pokud je váš soubor větší, prosím rozdělte ho na menší soubory."
       ],
@@ -2558,6 +2573,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Váš účet a metody obnovy dat jsou nastaveny."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -3915,6 +3933,23 @@
         "Velmi malé"
       ]
     },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Připojte se k Google Meet"
+      ],
+      "Joining instructions": [
+        "Pokyny k připojení"
+      ],
+      "Less details": [
+        "Méně detailů"
+      ],
+      "Meeting link:": [
+        "Odkaz na schůzku:"
+      ],
+      "More details": [
+        "Více detailů"
+      ]
+    },
     "Group": {
       "Account": [
         "Účet"
@@ -5210,6 +5245,9 @@
       "You are about to open another browser tab and visit:": [
         "Chystáte se otevřít v nové kartě prohlížeče:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Chystáte se otevřít výchozí prohlížeč a navštívit:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email })."
       ],
@@ -6431,8 +6469,14 @@
       "Get started for ${ price }": [
         "Začněte za ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Cena od ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Navýšit nyní"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Navýšit na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7048,6 +7092,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Získejte Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Cena od ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7350,6 +7397,9 @@
       ],
       "Link copied to clipboard": [
         "Odkaz zkopírován do schránky"
+      ],
+      "Passcode copied to clipboard": [
+        "Přístupový kód zkopírován do schránky"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8526,6 +8576,9 @@
       ],
       "/ month": [
         "/ měsíc"
+      ],
+      "/month": [
+        "/měsíčně"
       ],
       "1 year": [
         "1 rok"
@@ -9813,6 +9866,9 @@
       "Hide time zones for event start and end times": [
         "Skrytí časových pásem pro časy začátku a konce události"
       ],
+      "High security for your account": [
+        "Vysoké zabezpečení vašeho účtu"
+      ],
       "Human verification": [
         "Lidské ověření"
       ],
@@ -9863,6 +9919,9 @@
       ],
       "Notes": [
         "Poznámky"
+      ],
+      "One email, many recipients": [
+        "Jeden e-mail, mnoho příjemců"
       ],
       "Open actions dropdown": [
         "Otevřít seznam akcí"
@@ -10712,6 +10771,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Ročně, ${ untilString }"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Připojte se ke schůzce Zoom"
+      ],
+      "Meeting ID:": [
+        "ID schůzky:"
+      ],
+      "Passcode: ${ password }": [
+        "Přístupový kód: ${ password }"
       ]
     }
   }

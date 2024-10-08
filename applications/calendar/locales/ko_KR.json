@@ -662,6 +662,9 @@
       "Start setup": [
         "설정 시작"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "${ priceUnlimited }부터 시작"
+      ],
       "Stay": [
         "기다리기"
       ],
@@ -715,6 +718,9 @@
       ],
       "Upgrade now": [
         "지금 업그레이드"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimtied로 업그레이드하기"
       ],
       "Upload picture": [
         "사진 업로드"
@@ -2424,6 +2430,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME }이 보안 전문가로 확대되는 등 의심스러운 활동에 대한 24시간 전담 모니터링을 통해 계정을 보호합니다."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2단계 인증은 추가적인 보안 계층, 접근 불가 상황 방지에 도움을 줍니다."
       ],
@@ -2432,6 +2441,9 @@
       ],
       "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
         "더 나은 하루의 정리, 시간의 추적과 작업의 우선순위를. 캘린더를 커스텀 이벤트 색상으로 색 부호화 하세요."
+      ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "이벤트를 컬러 코딩하여 하루를 더 쉽게 정리하고, 시간을 추적하고, 작업의 우선순위를 지정할 수 있습니다."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "연락처 복호화 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 내보낼 모든 연락처 다운로드가 가능합니다."
@@ -2484,6 +2496,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "드래그 앤 드롭을 사용하여 연락처 간의 병합 우선 순위를 매기세요. 병합하고 싶지 않은 연락처는 선택 취소하세요."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "연락처 그룹으로, 한 번의 클릭으로 그룹 내 모든 사람들로 일괄 이메일 전송이 가능합니다."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal 포맷 (ICS 파일)으로 이벤트를 불러올 수 있습니다. 파일 크기가 최대 ${ MAX_IMPORT_FILE_SIZE_STRING } 및 최대 ${ MAX_IMPORT_EVENTS_STRING } 이벤트를 가지고 있어야 합니다. 만약 파일이 너무 크다면, 작은 파일들로 분할해 주십시오."
       ],
@@ -2495,6 +2510,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "사용자의 계정과 데이터 복구 방법이 설정된 상태입니다."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
       ]
     },
     "description": {
@@ -3789,6 +3807,23 @@
         "매우 작게"
       ]
     },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Google Meet 참여"
+      ],
+      "Joining instructions": [
+        "참가 방법"
+      ],
+      "Less details": [
+        "간략히 보기"
+      ],
+      "Meeting link:": [
+        "미팅 링크:"
+      ],
+      "More details": [
+        "상세히 보기"
+      ]
+    },
     "Group": {
       "Account": [
         "계정"
@@ -4005,7 +4040,7 @@
         "3개의 점 (...) 을 클릭하여 드롭다운 메뉴를 확장하세요."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "${ boldAppPassword }를 설정하고 ${ BRAND_NAME }에 표시되었던 기존 비밀번호를 입력하십시오."
+        "${ boldAppPassword }를 설정하고 ${ BRAND_NAME }에 표시되었던 기존 비밀번호를 입력하세요."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "${ yahooMailLink } 의 프로필에서 ${ boldAccountInfo } 로 이동하세요."
@@ -4020,16 +4055,16 @@
         "${ boldExportCSV } 선택"
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "캘린더를 ${ BRAND_NAME } 으로 가져오려면 ${ knowledgeBaseLink } 이(가) 필요합니다. 쉬운 3단계로 Yahoo에서 다운로드 하십시오:"
+        "캘린더를 ${ BRAND_NAME }에 가져오려면 ${ knowledgeBaseLink }이 필요합니다. 간단한 3단계로 Yahoo에서 다운로드하세요:"
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "캘린더를 ${ BRAND_NAME } 으로 가져오려면 ${ knowledgeBaseLink } 이(가) 필요합니다. 가져오기를 시작하기 전에 이것을 다운로드하세요."
+        "캘린더를 ${ BRAND_NAME }에 가져오려면 ${ knowledgeBaseLink }이 필요합니다. 가져오기를 시작하기 전에 해당 파일을 다운로드하세요."
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "연락처를 ${ BRAND_NAME } 으로 가져오려면 ${ knowledgeBaseLink } 이(가) 필요합니다. 쉬운 3단계로 Yahoo에서 다운로드 하십시오:"
+        "연락처를 ${ BRAND_NAME }에 가져오려면 ${ knowledgeBaseLink }이(가) 필요합니다. 쉬운 3단계로 Yahoo에서 다운로드하세요:"
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "연락처를 ${ BRAND_NAME } 으로 가져오려면 ${ knowledgeBaseLink } 이(가) 필요합니다. 가져오기를 시작하기 전에 이것을 다운로드 하세요."
+        "연락처를 ${ BRAND_NAME }에 가져오려면 ${ knowledgeBaseLink }이(가) 필요합니다. 가져오기를 시작하기 전에 해당 파일을 다운로드 하세요."
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         "${ BRAND_NAME }에서 이메일을 불러오려면, Yahoo에서 ${ appPasswordLink }가 필요합니다. 다음을 통해 다운로드하세요:"
@@ -4074,7 +4109,7 @@
         "Yahoo에서 ${ calendarViewLink } 로 이동하세요"
       ],
       "Mouse over the calendar you want to import and open the dropdown menu.": [
-        "가져오려는 캘린더 위에 마우스를 올려놓고 드롭다운 메뉴를 여십시오."
+        "가져오려는 캘린더 위에 마우스를 올려놓고 드롭다운 메뉴를 여세요."
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "캘린더를 ICS 파일로 내보내려면 ${ boldExport } 을(를) 선택하세요."
@@ -4443,7 +4478,7 @@
         "가져오기를 원하는 이메일 계정의 계정 정보를 입력하세요."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "${ destinationText }으(로) 인증 코드가 전송되었습니다."
+        "${ destinationText }(으)로 인증 코드가 전송되었습니다."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "인증 코드를 입력하세요. ${ digit } 자리."
@@ -4728,7 +4763,7 @@
         "이 시리즈에 대한 이전 수정 사항은 손실됩니다."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
-        "가격에는 귀하의 계정에 저장된 모든 적용 가능한 주기 기반 할인과 만료되지 않은 쿠폰이 포함되어 있습니다."
+        "가격에는 계정에 저장된 모든 적용 가능한 주기 기반 할인과 만료되지 않은 쿠폰이 포함되어 있습니다."
       ],
       "Primary": [
         "우선 순위"
@@ -4985,6 +5020,9 @@
       "You are about to open another browser tab and visit:": [
         "다른 브라우저 탭을 열고 다음을 방문합니다:"
       ],
+      "You are about to open your default browser and visit:": [
+        "기본 브라우저를 열고 다음을 방문합니다:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "현재 ${ user.Name } (${ user.Email })로 로그인 했습니다."
       ],
@@ -5127,7 +5165,7 @@
         "사용자의 비밀번호가 유출되었습니다:"
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "귀하의 전화번호는 이번 인증에만 사용돼요."
+        "회원님의 전화번호는 이번 인증에만 사용돼요."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "시스템 시간대가 ${ timezone } 로 변경된 것 같습니다. 여기의 시간대도 변경하시겠습니까?"
@@ -6161,8 +6199,14 @@
       "Get started for ${ price }": [
         "${ price }로 시작하세요."
       ],
+      "Starting from ${ priceMailPlus }": [
+        "${ priceMailPlus }부터 시작"
+      ],
       "Upgrade now": [
         "지금 업그레이드"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "${ MAIL_SHORT_APP_NAME } Plus로 업그레이드하기"
       ]
     },
     "new_plans: action": {
@@ -6313,7 +6357,7 @@
         "스팸 및 휴지통의 메시지를 자동 삭제"
       ],
       "Auto-reply": [
-        "자동 응답"
+        "자동 회신"
       ],
       "Autofill credit cards (coming soon)": [
         "신용카드 자동 완성 (곧 찾아 옵니다)"
@@ -6715,6 +6759,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "${ price }에 Mail Plus를 구독하세요"
+      ],
+      "Starting from ${ price }": [
+        "${ price }부터 시작"
       ]
     },
     "new_plans: title": {
@@ -6757,7 +6804,7 @@
         "동시에 하나 이상의 네트워크에 접근할 수 있도록 허용합니다. 예시, 지역 검색 결과를 얻는 동안 다른 나라의 영화를 스트리밍하세요"
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
-        "수신 메시지에 대한 자동 응답을 설정할 수 있습니다."
+        "수신 메시지에 대한 자동 회신을 설정할 수 있습니다."
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
         "쓰레기통과 스팸메일함의 30일이 지난 메시지를 자동으로 비웁니다."
@@ -7011,6 +7058,9 @@
       ],
       "Link copied to clipboard": [
         "링크가 클립보드에 복사됨"
+      ],
+      "Passcode copied to clipboard": [
+        "비밀번호를 클립보드에 복사했습니다"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8035,6 +8085,9 @@
       "/ month": [
         "/ 월"
       ],
+      "/month": [
+        "/월간"
+      ],
       "1 year": [
         "1년"
       ],
@@ -8404,7 +8457,7 @@
         "${ planName }는 귀하가 더욱 생산적이고, 체계적이며 받은 편지함과 이메일 신원을 관리하는 것에 기본을 뛰어넘는 도움을 줍니다."
       ],
       "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
-        "${ planName }는 귀하의 가족 구성원 모두와 그 데이터가 온라인에서 언제나 보호받을 수 있도록 돕습니다."
+        "${ planName }가 가족 구성원 모두와 그 데이터가 온라인에서 언제나 보호받을 수 있도록 도와드립니다."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName }는 당신의 이메일과 첨부파일, 이벤트, 비밀번호 그리고 파일을 위한 저장공간 ${ planMaxSpace }를 제공합니다. 또한 연간 저장공간 보너스를 받으실 수 있습니다."
@@ -9252,6 +9305,9 @@
       "Hide time zones for event start and end times": [
         "이벤트 시작과 종료 시간에서 시간대 가리기"
       ],
+      "High security for your account": [
+        "내 계정을 위한 높은 수준의 보안"
+      ],
       "Human verification": [
         "사람임을 인증"
       ],
@@ -9299,6 +9355,9 @@
       ],
       "Notes": [
         "메모"
+      ],
+      "One email, many recipients": [
+        "하나의 이메일, 다수의 수신자"
       ],
       "Open actions dropdown": [
         "액션 드롭다운 열기"
@@ -10025,6 +10084,17 @@
       ],
       "Yearly, ${ untilString }": [
         "연간, ${ untilString }"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Zoom 회의 참여"
+      ],
+      "Meeting ID:": [
+        "회의 ID:"
+      ],
+      "Passcode: ${ password }": [
+        "비밀번호: ${ password }"
       ]
     }
   }

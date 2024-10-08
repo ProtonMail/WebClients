@@ -399,6 +399,9 @@
       "Get verification code": [
         "Odeslat ověřovací kód"
       ],
+      "Go back": [
+        "Zpět"
+      ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Jít do ${ DRIVE_SHORT_APP_NAME }"
       ],
@@ -810,6 +813,9 @@
       "Start setup": [
         "Spustit nastavení"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Cena od ${ priceUnlimited }"
+      ],
       "Stay": [
         "Zůstat"
       ],
@@ -875,6 +881,9 @@
       ],
       "Upgrade now": [
         "Navýšit nyní"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Navýšit na ${ BRAND_NAME } Unlimited"
       ],
       "Upload anyway": [
         "Přesto nahrát"
@@ -2301,6 +2310,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } chrání váš účet pomocí nepřetržitého monitorování podezřelých aktivit — včetně eskalace na bezpečnostní specialisty."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA přidává další úroveň zabezpečení a zabraňuje neoprávněnému přístupu."
       ],
@@ -2349,6 +2361,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocí myši táhněte a pusťte pro změnu priority spojení kontaktů. Odškrtněte kontakty, které nechcete sloučit."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Pomocí skupin kontaktů můžete jedním kliknutím odeslat e-maily všem členům skupiny."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Můžete importovat události ve formátu iCal (ICS soubor). Tento soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a maximálně ${ MAX_IMPORT_EVENTS_STRING } událostí. Pokud je váš soubor větší, prosím rozdělte ho na menší soubory."
       ],
@@ -2360,6 +2375,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Váš účet a metody obnovy dat jsou nastaveny."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -5510,6 +5528,9 @@
       "You are about to open another browser tab and visit:": [
         "Chystáte se otevřít v nové kartě prohlížeče:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Chystáte se otevřít výchozí prohlížeč a navštívit:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email })."
       ],
@@ -6811,8 +6832,14 @@
       "Get started for ${ price }": [
         "Začněte za ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Cena od ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Navýšit nyní"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Navýšit na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7428,6 +7455,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Získejte Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Cena od ${ price }"
       ]
     },
     "new_plans: title": {
@@ -8031,34 +8061,145 @@
       ]
     },
     "Onboarding Action": {
+      "Continue": [
+        "Pokračovat"
+      ],
       "Create new document": [
         "Vytvořit nový dokument"
       ],
+      "Get started": [
+        "Začínáme"
+      ],
+      "Install and continue": [
+        "Nainstalovat a pokračovat"
+      ],
+      "Install later": [
+        "Nainstalovat později"
+      ],
+      "Invite members": [
+        "Pozvat členy"
+      ],
+      "Maybe later": [
+        "Možná později"
+      ],
       "Next": [
         "Další"
+      ],
+      "Select theme": [
+        "Vybrat motiv"
+      ],
+      "Skip": [
+        "Přeskočit"
+      ],
+      "Skip for now": [
+        "Prozatím přeskočit"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Začít používat ${ DRIVE_APP_NAME }"
       ],
       "Try it later": [
         "Odložit na jindy"
+      ],
+      "Try the app": [
+        "Vyzkoušet aplikaci"
+      ],
+      "Upload file": [
+        "Nahrát soubor"
+      ],
+      "Upload folder": [
+        "Nahrát složku"
       ]
     },
     "Onboarding Info": {
+      "Access your files on the go": [
+        "Přístup k souborům na cestách"
+      ],
+      "Back up your photos and memories": [
+        "Zálohování fotografií a vzpomínek"
+      ],
+      "Backup your photos and memories": [
+        "Zálohování fotografií a vzpomínek"
+      ],
+      "Choose your favorite theme": [
+        "Vyberte si oblíbený motiv"
+      ],
       "Collaborate on documents": [
         "Spolupráce na dokumentech"
       ],
       "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
         "Vytvářejte dokumenty a spolupracujte na nich. Všechny jsou chráněny pomocí koncového šifrování."
       ],
+      "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
+        "Líbí se vám ${ DRIVE_APP_NAME } ve světlém nebo tmavém motivu? Vyberte si barvu, která vás nejvíce inspiruje."
+      ],
+      "Drag and drop your files here": [
+        "Sem přetáhněte soubory"
+      ],
+      "Edit documents online": [
+        "Úprava dokumentů online"
+      ],
+      "End-to-end encrypted storage for your files": [
+        "Koncově šifrované úložiště pro vaše soubory"
+      ],
+      "Faster uploads for large or multiple files": [
+        "Rychlejší nahrávání velkých souborů nebo více souborů najednou"
+      ],
+      "Final approval in progress": [
+        "Probíhá konečné schválení"
+      ],
+      "Final approval pending": [
+        "Čekání na konečné schválení"
+      ],
+      "Free up hard drive space on your computer": [
+        "Uvolnění místa na pevném disku počítače"
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Začněte používat ${ DRIVE_APP_NAME } a my vám navýšíme úložiště na 5 GB!"
+      ],
+      "Get the desktop app": [
+        "Získejte desktopovou aplikaci"
+      ],
+      "Get the mobile app": [
+        "Získejte mobilní aplikaci"
+      ],
+      "Got an Android? We've got you covered.": [
+        "Máte Android? Máme pro vás řešení."
+      ],
+      "Got an iPhone? We've got you covered.": [
+        "Máte iPhone? Máme pro vás řešení."
+      ],
+      "Hang tight": [
+        "Chvíli počkejte"
       ],
       "Introducing ${ DOCS_APP_NAME }": [
         "Představujeme ${ DOCS_APP_NAME }"
       ],
+      "Invitation accepted": [
+        "Pozvánka byla přijata"
+      ],
+      "Invitation received": [
+        "Pozvánka přijata"
+      ],
+      "Invite team members": [
+        "Pozvěte členy týmu"
+      ],
       "Manage access": [
         "Správa přístupu"
+      ],
+      "Organize files right from your desktop": [
+        "Organizace souborů přímo z vašeho desktopu"
+      ],
+      "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
+        "Chraňte své finanční dokumenty, průkazy totožnosti, projektové soubory, fotografie a další dokumenty pomocí koncového šifrování."
+      ],
+      "Scan the QR code to install the mobile app": [
+        "Skenováním QR kódu nainstalujte mobilní aplikaci"
+      ],
+      "Secure your files": [
+        "Zabezpečte své soubory"
+      ],
+      "Securely share files and folders": [
+        "Bezpečné sdílení souborů a složek"
       ],
       "Securely store, manage, and share your business-critical files with confidence.": [
         "S důvěrou bezpečně uchovávejte, spravujte a sdílejte kriticky důležité firemní soubory."
@@ -8081,11 +8222,23 @@
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "Ukládejte své soubory a bezpečně je sdílejte. Začněte zabezpečením svých nejosobnějších souborů, jako jsou průkazy totožnosti, smlouvy a osobní fotografie."
       ],
+      "Sync and access your files from anywhere": [
+        "Synchronizace a přístup k vašim souborům odkudkoli"
+      ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Vlastník musí potvrdit sdílení přístupu. Jakmile se tak stane, obdržíte e-mail."
       ],
       "Upload a file": [
         "Nahrát soubor"
+      ],
+      "Upload your first file": [
+        "Nahrajte svůj první soubor"
+      ],
+      "Work faster, smarter": [
+        "Pracujte rychleji a chytřeji"
+      ],
+      "Work together": [
+        "Pracujte společně"
       ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Váš spolehlivý online trezor pro důležité dokumenty a drahocenné vzpomínky."
@@ -8928,6 +9081,9 @@
       ],
       "/ month": [
         "/ měsíc"
+      ],
+      "/month": [
+        "/měsíčně"
       ],
       "1 year": [
         "1 rok"
@@ -10187,6 +10343,9 @@
       "Groups": [
         "Skupiny"
       ],
+      "High security for your account": [
+        "Vysoké zabezpečení vašeho účtu"
+      ],
       "Hm, we couldn't find that one": [
         "Hm, toto se nám nepodařilo najít"
       ],
@@ -10270,6 +10429,9 @@
       ],
       "Number of items": [
         "Počet položek"
+      ],
+      "One email, many recipients": [
+        "Jeden e-mail, mnoho příjemců"
       ],
       "Open actions dropdown": [
         "Otevřít seznam akcí"

@@ -2160,6 +2160,9 @@
       ]
     },
     "Description": {
+      "Keep different parts of your life separate and your inbox organized with additional addresses.": [
+        "Oddělte různé části svého života a uspořádejte si doručenou poštu s dalšími adresami."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Oddělte různé aspekty svého života pomocí více e-mailových adres a po navýšení tarifu odemkněte další prémiové funkce."
       ]
@@ -5197,7 +5200,7 @@
         "Váš předplatné je spravováno Mozillou. Kontaktujte prosím Mozilla podporu."
       ],
       "Zoom meeting": [
-        "setkání na Zoomu"
+        "schůzku na Zoomu"
       ]
     },
     "Info for cash payment method": {
@@ -6232,11 +6235,17 @@
       "From ${ price }": [
         "Od ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Cena od ${ priceMailPlus }"
+      ],
       "Upgrade": [
         "Navýšit"
       ],
       "Upgrade now": [
         "Navýšit nyní"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Navýšit na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -8642,6 +8651,9 @@
       "/ month": [
         "/ měsíc"
       ],
+      "/month": [
+        "/měsíčně"
+      ],
       "1 year": [
         "1 rok"
       ],
@@ -9794,6 +9806,9 @@
       ],
       "Amount due": [
         "Částka k zaplacení"
+      ],
+      "An address for each role": [
+        "Adresa pro každou roli"
       ],
       "Appearance": [
         "Vzhled"

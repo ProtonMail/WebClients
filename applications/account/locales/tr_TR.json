@@ -808,11 +808,11 @@
       "Refresh status": [
         "Durumu yenile"
       ],
-      "refresh the page": [
-        "sayfayı yenile"
-      ],
       "Refresh the page": [
         "Sayfayı yenile"
+      ],
+      "refresh the page": [
+        "sayfayı yenile"
       ],
       "Reload": [
         "Yenile"
@@ -1616,6 +1616,14 @@
         "Yıl Sonu teklifini seçin"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor fakat **${ months }** için **${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage }** indirimden yararlanabilirsiniz."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB depolama alanı (diğer tarifelerin 2 katı)"
@@ -1637,14 +1645,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } tarifesi kısa bir süre için geri döndü"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor fakat **${ months }** için **${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage }** indirimden yararlanabilirsiniz."
       ]
     },
     "bf2023: Offers": {
@@ -3388,8 +3388,20 @@
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Tarifenizi yükselterek, çöp kutusundaki ve istenmeyen iletilerin otomatik olarak silinmesi gibi ücretli pek çok özelliğe erişebilirsiniz."
       ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Çöp ve İstenmeyen klasörlerine konmuş 30 günden eski e-postaları otomatik olarak temizleyin."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Gelen iletilerinizi gelen kutunuza ulaşmadan önce otomatik olarak sıralayın."
+      ],
+      "Available with ${ BRAND_NAME } Mail plus": [
+        "${ BRAND_NAME } Mail Plus tarifesiyle kullanılabilir"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Tebrikler! En yüksek hediye sınırı olan ${ rewardsLimit } ay ücretsiz ${ plusPlanName } kazandınız."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Gelen kutunuzu düzenli tutmak için gerektiği kadar etiket veya klasör oluşturun."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Bu özelliklere erişmek için ${ PROTON_SENTINEL_NAME } özelliğini açın"
@@ -3412,8 +3424,17 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
       ],
+      "Keep different parts of your life separate and your inbox organized with additional addresses.": [
+        "Hayatınızın farklı bölümlerini ayrı tutun ve ek adreslerle gelen kutunuza düzen getirin."
+      ],
+      "Make your email footer your own — showcase your unique brand, not ours.": [
+        "E-posta alt bilginizi kendinize göre ayarlayın. Bizimki yerine kendi markanızı gösterin."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Birkaç e-posta adresi kullanarak hayatınızın farklı yönlerini ayırın ve tarifenizi yükselterek daha fazla ücretli özelliğe erişin."
+      ],
+      "Set up auto-forwarding to redirect incoming emails to another email address.": [
+        "Gelen e-postaları başka bir e-posta adresine iletmek için otomatik iletmeyi ayarlayın."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Kişilerinizi Google ya da Outlook üzerinden içe aktarmak için ${ easySwitchLink }."
@@ -3423,6 +3444,9 @@
       ],
       "Track the status and activity of your referrals.": [
         "Önerileri işlemlerinizi ve durumunu izleyin."
+      ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Akılda kalıcı ve yazması kolay bir e-posta adresi için ${ activatePmUser } adresi edinin."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Tarifenizi yükselterek daha kısa e-posta adreslerine ve diğer ücretli özelliklere erişin."
@@ -7058,11 +7082,11 @@
       "Data locked": [
         "Veriler kilitlendi"
       ],
-      "Dedicated servers": [
-        "Size ayrılmış sunucular"
-      ],
       "dedicated servers": [
         "size ayrılmış sunucular"
+      ],
+      "Dedicated servers": [
+        "Size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -8940,6 +8964,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Şu adresi ziyaret etmek için başka bir tarayıcı sekmesi açmak üzeresiniz:"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Varsayılan tarayıcınızı açarak şu adrese gitmek üzeresiniz:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Şu anda ${ user.Name } (${ user.Email }) olarak oturum açmış durumdasınız."
@@ -11528,6 +11555,32 @@
         "Orta VPN hızı"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
+      ],
+      "From ${ price }": [
+        "${ price } ile başlar"
+      ],
+      "Get started for ${ price }": [
+        "${ price } ile başlayın"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "${ priceMailPlus } tutarından başlayan fiyatlarla"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "${ MAIL_SHORT_APP_NAME } Plus tarifesine yükseltin"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Free tarifesini kullanmayı sürdür"
@@ -11555,26 +11608,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } tarifesine yükselt"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
-      ],
-      "From ${ price }": [
-        "${ price } ile başlar"
-      ],
-      "Get started for ${ price }": [
-        "${ price } ile başlayın"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
       ]
     },
     "new_plans: feature": {
@@ -12236,6 +12269,20 @@
         "Seçtiğiniz tarife: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } deneme"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "${ price } ile Mail Plus edinin"
+      ],
+      "Starting from ${ price }": [
+        "${ price } tutarından başlayan fiyatlarla"
+      ],
+      "Your account's usage": [
+        "Hesap kullanımınız"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -12254,17 +12301,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Tarifenizi yükselterek ücretli özelliklere erişin"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } deneme"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "${ price } ile Mail Plus edinin"
-      ],
-      "Your account's usage": [
-        "Hesap kullanımınız"
       ]
     },
     "new_plans: tooltip": {
@@ -15042,6 +15078,9 @@
       "/ month": [
         "/ ay"
       ],
+      "/month": [
+        "/ay"
+      ],
       "1 year": [
         "1 yıl"
       ],
@@ -16404,6 +16443,9 @@
       "Amount due": [
         "Ödenecek tutar"
       ],
+      "An address for each role": [
+        "Her rol için ayrı adres"
+      ],
       "App": [
         "Uygulama"
       ],
@@ -16458,10 +16500,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [
@@ -16806,6 +16848,9 @@
         "${ failedUsers.length } kullanıcı hesabı eklenemedi.",
         "${ failedUsers.length } kullanıcı hesabı eklenemedi."
       ],
+      "Filter for more focus": [
+        "Daha iyi odaklanma için süzün"
+      ],
       "Filter name cannot contain only spaces": [
         "Süzgeç adında yalnızca boşluk bulunamaz"
       ],
@@ -16984,6 +17029,9 @@
       "My calendars": [
         "Takvimlerim"
       ],
+      "Need more labels or folders?": [
+        "Daha fazla etiket ya da klasör mü gerekiyor?"
+      ],
       "Network error": [
         "Ağ sorunu"
       ],
@@ -16995,6 +17043,9 @@
       ],
       "No account information was found in any data breaches": [
         "Verilerin ele geçirilmesi olaylarında herhangi bir hesap bilgisi bulunamadı"
+      ],
+      "No need to empty the trash": [
+        "Çöpü boşaltmanız gerekmez"
       ],
       "No recovery method": [
         "Herhangi bir kurtarma yöntemi yok"
@@ -17053,6 +17104,9 @@
       "PayPal verification failed": [
         "PayPal doğrulaması başarısız oldu"
       ],
+      "Personalize your email footer": [
+        "E-posta alt bilginizi isteğinize göre değiştirin"
+      ],
       "Phone": [
         "Telefon"
       ],
@@ -17079,6 +17133,9 @@
       ],
       "QRCode": [
         "QR kodu"
+      ],
+      "Ready, set, forward": [
+        "Hazırla, ayarla, ilet"
       ],
       "Recommended": [
         "Önerilen"
@@ -17145,6 +17202,9 @@
       ],
       "Revoke certificate": [
         "Sertifikayı geçersiz kıl"
+      ],
+      "Same inbox, shorter email address": [
+        "Aynı gelen kutusu, daha kısa e-posta adresi"
       ],
       "SAML authentication": [
         "SAML kimlik doğrulaması"

@@ -807,6 +807,9 @@
       "Start setup": [
         "Iniciar la configuración"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "A partir de ${ priceUnlimited }"
+      ],
       "Stay": [
         "Permanecer"
       ],
@@ -872,6 +875,9 @@
       ],
       "Upgrade now": [
         "Actualizar ahora"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Mejore a ${ BRAND_NAME } Unlimited"
       ],
       "Upload anyway": [
         "Cargar de todos modos"
@@ -2278,6 +2284,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } protege su cuenta con monitoreo dedicado 24/7 de actividades sospechosas, incluyendo la intervención de especialistas en seguridad."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA añade una capa de seguridad adicional, evitando acceso no autorizado."
       ],
@@ -2326,6 +2335,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Use arrastrar y soltar para clasificar la prioridad entre contactos. Desmarque los contactos que no quiere combinar."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Con los grupos de contactos, puede enviar correos electrónicos a todos los miembros del grupo con un clic."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puede importar eventos en formato iCal (archivos ICS). El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos.\nSi el archivo es más grande, debe dividirlo en archivos más pequeños."
       ],
@@ -2337,6 +2349,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Se establecieron los métodos de recuperación de datos y cuenta."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
       ]
     },
     "description": {
@@ -5353,6 +5368,9 @@
       "You are about to open another browser tab and visit:": [
         "Está a punto de abrir otra pestaña del navegador y visitar:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Está a punto de abrir su navegador por defecto y consultar:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Actualmente inició sesión como ${ user.Name } (${ user.Email })."
       ],
@@ -6684,8 +6702,14 @@
       "Get started for ${ price }": [
         "Empiece por ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "A partir de ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Mejorar ahora"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Mejora a ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7834,16 +7858,16 @@
         "Crear un documento"
       ],
       "Get started": [
-        "Empezamos"
+        "Comenzar"
       ],
       "Install and continue": [
-        "Instale y continue"
+        "Instalar y continuar"
       ],
       "Install later": [
-        "Instale más tarde"
+        "Instalar más tarde"
       ],
       "Invite members": [
-        "Invite a miembros"
+        "Invitar a miembros"
       ],
       "Maybe later": [
         "Quizás más tarde"
@@ -7858,7 +7882,7 @@
         "Omitir"
       ],
       "Skip for now": [
-        "Omita por ahora"
+        "Omitir por ahora"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Comenzar con ${ DRIVE_APP_NAME }"
@@ -7867,27 +7891,57 @@
         "Probar después"
       ],
       "Try the app": [
-        "Pruebe la aplicación"
+        "Probar la aplicación"
       ],
       "Upload file": [
-        "Cargue un archivo"
+        "Cargar un archivo"
       ],
       "Upload folder": [
-        "Cargue una carpeta"
+        "Cargar una carpeta"
       ]
     },
     "Onboarding Info": {
+      "Access your files on the go": [
+        "Acceda a sus archivos sobre la marcha"
+      ],
+      "Back up your photos and memories": [
+        "Haga una copia de seguridad de sus fotos y memorias"
+      ],
+      "Backup your photos and memories": [
+        "Haga una copia de seguridad de sus fotos y memorias"
+      ],
+      "Choose your favorite theme": [
+        "Elija su tema favorito"
+      ],
       "Collaborate on documents": [
         "Colabore en documentos"
       ],
       "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
         "Cree y colabore en documentos. Todo protegido con cifrado de extremo a extremo."
       ],
+      "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
+        "¿Prefiere ${ DRIVE_APP_NAME } en modo claro u oscuro? Seleccione el color que le inspira más."
+      ],
+      "Drag and drop your files here": [
+        "Arrastre y suelte sus archivos aquí"
+      ],
       "Edit documents online": [
         "Edite documentos en línea"
       ],
+      "End-to-end encrypted storage for your files": [
+        "Almacenamiento cifrado de extremo a extremo para sus archivos"
+      ],
+      "Faster uploads for large or multiple files": [
+        "Cargas más rápidas para varios archivos o grandes"
+      ],
       "Final approval in progress": [
         "Aprobación final en progreso"
+      ],
+      "Final approval pending": [
+        "Aprobación final pendiente"
+      ],
+      "Free up hard drive space on your computer": [
+        "Libere espacio en el disco duro de su computadora"
       ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "¡Comience a usar ${ DRIVE_APP_NAME } y mejoraremos el almacenamiento a 5 GB!"
@@ -7898,6 +7952,12 @@
       "Get the mobile app": [
         "Obtenga la aplicación móvil"
       ],
+      "Got an Android? We've got you covered.": [
+        "¿Tiene un Android? Nos encargamos de todo."
+      ],
+      "Got an iPhone? We've got you covered.": [
+        "¿Tiene un iPhone? Nos encargamos de todo."
+      ],
       "Hang tight": [
         "Espere un momento"
       ],
@@ -7905,10 +7965,10 @@
         "Presentamos ${ DOCS_APP_NAME }"
       ],
       "Invitation accepted": [
-        "Se acceptó la invitación."
+        "Invitación aceptada"
       ],
       "Invitation received": [
-        "Se recibió la invitación."
+        "Invitación recibida"
       ],
       "Invite team members": [
         "Invite a miembros del equipo"
@@ -7916,8 +7976,20 @@
       "Manage access": [
         "Gestione el acceso"
       ],
+      "Organize files right from your desktop": [
+        "Organice sus archivos directamente desde el escritorio"
+      ],
+      "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
+        "Proteja sus documentos financieros, tarjetas de identidad, proyectos, fotos y más con cifrado de extremo a extremo."
+      ],
+      "Scan the QR code to install the mobile app": [
+        "Escanee el código QR para instalar la aplicación móvil"
+      ],
       "Secure your files": [
         "Proteja sus archivos"
+      ],
+      "Securely share files and folders": [
+        "Comparta archivos y carpetas de forma segura"
       ],
       "Securely store, manage, and share your business-critical files with confidence.": [
         "Almacene, gestione y comparta de forma segura sus archivos críticos para el negocio con confianza."
@@ -7938,6 +8010,9 @@
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "Almacene sus archivos y compártalos con seguridad. Comience asegurando sus archivos más privados como su identificación, contratos e imágenes personales."
       ],
+      "Sync and access your files from anywhere": [
+        "Sincronice y acceda a sus archivos dondequiera que esté"
+      ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "El propietario necesita confirmar el acceso a compartir. Recibirá un correo en cuanto lo haga."
       ],
@@ -7946,6 +8021,9 @@
       ],
       "Upload your first file": [
         "Cargue su primer archivo"
+      ],
+      "Work faster, smarter": [
+        "Trabaje de forma más rápida y eficiente"
       ],
       "Work together": [
         "Trabaje en equipo"
@@ -9947,6 +10025,9 @@
       "Groups": [
         "Grupos"
       ],
+      "High security for your account": [
+        "Alta seguridad para su cuenta"
+      ],
       "Hm, we couldn't find that one": [
         "No pudimos encontrar este elemento"
       ],
@@ -10028,6 +10109,9 @@
       ],
       "Number of items": [
         "Número de elementos"
+      ],
+      "One email, many recipients": [
+        "Un correo electrónico, varios destinatarios"
       ],
       "Open actions dropdown": [
         "Abrir menú de acciones"

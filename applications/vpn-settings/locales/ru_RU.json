@@ -822,6 +822,9 @@
       "External": [
         "Внешний"
       ],
+      "Inactive": [
+        "Неактивный"
+      ],
       "No E2EE mail": [
         "Нет зашифрованной сквозным методом почты"
       ],
@@ -2157,6 +2160,9 @@
       ]
     },
     "Description": {
+      "Keep different parts of your life separate and your inbox organized with additional addresses.": [
+        "Разделите разные части своей жизни и упорядочьте свой почтовый ящик с помощью дополнительных адресов."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Выделите различные аспекты своей жизни с помощью нескольких адресов электронной почты и получите доступ к дополнительным функциям при обновлении тарифа."
       ]
@@ -2872,6 +2878,12 @@
       ]
     },
     "familyOffer_2023:Info": {
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Только одна бесплатная пробная версия для одного пользователя. После этого действуют обычные цены."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "После выхода из вашего тарифа этот пользователь будет переведен на тариф ${ BRAND_NAME } Безлимитный тариф с 30-дневным пробным периодом.*"
+      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "По умолчанию администратору доступно ${ formattedStorage } хранилища. В дальнейшем вы сможете перераспределить доступный объем между дополнительными пользователями."
       ],
@@ -2929,6 +2941,9 @@
       ],
       "An error occurred, please try again": [
         "Произошла ошибка. Попробуйте еще раз"
+      ],
+      "Family name updated": [
+        "Фамилия обновлена"
       ],
       "Member updated": [
         "Участник обновлен"
@@ -3254,6 +3269,11 @@
       ],
       "Services": [
         "Службы"
+      ]
+    },
+    "Group address title": {
+      "Group address": [
+        "Адрес группы"
       ]
     },
     "Group member count": {
@@ -5226,12 +5246,23 @@
         "Помощник с искусственным интеллектом поможет вам быстро и без усилий создавать лучшие электронные письма."
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "Недействительный адрес электронной почты"
+      ]
+    },
     "invitation status": {
       "Declined": [
         "Отклонено"
       ],
       "Paused": [
         "Приостановлено"
+      ],
+      "Pending": [
+        "Ожидающий"
+      ],
+      "Sending invite...": [
+        "Отправка приглашения..."
       ]
     },
     "Invoice state display as badge": {
@@ -7345,6 +7376,29 @@
         "Пользователи будут видеть ваш логотип вместо значка ${ BRAND_NAME } при входе в наши веб-приложения."
       ]
     },
+    "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify } ваш адрес электронной почты ${ email } для установки личных данных организации."
+      ],
+      "Current organization identity": [
+        "Текущие личные данные организации"
+      ],
+      "Edit organization identity": [
+        "Изменить личные данные организации"
+      ],
+      "New organization identity": [
+        "Новые личные данные организации"
+      ],
+      "Organization identity": [
+        "Личные данные организации"
+      ],
+      "Organization identity updated": [
+        "Личные данные организации обновлены"
+      ],
+      "Verify": [
+        "Проверить"
+      ]
+    },
     "Pass B2B onboarding spotlight": {
       "Go to your vault to manage your passwords, aliases, and more.": [
         "Зайдите в свое хранилище, чтобы управлять паролями, псевдонимами и прочим."
@@ -7772,6 +7826,9 @@
       ]
     },
     "placeholder": {
+      "e.g. marketing": [
+        "например, маркетинг"
+      ],
       "Members": [
         "Участники"
       ]
@@ -7924,6 +7981,9 @@
       ]
     },
     "saml: Info": {
+      "An error occurred while testing your SSO configuration.": [
+        "Произошла ошибка при проверке конфигурации SSO."
+      ],
       "Details": [
         "Информация"
       ],
@@ -7932,6 +7992,9 @@
       ],
       "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
         "Чтобы проверить эту конфигурацию SAML, пожалуйста, введите учётные данные для пользователя, связанного с **${ domainName }**"
+      ],
+      "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
+        "Мы получили действительный ответ SAML от вашего поставщика личных данных. SSO включен для вашей организации."
       ],
       "We’re testing your configuration to ensure SSO is working.": [
         "Мы проверяем вашу конфигурацию, чтобы убедиться, что SSO работает."
@@ -7945,6 +8008,12 @@
     "saml: Title": {
       "It works!": [
         "Сработало!"
+      ],
+      "Test SAML configuration": [
+        "Проверить конфигурацию SAML"
+      ],
+      "Testing SAML configuration": [
+        "Проверка конфигурации SAML"
       ]
     },
     "scim: Action": {
@@ -9681,6 +9750,9 @@
       "Amount due": [
         "К оплате"
       ],
+      "An address for each role": [
+        "Адрес для каждой должности"
+      ],
       "Appearance": [
         "Внешний вид"
       ],
@@ -10398,6 +10470,9 @@
       ],
       "User declined invitation": [
         "Пользователь отклонил приглашение"
+      ],
+      "Waiting user to accept the invitation": [
+        "Ожидание принятия приглашения пользователем"
       ]
     },
     "Tooltip for news": {

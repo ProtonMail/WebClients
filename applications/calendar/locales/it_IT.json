@@ -665,6 +665,9 @@
       "Start setup": [
         "Avvia configurazione"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "A partire da ${ priceUnlimited }"
+      ],
       "Stay": [
         "Resta"
       ],
@@ -718,6 +721,9 @@
       ],
       "Upgrade now": [
         "Effettua l'upgrade ora"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Passa a ${ BRAND_NAME } Unlimited"
       ],
       "Upload picture": [
         "Carica immagine"
@@ -2445,6 +2451,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } protegge il tuo account con un monitoraggio dedicato 24 ore su 24, 7 giorni su 7, delle attività sospette, incluso l'inoltro agli specialisti della sicurezza."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA aggiunge un ulteriore livello di sicurezza, impedendo l'accesso non autorizzato."
       ],
@@ -2453,6 +2462,9 @@
       ],
       "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
         "Organizza al meglio la tua giornata, tieni traccia del tuo tempo e stabilisci la priorità delle attività. Colora il tuo calendario con colori personalizzati per gli eventi."
+      ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "Codifica gli eventi con colori per semplificare l'organizzazione della giornata, tieni traccia del tempo e dai priorità alle attività."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Decrittografia dei contatti in corso. Questa operazione potrebbe richiedere alcuni minuti. Al termine del processo, potrai scaricare il file con tutti i tuoi contatti esportati."
@@ -2505,6 +2517,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Usa il Trascina e Rilascia per classificare la priorità di unione tra i contatti. Deseleziona i contatti che non vuoi unire."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Con i gruppi di contatti, puoi inviare email a tutte le persone nel gruppo con un solo click."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puoi importare eventi con il formato iCal (file ICS). Il file deve avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } o fino a ${ MAX_IMPORT_EVENTS_STRING } eventi. Se il tuo file è più grande, dividilo in file più piccoli."
       ],
@@ -2516,6 +2531,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "I tuoi metodi di recupero dell'account e dei dati sono impostati."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Hai già creato 10 alias. Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -3831,6 +3849,23 @@
         "Molto piccolo"
       ]
     },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Partecipa a Google Meet"
+      ],
+      "Joining instructions": [
+        "Istruzioni per partecipare"
+      ],
+      "Less details": [
+        "Meno dettagli"
+      ],
+      "Meeting link:": [
+        "Collegamento alla riunione:"
+      ],
+      "More details": [
+        "Maggiori dettagli"
+      ]
+    },
     "Group": {
       "Account": [
         "Account"
@@ -5060,6 +5095,9 @@
       "You are about to open another browser tab and visit:": [
         "Stai per aprire un'altra scheda del browser e visitare:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Stai per aprire il tuo browser predefinito e visitare:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Al momento hai effettuato l'accesso come ${ user.Name } (${ user.Email })."
       ],
@@ -6254,8 +6292,14 @@
       "Get started for ${ price }": [
         "Inizia per ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "A partire da ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Effettua l'upgrade ora"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Passa a ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6830,6 +6874,9 @@
       "Get Mail Plus for ${ price }": [
         "Ottieni Mail Plus per ${ price }"
       ],
+      "Starting from ${ price }": [
+        "A partire da ${ price }"
+      ],
       "VPN Enterprise": [
         "VPN Enterprise"
       ]
@@ -7130,6 +7177,9 @@
       ],
       "Link copied to clipboard": [
         "Link copiato negli appunti"
+      ],
+      "Passcode copied to clipboard": [
+        "Codice copiato negli appunti"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8202,6 +8252,9 @@
         "${ n } mesi"
       ],
       "/ month": [
+        "/ mese"
+      ],
+      "/month": [
         "/ mese"
       ],
       "1 year": [
@@ -9444,6 +9497,9 @@
       "Hide time zones for event start and end times": [
         "Nascondi i fusi orari per gli orari di inizio e di fine dell'evento"
       ],
+      "High security for your account": [
+        "Elevata sicurezza per il tuo account"
+      ],
       "Human verification": [
         "Verifica umana"
       ],
@@ -9492,6 +9548,9 @@
       ],
       "Notes": [
         "Note"
+      ],
+      "One email, many recipients": [
+        "Una email, più destinatari"
       ],
       "Open actions dropdown": [
         "Apri menu delle azioni"
@@ -10259,6 +10318,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Ogni anno, ${ untilString }"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Partecipa alla riunione Zoom"
+      ],
+      "Meeting ID:": [
+        "ID meeting:"
+      ],
+      "Passcode: ${ password }": [
+        "Codice di accesso: ${ password }"
       ]
     }
   }
