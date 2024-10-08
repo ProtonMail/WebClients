@@ -1,4 +1,3 @@
-export { default as useContactEmails } from './useContactEmails';
 export { default as useContacts } from './useContacts';
 export * from './useCustomDomains';
 export * from './useDomainsAddresses';
