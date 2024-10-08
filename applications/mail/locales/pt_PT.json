@@ -220,6 +220,9 @@
       "Click here.": [
         "Clique aqui."
       ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "Clique para copiar ${ defaultEmailAddress } para a área de transferência"
+      ],
       "Close": [
         "Fechar"
       ],
@@ -447,6 +450,12 @@
       "Expand composer": [
         "Expandir compositor"
       ],
+      "Expand navigation bar to see folders": [
+        "Expandir a barra de navegação para ver as pastas"
+      ],
+      "Expand navigation bar to see labels": [
+        "Expanda a barra de navegação para ver os rótulos"
+      ],
       "Expand URL": [
         "Expandir URL"
       ],
@@ -543,8 +552,14 @@
       "Hide messages": [
         "Ocultar mensagens"
       ],
+      "Hide toolbar": [
+        "Ocultar barra de ferramentas"
+      ],
       "hide-my-email aliases": [
         "aliases do Hide-my-email"
+      ],
+      "I like this response": [
+        "Gosto desta resposta"
       ],
       "Image could not be loaded with tracker protection.": [
         "Não foi possível carregar a imagem devido à proteção contra rastreadores."
@@ -609,6 +624,9 @@
       ],
       "Italic": [
         "Itálico"
+      ],
+      "Keep my subscription": [
+        "Manter a minha assinatura"
       ],
       "Label as": [
         "Etiquetar como"
@@ -703,6 +721,12 @@
       "Minimize composer": [
         "Minimizar compositor"
       ],
+      "Modify": [
+        "Modificar"
+      ],
+      "Modify selection": [
+        "Modificar seleção"
+      ],
       "Monday": [
         "Segunda-feira"
       ],
@@ -714,6 +738,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
+      ],
+      "More refine actions": [
+        "Mais ações de refinamento"
       ],
       "More search options": [
         "Mais opções de pesquisa"
@@ -913,6 +940,9 @@
       "Remove this label": [
         "Remover esta etiqueta"
       ],
+      "Replace": [
+        "Substituir"
+      ],
       "Reply": [
         "Responder"
       ],
@@ -966,6 +996,9 @@
       ],
       "Revert to original display": [
         "Regressar ao ecrã original"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Executar nos servidores da ${ BRAND_NAME }"
       ],
       "Save": [
         "Guardar"
@@ -1093,11 +1126,17 @@
       "Show more search options": [
         "Mostrar mais opções de pesquisa"
       ],
+      "Show navigation bar": [
+        "Mostrar barra de navegação"
+      ],
       "Show preview": [
         "Mostrar pré-visualização"
       ],
       "Show side panel": [
         "Mostrar o painel lateral"
+      ],
+      "Show toolbar": [
+        "Mostrar Barra de Ferramentas"
       ],
       "Sign out": [
         "Terminar sessão"
@@ -1125,6 +1164,9 @@
       ],
       "Stay": [
         "Ficar"
+      ],
+      "Stop downloading assistant": [
+        "Parar de transferir o assistente"
       ],
       "Stop generating result": [
         "Parar de gerar resultado"
@@ -1252,6 +1294,9 @@
       "Use recovery code": [
         "Usar código de recuperação"
       ],
+      "Use this": [
+        "Usar isto"
+      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Utilize o seu rato para redimensionar a vista. Se está a utilizar o teclado pode utilizar os botões de seta para a esquerda e direita para redimensionar."
       ],
@@ -1296,6 +1341,9 @@
       ],
       "Why not?": [
         "Por que não?"
+      ],
+      "Write for me": [
+        "Escreva para mim"
       ],
       "Yes": [
         "Sim"
@@ -1367,6 +1415,10 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } domínio personalizado adicional",
+        "${ domains } domínios personalizados adicionais"
+      ],
       "${ ips } server": [
         "${ ips } servidor",
         "${ ips } servidores"
@@ -3434,11 +3486,17 @@
       "All events in this series were updated.": [
         "Todos os eventos desta série foram atualizados."
       ],
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Todos os eventos desta série foram atualizados. Veja o que mudou:\n\n${ updateEventDetailsText }"
+      ],
       "This event occurrence was canceled.": [
         "A ocorrência deste evento foi cancelada."
       ],
       "This event occurrence was updated.": [
         "Esta ocorrência do evento foi atualizada."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Esta ocorrência de evento foi atualizada. Veja o que mudou:\n\n${ updateEventDetailsText }"
       ],
       "This event was updated.": [
         "Este evento foi atualizado."
@@ -5401,6 +5459,9 @@
         "${ numOccurrences } ocurrência encontrada no conteúdo de e-mail ",
         "${ numOccurrences } ocurrências encontradas no conteúdo de e-mail "
       ],
+      "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "${ PASS_APP_NAME } fornece uma forma simples de criar inícios de sessão em websites de terceiros não fidedignos onde não pretende expor o seu endereço de e-mail real."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer no mínimo 1 servidor dedicado ${ serverPricePerMonth }"
       ],
@@ -5687,6 +5748,9 @@
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "A limpeza dos dados do navegador também desativa a pesquisa de conteúdo das mensagens neste dispositivo. Todas as mensagens terão de ser novamente transferidas para poder pesquisar dentro delas."
+      ],
+      "Clears browser data (including downloaded messages, …)": [
+        "Limpa os dados do navegador (incluindo mensagens descarregadas, ...)"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o telefone estiver incorreto, clique em \"Editar\" para o corrigir."
@@ -6804,6 +6868,12 @@
       "Unlock message": [
         "Desbloquear mensagem"
       ],
+      "Unread conversations": [
+        "Conversas não lidas"
+      ],
+      "Unread messages": [
+        "Mensagens não lidas"
+      ],
       "Unsaved changes": [
         "Alterações não guardadas"
       ],
@@ -6980,6 +7050,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Está prestes a abrir outro separador no navegador e visitar:"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Está prestes a abrir o seu navegador predefinido e a visitar:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Tem actualmente sessão iniciada como ${ user.Name } (${ user.Email })."
@@ -9469,6 +9542,14 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "Partilha segura de cofre"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Partilha segura de cofre (${ n } cofre)",
+        "Partilha segura de cofre (${ n } cofres)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Partilha segura de cofre (${ n } cofre) e partilha de ligações",
+        "Partilha segura de cofre (${ n } cofres) e partilha de ligações"
       ]
     },
     "passwordless": {

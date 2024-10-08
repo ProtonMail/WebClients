@@ -863,7 +863,7 @@
         "Újra aláírás"
       ],
       "Read message": [
-        "Üzenet olvasása"
+        "Üzenet elolvasása"
       ],
       "Read receipt sent": [
         "Olvasási visszaigazolás elküldve"
@@ -1495,7 +1495,7 @@
         "Hirdetésblokkoló és rosszindulatú programok elleni védelem"
       ],
       "High speed streaming": [
-        "Nagy sebességű streamelés"
+        "Nagy sebességű videózás"
       ],
       "Premium Password Manager": [
         "Prémium jelszókezelő"
@@ -4004,7 +4004,7 @@
         "Próbáljon csak betűket, számokat és _.-t használni"
       ],
       "Unexpected error, we can't import the contacts": [
-        "Váratlan hiba, nem tudjuk importálni a névjegyeket"
+        "Váratlan hiba történt, a névjegyek importálása nem sikerült"
       ],
       "Unknown error": [
         "Ismeretlen hiba"
@@ -5722,7 +5722,7 @@
         "Nem lát semmit? Ne felejtse el engedélyezni a felugró ablakokat."
       ],
       "Downgrade": [
-        "Kisebb csomagra váltás"
+        "Váltás kisebb csomagra"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "A lemondás megszünteti a fizetett ${ VPN_APP_NAME } szerverekkel való összes kapcsolatot."
@@ -6425,7 +6425,7 @@
         "Az üzenet eredeti feladója már érvénytelen. Az üzenet a jelenlegi alapértelmezett címével kerül elküldésre: ${ defaultEmail }."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
-        "A cím tulajdonosa letiltotta a végpontok közötti titkosítást. Ahhoz, hogy titkosított e-maileket tudjon küldeni erre a címre, a tulajdonosnak újra engedélyeznie kell a végponttól-végpontig titkosítást."
+        "A cím tulajdonosa letiltotta a végpontok közötti titkosítást. Ahhoz, hogy titkosított e-maileket tudjon küldeni erre a címre, a tulajdonosnak újra engedélyeznie kell a végpontok közti titkosítást."
       ],
       "The sender has requested a read receipt.": [
         "A feladó olvasási visszaigazolást kért."
@@ -7479,7 +7479,7 @@
         "Gyakoriság"
       ],
       "From": [
-        "Forrás"
+        "Feladó"
       ],
       "From:": [
         "Feladó:"
@@ -7963,7 +7963,7 @@
         "Szüneteltetés"
       ],
       "Snoozed": [
-        "Elhalasztott"
+        "Szüneteltetett"
       ],
       "Spam": [
         "Levélszemét"
@@ -8081,7 +8081,7 @@
     },
     "mail_signup_2024: Info": {
       "for ${ price }": [
-        "neki: ${ price }"
+        "${ price } áron"
       ]
     },
     "Mailbox": {
@@ -8755,7 +8755,7 @@
         "Felhasználói munkafolyamatok kezelése"
       ],
       "User storage management": [
-        "Felhasználói tárhely kezelés"
+        "Felhasználói tárhely kezelése"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Tároló megosztás (${ n } személyig)",
@@ -8795,7 +8795,7 @@
         "Minden ${ BRAND_NAME } alkalmazás és prémium lehetőségeik"
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
-        "Minden ${ BRAND_NAME } üzleti alkalmazás és prémium funkció az ön egész vállalkozását védi"
+        "Minden ${ BRAND_NAME } üzleti alkalmazás és prémium funkció az ön egész vállalkozását védi."
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Széleskörű adatvédelem és biztonság az összes ${ BRAND_NAME } szolgáltatással."
@@ -8804,10 +8804,10 @@
         "Korai hozzáférés az új alkalmazásokhoz és lehetőségekhez"
       ],
       "Encrypted email and calendar to get you started.": [
-        "Kezdésként titkosított e-mail és naptár"
+        "Titkosított e-mail és naptár, az induláshoz."
       ],
       "Enhanced security and premium features for teams.": [
-        "Megnövelt biztonság és prémium funkciók a csoportok számára"
+        "Megnövelt biztonság és prémium funkciók a csoportok számára."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Alapvető védelem és biztonságos együttműködés korlátlan számú felhasználó számára."
@@ -9001,7 +9001,7 @@
         "Támogatja a fájlmegosztási protokollokat, mint a BitTorrent"
       ],
       "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
-        "Töltse fel vállalati logóját a ${ BRAND_NAME } web alkalmazásokban a jobb csapat élményért"
+        "Töltse fel vállalat logóját a csapat jobb felhasználói élményéért, a ${ BRAND_NAME } webes alkalmazásaiban"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Használja a saját egyedi email domain neveit, pl. on@azonneve.com"
@@ -9277,7 +9277,7 @@
         "Kártyaszám"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
-        "Az előfizetés automatikus megújulása jelenleg szünetel. Ha most módosítja az előfizetést, az automatikus megújulás ismét működni fog."
+        "Az előfizetés automatikus megújulása jelenleg szünetel. Ha most módosítja az előfizetést, az automatikus megújulás ismét életbe lép."
       ],
       "Got it": [
         "Rendben"
@@ -10261,7 +10261,7 @@
         "A lemondással elveszít az alábbi előnyöket. Biztos benne, hogy folytatja?"
       ],
       "contact your administrator": [
-        "lépjen kapcsolatba a rendszergazdával"
+        "lépjen kapcsolatba az adminisztrátorral"
       ],
       "For all ${ BRAND_NAME } services": [
         "Minden ${ BRAND_NAME } szolgáltatáshoz"
@@ -10350,7 +10350,7 @@
     },
     "Subscription price": {
       "For ${ totalPrice }": [
-        "Neki: ${ totalPrice }"
+        "${ totalPrice } áron"
       ]
     },
     "Subscription reminder": {
@@ -11923,7 +11923,7 @@
         "${ n } tároló"
       ],
       "Bitcoin via email": [
-        "Bitcoin email-en keresztül"
+        "Bitcoin küldése e-mail címmel"
       ]
     },
     "wallet_signup_2024:Bug category": {

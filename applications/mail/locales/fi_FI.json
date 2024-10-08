@@ -1195,6 +1195,9 @@
       "Start setup": [
         "Aloita määritys"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Alkaen ${ priceUnlimited }"
+      ],
       "Stay": [
         "Pysy"
       ],
@@ -1308,6 +1311,9 @@
       ],
       "Upgrade now": [
         "Päivitä tilaus nyt"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Päivitä ${ BRAND_NAME } Unlimited -tilaukseen"
       ],
       "Upload picture": [
         "Lataa kuva"
@@ -3415,6 +3421,15 @@
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Päivitä tilauksesi poistaaksesi roskapostit ja roskakorissa olevat viestit automaattisesti, ja avataksesi muita premium-ominaisuuksia."
       ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Tyhjennä yli 30 päivää sitten roskakoriin ja -postiin siirretyt sähköpostit automaattisesti."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Lajittele saapuvat viestisi automaattisesti, ennen kuin ne saapuvat postilaatikkoosi."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Luo niin monta tunnistetta tai kansiota kuin tarvitset postilaatikkosi siistinä pitämiseksi."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Yhteystietojen salausta puretaan… Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit ladata tiedoston, joka sisältää kaikki viedyt yhteystietosi."
       ],
@@ -3423,6 +3438,9 @@
       ],
       "Designed for users seeking heightened protection for their accounts.": [
         "Suunniteltu käyttäjille, jotka haluavat parantaa tiliensä suojausta."
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "Etkö halua lähettää sähköpostia juuri nyt? Ajoita se juuri oikeaan aikaan."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Yhteystietoja salataan ja tuodaan... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
@@ -3485,6 +3503,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Ota sähköpostin seurantasuojaus käyttöön, jotta mainostajat ja muut tahot eivät voi jäljittää sijaintiasi ja valvoa verkkotoimintaasi."
       ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Hanki tarttuva ja helposti kirjoitettava ${ activatePmUser } -sähköpostiosoite."
+      ],
       "Unlock custom message scheduling and more premium features when you upgrade.": [
         "Päivittämällä tilauksesi avaat viestien ajoituksen ja muita premium-ominaisuuksia."
       ],
@@ -3515,6 +3536,12 @@
       "When do you want your message to be sent?": [
         "Milloin haluat viestin lähtevän?"
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Yhteystietoryhmillä voit lähettää sähköposteja kaikille ryhmän jäsenille yhdellä klikkauksella."
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "Mukautetun torkutuksella voit piilottaa sähköposteja ja asettaa ne näkymään uudelleen sopivampaan aikaan."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Voit tuoda tapahtumia iCal-muodossa (ICS-tiedostosta). Tiedosto voi olla enintään ${ MAX_IMPORT_FILE_SIZE_STRING } kokoinen ja sisältää enintään ${ MAX_IMPORT_EVENTS_STRING } tapahtumaa. Jos tiedosto on suurempi, jaa se pienempiin tiedostoihin."
       ],
@@ -3526,6 +3553,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Tilisi ja tietojesi palautustavat on asetettu."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
       ]
     },
     "description": {
@@ -5212,6 +5242,23 @@
       ],
       "Sign in with Google": [
         "Kirjaudu Googlella"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Liity Google Meettiin"
+      ],
+      "Joining instructions": [
+        "Liittymisohjeet"
+      ],
+      "Less details": [
+        "Vähemmän tietoja"
+      ],
+      "Meeting link:": [
+        "Tapaamislinkki:"
+      ],
+      "More details": [
+        "Enemmän tietoja"
       ]
     },
     "Group": {
@@ -7325,6 +7372,9 @@
       "You are about to open another browser tab and visit:": [
         "Olet avaamassa uutta selaimen välilehteä sivustolle:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Olet avaamassa oletusselaintasi sivustolle:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Olet kirjautuneena ${ user.Name } (${ user.Email })."
       ],
@@ -9001,8 +9051,14 @@
       "Get started for ${ price }": [
         "Aloita hintaan ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Alkaen ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Päivitä tilaus nyt"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Päivitä ${ MAIL_SHORT_APP_NAME } Plus -tilaukseen"
       ]
     },
     "new_plans: action": {
@@ -9576,6 +9632,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Hanki Mail Plus hintaan ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Alkaen ${ price }"
       ]
     },
     "new_plans: title": {
@@ -9881,6 +9940,9 @@
       "Link copied to clipboard": [
         "Linkki kopioitiin leikepöydälle"
       ],
+      "Passcode copied to clipboard": [
+        "Tunnuskoodi kopioitiin leikepöydälle"
+      ],
       "Password has been set successfully": [
         "Salasanan asetus onnistui"
       ],
@@ -9932,11 +9994,20 @@
       ],
       "Social media": [
         "Sosiaalinen media"
+      ],
+      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
+        "Käytä ${ MAIL_APP_NAME } -osoitettasi verkkopalveluihin kirjautumiseen välttyäksesi seurannalta ja profiloinnilta. Vaihda sähköpostiosoitteesi suosituissa palveluissa nyt. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
         "${ advancedEncryptionTitle } varmistaa, että vain sinä ja määritetyt vastaanottajat näkevät sähköpostisi."
+      ],
+      "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
+        "${ industryLeadingSpamProtectionTitle } suojaa postilaatikkoasi huijaussähköposteilta."
+      ],
+      "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
+        "${ protectionFromTrackersTitle } suojaa sinut seuraamiselta Internetissä."
       ],
       "Access email and calendar right from your desktop with the desktop app.": [
         "Käytä sähköpostia ja kalenteria suoraan työpöydältäsi työpöytäsovelluksella."
@@ -11149,6 +11220,9 @@
       "/ month": [
         "kuukaudessa"
       ],
+      "/month": [
+        "/kuukausi"
+      ],
       "1 year": [
         "1 vuosi"
       ],
@@ -11156,7 +11230,7 @@
         "15 kuukautta"
       ],
       "2 years": [
-        "2 vuotta"
+        "Kaksi vuotta"
       ],
       "30 months": [
         "30 kuukautta"
@@ -12432,6 +12506,9 @@
       "Attachments": [
         "Liitteet"
       ],
+      "Bad time for this email?": [
+        "Huono aika tälle sähköpostille?"
+      ],
       "BCC": [
         "Piilokopio"
       ],
@@ -12656,6 +12733,9 @@
       "External encryption": [
         "Ulkoinen salaus"
       ],
+      "Filter for more focus": [
+        "Suodattimet parantamaan keskittymistäsi"
+      ],
       "Filter name cannot contain only spaces": [
         "Suodattimen nimi ei voi sisältää pelkkiä välilyöntejä"
       ],
@@ -12682,6 +12762,9 @@
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Piilota sähköpostisi ${ PASS_APP_NAME }:lla"
+      ],
+      "High security for your account": [
+        "Vahva suojaus tilillesi"
       ],
       "How to update your email address": [
         "Miten vaihdat sähköpostiosoitteesi"
@@ -12822,6 +12905,9 @@
       "Need more aliases?": [
         "Tarvitsetko lisää aliaksia?"
       ],
+      "Need more labels or folders?": [
+        "Tarvitsetko enemmän tunnisteita tai kansioita?"
+      ],
       "Network error": [
         "Verkkovirhe"
       ],
@@ -12843,6 +12929,9 @@
       "No breaches detected": [
         "Tietomurtoja ei ole havaittu"
       ],
+      "No need to empty the trash": [
+        "Roskia ei tarvitse tyhjentää"
+      ],
       "No trackers found": [
         "Seurantoja ei löydetty"
       ],
@@ -12851,6 +12940,9 @@
       ],
       "Notes": [
         "Muistiinpanot"
+      ],
+      "One email, many recipients": [
+        "Yksi sähköposti, monta vastaanottajaa"
       ],
       "Open actions dropdown": [
         "Avaa toimintovalikko"
@@ -12927,8 +13019,14 @@
       "Request new code": [
         "Pyydä uusi koodi"
       ],
+      "Same inbox, shorter email address": [
+        "Sama postilaatikko, lyhyempi sähköpostiosoite"
+      ],
       "Save time with email filters": [
         "Säästä aikaa sähköpostisuodattimilla"
+      ],
+      "Schedule now, send later": [
+        "Ajoita nyt, lähetä myöhemmin"
       ],
       "Schedule send": [
         "Ajoita lähetys"
@@ -13684,6 +13782,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Vuosittain, ${ untilString }"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Liity Zoom-tapaamiseen"
+      ],
+      "Meeting ID:": [
+        "Tapaamisen ID:"
+      ],
+      "Passcode: ${ password }": [
+        "Tunnuskoodi: ${ password }"
       ]
     }
   }

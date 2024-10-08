@@ -10268,6 +10268,18 @@
       ]
     },
     "Onboarding modal": {
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "${ advancedEncryptionTitle } гарантирует, что только вы и предполагаемые получатели смогут получить доступ к вашим письмам."
+      ],
+      "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
+        "${ industryLeadingSpamProtectionTitle } предотвращает попадание мошеннических писем в ваш почтовый ящик."
+      ],
+      "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
+        "${ protectionFromTrackersTitle } означает, что за вами больше не будут следить по всему Интернету."
+      ],
+      "Access email and calendar right from your desktop with the desktop app.": [
+        "Получите доступ к электронной почте и календарю прямо с рабочего стола с помощью приложения для настольных компьютеров."
+      ],
       "Activate premium features": [
         "Активировать премиум-функции"
       ],
@@ -10304,8 +10316,14 @@
       "Download the desktop app": [
         "Скачать приложение для настольных компьютеров"
       ],
+      "Download the desktop app and continue": [
+        "Загрузите приложение для настольных компьютеров и продолжите"
+      ],
       "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
         "Шифрование настолько сильное, что только вы и предназначенные получатели могут просматривать ваши электронные письма. ${ kbLinkEncryption }"
+      ],
+      "Fixed and focused": [
+        "Исправлено и сфокусировано"
       ],
       "For your eyes only": [
         "Только для ваших глаз"
@@ -10316,11 +10334,17 @@
       "Get notified if your password is compromised.": [
         "Получайте уведомления, если ваш пароль скомпрометирован."
       ],
+      "Get the desktop app": [
+        "Получите приложение для настольных компьютеров"
+      ],
       "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
         "Загрузить мобильное приложение из ${ mobileAppAppStoreLink } или из ${ mobileAppGooglePlayLink }."
       ],
       "Google Play": [
         "Google Play"
+      ],
+      "Industry-leading spam protection": [
+        "Лучшая в отрасли защита от спама"
       ],
       "Let's get started": [
         "Начнём"
@@ -10330,6 +10354,9 @@
       ],
       "Maybe later": [
         "Может быть позже"
+      ],
+      "More ways to experience ${ MAIL_APP_NAME }": [
+        "Больше способов познакомиться с ${ MAIL_APP_NAME }"
       ],
       "Next": [
         "Далее"
@@ -10351,6 +10378,12 @@
       ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "Мы запрещаем рекламодателям и сборщикам данных создавать ваши профили. ${ kbLinkPrivacy }"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Добро пожаловать в ${ MAIL_APP_NAME }"
+      ],
+      "Where privacy is default.": [
+        "Где приватность по умолчанию."
       ]
     },
     "Onboarding Proton": {
