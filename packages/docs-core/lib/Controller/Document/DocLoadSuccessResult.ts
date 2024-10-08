@@ -1,5 +1,9 @@
-import type { DocumentEntitlements } from '../../Types/DocumentEntitlements'
+import type { DocumentEntitlements, PublicDocumentEntitlements } from '../../Types/DocumentEntitlements'
 
-export type DocLoadSuccessResult = {
+export type PrivateDocLoadSuccessResult = {
   entitlements: DocumentEntitlements
+}
+
+export type PublicDocLoadSuccessResult = {
+  entitlements: PublicDocumentEntitlements
 }

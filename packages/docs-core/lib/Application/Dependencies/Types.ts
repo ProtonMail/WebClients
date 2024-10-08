@@ -2,7 +2,8 @@ export const App_TYPES = {
   // Services
   DocsApi: Symbol.for('DocsApi'),
   HttpService: Symbol.for('HttpService'),
-  DocLoader: Symbol.for('DocOrchestrator'),
+  DocLoader: Symbol.for('DocLoader'),
+  PublicDocLoader: Symbol.for('PublicDocLoader'),
   Logger: Symbol.for('Logger'),
   EventBus: Symbol.for('EventBus'),
   WebsocketService: Symbol.for('WebsocketService'),
@@ -17,6 +18,7 @@ export const App_TYPES = {
   DecryptMessage: Symbol.for('DecryptMessage'),
   CreateDocument: Symbol.for('CreateDocument'),
   GetDocumentMeta: Symbol.for('GetDocumentMeta'),
+  GetNode: Symbol.for('GetNode'),
   EncryptComment: Symbol.for('EncryptComment'),
   DecryptComment: Symbol.for('DecryptComment'),
   DuplicateDocument: Symbol.for('DuplicateDocument'),

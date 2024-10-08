@@ -1,3 +1,4 @@
+import type { GetNode } from './../../UseCase/GetNode'
 import type { LoggerInterface } from '@proton/utils/logs'
 import { DocController } from '../../Controller/Document/DocController'
 import type { SquashDocument } from '../../UseCase/SquashDocument'
@@ -52,6 +53,7 @@ export class DocLoader implements DocLoaderInterface {
     private duplicateDocument: DuplicateDocument,
     private createNewDocument: CreateNewDocument,
     private getDocumentMeta: GetDocumentMeta,
+    private getNode: GetNode,
     private exportAndDownload: ExportAndDownload,
     private eventBus: InternalEventBusInterface,
     private logger: LoggerInterface,
@@ -61,13 +63,13 @@ export class DocLoader implements DocLoaderInterface {
     this.docController?.destroy()
   }
 
-  public async initialize(lookup: NodeMeta): Promise<void> {
+  public async initialize(nodeMeta: NodeMeta): Promise<void> {
     if (this.docController) {
       throw new Error('[DocLoader] docController already initialized')
     }
 
     this.docController = new DocController(
-      lookup,
+      nodeMeta,
       this.driveCompat,
       this.squashDoc,
       this.createInitialCommit,
@@ -77,6 +79,7 @@ export class DocLoader implements DocLoaderInterface {
       this.createNewDocument,
       this.getDocumentMeta,
       this.exportAndDownload,
+      this.getNode,
       this.websocketSerivce,
       this.eventBus,
       this.logger,
@@ -94,7 +97,7 @@ export class DocLoader implements DocLoaderInterface {
     const { entitlements } = result.getValue()
 
     this.commentsController = new CommentController(
-      lookup,
+      nodeMeta,
       entitlements.keys,
       this.websocketSerivce,
       this.metricService,

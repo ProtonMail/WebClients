@@ -1,21 +1,21 @@
 import { Button } from '@proton/atoms'
 import { Icon } from '@proton/components'
 import { useLocalState } from '@proton/components/hooks'
-import type { DocControllerInterface } from '@proton/docs-core'
 import { DOCS_DEBUG_KEY } from '@proton/docs-shared'
 import { useEffect, useState } from 'react'
 import { useApplication } from '../Containers/ApplicationProvider'
+import type { AnyDocControllerInterface } from '@proton/docs-core/lib/Controller/Document/AnyDocControllerInterface'
+import { isPrivateDocController } from '@proton/docs-core/lib/Controller/Document/isPrivateDocController'
 
 export const useDebug = () => {
   const [debug] = useLocalState(false, DOCS_DEBUG_KEY)
   return Boolean(debug)
 }
 
-const DebugMenu = ({ docController }: { docController: DocControllerInterface }) => {
+const DebugMenu = ({ docController }: { docController: AnyDocControllerInterface }) => {
   const application = useApplication()
 
   const [isOpen, setIsOpen] = useState(false)
-  const [sharingUrl, setSharingUrl] = useState<string | null>()
   const [clientId, setClientId] = useState<string | null>()
 
   useEffect(() => {
@@ -25,19 +25,27 @@ const DebugMenu = ({ docController }: { docController: DocControllerInterface })
   }, [docController])
 
   const commitToRTS = async () => {
-    void docController.debugSendCommitCommandToRTS()
+    if (isPrivateDocController(docController)) {
+      void docController.debugSendCommitCommandToRTS()
+    }
   }
 
   const squashDocument = async () => {
-    void docController.squashDocument()
+    if (isPrivateDocController(docController)) {
+      void docController.squashDocument()
+    }
   }
 
   const closeConnection = async () => {
-    void application.websocketService.closeConnection(docController.getSureDocument())
+    if (isPrivateDocController(docController)) {
+      void application.websocketService.closeConnection({ linkId: docController.getSureDocument().nodeMeta.linkId })
+    }
   }
 
   const createInitialCommit = async () => {
-    void docController.createInitialCommit()
+    if (isPrivateDocController(docController)) {
+      void docController.createInitialCommit()
+    }
   }
 
   const copyEditorJSON = async () => {
@@ -53,16 +61,6 @@ const DebugMenu = ({ docController }: { docController: DocControllerInterface })
   const toggleDebugTreeView = () => {
     void docController.toggleDebugTreeView()
   }
-
-  useEffect(() => {
-    if (!docController) {
-      return
-    }
-
-    void docController.debugGetUnrestrictedSharingUrl().then((url) => {
-      setSharingUrl(url)
-    })
-  }, [docController])
 
   if (!isOpen) {
     return (
@@ -116,25 +114,6 @@ const DebugMenu = ({ docController }: { docController: DocControllerInterface })
         <Button size="small" onClick={toggleDebugTreeView}>
           Toggle Tree View
         </Button>
-        {sharingUrl && (
-          <div className="flex flex-col">
-            <div>Sharing URL</div>
-            <div className="flex gap-1">
-              <input
-                type="text"
-                className="border border-[--border-weak] bg-[--background-norm] px-2 py-1 text-sm"
-                value={sharingUrl}
-                readOnly
-              />
-              <button
-                className="rounded border border-[--border-weak] bg-[--background-norm] px-2 py-1 text-sm hover:bg-[--background-strong]"
-                onClick={() => navigator.clipboard.writeText(sharingUrl)}
-              >
-                Copy
-              </button>
-            </div>
-          </div>
-        )}
       </div>
     </div>
   )

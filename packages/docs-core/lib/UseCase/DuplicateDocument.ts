@@ -38,7 +38,7 @@ export class DuplicateDocument implements UseCaseInterface<DocumentNodeMeta> {
 
       const newDoc = documentMetaResult.getValue()
 
-      const commitResult = await this.seedInitialCommit.execute(newDoc, state, shellResult.keys)
+      const commitResult = await this.seedInitialCommit.execute(newDoc.nodeMeta, state, shellResult.keys)
       if (commitResult.isFailed()) {
         return Result.fail(commitResult.getError())
       }

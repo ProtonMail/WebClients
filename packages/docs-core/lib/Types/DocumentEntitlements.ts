@@ -8,6 +8,11 @@ export type DocumentEntitlements = {
   role: DocumentRole
 }
 
+export type PublicDocumentEntitlements = {
+  keys: Pick<DocumentKeys, 'documentContentKey'>
+  role: DocumentRole
+}
+
 export function rawPermissionToRole(permission: SHARE_MEMBER_PERMISSIONS): DocumentRole {
   if (getCanAdmin(permission)) {
     return new DocumentRole('Admin')

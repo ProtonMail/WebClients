@@ -6,10 +6,9 @@ import type {
   InternalEventBusInterface,
   RtsMessagePayload,
 } from '@proton/docs-shared'
-import { DecryptedMessage } from '@proton/docs-shared'
+import { DecryptedMessage, DocumentRole } from '@proton/docs-shared'
 import type { DriveCompat, NodeMeta } from '@proton/drive-store'
 import type { LoggerInterface } from '@proton/utils/logs'
-
 import { Result } from '../../Domain/Result/Result'
 import { MAX_DOC_SIZE, MAX_UPDATE_SIZE } from '../../Models/Constants'
 import type { DecryptedCommit } from '../../Models/DecryptedCommit'
@@ -28,6 +27,7 @@ import type { SquashDocument } from '../../UseCase/SquashDocument'
 import { DocController } from './DocController'
 import { DocControllerEvent } from './DocControllerEvent'
 import { DocumentMeta } from '../../Models/DocumentMeta'
+import type { GetNode } from '../../UseCase/GetNode'
 
 describe('DocController', () => {
   let controller: DocController
@@ -35,21 +35,34 @@ describe('DocController', () => {
     getNode: jest.fn(),
     trashDocument: jest.fn(),
     restoreDocument: jest.fn(),
+    getShareId: jest.fn(),
   }
 
-  beforeEach(() => {
+  beforeEach(async () => {
     controller = new DocController(
       {} as NodeMeta,
       driveCompat as unknown as jest.Mocked<DriveCompat>,
       {} as jest.Mocked<SquashDocument>,
       {} as jest.Mocked<SeedInitialCommit>,
       {
-        execute: jest
-          .fn()
-          .mockReturnValue(Result.ok({ keys: {}, meta: {}, lastCommitId: '123', entitlements: { keys: {} } })),
+        executePrivate: jest.fn().mockReturnValue(
+          Result.ok({
+            node: { parentNodeId: 'parent-node-id-123' },
+            meta: { nodeMeta: { linkId: 'link-id-123' } },
+            lastCommitId: '123',
+            entitlements: { keys: {}, role: new DocumentRole('Editor') },
+          }),
+        ),
       } as unknown as jest.Mocked<LoadDocument>,
       {
-        execute: jest.fn().mockReturnValue(Result.ok({ numberOfUpdates: jest.fn() })),
+        execute: jest.fn().mockReturnValue(
+          Result.ok({
+            numberOfUpdates: jest.fn(),
+            squashedRepresentation: jest.fn().mockReturnValue(new Uint8Array(0)),
+            needsSquash: jest.fn().mockReturnValue(false),
+            byteSize: 0,
+          }),
+        ),
       } as unknown as jest.Mocked<LoadCommit>,
       {} as jest.Mocked<DuplicateDocument>,
       {} as jest.Mocked<CreateNewDocument>,
@@ -61,6 +74,9 @@ describe('DocController', () => {
         ),
       } as unknown as jest.Mocked<GetDocumentMeta>,
       {} as jest.Mocked<ExportAndDownload>,
+      {
+        execute: jest.fn().mockReturnValue(Result.ok({})),
+      } as unknown as jest.Mocked<GetNode>,
       {
         createConnection: jest.fn().mockReturnValue({ connect: jest.fn().mockResolvedValue(true) }),
         sendDocumentUpdateMessage: jest.fn(),
@@ -76,7 +92,7 @@ describe('DocController', () => {
         debug: jest.fn(),
         info: jest.fn(),
         warn: jest.fn(),
-        error: jest.fn(),
+        error: console.error,
       } as unknown as jest.Mocked<LoggerInterface>,
     )
 
@@ -98,6 +114,8 @@ describe('DocController', () => {
       performClosingCeremony: jest.fn(),
       getDocumentState: jest.fn(),
     } as unknown as jest.Mocked<ClientRequiresEditorMethods>
+
+    await controller.initialize()
   })
 
   it('should queue updates received while editor was not yet ready', async () => {
@@ -162,6 +180,7 @@ describe('DocController', () => {
 
       await controller.setInitialCommit({
         needsSquash: jest.fn(),
+        squashedRepresentation: jest.fn().mockReturnValue(new Uint8Array()),
       } as unknown as jest.Mocked<DecryptedCommit>)
 
       expect(controller.sendInitialCommitToEditor).toHaveBeenCalled()
@@ -171,6 +190,7 @@ describe('DocController', () => {
       await controller.setInitialCommit({
         needsSquash: jest.fn(),
         commitId: '456',
+        squashedRepresentation: jest.fn().mockReturnValue(new Uint8Array()),
       } as unknown as jest.Mocked<DecryptedCommit>)
 
       expect(controller.lastCommitIdReceivedFromRtsOrApi).toBe('456')
@@ -180,7 +200,7 @@ describe('DocController', () => {
   describe('showEditorIfAllConnectionsReady', () => {
     it('should not show editor if docs server connection is not ready', () => {
       controller.realtimeConnectionReady = true
-      controller.docsServerConnectionReady = false
+      controller.docsServerDataReady = false
       controller.showEditor = jest.fn()
 
       controller.showEditorIfAllConnectionsReady()
@@ -190,7 +210,7 @@ describe('DocController', () => {
 
     it('should not show editor if realtime connection is not ready', () => {
       controller.realtimeConnectionReady = false
-      controller.docsServerConnectionReady = true
+      controller.docsServerDataReady = true
       controller.showEditor = jest.fn()
 
       controller.showEditorIfAllConnectionsReady()
@@ -201,7 +221,7 @@ describe('DocController', () => {
     it('should not show editor if editorInvoker is undefined', () => {
       controller.editorInvoker = undefined
       controller.realtimeConnectionReady = true
-      controller.docsServerConnectionReady = true
+      controller.docsServerDataReady = true
       controller.showEditor = jest.fn()
 
       controller.showEditorIfAllConnectionsReady()
@@ -225,7 +245,7 @@ describe('DocController', () => {
   describe('handleRealtimeConnectionReady', () => {
     it('should show editor', () => {
       controller.didAlreadyReceiveEditorReadyEvent = true
-      controller.docsServerConnectionReady = true
+      controller.docsServerDataReady = true
 
       controller.handleRealtimeConnectionReady()
 
@@ -388,6 +408,8 @@ describe('DocController', () => {
 
   describe('refetchCommitDueToStaleContents', () => {
     it('should post UnableToResolveCommitIdConflict error if unable to resolve', async () => {
+      controller.logger.error = jest.fn()
+
       controller._loadCommit.execute = jest.fn().mockReturnValue(Result.fail('Unable to resolve'))
       controller._getDocumentMeta.execute = jest.fn().mockReturnValue(Result.fail('Unable to resolve'))
 
@@ -400,7 +422,13 @@ describe('DocController', () => {
     })
 
     it('should not reprocess if already processing', async () => {
-      controller._loadCommit.execute = jest.fn().mockReturnValue(Result.ok({}))
+      controller._loadCommit.execute = jest.fn().mockReturnValue(
+        Result.ok({
+          numberOfUpdates: jest.fn(),
+          squashedRepresentation: jest.fn().mockReturnValue(new Uint8Array()),
+          needsSquash: jest.fn().mockReturnValue(false),
+        }),
+      )
       controller._getDocumentMeta.execute = jest.fn().mockReturnValue(Result.ok({}))
 
       controller.isRefetchingStaleCommit = true
@@ -415,6 +443,7 @@ describe('DocController', () => {
         Result.ok({
           numberOfUpdates: jest.fn().mockReturnValue(0),
           needsSquash: jest.fn().mockReturnValue(false),
+          squashedRepresentation: jest.fn().mockReturnValue(new Uint8Array()),
         }),
       )
 
@@ -430,6 +459,7 @@ describe('DocController', () => {
         Result.ok({
           numberOfUpdates: jest.fn().mockReturnValue(0),
           needsSquash: jest.fn().mockReturnValue(false),
+          squashedRepresentation: jest.fn().mockReturnValue(new Uint8Array()),
         }),
       )
 
@@ -597,6 +627,8 @@ describe('DocController', () => {
 
   describe('handleAttemptingToBroadcastUpdateThatIsTooLarge', () => {
     it('should lock editing', () => {
+      controller.logger.error = jest.fn()
+
       controller.reloadEditingLockedState = jest.fn()
 
       controller.handleAttemptingToBroadcastUpdateThatIsTooLarge()
@@ -660,9 +692,12 @@ describe('DocController', () => {
     let publishDocumentTrashStateUpdated: jest.SpyInstance
 
     beforeEach(() => {
-      controller.docMeta = new DocumentMeta('abc', 'def', ['ghi'], 123, 456, 'jkl')
+      controller.docMeta = new DocumentMeta({ linkId: 'abc', volumeId: 'def' }, ['ghi'], 123, 456, 'jkl')
 
-      driveCompat.getNode.mockResolvedValue({ parentNodeId: '123' })
+      controller._getNode.execute = jest
+        .fn()
+        .mockResolvedValue(Result.ok({ node: { parentNodeId: '123', trashed: true } }))
+
       publishDocumentTrashStateUpdated = jest.spyOn(controller, 'publishDocumentTrashStateUpdated')
     })
 
@@ -707,9 +742,12 @@ describe('DocController', () => {
     let publishDocumentTrashStateUpdated: jest.SpyInstance
 
     beforeEach(() => {
-      controller.docMeta = new DocumentMeta('abc', 'def', ['ghi'], 123, 456, 'jkl')
+      controller.docMeta = new DocumentMeta({ linkId: 'abc', volumeId: 'def' }, ['ghi'], 123, 456, 'jkl')
 
-      driveCompat.getNode.mockResolvedValue({ parentNodeId: '123' })
+      controller._getNode.execute = jest
+        .fn()
+        .mockResolvedValue(Result.ok({ node: { parentNodeId: '123', trashed: true } }))
+
       publishDocumentTrashStateUpdated = jest.spyOn(controller, 'publishDocumentTrashStateUpdated')
     })
 
@@ -724,6 +762,9 @@ describe('DocController', () => {
     it('trashState should be restored when complete', async () => {
       controller.trashState = 'trashed'
       const publishDocumentTrashStateUpdated = jest.spyOn(controller, 'publishDocumentTrashStateUpdated')
+      controller._getNode.execute = jest
+        .fn()
+        .mockResolvedValue(Result.ok({ node: { parentNodeId: '123', trashed: false } }))
       await controller.restoreDocument()
       expect(controller.getTrashState()).toBe('not_trashed')
       expect(publishDocumentTrashStateUpdated).toHaveBeenCalledTimes(2)
@@ -767,36 +808,40 @@ describe('DocController', () => {
     })
   })
 
-  describe('loadDecryptedNode', () => {
+  describe('refreshNodeAndDocMeta', () => {
     it('trashed state will be not_trashed if DecryptedNode trashed property is null', async () => {
-      controller.docMeta = new DocumentMeta('abc', 'def', ['ghi'], 123, 456, 'jkl')
+      controller.docMeta = new DocumentMeta({ linkId: 'abc', volumeId: 'def' }, ['ghi'], 123, 456, 'jkl')
 
-      driveCompat.getNode.mockResolvedValueOnce({ parentNodeId: 123, trashed: null })
+      controller._getNode.execute = jest
+        .fn()
+        .mockResolvedValueOnce(Result.ok({ node: { parentNodeId: 123, trashed: null } }))
       const publishDocumentTrashStateUpdated = jest.spyOn(controller, 'publishDocumentTrashStateUpdated')
 
-      await controller.loadDecryptedNode()
+      await controller.refreshNodeAndDocMeta({ imposeTrashState: undefined })
       expect(controller.getTrashState()).toBe('not_trashed')
       expect(publishDocumentTrashStateUpdated).toHaveBeenCalledTimes(1)
     })
 
     it('trashed state will be not_trashed if DecryptedNode trashed property is omitted', async () => {
-      controller.docMeta = new DocumentMeta('abc', 'def', ['ghi'], 123, 456, 'jkl')
+      controller.docMeta = new DocumentMeta({ linkId: 'abc', volumeId: 'def' }, ['ghi'], 123, 456, 'jkl')
 
-      driveCompat.getNode.mockResolvedValueOnce({ parentNodeId: 123 })
+      controller._getNode.execute = jest.fn().mockResolvedValueOnce(Result.ok({ node: { parentNodeId: 123 } }))
       const publishDocumentTrashStateUpdated = jest.spyOn(controller, 'publishDocumentTrashStateUpdated')
 
-      await controller.loadDecryptedNode()
+      await controller.refreshNodeAndDocMeta({ imposeTrashState: undefined })
       expect(controller.getTrashState()).toBe('not_trashed')
       expect(publishDocumentTrashStateUpdated).toHaveBeenCalledTimes(1)
     })
 
     it('trashed state will be trashed if DecryptedNode trashed property is populated', async () => {
-      controller.docMeta = new DocumentMeta('abc', 'def', ['ghi'], 123, 456, 'jkl')
+      controller.docMeta = new DocumentMeta({ linkId: 'abc', volumeId: 'def' }, ['ghi'], 123, 456, 'jkl')
 
-      driveCompat.getNode.mockResolvedValueOnce({ parentNodeId: 123, trashed: 123 })
+      controller._getNode.execute = jest
+        .fn()
+        .mockResolvedValueOnce(Result.ok({ node: { parentNodeId: 123, trashed: 123 } }))
       const publishDocumentTrashStateUpdated = jest.spyOn(controller, 'publishDocumentTrashStateUpdated')
 
-      await controller.loadDecryptedNode()
+      await controller.refreshNodeAndDocMeta({ imposeTrashState: undefined })
       expect(controller.getTrashState()).toBe('trashed')
       expect(publishDocumentTrashStateUpdated).toHaveBeenCalledTimes(1)
     })

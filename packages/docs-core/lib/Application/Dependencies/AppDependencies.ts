@@ -2,6 +2,7 @@ import type { LoggerInterface } from '@proton/utils/logs'
 import { Logger } from '@proton/utils/logs'
 import { DOCS_DEBUG_KEY, DependencyContainer } from '@proton/docs-shared'
 import { App_TYPES } from './Types'
+import type { HttpHeaders } from '../../Api/DocsApi'
 import { DocsApi } from '../../Api/DocsApi'
 import { SquashDocument } from '../../UseCase/SquashDocument'
 import { EncryptMessage } from '../../UseCase/EncryptMessage'
@@ -24,7 +25,6 @@ import { SeedInitialCommit } from '../../UseCase/SeedInitialCommit'
 import { EncryptionContext } from '../../Services/Encryption/EncryptionContext'
 import { VerifyCommit } from '../../UseCase/VerifyCommit'
 import { DecryptCommit } from '../../UseCase/DecryptCommit'
-import type { DriveCompat } from '@proton/drive-store'
 import { SquashAlgorithm } from '../../UseCase/SquashAlgorithm'
 import { HandleRealtimeCommentsEvent } from '../../UseCase/HandleRealtimeCommentsEvent'
 import { CreateComment } from '../../UseCase/CreateComment'
@@ -37,9 +37,18 @@ import { ExportAndDownload } from '../../UseCase/ExportAndDownload'
 import type { ImageProxyParams } from '../../Api/Types/ImageProxyParams'
 import { MetricService } from '../../Services/Metrics/MetricService'
 import { StubRecentDocumentsService } from '../../Services/RecentDocuments/RecentDocumentsService'
+import { GetNode } from '../../UseCase/GetNode'
+import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
+import { PublicDocLoader } from '../../Services/DocumentLoader/PublicDocLoader'
 
 export class AppDependencies extends DependencyContainer {
-  constructor(api: Api, imageProxyParams: ImageProxyParams, driveCompat: DriveCompat, appVersion: string) {
+  constructor(
+    api: Api,
+    imageProxyParams: ImageProxyParams | undefined,
+    publicContextHeaders: HttpHeaders | undefined,
+    compatWrapper: DriveCompatWrapper,
+    appVersion: string,
+  ) {
     super()
 
     this.bind(App_TYPES.Logger, () => {
@@ -55,11 +64,11 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.RealtimeEncryptionService, () => {
-      return new EncryptionService(EncryptionContext.RealtimeMessage, driveCompat)
+      return new EncryptionService(EncryptionContext.RealtimeMessage, compatWrapper)
     })
 
     this.bind(App_TYPES.CommentsEncryptionService, () => {
-      return new EncryptionService(EncryptionContext.PersistentComment, driveCompat)
+      return new EncryptionService(EncryptionContext.PersistentComment, compatWrapper)
     })
 
     this.bind(App_TYPES.EncryptComment, () => {
@@ -75,7 +84,7 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.DocsApi, () => {
-      return new DocsApi(api, imageProxyParams)
+      return new DocsApi(api, publicContextHeaders, imageProxyParams)
     })
 
     this.bind(App_TYPES.EncryptMessage, () => {
@@ -95,7 +104,13 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.CreateEmptyDocumentForConversion, () => {
-      return new CreateEmptyDocumentForConversion(driveCompat, this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta))
+      if (!compatWrapper.userCompat) {
+        throw new Error('User compat not available')
+      }
+      return new CreateEmptyDocumentForConversion(
+        compatWrapper.userCompat,
+        this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta),
+      )
     })
 
     this.bind(App_TYPES.SquashAlgorithm, () => {
@@ -128,7 +143,15 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.LoadDocument, () => {
-      return new LoadDocument(driveCompat, this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta))
+      return new LoadDocument(
+        compatWrapper,
+        this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta),
+        this.get<GetNode>(App_TYPES.GetNode),
+      )
+    })
+
+    this.bind(App_TYPES.GetNode, () => {
+      return new GetNode(compatWrapper)
     })
 
     this.bind(App_TYPES.LoadCommit, () => {
@@ -143,8 +166,11 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.DuplicateDocument, () => {
+      if (!compatWrapper.userCompat) {
+        throw new Error('User compat not available')
+      }
       return new DuplicateDocument(
-        driveCompat,
+        compatWrapper.userCompat,
         this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta),
         this.get<SeedInitialCommit>(App_TYPES.CreateInitialCommit),
       )
@@ -158,7 +184,10 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.CreateNewDocument, () => {
-      return new CreateNewDocument(driveCompat, this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta))
+      if (!compatWrapper.userCompat) {
+        throw new Error('User compat not available')
+      }
+      return new CreateNewDocument(compatWrapper.userCompat, this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta))
     })
 
     this.bind(App_TYPES.CreateRealtimeValetToken, () => {
@@ -169,10 +198,25 @@ export class AppDependencies extends DependencyContainer {
       return new ExportAndDownload()
     })
 
+    this.bind(App_TYPES.PublicDocLoader, () => {
+      return new PublicDocLoader(
+        this.get<DocsApi>(App_TYPES.DocsApi),
+        this.get<LoadDocument>(App_TYPES.LoadDocument),
+        this.get<LoadCommit>(App_TYPES.LoadCommit),
+        this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta),
+        this.get<ExportAndDownload>(App_TYPES.ExportAndDownload),
+        this.get<InternalEventBusInterface>(App_TYPES.EventBus),
+        this.get<LoggerInterface>(App_TYPES.Logger),
+      )
+    })
+
     this.bind(App_TYPES.DocLoader, () => {
+      if (!compatWrapper.userCompat) {
+        throw new Error('User compat not available')
+      }
       return new DocLoader(
         this.get<WebsocketService>(App_TYPES.WebsocketService),
-        driveCompat,
+        compatWrapper.userCompat,
         this.get<MetricService>(App_TYPES.MetricService),
         this.get<DocsApi>(App_TYPES.DocsApi),
         this.get<SquashDocument>(App_TYPES.SquashDocument),
@@ -187,6 +231,7 @@ export class AppDependencies extends DependencyContainer {
         this.get<DuplicateDocument>(App_TYPES.DuplicateDocument),
         this.get<CreateNewDocument>(App_TYPES.CreateNewDocument),
         this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta),
+        this.get<GetNode>(App_TYPES.GetNode),
         this.get<ExportAndDownload>(App_TYPES.ExportAndDownload),
         this.get<InternalEventBusInterface>(App_TYPES.EventBus),
         this.get<LoggerInterface>(App_TYPES.Logger),
@@ -231,7 +276,10 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.RecentDocumentsService, () => {
-      return new StubRecentDocumentsService(this.get<InternalEventBus>(App_TYPES.EventBus), driveCompat)
+      if (!compatWrapper.userCompat) {
+        throw new Error('User compat not available')
+      }
+      return new StubRecentDocumentsService(this.get<InternalEventBus>(App_TYPES.EventBus), compatWrapper.userCompat)
     })
   }
 }
