@@ -468,9 +468,6 @@
       "Continue": [
         "Ga verder"
       ],
-      "Continue with ${ selectedPaymentProvider }": [
-        "Ga verder met ${ selectedPaymentProvider }"
-      ],
       "Credit card": [
         "Creditcard"
       ],
@@ -511,9 +508,6 @@
     "Bitcoin buy": {
       "${ quote.provider } checkout": [
         "${ quote.provider } afrekenen"
-      ],
-      "We could not find any quote for this currency/country pair": [
-        "We konden geen offerte vinden voor deze valuta/land combinatie"
       ]
     },
     "Bitcoin Script Type": {
@@ -544,12 +538,6 @@
     "Bitcoin send": {
       "Add recipient": [
         "Voeg ontvanger toe"
-      ],
-      "Could not send invitation": [
-        "Kan de uitnodiging niet verzenden"
-      ],
-      "Could not send invitation to the recipient": [
-        "Kan de uitnodiging naar de ontvanger niet verzenden"
       ],
       "Invitation sent": [
         "Uitnodiging verzonden"
@@ -1682,6 +1670,17 @@
         "Help ons verbeteren"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Bevestig het verlies van ${ PASS_APP_NAME } speciale korting"
+      ],
+      "Remove discount": [
+        "Korting verwijderen"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Uw ${ PLAN_NAMES[PLANS.PASS] }-abonnement heeft een speciale prijs van ${ price } per jaar. Als u downgrade naar een Free abonnement, zult u permanent uw korting verliezen, zelfs als u in de toekomst opnieuw upgrade."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Uitgebreide versiegeschiedenis bekijken"
@@ -2020,9 +2019,6 @@
       ],
       "Not now": [
         "Niet nu"
-      ],
-      "You are now leaving ${ WALLET_APP_NAME } for ${ provider } (${ websiteLink }). Services related to card payments, bank transfers, and any other fiat transactions are provided by ${ provider }, a separate third-party platform. By proceeding and procuring services from ${ provider }, you acknowledge that you have read and agreed to ${ provider }'s Terms of Service (${ termOfUseLink }) and Privacy and Cookies Policy (${ privacyAndCookiesPolicyLink }). For any questions related to ${ provider }'s services, please contact ${ provider } at ${ supportEmailLink }": [
-        "U verlaat nu ${ WALLET_APP_NAME } voor ${ provider } (${ websiteLink }). Diensten met betrekking tot kaartbetalingen, bankoverschrijvingen en andere fiattransacties worden geleverd door ${ provider }, een afzonderlijk platform van derden. Door door te gaan en diensten van ${ provider } aan te vragen, erkent u dat u de Servicevoorwaarden (${ termOfUseLink }) en het Privacy- en Cookiebeleid (${ privacyAndCookiesPolicyLink }) van ${ provider } heeft gelezen en geaccepteerd. Voor vragen met betrekking tot de diensten van ${ provider }, kunt u ${ provider } bereiken via ${ supportEmailLink }"
       ]
     },
     "Group": {
@@ -3081,6 +3077,9 @@
       "Unlimited messages per day": [
         "Onbeperkt aantal berichten per dag"
       ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Onbeperkte gedeelde ${ PASS_SHORT_APP_NAME } kluizen per gebruiker"
+      ],
       "Unlimited shared vaults with access permissions": [
         "Onbeperkt aantal gedeelde kluizen met toegangsmachtigingen"
       ],
@@ -3173,6 +3172,9 @@
       ],
       "Popular": [
         "Populair"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Bescherm gevoelige bedrijfsinformatie en werk veilig samen."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Bescherm de privacy van uw gezin met alle services van ${ BRAND_NAME } gecombineerd."
@@ -3337,6 +3339,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personaliseer uw e-mailhandtekening met een logo, afbeelding, pictogram van social media, koppeling naar uw contactgegevens en meer"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Telefonische ondersteuning is beschikbaar van de ${ BRAND_NAME } klantenondersteuning tijdens Europese kantoortijden voor klanten met 20 of meer gebruikers."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Voorkomt dat berichten worden gelezen door ${ BRAND_NAME } of derden. De enige personen die de berichten kunnen lezen, zijn de afzender en de beoogde ontvanger."
@@ -3545,6 +3550,9 @@
       "MM/YY": [
         "MM/JJ"
       ],
+      "More plans are available in other currencies": [
+        "Er zijn meer abonnementen beschikbaar in andere valuta"
+      ],
       "Payment Processing": [
         "Betaling wordt verwerkt"
       ],
@@ -3699,6 +3707,11 @@
       ],
       "External recipient": [
         "Externe ontvanger"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Controleer de veiligheid van uw account"
       ]
     },
     "Select search results": {
@@ -4033,6 +4046,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Uw abonnement was gekocht met een iOS-app. Om wijzigingen te maken of uw betaalgegevens bij te werken, moet u naar de Apple App Store gaan."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Het abonnement zal worden gedowngradet aan het einde van de factureringscyclus."
       ]
     },
     "Subscription price": {
@@ -4380,9 +4398,6 @@
       ]
     },
     "Wallet": {
-      "An error occurred": [
-        "Er is een fout opgetreden"
-      ],
       "Close": [
         "Sluiten"
       ],
@@ -4417,9 +4432,6 @@
       ],
       "Cancel": [
         "Annuleren"
-      ],
-      "Could not add account to wallet": [
-        "Kan account niet aan portemonnee toevoegen"
       ],
       "Create multiple wallet accounts to separate your financial activities for better privacy and organization.": [
         "Maak meerdere portemonnee-accounts aan om uw financiële activiteiten te scheiden voor betere privacy en organisatie."
@@ -4497,11 +4509,6 @@
         "Verzenden"
       ]
     },
-    "wallet dashboard": {
-      "You need to have a positive balance to send bitcoins": [
-        "U moet een positief saldo hebben om bitcoins te verzenden"
-      ]
-    },
     "Wallet deletion": {
       "Are you sure you want to delete \"${ wallet.Wallet.Name }\"": [
         "Weet u zeker dat u \"${ wallet.Wallet.Name }\" wilt verwijderen?"
@@ -4544,9 +4551,6 @@
     "Wallet header": {
       "Secure your wallet": [
         "Beveilig uw portemonnee"
-      ],
-      "The current fingerprint doesn't match stored one.": [
-        "De huidige vingerafdruk komt niet overeen met die is opgeslagen."
       ],
       "This wallet needs a passphrase to be used.": [
         "Deze portemonnee moet een wachtwoordzin bevatten."
@@ -4883,9 +4887,6 @@
       "You are sending": [
         "U verstuurt"
       ],
-      "You cannot send a message to the recipient because you don't have any address setup on your account": [
-        "U kunt geen bericht naar de ontvanger sturen omdat u geen adres op uw account heeft ingesteld"
-      ],
       "You do not have enough BTC in this account to fund the transaction and the required network fee of ${ feesToReserveElement }.": [
         "U heeft niet genoeg BTC op dit account om de transactie te financieren en de vereiste netwerkvergoeding van ${ feesToReserveElement } te betalen."
       ],
@@ -4908,14 +4909,8 @@
       ]
     },
     "Wallet Settings": {
-      "Account could not be deleted": [
-        "Account kan niet verwijderd worden"
-      ],
       "Account name changed": [
         "Accountnaam is gewijzigd"
-      ],
-      "Account name could not be changed": [
-        "Accountnaam kon niet gewijzigd worden"
       ],
       "Account was deleted": [
         "Account is verwijderd"
@@ -4923,20 +4918,11 @@
       "Bitcoin via Email": [
         "Bitcoin via e-mail"
       ],
-      "Could not add email address": [
-        "E-mailadres kan niet toegevoegd worden"
-      ],
-      "Could not be replaced": [
-        "Kan niet vervangen worden"
-      ],
       "Could not fill the pool after email address addition": [
         "Kon de pool niet invullen na de toevoeging van het e-mailadres"
       ],
       "Could not fill the pool after email address replacement": [
         "Kan de pool niet invullen na de vervanging van het e-mailadres"
-      ],
-      "Could not remove email address": [
-        "E-mailadres kan niet verwijderd worden"
       ],
       "Create new email address": [
         "Nieuw e-mailadres aanmaken"
@@ -4956,12 +4942,6 @@
       "New fiat currency applied": [
         "Nieuwe fiat-valuta toegepast"
       ],
-      "New fiat currency could not be applied": [
-        "Nieuwe fiat-valuta kan niet toegepast worden"
-      ],
-      "Preferred bitcoin unit could not be changed": [
-        "De voorkeurseenheid voor bitcoin kan niet gewijzigd worden"
-      ],
       "Preferred bitcoin unit was changed": [
         "De voorkeurseenheid voor bitcoin is gewijzigd"
       ],
@@ -4971,14 +4951,8 @@
       "Select this address": [
         "Dit adres selecteren"
       ],
-      "Wallet could not be deleted": [
-        "Portemonnee kan niet verwijderd worden"
-      ],
       "Wallet name changed": [
         "Naam van portemonnee gewijzigd"
-      ],
-      "Wallet name could not be changed": [
-        "Naam van portemonnee kan niet gewijzigd worden"
       ],
       "Wallet was deleted": [
         "Portemonnee is verwijderd"
@@ -5008,15 +4982,6 @@
       "Confirm Passphrase": [
         "Wachtwoordzin bevestigen"
       ],
-      "Could not create wallet": [
-        "Kan portemonnee niet aanmaken"
-      ],
-      "Could not create wallet account": [
-        "Kan portemonnee-account niet aanmaken"
-      ],
-      "Could not link email to wallet account": [
-        "Kan e-mail niet aan portemonnee-account koppelen"
-      ],
       "Create new wallet": [
         "Maak een nieuwe portemonnee aan"
       ],
@@ -5035,17 +5000,11 @@
       "Import wallet": [
         "Portemonnee importeren"
       ],
-      "Input mnemonic is invalid, please double check.": [
-        "Invoer voor mnemonic is ongeldig, controleer nogmaals."
-      ],
       "Invite a friend": [
         "Een vriend(in) uitnodigen"
       ],
       "Learn more": [
         "Meer informatie"
-      ],
-      "Mnemonic length is not valid.": [
-        "Lengte van mnemonic is ongeldig."
       ],
       "My wallet had a passphrase": [
         "Mijn portemonnee heeft een wachtwoordzin"
@@ -5141,9 +5100,6 @@
       ]
     },
     "Wallet terms and conditions": {
-      "Could not accept terms and conditions": [
-        "Kan de algemene voorwaarden niet accepteren"
-      ],
       "Terms and conditions were accepted": [
         "Algemene voorwaarden zijn geaccepteerd"
       ]
@@ -5253,9 +5209,6 @@
       "View more": [
         "Meer bekijken"
       ],
-      "We are currently experiencing difficulties in calculating network fees. Please try again later. If the issue persists, contact our support team for assistance.": [
-        "We hebben momenteel een probleem met het berekenen van de netwerkkosten. Probeer het later opnieuw. Als dit probleem zich blijft voordoen, neem dan contact op met ons ondersteuningsteam voor hulp."
-      ],
       "You received": [
         "U hebt ontvangen"
       ],
@@ -5290,12 +5243,6 @@
       ],
       "Sync": [
         "Synchroniseren"
-      ],
-      "Syncing is already in progress": [
-        "Synchronisatie is al bezig"
-      ],
-      "You need to wait 1 minute between each sync": [
-        "U moet 1 minuut wachten tussen elke synchronisatie"
       ]
     },
     "Wallet upgrade": {
@@ -5358,6 +5305,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Een veiligere/makkelijkere manier om Bitcoin te bewaren en te verzenden"
       ]
     },
     "wallet_signup_2024:Bug category": {
