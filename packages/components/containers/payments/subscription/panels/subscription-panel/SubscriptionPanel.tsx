@@ -23,6 +23,7 @@ import {
     getPrimaryPlan,
     hasDriveBusiness,
     hasPass,
+    hasPassFamily,
     hasVPN,
     hasVPNPassBundle,
     hasVisionary,
@@ -45,17 +46,20 @@ import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
 
 import { getBasicFeatures, getVersionHistory } from '../../../features/drive';
-import { getSentinel } from '../../../features/highlights';
+import { getSentinel, getSupport } from '../../../features/highlights';
 import {
     FREE_PASS_ALIASES,
     FREE_VAULTS,
     FREE_VAULT_SHARING,
     PASS_PLUS_VAULTS,
+    PASS_PLUS_VAULT_SHARING,
     get2FAAuthenticator,
-    getCustomFields,
+    getDarkWebMonitoring,
     getDevices,
     getHideMyEmailAliases,
+    getLinkSharing,
     getLoginsAndNotes,
+    getPassAdminPanel,
     getProtonPassFeature,
     getVaultSharing,
     getVaults,
@@ -237,17 +241,50 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
 
     const getPassAppPassPlus = () => {
         const items: Item[] = [
-            getHideMyEmailAliases('unlimited'),
-            getVaults(PASS_PLUS_VAULTS),
-            getCustomFields(true),
             getLoginsAndNotes('paid'),
             getDevices(),
+            getHideMyEmailAliases('unlimited'),
+            getVaults(PASS_PLUS_VAULTS),
+            getVaultSharing(PASS_PLUS_VAULT_SHARING),
+            getLinkSharing(),
+            get2FAAuthenticator(true),
+            getDarkWebMonitoring(),
+            getSentinel(true),
+            getSupport('priority'),
         ];
 
         return (
             <StripedList>
-                {storageItem}
                 <SubscriptionItems items={items} />
+            </StripedList>
+        );
+    };
+
+    const getPassAppPassFamily = () => {
+        const items: (Item | false)[] = [
+            !!userText &&
+                (MaxMembers > 1 ||
+                    getIsB2BAudienceFromSubscription(subscription) ||
+                    upsells.some((upsell) => upsell.features.some((feature) => feature.icon === 'users'))) && {
+                    icon: 'users',
+                    text: userText,
+                },
+            getPassAdminPanel(),
+            getLoginsAndNotes('paid'),
+            getDevices(),
+            getHideMyEmailAliases('unlimited'),
+            getVaults(PASS_PLUS_VAULTS),
+            getVaultSharing(PASS_PLUS_VAULT_SHARING),
+            getLinkSharing(),
+            get2FAAuthenticator(true),
+            getDarkWebMonitoring(),
+            getSentinel(true),
+            getSupport('priority'),
+        ];
+
+        return (
+            <StripedList>
+                <SubscriptionItems items={items.filter(isTruthy)} />
             </StripedList>
         );
     };
@@ -416,6 +453,9 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
                 }
                 if (hasPass(subscription)) {
                     return getPassAppPassPlus();
+                }
+                if (hasPassFamily(subscription)) {
+                    return getPassAppPassFamily();
                 }
                 if (getHasVpnB2BPlan(subscription)) {
                     return getVpnB2B();

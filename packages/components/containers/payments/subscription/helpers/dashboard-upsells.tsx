@@ -30,6 +30,7 @@ import {
     hasMailBusiness,
     hasMailPro,
     hasPass,
+    hasPassFamily,
     hasVPN,
     hasVPN2024,
     hasVPNPassBundle,
@@ -59,7 +60,7 @@ import {
     getStorageFeatureB2B,
     getVersionHistory,
 } from '../../features/drive';
-import { getCustomBranding, getSentinel, getUsersFeature } from '../../features/highlights';
+import { getCustomBranding, getSentinel, getSupport, getUsersFeature } from '../../features/highlights';
 import type { PlanCardFeatureDefinition } from '../../features/interface';
 import {
     getB2BNDomainsFeature,
@@ -68,7 +69,23 @@ import {
     getNDomainsFeature,
     getProtonScribe,
 } from '../../features/mail';
-import { FREE_PASS_ALIASES, getPasswordManager, getProtonPassFeature, getVaultSharingB2B } from '../../features/pass';
+import {
+    FREE_PASS_ALIASES,
+    PASS_PLUS_VAULTS,
+    get2FAAuthenticator,
+    getDarkWebMonitoring,
+    getDevices,
+    getHideMyEmailAliases,
+    getLinkSharing,
+    getLoginsAndNotes,
+    getPassAdminPanel,
+    getPassUsers,
+    getPasswordManager,
+    getProtonPassFeature,
+    getVaultSharing,
+    getVaultSharingB2B,
+    getVaults,
+} from '../../features/pass';
 import { getShortPlan, getVPNEnterprisePlan } from '../../features/plan';
 import {
     getB2BHighSpeedVPNConnectionsFeature,
@@ -322,6 +339,41 @@ const getPassUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpse
             openSubscriptionModal({
                 cycle: cycle ?? defaultUpsellCycleB2C,
                 plan: PLANS.PASS,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                disablePlanSelection: true,
+                metrics: {
+                    source: 'upsells',
+                },
+            }),
+        ...rest,
+    });
+};
+
+const getPassFamilyUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
+    const features: MaybeUpsellFeature[] = [
+        getPassUsers(FAMILY_MAX_USERS),
+        getPassAdminPanel(),
+        getLoginsAndNotes('paid'),
+        getDevices(),
+        getHideMyEmailAliases('unlimited'),
+        getVaults(PASS_PLUS_VAULTS),
+        getVaultSharing(10),
+        getLinkSharing(),
+        get2FAAuthenticator(true),
+        getDarkWebMonitoring(),
+        getSentinel(true),
+        getSupport('priority'),
+    ];
+
+    return getUpsell({
+        plan: PLANS.PASS_FAMILY,
+        plansMap,
+        upsellPath: DASHBOARD_UPSELL_PATHS.PASS,
+        features: features.filter((item): item is UpsellFeature => isTruthy(item)),
+        onUpgrade: (cycle) =>
+            openSubscriptionModal({
+                cycle: cycle ?? defaultUpsellCycleB2C,
+                plan: PLANS.PASS_FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
                 metrics: {
@@ -664,9 +716,14 @@ export const resolveUpsellsToDisplay = ({
             case Boolean(hasDriveFree):
                 return [getDriveUpsell(upsellsPayload)];
             case Boolean(hasPassFree):
-                return [getPassUpsell(upsellsPayload)];
+                return [getPassUpsell(upsellsPayload), getPassFamilyUpsell(upsellsPayload)];
             case Boolean(hasVPNFree):
                 return [getVPNUpsell(upsellsPayload)];
+            case Boolean(hasPass(subscription)):
+                return [
+                    getPassFamilyUpsell({ ...upsellsPayload, isRecommended: true }),
+                    getBundleUpsell({ ...upsellsPayload }),
+                ];
             case Boolean(isFree || hasOnePlusSubscription(subscription)):
                 return [
                     getBundleUpsell({
@@ -685,7 +742,7 @@ export const resolveUpsellsToDisplay = ({
                         }),
                     getFamilyUpsell(upsellsPayload),
                 ].filter(isTruthy);
-            case hasDuo(subscription):
+            case Boolean(hasDuo(subscription) || hasPassFamily(subscription)):
                 return [
                     getFamilyUpsell({
                         ...upsellsPayload,

@@ -1,0 +1,74 @@
+@import '~@proton/styles/scss/lib';
+
+[class*='offer-pass-family-plan-2024-yearly'] {
+	&#{&} {
+		--text-norm: white;
+		--modal-text-color: white;
+
+		background: radial-gradient(
+			91.25% 182.4% at 100% 107.06%,
+			rgb(235 181 164) 0%,
+			rgb(55 37 128) 47.5%,
+			rgb(27 19 64) 100%
+		);
+
+		&.offer-modal {
+			--size: #{rem(970)};
+			@include media('<medium') {
+				--size: #{rem(450)};
+			}
+		}
+
+		h1 {
+			font-weight: 200;
+		}
+
+		.offer-plan-container {
+			max-inline-size: none;
+			margin: 0;
+		}
+
+		.offer-wrapper,
+		.offer-monthly-price-container {
+			margin-block: 0;
+		}
+
+		.offer-plan {
+			padding: 0;
+
+			.button {
+				inline-size: auto;
+				margin-block-end: 0;
+				border-radius: 2em;
+				padding-inline: 2em;
+				font-weight: var(--font-weight-semibold);
+				background: linear-gradient(
+					90deg,
+					#edb590 0%,
+					#d2aaa8 4.17%,
+					#c099b8 9.9%,
+					#af88c7 17.19%,
+					#a67fcf 27.6%,
+					#9d77d7 31.25%,
+					#946edf 36.46%,
+					#8b66e7 42.19%,
+					#825def 56.77%,
+					#7955f7 75%,
+					#704cff 95.83%
+				);
+				border: 1px solid rgb(27 19 64);
+			}
+		}
+
+		@include media('<medium') {
+			.offer-right-img-container {
+				display: none;
+			}
+		}
+
+		.offer-disable-button-container .button-underline,
+		.offer-feature-icon {
+			color: rgb(173 173 173 / 1);
+		}
+	}
+}

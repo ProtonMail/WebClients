@@ -43,6 +43,30 @@ export const getProtonPassFeature = (n: 'unlimited' | number = 'unlimited'): Pla
     };
 };
 
+export const getPassUsersText = (n: number) => {
+    return c('pass_signup_2024: Info').ngettext(msgid`${n} user account`, `${n} user accounts`, n);
+};
+
+export const getPassUsers = (n: Parameters<typeof getPassUsersText>[0]): PlanCardFeatureDefinition => {
+    return {
+        text: getPassUsersText(n),
+        icon: 'user-plus',
+        included: true,
+    };
+};
+
+export const getPassAdminPanelText = () => {
+    return c('pass_signup_2024: Info').t`Admin panel to manage users and subscription`;
+};
+
+export const getPassAdminPanel = (): PlanCardFeatureDefinition => {
+    return {
+        text: getPassAdminPanelText(),
+        icon: 'cog-wheel',
+        included: true,
+    };
+};
+
 export const getLoginsAndNotesText = (type: 'free' | 'paid') => {
     if (type === 'free') {
         return c('new_plans: feature').t`Unlimited logins and notes`;
@@ -250,6 +274,16 @@ export const getSecureVaultSharing = (...args: Parameters<typeof getSecureSharin
     };
 };
 
+export const getLinkSharing = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Secure link sharing`,
+        included: true,
+        icon: 'arrow-up-from-square',
+        tooltip: c('new_plans: tooltip')
+            .t`Securely share individual items with anyone (even if they don't use ${PASS_APP_NAME})`,
+    };
+};
+
 export const getDataBreachMonitoring = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Data breach monitoring`,
@@ -292,6 +326,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.DRIVE]: getLoginsAndNotes('free'),
                 [PLANS.DRIVE_BUSINESS]: getLoginsAndNotes('free'),
                 [PLANS.PASS]: getLoginsAndNotes('paid'),
+                [PLANS.PASS_FAMILY]: getLoginsAndNotes('paid'),
                 [PLANS.WALLET]: getLoginsAndNotes('free'),
                 [PLANS.FAMILY]: getLoginsAndNotes('paid'),
                 [PLANS.DUO]: getLoginsAndNotes('paid'),
@@ -315,6 +350,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.DRIVE]: getDevices(),
                 [PLANS.DRIVE_BUSINESS]: getDevices(),
                 [PLANS.PASS]: getDevices(),
+                [PLANS.PASS_FAMILY]: getDevices(),
                 [PLANS.WALLET]: getDevices(),
                 [PLANS.FAMILY]: getDevices(),
                 [PLANS.DUO]: getDevices(),
@@ -338,6 +374,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.DRIVE]: getVaults(FREE_VAULTS),
                 [PLANS.DRIVE_BUSINESS]: getVaults(FREE_VAULTS),
                 [PLANS.PASS]: getVaults(PASS_PLUS_VAULTS),
+                [PLANS.PASS_FAMILY]: getVaults(PASS_PLUS_VAULTS),
                 [PLANS.WALLET]: getVaults(FREE_VAULTS),
                 [PLANS.FAMILY]: getVaults(PASS_PLUS_VAULTS),
                 [PLANS.DUO]: getVaults(PASS_PLUS_VAULTS),
@@ -361,6 +398,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.DRIVE]: getHideMyEmailAliases(FREE_PASS_ALIASES),
                 [PLANS.DRIVE_BUSINESS]: getHideMyEmailAliases(FREE_PASS_ALIASES),
                 [PLANS.PASS]: getHideMyEmailAliases('unlimited'),
+                [PLANS.PASS_FAMILY]: getHideMyEmailAliases('unlimited'),
                 [PLANS.WALLET]: getHideMyEmailAliases(FREE_PASS_ALIASES),
                 [PLANS.FAMILY]: getHideMyEmailAliases('unlimited'),
                 [PLANS.DUO]: getHideMyEmailAliases('unlimited'),
@@ -384,6 +422,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.DRIVE]: getVaultSharing(FREE_VAULT_SHARING),
                 [PLANS.DRIVE_BUSINESS]: getVaultSharing(FREE_VAULT_SHARING),
                 [PLANS.PASS]: getVaultSharing(PASS_PLUS_VAULT_SHARING),
+                [PLANS.PASS_FAMILY]: getVaultSharing(PASS_PLUS_VAULT_SHARING),
                 [PLANS.WALLET]: getVaultSharing(FREE_VAULT_SHARING),
                 [PLANS.FAMILY]: getVaultSharing(PASS_PLUS_VAULT_SHARING),
                 [PLANS.DUO]: getVaultSharing(PASS_PLUS_VAULT_SHARING),
@@ -398,6 +437,30 @@ export const getPassFeatures = (): PlanCardFeature[] => {
             },
         },
         {
+            name: 'secure-link',
+            plans: {
+                [PLANS.FREE]: null,
+                [PLANS.BUNDLE]: null,
+                [PLANS.MAIL]: null,
+                [PLANS.VPN]: null,
+                [PLANS.DRIVE]: null,
+                [PLANS.DRIVE_BUSINESS]: null,
+                [PLANS.PASS]: getLinkSharing(),
+                [PLANS.PASS_FAMILY]: getLinkSharing(),
+                [PLANS.WALLET]: null,
+                [PLANS.FAMILY]: getLinkSharing(),
+                [PLANS.DUO]: getLinkSharing(),
+                [PLANS.MAIL_PRO]: null,
+                [PLANS.MAIL_BUSINESS]: null,
+                [PLANS.BUNDLE_PRO]: getLinkSharing(),
+                [PLANS.BUNDLE_PRO_2024]: getLinkSharing(),
+                [PLANS.PASS_PRO]: getLinkSharing(),
+                [PLANS.PASS_BUSINESS]: getLinkSharing(),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
+            },
+        },
+        {
             name: '2fa-authenticator',
             plans: {
                 [PLANS.FREE]: get2FAAuthenticator(),
@@ -407,6 +470,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.DRIVE]: get2FAAuthenticator(),
                 [PLANS.DRIVE_BUSINESS]: get2FAAuthenticator(),
                 [PLANS.PASS]: get2FAAuthenticator(true),
+                [PLANS.PASS_FAMILY]: get2FAAuthenticator(true),
                 [PLANS.WALLET]: get2FAAuthenticator(),
                 [PLANS.FAMILY]: get2FAAuthenticator(true),
                 [PLANS.DUO]: get2FAAuthenticator(true),
@@ -430,6 +494,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.DRIVE]: getCustomFields(),
                 [PLANS.DRIVE_BUSINESS]: getCustomFields(),
                 [PLANS.PASS]: getCustomFields(true),
+                [PLANS.PASS_FAMILY]: getCustomFields(true),
                 [PLANS.WALLET]: getCustomFields(),
                 [PLANS.FAMILY]: getCustomFields(true),
                 [PLANS.DUO]: getCustomFields(true),
@@ -453,6 +518,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.DRIVE]: null,
                 [PLANS.DRIVE_BUSINESS]: null,
                 [PLANS.PASS]: null,
+                [PLANS.PASS_FAMILY]: null,
                 [PLANS.WALLET]: null,
                 [PLANS.FAMILY]: null,
                 [PLANS.DUO]: null,
@@ -476,6 +542,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.DRIVE]: getDataBreachMonitoring(),
                 [PLANS.DRIVE_BUSINESS]: getDataBreachMonitoring(),
                 [PLANS.PASS]: getDataBreachMonitoring(true),
+                [PLANS.PASS_FAMILY]: getDataBreachMonitoring(true),
                 [PLANS.WALLET]: getDataBreachMonitoring(),
                 [PLANS.FAMILY]: getDataBreachMonitoring(true),
                 [PLANS.DUO]: getDataBreachMonitoring(true),

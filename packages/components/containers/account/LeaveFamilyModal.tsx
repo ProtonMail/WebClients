@@ -10,13 +10,14 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { leaveOrganisation } from '@proton/shared/lib/api/organization';
 import { BRAND_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
-import { isOrganizationFamily } from '@proton/shared/lib/organization/helper';
+import { isOrganizationFamily, isOrganizationPassFamily } from '@proton/shared/lib/organization/helper';
 
 interface Props extends ModalStateProps {
     organisationName: string;
 }
 
 const family = PLAN_NAMES[PLANS.FAMILY];
+const passFamily = PLAN_NAMES[PLANS.PASS_FAMILY];
 const duo = PLAN_NAMES[PLANS.DUO];
 
 const LeaveFamilyModal = ({ organisationName, ...modalState }: Props) => {
@@ -40,7 +41,17 @@ const LeaveFamilyModal = ({ organisationName, ...modalState }: Props) => {
         modalState.onClose();
     };
 
-    const plan = isOrganizationFamily(organization) ? family : duo;
+    let plan;
+    if (isOrganizationFamily(organization)) {
+        plan = family;
+    } else if (isOrganizationPassFamily(organization)) {
+        plan = passFamily;
+    } else {
+        plan = duo;
+    }
+
+    const withTrial = organization?.PlanName === PLANS.DUO || organization?.PlanName === PLANS.FAMILY;
+
     const message = c('familyOffer_2023:Family plan')
         .t`You will lose access to all premium features and storage space included with ${plan}.`;
 
@@ -48,16 +59,26 @@ const LeaveFamilyModal = ({ organisationName, ...modalState }: Props) => {
         <Prompt
             {...modalState}
             title={c('Title').t`Leave ${organisationName}?`}
-            footnote={c('familyOffer_2023:Family plan')
-                .t`*Only one free trial per user. Regular pricing applies thereafter.`}
+            footnote={
+                withTrial
+                    ? c('familyOffer_2023:Family plan')
+                          .t`*Only one free trial per user. Regular pricing applies thereafter.`
+                    : undefined
+            }
             buttons={[
                 <Button color="danger" onClick={handleLeave} loading={loading}>{c('Action').t`Leave`}</Button>,
                 <Button onClick={handleClose} disabled={loading}>{c('Action').t`Cancel`}</Button>,
             ]}
         >
             <p className="my-2">{message}</p>
-            <p className="my-2">{c('familyOffer_2023:Family plan')
-                .t`To ease the transition, we’re giving you a 30-day free trial of ${BRAND_NAME} Unlimited*.`}</p>
+            {!withTrial && (
+                <p className="my-2">{c('familyOffer_2023:Family plan')
+                    .t`After leaving, you will be moved to a ${BRAND_NAME} Free plan.`}</p>
+            )}
+            {withTrial && (
+                <p className="my-2">{c('familyOffer_2023:Family plan')
+                    .t`To ease the transition, we’re giving you a 30-day free trial of ${BRAND_NAME} Unlimited*.`}</p>
+            )}
         </Prompt>
     );
 };

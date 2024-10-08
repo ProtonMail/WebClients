@@ -17,10 +17,10 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { editMemberInvitation, inviteMember, updateAI } from '@proton/shared/lib/api/members';
-import { MAIL_APP_NAME, MEMBER_ROLE } from '@proton/shared/lib/constants';
+import { BRAND_NAME, MAIL_APP_NAME, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
-import { hasDuo, hasFamily, hasVisionary } from '@proton/shared/lib/helpers/subscription';
+import { hasDuo, hasFamily, hasPassFamily, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import type { Member, Organization } from '@proton/shared/lib/interfaces';
 import clamp from '@proton/utils/clamp';
 
@@ -33,11 +33,13 @@ interface Props extends ModalStateProps {
     member: Member | null | undefined;
     allowAIAssistantConfiguration: boolean;
     aiSeatsRemaining: boolean;
+    allowStorageConfiguration?: boolean;
 }
 
 const UserInviteOrEditModal = ({
     organization,
     member,
+    allowStorageConfiguration,
     allowAIAssistantConfiguration,
     aiSeatsRemaining,
     ...modalState
@@ -118,14 +120,20 @@ const UserInviteOrEditModal = ({
         modalState.onClose();
     };
 
+    const editingCreateAccountCopyFamily = c('familyOffer_2023:Info').t`If the user already has a ${MAIL_APP_NAME} address, enter it here. Otherwise they need to create an account first.`;
+    const domain = '@proton.me';
+    const editingCreateAccountCopyPassFamily = c('familyOffer_2023:Info').t`If the user already has a ${BRAND_NAME} account (${domain} or other, e.g. @gmail.com), enter it here. Otherwise they need to create an account first.`;
+
+    const editingCreateAccountCopy = hasPassFamily(subscription) ? editingCreateAccountCopyPassFamily : editingCreateAccountCopyFamily;
+
+
     const mailFieldValidator = !isEditing ? [requiredValidator(model.address), emailValidator(model.address)] : [];
     const modalTitle = isEditing
         ? c('familyOffer_2023:Title').t`Edit user storage`
         : c('familyOffer_2023:Title').t`Invite a user`;
     const modalDescription = isEditing
         ? c('familyOffer_2023:Info').t`You can increase or reduce the storage for this user.`
-        : c('familyOffer_2023:Info')
-              .t`If the user already has a ${MAIL_APP_NAME} address, enter it here. Otherwise they need to create an account first.`;
+        : editingCreateAccountCopy;
 
     return (
         <Modal
@@ -187,14 +195,16 @@ const UserInviteOrEditModal = ({
                     </div>
                 )}
 
-                <MemberStorageSelector
-                    value={model.storage}
-                    disabled={submitting}
-                    sizeUnit={storageSizeUnit}
-                    range={storageRange}
-                    totalStorage={totalStorage}
-                    onChange={handleChange('storage')}
-                />
+                {allowStorageConfiguration && (
+                    <MemberStorageSelector
+                        value={model.storage}
+                        disabled={submitting}
+                        sizeUnit={storageSizeUnit}
+                        range={storageRange}
+                        totalStorage={totalStorage}
+                        onChange={handleChange('storage')}
+                    />
+                )}
             </ModalContent>
             <ModalFooter>
                 <Button onClick={handleClose} disabled={submitting}>

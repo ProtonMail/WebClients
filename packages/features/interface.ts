@@ -92,6 +92,7 @@ export enum FeatureCode {
     OfferBlackFriday2023DriveFree = 'OfferBlackFriday2023DriveFree',
     OfferBlackFriday2023DrivePlus = 'OfferBlackFriday2023DrivePlus',
     OfferBlackFriday2023DriveUnlimited = 'OfferBlackFriday2023DriveUnlimited',
+    OfferPassFamilyPlan2024Yearly = 'OfferPassFamilyPlan2024Yearly',
     Offers = 'Offers',
     OrgSpamBlockList = 'OrgSpamBlockList',
     OrgTwoFactor = 'OrgTwoFactor',

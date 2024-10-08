@@ -54,6 +54,7 @@ import {
     type VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
+import { isFree } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -250,12 +251,14 @@ export function useAccessiblePlans({
             plansMap[PLANS.MAIL],
         plansMap[PLANS.BUNDLE],
         // Special condition to hide Pass plus in the individual tab if it's the current plan
-        canAccessDuoPlan && !hasPass(subscription) ? plansMap[PLANS.DUO] : null,
+        canAccessDuoPlan ? plansMap[PLANS.DUO] : null,
     ]);
 
+    const canAccessPassFamilyPlan = (isFree(user) && app === APPS.PROTONPASS) || hasPass(subscription);
     let FamilyPlans = filterPlans([
         hasFreePlan ? FREE_PLAN : null,
-        canAccessDuoPlan ? plansMap[PLANS.DUO] : null,
+        canAccessDuoPlan && !canAccessPassFamilyPlan ? plansMap[PLANS.DUO] : null,
+        canAccessPassFamilyPlan ? plansMap[PLANS.PASS_FAMILY] : null,
         plansMap[PLANS.FAMILY],
     ]);
 
@@ -447,6 +450,7 @@ const PlanSelection = (props: Props) => {
         ])
             ? undefined
             : PLANS.DUO,
+        PLANS.PASS_FAMILY,
         PLANS.FAMILY,
     ].filter(isTruthy);
 
