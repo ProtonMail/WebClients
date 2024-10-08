@@ -393,6 +393,9 @@
       "Get verification code": [
         "Få verifiseringskode"
       ],
+      "Go back": [
+        "Gå tilbake"
+      ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Gå til ${ DRIVE_SHORT_APP_NAME }"
       ],
@@ -804,6 +807,9 @@
       "Start setup": [
         "Start oppsettet"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Starter fra ${ priceUnlimited }"
+      ],
       "Stay": [
         "Bli"
       ],
@@ -869,6 +875,9 @@
       ],
       "Upgrade now": [
         "Oppgrader nå"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Oppgrader til ${ BRAND_NAME } Unlimited"
       ],
       "Upload anyway": [
         "Last opp uansett"
@@ -2275,6 +2284,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } beskytter kontoen din med dedikert 24/7 overvåking av mistenkelig aktivitet – inkludert eskalering til sikkerhetsspesialister."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA legger til et ekstra sikkerhetslag, og forhindrer uautorisert tilgang."
       ],
@@ -2323,6 +2335,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Bruk 'dra' og 'slipp' til å rangere sammenslåingsprioritet mellom kontakter. Fjern merket for kontaktene du ikke vil slå sammen."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Med kontaktgrupper kan du sende e-post til alle i gruppen med ett klikk."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere hendelser i iCal-format (ICS fil). Filen kan ha en maks størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og ha opp til ${ MAX_IMPORT_EVENTS_STRING } hendelser. Hvis filen er større, må du dele den opp i flere mindre filer."
       ],
@@ -2334,6 +2349,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Dine konto- og datagjenopprettingsmetoder er angitt."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -5350,6 +5368,9 @@
       "You are about to open another browser tab and visit:": [
         "Du åpner nå en ny nettleserfane for å besøke:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Du er i ferd med å åpne standardnettleseren din og besøke:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du er for øyeblikket pålogget som ${ user.Name } (${ user.Email })."
       ],
@@ -6678,8 +6699,14 @@
       "Get started for ${ price }": [
         "Kom i gang for ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Starter fra ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Oppgrader nå"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Oppgrader til ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7253,6 +7280,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Få Mail Plus for ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Starter fra ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7818,34 +7848,145 @@
       ]
     },
     "Onboarding Action": {
+      "Continue": [
+        "Fortsett"
+      ],
       "Create new document": [
         "Opprett nytt dokument"
       ],
+      "Get started": [
+        "Kom i gang"
+      ],
+      "Install and continue": [
+        "Installer og fortsett"
+      ],
+      "Install later": [
+        "Installer senere"
+      ],
+      "Invite members": [
+        "Inviter medlemmer"
+      ],
+      "Maybe later": [
+        "Kanskje senere"
+      ],
       "Next": [
         "Neste"
+      ],
+      "Select theme": [
+        "Velg tema"
+      ],
+      "Skip": [
+        "Hopp over"
+      ],
+      "Skip for now": [
+        "Hopp over for nå"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Begynn å bruke ${ DRIVE_APP_NAME }"
       ],
       "Try it later": [
         "Prøv det senere"
+      ],
+      "Try the app": [
+        "Prøv appen"
+      ],
+      "Upload file": [
+        "Last opp fil"
+      ],
+      "Upload folder": [
+        "Last opp mappe"
       ]
     },
     "Onboarding Info": {
+      "Access your files on the go": [
+        "Få tilgang til filene dine på farten"
+      ],
+      "Back up your photos and memories": [
+        "Sikkerhetskopier fotoene og minnene dine"
+      ],
+      "Backup your photos and memories": [
+        "Sikkerhetskopier fotoene og minnene dine"
+      ],
+      "Choose your favorite theme": [
+        "Velg ditt favoritttema"
+      ],
       "Collaborate on documents": [
         "Samarbeid på dokumenter"
       ],
       "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
         "Opprett og samarbeid på dokumenter. Det hele er beskyttet av ende-til-ende-kryptering."
       ],
+      "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
+        "Foretrekker du ${ DRIVE_APP_NAME } i lys eller mørk modus? Velg fargen som inspirerer deg mest."
+      ],
+      "Drag and drop your files here": [
+        "Dra og slipp filer her"
+      ],
+      "Edit documents online": [
+        "Rediger dokumenter på nettet"
+      ],
+      "End-to-end encrypted storage for your files": [
+        "Ende-til-ende-kryptert lagring for filene dine"
+      ],
+      "Faster uploads for large or multiple files": [
+        "Raskere opplastinger for store eller flere filer"
+      ],
+      "Final approval in progress": [
+        "Endelig godkjenning pågår"
+      ],
+      "Final approval pending": [
+        "Endelig godkjenning venter"
+      ],
+      "Free up hard drive space on your computer": [
+        "Frigjør plass på harddisken på datamaskinen"
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Begynn å bruke ${ DRIVE_APP_NAME } og vi vil oppgradere lagringsplassen din til 5 GB."
+      ],
+      "Get the desktop app": [
+        "Få skrivebordsappen"
+      ],
+      "Get the mobile app": [
+        "Få mobilappen"
+      ],
+      "Got an Android? We've got you covered.": [
+        "Har du en Android? Du er dekket."
+      ],
+      "Got an iPhone? We've got you covered.": [
+        "Har du en iPhone? Du er dekket."
+      ],
+      "Hang tight": [
+        "Hold deg fast"
       ],
       "Introducing ${ DOCS_APP_NAME }": [
         "Introduserer ${ DOCS_APP_NAME }"
       ],
+      "Invitation accepted": [
+        "Invitasjon godtatt"
+      ],
+      "Invitation received": [
+        "Invitasjon mottatt"
+      ],
+      "Invite team members": [
+        "Inviter medlemmer av teamet"
+      ],
       "Manage access": [
         "Administrer tilgang"
+      ],
+      "Organize files right from your desktop": [
+        "Organiser filer direkte fra skrivebordet"
+      ],
+      "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
+        "Beskytt dine økonomiske dokumenter, ID-kort, prosjektfiler, bilder og mer med ende-til-ende-kryptering."
+      ],
+      "Scan the QR code to install the mobile app": [
+        "Skann QR-koden for å installere mobilappen"
+      ],
+      "Secure your files": [
+        "Sikre filene dine"
+      ],
+      "Securely share files and folders": [
+        "Del filer og mapper på en sikker måte"
       ],
       "Securely store, manage, and share your business-critical files with confidence.": [
         "Lagre, administrer og del dine forretningskritiske filer på en sikker måte."
@@ -7866,11 +8007,23 @@
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "Lagre filene dine og del dem på en sikker måte. Kom i gang ved å sikre de mest private filene dine, for eksempel ID-er, kontrakter og personlige bilder."
       ],
+      "Sync and access your files from anywhere": [
+        "Synkroniser og få tilgang til filene dine fra hvor som helst"
+      ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Eieren må bekrefte delingstilgang. Du får en e-post når det er gjort."
       ],
       "Upload a file": [
         "Last opp en fil"
+      ],
+      "Upload your first file": [
+        "Last opp din første fil"
+      ],
+      "Work faster, smarter": [
+        "Arbeid raskere, smartere"
+      ],
+      "Work together": [
+        "Arbeid sammen"
       ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Ditt pålitelige netthvelv for viktige dokumenter og dyrebare minner."
@@ -8664,6 +8817,9 @@
         "${ n } måneder"
       ],
       "/ month": [
+        "/måned"
+      ],
+      "/month": [
         "/måned"
       ],
       "1 year": [
@@ -9866,6 +10022,9 @@
       "Groups": [
         "Grupper"
       ],
+      "High security for your account": [
+        "Høy sikkerhet for kontoen din"
+      ],
       "Hm, we couldn't find that one": [
         "Hm, vi kunne ikke finne den"
       ],
@@ -9947,6 +10106,9 @@
       ],
       "Number of items": [
         "Antall elementer"
+      ],
+      "One email, many recipients": [
+        "Én e-post, mange mottakere"
       ],
       "Open actions dropdown": [
         "Åpne rullegardinmeny for handlinger"
