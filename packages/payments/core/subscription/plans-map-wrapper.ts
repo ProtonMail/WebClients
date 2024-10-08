@@ -4,7 +4,7 @@ import type { Currency, Cycle, Plan, PlanIDs, StrictPlan } from '@proton/shared/
 import { getFallbackCurrency, isRegionalCurrency } from '../helpers';
 import type { FullPlansMap } from './interface';
 
-export function getPlan(
+export function getPlanByName(
     plans: Plan[],
     planName: string,
     currency: Currency,
@@ -34,25 +34,25 @@ export function getPlan(
     }
 }
 
-export function getStrictPlan(
+export function getStrictPlanByName(
     plans: Plan[],
     planName: string,
     currency: Currency,
     cycle?: Cycle,
     currencyFallback?: boolean
 ): StrictPlan | undefined {
-    return getPlan(plans, planName, currency, cycle, currencyFallback, true) as StrictPlan;
+    return getPlanByName(plans, planName, currency, cycle, currencyFallback, true) as StrictPlan;
 }
 
-export function hasPlan(plans: Plan[], planName: string, currency: Currency, cycle: Cycle | undefined): boolean {
-    return !!getPlan(plans, planName, currency, cycle, false);
+export function planExists(plans: Plan[], planName: string, currency: Currency, cycle: Cycle | undefined): boolean {
+    return !!getPlanByName(plans, planName, currency, cycle, false);
 }
 
 export function getPlansMap(plans: Plan[], preferredCurrency: Currency, currencyFallback = true): FullPlansMap {
     const planNames = [...new Set(plans.map(({ Name }) => Name))];
 
     return planNames.reduce<FullPlansMap>((acc, planName) => {
-        const plan = getPlan(plans, planName, preferredCurrency, undefined, currencyFallback);
+        const plan = getPlanByName(plans, planName, preferredCurrency, undefined, currencyFallback);
 
         if (plan) {
             acc[plan.Name] = plan;
