@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-import { useFlag } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import { Button, InlineLinkButton } from '@proton/atoms';
@@ -48,8 +47,6 @@ const TwoFactorSection = () => {
         defaultTmpRemove
     );
     const [tmpEdit, setTmpEdit] = useState<{ name: string; id: string } | undefined>(undefined);
-
-    const showSignedInForgot2FAFlow = useFlag('SignedInForgot2FAFlow');
 
     const hasTOTPEnabled = getHasTOTPSettingEnabled(userSettings);
     const hasFIDO2Enabled = getHasFIDO2SettingEnabled(userSettings);
@@ -105,7 +102,7 @@ const TwoFactorSection = () => {
                 {c('Info')
                     .t`Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.`}
             </SettingsParagraph>
-            {showSignedInForgot2FAFlow && hasTOTPEnabled && hasRecoveryMethod && (
+            {hasTOTPEnabled && hasRecoveryMethod && (
                 <SettingsParagraph>
                     <InlineLinkButton onClick={() => setLostTwoFAModal(true)}>
                         {c('Action').t`Lost access to your 2FA device?`}

@@ -47,7 +47,6 @@ enum AccountFlag {
     UserGroupsPermissionCheck = 'UserGroupsPermissionCheck',
     SAMLTest = 'SamlTest',
     PassB2BForceLock = 'PassB2BForceLock',
-    SignedInForgot2FAFlow = 'SignedInForgot2FAFlow',
     UserGroupsMembersPermissionCheck = 'UserGroupsMembersPermissionCheck',
     B2BAuthenticationLogs = 'B2BAuthenticationLogs',
     ShowGatewaysForBundlePlan = 'ShowGatewaysForBundlePlan',
