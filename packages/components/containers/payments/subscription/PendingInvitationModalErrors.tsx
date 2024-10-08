@@ -39,12 +39,12 @@ const PendingInvitationModalErrors = ({ errors, invite, onClose }: Props) => {
     );
 
     if (errors.IsLifetimeAccount) {
-        errorDescription = c('familyOffer_2023:Family plan').t`Lifetime accounts cannot join a group plan.`;
+        errorDescription = c('familyOffer_2023:Family plan').t`Lifetime accounts cannot join a family plan.`;
     } else if (errors.HasOrgWithMembers) {
         errorDescription = c('familyOffer_2023:Family plan')
-            .t`Owners of a plan with members cannot join another group plan.`;
+            .t`Owners of a plan with members cannot join another family plan.`;
     } else if (errors.HasCustomDomains) {
-        errorDescription = c('familyOffer_2023:Family plan').t`Accounts with custom domains cannot join a group plan.`;
+        errorDescription = c('familyOffer_2023:Family plan').t`Accounts with custom domains cannot join a family plan.`;
     } else if (errors.ExceedsMaxSpace) {
         errorDescription = c('familyOffer_2023:Family plan')
             .t`Your account is using ${usedSpace} of storage, which exceeds the ${inviteSpace} you were allocated. Delete some data or ask the plan admin to increase your storage.`;
@@ -60,10 +60,10 @@ const PendingInvitationModalErrors = ({ errors, invite, onClose }: Props) => {
             .t`Your cannot accept this invitation with your current plan.`;
     } else if (errors.IsExternalUser) {
         errorDescription = c('familyOffer_2023:Family plan')
-            .jt`Group plans do not currently support external accounts. Create a ${BRAND_NAME} address before joining. ${addressSettingsLink}`;
+            .jt`Family plans do not currently support external accounts. Create a ${BRAND_NAME} address before joining. ${addressSettingsLink}`;
     } else if (errors.HasUnpaidInvoice) {
         errorDescription = c('familyOffer_2023:Family plan')
-            .t`You have unpaid invoices. Please pay them before joining a group plan.`;
+            .t`You have unpaid invoices. Please pay them before joining a family plan.`;
     }
 
     return (
