@@ -393,6 +393,9 @@
       "Get verification code": [
         "Hanki vahvistuskoodi"
       ],
+      "Go back": [
+        "Takaisin"
+      ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Avaa ${ DRIVE_SHORT_APP_NAME }"
       ],
@@ -804,6 +807,9 @@
       "Start setup": [
         "Aloita määritys"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Alkaen ${ priceUnlimited }"
+      ],
       "Stay": [
         "Pysy"
       ],
@@ -869,6 +875,9 @@
       ],
       "Upgrade now": [
         "Päivitä tilaus nyt"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Päivitä ${ BRAND_NAME } Unlimited -tilaukseen"
       ],
       "Upload anyway": [
         "Tallenna silti"
@@ -2323,6 +2332,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Määritä yhdistettävien yhteystietojen painotusjärjestys vetämällä ja pudottamalla. Poista niiden valinta, joita et halua yhdistää."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Yhteystietoryhmillä voit lähettää sähköposteja kaikille ryhmän jäsenille yhdellä klikkauksella."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Voit tuoda tapahtumia iCal-muodossa (ICS-tiedostosta). Tiedosto voi olla enintään ${ MAX_IMPORT_FILE_SIZE_STRING } kokoinen ja sisältää enintään ${ MAX_IMPORT_EVENTS_STRING } tapahtumaa. Jos tiedosto on suurempi, jaa se pienempiin tiedostoihin."
       ],
@@ -2334,6 +2346,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Tilisi ja tietojesi palautustavat on asetettu."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
       ]
     },
     "description": {
@@ -5347,6 +5362,9 @@
       "You are about to open another browser tab and visit:": [
         "Olet avaamassa uutta selaimen välilehteä sivustolle:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Olet avaamassa oletusselaintasi sivustolle:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Olet kirjautuneena ${ user.Name } (${ user.Email })."
       ],
@@ -6618,8 +6636,14 @@
       "Get started for ${ price }": [
         "Aloita hintaan ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Alkaen ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Päivitä tilaus nyt"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Päivitä ${ MAIL_SHORT_APP_NAME } Plus -tilaukseen"
       ]
     },
     "new_plans: action": {
@@ -7193,6 +7217,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Hanki Mail Plus hintaan ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Alkaen ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7758,34 +7785,136 @@
       ]
     },
     "Onboarding Action": {
+      "Continue": [
+        "Jatka"
+      ],
       "Create new document": [
         "Luo uusi dokumentti"
       ],
+      "Get started": [
+        "Aloita"
+      ],
+      "Install and continue": [
+        "Asenna ja jatka"
+      ],
+      "Install later": [
+        "Asenna myöhemmin"
+      ],
+      "Invite members": [
+        "Kutsu jäseniä"
+      ],
+      "Maybe later": [
+        "Ehkä myöhemmin"
+      ],
       "Next": [
         "Seuraava"
+      ],
+      "Select theme": [
+        "Valitse teema"
+      ],
+      "Skip": [
+        "Ohita"
+      ],
+      "Skip for now": [
+        "Ohita tällä kertaa"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Aloita ${ DRIVE_APP_NAME }n käyttö"
       ],
       "Try it later": [
         "Kokeile myöhemmin"
+      ],
+      "Try the app": [
+        "Kokeile sovellusta"
+      ],
+      "Upload file": [
+        "Lähetä tiedosto"
+      ],
+      "Upload folder": [
+        "Lähetä kansio"
       ]
     },
     "Onboarding Info": {
+      "Access your files on the go": [
+        "Käytä tiedostojasi liikkeellä"
+      ],
+      "Back up your photos and memories": [
+        "Varmuuskopioi kuvasi ja muistosi"
+      ],
+      "Backup your photos and memories": [
+        "Varmuuskopioi kuvasi ja muistosi"
+      ],
+      "Choose your favorite theme": [
+        "Valitse suosikkiteemasi"
+      ],
       "Collaborate on documents": [
         "Yhteistyöskentele dokumenttien parissa"
       ],
       "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
         "Luo ja tee yhteistyötä dokumenttien parissa. Se kaikki suojataan päästä päähän -salauksella."
       ],
+      "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
+        "Tykkäätkö ${ DRIVE_APP_NAME }:stä vaaleassa vai tummassa tilassa? Valitse väri, joka inspiroi sinua eniten."
+      ],
+      "Drag and drop your files here": [
+        "Raahaa ja pudota tiedostosi tähän"
+      ],
+      "Edit documents online": [
+        "Muokkaa dokumentteja verkossa"
+      ],
+      "End-to-end encrypted storage for your files": [
+        "Päästä päähän -salattu tallennustila tiedostoillesi"
+      ],
+      "Faster uploads for large or multiple files": [
+        "Nopeampi lähetys suurille tai useammille tiedostoille"
+      ],
+      "Free up hard drive space on your computer": [
+        "Vapauta tietokoneesi levytilaa"
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Aloita ${ DRIVE_APP_NAME }n käyttäminen niin korotamme ilmaisen tallennustilasi 5 gigatavuun!"
+      ],
+      "Get the desktop app": [
+        "Hanki työpöytäsovellus"
+      ],
+      "Get the mobile app": [
+        "Hanki mobiilisovellus"
+      ],
+      "Got an Android? We've got you covered.": [
+        "Onko sinulla Android? Homma hoituu."
+      ],
+      "Got an iPhone? We've got you covered.": [
+        "Onko sinulla iPhone? Se onnistuu."
+      ],
+      "Hang tight": [
+        "Malta hetki"
       ],
       "Introducing ${ DOCS_APP_NAME }": [
         "Esittelyssä ${ DOCS_APP_NAME }"
       ],
+      "Invitation accepted": [
+        "Kutsu hyväksyttiin"
+      ],
+      "Invitation received": [
+        "Kutsu vastaanotettiin"
+      ],
+      "Invite team members": [
+        "Kutsu ryhmän jäseniä"
+      ],
       "Manage access": [
         "Hallitse käyttöoikeuksia"
+      ],
+      "Organize files right from your desktop": [
+        "Järjestele tiedostoja suoraan työpöydältäsi"
+      ],
+      "Scan the QR code to install the mobile app": [
+        "Skannaa QR-koodi asentaaksesi mobiilisovelluksen"
+      ],
+      "Secure your files": [
+        "Suojaa tiedostosi"
+      ],
+      "Securely share files and folders": [
+        "Jaa tiedostoja ja kansioita turvallisesti"
       ],
       "Securely store, manage, and share your business-critical files with confidence.": [
         "Säilytä, hallitse ja jaa yrityksesi kriittisiä tiedostoja turvallisesti ja luotettavasti."
@@ -7806,11 +7935,23 @@
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "Säilytä ja jaa tiedostojasi turvallisesti. Aloita suojaamalla henkilöllisyystodistusten ja henkilökohtaisten kuvien kaltaiset yksityisimmät tiedostosi."
       ],
+      "Sync and access your files from anywhere": [
+        "Synkronoi ja käytä tiedostojasi missä tahansa"
+      ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Omistajan on vahvistettava käyttöoikeuden jakaminen. Saat sähköpostia, kun se on tehty."
       ],
       "Upload a file": [
         "Tallenna tiedosto"
+      ],
+      "Upload your first file": [
+        "Lähetä ensimmäinen tiedostosi"
+      ],
+      "Work faster, smarter": [
+        "Työskentele nopeammin ja älykkäämmin"
+      ],
+      "Work together": [
+        "Työskentele yhdessä"
       ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Luotettava verkkoholvisi tärkeille dokumenteille ja arvokkaille muistoille."
@@ -8606,6 +8747,9 @@
       "/ month": [
         "kuukaudessa"
       ],
+      "/month": [
+        "/kuukausi"
+      ],
       "1 year": [
         "1 vuosi"
       ],
@@ -8613,7 +8757,7 @@
         "15 kuukautta"
       ],
       "2 years": [
-        "2 vuotta"
+        "Kaksi vuotta"
       ],
       "30 months": [
         "30 kuukautta"
@@ -9806,6 +9950,9 @@
       "Groups": [
         "Ryhmät"
       ],
+      "High security for your account": [
+        "Vahva suojaus tilillesi"
+      ],
       "Hm, we couldn't find that one": [
         "Hm, etsimääsi ei löytynyt"
       ],
@@ -9887,6 +10034,9 @@
       ],
       "Number of items": [
         "Kohdemäärä"
+      ],
+      "One email, many recipients": [
+        "Yksi sähköposti, monta vastaanottajaa"
       ],
       "Open actions dropdown": [
         "Avaa toimintovalikko"

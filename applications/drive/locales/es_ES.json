@@ -876,6 +876,9 @@
       "Upgrade now": [
         "Cambiar de plan"
       ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Mejora a ${ BRAND_NAME } Unlimited"
+      ],
       "Upload anyway": [
         "Cargar de todos modos"
       ],
@@ -2281,6 +2284,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } protege tu cuenta con monitoreo dedicado 24/7 de actividades sospechosas, incluyendo la intervención de especialistas en seguridad."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "La autenticación de dos factores añade una capa de seguridad adicional, evitando el acceso no autorizado."
       ],
@@ -2329,6 +2335,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arrastra y suelta los contactos para clasificarlos por prioridad. Desmarca los contactos que no quieres combinar."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Con los grupos de contactos, puedes enviar correos electrónicos a todos los miembros del grupo con un clic."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puedes importar eventos en formato iCal (archivos ICS). El archivo puede tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos. Si tu archivo es más grande, debes dividirlo en archivos más pequeños."
       ],
@@ -2340,6 +2349,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Se han establecido los métodos de recuperación de cuenta y datos."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Ya has creado 10 alias. Obtén alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -5356,6 +5368,9 @@
       "You are about to open another browser tab and visit:": [
         "Estás a punto de abrir otra pestaña del navegador y visitar:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Estás a punto de abrir tu navegador por defecto y consultar:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Actualmente estás conectado como ${ user.Name } (${ user.Email })."
       ],
@@ -6630,8 +6645,14 @@
       "Get started for ${ price }": [
         "Comienza por ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "A partir de ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Mejorar ahora"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Mejora a ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7823,11 +7844,26 @@
       ]
     },
     "Onboarding Info": {
+      "Access your files on the go": [
+        "Accede a tus archivos sobre la marcha"
+      ],
+      "Back up your photos and memories": [
+        "Haz una copia de seguridad de tus fotos y memorias"
+      ],
+      "Backup your photos and memories": [
+        "Haz una copia de seguridad de tus fotos y memorias"
+      ],
+      "Choose your favorite theme": [
+        "Elige tu tema favorito"
+      ],
       "Collaborate on documents": [
         "Colabora en documentos"
       ],
       "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
         "Crea y colabora en documentos. Todo protegido con cifrado de extremo a extremo."
+      ],
+      "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
+        "¿Prefieres ${ DRIVE_APP_NAME } en modo claro u oscuro? Selecciona el color que te inspira más."
       ],
       "Drag and drop your files here": [
         "Arrastra y suelta tus archivos aquí"
@@ -7838,8 +7874,17 @@
       "End-to-end encrypted storage for your files": [
         "Almacenamiento cifrado de extremo a extremo para tus archivos"
       ],
+      "Faster uploads for large or multiple files": [
+        "Cargas más rápidas para varios archivos o grandes"
+      ],
       "Final approval in progress": [
         "Aprobación final en progreso"
+      ],
+      "Final approval pending": [
+        "La aprobación final está pendiente."
+      ],
+      "Free up hard drive space on your computer": [
+        "Libera espacio en el disco duro de tu ordenador"
       ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "¡Comienza usar ${ DRIVE_APP_NAME } y mejoraremos tu almacenamiento a 5 GB!"
@@ -7849,6 +7894,12 @@
       ],
       "Get the mobile app": [
         "Obtén la aplicación móvil"
+      ],
+      "Got an Android? We've got you covered.": [
+        "¿Tienes un Android? Nos encargamos de todo."
+      ],
+      "Got an iPhone? We've got you covered.": [
+        "¿Tienes un iPhone? Nos encargamos de todo."
       ],
       "Hang tight": [
         "Espera un momento"
@@ -7867,6 +7918,15 @@
       ],
       "Manage access": [
         "Gestionar el acceso"
+      ],
+      "Organize files right from your desktop": [
+        "Organiza tus archivos directamente desde el escritorio"
+      ],
+      "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
+        "Protege tus documentos financieros, tarjetas de identidad, proyectos, fotos y más con cifrado de extremo a extremo."
+      ],
+      "Scan the QR code to install the mobile app": [
+        "Escanea el código QR para instalar la aplicación móvil"
       ],
       "Secure your files": [
         "Protege tus archivos"
@@ -7893,6 +7953,9 @@
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "Guarda tus archivos y compártelos de forma segura. Empieza asegurando tus archivos más privados como identificaciones, contratos y fotos personales."
       ],
+      "Sync and access your files from anywhere": [
+        "Sincroniza y accede a tus archivos dondequiera que estés"
+      ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "El propietario necesita confirmar el acceso a compartir. Recibirás un correo en cuanto lo haga."
       ],
@@ -7901,6 +7964,9 @@
       ],
       "Upload your first file": [
         "Carga tu primer archivo"
+      ],
+      "Work faster, smarter": [
+        "Trabaja de forma más rápida y eficiente"
       ],
       "Work together": [
         "Trabaja en equipo"
@@ -9902,6 +9968,9 @@
       "Groups": [
         "Grupos"
       ],
+      "High security for your account": [
+        "Alta seguridad para tu cuenta"
+      ],
       "Hm, we couldn't find that one": [
         "¡Vaya! No pudimos encontrar lo que buscas."
       ],
@@ -9983,6 +10052,9 @@
       ],
       "Number of items": [
         "Número de elementos"
+      ],
+      "One email, many recipients": [
+        "Un correo electrónico, varios destinatarios"
       ],
       "Open actions dropdown": [
         "Abrir lista desplegable de acciones"

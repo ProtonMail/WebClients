@@ -810,6 +810,9 @@
       "Start setup": [
         "Spustiť nastavenie"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Cena od ${ priceUnlimited }"
+      ],
       "Stay": [
         "Zostať"
       ],
@@ -875,6 +878,9 @@
       ],
       "Upgrade now": [
         "Aktualizovať teraz"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Navýšiť na ${ BRAND_NAME } Unlimited"
       ],
       "Upload anyway": [
         "Napriek tomu nahrať"
@@ -2301,6 +2307,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } chráni váš účet pomocou nepretržitého monitorovania podozrivých aktivít - vrátane eskalácie na bezpečnostných špecialistov."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA pridáva ďalšiu úroveň zabezpečenia a zabraňuje neoprávnenému prístupu."
       ],
@@ -2349,6 +2358,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocou myši ťahajte a pustite pre zmenu priority spojenie kontaktov. Odškrtnite kontakty, ktoré nechcete zlúčiť."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Pomocou skupín kontaktov môžete posielať emaily všetkým členom skupiny jedným kliknutím."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Môžete importovať udalosti vo formáte iCal (ICS súbor). Tento súbor by mal mať maximálnu veľkosť ${ MAX_IMPORT_FILE_SIZE_STRING } a maximálne ${ MAX_IMPORT_EVENTS_STRING } udalostí. Ak je váš súbor väčší, prosím rozdeľte ho na menšie súbory."
       ],
@@ -2360,6 +2372,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Váš účet a metódy obnovy údajov sú nastavené."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -5510,6 +5525,9 @@
       "You are about to open another browser tab and visit:": [
         "Chystáte sa otvoriť stránku v inom prehliadači:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Chystáte sa otvoriť váš predvolený prehliadač a navštíviť:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Momentálne ste prihlásený ako ${ user.Name } (${ user.Email })."
       ],
@@ -6811,8 +6829,14 @@
       "Get started for ${ price }": [
         "Začnite za ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Cena od ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Aktualizovať teraz"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Navýšte na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7428,6 +7452,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Získajte Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Cena od ${ price }"
       ]
     },
     "new_plans: title": {
@@ -8929,6 +8956,9 @@
       "/ month": [
         "/ mesiac"
       ],
+      "/month": [
+        "/mesiac"
+      ],
       "1 year": [
         "1 rok"
       ],
@@ -10187,6 +10217,9 @@
       "Groups": [
         "Skupiny"
       ],
+      "High security for your account": [
+        "Vysoké zabezpečenie vášho účtu"
+      ],
       "Hm, we couldn't find that one": [
         "Hm, toto sa nám nepodarilo nájsť"
       ],
@@ -10270,6 +10303,9 @@
       ],
       "Number of items": [
         "Počet položiek"
+      ],
+      "One email, many recipients": [
+        "Jeden email, množstvo príjemcov"
       ],
       "Open actions dropdown": [
         "Otvoriť rozbaľovaciu ponuku"
