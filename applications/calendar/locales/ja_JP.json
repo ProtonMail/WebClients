@@ -6841,7 +6841,7 @@
         "アクセスが拒否されました。管理者権限は制限されています。"
       ],
       "The organization key must be activated first.": [
-        "組織の鍵を最初に有効にする必要があります。"
+        "まず、組織の鍵を有効にする必要があります。"
       ],
       "You need access to the organization key to perform this operation.": [
         "この操作を実行するには、組織キーにアクセスする必要があります。"
@@ -7228,6 +7228,18 @@
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "アカウント ${ boldEmail } のパスワードを、あと ${ boldDaysRemaining } 日間は自由に変更可能です。"
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "${ timeRemaining.inDays } 日後にパスワードをリセットできます。"
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        " ${ timeRemaining.inHours } 時間後にパスワードをリセットできます。"
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        " ${ timeRemaining.inMinutes } 分後にパスワードをリセットできます。"
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        " ${ timeRemaining.inSeconds } 秒後にパスワードをリセットできます。"
       ]
     },
     "session_recovery:available:link": {
@@ -7819,6 +7831,9 @@
       "Helping activists in Hong Kong": [
         "香港の活動家を支援"
       ],
+      "Invited members will be removed from your organization": [
+        "招待メンバーは組織から削除されます"
+      ],
       "Learn more": [
         "もっと詳しく知る"
       ],
@@ -7848,6 +7863,15 @@
       ],
       "Unlimited folders, labels and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
+      ],
+      "Users won’t be able to manage their calendars": [
+        "ユーザーは自分のカレンダーを管理できません"
+      ],
+      "Users won’t be able to send emails": [
+        "ユーザーはメールを送信できません"
+      ],
+      "Users won’t be able to sync files on their devices": [
+        "ユーザーは自分のデバイス上のファイルを同期できません"
       ],
       "Version history": [
         "バージョン履歴"

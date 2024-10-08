@@ -383,6 +383,9 @@
       "Keep current time zone": [
         "Manter o fuso horário actual"
       ],
+      "Keep my subscription": [
+        "Manter a minha assinatura"
+      ],
       "Later": [
         "Mais tarde"
       ],
@@ -626,6 +629,9 @@
       "Show more": [
         "Mostrar mais"
       ],
+      "Show navigation bar": [
+        "Mostrar barra de navegação"
+      ],
       "Show side panel": [
         "Mostrar o painel lateral"
       ],
@@ -802,6 +808,10 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } domínio personalizado adicional",
+        "${ domains } domínios personalizados adicionais"
+      ],
       "${ ips } server": [
         "${ ips } servidor",
         "${ ips } servidores"
@@ -2544,11 +2554,17 @@
       "All events in this series were updated.": [
         "Todos os eventos desta série foram atualizados."
       ],
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Todos os eventos desta série foram atualizados. Veja o que mudou:\n\n${ updateEventDetailsText }"
+      ],
       "This event occurrence was canceled.": [
         "A ocorrência deste evento foi cancelada."
       ],
       "This event occurrence was updated.": [
         "Esta ocorrência do evento foi atualizada."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Esta ocorrência de evento foi atualizada. Veja o que mudou:\n\n${ updateEventDetailsText }"
       ],
       "This event was updated.": [
         "Este evento foi atualizado."
@@ -4852,6 +4868,9 @@
       "You are about to open another browser tab and visit:": [
         "Está prestes a abrir outro separador no navegador e visitar:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Está prestes a abrir o seu navegador predefinido e a visitar:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Tem actualmente sessão iniciada como ${ user.Name } (${ user.Email })."
       ],
@@ -6977,6 +6996,14 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "Partilha segura de cofre"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Partilha segura de cofre (${ n } cofre)",
+        "Partilha segura de cofre (${ n } cofres)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Partilha segura de cofre (${ n } cofre) e partilha de ligações",
+        "Partilha segura de cofre (${ n } cofres) e partilha de ligações"
       ]
     },
     "passwordless": {
