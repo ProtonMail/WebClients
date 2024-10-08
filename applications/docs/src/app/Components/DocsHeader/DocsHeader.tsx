@@ -3,7 +3,6 @@ import { APPS } from '@proton/shared/lib/constants'
 import DocumentTitleDropdown from '../layout/DocumentTitleDropdown'
 import { DocumentActiveUsers } from '../DocumentActiveUsers'
 import { ConnectionStatus } from '../layout/ConnectionStatus'
-import type { DocControllerInterface } from '@proton/docs-core'
 import { useEffect, useState } from 'react'
 import { useApplication } from '../../Containers/ApplicationProvider'
 import { Button } from '@proton/atoms'
@@ -11,12 +10,14 @@ import { traceError } from '@proton/shared/lib/helpers/sentry'
 import { CommentsButton } from './CommentsButton'
 import { c } from 'ttag'
 import type { DocumentAction } from '@proton/drive-store'
+import type { AnyDocControllerInterface } from '@proton/docs-core/lib/Controller/Document/AnyDocControllerInterface'
+import { isPrivateDocController } from '@proton/docs-core/lib/Controller/Document/isPrivateDocController'
 
 const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
   const application = useApplication()
   const [isReady, setIsReady] = useState(false)
 
-  const [controller, setController] = useState<DocControllerInterface | null>(null)
+  const [controller, setController] = useState<AnyDocControllerInterface | null>(null)
   useEffect(() => {
     return application.docLoader.addStatusObserver({
       onSuccess: () => {
@@ -43,7 +44,7 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
 
       <DocumentActiveUsers className="mr-2 hidden md:flex" />
 
-      {controller?.role.isAdmin() && (
+      {controller && isPrivateDocController(controller) && controller.role.isAdmin() && (
         <Button
           shape="ghost"
           className="flex items-center gap-2 text-sm"
@@ -55,7 +56,7 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
         </Button>
       )}
 
-      {controller?.role.canComment() && (
+      {controller && isPrivateDocController(controller) && controller?.role.canComment() && (
         <>
           <CommentsButton controller={controller} />
         </>

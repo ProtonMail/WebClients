@@ -506,7 +506,7 @@ export class WebsocketService implements WebsocketServiceInterface {
 
       const decryptionResult = await this._decryptMessage.execute({
         message: update,
-        keys: keys,
+        documentContentKey: keys.documentContentKey,
         verify: false,
       })
       if (decryptionResult.isFailed()) {
@@ -585,7 +585,11 @@ export class WebsocketService implements WebsocketServiceInterface {
           break
         case EventTypeEnum.ClientHasSentACommentMessage:
         case EventTypeEnum.ClientIsBroadcastingItsPresenceState: {
-          const decryptionResult = await this._decryptMessage.execute({ message: event, keys: keys, verify: false })
+          const decryptionResult = await this._decryptMessage.execute({
+            message: event,
+            documentContentKey: keys.documentContentKey,
+            verify: false,
+          })
           if (decryptionResult.isFailed()) {
             this.logger.error(`Failed to decrypt event: ${decryptionResult.getError()}`)
             return undefined
