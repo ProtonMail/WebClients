@@ -2369,6 +2369,9 @@
       "Aliases could not be loaded": [
         "エイリアスを読み込めませんでした"
       ],
+      "Already a member of this share": [
+        "既にこの共有のメンバーです"
+      ],
       "Amount above the maximum.": [
         "金額が上限を超えています。"
       ],
@@ -4347,6 +4350,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "支払いの詳細は TLS で暗号化され、スイスのプライバシー法によっても保護されています。"
       ],
+      "People with access": [
+        "アクセス権のある人"
+      ],
       "Permanently delete all files in your locked drive": [
         "ドライブからすべてのファイルを完全に削除"
       ],
@@ -4442,6 +4448,9 @@
       ],
       "Public link": [
         "公開リンク"
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "ドキュメントの公開共有はまだサポートされていません。"
       ],
       "Queued": [
         "順番待ち"
@@ -5127,6 +5136,12 @@
       "Add to group": [
         "グループに追加"
       ],
+      "Anyone on the Internet with the link can view": [
+        "このリンクを知っていれば、インターネット上の誰でも閲覧できます"
+      ],
+      "Anyone with the link": [
+        "リンクを知っている全員"
+      ],
       "App password": [
         "アプリのパスワード"
       ],
@@ -5307,6 +5322,9 @@
       "Enter device name": [
         "デバイス名を入力"
       ],
+      "Erase this link and remove everyone with access": [
+        "このリンクを消去し、アクセス権を持つ全員を削除します"
+      ],
       "Expiration (${ patternExpiration })": [
         "有効期限 (${ patternExpiration })"
       ],
@@ -5364,6 +5382,9 @@
       "Import to:": [
         "インポート先："
       ],
+      "Include message and file name in invite email": [
+        "招待メールにメッセージとファイル名を含める"
+      ],
       "Keep both": [
         "両方を保持"
       ],
@@ -5395,10 +5416,10 @@
         "メイン"
       ],
       "Make editor": [
-        "編集者として設定"
+        "編集者に設定"
       ],
       "Make viewer": [
-        "閲覧者として設定"
+        "閲覧者に設定"
       ],
       "Malware": [
         "マルウェア"
@@ -5488,10 +5509,10 @@
         "公開鍵"
       ],
       "Public link expiration date": [
-        "公開リンクの有効期限"
+        "公開リンクの有効期限です"
       ],
       "Public link password": [
-        "公開リンクのパスワード"
+        "公開リンクのパスワードです"
       ],
       "Region": [
         "都道府県"
@@ -7103,7 +7124,7 @@
         "アクセスが拒否されました。管理者権限は制限されています。"
       ],
       "The organization key must be activated first.": [
-        "組織の鍵を最初に有効にする必要があります。"
+        "まず、組織の鍵を有効にする必要があります。"
       ],
       "You need access to the organization key to perform this operation.": [
         "この操作を実行するには、組織キーにアクセスする必要があります。"
@@ -7195,7 +7216,7 @@
         "連絡手段"
       ],
       "Choose password": [
-        "パスワードを選択"
+        "パスワードを入力"
       ],
       "E.g., ": [
         "例: "
@@ -7477,6 +7498,18 @@
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "アカウント ${ boldEmail } のパスワードを、あと ${ boldDaysRemaining } 日間は自由に変更可能です。"
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "${ timeRemaining.inDays } 日後にパスワードをリセットできます。"
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        " ${ timeRemaining.inHours } 時間後にパスワードをリセットできます。"
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        " ${ timeRemaining.inMinutes } 分後にパスワードをリセットできます。"
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        " ${ timeRemaining.inSeconds } 秒後にパスワードをリセットできます。"
       ]
     },
     "session_recovery:available:link": {
@@ -8020,6 +8053,9 @@
       "Helping activists in Hong Kong": [
         "香港の活動家を支援"
       ],
+      "Invited members will be removed from your organization": [
+        "招待メンバーは組織から削除されます"
+      ],
       "Learn more": [
         "もっと詳しく知る"
       ],
@@ -8049,6 +8085,15 @@
       ],
       "Unlimited folders, labels and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
+      ],
+      "Users won’t be able to manage their calendars": [
+        "ユーザーは自分のカレンダーを管理できません"
+      ],
+      "Users won’t be able to send emails": [
+        "ユーザーはメールを送信できません"
+      ],
+      "Users won’t be able to sync files on their devices": [
+        "ユーザーは自分のデバイス上のファイルを同期できません"
       ],
       "Version history": [
         "バージョン履歴"
@@ -8188,6 +8233,9 @@
       ],
       "Recovery has started": [
         "復元を開始しました"
+      ],
+      "Secure link copied": [
+        "セキュアリンクがコピーされました"
       ],
       "The link to your file was successfully copied": [
         "ファイルのリンクをコピーしました"
@@ -8767,6 +8815,9 @@
       ],
       "Settings": [
         "設定"
+      ],
+      "Share ${ name }": [
+        "${ name } の共有"
       ],
       "Share via link": [
         "リンクで共有"

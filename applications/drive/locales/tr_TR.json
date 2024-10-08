@@ -393,6 +393,9 @@
       "Get verification code": [
         "Doğrulama kodu alın"
       ],
+      "Go back": [
+        "Geri dön"
+      ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "${ DRIVE_SHORT_APP_NAME } uygulamasına git"
       ],
@@ -804,6 +807,9 @@
       "Start setup": [
         "Kurulumu başlat"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "${ priceUnlimited } tutarından başlayan fiyatlarla"
+      ],
       "Stay": [
         "Kal"
       ],
@@ -869,6 +875,9 @@
       ],
       "Upgrade now": [
         "Şimdi yükselt"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited tarifesine yükseltin"
       ],
       "Upload anyway": [
         "Yine de yükle"
@@ -2275,6 +2284,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME }, şüpheli etkinlikleri 7/24 izleyerek ve güvenlik uzmanlarına ileterek hesabınızı korur."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "İki adımlı doğrulama ek bir güvenlik katmanı ekleyerek yetkisiz erişimi önler."
       ],
@@ -2323,6 +2335,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Sürükleyip bırakarak kişiler arasında birleştirme önceliğini sıralayın. Birleştirmek istemediğiniz kişilerin işaretini kaldırın."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Kişi grupları ile gruptaki herkese tek tıklamayla e-posta gönderebilirsiniz."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Etkinlikleri iCal biçiminde içe aktarabilirsiniz (ICS dosyası).\nDosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_EVENTS_STRING } etkinlik kaydı içermelidir.\nDosyanız daha büyükse, daha küçük dosyalara bölün."
       ],
@@ -2334,6 +2349,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Hesabınızı ve verilerinizi kurtarma yöntemleri ayarlandı."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
       ]
     },
     "description": {
@@ -5350,6 +5368,9 @@
       "You are about to open another browser tab and visit:": [
         "Şu adresi ziyaret etmek için başka bir tarayıcı sekmesi açmak üzeresiniz:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Varsayılan tarayıcınızı açarak şu adrese gitmek üzeresiniz:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Şu anda ${ user.Name } (${ user.Email }) olarak oturum açmış durumdasınız."
       ],
@@ -6621,8 +6642,14 @@
       "Get started for ${ price }": [
         "${ price } ile başlayın"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "${ priceMailPlus } tutarından başlayan fiyatlarla"
+      ],
       "Upgrade now": [
         "Şimdi yükselt"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "${ MAIL_SHORT_APP_NAME } Plus tarifesine yükseltin"
       ]
     },
     "new_plans: action": {
@@ -7196,6 +7223,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "${ price } ile Mail Plus edinin"
+      ],
+      "Starting from ${ price }": [
+        "${ price } tutarından başlayan fiyatlarla"
       ]
     },
     "new_plans: title": {
@@ -7761,34 +7791,145 @@
       ]
     },
     "Onboarding Action": {
+      "Continue": [
+        "İlerle"
+      ],
       "Create new document": [
         "Yeni belge oluştur"
       ],
+      "Get started": [
+        "Başlayalım"
+      ],
+      "Install and continue": [
+        "Kur ve ilerle"
+      ],
+      "Install later": [
+        "Daha sonra kur"
+      ],
+      "Invite members": [
+        "Üyeleri davet et"
+      ],
+      "Maybe later": [
+        "Belki daha sonra"
+      ],
       "Next": [
         "Sonraki"
+      ],
+      "Select theme": [
+        "Tema seçin"
+      ],
+      "Skip": [
+        "Atla"
+      ],
+      "Skip for now": [
+        "Şimdi atla"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } kullanmaya başlayın"
       ],
       "Try it later": [
         "Daha sonra deneyin"
+      ],
+      "Try the app": [
+        "Uygulamayı deneyin"
+      ],
+      "Upload file": [
+        "Dosya yükle"
+      ],
+      "Upload folder": [
+        "Klasör yükle"
       ]
     },
     "Onboarding Info": {
+      "Access your files on the go": [
+        "Yolculuk yaparken dosyalarınıza erişin"
+      ],
+      "Back up your photos and memories": [
+        "Fotoğrflarınızı ve anılarınızı yedekleyin"
+      ],
+      "Backup your photos and memories": [
+        "Fotoğraflarınızı ve anılarınızı yedekleyin"
+      ],
+      "Choose your favorite theme": [
+        "Beğendiğiniz temayı seçin"
+      ],
       "Collaborate on documents": [
         "Belgeler üzerinde iş birliği yapın"
       ],
       "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
         "Belgeler oluşturun ve üzerinde işbirliği yapın. Her şey uçtan uca şifreleme ile korunur."
       ],
+      "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
+        "${ DRIVE_APP_NAME } uygulamasını koyu ya da açık kipte mi kullanmak istersiniz? Hoşunuza giden rengi seçin."
+      ],
+      "Drag and drop your files here": [
+        "Dosyalarınızı sürükleyip buraya bırakın"
+      ],
+      "Edit documents online": [
+        "Belgeleri çevrim içi düzenleyin"
+      ],
+      "End-to-end encrypted storage for your files": [
+        "Dosyalarınız için uçtan uca şifrelenmiş depolama alanı"
+      ],
+      "Faster uploads for large or multiple files": [
+        "Büyük ya da çok sayıda dosyayı daha hızlı yükleme"
+      ],
+      "Final approval in progress": [
+        "Son onay işleniyor"
+      ],
+      "Final approval pending": [
+        "Son onay bekleniyor"
+      ],
+      "Free up hard drive space on your computer": [
+        "Bilgisayarınızın depolama alanını boşaltın"
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "${ DRIVE_APP_NAME } kullanmaya başladığınızda ücretsiz depolama alanınızı 5 GB yapacağız!"
+      ],
+      "Get the desktop app": [
+        "Masaüstü uygulamasını edinin"
+      ],
+      "Get the mobile app": [
+        "Mobil uygulamayı edinin"
+      ],
+      "Got an Android? We've got you covered.": [
+        "Telefonunuz Android mi? Sizin için uygulamamız var."
+      ],
+      "Got an iPhone? We've got you covered.": [
+        "Telefonunuz iPhone mu? Sizin için uygulamamız var."
+      ],
+      "Hang tight": [
+        "Sıkı durun"
       ],
       "Introducing ${ DOCS_APP_NAME }": [
         "${ DOCS_APP_NAME } ile tanışın"
       ],
+      "Invitation accepted": [
+        "Davet onaylandı"
+      ],
+      "Invitation received": [
+        "Davet alındı"
+      ],
+      "Invite team members": [
+        "Takıma üyeler davet edin"
+      ],
       "Manage access": [
         "Erişim izinlerini yönetin"
+      ],
+      "Organize files right from your desktop": [
+        "Dosyalarınızı doğrudan bilgisayarınızdan düzenleyin"
+      ],
+      "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
+        "Mali belgelerinizi, kimlik kartlarınızı, proje dosyalarınızı, fotoğraflarınızı ve diğer bilgilerinizi uçtan uca şifreleme ile koruyun"
+      ],
+      "Scan the QR code to install the mobile app": [
+        "Mobil uygulamayı kurmak için kare kodu tarayın"
+      ],
+      "Secure your files": [
+        "Dosyalarınızı koruyun"
+      ],
+      "Securely share files and folders": [
+        "Dosyaları ve klasörleri güvenli olarak paylaşın"
       ],
       "Securely store, manage, and share your business-critical files with confidence.": [
         "İş açısından kritik önemdeki dosyalarınızı güvenle saklayın, yönetin ve paylaşın."
@@ -7809,11 +7950,23 @@
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "Dosyalarınızı saklayın ve güvenle paylaşın. Kimlikler, sözleşmeler ve kişisel fotoğraflar gibi en özel dosyalarınızın güvenliğini sağlayarak başlayın."
       ],
+      "Sync and access your files from anywhere": [
+        "Dosyalarınızı her yerden eşitleyin ve kullanın"
+      ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Sahibi paylaşım erişimi iznini onaylamalıdır. İşlem tamamlandığında bir e-posta alacaksınız."
       ],
       "Upload a file": [
         "Bir dosya yükleyin"
+      ],
+      "Upload your first file": [
+        "İlk dosyanızı yükleyin"
+      ],
+      "Work faster, smarter": [
+        "Daha hızlı ve akıllıca çalışın"
+      ],
+      "Work together": [
+        "Birlikte çalışın"
       ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Yaşamsal belgelerinizin ve kıymetli anılarınızın güvende olduğu yer."
@@ -8608,6 +8761,9 @@
       ],
       "/ month": [
         "/ ay"
+      ],
+      "/month": [
+        "/ay"
       ],
       "1 year": [
         "1 yıl"
@@ -9809,6 +9965,9 @@
       "Groups": [
         "Gruplar"
       ],
+      "High security for your account": [
+        "Hesabınız için yüksek güvenlik"
+      ],
       "Hm, we couldn't find that one": [
         "Bunu bulamadık"
       ],
@@ -9890,6 +10049,9 @@
       ],
       "Number of items": [
         "Öge sayısı"
+      ],
+      "One email, many recipients": [
+        "Bir e-posta adresi, çok sayıda alıcı"
       ],
       "Open actions dropdown": [
         "İşlemler menüsünü aç"
