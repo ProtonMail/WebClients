@@ -6,7 +6,6 @@
         <style>
             body {
                 font-family: system-ui;
-                -webkit-app-region: drag;
                 margin: 0;
                 width: 100vw;
                 height: 100vh;
@@ -87,6 +86,11 @@
             const buttonText = locationSearchParams.get("button") || "";
             const buttonTarget = locationSearchParams.get("buttonTarget") || "";
             const theme = locationSearchParams.get("theme") || "light";
+            const draggable = locationSearchParams.has("draggable");
+
+            if (draggable) {
+                document.body.style.setProperty("-webkit-app-region-", "drag");
+            }
 
             document.documentElement.style.background = theme === "dark" ? "#666" : "#fff";
             document.documentElement.style.color = theme === "dark" ? "#e1e1e1" : "#222";
