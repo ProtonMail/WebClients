@@ -6,12 +6,13 @@ import { useModalTwoStatic } from '@proton/components/components/modalTwo/useMod
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useContactGroups } from '@proton/mail';
+import { useContactEmails } from '@proton/mail/contactEmails/hooks';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { labelContactEmails, unLabelContactEmails } from '@proton/shared/lib/api/contacts';
 import { hasReachedContactGroupMembersLimit } from '@proton/shared/lib/contacts/helpers/contactGroup';
 import type { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import { useContactEmails, useContacts, useNotifications } from '../../../hooks';
+import { useContacts, useNotifications } from '../../../hooks';
 import ContactGroupLimitReachedModal from '../modals/ContactGroupLimitReachedModal';
 import type { SelectEmailsProps } from '../modals/SelectEmailsModal';
 

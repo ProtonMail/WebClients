@@ -4,8 +4,9 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Avatar, CircleLoader } from '@proton/atoms';
-import { useContactEmails, useSortedList } from '@proton/components/hooks';
+import { useSortedList } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
+import { useContactEmails } from '@proton/mail/contactEmails/hooks';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';

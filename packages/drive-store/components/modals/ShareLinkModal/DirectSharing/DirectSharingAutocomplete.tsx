@@ -2,8 +2,9 @@ import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { AddressesAutocompleteTwo, AddressesInput, InputFieldTwo, useContactEmails } from '@proton/components';
+import { AddressesAutocompleteTwo, AddressesInput, InputFieldTwo } from '@proton/components';
 import { useContactGroups } from '@proton/mail';
+import { useContactEmails } from '@proton/mail/contactEmails/hooks';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import clsx from '@proton/utils/clsx';
 
