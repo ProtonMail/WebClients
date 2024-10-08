@@ -796,11 +796,11 @@
       "Refresh status": [
         "Osveži stanje"
       ],
-      "refresh the page": [
-        "Osvežite stran"
-      ],
       "Refresh the page": [
         "Osveži stran"
+      ],
+      "refresh the page": [
+        "Osvežite stran"
       ],
       "Reload": [
         "Osveži"
@@ -1588,6 +1588,14 @@
         "Izberite ponudbo ob koncu leta"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Žal ta ponudba ni na voljo z vašim trenutnim paketom."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Žal ta ponudba ni na voljo z vašim trenutnim paketom. Lahko pa dobite popust v višini **${ discountPercentage } za ${ plan.Title }**, če se naročite za **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB prostora za shranjevanje (dvakrat več kot kateri koli drug paket)"
@@ -1609,14 +1617,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paket ${ plan } je nazaj samo za omejen čas."
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Žal ta ponudba ni na voljo z vašim trenutnim paketom."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Žal ta ponudba ni na voljo z vašim trenutnim paketom. Lahko pa dobite popust v višini **${ discountPercentage } za ${ plan.Title }**, če se naročite za **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3585,6 +3585,11 @@
         "Prednostna podpora"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Pridobi ${ BRAND_NAME } Duo"
+      ]
+    },
     "duoplan2024: Info": {
       "1 TB storage": [
         "1 TB prostora za shranjevanje"
@@ -3597,6 +3602,11 @@
       ],
       "You save ${ amountSave }": [
         "Prihranite ${ amountSave }"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Predstavljamo ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Duration": {
@@ -6950,11 +6960,11 @@
       "Data locked": [
         "Podatki so zaklenjeni."
       ],
-      "Dedicated servers": [
-        "Namenski strežniki"
-      ],
       "dedicated servers": [
         "namenske strežnike"
+      ],
+      "Dedicated servers": [
+        "Namenski strežniki"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Namenske strežnike z namenskimi naslovi IP lahko dodate zasebnim prehodom, da omogočite natančno nastavljen nadzor dostopa."
@@ -10044,6 +10054,9 @@
       "Recovery phrase": [
         "Obnovitvena fraza"
       ],
+      "Remove image metadata": [
+        "Odstrani metapodatke slike"
+      ],
       "Repeat password": [
         "Ponovi geslo"
       ],
@@ -10421,6 +10434,9 @@
       ]
     },
     "Link": {
+      "Activity log": [
+        "Dnevnik aktivnosti"
+      ],
       "Add a gift code": [
         "Dodaj darilno kodo"
       ],
@@ -11106,6 +11122,23 @@
         "Srednja hitrost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Raziščite vse pakete ${ BRAND_NAME }."
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Nadgradnja"
+      ],
+      "Upgrade now": [
+        "Nadgradi zdaj"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Nadaljujte z brezplačnim paketom"
@@ -11133,23 +11166,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Nadgradi na ${ upsellPlanHumanSize }."
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Raziščite vse pakete ${ BRAND_NAME }."
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Nadgradnja"
-      ],
-      "Upgrade now": [
-        "Nadgradi zdaj"
       ]
     },
     "new_plans: feature": {
@@ -11285,6 +11301,9 @@
       "Advanced network security": [
         "Napredna varnost omrežja"
       ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Vse premijske storitve ${ BRAND_NAME }. Ena preprosta naročnina"
+      ],
       "Auto-delete Spam and Trash": [
         "Samodejno brisanje neželene pošte in smeti"
       ],
@@ -11387,6 +11406,9 @@
       "GDPR data processing agreement": [
         "GDPR pogodba o obdelavi podatkov"
       ],
+      "Generate emails with a prompt": [
+        "Ustvarite e-pošto s pozivom"
+      ],
       "Group management (coming soon)": [
         "Upravljanje skupin (kmalu)"
       ],
@@ -11437,6 +11459,9 @@
       ],
       "Password-protected Emails": [
         "E-pošta, zaščitena z geslom"
+      ],
+      "Phone support (20+ users)": [
+        "Telefonska podpora (20+ uporabnikov)"
       ],
       "Priority email support": [
         "Prednostna podpora po e-pošti"
@@ -11759,6 +11784,14 @@
         "Izbrali ste: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Preizkus ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Uporaba vašega računa"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Izbriši račun?"
@@ -11777,14 +11810,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Omogočite premijske funkcije z nadgradnjo računa"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Preizkus ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Uporaba vašega računa"
       ]
     },
     "new_plans: tooltip": {
@@ -12559,6 +12584,9 @@
       ]
     },
     "orgidentity": {
+      "Organization identity": [
+        "Identiteta organizacije"
+      ],
       "Verify": [
         "Preveri"
       ]
@@ -13515,6 +13543,9 @@
       "Recovery email address": [
         "E-poštni naslov za obnovitev"
       ],
+      "Recovery phone number": [
+        "Telefonska številka za obnovitev"
+      ],
       "Safeguard your account further": [
         "Dodatno zavarujte vaš račun"
       ],
@@ -14249,6 +14280,11 @@
         "Potrditev"
       ]
     },
+    "signup: Action": {
+      "Request trial": [
+        "Zahtevajte preizkus"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Zapri"
@@ -14364,6 +14400,9 @@
         "${ n } mesecev"
       ],
       "/ month": [
+        "/mesec"
+      ],
+      "/month": [
         "/mesec"
       ],
       "1 year": [
@@ -14801,6 +14840,9 @@
       ],
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } vključno z neomejenimi vzdevki hide-my-email"
+      ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } z ${ DARK_WEB_MONITORING_NAME }"
       ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } shrambe na uporabnika"
@@ -15686,10 +15728,10 @@
       "Card verification": [
         "Preverjanje kartice"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Prestreženi naslovi"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Prestreženi naslovi"
       ],
       "Change login password": [
@@ -16201,6 +16243,9 @@
       ],
       "My calendars": [
         "Moji koledarji"
+      ],
+      "Need more labels or folders?": [
+        "Potrebujete več oznak ali map?"
       ],
       "Network error": [
         "Napaka v omrežju"
@@ -16993,6 +17038,12 @@
       ],
       "reject": [
         "zavrni"
+      ],
+      "Revoke access": [
+        "Odvzemi dostop"
+      ],
+      "View request": [
+        "Poglej zahtevek"
       ]
     },
     "Update font modal": {

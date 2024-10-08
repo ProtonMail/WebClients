@@ -808,11 +808,11 @@
       "Refresh status": [
         "Obnovit stav"
       ],
-      "refresh the page": [
-        "obnovit stránku"
-      ],
       "Refresh the page": [
         "Obnovit stránku"
+      ],
+      "refresh the page": [
+        "obnovit stránku"
       ],
       "Reload": [
         "Znovu načíst"
@@ -1624,6 +1624,14 @@
         "Vyberte si nabídku na End of Year"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Je nám líto, ale tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu **${ discountPercentage } na tarif ${ plan.Title }** v případě předplacení na **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB úložiště (2x více než jakýkoli jiný tarif)"
@@ -1645,14 +1653,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Tarif ${ plan } je zpět pouze po omezenou dobu"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Je nám líto, ale tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu **${ discountPercentage } na tarif ${ plan.Title }** v případě předplacení na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3416,8 +3416,20 @@
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Po navýšení je možné automaticky mazat zprávy ze složky nevyžádaná pošta a koš a odemknout další prémiové funkce."
       ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Automatické mazání e-mailů přesunutých do koše a spamu před více než 30 dny."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Automatické třídění příchozích zpráv předtím, než se dostanou do doručené pošty."
+      ],
+      "Available with ${ BRAND_NAME } Mail plus": [
+        "K dispozici s ${ BRAND_NAME } Mail Plus"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Blahopřejeme! Získali jste maximálního počtu ${ rewardsLimit } měsíců zdarma ${ plusPlanName }."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Vytvořte si tolik štítků nebo složek, kolik potřebujete, abyste měli ve schránce pořádek."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Pro přístup k těmto funkcím povolte ${ PROTON_SENTINEL_NAME }"
@@ -3440,8 +3452,17 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá se, že seznam kontaktů který importujete, zahrnuje nějaké skupiny. Prosím, zkontrolujte jak by tyto skupiny měly být importovány."
       ],
+      "Keep different parts of your life separate and your inbox organized with additional addresses.": [
+        "Oddělte různé části svého života a uspořádejte si doručenou poštu s dalšími adresami."
+      ],
+      "Make your email footer your own — showcase your unique brand, not ours.": [
+        "Vytvořte si vlastní zápatí e-mailu — prezentujte svou jedinečnou značku, ne naši."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Oddělte různé aspekty svého života pomocí více e-mailových adres a po navýšení tarifu odemkněte další prémiové funkce."
+      ],
+      "Set up auto-forwarding to redirect incoming emails to another email address.": [
+        "Nastavení automatického přeposílání pro přesměrování příchozích e-mailů na jinou e-mailovou adresu."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pro import kontaktů ze služby Google nebo Outlook ${ easySwitchLink }."
@@ -3451,6 +3472,9 @@
       ],
       "Track the status and activity of your referrals.": [
         "Sledujte stav a aktivitu svých doporučení."
+      ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Odemkněte ${ activatePmUser } pro kratší a snadno zadatelnou e-mailovou adresu."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Navýšením tarifu odemknete kratší e-mailové adresy a další prémiové funkce."
@@ -7196,11 +7220,11 @@
       "Data locked": [
         "Data uzamčena"
       ],
-      "Dedicated servers": [
-        "Dedikované servery"
-      ],
       "dedicated servers": [
         "dedikované servery"
+      ],
+      "Dedicated servers": [
+        "Dedikované servery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
@@ -9104,6 +9128,9 @@
       "You are about to open another browser tab and visit:": [
         "Chystáte se otevřít v nové kartě prohlížeče:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Chystáte se otevřít výchozí prohlížeč a navštívit:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email })."
       ],
@@ -9384,7 +9411,7 @@
         "Vaše žádost na podporu byla uzavřena. Děkujeme za kontaktování podpory ${ BRAND_NAME }."
       ],
       "Zoom meeting": [
-        "setkání na Zoomu"
+        "schůzku na Zoomu"
       ]
     },
     "info": {
@@ -11746,6 +11773,32 @@
         "Střední rychlost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Objevte všechny ${ BRAND_NAME } tarify"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Začněte za ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Cena od ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Navýšit na ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Pokračovat s bezplatným tarifem"
@@ -11773,26 +11826,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Přejít na ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Objevte všechny ${ BRAND_NAME } tarify"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Začněte za ${ price }"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
       ]
     },
     "new_plans: feature": {
@@ -12498,6 +12531,20 @@
         "Váš vybraný tarif: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Zkušební verze ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Získejte Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Cena od ${ price }"
+      ],
+      "Your account's usage": [
+        "Využití vašeho účtu"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -12516,17 +12563,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Odemknout prémiové funkce navýšením účtu"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Zkušební verze ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Získejte Mail Plus za ${ price }"
-      ],
-      "Your account's usage": [
-        "Využití vašeho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -15395,6 +15431,9 @@
       "/ month": [
         "/ měsíc"
       ],
+      "/month": [
+        "/měsíčně"
+      ],
       "1 year": [
         "1 rok"
       ],
@@ -16807,6 +16846,9 @@
       "Amount due": [
         "Částka k zaplacení"
       ],
+      "An address for each role": [
+        "Adresa pro každou roli"
+      ],
       "App": [
         "Aplikace"
       ],
@@ -16861,10 +16903,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
       "Change login password": [
@@ -17215,6 +17257,9 @@
         "Nepodařilo se vytvořit ${ failedUsers.length } uživatelských účtů.",
         "Nepodařilo se vytvořit ${ failedUsers.length } uživatelských účtů."
       ],
+      "Filter for more focus": [
+        "Filtrace pošty pro větší zaměření"
+      ],
       "Filter name cannot contain only spaces": [
         "Název filtru nesmí obsahovat pouze mezery"
       ],
@@ -17395,6 +17440,9 @@
       "My calendars": [
         "Můj kalendář"
       ],
+      "Need more labels or folders?": [
+        "Potřebujete další štítky nebo složky?"
+      ],
       "Network error": [
         "Chyba sítě"
       ],
@@ -17406,6 +17454,9 @@
       ],
       "No account information was found in any data breaches": [
         "V uniklých datech nebyly nalezeny žádné informace o vašich účtech"
+      ],
+      "No need to empty the trash": [
+        "Nemusíte sami vyprazdňovat koš"
       ],
       "No recovery method": [
         "Žádná metoda pro obnovení"
@@ -17464,6 +17515,9 @@
       "PayPal verification failed": [
         "Ověření platby PayPal se nezdařilo"
       ],
+      "Personalize your email footer": [
+        "Přizpůsobte si zápatí e-mailu"
+      ],
       "Phone": [
         "Telefon"
       ],
@@ -17490,6 +17544,9 @@
       ],
       "QRCode": [
         "QR kód"
+      ],
+      "Ready, set, forward": [
+        "Připravit, nastavit, přeposlat"
       ],
       "Recommended": [
         "Doporučeno"
@@ -17556,6 +17613,9 @@
       ],
       "Revoke certificate": [
         "Zrušit certifikát"
+      ],
+      "Same inbox, shorter email address": [
+        "Stejná schránka, kratší e-mailová adresa"
       ],
       "SAML authentication": [
         "Ověření SAML"
