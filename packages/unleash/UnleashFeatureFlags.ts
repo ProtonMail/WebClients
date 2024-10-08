@@ -45,7 +45,6 @@ enum AccountFlag {
     B2BLogsVPN = 'B2BLogsVPN',
     WalletAppSwitcherNewBadge = 'WalletAppSwitcherNewBadge',
     UserGroupsPermissionCheck = 'UserGroupsPermissionCheck',
-    SAMLTest = 'SamlTest',
     UserGroupsMembersPermissionCheck = 'UserGroupsMembersPermissionCheck',
     B2BAuthenticationLogs = 'B2BAuthenticationLogs',
     ShowGatewaysForBundlePlan = 'ShowGatewaysForBundlePlan',
