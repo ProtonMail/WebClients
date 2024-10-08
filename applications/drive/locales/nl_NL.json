@@ -798,6 +798,9 @@
       "Start setup": [
         "Installatie starten"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Vanaf ${ priceUnlimited }"
+      ],
       "Stay": [
         "Blijf"
       ],
@@ -2317,6 +2320,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Versleep de contactpersonen die u wil samenvoegen om ze op prioriteit te ordenen. Haal het vinkje weg bij de contacten die u niet wilt samenvoegen."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Met contactgroepen kunt u met één klik e-mails verzenden naar iedereen in de groep."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "U kunt afspraken importeren in iCal formaat (. ics-bestand). Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en mag maximaal ${ MAX_IMPORT_EVENTS_STRING } afspraken bevatten. Als uw bestand groter is, splitst u het op in kleinere bestanden."
       ],
@@ -2390,6 +2396,17 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Help ons verbeteren"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Bevestig het verlies van ${ PASS_APP_NAME } speciale korting"
+      ],
+      "Remove discount": [
+        "Korting verwijderen"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Uw ${ PLAN_NAMES[PLANS.PASS] }-abonnement heeft een speciale prijs van ${ price } per jaar. Als u downgrade naar een Free abonnement, zult u permanent uw korting verliezen, zelfs als u in de toekomst opnieuw upgrade."
       ]
     },
     "drive:action": {
@@ -3327,6 +3344,9 @@
       "customer support": [
         "klantondersteuning"
       ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Groepsabonnementen bieden op dit moment geen ondersteuning voor externe accounts. Maak een ${ BRAND_NAME }-adres aan voor u zich hierbij aansluit. ${ addressSettingsLink }"
+      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Als u de uitnodiging accepteert, zetten we uw huidige abonnement om en wordt een eventueel resterend saldo teruggestort."
       ],
@@ -3362,6 +3382,9 @@
       ],
       "You have successfully joined the family group": [
         "U hebt zich succesvol aangesloten bij de familiegroep"
+      ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "U heeft onbetaalde facturen. Betaal deze voordat u zich aansluit bij een groepsabonnement"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "U bent uitgenodigd om uw ${ BRAND_NAME }-account te koppelen aan dit groepsabonnement en samen gebruik te maken van alle premium functies van ${ BRAND_NAME_TWO }."
@@ -6570,8 +6593,14 @@
       "Get started for ${ price }": [
         "Begin voor ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Vanaf ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Upgrade nu"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Upgrade naar ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6998,6 +7027,9 @@
       "Unlimited messages per day": [
         "Onbeperkt aantal berichten per dag"
       ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Onbeperkte gedeelde ${ PASS_SHORT_APP_NAME } kluizen per gebruiker"
+      ],
       "Unlimited shared vaults with access permissions": [
         "Onbeperkt aantal gedeelde kluizen met toegangsmachtigingen"
       ],
@@ -7105,6 +7137,9 @@
       "Popular": [
         "Populair"
       ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Bescherm gevoelige bedrijfsinformatie en werk veilig samen."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Bescherm de privacy van uw gezin met alle services van ${ BRAND_NAME } gecombineerd."
       ],
@@ -7134,6 +7169,14 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Krijg Mail Plus voor ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Vanaf ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7268,6 +7311,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personaliseer uw e-mailhandtekening met een logo, afbeelding, pictogram van social media, koppeling naar uw contactgegevens en meer"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Telefonische ondersteuning is beschikbaar van de ${ BRAND_NAME } klantenondersteuning tijdens Europese kantoortijden voor klanten met 20 of meer gebruikers."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Voorkomt dat berichten worden gelezen door ${ BRAND_NAME } of derden. De enige personen die de berichten kunnen lezen, zijn de afzender en de beoogde ontvanger."
@@ -7861,6 +7907,9 @@
       "MM/YY": [
         "MM/JJ"
       ],
+      "More plans are available in other currencies": [
+        "Er zijn meer abonnementen beschikbaar in andere valuta"
+      ],
       "Payment Processing": [
         "Betaling wordt verwerkt"
       ],
@@ -8132,6 +8181,11 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Officiële e-mail van ${ BRAND_NAME }"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Controleer de veiligheid van uw account"
       ]
     },
     "Security Center": {
@@ -8806,6 +8860,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Uw abonnement was gekocht met een iOS-app. Om wijzigingen te maken of uw betaalgegevens bij te werken, moet u naar de Apple App Store gaan."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Het abonnement zal worden gedowngradet aan het einde van de factureringscyclus."
       ]
     },
     "Subscription price": {
@@ -9708,6 +9767,9 @@
       "Groups": [
         "Groepen"
       ],
+      "High security for your account": [
+        "Hoge beveiliging voor uw account"
+      ],
       "Hm, we couldn't find that one": [
         "Sorry, we konden deze niet vinden"
       ],
@@ -10235,6 +10297,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Een veiligere/makkelijkere manier om Bitcoin te bewaren en te verzenden"
       ]
     },
     "wallet_signup_2024:Bug category": {

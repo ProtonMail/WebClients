@@ -665,6 +665,9 @@
       "Start setup": [
         "Start oppsettet"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Starter fra ${ priceUnlimited }"
+      ],
       "Stay": [
         "Bli"
       ],
@@ -718,6 +721,9 @@
       ],
       "Upgrade now": [
         "Oppgrader nå"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Oppgrader til ${ BRAND_NAME } Unlimited"
       ],
       "Upload picture": [
         "Last opp bilde"
@@ -2445,6 +2451,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } beskytter kontoen din med dedikert 24/7 overvåking av mistenkelig aktivitet – inkludert eskalering til sikkerhetsspesialister."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA legger til et ekstra sikkerhetslag, og forhindrer uautorisert tilgang."
       ],
@@ -2453,6 +2462,9 @@
       ],
       "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
         "Organiser dagen din bedre, spor tiden din og prioriter oppgaver. Fargekode kalenderen med tilpassede hendelsesfarger."
+      ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "Fargekode hendelser for å gjøre det enklere å organisere dagen din, spore tiden din og prioritere oppgaver."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dekrypterer kontakter...Dette kan ta noen få minutter. Når prosessen er fullført, vil du være i stand til å laste ned filen med alle dine kontakter eksportert."
@@ -2505,6 +2517,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Bruk 'dra' og 'slipp' til å rangere sammenslåingsprioritet mellom kontakter. Fjern merket for kontaktene du ikke vil slå sammen."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Med kontaktgrupper kan du sende e-post til alle i gruppen med ett klikk."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere hendelser i iCal-format (ICS fil). Filen kan ha en maks størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og ha opp til ${ MAX_IMPORT_EVENTS_STRING } hendelser. Hvis filen er større, må du dele den opp i flere mindre filer."
       ],
@@ -2516,6 +2531,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Dine konto- og datagjenopprettingsmetoder er angitt."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -3831,6 +3849,23 @@
         "Veldig liten"
       ]
     },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Bli med i Google Meet"
+      ],
+      "Joining instructions": [
+        "Instruksjoner for å bli med"
+      ],
+      "Less details": [
+        "Mindre informasjon"
+      ],
+      "Meeting link:": [
+        "Møtekobling:"
+      ],
+      "More details": [
+        "Mer informasjon"
+      ]
+    },
     "Group": {
       "Account": [
         "Konto"
@@ -5060,6 +5095,9 @@
       "You are about to open another browser tab and visit:": [
         "Du åpner nå en ny nettleserfane for å besøke:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Du er i ferd med å åpne standardnettleseren din og besøke:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du er for øyeblikket pålogget som ${ user.Name } (${ user.Email })."
       ],
@@ -6251,8 +6289,14 @@
       "Get started for ${ price }": [
         "Kom i gang for ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Starter fra ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Oppgrader nå"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Oppgrader til ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6826,6 +6870,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Få Mail Plus for ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Starter fra ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7124,6 +7171,9 @@
       ],
       "Link copied to clipboard": [
         "Kobling kopiert til utklippstavlen"
+      ],
+      "Passcode copied to clipboard": [
+        "Passkode kopiert til utklippstavlen"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8196,6 +8246,9 @@
         "${ n } måneder"
       ],
       "/ month": [
+        "/måned"
+      ],
+      "/month": [
         "/måned"
       ],
       "1 year": [
@@ -9438,6 +9491,9 @@
       "Hide time zones for event start and end times": [
         "Skjul tidssoner for hendelsens start- og sluttid"
       ],
+      "High security for your account": [
+        "Høy sikkerhet for kontoen din"
+      ],
       "Human verification": [
         "Menneskelig verifisering"
       ],
@@ -9486,6 +9542,9 @@
       ],
       "Notes": [
         "Notater"
+      ],
+      "One email, many recipients": [
+        "Én e-post, mange mottakere"
       ],
       "Open actions dropdown": [
         "Åpne rullegardinmeny for handlinger"
@@ -10253,6 +10312,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Årlig, ${ untilString }"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Bli med på Zoom-møte"
+      ],
+      "Meeting ID:": [
+        "Møte-ID:"
+      ],
+      "Passcode: ${ password }": [
+        "Passkode: ${ password }"
       ]
     }
   }

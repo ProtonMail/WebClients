@@ -808,11 +808,11 @@
       "Refresh status": [
         "Oppdater status"
       ],
-      "refresh the page": [
-        "oppdater siden"
-      ],
       "Refresh the page": [
         "Oppdater siden"
+      ],
+      "refresh the page": [
+        "oppdater siden"
       ],
       "Reload": [
         "Last inn på nytt"
@@ -1616,6 +1616,14 @@
         "Velg ditt slutten av året-tilbud"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få **${ discountPercentage } av ${ plan.Title }** når du abonnerer for **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagringsplass (2x mer enn noe annen plan)"
@@ -1637,14 +1645,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Planen ${ plan } er bare tilbake i en begrenset periode"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få **${ discountPercentage } av ${ plan.Title }** når du abonnerer for **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3388,8 +3388,20 @@
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Slett automatisk søppelpost og meldinger i papirkurven, og lås opp flere premiumfunksjoner når du oppgraderer."
       ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Fjern automatisk e-poster som ble flyttet til papirkurven og søppelpost for mer enn 30 dager siden."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Sorter innkommende meldinger automatisk før de når innboksen din."
+      ],
+      "Available with ${ BRAND_NAME } Mail plus": [
+        "Tilgjengelig med ${ BRAND_NAME } Mail Plus"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Gratulerer! Du har tjent maksimalt ${ rewardsLimit } gratis måneder med ${ plusPlanName }."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Opprett så mange etiketter eller mapper du trenger for å holde innboksen ryddig."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Aktiver ${ PROTON_SENTINEL_NAME } for å få tilgang til disse funksjonene"
@@ -3412,8 +3424,17 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ut til at kontaktlisten du importerer, inneholder noen grupper. Se gjennom hvordan disse gruppene skal importeres."
       ],
+      "Keep different parts of your life separate and your inbox organized with additional addresses.": [
+        "Hold forskjellige deler av livet ditt atskilt og innboksen din organisert med flere adresser."
+      ],
+      "Make your email footer your own — showcase your unique brand, not ours.": [
+        "Gjør e-postbunnteksten din til din egen – vis frem din unike merkevare, ikke vår."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Skill forskjellige aspekter av livet ditt med flere e-postadresser og lås opp flere premiumfunksjoner når du oppgraderer."
+      ],
+      "Set up auto-forwarding to redirect incoming emails to another email address.": [
+        "Konfigurer automatisk videresending for å omdirigere innkommende e-post til en annen e-postadresse."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For å importere kontaktene dine fra Google eller Outlook, ${ easySwitchLink }."
@@ -3423,6 +3444,9 @@
       ],
       "Track the status and activity of your referrals.": [
         "Spor statusen og aktiviteten til vervingene dine."
+      ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Lås opp ${ activatePmUser } for en fengende og e-postadresse som er enkel å skrive."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Lås opp kortere e-postadresser og andre premiumfunksjoner ved å oppgradere."
@@ -7058,11 +7082,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "Dedicated servers": [
-        "Dedikerte tjenere"
-      ],
       "dedicated servers": [
         "dedikerte tjenere"
+      ],
+      "Dedicated servers": [
+        "Dedikerte tjenere"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerte tjenere med dedikert IP-adresse(r) kan bli lagt til private mellomtjenere for å aktivere finjustert tilgangskontroll."
@@ -8943,6 +8967,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Du åpner nå en ny nettleserfane for å besøke:"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Du er i ferd med å åpne standardnettleseren din og besøke:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du er for øyeblikket pålogget som ${ user.Name } (${ user.Email })."
@@ -11534,6 +11561,32 @@
         "Middels VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforsk alle ${ BRAND_NAME }-planer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Kom i gang for ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Starter fra ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade now": [
+        "Oppgrader nå"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Oppgrader til ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsett med Free"
@@ -11561,26 +11614,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Oppgrader til ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforsk alle ${ BRAND_NAME }-planer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Kom i gang for ${ price }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade now": [
-        "Oppgrader nå"
       ]
     },
     "new_plans: feature": {
@@ -12242,6 +12275,20 @@
         "Planen du har valgt: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } prøveversjon"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Få Mail Plus for ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Starter fra ${ price }"
+      ],
+      "Your account's usage": [
+        "Kontoens forbruk"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Slett konto?"
@@ -12260,17 +12307,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås opp premiumfunksjoner ved å oppgradere"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } prøveversjon"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Få Mail Plus for ${ price }"
-      ],
-      "Your account's usage": [
-        "Kontoens forbruk"
       ]
     },
     "new_plans: tooltip": {
@@ -15069,6 +15105,9 @@
       "/ month": [
         "/måned"
       ],
+      "/month": [
+        "/måned"
+      ],
       "1 year": [
         "1 år"
       ],
@@ -16428,6 +16467,9 @@
       "Amount due": [
         "Skyldig beløp"
       ],
+      "An address for each role": [
+        "En adresse for hver rolle"
+      ],
       "App": [
         "App"
       ],
@@ -16482,10 +16524,10 @@
       "Card verification": [
         "Verifisering av kort"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-all-adresse"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-all-adresse"
       ],
       "Change login password": [
@@ -16830,6 +16872,9 @@
         "Kunne ikke opprette ${ failedUsers.length } brukerkonto",
         "Kunne ikke opprette ${ failedUsers.length } brukerkontoer."
       ],
+      "Filter for more focus": [
+        "Filtrer for mer fokus"
+      ],
       "Filter name cannot contain only spaces": [
         "Filternavnet kan ikke kun inneholde mellomrom"
       ],
@@ -17008,6 +17053,9 @@
       "My calendars": [
         "Mine kalendere"
       ],
+      "Need more labels or folders?": [
+        "Behov for flere etiketter eller mapper?"
+      ],
       "Network error": [
         "Nettverksfeil"
       ],
@@ -17019,6 +17067,9 @@
       ],
       "No account information was found in any data breaches": [
         "Ingen kontoinformasjon ble funnet i noen datainnbrudd"
+      ],
+      "No need to empty the trash": [
+        "Du trenger ikke å tømme papirkurven"
       ],
       "No recovery method": [
         "Ingen gjenopprettingsmetode"
@@ -17077,6 +17128,9 @@
       "PayPal verification failed": [
         "PayPal-bekreftelse mislyktes"
       ],
+      "Personalize your email footer": [
+        "Tilpass bunnteksten i e-post"
+      ],
       "Phone": [
         "Telefon"
       ],
@@ -17103,6 +17157,9 @@
       ],
       "QRCode": [
         "QR-kode"
+      ],
+      "Ready, set, forward": [
+        "Klar, ferdig, gå"
       ],
       "Recommended": [
         "Anbefalt"
@@ -17169,6 +17226,9 @@
       ],
       "Revoke certificate": [
         "Opphev sertifikat"
+      ],
+      "Same inbox, shorter email address": [
+        "Samme innboks, kortere e-postadresse"
       ],
       "SAML authentication": [
         "SAML-autentisering"

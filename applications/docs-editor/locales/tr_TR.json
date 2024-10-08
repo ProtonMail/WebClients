@@ -403,6 +403,17 @@
         "Yorum yok sayılsın mı?"
       ]
     },
+    "Description": {
+      "Edit document directly": [
+        "Belgeyi doğrudan düzenle"
+      ],
+      "Edits become suggestion": [
+        "Düzenlemeler öneri olacak"
+      ],
+      "Read or print final document": [
+        "Belgenin son biçimini oku ya da yazdır"
+      ]
+    },
     "Error": {
       "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
         "Belge yüklenirken bir sorun çıktı. Belgenin bozulmasını önlemek için düzenleyici kilitlendi. Lütfen sayfayı yeniden yükleyip yeniden deneyin."
@@ -482,6 +493,15 @@
       "Editing": [
         "Düzenleniyor"
       ],
+      "Font": [
+        "Yazı tipi"
+      ],
+      "Font size": [
+        "Yazı boyutu"
+      ],
+      "Highlight": [
+        "Vurgula"
+      ],
       "Just now": [
         "Şimdi"
       ],
@@ -497,6 +517,9 @@
       "Suggesting": [
         "Öneriliyor"
       ],
+      "Text color": [
+        "Metin rengi"
+      ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "Yapıştırmaya çalıştığınız içerik tek seferde yapıştırılamayacak kadar büyük. Daha küçük parçaları birer birer yapıştırmayı deneyin."
       ],
@@ -508,11 +531,17 @@
       ]
     },
     "Label": {
+      "Add link": [
+        "Bağlantı ekle"
+      ],
       "Background colour": [
         "Arka plan rengi"
       ],
       "Delete": [
         "Sil"
+      ],
+      "Delete link": [
+        "Bağlantıyı sil"
       ],
       "Delete paragraph": [
         "Paragrafı sil"
@@ -541,8 +570,14 @@
       "Replace": [
         "Değiştir"
       ],
+      "Replace link": [
+        "Bağlantıyı değiştir"
+      ],
       "Text colour": [
         "Metin rengi"
+      ],
+      "with \"${ replaceWith }\"": [
+        "\"${ replaceWith }\" ile"
       ]
     },
     "Placeholder": {

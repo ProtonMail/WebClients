@@ -403,6 +403,17 @@
         "Hylätäänkö kommentti?"
       ]
     },
+    "Description": {
+      "Edit document directly": [
+        "Muokkaa dokumenttia suoraan"
+      ],
+      "Edits become suggestion": [
+        "Muokkauksista tulee ehdotuksia"
+      ],
+      "Read or print final document": [
+        "Lue tai tulosta lopullinen dokumentti"
+      ]
+    },
     "Error": {
       "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
         "Virhe dokumentin lataamisessa. Dokumentin vahingoittumisen estämiseksi editori on lukittu. Lataa sivu uudelleen."
@@ -482,6 +493,12 @@
       "Editing": [
         "Muokkaus"
       ],
+      "Font": [
+        "Fontti"
+      ],
+      "Font size": [
+        "Fonttikoko"
+      ],
       "Just now": [
         "Juuri nyt"
       ],
@@ -497,6 +514,9 @@
       "Suggesting": [
         "Ehdottaminen"
       ],
+      "Text color": [
+        "Tekstin väri"
+      ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "Sisältö, jota yrität liittää, on liian suuri liitettäväksi kerralla. Yritä liittää se vaiheittain pienempinä osina."
       ],
@@ -508,11 +528,17 @@
       ]
     },
     "Label": {
+      "Add link": [
+        "Lisää linkki"
+      ],
       "Background colour": [
         "Taustan väri"
       ],
       "Delete": [
         "Poista"
+      ],
+      "Delete link": [
+        "Poista linkki"
       ],
       "Delete paragraph": [
         "Poista kappale"
@@ -540,6 +566,9 @@
       ],
       "Replace": [
         "Korvaa"
+      ],
+      "Replace link": [
+        "Korvaa linkki"
       ],
       "Text colour": [
         "Tekstin väri"

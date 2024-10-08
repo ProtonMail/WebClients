@@ -390,6 +390,9 @@
       "Get verification code": [
         "인증코드 전송"
       ],
+      "Go back": [
+        "뒤로 가기"
+      ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "${ DRIVE_SHORT_APP_NAME }로 이동"
       ],
@@ -801,6 +804,9 @@
       "Start setup": [
         "설정 시작"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "${ priceUnlimited }부터 시작"
+      ],
       "Stay": [
         "기다리기"
       ],
@@ -866,6 +872,9 @@
       ],
       "Upgrade now": [
         "지금 업그레이드"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimtied로 업그레이드하기"
       ],
       "Upload anyway": [
         "무시하고 업로드"
@@ -2262,6 +2271,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME }이 보안 전문가로 확대되는 등 의심스러운 활동에 대한 24시간 전담 모니터링을 통해 계정을 보호합니다."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2단계 인증은 추가적인 보안 계층, 접근 불가 상황 방지에 도움을 줍니다."
       ],
@@ -2310,6 +2322,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "드래그 앤 드롭을 사용하여 연락처 간의 병합 우선 순위를 매기세요. 병합하고 싶지 않은 연락처는 선택 취소하세요."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "연락처 그룹으로, 한 번의 클릭으로 그룹 내 모든 사람들로 일괄 이메일 전송이 가능합니다."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal 포맷 (ICS 파일)으로 이벤트를 불러올 수 있습니다. 파일 크기가 최대 ${ MAX_IMPORT_FILE_SIZE_STRING } 및 최대 ${ MAX_IMPORT_EVENTS_STRING } 이벤트를 가지고 있어야 합니다. 만약 파일이 너무 크다면, 작은 파일들로 분할해 주십시오."
       ],
@@ -2321,6 +2336,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "사용자의 계정과 데이터 복구 방법이 설정된 상태입니다."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
       ]
     },
     "description": {
@@ -3717,7 +3735,7 @@
         "3개의 점 (...) 을 클릭하여 드롭다운 메뉴를 확장하세요."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "${ boldAppPassword }를 설정하고 ${ BRAND_NAME }에 표시되었던 기존 비밀번호를 입력하십시오."
+        "${ boldAppPassword }를 설정하고 ${ BRAND_NAME }에 표시되었던 기존 비밀번호를 입력하세요."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "${ yahooMailLink } 의 프로필에서 ${ boldAccountInfo } 로 이동하세요."
@@ -3732,16 +3750,16 @@
         "${ boldExportCSV } 선택"
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "캘린더를 ${ BRAND_NAME } 으로 가져오려면 ${ knowledgeBaseLink } 이(가) 필요합니다. 쉬운 3단계로 Yahoo에서 다운로드 하십시오:"
+        "캘린더를 ${ BRAND_NAME }에 가져오려면 ${ knowledgeBaseLink }이 필요합니다. 간단한 3단계로 Yahoo에서 다운로드하세요:"
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "캘린더를 ${ BRAND_NAME } 으로 가져오려면 ${ knowledgeBaseLink } 이(가) 필요합니다. 가져오기를 시작하기 전에 이것을 다운로드하세요."
+        "캘린더를 ${ BRAND_NAME }에 가져오려면 ${ knowledgeBaseLink }이 필요합니다. 가져오기를 시작하기 전에 해당 파일을 다운로드하세요."
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "연락처를 ${ BRAND_NAME } 으로 가져오려면 ${ knowledgeBaseLink } 이(가) 필요합니다. 쉬운 3단계로 Yahoo에서 다운로드 하십시오:"
+        "연락처를 ${ BRAND_NAME }에 가져오려면 ${ knowledgeBaseLink }이(가) 필요합니다. 쉬운 3단계로 Yahoo에서 다운로드하세요:"
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "연락처를 ${ BRAND_NAME } 으로 가져오려면 ${ knowledgeBaseLink } 이(가) 필요합니다. 가져오기를 시작하기 전에 이것을 다운로드 하세요."
+        "연락처를 ${ BRAND_NAME }에 가져오려면 ${ knowledgeBaseLink }이(가) 필요합니다. 가져오기를 시작하기 전에 해당 파일을 다운로드 하세요."
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         "${ BRAND_NAME }에서 이메일을 불러오려면, Yahoo에서 ${ appPasswordLink }가 필요합니다. 다음을 통해 다운로드하세요:"
@@ -3786,7 +3804,7 @@
         "Yahoo에서 ${ calendarViewLink } 로 이동하세요"
       ],
       "Mouse over the calendar you want to import and open the dropdown menu.": [
-        "가져오려는 캘린더 위에 마우스를 올려놓고 드롭다운 메뉴를 여십시오."
+        "가져오려는 캘린더 위에 마우스를 올려놓고 드롭다운 메뉴를 여세요."
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "캘린더를 ICS 파일로 내보내려면 ${ boldExport } 을(를) 선택하세요."
@@ -4317,7 +4335,7 @@
         "장치 이름을 입력하여 삭제를 확인하세요."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "${ destinationText }으(로) 인증 코드가 전송되었습니다."
+        "${ destinationText }(으)로 인증 코드가 전송되었습니다."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "인증 코드를 입력하세요. ${ digit } 자리."
@@ -4782,7 +4800,7 @@
         "이전 버전이 저장되지 않았습니다"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
-        "가격에는 귀하의 계정에 저장된 모든 적용 가능한 주기 기반 할인과 만료되지 않은 쿠폰이 포함되어 있습니다."
+        "가격에는 계정에 저장된 모든 적용 가능한 주기 기반 할인과 만료되지 않은 쿠폰이 포함되어 있습니다."
       ],
       "Primary": [
         "우선 순위"
@@ -5270,6 +5288,9 @@
       "You are about to open another browser tab and visit:": [
         "다른 브라우저 탭을 열고 다음을 방문합니다:"
       ],
+      "You are about to open your default browser and visit:": [
+        "기본 브라우저를 열고 다음을 방문합니다:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "현재 ${ user.Name } (${ user.Email })로 로그인 했습니다."
       ],
@@ -5400,7 +5421,7 @@
         "사용자의 비밀번호가 유출되었습니다:"
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "귀하의 전화번호는 이번 인증에만 사용돼요."
+        "회원님의 전화번호는 이번 인증에만 사용돼요."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "사용자의 요금제가 최대 7일의 10개 버전 제한이 있습니다"
@@ -6526,8 +6547,14 @@
       "Get started for ${ price }": [
         "${ price }로 시작하세요."
       ],
+      "Starting from ${ priceMailPlus }": [
+        "${ priceMailPlus }부터 시작"
+      ],
       "Upgrade now": [
         "지금 업그레이드"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "${ MAIL_SHORT_APP_NAME } Plus로 업그레이드하기"
       ]
     },
     "new_plans: action": {
@@ -6678,7 +6705,7 @@
         "스팸 및 휴지통의 메시지를 자동 삭제"
       ],
       "Auto-reply": [
-        "자동 응답"
+        "자동 회신"
       ],
       "Autofill credit cards (coming soon)": [
         "신용카드 자동 완성 (곧 찾아 옵니다)"
@@ -7080,6 +7107,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "${ price }에 Mail Plus를 구독하세요"
+      ],
+      "Starting from ${ price }": [
+        "${ price }부터 시작"
       ]
     },
     "new_plans: title": {
@@ -7122,7 +7152,7 @@
         "동시에 하나 이상의 네트워크에 접근할 수 있도록 허용합니다. 예시, 지역 검색 결과를 얻는 동안 다른 나라의 영화를 스트리밍하세요"
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
-        "수신 메시지에 대한 자동 응답을 설정할 수 있습니다."
+        "수신 메시지에 대한 자동 회신을 설정할 수 있습니다."
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
         "쓰레기통과 스팸메일함의 30일이 지난 메시지를 자동으로 비웁니다."
@@ -7626,34 +7656,145 @@
       ]
     },
     "Onboarding Action": {
+      "Continue": [
+        "계속"
+      ],
       "Create new document": [
         "새 문서 생성"
       ],
+      "Get started": [
+        "시작하기"
+      ],
+      "Install and continue": [
+        "설치 및 계속"
+      ],
+      "Install later": [
+        "나중에 설치"
+      ],
+      "Invite members": [
+        "구성원 초대"
+      ],
+      "Maybe later": [
+        "나중에"
+      ],
       "Next": [
         "다음"
+      ],
+      "Select theme": [
+        "테마 선택"
+      ],
+      "Skip": [
+        "건너뛰기"
+      ],
+      "Skip for now": [
+        "지금은 건너뛰기"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } 사용 시작"
       ],
       "Try it later": [
         "나중에"
+      ],
+      "Try the app": [
+        "앱 체험하기"
+      ],
+      "Upload file": [
+        "파일 업로드"
+      ],
+      "Upload folder": [
+        "폴더 업로드"
       ]
     },
     "Onboarding Info": {
+      "Access your files on the go": [
+        "이동 중에도 내 파일에 접근"
+      ],
+      "Back up your photos and memories": [
+        "내 사진 및 추억 백업"
+      ],
+      "Backup your photos and memories": [
+        "내 사진과 추억 백업하기"
+      ],
+      "Choose your favorite theme": [
+        "선호하는 테마를 선택하세요"
+      ],
       "Collaborate on documents": [
         "문서에서 협동하기"
       ],
       "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
         "Docs에서 문서를 생성하고 협동해 보세요. 종단 간 암호화되어 문서가 완벽히 보호됩니다."
       ],
+      "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
+        "라이트 및 다크 모드에서의 ${ DRIVE_APP_NAME }를 선호하세요? 가장 영감을 주는 색상을 선택하세요."
+      ],
+      "Drag and drop your files here": [
+        "파일을 이곳으로 끌고오기"
+      ],
+      "Edit documents online": [
+        "온라인 문서 편집"
+      ],
+      "End-to-end encrypted storage for your files": [
+        "내 파일에 대한 종단간 암호화 스토리지"
+      ],
+      "Faster uploads for large or multiple files": [
+        "크거나 다양한 파일을 위한 더 빠른 업로드"
+      ],
+      "Final approval in progress": [
+        "최종 검토 진행 중"
+      ],
+      "Final approval pending": [
+        "최종 검토 대기 중"
+      ],
+      "Free up hard drive space on your computer": [
+        "내 컴퓨터의 하드 드라이브 공간 비우기"
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "${ DRIVE_APP_NAME }를 이용하시면 저장공간을 5GB로 확장해 드립니다!"
+      ],
+      "Get the desktop app": [
+        "데스크톱 앱 다운로드"
+      ],
+      "Get the mobile app": [
+        "모바일 앱 다운로드"
+      ],
+      "Got an Android? We've got you covered.": [
+        "Android 폰을 가지고 계신가요? 저희가 도와드릴게요."
+      ],
+      "Got an iPhone? We've got you covered.": [
+        "iPhone을 가지고 계신가요? 저희가 도와드릴게요."
+      ],
+      "Hang tight": [
+        "꽉 잡으세요"
       ],
       "Introducing ${ DOCS_APP_NAME }": [
         "${ DOCS_APP_NAME }를 소개합니다"
       ],
+      "Invitation accepted": [
+        "초대가 수락됨"
+      ],
+      "Invitation received": [
+        "초대장 수신됨"
+      ],
+      "Invite team members": [
+        "팀 구성원 초대"
+      ],
       "Manage access": [
         "접근 관리"
+      ],
+      "Organize files right from your desktop": [
+        "데스크톱에서 바로 파일 정리하기"
+      ],
+      "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
+        "내 재정 문서, ID 카드, 프로젝트 파일, 사진 등을 종단간 암호화로 보호하세요."
+      ],
+      "Scan the QR code to install the mobile app": [
+        "모바일 앱을 다운로드하려면 QR 코드를 스캔하세요"
+      ],
+      "Secure your files": [
+        "파일을 안전하게 보호"
+      ],
+      "Securely share files and folders": [
+        "파일 및 폴더 안전하게 공유"
       ],
       "Securely store, manage, and share your business-critical files with confidence.": [
         "내 비즈니스에 필수적인 파일들을 안전하게 저장, 관리, 공유하세요."
@@ -7673,11 +7814,23 @@
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "안전하게 파일을 저장 및 공유하세요. ID, 연락처, 개인 사진과 같은 개인 파일을 보호하며 시작해 보세요."
       ],
+      "Sync and access your files from anywhere": [
+        "어디서든 내 파일 동기화 및 접근"
+      ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "소유자가 접근 공유를 수락해야 합니다. 수락시 이메일을 받게 됩니다."
       ],
       "Upload a file": [
         "파일 업로드"
+      ],
+      "Upload your first file": [
+        "첫 파일을 업로드하세요"
+      ],
+      "Work faster, smarter": [
+        "빠르고 스마트하게 일하기"
+      ],
+      "Work together": [
+        "함께 일하기"
       ],
       "Your trusty online vault for vital documents and precious memories.": [
         "중요한 문서와 소중한 추억을 보관하기 위한 안전한 온라인 금고."
@@ -8449,6 +8602,9 @@
       "/ month": [
         "/ 월"
       ],
+      "/month": [
+        "/월간"
+      ],
       "1 year": [
         "1년"
       ],
@@ -8816,7 +8972,7 @@
         "${ planName }는 귀하가 더욱 생산적이고, 체계적이며 받은 편지함과 이메일 신원을 관리하는 것에 기본을 뛰어넘는 도움을 줍니다."
       ],
       "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
-        "${ planName }는 귀하의 가족 구성원 모두와 그 데이터가 온라인에서 언제나 보호받을 수 있도록 돕습니다."
+        "${ planName }가 가족 구성원 모두와 그 데이터가 온라인에서 언제나 보호받을 수 있도록 도와드립니다."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName }는 당신의 이메일과 첨부파일, 이벤트, 비밀번호 그리고 파일을 위한 저장공간 ${ planMaxSpace }를 제공합니다. 또한 연간 저장공간 보너스를 받으실 수 있습니다."
@@ -9620,6 +9776,9 @@
       "Groups": [
         "그룹"
       ],
+      "High security for your account": [
+        "내 계정을 위한 높은 수준의 보안"
+      ],
       "Hm, we couldn't find that one": [
         "흠, 원하시는 것을 찾지 못했어요"
       ],
@@ -9700,6 +9859,9 @@
       ],
       "Number of items": [
         "항목 수"
+      ],
+      "One email, many recipients": [
+        "하나의 이메일, 다수의 수신자"
       ],
       "Open actions dropdown": [
         "액션 드롭다운 열기"

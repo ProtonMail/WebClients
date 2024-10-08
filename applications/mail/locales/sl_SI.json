@@ -3556,6 +3556,11 @@
         "Prednostna podpora"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Pridobi ${ BRAND_NAME } Duo"
+      ]
+    },
     "duoplan2024: Info": {
       "1 TB storage": [
         "1 TB prostora za shranjevanje"
@@ -3568,6 +3573,11 @@
       ],
       "You save ${ amountSave }": [
         "Prihranite ${ amountSave }"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Predstavljamo ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Email body for description (description part)": {
@@ -6753,6 +6763,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Osveževanje strani ali ${ link } bo samodejno odpravilo večino težav."
       ],
+      "Removes all data associated with this app (including downloaded messages, …)": [
+        "Odstrani vse podatke, povezane z aplikacijo (vključno s prenesenimi sporočili…)"
+      ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "S prijavo lažnega predstavljanja nam boste poslali sporočilo v analizo, s katero bomo izboljšali svoje filtre. To pomeni, da nam bo vsebina sporočila v celoti vidna."
       ],
@@ -9188,6 +9201,9 @@
       "Administration Panel": [
         "Skrbniška plošča"
       ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Vse premijske storitve ${ BRAND_NAME }. Ena preprosta naročnina"
+      ],
       "Auto-delete Spam and Trash": [
         "Samodejno brisanje neželene pošte in smeti"
       ],
@@ -9284,6 +9300,9 @@
       "GDPR data processing agreement": [
         "GDPR pogodba o obdelavi podatkov"
       ],
+      "Generate emails with a prompt": [
+        "Ustvarite e-pošto s pozivom"
+      ],
       "Group management (coming soon)": [
         "Upravljanje skupin (kmalu)"
       ],
@@ -9328,6 +9347,9 @@
       ],
       "Password-protected Emails": [
         "E-pošta, zaščitena z geslom"
+      ],
+      "Phone support (20+ users)": [
+        "Telefonska podpora (20+ uporabnikov)"
       ],
       "Priority email support": [
         "Prednostna podpora po e-pošti"
@@ -9919,6 +9941,12 @@
       "Congratulations on choosing privacy": [
         "Čestitamo za izbiro zasebnosti"
       ],
+      "Dark Web Monitoring": [
+        "Spremljanje Dark Web"
+      ],
+      "Download the desktop app": [
+        "Prenesi namizno aplikacijo"
+      ],
       "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
         "Šifriranje je tako močno, da lahko samo vi in predvideni prejemniki vidite vaša e-poštna sporočila. ${ kbLinkEncryption }"
       ],
@@ -9927,6 +9955,9 @@
       ],
       "Forward Gmail messages to your inbox.": [
         "Posredujte sporočila Gmail v svoj nabiralnik."
+      ],
+      "Get the desktop app": [
+        "Prenesite program za namizja"
       ],
       "Google Play": [
         "Google Play"
@@ -9945,6 +9976,9 @@
       ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "Oglaševalcem in zbiralcem podatkov preprečujemo, da bi si ustvarili profil o vas. ${ kbLinkPrivacy }"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Dobrodošli v ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding Proton": {
@@ -11032,6 +11066,9 @@
       "/ month": [
         "/mesec"
       ],
+      "/month": [
+        "/mesec"
+      ],
       "1 year": [
         "1 leto"
       ],
@@ -11406,6 +11443,9 @@
       ],
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } vključno z neomejenimi vzdevki hide-my-email"
+      ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } z ${ DARK_WEB_MONITORING_NAME }"
       ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } shrambe na uporabnika"
@@ -12667,6 +12707,9 @@
       ],
       "Need more aliases?": [
         "Potrebujete več vzdevkov?"
+      ],
+      "Need more labels or folders?": [
+        "Potrebujete več oznak ali map?"
       ],
       "Network error": [
         "Napaka v omrežju"

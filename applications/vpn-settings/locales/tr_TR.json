@@ -2142,6 +2142,9 @@
       ]
     },
     "Description": {
+      "Keep different parts of your life separate and your inbox organized with additional addresses.": [
+        "Hayatınızın farklı bölümlerini ayrı tutun ve ek adreslerle gelen kutunuza düzen getirin."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Birkaç e-posta adresi kullanarak hayatınızın farklı yönlerini ayırın ve tarifenizi yükselterek daha fazla ücretli özelliğe erişin."
       ]
@@ -6112,11 +6115,17 @@
       "From ${ price }": [
         "${ price } ile başlar"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "${ priceMailPlus } tutarından başlayan fiyatlarla"
+      ],
       "Upgrade": [
         "Yükselt"
       ],
       "Upgrade now": [
         "Şimdi yükselt"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "${ MAIL_SHORT_APP_NAME } Plus tarifesine yükseltin"
       ]
     },
     "new_plans: feature": {
@@ -8399,6 +8408,9 @@
       "/ month": [
         "/ ay"
       ],
+      "/month": [
+        "/ay"
+      ],
       "1 year": [
         "1 yıl"
       ],
@@ -9513,6 +9525,9 @@
       ],
       "Amount due": [
         "Ödenecek tutar"
+      ],
+      "An address for each role": [
+        "Her rol için ayrı adres"
       ],
       "Appearance": [
         "Görünüm"

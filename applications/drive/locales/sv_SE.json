@@ -393,6 +393,9 @@
       "Get verification code": [
         "Skaffa verifieringskod"
       ],
+      "Go back": [
+        "Gå tillbaka"
+      ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Gå till ${ DRIVE_SHORT_APP_NAME }"
       ],
@@ -804,6 +807,9 @@
       "Start setup": [
         "Starta inställningar"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Startar från ${ priceUnlimited }"
+      ],
       "Stay": [
         "Stanna"
       ],
@@ -869,6 +875,9 @@
       ],
       "Upgrade now": [
         "Uppgradera nu"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Uppgradera till ${ BRAND_NAME } Unlimited"
       ],
       "Upload anyway": [
         "Ladda upp ändå"
@@ -2322,6 +2331,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Använd dra och släpp för att ange prioritet vid sammanslagning av kontakter. Avmarkera kontakterna du inte vill sammanfoga."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Med kontaktgrupper kan du skicka e-post till alla i gruppen med ett klick."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importera händelser i iCal-format (ICS-fil). Filen bör ha en maximal storlek på ${ MAX_IMPORT_FILE_SIZE_STRING } och ha upp till ${ MAX_IMPORT_EVENTS_STRING } händelser. Om din fil är större, dela upp den i mindre filer."
       ],
@@ -2333,6 +2345,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Ditt konto och dina dataåterställningsmetoder är inställda."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -5329,6 +5344,9 @@
       "You are about to open another browser tab and visit:": [
         "Du är på väg att öppna en annan webbläsarflik och besöka:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Du är på väg att öppna din standardwebbläsare och besöka:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du är för närvarande inloggad som ${ user.Name } (${ user.Email })."
       ],
@@ -6656,8 +6674,14 @@
       "Get started for ${ price }": [
         "Kom igång för ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Startar från ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Uppgradera nu"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Uppgradera till ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7226,6 +7250,9 @@
       "Get Mail Plus for ${ price }": [
         "Skaffa Mail Plus för ${ price }"
       ],
+      "Starting from ${ price }": [
+        "Startar från ${ price }"
+      ],
       "VPN Enterprise": [
         "VPN Enterprise"
       ]
@@ -7790,34 +7817,139 @@
       ]
     },
     "Onboarding Action": {
+      "Continue": [
+        "Fortsätt"
+      ],
       "Create new document": [
         "Skapa nytt dokument"
       ],
+      "Get started": [
+        "Kom igång"
+      ],
+      "Install and continue": [
+        "Installera och fortsätt"
+      ],
+      "Install later": [
+        "Installera senare"
+      ],
+      "Invite members": [
+        "Bjud in medlemmar"
+      ],
+      "Maybe later": [
+        "Kanske senare"
+      ],
       "Next": [
         "Nästa"
+      ],
+      "Select theme": [
+        "Välj tema"
+      ],
+      "Skip": [
+        "Hoppa över"
+      ],
+      "Skip for now": [
+        "Hoppa över just nu"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Börja använda ${ DRIVE_APP_NAME }"
       ],
       "Try it later": [
         "Försök senare"
+      ],
+      "Try the app": [
+        "Prova appen"
+      ],
+      "Upload file": [
+        "Ladda upp fil"
+      ],
+      "Upload folder": [
+        "Ladda upp mapp"
       ]
     },
     "Onboarding Info": {
+      "Access your files on the go": [
+        "Kom åt dina filer när du är på språng"
+      ],
+      "Back up your photos and memories": [
+        "Säkerhetskopiera dina foton och minnen"
+      ],
+      "Backup your photos and memories": [
+        "Säkerhetskopiera dina foton och minnen"
+      ],
+      "Choose your favorite theme": [
+        "Välj ditt favorittema"
+      ],
       "Collaborate on documents": [
         "Samarbeta på dokument"
       ],
       "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
         "Skapa och samarbeta i dokument. Det hela är skyddat av end-to-end-kryptering."
       ],
+      "Drag and drop your files here": [
+        "Dra och släpp dina filer här"
+      ],
+      "Edit documents online": [
+        "Redigera dokument online"
+      ],
+      "End-to-end encrypted storage for your files": [
+        "End-to-end krypterat lagringsutrymme för dina filer"
+      ],
+      "Faster uploads for large or multiple files": [
+        "Snabbare uppladdningar för stora eller flera filer"
+      ],
+      "Final approval in progress": [
+        "Slutligt godkännande pågår"
+      ],
+      "Final approval pending": [
+        "Slutligt godkännande väntar"
+      ],
+      "Free up hard drive space on your computer": [
+        "Frigör hårddiskutrymme på din dator"
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Kom igång med ${ DRIVE_APP_NAME } så kommer vi uppgradera ditt lagringsutrymme till 5 GB!"
+      ],
+      "Get the desktop app": [
+        "Skaffa appen för stationär dator"
+      ],
+      "Get the mobile app": [
+        "Skaffa mobilappen"
+      ],
+      "Hang tight": [
+        "Häng kvar"
       ],
       "Introducing ${ DOCS_APP_NAME }": [
         "Introducerar ${ DOCS_APP_NAME }"
       ],
+      "Invitation accepted": [
+        "Inbjudan accepterad"
+      ],
+      "Invitation received": [
+        "Inbjudan mottagen"
+      ],
+      "Invite team members": [
+        "Bjud in teammedlemmar"
+      ],
       "Manage access": [
         "Hantera åtkomst"
+      ],
+      "Organize files right from your desktop": [
+        "Organisera filer direkt från din stationära dator"
+      ],
+      "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
+        "Skydda dina finansiella dokument, ID-kort, projektfiler, foton och mer med end-to-end-kryptering."
+      ],
+      "Scan the QR code to install the mobile app": [
+        "Skanna QR-koden för att installera mobilappen"
+      ],
+      "Secure your files": [
+        "Säkra dina filer"
+      ],
+      "Securely share files and folders": [
+        "Dela filer och mappar säkert"
+      ],
+      "Securely store, manage, and share your business-critical files with confidence.": [
+        "Lagra, hantera och dela dina affärskritiska filer på ett säkert sätt."
       ],
       "Set a recovery method": [
         "Ställ in en återställningsmetod"
@@ -7835,11 +7967,23 @@
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "Lagra dina filer och dela dem säkert. Kom igång genom att säkra dina mest privata filer, som ID:n, kontrakt och personliga foton."
       ],
+      "Sync and access your files from anywhere": [
+        "Synkronisera och kom åt dina filer var som helst"
+      ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Ägaren måste bekräfta delningsåtkomst. Du kommer få ett e-postmeddelande när det är klart."
       ],
       "Upload a file": [
         "Ladda upp en fil"
+      ],
+      "Upload your first file": [
+        "Ladda upp din första fil"
+      ],
+      "Work faster, smarter": [
+        "Jobba snabbare, smartare"
+      ],
+      "Work together": [
+        "Arbeta tillsammans"
       ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Ditt pålitliga valv online för viktiga dokument och värdefulla minnen."
@@ -8636,6 +8780,9 @@
         "${ n } månader"
       ],
       "/ month": [
+        "/månad"
+      ],
+      "/month": [
         "/månad"
       ],
       "1 year": [
@@ -9823,6 +9970,9 @@
       "Groups": [
         "Grupper"
       ],
+      "High security for your account": [
+        "Hög säkerhet för ditt konto"
+      ],
       "Hm, we couldn't find that one": [
         "Hm, vi kunde inte hitta den"
       ],
@@ -9904,6 +10054,9 @@
       ],
       "Number of items": [
         "Antal objekt"
+      ],
+      "One email, many recipients": [
+        "En e-post, många mottagare"
       ],
       "Open actions dropdown": [
         "Öppna rullgardinsmenyn för åtgärder"

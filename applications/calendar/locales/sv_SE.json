@@ -665,6 +665,9 @@
       "Start setup": [
         "Starta inställningar"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Startar från ${ priceUnlimited }"
+      ],
       "Stay": [
         "Stanna"
       ],
@@ -718,6 +721,9 @@
       ],
       "Upgrade now": [
         "Uppgradera nu"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Uppgradera till ${ BRAND_NAME } Unlimited"
       ],
       "Upload picture": [
         "Ladda upp bild"
@@ -2449,6 +2455,9 @@
       "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
         "Organisera din dag bättre, spåra din tid och prioritera uppgifter. Färgkoda din kalender med anpassade händelsefärger."
       ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "Färgkoda händelser för att göra det enklare att organisera din dag, spåra din tid och prioritera uppgifter."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dekrypterar kontakter… Detta kan ta några minuter. När processen är klar kommer du att kunna ladda ner filen med alla dina kontakter exporterade."
       ],
@@ -2500,6 +2509,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Använd dra och släpp för att ange prioritet vid sammanslagning av kontakter. Avmarkera kontakterna du inte vill sammanfoga."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Med kontaktgrupper kan du skicka e-post till alla i gruppen med ett klick."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importera händelser i iCal-format (ICS-fil). Filen bör ha en maximal storlek på ${ MAX_IMPORT_FILE_SIZE_STRING } och ha upp till ${ MAX_IMPORT_EVENTS_STRING } händelser. Om din fil är större, dela upp den i mindre filer."
       ],
@@ -2511,6 +2523,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Ditt konto och dina dataåterställningsmetoder är inställda."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -3812,6 +3827,17 @@
         "Väldigt liten"
       ]
     },
+    "Google Meet": {
+      "Less details": [
+        "Mindre detaljer"
+      ],
+      "Meeting link:": [
+        "Möteslänk:"
+      ],
+      "More details": [
+        "Mer detaljer"
+      ]
+    },
     "Group": {
       "Account": [
         "Konto"
@@ -5041,6 +5067,9 @@
       "You are about to open another browser tab and visit:": [
         "Du är på väg att öppna en annan webbläsarflik och besöka:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Du är på väg att öppna din standardwebbläsare och besöka:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du är för närvarande inloggad som ${ user.Name } (${ user.Email })."
       ],
@@ -6235,8 +6264,14 @@
       "Get started for ${ price }": [
         "Kom igång för ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Startar från ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Uppgradera nu"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Uppgradera till ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6805,6 +6840,9 @@
       "Get Mail Plus for ${ price }": [
         "Skaffa Mail Plus för ${ price }"
       ],
+      "Starting from ${ price }": [
+        "Startar från ${ price }"
+      ],
       "VPN Enterprise": [
         "VPN Enterprise"
       ]
@@ -7102,6 +7140,9 @@
       ],
       "Link copied to clipboard": [
         "Länk kopierad till urklipp"
+      ],
+      "Passcode copied to clipboard": [
+        "Lösenkod kopierat till urklipp"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8177,6 +8218,9 @@
         "${ n } månader"
       ],
       "/ month": [
+        "/månad"
+      ],
+      "/month": [
         "/månad"
       ],
       "1 year": [
@@ -9404,6 +9448,9 @@
       "Hide time zones for event start and end times": [
         "Dölj tidszoner för händelsens start- och sluttider"
       ],
+      "High security for your account": [
+        "Hög säkerhet för ditt konto"
+      ],
       "Human verification": [
         "Mänsklig verifiering"
       ],
@@ -9452,6 +9499,9 @@
       ],
       "Notes": [
         "Anteckningar"
+      ],
+      "One email, many recipients": [
+        "En e-post, många mottagare"
       ],
       "Open actions dropdown": [
         "Öppna rullgardinsmenyn för åtgärder"
@@ -10211,6 +10261,17 @@
     "Yearly recurring event, frequency (until)": {
       "Yearly, ${ untilString }": [
         "Årligen, ${ untilString }"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Gå med i Zoom-mötet"
+      ],
+      "Meeting ID:": [
+        "Mötes-ID:"
+      ],
+      "Passcode: ${ password }": [
+        "Lösenkod: ${ password }"
       ]
     }
   }

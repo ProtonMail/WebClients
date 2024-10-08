@@ -352,7 +352,7 @@
         "Agrandir le dossier"
       ],
       "Explore on my own": [
-        "Explorer par moi-même"
+        "Découvrir par moi-même"
       ],
       "Explore while you wait": [
         "Découvrez l'application en attendant."
@@ -5368,6 +5368,9 @@
       "You are about to open another browser tab and visit:": [
         "Vous êtes sur le point d'ouvrir un autre onglet de navigateur et de visiter :"
       ],
+      "You are about to open your default browser and visit:": [
+        "Vous allez ouvrir votre navigateur par défaut et consulter :"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Vous êtes actuellement connecté en tant que ${ user.Name } (${ user.Email })."
       ],
@@ -5463,7 +5466,7 @@
         "Votre compte sera mis à jour une fois le paiement effectué."
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "Votre navigateur actuel ne prend pas en charge le téléchargement de fichiers volumineux en raison de l'indisponibilité des prestataires de services. Le téléchargement de fichiers volumineux peut entraîner un gel ou une perte de réactivité du navigateur. Utilisez la dernière version d'un ${ recommendedBrowser } et essayez à nouveau."
+        "Votre navigateur actuel ne permet pas le téléchargement de fichiers volumineux car certains agents de service (service workers) sont indisponibles. Ce type de téléchargement peut figer ou ralentir le navigateur. Utilisez la dernière version d'un ${ recommendedBrowser } et essayez à nouveau."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vos données sont prêtes à être importées depuis ${ importedEmailAddressStrong } vers votre compte ${ BRAND_NAME }."
@@ -7920,7 +7923,7 @@
         "Protégez vos documents financiers, cartes d'identité, fichiers de projet, photos et bien plus encore grâce à un chiffrement de bout en bout."
       ],
       "Scan the QR code to install the mobile app": [
-        "Scannez le GR code pour installer l'application mobile"
+        "Scannez le QR code pour installer l'application mobile"
       ],
       "Secure your files": [
         "Sécurisez vos fichiers"

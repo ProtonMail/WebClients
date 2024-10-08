@@ -2640,6 +2640,11 @@
         "Dodaj koledar"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Pridobi ${ BRAND_NAME } Duo"
+      ]
+    },
     "duoplan2024: Info": {
       "1 TB storage": [
         "1 TB prostora za shranjevanje"
@@ -2652,6 +2657,11 @@
       ],
       "You save ${ amountSave }": [
         "Prihranite ${ amountSave }"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Predstavljamo ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Duplicate event button tooltip": {
@@ -6486,6 +6496,9 @@
       "Administration Panel": [
         "Skrbniška plošča"
       ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Vse premijske storitve ${ BRAND_NAME }. Ena preprosta naročnina"
+      ],
       "Auto-delete Spam and Trash": [
         "Samodejno brisanje neželene pošte in smeti"
       ],
@@ -6582,6 +6595,9 @@
       "GDPR data processing agreement": [
         "GDPR pogodba o obdelavi podatkov"
       ],
+      "Generate emails with a prompt": [
+        "Ustvarite e-pošto s pozivom"
+      ],
       "Group management (coming soon)": [
         "Upravljanje skupin (kmalu)"
       ],
@@ -6626,6 +6642,9 @@
       ],
       "Password-protected Emails": [
         "E-pošta, zaščitena z geslom"
+      ],
+      "Phone support (20+ users)": [
+        "Telefonska podpora (20+ uporabnikov)"
       ],
       "Priority email support": [
         "Prednostna podpora po e-pošti"
@@ -8278,6 +8297,9 @@
       "/ month": [
         "/mesec"
       ],
+      "/month": [
+        "/mesec"
+      ],
       "1 year": [
         "1 leto"
       ],
@@ -8631,6 +8653,9 @@
       ],
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } vključno z neomejenimi vzdevki hide-my-email"
+      ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } z ${ DARK_WEB_MONITORING_NAME }"
       ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } shrambe na uporabnika"

@@ -808,11 +808,11 @@
       "Refresh status": [
         "Uppdatera status"
       ],
-      "refresh the page": [
-        "uppdatera sidan"
-      ],
       "Refresh the page": [
         "Uppdatera sidan"
+      ],
+      "refresh the page": [
+        "uppdatera sidan"
       ],
       "Reload": [
         "Ladda om"
@@ -1185,6 +1185,9 @@
       ],
       "Use authentication code": [
         "Använd autentiseringskod"
+      ],
+      "Use group sending permissions": [
+        "Använd behörigheter för gruppsändning"
       ],
       "Use recovery code": [
         "Använd återställningskod"
@@ -1609,6 +1612,14 @@
         "Välj ditt årsslutserbjudande"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få **${ discountPercentage } rabatt på ${ plan.Title }** när du prenumererar för **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagringsutrymme (2 gånger mer än något annat paket)"
@@ -1630,14 +1641,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paketet ${ plan } är tillbaka endast under en begränsad tid"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få **${ discountPercentage } rabatt på ${ plan.Title }** när du prenumererar för **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3366,6 +3369,9 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Är du säker på att du vill ta bort denna grupp?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Observera att om du tar bort gruppen ${ displayGroupName } (med adress ${ displayGroupAddressEmail }), kommer du inte längre att kunna ta emot e-post med dess adress."
       ]
     },
     "Delinquent modal title": {
@@ -3377,8 +3383,20 @@
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Ta bort skräppost och meddelanden i papperskorgen automatiskt och lås upp fler premiumfunktioner när du uppgraderar."
       ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Rensa automatiskt bort e-post som flyttats till papperskorg och skräppost för mer än 30 dagar sedan."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Sortera automatiskt dina inkommande meddelanden innan de når din inkorg."
+      ],
+      "Available with ${ BRAND_NAME } Mail plus": [
+        "Tillgänglig med ${ BRAND_NAME } Mail plus"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Grattis! Du har tjänat det maximala antalet ${ rewardsLimit } gratis månader av ${ plusPlanName }."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Skapa så många etiketter eller mappar du behöver för att hålla din inkorg prydlig."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Aktivera ${ PROTON_SENTINEL_NAME } för att komma åt dessa funktioner"
@@ -3401,8 +3419,17 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det verkar som kontaktlistan du importerar innehåller några grupper. Granska hur dessa grupper ska importeras."
       ],
+      "Keep different parts of your life separate and your inbox organized with additional addresses.": [
+        "Håll olika delar av ditt liv åtskilda och din inkorg organiserad med ytterligare adresser."
+      ],
+      "Make your email footer your own — showcase your unique brand, not ours.": [
+        "Gör sidfoten i din e-post till din egen – visa upp ditt unika varumärke, inte vårt."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separera olika aspekter av ditt liv med flera e-postadresser och lås upp fler premiumfunktioner när du uppgraderar."
+      ],
+      "Set up auto-forwarding to redirect incoming emails to another email address.": [
+        "Ställ in automatisk vidarebefordran för att omdirigera inkommande e-post till en annan e-postadress."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "För att importera dina kontakter från Google eller Outlook, ${ easySwitchLink }."
@@ -5246,6 +5273,9 @@
       "*Only one free trial per user. Regular pricing applies thereafter.": [
         "*Endast en gratis provperiod per användare. Ordinarie priser tillämpas därefter."
       ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "Efter att ha lämnat ditt paket kommer denna användare att flyttas till ett ${ BRAND_NAME } Unlimited-paket med en 30-dagars gratis provperiod.*"
+      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Som standard tilldelar vi ${ formattedStorage } lagringsutrymme till administratörskontot. Du kan hantera det tilldelade lagringsutrymmet för att distribueras mellan ytterligare användare senare."
       ],
@@ -7026,11 +7056,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "Dedicated servers": [
-        "Dedikerade servrar"
-      ],
       "dedicated servers": [
         "dedikerade servrar"
+      ],
+      "Dedicated servers": [
+        "Dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -8861,6 +8891,9 @@
       "You are about to open another browser tab and visit:": [
         "Du är på väg att öppna en annan webbläsarflik och besöka:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Du är på väg att öppna din standardwebbläsare och besöka:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du är för närvarande inloggad som ${ user.Name } (${ user.Email })."
       ],
@@ -10616,7 +10649,7 @@
         "${ BRAND_NAME } nyhetsbrev"
       ],
       "${ BRAND_NAME } offers and promotions": [
-        "${ BRAND_NAME } erbjudanden och rabatter"
+        "${ BRAND_NAME } erbjudanden och kampanjer"
       ],
       "${ BRAND_NAME } product announcements": [
         "${ BRAND_NAME } produktnyheter"
@@ -11437,6 +11470,32 @@
         "Medelhög VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforska alla ${ BRAND_NAME }-paket"
+      ],
+      "From ${ price }": [
+        "Från ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Kom igång för ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Startar från ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Uppgradera till ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsätt med Free"
@@ -11464,26 +11523,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Uppgradera till ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforska alla ${ BRAND_NAME }-paket"
-      ],
-      "From ${ price }": [
-        "Från ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Kom igång för ${ price }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
       ]
     },
     "new_plans: feature": {
@@ -12139,6 +12178,23 @@
         "Ditt valda paket: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } provperiod"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Skaffa Mail Plus för ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Startar från ${ price }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Ditt kontos användning"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -12157,20 +12213,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås upp premiumfunktioner genom att uppgradera"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } provperiod"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Skaffa Mail Plus för ${ price }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Ditt kontos användning"
       ]
     },
     "new_plans: tooltip": {
@@ -14931,6 +14973,9 @@
       "/ month": [
         "/månad"
       ],
+      "/month": [
+        "/månad"
+      ],
       "1 year": [
         "1 år"
       ],
@@ -16281,6 +16326,9 @@
       "Amount due": [
         "Att betala"
       ],
+      "An address for each role": [
+        "En adress för varje roll"
+      ],
       "App": [
         "App"
       ],
@@ -16335,10 +16383,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
       "Change login password": [
@@ -16683,6 +16731,9 @@
         "Misslyckades att skapa ${ failedUsers.length } användarkonto.",
         "Misslyckades att skapa ${ failedUsers.length } användarkonton."
       ],
+      "Filter for more focus": [
+        "Filter för mer fokus"
+      ],
       "Filter name cannot contain only spaces": [
         "Filternamn kan inte bara innehålla mellanslag"
       ],
@@ -16864,6 +16915,9 @@
       "My calendars": [
         "Mina kalendrar"
       ],
+      "Need more labels or folders?": [
+        "Behöver du fler etiketter eller mappar?"
+      ],
       "Network error": [
         "Nätverksfel"
       ],
@@ -16875,6 +16929,9 @@
       ],
       "No account information was found in any data breaches": [
         "Ingen kontoinformation hittades i några dataintrång"
+      ],
+      "No need to empty the trash": [
+        "Inget behov att tömma papperskorgen"
       ],
       "No recovery method": [
         "Ingen återställningsmetod"
@@ -16935,6 +16992,9 @@
       ],
       "PayPal verification failed": [
         "Verifiering av PayPal misslyckades"
+      ],
+      "Personalize your email footer": [
+        "Personifiera sidfoten för din e-post"
       ],
       "Phone": [
         "Telefon"
@@ -17028,6 +17088,9 @@
       ],
       "Revoke certificate": [
         "Återkalla certifikat"
+      ],
+      "Same inbox, shorter email address": [
+        "Samma inkorg, kortare e-postadress"
       ],
       "SAML authentication": [
         "SAML-autentisering"
@@ -17684,6 +17747,10 @@
       ]
     },
     "unprivatization": {
+      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
+        "${ n } användare har gått med i din organisation via din identitetsleverantör. Godkänn eller avvisa deras konton nu:",
+        "${ n } användare har gått med i din organisation via din identitetsleverantör. Godkänn eller avvisa deras konton nu:"
+      ],
       "Administrator access enabled": [
         "Administratörsåtkomst aktiverad"
       ],
@@ -17704,6 +17771,10 @@
       ],
       "Cancel": [
         "Avbryt"
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Kunde inte aktivera administratörsåtkomst automatiskt för ${ n } användare eftersom deras krypteringsnycklar har uppdaterats under tiden:",
+        "Kunde inte aktivera administratörsåtkomst automatiskt för ${ n } användare eftersom deras krypteringsnycklar har uppdaterats under tiden:"
       ],
       "Could not enable administrator access: ${ error }": [
         "Kunde inte aktivera administratörsåtkomst: ${ error }"

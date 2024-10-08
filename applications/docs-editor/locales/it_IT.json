@@ -403,6 +403,17 @@
         "Vuoi scartare il commento?"
       ]
     },
+    "Description": {
+      "Edit document directly": [
+        "Modifica direttamente il documento"
+      ],
+      "Edits become suggestion": [
+        "Le modifiche diventano suggerimenti"
+      ],
+      "Read or print final document": [
+        "Leggi o stampa il documento finale"
+      ]
+    },
     "Error": {
       "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
         "Si è verificato un errore durante il caricamento del documento. Per evitare la corruzione dei documenti, l'editor è stato bloccato. Per favore, ricarica la pagina e riprova."
@@ -482,6 +493,15 @@
       "Editing": [
         "Modifica"
       ],
+      "Font": [
+        "Carattere"
+      ],
+      "Font size": [
+        "Dimensione del carattere"
+      ],
+      "Highlight": [
+        "Evidenzia"
+      ],
       "Just now": [
         "Proprio ora"
       ],
@@ -497,6 +517,9 @@
       "Suggesting": [
         "Suggerendo"
       ],
+      "Text color": [
+        "Colore del testo"
+      ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "Il contenuto che stai tentando di incollare è troppo grande per essere incollato in una sola volta. Riprova incollando pezzi più piccoli alla volta."
       ],
@@ -508,11 +531,17 @@
       ]
     },
     "Label": {
+      "Add link": [
+        "Aggiungi collegamento"
+      ],
       "Background colour": [
         "Colore di sfondo"
       ],
       "Delete": [
         "Elimina"
+      ],
+      "Delete link": [
+        "Elimina collegamento"
       ],
       "Delete paragraph": [
         "Elimina paragrafo"
@@ -541,8 +570,14 @@
       "Replace": [
         "Sostituisci"
       ],
+      "Replace link": [
+        "Sostituisci collegamento"
+      ],
       "Text colour": [
         "Colore del testo"
+      ],
+      "with \"${ replaceWith }\"": [
+        "con \"${ replaceWith }\""
       ]
     },
     "Placeholder": {

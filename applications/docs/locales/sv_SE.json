@@ -139,6 +139,9 @@
       "Close": [
         "Stäng"
       ],
+      "Close navigation": [
+        "Stäng navigering"
+      ],
       "Close this banner": [
         "Stäng denna banner"
       ],
@@ -153,6 +156,9 @@
       ],
       "Contact group": [
         "Kontaktgrupp"
+      ],
+      "Context menu": [
+        "Kontextmeny"
       ],
       "Continue": [
         "Fortsätt"
@@ -396,17 +402,26 @@
       "Not now": [
         "Inte nu"
       ],
+      "Ok": [
+        "Ok"
+      ],
       "OK": [
         "OK"
       ],
-      "Ok": [
-        "Ok"
+      "Open": [
+        "Öppna"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
       ],
       "Open ${ DRIVE_APP_NAME }": [
         "Öppna ${ DRIVE_APP_NAME }"
+      ],
+      "Open folder": [
+        "Öppna mapp"
+      ],
+      "Open navigation": [
+        "Öppna navigering"
       ],
       "Pay": [
         "Betala"
@@ -495,11 +510,20 @@
       "Save changes": [
         "Spara ändringar"
       ],
+      "Search": [
+        "Sök"
+      ],
       "Search countries": [
         "Sök länder"
       ],
+      "Search docs": [
+        "Sök dokument"
+      ],
       "See how": [
         "Se hur"
+      ],
+      "See plan features": [
+        "Se paketfunktioner"
       ],
       "See version history": [
         "Se versionshistorik"
@@ -536,6 +560,9 @@
       ],
       "Start import": [
         "Starta import"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Startar från ${ priceUnlimited }"
       ],
       "Stay": [
         "Stanna"
@@ -581,6 +608,15 @@
       ],
       "Update recovery phrase": [
         "Uppdatera återställningsfras"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Uppgradera till ${ BRAND_NAME } Unlimited"
       ],
       "Upload anyway": [
         "Ladda upp ändå"
@@ -694,6 +730,11 @@
         "Genom att lämna nu kanske vissa händelser inte importeras"
       ]
     },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME }-applikationer"
+      ]
+    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Ta e-postproduktivitet till nya nivåer. Låt ${ BRAND_NAME } Scribe hjälpa dig att skriva, svara på och korrekturläsa din e-post."
@@ -749,6 +790,19 @@
       ],
       "Premium Password Manager": [
         "Premium lösenordshanterare"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Rabatterna är baserade på ordinarie månadspriser."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Din prenumeration kommer förnyas automatiskt till det rabatterade standardpriset i slutet av din faktureringsperiod."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30 dagars pengarna-tillbaka-garanti"
       ]
     },
     "bf2023: renew": {
@@ -1991,6 +2045,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Använd dra och släpp för att ange prioritet vid sammanslagning av kontakter. Avmarkera kontakterna du inte vill sammanfoga."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Med kontaktgrupper kan du skicka e-post till alla i gruppen med ett klick."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importera händelser i iCal-format (ICS-fil). Filen bör ha en maximal storlek på ${ MAX_IMPORT_FILE_SIZE_STRING } och ha upp till ${ MAX_IMPORT_EVENTS_STRING } händelser. Om din fil är större, dela upp den i mindre filer."
       ],
@@ -2002,6 +2059,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Ditt konto och dina dataåterställningsmetoder är inställda."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -2077,6 +2137,41 @@
       ],
       "Priority support": [
         "Prioriterad support"
+      ]
+    },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Skaffa ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Skaffa det för ${ price }"
+      ]
+    },
+    "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB lagringsutrymme"
+      ],
+      "2 users": [
+        "2 användare"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Full åtkomst till alla ${ BRAND_NAME }-produkter"
+      ],
+      "You save ${ amountSave }": [
+        "Du sparar ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Allt av ${ BRAND_NAME }, för 2."
+      ],
+      "Double your storage": [
+        "Dubbla ditt lagringsutrymme"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Introducerar ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Email body for description (description part)": {
@@ -3685,6 +3780,9 @@
       "Create public link": [
         "Skapa offentlig länk"
       ],
+      "Create your end-to-end encrypted document": [
+        "Skapa ditt end-to-end-krypterade dokument"
+      ],
       "Creating link to file": [
         "Skapar länk till fil"
       ],
@@ -4017,6 +4115,9 @@
       "No payment is required at this time.": [
         "Ingen betalning krävs just nu."
       ],
+      "No recent documents": [
+        "Inga nyliga dokument"
+      ],
       "No results found": [
         "Inga resultat hittades"
       ],
@@ -4332,6 +4433,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Tyvärr verkar det som om filen eller en del av dess data inte kan dekrypteras."
       ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
+      ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Att ladda upp hundratals filer på samma gång kan påverka prestandan."
       ],
@@ -4415,6 +4519,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Du är på väg att öppna en annan webbläsarflik och besöka:"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Du är på väg att öppna din standardwebbläsare och besöka:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du är för närvarande inloggad som ${ user.Name } (${ user.Email })."
@@ -4879,6 +4986,9 @@
       "Mail Server (IMAP)": [
         "E-postserver (IMAP)"
       ],
+      "Main": [
+        "Huvud"
+      ],
       "Make editor": [
         "Gör till redaktör"
       ],
@@ -4896,6 +5006,9 @@
       ],
       "Move to Inbox": [
         "Flytta till Inkorg"
+      ],
+      "Navigation": [
+        "Navigering"
       ],
       "New password": [
         "Nytt lösenord"
@@ -5208,6 +5321,14 @@
         "för ${ price }"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ],
+      "Special Offer": [
+        "Specialerbjudande"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-app för stationär dator"
@@ -5223,6 +5344,24 @@
       ],
       "Unlimited folders, labels and filters": [
         "Obegränsade mappar, etiketter och filter"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Förnyas med ${ renewablePrice }, avbryt när som helst"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "för första månaden"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Tidsbegränsat erbjudande, löper ut 2 april 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Skaffa ${ planName } för endast ${ planPrice }"
       ]
     },
     "Message": {
@@ -5537,8 +5676,14 @@
       "Get started for ${ price }": [
         "Kom igång för ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Startar från ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Uppgradera nu"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Uppgradera till ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6106,6 +6251,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Skaffa Mail Plus för ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Startar från ${ price }"
       ],
       "VPN Enterprise": [
         "VPN Enterprise"
@@ -7242,6 +7390,40 @@
         "Signera"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Stäng"
+      ],
+      "Don't show this offer again": [
+        "Visa inte detta erbjudande igen"
+      ],
+      "Special offer": [
+        "Specialerbjudande"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Skaffa Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dagar"
+      ],
+      "${ hours } hour": [
+        "${ hours } timme",
+        "${ hours } timmar"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minuter"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekund",
+        "${ seconds } sekunder"
+      ]
+    },
     "specialoffer: Deal": {
       "${ n } month FREE": [
         "${ n } månad GRATIS",
@@ -7292,6 +7474,11 @@
         "Stöder integritet online"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Denna prenumeration kommer förnyas automatiskt vartannat år med samma taxa tills den avbryts."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Gå till prenumerationspaket"
@@ -7304,6 +7491,12 @@
       "${ n } month": [
         "${ n } månad",
         "${ n } månader"
+      ],
+      "/ month": [
+        "/månad"
+      ],
+      "/month": [
+        "/månad"
       ],
       "1 year": [
         "1 år"
@@ -7332,11 +7525,17 @@
       "Billed at ${ amount } for 30 months": [
         "Fakturerad med ${ amount } för 30 månader"
       ],
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Förnyas efter 1 år till ett rabatterat pris med ${ discountedAmount } istället för ${ regularAmount } (${ discount } % rabatt)"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Förnyas efter 2 år till ett rabatterat pris med ${ discountedAmount } istället för ${ regularAmount } (${ discount } % rabatt)"
+      ],
+      "Save ${ discount }%": [
+        "Spara ${ discount } %"
       ],
       "Standard price ${ amount } for 1 month": [
         "Ordinarie pris ${ amount } för 1 månad"
@@ -7352,6 +7551,20 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Ordinarie pris ${ amount } för 30 månader"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Black Friday-rea"
+      ],
+      "Cyber Week Sale": [
+        "Cyber Week-rea"
+      ],
+      "End of Year Sale": [
+        "Nyårsrea"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Uppgradera och spara mer med 2 års ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
@@ -7399,6 +7612,14 @@
       ],
       "Pending": [
         "Väntande"
+      ]
+    },
+    "Storage": {
+      "Upgrade storage": [
+        "Uppgradera lagringsutrymme"
+      ],
+      "Your current storage:": [
+        "Ditt nuvarande lagringsutrymme:"
       ]
     },
     "storage_split: action": {
@@ -7559,6 +7780,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "För ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varningar om dataintrång ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "App för stationär dator"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription reminder": {
@@ -7961,6 +8223,9 @@
       "Discard changes?": [
         "Ignorera ändringar?"
       ],
+      "Docs": [
+        "Docs"
+      ],
       "Document verification failed": [
         "Dokumentverifiering misslyckades"
       ],
@@ -8036,6 +8301,9 @@
       "Groups": [
         "Grupper"
       ],
+      "High security for your account": [
+        "Hög säkerhet för ditt konto"
+      ],
       "Human verification": [
         "Mänsklig verifiering"
       ],
@@ -8096,6 +8364,9 @@
       ],
       "Offline": [
         "Offline"
+      ],
+      "One email, many recipients": [
+        "En e-post, många mottagare"
       ],
       "Open actions dropdown": [
         "Öppna rullgardinsmenyn för åtgärder"
@@ -8237,6 +8508,9 @@
       ],
       "What would you like to import?": [
         "Vad vill du importera?"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Din gratis provperiod för ${ planName } slutar den ${ textDate }"
       ],
       "Your account is protected": [
         "Ditt konto är skyddat"

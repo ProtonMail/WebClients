@@ -399,6 +399,9 @@
       "Get verification code": [
         "Атрымаць праверачны код"
       ],
+      "Go back": [
+        "Вярнуцца"
+      ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Перайсці ў ${ DRIVE_SHORT_APP_NAME }"
       ],
@@ -810,6 +813,9 @@
       "Start setup": [
         "Пачаць наладжванне"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Пачатковы кошт ${ priceUnlimited }"
+      ],
       "Stay": [
         "Застацца"
       ],
@@ -875,6 +881,9 @@
       ],
       "Upgrade now": [
         "Палепшыць зараз"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Палепшыць да ${ BRAND_NAME } Unlimited"
       ],
       "Upload anyway": [
         "Запампаваць усё роўна"
@@ -2301,6 +2310,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс з дапамогай адмысловага кругласутачнага назірання падазроных дзеянняў. Гэты сэрвіс таксама прадугледжвае перадачу спецыялістам па бяспецы."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2ФА дадае дадатковы слой бяспекі, каб прадухіліць неаўтарызаваны доступ."
       ],
@@ -2349,6 +2361,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Выкарыстоўвайце перацягванне, каб задаць прыярытэт аб'яднання паміж кантактамі. Здыміце пазнаку з кантактаў, якія вы не хочаце аб'ядноўваць."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Вы можаце адпраўляць лісты кожнаму ўдзельніку ў групе адным націскам з дапамогай груп кантактаў."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Вы можаце імпартаваць падзеі ў фармаце iCal (файл ICS). Максімальна памер файла павінен быць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець не больш за ${ MAX_IMPORT_EVENTS_STRING } падзей. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі."
       ],
@@ -2360,6 +2375,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Спосабы аднаўлення вашага ўліковага запісу зададзены."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -5510,6 +5528,9 @@
       "You are about to open another browser tab and visit:": [
         "Вы збіраецеся адкрыць іншую ўкладку браўзера і наведаць:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Вы збіраецеся адкрыць прадвызначаны браўзер і наведаць:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Вы ўжо ўвайшлі як ${ user.Name } (${ user.Email })."
       ],
@@ -6862,8 +6883,14 @@
       "Get started for ${ price }": [
         "Пачніце з коштам у памеры ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Пачатковы кошт ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Палепшыць зараз"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Палепшыць да ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7479,6 +7506,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Атрымайце Mail Plus за ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Пачатковы кошт ${ price }"
       ]
     },
     "new_plans: title": {
@@ -8082,34 +8112,145 @@
       ]
     },
     "Onboarding Action": {
+      "Continue": [
+        "Працягнуць"
+      ],
       "Create new document": [
         "Стварыць новы дакумент"
       ],
+      "Get started": [
+        "Пачаць працу"
+      ],
+      "Install and continue": [
+        "Усталяваць і працягнуць"
+      ],
+      "Install later": [
+        "Усталяваць пазней"
+      ],
+      "Invite members": [
+        "Запрасіць удзельнікаў"
+      ],
+      "Maybe later": [
+        "Магчыма пазней"
+      ],
       "Next": [
         "Далей"
+      ],
+      "Select theme": [
+        "Выбар тэмы"
+      ],
+      "Skip": [
+        "Прапусціць"
+      ],
+      "Skip for now": [
+        "Прапусціць"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Пачаць выкарыстоўваць ${ DRIVE_APP_NAME }"
       ],
       "Try it later": [
         "Паспрабуйце пазней"
+      ],
+      "Try the app": [
+        "Паспрабаваць праграму"
+      ],
+      "Upload file": [
+        "Запампаваць файл"
+      ],
+      "Upload folder": [
+        "Запампаваць папку"
       ]
     },
     "Onboarding Info": {
+      "Access your files on the go": [
+        "Атрымлівайце доступ да сваіх файлаў у любым месцы"
+      ],
+      "Back up your photos and memories": [
+        "Зарэзервуйце свае фатаграфіі і ўспаміны"
+      ],
+      "Backup your photos and memories": [
+        "Зарэзервуйце свае фатаграфіі і ўспаміны"
+      ],
+      "Choose your favorite theme": [
+        "Выберыце сваю абраную тэму"
+      ],
       "Collaborate on documents": [
         "Сумесна працуйце над дакументамі"
       ],
       "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
         "Стварайце і сумесна працуйце над дакументамі. Усе яны абаронены скразным шыфраваннем."
       ],
+      "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
+        "Вы аддаяце перавагу светламу або цёмнаму рэжыму ў ${ DRIVE_APP_NAME }? Выберыце колер, які найбольш вас натхняе."
+      ],
+      "Drag and drop your files here": [
+        "Перацягніце свае файлы сюды"
+      ],
+      "Edit documents online": [
+        "Рэдагуйце дакументы ў інтэрнэце"
+      ],
+      "End-to-end encrypted storage for your files": [
+        "Зашыфраванае скразным метадам сховішча для вашых файлаў"
+      ],
+      "Faster uploads for large or multiple files": [
+        "Хутчэйшае запампоўвання для вялікіх або састаўных файлаў"
+      ],
+      "Final approval in progress": [
+        "Чакаецца фінальнае зацвярджэнне"
+      ],
+      "Final approval pending": [
+        "Чакаецца фінальнае зацвярджэнне"
+      ],
+      "Free up hard drive space on your computer": [
+        "Вызваліце прастору на цвёрдым дыску свайго камп'ютара"
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Пачніце выкарыстоўваць ${ DRIVE_APP_NAME } і мы палепшым ваша сховішча да 5 ГБ!"
+      ],
+      "Get the desktop app": [
+        "Атрымаць настольную праграму"
+      ],
+      "Get the mobile app": [
+        "Атрымаць мабільную праграму"
+      ],
+      "Got an Android? We've got you covered.": [
+        "У вас Android? У нас ёсць рашэнне."
+      ],
+      "Got an iPhone? We've got you covered.": [
+        "У вас iPhone? У нас ёсць рашэнне."
+      ],
+      "Hang tight": [
+        "Адну хвіліну"
       ],
       "Introducing ${ DOCS_APP_NAME }": [
         "Прадстаўляем ${ DOCS_APP_NAME }"
       ],
+      "Invitation accepted": [
+        "Запрашэнне прынята"
+      ],
+      "Invitation received": [
+        "Запрашэнне атрымана"
+      ],
+      "Invite team members": [
+        "Запрашэнне ўдзельнікаў каманды"
+      ],
       "Manage access": [
         "Кіруйце доступам"
+      ],
+      "Organize files right from your desktop": [
+        "Арганізоўвайце файлы непасрэдна на сваім працоўным стале"
+      ],
+      "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
+        "Абараніце свае фінансавыя дакументы, ідэнтыфікацыйныя карткі, файлы праекта, фатаграфіі і іншыя звесткі з дапамогай скразнога шыфравання."
+      ],
+      "Scan the QR code to install the mobile app": [
+        "Адсканіруйце QR-код, каб усталяваць мабільную праграму"
+      ],
+      "Secure your files": [
+        "Абараніце свае файлы"
+      ],
+      "Securely share files and folders": [
+        "Бяспечна абагульвайце файлы і папкі"
       ],
       "Securely store, manage, and share your business-critical files with confidence.": [
         "Без хваляванняў бяспечна захоўвайце, кіруйце і абагульвайце крытычныя файлы вашага бізнесу."
@@ -8132,11 +8273,23 @@
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "Захоўвайце свае файлы і бяспечна іх абагульвайце. Пачніце з абароны вашых самых прыватных файлаў, такіх як пасведчанні асобы, кантракты і асабістыя фатаграфіі."
       ],
+      "Sync and access your files from anywhere": [
+        "Сінхранізуйце і атрымлівайце доступ да сваіх файлаў з любога месца"
+      ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Уладальніку патрэбна пацвердзіць абагульванне доступу. Вы атрымаеце ліст, як толькі гэта будзе зроблена."
       ],
       "Upload a file": [
         "Запампаваць файл"
+      ],
+      "Upload your first file": [
+        "Запампуйце ваш першы файл"
+      ],
+      "Work faster, smarter": [
+        "Працуйце хутчэй і разумней"
+      ],
+      "Work together": [
+        "Працуйце разам"
       ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Ваша надзейнае сховішча ў інтэрнэце для важных дакументаў і бясцэнных успамінаў."
@@ -8979,6 +9132,9 @@
       ],
       "/ month": [
         "/ месяц"
+      ],
+      "/month": [
+        "/месяц"
       ],
       "1 year": [
         "1 год"
@@ -10238,6 +10394,9 @@
       "Groups": [
         "Групы"
       ],
+      "High security for your account": [
+        "Высокая бяспека для вашага ўліковага запісу"
+      ],
       "Hm, we couldn't find that one": [
         "Здаецца, што мы не можам знайсці гэты элемент"
       ],
@@ -10321,6 +10480,9 @@
       ],
       "Number of items": [
         "Колькасць элементаў"
+      ],
+      "One email, many recipients": [
+        "Адна электронная пошта, шмат атрымальнікаў"
       ],
       "Open actions dropdown": [
         "Адкрыць спіс даступных дзеянняў"
