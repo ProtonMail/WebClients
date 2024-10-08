@@ -1,4 +1,4 @@
-export type DocumentRoleType = 'Viewer' | 'Commenter' | 'Editor' | 'Admin'
+export type DocumentRoleType = 'Viewer' | 'Commenter' | 'Editor' | 'Admin' | 'PublicViewer'
 
 export class DocumentRole {
   constructor(public readonly roleType: DocumentRoleType) {}
@@ -11,11 +11,11 @@ export class DocumentRole {
     return this.roleType === 'Admin'
   }
 
-  isViewer(): boolean {
-    return this.roleType === 'Viewer'
-  }
-
   canComment(): boolean {
     return this.roleType === 'Commenter' || this.roleType === 'Editor' || this.roleType === 'Admin'
+  }
+
+  isPublicViewer(): boolean {
+    return this.roleType === 'PublicViewer'
   }
 }

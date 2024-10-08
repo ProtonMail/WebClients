@@ -1,6 +1,7 @@
+import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store/lib'
+
 export interface DocumentMetaInterface {
-  volumeId: string
-  linkId: string
+  nodeMeta: NodeMeta | PublicNodeMeta
   commitIds: string[]
   createTime: number
   modifyTime: number

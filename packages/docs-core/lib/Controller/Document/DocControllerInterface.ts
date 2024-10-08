@@ -7,21 +7,21 @@ import type {
   DocumentRole,
   DocTrashState,
 } from '@proton/docs-shared'
-import type { DocLoadSuccessResult } from './DocLoadSuccessResult'
+import type { PrivateDocLoadSuccessResult } from './DocLoadSuccessResult'
 import type { UserState } from '@lexical/yjs'
 import type { NativeVersionHistory } from '../../VersionHistory'
 import type { TranslatedResult } from '../../Domain/Result/TranslatedResult'
 import type { Result } from '../../Domain/Result/Result'
 import type { SerializedEditorState } from 'lexical'
+import type { AnyDocControllerInterface } from './AnyDocControllerInterface'
 
-export interface DocControllerInterface {
+export interface DocControllerInterface extends AnyDocControllerInterface {
   userAddress?: string
   role: DocumentRole
   didTrashDocInCurrentSession: boolean
 
   createInitialCommit(): Promise<Result<unknown>>
   createNewDocument(): Promise<void>
-  debugGetUnrestrictedSharingUrl(): Promise<string>
   debugSendCommitCommandToRTS(): Promise<void>
   deinit(): void
   destroy(): void
@@ -36,7 +36,7 @@ export interface DocControllerInterface {
   getVersionHistory(): NativeVersionHistory | undefined
   getTrashState(): DocTrashState | undefined
   handleAwarenessStateUpdate(states: UserState[]): Promise<void>
-  initialize(): Promise<Result<DocLoadSuccessResult>>
+  initialize(): Promise<Result<PrivateDocLoadSuccessResult>>
   openDocumentSharingModal(): void
   printAsPDF(): Promise<void>
   renameDocument(newName: string): Promise<TranslatedResult<void>>

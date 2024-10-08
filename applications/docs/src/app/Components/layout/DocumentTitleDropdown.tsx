@@ -18,7 +18,7 @@ import {
   useAuthentication,
   usePopperAnchor,
 } from '@proton/components'
-import type { DocControllerEventPayloads, DocControllerInterface } from '@proton/docs-core'
+import type { DocControllerEventPayloads } from '@proton/docs-core'
 import { DocControllerEvent, PostApplicationError } from '@proton/docs-core'
 import { type DocTrashState, isWordCountSupported } from '@proton/docs-shared'
 import type { DocumentAction } from '@proton/drive-store'
@@ -33,12 +33,14 @@ import { useHistoryViewerModal } from '../HistoryViewer'
 import { TrashedDocumentModal } from '../TrashedDocumentModal'
 import { useFloatingWordCount } from '../WordCount/useFloatingWordCount'
 import { useWordCount } from '../WordCount/useWordCount'
+import type { AnyDocControllerInterface } from '@proton/docs-core/lib/Controller/Document/AnyDocControllerInterface'
+import { isPrivateDocController } from '@proton/docs-core/lib/Controller/Document/isPrivateDocController'
 
 const DocumentTitleDropdown = ({
   controller,
   action,
 }: {
-  controller: DocControllerInterface | null
+  controller: AnyDocControllerInterface | null
   action?: DocumentAction['mode']
 }) => {
   const application = useApplication()
@@ -47,7 +49,9 @@ const DocumentTitleDropdown = ({
   const { floatingUIIsEnabled, setFloatingUIIsEnabled } = useFloatingWordCount()
   const [title, setTitle] = useState<string | undefined>()
   const [isDuplicating, setIsDuplicating] = useState<boolean>(false)
-  const [trashState, setTrashState] = useState<DocTrashState | undefined>(controller?.getTrashState())
+  const [trashState, setTrashState] = useState<DocTrashState | undefined>(
+    controller && isPrivateDocController(controller) ? controller.getTrashState() : undefined,
+  )
   const [isMakingNewDocument, setIsMakingNewDocument] = useState<boolean>(false)
   const [isExportingPDF, setIsExportingPDF] = useState<boolean>(false)
   const [historyModal, showHistoryModal] = useHistoryViewerModal()
@@ -61,13 +65,15 @@ const DocumentTitleDropdown = ({
   useAppTitle(title)
 
   const confirmRename = useCallback(() => {
-    if (!controller) {
+    if (!controller || !isPrivateDocController(controller)) {
       throw new Error('Primary controller not found')
     }
+
     const oldName = title
     const newName = renameInputValue?.trim()
     if (newName) {
       setIsRenaming(false)
+
       if (oldName !== newName) {
         void controller.renameDocument(newName).then((result) => {
           if (result.isFailed()) {
@@ -84,7 +90,7 @@ const DocumentTitleDropdown = ({
 
   const onDuplicate = useCallback(
     (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-      if (!controller) {
+      if (!controller || !isPrivateDocController(controller)) {
         throw new Error('Primary controller not found')
       }
 
@@ -124,7 +130,7 @@ const DocumentTitleDropdown = ({
         setTitle(payload.title)
       }, DocControllerEvent.DidLoadDocumentTitle),
       application.eventBus.addEventCallback(() => {
-        if (!controller) {
+        if (!controller || !isPrivateDocController(controller)) {
           return
         }
         setTrashState(controller.getTrashState())
@@ -134,6 +140,10 @@ const DocumentTitleDropdown = ({
 
   const onNewDocument = useCallback(
     (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+      if (!controller || !isPrivateDocController(controller)) {
+        return
+      }
+
       event.preventDefault()
       event.stopPropagation()
 
@@ -152,12 +162,15 @@ const DocumentTitleDropdown = ({
     }
 
     setTitle(controller.getSureDocument().name)
-    setTrashState(controller.getTrashState())
 
-    if (action === 'history') {
-      showHistoryModal({
-        versionHistory: controller.getVersionHistory(),
-      })
+    if (isPrivateDocController(controller)) {
+      setTrashState(controller.getTrashState())
+
+      if (action === 'history') {
+        showHistoryModal({
+          versionHistory: controller.getVersionHistory(),
+        })
+      }
     }
   }, [controller, action, showHistoryModal])
 
@@ -267,7 +280,7 @@ const DocumentTitleDropdown = ({
           <DropdownMenuButton
             className="flex items-center text-left"
             onClick={() => {
-              if (!controller) {
+              if (!controller || !isPrivateDocController(controller)) {
                 return
               }
               showHistoryModal({
@@ -357,6 +370,10 @@ const DocumentTitleDropdown = ({
               onClick={(event) => {
                 event.preventDefault()
                 event.stopPropagation()
+
+                if (!isPrivateDocController(controller)) {
+                  return
+                }
 
                 void controller.trashDocument().finally(() => {
                   close()
@@ -501,7 +518,7 @@ const DocumentTitleDropdown = ({
       </Dropdown>
 
       {historyModal}
-      {controller && (
+      {controller && isPrivateDocController(controller) && (
         <TrashedDocumentModal
           documentTitle={title}
           onOpenProtonDrive={() => openProtonDrive('/', '_self')}

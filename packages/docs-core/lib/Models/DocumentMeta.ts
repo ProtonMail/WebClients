@@ -1,9 +1,10 @@
 import type { DocumentMetaInterface } from '@proton/docs-shared'
+import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store/lib'
+import { isPublicNodeMeta } from '@proton/drive-store/lib/interface'
 
 export class DocumentMeta implements DocumentMetaInterface {
   constructor(
-    public volumeId: string,
-    public linkId: string,
+    public nodeMeta: NodeMeta | PublicNodeMeta,
     public commitIds: string[],
     public createTime: number,
     public modifyTime: number,
@@ -11,13 +12,22 @@ export class DocumentMeta implements DocumentMetaInterface {
   ) {}
 
   public isEqual(other: DocumentMeta): boolean {
-    return this.volumeId === other.volumeId && this.linkId === other.linkId
+    if (isPublicNodeMeta(this.nodeMeta) !== isPublicNodeMeta(other.nodeMeta)) {
+      return false
+    }
+
+    if (isPublicNodeMeta(this.nodeMeta) && isPublicNodeMeta(other.nodeMeta)) {
+      return this.nodeMeta.linkId === other.nodeMeta.linkId && this.nodeMeta.token === other.nodeMeta.token
+    } else if (!isPublicNodeMeta(this.nodeMeta) && !isPublicNodeMeta(other.nodeMeta)) {
+      return this.nodeMeta.volumeId === other.nodeMeta.volumeId && this.nodeMeta.linkId === other.nodeMeta.linkId
+    }
+
+    return false
   }
 
   copyWithNewValues(newValues: Partial<DocumentMetaInterface>): DocumentMetaInterface {
     return new DocumentMeta(
-      newValues.volumeId ?? this.volumeId,
-      newValues.linkId ?? this.linkId,
+      newValues.nodeMeta ?? this.nodeMeta,
       newValues.commitIds ?? this.commitIds,
       newValues.createTime ?? this.createTime,
       newValues.modifyTime ?? this.modifyTime,
@@ -30,6 +40,6 @@ export class DocumentMeta implements DocumentMetaInterface {
   }
 
   public get uniqueIdentifier(): string {
-    return this.linkId
+    return this.nodeMeta.linkId
   }
 }
