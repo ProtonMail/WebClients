@@ -665,6 +665,9 @@
       "Start setup": [
         "Kurulumu başlat"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "${ priceUnlimited } tutarından başlayan fiyatlarla"
+      ],
       "Stay": [
         "Kal"
       ],
@@ -718,6 +721,9 @@
       ],
       "Upgrade now": [
         "Şimdi yükselt"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited tarifesine yükseltin"
       ],
       "Upload picture": [
         "Fotoğraf yükle"
@@ -2445,6 +2451,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME }, şüpheli etkinlikleri 7/24 izleyerek ve güvenlik uzmanlarına ileterek hesabınızı korur."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "İki adımlı doğrulama ek bir güvenlik katmanı ekleyerek yetkisiz erişimi önler."
       ],
@@ -2453,6 +2462,9 @@
       ],
       "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
         "Gününüzü daha iyi düzenleyin, zamanınızı izleyin ve görevleri önceliklendirin. Özel etkinlik renkleriyle takviminizi renklendirin."
+      ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "Gününüzü daha kolay düzenlemek, zaman planınızı izlemek ve görevleri öncelik sırasına koymak için etkinliklere renk kodları verin."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Kişilerin şifresi çözülüyor… Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında dışa aktardığınız tüm kişilerin bulunduğu dosyayı indirebilirsiniz."
@@ -2505,6 +2517,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Sürükleyip bırakarak kişiler arasında birleştirme önceliğini sıralayın. Birleştirmek istemediğiniz kişilerin işaretini kaldırın."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Kişi grupları ile gruptaki herkese tek tıklamayla e-posta gönderebilirsiniz."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Etkinlikleri iCal biçiminde içe aktarabilirsiniz (ICS dosyası).\nDosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_EVENTS_STRING } etkinlik kaydı içermelidir.\nDosyanız daha büyükse, daha küçük dosyalara bölün."
       ],
@@ -2516,6 +2531,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Hesabınızı ve verilerinizi kurtarma yöntemleri ayarlandı."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
       ]
     },
     "description": {
@@ -3831,6 +3849,23 @@
         "Çok küçük"
       ]
     },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Google Meet görüşmesine katıl"
+      ],
+      "Joining instructions": [
+        "Katılma yönergesi"
+      ],
+      "Less details": [
+        "Ayrıntıları gizle"
+      ],
+      "Meeting link:": [
+        "Toplantı bağlantısı"
+      ],
+      "More details": [
+        "Ayrıntıları görüntüle"
+      ]
+    },
     "Group": {
       "Account": [
         "Hesap"
@@ -5060,6 +5095,9 @@
       "You are about to open another browser tab and visit:": [
         "Şu adresi ziyaret etmek için başka bir tarayıcı sekmesi açmak üzeresiniz:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Varsayılan tarayıcınızı açarak şu adrese gitmek üzeresiniz:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Şu anda ${ user.Name } (${ user.Email }) olarak oturum açmış durumdasınız."
       ],
@@ -6251,8 +6289,14 @@
       "Get started for ${ price }": [
         "${ price } ile başlayın"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "${ priceMailPlus } tutarından başlayan fiyatlarla"
+      ],
       "Upgrade now": [
         "Şimdi yükselt"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "${ MAIL_SHORT_APP_NAME } Plus tarifesine yükseltin"
       ]
     },
     "new_plans: action": {
@@ -6826,6 +6870,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "${ price } ile Mail Plus edinin"
+      ],
+      "Starting from ${ price }": [
+        "${ price } tutarından başlayan fiyatlarla"
       ]
     },
     "new_plans: title": {
@@ -7124,6 +7171,9 @@
       ],
       "Link copied to clipboard": [
         "Bağlantı panoya kopyalandı"
+      ],
+      "Passcode copied to clipboard": [
+        "Geçiş kodu panoya kopyalandı"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8197,6 +8247,9 @@
       ],
       "/ month": [
         "/ ay"
+      ],
+      "/month": [
+        "/ay"
       ],
       "1 year": [
         "1 yıl"
@@ -9438,6 +9491,9 @@
       "Hide time zones for event start and end times": [
         "Etkinlik başlangıç ve bitiş saatlerinin saat dilimlerini gizler"
       ],
+      "High security for your account": [
+        "Hesabınız için yüksek güvenlik"
+      ],
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"
       ],
@@ -9486,6 +9542,9 @@
       ],
       "Notes": [
         "Notlar"
+      ],
+      "One email, many recipients": [
+        "Bir e-posta adresi, çok sayıda alıcı"
       ],
       "Open actions dropdown": [
         "İşlemler menüsünü aç"
@@ -10253,6 +10312,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Yılda bir, ${ untilString }"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Zoom toplantısına katıl"
+      ],
+      "Meeting ID:": [
+        "Toplantı kimliği:"
+      ],
+      "Passcode: ${ password }": [
+        "Geçiş kodu: ${ password }"
       ]
     }
   }
