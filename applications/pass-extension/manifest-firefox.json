@@ -88,6 +88,11 @@
                 "assets/*.woff2"
             ],
             "matches": ["https://*/*", "http://*/*"]
+        },
+        {
+            "resources": [".wasm"],
+            "matches": ["<all_urls>"],
+            "type": "application/wasm"
         }
     ],
     "browser_specific_settings": {
