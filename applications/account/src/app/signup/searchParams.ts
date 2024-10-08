@@ -1,6 +1,6 @@
 import type { Location } from 'history';
 
-import { getPlan, planToPlanIDs } from '@proton/payments';
+import { getPlanByName, planToPlanIDs } from '@proton/payments';
 import type { OtherProductParam, ProductParam } from '@proton/shared/lib/apps/product';
 import { otherProductParamValues } from '@proton/shared/lib/apps/product';
 import type { ADDON_NAMES, APP_NAMES } from '@proton/shared/lib/constants';
@@ -199,7 +199,7 @@ export const getPlanIDsFromParams = (
     const defaultPlan =
         defaults.plan === FREE_PLAN.Name
             ? FREE_PLAN
-            : (getPlan(plans, defaults.plan, currency, undefined, false) ?? FREE_PLAN);
+            : (getPlanByName(plans, defaults.plan, currency, undefined, false) ?? FREE_PLAN);
     const defaultPlanIDs = planToPlanIDs(defaultPlan);
 
     const defaultResponse = {
@@ -216,7 +216,7 @@ export const getPlanIDsFromParams = (
         return { planIDs: freePlanIDs, defined: true, plan: FREE_PLAN };
     }
 
-    const plan = getPlan(plans, signupParameters.preSelectedPlan, currency, undefined, false);
+    const plan = getPlanByName(plans, signupParameters.preSelectedPlan, currency, undefined, false);
 
     if (!plan) {
         return defaultResponse;
