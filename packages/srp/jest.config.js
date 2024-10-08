@@ -1,15 +1,21 @@
 module.exports = {
     preset: 'ts-jest',
+    moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
+    transformIgnorePatterns: [
+        'node_modules/(?!(@proton/shared|@proton/components|@protontech/mutex-browser|pmcrypto|pmcrypto-v6-canary|openpgp|@openpgp/web-stream-tools|@openpgp/asmcrypto.js|@openpgp/noble-hashes|@protontech/bip39|jsmimeparser|emoji-mart|msw|@mswjs)/)',
+    ],
     testRegex: 'lib/.*\\.test\\.ts$',
     clearMocks: true,
     collectCoverage: false,
     coverageReporters: ['text-summary', 'json'],
     reporters: ['default', ['jest-junit', { suiteNameTemplate: '{filepath}', outputName: 'test-report.xml' }]],
     transform: {
-        '.*': 'ts-jest',
+        '.*': [
+            'ts-jest',
+            {
+                babelConfig: true,
+            },
+        ],
     },
-    transformIgnorePatterns: [
-        'node_modules/(?!(@proton/crypto|pmcrypto|pmcrypto-v6-canary|jsmimeparser|openpgp|@openpgp/web-stream-tools|@openpgp/asmcrypto.js|@openpgp/noble-hashes|@protontech/bip39|otpauth)/)',
-    ],
     resolver: './jest.resolver.js',
 };
