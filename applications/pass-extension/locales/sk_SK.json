@@ -984,6 +984,23 @@
         "Niečo sa pokazilo"
       ]
     },
+    "FamilyPlanPromo2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Všetky prémiové funkcie. 6 používateľov. 1 jednoduché predplatné."
+      ],
+      "Exclusive offer for ${ PASS_APP_NAME } early supporters.": [
+        "Exkluzívna ponuka na ${ PASS_APP_NAME } pre predčasných podporovateľov."
+      ],
+      "Get it for ${ price }/month": [
+        "Získajte za ${ price }/mesiac"
+      ],
+      "Introducing ${ planNameJSX }": [
+        "Predstavujeme ${ planNameJSX }"
+      ],
+      "Limited-time offer only.": [
+        "Len časovo obmedzená ponuka."
+      ]
+    },
     "file size format": {
       "byte": [
         "bajt",
@@ -1191,7 +1208,7 @@
         "Automaticky skopírovať vygenerované heslo do schránky"
       ],
       "Autosaved on ${ url }": [
-        "Automaticky uložené z ${ url }"
+        "Automaticky uložené na ${ url }"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Pred exportom údajov v tomto formáte otvorte nastavenia prehliadača Safari -> kartu \"Všeobecné\" -> vypnite možnosť \"Otvoriť zabezpečené súbory po stiahnutí\". Tým sa zabráni tomu, aby prehliadač Safari nesprávne extrahoval exportovaný súbor."
@@ -1776,7 +1793,7 @@
         "Ak chcete skontrolovať importované údaje, kliknite na ikonu Pass v nástrojovom paneli prehliadača."
       ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
-        "Skúste znovu načítať alebo nainštalovať rozšírenie a uistite sa, že váš prehliadač a ${ PASS_SHORT_APP_NAME } sú aktuálne."
+        "Skúste znovu načítať alebo preinštalovať rozšírenie a uistite sa, že váš prehliadač a ${ PASS_SHORT_APP_NAME } sú aktuálne."
       ],
       "Unable to copy to clipboard": [
         "Nedá sa kopírovať do schránky"
@@ -2073,6 +2090,9 @@
       ],
       "Birthdate": [
         "Dátum narodenia"
+      ],
+      "Browser settings": [
+        "Nastavenia prehliadača"
       ],
       "Capital letters (A-Z)": [
         "Veľké písmená (A-Z)"
@@ -2611,6 +2631,9 @@
       "Update": [
         "Aktualizovať"
       ],
+      "Use ${ PASS_APP_NAME } as your browser's default password manager": [
+        "Použite ${ PASS_APP_NAME } ako predvoleného správcu hesiel v prehliadači"
+      ],
       "Username": [
         "Používateľské meno"
       ],
@@ -2655,6 +2678,9 @@
       ],
       "You are about to create": [
         "Chystáte sa vytvoriť"
+      ],
+      "Your browser will stop using its built-in password manager.": [
+        "Prehliadač prestane používať zabudovaného správcu hesiel."
       ],
       "ZIP or Postal code": [
         "PSČ"
