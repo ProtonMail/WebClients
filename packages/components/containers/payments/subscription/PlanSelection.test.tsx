@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 
-import { getPlan } from '@proton/payments';
+import { getPlanByName } from '@proton/payments';
 import { ADDON_NAMES, APPS, CYCLE, DEFAULT_CURRENCY, FREE_SUBSCRIPTION, PLANS } from '@proton/shared/lib/constants';
 import type { Currency } from '@proton/shared/lib/interfaces';
 import { Audience, type Plan, type User } from '@proton/shared/lib/interfaces';
@@ -101,24 +101,24 @@ describe('useAccessiblePlans', () => {
 
         expect(result.current).toMatchObject({
             enabledProductB2CPlans: [
-                getPlan(plans, PLANS.MAIL, 'USD', undefined, false),
-                getPlan(plans, PLANS.VPN2024, 'USD', undefined, false),
-                getPlan(plans, PLANS.DRIVE, 'USD', undefined, false),
-                getPlan(plans, PLANS.PASS, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.VPN2024, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.DRIVE, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.PASS, 'USD', undefined, false),
             ],
             IndividualPlans: [
-                getPlan(plans, PLANS.MAIL, 'USD', undefined, false),
-                getPlan(plans, PLANS.BUNDLE, 'USD', undefined, false),
-                getPlan(plans, PLANS.DUO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.BUNDLE, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.DUO, 'USD', undefined, false),
             ],
             FamilyPlans: [
-                getPlan(plans, PLANS.DUO, 'USD', undefined, false),
-                getPlan(plans, PLANS.FAMILY, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.DUO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.FAMILY, 'USD', undefined, false),
             ],
             B2BPlans: [
-                getPlan(plans, PLANS.MAIL_PRO, 'USD', undefined, false),
-                getPlan(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
-                getPlan(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL_PRO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
             ],
             alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
@@ -174,24 +174,24 @@ describe('useAccessiblePlans', () => {
 
         expect(result.current).toMatchObject({
             enabledProductB2CPlans: [
-                getPlan(plans, PLANS.MAIL, 'USD', undefined, false),
-                getPlan(plans, PLANS.VPN2024, 'USD', undefined, false),
-                getPlan(plans, PLANS.DRIVE, 'USD', undefined, false),
-                getPlan(plans, PLANS.PASS, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.VPN2024, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.DRIVE, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.PASS, 'USD', undefined, false),
             ],
             IndividualPlans: [
-                getPlan(plans, PLANS.MAIL, 'USD', undefined, false),
-                getPlan(plans, PLANS.BUNDLE, 'USD', undefined, false),
-                getPlan(plans, PLANS.DUO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.BUNDLE, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.DUO, 'USD', undefined, false),
             ],
             FamilyPlans: [
-                getPlan(plans, PLANS.DUO, 'USD', undefined, false),
-                getPlan(plans, PLANS.FAMILY, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.DUO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.FAMILY, 'USD', undefined, false),
             ],
             B2BPlans: [
-                getPlan(plans, PLANS.MAIL_PRO, 'USD', undefined, false),
-                getPlan(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
-                getPlan(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL_PRO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
             ],
             alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
@@ -241,8 +241,8 @@ describe('useAccessiblePlans', () => {
         const { result } = renderHook(() => useAccessiblePlans(props));
 
         expect(result.current).toMatchObject({
-            enabledProductB2CPlans: [getPlan(plans, PLANS.VPN2024, 'BRL', undefined, false)],
-            IndividualPlans: [getPlan(plans, PLANS.VPN2024, 'BRL', undefined, false)],
+            enabledProductB2CPlans: [getPlanByName(plans, PLANS.VPN2024, 'BRL', undefined, false)],
+            IndividualPlans: [getPlanByName(plans, PLANS.VPN2024, 'BRL', undefined, false)],
             FamilyPlans: [],
             B2BPlans: [],
             alreadyHasMaxCycle: false,
@@ -294,24 +294,24 @@ describe('useAccessiblePlans', () => {
 
         expect(result.current).toMatchObject({
             enabledProductB2CPlans: [
-                getPlan(plans, PLANS.MAIL, 'USD', undefined, false),
-                getPlan(plans, PLANS.VPN2024, 'USD', undefined, false),
-                getPlan(plans, PLANS.DRIVE, 'USD', undefined, false),
-                getPlan(plans, PLANS.PASS, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.VPN2024, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.DRIVE, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.PASS, 'USD', undefined, false),
             ],
             IndividualPlans: [
-                getPlan(plans, PLANS.MAIL, 'USD', undefined, false),
-                getPlan(plans, PLANS.BUNDLE, 'USD', undefined, false),
-                getPlan(plans, PLANS.DUO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.BUNDLE, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.DUO, 'USD', undefined, false),
             ],
             FamilyPlans: [
-                getPlan(plans, PLANS.DUO, 'USD', undefined, false),
-                getPlan(plans, PLANS.FAMILY, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.DUO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.FAMILY, 'USD', undefined, false),
             ],
             B2BPlans: [
-                getPlan(plans, PLANS.MAIL_PRO, 'USD', undefined, false),
-                getPlan(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
-                getPlan(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL_PRO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
             ],
             alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
@@ -368,24 +368,24 @@ describe('useAccessiblePlans', () => {
 
         expect(result.current).toMatchObject({
             enabledProductB2CPlans: [
-                getPlan(plans, PLANS.MAIL, 'USD', undefined, false),
-                getPlan(plans, PLANS.VPN2024, 'USD', undefined, false),
-                getPlan(plans, PLANS.DRIVE, 'USD', undefined, false),
-                getPlan(plans, PLANS.PASS, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.VPN2024, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.DRIVE, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.PASS, 'USD', undefined, false),
             ],
             IndividualPlans: [
-                getPlan(plans, PLANS.MAIL, 'USD', undefined, false),
-                getPlan(plans, PLANS.BUNDLE, 'USD', undefined, false),
-                getPlan(plans, PLANS.DUO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.BUNDLE, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.DUO, 'USD', undefined, false),
             ],
             FamilyPlans: [
-                getPlan(plans, PLANS.DUO, 'USD', undefined, false),
-                getPlan(plans, PLANS.FAMILY, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.DUO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.FAMILY, 'USD', undefined, false),
             ],
             B2BPlans: [
-                getPlan(plans, PLANS.MAIL_PRO, 'USD', undefined, false),
-                getPlan(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
-                getPlan(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL_PRO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
             ],
             alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
@@ -417,7 +417,7 @@ describe('useAccessiblePlans', () => {
             subscription: {
                 Currency: 'BRL',
                 Cycle: CYCLE.TWO_YEARS,
-                Plans: [getPlan(plans, PLANS.VPN2024, 'BRL')],
+                Plans: [getPlanByName(plans, PLANS.VPN2024, 'BRL')],
             } as any,
             plans,
             currency: 'USD',
@@ -446,24 +446,24 @@ describe('useAccessiblePlans', () => {
 
         expect(result.current).toMatchObject({
             enabledProductB2CPlans: [
-                getPlan(plans, PLANS.MAIL, 'USD', undefined, false),
-                getPlan(plans, PLANS.VPN2024, 'USD', undefined, false),
-                getPlan(plans, PLANS.DRIVE, 'USD', undefined, false),
-                getPlan(plans, PLANS.PASS, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.VPN2024, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.DRIVE, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.PASS, 'USD', undefined, false),
             ],
             IndividualPlans: [
-                getPlan(plans, PLANS.MAIL, 'USD', undefined, false),
-                getPlan(plans, PLANS.BUNDLE, 'USD', undefined, false),
-                getPlan(plans, PLANS.DUO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.BUNDLE, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.DUO, 'USD', undefined, false),
             ],
             FamilyPlans: [
-                getPlan(plans, PLANS.DUO, 'USD', undefined, false),
-                getPlan(plans, PLANS.FAMILY, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.DUO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.FAMILY, 'USD', undefined, false),
             ],
             B2BPlans: [
-                getPlan(plans, PLANS.MAIL_PRO, 'USD', undefined, false),
-                getPlan(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
-                getPlan(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL_PRO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
             ],
             alreadyHasMaxCycle: true,
             isVpnSettingsApp: false,
@@ -490,7 +490,7 @@ describe('useAccessiblePlans', () => {
             subscription: {
                 Currency: 'USD',
                 Cycle: CYCLE.MONTHLY,
-                Plans: [getPlan(plans, PLANS.BUNDLE_PRO, 'USD')],
+                Plans: [getPlanByName(plans, PLANS.BUNDLE_PRO, 'USD')],
             } as any,
             plans,
             currency: 'USD',
@@ -521,24 +521,24 @@ describe('useAccessiblePlans', () => {
 
         expect(result.current).toMatchObject({
             enabledProductB2CPlans: [
-                getPlan(plans, PLANS.MAIL, 'USD', undefined, false),
-                getPlan(plans, PLANS.VPN2024, 'USD', undefined, false),
-                getPlan(plans, PLANS.DRIVE, 'USD', undefined, false),
-                getPlan(plans, PLANS.PASS, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.VPN2024, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.DRIVE, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.PASS, 'USD', undefined, false),
             ],
             IndividualPlans: [
-                getPlan(plans, PLANS.MAIL, 'USD', undefined, false),
-                getPlan(plans, PLANS.BUNDLE, 'USD', undefined, false),
-                getPlan(plans, PLANS.DUO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.BUNDLE, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.DUO, 'USD', undefined, false),
             ],
             FamilyPlans: [
-                getPlan(plans, PLANS.DUO, 'USD', undefined, false),
-                getPlan(plans, PLANS.FAMILY, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.DUO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.FAMILY, 'USD', undefined, false),
             ],
             B2BPlans: [
-                getPlan(plans, PLANS.MAIL_PRO, 'USD', undefined, false),
-                getPlan(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
-                getPlan(plans, PLANS.BUNDLE_PRO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL_PRO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.BUNDLE_PRO, 'USD', undefined, false),
             ],
             alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
@@ -565,7 +565,7 @@ describe('useAccessiblePlans', () => {
             subscription: {
                 Currency: 'USD',
                 Cycle: CYCLE.MONTHLY,
-                Plans: [getPlan(plans, PLANS.BUNDLE_PRO_2024, 'USD')],
+                Plans: [getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD')],
             } as any,
             plans,
             currency: 'USD',
@@ -596,24 +596,24 @@ describe('useAccessiblePlans', () => {
 
         expect(result.current).toMatchObject({
             enabledProductB2CPlans: [
-                getPlan(plans, PLANS.MAIL, 'USD', undefined, false),
-                getPlan(plans, PLANS.VPN2024, 'USD', undefined, false),
-                getPlan(plans, PLANS.DRIVE, 'USD', undefined, false),
-                getPlan(plans, PLANS.PASS, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.VPN2024, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.DRIVE, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.PASS, 'USD', undefined, false),
             ],
             IndividualPlans: [
-                getPlan(plans, PLANS.MAIL, 'USD', undefined, false),
-                getPlan(plans, PLANS.BUNDLE, 'USD', undefined, false),
-                getPlan(plans, PLANS.DUO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.BUNDLE, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.DUO, 'USD', undefined, false),
             ],
             FamilyPlans: [
-                getPlan(plans, PLANS.DUO, 'USD', undefined, false),
-                getPlan(plans, PLANS.FAMILY, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.DUO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.FAMILY, 'USD', undefined, false),
             ],
             B2BPlans: [
-                getPlan(plans, PLANS.MAIL_PRO, 'USD', undefined, false),
-                getPlan(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
-                getPlan(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL_PRO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
             ],
             alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
@@ -665,24 +665,24 @@ describe('useAccessiblePlans', () => {
 
         expect(result.current).toMatchObject({
             enabledProductB2CPlans: [
-                getPlan(plans, PLANS.MAIL, 'USD', undefined, false),
-                getPlan(plans, PLANS.VPN2024, 'USD', undefined, false),
-                getPlan(plans, PLANS.DRIVE, 'USD', undefined, false),
-                getPlan(plans, PLANS.PASS, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.VPN2024, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.DRIVE, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.PASS, 'USD', undefined, false),
             ],
             IndividualPlans: [
-                getPlan(plans, PLANS.MAIL, 'USD', undefined, false),
-                getPlan(plans, PLANS.BUNDLE, 'USD', undefined, false),
-                getPlan(plans, PLANS.DUO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.BUNDLE, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.DUO, 'USD', undefined, false),
             ],
             FamilyPlans: [
-                getPlan(plans, PLANS.DUO, 'USD', undefined, false),
-                getPlan(plans, PLANS.FAMILY, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.DUO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.FAMILY, 'USD', undefined, false),
             ],
             B2BPlans: [
-                getPlan(plans, PLANS.MAIL_PRO, 'USD', undefined, false),
-                getPlan(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
-                getPlan(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL_PRO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
             ],
             alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
