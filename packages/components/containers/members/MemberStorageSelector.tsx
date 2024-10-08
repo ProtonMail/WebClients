@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { Donut, Slider } from '@proton/atoms';
 import { ThemeColor, getVariableFromThemeColor } from '@proton/colors';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import useElementRect from '@proton/components/hooks/useElementRect';
 import { PLANS } from '@proton/payments';
 import humanSize, { getLongSizeFormat, getSizeFormat, getUnit } from '@proton/shared/lib/helpers/humanSize';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
@@ -15,7 +16,6 @@ import clamp from '@proton/utils/clamp';
 import generateUID from '@proton/utils/generateUID';
 
 import InputField from '../../components/v2/field/InputField';
-import { useElementRect } from '../../hooks';
 
 export const getTotalStorage = (
     { UsedSpace: memberUsedSpace = 0, MaxSpace: memberMaxSpace = 0 } = {},
