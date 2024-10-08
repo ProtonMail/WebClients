@@ -72,6 +72,17 @@ const result = (env: any): webpack.Configuration => {
                     if (file.name.includes('.map')) return false;
                     return CRITICAL_OFFLINE_ASSETS.some((asset) => file.name.includes(asset));
                 },
+                generate: (seed, files) =>
+                    files.reduce((manifest, file) => {
+                        const key = (() => {
+                            if (file.path.includes('argon2')) return 'argon2';
+                            if (file.path.includes('wasm')) return file.path.match(/[^/]+\.wasm$/)![0];
+                            return file.name;
+                        })();
+
+                        manifest[key] = file.path;
+                        return manifest;
+                    }, seed),
             })
         );
     }
