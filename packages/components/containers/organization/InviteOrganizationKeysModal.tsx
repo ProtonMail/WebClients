@@ -12,6 +12,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useApi from '@proton/components/hooks/useApi';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
@@ -19,7 +20,7 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { EnhancedMember } from '@proton/shared/lib/interfaces';
 import { getMemberEmailOrName } from '@proton/shared/lib/keys/memberHelper';
 
-import { useErrorHandler, useNotifications } from '../../hooks';
+import { useNotifications } from '../../hooks';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import AdministratorList, { AdministratorItem } from './AdministratorList';
 
