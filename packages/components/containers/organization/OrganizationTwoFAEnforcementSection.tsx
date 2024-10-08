@@ -16,6 +16,7 @@ import { APPS, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
 import { hasTwoFARequiredForAdminOnly, hasTwoFARequiredForAll } from '@proton/shared/lib/helpers/organization';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
+import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 
 import { useNotifications } from '../../hooks';
 
@@ -26,6 +27,7 @@ interface Props {
 const OrganizationTwoFAEnforcementSection = ({ organization }: Props) => {
     const api = useApi();
     const { APP_NAME } = useConfig();
+    const hasFamilyOrg = getOrganizationDenomination(organization) === 'familyGroup';
 
     const [isTwoFARequiredForAdminOnlyChecked, setIsTwoFARequiredForAdminOnlyChecked] = useState(
         hasTwoFARequiredForAdminOnly(organization)
@@ -68,8 +70,11 @@ const OrganizationTwoFAEnforcementSection = ({ organization }: Props) => {
     return (
         <>
             <SettingsParagraph>
-                {c('Info')
-                    .t`We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.`}
+                {hasFamilyOrg
+                    ? c('Info')
+                          .t`We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.`
+                    : c('Info')
+                          .t`We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.`}
             </SettingsParagraph>
             <SettingsLayout>
                 <SettingsLayoutLeft>

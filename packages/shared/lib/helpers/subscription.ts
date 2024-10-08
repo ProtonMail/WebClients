@@ -57,6 +57,7 @@ const {
     VPN_PRO,
     VPN_BUSINESS,
     PASS_PRO,
+    PASS_FAMILY,
     PASS_BUSINESS,
 } = PLANS;
 
@@ -169,6 +170,7 @@ export const hasDuo = (subscription: MaybeFreeSubscription) => hasSomePlan(subsc
 export const hasVpnPro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN_PRO);
 export const hasVpnBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN_BUSINESS);
 export const hasPassPro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PASS_PRO);
+export const hasPassFamily = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PASS_FAMILY);
 export const hasPassBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PASS_BUSINESS);
 export const hasFree = (subscription: MaybeFreeSubscription) => (subscription?.Plans || []).length === 0;
 
@@ -290,7 +292,13 @@ export const getIsPassB2BPlan = (planName?: PLANS | ADDON_NAMES) => {
     return getIsPassB2BPlanCondition.has(planName);
 };
 
-const getIsPassPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([PASS, VPN_PASS_BUNDLE, PASS_PRO, PASS_BUSINESS]);
+const getIsPassPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
+    PASS,
+    PASS_FAMILY,
+    VPN_PASS_BUNDLE,
+    PASS_PRO,
+    PASS_BUSINESS,
+]);
 export const getIsPassPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
     if (!planName) {
         return false;
@@ -298,18 +306,17 @@ export const getIsPassPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
     return getIsPassPlanCondition.has(planName);
 };
 
-const getIsConsumerPassPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([PASS, VPN_PASS_BUNDLE]);
+const consumerPassPlanSet: Set<PLANS | ADDON_NAMES> = new Set([PASS, PASS_FAMILY, VPN_PASS_BUNDLE]);
 export const getIsConsumerPassPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
     if (!planName) {
         return false;
     }
-    return getIsConsumerPassPlanCondition.has(planName);
+    return consumerPassPlanSet.has(planName);
 };
 
 const getCanAccessDuoPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.MAIL,
     PLANS.DRIVE,
-    PLANS.PASS,
     PLANS.VPN,
     PLANS.VPN2024,
     PLANS.BUNDLE,
@@ -323,6 +330,13 @@ export const getCanSubscriptionAccessDuoPlan = (subscription?: MaybeFreeSubscrip
     return hasFree(subscription) || subscription?.Plans?.some(({ Name }) => getCanAccessDuoPlanCondition.has(Name));
 };
 
+const getCanAccessPassFamilyPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([PLANS.PASS]);
+export const getCanSubscriptionAccessPassFamilyPlan = (subscription?: MaybeFreeSubscription) => {
+    return (
+        hasFree(subscription) || subscription?.Plans?.some(({ Name }) => getCanAccessPassFamilyPlanCondition.has(Name))
+    );
+};
+
 const getIsSentinelPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
     VISIONARY,
     BUNDLE,
@@ -331,6 +345,7 @@ const getIsSentinelPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
     BUNDLE_PRO,
     BUNDLE_PRO_2024,
     PASS,
+    PASS_FAMILY,
     VPN_PASS_BUNDLE,
     PASS_PRO,
     PASS_BUSINESS,

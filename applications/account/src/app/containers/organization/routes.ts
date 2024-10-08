@@ -15,7 +15,7 @@ import {
 } from '@proton/shared/lib/helpers/subscription';
 import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/support';
 import type { Group, Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
-import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
+import { getOrganizationDenomination, isOrganizationPassFamily } from '@proton/shared/lib/organization/helper';
 
 interface Props {
     app: APP_NAMES;
@@ -64,6 +64,7 @@ export const getOrganizationAppRoutes = ({
         (hasOrganizationKey || hasOrganization);
     //Change the title of the section when managing a family and avoid weird UI jump when no subscription is present
     const isPartOfFamily = getOrganizationDenomination(organization) === 'familyGroup';
+    const isPassFamilyPlan = isOrganizationPassFamily(organization);
 
     const canShowGroupsSection =
         isUserGroupsFeatureEnabled &&
@@ -198,6 +199,7 @@ export const getOrganizationAppRoutes = ({
                 available:
                     app !== APPS.PROTONVPN_SETTINGS &&
                     !hasExternalMemberCapableB2BPlan &&
+                    !isPassFamilyPlan &&
                     (hasActiveOrganizationKey || hasActiveOrganization),
                 subsections: [
                     {

@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import {
     BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,
+    DARK_WEB_MONITORING_NAME,
     DRIVE_SHORT_APP_NAME,
     DUO_MAX_USERS,
     FAMILY_MAX_USERS,
@@ -21,8 +22,11 @@ import { getVpnConnections, getVpnServers } from '@proton/shared/lib/vpn/feature
 import { getNUsersText } from '../../../features/highlights';
 import {
     get2FAAuthenticatorText,
+    getDevicesAndAliasesText,
     getDevicesText,
     getLoginsAndNotesText,
+    getPassUsersText,
+    getSecureSharingTextEmpty,
     getUnlimitedHideMyEmailAliasesText,
 } from '../../../features/pass';
 import {
@@ -127,6 +131,36 @@ export const getWhatsIncluded = ({
             {
                 type: 'text',
                 text: getUnlimitedHideMyEmailAliasesText(),
+            },
+            {
+                type: 'text',
+                text: get2FAAuthenticatorText(),
+            },
+        ];
+    }
+
+    const passFamily = planIDs[PLANS.PASS_FAMILY];
+    if (passFamily !== undefined && passFamily > 0) {
+        return [
+            {
+                type: 'text',
+                text: getPassUsersText(FAMILY_MAX_USERS),
+            },
+            {
+                type: 'text',
+                text: getLoginsAndNotesText('paid'),
+            },
+            {
+                type: 'text',
+                text: getDevicesAndAliasesText(),
+            },
+            {
+                type: 'text',
+                text: getSecureSharingTextEmpty(true),
+            },
+            {
+                type: 'text',
+                text: DARK_WEB_MONITORING_NAME,
             },
             {
                 type: 'text',

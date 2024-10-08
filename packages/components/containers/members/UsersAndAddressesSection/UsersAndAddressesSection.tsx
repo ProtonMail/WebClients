@@ -42,6 +42,7 @@ import {
     getHasExternalMemberCapableB2BPlan,
     getHasPassB2BPlan,
     hasDuo,
+    hasPassFamily,
     hasVisionary,
 } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -119,16 +120,18 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
 
     const hasPassB2BPlan = getHasPassB2BPlan(subscription);
     const hasDriveB2BPlan = getHasDriveB2BPlan(subscription);
+    const hasPassFamilyPlan = hasPassFamily(subscription);
     const hasExternalMemberCapableB2BPlan = getHasExternalMemberCapableB2BPlan(subscription);
 
+    const hasMaxAddresses = Boolean(organization?.MaxAddresses ?? 0);
     const useEmail = hasExternalMemberCapableB2BPlan;
-    const allowStorageConfiguration = !hasExternalMemberCapableB2BPlan || hasDriveB2BPlan;
+    const allowStorageConfiguration = (!hasExternalMemberCapableB2BPlan && !hasPassFamilyPlan) || hasDriveB2BPlan;
     const allowVpnAccessConfiguration = !hasExternalMemberCapableB2BPlan;
     const allowPrivateMemberConfiguration = !hasExternalMemberCapableB2BPlan;
     const allowAIAssistantConfiguration = accessToAssistant.enabled;
 
     const showMultipleUserUploadButton = hasExternalMemberCapableB2BPlan;
-    const showAddressesSection = !hasExternalMemberCapableB2BPlan;
+    const showAddressesSection = !hasExternalMemberCapableB2BPlan && hasMaxAddresses;
     const showFeaturesColumn = !hasExternalMemberCapableB2BPlan || hasDriveB2BPlan;
 
     const { MaxAI = 0, UsedAI = 0 } = organization || {};
@@ -455,6 +458,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         organization={organization}
                         aiSeatsRemaining={aiSeatsRemaining}
                         allowAIAssistantConfiguration={allowAIAssistantConfiguration}
+                        allowStorageConfiguration={allowStorageConfiguration}
                         {...userInviteOrEditModalProps}
                     />
                 )}
@@ -512,13 +516,15 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                     />
                                 ))}
 
-                            <Button
-                                shape="outline"
-                                disabled={disableAddAddressButton}
-                                onClick={() => handleAddAddress()}
-                            >
-                                {c('Action').t`Add address`}
-                            </Button>
+                            {hasMaxAddresses ? (
+                                <Button
+                                    shape="outline"
+                                    disabled={disableAddAddressButton}
+                                    onClick={() => handleAddAddress()}
+                                >
+                                    {c('Action').t`Add address`}
+                                </Button>
+                            ) : null}
                         </>
                     )}
                 </div>
@@ -568,6 +574,8 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                             organizationKey,
                             disableMemberSignIn: hasExternalMemberCapableB2BPlan,
                         });
+
+                        const disableEdit = hasPendingFamilyInvitation && !allowStorageConfiguration;
 
                         return (
                             <TableRow
@@ -741,6 +749,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                                 onLogin={handleLoginUser}
                                                 onChangePassword={handleChangeMemberPassword}
                                                 member={member}
+                                                disableEdit={disableEdit}
                                             />
                                         )}
                                     </div>

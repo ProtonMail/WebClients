@@ -12,6 +12,8 @@ import {
     getDevices,
     getDevicesAndAliases,
     getLoginsAndNotes,
+    getPassUsers,
+    getPassUsersText,
     getSecureSharingTextEmpty,
     getSecureVaultSharing,
     getUnlimitedVaultSharingText,
@@ -31,6 +33,7 @@ import { PlanCardFeatureList } from '@proton/components/containers/payments/subs
 import {
     APPS,
     CYCLE,
+    FAMILY_MAX_USERS,
     PASS_APP_NAME,
     PASS_SHORT_APP_NAME,
     PLANS,
@@ -39,7 +42,7 @@ import {
     VPN_APP_NAME,
     VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
-import type { PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import onboardingFamilyPlan from '@proton/styles/assets/img/onboarding/familyPlan.svg';
 import clsx from '@proton/utils/clsx';
@@ -106,8 +109,26 @@ export const getPassB2BBenefits = (isPaidPass: boolean): BenefitItem[] => {
     ].filter(isTruthy);
 };
 
-export const getPassBenefits = (isPaidPass: boolean): BenefitItem[] => {
+export const getPassBenefits = (plan: PLANS | undefined, isPaidPass: boolean): BenefitItem[] => {
     return [
+        ...(plan === PLANS.PASS_FAMILY
+            ? [
+                  {
+                      key: 'user-accounts',
+                      text: getPassUsersText(6),
+                      icon: {
+                          name: 'user-plus' as const,
+                      },
+                  },
+                  {
+                      key: 'admin-panel',
+                      text: c('pass_signup_2024: Info').t`Admin panel to manage users and subscription`,
+                      icon: {
+                          name: 'cog-wheel' as const,
+                      },
+                  },
+              ]
+            : []),
         {
             key: 1,
             text: c('pass_signup_2023: Info').t`Works on all devices`,
@@ -180,11 +201,30 @@ export const getPassBenefits = (isPaidPass: boolean): BenefitItem[] => {
 };
 
 export const getFreePassFeatures = () => {
-    return [getLoginsAndNotes('free'), getDevices(), getPassKeys(true), getSecureVaultSharing(FREE_VAULTS)];
+    return [
+        getPassUsers(1),
+        getLoginsAndNotes('free'),
+        getDevices(),
+        getPassKeys(true),
+        getSecureVaultSharing(FREE_VAULTS),
+    ];
 };
 
 export const getCustomPassFeatures = () => {
     return [
+        getPassUsers(1),
+        getLoginsAndNotes('paid'),
+        getDevicesAndAliases(),
+        getPassKeys(true),
+        getSecureVaultSharing(PAID_VAULTS, true),
+        getPassMonitor(true),
+        get2FAAuthenticator(true),
+    ];
+};
+
+export const getCustomPassFamilyFeatures = () => {
+    return [
+        getPassUsers(FAMILY_MAX_USERS),
         getLoginsAndNotes('paid'),
         getDevicesAndAliases(),
         getPassKeys(true),
@@ -195,6 +235,7 @@ export const getCustomPassFeatures = () => {
 };
 
 export const getPassConfiguration = ({
+    showPassFamily,
     mode,
     audience,
     hideFreePlan,
@@ -203,7 +244,9 @@ export const getPassConfiguration = ({
     isPaidPass,
     isPaidPassVPNBundle,
     plansMap,
+    plan,
 }: {
+    showPassFamily: boolean;
     mode: SignupMode;
     audience: Audience.B2B | Audience.B2C;
     hideFreePlan: boolean;
@@ -212,6 +255,7 @@ export const getPassConfiguration = ({
     isPaidPass: boolean;
     isPaidPassVPNBundle: boolean;
     plansMap?: PlansMap;
+    plan: Plan | undefined;
 }): SignupConfiguration => {
     const logo = <PassLogo />;
 
@@ -292,6 +336,12 @@ export const getPassConfiguration = ({
                 type: 'best' as const,
                 guarantee: true,
             },
+            showPassFamily && {
+                plan: PLANS.PASS_FAMILY,
+                subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getCustomPassFamilyFeatures()} />,
+                type: 'standard' as const,
+                guarantee: true,
+            },
             {
                 plan: PLANS.BUNDLE,
                 subsection: <BundlePlanSubSection vpnServersCountData={vpnServersCountData} />,
@@ -339,11 +389,15 @@ export const getPassConfiguration = ({
             );
         }
 
-        const benefitItems = audience === Audience.B2B ? getPassB2BBenefits(isPaidPass) : getPassBenefits(isPaidPass);
+        const benefitItems =
+            audience === Audience.B2B
+                ? getPassB2BBenefits(isPaidPass)
+                : getPassBenefits(plan?.Name as PLANS, isPaidPass);
+        const benefitTitle = (plan?.Name as PLANS) === PLANS.PASS_FAMILY ? `${PASS_APP_NAME} Family` : PASS_APP_NAME;
         return (
             benefitItems && (
                 <div>
-                    <div className="text-lg text-semibold">{getBenefits(PASS_APP_NAME)}</div>
+                    <div className="text-lg text-semibold">{getBenefits(benefitTitle)}</div>
                     <Benefits className="mt-5 mb-5" features={benefitItems} />
                     <div>{getJoinString(audience)}</div>
                 </div>
