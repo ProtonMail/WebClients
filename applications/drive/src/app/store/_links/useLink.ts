@@ -604,7 +604,10 @@ export function useLinkInner(
                 if (nameResult.status === 'rejected') {
                     // 'AbortError' signify the user has navigated away mid-decryption
                     // We don't count this as error in our metrics
-                    if (nameResult.reason instanceof Error && nameResult.reason.name === 'AbortError') {
+                    if (
+                        (nameResult.reason instanceof Error && nameResult.reason.name === 'AbortError') ||
+                        nameResult.reason.name === 'OfflineError'
+                    ) {
                         return generateCorruptDecryptedLink(encryptedLink, '�');
                     }
 
@@ -652,7 +655,10 @@ export function useLinkInner(
                 if (xattrResult.status === 'rejected') {
                     // 'AbortError' signify the user has navigated away mid-decryption
                     // We don't count this as error in our metrics
-                    if (xattrResult.reason instanceof Error && xattrResult.reason.name === 'AbortError') {
+                    if (
+                        xattrResult.reason instanceof Error &&
+                        (xattrResult.reason.name === 'AbortError' || xattrResult.reason.name === 'OfflineError')
+                    ) {
                         return generateCorruptDecryptedLink(encryptedLink, name);
                     }
 
