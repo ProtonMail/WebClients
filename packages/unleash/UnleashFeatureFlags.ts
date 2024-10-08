@@ -46,7 +46,6 @@ enum AccountFlag {
     WalletAppSwitcherNewBadge = 'WalletAppSwitcherNewBadge',
     UserGroupsPermissionCheck = 'UserGroupsPermissionCheck',
     SAMLTest = 'SamlTest',
-    PassB2BForceLock = 'PassB2BForceLock',
     UserGroupsMembersPermissionCheck = 'UserGroupsMembersPermissionCheck',
     B2BAuthenticationLogs = 'B2BAuthenticationLogs',
     ShowGatewaysForBundlePlan = 'ShowGatewaysForBundlePlan',
