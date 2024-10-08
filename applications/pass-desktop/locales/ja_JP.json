@@ -25,6 +25,9 @@
       "Add": [
         "追加"
       ],
+      "Add account": [
+        "アカウントを追加"
+      ],
       "Add current URL": [
         "現在の URL を追加"
       ],
@@ -229,8 +232,14 @@
       "Generate password": [
         "パスワードを生成"
       ],
+      "Generate secure link": [
+        "セキュアリンクを生成"
+      ],
       "Generated passwords": [
         "生成されたパスワード"
+      ],
+      "Generating secure link...": [
+        "セキュアリンクを生成中..."
       ],
       "Get ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } を取得"
@@ -286,6 +295,9 @@
       "Link copied to clipboard": [
         "クリップボードにリンクがコピーされました"
       ],
+      "Link expires after": [
+        "リンクの有効期限："
+      ],
       "Lock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }をロックする"
       ],
@@ -309,6 +321,9 @@
       ],
       "Mark as resolved": [
         "解決済みにする"
+      ],
+      "Maximum views": [
+        "最大閲覧回数"
       ],
       "More info: ${ safeTitle }": [
         "詳細: ${ safeTitle }"
@@ -336,6 +351,9 @@
       ],
       "Multiple select": [
         "複数選択"
+      ],
+      "No expired links": [
+        "期限切れのリンクはありません"
       ],
       "OK": [
         "OK"
@@ -379,6 +397,9 @@
       "Remove access": [
         "アクセス権の削除"
       ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "期限切れのリンクをすべて削除 (${ inactiveLinkCount })"
+      ],
       "Remove link": [
         "リンクを削除"
       ],
@@ -403,6 +424,9 @@
       "Restore item": [
         "アイテムを復元"
       ],
+      "Restrict number of views": [
+        "閲覧数を制限する"
+      ],
       "Resume monitoring": [
         "監視を再開する"
       ],
@@ -417,6 +441,9 @@
       ],
       "Section name": [
         "セクション名"
+      ],
+      "Secure links": [
+        "セキュアリンク"
       ],
       "See all": [
         "すべてを見る"
@@ -442,6 +469,9 @@
       "Share": [
         "共有"
       ],
+      "Share secure link": [
+        "セキュアリンクを共有"
+      ],
       "Share this vault": [
         "この保管庫を共有する"
       ],
@@ -457,6 +487,9 @@
       "Sign out": [
         "サインアウト"
       ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "誰かが ${ PASS_APP_NAME }上でアイテムを共有しました。"
+      ],
       "Sort vault items": [
         "保管庫のアイテムを並び替え"
       ],
@@ -465,6 +498,9 @@
       ],
       "Submitting report...": [
         "レポートを送信中..."
+      ],
+      "Sync aliases": [
+        "エイリアスを同期する"
       ],
       "Transfer ownership": [
         "所有権の移行"
@@ -889,6 +925,9 @@
       "Trashing item failed": [
         "アイテムの削除に失敗しました"
       ],
+      "Try reaching out to the link owner.": [
+        "リンクの所有者に連絡してみてください。"
+      ],
       "Unable to generate an OTP code for this item": [
         "このアイテムのOTPコードを生成できない"
       ],
@@ -950,6 +989,23 @@
       ],
       "Something went wrong": [
         "不具合が発生しました"
+      ]
+    },
+    "FamilyPlanPromo2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "１つのサブスクリプションで、すべてのプレミアム機能を6ユーザーまで利用可能。"
+      ],
+      "Exclusive offer for ${ PASS_APP_NAME } early supporters.": [
+        "${ PASS_APP_NAME } 早期サポーターへの限定キャンペーン。"
+      ],
+      "Get it for ${ price }/month": [
+        "${ price }/月で購入"
+      ],
+      "Introducing ${ planNameJSX }": [
+        "${ planNameJSX } のご紹介"
+      ],
+      "Limited-time offer only.": [
+        "期間限定キャンペーン。"
       ]
     },
     "Feature": {
@@ -2360,6 +2416,9 @@
       "Reveal password": [
         "パスワードを表示する"
       ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
+        "数百万人から信頼されているエンドツーエンド暗号化を使用して、 ${ PASS_APP_NAME }はあなたのアカウントを安全に保管、共有し、自動ログイン機能を提供します。"
+      ],
       "Security": [
         "セキュリティ"
       ],
@@ -2713,6 +2772,9 @@
       ]
     },
     "Success": {
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "エイリアスの同期が有効になりました。シンプルログインのエイリアスは同期に時間がかかることがあります"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Vault には ${ vault.targetMaxMembers } を超えるユーザーを含めることはできません。"
       ]
@@ -2954,6 +3016,9 @@
       ],
       "Suggestions": [
         "候補"
+      ],
+      "Switch to": [
+        "切り替え"
       ],
       "Sync alias": [
         "エイリアスを同期"
