@@ -23,8 +23,7 @@ import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { validateItemName } from '@proton/pass/lib/validation/item';
-import type { AutosavePayload, AutosaveRequest } from '@proton/pass/types';
-import { AutosaveMode, WorkerMessageType } from '@proton/pass/types';
+import { AutosaveMode, type AutosavePayload, type AutosaveRequest, WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { withMerge } from '@proton/pass/utils/object/merge';
 import noop from '@proton/utils/noop';
@@ -107,7 +106,9 @@ export const Autosave: FC<Props> = ({ data }) => {
     useTelemetryEvent(TelemetryEventName.AutosaveDisplay, {}, {})([visible]);
 
     useEffect(() => {
-        if (shouldUpdate) form.setValues(getInitialValues(data, domain)).catch(noop);
+        if (shouldUpdate) {
+            form.setValues({ ...getInitialValues(data, domain), shareId: form.values.shareId }).catch(noop);
+        }
     }, [shouldUpdate, data]);
 
     return (
