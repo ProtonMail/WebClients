@@ -1195,6 +1195,9 @@
       "Start setup": [
         "Starta inställningar"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Startar från ${ priceUnlimited }"
+      ],
       "Stay": [
         "Stanna"
       ],
@@ -1308,6 +1311,9 @@
       ],
       "Upgrade now": [
         "Uppgradera nu"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Uppgradera till ${ BRAND_NAME } Unlimited"
       ],
       "Upload picture": [
         "Ladda upp bild"
@@ -3410,6 +3416,15 @@
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Ta bort skräppost och meddelanden i papperskorgen automatiskt och lås upp fler premiumfunktioner när du uppgraderar."
       ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Rensa automatiskt bort e-post som flyttats till papperskorg och skräppost för mer än 30 dagar sedan."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Sortera automatiskt dina inkommande meddelanden innan de når din inkorg."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Skapa så många etiketter eller mappar du behöver för att hålla din inkorg prydlig."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dekrypterar kontakter… Detta kan ta några minuter. När processen är klar kommer du att kunna ladda ner filen med alla dina kontakter exporterade."
       ],
@@ -3418,6 +3433,9 @@
       ],
       "Designed for users seeking heightened protection for their accounts.": [
         "Designad för användare som söker utökat skydd för sina konton."
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "Vill du inte skicka din e-post just nu? Schemalägg det för exakt rätt tid."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterar och importerar kontakter... Detta kan ta några minuter. När processen är slutförd kan du stänga detta fönster."
@@ -3492,6 +3510,9 @@
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Uppgradera ditt konto för att aktivera ${ PROTON_SENTINEL_NAME }, vår banbrytande AI-drivna säkerhetslösning med dedikerad expertsupport dygnet runt."
       ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "Använd ${ MAIL_APP_NAME } för att logga in på tjänster online eftersom vi, till skillnad från andra e-postleverantörer, aldrig kommer att spåra din data och dela den med tredje part."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Använd dra och släpp för att ange prioritet vid sammanslagning av kontakter. Avmarkera kontakterna du inte vill sammanfoga."
       ],
@@ -3500,6 +3521,9 @@
       ],
       "When do you want your message to be sent?": [
         "När vill du att ditt meddelande ska skickas?"
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Med kontaktgrupper kan du skicka e-post till alla i gruppen med ett klick."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importera händelser i iCal-format (ICS-fil). Filen bör ha en maximal storlek på ${ MAX_IMPORT_FILE_SIZE_STRING } och ha upp till ${ MAX_IMPORT_EVENTS_STRING } händelser. Om din fil är större, dela upp den i mindre filer."
@@ -3512,6 +3536,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Ditt konto och dina dataåterställningsmetoder är inställda."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -5183,6 +5210,17 @@
       ],
       "Sign in with Google": [
         "Logga in med Google"
+      ]
+    },
+    "Google Meet": {
+      "Less details": [
+        "Mindre detaljer"
+      ],
+      "Meeting link:": [
+        "Möteslänk:"
+      ],
+      "More details": [
+        "Mer detaljer"
       ]
     },
     "Group": {
@@ -7296,6 +7334,9 @@
       "You are about to open another browser tab and visit:": [
         "Du är på väg att öppna en annan webbläsarflik och besöka:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Du är på väg att öppna din standardwebbläsare och besöka:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du är för närvarande inloggad som ${ user.Name } (${ user.Email })."
       ],
@@ -8975,8 +9016,14 @@
       "Get started for ${ price }": [
         "Kom igång för ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Startar från ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Uppgradera nu"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Uppgradera till ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -9545,6 +9592,9 @@
       "Get Mail Plus for ${ price }": [
         "Skaffa Mail Plus för ${ price }"
       ],
+      "Starting from ${ price }": [
+        "Startar från ${ price }"
+      ],
       "VPN Enterprise": [
         "VPN Enterprise"
       ]
@@ -9848,6 +9898,9 @@
       ],
       "Link copied to clipboard": [
         "Länk kopierad till urklipp"
+      ],
+      "Passcode copied to clipboard": [
+        "Lösenkod kopierat till urklipp"
       ],
       "Password has been set successfully": [
         "Lösenord har ställts in"
@@ -11109,6 +11162,9 @@
         "${ n } månader"
       ],
       "/ month": [
+        "/månad"
+      ],
+      "/month": [
         "/månad"
       ],
       "1 year": [
@@ -12379,6 +12435,9 @@
       "Attachments": [
         "Bilagor"
       ],
+      "Bad time for this email?": [
+        "Olämplig tidpunkt för detta e-postmeddelande?"
+      ],
       "BCC": [
         "Hemlig kopia"
       ],
@@ -12603,6 +12662,9 @@
       "External encryption": [
         "Extern kryptering"
       ],
+      "Filter for more focus": [
+        "Filter för mer fokus"
+      ],
       "Filter name cannot contain only spaces": [
         "Filternamn kan inte bara innehålla mellanslag"
       ],
@@ -12629,6 +12691,9 @@
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Dölj din e-post med ${ PASS_APP_NAME }"
+      ],
+      "High security for your account": [
+        "Hög säkerhet för ditt konto"
       ],
       "How to update your email address": [
         "Hur man uppdaterar din e-postadress"
@@ -12769,6 +12834,9 @@
       "Need more aliases?": [
         "Behöver du fler alias?"
       ],
+      "Need more labels or folders?": [
+        "Behöver du fler etiketter eller mappar?"
+      ],
       "Network error": [
         "Nätverksfel"
       ],
@@ -12790,11 +12858,17 @@
       "No breaches detected": [
         "Inga intrång upptäckta"
       ],
+      "No need to empty the trash": [
+        "Inget behov att tömma papperskorgen"
+      ],
       "No trackers found": [
         "Inga spårare hittades"
       ],
       "Notes": [
         "Anteckningar"
+      ],
+      "One email, many recipients": [
+        "En e-post, många mottagare"
       ],
       "Open actions dropdown": [
         "Öppna rullgardinsmenyn för åtgärder"
@@ -12871,8 +12945,14 @@
       "Request new code": [
         "Begär ny kod"
       ],
+      "Same inbox, shorter email address": [
+        "Samma inkorg, kortare e-postadress"
+      ],
       "Save time with email filters": [
         "Spara tid med e-postfilter"
+      ],
+      "Schedule now, send later": [
+        "Schemalägg nu, skicka senare"
       ],
       "Schedule send": [
         "Schemalägg sändning"
@@ -13620,6 +13700,17 @@
     "Yearly recurring event, frequency (until)": {
       "Yearly, ${ untilString }": [
         "Årligen, ${ untilString }"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Gå med i Zoom-mötet"
+      ],
+      "Meeting ID:": [
+        "Mötes-ID:"
+      ],
+      "Passcode: ${ password }": [
+        "Lösenkod: ${ password }"
       ]
     }
   }

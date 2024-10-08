@@ -5247,6 +5247,23 @@
         "Se connecter avec Google"
       ]
     },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Rejoindre Google Meet"
+      ],
+      "Joining instructions": [
+        "Instructions pour participer"
+      ],
+      "Less details": [
+        "Moins d’informations"
+      ],
+      "Meeting link:": [
+        "Lien de la réunion :"
+      ],
+      "More details": [
+        "Plus d'informations"
+      ]
+    },
     "Group": {
       "Account": [
         "Compte"
@@ -7357,6 +7374,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Vous êtes sur le point d'ouvrir un autre onglet de navigateur et de visiter :"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Vous allez ouvrir votre navigateur par défaut et consulter :"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Vous êtes actuellement connecté en tant que ${ user.Name } (${ user.Email })."
@@ -9922,6 +9942,9 @@
       ],
       "Link copied to clipboard": [
         "Le lien est copié dans le presse-papiers."
+      ],
+      "Passcode copied to clipboard": [
+        "Le code d’accès a été copié dans le presse-papiers."
       ],
       "Password has been set successfully": [
         "Le mot de passe a été défini."
@@ -13762,6 +13785,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Chaque année, ${ untilString }"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Rejoindre la réunion Zoom"
+      ],
+      "Meeting ID:": [
+        "Identifiant de la réunion :"
+      ],
+      "Passcode: ${ password }": [
+        "Code d’accès :${ password }"
       ]
     }
   }

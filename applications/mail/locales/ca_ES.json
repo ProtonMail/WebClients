@@ -90,6 +90,9 @@
       "Add to group": [
         "Afegeix al grup"
       ],
+      "Adds it above your existing message": [
+        "L'afegeix sobre el missatge existent"
+      ],
       "Align center": [
         "Alinea al centre"
       ],
@@ -1012,6 +1015,9 @@
       "Revert to original display": [
         "Torna a la vista original"
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Executa als servidors de ${ BRAND_NAME }"
+      ],
       "Save": [
         "Desa"
       ],
@@ -1180,6 +1186,9 @@
       "Start setup": [
         "Començar la configuració"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Comenceu des de ${ priceUnlimited }"
+      ],
       "Stay": [
         "Mantenir"
       ],
@@ -1290,6 +1299,9 @@
       ],
       "Upgrade now": [
         "Millora ara"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Millora a ${ BRAND_NAME } Unlimited"
       ],
       "Upload picture": [
         "Carrega la imatge"
@@ -1532,11 +1544,20 @@
       ]
     },
     "Assistant option": {
+      "Data stay on your device but requires a one-time download and compatible hardware": [
+        "Les dades es mantenen al dispositiu però requereixen una descàrrega única i un maquinari compatible"
+      ],
       "Fast and secure. No logs are kept.": [
         "Ràpid i segur. No es guarden registres."
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Executa als servidors de ${ BRAND_NAME }"
+      ],
       "Run on device": [
         "Executa al dispositiu"
+      ],
+      "Securely run on ${ BRAND_NAME } servers": [
+        "Funciona de manera segura als servidors de ${ BRAND_NAME }"
       ],
       "Securely run on device": [
         "Executa de manera segura al dispositiu"
@@ -3468,7 +3489,7 @@
         "Podeu marcar per suprimir els contactes que no voleu ni fusionar ni conservar.\nLa supressió només es farà un cop es faci clic al botó de combinació"
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
-        "El compte i els mètodes de recuperació de dades estan definits i el 2FA està habilitat."
+        "El compte i els mètodes de recuperació de dades estan definits i el 2FA està activat."
       ],
       "Your account and data recovery methods are set.": [
         "El compte i els mètodes de recuperació de dades estan definits."
@@ -3869,7 +3890,7 @@
         "A causa d'un error, no s'ha pogut cancel·lar la generació de text"
       ],
       "Email address disabled": [
-        "Correu electrònic deshabilitada"
+        "Correu electrònic desactivada"
       ],
       "Email address is required": [
         "L'adreça de correu electrònic és obligatòria."
@@ -5105,6 +5126,23 @@
         "Inicia la sessió amb Google"
       ]
     },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Uniu-vos a Google Meet"
+      ],
+      "Joining instructions": [
+        "Instruccions per unir-se"
+      ],
+      "Less details": [
+        "Menys detalls"
+      ],
+      "Meeting link:": [
+        "Enllaç de la reunió:"
+      ],
+      "More details": [
+        "Més detalls"
+      ]
+    },
     "Group": {
       "Account": [
         "Compte"
@@ -5303,16 +5341,16 @@
         "${ BRAND_NAME } no es pot connectar al vostre compte de Yahoo. Assegureu-vos que:"
       ],
       "2-step verification is enabled in your external account.": [
-        "La verificació en dos passos està habilitada al vostre compte extern."
+        "La verificació en dos passos està activada al vostre compte extern."
       ],
       "2-step verification is enabled in your external email account.": [
-        "La verificació en dos passos està habilitada al vostre compte de correu electrònic extern."
+        "La verificació en dos passos està activada al vostre compte de correu electrònic extern."
       ],
       "IMAP access is enabled in your external account.": [
-        "L'accés IMAP està habilitat al vostre compte extern."
+        "L'accés IMAP està activat al vostre compte extern."
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        "L’accés IMAP està habilitat al vostre compte de Yahoo."
+        "L’accés IMAP està activat al vostre compte de Yahoo."
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Masses peticions recents. Torneu-ho a provar d'aquí a una estona."
@@ -5710,7 +5748,7 @@
         "Opcions addicionals"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "La verificació d'adreça amb claus de confiança està habilitada per a aquesta adreça. Per tal de poder enviar a aquesta adreça, verifiqueu la confiança en les claus públiques que es poden utilitzar per enviar."
+        "La verificació d'adreça amb claus de confiança està activada per a aquesta adreça. Per tal de poder enviar a aquesta adreça, verifiqueu la confiança en les claus públiques que es poden utilitzar per enviar."
       ],
       "Align left": [
         "Alinea a l'esquerra"
@@ -5733,7 +5771,7 @@
         "Tots els missatges emmagatzemats amb aquesta etiqueta s'eliminaran permanentment."
       ],
       "All your calendars are disabled.": [
-        "Tots els calendaris estan deshabilitats."
+        "Tots els calendaris estan desactivats."
       ],
       "All your changes will be lost.": [
         "Tots els vostres canvis es perdran."
@@ -6829,7 +6867,7 @@
         "No us poden enviar correu brossa si no saben la vostra adreça de correu electrònic. Protegiu la safata d'entrada amb els àlies de hide-my-email."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Aquesta adreça està inhabilitada. Per tal de poder enviar-hi, el propietari l'ha d'activar en primer lloc."
+        "Aquesta adreça està inactivada. Per tal de poder enviar-hi, el propietari l'ha d'activar en primer lloc."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Aquest navegador no suporta la previsualització de documents PDF. Descarregueu-vos l'arxiu."
@@ -8536,7 +8574,7 @@
     },
     "Log preference": {
       "Enable ${ reason }": [
-        "Habilita ${ reason }"
+        "Activa ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -8860,6 +8898,9 @@
       "Get started for ${ price }": [
         "Comenceu per ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Comenceu des de ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Millora ara"
       ]
@@ -9153,6 +9194,9 @@
       "Priority support & live chat": [
         "Suport prioritari i xat en directe"
       ],
+      "Proofread and refine your emails": [
+        "Corregiu i refineu els vostres correus electrònics"
+      ],
       "Protect ${ n } device at a time": [
         "Protegiu ${ n } dispositiu alhora",
         "Protegiu ${ n } dispositius alhora"
@@ -9385,6 +9429,14 @@
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Obtingueu Mail Plus per ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Comenceu des de ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
@@ -9447,7 +9499,7 @@
         "Creeu fins a ${ n } adreces de correu electrònic o àlies que podeu assignar als membres de la família. Utilitzeu-los per a les identitats en línia, p. ex., JoanCompres@${ domain } per als comptes de compres."
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a habilitar un control d'accés més optimitzat"
+        "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a activar un control d'accés més optimitzat"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defensa contra les amenaces a la privacitat de la VPN passant el vostre trànsit d'internet a través de múltiples servidors"
@@ -9665,7 +9717,7 @@
         "${ reason } s'ha desactivat"
       ],
       "${ reason } has been enabled": [
-        "S'ha habilitat ${ reason } "
+        "S'ha activat ${ reason } "
       ],
       "Block removed": [
         "S'ha esborrat el bloqueig."
@@ -9678,6 +9730,9 @@
       ],
       "Link copied to clipboard": [
         "S'ha copiat l'enllaç al porta-retalls."
+      ],
+      "Passcode copied to clipboard": [
+        "El codi d'accés s'ha copiat al porta-retalls."
       ],
       "Password has been set successfully": [
         "La contrasenya s'ha establert correctament"
@@ -9730,6 +9785,9 @@
       "Activate premium features": [
         "Activeu les característiques prèmium"
       ],
+      "Activate selected": [
+        "Activa la selecció"
+      ],
       "Advanced encryption": [
         "Xifratge avançat"
       ],
@@ -9760,6 +9818,9 @@
       "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
         "Xifratge tan fort que només vós i els destinataris escollits poden veure els vostres correus electrònics. ${ kbLinkEncryption }"
       ],
+      "Fixed and focused": [
+        "Fixat i enfocat"
+      ],
       "For your eyes only": [
         "Només per als vostres ulls"
       ],
@@ -9781,11 +9842,17 @@
       "Next": [
         "Següent"
       ],
+      "On the move": [
+        "Mentre us desplaceu"
+      ],
       "Protection from trackers": [
         "Protecció contra els rastrejadors"
       ],
       "Skip": [
         "Omet"
+      ],
+      "Start using ${ BRAND_NAME }": [
+        "Comenceu a utilitzar ${ BRAND_NAME }"
       ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "Impedim que els anunciants i els recopiladors de dades us perfilin. ${ kbLinkPrivacy }"
@@ -9800,6 +9867,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Descobriu tots els serveis de ${ BRAND_NAME }"
+      ],
+      "Make it your own": [
+        "Personalitzeu l'aplicació"
       ],
       "Pick a theme": [
         "Escolliu un tema"
@@ -9938,7 +10008,7 @@
         "Número de la targeta"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
-        "Actualment, la renovació automàtica de la subscripció està desactivada. Si canvieu la subscripció ara, es tornarà a habilitar la renovació automàtica."
+        "Actualment, la renovació automàtica de la subscripció està desactivada. Si canvieu la subscripció ara, es tornarà a activar la renovació automàtica."
       ],
       "CVC": [
         "CVC"
@@ -10725,6 +10795,14 @@
         "Signa"
       ]
     },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Més ràpid a l'aplicació"
+      ],
+      "Private, fast, and organized": [
+        "Privat, ràpid i organitzat"
+      ]
+    },
     "Snooze message": {
       "Snooze Message": [
         "Posposa el missatge"
@@ -10851,6 +10929,9 @@
       ],
       "/ month": [
         "/ mes"
+      ],
+      "/month": [
+        "/mes"
       ],
       "1 year": [
         "1 any"
@@ -10981,6 +11062,11 @@
       ],
       "Unsubscribed": [
         "Subscripció cancel·lada"
+      ]
+    },
+    "Step": {
+      "Sign in to the service": [
+        "Inicia sessió al servei"
       ]
     },
     "Step in filter modal": {
@@ -11533,7 +11619,7 @@
         "Desactiva"
       ],
       "Enable auto-pay support": [
-        "Habilita el suport de pagament automàtic"
+        "Activa el suport de pagament automàtic"
       ],
       "Keep auto-pay": [
         "Mantén el pagament automàtic"
@@ -11651,7 +11737,7 @@
         "Adreça copiada al porta-retalls"
       ],
       "Address verification disabled": [
-        "La verificació de l'adreça deshabilitada"
+        "La verificació de l'adreça desactivada"
       ],
       "Alias copied to clipboard": [
         "L'àlies s'ha copiat al porta-retalls."
@@ -11749,7 +11835,7 @@
         "Missatge afegit a ${ labelName }."
       ],
       "Message content search enabled": [
-        "S'ha habilitat la cerca al contingut dels missatges"
+        "S'ha activat la cerca al contingut dels missatges"
       ],
       "Message deleted": [
         "Missatge esborrat"
@@ -11815,6 +11901,9 @@
       ],
       "Preferences saved": [
         "Preferències guardades"
+      ],
+      "Problem reported": [
+        "S'ha notificat el problema."
       ],
       "Public key trusted": [
         "Clau pública de confiança"
@@ -12012,6 +12101,9 @@
       "Enable Dark Web Monitoring": [
         "Activa la supervisió de la web fosca"
       ],
+      "Get my “@${ PM_DOMAIN }“ address": [
+        "Obtingueu la vostra adreça @${ PM_DOMAIN }"
+      ],
       "Open ": [
         "Obre"
       ],
@@ -12097,6 +12189,9 @@
       ],
       "Attachments": [
         "Adjunts"
+      ],
+      "Bad time for this email?": [
+        "Mal moment per a aquest correu?"
       ],
       "BCC": [
         "CCO"
@@ -12322,6 +12417,9 @@
       "External encryption": [
         "Xifrat extern"
       ],
+      "Filter for more focus": [
+        "Filtreu els vostres missatges per a una millor concentració"
+      ],
       "Filter name cannot contain only spaces": [
         "El nom del filtre no pot contenir només espais"
       ],
@@ -12482,6 +12580,9 @@
       "Need more aliases?": [
         "Necessiteu més àlies?"
       ],
+      "Need more labels or folders?": [
+        "Necessiteu més etiquetes o carpetes?"
+      ],
       "Network error": [
         "Error de xarxa"
       ],
@@ -12586,6 +12687,9 @@
       ],
       "Save time with email filters": [
         "Estalvieu temps amb els filtres de correu electrònic"
+      ],
+      "Schedule now, send later": [
+        "Programeu ara i envieu més tard"
       ],
       "Schedule send": [
         "Programar enviament"
@@ -13333,6 +13437,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada any, ${ untilString }"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Uniu-vos la reunió de Zoom"
+      ],
+      "Meeting ID:": [
+        "Identificador de la reunió:"
+      ],
+      "Passcode: ${ password }": [
+        "Codi d'accés: ${ password }"
       ]
     }
   }

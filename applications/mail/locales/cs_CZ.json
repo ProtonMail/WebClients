@@ -1203,6 +1203,9 @@
       "Start setup": [
         "Spustit nastavení"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Cena od ${ priceUnlimited }"
+      ],
       "Stay": [
         "Zůstat"
       ],
@@ -1316,6 +1319,9 @@
       ],
       "Upgrade now": [
         "Navýšit nyní"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Navýšit na ${ BRAND_NAME } Unlimited"
       ],
       "Upload picture": [
         "Nahrát obrázek"
@@ -3445,11 +3451,23 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } v nastavení."
       ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } chrání váš účet pomocí nepřetržitého monitorování podezřelých aktivit — včetně eskalace na bezpečnostní specialisty."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA přidává další úroveň zabezpečení a zabraňuje neoprávněnému přístupu."
       ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Po navýšení je možné automaticky mazat zprávy ze složky nevyžádaná pošta a koš a odemknout další prémiové funkce."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Automatické mazání e-mailů přesunutých do koše a spamu před více než 30 dny."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Automatické třídění příchozích zpráv předtím, než se dostanou do doručené pošty."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Vytvořte si tolik štítků nebo složek, kolik potřebujete, abyste měli ve schránce pořádek."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifrování kontaktů… Tato akce může trvat několik minut. Jakmile bude proces ukončen, budete si moci stáhnout soubor s vašimi exportovanými kontakty."
@@ -3459,6 +3477,9 @@
       ],
       "Designed for users seeking heightened protection for their accounts.": [
         "Určeno pro uživatele, kteří hledají zvýšenou ochranu svých účtů."
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "Nechcete odeslat e-mail hned teď? Naplánujte si odeslání přesně na ten správný čas."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
@@ -3523,6 +3544,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Zapnutím ochrany proti sledování e-mailů zabráníte inzerentům a dalším subjektům sledovat vaši polohu a online aktivity."
       ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Odemkněte ${ activatePmUser } pro kratší a snadno zadatelnou e-mailovou adresu."
+      ],
       "Unlock custom message scheduling and more premium features when you upgrade.": [
         "Navýšením si odemkněte vlastní plánování zpráv a další prémiové funkce."
       ],
@@ -3553,6 +3577,12 @@
       "When do you want your message to be sent?": [
         "Kdy chcete, aby byla vaše zpráva odeslána?"
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Pomocí skupin kontaktů můžete jedním kliknutím odeslat e-maily všem členům skupiny."
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "Pomocí vlastního odložení můžete e-maily skrýt a nastavit jejich zobrazení ve vhodnější dobu."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Můžete importovat události ve formátu iCal (ICS soubor). Tento soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a maximálně ${ MAX_IMPORT_EVENTS_STRING } událostí. Pokud je váš soubor větší, prosím rozdělte ho na menší soubory."
       ],
@@ -3564,6 +3594,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Váš účet a metody obnovy dat jsou nastaveny."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -5290,6 +5323,23 @@
       ],
       "Sign in with Google": [
         "Přihlásit se pomocí Googlu"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Připojte se k Google Meet"
+      ],
+      "Joining instructions": [
+        "Pokyny k připojení"
+      ],
+      "Less details": [
+        "Méně detailů"
+      ],
+      "Meeting link:": [
+        "Odkaz na schůzku:"
+      ],
+      "More details": [
+        "Více detailů"
       ]
     },
     "Group": {
@@ -7551,6 +7601,9 @@
       "You are about to open another browser tab and visit:": [
         "Chystáte se otevřít v nové kartě prohlížeče:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Chystáte se otevřít výchozí prohlížeč a navštívit:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email })."
       ],
@@ -9285,8 +9338,14 @@
       "Get started for ${ price }": [
         "Začněte za ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Cena od ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Navýšit nyní"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Navýšit na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -9902,6 +9961,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Získejte Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Cena od ${ price }"
       ]
     },
     "new_plans: title": {
@@ -10210,6 +10272,9 @@
       ],
       "Link copied to clipboard": [
         "Odkaz zkopírován do schránky"
+      ],
+      "Passcode copied to clipboard": [
+        "Přístupový kód zkopírován do schránky"
       ],
       "Password has been set successfully": [
         "Heslo bylo úspěšně nastaveno"
@@ -11549,6 +11614,9 @@
       ],
       "/ month": [
         "/ měsíc"
+      ],
+      "/month": [
+        "/měsíčně"
       ],
       "1 year": [
         "1 rok"
@@ -12923,6 +12991,9 @@
       "Attachments": [
         "Přílohy"
       ],
+      "Bad time for this email?": [
+        "Nesprávný čas pro tento e-mail?"
+      ],
       "BCC": [
         "Skrytá kopie"
       ],
@@ -13157,6 +13228,9 @@
       "External encryption": [
         "Externí šifrování"
       ],
+      "Filter for more focus": [
+        "Filtrace pošty pro větší zaměření"
+      ],
       "Filter name cannot contain only spaces": [
         "Název filtru nesmí obsahovat pouze mezery"
       ],
@@ -13183,6 +13257,9 @@
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Skryjte svůj e-mail pomocí ${ PASS_APP_NAME }"
+      ],
+      "High security for your account": [
+        "Vysoké zabezpečení vašeho účtu"
       ],
       "How to update your email address": [
         "Jak aktualizovat e-mailovou adresu"
@@ -13325,6 +13402,9 @@
       "Need more aliases?": [
         "Potřebujete více aliasů?"
       ],
+      "Need more labels or folders?": [
+        "Potřebujete další štítky nebo složky?"
+      ],
       "Network error": [
         "Chyba sítě"
       ],
@@ -13346,6 +13426,9 @@
       "No breaches detected": [
         "Žádné úniky informací nebyly zjištěny"
       ],
+      "No need to empty the trash": [
+        "Nemusíte sami vyprazdňovat koš"
+      ],
       "No trackers found": [
         "Bez sledovacích prvků"
       ],
@@ -13354,6 +13437,9 @@
       ],
       "Notes": [
         "Poznámky"
+      ],
+      "One email, many recipients": [
+        "Jeden e-mail, mnoho příjemců"
       ],
       "Open actions dropdown": [
         "Otevřít seznam akcí"
@@ -13430,8 +13516,14 @@
       "Request new code": [
         "Poslat nový kód"
       ],
+      "Same inbox, shorter email address": [
+        "Stejná schránka, kratší e-mailová adresa"
+      ],
       "Save time with email filters": [
         "Šetřete čas s e-mailovými filtry"
+      ],
+      "Schedule now, send later": [
+        "Naplánujte nyní, odešlete později"
       ],
       "Schedule send": [
         "Naplánovat odeslání"
@@ -14275,6 +14367,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Ročně, ${ untilString }"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Připojte se ke schůzce Zoom"
+      ],
+      "Meeting ID:": [
+        "ID schůzky:"
+      ],
+      "Passcode: ${ password }": [
+        "Přístupový kód: ${ password }"
       ]
     }
   }
