@@ -12,7 +12,7 @@ import { selectUserData } from '@proton/pass/store/selectors';
 import { OnboardingMessage } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-export const AliasSyncEnabled: FC<BaseSpotlightMessage> = () => {
+export const AliasSync: FC<BaseSpotlightMessage> = () => {
     const { openSettings } = usePassCore();
     const { acknowledge } = useSpotlight();
     const { pendingAliasToSync: aliasCount } = useSelector(selectUserData);
