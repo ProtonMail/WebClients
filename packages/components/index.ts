@@ -868,3 +868,4 @@ export { default as useRelocalizeText } from './hooks/useRelocalizeText';
 export { default as useSubscribedCalendars } from './hooks/useSubscribedCalendars';
 export { default as useToggle } from './hooks/useToggle';
 export { default as useWindowSize } from './hooks/useWindowSize';
+export { useDeviceRecovery, useIsDeviceRecoveryAvailable, useIsDeviceRecoveryEnabled } from './hooks/useDeviceRecovery';
