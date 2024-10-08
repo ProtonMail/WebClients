@@ -7,12 +7,13 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useContactGroups } from '@proton/mail';
 import { useContactEmails } from '@proton/mail/contactEmails/hooks';
+import { useContacts } from '@proton/mail/contacts/hooks';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { labelContactEmails, unLabelContactEmails } from '@proton/shared/lib/api/contacts';
 import { hasReachedContactGroupMembersLimit } from '@proton/shared/lib/contacts/helpers/contactGroup';
 import type { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import { useContacts, useNotifications } from '../../../hooks';
+import { useNotifications } from '../../../hooks';
 import ContactGroupLimitReachedModal from '../modals/ContactGroupLimitReachedModal';
 import type { SelectEmailsProps } from '../modals/SelectEmailsModal';
 

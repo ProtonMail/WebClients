@@ -1,4 +1,3 @@
-export { default as useContacts } from './useContacts';
 export * from './useDomainsAddresses';
 export { default as useElementRect } from './useElementRect';
 export { default as useErrorHandler } from './useErrorHandler';
