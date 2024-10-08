@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Option, SelectTwo } from '@proton/components';
 import type { UsePasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';
-import type { GeneratePasswordConfig } from '@proton/pass/lib/password/generator';
+import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
 import clsx from '@proton/utils/clsx';
 
 import './PasswordTypeSelect.scss';

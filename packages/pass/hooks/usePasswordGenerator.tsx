@@ -1,16 +1,18 @@
 import { useCallback, useEffect, useState } from 'react';
 
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import {
     DEFAULT_MEMORABLE_PW_OPTIONS,
     DEFAULT_RANDOM_PW_OPTIONS,
     alphabeticChars,
     digitChars,
 } from '@proton/pass/lib/password/constants';
-import type { GeneratePasswordConfig, GeneratePasswordMode } from '@proton/pass/lib/password/generator';
 import { generatePassword } from '@proton/pass/lib/password/generator';
+import type { GeneratePasswordConfig, GeneratePasswordMode } from '@proton/pass/lib/password/types';
 import type { MaybeNull } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object/merge';
 import debounce from '@proton/utils/debounce';
+import noop from '@proton/utils/noop';
 
 export enum CharType {
     Alphabetic,
@@ -65,9 +67,16 @@ type UsePasswordGeneratorOptions = {
 };
 
 export const usePasswordGenerator = ({ initial, onConfigChange }: UsePasswordGeneratorOptions) => {
+    const { core } = usePassCore();
     const [config, setConfig] = useState<GeneratePasswordConfig>(initial ?? DEFAULT_MEMORABLE_PW_OPTIONS);
-    const [password, setPassword] = useState(() => generatePassword(config));
-    const regeneratePassword = () => setPassword(generatePassword(config));
+    const generator = useCallback(generatePassword(core), [core]);
+    const [password, setPassword] = useState('');
+
+    const regeneratePassword = useCallback(() => {
+        generator(config).then(setPassword).catch(noop);
+    }, [generator, config]);
+
+    useEffect(regeneratePassword, []);
 
     /** debounce the pw options dispatch in order to avoid swarming the
      * store with updates when using the length slider */

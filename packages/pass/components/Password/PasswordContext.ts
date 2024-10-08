@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react';
 
 import type { UseAsyncModalHandle } from '@proton/pass/hooks/useAsyncModalHandles';
-import type { GeneratePasswordConfig } from '@proton/pass/lib/password/generator';
+import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
 import type { PasswordItem } from '@proton/pass/store/reducers';
 import type { MaybeNull } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
