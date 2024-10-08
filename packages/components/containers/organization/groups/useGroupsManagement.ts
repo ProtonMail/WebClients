@@ -178,7 +178,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
 
         const Group = await dispatch(
             apiEndpoint({
-                api: silentApi,
+                api: api,
                 group: {
                     id: selectedGroup.ID,
                     name: formValues.name,
