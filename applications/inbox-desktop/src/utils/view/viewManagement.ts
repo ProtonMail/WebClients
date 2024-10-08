@@ -18,6 +18,7 @@ import { macOSExitEvent, windowsAndLinuxExitEvent } from "./windowClose";
 import { handleBeforeInput } from "./windowShortcuts";
 import { join } from "node:path";
 import { c } from "ttag";
+import { isElectronOnMac } from "@proton/shared/lib/helpers/desktop";
 
 type ViewID = keyof ReturnType<typeof getConfig>["url"];
 
@@ -392,12 +393,16 @@ async function showLoadingPage(viewID: ViewID): Promise<void> {
         ? join(process.resourcesPath, "loading.html")
         : join(app.getAppPath(), "assets/loading.html");
 
-    await view.webContents.loadFile(filePath, {
-        query: {
-            message: c("loading screen").t`Loading ${viewTitleMap[viewID]}…`,
-            theme: nativeTheme.shouldUseDarkColors ? "dark" : "light",
-        },
-    });
+    const query: Record<string, string> = {
+        message: c("loading screen").t`Loading ${viewTitleMap[viewID]}…`,
+        theme: nativeTheme.shouldUseDarkColors ? "dark" : "light",
+    };
+
+    if (isElectronOnMac) {
+        query.draggable = "";
+    }
+
+    await view.webContents.loadFile(filePath, { query });
 }
 
 async function getViewURL(viewID: ViewID): Promise<string> {
