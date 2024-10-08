@@ -38,6 +38,7 @@ export interface GroupMember {
     State: GROUP_MEMBER_STATE;
     Permissions: GROUP_MEMBER_PERMISSIONS;
     GroupMemberAddressPendingKey?: GroupMemberAddressPendingKey;
+    GroupId?: string; // here until BE change is merged, should prefer GroupID
     GroupID: string;
 }
 
