@@ -403,6 +403,17 @@
         "Zahodit komentář?"
       ]
     },
+    "Description": {
+      "Edit document directly": [
+        "Přímá úprava dokumentu"
+      ],
+      "Edits become suggestion": [
+        "Úpravy se stávají návrhem"
+      ],
+      "Read or print final document": [
+        "Čtení nebo tisk finálního dokumentu"
+      ]
+    },
     "Error": {
       "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
         "Při načítání dokumentu došlo k chybě. Aby se zabránilo poškození dokumentu, byl editor uzamčen. Znovu načtěte stránku a zkuste to znovu."
@@ -484,6 +495,15 @@
       "Editing": [
         "Upravování"
       ],
+      "Font": [
+        "Písmo"
+      ],
+      "Font size": [
+        "Velikost písma"
+      ],
+      "Highlight": [
+        "Zvýraznění"
+      ],
       "Just now": [
         "Právě teď"
       ],
@@ -499,6 +519,9 @@
       "Suggesting": [
         "Návrh"
       ],
+      "Text color": [
+        "Barva textu"
+      ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "Obsah, který se pokoušíte vložit, je příliš velký na to, aby mohl být vložen najednou. Zkuste to znovu a vkládejte po menších částech."
       ],
@@ -510,11 +533,17 @@
       ]
     },
     "Label": {
+      "Add link": [
+        "Přidat odkaz"
+      ],
       "Background colour": [
         "Barva pozadí"
       ],
       "Delete": [
         "Odstranit"
+      ],
+      "Delete link": [
+        "Smazat odkaz"
       ],
       "Delete paragraph": [
         "Smazat odstavec"
@@ -543,8 +572,14 @@
       "Replace": [
         "Nahradit"
       ],
+      "Replace link": [
+        "Nahradit odkaz"
+      ],
       "Text colour": [
         "Barva textu"
+      ],
+      "with \"${ replaceWith }\"": [
+        "pomocí \"${ replaceWith }\""
       ]
     },
     "Placeholder": {

@@ -397,6 +397,14 @@
         "Kasta kommentar?"
       ]
     },
+    "Description": {
+      "Edit document directly": [
+        "Redigera dokument direkt"
+      ],
+      "Read or print final document": [
+        "Läs eller skriv ut slutdokument"
+      ]
+    },
     "Error": {
       "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
         "Ett fel uppstod när dokumentet laddades. För att förhindra dokumentkorruption har redigeraren låsts. Ladda om sidan och försök igen."
@@ -476,6 +484,12 @@
       "Editing": [
         "Redigerar"
       ],
+      "Font": [
+        "Typsnitt"
+      ],
+      "Font size": [
+        "Textstorlek"
+      ],
       "Just now": [
         "Just nu"
       ],
@@ -491,6 +505,9 @@
       "Suggesting": [
         "Föreslår"
       ],
+      "Text color": [
+        "Textfärg"
+      ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "Innehållet du försöker klistra in är för stort för att klistras in på en gång. Försök igen genom att klistra in mindre delar åt gången."
       ],
@@ -502,11 +519,17 @@
       ]
     },
     "Label": {
+      "Add link": [
+        "Lägg till länk"
+      ],
       "Background colour": [
         "Bakgrundsfärg"
       ],
       "Delete": [
         "Ta bort"
+      ],
+      "Delete link": [
+        "Ta bort länk"
       ],
       "Delete paragraph": [
         "Ta bort stycke"
@@ -535,8 +558,14 @@
       "Replace": [
         "Ersätt"
       ],
+      "Replace link": [
+        "Ersätt länk"
+      ],
       "Text colour": [
         "Textfärg"
+      ],
+      "with \"${ replaceWith }\"": [
+        "med ”${ replaceWith }”"
       ]
     },
     "Placeholder": {
