@@ -1,7 +1,7 @@
 import { PLANS } from '@proton/shared/lib/constants';
 import { type Plan } from '@proton/shared/lib/interfaces';
 
-import { getPlan } from './plans-map-wrapper';
+import { getPlanByName } from './plans-map-wrapper';
 
 describe('getPlan', () => {
     it('should return matching currency', () => {
@@ -22,7 +22,7 @@ describe('getPlan', () => {
             } as Plan,
         ];
 
-        const plan = getPlan(plans, PLANS.MAIL, prefferedCurrency);
+        const plan = getPlanByName(plans, PLANS.MAIL, prefferedCurrency);
         expect(plan).toEqual({
             Name: PLANS.MAIL,
             Currency: 'BRL',
@@ -47,7 +47,7 @@ describe('getPlan', () => {
             } as Plan,
         ];
 
-        const plan = getPlan(plans, PLANS.MAIL, prefferedCurrency);
+        const plan = getPlanByName(plans, PLANS.MAIL, prefferedCurrency);
         expect(plan).toEqual({
             Name: PLANS.MAIL,
             Currency: 'EUR',
@@ -68,7 +68,7 @@ describe('getPlan', () => {
             } as Plan,
         ];
 
-        const plan = getPlan(plans, PLANS.MAIL, prefferedCurrency);
+        const plan = getPlanByName(plans, PLANS.MAIL, prefferedCurrency);
         expect(plan).toEqual({
             Name: PLANS.MAIL,
             Currency: 'EUR',

@@ -119,7 +119,7 @@ export { SavedChargebeePaymentProcessor } from './core/payment-processors/savedC
 export { SavedPaymentProcessor } from './core/payment-processors/savedPayment';
 export { getScribeAddonNameByPlan } from './core/subscription/helpers';
 export type { FullPlansMap } from './core/subscription/interface';
-export { getPlan, getPlansMap, planToPlanIDs } from './core/subscription/plans-map-wrapper';
+export { getPlanByName, getPlansMap, planToPlanIDs } from './core/subscription/plans-map-wrapper';
 export { SelectedPlan } from './core/subscription/selected-plan';
 export {
     canUseChargebee,
