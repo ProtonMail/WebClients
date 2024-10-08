@@ -468,9 +468,6 @@
       "Continue": [
         "İlerle"
       ],
-      "Continue with ${ selectedPaymentProvider }": [
-        "${ selectedPaymentProvider } ile ilerle"
-      ],
       "Credit card": [
         "Kredi kartı"
       ],
@@ -511,9 +508,6 @@
     "Bitcoin buy": {
       "${ quote.provider } checkout": [
         "${ quote.provider } ödeme"
-      ],
-      "We could not find any quote for this currency/country pair": [
-        "Bu para birimi/ülke çifti için herhangi bir alıntı bulamadık"
       ]
     },
     "Bitcoin Script Type": {
@@ -544,12 +538,6 @@
     "Bitcoin send": {
       "Add recipient": [
         "Alıcı ekle"
-      ],
-      "Could not send invitation": [
-        "Davet gönderilemedi"
-      ],
-      "Could not send invitation to the recipient": [
-        "Davet alıcıya gönderilemedi"
       ],
       "Invitation sent": [
         "Davet gönderildi"
@@ -2031,9 +2019,6 @@
       ],
       "Not now": [
         "Şimdi değil"
-      ],
-      "You are now leaving ${ WALLET_APP_NAME } for ${ provider } (${ websiteLink }). Services related to card payments, bank transfers, and any other fiat transactions are provided by ${ provider }, a separate third-party platform. By proceeding and procuring services from ${ provider }, you acknowledge that you have read and agreed to ${ provider }'s Terms of Service (${ termOfUseLink }) and Privacy and Cookies Policy (${ privacyAndCookiesPolicyLink }). For any questions related to ${ provider }'s services, please contact ${ provider } at ${ supportEmailLink }": [
-        "${ WALLET_APP_NAME } üzerinden ${ provider } (${ websiteLink }) üzerine geçiyorsunuz. Kart ödemeleri, banka havaleleri ve diğer herhangi bir fiyat işlemiyle ilgili hizmetler, ayrı bir üçüncü taraf platformu olan ${ provider } tarafından sağlanmaktadır ${ provider } üzerinden hizmet alarak ve ilerleyerek, ${ provider } Hizmet Koşulları (${ termOfUseLink }) ile Gizlilik ve Çerez İlkeleri (${ privacyAndCookiesPolicyLink }) metinlerini okuduğunuzu ve kabul etmiş olursunuz. ${ provider } hizmetleriyle ilgili herhangi bir sorunuz varsa, lütfen ${ provider } ile ${ supportEmailLink } adresinden görüşün."
       ]
     },
     "Group": {
@@ -4413,9 +4398,6 @@
       ]
     },
     "Wallet": {
-      "An error occurred": [
-        "Bir sorun çıktı"
-      ],
       "Close": [
         "Kapat"
       ],
@@ -4450,9 +4432,6 @@
       ],
       "Cancel": [
         "İptal"
-      ],
-      "Could not add account to wallet": [
-        "Hesap cüzdana eklenemedi"
       ],
       "Create multiple wallet accounts to separate your financial activities for better privacy and organization.": [
         "Finansal faaliyetlerinizi daha iyi gizlilik ve organizasyon için ayırmak üzere birden fazla cüzdan hesabı oluşturun."
@@ -4530,11 +4509,6 @@
         "Gönder"
       ]
     },
-    "wallet dashboard": {
-      "You need to have a positive balance to send bitcoins": [
-        "Bitcoin göndermek için bakiyeniz artıda olmalı"
-      ]
-    },
     "Wallet deletion": {
       "Are you sure you want to delete \"${ wallet.Wallet.Name }\"": [
         "\"${ wallet.Wallet.Name }\" cüzdanını silmek istediğinize emin misiniz"
@@ -4577,9 +4551,6 @@
     "Wallet header": {
       "Secure your wallet": [
         "Cüzdanınızı koruyun"
-      ],
-      "The current fingerprint doesn't match stored one.": [
-        "Geçerli parmak izi kayıtlı olanla eşleşmiyor."
       ],
       "This wallet needs a passphrase to be used.": [
         "Bu cüzdanı kullanabilmek için bir parola ifadesi gereklidir."
@@ -4814,6 +4785,9 @@
       "${ price } available": [
         "${ price } kullanılabilir"
       ],
+      "10+ hours": [
+        "10+ saat"
+      ],
       "Add a message": [
         "Bir ileti ekle"
       ],
@@ -4832,6 +4806,12 @@
       "Bitcoin address signature could not be verified": [
         "Bitcoin adresinin imzası doğrulanamadı"
       ],
+      "Boost transaction priority": [
+        "Hesap işlemini hızlandır"
+      ],
+      "By increasing the fee, you can prioritize your transaction, helping it get confirmed faster during busy network times.": [
+        "Ücreti artırarak hesap işleminize öncelik verebilir, yoğun ağ saatlerinde daha hızlı onaylanmasını sağlayabilirsiniz."
+      ],
       "Cannot use QRCode scanner. Please check browser compatibility": [
         "QR kod tarayıcı kullanılamıyor. Lütfen tarayıcı uyumluluğunu denetleyin"
       ],
@@ -4841,8 +4821,17 @@
       "Confirm and send": [
         "Onayla ve gönder"
       ],
+      "Confirmation speed: ${ label }": [
+        "Onaylanacak hız: ${ label }"
+      ],
       "Could not create PSBT": [
         "PSBT oluşturulamadı"
+      ],
+      "Could not speed up transaction": [
+        "Hesap işlemi hızlandırılamadı"
+      ],
+      "Current fee": [
+        "Geçerli ücret"
       ],
       "Edit": [
         "Düzenle"
@@ -4850,11 +4839,20 @@
       "Edit recipients": [
         "Alıcıları düzenle"
       ],
+      "Fast": [
+        "Hızlı"
+      ],
       "High priority": [
         "Yüksek öncelik"
       ],
       "How much are you sending?": [
         "Ne kadar gönderiyorsunuz?"
+      ],
+      "Increase fee and resend": [
+        "Ücreti artırıp yeniden gönder"
+      ],
+      "Low": [
+        "Yavaş"
       ],
       "Low priority": [
         "Düşük öncelik"
@@ -4870,6 +4868,12 @@
       ],
       "Network fees": [
         "Ağ ücretleri"
+      ],
+      "New network fee": [
+        "Yeni ağ ücreti"
+      ],
+      "Normal": [
+        "Normal"
       ],
       "One of recipient's amount is below minimum value": [
         "Alıcının birinin tutarı en az değerin altında"
@@ -4901,6 +4905,9 @@
       "The transaction could not be sent. Please try again later": [
         "Hesap işlemi gönderilemedi. Lütfen bir süre sonra yeniden deneyin."
       ],
+      "Transaction was successfully boosted": [
+        "Hesap işlemi hızlandırıldı"
+      ],
       "Transaction was successfully sent": [
         "Hesap işlemi gönderildi"
       ],
@@ -4916,9 +4923,6 @@
       "You are sending": [
         "Gönderilecek"
       ],
-      "You cannot send a message to the recipient because you don't have any address setup on your account": [
-        "Hesabınızda herhangi bir adres ayarlanmış olmadığından alıcıya ileti gönderemezsiniz."
-      ],
       "You do not have enough BTC in this account to fund the transaction and the required network fee of ${ feesToReserveElement }.": [
         "Bu hesapta işlemi tutarı ve gereken ağ ücreti olan ${ feesToReserveElement } için yeterli BTC yok."
       ],
@@ -4927,6 +4931,9 @@
       ],
       "Your transaction has been broadcasted to the Bitcoin network. It may take around one hour for the network to confirm the transaction.": [
         "Hesap işleminiz Bitcoin ağına gönderildi. Ağın hesap işlemini onaylaması bir saat kadar sürebilir."
+      ],
+      "~${ minutes } minutes": [
+        "~${ minutes } dakika"
       ]
     },
     "Wallet Send": {
@@ -4941,14 +4948,8 @@
       ]
     },
     "Wallet Settings": {
-      "Account could not be deleted": [
-        "Hesap silinemedi"
-      ],
       "Account name changed": [
         "Hesap adı değiştirildi"
-      ],
-      "Account name could not be changed": [
-        "Hesap adı değiştirilemez"
       ],
       "Account was deleted": [
         "Hesap silindi"
@@ -4956,20 +4957,11 @@
       "Bitcoin via Email": [
         "E-posta ile Bitcoin"
       ],
-      "Could not add email address": [
-        "E-posta adresi eklenemedi"
-      ],
-      "Could not be replaced": [
-        "Değiştirilemedi"
-      ],
       "Could not fill the pool after email address addition": [
         "E-posta adresi eklendikten sonra havuz doldurulamadı"
       ],
       "Could not fill the pool after email address replacement": [
         "E-posta adresi değiştirildikten sonra havuz doldurulamadı"
-      ],
-      "Could not remove email address": [
-        "E-posta adresi kaldırılamadı"
       ],
       "Create new email address": [
         "Yeni bir e-posta adresi oluştur"
@@ -4989,12 +4981,6 @@
       "New fiat currency applied": [
         "Yeni fiyat para birimi uygulandı"
       ],
-      "New fiat currency could not be applied": [
-        "Yeni fiyat para birimi uygulanamadı"
-      ],
-      "Preferred bitcoin unit could not be changed": [
-        "Yeğlenen Bitcoin birimi değiştirilemedi"
-      ],
       "Preferred bitcoin unit was changed": [
         "Yeğlenen Bitcoin birimi değiştirildi"
       ],
@@ -5004,14 +4990,8 @@
       "Select this address": [
         "Bu adresi seç"
       ],
-      "Wallet could not be deleted": [
-        "Cüzdan silinemedi"
-      ],
       "Wallet name changed": [
         "Cüzdan adı değiştirildi"
-      ],
-      "Wallet name could not be changed": [
-        "Cüzdan adı değiştirilemedi"
       ],
       "Wallet was deleted": [
         "Cüzdan silindi"
@@ -5041,15 +5021,6 @@
       "Confirm Passphrase": [
         "Parola ifadesini onayla"
       ],
-      "Could not create wallet": [
-        "Cüzdan oluşturulamadı"
-      ],
-      "Could not create wallet account": [
-        "Cüzdan hesabı oluşturulamadı"
-      ],
-      "Could not link email to wallet account": [
-        "E-posta adresi ile cüzdan hesabı ilişkilendirilemedi"
-      ],
       "Create new wallet": [
         "Yeni cüzdan oluştur"
       ],
@@ -5068,17 +5039,11 @@
       "Import wallet": [
         "Cüzdanı içe aktar"
       ],
-      "Input mnemonic is invalid, please double check.": [
-        "Yazdığınız anımsatıcı geçersiz. Lütfen yeniden denetleyin."
-      ],
       "Invite a friend": [
         "Arkadaşınızı davet edin"
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
-      ],
-      "Mnemonic length is not valid.": [
-        "Anımsatıcı uzunluğu geçersiz."
       ],
       "My wallet had a passphrase": [
         "Cüzdanımın bir parola ifadesi vardı"
@@ -5174,9 +5139,6 @@
       ]
     },
     "Wallet terms and conditions": {
-      "Could not accept terms and conditions": [
-        "Hüküm ve koşullar kabul edilemedi"
-      ],
       "Terms and conditions were accepted": [
         "Hüküm ve koşullar kabul edildi"
       ]
@@ -5213,6 +5175,9 @@
       ],
       "Bitcoin via Email": [
         "E-posta ile Bitcoin"
+      ],
+      "Boost priority": [
+        "Hızlandırma önceliği"
       ],
       "Buy": [
         "Satın al"
@@ -5286,9 +5251,6 @@
       "View more": [
         "Diğerlerini görüntüle"
       ],
-      "We are currently experiencing difficulties in calculating network fees. Please try again later. If the issue persists, contact our support team for assistance.": [
-        "Şu anda ağ ücretlerini hesaplamakta sorun yaşıyoruz. Lütfen bir süre sonra yeniden deneyin. Sorun sürerse, yardım almak için destek ekibimizle görüşün."
-      ],
       "You received": [
         "Aldığınız"
       ],
@@ -5323,12 +5285,6 @@
       ],
       "Sync": [
         "Eşitle"
-      ],
-      "Syncing is already in progress": [
-        "Eşitleme zaten sürüyor"
-      ],
-      "You need to wait 1 minute between each sync": [
-        "Eşitlemeler arasında 1 dakika beklemeniz gerekiyor"
       ]
     },
     "Wallet upgrade": {
