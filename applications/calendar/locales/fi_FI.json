@@ -665,6 +665,9 @@
       "Start setup": [
         "Aloita määritys"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Alkaen ${ priceUnlimited }"
+      ],
       "Stay": [
         "Pysy"
       ],
@@ -718,6 +721,9 @@
       ],
       "Upgrade now": [
         "Päivitä tilaus nyt"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Päivitä ${ BRAND_NAME } Unlimited -tilaukseen"
       ],
       "Upload picture": [
         "Lataa kuva"
@@ -2505,6 +2511,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Määritä yhdistettävien yhteystietojen painotusjärjestys vetämällä ja pudottamalla. Poista niiden valinta, joita et halua yhdistää."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Yhteystietoryhmillä voit lähettää sähköposteja kaikille ryhmän jäsenille yhdellä klikkauksella."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Voit tuoda tapahtumia iCal-muodossa (ICS-tiedostosta). Tiedosto voi olla enintään ${ MAX_IMPORT_FILE_SIZE_STRING } kokoinen ja sisältää enintään ${ MAX_IMPORT_EVENTS_STRING } tapahtumaa. Jos tiedosto on suurempi, jaa se pienempiin tiedostoihin."
       ],
@@ -2516,6 +2525,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Tilisi ja tietojesi palautustavat on asetettu."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
       ]
     },
     "description": {
@@ -3831,6 +3843,23 @@
         "Erittäin pieni"
       ]
     },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Liity Google Meettiin"
+      ],
+      "Joining instructions": [
+        "Liittymisohjeet"
+      ],
+      "Less details": [
+        "Vähemmän tietoja"
+      ],
+      "Meeting link:": [
+        "Tapaamislinkki:"
+      ],
+      "More details": [
+        "Enemmän tietoja"
+      ]
+    },
     "Group": {
       "Account": [
         "Tili"
@@ -5060,6 +5089,9 @@
       "You are about to open another browser tab and visit:": [
         "Olet avaamassa uutta selaimen välilehteä sivustolle:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Olet avaamassa oletusselaintasi sivustolle:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Olet kirjautuneena ${ user.Name } (${ user.Email })."
       ],
@@ -6251,8 +6283,14 @@
       "Get started for ${ price }": [
         "Aloita hintaan ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Alkaen ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Päivitä tilaus nyt"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Päivitä ${ MAIL_SHORT_APP_NAME } Plus -tilaukseen"
       ]
     },
     "new_plans: action": {
@@ -6826,6 +6864,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Hanki Mail Plus hintaan ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Alkaen ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7124,6 +7165,9 @@
       ],
       "Link copied to clipboard": [
         "Linkki kopioitiin leikepöydälle"
+      ],
+      "Passcode copied to clipboard": [
+        "Tunnuskoodi kopioitiin leikepöydälle"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8198,6 +8242,9 @@
       "/ month": [
         "kuukaudessa"
       ],
+      "/month": [
+        "/kuukausi"
+      ],
       "1 year": [
         "1 vuosi"
       ],
@@ -8205,7 +8252,7 @@
         "15 kuukautta"
       ],
       "2 years": [
-        "2 vuotta"
+        "Kaksi vuotta"
       ],
       "30 months": [
         "30 kuukautta"
@@ -9438,6 +9485,9 @@
       "Hide time zones for event start and end times": [
         "Piilota tapahtuman aloitus- ja päätösaikojen aikavyöhykkeet"
       ],
+      "High security for your account": [
+        "Vahva suojaus tilillesi"
+      ],
       "Human verification": [
         "Ihmisvahvistus"
       ],
@@ -9486,6 +9536,9 @@
       ],
       "Notes": [
         "Muistiinpanot"
+      ],
+      "One email, many recipients": [
+        "Yksi sähköposti, monta vastaanottajaa"
       ],
       "Open actions dropdown": [
         "Avaa toimintovalikko"
@@ -10253,6 +10306,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Vuosittain, ${ untilString }"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Liity Zoom-tapaamiseen"
+      ],
+      "Meeting ID:": [
+        "Tapaamisen ID:"
+      ],
+      "Passcode: ${ password }": [
+        "Tunnuskoodi: ${ password }"
       ]
     }
   }

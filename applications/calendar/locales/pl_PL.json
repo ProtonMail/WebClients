@@ -671,6 +671,9 @@
       "Start setup": [
         "Rozpocznij konfigurację"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Od ${ priceUnlimited }"
+      ],
       "Stay": [
         "Pozostań"
       ],
@@ -724,6 +727,9 @@
       ],
       "Upgrade now": [
         "Ulepsz teraz"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Ulepsz do wersji ${ BRAND_NAME } Unlimited"
       ],
       "Upload picture": [
         "Prześlij zdjęcie"
@@ -2481,6 +2487,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } chroni Twoje konto dzięki dedykowanemu całodobowemu monitorowaniu podejrzanej aktywności — w tym obsługi specjalistów ds. bezpieczeństwa."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Uwierzytelnianie dwustopniowe dodaje dodatkową warstwę bezpieczeństwa, zapobiegając nieautoryzowanemu dostępowi."
       ],
@@ -2489,6 +2498,9 @@
       ],
       "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
         "Zorganizuj lepiej dzień, śledź swój czas i ustaw priorytet dla zadań. Pokoloruj kalendarz za pomocą niestandardowych kolorów wydarzenia."
+      ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "Dostosuj kolor wydarzenia, aby lepiej zorganizować dzień, śledzić swój czas i ustawiać priorytety zadań."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Trwa odszyfrowywanie kontaktów… Proces może potrwać kilka minut. Kiedy się zakończy, będziesz mógł pobrać plik z wyeksportowanymi kontaktami."
@@ -2541,6 +2553,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Przeciągnij i upuść, aby ustalić priorytet scalania kontaktów. Odznacz kontakty, których nie chcesz scalić."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Grupy kontaktów umożliwiają wysyłanie wiadomości do wszystkich członków grupy jednym kliknięciem."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Możesz importować wydarzenia w formacie iCal (plik ICS). Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_EVENTS_STRING } wydarzeń. Podziel swój plik na mniejsze, jeśli jest zbyt duży."
       ],
@@ -2552,6 +2567,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Metody odzyskiwania konta i danych są włączone."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -3909,6 +3927,23 @@
         "Bardzo mała"
       ]
     },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Dołącz do spotkania Google Meet"
+      ],
+      "Joining instructions": [
+        "Instrukcja dołączania"
+      ],
+      "Less details": [
+        "Mniej szczegółów"
+      ],
+      "Meeting link:": [
+        "Link spotkania:"
+      ],
+      "More details": [
+        "Więcej szczegółów"
+      ]
+    },
     "Group": {
       "Account": [
         "Konto"
@@ -5198,6 +5233,9 @@
       "You are about to open another browser tab and visit:": [
         "Uruchomisz nową kartę przeglądarki i przejdziesz do:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Uruchomisz domyślną przeglądarkę i przejdziesz do:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Zalogowano jako ${ user.Name } (${ user.Email })."
       ],
@@ -6419,8 +6457,14 @@
       "Get started for ${ price }": [
         "Od ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Od ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Ulepsz teraz"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Ulepsz plan do wersji ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7036,6 +7080,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Wybierz plan Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Od ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7338,6 +7385,9 @@
       ],
       "Link copied to clipboard": [
         "Link został skopiowany do schowka"
+      ],
+      "Passcode copied to clipboard": [
+        "Kod został skopiowany do schowka"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8507,6 +8557,9 @@
         "${ n } miesiąca"
       ],
       "/ month": [
+        "/ miesiąc"
+      ],
+      "/month": [
         "/ miesiąc"
       ],
       "1 year": [
@@ -9795,6 +9848,9 @@
       "Hide time zones for event start and end times": [
         "Ukryj strefy czasowe dla czasu rozpoczęcia i zakończenia wydarzenia"
       ],
+      "High security for your account": [
+        "Wysoki poziom bezpieczeństwa konta"
+      ],
       "Human verification": [
         "Weryfikacja antyspamowa"
       ],
@@ -9845,6 +9901,9 @@
       ],
       "Notes": [
         "Notatki"
+      ],
+      "One email, many recipients": [
+        "Jeden adres, wiele odbiorców"
       ],
       "Open actions dropdown": [
         "Otwórz listę akcji"
@@ -10694,6 +10753,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Co rok, ${ untilString }"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Dołącz do spotkania Zoom"
+      ],
+      "Meeting ID:": [
+        "Identyfikator spotkania:"
+      ],
+      "Passcode: ${ password }": [
+        "Kod: ${ password }"
       ]
     }
   }
