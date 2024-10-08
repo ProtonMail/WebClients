@@ -3,12 +3,12 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { AliasSync } from '@proton/pass/components/Onboarding/AliasSync';
+import { BlackFriday2024Offer } from '@proton/pass/components/Onboarding/BlackFriday2024Offer';
+import { UserRenewal } from '@proton/pass/components/Onboarding/UserRenewal';
 import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { FiveStarIcon, ShieldIcon } from '@proton/pass/components/Spotlight/SpotlightIcon';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
-import { AliasSyncEnabled } from '@proton/pass/components/Upsell/AliasSyncEnabled';
-import { BlackFriday2024Offer } from '@proton/pass/components/Upsell/BlackFriday2024Offer';
-import { UserRenewal } from '@proton/pass/components/Upsell/UserRenewal';
 import { PASS_LEARN_MORE_URL, UpsellRef } from '@proton/pass/constants';
 import { OnboardingMessage } from '@proton/pass/types';
 import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -154,7 +154,7 @@ export const useOnboardingMessages = () => {
             },
             [OnboardingMessage.ALIAS_SYNC_ENABLE]: {
                 type: 'custom',
-                component: AliasSyncEnabled,
+                component: AliasSync,
                 id: 'alias-sync',
                 className: 'ui-teal',
                 onClose: () => acknowledge(OnboardingMessage.ALIAS_SYNC_ENABLE),
