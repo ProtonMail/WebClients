@@ -141,6 +141,9 @@
       "Close": [
         "Zapri"
       ],
+      "Close navigation": [
+        "Zapri krmarjenje"
+      ],
       "Close this banner": [
         "Zapri to pasico"
       ],
@@ -402,17 +405,23 @@
       "Not now": [
         "Ne zdaj"
       ],
+      "Ok": [
+        "V redu"
+      ],
       "OK": [
         "V redu"
       ],
-      "Ok": [
-        "V redu"
+      "Open": [
+        "Odpri"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Odprite nastavitve za ${ CALENDAR_APP_NAME }"
       ],
       "Open ${ DRIVE_APP_NAME }": [
         "Odpri ${ DRIVE_APP_NAME }"
+      ],
+      "Open navigation": [
+        "Odpri krmarjenje"
       ],
       "Pay": [
         "Plačilo"
@@ -501,11 +510,17 @@
       "Save changes": [
         "Shrani spremembe"
       ],
+      "Search": [
+        "Iskanje"
+      ],
       "Search countries": [
         "Iskanje držav"
       ],
       "See how": [
         "Poglejte, kako"
+      ],
+      "See plan features": [
+        "Oglejte si funkcije paketa."
       ],
       "See version history": [
         "Oglejte si zgodovino različic"
@@ -587,6 +602,12 @@
       ],
       "Update recovery phrase": [
         "Posodobi obnovitveno frazo"
+      ],
+      "Upgrade": [
+        "Nadgradi"
+      ],
+      "Upgrade now": [
+        "Nadgradi zdaj"
       ],
       "Upload anyway": [
         "Vseeno naloži"
@@ -708,6 +729,11 @@
         "Če prekinete zdaj, nekateri dogodki morda ne bodo uvoženi"
       ]
     },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "Aplikacije ${ BRAND_NAME }"
+      ]
+    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Dvignite produktivnost pri e-pošti na novo raven. Naj vam ${ BRAND_NAME } Scribe pomaga pri pisanju, odgovarjanju in lektoriranju vaših e-poštnih sporočil."
@@ -763,6 +789,19 @@
       ],
       "Premium Password Manager": [
         "Premijski upravitelj gesel"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Popusti temeljijo na standardni mesečni ceni."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Vaša naročnina se bo samodejno obnovila po standardni znižani ceni in trajanju ob koncu vašega obračunskega cikla."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30-dnevno jamstvo z vračilom denarja"
       ]
     },
     "bf2023: renew": {
@@ -2084,6 +2123,30 @@
       ],
       "Priority support": [
         "Prednostna podpora"
+      ]
+    },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Pridobi ${ BRAND_NAME } Duo"
+      ]
+    },
+    "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB prostora za shranjevanje"
+      ],
+      "2 users": [
+        "2 uporabnika"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Poln dostop do vseh izdelkov ${ BRAND_NAME }"
+      ],
+      "You save ${ amountSave }": [
+        "Prihranite ${ amountSave }"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Predstavljamo ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Email body for description (description part)": {
@@ -4406,6 +4469,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Na žalost se zdi, da datoteke ali nekaterih njenih podatkov ni mogoče dešifrirati."
       ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Nadgradite in dobite premijske funkcije, izdelke in shrambo po posebni ceni"
+      ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Nalaganje več sto datotek hkrati lahko vpliva na zmogljivost."
       ],
@@ -4946,6 +5012,9 @@
       "Mail Server (IMAP)": [
         "Poštni strežnik (IMAP)"
       ],
+      "Main": [
+        "Glavno"
+      ],
       "Make editor": [
         "Lahko ureja"
       ],
@@ -4963,6 +5032,9 @@
       ],
       "Move to Inbox": [
         "Premakni v Prejeto"
+      ],
+      "Navigation": [
+        "Krmarjenje"
       ],
       "New password": [
         "Novo geslo"
@@ -5282,6 +5354,14 @@
         "za ${ price }"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Izkoristite posebno ponudbo"
+      ],
+      "Special Offer": [
+        "Posebna ponudba"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Program ${ MAIL_APP_NAME } za namizje"
@@ -5300,6 +5380,24 @@
       ],
       "Unlimited folders, labels and filters": [
         "Neomejeno število map, oznak in filtrov"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Obnovitev za ${ renewablePrice }, prekličete lahko kadarkoli"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "za prvi mesec"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Časovno omejena ponudba, poteče 2. aprila 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Pridobite ${ planName } za samo ${ planPrice }"
       ]
     },
     "Message": {
@@ -5708,6 +5806,9 @@
       "Administration Panel": [
         "Skrbniška plošča"
       ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Vse premijske storitve ${ BRAND_NAME }. Ena preprosta naročnina"
+      ],
       "Auto-delete Spam and Trash": [
         "Samodejno brisanje neželene pošte in smeti"
       ],
@@ -5804,6 +5905,9 @@
       "GDPR data processing agreement": [
         "GDPR pogodba o obdelavi podatkov"
       ],
+      "Generate emails with a prompt": [
+        "Ustvarite e-pošto s pozivom"
+      ],
       "Group management (coming soon)": [
         "Upravljanje skupin (kmalu)"
       ],
@@ -5848,6 +5952,9 @@
       ],
       "Password-protected Emails": [
         "E-pošta, zaščitena z geslom"
+      ],
+      "Phone support (20+ users)": [
+        "Telefonska podpora (20+ uporabnikov)"
       ],
       "Priority email support": [
         "Prednostna podpora po e-pošti"
@@ -7217,6 +7324,48 @@
         "Podpiši"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Zapri"
+      ],
+      "Don't show this offer again": [
+        "Te ponudbe ne prikazuj več"
+      ],
+      "Special offer": [
+        "Posebna ponudba"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Izberite Neomejeno"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dan",
+        "${ days } dneva",
+        "${ days } dnevi",
+        "${ days } dni"
+      ],
+      "${ hours } hour": [
+        "${ hours } ura",
+        "${ hours } uri",
+        "${ hours } ure",
+        "${ hours } ur"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuta",
+        "${ minutes } minuti",
+        "${ minutes } minute",
+        "${ minutes } minut"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekunda",
+        "${ seconds } sekundi",
+        "${ seconds } sekunde",
+        "${ seconds } sekund"
+      ]
+    },
     "specialoffer: Deal": {
       "${ n } month FREE": [
         "${ n } mesec BREZPLAČNO",
@@ -7269,6 +7418,11 @@
         "Podprite zasebnost na spletu"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Ta naročnina se bo samodejno obnavljala na dve leti za enak znesek, dokler se ne odločite za preklic."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Ogled naročniških paketov"
@@ -7283,6 +7437,12 @@
         "${ n } meseca",
         "${ n } meseci",
         "${ n } mesecev"
+      ],
+      "/ month": [
+        "/mesec"
+      ],
+      "/month": [
+        "/mesec"
       ],
       "1 year": [
         "1 leto"
@@ -7311,11 +7471,17 @@
       "Billed at ${ amount } for 30 months": [
         "Zaračunano ${ amount } za 30 mesecev"
       ],
+      "Get the deal": [
+        "Izkoristite posebno ponudbo"
+      ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Obnovitev po 1 letu po znižani ceni ali ${ discountedAmount } namesto ${ regularAmount } (${ discount }% popusta)"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Obnovitev po 2 letih po znižani ceni ali ${ discountedAmount } namesto ${ regularAmount } (${ discount }% popust)"
+      ],
+      "Save ${ discount }%": [
+        "Prihranite ${ discount } %"
       ],
       "Standard price ${ amount } for 1 month": [
         "Običajna cena ${ amount } za en mesec"
@@ -7331,6 +7497,20 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Običajna cena ${ amount } za 30 mesecev"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Črnopetkova razprodaja"
+      ],
+      "Cyber Week Sale": [
+        "Razprodaja v kibernetskem tednu"
+      ],
+      "End of Year Sale": [
+        "Razprodaja ob koncu leta"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Nadgradite in prihranite več z 2 leti ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
@@ -7378,6 +7558,14 @@
       ],
       "Pending": [
         "V teku"
+      ]
+    },
+    "Storage": {
+      "Upgrade storage": [
+        "Nadgradi shrambo"
+      ],
+      "Your current storage:": [
+        "Trenutna shramba:"
       ]
     },
     "storage_split: action": {
@@ -7545,6 +7733,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB prostora za shranjevanje"
+      ],
+      "and 15 more premium features": [
+        "in še 15 premijskih funkcij"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Samodejno posredovanje e-pošte ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Opozorila o kršitvah varstva podatkov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Namizna aplikacija"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomagajte nam ohraniti varen in zaseben internet za vse. Nadgradite na plačljiv paket."
+      ],
+      "No ads or tracking": [
+        "Brez oglasov ali sledenja"
+      ],
+      "Short @pm.me email address": [
+        "Kratek e-poštni naslov @pm.me"
+      ],
+      "Support our mission": [
+        "Podprite naše poslanstvo"
+      ],
+      "Upgrade": [
+        "Prehod na plačljiv paket"
+      ],
+      "Upgrade your productivity": [
+        "Povečajte svojo storilnost"
+      ],
+      "We don't sell your data": [
+        "Vaših podatkov ne prodajamo"
+      ],
+      "Your privacy is our mission": [
+        "Vaša zasebnost je naše poslanstvo"
       ]
     },
     "Subscription reminder": {
@@ -8242,6 +8471,9 @@
       ],
       "What would you like to import?": [
         "Kaj želite uvoziti?"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Vaš ${ planName } brezplačen preizkus se konča ${ textDate }"
       ],
       "Your account is protected": [
         "Vaš račun je zaščiten"

@@ -141,6 +141,9 @@
       "Close": [
         "Закрыць"
       ],
+      "Close navigation": [
+        "Закрыць панэль навігацыі"
+      ],
       "Close this banner": [
         "Закрыць гэты банер"
       ],
@@ -155,6 +158,9 @@
       ],
       "Contact group": [
         "Група кантактаў"
+      ],
+      "Context menu": [
+        "Кантэкстнае меню"
       ],
       "Continue": [
         "Працягнуць"
@@ -405,17 +411,26 @@
       "Not now": [
         "Не зараз"
       ],
+      "Ok": [
+        "Добра"
+      ],
       "OK": [
         "Добра"
       ],
-      "Ok": [
-        "Добра"
+      "Open": [
+        "Адкрыць"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Адкрыць налады ${ CALENDAR_APP_NAME }"
       ],
       "Open ${ DRIVE_APP_NAME }": [
         "Адкрыць ${ DRIVE_APP_NAME }"
+      ],
+      "Open folder": [
+        "Адкрыць папку"
+      ],
+      "Open navigation": [
+        "Адкрыць панэль навігацыі"
       ],
       "Pay": [
         "Аплаціць"
@@ -504,11 +519,20 @@
       "Save changes": [
         "Захаваць змены"
       ],
+      "Search": [
+        "Пошук"
+      ],
       "Search countries": [
         "Пошук краін"
       ],
+      "Search docs": [
+        "Пошук дакументаў"
+      ],
       "See how": [
         "Паглядзець як"
+      ],
+      "See plan features": [
+        "Паглядзець функцыі тарыфнага плана"
       ],
       "See version history": [
         "Паглядзець гісторыю версій"
@@ -545,6 +569,9 @@
       ],
       "Start import": [
         "Пачаць імпартаванне"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Пачатковы кошт ${ priceUnlimited }"
       ],
       "Stay": [
         "Застацца"
@@ -590,6 +617,15 @@
       ],
       "Update recovery phrase": [
         "Абнавіць фразу аднаўлення"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Палепшыць да ${ BRAND_NAME } Unlimited"
       ],
       "Upload anyway": [
         "Запампаваць усё роўна"
@@ -717,6 +753,11 @@
         "Калі выйсці цяпер, некаторыя падзеі не будуць імпартаваны"
       ]
     },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "Праграмы ${ BRAND_NAME }"
+      ]
+    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Выведзіце прадукцыйнасць электроннай пошты на новы ўзровень. Дазвольце ${ BRAND_NAME } Scribe дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў."
@@ -772,6 +813,19 @@
       ],
       "Premium Password Manager": [
         "Прэміяльны менеджар пароляў"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Ваша падпіска будзе аўтаматычна падаўжацца са стандартнай скідкай і працягвацца ў канцы перыяду аплаты."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Гарантыя вяртання грашовых сродкаў на працягу 30 дзён"
       ]
     },
     "bf2023: renew": {
@@ -1973,6 +2027,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс з дапамогай адмысловага кругласутачнага назірання падазроных дзеянняў. Гэты сэрвіс таксама прадугледжвае перадачу спецыялістам па бяспецы."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2ФА дадае дадатковы слой бяспекі, каб прадухіліць неаўтарызаваны доступ."
       ],
@@ -2021,6 +2078,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Выкарыстоўвайце перацягванне, каб задаць прыярытэт аб'яднання паміж кантактамі. Здыміце пазнаку з кантактаў, якія вы не хочаце аб'ядноўваць."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Вы можаце адпраўляць лісты кожнаму ўдзельніку ў групе адным націскам з дапамогай груп кантактаў."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Вы можаце імпартаваць падзеі ў фармаце iCal (файл ICS). Максімальна памер файла павінен быць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець не больш за ${ MAX_IMPORT_EVENTS_STRING } падзей. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі."
       ],
@@ -2032,6 +2092,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Спосабы аднаўлення вашага ўліковага запісу зададзены."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -2113,6 +2176,49 @@
       ],
       "Priority support": [
         "Прыярытэтная падтрымка"
+      ]
+    },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Атрымаць ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Атрымайце яго за ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Аплачваецца кожныя 2 гады ў памеры ${ amountBilled }. Скідкі разлічваюцца на падставе стандартнай платы за месяц."
+      ],
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Аплачваецца штогод у памеры ${ amountBilled }. Эканомія складае ${ amountSave } пры гадавой падпісцы на 2 асабістыя ўліковыя запісы ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 ТБ сховішча"
+      ],
+      "2 users": [
+        "2 карыстальнікі"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Поўны доступ да ўсіх прадуктаў ${ BRAND_NAME }"
+      ],
+      "You save ${ amountSave }": [
+        "Вы эканоміце ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Усе функцыі ${ BRAND_NAME } для дваіх карыстальнікаў."
+      ],
+      "Double your storage": [
+        "Падвоіць ваша сховішча"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Прадстаўляем тарыфны план ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Email body for description (description part)": {
@@ -3808,6 +3914,9 @@
       "Create public link": [
         "Стварыць публічную спасылку"
       ],
+      "Create your end-to-end encrypted document": [
+        "Стварыце дакумент, які зашыфраваны скразным шыфраваннем"
+      ],
       "Creating link to file": [
         "Стварэнне спасылкі на файл"
       ],
@@ -4144,6 +4253,9 @@
       "No payment is required at this time.": [
         "Зараз аплата не патрабуецца."
       ],
+      "No recent documents": [
+        "Нядаўнія дакументы адсутнічаюць"
+      ],
       "No results found": [
         "Нічога не знойдзена"
       ],
@@ -4471,6 +4583,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Збой расшыфроўкі файла або некаторых яго даных."
       ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Палепшыце свой тарыфны план зараз, каб атрымаць прэміяльныя функцыі, прадукты, а таксама палепшыць сховішча па спецыяльнай цане"
+      ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Запампоўванне сотняў файлаў адначасова можа паўплываць на прадукцыйнасць."
       ],
@@ -4554,6 +4669,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Вы збіраецеся адкрыць іншую ўкладку браўзера і наведаць:"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Вы збіраецеся адкрыць прадвызначаны браўзер і наведаць:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Вы ўжо ўвайшлі як ${ user.Name } (${ user.Email })."
@@ -5022,6 +5140,9 @@
       "Mail Server (IMAP)": [
         "Паштовы сервер (IMAP)"
       ],
+      "Main": [
+        "Галоўная"
+      ],
       "Make editor": [
         "Можа рэдагаваць"
       ],
@@ -5039,6 +5160,9 @@
       ],
       "Move to Inbox": [
         "Перамясціць ва Уваходныя"
+      ],
+      "Navigation": [
+        "Навігацыя"
       ],
       "New password": [
         "Новы пароль"
@@ -5361,6 +5485,14 @@
         "за ${ price }"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Скарыстацца прапановай"
+      ],
+      "Special Offer": [
+        "Спецыяльная прапанова"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Настольная праграма ${ MAIL_APP_NAME }"
@@ -5379,6 +5511,24 @@
       ],
       "Unlimited folders, labels and filters": [
         "Неабмежаваная колькасць папак, метак і фільтраў"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Падаўжаецца за ${ renewablePrice }. Скасаваць можна ў любы час"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "за першы месяц"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Прапанова абмежавана па часе (міне 2 красавіка 2024 года)"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Атрымаць тарыфны план ${ planName } усяго за ${ planPrice }"
       ]
     },
     "Message": {
@@ -5687,8 +5837,14 @@
       "Get started for ${ price }": [
         "Пачніце з коштам у памеры ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Пачатковы кошт ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Палепшыць зараз"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Палепшыць да ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6304,6 +6460,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Атрымайце Mail Plus за ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Пачатковы кошт ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7501,6 +7660,48 @@
         "Падпісаць"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Закрыць"
+      ],
+      "Don't show this offer again": [
+        "Больш не паказваць гэту прапанову"
+      ],
+      "Special offer": [
+        "Спецыяльная прапанова"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Перайсці на Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } дзень",
+        "${ days } дні",
+        "${ days } дзён",
+        "${ days } дня"
+      ],
+      "${ hours } hour": [
+        "${ hours } гадзіна",
+        "${ hours } гадзіны",
+        "${ hours } гадзін",
+        "${ hours } гадзіны"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } хвіліна",
+        "${ minutes } хвіліны",
+        "${ minutes } хвілін",
+        "${ minutes } хвіліны"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунды"
+      ]
+    },
     "specialoffer: Deal": {
       "${ n } month FREE": [
         "${ n } месяц БЯСПЛАТНА",
@@ -7553,6 +7754,11 @@
         "Падтрыманне прыватнасці ў інтэрнэце"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Падпіска будзе аўтаматычна падаўжацца кожныя 2 гады з той жа цаной, пакуль вы яе не скасуеце."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Перайсці да тарыфных планаў"
@@ -7567,6 +7773,12 @@
         "${ n } месяцы",
         "${ n } месяцаў",
         "${ n } месяцаў"
+      ],
+      "/ month": [
+        "/ месяц"
+      ],
+      "/month": [
+        "/месяц"
       ],
       "1 year": [
         "1 год"
@@ -7595,11 +7807,17 @@
       "Billed at ${ amount } for 30 months": [
         "Аплачваецца ${ amount } за 30 месяцаў"
       ],
+      "Get the deal": [
+        "Скарыстацца прапановай"
+      ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Падаўжаецца праз 1 год па зніжанай цане. Вы заплаціце ${ discountedAmount } замест ${ regularAmount } (скідка: ${ discount }%)"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Падаўжаецца праз 2 гады па зніжанай цане. Вы заплаціце ${ discountedAmount } замест ${ regularAmount } (скідка: ${ discount }%)"
+      ],
+      "Save ${ discount }%": [
+        "Эканомія ${ discount }%"
       ],
       "Standard price ${ amount } for 1 month": [
         "Стандартная цана ${ amount } за 1 месяц"
@@ -7615,6 +7833,20 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Стандартная цана ${ amount } за 30 месяцаў"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Распродаж з нагоды \"Чорнай пятніцы\""
+      ],
+      "Cyber Week Sale": [
+        "Распродаж з нагоды \"Кібертыдня\""
+      ],
+      "End of Year Sale": [
+        "Распродаж з нагоды заканчэння года"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Палепшыце свой тарыфны план і зэканомце больш грошай, купіўшы ${ planName } на 2 гады"
       ]
     },
     "specialoffer: Tooltip": {
@@ -7662,6 +7894,14 @@
       ],
       "Pending": [
         "У чаканні"
+      ]
+    },
+    "Storage": {
+      "Upgrade storage": [
+        "Павялічыць сховішча"
+      ],
+      "Your current storage:": [
+        "Ваша бягучае сховішча:"
       ]
     },
     "storage_split: action": {
@@ -7834,6 +8074,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "За ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription reminder": {
@@ -8262,6 +8543,9 @@
       "Discard changes?": [
         "Адхіліць змены?"
       ],
+      "Docs": [
+        "Дакументы"
+      ],
       "Document verification failed": [
         "Збой праверкі дакумента"
       ],
@@ -8337,6 +8621,9 @@
       "Groups": [
         "Групы"
       ],
+      "High security for your account": [
+        "Высокая бяспека для вашага ўліковага запісу"
+      ],
       "Human verification": [
         "Антыспамавая праверка"
       ],
@@ -8399,6 +8686,9 @@
       ],
       "Offline": [
         "Па-за сеткай"
+      ],
+      "One email, many recipients": [
+        "Адна электронная пошта, шмат атрымальнікаў"
       ],
       "Open actions dropdown": [
         "Адкрыць спіс даступных дзеянняў"
@@ -8540,6 +8830,9 @@
       ],
       "What would you like to import?": [
         "Што вы хочаце імпартаваць?"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Ваш бясплатны выпрабавальны перыяд для тарыфнага плана ${ planName } завершыцца ${ textDate }"
       ],
       "Your account is protected": [
         "Ваш уліковы запіс абаронены"
