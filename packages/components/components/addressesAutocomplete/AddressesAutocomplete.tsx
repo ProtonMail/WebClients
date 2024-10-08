@@ -23,7 +23,11 @@ import {
     getNumberOfMembersCount,
     getNumberOfMembersText,
     getRecipientFromAutocompleteItem,
+    isEmailSelected,
+    isGroupSelected,
 } from './helper';
+
+type AutocompleteItemWithSelection = AddressesAutocompleteItem & { selected: boolean };
 
 interface Props extends Omit<InputProps, 'value'> {
     id: string;
@@ -78,22 +82,26 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
             );
         }, [recipients]);
 
-        const isGroupEmpty = (groupID: string) => {
-            return groupsWithContactsMap ? (groupsWithContactsMap[groupID]?.contacts.length || 0) <= 0 : false;
-        };
-
-        const contactsAutocompleteItems = useMemo(() => {
+        const contactsAutocompleteItems = useMemo<AutocompleteItemWithSelection[]>(() => {
             return [
                 ...getContactsAutocompleteItems(
                     contactEmails,
-                    ({ Email }) => !recipientsByAddress.has(canonicalizeEmail(Email))
+                    () => true,
+                    (mappedItem, initialContact) => ({
+                        ...mappedItem,
+                        selected: isEmailSelected(initialContact, recipientsByAddress),
+                    })
                 ),
                 ...getContactGroupsAutocompleteItems(
                     contactGroups,
-                    ({ Path, ID }) => !recipientsByGroup.has(Path) && !isGroupEmpty(ID)
+                    () => true,
+                    (mappedItem, initialContactGroup) => ({
+                        ...mappedItem,
+                        selected: isGroupSelected(initialContactGroup, recipientsByGroup, groupsWithContactsMap),
+                    })
                 ),
             ];
-        }, [contactEmails, contactGroups, recipientsByAddress, recipientsByGroup]);
+        }, [contactEmails, contactGroups, recipientsByAddress, recipientsByGroup, groupsWithContactsMap]);
 
         const handleAddRecipient = (newRecipients: Recipient[]) => {
             setInput('');
@@ -130,12 +138,28 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
             ? [exactNameGroup, ...filteredOptions.filter(({ option: { label } }) => label !== input)]
             : filteredOptions;
 
-        const { getOptionID, inputProps, suggestionProps } = useAutocomplete<AddressesAutocompleteItem>({
+        const { getOptionID, inputProps, suggestionProps } = useAutocomplete<AutocompleteItemWithSelection>({
             id,
             options: filteredOptions,
             onSelect: handleSelect,
             input,
             inputRef,
+            findPreviousOptionIndex: (currentIndex, options) => {
+                for (let i = currentIndex - 1; i >= 0; i--) {
+                    if (!options[i].option.selected) {
+                        return i;
+                    }
+                }
+                return currentIndex;
+            },
+            findNextOptionIndex: (currentIndex, options) => {
+                for (let i = currentIndex + 1; i < options.length; i++) {
+                    if (!options[i].option.selected) {
+                        return i;
+                    }
+                }
+                return currentIndex;
+            },
         });
 
         const handleInputChange = (newValue: string) => {
@@ -183,6 +207,7 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
                                 value={option}
                                 disableFocusOnActive
                                 onChange={handleSelect}
+                                selected={option.selected}
                             >
                                 {option.type === 'group' ? (
                                     <div className="flex flex-nowrap *:items-center gap-2">
