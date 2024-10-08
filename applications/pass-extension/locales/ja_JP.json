@@ -239,8 +239,14 @@
       "Generate password": [
         "パスワードを生成"
       ],
+      "Generate secure link": [
+        "セキュアリンクを生成"
+      ],
       "Generated passwords": [
         "生成されたパスワード"
+      ],
+      "Generating secure link...": [
+        "セキュアリンクを生成中..."
       ],
       "Get mobile apps": [
         "モバイルアプリを入手する"
@@ -290,6 +296,9 @@
       "Link copied to clipboard": [
         "クリップボードにリンクがコピーされました"
       ],
+      "Link expires after": [
+        "リンクの有効期限："
+      ],
       "Lock extension": [
         "ロック延長"
       ],
@@ -310,6 +319,9 @@
       ],
       "Manually sync your data": [
         "手動でデータを同期する"
+      ],
+      "Maximum views": [
+        "最大閲覧回数"
       ],
       "More info: ${ safeTitle }": [
         "詳細: ${ safeTitle }"
@@ -337,6 +349,9 @@
       ],
       "Multiple select": [
         "複数選択"
+      ],
+      "No expired links": [
+        "期限切れのリンクはありません"
       ],
       "Not now": [
         "後で"
@@ -383,6 +398,9 @@
       "Remove access": [
         "アクセス権の削除"
       ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "期限切れのリンクをすべて削除 (${ inactiveLinkCount })"
+      ],
       "Remove link": [
         "リンクを削除"
       ],
@@ -401,6 +419,9 @@
       "Restore item": [
         "アイテムを復元"
       ],
+      "Restrict number of views": [
+        "閲覧数を制限する"
+      ],
       "Retry": [
         "再試行"
       ],
@@ -418,6 +439,9 @@
       ],
       "Section name": [
         "セクション名"
+      ],
+      "Secure links": [
+        "セキュアリンク"
       ],
       "See all": [
         "すべてを見る"
@@ -442,6 +466,9 @@
       ],
       "Share": [
         "共有"
+      ],
+      "Share secure link": [
+        "セキュアリンクを共有"
       ],
       "Share this vault": [
         "この保管庫を共有する"
@@ -475,6 +502,9 @@
       ],
       "Submitting report...": [
         "レポートを送信中..."
+      ],
+      "Sync aliases": [
+        "エイリアスを同期する"
       ],
       "Transfer ownership": [
         "所有権の移行"
@@ -922,6 +952,23 @@
       ],
       "Something went wrong": [
         "不具合が発生しました"
+      ]
+    },
+    "FamilyPlanPromo2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "１つのサブスクリプションで、すべてのプレミアム機能を6ユーザーまで利用可能。"
+      ],
+      "Exclusive offer for ${ PASS_APP_NAME } early supporters.": [
+        "${ PASS_APP_NAME } 早期サポーターへの限定キャンペーン。"
+      ],
+      "Get it for ${ price }/month": [
+        "${ price }/月で購入"
+      ],
+      "Introducing ${ planNameJSX }": [
+        "${ planNameJSX } のご紹介"
+      ],
+      "Limited-time offer only.": [
+        "期間限定キャンペーン。"
       ]
     },
     "file size format": {
@@ -2585,6 +2632,9 @@
       ]
     },
     "Success": {
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "エイリアスの同期が有効になりました。シンプルログインのエイリアスは同期に時間がかかることがあります"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Vault には ${ vault.targetMaxMembers } を超えるユーザーを含めることはできません。"
       ]
