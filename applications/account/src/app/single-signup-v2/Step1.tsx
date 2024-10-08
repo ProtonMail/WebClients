@@ -6,25 +6,31 @@ import { c } from 'ttag';
 
 import { Button, Href, InlineLinkButton, Vr } from '@proton/atoms';
 import type { IconName } from '@proton/components';
-import { CurrencySelector, CycleSelector, Icon, getCheckoutRenewNoticeText, useModalState } from '@proton/components';
+import {
+    CurrencySelector,
+    CycleSelector,
+    Icon,
+    getCheckoutRenewNoticeText,
+    useErrorHandler,
+    useModalState,
+} from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { useIsChargebeeEnabled } from '@proton/components/containers/payments/PaymentSwitcher';
 import { getShortBillingText } from '@proton/components/containers/payments/helper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useHandler from '@proton/components/hooks/useHandler';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import {
     type BillingAddress,
+    type Currency,
     PLANS,
     type PlanIDs,
     getFallbackCurrency,
     getPlansMap,
     isRegionalCurrency,
 } from '@proton/payments';
-import { type Currency } from '@proton/payments';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import type { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';

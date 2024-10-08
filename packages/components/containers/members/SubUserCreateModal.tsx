@@ -31,6 +31,7 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import AssistantUpdateSubscriptionButton from '@proton/components/containers/payments/subscription/assistant/AssistantUpdateSubscriptionButton';
 import useApi from '@proton/components/hooks/useApi';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
@@ -59,7 +60,7 @@ import { useFlag } from '@proton/unleash';
 import clamp from '@proton/utils/clamp';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useErrorHandler, useNotifications, useOrganizationKey, useSubscription } from '../../hooks';
+import { useNotifications, useOrganizationKey, useSubscription } from '../../hooks';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import MemberStorageSelector, { getInitialStorage, getStorageRange, getTotalStorage } from './MemberStorageSelector';
 import MemberToggleContainer from './MemberToggleContainer';

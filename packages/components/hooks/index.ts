@@ -1,4 +1,3 @@
-export { default as useErrorHandler } from './useErrorHandler';
 export { default as useFeature } from './useFeature';
 export { default as useFeatures } from './useFeatures';
 export { default as useGetCalendarInfo } from './useGetCalendarInfo';

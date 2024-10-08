@@ -22,6 +22,7 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
@@ -42,13 +43,7 @@ import {
 import { getOrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
 import noop from '@proton/utils/noop';
 
-import {
-    useErrorHandler,
-    useGetOrganization,
-    useGetOrganizationKey,
-    useGetUserKeys,
-    useNotifications,
-} from '../../../hooks';
+import { useGetOrganization, useGetOrganizationKey, useGetUserKeys, useNotifications } from '../../../hooks';
 
 interface Props extends ModalProps<'form'> {
     member?: Member;
