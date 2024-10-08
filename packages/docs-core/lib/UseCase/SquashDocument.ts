@@ -63,7 +63,7 @@ export class SquashDocument implements UseCaseInterface<boolean> {
 
     const decryptionResult = await this.decryptCommit.execute({
       commit: squashLock.commit,
-      keys: keys,
+      documentContentKey: keys.documentContentKey,
       commitId: squashLock.commitId,
     })
     if (decryptionResult.isFailed()) {

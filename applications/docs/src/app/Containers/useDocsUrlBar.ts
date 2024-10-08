@@ -5,9 +5,8 @@ import type { DocumentAction } from '@proton/drive-store'
 import { APPS } from '@proton/shared/lib/constants'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
-import type { DriveCompat } from '@proton/drive-store'
 
-export function useDocsUrlBar({ driveCompat }: { driveCompat: DriveCompat }) {
+export function useDocsUrlBar({ isDocsEnabled }: { isDocsEnabled: boolean }) {
   const { getLocalID } = useAuthentication()
 
   const { search } = useLocation()
@@ -34,11 +33,23 @@ export function useDocsUrlBar({ driveCompat }: { driveCompat: DriveCompat }) {
     const parentLinkId = searchParams.get('parentLinkId')
     const volumeId = searchParams.get('volumeId')
     const linkId = searchParams.get('linkId')
+    const token = searchParams.get('token')
 
+    const hasValidPublicLink = token && linkId
     const hasRequiredParametersToLoadOrCreateADocument = volumeId && mode && (linkId || parentLinkId)
+    const hasValidRoute = hasValidPublicLink || hasRequiredParametersToLoadOrCreateADocument
 
-    if (!hasRequiredParametersToLoadOrCreateADocument && !driveCompat.isDocsEnabled) {
+    if (!hasValidRoute && !isDocsEnabled) {
       window.location.assign(getAppHref('/', APPS.PROTONDRIVE, getLocalID()))
+      return
+    }
+
+    if (hasValidPublicLink) {
+      setOpenAction({
+        mode: 'open-url',
+        token,
+        linkId,
+      })
       return
     }
 

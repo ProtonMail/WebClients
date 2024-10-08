@@ -1,16 +1,16 @@
 import { Result } from '../Domain/Result/Result'
-import type { DocumentKeys } from '@proton/drive-store'
 import type { EncryptionService } from '../Services/Encryption/EncryptionService'
 import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
 import type { DecryptMessageDTO } from './DecryptMessage'
 import { DecryptMessage } from './DecryptMessage'
 import type { DocumentUpdate } from '@proton/docs-proto'
+import type { SessionKey } from 'packages/crypto/lib'
 
 describe('DecryptMessage', () => {
   let decryptMessage: DecryptMessage
   let encryptionSerivce: EncryptionService<EncryptionContext.RealtimeMessage>
 
-  const keys = {} as DocumentKeys
+  const key = '' as unknown as SessionKey
 
   beforeEach(() => {
     encryptionSerivce = {
@@ -29,7 +29,7 @@ describe('DecryptMessage', () => {
         timestamp: 0,
         version: 0,
       } as unknown as jest.Mocked<DocumentUpdate>,
-      keys,
+      documentContentKey: key,
       verify: true,
     }
     await decryptMessage.execute(dto)
@@ -45,7 +45,7 @@ describe('DecryptMessage', () => {
         timestamp: 0,
         version: 0,
       } as unknown as jest.Mocked<DocumentUpdate>,
-      keys,
+      documentContentKey: key,
       verify: true,
     }
     await decryptMessage.execute(dto)
@@ -63,7 +63,7 @@ describe('DecryptMessage', () => {
         timestamp: 0,
         version: 0,
       } as unknown as jest.Mocked<DocumentUpdate>,
-      keys,
+      documentContentKey: key,
       verify: true,
     }
 
@@ -80,7 +80,7 @@ describe('DecryptMessage', () => {
         timestamp: 0,
         version: 0,
       } as unknown as jest.Mocked<DocumentUpdate>,
-      keys,
+      documentContentKey: key,
       verify: true,
     }
     await decryptMessage.execute(dto)
@@ -98,7 +98,7 @@ describe('DecryptMessage', () => {
         timestamp: 0,
         version: 0,
       } as unknown as jest.Mocked<DocumentUpdate>,
-      keys,
+      documentContentKey: key,
       verify: true,
     }
 
@@ -115,7 +115,7 @@ describe('DecryptMessage', () => {
         timestamp: 0,
         version: 0,
       } as unknown as jest.Mocked<DocumentUpdate>,
-      keys,
+      documentContentKey: key,
       verify: false,
     }
 

@@ -1,6 +1,6 @@
 import type { Commit, SquashCommit } from '@proton/docs-proto'
 import { ApiResult, type DocumentMetaInterface, type SuggestionThreadStateAction } from '@proton/docs-shared'
-import type { NodeMeta } from '@proton/drive-store'
+import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store'
 import {
   addCommentToThreadInDocument,
   changeSuggestionThreadState,
@@ -13,7 +13,9 @@ import {
   getAllCommentThreadsInDocument,
   getCommentThreadInDocument,
   getCommitData,
+  getCommitDataByToken,
   getDocumentMeta,
+  getDocumentMetaByToken,
   lockDocument,
   resolveThreadInDocument,
   seedInitialCommit,
@@ -40,11 +42,16 @@ import type { ResolveThreadResponse } from './Types/ResolveThreadResponse'
 import type { SeedInitialCommitApiResponse } from './Types/SeedInitialCommitApiResponse'
 import type { UnresolveThreadResponse } from './Types/UnresolveThreadResponse'
 import type { CommentThreadType, CommentType } from '@proton/docs-shared'
+import { isPublicNodeMeta } from '@proton/drive-store/lib/interface'
+
+export type HttpHeaders = { [key: string]: string }
 
 export class DocsApi {
   constructor(
     private protonApi: Api,
-    private imageProxyParams: ImageProxyParams,
+    /** Headers to use when fetching public documents */
+    private publicContextHeaders: HttpHeaders | undefined,
+    private imageProxyParams: ImageProxyParams | undefined,
   ) {
     window.addEventListener('beforeunload', this.handleWindowUnload)
   }
@@ -57,14 +64,22 @@ export class DocsApi {
     }
   }
 
-  async getDocumentMeta(lookup: NodeMeta): Promise<Result<GetDocumentMetaResponse>> {
+  async getDocumentMeta(lookup: NodeMeta | PublicNodeMeta): Promise<Result<GetDocumentMetaResponse>> {
     if (!this.protonApi) {
       throw new Error('Proton API not set')
     }
 
+    if (isPublicNodeMeta(lookup) && !this.publicContextHeaders) {
+      throw new Error('Public context headers not set')
+    }
+
     try {
       this.inflight++
-      const response = await this.protonApi(getDocumentMeta(lookup.volumeId, lookup.linkId))
+      const response = await this.protonApi(
+        isPublicNodeMeta(lookup)
+          ? getDocumentMetaByToken(lookup.linkId, lookup.token, this.publicContextHeaders!)
+          : getDocumentMeta(lookup.volumeId, lookup.linkId),
+      )
       return Result.ok(response)
     } catch (error) {
       return Result.fail(getErrorString(error) || 'Unknown error')
@@ -73,14 +88,22 @@ export class DocsApi {
     }
   }
 
-  async getCommitData(lookup: NodeMeta, commitId: string): Promise<Result<Uint8Array>> {
+  async getCommitData(lookup: NodeMeta | PublicNodeMeta, commitId: string): Promise<Result<Uint8Array>> {
     if (!this.protonApi) {
       throw new Error('Proton API not set')
     }
 
+    if (isPublicNodeMeta(lookup) && !this.publicContextHeaders) {
+      throw new Error('Public context headers not set')
+    }
+
     try {
       this.inflight++
-      const response: Response = await this.protonApi(getCommitData(lookup.volumeId, lookup.linkId, commitId))
+      const response: Response = await this.protonApi(
+        isPublicNodeMeta(lookup)
+          ? getCommitDataByToken(lookup.linkId, lookup.token, commitId, this.publicContextHeaders!)
+          : getCommitData(lookup.volumeId, lookup.linkId, commitId),
+      )
       const buffer = await response.arrayBuffer()
       return Result.ok(new Uint8Array(buffer))
     } catch (error) {
@@ -91,11 +114,15 @@ export class DocsApi {
   }
 
   async seedInitialCommit(
-    docMeta: Pick<DocumentMetaInterface, 'linkId' | 'volumeId'>,
+    docMeta: DocumentMetaInterface['nodeMeta'],
     commit: Commit,
   ): Promise<Result<SeedInitialCommitApiResponse>> {
     if (!this.protonApi) {
       throw new Error('Proton API not set')
+    }
+
+    if (isPublicNodeMeta(docMeta)) {
+      throw new Error('Cannot seed initial commit for public node')
     }
 
     try {
@@ -116,9 +143,15 @@ export class DocsApi {
       throw new Error('Proton API not set')
     }
 
+    if (isPublicNodeMeta(docMeta.nodeMeta)) {
+      throw new Error('Cannot lock public node')
+    }
+
     try {
       this.inflight++
-      const response = await this.protonApi(lockDocument(docMeta.volumeId, docMeta.linkId, fetchCommitId))
+      const response = await this.protonApi(
+        lockDocument(docMeta.nodeMeta.volumeId, docMeta.nodeMeta.linkId, fetchCommitId),
+      )
       const buffer = await response.arrayBuffer()
       return Result.ok(new Uint8Array(buffer))
     } catch (error) {
@@ -137,10 +170,14 @@ export class DocsApi {
       throw new Error('Proton API not set')
     }
 
+    if (isPublicNodeMeta(docMeta.nodeMeta)) {
+      throw new Error('Cannot squash commit for public node')
+    }
+
     try {
       this.inflight++
       const response = await this.protonApi(
-        squashCommit(docMeta.volumeId, docMeta.linkId, commitId, squash.serializeBinary()),
+        squashCommit(docMeta.nodeMeta.volumeId, docMeta.nodeMeta.linkId, commitId, squash.serializeBinary()),
       )
       return Result.ok(response)
     } catch (error) {
@@ -404,6 +441,10 @@ export class DocsApi {
   }
 
   async fetchExternalImageAsBase64(url: string): Promise<Result<string>> {
+    if (!this.imageProxyParams) {
+      return Result.fail('Image proxy params not set')
+    }
+
     try {
       this.inflight++
       const forgedImageURL = forgeImageURL({

@@ -50,7 +50,7 @@ type InitialConfig = {
 export function App({ nonInteractiveMode = false }: Props) {
   const viewOnlyDocumentId = useId()
 
-  const [initialConfig, setInitialConfig] = useState<InitialConfig | null>(
+  const initialConfig = useRef<InitialConfig | null>(
     nonInteractiveMode
       ? {
           documentId: viewOnlyDocumentId,
@@ -58,6 +58,7 @@ export function App({ nonInteractiveMode = false }: Props) {
         }
       : null,
   )
+  const [didSetInitialConfig, setDidSetInitialConfig] = useState(false)
   const [bridge] = useState(() => new EditorToClientBridge(window.parent))
   const [docState, setDocState] = useState<DocState | null>(null)
   const [application] = useState(() => new Application())
@@ -198,12 +199,14 @@ export function App({ nonInteractiveMode = false }: Props) {
           application.setRole(role)
 
           if (editorInitializationConfig) {
-            setInitialConfig({ documentId, username, editorInitializationConfig: editorInitializationConfig })
+            initialConfig.current = { documentId, username, editorInitializationConfig: editorInitializationConfig }
+            setDidSetInitialConfig(true)
             if (editorInitializationConfig.mode === 'conversion') {
               newDocState.setIsInConversionFromOtherFormat()
             }
           } else {
-            setInitialConfig({ documentId, username })
+            initialConfig.current = { documentId, username }
+            setDidSetInitialConfig(true)
           }
         },
 
@@ -259,6 +262,16 @@ export function App({ nonInteractiveMode = false }: Props) {
     const newDocState = new DocState(
       {
         docStateRequestsPropagationOfUpdate: (message: RtsMessagePayload, debugSource: BroadcastSource) => {
+          /** Return if the parent hasn't properly initialized us yet */
+          if (!initialConfig.current) {
+            application.logger.info('Doc state requested update before initialization was complete')
+            return
+          }
+
+          if (application.getRole().isPublicViewer()) {
+            return
+          }
+
           bridge
             .getClientInvoker()
             .editorRequestsPropagationOfUpdate(message, debugSource)
@@ -267,6 +280,16 @@ export function App({ nonInteractiveMode = false }: Props) {
             })
         },
         handleAwarenessStateUpdate: (states) => {
+          /** Return if the parent hasn't properly initialized us yet */
+          if (!initialConfig.current) {
+            application.logger.info('Doc state requested awareness update before initialization was complete')
+            return
+          }
+
+          if (application.getRole().isPublicViewer()) {
+            return
+          }
+
           bridge
             .getClientInvoker()
             .handleAwarenessStateUpdate(states)
@@ -286,7 +309,7 @@ export function App({ nonInteractiveMode = false }: Props) {
     )
 
     return newDocState
-  }, [application.eventBus, application.logger, bridge])
+  }, [application, bridge])
 
   useEffectOnce(() => {
     const newDocState = createInitialDocState()
@@ -388,7 +411,7 @@ export function App({ nonInteractiveMode = false }: Props) {
     [application.logger, bridge],
   )
 
-  if (!initialConfig || !docState) {
+  if (!didSetInitialConfig || !initialConfig.current || !docState) {
     return null
   }
 
@@ -413,9 +436,9 @@ export function App({ nonInteractiveMode = false }: Props) {
           clientInvoker={bridge.getClientInvoker()}
           docMap={docMap}
           docState={docState}
-          documentId={initialConfig.documentId}
+          documentId={initialConfig.current.documentId}
           editingLocked={editingLocked || interactionMode === 'view'}
-          editorInitializationConfig={initialConfig.editorInitializationConfig}
+          editorInitializationConfig={initialConfig.current.editorInitializationConfig}
           hasEditAccess={application.getRole().canEdit()}
           hidden={editorHidden}
           nonInteractiveMode={nonInteractiveMode}
@@ -424,7 +447,7 @@ export function App({ nonInteractiveMode = false }: Props) {
           interactionMode={interactionMode}
           onInteractionModeChange={onInteractionModeChange}
           setEditorRef={setEditorRef}
-          username={initialConfig.username}
+          username={initialConfig.current.username}
           showTreeView={showTreeView}
           isSuggestionsFeatureEnabled={isSuggestionsFeatureEnabled}
         />

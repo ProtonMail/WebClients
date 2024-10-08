@@ -1,4 +1,4 @@
-import { useDriveDocsFeatureFlag } from '../store/_documents';
+import { useDriveDocsFeatureFlag, useDriveDocsPublicSharingFF } from '../store/_documents';
 import { type DocumentKeys } from './_documents';
 import { usePublicNode } from './_nodes';
 import type { DecryptedNode } from './_nodes/interface';
@@ -10,6 +10,11 @@ export interface PublicDriveCompat {
      * Whether or not Docs is enabled. Only uses feature flags, not context aware.
      */
     isDocsEnabled: boolean;
+
+    /**
+     * Whether or not the public docs feature flag is enabled.
+     */
+    isPublicDocsEnabled: boolean;
 
     /**
      * Whether or not the interface is ready to receive calls.
@@ -39,6 +44,7 @@ export interface PublicDriveCompat {
 
 export const usePublicDriveCompat = (): PublicDriveCompat => {
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
+    const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
 
     const { isReady, isError, getPublicAuthHeaders } = usePublicDocsToken();
 
@@ -48,6 +54,7 @@ export const usePublicDriveCompat = (): PublicDriveCompat => {
         isDocsEnabled,
         isReady,
         isError,
+        isPublicDocsEnabled: isDocsPublicSharingEnabled,
         getDocumentKeys: async (nodeMeta) => ({
             documentContentKey: await getNodeContentKey(nodeMeta),
         }),

@@ -2,15 +2,15 @@ import type { DecryptMessage } from './DecryptMessage'
 import type { Commit } from '@proton/docs-proto'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
-import type { DocumentKeys } from '@proton/drive-store'
 import type { DecryptedMessage } from '@proton/docs-shared'
 import { DecryptedCommit } from '../Models/DecryptedCommit'
 import metrics from '@proton/metrics'
+import type { SessionKey } from 'packages/crypto/lib'
 
 type DecryptCommitDTO = {
   commit: Commit
   commitId: string
-  keys: DocumentKeys
+  documentContentKey: SessionKey
 }
 
 const VERIFY_VALUE_FALSE_DUE_TO_COMMIT_HAVING_SEPARATE_VERIFICATION = false
@@ -25,7 +25,7 @@ export class DecryptCommit implements UseCaseInterface<DecryptedCommit> {
       updates.map((update) =>
         this.decryptMessage.execute({
           message: update,
-          keys: dto.keys,
+          documentContentKey: dto.documentContentKey,
           verify: VERIFY_VALUE_FALSE_DUE_TO_COMMIT_HAVING_SEPARATE_VERIFICATION,
         }),
       ),

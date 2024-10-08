@@ -13,13 +13,13 @@ import { stringToUtf8Array } from '@proton/crypto/lib/utils'
 import type { EncryptionContext } from './EncryptionContext'
 import { deriveGcmKey } from '../../Crypto/deriveGcmKey'
 import { HKDF_SALT_SIZE } from '../../Crypto/Constants'
-import type { DriveCompat } from '@proton/drive-store'
 import { Result } from '../../Domain/Result/Result'
+import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 
 export class EncryptionService<C extends EncryptionContext> {
   constructor(
     private context: C,
-    private driveCompat: DriveCompat,
+    private driveCompat: DriveCompatWrapper,
   ) {
     this.context = context
   }
@@ -100,8 +100,12 @@ export class EncryptionService<C extends EncryptionContext> {
   }
 
   async getVerificationKey(email: string): Promise<Result<PublicKeyReference[]>> {
+    if (!this.driveCompat.userCompat) {
+      return Result.fail('User compat not available')
+    }
+
     try {
-      const value = await this.driveCompat.getVerificationKey(email)
+      const value = await this.driveCompat.userCompat.getVerificationKey(email)
 
       return Result.ok(value)
     } catch (error) {

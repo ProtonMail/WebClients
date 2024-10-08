@@ -11,18 +11,20 @@ import { useDriveCompat } from '@proton/drive-store'
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { c } from 'ttag'
 
-import { DocsLayout } from '../Components'
-import { DocumentConverter } from '../Components/DocumentConverter'
-import { DocumentViewer } from '../Components/DocumentViewer'
-import { useDriveDocsLandingPageFeatureFlag } from '../Components/Homepage/useDriveDocsLandingPageFeatureFlag'
-import { WordCountContextProvider } from '../Components/WordCount/WordCountProvider'
-import { APP_VERSION } from '../config'
-import ApplicationProvider, { useApplication } from './ApplicationProvider'
-import { useDocsUrlBar } from './useDocsUrlBar'
+import { DocsLayout } from '../../Components'
+import { DocumentConverter } from '../../Components/DocumentConverter'
+import { DocumentViewer } from '../../Components/DocumentViewer'
+import { useDriveDocsLandingPageFeatureFlag } from '../../Components/Homepage/useDriveDocsLandingPageFeatureFlag'
+import { WordCountContextProvider } from '../../Components/WordCount/WordCountProvider'
+import { APP_VERSION } from '../../config'
+import ApplicationProvider, { useApplication } from '../../Containers/ApplicationProvider'
+import { useDocsUrlBar } from '../../Containers/useDocsUrlBar'
 
-const HomepageRoute = lazy(() => import('../Components/Homepage/HomepageRoute'))
+const HomepageRoute = lazy(() => import('../../Components/Homepage/HomepageRoute'))
 
-function ApplicationContainer() {
+function UserApplicationContent() {
+  void import('../../tailwind.scss')
+
   const api = useApi()
   const driveCompat = useDriveCompat()
   const { API_URL } = useConfig()
@@ -32,11 +34,12 @@ function ApplicationContainer() {
   const application = useMemo(() => {
     return new Application(
       api,
+      undefined,
       {
         apiUrl: API_URL,
         uid: UID,
       },
-      driveCompat,
+      { userCompat: driveCompat },
       APP_VERSION,
     )
     // Ensure only one application instance is created
@@ -76,11 +79,9 @@ function ApplicationContainer() {
 }
 
 function DocsRoute({ driveCompat }: { driveCompat: DriveCompat }) {
-  void import('../tailwind.scss')
-
   const application = useApplication()
 
-  const { openAction, updateParameters } = useDocsUrlBar({ driveCompat })
+  const { openAction, updateParameters } = useDocsUrlBar({ isDocsEnabled: driveCompat.isDocsEnabled })
 
   const [action, setAction] = useState<DocumentAction['mode']>()
   const [isCreatingNewDocument, setIsCreatingNewDocument] = useState<boolean>(false)
@@ -94,6 +95,12 @@ function DocsRoute({ driveCompat }: { driveCompat: DriveCompat }) {
       setIsAppReady(true)
     }
   }, [application, isAppReady])
+
+  useEffect(() => {
+    if (openAction) {
+      application.logger.info('Opening doc through action', openAction)
+    }
+  }, [application.logger, openAction])
 
   const createNewDocInRoot = useCallback(async () => {
     const date = getPlatformFriendlyDateForFileName()
@@ -217,16 +224,18 @@ function Content({
     )
   }
 
-  const lookup: NodeMeta = {
+  const nodeMeta: NodeMeta = {
     volumeId: openAction.volumeId,
     linkId: openAction.linkId,
   }
 
   if (openAction.mode === 'convert') {
-    return <DocumentConverter onSuccess={onConversionSuccess} getNodeContents={getNodeContents} lookup={lookup} />
+    return <DocumentConverter onSuccess={onConversionSuccess} getNodeContents={getNodeContents} lookup={nodeMeta} />
+  } else {
+    return (
+      <DocumentViewer editorInitializationConfig={editorInitializationConfig} lookup={nodeMeta} action={actionMode} />
+    )
   }
-
-  return <DocumentViewer editorInitializationConfig={editorInitializationConfig} lookup={lookup} action={actionMode} />
 }
 
-export default ApplicationContainer
+export default UserApplicationContent
