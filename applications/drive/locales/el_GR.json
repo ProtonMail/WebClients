@@ -393,6 +393,9 @@
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
       ],
+      "Go back": [
+        "Επιστροφή"
+      ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Πηγαίνετε στο ${ DRIVE_SHORT_APP_NAME }"
       ],
@@ -803,6 +806,9 @@
       ],
       "Start setup": [
         "Εκκίνησης ρύθμισης"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Ξεκινώντας από ${ priceUnlimited }"
       ],
       "Stay": [
         "Παραμονή"
@@ -6621,6 +6627,9 @@
       "Get started for ${ price }": [
         "Ξεκινήστε με ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Ξεκινώντας από ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
       ]
@@ -7196,6 +7205,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Αποκτήστε το Mail Plus για ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Ξεκινώντας από ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7761,17 +7773,41 @@
       ]
     },
     "Onboarding Action": {
+      "Continue": [
+        "Συνέχεια"
+      ],
       "Create new document": [
         "Δημιουργία νέου εγγράφου"
       ],
+      "Get started": [
+        "Ας ξεκινήσουμε"
+      ],
+      "Maybe later": [
+        "Ίσως αργότερα"
+      ],
       "Next": [
         "Επόμενο"
+      ],
+      "Select theme": [
+        "Επιλογή θέματος"
+      ],
+      "Skip": [
+        "Παράλειψη"
+      ],
+      "Skip for now": [
+        "Αγνοήστε για τώρα"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Έναρξη χρήσης του ${ DRIVE_APP_NAME }"
       ],
       "Try it later": [
         "Δοκιμάστε το αργότερα"
+      ],
+      "Upload file": [
+        "Ανέβασμα αρχείου"
+      ],
+      "Upload folder": [
+        "Ανέβασμα φακέλου"
       ]
     },
     "Onboarding Info": {
@@ -7781,11 +7817,29 @@
       "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
         "Δημιουργήστε και συνεργαστείτε σε έγγραφα. Όλα προστατεύονται από κρυπτογράφηση από άκρο σε άκρο."
       ],
+      "Final approval in progress": [
+        "Τελική έγκριση σε εξέλιξη"
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Αρχίστε να χρησιμοποιείτε το ${ DRIVE_APP_NAME } και θα αναβαθμίστε τον αποθηκευτικό χώρο σας σε 5 GB!"
       ],
+      "Get the desktop app": [
+        "Λήψη της εφαρμογής για υπολογιστές"
+      ],
+      "Get the mobile app": [
+        "Αποκτήστε την εφαρμογή για κινητά"
+      ],
       "Introducing ${ DOCS_APP_NAME }": [
         "Παρουσιάζουμε το ${ DOCS_APP_NAME }"
+      ],
+      "Invitation accepted": [
+        "Η πρόσκληση έγινε αποδεκτή"
+      ],
+      "Invitation received": [
+        "Ληφθείσες προσκλήσεις"
+      ],
+      "Invite team members": [
+        "Πρόσκληση μελών ομάδας"
       ],
       "Manage access": [
         "Διαχείριση πρόσβασης"
@@ -8608,6 +8662,9 @@
       ],
       "/ month": [
         "/ μήνας"
+      ],
+      "/month": [
+        "/μήνα"
       ],
       "1 year": [
         "1 έτος"

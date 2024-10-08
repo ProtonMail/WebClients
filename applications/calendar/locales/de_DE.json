@@ -665,6 +665,9 @@
       "Start setup": [
         "Einrichtung starten"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Ab ${ priceUnlimited }"
+      ],
       "Stay": [
         "Nicht schließen"
       ],
@@ -3828,6 +3831,14 @@
         "Sehr klein"
       ]
     },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Google Meet beitreten"
+      ],
+      "Meeting link:": [
+        "Meeting-Link:"
+      ]
+    },
     "Group": {
       "Account": [
         "Konto"
@@ -6245,6 +6256,9 @@
       "Get started for ${ price }": [
         "Starte für ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Ab ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Jetzt upgraden"
       ]
@@ -6820,6 +6834,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Hol dir Mail Plus für ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Ab ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7115,6 +7132,9 @@
       ],
       "Link copied to clipboard": [
         "Link in die Zwischenablage kopiert"
+      ],
+      "Passcode copied to clipboard": [
+        "Passcode in die Zwischenablage kopiert."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8184,6 +8204,9 @@
         "${ n } Monate"
       ],
       "/ month": [
+        "/ Monat"
+      ],
+      "/month": [
         "/ Monat"
       ],
       "1 year": [
@@ -10241,6 +10264,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Jährlich, ${ untilString }"
+      ]
+    },
+    "Zoom Meeting": {
+      "Passcode: ${ password }": [
+        "Passcode: ${ password }"
       ]
     }
   }

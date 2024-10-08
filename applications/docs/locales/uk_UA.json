@@ -135,6 +135,9 @@
       "Close": [
         "Закрити"
       ],
+      "Close navigation": [
+        "Закрити панель навігації"
+      ],
       "Close this banner": [
         "Закрити цей банер"
       ],
@@ -390,17 +393,23 @@
       "Not now": [
         "Не зараз"
       ],
+      "Ok": [
+        "OK"
+      ],
       "OK": [
         "Застосувати"
       ],
-      "Ok": [
-        "OK"
+      "Open": [
+        "Відкрити"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Відкрити налаштування ${ CALENDAR_APP_NAME }"
       ],
       "Open ${ DRIVE_APP_NAME }": [
         "Відкрити ${ DRIVE_APP_NAME }"
+      ],
+      "Open navigation": [
+        "Відкрити панель навігації"
       ],
       "Pay": [
         "Сплатити"
@@ -489,11 +498,17 @@
       "Save changes": [
         "Зберегти зміни"
       ],
+      "Search": [
+        "Пошук"
+      ],
       "Search countries": [
         "Пошук країн"
       ],
       "See how": [
         "Подивитись як"
+      ],
+      "See plan features": [
+        "Переглянути можливості тарифного плану"
       ],
       "See version history": [
         "Переглянути історію версій"
@@ -572,6 +587,12 @@
       ],
       "Update recovery phrase": [
         "Оновити фразу відновлення"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade now": [
+        "Покращити"
       ],
       "Upload anyway": [
         "Все одно вивантажити"
@@ -690,6 +711,11 @@
         "Якщо ви зараз вийдете, деякі події можуть не імпортуватися"
       ]
     },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "Програми ${ BRAND_NAME }"
+      ]
+    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Вдоскональте рівень продуктивності електронної пошти. Дозвольте ${ BRAND_NAME } Scribe допомогти вам писати, відповідати й рецензувати ваші листи."
@@ -745,6 +771,19 @@
       ],
       "Premium Password Manager": [
         "Premium Менеджер паролів"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Знижки відносно стандартної місячної ціни."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Ваша передплата автоматично поновиться за стандартною ціною з урахуванням знижки й тривалості в кінці платіжного циклу."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Гарантія повернення коштів протягом 30 днів"
       ]
     },
     "bf2023: renew": {
@@ -4382,6 +4421,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "На жаль, схоже що неможливо розшифрувати файл або його вміст."
       ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
+      ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Завантаження сотень файлів одразу може вплинути на швидкодію."
       ],
@@ -4927,6 +4969,9 @@
       "Mail Server (IMAP)": [
         "Поштовий сервер (IMAP)"
       ],
+      "Main": [
+        "Головна"
+      ],
       "Make editor": [
         "Зробити редактором"
       ],
@@ -4944,6 +4989,9 @@
       ],
       "Move to Inbox": [
         "Перемістити до вхідних"
+      ],
+      "Navigation": [
+        "Навігація"
       ],
       "New password": [
         "Новий пароль"
@@ -5266,6 +5314,14 @@
         "за ${ price }"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Скористатися пропозицією"
+      ],
+      "Special Offer": [
+        "Спеціальна пропозиція"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Програма ${ MAIL_APP_NAME } для комп'ютера"
@@ -5284,6 +5340,24 @@
       ],
       "Unlimited folders, labels and filters": [
         "Необмежена кількість тек, міток і фільтрів"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Подовження за ${ renewablePrice }, можна скасувати будь-коли"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "за перший місяць"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Термін дії обмеженої пропозиції закінчується 2 квітня 2024 року"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Отримайте ${ planName } всього за ${ planPrice }"
       ]
     },
     "Message": {
@@ -7210,6 +7284,48 @@
         "Підписати"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Закрити"
+      ],
+      "Don't show this offer again": [
+        "Більше не показувати цю пропозицію"
+      ],
+      "Special offer": [
+        "Спеціальна пропозиція"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Перейти на Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } день",
+        "${ days } дні",
+        "${ days } днів",
+        "${ days } днів"
+      ],
+      "${ hours } hour": [
+        "${ hours } година",
+        "${ hours } години",
+        "${ hours } годин",
+        "${ hours } годин"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } хвилина",
+        "${ minutes } хвилини",
+        "${ minutes } хвилин",
+        "${ minutes } хвилин"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунди",
+        "${ seconds } секунд",
+        "${ seconds } секунд"
+      ]
+    },
     "specialoffer: Deal": {
       "${ n } month FREE": [
         "${ n } місяць БЕЗПЛАТНО",
@@ -7262,6 +7378,11 @@
         "Підтримка онлайн-приватності"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Ця передплата автоматично поновлюватиметься кожні 2 роки за тією ж ціною, доки ви її не скасуєте."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Перейти до тарифних планів"
@@ -7276,6 +7397,9 @@
         "${ n } місяці",
         "${ n } місяців",
         "${ n } місяців"
+      ],
+      "/ month": [
+        "/ місяць"
       ],
       "1 year": [
         "1 рік"
@@ -7304,11 +7428,17 @@
       "Billed at ${ amount } for 30 months": [
         "До сплати ${ amount } за 30 місяців"
       ],
+      "Get the deal": [
+        "Скористатися пропозицією"
+      ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Продовження через 1 рік за зниженою ціною ${ discountedAmount } замість ${ regularAmount } (знижка ${ discount }%)"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Продовження через 2 роки за зниженою ціною ${ discountedAmount } замість ${ regularAmount } (знижка ${ discount }%)"
+      ],
+      "Save ${ discount }%": [
+        "Знижка ${ discount }%"
       ],
       "Standard price ${ amount } for 1 month": [
         "Стандартна ціна ${ amount } за 1 місяць"
@@ -7324,6 +7454,20 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Стандартна ціна ${ amount } за 30 місяців"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Розпродаж у Чорну П'ятницю"
+      ],
+      "Cyber Week Sale": [
+        "Розпродаж Кібертижня"
+      ],
+      "End of Year Sale": [
+        "Передноворічний розпродаж"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Заощадьте ще більше, передплативши тарифний план ${ planName } на 2 роки"
       ]
     },
     "specialoffer: Tooltip": {
@@ -7371,6 +7515,14 @@
       ],
       "Pending": [
         "У черзі"
+      ]
+    },
+    "Storage": {
+      "Upgrade storage": [
+        "Збільшити сховище"
+      ],
+      "Your current storage:": [
+        "Ваше поточне сховище:"
       ]
     },
     "storage_split: action": {
@@ -7538,6 +7690,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "За ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховища"
+      ],
+      "and 15 more premium features": [
+        "та ще 15 преміальних функцій"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматичне пересилання пошти ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Сповіщення про витоки даних ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Програма для комп'ютера"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Допоможіть нам зберегти інтернет безпечним і приватним для всіх. Передплатіть тарифний план."
+      ],
+      "No ads or tracking": [
+        "Без реклами і стеження"
+      ],
+      "Short @pm.me email address": [
+        "Коротка адреса електронної пошти @pm.me"
+      ],
+      "Support our mission": [
+        "Підтримайте нашу місію"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade your productivity": [
+        "Вдоскональте свою продуктивність"
+      ],
+      "We don't sell your data": [
+        "Ми не продаємо ваші дані"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватність є нашою місією"
       ]
     },
     "Subscription reminder": {
@@ -8238,6 +8431,9 @@
       ],
       "What would you like to import?": [
         "Що ви бажаєте імпортувати?"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Ваш безплатний пробний період ${ planName } завершується ${ textDate }"
       ],
       "Your account is protected": [
         "Ваш обліковий запис захищено"

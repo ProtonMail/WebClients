@@ -655,6 +655,9 @@
       "Keep logo": [
         "Manter o logo"
       ],
+      "Keep my subscription": [
+        "Manter a minha assinatura"
+      ],
       "label emails as": [
         "etiquetar e-mail como"
       ],
@@ -799,11 +802,11 @@
       "Refresh status": [
         "Atualizar estado"
       ],
-      "refresh the page": [
-        "actualizar a página"
-      ],
       "Refresh the page": [
         "Actualizar a página"
+      ],
+      "refresh the page": [
+        "actualizar a página"
       ],
       "Reload": [
         "Recarregar"
@@ -1278,6 +1281,10 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } domínio personalizado adicional",
+        "${ domains } domínios personalizados adicionais"
+      ],
       "${ ips } server": [
         "${ ips } servidor",
         "${ ips } servidores"
@@ -3434,11 +3441,17 @@
       "All events in this series were updated.": [
         "Todos os eventos desta série foram atualizados."
       ],
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Todos os eventos desta série foram atualizados. Veja o que mudou:\n\n${ updateEventDetailsText }"
+      ],
       "This event occurrence was canceled.": [
         "A ocorrência deste evento foi cancelada."
       ],
       "This event occurrence was updated.": [
         "Esta ocorrência do evento foi atualizada."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Esta ocorrência de evento foi atualizada. Veja o que mudou:\n\n${ updateEventDetailsText }"
       ],
       "This event was updated.": [
         "Este evento foi atualizado."
@@ -6409,11 +6422,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicados podem ser adicionados a gateways privados para ativar controlo de acesso aperfeiçoado."
@@ -7584,6 +7597,9 @@
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Estas definições são fornecidas para operar com routers e clientes oficiais WireGuard."
       ],
+      "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
+        "Estas credenciais não podem ser utilizadas para iniciar sessão na nossa aplicação oficial ${ VPN_APP_NAME }. ${ learnMore }"
+      ],
       "They'll receive a free month of ${ planName }.": [
         "Eles receberão um mês grátis de ${ planName }."
       ],
@@ -8036,6 +8052,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Está prestes a abrir outro separador no navegador e visitar:"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Está prestes a abrir o seu navegador predefinido e a visitar:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Tem actualmente sessão iniciada como ${ user.Name } (${ user.Email })."
@@ -10367,6 +10386,26 @@
         "Velocidade VPN média"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Descubra todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Comece por ${ price }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano gratuito"
@@ -10394,26 +10433,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Atualizar para ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Descubra todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Comece por ${ price }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade now": [
-        "Actualizar agora"
       ]
     },
     "new_plans: feature": {
@@ -10954,6 +10973,14 @@
         "O seu plano selecionado: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilização da sua conta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Eliminar conta?"
@@ -10972,14 +10999,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Aceda a funcionalidades premium alterando a sua subscrição."
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilização da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -11865,6 +11884,14 @@
       "Secure vault sharing": [
         "Partilha segura de cofre"
       ],
+      "Secure vault sharing (${ n } vault)": [
+        "Partilha segura de cofre (${ n } cofre)",
+        "Partilha segura de cofre (${ n } cofres)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Partilha segura de cofre (${ n } cofre) e partilha de ligações",
+        "Partilha segura de cofre (${ n } cofres) e partilha de ligações"
+      ],
       "Setting up your organization": [
         "A configurar a sua organização"
       ],
@@ -12067,6 +12094,12 @@
       ],
       "domain.com": [
         "domínio.com"
+      ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "ex. https://example.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "ex. https://idp.example.com/sso/saml"
       ],
       "E.g., ": [
         "Ex., "
@@ -14107,11 +14140,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-all address": [
-        "Endereço Catch-All"
-      ],
       "Catch-All address": [
         "Endereço captura-tudo"
+      ],
+      "Catch-all address": [
+        "Endereço Catch-All"
       ],
       "Change login password": [
         "Alterar a palavra-passe de início de sessão"

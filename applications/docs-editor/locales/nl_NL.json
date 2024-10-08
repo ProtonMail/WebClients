@@ -17,6 +17,9 @@
       "a. b. c. d.": [
         "a. b. c. d."
       ],
+      "Accept suggestion": [
+        "Accepteer suggestie"
+      ],
       "Add comment": [
         "Commentaar toevoegen"
       ],
@@ -76,6 +79,9 @@
       ],
       "Copy link": [
         "Link kopiëren"
+      ],
+      "Decline suggestion": [
+        "Suggestie verwerpen"
       ],
       "Delete": [
         "Verwijderen"
@@ -389,6 +395,12 @@
       ]
     },
     "Error": {
+      "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
+        "Er is een fout opgetreden tijdens het laden van het document. Om corruptie te voorkomen, is de editor vergrendeld. Herlaad de pagina en probeer het opnieuw."
+      ],
+      "Failed to export document.": [
+        "Exporteren van document mislukt."
+      ],
       "Failed to import HTML due to unknown error.": [
         "Importeren van HTML mislukt door een onbekende fout."
       ],
@@ -461,6 +473,9 @@
       "Editing": [
         "Bewerken"
       ],
+      "Font": [
+        "Lettertype"
+      ],
       "Just now": [
         "Zojuist"
       ],
@@ -473,6 +488,9 @@
       "Something went wrong:": [
         "Er is iets fout gegaan:"
       ],
+      "Text color": [
+        "Tekstkleur"
+      ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "De inhoud die u probeert te plakken is te groot om tegelijk geplakt te worden. Probeer opnieuw door in kleinere stukken te plakken."
       ],
@@ -484,11 +502,17 @@
       ]
     },
     "Label": {
+      "Add link": [
+        "Link toevoegen"
+      ],
       "Background colour": [
         "Achtergrondkleur"
       ],
       "Delete": [
         "Verwijderen"
+      ],
+      "Delete link": [
+        "Link verwijderen"
       ],
       "Insert": [
         "Invoegen"
@@ -508,8 +532,14 @@
       "Replace": [
         "Vervangen"
       ],
+      "Replace link": [
+        "Link vervangen"
+      ],
       "Text colour": [
         "Tekstkleur"
+      ],
+      "with \"${ replaceWith }\"": [
+        "met \"${ replaceWith }\""
       ]
     },
     "Placeholder": {

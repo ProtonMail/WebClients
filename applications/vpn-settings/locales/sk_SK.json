@@ -6226,11 +6226,17 @@
       "From ${ price }": [
         "Od ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Cena od ${ priceMailPlus }"
+      ],
       "Upgrade": [
         "Upgradovať"
       ],
       "Upgrade now": [
         "Aktualizovať teraz"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Navýšte na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -8615,6 +8621,9 @@
       "/ month": [
         "/ mesiac"
       ],
+      "/month": [
+        "/mesiac"
+      ],
       "1 year": [
         "1 rok"
       ],
@@ -9949,7 +9958,7 @@
         "Stiahnuť ${ VPN_APP_NAME }"
       ],
       "Downloads": [
-        "Stiahnuté"
+        "Na stiahnutie"
       ],
       "Edit credit/debit card": [
         "Upraviť platobnú kartu"

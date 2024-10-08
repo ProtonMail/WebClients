@@ -139,6 +139,9 @@
       "Close": [
         "Cerrar"
       ],
+      "Close navigation": [
+        "Cerrar navegación"
+      ],
       "Close this banner": [
         "Cerrar este banner"
       ],
@@ -153,6 +156,9 @@
       ],
       "Contact group": [
         "Grupo de contactos"
+      ],
+      "Context menu": [
+        "Menú contextual"
       ],
       "Continue": [
         "Continuar"
@@ -399,17 +405,26 @@
       "Not now": [
         "Ahora no"
       ],
+      "Ok": [
+        "OK"
+      ],
       "OK": [
         "OK"
       ],
-      "Ok": [
-        "OK"
+      "Open": [
+        "Abrir"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir ajustes de ${ CALENDAR_APP_NAME }"
       ],
       "Open ${ DRIVE_APP_NAME }": [
         "Abrir ${ DRIVE_APP_NAME }"
+      ],
+      "Open folder": [
+        "Abrir la carpeta"
+      ],
+      "Open navigation": [
+        "Abrir navegación"
       ],
       "Pay": [
         "Pagar"
@@ -498,11 +513,20 @@
       "Save changes": [
         "Guardar los cambios"
       ],
+      "Search": [
+        "Buscar"
+      ],
       "Search countries": [
         "Buscar países"
       ],
+      "Search docs": [
+        "Buscar documentos"
+      ],
       "See how": [
         "Ver cómo"
+      ],
+      "See plan features": [
+        "Ver funcionalidades del plan"
       ],
       "See version history": [
         "Ver historial de versiones"
@@ -539,6 +563,9 @@
       ],
       "Start import": [
         "Iniciar importación"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "A partir de ${ priceUnlimited }"
       ],
       "Stay": [
         "Permanecer"
@@ -584,6 +611,15 @@
       ],
       "Update recovery phrase": [
         "Actualizar frase de recuperación"
+      ],
+      "Upgrade": [
+        "Actualizar"
+      ],
+      "Upgrade now": [
+        "Actualizar ahora"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Mejore a ${ BRAND_NAME } Unlimited"
       ],
       "Upload anyway": [
         "Cargar de todos modos"
@@ -701,6 +737,11 @@
         "Si sale ahora, algunos eventos no serían importados"
       ]
     },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "Aplicaciones de ${ BRAND_NAME }"
+      ]
+    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Lleve la productividad de sus correos electrónicos a nuevos niveles. Deje que ${ BRAND_NAME } Scribe le ayude a escribir, responder y revisar sus correos electrónicos."
@@ -756,6 +797,19 @@
       ],
       "Premium Password Manager": [
         "Administrador de contraseñas premium"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Los descuentos se basan en la cuota estándar mensual."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "La suscripción se renovará automáticamente con la misma tarifa estándar con descuento y duración al término del ciclo de facturación."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Garantía de reembolso durante 30 días"
       ]
     },
     "bf2023: renew": {
@@ -1947,6 +2001,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } protege su cuenta con monitoreo dedicado 24/7 de actividades sospechosas, incluyendo la intervención de especialistas en seguridad."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA añade una capa de seguridad adicional, evitando acceso no autorizado."
       ],
@@ -1995,6 +2052,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Use arrastrar y soltar para clasificar la prioridad entre contactos. Desmarque los contactos que no quiere combinar."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Con los grupos de contactos, puede enviar correos electrónicos a todos los miembros del grupo con un clic."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puede importar eventos en formato iCal (archivos ICS). El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos.\nSi el archivo es más grande, debe dividirlo en archivos más pequeños."
       ],
@@ -2006,6 +2066,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Se establecieron los métodos de recuperación de datos y cuenta."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
       ]
     },
     "description": {
@@ -2087,6 +2150,49 @@
       ],
       "Priority support": [
         "Soporte prioritario"
+      ]
+    },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Obtenga ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Obténgalo por ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Se factura cada dos años por ${ amountBilled }. Los descuentos se aplican sobre el precio mensual estándar."
+      ],
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Facturado anualmente por ${ amountBilled }. Ahorre ${ amountSave } en comparación a 2 suscripciones anuales de ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB de almacenamiento"
+      ],
+      "2 users": [
+        "2 usuarios"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Acceso completo a todos los productos de ${ BRAND_NAME }"
+      ],
+      "You save ${ amountSave }": [
+        "Ahorre ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Todas las funciones de ${ BRAND_NAME }, para 2."
+      ],
+      "Double your storage": [
+        "Duplica su almacenamiento"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Presentamos ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Email body for description (description part)": {
@@ -3692,6 +3798,9 @@
       "Create public link": [
         "Crear enlace público"
       ],
+      "Create your end-to-end encrypted document": [
+        "Cree su documento cifrado de extremo a extremo"
+      ],
       "Creating link to file": [
         "Creando enlace al archivo"
       ],
@@ -4024,6 +4133,9 @@
       "No payment is required at this time.": [
         "No se requiere ningún pago en este momento."
       ],
+      "No recent documents": [
+        "No hay documentos recientes."
+      ],
       "No results found": [
         "No se encontraron resultados"
       ],
@@ -4345,6 +4457,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Lamentablemente, parece que el archivo o algunos de los datos no pueden descifrarse."
       ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Actualice ahora para obtener funciones premium, productos y almacenamiento a un precio especial"
+      ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Cargar cientos de archivos a la vez puede tener un impacto en el rendimiento."
       ],
@@ -4428,6 +4543,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Está a punto de abrir otra pestaña del navegador y visitar:"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Está a punto de abrir su navegador por defecto y consultar:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Actualmente inició sesión como ${ user.Name } (${ user.Email })."
@@ -4889,6 +5007,9 @@
       "Mail Server (IMAP)": [
         "Servidor de correo (IMAP)"
       ],
+      "Main": [
+        "Principal"
+      ],
       "Make editor": [
         "Dar permisos para editar"
       ],
@@ -4906,6 +5027,9 @@
       ],
       "Move to Inbox": [
         "Mover al buzón"
+      ],
+      "Navigation": [
+        "Navegación"
       ],
       "New password": [
         "Contraseña nueva"
@@ -5218,6 +5342,14 @@
         "por ${ price }"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Obtener la oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "App de escritorio ${ MAIL_APP_NAME }"
@@ -5236,6 +5368,24 @@
       ],
       "Unlimited folders, labels and filters": [
         "Carpetas, etiquetas y filtros ilimitados"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Se renueva por ${ renewablePrice }, cancele cuando quiera"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "por el primer mes"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Oferta por tiempo limitado, expira el 2 de abril de 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Obtenga ${ planName } por solo ${ planPrice }"
       ]
     },
     "Message": {
@@ -5550,8 +5700,14 @@
       "Get started for ${ price }": [
         "Empiece por ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "A partir de ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Mejorar ahora"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Mejora a ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7261,6 +7417,40 @@
         "Firmar"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Cerrar"
+      ],
+      "Don't show this offer again": [
+        "No volver a mostrar esta oferta"
+      ],
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Obtenga Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } día",
+        "${ days } días"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
+      ],
+      "${ seconds } second": [
+        "${ seconds } segundo",
+        "${ seconds } segundos"
+      ]
+    },
     "specialoffer: Deal": {
       "${ n } month FREE": [
         "${ n } mes gratis",
@@ -7311,6 +7501,11 @@
         "Soporte para la privacidad en línea"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Esta suscripción se renovará automáticamente cada 2 años con la misma tarifa hasta que sea cancelada."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Ir a los planes de suscripción"
@@ -7323,6 +7518,9 @@
       "${ n } month": [
         "${ n } mes",
         "${ n } meses"
+      ],
+      "/ month": [
+        "/ mes"
       ],
       "/month": [
         "/mes"
@@ -7354,11 +7552,17 @@
       "Billed at ${ amount } for 30 months": [
         "Al precio de ${ amount } durante 30 meses"
       ],
+      "Get the deal": [
+        "Obtener la oferta"
+      ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Se renueva después de 1 año a un precio con descuento de ${ discountedAmount } en lugar de ${ regularAmount } (${ discount }% de descuento)"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Se renueva después de 2 años a un precio con descuento de ${ discountedAmount } en lugar de ${ regularAmount } (${ discount }% de descuento)"
+      ],
+      "Save ${ discount }%": [
+        "Ahorre un ${ discount }%"
       ],
       "Standard price ${ amount } for 1 month": [
         "Precio estándar ${ amount } durante 1 mes"
@@ -7374,6 +7578,20 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Precio estándar ${ amount } durante 30 meses"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Oferta de Black Friday"
+      ],
+      "Cyber Week Sale": [
+        "Oferta de la Cyber Week"
+      ],
+      "End of Year Sale": [
+        "Oferta de fin de año"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Mejore el plan y ahorre más contratando ${ planName } por 2 años"
       ]
     },
     "specialoffer: Tooltip": {
@@ -7421,6 +7639,14 @@
       ],
       "Pending": [
         "Pendiente"
+      ]
+    },
+    "Storage": {
+      "Upgrade storage": [
+        "Aumentar el almacenamiento"
+      ],
+      "Your current storage:": [
+        "El almacenamiento actual:"
       ]
     },
     "storage_split: action": {
@@ -7581,6 +7807,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Por ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "and 15 more premium features": [
+        "y 15 funciones premium más"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "App de escritorio"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdenos a mantener internet seguro y privado para todos. Mejore a un plan de pago."
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
+      ],
+      "Support our mission": [
+        "Apoye nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejore su productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos sus datos."
+      ],
+      "Your privacy is our mission": [
+        "Su privacidad es nuestra misión"
       ]
     },
     "Subscription reminder": {
@@ -7983,6 +8250,9 @@
       "Discard changes?": [
         "¿Descartar cambios?"
       ],
+      "Docs": [
+        "Documentos"
+      ],
       "Document verification failed": [
         "Error de verificación de documento"
       ],
@@ -8058,6 +8328,9 @@
       "Groups": [
         "Grupos"
       ],
+      "High security for your account": [
+        "Alta seguridad para su cuenta"
+      ],
       "Human verification": [
         "Verificación humana"
       ],
@@ -8118,6 +8391,9 @@
       ],
       "Offline": [
         "Sin conexión"
+      ],
+      "One email, many recipients": [
+        "Un correo electrónico, varios destinatarios"
       ],
       "Open actions dropdown": [
         "Abrir menú de acciones"
@@ -8259,6 +8535,9 @@
       ],
       "What would you like to import?": [
         "¿Qué quiere importar?"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "La prueba gratuita de ${ planName } termina el ${ textDate }."
       ],
       "Your account is protected": [
         "La cuenta está protegida"

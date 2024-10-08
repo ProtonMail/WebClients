@@ -1195,6 +1195,9 @@
       "Start setup": [
         "Start oppsettet"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Starter fra ${ priceUnlimited }"
+      ],
       "Stay": [
         "Bli"
       ],
@@ -1308,6 +1311,9 @@
       ],
       "Upgrade now": [
         "Oppgrader nå"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Oppgrader til ${ BRAND_NAME } Unlimited"
       ],
       "Upload picture": [
         "Last opp bilde"
@@ -3409,11 +3415,23 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } i innstillinger."
       ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } beskytter kontoen din med dedikert 24/7 overvåking av mistenkelig aktivitet – inkludert eskalering til sikkerhetsspesialister."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA legger til et ekstra sikkerhetslag, og forhindrer uautorisert tilgang."
       ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Slett automatisk søppelpost og meldinger i papirkurven, og lås opp flere premiumfunksjoner når du oppgraderer."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Fjern automatisk e-poster som ble flyttet til papirkurven og søppelpost for mer enn 30 dager siden."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Sorter innkommende meldinger automatisk før de når innboksen din."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Opprett så mange etiketter eller mapper du trenger for å holde innboksen ryddig."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dekrypterer kontakter...Dette kan ta noen få minutter. Når prosessen er fullført, vil du være i stand til å laste ned filen med alle dine kontakter eksportert."
@@ -3423,6 +3441,9 @@
       ],
       "Designed for users seeking heightened protection for their accounts.": [
         "Designet for brukere som ønsker økt beskyttelse for kontoene sine."
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "Vil du ikke sende e-posten din akkurat nå? Planlegg det til nøyaktig riktig tidspunkt."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan ta noen minutter. Når prosessen er fullført, kan du lukke dette hjelpevinduet."
@@ -3485,6 +3506,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Slå på beskyttelse mot e-postsporing for å forhindre at annonsører og andre sporer posisjonen din og nettaktiviteten din."
       ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Lås opp ${ activatePmUser } for en fengende og e-postadresse som er enkel å skrive."
+      ],
       "Unlock custom message scheduling and more premium features when you upgrade.": [
         "Lås opp tilpasset meldingsplanlegging og flere premiumfunksjoner når du oppgraderer."
       ],
@@ -3515,6 +3539,12 @@
       "When do you want your message to be sent?": [
         "Når vil du at meldingen skal sendes?"
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Med kontaktgrupper kan du sende e-post til alle i gruppen med ett klikk."
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "Med tilpasset slumring kan du skjule e-poster og angi at de skal vises igjen på et bedre tidspunkt."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere hendelser i iCal-format (ICS fil). Filen kan ha en maks størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og ha opp til ${ MAX_IMPORT_EVENTS_STRING } hendelser. Hvis filen er større, må du dele den opp i flere mindre filer."
       ],
@@ -3526,6 +3556,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Dine konto- og datagjenopprettingsmetoder er angitt."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -5212,6 +5245,23 @@
       ],
       "Sign in with Google": [
         "Logg på med Google"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Bli med i Google Meet"
+      ],
+      "Joining instructions": [
+        "Instruksjoner for å bli med"
+      ],
+      "Less details": [
+        "Mindre informasjon"
+      ],
+      "Meeting link:": [
+        "Møtekobling:"
+      ],
+      "More details": [
+        "Mer informasjon"
       ]
     },
     "Group": {
@@ -7325,6 +7375,9 @@
       "You are about to open another browser tab and visit:": [
         "Du åpner nå en ny nettleserfane for å besøke:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Du er i ferd med å åpne standardnettleseren din og besøke:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du er for øyeblikket pålogget som ${ user.Name } (${ user.Email })."
       ],
@@ -9001,8 +9054,14 @@
       "Get started for ${ price }": [
         "Kom i gang for ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Starter fra ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Oppgrader nå"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Oppgrader til ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -9576,6 +9635,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Få Mail Plus for ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Starter fra ${ price }"
       ]
     },
     "new_plans: title": {
@@ -9880,6 +9942,9 @@
       ],
       "Link copied to clipboard": [
         "Kobling kopiert til utklippstavlen"
+      ],
+      "Passcode copied to clipboard": [
+        "Passkode kopiert til utklippstavlen"
       ],
       "Password has been set successfully": [
         "Passordet er angitt"
@@ -11156,6 +11221,9 @@
         "${ n } måneder"
       ],
       "/ month": [
+        "/måned"
+      ],
+      "/month": [
         "/måned"
       ],
       "1 year": [
@@ -12441,6 +12509,9 @@
       "Attachments": [
         "Vedlegg"
       ],
+      "Bad time for this email?": [
+        "Dårlig tidspunkt for denne e-posten?"
+      ],
       "BCC": [
         "Blindkopi"
       ],
@@ -12665,6 +12736,9 @@
       "External encryption": [
         "Ekstern kryptering"
       ],
+      "Filter for more focus": [
+        "Filtrer for mer fokus"
+      ],
       "Filter name cannot contain only spaces": [
         "Filternavnet kan ikke kun inneholde mellomrom"
       ],
@@ -12691,6 +12765,9 @@
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Skjul e-posten din med ${ PASS_APP_NAME }"
+      ],
+      "High security for your account": [
+        "Høy sikkerhet for kontoen din"
       ],
       "How to update your email address": [
         "Slik oppdaterer du e-postadressen din"
@@ -12831,6 +12908,9 @@
       "Need more aliases?": [
         "Trenger du flere aliaser?"
       ],
+      "Need more labels or folders?": [
+        "Behov for flere etiketter eller mapper?"
+      ],
       "Network error": [
         "Nettverksfeil"
       ],
@@ -12852,6 +12932,9 @@
       "No breaches detected": [
         "Ingen sikkerhetsbrudd oppdaget"
       ],
+      "No need to empty the trash": [
+        "Du trenger ikke å tømme papirkurven"
+      ],
       "No trackers found": [
         "Ingen sporere funnet"
       ],
@@ -12860,6 +12943,9 @@
       ],
       "Notes": [
         "Notater"
+      ],
+      "One email, many recipients": [
+        "Én e-post, mange mottakere"
       ],
       "Open actions dropdown": [
         "Åpne rullegardinmeny for handlinger"
@@ -12936,8 +13022,14 @@
       "Request new code": [
         "Be om en ny kode"
       ],
+      "Same inbox, shorter email address": [
+        "Samme innboks, kortere e-postadresse"
+      ],
       "Save time with email filters": [
         "Spar tid med e-postfiltre"
+      ],
+      "Schedule now, send later": [
+        "Planlegg nå, send senere"
       ],
       "Schedule send": [
         "Planlegg sending"
@@ -13693,6 +13785,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Årlig, ${ untilString }"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Bli med på Zoom-møte"
+      ],
+      "Meeting ID:": [
+        "Møte-ID:"
+      ],
+      "Passcode: ${ password }": [
+        "Passkode: ${ password }"
       ]
     }
   }

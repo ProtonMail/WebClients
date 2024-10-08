@@ -2142,6 +2142,9 @@
       ]
     },
     "Description": {
+      "Keep different parts of your life separate and your inbox organized with additional addresses.": [
+        "Pidä elämäsi eri osat erillään ja postilaatikkosi järjestyksessä lisäosoitteiden avulla."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Erota elämäsi eri alueet useilla sähköpostiosoitteilla ja avaa myös muita premium-ominaisuuksia päivittämällä tilauksesi."
       ]
@@ -6112,11 +6115,17 @@
       "From ${ price }": [
         "Alkaen ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Alkaen ${ priceMailPlus }"
+      ],
       "Upgrade": [
         "Päivitä tilaus"
       ],
       "Upgrade now": [
         "Päivitä tilaus nyt"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Päivitä ${ MAIL_SHORT_APP_NAME } Plus -tilaukseen"
       ]
     },
     "new_plans: feature": {
@@ -8399,6 +8408,9 @@
       "/ month": [
         "kuukaudessa"
       ],
+      "/month": [
+        "/kuukausi"
+      ],
       "1 year": [
         "1 vuosi"
       ],
@@ -8406,7 +8418,7 @@
         "15 kuukautta"
       ],
       "2 years": [
-        "2 vuotta"
+        "Kaksi vuotta"
       ],
       "30 months": [
         "30 kuukautta"
@@ -9513,6 +9525,9 @@
       ],
       "Amount due": [
         "Veloitettava summa"
+      ],
+      "An address for each role": [
+        "Osoite jokaiselle roolille"
       ],
       "Appearance": [
         "Ulkoasu"
