@@ -5,7 +5,6 @@ import type { CreateEmptyDocumentForConversion } from '../UseCase/CreateEmptyDoc
 import type { DocLoader } from '../Services/DocumentLoader/DocLoader'
 import type { DocLoaderInterface } from '../Services/DocumentLoader/DocLoaderInterface'
 import type { InternalEventBusInterface } from '@proton/docs-shared'
-import type { DriveCompat } from '@proton/drive-store'
 import type { ApplicationInterface } from './ApplicationInterface'
 import type { WebsocketServiceInterface } from '../Services/Websockets/WebsocketServiceInterface'
 import type { LoggerInterface } from '@proton/utils/logs'
@@ -13,16 +12,26 @@ import type { ImageProxyParams } from '../Api/Types/ImageProxyParams'
 import type { CustomWindow } from './Window'
 import type { RecentDocumentsInterface } from '../Services/RecentDocuments/types'
 import type { MetricService } from '../Services/Metrics/MetricService'
+import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
+import type { PublicDocLoader } from '../Services/DocumentLoader/PublicDocLoader'
+import type { HttpHeaders } from '../Api/DocsApi'
 
 declare const window: CustomWindow
 
 export class Application implements ApplicationInterface {
-  private readonly deps = new AppDependencies(this.protonApi, this.imageProxyParams, this.driveCompat, this.appVersion)
+  private readonly deps = new AppDependencies(
+    this.protonApi,
+    this.imageProxyParams,
+    this.publicContextHeaders,
+    this.compatWrapper,
+    this.appVersion,
+  )
 
   constructor(
     private protonApi: Api,
-    private imageProxyParams: ImageProxyParams,
-    private driveCompat: DriveCompat,
+    private publicContextHeaders: HttpHeaders | undefined,
+    private imageProxyParams: ImageProxyParams | undefined,
+    private compatWrapper: DriveCompatWrapper,
     private appVersion: string,
   ) {
     this.deps.get<MetricService>(App_TYPES.MetricService).initialize()
@@ -49,7 +58,11 @@ export class Application implements ApplicationInterface {
   }
 
   public get docLoader(): DocLoaderInterface {
-    return this.deps.get<DocLoader>(App_TYPES.DocLoader)
+    if (this.compatWrapper.publicCompat) {
+      return this.deps.get<PublicDocLoader>(App_TYPES.PublicDocLoader)
+    } else {
+      return this.deps.get<DocLoader>(App_TYPES.DocLoader)
+    }
   }
 
   public get createEmptyDocumentForConversionUseCase(): CreateEmptyDocumentForConversion {

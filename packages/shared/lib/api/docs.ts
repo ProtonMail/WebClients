@@ -8,11 +8,31 @@ export const getDocumentMeta = (volumeId: string, linkId: string) => ({
     silence: true,
 });
 
+export const getDocumentMetaByToken = (linkId: string, token: string, headers: { [key: string]: string }) => ({
+    method: 'get',
+    url: `docs/urls/${token}/documents/${linkId}/meta`,
+    silence: true,
+    headers,
+});
+
 export const getCommitData = (volumeId: string, linkId: string, commitId: string) => ({
     method: 'get',
     url: `docs/volumes/${volumeId}/documents/${linkId}/commits/${commitId}`,
     output: 'raw',
     silence: true,
+});
+
+export const getCommitDataByToken = (
+    linkId: string,
+    token: string,
+    commitId: string,
+    headers: { [key: string]: string }
+) => ({
+    method: 'get',
+    url: `docs/urls/${token}/documents/${linkId}/commits/${commitId}`,
+    output: 'raw',
+    silence: true,
+    headers,
 });
 
 export const seedInitialCommit = (volumeId: string, linkId: string, data: Uint8Array) => ({

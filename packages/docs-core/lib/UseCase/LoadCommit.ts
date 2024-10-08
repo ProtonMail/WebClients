@@ -1,9 +1,10 @@
 import type { DecryptCommit } from './DecryptCommit'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
-import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
+import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store'
 import type { GetCommitData } from './GetCommitData'
 import type { DecryptedCommit } from '../Models/DecryptedCommit'
+import type { SessionKey } from '@proton/crypto'
 
 /**
  * Fetches commit data from the Docs server and decrypts it
@@ -14,7 +15,11 @@ export class LoadCommit implements UseCaseInterface<DecryptedCommit> {
     private decryptCommit: DecryptCommit,
   ) {}
 
-  async execute(lookup: NodeMeta, commitId: string, keys: DocumentKeys): Promise<Result<DecryptedCommit>> {
+  async execute(
+    lookup: NodeMeta | PublicNodeMeta,
+    commitId: string,
+    documentContentKey: SessionKey,
+  ): Promise<Result<DecryptedCommit>> {
     const commitDataResult = await this.getCommitData.execute(lookup, commitId)
     if (commitDataResult.isFailed()) {
       return Result.fail(`Failed to get commit data ${commitDataResult.getError()}`)
@@ -25,7 +30,7 @@ export class LoadCommit implements UseCaseInterface<DecryptedCommit> {
     const decryptResult = await this.decryptCommit.execute({
       commit,
       commitId,
-      keys,
+      documentContentKey,
     })
 
     if (decryptResult.isFailed()) {

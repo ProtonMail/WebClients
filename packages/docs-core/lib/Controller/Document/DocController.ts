@@ -30,7 +30,7 @@ import type { LoadDocument } from '../../UseCase/LoadDocument'
 import type { DecryptedCommit } from '../../Models/DecryptedCommit'
 import type { DocControllerInterface } from './DocControllerInterface'
 import type { SeedInitialCommit } from '../../UseCase/SeedInitialCommit'
-import type { DocLoadSuccessResult } from './DocLoadSuccessResult'
+import type { PrivateDocLoadSuccessResult } from './DocLoadSuccessResult'
 import type { UserState } from '@lexical/yjs'
 import type { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
 import { getErrorString } from '../../Util/GetErrorString'
@@ -57,6 +57,7 @@ import { metricsBucketNumberForUpdateCount } from '../../Util/bucketNumberForUpd
 import { MAX_DOC_SIZE } from '../../Models/Constants'
 import type { HttpsProtonMeDocsReadonlyModeDocumentsTotalV1SchemaJson } from '@proton/metrics/types/docs_readonly_mode_documents_total_v1.schema'
 import { RecentDocumentsLocalStorage } from '../../Services/RecentDocuments/RecentDocumentsLocalStorage'
+import type { GetNode } from '../../UseCase/GetNode'
 
 /**
  * @TODO DRVDOC-802
@@ -82,7 +83,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   isExperiencingErroredSync = false
   isLockedDueToSizeContraint = false
   realtimeConnectionReady = false
-  docsServerConnectionReady = false
+  docsServerDataReady = false
   didAlreadyReceiveEditorReadyEvent = false
   isRefetchingStaleCommit = false
   hasEditorRenderingIssue = false
@@ -109,9 +110,10 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     private _createNewDocument: CreateNewDocument,
     readonly _getDocumentMeta: GetDocumentMeta,
     private _exportAndDownload: ExportAndDownload,
+    readonly _getNode: GetNode,
     readonly websocketService: WebsocketServiceInterface,
     readonly eventBus: InternalEventBusInterface,
-    private logger: LoggerInterface,
+    readonly logger: LoggerInterface,
   ) {
     eventBus.addEventHandler(this, WebsocketConnectionEvent.Connecting)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.FailedToConnect)
@@ -292,20 +294,21 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     return this.docMeta
   }
 
-  public async initialize(): Promise<Result<DocLoadSuccessResult>> {
+  public async initialize(): Promise<Result<PrivateDocLoadSuccessResult>> {
     const startTime = Date.now()
 
-    const loadResult = await this._loadDocument.execute(this.nodeMeta)
+    const loadResult = await this._loadDocument.executePrivate(this.nodeMeta)
     if (loadResult.isFailed()) {
       this.logger.error('Failed to load document', loadResult.getError())
       return Result.fail(loadResult.getError())
     }
 
-    const { entitlements, meta, lastCommitId } = loadResult.getValue()
+    const { entitlements, meta, lastCommitId, node } = loadResult.getValue()
     this.logger.info(`Loaded document meta with last commit id ${lastCommitId}`)
 
     this.entitlements = entitlements
     this.docMeta = meta
+    this.decryptedNode = node
     this.userAddress = this.entitlements.keys.userOwnAddress
 
     const connection = this.websocketService.createConnection(this.nodeMeta, entitlements.keys, {
@@ -323,10 +326,14 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     this.beginInitialConnectionTimer()
 
     if (lastCommitId) {
-      const decryptResult = await this._loadCommit.execute(this.nodeMeta, lastCommitId, entitlements.keys)
+      const decryptResult = await this._loadCommit.execute(
+        this.nodeMeta,
+        lastCommitId,
+        entitlements.keys.documentContentKey,
+      )
       if (decryptResult.isFailed()) {
         this.logger.error('Failed to load commit', decryptResult.getError())
-        connection.destroy()
+        connection?.destroy()
 
         return Result.fail(decryptResult.getError())
       }
@@ -337,9 +344,16 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       void this.setInitialCommit(decryptedCommit)
     }
 
-    this.handleDocsServerConnectionReady()
+    this.handleDocsDataLoaded()
 
-    void this.loadDecryptedNode()
+    this.setTrashState(node.trashed ? 'trashed' : 'not_trashed')
+
+    this.eventBus.publish<DocControllerEventPayloads['DidLoadDocumentTitle']>({
+      type: DocControllerEvent.DidLoadDocumentTitle,
+      payload: { title: this.docMeta.name },
+    })
+
+    void this.addDocumentToRecentDocuments()
 
     const endTime = Date.now()
     const timeToLoadInSeconds = (endTime - startTime) / 1000
@@ -392,13 +406,13 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     })
   }
 
-  private handleDocsServerConnectionReady(): void {
-    this.docsServerConnectionReady = true
+  private handleDocsDataLoaded(): void {
+    this.docsServerDataReady = true
     this.showEditorIfAllConnectionsReady()
   }
 
   showEditorIfAllConnectionsReady(): void {
-    if (!this.realtimeConnectionReady || !this.docsServerConnectionReady || !this.editorInvoker) {
+    if (!this.realtimeConnectionReady || !this.docsServerDataReady || !this.editorInvoker) {
       return
     }
 
@@ -529,7 +543,11 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       return
     }
 
-    const decryptResult = await this._loadCommit.execute(this.nodeMeta, latestCommitId, this.entitlements.keys)
+    const decryptResult = await this._loadCommit.execute(
+      this.nodeMeta,
+      latestCommitId,
+      this.entitlements.keys.documentContentKey,
+    )
     if (decryptResult.isFailed()) {
       fail(`Failed to reload or decrypt commit: ${decryptResult.getError()}`)
 
@@ -590,38 +608,55 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     return new NativeVersionHistory(this.initialCommit)
   }
 
-  public async debugGetUnrestrictedSharingUrl(): Promise<string> {
-    const url = this.driveCompat.getDocumentUrl(this.nodeMeta)
-    return url.toString()
-  }
-
-  async refreshNodeAndDocMeta(): Promise<void> {
-    this.decryptedNode = await this.driveCompat.getNode(this.nodeMeta)
-    const newDoc = this.docMeta.copyWithNewValues({ name: this.decryptedNode.name })
-    this.docMeta = newDoc
-  }
-
-  async loadDecryptedNode(): Promise<void> {
-    try {
-      await this.refreshNodeAndDocMeta()
-      this.setTrashState(this.decryptedNode?.trashed ? 'trashed' : 'not_trashed')
-
-      const shareId = await this.driveCompat.getShareId(this.nodeMeta)
-      RecentDocumentsLocalStorage.add({
-        linkId: this.docMeta.linkId,
-        shareId,
-        lastViewed: Date.now(),
-      })
-      this.eventBus.publish<DocControllerEventPayloads['DidLoadDocumentTitle']>({
-        type: DocControllerEvent.DidLoadDocumentTitle,
-        payload: { title: this.docMeta.name },
-      })
-    } catch (error) {
-      this.logger.error('Failed to get decrypted link', String(error))
+  /**
+   *
+   * @param imposeTrashState getNode may return a cached value, due to a race condition with DriveCompat where the node
+   * is removed from cache but done asyncronously. So the refetch below might return a cached value when we are expecting
+   * a fresh reloaded value. This should ultimately be fixed with the DriveCompat but goes too deep into its functionality
+   * to do so.
+   */
+  async refreshNodeAndDocMeta(options: { imposeTrashState: 'trashed' | 'not_trashed' | undefined }): Promise<void> {
+    const result = await this._getNode.execute(this.nodeMeta, this.docMeta)
+    if (result.isFailed()) {
+      this.logger.error('Failed to get node', result.getError())
+      return
     }
+
+    void this.addDocumentToRecentDocuments()
+
+    const { node, refreshedDocMeta } = result.getValue()
+    this.decryptedNode = node
+    if (refreshedDocMeta) {
+      this.docMeta = refreshedDocMeta
+    }
+
+    if (options.imposeTrashState) {
+      this.setTrashState(options.imposeTrashState)
+    } else {
+      this.setTrashState(node.trashed ? 'trashed' : 'not_trashed')
+    }
+
+    this.eventBus.publish<DocControllerEventPayloads['DidLoadDocumentTitle']>({
+      type: DocControllerEvent.DidLoadDocumentTitle,
+      payload: { title: this.docMeta.name },
+    })
+  }
+
+  async addDocumentToRecentDocuments(): Promise<void> {
+    if (!this.docMeta) {
+      return
+    }
+
+    const shareId = await this.driveCompat.getShareId(this.nodeMeta)
+    RecentDocumentsLocalStorage.add({
+      linkId: this.docMeta.nodeMeta.linkId,
+      shareId,
+      lastViewed: Date.now(),
+    })
   }
 
   handleAttemptingToBroadcastUpdateThatIsTooLarge(): void {
+    console.trace('handleAttemptingToBroadcastUpdateThatIsTooLarge')
     void this.websocketService.flushPendingUpdates()
 
     this.logger.error(new Error('Update Too Large'))
@@ -723,7 +758,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
     const state = content ?? (await this.editorInvoker.getDocumentState())
 
-    const result = await this._createInitialCommit.execute(this.docMeta, state, this.entitlements.keys)
+    const result = await this._createInitialCommit.execute(this.nodeMeta, state, this.entitlements.keys)
 
     if (result.isFailed()) {
       this.logger.error('Failed to create initial commit', result.getError())
@@ -860,7 +895,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
         newName,
       )
       await this.driveCompat.renameDocument(this.nodeMeta, name)
-      await this.refreshNodeAndDocMeta()
+      await this.refreshNodeAndDocMeta({ imposeTrashState: undefined })
       return TranslatedResult.ok()
     } catch (e) {
       this.logger.error(getErrorString(e) ?? 'Failed to rename document')
@@ -877,17 +912,20 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   }
 
   public async trashDocument(): Promise<void> {
+    if (!this.decryptedNode) {
+      throw new Error('Decrypted node not loaded when trashing document')
+    }
+
     this.setTrashState('trashing')
 
     try {
-      const node = await this.driveCompat.getNode(this.nodeMeta)
-      const parentLinkId = node.parentNodeId || (await this.driveCompat.getMyFilesNodeMeta()).linkId
-      await this.driveCompat.trashDocument(this.docMeta, parentLinkId)
-      await this.refreshNodeAndDocMeta()
+      const parentLinkId = this.decryptedNode.parentNodeId || (await this.driveCompat.getMyFilesNodeMeta()).linkId
+      await this.driveCompat.trashDocument(this.nodeMeta, parentLinkId)
+
+      await this.refreshNodeAndDocMeta({ imposeTrashState: 'trashed' })
 
       this.didTrashDocInCurrentSession = true
 
-      this.setTrashState('trashed')
       this.reloadEditingLockedState()
     } catch (error) {
       PostApplicationError(this.eventBus, {
@@ -901,16 +939,18 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   }
 
   public async restoreDocument(): Promise<void> {
+    if (!this.decryptedNode) {
+      throw new Error('Decrypted node not loaded when restoring document')
+    }
+
     this.setTrashState('restoring')
 
     try {
-      const node = await this.driveCompat.getNode(this.nodeMeta)
-      const parentLinkId = node.parentNodeId || (await this.driveCompat.getMyFilesNodeMeta()).linkId
-      await this.driveCompat.restoreDocument(this.docMeta, parentLinkId)
+      const parentLinkId = this.decryptedNode.parentNodeId || (await this.driveCompat.getMyFilesNodeMeta()).linkId
+      await this.driveCompat.restoreDocument(this.nodeMeta, parentLinkId)
 
-      await this.refreshNodeAndDocMeta()
+      await this.refreshNodeAndDocMeta({ imposeTrashState: 'not_trashed' })
 
-      this.setTrashState('not_trashed')
       this.reloadEditingLockedState()
 
       void this.websocketService.reconnectToDocumentWithoutDelay(this.nodeMeta)

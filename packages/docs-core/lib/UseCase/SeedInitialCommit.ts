@@ -20,7 +20,7 @@ export class SeedInitialCommit implements UseCaseInterface<SeedInitialCommitResu
   ) {}
 
   async execute(
-    docMeta: Pick<DocumentMetaInterface, 'volumeId' | 'linkId'>,
+    docMeta: DocumentMetaInterface['nodeMeta'],
     state: Uint8Array,
     keys: DocumentKeys,
   ): Promise<Result<SeedInitialCommitResult>> {

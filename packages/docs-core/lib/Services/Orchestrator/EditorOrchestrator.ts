@@ -16,6 +16,8 @@ import type { DocControllerInterface } from '../../Controller/Document/DocContro
 import type { UserState } from '@lexical/yjs'
 import type { DocsApi } from '../../Api/DocsApi'
 import { PostApplicationError } from '../../Application/ApplicationEvent'
+import type { PublicDocControllerInterface } from '../../Controller/Document/PublicDocControllerInterface'
+import { isPrivateDocController } from '../../Controller/Document/isPrivateDocController'
 
 /**
  * Exposes a unified interface for interacting with a document to the editor bridge,
@@ -23,8 +25,8 @@ import { PostApplicationError } from '../../Application/ApplicationEvent'
  */
 export class EditorOrchestrator implements EditorOrchestratorInterface {
   constructor(
-    private readonly comments: CommentControllerInterface,
-    private readonly docs: DocControllerInterface,
+    private readonly comments: CommentControllerInterface | undefined,
+    private readonly docs: DocControllerInterface | PublicDocControllerInterface,
     private readonly docsApi: DocsApi,
     private readonly eventBus: InternalEventBusInterface,
   ) {}
@@ -34,6 +36,10 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
   }
 
   get username(): string {
+    if (!isPrivateDocController(this.docs)) {
+      return 'Public Viewer'
+    }
+
     if (!this.docs.userAddress) {
       throw new Error('User address not yet available')
     }
@@ -56,11 +62,17 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     })
 
     if (extraInfo.lockEditor) {
-      this.docs.editorIsRequestingToLockAfterRenderingIssue()
+      if (isPrivateDocController(this.docs)) {
+        this.docs.editorIsRequestingToLockAfterRenderingIssue()
+      }
     }
   }
 
   async editorRequestsPropagationOfUpdate(message: RtsMessagePayload, updateSource: BroadcastSource): Promise<void> {
+    if (!isPrivateDocController(this.docs)) {
+      throw new Error('Attempting to use function only available to private doc controller')
+    }
+
     return this.docs.editorRequestsPropagationOfUpdate(message, updateSource)
   }
 
@@ -69,78 +81,146 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
   }
 
   getTypersExcludingSelf(threadId: string): string[] {
+    if (!this.comments) {
+      return []
+    }
+
     return this.comments.getTypersExcludingSelf(threadId)
   }
 
-  createComment(content: string, threadID: string): Promise<CommentInterface | undefined> {
+  async createComment(content: string, threadID: string): Promise<CommentInterface | undefined> {
+    if (!this.comments) {
+      return undefined
+    }
+
     return this.comments.createComment(content, threadID)
   }
 
   beganTypingInThread(threadID: string): void {
+    if (!this.comments) {
+      return
+    }
+
     return this.comments.beganTypingInThread(threadID)
   }
 
   stoppedTypingInThread(threadID: string): void {
+    if (!this.comments) {
+      return
+    }
+
     return this.comments.stoppedTypingInThread(threadID)
   }
 
-  unresolveThread(threadId: string): Promise<boolean> {
+  async unresolveThread(threadId: string): Promise<boolean> {
+    if (!this.comments) {
+      return false
+    }
+
     return this.comments.unresolveThread(threadId)
   }
 
   async markThreadAsRead(id: string): Promise<void> {
+    if (!this.comments) {
+      return
+    }
+
     return this.comments.markThreadAsRead(id)
   }
 
-  editComment(threadID: string, commentID: string, content: string): Promise<boolean> {
+  async editComment(threadID: string, commentID: string, content: string): Promise<boolean> {
+    if (!this.comments) {
+      return false
+    }
+
     return this.comments.editComment(threadID, commentID, content)
   }
 
-  deleteComment(threadID: string, commentID: string): Promise<boolean> {
+  async deleteComment(threadID: string, commentID: string): Promise<boolean> {
+    if (!this.comments) {
+      return false
+    }
+
     return this.comments.deleteComment(threadID, commentID)
   }
 
   getAllThreads(): CommentThreadInterface[] {
+    if (!this.comments) {
+      return []
+    }
+
     return this.comments.getAllThreads()
   }
 
-  createCommentThread(
+  async createCommentThread(
     commentContent: string,
     markID?: string,
     createMarkNode?: boolean,
   ): Promise<CommentThreadInterface | undefined> {
+    if (!this.comments) {
+      return undefined
+    }
+
     return this.comments.createCommentThread(commentContent, markID, createMarkNode)
   }
 
-  createSuggestionThread(
+  async createSuggestionThread(
     suggestionID: string,
     commentContent: string,
     suggestionType: SuggestionSummaryType,
   ): Promise<CommentThreadInterface | undefined> {
+    if (!this.comments) {
+      return undefined
+    }
+
     return this.comments.createSuggestionThread(suggestionID, commentContent, suggestionType)
   }
 
-  resolveThread(threadId: string): Promise<boolean> {
+  async resolveThread(threadId: string): Promise<boolean> {
+    if (!this.comments) {
+      return false
+    }
+
     return this.comments.resolveThread(threadId)
   }
 
-  acceptSuggestion(threadId: string): Promise<boolean> {
+  async acceptSuggestion(threadId: string): Promise<boolean> {
+    if (!this.comments) {
+      return false
+    }
+
     return this.comments.changeSuggestionThreadState(threadId, 'accept')
   }
 
-  rejectSuggestion(threadId: string): Promise<boolean> {
+  async rejectSuggestion(threadId: string): Promise<boolean> {
+    if (!this.comments) {
+      return false
+    }
+
     return this.comments.changeSuggestionThreadState(threadId, 'reject')
   }
 
-  reopenSuggestion(threadId: string): Promise<boolean> {
+  async reopenSuggestion(threadId: string): Promise<boolean> {
+    if (!this.comments) {
+      return false
+    }
+
     return this.comments.changeSuggestionThreadState(threadId, 'reopen')
   }
 
-  deleteThread(id: string): Promise<boolean> {
+  async deleteThread(id: string): Promise<boolean> {
+    if (!this.comments) {
+      return false
+    }
+
     return this.comments.deleteThread(id)
   }
 
   handleAwarenessStateUpdate(states: UserState[]): Promise<void> {
+    if (!isPrivateDocController(this.docs)) {
+      throw new Error('Attempting to use function only available to private doc controller')
+    }
+
     return this.docs.handleAwarenessStateUpdate(states)
   }
 

@@ -14,6 +14,10 @@ export type PublicNodeMeta = {
     linkId: string;
 };
 
+export function isPublicNodeMeta(meta: NodeMeta | PublicNodeMeta): meta is PublicNodeMeta {
+    return 'token' in meta;
+}
+
 export type LegacyNodeMeta = {
     shareId: string;
     volumeId: string;
