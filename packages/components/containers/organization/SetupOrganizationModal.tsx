@@ -26,7 +26,7 @@ import { VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
-import { getHasExternalMemberCapableB2BPlan } from '@proton/shared/lib/helpers/subscription';
+import { getHasExternalMemberCapableB2BPlan, hasPassFamily } from '@proton/shared/lib/helpers/subscription';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
@@ -100,6 +100,13 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     const handlePreStorageStep = async () => {
         if (hasExternalMemberCapableB2BPlan) {
             // If user setting up organization for VPN B2B plan then the storage step must be skipped.
+            return finalizeOrganizationCreation();
+        }
+        if (hasPassFamily(subscription)) {
+            if (!selfMemberID) {
+                throw new Error('Missing member id');
+            }
+            await silentApi(updateQuota(selfMemberID, storageValue));
             return finalizeOrganizationCreation();
         }
         setStep(STEPS.STORAGE);

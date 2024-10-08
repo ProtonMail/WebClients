@@ -9,7 +9,7 @@ import { getInviteLimit } from '@proton/components/containers/members/UsersAndAd
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME, PLAN_NAMES } from '@proton/shared/lib/constants';
 import type { Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';
-import { isOrganizationFamily } from '@proton/shared/lib/organization/helper';
+import { isOrganizationFamily, isOrganizationPassFamily } from '@proton/shared/lib/organization/helper';
 
 import { useCustomDomains } from '../../hooks';
 import SubUserCreateModal from './SubUserCreateModal';
@@ -53,7 +53,10 @@ interface InviteButtonProps {
 
 const InviteProtonUserButton = ({ onClick, organization }: ButtonProps & InviteButtonProps) => {
     if (organization && organization.InvitationsRemaining === 0) {
-        const tooltip = isOrganizationFamily(organization) ? getInviteLimit(10) : getInviteLimit(3);
+        const tooltip =
+            isOrganizationFamily(organization) || isOrganizationPassFamily(organization)
+                ? getInviteLimit(10)
+                : getInviteLimit(3);
 
         return (
             <Tooltip title={tooltip}>

@@ -9,7 +9,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { deleteMember } from '@proton/shared/lib/api/members';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, PLANS } from '@proton/shared/lib/constants';
 import type { Member, Organization } from '@proton/shared/lib/interfaces';
 import { MEMBER_STATE } from '@proton/shared/lib/interfaces';
 
@@ -55,19 +55,25 @@ const UserRemoveModal = ({ member: initialMember, organization, ...rest }: Props
         });
     };
 
+    const isPassFamily = organization?.PlanName === PLANS.PASS_FAMILY;
+
+    const descriptionCopy = isPassFamily
+        ? c('familyOffer_2023:Info').t`After leaving your plan, this user will be moved to a ${BRAND_NAME} Free plan.`
+        : c('familyOffer_2023:Info')
+              .t`After leaving your plan, this user will be moved to a ${BRAND_NAME} Unlimited plan with a 30-day free trial.*`;
+
     const description = isInvitationPending
         ? // translator: Info message when a user has been invited to an organization. Looks like: 'The invitation will be canceled and the user won't be able to join Bernie's Family.'
           c('familyOffer_2023:Info')
               .t`The invitation will be canceled and the user won't be able to join ${organizationName}.`
-        : c('familyOffer_2023:Info')
-              .t`After leaving your plan, this user will be moved to a ${BRAND_NAME} Unlimited plan with a 30-day free trial.*`;
+        : descriptionCopy;
 
     return (
         <Prompt
             {...rest}
             title={c('Title').t`Remove user?`}
             footnote={
-                isInvitationPending
+                isInvitationPending || isPassFamily
                     ? undefined
                     : c('familyOffer_2023:Info').t`*Only one free trial per user. Regular pricing applies thereafter.`
             }

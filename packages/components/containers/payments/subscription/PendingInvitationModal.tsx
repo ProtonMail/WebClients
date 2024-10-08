@@ -14,7 +14,7 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { CacheType } from '@proton/redux-utilities';
 import { acceptInvitation, rejectInvitation } from '@proton/shared/lib/api/user';
-import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, PASS_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { PendingInvitation } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
@@ -64,7 +64,7 @@ const PendingInvitationModal = ({ invite, ...modalProps }: Props) => {
     const inviteEmail = <strong>{`${invite.InviterEmail}`}</strong>;
     const assignedStorage = <strong>{humanSize({ bytes: invite.MaxSpace, fraction: 0 })}</strong>;
 
-    const BRAND_NAME_TWO = BRAND_NAME;
+    const brandOrAppName = invite.OrganizationPlanName === PLANS.PASS_FAMILY ? PASS_APP_NAME : BRAND_NAME;
 
     return (
         <ModalTwo {...modalProps} size="large">
@@ -86,7 +86,7 @@ const PendingInvitationModal = ({ invite, ...modalProps }: Props) => {
                 ) : (
                     <>
                         <p className="my-2">{c('familyOffer_2023:Family plan')
-                            .jt`You're invited to link your ${BRAND_NAME} Account to this group plan and together enjoy all ${BRAND_NAME_TWO} premium features.`}</p>
+                            .jt`You're invited to link your ${BRAND_NAME} Account to this family plan and together enjoy all ${brandOrAppName} premium features.`}</p>
                         <p className="my-2">{c('familyOffer_2023:Family plan')
                             .t`The subscription will be billed to the primary admin of this plan.`}</p>
                         <p className="my-2">{c('familyOffer_2023:Family plan')

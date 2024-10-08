@@ -106,12 +106,15 @@ export const SentinelSection = ({ app }: Props) => {
     };
 
     const getUpgradeMessage = () => {
+        const plans = [PLANS.PASS, PLANS.PASS_FAMILY, PLANS.BUNDLE, PLANS.FAMILY, bundleProPlan];
+        const planNames = plans.map((plan) => PLAN_NAMES[plan]);
+        const firstPlanNames = planNames.slice(0, -1).join(', ');
+        const lastPlanName = planNames.at(-1);
         return (
             <>
-                {/* translator: full sentence with pass plus: "Upgrade to Pass Plus, Proton Unlimited, Proton Family, or Business plan to get access to Proton Sentinel." */}
-                {c('Info').t`Upgrade to ${PLAN_NAMES[PLANS.PASS]}, ${PLAN_NAMES[PLANS.BUNDLE]}, ${
-                    PLAN_NAMES[PLANS.FAMILY]
-                }, or ${PLAN_NAMES[bundleProPlan]} plan to get access to ${PROTON_SENTINEL_NAME}.`}
+                {/* translator: full sentence with pass plus: "Upgrade to Pass Plus, Pass Family, Proton Unlimited, Proton Family, or Business plan to get access to Proton Sentinel." */}
+                {c('Info')
+                    .t`Upgrade to ${firstPlanNames}, or ${lastPlanName} plan to get access to ${PROTON_SENTINEL_NAME}.`}
             </>
         );
     };

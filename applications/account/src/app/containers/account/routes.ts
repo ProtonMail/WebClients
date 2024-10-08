@@ -17,6 +17,7 @@ import { getIsRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
 import {
     getHasExternalMemberCapableB2BPlan,
     getHasVpnB2BPlan,
+    getIsConsumerPassPlan,
     hasCancellablePlan,
     isCancellableOnlyViaSupport,
 } from '@proton/shared/lib/helpers/subscription';
@@ -71,6 +72,8 @@ export const getAccountAppRoutes = ({
     const isFamilyOrg = !!organization && getOrganizationDenomination(organization) === 'familyGroup';
     const isFamilyOrDuoPlanMember = isFamilyOrg && isMember && isPaid;
 
+    const isPassConsumerOrPassFamilyOrg = getIsConsumerPassPlan(organization?.PlanName);
+
     //Used to determine if a user is on a visionary plan (works for both old and new visionary plans)
     const isVisionaryPlan = !!organization && isOrganizationVisionary(organization);
     const isMemberProton = Type === UserType.PROTON;
@@ -96,13 +99,14 @@ export const getAccountAppRoutes = ({
                 icon: 'squares-in-square',
                 available: isFree || canPay || !isMember || (isPaid && canPay),
                 subsections: [
+                    // do not show Your Plan section for Pass users
                     {
                         text: hasSplitStorage ? c('Title').t`Your storage` : undefined,
                         id: 'your-storage',
-                        available: hasSplitStorage,
+                        available: hasSplitStorage && !isPassConsumerOrPassFamilyOrg,
                     },
                     {
-                        text: hasSplitStorage ? c('Title').t`Your plan` : undefined,
+                        text: hasSplitStorage && !isPassConsumerOrPassFamilyOrg ? c('Title').t`Your plan` : undefined,
                         id: 'your-plan',
                         available: canPay,
                     },
