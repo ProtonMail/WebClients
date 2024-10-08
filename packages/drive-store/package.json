@@ -4,13 +4,13 @@
     "main": "index.ts",
     "scripts": {
         "check-types": "tsc",
+        "copy": "sh -c 'src_path=\"$1\"; dest_path=$(echo \"$1\" | sed \"s|applications/drive/src/app|packages/drive-store|\"); mkdir -p $(dirname \"$dest_path\"); cp \"$src_path\" \"$dest_path\"' --",
         "lint": "eslint . --ext ts --quiet --cache",
         "prettier": "prettier",
         "sync": "node scripts/sync.mjs",
         "test": "jest",
         "test:ci": "jest --coverage --runInBand --ci",
-        "test:watch": "jest --watch",
-        "copy": "sh -c 'src_path=\"$1\"; dest_path=$(echo \"$1\" | sed \"s|applications/drive/src/app|packages/drive-store|\"); mkdir -p $(dirname \"$dest_path\"); cp \"$src_path\" \"$dest_path\"' --"
+        "test:watch": "jest --watch"
     },
     "dependencies": {
         "@mattiasbuelens/web-streams-adapter": "0.1.0",
@@ -49,6 +49,6 @@
         "jest-when": "3.6.0",
         "prettier": "^3.3.3",
         "ts-jest": "^29.2.4",
-        "typescript": "^5.5.4"
+        "typescript": "^5.6.2"
     }
 }
