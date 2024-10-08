@@ -138,6 +138,9 @@
       "Close": [
         "Tutup"
       ],
+      "Close navigation": [
+        "Tutup navigasi"
+      ],
       "Close this banner": [
         "Tutup spanduk ini"
       ],
@@ -393,17 +396,23 @@
       "Not now": [
         "Tidak sekarang"
       ],
+      "Ok": [
+        "OK"
+      ],
       "OK": [
         "OK"
       ],
-      "Ok": [
-        "OK"
+      "Open": [
+        "Buka"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Buka pengaturan ${ CALENDAR_APP_NAME }"
       ],
       "Open ${ DRIVE_APP_NAME }": [
         "Buka ${ DRIVE_APP_NAME }"
+      ],
+      "Open navigation": [
+        "Buka navigasi"
       ],
       "Pay": [
         "Bayar"
@@ -492,11 +501,17 @@
       "Save changes": [
         "Simpan perubahan"
       ],
+      "Search": [
+        "Pencarian"
+      ],
       "Search countries": [
         "Cari negara"
       ],
       "See how": [
         "Lihat caranya"
+      ],
+      "See plan features": [
+        "Lihat seluruh fitur paket"
       ],
       "See version history": [
         "Lihat riwayat versi"
@@ -578,6 +593,12 @@
       ],
       "Update recovery phrase": [
         "Perbarui frasa pemulihan"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
       ],
       "Upload anyway": [
         "Tetap unggah"
@@ -690,6 +711,11 @@
         "Abaila Anda keluar sekarang, sebagian acara kemungkinan tidak akan terimpor"
       ]
     },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "Aplikasi ${ BRAND_NAME }"
+      ]
+    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Bawa produktivitas email Anda ke tingkatan yang baru. Biarkan ${ BRAND_NAME } Scribe membantu Anda menulis, membalas, dan mengoreksi email Anda."
@@ -745,6 +771,19 @@
       ],
       "Premium Password Manager": [
         "Pengelola Kata Sandi Premium"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Diskon berdasarkan penetapan harga standar per bulan."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Langganan Anda akan diperbarui secara otomatis dengan tarif dan durasi diskon standar di akhir siklus tagihan Anda."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Jaminan uang kembali dalam 30 hari"
       ]
     },
     "bf2023: renew": {
@@ -2071,6 +2110,49 @@
       ],
       "Priority support": [
         "Dukungan prioritas"
+      ]
+    },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Dapatkan ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Dapatkan seharga ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Ditagih setiap 2 tahun dengan harga ${ amountBilled }. Diskon berdasarkan harga standar per bulan."
+      ],
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Ditagih per tahun dengan harga ${ amountBilled }. Hemat ${ amountSave } untuk 2 langganan ${ BRAND_NAME } Unlimited individu per tahun."
+      ]
+    },
+    "duoplan2024: Info": {
+      "1 TB storage": [
+        "Penyimpanan 1 TB"
+      ],
+      "2 users": [
+        "2 pengguna"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Akses lengkap semua produk ${ BRAND_NAME }"
+      ],
+      "You save ${ amountSave }": [
+        "Anda menghemat ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Semua dari ${ BRAND_NAME }, untuk berdua."
+      ],
+      "Double your storage": [
+        "Gandakan penyimpanan Anda"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Perkenalkan ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Email body for description (description part)": {
@@ -4279,6 +4361,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Sayangnya, berkas ini atau sebagian data yang terkandung di dalamnya tidak dapat didekripsi."
       ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Tingkatkan sekarang untuk memperoleh berbagai fitur, produk, dan ruang penyimpanan berkapasitas premium dengan harga khusus"
+      ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Mengunggah ratusan berkas sekaligus dapat berdampak pada kinerja."
       ],
@@ -4815,6 +4900,9 @@
       "Mail Server (IMAP)": [
         "Server Mail (IMAP)"
       ],
+      "Main": [
+        "Utama"
+      ],
       "Make editor": [
         "Jadikan penyunting"
       ],
@@ -4832,6 +4920,9 @@
       ],
       "Move to Inbox": [
         "Pindahkan ke Kotak masuk"
+      ],
+      "Navigation": [
+        "Navigasi"
       ],
       "New password": [
         "Kata sandi baru"
@@ -5139,6 +5230,14 @@
         "untuk ${ price }"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Dapatkan penawaran ini"
+      ],
+      "Special Offer": [
+        "Penawaran Spesial"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplikasi desktop ${ MAIL_APP_NAME }"
@@ -5157,6 +5256,24 @@
       ],
       "Unlimited folders, labels and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Terbarui dengan harga ${ renewablePrice }, batalkan kapan saja"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "untuk bulan pertama"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Penawaran terbatas, berlaku hingga 2 April 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Dapatkan ${ planName } hanya dengan harga ${ planPrice }"
       ]
     },
     "Message": {
@@ -7126,6 +7243,36 @@
         "Tandatangani"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Tutup"
+      ],
+      "Don't show this offer again": [
+        "Jangan tampilkan penawaran ini lagi"
+      ],
+      "Special offer": [
+        "Penawaran spesial"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Dapatkan Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } hari"
+      ],
+      "${ hours } hour": [
+        "${ hours } jam"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } menit"
+      ],
+      "${ seconds } second": [
+        "${ seconds } detik"
+      ]
+    },
     "specialoffer: Deal": {
       "${ n } month FREE": [
         "${ n } bulan GRATIS"
@@ -7175,6 +7322,11 @@
         "Dukung privasi online"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Langganan ini akan diperbarui secara otomatis setiap 2 tahun dengan tarif yang sama hingga dibatalkan."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Tuju daftar paket langganan"
@@ -7186,6 +7338,9 @@
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } bulan"
+      ],
+      "/ month": [
+        "/ bulan"
       ],
       "1 year": [
         "1 tahun"
@@ -7214,11 +7369,17 @@
       "Billed at ${ amount } for 30 months": [
         "Tertagih dengan harga ${ amount } selama 30 bulan"
       ],
+      "Get the deal": [
+        "Dapatkan penawaran"
+      ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Diperbarui setelah 1 tahun dengan harga diskon ${ discountedAmount } daripada ${ regularAmount } (diskon ${ discount }%)"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Diperbarui setelah 2 tahun dengan harga diskon ${ discountedAmount } daripada ${ regularAmount } (diskon ${ discount }%)"
+      ],
+      "Save ${ discount }%": [
+        "Hemat ${ discount }%"
       ],
       "Standard price ${ amount } for 1 month": [
         "Dengan harga standar ${ amount } selama 1 bulan"
@@ -7234,6 +7395,20 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Dengan harga standar ${ amount } selama 30 bulan"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Diskon Jumat Hitam"
+      ],
+      "Cyber Week Sale": [
+        "Penawaran Minggu Siber"
+      ],
+      "End of Year Sale": [
+        "Penawaran Akhir Tahun"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Tingkatkan dan hemat lebih banyak dengan ${ planName } selama 2 tahun"
       ]
     },
     "specialoffer: Tooltip": {
@@ -7281,6 +7456,14 @@
       ],
       "Pending": [
         "Menunggu jawaban"
+      ]
+    },
+    "Storage": {
+      "Upgrade storage": [
+        "Tingkatkan ruang penyimpanan"
+      ],
+      "Your current storage:": [
+        "Ruang penyimpanan Anda saat ini:"
       ]
     },
     "storage_split: action": {
@@ -7435,6 +7618,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Untuk ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet tetap aman dan privat bagi siapa pun. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription reminder": {
@@ -8100,6 +8324,9 @@
       "What would you like to import?": [
         "Hal-hal apa saja yang hendak Anda impor?"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Masa uji coba gratis ${ planName } Anda akan berakhir pada ${ textDate }"
+      ],
       "Your account is protected": [
         "Akun Anda terlindung"
       ],
@@ -8305,7 +8532,7 @@
         "${ BRAND_NAME } akan berupaya untuk mentransfer data sebanyak-banyaknya, yang dimulai dengan pesan Anda yang terbaru."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
-        "Yakin ingin mengapus ${ count } kontak secara permanen?"
+        "Apakah Anda yakin ingin mengapus ${ count } kontak secara permanen?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Apakah Anda yakin ingin menghapus grup kontak ini?"

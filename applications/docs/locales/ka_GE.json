@@ -139,6 +139,9 @@
       "Close": [
         "დახურვა"
       ],
+      "Close navigation": [
+        "ნავიგაციის დახურვა"
+      ],
       "Close this banner": [
         "ამ ბანერის დახურვა"
       ],
@@ -153,6 +156,9 @@
       ],
       "Contact group": [
         "საკონტაქტო ჯგუფი"
+      ],
+      "Context menu": [
+        "კონტექსტური მენიუ"
       ],
       "Continue": [
         "გაგრძელება"
@@ -396,17 +402,26 @@
       "Not now": [
         "არა ახლა"
       ],
+      "Ok": [
+        "დიახ"
+      ],
       "OK": [
         "დიახ"
       ],
-      "Ok": [
-        "დიახ"
+      "Open": [
+        "გახსნა"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-ის მორგება"
       ],
       "Open ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME }-ის გახსნა"
+      ],
+      "Open folder": [
+        "საქაღალდის გახსნა"
+      ],
+      "Open navigation": [
+        "ნავიგაციის გახსნა"
       ],
       "Pay": [
         "გადახდა"
@@ -495,11 +510,20 @@
       "Save changes": [
         "ცვლილებების შენახვა"
       ],
+      "Search": [
+        "ძებნა"
+      ],
       "Search countries": [
         "ქვეყნების ძებნა"
       ],
+      "Search docs": [
+        "დოკუმენტების ძებნა"
+      ],
       "See how": [
         "იხილეთ, როგორ"
+      ],
+      "See plan features": [
+        "ტარიფის თვისებების ნახვა"
       ],
       "See version history": [
         "ვერსიის ისტორიის ნახვა"
@@ -581,6 +605,12 @@
       ],
       "Update recovery phrase": [
         "აღდგენის ფაზის განახლება"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade now": [
+        "ტარიფის განახლება"
       ],
       "Upload anyway": [
         "მაინც ატვირთვა"
@@ -698,6 +728,11 @@
         "თუ ახლა გახვალთ, ზოგი მოვლენა შეიძლება შემოტანილი არ იყოს"
       ]
     },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME }-ის აპლიკაციები"
+      ]
+    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "აიყვანეთ ელფოსტის წარმადობა ახალ დონეებზე. მიეცით საშუალება ${ BRAND_NAME } Scribe-ს, რომ დაგეხმაროთ თქვენი ელფოსტების წერაში, პასუხში და გადამოწმებაში."
@@ -753,6 +788,19 @@
       ],
       "Premium Password Manager": [
         "პაროლების მმართველის ფასიანი ვერსია"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "ფასდაკლებები თვეში ერთხელ გადახდის ფასებს ეყრდნობა."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "თქვენი გამოწერა გადახდის ციკლის ბოლოს სტანდარტული ფასდაკლების ტარიფით და ხანგრძლივობით განახლდება."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30 დღიანი გარანტირებული ფულის დაბრუნება"
       ]
     },
     "bf2023: renew": {
@@ -2084,6 +2132,49 @@
       ],
       "Priority support": [
         "პრიორიტეტული მხარდაჭერა"
+      ]
+    },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "მიიღეთ ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "მიიღეთ ფასით ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "2 წელიწადში ერთხელ გადახდელი თანხა ${ amountBilled }. ფასდაკლებები სტანდარტულ თვიურ ფასს ეყრდნობა."
+      ],
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "წლიურად გადასახდელი თანხა: ${ amountBilled }. დაზოგეთ ${ amountSave } ორზე მეტი ინდივიდუალური ${ BRAND_NAME }-ის ულიმიტო წლიური გამოწერისთვის."
+      ]
+    },
+    "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 ტბ საცავი"
+      ],
+      "2 users": [
+        "2 მომხმარებელი"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "სრული წვდომა ${ BRAND_NAME }-ის ყველა პროდუქტთან"
+      ],
+      "You save ${ amountSave }": [
+        "დანაზოგი თანხაა ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "მთლიანი ${ BRAND_NAME }, ორისთვის"
+      ],
+      "Double your storage": [
+        "გააორმაგეთ თქვენი საცავი"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "წარმოგიდგენთ ${ PLAN_NAMES[PLANS.DUO] }-ს "
       ]
     },
     "Email body for description (description part)": {
@@ -4342,6 +4433,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "სამწუხაროდ, როგორც ჩანს, ფაილის ან მისი მონაცემების ნაწილის გაშიფვრა შეუძლებელია."
       ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "განაახლეთ ახლავე, რომ მიიღოთ პრემიუმ ფუნქციები, პროდუქტები და საცავი სპეციალურ ფასად"
+      ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "ასობით ფაილის ერთდროულ ატვირთვამ შეიძლება, წარმადობაზე გავლენა იქონიოს."
       ],
@@ -4883,6 +4977,9 @@
       "Mail Server (IMAP)": [
         "მეილსერვერი (IMAP)"
       ],
+      "Main": [
+        "მთავარი"
+      ],
       "Make editor": [
         "რედაქტორობის მინიჭება"
       ],
@@ -4900,6 +4997,9 @@
       ],
       "Move to Inbox": [
         "შემომავლებში გადატანა"
+      ],
+      "Navigation": [
+        "ნავიგაცია"
       ],
       "New password": [
         "ახალი პაროლი"
@@ -5212,6 +5312,14 @@
         "${ price }-თვის"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "ფასდაკლების მიღება"
+      ],
+      "Special Offer": [
+        "სპეციალური შეთავაზება"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
@@ -5230,6 +5338,24 @@
       ],
       "Unlimited folders, labels and filters": [
         "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "განახლების დრო ${ renewablePrice }. გააუქმეთ ნებისმიერ დროს"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "პირველი თვისთვის"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "შემოთავაზება შეზღუდული დროით. ვადა იწურება 2024 წლის 2 აპრილს"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "მიიღეთ ${ planName } ფასით სულ რაღაც ${ planPrice }"
       ]
     },
     "Message": {
@@ -7195,6 +7321,40 @@
         "ხელმოწერა"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "დახურვა"
+      ],
+      "Don't show this offer again": [
+        "მეტჯერ აღარ მაჩვენო"
+      ],
+      "Special offer": [
+        "სპეციალური შემოთავაზება"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Unlimited-ზე გადასვლა"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } დღე",
+        "${ days } დღე"
+      ],
+      "${ hours } hour": [
+        "${ hours } საათი",
+        "${ hours } საათი"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } წუთი",
+        "${ minutes } წუთი"
+      ],
+      "${ seconds } second": [
+        "${ seconds } წამი",
+        "${ seconds } წამი"
+      ]
+    },
     "specialoffer: Deal": {
       "${ n } month FREE": [
         "${ n } თვე უფასოდ",
@@ -7245,6 +7405,11 @@
         "თქვენი ონლაინ კონფიდენციალობა"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "ეს გამოწერა მანამდე გაუქმდება ყოველ 2 წელიწადში ერთხელ იმავე სიხშირით, სანამ გააუქმებთ."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "ტარიფებზე გადასვლა"
@@ -7257,6 +7422,12 @@
       "${ n } month": [
         "${ n } თვე",
         "${ n } თვე"
+      ],
+      "/ month": [
+        "/ თვეში"
+      ],
+      "/month": [
+        "/თვეში"
       ],
       "1 year": [
         "1 წელი"
@@ -7285,11 +7456,17 @@
       "Billed at ${ amount } for 30 months": [
         "გადაიხადეთ ${ amount } 30 თვისთვის"
       ],
+      "Get the deal": [
+        "ფასდაკლების მიღება"
+      ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "განახლება 1 წლის შემდეგ ფასდაკლებით ${ discountedAmount } ${ regularAmount }-ის მაგიერ (ფასდკლება ${ discount }%)"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "განახლება 2 წლის შემდეგ ფასდაკლებით ${ discountedAmount } ${ regularAmount }-ის მაგიერ (ფასდკლება ${ discount }%)"
+      ],
+      "Save ${ discount }%": [
+        "დაზოგეთ ${ discount }%"
       ],
       "Standard price ${ amount } for 1 month": [
         "სტანდარტული ფასი ${ amount } 1 თვისთვის"
@@ -7305,6 +7482,20 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "სტანდარტული ფასი ${ amount } 30 თვისთვის"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "შავი პარასკევი"
+      ],
+      "Cyber Week Sale": [
+        "კიბერ-კვირის ფასდაკლება"
+      ],
+      "End of Year Sale": [
+        "წლის ბოლოს ფასდაკლება"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "ასწიეთ სატარიფო გეგმა დაზოგეთ მეტი 2 წლით ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
@@ -7352,6 +7543,14 @@
       ],
       "Pending": [
         "რიგში"
+      ]
+    },
+    "Storage": {
+      "Upgrade storage": [
+        "ადგილის დამატება"
+      ],
+      "Your current storage:": [
+        "თქვენი მიმდინარე საცავი:"
       ]
     },
     "storage_split: action": {
@@ -7512,6 +7711,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice }-თვის"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription reminder": {
@@ -7914,6 +8154,9 @@
       "Discard changes?": [
         "ცვლილებების გაუქმება?"
       ],
+      "Docs": [
+        "დოკუმენტები"
+      ],
       "Document verification failed": [
         "დოკუმენტის გადამოწმება ჩავარდა"
       ],
@@ -8190,6 +8433,9 @@
       ],
       "What would you like to import?": [
         "რისი შემოტანა გნებავთ?"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "თქვენი ${ planName }-ის უფასო სატესტო პერიოდი ${ textDate }-ზე სრულდება"
       ],
       "Your account is protected": [
         "თქვენი ანგარიში დაცულია"

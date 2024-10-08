@@ -139,6 +139,9 @@
       "Close": [
         "Kapat"
       ],
+      "Close navigation": [
+        "Gezinmeyi kapat"
+      ],
       "Close this banner": [
         "Bu uyarıyı kapat"
       ],
@@ -153,6 +156,9 @@
       ],
       "Contact group": [
         "Kişi grubu"
+      ],
+      "Context menu": [
+        "Sağ tık menüsü"
       ],
       "Continue": [
         "İlerle"
@@ -396,17 +402,26 @@
       "Not now": [
         "Şimdi değil"
       ],
+      "Ok": [
+        "Tamam"
+      ],
       "OK": [
         "Tamam"
       ],
-      "Ok": [
-        "Tamam"
+      "Open": [
+        "Açık"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } ayarlarını aç"
       ],
       "Open ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } uygulamasını aç"
+      ],
+      "Open folder": [
+        "Klasörü aç"
+      ],
+      "Open navigation": [
+        "Gezinmeyi aç"
       ],
       "Pay": [
         "Öde"
@@ -495,11 +510,20 @@
       "Save changes": [
         "Değişiklikleri kaydet"
       ],
+      "Search": [
+        "Arama"
+      ],
       "Search countries": [
         "Ülke ara"
       ],
+      "Search docs": [
+        "Belge ara"
+      ],
       "See how": [
         "Nasıl yapıldığını görün"
+      ],
+      "See plan features": [
+        "Tarife özelliklerini görün"
       ],
       "See version history": [
         "Sürüm geçmişini görüntüle"
@@ -536,6 +560,9 @@
       ],
       "Start import": [
         "İçe aktarmayı başlat"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "${ priceUnlimited } tutarından başlayan fiyatlarla"
       ],
       "Stay": [
         "Kal"
@@ -581,6 +608,15 @@
       ],
       "Update recovery phrase": [
         "Kurtarma ifadesini güncelle"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited tarifesine yükseltin"
       ],
       "Upload anyway": [
         "Yine de yükle"
@@ -698,6 +734,11 @@
         "Şimdi ayrılırsanız, bazı etkinlikler içe aktarılamayabilir"
       ]
     },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME } uygulamaları"
+      ]
+    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "E-posta üretkenliğini yeni bir düzeye çıkarın e-postalarınızı yazmanıza, yanıtlamanıza ve düzeltmenize ${ BRAND_NAME } Scribe tarafından yardım edilmesine izin verin."
@@ -753,6 +794,19 @@
       ],
       "Premium Password Manager": [
         "Ücretli parola yöneticisi"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "İndirimler standart aylık ücretlendirmeye göre yapılır."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Aboneliğiniz, faturalama döneminizin sonunda otomatik olarak standart tarife ve süre üzerinden yenilenir."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30 gün içinde ücreti geri ödeme garantisi"
       ]
     },
     "bf2023: renew": {
@@ -1944,6 +1998,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME }, şüpheli etkinlikleri 7/24 izleyerek ve güvenlik uzmanlarına ileterek hesabınızı korur."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "İki adımlı doğrulama ek bir güvenlik katmanı ekleyerek yetkisiz erişimi önler."
       ],
@@ -1992,6 +2049,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Sürükleyip bırakarak kişiler arasında birleştirme önceliğini sıralayın. Birleştirmek istemediğiniz kişilerin işaretini kaldırın."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Kişi grupları ile gruptaki herkese tek tıklamayla e-posta gönderebilirsiniz."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Etkinlikleri iCal biçiminde içe aktarabilirsiniz (ICS dosyası).\nDosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_EVENTS_STRING } etkinlik kaydı içermelidir.\nDosyanız daha büyükse, daha küçük dosyalara bölün."
       ],
@@ -2003,6 +2063,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Hesabınızı ve verilerinizi kurtarma yöntemleri ayarlandı."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
       ]
     },
     "description": {
@@ -2084,6 +2147,49 @@
       ],
       "Priority support": [
         "Öncelikli destek"
+      ]
+    },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duo edinin"
+      ],
+      "Get it for ${ price }": [
+        "${ price } ile edinin"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "2 yılda bir ${ amountBilled } tutar ile faturalanır. İndirimler standart aylık ücret üzerinden hesaplanır."
+      ],
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Yıllık olarak ${ amountBilled } ile faturalanır. 2 kişisel ${ BRAND_NAME } Unlimited yıllık aboneliğinde ${ amountSave } indirim alın."
+      ]
+    },
+    "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB depolama alanı"
+      ],
+      "2 users": [
+        "2 kullanıcı"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Tüm ${ BRAND_NAME } ürünlerine tam erişim"
+      ],
+      "You save ${ amountSave }": [
+        "${ amountSave } kazancınız var"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Tüm ${ BRAND_NAME } ürünleri, 2 kişi için."
+      ],
+      "Double your storage": [
+        "Depolama alanınızı iki katına çıkarın"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "${ PLAN_NAMES[PLANS.DUO] } ile tanışın "
       ]
     },
     "Email body for description (description part)": {
@@ -3689,6 +3795,9 @@
       "Create public link": [
         "Herkese açık bağlantı ekle"
       ],
+      "Create your end-to-end encrypted document": [
+        "Uçtan uca şifrelenmiş belgenizi oluşturun"
+      ],
       "Creating link to file": [
         "Dosya bağlantısı oluşturuluyor"
       ],
@@ -4021,6 +4130,9 @@
       "No payment is required at this time.": [
         "Şu anda herhangi bir ödeme gerekmiyor."
       ],
+      "No recent documents": [
+        "Son kullanılan herhangi bir belge yok"
+      ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
       ],
@@ -4342,6 +4454,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Ne yazık ki, bu dosyanın ya da dosyanın bazı verilerinin şifresi çözülemedi."
       ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Ücretli özellikleri, ürünleri ve depolama alanını özel bir ücret ile almak için tarifenizi şimdi yükseltin"
+      ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Yüzlerce dosyanın aynı anda yüklenmesi başarımı etkileyebilir."
       ],
@@ -4425,6 +4540,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Şu adresi ziyaret etmek için başka bir tarayıcı sekmesi açmak üzeresiniz:"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Varsayılan tarayıcınızı açarak şu adrese gitmek üzeresiniz:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Şu anda ${ user.Name } (${ user.Email }) olarak oturum açmış durumdasınız."
@@ -4883,6 +5001,9 @@
       "Mail Server (IMAP)": [
         "E-posta sunucusu (IMAP)"
       ],
+      "Main": [
+        "Ana"
+      ],
       "Make editor": [
         "Düzenleyici yap"
       ],
@@ -4900,6 +5021,9 @@
       ],
       "Move to Inbox": [
         "Gelen kutusuna taşı"
+      ],
+      "Navigation": [
+        "Gezinme"
       ],
       "New password": [
         "Yeni parola"
@@ -5212,6 +5336,14 @@
         "${ price }"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ],
+      "Special Offer": [
+        "Özel teklif"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } masaüstü uygulaması"
@@ -5230,6 +5362,24 @@
       ],
       "Unlimited folders, labels and filters": [
         "Sınırsız klasör, etiket ve süzgeç"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "${ renewablePrice } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "ilk ay için"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Sınırlı süreli teklif 2 Nisan 2024 tarihinde sona erecek"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "${ planName } tarifesini yalnızca ${ planPrice } ödeyerek alın"
       ]
     },
     "Message": {
@@ -5487,8 +5637,14 @@
       "Get started for ${ price }": [
         "${ price } ile başlayın"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "${ priceMailPlus } tutarından başlayan fiyatlarla"
+      ],
       "Upgrade now": [
         "Şimdi yükselt"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "${ MAIL_SHORT_APP_NAME } Plus tarifesine yükseltin"
       ]
     },
     "new_plans: action": {
@@ -6062,6 +6218,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "${ price } ile Mail Plus edinin"
+      ],
+      "Starting from ${ price }": [
+        "${ price } tutarından başlayan fiyatlarla"
       ]
     },
     "new_plans: title": {
@@ -7195,6 +7354,40 @@
         "İmzala"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Kapat"
+      ],
+      "Don't show this offer again": [
+        "Bu teklif bir daha görüntülenmesin"
+      ],
+      "Special offer": [
+        "Özel teklif"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Sınırları kaldırın"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } gün",
+        "${ days } gün"
+      ],
+      "${ hours } hour": [
+        "${ hours } saat",
+        "${ hours } saat"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } dakika",
+        "${ minutes } dakika"
+      ],
+      "${ seconds } second": [
+        "${ seconds } saniye",
+        "${ seconds } saniye"
+      ]
+    },
     "specialoffer: Deal": {
       "${ n } month FREE": [
         "${ n } ay ÜCRETSİZ",
@@ -7245,6 +7438,11 @@
         "Çevrim içi gizliliği destekleyin"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Bu abonelik, iptal edilene kadar 2 yılda bir aynı tutarla otomatik olarak yenilenir."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Abonelik tarifelerini görüntüle"
@@ -7257,6 +7455,12 @@
       "${ n } month": [
         "${ n } ay",
         "${ n } ay"
+      ],
+      "/ month": [
+        "/ ay"
+      ],
+      "/month": [
+        "/ay"
       ],
       "1 year": [
         "1 yıl"
@@ -7285,11 +7489,17 @@
       "Billed at ${ amount } for 30 months": [
         "30 aylık ${ amount } olarak faturalanır"
       ],
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "1 yıl sonra ${ regularAmount } yerine ${ discountedAmount } olarak yenilenir (${ discount }% indirim ile)"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "2 yıl sonra ${ regularAmount } yerine ${ discountedAmount } olarak yenilenir (${ discount }% indirim ile)"
+      ],
+      "Save ${ discount }%": [
+        "${ discount }% indirim"
       ],
       "Standard price ${ amount } for 1 month": [
         "1 aylık standart ücret ${ amount }"
@@ -7305,6 +7515,20 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "30 aylık standart ücret ${ amount }"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Muhteşem Cuma kampanyası"
+      ],
+      "Cyber Week Sale": [
+        "Cyber Week kampanyası"
+      ],
+      "End of Year Sale": [
+        "Yıl sonu kampanyası"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "2 yıllık ${ planName } tarifesine yükselterek daha fazla indirim kazanın"
       ]
     },
     "specialoffer: Tooltip": {
@@ -7352,6 +7576,14 @@
       ],
       "Pending": [
         "Bekliyor"
+      ]
+    },
+    "Storage": {
+      "Upgrade storage": [
+        "Depolama alanını artır"
+      ],
+      "Your current storage:": [
+        "Geçerli depolama alanınız:"
       ]
     },
     "storage_split: action": {
@@ -7512,6 +7744,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } için"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Masaüstü uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription reminder": {
@@ -7914,6 +8187,9 @@
       "Discard changes?": [
         "Değişiklikler silinsin mi?"
       ],
+      "Docs": [
+        "Belgeler"
+      ],
       "Document verification failed": [
         "Belge doğrulanamadı"
       ],
@@ -7989,6 +8265,9 @@
       "Groups": [
         "Gruplar"
       ],
+      "High security for your account": [
+        "Hesabınız için yüksek güvenlik"
+      ],
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"
       ],
@@ -8049,6 +8328,9 @@
       ],
       "Offline": [
         "Çevrim dışı"
+      ],
+      "One email, many recipients": [
+        "Bir e-posta adresi, çok sayıda alıcı"
       ],
       "Open actions dropdown": [
         "İşlemler menüsünü aç"
@@ -8190,6 +8472,9 @@
       ],
       "What would you like to import?": [
         "Neyi içe aktarmak istersiniz?"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "${ planName } ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
       ],
       "Your account is protected": [
         "Hesabınız korunuyor"

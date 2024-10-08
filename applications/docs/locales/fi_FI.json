@@ -139,6 +139,9 @@
       "Close": [
         "Sulje"
       ],
+      "Close navigation": [
+        "Sulje navigaatio"
+      ],
       "Close this banner": [
         "Sulje tämä ilmoituspalkki"
       ],
@@ -153,6 +156,9 @@
       ],
       "Contact group": [
         "Yhteystietoryhmä"
+      ],
+      "Context menu": [
+        "Pikavalikko"
       ],
       "Continue": [
         "Jatka"
@@ -396,17 +402,26 @@
       "Not now": [
         "Ei nyt"
       ],
+      "Ok": [
+        "OK"
+      ],
       "OK": [
         "OK"
       ],
-      "Ok": [
-        "OK"
+      "Open": [
+        "Avaa"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Avaa ${ CALENDAR_APP_NAME }in asetukset"
       ],
       "Open ${ DRIVE_APP_NAME }": [
         "Avaa ${ DRIVE_APP_NAME }"
+      ],
+      "Open folder": [
+        "Avaa kansio"
+      ],
+      "Open navigation": [
+        "Avaa navigaatio"
       ],
       "Pay": [
         "Maksa"
@@ -495,11 +510,20 @@
       "Save changes": [
         "Tallenna muutokset"
       ],
+      "Search": [
+        "Hae"
+      ],
       "Search countries": [
         "Etsi maata"
       ],
+      "Search docs": [
+        "Etsi dokumentteja"
+      ],
       "See how": [
         "Katso miten"
+      ],
+      "See plan features": [
+        "Katso tilauksen ominaisuudet"
       ],
       "See version history": [
         "Näytä versiohistoria"
@@ -536,6 +560,9 @@
       ],
       "Start import": [
         "Aloita tuonti"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Alkaen ${ priceUnlimited }"
       ],
       "Stay": [
         "Pysy"
@@ -581,6 +608,15 @@
       ],
       "Update recovery phrase": [
         "Päivitä palautuslauseke"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade now": [
+        "Päivitä tilaus nyt"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Päivitä ${ BRAND_NAME } Unlimited -tilaukseen"
       ],
       "Upload anyway": [
         "Tallenna silti"
@@ -698,6 +734,11 @@
         "Jos poistut nyt, kaikkia tapahtumia ei välttämättä tuoda"
       ]
     },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME }-sovellukset"
+      ]
+    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Vie sähköpostin tuottavuus uudelle tasolle. Anna ${ BRAND_NAME } Scriben auttaa sinua kirjoittamaan, vastaamaan ja oikolukemaan viestejäsi."
@@ -753,6 +794,19 @@
       ],
       "Premium Password Manager": [
         "Premium salasanahallinta"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Alennukset perustuvat normaaliin kuukausihintaan."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Tilauksesi uusitaan automaattisesti samalla alennetulla hinnalla ja kestolla laskutuskautesi lopussa."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30 päivän rahat takaisin -takuu"
       ]
     },
     "bf2023: renew": {
@@ -1992,6 +2046,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Määritä yhdistettävien yhteystietojen painotusjärjestys vetämällä ja pudottamalla. Poista niiden valinta, joita et halua yhdistää."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Yhteystietoryhmillä voit lähettää sähköposteja kaikille ryhmän jäsenille yhdellä klikkauksella."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Voit tuoda tapahtumia iCal-muodossa (ICS-tiedostosta). Tiedosto voi olla enintään ${ MAX_IMPORT_FILE_SIZE_STRING } kokoinen ja sisältää enintään ${ MAX_IMPORT_EVENTS_STRING } tapahtumaa. Jos tiedosto on suurempi, jaa se pienempiin tiedostoihin."
       ],
@@ -2003,6 +2060,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Tilisi ja tietojesi palautustavat on asetettu."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
       ]
     },
     "description": {
@@ -2084,6 +2144,49 @@
       ],
       "Priority support": [
         "Ensisijainen tuki"
+      ]
+    },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Hanki ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Hanki se hintaan ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Laskutetaan kahden vuoden välein hintaan ${ amountBilled }. Alennukset perustuvat normaaliin kuukausihinnoitteluun."
+      ],
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Laskutetaan vuosittain hintaan ${ amountBilled }. Säästä ${ amountSave }, kahden henkilön vuosittaisiin ${ BRAND_NAME } Unlimited -tilauksiin verrattuna."
+      ]
+    },
+    "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 Tt tallennustilaa"
+      ],
+      "2 users": [
+        "2 käyttäjää"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Täysi pääsy kaikkiin ${ BRAND_NAME } -tuotteisiin"
+      ],
+      "You save ${ amountSave }": [
+        "Säästät ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Kaikki ${ BRAND_NAME }:n tarjoama, kahdelle."
+      ],
+      "Double your storage": [
+        "Tuplaa tallennustilasi"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Esittelyssä ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Email body for description (description part)": {
@@ -3689,6 +3792,9 @@
       "Create public link": [
         "Luo julkinen linkki"
       ],
+      "Create your end-to-end encrypted document": [
+        "Luo päästä päähän -salattu dokumenttisi"
+      ],
       "Creating link to file": [
         "Luodaan linkkiä tiedostoon"
       ],
@@ -4021,6 +4127,9 @@
       "No payment is required at this time.": [
         "Maksua ei nyt vaadita."
       ],
+      "No recent documents": [
+        "Ei viimeaikaisia dokumentteja"
+      ],
       "No results found": [
         "Ei tuloksia"
       ],
@@ -4342,6 +4451,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Valitettavasti näyttää siltä, että tiedoston tai joidenkin sen tietojen salausta ei voida purkaa."
       ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Päivitä nyt hankkiaksesi premium-ominaisuudet, -tuotteet ja -tallennustila erikoishintaan"
+      ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Satojen tiedostojen samanaikainen tallennus voi vaikuttaa suorituskykyyn."
       ],
@@ -4425,6 +4537,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Olet avaamassa uutta selaimen välilehteä sivustolle:"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Olet avaamassa oletusselaintasi sivustolle:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Olet kirjautuneena ${ user.Name } (${ user.Email })."
@@ -4883,6 +4998,9 @@
       "Mail Server (IMAP)": [
         "Sähköpostipalvelin (IMAP)"
       ],
+      "Main": [
+        "Pää"
+      ],
       "Make editor": [
         "Myönnä muokkausoikeus"
       ],
@@ -4900,6 +5018,9 @@
       ],
       "Move to Inbox": [
         "Siirrä saapuneisiin"
+      ],
+      "Navigation": [
+        "Navigaatio"
       ],
       "New password": [
         "Uusi salasana"
@@ -5212,6 +5333,14 @@
         "hintaan ${ price }"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Hanki tarjous"
+      ],
+      "Special Offer": [
+        "Erikoistarjous"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }in työpöytäsovellus"
@@ -5230,6 +5359,24 @@
       ],
       "Unlimited folders, labels and filters": [
         "Rajattomasti kansioita, tunnisteita ja suodattimia"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Uusitaan hintaan ${ renewablePrice }, peruuta milloin tahansa"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "ensimmäisen kuukauden ajan"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Rajoitetun ajan tarjous, päättyy 2. huhtikuuta 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Hanki ${ planName } -tilaus, nyt vain ${ planPrice }"
       ]
     },
     "Message": {
@@ -5487,8 +5634,14 @@
       "Get started for ${ price }": [
         "Aloita hintaan ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Alkaen ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Päivitä tilaus nyt"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Päivitä ${ MAIL_SHORT_APP_NAME } Plus -tilaukseen"
       ]
     },
     "new_plans: action": {
@@ -6062,6 +6215,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Hanki Mail Plus hintaan ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Alkaen ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7195,6 +7351,40 @@
         "Allekirjoita"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Sulje"
+      ],
+      "Don't show this offer again": [
+        "Älä näytä tätä tarjousta uudelleen"
+      ],
+      "Special offer": [
+        "Erikoistarjous"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Hanki Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } päivä",
+        "${ days } päivää"
+      ],
+      "${ hours } hour": [
+        "${ hours } tunti",
+        "${ hours } tuntia"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuutti",
+        "${ minutes } minuuttia"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekunti",
+        "${ seconds } sekuntia"
+      ]
+    },
     "specialoffer: Deal": {
       "${ n } month FREE": [
         "${ n } ILMAINEN kuukausi",
@@ -7245,6 +7435,11 @@
         "Tue verkkoyksityisyyttä"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Tilaus uudistuu automaattisesti kahden vuoden välein samalla hinnalla, kunnes se perutaan."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Siirry tilauksiin"
@@ -7258,6 +7453,12 @@
         "${ n } kuukausi",
         "${ n } kuukautta"
       ],
+      "/ month": [
+        "kuukaudessa"
+      ],
+      "/month": [
+        "/kuukausi"
+      ],
       "1 year": [
         "1 vuosi"
       ],
@@ -7265,7 +7466,7 @@
         "15 kuukautta"
       ],
       "2 years": [
-        "2 vuotta"
+        "Kaksi vuotta"
       ],
       "30 months": [
         "30 kuukautta"
@@ -7285,11 +7486,17 @@
       "Billed at ${ amount } for 30 months": [
         "Laskutetaan ${ amount } 30 kuukaudelta"
       ],
+      "Get the deal": [
+        "Hanki tarjous"
+      ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Uudistuu 1 vuoden kuluttua alennetulla ${ discountedAmount } hinnalla normaalin ${ regularAmount } sijaan (${ discount } % alennus)"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Uudistuu 2 vuoden kuluttua alennetulla ${ discountedAmount } hinnalla normaalin ${ regularAmount } sijaan (${ discount } % alennus)"
+      ],
+      "Save ${ discount }%": [
+        "Säästä ${ discount } %"
       ],
       "Standard price ${ amount } for 1 month": [
         "Normaalihinta 1 kuukaudelta on ${ amount }"
@@ -7305,6 +7512,20 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Normaalihinta 30 kuukaudelta on ${ amount }"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Black Friday -ale"
+      ],
+      "Cyber Week Sale": [
+        "Cyber Week -ale"
+      ],
+      "End of Year Sale": [
+        "Vuodenvaihteen ale"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Päivitä tilauksesi ja säästä enemmän kahden vuoden ${ planName } -tilauksella"
       ]
     },
     "specialoffer: Tooltip": {
@@ -7352,6 +7573,14 @@
       ],
       "Pending": [
         "Odottaa"
+      ]
+    },
+    "Storage": {
+      "Upgrade storage": [
+        "Hanki lisää tallennustilaa"
+      ],
+      "Your current storage:": [
+        "Nykyinen tallennustilasi:"
       ]
     },
     "storage_split: action": {
@@ -7512,6 +7741,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Hintaan ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
+      "and 15 more premium features": [
+        "sekä 15 muuta premium-ominaisuutta"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automaattinen sähköpostiohjaus ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Tietomurtohälytykset ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Työpöytäsovellus"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Auta meitä pitämään Internet kaikille turvallisena. Päivitä maksulliseen tilaukseen."
+      ],
+      "No ads or tracking": [
+        "Ei mainoksia eikä seurantaa"
+      ],
+      "Short @pm.me email address": [
+        "Lyhyt @pm.me-sähköpostiosoite"
+      ],
+      "Support our mission": [
+        "Tue tehtäväämme"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade your productivity": [
+        "Tehosta tuottavuuttasi"
+      ],
+      "We don't sell your data": [
+        "Emme myy tietojasi"
+      ],
+      "Your privacy is our mission": [
+        "Yksityisyytesi on tehtävämme"
       ]
     },
     "Subscription reminder": {
@@ -7914,6 +8184,9 @@
       "Discard changes?": [
         "Hylätäänkö muutokset?"
       ],
+      "Docs": [
+        "Docs"
+      ],
       "Document verification failed": [
         "Dokumentin vahvistus epäonnistui"
       ],
@@ -7989,6 +8262,9 @@
       "Groups": [
         "Ryhmät"
       ],
+      "High security for your account": [
+        "Vahva suojaus tilillesi"
+      ],
       "Human verification": [
         "Ihmisvahvistus"
       ],
@@ -8049,6 +8325,9 @@
       ],
       "Offline": [
         "Ei yhteyttä"
+      ],
+      "One email, many recipients": [
+        "Yksi sähköposti, monta vastaanottajaa"
       ],
       "Open actions dropdown": [
         "Avaa toimintovalikko"
@@ -8190,6 +8469,9 @@
       ],
       "What would you like to import?": [
         "Mitä haluat tuoda?"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "${ planName } -kokeilusi päättyy ${ textDate }"
       ],
       "Your account is protected": [
         "Tilisi on suojattu"

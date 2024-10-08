@@ -141,6 +141,9 @@
       "Close": [
         "Закрыть"
       ],
+      "Close navigation": [
+        "Закрыть панель навигации"
+      ],
       "Close this banner": [
         "Закрыть этот баннер"
       ],
@@ -402,17 +405,23 @@
       "Not now": [
         "Не сейчас"
       ],
+      "Ok": [
+        "OK"
+      ],
       "OK": [
         "OK"
       ],
-      "Ok": [
-        "OK"
+      "Open": [
+        "Открыть"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Открыть настройки ${ CALENDAR_APP_NAME }"
       ],
       "Open ${ DRIVE_APP_NAME }": [
         "Открыть ${ DRIVE_APP_NAME }"
+      ],
+      "Open navigation": [
+        "Открыть панель навигации"
       ],
       "Pay": [
         "Оплатить"
@@ -501,11 +510,17 @@
       "Save changes": [
         "Сохранить изменения"
       ],
+      "Search": [
+        "Поиск"
+      ],
       "Search countries": [
         "Поиск стран"
       ],
       "See how": [
         "Посмотреть, как"
+      ],
+      "See plan features": [
+        "Посмотреть возможности тарифа"
       ],
       "See version history": [
         "Просмотреть историю версий"
@@ -587,6 +602,12 @@
       ],
       "Update recovery phrase": [
         "Обновить фразу для восстановления"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
       ],
       "Upload anyway": [
         "Все равно загрузить"
@@ -714,6 +735,11 @@
         "Если выйти сейчас, импорт некоторых событий не завершится"
       ]
     },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "Приложения ${ BRAND_NAME }"
+      ]
+    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Поднимите производительность электронной почты на новый уровень. Пусть ${ BRAND_NAME } Scribe поможет вам в написании, ответах и корректировке писем."
@@ -769,6 +795,19 @@
       ],
       "Premium Password Manager": [
         "Платная версия менеджера паролей"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Скидки рассчитываются исходя из стандартной платы за месяц."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Подписка автоматически продлится на обычный срок по стандартной цене с учетом скидки в конце платёжного цикла."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Гарантия возврата средств в течение 30 дней"
       ]
     },
     "bf2023: renew": {
@@ -2110,6 +2149,49 @@
       ],
       "Priority support": [
         "Приоритетная поддержка"
+      ]
+    },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Оформить ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Оформите за ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Оплата раз в 2 года по цене ${ amountBilled }. Скидки рассчитываются исходя из стандартной платы за месяц."
+      ],
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Ежегодная оплата в размере ${ amountBilled }. Сохраните ${ amountSave } на 2 индивидуальных подписках ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 ТБ хранилища"
+      ],
+      "2 users": [
+        "2 пользователя"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Полный доступ ко всем продуктам ${ BRAND_NAME }"
+      ],
+      "You save ${ amountSave }": [
+        "Вы экономите ${ amountSave }."
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Все возможности ${ BRAND_NAME } для двоих."
+      ],
+      "Double your storage": [
+        "Удвойте своё хранилище"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Встречайте ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Email body for description (description part)": {
@@ -4468,6 +4550,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "К сожалению, похоже, что файл или некоторые его данные не удается расшифровать."
       ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Улучшить сейчас, чтобы получить платные функции, программное обеспечение и хранилище по специальной цене"
+      ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Одновременная загрузка сотен файлов может повлиять на производительность."
       ],
@@ -5019,6 +5104,9 @@
       "Mail Server (IMAP)": [
         "Почтовый сервер (IMAP)"
       ],
+      "Main": [
+        "Главная"
+      ],
       "Make editor": [
         "Сделать редактором"
       ],
@@ -5036,6 +5124,9 @@
       ],
       "Move to Inbox": [
         "Переместить во Входящие"
+      ],
+      "Navigation": [
+        "Навигация"
       ],
       "New password": [
         "Новый пароль"
@@ -5358,6 +5449,14 @@
         "за ${ price }"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Получить"
+      ],
+      "Special Offer": [
+        "Специальное предложение"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Приложение ${ MAIL_APP_NAME } для ПК"
@@ -5376,6 +5475,24 @@
       ],
       "Unlimited folders, labels and filters": [
         "Неограниченное количество папок, ярлыков и фильтров"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Затем стоимость подписки составит ${ renewablePrice }. Отменить её можно в любое время"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "за первый месяц"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Срок действия ограниченного предложения истекает 2 апреля 2024 г."
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Получите тариф ${ planName } всего за ${ planPrice }"
       ]
     },
     "Message": {
@@ -7447,6 +7564,48 @@
         "Подписать"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Закрыть"
+      ],
+      "Don't show this offer again": [
+        "Больше не показывать"
+      ],
+      "Special offer": [
+        "Специальное предложение"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Перейти на Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } день",
+        "${ days } дня",
+        "${ days } дней",
+        "${ days } дней"
+      ],
+      "${ hours } hour": [
+        "${ hours } час",
+        "${ hours } часа",
+        "${ hours } часов",
+        "${ hours } часов"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } минута",
+        "${ minutes } минуты",
+        "${ minutes } минут",
+        "${ minutes } минут"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунд"
+      ]
+    },
     "specialoffer: Deal": {
       "${ n } month FREE": [
         "${ n } месяц БЕСПЛАТНО",
@@ -7499,6 +7658,11 @@
         "Обеспечьте свою конфиденциальность в Интернете"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Эта подписка будет автоматически продлеваться каждые 2 года по той же цене до тех пор, пока она не будет отменена."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Перейти к тарифам"
@@ -7513,6 +7677,9 @@
         "${ n } месяцев",
         "${ n } месяца",
         "${ n } месяца"
+      ],
+      "/ month": [
+        "/ месяц"
       ],
       "1 year": [
         "1 год"
@@ -7541,11 +7708,17 @@
       "Billed at ${ amount } for 30 months": [
         "Оплата ${ amount } за 30 месяцев."
       ],
+      "Get the deal": [
+        "Получить скидку"
+      ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Продлевается через 1 год по сниженной цене: ${ discountedAmount } вместо ${ regularAmount } (скидка ${ discount } %)"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Продлевается через 2 года по сниженной цене: ${ discountedAmount } вместо ${ regularAmount } (скидка ${ discount } %)"
+      ],
+      "Save ${ discount }%": [
+        "Сэкономьте ${ discount } %"
       ],
       "Standard price ${ amount } for 1 month": [
         "Цена без скидки: ${ amount } за 1 месяц."
@@ -7561,6 +7734,20 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Цена без скидки: ${ amount } за 30 месяцев."
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Черная пятница"
+      ],
+      "Cyber Week Sale": [
+        "Кибернеделя"
+      ],
+      "End of Year Sale": [
+        "Конец года"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Переходите на тариф ${ planName } и экономьте больше целых 2 года"
       ]
     },
     "specialoffer: Tooltip": {
@@ -7608,6 +7795,14 @@
       ],
       "Pending": [
         "В ожидании"
+      ]
+    },
+    "Storage": {
+      "Upgrade storage": [
+        "Увеличить дисковое пространство"
+      ],
+      "Your current storage:": [
+        "Текущее хранилище:"
       ]
     },
     "storage_split: action": {
@@ -7780,6 +7975,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "За ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription reminder": {
@@ -8486,6 +8722,9 @@
       ],
       "What would you like to import?": [
         "Что бы вы хотели импортировать?"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Ваша бесплатная пробная версия ${ planName } заканчивается ${ textDate }"
       ],
       "Your account is protected": [
         "Ваш аккаунт защищён"
