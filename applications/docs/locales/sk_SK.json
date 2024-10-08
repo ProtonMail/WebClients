@@ -141,6 +141,9 @@
       "Close": [
         "Zatvoriť"
       ],
+      "Close navigation": [
+        "Zavrieť menu"
+      ],
       "Close this banner": [
         "Zatvoriť tento banner"
       ],
@@ -402,17 +405,23 @@
       "Not now": [
         "Teraz nie"
       ],
+      "Ok": [
+        "Ok"
+      ],
       "OK": [
         "OK"
       ],
-      "Ok": [
-        "Ok"
+      "Open": [
+        "Otvoriť"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otvoriť nastavenia ${ CALENDAR_APP_NAME }"
       ],
       "Open ${ DRIVE_APP_NAME }": [
         "Otvoriť ${ DRIVE_APP_NAME }"
+      ],
+      "Open navigation": [
+        "Otvoriť menu"
       ],
       "Pay": [
         "Zaplatiť"
@@ -501,11 +510,17 @@
       "Save changes": [
         "Uložiť zmeny"
       ],
+      "Search": [
+        "Hľadať"
+      ],
       "Search countries": [
         "Vyhľadať krajiny"
       ],
       "See how": [
         "Pozrieť ako"
+      ],
+      "See plan features": [
+        "Pozrite si funkcie plánu"
       ],
       "See version history": [
         "Zobraziť históriu verzií"
@@ -542,6 +557,9 @@
       ],
       "Start import": [
         "Spustiť import"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Cena od ${ priceUnlimited }"
       ],
       "Stay": [
         "Zostať"
@@ -587,6 +605,15 @@
       ],
       "Update recovery phrase": [
         "Aktualizujte frázu na obnovenie"
+      ],
+      "Upgrade": [
+        "Prejsť na platený plán"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Navýšiť na ${ BRAND_NAME } Unlimited"
       ],
       "Upload anyway": [
         "Napriek tomu nahrať"
@@ -714,6 +741,11 @@
         "Ak teraz odídete, niektoré udalosti nebudú importované"
       ]
     },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "Aplikácia ${ BRAND_NAME }"
+      ]
+    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Pozdvihnite efektivitu práce s emailami na novú úroveň. Nechajte ${ BRAND_NAME } Scribe, aby vám pomohol písať, odpovedať a opravovať emaily."
@@ -769,6 +801,19 @@
       ],
       "Premium Password Manager": [
         "Prémiový správca hesiel"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Zľavy sú tvorené na základe štandardných mesačných cien."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Vaše predplatné sa automaticky obnoví so štandardnou zľavnenou sadzbou a trvaním na konci vášho fakturačného cyklu."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30-dňová záruka vrátenia peňazí"
       ]
     },
     "bf2023: renew": {
@@ -1970,6 +2015,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } chráni váš účet pomocou nepretržitého monitorovania podozrivých aktivít - vrátane eskalácie na bezpečnostných špecialistov."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA pridáva ďalšiu úroveň zabezpečenia a zabraňuje neoprávnenému prístupu."
       ],
@@ -2018,6 +2066,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocou myši ťahajte a pustite pre zmenu priority spojenie kontaktov. Odškrtnite kontakty, ktoré nechcete zlúčiť."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Pomocou skupín kontaktov môžete posielať emaily všetkým členom skupiny jedným kliknutím."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Môžete importovať udalosti vo formáte iCal (ICS súbor). Tento súbor by mal mať maximálnu veľkosť ${ MAX_IMPORT_FILE_SIZE_STRING } a maximálne ${ MAX_IMPORT_EVENTS_STRING } udalostí. Ak je váš súbor väčší, prosím rozdeľte ho na menšie súbory."
       ],
@@ -2029,6 +2080,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Váš účet a metódy obnovy údajov sú nastavené."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -2110,6 +2164,49 @@
       ],
       "Priority support": [
         "Prioritná podpora"
+      ]
+    },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Získajte ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Získajte za ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Fakturované každé 2 roky za sumu ${ amountBilled }. Zľavy sú založené na štandardných mesačných cenách."
+      ],
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Fakturované ročne sumou ${ amountBilled }. Ušetrite ${ amountSave } za 2 jednotlivé ${ BRAND_NAME } Unlimited ročné predplatné."
+      ]
+    },
+    "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB úložného priestoru"
+      ],
+      "2 users": [
+        "2 používatelia"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Plný prístup k všetkým produktom ${ BRAND_NAME }"
+      ],
+      "You save ${ amountSave }": [
+        "Ušetríte ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Všetko od ${ BRAND_NAME } pre 2."
+      ],
+      "Double your storage": [
+        "Zdvojnásobte svoje úložisko"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Predstavujeme ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Email body for description (description part)": {
@@ -4468,6 +4565,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Bohužiaľ, zdá sa, že súbor alebo niektoré jeho údaje nemôžu byť dešifrované."
       ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Navýšte teraz a získajte prémiové funkcie, produkty a úložisko za špeciálnu cenu"
+      ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Nahrávanie stoviek súborov naraz môže znížiť výkonnosť."
       ],
@@ -4551,6 +4651,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Chystáte sa otvoriť stránku v inom prehliadači:"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Chystáte sa otvoriť váš predvolený prehliadač a navštíviť:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Momentálne ste prihlásený ako ${ user.Name } (${ user.Email })."
@@ -5019,6 +5122,9 @@
       "Mail Server (IMAP)": [
         "Emailový server (IMAP)"
       ],
+      "Main": [
+        "Hlavné"
+      ],
       "Make editor": [
         "Urobiť editorom"
       ],
@@ -5036,6 +5142,9 @@
       ],
       "Move to Inbox": [
         "Presunúť do Doručených"
+      ],
+      "Navigation": [
+        "Navigácia"
       ],
       "New password": [
         "Nové heslo"
@@ -5358,6 +5467,14 @@
         "za ${ price }"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Získať ponuku"
+      ],
+      "Special Offer": [
+        "Špeciálna ponuka"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Desktopová aplikácia ${ MAIL_APP_NAME } "
@@ -5376,6 +5493,24 @@
       ],
       "Unlimited folders, labels and filters": [
         "Neobmedzený počet priečinkov, štítkov a filtrov"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Obnovuje sa za ${ renewablePrice }, zrušiť môžete kedykoľvek"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "za prvý mesiac"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Časovo obmedzená ponuka, končí 2. apríla 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Získať ${ planName } len za ${ planPrice }"
       ]
     },
     "Message": {
@@ -5633,8 +5768,14 @@
       "Get started for ${ price }": [
         "Začnite za ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Cena od ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Aktualizovať teraz"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Navýšte na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6250,6 +6391,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Získajte Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Cena od ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7447,6 +7591,48 @@
         "Podpísať"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Zavrieť"
+      ],
+      "Don't show this offer again": [
+        "Nabudúce to už nezobrazovať"
+      ],
+      "Special offer": [
+        "Špeciálna ponuka"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Prejsť na Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } deň",
+        "${ days } dni",
+        "${ days } dní",
+        "${ days } dňa"
+      ],
+      "${ hours } hour": [
+        "${ hours } hodiny",
+        "${ hours } hodiny",
+        "${ hours } hodín",
+        "${ hours } hodín"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minúta",
+        "${ minutes } minúty",
+        "${ minutes } minút",
+        "${ minutes } minút"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekunda",
+        "${ seconds } sekúnd",
+        "${ seconds } sekundy",
+        "${ seconds } sekúnd"
+      ]
+    },
     "specialoffer: Deal": {
       "${ n } month FREE": [
         "${ n } mesiacov ZDARMA",
@@ -7499,6 +7685,11 @@
         "Podporte online súkromie"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Toto predplatné sa bude automaticky obnovovať každé 2 roky za rovnakú cenu, kým sa nezruší."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Prejsť na plány predplatného"
@@ -7513,6 +7704,12 @@
         "${ n } mesiace",
         "${ n } mesiacov",
         "${ n } mesiacov"
+      ],
+      "/ month": [
+        "/ mesiac"
+      ],
+      "/month": [
+        "/mesiac"
       ],
       "1 year": [
         "1 rok"
@@ -7541,11 +7738,17 @@
       "Billed at ${ amount } for 30 months": [
         "Účtovaná suma ${ amount } za 30 mesiacov"
       ],
+      "Get the deal": [
+        "Využiť ponuku"
+      ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Obnoví sa po 1 roku za zľavnenú cenu ${ discountedAmount } namiesto ${ regularAmount } (zľava ${ discount }%)"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Obnoví sa po 2 rokoch za zľavnenú cenu ${ discountedAmount } namiesto ${ regularAmount } (zľava ${ discount }%)"
+      ],
+      "Save ${ discount }%": [
+        "Ušetríte ${ discount } %"
       ],
       "Standard price ${ amount } for 1 month": [
         "Štandardná cena ${ amount } na 1 mesiac"
@@ -7561,6 +7764,20 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Štandardná cena ${ amount } na 30 mesiacov"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Black Friday zľavy"
+      ],
+      "Cyber Week Sale": [
+        "Cyber Week zľavy"
+      ],
+      "End of Year Sale": [
+        "Koncoročné zľavy"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Inovujte a ušetrite viac s 2 rokmi ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
@@ -7608,6 +7825,14 @@
       ],
       "Pending": [
         "Čakajúce"
+      ]
+    },
+    "Storage": {
+      "Upgrade storage": [
+        "Navýšiť úložisko"
+      ],
+      "Your current storage:": [
+        "Vaše aktuálne úložisko:"
       ]
     },
     "storage_split: action": {
@@ -7780,6 +8005,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložného priestoru"
+      ],
+      "and 15 more premium features": [
+        "a ďalších 15 prémiových funkcií"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické presmerovanie emailu ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornenia na úniky údajov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikácia"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
+      ],
+      "No ads or tracking": [
+        "Žiadne reklamy alebo sledovanie"
+      ],
+      "Short @pm.me email address": [
+        "Skrátená emailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podporte naše poslanie"
+      ],
+      "Upgrade": [
+        "Prejsť na platený plán"
+      ],
+      "Upgrade your productivity": [
+        "Zlepšite svoju produktivitu"
+      ],
+      "We don't sell your data": [
+        "Nepredávame vaše údaje"
+      ],
+      "Your privacy is our mission": [
+        "Vaše súkromie je naším poslaním"
       ]
     },
     "Subscription reminder": {
@@ -8283,6 +8549,9 @@
       "Groups": [
         "Skupiny"
       ],
+      "High security for your account": [
+        "Vysoké zabezpečenie vášho účtu"
+      ],
       "Human verification": [
         "Overenie, že nie ste robot"
       ],
@@ -8345,6 +8614,9 @@
       ],
       "Offline": [
         "Offline"
+      ],
+      "One email, many recipients": [
+        "Jeden email, množstvo príjemcov"
       ],
       "Open actions dropdown": [
         "Otvoriť rozbaľovaciu ponuku"
@@ -8486,6 +8758,9 @@
       ],
       "What would you like to import?": [
         "Čo by ste chceli importovať?"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Vaša bezplatná skúšobná verzia služby ${ planName } končí ${ textDate }"
       ],
       "Your account is protected": [
         "Váš účet je chránený"

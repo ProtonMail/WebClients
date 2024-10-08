@@ -139,6 +139,9 @@
       "Close": [
         "Κλείσιμο"
       ],
+      "Close navigation": [
+        "Κλείσιμο μενού πλοήγησης"
+      ],
       "Close this banner": [
         "Κλείσιμο αυτού του banner"
       ],
@@ -153,6 +156,9 @@
       ],
       "Contact group": [
         "Ομάδα Επαφών"
+      ],
+      "Context menu": [
+        "Μενού πλαισίου"
       ],
       "Continue": [
         "Συνέχεια"
@@ -396,17 +402,26 @@
       "Not now": [
         "Όχι τώρα"
       ],
+      "Ok": [
+        "OK"
+      ],
       "OK": [
         "ΟΚ"
       ],
-      "Ok": [
-        "OK"
+      "Open": [
+        "Άνοιγμα"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
       ],
       "Open ${ DRIVE_APP_NAME }": [
         "Άνοιγμα ${ DRIVE_APP_NAME }"
+      ],
+      "Open folder": [
+        "Άνοιγμα φακέλου"
+      ],
+      "Open navigation": [
+        "Άνοιγμα μενού πλοήγησης"
       ],
       "Pay": [
         "Πληρωμή"
@@ -495,11 +510,20 @@
       "Save changes": [
         "Αποθήκευση αλλαγών"
       ],
+      "Search": [
+        "Αναζήτηση"
+      ],
       "Search countries": [
         "Αναζήτηση χωρών"
       ],
+      "Search docs": [
+        "Αναζήτηση εγγράφων"
+      ],
       "See how": [
         "Δείτε πως"
+      ],
+      "See plan features": [
+        "Προβολή δυνατοτήτων προγράμματος"
       ],
       "See version history": [
         "Δείτε το ιστορικό εκδόσεων"
@@ -536,6 +560,9 @@
       ],
       "Start import": [
         "Έναρξη εισαγωγής"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Ξεκινώντας από ${ priceUnlimited }"
       ],
       "Stay": [
         "Παραμονή"
@@ -581,6 +608,12 @@
       ],
       "Update recovery phrase": [
         "Ενημέρωση φράσης ανάκτησης"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
       ],
       "Upload anyway": [
         "Ανέβασμα οπωσδήποτε"
@@ -698,6 +731,11 @@
         "Φεύγοντας τώρα, κάποιες εκδηλώσεις μπορεί να μην εισαχθούν"
       ]
     },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME } εφαρμογές"
+      ]
+    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Ανεβάστε την παραγωγικότητα του ηλεκτρονικού ταχυδρομείου σε νέα επίπεδα. Αφήστε το ${ BRAND_NAME } Scribe να σας βοηθήσει να γράψετε, να απαντήσετε και να διορθώσετε τα μηνύματά σας."
@@ -753,6 +791,19 @@
       ],
       "Premium Password Manager": [
         "Premium Διαχειριστής Κωδικών Πρόσβασης"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Η συνδρομή σας θα ανανεωθεί αυτόματα με την τυπική μειωμένη τιμή και διάρκεια στο τέλος του κύκλου χρέωσης."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Εγγύηση επιστροφής χρημάτων εντός 30 ημερών"
       ]
     },
     "bf2023: renew": {
@@ -2084,6 +2135,49 @@
       ],
       "Priority support": [
         "Υποστήριξη με προτεραιότητα"
+      ]
+    },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Αποκτήστε το ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Αποκτήστε το για ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Χρεώνεται κάθε 2 χρόνια με ${ amountBilled }. Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση."
+      ],
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Χρεώνεται ετησίως με ${ amountBilled }. Εξοικονομήστε ${ amountSave } πάνω από 2 μεμονωμένα ${ BRAND_NAME } Απεριόριστες ετήσιες συνδρομές."
+      ]
+    },
+    "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB αποθηκευτικού χώρου"
+      ],
+      "2 users": [
+        "2 χρήστες"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Πλήρης πρόσβαση σε όλα τα ${ BRAND_NAME } προϊόντα"
+      ],
+      "You save ${ amountSave }": [
+        "Εξοικονομείτε ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Όλα του ${ BRAND_NAME }, για 2."
+      ],
+      "Double your storage": [
+        "Διπλασιάστε τον αποθηκευτικό σας χώρο"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Παρουσιάζουμε το ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Email body for description (description part)": {
@@ -4342,6 +4436,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Δυστυχώς, φαίνεται ότι το αρχείο ή ορισμένα από τα δεδομένα του δεν μπορούν να αποκρυπτογραφηθούν."
       ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Αναβαθμίστε τώρα τον λογαριασμό σας για να λάβετε premium χαρακτηριστικά, προϊόντα και αποθηκευτικό χώρο σε ειδική τιμή"
+      ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Το ανέβασμα εκατοντάδων αρχείων με τη μία ενδέχεται να μειώσει τις επιδόσεις."
       ],
@@ -4883,6 +4980,9 @@
       "Mail Server (IMAP)": [
         "Διακομιστής Αλληλογραφίας (IMAP)"
       ],
+      "Main": [
+        "Κύριο"
+      ],
       "Make editor": [
         "Ορισμός ως επεξεργαστή"
       ],
@@ -4900,6 +5000,9 @@
       ],
       "Move to Inbox": [
         "Μετακίνηση στα Εισερχόμενα"
+      ],
+      "Navigation": [
+        "Πλοήγηση"
       ],
       "New password": [
         "Νέος κωδικός"
@@ -5212,6 +5315,14 @@
         "για ${ price }"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Αποκτήστε την προσφορά"
+      ],
+      "Special Offer": [
+        "Ειδική Προσφορά"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } εφαρμογή επιφάνειας εργασίας"
@@ -5230,6 +5341,24 @@
       ],
       "Unlimited folders, labels and filters": [
         "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
+      ]
+    },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Ανανεώνει σε ${ renewablePrice }, ακυρώστε ανά πάσα στιγμή"
+      ]
+    },
+    "mailtrial2024: Info": {
+      "for the first month": [
+        "για τον πρώτο μήνα"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Προσφορά περιορισμένου χρόνου, λήγει στις 2 Απριλίου 2024"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Λάβετε το ${ planName } μόνο για ${ planPrice }"
       ]
     },
     "Message": {
@@ -5486,6 +5615,9 @@
       ],
       "Get started for ${ price }": [
         "Ξεκινήστε με ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Ξεκινώντας από ${ priceMailPlus }"
       ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
@@ -6062,6 +6194,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Αποκτήστε το Mail Plus για ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Ξεκινώντας από ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7195,6 +7330,40 @@
         "Υπογράψτε"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Κλείσιμο"
+      ],
+      "Don't show this offer again": [
+        "Να μην εμφανιστεί ξανά αυτή η προσφορά"
+      ],
+      "Special offer": [
+        "Ειδική προσφορά"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Αναβαθμίστε σε Απεριόριστο"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } ημέρα",
+        "${ days } ημέρες"
+      ],
+      "${ hours } hour": [
+        "${ hours } ώρα",
+        "${ hours } ώρες"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } λεπτό",
+        "${ minutes } λεπτά"
+      ],
+      "${ seconds } second": [
+        "${ seconds } δευτερόλεπτο",
+        "${ seconds } δευτερόλεπτα"
+      ]
+    },
     "specialoffer: Deal": {
       "${ n } month FREE": [
         "${ n } μήνα ΔΩΡΕΑΝ",
@@ -7245,6 +7414,11 @@
         "Υποστήριξη ηλεκτρονικού απορρήτου"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Αυτή η συνδρομή θα ανανεώνεται αυτόματα κάθε 2 χρόνια με την ίδια τιμή μέχρι να ακυρωθεί."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Μεταβείτε στα προγράμματα συνδρομής"
@@ -7257,6 +7431,12 @@
       "${ n } month": [
         "${ n } μήνα",
         "${ n } μήνες"
+      ],
+      "/ month": [
+        "/ μήνας"
+      ],
+      "/month": [
+        "/μήνα"
       ],
       "1 year": [
         "1 έτος"
@@ -7285,11 +7465,17 @@
       "Billed at ${ amount } for 30 months": [
         "Χρεωμένο στα ${ amount } για 30 μήνες"
       ],
+      "Get the deal": [
+        "Αποκτήστε την προσφορά"
+      ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Ανανεώνεται μετά από 1 έτος σε μειωμένη τιμή ${ discountedAmount } αντί για ${ regularAmount } (${ discount }% έκπτωση)"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Ανανεώνεται μετά από 2 έτη σε μειωμένη τιμή ${ discountedAmount } αντί για ${ regularAmount } (${ discount }% έκπτωση)"
+      ],
+      "Save ${ discount }%": [
+        "Εξοικονομήστε ${ discount }%"
       ],
       "Standard price ${ amount } for 1 month": [
         "Τυπική τιμή ${ amount } για 1 μήνα"
@@ -7305,6 +7491,20 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Τυπική τιμή ${ amount } για 30 μήνες"
+      ]
+    },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Προσφορά Black Friday"
+      ],
+      "Cyber Week Sale": [
+        "Πώληση Cyber Week"
+      ],
+      "End of Year Sale": [
+        "Προσφορά Τέλους Έτους"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Αναβαθμίστε και εξοικονομήστε περισσότερα με 2 χρόνια ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
@@ -7352,6 +7552,14 @@
       ],
       "Pending": [
         "Σε εκκρεμότητα"
+      ]
+    },
+    "Storage": {
+      "Upgrade storage": [
+        "Αναβάθμιση αποθηκευτικού χώρου"
+      ],
+      "Your current storage:": [
+        "Ο τρέχων χώρος αποθήκευσης:"
       ]
     },
     "storage_split: action": {
@@ -7512,6 +7720,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Για ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "and 15 more premium features": [
+        "και 15 περισσότερα premium χαρακτηριστικά"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Εφαρμογή σταθερού υπολογιστή"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πρόγραμμα επί πληρωμή."
+      ],
+      "No ads or tracking": [
+        "Χωρίς διαφημίσεις ή παρακολούθηση"
+      ],
+      "Short @pm.me email address": [
+        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
+      ],
+      "Support our mission": [
+        "Υποστηρίξτε την αποστολή μας"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade your productivity": [
+        "Αναβαθμίστε την παραγωγικότητά σας"
+      ],
+      "We don't sell your data": [
+        "Δεν πουλάμε τα δεδομένα σας"
+      ],
+      "Your privacy is our mission": [
+        "Το απόρρητό σας είναι η αποστολή μας"
       ]
     },
     "Subscription reminder": {
@@ -7914,6 +8163,9 @@
       "Discard changes?": [
         "Απόρριψη αλλαγών;"
       ],
+      "Docs": [
+        "Έγγραφα"
+      ],
       "Document verification failed": [
         "Η επαλήθευση εγγράφου απέτυχε"
       ],
@@ -8190,6 +8442,9 @@
       ],
       "What would you like to import?": [
         "Τι θα θέλατε να εισάγετε;"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Η δωρεάν δοκιμή του ${ planName } λήγει στις ${ textDate }"
       ],
       "Your account is protected": [
         "Ο λογαριασμός σας προστατεύεται"
