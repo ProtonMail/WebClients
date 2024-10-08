@@ -781,11 +781,11 @@
       "Refresh status": [
         "Állapot frissítése"
       ],
-      "refresh the page": [
-        "frissítse az oldalt"
-      ],
       "Refresh the page": [
         "Oldal frissítése"
+      ],
+      "refresh the page": [
+        "frissítse az oldalt"
       ],
       "Reload": [
         "Újratöltés"
@@ -1501,7 +1501,7 @@
         "Hirdetésblokkoló és rosszindulatú programok elleni védelem"
       ],
       "High speed streaming": [
-        "Nagy sebességű streamelés"
+        "Nagy sebességű videózás"
       ],
       "Premium Password Manager": [
         "Prémium jelszókezelő"
@@ -1532,6 +1532,14 @@
         "Válassza ki az Új évi ajánlatát"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Sajnáljuk, de ez az ajánlat nem elérhető az ön előfizetésével"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Sajnos ez a ajánlat nem elérhető a jelenlegi előfizetésével. De megtud takarítani **${ discountPercentage } a ${ plan.Title }** vásárlásakkor ha előfizet **${ months }**"
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB tárhely (2x több mint bármelyik másik előfizetésben)"
@@ -1553,14 +1561,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "A ${ plan } előfizetés vissza jött ideiglenesen"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Sajnáljuk, de ez az ajánlat nem elérhető az ön előfizetésével"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Sajnos ez a ajánlat nem elérhető a jelenlegi előfizetésével. De megtud takarítani **${ discountPercentage } a ${ plan.Title }** vásárlásakkor ha előfizet **${ months }**"
       ]
     },
     "bf2023: Offers": {
@@ -4399,7 +4399,7 @@
         "Próbáljon csak betűket, számokat és _.-t használni"
       ],
       "Unexpected error, we can't import the contacts": [
-        "Váratlan hiba, nem tudjuk importálni a névjegyeket"
+        "Váratlan hiba történt, a névjegyek importálása nem sikerült"
       ],
       "Unknown error": [
         "Ismeretlen hiba"
@@ -5016,7 +5016,7 @@
         "Hiba történt, próbálja meg újra"
       ],
       "Family name updated": [
-        "Család neve megváltozott"
+        "Család neve frissítve"
       ],
       "Member updated": [
         "Tag frissítve"
@@ -6702,7 +6702,7 @@
         "Nem lát semmit? Ne felejtse el engedélyezni a felugró ablakokat."
       ],
       "Downgrade": [
-        "Kisebb csomagra váltás"
+        "Váltás kisebb csomagra"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "A lemondás megszünteti a fizetett ${ VPN_APP_NAME } szerverekkel való összes kapcsolatot."
@@ -9530,7 +9530,7 @@
         "Csoporttagok"
       ],
       "Group name": [
-        "Csoport név"
+        "Csoport neve"
       ],
       "Hide password": [
         "Jelszó elrejtése"
@@ -10416,7 +10416,7 @@
         "Megnövelt biztonság és prémium funkciók a csoportok számára"
       ],
       "for ${ price }": [
-        "neki: ${ price }"
+        "${ price } áron"
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Korlátozott idejű ajánlat: **Akár 35% kedvezmény** az éves csomagokkal"
@@ -10827,6 +10827,23 @@
         "Közepes VPN sebesség"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "További ${ BRAND_NAME } csomagok megismerése"
+      ],
+      "From ${ price }": [
+        "Már ${ price }-tól"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Folytatás az ingyenessel"
@@ -10854,23 +10871,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Váltás ${ upsellPlanHumanSize } csomagra"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "További ${ BRAND_NAME } csomagok megismerése"
-      ],
-      "From ${ price }": [
-        "Már ${ price }-tól"
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -11265,7 +11265,7 @@
         "Felhasználói munkafolyamatok kezelése"
       ],
       "User storage management": [
-        "Felhasználói tárhely kezelés"
+        "Felhasználói tárhely kezelése"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Tároló megosztás (${ n } személyig)",
@@ -11323,7 +11323,7 @@
         "Minden ${ BRAND_NAME } alkalmazás és prémium lehetőségeik"
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
-        "Minden ${ BRAND_NAME } üzleti alkalmazás és prémium funkció az ön egész vállalkozását védi"
+        "Minden ${ BRAND_NAME } üzleti alkalmazás és prémium funkció az ön egész vállalkozását védi."
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Széleskörű adatvédelem és biztonság az összes ${ BRAND_NAME } szolgáltatással."
@@ -11332,10 +11332,10 @@
         "Korai hozzáférés az új alkalmazásokhoz és lehetőségekhez"
       ],
       "Encrypted email and calendar to get you started.": [
-        "Kezdésként titkosított e-mail és naptár"
+        "Titkosított e-mail és naptár, az induláshoz."
       ],
       "Enhanced security and premium features for teams.": [
-        "Megnövelt biztonság és prémium funkciók a csoportok számára"
+        "Megnövelt biztonság és prémium funkciók a csoportok számára."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Alapvető védelem és biztonságos együttműködés korlátlan számú felhasználó számára."
@@ -11445,6 +11445,14 @@
         "A választott csomagja: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } próbaváltozat"
+      ],
+      "Your account's usage": [
+        "A fiókja kihasználtsága"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Fiók törlése?"
@@ -11463,14 +11471,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Váltson nagyobb csomagra a prémium funkciók eléréshez"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } próbaváltozat"
-      ],
-      "Your account's usage": [
-        "A fiókja kihasználtsága"
       ]
     },
     "new_plans: tooltip": {
@@ -11602,7 +11602,7 @@
         "Támogatja a fájlmegosztási protokollokat, mint a BitTorrent"
       ],
       "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
-        "Töltse fel vállalati logóját a ${ BRAND_NAME } web alkalmazásokban a jobb csapat élményért"
+        "Töltse fel vállalat logóját a csapat jobb felhasználói élményéért, a ${ BRAND_NAME } webes alkalmazásaiban"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Használja a saját egyedi email domain neveit, pl. on@azonneve.com"
@@ -11928,7 +11928,7 @@
         "Hozzáadás meglévő csoporthoz"
       ],
       "Archive": [
-        "Archívum"
+        "Archiválás"
       ],
       "Ask each time": [
         "Mindig kérdezze"
@@ -12027,7 +12027,7 @@
         "Beállítás sikertelen"
       ],
       "Spam": [
-        "Spam"
+        "Levélszemét"
       ],
       "Standard server configs": [
         "Normál szerver konfigurációk"
@@ -12036,7 +12036,7 @@
         "Csillagozás"
       ],
       "Trash": [
-        "Kuka"
+        "Lomtár"
       ]
     },
     "option": {
@@ -12644,7 +12644,7 @@
         "Kártyaszám"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
-        "Az előfizetés automatikus megújulása jelenleg szünetel. Ha most módosítja az előfizetést, az automatikus megújulás ismét működni fog."
+        "Az előfizetés automatikus megújulása jelenleg szünetel. Ha most módosítja az előfizetést, az automatikus megújulás ismét életbe lép."
       ],
       "Got it": [
         "Rendben"
@@ -14060,7 +14060,7 @@
         "A lemondással elveszít az alábbi előnyöket. Biztos benne, hogy folytatja?"
       ],
       "contact your administrator": [
-        "lépjen kapcsolatba a rendszergazdával"
+        "lépjen kapcsolatba az adminisztrátorral"
       ],
       "For all ${ BRAND_NAME } services": [
         "Minden ${ BRAND_NAME } szolgáltatáshoz"
@@ -14224,7 +14224,7 @@
     },
     "Subscription price": {
       "For ${ totalPrice }": [
-        "Neki: ${ totalPrice }"
+        "${ totalPrice } áron"
       ]
     },
     "Subscription reminder": {
@@ -14356,7 +14356,7 @@
         "A meghívott tagokat eltávolítjuk a szervezetből."
       ],
       "Keep ${ config.planName }": [
-        "Maradjon ${ config.planName }"
+        "${ config.planName } megtartása"
       ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
         "Tartsa biztonságban csapatát útközben is webes, iOS-, Android-, Windows-, Mac- és Linux-alkalmazásainkkal."
@@ -15081,10 +15081,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [
@@ -15406,13 +15406,13 @@
         "Mappák és címkék"
       ],
       "For Linux": [
-        "Linux-ra"
+        "Linuxra"
       ],
       "For macOS": [
         "MacOS-re"
       ],
       "For Windows": [
-        "Windows-ra"
+        "Windowsra"
       ],
       "Forgot recovery method": [
         "Elfelejtett helyreállítási módszer"
@@ -16452,7 +16452,7 @@
         "Egy meghívás lesz elküldve erre az e-mail címre."
       ],
       "Cancel": [
-        "Törlés"
+        "Mégsem"
       ],
       "Confirm password": [
         "Jelszó megerősítése"
@@ -16502,7 +16502,7 @@
     },
     "Users table: badge": {
       "2FA": [
-        "Kétfaktoros hitelesítés"
+        "Kétlépcsős hitelesítés"
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Meghívás elküldve, várakozás a válaszra a meghívott személytől"
@@ -16668,7 +16668,7 @@
         "Mint egy meghívott felhasználó, regisztráljon egy ingyenes ${ BRAND_NAME } fiókot, hogy exkluzív hozzáférést szerezzen ${ appName }."
       ],
       "Bitcoin via email": [
-        "Bitcoin email-en keresztül"
+        "Bitcoin küldése e-mail címmel"
       ],
       "Create ${ BRAND_NAME } Account now": [
         "${ BRAND_NAME } fiók létrehozása most"
@@ -16765,13 +16765,13 @@
         "Kérjük, adjon meg legalább egy címzettet."
       ],
       "Please check that the extension is properly installed and enabled": [
-        "Kérjük, ellenőrizze, hogy a bővítmény megfelelően van-e telepítve és engedélyezve!"
+        "Kérjük, ellenőrizze, hogy a bővítmény megfelelően van-e telepítve és engedélyezve"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Ha ezt a fizetési módot választja, akkor a csomagját nem tudjuk azonnal frissíteni. A frissítést akkor végezzük, amint a befizetés megérkezik."
       ],
       "Please update the extension to its latest version": [
-        "Kérjük, frissítse a bővítményt a legújabb verzióra!"
+        "Kérjük, frissítse a bővítményt a legújabb verzióra"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "A hibajelentések nem titkosítottak a végpontok közt, kérjük ne küldjön semmilyen érzékeny információt."

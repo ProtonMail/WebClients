@@ -134,7 +134,7 @@
         "祝日を追加"
       ],
       "Add sieve filter": [
-        "ふるいフィルターを追加する"
+        "仕分けフィルターを追加する"
       ],
       "Add user": [
         "ユーザーを追加"
@@ -781,10 +781,10 @@
       "Refresh status": [
         "状態を更新"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "ページを更新"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "ページを更新"
       ],
       "Reload": [
@@ -1547,6 +1547,14 @@
         "年末オファーを選択してください"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。 ただし、**${ discountPercentage }** 定期購入すると、${ plan.Title }** から **${ months } 割引を受けることができます。"
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB のストレージ (他のプランの 2 倍以上)"
@@ -1568,14 +1576,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } プランが期間限定で復活します"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。 ただし、**${ discountPercentage }** 定期購入すると、${ plan.Title }** から **${ months } 割引を受けることができます。"
       ]
     },
     "bf2023: Offers": {
@@ -3244,6 +3244,9 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "これらの機能にアクセスするには ${ PROTON_SENTINEL_NAME } を有効にしてください"
       ],
+      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "これらの機能にアクセスするには、詳細イベントと ${ PROTON_SENTINEL_NAME } を有効にしてください"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の暗号化とインポート... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
       ],
@@ -4087,8 +4090,11 @@
       "Organization key is not decrypted": [
         "組織の鍵が復号されていません"
       ],
+      "Organization key must be activated to create invited users": [
+        "招待ユーザーを作成するには、組織の鍵を有効にする必要があります"
+      ],
       "Organization key must be activated to create non-private users": [
-        "非プライベート ユーザーを作成するには、組織キーをアクティブ化する必要があります"
+        "非プライベートユーザーを作成するには、組織の鍵を有効にする必要があります"
       ],
       "Password is required": [
         "パスワードは必須です"
@@ -6483,10 +6489,10 @@
       "Data locked": [
         "ロックされたデータ"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "専用サーバー"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "専用サーバー"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -6665,6 +6671,9 @@
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "イベントの招待状と RSVP はこの言語で送信されます。"
+      ],
+      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
+        "イベントには、${ BRAND_NAME_TWO } 認証情報を使用するすべての ${ BRAND_NAME } サービスの認証試行が含まれます。"
       ],
       "Example: ${ spfExample }": [
         "例: ${ spfExample }"
@@ -7325,6 +7334,9 @@
       ],
       "Public link invite": [
         "公開リンク招待"
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "ドキュメントの公開共有はまだサポートされていません。"
       ],
       "purchase additional storage": [
         "追加ストレージを購入する"
@@ -8063,6 +8075,9 @@
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "紹介した友達がプランに登録すると、あなたのプランに使用できるクレジットが付与されます。"
+      ],
+      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
+        "現在の有料サブスクリプションをキャンセルすると、サブスクリプションの残高はアカウントクレジットとして返却され、${ BRAND_NAME } ${ PLANS.FREE } プランにダウングレードされます。"
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "リンクをクリックすると、このフィッシング対策機能により Web ページの URL を確認するよう求められます。"
@@ -9689,6 +9704,9 @@
       ]
     },
     "label": {
+      "Device-based recovery": [
+        "デバイスベースの回復"
+      ],
       "Recovery phone number": [
         "回復用電話番号"
       ],
@@ -10041,6 +10059,12 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } を有効にする"
+      ],
+      "Enable detailed events": [
+        "詳細イベントを有効にする"
+      ],
+      "Enable security events": [
+        "セキュリティイベントを有効にする"
       ]
     },
     "Mail import summary": {
@@ -10169,6 +10193,9 @@
       ],
       "Remove": [
         "削除"
+      ],
+      "Resend invite link": [
+        "招待リンクを再送信"
       ],
       "Revoke sessions": [
         "セッションを失効させる"
@@ -10441,6 +10468,9 @@
       "Calendar": [
         "カレンダー"
       ],
+      "Documents": [
+        "ドキュメント"
+      ],
       "Inbox": [
         "受信トレイ"
       ],
@@ -10473,6 +10503,26 @@
         "中程度の VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "すべての ${ BRAND_NAME } プランを表示"
+      ],
+      "From ${ price }": [
+        "${ price } から"
+      ],
+      "Get started for ${ price }": [
+        "${ price } で始めましょう"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade now": [
+        "今すぐアップグレード"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Free で続行"
@@ -10500,26 +10550,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } へアップグレード"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "すべての ${ BRAND_NAME } プランを表示"
-      ],
-      "From ${ price }": [
-        "${ price } から"
-      ],
-      "Get started for ${ price }": [
-        "${ price } で始めましょう"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
       ]
     },
     "new_plans: feature": {
@@ -11066,6 +11096,17 @@
         "選択中のプラン: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }トライアル"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "${ price }で Mail Plus を入手する"
+      ],
+      "Your account's usage": [
+        "アカウントの使用率"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "アカウントの削除しますか?"
@@ -11084,17 +11125,6 @@
       ],
       "Unlock premium features by upgrading": [
         "アップグレードしてプレミアム機能の制限を解除"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }トライアル"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "${ price }で Mail Plus を入手する"
-      ],
-      "Your account's usage": [
-        "アカウントの使用率"
       ]
     },
     "new_plans: tooltip": {
@@ -12087,7 +12117,7 @@
         "月額、2年ごとに請求"
       ],
       "Preparing your Recovery Kit": [
-        "リカバリーキットの準備"
+        "回復キットを準備中"
       ],
       "Protected by Swiss privacy laws": [
         "スイスのプライバシー法によって保護されています"
@@ -12200,7 +12230,7 @@
         "組織の鍵が存在しません。"
       ],
       "Organization key must be activated to give admin privileges": [
-        "管理者権限を付与するには、組織キーをアクティブ化する必要があります"
+        "管理者権限を付与するには、組織の鍵を有効にする必要があります"
       ],
       "Organization key restored": [
         "組織の鍵が復元されました"
@@ -12227,7 +12257,7 @@
         "次の管理者は組織キーにアクセスできます。"
       ],
       "The organization key must be activated first.": [
-        "組織の鍵を最初に有効にする必要があります。"
+        "まず、組織の鍵を有効にする必要があります。"
       ],
       "This will send the latest organization key to the administrators that currently don't have access to it.": [
         "これにより、現在アクセス権のない管理者に最新の組織キーが送信されます。"
@@ -12254,7 +12284,7 @@
         "あなたは組織 **${ organizationName }** によって管理者に任命されました"
       ],
       "You must privatize all users before generating a new organization key": [
-        "新しい組織キーを生成する前に、すべてのユーザーをプライベート化する必要があります"
+        "新しい組織の鍵を生成する前に、すべてのユーザーをプライベート化する必要があります"
       ],
       "You need access to the organization key to perform this operation.": [
         "この操作を実行するには、組織キーにアクセスする必要があります。"
@@ -12674,6 +12704,9 @@
       "Account safety review": [
         "アカウント安全性レビュー"
       ],
+      "Add a recovery email": [
+        "回復用メールアドレスを追加"
+      ],
       "Add a recovery email address": [
         "回復用メールアドレスを追加"
       ],
@@ -12683,8 +12716,14 @@
       "Back to Safety Review": [
         "安全性レビューに戻る"
       ],
+      "Continue to Safety Review": [
+        "安全性レビューに進む"
+      ],
       "Device-based recovery enabled": [
         "デバイスベースの回復が有効になりました"
+      ],
+      "Download your Recovery Kit": [
+        "回復キットをダウンロード"
       ],
       "Enable device-based recovery": [
         "デバイスベースの回復を有効にする"
@@ -12695,11 +12734,56 @@
       "Enable recovery by phone": [
         "電話番号での回復を有効にする"
       ],
+      "Recovery email address": [
+        "回復用メールアドレス"
+      ],
+      "Recovery phone number": [
+        "回復用電話番号"
+      ],
+      "Safeguard your account": [
+        "アカウントを保護する"
+      ],
+      "Safeguard your account further": [
+        "アカウントをさらに保護する"
+      ],
+      "Safety review": [
+        "安全性レビュー"
+      ],
+      "Send a new code": [
+        "新しいコードを送信"
+      ],
+      "Show more": [
+        "さらに表示"
+      ],
+      "Take action to secure your account": [
+        "アカウントを保護するためのアクション"
+      ],
+      "There was an error generating your Recovery Kit": [
+        "回復キットの生成中にエラーが発生しました"
+      ],
       "to recover your account and data if you're ever locked out": [
         "締め出された場合にアカウントとデータを回復するために"
       ],
       "to recover your account if you're ever locked out": [
         "締め出された場合にアカウントを回復するために"
+      ],
+      "Update your Recovery Kit": [
+        "回復キットを更新"
+      ],
+      "Update your Recovery Kit?": [
+        "回復キットを更新しますか？"
+      ],
+      "Verify your recovery email address": [
+        "復旧用メールアドレスを確認してください"
+      ],
+      "Verify your recovery phone number": [
+        "回復用電話番号を確認してください"
+      ],
+      "You are at risk of losing access to your account and data.": [
+        "アカウントとデータへのアクセスを失うリスクがあります。"
+      ],
+      "You are at risk of losing access to your data.": [
+        "データへのアクセスを失うリスクがあります。"
       ],
       "You can use your recovery email to regain access to your account if you forget your password.": [
         "パスワードを忘れた場合、回復用メールアドレスを使用してアカウントへのアクセスを回復できます。"
@@ -12716,11 +12800,38 @@
       "You recovery phone number is:": [
         "回復用電話番号:"
       ],
+      "Your account and data can be recovered": [
+        "アカウントとデータは回復できます"
+      ],
+      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
+        "アカウントとデータは回復できます。回復手段にアクセスできるか確認してください。"
+      ],
+      "Your account and data can be recovered. You have recommended actions to Safeguard your account further.": [
+        "アカウントとデータは回復できます。アカウントをさらに保護するための推奨アクションがあります。"
+      ],
+      "Your account and data can be recovered. You have recommended actions.": [
+        "アカウントとデータは回復できます。推奨アクションがあります。"
+      ],
+      "Your account is secure.": [
+        "あなたのアカウントは安全です。"
+      ],
       "Your recovery email": [
         "回復用メールアドレス"
       ],
       "Your recovery email has been enabled": [
         "回復用メールアドレスが有効になりました"
+      ],
+      "Your recovery email is set": [
+        "回復用メールアドレスが設定されました"
+      ],
+      "Your Recovery Kit": [
+        "回復キット"
+      ],
+      "Your Recovery Kit is set": [
+        "回復キットが設定されました"
+      ],
+      "Your recovery methods": [
+        "回復手段"
       ],
       "Your recovery phone": [
         "回復用フレーズ"
@@ -12955,6 +13066,18 @@
       ],
       "You can reset your password until ${ boldDate }.": [
         "${ boldDate }までパスワードをリセットできます。"
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "${ timeRemaining.inDays } 日後にパスワードをリセットできます。"
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        " ${ timeRemaining.inHours } 時間後にパスワードをリセットできます。"
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        " ${ timeRemaining.inMinutes } 分後にパスワードをリセットできます。"
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        " ${ timeRemaining.inSeconds } 秒後にパスワードをリセットできます。"
       ]
     },
     "session_recovery:available:link": {
@@ -13804,6 +13927,9 @@
       "I still want to cancel": [
         "それでもキャンセルしたいのですが"
       ],
+      "Invited members will be removed from your organization": [
+        "招待メンバーは組織から削除されます"
+      ],
       "Keep ${ config.planName }": [
         "${ config.planName } を使い続ける"
       ],
@@ -13842,6 +13968,15 @@
       ],
       "Unlimited folders, labels and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
+      ],
+      "Users won’t be able to manage their calendars": [
+        "ユーザーは自分のカレンダーを管理できません"
+      ],
+      "Users won’t be able to send emails": [
+        "ユーザーはメールを送信できません"
+      ],
+      "Users won’t be able to sync files on their devices": [
+        "ユーザーは自分のデバイス上のファイルを同期できません"
       ],
       "Version history": [
         "バージョン履歴"
@@ -14407,7 +14542,7 @@
         "サーバー追加"
       ],
       "Add Sieve filter": [
-        "ふるいフィルターを追加する"
+        "仕分けフィルターを追加する"
       ],
       "Add to allow list": [
         "許可リストに追加"
@@ -14493,10 +14628,10 @@
       "Card verification": [
         "カードの検証"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-All アドレス"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-All アドレス"
       ],
       "Change login password": [
@@ -14749,7 +14884,7 @@
         "サーバー編集"
       ],
       "Edit Sieve filter": [
-        "ふるいフィルターを編集する"
+        "仕分けフィルターを編集する"
       ],
       "Edit the list of servers of the gateway": [
         "ゲートウェイのサーバーリストを編集する"
@@ -15573,6 +15708,9 @@
       "Enable/disable desktop and mobile notifications": [
         "デスクトップおよびモバイル端末での通知の有効/無効"
       ],
+      "Enabling detailed events records the IP address for each event.": [
+        "詳細イベントを有効にすると、各イベントの IP アドレスが記録されます。"
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "ユーザー情報プロバイダーからのエンドポイントURL（例：https://idp.example.com/sso/saml）"
       ],
@@ -15758,6 +15896,11 @@
         "このバージョンの Tor Brower はサポートしていません。最新の ${ stableRelease } に更新してください。"
       ]
     },
+    "unprivatization": {
+      "Organization key must be activated to request data access": [
+        "データアクセスをリクエストするには、組織の鍵を有効にする必要があります"
+      ]
+    },
     "Update font modal": {
       "Today is a good day to write an email": [
         "今日はメールを書くのに最高な日だ"
@@ -15855,6 +15998,9 @@
     "Users table: badge": {
       "2FA": [
         "2要素認証"
+      ],
+      "Invitation sent, awaiting reply from the invited member": [
+        "招待が送信されました。招待メンバーからの返信待ちです。"
       ],
       "Invite sent": [
         "招待状を送信しました"
@@ -16048,6 +16194,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "この電話番号を削除すると、今後あなたのアカウントを回復することができなくなります。"
+      ],
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "セキュリティイベントのモニタリングを無効にすると、すべての履歴が消去されます。無効にしてよろしいですか？"
       ],
       "Expiration Date is not in the format MM/YY": [
         "有効期限が MM/YY の形式ではありません"
