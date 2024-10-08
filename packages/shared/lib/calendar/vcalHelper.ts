@@ -34,7 +34,7 @@ import {
 } from './constants';
 
 export const getIsPropertyAllDay = (property: VcalDateOrDateTimeProperty): property is VcalDateProperty => {
-    return property.parameters?.type === 'date' ?? false;
+    return property.parameters?.type === 'date';
 };
 
 export const getPropertyTzid = (property: VcalDateOrDateTimeProperty) => {
