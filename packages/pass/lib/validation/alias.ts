@@ -2,6 +2,7 @@ import { type FormikErrors } from 'formik';
 import { c } from 'ttag';
 
 import type { SanitizedAliasOptions } from '@proton/pass/hooks/useAliasOptions';
+import PassCoreUI from '@proton/pass/lib/core/core.ui';
 import type {
     AliasFormValues,
     EditAliasFormValues,
@@ -26,6 +27,15 @@ export const deriveAliasPrefix = (name: string) => {
     return prefix.replace(/\.*$/, '').replace(/^\.+/, '');
 };
 
+export const validateAliasPrefix = (prefix: string) => {
+    try {
+        PassCoreUI.validate_alias_prefix(prefix);
+        return true;
+    } catch {
+        return false;
+    }
+};
+
 export const validateAliasForm = ({
     aliasPrefix,
     mailboxes,
@@ -33,7 +43,7 @@ export const validateAliasForm = ({
 }: AliasFormValues): FormikErrors<AliasFormValues> => {
     const errors: FormikErrors<AliasFormValues> = {};
 
-    if (aliasPrefix === undefined || !validateLocalPart(aliasPrefix + (aliasSuffix?.value?.split('@')?.[0] ?? ''))) {
+    if (aliasPrefix === undefined || !validateAliasPrefix(aliasPrefix)) {
         errors.aliasPrefix = c('Warning').t`Invalid alias prefix`;
     }
 
@@ -106,7 +116,7 @@ export const reconciliateAliasFromDraft = <V extends AliasFormValues>(
     return {
         aliasPrefix: aliasPrefix,
         aliasSuffix: suffixMatch ?? fallback?.aliasSuffix,
-        mailboxes: mailboxesMatch.length > 0 ? mailboxesMatch : fallback?.mailboxes ?? [],
+        mailboxes: mailboxesMatch.length > 0 ? mailboxesMatch : (fallback?.mailboxes ?? []),
     };
 };
 
