@@ -2,7 +2,7 @@ import type { Reducer } from 'redux';
 
 import { type PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import type { GeneratePasswordConfig } from '@proton/pass/lib/password/generator';
+import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
 import { toggleCriteria } from '@proton/pass/lib/settings/criteria';
 import {
     extraPasswordToggle,
