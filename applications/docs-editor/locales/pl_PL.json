@@ -403,6 +403,17 @@
         "Odrzucić komentarz?"
       ]
     },
+    "Description": {
+      "Edit document directly": [
+        "Edytuj dokument bezpośrednio"
+      ],
+      "Edits become suggestion": [
+        "Zmiany stają się sugestią"
+      ],
+      "Read or print final document": [
+        "Przeczytaj lub wydrukuj ukończony dokument"
+      ]
+    },
     "Error": {
       "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
         "Wystąpił błąd podczas ładowania dokumentu. Aby zapobiec uszkodzeniu dokumentu, edytor został zablokowany. Odśwież stronę i spróbuj ponownie."
@@ -484,6 +495,15 @@
       "Editing": [
         "Edycja"
       ],
+      "Font": [
+        "Czcionka"
+      ],
+      "Font size": [
+        "Rozmiar czcionki"
+      ],
+      "Highlight": [
+        "Wyróżnij"
+      ],
       "Just now": [
         "Teraz"
       ],
@@ -499,6 +519,9 @@
       "Suggesting": [
         "Sugerowanie"
       ],
+      "Text color": [
+        "Kolor tekstu"
+      ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "Zawartość, którą próbujesz wkleić, jest zbyt duża. Spróbuj ponownie wkleić mniejsze części."
       ],
@@ -510,11 +533,17 @@
       ]
     },
     "Label": {
+      "Add link": [
+        "Dodaj link"
+      ],
       "Background colour": [
         "Kolor tła"
       ],
       "Delete": [
         "Usuń"
+      ],
+      "Delete link": [
+        "Usuń link"
       ],
       "Delete paragraph": [
         "Usuń akapit"
@@ -543,8 +572,14 @@
       "Replace": [
         "Zastąp"
       ],
+      "Replace link": [
+        "Zastąp link"
+      ],
       "Text colour": [
         "Kolor tekstu"
+      ],
+      "with \"${ replaceWith }\"": [
+        "za pomocą \"${ replaceWith }\""
       ]
     },
     "Placeholder": {
