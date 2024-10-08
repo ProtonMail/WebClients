@@ -894,6 +894,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Произошла ошибка при удалении защищенной ссылки. Повторите попытку через несколько минут."
       ],
+      "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
+        "Это может произойти после того, как вы долгое время не использовали ${ PASS_SHORT_APP_NAME } или очистили историю Safari."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Слишком много неудачных попыток. Пожалуйста, войдите снова."
       ],
@@ -954,6 +957,9 @@
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "В настоящее время вы не в сети. Возобновите подключение, чтобы разблокировать ${ PASS_SHORT_APP_NAME }."
       ],
+      "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
+        "Ваш браузер испытывает трудности с активацией ${ PASS_APP_NAME }."
+      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN был удален другим клиентом ${ PASS_APP_NAME }"
       ]
@@ -964,6 +970,23 @@
       ],
       "Something went wrong": [
         "Что-то пошло не так"
+      ]
+    },
+    "FamilyPlanPromo2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Все платные функции. 6 пользователей. 1 простая подписка."
+      ],
+      "Exclusive offer for ${ PASS_APP_NAME } early supporters.": [
+        "Эксклюзивное предложение для ранних сторонников ${ PASS_APP_NAME }."
+      ],
+      "Get it for ${ price }/month": [
+        "Получить за ${ price } в месяц"
+      ],
+      "Introducing ${ planNameJSX }": [
+        "Представляем ${ planNameJSX }"
+      ],
+      "Limited-time offer only.": [
+        "Ограниченное по времени предложение."
       ]
     },
     "file size format": {
@@ -1159,6 +1182,9 @@
       ],
       "Auto-lock successfully disabled.": [
         "Автоблокировка успешно отключена."
+      ],
+      "Automatically copy the generated password to the clipboard": [
+        "Автоматически копировать сгенерированный пароль в буфер обмена"
       ],
       "Autosaved on ${ url }": [
         "Автосохранено на ${ url }"
@@ -1451,6 +1477,9 @@
       "Never": [
         "Никогда"
       ],
+      "No identity item found": [
+        "Элемент личных данных не найден"
+      ],
       "No login found": [
         "Логин не найден"
       ],
@@ -1555,6 +1584,12 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Защищено ${ PROTON_SENTINEL_LINK }, нашей передовой программой защиты аккаунтов"
+      ],
+      "Quickly autofill your 2FA tokens.": [
+        "Быстрое автозаполнение ваших токенов двухфакторной идентификации."
+      ],
+      "Quickly autofill your identities.": [
+        "Быстрое автозаполнение личных данных."
       ],
       "Registering extra password...": [
         "Регистрация дополнительного пароля..."
@@ -1690,6 +1725,9 @@
       ],
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "To review your imported data, click on the Pass icon in your browser toolbar."
+      ],
+      "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
+        "Попробуйте перезагрузить или переустановить расширение и убедитесь, что ваш браузер и ${ PASS_SHORT_APP_NAME } являются обновленными."
       ],
       "Unable to copy to clipboard": [
         "Не могу скопировать в буфер обмена"
@@ -1885,6 +1923,9 @@
       "24 hours": [
         "24 часа"
       ],
+      "2FA autofill": [
+        "Автозаполенение двухфакторной идентификации"
+      ],
       "2FA secret key (TOTP)": [
         "Секретный ключ двухфакторной аутентификации (TOTP)"
       ],
@@ -1960,6 +2001,9 @@
       "Autosave": [
         "Автосохранение"
       ],
+      "Autosuggest": [
+        "Автоподсказка"
+      ],
       "Birthdate": [
         "Дата рождения"
       ],
@@ -2031,6 +2075,9 @@
       ],
       "Display": [
         "Показать"
+      ],
+      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
+        "Отображение значка ${ PASS_APP_NAME } в автозаполняемых полях"
       ],
       "Domain": [
         "Домен"
@@ -2127,6 +2174,9 @@
       ],
       "Identity": [
         "Личные данные"
+      ],
+      "Identity autofill": [
+        "Автозаполнение личных данных"
       ],
       "Import": [
         "Импорт"
