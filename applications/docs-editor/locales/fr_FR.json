@@ -493,6 +493,15 @@
       "Editing": [
         "Modification"
       ],
+      "Font": [
+        "Police"
+      ],
+      "Font size": [
+        "Taille de police"
+      ],
+      "Highlight": [
+        "Souligner"
+      ],
       "Just now": [
         "À l'instant"
       ],
@@ -508,6 +517,9 @@
       "Suggesting": [
         "Suggestion"
       ],
+      "Text color": [
+        "Couleur du texte"
+      ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "Le contenu que vous essayez de coller est trop volumineux pour être collé en une seule fois. Essayez de le coller à nouveau en plus petites parties."
       ],
@@ -519,11 +531,17 @@
       ]
     },
     "Label": {
+      "Add link": [
+        "Ajouter un lien"
+      ],
       "Background colour": [
         "Couleur d'arrière-plan"
       ],
       "Delete": [
         "Supprimer"
+      ],
+      "Delete link": [
+        "Supprimer le lien"
       ],
       "Delete paragraph": [
         "Supprimer le paragraphe"
@@ -552,8 +570,14 @@
       "Replace": [
         "Remplacer"
       ],
+      "Replace link": [
+        "Remplacer le lien"
+      ],
       "Text colour": [
         "Couleur du texte"
+      ],
+      "with \"${ replaceWith }\"": [
+        "par « ${ replaceWith } »"
       ]
     },
     "Placeholder": {
