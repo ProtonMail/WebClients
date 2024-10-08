@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
+import PassCoreUI from '@proton/pass/lib/core/core.ui';
 import type { Draft } from '@proton/pass/store/reducers';
 import type {
     IdentityItemPreview,
@@ -20,7 +21,6 @@ import { arrayInterpolate } from '@proton/pass/utils/array/interpolate';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import chunk from '@proton/utils/chunk';
 
 import { hasUserIdentifier, isEditItemDraft } from './item.predicates';
@@ -176,8 +176,8 @@ export const getSanitizedUserIdentifiers = ({
     itemEmail,
     itemUsername,
 }: Pick<UnsafeItem<'login'>['content'], 'itemEmail' | 'itemUsername'>) => {
-    const validEmail = validateEmailAddress(itemEmail);
-    const emailUsername = validateEmailAddress(itemUsername);
+    const validEmail = PassCoreUI.is_email_valid(itemEmail);
+    const emailUsername = PassCoreUI.is_email_valid(itemUsername);
 
     if (itemUsername) {
         /* `itemEmail` is empty and `itemUsername` is a valid email: Move username to email field */

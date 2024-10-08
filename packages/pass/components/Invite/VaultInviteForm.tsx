@@ -12,13 +12,13 @@ import { ListField } from '@proton/pass/components/Form/Field/ListField';
 import { UserVerificationMessage } from '@proton/pass/components/Invite/UserVerificationMessage';
 import { VaultForm } from '@proton/pass/components/Vault/Vault.form';
 import { type InviteAddressValidator } from '@proton/pass/hooks/useValidateInviteAddress';
+import PassCoreUI from '@proton/pass/lib/core/core.ui';
 import { InviteEmailsError } from '@proton/pass/lib/validation/vault-invite';
 import { selectUserVerified, selectVaultSharedWithEmails } from '@proton/pass/store/selectors';
 import type { InviteFormMemberValue, MaybeNull } from '@proton/pass/types';
 import { type InviteFormValues, ShareRole } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import clsx from '@proton/utils/clsx';
 
 import { SharedVaultItem } from '../Vault/SharedVaultItem';
@@ -66,7 +66,7 @@ const ForwardedVaultInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props
 
     const onEmailFieldBlur = (maybeEmail: string) => {
         const value = maybeEmail.trim();
-        if (validateEmailAddress(value) && emailField) {
+        if (PassCoreUI.is_email_valid(value) && emailField) {
             emailField.value = '';
             void form.setFieldValue('members', members.concat([createMember(value)]));
         }

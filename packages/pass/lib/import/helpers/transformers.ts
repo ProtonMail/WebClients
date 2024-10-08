@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import PassCoreUI from '@proton/pass/lib/core/core.ui';
 import { obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import type { Item, ItemContent, ItemImportIntent, Maybe, MaybeNull, UnsafeItemExtraField } from '@proton/pass/types';
@@ -11,7 +12,6 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { epochToDate } from '@proton/pass/utils/time/format';
 import { sanitizeURL } from '@proton/pass/utils/url/sanitize';
-import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
 export const getImportedVaultName = (vaultName?: string) => {
     if (!vaultName) {
@@ -23,12 +23,10 @@ export const getImportedVaultName = (vaultName?: string) => {
 };
 
 export const getEmailOrUsername = (userIdentifier?: MaybeNull<string>): { email: string; username: string } => {
-    if (!userIdentifier) {
-        return { email: '', username: '' };
-    }
-    const email = validateEmailAddress(userIdentifier) ? userIdentifier : '';
-    const username = !validateEmailAddress(userIdentifier) ? userIdentifier : '';
-    return { username, email };
+    if (!userIdentifier) return { email: '', username: '' };
+    return PassCoreUI.is_email_valid(userIdentifier)
+        ? { email: userIdentifier, username: '' }
+        : { email: '', username: userIdentifier };
 };
 
 export const importLoginItem = (options: {
