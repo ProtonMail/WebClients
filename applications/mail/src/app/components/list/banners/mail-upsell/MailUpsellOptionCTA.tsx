@@ -20,7 +20,7 @@ const getUpsellLink = (optionID: number) => {
     return upsellPath;
 };
 
-const MailUpsellOptionCTA = ({ url, optionID, callToActionText }: OptionProps) => {
+const MailUpsellOptionCTA = ({ url, optionID }: OptionProps) => {
     const upsellRef = getUpsellLink(optionID);
     const upsellConfig = useUpsellConfig({ upsellRef, step: SUBSCRIPTION_STEPS.PLAN_SELECTION });
 
@@ -32,14 +32,14 @@ const MailUpsellOptionCTA = ({ url, optionID, callToActionText }: OptionProps) =
                 size="small"
                 className="text-bold link align-baseline py-0"
             >
-                {c('Action').t`Upgrade` ?? callToActionText}
+                {c('Action').t`Upgrade`}
             </Button>
         );
     }
 
     return (
         <SettingsLink path={addUpsellPath(url, upsellRef)} className="text-bold link align-baseline" tabIndex={0}>
-            {c('Action').t`Upgrade` ?? callToActionText}
+            {c('Action').t`Upgrade`}
         </SettingsLink>
     );
 };
