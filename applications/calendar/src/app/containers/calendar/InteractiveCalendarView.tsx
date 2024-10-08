@@ -16,7 +16,6 @@ import {
     useBeforeUnload,
     useCalendarModelEventManager,
     useConfig,
-    useContactEmails,
     useContactEmailsCache,
     useGetCalendarEventRaw,
     useGetEncryptionPreferences,
@@ -30,6 +29,7 @@ import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMa
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
 import useSendIcs from '@proton/components/hooks/useSendIcs';
 import { serverTime } from '@proton/crypto';
+import { useContactEmails } from '@proton/mail/contactEmails/hooks';
 import { useGetMailSettings } from '@proton/mail/mailSettings/hooks';
 import {
     attendeeDeleteSingleEdit,
