@@ -1,3 +1,10 @@
+# September 2024
+
+-   Improved Performance on "Shared with Me" Page
+    -   The "Shared with Me" page now loads faster, providing quicker access to your shared files.
+-   New "Save for Later" Feature for Publicly Shared Links
+    -   A "Save for Later" option is now available for publicly shared links, allowing you to easily bookmark content for future reference.
+
 # August 2024
 
 -   Enabled downloading of related photos, including stills and videos, for Live Photos.
