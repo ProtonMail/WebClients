@@ -682,6 +682,9 @@
       "Use authentication code": [
         "Använd autentiseringskod"
       ],
+      "Use group sending permissions": [
+        "Använd behörigheter för gruppsändning"
+      ],
       "Use recovery code": [
         "Använd återställningskod"
       ],
@@ -2124,6 +2127,9 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Är du säker på att du vill ta bort denna grupp?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Observera att om du tar bort gruppen ${ displayGroupName } (med adress ${ displayGroupAddressEmail }), kommer du inte längre att kunna ta emot e-post med dess adress."
       ]
     },
     "Delinquent modal title": {
@@ -2132,6 +2138,9 @@
       ]
     },
     "Description": {
+      "Keep different parts of your life separate and your inbox organized with additional addresses.": [
+        "Håll olika delar av ditt liv åtskilda och din inkorg organiserad med ytterligare adresser."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separera olika aspekter av ditt liv med flera e-postadresser och lås upp fler premiumfunktioner när du uppgraderar."
       ]
@@ -2829,6 +2838,9 @@
     "familyOffer_2023:Info": {
       "*Only one free trial per user. Regular pricing applies thereafter.": [
         "*Endast en gratis provperiod per användare. Ordinarie priser tillämpas därefter."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "Efter att ha lämnat ditt paket kommer denna användare att flyttas till ett ${ BRAND_NAME } Unlimited-paket med en 30-dagars gratis provperiod.*"
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Som standard tilldelar vi ${ formattedStorage } lagringsutrymme till administratörskontot. Du kan hantera det tilldelade lagringsutrymmet för att distribueras mellan ytterligare användare senare."
@@ -5643,7 +5655,7 @@
         "${ BRAND_NAME } nyhetsbrev"
       ],
       "${ BRAND_NAME } offers and promotions": [
-        "${ BRAND_NAME } erbjudanden och rabatter"
+        "${ BRAND_NAME } erbjudanden och kampanjer"
       ],
       "${ BRAND_NAME } product announcements": [
         "${ BRAND_NAME } produktnyheter"
@@ -6028,11 +6040,17 @@
       "From ${ price }": [
         "Från ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Startar från ${ priceMailPlus }"
+      ],
       "Upgrade": [
         "Uppgradera"
       ],
       "Upgrade now": [
         "Uppgradera nu"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Uppgradera till ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -8304,6 +8322,9 @@
       "/ month": [
         "/månad"
       ],
+      "/month": [
+        "/månad"
+      ],
       "1 year": [
         "1 år"
       ],
@@ -9404,6 +9425,9 @@
       "Amount due": [
         "Att betala"
       ],
+      "An address for each role": [
+        "En adress för varje roll"
+      ],
       "Appearance": [
         "Utseende"
       ],
@@ -10138,6 +10162,10 @@
       ]
     },
     "unprivatization": {
+      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
+        "${ n } användare har gått med i din organisation via din identitetsleverantör. Godkänn eller avvisa deras konton nu:",
+        "${ n } användare har gått med i din organisation via din identitetsleverantör. Godkänn eller avvisa deras konton nu:"
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratörer kan inte komma åt privata användares data och kan inte återställa deras lösenord."
       ],
@@ -10146,6 +10174,10 @@
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Genom att göra användaren privat kommer du inte att kunna hjälpa dem att återfå åtkomst till sin data eller sitt konto."
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Kunde inte aktivera administratörsåtkomst automatiskt för ${ n } användare eftersom deras krypteringsnycklar har uppdaterats under tiden:",
+        "Kunde inte aktivera administratörsåtkomst automatiskt för ${ n } användare eftersom deras krypteringsnycklar har uppdaterats under tiden:"
       ],
       "Could not enable administrator access: ${ error }": [
         "Kunde inte aktivera administratörsåtkomst: ${ error }"
