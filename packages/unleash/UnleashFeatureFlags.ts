@@ -46,7 +46,6 @@ enum AccountFlag {
     WalletAppSwitcherNewBadge = 'WalletAppSwitcherNewBadge',
     UserGroupsPermissionCheck = 'UserGroupsPermissionCheck',
     SAMLTest = 'SamlTest',
-    SecurityCheckup = 'SecurityCheckup',
     PassB2BForceLock = 'PassB2BForceLock',
     SignedInForgot2FAFlow = 'SignedInForgot2FAFlow',
     UserGroupsMembersPermissionCheck = 'UserGroupsMembersPermissionCheck',

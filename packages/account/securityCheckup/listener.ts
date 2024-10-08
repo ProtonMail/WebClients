@@ -64,11 +64,6 @@ export const securityCheckupListener = (startListening: SharedStartListening<Req
             );
         },
         effect: async (action, listenerApi) => {
-            const securityCheckupEnabled = listenerApi.extra.unleashClient.isEnabled('SecurityCheckup');
-            if (!securityCheckupEnabled) {
-                return;
-            }
-
             const {
                 getState,
                 dispatch,
@@ -138,11 +133,6 @@ export const securityCheckupListener = (startListening: SharedStartListening<Req
             return previousSecurityCheckup.session !== currentSecurityCheckup.session;
         },
         effect: async (action, listenerApi) => {
-            const securityCheckupEnabled = listenerApi.extra.unleashClient.isEnabled('SecurityCheckup');
-            if (!securityCheckupEnabled) {
-                return;
-            }
-
             const { getState } = listenerApi;
             const { user, securityCheckup } = getState();
 
@@ -162,11 +152,6 @@ export const securityCheckupListener = (startListening: SharedStartListening<Req
             return securityCheckupSlice.actions.clearSession.match(action);
         },
         effect: async (action, listenerApi) => {
-            const securityCheckupEnabled = listenerApi.extra.unleashClient.isEnabled('SecurityCheckup');
-            if (!securityCheckupEnabled) {
-                return;
-            }
-
             const { getState } = listenerApi;
             const { user } = getState();
 
@@ -193,11 +178,6 @@ export const securityCheckupListener = (startListening: SharedStartListening<Req
             );
         },
         effect: async (action, listenerApi) => {
-            const securityCheckupEnabled = listenerApi.extra.unleashClient.isEnabled('SecurityCheckup');
-            if (!securityCheckupEnabled) {
-                return;
-            }
-
             // Only send telemetry if we are in the security checkup
             // The Cohort can change outside the security checkup. Ie enabling the recovery phrase on the recovery page
             if (!listenerApi.extra.history.location.pathname.includes(SECURITY_CHECKUP_PATHS.ROOT)) {
