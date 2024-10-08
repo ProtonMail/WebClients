@@ -361,6 +361,9 @@
       "Loading verification": [
         "Carregant verificació"
       ],
+      "Lost access to your 2FA device?": [
+        "Heu perdut l'accés al vostre dispositiu de 2FA?"
+      ],
       "Make admin": [
         "Estableix com a administrador"
       ],
@@ -2732,6 +2735,10 @@
       "Manage user accounts": [
         "Gestiona comptes d'usuari"
       ],
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "Només es permet ${ n } invitació acceptada en un període de 6 mesos.",
+        "Només es permeten ${ n } invitacions acceptades en un període de 6 mesos."
+      ],
       "Owners of a plan with members cannot join another group plan.": [
         "Els propietaris d'un pla amb membres no poden unir-se a un altre pla de grup."
       ],
@@ -2758,6 +2765,14 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Se us ha convidat a unir-vos a ${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
+        "Heu arribat al límit de ${ n } invitació acceptada en 6 mesos.",
+        "Heu arribat al límit de ${ n } invitacions acceptades en 6 mesos."
+      ],
+      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
+        "Heu arribat al límit de ${ n } invitació acceptada en 6 mesos. El botó es farà clicable quan pugueu convidar usuaris addicionals.",
+        "Heu arribat al límit de ${ n } invitacions acceptades en 6 mesos. El botó es farà clicable quan pugueu convidar usuaris addicionals."
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Heu de configurar un domini personalitzat abans d'afegir diversos usuaris."
@@ -3562,10 +3577,10 @@
         "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
-        "Configureu l'autenticació SAML per a l'organització a través d'un proveïdor d'identitat (IdP). Això habilitarà SAML per a tota l'organització."
+        "Configureu l'autenticació SAML per a l'organització a través d'un proveïdor d'identitat (IdP). Això activarà SAML per a tota l'organització."
       ],
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
-        "Configureu l'autenticació SAML per a la vostra organització mitjançant un proveïdor d'identitat com Okta, Microsoft Azure o Google Identity Platform. Això habilitarà SAML per a tota l'organització."
+        "Configureu l'autenticació SAML per a la vostra organització mitjançant un proveïdor d'identitat com Okta, Microsoft Azure o Google Identity Platform. Això activarà SAML per a tota l'organització."
       ],
       "Continue with ${ freeName }": [
         "Continua amb ${ freeName }"
@@ -3838,7 +3853,7 @@
         "Si mai no heu utilitzat l'autenticació de dos factors abans, us recomanem que us en feu ${ guideButton }."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
-        "Si perdeu el dispositiu habilitat per a l'autenticació de dos factors, es poden utilitzar aquests codis en lloc del codi d’autenticació de dos factors de 6 dígits per iniciar la sessió al vostre compte. Cada codi només es pot utilitzar una vegada."
+        "Si perdeu el dispositiu activat per a l'autenticació de dos factors, es poden utilitzar aquests codis en lloc del codi d’autenticació de dos factors de 6 dígits per iniciar la sessió al vostre compte. Cada codi només es pot utilitzar una vegada."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si passeu a un pla inferior, perdreu l'accés a les funcions de pagament de ${ MAIL_APP_NAME } i ${ VPN_APP_NAME }."
@@ -5743,7 +5758,7 @@
     },
     "Log preference": {
       "Enable ${ reason }": [
-        "Habilita ${ reason }"
+        "Activa ${ reason }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -5942,6 +5957,9 @@
       ],
       "From ${ price }": [
         "Des de ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Comenceu des de ${ priceMailPlus }"
       ],
       "Upgrade": [
         "Millora"
@@ -6233,6 +6251,9 @@
       ],
       "Priority support & live chat": [
         "Suport prioritari i xat en directe"
+      ],
+      "Proofread and refine your emails": [
+        "Corregiu i refineu els vostres correus electrònics"
       ],
       "Protect ${ n } device at a time": [
         "Protegiu ${ n } dispositiu alhora",
@@ -6578,7 +6599,7 @@
         "Creeu fins a ${ n } adreces de correu electrònic o àlies que podeu assignar als membres de la família. Utilitzeu-los per a les identitats en línia, p. ex., JoanCompres@${ domain } per als comptes de compres."
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a habilitar un control d'accés més optimitzat"
+        "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a activar un control d'accés més optimitzat"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defensa contra les amenaces a la privacitat de la VPN passant el vostre trànsit d'internet a través de múltiples servidors"
@@ -6801,7 +6822,7 @@
         "${ reason } s'ha desactivat"
       ],
       "${ reason } has been enabled": [
-        "S'ha habilitat ${ reason } "
+        "S'ha activat ${ reason } "
       ],
       "A disabled address cannot be default": [
         "Una adreça desactivada no pot ser una adreça per defecte."
@@ -6978,6 +6999,9 @@
       ]
     },
     "orgidentity": {
+      "Current organization identity": [
+        "Identitat de l'organització actual"
+      ],
       "Edit organization identity": [
         "Edita la identitat de l'organització"
       ],
@@ -6986,6 +7010,9 @@
       ],
       "Organization identity": [
         "Identitat de l'organització"
+      ],
+      "Organization identity updated": [
+        "S'ha actualitzat la identitat de l'organització."
       ],
       "Verify": [
         "Verifica"
@@ -7160,7 +7187,7 @@
         "S'ha denegat el permís. S'han restringit els privilegis d'administrador."
       ],
       "Please ensure they have an enabled address and invite them separately later.": [
-        "Assegureu-vos que tinguin una adreça habilitada i convideu-los més tard per separat."
+        "Assegureu-vos que tinguin una adreça activada i convideu-los més tard per separat."
       ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Els usuaris privats poden ascendir a administradors quan inicien sessió per primera vegada"
@@ -7230,7 +7257,7 @@
         "Número de la targeta"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
-        "Actualment, la renovació automàtica de la subscripció està desactivada. Si canvieu la subscripció ara, es tornarà a habilitar la renovació automàtica."
+        "Actualment, la renovació automàtica de la subscripció està desactivada. Si canvieu la subscripció ara, es tornarà a activar la renovació automàtica."
       ],
       "CVC": [
         "CVC"
@@ -7599,7 +7626,7 @@
         "**Prerequisit:** Cal configurar l'autenticació SAML per a activar el subministrament SCIM."
       ],
       "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
-        "**Prerequisit:** per a habilitar el subministrament SCIM, heu de verificar la propietat del domini **${ domainName }**. Aquesta verificació pot trigar fins a una hora."
+        "**Prerequisit:** per a activar el subministrament SCIM, heu de verificar la propietat del domini **${ domainName }**. Aquesta verificació pot trigar fins a una hora."
       ],
       "Enter token into your identity provider": [
         "Introduïu el token al vostre proveïdor d'identitat"
@@ -8122,6 +8149,9 @@
       ],
       "/ month": [
         "/ mes"
+      ],
+      "/month": [
+        "/mes"
       ],
       "1 year": [
         "1 any"
@@ -8839,7 +8869,7 @@
         "Desactiva"
       ],
       "Enable auto-pay support": [
-        "Habilita el suport de pagament automàtic"
+        "Activa el suport de pagament automàtic"
       ],
       "Keep auto-pay": [
         "Mantén el pagament automàtic"
@@ -8967,6 +8997,9 @@
       "Preference saved": [
         "S'ha desat la preferència."
       ],
+      "Problem reported": [
+        "S'ha notificat el problema."
+      ],
       "SPF value copied to clipboard": [
         "Valor SPF copiat al portaretalls"
       ],
@@ -9011,10 +9044,10 @@
         "Adreça eliminada"
       ],
       "Address disabled": [
-        "Adreça deshabilitada"
+        "Adreça desactivada"
       ],
       "Address enabled": [
-        "Adreça habilitada"
+        "Adreça activada"
       ],
       "Certificate ${ name } revoked": [
         "S'ha revocat el certificat ${ name }"
@@ -9197,6 +9230,9 @@
       "Add PayPal payment method": [
         "Afegir PayPal com a mètode de pagament"
       ],
+      "Add pm.me subdomain": [
+        "Afegeix un subdomini pm.me"
+      ],
       "Add servers": [
         "Afegeix servidors"
       ],
@@ -9375,6 +9411,9 @@
       ],
       "Disable two-factor authentication": [
         "Desactiva l'autenticació en dos passos"
+      ],
+      "Disable two-factor authentication?": [
+        "Desactiva l'autenticació en dos passos?"
       ],
       "Discard changes?": [
         "Voleu descartar els canvis?"

@@ -2154,6 +2154,9 @@
       ]
     },
     "Description": {
+      "Keep different parts of your life separate and your inbox organized with additional addresses.": [
+        "Rozdziel różne części swojego życia i uporządkuj skrzynkę odbiorczą za pomocą dodatkowych adresów."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Oddziel różne aspekty swojego życia dzięki wielu adresom e-mail i odblokuj więcej funkcji premium po ulepszeniu konta."
       ]
@@ -3658,7 +3661,7 @@
         "Czy na pewno chcesz usunąć domenę ${ boldDomain }?"
       ],
       "Ask your organization admin to setup Gateways.": [
-        "Poproś administratora organizacji, aby skonfigurował bramy."
+        "Poproś administratora organizacji o skonfigurowanie bram."
       ],
       "Attention required": [
         "Wymagana uwaga"
@@ -3727,10 +3730,10 @@
         "Kliknij przycisk \"Poproś o nowy kod\", aby otrzymać nowy kod weryfikacyjny na numer telefonu ${ strong }. Jeśli numer jest nieprawidłowy, kliknij przycisk \"Edytuj\", aby go poprawić."
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
-        "Skonfiguruj uwierzytelnianie SAML dla swojej organizacji za pomocą dostawcy tożsamości (IdP). Spowoduje to włączenie SAML dla całej organizacji."
+        "Skonfiguruj uwierzytelnianie SAML dla swojej organizacji przy pomocy dostawcy tożsamości (IdP). Spowoduje to włączenie SAML dla całej organizacji."
       ],
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
-        "Skonfiguruj uwierzytelnianie SAML dlaorganizacji za pomocą dostawcy tożsamości, takiego jak Okta, Microsoft Azure lub Google Identity Platform. Spowoduje to włączenie SAML dla całej organizacji."
+        "Skonfiguruj uwierzytelnianie SAML dla organizacji przy pomocy dostawcy tożsamości, takiego jak Okta, Microsoft Azure lub Google Identity Platform. Spowoduje to włączenie SAML dla całej organizacji."
       ],
       "Continue with ${ freeName }": [
         "Kontynuuj z planem ${ freeName }"
@@ -6217,11 +6220,17 @@
       "From ${ price }": [
         "Od ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Od ${ priceMailPlus }"
+      ],
       "Upgrade": [
         "Ulepsz"
       ],
       "Upgrade now": [
         "Ulepsz teraz"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Ulepsz plan do wersji ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -8603,6 +8612,9 @@
       "/ month": [
         "/ miesiąc"
       ],
+      "/month": [
+        "/ miesiąc"
+      ],
       "1 year": [
         "1 rok"
       ],
@@ -9756,6 +9768,9 @@
       "Amount due": [
         "Do zapłaty"
       ],
+      "An address for each role": [
+        "Adres dla każdej roli"
+      ],
       "Appearance": [
         "Wygląd"
       ],
@@ -10499,10 +10514,10 @@
     },
     "unprivatization": {
       "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
-        "${ n } użytkownik dołączył do organizacji za pomocą dostawcy tożsamości. Zatwierdź lub odrzuć konto:",
-        "${ n } użytkowników dołączyło do organizacji za pomocą dostawcy tożsamości. Zatwierdź lub odrzuć konta:",
-        "${ n } użytkowników dołączyło do organizacji za pomocą dostawcy tożsamości. Zatwierdź lub odrzuć konta:",
-        "${ n } użytkowników dołączyło do organizacji za pomocą dostawcy tożsamości. Zatwierdź lub odrzuć konta:"
+        "${ n } użytkownik dołączył do organizacji przy pomocy dostawcy tożsamości. Zatwierdź lub odrzuć konto:",
+        "${ n } użytkowników dołączyło do organizacji przy pomocy dostawcy tożsamości. Zatwierdź lub odrzuć konta:",
+        "${ n } użytkowników dołączyło do organizacji przy pomocy dostawcy tożsamości. Zatwierdź lub odrzuć konta:",
+        "${ n } użytkowników dołączyło do organizacji przy pomocy dostawcy tożsamości. Zatwierdź lub odrzuć konta:"
       ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorzy nie mają dostępu do danych prywatnych użytkowników i nie mogą zresetować ich haseł."

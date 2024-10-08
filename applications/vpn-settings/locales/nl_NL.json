@@ -2231,6 +2231,17 @@
         "Help ons verbeteren"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Bevestig het verlies van ${ PASS_APP_NAME } speciale korting"
+      ],
+      "Remove discount": [
+        "Korting verwijderen"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Uw ${ PLAN_NAMES[PLANS.PASS] }-abonnement heeft een speciale prijs van ${ price } per jaar. Als u downgrade naar een Free abonnement, zult u permanent uw korting verliezen, zelfs als u in de toekomst opnieuw upgrade."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Uitgebreide versiegeschiedenis bekijken"
@@ -2726,6 +2737,9 @@
       "customer support": [
         "klantondersteuning"
       ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Groepsabonnementen bieden op dit moment geen ondersteuning voor externe accounts. Maak een ${ BRAND_NAME }-adres aan voor u zich hierbij aansluit. ${ addressSettingsLink }"
+      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Als u de uitnodiging accepteert, zetten we uw huidige abonnement om en wordt een eventueel resterend saldo teruggestort."
       ],
@@ -2788,6 +2802,9 @@
       ],
       "You have successfully joined the family group": [
         "U hebt zich succesvol aangesloten bij de familiegroep"
+      ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "U heeft onbetaalde facturen. Betaal deze voordat u zich aansluit bij een groepsabonnement"
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "U moet een eigen domein configureren voordat u meerdere gebruikers toevoegt."
@@ -6002,11 +6019,17 @@
       "From ${ price }": [
         "Vanaf ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Vanaf ${ priceMailPlus }"
+      ],
       "Upgrade": [
         "Upgraden"
       ],
       "Upgrade now": [
         "Upgrade nu"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Upgrade naar ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -6438,6 +6461,9 @@
       "Unlimited messages per day": [
         "Onbeperkt aantal berichten per dag"
       ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Onbeperkte gedeelde ${ PASS_SHORT_APP_NAME } kluizen per gebruiker"
+      ],
       "Unlimited shared vaults with access permissions": [
         "Onbeperkt aantal gedeelde kluizen met toegangsmachtigingen"
       ],
@@ -6547,6 +6573,9 @@
       ],
       "Popular": [
         "Populair"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Bescherm gevoelige bedrijfsinformatie en werk veilig samen."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Bescherm de privacy van uw gezin met alle services van ${ BRAND_NAME } gecombineerd."
@@ -6748,6 +6777,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personaliseer uw e-mailhandtekening met een logo, afbeelding, pictogram van social media, koppeling naar uw contactgegevens en meer"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Telefonische ondersteuning is beschikbaar van de ${ BRAND_NAME } klantenondersteuning tijdens Europese kantoortijden voor klanten met 20 of meer gebruikers."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Voorkomt dat berichten worden gelezen door ${ BRAND_NAME } of derden. De enige personen die de berichten kunnen lezen, zijn de afzender en de beoogde ontvanger."
@@ -7333,6 +7365,9 @@
       "MM/YY": [
         "MM/JJ"
       ],
+      "More plans are available in other currencies": [
+        "Er zijn meer abonnementen beschikbaar in andere valuta"
+      ],
       "Payment Processing": [
         "Betaling wordt verwerkt"
       ],
@@ -7646,6 +7681,11 @@
       ],
       "User": [
         "Gebruiker"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Controleer de veiligheid van uw account"
       ]
     },
     "saml: Action": {
@@ -8555,6 +8595,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Uw abonnement was gekocht met een iOS-app. Om wijzigingen te maken of uw betaalgegevens bij te werken, moet u naar de Apple App Store gaan."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Het abonnement zal worden gedowngradet aan het einde van de factureringscyclus."
       ]
     },
     "Subscription price": {
@@ -10303,6 +10348,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Een veiligere/makkelijkere manier om Bitcoin te bewaren en te verzenden"
       ]
     },
     "wallet_signup_2024:Bug category": {

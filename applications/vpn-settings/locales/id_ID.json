@@ -2119,6 +2119,14 @@
         "Mohon diperhatikan bahwa apabila Anda menghapus domain ${ domainName } ini, seluruh alamat yang terhubung dengan domain tersebut akan dinonaktifkan."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Apakah Anda yakin ingin menghapus grup ini?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Mohon diperhatikan bahwa apabila Anda menghapus grup ${ displayGroupName } (dengan alamat ${ displayGroupAddressEmail }), Anda tidak akan lagi dapat menerima email dengan menggunakan alamat ini."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Faktur yang tertunggak"
@@ -2620,6 +2628,11 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Akun atau organisasi Anda memiliki tagihan yang tertunggak. Mohon lunasi seluruh tagihan yang belum dibayar."
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "Masukkan alamat email"
       ]
     },
     "Error importing users": {
@@ -3542,6 +3555,9 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Apakah Anda yakin untuk menghapus domain ${ boldDomain }?"
       ],
+      "Ask your organization admin to setup Gateways.": [
+        "Mintalah admin organisasi Anda untuk mengatur Gateway."
+      ],
       "Attention required": [
         "Diperlukan perhatian"
       ],
@@ -4376,6 +4392,9 @@
       "SCIM token active": [
         "Token SCIM aktif"
       ],
+      "Search by an email address to begin": [
+        "Cari berdasarkan alamat email untuk memulai"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Amankan akun ${ BRAND_NAME } Anda"
       ],
@@ -4516,6 +4535,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Format berkas CSV Anda tidak sesuai."
+      ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "Fitur pengelolaan grup tidak didukung pada paket langganan Anda saat ini. Grup yang sebelumnya telah dibuat telah dinonaktifkan dan hanya dapat dihapus."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Nama ini akan terlihat oleh para pengguna yang berada di bawah Anda ketika mereka masuk."
@@ -5523,6 +5545,9 @@
       ],
       "Reveal password": [
         "Perlihatkan kata sandi"
+      ],
+      "Search by email": [
+        "Cari melalui email"
       ],
       "Second password": [
         "Kata sandi kedua"
@@ -7091,6 +7116,29 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Para pengguna Anda akan melihat logo ini alih-alih ikon ${ BRAND_NAME } pada saat mereka terhubung masuk ke aplikasi web kami."
+      ]
+    },
+    "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify } alamat email Anda ${ email } untuk mengatur identitas organisasi."
+      ],
+      "Current organization identity": [
+        "Identitas organisasi saat ini"
+      ],
+      "Edit organization identity": [
+        "Sunting identitas organisasi"
+      ],
+      "New organization identity": [
+        "Identitas organisasi baru"
+      ],
+      "Organization identity": [
+        "Identitas organisasi"
+      ],
+      "Organization identity updated": [
+        "Identitas organisasi diperbarui"
+      ],
+      "Verify": [
+        "Verifikasi"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9989,6 +10037,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Apabila Anda telah membeli kode hadiah atau telah menerima kode hadiah dari tim layanan dukungan kami, silakan masukkan kode tersebut di sini."
       ],
+      "IP address (Internet Service Provider)": [
+        "Alamat IP (Penyedia Layanan Internet)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Anggota organisasi yang tidak menggunakan 2FA akan menerima email yang meminta mereka untuk mengaktifkan 2FA sesegera mungkin."
       ],
@@ -10063,17 +10114,32 @@
       ]
     },
     "unprivatization": {
+      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
+        "${ n } pengguna telah bergabung ke organisasi Anda melalui Penyedia Identitas Anda. Terima atau tolak akun mereka sekarang:"
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Admin tidak dapat mengakses data pengguna pribadi dan tidak dapat mengatur ulang kata sandinya."
       ],
+      "Approve all": [
+        "Setujui semua"
+      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Dengan membuat pengguna pribadi, Anda tidak akan dapat membantunya mendapatkan kembali akses data atau akun."
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Akses administrator untuk ${ n } pengguna tidak dapat diaktifkan secara otomatis karena kunci enkripsi para pengguna berikut telah diperbarui:"
+      ],
+      "Could not enable administrator access: ${ error }": [
+        "Izin administrator tidak dapat diaktifkan: ${ error }"
       ],
       "Delete request": [
         "Hapus permintaan"
       ],
       "Delete request to access user data?": [
         "Hapus permintaan mengakses data pengguna?"
+      ],
+      "Enable manually": [
+        "Aktifkan secara manual"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Setelah pengguna menyetujui, Anda akan dapat membantunya mendapatkan kembali akses akun atau mengelola datanya."

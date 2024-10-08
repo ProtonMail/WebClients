@@ -2271,8 +2271,11 @@
       "Organization key is not decrypted": [
         "組織の鍵が復号されていません"
       ],
+      "Organization key must be activated to create invited users": [
+        "招待ユーザーを作成するには、組織の鍵を有効にする必要があります"
+      ],
       "Organization key must be activated to create non-private users": [
-        "非プライベート ユーザーを作成するには、組織キーをアクティブ化する必要があります"
+        "非プライベートユーザーを作成するには、組織の鍵を有効にする必要があります"
       ],
       "Passwords do not match": [
         "パスワードが一致しません"
@@ -3909,6 +3912,9 @@
       "Protected by Swiss privacy laws": [
         "スイスの個人情報保護法により保護されています。"
       ],
+      "Public sharing of documents is not yet supported.": [
+        "ドキュメントの公開共有はまだサポートされていません。"
+      ],
       "read our two-factor authentication guide first": [
         "はじめに 2 要素認証ガイドをお読みください"
       ],
@@ -4358,6 +4364,9 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "ID プロバイダーで ${ appName } の SAML を有効にすると、コールバック (ACS) URL と発行者 ID を使用するように求められる場合があります。以下のデータをコピーして ID プロバイダーのフィールドに貼り付けるだけです。"
+      ],
+      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
+        "現在の有料サブスクリプションをキャンセルすると、サブスクリプションの残高はアカウントクレジットとして返却され、${ BRAND_NAME } ${ PLANS.FREE } プランにダウングレードされます。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "2 要素認証の設定時に、回復用コードを提供します。回復用コードは、認証アプリにアクセスできなくなった際のサインインに使用できます。"
@@ -5348,6 +5357,9 @@
       ],
       "Remove": [
         "削除"
+      ],
+      "Resend invite link": [
+        "招待リンクを再送信"
       ],
       "Revoke sessions": [
         "セッションを失効させる"
@@ -6492,7 +6504,7 @@
         "月額、2年ごとに請求"
       ],
       "Preparing your Recovery Kit": [
-        "リカバリーキットの準備"
+        "回復キットを準備中"
       ],
       "Secure vault sharing": [
         "安全な保管庫共有"
@@ -6546,7 +6558,7 @@
         "組織の鍵が存在しません。"
       ],
       "Organization key must be activated to give admin privileges": [
-        "管理者権限を付与するには、組織キーをアクティブ化する必要があります"
+        "管理者権限を付与するには、組織の鍵を有効にする必要があります"
       ],
       "Organization key restored": [
         "組織の鍵が復元されました"
@@ -6573,7 +6585,7 @@
         "次の管理者は組織キーにアクセスできます。"
       ],
       "The organization key must be activated first.": [
-        "組織の鍵を最初に有効にする必要があります。"
+        "まず、組織の鍵を有効にする必要があります。"
       ],
       "This will send the latest organization key to the administrators that currently don't have access to it.": [
         "これにより、現在アクセス権のない管理者に最新の組織キーが送信されます。"
@@ -6600,7 +6612,7 @@
         "あなたは組織 **${ organizationName }** によって管理者に任命されました"
       ],
       "You must privatize all users before generating a new organization key": [
-        "新しい組織キーを生成する前に、すべてのユーザーをプライベート化する必要があります"
+        "新しい組織の鍵を生成する前に、すべてのユーザーをプライベート化する必要があります"
       ],
       "You need access to the organization key to perform this operation.": [
         "この操作を実行するには、組織キーにアクセスする必要があります。"
@@ -7100,6 +7112,18 @@
       ],
       "You can reset your password until ${ boldDate }.": [
         "${ boldDate }までパスワードをリセットできます。"
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "${ timeRemaining.inDays } 日後にパスワードをリセットできます。"
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        " ${ timeRemaining.inHours } 時間後にパスワードをリセットできます。"
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        " ${ timeRemaining.inMinutes } 分後にパスワードをリセットできます。"
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        " ${ timeRemaining.inSeconds } 秒後にパスワードをリセットできます。"
       ]
     },
     "session_recovery:available:link": {
@@ -7762,6 +7786,9 @@
       "I still want to cancel": [
         "それでもキャンセルしたいのですが"
       ],
+      "Invited members will be removed from your organization": [
+        "招待メンバーは組織から削除されます"
+      ],
       "Keep ${ config.planName }": [
         "${ config.planName } を使い続ける"
       ],
@@ -7800,6 +7827,15 @@
       ],
       "Unlimited folders, labels and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
+      ],
+      "Users won’t be able to manage their calendars": [
+        "ユーザーは自分のカレンダーを管理できません"
+      ],
+      "Users won’t be able to send emails": [
+        "ユーザーはメールを送信できません"
+      ],
+      "Users won’t be able to sync files on their devices": [
+        "ユーザーは自分のデバイス上のファイルを同期できません"
       ],
       "Version history": [
         "バージョン履歴"
@@ -8887,6 +8923,11 @@
         "このバージョンの Tor Brower はサポートしていません。最新の ${ stableRelease } に更新してください。"
       ]
     },
+    "unprivatization": {
+      "Organization key must be activated to request data access": [
+        "データアクセスをリクエストするには、組織の鍵を有効にする必要があります"
+      ]
+    },
     "upsell panel": {
       "Recommended": [
         "おすすめ"
@@ -8950,6 +8991,9 @@
     "Users table: badge": {
       "2FA": [
         "2要素認証"
+      ],
+      "Invitation sent, awaiting reply from the invited member": [
+        "招待が送信されました。招待メンバーからの返信待ちです。"
       ],
       "Invite sent": [
         "招待状を送信しました"
