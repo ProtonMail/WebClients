@@ -471,9 +471,6 @@
       "Continue": [
         "Fortfahren"
       ],
-      "Continue with ${ selectedPaymentProvider }": [
-        "Mit ${ selectedPaymentProvider } fortfahren"
-      ],
       "Credit card": [
         "Kreditkarte"
       ],
@@ -491,9 +488,6 @@
       ],
       "Pay with": [
         "Bezahlen mit"
-      ],
-      "Ramp": [
-        "Ramp"
       ],
       "Recipients": [
         "Empfänger"
@@ -520,9 +514,6 @@
     "Bitcoin buy": {
       "${ quote.provider } checkout": [
         "${ quote.provider } Kasse"
-      ],
-      "We could not find any quote for this currency/country pair": [
-        "Wir konnten kein Angebot für dieses Währungs-/Länder-Paar finden."
       ]
     },
     "Bitcoin Script Type": {
@@ -556,12 +547,6 @@
     "Bitcoin send": {
       "Add recipient": [
         "Empfänger hinzufügen"
-      ],
-      "Could not send invitation": [
-        "Fehler beim Senden der Einladung."
-      ],
-      "Could not send invitation to the recipient": [
-        "Fehler beim Senden der Einladung an den Empfänger."
       ],
       "Invitation sent": [
         "Einladung gesendet"
@@ -2043,9 +2028,6 @@
       ],
       "Not now": [
         "Jetzt nicht"
-      ],
-      "You are now leaving ${ WALLET_APP_NAME } for ${ provider } (${ websiteLink }). Services related to card payments, bank transfers, and any other fiat transactions are provided by ${ provider }, a separate third-party platform. By proceeding and procuring services from ${ provider }, you acknowledge that you have read and agreed to ${ provider }'s Terms of Service (${ termOfUseLink }) and Privacy and Cookies Policy (${ privacyAndCookiesPolicyLink }). For any questions related to ${ provider }'s services, please contact ${ provider } at ${ supportEmailLink }": [
-        "Du verlässt jetzt ${ WALLET_APP_NAME } für ${ provider } (${ websiteLink }). Dienstleistungen im Zusammenhang mit Kartenzahlungen, Banküberweisungen und anderen Geldtransaktionen werden von ${ provider }, einer separaten Plattform eines Drittanbieters, bereitgestellt. Indem du fortfährst und Dienstleistungen von ${ provider } in Anspruch nimmst, bestätigst du, dass du die Nutzungsbedingungen (${ termOfUseLink }) und die Datenschutz- und Cookie-Richtlinie (${ privacyAndCookiesPolicyLink }) von ${ provider } gelesen und akzeptiert hast. Bei Fragen zu den Dienstleistungen von ${ provider } wende dich bitte an ${ provider } unter ${ supportEmailLink }."
       ]
     },
     "Group": {
@@ -4413,9 +4395,6 @@
       ]
     },
     "Wallet": {
-      "An error occurred": [
-        "Ein Fehler ist aufgetreten."
-      ],
       "Close": [
         "Schließen"
       ],
@@ -4450,9 +4429,6 @@
       ],
       "Cancel": [
         "Abbrechen"
-      ],
-      "Could not add account to wallet": [
-        "Konto konnte nicht zur Wallet hinzugefügt werden"
       ],
       "Create multiple wallet accounts to separate your financial activities for better privacy and organization.": [
         "Erstelle mehrere Walletkonten, um deine finanziellen Aktivitäten zu trennen und besser zu organisieren."
@@ -4528,11 +4504,6 @@
       ],
       "Send": [
         "Senden"
-      ]
-    },
-    "wallet dashboard": {
-      "You need to have a positive balance to send bitcoins": [
-        "Du musst einen positiven Kontostand haben, um Bitcoins zu versenden."
       ]
     },
     "Wallet deletion": {
@@ -4668,6 +4639,9 @@
       ],
       "My wallet passphrase": [
         "Meine Wallet-Passphrase"
+      ],
+      "To use this wallet, you need to input the passphrase": [
+        "Um diese Wallet zu verwenden, musst du die Passphrase eingeben"
       ],
       "Wallet passphrase": [
         "Wallet-Passphrase"
@@ -4841,11 +4815,17 @@
       "Edit recipients": [
         "Empfänger bearbeiten"
       ],
+      "Fast": [
+        "Schnelle"
+      ],
       "High priority": [
         "Hohe Priorität"
       ],
       "How much are you sending?": [
         "Wie viel sendest du?"
+      ],
+      "Low": [
+        "Niedrige"
       ],
       "Low priority": [
         "Niedrige Priorität"
@@ -4861,6 +4841,9 @@
       ],
       "Network fees": [
         "Netzwerkgebühren"
+      ],
+      "Normal": [
+        "Standard"
       ],
       "One of recipient's amount is below minimum value": [
         "Der Betrag eines Empfängers liegt unter dem Mindestwert."
@@ -4907,9 +4890,6 @@
       "You are sending": [
         "Du sendest"
       ],
-      "You cannot send a message to the recipient because you don't have any address setup on your account": [
-        "Du kannst keine Nachricht an den Empfänger senden, da du keine Adresse in deinem Konto eingerichtet hast."
-      ],
       "You do not have enough BTC in this account to fund the transaction and the required network fee of ${ feesToReserveElement }.": [
         "Du hast nicht genug BTC auf diesem Konto, um die Transaktion und die erforderliche Netzwerkgebühr von ${ feesToReserveElement } zu finanzieren."
       ],
@@ -4918,6 +4898,9 @@
       ],
       "Your transaction has been broadcasted to the Bitcoin network. It may take around one hour for the network to confirm the transaction.": [
         "Deine Transaktion wurde an das Bitcoin-Netzwerk weitergeleitet. Es kann etwa eine Stunde dauern, bis das Netzwerk die Transaktion bestätigt."
+      ],
+      "~${ minutes } minutes": [
+        "~${ minutes } Minuten"
       ]
     },
     "Wallet Send": {
@@ -4932,9 +4915,6 @@
       ]
     },
     "Wallet Settings": {
-      "Account could not be deleted": [
-        "Konto konnte nicht gelöscht werden"
-      ],
       "Account name changed": [
         "Kontoname geändert"
       ],
@@ -4944,17 +4924,11 @@
       "Bitcoin via Email": [
         "Bitcoin per E-Mail"
       ],
-      "Could not add email address": [
-        "E-Mail-Adresse konnte nicht hinzugefügt werden"
-      ],
-      "Could not be replaced": [
-        "Konnte nicht ersetzt werden"
+      "Could not fill the pool after email address addition": [
+        "Nachdem die E-Mail-Adresse hinzugefügt wurde, konnte der Pool nicht gefüllt werden"
       ],
       "Could not fill the pool after email address replacement": [
         "Nachdem die E-Mail-Adresse ersetzt wurde, konnte der Pool nicht gefüllt werden"
-      ],
-      "Could not remove email address": [
-        "E-Mail-Adresse konnte nicht entfernt werden"
       ],
       "Create new email address": [
         "Neue E-Mail-Adresse erstellen"
@@ -4974,12 +4948,6 @@
       "New fiat currency applied": [
         "Neue Fiat-Währung angewendet"
       ],
-      "New fiat currency could not be applied": [
-        "Neue Fiat-Währung konnte nicht angewendet werden"
-      ],
-      "Preferred bitcoin unit could not be changed": [
-        "Bevorzugte Bitcoin-Einheit konnte nicht geändert werden"
-      ],
       "Preferred bitcoin unit was changed": [
         "Bevorzugte Bitcoin-Einheit wurde geändert"
       ],
@@ -4989,14 +4957,8 @@
       "Select this address": [
         "Diese Adresse auswählen"
       ],
-      "Wallet could not be deleted": [
-        "Wallet konnte nicht gelöscht werden"
-      ],
       "Wallet name changed": [
         "Wallet-Namen geändert"
-      ],
-      "Wallet name could not be changed": [
-        "Wallet-Name konnte nicht geändert werden"
       ],
       "Wallet was deleted": [
         "Wallet wurde gelöscht"
@@ -5026,15 +4988,6 @@
       "Confirm Passphrase": [
         "Passphrase bestätigen"
       ],
-      "Could not create wallet": [
-        "Wallet konnte nicht erstellt werden"
-      ],
-      "Could not create wallet account": [
-        "Fehler beim Erstellen des Wallet-Kontos."
-      ],
-      "Could not link email to wallet account": [
-        "Fehler beim Verknüpfen der E-Mail-Adresse mit dem Wallet-Konto."
-      ],
       "Create new wallet": [
         "Neues Wallet erstellen"
       ],
@@ -5053,17 +5006,11 @@
       "Import wallet": [
         "Wallet importieren"
       ],
-      "Input mnemonic is invalid, please double check.": [
-        "Eingegebene Mnemonik ist ungültig, bitte überprüfen."
-      ],
       "Invite a friend": [
         "Einen Freund einladen"
       ],
       "Learn more": [
         "Mehr erfahren"
-      ],
-      "Mnemonic length is not valid.": [
-        "Mnemonik-Länge ist nicht gültig."
       ],
       "My wallet had a passphrase": [
         "Meine Wallet hatte eine Passphrase"
@@ -5159,9 +5106,6 @@
       ]
     },
     "Wallet terms and conditions": {
-      "Could not accept terms and conditions": [
-        "Fehler beim Akzeptieren der allgemeinen Geschäftsbedingungen."
-      ],
       "Terms and conditions were accepted": [
         "Allgemeine Geschäftsbedingungen wurden akzeptiert."
       ]
@@ -5271,9 +5215,6 @@
       "View more": [
         "Mehr anzeigen"
       ],
-      "We are currently experiencing difficulties in calculating network fees. Please try again later. If the issue persists, contact our support team for assistance.": [
-        "Aktuell gibt es Probleme mit der Berechnung der Netzwerkgebühren. Bitte versuche es später noch einmal. Wenn das Problem weiterhin besteht, kontaktiere bitte unser Support-Team für Unterstützung."
-      ],
       "You received": [
         "Du hast empfangen:"
       ],
@@ -5308,12 +5249,6 @@
       ],
       "Sync": [
         "Synchronisieren"
-      ],
-      "Syncing is already in progress": [
-        "Die Synchronisierung läuft bereits."
-      ],
-      "You need to wait 1 minute between each sync": [
-        "Du musst zwischen jeder Synchronisierung 1 Minute warten."
       ]
     },
     "Wallet upgrade": {
