@@ -12,11 +12,12 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import DynamicProgress from '@proton/components/components/progress/DynamicProgress';
 import useApi from '@proton/components/hooks/useApi';
+import { useContacts } from '@proton/mail/contacts/hooks';
 import { exportContactsFromLabel } from '@proton/shared/lib/contacts/helpers/export';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import noop from '@proton/utils/noop';
 
-import { useContacts, useGetUserKeys } from '../../../hooks';
+import { useGetUserKeys } from '../../../hooks';
 
 const DOWNLOAD_FILENAME = 'protonContacts';
 
