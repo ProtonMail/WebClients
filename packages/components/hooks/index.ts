@@ -1,6 +1,5 @@
 export { default as useContacts } from './useContacts';
 export * from './useDomainsAddresses';
-export { useDeviceRecovery, useIsDeviceRecoveryAvailable, useIsDeviceRecoveryEnabled } from './useDeviceRecovery';
 export { default as useElementRect } from './useElementRect';
 export { default as useErrorHandler } from './useErrorHandler';
 export { default as useFeature } from './useFeature';

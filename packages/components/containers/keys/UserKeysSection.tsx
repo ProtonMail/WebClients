@@ -9,18 +9,13 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import { useIsDeviceRecoveryAvailable, useIsDeviceRecoveryEnabled } from '@proton/components/hooks/useDeviceRecovery';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import type { AlgorithmInfo } from '@proton/crypto';
 import type { KeyGenConfig } from '@proton/shared/lib/interfaces';
 import { addUserKeysProcess } from '@proton/shared/lib/keys';
 
-import {
-    useGetOrganizationKey,
-    useIsDeviceRecoveryAvailable,
-    useIsDeviceRecoveryEnabled,
-    useModals,
-    useUserKeys,
-} from '../../hooks';
+import { useGetOrganizationKey, useModals, useUserKeys } from '../../hooks';
 import KeysTable from './KeysTable';
 import AddKeyModal from './addKey/AddKeyModal';
 import ExportPrivateKeyModal from './exportKey/ExportPrivateKeyModal';
