@@ -154,7 +154,7 @@ const useGroupActions = () => {
 
             let activeKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, addressKeys);
 
-            for (const forwardingKey of [membership.Keys] || []) {
+            for (const forwardingKey of [membership.Keys]) {
                 const decryptedToken = await decryptMemberToken(
                     forwardingKey.ActivationToken,
                     splitAddressKeys.privateKeys,

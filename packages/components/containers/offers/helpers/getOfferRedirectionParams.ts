@@ -21,7 +21,7 @@ const getOfferRedirectionParams = ({ offer, deal, currency }: Props): URLSearchP
     }
     params.set('plan', planName);
     params.set('type', 'offer');
-    params.set('edit', enableCycleSelector ? 'enable' : 'disable' || 'disable'); // Allow to choose to enable or disable the cycle selector in the subscription modal
+    params.set('edit', enableCycleSelector ? 'enable' : 'disable'); // Allow to choose to enable or disable the cycle selector in the subscription modal
     params.set('offer', ID);
     params.set('ref', ref); // Used by data team
 
