@@ -18,6 +18,7 @@ import { macOSExitEvent, windowsAndLinuxExitEvent } from "./windowClose";
 import { handleBeforeInput } from "./windowShortcuts";
 import { join } from "node:path";
 import { c } from "ttag";
+import { isElectronOnMac } from "@proton/shared/lib/helpers/desktop";
 
 type ViewID = keyof ReturnType<typeof getConfig>["url"];
 
@@ -368,16 +369,20 @@ export async function showNetworkErrorPage(viewID: ViewID): Promise<void> {
         ? join(process.resourcesPath, "error-network.html")
         : join(app.getAppPath(), "assets/error-network.html");
 
-    await view.webContents.loadFile(filePath, {
-        query: {
-            theme: nativeTheme.shouldUseDarkColors ? "dark" : "light",
-            title: c("error screen").t`Cannot establish connection`,
-            description: c("error screen")
-                .t`Check your internet connection or network settings. If the issue persists, please contact customer support.`,
-            button: c("error screen").t`Try again`,
-            buttonTarget: getConfig().url[viewID],
-        },
-    });
+    const query: Record<string, string> = {
+        theme: nativeTheme.shouldUseDarkColors ? "dark" : "light",
+        title: c("error screen").t`Cannot establish connection`,
+        description: c("error screen")
+            .t`Check your internet connection or network settings. If the issue persists, please contact customer support.`,
+        button: c("error screen").t`Try again`,
+        buttonTarget: getConfig().url[viewID],
+    };
+
+    if (isElectronOnMac) {
+        query.draggable = "";
+    }
+
+    await view.webContents.loadFile(filePath, { query });
 }
 
 async function showLoadingPage(viewID: ViewID): Promise<void> {
@@ -392,12 +397,16 @@ async function showLoadingPage(viewID: ViewID): Promise<void> {
         ? join(process.resourcesPath, "loading.html")
         : join(app.getAppPath(), "assets/loading.html");
 
-    await view.webContents.loadFile(filePath, {
-        query: {
-            message: c("loading screen").t`Loading ${viewTitleMap[viewID]}…`,
-            theme: nativeTheme.shouldUseDarkColors ? "dark" : "light",
-        },
-    });
+    const query: Record<string, string> = {
+        message: c("loading screen").t`Loading ${viewTitleMap[viewID]}…`,
+        theme: nativeTheme.shouldUseDarkColors ? "dark" : "light",
+    };
+
+    if (isElectronOnMac) {
+        query.draggable = "";
+    }
+
+    await view.webContents.loadFile(filePath, { query });
 }
 
 async function getViewURL(viewID: ViewID): Promise<string> {
