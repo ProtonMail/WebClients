@@ -1,5 +1,4 @@
 export { default as useContacts } from './useContacts';
-export * from './useCustomDomains';
 export * from './useDomainsAddresses';
 export { useDeviceRecovery, useIsDeviceRecoveryAvailable, useIsDeviceRecoveryEnabled } from './useDeviceRecovery';
 export { default as useElementRect } from './useElementRect';

@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { getDomainAddressError, useMemberAddresses } from '@proton/account';
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useCustomDomains } from '@proton/account/domains/hooks';
 import { selectUnprivatizationState } from '@proton/account/members/unprivatizeMembers';
 import { getDomainError } from '@proton/account/members/validateAddUser';
 import { useProtonDomains } from '@proton/account/protonDomains/hooks';
@@ -63,7 +64,6 @@ import clsx from '@proton/utils/clsx';
 
 import Tooltip from '../../../components/tooltip/Tooltip';
 import {
-    useCustomDomains,
     useGetOrganizationKey,
     useMembers,
     useNotifications,
