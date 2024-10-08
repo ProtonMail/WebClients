@@ -62,22 +62,41 @@ interface UseAutocompleteProps<V> {
     options: DataWithMatches<V>[];
     input: string;
     inputRef: RefObject<HTMLInputElement>;
+    /**
+     * Finds the previous option index
+     * @param index current highlighted item index
+     * @param options the options
+     * @returns the index of the item to highlight
+     */
+    findPreviousOptionIndex?: (currentIndex: number, options: DataWithMatches<V>[]) => number;
+    /**
+     * Finds the next option index
+     * @param index current highlighted item index
+     * @param options the options
+     * @returns the index of the item to highlight
+     */
+    findNextOptionIndex?: (currentIndex: number, options: DataWithMatches<V>[]) => number;
 }
 
-export const useAutocomplete = <T>({ id, options, onSelect, input, inputRef }: UseAutocompleteProps<T>) => {
-    const [highlightedIndex, setHighlightedIndex] = useState(0);
+export const useAutocomplete = <T>({
+    id,
+    options,
+    onSelect,
+    input,
+    inputRef,
+    findPreviousOptionIndex = (currentIndex) => (currentIndex === 0 ? currentIndex : currentIndex - 1),
+    findNextOptionIndex = (currentIndex, options) =>
+        currentIndex === options.length - 1 ? currentIndex : currentIndex + 1,
+}: UseAutocompleteProps<T>) => {
+    const [highlightedIndex, setHighlightedIndex] = useState(findNextOptionIndex(0, options));
     const [isOpen, setIsOpen] = useState(false);
 
     const goToPreviousOption = () => {
-        setHighlightedIndex((currentHighlightedIndex) =>
-            currentHighlightedIndex === 0 ? currentHighlightedIndex : currentHighlightedIndex - 1
-        );
+        setHighlightedIndex((currentHighlightedIndex) => findPreviousOptionIndex(currentHighlightedIndex, options));
     };
 
     const goToNextOption = () => {
-        setHighlightedIndex((currentHighlightedIndex) =>
-            currentHighlightedIndex === options.length - 1 ? currentHighlightedIndex : currentHighlightedIndex + 1
-        );
+        setHighlightedIndex((currentHighlightedIndex) => findNextOptionIndex(currentHighlightedIndex, options));
     };
 
     const onOpen = () => {
