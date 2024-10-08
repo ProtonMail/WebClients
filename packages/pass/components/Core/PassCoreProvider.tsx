@@ -8,6 +8,7 @@ import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import type { UsePeriodOtpCodeOptions } from '@proton/pass/hooks/usePeriodicOtpCode';
 import { type AuthStore } from '@proton/pass/lib/auth/store';
+import { preloadPassCoreUI } from '@proton/pass/lib/core/core.ui';
 import type { PassCoreProxy } from '@proton/pass/lib/core/types';
 import type { ExportOptions } from '@proton/pass/lib/export/types';
 import type { I18nService } from '@proton/pass/lib/i18n/service';
@@ -107,6 +108,8 @@ export const PassCoreProvider: FC<PropsWithChildren<PassCoreProviderProps>> = ({
     const context = useMemo<PassCoreContextValue>(() => ({ ...core, setTheme, locale: appLocale }), [appLocale]);
 
     useEffect(() => {
+        preloadPassCoreUI()?.catch(noop);
+
         core
             .getTheme?.()
             .then((initial) => setTheme(initial ?? PASS_DEFAULT_THEME))
