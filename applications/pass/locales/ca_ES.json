@@ -203,7 +203,7 @@
         "Edita la caixa forta"
       ],
       "Enable Dark Web Monitoring": [
-        "Habilita la supervisió del web fosc"
+        "Activa la supervisió del web fosc"
       ],
       "Entire vault": [
         "Caixa forta sencera"
@@ -261,6 +261,10 @@
       ],
       "Import": [
         "Importa"
+      ],
+      "Import alias": [
+        "Importa l'àlies",
+        "Importa els àlies"
       ],
       "Importing": [
         "S'està important"
@@ -782,6 +786,9 @@
       "Failed to restore items from trash": [
         "No s'han pogut restaurar els elements de la paperera"
       ],
+      "Failed to sync aliases": [
+        "No s'han pogut sincronitzar els àlies."
+      ],
       "Failed to transfer this vault's ownership.": [
         "No s'ha pogut transferir la propietat de la caixa forta."
       ],
@@ -974,6 +981,14 @@
         "Alguna cosa ha anat malament."
       ]
     },
+    "FamilyPlanPromo2024": {
+      "Introducing ${ planNameJSX }": [
+        "Presentem ${ planNameJSX }"
+      ],
+      "Limited-time offer only.": [
+        "Oferta només per temps limitat."
+      ]
+    },
     "Feature": {
       "Dark Web Monitoring": [
         "Monitoratge de la web fosca"
@@ -1070,7 +1085,7 @@
         "${ PROTON_SENTINEL_NAME } s'ha desactivat correctament"
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
-        "${ PROTON_SENTINEL_NAME } s'ha habilitat correctament"
+        "${ PROTON_SENTINEL_NAME } s'ha activat correctament"
       ],
       "${ row.breachCount } breach detected": [
         "S'ha detectat ${ row.breachCount } infracció.",
@@ -1233,13 +1248,13 @@
         "S'està activant el mode fora de línia..."
       ],
       "Enabling password auto-lock": [
-        "Habilitant el bloqueig automàtic de la contrasenya"
+        "Activant el bloqueig automàtic de la contrasenya"
       ],
       "Enabling password lock failed": [
         "No s'ha pogut activar el bloqueig amb contrasenya"
       ],
       "Enabling PIN auto-lock": [
-        "S'està habilitant el bloqueig automàtic del PIN"
+        "S'està activant el bloqueig automàtic del PIN"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Introduïu el codi de verificació. Dígit ${ digit }."
@@ -1490,6 +1505,9 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmeu la contrasenya de ${ BRAND_NAME } per a exportar les dades de ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your extra password": [
+        "Confirmeu la vostra contrasenya addicional."
       ],
       "Please confirm your password": [
         "Confirmeu la vostra contrasenya"
@@ -2495,7 +2513,7 @@
     },
     "Log preference": {
       "Enable ${ reason }": [
-        "Habilita ${ reason }"
+        "Activa ${ reason }"
       ]
     },
     "Message": {
@@ -2520,7 +2538,7 @@
         "${ reason } s'ha desactivat"
       ],
       "${ reason } has been enabled": [
-        "S'ha habilitat ${ reason } "
+        "S'ha activat ${ reason } "
       ]
     },
     "Option": {
@@ -2962,6 +2980,9 @@
       "OTP secret or URI required": [
         "Heu d'introduir una clau secreta OTP o un URL."
       ],
+      "Section name cannot be empty": [
+        "El nom de la selecció no pot estar buit."
+      ],
       "Url already exists": [
         "Ja existeix l'URL."
       ],
@@ -3011,6 +3032,9 @@
       ],
       "Extra password cannot be empty": [
         "La contrasenya addicional no pot ser buida."
+      ],
+      "Extra password is required": [
+        "La contrasenya addicional és obligatòria."
       ],
       "Extra password should have at least 8 characters": [
         "La contrasenya addicional ha de tenir com a mínim 8 caràcters."
