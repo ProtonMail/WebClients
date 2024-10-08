@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
 import { MAX_CUSTOM_ADDRESSES } from '@proton/pass/constants';
+import PassCoreUI from '@proton/pass/lib/core/core.ui';
 import { filterItemsByUserIdentifier, intoUserIdentifier } from '@proton/pass/lib/items/item.utils';
 import { AddressType, type MonitorAddress } from '@proton/pass/lib/monitor/types';
 import { selectLoginItems, selectNonAliasedLoginItems } from '@proton/pass/store/selectors';
@@ -12,7 +13,6 @@ import type { LoginItem } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
 export type MonitorTableRow<T extends AddressType = AddressType> = MonitorAddress<T> & { usageCount: number };
 
@@ -31,7 +31,7 @@ const getCustomSuggestions = (data: MonitorAddress[], items: LoginItem[]): Monit
         if (!item.data.content.itemEmail.v && !item.data.content.itemUsername.v) return acc;
         const userIdentifier = intoUserIdentifier(item);
         if (monitored.has(userIdentifier)) return acc;
-        if (validateEmailAddress(userIdentifier)) acc.set(userIdentifier, (acc.get(userIdentifier) ?? 0) + 1);
+        if (PassCoreUI.is_email_valid(userIdentifier)) acc.set(userIdentifier, (acc.get(userIdentifier) ?? 0) + 1);
 
         return acc;
     }, new Map());
