@@ -474,9 +474,6 @@
       "Continue": [
         "Продолжить"
       ],
-      "Continue with ${ selectedPaymentProvider }": [
-        "Продолжить с ${ selectedPaymentProvider }"
-      ],
       "Credit card": [
         "Кредитная карта"
       ],
@@ -517,9 +514,6 @@
     "Bitcoin buy": {
       "${ quote.provider } checkout": [
         "${ quote.provider } — оплата"
-      ],
-      "We could not find any quote for this currency/country pair": [
-        "Мы не смогли найти никаких котировок для этой валюты/пары стран"
       ]
     },
     "Bitcoin Script Type": {
@@ -550,12 +544,6 @@
     "Bitcoin send": {
       "Add recipient": [
         "Добавить получателя"
-      ],
-      "Could not send invitation": [
-        "Не удалось отправить приглашение"
-      ],
-      "Could not send invitation to the recipient": [
-        "Не удалось отправить приглашение получателю"
       ],
       "Invitation sent": [
         "Приглашение отправлено"
@@ -2053,9 +2041,6 @@
       ],
       "Not now": [
         "Не сейчас"
-      ],
-      "You are now leaving ${ WALLET_APP_NAME } for ${ provider } (${ websiteLink }). Services related to card payments, bank transfers, and any other fiat transactions are provided by ${ provider }, a separate third-party platform. By proceeding and procuring services from ${ provider }, you acknowledge that you have read and agreed to ${ provider }'s Terms of Service (${ termOfUseLink }) and Privacy and Cookies Policy (${ privacyAndCookiesPolicyLink }). For any questions related to ${ provider }'s services, please contact ${ provider } at ${ supportEmailLink }": [
-        "Вы теперь покидаете ${ WALLET_APP_NAME } для ${ provider } (${ websiteLink }). Услуги, связанные с оплатами по картам, банковскими переводами и любыми другими фиатными транзакциями, предоставляются ${ provider }, отдельной сторонней платформой. Продолжая и получая услуги от ${ provider }, вы подтверждаете, что прочитали и согласны с Условиями обслуживания ${ provider } (${ termOfUseLink }) и Политикой конфиденциальности и использования файлов cookie (${ privacyAndCookiesPolicyLink }). По любым вопросам, связанным с услугами ${ provider }, пожалуйста, свяжитесь с ${ provider } по адресу ${ supportEmailLink }"
       ]
     },
     "Group": {
@@ -4543,9 +4528,6 @@
       "Cancel": [
         "Отменить"
       ],
-      "Could not add account to wallet": [
-        "Не удалось добавить в кошелёк счёт"
-      ],
       "Create multiple wallet accounts to separate your financial activities for better privacy and organization.": [
         "Создайте несколько аккаунтов в кошельке, чтобы разделить свои финансовые активности для лучшей конфиденциальности и организации."
       ],
@@ -4620,11 +4602,6 @@
       ],
       "Send": [
         "Отправить"
-      ]
-    },
-    "wallet dashboard": {
-      "You need to have a positive balance to send bitcoins": [
-        "Вам нужно иметь положительный баланс, чтобы отправить биткойны"
       ]
     },
     "Wallet deletion": {
@@ -5001,9 +4978,6 @@
       "You are sending": [
         "Вы отправляете"
       ],
-      "You cannot send a message to the recipient because you don't have any address setup on your account": [
-        "Вы не можете отправить сообщение этому получателю, потому что у вас нет настроенного адреса в вашем аккаунте"
-      ],
       "You do not have enough BTC in this account to fund the transaction and the required network fee of ${ feesToReserveElement }.": [
         "У вас недостаточно BTC на этом аккаунте, чтобы профинансировать транзакцию и необходимую сеть для оплаты ${ feesToReserveElement }."
       ],
@@ -5026,14 +5000,8 @@
       ]
     },
     "Wallet Settings": {
-      "Account could not be deleted": [
-        "Не удалось удалить счёт"
-      ],
       "Account name changed": [
         "Название счёта изменено"
-      ],
-      "Account name could not be changed": [
-        "Не удалось изменить имя аккаунта"
       ],
       "Account was deleted": [
         "Счёт был удалён"
@@ -5041,20 +5009,11 @@
       "Bitcoin via Email": [
         "Bitcoin по эл. почте"
       ],
-      "Could not add email address": [
-        "Не удалось добавить адрес эл. почты"
-      ],
-      "Could not be replaced": [
-        "Не удалить сменить"
-      ],
       "Could not fill the pool after email address addition": [
         "Не удалось заполнить пул после добавления адреса электронной почты"
       ],
       "Could not fill the pool after email address replacement": [
         "Не удалось заполнить пул после смены адреса эл. почты"
-      ],
-      "Could not remove email address": [
-        "Не удалось удалить адрес эл. почты"
       ],
       "Create new email address": [
         "Создать новый адрес эл. почты"
@@ -5074,12 +5033,6 @@
       "New fiat currency applied": [
         "Применена новая официальная валюта"
       ],
-      "New fiat currency could not be applied": [
-        "Не удалось применить новую официальную валюту"
-      ],
-      "Preferred bitcoin unit could not be changed": [
-        "Не удалось изменить предпочитаемую единицу bitcoin"
-      ],
       "Preferred bitcoin unit was changed": [
         "Предпочитаемая единица bitcoin изменена"
       ],
@@ -5089,14 +5042,8 @@
       "Select this address": [
         "Выбрать этот адрес"
       ],
-      "Wallet could not be deleted": [
-        "Не удалось удалить кошелёк"
-      ],
       "Wallet name changed": [
         "Название кошелька изменено"
-      ],
-      "Wallet name could not be changed": [
-        "Не удалось изменить название кошелька"
       ],
       "Wallet was deleted": [
         "Кошелёк был удалён"
@@ -5126,15 +5073,6 @@
       "Confirm Passphrase": [
         "Подтвердить кодовую фразу"
       ],
-      "Could not create wallet": [
-        "Не удалось создать кошелёк"
-      ],
-      "Could not create wallet account": [
-        "Не удалось создать аккаунт кошелька"
-      ],
-      "Could not link email to wallet account": [
-        "Не удалось связать электронную почту с аккаунтом кошелька"
-      ],
       "Create new wallet": [
         "Создать новый кошелек"
       ],
@@ -5153,17 +5091,11 @@
       "Import wallet": [
         "Импортировать кошелёк"
       ],
-      "Input mnemonic is invalid, please double check.": [
-        "Введена неверная мнемоническая фраза. Проверьте ещё раз."
-      ],
       "Invite a friend": [
         "Пригласить друга"
       ],
       "Learn more": [
         "Подробнее"
-      ],
-      "Mnemonic length is not valid.": [
-        "Длина мнемонической фразы неверна."
       ],
       "My wallet had a passphrase": [
         "У моего кошелька была кодовая фраза"
@@ -5259,9 +5191,6 @@
       ]
     },
     "Wallet terms and conditions": {
-      "Could not accept terms and conditions": [
-        "Не удалось принять условия"
-      ],
       "Terms and conditions were accepted": [
         "Условия были приняты"
       ]
@@ -5394,12 +5323,6 @@
       ],
       "Sync": [
         "Синхронизировать"
-      ],
-      "Syncing is already in progress": [
-        "Синхронизация уже выполняется"
-      ],
-      "You need to wait 1 minute between each sync": [
-        "Вам нужно подождать 1 минуту между каждой синхронизацией"
       ]
     },
     "Wallet upgrade": {
