@@ -5,13 +5,13 @@ import { useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { addGroup, removeGroup, updateGroup, updateMembersAfterEdit } from '@proton/account';
+import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useGroupMembers } from '@proton/account/groupMembers/hooks';
 import { createGroup, editGroup } from '@proton/account/groups/actions';
 import { useGetUser } from '@proton/account/user/hooks';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import useAddGroupMember from '@proton/components/containers/organization/groups/useAddGroupMember';
 import useApi from '@proton/components/hooks/useApi';
-import { useCustomDomains } from '@proton/components/hooks/useCustomDomains';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useGroups from '@proton/components/hooks/useGroups';
 import { useMembers } from '@proton/components/hooks/useMembers';

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useCustomDomains } from '@proton/account/domains/hooks';
 import { Button } from '@proton/atoms';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import Form from '@proton/components/components/form/Form';
@@ -32,7 +33,7 @@ import {
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { useCustomDomains, useNotifications } from '../../hooks';
+import { useNotifications } from '../../hooks';
 import AddressesSection from './AddressesSection';
 import DKIMSection from './DKIMSection';
 import DMARCSection from './DMARCSection';
