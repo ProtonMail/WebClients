@@ -240,6 +240,16 @@ function main({
                         [breadcrumb.data.from] = breadcrumb.data.from.split('#');
                         [breadcrumb.data.to] = breadcrumb.data.to.split('#');
                     }
+
+                    // Button titles may contain accidental PII
+                    if (
+                        breadcrumb.category === 'ui.click' &&
+                        breadcrumb.message &&
+                        breadcrumb.message.startsWith('button')
+                    ) {
+                        breadcrumb.message = breadcrumb.message.replace(/\[title=".+?"\]/g, '[title="(Filtered)"]');
+                    }
+
                     return breadcrumb;
                 });
             }
