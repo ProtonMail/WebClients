@@ -1198,6 +1198,9 @@
       "Start setup": [
         "Iniciar configuração"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Iniciando a partir de ${ priceUnlimited }"
+      ],
       "Stay": [
         "Permanecer"
       ],
@@ -1311,6 +1314,9 @@
       ],
       "Upgrade now": [
         "Atualizar agora"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Faça upgrade para ${ BRAND_NAME } Unlimited"
       ],
       "Upload picture": [
         "Carregar imagem"
@@ -3415,11 +3421,23 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } em configurações."
       ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } protege sua conta com monitoramento dedicado 24/7 de atividades suspeitas - incluindo encaminhamento para especialistas em segurança."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "A A2F adiciona uma camada extra de segurança, prevenindo acesso não autorizado."
       ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Exclua automaticamente mensagens de spam e lixeira e desbloqueie mais recursos premium ao fazer upgrade."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Limpe automaticamente os e-mails movidos para a Lixeira e o Spam há mais de 30 dias."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Classifique automaticamente as mensagens recebidas antes que elas cheguem à sua caixa de entrada."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Crie quantos marcadores ou pastas precisar para manter sua caixa de entrada organizada."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Descriptografando contatos... Isso pode levar alguns minutos. Quando o processo for concluído, você poderá baixar o arquivo com todos seus contatos exportados."
@@ -3429,6 +3447,9 @@
       ],
       "Designed for users seeking heightened protection for their accounts.": [
         "Projetado para usuários que buscam proteção reforçada para suas contas."
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "Não quer enviar seu e-mail agora? Agende-o para o horário que desejar."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Criptografando e importando contatos... Isso pode levar alguns minutos. Quando o processo estiver concluído, você poderá fechar esta janela."
@@ -3491,6 +3512,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Ative a proteção do rastreador de e-mail para evitar que anunciantes e outras pessoas rastreiem sua localização e atividade online."
       ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Desbloqueie ${ activatePmUser } para obter um endereço de e-mail atraente e fácil de digitar."
+      ],
       "Unlock custom message scheduling and more premium features when you upgrade.": [
         "Desbloqueie o agendamento de mensagens personalizadas e mais recursos premium ao fazer o upgrade."
       ],
@@ -3521,6 +3545,12 @@
       "When do you want your message to be sent?": [
         "Quando você deseja que sua mensagem seja enviada?"
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Com os grupos de contatos, você pode enviar e-mails para todos os membros do grupo com um clique."
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "Com o adiamento personalizado, você pode ocultar e-mails e configurá-los para reaparecer em um momento melhor."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Você pode importar eventos no formato iCal (arquivo ICS). O arquivo deve ter o tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu arquivo for maior, divida-o em arquivos menores."
       ],
@@ -3532,6 +3562,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Sua conta e métodos de recuperação de dados estão definidos."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -5218,6 +5251,23 @@
       ],
       "Sign in with Google": [
         "Iniciar sessão com Google"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Participe do Google Meet"
+      ],
+      "Joining instructions": [
+        "Instruções de acesso"
+      ],
+      "Less details": [
+        "Menos detalhes"
+      ],
+      "Meeting link:": [
+        "Link da reunião:"
+      ],
+      "More details": [
+        "Mais detalhes"
       ]
     },
     "Group": {
@@ -7340,6 +7390,9 @@
       "You are about to open another browser tab and visit:": [
         "Você está prestes a abrir outra guia do navegador e visitar:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Você está prestes a abrir seu navegador padrão e visitar:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Você está atualmente iniciado sessão como ${ user.Name } (${ user.Email })."
       ],
@@ -9022,8 +9075,14 @@
       "Get started for ${ price }": [
         "Comece por ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Iniciando a partir de ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Fazer upgrade agora"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Faça upgrade para ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -9598,6 +9657,9 @@
       "Get Mail Plus for ${ price }": [
         "Obtenha Mail Plus por ${ price }"
       ],
+      "Starting from ${ price }": [
+        "A partir de ${ price }"
+      ],
       "VPN Enterprise": [
         "VPN Enterprise"
       ]
@@ -9904,6 +9966,9 @@
       ],
       "Link copied to clipboard": [
         "Link copiado para área de transferência"
+      ],
+      "Passcode copied to clipboard": [
+        "Código de acesso copiado para a área de transferência"
       ],
       "Password has been set successfully": [
         "A senha foi definida"
@@ -11188,6 +11253,9 @@
       "/ month": [
         "/ mês"
       ],
+      "/month": [
+        "/mês"
+      ],
       "1 year": [
         "1 ano"
       ],
@@ -12471,6 +12539,9 @@
       "Attachments": [
         "Anexos"
       ],
+      "Bad time for this email?": [
+        "É um momento ruim para este e-mail?"
+      ],
       "BCC": [
         "CCO"
       ],
@@ -12695,6 +12766,9 @@
       "External encryption": [
         "Criptografia externa"
       ],
+      "Filter for more focus": [
+        "Filtrar para mais foco"
+      ],
       "Filter name cannot contain only spaces": [
         "O nome do filtro não pode somente espaços"
       ],
@@ -12721,6 +12795,9 @@
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Oculte seu e-mail com ${ PASS_APP_NAME }"
+      ],
+      "High security for your account": [
+        "Segurança elevada para sua conta"
       ],
       "How to update your email address": [
         "Como atualizar seu endereço de e-mail"
@@ -12861,6 +12938,9 @@
       "Need more aliases?": [
         "Precisa de mais aliases?"
       ],
+      "Need more labels or folders?": [
+        "Precisa de mais marcadores ou pastas?"
+      ],
       "Network error": [
         "Erro de rede"
       ],
@@ -12882,6 +12962,9 @@
       "No breaches detected": [
         "Nenhuma violação detectada"
       ],
+      "No need to empty the trash": [
+        "Não é necessário esvaziar a lixeira"
+      ],
       "No trackers found": [
         "Nenhum rastreador encontrado"
       ],
@@ -12890,6 +12973,9 @@
       ],
       "Notes": [
         "Notas"
+      ],
+      "One email, many recipients": [
+        "Um e-mail, muitos destinatários"
       ],
       "Open actions dropdown": [
         "Abrir menu de ações"
@@ -12966,8 +13052,14 @@
       "Request new code": [
         "Solicitar um novo código"
       ],
+      "Same inbox, shorter email address": [
+        "Mesma caixa de entrada, endereço de e-mail mais curto"
+      ],
       "Save time with email filters": [
         "Economize tempo com filtros no e-mail"
+      ],
+      "Schedule now, send later": [
+        "Agende agora, envie depois"
       ],
       "Schedule send": [
         "Agendar envio"
@@ -13723,6 +13815,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Anualmente, ${ untilString }"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Participe da reunião com Zoom"
+      ],
+      "Meeting ID:": [
+        "ID da reunião:"
+      ],
+      "Passcode: ${ password }": [
+        "Código de acesso: ${ password }"
       ]
     }
   }

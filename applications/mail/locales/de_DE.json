@@ -1192,6 +1192,9 @@
       "Start setup": [
         "Einrichtung starten"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Ab ${ priceUnlimited }"
+      ],
       "Stay": [
         "Nicht schließen"
       ],
@@ -1326,6 +1329,9 @@
       ],
       "Use recovery code": [
         "Wiederherstellungscode verwenden"
+      ],
+      "Use this": [
+        "Dies verwenden"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Verwende deine Maus, um die Größe der Ansicht zu ändern. Wenn du deine Tastatur verwendest, kannst du die Größe mit den Pfeiltasten „Pfeil links“ und „Pfeil rechts“ ändern."
@@ -5190,6 +5196,14 @@
         "Mit Google anmelden"
       ]
     },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Google Meet beitreten"
+      ],
+      "Meeting link:": [
+        "Meeting-Link:"
+      ]
+    },
     "Group": {
       "Account": [
         "Konto"
@@ -8971,6 +8985,9 @@
       "Get started for ${ price }": [
         "Starte für ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Ab ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Jetzt upgraden"
       ]
@@ -9546,6 +9563,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Hol dir Mail Plus für ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Ab ${ price }"
       ]
     },
     "new_plans: title": {
@@ -9848,6 +9868,9 @@
       "Link copied to clipboard": [
         "Link in die Zwischenablage kopiert"
       ],
+      "Passcode copied to clipboard": [
+        "Passcode in die Zwischenablage kopiert."
+      ],
       "Password has been set successfully": [
         "Das Passwort wurde erfolgreich festgelegt"
       ],
@@ -9914,6 +9937,9 @@
       "Congratulations on choosing privacy": [
         "Herzlichen Glückwunsch zur Entscheidung für den Datenschutz"
       ],
+      "Dark Web Monitoring": [
+        "Dark Web-Überwachung"
+      ],
       "Download the desktop app": [
         "Desktop-App herunterladen"
       ],
@@ -9926,8 +9952,14 @@
       "Forward Gmail messages to your inbox.": [
         "Leite Gmail-Nachrichten automatisch an dein Postfach weiter."
       ],
+      "Get the desktop app": [
+        "Desktop-App herunterladen"
+      ],
       "Google Play": [
         "Google Play"
+      ],
+      "Let's get started": [
+        "Fangen wir an"
       ],
       "Maybe later": [
         "Vielleicht später"
@@ -11039,6 +11071,9 @@
         "${ n } Monate"
       ],
       "/ month": [
+        "/ Monat"
+      ],
+      "/month": [
         "/ Monat"
       ],
       "1 year": [
@@ -12310,6 +12345,9 @@
       "Attachments": [
         "Anhänge"
       ],
+      "Bad time for this email?": [
+        "Schlechte Zeit für diese E-Mail?"
+      ],
       "BCC": [
         "BCC"
       ],
@@ -12697,6 +12735,9 @@
       "Need more aliases?": [
         "Brauchst du mehr Aliasse?"
       ],
+      "Need more labels or folders?": [
+        "Benötigst du weitere Kategorien oder Ordner?"
+      ],
       "Network error": [
         "Netzwerkfehler"
       ],
@@ -12804,6 +12845,9 @@
       ],
       "Save time with email filters": [
         "Spare Zeit mit E-Mail-Filtern"
+      ],
+      "Schedule now, send later": [
+        "Jetzt planen, später senden"
       ],
       "Schedule send": [
         "Senden planen"
@@ -13559,6 +13603,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Jährlich, ${ untilString }"
+      ]
+    },
+    "Zoom Meeting": {
+      "Passcode: ${ password }": [
+        "Passcode: ${ password }"
       ]
     }
   }
