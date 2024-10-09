@@ -142,57 +142,17 @@ export const getDescriptionTextWithLink = (event: string, vaultLink: React.JSX.E
     }
 };
 
-export const getEventNameText = (event: string): string => {
-    switch (event) {
-        case 'InviteCreated':
-            return c('Info').t`Invite Created`;
-        case 'InviteAccepted':
-            return c('Info').t`Invite Accepted`;
-        case 'InviteDeleted':
-            return c('Info').t`Invite Deleted`;
-        case 'InviteRejected':
-            return c('Info').t`Invite Rejected`;
-        case 'NewUserInviteCreated':
-            return c('Info').t`New User Invite Created`;
-        case 'NewUserInviteDeleted':
-            return c('Info').t`New User Invite Deleted`;
-        case 'ItemCreated':
-            return c('Info').t`Item Created`;
-        case 'ItemUpdated':
-            return c('Info').t`Item Updated`;
-        case 'ItemUsed':
-            return c('Info').t`Item Autofilled`;
-        case 'ItemRead':
-            return c('Info').t`Item Read`;
-        case 'ItemDeleted':
-            return c('Info').t`Item Deleted`;
-        case 'ItemTrashed':
-            return c('Info').t`Item Trashed`;
-        case 'ItemUntrashed':
-            return c('Info').t`Item Untrashed`;
-        case 'ItemChangedFlags':
-            return c('Info').t`Item Changed Flags`;
-        case 'ShareCreated':
-            return c('Info').t`Share Created`;
-        case 'ShareDeleted':
-            return c('Info').t`Share Deleted`;
-        case 'ShareUpdated':
-            return c('Info').t`Share Updated`;
-        case 'VaultCreated':
-            return c('Info').t`Vault Created`;
-        case 'VaultDeleted':
-            return c('Info').t`Vault Deleted`;
-        case 'VaultUpdated':
-            return c('Info').t`Vault Updated`;
-        case 'BreachCustomEmailCreated':
-            return c('Info').t`Breach Custom Email Created`;
-        case 'BreachCustomEmailValidated':
-            return c('Info').t`Breach Custom Email Validated`;
-        case 'BreachCustomEmailDeleted':
-            return c('Info').t`Breach Custom Email Deleted`;
-        default:
-            return c('Info').t`All Events `;
-    }
+export interface EventObject {
+    EventType: string;
+    EventTypeName: string;
+}
+
+export const getConnectionEvents = (items: EventObject[]): EventObject[] => {
+    const defaultEvent: EventObject = {
+        EventType: ALL_EVENTS_DEFAULT,
+        EventTypeName: ALL_EVENTS_DEFAULT,
+    };
+    return [defaultEvent, ...items];
 };
 
 const eventKeys = Object.keys(Event) as (keyof typeof Event)[];
@@ -234,25 +194,20 @@ export const getSearchType = (input: string) => {
     return 'invalid';
 };
 
-export const handlePassEventsDownload = (events: PassEvent[]) => {
-    const header = ['Time', 'User Name', 'User Email', 'Event', 'Description', 'IP'];
+export const downloadPassEvents = async (response: any) => {
+    const contentDisposition = response.headers.get('content-disposition');
+    const match = contentDisposition.match(/attachment; filename=(.*)/);
 
-    const csvData = events.reduce(
-        (csv, { time, user, event, ip }) => {
-            const rowData = [time, user.name, user.email, event, getDesciptionText(event), ip];
+    if (!match) {
+        return null;
+    }
 
-            return csv + rowData.join(',') + '\n';
-        },
-        header.join(',') + '\n'
-    );
-
-    const blob = new Blob([csvData], { type: 'text/csv' });
-    const filename = 'PassEventLogs.csv';
-    downloadFile(blob, filename);
+    const blob = await response.blob();
+    downloadFile(blob, match[1]);
 };
 
 export const getUniqueEventTypes = (eventLogs: PassEvent[]) => {
-    const events = eventLogs.map((log) => log.event);
+    const events = eventLogs.map((log) => log.eventType);
     const uniqueEvents = ['All Events', ...new Set(events)];
     return uniqueEvents.map((event) => startCase(event));
 };
@@ -276,8 +231,7 @@ export const formatPassEventsCSV = async (csv: string) => {
 
         try {
             const formattedDate = formatDateCSV(columns[0]);
-            const formattedColumn4 = getEventNameText(columns[1]);
-            const otherColumns = [...columns.slice(2, 4), formattedColumn4, ...columns.slice(4, 5)].map((column) =>
+            const otherColumns = [...columns.slice(2, 4), columns[1], ...columns.slice(4, 5)].map((column) =>
                 column?.trim()
             );
 

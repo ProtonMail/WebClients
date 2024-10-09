@@ -21,6 +21,7 @@ export interface Props extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputEl
     onPressEnter?: KeyboardEventHandler<HTMLInputElement>;
     isSubmitted?: boolean;
     loading?: boolean;
+    fullWidth?: boolean;
 }
 
 /**
@@ -44,6 +45,7 @@ const Input = forwardRef<HTMLInputElement, Props>(
             id,
             placeholder,
             value,
+            fullWidth = true,
             ...rest
         },
         ref
@@ -96,7 +98,7 @@ const Input = forwardRef<HTMLInputElement, Props>(
                 ) : null}
                 {addIconWrapper(
                     <input
-                        className={clsx(['field w-full', className, statusClasses])}
+                        className={clsx(['field', fullWidth && 'w-full', className, statusClasses])}
                         aria-invalid={hasError}
                         aria-describedby={uid}
                         id={id}
