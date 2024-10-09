@@ -65,6 +65,10 @@ export class Application implements ApplicationInterface {
     }
   }
 
+  public get isPublicMode(): boolean {
+    return !!this.compatWrapper.publicCompat
+  }
+
   public get createEmptyDocumentForConversionUseCase(): CreateEmptyDocumentForConversion {
     return this.deps.get<CreateEmptyDocumentForConversion>(App_TYPES.CreateEmptyDocumentForConversion)
   }

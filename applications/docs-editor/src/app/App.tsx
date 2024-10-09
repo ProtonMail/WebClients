@@ -1,27 +1,19 @@
-import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react'
-import { EditorToClientBridge } from './Bridge/EditorToClientBridge'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { Editor } from './Editor'
 import { c } from 'ttag'
 import type {
-  BroadcastSource,
   ClientRequiresEditorMethods,
   CommentMarkNodeChangeData,
   RtsMessagePayload,
-  YDocMap,
   DocumentRoleType,
-  DocsAwarenessStateChangeData,
-  EditorInitializationConfig,
   TranslatedResult,
 } from '@proton/docs-shared'
 import {
   BridgeOriginProvider,
   CommentsEvent,
-  DocState,
   EDITOR_READY_POST_MESSAGE_EVENT,
   LiveCommentsEvent,
-  DocAwarenessEvent,
 } from '@proton/docs-shared'
-import type { Doc as YDoc } from 'yjs'
 import { ApplicationProvider } from './ApplicationProvider'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import locales from './locales'
@@ -29,49 +21,38 @@ import { setTtagLocales } from '@proton/shared/lib/i18n/locales'
 import type { LexicalEditor, SerializedEditorState } from 'lexical'
 import { SHOW_ALL_COMMENTS_COMMAND } from './Commands'
 import { exportDataFromEditorState } from './Conversion/Exporter/ExportDataFromEditorState'
-import { Application } from './Application'
 import { ThemeStyles } from './Theme'
-import type { DocumentInteractionMode } from './DocumentInteractionMode'
 import debounce from '@proton/utils/debounce'
 import { loadLocales } from '@proton/account/bootstrap'
 import Icons from '@proton/icons/Icons'
 import clsx from '@proton/utils/clsx'
+import { EditorSystemMode } from '@proton/docs-shared/lib/EditorSystemMode'
+import { EditorUserMode } from './EditorUserMode'
+import { CircleLoader } from '@proton/atoms/index'
+import { useBridge } from './useBridge'
+import { removeCommentThreadMarks } from './Tools/removeCommentThreadMarks'
 
 type Props = {
-  nonInteractiveMode: boolean
+  systemMode: EditorSystemMode
 }
 
-type InitialConfig = {
-  editorInitializationConfig?: EditorInitializationConfig
-  documentId: string
-  username: string
-}
+export function App({ systemMode }: Props) {
+  const { application, bridge, docState, docMap, editorConfig, setEditorConfig, didSetInitialConfig } = useBridge({
+    systemMode,
+  })
 
-export function App({ nonInteractiveMode = false }: Props) {
-  const viewOnlyDocumentId = useId()
-
-  const initialConfig = useRef<InitialConfig | null>(
-    nonInteractiveMode
-      ? {
-          documentId: viewOnlyDocumentId,
-          username: '',
-        }
-      : null,
-  )
-  const [didSetInitialConfig, setDidSetInitialConfig] = useState(false)
-  const [bridge] = useState(() => new EditorToClientBridge(window.parent))
-  const [docState, setDocState] = useState<DocState | null>(null)
-  const [application] = useState(() => new Application())
   const [editorHidden, setEditorHidden] = useState(true)
   const [editingLocked, setEditingLocked] = useState(true)
-  const [interactionMode, setInteractionMode] = useState<DocumentInteractionMode>('edit')
+  const [userMode, setUserMode] = useState<EditorUserMode>(
+    systemMode === EditorSystemMode.Edit ? EditorUserMode.Edit : EditorUserMode.Preview,
+  )
 
   const [isSuggestionsFeatureEnabled, setIsSuggestionsFeatureEnabled] = useState(false)
   useEffect(() => {
-    if (interactionMode === 'suggest' && !isSuggestionsFeatureEnabled) {
-      setInteractionMode('view')
+    if (userMode === EditorUserMode.Suggest && !isSuggestionsFeatureEnabled) {
+      setUserMode(EditorUserMode.Edit)
     }
-  }, [interactionMode, isSuggestionsFeatureEnabled])
+  }, [userMode, isSuggestionsFeatureEnabled])
 
   const [showTreeView, setShowTreeView] = useState(false)
 
@@ -80,269 +61,202 @@ export function App({ nonInteractiveMode = false }: Props) {
   })
 
   const editorRef = useRef<LexicalEditor | null>(null)
-  const setEditorRef = useCallback((instance: LexicalEditor | null) => {
-    editorRef.current = instance
-  }, [])
 
-  const docMap = useMemo(() => {
-    const map: YDocMap = new Map<string, YDoc>()
-    return map
-  }, [])
+  const setEditorRef = useCallback(
+    (instance: LexicalEditor | null) => {
+      editorRef.current = instance
+
+      /**
+       * Remove comment marks if we are in system presentation mode.
+       * Do not remove for UserMode, since once we remove them, we can't add them back once they back into edit mode.
+       */
+      if (
+        (systemMode === EditorSystemMode.Revision || systemMode === EditorSystemMode.PublicView) &&
+        editorRef.current
+      ) {
+        removeCommentThreadMarks(editorRef.current)
+      }
+    },
+    [systemMode],
+  )
 
   const notifyParentEditorIsReady = useCallback(() => {
     window.parent.postMessage(EDITOR_READY_POST_MESSAGE_EVENT, BridgeOriginProvider.GetClientOrigin())
   }, [])
 
-  const configureBridgeRequestHandler = useCallback(
-    (newDocState: DocState) => {
-      const requestHandler: ClientRequiresEditorMethods = {
-        async receiveMessage(message: RtsMessagePayload) {
-          void newDocState.receiveMessage(message)
-        },
-
-        async loadUserSettings(settings) {
-          void loadLocales({ locales, userSettings: settings })
-          application.setLocale(settings.Locale)
-        },
-
-        async showEditor() {
-          setEditorHidden(false)
-        },
-
-        async showCommentsPanel() {
-          const editor = editorRef.current
-          if (!editor) {
-            return
-          }
-          editor.dispatchCommand(SHOW_ALL_COMMENTS_COMMAND, undefined)
-        },
-
-        async getClientId() {
-          return newDocState.getClientId()
-        },
-
-        async performOpeningCeremony() {
-          void newDocState.performOpeningCeremony()
-        },
-
-        async performClosingCeremony() {
-          void newDocState.performClosingCeremony()
-        },
-
-        async getDocumentState() {
-          return newDocState.getDocState()
-        },
-
-        async handleCommentsChange() {
-          application.eventBus.publish({
-            type: CommentsEvent.CommentsChanged,
-            payload: undefined,
-          })
-        },
-
-        async handleTypingStatusChange(threadId: string) {
-          application.eventBus.publish({
-            type: LiveCommentsEvent.TypingStatusChange,
-            payload: {
-              threadId,
-            },
-          })
-        },
-
-        async handleCreateCommentMarkNode(markID: string) {
-          application.eventBus.publish<CommentMarkNodeChangeData>({
-            type: CommentsEvent.CreateMarkNode,
-            payload: {
-              markID,
-            },
-          })
-        },
-
-        async handleRemoveCommentMarkNode(markID: string) {
-          application.eventBus.publish<CommentMarkNodeChangeData>({
-            type: CommentsEvent.RemoveMarkNode,
-            payload: {
-              markID,
-            },
-          })
-        },
-
-        async handleResolveCommentMarkNode(markID: string) {
-          application.eventBus.publish<CommentMarkNodeChangeData>({
-            type: CommentsEvent.ResolveMarkNode,
-            payload: {
-              markID,
-            },
-          })
-        },
-
-        async handleUnresolveCommentMarkNode(markID: string) {
-          application.eventBus.publish<CommentMarkNodeChangeData>({
-            type: CommentsEvent.UnresolveMarkNode,
-            payload: {
-              markID,
-            },
-          })
-        },
-
-        async changeLockedState(locked) {
-          setEditingLocked(locked)
-        },
-
-        async initializeEditor(
-          documentId: string,
-          username: string,
-          role: DocumentRoleType,
-          editorInitializationConfig,
-        ) {
-          docMap.set(documentId, newDocState.getDoc())
-          application.setRole(role)
-
-          if (editorInitializationConfig) {
-            initialConfig.current = { documentId, username, editorInitializationConfig: editorInitializationConfig }
-            setDidSetInitialConfig(true)
-            if (editorInitializationConfig.mode === 'conversion') {
-              newDocState.setIsInConversionFromOtherFormat()
-            }
-          } else {
-            initialConfig.current = { documentId, username }
-            setDidSetInitialConfig(true)
-          }
-        },
-
-        async broadcastPresenceState() {
-          newDocState.broadcastPresenceState()
-        },
-
-        async exportData(format): Promise<Uint8Array> {
-          if (!editorRef.current) {
-            throw new Error('Editor is not initialized')
-          }
-
-          const editorState = editorRef.current.getEditorState().toJSON()
-
-          try {
-            const result = await exportDataFromEditorState(editorState, format, {
-              fetchExternalImageAsBase64: async (url) => bridge.getClientInvoker().fetchExternalImageAsBase64(url),
-            })
-            return result
-          } catch (error) {
-            void bridge.getClientInvoker().showGenericAlertModal(c('Error').t`Failed to export document.`)
-            throw error
-          }
-        },
-
-        async printAsPDF(): Promise<void> {
-          window.print()
-        },
-
-        async getCurrentEditorState(): Promise<SerializedEditorState | undefined> {
-          if (!editorRef.current) {
-            return undefined
-          }
-
-          return editorRef.current.getEditorState().toJSON()
-        },
-
-        async toggleDebugTreeView() {
-          setShowTreeView((show) => !show)
-        },
-
-        async handleIsSuggestionsFeatureEnabled(enabled) {
-          setIsSuggestionsFeatureEnabled(enabled)
-        },
-      }
-
-      bridge.setClientRequestHandler(requestHandler)
-    },
-    [bridge, docMap, application],
-  )
-
-  const createInitialDocState = useCallback(() => {
-    const newDocState = new DocState(
-      {
-        docStateRequestsPropagationOfUpdate: (message: RtsMessagePayload, debugSource: BroadcastSource) => {
-          /** Return if the parent hasn't properly initialized us yet */
-          if (!initialConfig.current) {
-            application.logger.info('Doc state requested update before initialization was complete')
-            return
-          }
-
-          if (application.getRole().isPublicViewer()) {
-            return
-          }
-
-          bridge
-            .getClientInvoker()
-            .editorRequestsPropagationOfUpdate(message, debugSource)
-            .catch((e: Error) => {
-              void bridge.getClientInvoker().reportError(e, 'devops-only')
-            })
-        },
-        handleAwarenessStateUpdate: (states) => {
-          /** Return if the parent hasn't properly initialized us yet */
-          if (!initialConfig.current) {
-            application.logger.info('Doc state requested awareness update before initialization was complete')
-            return
-          }
-
-          if (application.getRole().isPublicViewer()) {
-            return
-          }
-
-          bridge
-            .getClientInvoker()
-            .handleAwarenessStateUpdate(states)
-            .catch((e: Error) => {
-              void bridge.getClientInvoker().reportError(e, 'devops-only')
-            })
-
-          application.eventBus.publish<DocsAwarenessStateChangeData>({
-            type: DocAwarenessEvent.AwarenessStateChange,
-            payload: {
-              states,
-            },
-          })
-        },
-      },
-      application.logger,
-    )
-
-    return newDocState
-  }, [application, bridge])
-
-  useEffectOnce(() => {
-    const newDocState = createInitialDocState()
-    setDocState(newDocState)
-
-    if (nonInteractiveMode) {
-      docMap.set(viewOnlyDocumentId, newDocState.getDoc())
+  useEffect(() => {
+    if (!docState) {
+      return
     }
 
-    configureBridgeRequestHandler(newDocState)
+    const requestHandler: ClientRequiresEditorMethods = {
+      async receiveMessage(message: RtsMessagePayload) {
+        void docState.receiveMessage(message)
+      },
+
+      async loadUserSettings(settings) {
+        void loadLocales({ locales, userSettings: settings })
+        application.setLocale(settings.Locale)
+      },
+
+      async showEditor() {
+        setEditorHidden(false)
+      },
+
+      async showCommentsPanel() {
+        const editor = editorRef.current
+        if (!editor) {
+          return
+        }
+        editor.dispatchCommand(SHOW_ALL_COMMENTS_COMMAND, undefined)
+      },
+
+      async getClientId() {
+        return docState.getClientId()
+      },
+
+      async performOpeningCeremony() {
+        void docState.performOpeningCeremony()
+      },
+
+      async performClosingCeremony() {
+        void docState.performClosingCeremony()
+      },
+
+      async getDocumentState() {
+        return docState.getDocState()
+      },
+
+      async handleCommentsChange() {
+        application.eventBus.publish({
+          type: CommentsEvent.CommentsChanged,
+          payload: undefined,
+        })
+      },
+
+      async handleTypingStatusChange(threadId: string) {
+        application.eventBus.publish({
+          type: LiveCommentsEvent.TypingStatusChange,
+          payload: {
+            threadId,
+          },
+        })
+      },
+
+      async handleCreateCommentMarkNode(markID: string) {
+        application.eventBus.publish<CommentMarkNodeChangeData>({
+          type: CommentsEvent.CreateMarkNode,
+          payload: {
+            markID,
+          },
+        })
+      },
+
+      async handleRemoveCommentMarkNode(markID: string) {
+        application.eventBus.publish<CommentMarkNodeChangeData>({
+          type: CommentsEvent.RemoveMarkNode,
+          payload: {
+            markID,
+          },
+        })
+      },
+
+      async handleResolveCommentMarkNode(markID: string) {
+        application.eventBus.publish<CommentMarkNodeChangeData>({
+          type: CommentsEvent.ResolveMarkNode,
+          payload: {
+            markID,
+          },
+        })
+      },
+
+      async handleUnresolveCommentMarkNode(markID: string) {
+        application.eventBus.publish<CommentMarkNodeChangeData>({
+          type: CommentsEvent.UnresolveMarkNode,
+          payload: {
+            markID,
+          },
+        })
+      },
+
+      async changeLockedState(locked) {
+        setEditingLocked(locked)
+      },
+
+      async initializeEditor(documentId: string, username: string, role: DocumentRoleType, editorInitializationConfig) {
+        docMap.set(documentId, docState.getDoc())
+        application.setRole(role)
+
+        if (editorInitializationConfig) {
+          setEditorConfig({ documentId, username, editorInitializationConfig: editorInitializationConfig })
+          if (editorInitializationConfig.mode === 'conversion') {
+            docState.setIsInConversionFromOtherFormat()
+          }
+        } else {
+          setEditorConfig({ documentId, username })
+        }
+      },
+
+      async broadcastPresenceState() {
+        docState.broadcastPresenceState()
+      },
+
+      async exportData(format): Promise<Uint8Array> {
+        if (!editorRef.current) {
+          throw new Error('Editor is not initialized')
+        }
+
+        const editorState = editorRef.current.getEditorState().toJSON()
+
+        try {
+          const result = await exportDataFromEditorState(editorState, format, {
+            fetchExternalImageAsBase64: async (url) => bridge.getClientInvoker().fetchExternalImageAsBase64(url),
+          })
+          return result
+        } catch (error) {
+          void bridge.getClientInvoker().showGenericAlertModal(c('Error').t`Failed to export document.`)
+          throw error
+        }
+      },
+
+      async printAsPDF(): Promise<void> {
+        window.print()
+      },
+
+      async getCurrentEditorState(): Promise<SerializedEditorState | undefined> {
+        if (!editorRef.current) {
+          return undefined
+        }
+
+        return editorRef.current.getEditorState().toJSON()
+      },
+
+      async toggleDebugTreeView() {
+        setShowTreeView((show) => !show)
+      },
+
+      async handleIsSuggestionsFeatureEnabled(enabled) {
+        setIsSuggestionsFeatureEnabled(enabled)
+      },
+    }
+
+    bridge.setClientRequestHandler(requestHandler)
 
     notifyParentEditorIsReady()
-  }, [
-    createInitialDocState,
-    docMap,
-    notifyParentEditorIsReady,
-    nonInteractiveMode,
-    configureBridgeRequestHandler,
-    viewOnlyDocumentId,
-  ])
+  }, [bridge, docMap, application, docState, notifyParentEditorIsReady, setEditorConfig])
 
-  const onInteractionModeChange = useCallback(
-    (mode: DocumentInteractionMode) => {
+  const onUserModeChange = useCallback(
+    (mode: EditorUserMode) => {
       const canSwitchToSuggestionMode = isSuggestionsFeatureEnabled
-      if (mode === 'suggest' && !canSwitchToSuggestionMode) {
+      if (mode === EditorUserMode.Suggest && !canSwitchToSuggestionMode) {
         return
       }
 
-      if ((mode === 'edit' || mode === 'suggest') && !application.getRole().canEdit()) {
+      if ((mode === EditorUserMode.Edit || mode === EditorUserMode.Suggest) && !application.getRole().canEdit()) {
         return
       }
 
-      setInteractionMode(mode)
+      setUserMode(mode)
     },
     [isSuggestionsFeatureEnabled, application],
   )
@@ -411,11 +325,15 @@ export function App({ nonInteractiveMode = false }: Props) {
     [application.logger, bridge],
   )
 
-  if (!didSetInitialConfig || !initialConfig.current || !docState) {
-    return null
+  if (!didSetInitialConfig || !editorConfig.current || !docState) {
+    return (
+      <div className="flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center">
+        <CircleLoader size="large" />
+      </div>
+    )
   }
 
-  const isSuggestionMode = interactionMode === 'suggest'
+  const isSuggestionMode = userMode === EditorUserMode.Suggest
 
   return (
     <div
@@ -436,20 +354,20 @@ export function App({ nonInteractiveMode = false }: Props) {
           clientInvoker={bridge.getClientInvoker()}
           docMap={docMap}
           docState={docState}
-          documentId={initialConfig.current.documentId}
-          editingLocked={editingLocked || interactionMode === 'view'}
-          editorInitializationConfig={initialConfig.current.editorInitializationConfig}
-          hasEditAccess={application.getRole().canEdit()}
+          documentId={editorConfig.current.documentId}
+          editingLocked={editingLocked || userMode === EditorUserMode.Preview}
+          editorInitializationConfig={editorConfig.current.editorInitializationConfig}
           hidden={editorHidden}
-          nonInteractiveMode={nonInteractiveMode}
+          isSuggestionsFeatureEnabled={isSuggestionsFeatureEnabled}
           onEditorError={onEditorError}
           onEditorLoadResult={onEditorLoadResult}
-          interactionMode={interactionMode}
-          onInteractionModeChange={onInteractionModeChange}
+          onUserModeChange={onUserModeChange}
+          role={application.getRole()}
           setEditorRef={setEditorRef}
-          username={initialConfig.current.username}
           showTreeView={showTreeView}
-          isSuggestionsFeatureEnabled={isSuggestionsFeatureEnabled}
+          systemMode={systemMode}
+          userMode={userMode}
+          username={editorConfig.current.username}
         />
       </ApplicationProvider>
       <Icons />

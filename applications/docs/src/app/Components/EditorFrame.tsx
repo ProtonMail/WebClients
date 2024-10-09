@@ -1,4 +1,5 @@
 import { versionCookieAtLoad } from '@proton/components/hooks/useEarlyAccess'
+import type { EditorSystemMode } from '@proton/docs-shared'
 import {
   BridgeOriginProvider,
   EDITOR_IFRAME_FOCUS_EVENT,
@@ -10,15 +11,13 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 type Props = {
   onFrameReady: (frame: HTMLIFrameElement) => void
-  isViewOnly?: boolean
+  systemMode: EditorSystemMode
 }
 
-function GetEditorUrl(isViewOnly = false) {
+function GetEditorUrl(systemMode: EditorSystemMode) {
   const url = new URL(BridgeOriginProvider.GetEditorOrigin())
 
-  if (isViewOnly) {
-    url.searchParams.set('viewOnly', 'true')
-  }
+  url.searchParams.set('mode', systemMode)
 
   return url.toString()
 }
@@ -32,10 +31,21 @@ function GetEditorUrl(isViewOnly = false) {
  */
 const SANDBOX_OPTIONS = 'allow-scripts allow-same-origin allow-forms allow-downloads allow-modals'
 
-export function EditorFrame({ onFrameReady, isViewOnly = false }: Props) {
+export function EditorFrame({ onFrameReady, systemMode }: Props) {
   const [iframe, setIframe] = useState<HTMLIFrameElement | null>(null)
-  const url = useMemo(() => GetEditorUrl(isViewOnly), [isViewOnly])
+  /**
+   * The URL cannot change once initially set, since reloading just the editor iframe is disallowed,
+   * as it would require many other classes (like DocController) to re-send the document state
+   */
+  const url = useMemo(() => GetEditorUrl(systemMode), [systemMode])
+  const initialUrlRef = useRef(url)
   const didAlreadyLoad = useRef(false)
+
+  useEffect(() => {
+    if (url !== initialUrlRef.current) {
+      throw new Error('URL cannot be changed after initial render')
+    }
+  }, [url])
 
   const onReady = useCallback(() => {
     if (!iframe) {
@@ -70,6 +80,7 @@ export function EditorFrame({ onFrameReady, isViewOnly = false }: Props) {
 
       if (event.data === EDITOR_READY_POST_MESSAGE_EVENT) {
         onReady()
+
         iframe.contentWindow?.postMessage(
           {
             type: EDITOR_TAG_INFO_EVENT,
