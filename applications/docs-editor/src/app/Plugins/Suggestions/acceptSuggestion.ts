@@ -43,6 +43,8 @@ export function $acceptSuggestion(suggestionID: string): boolean {
       $unwrapSuggestionNode(node)
     } else if (suggestionType === 'style-change') {
       $unwrapSuggestionNode(node)
+    } else if (suggestionType === 'image-change') {
+      $unwrapSuggestionNode(node)
     } else {
       $unwrapSuggestionNode(node)
     }

@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { Suspense, useCallback, useEffect, useRef, useState } from 'react'
 
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
@@ -27,7 +26,7 @@ import { useCombinedRefs } from '@proton/hooks'
 import ImageResizer from './ImageResizer'
 import { getElementDimensionsWithoutPadding } from '../../Utils/getEditorWidthWithoutPadding'
 import { CircleLoader } from '@proton/atoms'
-import { useApplication } from '../../ApplicationProvider'
+import { SET_IMAGE_SIZE_COMMAND } from './ImagePlugin'
 
 const imageCache = new Set()
 
@@ -137,8 +136,6 @@ export default function ImageComponent({
   const [editor] = useLexicalComposerContext()
   const [selection, setSelection] = useState<BaseSelection | null>(null)
   const activeEditorRef = useRef<LexicalEditor | null>(null)
-
-  const { isSuggestionMode } = useApplication()
 
   const onDelete = useCallback(
     (payload: KeyboardEvent) => {
@@ -279,7 +276,7 @@ export default function ImageComponent({
     }
   }, [clearSelection, editor, isSelected, nodeKey, onDelete, onEnter, onEscape, onClick, onRightClick, setSelected])
 
-  const draggable = isSelected && $isNodeSelection(selection) && !isResizing && !isSuggestionMode
+  const draggable = isSelected && $isNodeSelection(selection) && !isResizing
   const isFocused = isSelected || isResizing
 
   const onResizeEnd = (nextWidth: 'inherit' | number, nextHeight: 'inherit' | number) => {
@@ -288,12 +285,7 @@ export default function ImageComponent({
       setIsResizing(false)
     }, 200)
 
-    editor.update(() => {
-      const node = $getNodeByKey(nodeKey)
-      if ($isImageNode(node)) {
-        node.setWidthAndHeight(nextWidth, nextHeight)
-      }
-    })
+    editor.dispatchCommand(SET_IMAGE_SIZE_COMMAND, { nodeKey, width: nextWidth, height: nextHeight })
   }
 
   const onResizeStart = () => {
@@ -333,7 +325,7 @@ export default function ImageComponent({
           editor={editor}
         />
       </div>
-      {isFocused && !isSuggestionMode && (
+      {isFocused && (
         <ImageResizer editor={editor} imageRef={imageRef} onResizeStart={onResizeStart} onResizeEnd={onResizeEnd} />
       )}
     </Suspense>

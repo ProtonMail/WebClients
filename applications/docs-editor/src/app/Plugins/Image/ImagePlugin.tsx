@@ -1,15 +1,14 @@
 import { useEffect } from 'react'
 
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { $wrapNodeInElement, CAN_USE_DOM, mergeRegister } from '@lexical/utils'
-import type { LexicalCommand } from 'lexical'
+import { $wrapNodeInElement, mergeRegister } from '@lexical/utils'
+import type { LexicalCommand, LexicalNode, NodeKey } from 'lexical'
 import {
   $createParagraphNode,
   $createRangeSelection,
-  $getEditor,
+  $getNodeByKey,
   $getSelection,
   $insertNodes,
-  $isNodeSelection,
   $isRootOrShadowRoot,
   $setSelection,
   COMMAND_PRIORITY_EDITOR,
@@ -23,29 +22,28 @@ import {
 } from 'lexical'
 import { eventFiles } from '@lexical/rich-text'
 
-import type { SerializedImageNode } from './ImageNode'
 import { $createImageNode, $isImageNode, ImageNode } from './ImageNode'
 
 import { toBase64 } from '@proton/shared/lib/helpers/file'
 import { downSize } from '@proton/shared/lib/helpers/image'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { isImage } from '@proton/shared/lib/helpers/mimetype'
+import { $canDropImage, $getImageNodeInSelection, getDragImageData, getDragSelection } from './ImageUtils'
+import { INSERT_FILE_COMMAND } from '../../Commands/Events'
 
 type InsertImagePayload = File | Blob
 
 const FIVE_HUNDRED_KILO_BYTES = 500 * 1024
 
-export const INSERT_IMAGE_COMMAND: LexicalCommand<InsertImagePayload> = createCommand('INSERT_IMAGE_COMMAND')
+export const INSERT_IMAGE_NODE_COMMAND: LexicalCommand<LexicalNode> = createCommand('INSERT_IMAGE_NODE_COMMAND')
 
-function $getImageNodeInSelection(): ImageNode | null {
-  const selection = $getSelection()
-  if (!$isNodeSelection(selection)) {
-    return null
-  }
-  const nodes = selection.getNodes()
-  const node = nodes[0]
-  return $isImageNode(node) ? node : null
+export type SetImageSizePayload = {
+  nodeKey: NodeKey
+  width: number | 'inherit'
+  height: number | 'inherit'
 }
+
+export const SET_IMAGE_SIZE_COMMAND: LexicalCommand<SetImageSizePayload> = createCommand('SET_IMAGE_SIZE_COMMAND')
 
 const dragImage = new Image()
 
@@ -58,8 +56,28 @@ export default function ImagesPlugin(): JSX.Element | null {
     }
 
     return mergeRegister(
+      editor.registerCommand(
+        SET_IMAGE_SIZE_COMMAND,
+        ({ nodeKey, width, height }) => {
+          const node = $getNodeByKey(nodeKey)
+          if (!$isImageNode(node)) {
+            return false
+          }
+          node.setWidthAndHeight(width, height)
+          return true
+        },
+        COMMAND_PRIORITY_EDITOR,
+      ),
+      editor.registerCommand(
+        INSERT_IMAGE_NODE_COMMAND,
+        (node) => {
+          $insertNodes([node])
+          return true
+        },
+        COMMAND_PRIORITY_EDITOR,
+      ),
       editor.registerCommand<InsertImagePayload>(
-        INSERT_IMAGE_COMMAND,
+        INSERT_FILE_COMMAND,
         (payload) => {
           if (!isImage(payload.type)) {
             return false
@@ -67,11 +85,15 @@ export default function ImagesPlugin(): JSX.Element | null {
 
           function createAndInsertImageNode(src: string) {
             editor.update(() => {
+              const selection = $getSelection()
+              if (!selection) {
+                return
+              }
               const imageNode = $createImageNode({
                 src,
                 altText: '',
               })
-              $insertNodes([imageNode])
+              editor.dispatchCommand(INSERT_IMAGE_NODE_COMMAND, imageNode)
               if ($isRootOrShadowRoot(imageNode.getParentOrThrow())) {
                 $wrapNodeInElement(imageNode, $createParagraphNode).selectEnd()
               }
@@ -161,7 +183,7 @@ export default function ImagesPlugin(): JSX.Element | null {
                 width: data.width,
                 src: data.src,
               })
-              $insertNodes([imageNode])
+              editor.dispatchCommand(INSERT_IMAGE_NODE_COMMAND, imageNode)
             }
             return true
           }
@@ -177,7 +199,7 @@ export default function ImagesPlugin(): JSX.Element | null {
             if (!isImage) {
               continue
             }
-            editor.dispatchCommand(INSERT_IMAGE_COMMAND, file)
+            editor.dispatchCommand(INSERT_FILE_COMMAND, file)
           }
           return false
         },
@@ -192,7 +214,7 @@ export default function ImagesPlugin(): JSX.Element | null {
               if (!isImage(file.type)) {
                 continue
               }
-              editor.dispatchCommand(INSERT_IMAGE_COMMAND, file)
+              editor.dispatchCommand(INSERT_FILE_COMMAND, file)
             }
             return true
           }
@@ -206,58 +228,9 @@ export default function ImagesPlugin(): JSX.Element | null {
   return null
 }
 
-function $canDropImage(event: DragEvent): boolean {
-  const target = event.target
-  const rootElement = $getEditor().getRootElement()
-  return !!(
-    target &&
-    target instanceof HTMLElement &&
-    !target.closest('code, span.Lexical__image') &&
-    target.parentElement &&
-    rootElement?.contains(target.parentElement)
-  )
-}
-
-function getDragImageData(event: DragEvent): null | SerializedImageNode {
-  const dragData = event.dataTransfer?.getData('application/x-lexical-drag')
-  if (!dragData) {
-    return null
-  }
-  const { type, data } = JSON.parse(dragData)
-  if (type !== 'image') {
-    return null
-  }
-  return data
-}
-
-const getDOMSelection = (targetWindow: Window | null): Selection | null =>
-  CAN_USE_DOM ? (targetWindow || window).getSelection() : null
-
 declare global {
   interface DragEvent {
     rangeOffset?: number
     rangeParent?: Node
   }
-}
-
-function getDragSelection(event: DragEvent): Range | null | undefined {
-  let range
-  const target = event.target as null | Element | Document
-  const targetWindow =
-    target == null
-      ? null
-      : target.nodeType === 9
-        ? (target as Document).defaultView
-        : (target as Element).ownerDocument.defaultView
-  const domSelection = getDOMSelection(targetWindow)
-  if (document.caretRangeFromPoint) {
-    range = document.caretRangeFromPoint(event.clientX, event.clientY)
-  } else if (event.rangeParent && domSelection !== null) {
-    domSelection.collapse(event.rangeParent, event.rangeOffset || 0)
-    range = domSelection.getRangeAt(0)
-  } else {
-    throw Error(`Cannot get the selection when dragging`)
-  }
-
-  return range
 }
