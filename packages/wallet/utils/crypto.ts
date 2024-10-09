@@ -1,4 +1,4 @@
-import type { PrivateKeyReference, PublicKeyReference} from '@proton/crypto/lib';
+import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto/lib';
 import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
@@ -268,6 +268,26 @@ export const decryptWalletData = async (dataToDecrypt: (string | null)[], wallet
     );
 
     return decryptedData;
+};
+
+/**
+ * Decrypts a mnemonic encrypted with user key
+ *
+ * @param encryptedMnemonic encrypted mnemonic with user key
+ * @param keys used to encrypt mnemonic
+ * @returns wallet's mnemonic encrypted with walletKey (a.k.a encrypted entropy)
+ */
+export const decryptMnemonicWithUserKey = async (encryptedMnemonic: string | null, keys: DecryptedKey[]) => {
+    if (encryptedMnemonic === null) {
+        return null;
+    }
+    const { data: decryptedBinaryMnemonic } = await CryptoProxy.decryptMessage({
+        binaryMessage: base64StringToUint8Array(encryptedMnemonic),
+        decryptionKeys: keys.map((k) => k.privateKey),
+        format: 'binary',
+    });
+
+    return uint8ArrayToBase64String(decryptedBinaryMnemonic);
 };
 
 /**
