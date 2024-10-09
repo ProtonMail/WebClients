@@ -2,8 +2,13 @@ import { c } from 'ttag'
 import { ButtonLike } from '@proton/atoms'
 import { Icon } from '@proton/components'
 import noContentImg from './HomepageNoDocuments.svg'
+import { useRecentDocuments } from './useRecentDocuments'
+import { getAppHref } from '@proton/shared/lib/apps/helper'
+import { APPS } from '@proton/shared/lib/constants'
 
 export function HomepageNoItemsContent() {
+  const { getLocalID } = useRecentDocuments()
+
   return (
     <div className="flex h-full items-center justify-center">
       <div className="flex-column flex items-center gap-8 py-8">
@@ -19,7 +24,7 @@ export function HomepageNoItemsContent() {
         <div className="flex justify-center">
           <ButtonLike
             as="a"
-            href="/doc"
+            href={getAppHref('/doc', APPS.PROTONDOCS, getLocalID())}
             target="_blank"
             color="norm"
             size="large"
