@@ -1,6 +1,5 @@
 import type { RecentDocumentsSnapshotData } from '@proton/docs-core'
 import { filterItems, getDisplayName } from './useRecentDocuments'
-import type { UserModel } from '@proton/shared/lib/interfaces'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
 
 jest.mock('@proton/shared/lib/i18n', () => ({ dateLocale: { code: 'us' } }))
@@ -168,8 +167,7 @@ describe('getDisplayName', () => {
       lastViewed: 1,
       isSharedWithMe: false,
     }
-    const user = { Email: 'me@proton.ch' } as unknown as UserModel
-    expect(getDisplayName(recentDocument, user)).toBe('me@proton.ch')
+    expect(getDisplayName(recentDocument)).toBe('Me')
   })
   test('Will return the user if name is populated and the document is owned by the user', () => {
     const recentDocument = {
@@ -179,8 +177,7 @@ describe('getDisplayName', () => {
       lastViewed: 1,
       isSharedWithMe: false,
     }
-    const user = { DisplayName: 'Joe Bloggs', Email: 'me@proton.ch' } as unknown as UserModel
-    expect(getDisplayName(recentDocument, user)).toBe('Joe Bloggs')
+    expect(getDisplayName(recentDocument)).toBe('Me')
   })
 
   test('Will return the contact display name if it is present and the document is shared with the user', () => {
@@ -192,9 +189,8 @@ describe('getDisplayName', () => {
       isSharedWithMe: true,
       createdBy: 'joe@proton.ch',
     }
-    const user = { DisplayName: 'Jane Doe', Email: 'me@proton.ch' } as unknown as UserModel
     const contacts = [{ Name: 'Joe Bloggs', Email: 'joe@proton.ch' }] as unknown as ContactEmail[]
-    expect(getDisplayName(recentDocument, user, contacts)).toBe('Joe Bloggs')
+    expect(getDisplayName(recentDocument, contacts)).toBe('Joe Bloggs')
   })
   test('Will return the contact email if there is no name and the document is shared with the user', () => {
     const recentDocument = {
@@ -205,8 +201,7 @@ describe('getDisplayName', () => {
       isSharedWithMe: true,
       createdBy: 'joe@proton.ch',
     }
-    const user = { DisplayName: 'Jane Doe', Email: 'me@proton.ch' } as unknown as UserModel
     const contacts = [{ Email: 'joe@proton.ch' }] as unknown as ContactEmail[]
-    expect(getDisplayName(recentDocument, user, contacts)).toBe('joe@proton.ch')
+    expect(getDisplayName(recentDocument, contacts)).toBe('joe@proton.ch')
   })
 })

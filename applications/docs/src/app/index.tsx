@@ -2,10 +2,9 @@ import { createRoot } from 'react-dom/client'
 
 import '@proton/polyfill'
 
-import './style'
-
 import UserApp from './Apps/User/UserApp'
 import PublicApp from './Apps/Public/PublicApp'
+import './style'
 
 const isPublicApp = window.location.href.includes('open-url')
 
