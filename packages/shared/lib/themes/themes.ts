@@ -26,6 +26,7 @@ import storefrontTheme from '@proton/colors/themes/dist/storefront.theme.css';
 import walletLightTheme from '@proton/colors/themes/dist/wallet.theme.css';
 import { decodeBase64URL, encodeBase64URL } from '@proton/shared/lib/helpers/encoding';
 
+import { DESKTOP_THEME_TYPES } from '../desktop/desktopTypes';
 import { canGetInboxDesktopInfo, getInboxDesktopInfo, hasInboxDesktopFeature } from '../desktop/ipcHelpers';
 import { isElectronApp } from '../helpers/desktop';
 
@@ -228,9 +229,9 @@ export const getDarkThemes = () => [ThemeTypes.Carbon, ThemeTypes.Monokai, Theme
 export const getProminentHeaderThemes = () => [ThemeTypes.Classic, ThemeTypes.Legacy];
 
 export const getThemes = () => {
-    // Currently we only support Snow and Carbon themes on the desktop app.
+    // Currently we only support some themes in the desktop app.
     if (isElectronApp) {
-        return [ThemeTypes.Snow, ThemeTypes.Carbon].map((id) => PROTON_THEMES_MAP[id]);
+        return Object.values(DESKTOP_THEME_TYPES).map((id) => PROTON_THEMES_MAP[id]);
     }
 
     return [
