@@ -1,13 +1,15 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto/lib';
+import {
+    KEY_LENGTH_BYTES,
+    decryptData,
+    encryptData,
+    generateKey as generateSymmetricKey,
+    importKey as importSymmetricKey,
+} from '@proton/crypto/lib/subtle/aesGcm';
 import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
-import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
-
-const IV_LENGTH = 12;
-const KEY_LENGTH = 32;
-const ALGORITHM = 'AES-GCM';
 
 export enum WalletSignatureContextEnum {
     WALLET_KEY = 'wallet.key',
@@ -18,35 +20,6 @@ export type WalletSignatureContext = `${WalletSignatureContextEnum}`;
 
 const encoder = new TextEncoder();
 const decoder = new TextDecoder();
-
-export const getSymmetricKey = async (key: Uint8Array): Promise<CryptoKey> => {
-    // https://github.com/vercel/edge-runtime/issues/813
-    const slicedKey = new Uint8Array(key.slice(0, KEY_LENGTH));
-
-    const x = crypto.subtle.importKey('raw', slicedKey, ALGORITHM, false, ['decrypt', 'encrypt']);
-    slicedKey.fill(0);
-    return x;
-};
-
-//  Taken from pass
-export const decryptData = async (key: CryptoKey, data: Uint8Array) => {
-    const iv = data.slice(0, IV_LENGTH);
-    const cipher = data.slice(IV_LENGTH, data.length);
-    const result = await crypto.subtle.decrypt({ name: ALGORITHM, iv }, key, cipher);
-
-    return new Uint8Array(result);
-};
-
-//  Taken from pass
-export const generateEntropy = (len: number): Uint8Array => crypto.getRandomValues(new Uint8Array(len));
-
-//  Taken from pass
-const encryptData = async (key: CryptoKey, data: Uint8Array) => {
-    const iv = generateEntropy(IV_LENGTH);
-    const cipher = await crypto.subtle.encrypt({ name: ALGORITHM, iv }, key, data);
-
-    return mergeUint8Arrays([iv, new Uint8Array(cipher)]);
-};
 
 export type EncryptedWalletPart = Partial<
     { mnemonic: string; publicKey: undefined } | { mnemonic: undefined; publicKey: string }
@@ -184,14 +157,14 @@ const decryptArmoredWalletKey = async (walletKey: string, walletKeySignature: st
 
 export const decryptWalletKey = async (walletKey: string, walletKeySignature: string, keys: DecryptedKey[]) => {
     const decryptedEntropy = await decryptArmoredWalletKey(walletKey, walletKeySignature, keys);
-    return getSymmetricKey(decryptedEntropy);
+    return importSymmetricKey(decryptedEntropy);
 };
 
 export const decryptWalletKeyForHmac = async (walletKey: string, walletKeySignature: string, keys: DecryptedKey[]) => {
     const decryptedEntropy = await decryptArmoredWalletKey(walletKey, walletKeySignature, keys);
 
     // https://github.com/vercel/edge-runtime/issues/813
-    const slicedKey = new Uint8Array(decryptedEntropy.slice(0, KEY_LENGTH));
+    const slicedKey = new Uint8Array(decryptedEntropy.slice(0, KEY_LENGTH_BYTES));
 
     return crypto.subtle.importKey('raw', slicedKey, { name: 'HMAC', hash: 'SHA-256' }, false, ['sign', 'verify']);
 };
@@ -231,13 +204,13 @@ export const encryptWalletData = async (
     dataToEncrypt: string[],
     userKey: DecryptedKey
 ): Promise<[string[], [string, string, CryptoKey, string]]> => {
-    const entropy = generateEntropy(KEY_LENGTH);
-    const key = await getSymmetricKey(entropy);
+    const secretEntropy = generateSymmetricKey();
+    const key = await importSymmetricKey(secretEntropy);
 
     const encryptedData = await encryptWalletDataWithWalletKey(dataToEncrypt, key);
 
-    const entropySignature = await signData(entropy, 'wallet.key', [userKey.privateKey]);
-    const encryptedEntropy = await encryptPgp(entropy, [userKey.publicKey]);
+    const entropySignature = await signData(secretEntropy, 'wallet.key', [userKey.privateKey]);
+    const encryptedEntropy = await encryptPgp(secretEntropy, [userKey.publicKey]);
 
     return [encryptedData, [encryptedEntropy, entropySignature, key, userKey.ID]];
 };

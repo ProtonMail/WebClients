@@ -1,4 +1,4 @@
-import { encryptData, generateKey, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { encryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { TEST_USER_KEY_ID } from '@proton/pass/lib/crypto/utils/testing';
 import type { ItemKeyResponse, VaultKey } from '@proton/pass/types';
 import { PassEncryptionTag } from '@proton/pass/types';
@@ -12,7 +12,7 @@ describe('openItemKey crypto process', () => {
         const itemKey = generateKey();
 
         const vaultKey: VaultKey = {
-            key: await getSymmetricKey(key),
+            key: await importSymmetricKey(key),
             raw: key,
             rotation: 1,
             userKeyId: TEST_USER_KEY_ID,

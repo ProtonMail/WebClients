@@ -1,3 +1,4 @@
+import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
 import type { ForkState } from '@proton/shared/lib/authentication/fork/forkState';
 import { getCurrentUrl, getForkStateData, setForkStateData } from '@proton/shared/lib/authentication/fork/forkState';
 import getRandomString from '@proton/utils/getRandomString';
@@ -6,7 +7,6 @@ import noop from '@proton/utils/noop';
 import { pullForkSession, revoke, setCookies } from '../../api/auth';
 import { getUser } from '../../api/user';
 import { getAppHref } from '../../apps/helper';
-import { getKey } from '../../authentication/cryptoHelper';
 import { InvalidForkConsumeError, InvalidPersistentSessionError } from '../../authentication/error';
 import type { ExtraSessionForkData, PullForkResponse } from '../../authentication/interface';
 import type { OfflineKey } from '../../authentication/offlineKey';
@@ -131,7 +131,7 @@ export const consumeFork = async ({
 
     if (Payload) {
         try {
-            const data = await getForkDecryptedBlob(await getKey(key), Payload, payloadVersion);
+            const data = await getForkDecryptedBlob(await importKey(key), Payload, payloadVersion);
             keyPassword = data?.keyPassword || '';
             if (data?.type === 'offline') {
                 forkedOfflineKey = {

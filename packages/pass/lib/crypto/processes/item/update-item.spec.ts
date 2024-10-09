@@ -1,4 +1,4 @@
-import { decryptData, generateKey, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { decryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoItemError } from '@proton/pass/lib/crypto/utils/errors';
 import { randomContents } from '@proton/pass/lib/crypto/utils/testing';
 import type { ItemKey } from '@proton/pass/types';
@@ -13,7 +13,7 @@ describe('updateItem crypto process', () => {
 
     test('should re-encrypt item content with supplied item key', async () => {
         const itemKey: ItemKey = {
-            key: await getSymmetricKey(key),
+            key: await importSymmetricKey(key),
             raw: key,
             rotation: 42,
         };
@@ -35,7 +35,7 @@ describe('updateItem crypto process', () => {
 
     test('should throw when provided with empty content', async () => {
         const itemKey: ItemKey = {
-            key: await getSymmetricKey(key),
+            key: await importSymmetricKey(key),
             raw: key,
             rotation: 42,
         };
@@ -51,7 +51,7 @@ describe('updateItem crypto process', () => {
 
     test('should throw if base64 content is over MAX_ITEM_CONTENT_B64_LENGTH', async () => {
         const itemKey: ItemKey = {
-            key: await getSymmetricKey(key),
+            key: await importSymmetricKey(key),
             raw: key,
             rotation: 42,
         };

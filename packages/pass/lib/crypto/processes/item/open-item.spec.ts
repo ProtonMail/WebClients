@@ -1,4 +1,4 @@
-import { generateKey, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoItemError } from '@proton/pass/lib/crypto/utils/errors';
 import { TEST_USER_KEY_ID, randomContents } from '@proton/pass/lib/crypto/utils/testing';
 import type { ItemRevisionContentsResponse, VaultKey } from '@proton/pass/types';
@@ -15,7 +15,7 @@ describe('openItem crypto process', () => {
 
     test('should decrypt item accordingly', async () => {
         const vaultKey: VaultKey = {
-            key: await getSymmetricKey(key),
+            key: await importSymmetricKey(key),
             raw: key,
             rotation: 1,
             userKeyId: TEST_USER_KEY_ID,
@@ -50,7 +50,7 @@ describe('openItem crypto process', () => {
 
     test('should throw if provided with an incorrect share key rotation', async () => {
         const vaultKey: VaultKey = {
-            key: await getSymmetricKey(key),
+            key: await importSymmetricKey(key),
             raw: key,
             rotation: 1,
             userKeyId: TEST_USER_KEY_ID,

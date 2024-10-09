@@ -1,9 +1,9 @@
 import { ARGON2_PARAMS, CryptoProxy } from '@proton/crypto/lib';
-import { encryptData, generateKey, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { deriveKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { encryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import { type Maybe, PassEncryptionTag } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { ENCRYPTION_ALGORITHM } from '@proton/shared/lib/authentication/cryptoHelper';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 type Argon2Params = (typeof ARGON2_PARAMS)[keyof typeof ARGON2_PARAMS];
@@ -22,14 +22,8 @@ export type OfflineComponents = {
     offlineVerifier: string;
 };
 
-const KEY_ALGORITHM = { name: 'AES-GCM', length: 256 };
 export const CACHE_SALT_LENGTH = 32;
-
-const HKDF_PARAMS: Omit<HkdfParams, 'salt'> = {
-    name: 'HKDF',
-    hash: 'SHA-256',
-    info: stringToUint8Array('pass-extension-cache-key'), // context identifier for domain separation
-};
+const HKDF_INFO = stringToUint8Array('pass-extension-cache-key'); // context identifier for domain separation
 
 /**
  * Get the key to use for local cache encryption. We use a HKDF derivation
@@ -43,11 +37,6 @@ export const getCacheEncryptionKey = async (
     salt: Uint8Array,
     sessionLockToken: Maybe<string>
 ): Promise<CryptoKey> => {
-    /* sanity check to avoid problems when using the key */
-    if (ENCRYPTION_ALGORITHM !== KEY_ALGORITHM.name) {
-        throw new Error('Key algorithm does not match encryption algorithm');
-    }
-
     // We run a key derivation step (HKDF) to achieve domain separation (preventing the encrypted data to be
     // decrypted outside of the booting context) and to better protect the password in case of e.g.
     // future GCM key-recovery attacks.
@@ -55,19 +44,12 @@ export const getCacheEncryptionKey = async (
     // discussion on key-stretching step in https://eprint.iacr.org/2010/264.pdf (Section 9).
     const saltedUserPassword = `${keyPassword}${sessionLockToken ?? ''}`;
     const passwordBytes = stringToUint8Array(saltedUserPassword);
-    const keyToSalt = await crypto.subtle.importKey('raw', passwordBytes.buffer, HKDF_PARAMS.name, false, [
-        'deriveKey',
-    ]);
 
-    const cacheEncryptionKey = await crypto.subtle.deriveKey(
-        {
-            ...HKDF_PARAMS,
-            salt,
-        },
-        keyToSalt,
-        KEY_ALGORITHM,
-        true, // exportable in order to re-encrypt for offline
-        ['decrypt', 'encrypt']
+    const cacheEncryptionKey = await deriveKey(
+        passwordBytes,
+        salt,
+        HKDF_INFO,
+        { extractable: true } // exportable in order to re-encrypt for offline
     );
 
     return cacheEncryptionKey;
@@ -88,13 +70,13 @@ export const getOfflineKeyDerivation = async (
 /** Encrypts the raw cache key with the offline key */
 export const encryptOfflineCacheKey = async (cacheKey: CryptoKey, offlineKD: Uint8Array): Promise<Uint8Array> => {
     const rawCacheKey = await crypto.subtle.exportKey('raw', cacheKey);
-    const offlineKey = await getSymmetricKey(offlineKD);
+    const offlineKey = await importSymmetricKey(offlineKD);
 
     return encryptData(offlineKey, new Uint8Array(rawCacheKey), PassEncryptionTag.Offline);
 };
 
 export const getOfflineVerifier = async (offlineKD: Uint8Array): Promise<string> => {
-    const offlineKey = await getSymmetricKey(offlineKD);
+    const offlineKey = await importSymmetricKey(offlineKD);
     const verifier = generateKey();
     const offlineVerifier = await encryptData(offlineKey, verifier, PassEncryptionTag.Offline);
 

@@ -1,7 +1,7 @@
 import { ARGON2_PARAMS } from 'pmcrypto-v6-canary/lib/constants';
 
 import { CryptoProxy } from '@proton/crypto/lib';
-import { decryptData, generateKey, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { decryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 import { PassEncryptionTag } from '@proton/pass/types';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
@@ -25,7 +25,7 @@ describe('cache crypto operations', () => {
             expect(components.offlineKD).toBeDefined();
             expect(components.offlineVerifier).toBeDefined();
 
-            const offlineKey = await getSymmetricKey(stringToUint8Array(components.offlineKD));
+            const offlineKey = await importSymmetricKey(stringToUint8Array(components.offlineKD));
             const verifier = stringToUint8Array(components.offlineVerifier);
             await expect((() => decryptData(offlineKey, verifier, PassEncryptionTag.Offline))()).resolves.toBeDefined();
 

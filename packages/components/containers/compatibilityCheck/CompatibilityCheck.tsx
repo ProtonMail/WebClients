@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import useConfig from '@proton/components/hooks/useConfig';
 import { stringToUtf8Array } from '@proton/crypto/lib/utils';
-import { decryptData, encryptData, getKey } from '@proton/shared/lib/authentication/cryptoHelper';
+import { decryptData, encryptData, importKey } from '@proton/crypto/lib/subtle/aesGcm';
 
 import CompatibilityCheckView from './CompatibilityCheckView';
 import { getCompatibilityList } from './compatibilityCheckHelper';
@@ -20,7 +20,8 @@ const CompatibilityCheck = ({ children }: Props) => {
 
     useEffect(() => {
         const run = async () => {
-            const key = await getKey(new Uint8Array(16));
+            // NB: do not copy this code elsewhere, this is not secure and just meant to test WebCrypto support.
+            const key = await importKey(new Uint8Array(16));
             const data = await encryptData(key, new Uint8Array(16), stringToUtf8Array('compatbility-check'));
             return decryptData(key, data, stringToUtf8Array('compatbility-check'));
         };
