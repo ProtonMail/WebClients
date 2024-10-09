@@ -82,7 +82,7 @@ export function $handleLinkChangeSuggestion(
         }),
       )
     } else {
-      $wrapSelectionInSuggestionNode(selection, selection.isBackward(), suggestionID, 'link-change', {
+      $wrapSelectionInSuggestionNode(selection, selection.isBackward(), suggestionID, 'link-change', logger, {
         __url: null,
       })
     }

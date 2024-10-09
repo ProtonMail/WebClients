@@ -49,7 +49,7 @@ export function $selectionInsertClipboardNodes(
 
   const isInitialSelectionNotCollapsed = !selection.isCollapsed()
   if (isInitialSelectionNotCollapsed) {
-    $wrapSelectionInSuggestionNode(selection, selection.isBackward(), suggestionID, 'delete')
+    $wrapSelectionInSuggestionNode(selection, selection.isBackward(), suggestionID, 'delete', logger)
     onSuggestionCreation(suggestionID)
     logger.info('Wrapped non-collapsed selection as delete suggestion', suggestionID)
   }
@@ -110,7 +110,7 @@ export function $selectionInsertClipboardNodes(
   selectionToMark.focus.set(anchorAfterInserting.key, anchorAfterInserting.offset, anchorAfterInserting.type)
   logger.info('Selection to wrap:', selectionToMark)
 
-  $wrapSelectionInSuggestionNode(selectionToMark, selectionToMark.isBackward(), suggestionID, 'insert')
+  $wrapSelectionInSuggestionNode(selectionToMark, selectionToMark.isBackward(), suggestionID, 'insert', logger)
   onSuggestionCreation(suggestionID)
   logger.info('Wrapped selection in suggestion', suggestionID)
 
