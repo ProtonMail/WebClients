@@ -1,4 +1,4 @@
-import { useUser } from '@proton/account/user/hooks'
+import { c } from 'ttag'
 import { useAuthentication } from '@proton/components'
 import { useContactEmails } from '@proton/components/hooks'
 import {
@@ -10,7 +10,6 @@ import {
 } from '@proton/docs-core'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
-import type { UserModel } from '@proton/shared/lib/interfaces'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
 import { createContext, type ReactNode, useContext, useEffect, useState } from 'react'
 import { useApplication } from '../../Containers/ApplicationProvider'
@@ -47,13 +46,9 @@ export const filterItems = (items?: RecentDocumentsSnapshotData[], searchText?: 
   return newFilteredItems
 }
 
-export const getDisplayName = (
-  recentDocument: RecentDocumentsSnapshotData,
-  user: UserModel,
-  contactEmails?: ContactEmail[],
-) => {
+export const getDisplayName = (recentDocument: RecentDocumentsSnapshotData, contactEmails?: ContactEmail[]) => {
   if (!recentDocument.isSharedWithMe) {
-    return user.DisplayName ? user.DisplayName : user.Email
+    return c('Info').t`Me`
   }
 
   const foundContact = contactEmails?.find((contactEmail) => contactEmail.Email)
@@ -69,7 +64,6 @@ export const useRecentDocumentsValue = ({ searchText, filter }: { searchText?: s
   const application = useApplication()
   const [state, setState] = useState<RecentDocumentsSnapshot>(application.recentDocumentsService.getSnapshot())
   const [filteredItems, setFilteredItems] = useState<RecentDocumentsSnapshotData[]>([])
-  const [user] = useUser()
   const [contactEmails] = useContactEmails()
 
   useEffect(() => {
@@ -93,13 +87,13 @@ export const useRecentDocumentsValue = ({ searchText, filter }: { searchText?: s
   const { getLocalID } = useAuthentication()
 
   const handleOpenDocument = (recentDocument: RecentDocumentsSnapshotData) => {
-    window.open(`/doc?mode=open&volumeId=${recentDocument.volumeId}&linkId=${recentDocument.linkId}`, '_blank')
+    const to = `/doc?mode=open&volumeId=${recentDocument.volumeId}&linkId=${recentDocument.linkId}`
+    window.open(getAppHref(to, APPS.PROTONDOCS, getLocalID()))
   }
 
   const handleOpenFolder = (recentDocument: RecentDocumentsSnapshotData) => {
     const to = `/${recentDocument.volumeId}/folder/${recentDocument.parentLinkId}`
-    const target = '_blank'
-    window.open(getAppHref(to, APPS.PROTONDRIVE, getLocalID()), target)
+    window.open(getAppHref(to, APPS.PROTONDRIVE, getLocalID()))
   }
 
   return {
@@ -111,10 +105,11 @@ export const useRecentDocumentsValue = ({ searchText, filter }: { searchText?: s
     handleOpenDocument,
     handleOpenFolder,
     getDisplayName: (recentDocument: RecentDocumentsSnapshotData): string | undefined =>
-      getDisplayName(recentDocument, user, contactEmails),
+      getDisplayName(recentDocument, contactEmails),
     getDisplayDate: (recentDocument: RecentDocumentsSnapshotData): string => {
       return dateFormatter.formatDate(recentDocument.lastViewed)
     },
+    getLocalID,
   }
 }
 
