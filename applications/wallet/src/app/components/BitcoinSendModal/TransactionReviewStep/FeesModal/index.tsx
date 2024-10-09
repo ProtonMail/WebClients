@@ -12,7 +12,7 @@ import { Modal } from '../../../../atoms';
 import { CoreButton } from '../../../../atoms/Button';
 import { Price } from '../../../../atoms/Price';
 import type { TxBuilderHelper } from '../../../../hooks/useTxBuilder';
-import { secondaryAmount } from '../../AmountInput/BitcoinAmountInputWithBalanceAndCurrencySelect';
+import { SecondaryAmount } from '../../SecondaryAmount';
 
 import './FeesModal.scss';
 
@@ -51,7 +51,7 @@ export const FeesModal = ({
     useEffect(() => {
         const options: [IconName, string, number, number][] = [];
         // Fetch with `allSettled` to get fee options even if some of them fail
-        Promise.allSettled([
+        void Promise.allSettled([
             getFeeOption('chevron-up', c('Wallet send').t`High priority`, 1),
             getFeeOption('minus', c('Wallet send').t`Median priority`, 5),
             getFeeOption('chevron-down', c('Wallet send').t`Low priority`, 10),
@@ -99,9 +99,9 @@ export const FeesModal = ({
             }
         >
             <div className="flex flex-column">
-                {feeOptions.map(([iconName, text, feeRate, feesAtFeeRate]) => (
+                {feeOptions.map(([iconName, text, feeRate, feesAtFeeRate], index) => (
                     <button
-                        key={feeRate}
+                        key={`${feeRate}_${index}`}
                         onClick={() => {
                             void handleFeesSelection(feeRate);
                         }}
@@ -117,13 +117,13 @@ export const FeesModal = ({
                             </div>
 
                             <span className="block color-hint">
-                                {secondaryAmount({
-                                    key: 'hint-total-amount',
-                                    settingsBitcoinUnit: settings.BitcoinUnit,
-                                    secondaryExchangeRate: accountExchangeRate,
-                                    primaryExchangeRate: exchangeRate,
-                                    value: feesAtFeeRate,
-                                })}
+                                <SecondaryAmount
+                                    key="hint-total-amount"
+                                    settingsBitcoinUnit={settings.BitcoinUnit}
+                                    secondaryExchangeRate={accountExchangeRate}
+                                    primaryExchangeRate={exchangeRate}
+                                    value={feesAtFeeRate}
+                                />
                             </span>
                         </div>
                     </button>

@@ -11,17 +11,17 @@ import type { Recipient } from '@proton/shared/lib/interfaces';
 import { MAX_RECIPIENTS_PER_TRANSACTIONS, useWalletApiClients } from '@proton/wallet';
 import { useBitcoinNetwork } from '@proton/wallet/store';
 
-import { Button } from '../../atoms';
-import { useGetRecipientVerifiedAddressKey } from '../../hooks/useGetRecipientVerifiedAddressKey';
-import type { TxBuilderHelper } from '../../hooks/useTxBuilder';
-import { isUndefined, isValidBitcoinAddress } from '../../utils';
-import { EmailOrBitcoinAddressInput } from '../EmailOrBitcoinAddressInput';
-import type { useEmailAndBtcAddressesMaps } from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
-import { InvalidRecipientErrorCode } from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
-import { InviteSentConfirmModal } from '../InviteSentConfirmModal';
-import { RecipientDetailsModal } from '../RecipientDetailsModal';
-import { WalletNotFoundError } from './WalletNotFoundError/WalletNotFoundErrorDropdown';
-import { WalletNotFoundErrorModal } from './WalletNotFoundError/WalletNotFoundErrorModal';
+import { Button } from '../../../atoms';
+import { useGetRecipientVerifiedAddressKey } from '../../../hooks/useGetRecipientVerifiedAddressKey';
+import type { TxBuilderHelper } from '../../../hooks/useTxBuilder';
+import { isUndefined, isValidBitcoinAddress } from '../../../utils';
+import { EmailOrBitcoinAddressInput } from '../../EmailOrBitcoinAddressInput';
+import type { useEmailAndBtcAddressesMaps } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
+import { InvalidRecipientErrorCode } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
+import { InviteSentConfirmModal } from '../../InviteSentConfirmModal';
+import { RecipientDetailsModal } from '../../RecipientDetailsModal';
+import { WalletNotFoundError } from '../WalletNotFoundError/WalletNotFoundErrorDropdown';
+import { WalletNotFoundErrorModal } from '../WalletNotFoundError/WalletNotFoundErrorModal';
 
 interface Props {
     apiAccount: WasmApiWalletAccount;
@@ -37,7 +37,12 @@ interface WalletNotFoundModalData {
     type: WasmInviteNotificationType;
 }
 
-export const RecipientsSelection = ({ apiAccount, recipientHelpers, txBuilderHelpers, onRecipientsConfirm }: Props) => {
+export const RecipientsSelectionStep = ({
+    apiAccount,
+    recipientHelpers,
+    txBuilderHelpers,
+    onRecipientsConfirm,
+}: Props) => {
     const {
         recipientEmailMap,
         addValidRecipient,
