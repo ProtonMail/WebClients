@@ -1,5 +1,5 @@
 import { CryptoProxy } from '@proton/crypto';
-import { encryptData, generateKey, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { encryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoVaultError } from '@proton/pass/lib/crypto/utils/errors';
 import type { VaultCreateRequest } from '@proton/pass/types';
 import { ContentFormatVersion, PassEncryptionTag } from '@proton/pass/types';
@@ -22,7 +22,7 @@ export const createVault = async ({
     }
 
     const key = generateKey();
-    const shareKey = await getSymmetricKey(key);
+    const shareKey = await importSymmetricKey(key);
     const encryptedVaultContent = await encryptData(shareKey, content, PassEncryptionTag.VaultContent);
 
     const encryptedVaultKey = await CryptoProxy.encryptMessage({

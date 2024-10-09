@@ -1,4 +1,4 @@
-The crypto package interfaces the apps with the underlying OpenPGP crypto libs of pmcrypto and OpenPGP.js.
+The crypto package interfaces the apps with the underlying OpenPGP crypto libs of pmcrypto and OpenPGP.js, as well as the browser's native WebCrypto API.
 
 > **`pmcrypto` no longer needs to be directly imported by the apps and other packages, you should always use `@proton/crypto` instead.**
 
@@ -6,7 +6,7 @@ The crypto package interfaces the apps with the underlying OpenPGP crypto libs o
 
 The utils functions that `pmcrypto` exported (e.g. `arrayToBinaryString`) are now accessible under `@proton/crypto/lib/utils`.
 
-Crypto-related functions are instead handled by the `CryptoProxy`, which is initialized together with the apps (see [this section](web-worker-integration) for more info on the setup).
+Crypto-related functions runnable in web workers are handled by the `CryptoProxy`, which is initialized together with the apps (see [this section](web-worker-integration) for more info on the setup).
 
 ### Examples
 

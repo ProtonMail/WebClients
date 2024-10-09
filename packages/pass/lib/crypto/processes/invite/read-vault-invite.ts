@@ -1,5 +1,5 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
-import { decryptData, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { type KeyRotationKeyPair, PassEncryptionTag } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
@@ -19,7 +19,7 @@ export const readVaultInviteContent = async ({
     inviterPublicKeys,
 }: ReadVaultInviteContentProcessParams): Promise<Uint8Array> => {
     const openedVaultKey = await openInviteKey({ inviteKey, invitedPrivateKey, inviterPublicKeys });
-    const vaultKey = await getSymmetricKey(openedVaultKey);
+    const vaultKey = await importSymmetricKey(openedVaultKey);
 
     return decryptData(vaultKey, base64StringToUint8Array(encryptedVaultContent), PassEncryptionTag.VaultContent);
 };

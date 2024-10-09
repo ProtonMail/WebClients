@@ -1,6 +1,6 @@
 import { api } from '@proton/pass/lib/api/api';
 import { type OfflineComponents, getOfflineKeyDerivation } from '@proton/pass/lib/cache/crypto';
-import { decryptData, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassEncryptionTag } from '@proton/pass/types';
 import { queryUnlock } from '@proton/shared/lib/api/user';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
@@ -54,7 +54,7 @@ export const verifyOfflinePassword = async (
     { offlineVerifier, offlineConfig: { salt, params } }: Omit<OfflineComponents, 'offlineKD'>
 ): Promise<boolean> => {
     const offlineKD = await getOfflineKeyDerivation(password, stringToUint8Array(salt), params);
-    const offlineKey = await getSymmetricKey(offlineKD);
+    const offlineKey = await importSymmetricKey(offlineKD);
     await decryptData(offlineKey, stringToUint8Array(offlineVerifier), PassEncryptionTag.Offline);
 
     return true;

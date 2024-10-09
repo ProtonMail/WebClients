@@ -1,4 +1,4 @@
-import { encryptData, generateKey, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { encryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { type ItemKey, PassEncryptionTag, type VaultKey } from '@proton/pass/types';
 
 type CreateSecureLinkProcessParams = { itemKey: ItemKey; vaultKey: VaultKey };
@@ -16,7 +16,7 @@ export const createSecureLink = async ({
     const secureLinkKey = generateKey();
 
     const encryptedItemKey = await encryptData(
-        await getSymmetricKey(secureLinkKey),
+        await importSymmetricKey(secureLinkKey),
         itemKey.raw,
         PassEncryptionTag.ItemKey
     );

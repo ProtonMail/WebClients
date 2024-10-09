@@ -1,6 +1,7 @@
+import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
+
 import { pushForkSession } from '../../api/auth';
 import { getAppHref, getClientID } from '../../apps/helper';
-import { getKey } from '../../authentication/cryptoHelper';
 import type { PushForkResponse } from '../../authentication/interface';
 import type { OfflineKey } from '../../authentication/offlineKey';
 import type { APP_NAMES } from '../../constants';
@@ -63,7 +64,7 @@ export const produceFork = async ({
             return { type: 'default', keyPassword: keyPassword || '' } as const;
         })();
         return {
-            blob: await getForkEncryptedBlob(await getKey(rawKey), forkData, payloadVersion),
+            blob: await getForkEncryptedBlob(await importKey(rawKey), forkData, payloadVersion),
             payloadType: forkData.type,
             payloadVersion,
         };
