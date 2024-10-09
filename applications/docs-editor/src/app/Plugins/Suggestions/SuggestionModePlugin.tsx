@@ -293,6 +293,8 @@ export function SuggestionModePlugin({
           return
         }
         if (node.getChildrenSize() === 0) {
+          const id = node.getSuggestionIdOrThrow()
+          suggestionModeLogger.info('Removing empty suggestion node', id, type)
           node.remove()
         }
       }),
