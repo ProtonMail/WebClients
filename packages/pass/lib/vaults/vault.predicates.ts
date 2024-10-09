@@ -1,7 +1,6 @@
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import type { ShareItem } from '@proton/pass/store/reducers';
-import type { Share } from '@proton/pass/types';
-import { ShareRole, ShareType } from '@proton/pass/types';
+import { type Share, ShareRole, ShareType } from '@proton/pass/types';
 
 export const isActiveVault = <T extends Share>({ targetType, shareId }: T) =>
     targetType === ShareType.Vault && PassCrypto.canOpenShare(shareId);
@@ -19,3 +18,5 @@ export const isVaultMemberLimitReached = ({
     members = [],
     newUserInvites = [],
 }: ShareItem) => invites.length + members.length + newUserInvites.length >= targetMaxMembers;
+
+export const hasNewUserInvitesReady = (vault: ShareItem<ShareType.Vault>) => vault.newUserInvitesReady > 0;
