@@ -779,6 +779,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Η δωρεάν δοκιμή της εφαρμογής σας για υπολογιστές λήγει στις ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Ξεκινώντας από ${ priceUnlimited }"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Αναβάθμιση σε ${ BRAND_NAME } Unlimited"
       ]
     },
     "Action subline": {
@@ -2516,6 +2522,15 @@
       ],
       "Your account and data recovery methods are set.": [
         "Οι μέθοδοι ανάκτησης του λογαριασμού και των δεδομένων σας έχουν οριστεί."
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } προστατεύει τον λογαριασμό σας με αποκλειστική 24 ώρες το 24ωρο, 7 ημέρες την εβδομάδα παρακολούθηση ύποπτης δραστηριότητας — συμπεριλαμβανομένης της κλιμάκωσης σε ειδικούς ασφαλείας."
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Με τις ομάδες επαφών, μπορείτε να στείλετε μηνύματα ηλεκτρονικού ταχυδρομείου σε όλα τα μέλη της ομάδας με ένα κλικ."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -5205,6 +5220,12 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Η ζώνη ώρας του συστήματός σας φαίνεται να έχει αλλάξει σε ${ timezone }. Θέλετε να ενημερώσετε τις προτιμήσεις ζώνης ώρας;"
+      ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Η επαφή αφαιρέθηκε από την ομάδα ${ contactGroupName }"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Πρόκειται να ανοίξετε το προεπιλεγμένο πρόγραμμα περιήγησής σας και να επισκεφθείτε:"
       ]
     },
     "info": {
@@ -6250,6 +6271,12 @@
       ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Ξεκινώντας από ${ priceMailPlus }"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Αναβάθμιση σε ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6823,6 +6850,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Αποκτήστε το Mail Plus για ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Ξεκινώντας από ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7121,6 +7151,9 @@
       ],
       "Link copied to clipboard": [
         "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
+      ],
+      "Passcode copied to clipboard": [
+        "Ο κωδικός πρόσβασης αντιγράφηκε στο πρόχειρο"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8240,6 +8273,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Τυπική τιμή ${ amount } για 30 μήνες"
+      ],
+      "/month": [
+        "/μήνα"
       ]
     },
     "specialoffer: Title": {
@@ -9679,6 +9715,12 @@
       ],
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"
+      ],
+      "High security for your account": [
+        "Υψηλή ασφάλεια για τον λογαριασμό σας"
+      ],
+      "One email, many recipients": [
+        "Ένα email, πολλοί παραλήπτες"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10242,6 +10284,27 @@
       ],
       "Yearly, ${ untilString }": [
         "Ετησίως, ${ untilString }"
+      ]
+    },
+    "Google Meet": {
+      "Less details": [
+        "Λιγότερο λεπτομέρειες"
+      ],
+      "More details": [
+        "Περισσότερες λεπτομέρειες"
+      ]
+    },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Πιο γρήγορα στην εφαρμογή"
+      ],
+      "Private, fast, and organized": [
+        "Ιδιωτικό, γρήγορο και οργανωμένο"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Συνδεθήτε στο Zoom Meeting"
       ]
     }
   }

@@ -779,6 +779,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La prova gratuïta de l'aplicació d'escriptori finalitza el ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Comenceu des de ${ priceUnlimited }"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Millora a ${ BRAND_NAME } Unlimited"
       ]
     },
     "Action subline": {
@@ -2506,7 +2512,7 @@
         "Podeu marcar per suprimir els contactes que no voleu ni fusionar ni conservar.\nLa supressió només es farà un cop es faci clic al botó de combinació"
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
-        "El compte i els mètodes de recuperació de dades estan definits i el 2FA està habilitat."
+        "El compte i els mètodes de recuperació de dades estan definits i el 2FA està activat."
       ],
       "Your account and data recovery methods are set.": [
         "El compte i els mètodes de recuperació de dades estan definits."
@@ -2537,7 +2543,7 @@
     },
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
-        "L'esdeveniment pertany a un calendari deshabilitat."
+        "L'esdeveniment pertany a un calendari desactivat."
       ]
     },
     "Don't ask to update timezone checkbox label": {
@@ -2893,7 +2899,7 @@
         "El domini no està disponible, torneu-ho a provar més tard"
       ],
       "Email address disabled": [
-        "Correu electrònic deshabilitada"
+        "Correu electrònic desactivada"
       ],
       "Email address is required": [
         "L'adreça de correu electrònic és obligatòria."
@@ -3945,16 +3951,16 @@
         "${ BRAND_NAME } no es pot connectar al vostre compte de Yahoo. Assegureu-vos que:"
       ],
       "2-step verification is enabled in your external account.": [
-        "La verificació en dos passos està habilitada al vostre compte extern."
+        "La verificació en dos passos està activada al vostre compte extern."
       ],
       "2-step verification is enabled in your external email account.": [
-        "La verificació en dos passos està habilitada al vostre compte de correu electrònic extern."
+        "La verificació en dos passos està activada al vostre compte de correu electrònic extern."
       ],
       "IMAP access is enabled in your external account.": [
-        "L'accés IMAP està habilitat al vostre compte extern."
+        "L'accés IMAP està activat al vostre compte extern."
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        "L’accés IMAP està habilitat al vostre compte de Yahoo."
+        "L’accés IMAP està activat al vostre compte de Yahoo."
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Masses peticions recents. Torneu-ho a provar d'aquí a una estona."
@@ -4231,7 +4237,7 @@
         "Opcions addicionals"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "La verificació d'adreça amb claus de confiança està habilitada per a aquesta adreça. Per tal de poder enviar a aquesta adreça, verifiqueu la confiança en les claus públiques que es poden utilitzar per enviar."
+        "La verificació d'adreça amb claus de confiança està activada per a aquesta adreça. Per tal de poder enviar a aquesta adreça, verifiqueu la confiança en les claus públiques que es poden utilitzar per enviar."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Tot (${ totalFoldersCount } carpeta)",
@@ -4829,7 +4835,7 @@
         "El procés de verificació obrirà una pestanya nova del navegador. Desactiveu els bloquejadors de finestres emergents actius."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Aquesta adreça està inhabilitada. Per tal de poder enviar-hi, el propietari l'ha d'activar en primer lloc."
+        "Aquesta adreça està inactivada. Per tal de poder enviar-hi, el propietari l'ha d'activar en primer lloc."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
         "L'organitzador ha actualitzat aquest esdeveniment. Voleu canviar la vostra resposta només per a aquesta ocurrència de la sèrie?"
@@ -5846,7 +5852,7 @@
     },
     "Log preference": {
       "Enable ${ reason }": [
-        "Habilita ${ reason }"
+        "Activa ${ reason }"
       ]
     },
     "Mail import summary": {
@@ -6180,6 +6186,9 @@
       ],
       "Upgrade now": [
         "Millora ara"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Comenceu des de ${ priceMailPlus }"
       ]
     },
     "new_plans: action": {
@@ -6599,6 +6608,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
+      ],
+      "Phone support (20+ users)": [
+        "Suport telefònic (a partir de 20 usuaris)"
+      ],
+      "Proofread and refine your emails": [
+        "Corregiu i refineu els vostres correus electrònics"
       ]
     },
     "new_plans: feature info": {
@@ -6762,7 +6777,7 @@
         "Creeu fins a ${ n } adreces de correu electrònic o àlies que podeu assignar als membres de la família. Utilitzeu-los per a les identitats en línia, p. ex., JoanCompres@${ domain } per als comptes de compres."
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a habilitar un control d'accés més optimitzat"
+        "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a activar un control d'accés més optimitzat"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defensa contra les amenaces a la privacitat de la VPN passant el vostre trànsit d'internet a través de múltiples servidors"
@@ -6977,7 +6992,7 @@
         "${ reason } s'ha desactivat"
       ],
       "${ reason } has been enabled": [
-        "S'ha habilitat ${ reason } "
+        "S'ha activat ${ reason } "
       ],
       "Contact group created": [
         "Grup de contactes creat"
@@ -6987,6 +7002,9 @@
       ],
       "Link copied to clipboard": [
         "S'ha copiat l'enllaç al porta-retalls."
+      ],
+      "Passcode copied to clipboard": [
+        "El codi d'accés s'ha copiat al porta-retalls."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -7319,7 +7337,7 @@
         "Número de la targeta"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
-        "Actualment, la renovació automàtica de la subscripció està desactivada. Si canvieu la subscripció ara, es tornarà a habilitar la renovació automàtica."
+        "Actualment, la renovació automàtica de la subscripció està desactivada. Si canvieu la subscripció ara, es tornarà a activar la renovació automàtica."
       ],
       "CVC": [
         "CVC"
@@ -7928,7 +7946,7 @@
         "S'ha produït un error de verificació de la signatura"
       ],
       "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
-        "Heu habilitat la verificació d'adreces per a ${ boldSenderEmail }. No hem pogut verificar l'autenticitat d'aquesta invitació de calendari. Això pot ser degut a canvis en les claus de xifratge d'aquest contacte. Comproveu-ne les preferències avançades de PGP o sol·liciteu una nova invitació a ${ boldSenderEmail }."
+        "Heu activat la verificació d'adreces per a ${ boldSenderEmail }. No hem pogut verificar l'autenticitat d'aquesta invitació de calendari. Això pot ser degut a canvis en les claus de xifratge d'aquest contacte. Comproveu-ne les preferències avançades de PGP o sol·liciteu una nova invitació a ${ boldSenderEmail }."
       ]
     },
     "Signing preference for emails": {
@@ -8097,6 +8115,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "El preu estàndard és ${ amount } durant 30 mesos"
+      ],
+      "/month": [
+        "/mes"
       ]
     },
     "specialoffer: Title": {
@@ -8704,7 +8725,7 @@
         "Desactiva"
       ],
       "Enable auto-pay support": [
-        "Habilita el suport de pagament automàtic"
+        "Activa el suport de pagament automàtic"
       ],
       "Keep auto-pay": [
         "Mantén el pagament automàtic"
@@ -8897,6 +8918,9 @@
       ],
       "You have successfully unsubscribed": [
         "Heu anul·lat la subscripció amb èxit"
+      ],
+      "Problem reported": [
+        "S'ha notificat el problema."
       ]
     },
     "Suffix": {
@@ -10080,6 +10104,65 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada any, ${ untilString }"
+      ]
+    },
+    "Downgrade warning": {
+      "Remove discount": [
+        "Suprimeix el descompte"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Uniu-vos a Google Meet"
+      ],
+      "Joining instructions": [
+        "Instruccions per unir-se"
+      ],
+      "Less details": [
+        "Menys detalls"
+      ],
+      "Meeting link:": [
+        "Enllaç de la reunió:"
+      ],
+      "More details": [
+        "Més detalls"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } administrador",
+        "${ admins } administradors"
+      ],
+      "${ users } user": [
+        "${ users } usuari",
+        "${ users } usuaris"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Obtingueu Mail Plus per ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Comenceu des de ${ price }"
+      ]
+    },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Més ràpid a l'aplicació"
+      ],
+      "Private, fast, and organized": [
+        "Privat, ràpid i organitzat"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Uniu-vos la reunió de Zoom"
+      ],
+      "Meeting ID:": [
+        "Identificador de la reunió:"
+      ],
+      "Passcode: ${ password }": [
+        "Codi d'accés: ${ password }"
       ]
     }
   }

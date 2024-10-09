@@ -754,6 +754,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "デスクトップアプリの無料トライアルは ${ formattedEndDate } で終了します。${ upgradeButton }"
+      ],
+      "Collapse navigation bar": [
+        "ナビゲーションバーを閉じる"
+      ],
+      "Display navigation bar": [
+        "ナビゲーションバーを表示する"
+      ],
+      "Show navigation bar": [
+        "ナビゲーションバーを表示する"
       ]
     },
     "Action subline": {
@@ -2205,6 +2214,18 @@
       ],
       "Åland Islands": [
         "オーランド諸島"
+      ],
+      "Islamic Republic of Iran": [
+        "イラン"
+      ],
+      "Korea (Democratic People's Republic of)": [
+        "北朝鮮"
+      ],
+      "Korea (Republic of)": [
+        "韓国"
+      ],
+      "Lao People's Democratic Republic": [
+        "ラオス"
       ]
     },
     "Country select label": {
@@ -2451,6 +2472,9 @@
     "duoplan2024: Info": {
       "1 TB storage": [
         "1 TB のストレージ"
+      ],
+      "2 users": [
+        "2 ユーザー"
       ]
     },
     "Duplicate event button tooltip": {
@@ -2959,6 +2983,9 @@
       ],
       "Your import will not be processed.": [
         "インポートできませんでした。"
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "コンテンツ検索を有効にできません。アプリケーションを再起動するか、データを消去してください。"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4785,6 +4812,12 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "システムのタイムゾーンが${ timezone }に変更されたようです。タイムゾーンの設定を更新しますか？"
+      ],
+      "Please try again in a few moments": [
+        "しばらくしてからもう一度お試しください"
+      ],
+      "Version number successfully copied to clipboard": [
+        "バージョン番号がクリップボードにコピーされました"
       ]
     },
     "info": {
@@ -6138,6 +6171,24 @@
       ],
       "Vault sharing (up to ${ n } person)": [
         "保管庫の共有 (最大 ${ n } 人)"
+      ],
+      "10 email addresses/aliases": [
+        "10 件のメールアドレス / エイリアス"
+      ],
+      "10-year file version history": [
+        "10 年間のファイルバージョン履歴"
+      ],
+      "Email groups": [
+        "メールグループ"
+      ],
+      "Password manager": [
+        "パスワードマネージャー"
+      ],
+      "User storage management": [
+        "ユーザーストレージ管理"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "ダークウェブをスキャンして、あなたの ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
       ]
     },
     "new_plans: feature info": {
@@ -6149,6 +6200,9 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
+      ],
+      "1 custom email domain": [
+        "1 件の独自メールドメイン"
       ]
     },
     "new_plans: heading": {
@@ -6763,7 +6817,7 @@
         "アクセスが拒否されました。管理者権限は制限されています。"
       ],
       "The organization key must be activated first.": [
-        "組織の鍵を最初に有効にする必要があります。"
+        "まず、組織の鍵を有効にする必要があります。"
       ],
       "You need access to the organization key to perform this operation.": [
         "この操作を実行するには、組織キーにアクセスする必要があります。"
@@ -7150,6 +7204,18 @@
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "アカウント ${ boldEmail } のパスワードを、あと ${ boldDaysRemaining } 日間は自由に変更可能です。"
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "${ timeRemaining.inDays } 日後にパスワードをリセットできます。"
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        " ${ timeRemaining.inHours } 時間後にパスワードをリセットできます。"
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        " ${ timeRemaining.inMinutes } 分後にパスワードをリセットできます。"
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        " ${ timeRemaining.inSeconds } 秒後にパスワードをリセットできます。"
       ]
     },
     "session_recovery:available:link": {
@@ -7573,6 +7639,9 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "無制限のログインとメモ、無制限のhide-my-email エイリアス、20 個の保管庫、および優先サポートにアクセスできなくなります。"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "ファイルをアップロードまたは同期するには、容量を空けるか ${ upgrade } してください"
       ]
     },
     "Subscribe to calendar modal": {
@@ -7773,6 +7842,27 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
+      ],
+      "2 users": [
+        "2 ユーザー"
+      ],
+      "Desktop app and email client support (via IMAP)": [
+        "デスクトップアプリとメールクライアントのサポート (IMAP 経由)"
+      ],
+      "Extra storage and users": [
+        "追加のストレージとユーザー"
+      ],
+      "Invited members will be removed from your organization": [
+        "招待メンバーは組織から削除されます"
+      ],
+      "Users won’t be able to manage their calendars": [
+        "ユーザーは自分のカレンダーを管理できません"
+      ],
+      "Users won’t be able to send emails": [
+        "ユーザーはメールを送信できません"
+      ],
+      "Users won’t be able to sync files on their devices": [
+        "ユーザーは自分のデバイス上のファイルを同期できません"
       ]
     },
     "subscription reminder": {
@@ -7784,6 +7874,12 @@
       ],
       "Upgrade": [
         "アップグレード"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
       ]
     },
     "Subscription renewal state": {
@@ -9088,6 +9184,30 @@
       ],
       "Yearly, ${ untilString }": [
         "毎年、${ untilString }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "Double your storage": [
+        "ストレージを 2 倍にしましょう"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } はキャンセルされました。"
+      ],
+      "This event was updated.": [
+        "この予定は更新されました。"
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "この予定は更新されました。変更点は下記の通りです。\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "${ eventTitle } に招待されました。\n\n${ eventDetailsText }"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure vault sharing": [
+        "安全な保管庫共有"
       ]
     }
   }

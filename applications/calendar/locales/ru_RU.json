@@ -5359,6 +5359,9 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Похоже, что ваш часовой пояс изменился на ${ timezone }. Вы хотите обновить настройки часового пояса?"
+      ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Контакт откреплен от группы ${ contactGroupName }"
       ]
     },
     "info": {
@@ -10698,6 +10701,14 @@
       ],
       "Yearly, ${ untilString }": [
         "Ежегодно ${ untilString }"
+      ]
+    },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Быстрее в приложении"
+      ],
+      "Private, fast, and organized": [
+        "Приватный, быстрый и организованный"
       ]
     }
   }

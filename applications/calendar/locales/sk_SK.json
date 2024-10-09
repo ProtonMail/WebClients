@@ -787,6 +787,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bezplatná skúšobná verzia desktopovej aplikácie končí dňa ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Cena od ${ priceUnlimited }"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Navýšiť na ${ BRAND_NAME } Unlimited"
       ]
     },
     "Action subline": {
@@ -2558,6 +2564,18 @@
       ],
       "Your account and data recovery methods are set.": [
         "Váš účet a metódy obnovy údajov sú nastavené."
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } chráni váš účet pomocou nepretržitého monitorovania podozrivých aktivít - vrátane eskalácie na bezpečnostných špecialistov."
+      ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "Farebne označte udalosti, aby ste si ľahšie zorganizovali deň, sledovali čas a určovali priority úloh."
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Pomocou skupín kontaktov môžete posielať emaily všetkým členom skupiny jedným kliknutím."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -5359,6 +5377,12 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Zdá sa, že vaše systémové časové pásmo sa zmenilo na ${ timezone }. Chcete aktualizovať nastavenia časového pásma?"
+      ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Kontakt bol odobraný zo skupiny ${ contactGroupName }"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Chystáte sa otvoriť váš predvolený prehliadač a navštíviť:"
       ]
     },
     "info": {
@@ -6430,6 +6454,12 @@
       ],
       "Upgrade now": [
         "Aktualizovať teraz"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Cena od ${ priceMailPlus }"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Navýšte na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7045,6 +7075,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Získajte Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Cena od ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7347,6 +7380,9 @@
       ],
       "Link copied to clipboard": [
         "Odkaz bol skopírovaný do schránky"
+      ],
+      "Passcode copied to clipboard": [
+        "Prístupový kód skopírovaný do schránky"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8566,6 +8602,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Štandardná cena ${ amount } na 30 mesiacov"
+      ],
+      "/month": [
+        "/mesiac"
       ]
     },
     "specialoffer: Title": {
@@ -10053,6 +10092,12 @@
       ],
       "Your exposed information": [
         "Vaše odhalené informácie"
+      ],
+      "High security for your account": [
+        "Vysoké zabezpečenie vášho účtu"
+      ],
+      "One email, many recipients": [
+        "Jeden email, množstvo príjemcov"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10698,6 +10743,42 @@
       ],
       "Yearly, ${ untilString }": [
         "Ročne, ${ untilString }"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Pripojiť sa ku Google Meet"
+      ],
+      "Joining instructions": [
+        "Pokyny na pripojenie"
+      ],
+      "Less details": [
+        "Menej detailov"
+      ],
+      "Meeting link:": [
+        "Odkaz na schôdzku:"
+      ],
+      "More details": [
+        "Viac detailov"
+      ]
+    },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Rýchlejší v aplikácii"
+      ],
+      "Private, fast, and organized": [
+        "Súkromný, rýchly a organizovaný"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Pripojte sa k stretnutiu na Zoome"
+      ],
+      "Meeting ID:": [
+        "ID schôdzky:"
+      ],
+      "Passcode: ${ password }": [
+        "Prístupový kód: ${ password }"
       ]
     }
   }

@@ -779,6 +779,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "De gratis proefperiode van uw desktop programma loopt af op ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Vanaf ${ priceUnlimited }"
       ]
     },
     "Action subline": {
@@ -2513,6 +2516,12 @@
       ],
       "Your account and data recovery methods are set.": [
         "Uw account en dataherstelmethodes zijn ingesteld."
+      ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Bespaar tijd door met contactgroepen iedereen tegelijk e-mails te sturen. Ontgrendel deze en andere premium-functies wanneer u upgrade."
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Met contactgroepen kunt u met één klik e-mails verzenden naar iedereen in de groep."
       ]
     },
     "description": {
@@ -3459,6 +3468,9 @@
       ],
       "You need an active personal calendar to import events": [
         "U heeft een actieve persoonlijke agenda nodig om uw afspraken te importeren"
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Wanneer extra wachtwoord is ingeschakeld, kan aliasbeheer alleen worden gedaan in ${ PASS_APP_NAME }."
       ]
     },
     "Error notification": {
@@ -5173,6 +5185,15 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Uw systeemtijdzone lijkt te zijn veranderd naar ${ timezone }. Wilt u uw voorkeur voor uw tijdzone bijwerken?"
+      ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Contact verwijderd uit groep ${ contactGroupName }"
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Met onze meldingen nemen we het zekere voor het onzekere. Als je de geschonden informatie niet herkent, kun je deze melding veilig negeren."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Houd er rekening mee dat, wanneer u op de knop Bevestigen klikt, uw account nog ${ remainingCreditsFormatted } credits over heeft."
       ]
     },
     "info": {
@@ -6218,6 +6239,12 @@
       ],
       "Upgrade now": [
         "Upgrade nu"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Vanaf ${ priceMailPlus }"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Upgrade naar ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6663,6 +6690,24 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Voor ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Voor alle ${ BRAND_NAME } diensten"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Alle basisdiensten van ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Alle premium ${ BRAND_NAME }-services. Eén simpel abonnement"
+      ],
+      "Custom and secure business email": [
+        "Aangepaste en veilige zakelijke e-mail"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Onbeperkte gedeelde ${ PASS_SHORT_APP_NAME } kluizen per gebruiker"
       ]
     },
     "new_plans: feature info": {
@@ -6674,6 +6719,9 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
+      ],
+      "1 custom email domain": [
+        "1 eigen e-maildomein"
       ]
     },
     "new_plans: heading": {
@@ -6762,6 +6810,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Bescherm gevoelige bedrijfsinformatie en werk veilig samen."
       ]
     },
     "new_plans: title": {
@@ -6983,6 +7034,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "U kunt meerdere beheerders hebben. Alle beheerders kunnen gebruikers toevoegen en beheren, maar alleen de primaire beheerder kan de facturatie beheren."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Telefonische ondersteuning is beschikbaar van de ${ BRAND_NAME } klantenondersteuning tijdens Europese kantoortijden voor klanten met 20 of meer gebruikers."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -7435,6 +7489,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "We verwerken uw betaling voor de factuur. Wacht tot de betaling is voltooid voordat u uw abonnement wijzigt of betalingsgegevens bijwerkt. Dank u voor uw geduld."
+      ],
+      "More plans are available in other currencies": [
+        "Er zijn meer abonnementen beschikbaar in andere valuta"
       ]
     },
     "Payments.Error": {
@@ -8168,6 +8225,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Standaardprijs ${ amount } voor 30 maanden"
+      ],
+      "/month": [
+        "/maand"
       ]
     },
     "specialoffer: Title": {
@@ -8228,6 +8288,9 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "U kunt nu zien wanneer deelnemers vrij zijn om ana uw vergadering deel te nemen."
+      ],
+      "You can now collapse the navigation bar.": [
+        "U kunt nu de navigatiebalk inklappen."
       ]
     },
     "State": {
@@ -9315,7 +9378,7 @@
         "Versleutelde afspraak"
       ],
       "Enter 2FA code": [
-        "Voer 2FA code in"
+        "Voer 2FA-code in"
       ],
       "Enter your password": [
         "Voer uw wachtwoord in"
@@ -9599,6 +9662,9 @@
       ],
       "Your exposed information": [
         "Uw blootgestelde informatie"
+      ],
+      "High security for your account": [
+        "Hoge beveiliging voor uw account"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10157,6 +10223,61 @@
       ],
       "Yearly, ${ untilString }": [
         "Jaarlijks ${ untilString }"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Bevestig het verlies van ${ PASS_APP_NAME } speciale korting"
+      ],
+      "Remove discount": [
+        "Korting verwijderen"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Uw ${ PLAN_NAMES[PLANS.PASS] }-abonnement heeft een speciale prijs van ${ price } per jaar. Als u downgrade naar een Free abonnement, zult u permanent uw korting verliezen, zelfs als u in de toekomst opnieuw upgrade."
+      ]
+    },
+    "Google Meet": {
+      "Less details": [
+        "Minder details"
+      ],
+      "More details": [
+        "Meer details"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Krijg Mail Plus voor ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Vanaf ${ price }"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Controleer de veiligheid van uw account"
+      ]
+    },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Sneller in de app"
+      ],
+      "Private, fast, and organized": [
+        "Privé, snel en georganiseerd"
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Het abonnement zal worden gedowngradet aan het einde van de factureringscyclus."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Een veiligere/makkelijkere manier om Bitcoin te bewaren en te verzenden"
+      ]
+    },
+    "Zoom Meeting": {
+      "Passcode: ${ password }": [
+        "Toegangscode: ${ password }"
       ]
     }
   }

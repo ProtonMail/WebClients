@@ -779,6 +779,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Den gratis prøveperioden for skrivebordsappen avsluttes ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Starter fra ${ priceUnlimited }"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Oppgrader til ${ BRAND_NAME } Unlimited"
       ]
     },
     "Action subline": {
@@ -2516,6 +2522,18 @@
       ],
       "Your account and data recovery methods are set.": [
         "Dine konto- og datagjenopprettingsmetoder er angitt."
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } beskytter kontoen din med dedikert 24/7 overvåking av mistenkelig aktivitet – inkludert eskalering til sikkerhetsspesialister."
+      ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "Fargekode hendelser for å gjøre det enklere å organisere dagen din, spore tiden din og prioritere oppgaver."
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Med kontaktgrupper kan du sende e-post til alle i gruppen med ett klikk."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -5208,6 +5226,9 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Systemets tidssone ser ut til å ha endret seg til ${ timezone }. Vil du oppdatere preferansen for tidssone?"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Du er i ferd med å åpne standardnettleseren din og besøke:"
       ]
     },
     "info": {
@@ -6253,6 +6274,12 @@
       ],
       "Upgrade now": [
         "Oppgrader nå"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Starter fra ${ priceMailPlus }"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Oppgrader til ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6826,6 +6853,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Få Mail Plus for ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Starter fra ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7124,6 +7154,9 @@
       ],
       "Link copied to clipboard": [
         "Kobling kopiert til utklippstavlen"
+      ],
+      "Passcode copied to clipboard": [
+        "Passkode kopiert til utklippstavlen"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8243,6 +8276,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Standard pris ${ amount } for 30 måneder"
+      ],
+      "/month": [
+        "/måned"
       ]
     },
     "specialoffer: Title": {
@@ -9682,6 +9718,12 @@
       ],
       "Your exposed information": [
         "Din eksponerte informasjon"
+      ],
+      "High security for your account": [
+        "Høy sikkerhet for kontoen din"
+      ],
+      "One email, many recipients": [
+        "Én e-post, mange mottakere"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10245,6 +10287,42 @@
       ],
       "Yearly, ${ untilString }": [
         "Årlig, ${ untilString }"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Bli med i Google Meet"
+      ],
+      "Joining instructions": [
+        "Instruksjoner for å bli med"
+      ],
+      "Less details": [
+        "Mindre informasjon"
+      ],
+      "Meeting link:": [
+        "Møtekobling:"
+      ],
+      "More details": [
+        "Mer informasjon"
+      ]
+    },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Raskere på appen"
+      ],
+      "Private, fast, and organized": [
+        "Privat, raskt og organisert"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Bli med på Zoom-møte"
+      ],
+      "Meeting ID:": [
+        "Møte-ID:"
+      ],
+      "Passcode: ${ password }": [
+        "Passkode: ${ password }"
       ]
     }
   }

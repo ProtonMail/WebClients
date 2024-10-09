@@ -779,6 +779,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Sua avaliação gratuita do aplicativo de computador termina em ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Iniciando a partir de ${ priceUnlimited }"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Faça upgrade para ${ BRAND_NAME } Unlimited"
       ]
     },
     "Action subline": {
@@ -2519,6 +2525,18 @@
       ],
       "Your account and data recovery methods are set.": [
         "Sua conta e métodos de recuperação de dados estão definidos."
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } protege sua conta com monitoramento dedicado 24/7 de atividades suspeitas - incluindo encaminhamento para especialistas em segurança."
+      ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "Identifique os eventos com cores para facilitar a organização do seu dia, o controle do seu tempo e a priorização de tarefas."
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Com os grupos de contatos, você pode enviar e-mails para todos os membros do grupo com um clique."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -5217,6 +5235,12 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "O fuso horário de seu sistema parece ter mudado para ${ timezone }. Você deseja atualizar suas preferências de fuso horário?"
+      ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Contato não atribuído do grupo ${ contactGroupName }"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Você está prestes a abrir seu navegador padrão e visitar:"
       ]
     },
     "info": {
@@ -6268,6 +6292,12 @@
       ],
       "Upgrade now": [
         "Fazer upgrade agora"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Iniciando a partir de ${ priceMailPlus }"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Faça upgrade para ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6844,6 +6874,9 @@
       ],
       "VPN Enterprise": [
         "VPN Enterprise"
+      ],
+      "Starting from ${ price }": [
+        "A partir de ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7142,6 +7175,9 @@
       ],
       "Link copied to clipboard": [
         "Link copiado para área de transferência"
+      ],
+      "Passcode copied to clipboard": [
+        "Código de acesso copiado para a área de transferência"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8267,6 +8303,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Preço padrão ${ amount } por 30 meses"
+      ],
+      "/month": [
+        "/mês"
       ]
     },
     "specialoffer: Title": {
@@ -9422,7 +9461,7 @@
         "Evento criptografado"
       ],
       "Enter 2FA code": [
-        "Insira o código 2FA"
+        "Insira o código A2F"
       ],
       "Enter your password": [
         "Digite sua senha"
@@ -9706,6 +9745,12 @@
       ],
       "Your exposed information": [
         "Sua informação exposta"
+      ],
+      "High security for your account": [
+        "Segurança elevada para sua conta"
+      ],
+      "One email, many recipients": [
+        "Um e-mail, muitos destinatários"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10269,6 +10314,42 @@
       ],
       "Yearly, ${ untilString }": [
         "Anualmente, ${ untilString }"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Participe do Google Meet"
+      ],
+      "Joining instructions": [
+        "Instruções de acesso"
+      ],
+      "Less details": [
+        "Menos detalhes"
+      ],
+      "Meeting link:": [
+        "Link da reunião:"
+      ],
+      "More details": [
+        "Mais detalhes"
+      ]
+    },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Mais rápido no aplicativo"
+      ],
+      "Private, fast, and organized": [
+        "Confidencial, rápido e organizado"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Participe da reunião com Zoom"
+      ],
+      "Meeting ID:": [
+        "ID da reunião:"
+      ],
+      "Passcode: ${ password }": [
+        "Código de acesso: ${ password }"
       ]
     }
   }

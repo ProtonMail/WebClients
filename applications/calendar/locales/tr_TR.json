@@ -779,6 +779,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Masaüstü uygulaması ücretsiz deneme sürümünüz ${ formattedEndDate } tarihinde sona erecek. ${ upgradeButton }"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "${ priceUnlimited } tutarından başlayan fiyatlarla"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited tarifesine yükseltin"
       ]
     },
     "Action subline": {
@@ -2516,6 +2522,18 @@
       ],
       "Your account and data recovery methods are set.": [
         "Hesabınızı ve verilerinizi kurtarma yöntemleri ayarlandı."
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME }, şüpheli etkinlikleri 7/24 izleyerek ve güvenlik uzmanlarına ileterek hesabınızı korur."
+      ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "Gününüzü daha kolay düzenlemek, zaman planınızı izlemek ve görevleri öncelik sırasına koymak için etkinliklere renk kodları verin."
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Kişi grupları ile gruptaki herkese tek tıklamayla e-posta gönderebilirsiniz."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
       ]
     },
     "description": {
@@ -5208,6 +5226,9 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Sistem saat diliminiz ${ timezone } olarak değişmiş gibi görünüyor. Saat dilimi ayarınızı güncellemek ister misiniz?"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Varsayılan tarayıcınızı açarak şu adrese gitmek üzeresiniz:"
       ]
     },
     "info": {
@@ -6253,6 +6274,12 @@
       ],
       "Upgrade now": [
         "Şimdi yükselt"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "${ priceMailPlus } tutarından başlayan fiyatlarla"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "${ MAIL_SHORT_APP_NAME } Plus tarifesine yükseltin"
       ]
     },
     "new_plans: action": {
@@ -6826,6 +6853,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "${ price } ile Mail Plus edinin"
+      ],
+      "Starting from ${ price }": [
+        "${ price } tutarından başlayan fiyatlarla"
       ]
     },
     "new_plans: title": {
@@ -7037,7 +7067,7 @@
         "Dilerseniz siz@sirketiniz.com gibi kendi etki alanınızla e-posta adresleri oluşturun"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "Çevrim içi yaptıklarınızla ilgili oturum kullanım günlükleri tutmuyoruz ve gizliliğinizi tehlikeye atabilecek üst verilerin kaydını tutmuyoruz"
+        "Çevrim içi yaptıklarınızla ilgili oturum kullanım günlüğü ve gizliliğinizi tehlikeye atabilecek üst verilerin kaydını tutmuyoruz"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "HIPAA/HITECH düzenlemelerine tabi olan müşterilere, korunan sağlık bilgilerini (PHI) koruma konusunda yardımcı olmaya kararlıyız. İmzalı BAA sözleşmeleri, tüm ${ BRAND_NAME } for Business müşterileri tarafından kullanılabilir."
@@ -7124,6 +7154,9 @@
       ],
       "Link copied to clipboard": [
         "Bağlantı panoya kopyalandı"
+      ],
+      "Passcode copied to clipboard": [
+        "Geçiş kodu panoya kopyalandı"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -7803,7 +7836,7 @@
     },
     "Security Center - Action": {
       "View logs": [
-        "Günlükleri görüntüle"
+        "Günlüğü görüntüle"
       ]
     },
     "Security Center - Info": {
@@ -8243,6 +8276,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "30 aylık standart ücret ${ amount }"
+      ],
+      "/month": [
+        "/ay"
       ]
     },
     "specialoffer: Title": {
@@ -9682,6 +9718,12 @@
       ],
       "Your exposed information": [
         "Açığa çıkmış bilgileriniz"
+      ],
+      "High security for your account": [
+        "Hesabınız için yüksek güvenlik"
+      ],
+      "One email, many recipients": [
+        "Bir e-posta adresi, çok sayıda alıcı"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10245,6 +10287,42 @@
       ],
       "Yearly, ${ untilString }": [
         "Yılda bir, ${ untilString }"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Google Meet görüşmesine katıl"
+      ],
+      "Joining instructions": [
+        "Katılma yönergesi"
+      ],
+      "Less details": [
+        "Ayrıntıları gizle"
+      ],
+      "Meeting link:": [
+        "Toplantı bağlantısı"
+      ],
+      "More details": [
+        "Ayrıntıları görüntüle"
+      ]
+    },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Uygulamada daha hızlı"
+      ],
+      "Private, fast, and organized": [
+        "Gizli, hızlı ve düzenli"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Zoom toplantısına katıl"
+      ],
+      "Meeting ID:": [
+        "Toplantı kimliği:"
+      ],
+      "Passcode: ${ password }": [
+        "Geçiş kodu: ${ password }"
       ]
     }
   }

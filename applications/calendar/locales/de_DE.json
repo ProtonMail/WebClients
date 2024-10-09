@@ -779,6 +779,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Deine kostenlose Testversion der Desktop-App endet am ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Ab ${ priceUnlimited }"
       ]
     },
     "Action subline": {
@@ -6247,6 +6250,9 @@
       ],
       "Upgrade now": [
         "Jetzt upgraden"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Ab ${ priceMailPlus }"
       ]
     },
     "new_plans: action": {
@@ -6820,6 +6826,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Hol dir Mail Plus für ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Ab ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7115,6 +7124,9 @@
       ],
       "Link copied to clipboard": [
         "Link in die Zwischenablage kopiert"
+      ],
+      "Passcode copied to clipboard": [
+        "Passcode in die Zwischenablage kopiert."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8231,6 +8243,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Standardpreis: ${ amount } für 30 Monate"
+      ],
+      "/month": [
+        "/ Monat"
       ]
     },
     "specialoffer: Title": {
@@ -10233,6 +10248,27 @@
       ],
       "Yearly, ${ untilString }": [
         "Jährlich, ${ untilString }"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Google Meet beitreten"
+      ],
+      "Meeting link:": [
+        "Meeting-Link:"
+      ]
+    },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Schneller in der App"
+      ],
+      "Private, fast, and organized": [
+        "Privat, schnell, und organisiert"
+      ]
+    },
+    "Zoom Meeting": {
+      "Passcode: ${ password }": [
+        "Passcode: ${ password }"
       ]
     }
   }

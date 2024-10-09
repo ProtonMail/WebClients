@@ -779,6 +779,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din gratis provperiod av din app för stationär dator slutar den ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Startar från ${ priceUnlimited }"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Uppgradera till ${ BRAND_NAME } Unlimited"
       ]
     },
     "Action subline": {
@@ -2511,6 +2517,15 @@
       ],
       "Your account and data recovery methods are set.": [
         "Ditt konto och dina dataåterställningsmetoder är inställda."
+      ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "Färgkoda händelser för att göra det enklare att organisera din dag, spåra din tid och prioritera uppgifter."
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Med kontaktgrupper kan du skicka e-post till alla i gruppen med ett klick."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -2598,6 +2613,9 @@
     "Downgrade warning": {
       "Remove discount": [
         "Ta bort rabatt"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Din ${ PLAN_NAMES[PLANS.PASS] }-prenumeration är till ett specialpris på ${ price } per år. Genom att nedgradera till ett Free-paket kommer du förlora rabatten permanent, även om du uppgraderar igen i framtiden."
       ]
     },
     "driveplus2024: Deal details": {
@@ -5189,6 +5207,9 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Din systemtidszon verkar ha ändrats till ${ timezone }. Vill du uppdatera din tidszons preferens?"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Du är på väg att öppna din standardwebbläsare och besöka:"
       ]
     },
     "info": {
@@ -6237,6 +6258,12 @@
       ],
       "Upgrade now": [
         "Uppgradera nu"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Startar från ${ priceMailPlus }"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Uppgradera till ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6807,6 +6834,9 @@
       ],
       "VPN Enterprise": [
         "VPN Enterprise"
+      ],
+      "Starting from ${ price }": [
+        "Startar från ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7028,6 +7058,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Du kan ha mer än en administratör. Alla administratörer kan lägga till och hantera användare men endast den primära administratören har kontroll över fakturering."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Telefonsupport är tillgänglig från ${ BRAND_NAME } kundsupportteam under europeiska öppettider, för kunder med 20 eller fler användare"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -7102,6 +7135,9 @@
       ],
       "Link copied to clipboard": [
         "Länk kopierad till urklipp"
+      ],
+      "Passcode copied to clipboard": [
+        "Lösenkod kopierat till urklipp"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8224,6 +8260,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Ordinarie pris ${ amount } för 30 månader"
+      ],
+      "/month": [
+        "/månad"
       ]
     },
     "specialoffer: Title": {
@@ -9648,6 +9687,12 @@
       ],
       "Your exposed information": [
         "Din exponerade information"
+      ],
+      "High security for your account": [
+        "Hög säkerhet för ditt konto"
+      ],
+      "One email, many recipients": [
+        "En e-post, många mottagare"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10203,6 +10248,42 @@
     "Yearly recurring event, frequency (until)": {
       "Yearly, ${ untilString }": [
         "Årligen, ${ untilString }"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Gå med i Google Meet"
+      ],
+      "Joining instructions": [
+        "Instruktioner för att gå med"
+      ],
+      "Less details": [
+        "Mindre detaljer"
+      ],
+      "Meeting link:": [
+        "Möteslänk:"
+      ],
+      "More details": [
+        "Mer detaljer"
+      ]
+    },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Snabbare på appen"
+      ],
+      "Private, fast, and organized": [
+        "Privat, snabbt och organiserat"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Gå med i Zoom-mötet"
+      ],
+      "Meeting ID:": [
+        "Mötes-ID:"
+      ],
+      "Passcode: ${ password }": [
+        "Lösenkod: ${ password }"
       ]
     }
   }

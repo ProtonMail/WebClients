@@ -6758,6 +6758,18 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Pregledujemo temni splet in preverjamo, ali so bili razkriti naslovi ali vzdevki ${ BRAND_NAME }. V primeru uhajanja podatkov vas bomo o tem obvestili."
+      ],
+      "15 GB storage": [
+        "15 GB prostora za shranjevanje"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Vse premijske storitve ${ BRAND_NAME }. Ena preprosta naročnina"
+      ],
+      "Generate emails with a prompt": [
+        "Ustvarite e-pošto s pozivom"
+      ],
+      "Phone support (20+ users)": [
+        "Telefonska podpora (20+ uporabnikov)"
       ]
     },
     "new_plans: feature info": {
@@ -8328,6 +8340,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Običajna cena ${ amount } za 30 mesecev"
+      ],
+      "/month": [
+        "/mesec"
       ]
     },
     "specialoffer: Title": {
@@ -8814,6 +8829,9 @@
       ],
       "Your own short @pm.me email alias": [
         "Vaš kratek e-poštni vzdevek @pm.me"
+      ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } z ${ DARK_WEB_MONITORING_NAME }"
       ]
     },
     "subscription reminder": {
@@ -10328,6 +10346,16 @@
       ],
       "Yearly, ${ untilString }": [
         "Letno, ${ untilString }"
+      ]
+    },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Pridobi ${ BRAND_NAME } Duo"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Predstavljamo ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     }
   }

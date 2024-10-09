@@ -5282,6 +5282,9 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Fusul orar al sistemului pare să se fi schimbat la ${ timezone }. Actualizați fusul orar preferat?"
+      ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Contactul a fost eliminat din grupul ${ contactGroupName }."
       ]
     },
     "info": {
@@ -10470,6 +10473,14 @@
       ],
       "Yearly, ${ untilString }": [
         "Anual, ${ untilString }"
+      ]
+    },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Mai rapid în aplicație"
+      ],
+      "Private, fast, and organized": [
+        "Privat, rapid și organizat"
       ]
     }
   }

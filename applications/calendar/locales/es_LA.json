@@ -779,6 +779,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La prueba gratuita de la aplicación de escritorio finaliza en ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "A partir de ${ priceUnlimited }"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Mejore a ${ BRAND_NAME } Unlimited"
       ]
     },
     "Action subline": {
@@ -2516,6 +2522,18 @@
       ],
       "Your account and data recovery methods are set.": [
         "Se establecieron los métodos de recuperación de datos y cuenta."
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } protege su cuenta con monitoreo dedicado 24/7 de actividades sospechosas, incluyendo la intervención de especialistas en seguridad."
+      ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "Los eventos con códigos de colores ayudan a organizar su día más fácilmente, seguir el tiempo y priorizar tareas."
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Con los grupos de contactos, puede enviar correos electrónicos a todos los miembros del grupo con un clic."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
       ]
     },
     "description": {
@@ -3695,6 +3713,12 @@
       ],
       "Your cannot accept this invitation with your current plan.": [
         "No puede aceptar esta invitación con el plan actual."
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Tiene facturas sin pagar. Por favor, páguelas antes de unirse a un plan familiar."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Está invitado a vincular la cuenta de ${ BRAND_NAME } a este plan familiar y disfrutar juntos de todas las funciones premium de ${ brandOrAppName }."
       ]
     },
     "familyOffer_2023:Label": {
@@ -5208,6 +5232,9 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "La zona horaria del sistema parece haber cambiado a ${ timezone }. ¿Quiere actualizar la preferencia de zona horaria?"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Está a punto de abrir su navegador por defecto y consultar:"
       ]
     },
     "info": {
@@ -6256,6 +6283,12 @@
       ],
       "Upgrade now": [
         "Mejorar ahora"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "A partir de ${ priceMailPlus }"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Mejora a ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6719,6 +6752,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si sus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarle de inmediato si encontramos algo."
+      ],
+      "Secure link sharing": [
+        "Uso compartido seguro de enlaces"
       ]
     },
     "new_plans: feature info": {
@@ -6829,6 +6865,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Obtenga Mail Plus por ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "A partir de ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7053,6 +7092,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Puede tener varios administradores. Todos tienen permiso para añadir y gestionar usuarios, pero solo el administrador principal puede controlar la facturación."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Comparta elementos aislados de forma segura con cualquiera (aunque no use ${ PASS_APP_NAME })"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -7127,6 +7169,9 @@
       ],
       "Link copied to clipboard": [
         "Enlace copiado al portapapeles"
+      ],
+      "Passcode copied to clipboard": [
+        "Código de acceso copiado al portapapeles"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8246,6 +8291,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Precio estándar ${ amount } durante 30 meses"
+      ],
+      "/month": [
+        "/mes"
       ]
     },
     "specialoffer: Title": {
@@ -9685,6 +9733,12 @@
       ],
       "Your exposed information": [
         "Sus datos expuestos"
+      ],
+      "High security for your account": [
+        "Alta seguridad para su cuenta"
+      ],
+      "One email, many recipients": [
+        "Un correo electrónico, varios destinatarios"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10248,6 +10302,66 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada año hasta ${ untilString }"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Unirse a Google Meet"
+      ],
+      "Joining instructions": [
+        "Instrucciones para unirse"
+      ],
+      "Less details": [
+        "Menos detalles"
+      ],
+      "Meeting link:": [
+        "Enlace de la reunión:"
+      ],
+      "More details": [
+        "Más detalles"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } administrador",
+        "${ admins } administradores"
+      ],
+      "${ users } user": [
+        "${ users } usuario",
+        "${ users } usuarios"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } cuenta de usuario",
+        "${ n } cuentas de usuario"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Oferta exclusiva disponible solo para los primeros seguidores de ${ PASS_APP_NAME }."
+      ],
+      "Limited-time deal.": [
+        "Oferta por tiempo limitado."
+      ]
+    },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Más rápido en la aplicación"
+      ],
+      "Private, fast, and organized": [
+        "Privado, rápido y organizado"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Unirse a la reunión de Zoom"
+      ],
+      "Meeting ID:": [
+        "Identificador de la reunión:"
+      ],
+      "Passcode: ${ password }": [
+        "Código de acceso: ${ password }"
       ]
     }
   }

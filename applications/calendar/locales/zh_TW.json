@@ -775,6 +775,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "${ priceUnlimited }起"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "升級至${ BRAND_NAME }無限版"
       ]
     },
     "Action subline": {
@@ -2582,6 +2588,9 @@
     "Downgrade warning": {
       "Remove discount": [
         "移除折扣"
+      ],
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "確認失去${ PASS_APP_NAME }的特別折扣"
       ]
     },
     "driveplus2024: Deal details": {
@@ -7288,6 +7297,9 @@
       ],
       "Timeout exceeded": [
         "已經逾時"
+      ],
+      "More plans are available in other currencies": [
+        "其他貨幣有更多的方案"
       ]
     },
     "Payments.Error": {
@@ -8423,6 +8435,12 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
+      ],
+      "See your colleagues’ availability": [
+        "瀏覽您的同事時間"
+      ],
+      "Users won’t be able to sync files on their devices": [
+        "用戶不能在他們的裝置同步文件"
       ]
     },
     "subscription reminder": {
@@ -9793,6 +9811,14 @@
       ],
       "Yearly, ${ untilString }": [
         "每年，${ untilString }"
+      ]
+    },
+    "SmartBanner": {
+      "Faster on the app": [
+        "在應用程式比較快"
+      ],
+      "Private, fast, and organized": [
+        "隱私、快速和有組織"
       ]
     }
   }

@@ -5205,6 +5205,9 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "თქვენი სისტემის დროის სარტყელი, როგორც ჩანს, შეიცვალა ${ timezone }-ზე. გსურთ, განაახლოთ თქვენი დროის სარტყელის პარამეტრი?"
+      ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "კონტაქტი მოხსნილია ჯგუფიდან ${ contactGroupName }"
       ]
     },
     "info": {
@@ -6823,6 +6826,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "მიიღეთ Mail Plus ფასით ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "${ price }-დან"
       ]
     },
     "new_plans: title": {
@@ -7121,6 +7127,9 @@
       ],
       "Link copied to clipboard": [
         "ბმული კოპირებულია ბუფერში"
+      ],
+      "Passcode copied to clipboard": [
+        "წვდომის კოდი დაკოპირდა გაცვლის ბუფერში"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8240,6 +8249,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "სტანდარტული ფასი ${ amount } 30 თვისთვის"
+      ],
+      "/month": [
+        "/თვეში"
       ]
     },
     "specialoffer: Title": {
@@ -9679,6 +9691,9 @@
       ],
       "Your exposed information": [
         "თქვენი გაჟონილი ინფორმაცია"
+      ],
+      "One email, many recipients": [
+        "ერთი ელფოსტა, ბევრი მიმღები"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10242,6 +10257,42 @@
       ],
       "Yearly, ${ untilString }": [
         "ყოველწლიურად, ${ untilString }-მდე"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Google Meet-ზე მიერთება"
+      ],
+      "Joining instructions": [
+        "მიერთების ინსტრუქციები"
+      ],
+      "Less details": [
+        "ნაკლები დეტალი"
+      ],
+      "Meeting link:": [
+        "შეხვედრის ბმული:"
+      ],
+      "More details": [
+        "მეტი დეტალი"
+      ]
+    },
+    "SmartBanner": {
+      "Faster on the app": [
+        "უფრო სწრაფია აპში"
+      ],
+      "Private, fast, and organized": [
+        "კონფიდენციალური, სწრაფი და დალაგებული"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Zoom-ის შეხვედრასთან მიერთება"
+      ],
+      "Meeting ID:": [
+        "შეხვედრის ID:"
+      ],
+      "Passcode: ${ password }": [
+        "წვდომის კოდი: ${ password }"
       ]
     }
   }

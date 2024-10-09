@@ -787,6 +787,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Darmowa wersja próbna aplikacji desktopowej zakończy się ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Od ${ priceUnlimited }"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Ulepsz do wersji ${ BRAND_NAME } Unlimited"
       ]
     },
     "Action subline": {
@@ -2552,6 +2558,18 @@
       ],
       "Your account and data recovery methods are set.": [
         "Metody odzyskiwania konta i danych są włączone."
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } chroni Twoje konto dzięki dedykowanemu całodobowemu monitorowaniu podejrzanej aktywności — w tym obsługi specjalistów ds. bezpieczeństwa."
+      ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "Dostosuj kolor wydarzenia, aby lepiej zorganizować dzień, śledzić swój czas i ustawiać priorytety zadań."
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Grupy kontaktów umożliwiają wysyłanie wiadomości do wszystkich członków grupy jednym kliknięciem."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -5347,6 +5365,12 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Twoja strefa czasowa w systemie zmieniła się na ${ timezone }. Czy chcesz zaktualizować ustawienia strefy czasowej?"
+      ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Kontakt został usunięty z grupy ${ contactGroupName }"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Uruchomisz domyślną przeglądarkę i przejdziesz do:"
       ]
     },
     "info": {
@@ -6418,6 +6442,12 @@
       ],
       "Upgrade now": [
         "Ulepsz teraz"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Od ${ priceMailPlus }"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Ulepsz plan do wersji ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7033,6 +7063,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Wybierz plan Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Od ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7335,6 +7368,9 @@
       ],
       "Link copied to clipboard": [
         "Link został skopiowany do schowka"
+      ],
+      "Passcode copied to clipboard": [
+        "Kod został skopiowany do schowka"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8551,6 +8587,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Standardowa cena ${ amount } za 30 miesięcy"
+      ],
+      "/month": [
+        "/ miesiąc"
       ]
     },
     "specialoffer: Title": {
@@ -10038,6 +10077,12 @@
       ],
       "Your exposed information": [
         "Twoje ujawnione informacje:"
+      ],
+      "High security for your account": [
+        "Wysoki poziom bezpieczeństwa konta"
+      ],
+      "One email, many recipients": [
+        "Jeden adres, wiele odbiorców"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10683,6 +10728,42 @@
       ],
       "Yearly, ${ untilString }": [
         "Co rok, ${ untilString }"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Dołącz do spotkania Google Meet"
+      ],
+      "Joining instructions": [
+        "Instrukcja dołączania"
+      ],
+      "Less details": [
+        "Mniej szczegółów"
+      ],
+      "Meeting link:": [
+        "Link spotkania:"
+      ],
+      "More details": [
+        "Więcej szczegółów"
+      ]
+    },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Szybciej w aplikacji"
+      ],
+      "Private, fast, and organized": [
+        "Prywatna, szybka i zorganizowana"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Dołącz do spotkania Zoom"
+      ],
+      "Meeting ID:": [
+        "Identyfikator spotkania:"
+      ],
+      "Passcode: ${ password }": [
+        "Kod: ${ password }"
       ]
     }
   }

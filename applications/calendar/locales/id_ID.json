@@ -775,6 +775,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Masa uji coba aplikasi desktop Anda akan berakhir pada ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Mulai dari ${ priceUnlimited }"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Tingkatkan ke ${ BRAND_NAME } Unlimited"
       ]
     },
     "Action subline": {
@@ -2495,6 +2501,18 @@
       ],
       "Your account and data recovery methods are set.": [
         "Metode pemulihan akun dan data Anda telah diatur."
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } melindungi akun Anda dengan pemantauan aktivitas mencurigakan yang aktif 24/7 — yang meliputi eskalasi dengan para ahli keamanan."
+      ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "Berikan warna pada acara untuk mengatur hari Anda, melacak waktu Anda, dan memprioritaskan tugas dengan lebih mudah."
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Dengan grup kontak, Anda dapat mengirim email ke seluruh anggota grup hanya dengan sekali klik."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Anda telah membuat 10 alias. Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -5128,6 +5146,12 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Zona waktu sistem Anda sepertinya telah diubah menjadi ${ timezone }. Apakah Anda ingin memperbarui preferensi zona waktu Anda?"
+      ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Kaitan kontak dihilangkan dari grup ${ contactGroupName }"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Anda akan membuka browser bawaan Anda dan mengunjungi:"
       ]
     },
     "info": {
@@ -6160,6 +6184,12 @@
       ],
       "Upgrade now": [
         "Tingkatkan sekarang"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Mulai dari ${ priceMailPlus }"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6712,6 +6742,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Dapatkan Mail Plus dengan harga ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Mulai dari ${ price }"
       ]
     },
     "new_plans: title": {
@@ -8077,6 +8110,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Dengan harga standar ${ amount } selama 30 bulan"
+      ],
+      "/month": [
+        "/bulan"
       ]
     },
     "specialoffer: Title": {
@@ -9492,6 +9528,12 @@
       ],
       "Your exposed information": [
         "Informasi Anda yang terpapar"
+      ],
+      "High security for your account": [
+        "Keamanan yang tinggi bagi akun Anda"
+      ],
+      "One email, many recipients": [
+        "Satu email, banyak penerima"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -9709,7 +9751,7 @@
         "${ BRAND_NAME } akan berupaya untuk mentransfer data sebanyak-banyaknya, yang dimulai dengan pesan Anda yang terbaru."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
-        "Yakin ingin mengapus ${ count } kontak secara permanen?"
+        "Apakah Anda yakin ingin mengapus ${ count } kontak secara permanen?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Apakah Anda yakin ingin menghapus grup kontak ini?"
@@ -10014,6 +10056,36 @@
       ],
       "Yearly, ${ untilString }": [
         "Tahunan, ${ untilString }"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Bergabung ke Google Meet"
+      ],
+      "Less details": [
+        "Lebih sedikit detail"
+      ],
+      "Meeting link:": [
+        "Tautan undangan:"
+      ],
+      "More details": [
+        "Lebih banyak detail"
+      ]
+    },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Lebih cepat di aplikasi"
+      ],
+      "Private, fast, and organized": [
+        "Pribadi, cepat, dan rapi"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Bergabung ke Pertemuan Zoom"
+      ],
+      "Meeting ID:": [
+        "ID Rapat:"
       ]
     }
   }
