@@ -7,6 +7,7 @@ import {
   $isRangeSelection,
   $isRootOrShadowRoot,
   $isTextNode,
+  $nodesOfType,
   COMMAND_PRIORITY_CRITICAL,
   DROP_COMMAND,
   FORMAT_ELEMENT_COMMAND,
@@ -251,6 +252,8 @@ export function SuggestionModePlugin({
           const reAddedNodes: ProtonNode[] = []
           const removedNodes: ProtonNode[] = []
 
+          const allCurrentSuggestionNodes = editorState.read(() => $nodesOfType(ProtonNode).filter($isSuggestionNode))
+
           // We go through every dirty element and check which
           // suggestion nodes were re-added or removed
           for (const [key] of dirtyElements) {
@@ -267,7 +270,13 @@ export function SuggestionModePlugin({
             if (isReAdded) {
               reAddedNodes.push(current as ProtonNode)
             } else if (isRemoved) {
-              removedNodes.push(prev as ProtonNode)
+              const suggestionID = (prev as ProtonNode).getSuggestionIdOrThrow()
+              const currentSuggestionNodesForID = allCurrentSuggestionNodes.filter(
+                (node) => node.getSuggestionIdOrThrow() === suggestionID,
+              )
+              if (currentSuggestionNodesForID.length === 0) {
+                removedNodes.push(prev as ProtonNode)
+              }
             }
           }
 
