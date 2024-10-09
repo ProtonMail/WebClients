@@ -4,7 +4,7 @@ import type { PullForkCall } from '@proton/pass/lib/auth/fork';
 import type { AuthSession } from '@proton/pass/lib/auth/session';
 import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
-import type { WorkerMessageResponse } from '@proton/pass/types';
+import type { AuthPullForkMessage, WorkerMessageResponse } from '@proton/pass/types';
 import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { throwError } from '@proton/pass/utils/fp/throw';
 import { logger } from '@proton/pass/utils/logger';
@@ -26,13 +26,13 @@ export const safariPullFork: PullForkCall = async (payload) => {
 
     try {
         const result = await Promise.race([
-            browser.tabs.sendMessage(
+            browser.tabs.sendMessage<AuthPullForkMessage, WorkerMessageResponse<WorkerMessageType.AUTH_PULL_FORK>>(
                 payload.tabId,
                 backgroundMessage({
                     type: WorkerMessageType.AUTH_PULL_FORK,
                     payload: { selector: payload.selector },
                 })
-            ) as Promise<WorkerMessageResponse<WorkerMessageType.AUTH_PULL_FORK>>,
+            ),
             wait(30_000).then(() => throwError({ message: 'Forking session timed out' })),
         ]);
 

@@ -2,6 +2,7 @@ import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useCallback, useContext, useEffect, useState } from 'react';
 
 import { IFRAME_APP_READY_EVENT } from 'proton-pass-extension/app/content/constants.static';
+import { isIFrameMessage } from 'proton-pass-extension/app/content/injections/iframe/utils';
 import type {
     IFrameCloseOptions,
     IFrameMessage,
@@ -144,38 +145,40 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
 
     useEffect(() => {
         if (port && forwardTo) {
-            port.onMessage.addListener((message: Maybe<IFrameMessage>) => {
-                switch (message?.type) {
-                    case IFramePortMessageType.IFRAME_INIT:
-                        app.setState(message.payload.appState);
-                        setSettings(message.payload.settings);
-                        setFeatures(message.payload.features);
-                        setDomain(message.payload.domain);
-                        /** immediately set the locale on iframe init : the `IFramContextProvider`
-                         * does not use the standard `ExtensionApp` wrapper which takes care of
-                         * hydrating the initial locale and watching for language changes */
-                        i18n.setLocale(message.payload.settings.locale).catch(noop);
-                        return;
-                    case IFramePortMessageType.IFRAME_HIDDEN:
-                        return setVisible(false);
-                    case IFramePortMessageType.IFRAME_OPEN:
-                        return setVisible(true);
-                    case WorkerMessageType.FEATURE_FLAGS_UPDATE:
-                        return setFeatures(message.payload);
-                    case WorkerMessageType.SETTINGS_UPDATE:
-                        return setSettings(message.payload);
-                    case WorkerMessageType.LOCALE_UPDATED:
-                        return i18n.setLocale(settings.locale).catch(noop);
-                    /* If for any reason we get a `PORT_UNAUTHORIZED`
-                     * message : it likely means the iframe was injected
-                     * without being controlled by a content-script either
-                     * accidentally or intentionnally. Just to be safe, clear
-                     * the frame's innerHTML */
-                    case WorkerMessageType.PORT_UNAUTHORIZED:
-                        return destroyFrame();
-                    case WorkerMessageType.WORKER_STATE_CHANGE:
-                        authStore?.setLocalID(message.payload.state.localID);
-                        return app.setState(message.payload.state);
+            port.onMessage.addListener((message: unknown) => {
+                if (isIFrameMessage(message)) {
+                    switch (message?.type) {
+                        case IFramePortMessageType.IFRAME_INIT:
+                            app.setState(message.payload.appState);
+                            setSettings(message.payload.settings);
+                            setFeatures(message.payload.features);
+                            setDomain(message.payload.domain);
+                            /** immediately set the locale on iframe init : the `IFramContextProvider`
+                             * does not use the standard `ExtensionApp` wrapper which takes care of
+                             * hydrating the initial locale and watching for language changes */
+                            i18n.setLocale(message.payload.settings.locale).catch(noop);
+                            return;
+                        case IFramePortMessageType.IFRAME_HIDDEN:
+                            return setVisible(false);
+                        case IFramePortMessageType.IFRAME_OPEN:
+                            return setVisible(true);
+                        case WorkerMessageType.FEATURE_FLAGS_UPDATE:
+                            return setFeatures(message.payload);
+                        case WorkerMessageType.SETTINGS_UPDATE:
+                            return setSettings(message.payload);
+                        case WorkerMessageType.LOCALE_UPDATED:
+                            return i18n.setLocale(settings.locale).catch(noop);
+                        /* If for any reason we get a `PORT_UNAUTHORIZED`
+                         * message : it likely means the iframe was injected
+                         * without being controlled by a content-script either
+                         * accidentally or intentionnally. Just to be safe, clear
+                         * the frame's innerHTML */
+                        case WorkerMessageType.PORT_UNAUTHORIZED:
+                            return destroyFrame();
+                        case WorkerMessageType.WORKER_STATE_CHANGE:
+                            authStore?.setLocalID(message.payload.state.localID);
+                            return app.setState(message.payload.state);
+                    }
                 }
             });
 
@@ -227,8 +230,8 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
 
     const registerHandler = useCallback(
         <M extends IFrameMessageType>(type: M, handler: IFramePortMessageHandler<M>) => {
-            const onMessageHandler = (message: Maybe<IFrameMessageWithSender>) => {
-                if (message?.type === type) {
+            const onMessageHandler = (message: unknown) => {
+                if (isIFrameMessage(message) && message.type === type) {
                     handler(message as IFrameMessageWithSender<M>);
                 }
             };

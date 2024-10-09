@@ -51,9 +51,9 @@ export const createMemoryStorage = (): StorageInterface => {
 
     const applyStorageAction = <Action extends StorageAction['action']>(
         action: Extract<StorageAction, { action: Action }>
-    ): Promise<Action extends 'get' ? Maybe<Storage> : undefined> =>
+    ) =>
         browser.runtime
-            .sendMessage(browser.runtime.id, {
+            .sendMessage<StorageMessage, Action extends 'get' ? Maybe<Storage> : undefined>(browser.runtime.id, {
                 type: MEMORY_STORAGE_EVENT,
                 ...action,
             })
