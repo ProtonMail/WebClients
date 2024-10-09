@@ -11,7 +11,7 @@ import { useDriveCompat } from '@proton/drive-store'
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { c } from 'ttag'
 
-import { DocsLayout } from '../../Components'
+import { UserLayout } from '../../Components'
 import { DocumentConverter } from '../../Components/DocumentConverter'
 import { DocumentViewer } from '../../Components/DocumentViewer'
 import { useDriveDocsLandingPageFeatureFlag } from '../../Components/Homepage/useDriveDocsLandingPageFeatureFlag'
@@ -178,7 +178,7 @@ function DocsRoute({ driveCompat }: { driveCompat: DriveCompat }) {
   }
   return (
     <WordCountContextProvider>
-      <DocsLayout action={action}>
+      <UserLayout action={action}>
         <Content
           onConversionSuccess={onConversionSuccess}
           openAction={openAction}
@@ -187,7 +187,7 @@ function DocsRoute({ driveCompat }: { driveCompat: DriveCompat }) {
           getNodeContents={driveCompat.getNodeContents}
           editorInitializationConfig={editorInitializationConfig}
         />
-      </DocsLayout>
+      </UserLayout>
     </WordCountContextProvider>
   )
 }
@@ -232,7 +232,7 @@ function Content({
     return <DocumentConverter onSuccess={onConversionSuccess} getNodeContents={getNodeContents} lookup={nodeMeta} />
   } else {
     return (
-      <DocumentViewer editorInitializationConfig={editorInitializationConfig} lookup={nodeMeta} action={actionMode} />
+      <DocumentViewer editorInitializationConfig={editorInitializationConfig} nodeMeta={nodeMeta} action={actionMode} />
     )
   }
 }

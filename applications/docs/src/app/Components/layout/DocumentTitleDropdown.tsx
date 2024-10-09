@@ -44,6 +44,7 @@ const DocumentTitleDropdown = ({
   action?: DocumentAction['mode']
 }) => {
   const application = useApplication()
+  const isPublicMode = application.isPublicMode
   const { getLocalID } = useAuthentication()
   const wordCountInfoCollection = useWordCount()
   const { floatingUIIsEnabled, setFloatingUIIsEnabled } = useFloatingWordCount()
@@ -255,43 +256,50 @@ const DocumentTitleDropdown = ({
             </DropdownMenuButton>
           )}
 
-          <DropdownMenuButton
-            disabled={isMakingNewDocument}
-            className="flex items-center text-left"
-            onClick={onNewDocument}
-            data-testid="dropdown-new-document"
-          >
-            <Icon name="file" className="color-weak mr-2" />
-            {c('Action').t`New document`}
-            {isMakingNewDocument && <CircleLoader size="small" className="ml-auto" />}
-          </DropdownMenuButton>
+          {!isPublicMode && (
+            <DropdownMenuButton
+              disabled={isMakingNewDocument}
+              className="flex items-center text-left"
+              onClick={onNewDocument}
+              data-testid="dropdown-new-document"
+            >
+              <Icon name="file" className="color-weak mr-2" />
+              {c('Action').t`New document`}
+              {isMakingNewDocument && <CircleLoader size="small" className="ml-auto" />}
+            </DropdownMenuButton>
+          )}
 
-          <DropdownMenuButton
-            disabled={isDuplicating}
-            className="flex items-center text-left"
-            onClick={onDuplicate}
-            data-testid="dropdown-duplicate"
-          >
-            <Icon name="squares" className="color-weak mr-2" />
-            {c('Action').t`Make a copy`}
-            {isDuplicating && <CircleLoader size="small" className="ml-auto" />}
-          </DropdownMenuButton>
+          {!isPublicMode && (
+            <DropdownMenuButton
+              disabled={isDuplicating}
+              className="flex items-center text-left"
+              onClick={onDuplicate}
+              data-testid="dropdown-duplicate"
+            >
+              <Icon name="squares" className="color-weak mr-2" />
+              {c('Action').t`Make a copy`}
+              {isDuplicating && <CircleLoader size="small" className="ml-auto" />}
+            </DropdownMenuButton>
+          )}
 
-          <DropdownMenuButton
-            className="flex items-center text-left"
-            onClick={() => {
-              if (!controller || !isPrivateDocController(controller)) {
-                return
-              }
-              showHistoryModal({
-                versionHistory: controller.getVersionHistory(),
-              })
-            }}
-            data-testid="dropdown-versioning"
-          >
-            <Icon name="clock-rotate-left" className="color-weak mr-2" />
-            {c('Action').t`See version history`}
-          </DropdownMenuButton>
+          {!isPublicMode && (
+            <DropdownMenuButton
+              className="flex items-center text-left"
+              onClick={() => {
+                if (!controller || !isPrivateDocController(controller)) {
+                  return
+                }
+                showHistoryModal({
+                  versionHistory: controller.getVersionHistory(),
+                })
+              }}
+              data-testid="dropdown-versioning"
+            >
+              <Icon name="clock-rotate-left" className="color-weak mr-2" />
+              {c('Action').t`See version history`}
+            </DropdownMenuButton>
+          )}
+
           {isWordCountSupported && (
             <SimpleDropdown
               as={DropdownMenuButton}

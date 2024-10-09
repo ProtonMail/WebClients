@@ -5,10 +5,11 @@ import { createRoot } from 'react-dom/client'
 import { App } from './App'
 import './style'
 import { sendErrorMessage } from './Utils/errorMessage'
+import type { EditorSystemMode } from '@proton/docs-shared/lib/EditorSystemMode'
 
 const searchParams = new URLSearchParams(window.location.search)
 
-const isViewOnly = searchParams.get('viewOnly') === 'true'
+const systemMode = searchParams.get('mode')
 
 // Global Error Listener that pushes Error messages to Sentry
 window.addEventListener('error', (event: ErrorEvent) => {
@@ -23,7 +24,7 @@ root.render(
       sendErrorMessage(error)
     }}
   >
-    <App nonInteractiveMode={isViewOnly} />
+    <App systemMode={systemMode as EditorSystemMode} />
   </ErrorBoundary>,
 )
 
