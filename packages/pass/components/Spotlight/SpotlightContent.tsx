@@ -1,9 +1,12 @@
-import type { ComponentType, ElementType, FC, MouseEvent, ReactNode } from 'react';
+import { type ComponentType, type ElementType, type FC, type MouseEvent, type ReactNode, useCallback } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
+import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import type { OnboardingMessage } from '@proton/pass/types';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import clsx from '@proton/utils/clsx';
 
 import './SpotlightContent.scss';
@@ -17,7 +20,7 @@ export type BaseSpotlightMessage = {
 };
 
 export type DefaultSplotlightMessage = BaseSpotlightMessage & {
-    type: 'default';
+    mode: 'default';
     action?: { label: string; onClick: (e: MouseEvent<HTMLElement>) => void; type: 'link' | 'button' };
     dense?: boolean;
     icon?: ElementType;
@@ -26,47 +29,47 @@ export type DefaultSplotlightMessage = BaseSpotlightMessage & {
 };
 
 export type CustomSplotlightMessage = BaseSpotlightMessage & {
-    type: 'custom';
+    mode: 'custom';
     component: ComponentType<BaseSpotlightMessage>;
 };
 
 export type SpotlightMessageDefinition = DefaultSplotlightMessage | CustomSplotlightMessage;
+export type SpotlightMessage = SpotlightMessageDefinition & { onboardingMessageType?: OnboardingMessage };
 
-type Props = SpotlightMessageDefinition;
+export const SpotlightContent: FC<SpotlightMessage> = (props) => {
+    const { acknowledge } = useSpotlight();
 
-export const SpotlightContent: FC<Props> = (props) => {
+    const onClose = useCallback(() => {
+        if (props.onboardingMessageType) acknowledge(props.onboardingMessageType);
+        props.onClose?.();
+    }, [props]);
+
     return (
         <div
             className={clsx(
                 props.className,
-                props.type === 'default' && props.weak && 'weak',
+                props.mode === 'default' && props.weak && 'weak',
                 `pass-spotlight-content flex items-center gap-4 p-4 pr-6 rounded relative mt-2`
             )}
         >
-            {props.onClose && (
-                <Button
-                    icon
-                    pill
-                    shape="ghost"
-                    color="weak"
-                    size="small"
-                    className="absolute top-0 right-0"
-                    onClick={props.onClose}
-                >
-                    <Icon
-                        name="cross-circle-filled"
-                        color="var(--interaction-norm-contrast)"
-                        alt={c('Action').t`Close`}
-                    />
-                </Button>
-            )}
+            <Button
+                icon
+                pill
+                shape="ghost"
+                color="weak"
+                size="small"
+                className="absolute top-0 right-0"
+                onClick={onClose}
+            >
+                <Icon name="cross-circle-filled" color="var(--interaction-norm-contrast)" alt={c('Action').t`Close`} />
+            </Button>
 
             {(() => {
-                switch (props.type) {
+                switch (props.mode) {
                     case 'custom': {
                         const { component, ...rest } = props;
                         const Component = component;
-                        return <Component {...rest} />;
+                        return <Component {...rest} onClose={onClose} />;
                     }
 
                     case 'default': {
@@ -76,7 +79,10 @@ export const SpotlightContent: FC<Props> = (props) => {
                             switch (action?.type) {
                                 case 'link':
                                     return (
-                                        <button onClick={action.onClick} className="unstyled text-sm color-invert px-3">
+                                        <button
+                                            onClick={pipe(action.onClick, onClose)}
+                                            className="unstyled text-sm color-invert px-3"
+                                        >
                                             <span className="text-underline">{action.label}</span>
                                         </button>
                                     );
@@ -88,7 +94,7 @@ export const SpotlightContent: FC<Props> = (props) => {
                                             color="norm"
                                             size="small"
                                             className="text-sm px-3"
-                                            onClick={action.onClick}
+                                            onClick={pipe(action.onClick, onClose)}
                                             style={{ backgroundColor: 'var(--interaction-norm-major-3)' }}
                                         >
                                             {action.label}

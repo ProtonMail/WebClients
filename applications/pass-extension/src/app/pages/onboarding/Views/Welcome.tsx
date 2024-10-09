@@ -60,7 +60,7 @@ export const Welcome: FC = () => {
                         <div className={clsx('anime-reveal', !pendingAccess && 'anime-reveal--hidden')}>
                             {pendingAccess && (
                                 <SpotlightContent
-                                    type="default"
+                                    mode="default"
                                     className="mb-6"
                                     id="pending"
                                     icon={() => (

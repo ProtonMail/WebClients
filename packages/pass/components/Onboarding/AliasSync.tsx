@@ -7,14 +7,13 @@ import { Button } from '@proton/atoms';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { BaseSpotlightMessage } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { AliasSyncIcon } from '@proton/pass/components/Spotlight/SpotlightIcon';
-import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { selectUserData } from '@proton/pass/store/selectors';
-import { OnboardingMessage } from '@proton/pass/types';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import noop from '@proton/utils/noop';
 
-export const AliasSync: FC<BaseSpotlightMessage> = () => {
+export const AliasSync: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
     const { openSettings } = usePassCore();
-    const { acknowledge } = useSpotlight();
     const { pendingAliasToSync: aliasCount } = useSelector(selectUserData);
 
     return (
@@ -35,9 +34,7 @@ export const AliasSync: FC<BaseSpotlightMessage> = () => {
                         color="norm"
                         size="small"
                         className="text-sm px-3"
-                        onClick={() =>
-                            acknowledge(OnboardingMessage.ALIAS_SYNC_ENABLE, () => openSettings?.('aliases'))
-                        }
+                        onClick={pipe(onClose, () => openSettings?.('aliases'))}
                         style={{ backgroundColor: 'var(--interaction-norm-major-3)' }}
                     >
                         {c('Action').ngettext(msgid`Sync alias`, `Sync aliases`, aliasCount)}
