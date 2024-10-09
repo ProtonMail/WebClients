@@ -1,1 +1,1 @@
-export { DocsLayout } from './layout/DocsLayout'
+export { UserLayout } from '../Apps/User/UserLayout'

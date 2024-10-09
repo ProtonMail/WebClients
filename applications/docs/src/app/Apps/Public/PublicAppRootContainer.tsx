@@ -8,6 +8,8 @@ import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 
 const PublicAppRootContainer = () => {
+  void import('../../tailwind.scss')
+
   return (
     <LocationErrorBoundary>
       <PublicDriveStoreProvider>
@@ -20,7 +22,7 @@ const PublicAppRootContainer = () => {
 const RenderApplicationWhenReady = () => {
   const publicDriveCompat = usePublicDriveCompat()
 
-  if (publicDriveCompat.isError || !publicDriveCompat.isPublicDocsEnabled) {
+  if (publicDriveCompat.isError) {
     return (
       <div className="flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center">
         <h1 className="text-lg font-bold">{c('Info').t`Something went wrong`}</h1>
@@ -37,11 +39,21 @@ const RenderApplicationWhenReady = () => {
     )
   }
 
+  if (publicDriveCompat.isReady && !publicDriveCompat.isPublicDocsEnabled) {
+    return (
+      <div className="flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center">
+        <h1 className="text-lg font-bold">{c('Info').t`Something went wrong`}</h1>
+        <div className="mt-1 max-w-lg whitespace-pre-line text-center">
+          {c('Info').t`Public documents are not yet enabled for your organization.`}
+        </div>
+      </div>
+    )
+  }
+
   if (!publicDriveCompat.isReady) {
     return (
       <div className="flex-column flex h-full w-full items-center justify-center gap-4">
         <CircleLoader size="large" />
-        <div className="text-center">{c('Info').t`Loading public document...`}</div>
       </div>
     )
   }

@@ -40,7 +40,6 @@ import { $handleBeforeInputEvent } from './handleBeforeInputEvent'
 import { $formatTextAsSuggestion } from './formatTextAsSuggestion'
 import { Logger } from '@proton/utils/logs'
 import { $selectionInsertClipboardNodes } from './selectionInsertClipboardNodes'
-import type { DocumentInteractionMode } from '../../DocumentInteractionMode'
 import { KEYBOARD_SHORTCUT_COMMAND } from '../KeyboardShortcuts/Command'
 import { getShortcutFromKeyboardEvent } from '../KeyboardShortcuts/Utils'
 import { LINK_CHANGE_COMMAND } from '../Link/LinkPlugin'
@@ -54,17 +53,18 @@ import {
   $handleImageSizeChangeAsSuggestion,
   $insertImageNodeAsSuggestion,
 } from './imageHandling'
+import { EditorUserMode } from '../../EditorUserMode'
 
 const LIST_TRANSFORMERS = [UNORDERED_LIST, ORDERED_LIST, CHECK_LIST]
 
 export function SuggestionModePlugin({
   isSuggestionMode,
   controller,
-  onInteractionModeChange,
+  onUserModeChange,
 }: {
   isSuggestionMode: boolean
   controller: EditorRequiresClientMethods
-  onInteractionModeChange: (mode: DocumentInteractionMode) => void
+  onUserModeChange: (mode: EditorUserMode) => void
 }) {
   const [editor] = useLexicalComposerContext()
 
@@ -209,10 +209,10 @@ export function SuggestionModePlugin({
         TOGGLE_SUGGESTION_MODE_COMMAND,
         () => {
           if (isSuggestionMode) {
-            onInteractionModeChange('edit')
+            onUserModeChange(EditorUserMode.Edit)
             return true
           }
-          onInteractionModeChange('suggest')
+          onUserModeChange(EditorUserMode.Suggest)
           return true
         },
         COMMAND_PRIORITY_CRITICAL,
@@ -297,7 +297,7 @@ export function SuggestionModePlugin({
         }
       }),
     )
-  }, [controller, editor, isSuggestionMode, onInteractionModeChange, suggestionModeLogger])
+  }, [controller, editor, isSuggestionMode, onUserModeChange, suggestionModeLogger])
 
   useEffect(() => {
     if (!isSuggestionMode) {

@@ -3,8 +3,8 @@ import type { ReactNode } from 'react'
 import { DrawerApp, PrivateAppContainer, PrivateMainArea, TopBanners } from '@proton/components'
 import { APPS } from '@proton/shared/lib/constants'
 
-import DocsHeader from '../DocsHeader/DocsHeader'
-import DocsQuickSettings from './DocsQuickSettings'
+import DocsHeader from '../../Components/DocsHeader/DocsHeader'
+import DocsQuickSettings from '../../Components/layout/DocsQuickSettings'
 import type { DocumentAction } from '@proton/drive-store'
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
   action?: DocumentAction['mode']
 }
 
-export const DocsLayout = ({ children, action }: Props) => {
+export const UserLayout = ({ children, action }: Props) => {
   return (
     <PrivateAppContainer
       top={<TopBanners app={APPS.PROTONDOCS} />}
@@ -25,4 +25,4 @@ export const DocsLayout = ({ children, action }: Props) => {
   )
 }
 
-export default DocsLayout
+export default UserLayout
