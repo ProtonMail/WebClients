@@ -35,6 +35,7 @@ export const useActionRequest = <
 ) => {
     const dispatch = useDispatch();
     const [loading, setLoading] = useState(options?.initialLoading ?? false);
+    const [error, setError] = useState(false);
     const [requestId, setRequestId] = useState<string>(options?.initialRequestId ?? '');
     const request = useSelector(selectRequest(requestId));
 
@@ -43,7 +44,7 @@ export const useActionRequest = <
 
     const progress = (() => {
         if (!request) return 0;
-        return request?.status === 'start' ? request.progress ?? 0 : 100;
+        return request?.status === 'start' ? (request.progress ?? 0) : 100;
     })();
 
     useEffect(() => {
@@ -52,14 +53,17 @@ export const useActionRequest = <
         switch (request.status) {
             case 'start':
                 setLoading(true);
+                setError(false);
                 void optionsRef.current?.onStart?.(request as any);
                 break;
             case 'success':
                 setLoading(false);
+                setError(false);
                 void optionsRef.current?.onSuccess?.(request as any);
                 break;
             case 'failure':
                 setLoading(false);
+                setError(true);
                 void optionsRef.current?.onFailure?.(request as any);
                 break;
         }
@@ -81,6 +85,7 @@ export const useActionRequest = <
             },
             progress,
             loading,
+            error,
         };
     }, [request, progress, loading]);
 };
