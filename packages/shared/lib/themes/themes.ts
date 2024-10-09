@@ -26,7 +26,7 @@ import storefrontTheme from '@proton/colors/themes/dist/storefront.theme.css';
 import walletLightTheme from '@proton/colors/themes/dist/wallet.theme.css';
 import { decodeBase64URL, encodeBase64URL } from '@proton/shared/lib/helpers/encoding';
 
-import { DESKTOP_THEME_TYPES } from '../desktop/desktopTypes';
+import { DESKTOP_THEME_TYPES } from '../desktop/desktopTheme';
 import { canGetInboxDesktopInfo, getInboxDesktopInfo, hasInboxDesktopFeature } from '../desktop/ipcHelpers';
 import { isElectronApp } from '../helpers/desktop';
 

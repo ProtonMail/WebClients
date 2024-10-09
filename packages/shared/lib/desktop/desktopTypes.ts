@@ -2,18 +2,9 @@ import { z } from 'zod';
 
 import type { Environment } from '@proton/shared/lib/interfaces';
 
-import { type ColorScheme, type ThemeSetting, ThemeTypes } from '../themes/themes';
+import type { ColorScheme, ThemeSetting } from '../themes/themes';
 import { type DefaultProtocol, zDefaultProtocol } from './DefaultProtocol';
 import type { DesktopVersion } from './DesktopVersion';
-
-export const DESKTOP_THEME_TYPES = {
-    Carbon: ThemeTypes.Carbon,
-    Snow: ThemeTypes.Snow,
-} as const;
-
-export const isDesktopThemeType = (value: unknown): value is ThemeTypes => {
-    return Object.values(DESKTOP_THEME_TYPES).includes(value as any);
-};
 
 export type CHANGE_VIEW_TARGET = 'mail' | 'calendar' | 'account';
 export type ElectronNotification = {
