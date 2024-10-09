@@ -55,9 +55,9 @@ const SubscriptionsSection = () => {
     const searchParams = new URLSearchParams(location.search);
     const reactivationSource = searchParams.get('source');
 
-    const { plansMap } = usePreferredPlansMap();
+    const { plansMap, plansMapLoading } = usePreferredPlansMap();
 
-    if (!current || !plans || loadingSubscription || loadingPlans) {
+    if (!current || !plans || loadingSubscription || loadingPlans || plansMapLoading) {
         return <Loader />;
     }
 

@@ -25,13 +25,13 @@ const UpgradeVpnSection = ({ app }: Props) => {
     const [subscription, loadingSubscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
     const [serversCount, serversCountLoading] = useVPNServersCount();
-    const { plansMap } = usePreferredPlansMap();
+    const { plansMap, plansMapLoading } = usePreferredPlansMap();
 
     const showBundleUpsellFromVPNBiz = useFlag('ShowBundleUpsellFromVPNBiz');
 
     useLoad();
 
-    const loading = loadingSubscription || loadingPlans || serversCountLoading;
+    const loading = loadingSubscription || loadingPlans || serversCountLoading || plansMapLoading;
 
     if (!subscription || loading) {
         return <Loader />;
