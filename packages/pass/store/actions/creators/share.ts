@@ -11,8 +11,9 @@ import {
     shareRemoveMemberRequest,
 } from '@proton/pass/store/actions/requests';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
+import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type { SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
-import type { Share, ShareAccessKeys, ShareRole } from '@proton/pass/types';
+import type { SelectedShare, Share, ShareAccessKeys, ShareRole } from '@proton/pass/types';
 import type {
     ShareAccessOptions,
     ShareEditMemberAccessIntent,
@@ -131,25 +132,18 @@ export const shareLeaveFailure = createAction(
     )
 );
 
-export const getShareAccessOptionsIntent = createAction('share::access-options::intent', (shareId: string) =>
-    withRequest({ status: 'start', id: shareAccessOptionsRequest(shareId) })({ payload: { shareId } })
-);
-
-export const getShareAccessOptionsSuccess = createAction(
-    'share::access-options::success',
-    withRequestSuccess((payload: ShareAccessOptions) => ({ payload }), { maxAge: 15 })
-);
-
-export const getShareAccessOptionsFailure = createAction(
-    'share::access-options::failure',
-    withRequestFailure((error: unknown) =>
-        withNotification({
-            type: 'error',
-            text: c('Error').t`Could not resolve share members`,
-            error,
-        })({ payload: {}, error })
-    )
-);
+export const getShareAccessOptions = requestActionsFactory<SelectedShare, ShareAccessOptions>('share::access-options')({
+    requestId: ({ shareId }) => shareAccessOptionsRequest(shareId),
+    success: { config: { maxAge: 15 } },
+    failure: {
+        prepare: (error: unknown) =>
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Could not resolve share members`,
+                error,
+            })({ payload: {}, error }),
+    },
+});
 
 export const shareAccessChange = createAction('share::access::change', (payload: Pick<Share, ShareAccessKeys>) =>
     withCache({ payload })
