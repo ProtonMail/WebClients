@@ -8,6 +8,7 @@ import {
   $isRootOrShadowRoot,
   $isTextNode,
   COMMAND_PRIORITY_CRITICAL,
+  DROP_COMMAND,
   FORMAT_ELEMENT_COMMAND,
   FORMAT_TEXT_COMMAND,
   INDENT_CONTENT_COMMAND,
@@ -46,6 +47,12 @@ import { $handleLinkChangeSuggestion } from './handleLinkChangeSuggestion'
 import { SET_SELECTION_STYLE_PROPERTY_COMMAND } from '../FormattingPlugin'
 import { $patchStyleAsSuggestion } from './patchStyleAsSuggestion'
 import { generateSuggestionSummary } from './generateSuggestionSummary'
+import { INSERT_IMAGE_NODE_COMMAND, SET_IMAGE_SIZE_COMMAND } from '../Image/ImagePlugin'
+import {
+  $handleImageDragAndDropAsSuggestion,
+  $handleImageSizeChangeAsSuggestion,
+  $insertImageNodeAsSuggestion,
+} from './imageHandling'
 
 const LIST_TRANSFORMERS = [UNORDERED_LIST, ORDERED_LIST, CHECK_LIST]
 
@@ -469,6 +476,21 @@ export function SuggestionModePlugin({
         (payload) => {
           return $handleLinkChangeSuggestion(editor, payload, suggestionModeLogger, addCreatedIDtoSet)
         },
+        COMMAND_PRIORITY_CRITICAL,
+      ),
+      editor.registerCommand(
+        INSERT_IMAGE_NODE_COMMAND,
+        (node) => $insertImageNodeAsSuggestion(node, addCreatedIDtoSet, suggestionModeLogger),
+        COMMAND_PRIORITY_CRITICAL,
+      ),
+      editor.registerCommand(
+        SET_IMAGE_SIZE_COMMAND,
+        (payload) => $handleImageSizeChangeAsSuggestion(payload, addCreatedIDtoSet, suggestionModeLogger),
+        COMMAND_PRIORITY_CRITICAL,
+      ),
+      editor.registerCommand(
+        DROP_COMMAND,
+        (event) => $handleImageDragAndDropAsSuggestion(event, addCreatedIDtoSet, suggestionModeLogger),
         COMMAND_PRIORITY_CRITICAL,
       ),
     )
