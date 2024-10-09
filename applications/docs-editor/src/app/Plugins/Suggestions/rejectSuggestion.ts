@@ -5,6 +5,7 @@ import { $unwrapSuggestionNode } from './Utils'
 import { ProtonNode, $isSuggestionNode } from './ProtonNode'
 import { $createLinkNode, $isLinkNode } from '@lexical/link'
 import { $patchStyleText } from '@lexical/selection'
+import { $isImageNode } from '../Image/ImageNode'
 
 export function $rejectSuggestion(suggestionID: string): boolean {
   const nodes = $nodesOfType(ProtonNode)
@@ -104,6 +105,20 @@ export function $rejectSuggestion(suggestionID: string): boolean {
         linkNode.remove()
         continue
       }
+    } else if (suggestionType === 'image-change') {
+      const changedProperties = node.__properties.nodePropertiesChanged
+      if (!changedProperties) {
+        node.remove()
+        continue
+      }
+      const initialWidth = changedProperties.width
+      const initialHeight = changedProperties.height
+      const imageNode = node.getFirstChildOrThrow()
+      $unwrapSuggestionNode(node)
+      if (!$isImageNode(imageNode)) {
+        continue
+      }
+      imageNode.setWidthAndHeight(initialWidth, initialHeight)
     } else {
       node.remove()
     }

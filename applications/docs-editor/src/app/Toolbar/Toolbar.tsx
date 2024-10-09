@@ -60,7 +60,6 @@ import OutdentIcon from '../Icons/OutdentIcon'
 import RedoIcon from '../Icons/RedoIcon'
 import TableIcon from '../Icons/TableIcon'
 import UndoIcon from '../Icons/UndoIcon'
-import { INSERT_IMAGE_COMMAND } from '../Plugins/Image/ImagePlugin'
 import { EDIT_LINK_COMMAND } from '../Plugins/Link/LinkInfoPlugin'
 import { INSERT_TABLE_COMMAND } from '../Plugins/Table/InsertTableCommand'
 import { BackgroundColors, TextColors } from '../Shared/Color'
@@ -92,6 +91,7 @@ import SpeechBubblePenIcon from '../Icons/SpeechBubblePenIcon'
 import { useApplication } from '../ApplicationProvider'
 import { InteractionDropdownButton } from './InteractionDropdownButton'
 import { SET_SELECTION_STYLE_PROPERTY_COMMAND } from '../Plugins/FormattingPlugin'
+import { INSERT_FILE_COMMAND } from '../Commands/Events'
 
 type BlockType = keyof typeof blockTypeToBlockName
 
@@ -931,7 +931,7 @@ export default function DocumentEditorToolbar({
                   <ShortcutLabelText>{c('Action').t`Insert image`}</ShortcutLabelText>
                 </ShortcutLabelContainer>
               }
-              disabled={!isEditable || isSuggestionMode}
+              disabled={!isEditable}
               onClick={insertImage}
               data-testid="image-insert-button"
             >
@@ -1120,7 +1120,7 @@ export default function DocumentEditorToolbar({
               }
 
               const file = event.target.files[0]
-              activeEditor.dispatchCommand(INSERT_IMAGE_COMMAND, file)
+              activeEditor.dispatchCommand(INSERT_FILE_COMMAND, file)
             } catch (error: unknown) {
               sendErrorMessage(error)
             } finally {
