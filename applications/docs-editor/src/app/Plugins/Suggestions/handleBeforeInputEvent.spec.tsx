@@ -508,13 +508,14 @@ describe('$handleBeforeInputEvent', () => {
           COMMAND_PRIORITY_CRITICAL,
         )
         const dataTransfer = {
-          getData: (format) => {
+          getData: (format: string) => {
             if (format === 'text/plain') {
               return 'Hello\tWorld\nParagraph'
             }
             return ''
           },
-        } as DataTransfer
+          types: ['text/plain'],
+        } as unknown as DataTransfer
         await update(() => {
           $handleBeforeInputEvent(
             editor!,

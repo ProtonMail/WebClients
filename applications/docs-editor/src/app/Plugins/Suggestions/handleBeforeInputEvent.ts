@@ -31,6 +31,7 @@ import {
 } from './Utils'
 import { $generateNodesFromDOM } from '@lexical/html'
 import type { Logger } from '@proton/utils/logs'
+import { INSERT_FILE_COMMAND } from '../../Commands/Events'
 
 /**
  * This is the main core of suggestion mode. It handles input events,
@@ -425,8 +426,9 @@ function $handleInsertTextData(
  * only has plaintext data.
  */
 function $insertDataTransferAsSuggestion(dataTransfer: DataTransfer, selection: RangeSelection, editor: LexicalEditor) {
-  const lexicalString = dataTransfer.getData('application/x-lexical-editor')
+  const types = dataTransfer.types
 
+  const lexicalString = dataTransfer.getData('application/x-lexical-editor')
   if (lexicalString) {
     try {
       const payload = JSON.parse(lexicalString)
@@ -449,6 +451,13 @@ function $insertDataTransferAsSuggestion(dataTransfer: DataTransfer, selection: 
     } catch {
       // Fail silently.
     }
+  }
+
+  if (types.includes('Files')) {
+    for (const file of dataTransfer.files) {
+      editor.dispatchCommand(INSERT_FILE_COMMAND, file)
+    }
+    return true
   }
 
   // Multi-line plain text in rich text mode pasted as separate paragraphs

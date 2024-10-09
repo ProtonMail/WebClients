@@ -21,6 +21,9 @@ const SuggestionTypeToMetricSuggestionType: Record<SuggestionSummaryType, Metric
   replace: 'replacement',
   'add-link': 'other',
   'delete-link': 'other',
+  'image-change': 'other',
+  'insert-image': 'insertion',
+  'delete-image': 'deletion',
 }
 
 type SuggestionResolution = 'accepted' | 'rejected'

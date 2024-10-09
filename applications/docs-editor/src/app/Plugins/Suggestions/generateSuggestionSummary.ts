@@ -4,6 +4,7 @@ import type { SuggestionSummaryType } from '@proton/docs-shared'
 import { $isSuggestionNode } from './ProtonNode'
 import { getFormatsForFlag } from '../../Utils/TextFormatUtils'
 import { $isLinkNode } from '@lexical/link'
+import { $isImageNode } from '../Image/ImageNode'
 
 export type SuggestionSummaryContent = { type: SuggestionSummaryType; content: string; replaceWith?: string }[]
 
@@ -39,6 +40,17 @@ export function generateSuggestionSummary(
 
       let replaceWith: string | undefined = undefined
 
+      const childrenSize = node.getChildrenSize()
+      const firstChild = node.getFirstChild()
+      if (childrenSize === 1 && $isImageNode(firstChild)) {
+        if (currentType === 'insert') {
+          type = 'insert-image'
+        } else if (currentType === 'delete') {
+          type = 'delete-image'
+        }
+        content = ''
+      }
+
       if (currentType === 'property-change') {
         const firstChild = node.getFirstChild()
         const currentFormat = $isTextNode(firstChild) ? firstChild.getFormat() : 0
@@ -72,9 +84,9 @@ export function generateSuggestionSummary(
       }
 
       const shouldPrioritizeLastItem = TypesToPrioritize.includes(lastItem.type)
-      const shouldPrioritizeCurrentItem = TypesToPrioritize.includes(currentType)
+      const shouldPrioritizeCurrentItem = TypesToPrioritize.includes(type)
       if (!shouldPrioritizeLastItem && shouldPrioritizeCurrentItem) {
-        lastItem.type = currentType
+        lastItem.type = type
         lastItem.content = content
         continue
       }
