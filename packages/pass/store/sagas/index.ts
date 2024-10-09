@@ -44,7 +44,7 @@ import itemUnpin from './items/item-unpin.saga';
 import itemSetFlags from './items/item.set-flags.saga';
 import getOrganizationSettings from './organization/organization-settings.saga';
 import secureLinkSagas from './secure-links/secure-links.sagas';
-import shareAccessOptions from './shares/share-access-options.saga';
+import shareAccessSagas from './shares/share-access.saga';
 import shareEditRole from './shares/share-edit-role.saga';
 import shareLeave from './shares/share-leave.saga';
 import shareRemoveMember from './shares/share-remove-member.saga';
@@ -63,6 +63,7 @@ const COMMON_SAGAS = [
     ...aliasSyncSagas,
     ...secureLinkSagas,
     ...ssoSagas,
+    ...shareAccessSagas,
     aliasDetailsRequest,
     aliasOptionsRequest,
     boot,
@@ -101,7 +102,6 @@ const COMMON_SAGAS = [
     passwordExtra,
     reportProblem,
     settings,
-    shareAccessOptions,
     shareEditRole,
     shareLeave,
     shareRemoveMember,
