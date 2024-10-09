@@ -26,7 +26,6 @@ import storefrontTheme from '@proton/colors/themes/dist/storefront.theme.css';
 import walletLightTheme from '@proton/colors/themes/dist/wallet.theme.css';
 import { decodeBase64URL, encodeBase64URL } from '@proton/shared/lib/helpers/encoding';
 
-import type { DesktopThemeSetting } from '../desktop/desktopTypes';
 import { canGetInboxDesktopInfo, getInboxDesktopInfo, hasInboxDesktopFeature } from '../desktop/ipcHelpers';
 import { isElectronApp } from '../helpers/desktop';
 
@@ -394,7 +393,7 @@ export interface ThemeInformation {
     };
 }
 
-export const electronAppTheme: DesktopThemeSetting = {
+export const electronAppTheme: ThemeSetting = {
     Mode: ThemeModeSetting.Auto,
     LightTheme: ThemeTypes.Snow,
     DarkTheme: ThemeTypes.Carbon,
