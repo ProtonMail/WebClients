@@ -1,6 +1,7 @@
 import { IFRAME_APP_READY_EVENT } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { ProtonPassRoot } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassRoot';
+import { isIFrameMessage } from 'proton-pass-extension/app/content/injections/iframe/utils';
 import type {
     IFrameApp,
     IFrameCloseOptions,
@@ -206,8 +207,8 @@ export const createIFrameApp = <A>({
         }
     };
 
-    const onMessageHandler = (message: Maybe<IFrameMessageWithSender>) =>
-        message && message?.type !== undefined && portMessageHandlers.get(message.type)?.(message);
+    const onMessageHandler = (message: unknown) =>
+        isIFrameMessage(message) && portMessageHandlers.get(message.type)?.(message);
 
     const init = async (port: Runtime.Port, payload: IFrameInitPayload) => {
         state.port?.disconnect();

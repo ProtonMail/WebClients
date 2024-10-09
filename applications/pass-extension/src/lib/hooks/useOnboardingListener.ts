@@ -7,8 +7,8 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { useOnboardingMessages } from '@proton/pass/hooks/useOnboardingMessages';
 import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
+import { matchExtensionMessage } from '@proton/pass/lib/extension/message/utils';
 import { selectCreatedItemsCount } from '@proton/pass/store/selectors';
-import type { WorkerMessageWithSender } from '@proton/pass/types';
 import { OnboardingMessage, WorkerMessageType } from '@proton/pass/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
@@ -21,8 +21,8 @@ export const useOnboardingListener = () => {
     const definitions = useOnboardingMessages();
 
     useEffect(() => {
-        const handleMessage = (message: WorkerMessageWithSender) => {
-            if (message.sender === 'background') {
+        const handleMessage = (message: unknown) => {
+            if (matchExtensionMessage(message, { sender: 'background' })) {
                 switch (message.type) {
                     case WorkerMessageType.UPDATE_AVAILABLE:
                         setOnboardingMessage(definitions[OnboardingMessage.UPDATE_AVAILABLE] ?? null);

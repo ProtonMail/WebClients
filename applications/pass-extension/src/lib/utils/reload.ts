@@ -37,7 +37,9 @@ export const reloadManager = (() => {
 
         if (!options?.immediate) {
             const now = getEpoch();
-            const { lastReload = 0 } = await browser.storage.local.get('lastReload');
+            const data = await browser.storage.local.get('lastReload');
+            const lastReload = typeof data.lastReload === 'number' ? data.lastReload : 0;
+
             if (lastReload + RUNTIME_RELOAD_THROTTLE > now) throw new Error();
 
             await wait(RUNTIME_RELOAD_TIMEOUT);
