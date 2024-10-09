@@ -67,6 +67,7 @@ const AutocompleteList = <V,>({ id, children, onClose, isOpen, highlightedIndex,
                 disableFocusTrap
                 disableDefaultArrowNavigation
             >
+                {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
                 <ul id={id} className="unstyled m-0 p-0" onMouseDown={handleListMouseDown}>
                     {items}
                 </ul>
