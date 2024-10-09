@@ -28,9 +28,18 @@ export const Header: FC<Props> = ({ hamburger }) => {
     const definitions = useOnboardingMessages();
 
     useEffect(() => {
-        const messageType = onboarding.getMessage().message;
-        if (messageType === OnboardingMessage.PENDING_SHARE_ACCESS) spotlight.setPendingShareAccess(true);
-        else if (messageType) spotlight.setOnboardingMessage(definitions[messageType] ?? null);
+        const onboardingMessageType = onboarding.getMessage().message;
+        if (!onboardingMessageType) return;
+
+        switch (onboardingMessageType) {
+            case OnboardingMessage.PENDING_SHARE_ACCESS:
+                spotlight.setPendingShareAccess(true);
+                break;
+            default:
+                const definition = definitions[onboardingMessageType];
+                if (definition) spotlight.setOnboardingMessage({ onboardingMessageType, ...definition });
+                break;
+        }
     }, []);
 
     return (

@@ -9,10 +9,10 @@ import { PendingShareAccessModal } from '@proton/pass/components/Share/PendingSh
 import type { UpsellType } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellRef } from '@proton/pass/constants';
-import type { Callback, MaybeNull, OnboardingMessage } from '@proton/pass/types';
+import type { MaybeNull, OnboardingMessage } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
-import type { SpotlightMessageDefinition } from './SpotlightContent';
+import type { SpotlightMessage } from './SpotlightContent';
 import { InviteIcon } from './SpotlightIcon';
 
 type UpsellingState = { type: UpsellType; upsellRef: UpsellRef };
@@ -21,19 +21,19 @@ type SpotlightState = {
     open: boolean;
     upselling: MaybeNull<UpsellingState>;
     pendingShareAccess: boolean;
-    message: MaybeNull<SpotlightMessageDefinition>;
+    message: MaybeNull<SpotlightMessage>;
 };
 
 export type SpotlightContextValue = {
-    /** acknowledges the provided message type and executed the optional callback.
-     * Will reset the SpotlightContext's current message to `null` */
-    acknowledge: (messageType: OnboardingMessage, cb?: Callback) => void;
+    /** Acknowledges the provided onboarding message type.
+     * Resets the SpotlightContext's current message to `null` */
+    acknowledge: (messageType: OnboardingMessage) => void;
     /** Controls the Pending Share Access modal */
     setPendingShareAccess: (value: boolean) => void;
     /** Controls the Upselling modal */
     setUpselling: (value: MaybeNull<UpsellingState>) => void;
     /** Sets the current message - if an invite  */
-    setOnboardingMessage: (message: MaybeNull<SpotlightMessageDefinition>) => void;
+    setOnboardingMessage: (message: MaybeNull<SpotlightMessage>) => void;
     state: SpotlightState;
 };
 
@@ -52,7 +52,7 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
     const { latestInvite, respondToInvite } = useInviteContext();
 
     const [state, setState] = useState<SpotlightState>(INITIAL_STATE);
-    const [onboardingMessage, setOnboardingMessage] = useState<MaybeNull<SpotlightMessageDefinition>>(null);
+    const [onboardingMessage, setOnboardingMessage] = useState<MaybeNull<SpotlightMessage>>(null);
 
     const timer = useRef<NodeJS.Timeout>();
     const messageRef = useRef(state.message);
@@ -68,7 +68,7 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
         setState((prev) => ({ ...prev, pendingShareAccess: false }));
     };
 
-    const setMessage = useCallback((next: MaybeNull<SpotlightMessageDefinition>) => {
+    const setMessage = useCallback((next: MaybeNull<SpotlightMessage>) => {
         if (messageRef.current?.id !== next?.id) {
             setState((curr) => ({ ...curr, open: false }));
             timer.current = setTimeout(
@@ -78,9 +78,8 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
         }
     }, []);
 
-    const acknowledge = useCallback((messageType: OnboardingMessage, cb: Callback = noop) => {
-        void onboardingAcknowledge?.(messageType);
-        cb();
+    const acknowledge = useCallback((onboardingMessageType: OnboardingMessage) => {
+        void onboardingAcknowledge?.(onboardingMessageType);
         setOnboardingMessage(null);
     }, []);
 
@@ -95,11 +94,11 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
         [state]
     );
 
-    const inviteMessage = useMemo<MaybeNull<SpotlightMessageDefinition>>(
+    const inviteMessage = useMemo<MaybeNull<SpotlightMessage>>(
         () =>
             latestInvite && !latestInvite.fromNewUser
                 ? {
-                      type: 'default',
+                      mode: 'default',
                       id: latestInvite.token,
                       weak: true,
                       dense: false,
