@@ -40,13 +40,14 @@ const YourPlanSection = ({ app }: Props) => {
     const [invites = []] = useUserInvitations();
     const [openSubscriptionModal] = useSubscriptionModal();
     const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
-    const { plansMap } = usePreferredPlansMap();
+    const { plansMap, plansMapLoading } = usePreferredPlansMap();
 
     const showBundleUpsellFromVPNBiz = useFlag('ShowBundleUpsellFromVPNBiz');
 
     useLoad();
 
-    const loading = loadingSubscription || loadingOrganization || loadingPlans || serversCountLoading;
+    const loading =
+        loadingSubscription || loadingOrganization || loadingPlans || serversCountLoading || plansMapLoading;
 
     if (!subscription || !plans || loading) {
         return <Loader />;
