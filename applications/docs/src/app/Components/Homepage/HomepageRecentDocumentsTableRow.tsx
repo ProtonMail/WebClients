@@ -38,17 +38,19 @@ export function HomepageRecentDocumentsTableRow({ recentDocument }: { recentDocu
         <span className="text-capitalize">{getDisplayDate(recentDocument)}</span>
       </HomepageRecentDocumentsTableCell>
       <HomepageRecentDocumentsTableCell>
-        <Avatar
-          color="weak"
-          className="min-w-custom max-w-custom max-h-custom mr-2"
-          style={{
-            '--min-w-custom': '1.75rem',
-            '--max-w-custom': '1.75rem',
-            '--max-h-custom': '1.75rem',
-          }}
-        >
-          {getInitials(displayName)}
-        </Avatar>
+        {recentDocument.isSharedWithMe && (
+          <Avatar
+            color="weak"
+            className="min-w-custom max-w-custom max-h-custom mr-2"
+            style={{
+              '--min-w-custom': '1.75rem',
+              '--max-w-custom': '1.75rem',
+              '--max-h-custom': '1.75rem',
+            }}
+          >
+            {getInitials(displayName)}
+          </Avatar>
+        )}
         {displayName}
       </HomepageRecentDocumentsTableCell>
       <HomepageRecentDocumentsTableCell>

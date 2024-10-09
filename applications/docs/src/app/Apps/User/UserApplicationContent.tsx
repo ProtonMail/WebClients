@@ -23,8 +23,6 @@ import { useDocsUrlBar } from '../../Containers/useDocsUrlBar'
 const HomepageRoute = lazy(() => import('../../Components/Homepage/HomepageRoute'))
 
 function UserApplicationContent() {
-  void import('../../tailwind.scss')
-
   const api = useApi()
   const driveCompat = useDriveCompat()
   const { API_URL } = useConfig()
@@ -79,6 +77,7 @@ function UserApplicationContent() {
 }
 
 function DocsRoute({ driveCompat }: { driveCompat: DriveCompat }) {
+  void import('../../tailwind.scss')
   const application = useApplication()
 
   const { openAction, updateParameters } = useDocsUrlBar({ isDocsEnabled: driveCompat.isDocsEnabled })
