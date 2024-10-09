@@ -3,7 +3,7 @@ import { getSettings, saveSettings } from "../store/settingsStore";
 import { ColorScheme, electronAppTheme, ThemeModeSetting, ThemeSetting } from "@proton/shared/lib/themes/themes";
 import { DESKTOP_THEME_TYPES, isDesktopThemeType } from "@proton/shared/lib/desktop/desktopTypes";
 
-const SERIALIZED_THEME_MODE = {
+export const SERIALIZED_THEME_MODE = {
     [ThemeModeSetting.Auto]: "auto",
     [ThemeModeSetting.Dark]: "dark",
     [ThemeModeSetting.Light]: "light",
