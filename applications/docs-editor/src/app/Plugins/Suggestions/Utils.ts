@@ -1,11 +1,12 @@
 import type { ElementNode, LexicalNode, RangeSelection, TextNode } from 'lexical'
 import { $isDecoratorNode, $isElementNode, $isTextNode } from 'lexical'
 import type { SuggestionProperties } from './Types'
-import type { SuggestionType } from "@proton/docs-shared/lib/SuggestionType"
+import type { SuggestionType } from '@proton/docs-shared/lib/SuggestionType'
 import { $isImageNode } from '../Image/ImageNode'
 import type { ProtonNode } from './ProtonNode'
 import { $isSuggestionNode, $createSuggestionNode } from './ProtonNode'
 import { $findMatchingParent } from '@lexical/utils'
+import type { Logger } from '@proton/utils/logs'
 
 /**
  * Wraps a given selection with suggestion node(s), splitting
@@ -17,16 +18,26 @@ export function $wrapSelectionInSuggestionNode(
   isBackward: boolean,
   id: string,
   type: SuggestionType,
+  logger?: Logger,
   changedProperties?: SuggestionProperties['nodePropertiesChanged'],
 ): ProtonNode[] {
   const nodes = selection.getNodes()
+
+  const anchor = selection.anchor
   const anchorOffset = selection.anchor.offset
+
+  const focus = selection.focus
   const focusOffset = selection.focus.offset
+
   const nodesLength = nodes.length
   const startOffset = isBackward ? focusOffset : anchorOffset
   const endOffset = isBackward ? anchorOffset : focusOffset
+
   let currentNodeParent
   let lastCreatedMarkNode: ProtonNode | null = null
+
+  const info = { nodesLength, anchorOffset, focusOffset, isBackward, startOffset, endOffset }
+  logger?.info('Wrapping selection in suggestion node', info)
 
   const createdMarkNodes: ProtonNode[] = []
 
@@ -36,23 +47,33 @@ export function $wrapSelectionInSuggestionNode(
   // again after, if there are more nodes.
   for (let i = 0; i < nodesLength; i++) {
     const node = nodes[i]
+
     if ($isElementNode(lastCreatedMarkNode) && lastCreatedMarkNode.isParentOf(node)) {
-      // If the current node is a child of the last created mark node, there is nothing to do here
+      logger?.info('Last created suggestion node is parent of current node')
       continue
     }
+
     const isFirstNode = i === 0
     const isLastNode = i === nodesLength - 1
+    const nodeInfo = { type: node.__type, isFirstNode, isLastNode }
+    logger?.info('Current node:', nodeInfo)
+
     let targetNode: LexicalNode | null = null
 
     if ($isTextNode(node)) {
-      // Case 1: The node is a text node and we can split it
       const textContentSize = node.getTextContentSize()
       const startTextOffset = isFirstNode ? startOffset : 0
       const endTextOffset = isLastNode ? endOffset : textContentSize
+      const loggerInfo = { textContentSize, startTextOffset, endTextOffset }
+      logger?.info('Splitting text node', loggerInfo)
+
       if (startTextOffset === 0 && endTextOffset === 0) {
+        logger?.info('Not splitting text node because start and end offset are both 0')
         continue
       }
+
       const splitNodes = node.splitText(startTextOffset, endTextOffset)
+
       const isAtEndOfTextNode = splitNodes.length === 1 && startTextOffset === textContentSize
       if (isAtEndOfTextNode) {
         const nonInlineParent = $findMatchingParent(
@@ -61,74 +82,73 @@ export function $wrapSelectionInSuggestionNode(
         )
         const isLastDescendant = node.is(nonInlineParent?.getLastDescendant())
         if (type === 'delete' && isLastDescendant) {
+          logger?.info('Adding join node because start offset is at end of text node which is also the last descendant')
           const joinNode = $createSuggestionNode(id, 'join')
           node.insertAfter(joinNode)
           lastCreatedMarkNode = joinNode
           createdMarkNodes.push(joinNode)
         }
+        logger?.info('Not splitting text not because at end of text node')
         continue
       }
+
       targetNode =
         splitNodes.length > 1 &&
         (splitNodes.length === 3 || (isFirstNode && !isLastNode) || endTextOffset === textContentSize)
           ? splitNodes[1]
           : splitNodes[0]
     } else if ($isSuggestionNode(node)) {
-      // Case 2: the node is a mark node and we can ignore it as a target,
-      // moving on to its children. Note that when we make a mark inside
-      // another mark, it may utlimately be unnested by a call to
-      // `registerNestedElementResolver<SuggestionNode>` somewhere else in the
-      // codebase.
+      logger?.info('Ignoring existing suggestion node')
       continue
     } else if ($isElementNode(node) && node.isInline()) {
-      // Case 3: inline element nodes can be added in their entirety to the new
-      // mark
-      targetNode = node
+      logger?.info('Node is inline element node')
+
+      const isFullyWithinSelection = !node.isParentOf(anchor.getNode()) && !node.isParentOf(focus.getNode())
+      if (isFullyWithinSelection) {
+        logger?.info('Node is fully within selection')
+        targetNode = node
+      }
     } else if ($isImageNode(node)) {
+      logger?.info('Node is image node')
       targetNode = node
     }
 
     if (targetNode !== null) {
-      // Now that we have a target node for wrapping with a mark, we can run
-      // through special cases.
       if (targetNode && targetNode.is(currentNodeParent)) {
-        // The current node is a child of the target node to be wrapped, there
-        // is nothing to do here.
+        logger?.info('Current node is a child of the target node to be wrapped')
         continue
       }
 
       const parentNode = targetNode.getParent()
       if (parentNode == null || !parentNode.is(currentNodeParent)) {
-        // If the parent node is not the current node's parent node, we can
-        // clear the last created mark node.
+        logger?.info("Parent node is not the current node's parent node")
         lastCreatedMarkNode = null
       }
 
       currentNodeParent = parentNode
 
       if (lastCreatedMarkNode === null) {
-        // If we don't have a created mark node, we can make one
+        logger?.info('Creating new suggestion node')
         lastCreatedMarkNode = $createSuggestionNode(id, type, changedProperties)
         targetNode.insertBefore(lastCreatedMarkNode)
         createdMarkNodes.push(lastCreatedMarkNode)
       }
 
-      // Add the target node to be wrapped in the latest created mark node
+      logger?.info('Appending target node to last created suggestion node', lastCreatedMarkNode)
       lastCreatedMarkNode.append(targetNode)
     } else {
-      // If we don't have a target node to wrap we can clear our state and
-      // continue on with the next node
+      logger?.info('Clearing state because no target node found')
       currentNodeParent = undefined
       lastCreatedMarkNode = null
     }
   }
 
-  // Make selection collapsed at the end
-  if ($isSuggestionNode(lastCreatedMarkNode)) {
+  if (createdMarkNodes.length > 0) {
+    logger?.info('Collapsing selection')
     if (isBackward) {
-      lastCreatedMarkNode.selectStart()
+      createdMarkNodes[0].selectStart()
     } else {
-      lastCreatedMarkNode.selectEnd()
+      createdMarkNodes[createdMarkNodes.length - 1].selectEnd()
     }
   }
 
