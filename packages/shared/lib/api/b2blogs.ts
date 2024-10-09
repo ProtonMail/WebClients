@@ -6,10 +6,20 @@ export const getPassLogs = (params: B2BLogsQuery) => ({
     params,
 });
 
+export const getPassEventTypes = () => ({
+    url: 'account/organization/logs/pass/event-types',
+    method: 'get',
+});
+
 export const getVPNLogs = (params: B2BLogsQuery) => ({
     url: 'account/organization/logs/vpn',
     method: 'get',
     params,
+});
+
+export const getVpnEventTypes = () => ({
+    url: 'account/organization/logs/vpn/event-types',
+    method: 'get',
 });
 
 export const getVPNLogDownload = (params: B2BLogsQuery) => ({

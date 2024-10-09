@@ -1,59 +1,59 @@
-import { c } from 'ttag';
-
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
 import { ALL_EVENTS_DEFAULT } from '../Pass/helpers';
-import type { VPNEvent } from './interface';
 
-enum EventTypesVPN {
-    session_end = 'session_end',
-    session_start = 'session_start',
-    session_roaming = 'session_roaming',
+export interface Event {
+    EventType: string;
+    EventTypeName: string;
 }
 
-const eventKeys = Object.keys(EventTypesVPN) as (keyof typeof EventTypesVPN)[];
-export const uniqueVPNEventsArray = [ALL_EVENTS_DEFAULT, ...eventKeys];
-
-export const getVPNEventNameText = (event: string): string => {
-    switch (event) {
-        case 'session_end':
-            return c('Info').t`Session Ended`;
-        case 'session_start':
-            return c('Info').t`Session Started`;
-        case 'session_roaming':
-            return c('Info').t`Session Roaming`;
-        default:
-            return c('Info').t`All Events `;
-    }
+export const getConnectionEvents = (items: any[]): Event[] => {
+    const defaultEvent: Event = {
+        EventType: ALL_EVENTS_DEFAULT,
+        EventTypeName: ALL_EVENTS_DEFAULT,
+    };
+    return [defaultEvent, ...items];
 };
 
 export const getVPNEventColor = (event: string) => {
     switch (event) {
         case 'session_end':
-            return 'danger';
+            return 'color-danger';
         case 'session_start':
-            return 'success';
+            return 'color-success';
         case 'session_roaming':
-            return 'info';
+            return 'color-info';
         default:
-            return 'weak';
+            return 'color-weak';
     }
 };
 
-export const downloadVPNEvents = (events: VPNEvent[]) => {
-    const header = ['Time', 'User Name', 'User Email', 'Event', 'Origin IP', 'Origin Location', 'Gateway Name'];
-    const csvData = events.reduce(
-        (csv, { time, user, event, origin, gateway }) => {
-            // const cleanedUpOriginLocation = origin.location.replace(',', '');
-            const rowData = [time, user.name, user.email, event, origin.ip, origin.location, gateway.name];
-            return csv + rowData.join(',') + '\n';
-        },
-        header.join(',') + '\n'
-    );
+export const getVPNEventIcon = (event: string) => {
+    switch (event) {
+        case 'session_end':
+            return 'lock-filled';
+        case 'session_start':
+            return 'lock-filled';
+        case 'session_roaming':
+            return 'lock-open-pen-filled';
+        default:
+            return 'lock-pen-filled';
+    }
+};
 
-    const blob = new Blob([csvData], { type: 'text/csv' });
-    const filename = 'connectioneventlogs.csv';
-    downloadFile(blob, filename);
+export const downloadVPNEvents = async (response: Response) => {
+    const contentDisposition = response.headers.get('content-disposition');
+    if (!contentDisposition) {
+        return;
+    }
+
+    const match = contentDisposition.match(/attachment; filename=(.*)/);
+    if (!match) {
+        return null;
+    }
+
+    const blob = await response.blob();
+    downloadFile(blob, match[1]);
 };
 
 // const formatDateCSV = (date: string) => {

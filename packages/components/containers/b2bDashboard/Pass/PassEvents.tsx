@@ -3,15 +3,13 @@ import { useEffect, useState } from 'react';
 import { endOfDay, isAfter, isBefore, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Pagination from '@proton/components/components/pagination/Pagination';
 import usePaginationAsync from '@proton/components/components/pagination/usePaginationAsync';
-import PassEventsTable from '@proton/components/containers/b2bDashboard/Pass/PassEventsTable';
 import { useErrorHandler, useNotifications } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
-import { getPassLogs } from '@proton/shared/lib/api/b2blogs';
+import { getPassEventTypes, getPassLogs, getPassLogsDownload } from '@proton/shared/lib/api/b2blogs';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import type { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
 import noop from '@proton/utils/noop';
@@ -20,14 +18,15 @@ import SettingsSectionWide from '../../../containers/account/SettingsSectionWide
 import GenericError from '../../../containers/error/GenericError';
 import { toCamelCase } from '../../credentialLeak/helpers';
 import { FilterAndSortEventsBlock } from '../FilterAndSortEventBlock';
+import PassEventsTable from './PassEventsTable';
+import type { EventObject } from './helpers';
 import {
     ALL_EVENTS_DEFAULT,
     PAGINATION_LIMIT,
-    getEventNameText,
+    downloadPassEvents,
+    getConnectionEvents,
     getLocalTimeStringFromDate,
     getSearchType,
-    handlePassEventsDownload,
-    uniquePassEventsArray,
 } from './helpers';
 import type { PassEvent } from './interface';
 
@@ -60,6 +59,7 @@ export const PassEvents = () => {
     const [loading, withLoading] = useLoading();
     const [filter, setFilter] = useState<FilterModel>(initialFilter);
     const [events, setEvents] = useState<PassEvent[]>([]);
+    const [connectionEvents, setConnectionEvents] = useState<EventObject[]>([]);
     const [keyword, setKeyword] = useState<string>('');
     const [total, setTotal] = useState<number>(0);
     const [query, setQuery] = useState({});
@@ -78,12 +78,24 @@ export const PassEvents = () => {
         }
     };
 
+    const fetchPassConnectionEvents = async () => {
+        const { Items } = await api<{ Items: EventObject[] }>(getPassEventTypes());
+        const filteredItems = Items.filter((item: EventObject) => item.EventType !== '' && item.EventTypeName !== '');
+        const sortedItems = filteredItems.sort((a: EventObject, b: EventObject) =>
+            a.EventTypeName.localeCompare(b.EventTypeName)
+        );
+        setConnectionEvents(sortedItems);
+    };
+
+    useEffect(() => {
+        fetchPassConnectionEvents();
+    }, []);
+
     useEffect(() => {
         withLoading(
             fetchPassLogs({
                 ...query,
                 Page: page - 1,
-                Size: PAGINATION_LIMIT,
                 Sort: sortDirection === SORT_DIRECTION.DESC ? 'desc' : 'asc',
             }).catch(noop)
         );
@@ -101,8 +113,24 @@ export const PassEvents = () => {
         reset();
     };
 
-    const handleDownloadClick = () => {
-        handlePassEventsDownload(events);
+    const handleDownloadClick = async () => {
+        const response = await api({
+            ...getPassLogsDownload({ ...query, Page: page - 1 }),
+            output: 'raw',
+        });
+
+        const responseCode = response.headers.get('x-pm-code') || '';
+        if (response.status === 429) {
+            createNotification({
+                text: c('Notification').t`Too many recent API requests`,
+            });
+        } else if (responseCode !== '1000') {
+            createNotification({
+                text: c('Notification').t`Number of records exceeds the download limit of 10000`,
+            });
+        }
+
+        downloadPassEvents(response);
     };
 
     const handleStartDateChange = (start: Date | undefined) => {
@@ -171,12 +199,8 @@ export const PassEvents = () => {
         reset();
     };
 
-    const getPassEventTypeText = (eventType: string) => {
-        return getEventNameText(eventType);
-    };
-
     return (
-        <SettingsSectionWide>
+        <SettingsSectionWide customWidth="90em">
             <FilterAndSortEventsBlock
                 filter={filter}
                 keyword={keyword}
@@ -184,32 +208,28 @@ export const PassEvents = () => {
                 handleSetEventType={handleSetEventType}
                 handleStartDateChange={handleStartDateChange}
                 handleEndDateChange={handleEndDateChange}
-                eventTypesList={uniquePassEventsArray || []}
+                eventTypesList={getConnectionEvents(connectionEvents) || []}
                 handleSearchSubmit={handleSearchSubmit}
-                getEventTypeText={getPassEventTypeText}
+                handleDownloadClick={handleDownloadClick}
+                resetFilter={handleResetFilter}
+                hasFilterEvents={true}
             />
-            <div className="flex justify-space-between">
-                <div className="content-center">
-                    <Icon name="info-circle" size={4.5} className="mr-1 mb-1" />
-                    <span>{c('Title').t`Click a value in the table to use it as filter`}</span>
-                </div>
-                <div className="flex flex-nowrap flex-row-reverse items-end items-center gap-2 mb-4">
-                    <Button
-                        shape="outline"
-                        onClick={handleDownloadClick}
-                        title={c('Action').t`Download`}
-                        disabled={events.length === 0}
-                    >
-                        {c('Action').t`Download`}
-                    </Button>
-                    <Button
-                        shape="outline"
-                        onClick={handleResetFilter}
-                        disabled={Object.keys(query).length === 0}
-                        title={c('Action').t`Clear filter`}
-                    >
-                        {c('Action').t`Clear filters`}
-                    </Button>
+            <div className="content-center my-3">
+                <Icon name="info-circle" size={4.5} className="mr-1 mb-1" />
+                <span>{c('Title').t`Click a value in the table to use it as filter`}</span>
+            </div>
+            {error ? (
+                <GenericError className="text-center">{error}</GenericError>
+            ) : (
+                <div className="flex justify-center">
+                    <PassEventsTable
+                        events={events}
+                        loading={loading}
+                        onEventClick={handleClickableEvent}
+                        onTimeClick={handleClickableTime}
+                        onEmailOrIpClick={handleClickableEmailOrIP}
+                        onToggleSort={handleToggleSort}
+                    />
                     <Pagination
                         page={page}
                         total={total}
@@ -219,18 +239,6 @@ export const PassEvents = () => {
                         onPrevious={onPrevious}
                     />
                 </div>
-            </div>
-            {error ? (
-                <GenericError className="text-center">{error}</GenericError>
-            ) : (
-                <PassEventsTable
-                    events={events}
-                    loading={loading}
-                    handleEventClick={handleClickableEvent}
-                    handleTimeClick={handleClickableTime}
-                    handleEmailOrIpClick={handleClickableEmailOrIP}
-                    handleToggleSort={handleToggleSort}
-                />
             )}
         </SettingsSectionWide>
     );
