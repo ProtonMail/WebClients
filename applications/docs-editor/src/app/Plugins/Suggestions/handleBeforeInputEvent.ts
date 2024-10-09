@@ -13,7 +13,6 @@ import {
   $createTextNode,
   $isTextNode,
   $insertNodes,
-  $isLineBreakNode,
   $createTabNode,
   $createParagraphNode,
 } from 'lexical'
@@ -114,7 +113,7 @@ function $handleDeleteInput(
   const isWholeSelectionInsideExistingSuggestion = $isWholeSelectionInsideSuggestion(selection)
 
   if (!isWholeSelectionInsideExistingSuggestion || existingParentSuggestion?.getSuggestionTypeOrThrow() !== 'delete') {
-    suggestionNodes = $wrapSelectionInSuggestionNode(selection, selection.isBackward(), suggestionID, 'delete')
+    suggestionNodes = $wrapSelectionInSuggestionNode(selection, selection.isBackward(), suggestionID, 'delete', logger)
   }
 
   if (!suggestionNodes.length) {
@@ -185,7 +184,7 @@ function $handleInsertInput(
   if (!selection.isCollapsed()) {
     logger?.info('Wrapping non-collapsed selection in a delete suggestion')
     const isInsideExistingSelection = $isWholeSelectionInsideSuggestion(selection)
-    const nodes = $wrapSelectionInSuggestionNode(selection, selection.isBackward(), suggestionID, 'delete')
+    const nodes = $wrapSelectionInSuggestionNode(selection, selection.isBackward(), suggestionID, 'delete', logger)
     if (isInsideExistingSelection) {
       logger?.info('Removing the wrapped suggestion as it is inside an existing one')
       for (const node of nodes) {
@@ -375,12 +374,6 @@ function $handleInsertTextData(
 
   const isPrevSiblingSuggestion = $isSuggestionNode(prevSibling)
   const isNextSiblingSuggestion = $isSuggestionNode(nextSibling)
-
-  // Remove placeholder line-break node when typing in newly added
-  // paragraph
-  if ($isLineBreakNode(prevSibling) && isNextSiblingSuggestion) {
-    prevSibling.remove()
-  }
 
   // eslint-disable-next-line no-nested-ternary
   const suggestionSibling = isPrevSiblingSuggestion ? prevSibling : isNextSiblingSuggestion ? nextSibling : null
