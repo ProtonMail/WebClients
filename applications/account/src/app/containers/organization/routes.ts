@@ -247,8 +247,9 @@ export const getOrganizationAppRoutes = ({
                     (hasOrganizationKey || hasOrganization),
             },
             connectionEvents: <SectionConfig>{
-                text: c('Title').t`Connection events`,
-                to: '/connection-events',
+                text: c('Title').t`Connection monitor`,
+                description: c('Subtitle').t`View VPN session details for your organization.`,
+                to: '/connection-monitor',
                 icon: 'globe',
                 available: canShowB2BConnectionEvents,
                 subsections: [
