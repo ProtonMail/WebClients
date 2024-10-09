@@ -10,6 +10,7 @@ import type {
   YDocMap,
   DocStateInterface,
   EditorInitializationConfig,
+  DocumentRole,
 } from '@proton/docs-shared'
 import { LexicalDocProvider, getAccentColorForUsername } from '@proton/docs-shared'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
@@ -31,7 +32,6 @@ import type { LexicalEditor } from 'lexical'
 import { EditorRefPlugin } from '@lexical/react/LexicalEditorRefPlugin'
 import { sendErrorMessage } from './Utils/errorMessage'
 import { TabIndentationPlugin } from '@lexical/react/LexicalTabIndentationPlugin'
-import type { DocumentInteractionMode } from './DocumentInteractionMode'
 import { TablePlugin } from './Plugins/Table/TablePlugin'
 import { SafeLexicalComposer } from './Tools/SafeLexicalComposer'
 import { CheckListPlugin } from './Plugins/CheckListPlugin'
@@ -48,6 +48,8 @@ import { MarkNodesProvider } from './Plugins/MarkNodesContext'
 import clsx from '@proton/utils/clsx'
 import { ProtonLinkPlugin } from './Plugins/Link/LinkPlugin'
 import { FormattingPlugin } from './Plugins/FormattingPlugin'
+import { EditorUserMode } from './EditorUserMode'
+import { EditorSystemMode } from '@proton/docs-shared/lib/EditorSystemMode'
 
 const TypingBotEnabled = false
 
@@ -57,19 +59,17 @@ type Props = {
   docState: DocStateInterface
   documentId: string
   editingLocked: boolean
-  hasEditAccess: boolean
+  role: DocumentRole
   onEditorError: (error: Error) => void
   hidden: boolean
   editorInitializationConfig?: EditorInitializationConfig
-  /** Non-interactive mode is used when displaying the editor to show a previous history revision */
-  nonInteractiveMode: boolean
+  systemMode: EditorSystemMode
+  userMode: EditorUserMode
   onEditorLoadResult: EditorLoadResult
-  interactionMode: DocumentInteractionMode
-  onInteractionModeChange: (mode: DocumentInteractionMode) => void
+  onUserModeChange: (mode: EditorUserMode) => void
   setEditorRef: (instance: LexicalEditor | null) => void
   username: string
   isSuggestionsFeatureEnabled: boolean
-
   showTreeView: boolean
 }
 
@@ -80,13 +80,13 @@ export function Editor({
   documentId,
   editingLocked,
   editorInitializationConfig,
-  hasEditAccess,
+  role,
   hidden,
-  nonInteractiveMode: nonInteractiveMode,
   onEditorError,
   onEditorLoadResult,
-  interactionMode,
-  onInteractionModeChange,
+  userMode,
+  systemMode,
+  onUserModeChange,
   setEditorRef,
   username,
   showTreeView,
@@ -118,7 +118,8 @@ export function Editor({
     return getAccentColorForUsername(username)
   }, [username])
 
-  const isSuggestionMode = interactionMode === 'suggest'
+  const isSuggestionMode = userMode === EditorUserMode.Suggest
+  const hasMutationDisplay = systemMode === EditorSystemMode.Edit && userMode !== EditorUserMode.Preview
 
   return (
     <CollaborationContext.Provider
@@ -135,12 +136,8 @@ export function Editor({
       )}
       <SafeLexicalComposer initialConfig={BuildInitialEditorConfig({ onError: onEditorError })}>
         <KeyboardShortcutsPlugin />
-        {!nonInteractiveMode && (
-          <Toolbar
-            hasEditAccess={hasEditAccess}
-            interactionMode={interactionMode}
-            onInteractionModeChange={onInteractionModeChange}
-          />
+        {(systemMode === EditorSystemMode.Edit || systemMode === EditorSystemMode.PublicView) && (
+          <Toolbar hasEditAccess={role.canEdit()} userMode={userMode} onUserModeChange={onUserModeChange} />
         )}
         <RichTextPlugin
           contentEditable={
@@ -183,7 +180,7 @@ export function Editor({
         <TableCellResizerPlugin />
         <TabIndentationPlugin />
         <ProtonLinkPlugin />
-        {!nonInteractiveMode && <LinkInfoPlugin openLink={openLink} />}
+        {hasMutationDisplay && <LinkInfoPlugin openLink={openLink} />}
         <TypingBotPlugin enabled={TypingBotEnabled} position={'beginning'} />
         <CollaborationPlugin
           id={documentId}
@@ -195,8 +192,8 @@ export function Editor({
         <MergeSiblingListsPlugin />
         <CodeHighlightPlugin />
         <ImagesPlugin />
-        {!nonInteractiveMode && <EditorReadonlyPlugin editingEnabled={!editingLocked} />}
-        {!nonInteractiveMode && <PasteLimitPlugin showGenericAlertModal={showGenericAlertModal} />}
+        <EditorReadonlyPlugin editingEnabled={!editingLocked} />
+        {hasMutationDisplay && <PasteLimitPlugin showGenericAlertModal={showGenericAlertModal} />}
         <AutoFocusPlugin isEditorHidden={hidden} />
         <ReadonlyLinkFixPlugin openLink={openLink} />
         <EditorRefPlugin editorRef={setEditorRef} />
@@ -208,7 +205,7 @@ export function Editor({
             <SuggestionModePlugin
               isSuggestionMode={isSuggestionMode}
               controller={clientInvoker}
-              onInteractionModeChange={onInteractionModeChange}
+              onUserModeChange={onUserModeChange}
             />
           )}
         </MarkNodesProvider>

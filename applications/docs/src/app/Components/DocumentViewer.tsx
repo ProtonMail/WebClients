@@ -21,7 +21,7 @@ import type {
   EditorInitializationConfig,
   LiveCommentsTypeStatusChangeData,
 } from '@proton/docs-shared'
-import { CommentsEvent, LiveCommentsEvent } from '@proton/docs-shared'
+import { CommentsEvent, EditorSystemMode, LiveCommentsEvent } from '@proton/docs-shared'
 import { EditorFrame } from './EditorFrame'
 import { mergeRegister } from '@lexical/utils'
 import { useSignatureCheckFailedModal } from './Modals/SignatureCheckFailedModal'
@@ -37,7 +37,7 @@ import WordCountOverlay from './WordCount/WordCountOverlay'
 import { useSuggestionsFeatureFlag } from '../Hooks/useSuggestionsFeatureFlag'
 
 type Props = {
-  lookup: NodeMeta | PublicNodeMeta
+  nodeMeta: NodeMeta | PublicNodeMeta
   editorInitializationConfig?: EditorInitializationConfig
   action: DocumentAction['mode'] | undefined
 }
@@ -47,7 +47,7 @@ type Error = {
   userUnderstandableMessage: boolean
 }
 
-export function DocumentViewer({ lookup, editorInitializationConfig, action }: Props) {
+export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }: Props) {
   const application = useApplication()
   const { getLocalID } = useAuthentication()
 
@@ -67,6 +67,8 @@ export function DocumentViewer({ lookup, editorInitializationConfig, action }: P
   const [didLoadEditorContent, setDidLoadEditorContent] = useState(false)
   const debug = useDebug()
   const getUserSettings = useGetUserSettings()
+
+  const isPublicViewer = application.isPublicMode
 
   const { isSuggestionsEnabled } = useSuggestionsFeatureFlag()
   useEffect(() => {
@@ -287,11 +289,11 @@ export function DocumentViewer({ lookup, editorInitializationConfig, action }: P
     if (!initializing) {
       setInitializing(true)
 
-      void application.docLoader.initialize(lookup)
+      void application.docLoader.initialize(nodeMeta)
     }
 
     return disposer
-  }, [application, lookup, docOrchestrator, editorFrame, createBridge, initializing, bridge])
+  }, [application, nodeMeta, docOrchestrator, editorFrame, createBridge, initializing, bridge])
 
   if (error) {
     return (
@@ -326,7 +328,11 @@ export function DocumentViewer({ lookup, editorInitializationConfig, action }: P
         </div>
       )}
 
-      <EditorFrame key="docs-editor-iframe" onFrameReady={onFrameReady} />
+      <EditorFrame
+        key="docs-editor-iframe"
+        onFrameReady={onFrameReady}
+        systemMode={isPublicViewer ? EditorSystemMode.PublicView : EditorSystemMode.Edit}
+      />
       {signatureFailedModal}
       {genericAlertModal}
     </div>
