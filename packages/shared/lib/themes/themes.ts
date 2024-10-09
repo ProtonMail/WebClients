@@ -26,7 +26,6 @@ import storefrontTheme from '@proton/colors/themes/dist/storefront.theme.css';
 import walletLightTheme from '@proton/colors/themes/dist/wallet.theme.css';
 import { decodeBase64URL, encodeBase64URL } from '@proton/shared/lib/helpers/encoding';
 
-import { DESKTOP_THEME_TYPES } from '../desktop/desktopTheme';
 import { canGetInboxDesktopInfo, getInboxDesktopInfo, hasInboxDesktopFeature } from '../desktop/ipcHelpers';
 import { isElectronApp } from '../helpers/desktop';
 
@@ -45,6 +44,11 @@ export enum ThemeTypes {
     WalletLight = 10,
     StorefrontWallet = 11,
 }
+
+export const DESKTOP_THEME_TYPES = {
+    Carbon: ThemeTypes.Carbon,
+    Snow: ThemeTypes.Snow,
+} as const;
 
 export const PROTON_DEFAULT_THEME = ThemeTypes.Duotone;
 
@@ -566,4 +570,8 @@ export const PROTON_DEFAULT_THEME_INFORMATION: ThemeInformation = {
         scrollbars: false,
         animations: false,
     },
+};
+
+export const isDesktopThemeType = (value: unknown): value is ThemeTypes => {
+    return Object.values(DESKTOP_THEME_TYPES).includes(value as any);
 };
