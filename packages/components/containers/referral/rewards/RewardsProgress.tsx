@@ -11,10 +11,17 @@ interface Props {
 }
 
 const RewardsProgress = ({ rewards, rewardsLimit }: Props) => {
-    const { plansMap } = usePreferredPlansMap();
+    const { plansMap, plansMapLoading } = usePreferredPlansMap();
+    if (plansMapLoading) {
+        return null;
+    }
 
     const mailPlusPlan = plansMap[PLANS.MAIL];
-    const price = Math.round((mailPlusPlan?.Pricing[CYCLE.MONTHLY] || 0) / 100) * 100; // Price rounded to 500
+    if (!mailPlusPlan) {
+        return null;
+    }
+
+    const price = Math.round((mailPlusPlan.Pricing[CYCLE.MONTHLY] || 0) / 100) * 100; // Price rounded to 500
     const current = getSimplePriceString(mailPlusPlan.Currency, rewards * price);
     const total = getSimplePriceString(mailPlusPlan.Currency, rewardsLimit * price);
 

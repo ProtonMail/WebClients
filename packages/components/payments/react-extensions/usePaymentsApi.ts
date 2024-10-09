@@ -351,7 +351,7 @@ export const usePaymentsApi = (
  */
 export const usePaymentsApiWithCheckFallback = () => {
     const [subscription] = useSubscription();
-    const { plansMap } = usePreferredPlansMap();
+    const { plansMap, plansMapLoading } = usePreferredPlansMap();
 
     const checkV5Fallback = (data: CheckSubscriptionData): SubscriptionCheckResponse | null => {
         const { Cycle, Currency, Plans } = data;
@@ -362,7 +362,7 @@ export const usePaymentsApiWithCheckFallback = () => {
         }
 
         const planName = getPlanName(subscription);
-        if (!planName) {
+        if (!planName || plansMapLoading) {
             return null;
         }
 
