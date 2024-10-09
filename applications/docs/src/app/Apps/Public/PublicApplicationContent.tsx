@@ -9,10 +9,9 @@ import type { DocumentAction, PublicDriveCompat, PublicNodeMeta } from '@proton/
 import { APP_VERSION } from '../../config'
 import { WordCountContextProvider } from '../../Components/WordCount/WordCountProvider'
 import { useDocsUrlBar } from '../../Containers/useDocsUrlBar'
+import PublicLayout from './PublicLayout'
 
 function PublicApplicationContent({ publicDriveCompat }: { publicDriveCompat: PublicDriveCompat }) {
-  void import('../../tailwind.scss')
-
   const api = useApi()
 
   const { openAction } = useDocsUrlBar({ isDocsEnabled: publicDriveCompat.isDocsEnabled })
@@ -54,7 +53,9 @@ function PublicApplicationContent({ publicDriveCompat }: { publicDriveCompat: Pu
       <WordCountContextProvider>
         <Switch>
           <Route path={'*'}>
-            <Content openAction={openAction} actionMode={action} />
+            <PublicLayout>
+              <Content openAction={openAction} actionMode={action} />
+            </PublicLayout>
           </Route>
         </Switch>
       </WordCountContextProvider>
@@ -78,7 +79,7 @@ function Content({
     linkId: openAction.linkId,
   }
 
-  return <DocumentViewer lookup={nodeMeta} action={actionMode} />
+  return <DocumentViewer nodeMeta={nodeMeta} action={actionMode} />
 }
 
 export default PublicApplicationContent

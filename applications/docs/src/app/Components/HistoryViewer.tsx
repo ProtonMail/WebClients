@@ -12,7 +12,7 @@ import {
 } from '@proton/components'
 import type { NativeVersionHistory } from '@proton/docs-core'
 import { EditorInvoker } from '@proton/docs-core/lib/Bridge/EditorInvoker'
-import { DOCS_DEBUG_KEY } from '@proton/docs-shared'
+import { DOCS_DEBUG_KEY, EditorSystemMode } from '@proton/docs-shared'
 import { Logger } from '@proton/utils/logs'
 import { useCallback, useMemo, useState } from 'react'
 import { c } from 'ttag'
@@ -79,7 +79,11 @@ function HistoryViewerModalContent({
           </div>
         </div>
         <div className="min-h-0 flex-grow overflow-scroll">
-          <EditorFrame key={selectedBatchTimestamp + `${Math.random()}`} isViewOnly onFrameReady={onFrameReady} />
+          <EditorFrame
+            key={selectedBatchTimestamp + `${Math.random()}`}
+            systemMode={EditorSystemMode.Revision}
+            onFrameReady={onFrameReady}
+          />
         </div>
       </div>
       <div className="overflow-scroll border-l border-[--border-weak] bg-[--optional-background-lowered]">

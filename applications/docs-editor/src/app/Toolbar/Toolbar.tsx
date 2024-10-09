@@ -52,7 +52,6 @@ import { rootFontSize } from '@proton/shared/lib/helpers/dom'
 import clsx from '@proton/utils/clsx'
 import { c } from 'ttag'
 import { FontColorMenu } from '../Components/ColorMenu'
-import type { DocumentInteractionMode } from '../DocumentInteractionMode'
 import AlphabeticalListIcon from '../Icons/AlphabeticalListIcon'
 import CheckListIcon from '../Icons/CheckListIcon'
 import IndentIcon from '../Icons/IndentIcon'
@@ -92,6 +91,7 @@ import { useApplication } from '../ApplicationProvider'
 import { InteractionDropdownButton } from './InteractionDropdownButton'
 import { SET_SELECTION_STYLE_PROPERTY_COMMAND } from '../Plugins/FormattingPlugin'
 import { INSERT_FILE_COMMAND } from '../Commands/Events'
+import { EditorUserMode } from '../EditorUserMode'
 
 type BlockType = keyof typeof blockTypeToBlockName
 
@@ -108,12 +108,12 @@ function isMobile() {
 }
 
 export default function DocumentEditorToolbar({
-  interactionMode,
-  onInteractionModeChange,
+  userMode,
+  onUserModeChange,
   hasEditAccess,
 }: {
-  interactionMode: DocumentInteractionMode
-  onInteractionModeChange: (mode: DocumentInteractionMode) => void
+  userMode: EditorUserMode
+  onUserModeChange: (mode: EditorUserMode) => void
   hasEditAccess: boolean
 }) {
   const [editor] = useLexicalComposerContext()
@@ -707,9 +707,9 @@ export default function DocumentEditorToolbar({
     },
   }
 
-  const isEditMode = interactionMode === 'edit'
-  const isViewMode = interactionMode === 'view'
-  const isSuggestionMode = interactionMode === 'suggest'
+  const isEditMode = userMode === EditorUserMode.Edit
+  const isPreviewMode = userMode === EditorUserMode.Preview
+  const isSuggestionMode = userMode === EditorUserMode.Suggest
 
   return (
     <div
@@ -1406,13 +1406,13 @@ export default function DocumentEditorToolbar({
             <>
               {isEditMode && <Icon name="pencil" />}
               {isSuggestionMode && <SpeechBubblePenIcon className="h-4 w-4" />}
-              {isViewMode && <Icon name="eye" />}
+              {isPreviewMode && <Icon name="eye" />}
             </>
           }
           hasCaret={!viewportWidth['<=small']}
           contentProps={DropdownContentProps}
           data-testid="edit-options-dropdown"
-          data-interaction-mode={interactionMode}
+          data-interaction-mode={userMode}
         >
           <DropdownMenu>
             {hasEditAccess && (
@@ -1420,7 +1420,7 @@ export default function DocumentEditorToolbar({
                 <InteractionDropdownButton
                   isActive={isEditMode}
                   onClick={() => {
-                    onInteractionModeChange('edit')
+                    onUserModeChange(EditorUserMode.Edit)
                   }}
                   icon={<Icon name="pencil" size={4} />}
                   label={c('Info').t`Editing`}
@@ -1434,7 +1434,7 @@ export default function DocumentEditorToolbar({
                     label={c('Info').t`Suggesting`}
                     description={c('Description').t`Edits become suggestion`}
                     onClick={() => {
-                      onInteractionModeChange('suggest')
+                      onUserModeChange(EditorUserMode.Suggest)
                     }}
                     data-testid="suggest-dropdown-button"
                   />
@@ -1442,12 +1442,12 @@ export default function DocumentEditorToolbar({
               </>
             )}
             <InteractionDropdownButton
-              isActive={isViewMode}
+              isActive={isPreviewMode}
               label={c('Info').t`Viewing`}
               icon={<Icon name="eye" size={4} />}
               description={c('Description').t`Read or print final document`}
               onClick={() => {
-                onInteractionModeChange('view')
+                onUserModeChange(EditorUserMode.Preview)
               }}
               data-testid="view-dropdown-button"
             />
