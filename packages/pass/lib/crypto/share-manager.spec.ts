@@ -2,7 +2,7 @@ import type { VaultKey } from '@proton/pass/types';
 import { ShareType } from '@proton/pass/types';
 
 import { createShareManager } from './share-manager';
-import { generateKey, getSymmetricKey } from './utils/crypto-helpers';
+import { generateKey, importSymmetricKey } from './utils/crypto-helpers';
 import { PassCryptoShareError, PassCryptoVaultError } from './utils/errors';
 import { TEST_USER_KEY_ID, createRandomShare } from './utils/testing';
 
@@ -33,7 +33,7 @@ describe('ShareManager', () => {
         const key = generateKey();
         const vaultKey: VaultKey = {
             raw: key,
-            key: await getSymmetricKey(key),
+            key: await importSymmetricKey(key),
             rotation: 1,
             userKeyId: TEST_USER_KEY_ID,
         };
@@ -69,7 +69,7 @@ describe('ShareManager', () => {
         const key = generateKey();
         const vaultKey: VaultKey = {
             raw: key,
-            key: await getSymmetricKey(key),
+            key: await importSymmetricKey(key),
             rotation: 1,
             userKeyId: TEST_USER_KEY_ID,
         };
@@ -84,7 +84,7 @@ describe('ShareManager', () => {
         const key = generateKey();
         const vaultKey: VaultKey = {
             raw: key,
-            key: await getSymmetricKey(key),
+            key: await importSymmetricKey(key),
             rotation: 42,
             userKeyId: TEST_USER_KEY_ID,
         };
@@ -103,7 +103,7 @@ describe('ShareManager', () => {
                 const key = generateKey();
                 return {
                     raw: key,
-                    key: await getSymmetricKey(key),
+                    key: await importSymmetricKey(key),
                     rotation: i + 1,
                     userKeyId: TEST_USER_KEY_ID,
                 };

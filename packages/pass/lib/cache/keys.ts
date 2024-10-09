@@ -1,5 +1,5 @@
 import { type AuthStore } from '@proton/pass/lib/auth/store';
-import { decryptData, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassEncryptionTag } from '@proton/pass/types';
 import type { Maybe } from '@proton/pass/types/utils';
 import { type EncryptedPassCache } from '@proton/pass/types/worker/cache';
@@ -22,14 +22,14 @@ export const getCacheKey = async (
         const offlineKD = authStore.getOfflineKD();
 
         if (offlineKD && encryptedCacheKey) {
-            const offlineKey = await getSymmetricKey(stringToUint8Array(offlineKD));
+            const offlineKey = await importSymmetricKey(stringToUint8Array(offlineKD));
             const rawCacheKey = await decryptData(
                 offlineKey,
                 stringToUint8Array(encryptedCacheKey),
                 PassEncryptionTag.Offline
             );
 
-            return await getSymmetricKey(rawCacheKey);
+            return await importSymmetricKey(rawCacheKey);
         }
 
         if (keyPassword && salt) {

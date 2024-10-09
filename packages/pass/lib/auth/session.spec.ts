@@ -1,4 +1,4 @@
-import { generateKey, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { getDecryptedBlob } from '@proton/shared/lib/authentication/sessionBlobCryptoHelper';
 
 import { SESSION_DIGEST_VERSION, digestSession } from './integrity';
@@ -32,7 +32,7 @@ describe('Session utilities', () => {
         };
 
         test('should encrypt sensitive components in the encrypted blob', async () => {
-            const clientKey = await getSymmetricKey(generateKey());
+            const clientKey = await importSymmetricKey(generateKey());
             const result = await encryptPersistedSessionWithKey(session, clientKey);
             const data = JSON.parse(result);
 
@@ -51,7 +51,7 @@ describe('Session utilities', () => {
         });
 
         test('should compute an integrity digest of the session data', async () => {
-            const clientKey = await getSymmetricKey(generateKey());
+            const clientKey = await importSymmetricKey(generateKey());
             const result = await encryptPersistedSessionWithKey(session, clientKey);
             const decrypted = await getDecryptedBlob(clientKey, JSON.parse(result).blob, getSessionEncryptionTag(2));
             const decryptedData = JSON.parse(decrypted);

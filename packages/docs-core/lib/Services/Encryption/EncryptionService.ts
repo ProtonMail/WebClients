@@ -7,7 +7,10 @@ import type {
 } from '@proton/crypto'
 import { CryptoProxy } from '@proton/crypto'
 import { SignedPlaintextContent } from '@proton/docs-proto'
-import { encryptData as gcmEncrypt, decryptData as gcmDecrypt } from '@proton/shared/lib/authentication/cryptoHelper'
+import {
+  encryptDataWith16ByteIV as gcmEncryptWith16ByteIV,
+  decryptData as gcmDecrypt,
+} from '@proton/crypto/lib/subtle/aesGcm'
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays'
 import { stringToUtf8Array } from '@proton/crypto/lib/utils'
 import type { EncryptionContext } from './EncryptionContext'
@@ -51,7 +54,7 @@ export class EncryptionService<C extends EncryptionContext> {
 
       const hkdfSalt = crypto.getRandomValues(new Uint8Array(HKDF_SALT_SIZE))
       const key = await deriveGcmKey(sessionKey, hkdfSalt, contextBytes)
-      const ciphertext = await gcmEncrypt(key, contentToEncrypt.serializeBinary(), contextBytes)
+      const ciphertext = await gcmEncryptWith16ByteIV(key, contentToEncrypt.serializeBinary(), contextBytes)
       return Result.ok(mergeUint8Arrays([hkdfSalt, ciphertext]))
     } catch (error) {
       return Result.fail(`Failed to sign and encrypt data ${error}`)
@@ -69,7 +72,7 @@ export class EncryptionService<C extends EncryptionContext> {
       const hkdfSalt = encryptedData.subarray(0, HKDF_SALT_SIZE)
       const ciphertext = encryptedData.subarray(HKDF_SALT_SIZE)
       const key = await deriveGcmKey(sessionKey, hkdfSalt, contextBytes)
-      const decryptedData = await gcmDecrypt(key, ciphertext, contextBytes)
+      const decryptedData = await gcmDecrypt(key, ciphertext, contextBytes, true)
 
       return Result.ok(SignedPlaintextContent.deserializeBinary(decryptedData))
     } catch (error) {
