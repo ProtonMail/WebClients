@@ -3,7 +3,8 @@ import { useCallback, useEffect, useState } from 'react';
 import { useExtensionContext } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
 import { checkExtensionPermissions } from 'proton-pass-extension/lib/utils/permissions';
 
-import { WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
+import { matchExtensionMessage } from '@proton/pass/lib/extension/message/utils';
+import { WorkerMessageType } from '@proton/pass/types';
 
 /* On hook first run : we programatically check the permissions
  * using the browser API. We then setup a listener for the worker
@@ -21,8 +22,8 @@ export const usePermissionsGranted = (): boolean => {
     }, []);
 
     useEffect(() => {
-        const handleMessage = (message: WorkerMessageWithSender) => {
-            if (message.sender === 'background' && message.type === WorkerMessageType.PERMISSIONS_UPDATE) {
+        const handleMessage = (message: unknown) => {
+            if (matchExtensionMessage(message, { sender: 'background', type: WorkerMessageType.PERMISSIONS_UPDATE })) {
                 setValid(message.payload.check);
             }
         };
