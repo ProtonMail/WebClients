@@ -64,6 +64,7 @@ export function CommentsPanelListComment({
     if (!didAccept) {
       return
     }
+    application.logger.info('Accepting suggestion thread', thread.id)
     controller.acceptSuggestion(thread.id).catch(sendErrorMessage)
   }
 
@@ -75,6 +76,7 @@ export function CommentsPanelListComment({
     if (!didReject) {
       return
     }
+    application.logger.info('Rejecting suggestion thread', thread.id)
     controller.rejectSuggestion(thread.id).catch(sendErrorMessage)
   }
 

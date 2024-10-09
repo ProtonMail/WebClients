@@ -95,8 +95,15 @@ export function useSuggestionCommentContent(
     } else if (type === 'delete-link') {
       title = c('Label').t`Delete link`
       color = 'weak'
+    } else if (type === 'insert-image') {
+      title = c('Label').t`Insert image`
+    } else if (type === 'delete-image') {
+      title = c('Label').t`Delete image`
+      color = 'weak'
+    } else if (type === 'image-change') {
+      title = c('Label').t`Change image size`
     }
-    if (!!replaceWith || type === 'delete') {
+    if (!!replaceWith || type === 'delete' || type === 'insert') {
       content = `"${content}"`
     }
     if (type === 'style-change') {
