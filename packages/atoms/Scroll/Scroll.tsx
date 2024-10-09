@@ -13,6 +13,7 @@ export interface ScrollProps extends ComponentPropsWithoutRef<'div'> {
     customContainerRef?: Ref<HTMLElement>;
     customChildRef?: Ref<HTMLElement>;
     onScroll?: () => void;
+    scrollContained?: boolean;
 }
 
 const Scroll = ({
@@ -22,6 +23,7 @@ const Scroll = ({
     customContainerRef,
     customChildRef,
     onScroll,
+    scrollContained = true,
     ...rest
 }: ScrollProps) => {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -126,7 +128,11 @@ const Scroll = ({
                 className={clsx('scroll-end-shadow pointer-events-none', showEndShadow && 'scroll-end-shadow-visible')}
                 aria-hidden="true"
             />
-            <div className="scroll-inner" ref={containerRefs} onScroll={handleScroll}>
+            <div
+                className={clsx('scroll-inner', scrollContained && 'scroll-inner--contained')}
+                ref={containerRefs}
+                onScroll={handleScroll}
+            >
                 <div className="scroll-child" ref={childRefs}>
                     {children}
                 </div>
