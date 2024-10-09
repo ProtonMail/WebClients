@@ -18,9 +18,10 @@ import { ExtensionContext, setupExtensionContext } from 'proton-pass-extension/l
 
 import { clientNeedsSession, clientSessionLocked } from '@proton/pass/lib/client';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
+import { matchExtensionMessage } from '@proton/pass/lib/extension/message/utils';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import { type AppState, WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
+import { type AppState, WorkerMessageType } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
@@ -79,8 +80,8 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
         void reconciliate();
     };
 
-    const onPortMessage = async (message: WorkerMessageWithSender): Promise<void> => {
-        if (message.sender === 'background') {
+    const onPortMessage = async (message: unknown): Promise<void> => {
+        if (matchExtensionMessage(message, { sender: 'background' })) {
             switch (message.type) {
                 case WorkerMessageType.AUTOFILL_SYNC:
                     return context.service.autofill.sync({ forceSync: true });

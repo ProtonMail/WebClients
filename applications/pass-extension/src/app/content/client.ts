@@ -15,9 +15,10 @@
  * way, we can ensure that only one instance of the client content-script is running
  * at a time, and that it is properly cleaned up when no longer needed */
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
+import { matchExtensionMessage } from '@proton/pass/lib/extension/message/utils';
 import browser from '@proton/pass/lib/globals/browser';
-import type { Maybe, MaybeNull } from '@proton/pass/types';
-import { WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types';
+import { WorkerMessageType } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
@@ -80,8 +81,8 @@ void (async () =>
 
         Promise.resolve(script?.start())
             .then(() => {
-                browser.runtime.onMessage.addListener((message: Maybe<WorkerMessageWithSender>) => {
-                    if (message?.sender === 'background') {
+                browser.runtime.onMessage.addListener((message: unknown) => {
+                    if (matchExtensionMessage(message, { sender: 'background' })) {
                         switch (message.type) {
                             case WorkerMessageType.START_CONTENT_SCRIPT:
                                 script = script ?? createContentScriptClient({ scriptId, mainFrame, elements });
@@ -93,6 +94,8 @@ void (async () =>
                                 break;
                         }
                     }
+
+                    return undefined;
                 });
             })
             .catch(noop);

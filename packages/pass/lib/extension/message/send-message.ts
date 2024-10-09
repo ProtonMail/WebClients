@@ -41,7 +41,10 @@ export const sendMessage = async <T extends WorkerMessageWithSender>(
     message: T
 ): Promise<WorkerResponse<T> | MessageFailure> => {
     try {
-        const res = await browser.runtime.sendMessage(browser.runtime.id, message);
+        const res = await browser.runtime.sendMessage<T, WorkerResponse<T> | MessageFailure>(
+            browser.runtime.id,
+            message
+        );
         if (res === undefined) throw new CriticalMessageResponseError();
         return res;
     } catch (error) {
