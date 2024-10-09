@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { useDebouncedValue } from '@proton/pass/hooks/useDebouncedValue';
 import type { inviteRecommendationsFailure, inviteRecommendationsSuccess } from '@proton/pass/store/actions';
-import { getShareAccessOptionsIntent, inviteRecommendationsIntent } from '@proton/pass/store/actions';
+import { getShareAccessOptions, inviteRecommendationsIntent } from '@proton/pass/store/actions';
 import type { MaybeNull } from '@proton/pass/types';
 import type { InviteRecommendationsSuccess } from '@proton/pass/types/data/invites.dto';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -45,7 +45,10 @@ export const useInviteRecommendations = (autocomplete: string, { shareId, pageSi
                           ...data.organization,
                           /** If the response has a `since` property, it is paginated:
                            * Append to the current organization emails list */
-                          emails: [...(data.since ? prev.organization?.emails ?? [] : []), ...data.organization.emails],
+                          emails: [
+                              ...(data.since ? (prev.organization?.emails ?? []) : []),
+                              ...data.organization.emails,
+                          ],
                       }
                     : null,
             }));
@@ -56,7 +59,7 @@ export const useInviteRecommendations = (autocomplete: string, { shareId, pageSi
         /** Trigger initial recommendation request when component mounts.
          * Force a revalidation of the share's access options to have fresh
          * member data when reconciliating suggestions against current members */
-        dispatch(getShareAccessOptionsIntent(shareId));
+        dispatch(getShareAccessOptions.intent({ shareId }));
         recommendations.dispatch({ pageSize, shareId, since: null, startsWith: '' }, requestId);
     }, []);
 
