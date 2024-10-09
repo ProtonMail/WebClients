@@ -1,7 +1,9 @@
+import { z } from 'zod';
+
 import type { Environment } from '@proton/shared/lib/interfaces';
 
 import { type ColorScheme, type ThemeSetting, ThemeTypes } from '../themes/themes';
-import type { DefaultProtocol } from './DefaultProtocol';
+import { type DefaultProtocol, zDefaultProtocol } from './DefaultProtocol';
 import type { DesktopVersion } from './DesktopVersion';
 
 export const DESKTOP_THEME_TYPES = {
@@ -56,19 +58,23 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'defaultMailtoTelemetryReported'; payload: number };
 export type IPCInboxClientUpdateMessageType = IPCInboxClientUpdateMessage['type'];
 
-// WARNING: DO NOT EXTEND THIS WITH OTHER UNION. IT IS NOT EASY AND EVENTS WON'T BE TYPESAFE
-// label: inda-refactor-001
-export type IPCInboxHostUpdateMessage =
-    | {
-          type: 'captureMessage';
-          payload: {
-              message: string;
-              level: 'error' | 'warning';
-              tags: Record<string, string | number>;
-              extra: Record<string, string | number>;
-          };
-      }
-    | { type: 'defaultMailtoChecked'; payload: DefaultProtocol };
+export const IPCInboxHostUpdateMessageSchema = z.union([
+    z.object({
+        type: z.literal('captureMessage'),
+        payload: z.object({
+            message: z.string(),
+            level: z.union([z.literal('error'), z.literal('warning')]),
+            tags: z.record(z.union([z.string(), z.number()])),
+            extra: z.record(z.union([z.string(), z.number()])),
+        }),
+    }),
+    z.object({
+        type: z.literal('defaultMailtoChecked'),
+        payload: zDefaultProtocol,
+    }),
+]);
+
+export type IPCInboxHostUpdateMessage = z.infer<typeof IPCInboxHostUpdateMessageSchema>;
 export type IPCInboxHostUpdateMessageType = string & IPCInboxHostUpdateMessage['type'];
 export type IPCInboxHostUpdateMessagePayload = IPCInboxHostUpdateMessage['payload'];
 export type IPCInboxHostUpdateListener = (payload: IPCInboxHostUpdateMessagePayload) => void;
