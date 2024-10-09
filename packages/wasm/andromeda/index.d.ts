@@ -20,23 +20,6 @@ export function createTransactionFromPsbt(psbt: WasmPsbt, account: WasmAccount):
 export function getDefaultStopGap(): number;
 /**
 */
-export enum WasmPaymentLinkKind {
-  BitcoinAddress = 0,
-  BitcoinURI = 1,
-  LightningURI = 2,
-  UnifiedURI = 3,
-}
-/**
-*/
-export enum WasmWordCount {
-  Words12 = 0,
-  Words15 = 1,
-  Words18 = 2,
-  Words21 = 3,
-  Words24 = 4,
-}
-/**
-*/
 export enum WasmLanguage {
   English = 0,
   SimplifiedChinese = 1,
@@ -50,31 +33,11 @@ export enum WasmLanguage {
 }
 /**
 */
-export enum WasmScriptType {
-  Legacy = 1,
-  NestedSegwit = 2,
-  NativeSegwit = 3,
-  Taproot = 4,
-}
-/**
-*/
-export enum WasmWalletTransactionFlag {
-  Suspicious = 0,
-  Private = 1,
-}
-/**
-*/
-export enum WasmSortOrder {
-  Asc = 0,
-  Desc = 1,
-}
-/**
-*/
-export enum WasmCoinSelection {
-  BranchAndBound = 0,
-  LargestFirst = 1,
-  OldestFirst = 2,
-  Manual = 3,
+export enum WasmPaymentLinkKind {
+  BitcoinAddress = 0,
+  BitcoinURI = 1,
+  LightningURI = 2,
+  UnifiedURI = 3,
 }
 /**
 */
@@ -110,10 +73,47 @@ export enum WasmKeychainKind {
 }
 /**
 */
+export enum WasmScriptType {
+  Legacy = 1,
+  NestedSegwit = 2,
+  NativeSegwit = 3,
+  Taproot = 4,
+}
+/**
+*/
+export enum WasmWalletTransactionFlag {
+  Suspicious = 0,
+  Private = 1,
+}
+/**
+*/
 export enum WasmChangeSpendPolicy {
   ChangeAllowed = 0,
   OnlyChange = 1,
   ChangeForbidden = 2,
+}
+/**
+*/
+export enum WasmSortOrder {
+  Asc = 0,
+  Desc = 1,
+}
+/**
+*/
+export enum WasmWordCount {
+  Words12 = 0,
+  Words15 = 1,
+  Words18 = 2,
+  Words21 = 3,
+  Words24 = 4,
+}
+/**
+*/
+export enum WasmCoinSelection {
+  BranchAndBound = 0,
+  LargestFirst = 1,
+  OldestFirst = 2,
+  Manual = 3,
 }
 export type WasmUserReceiveNotificationEmailTypes = "NotificationToInviter" | "EmailIntegration" | "TransactionalBvE" | "Unsupported";
 
@@ -274,6 +274,7 @@ export interface WasmApiWallet {
     Fingerprint: string | null;
     PublicKey: string | null;
     MigrationRequired: number | null;
+    Legacy: number | null;
 }
 
 export interface WasmApiWalletKey {
