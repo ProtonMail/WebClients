@@ -14,7 +14,7 @@ const ModalContent = ({ className, ...rest }: ModalContentProps) => {
     const { id } = useContext(ModalContext);
 
     return (
-        <Scroll className="overflow-hidden">
+        <Scroll className="overflow-hidden" scrollContained>
             <div id={`${id}-description`} className={clsx([className, 'modal-two-content'])} {...rest} />
         </Scroll>
     );
