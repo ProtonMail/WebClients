@@ -13,6 +13,7 @@ import { type DecryptedKey } from '@proton/shared/lib/interfaces';
 
 import { type IWasmApiWalletData } from '../types';
 import {
+    decryptMnemonicWithUserKey,
     decryptWalletData,
     decryptWalletKey,
     decryptWalletKeyForHmac,
@@ -103,9 +104,13 @@ export const decryptWallet = async ({
             ? localStorage.getItem(getPassphraseLocalStorageKey(Wallet.Fingerprint))
             : null;
 
+        // Backward compatibility with mnemonic encrypted with user key in addition to the wallet key
+        const encryptedMnemonic = Wallet.Legacy
+            ? await decryptMnemonicWithUserKey(Wallet.Mnemonic, userKeys)
+            : Wallet.Mnemonic;
         const [decryptedMnemonic, decryptedWalletName, decryptedPublickey, decryptedPassphrase] =
             await decryptWalletData(
-                [Wallet.Mnemonic, Wallet.Name, Wallet.PublicKey, encryptedPassphrase],
+                [encryptedMnemonic, Wallet.Name, Wallet.PublicKey, encryptedPassphrase],
                 decryptedWalletKey
             );
 
