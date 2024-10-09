@@ -23,7 +23,7 @@ const Scroll = ({
     customContainerRef,
     customChildRef,
     onScroll,
-    scrollContained = true,
+    scrollContained = false,
     ...rest
 }: ScrollProps) => {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
