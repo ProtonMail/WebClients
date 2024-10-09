@@ -2,9 +2,10 @@ import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-co
 import { type Middleware, isAction } from 'redux';
 
 import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message/send-message';
+import { matchExtensionMessage } from '@proton/pass/lib/extension/message/utils';
 import { isSynchronousAction } from '@proton/pass/store/actions/enhancers/client';
 import { acceptActionWithReceiver, withSender } from '@proton/pass/store/actions/enhancers/endpoint';
-import type { ClientEndpoint, TabId, WorkerMessageWithSender } from '@proton/pass/types';
+import type { ClientEndpoint, TabId } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
@@ -23,8 +24,8 @@ export const relayMiddleware = ({ endpoint, tabId }: ProxyActionsMiddlewareOptio
     const messageFactory = resolveMessageFactory(endpoint);
 
     return () => (next) => {
-        ExtensionContext.get().port.onMessage.addListener((message: WorkerMessageWithSender) => {
-            if (message.sender === 'background' && message.type === WorkerMessageType.STORE_DISPATCH) {
+        ExtensionContext.get().port.onMessage.addListener((message: unknown) => {
+            if (matchExtensionMessage(message, { sender: 'background', type: WorkerMessageType.STORE_DISPATCH })) {
                 const unprocessedAction = !isSynchronousAction(message.payload.action);
                 const acceptAction = acceptActionWithReceiver(message.payload.action, endpoint, tabId);
 

@@ -29,7 +29,7 @@ export const WebsiteRulesDebug: FC = () => {
         browser.storage.local
             .get('websiteRules')
             .then(({ websiteRules }) => {
-                if (websiteRules) {
+                if (typeof websiteRules === 'string') {
                     const rules = JSON.parse(websiteRules);
                     if (rules && validateRules(rules)) setValue(JSON.stringify(rules, null, 4));
                 }

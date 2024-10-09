@@ -1,13 +1,8 @@
 import type { Runtime } from 'webextension-polyfill';
 
+import { isExtensionMessage } from '@proton/pass/lib/extension/message/utils';
 import browser from '@proton/pass/lib/globals/browser';
-import type {
-    Maybe,
-    WorkerMessage,
-    WorkerMessageResponse,
-    WorkerMessageWithSender,
-    WorkerResponse,
-} from '@proton/pass/types';
+import type { WorkerMessage, WorkerMessageResponse, WorkerMessageWithSender, WorkerResponse } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { notIn } from '@proton/pass/utils/fp/predicates';
@@ -58,56 +53,58 @@ export const createMessageBroker = (options: {
     };
 
     const onMessage = async (
-        message: WorkerMessageWithSender,
+        message: unknown,
         sender: Runtime.MessageSender
     ): Promise<WorkerResponse<WorkerMessageWithSender> | void> => {
-        /**
-         * During development, while using the webpack dev-server
-         * with hot module replacement - we sometimes end up in a
-         * "corrupted" state where the service-worker is sending out
-         * messages to itself while it is updating or going stale.
-         */
-        if (process.env.NODE_ENV === 'development') {
-            if (message.sender === 'background') {
-                browser.runtime.reload();
-                return errorMessage();
-            }
-        }
-
-        const handler = message.type !== undefined ? handlers.get(message.type) : undefined;
-
-        if (handler) {
-            try {
-                const isExternal = sender.id !== browser.runtime.id;
-                const isInternal = !isExternal;
-
-                if (isExternal && notIn(options.allowExternal)(message.type)) {
-                    logger.warn('[MessageBroker::Message] unauthorized external message');
-                    return errorMessage('unauthorized');
+        if (isExtensionMessage(message)) {
+            /**
+             * During development, while using the webpack dev-server
+             * with hot module replacement - we sometimes end up in a
+             * "corrupted" state where the service-worker is sending out
+             * messages to itself while it is updating or going stale.
+             */
+            if (process.env.NODE_ENV === 'development') {
+                if (message.sender === 'background') {
+                    browser.runtime.reload();
+                    return errorMessage();
                 }
+            }
 
-                if (isInternal) assertMessageVersion(message);
+            const handler = message.type !== undefined ? handlers.get(message.type) : undefined;
 
-                if (BUILD_TARGET !== 'safari' && isInternal && options.strictOriginCheck.includes(message.type)) {
-                    const origin = new URL((sender as any).origin ?? sender.url).origin;
-                    if (origin !== extensionOrigin) {
-                        logger.warn('[MessageBroker::Message] unauthorized message origin');
+            if (handler) {
+                try {
+                    const isExternal = sender.id !== browser.runtime.id;
+                    const isInternal = !isExternal;
+
+                    if (isExternal && notIn(options.allowExternal)(message.type)) {
+                        logger.warn('[MessageBroker::Message] unauthorized external message');
                         return errorMessage('unauthorized');
                     }
+
+                    if (isInternal) assertMessageVersion(message);
+
+                    if (BUILD_TARGET !== 'safari' && isInternal && options.strictOriginCheck.includes(message.type)) {
+                        const origin = new URL((sender as any).origin ?? sender.url).origin;
+                        if (origin !== extensionOrigin) {
+                            logger.warn('[MessageBroker::Message] unauthorized message origin');
+                            return errorMessage('unauthorized');
+                        }
+                    }
+
+                    const res = await handler(message, sender);
+
+                    if (typeof res === 'boolean' || res === undefined) {
+                        if (res === false) throw new Error(`Error when processing "${message.type}"`);
+                        return successMessage({});
+                    }
+
+                    return successMessage(res);
+                } catch (error: any) {
+                    logger.debug(`[MessageBroker::Message] error`, error);
+                    options.onError(error);
+                    return error instanceof Error ? errorMessage(error?.message) : { ...error, type: 'error' };
                 }
-
-                const res = await handler(message, sender);
-
-                if (typeof res === 'boolean' || res === undefined) {
-                    if (res === false) throw new Error(`Error when processing "${message.type}"`);
-                    return successMessage({});
-                }
-
-                return successMessage(res);
-            } catch (error: any) {
-                logger.debug(`[MessageBroker::Message] error`, error);
-                options.onError(error);
-                return error instanceof Error ? errorMessage(error?.message) : { ...error, type: 'error' };
             }
         }
     };
@@ -119,19 +116,21 @@ export const createMessageBroker = (options: {
          * no reference of - reply with a `PORT_UNAUTHORIZED` message
          * on the source port. This can be used in injected frames to
          * detect they're not controlled by a content-script */
-        port.onMessage.addListener(async (message: Maybe<WorkerMessageWithSender>, source) => {
-            try {
-                if (message) assertMessageVersion(message);
-                if (message && message.type === WorkerMessageType.PORT_FORWARDING_MESSAGE) {
-                    if (ports.has(message.forwardTo)) {
-                        ports.get(message.forwardTo)!.postMessage({ ...message.payload, forwarded: true });
-                    } else {
-                        source.postMessage(backgroundMessage({ type: WorkerMessageType.PORT_UNAUTHORIZED }));
+        port.onMessage.addListener((message: unknown, source) => {
+            if (isExtensionMessage(message)) {
+                try {
+                    if (message) assertMessageVersion(message);
+                    if (message && message.type === WorkerMessageType.PORT_FORWARDING_MESSAGE) {
+                        if (ports.has(message.forwardTo)) {
+                            ports.get(message.forwardTo)!.postMessage({ ...message.payload, forwarded: true });
+                        } else {
+                            source.postMessage(backgroundMessage({ type: WorkerMessageType.PORT_UNAUTHORIZED }));
+                        }
                     }
+                } catch (err: unknown) {
+                    options.onError(err);
+                    throw err;
                 }
-            } catch (err: unknown) {
-                options.onError(err);
-                throw err;
             }
         });
 
