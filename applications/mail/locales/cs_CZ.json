@@ -1418,6 +1418,12 @@
       ],
       "Zoom out": [
         "Oddálit"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Cena od ${ priceUnlimited }"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Navýšit na ${ BRAND_NAME } Unlimited"
       ]
     },
     "action": {
@@ -3564,6 +3570,33 @@
       ],
       "Your account and data recovery methods are set.": [
         "Váš účet a metody obnovy dat jsou nastaveny."
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } chrání váš účet pomocí nepřetržitého monitorování podezřelých aktivit — včetně eskalace na bezpečnostní specialisty."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Automatické mazání e-mailů přesunutých do koše a spamu před více než 30 dny."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Automatické třídění příchozích zpráv předtím, než se dostanou do doručené pošty."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Vytvořte si tolik štítků nebo složek, kolik potřebujete, abyste měli ve schránce pořádek."
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "Nechcete odeslat e-mail hned teď? Naplánujte si odeslání přesně na ten správný čas."
+      ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Odemkněte ${ activatePmUser } pro kratší a snadno zadatelnou e-mailovou adresu."
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Pomocí skupin kontaktů můžete jedním kliknutím odeslat e-maily všem členům skupiny."
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "Pomocí vlastního odložení můžete e-maily skrýt a nastavit jejich zobrazení ve vhodnější dobu."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -7787,6 +7820,9 @@
       ],
       "Your private writing assistant": [
         "Váš soukromý asistent psaní"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Chystáte se otevřít výchozí prohlížeč a navštívit:"
       ]
     },
     "info": {
@@ -9287,6 +9323,12 @@
       ],
       "Upgrade now": [
         "Navýšit nyní"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Cena od ${ priceMailPlus }"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Navýšit na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -9902,6 +9944,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Získejte Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Cena od ${ price }"
       ]
     },
     "new_plans: title": {
@@ -10225,6 +10270,9 @@
       ],
       "Trial started": [
         "Zkušební doba začala"
+      ],
+      "Passcode copied to clipboard": [
+        "Přístupový kód zkopírován do schránky"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11603,6 +11651,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Standardní cena ${ amount } za 30 měsíců"
+      ],
+      "/month": [
+        "/měsíčně"
       ]
     },
     "specialoffer: Title": {
@@ -13606,6 +13657,30 @@
       ],
       "Your free trial has ended": [
         "Vaše zkušební doba skončila"
+      ],
+      "Bad time for this email?": [
+        "Nesprávný čas pro tento e-mail?"
+      ],
+      "Filter for more focus": [
+        "Filtrace pošty pro větší zaměření"
+      ],
+      "High security for your account": [
+        "Vysoké zabezpečení vašeho účtu"
+      ],
+      "Need more labels or folders?": [
+        "Potřebujete další štítky nebo složky?"
+      ],
+      "No need to empty the trash": [
+        "Nemusíte sami vyprazdňovat koš"
+      ],
+      "One email, many recipients": [
+        "Jeden e-mail, mnoho příjemců"
+      ],
+      "Same inbox, shorter email address": [
+        "Stejná schránka, kratší e-mailová adresa"
+      ],
+      "Schedule now, send later": [
+        "Naplánujte nyní, odešlete později"
       ]
     },
     "Title subscription": {
@@ -14275,6 +14350,34 @@
       ],
       "Yearly, ${ untilString }": [
         "Ročně, ${ untilString }"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Připojte se k Google Meet"
+      ],
+      "Joining instructions": [
+        "Pokyny k připojení"
+      ],
+      "Less details": [
+        "Méně detailů"
+      ],
+      "Meeting link:": [
+        "Odkaz na schůzku:"
+      ],
+      "More details": [
+        "Více detailů"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Připojte se ke schůzce Zoom"
+      ],
+      "Meeting ID:": [
+        "ID schůzky:"
+      ],
+      "Passcode: ${ password }": [
+        "Přístupový kód: ${ password }"
       ]
     }
   }

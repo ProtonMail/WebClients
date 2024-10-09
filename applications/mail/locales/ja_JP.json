@@ -1343,6 +1343,9 @@
       ],
       "Show navigation bar": [
         "ナビゲーションバーを表示する"
+      ],
+      "Use this": [
+        "これを使用"
       ]
     },
     "action": {
@@ -4641,6 +4644,9 @@
       ],
       "Upgrade now": [
         "今すぐアップグレード"
+      ],
+      "14-day desktop app trial.": [
+        "14 日間のデスクトップアプリのトライアルです。"
       ]
     },
     "Get started checklist instructions": {
@@ -6857,6 +6863,21 @@
       ],
       "Browser not supported": [
         "このブラウザはサポートされていません"
+      ],
+      "Email copied to clipboard": [
+        "メールがクリップボードにコピーされました"
+      ],
+      "Please try again in a few moments": [
+        "しばらくしてからもう一度お試しください"
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "ドキュメントの公開共有はまだサポートされていません。"
+      ],
+      "This message will be automatically deleted at ${ value }": [
+        "このメッセージは ${ value } に自動的に削除されます。"
+      ],
+      "Version number successfully copied to clipboard": [
+        "バージョン番号がクリップボードにコピーされました"
       ]
     },
     "info": {
@@ -8650,6 +8671,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、あなたの ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
+      ],
+      "10 email addresses/aliases": [
+        "10 件のメールアドレス / エイリアス"
       ]
     },
     "new_plans: feature info": {
@@ -9109,6 +9133,24 @@
       ],
       "Maybe later": [
         "後で行う"
+      ],
+      "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
+        "${ protectionFromTrackersTitle } は、あなたがこれ以上インターネット上で追いかけ回されないようにします。"
+      ],
+      "Activate premium features": [
+        "プレミアム機能を有効にする"
+      ],
+      "Auto-delete spam and trash": [
+        "迷惑メールとごみ箱を自動削除"
+      ],
+      "Let's get started": [
+        "始めましょう"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } へようこそ"
+      ],
+      "Where privacy is default.": [
+        "プライバシーが最初から組み込まれている場所。"
       ]
     },
     "Onboarding Proton": {
@@ -9211,7 +9253,7 @@
         "アクセスが拒否されました。管理者権限は制限されています。"
       ],
       "The organization key must be activated first.": [
-        "組織の鍵を最初に有効にする必要があります。"
+        "まず、組織の鍵を有効にする必要があります。"
       ],
       "You need access to the organization key to perform this operation.": [
         "この操作を実行するには、組織キーにアクセスする必要があります。"
@@ -9777,6 +9819,18 @@
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "アカウント ${ boldEmail } のパスワードを、あと ${ boldDaysRemaining } 日間は自由に変更可能です。"
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "${ timeRemaining.inDays } 日後にパスワードをリセットできます。"
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        " ${ timeRemaining.inHours } 時間後にパスワードをリセットできます。"
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        " ${ timeRemaining.inMinutes } 分後にパスワードをリセットできます。"
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        " ${ timeRemaining.inSeconds } 秒後にパスワードをリセットできます。"
       ]
     },
     "session_recovery:available:link": {
@@ -10426,6 +10480,21 @@
       ],
       "Extra storage and users": [
         "追加のストレージとユーザー"
+      ],
+      "Desktop app and email client support (via IMAP)": [
+        "デスクトップアプリとメールクライアントのサポート (IMAP 経由)"
+      ],
+      "Invited members will be removed from your organization": [
+        "招待メンバーは組織から削除されます"
+      ],
+      "Users won’t be able to manage their calendars": [
+        "ユーザーは自分のカレンダーを管理できません"
+      ],
+      "Users won’t be able to send emails": [
+        "ユーザーはメールを送信できません"
+      ],
+      "Users won’t be able to sync files on their devices": [
+        "ユーザーは自分のデバイス上のファイルを同期できません"
       ]
     },
     "subscription reminder": {
@@ -10730,6 +10799,12 @@
       ],
       "You have successfully unsubscribed": [
         "サブスクリプションをキャンセルしました"
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } 件の会話をスヌーズしました"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } 件の会話をスヌーズを解除しました"
       ]
     },
     "Success notification": {
@@ -12114,6 +12189,11 @@
     "wallet_signup_2024:Action": {
       "Access Wallet app": [
         "Wallet アプリにアクセス"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "Double your storage": [
+        "ストレージを 2 倍にしましょう"
       ]
     }
   }

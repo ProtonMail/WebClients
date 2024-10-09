@@ -1418,6 +1418,12 @@
       ],
       "Click to copy ${ defaultEmailAddress } to clipboard": [
         "Kliknutím skopírujete ${ defaultEmailAddress } do schránky"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Cena od ${ priceUnlimited }"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Navýšiť na ${ BRAND_NAME } Unlimited"
       ]
     },
     "action": {
@@ -3564,6 +3570,33 @@
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
         "Na prihlasovanie do online služieb používajte ${ MAIL_APP_NAME }, pretože na rozdiel od iných poskytovateľov emailových služieb nikdy nesledujeme vaše údaje a nezdieľame ich s tretími stranami."
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } chráni váš účet pomocou nepretržitého monitorovania podozrivých aktivít - vrátane eskalácie na bezpečnostných špecialistov."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Automatické mazanie emailov presunutých do koša a spamu pred viac než 30 dňami."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Automatické triedenie prichádzajúcich správ pred ich doručením do schránky."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Vytvorte si toľko štítkov alebo priečinkov, koľko potrebujete na udržanie poriadku v doručenej pošte."
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "Nechcete odoslať váš email hneď teraz? Naplánujte si ho presne na ten správny čas."
+      ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Odomknite ${ activatePmUser } pre chytľavú a ľahko napísateľnú emailovú adresu."
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Pomocou skupín kontaktov môžete posielať emaily všetkým členom skupiny jedným kliknutím."
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "Pomocou vlastného odloženia môžete emaily skryť a nastaviť ich opätovné zobrazenie vo vhodnejšom čase."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -7787,6 +7820,9 @@
       ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Nezabudnite ho aktualizovať v správcovi hesiel alebo kdekoľvek, kde máte uložené údaje o svojom účte a prihlasovacie údaje."
+      ],
+      "You are about to open your default browser and visit:": [
+        "Chystáte sa otvoriť váš predvolený prehliadač a navštíviť:"
       ]
     },
     "info": {
@@ -9287,6 +9323,12 @@
       ],
       "Upgrade now": [
         "Aktualizovať teraz"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Cena od ${ priceMailPlus }"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Navýšte na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -9902,6 +9944,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Získajte Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Cena od ${ price }"
       ]
     },
     "new_plans: title": {
@@ -10225,6 +10270,9 @@
       ],
       "Trial started": [
         "Skúšobné obdobie začalo"
+      ],
+      "Passcode copied to clipboard": [
+        "Prístupový kód skopírovaný do schránky"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10258,7 +10306,7 @@
         "Sociálne médiá"
       ],
       "I have moved my logins to ${ BRAND_NAME }": [
-        "Mám presunuté svoje prihlasovacie údaje do ${ BRAND_NAME }"
+        "Presunul som svoje prihlasovacie údaje do ${ BRAND_NAME }"
       ],
       "Privacy for all your online accounts": [
         "Ochrana súkromia všetkých vašich online účtov"
@@ -10383,7 +10431,7 @@
         "Vitajte v ${ MAIL_APP_NAME }"
       ],
       "Where privacy is default.": [
-        "Kde súkromie je na prvom mieste."
+        "Kde je súkromie na prvom mieste."
       ]
     },
     "Onboarding Proton": {
@@ -11603,6 +11651,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Štandardná cena ${ amount } na 30 mesiacov"
+      ],
+      "/month": [
+        "/mesiac"
       ]
     },
     "specialoffer: Title": {
@@ -13592,6 +13643,30 @@
       ],
       "How to update your email address": [
         "Ako aktualizovať emailovú adresu"
+      ],
+      "Bad time for this email?": [
+        "Nevhodný čas na tento email?"
+      ],
+      "Filter for more focus": [
+        "Filtre pre lepšie sústredenie"
+      ],
+      "High security for your account": [
+        "Vysoké zabezpečenie vášho účtu"
+      ],
+      "Need more labels or folders?": [
+        "Potrebujete viac štítkov alebo priečinkov?"
+      ],
+      "No need to empty the trash": [
+        "Kôš nie je potrebné vyprázdniť"
+      ],
+      "One email, many recipients": [
+        "Jeden email, množstvo príjemcov"
+      ],
+      "Same inbox, shorter email address": [
+        "Rovnaká schránka, kratšia emailová adresa"
+      ],
+      "Schedule now, send later": [
+        "Naplánujte teraz, odošlite neskôr"
       ]
     },
     "Title subscription": {
@@ -14275,6 +14350,34 @@
       ],
       "Sign in to the service": [
         "Prihláste sa do služby"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Pripojiť sa ku Google Meet"
+      ],
+      "Joining instructions": [
+        "Pokyny na pripojenie"
+      ],
+      "Less details": [
+        "Menej detailov"
+      ],
+      "Meeting link:": [
+        "Odkaz na schôdzku:"
+      ],
+      "More details": [
+        "Viac detailov"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Pripojte sa k stretnutiu na Zoome"
+      ],
+      "Meeting ID:": [
+        "ID schôdzky:"
+      ],
+      "Passcode: ${ password }": [
+        "Prístupový kód: ${ password }"
       ]
     }
   }

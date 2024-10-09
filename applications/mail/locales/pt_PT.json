@@ -1321,6 +1321,54 @@
       ],
       "Zoom out": [
         "Reduzir"
+      ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "Clique para copiar ${ defaultEmailAddress } para a área de transferência"
+      ],
+      "Expand navigation bar to see folders": [
+        "Expandir a barra de navegação para ver as pastas"
+      ],
+      "Expand navigation bar to see labels": [
+        "Expanda a barra de navegação para ver os rótulos"
+      ],
+      "Hide toolbar": [
+        "Ocultar barra de ferramentas"
+      ],
+      "I like this response": [
+        "Gosto desta resposta"
+      ],
+      "Keep my subscription": [
+        "Manter a minha assinatura"
+      ],
+      "Modify": [
+        "Modificar"
+      ],
+      "Modify selection": [
+        "Modificar seleção"
+      ],
+      "More refine actions": [
+        "Mais ações de refinamento"
+      ],
+      "Replace": [
+        "Substituir"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Executar nos servidores da ${ BRAND_NAME }"
+      ],
+      "Show navigation bar": [
+        "Mostrar barra de navegação"
+      ],
+      "Show toolbar": [
+        "Mostrar Barra de Ferramentas"
+      ],
+      "Stop downloading assistant": [
+        "Parar de transferir o assistente"
+      ],
+      "Use this": [
+        "Usar isto"
+      ],
+      "Write for me": [
+        "Escreva para mim"
       ]
     },
     "action": {
@@ -1387,6 +1435,10 @@
       "${ seats } writing assistant seat": [
         "${ seats } licença de assistente de escrita",
         "${ seats } licenças de assistente de escrita"
+      ],
+      "${ domains } additional custom domain": [
+        "${ domains } domínio personalizado adicional",
+        "${ domains } domínios personalizados adicionais"
       ]
     },
     "Alert": {
@@ -3445,6 +3497,12 @@
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
         "Foi convidado para ${ eventTitle }.\n\n${ eventDetailsText }"
+      ],
+      "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Todos os eventos desta série foram atualizados. Veja o que mudou:\n\n${ updateEventDetailsText }"
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Esta ocorrência de evento foi atualizada. Veja o que mudou:\n\n${ updateEventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -7184,6 +7242,21 @@
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "O seu hardware não suporta a execução do assistente de escrita localmente. Tente executá-lo em servidores."
+      ],
+      "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "${ PASS_APP_NAME } fornece uma forma simples de criar inícios de sessão em websites de terceiros não fidedignos onde não pretende expor o seu endereço de e-mail real."
+      ],
+      "Clears browser data (including downloaded messages, …)": [
+        "Limpa os dados do navegador (incluindo mensagens descarregadas, ...)"
+      ],
+      "Unread conversations": [
+        "Conversas não lidas"
+      ],
+      "Unread messages": [
+        "Mensagens não lidas"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Está prestes a abrir o seu navegador predefinido e a visitar:"
       ]
     },
     "info": {
@@ -9469,6 +9542,14 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "Partilha segura de cofre"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Partilha segura de cofre (${ n } cofre)",
+        "Partilha segura de cofre (${ n } cofres)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Partilha segura de cofre (${ n } cofre) e partilha de ligações",
+        "Partilha segura de cofre (${ n } cofres) e partilha de ligações"
       ]
     },
     "passwordless": {

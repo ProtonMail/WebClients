@@ -1411,6 +1411,12 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Iniciando a partir de ${ priceUnlimited }"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Faça upgrade para ${ BRAND_NAME } Unlimited"
       ]
     },
     "action": {
@@ -3532,6 +3538,33 @@
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
         "Use ${ MAIL_APP_NAME } para fazer login em serviços on-line, pois, diferentemente de outros provedores de e-mail, nunca rastrearemos seus dados e nem os compartilharemos com terceiros."
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } protege sua conta com monitoramento dedicado 24/7 de atividades suspeitas - incluindo encaminhamento para especialistas em segurança."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Limpe automaticamente os e-mails movidos para a Lixeira e o Spam há mais de 30 dias."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Classifique automaticamente as mensagens recebidas antes que elas cheguem à sua caixa de entrada."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Crie quantos marcadores ou pastas precisar para manter sua caixa de entrada organizada."
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "Não quer enviar seu e-mail agora? Agende-o para o horário que desejar."
+      ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Desbloqueie ${ activatePmUser } para obter um endereço de e-mail atraente e fácil de digitar."
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Com os grupos de contatos, você pode enviar e-mails para todos os membros do grupo com um clique."
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "Com o adiamento personalizado, você pode ocultar e-mails e configurá-los para reaparecer em um momento melhor."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -7546,6 +7579,9 @@
       ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Lembre-se de atualizar isso em seu gerenciador de senhas ou onde quer que você mantenha suas informações de conta e login."
+      ],
+      "You are about to open your default browser and visit:": [
+        "Você está prestes a abrir seu navegador padrão e visitar:"
       ]
     },
     "info": {
@@ -9024,6 +9060,12 @@
       ],
       "Upgrade now": [
         "Fazer upgrade agora"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Iniciando a partir de ${ priceMailPlus }"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Faça upgrade para ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -9600,6 +9642,9 @@
       ],
       "VPN Enterprise": [
         "VPN Enterprise"
+      ],
+      "Starting from ${ price }": [
+        "A partir de ${ price }"
       ]
     },
     "new_plans: title": {
@@ -9919,6 +9964,9 @@
       ],
       "Trial started": [
         "Avaliação iniciada"
+      ],
+      "Passcode copied to clipboard": [
+        "Código de acesso copiado para a área de transferência"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11241,6 +11289,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Preço padrão ${ amount } por 30 meses"
+      ],
+      "/month": [
+        "/mês"
       ]
     },
     "specialoffer: Title": {
@@ -13138,6 +13189,30 @@
       ],
       "Your free trial has ended": [
         "Sua avaliação gratuita terminou"
+      ],
+      "Bad time for this email?": [
+        "É um momento ruim para este e-mail?"
+      ],
+      "Filter for more focus": [
+        "Filtrar para mais foco"
+      ],
+      "High security for your account": [
+        "Segurança elevada para sua conta"
+      ],
+      "Need more labels or folders?": [
+        "Precisa de mais marcadores ou pastas?"
+      ],
+      "No need to empty the trash": [
+        "Não é necessário esvaziar a lixeira"
+      ],
+      "One email, many recipients": [
+        "Um e-mail, muitos destinatários"
+      ],
+      "Same inbox, shorter email address": [
+        "Mesma caixa de entrada, endereço de e-mail mais curto"
+      ],
+      "Schedule now, send later": [
+        "Agende agora, envie depois"
       ]
     },
     "Title subscription": {
@@ -13723,6 +13798,34 @@
       ],
       "Yearly, ${ untilString }": [
         "Anualmente, ${ untilString }"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Participe do Google Meet"
+      ],
+      "Joining instructions": [
+        "Instruções de acesso"
+      ],
+      "Less details": [
+        "Menos detalhes"
+      ],
+      "Meeting link:": [
+        "Link da reunião:"
+      ],
+      "More details": [
+        "Mais detalhes"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Participe da reunião com Zoom"
+      ],
+      "Meeting ID:": [
+        "ID da reunião:"
+      ],
+      "Passcode: ${ password }": [
+        "Código de acesso: ${ password }"
       ]
     }
   }

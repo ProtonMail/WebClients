@@ -1408,6 +1408,12 @@
       ],
       "Use this": [
         "Käytä tätä"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Alkaen ${ priceUnlimited }"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Päivitä ${ BRAND_NAME } Unlimited -tilaukseen"
       ]
     },
     "action": {
@@ -3526,6 +3532,33 @@
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
         "Käytä ${ MAIL_APP_NAME }ia verkkopalveluihin kirjautumiseen, koska toisin kuin muut sähköpostipalveluntarjoajat, me emme koskaan seuraa tietojasi tai jaa niitä kolmansille osapuolille."
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } suojaa käyttäjätilisi 24/7 epäilyttävän toiminnan tarkkailulla - sisältäen eskaloinnin tietoturva-asiantuntijoille."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Tyhjennä yli 30 päivää sitten roskakoriin ja -postiin siirretyt sähköpostit automaattisesti."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Lajittele saapuvat viestisi automaattisesti, ennen kuin ne saapuvat postilaatikkoosi."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Luo niin monta tunnistetta tai kansiota kuin tarvitset postilaatikkosi siistinä pitämiseksi."
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "Etkö halua lähettää sähköpostia juuri nyt? Ajoita se juuri oikeaan aikaan."
+      ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Hanki tarttuva ja helposti kirjoitettava ${ activatePmUser } -sähköpostiosoite."
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Yhteystietoryhmillä voit lähettää sähköposteja kaikille ryhmän jäsenille yhdellä klikkauksella."
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "Mukautetun torkutuksella voit piilottaa sähköposteja ja asettaa ne näkymään uudelleen sopivampaan aikaan."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
       ]
     },
     "description": {
@@ -7531,6 +7564,9 @@
       ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Muista päivittää nämä tiedot salasanahallintaasi tai missä tahansa säilytätkin tili- ja kirjautumistietojasi."
+      ],
+      "You are about to open your default browser and visit:": [
+        "Olet avaamassa oletusselaintasi sivustolle:"
       ]
     },
     "info": {
@@ -9003,6 +9039,12 @@
       ],
       "Upgrade now": [
         "Päivitä tilaus nyt"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Alkaen ${ priceMailPlus }"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Päivitä ${ MAIL_SHORT_APP_NAME } Plus -tilaukseen"
       ]
     },
     "new_plans: action": {
@@ -9576,6 +9618,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Hanki Mail Plus hintaan ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Alkaen ${ price }"
       ]
     },
     "new_plans: title": {
@@ -9895,6 +9940,9 @@
       ],
       "Trial started": [
         "Kokeilujakso on alkanut"
+      ],
+      "Passcode copied to clipboard": [
+        "Tunnuskoodi kopioitiin leikepöydälle"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10028,6 +10076,12 @@
       ],
       "Where privacy is default.": [
         "Missä yksityisyys on olennaista."
+      ],
+      "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
+        "${ industryLeadingSpamProtectionTitle } suojaa postilaatikkoasi huijaussähköposteilta."
+      ],
+      "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
+        "${ protectionFromTrackersTitle } suojaa sinut seuraamiselta Internetissä."
       ]
     },
     "Onboarding Proton": {
@@ -11139,7 +11193,7 @@
         "15 kuukautta"
       ],
       "2 years": [
-        "2 vuotta"
+        "Kaksi vuotta"
       ],
       "30 months": [
         "30 kuukautta"
@@ -11185,6 +11239,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Normaalihinta 30 kuukaudelta on ${ amount }"
+      ],
+      "/month": [
+        "/kuukausi"
       ]
     },
     "specialoffer: Title": {
@@ -13068,6 +13125,30 @@
       ],
       "How to update your email address": [
         "Miten vaihdat sähköpostiosoitteesi"
+      ],
+      "Bad time for this email?": [
+        "Huono aika tälle sähköpostille?"
+      ],
+      "Filter for more focus": [
+        "Suodattimet parantamaan keskittymistäsi"
+      ],
+      "High security for your account": [
+        "Vahva suojaus tilillesi"
+      ],
+      "Need more labels or folders?": [
+        "Tarvitsetko enemmän tunnisteita tai kansioita?"
+      ],
+      "No need to empty the trash": [
+        "Roskia ei tarvitse tyhjentää"
+      ],
+      "One email, many recipients": [
+        "Yksi sähköposti, monta vastaanottajaa"
+      ],
+      "Same inbox, shorter email address": [
+        "Sama postilaatikko, lyhyempi sähköpostiosoite"
+      ],
+      "Schedule now, send later": [
+        "Ajoita nyt, lähetä myöhemmin"
       ]
     },
     "Title subscription": {
@@ -13670,6 +13751,9 @@
       ],
       "Social media": [
         "Sosiaalinen media"
+      ],
+      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
+        "Käytä ${ MAIL_APP_NAME } -osoitettasi verkkopalveluihin kirjautumiseen välttyäksesi seurannalta ja profiloinnilta. Vaihda sähköpostiosoitteesi suosituissa palveluissa nyt. ${ learnMoreLink }"
       ]
     },
     "Step": {
@@ -13684,6 +13768,34 @@
       ],
       "Sign in to the service": [
         "Kirjaudu palveluun"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Liity Google Meettiin"
+      ],
+      "Joining instructions": [
+        "Liittymisohjeet"
+      ],
+      "Less details": [
+        "Vähemmän tietoja"
+      ],
+      "Meeting link:": [
+        "Tapaamislinkki:"
+      ],
+      "More details": [
+        "Enemmän tietoja"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Liity Zoom-tapaamiseen"
+      ],
+      "Meeting ID:": [
+        "Tapaamisen ID:"
+      ],
+      "Passcode: ${ password }": [
+        "Tunnuskoodi: ${ password }"
       ]
     }
   }

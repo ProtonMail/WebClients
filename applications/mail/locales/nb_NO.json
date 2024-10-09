@@ -1408,6 +1408,12 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Starter fra ${ priceUnlimited }"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Oppgrader til ${ BRAND_NAME } Unlimited"
       ]
     },
     "action": {
@@ -3526,6 +3532,33 @@
       ],
       "Your account and data recovery methods are set.": [
         "Dine konto- og datagjenopprettingsmetoder er angitt."
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } beskytter kontoen din med dedikert 24/7 overvåking av mistenkelig aktivitet – inkludert eskalering til sikkerhetsspesialister."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Fjern automatisk e-poster som ble flyttet til papirkurven og søppelpost for mer enn 30 dager siden."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Sorter innkommende meldinger automatisk før de når innboksen din."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Opprett så mange etiketter eller mapper du trenger for å holde innboksen ryddig."
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "Vil du ikke sende e-posten din akkurat nå? Planlegg det til nøyaktig riktig tidspunkt."
+      ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Lås opp ${ activatePmUser } for en fengende og e-postadresse som er enkel å skrive."
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Med kontaktgrupper kan du sende e-post til alle i gruppen med ett klikk."
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "Med tilpasset slumring kan du skjule e-poster og angi at de skal vises igjen på et bedre tidspunkt."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -7531,6 +7564,9 @@
       ],
       "Your private writing assistant": [
         "Din private skriveassistent"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Du er i ferd med å åpne standardnettleseren din og besøke:"
       ]
     },
     "info": {
@@ -9003,6 +9039,12 @@
       ],
       "Upgrade now": [
         "Oppgrader nå"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Starter fra ${ priceMailPlus }"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Oppgrader til ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -9576,6 +9618,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Få Mail Plus for ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Starter fra ${ price }"
       ]
     },
     "new_plans: title": {
@@ -9895,6 +9940,9 @@
       ],
       "Trial started": [
         "Prøvetid startet"
+      ],
+      "Passcode copied to clipboard": [
+        "Passkode kopiert til utklippstavlen"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11211,6 +11259,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Standard pris ${ amount } for 30 måneder"
+      ],
+      "/month": [
+        "/måned"
       ]
     },
     "specialoffer: Title": {
@@ -13108,6 +13159,30 @@
       ],
       "Your free trial has ended": [
         "Din gratis prøveperiode har utløpt"
+      ],
+      "Bad time for this email?": [
+        "Dårlig tidspunkt for denne e-posten?"
+      ],
+      "Filter for more focus": [
+        "Filtrer for mer fokus"
+      ],
+      "High security for your account": [
+        "Høy sikkerhet for kontoen din"
+      ],
+      "Need more labels or folders?": [
+        "Behov for flere etiketter eller mapper?"
+      ],
+      "No need to empty the trash": [
+        "Du trenger ikke å tømme papirkurven"
+      ],
+      "One email, many recipients": [
+        "Én e-post, mange mottakere"
+      ],
+      "Same inbox, shorter email address": [
+        "Samme innboks, kortere e-postadresse"
+      ],
+      "Schedule now, send later": [
+        "Planlegg nå, send senere"
       ]
     },
     "Title subscription": {
@@ -13693,6 +13768,34 @@
       ],
       "Yearly, ${ untilString }": [
         "Årlig, ${ untilString }"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Bli med i Google Meet"
+      ],
+      "Joining instructions": [
+        "Instruksjoner for å bli med"
+      ],
+      "Less details": [
+        "Mindre informasjon"
+      ],
+      "Meeting link:": [
+        "Møtekobling:"
+      ],
+      "More details": [
+        "Mer informasjon"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Bli med på Zoom-møte"
+      ],
+      "Meeting ID:": [
+        "Møte-ID:"
+      ],
+      "Passcode: ${ password }": [
+        "Passkode: ${ password }"
       ]
     }
   }

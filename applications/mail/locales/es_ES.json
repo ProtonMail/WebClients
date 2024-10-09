@@ -221,7 +221,7 @@
         "Haz clic aquí."
       ],
       "Click to copy ${ defaultEmailAddress } to clipboard": [
-        "Haz clic para copiar ${ defaultEmailAddress } al portapapeles"
+        "Haz clic para copiar ${ defaultEmailAddress } al portapapeles."
       ],
       "Close": [
         "Cerrar"
@@ -1408,6 +1408,12 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "A partir de ${ priceUnlimited }"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Mejora a ${ BRAND_NAME } Unlimited"
       ]
     },
     "action": {
@@ -3526,6 +3532,33 @@
       ],
       "Your account and data recovery methods are set.": [
         "Se han establecido los métodos de recuperación de cuenta y datos."
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } protege tu cuenta con monitoreo dedicado 24/7 de actividades sospechosas, incluyendo la intervención de especialistas en seguridad."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Elimina automáticamente los correos electrónicos movidos a la papelera y spam de hace más de 30 días."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Ordena automáticamente tus mensajes entrantes antes de que lleguen a tu bandeja de entrada."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Crea todas las etiquetas o carpetas que necesites para mantener tu bandeja de entrada ordenada."
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "¿No quieres enviar el correo electrónico ahora mismo? Planifícalo para el momento exacto."
+      ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Desbloquea ${ activatePmUser } para obtener una dirección de correo corta y fácil de escribir."
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Con los grupos de contactos, puedes enviar correos electrónicos a todos los miembros del grupo con un clic."
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "Con la pausa personalizada, puedes ocultar correos electrónicos y hacer que reaparezcan en un mejor momento."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Ya has creado 10 alias. Obtén alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -4769,6 +4802,24 @@
       ],
       "Your cannot accept this invitation with your current plan.": [
         "No puedes aceptar esta invitación con el plan actual."
+      ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Las cuentas con dominios personalizados no pueden unirse a un plan familiar."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Los planes familiares actualmente no admiten cuentas externas. Crea una dirección de ${ BRAND_NAME } antes de unirte. ${ addressSettingsLink }"
+      ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Las cuentas Lifetime no pueden unirse a un plan familiar."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Los dueños de un plan con miembros no pueden unirse a otro plan familiar."
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Tienes facturas pendientes de pago. Por favor, págalas antes de unirte a un plan familiar."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Has recibido una invitación para que vincules tu cuenta de ${ BRAND_NAME } a este plan familiar y disfrutes así de todas las funciones premium de ${ brandOrAppName }."
       ]
     },
     "familyOffer_2023:Label": {
@@ -7531,6 +7582,9 @@
       ],
       "Your private writing assistant": [
         "Tu asistente de escritura privado"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Estás a punto de abrir tu navegador por defecto y consultar:"
       ]
     },
     "info": {
@@ -9006,6 +9060,12 @@
       ],
       "Upgrade now": [
         "Mejorar ahora"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "A partir de ${ priceMailPlus }"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Mejora a ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -9469,6 +9529,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
+      ],
+      "Secure link sharing": [
+        "Uso compartido seguro de enlaces"
       ]
     },
     "new_plans: feature info": {
@@ -9579,6 +9642,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Disfruta de Mail Plus por ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "A partir de ${ price }"
       ]
     },
     "new_plans: title": {
@@ -9803,6 +9869,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Puedes tener varios administradores. Todos tienen permiso para añadir y gestionar usuarios, pero solo el administrador principal puede controlar la facturación."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Comparte elementos aislados de forma segura con cualquiera (aunque no use ${ PASS_APP_NAME })"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -9898,6 +9967,9 @@
       ],
       "Trial started": [
         "La prueba ha iniciado."
+      ],
+      "Passcode copied to clipboard": [
+        "Se ha copiado el código de acceso al portapapeles."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9978,7 +10050,7 @@
         "Bloquea los remitentes no deseados"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "Borra los correos electrónicos de spam eliminados después de 30 días."
+        "Borra los correos electrónicos eliminados y spam después de 30 días."
       ],
       "Congratulations on choosing privacy": [
         "Felicitaciones por elegir la privacidad"
@@ -10056,7 +10128,7 @@
         "Te damos la bienvenida a ${ MAIL_APP_NAME }"
       ],
       "Where privacy is default.": [
-        "Dónde la privacidad es por defecto."
+        "Donde la privacidad es por defecto."
       ]
     },
     "Onboarding Proton": {
@@ -11214,6 +11286,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Precio estándar ${ amount } durante 30 meses"
+      ],
+      "/month": [
+        "/mes"
       ]
     },
     "specialoffer: Title": {
@@ -11297,7 +11372,7 @@
     },
     "Step": {
       "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
-        "Introduce tu dirección ${ MAIL_APP_NAME } como nueva dirección y guarda, confirma o verifica el cambio"
+        "Introduce tu dirección ${ MAIL_APP_NAME } como nueva dirección y guarda, confirma o verifica el cambio."
       ],
       "In the account settings, look for the option to edit or change your email address ": [
         "En los ajustes de la cuenta, busca la opción editar o cambia tu dirección de correo electrónico "
@@ -13111,6 +13186,30 @@
       ],
       "Your free trial has ended": [
         "Tu prueba ha terminado."
+      ],
+      "Bad time for this email?": [
+        "¿Mal momento para este correo?"
+      ],
+      "Filter for more focus": [
+        "Filtra tus mensajes para una mejor concentración"
+      ],
+      "High security for your account": [
+        "Alta seguridad para tu cuenta"
+      ],
+      "Need more labels or folders?": [
+        "¿Necesitas más etiquetas o carpetas?"
+      ],
+      "No need to empty the trash": [
+        "No es necesario vaciar la papelera"
+      ],
+      "One email, many recipients": [
+        "Un correo electrónico, varios destinatarios"
+      ],
+      "Same inbox, shorter email address": [
+        "La misma bandeja de entrada con una dirección de correo electrónico más corta"
+      ],
+      "Schedule now, send later": [
+        "Programa ahora, envía después"
       ]
     },
     "Title subscription": {
@@ -13696,6 +13795,64 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada año hasta ${ untilString }"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Unirte a Google Meet"
+      ],
+      "Joining instructions": [
+        "Instrucciones para unirte"
+      ],
+      "Less details": [
+        "Menos detalles"
+      ],
+      "Meeting link:": [
+        "Enlace de la reunión:"
+      ],
+      "More details": [
+        "Más detalles"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } administrador",
+        "${ admins } administradores"
+      ],
+      "${ users } user": [
+        "${ users } usuario",
+        "${ users } usuarios"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } cuenta de usuario",
+        "${ n } cuentas de usuario"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Oferta exclusiva disponible solo para los primeros seguidores de ${ PASS_APP_NAME }."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Obtenlo por ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Presentamos ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Oferta por tiempo limitado."
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Unirte a la reunión de Zoom"
+      ],
+      "Meeting ID:": [
+        "Identificador de la reunión:"
+      ],
+      "Passcode: ${ password }": [
+        "Código de acceso: ${ password }"
       ]
     }
   }

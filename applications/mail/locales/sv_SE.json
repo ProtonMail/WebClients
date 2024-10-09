@@ -1408,6 +1408,12 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Startar från ${ priceUnlimited }"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Uppgradera till ${ BRAND_NAME } Unlimited"
       ]
     },
     "action": {
@@ -3512,6 +3518,27 @@
       ],
       "Your account and data recovery methods are set.": [
         "Ditt konto och dina dataåterställningsmetoder är inställda."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Rensa automatiskt bort e-post som flyttats till papperskorg och skräppost för mer än 30 dagar sedan."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Sortera automatiskt dina inkommande meddelanden innan de når din inkorg."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Skapa så många etiketter eller mappar du behöver för att hålla din inkorg prydlig."
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "Vill du inte skicka din e-post just nu? Schemalägg det för exakt rätt tid."
+      ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "Använd ${ MAIL_APP_NAME } för att logga in på tjänster online eftersom vi, till skillnad från andra e-postleverantörer, aldrig kommer att spåra din data och dela den med tredje part."
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Med kontaktgrupper kan du skicka e-post till alla i gruppen med ett klick."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -3589,6 +3616,9 @@
     "Downgrade warning": {
       "Remove discount": [
         "Ta bort rabatt"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Din ${ PLAN_NAMES[PLANS.PASS] }-prenumeration är till ett specialpris på ${ price } per år. Genom att nedgradera till ett Free-paket kommer du förlora rabatten permanent, även om du uppgraderar igen i framtiden."
       ]
     },
     "Download attachments": {
@@ -7502,6 +7532,9 @@
       ],
       "Your private writing assistant": [
         "Din privata skrivassistent"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Du är på väg att öppna din standardwebbläsare och besöka:"
       ]
     },
     "info": {
@@ -8977,6 +9010,12 @@
       ],
       "Upgrade now": [
         "Uppgradera nu"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Startar från ${ priceMailPlus }"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Uppgradera till ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -9547,6 +9586,9 @@
       ],
       "VPN Enterprise": [
         "VPN Enterprise"
+      ],
+      "Starting from ${ price }": [
+        "Startar från ${ price }"
       ]
     },
     "new_plans: title": {
@@ -9768,6 +9810,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Du kan ha mer än en administratör. Alla administratörer kan lägga till och hantera användare men endast den primära administratören har kontroll över fakturering."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Telefonsupport är tillgänglig från ${ BRAND_NAME } kundsupportteam under europeiska öppettider, för kunder med 20 eller fler användare"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -9863,6 +9908,9 @@
       ],
       "Trial started": [
         "Provperiod startad"
+      ],
+      "Passcode copied to clipboard": [
+        "Lösenkod kopierat till urklipp"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11164,6 +11212,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Ordinarie pris ${ amount } för 30 månader"
+      ],
+      "/month": [
+        "/månad"
       ]
     },
     "specialoffer: Title": {
@@ -13043,6 +13094,30 @@
       ],
       "Your free trial has ended": [
         "Din gratis provperiod har avslutats"
+      ],
+      "Bad time for this email?": [
+        "Olämplig tidpunkt för detta e-postmeddelande?"
+      ],
+      "Filter for more focus": [
+        "Filter för mer fokus"
+      ],
+      "High security for your account": [
+        "Hög säkerhet för ditt konto"
+      ],
+      "Need more labels or folders?": [
+        "Behöver du fler etiketter eller mappar?"
+      ],
+      "No need to empty the trash": [
+        "Inget behov att tömma papperskorgen"
+      ],
+      "One email, many recipients": [
+        "En e-post, många mottagare"
+      ],
+      "Same inbox, shorter email address": [
+        "Samma inkorg, kortare e-postadress"
+      ],
+      "Schedule now, send later": [
+        "Schemalägg nu, skicka senare"
       ]
     },
     "Title subscription": {
@@ -13620,6 +13695,34 @@
     "Yearly recurring event, frequency (until)": {
       "Yearly, ${ untilString }": [
         "Årligen, ${ untilString }"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Gå med i Google Meet"
+      ],
+      "Joining instructions": [
+        "Instruktioner för att gå med"
+      ],
+      "Less details": [
+        "Mindre detaljer"
+      ],
+      "Meeting link:": [
+        "Möteslänk:"
+      ],
+      "More details": [
+        "Mer detaljer"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Gå med i Zoom-mötet"
+      ],
+      "Meeting ID:": [
+        "Mötes-ID:"
+      ],
+      "Passcode: ${ password }": [
+        "Lösenkod: ${ password }"
       ]
     }
   }

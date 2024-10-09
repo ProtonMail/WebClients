@@ -1418,6 +1418,12 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Пачатковы кошт ${ priceUnlimited }"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Палепшыць да ${ BRAND_NAME } Unlimited"
       ]
     },
     "action": {
@@ -3564,6 +3570,33 @@
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
         "Выкарыстоўвайце ${ MAIL_APP_NAME } для ўваходу ў разнастайныя сеткавыя сэрвісы. У адрозненне ад іншых пастаўшчыкоў электроннай пошты, мы ніколі не будзем адсочваць вашы даныя і перадаваць іх трэцім асобам."
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс з дапамогай адмысловага кругласутачнага назірання падазроных дзеянняў. Гэты сэрвіс таксама прадугледжвае перадачу спецыялістам па бяспецы."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Аўтаматычна ачышчайце лісты, якія перамешчаны ў Сметніцу і Спам больш за 30 дзён таму."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Аўтаматычна сартуйце свае ўваходныя паведамленні перад тым, як яны трапяць у вашу паштовую скрыню."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Стварайце любую колькасць метак або папак, каб падтрымліваць парадак у сваёй паштовай скрыні."
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "Не хочаце адпраўляць ліст цяпер? Заплануйце яго адпраўку на падыходзячы час."
+      ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Разблакіруйце ${ activatePmUser }, каб атрымаць больш кароткі і просты для ўводу адрас электроннай пошты."
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Вы можаце адпраўляць лісты кожнаму ўдзельніку ў групе адным націскам з дапамогай груп кантактаў."
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "З дапамогай карыстальніцкай адкладання вы можаце хаваць электронныя лісты і задаваць іх паўторнае з'яўленне ў падыходзячы час."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -7787,6 +7820,9 @@
       ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Не забудзьцеся абнавіць яго ў менеджары пароляў або ў тым месцы, дзе вы захоўваеце ўліковы запіс і звесткі для яго ўваходу."
+      ],
+      "You are about to open your default browser and visit:": [
+        "Вы збіраецеся адкрыць прадвызначаны браўзер і наведаць:"
       ]
     },
     "info": {
@@ -9287,6 +9323,12 @@
       ],
       "Upgrade now": [
         "Палепшыць зараз"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Пачатковы кошт ${ priceMailPlus }"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Палепшыць да ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -9902,6 +9944,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Атрымайце Mail Plus за ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Пачатковы кошт ${ price }"
       ]
     },
     "new_plans: title": {
@@ -10225,6 +10270,9 @@
       ],
       "Trial started": [
         "Пачаты пробны перыяд"
+      ],
+      "Passcode copied to clipboard": [
+        "Код доступу скапіяваны ў буфер абмену"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11583,6 +11631,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Стандартная цана ${ amount } за 30 месяцаў"
+      ],
+      "/month": [
+        "/месяц"
       ]
     },
     "specialoffer: Title": {
@@ -13572,6 +13623,30 @@
       ],
       "Your free trial has ended": [
         "Час пробнага перыяду завяршыўся"
+      ],
+      "Bad time for this email?": [
+        "Не падыходзячы час для гэтага ліста?"
+      ],
+      "Filter for more focus": [
+        "Фільтр для большай канцэнтрацыі"
+      ],
+      "High security for your account": [
+        "Высокая бяспека для вашага ўліковага запісу"
+      ],
+      "Need more labels or folders?": [
+        "Неабходна больш метак або папак?"
+      ],
+      "No need to empty the trash": [
+        "Няма неабходнасці ачышчаць сметніцу"
+      ],
+      "One email, many recipients": [
+        "Адна электронная пошта, шмат атрымальнікаў"
+      ],
+      "Same inbox, shorter email address": [
+        "Тая ж паштовая скрыня, карацейшы адрас электроннай пошты"
+      ],
+      "Schedule now, send later": [
+        "Заплануйце цяпер, а адпраўце пазней"
       ]
     },
     "Title subscription": {
@@ -14275,6 +14350,34 @@
       ],
       "Sign in to the service": [
         "Увайсці ў сэрвіс"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Далучыцца да Google Meet"
+      ],
+      "Joining instructions": [
+        "Інструкцыі па далучэнні"
+      ],
+      "Less details": [
+        "Менш падрабязна"
+      ],
+      "Meeting link:": [
+        "Спасылка сустрэчы:"
+      ],
+      "More details": [
+        "Больш падрабязна"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Далучыцца да сустрэчы ў Zoom"
+      ],
+      "Meeting ID:": [
+        "Ідэнт. сустрэчы:"
+      ],
+      "Passcode: ${ password }": [
+        "Код доступу: ${ password }"
       ]
     }
   }

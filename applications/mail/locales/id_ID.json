@@ -1403,6 +1403,12 @@
       ],
       "Zoom out": [
         "Perkecil"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Mulai dari ${ priceUnlimited }"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Tingkatkan ke ${ BRAND_NAME } Unlimited"
       ]
     },
     "action": {
@@ -3507,6 +3513,30 @@
       ],
       "Your account and data recovery methods are set.": [
         "Metode pemulihan akun dan data Anda telah diatur."
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } melindungi akun Anda dengan pemantauan aktivitas mencurigakan yang aktif 24/7 — yang meliputi eskalasi dengan para ahli keamanan."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Hapus email di Sampah dan Spam lebih dari 30 hari yang lalu."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Buat label atau folder sebanyak yang Anda butuh demi menjaga kotak masuk Anda tetap rapi."
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "Tidak ingin mengirim email Anda sekarang? Jadwalkan pada waktu yang tepat."
+      ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Dapatkan ${ activatePmUser } untuk alamat email yang menarik dan mudah ditulis"
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Dengan grup kontak, Anda dapat mengirim email ke seluruh anggota grup hanya dengan sekali klik."
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "Dengan waktu tunda khusus, Anda dapat menyembunyikan email Anda dan mengatur email ini agar kembali muncul di waktu yang lebih sesuai."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Anda telah membuat 10 alias. Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -4210,7 +4240,7 @@
         "Terima kasih atas masukannya!"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
-        "Lampiran tidak dapat didekripsi.\nJika Anda memiliki kunci pribadi terkait, Anda akan tetap bisa mendekripsi\nberkas dengan program seperti GnuPG."
+        "Sebagian lampiran tidak dapat didekripsi.\nApabila Anda memiliki kunci pribadi yang terkait, Anda akan tetap dapat mendekripsi\nberkas-berkas ini dengan program seperti GnuPG."
       ],
       "The email addresses do not match": [
         "Alamat email tidak sesuai"
@@ -4765,7 +4795,7 @@
         "Siapkan akun keluarga Anda"
       ],
       "Invite members and get everything up and running.": [
-        "Undang anggota dan jalankan semua."
+        "Undang anggota dan atur segala sesuatunya agar dapat berjalan."
       ]
     },
     "familyOffer_2023:Title": {
@@ -7403,6 +7433,9 @@
       ],
       "Contact unassigned from group ${ contactGroupName }": [
         "Kaitan kontak dihilangkan dari grup ${ contactGroupName }"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Anda akan membuka browser bawaan Anda dan mengunjungi:"
       ]
     },
     "info": {
@@ -8861,6 +8894,12 @@
       ],
       "Upgrade now": [
         "Tingkatkan sekarang"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Mulai dari ${ priceMailPlus }"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -9413,6 +9452,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Dapatkan Mail Plus dengan harga ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Mulai dari ${ price }"
       ]
     },
     "new_plans: title": {
@@ -9769,7 +9811,7 @@
         "Media sosial"
       ],
       "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
-        "Gunakan alamat ${ MAIL_APP_NAME } Anda untuk masuk ke layanan daring untuk mencegah pelacakan dan pemrofilan. Ubah email Anda untuk layanan populer sekarang. ${ learnMoreLink }"
+        "Gunakan alamat ${ MAIL_APP_NAME } Anda untuk masuk ke layanan online demi mencegah diri Anda terlacak dan terprofil. Ubah email Anda untuk berbagai layanan populer sekarang juga. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -9864,31 +9906,31 @@
         "Akses email dan kalender dari desktop Anda dengan aplikasi desktop."
       ],
       "Activate selected": [
-        "Aktifkan dipilih"
+        "Aktifkan yang dipilih"
       ],
       "Auto-delete spam and trash": [
         "Kosongkan spam dan sampah secara otomatis"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "Kosongkan email terhapus dan spam setelah 30 hari."
+        "Singkirkan email yang telah dihapus dan email spam setelah 30 hari."
       ],
       "Download the desktop app and continue": [
         "Unduh aplikasi desktop dan lanjutkan"
       ],
       "Fixed and focused": [
-        "Bertetap dan terfokus"
+        "Cepat dan terfokus"
       ],
       "Get the desktop app": [
         "Dapatkan aplikasi desktop"
       ],
       "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
-        "Dapatkan aplikasi ponsel dari ${ mobileAppAppStoreLink } atau ${ mobileAppGooglePlayLink }."
+        "Dapatkan aplikasi seluler kami dari ${ mobileAppAppStoreLink } atau ${ mobileAppGooglePlayLink }."
       ],
       "On the move": [
         "Saat bepergian"
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "Mulai menggunakan alamat email Anda yang lebih pendek dan menarik."
+        "Mulai gunakan versi singkat dari alamat email Anda yang lebih ringkas dan menarik."
       ]
     },
     "Onboarding Proton": {
@@ -11015,6 +11057,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Dengan harga standar ${ amount } selama 30 bulan"
+      ],
+      "/month": [
+        "/bulan"
       ]
     },
     "specialoffer: Title": {
@@ -11107,7 +11152,7 @@
         "Masuk ke layanan"
       ],
       "In the account settings, look for the option to edit or change your email address ": [
-        "Dalam pengaturan akun, lihat pilihan untuk menyunting atau mengubah alamat email Anda "
+        "Dalam pengaturan akun, temukan pilihan untuk menyunting atau mengubah alamat email Anda "
       ]
     },
     "Step in filter modal": {
@@ -11685,7 +11730,7 @@
     },
     "Success": {
       "${ count } conversation deleted": [
-        "Percakapan dihapus\n\n${ count } percakapan dihapus"
+        "${ count } percakapan dihapus"
       ],
       "${ count } draft deleted": [
         "${ count } draf dihapus"
@@ -12859,6 +12904,30 @@
       ],
       "Your free trial has ended": [
         "Masa uji coba gratis Anda telah berakhir"
+      ],
+      "Bad time for this email?": [
+        "Waktu untuk email ini kurang sesuai?"
+      ],
+      "Filter for more focus": [
+        "Filter untuk fokus yang lebih"
+      ],
+      "High security for your account": [
+        "Keamanan yang tinggi bagi akun Anda"
+      ],
+      "Need more labels or folders?": [
+        "Butuh lebih banyak label atau folder?"
+      ],
+      "No need to empty the trash": [
+        "Tanpa perlu mengosongkan kotak sampah"
+      ],
+      "One email, many recipients": [
+        "Satu email, banyak penerima"
+      ],
+      "Same inbox, shorter email address": [
+        "Kotak masuk yang sama, alamat email yang lebih pendek"
+      ],
+      "Schedule now, send later": [
+        "Jadwalkan sekarang, kirim nanti"
       ]
     },
     "Title subscription": {
@@ -13091,7 +13160,7 @@
         "${ BRAND_NAME } akan berupaya untuk mentransfer data sebanyak-banyaknya, yang dimulai dengan pesan Anda yang terbaru."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
-        "Yakin ingin mengapus ${ count } kontak secara permanen?"
+        "Apakah Anda yakin ingin mengapus ${ count } kontak secara permanen?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Apakah Anda yakin ingin menghapus grup kontak ini?"
@@ -13402,6 +13471,28 @@
       ],
       "Yearly, ${ untilString }": [
         "Tahunan, ${ untilString }"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Bergabung ke Google Meet"
+      ],
+      "Less details": [
+        "Lebih sedikit detail"
+      ],
+      "Meeting link:": [
+        "Tautan undangan:"
+      ],
+      "More details": [
+        "Lebih banyak detail"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Bergabung ke Pertemuan Zoom"
+      ],
+      "Meeting ID:": [
+        "ID Rapat:"
       ]
     }
   }

@@ -1402,6 +1402,12 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Ab ${ priceUnlimited }"
+      ],
+      "Use this": [
+        "Dies verwenden"
       ]
     },
     "action": {
@@ -8973,6 +8979,9 @@
       ],
       "Upgrade now": [
         "Jetzt upgraden"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Ab ${ priceMailPlus }"
       ]
     },
     "new_plans: action": {
@@ -9546,6 +9555,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Hol dir Mail Plus für ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Ab ${ price }"
       ]
     },
     "new_plans: title": {
@@ -9862,6 +9874,9 @@
       ],
       "Trial started": [
         "Testphase begonnen"
+      ],
+      "Passcode copied to clipboard": [
+        "Passcode in die Zwischenablage kopiert."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9938,6 +9953,15 @@
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Willkommen bei ${ MAIL_APP_NAME }"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web-Überwachung"
+      ],
+      "Get the desktop app": [
+        "Desktop-App herunterladen"
+      ],
+      "Let's get started": [
+        "Fangen wir an"
       ]
     },
     "Onboarding Proton": {
@@ -11083,6 +11107,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Standardpreis: ${ amount } für 30 Monate"
+      ],
+      "/month": [
+        "/ Monat"
       ]
     },
     "specialoffer: Title": {
@@ -12963,6 +12990,15 @@
       ],
       "Your free trial has ended": [
         "Deine kostenlose Testversion ist abgelaufen."
+      ],
+      "Bad time for this email?": [
+        "Schlechte Zeit für diese E-Mail?"
+      ],
+      "Need more labels or folders?": [
+        "Benötigst du weitere Kategorien oder Ordner?"
+      ],
+      "Schedule now, send later": [
+        "Jetzt planen, später senden"
       ]
     },
     "Title subscription": {
@@ -13559,6 +13595,19 @@
       ],
       "Social media": [
         "Social Media"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Google Meet beitreten"
+      ],
+      "Meeting link:": [
+        "Meeting-Link:"
+      ]
+    },
+    "Zoom Meeting": {
+      "Passcode: ${ password }": [
+        "Passcode: ${ password }"
       ]
     }
   }

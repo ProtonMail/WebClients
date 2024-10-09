@@ -9573,6 +9573,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "მიიღეთ Mail Plus ფასით ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "${ price }-დან"
       ]
     },
     "new_plans: title": {
@@ -9892,6 +9895,9 @@
       ],
       "Trial started": [
         "საცდელი პერიოდი დაიწყო"
+      ],
+      "Passcode copied to clipboard": [
+        "წვდომის კოდი დაკოპირდა გაცვლის ბუფერში"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11188,6 +11194,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "სტანდარტული ფასი ${ amount } 30 თვისთვის"
+      ],
+      "/month": [
+        "/თვეში"
       ]
     },
     "specialoffer: Title": {
@@ -13071,6 +13080,24 @@
       ],
       "How to update your email address": [
         "როგორ განაახლოთ თქვენი ელფოსტის მისამართი"
+      ],
+      "Bad time for this email?": [
+        "ცუდი დროა ამ ელფოსტისთვის?"
+      ],
+      "Filter for more focus": [
+        "ფილტრი მეტი კონცენტრაციისთვის"
+      ],
+      "Need more labels or folders?": [
+        "გჭირდებათ მეტი ჭდე ან საქაღალდე?"
+      ],
+      "No need to empty the trash": [
+        "ნაგვის ყუთის გასუფთავება საჭირო არაა"
+      ],
+      "One email, many recipients": [
+        "ერთი ელფოსტა, ბევრი მიმღები"
+      ],
+      "Schedule now, send later": [
+        "დაგეგმეთ ახლა, გააგზავნეთ მოგვიანებით"
       ]
     },
     "Title subscription": {
@@ -13687,6 +13714,34 @@
       ],
       "Sign in to the service": [
         "შესვლა სერვისში"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Google Meet-ზე მიერთება"
+      ],
+      "Joining instructions": [
+        "მიერთების ინსტრუქციები"
+      ],
+      "Less details": [
+        "ნაკლები დეტალი"
+      ],
+      "Meeting link:": [
+        "შეხვედრის ბმული:"
+      ],
+      "More details": [
+        "მეტი დეტალი"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Zoom-ის შეხვედრასთან მიერთება"
+      ],
+      "Meeting ID:": [
+        "შეხვედრის ID:"
+      ],
+      "Passcode: ${ password }": [
+        "წვდომის კოდი: ${ password }"
       ]
     }
   }

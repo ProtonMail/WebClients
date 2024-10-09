@@ -1390,6 +1390,27 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "Klik om ${ defaultEmailAddress } naar klembord te kopiëren"
+      ],
+      "Hide ${ BRAND_NAME } Scribe writing assistant": [
+        "Verberg ${ BRAND_NAME } Scribe schrijfassistent"
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Uitvoeren op ${ BRAND_NAME }-servers"
+      ],
+      "Show ${ BRAND_NAME } Scribe writing assistant": [
+        "Toon ${ BRAND_NAME } Scribe schrijfassistent"
+      ],
+      "Starting from ${ priceUnlimited }": [
+        "Vanaf ${ priceUnlimited }"
+      ],
+      "Tracker protection prevented some images from loading. Load them if you trust the sender.": [
+        "Trackerbeveiliging heeft voorkomen dat sommige afbeeldingen werden geladen. Laad ze als u de afzender vertrouwt."
+      ],
+      "Use this": [
+        "Gebruik dit"
       ]
     },
     "action": {
@@ -3490,6 +3511,27 @@
       ],
       "Your account and data recovery methods are set.": [
         "Uw account en dataherstelmethodes zijn ingesteld."
+      ],
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Automatisch spam en weggegooide berichten verwijderen en meer premium-functies ontgrendelen als u upgrade."
+      ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Bespaar tijd door met contactgroepen iedereen tegelijk e-mails te sturen. Ontgrendel deze en andere premium-functies wanneer u upgrade."
+      ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Ontgrendel ${ activatePmUser } voor een pakkend en gemakkelijk te typen e-mailadres."
+      ],
+      "Unlock custom message scheduling and more premium features when you upgrade.": [
+        "Ontgrendel aangepaste berichtsplanning en meer premium-functies bij het upgraden."
+      ],
+      "Unlock custom snooze times and more premium features when you upgrade.": [
+        "Ontgrendel aangepaste snoozetijden en meer premium-functies wanneer u upgrade."
+      ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "Gebruik ${ MAIL_APP_NAME } om in te loggen bij online diensten, omdat we, in tegenstelling tot andere e-mailproviders, nooit uw gegevens zullen volgen en delen met derden."
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Met contactgroepen kunt u met één klik e-mails verzenden naar iedereen in de groep."
       ]
     },
     "description": {
@@ -4318,6 +4360,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Uw zoekopdracht leverde te veel resultaten op. Verfijn uw zoekopdracht en probeer het opnieuw."
+      ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.": [
+        "Het verzenden van bijlagen is beperkt terwijl u de limieten van uw abonnement overschrijdt of tot u uw abonnement upgrade."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -4541,6 +4586,12 @@
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "U hebt nog geen contactpersonen. Start met het aanmaken van een contactpersoon"
+      ],
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Aliassen kunnen niet worden gebruikt wanneer een extra wachtwoord is ingeschakeld in ${ PASS_APP_NAME }."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Wanneer extra wachtwoord is ingeschakeld, kan aliasbeheer alleen worden gedaan in ${ PASS_APP_NAME }."
       ]
     },
     "Error notification": {
@@ -7442,6 +7493,27 @@
       ],
       "Email copied to clipboard": [
         "E-mail gekopieerd naar klembord"
+      ],
+      "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "${ PASS_APP_NAME } biedt een eenvoudige manier om logins aan te maken op niet-vertrouwde websites van derden waar u uw werkelijke e-mailadres niet wilt onthullen."
+      ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Contact verwijderd uit groep ${ contactGroupName }"
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Met onze meldingen nemen we het zekere voor het onzekere. Als je de geschonden informatie niet herkent, kun je deze melding veilig negeren."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Houd er rekening mee dat, wanneer u op de knop Bevestigen klikt, uw account nog ${ remainingCreditsFormatted } credits over heeft."
+      ],
+      "Remember to update this in your password manager or wherever you keep your account and login information.": [
+        "Vergeet niet om dit bij te werken in uw wachtwoordbeheerder of waar u ook uw account- en logingegevens bewaart."
+      ],
+      "Scribe panel": [
+        "Scribepaneel"
+      ],
+      "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
+        "Het e-mailadres ${ boldNoReplyEmail } lijkt geen antwoorden te accepteren. Weet u zeker dat u uw bericht wilt versturen?"
       ]
     },
     "info": {
@@ -8914,6 +8986,12 @@
       ],
       "Upgrade now": [
         "Upgrade nu"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Vanaf ${ priceMailPlus }"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Upgrade naar ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -9359,6 +9437,24 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Voor ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Voor alle ${ BRAND_NAME } diensten"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Alle basisdiensten van ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Alle premium ${ BRAND_NAME }-services. Eén simpel abonnement"
+      ],
+      "Custom and secure business email": [
+        "Aangepaste en veilige zakelijke e-mail"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Onbeperkte gedeelde ${ PASS_SHORT_APP_NAME } kluizen per gebruiker"
       ]
     },
     "new_plans: feature info": {
@@ -9370,6 +9466,9 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
+      ],
+      "1 custom email domain": [
+        "1 eigen e-maildomein"
       ]
     },
     "new_plans: heading": {
@@ -9458,6 +9557,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Bescherm gevoelige bedrijfsinformatie en werk veilig samen."
       ]
     },
     "new_plans: title": {
@@ -9679,6 +9781,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "U kunt meerdere beheerders hebben. Alle beheerders kunnen gebruikers toevoegen en beheren, maar alleen de primaire beheerder kan de facturatie beheren."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Telefonische ondersteuning is beschikbaar van de ${ BRAND_NAME } klantenondersteuning tijdens Europese kantoortijden voor klanten met 20 of meer gebruikers."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -9856,6 +9961,27 @@
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Welkom bij ${ MAIL_APP_NAME }"
+      ],
+      "Activate premium features": [
+        "Premium functies activeren"
+      ],
+      "Get notified if your password is compromised.": [
+        "Ontvang een melding als uw wachtwoord is gecompromitteerd."
+      ],
+      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
+        "Download de app van de ${ mobileAppAppStoreLink } of ${ mobileAppGooglePlayLink }."
+      ],
+      "Let's get started": [
+        "Aan de slag!"
+      ],
+      "Make the most of your paid plan.": [
+        "Haal het meeste uit uw betaalde abonnement."
+      ],
+      "Start using ${ BRAND_NAME }": [
+        "Begin ${ BRAND_NAME } te gebruiken"
+      ],
+      "Where privacy is default.": [
+        "Waar privacy standaard is."
       ]
     },
     "Onboarding Proton": {
@@ -10048,6 +10174,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "We verwerken uw betaling voor de factuur. Wacht tot de betaling is voltooid voordat u uw abonnement wijzigt of betalingsgegevens bijwerkt. Dank u voor uw geduld."
+      ],
+      "More plans are available in other currencies": [
+        "Er zijn meer abonnementen beschikbaar in andere valuta"
       ]
     },
     "Payments.Error": {
@@ -10988,6 +11117,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Standaardprijs ${ amount } voor 30 maanden"
+      ],
+      "/month": [
+        "/maand"
       ]
     },
     "specialoffer: Title": {
@@ -12863,6 +12995,15 @@
       ],
       "Your free trial has ended": [
         "Uw gratis proefperiode is afgelopen"
+      ],
+      "High security for your account": [
+        "Hoge beveiliging voor uw account"
+      ],
+      "How to update your email address": [
+        "Hoe u uw e-mailadres bijwerkt"
+      ],
+      "No need to empty the trash": [
+        "Het is niet nodig om de prullenbak te legen"
       ]
     },
     "Title subscription": {
@@ -13454,11 +13595,67 @@
       ],
       "Social media": [
         "Social media"
+      ],
+      "Finance": [
+        "Financiën"
+      ],
+      "Privacy for all your online accounts": [
+        "Privacy voor al uw online accounts"
       ]
     },
     "SmartBanner": {
       "Private, fast, and organized": [
         "Privé, snel en georganiseerd"
+      ],
+      "Faster on the app": [
+        "Sneller in de app"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Bevestig het verlies van ${ PASS_APP_NAME } speciale korting"
+      ],
+      "Remove discount": [
+        "Korting verwijderen"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Uw ${ PLAN_NAMES[PLANS.PASS] }-abonnement heeft een speciale prijs van ${ price } per jaar. Als u downgrade naar een Free abonnement, zult u permanent uw korting verliezen, zelfs als u in de toekomst opnieuw upgrade."
+      ]
+    },
+    "Google Meet": {
+      "Less details": [
+        "Minder details"
+      ],
+      "More details": [
+        "Meer details"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Krijg Mail Plus voor ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Vanaf ${ price }"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Controleer de veiligheid van uw account"
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Het abonnement zal worden gedowngradet aan het einde van de factureringscyclus."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Een veiligere/makkelijkere manier om Bitcoin te bewaren en te verzenden"
+      ]
+    },
+    "Zoom Meeting": {
+      "Passcode: ${ password }": [
+        "Toegangscode: ${ password }"
       ]
     }
   }
