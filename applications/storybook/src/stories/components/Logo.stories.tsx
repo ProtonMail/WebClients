@@ -1,7 +1,17 @@
 import { useState } from 'react';
 
 import type { LogoProps } from '@proton/components';
-import { CalendarLogo, DriveLogo, Logo, MailLogo, PassLogo, ProtonLogo, RadioGroup, VpnLogo } from '@proton/components';
+import {
+    CalendarLogo,
+    DriveLogo,
+    Logo,
+    MailLogo,
+    PassLogo,
+    ProtonLogo,
+    RadioGroup,
+    VpnLogo,
+    WalletLogo,
+} from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { getTitle } from '../../helpers/title';
@@ -91,6 +101,9 @@ export const Individual = () => (
         </div>
         <div>
             <PassLogo />
+        </div>
+        <div>
+            <WalletLogo />
         </div>
     </div>
 );
