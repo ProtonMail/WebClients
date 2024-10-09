@@ -6,7 +6,8 @@ import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { CriticalMessageResponseError, sendMessage } from '@proton/pass/lib/extension/message/send-message';
-import type { AppState, WorkerMessageWithSender } from '@proton/pass/types';
+import { matchExtensionMessage } from '@proton/pass/lib/extension/message/utils';
+import type { AppState } from '@proton/pass/types';
 import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { type Awaiter, awaiter } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
@@ -31,14 +32,9 @@ export const useExtensionState = (onStateChange: (state: AppState) => void) => {
     }, []);
 
     useEffect(() => {
-        const onMessage = (message: WorkerMessageWithSender) => {
-            if (message.type === WorkerMessageType.WORKER_STATE_CHANGE) {
-                ready.current
-                    .then(() => {
-                        const { state } = message.payload;
-                        onChange(state);
-                    })
-                    .catch(noop);
+        const onMessage = (message: unknown) => {
+            if (matchExtensionMessage(message, { type: WorkerMessageType.WORKER_STATE_CHANGE })) {
+                ready.current.then(() => onChange(message.payload.state)).catch(noop);
             }
         };
 

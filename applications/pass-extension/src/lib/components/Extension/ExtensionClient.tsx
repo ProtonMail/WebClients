@@ -12,6 +12,7 @@ import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { clientErrored, clientReady } from '@proton/pass/lib/client';
+import { isExtensionMessage } from '@proton/pass/lib/extension/message/utils';
 import { lock, signoutIntent, syncIntent } from '@proton/pass/store/actions';
 import { wakeupRequest } from '@proton/pass/store/actions/requests';
 import { SyncType } from '@proton/pass/store/sagas/client/sync';
@@ -83,9 +84,11 @@ export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
         });
 
         if (url) setCurrentTabUrl?.(url);
+
         if (onWorkerMessage) {
-            port.onMessage.addListener(onWorkerMessage);
-            return () => port.onMessage.removeListener(onWorkerMessage);
+            const listener = (message: unknown) => isExtensionMessage(message) && onWorkerMessage(message);
+            port.onMessage.addListener(listener);
+            return () => port.onMessage.removeListener(listener);
         }
     }, []);
 

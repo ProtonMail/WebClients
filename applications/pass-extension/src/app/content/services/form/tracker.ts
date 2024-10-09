@@ -12,8 +12,9 @@ import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap'
 import { stage, stash, validateFormCredentials } from 'proton-pass-extension/lib/utils/form-entry';
 
 import { FieldType, kButtonSubmitSelector } from '@proton/pass/fathom';
+import { matchExtensionMessage } from '@proton/pass/lib/extension/message/utils';
 import browser from '@proton/pass/lib/globals/browser';
-import type { AutosaveFormEntry, FormCredentials, MaybeNull, WorkerMessageWithSender } from '@proton/pass/types';
+import type { AutosaveFormEntry, FormCredentials, MaybeNull } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
 import { parseFormAction } from '@proton/pass/utils/dom/form';
@@ -222,8 +223,8 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
             ?.focus();
     });
 
-    const onTabMessage = (message: WorkerMessageWithSender) => {
-        if (message?.sender === 'background' && message.type === WorkerMessageType.FORM_STATUS) {
+    const onTabMessage = (message: unknown) => {
+        if (matchExtensionMessage(message, { sender: 'background', type: WorkerMessageType.FORM_STATUS })) {
             const { formId, status } = message.payload;
 
             if (formId === form.id) {
@@ -254,6 +255,8 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
                 }
             }
         }
+
+        return undefined;
     };
 
     /** When detaching the form tracker: remove every listener
