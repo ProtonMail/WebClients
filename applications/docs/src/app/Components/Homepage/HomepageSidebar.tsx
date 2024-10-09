@@ -1,3 +1,4 @@
+import { c } from 'ttag'
 import { ButtonLike } from '@proton/atoms'
 import {
   Icon,
@@ -8,10 +9,13 @@ import {
   SidebarListItemLink,
   SidebarNav,
   AppsDropdown,
+  useAuthentication,
 } from '@proton/components'
+import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
 
 export const HomepageSidebar = ({ expanded, onToggle }: { expanded: boolean; onToggle: () => void }) => {
+  const { getLocalID } = useAuthentication()
   return (
     <Sidebar
       className="ui-standard homepage-wrapper"
@@ -23,19 +27,16 @@ export const HomepageSidebar = ({ expanded, onToggle }: { expanded: boolean; onT
       primary={
         <ButtonLike
           as="a"
-          href="/doc"
-          size="large"
-          shape="outline"
-          color="norm"
-          className="w-full"
-          style={{
-            color: 'var(--docs-blue-color)',
-            borderColor: 'var(--docs-blue-color)',
-            backgroundColor: 'color-mix(in srgb, var(--docs-blue-color), transparent 90%)',
-          }}
+          href={getAppHref('/doc', APPS.PROTONDOCS, getLocalID())}
           target="_blank"
+          color="norm"
+          size="large"
+          shape="solid"
+          style={{ backgroundColor: 'var(--docs-blue-color)' }}
+          className="flex items-center justify-center gap-2"
         >
-          New document
+          <Icon name="plus" />
+          {c('Action').t`New`}
         </ButtonLike>
       }
     >

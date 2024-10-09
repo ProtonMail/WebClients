@@ -109,6 +109,7 @@ const RecentDocumentsMockProvider = ({
     handleOpenFolder,
     getDisplayName: (recentDocument: RecentDocumentsSnapshotData) => recentDocument.createdBy,
     getDisplayDate: (recentDocument: RecentDocumentsSnapshotData) => '' + recentDocument.lastViewed,
+    getLocalID: () => 0,
   }
 
   useEffect(() => {
