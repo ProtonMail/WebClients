@@ -1,16 +1,15 @@
-import { type ChangeEvent, useRef } from 'react';
+import { type ChangeEvent, useRef, useState } from 'react';
 
 import type { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
 import type { InputProps } from '@proton/atoms';
 import type { InputFieldOwnProps } from '@proton/components/components/v2/field/InputField';
-import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet';
 
-import { convertAmount, getDecimalStepByUnit, getPrecision } from '../utils';
+import { countDecimal, formatNumberForDisplay, getDecimalStepByUnit, getPrecision } from '../utils';
 import { CoreInput } from './Input';
 
 interface Props extends InputFieldOwnProps, InputProps {
     /**
-     * Bitcoin amount in satoshis (1 BTC = 100_000_000 SAT)
+     * Bitcoin amount, in provided unit
      */
     value: number;
     /**
@@ -21,16 +20,11 @@ interface Props extends InputFieldOwnProps, InputProps {
     unit: WasmBitcoinUnit | WasmApiExchangeRate;
 
     min?: number;
-
+    /**
+     * Account balance, in provided unit
+     */
     accountBalance?: number;
 }
-
-const formatNumberForDisplay = (num: number, decimalPlaces: number) => {
-    // Use a multiplier to shift the decimal point
-    let multiplier = Math.pow(10, decimalPlaces);
-    // Format the number without scientific notation
-    return Math.round(num * multiplier) / multiplier;
-};
 
 export const BitcoinAmountInput = ({
     value,
@@ -42,23 +36,20 @@ export const BitcoinAmountInput = ({
     min,
 
     accountBalance,
-
     inputClassName,
     ...inputProps
 }: Props) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const safeMin = min ?? 0;
-    const amount = Math.max(safeMin, convertAmount(value, COMPUTE_BITCOIN_UNIT, unit));
-    const accountBalanceAmount = accountBalance ? convertAmount(accountBalance, COMPUTE_BITCOIN_UNIT, unit) : undefined;
-
+    const [digitsAfterDecimalPoint, setDigitsAfterDecimalPoint] = useState<number>(countDecimal(value.toString()));
     const onChange = (event: ChangeEvent<HTMLInputElement>) => {
-        const parsedAmount = parseFloat(event.target.value.replace(/^0+(\d+)/, '$1'));
-        const updatedAmount = Number.isFinite(parsedAmount) && parsedAmount > safeMin ? parsedAmount : safeMin;
-        if (accountBalanceAmount && updatedAmount > accountBalanceAmount) {
-            onValueChange?.(convertAmount(accountBalanceAmount, unit, COMPUTE_BITCOIN_UNIT));
-        } else {
-            onValueChange?.(convertAmount(updatedAmount, unit, COMPUTE_BITCOIN_UNIT));
+        const newValue = event.target.value;
+        const countDigit = countDecimal(newValue);
+        if (countDigit > getPrecision(unit)) {
+            return;
         }
+        setDigitsAfterDecimalPoint(countDecimal(newValue));
+        onValueChange?.(Number(newValue));
     };
 
     return (
@@ -66,7 +57,7 @@ export const BitcoinAmountInput = ({
             ref={inputRef}
             dense={dense}
             type="number"
-            value={formatNumberForDisplay(amount, getPrecision(unit))}
+            value={`${formatNumberForDisplay(value, getPrecision(unit), digitsAfterDecimalPoint)}`}
             min={safeMin}
             max={accountBalance}
             step={getDecimalStepByUnit(unit)}

@@ -31,7 +31,7 @@ import {
     findNearestBlockTargetFeeRate,
     findQuickestBlock,
     useFees,
-} from '../BitcoinSendModal/TransactionReview/useFeesInput';
+} from '../BitcoinSendModal/TransactionReviewStep/useFeesInput';
 
 interface Props extends ModalStateProps {
     transaction: TransactionData;

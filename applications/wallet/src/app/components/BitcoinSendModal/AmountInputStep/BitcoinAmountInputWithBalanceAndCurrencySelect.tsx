@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { WasmApiExchangeRate, WasmApiFiatCurrency, WasmBitcoinUnit } from '@proton/andromeda';
+import type { WasmApiExchangeRate, WasmApiFiatCurrency } from '@proton/andromeda';
 import { BITCOIN_CURRENCY, COMPUTE_BITCOIN_UNIT, SATS_CURRENCY } from '@proton/wallet';
 import { useFiatCurrencies, useGetExchangeRate, useUserWalletSettings } from '@proton/wallet/store';
 
@@ -9,7 +9,8 @@ import { CoreButton } from '../../../atoms/Button';
 import type { BitcoinCurrency } from '../../../atoms/CurrencySelect';
 import { CurrencySelect, DEFAULT_POPULAR_SYMBOLS } from '../../../atoms/CurrencySelect';
 import { Price } from '../../../atoms/Price';
-import { convertAmountStr, getExchangeRateFromBitcoinUnit, getLabelByUnit } from '../../../utils';
+import { convertAmount, getExchangeRateFromBitcoinUnit } from '../../../utils';
+import { SecondaryAmount } from '../SecondaryAmount';
 
 interface Props {
     remainingBalance: number;
@@ -26,34 +27,6 @@ interface Props {
 
     accountBalance: number;
 }
-
-export const secondaryAmount = ({
-    key,
-    primaryExchangeRate,
-    secondaryExchangeRate,
-    value,
-    settingsBitcoinUnit,
-}: {
-    key: string;
-    primaryExchangeRate: WasmApiExchangeRate;
-    secondaryExchangeRate?: WasmApiExchangeRate;
-    value: number;
-    settingsBitcoinUnit: WasmBitcoinUnit;
-}) => {
-    if ('isBitcoinRate' in primaryExchangeRate) {
-        if (!secondaryExchangeRate) {
-            return null;
-        }
-
-        return <Price key={key} amount={value} unit={secondaryExchangeRate} />;
-    }
-
-    return (
-        <>
-            {convertAmountStr(value, COMPUTE_BITCOIN_UNIT, settingsBitcoinUnit)} {getLabelByUnit(settingsBitcoinUnit)}
-        </>
-    );
-};
 
 export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
     remainingBalance,
@@ -88,7 +61,13 @@ export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
         ? exchangeRateOrBitcoinUnit.FiatCurrency
         : exchangeRateOrBitcoinUnit.BitcoinUnit;
 
-    const price = <Price key="available-amount" amount={remainingBalance} unit={exchangeRateOrBitcoinUnit} />;
+    const price = (
+        <Price
+            key="available-amount"
+            amount={convertAmount(remainingBalance, exchangeRateOrBitcoinUnit, COMPUTE_BITCOIN_UNIT)}
+            unit={exchangeRateOrBitcoinUnit}
+        />
+    );
 
     return (
         <div className="mt-12 mb-4">
@@ -109,15 +88,9 @@ export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
             </div>
 
             <div className="flex flex-row flex-nowrap items-center justify-space-between">
-                <div>
+                <div className="w-full">
                     <BitcoinAmountInput
-                        onValueChange={
-                            onAmountChange
-                                ? (v) => {
-                                      return onAmountChange?.(v);
-                                  }
-                                : undefined
-                        }
+                        onValueChange={onAmountChange}
                         unit={exchangeRateOrBitcoinUnit}
                         unstyled
                         className="h1 invisible-number-input-arrow"
@@ -143,13 +116,13 @@ export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
             </div>
 
             <span className="block color-weak">
-                {secondaryAmount({
-                    key: 'amount-hint',
-                    settingsBitcoinUnit: settings.BitcoinUnit,
-                    secondaryExchangeRate,
-                    primaryExchangeRate: exchangeRateOrBitcoinUnit,
-                    value,
-                })}
+                <SecondaryAmount
+                    key="amount-hint"
+                    settingsBitcoinUnit={settings.BitcoinUnit}
+                    secondaryExchangeRate={secondaryExchangeRate}
+                    primaryExchangeRate={exchangeRateOrBitcoinUnit}
+                    value={value}
+                />
             </span>
         </div>
     );
