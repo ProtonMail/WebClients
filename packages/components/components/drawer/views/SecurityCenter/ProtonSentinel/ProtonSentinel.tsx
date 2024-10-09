@@ -117,7 +117,7 @@ const ProtonSentinel = () => {
                             }}
                             className="mb-2"
                         >
-                            {c('Security Center - Action').t`View logs`}
+                            {c('Security Center - Action').t`View events`}
                         </Button>
                     </>
                 ) : (

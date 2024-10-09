@@ -6,6 +6,8 @@ export interface PassEvent {
         email: string;
     };
     event: string;
+    eventType: string;
+    eventTypeName: string;
     ip: string;
     eventData: {
         vaultId: string;

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Avatar } from '@proton/atoms';
 import AppLink from '@proton/components/components/link/AppLink';
 import { SortingTableHeader } from '@proton/components/components/table/SortingTableHeader';
 import Table from '@proton/components/components/table/Table';
@@ -13,17 +13,18 @@ import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useApi from '@proton/components/hooks/useApi';
 import { getShareID } from '@proton/shared/lib/api/b2blogs';
 import { APPS, SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { getInitials } from '@proton/shared/lib/helpers/string';
 
-import { getDesciptionText, getDescriptionTextWithLink, getEventNameText } from './helpers';
+import { getDesciptionText, getDescriptionTextWithLink } from './helpers';
 import type { PassEvent } from './interface';
 
 interface Props {
     events: PassEvent[];
     loading: boolean;
-    handleEventClick: (event: string) => void;
-    handleTimeClick: (time: string) => void;
-    handleEmailOrIpClick: (keyword: string) => void;
-    handleToggleSort: (direction: SORT_DIRECTION) => void;
+    onEventClick: (event: string) => void;
+    onTimeClick: (time: string) => void;
+    onEmailOrIpClick: (keyword: string) => void;
+    onToggleSort: (direction: SORT_DIRECTION) => void;
 }
 
 interface DescriptionProps {
@@ -66,14 +67,7 @@ const Description = ({ shareId, itemId, event, hasInvalidShareId }: DescriptionP
     );
 };
 
-const PassEventsTable = ({
-    events,
-    loading,
-    handleEventClick,
-    handleTimeClick,
-    handleEmailOrIpClick,
-    handleToggleSort,
-}: Props) => {
+const PassEventsTable = ({ events, loading, onEventClick, onTimeClick, onEmailOrIpClick, onToggleSort }: Props) => {
     const api = useApi();
     const [shareIds, setShareIds] = useState<{ [key: string]: string | null }>({});
     const [invalidShareIds, setInvalidShareIds] = useState<Set<string>>(new Set());
@@ -114,7 +108,7 @@ const PassEventsTable = ({
 
     const [sortConfig, setSortConfig] = useState<SortConfig>({
         key: 'time',
-        direction: SORT_DIRECTION.ASC,
+        direction: SORT_DIRECTION.DESC,
     });
 
     const toggleSort = () => {
@@ -122,7 +116,7 @@ const PassEventsTable = ({
             ...sortConfig,
             direction: sortConfig.direction === SORT_DIRECTION.ASC ? SORT_DIRECTION.DESC : SORT_DIRECTION.ASC,
         });
-        handleToggleSort(sortConfig.direction);
+        onToggleSort(sortConfig.direction);
     };
 
     return (
@@ -131,15 +125,14 @@ const PassEventsTable = ({
                 config={sortConfig}
                 onToggleSort={toggleSort}
                 cells={[
-                    { key: 'time', content: c('TableHeader').t`Time`, sorting: true },
-                    { content: c('Title').t`User` },
-                    { content: c('Title').t`Event` },
-                    { content: c('Title').t`Description` },
-                    { content: c('Title').t`IP` },
+                    { content: c('Title').t`User`, className: 'w-1/4' },
+                    { key: 'time', content: c('TableHeader').t`Event and Time`, sorting: true, className: 'w-1/4' },
+                    { content: c('Title').t`Description`, className: 'w-1/4' },
+                    { content: c('Title').t`IP`, className: 'w-1/4' },
                 ]}
             />
             <TableBody colSpan={5} loading={loading}>
-                {events.map(({ time, user, event, ip, eventData }, index) => {
+                {events.map(({ time, user, eventType, eventTypeName, ip, eventData }, index) => {
                     const { name, email } = user;
                     const { vaultId, itemId } = eventData;
                     const key = index;
@@ -147,56 +140,45 @@ const PassEventsTable = ({
                     const unixTime = new Date(time).getTime() / 1000;
                     const shareId = shareIds[vaultId];
                     const hasInvalidShareId = vaultId ? invalidShareIds.has(vaultId) : false;
+                    const initials = name ? getInitials(name) : email.charAt(0);
 
                     return (
                         <TableRow
                             key={key}
                             cells={[
-                                <Button
-                                    onClick={() => handleTimeClick(time)}
-                                    color="weak"
-                                    size="small"
-                                    shape="ghost"
-                                    className="px-1"
-                                >
-                                    <Time format="PPp">{unixTime}</Time>
-                                </Button>,
-                                <div className="flex flex-column">
-                                    <span>{name}</span>
-                                    <Button
-                                        onClick={() => handleEmailOrIpClick(email)}
-                                        color="weak"
-                                        size="small"
-                                        shape="ghost"
-                                        className="px-1"
+                                <div className="flex flex-row items-center my-2">
+                                    <Avatar className="mr-2" color="weak">
+                                        {initials}
+                                    </Avatar>
+                                    <div
+                                        className="flex flex-column cursor-pointer w-2/3"
+                                        onClick={() => onEmailOrIpClick(email)}
                                     >
-                                        <span className="color-weak">{email}</span>
-                                    </Button>
+                                        <span title={name} className="text-ellipsis max-w-full">
+                                            {name}
+                                        </span>
+                                        <span title={email} className="color-weak text-ellipsis max-w-full">
+                                            {email}
+                                        </span>
+                                    </div>
                                 </div>,
-                                <Button
-                                    onClick={() => handleEventClick(event)}
-                                    color="weak"
-                                    shape="solid"
-                                    size="small"
-                                    className=""
-                                >
-                                    {getEventNameText(event)}
-                                </Button>,
+                                <div className="flex flex-column cursor-pointer">
+                                    <div className="flex flex-row mb-1" onClick={() => onEventClick(eventType)}>
+                                        {eventTypeName}
+                                    </div>
+                                    <Time format="PPp" className="color-weak" onClick={() => onTimeClick(time)}>
+                                        {unixTime}
+                                    </Time>
+                                </div>,
                                 <Description
                                     shareId={shareId}
                                     itemId={itemId}
-                                    event={event}
+                                    event={eventType}
                                     hasInvalidShareId={hasInvalidShareId}
                                 />,
-                                <Button
-                                    onClick={() => handleEmailOrIpClick(ip)}
-                                    color="weak"
-                                    size="small"
-                                    shape="ghost"
-                                    className="px-1"
-                                >
-                                    <span>{ip}</span>
-                                </Button>,
+                                <span onClick={() => onEmailOrIpClick(ip)} className="cursor-pointer">
+                                    {ip}
+                                </span>,
                             ]}
                         />
                     );

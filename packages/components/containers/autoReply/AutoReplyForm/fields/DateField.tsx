@@ -12,10 +12,11 @@ interface Props {
     value?: Date;
     min?: Date;
     max?: Date;
+    fullWidth?: boolean;
     onChange: (value?: Date) => void;
 }
 
-const DateField = ({ id, label, value = new Date(), onChange, min, max }: Props) => {
+const DateField = ({ id, label, value = new Date(), onChange, min, max, fullWidth = true }: Props) => {
     return (
         <SettingsLayout>
             <SettingsLayoutLeft>
@@ -26,7 +27,7 @@ const DateField = ({ id, label, value = new Date(), onChange, min, max }: Props)
             <SettingsLayoutRight>
                 <DateInput
                     id={id}
-                    className="w-full"
+                    className={fullWidth ? 'w-full' : ''}
                     min={min}
                     max={max}
                     value={value}

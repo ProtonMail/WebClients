@@ -4,10 +4,9 @@ import { useEffect, useState } from 'react';
 import { endOfDay, isAfter, isBefore, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Pagination, usePaginationAsync } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import Pagination from '@proton/components/components/pagination/Pagination';
-import usePaginationAsync from '@proton/components/components/pagination/usePaginationAsync';
 import TimeIntl from '@proton/components/components/time/TimeIntl';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
@@ -15,7 +14,8 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import { useErrorHandler, useNotifications, useUserSettings } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
-import { getVPNLogs } from '@proton/shared/lib/api/b2blogs';
+import { getVPNLogDownload, getVPNLogs, getVpnEventTypes } from '@proton/shared/lib/api/b2blogs';
+import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import type { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
 import noop from '@proton/utils/noop';
 
@@ -28,7 +28,8 @@ import TogglingMonitoringModal from './TogglingMonitoringModal';
 import VPNEventsTable from './VPNEventsTable';
 import type { OrganizationSettings } from './api';
 import { getMonitoringSetting, updateMonitoringSetting } from './api';
-import { downloadVPNEvents, getVPNEventNameText, uniqueVPNEventsArray } from './helpers';
+import type { Event as EventObject } from './helpers';
+import { downloadVPNEvents, getConnectionEvents } from './helpers';
 import type { VPNEvent } from './interface';
 
 export interface FilterModel {
@@ -66,6 +67,7 @@ export const VPNEvents = () => {
     // const [downloading, withDownloading] = useLoading();
     const [filter, setFilter] = useState<FilterModel>(initialFilter);
     const [events, setEvents] = useState<VPNEvent[] | []>([]);
+    const [connectionEvents, setConnectionEvents] = useState([]);
     const [keyword, setKeyword] = useState<string>('');
     const [total, setTotal] = useState<number>(0);
     const [monitoringLoading, setMonitoringLoading] = useState<boolean>(true);
@@ -79,10 +81,26 @@ export const VPNEvents = () => {
     const [togglingMonitoringInitializing, withMonitoringInitializing] = useLoading();
     const [query, setQuery] = useState({});
     const [error, setError] = useState<string | null>(null);
+    const [sortDirection, setSortDirection] = useState(SORT_DIRECTION.DESC);
+
+    const fetchVpnConnectionEvents = async () => {
+        const { Items } = await api(getVpnEventTypes());
+        const filteredItems = Items.filter((item: EventObject) => item.EventType !== '' && item.EventTypeName !== '');
+        const sortedItems = filteredItems.sort((a: EventObject, b: EventObject) =>
+            a.EventTypeName.localeCompare(b.EventTypeName)
+        );
+        setConnectionEvents(sortedItems);
+    };
+
+    useEffect(() => {
+        fetchVpnConnectionEvents();
+    }, []);
 
     const fetchVPNLogs = async (params: B2BLogsQuery) => {
         try {
-            const { Items, Total } = await api(getVPNLogs(params));
+            const { Items, Total } = await api(
+                getVPNLogs({ ...params, Sort: sortDirection === SORT_DIRECTION.DESC ? 'desc' : 'asc' })
+            );
             const connectionEvents = toCamelCase(Items);
             setEvents(connectionEvents);
             setTotal(Total | 0);
@@ -93,8 +111,8 @@ export const VPNEvents = () => {
     };
 
     useEffect(() => {
-        withLoading(fetchVPNLogs({ ...query, Page: page - 1, Size: PAGINATION_LIMIT }).catch(noop));
-    }, [page, query]);
+        withLoading(fetchVPNLogs({ ...query, Page: page - 1 }).catch(noop));
+    }, [page, query, sortDirection]);
 
     useEffect(() => {
         withMonitoringInitializing(
@@ -138,8 +156,24 @@ export const VPNEvents = () => {
         reset();
     };
 
-    const handleDownloadClick = () => {
-        downloadVPNEvents(events);
+    const handleDownloadClick = async () => {
+        const response = await api({
+            ...getVPNLogDownload({ ...query, Page: page - 1 }),
+            output: 'raw',
+        });
+
+        const responseCode = response.headers.get('x-pm-code') || '';
+        if (response.status === 429) {
+            createNotification({
+                text: c('Notification').t`Too many recent API requests`,
+            });
+        } else if (responseCode !== '1000') {
+            createNotification({
+                text: c('Notification').t`Number of records exceeds the download limit of 10000`,
+            });
+        }
+
+        downloadVPNEvents(response);
     };
 
     const handleStartDateChange = (start: Date | undefined) => {
@@ -183,16 +217,17 @@ export const VPNEvents = () => {
         reset();
     };
 
-    const handleResetFilter = () => {
-        setError(null);
-        setFilter(initialFilter);
-        setKeyword('');
-        setQuery({});
-        reset();
-    };
+    const handleClickableEmailOrIP = (keyword: string) => {
+        const searchType = getSearchType(keyword);
 
-    const getVPNEventTypeText = (eventType: string) => {
-        return getVPNEventNameText(eventType);
+        if (searchType !== 'email' && searchType !== 'ip') {
+            return;
+        }
+
+        const updatedQuery = { ...query, [searchType === 'email' ? 'Email' : 'Ip']: keyword };
+        setQuery(updatedQuery);
+        setKeyword(keyword);
+        reset();
     };
 
     const toggleMonitoring = async () => {
@@ -261,26 +296,41 @@ export const VPNEvents = () => {
               ).jt`Disabled since ${formattedDateAndTime}`;
     };
 
+    const handleToggleSort = (direction: SORT_DIRECTION) => {
+        setSortDirection(direction);
+    };
+
+    const handleResetFilter = () => {
+        setError(null);
+        setFilter(initialFilter);
+        setKeyword('');
+        setQuery({});
+        reset();
+    };
+
     return (
-        <SettingsSectionWide>
+        <SettingsSectionWide customWidth="90em">
             {togglingMonitoringModalRender && (
                 <TogglingMonitoringModal {...togglingMonitoringModalProps} enabling={monitoringEnabling} />
             )}
-            <div className="mb-8">
-                <Toggle
-                    loading={togglingMonitoringLoading || togglingMonitoringInitializing}
-                    checked={monitoring}
-                    disabled={
-                        !togglingMonitoringLoading && !togglingMonitoringInitializing && !businessSettingsAvailable
-                    }
-                    onChange={toggleMonitoring}
-                >
-                    <span className="pl-2">
-                        {getBoldFormattedText(getMonitoringInfoText())}
-                        <span className="block color-weak text-sm">{getMonitoringLastChangeText()}</span>
-                    </span>
-                </Toggle>
+            <div className="mb-8 flex *:min-size-auto flex-column sm:flex-row gap-2">
+                <div className="flex-1">
+                    <Toggle
+                        loading={togglingMonitoringLoading || togglingMonitoringInitializing}
+                        checked={monitoring}
+                        disabled={
+                            !togglingMonitoringLoading && !togglingMonitoringInitializing && !businessSettingsAvailable
+                        }
+                        onChange={toggleMonitoring}
+                    >
+                        <span className="pl-2">
+                            {getBoldFormattedText(getMonitoringInfoText())}
+                            <span className="block color-weak text-sm">{getMonitoringLastChangeText()}</span>
+                        </span>
+                    </Toggle>
+                </div>
             </div>
+
             <FilterAndSortEventsBlock
                 filter={filter}
                 keyword={keyword}
@@ -288,42 +338,40 @@ export const VPNEvents = () => {
                 handleSetEventType={handleSetEventType}
                 handleStartDateChange={handleStartDateChange}
                 handleEndDateChange={handleEndDateChange}
-                eventTypesList={uniqueVPNEventsArray || []}
+                handleDownloadClick={handleDownloadClick}
+                eventTypesList={getConnectionEvents(connectionEvents)}
                 handleSearchSubmit={handleSearchSubmit}
-                getEventTypeText={getVPNEventTypeText}
+                hasFilterEvents={true}
+                resetFilter={handleResetFilter}
             />
-            <div className="mb-4 flex flex-nowrap flex-row-reverse items-end items-center gap-2">
-                <Button shape="outline" onClick={handleDownloadClick} title={c('Action').t`Download`}>
-                    {c('Action').t`Download`}
-                </Button>
-                <Button
-                    shape="outline"
-                    onClick={handleResetFilter}
-                    disabled={Object.keys(query).length === 0}
-                    title={c('Action').t`Clear filter`}
-                >
-                    {c('Action').t`Clear filters`}
-                </Button>
-                <Pagination
-                    page={page}
-                    total={total}
-                    limit={PAGINATION_LIMIT}
-                    onSelect={onSelect}
-                    onNext={onNext}
-                    onPrevious={onPrevious}
-                />
-            </div>
             {error ? (
                 <GenericError className="text-center">{error}</GenericError>
             ) : (
-                <VPNEventsTable
-                    events={events}
-                    loading={loading}
-                    handleEventClick={handleClickableEvent}
-                    handleTimeClick={handleClickableTime}
-                    getEventTypeText={getVPNEventNameText}
-                    countryOptions={countryOptions}
-                />
+                <>
+                    <div className="content-center my-3">
+                        <Icon name="info-circle" size={4.5} className="mr-1 mb-1" />
+                        <span>{c('Title').t`Click a value in the table to use it as filter`}</span>
+                    </div>
+                    <div className="flex justify-center">
+                        <VPNEventsTable
+                            events={events}
+                            loading={loading}
+                            onTimeClick={handleClickableTime}
+                            onEventClick={handleClickableEvent}
+                            onEmailOrIpClick={handleClickableEmailOrIP}
+                            onToggleSort={handleToggleSort}
+                            countryOptions={countryOptions}
+                        />
+                        <Pagination
+                            page={page}
+                            total={total}
+                            limit={PAGINATION_LIMIT}
+                            onSelect={onSelect}
+                            onNext={onNext}
+                            onPrevious={onPrevious}
+                        />
+                    </div>
+                </>
             )}
         </SettingsSectionWide>
     );
