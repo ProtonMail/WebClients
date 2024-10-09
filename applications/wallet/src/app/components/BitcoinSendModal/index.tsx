@@ -27,10 +27,10 @@ import { InviteSentConfirmModal } from '../InviteSentConfirmModal';
 import type { Steps } from '../ModalHeaderWithStepper';
 import { ModalHeaderWithStepper } from '../ModalHeaderWithStepper';
 import { WalletAccountSelector } from '../WalletAccountSelector';
-import { AmountInput } from './AmountInput';
-import { RecipientsSelection } from './RecipientsSelection';
-import { TransactionReview } from './TransactionReview';
-import { useFeesInput } from './TransactionReview/useFeesInput';
+import { AmountInputStep } from './AmountInputStep';
+import { RecipientsSelectionStep } from './RecipientsSelectionStep';
+import { TransactionReviewStep } from './TransactionReviewStep';
+import { useFeesInput } from './TransactionReviewStep/useFeesInput';
 import { TransactionSendConfirmationModal } from './TransactionSendConfirmationModal';
 
 interface Props {
@@ -136,7 +136,7 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
                 <div className="h-full">
                     <div className="wallet-fullscreen-modal-main">
                         {stepKey === StepKey.RecipientsSelection && walletAccount && (
-                            <RecipientsSelection
+                            <RecipientsSelectionStep
                                 apiAccount={walletAccount}
                                 txBuilderHelpers={txBuilderHelpers}
                                 recipientHelpers={recipientHelpers}
@@ -147,7 +147,7 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
                         )}
 
                         {stepKey === StepKey.AmountInput && walletAccount && wasmAccount?.account && (
-                            <AmountInput
+                            <AmountInputStep
                                 apiAccount={walletAccount}
                                 account={wasmAccount}
                                 txBuilderHelpers={txBuilderHelpers}
@@ -161,7 +161,7 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
                         )}
 
                         {stepKey === StepKey.ReviewTransaction && walletAccount && (
-                            <TransactionReview
+                            <TransactionReviewStep
                                 isUsingBitcoinViaEmail={isUsingBitcoinViaEmail}
                                 wallet={wallet}
                                 account={walletAccount}

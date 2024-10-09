@@ -4,7 +4,7 @@ import type { WasmApiExchangeRate, WasmApiWalletAccount } from '@proton/andromed
 import { CircleLoader } from '@proton/atoms';
 import { Icon, Tooltip, useModalState, useModalStateWithData } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import { COMPUTE_BITCOIN_UNIT, type IWasmApiWalletData } from '@proton/wallet';
 import { useExchangeRate, useUserWalletSettings } from '@proton/wallet/store';
 
 import { Button, CoreButton } from '../../../atoms';
@@ -14,7 +14,7 @@ import { Price } from '../../../atoms/Price';
 import { TEXT_AREA_MAX_LENGTH } from '../../../constants';
 import { useBitcoinBlockchainContext } from '../../../contexts';
 import type { TxBuilderHelper } from '../../../hooks/useTxBuilder';
-import { isUndefined } from '../../../utils';
+import { convertAmount, isUndefined } from '../../../utils';
 import Card from '../../Card';
 import { EmailListItem } from '../../EmailListItem';
 import type { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
@@ -22,7 +22,7 @@ import { EmailSelect } from '../../EmailSelect';
 import type { RecipientDetailsModalOwnProps } from '../../RecipientDetailsModal';
 import { RecipientDetailsModal } from '../../RecipientDetailsModal';
 import { TextAreaModal } from '../../TextAreaModal';
-import { secondaryAmount } from '../AmountInput/BitcoinAmountInputWithBalanceAndCurrencySelect';
+import { SecondaryAmount } from '../SecondaryAmount';
 import { FeesModal } from './FeesModal';
 import { getAnonymousSenderAddress, useTransactionReview } from './useTransactionReview';
 
@@ -41,7 +41,7 @@ interface Props {
     getFeesByBlockTarget: (blockTarget: number) => number | undefined;
 }
 
-export const TransactionReview = ({
+export const TransactionReviewStep = ({
     isUsingBitcoinViaEmail,
     wallet,
     account,
@@ -88,6 +88,7 @@ export const TransactionReview = ({
     });
 
     const hasFeeEstimations = Boolean(getFeesByBlockTarget(1));
+    const convertedTotalSentAmount = convertAmount(totalSentAmount, COMPUTE_BITCOIN_UNIT, exchangeRate);
 
     return (
         <>
@@ -116,19 +117,19 @@ export const TransactionReview = ({
                             className="h1 invisible-number-input-arrow"
                             inputClassName="p-0"
                             style={{ fontSize: '3.75rem' }}
-                            value={totalSentAmount}
+                            value={convertedTotalSentAmount}
                             prefix={typeof exchangeRate === 'object' ? exchangeRate.FiatCurrency : exchangeRate}
                         />
                     </div>
 
                     <span className="block color-weak">
-                        {secondaryAmount({
-                            key: 'hint-secondary-amount',
-                            settingsBitcoinUnit: settings.BitcoinUnit,
-                            secondaryExchangeRate: accountExchangeRate,
-                            primaryExchangeRate: exchangeRate,
-                            value: totalSentAmount,
-                        })}
+                        <SecondaryAmount
+                            key="hint-secondary-amount"
+                            settingsBitcoinUnit={settings.BitcoinUnit}
+                            secondaryExchangeRate={accountExchangeRate}
+                            primaryExchangeRate={exchangeRate}
+                            value={convertedTotalSentAmount}
+                        />
                     </span>
                 </div>
 
@@ -175,14 +176,18 @@ export const TransactionReview = ({
                                                         )}
                                                     </div>
 
-                                                    <span className="block color-hint">
-                                                        {secondaryAmount({
-                                                            key: 'hint-total-amount',
-                                                            settingsBitcoinUnit: settings.BitcoinUnit,
-                                                            secondaryExchangeRate: accountExchangeRate,
-                                                            primaryExchangeRate: exchangeRate,
-                                                            value: Number(amount),
-                                                        })}
+                                                    <span className="block color-hint text-nowrap">
+                                                        <SecondaryAmount
+                                                            key="hint-total-amount"
+                                                            settingsBitcoinUnit={settings.BitcoinUnit}
+                                                            secondaryExchangeRate={accountExchangeRate}
+                                                            primaryExchangeRate={exchangeRate}
+                                                            value={convertAmount(
+                                                                Number(amount),
+                                                                COMPUTE_BITCOIN_UNIT,
+                                                                exchangeRate
+                                                            )}
+                                                        />
                                                     </span>
                                                 </div>
                                                 <CoreButton
@@ -281,14 +286,14 @@ export const TransactionReview = ({
                                     <div className="mb-1">
                                         {exchangeRate && <Price amount={totalFees} unit={exchangeRate} />}
                                     </div>
-                                    <span className="block color-hint">
-                                        {secondaryAmount({
-                                            key: 'hint-fiat-amount',
-                                            settingsBitcoinUnit: settings.BitcoinUnit,
-                                            secondaryExchangeRate: accountExchangeRate,
-                                            primaryExchangeRate: exchangeRate,
-                                            value: totalFees,
-                                        })}
+                                    <span className="block color-hint text-nowrap">
+                                        <SecondaryAmount
+                                            key="hint-fiat-amount"
+                                            settingsBitcoinUnit={settings.BitcoinUnit}
+                                            secondaryExchangeRate={accountExchangeRate}
+                                            primaryExchangeRate={exchangeRate}
+                                            value={convertAmount(totalFees, COMPUTE_BITCOIN_UNIT, exchangeRate)}
+                                        />
                                     </span>
                                 </>
                             ) : (
@@ -339,14 +344,14 @@ export const TransactionReview = ({
                             {exchangeRate && <Price amount={hasFeeEstimations ? totalAmount : 0} unit={exchangeRate} />}
                         </div>
 
-                        <span className="block color-hint">
-                            {secondaryAmount({
-                                key: 'hint-total-amount',
-                                settingsBitcoinUnit: settings.BitcoinUnit,
-                                secondaryExchangeRate: accountExchangeRate,
-                                primaryExchangeRate: exchangeRate,
-                                value: totalAmount,
-                            })}
+                        <span className="block color-hint text-nowrap">
+                            <SecondaryAmount
+                                key="hint-total-amount"
+                                settingsBitcoinUnit={settings.BitcoinUnit}
+                                secondaryExchangeRate={accountExchangeRate}
+                                primaryExchangeRate={exchangeRate}
+                                value={convertAmount(totalAmount, COMPUTE_BITCOIN_UNIT, exchangeRate)}
+                            />
                         </span>
                     </div>
                 </div>
