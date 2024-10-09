@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useInviteContext } from '@proton/pass/components/Invite/InviteContext';
+import { PendingNewUsersApprovalModal } from '@proton/pass/components/Share/PendingNewUsersApprovalModal';
 import { PendingShareAccessModal } from '@proton/pass/components/Share/PendingShareAccessModal';
 import type { UpsellType } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
@@ -135,6 +136,7 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
             />
 
             <PendingShareAccessModal open={state.pendingShareAccess} onClose={closePendingShareAccess} />
+            <PendingNewUsersApprovalModal />
         </SpotlightContext.Provider>
     );
 };
