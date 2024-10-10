@@ -14,8 +14,9 @@ import {
     useConfig,
     useErrorHandler,
     useKTActivation,
+    useLocalState,
 } from '@proton/components';
-import { useLocalState, useMyCountry } from '@proton/components/hooks';
+import { useMyCountry } from '@proton/components/hooks';
 import { useCurrencies } from '@proton/components/payments/client-extensions';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
@@ -23,9 +24,14 @@ import { usePaymentsApi } from '@proton/components/payments/react-extensions/use
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebCoreSignupBackButtonTotal } from '@proton/metrics/types/web_core_signup_backButton_total_v1.schema';
-import { type BillingAddress, DEFAULT_TAX_BILLING_ADDRESS, getPlansMap } from '@proton/payments';
-import { PLANS, type PlanIDs } from '@proton/payments';
-import { type Currency } from '@proton/payments';
+import {
+    type BillingAddress,
+    type Currency,
+    DEFAULT_TAX_BILLING_ADDRESS,
+    PLANS,
+    type PlanIDs,
+    getPlansMap,
+} from '@proton/payments';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';

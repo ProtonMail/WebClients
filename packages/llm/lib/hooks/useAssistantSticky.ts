@@ -1,5 +1,6 @@
 import { useUser } from '@proton/account/user/hooks';
-import { useLocalState, useUserSettings } from '@proton/components/hooks';
+import { useUserSettings } from '@proton/components/hooks';
+import useLocalState from '@proton/components/hooks/useLocalState';
 import { getIsAssistantOpened } from '@proton/llm/lib';
 import type { OpenedAssistant } from '@proton/llm/lib/types';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';

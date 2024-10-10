@@ -3,9 +3,9 @@ import { useEffect, useMemo } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
 import type { ThemeColor } from '@proton/colors/types';
-import { useLocalState } from '@proton/components/hooks';
 import { QuickSettingsRemindersContext } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import useKeyTransparencyNotification from '@proton/components/hooks/useKeyTransparencyNotification';
+import useLocalState from '@proton/components/hooks/useLocalState';
 import { KEY_TRANSPARENCY_REMINDER_UPDATE } from '@proton/shared/lib/drawer/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 

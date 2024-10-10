@@ -873,7 +873,9 @@ export { default as useIsDataRecoveryAvailable } from './hooks/useIsDataRecovery
 export { default as useISESEnabledElectron } from './hooks/useISESEnabledElectron';
 export { default as useIsInboxElectronApp } from './hooks/useIsInboxElectronApp';
 export { default as useKeyPress } from './hooks/useKeyPress';
+export { default as useLocalState } from './hooks/useLocalState';
 export { default as useNewFeatureOnboarding } from './hooks/useNewFeatureOnboarding';
+export { getOnlineStatus, default as useOnline } from './hooks/useOnline';
 export { default as useProgressiveRollout } from './hooks/useProgressiveRollout';
 export { default as useRecoveryNotification } from './hooks/useRecoveryNotification';
 export { default as useRelocalizeText } from './hooks/useRelocalizeText';
@@ -887,4 +889,3 @@ export {
 export { default as useSubscribedCalendars } from './hooks/useSubscribedCalendars';
 export { default as useToggle } from './hooks/useToggle';
 export { default as useWindowSize } from './hooks/useWindowSize';
-export { default as useOnline, getOnlineStatus } from './hooks/useOnline';
