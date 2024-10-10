@@ -1,41 +1,34 @@
-import { type DragEvent, type FC, memo } from 'react';
+import { type FC, memo } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, type LinkProps } from 'react-router-dom';
 
-import { c, msgid } from 'ttag';
-
 import { ButtonLike, type ButtonLikeProps } from '@proton/atoms';
-import { Icon, Marks, useItemsDraggable } from '@proton/components';
+import { Icon, Marks } from '@proton/components';
 import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
 import { ItemIcon, ItemIconIndicators, SafeItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { useBulkInFlight } from '@proton/pass/hooks/useBulkInFlight';
-import { useCanDragListItems } from '@proton/pass/hooks/useCanDragListItems';
-import { bulkSelectionIntoArray, concatShareIdItemId } from '@proton/pass/lib/items/item.utils';
 import { matchChunks } from '@proton/pass/lib/search/match-chunks';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectShare } from '@proton/pass/store/selectors';
 import type { ItemRevision, ShareType } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import clsx from '@proton/utils/clsx';
-import noop from '@proton/utils/noop';
 
 import { presentListItem } from './utils';
 
 import './ItemsListItem.scss';
 
 type Props = Partial<LinkProps> &
-    ButtonLikeProps<any> & {
+    Partial<ButtonLikeProps<Link>> & {
         item: ItemRevision;
         active?: boolean;
         failed?: boolean;
         optimistic?: boolean;
         search?: string;
     };
-
-const emptyArray: { ID?: string }[] = [];
 
 const ItemsListItemRaw: FC<Props> = ({
     item,
@@ -53,28 +46,6 @@ const ItemsListItemRaw: FC<Props> = ({
     const bulkInFlight = useBulkInFlight(item);
     const loading = optimistic || bulkInFlight;
     const writable = (vault && isWritableVault(vault)) ?? false;
-    const canDrag = useCanDragListItems();
-
-    const { handleDragStart, handleDragEnd } = useItemsDraggable(
-        emptyArray,
-        bulk.enabled ? bulkSelectionIntoArray(bulk.selection) : [concatShareIdItemId(item)],
-        noop,
-        (draggedIDs) => {
-            return c('Info').ngettext(
-                msgid`Move ${draggedIDs.length} item`,
-                `Move ${draggedIDs.length} items`,
-                draggedIDs.length
-            );
-        }
-    );
-
-    const dragProps = canDrag
-        ? {
-              draggable: true,
-              onDragStart: (event: DragEvent) => handleDragStart(event, { ID: concatShareIdItemId(item) }),
-              onDragEnd: handleDragEnd,
-          }
-        : {};
 
     return (
         <div className={clsx(bulk.enabled && 'px-1 py-0.5')}>
@@ -91,7 +62,6 @@ const ItemsListItemRaw: FC<Props> = ({
                 color={failed ? 'warning' : 'weak'}
                 shape="ghost"
                 style={{ '--anime-opacity': loading ? '0.5' : '1' }}
-                {...dragProps}
                 {...rest}
             >
                 <div
