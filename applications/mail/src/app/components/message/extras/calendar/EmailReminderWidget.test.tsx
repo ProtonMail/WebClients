@@ -8,10 +8,9 @@ import { setupServer } from 'msw/node';
 
 import { useAddresses, useGetAddresses } from '@proton/account/addresses/hooks';
 import { getModelState } from '@proton/account/test';
-import { AuthenticationProvider, CacheProvider, useUserSettings } from '@proton/components';
+import { AuthenticationProvider, CacheProvider, useGetCalendarEventRaw, useUserSettings } from '@proton/components';
 import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
 import useApi from '@proton/components/hooks/useApi';
-import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEventRaw';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
