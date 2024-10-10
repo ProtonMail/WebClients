@@ -1,5 +1,14 @@
+import { MIME_TYPES } from '@proton/shared/lib/constants';
+import type { Address, MailSettings, Recipient, UserSettings } from '@proton/shared/lib/interfaces';
+import { FORWARDED_MESSAGE } from '@proton/shared/lib/mail/messages';
+
+import { MESSAGE_ACTIONS } from 'proton-mail/constants';
+import { formatFullDate } from 'proton-mail/helpers/date';
+import { createNewDraft } from 'proton-mail/helpers/message/messageDraft';
+import type { PartialMessageState } from 'proton-mail/store/messages/messagesTypes';
+
 import mails from './__fixtures__/messageBlockquote.fixtures';
-import { locateBlockquote } from './messageBlockquote';
+import { locateBlockquote, locatePlaintextInternalBlockquotes } from './messageBlockquote';
 
 /**
  * Creating a whole document each time is needed because locate blockquote is using xpath request
@@ -116,5 +125,119 @@ describe('messageBlockquote', () => {
         expect(before).toContain('blockquote1');
         expect(before).toContain('proton-image-anchor');
         expect(after).toEqual('');
+    });
+});
+
+describe('locatePlaintextInternalBlockquotes', () => {
+    const messageDate = new Date(2025, 2, 4, 12, 21);
+    const referenceMessageSender = {
+        Name: 'Sender',
+        Address: 'sender@proton.me',
+    } as Recipient;
+    const me = {
+        Name: 'Me',
+        Address: 'me@proton.me',
+    } as Recipient;
+    const toRecipient = {
+        Name: 'ToRecipient',
+        Address: 'to-recipient@proton.me',
+    } as Recipient;
+    const ccRecipient = {
+        Name: 'CCRecipient',
+        Address: 'cc-recipient@proton.me',
+    } as Recipient;
+
+    const referenceMessage = {
+        data: {
+            MIMEType: MIME_TYPES.PLAINTEXT,
+            Subject: 'Mail subject',
+            Sender: referenceMessageSender,
+            ToList: [me, toRecipient],
+            CCList: [ccRecipient],
+            Attachments: [],
+            Time: messageDate.getTime() / 1000,
+        },
+        decryption: {
+            decryptedBody: `Hello this is the original message`,
+        },
+    } as PartialMessageState;
+
+    const expectedMessageBody = `
+
+
+
+
+Sent with Proton Mail secure email.
+
+`;
+
+    const formattedDate = formatFullDate(messageDate);
+
+    it(`should locate reply internal plaintext blockquotes`, () => {
+        const newMessage = createNewDraft(
+            MESSAGE_ACTIONS.REPLY,
+            referenceMessage,
+            {} as MailSettings,
+            {} as UserSettings,
+            [] as Address[],
+            jest.fn()
+        );
+
+        const expectedBlockquotes = `On ${formattedDate}, ${referenceMessageSender.Name} <${referenceMessageSender.Address}> wrote:
+
+> ${referenceMessage.decryption?.decryptedBody}`;
+
+        expect(newMessage.messageDocument?.plainText).toEqual(`${expectedMessageBody}${expectedBlockquotes}`);
+        const [content, blockquotes] = locatePlaintextInternalBlockquotes(newMessage.messageDocument?.plainText);
+        expect(content).toEqual(expectedMessageBody);
+        expect(blockquotes).toEqual(expectedBlockquotes);
+    });
+
+    it(`should locate forward internal plaintext blockquotes`, () => {
+        const newMessage = createNewDraft(
+            MESSAGE_ACTIONS.FORWARD,
+            referenceMessage,
+            {} as MailSettings,
+            {} as UserSettings,
+            [] as Address[],
+            jest.fn()
+        );
+
+        const expectedBlockquotes = `${FORWARDED_MESSAGE}
+From: ${referenceMessageSender.Name} <${referenceMessageSender.Address}>
+Date: On ${formattedDate}
+Subject: ${referenceMessage.data?.Subject}
+To: ${me.Name} <${me.Address}>, ${toRecipient.Name} <${toRecipient.Address}>
+CC: ${ccRecipient.Name} <${ccRecipient.Address}>
+
+
+> ${referenceMessage.decryption?.decryptedBody}`;
+
+        expect(newMessage.messageDocument?.plainText).toEqual(`${expectedMessageBody}${expectedBlockquotes}`);
+        const [content, blockquotes] = locatePlaintextInternalBlockquotes(newMessage.messageDocument?.plainText);
+        expect(content).toEqual(expectedMessageBody);
+        expect(blockquotes).toEqual(expectedBlockquotes);
+    });
+
+    it(`should not locate plaintext blockquotes`, () => {
+        // Using plaintext reply from outlook
+        const messageContent = `This is a reply
+
+
+
+________________________________________
+From: sender@proton.me <sender@proton.me>
+Sent: Wednesday, September 25, 2024 5:13 PM
+To: recipient@outlook.com <recipient@outlook.com>
+Subject: plain
+
+Heyyyyyyy
+
+
+Envoyé avec la messagerie sécurisée Proton Mail.`;
+
+        const [content, blockquotes] = locatePlaintextInternalBlockquotes(messageContent);
+        expect(content).toEqual(messageContent);
+        expect(blockquotes).toEqual('');
     });
 });
