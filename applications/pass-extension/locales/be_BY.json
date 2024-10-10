@@ -269,6 +269,12 @@
       "Import": [
         "Імпартаваць"
       ],
+      "Import alias": [
+        "Імпартаваць псеўданім",
+        "Імпартаваць псеўданімы",
+        "Імпартаваць псеўданімы",
+        "Імпартаваць псеўданімы"
+      ],
       "Import your passwords": [
         "Імпартаваць вашы паролі"
       ],
@@ -1885,6 +1891,12 @@
       "You cannot change the mailboxes for this alias.": [
         "У вас няма магчымасці змяніць паштовыя скрыні для гэтага псеўданіма."
       ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "У вас ёсць ${ aliasCount } псеўданім, які прысутнічае ў SimpleLogin, але адсутнічае ў ${ PASS_APP_NAME }. Хочаце імпартаваць яго?",
+        "У вас ёсць ${ aliasCount } псеўданімы, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце імпартаваць іх?",
+        "У вас ёсць ${ aliasCount } псеўданімаў, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце імпартаваць іх?",
+        "У вас ёсць ${ aliasCount } псеўданімаў, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце імпартаваць іх?"
+      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "У вас застаўся ${ daysRemaining } дзень паспрабаваць гэтыя і іншыя прэміяльныя функцыі.",
         "У вас засталося ${ daysRemaining } дні паспрабаваць гэтыя і іншыя прэміяльныя функцыі.",
@@ -2632,7 +2644,7 @@
         "Абнавіць"
       ],
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
-        "Выкарыстанне ${ PASS_APP_NAME } у якасці прадвызначанага менеджара пароляў браўзера"
+        "Выкарыстоўваць ${ PASS_APP_NAME } як прадвызначаны менеджар пароляў у вашым браўзеры"
       ],
       "Username": [
         "Імя карыстальніка"
@@ -2680,7 +2692,7 @@
         "Вы збіраецеся стварыць"
       ],
       "Your browser will stop using its built-in password manager.": [
-        "Ваш браўзер спыніў выкарыстанне свайго ўбудаванага менеджара пароляў."
+        "Ваш браўзер спыніць выкарыстанне ўбудаванага менеджара пароляў."
       ],
       "ZIP or Postal code": [
         "Паштовы індэкс"
@@ -2903,6 +2915,9 @@
       ],
       "Import to vault(s)": [
         "Імпартаванне ў сховішча(-ы)"
+      ],
+      "Import your aliases from SimpleLogin": [
+        "Імпартаваць свае псеўданімы з SimpleLogin"
       ],
       "Last autofill": [
         "Апошняе аўтазапаўненне"
