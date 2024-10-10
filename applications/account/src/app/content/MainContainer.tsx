@@ -34,6 +34,7 @@ import {
     useUnprivatizeMembers,
     useUserSettings,
 } from '@proton/components';
+import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso/SSODomainUnverifiedBanner';
 import { getIsSectionAvailable, getRoutePaths } from '@proton/components/containers/layout/helper';
 import UnprivatizationRequestTopBanner from '@proton/components/containers/members/Unprivatization/UnprivatizationRequestTopBanner';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
@@ -244,6 +245,7 @@ const MainContainer = () => {
     const top = (
         <TopBanners app={app}>
             <UnprivatizationRequestTopBanner />
+            <SSODomainUnverifiedBanner />
         </TopBanners>
     );
 

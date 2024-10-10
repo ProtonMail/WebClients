@@ -62,6 +62,7 @@ import {
     useUnprivatizeMembers,
     useUserSettings,
 } from '@proton/components';
+import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso/SSODomainUnverifiedBanner';
 import { getIsSectionAvailable, getRoutePaths, getSectionPath } from '@proton/components/containers/layout/helper';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import type { ZendeskRef } from '@proton/components/containers/zendesk/LiveChatZendesk';
@@ -164,7 +165,11 @@ const MainContainer: FunctionComponent = () => {
 
     const logo = <MainLogo to="/" />;
 
-    const top = <TopBanners app={APPS.PROTONVPN_SETTINGS} />;
+    const top = (
+        <TopBanners app={APPS.PROTONVPN_SETTINGS}>
+            <SSODomainUnverifiedBanner />
+        </TopBanners>
+    );
 
     const openChat = canEnableChat
         ? () => {
