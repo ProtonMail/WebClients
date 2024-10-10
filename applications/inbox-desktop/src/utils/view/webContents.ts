@@ -38,7 +38,7 @@ export function handleWebContents(contents: WebContents) {
     };
 
     const isCurrentContent = () => {
-        return getCurrentView()!.webContents === contents;
+        return getCurrentView()?.webContents === contents;
     };
 
     const preventDefault = (ev: Electron.Event) => {
