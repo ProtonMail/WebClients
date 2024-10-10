@@ -27,15 +27,25 @@ import chunk from '@proton/utils/chunk';
 
 import { hasUserIdentifier, isEditItemDraft } from './item.predicates';
 
-export const getItemKeyRevision = ({ shareId, itemId, revision }: ItemRevision) => `${shareId}-${itemId}-${revision}`;
-export const getItemKey = ({ shareId, itemId }: ItemRevision) => `item-${shareId}-${itemId}`;
+const SEPERATOR = '::';
+const toKey = (...args: (string | number)[]) => args.join(SEPERATOR);
+
+export const getItemKeyRevision = ({ shareId, itemId, revision }: ItemRevision) => toKey(shareId, itemId, revision);
+
+export const getItemKey = <T extends UniqueItem>({ shareId, itemId }: T) => toKey(shareId, itemId);
+
+export const fromItemKey = (key: string): UniqueItem => {
+    const [shareId, itemId] = key.split(SEPERATOR);
+    return { itemId, shareId };
+};
+
 export const intoSelectedItem = ({ shareId, itemId }: ItemRevision): SelectedItem => ({ shareId, itemId });
 
 export const getItemActionId = (
     payload:
         | { optimisticId: string; itemId?: string; shareId: string }
         | { optimisticId?: string; itemId: string; shareId: string }
-) => `${payload.shareId}-${payload?.optimisticId ?? payload.itemId!}`;
+) => toKey(payload.shareId, payload?.optimisticId ?? payload.itemId!);
 
 export const flattenItemsByShareId = (itemsByShareId: {
     [shareId: string]: { [itemId: string]: ItemRevision };
