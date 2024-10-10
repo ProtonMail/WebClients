@@ -16,7 +16,7 @@ import {
 } from '@proton/docs-shared'
 
 import { ClientInvoker } from './ClientInvoker'
-import { updateVersionCookie, versionCookieAtLoad } from '@proton/components/hooks/useEarlyAccess'
+import { updateVersionCookie, versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
 
 export class EditorToClientBridge {
   private logger = new Logger('EditorIframe', DOCS_EDITOR_DEBUG_KEY)
