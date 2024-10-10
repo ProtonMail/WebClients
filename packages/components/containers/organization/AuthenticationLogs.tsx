@@ -3,6 +3,7 @@ import { useMemo, useRef, useState } from 'react';
 import { endOfDay } from 'date-fns';
 import { c } from 'ttag';
 
+import { useMembers } from '@proton/account/members/hooks';
 import { Button } from '@proton/atoms';
 import AddressesInput, { AddressesInputItem } from '@proton/components/components/addressesInput/AddressesInput';
 import DateInput from '@proton/components/components/input/DateInput';
@@ -13,7 +14,6 @@ import AddressesAutocompleteTwo from '@proton/components/components/v2/addresses
 import InputField from '@proton/components/components/v2/field/InputField';
 import SettingsSectionExtraWide from '@proton/components/containers/account/SettingsSectionExtraWide';
 import useApi from '@proton/components/hooks/useApi';
-import { useMembers } from '@proton/components/hooks/useMembers';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import type { Recipient } from '@proton/shared/lib/interfaces';
