@@ -1,16 +1,17 @@
-import { type DragEvent, type FC, useRef } from 'react';
+import { type FC, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
-import { Icon, useItemsDroppable } from '@proton/components';
+import { Icon } from '@proton/components';
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { UpsellRef } from '@proton/pass/constants';
-import { deconcatShareIdItemId, itemsIntoBulkSelectionDTO } from '@proton/pass/lib/items/item.utils';
+import { useItemDrop } from '@proton/pass/hooks/useItemDrag';
+import { intoBulkSelection } from '@proton/pass/lib/items/item.utils';
 import { isVaultMemberLimitReached, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { type ShareItem } from '@proton/pass/store/reducers';
 import { selectPassPlan } from '@proton/pass/store/selectors';
@@ -55,29 +56,23 @@ export const VaultItem: FC<Props> = ({
     onMove,
     onSelect,
 }) => {
+    const { moveMany } = useItemsActions();
+    const spotlight = useSpotlight();
+    const plan = useSelector(selectPassPlan);
+
     const withActions = onEdit || onDelete || onInvite || onManage || onLeave;
     const allowSharing = vault !== undefined;
     const shared = vault?.shared ?? false;
+    const shareId = vault?.shareId;
     const notification = (vault?.newUserInvitesReady ?? 0) > 0;
-    const spotlight = useSpotlight();
-    const plan = useSelector(selectPassPlan);
-    const itemsDropped = useRef<UniqueItem[]>([]);
 
-    const { dragOver, dragProps, handleDrop } = useItemsDroppable(
-        () => Boolean(vault) && !EXTENSION_BUILD,
-        'move',
-        (itemIDs) => {
-            const items = itemIDs.map((itemID) => deconcatShareIdItemId(itemID)).filter(truthy);
-            itemsDropped.current = items;
-        }
-    );
+    const dropParams = useMemo(() => {
+        const onDrop = (items: UniqueItem[]) => shareId && moveMany(intoBulkSelection(items), shareId);
+        const dragFilter = () => Boolean(vault && isWritableVault(vault));
+        return [onDrop, dragFilter] as const;
+    }, [vault]);
 
-    const { moveFromDragAndDrop } = useItemsActions();
-
-    const handleVaultDrop = async (event: DragEvent, shareId: string) => {
-        await handleDrop(event);
-        moveFromDragAndDrop(itemsIntoBulkSelectionDTO(itemsDropped.current), shareId);
-    };
+    const { dragOver, dragProps } = useItemDrop(...dropParams);
 
     return (
         <DropdownMenuButton
@@ -204,9 +199,6 @@ export const VaultItem: FC<Props> = ({
                     : undefined
             }
             {...dragProps}
-            onDrop={(event: DragEvent) => {
-                if (vault?.shareId) void handleVaultDrop(event, vault.shareId);
-            }}
         />
     );
 };

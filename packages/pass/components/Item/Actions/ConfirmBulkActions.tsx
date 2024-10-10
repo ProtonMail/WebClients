@@ -10,7 +10,7 @@ import {
     type ConfirmationPromptHandles,
 } from '@proton/pass/components/Confirmation/ConfirmationPrompt';
 import { WithVault } from '@proton/pass/components/Vault/WithVault';
-import { getCountOfBulkSelectionDTO } from '@proton/pass/lib/items/item.utils';
+import { getBulkSelectionCount } from '@proton/pass/lib/items/item.utils';
 import { selectSecureLinksByItems } from '@proton/pass/store/selectors';
 import type { BulkSelectionDTO } from '@proton/pass/types';
 
@@ -19,7 +19,7 @@ export const ConfirmTrashManyItems: FC<ConfirmationPromptHandles & { selected: B
     onCancel,
     onConfirm,
 }) => {
-    const trashedItemsCount = getCountOfBulkSelectionDTO(selected);
+    const trashedItemsCount = getBulkSelectionCount(selected);
     const { aliasCount } = useBulkSelect();
 
     return (
@@ -60,7 +60,7 @@ export const ConfirmMoveManyItems: FC<
     }
 > = ({ selected, shareId, onCancel, onConfirm }) => {
     const hasLinks = Boolean(useSelector(selectSecureLinksByItems(selected)).length);
-    const count = getCountOfBulkSelectionDTO(selected);
+    const count = getBulkSelectionCount(selected);
 
     return (
         <WithVault shareId={shareId} onFallback={onCancel}>
@@ -98,7 +98,7 @@ export const ConfirmDeleteManyItems: FC<ConfirmationPromptHandles & { selected: 
     onConfirm,
     onCancel,
 }) => {
-    const deletedItemsCount = getCountOfBulkSelectionDTO(selected);
+    const deletedItemsCount = getBulkSelectionCount(selected);
     const { aliasCount } = useBulkSelect();
 
     return (

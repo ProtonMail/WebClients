@@ -1,14 +1,14 @@
-import { type FC } from 'react';
+import { type FC, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { useItemsDroppable } from '@proton/components/index';
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { deconcatShareIdItemId, itemsIntoBulkSelectionDTO } from '@proton/pass/lib/items/item.utils';
+import { useItemDrop } from '@proton/pass/hooks/useItemDrag';
+import { intoBulkSelection } from '@proton/pass/lib/items/item.utils';
 import { selectTrashedItems } from '@proton/pass/store/selectors';
-import { truthy } from '@proton/pass/utils/fp/predicates';
+import type { UniqueItem } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
 type Props = {
@@ -21,17 +21,10 @@ type Props = {
 
 export const TrashItem: FC<Props> = ({ dense, selected, handleTrashRestore, handleTrashEmpty, onSelect }) => {
     const count = useSelector(selectTrashedItems).length;
-
     const { trashMany } = useItemsActions();
 
-    const { dragOver, dragProps, handleDrop } = useItemsDroppable(
-        () => !EXTENSION_BUILD,
-        'move',
-        (itemIDs) => {
-            const items = itemIDs.map((itemID) => deconcatShareIdItemId(itemID)).filter(truthy);
-            trashMany(itemsIntoBulkSelectionDTO(items));
-        }
-    );
+    const onDrop = useCallback((items: UniqueItem[]) => trashMany(intoBulkSelection(items)), []);
+    const { dragOver, dragProps } = useItemDrop(onDrop);
 
     return (
         <DropdownMenuButton
@@ -58,7 +51,6 @@ export const TrashItem: FC<Props> = ({ dense, selected, handleTrashRestore, hand
             ]}
             extra={<span className="pass-vault--count shrink-0 color-weak mx-1">{count}</span>}
             {...dragProps}
-            onDrop={handleDrop}
         />
     );
 };
