@@ -8,13 +8,13 @@ import { addGroup, removeGroup, updateGroup, updateMembersAfterEdit } from '@pro
 import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useGroupMembers } from '@proton/account/groupMembers/hooks';
 import { createGroup, editGroup } from '@proton/account/groups/actions';
+import { useMembers } from '@proton/account/members/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import useAddGroupMember from '@proton/components/containers/organization/groups/useAddGroupMember';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useGroups from '@proton/components/hooks/useGroups';
-import { useMembers } from '@proton/components/hooks/useMembers';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store';
 import { deleteGroup } from '@proton/shared/lib/api/groups';
