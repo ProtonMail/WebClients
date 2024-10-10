@@ -75,7 +75,7 @@ describe('apiWalletsData', () => {
                 Addresses: [],
                 Priority: 1,
                 LastUsedIndex: 0,
-                PoolSize: 0,
+                PoolSize: 3,
             };
 
             store.dispatch(walletAccountCreation(account));

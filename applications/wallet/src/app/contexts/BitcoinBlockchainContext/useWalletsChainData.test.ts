@@ -12,11 +12,6 @@ import { mockUseBlockchainClient } from '../../tests';
 import { mockUseDebounceEffect } from '../../tests/mocks/useDebounceEffect';
 import { useWalletsChainData } from './useWalletsChainData';
 
-vi.mock('@proton/wallet/constants/settings', async () => {
-    const m = await vi.importActual('@proton/wallet/constants/settings');
-    return { ...m, POOL_FILLING_THRESHOLD: 3 };
-});
-
 const accounts = {
     '0': {
         wallet: expect.any(WasmWallet),
@@ -26,12 +21,14 @@ const accounts = {
                 derivationPath: "84'/0'/0'",
                 key: 'wallet-sync-1',
                 scriptType: 3,
+                poolSize: 3,
             },
             '9': {
                 account: expect.any(WasmAccount),
                 derivationPath: "86'/0'/0'",
                 key: 'wallet-sync-2',
                 scriptType: 4,
+                poolSize: 3,
             },
         },
     },
@@ -43,12 +40,14 @@ const accounts = {
                 derivationPath: "49'/0'/0'",
                 key: 'wallet-sync-3',
                 scriptType: 2,
+                poolSize: 3,
             },
             '11': {
                 account: expect.any(WasmAccount),
                 derivationPath: "84'/0'/0'",
                 key: 'wallet-sync-4',
                 scriptType: 3,
+                poolSize: 3,
             },
         },
     },
@@ -60,6 +59,7 @@ const accounts = {
                 derivationPath: "84'/0'/0'",
                 key: 'wallet-sync-5',
                 scriptType: 3,
+                poolSize: 3,
             },
         },
     },
