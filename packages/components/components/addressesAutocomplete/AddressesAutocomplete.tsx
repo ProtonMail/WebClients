@@ -27,6 +27,8 @@ import {
     isGroupSelected,
 } from './helper';
 
+import './AddressesAutocomplete.scss';
+
 type AutocompleteItemWithSelection = AddressesAutocompleteItem & { selected: boolean };
 
 interface Props extends Omit<InputProps, 'value'> {
@@ -160,6 +162,15 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
                 }
                 return currentIndex;
             },
+            selectCustomIndexOnInputChange: (options) => {
+                for (let i = 0; i < options.length - 1; i++) {
+                    if (!options[i].option.selected) {
+                        return i;
+                    }
+                }
+
+                return 0;
+            },
         });
 
         const handleInputChange = (newValue: string) => {
@@ -197,7 +208,7 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
                         }
                     }}
                 />
-                <AutocompleteList anchorRef={anchorRef} {...suggestionProps}>
+                <AutocompleteList anchorRef={anchorRef} {...suggestionProps} isOpen onClose={() => {}}>
                     {filteredAndSortedOptions.map(({ chunks, text, option }, index) => {
                         return (
                             <AddressesAutocompleteOption
