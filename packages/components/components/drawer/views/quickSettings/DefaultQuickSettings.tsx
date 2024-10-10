@@ -14,7 +14,8 @@ import { ColorScheme, PROTON_THEMES_MAP, ThemeModeSetting, getThemes } from '@pr
 import ThemeCards from '../../../../containers/themes/ThemeCards';
 import { useTheme } from '../../../../containers/themes/ThemeProvider';
 import ThemeSyncModeDropdown from '../../../../containers/themes/ThemeSyncModeDropdown';
-import { useNotifications, useShowThemeSelection } from '../../../../hooks';
+import { useNotifications } from '../../../../hooks';
+import useShowThemeSelection from '../../../../hooks/useShowThemeSelection';
 import DrawerAppHeadline from '../shared/DrawerAppHeadline';
 import DrawerAppSection from '../shared/DrawerAppSection';
 import QuickSettingsRemindersSection from './QuickSettingsRemindersSection';

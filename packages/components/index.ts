@@ -889,3 +889,5 @@ export { default as useSpotlightOnFeature } from './hooks/useSpotlightOnFeature'
 export { default as useSubscribedCalendars } from './hooks/useSubscribedCalendars';
 export { default as useToggle } from './hooks/useToggle';
 export { default as useWindowSize } from './hooks/useWindowSize';
+export { default as useShowThemeSelection } from './hooks/useShowThemeSelection';
+export { default as useVPNServersCount } from './hooks/useVPNServersCount';
