@@ -19,6 +19,7 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import useCancellationTelemetry from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationTelemetry';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import { useLoading } from '@proton/hooks';
 import { PLANS, onSessionMigrationPaymentsVersion } from '@proton/payments';
 import { changeRenewState } from '@proton/shared/lib/api/payments';
@@ -36,7 +37,7 @@ import noop from '@proton/utils/noop';
 
 import type { BadgeType } from '../../components/badge/Badge';
 import { default as Badge } from '../../components/badge/Badge';
-import { usePreferredPlansMap, useSubscription } from '../../hooks';
+import { useSubscription } from '../../hooks';
 import { subscriptionExpires } from './subscription/helpers';
 
 export const getMonths = (n: number) => c('Billing cycle').ngettext(msgid`${n} month`, `${n} months`, n);
