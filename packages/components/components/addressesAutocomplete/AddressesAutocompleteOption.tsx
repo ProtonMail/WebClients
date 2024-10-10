@@ -64,21 +64,21 @@ const AddressesAutocompleteOption = <V,>({
                 type="button"
                 ref={ref}
                 disabled={disabled}
-                onClick={handleClick}
+                onClick={selected ? undefined : handleClick}
                 title={title}
                 className={clsx([
                     className,
                     'dropdown-item-button w-full px-4 py-2',
-                    selected && 'dropdown-item--fake-disabled',
+                    selected && 'addresses-autocomplete-option--selected color-hint',
                     'block w-full text-left',
-                    active && 'active',
+                    active && !selected && 'active',
                     truncate ? 'text-ellipsis' : 'text-break',
                 ])}
                 {...rest}
             >
                 <div className="flex items-center flex-nowrap">
                     <span className="flex-1 text-ellipsis">{children}</span>
-                    {selected && <Icon name="checkmark-circle" />}
+                    {selected && <Icon name="checkmark-circle-filled" className="color-primary" />}
                 </div>
             </button>
         </li>

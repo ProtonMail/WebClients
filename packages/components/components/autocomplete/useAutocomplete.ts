@@ -76,6 +76,13 @@ interface UseAutocompleteProps<V> {
      * @returns the index of the item to highlight
      */
     findNextOptionIndex?: (currentIndex: number, options: DataWithMatches<V>[]) => number;
+    /**
+     * Callback when the dropdown is opened
+     * @param setHighlightedIndex function to set the highlighted index
+     * @param options the options
+     * @returns number the new highlighted index
+     */
+    selectCustomIndexOnInputChange?: (options: DataWithMatches<V>[]) => number;
 }
 
 export const useAutocomplete = <T>({
@@ -87,8 +94,9 @@ export const useAutocomplete = <T>({
     findPreviousOptionIndex = (currentIndex) => (currentIndex === 0 ? currentIndex : currentIndex - 1),
     findNextOptionIndex = (currentIndex, options) =>
         currentIndex === options.length - 1 ? currentIndex : currentIndex + 1,
+    selectCustomIndexOnInputChange,
 }: UseAutocompleteProps<T>) => {
-    const [highlightedIndex, setHighlightedIndex] = useState(findNextOptionIndex(0, options));
+    const [highlightedIndex, setHighlightedIndex] = useState(() => findNextOptionIndex(0, options));
     const [isOpen, setIsOpen] = useState(false);
 
     const goToPreviousOption = () => {
@@ -116,10 +124,11 @@ export const useAutocomplete = <T>({
          * Selection preservation based on index can't be reliably dealt
          * with, hence we reset index highlighting to the first element
          * on any input change, given that it is not "0" already.
+         *
+         * A custom method can be applied for specific use cases
          */
-        if (highlightedIndex !== 0) {
-            setHighlightedIndex(0);
-        }
+        const nextHightledIndex = selectCustomIndexOnInputChange ? selectCustomIndexOnInputChange?.(options) : 0;
+        setHighlightedIndex(nextHightledIndex);
     }, [input]);
 
     useHotkeys(inputRef, [
