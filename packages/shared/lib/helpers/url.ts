@@ -1,5 +1,4 @@
 import { stripLeadingSlash, stripTrailingSlash } from '@proton/shared/lib/helpers/string';
-import isTruthy from '@proton/utils/isTruthy';
 
 import { type ReturnUrlContext } from '../authentication/fork';
 import { returnUrlContextKey, returnUrlKey } from '../authentication/fork/constants';
@@ -217,9 +216,12 @@ export const isURLProtonInternal = (url: string, hostname: string) => {
     const targetOriginHostname = getHostname(url);
 
     // Still need to check the current domain otherwise it would not work on proton.local, localhost, etc...
-    return ['protonmail.com', currentDomain]
-        .filter(isTruthy)
-        .some((domain) => isSubDomain(targetOriginHostname, domain));
+    return [
+        currentDomain,
+        'proton.me',
+        'protonmail.com',
+        'protonmailrmez3lotccipshtkleegetolb73fuirgj7r4o4vfu7ozyd.onion',
+    ].some((domain) => isSubDomain(targetOriginHostname, domain));
 };
 
 export const getIsConvertHostname = (hostname: string) => {
