@@ -5,7 +5,7 @@ import type { MatchChunk } from '@proton/shared/lib/helpers/regex';
 import { escapeRegex, getMatches } from '@proton/shared/lib/helpers/regex';
 import { normalize } from '@proton/shared/lib/helpers/string';
 
-import { useHotkeys } from '../../hooks';
+import { useHotkeys } from '../../hooks/useHotkeys';
 
 export interface DataWithMatches<T> {
     option: T;
