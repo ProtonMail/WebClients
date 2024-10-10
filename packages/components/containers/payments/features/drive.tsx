@@ -248,7 +248,7 @@ export const getStorage = (plansMap: PlansMap, freePlan: FreePlanDefault): PlanC
                 subtext: true,
             }),
             [PLANS.PASS]: getStorageFeature(-1, { subtext: true, freePlan }),
-            [PLANS.PASS_FAMILY]: getStorageFeature(-1, { subtext: true, freePlan }),
+            [PLANS.PASS_FAMILY]: null,
             [PLANS.WALLET]: getStorageFeature(-1, { subtext: true, freePlan }),
             [PLANS.FAMILY]: getStorageFeature(plansMap[PLANS.FAMILY]?.MaxSpace ?? 2748779069440, {
                 family: true,
