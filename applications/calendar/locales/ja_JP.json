@@ -470,11 +470,11 @@
       "Not now": [
         "後で"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } の設定を開く"
@@ -3375,9 +3375,6 @@
       "Manage addresses.": [
         "アドレスの管理"
       ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "メンバーがいるプランのオーナーは他のグループプランに加入できません。"
-      ],
       "Sorry, you can't switch plans at this time.": [
         "申し訳ありませんが、現在あなたのプランは変更できません。"
       ],
@@ -3392,9 +3389,6 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "${ bannerOrganization } から招待されています。 ${ viewInviteButton }"
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "${ BRAND_NAME_TWO } のプレミアム機能が利用できるように、あなたの ${ BRAND_NAME } アカウントをこのグループプランにリンクする招待が届いています。"
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "あなたのアカウントはこのプランで利用可能なメールアドレスの上限を超えています。${ addressSettingsLink }"
@@ -7151,11 +7145,6 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(${ PASS_APP_NAME } を開きます)"
-      ]
-    },
-    "Security Center - Action": {
-      "View logs": [
-        "ログを表示"
       ]
     },
     "Security Center - Info": {

@@ -485,10 +485,10 @@
       "Not now": [
         "Nu acum"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -3672,14 +3672,8 @@
       "${ BRAND_NAME } groups": [
         "Grupuri ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Conturile cu domenii personale nu se pot alătura unui plan de grup."
-      ],
       "customer support": [
         "suportul tehnic"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Planurile de grup nu acceptă în prezent conturi externe. Creați o adresă ${ BRAND_NAME } înainte de a vă alătura. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Dacă acceptați invitația, se va schimba planul curent, iar soldul rămas va fi returnat ca și credit în cont."
@@ -3687,14 +3681,8 @@
       "Invited by: ${ inviteEmail }": [
         "Invitație de la: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Conturile pe viață nu se pot alătura unui plan de grup."
-      ],
       "Manage addresses.": [
         "Gestionare adrese."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Proprietarii unui plan cu membri nu se pot alătura unui alt plan de grup."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Ne pare rău, nu puteți schimba planurile în acest moment."
@@ -3716,12 +3704,6 @@
       ],
       "You have successfully joined the family group": [
         "V-ați alăturat cu succes grupului de familie."
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Aveți facturi neplătite. Vă rugăm să le plătiți înainte de a vă alătura unui plan de grup."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Ați primit o invitație să vă conectați contul ${ BRAND_NAME } la acest plan de grup și să vă bucurați împreună de toate funcțiile premium ale ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Acest cont are mai multe adrese de e-mail decât cele disponibile în acest plan. ${ addressSettingsLink }"
@@ -7944,11 +7926,6 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(va deschide ${ PASS_APP_NAME })"
-      ]
-    },
-    "Security Center - Action": {
-      "View logs": [
-        "Afișare jurnale"
       ]
     },
     "Security Center - Info": {

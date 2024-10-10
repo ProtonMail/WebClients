@@ -482,10 +482,10 @@
       "Not now": [
         "Ikke nå"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -3654,14 +3654,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-grupper"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Kontoer med egendefinerte domener kan ikke bli med i en gruppeplan."
-      ],
       "customer support": [
         "kundestøtte"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Gruppeplaner støtter for øyeblikket ikke eksterne kontoer. Opprett en ${ BRAND_NAME }-adresse før du blir med. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Hvis du godtar invitasjonen, bytter vi deg fra den nåværende planen og krediterer kontoen din med eventuell gjenværende saldo."
@@ -3669,14 +3663,8 @@
       "Invited by: ${ inviteEmail }": [
         "Invitert av: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Livsvarige kontoer kan ikke bli med i en gruppeplan."
-      ],
       "Manage addresses.": [
         "Administrer adresser"
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Eiere av en plan med medlemmer kan ikke bli med i en annen gruppeplan."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Beklager, du kan ikke endre abonnementet på nåværende tidspunkt."
@@ -3698,12 +3686,6 @@
       ],
       "You have successfully joined the family group": [
         "Du har blitt med i familiegruppen"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Du har ubetalte fakturaer. Vennligst betal dem før du blir med i en gruppeplan."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Du er invitert til å koble din ${ BRAND_NAME }-konto til denne gruppeplanen og sammen nyte alle ${ BRAND_NAME_TWO }-premiumfunksjoner."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Kontoen din har flere e-postadresser enn det som er tilgjengelig for deg i denne planen. ${ addressSettingsLink }"
@@ -7849,11 +7831,6 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(vil åpne ${ PASS_APP_NAME })"
-      ]
-    },
-    "Security Center - Action": {
-      "View logs": [
-        "Se logger"
       ]
     },
     "Security Center - Info": {
