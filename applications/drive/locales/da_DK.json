@@ -384,14 +384,17 @@
       "Get link": [
         "Få link"
       ],
-      "Get started": [
-        "Kom godt i gang"
-      ],
       "Get Started": [
         "Kom i gang"
       ],
+      "Get started": [
+        "Kom godt i gang"
+      ],
       "Get verification code": [
         "Få bekræftelseskode"
+      ],
+      "Go back": [
+        "Gå tilbage"
       ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Gå til ${ DRIVE_SHORT_APP_NAME }"
@@ -558,10 +561,10 @@
       "Not now": [
         "Ikke nu"
       ],
-      "OK": [
+      "Ok": [
         "Ok"
       ],
-      "Ok": [
+      "OK": [
         "Ok"
       ],
       "Open": [
@@ -3344,14 +3347,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } grupper"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Konti med tilpassede domæner kan ikke deltage i et gruppeabonnement."
-      ],
       "customer support": [
         "kundeservice"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Gruppeabonnementer understøttes pt. ikke af eksterne konti. Opret en ${ BRAND_NAME }-adresse før tilmelding. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Hvis du accepterer invitationen, overflytter vi dig fra dit nuværende abonnement og krediterer din konto med en eventuel restsaldo."
@@ -3359,14 +3356,8 @@
       "Invited by: ${ inviteEmail }": [
         "Inviteret af: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Livstidskonti kan ikke indgå i et gruppeabonnement."
-      ],
       "Manage addresses.": [
         "Administrer adresser."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Ejere af et abonnement med medlemmer kan ikke blive medlem af et andet gruppe-abonnement."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Beklager, du kan i øjeblikket ikke ændre abonnement."
@@ -3388,12 +3379,6 @@
       ],
       "You have successfully joined the family group": [
         "Du er blevet medlem af familiegruppen"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Du har ubetalte fakturaer. Betal dem først, før du tilslutter et gruppeabonnement."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Du er inviteret til at forbinde din ${ BRAND_NAME }-konto til dette gruppe-abonnement og sammen nyde alle ${ BRAND_NAME_TWO } premium funktionerne."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Din konto har flere e-mailadresser en det, der er tilgængeligt for dig på dette abonnement. ${ addressSettingsLink }"
@@ -4163,6 +4148,9 @@
       ],
       "Change your password": [
         "Skift din adgangskode"
+      ],
+      "Check for malicious files": [
+        "Tjek efter skadelige filer"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Tjekker kontakt ${ progress } af ${ max }..."
@@ -5076,6 +5064,9 @@
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Denne fil er blevet slettet, flyttet eller gjort utilgængelig. Prøv at kontakte fil-ejeren."
       ],
+      "This folder is empty": [
+        "Denne mappe er tom"
+      ],
       "This item already exists in your library": [
         "Dette element findes allerede i dit bibliotek"
       ],
@@ -5130,6 +5121,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources.": [
+        "For at hjælpe med at beskytte dig, kan ${ DRIVE_APP_NAME } scanne dine filer på en måde der respekterer dit privatliv, og blokere skadelige filer. Det er dog stadig bedst kun at downloade filer fra betroede kilder."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "For at importere begivenheder, skal du først oprette en kalender i ${ CALENDAR_APP_NAME }. Det er her, at begivenhederne vises efter importen."
@@ -7749,34 +7743,127 @@
       ]
     },
     "Onboarding Action": {
+      "Continue": [
+        "Fortsæt"
+      ],
       "Create new document": [
         "Opret nyt dokument"
       ],
+      "Get started": [
+        "Kom i gang"
+      ],
+      "Install and continue": [
+        "Installér og fortsæt"
+      ],
+      "Install later": [
+        "Installér senere"
+      ],
+      "Invite members": [
+        "Invitér medlemmer"
+      ],
+      "Maybe later": [
+        "Måske senere"
+      ],
       "Next": [
         "Næste"
+      ],
+      "Select theme": [
+        "Vælg tema"
+      ],
+      "Skip": [
+        "Spring over"
+      ],
+      "Skip for now": [
+        "Spring over for nu"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Begynd at bruge ${ DRIVE_APP_NAME }"
       ],
       "Try it later": [
         "Prøv det senere"
+      ],
+      "Try the app": [
+        "Prøv appen"
+      ],
+      "Upload file": [
+        "Upload fil"
+      ],
+      "Upload folder": [
+        "Upload mappe"
       ]
     },
     "Onboarding Info": {
+      "Access your files on the go": [
+        "Tilgå dine filer på farten"
+      ],
       "Collaborate on documents": [
         "Arbejd sammen om dokumenter"
       ],
       "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
         "Opret og samarbejd på dokumenter. Det hele er beskyttet af end-to-end-kryptering."
       ],
+      "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
+        "Foretrækker du ${ DRIVE_APP_NAME } i lyst eller mørkt tema? Vælg den farve der inspirerer dig mest."
+      ],
+      "Drag and drop your files here": [
+        "Træk og slip dine filer her"
+      ],
+      "Edit documents online": [
+        "Redigér dine dokumenter online"
+      ],
+      "End-to-end encrypted storage for your files": [
+        "End-to-end krypteret lagring for dine filer"
+      ],
+      "Faster uploads for large or multiple files": [
+        "Hurtigere uploads for større eller flere filer"
+      ],
+      "Final approval in progress": [
+        "Endelig godkendelse i gang"
+      ],
+      "Final approval pending": [
+        "Afventer endelig godkendelse"
+      ],
+      "Free up hard drive space on your computer": [
+        "Frigør plads på harddisken på din computer"
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Kom godt i gang med at bruge ${ DRIVE_APP_NAME } og vi vil opgradere din drev lagerplads til 5 GB!"
+      ],
+      "Get the desktop app": [
+        "Få desktop-appen."
+      ],
+      "Get the mobile app": [
+        "Hent mobil-appen"
+      ],
+      "Hang tight": [
+        "Hæng på"
       ],
       "Introducing ${ DOCS_APP_NAME }": [
         "Vi præsenterer ${ DOCS_APP_NAME }"
       ],
+      "Invitation accepted": [
+        "Invitation accepteret"
+      ],
+      "Invitation received": [
+        "Invitation modtaget"
+      ],
+      "Invite team members": [
+        "Invitér teammedlemmer"
+      ],
       "Manage access": [
         "Håndter adgang"
+      ],
+      "Organize files right from your desktop": [
+        "Organisér filer direkte fra dit skrivebord"
+      ],
+      "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
+        "Beskyt dine finansielle dokumenter, ID-kort, projektfiler, billeder og mere med end-to-end kryptering."
+      ],
+      "Scan the QR code to install the mobile app": [
+        "Scan QR-koden for at installere mobil-appen"
+      ],
+      "Secure your files": [
+        "Beskyt dine filer"
       ],
       "Securely store, manage, and share your business-critical files with confidence.": [
         "Opbevar, håndter og del dine erhvervskritiske filer på en sikker måde."
@@ -7797,11 +7884,20 @@
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "Opbevar dine filer og del dem sikkert. Kom i gang med at sikre dine mest private filer, f.eks. id-kort, kontrakter og personlige fotos."
       ],
+      "Sync and access your files from anywhere": [
+        "Synkronisér og tilgå dine filer hvorsomhelst"
+      ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Ejeren skal bekræfte adgang til deling. Du får en mail, så snart det er gjort."
       ],
       "Upload a file": [
         "Upload en fil"
+      ],
+      "Upload your first file": [
+        "Upload din første fil"
+      ],
+      "Work together": [
+        "Arbejd sammen"
       ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Din pålidelige online boks til vigtige dokumenter og dyrebare minder."
@@ -8253,11 +8349,6 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(vil åbne ${ PASS_APP_NAME })"
-      ]
-    },
-    "Security Center - Action": {
-      "View logs": [
-        "Se logs."
       ]
     },
     "Security Center - Info": {

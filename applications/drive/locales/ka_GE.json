@@ -384,10 +384,10 @@
       "Get link": [
         "ბმულის მიღება"
       ],
-      "Get started": [
+      "Get Started": [
         "დაიწყეთ"
       ],
-      "Get Started": [
+      "Get started": [
         "დაიწყეთ"
       ],
       "Get verification code": [
@@ -561,10 +561,10 @@
       "Not now": [
         "არა ახლა"
       ],
-      "OK": [
+      "Ok": [
         "დიახ"
       ],
-      "Ok": [
+      "OK": [
         "დიახ"
       ],
       "Open": [
@@ -807,6 +807,9 @@
       "Start setup": [
         "მორგების დაწყება"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "${ priceUnlimited }-დან"
+      ],
       "Stay": [
         "დარჩენა"
       ],
@@ -872,6 +875,9 @@
       ],
       "Upgrade now": [
         "ტარიფის განახლება"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "ასწიეთ სატარიფო გეგმა ${ BRAND_NAME } Unlimited-ზე"
       ],
       "Upload anyway": [
         "მაინც ატვირთვა"
@@ -3347,14 +3353,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } ჯგუფები"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "მომხმარებლის დომენის მქონე ანგარიშები ჯგუფურ ტარიფს ვერ მიიღებენ."
-      ],
       "customer support": [
         "მხარდაჭერის გუნდი"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "ჯგუფურ გეგმებს, ამჟამად, გარე ანგარიშების მხარდაჭერა არ გააჩნიათ. შეერთებამდე ${ BRAND_NAME }-ის ანგარიში შექმენით. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "თუ მოსაწევევს მიიღებთ, ჩვენ თქვენი მიმდინარე ტრიფიდან გადაგრთავთ და დარჩენილ ბალანსს ანგარიშზე დაგირიცხავთ."
@@ -3362,14 +3362,8 @@
       "Invited by: ${ inviteEmail }": [
         "მომწვევი: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "სამუდამო ანგარიშები ჯგუფურ გეგმაში ვერ შევლენ."
-      ],
       "Manage addresses.": [
         "მისამართების მართვა."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "წევრების მქონე ტარიფების მფლობელებს სხვა ჯგუფურ ტარიფში გაერთიანება არ შეუძლიათ."
       ],
       "Sorry, you can't switch plans at this time.": [
         "უკაცრავად, ტარიფს ამჟამად ვერ გადართავთ."
@@ -3391,12 +3385,6 @@
       ],
       "You have successfully joined the family group": [
         "საოჯახო ტარიფს წარმატებით შეუერთდით."
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "გაქვთ გადაუხდელი ინვოისები. გადაიხადეთ, სანამ ჯგუფურ გეგმას მიუერთდებით."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "გიწვევენ, თქვენი ${ BRAND_NAME }-ის ანგარიში ამ ჯგუფს მიაბათ და ერთად ისიამოვნოთ ყველა ${ BRAND_NAME_TWO }-ის ფასიანი ფუნქციით."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "თქვენს ანგარიშს იმაზე მეტი მისამართი გააჩნია, ვიდრე ეს თქვენი სატარიფო გეგმის მიერაა დაშვებული. ${ addressSettingsLink }"
@@ -6621,8 +6609,14 @@
       "Get started for ${ price }": [
         "დაწყება ${ price }-დან"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "${ priceMailPlus }-დან"
+      ],
       "Upgrade now": [
         "ახლა გაუმჯობესება"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "ასწიეთ სატარიფო გეგმა ${ MAIL_SHORT_APP_NAME } Plus-მდე"
       ]
     },
     "new_plans: action": {
@@ -7196,6 +7190,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "მიიღეთ Mail Plus ფასით ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "${ price }-დან"
       ]
     },
     "new_plans: title": {
@@ -7770,6 +7767,15 @@
       "Get started": [
         "დაიწყეთ"
       ],
+      "Install and continue": [
+        "დაყენება და გაგრძელება"
+      ],
+      "Install later": [
+        "მოგვიანებით დაყენება"
+      ],
+      "Invite members": [
+        "წევრების მოწვევა"
+      ],
       "Maybe later": [
         "მოგვიანებით"
       ],
@@ -7796,17 +7802,56 @@
       ],
       "Upload file": [
         "ფაილის ატვირთვა"
+      ],
+      "Upload folder": [
+        "საქაღალდის ატვირთვა"
       ]
     },
     "Onboarding Info": {
+      "Access your files on the go": [
+        "წვდომა თქვენს ფაილებთან ნებისმიერი ადგილიდან"
+      ],
+      "Back up your photos and memories": [
+        "დაამარქაფეთ თქვენის სურათები და მოგონებები"
+      ],
+      "Backup your photos and memories": [
+        "დაამარქაფეთ თქვენის სურათები და მოგონებები"
+      ],
+      "Choose your favorite theme": [
+        "აირჩიეთ სასურველი თემა"
+      ],
       "Collaborate on documents": [
         "იმუშავეთ ერთად დოკუმენტებზე"
       ],
       "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
         "შექმენით და იმუშავეთ სხვებთან ერთად დოკუმენტებზე. ისინი ყველა გამჭოლი დაშიფვრითაა დაცული."
       ],
+      "Drag and drop your files here": [
+        "გადაიტანეთ ფაილები აქ"
+      ],
+      "Edit documents online": [
+        "ჩაასწორეთ დოკუმენტები ინტერნეტში"
+      ],
+      "Final approval in progress": [
+        "საბოლოო დასტურის მოლოდინი"
+      ],
+      "Final approval pending": [
+        "საბოლოო დასტურის მოლოდინი"
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "დაიწყეთ ${ DRIVE_APP_NAME }-ის გამოყენება და ჩვენ თქვენს საცავს 5გბ-მდე ავწევთ!"
+      ],
+      "Get the desktop app": [
+        "მიიღეთ კომპიუტერის აპი"
+      ],
+      "Get the mobile app": [
+        "მობილური აპის დაყენება"
+      ],
+      "Got an Android? We've got you covered.": [
+        "Android გაქვთ? თქვენი პლატფორმა მხარდაჭერილია."
+      ],
+      "Got an iPhone? We've got you covered.": [
+        "საცოდავო, iPhone გაქვს? შენთვისაც მოვიცალეთ."
       ],
       "Hang tight": [
         "კარგად მოეჭიდე"
@@ -7814,8 +7859,26 @@
       "Introducing ${ DOCS_APP_NAME }": [
         "წარმოგიდგენთ ${ DOCS_APP_NAME }-ს"
       ],
+      "Invitation accepted": [
+        "მოწვევა დადასტურებულია"
+      ],
+      "Invitation received": [
+        "მოსაწვევი მიღებულია"
+      ],
+      "Invite team members": [
+        "მოიწვიეთ გუნდის წევრები"
+      ],
       "Manage access": [
         "წვდომის მართვა"
+      ],
+      "Organize files right from your desktop": [
+        "დაალაგეთ თქვენი ფაილები სამუშაო მაგიდიდან"
+      ],
+      "Secure your files": [
+        "დაიცავით თქვენი ფაილები"
+      ],
+      "Securely share files and folders": [
+        "ფაილებისა და საქაღალდეების უსაფრთხო გაზიარება"
       ],
       "Securely store, manage, and share your business-critical files with confidence.": [
         "დარწმუნებული ბრძანდებოდეთ, რომ თქვენს ბიზნესთან დაკავშირებულ ფაილებს უსაფრთხოდ შეინახავთ, მართავთ და აზიარებთ."
@@ -7836,11 +7899,23 @@
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "შეინახეთ თქვენი ფაილები და გააზიარეთ ისინი უსაფრთხოდ. დაიწყეთ თქვენი ისეთი კონფიდენციალური ფაილების დაცვით, როგორიცაა ID-ები, კონტაქტები და პირადი სურათები."
       ],
+      "Sync and access your files from anywhere": [
+        "სინქრონიზაცია და წვდომა თქვენს ფაილებთან ნებისმიერი ადგილიდან"
+      ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "საჭიროა, მფლობელმა დაადასტუროს გაზიარებულზე წვდომა. როცა ეს მოხდება, ელფოსტას მიიღებთ."
       ],
       "Upload a file": [
         "ფაილის ატვირთვა"
+      ],
+      "Upload your first file": [
+        "ატვირთეთ თქვენი პირველი ფაილი"
+      ],
+      "Work faster, smarter": [
+        "იმუშავედ უფრო სწრაფად და ჭკვიანურად"
+      ],
+      "Work together": [
+        "იმუშავეთ ერთად"
       ],
       "Your trusty online vault for vital documents and precious memories.": [
         "თქენი სანდო ონლაინ საცავი სასიცოცხლოდ მნიშვნელოვანი დოკუმენტებისა და ძვირფასი მოგონებებისთვის."
@@ -8292,11 +8367,6 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(გახსნის ${ PASS_APP_NAME }-ს)"
-      ]
-    },
-    "Security Center - Action": {
-      "View logs": [
-        "ჟურნალის ნახვა"
       ]
     },
     "Security Center - Info": {
@@ -9839,6 +9909,9 @@
       "Groups": [
         "ჯგუფები"
       ],
+      "High security for your account": [
+        "მაღალი უსაფრთხოება თქვენი ანგარიშისთვის"
+      ],
       "Hm, we couldn't find that one": [
         "ეგ ვერ ვიპოვეთ"
       ],
@@ -9920,6 +9993,9 @@
       ],
       "Number of items": [
         "ელემენტების რაოდენობა"
+      ],
+      "One email, many recipients": [
+        "ერთი ელფოსტა, ბევრი მიმღები"
       ],
       "Open actions dropdown": [
         "ქმედებების ჩამოსაშლელი მენიუდან აღება"
