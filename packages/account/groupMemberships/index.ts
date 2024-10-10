@@ -1,12 +1,17 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getGroupMembership } from '@proton/shared/lib/api/groups';
-import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { GroupMembershipReturn } from '@proton/shared/lib/interfaces';
+import { setBit } from '@proton/shared/lib/helpers/bitset';
+import updateCollection, { type EventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';
+import {
+    GROUP_MEMBER_PERMISSIONS,
+    type GroupMember,
+    type GroupMembership,
+    type GroupMembershipReturn,
+} from '@proton/shared/lib/interfaces';
 
-import { serverEvent } from '../eventLoop';
 import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
 
@@ -40,40 +45,41 @@ const slice = createSlice({
     name,
     initialState,
     reducers: {
-        acceptMembership: (state, action) => {
+        acceptMembership: (state, action: PayloadAction<GroupMembership>) => {
             if (state.value && action.payload) {
                 const membershipIndex = state.value.findIndex((membership) => membership.ID === action.payload.ID);
                 if (membershipIndex !== -1) {
-                    state.value[membershipIndex].State = 1;
+                    const membership = state.value[membershipIndex];
+                    membership.State = 1;
+                    membership.Permissions = setBit(membership.Permissions, GROUP_MEMBER_PERMISSIONS.LEAVE);
                 }
             }
         },
-        declineOrLeaveMembership: (state, action) => {
+        declineOrLeaveMembership: (state, action: PayloadAction<GroupMembership>) => {
             if (state.value && action.payload) {
                 const updatedMemberships = state.value.filter((membership) => membership.ID !== action.payload.ID);
                 state.value = updatedMemberships;
             }
         },
+        updateGroupMemberships: (
+            state,
+            action: PayloadAction<{
+                GroupMemberships: EventItemUpdate<GroupMember, 'GroupMember'>[];
+            }>
+        ) => {
+            state.value = updateCollection({
+                model: state.value,
+                events: action.payload.GroupMemberships,
+                itemKey: 'GroupMember',
+            });
+        },
     },
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
-        builder.addCase(serverEvent, (state, action) => {
-            if (!state.value) {
-                return;
-            }
-
-            if (action.payload.GroupMemberships) {
-                state.value = updateCollection({
-                    model: state.value,
-                    events: action.payload.GroupMemberships,
-                    itemKey: 'GroupMembership',
-                });
-            }
-        });
     },
 });
 
-export const { acceptMembership, declineOrLeaveMembership } = slice.actions;
+export const { acceptMembership, declineOrLeaveMembership, updateGroupMemberships } = slice.actions;
 
 export const groupMembershipsReducer = { [name]: slice.reducer };
 export const groupMembershipsThunk = modelThunk.thunk;
