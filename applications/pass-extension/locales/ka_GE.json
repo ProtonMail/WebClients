@@ -269,6 +269,10 @@
       "Import": [
         "შემოტანა"
       ],
+      "Import alias": [
+        "ფსევდონიმის შემოტანა",
+        "ფსევდონიმების შემოტანა"
+      ],
       "Import your passwords": [
         "თქვენი პაროლების შემოტანა"
       ],
@@ -979,8 +983,14 @@
       ]
     },
     "FamilyPlanPromo2024": {
+      "Get it for ${ price }/month": [
+        "მიიღეთ ფასით ${ price }/თვეში"
+      ],
       "Introducing ${ planNameJSX }": [
         "წარმოგიდგენთ ${ planNameJSX }-ს"
+      ],
+      "Limited-time offer only.": [
+        "მხოლოდ დროში შეზღუდული შეთავაზებები."
       ]
     },
     "file size format": {
@@ -2831,6 +2841,9 @@
       ],
       "Import to vault(s)": [
         "საცავ(ებ)-ში შემოტანა"
+      ],
+      "Import your aliases from SimpleLogin": [
+        "შემოიტანეთ თქვენი ფსევდონიმები SimpleLogin-დან"
       ],
       "Last autofill": [
         "უკანასკნელი ავტომატური შევსება"
