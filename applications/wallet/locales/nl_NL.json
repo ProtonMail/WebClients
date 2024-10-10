@@ -3011,6 +3011,9 @@
       "Secure Core servers": [
         "Secure Core-servers"
       ],
+      "Secure link sharing": [
+        "Veilig delen van links"
+      ],
       "See team's availability": [
         "Bekijk beschikbaarheid van het team"
       ],
@@ -3114,6 +3117,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } beheerder",
+        "${ admins } beheerders"
       ]
     },
     "new_plans: heading": {
@@ -3507,6 +3516,12 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Veilig delen van kluis (${ n } kluis) en het delen van links",
         "Veilig delen van kluis (${ n } kluizen) en het delen van links"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } gebruikersaccount",
+        "${ n } gebruikersaccounts"
       ]
     },
     "passwordless": {
@@ -4821,6 +4836,9 @@
       "Edit recipients": [
         "Ontvangers bewerken"
       ],
+      "Fast": [
+        "Snel"
+      ],
       "High priority": [
         "Hoge prioriteit"
       ],
@@ -4841,6 +4859,9 @@
       ],
       "Network fees": [
         "Netwerkkosten"
+      ],
+      "Normal": [
+        "Normaal"
       ],
       "One of recipient's amount is below minimum value": [
         "Het bedrag van één ontvanger ligt onder de minimumwaarde"
