@@ -4695,14 +4695,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-Gruppen"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Konten mit eigenen Domains können keinem Gruppenabonnement beitreten."
-      ],
       "customer support": [
         "Kundendienst"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Gruppenabonnements unterstützen derzeit keine externen Konten. Erstelle vor dem Beitritt eine ${ BRAND_NAME }-Adresse. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Wenn du die Einladung annimmst, wechseln wir dein aktuelles Abonnement und schreiben deinem Konto das verbleibende Guthaben gut."
@@ -4710,14 +4704,8 @@
       "Invited by: ${ inviteEmail }": [
         "Eingeladen von: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Lebenslang lizenzierte Konten können keinem Gruppenabonnement beitreten."
-      ],
       "Manage addresses.": [
         "Adressen verwalten."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Besitzer eines Abonnements mit Mitgliedern können keinem anderen Gruppenabonnement beitreten."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Du kannst leider derzeit nicht zwischen Abonnements wechseln."
@@ -4739,12 +4727,6 @@
       ],
       "You have successfully joined the family group": [
         "Du bist erfolgreich der Familiengruppe beigetreten"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Du hast unbezahlte Rechnungen. Bitte bezahle diese, bevor du einem Gruppenabonnement beitrittst."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit diesem Gruppenabonnement zu verknüpfen und gemeinsam alle ${ BRAND_NAME_TWO } Premium-Funktionen zu nutzen."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Dein Konto hat mehr E-Mail-Adressen, als dir in diesem Abonnement zur Verfügung stehen. ${ addressSettingsLink }"
@@ -10589,11 +10571,6 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(dadurch wird ${ PASS_APP_NAME } geöffnet)"
-      ]
-    },
-    "Security Center - Action": {
-      "View logs": [
-        "Protokolle anzeigen"
       ]
     },
     "Security Center - Info": {

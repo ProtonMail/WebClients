@@ -4803,14 +4803,8 @@
       "${ BRAND_NAME } groups": [
         "Grupy ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Konta z niestandardowymi domenami nie mogą dołączyć do tego planu."
-      ],
       "customer support": [
         "wsparcie klienta"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Plany grupowe nie obsługują obecnie kont zewnętrznych. Utwórz adres ${ BRAND_NAME } przed dołączeniem. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jeśli zaakceptujesz zaproszenie, zmienimy obecny plan i obciążymy Twoje konto kwotą pozostałego salda."
@@ -4818,14 +4812,8 @@
       "Invited by: ${ inviteEmail }": [
         "Zaproszenie wysłane przez: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Konta dożywotnie nie mogę dołączyć do innego planu."
-      ],
       "Manage addresses.": [
         "Zarządzaj adresami."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Właściciele planu z użytkownikami nie mogą dołączyć do innego planu."
       ],
       "Sorry, you can't switch plans at this time.": [
         "W tej chwili nie możesz zmienić planów."
@@ -4847,12 +4835,6 @@
       ],
       "You have successfully joined the family group": [
         "Dołączono do grupy rodzinnej"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Masz nieopłacone faktury. Opłać je przed dołączeniem do planu grupowego."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Zaproszono Cię do połączenia konta ${ BRAND_NAME } z tym planem grupy, aby razem korzystać z wszystkich funkcji premium ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Twoje konto ma większą liczbę adresów, niż jest to dostępne w planie. ${ addressSettingsLink }"
@@ -11070,11 +11052,6 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(otworzy ${ PASS_APP_NAME })"
-      ]
-    },
-    "Security Center - Action": {
-      "View logs": [
-        "Pokaż logi"
       ]
     },
     "Security Center - Info": {
