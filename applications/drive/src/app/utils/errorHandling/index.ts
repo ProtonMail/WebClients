@@ -6,7 +6,7 @@ import type { EnrichedError } from './EnrichedError';
 import { isEnrichedError } from './EnrichedError';
 import { isValidationError } from './ValidationError';
 
-const IGNORED_ERRORS = ['AbortError', 'TransferCancel'];
+const IGNORED_ERRORS = ['AbortError', 'TransferCancel', 'OfflineError'];
 
 export function isIgnoredErrorForReporting(error: any) {
     return isIgnoredError(error) || isValidationError(error) || getIsConnectionIssue(error);

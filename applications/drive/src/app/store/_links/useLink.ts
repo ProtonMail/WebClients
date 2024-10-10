@@ -18,7 +18,7 @@ import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 import { decryptPassphrase, getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import useFlag from '@proton/unleash/useFlag';
 
-import { sendErrorReport } from '../../utils/errorHandling';
+import { isIgnoredError, isIgnoredErrorForReporting, sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { getIsPublicContext } from '../../utils/getIsPublicContext';
 import { tokenIsValid } from '../../utils/url/token';
@@ -604,10 +604,7 @@ export function useLinkInner(
                 if (nameResult.status === 'rejected') {
                     // 'AbortError' signify the user has navigated away mid-decryption
                     // We don't count this as error in our metrics
-                    if (
-                        (nameResult.reason instanceof Error && nameResult.reason.name === 'AbortError') ||
-                        nameResult.reason.name === 'OfflineError'
-                    ) {
+                    if (nameResult.reason instanceof Error && isIgnoredErrorForReporting(nameResult.reason)) {
                         return generateCorruptDecryptedLink(encryptedLink, '�');
                     }
 
@@ -655,10 +652,7 @@ export function useLinkInner(
                 if (xattrResult.status === 'rejected') {
                     // 'AbortError' signify the user has navigated away mid-decryption
                     // We don't count this as error in our metrics
-                    if (
-                        xattrResult.reason instanceof Error &&
-                        (xattrResult.reason.name === 'AbortError' || xattrResult.reason.name === 'OfflineError')
-                    ) {
+                    if (xattrResult.reason instanceof Error && isIgnoredErrorForReporting(xattrResult.reason)) {
                         return generateCorruptDecryptedLink(encryptedLink, name);
                     }
 
@@ -764,6 +758,10 @@ export function useLinkInner(
 
                 return decrypted;
             } catch (e) {
+                if (isIgnoredError(e)) {
+                    return generateCorruptDecryptedLink(encrypted, '�');
+                }
+
                 throw new EnrichedError('Failed to decrypt link', {
                     tags: {
                         shareId,
@@ -795,6 +793,10 @@ export function useLinkInner(
 
             return linksState.getLink(shareId, linkId)?.decrypted as DecryptedLink;
         } catch (e) {
+            if (isIgnoredError(e)) {
+                return generateCorruptDecryptedLink(encryptedLink, '�');
+            }
+
             throw new EnrichedError('Failed to decrypt link', {
                 tags: {
                     shareId,
