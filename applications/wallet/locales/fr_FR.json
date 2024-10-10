@@ -520,6 +520,9 @@
     "Bitcoin buy": {
       "${ quote.provider } checkout": [
         "Paiement de ${ quote.provider }"
+      ],
+      "The selected currency is not supported in your country or the requested amount is too low": [
+        "La devise sélectionnée n'est pas prise en charge dans votre pays ou le montant demandé est trop faible."
       ]
     },
     "Bitcoin Script Type": {
@@ -550,6 +553,12 @@
     "Bitcoin send": {
       "Add recipient": [
         "Ajouter un destinataire"
+      ],
+      "Invitation could not be sent to recipient. Please check details and try again.": [
+        "L'invitation n'a pas été envoyée aux destinataires. Nous vous invitons à vérifier les informations et à réessayer."
+      ],
+      "Invitation could not be sent. Please check details and try again.": [
+        "L'invitation n'a pas été envoyée. Nous vous invitons à vérifier les informations et à réessayer."
       ],
       "Invitation sent": [
         "L'invitation a été envoyée."
@@ -2031,6 +2040,9 @@
       ],
       "Not now": [
         "Pas maintenant"
+      ],
+      "You are now leaving ${ WALLET_APP_NAME } for ${ providerName } (${ websiteLink }). Services related to card payments, bank transfers, and any other fiat transactions are provided by ${ providerName }, a separate third-party platform. By proceeding and procuring services from ${ providerName }, you acknowledge that you have read and agreed to ${ providerName }'s Terms of Service (${ termOfUseLink }) and Privacy and Cookies Policy (${ privacyAndCookiesPolicyLink }). For any questions related to ${ providerName }'s services, please contact ${ providerName } at ${ supportEmailLink }": [
+        "Vous quittez désormais ${ WALLET_APP_NAME } pour ${ providerName } (${ websiteLink }). Les services liés aux paiements par carte, aux virements bancaires et à toute autre transaction en devise sont fournis par ${ providerName }, une plateforme tierce distincte. En poursuivant et en utilisant les services de ${ providerName }, vous reconnaissez avoir lu et accepté les conditions générales de ${ providerName } (${ termOfUseLink }) ainsi que la politique de confidentialité et de cookies (${ privacyAndCookiesPolicyLink }). Pour toute question relative aux services de ${ providerName }, veuillez contacter ${ providerName } à ${ supportEmailLink }."
       ]
     },
     "Group": {
@@ -3023,6 +3035,9 @@
       "Secure Core servers": [
         "Serveurs Secure Core"
       ],
+      "Secure link sharing": [
+        "Partage de liens sécurisés"
+      ],
       "See team's availability": [
         "Afficher les disponibilités de votre équipe"
       ],
@@ -3108,6 +3123,10 @@
         "Jusqu'à ${ n } utilisateur",
         "Jusqu'à ${ n } utilisateurs"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Jusqu'à ${ n } utilisateur (${ adminsText }), ${ usersText }",
+        "Jusqu'à ${ n } utilisateurs (${ adminsText }), ${ usersText }"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Jusqu'à ${ totalStorageSize } d'espace de stockage"
       ],
@@ -3126,6 +3145,16 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } administrateur",
+        "${ admins } administrateurs"
+      ],
+      "${ users } user": [
+        "${ users } utilisateur",
+        "${ users } utilisateurs"
       ]
     },
     "new_plans: heading": {
@@ -3187,6 +3216,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Protégez les informations sensibles de vos activités et collaborez en toute sécurité."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Protégez votre famille avec toutes les fonctionnalités premium de ${ PASS_SHORT_APP_NAME } Plus pour 6 utilisateurs."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protégez la vie privée de votre famille avec l'ensemble des services ${ BRAND_NAME }."
@@ -3388,6 +3420,9 @@
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Cela inclut la synchronisation automatique, le partage de fichiers chiffrés et d'autres fonctionnalités."
       ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Partagez certains éléments avec n'importe quel utilisateur en toute sécurité (même s'ils n'ont pas ${ PASS_APP_NAME })"
+      ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Conservez en sécurité les informations de vos contacts, comme leur numéro de téléphone, adresse, date d'anniversaire, ainsi que vos notes personnelles. Le chiffrement zéro accès garantit que même ${ BRAND_NAME } ne peut pas y accéder."
       ],
@@ -3519,6 +3554,15 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Partage de coffre-fort sécurisé (${ n } coffre-fort) et partage de liens",
         "Partage de coffres-forts sécurisés (${ n } coffres-forts) et partage de liens"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } compte utilisateur",
+        "${ n } comptes utilisateur"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Panneau d'administration pour gérer l'abonnement et les utilisateurs"
       ]
     },
     "passwordless": {
@@ -4410,6 +4454,9 @@
       ]
     },
     "Wallet": {
+      "An error occurred whilst syncing your wallet. Please try again.": [
+        "Une erreur s'est produite pendant la synchronisation de votre portefeuille. Nous vous invitons à réessayer."
+      ],
       "Close": [
         "Fermer"
       ],
@@ -4522,6 +4569,11 @@
       ],
       "Send": [
         "Envoyer"
+      ]
+    },
+    "wallet dashboard": {
+      "You need to have a positive bitcoin balance with sufficient funds to transact": [
+        "Le solde de votre compte de bitcoins doit être positif pour réaliser la transaction."
       ]
     },
     "Wallet deletion": {
@@ -4899,6 +4951,9 @@
       "Please grant camera permission to use QRCode scanner": [
         "Veuillez autoriser l'utilisation de la caméra pour scanner le QR code."
       ],
+      "Please setup an email address in your account settings in order to send messages": [
+        "Configurez une adresse e-mail dans les paramètres de votre compte afin d'envoyer des messages."
+      ],
       "Recent recipients": [
         "Destinataires récents"
       ],
@@ -4955,6 +5010,9 @@
       ]
     },
     "Wallet Send": {
+      "An error occurred broadcasting your transaction. Please try again.": [
+        "Une erreur s'est produite pendant la diffusion de votre transaction. Nous vous invitons à réessayer."
+      ],
       "Could not broadcast transaction": [
         "La transaction n'a pas pu être diffusée."
       ],
@@ -4972,6 +5030,9 @@
       "Account was deleted": [
         "Le compte a été supprimé."
       ],
+      "An error occurred while modifying with your Bitcoin via Email address. Please check details and try again.": [
+        "Une erreur s'est produite pendant de la modification de votre adresse configurée pour l'envoi de bitcoins par e-mail. Nous vous invitons à vérifier les informations et à réessayer"
+      ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"
       ],
@@ -4987,6 +5048,9 @@
       "Email address could not be added. Please try again.": [
         "L'adresse e-mail n'a pas été ajoutée. Nous vous invitons à réessayer."
       ],
+      "Email address could not be removed. Please try again.": [
+        "L'adresse e-mail n'a pas été retirée. Nous vous invitons à réessayer."
+      ],
       "Email address has been added": [
         "L'adresse e-mail a déjà été ajoutée."
       ],
@@ -4996,11 +5060,17 @@
       "Email address has been replaced": [
         "L'adresse e-mail a été remplacée."
       ],
+      "Fiat currency could not be updated. Please try again.": [
+        "La devise fiduciaire ne peut pas être mise à jour. Nous vous invitons à réessayer."
+      ],
       "Link an email to this wallet account so other ${ WALLET_APP_NAME } users can easily send bitcoin to your email.": [
         "Veuillez associer un e-mail à ce compte de portefeuille pour que d'autres utilisateurs de ${ WALLET_APP_NAME } puissent facilement envoyer des bitcoins sur votre e-mail."
       ],
       "New fiat currency applied": [
         "La nouvelle devise a été appliquée."
+      ],
+      "Preferred bitcoin unit could not be changed. Please try again.": [
+        "L'unité de bitcoin préférée n'a pas été modifiée. Nous vous invitons à réessayer."
       ],
       "Preferred bitcoin unit was changed": [
         "L'unité de bitcoin préférée a été modifiée."
@@ -5010,6 +5080,12 @@
       ],
       "Select this address": [
         "Sélectionner cette adresse"
+      ],
+      "Wallet account could not be deleted. Please try again.": [
+        "Le compte du portefeuille n'a pas été supprimé. Nous vous invitons à réessayer."
+      ],
+      "Wallet account name could not be changed. Please try again.": [
+        "Le nom du compte du portefeuille n'a pas été modifié. Nous vous invitons à réessayer."
       ],
       "Wallet could not be deleted. Please try again.": [
         "Le portefeuille n'a pas été supprimé. Nous vous invitons à réessayer."
@@ -5056,6 +5132,12 @@
       ],
       "Done": [
         "Terminé"
+      ],
+      "Email address could not be linked to wallet account. Please try again.": [
+        "L'adresse e-mail ne peut pas être liée au compte du portefeuille. Nous vous invitons à réessayer."
+      ],
+      "Error creating your wallet account. Please try again.": [
+        "Une erreur s'est produite pendant la création du compte du portefeuille. Nous vous invitons à réessayer."
       ],
       "Give a name to this wallet": [
         "Attribuez un nom à ce portefeuille."
@@ -5117,6 +5199,12 @@
       "Wallet seed phrase encode the private key that controls your digital assets.": [
         "La phrase de récupération d'un portefeuille encode la clé privée qui contrôle vos actifs numériques."
       ],
+      "Wallet seed phrase is incorrect. Please check this and try again.": [
+        "La phrase de récupération du portefeuille n'est pas correcte. Nous vous invitons à la vérifier et à réessayer."
+      ],
+      "Wallet seed phrase length is invalid. This should be between 12 to 24 words.": [
+        "La longueur de la phrase de récupération du portefeuille n'est pas valide. Elle doit être entre 12 et 24 mots."
+      ],
       "Wallet setup": [
         "Configuration du portefeuille"
       ],
@@ -5169,6 +5257,9 @@
       ]
     },
     "Wallet terms and conditions": {
+      "Error with Terms and Conditions acceptance. Please try again.": [
+        "Une erreur s'est produite pendant l'acceptation des conditions générales. Nous vous invitons à réessayer."
+      ],
       "Terms and conditions were accepted": [
         "Les conditions générales ont été acceptées."
       ]
@@ -5280,6 +5371,9 @@
       ],
       "View more": [
         "Voir plus"
+      ],
+      "We are currently experiencing difficulties in calculating network fees. Please try again later. If issue persists, contact our support team for assistance.": [
+        "Nous rencontrons actuellement des difficultés pour calculer les frais de réseau. Veuillez réessayer plus tard. Si le problème persiste, contactez notre équipe support pour obtenir de l'aide."
       ],
       "You received": [
         "Vous avez reçu"

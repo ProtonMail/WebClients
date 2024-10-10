@@ -2031,6 +2031,9 @@
       ],
       "Not now": [
         "Ahora no"
+      ],
+      "You are now leaving ${ WALLET_APP_NAME } for ${ providerName } (${ websiteLink }). Services related to card payments, bank transfers, and any other fiat transactions are provided by ${ providerName }, a separate third-party platform. By proceeding and procuring services from ${ providerName }, you acknowledge that you have read and agreed to ${ providerName }'s Terms of Service (${ termOfUseLink }) and Privacy and Cookies Policy (${ privacyAndCookiesPolicyLink }). For any questions related to ${ providerName }'s services, please contact ${ providerName } at ${ supportEmailLink }": [
+        "Está abandonando ${ WALLET_APP_NAME } para ir a ${ providerName } (${ websiteLink }). Los servicios relacionados a pagos con tarjetas, transferencias bancarias y cualquier otra transacción fiduciaria son proporcionadas por ${ providerName }, una plataforma de terceros. Al proceder y adquirir los servicios de ${ providerName }, usted reconoce que ha leído y aceptado los términos de servicio de ${ providerName } (${ termOfUseLink }) y la política de privacidad y cookies (${ privacyAndCookiesPolicyLink }). Si tiene alguna pregunta relacionada con los servicios de ${ providerName }, comuníquese con ${ providerName } en ${ supportEmailLink }."
       ]
     },
     "Group": {
@@ -3023,6 +3026,9 @@
       "Secure Core servers": [
         "Servidores Secure Core"
       ],
+      "Secure link sharing": [
+        "Uso compartido seguro de enlaces"
+      ],
       "See team's availability": [
         "Ver la disponibilidad del equipo"
       ],
@@ -3126,6 +3132,16 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si sus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarle de inmediato si encontramos algo."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } administrador",
+        "${ admins } administradores"
+      ],
+      "${ users } user": [
+        "${ users } usuario",
+        "${ users } usuarios"
       ]
     },
     "new_plans: heading": {
@@ -3388,6 +3404,9 @@
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Asegure los archivos con almacenamiento en la nube cifrado. Incluye sincronización automática, intercambio de archivos cifrado y más."
       ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Comparta elementos aislados de forma segura con cualquiera (aunque no use ${ PASS_APP_NAME })"
+      ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Almacene de forma segura los detalles de los contactos, como el número de teléfono, la dirección, la fecha de nacimiento y las notas personales. El cifrado de acceso cero garantiza que incluso ${ BRAND_NAME } no pueda acceder a ellos."
       ],
@@ -3519,6 +3538,12 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Intercambio seguro de bóveda (${ n } bóveda) e intercambio de enlaces",
         "Intercambio seguro de bóveda (${ n } bóvedas) e intercambio de enlaces"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } cuenta de usuario",
+        "${ n } cuentas de usuario"
       ]
     },
     "passwordless": {
@@ -5262,6 +5287,9 @@
       ],
       "View more": [
         "Ver más"
+      ],
+      "We are currently experiencing difficulties in calculating network fees. Please try again later. If issue persists, contact our support team for assistance.": [
+        "Estamos presentando dificultades para calcular las tarifas de red. Intente de nuevo más tarde. Si el problema persiste, contacte con nuestro equipo de soporte."
       ],
       "You received": [
         "Ha recibido"
