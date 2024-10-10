@@ -3,6 +3,7 @@ import type { History } from 'history';
 
 import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
 import { handleEarlyAccessDesynchronization } from '@proton/components/helpers/earlyAccessDesynchronization';
+import { updateVersionCookie, versionCookieAtLoad } from '@proton/components/hooks/useEarlyAccess';
 import type { Feature } from '@proton/features';
 import metrics from '@proton/metrics';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
@@ -219,12 +220,20 @@ export const loadDrawerSession = async ({
         if (localID === undefined) {
             throw new Error('Missing local id');
         }
-        const result = await resumeSessionDrawerApp({ parentApp, localID });
-        authentication.login(result);
+        const { tag, ...session } = await resumeSessionDrawerApp({ parentApp, localID });
+        // When opening the drawer, we might need to set the tag of the app we are opening
+        // Otherwise we will not open the correct version of the app (default instead of beta or alpha)
+        if (tag && versionCookieAtLoad !== tag) {
+            updateVersionCookie(tag, undefined);
+            window.location.reload();
+            return await new Promise(noop);
+        }
+
+        authentication.login(session);
         api.UID = authentication.UID;
 
         return {
-            session: result,
+            session,
             basename: authentication.basename,
         };
     } catch (error) {
