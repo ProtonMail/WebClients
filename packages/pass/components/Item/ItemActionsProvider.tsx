@@ -36,8 +36,7 @@ type ItemActionsContextType = {
     delete: (item: ItemRevision) => void;
     deleteMany: (items: BulkSelectionDTO) => void;
     move: (item: ItemRevision, mode: VaultSelectMode) => void;
-    moveMany: (items: BulkSelectionDTO) => void;
-    moveFromDragAndDrop: (selected: BulkSelectionDTO, shareId: string) => void;
+    moveMany: (items: BulkSelectionDTO, shareId?: string) => void;
     restore: (item: ItemRevision) => void;
     restoreMany: (items: BulkSelectionDTO) => void;
     trash: (item: ItemRevision) => void;
@@ -145,16 +144,17 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                         closeVaultSelect();
                     },
                 }),
-            moveMany: (selected) =>
-                openVaultSelect({
-                    mode: VaultSelectMode.Writable,
-                    shareId: '' /* allow all vaults */,
-                    onSubmit: (shareId) => {
-                        moveManyItems.prompt({ selected, shareId });
-                        closeVaultSelect();
-                    },
-                }),
-            moveFromDragAndDrop: (selected, shareId) => moveManyItems.prompt({ selected, shareId }),
+            moveMany: (selected, shareId) =>
+                shareId
+                    ? moveManyItems.prompt({ selected, shareId })
+                    : openVaultSelect({
+                          mode: VaultSelectMode.Writable,
+                          shareId: '' /* allow all vaults */,
+                          onSubmit: (shareId) => {
+                              moveManyItems.prompt({ selected, shareId });
+                              closeVaultSelect();
+                          },
+                      }),
             trash: (item) => {
                 if (isAliasItem(item.data)) {
                     const aliasEmail = item.aliasEmail!;
