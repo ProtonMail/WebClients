@@ -3,13 +3,13 @@ import { type FC } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { useCanDragListItems } from '@proton/pass/hooks/useCanDragListItems';
+import { useCanDragItems } from '@proton/pass/hooks/useItemDrag';
 
 import { useBulkSelect } from './BulkSelectProvider';
 
 export const BulkView: FC = () => {
     const { count, clear } = useBulkSelect();
-    const canDrag = useCanDragListItems();
+    const draggable = useCanDragItems();
 
     const semiboldText = (
         <span className="text-semibold" key="bulk-count">
@@ -37,8 +37,8 @@ export const BulkView: FC = () => {
                                     c('Message').jt`You selected ${semiboldText} in this vault.`
                                 }
                             </div>
-                            {canDrag && (
-                                <div>
+                            {draggable && (
+                                <div className="color-weak">
                                     {c('Message').ngettext(
                                         msgid`You can drag and drop the selected item to another vault`,
                                         `You can drag and drop the selected items to another vault`,
