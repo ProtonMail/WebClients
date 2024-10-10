@@ -433,6 +433,9 @@
       "Failed to initialize editor due to unknown error.": [
         "Error al inicializar el editor debido a un error desconocido."
       ],
+      "Request timed out": [
+        "Tiempo de espera agotado"
+      ],
       "Signature verification failed": [
         "Error al verificar la firma"
       ],
@@ -502,6 +505,9 @@
       "Highlight": [
         "Resaltar"
       ],
+      "Internet connection lost": [
+        "Se ha perdido la conexión a internet."
+      ],
       "Just now": [
         "Justo ahora"
       ],
@@ -510,6 +516,12 @@
       ],
       "No comments": [
         "Sin comentarios"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "No se puede acceder a los servidores. Inténtalo de nuevo en unos minutos."
+      ],
+      "Session timed out": [
+        "El tiempo de la sesión ha expirado."
       ],
       "Something went wrong:": [
         "Se ha producido un error:"
@@ -537,8 +549,14 @@
       "Background colour": [
         "Color de fondo"
       ],
+      "Change image size": [
+        "Cambiar el tamaño de la imagen"
+      ],
       "Delete": [
         "Eliminar"
+      ],
+      "Delete image": [
+        "Eliminar la imagen"
       ],
       "Delete link": [
         "Eliminar el enlace"
@@ -551,6 +569,9 @@
       ],
       "Insert": [
         "Insertar"
+      ],
+      "Insert image": [
+        "Insertar una imagen"
       ],
       "Insert paragraph": [
         "Insertar un párrafo"
