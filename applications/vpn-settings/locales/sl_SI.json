@@ -106,12 +106,6 @@
       "Choose my own password": [
         "Izberite svoje geslo"
       ],
-      "Clear filter": [
-        "Počisti filter"
-      ],
-      "Clear filters": [
-        "Počisti filtre"
-      ],
       "Close": [
         "Zapri"
       ],
@@ -276,6 +270,9 @@
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Raziščite druge pakete ${ BRAND_NAME }"
+      ],
+      "Export": [
+        "Izvozi"
       ],
       "Extend": [
         "Razširi"
@@ -471,6 +468,9 @@
       ],
       "Resend code": [
         "Znova pošlji kodo"
+      ],
+      "Reset": [
+        "Ponastavi"
       ],
       "Reset credentials": [
         "Ponastavite poverilnice"
@@ -2726,9 +2726,6 @@
         "V 6-mesečnem obdobju je dovoljenih samo ${ n } sprejetih povabil.",
         "V 6-mesečnem obdobju je dovoljenih samo ${ n } sprejetih povabil."
       ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Lastniki paketa s člani se ne morejo pridružiti drugemu skupinskemu paketu."
-      ],
       "Pending": [
         "V teku"
       ],
@@ -2771,17 +2768,11 @@
       "You have successfully joined the family group": [
         "Uspešno ste se pridružili družinski skupini"
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Imate neplačane račune. Plačajte jih, preden se boste pridružili skupinskemu paketu."
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Pred dodajanjem več uporabnikov morate nastaviti domeno po meri."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Pred ustvarjanjem novega uporabnika morate nastaviti domeno po meri."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Povabljeni ste, da povežete svoj ${ BRAND_NAME } račun s skupinskim paketom in skupaj uživate vse premijske funkcije ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Vaš račun ima več naslovov e-pošte, ko jih je na voljo za ta paket. ${ addressSettingsLink }"
@@ -3499,9 +3490,6 @@
         "Prizadeti uporabniki so v vrsticah",
         "Prizadeti uporabniki so v vrsticah"
       ],
-      "All Events ": [
-        "Vsi dogodki "
-      ],
       "All your changes will be lost.": [
         "Vse vaše spremembe bodo izgubljene."
       ],
@@ -3582,9 +3570,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Obračunski cikel: ${ text }."
-      ],
-      "Breach Custom Email Created": [
-        "Ustvarjena e-pošta po meri za kršitev"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "S prehodom na brezplačni paket boste trajno izgubili te ugodnosti, tudi če v prihodnosti znova nadgradite."
@@ -5399,6 +5384,16 @@
         "Telefonska številka za obnovitev"
       ]
     },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Od"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Do"
+      ]
+    },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Dodajte domeno, ki jo imate, v vaš račun ${ MAIL_APP_NAME }."
@@ -7197,9 +7192,6 @@
       ],
       "E.g., ": [
         "Npr. "
-      ],
-      "Email or IP": [
-        "E-pošta ali IP"
       ],
       "End date": [
         "Končni datum"
@@ -9273,9 +9265,6 @@
       "Error": [
         "Napaka"
       ],
-      "Event": [
-        "Dogodek"
-      ],
       "Every member of the organization can access": [
         "Vsak član organizacije ima dostop"
       ],
@@ -9524,9 +9513,6 @@
       ],
       "Text": [
         "Besedilo"
-      ],
-      "Time": [
-        "Čas"
       ],
       "TV sign in": [
         "TV prijava"

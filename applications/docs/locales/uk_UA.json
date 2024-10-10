@@ -378,6 +378,9 @@
       "Move to trash": [
         "Перемістити до смітника"
       ],
+      "New": [
+        "Додати"
+      ],
       "New document": [
         "Новий документ"
       ],
@@ -393,11 +396,11 @@
       "Not now": [
         "Не зараз"
       ],
-      "Ok": [
-        "OK"
-      ],
       "OK": [
         "Застосувати"
+      ],
+      "Ok": [
+        "OK"
       ],
       "Open": [
         "Відкрити"
@@ -539,6 +542,9 @@
       ],
       "Sign out": [
         "Вийти"
+      ],
+      "Sign up": [
+        "Зареєструватися"
       ],
       "Skip verification": [
         "Пропустити перевірку"
@@ -2113,6 +2119,11 @@
         "Пріоритетна підтримка"
       ]
     },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 користувачі"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "ОПИС:\n${ eventDescription }"
@@ -2385,6 +2396,9 @@
       ],
       "IMAP server is required": [
         "Сервер IMAP обов'язковий"
+      ],
+      "Incorrect password. Please try again.": [
+        "Хибний пароль. Повторіть спробу."
       ],
       "Incorrect username": [
         "Неправильне ім'я користувача"
@@ -2992,9 +3006,6 @@
       "Manage addresses.": [
         "Керувати адресами."
       ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Власники тарифних планів з учасниками не можуть приєднуватися до інших групових тарифних планів."
-      ],
       "Sorry, you can't switch plans at this time.": [
         "На жаль, зараз вам не дозволено змінити план."
       ],
@@ -3015,9 +3026,6 @@
       ],
       "You have successfully joined the family group": [
         "Ви успішно приєдналися до сімейної групи"
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Вас запрошено пов'язати обліковий запис ${ BRAND_NAME } із цим груповим планом і разом користуватися всіма преміумфункціями ${ BRAND_NAME_TWO }"
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Ваш обліковий запис має більше адрес електронної пошти, ніж доступно в цьому плані. ${ addressSettingsLink }"
@@ -7025,11 +7033,6 @@
         "(відкриє ${ PASS_APP_NAME })"
       ]
     },
-    "Security Center - Action": {
-      "View logs": [
-        "Переглянути журнали"
-      ]
-    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Виявлено ${ name } та ${ remainingCount } інших потенційних витоків даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці. ${ link }"
@@ -8066,6 +8069,9 @@
       "Cannot add more addresses": [
         "Неможливо додати більше адрес"
       ],
+      "Cannot load link": [
+        "Не вдалося завантажити посилання"
+      ],
       "Card verification": [
         "Перевірка картки"
       ],
@@ -8155,6 +8161,9 @@
       ],
       "Discard changes?": [
         "Відхилити зміни?"
+      ],
+      "Docs": [
+        "Документи"
       ],
       "Document verification failed": [
         "Не вдалось перевірити документ"
@@ -8404,6 +8413,12 @@
       ],
       "Summary": [
         "Підсумок"
+      ],
+      "The link either does not exist or has expired": [
+        "Посилання або не існує або не чинне"
+      ],
+      "The link expired": [
+        "Термін дії посилання завершився"
       ],
       "Unlock contacts groups": [
         "Розблокувати групи контактів"

@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptare"
       ],
-      "activate": [
-        "activare"
-      ],
       "Activate": [
         "Activare"
+      ],
+      "activate": [
+        "activare"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activare ${ user.Name }@pm.me"
@@ -225,12 +225,6 @@
       ],
       "Clear all formatting": [
         "Eliminare formatări"
-      ],
-      "Clear filter": [
-        "Eliminare filtru"
-      ],
-      "Clear filters": [
-        "Eliminare filtre"
       ],
       "Close": [
         "Închidere"
@@ -867,6 +861,9 @@
       ],
       "Resend code": [
         "Retrimitere cod"
+      ],
+      "Reset": [
+        "Resetare"
       ],
       "Reset credentials": [
         "Resetare acreditări"
@@ -5182,14 +5179,8 @@
       "*Only one free trial per user. Regular pricing applies thereafter.": [
         "* Doar o singură perioadă de probare per utilizator. După aceea se aplică prețul standard."
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Conturile cu domenii personale nu se pot alătura unui plan de grup."
-      ],
       "customer support": [
         "suportul tehnic"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Planurile de grup nu acceptă în prezent conturi externe. Creați o adresă ${ BRAND_NAME } înainte de a vă alătura. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Dacă acceptați invitația, se va schimba planul curent, iar soldul rămas va fi returnat ca și credit în cont."
@@ -5209,9 +5200,6 @@
       "Leave Visionary plan": [
         "Părăsire plan Visionary"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Conturile pe viață nu se pot alătura unui plan de grup."
-      ],
       "Manage addresses.": [
         "Gestionare adrese."
       ],
@@ -5222,9 +5210,6 @@
         "Într-o perioadă de 6 luni este permisă doar ${ n } invitație acceptată.",
         "Într-o perioadă de 6 luni sunt permise doar ${ n } invitații acceptate.",
         "Într-o perioadă de 6 luni sunt permise doar ${ n } de invitații acceptate."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Proprietarii unui plan cu membri nu se pot alătura unui alt plan de grup."
       ],
       "Pending": [
         "În așteptare"
@@ -5272,9 +5257,6 @@
       "You have successfully joined the family group": [
         "V-ați alăturat cu succes grupului de familie."
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Aveți facturi neplătite. Vă rugăm să le plătiți înainte de a vă alătura unui plan de grup."
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Trebuie să configurați un domeniu personal înainte de a adăuga utilizatori multipli."
       ],
@@ -5283,9 +5265,6 @@
       ],
       "You will lose access to all premium features and storage space included with ${ plan }.": [
         "Veți pierde accesul la toate funcțiile premium și spațiul de stocare inclus în ${ plan }."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Ați primit o invitație să vă conectați contul ${ BRAND_NAME } la acest plan de grup și să vă bucurați împreună de toate funcțiile premium ale ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Acest cont are mai multe adrese de e-mail decât cele disponibile în acest plan. ${ addressSettingsLink }"
@@ -6786,9 +6765,6 @@
         "Toate (${ totalFoldersCount } etichete)",
         "Toate (${ totalFoldersCount } de etichete)"
       ],
-      "All Events ": [
-        "Toate evenimentele"
-      ],
       "All keys successfully reactivated": [
         "Toate cheile au fost reactivate"
       ],
@@ -6970,15 +6946,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Îmbunătățiți-vă identitatea de brand a organizației proprii și creați o experiență online mai consistentă pentru utilizatorii acesteia."
-      ],
-      "Breach Custom Email Created": [
-        "E-mail personal de notificat divulgări creat"
-      ],
-      "Breach Custom Email Deleted": [
-        "E-mail personal pentru verificare divulgare șters."
-      ],
-      "Breach Custom Email Validated": [
-        "E-mail personal pentru verificare divulgare validat."
       ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "În mod implicit, membrii organizației pot exporta doar seifurile care le aparțin. Dacă această opțiune este activată, aceștia nu vor putea exporta date."
@@ -7586,17 +7553,8 @@
       "Invitation link used": [
         "Legătura web a invitației a fost folosită."
       ],
-      "Invite Accepted": [
-        "Invitație acceptată."
-      ],
-      "Invite Created": [
-        "Invitația s-a creat."
-      ],
       "Invite deleted": [
         "Invitația s-a șters."
-      ],
-      "Invite Deleted": [
-        "Invitație ștearsă."
       ],
       "Invite for new user deleted": [
         "S-a șters invitația pentru utilizatorul nou."
@@ -7610,9 +7568,6 @@
       "Invite rejected": [
         "Invitație refuzată"
       ],
-      "Invite Rejected": [
-        "Invitație refuzată."
-      ],
       "Invite successfully sent": [
         "Invitație trimisă cu succes",
         "Invitații trimise cu succes.",
@@ -7621,29 +7576,17 @@
       "It appears some of your data is encrypted and locked.": [
         "Se pare că unele date sunt criptate și blocate."
       ],
-      "Item Autofilled": [
-        "Articol autocompletat."
-      ],
       "Item autofilled in ${ vaultLink }": [
         "Articol autocompletat în ${ vaultLink }."
       ],
       "Item autofilled in vault": [
         "Articol autocompletat în seif."
       ],
-      "Item Changed Flags": [
-        "Stare articol modificată."
-      ],
-      "Item Created": [
-        "Articol creat."
-      ],
       "Item created in ${ vaultLink }": [
         "Articol creat în ${ vaultLink }."
       ],
       "Item created in vault": [
         "Articol creat în seif."
-      ],
-      "Item Deleted": [
-        "Articol șters."
       ],
       "Item deleted from ${ vaultLink }": [
         "Articol șters din ${ vaultLink }."
@@ -7669,23 +7612,11 @@
       "Item in vault untrashed": [
         "Articol recuperat din coșul de gunoi în seif."
       ],
-      "Item Read": [
-        "Articol citit."
-      ],
       "Item read in ${ vaultLink }": [
         "Articol accesat din ${ vaultLink }."
       ],
       "Item read in vault": [
         "Articol citit în seif."
-      ],
-      "Item Trashed": [
-        "Articol pus în gunoi."
-      ],
-      "Item Untrashed": [
-        "Articol scos din gunoi."
-      ],
-      "Item Updated": [
-        "Articol actualizat."
       ],
       "Item updated in ${ vaultLink }": [
         "Articol actualizat în ${ vaultLink }."
@@ -7854,12 +7785,6 @@
       ],
       "New": [
         "Nou"
-      ],
-      "New User Invite Created": [
-        "Invitație pentru utilizator nou creată."
-      ],
-      "New User Invite Deleted": [
-        "Invitație pentru utilizator nou ștearsă."
       ],
       "New user invited to organization": [
         "Utilizator nou invitat în organizație."
@@ -8263,15 +8188,6 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverele nu sunt accesibile. Mai încercați peste câteva minute."
       ],
-      "Session Ended": [
-        "Sesiune încheiată."
-      ],
-      "Session Roaming": [
-        "Sesiune transferată."
-      ],
-      "Session Started": [
-        "Sesiune începută."
-      ],
       "Session timed out": [
         "Sesiunea a expirat"
       ],
@@ -8286,15 +8202,6 @@
       ],
       "Settings updated": [
         "Setările s-au actualizat."
-      ],
-      "Share Created": [
-        "Partajare creată."
-      ],
-      "Share Deleted": [
-        "Partajare ștearsă."
-      ],
-      "Share Updated": [
-        "Partajare actualizată."
       ],
       "Shared ${ vaultLink } deleted": [
         "${ vaultLink } partajat șters."
@@ -8754,9 +8661,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Modernizați acum contul pentru a accesa funcții premium, produse și stocare la un preț special."
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Treceți la ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } sau ${ PLAN_NAMES[bundleProPlan] } pentru a obține acces la ${ PROTON_SENTINEL_NAME }."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Modernizați contul pentru a adăuga o adresă @pm.me mai scurtă în cont, care este mai ușor de partajat. Înseamnă „${ MAIL_APP_NAME } al meu” sau „Mesaj privat mie”."
       ],
@@ -8808,13 +8712,7 @@
       "Vault created": [
         "Seiful s-a creat."
       ],
-      "Vault Created": [
-        "Seiful s-a creat."
-      ],
       "Vault deleted": [
-        "Seiful s-a șters."
-      ],
-      "Vault Deleted": [
         "Seiful s-a șters."
       ],
       "Vault either deleted or requires access permissions": [
@@ -8824,9 +8722,6 @@
         "Seif partajat pe e-mail."
       ],
       "Vault updated": [
-        "Seiful a fost actualizat."
-      ],
-      "Vault Updated": [
         "Seiful a fost actualizat."
       ],
       "Verification can take a few minutes.": [
@@ -10755,6 +10650,16 @@
       ],
       "Recovery phrase": [
         "Fraza de recuperare"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "De la"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "La"
       ]
     },
     "Label for adding a new custom domain": {
@@ -13886,9 +13791,6 @@
       "Email address": [
         "Adresă e-mail"
       ],
-      "Email or IP": [
-        "E-mail sau IP"
-      ],
       "End date": [
         "Data sfârșit"
       ],
@@ -16426,9 +16328,6 @@
       "Status": [
         "Stare"
       ],
-      "Time": [
-        "Timp"
-      ],
       "Total storage": [
         "Spațiu total"
       ],
@@ -16733,9 +16632,6 @@
       "Connect ${ name }": [
         "Conectare ${ name }"
       ],
-      "Connection events": [
-        "Evenimente de conexiune"
-      ],
       "Connection monitor disabled": [
         "Monitorizare conexiune dezactivată"
       ],
@@ -16997,9 +16893,6 @@
       ],
       "Error": [
         "Eroare"
-      ],
-      "Event": [
-        "Eveniment"
       ],
       "Every member of the organization can access": [
         "Orice membru din organizație are acces"
@@ -17525,9 +17418,6 @@
       ],
       "This field cannot contain only spaces": [
         "Acest câmp nu poate conține doar spații."
-      ],
-      "Time": [
-        "Ora"
       ],
       "Time zone": [
         "Fus orar"

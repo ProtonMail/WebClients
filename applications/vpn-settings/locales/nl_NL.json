@@ -109,12 +109,6 @@
       "Choose my own password": [
         "Mijn eigen wachtwoord kiezen"
       ],
-      "Clear filter": [
-        "Wis filter"
-      ],
-      "Clear filters": [
-        "Wis filters"
-      ],
       "Close": [
         "Sluiten"
       ],
@@ -279,6 +273,9 @@
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Ontdek andere ${ BRAND_NAME }-abonnementen"
+      ],
+      "Export": [
+        "Exporteren"
       ],
       "Extend": [
         "Verlengen"
@@ -477,6 +474,9 @@
       ],
       "Resend code": [
         "Verstuur code opnieuw"
+      ],
+      "Reset": [
+        "Resetten"
       ],
       "Reset credentials": [
         "Inloggegevens resetten"
@@ -2731,14 +2731,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-groepen"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Accounts met een eigen domein kunnen zich niet aansluiten bij een groepsabonnement."
-      ],
       "customer support": [
         "klantondersteuning"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Groepsabonnementen bieden op dit moment geen ondersteuning voor externe accounts. Maak een ${ BRAND_NAME }-adres aan voor u zich hierbij aansluit. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Als u de uitnodiging accepteert, zetten we uw huidige abonnement om en wordt een eventueel resterend saldo teruggestort."
@@ -2749,9 +2743,6 @@
       "Invited by: ${ inviteEmail }": [
         "Uitgenodigd door: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Levenslange accounts kunnen niet deelnemen aan een groepsabonnement."
-      ],
       "Manage addresses.": [
         "Beheer adressen."
       ],
@@ -2761,9 +2752,6 @@
       "Only ${ n } accepted invitation are allowed in a 6-month period.": [
         "Slechts ${ n } geaccepteerde uitnodiging is toegestaan binnen een periode van 6 maanden.",
         "Slechts ${ n } geaccepteerde uitnodigingen zijn toegestaan binnen een periode van 6 maanden."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Eigenaren van een abonnement met leden kunnen zich niet aansluiten bij een ander groepsabonnement."
       ],
       "Pending": [
         "In behandeling"
@@ -2803,17 +2791,11 @@
       "You have successfully joined the family group": [
         "U hebt zich succesvol aangesloten bij de familiegroep"
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "U heeft onbetaalde facturen. Betaal deze voordat u zich aansluit bij een groepsabonnement"
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "U moet een eigen domein configureren voordat u meerdere gebruikers toevoegt."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "U moet een eigen domein configureren voordat u een nieuwe gebruiker aanmaakt."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "U bent uitgenodigd om uw ${ BRAND_NAME }-account te koppelen aan dit groepsabonnement en samen gebruik te maken van alle premium functies van ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Uw account heeft meer e-mailadressen dan is toegestaan in dit abonnement. ${ addressSettingsLink }"
@@ -3509,9 +3491,6 @@
         "Deze gebruiker staat op rij",
         "Deze gebruikers staan op rijen"
       ],
-      "All Events ": [
-        "Alle Gebeurtenissen"
-      ],
       "All members have been added.": [
         "Alle leden zijn toegevoegd."
       ],
@@ -3595,15 +3574,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Facturatiefrequentie: ${ text }"
-      ],
-      "Breach Custom Email Created": [
-        "Inbreuk Aangepast E-mailadres Aangemaakt"
-      ],
-      "Breach Custom Email Deleted": [
-        "Inbreuk Aangepast E-mailadres Verwijderd"
-      ],
-      "Breach Custom Email Validated": [
-        "Inbreuk Aangepast E-mailadres Gevalideerd"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Door het downgraden naar een gratis abonnement verliest u deze voordelen, zelfs als u in de toekomst opnieuw upgrade."
@@ -3978,17 +3948,8 @@
       "Internet connection restored.": [
         "Internetverbinding hersteld."
       ],
-      "Invite Accepted": [
-        "Uitnodiging Geaccepteerd"
-      ],
-      "Invite Created": [
-        "Uitnodiging Aangemaakt"
-      ],
       "Invite deleted": [
         "Uitnodiging verwijderd"
-      ],
-      "Invite Deleted": [
-        "Uitnodiging Verwijderd"
       ],
       "Invite for new user deleted": [
         "Uitnodiging voor nieuwe gebruiker verwijderd"
@@ -4002,32 +3963,17 @@
       "Invite rejected": [
         "Uitnodiging afgewezen"
       ],
-      "Invite Rejected": [
-        "Uitnodiging Geweigerd"
-      ],
-      "Item Autofilled": [
-        "Item automatisch gevuld"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "Item automatisch gevuld in ${ vaultLink }"
       ],
       "Item autofilled in vault": [
         "Item automatisch gevuld in kluis"
       ],
-      "Item Changed Flags": [
-        "Markering Item Veranderd"
-      ],
-      "Item Created": [
-        "Item Aangemaakt"
-      ],
       "Item created in ${ vaultLink }": [
         "Item aangemaakt in ${ vaultLink }"
       ],
       "Item created in vault": [
         "Item aangemaakt in kluis"
-      ],
-      "Item Deleted": [
-        "Item Verwijderd"
       ],
       "Item deleted from ${ vaultLink }": [
         "Item verwijderd uit ${ vaultLink }"
@@ -4053,23 +3999,11 @@
       "Item in vault untrashed": [
         "Item in kluis terug uit prullenbak gehaald"
       ],
-      "Item Read": [
-        "Item gelezen"
-      ],
       "Item read in ${ vaultLink }": [
         "Item gelezen in ${ vaultLink }"
       ],
       "Item read in vault": [
         "Item gelezen in kluis"
-      ],
-      "Item Trashed": [
-        "Item naar prullenbak verplaatst"
-      ],
-      "Item Untrashed": [
-        "Item uit prullenbak hersteld"
-      ],
-      "Item Updated": [
-        "Item Bijgewerkt"
       ],
       "Item updated in ${ vaultLink }": [
         "Item bijgewerkt in ${ vaultLink }"
@@ -4166,12 +4100,6 @@
       ],
       "Must start with a letter.": [
         "Moet starten met een letter"
-      ],
-      "New User Invite Created": [
-        "Nieuwe Uitnodiging Gebruiker Aangemaakt"
-      ],
-      "New User Invite Deleted": [
-        "Nieuwe Uitnodiging Gebruiker Verwijderd"
       ],
       "New user invited to organization": [
         "Nieuwe gebruiker uitgenodigd voor de organisatie"
@@ -4409,29 +4337,11 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
       ],
-      "Session Ended": [
-        "Sessie Beëindigd"
-      ],
-      "Session Roaming": [
-        "Sessie Roaming"
-      ],
-      "Session Started": [
-        "Sessie Begonnen"
-      ],
       "Session timed out": [
         "Sessie verlopen"
       ],
       "Setting up your organization": [
         "Uw organisatie wordt aangemaakt"
-      ],
-      "Share Created": [
-        "Delen Aangemaakt"
-      ],
-      "Share Deleted": [
-        "Delen Verwijderd"
-      ],
-      "Share Updated": [
-        "Delen Bijgewerkt"
       ],
       "Shared ${ vaultLink } deleted": [
         "Gedeelde ${ vaultLink } verwijderd"
@@ -4719,23 +4629,14 @@
       "Vault created": [
         "Kluis aangemaakt"
       ],
-      "Vault Created": [
-        "Kluis Aangemaakt"
-      ],
       "Vault deleted": [
         "Kluis verwijderd"
-      ],
-      "Vault Deleted": [
-        "Kluis Verwijderd"
       ],
       "Vault shared with email": [
         "Kluis gedeeld met e-mailadres"
       ],
       "Vault updated": [
         "Kluis bijgewerkt"
-      ],
-      "Vault Updated": [
-        "Kluis Bijgewerkt"
       ],
       "Verification can take a few minutes.": [
         "Verificatie kan een paar minuten duren."
@@ -5074,6 +4975,12 @@
       ]
     },
     "invitation status": {
+      "Declined": [
+        "Afgewezen"
+      ],
+      "Paused": [
+        "Onderbroken"
+      ],
       "Pending": [
         "In behandeling"
       ]
@@ -5599,6 +5506,16 @@
         "Herstel-telefoonnummer"
       ]
     },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Van"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Naar"
+      ]
+    },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Voeg een domein toe waarvan u de eigenaar bent aan uw ${ MAIL_APP_NAME } account."
@@ -5954,11 +5871,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Braziliaanse real"
+      ],
       "Euro": [
         "Euro"
       ],
       "Swiss franc": [
         "Zwitserse Frank"
+      ],
+      "US Dollar": [
+        "Amerikaanse dollar"
       ]
     },
     "Navigation": {
@@ -6382,6 +6305,9 @@
       "Secure Core servers": [
         "Secure Core-servers"
       ],
+      "Secure link sharing": [
+        "Veilig delen van links"
+      ],
       "See team's availability": [
         "Bekijk beschikbaarheid van het team"
       ],
@@ -6498,6 +6424,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } beheerder",
+        "${ admins } beheerders"
       ]
     },
     "new_plans: feature info": {
@@ -7115,6 +7047,11 @@
         "Gebruikers zullen uw logo zien in plaats van het ${ BRAND_NAME }-pictogram wanneer ze inlogt zijn op onze webapps."
       ]
     },
+    "orgidentity": {
+      "Verify": [
+        "Verifiëren"
+      ]
+    },
     "Pass B2B onboarding spotlight": {
       "Go to your vault to manage your passwords, aliases, and more.": [
         "Ga naar uw kluis om wachtwoorden, aliassen en meer te beheren."
@@ -7239,6 +7176,12 @@
     "pass_signup_2023: Title": {
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Alle ${ BRAND_NAME } Plus-diensten.${ br }Eén eenvoudig abonnement."
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } gebruikersaccount",
+        "${ n } gebruikersaccounts"
       ]
     },
     "password_reset: info": {
@@ -7484,9 +7427,6 @@
       ],
       "E.g., ": [
         "Bijv., "
-      ],
-      "Email or IP": [
-        "E-mail of IP"
       ],
       "End date": [
         "Einddatum"
@@ -8282,6 +8222,9 @@
       ],
       "/ month": [
         "/ maand"
+      ],
+      "/month": [
+        "/maand"
       ],
       "1 year": [
         "1 jaar"
@@ -9452,9 +9395,6 @@
       "Confirm phone number": [
         "Telefoonnummer bevestigen"
       ],
-      "Connection events": [
-        "Verbindingsgebeurtenissen"
-      ],
       "Contact us": [
         "Contacteer ons"
       ],
@@ -9612,9 +9552,6 @@
       ],
       "Error": [
         "Fout"
-      ],
-      "Event": [
-        "Gebeurtenis"
       ],
       "Every member of the organization can access": [
         "Elke gebruiker binnen uw organisatie kan"
@@ -9867,9 +9804,6 @@
       "There are no groups": [
         "Er zijn geen groepen"
       ],
-      "Time": [
-        "Tijd"
-      ],
       "TV sign in": [
         "TV inloggen"
       ],
@@ -10090,6 +10024,11 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Deze versie van Tor Browser wordt niet ondersteund. Werk de browser bij tot de meest recente versie ${ stableRelease }"
+      ]
+    },
+    "unprivatization": {
+      "Revoke access": [
+        "Toegang ontzeggen"
       ]
     },
     "upsell panel": {

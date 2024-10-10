@@ -70,10 +70,10 @@
       "Accept": [
         "დასტური"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -225,12 +225,6 @@
       ],
       "Clear all formatting": [
         "ფორმატირების სრულად მოცილება"
-      ],
-      "Clear filter": [
-        "ფილტრის გასუფთავება"
-      ],
-      "Clear filters": [
-        "ფილტრების გასუფთავება"
       ],
       "Close": [
         "დახურვა"
@@ -867,6 +861,9 @@
       ],
       "Resend code": [
         "კოდის თავიდან გაგზავნა"
+      ],
+      "Reset": [
+        "თავიდან"
       ],
       "Reset credentials": [
         "მომხმარებლისა და პაროლის თავიდან დაყენება"
@@ -5158,14 +5155,8 @@
       "*Only one free trial per user. Regular pricing applies thereafter.": [
         "*მხოლოდ, ერთი უფასო სატესტო დრო ერთი მომხმარებლისთვის. შემდეგ კი ჩვეულებრივი ფასებით გადაიხდით."
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "მომხმარებლის დომენის მქონე ანგარიშები ჯგუფურ ტარიფს ვერ მიიღებენ."
-      ],
       "customer support": [
         "მხარდაჭერის გუნდი"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "ჯგუფურ გეგმებს, ამჟამად, გარე ანგარიშების მხარდაჭერა არ გააჩნიათ. შეერთებამდე ${ BRAND_NAME }-ის ანგარიში შექმენით. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "თუ მოსაწევევს მიიღებთ, ჩვენ თქვენი მიმდინარე ტრიფიდან გადაგრთავთ და დარჩენილ ბალანსს ანგარიშზე დაგირიცხავთ."
@@ -5185,9 +5176,6 @@
       "Leave Visionary plan": [
         "ტარიფის 'Visionary' მიტოვება"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "სამუდამო ანგარიშები ჯგუფურ გეგმაში ვერ შევლენ."
-      ],
       "Manage addresses.": [
         "მისამართების მართვა."
       ],
@@ -5197,9 +5185,6 @@
       "Only ${ n } accepted invitation are allowed in a 6-month period.": [
         "6 თვეში დაშვებულია, მხოლოდ, ${ n } თანხმობის მქონე მოსაწვევი.",
         "6 თვეში დაშვებულია, მხოლოდ, ${ n } თანხმობის მქონე მოსაწვევი."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "წევრების მქონე ტარიფების მფლობელებს სხვა ჯგუფურ ტარიფში გაერთიანება არ შეუძლიათ."
       ],
       "Pending": [
         "რიგში"
@@ -5245,9 +5230,6 @@
       "You have successfully joined the family group": [
         "საოჯახო ტარიფს წარმატებით შეუერთდით."
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "გაქვთ გადაუხდელი ინვოისები. გადაიხადეთ, სანამ ჯგუფურ გეგმას მიუერთდებით."
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "ერთზე მეტი მომხმარებლის დამატებმდე თქვენი დომენის მორგება აუცილებელია."
       ],
@@ -5256,9 +5238,6 @@
       ],
       "You will lose access to all premium features and storage space included with ${ plan }.": [
         "დაკარგავთ წვდომას ყველა ფასიან თვისებასთან და საცავთან, რომლებსაც ${ plan } შეიცავს."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "გიწვევენ, თქვენი ${ BRAND_NAME }-ის ანგარიში ამ ჯგუფს მიაბათ და ერთად ისიამოვნოთ ყველა ${ BRAND_NAME_TWO }-ის ფასიანი ფუნქციით."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "თქვენს ანგარიშს იმაზე მეტი მისამართი გააჩნია, ვიდრე ეს თქვენი სატარიფო გეგმის მიერაა დაშვებული. ${ addressSettingsLink }"
@@ -6718,9 +6697,6 @@
         "ყველა (${ totalFoldersCount } ჭდე)",
         "ყველა (${ totalFoldersCount } ჭდე)"
       ],
-      "All Events ": [
-        "ყველა ღონისძიება "
-      ],
       "All keys successfully reactivated": [
         "ყველა გასაღები წარმატებით გააქტიურდა"
       ],
@@ -6901,15 +6877,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "გააძლიერეთ თქვენი ორგანიზაციის ბრენდინგი და შეექმენით უფრო ერთგვაროვანი გამოცდილება თქვენი მომხმარებლებისთვის."
-      ],
-      "Breach Custom Email Created": [
-        "გაჟონვის მორგებული ელფოსტა შეიქმნა"
-      ],
-      "Breach Custom Email Deleted": [
-        "მორგებული ელფოსტის გაჯონვა წაიშალა"
-      ],
-      "Breach Custom Email Validated": [
-        "მორგებული ელფოსტის გაჟონვა დადასტურებულია"
       ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "ნაგულისხმევად ორგანიზაციის წევრებს შეუძლიათ გაიტანონ საცავები, როცა ისინი მფლობელები არიან. თუ ეს პარამეტრი ჩართულია, მათ მონაცემების გატანის უფლება საერთოდ არ ექნებათ"
@@ -7511,16 +7478,7 @@
       "Invitation link used": [
         "გამოყენებული მოწვევის ბმული"
       ],
-      "Invite Accepted": [
-        "მოწვევა მიღებულია"
-      ],
-      "Invite Created": [
-        "მოწვევა შეიქმნა"
-      ],
       "Invite deleted": [
-        "მოწვევა წაიშალა"
-      ],
-      "Invite Deleted": [
         "მოწვევა წაიშალა"
       ],
       "Invite for new user deleted": [
@@ -7535,9 +7493,6 @@
       "Invite rejected": [
         "მოწვევა უარყოფილია"
       ],
-      "Invite Rejected": [
-        "მოწვევა უარყოფილია"
-      ],
       "Invite successfully sent": [
         "მოსაწვევი წარმატებით გაიგზავნა",
         "მოსაწვევები წარმატებით გაიგზავნა"
@@ -7545,29 +7500,17 @@
       "It appears some of your data is encrypted and locked.": [
         "როგორც ჩანს, ზოგიერთი თქვენი მონაცემი დაშიფრული და დაბლოკილია."
       ],
-      "Item Autofilled": [
-        "ელემენტი ავტოშევსებულია"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "ელემენტი ავტოშევსებულია ${ vaultLink }-ში"
       ],
       "Item autofilled in vault": [
         "ელემენტი ავტოშევსებულია საცავში"
       ],
-      "Item Changed Flags": [
-        "ელემენტის ალმები შეიცვალა"
-      ],
-      "Item Created": [
-        "ელემენტი შეიქმნა"
-      ],
       "Item created in ${ vaultLink }": [
         "ელემენტი შეიქმნა ${ vaultLink }-ში"
       ],
       "Item created in vault": [
         "ელემენტი შეიქმნა საცავში"
-      ],
-      "Item Deleted": [
-        "ელემენტი წაიშალა"
       ],
       "Item deleted from ${ vaultLink }": [
         "ელემენტი წაიშალა ${ vaultLink }-დან"
@@ -7593,23 +7536,11 @@
       "Item in vault untrashed": [
         "ელემენტი გადმოტანილია საცავის ნაგვის ყუთიდან"
       ],
-      "Item Read": [
-        "ელემენტი წაკითხულია"
-      ],
       "Item read in ${ vaultLink }": [
         "ელემენტი წაკითხულია ${ vaultLink }-ში"
       ],
       "Item read in vault": [
         "ელემენტი წაკითხულია საცავში"
-      ],
-      "Item Trashed": [
-        "ელემენტი გადატანილია ნაგვის ყუთში"
-      ],
-      "Item Untrashed": [
-        "ელემენტი გადმოტანილია ნაგვის ყუთიდან"
-      ],
-      "Item Updated": [
-        "ელემენტი განახლდა"
       ],
       "Item updated in ${ vaultLink }": [
         "ელემენტი განახლდა ${ vaultLink }-ში"
@@ -7778,12 +7709,6 @@
       ],
       "New": [
         "ახალი"
-      ],
-      "New User Invite Created": [
-        "ახალი მომხმარებლის მოწვევა შექმნილია"
-      ],
-      "New User Invite Deleted": [
-        "ახალი მომხმარებლის მოწვევა წაშლილია"
       ],
       "New user invited to organization": [
         "ახალი მომხმარებელი მოწვეულია მორგანიზაციაში"
@@ -8181,15 +8106,6 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "სერვერი მიუწვდომელია. ცოტა ხანში სცადეთ"
       ],
-      "Session Ended": [
-        "სესია დასრულდა"
-      ],
-      "Session Roaming": [
-        "სესიის როუმინგი"
-      ],
-      "Session Started": [
-        "სესია დაიწყო"
-      ],
       "Session timed out": [
         "სესიის დრო გავიდა"
       ],
@@ -8204,15 +8120,6 @@
       ],
       "Settings updated": [
         "პარამეტრები განახლებულია"
-      ],
-      "Share Created": [
-        "ზიარი შეიქმნა"
-      ],
-      "Share Deleted": [
-        "ზიარი წაიშალა"
-      ],
-      "Share Updated": [
-        "ზიარი განახლდა"
       ],
       "Shared ${ vaultLink } deleted": [
         "გაზიარებული ${ vaultLink } წაიშალა"
@@ -8668,9 +8575,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "განაახლეთ ახლავე, რომ მიიღოთ პრემიუმ ფუნქციები, პროდუქტები და საცავი სპეციალურ ფასად"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "ასწიეთ ტარიფი ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } ან ${ PLAN_NAMES[bundleProPlan] } გეგმამდე, რათა ${ PROTON_SENTINEL_NAME }-სთან წვდომა მიიღოთ."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "აწიეთ ტარიფი, რათა უფრო მოკლე, @pm.me მისამართები გქონდეთ, რომლებიც გასაზიარებლად უფრო ადვილია. ის ნიშნავს \"${ MAIL_APP_NAME } მე\", ანუ \"პირადად მომწერე\"."
       ],
@@ -8722,13 +8626,7 @@
       "Vault created": [
         "საცავი შეიქმნა"
       ],
-      "Vault Created": [
-        "საცავი შეიქმნა"
-      ],
       "Vault deleted": [
-        "საცავი წაიშალა"
-      ],
-      "Vault Deleted": [
         "საცავი წაიშალა"
       ],
       "Vault either deleted or requires access permissions": [
@@ -8738,9 +8636,6 @@
         "საცავი გაზიარებულია ელფოსტით"
       ],
       "Vault updated": [
-        "საცავი განახლდა"
-      ],
-      "Vault Updated": [
         "საცავი განახლდა"
       ],
       "Verification can take a few minutes.": [
@@ -10653,6 +10548,16 @@
         "აღდგენის ფრაზა"
       ]
     },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "ვისგან"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "ვის"
+      ]
+    },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "${ MAIL_APP_NAME }-ის ანგარიშისთვის თქვენი დომენის მიბმა."
@@ -11538,11 +11443,17 @@
       "Get started for ${ price }": [
         "დაწყება ${ price }-დან"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "${ priceMailPlus }-დან"
+      ],
       "Upgrade": [
         "ტარიფის აწევა"
       ],
       "Upgrade now": [
         "ახლა გაუმჯობესება"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "ასწიეთ სატარიფო გეგმა ${ MAIL_SHORT_APP_NAME } Plus-მდე"
       ]
     },
     "new_plans: action": {
@@ -12239,6 +12150,9 @@
       ],
       "Get Mail Plus for ${ price }": [
         "მიიღეთ Mail Plus ფასით ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "${ price }-დან"
       ],
       "Your account's usage": [
         "თქვენი ანგარიშის გამოყენება"
@@ -13715,9 +13629,6 @@
       ],
       "Email address": [
         "ელ-ფოსტის მისამართი"
-      ],
-      "Email or IP": [
-        "ელფოსტა ან IP"
       ],
       "End date": [
         "დასასრულის დრო"
@@ -16217,9 +16128,6 @@
       "Status": [
         "სტატუსი"
       ],
-      "Time": [
-        "დრო"
-      ],
       "Total storage": [
         "სრული საცავი"
       ],
@@ -16404,6 +16312,9 @@
       "Amount due": [
         "გადასახდელი თანხა"
       ],
+      "An address for each role": [
+        "მისამართი თითოეული როლისთვის"
+      ],
       "App": [
         "აპი"
       ],
@@ -16517,9 +16428,6 @@
       ],
       "Connect ${ name }": [
         "${ name }-სთან დაკავშირება"
-      ],
-      "Connection events": [
-        "მიერთების მოვლენები"
       ],
       "Connection monitor disabled": [
         "კავშირის მონიტორი გამორთულია"
@@ -16781,9 +16689,6 @@
       "Error": [
         "შეცდომა"
       ],
-      "Event": [
-        "მოვლენა"
-      ],
       "Every member of the organization can access": [
         "წვდომა ორგანიზაციის ყველა წევრს აქვს"
       ],
@@ -16805,6 +16710,9 @@
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "${ failedUsers.length } მომხმარებლის შექმნის შეცდომა",
         "${ failedUsers.length } მომხმარებლის შექმნის შეცდომა"
+      ],
+      "Filter for more focus": [
+        "ფილტრი მეტი კონცენტრაციისთვის"
       ],
       "Filter name cannot contain only spaces": [
         "ველის სახელი არ შეიძლება, მხოლოდ, გამოტოვებებს შეიცავდეს"
@@ -16984,6 +16892,9 @@
       "My calendars": [
         "ჩემი კალენდრები"
       ],
+      "Need more labels or folders?": [
+        "გჭირდებათ მეტი ჭდე ან საქაღალდე?"
+      ],
       "Network error": [
         "ქსელის შეცდომა"
       ],
@@ -16995,6 +16906,9 @@
       ],
       "No account information was found in any data breaches": [
         "გაჟონვებში ანგარიშის ინფორმაცია აღმოჩენილი არაა"
+      ],
+      "No need to empty the trash": [
+        "ნაგვის ყუთის გასუფთავება საჭირო არაა"
       ],
       "No recovery method": [
         "აღდგენის მეთოდის გარეშე"
@@ -17053,6 +16967,9 @@
       "PayPal verification failed": [
         "PayPal-ით გადახდის შეცდომა"
       ],
+      "Personalize your email footer": [
+        "მოირგეთ თქვენი ელფოსტის ქვედა კოლონტიტული"
+      ],
       "Phone": [
         "ტელეფონი"
       ],
@@ -17079,6 +16996,9 @@
       ],
       "QRCode": [
         "QR კოდი"
+      ],
+      "Ready, set, forward": [
+        "ყურადღება, მომზადება, წინ"
       ],
       "Recommended": [
         "რეკომენდებულია"
@@ -17145,6 +17065,9 @@
       ],
       "Revoke certificate": [
         "სერტიფიკატის გაუქმება"
+      ],
+      "Same inbox, shorter email address": [
+        "იგივე საფოსტო ყუთი, უფრო მოკლე ელფოსტის მისამართი"
       ],
       "SAML authentication": [
         "SAML ავთენტიკაცია"
@@ -17305,9 +17228,6 @@
       ],
       "This field cannot contain only spaces": [
         "ეს ველი არ შეიძლება, გამოტოვებებს შეიცავდეს"
-      ],
-      "Time": [
-        "დრო"
       ],
       "Time zone": [
         "დროის სარტყელი"

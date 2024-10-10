@@ -106,12 +106,6 @@
       "Choose my own password": [
         "Обрати власний пароль"
       ],
-      "Clear filter": [
-        "Очистити фільтр"
-      ],
-      "Clear filters": [
-        "Очистити фільтри"
-      ],
       "Close": [
         "Закрити"
       ],
@@ -205,6 +199,9 @@
       "Discard changes": [
         "Відхилити зміни"
       ],
+      "Domain name": [
+        "Ім'я домену"
+      ],
       "Done": [
         "Готово"
       ],
@@ -273,6 +270,9 @@
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Переглянути інші тарифні плани ${ BRAND_NAME }"
+      ],
+      "Export": [
+        "Експортувати"
       ],
       "Extend": [
         "Продовжити"
@@ -465,6 +465,9 @@
       ],
       "Resend code": [
         "Надіслати код повторно"
+      ],
+      "Reset": [
+        "Скинути"
       ],
       "Reset credentials": [
         "Скинути облікові дані"
@@ -2242,6 +2245,11 @@
         "Пріоритетна підтримка"
       ]
     },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 користувачі"
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } додано"
@@ -2701,9 +2709,6 @@
       "Manage user accounts": [
         "Керувати обліковими записами користувачів"
       ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Власники тарифних планів з учасниками не можуть приєднуватися до інших групових тарифних планів."
-      ],
       "Pending": [
         "У черзі"
       ],
@@ -2739,9 +2744,6 @@
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Перш ніж створити нового користувача, потрібно налаштувати власний домен."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Вас запрошено пов'язати обліковий запис ${ BRAND_NAME } із цим груповим планом і разом користуватися всіма преміумфункціями ${ BRAND_NAME_TWO }"
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Ваш обліковий запис має більше адрес електронної пошти, ніж доступно в цьому плані. ${ addressSettingsLink }"
@@ -3476,9 +3478,6 @@
         "Залучених користувачів перелічено в рядках",
         "Залучених користувачів перелічено в рядках"
       ],
-      "All Events ": [
-        "Усі події "
-      ],
       "All your changes will be lost.": [
         "Всі зміни будуть втрачені."
       ],
@@ -3562,15 +3561,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Платіжний цикл: ${ text }"
-      ],
-      "Breach Custom Email Created": [
-        "Створено витік користувацької пошти"
-      ],
-      "Breach Custom Email Deleted": [
-        "Витік користувацької пошти видалено"
-      ],
-      "Breach Custom Email Validated": [
-        "Витік користувацької пошти перевірено"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Повернувшись на безплатний тарифний план, ви остаточно втратите ці переваги, навіть якщо в майбутньому поновите передплату."
@@ -3935,16 +3925,7 @@
       "Internet connection restored.": [
         "З'єднання з інтернетом відновлено."
       ],
-      "Invite Accepted": [
-        "Запрошення прийнято"
-      ],
-      "Invite Created": [
-        "Запрошення створено"
-      ],
       "Invite deleted": [
-        "Запрошення видалено"
-      ],
-      "Invite Deleted": [
         "Запрошення видалено"
       ],
       "Invite for new user deleted": [
@@ -3959,32 +3940,17 @@
       "Invite rejected": [
         "Запрошення відхилено"
       ],
-      "Invite Rejected": [
-        "Запрошення відхилено"
-      ],
-      "Item Autofilled": [
-        "Елемент автоматично заповнений"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "Елемент автозаповнено в ${ vaultLink }"
       ],
       "Item autofilled in vault": [
         "Елемент автоматично заповнений у сховищі"
       ],
-      "Item Changed Flags": [
-        "Елемент змінив прапорці"
-      ],
-      "Item Created": [
-        "Елемент створено"
-      ],
       "Item created in ${ vaultLink }": [
         "Елемент створено в ${ vaultLink }"
       ],
       "Item created in vault": [
         "Елемент створений у сховищі"
-      ],
-      "Item Deleted": [
-        "Елемент видалено"
       ],
       "Item deleted from ${ vaultLink }": [
         "Елемент видалено з ${ vaultLink }"
@@ -4010,23 +3976,11 @@
       "Item in vault untrashed": [
         "Елемент забрано зі смітника сховища"
       ],
-      "Item Read": [
-        "Елемент прочитаний"
-      ],
       "Item read in ${ vaultLink }": [
         "Елемент прочитано в ${ vaultLink }"
       ],
       "Item read in vault": [
         "Пункт прочитаний у сховищі"
-      ],
-      "Item Trashed": [
-        "Елемент переміщено до смітника"
-      ],
-      "Item Untrashed": [
-        "Елемент переміщено зі смітника"
-      ],
-      "Item Updated": [
-        "Елемент оновлено"
       ],
       "Item updated in ${ vaultLink }": [
         "Елемент оновлено в ${ vaultLink }"
@@ -4123,12 +4077,6 @@
       ],
       "Must start with a letter.": [
         "Має починатися з літери."
-      ],
-      "New User Invite Created": [
-        "Створено запрошення для нового користувача"
-      ],
-      "New User Invite Deleted": [
-        "Запрошення для нового користувача видалено"
       ],
       "New user invited to organization": [
         "До організації запрошено нового користувача"
@@ -4367,29 +4315,11 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
       ],
-      "Session Ended": [
-        "Сесію завершено"
-      ],
-      "Session Roaming": [
-        "Сеанс роумінгу"
-      ],
-      "Session Started": [
-        "Сесія розпочалась"
-      ],
       "Session timed out": [
         "Сеанс завершився"
       ],
       "Setting up your organization": [
         "Налаштування вашої організації"
-      ],
-      "Share Created": [
-        "Поділитися створеним"
-      ],
-      "Share Deleted": [
-        "Поділитися вилученим"
-      ],
-      "Share Updated": [
-        "Поділитися оновленим"
       ],
       "Shared ${ vaultLink } deleted": [
         "Надіслане ${ vaultLink } видалено"
@@ -4685,22 +4615,13 @@
       "Vault created": [
         "Сховище створено"
       ],
-      "Vault Created": [
-        "Сховище створено"
-      ],
       "Vault deleted": [
-        "Сховище видалено"
-      ],
-      "Vault Deleted": [
         "Сховище видалено"
       ],
       "Vault shared with email": [
         "Сховище поширено за допомогою електронної пошти"
       ],
       "Vault updated": [
-        "Сховище оновлено"
-      ],
-      "Vault Updated": [
         "Сховище оновлено"
       ],
       "Verification can take a few minutes.": [
@@ -5580,6 +5501,16 @@
     "label": {
       "Recovery phone number": [
         "Номер телефону для відновлення"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Від"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Кому"
       ]
     },
     "Label for adding a new custom domain": {
@@ -7378,9 +7309,6 @@
       ],
       "E.g., ": [
         "Наприклад, "
-      ],
-      "Email or IP": [
-        "Електронна пошта або IP-адреса"
       ],
       "End date": [
         "Дата завершення"
@@ -9307,9 +9235,6 @@
       "Confirm phone number": [
         "Підтвердьте номер телефону"
       ],
-      "Connection events": [
-        "Події з’єднання"
-      ],
       "Contact us": [
         "Зв'яжіться з нами"
       ],
@@ -9465,9 +9390,6 @@
       ],
       "Error": [
         "Помилка"
-      ],
-      "Event": [
-        "Подія"
       ],
       "Every member of the organization can access": [
         "Кожен учасник організації може отримати доступ до"
@@ -9720,9 +9642,6 @@
       ],
       "There are no groups": [
         "Групи відсутні"
-      ],
-      "Time": [
-        "Час"
       ],
       "TV sign in": [
         "Вхід на телевізорі"

@@ -479,10 +479,10 @@
       "Not now": [
         "Tidak sekarang"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -662,6 +662,9 @@
       "Start setup": [
         "Mulai penyetelan"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Mulai dari ${ priceUnlimited }"
+      ],
       "Stay": [
         "Tinggal"
       ],
@@ -715,6 +718,9 @@
       ],
       "Upgrade now": [
         "Tingkatkan sekarang"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Tingkatkan ke ${ BRAND_NAME } Unlimited"
       ],
       "Upload picture": [
         "Unggah gambar"
@@ -2424,6 +2430,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } melindungi akun Anda dengan pemantauan aktivitas mencurigakan yang aktif 24/7 — yang meliputi eskalasi dengan para ahli keamanan."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA memberikan lapisan keamanan tambahan, yang mencegah akses masuk yang tidak diinginkan."
       ],
@@ -2432,6 +2441,9 @@
       ],
       "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
         "Organisir hari Anda secara lebih baik, lacak waktu Anda, dan prioritaskan tugas tertentu. Warnai kalender Anda dengan warna acara yang dapat disesuaikan."
+      ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "Berikan warna pada acara untuk mengatur hari Anda, melacak waktu Anda, dan memprioritaskan tugas dengan lebih mudah."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Mendekripsi kontak… Proses ini dapat memakan waktu hingga beberapa menit. Setelah selesai, Anda akan dapat mengunduh berkas yang berisi seluruh kontak yang Anda ekspor."
@@ -2484,6 +2496,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Seret-lepas untuk mengurutkan prioritas penggabungan kontak. Tandai kontak yang ingin digabung."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Dengan grup kontak, Anda dapat mengirim email ke seluruh anggota grup hanya dengan sekali klik."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Anda dapat mengimpor acara dalam format iCal (berkas ICS). Berkas Anda harus berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung paling banyak ${ MAX_IMPORT_EVENTS_STRING } acara. Apabila berkas Anda melebihi persyaratan ini, mohon terlebih dahulu pisahkan menjadi berkas yang lebih kecil."
       ],
@@ -2495,6 +2510,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Metode pemulihan akun dan data Anda telah diatur."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Anda telah membuat 10 alias. Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -3600,14 +3618,8 @@
       "${ BRAND_NAME } groups": [
         "Grup ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Akun dengan domain khusus tidak dapat bergabung ke paket grup."
-      ],
       "customer support": [
         "layanan dukungan"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Paket grup saat ini tidak mendukung akun eksternal. Buat alamat ${ BRAND_NAME } sebelum bergabung. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jika Anda menerima undangan, kami akan mengalihkan Anda dari paket saat ini dan mengkredit akun Anda dengan sisa saldo."
@@ -3615,14 +3627,8 @@
       "Invited by: ${ inviteEmail }": [
         "Diundang oleh: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Akun Lifetime tidak dapat bergabung dalam paket grup."
-      ],
       "Manage addresses.": [
         "Kelola alamat."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Pemilik paket dengan anggota tidak dapat bergabung ke paket grup lain."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Maaf, Anda tidak dapat mengubah paket untuk saat ini."
@@ -3644,12 +3650,6 @@
       ],
       "You have successfully joined the family group": [
         "Anda telah berhasil bergabung ke grup keluarga ini"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Anda memiliki faktur yang belum dibayar. Silakan dibayar sebelum bergabung dalam paket grup."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Anda diundang untuk mengaitkan Akun ${ BRAND_NAME } Anda ke paket grup ini dan menikmati semua fitur premium ${ BRAND_NAME_TWO } bersama."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Akun Anda memiliki alamat email lebih banyak dari yang tersedia kepada Anda dalam paket ini. ${ addressSettingsLink }"
@@ -3787,6 +3787,20 @@
       ],
       "Very small": [
         "Mungil"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Bergabung ke Google Meet"
+      ],
+      "Less details": [
+        "Lebih sedikit detail"
+      ],
+      "Meeting link:": [
+        "Tautan undangan:"
+      ],
+      "More details": [
+        "Lebih banyak detail"
       ]
     },
     "Group": {
@@ -4985,6 +4999,9 @@
       "You are about to open another browser tab and visit:": [
         "Anda akan membuka tab browser baru dan mengunjungi:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Anda akan membuka browser bawaan Anda dan mengunjungi:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Anda sedang masuk sebagai ${ user.Name } (${ user.Email })."
       ],
@@ -6161,8 +6178,14 @@
       "Get started for ${ price }": [
         "Mulai dengan harga ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Mulai dari ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Tingkatkan sekarang"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6715,6 +6738,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Dapatkan Mail Plus dengan harga ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Mulai dari ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7656,11 +7682,6 @@
         "(akan membuka jendela ${ PASS_APP_NAME })"
       ]
     },
-    "Security Center - Action": {
-      "View logs": [
-        "Tampilkan catatan"
-      ]
-    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } dan ${ remainingCount } kebocoran data potensial lainnya terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
@@ -8034,6 +8055,9 @@
       ],
       "/ month": [
         "/ bulan"
+      ],
+      "/month": [
+        "/bulan"
       ],
       "1 year": [
         "1 tahun"
@@ -9252,6 +9276,9 @@
       "Hide time zones for event start and end times": [
         "Sembunyikan zona waktu awal dan akhir acara"
       ],
+      "High security for your account": [
+        "Keamanan yang tinggi bagi akun Anda"
+      ],
       "Human verification": [
         "Verifikasi manusia"
       ],
@@ -9299,6 +9326,9 @@
       ],
       "Notes": [
         "Catatan"
+      ],
+      "One email, many recipients": [
+        "Satu email, banyak penerima"
       ],
       "Open actions dropdown": [
         "Buka menu tindakan"
@@ -10025,6 +10055,14 @@
       ],
       "Yearly, ${ untilString }": [
         "Tahunan, ${ untilString }"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Bergabung ke Pertemuan Zoom"
+      ],
+      "Meeting ID:": [
+        "ID Rapat:"
       ]
     }
   }

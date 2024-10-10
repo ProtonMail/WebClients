@@ -403,6 +403,11 @@
         "Buang komentar?"
       ]
     },
+    "Description": {
+      "Edit document directly": [
+        "Sunting dokumen secara langsung"
+      ]
+    },
     "Error": {
       "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
         "Terjadi kesalahan memuat dokumen. Untuk mencegah korupsi dokumen, penyunting telah dikunci. Silakan muat ulang laman dan coba lagi."
@@ -421,6 +426,9 @@
       ],
       "Failed to initialize editor due to unknown error.": [
         "Editor gagal untuk dimulai karena kesalahan yang tidak diketahui."
+      ],
+      "Request timed out": [
+        "Waktu permintaan habis"
       ],
       "Signature verification failed": [
         "Verifikasi tanda tangan gagal"
@@ -481,6 +489,18 @@
       "Editing": [
         "Menyunting"
       ],
+      "Font": [
+        "Jenis huruf"
+      ],
+      "Font size": [
+        "Ukuran huruf"
+      ],
+      "Highlight": [
+        "Sorotan"
+      ],
+      "Internet connection lost": [
+        "Koneksi internet terputus"
+      ],
       "Just now": [
         "Baru saja"
       ],
@@ -489,6 +509,12 @@
       ],
       "No comments": [
         "Tidak ada komentar"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
+      ],
+      "Session timed out": [
+        "Masa berlaku sesi telah berakhir"
       ],
       "Something went wrong:": [
         "Terdapat suatu kesalahan:"
@@ -510,11 +536,17 @@
       ]
     },
     "Label": {
+      "Add link": [
+        "Tambah tautan"
+      ],
       "Background colour": [
         "Warna latar"
       ],
       "Delete": [
         "Hapus"
+      ],
+      "Delete link": [
+        "Hapus tautan"
       ],
       "Delete paragraph": [
         "Hapus paragraf"
@@ -543,8 +575,14 @@
       "Replace": [
         "Ganti"
       ],
+      "Replace link": [
+        "Ubah tautan"
+      ],
       "Text colour": [
         "Warna teks"
+      ],
+      "with \"${ replaceWith }\"": [
+        "dengan \"${ replaceWith }\""
       ]
     },
     "Placeholder": {

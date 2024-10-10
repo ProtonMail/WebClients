@@ -387,6 +387,9 @@
       "Move to trash": [
         "Çöpe at"
       ],
+      "New": [
+        "Yeni"
+      ],
       "New document": [
         "Yeni belge"
       ],
@@ -402,10 +405,10 @@
       "Not now": [
         "Şimdi değil"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
       "Open": [
@@ -2467,6 +2470,9 @@
       "IMAP server is required": [
         "IMAP sunucusunun yazılması zorunludur"
       ],
+      "Incorrect password. Please try again.": [
+        "Parola yanlış. Lütfen yeniden deneyin."
+      ],
       "Incorrect username": [
         "Kullanıcı adı yanlış"
       ],
@@ -3047,14 +3053,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } grupları"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Özel etki alanları olan hesaplar, bir grup tarifesine katılamaz."
-      ],
       "customer support": [
         "müşteri desteği"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Grup tarifeleri şu anda dış hesapları desteklemiyor. Katılmadan önce bir ${ BRAND_NAME } adresi oluşturun. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Daveti kabul ederseniz, sizi geçerli tarifenizde çıkarırız ve kalan tutarı hesabınıza yatırırız."
@@ -3062,14 +3062,8 @@
       "Invited by: ${ inviteEmail }": [
         "Davet eden: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Lifetime hesaplar bir grup tarifesine katılamaz."
-      ],
       "Manage addresses.": [
         "Adres yönetimi."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Üyeleri olan bir tarifenin sahipleri başka bir grup tarifesine katılamaz."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Ne yazık ki şu anda tarifeleri değiştiremezsiniz."
@@ -3091,12 +3085,6 @@
       ],
       "You have successfully joined the family group": [
         "Aile grubuna katıldınız"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Ödenmemiş faturalarınız var. Bir grup tarifesine geçmeden önce lütfen onları ödeyin."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "${ BRAND_NAME } hesabınızı bu grup tarifesine bağlamaya ve birlikte ücretli tüm ${ BRAND_NAME_TWO } özelliklerinin tadını çıkarmaya davet edildiniz."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Hesabınızda, bu tarifede kullanabileceğinizden daha fazla e-posta adresi var. ${ addressSettingsLink }"
@@ -7117,11 +7105,6 @@
         "(${ PASS_APP_NAME } açılacak)"
       ]
     },
-    "Security Center - Action": {
-      "View logs": [
-        "Günlüğü görüntüle"
-      ]
-    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } ve ${ remainingCount } diğer olası veri sızıntısı bulundu. Ayrıntıları görüntülemek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
@@ -8101,6 +8084,9 @@
       "Cannot add more addresses": [
         "Daha fazla adres eklenemez"
       ],
+      "Cannot load link": [
+        "Bağlantı yüklenemedi"
+      ],
       "Card verification": [
         "Kart doğrulama"
       ],
@@ -8445,6 +8431,12 @@
       ],
       "Summary": [
         "Özet"
+      ],
+      "The link either does not exist or has expired": [
+        "Bağlantı bulunamadı ya da geçerlilik süresi dolmuş"
+      ],
+      "The link expired": [
+        "Bağlantının geçerlilik süresi dolmuş"
       ],
       "Unlock contacts groups": [
         "Kişi gruplarının kilidini açın"

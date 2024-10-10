@@ -1191,6 +1191,9 @@
       "Start setup": [
         "Mulai penyetelan"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Mulai dari ${ priceUnlimited }"
+      ],
       "Stay": [
         "Tinggal"
       ],
@@ -1304,6 +1307,9 @@
       ],
       "Upgrade now": [
         "Tingkatkan sekarang"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Tingkatkan ke ${ BRAND_NAME } Unlimited"
       ],
       "Upload picture": [
         "Unggah gambar"
@@ -3391,11 +3397,20 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } di pengaturan."
       ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } melindungi akun Anda dengan pemantauan aktivitas mencurigakan yang aktif 24/7 — yang meliputi eskalasi dengan para ahli keamanan."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA memberikan lapisan keamanan tambahan, yang mencegah akses masuk yang tidak diinginkan."
       ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Hapus pesan spam dan sampah secara otomatis dan buka lebih banyak fitur premium saat Anda meningkatkan."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Hapus email di Sampah dan Spam lebih dari 30 hari yang lalu."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Buat label atau folder sebanyak yang Anda butuh demi menjaga kotak masuk Anda tetap rapi."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Mendekripsi kontak… Proses ini dapat memakan waktu hingga beberapa menit. Setelah selesai, Anda akan dapat mengunduh berkas yang berisi seluruh kontak yang Anda ekspor."
@@ -3405,6 +3420,9 @@
       ],
       "Designed for users seeking heightened protection for their accounts.": [
         "Dirancang untuk para pengguna yang menginginkan keamanan lebih bagi akun mereka."
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "Tidak ingin mengirim email Anda sekarang? Jadwalkan pada waktu yang tepat."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Enkripsi dan impor kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
@@ -3466,6 +3484,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Aktifkan perlindungan pelacak email untuk mencegah pengiklan dan pihak lainnya dari melacak lokasi dan aktivitas online Anda."
       ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Dapatkan ${ activatePmUser } untuk alamat email yang menarik dan mudah ditulis"
+      ],
       "Unlock custom message scheduling and more premium features when you upgrade.": [
         "Dapatkan penjadwalan pesan khusus dan lebih banyak fitur premium lainnya pada saat Anda meningkatkan akun."
       ],
@@ -3496,6 +3517,12 @@
       "When do you want your message to be sent?": [
         "Kapan Anda ingin pesan Anda dikirim?"
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Dengan grup kontak, Anda dapat mengirim email ke seluruh anggota grup hanya dengan sekali klik."
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "Dengan waktu tunda khusus, Anda dapat menyembunyikan email Anda dan mengatur email ini agar kembali muncul di waktu yang lebih sesuai."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Anda dapat mengimpor acara dalam format iCal (berkas ICS). Berkas Anda harus berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung paling banyak ${ MAX_IMPORT_EVENTS_STRING } acara. Apabila berkas Anda melebihi persyaratan ini, mohon terlebih dahulu pisahkan menjadi berkas yang lebih kecil."
       ],
@@ -3507,6 +3534,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Metode pemulihan akun dan data Anda telah diatur."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Anda telah membuat 10 alias. Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -4677,14 +4707,8 @@
       "${ BRAND_NAME } groups": [
         "Grup ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Akun dengan domain khusus tidak dapat bergabung ke paket grup."
-      ],
       "customer support": [
         "layanan dukungan"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Paket grup saat ini tidak mendukung akun eksternal. Buat alamat ${ BRAND_NAME } sebelum bergabung. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jika Anda menerima undangan, kami akan mengalihkan Anda dari paket saat ini dan mengkredit akun Anda dengan sisa saldo."
@@ -4692,14 +4716,8 @@
       "Invited by: ${ inviteEmail }": [
         "Diundang oleh: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Akun Lifetime tidak dapat bergabung dalam paket grup."
-      ],
       "Manage addresses.": [
         "Kelola alamat."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Pemilik paket dengan anggota tidak dapat bergabung ke paket grup lain."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Maaf, Anda tidak dapat mengubah paket untuk saat ini."
@@ -4721,12 +4739,6 @@
       ],
       "You have successfully joined the family group": [
         "Anda telah berhasil bergabung ke grup keluarga ini"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Anda memiliki faktur yang belum dibayar. Silakan dibayar sebelum bergabung dalam paket grup."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Anda diundang untuk mengaitkan Akun ${ BRAND_NAME } Anda ke paket grup ini dan menikmati semua fitur premium ${ BRAND_NAME_TWO } bersama."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Akun Anda memiliki alamat email lebih banyak dari yang tersedia kepada Anda dalam paket ini. ${ addressSettingsLink }"
@@ -5173,6 +5185,20 @@
       ],
       "Sign in with Google": [
         "Masuk dengan Google"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Bergabung ke Google Meet"
+      ],
+      "Less details": [
+        "Lebih sedikit detail"
+      ],
+      "Meeting link:": [
+        "Tautan undangan:"
+      ],
+      "More details": [
+        "Lebih banyak detail"
       ]
     },
     "Group": {
@@ -7212,6 +7238,9 @@
       "You are about to open another browser tab and visit:": [
         "Anda akan membuka tab browser baru dan mengunjungi:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Anda akan membuka browser bawaan Anda dan mengunjungi:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Anda sedang masuk sebagai ${ user.Name } (${ user.Email })."
       ],
@@ -8859,8 +8888,14 @@
       "Get started for ${ price }": [
         "Mulai dengan harga ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Mulai dari ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Tingkatkan sekarang"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -9413,6 +9448,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Dapatkan Mail Plus dengan harga ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Mulai dari ${ price }"
       ]
     },
     "new_plans: title": {
@@ -10503,11 +10541,6 @@
         "(akan membuka jendela ${ PASS_APP_NAME })"
       ]
     },
-    "Security Center - Action": {
-      "View logs": [
-        "Tampilkan catatan"
-      ]
-    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } dan ${ remainingCount } kebocoran data potensial lainnya terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
@@ -10961,6 +10994,9 @@
       ],
       "/ month": [
         "/ bulan"
+      ],
+      "/month": [
+        "/bulan"
       ],
       "1 year": [
         "1 tahun"
@@ -12200,6 +12236,9 @@
       "Attachments": [
         "Lampiran"
       ],
+      "Bad time for this email?": [
+        "Waktu untuk email ini kurang sesuai?"
+      ],
       "BCC": [
         "BCC"
       ],
@@ -12419,6 +12458,9 @@
       "External encryption": [
         "Enkripsi eksternal"
       ],
+      "Filter for more focus": [
+        "Filter untuk fokus yang lebih"
+      ],
       "Filter name cannot contain only spaces": [
         "Nama filter tidak boleh diisi hanya dengan spasi"
       ],
@@ -12445,6 +12487,9 @@
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Sembunyikan email Anda dengan ${ PASS_APP_NAME }"
+      ],
+      "High security for your account": [
+        "Keamanan yang tinggi bagi akun Anda"
       ],
       "How to update your email address": [
         "Cara untuk memperbarui alamat email Anda"
@@ -12584,6 +12629,9 @@
       "Need more aliases?": [
         "Perlu lebih banyak alias?"
       ],
+      "Need more labels or folders?": [
+        "Butuh lebih banyak label atau folder?"
+      ],
       "Network error": [
         "Kesalahan jaringan"
       ],
@@ -12605,6 +12653,9 @@
       "No breaches detected": [
         "Tidak ada kebocoran yang terdeteksi"
       ],
+      "No need to empty the trash": [
+        "Tanpa perlu mengosongkan kotak sampah"
+      ],
       "No trackers found": [
         "Tidak ada pelacak yang ditemukan"
       ],
@@ -12613,6 +12664,9 @@
       ],
       "Notes": [
         "Catatan"
+      ],
+      "One email, many recipients": [
+        "Satu email, banyak penerima"
       ],
       "Open actions dropdown": [
         "Buka menu tindakan"
@@ -12689,8 +12743,14 @@
       "Request new code": [
         "Minta kode baru"
       ],
+      "Same inbox, shorter email address": [
+        "Kotak masuk yang sama, alamat email yang lebih pendek"
+      ],
       "Save time with email filters": [
         "Hemat waktu dengan filter email"
+      ],
+      "Schedule now, send later": [
+        "Jadwalkan sekarang, kirim nanti"
       ],
       "Schedule send": [
         "Jadwalkan pengiriman"
@@ -13402,6 +13462,14 @@
       ],
       "Yearly, ${ untilString }": [
         "Tahunan, ${ untilString }"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Bergabung ke Pertemuan Zoom"
+      ],
+      "Meeting ID:": [
+        "ID Rapat:"
       ]
     }
   }

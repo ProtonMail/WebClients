@@ -61,11 +61,11 @@
       "Accept": [
         "接受"
       ],
-      "activate": [
-        "激活"
-      ],
       "Activate": [
         "启用"
+      ],
+      "activate": [
+        "激活"
       ],
       "Activate ${ user.Name }@pm.me": [
         "激活 ${ user.Name }@pm.me"
@@ -801,6 +801,9 @@
       ],
       "Resend code": [
         "重新发送验证码"
+      ],
+      "Reset": [
+        "重置"
       ],
       "Reset credentials": [
         "重置凭证信息"
@@ -4607,9 +4610,6 @@
       "Manage addresses.": [
         "管理邮箱地址。"
       ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "包含子用户的邮箱不能加入其他团体账户。"
-      ],
       "Pending": [
         "等待"
       ],
@@ -4627,9 +4627,6 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "有人邀请您加入 ${ bannerOrganization }。${ viewInviteButton }"
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "有人邀请您将 ${ BRAND_NAME } 账户接入此团体账户中，共同享受所有 ${ BRAND_NAME_TWO } 高级功能。"
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "您已有的邮箱地址数量超过了此账户分配给您的邮箱地址数。${ addressSettingsLink }"
@@ -7457,9 +7454,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "现在升级账户可获得更大存储空间、更多功能，还能享受优惠"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "开通 ${ PLAN_NAMES[PLANS.PASS] }、${ PLAN_NAMES[PLANS.BUNDLE] }、${ PLAN_NAMES[PLANS.FAMILY] } 或 ${ PLAN_NAMES[bundleProPlan] } 账户即可启用 ${ PROTON_SENTINEL_NAME }。"
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "升级账户即可增设一个简短的 @pm.me 邮箱地址，这个域名可以代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
       ],
@@ -9232,6 +9226,16 @@
       ],
       "Recovery phrase": [
         "恢复密语"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "从"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "到"
       ]
     },
     "Label for adding a new custom domain": {
@@ -13651,9 +13655,6 @@
       "Error": [
         "失败"
       ],
-      "Event": [
-        "事件"
-      ],
       "Export": [
         "导出"
       ],
@@ -14130,9 +14131,6 @@
       ],
       "This field cannot contain only spaces": [
         "该字段不能只包含空格"
-      ],
-      "Time": [
-        "时间"
       ],
       "Time zone": [
         "时区"

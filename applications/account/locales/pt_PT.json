@@ -70,11 +70,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "activate": [
-        "ativar"
-      ],
       "Activate": [
         "Ativar"
+      ],
+      "activate": [
+        "ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -225,12 +225,6 @@
       ],
       "Clear all formatting": [
         "Limpar toda a formatação"
-      ],
-      "Clear filter": [
-        "Limpar o filtro"
-      ],
-      "Clear filters": [
-        "Limpar os filtros"
       ],
       "Close": [
         "Fechar"
@@ -861,6 +855,9 @@
       ],
       "Resend code": [
         "Reenviar código"
+      ],
+      "Reset": [
+        "Redefinir"
       ],
       "Reset credentials": [
         "Repor credenciais"
@@ -4752,9 +4749,6 @@
       "Manage user accounts": [
         "Gerir as contas dos utilizadores"
       ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Os titulares de um plano com membros não podem aderir a outro plano de grupo."
-      ],
       "Pending": [
         "Pendente"
       ],
@@ -4794,9 +4788,6 @@
       ],
       "You need to configure a custom domain before creating a new user.": [
         "É necessário configurar um domínio personalizado antes de criar um utilizador."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Está convidado a associar a sua conta ${ BRAND_NAME } a este plano de grupo e a usufruir em conjunto de todas as funcionalidades premium ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "A sua conta tem mais endereços de e-mail do que os que estão disponíveis neste plano. ${ addressSettingsLink }"
@@ -6142,9 +6133,6 @@
         "Tudo (${ totalFoldersCount } etiqueta)",
         "Tudo (${ totalFoldersCount } etiquetas)"
       ],
-      "All Events ": [
-        "Todos os eventos "
-      ],
       "All keys successfully reactivated": [
         "Todas as chaves foram reativadas."
       ],
@@ -6791,16 +6779,7 @@
       "Invitation link used": [
         "Ligação de convite utilizada"
       ],
-      "Invite Accepted": [
-        "O convite foi aceite."
-      ],
-      "Invite Created": [
-        "O convite foi criado."
-      ],
       "Invite deleted": [
-        "O convite foi eliminado."
-      ],
-      "Invite Deleted": [
         "O convite foi eliminado."
       ],
       "Invite for new user deleted": [
@@ -6813,9 +6792,6 @@
         "Convite para a organização criado"
       ],
       "Invite rejected": [
-        "O convite foi rejeitado."
-      ],
-      "Invite Rejected": [
         "O convite foi rejeitado."
       ],
       "Invite successfully sent": [
@@ -6831,17 +6807,11 @@
       "Item autofilled in vault": [
         "Item auto-preenchimento no cofre"
       ],
-      "Item Created": [
-        "O item foi criado."
-      ],
       "Item created in ${ vaultLink }": [
         "Item criado em ${ vaultLink }"
       ],
       "Item created in vault": [
         "Item criado no cofre"
-      ],
-      "Item Deleted": [
-        "O item foi eliminado."
       ],
       "Item deleted from ${ vaultLink }": [
         "Item eliminado de ${ vaultLink }"
@@ -6864,23 +6834,11 @@
       "Item in vault untrashed": [
         "Item no cofre recuperado"
       ],
-      "Item Read": [
-        "O item foi lido."
-      ],
       "Item read in ${ vaultLink }": [
         "Item lido em ${ vaultLink }"
       ],
       "Item read in vault": [
         "Item lido no cofre"
-      ],
-      "Item Trashed": [
-        "Item eliminado"
-      ],
-      "Item Untrashed": [
-        "Item recuperado"
-      ],
-      "Item Updated": [
-        "O item foi atualizado."
       ],
       "Item updated in ${ vaultLink }": [
         "Item atualizado em ${ vaultLink }"
@@ -7428,15 +7386,6 @@
       "Settings updated": [
         "As definições foram atualizadas."
       ],
-      "Share Created": [
-        "A partilha foi criada."
-      ],
-      "Share Deleted": [
-        "A partilha foi eliminada."
-      ],
-      "Share Updated": [
-        "A partilha foi atualizada."
-      ],
       "Shared vault deleted": [
         "Cofre partilhado apagado"
       ],
@@ -7821,9 +7770,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualize agora para ter acesso a recursos, produtos e armazenamento premium por um preço especial."
-      ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Atualize para o plano ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } ou ${ PLAN_NAMES[bundleProPlan] } para ter acesso ao ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Atualize para adicionar um endereço @pm.me mais curto à sua conta que seja mais fácil de partilhar. Significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privada para mim\"."
@@ -9608,6 +9554,16 @@
       ],
       "Recovery phrase": [
         "Frase de recuperação"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "De"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Para"
       ]
     },
     "Label for adding a new custom domain": {
@@ -12107,9 +12063,6 @@
       "Email address": [
         "Endereço de e-mail"
       ],
-      "Email or IP": [
-        "E-mail ou IP"
-      ],
       "End date": [
         "Data de término"
       ],
@@ -13899,9 +13852,6 @@
       "Status": [
         "Estado"
       ],
-      "Time": [
-        "Hora"
-      ],
       "Total storage": [
         "Armazenamento total"
       ],
@@ -14200,9 +14150,6 @@
       "Connect ${ name }": [
         "Conectar ${ name }"
       ],
-      "Connection events": [
-        "Eventos de conexão"
-      ],
       "Connection monitor disabled": [
         "Monitor de ligação desativado"
       ],
@@ -14459,9 +14406,6 @@
       ],
       "Error": [
         "Erro"
-      ],
-      "Event": [
-        "Evento"
       ],
       "Every member of the organization can access": [
         "Todos os membros da organização podem aceder"
@@ -14981,9 +14925,6 @@
       ],
       "This field cannot contain only spaces": [
         "Este campo não pode conter apenas espaços"
-      ],
-      "Time": [
-        "Hora"
       ],
       "Time zone": [
         "Fuso horário"

@@ -482,11 +482,11 @@
       "Not now": [
         "Non ora"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Apri impostazioni ${ CALENDAR_APP_NAME }"
@@ -3654,14 +3654,8 @@
       "${ BRAND_NAME } groups": [
         "Gruppi ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Gli account con domini personalizzati non possono aderire a un piano di gruppo."
-      ],
       "customer support": [
         "assistenza clienti"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "I piani di gruppo attualmente non supportano account esterni. Crea un indirizzo ${ BRAND_NAME } prima di iscriverti. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se accetti l'invito, ti cambieremo piano. Il saldo eventualmente rimasto sarà accreditato sul tuo account."
@@ -3669,14 +3663,8 @@
       "Invited by: ${ inviteEmail }": [
         "Invito di: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Gli account Lifetime non possono aderire a un piano di gruppo."
-      ],
       "Manage addresses.": [
         "Gestisci gli indirizzi."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "I proprietari di un piano con membri non possono unirsi a un piano di gruppo."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Ci spiace, ma non è possibile cambiare piano al momento."
@@ -3698,12 +3686,6 @@
       ],
       "You have successfully joined the family group": [
         "Ti sei unito al gruppo famiglia"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Hai delle fatture non pagate. Si prega di pagarle prima di aderire ad un piano di gruppo."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Hai ricevuto un invito a collegare il tuo account ${ BRAND_NAME } a questo piano collettivo, per beneficiare insieme di tutte le funzioni premium di ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Il tuo account ha più indirizzi email rispetto alla disponibilità di questo piano. ${ addressSettingsLink }"
@@ -7855,11 +7837,6 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(aprirà ${ PASS_APP_NAME })"
-      ]
-    },
-    "Security Center - Action": {
-      "View logs": [
-        "Visualizza i log"
       ]
     },
     "Security Center - Info": {

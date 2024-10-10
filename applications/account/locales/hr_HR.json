@@ -16,11 +16,11 @@
       "Accept": [
         "Prihvati"
       ],
-      "activate": [
-        "aktiviraj"
-      ],
       "Activate": [
         "Aktiviraj"
+      ],
+      "activate": [
+        "aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -585,6 +585,9 @@
       ],
       "Resend code": [
         "Ponovno pošalji kôd"
+      ],
+      "Reset": [
+        "Ponovno pokreni"
       ],
       "Reset credentials": [
         "Poništi vjerodajnice"
@@ -5627,6 +5630,16 @@
         "Fraza za oporavak"
       ]
     },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Od"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Za"
+      ]
+    },
     "Label for default event notifications": {
       "Notifications": [
         "Obavijesti"
@@ -8072,9 +8085,6 @@
       "Error": [
         "Pogreška"
       ],
-      "Event": [
-        "Događaj"
-      ],
       "Export": [
         "Izvoz"
       ],
@@ -8392,9 +8402,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "Time": [
-        "Vrijeme"
       ],
       "Time zone": [
         "Vremenska zona"

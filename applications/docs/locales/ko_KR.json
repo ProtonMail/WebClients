@@ -381,6 +381,9 @@
       "Move to trash": [
         "휴지통으로 이동"
       ],
+      "New": [
+        "신규"
+      ],
       "New document": [
         "새 문서"
       ],
@@ -396,10 +399,10 @@
       "Not now": [
         "다음에"
       ],
-      "Ok": [
+      "OK": [
         "확인"
       ],
-      "OK": [
+      "Ok": [
         "확인"
       ],
       "Open": [
@@ -2446,6 +2449,9 @@
       "IMAP server is required": [
         "IMAP 서버가 필요함"
       ],
+      "Incorrect password. Please try again.": [
+        "잘못된 비밀번호입니다. 다시 시도해 주세요."
+      ],
       "Incorrect username": [
         "잘못된 사용자 이름"
       ],
@@ -3019,14 +3025,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } 그룹"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "커스텀 도메인과 연동된 계정은 그룹 플랜에 합류할 수 없습니다."
-      ],
       "customer support": [
         "고객 지원"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "햔재 그룹 플랜은 추가 계정을 지원하지 않습니다. 그룹 합류 전 ${ BRAND_NAME } 계정을 생성하세요. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "초대를 수락하면, 현재 요금제에서 전환되고 남은 잔액이 사용자의 계좌로 환불됩니다."
@@ -3034,14 +3034,8 @@
       "Invited by: ${ inviteEmail }": [
         "이 사용자에게 의해 초대됨: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "평생 계정은 그룹 플랜에 합류 불가합니다."
-      ],
       "Manage addresses.": [
         "주소를 관리하세요."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "구성원들이 있는 요금제의 소유자가 다른 그룹 요금제에 합류할 수 없습니다."
       ],
       "Sorry, you can't switch plans at this time.": [
         "죄송합니다, 현재 요금제 수정이 불가합니다."
@@ -3063,12 +3057,6 @@
       ],
       "You have successfully joined the family group": [
         "가족 그룹에 성공적으로 가입했습니다."
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "결제가 필요한 청구서들이 있습니다. 그룹 플랜에 참여하기 전에 결제하세요."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "사용자가 ${ BRAND_NAME } 계정이 이 그룹 요금제에 합류하도록 초대되었습니다. 함께 모든 ${ BRAND_NAME_TWO } 프리미엄 기능들을 즐기세요."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "사용자의 계정이 사용자 요금제단에서 사용 가능한 이메일 주소 이상을 가지고 있습니다. ${ addressSettingsLink }"
@@ -6996,11 +6984,6 @@
         "(${ PASS_APP_NAME }을 엽니다)"
       ]
     },
-    "Security Center - Action": {
-      "View logs": [
-        "로그 보기"
-      ]
-    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name }과 ${ remainingCount }개의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
@@ -7946,6 +7929,9 @@
       "Cannot add more addresses": [
         "더 많이 주소를 추가할 수 없습니다."
       ],
+      "Cannot load link": [
+        "링크를 불러오는 중 문제 발생"
+      ],
       "Card verification": [
         "카드 확인"
       ],
@@ -8287,6 +8273,12 @@
       ],
       "Summary": [
         "요약"
+      ],
+      "The link either does not exist or has expired": [
+        "링크가 존재하지 않거나 만료되었습니다."
+      ],
+      "The link expired": [
+        "링크 만료됨"
       ],
       "Unlock contacts groups": [
         "연락처 그룹 잠금 해제"

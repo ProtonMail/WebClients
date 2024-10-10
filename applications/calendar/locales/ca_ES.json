@@ -482,10 +482,10 @@
       "Not now": [
         "Ara no"
       ],
-      "OK": [
+      "Ok": [
         "D'acord"
       ],
-      "Ok": [
+      "OK": [
         "D'acord"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -3623,9 +3623,6 @@
       "Manage addresses.": [
         "Gestiona les adreces."
       ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Els propietaris d'un pla amb membres no poden unir-se a un altre pla de grup."
-      ],
       "Sorry, you can't switch plans at this time.": [
         "No podeu canviar de pla en aquest moment."
       ],
@@ -3640,9 +3637,6 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Se us ha convidat a unir-vos a ${ bannerOrganization }. ${ viewInviteButton }"
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Esteu convidat a enllaçar el vostre compte de ${ BRAND_NAME } a aquest pla de grup i gaudir junts de totes les característiques prèmium de ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "El vostre compte té més adreces de correu electrònic de les que teniu disponibles en aquest pla. ${ addressSettingsLink }"
@@ -6638,6 +6632,16 @@
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
       ]
     },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } administrador",
+        "${ admins } administradors"
+      ],
+      "${ users } user": [
+        "${ users } usuari",
+        "${ users } usuaris"
+      ]
+    },
     "new_plans: feature info": {
       "1 custom email domain": [
         "1 domini de correu electrònic personalitzat"
@@ -7701,11 +7705,6 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(obrirà ${ PASS_APP_NAME })"
-      ]
-    },
-    "Security Center - Action": {
-      "View logs": [
-        "Mostra els registres"
       ]
     },
     "Security Center - Info": {

@@ -268,6 +268,10 @@
       "Import": [
         "Εισαγωγή"
       ],
+      "Import alias": [
+        "Εισαγωγή ψευδωνύμου",
+        "Εισαγωγή ψευδώνυμων"
+      ],
       "Importing": [
         "Εισαγωγή"
       ],
@@ -1855,6 +1859,10 @@
       "You cannot change the mailboxes for this alias.": [
         "Δεν μπορείτε να αλλάξετε τα γραμματοκιβώτια για αυτό το ψευδώνυμο."
       ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Έχετε ${ aliasCount } ψευδώνυμο που υπάρχει στο SimpleLogin αλλά λείπει στο ${ PASS_APP_NAME }. Θέλετε να το εισαγάγετε;",
+        "Έχετε ${ aliasCount } ψευδώνυμα που υπάρχουν στο SimpleLogin αλλά λείπουν στο ${ PASS_APP_NAME }. Θέλετε να τα εισαγάγετε;"
+      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Σας απομένει ${ daysRemaining } ημέρα για να δοκιμάσετε αυτές και άλλες premium λειτουργίες.",
         "Σας απομένουν ${ daysRemaining } ημέρες για να δοκιμάσετε αυτές και άλλες premium λειτουργίες."
@@ -2892,6 +2900,9 @@
       ],
       "Import to vault(s)": [
         "Εισαγωγή στην(ις) κρύπτη(ες)"
+      ],
+      "Import your aliases from SimpleLogin": [
+        "Εισαγάγετε τα ψευδώνυμά σας από το SimpleLogin"
       ],
       "Import your data": [
         "Εισαγωγή των δεδομένων σας"

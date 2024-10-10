@@ -488,11 +488,11 @@
       "Not now": [
         "Teraz nie"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otvoriť nastavenia ${ CALENDAR_APP_NAME }"
@@ -3726,14 +3726,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } skupiny"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Účty s vlastnými doménami sa nemôžu pripojiť do skupinového plánu."
-      ],
       "customer support": [
         "zákaznícka podpora"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Skupinové plány v súčasnosti nepodporujú externé účty. Pred pripojením si vytvorte ${ BRAND_NAME } adresu. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Ak pozvánku prijmete, zameníme váš aktuálny plán a zostávajúcu čiastku pripíšeme k vášmu účtu ako kredit."
@@ -3741,14 +3735,8 @@
       "Invited by: ${ inviteEmail }": [
         "Pozvánka od: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Doživotné účty nemôžu byť pripojené do skupinového predplatného."
-      ],
       "Manage addresses.": [
         "Spravovať adresy."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Vlastníci plánu s členmi sa nemôžu pripojiť k inému skupinovému plánu."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Ľutujeme, momentálne nemôžete zmeniť plány."
@@ -3770,12 +3758,6 @@
       ],
       "You have successfully joined the family group": [
         "Úspešne ste sa pripojili do rodinnej skupiny"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Máte nezaplatené faktúry. Pred pripojením do skupinového plánu ich zaplaťte, prosím."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Dostali ste pozvánku na pripojenie vášho účtu ${ BRAND_NAME } k tomuto skupinovému plánu, kde si môžete užívať všetky ${ BRAND_NAME_TWO } prémiové funkcie."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Váš účet má viac emailových adries než koľko máte k dispozícii v tomto pláne. ${ addressSettingsLink }"
@@ -8139,11 +8121,6 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(otvorí ${ PASS_APP_NAME })"
-      ]
-    },
-    "Security Center - Action": {
-      "View logs": [
-        "Zobraziť záznamy"
       ]
     },
     "Security Center - Info": {
