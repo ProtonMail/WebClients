@@ -5,6 +5,8 @@ import type { Api } from '@proton/shared/lib/interfaces'
 import type { TelemetryDocsEvents } from '@proton/shared/lib/api/telemetry'
 import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry'
 import type { SuggestionSummaryType } from 'packages/docs-shared/lib/SuggestionType'
+import { ConnectionCloseMetrics } from '../../Realtime/ConnectionCloseMetrics'
+import type { ConnectionCloseReason } from '@proton/docs-proto'
 
 const HEARTBEAT_INTERVAL = 60_000
 
@@ -72,5 +74,15 @@ export class MetricService {
 
   reportSuggestionResolved(resolution: SuggestionResolution): void {
     metrics.docs_suggestions_resolved_total.increment({ type: resolution })
+  }
+
+  reportRealtimeDisconnect(reason: ConnectionCloseReason): void {
+    let type = ConnectionCloseMetrics[reason.props.code]
+    if (!type) {
+      /** There is no 'other' option, so we use 'timeout' as a catch-all */
+      type = 'timeout'
+    }
+
+    metrics.docs_realtime_disconnect_error_total.increment({ type })
   }
 }
