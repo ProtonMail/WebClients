@@ -1,3 +1,9 @@
+import {
+    getTargetEnvironment,
+    getVersionCookieIsValid,
+    updateVersionCookie,
+    versionCookieAtLoad,
+} from '@proton/components/helpers/versionCookie';
 import type { Feature } from '@proton/features';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -5,13 +11,6 @@ import { doesNotSupportEarlyAccessVersion } from '@proton/shared/lib/helpers/bro
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';
 import type { Environment } from '@proton/shared/lib/interfaces';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
-
-import {
-    getTargetEnvironment,
-    getVersionCookieIsValid,
-    updateVersionCookie,
-    versionCookieAtLoad,
-} from '../hooks/useEarlyAccess';
 
 const MAX_NUMBER_OF_EARLY_ACCESS_DESYNCHRONIZATION_RETRIES = 2;
 
