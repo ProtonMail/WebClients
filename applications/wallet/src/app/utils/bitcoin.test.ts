@@ -12,6 +12,7 @@ describe('bitcoin', () => {
             ExchangeRateTime: '2024-03-07T07:01:06+00:00',
             ExchangeRate: 5817100,
             Cents: 100,
+            Sign: '$',
         };
 
         describe('to exchange rate', () => {
