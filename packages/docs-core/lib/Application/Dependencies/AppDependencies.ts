@@ -245,6 +245,7 @@ export class AppDependencies extends DependencyContainer {
         this.get<DecryptMessage>(App_TYPES.DecryptMessage),
         this.get<LoggerInterface>(App_TYPES.Logger),
         this.get<InternalEventBusInterface>(App_TYPES.EventBus),
+        this.get<MetricService>(App_TYPES.MetricService),
         appVersion,
       )
     })
