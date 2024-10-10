@@ -83,7 +83,7 @@ interface READY {
     type: DRAWER_EVENTS.READY;
 }
 
-interface SESSION {
+export interface SESSION_MESSAGE {
     type: DRAWER_EVENTS.SESSION;
     payload: {
         UID: string;
@@ -213,7 +213,7 @@ export type DRAWER_ACTION =
     | SHOW
     | SWITCH
     | READY
-    | SESSION
+    | SESSION_MESSAGE
     | API_REQUEST
     | API_RESPONSE
     | API_ABORT_REQUEST
