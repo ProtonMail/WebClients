@@ -5,6 +5,7 @@ export type AccountWithChainData = {
     account: WasmAccount;
     scriptType: number;
     derivationPath: string;
+    poolSize: number;
 };
 
 export type AccountChainDataByAccountId = Partial<Record<string, AccountWithChainData>>;

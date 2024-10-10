@@ -4,7 +4,7 @@ import * as andromedaModule from '@proton/andromeda';
 import { CryptoProxy } from '@proton/crypto';
 import { Api as CryptoApi } from '@proton/crypto/lib/worker/api';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
+import type { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import {
     mockUseAuthentication,
     mockUseConfig,
@@ -35,8 +35,6 @@ vi.mock('@proton/andromeda', async () => {
         ),
     };
 });
-
-vi.mock('../constants/email-integration', () => ({ POOL_FILLING_THRESHOLD: 3 }));
 
 describe('useWalletAutoCreate', () => {
     let addressWithKey: { address: Address; keys: DecryptedAddressKey[] };
