@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef } from 'react';
 
-import { useGetMessageCounts, useMessageCounts } from '@proton/components';
 import { useConversationCounts, useGetConversationCounts } from '@proton/mail/counts/conversationCounts';
+import { useGetMessageCounts, useMessageCounts } from '@proton/mail/counts/messageCounts';
 import { CacheType } from '@proton/redux-utilities';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
