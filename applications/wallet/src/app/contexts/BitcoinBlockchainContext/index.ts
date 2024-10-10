@@ -36,6 +36,8 @@ export interface BitcoinBlockchainContextValue {
 
     feesEstimation: Map<string, number>;
     loadingFeesEstimation: boolean;
+    minimumFee: number;
+    loadingMinimumFee: boolean;
 
     manageBitcoinAddressPool: ({
         wallet,
@@ -69,6 +71,8 @@ export const BitcoinBlockchainContext = createContext<BitcoinBlockchainContextVa
 
     feesEstimation: new Map(),
     loadingFeesEstimation: false,
+    minimumFee: 1,
+    loadingMinimumFee: false,
 
     manageBitcoinAddressPool: async () => {},
     bitcoinAddressHelperByWalletAccountId: {},
