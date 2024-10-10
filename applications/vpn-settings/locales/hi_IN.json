@@ -106,12 +106,6 @@
       "Choose my own password": [
         "मेरा खुद का पासवर्ड चुनें"
       ],
-      "Clear filter": [
-        "फिल्टर हटाएं"
-      ],
-      "Clear filters": [
-        "फिल्टर हटाएं"
-      ],
       "Close": [
         "बंद करें"
       ],
@@ -258,6 +252,9 @@
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "अन्य ${ BRAND_NAME } योजना देखें"
+      ],
+      "Export": [
+        "निर्यात करें"
       ],
       "Extend": [
         "फैलाएं"
@@ -444,6 +441,9 @@
       ],
       "Resend code": [
         "कोड वापस भेजें"
+      ],
+      "Reset": [
+        "रीसेट करें"
       ],
       "Reset credentials": [
         "क्रेडेंशियल रीसेट करें"
@@ -2444,9 +2444,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "नया उपयोगकर्ता बनाने से पहले आपको एक कस्टम डोमेन कॉन्फ़िगर करना होगा।"
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "आपको अपने ${ BRAND_NAME } खाते को इस समूह योजना से लिंक करने और साथ में सभी ${ BRAND_NAME_TWO } प्रीमियम सुविधाओं का आनंद लेने के लिए आमंत्रित किया जाता है।"
-      ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "आपका खाता ${ usedSpace } स्टोरेज का उपयोग कर रहा है, जो आपको दिए गए ${ inviteSpace } से अधिक है। कुछ डेटा हटाएं या प्लान एडमिन से अपना स्टोरेज बढ़ाने के लिए कहें।"
       ]
@@ -3077,9 +3074,6 @@
         "प्रभावित उपयोगकर्ता पंक्ति पर है",
         "प्रभावित उपयोगकर्ता पंक्तियों पर हैं"
       ],
-      "All Events ": [
-        "सभी कार्यक्रम "
-      ],
       "All your changes will be lost.": [
         "आपके सभी परिवर्तन खो जाएंगे।"
       ],
@@ -3497,16 +3491,7 @@
       "Internet connection restored.": [
         "इंटरनेट कनेक्शन बहाल"
       ],
-      "Invite Accepted": [
-        "न्योता माना गया"
-      ],
-      "Invite Created": [
-        "न्योता बनाया गया"
-      ],
       "Invite deleted": [
-        "न्योता मिटाया गया"
-      ],
-      "Invite Deleted": [
         "न्योता मिटाया गया"
       ],
       "Invite for organization accepted": [
@@ -3518,32 +3503,17 @@
       "Invite rejected": [
         "न्योता ठुकराया गया"
       ],
-      "Invite Rejected": [
-        "न्योता ठुकराया गया"
-      ],
-      "Item Autofilled": [
-        "आइटम स्वतः भरा गया"
-      ],
       "Item autofilled in vault": [
         "आइटम तिजोरी में स्वत: भर गई"
       ],
-      "Item Created": [
-        "आइटम बनाया गया"
-      ],
       "Item created in vault": [
         "तिजोरी में बनाया गया आइटम"
-      ],
-      "Item Deleted": [
-        "आइटम मिटाया गया"
       ],
       "Item flags changed in vault": [
         "तिजोरी में आइटम के फ्लैग बदले गए"
       ],
       "Item read in vault": [
         "तिजोरी में पढ़ा गया आइटम"
-      ],
-      "Item Updated": [
-        "आइटम अपडेट हुआ"
       ],
       "Item updated in vault": [
         "तिजोरी में आइटम अपडेट हुआ"
@@ -3631,12 +3601,6 @@
       ],
       "Must start with a letter.": [
         "किसी अक्षर से शुरू होना चाहिए।"
-      ],
-      "New User Invite Created": [
-        "नया यूजर न्योता बनाया गया"
-      ],
-      "New User Invite Deleted": [
-        "नया यूजर न्योता मिटाया गया"
       ],
       "No addresses exist": [
         "कोई पता मौजूद नहीं है"
@@ -3837,15 +3801,6 @@
       ],
       "Setting up your organization": [
         "अपना संगठन स्थापित करना"
-      ],
-      "Share Created": [
-        "शेयर बनाया गया"
-      ],
-      "Share Deleted": [
-        "शेयर मिटाया गया"
-      ],
-      "Share Updated": [
-        "शेयर अपडेट हुआ"
       ],
       "Shared vault deleted": [
         "साझा तिजोरी मिटा दी गई"
@@ -4094,22 +4049,13 @@
       "Vault created": [
         "तिजोरी बनाया गया"
       ],
-      "Vault Created": [
-        "तिजोरी बनाई गई"
-      ],
       "Vault deleted": [
-        "तिजोरी मिटाई गई"
-      ],
-      "Vault Deleted": [
         "तिजोरी मिटाई गई"
       ],
       "Vault shared with email": [
         "तिजोरी ईमेल द्वारा शेयर की गयी"
       ],
       "Vault updated": [
-        "तिजोरी अपडेट हुई"
-      ],
-      "Vault Updated": [
         "तिजोरी अपडेट हुई"
       ],
       "Verification can take a few minutes.": [
@@ -4901,6 +4847,16 @@
     "label": {
       "Recovery phone number": [
         "पुनर्प्राप्ति फ़ोन नंबर"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "से"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "को"
       ]
     },
     "Label for adding a new custom domain": {
@@ -6255,9 +6211,6 @@
       ],
       "E.g., ": [
         "जैसे, "
-      ],
-      "Email or IP": [
-        "ईमेल या आईपी"
       ],
       "End date": [
         "समाप्ति दिनांक"
@@ -7723,9 +7676,6 @@
       "Error": [
         "गड़बड़"
       ],
-      "Event": [
-        "इवेंट"
-      ],
       "Every member of the organization can access": [
         "संगठन का प्रत्येक सदस्य एक्सेस कर सकता है"
       ],
@@ -7958,9 +7908,6 @@
       ],
       "Switch to two-password mode": [
         "दो-पासवर्ड मोड पर स्विच करें"
-      ],
-      "Time": [
-        "समय"
       ],
       "TV sign in": [
         "टीवी पे साइनइन करें"

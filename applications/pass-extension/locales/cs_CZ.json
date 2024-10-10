@@ -269,6 +269,12 @@
       "Import": [
         "Importovat"
       ],
+      "Import alias": [
+        "Importovat alias",
+        "Importovat aliasy",
+        "Importovat aliasy",
+        "Importovat aliasy"
+      ],
       "Import your passwords": [
         "Importujte svá hesla"
       ],
@@ -1885,6 +1891,12 @@
       "You cannot change the mailboxes for this alias.": [
         "Nemůžete měnit e-mailové schránky tohoto aliasu."
       ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Máte ${ aliasCount } alias, který je přítomen v SimpleLogin, ale chybí v ${ PASS_APP_NAME }. Chcete jej importovat?",
+        "Máte ${ aliasCount } aliasy, které jsou přítomné v SimpleLogin, ale chybí v ${ PASS_APP_NAME }. Chcete je importovat?",
+        "Máte ${ aliasCount } aliasů, které jsou přítomné v SimpleLogin, ale chybí v ${ PASS_APP_NAME }. Chcete je importovat?",
+        "Máte ${ aliasCount } aliasů, které jsou přítomné v SimpleLogin, ale chybí v ${ PASS_APP_NAME }. Chcete je importovat?"
+      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Na vyzkoušení těchto a dalších prémiových funkcí vám zbývá ${ daysRemaining } den.",
         "Na vyzkoušení těchto a dalších prémiových funkcí vám zbývají ${ daysRemaining } dny.",
@@ -2903,6 +2915,9 @@
       ],
       "Import to vault(s)": [
         "Importovat do trezoru(ů)"
+      ],
+      "Import your aliases from SimpleLogin": [
+        "Importujte své aliasy ze SimpleLogin"
       ],
       "Last autofill": [
         "Poslední automatické vyplnění"

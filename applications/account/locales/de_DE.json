@@ -70,11 +70,11 @@
       "Accept": [
         "Annehmen"
       ],
-      "activate": [
-        "aktivieren"
-      ],
       "Activate": [
         "Aktivieren"
+      ],
+      "activate": [
+        "aktivieren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktivieren"
@@ -225,12 +225,6 @@
       ],
       "Clear all formatting": [
         "Alle Formatierungen entfernen"
-      ],
-      "Clear filter": [
-        "Filter zurücksetzen"
-      ],
-      "Clear filters": [
-        "Filter zurücksetzen"
       ],
       "Close": [
         "Schließen"
@@ -867,6 +861,9 @@
       ],
       "Resend code": [
         "Code erneut senden"
+      ],
+      "Reset": [
+        "Zurücksetzen"
       ],
       "Reset credentials": [
         "Anmeldedaten zurücksetzen"
@@ -5150,14 +5147,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-Gruppen"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Konten mit eigenen Domains können keinem Gruppenabonnement beitreten."
-      ],
       "customer support": [
         "Kundendienst"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Gruppenabonnements unterstützen derzeit keine externen Konten. Erstelle vor dem Beitritt eine ${ BRAND_NAME }-Adresse. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Wenn du die Einladung annimmst, wechseln wir dein aktuelles Abonnement und schreiben deinem Konto das verbleibende Guthaben gut."
@@ -5177,9 +5168,6 @@
       "Leave Visionary plan": [
         "Visionary-Abonnement verlassen"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Lebenslang lizenzierte Konten können keinem Gruppenabonnement beitreten."
-      ],
       "Manage addresses.": [
         "Adressen verwalten."
       ],
@@ -5189,9 +5177,6 @@
       "Only ${ n } accepted invitation are allowed in a 6-month period.": [
         "In einem Zeitraum von 6 Monaten ist nur ${ n } angenommene Einladung zulässig.",
         "In einem Zeitraum von 6 Monaten sind nur ${ n } angenommene Einladungen zulässig."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Besitzer eines Abonnements mit Mitgliedern können keinem anderen Gruppenabonnement beitreten."
       ],
       "Pending": [
         "Ausstehend"
@@ -5237,9 +5222,6 @@
       "You have successfully joined the family group": [
         "Du bist erfolgreich der Familiengruppe beigetreten"
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Du hast unbezahlte Rechnungen. Bitte bezahle diese, bevor du einem Gruppenabonnement beitrittst."
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Du musst eine eigene Domain konfigurieren, bevor du mehrere Benutzer hinzufügst."
       ],
@@ -5248,9 +5230,6 @@
       ],
       "You will lose access to all premium features and storage space included with ${ plan }.": [
         "Du wirst Zugriff zu allen Premiumfunktionen und Speicherplatz, der mit ${ plan } kommt, verlieren."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit diesem Gruppenabonnement zu verknüpfen und gemeinsam alle ${ BRAND_NAME_TWO } Premium-Funktionen zu nutzen."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Dein Konto hat mehr E-Mail-Adressen, als dir in diesem Abonnement zur Verfügung stehen. ${ addressSettingsLink }"
@@ -6704,9 +6683,6 @@
         "Alle (${ totalFoldersCount } Kategorie)",
         "Alle (${ totalFoldersCount } Kategorien)"
       ],
-      "All Events ": [
-        "Alle Ereignisse "
-      ],
       "All keys successfully reactivated": [
         "Alle Schlüssel wurden erfolgreich wiederhergestellt"
       ],
@@ -6884,15 +6860,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Stärke die Markenidentität deines Unternehmens und schaffe ein konsistentes Online-Erlebnis für deine Benutzer."
-      ],
-      "Breach Custom Email Created": [
-        "Persönliche E-Mail im Falle einer Datenpanne erstellt"
-      ],
-      "Breach Custom Email Deleted": [
-        "Persönliche E-Mail im Falle einer Datenpanne gelöscht"
-      ],
-      "Breach Custom Email Validated": [
-        "Persönliche E-Mail im Falle einer Datenpanne validiert"
       ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Standardmäßig können Organisationsmitglieder nur Tresore exportieren, deren Eigentümer sie sind. Wenn diese Option aktiviert ist, können sie keine Daten exportieren."
@@ -7494,16 +7461,7 @@
       "Invitation link used": [
         "Einladungslink verwendet"
       ],
-      "Invite Accepted": [
-        "Einladung akzeptiert"
-      ],
-      "Invite Created": [
-        "Einladung erstellt"
-      ],
       "Invite deleted": [
-        "Einladung gelöscht"
-      ],
-      "Invite Deleted": [
         "Einladung gelöscht"
       ],
       "Invite for new user deleted": [
@@ -7518,9 +7476,6 @@
       "Invite rejected": [
         "Einladung abgelehnt"
       ],
-      "Invite Rejected": [
-        "Einladung abgelehnt"
-      ],
       "Invite successfully sent": [
         "Einladung erfolgreich versendet",
         "Einladungen erfolgreich versendet"
@@ -7528,29 +7483,17 @@
       "It appears some of your data is encrypted and locked.": [
         "Scheinbar sind einige deiner Daten verschlüsselt und gesperrt."
       ],
-      "Item Autofilled": [
-        "Eintrag automatisch ausgefüllt"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "Eintrag in ${ vaultLink } automatisch ausgefüllt."
       ],
       "Item autofilled in vault": [
         "Eintrag automatisch im Tresor ausgefüllt"
       ],
-      "Item Changed Flags": [
-        "Eintragveränderungskennzeichnung"
-      ],
-      "Item Created": [
-        "Eintrag erstellt"
-      ],
       "Item created in ${ vaultLink }": [
         "Eintrag in ${ vaultLink } erstellt."
       ],
       "Item created in vault": [
         "Eintrag in Tresor erstellt"
-      ],
-      "Item Deleted": [
-        "Eintrag gelöscht"
       ],
       "Item deleted from ${ vaultLink }": [
         "Eintrag aus ${ vaultLink } gelöscht."
@@ -7576,23 +7519,11 @@
       "Item in vault untrashed": [
         "Eintrag in Tresor wiederhergestellt"
       ],
-      "Item Read": [
-        "Eintrag angesehen"
-      ],
       "Item read in ${ vaultLink }": [
         "Eintrag in ${ vaultLink } angesehen."
       ],
       "Item read in vault": [
         "Eintrag in Tresor angesehen"
-      ],
-      "Item Trashed": [
-        "Eintrag in den Papierkorb gelegt"
-      ],
-      "Item Untrashed": [
-        "Eintrag aus dem Papierkorb entfernt"
-      ],
-      "Item Updated": [
-        "Eintrag aktualisiert"
       ],
       "Item updated in ${ vaultLink }": [
         "Eintrag in ${ vaultLink } aktualisiert."
@@ -7761,12 +7692,6 @@
       ],
       "New": [
         "Neu"
-      ],
-      "New User Invite Created": [
-        "Neue Benutzereinladung erstellt"
-      ],
-      "New User Invite Deleted": [
-        "Neue Benutzereinladung gelöscht"
       ],
       "New user invited to organization": [
         "Neuen Benutzer zur Organisation eingeladen"
@@ -8161,15 +8086,6 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
       ],
-      "Session Ended": [
-        "Sitzung beendet"
-      ],
-      "Session Roaming": [
-        "Sitzungsroaming"
-      ],
-      "Session Started": [
-        "Sitzung gestartet"
-      ],
       "Session timed out": [
         "Zeitüberschreitung der Sitzung"
       ],
@@ -8184,15 +8100,6 @@
       ],
       "Settings updated": [
         "Einstellungen aktualisiert"
-      ],
-      "Share Created": [
-        "Linkfreigabe erstellt"
-      ],
-      "Share Deleted": [
-        "Linkfreigabe gelöscht"
-      ],
-      "Share Updated": [
-        "Linkfreigabe aktualisiert"
       ],
       "Shared ${ vaultLink } deleted": [
         "Geteilten ${ vaultLink } gelöscht."
@@ -8648,9 +8555,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten."
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Führe eine Abonnementaufwertung auf ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, oder ${ PLAN_NAMES[bundleProPlan] } durch um Zugang zu ${ PROTON_SENTINEL_NAME } zu erhalten."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Führe ein Upgrade durch, um deinem Konto kürzere @pm.me-Adressen hinzuzufügen, die einfacher zu teilen sind. Das steht für \"${ MAIL_APP_NAME } me\" oder \"Private Message me\"."
       ],
@@ -8702,13 +8606,7 @@
       "Vault created": [
         "Tresor erstellt"
       ],
-      "Vault Created": [
-        "Tresor erstellt"
-      ],
       "Vault deleted": [
-        "Tresor gelöscht"
-      ],
-      "Vault Deleted": [
         "Tresor gelöscht"
       ],
       "Vault either deleted or requires access permissions": [
@@ -8718,9 +8616,6 @@
         "Tresor geteilt via E-Mail"
       ],
       "Vault updated": [
-        "Tresor aktualisiert"
-      ],
-      "Vault Updated": [
         "Tresor aktualisiert"
       ],
       "Verification can take a few minutes.": [
@@ -10625,6 +10520,16 @@
       ],
       "Recovery phrase": [
         "Wiederherstellungsphrase"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Von"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "An"
       ]
     },
     "Label for adding a new custom domain": {
@@ -13678,9 +13583,6 @@
       "Email address": [
         "E-Mail-Adresse"
       ],
-      "Email or IP": [
-        "Email oder IP"
-      ],
       "End date": [
         "Enddatum"
       ],
@@ -16179,9 +16081,6 @@
       "Status": [
         "Status"
       ],
-      "Time": [
-        "Zeit"
-      ],
       "Total storage": [
         "Gesamter Speicherplatz"
       ],
@@ -16480,9 +16379,6 @@
       "Connect ${ name }": [
         "Verbinde ${ name }"
       ],
-      "Connection events": [
-        "Verbindungsereignisse"
-      ],
       "Connection monitor disabled": [
         "Verbindungsüberwachung deaktiviert"
       ],
@@ -16742,9 +16638,6 @@
       ],
       "Error": [
         "Fehler"
-      ],
-      "Event": [
-        "Termin"
       ],
       "Every member of the organization can access": [
         "Jedes Mitglied der Organisation kann darauf zugreifen"
@@ -17276,9 +17169,6 @@
       ],
       "This field cannot contain only spaces": [
         "Dieses Feld darf nicht nur Leerzeichen enthalten."
-      ],
-      "Time": [
-        "Zeit"
       ],
       "Time zone": [
         "Zeitzone"

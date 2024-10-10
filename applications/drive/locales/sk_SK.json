@@ -390,14 +390,17 @@
       "Get link": [
         "Získať odkaz"
       ],
-      "Get started": [
+      "Get Started": [
         "Začíname"
       ],
-      "Get Started": [
+      "Get started": [
         "Začíname"
       ],
       "Get verification code": [
         "Odoslať overovací kód"
+      ],
+      "Go back": [
+        "Späť"
       ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Prejsť na ${ DRIVE_SHORT_APP_NAME }"
@@ -564,11 +567,11 @@
       "Not now": [
         "Teraz nie"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open": [
         "Otvoriť"
@@ -3405,14 +3408,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } skupiny"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Účty s vlastnými doménami sa nemôžu pripojiť do skupinového plánu."
-      ],
       "customer support": [
         "zákaznícka podpora"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Skupinové plány v súčasnosti nepodporujú externé účty. Pred pripojením si vytvorte ${ BRAND_NAME } adresu. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Ak pozvánku prijmete, zameníme váš aktuálny plán a zostávajúcu čiastku pripíšeme k vášmu účtu ako kredit."
@@ -3420,14 +3417,8 @@
       "Invited by: ${ inviteEmail }": [
         "Pozvánka od: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Doživotné účty nemôžu byť pripojené do skupinového predplatného."
-      ],
       "Manage addresses.": [
         "Spravovať adresy."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Vlastníci plánu s členmi sa nemôžu pripojiť k inému skupinovému plánu."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Ľutujeme, momentálne nemôžete zmeniť plány."
@@ -3449,12 +3440,6 @@
       ],
       "You have successfully joined the family group": [
         "Úspešne ste sa pripojili do rodinnej skupiny"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Máte nezaplatené faktúry. Pred pripojením do skupinového plánu ich zaplaťte, prosím."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Dostali ste pozvánku na pripojenie vášho účtu ${ BRAND_NAME } k tomuto skupinovému plánu, kde si môžete užívať všetky ${ BRAND_NAME_TWO } prémiové funkcie."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Váš účet má viac emailových adries než koľko máte k dispozícii v tomto pláne. ${ addressSettingsLink }"
@@ -8058,34 +8043,145 @@
       ]
     },
     "Onboarding Action": {
+      "Continue": [
+        "Pokračovať"
+      ],
       "Create new document": [
         "Vytvoriť nový dokument"
       ],
+      "Get started": [
+        "Začíname"
+      ],
+      "Install and continue": [
+        "Inštalovať a pokračovať"
+      ],
+      "Install later": [
+        "Inštalovať neskôr"
+      ],
+      "Invite members": [
+        "Pozvať členov"
+      ],
+      "Maybe later": [
+        "Možno neskôr"
+      ],
       "Next": [
         "Ďalej"
+      ],
+      "Select theme": [
+        "Vyberte motív"
+      ],
+      "Skip": [
+        "Preskočiť"
+      ],
+      "Skip for now": [
+        "Nateraz preskočiť"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Začnite používať ${ DRIVE_APP_NAME }"
       ],
       "Try it later": [
         "Skúste to neskôr"
+      ],
+      "Try the app": [
+        "Vyskúšať aplikáciu"
+      ],
+      "Upload file": [
+        "Nahrať súbor"
+      ],
+      "Upload folder": [
+        "Nahrať priečinok"
       ]
     },
     "Onboarding Info": {
+      "Access your files on the go": [
+        "Pristupujte k svojim súborom na cestách"
+      ],
+      "Back up your photos and memories": [
+        "Zálohujte svoje fotografie a spomienky"
+      ],
+      "Backup your photos and memories": [
+        "Zálohujte svoje fotografie a spomienky"
+      ],
+      "Choose your favorite theme": [
+        "Vyberte si obľúbený vzhľad"
+      ],
       "Collaborate on documents": [
         "Spolupráca na dokumentoch"
       ],
       "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
         "Vytvárajte dokumenty a spolupracujte na nich. Všetko je chránené end-to-end šifrovaním."
       ],
+      "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
+        "Páči sa vám ${ DRIVE_APP_NAME } v svetlom alebo tmavom režime? Vyberte si farbu, ktorá vás inšpiruje najviac."
+      ],
+      "Drag and drop your files here": [
+        "Pretiahnite svoje súbory sem"
+      ],
+      "Edit documents online": [
+        "Upravujte dokumenty online"
+      ],
+      "End-to-end encrypted storage for your files": [
+        "End-to-end šifrované úložisko pre vaše súbory"
+      ],
+      "Faster uploads for large or multiple files": [
+        "Rýchlejšie nahrávanie veľkých alebo viacerých súborov"
+      ],
+      "Final approval in progress": [
+        "Prebieha konečné schvaľovanie"
+      ],
+      "Final approval pending": [
+        "Čaká sa na konečné schválenie"
+      ],
+      "Free up hard drive space on your computer": [
+        "Uvoľnite miesto na pevnom disku počítača"
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Začnite používať ${ DRIVE_APP_NAME } a my vám navýšime vaše úložisko na 5 GB!"
+      ],
+      "Get the desktop app": [
+        "Získajte desktopovú aplikáciu"
+      ],
+      "Get the mobile app": [
+        "Získajte mobilnú aplikáciu"
+      ],
+      "Got an Android? We've got you covered.": [
+        "Máte Android? Máme pre vás riešenie."
+      ],
+      "Got an iPhone? We've got you covered.": [
+        "Máte iPhone? Máme pre vás riešenie."
+      ],
+      "Hang tight": [
+        "Chvíľku počkajte"
       ],
       "Introducing ${ DOCS_APP_NAME }": [
         "Predstavujeme ${ DOCS_APP_NAME }"
       ],
+      "Invitation accepted": [
+        "Pozvánka prijatá"
+      ],
+      "Invitation received": [
+        "Doručená pozvánka"
+      ],
+      "Invite team members": [
+        "Pozvite členov tímu"
+      ],
       "Manage access": [
         "Spravovanie prístupu"
+      ],
+      "Organize files right from your desktop": [
+        "Organizácia súborov priamo z pracovnej plochy"
+      ],
+      "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
+        "Chráňte svoje finančné dokumenty, občianske preukazy, projektové súbory, fotografie a ďalšie dokumenty pomocou end-to-end šifrovania."
+      ],
+      "Scan the QR code to install the mobile app": [
+        "Naskenovaním QR kódu nainštalujete mobilnú aplikáciu"
+      ],
+      "Secure your files": [
+        "Zabezpečte svoje súbory"
+      ],
+      "Securely share files and folders": [
+        "Bezpečne zdieľajte súbory a priečinky"
       ],
       "Securely store, manage, and share your business-critical files with confidence.": [
         "Bezpečne ukladajte, spravujte a zdieľajte kritické obchodné súbory."
@@ -8108,11 +8204,23 @@
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "Ukladajte svoje súbory a bezpečne ich zdieľajte. Začnite zabezpečením svojich najosobnejších súborov, ako sú doklady totožnosti, zmluvy a osobné fotografie."
       ],
+      "Sync and access your files from anywhere": [
+        "Synchronizujte svoje súbory a pristupujte k nim odkiaľkoľvek"
+      ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Majiteľ musí potvrdiť zdieľanie prístupu. Po jeho dokončení dostanete email."
       ],
       "Upload a file": [
         "Nahrať súbor"
+      ],
+      "Upload your first file": [
+        "Nahrajte váš prvý súbor"
+      ],
+      "Work faster, smarter": [
+        "Pracujte rýchlejšie a chytrejšie"
+      ],
+      "Work together": [
+        "Pracujte spoločne"
       ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Váš spoľahlivý online trezor na dôležité dokumenty a vzácne spomienky."
@@ -8578,11 +8686,6 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(otvorí ${ PASS_APP_NAME })"
-      ]
-    },
-    "Security Center - Action": {
-      "View logs": [
-        "Zobraziť záznamy"
       ]
     },
     "Security Center - Info": {

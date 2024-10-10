@@ -112,12 +112,6 @@
       "Choose my own password": [
         "Välj mitt eget lösenord"
       ],
-      "Clear filter": [
-        "Rensa filter"
-      ],
-      "Clear filters": [
-        "Rensa filter"
-      ],
       "Close": [
         "Stäng"
       ],
@@ -282,6 +276,9 @@
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Utforska andra ${ BRAND_NAME }-paket"
+      ],
+      "Export": [
+        "Exportera"
       ],
       "Extend": [
         "Utöka"
@@ -480,6 +477,9 @@
       ],
       "Resend code": [
         "Skicka koden igen"
+      ],
+      "Reset": [
+        "Återställ"
       ],
       "Reset credentials": [
         "Återställ användaruppgifter"
@@ -2250,6 +2250,9 @@
     "Downgrade warning": {
       "Remove discount": [
         "Ta bort rabatt"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Din ${ PLAN_NAMES[PLANS.PASS] }-prenumeration är till ett specialpris på ${ price } per år. Genom att nedgradera till ett Free-paket kommer du förlora rabatten permanent, även om du uppgraderar igen i framtiden."
       ]
     },
     "driveplus2024: Deal details": {
@@ -2741,14 +2744,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-grupper"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Konton med anpassade domäner kan inte gå med i ett gruppaket"
-      ],
       "customer support": [
         "kundsupport"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Gruppaket stöder för närvarande inte externa konton. Skapa en ${ BRAND_NAME }-adress innan du går med. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Om du accepterar inbjudan kommer vi att byta från ditt nuvarande paket och kreditera ditt konto med eventuellt återstående saldo."
@@ -2759,9 +2756,6 @@
       "Invited by: ${ inviteEmail }": [
         "Inbjuden av: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Livstidskonton kan inte gå med i ett gruppaket."
-      ],
       "Manage addresses.": [
         "Hantera adresser."
       ],
@@ -2771,9 +2765,6 @@
       "Only ${ n } accepted invitation are allowed in a 6-month period.": [
         "Endast ${ n } accepterad inbjudan är tillåten under en 6-månadersperiod.",
         "Endast ${ n } accepterade inbjudningar är tillåtna under en 6-månadersperiod."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Ägare av ett paket med medlemmar kan inte gå med i ett annat gruppaket."
       ],
       "Pending": [
         "Väntande"
@@ -2813,17 +2804,11 @@
       "You have successfully joined the family group": [
         "Du har gått med i familjegruppen"
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Du har obetalda fakturor. Betala dem innan du går med i ett gruppaket."
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Du måste konfigurera en anpassad domän innan du lägger till flera användare."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Du måste konfigurera en anpassad domän innan du skapar en ny användare."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Du är inbjuden att länka ditt ${ BRAND_NAME }-konto till detta gruppaket och tillsammans njuta av alla ${ BRAND_NAME_TWO } premiumfunktioner."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Ditt konto har fler e-postadresser än vad som är tillgängligt för dig i detta paket. ${ addressSettingsLink }"
@@ -3536,9 +3521,6 @@
         "Berörd användare är på rad",
         "Berörda användare är på raderna"
       ],
-      "All Events ": [
-        "Alla händelser "
-      ],
       "All members have been added.": [
         "Alla medlemmar har lagts till."
       ],
@@ -3993,16 +3975,7 @@
       "Internet connection restored.": [
         "Internetanslutning återställd."
       ],
-      "Invite Accepted": [
-        "Inbjudan accepterad"
-      ],
-      "Invite Created": [
-        "Inbjudning skapad"
-      ],
       "Invite deleted": [
-        "Inbjudan borttagen"
-      ],
-      "Invite Deleted": [
         "Inbjudan borttagen"
       ],
       "Invite for new user deleted": [
@@ -4017,32 +3990,17 @@
       "Invite rejected": [
         "Inbjudan avvisad"
       ],
-      "Invite Rejected": [
-        "Inbjudan avvisad"
-      ],
-      "Item Autofilled": [
-        "Objekt automatiskt ifyllt"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "Objekt automatiskt ifyllt i ${ vaultLink }"
       ],
       "Item autofilled in vault": [
         "Objekt automatiskt ifyllt i valv"
       ],
-      "Item Changed Flags": [
-        "Objekt ändrade flaggor"
-      ],
-      "Item Created": [
-        "Objekt skapat"
-      ],
       "Item created in ${ vaultLink }": [
         "Objekt skapat i ${ vaultLink }"
       ],
       "Item created in vault": [
         "Objekt skapat i valv"
-      ],
-      "Item Deleted": [
-        "Objekt borttaget"
       ],
       "Item deleted from ${ vaultLink }": [
         "Objekt borttaget från ${ vaultLink }"
@@ -4056,17 +4014,11 @@
       "Item flags changed in vault": [
         "Objektflaggor ändrade i valv"
       ],
-      "Item Read": [
-        "Objekt läst"
-      ],
       "Item read in ${ vaultLink }": [
         "Objekt läst i ${ vaultLink }"
       ],
       "Item read in vault": [
         "Objekt läst i valv"
-      ],
-      "Item Updated": [
-        "Objekt uppdaterat"
       ],
       "Item updated in ${ vaultLink }": [
         "Objekt uppdaterat i ${ vaultLink }"
@@ -4163,12 +4115,6 @@
       ],
       "Must start with a letter.": [
         "Måste börja med en bokstav."
-      ],
-      "New User Invite Created": [
-        "Ny användarinbjudan skapad"
-      ],
-      "New User Invite Deleted": [
-        "Ny användarinbjudan borttagen"
       ],
       "New user invited to organization": [
         "Ny användare inbjuden till organisation"
@@ -4409,26 +4355,11 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Servrarna kan inte nås. Försök igen om några minuter"
       ],
-      "Session Ended": [
-        "Session avslutad"
-      ],
-      "Session Started": [
-        "Session startad"
-      ],
       "Session timed out": [
         "Session timeout"
       ],
       "Setting up your organization": [
         "Ställer in din organisation"
-      ],
-      "Share Created": [
-        "Delning skapad"
-      ],
-      "Share Deleted": [
-        "Delning borttagen"
-      ],
-      "Share Updated": [
-        "Delning uppdaterad"
       ],
       "Shared ${ vaultLink } deleted": [
         "Delad ${ vaultLink } borttagen"
@@ -4581,6 +4512,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Denna verifiering kan ta upp till en timme. Efter lyckad verifiering, ta inte bort TXT-posten eftersom den behövs för att bekräfta att du fortsätter att äga domänen."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Detta kommer att inaktivera tvåfaktorsautentisering, inklusive båda metoderna för autentiseringsapp och säkerhetsnyckel."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Detta gör att PayPal kan användas för att betala för din ${ BRAND_NAME }-prenumeration. Vi kommer omdirigera dig till PayPal i en ny webbläsarflik. Om du använder popup-blockerare, inaktivera dem för att fortsätta."
       ],
@@ -4722,22 +4656,13 @@
       "Vault created": [
         "Valv skapat"
       ],
-      "Vault Created": [
-        "Valv skapat"
-      ],
       "Vault deleted": [
-        "Valv borttaget"
-      ],
-      "Vault Deleted": [
         "Valv borttaget"
       ],
       "Vault shared with email": [
         "Valv delad med e-post"
       ],
       "Vault updated": [
-        "Valv uppdaterat"
-      ],
-      "Vault Updated": [
         "Valv uppdaterat"
       ],
       "Verification can take a few minutes.": [
@@ -5615,6 +5540,16 @@
     "label": {
       "Recovery phone number": [
         "Telefonnummer för återställning"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Från"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Till"
       ]
     },
     "Label for adding a new custom domain": {
@@ -6796,6 +6731,9 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personifiera din e-postsignatur med loggor bilder, ikoner för sociala medier, länkar till dina kontaktuppgifter och mer"
       ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Telefonsupport är tillgänglig från ${ BRAND_NAME } kundsupportteam under europeiska öppettider, för kunder med 20 eller fler användare"
+      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Förhindrar meddelanden från åtkomst av ${ BRAND_NAME } eller tredje part. De enda som kan läsa meddelandena är avsändaren och den tilltänkta mottagaren."
       ],
@@ -7552,9 +7490,6 @@
       ],
       "E.g., ": [
         "T.ex., "
-      ],
-      "Email or IP": [
-        "E-post eller IP"
       ],
       "End date": [
         "Slutdatum"
@@ -9479,6 +9414,9 @@
       "Change second password": [
         "Ändra andra lösenord"
       ],
+      "Click a value in the table to use it as filter": [
+        "Klicka ett värde i tabellen för att använda det som filter"
+      ],
       "Close": [
         "Stäng"
       ],
@@ -9496,9 +9434,6 @@
       ],
       "Confirm phone number": [
         "Bekräfta telefonnummer"
-      ],
-      "Connection events": [
-        "Anslutningshändelser"
       ],
       "Connection monitor disabled": [
         "Anslutningsövervakning inaktiverad"
@@ -9663,9 +9598,6 @@
       ],
       "Error": [
         "Fel"
-      ],
-      "Event": [
-        "Händelse"
       ],
       "Every member of the organization can access": [
         "Varje medlem i organisationen kan komma åt"
@@ -9920,9 +9852,6 @@
       ],
       "There are no groups": [
         "Det finns inga grupper"
-      ],
-      "Time": [
-        "Tid"
       ],
       "TV sign in": [
         "TV-inloggning"

@@ -70,10 +70,10 @@
       "Accept": [
         "수락"
       ],
-      "activate": [
+      "Activate": [
         "활성화"
       ],
-      "Activate": [
+      "activate": [
         "활성화"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -225,12 +225,6 @@
       ],
       "Clear all formatting": [
         "모든 서식 지우기"
-      ],
-      "Clear filter": [
-        "필터 초기화"
-      ],
-      "Clear filters": [
-        "필터 초기화"
       ],
       "Close": [
         "닫기"
@@ -867,6 +861,9 @@
       ],
       "Resend code": [
         "코드 다시 보내기"
+      ],
+      "Reset": [
+        "재설정"
       ],
       "Reset credentials": [
         "자격 증명 초기화"
@@ -5164,14 +5161,8 @@
       "*Only one free trial per user. Regular pricing applies thereafter.": [
         "*사용자 당 1회 무료 체험. 종료 후 정규 가격으로 적용됩니다."
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "커스텀 도메인과 연동된 계정은 그룹 플랜에 합류할 수 없습니다."
-      ],
       "customer support": [
         "고객 지원"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "햔재 그룹 플랜은 추가 계정을 지원하지 않습니다. 그룹 합류 전 ${ BRAND_NAME } 계정을 생성하세요. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "초대를 수락하면, 현재 요금제에서 전환되고 남은 잔액이 사용자의 계좌로 환불됩니다."
@@ -5191,9 +5182,6 @@
       "Leave Visionary plan": [
         "Visionary 요금제 떠나기"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "평생 계정은 그룹 플랜에 합류 불가합니다."
-      ],
       "Manage addresses.": [
         "주소를 관리하세요."
       ],
@@ -5202,9 +5190,6 @@
       ],
       "Only ${ n } accepted invitation are allowed in a 6-month period.": [
         "오직 6개월 기간 동안 ${ n }명의 수락된 초대만 가능합니다."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "구성원들이 있는 요금제의 소유자가 다른 그룹 요금제에 합류할 수 없습니다."
       ],
       "Pending": [
         "보류 중"
@@ -5248,9 +5233,6 @@
       "You have successfully joined the family group": [
         "가족 그룹에 성공적으로 가입했습니다."
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "결제가 필요한 청구서들이 있습니다. 그룹 플랜에 참여하기 전에 결제하세요."
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "여러 사용자를 추가하기 전에 지정 도메인을 설정해야 합니다."
       ],
@@ -5259,9 +5241,6 @@
       ],
       "You will lose access to all premium features and storage space included with ${ plan }.": [
         "${ plan }에 포함된 프리미엄 기능들과 저장 공간을 모두 잃게 됩니다."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "사용자가 ${ BRAND_NAME } 계정이 이 그룹 요금제에 합류하도록 초대되었습니다. 함께 모든 ${ BRAND_NAME_TWO } 프리미엄 기능들을 즐기세요."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "사용자의 계정이 사용자 요금제단에서 사용 가능한 이메일 주소 이상을 가지고 있습니다. ${ addressSettingsLink }"
@@ -6680,9 +6659,6 @@
       "All (${ totalFoldersCount } label)": [
         "총 (${ totalFoldersCount } 개 라벨)"
       ],
-      "All Events ": [
-        "모든 이벤트 "
-      ],
       "All keys successfully reactivated": [
         "모든 키가 성공적으로 재활성화 되었습니다"
       ],
@@ -6862,15 +6838,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "조직의 브랜드 아이덴티티를 증진하고 사용자를 위한 더욱 일관된 온라인 경험을 창출하십시오."
-      ],
-      "Breach Custom Email Created": [
-        "침해된 커스텀 이메일 주소 삭제됨"
-      ],
-      "Breach Custom Email Deleted": [
-        "침해된 사용자 지정 이메일 삭제됨"
-      ],
-      "Breach Custom Email Validated": [
-        "침해된 사용자 지정 이메일 인증됨"
       ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "기본적으로 조직의 구성원은 자신이 소유자인 금고만 내보낼 수 있습니다. 이 설정이 켜져 있으면 데이터를 내보낼 수 없습니다."
@@ -7466,17 +7433,8 @@
       "Invitation link used": [
         "초대 링크를 사용했습니다"
       ],
-      "Invite Accepted": [
-        "초대를 수락했습니다"
-      ],
-      "Invite Created": [
-        "초대를 생성했습니다"
-      ],
       "Invite deleted": [
         "초대 삭제됨"
-      ],
-      "Invite Deleted": [
-        "초대를 삭제했습니다"
       ],
       "Invite for new user deleted": [
         "새 사용자의 초대가 삭제되었습니다."
@@ -7490,17 +7448,11 @@
       "Invite rejected": [
         "초대가 거부됨"
       ],
-      "Invite Rejected": [
-        "초대를 거부했습니다"
-      ],
       "Invite successfully sent": [
         "초대장을 성공적으로 보냄"
       ],
       "It appears some of your data is encrypted and locked.": [
         "일부 데이터가 암호화되어 잠겨있어요."
-      ],
-      "Item Autofilled": [
-        "항목을 자동 입력했습니다"
       ],
       "Item autofilled in ${ vaultLink }": [
         "${ vaultLink }에 항목이 자동 완성되었습니다."
@@ -7508,20 +7460,11 @@
       "Item autofilled in vault": [
         "금고 내에 항목을 자동 완성했습니다."
       ],
-      "Item Changed Flags": [
-        "항목의 플래그를 변경했습니다"
-      ],
-      "Item Created": [
-        "항목을 생성했습니다"
-      ],
       "Item created in ${ vaultLink }": [
         "${ vaultLink }에 항목이 추가되었습니다."
       ],
       "Item created in vault": [
         "금고 내에 항목을 생성했습니다."
-      ],
-      "Item Deleted": [
-        "항목 삭제됨"
       ],
       "Item deleted from ${ vaultLink }": [
         "${ vaultLink }에서 항목이 삭제되었습니다."
@@ -7547,23 +7490,11 @@
       "Item in vault untrashed": [
         "금고의 항목이 복원되었습니다"
       ],
-      "Item Read": [
-        "항목을 읽었습니다"
-      ],
       "Item read in ${ vaultLink }": [
         "${ vaultLink }에서 항목을 읽었습니다."
       ],
       "Item read in vault": [
         "항목 내에 항목을 읽었습니다."
-      ],
-      "Item Trashed": [
-        "항목을 쓰레기통으로 보냈습니다"
-      ],
-      "Item Untrashed": [
-        "항목을 복원했습니다"
-      ],
-      "Item Updated": [
-        "항목을 업데이트했습니다"
       ],
       "Item updated in ${ vaultLink }": [
         "${ vaultLink }에 항목이 업데이트되었습니다."
@@ -7732,12 +7663,6 @@
       ],
       "New": [
         "신규"
-      ],
-      "New User Invite Created": [
-        "새로운 사용자 초대를 생성했습니다"
-      ],
-      "New User Invite Deleted": [
-        "새로운 사용자 초대를 삭제했습니다"
       ],
       "New user invited to organization": [
         "새 사용자가 조직에 초대되었습니다."
@@ -8135,15 +8060,6 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "서버에 연결할 수 없음. 몇 분 뒤에 다시 시도하세요"
       ],
-      "Session Ended": [
-        "세션이 종료됨"
-      ],
-      "Session Roaming": [
-        "세션 로밍"
-      ],
-      "Session Started": [
-        "세션이 시작됨"
-      ],
       "Session timed out": [
         "세션 시간 초과됨"
       ],
@@ -8158,15 +8074,6 @@
       ],
       "Settings updated": [
         "설정 업데이트 완료"
-      ],
-      "Share Created": [
-        "공유를 생성했습니다"
-      ],
-      "Share Deleted": [
-        "공유를 삭제했습니다"
-      ],
-      "Share Updated": [
-        "공유를 업데이트했습니다"
       ],
       "Shared ${ vaultLink } deleted": [
         "공유된 ${ vaultLink }이(가) 삭제됨"
@@ -8618,9 +8525,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "지금 업그레이드하여 프리미엄 기능, 제품, 저장 공간을 특별한 가격에 이용하세요."
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "${ PROTON_SENTINEL_NAME } 기능을 사용하려면 ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } 및 ${ PLAN_NAMES[bundleProPlan] } 플랜으로 업그레이드 하세요."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "공유하기 쉽도록 계정에 @pm.me 짧은 주소로 업그레이드 하세요. \"${ MAIL_APP_NAME }\" 또는 \"비공개 메시지 me\"를 의미합니다."
       ],
@@ -8672,14 +8576,8 @@
       "Vault created": [
         "금고를 생성했습니다"
       ],
-      "Vault Created": [
-        "금고를 생성했습니다"
-      ],
       "Vault deleted": [
         "금고를 삭제했습니다"
-      ],
-      "Vault Deleted": [
-        "금고를 지웠습니다"
       ],
       "Vault either deleted or requires access permissions": [
         "삭제되었거나 접근 권한이 필요한 금고입니다"
@@ -8689,9 +8587,6 @@
       ],
       "Vault updated": [
         "금고를 업데이트했습니다"
-      ],
-      "Vault Updated": [
-        "금고 업데이트됨"
       ],
       "Verification can take a few minutes.": [
         "인증은 몇 분이 걸릴 수 있습니다."
@@ -10592,6 +10487,16 @@
       ],
       "Recovery phrase": [
         "복구 키"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "에서"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "까지"
       ]
     },
     "Label for adding a new custom domain": {
@@ -13642,9 +13547,6 @@
       "Email address": [
         "이메일 주소"
       ],
-      "Email or IP": [
-        "이메일 혹은 IP"
-      ],
       "End date": [
         "종료일"
       ],
@@ -16101,9 +16003,6 @@
       "Status": [
         "상태"
       ],
-      "Time": [
-        "시간"
-      ],
       "Total storage": [
         "총 저장공간"
       ],
@@ -16396,9 +16295,6 @@
       "Connect ${ name }": [
         "${ name } 연락"
       ],
-      "Connection events": [
-        "연결된 이벤트"
-      ],
       "Connection monitor disabled": [
         "연결 모니터 비활성화됨"
       ],
@@ -16656,9 +16552,6 @@
       ],
       "Error": [
         "오류"
-      ],
-      "Event": [
-        "이벤트"
       ],
       "Every member of the organization can access": [
         "모든 조직의 구성원이 사용할 수 있습니다."
@@ -17196,9 +17089,6 @@
       ],
       "This field cannot contain only spaces": [
         "이 입력란은 공백 포함이 불가합니다."
-      ],
-      "Time": [
-        "시간"
       ],
       "Time zone": [
         "시간대"

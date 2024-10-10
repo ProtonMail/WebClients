@@ -112,12 +112,6 @@
       "Choose my own password": [
         "Επιλέγω τον δικό μου κωδικό πρόσβασης"
       ],
-      "Clear filter": [
-        "Καθαρισμός φίλτρου"
-      ],
-      "Clear filters": [
-        "Καθαρισμός φίλτρων"
-      ],
       "Close": [
         "Κλείσιμο"
       ],
@@ -282,6 +276,9 @@
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Εξερεύνηση άλλων προγραμμάτων ${ BRAND_NAME }"
+      ],
+      "Export": [
+        "Εξαγωγή"
       ],
       "Extend": [
         "Επέκταση"
@@ -480,6 +477,9 @@
       ],
       "Resend code": [
         "Επαναποστολή κωδικού"
+      ],
+      "Reset": [
+        "Επαναφορά"
       ],
       "Reset credentials": [
         "Επαναφορά διαπιστευτηρίων"
@@ -2756,14 +2756,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } ομάδες"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Οι λογαριασμοί με προσαρμοσμένους τομείς δεν μπορούν να συμμετάσχουν σε ομαδικό πλάνο."
-      ],
       "customer support": [
         "υποστήριξη πελατών"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Τα ομαδικά πλάνα δεν υποστηρίζουν προς το παρόν εξωτερικούς λογαριασμούς. Δημιουργήστε μια διεύθυνση ${ BRAND_NAME } πριν εγγραφείτε. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Εάν αποδεχτείτε την πρόσκληση, θα σας αλλάξουμε από το τρέχον πρόγραμμά σας και θα πιστώσουμε στον λογαριασμό σας τυχόν υπόλοιπο."
@@ -2774,9 +2768,6 @@
       "Invited by: ${ inviteEmail }": [
         "Προσκλήθηκε από: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Οι λογαριασμοί εφ' όρου ζωής δεν μπορούν να συμμετάσχουν σε ομαδικό πλάνο."
-      ],
       "Manage addresses.": [
         "Διαχείριση διευθύνσεων."
       ],
@@ -2786,9 +2777,6 @@
       "Only ${ n } accepted invitation are allowed in a 6-month period.": [
         "Μόνο ${ n } αποδεκτή πρόσκληση επιτρέπεται σε περίοδο 6 μηνών.",
         "Μόνο ${ n } αποδεκτές προσκλήσεις επιτρέπονται σε περίοδο 6 μηνών."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Οι κάτοχοι ενός προγράμματος με μέλη δεν μπορούν να συμμετάσχουν σε άλλο ομαδικό σχέδιο."
       ],
       "Pending": [
         "Σε εκκρεμότητα"
@@ -2828,17 +2816,11 @@
       "You have successfully joined the family group": [
         "Συμμετείχατε με επιτυχία στην ομάδα οικογένειας"
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Έχετε ανεξόφλητα τιμολόγια. Πληρώστε τους πριν συμμετάσχετε σε ένα ομαδικό πλάνο."
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Πρέπει να διαμορφώσετε έναν προσαρμοσμένο τομέα πριν προσθέσετε πολλούς χρήστες."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Πρέπει να διαμορφώσετε έναν προσαρμοσμένο τομέα πριν δημιουργήσετε έναν νέο χρήστη."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Έχετε προσκληθεί να συνδέσετε τον λογαριασμό σας ${ BRAND_NAME } σε αυτό το ομαδικό πρόγραμμα και να απολαύσετε μαζί όλες τις premium λειτουργίες ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Ο λογαριασμός σας έχει περισσότερες διευθύνσεις ηλεκτρονικού ταχυδρομείου από αυτές που είναι διαθέσιμες σε αυτό το σχέδιο. ${ addressSettingsLink }"
@@ -3543,9 +3525,6 @@
         "Ο χρήστης που επηρεάζεται βρίσκεται στη γραμμή",
         "Οι χρήστες που επηρεάζεται βρίσκονται στις γραμμές"
       ],
-      "All Events ": [
-        "Όλες οι εκδηλώσεις "
-      ],
       "All members have been added.": [
         "Όλα τα μέλη έχουν προστεθεί."
       ],
@@ -3632,15 +3611,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Κύκλος χρέωσης: ${ text }"
-      ],
-      "Breach Custom Email Created": [
-        "Δημιουργήθηκε Προσαρμοσμένο Email Παραβίασης"
-      ],
-      "Breach Custom Email Deleted": [
-        "Διαγράφηκε Προσαρμοσμένο Email Παραβίασης"
-      ],
-      "Breach Custom Email Validated": [
-        "Επικυρώθηκε Προσαρμοσμένο Email Παραβίασης"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Με την υποβάθμιση σε ένα Δωρεάν Λογαριασμό, θα χάσετε μόνιμα αυτά τα οφέλη, ακόμη και αν αναβαθμίσετε ξανά στο μέλλον."
@@ -4018,17 +3988,8 @@
       "Internet connection restored.": [
         "Η σύνδεση στο διαδίκτυο αποκαταστάθηκε."
       ],
-      "Invite Accepted": [
-        "Η Πρόσκληση Αποδέχτηκε"
-      ],
-      "Invite Created": [
-        "Η Πρόσκληση Δημιουργήθηκε"
-      ],
       "Invite deleted": [
         "Η πρόσκληση διαγράφηκε"
-      ],
-      "Invite Deleted": [
-        "Η Πρόσκληση Διαγράφηκε"
       ],
       "Invite for new user deleted": [
         "Η πρόσκληση για τον νέο χρήστη διαγράφηκε"
@@ -4042,32 +4003,17 @@
       "Invite rejected": [
         "Η πρόσκληση απορρίφθηκε"
       ],
-      "Invite Rejected": [
-        "Η Πρόσκληση Απορρίφθηκε"
-      ],
-      "Item Autofilled": [
-        "Το στοιχείο συμπληρώθηκε αυτόματα"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "Αυτόματη συμπλήρωση στοιχείου στο ${ vaultLink }"
       ],
       "Item autofilled in vault": [
         "Το στοιχείο συμπληρώθηκε αυτόματα στην κρύπτη"
       ],
-      "Item Changed Flags": [
-        "Το στοιχείο Άλλαξε Σημαίες"
-      ],
-      "Item Created": [
-        "Το στοιχείο Δημιουργήθηκε"
-      ],
       "Item created in ${ vaultLink }": [
         "Το στοιχείο δημιουργήθηκε στην ${ vaultLink }"
       ],
       "Item created in vault": [
         "Το στοιχείο δημιουργήθηκε στην κρύπτη"
-      ],
-      "Item Deleted": [
-        "Το στοιχείο Διαγράφτηκε"
       ],
       "Item deleted from ${ vaultLink }": [
         "Το στοιχείο διαγράφηκε από την ${ vaultLink }"
@@ -4093,23 +4039,11 @@
       "Item in vault untrashed": [
         "Το στοιχείο επαναφέρθηκε στην κρύπτη"
       ],
-      "Item Read": [
-        "Το στοιχείο διαβάστηκε"
-      ],
       "Item read in ${ vaultLink }": [
         "Το στοιχείο διαβάστηκε στην ${ vaultLink }"
       ],
       "Item read in vault": [
         "Το στοιχείο διαβάστηκε στην κρύπτη"
-      ],
-      "Item Trashed": [
-        "Το στοιχείο Απορρίφθηκε"
-      ],
-      "Item Untrashed": [
-        "Το στοιχείο Επαναφέρθηκε"
-      ],
-      "Item Updated": [
-        "Το στοιχείο Ενημερώθηκε"
       ],
       "Item updated in ${ vaultLink }": [
         "Το στοιχείο ενημερώθηκε στην ${ vaultLink }"
@@ -4209,12 +4143,6 @@
       ],
       "Must start with a letter.": [
         "Πρέπει να ξεκινάει με γράμμα."
-      ],
-      "New User Invite Created": [
-        "Δημιουργήθηκε Πρόσκληση Νέου Χρήστη"
-      ],
-      "New User Invite Deleted": [
-        "Διαγράφηκε η Πρόσκληση Νέου Χρήστη"
       ],
       "New user invited to organization": [
         "Ο νέος χρήστης προσκλήθηκε στον οργανισμό"
@@ -4455,29 +4383,11 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
       ],
-      "Session Ended": [
-        "Η Συνεδρία Έληξε"
-      ],
-      "Session Roaming": [
-        "Περιαγωγή Συνεδρίας"
-      ],
-      "Session Started": [
-        "Η Συνεδρία Ξεκίνησε"
-      ],
       "Session timed out": [
         "Λήξη χρόνου συνεδρίας"
       ],
       "Setting up your organization": [
         "Ρύθμιση του οργανισμού σας"
-      ],
-      "Share Created": [
-        "Η κοινοποίηση Δημιουργήθηκε"
-      ],
-      "Share Deleted": [
-        "Η κοινοποίηση Διαγράφηκε"
-      ],
-      "Share Updated": [
-        "Η κοινοποίηση Ενημερώθηκε"
       ],
       "Shared ${ vaultLink } deleted": [
         "Κοινόχρηστο ${ vaultLink } διαγράφηκε"
@@ -4780,23 +4690,14 @@
       "Vault created": [
         "Η κρύπτη δημιουργήθηκε"
       ],
-      "Vault Created": [
-        "Η κρύπτη Δημιουργήθηκε"
-      ],
       "Vault deleted": [
         "Η κρύπτη διαγράφηκε"
-      ],
-      "Vault Deleted": [
-        "Η κρύπτη Διαγράφηκε"
       ],
       "Vault shared with email": [
         "Η κρύπτη έχει κοινοποιηθεί με ηλεκτρονικό ταχυδρομείο"
       ],
       "Vault updated": [
         "Η κρύπτη ενημερώθηκε"
-      ],
-      "Vault Updated": [
-        "Η κρύπτη Ενημερώθηκε"
       ],
       "Verification can take a few minutes.": [
         "Η επαλήθευση μπορεί να πάρει μερικά λεπτά."
@@ -5686,6 +5587,16 @@
         "Τηλεφωνικός αριθμός ανάκτησης"
       ]
     },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Από"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Προς"
+      ]
+    },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Προσθέστε έναν τομέα της κατοχής σας στον λογαριασμό ${ MAIL_APP_NAME } σας."
@@ -6120,6 +6031,9 @@
       ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Αναβάθμιση σε ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -7603,9 +7517,6 @@
       ],
       "E.g., ": [
         "Για παράδειγμα, "
-      ],
-      "Email or IP": [
-        "Email ή IP"
       ],
       "End date": [
         "Ημερομηνία λήξης"
@@ -9568,6 +9479,9 @@
       "Change second password": [
         "Αλλαγή δεύτερου κωδικού πρόσβασης"
       ],
+      "Click a value in the table to use it as filter": [
+        "Κάντε κλικ σε μια τιμή στον πίνακα για να τη χρησιμοποιήσετε σαν φίλτρο"
+      ],
       "Close": [
         "Κλείσιμο"
       ],
@@ -9585,9 +9499,6 @@
       ],
       "Confirm phone number": [
         "Επιβεβαίωση αριθμού τηλεφώνου"
-      ],
-      "Connection events": [
-        "Συμβάντα σύνδεσης"
       ],
       "Connection monitor disabled": [
         "Απενεργοποιημένη η παρακολούθηση σύνδεσης"
@@ -9752,9 +9663,6 @@
       ],
       "Error": [
         "Σφάλμα"
-      ],
-      "Event": [
-        "Εκδήλωση"
       ],
       "Every member of the organization can access": [
         "Κάθε μέλος του οργανισμού μπορεί να έχει πρόσβαση"
@@ -10009,9 +9917,6 @@
       ],
       "There are no groups": [
         "Δεν υπάρχουν ομάδες"
-      ],
-      "Time": [
-        "Ώρα"
       ],
       "TV sign in": [
         "Σύνδεση τηλεόρασης"

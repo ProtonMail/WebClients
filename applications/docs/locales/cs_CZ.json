@@ -393,6 +393,9 @@
       "Move to trash": [
         "Přesunout do koše"
       ],
+      "New": [
+        "Nový"
+      ],
       "New document": [
         "Nový dokument"
       ],
@@ -408,11 +411,11 @@
       "Not now": [
         "Nyní ne"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Otevřít"
@@ -2497,6 +2500,9 @@
       "IMAP server is required": [
         "Je vyžadován IMAP server"
       ],
+      "Incorrect password. Please try again.": [
+        "Nesprávné heslo. Zkuste to znovu."
+      ],
       "Incorrect username": [
         "Nesprávné uživatelské jméno"
       ],
@@ -3091,14 +3097,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } skupiny"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Účty s vlastními doménami se nemohou připojit ke skupinovému tarifu."
-      ],
       "customer support": [
         "zákaznická podpora"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Skupinové tarify v současné době nepodporují externí účty. Před připojením si vytvořte adresu ${ BRAND_NAME }. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Pokud pozvánku přijmete, převedeme Vás ze stávajícího tarifu a na váš účet připíšeme zbývající částku."
@@ -3106,14 +3106,8 @@
       "Invited by: ${ inviteEmail }": [
         "Pozvánka od: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Doživotní účty nemohou být připojeny ke skupinovému tarifu."
-      ],
       "Manage addresses.": [
         "Spravovat adresy."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Vlastníci tarifu se členy, se nemohou připojit k jinému skupinovému tarifu."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Omlouváme se, ale v tuto chvíli nemůžete změnit tarif."
@@ -3135,12 +3129,6 @@
       ],
       "You have successfully joined the family group": [
         "Úspěšně jste se připojili k rodinné skupině"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Máte nezaplacené faktury. Před připojením ke skupinovému tarifu je prosím uhraďte."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Můžete propojit svůj účet ${ BRAND_NAME } s tímto skupinovým tarifem a společně využívat všechny prémiové funkce ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Váš účet má více e-mailových adres, než kolik je v tomto tarifu k dispozici. ${ addressSettingsLink }"
@@ -7347,11 +7335,6 @@
         "(otevře ${ PASS_APP_NAME })"
       ]
     },
-    "Security Center - Action": {
-      "View logs": [
-        "Zobrazit logy"
-      ]
-    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } a ${ remainingCount } další zjištěné potenciální úniky. Zapněte ${ DARK_WEB_MONITORING_NAME } pro zobrazení podrobností. ${ link }"
@@ -8399,6 +8382,9 @@
       "Cannot add more addresses": [
         "Nelze přidávat další adresy"
       ],
+      "Cannot load link": [
+        "Odkaz se nepodařilo načíst"
+      ],
       "Card verification": [
         "Ověření karty"
       ],
@@ -8749,6 +8735,12 @@
       ],
       "Summary": [
         "Shrnutí"
+      ],
+      "The link either does not exist or has expired": [
+        "Odkaz buď neexistuje, nebo jeho platnost vypršela"
+      ],
+      "The link expired": [
+        "Platnost odkazu vypršela"
       ],
       "Unlock contacts groups": [
         "Odemknout skupiny kontaktů"

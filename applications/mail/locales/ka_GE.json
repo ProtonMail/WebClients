@@ -1195,6 +1195,9 @@
       "Start setup": [
         "მორგების დაწყება"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "${ priceUnlimited }-დან"
+      ],
       "Stay": [
         "დარჩენა"
       ],
@@ -1308,6 +1311,9 @@
       ],
       "Upgrade now": [
         "ტარიფის განახლება"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "ასწიეთ სატარიფო გეგმა ${ BRAND_NAME } Unlimited-ზე"
       ],
       "Upload picture": [
         "სურათის ატვრთვა"
@@ -4707,14 +4713,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } ჯგუფები"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "მომხმარებლის დომენის მქონე ანგარიშები ჯგუფურ ტარიფს ვერ მიიღებენ."
-      ],
       "customer support": [
         "მხარდაჭერის გუნდი"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "ჯგუფურ გეგმებს, ამჟამად, გარე ანგარიშების მხარდაჭერა არ გააჩნიათ. შეერთებამდე ${ BRAND_NAME }-ის ანგარიში შექმენით. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "თუ მოსაწევევს მიიღებთ, ჩვენ თქვენი მიმდინარე ტრიფიდან გადაგრთავთ და დარჩენილ ბალანსს ანგარიშზე დაგირიცხავთ."
@@ -4722,14 +4722,8 @@
       "Invited by: ${ inviteEmail }": [
         "მომწვევი: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "სამუდამო ანგარიშები ჯგუფურ გეგმაში ვერ შევლენ."
-      ],
       "Manage addresses.": [
         "მისამართების მართვა."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "წევრების მქონე ტარიფების მფლობელებს სხვა ჯგუფურ ტარიფში გაერთიანება არ შეუძლიათ."
       ],
       "Sorry, you can't switch plans at this time.": [
         "უკაცრავად, ტარიფს ამჟამად ვერ გადართავთ."
@@ -4751,12 +4745,6 @@
       ],
       "You have successfully joined the family group": [
         "საოჯახო ტარიფს წარმატებით შეუერთდით."
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "გაქვთ გადაუხდელი ინვოისები. გადაიხადეთ, სანამ ჯგუფურ გეგმას მიუერთდებით."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "გიწვევენ, თქვენი ${ BRAND_NAME }-ის ანგარიში ამ ჯგუფს მიაბათ და ერთად ისიამოვნოთ ყველა ${ BRAND_NAME_TWO }-ის ფასიანი ფუნქციით."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "თქვენს ანგარიშს იმაზე მეტი მისამართი გააჩნია, ვიდრე ეს თქვენი სატარიფო გეგმის მიერაა დაშვებული. ${ addressSettingsLink }"
@@ -5212,8 +5200,17 @@
       ]
     },
     "Google Meet": {
+      "Join Google Meet": [
+        "Google Meet-ზე მიერთება"
+      ],
+      "Joining instructions": [
+        "მიერთების ინსტრუქციები"
+      ],
       "Less details": [
         "ნაკლები დეტალი"
+      ],
+      "Meeting link:": [
+        "შეხვედრის ბმული:"
       ],
       "More details": [
         "მეტი დეტალი"
@@ -9006,8 +9003,14 @@
       "Get started for ${ price }": [
         "დაწყება ${ price }-დან"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "${ priceMailPlus }-დან"
+      ],
       "Upgrade now": [
         "ახლა გაუმჯობესება"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "ასწიეთ სატარიფო გეგმა ${ MAIL_SHORT_APP_NAME } Plus-მდე"
       ]
     },
     "new_plans: action": {
@@ -9581,6 +9584,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "მიიღეთ Mail Plus ფასით ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "${ price }-დან"
       ]
     },
     "new_plans: title": {
@@ -9885,6 +9891,9 @@
       ],
       "Link copied to clipboard": [
         "ბმული კოპირებულია ბუფერში"
+      ],
+      "Passcode copied to clipboard": [
+        "წვდომის კოდი დაკოპირდა გაცვლის ბუფერში"
       ],
       "Password has been set successfully": [
         "პაროლი წარმატებით დადგა"
@@ -10676,11 +10685,6 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(გახსნის ${ PASS_APP_NAME }-ს)"
-      ]
-    },
-    "Security Center - Action": {
-      "View logs": [
-        "ჟურნალის ნახვა"
       ]
     },
     "Security Center - Info": {
@@ -12446,6 +12450,9 @@
       "Attachments": [
         "მიმაგრებები"
       ],
+      "Bad time for this email?": [
+        "ცუდი დროა ამ ელფოსტისთვის?"
+      ],
       "BCC": [
         "ბრმა ასლი"
       ],
@@ -12670,6 +12677,9 @@
       "External encryption": [
         "გარე შიფრაცია"
       ],
+      "Filter for more focus": [
+        "ფილტრი მეტი კონცენტრაციისთვის"
+      ],
       "Filter name cannot contain only spaces": [
         "ველის სახელი არ შეიძლება, მხოლოდ, გამოტოვებებს შეიცავდეს"
       ],
@@ -12696,6 +12706,9 @@
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "დამალეთ თქვენი ელფოსტა ${ PASS_APP_NAME }-თან ერთად"
+      ],
+      "High security for your account": [
+        "მაღალი უსაფრთხოება თქვენი ანგარიშისთვის"
       ],
       "How to update your email address": [
         "როგორ განაახლოთ თქვენი ელფოსტის მისამართი"
@@ -12836,6 +12849,9 @@
       "Need more aliases?": [
         "მეტი ფსევდონიმი გჭირდებათ?"
       ],
+      "Need more labels or folders?": [
+        "გჭირდებათ მეტი ჭდე ან საქაღალდე?"
+      ],
       "Network error": [
         "ქსელის შეცდომა"
       ],
@@ -12857,6 +12873,9 @@
       "No breaches detected": [
         "გაჟონვები აღმოჩენილი არაა"
       ],
+      "No need to empty the trash": [
+        "ნაგვის ყუთის გასუფთავება საჭირო არაა"
+      ],
       "No trackers found": [
         "ტრეკერები ვერ ვიპოვე"
       ],
@@ -12865,6 +12884,9 @@
       ],
       "Notes": [
         "შენიშვნები"
+      ],
+      "One email, many recipients": [
+        "ერთი ელფოსტა, ბევრი მიმღები"
       ],
       "Open actions dropdown": [
         "ქმედებების ჩამოსაშლელი მენიუდან აღება"
@@ -12941,8 +12963,14 @@
       "Request new code": [
         "ახალი კოდის გამოთხოვა"
       ],
+      "Same inbox, shorter email address": [
+        "იგივე საფოსტო ყუთი, უფრო მოკლე ელფოსტის მისამართი"
+      ],
       "Save time with email filters": [
         "დაზოგეთ დრო ელფოსტის ფილტრებით"
+      ],
+      "Schedule now, send later": [
+        "დაგეგმეთ ახლა, გააგზავნეთ მოგვიანებით"
       ],
       "Schedule send": [
         "დაგეგმილი გაგზავნა"
@@ -13701,8 +13729,14 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Zoom-ის შეხვედრასთან მიერთება"
+      ],
       "Meeting ID:": [
         "შეხვედრის ID:"
+      ],
+      "Passcode: ${ password }": [
+        "წვდომის კოდი: ${ password }"
       ]
     }
   }

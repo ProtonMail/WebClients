@@ -1312,6 +1312,9 @@
       "Upgrade now": [
         "Αναβάθμιση τώρα"
       ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Αναβάθμιση σε ${ BRAND_NAME } Unlimited"
+      ],
       "Upload picture": [
         "Ανέβασμα εικόνας"
       ],
@@ -3412,11 +3415,23 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "Ανοίξτε τις ρυθμίσεις του ${ manageBlockedAddressesSettingsLink }."
       ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } προστατεύει τον λογαριασμό σας με αποκλειστική 24 ώρες το 24ωρο, 7 ημέρες την εβδομάδα παρακολούθηση ύποπτης δραστηριότητας — συμπεριλαμβανομένης της κλιμάκωσης σε ειδικούς ασφαλείας."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Το 2FA προσθέτει ένα επιπλέον επίπεδο ασφαλείας, αποτρέποντας τη μη εξουσιοδοτημένη πρόσβαση."
       ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Αυτόματη διαγραφή ανεπιθύμητων μηνυμάτων και απορριφθέντων μηνυμάτων και ξεκλείδωμα περισσότερων premium λειτουργιών κατά την αναβάθμιση."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Αυτόματη εκκαθάριση μηνυμάτων ηλεκτρονικού ταχυδρομείου που μετακινήθηκαν στον Κάδο απορριμμάτων και στα Ανεπιθύμητα πριν από περισσότερες από 30 ημέρες."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Ταξινομήστε αυτόματα τα εισερχόμενα μηνύματά σας πριν φτάσουν στα εισερχόμενά σας."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Δημιουργήστε όσες ετικέτες ή φακέλους χρειάζεστε για να διατηρήσετε τα εισερχόμενά σας τακτοποιημένα."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Αποκρυπτογράφηση επαφών… Αυτό μπορεί να διαρκέσει μερικά λεπτά. Όταν ολοκληρωθεί η διαδικασία, θα μπορείτε να κάνετε λήψη του αρχείου με όλες τις επαφές που έχουν εξαχθεί."
@@ -3426,6 +3441,9 @@
       ],
       "Designed for users seeking heightened protection for their accounts.": [
         "Σχεδιασμένο για χρήστες που αναζητούν αυξημένη προστασία για τους λογαριασμούς τους."
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "Δε θέλετε να στείλετε το email σας αυτήν τη στιγμή; Προγραμματίστε το για ακριβώς την κατάλληλη στιγμή."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται κρυπτογράφηση και εισαγωγή επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
@@ -3488,6 +3506,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Ενεργοποιήστε την προστασία παρακολούθησης ηλεκτρονικού ταχυδρομείου για να αποτρέψετε διαφημιστές και άλλους χρήστες από την παρακολούθηση της τοποθεσίας και της δραστηριότητάς σας στο διαδίκτυο."
       ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Ξεκλειδώστε ${ activatePmUser } για μια πιασάρικη και εύκολη στην πληκτρολόγηση διεύθυνση email."
+      ],
       "Unlock custom message scheduling and more premium features when you upgrade.": [
         "Ξεκλειδώστε προσαρμοσμένο προγραμματισμό μηνυμάτων και περισσότερες premium λειτουργίες κατά την αναβάθμιση."
       ],
@@ -3518,6 +3539,12 @@
       "When do you want your message to be sent?": [
         "Πότε θέλετε να αποσταλεί το μήνυμά σας?"
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Με τις ομάδες επαφών, μπορείτε να στείλετε μηνύματα ηλεκτρονικού ταχυδρομείου σε όλα τα μέλη της ομάδας με ένα κλικ."
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "Με την προσαρμοσμένη αναβολή, μπορείτε να αποκρύψετε μηνύματα ηλεκτρονικού ταχυδρομείου και να τα ρυθμίσετε ώστε να εμφανίζονται ξανά σε καλύτερη στιγμή."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Μπορείτε να εισάγετε εκδηλώσεις σε μορφή iCal (ICS αρχείο).\nΤο αρχείο θα πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_EVENTS_STRING } εκδηλώσεις.\nΑν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε να το χωρίσετε σε μικρότερα αρχεία."
       ],
@@ -3529,6 +3556,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Οι μέθοδοι ανάκτησης του λογαριασμού και των δεδομένων σας έχουν οριστεί."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -4713,14 +4743,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } ομάδες"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Οι λογαριασμοί με προσαρμοσμένους τομείς δεν μπορούν να συμμετάσχουν σε ομαδικό πλάνο."
-      ],
       "customer support": [
         "υποστήριξη πελατών"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Τα ομαδικά πλάνα δεν υποστηρίζουν προς το παρόν εξωτερικούς λογαριασμούς. Δημιουργήστε μια διεύθυνση ${ BRAND_NAME } πριν εγγραφείτε. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Εάν αποδεχτείτε την πρόσκληση, θα σας αλλάξουμε από το τρέχον πρόγραμμά σας και θα πιστώσουμε στον λογαριασμό σας τυχόν υπόλοιπο."
@@ -4728,14 +4752,8 @@
       "Invited by: ${ inviteEmail }": [
         "Προσκλήθηκε από: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Οι λογαριασμοί εφ' όρου ζωής δεν μπορούν να συμμετάσχουν σε ομαδικό πλάνο."
-      ],
       "Manage addresses.": [
         "Διαχείριση διευθύνσεων."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Οι κάτοχοι ενός προγράμματος με μέλη δεν μπορούν να συμμετάσχουν σε άλλο ομαδικό σχέδιο."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Λυπούμαστε, δεν μπορείτε να αλλάξετε σχέδια αυτήν τη στιγμή."
@@ -4757,12 +4775,6 @@
       ],
       "You have successfully joined the family group": [
         "Συμμετείχατε με επιτυχία στην ομάδα οικογένειας"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Έχετε ανεξόφλητα τιμολόγια. Πληρώστε τους πριν συμμετάσχετε σε ένα ομαδικό πλάνο."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Έχετε προσκληθεί να συνδέσετε τον λογαριασμό σας ${ BRAND_NAME } σε αυτό το ομαδικό πρόγραμμα και να απολαύσετε μαζί όλες τις premium λειτουργίες ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Ο λογαριασμός σας έχει περισσότερες διευθύνσεις ηλεκτρονικού ταχυδρομείου από αυτές που είναι διαθέσιμες σε αυτό το σχέδιο. ${ addressSettingsLink }"
@@ -7336,6 +7348,9 @@
       "You are about to open another browser tab and visit:": [
         "Πρόκειται να ανοίξετε μια άλλη καρτέλα προγράμματος περιήγησης και να επισκεφτείτε:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Πρόκειται να ανοίξετε το προεπιλεγμένο πρόγραμμα περιήγησής σας και να επισκεφθείτε:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Είστε συνδεδεμένος/η ως ${ user.Name } (${ user.Email })."
       ],
@@ -9017,6 +9032,9 @@
       ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Αναβάθμιση σε ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -9898,6 +9916,9 @@
       "Link copied to clipboard": [
         "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
       ],
+      "Passcode copied to clipboard": [
+        "Ο κωδικός πρόσβασης αντιγράφηκε στο πρόχειρο"
+      ],
       "Password has been set successfully": [
         "Ο κωδικός πρόσβασης ορίστηκε επιτυχώς"
       ],
@@ -10691,11 +10712,6 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(θα ανοίξει ${ PASS_APP_NAME })"
-      ]
-    },
-    "Security Center - Action": {
-      "View logs": [
-        "Προβολή αρχείων καταγραφής"
       ]
     },
     "Security Center - Info": {
@@ -12688,6 +12704,9 @@
       "External encryption": [
         "Εξωτερική κρυπτογράφηση"
       ],
+      "Filter for more focus": [
+        "Φιλτράρισμα για περισσότερη εστίαση"
+      ],
       "Filter name cannot contain only spaces": [
         "Το όνομα φίλτρου δεν μπορεί να περιέχει μόνο κενά διαστήματα"
       ],
@@ -12714,6 +12733,9 @@
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Αποκρύψτε το email σας με ${ PASS_APP_NAME }"
+      ],
+      "High security for your account": [
+        "Υψηλή ασφάλεια για τον λογαριασμό σας"
       ],
       "How to update your email address": [
         "Πώς να ενημερώσετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας"
@@ -12878,6 +12900,9 @@
       "No breaches detected": [
         "Δεν εντοπίστηκαν παραβιάσεις"
       ],
+      "No need to empty the trash": [
+        "Δε χρειάζεται να αδειάσετε τα διαγραμμένα"
+      ],
       "No trackers found": [
         "Δεν βρέθηκαν ιχνηλάτες"
       ],
@@ -12886,6 +12911,9 @@
       ],
       "Notes": [
         "Σημειώσεις"
+      ],
+      "One email, many recipients": [
+        "Ένα email, πολλοί παραλήπτες"
       ],
       "Open actions dropdown": [
         "Άνοιγμα αναπτυσσόμενων επιλογών"
@@ -12961,6 +12989,9 @@
       ],
       "Request new code": [
         "Αίτηση νέου κωδικού"
+      ],
+      "Same inbox, shorter email address": [
+        "Ίδια εισερχόμενα, μικρότερη διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "Save time with email filters": [
         "Εξοικονομήστε χρόνο με φίλτρα email"
@@ -13722,6 +13753,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Ετησίως, ${ untilString }"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Συνδεθήτε στο Zoom Meeting"
       ]
     }
   }
