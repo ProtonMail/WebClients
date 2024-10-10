@@ -112,12 +112,6 @@
       "Choose my own password": [
         "Mein eigenes Passwort wählen"
       ],
-      "Clear filter": [
-        "Filter zurücksetzen"
-      ],
-      "Clear filters": [
-        "Filter zurücksetzen"
-      ],
       "Close": [
         "Schließen"
       ],
@@ -282,6 +276,9 @@
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Entdecke weitere ${ BRAND_NAME }-Abonnements"
+      ],
+      "Export": [
+        "Exportieren"
       ],
       "Extend": [
         "Erweitern"
@@ -480,6 +477,9 @@
       ],
       "Resend code": [
         "Code erneut senden"
+      ],
+      "Reset": [
+        "Zurücksetzen"
       ],
       "Reset credentials": [
         "Anmeldedaten zurücksetzen"
@@ -2751,14 +2751,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-Gruppen"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Konten mit eigenen Domains können keinem Gruppenabonnement beitreten."
-      ],
       "customer support": [
         "Kundendienst"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Gruppenabonnements unterstützen derzeit keine externen Konten. Erstelle vor dem Beitritt eine ${ BRAND_NAME }-Adresse. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Wenn du die Einladung annimmst, wechseln wir dein aktuelles Abonnement und schreiben deinem Konto das verbleibende Guthaben gut."
@@ -2769,9 +2763,6 @@
       "Invited by: ${ inviteEmail }": [
         "Eingeladen von: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Lebenslang lizenzierte Konten können keinem Gruppenabonnement beitreten."
-      ],
       "Manage addresses.": [
         "Adressen verwalten."
       ],
@@ -2781,9 +2772,6 @@
       "Only ${ n } accepted invitation are allowed in a 6-month period.": [
         "In einem Zeitraum von 6 Monaten ist nur ${ n } angenommene Einladung zulässig.",
         "In einem Zeitraum von 6 Monaten sind nur ${ n } angenommene Einladungen zulässig."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Besitzer eines Abonnements mit Mitgliedern können keinem anderen Gruppenabonnement beitreten."
       ],
       "Pending": [
         "Ausstehend"
@@ -2823,17 +2811,11 @@
       "You have successfully joined the family group": [
         "Du bist erfolgreich der Familiengruppe beigetreten"
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Du hast unbezahlte Rechnungen. Bitte bezahle diese, bevor du einem Gruppenabonnement beitrittst."
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Du musst eine eigene Domain konfigurieren, bevor du mehrere Benutzer hinzufügst."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Du musst eine eigene Domain konfigurieren, bevor du einen neuen Benutzer erstellst."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit diesem Gruppenabonnement zu verknüpfen und gemeinsam alle ${ BRAND_NAME_TWO } Premium-Funktionen zu nutzen."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Dein Konto hat mehr E-Mail-Adressen, als dir in diesem Abonnement zur Verfügung stehen. ${ addressSettingsLink }"
@@ -3532,9 +3514,6 @@
         "Betroffener Benutzer ist in Zeile",
         "Betroffene Benutzer sind in Zeilen"
       ],
-      "All Events ": [
-        "Alle Ereignisse "
-      ],
       "All members have been added.": [
         "Alle Mitglieder wurden hinzugefügt."
       ],
@@ -3618,15 +3597,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Abrechnungszeitraum: ${ text }"
-      ],
-      "Breach Custom Email Created": [
-        "Persönliche E-Mail im Falle einer Datenpanne erstellt"
-      ],
-      "Breach Custom Email Deleted": [
-        "Persönliche E-Mail im Falle einer Datenpanne gelöscht"
-      ],
-      "Breach Custom Email Validated": [
-        "Persönliche E-Mail im Falle einer Datenpanne validiert"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Durch den Wechsel auf das kostenlose Abonnement verlierst du diese Leistungen dauerhaft, auch wenn du in Zukunft wieder auf ein kostenpflichtiges Abonnement umsteigst."
@@ -4004,16 +3974,7 @@
       "Internet connection restored.": [
         "Internetverbindung wiederhergestellt."
       ],
-      "Invite Accepted": [
-        "Einladung akzeptiert"
-      ],
-      "Invite Created": [
-        "Einladung erstellt"
-      ],
       "Invite deleted": [
-        "Einladung gelöscht"
-      ],
-      "Invite Deleted": [
         "Einladung gelöscht"
       ],
       "Invite for new user deleted": [
@@ -4028,32 +3989,17 @@
       "Invite rejected": [
         "Einladung abgelehnt"
       ],
-      "Invite Rejected": [
-        "Einladung abgelehnt"
-      ],
-      "Item Autofilled": [
-        "Eintrag automatisch ausgefüllt"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "Eintrag in ${ vaultLink } automatisch ausgefüllt."
       ],
       "Item autofilled in vault": [
         "Eintrag automatisch im Tresor ausgefüllt"
       ],
-      "Item Changed Flags": [
-        "Eintragveränderungskennzeichnung"
-      ],
-      "Item Created": [
-        "Eintrag erstellt"
-      ],
       "Item created in ${ vaultLink }": [
         "Eintrag in ${ vaultLink } erstellt."
       ],
       "Item created in vault": [
         "Eintrag in Tresor erstellt"
-      ],
-      "Item Deleted": [
-        "Eintrag gelöscht"
       ],
       "Item deleted from ${ vaultLink }": [
         "Eintrag aus ${ vaultLink } gelöscht."
@@ -4079,23 +4025,11 @@
       "Item in vault untrashed": [
         "Eintrag in Tresor wiederhergestellt"
       ],
-      "Item Read": [
-        "Eintrag angesehen"
-      ],
       "Item read in ${ vaultLink }": [
         "Eintrag in ${ vaultLink } angesehen."
       ],
       "Item read in vault": [
         "Eintrag in Tresor angesehen"
-      ],
-      "Item Trashed": [
-        "Eintrag in den Papierkorb gelegt"
-      ],
-      "Item Untrashed": [
-        "Eintrag aus dem Papierkorb entfernt"
-      ],
-      "Item Updated": [
-        "Eintrag aktualisiert"
       ],
       "Item updated in ${ vaultLink }": [
         "Eintrag in ${ vaultLink } aktualisiert."
@@ -4195,12 +4129,6 @@
       ],
       "Must start with a letter.": [
         "Muss mit einem Buchstaben beginnen."
-      ],
-      "New User Invite Created": [
-        "Neue Benutzereinladung erstellt"
-      ],
-      "New User Invite Deleted": [
-        "Neue Benutzereinladung gelöscht"
       ],
       "New user invited to organization": [
         "Neuen Benutzer zur Organisation eingeladen"
@@ -4438,29 +4366,11 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
       ],
-      "Session Ended": [
-        "Sitzung beendet"
-      ],
-      "Session Roaming": [
-        "Sitzungsroaming"
-      ],
-      "Session Started": [
-        "Sitzung gestartet"
-      ],
       "Session timed out": [
         "Zeitüberschreitung der Sitzung"
       ],
       "Setting up your organization": [
         "Deine Organisation wird eingerichtet"
-      ],
-      "Share Created": [
-        "Linkfreigabe erstellt"
-      ],
-      "Share Deleted": [
-        "Linkfreigabe gelöscht"
-      ],
-      "Share Updated": [
-        "Linkfreigabe aktualisiert"
       ],
       "Shared ${ vaultLink } deleted": [
         "Geteilten ${ vaultLink } gelöscht."
@@ -4763,22 +4673,13 @@
       "Vault created": [
         "Tresor erstellt"
       ],
-      "Vault Created": [
-        "Tresor erstellt"
-      ],
       "Vault deleted": [
-        "Tresor gelöscht"
-      ],
-      "Vault Deleted": [
         "Tresor gelöscht"
       ],
       "Vault shared with email": [
         "Tresor geteilt via E-Mail"
       ],
       "Vault updated": [
-        "Tresor aktualisiert"
-      ],
-      "Vault Updated": [
         "Tresor aktualisiert"
       ],
       "Verification can take a few minutes.": [
@@ -5664,6 +5565,16 @@
     "label": {
       "Recovery phone number": [
         "Telefonnummer für die Wiederherstellung"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Von"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "An"
       ]
     },
     "Label for adding a new custom domain": {
@@ -7571,9 +7482,6 @@
       ],
       "E.g., ": [
         "Z. B. "
-      ],
-      "Email or IP": [
-        "Email oder IP"
       ],
       "End date": [
         "Enddatum"
@@ -9539,6 +9447,9 @@
       "Change second password": [
         "Zusätzliches Passwort ändern"
       ],
+      "Click a value in the table to use it as filter": [
+        "Klicke auf einen Wert in der Tabelle, um diesen als Filter zu verwenden."
+      ],
       "Close": [
         "Schließen"
       ],
@@ -9556,9 +9467,6 @@
       ],
       "Confirm phone number": [
         "Telefonnummer bestätigen"
-      ],
-      "Connection events": [
-        "Verbindungsereignisse"
       ],
       "Connection monitor disabled": [
         "Verbindungsüberwachung deaktiviert"
@@ -9723,9 +9631,6 @@
       ],
       "Error": [
         "Fehler"
-      ],
-      "Event": [
-        "Termin"
       ],
       "Every member of the organization can access": [
         "Jedes Mitglied der Organisation kann darauf zugreifen"
@@ -9980,9 +9885,6 @@
       ],
       "There are no groups": [
         "Keine Gruppen vorhanden"
-      ],
-      "Time": [
-        "Zeit"
       ],
       "TV sign in": [
         "TV-Anmeldung"

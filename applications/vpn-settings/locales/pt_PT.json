@@ -112,12 +112,6 @@
       "Choose my own password": [
         "Escolher a sua palavra-passe"
       ],
-      "Clear filter": [
-        "Limpar o filtro"
-      ],
-      "Clear filters": [
-        "Limpar os filtros"
-      ],
       "Close": [
         "Fechar"
       ],
@@ -282,6 +276,9 @@
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Explorar outros planos ${ BRAND_NAME }"
+      ],
+      "Export": [
+        "Exportar"
       ],
       "Extend": [
         "Estender"
@@ -474,6 +471,9 @@
       ],
       "Resend code": [
         "Reenviar código"
+      ],
+      "Reset": [
+        "Redefinir"
       ],
       "Reset credentials": [
         "Repor credenciais"
@@ -2500,9 +2500,6 @@
       "Manage user accounts": [
         "Gerir as contas dos utilizadores"
       ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Os titulares de um plano com membros não podem aderir a outro plano de grupo."
-      ],
       "Pending": [
         "Pendente"
       ],
@@ -2539,9 +2536,6 @@
       ],
       "You need to configure a custom domain before creating a new user.": [
         "É necessário configurar um domínio personalizado antes de criar um utilizador."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Está convidado a associar a sua conta ${ BRAND_NAME } a este plano de grupo e a usufruir em conjunto de todas as funcionalidades premium ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "A sua conta tem mais endereços de e-mail do que os que estão disponíveis neste plano. ${ addressSettingsLink }"
@@ -3187,9 +3181,6 @@
         "O utilizador afetado está na linha.",
         "Os utilizadores afetados estão nas linhas."
       ],
-      "All Events ": [
-        "Todos os eventos "
-      ],
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
       ],
@@ -3536,16 +3527,7 @@
       "Internet connection restored.": [
         "Ligação à Internet reposta."
       ],
-      "Invite Accepted": [
-        "O convite foi aceite."
-      ],
-      "Invite Created": [
-        "O convite foi criado."
-      ],
       "Invite deleted": [
-        "O convite foi eliminado."
-      ],
-      "Invite Deleted": [
         "O convite foi eliminado."
       ],
       "Invite for new user deleted": [
@@ -3560,26 +3542,17 @@
       "Invite rejected": [
         "O convite foi rejeitado."
       ],
-      "Invite Rejected": [
-        "O convite foi rejeitado."
-      ],
       "Item autofilled in ${ vaultLink }": [
         "Item preenchido automaticamente em ${ vaultLink }"
       ],
       "Item autofilled in vault": [
         "Item auto-preenchimento no cofre"
       ],
-      "Item Created": [
-        "O item foi criado."
-      ],
       "Item created in ${ vaultLink }": [
         "Item criado em ${ vaultLink }"
       ],
       "Item created in vault": [
         "Item criado no cofre"
-      ],
-      "Item Deleted": [
-        "O item foi eliminado."
       ],
       "Item deleted from ${ vaultLink }": [
         "Item eliminado de ${ vaultLink }"
@@ -3602,23 +3575,11 @@
       "Item in vault untrashed": [
         "Item no cofre recuperado"
       ],
-      "Item Read": [
-        "O item foi lido."
-      ],
       "Item read in ${ vaultLink }": [
         "Item lido em ${ vaultLink }"
       ],
       "Item read in vault": [
         "Item lido no cofre"
-      ],
-      "Item Trashed": [
-        "Item eliminado"
-      ],
-      "Item Untrashed": [
-        "Item recuperado"
-      ],
-      "Item Updated": [
-        "O item foi atualizado."
       ],
       "Item updated in ${ vaultLink }": [
         "Item atualizado em ${ vaultLink }"
@@ -3936,15 +3897,6 @@
       ],
       "Setting up your organization": [
         "A configurar a sua organização"
-      ],
-      "Share Created": [
-        "A partilha foi criada."
-      ],
-      "Share Deleted": [
-        "A partilha foi eliminada."
-      ],
-      "Share Updated": [
-        "A partilha foi atualizada."
       ],
       "Shared vault deleted": [
         "Cofre partilhado apagado"
@@ -4966,6 +4918,16 @@
     "label": {
       "Recovery phone number": [
         "Número de telefone de recuperação"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "De"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Para"
       ]
     },
     "Label for adding a new custom domain": {
@@ -6438,9 +6400,6 @@
       ],
       "E.g., ": [
         "Ex., "
-      ],
-      "Email or IP": [
-        "E-mail ou IP"
       ],
       "End date": [
         "Data de término"
@@ -7980,6 +7939,9 @@
       "Change second password": [
         "Alterar a segunda palavra-passe"
       ],
+      "Click a value in the table to use it as filter": [
+        "Clique num valor da tabela para utilizá-lo como filtro"
+      ],
       "Close": [
         "Fechar"
       ],
@@ -7997,9 +7959,6 @@
       ],
       "Confirm phone number": [
         "Confirmar número de telefone"
-      ],
-      "Connection events": [
-        "Eventos de conexão"
       ],
       "Connection monitor disabled": [
         "Monitor de ligação desativado"
@@ -8161,9 +8120,6 @@
       ],
       "Error": [
         "Erro"
-      ],
-      "Event": [
-        "Evento"
       ],
       "Every member of the organization can access": [
         "Todos os membros da organização podem aceder"
@@ -8415,9 +8371,6 @@
       ],
       "There are no groups": [
         "Não existem grupos"
-      ],
-      "Time": [
-        "Hora"
       ],
       "TV sign in": [
         "Iniciar sessão na TV"

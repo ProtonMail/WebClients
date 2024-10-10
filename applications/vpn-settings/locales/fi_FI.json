@@ -112,12 +112,6 @@
       "Choose my own password": [
         "Valitse oma salasana"
       ],
-      "Clear filter": [
-        "Tyhjennä suodatin"
-      ],
-      "Clear filters": [
-        "Tyhjennä suodattimet"
-      ],
       "Close": [
         "Sulje"
       ],
@@ -282,6 +276,9 @@
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Tutustu muihin ${ BRAND_NAME } -tilauksiin"
+      ],
+      "Export": [
+        "Vie"
       ],
       "Extend": [
         "Pidennä"
@@ -480,6 +477,9 @@
       ],
       "Resend code": [
         "Lähetä koodi uudelleen"
+      ],
+      "Reset": [
+        "Tyhjennä"
       ],
       "Reset credentials": [
         "Nollaa kirjautumistiedot"
@@ -2759,14 +2759,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-ryhmää"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Omia verkkotunnuksia käyttävät tilit eivät voi liittyä ryhmätilaukseen."
-      ],
       "customer support": [
         "asiakaspalveluun"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Ryhmätilaukset eivät tällä hetkellä tue ulkoisia tilejä. Luo ${ BRAND_NAME } -osoite ennen liittymistä. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jos hyväksyt kutsun, siirrämme sinut nykyisestä tilauksestasi ja hyvitämme tilillesi jäljellä olevan saldon."
@@ -2777,9 +2771,6 @@
       "Invited by: ${ inviteEmail }": [
         "Kutsunut: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Elinikäiset tilit eivät voi liittyä ryhmätilaukseen."
-      ],
       "Manage addresses.": [
         "Hallitse osoitteita."
       ],
@@ -2789,9 +2780,6 @@
       "Only ${ n } accepted invitation are allowed in a 6-month period.": [
         "Kuuden kuukauden sisällä sallitaan vain ${ n } kutsuhyväksyntä.",
         "Kuuden kuukauden sisällä sallitaan vain ${ n } kutsuhyväksyntää."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Jäseniä sisältävän tilauksen omistajat eivät voi liittyä toiseen ryhmätilaukseen."
       ],
       "Pending": [
         "Odottaa"
@@ -2831,17 +2819,11 @@
       "You have successfully joined the family group": [
         "Olet liittynyt perheryhmään"
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Sinulla on maksamattomia laskuja. Maksa ne ennen ryhmätilaukseen liittymistä."
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Sinun on määritettävä oma verkkotunnus ennen kuin voit lisätä useita käyttäjiä."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Sinun on määritettävä oma verkkotunnus ennen kuin luot uuden käyttäjän."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Sinut on kutsuttu yhdistämään ${ BRAND_NAME }-tilisi tähän ryhmätilaukseen ja nauttimaan kaikista ${ BRAND_NAME_TWO }in premium-ominaisuuksista yhdessä."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Tililläsi on enemmän sähköpostiosoitteita kuin mitä sinulla on käytettävissäsi tässä tilauksessa. ${ addressSettingsLink }"
@@ -3546,9 +3528,6 @@
         "Käyttäjä, jota tämä koskee, on rivillä",
         "Käyttäjät, joita tämä koskee, ovat riveillä"
       ],
-      "All Events ": [
-        "Kaikki tapahtumat"
-      ],
       "All members have been added.": [
         "Kaikki jäsenet on lisätty."
       ],
@@ -3635,15 +3614,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Laskutusjakso: ${ text }"
-      ],
-      "Breach Custom Email Created": [
-        "Tietomurtojen oma sähköposti luotiin"
-      ],
-      "Breach Custom Email Deleted": [
-        "Tietomurtojen oma sähköposti poistettiin"
-      ],
-      "Breach Custom Email Validated": [
-        "Tietomurtojen oma sähköposti vahvistettiin"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Alentamalla ilmaiseen palveluun, menetät nämä edut pysyvästi, vaikka päivittäisit tilauksesi tulevaisuudessa uudelleen."
@@ -4021,16 +3991,7 @@
       "Internet connection restored.": [
         "Internet-yhteys on palautettu."
       ],
-      "Invite Accepted": [
-        "Kutsu hyväksyttiin"
-      ],
-      "Invite Created": [
-        "Kutsu luotiin"
-      ],
       "Invite deleted": [
-        "Kutsu poistettiin"
-      ],
-      "Invite Deleted": [
         "Kutsu poistettiin"
       ],
       "Invite for new user deleted": [
@@ -4045,32 +4006,17 @@
       "Invite rejected": [
         "Kutsusta kieltäydyttiin"
       ],
-      "Invite Rejected": [
-        "Kutsusta kieltäydyttiin"
-      ],
-      "Item Autofilled": [
-        "Kohde automaattitäytettiin"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "Holvin ${ vaultLink } kohde automaattitäytettiin"
       ],
       "Item autofilled in vault": [
         "Holvin kohde automaattitäytettiin"
       ],
-      "Item Changed Flags": [
-        "Kohteen liput muuttuivat"
-      ],
-      "Item Created": [
-        "Kohde luotiin"
-      ],
       "Item created in ${ vaultLink }": [
         "Kohde luotiin holviin ${ vaultLink }"
       ],
       "Item created in vault": [
         "Holviin luotiin kohde"
-      ],
-      "Item Deleted": [
-        "Kohde poistettiin"
       ],
       "Item deleted from ${ vaultLink }": [
         "Kohde poistettiin holvista ${ vaultLink }"
@@ -4096,23 +4042,11 @@
       "Item in vault untrashed": [
         "Holvin kohde palautettiin roskakorista"
       ],
-      "Item Read": [
-        "Kohdetta tarkasteltiin"
-      ],
       "Item read in ${ vaultLink }": [
         "Kohde luettiin holvissa ${ vaultLink }"
       ],
       "Item read in vault": [
         "Holvin kohdetta tarkasteltiin"
-      ],
-      "Item Trashed": [
-        "Kohde siirrettiin roskakoriin"
-      ],
-      "Item Untrashed": [
-        "Kohde palautettiin roskakorista"
-      ],
-      "Item Updated": [
-        "Kohdetta muokattiin"
       ],
       "Item updated in ${ vaultLink }": [
         "Kohde päivitettiin holvissa ${ vaultLink }"
@@ -4212,12 +4146,6 @@
       ],
       "Must start with a letter.": [
         "Täytyy alkaa kirjaimella."
-      ],
-      "New User Invite Created": [
-        "Uuden käyttäjän kutsu luotiin"
-      ],
-      "New User Invite Deleted": [
-        "Uuden käyttäjän kutsu poistettiin"
       ],
       "New user invited to organization": [
         "Uusi käyttäjä kutsuttiin organisaatioon"
@@ -4458,29 +4386,11 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Palvelimia ei tavoiteta. Yritä muutaman minuutin kuluttua uudelleen."
       ],
-      "Session Ended": [
-        "Istunto päättyi"
-      ],
-      "Session Roaming": [
-        "Istunnon vierailu"
-      ],
-      "Session Started": [
-        "Istunto alkoi"
-      ],
       "Session timed out": [
         "Istunto aikakatkaistiin"
       ],
       "Setting up your organization": [
         "Määritetään organisaatiotasi"
-      ],
-      "Share Created": [
-        "Jako luotiin"
-      ],
-      "Share Deleted": [
-        "Jako poistettiin"
-      ],
-      "Share Updated": [
-        "Jakoa muokattiin"
       ],
       "Shared ${ vaultLink } deleted": [
         "Jaettu ${ vaultLink } poistettiin"
@@ -4783,22 +4693,13 @@
       "Vault created": [
         "Holvi luotiin"
       ],
-      "Vault Created": [
-        "Holvi luotiin"
-      ],
       "Vault deleted": [
-        "Holvi poistettiin"
-      ],
-      "Vault Deleted": [
         "Holvi poistettiin"
       ],
       "Vault shared with email": [
         "Holvi jaettiin sähköpostitse"
       ],
       "Vault updated": [
-        "Holvia muokattiin"
-      ],
-      "Vault Updated": [
         "Holvia muokattiin"
       ],
       "Verification can take a few minutes.": [
@@ -5687,6 +5588,16 @@
     "label": {
       "Recovery phone number": [
         "Palautusnumero"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Lähettäjä"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Vastaanottaja"
       ]
     },
     "Label for adding a new custom domain": {
@@ -7609,9 +7520,6 @@
       ],
       "E.g., ": [
         "Esim. "
-      ],
-      "Email or IP": [
-        "Sähköposti- tai IP-osoite"
       ],
       "End date": [
         "Päättymispäivä"
@@ -9580,6 +9488,9 @@
       "Change second password": [
         "Vaihda toinen salasana"
       ],
+      "Click a value in the table to use it as filter": [
+        "Klikkaa taulukon arvoa käyttääksesi sitä suodattimena."
+      ],
       "Close": [
         "Sulje"
       ],
@@ -9597,9 +9508,6 @@
       ],
       "Confirm phone number": [
         "Vahvista puhelinnumero"
-      ],
-      "Connection events": [
-        "Yhteystapahtumat"
       ],
       "Connection monitor disabled": [
         "Yhteyden valvonta ei ole käytössä"
@@ -9764,9 +9672,6 @@
       ],
       "Error": [
         "Virhe"
-      ],
-      "Event": [
-        "Tapahtuma"
       ],
       "Every member of the organization can access": [
         "Organisaation kaikki käyttäjät voivat käyttää"
@@ -10021,9 +9926,6 @@
       ],
       "There are no groups": [
         "Ryhmiä ei ole"
-      ],
-      "Time": [
-        "Aika"
       ],
       "TV sign in": [
         "Televisioon kirjautuminen"

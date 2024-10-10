@@ -112,12 +112,6 @@
       "Choose my own password": [
         "Выбраць свой уласны пароль"
       ],
-      "Clear filter": [
-        "Ачысціць фільтр"
-      ],
-      "Clear filters": [
-        "Ачысціць фільтры"
-      ],
       "Close": [
         "Закрыць"
       ],
@@ -282,6 +276,9 @@
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Азнаёміцца з іншымі тарыфнымі планамі ${ BRAND_NAME }"
+      ],
+      "Export": [
+        "Экспартаваць"
       ],
       "Extend": [
         "Падоўжыць"
@@ -480,6 +477,9 @@
       ],
       "Resend code": [
         "Адправіць код яшчэ раз"
+      ],
+      "Reset": [
+        "Скінуць"
       ],
       "Reset credentials": [
         "Скінуць уліковыя даныя"
@@ -2777,14 +2777,8 @@
       "${ BRAND_NAME } groups": [
         "Групы ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Уліковыя запісы з карыстальніцкімі даменамі нельга далучыць да групавога тарыфнага плана."
-      ],
       "customer support": [
         "падтрымка кліентаў"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Групавыя тарыфныя планы ў цяперашні час не падтрымліваюць знешнія ўліковыя запісы. Перад далучэннем стварыце адрас ${ BRAND_NAME }. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Калі вы прыміце запрашэнне, то ваш тарыфны план будзе зменены. Рэшта балансу вашай падпіскі вернецца на ваш рахунак."
@@ -2794,9 +2788,6 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Запрашэнне адпраўлена: ${ inviteEmail }"
-      ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Пажыццёвыя ўліковыя запісы нельга далучыць да групавога тарыфнага плана."
       ],
       "Manage addresses.": [
         "Кіраванне адрасамі."
@@ -2809,9 +2800,6 @@
         "Можна прыняць не больш за ${ n } запрашэнні на працягу 6 месяцаў.",
         "Можна прыняць не больш за ${ n } запрашэнняў на працягу 6 месяцаў.",
         "Можна прыняць не больш за ${ n } запрашэнняў на працягу 6 месяцаў."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Уладальнікі тарыфных планаў з удзельнікамі не могуць далучацца да іншых групавых тарыфных планаў."
       ],
       "Pending": [
         "У чаканні"
@@ -2855,17 +2843,11 @@
       "You have successfully joined the family group": [
         "Вы паспяхова далучыліся да сямейнай групы"
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "У вас ёсць неаплачаныя рахункі. Аплаціце іх перад тым, як далучыцца да групавога тарыфнага плана."
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Перад дадаваннем некалькіх карыстальнікаў неабходна сканфігураваць карыстальніцкі дамен."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Перад стварэннем новага карыстальніка неабходна сканфігураваць карыстальніцкі дамен."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Вас запрашаюць далучыць ваш уліковы запіс ${ BRAND_NAME } да гэтага групавога тарыфнага плана, каб разам выкарыстоўваць усе прэміяльныя функцыі ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Колькасць адрасоў электроннай пошты перавышае дазволенае значэнне вашага бягучага тарыфнага плана. ${ addressSettingsLink }"
@@ -3618,9 +3600,6 @@
         "Уплывае на карыстальнікаў у радку",
         "Уплывае на карыстальнікаў у радку"
       ],
-      "All Events ": [
-        "Усе падзеі "
-      ],
       "All members have been added.": [
         "Усе ўдзельнікі былі дададзены."
       ],
@@ -3707,15 +3686,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Перыяд аплаты: ${ text }"
-      ],
-      "Breach Custom Email Created": [
-        "Уцечка карыстальніцкай электроннай пошты створана"
-      ],
-      "Breach Custom Email Deleted": [
-        "Уцечка карыстальніцкай электроннай пошты выдалена"
-      ],
-      "Breach Custom Email Validated": [
-        "Уцечка карыстальніцкай электроннай пошты праверана"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні вы зноў пяройдзеце на яго."
@@ -4101,16 +4071,7 @@
       "Internet connection restored.": [
         "Падключэнне да інтэрнэту адноўлена."
       ],
-      "Invite Accepted": [
-        "Запрашэнне прынята"
-      ],
-      "Invite Created": [
-        "Запрашэнне створана"
-      ],
       "Invite deleted": [
-        "Запрашэнне выдалена"
-      ],
-      "Invite Deleted": [
         "Запрашэнне выдалена"
       ],
       "Invite for new user deleted": [
@@ -4125,32 +4086,17 @@
       "Invite rejected": [
         "Запрашэнне адхілена"
       ],
-      "Invite Rejected": [
-        "Запрашэнне адхілена"
-      ],
-      "Item Autofilled": [
-        "Элемент аўтазапоўнены"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "Элемент аўтазапоўнены ў ${ vaultLink }"
       ],
       "Item autofilled in vault": [
         "Элемент аўтазапоўнены ў сховішчы"
       ],
-      "Item Changed Flags": [
-        "Змененыя сцягі элемента"
-      ],
-      "Item Created": [
-        "Элемент створаны"
-      ],
       "Item created in ${ vaultLink }": [
         "Элемент створаны ў ${ vaultLink }"
       ],
       "Item created in vault": [
         "Элемент створаны ў сховішчы"
-      ],
-      "Item Deleted": [
-        "Элемент выдалены"
       ],
       "Item deleted from ${ vaultLink }": [
         "Элемент выдалены з ${ vaultLink }"
@@ -4176,23 +4122,11 @@
       "Item in vault untrashed": [
         "Элемент са сметніцы перамешчаны ў сховішча"
       ],
-      "Item Read": [
-        "Элемент прачытаны"
-      ],
       "Item read in ${ vaultLink }": [
         "Элемент прачытаны ў ${ vaultLink }"
       ],
       "Item read in vault": [
         "Элемент прачытаны ў сховішчы"
-      ],
-      "Item Trashed": [
-        "Элемент перамешчаны ў сметніцу"
-      ],
-      "Item Untrashed": [
-        "Элемент адноўлены са сметніцы"
-      ],
-      "Item Updated": [
-        "Элемент абноўлены"
       ],
       "Item updated in ${ vaultLink }": [
         "Элемент абноўлены ў ${ vaultLink }"
@@ -4292,12 +4226,6 @@
       ],
       "Must start with a letter.": [
         "Назва павінна пачынацца з літары."
-      ],
-      "New User Invite Created": [
-        "Запрашэнне для новага карыстальніка створана"
-      ],
-      "New User Invite Deleted": [
-        "Запрашэнне для новага карыстальніка выдалена"
       ],
       "New user invited to organization": [
         "Новы карыстальнік запрошаны ў арганізацыю"
@@ -4542,29 +4470,11 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недаступны. Паспрабуйце яшчэ раз праз некалькі хвілін"
       ],
-      "Session Ended": [
-        "Сеанс завершаны"
-      ],
-      "Session Roaming": [
-        "Блукаючы сеанс"
-      ],
-      "Session Started": [
-        "Сеанс запушчаны"
-      ],
       "Session timed out": [
         "Сеанс завяршыўся"
       ],
       "Setting up your organization": [
         "Наладжванне вашай арганізацыі"
-      ],
-      "Share Created": [
-        "Абагульванне створана"
-      ],
-      "Share Deleted": [
-        "Абагульванне выдалена"
-      ],
-      "Share Updated": [
-        "Абагульванне абноўлена"
       ],
       "Shared ${ vaultLink } deleted": [
         "Абагульванне ${ vaultLink } выдалена"
@@ -4875,22 +4785,13 @@
       "Vault created": [
         "Сховішча створана"
       ],
-      "Vault Created": [
-        "Сховішча створана"
-      ],
       "Vault deleted": [
-        "Сховішча выдалена"
-      ],
-      "Vault Deleted": [
         "Сховішча выдалена"
       ],
       "Vault shared with email": [
         "Сховішча абаагулена з электроннай поштай"
       ],
       "Vault updated": [
-        "Сховішча абноўлена"
-      ],
-      "Vault Updated": [
         "Сховішча абноўлена"
       ],
       "Verification can take a few minutes.": [
@@ -5799,6 +5700,16 @@
     "label": {
       "Recovery phone number": [
         "Нумар тэлефона для аднаўлення"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Ад"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Каму"
       ]
     },
     "Label for adding a new custom domain": {
@@ -7781,9 +7692,6 @@
       ],
       "E.g., ": [
         "Напрыклад, "
-      ],
-      "Email or IP": [
-        "Электронная пошта або IP"
       ],
       "End date": [
         "Дата завяршэння"
@@ -9834,6 +9742,9 @@
       "Change second password": [
         "Змяніць другі пароль"
       ],
+      "Click a value in the table to use it as filter": [
+        "Націсніце значэнне ў табліцы, каб выкарыстоўваць яго ў якасці фільтра."
+      ],
       "Close": [
         "Закрыць"
       ],
@@ -9851,9 +9762,6 @@
       ],
       "Confirm phone number": [
         "Пацвердзіць нумар тэлефона"
-      ],
-      "Connection events": [
-        "Падзеі падключэння"
       ],
       "Connection monitor disabled": [
         "Назіранне за падключэннем адключана"
@@ -10022,9 +9930,6 @@
       ],
       "Error": [
         "Памылка"
-      ],
-      "Event": [
-        "Падзея"
       ],
       "Every member of the organization can access": [
         "Кожны ўдзельнік арганізацыі будзе мець доступ"
@@ -10283,9 +10188,6 @@
       ],
       "There are no groups": [
         "Няма ніводнай групы"
-      ],
-      "Time": [
-        "Час"
       ],
       "TV sign in": [
         "Увайсці на тэлевізары"
