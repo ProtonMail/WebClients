@@ -170,6 +170,7 @@ export const getExchangeRateFromBitcoinUnit = (unit: WasmBitcoinUnit): WasmApiEx
         ExchangeRateTime: '-1',
         ExchangeRate: CENTS_BY_BITCOIN_UNIT[unit],
         Cents: CENTS_BY_BITCOIN_UNIT[unit],
+        Sign: unit,
         isBitcoinRate: true,
     };
 

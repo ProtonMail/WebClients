@@ -60,14 +60,14 @@ export const RecipientsDataItem = ({
                     const recipient = tx
                         ? getTransactionRecipientHumanReadableName(tx, output, walletMap, addresses)
                         : null;
-                    const isBtcAddress = recipient == output.address;
+                    const isBtcAddress = !!(output.address && recipient == output.address);
 
                     return (
                         <li key={index} className="flex flex-row w-full items-center my-1">
                             <button
                                 className="flex flex-row flex-nowrap items-center w-full"
                                 onClick={() => {
-                                    if (recipient) {
+                                    if (recipient && output.address) {
                                         onClick(recipient, output.address, index);
                                     }
                                 }}
