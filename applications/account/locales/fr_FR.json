@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "activate": [
-        "activer"
-      ],
       "Activate": [
         "Activer"
+      ],
+      "activate": [
+        "activer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activer ${ user.Name }@pm.me"
@@ -225,12 +225,6 @@
       ],
       "Clear all formatting": [
         "Effacer toute la mise en forme"
-      ],
-      "Clear filter": [
-        "Effacer le filtre"
-      ],
-      "Clear filters": [
-        "Effacer les filtres"
       ],
       "Close": [
         "Fermer"
@@ -867,6 +861,9 @@
       ],
       "Resend code": [
         "Renvoyer le code"
+      ],
+      "Reset": [
+        "Réinitialiser"
       ],
       "Reset credentials": [
         "Réinitialiser les identifiants"
@@ -5185,14 +5182,17 @@
       "*Only one free trial per user. Regular pricing applies thereafter.": [
         "*Une seule période d'essai gratuite par utilisateur. Les tarifs réguliers s'appliquent par la suite."
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Les comptes avec des domaines personnalisés ne peuvent pas rejoindre un abonnement de groupe."
+      "Accounts with custom domains cannot join a family plan.": [
+        "Les comptes avec des domaines personnalisés ne peuvent pas rejoindre un abonnement familial."
+      ],
+      "After leaving, you will be moved to a ${ BRAND_NAME } Free plan.": [
+        "Après avoir quitté votre abonnement, vous passerez à un abonnement ${ BRAND_NAME } Free."
       ],
       "customer support": [
         "service client"
       ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Actuellement, les abonnements de groupe ne prennent pas en charge les comptes externes. Créez une adresse ${ BRAND_NAME } avant de rejoindre l'un de ces abonnements. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Actuellement, les abonnements familiaux ne prennent pas en charge les comptes externes. Créez une adresse ${ BRAND_NAME } avant de rejoindre l'un de ces abonnements. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Si vous acceptez l'invitation, nous changerons votre abonnement actuel et nous créditerons votre compte de l'éventuel solde restant."
@@ -5203,6 +5203,9 @@
       "Invited by: ${ inviteEmail }": [
         "Invitation de : ${ inviteEmail }"
       ],
+      "Leave ${ PASS_SHORT_APP_NAME } Family plan": [
+        "Quitter l'abonnement ${ PASS_SHORT_APP_NAME } Family"
+      ],
       "Leave Duo plan": [
         "Quitter l'abonnement Duo"
       ],
@@ -5212,8 +5215,8 @@
       "Leave Visionary plan": [
         "Quitter l'abonnement Visionary"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Les comptes Lifetime ne peuvent rejoindre un abonnement de groupe."
+      "Lifetime accounts cannot join a family plan.": [
+        "Les comptes Lifetime ne peuvent rejoindre un abonnement familial."
       ],
       "Manage addresses.": [
         "Gérer les adresses"
@@ -5225,8 +5228,8 @@
         "Seule ${ n } invitation tous les 6 mois est acceptée.",
         "Seules ${ n } invitations tous les 6 mois sont acceptées."
       ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Les utilisateurs qui ont un abonnement avec des membres ne peuvent pas rejoindre un autre abonnement de groupe."
+      "Owners of a plan with members cannot join another family plan.": [
+        "Les utilisateurs qui ont un abonnement avec des membres ne peuvent pas rejoindre un autre abonnement familial."
       ],
       "Pending": [
         "En attente"
@@ -5272,8 +5275,8 @@
       "You have successfully joined the family group": [
         "Vous avez rejoint le groupe famillal."
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Vous avez des factures non payées. Nous vous invitons à les régler avant de rejoindre un abonnement de groupe."
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Vous avez des factures non payées. Nous vous invitons à les régler avant de rejoindre un abonnement familial."
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Vous devez configurer un domaine personnalisé avant d'ajouter plusieurs utilisateurs."
@@ -5284,8 +5287,8 @@
       "You will lose access to all premium features and storage space included with ${ plan }.": [
         "Vous perdrez l'accès à toutes les fonctionnalités premium et à l'espace de stockage inclus dans ${ plan }."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Vous avez une invitation à lier votre compte ${ BRAND_NAME } à cet abonnement de groupe pour profiter tous ensemble des fonctionnalités premium de ${ BRAND_NAME_TWO }."
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Vous avez une invitation à lier votre compte ${ BRAND_NAME } à cet abonnement familial pour profiter tous ensemble des fonctionnalités premium de ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Le nombre d'adresses e-mail de votre compte dépasse celui prévu avec cet abonnement. ${ addressSettingsLink }"
@@ -5301,6 +5304,9 @@
       "*Only one free trial per user. Regular pricing applies thereafter.": [
         "*Une seule période d'essai gratuite par utilisateur. Les tarifs réguliers s'appliquent par la suite."
       ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
+        "Après avoir quitté votre abonnement, cet utilisateur passera à un abonnement ${ BRAND_NAME } Free."
+      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Après avoir quitté votre abonnement, cet utilisateur sera transféré à un abonnement ${ BRAND_NAME } Unlimited avec une période d'essai gratuite de 30 jours.*"
       ],
@@ -5309,6 +5315,12 @@
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Créez et gérez les membres de votre famille et attribuez-leur un espace de stockage qui est partagé entre eux et entre ${ DRIVE_APP_NAME } et ${ MAIL_APP_NAME }."
+      ],
+      "Create and manage family members.": [
+        "Créez et gérez les membres de votre famille."
+      ],
+      "If the user already has a ${ BRAND_NAME } account (${ domain } or other, e.g. @gmail.com), enter it here. Otherwise they need to create an account first.": [
+        "Si l'utilisateur utilise déjà un compte ${ BRAND_NAME } (${ domain } ou tout autre compte comme @gmail.com), saisissez-le ici. Dans le cas contraire, il devra d'abord créer un compte."
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Si l'utilisateur a déjà une adresse ${ MAIL_APP_NAME }, saisissez-la ici. Sinon, il doit d'abord créer un compte."
@@ -6748,9 +6760,6 @@
         "Tous (${ totalFoldersCount } label)",
         "Tous (${ totalFoldersCount } labels)"
       ],
-      "All Events ": [
-        "Tous les événements"
-      ],
       "All keys successfully reactivated": [
         "Toutes les clés ont été réactivées."
       ],
@@ -6931,15 +6940,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Mettez en avant l'image de marque de votre organisation et créez une expérience en ligne plus cohérente pour vos utilisateurs."
-      ],
-      "Breach Custom Email Created": [
-        "L'e-mail personnalisé en cas de fuite de données a été créé."
-      ],
-      "Breach Custom Email Deleted": [
-        "L'e-mail personnalisé en cas de fuite de données a été supprimé."
-      ],
-      "Breach Custom Email Validated": [
-        "L'e-mail personnalisé en cas de fuite de données a été validé."
       ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Par défaut, les membres de l'organisation peuvent uniquement exporter les coffres-forts dont ils sont les propriétaires. Si cette option est activée, ils ne pourront pas exporter les données."
@@ -7541,16 +7541,7 @@
       "Invitation link used": [
         "Le lien d'invitation a été utilisé."
       ],
-      "Invite Accepted": [
-        "L'invitation a été acceptée."
-      ],
-      "Invite Created": [
-        "L'invitation a été créée."
-      ],
       "Invite deleted": [
-        "L'invitation a été supprimée."
-      ],
-      "Invite Deleted": [
         "L'invitation a été supprimée."
       ],
       "Invite for new user deleted": [
@@ -7565,9 +7556,6 @@
       "Invite rejected": [
         "L'invitation a été refusée."
       ],
-      "Invite Rejected": [
-        "L'invitation a été refusée."
-      ],
       "Invite successfully sent": [
         "L'invitation a été envoyée.",
         "Les invitations ont été envoyées."
@@ -7575,29 +7563,17 @@
       "It appears some of your data is encrypted and locked.": [
         "Il semble que certaines de vos données soient chiffrées et verrouillées."
       ],
-      "Item Autofilled": [
-        "L'invitation a été remplie automatiquement."
-      ],
       "Item autofilled in ${ vaultLink }": [
         "L'élément a été rempli automatiquement dans ${ vaultLink }."
       ],
       "Item autofilled in vault": [
         "L'élément dans le coffre-fort a été rempli automatiquement."
       ],
-      "Item Changed Flags": [
-        "Indicateurs de l'élément modifié"
-      ],
-      "Item Created": [
-        "L'élément est créé."
-      ],
       "Item created in ${ vaultLink }": [
         "L'élément a été créé dans ${ vaultLink }."
       ],
       "Item created in vault": [
         "L'élément dans le coffre-fort a été créé."
-      ],
-      "Item Deleted": [
-        "L'élément est supprimé."
       ],
       "Item deleted from ${ vaultLink }": [
         "L'élément a été supprimé de ${ vaultLink }."
@@ -7623,23 +7599,11 @@
       "Item in vault untrashed": [
         "L'élément dans le coffre-fort a été retiré de la corbeille."
       ],
-      "Item Read": [
-        "L'élément est lu."
-      ],
       "Item read in ${ vaultLink }": [
         "L'élément a été lu dans ${ vaultLink }."
       ],
       "Item read in vault": [
         "L'élément dans le coffre-fort a été lu."
-      ],
-      "Item Trashed": [
-        "L'élément est dans la corbeille."
-      ],
-      "Item Untrashed": [
-        "L'invitation a été retirée de la corbeille."
-      ],
-      "Item Updated": [
-        "L'élément est mis à jour."
       ],
       "Item updated in ${ vaultLink }": [
         "L'élément a été mis à jour dans ${ vaultLink }."
@@ -7808,12 +7772,6 @@
       ],
       "New": [
         "Nouveau"
-      ],
-      "New User Invite Created": [
-        "L'invitation du nouvel utilisateur a été créée."
-      ],
-      "New User Invite Deleted": [
-        "L'invitation du nouvel utilisateur a été supprimée."
       ],
       "New user invited to organization": [
         "Le nouvel utilisateur a été invité à rejoindre l'organisation."
@@ -8211,15 +8169,6 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles, nous vous invitons à réessayer dans quelques minutes."
       ],
-      "Session Ended": [
-        "La session est terminée."
-      ],
-      "Session Roaming": [
-        "Session itinérante"
-      ],
-      "Session Started": [
-        "La session a démarré."
-      ],
       "Session timed out": [
         "La session a expiré."
       ],
@@ -8234,15 +8183,6 @@
       ],
       "Settings updated": [
         "Les paramètres ont été mis à jour."
-      ],
-      "Share Created": [
-        "Le partage a été créé."
-      ],
-      "Share Deleted": [
-        "Le partage a été supprimé."
-      ],
-      "Share Updated": [
-        "Le partage a été mis à jour."
       ],
       "Shared ${ vaultLink } deleted": [
         "Le lien partagé ${ vaultLink } a été supprimé."
@@ -8701,8 +8641,8 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Passez à la version supérieure pour profiter de fonctionnalités, de produits et d'espace de stockage premium à un tarif avantageux."
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Passez à ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } ou ${ PLAN_NAMES[bundleProPlan] } pour bénéficier de ${ PROTON_SENTINEL_NAME }."
+      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Passez à l'abonnement ${ firstPlanNames } ou ${ lastPlanName } pour bénéficier de ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Changez d'abonnement pour ajouter une adresse plus courte @pm.me à votre compte, plus facile à partager et qui signifie « ${ MAIL_APP_NAME } me » ou « Private Message me » (envoyez-moi un message privé)."
@@ -8755,13 +8695,7 @@
       "Vault created": [
         "Le coffre-fort a été créé."
       ],
-      "Vault Created": [
-        "Le coffre-fort a été créé."
-      ],
       "Vault deleted": [
-        "Le coffre-fort a été supprimé."
-      ],
-      "Vault Deleted": [
         "Le coffre-fort a été supprimé."
       ],
       "Vault either deleted or requires access permissions": [
@@ -8771,9 +8705,6 @@
         "Coffre-fort partagé par e-mail"
       ],
       "Vault updated": [
-        "Le coffre-fort a été mis à jour."
-      ],
-      "Vault Updated": [
         "Le coffre-fort a été mis à jour."
       ],
       "Verification can take a few minutes.": [
@@ -8856,6 +8787,9 @@
       ],
       "We recommend having multiple servers in different locations to provide redundancy.": [
         "Nous conseillons l'utilisation de plusieurs serveurs dans différents endroits pour assurer la redondance."
+      ],
+      "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "Nous vous recommandons de prévenir les membres de votre famille et de leur demander de configurer l'authentification à deux facteurs sur leurs comptes avant de leur imposer son utilisation."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Nous vous recommandons de prévenir les membres de l'organisation et de leur demander de configurer l'authentification à deux facteurs sur leurs comptes avant de leur imposer son utilisation."
@@ -10689,6 +10623,16 @@
         "Phrase de récupération"
       ]
     },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "De"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "À"
+      ]
+    },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Ajoutez un domaine que vous possédez à votre compte ${ MAIL_APP_NAME }."
@@ -11972,6 +11916,9 @@
       "Secure Core servers": [
         "Serveurs Secure Core"
       ],
+      "Secure link sharing": [
+        "Partage de liens sécurisés"
+      ],
       "See team's availability": [
         "Afficher les disponibilités de votre équipe"
       ],
@@ -12073,6 +12020,10 @@
         "Jusqu'à ${ n } utilisateur",
         "Jusqu'à ${ n } utilisateurs"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Jusqu'à ${ n } utilisateur (${ adminsText }), ${ usersText }",
+        "Jusqu'à ${ n } utilisateurs (${ adminsText }), ${ usersText }"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Jusqu'à ${ totalStorageSize } d'espace de stockage"
       ],
@@ -12091,6 +12042,16 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } administrateur",
+        "${ admins } administrateurs"
+      ],
+      "${ users } user": [
+        "${ users } utilisateur",
+        "${ users } utilisateurs"
       ]
     },
     "new_plans: feature info": {
@@ -12187,6 +12148,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Protégez les informations sensibles de vos activités et collaborez en toute sécurité."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Protégez votre famille avec toutes les fonctionnalités premium de ${ PASS_SHORT_APP_NAME } Plus pour 6 utilisateurs."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protégez la vie privée de votre famille avec l'ensemble des services ${ BRAND_NAME }."
@@ -12463,6 +12427,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Cela inclut la synchronisation automatique, le partage de fichiers chiffrés et d'autres fonctionnalités."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Partagez certains éléments avec n'importe quel utilisateur en toute sécurité (même s'ils n'ont pas ${ PASS_APP_NAME })"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Conservez en sécurité les informations de vos contacts, comme leur numéro de téléphone, adresse, date d'anniversaire, ainsi que vos notes personnelles. Le chiffrement zéro accès garantit que même ${ BRAND_NAME } ne peut pas y accéder."
@@ -13495,6 +13462,35 @@
         "Pour les particuliers"
       ]
     },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } compte utilisateur",
+        "${ n } comptes utilisateur"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Panneau d'administration pour gérer l'abonnement et les utilisateurs"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Toutes les fonctionnalités premium, 6 utilisateurs et 1 seul abonnement."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Facturation annuelle à ${ yearlyPrice }. Économisez ${ yearlySavedPrice } avec ${ passFamilyPlanName } (en comparaison de 6 abonnements ${ passPlusPlanName })."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Offre exclusive uniquement pour les premiers utilisateurs de ${ PASS_APP_NAME } de la première heure qui ont apporté leur soutien."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Disponible pour ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Voici ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Offre à durée limitée."
+      ]
+    },
     "password_reset: info": {
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
         "**Toutes vos informations existantes** (e-mails, événements, contacts, fichiers, entrées ${ PASS_APP_NAME }…) **seront verrouillées** et peuvent uniquement être déverrouillées avec votre **ancien mot de passe**."
@@ -13760,9 +13756,6 @@
       ],
       "Email address": [
         "Adresse e-mail"
-      ],
-      "Email or IP": [
-        "E-mail ou IP"
       ],
       "End date": [
         "Date de fin"
@@ -16262,9 +16255,6 @@
       "Status": [
         "Statut"
       ],
-      "Time": [
-        "Heure"
-      ],
       "Total storage": [
         "Espace de stockage total"
       ],
@@ -16566,9 +16556,6 @@
       "Connect ${ name }": [
         "Se connecter à ${ name }"
       ],
-      "Connection events": [
-        "Événements de connexion"
-      ],
       "Connection monitor disabled": [
         "La surveillance de la connexion a été désactivée."
       ],
@@ -16828,9 +16815,6 @@
       ],
       "Error": [
         "Erreur"
-      ],
-      "Event": [
-        "Événement"
       ],
       "Every member of the organization can access": [
         "Chaque membre de l'organisation peut accéder"
@@ -17374,9 +17358,6 @@
       ],
       "This field cannot contain only spaces": [
         "Ce champ ne doit pas contenir uniquement des espaces"
-      ],
-      "Time": [
-        "Heure"
       ],
       "Time zone": [
         "Fuseau horaire"
