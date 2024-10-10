@@ -74,6 +74,8 @@ export const getAccountAppRoutes = ({
 
     const isPassConsumerOrPassFamilyOrg = getIsConsumerPassPlan(organization?.PlanName);
 
+    const showStorageSection = !(isPassConsumerOrPassFamilyOrg || (isFree && app === APPS.PROTONPASS));
+
     //Used to determine if a user is on a visionary plan (works for both old and new visionary plans)
     const isVisionaryPlan = !!organization && isOrganizationVisionary(organization);
     const isMemberProton = Type === UserType.PROTON;
@@ -103,10 +105,10 @@ export const getAccountAppRoutes = ({
                     {
                         text: hasSplitStorage ? c('Title').t`Your storage` : undefined,
                         id: 'your-storage',
-                        available: hasSplitStorage && !isPassConsumerOrPassFamilyOrg,
+                        available: hasSplitStorage && showStorageSection,
                     },
                     {
-                        text: hasSplitStorage && !isPassConsumerOrPassFamilyOrg ? c('Title').t`Your plan` : undefined,
+                        text: hasSplitStorage && showStorageSection ? c('Title').t`Your plan` : undefined,
                         id: 'your-plan',
                         available: canPay,
                     },
