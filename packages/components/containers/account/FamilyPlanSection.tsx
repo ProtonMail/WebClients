@@ -1,12 +1,13 @@
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useMember } from '@proton/account/member/hook';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { useMember, useOrganization } from '@proton/components/hooks';
+import { useOrganization } from '@proton/components/hooks';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import {
     isOrganizationDuo,

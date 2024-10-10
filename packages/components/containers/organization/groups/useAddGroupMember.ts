@@ -1,4 +1,5 @@
-import { useGetMembers, useGetOrganizationKey } from '@proton/components/hooks';
+import { useGetMembers } from '@proton/account/members/hooks';
+import { useGetOrganizationKey } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useEventManager from '@proton/components/hooks/useEventManager';
