@@ -24,7 +24,8 @@ import {
     getSpace,
 } from '@proton/shared/lib/user/storage';
 
-import { useLocalState, useSubscription } from '../../hooks';
+import { useSubscription } from '../../hooks';
+import useLocalState from '../../hooks/useLocalState';
 import LockedStateTopBanner from './LockedStateTopBanner';
 import TopBanner from './TopBanner';
 

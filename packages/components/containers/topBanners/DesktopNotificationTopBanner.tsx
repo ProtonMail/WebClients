@@ -10,7 +10,8 @@ import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { Status, getStatus, request } from '@proton/shared/lib/helpers/desktopNotification';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 
-import { useLocalState, useUserSettings } from '../../hooks';
+import { useUserSettings } from '../../hooks';
+import useLocalState from '../../hooks/useLocalState';
 import TopBanner from './TopBanner';
 
 const DesktopNotificationTopBanner = () => {
