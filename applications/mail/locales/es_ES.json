@@ -4743,14 +4743,14 @@
       "${ BRAND_NAME } groups": [
         "grupos ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Las cuentas con dominios personalizados no pueden unirse a un plan grupal."
+      "Accounts with custom domains cannot join a family plan.": [
+        "Las cuentas con dominios personalizados no pueden unirse a un plan familiar."
       ],
       "customer support": [
         "atención al cliente"
       ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Los planes grupales actualmente no admiten cuentas externas. Crea una dirección de ${ BRAND_NAME } antes de unirte. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Los planes familiares actualmente no admiten cuentas externas. Crea una dirección de ${ BRAND_NAME } antes de unirte. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Si aceptas la invitación, te cambiaremos de plan y abonaremos en tu cuenta el saldo que quede restante."
@@ -4758,14 +4758,14 @@
       "Invited by: ${ inviteEmail }": [
         "Invitación de: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Las cuentas Lifetime no pueden unirse a un plan grupal."
+      "Lifetime accounts cannot join a family plan.": [
+        "Las cuentas Lifetime no pueden unirse a un plan familiar."
       ],
       "Manage addresses.": [
         "Gestiona las direcciones."
       ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Los dueños de un plan con miembros no pueden unirse al plan de otro grupo."
+      "Owners of a plan with members cannot join another family plan.": [
+        "Los dueños de un plan con miembros no pueden unirse a otro plan familiar."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Lo sentimos, no puedes cambiar de plan en este momento."
@@ -4788,11 +4788,11 @@
       "You have successfully joined the family group": [
         "Te has unido al grupo familiar."
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Tienes facturas pendientes de pago. Por favor, págalas antes de unirte a un plan de grupo."
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Tienes facturas pendientes de pago. Por favor, págalas antes de unirte a un plan familiar."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Has recibido una invitación para que vincules tu cuenta de ${ BRAND_NAME } a este plan grupal y disfrutes así de todas las funciones premium de ${ BRAND_NAME_TWO }."
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Has recibido una invitación para que vincules tu cuenta de ${ BRAND_NAME } a este plan familiar y disfrutes así de todas las funciones premium de ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Tu cuenta tiene más direcciones de correo electrónico que las que tienes disponibles en este plan. ${ addressSettingsLink }"
@@ -9422,6 +9422,9 @@
       "Secure Core servers": [
         "Servidores Secure Core"
       ],
+      "Secure link sharing": [
+        "Uso compartido seguro de enlaces"
+      ],
       "See team's availability": [
         "Mostrar la disponibilidad del equipo"
       ],
@@ -9528,6 +9531,16 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } administrador",
+        "${ admins } administradores"
+      ],
+      "${ users } user": [
+        "${ users } usuario",
+        "${ users } usuarios"
       ]
     },
     "new_plans: feature info": {
@@ -9811,6 +9824,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Asegura tus archivos con almacenamiento en la nube cifrado. Incluye sincronización automática, intercambio de archivos cifrado y más."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Comparte elementos aislados de forma segura con cualquiera (aunque no use ${ PASS_APP_NAME })"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Guarda a buen recaudo los datos de tus contactos (teléfono, dirección, cumpleaños y notas personales). El cifrado de acceso cero garantiza que ni ${ BRAND_NAME } pueda acceder a ellos."
@@ -10245,6 +10261,26 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Intercambio seguro de caja fuerte (${ n } caja fuerte) e intercambio de enlaces",
         "Intercambio seguro de caja fuerte (${ n } cajas fuertes) e intercambio de enlaces"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } cuenta de usuario",
+        "${ n } cuentas de usuario"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Oferta exclusiva disponible solo para los primeros seguidores de ${ PASS_APP_NAME }."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Obtenlo por ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Presentamos ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Oferta por tiempo limitado."
       ]
     },
     "passwordless": {
@@ -10742,11 +10778,6 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(abrirá ${ PASS_APP_NAME })"
-      ]
-    },
-    "Security Center - Action": {
-      "View logs": [
-        "Ver los registros"
       ]
     },
     "Security Center - Info": {
