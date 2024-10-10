@@ -22,7 +22,6 @@
         "test:watch": "yarn test --watch"
     },
     "dependencies": {
-        "@moonpay/moonpay-react": "^1.7.3",
         "@proton/andromeda": "workspace:packages/wasm/andromeda",
         "@proton/components": "workspace:packages/components",
         "@proton/cross-storage": "workspace:packages/cross-storage",
