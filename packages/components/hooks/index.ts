@@ -20,9 +20,7 @@ export { default as useSortedList, useSortedListAsync, useMultiSortedList } from
 export { default as useSpotlightOnFeature } from './useSpotlightOnFeature';
 export { default as useSubscription, useGetSubscription } from './useSubscription';
 export { default as usePreventCloseTab } from './usePreventCloseTab';
-export * from './useSAMLConfigs';
 export * from './useSessionRecovery';
-export * from './securityCheckup';
 export { default as useShowThemeSelection } from './useShowThemeSelection';
 export { useUserKeys, useGetUserKeys } from './useUserKeys';
 export { default as useUserSettings } from './useUserSettings';
