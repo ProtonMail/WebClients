@@ -384,11 +384,11 @@
       "Get link": [
         "Λάβετε σύνδεσμο"
       ],
-      "Get started": [
-        "Ας ξεκινήσουμε"
-      ],
       "Get Started": [
         "Ξεκινήστε"
+      ],
+      "Get started": [
+        "Ας ξεκινήσουμε"
       ],
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
@@ -561,11 +561,11 @@
       "Not now": [
         "Όχι τώρα"
       ],
-      "OK": [
-        "ΟΚ"
-      ],
       "Ok": [
         "OK"
+      ],
+      "OK": [
+        "ΟΚ"
       ],
       "Open": [
         "Άνοιγμα"
@@ -875,6 +875,9 @@
       ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Αναβάθμιση σε ${ BRAND_NAME } Unlimited"
       ],
       "Upload anyway": [
         "Ανέβασμα οπωσδήποτε"
@@ -2281,6 +2284,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } προστατεύει τον λογαριασμό σας με αποκλειστική 24 ώρες το 24ωρο, 7 ημέρες την εβδομάδα παρακολούθηση ύποπτης δραστηριότητας — συμπεριλαμβανομένης της κλιμάκωσης σε ειδικούς ασφαλείας."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Το 2FA προσθέτει ένα επιπλέον επίπεδο ασφαλείας, αποτρέποντας τη μη εξουσιοδοτημένη πρόσβαση."
       ],
@@ -2329,6 +2335,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Χρησιμοποιήστε την επιλογή \"Drag and Drop\" για να ταξινομήσετε τη προτεραιότητα συγχώνευσης μεταξύ των επαφών. Καταργήστε την επιλογή των επαφών που δεν θέλετε να συγχωνεύσετε."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Με τις ομάδες επαφών, μπορείτε να στείλετε μηνύματα ηλεκτρονικού ταχυδρομείου σε όλα τα μέλη της ομάδας με ένα κλικ."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Μπορείτε να εισάγετε εκδηλώσεις σε μορφή iCal (ICS αρχείο).\nΤο αρχείο θα πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_EVENTS_STRING } εκδηλώσεις.\nΑν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε να το χωρίσετε σε μικρότερα αρχεία."
       ],
@@ -2340,6 +2349,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Οι μέθοδοι ανάκτησης του λογαριασμού και των δεδομένων σας έχουν οριστεί."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -3350,14 +3362,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } ομάδες"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Οι λογαριασμοί με προσαρμοσμένους τομείς δεν μπορούν να συμμετάσχουν σε ομαδικό πλάνο."
-      ],
       "customer support": [
         "υποστήριξη πελατών"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Τα ομαδικά πλάνα δεν υποστηρίζουν προς το παρόν εξωτερικούς λογαριασμούς. Δημιουργήστε μια διεύθυνση ${ BRAND_NAME } πριν εγγραφείτε. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Εάν αποδεχτείτε την πρόσκληση, θα σας αλλάξουμε από το τρέχον πρόγραμμά σας και θα πιστώσουμε στον λογαριασμό σας τυχόν υπόλοιπο."
@@ -3365,14 +3371,8 @@
       "Invited by: ${ inviteEmail }": [
         "Προσκλήθηκε από: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Οι λογαριασμοί εφ' όρου ζωής δεν μπορούν να συμμετάσχουν σε ομαδικό πλάνο."
-      ],
       "Manage addresses.": [
         "Διαχείριση διευθύνσεων."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Οι κάτοχοι ενός προγράμματος με μέλη δεν μπορούν να συμμετάσχουν σε άλλο ομαδικό σχέδιο."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Λυπούμαστε, δεν μπορείτε να αλλάξετε σχέδια αυτήν τη στιγμή."
@@ -3394,12 +3394,6 @@
       ],
       "You have successfully joined the family group": [
         "Συμμετείχατε με επιτυχία στην ομάδα οικογένειας"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Έχετε ανεξόφλητα τιμολόγια. Πληρώστε τους πριν συμμετάσχετε σε ένα ομαδικό πλάνο."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Έχετε προσκληθεί να συνδέσετε τον λογαριασμό σας ${ BRAND_NAME } σε αυτό το ομαδικό πρόγραμμα και να απολαύσετε μαζί όλες τις premium λειτουργίες ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Ο λογαριασμός σας έχει περισσότερες διευθύνσεις ηλεκτρονικού ταχυδρομείου από αυτές που είναι διαθέσιμες σε αυτό το σχέδιο. ${ addressSettingsLink }"
@@ -5356,6 +5350,9 @@
       "You are about to open another browser tab and visit:": [
         "Πρόκειται να ανοίξετε μια άλλη καρτέλα προγράμματος περιήγησης και να επισκεφτείτε:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Πρόκειται να ανοίξετε το προεπιλεγμένο πρόγραμμα περιήγησής σας και να επισκεφθείτε:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Είστε συνδεδεμένος/η ως ${ user.Name } (${ user.Email })."
       ],
@@ -6632,6 +6629,9 @@
       ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Αναβάθμιση σε ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -8321,11 +8321,6 @@
         "(θα ανοίξει ${ PASS_APP_NAME })"
       ]
     },
-    "Security Center - Action": {
-      "View logs": [
-        "Προβολή αρχείων καταγραφής"
-      ]
-    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } και ${ remainingCount } εντοπίστηκαν άλλες πιθανές διαρροές. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες. ${ link }"
@@ -9866,6 +9861,9 @@
       "Groups": [
         "Ομάδες"
       ],
+      "High security for your account": [
+        "Υψηλή ασφάλεια για τον λογαριασμό σας"
+      ],
       "Hm, we couldn't find that one": [
         "Χμ, δεν μπορέσαμε να το βρούμε αυτό"
       ],
@@ -9947,6 +9945,9 @@
       ],
       "Number of items": [
         "Πλήθος αντικειμένων"
+      ],
+      "One email, many recipients": [
+        "Ένα email, πολλοί παραλήπτες"
       ],
       "Open actions dropdown": [
         "Άνοιγμα αναπτυσσόμενων επιλογών"
