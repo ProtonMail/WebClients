@@ -403,6 +403,17 @@
         "Odstrániť komentár?"
       ]
     },
+    "Description": {
+      "Edit document directly": [
+        "Priama úprava dokumentu"
+      ],
+      "Edits become suggestion": [
+        "Úpravy sa stávajú návrhom"
+      ],
+      "Read or print final document": [
+        "Čítanie alebo tlač finálneho dokumentu"
+      ]
+    },
     "Error": {
       "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
         "Pri načítaní dokumentu došlo k chybe. Aby sa zabránilo poškodeniu dokumentu, editor bol uzamknutý. Znovu načítajte stránku a skúste to znova."
@@ -421,6 +432,9 @@
       ],
       "Failed to initialize editor due to unknown error.": [
         "Inicializácia editora sa nepodarila z dôvodu neznámej chyby."
+      ],
+      "Request timed out": [
+        "Požiadavka časovo omeškaná"
       ],
       "Signature verification failed": [
         "Overenie podpisu zlyhalo"
@@ -484,6 +498,18 @@
       "Editing": [
         "Upravuje"
       ],
+      "Font": [
+        "Písmo"
+      ],
+      "Font size": [
+        "Veľkosť písma"
+      ],
+      "Highlight": [
+        "Zvýrazniť"
+      ],
+      "Internet connection lost": [
+        "Strata internetového pripojenia"
+      ],
       "Just now": [
         "Práve teraz"
       ],
@@ -492,6 +518,12 @@
       ],
       "No comments": [
         "Žiadne komentáre"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Servery sú nedostupné. Skúste to prosím o pár minút"
+      ],
+      "Session timed out": [
+        "Relácia vypršala"
       ],
       "Something went wrong:": [
         "Niečo sa pokazilo:"
@@ -513,11 +545,17 @@
       ]
     },
     "Label": {
+      "Add link": [
+        "Pridať odkaz"
+      ],
       "Background colour": [
         "Farba pozadia"
       ],
       "Delete": [
         "Odstrániť"
+      ],
+      "Delete link": [
+        "Vymazať odkaz"
       ],
       "Delete paragraph": [
         "Vymazať odsek"
@@ -546,8 +584,14 @@
       "Replace": [
         "Nahradiť"
       ],
+      "Replace link": [
+        "Nahradiť odkaz"
+      ],
       "Text colour": [
         "Farba textu"
+      ],
+      "with \"${ replaceWith }\"": [
+        "s \"${ replaceWith }\""
       ]
     },
     "Placeholder": {

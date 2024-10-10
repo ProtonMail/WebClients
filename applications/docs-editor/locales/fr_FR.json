@@ -433,6 +433,9 @@
       "Failed to initialize editor due to unknown error.": [
         "L'initialisation de l'éditeur n'a pas abouti en raison d'une erreur inconnue."
       ],
+      "Request timed out": [
+        "La requête a expiré."
+      ],
       "Signature verification failed": [
         "La signature n'a pas pu être vérifiée."
       ],
@@ -502,6 +505,9 @@
       "Highlight": [
         "Souligner"
       ],
+      "Internet connection lost": [
+        "La connexion internet est perdue."
+      ],
       "Just now": [
         "À l'instant"
       ],
@@ -510,6 +516,12 @@
       ],
       "No comments": [
         "Aucun commentaire"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Les serveurs sont inaccessibles, nous vous invitons à réessayer dans quelques minutes."
+      ],
+      "Session timed out": [
+        "La session a expiré."
       ],
       "Something went wrong:": [
         "Une erreur s’est produite :"
@@ -537,8 +549,14 @@
       "Background colour": [
         "Couleur d'arrière-plan"
       ],
+      "Change image size": [
+        "Modifier la taille de l'image"
+      ],
       "Delete": [
         "Supprimer"
+      ],
+      "Delete image": [
+        "Supprimer l'image"
       ],
       "Delete link": [
         "Supprimer le lien"
@@ -551,6 +569,9 @@
       ],
       "Insert": [
         "Insérer"
+      ],
+      "Insert image": [
+        "Insérer une image"
       ],
       "Insert paragraph": [
         "Insérer un paragraphe"

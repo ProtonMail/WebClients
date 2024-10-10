@@ -403,6 +403,17 @@
         "მოვაცილო კომენტარი?"
       ]
     },
+    "Description": {
+      "Edit document directly": [
+        "დოკუმენტის ჩასწორება პირდაპირ"
+      ],
+      "Edits become suggestion": [
+        "ჩასწორებები მინიშნება გახდება"
+      ],
+      "Read or print final document": [
+        "საბოლოო დოკუმენტის წაკითხვა ან დაბეჭდვა"
+      ]
+    },
     "Error": {
       "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
         "შეცდომა დოკუმენტს ჩატვირთვისას. დოკუმენტის დაზიანების თავიდან ასაცილებალდ რედაქტორი დაბლოკილია. თავიდან ჩატვირთეთ გვერდი და ისევ სცადეთ."
@@ -421,6 +432,9 @@
       ],
       "Failed to initialize editor due to unknown error.": [
         "რედაქტორის ინიციალიზაცია ჩავარდა უცნობი შეცდომის გამო."
+      ],
+      "Request timed out": [
+        "მოთხოვნის ვადა გავიდა"
       ],
       "Signature verification failed": [
         "ხელმოწერის შემოწმების შეცდომა"
@@ -491,6 +505,9 @@
       "Highlight": [
         "გამოყოფა"
       ],
+      "Internet connection lost": [
+        "ინტერნეტკავშირი დაკარგულია"
+      ],
       "Just now": [
         "ახლა"
       ],
@@ -499,6 +516,12 @@
       ],
       "No comments": [
         "კომენტარების გარეშე"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "სერვერი მიუწვდომელია. ცოტა ხანში სცადეთ"
+      ],
+      "Session timed out": [
+        "სესიის დრო გავიდა"
       ],
       "Something went wrong:": [
         "რაღაც არასწორად წავიდა:"
@@ -564,6 +587,9 @@
       ],
       "Text colour": [
         "ტექსტის ფერი"
+      ],
+      "with \"${ replaceWith }\"": [
+        "\"${ replaceWith }\"-ით"
       ]
     },
     "Placeholder": {
