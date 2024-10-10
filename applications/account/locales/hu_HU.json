@@ -70,11 +70,11 @@
       "Accept": [
         "Elfogadás"
       ],
-      "activate": [
-        "aktiválás"
-      ],
       "Activate": [
         "Aktiválás"
+      ],
+      "activate": [
+        "aktiválás"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktiválása"
@@ -225,12 +225,6 @@
       ],
       "Clear all formatting": [
         "Formázás törlése"
-      ],
-      "Clear filter": [
-        "Szűrő törlése"
-      ],
-      "Clear filters": [
-        "Szűrők törlése"
       ],
       "Close": [
         "Bezárás"
@@ -834,6 +828,9 @@
       ],
       "Resend code": [
         "Kód újraküldése"
+      ],
+      "Reset": [
+        "Alaphelyzet"
       ],
       "Reset credentials": [
         "Hitelesítő adatok visszaállítása"
@@ -4925,9 +4922,6 @@
         "Csak ${ n } elfogadott meghívó engedélyezett 6 hónap alatt.",
         "Csak ${ n } elfogadott meghívó engedélyezett 6 hónap alatt."
       ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Tagokkal rendelkező csomagok tulajdonosai nem csatlakozhatnak másik csoportos előfizetéshez."
-      ],
       "Pending": [
         "Függőben"
       ],
@@ -4962,12 +4956,6 @@
       "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
         "Elérte a 6 hónapon belül lehetséges maximális ${ n } elfogadott meghívót. Ez a gomb aktiválódni fog, amikor ismét hívhat meg felhasználókat.",
         "Elérte a 6 hónapon belül lehetséges maximális ${ n } elfogadott meghívót. Ez a gomb aktiválódni fog, amikor ismét hívhat meg felhasználókat."
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Kifizetetlen számlája van. Kérjük, rendezze a számlákat, mielőtt csoportos csomagba lépne."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Meghívót kapott, hogy a ${ BRAND_NAME } fiókjával csatlakozzon ehhez a csoporthoz és együtt használhassák a ${ BRAND_NAME_TWO } prémium lehetőségeit."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "A fiókjában több e-mail cím van, mint amennyit a csomagja lehetővé tesz. ${ addressSettingsLink }"
@@ -6349,9 +6337,6 @@
         "Mind (${ totalFoldersCount } címke)",
         "Mind (${ totalFoldersCount } címke)"
       ],
-      "All Events ": [
-        "Minden esemény "
-      ],
       "All keys successfully reactivated": [
         "Minden kulcsot sikerült újraaktiválni"
       ],
@@ -6523,15 +6508,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Erősítse szervezetének márkaidentitását, és hozzon létre egységesebb online élményt a felhasználók számára."
-      ],
-      "Breach Custom Email Created": [
-        "Adatvédelmi incidens egyedi e-mail létrehozva"
-      ],
-      "Breach Custom Email Deleted": [
-        "Adatvédelmi incidens egyedi e-mail törölve"
-      ],
-      "Breach Custom Email Validated": [
-        "Adatvédelmi incidens egyedi e-mail ellenőrizve"
       ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Alapértelmezésben a szervezet tagjai csak azokat a tárolókat tudják exportálni, ami a saját tulajdonukban van. Ennek bekapcsolásakor semmit sem tudnak exportálni"
@@ -7068,17 +7044,8 @@
       "Invitation link used": [
         "A meghívó hivatkozást már felhasználta"
       ],
-      "Invite Accepted": [
-        "Meghívás elfogadva"
-      ],
-      "Invite Created": [
-        "Meghívó létrehozva"
-      ],
       "Invite deleted": [
         "A meghívó törölve"
-      ],
-      "Invite Deleted": [
-        "Meghívó törölve"
       ],
       "Invite for new user deleted": [
         "Új felhasználó meghívója törölve"
@@ -7092,9 +7059,6 @@
       "Invite rejected": [
         "Meghívás elutasítva"
       ],
-      "Invite Rejected": [
-        "Meghívás elutasítva"
-      ],
       "Invite successfully sent": [
         "Meghívó sikeresen elküldve",
         "Meghívók sikeresen elküldve"
@@ -7102,29 +7066,17 @@
       "It appears some of your data is encrypted and locked.": [
         "Úgy tűnik az adatai egy része titkosítva és zárolva vannak."
       ],
-      "Item Autofilled": [
-        "Elem automatikusan kitöltve"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "Elem automatikusan kitöltve a tárolóból: ${ vaultLink }"
       ],
       "Item autofilled in vault": [
         "Elem automatikusan kitöltve a tárolóban"
       ],
-      "Item Changed Flags": [
-        "Elem jelzői megváltoztatva"
-      ],
-      "Item Created": [
-        "Elem létrehozva"
-      ],
       "Item created in ${ vaultLink }": [
         "Elem létrehozva a tárolóban: ${ vaultLink }"
       ],
       "Item created in vault": [
         "Elem létrehozva a tárolóban"
-      ],
-      "Item Deleted": [
-        "Elem törölve"
       ],
       "Item deleted from ${ vaultLink }": [
         "Elem törölve a tárolóból: ${ vaultLink }"
@@ -7150,23 +7102,11 @@
       "Item in vault untrashed": [
         "Elem a tárolóban a lomtárból visszavéve"
       ],
-      "Item Read": [
-        "Elem olvasva"
-      ],
       "Item read in ${ vaultLink }": [
         "Elem olvasva a tárolóból: ${ vaultLink }"
       ],
       "Item read in vault": [
         "Elem olvasva a tárolóban"
-      ],
-      "Item Trashed": [
-        "Elem a lomtárba helyezve"
-      ],
-      "Item Untrashed": [
-        "Elem a lomtárból visszavéve"
-      ],
-      "Item Updated": [
-        "Elem frissítve"
       ],
       "Item updated in ${ vaultLink }": [
         "Elem frissítve a tárolóban: ${ vaultLink }"
@@ -7320,12 +7260,6 @@
       ],
       "New": [
         "Új"
-      ],
-      "New User Invite Created": [
-        "Új felhasználói meghívó létrehozva"
-      ],
-      "New User Invite Deleted": [
-        "Új felhasználói meghívó törölve"
       ],
       "New user invited to organization": [
         "Új felhasználó meghívva a szervezetbe"
@@ -7681,15 +7615,6 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "A szerverek nem érhetők el. Próbálja meg egy pár perc múlva"
       ],
-      "Session Ended": [
-        "A munkamenet véget ért"
-      ],
-      "Session Roaming": [
-        "A munkamenet roamingol"
-      ],
-      "Session Started": [
-        "A munkamenet elindult"
-      ],
       "Session timed out": [
         "A munkamenet lejárt"
       ],
@@ -7704,15 +7629,6 @@
       ],
       "Settings updated": [
         "Beállítások frissítve lettek"
-      ],
-      "Share Created": [
-        "Megosztás létrehozva"
-      ],
-      "Share Deleted": [
-        "Megosztás törölve"
-      ],
-      "Share Updated": [
-        "Megosztás frissítve"
       ],
       "Shared ${ vaultLink } deleted": [
         "Megosztott ${ vaultLink } törölve"
@@ -8141,9 +8057,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Váltson nagyobb csomagra a prémium funkciókért, termékekért és tárhelyért, egy kedvezményes áron"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Váltson a ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } vagy ${ PLAN_NAMES[bundleProPlan] } csomagra, hogy elérhesse a ${ PROTON_SENTINEL_NAME } szolgáltatást."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Frissítsd a fiókodat egy rövidebb @pm.me cím hozzáadásához, amit könnyebb megosztani. Ez a \"Private Message me\" vagy “${ MAIL_APP_NAME } me” rövidítése."
       ],
@@ -8195,13 +8108,7 @@
       "Vault created": [
         "Tároló létrehozva"
       ],
-      "Vault Created": [
-        "Tároló létrehozva"
-      ],
       "Vault deleted": [
-        "Tároló törölve"
-      ],
-      "Vault Deleted": [
         "Tároló törölve"
       ],
       "Vault either deleted or requires access permissions": [
@@ -8211,9 +8118,6 @@
         "Tároló megosztva e-maillel"
       ],
       "Vault updated": [
-        "Tároló frissítve"
-      ],
-      "Vault Updated": [
         "Tároló frissítve"
       ],
       "Verification can take a few minutes.": [
@@ -10007,6 +9911,11 @@
       ],
       "Recovery phrase": [
         "Helyreállító jelmondat"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Forrás"
       ]
     },
     "Label for adding a new custom domain": {
@@ -12743,9 +12652,6 @@
       "Email address": [
         "E-mail cím"
       ],
-      "Email or IP": [
-        "E-mail vagy IP cím"
-      ],
       "End date": [
         "Befejező dátum"
       ],
@@ -14854,9 +14760,6 @@
       "Status": [
         "Állapot"
       ],
-      "Time": [
-        "Idő"
-      ],
       "Total storage": [
         "Összes tárhely"
       ],
@@ -15141,9 +15044,6 @@
       "Connect ${ name }": [
         "${ name } kapcsolása"
       ],
-      "Connection events": [
-        "Kapcsolódási események"
-      ],
       "Connection monitor disabled": [
         "Kapcsolat figyelés kikapcsolva"
       ],
@@ -15367,9 +15267,6 @@
       ],
       "Error": [
         "Hiba"
-      ],
-      "Event": [
-        "Esemény"
       ],
       "Export": [
         "Exportálás"
@@ -15868,9 +15765,6 @@
       ],
       "This field cannot contain only spaces": [
         "Ez a mező nem tartalmazhat csak szóközöket"
-      ],
-      "Time": [
-        "Időpont"
       ],
       "Time zone": [
         "Időzóna"

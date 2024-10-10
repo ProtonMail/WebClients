@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptera"
       ],
-      "activate": [
-        "aktivera"
-      ],
       "Activate": [
         "Aktivera"
+      ],
+      "activate": [
+        "aktivera"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivera ${ user.Name }@pm.me"
@@ -225,12 +225,6 @@
       ],
       "Clear all formatting": [
         "Rensa all formatering"
-      ],
-      "Clear filter": [
-        "Rensa filter"
-      ],
-      "Clear filters": [
-        "Rensa filter"
       ],
       "Close": [
         "Stäng"
@@ -867,6 +861,9 @@
       ],
       "Resend code": [
         "Skicka koden igen"
+      ],
+      "Reset": [
+        "Återställ"
       ],
       "Reset credentials": [
         "Återställ användaruppgifter"
@@ -3600,6 +3597,9 @@
     "Downgrade warning": {
       "Remove discount": [
         "Ta bort rabatt"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Din ${ PLAN_NAMES[PLANS.PASS] }-prenumeration är till ett specialpris på ${ price } per år. Genom att nedgradera till ett Free-paket kommer du förlora rabatten permanent, även om du uppgraderar igen i framtiden."
       ]
     },
     "Download link": {
@@ -5157,14 +5157,8 @@
       "*Only one free trial per user. Regular pricing applies thereafter.": [
         "*Endast en gratis provperiod per användare. Ordinarie priser tillämpas därefter."
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Konton med anpassade domäner kan inte gå med i ett gruppaket"
-      ],
       "customer support": [
         "kundsupport"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Gruppaket stöder för närvarande inte externa konton. Skapa en ${ BRAND_NAME }-adress innan du går med. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Om du accepterar inbjudan kommer vi att byta från ditt nuvarande paket och kreditera ditt konto med eventuellt återstående saldo."
@@ -5184,9 +5178,6 @@
       "Leave Visionary plan": [
         "Lämna Visionary-paket"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Livstidskonton kan inte gå med i ett gruppaket."
-      ],
       "Manage addresses.": [
         "Hantera adresser."
       ],
@@ -5196,9 +5187,6 @@
       "Only ${ n } accepted invitation are allowed in a 6-month period.": [
         "Endast ${ n } accepterad inbjudan är tillåten under en 6-månadersperiod.",
         "Endast ${ n } accepterade inbjudningar är tillåtna under en 6-månadersperiod."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Ägare av ett paket med medlemmar kan inte gå med i ett annat gruppaket."
       ],
       "Pending": [
         "Väntande"
@@ -5244,9 +5232,6 @@
       "You have successfully joined the family group": [
         "Du har gått med i familjegruppen"
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Du har obetalda fakturor. Betala dem innan du går med i ett gruppaket."
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Du måste konfigurera en anpassad domän innan du lägger till flera användare."
       ],
@@ -5255,9 +5240,6 @@
       ],
       "You will lose access to all premium features and storage space included with ${ plan }.": [
         "Du kommer förlora åtkomst till alla premiumfunktioner och lagringsutrymme inkluderat med ${ plan }."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Du är inbjuden att länka ditt ${ BRAND_NAME }-konto till detta gruppaket och tillsammans njuta av alla ${ BRAND_NAME_TWO } premiumfunktioner."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Ditt konto har fler e-postadresser än vad som är tillgängligt för dig i detta paket. ${ addressSettingsLink }"
@@ -6728,9 +6710,6 @@
         "Alla (${ totalFoldersCount } etikett)",
         "Alla (${ totalFoldersCount } etiketter)"
       ],
-      "All Events ": [
-        "Alla händelser "
-      ],
       "All keys successfully reactivated": [
         "Alla nycklar har återaktiverats"
       ],
@@ -7503,16 +7482,7 @@
       "Invitation link used": [
         "Inbjudningslänk använd"
       ],
-      "Invite Accepted": [
-        "Inbjudan accepterad"
-      ],
-      "Invite Created": [
-        "Inbjudning skapad"
-      ],
       "Invite deleted": [
-        "Inbjudan borttagen"
-      ],
-      "Invite Deleted": [
         "Inbjudan borttagen"
       ],
       "Invite for new user deleted": [
@@ -7527,9 +7497,6 @@
       "Invite rejected": [
         "Inbjudan avvisad"
       ],
-      "Invite Rejected": [
-        "Inbjudan avvisad"
-      ],
       "Invite successfully sent": [
         "Inbjudan skickad",
         "Inbjudningar skickade"
@@ -7537,29 +7504,17 @@
       "It appears some of your data is encrypted and locked.": [
         "Det verkar som om en del av dina data är krypterade och låsta."
       ],
-      "Item Autofilled": [
-        "Objekt automatiskt ifyllt"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "Objekt automatiskt ifyllt i ${ vaultLink }"
       ],
       "Item autofilled in vault": [
         "Objekt automatiskt ifyllt i valv"
       ],
-      "Item Changed Flags": [
-        "Objekt ändrade flaggor"
-      ],
-      "Item Created": [
-        "Objekt skapat"
-      ],
       "Item created in ${ vaultLink }": [
         "Objekt skapat i ${ vaultLink }"
       ],
       "Item created in vault": [
         "Objekt skapat i valv"
-      ],
-      "Item Deleted": [
-        "Objekt borttaget"
       ],
       "Item deleted from ${ vaultLink }": [
         "Objekt borttaget från ${ vaultLink }"
@@ -7573,17 +7528,11 @@
       "Item flags changed in vault": [
         "Objektflaggor ändrade i valv"
       ],
-      "Item Read": [
-        "Objekt läst"
-      ],
       "Item read in ${ vaultLink }": [
         "Objekt läst i ${ vaultLink }"
       ],
       "Item read in vault": [
         "Objekt läst i valv"
-      ],
-      "Item Updated": [
-        "Objekt uppdaterat"
       ],
       "Item updated in ${ vaultLink }": [
         "Objekt uppdaterat i ${ vaultLink }"
@@ -7749,12 +7698,6 @@
       ],
       "New": [
         "Ny"
-      ],
-      "New User Invite Created": [
-        "Ny användarinbjudan skapad"
-      ],
-      "New User Invite Deleted": [
-        "Ny användarinbjudan borttagen"
       ],
       "New user invited to organization": [
         "Ny användare inbjuden till organisation"
@@ -8149,12 +8092,6 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Servrarna kan inte nås. Försök igen om några minuter"
       ],
-      "Session Ended": [
-        "Session avslutad"
-      ],
-      "Session Started": [
-        "Session startad"
-      ],
       "Session timed out": [
         "Session timeout"
       ],
@@ -8169,15 +8106,6 @@
       ],
       "Settings updated": [
         "Inställningar uppdaterade"
-      ],
-      "Share Created": [
-        "Delning skapad"
-      ],
-      "Share Deleted": [
-        "Delning borttagen"
-      ],
-      "Share Updated": [
-        "Delning uppdaterad"
       ],
       "Shared ${ vaultLink } deleted": [
         "Delad ${ vaultLink } borttagen"
@@ -8453,6 +8381,9 @@
       "This will delete all previous versions of your files.": [
         "Detta kommer ta bort alla tidigare versioner av dina filer."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Detta kommer att inaktivera tvåfaktorsautentisering, inklusive båda metoderna för autentiseringsapp och säkerhetsnyckel."
+      ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Detta kommer att inaktivera din nuvarande återställningsfras. Du kommer inte att kunna använda den för att komma åt ditt konto eller dekryptera dina data."
       ],
@@ -8624,9 +8555,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Uppgradera till ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } eller ${ PLAN_NAMES[bundleProPlan] }-paket för att få åtkomst till ${ PROTON_SENTINEL_NAME }."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Uppgradera för att lägga till en kortare @pm.me-adress till ditt konto som är lättare att dela. Det står för “${ MAIL_APP_NAME } me“ eller “Private Message me“."
       ],
@@ -8678,13 +8606,7 @@
       "Vault created": [
         "Valv skapat"
       ],
-      "Vault Created": [
-        "Valv skapat"
-      ],
       "Vault deleted": [
-        "Valv borttaget"
-      ],
-      "Vault Deleted": [
         "Valv borttaget"
       ],
       "Vault either deleted or requires access permissions": [
@@ -8694,9 +8616,6 @@
         "Valv delad med e-post"
       ],
       "Vault updated": [
-        "Valv uppdaterat"
-      ],
-      "Vault Updated": [
         "Valv uppdaterat"
       ],
       "Verification can take a few minutes.": [
@@ -10598,6 +10517,16 @@
         "Återställningsfras"
       ]
     },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Från"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Till"
+      ]
+    },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Lägg till en domän som du äger till ditt ${ MAIL_APP_NAME }-konto."
@@ -12334,6 +12263,9 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personifiera din e-postsignatur med loggor bilder, ikoner för sociala medier, länkar till dina kontaktuppgifter och mer"
       ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Telefonsupport är tillgänglig från ${ BRAND_NAME } kundsupportteam under europeiska öppettider, för kunder med 20 eller fler användare"
+      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Förhindrar meddelanden från åtkomst av ${ BRAND_NAME } eller tredje part. De enda som kan läsa meddelandena är avsändaren och den tilltänkta mottagaren."
       ],
@@ -13687,9 +13619,6 @@
       ],
       "Email address": [
         "E-postadress"
-      ],
-      "Email or IP": [
-        "E-post eller IP"
       ],
       "End date": [
         "Slutdatum"
@@ -16136,9 +16065,6 @@
       "Status": [
         "Status"
       ],
-      "Time": [
-        "Tid"
-      ],
       "Total storage": [
         "Totalt lagringsutrymme"
       ],
@@ -16443,9 +16369,6 @@
       "Connect ${ name }": [
         "Anslut ${ name }"
       ],
-      "Connection events": [
-        "Anslutningshändelser"
-      ],
       "Connection monitor disabled": [
         "Anslutningsövervakning inaktiverad"
       ],
@@ -16705,9 +16628,6 @@
       ],
       "Error": [
         "Fel"
-      ],
-      "Event": [
-        "Händelse"
       ],
       "Every member of the organization can access": [
         "Varje medlem i organisationen kan komma åt"
@@ -17251,9 +17171,6 @@
       ],
       "This field cannot contain only spaces": [
         "Detta fält kan inte bara innehålla mellanslag"
-      ],
-      "Time": [
-        "Tid"
       ],
       "Time zone": [
         "Tidszon"

@@ -70,11 +70,11 @@
       "Accept": [
         "Přijmout"
       ],
-      "activate": [
-        "aktivovat"
-      ],
       "Activate": [
         "Aktivovat"
+      ],
+      "activate": [
+        "aktivovat"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovat ${ user.Name }@pm.me"
@@ -225,12 +225,6 @@
       ],
       "Clear all formatting": [
         "Vymazat veškeré formátování"
-      ],
-      "Clear filter": [
-        "Smazat filtr"
-      ],
-      "Clear filters": [
-        "Smazat filtry"
       ],
       "Close": [
         "Zavřít"
@@ -867,6 +861,9 @@
       ],
       "Resend code": [
         "Znovu odeslat kód"
+      ],
+      "Reset": [
+        "Resetovat"
       ],
       "Reset credentials": [
         "Resetovat pověření"
@@ -5227,14 +5224,8 @@
       "*Only one free trial per user. Regular pricing applies thereafter.": [
         "*Na jednoho uživatele je k dispozici pouze jedna bezplatná zkušební verze. Poté platí běžné ceny."
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Účty s vlastními doménami se nemohou připojit ke skupinovému tarifu."
-      ],
       "customer support": [
         "zákaznická podpora"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Skupinové tarify v současné době nepodporují externí účty. Před připojením si vytvořte adresu ${ BRAND_NAME }. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Pokud pozvánku přijmete, převedeme Vás ze stávajícího tarifu a na váš účet připíšeme zbývající částku."
@@ -5254,9 +5245,6 @@
       "Leave Visionary plan": [
         "Opustit tarif Visionary"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Doživotní účty nemohou být připojeny ke skupinovému tarifu."
-      ],
       "Manage addresses.": [
         "Spravovat adresy."
       ],
@@ -5268,9 +5256,6 @@
         "Během 6 měsíců je povoleno přijmout jen ${ n } pozvánky.",
         "Během 6 měsíců je povoleno přijmout jen ${ n } pozvánek.",
         "Během 6 měsíců je povoleno přijmout jen ${ n } pozvánek."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Vlastníci tarifu se členy, se nemohou připojit k jinému skupinovému tarifu."
       ],
       "Pending": [
         "Čekající"
@@ -5320,9 +5305,6 @@
       "You have successfully joined the family group": [
         "Úspěšně jste se připojili k rodinné skupině"
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Máte nezaplacené faktury. Před připojením ke skupinovému tarifu je prosím uhraďte."
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Před přidáním více uživatelů je třeba nakonfigurovat vlastní doménu."
       ],
@@ -5331,9 +5313,6 @@
       ],
       "You will lose access to all premium features and storage space included with ${ plan }.": [
         "Ztratíte přístup ke všem prémiovým funkcím a úložnému prostoru, které jsou součástí ${ plan }."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Můžete propojit svůj účet ${ BRAND_NAME } s tímto skupinovým tarifem a společně využívat všechny prémiové funkce ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Váš účet má více e-mailových adres, než kolik je v tomto tarifu k dispozici. ${ addressSettingsLink }"
@@ -6875,9 +6854,6 @@
         "Všech (${ totalFoldersCount } štítků)",
         "Všech (${ totalFoldersCount } štítků)"
       ],
-      "All Events ": [
-        "Všechny události "
-      ],
       "All keys successfully reactivated": [
         "Všechny klíče byly úspěšně znovu aktivovány"
       ],
@@ -7060,15 +7036,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Zlepšete identitu značky své organizace a vytvořte konzistentnější online prostředí pro své uživatele."
-      ],
-      "Breach Custom Email Created": [
-        "Vlastní e-mail pro úniky přidán"
-      ],
-      "Breach Custom Email Deleted": [
-        "Vlastní e-mail pro úniky smazán"
-      ],
-      "Breach Custom Email Validated": [
-        "Vlastní e-mail pro úniky ověřen"
       ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Ve výchozím stavu mohou členové organizace exportovat pouze ty trezory, jejichž jsou vlastníky. Pokud je tato možnost zapnutá, nebudou moci exportovat žádná data"
@@ -7682,16 +7649,7 @@
       "Invitation link used": [
         "Odkaz pozvánky použit"
       ],
-      "Invite Accepted": [
-        "Pozvánka přijata"
-      ],
-      "Invite Created": [
-        "Pozvánka vytvořena"
-      ],
       "Invite deleted": [
-        "Pozvánka smazána"
-      ],
-      "Invite Deleted": [
         "Pozvánka smazána"
       ],
       "Invite for new user deleted": [
@@ -7706,9 +7664,6 @@
       "Invite rejected": [
         "Pozvánka odmítnuta"
       ],
-      "Invite Rejected": [
-        "Pozvánka odmítnuta"
-      ],
       "Invite successfully sent": [
         "Pozvánka byla úspěšně odeslána",
         "Pozvánky byla úspěšně odeslány",
@@ -7718,29 +7673,17 @@
       "It appears some of your data is encrypted and locked.": [
         "Zdá se, že některá z vašich dat jsou zašifrována a uzamčena."
       ],
-      "Item Autofilled": [
-        "Položka automaticky vyplněna"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "Položka automaticky vyplněna v ${ vaultLink }"
       ],
       "Item autofilled in vault": [
         "Položka automaticky vyplněna v trezoru"
       ],
-      "Item Changed Flags": [
-        "Změněné příznaky položky"
-      ],
-      "Item Created": [
-        "Položka vytvořena"
-      ],
       "Item created in ${ vaultLink }": [
         "Položka vytvořena v ${ vaultLink }"
       ],
       "Item created in vault": [
         "Položka v trezoru vytvořena"
-      ],
-      "Item Deleted": [
-        "Položka odstraněna"
       ],
       "Item deleted from ${ vaultLink }": [
         "Položka smazána z ${ vaultLink }"
@@ -7766,23 +7709,11 @@
       "Item in vault untrashed": [
         "Položka v trezoru přesunuta z koše"
       ],
-      "Item Read": [
-        "Položka přečtena"
-      ],
       "Item read in ${ vaultLink }": [
         "Položka přečtena v ${ vaultLink }"
       ],
       "Item read in vault": [
         "Položka v trezoru přečtena"
-      ],
-      "Item Trashed": [
-        "Položka přesunuta do koše"
-      ],
-      "Item Untrashed": [
-        "Položka přesunuta z koše"
-      ],
-      "Item Updated": [
-        "Položka aktualizována"
       ],
       "Item updated in ${ vaultLink }": [
         "Položka aktualizována v ${ vaultLink }"
@@ -7951,12 +7882,6 @@
       ],
       "New": [
         "Nově"
-      ],
-      "New User Invite Created": [
-        "Nová uživatelská pozvánka vytvořena"
-      ],
-      "New User Invite Deleted": [
-        "Nová uživatelská pozvánka smazána"
       ],
       "New user invited to organization": [
         "Nový uživatel byl pozván do organizace"
@@ -8363,15 +8288,6 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery jsou nedostupné. Zkuste to prosím znovu za několik minut"
       ],
-      "Session Ended": [
-        "Relace ukončena"
-      ],
-      "Session Roaming": [
-        "Roaming relace"
-      ],
-      "Session Started": [
-        "Relace vytvořena"
-      ],
       "Session timed out": [
         "Relace vypršela"
       ],
@@ -8386,15 +8302,6 @@
       ],
       "Settings updated": [
         "Nastavení aktualizováno"
-      ],
-      "Share Created": [
-        "Sdílení vytvořeno"
-      ],
-      "Share Deleted": [
-        "Sdílení smazáno"
-      ],
-      "Share Updated": [
-        "Sdílení aktualizováno"
       ],
       "Shared ${ vaultLink } deleted": [
         "Sdílený ${ vaultLink } smazán"
@@ -8858,9 +8765,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Navyšte na tarif ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, nebo ${ PLAN_NAMES[bundleProPlan] } a získejte přístup k ${ PROTON_SENTINEL_NAME }."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Navyšte tarif pro získání kratší adresy @pm.me, kterou lze snáze sdílet. Její význam je \"${ MAIL_APP_NAME } me\" nebo \"Private Message me\"."
       ],
@@ -8912,13 +8816,7 @@
       "Vault created": [
         "Trezor vytvořen"
       ],
-      "Vault Created": [
-        "Trezor vytvořen"
-      ],
       "Vault deleted": [
-        "Trezor smazán"
-      ],
-      "Vault Deleted": [
         "Trezor smazán"
       ],
       "Vault either deleted or requires access permissions": [
@@ -8928,9 +8826,6 @@
         "Trezor sdílený e-mailem"
       ],
       "Vault updated": [
-        "Trezor aktualizován"
-      ],
-      "Vault Updated": [
         "Trezor aktualizován"
       ],
       "Verification can take a few minutes.": [
@@ -10877,6 +10772,16 @@
       ],
       "Recovery phrase": [
         "Obnovovací fráze"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Od"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Do"
       ]
     },
     "Label for adding a new custom domain": {
@@ -14062,9 +13967,6 @@
       "Email address": [
         "E-mailová adresa"
       ],
-      "Email or IP": [
-        "E-mail nebo IP"
-      ],
       "End date": [
         "Datum ukončení"
       ],
@@ -16647,9 +16549,6 @@
       "Status": [
         "Stav"
       ],
-      "Time": [
-        "Čas"
-      ],
       "Total storage": [
         "Celkem prostoru"
       ],
@@ -16963,9 +16862,6 @@
       "Connect ${ name }": [
         "Připojit ${ name }"
       ],
-      "Connection events": [
-        "Události připojení"
-      ],
       "Connection monitor disabled": [
         "Monitor připojení je deaktivován"
       ],
@@ -17229,9 +17125,6 @@
       ],
       "Error": [
         "Chyba"
-      ],
-      "Event": [
-        "Událost"
       ],
       "Every member of the organization can access": [
         "Každý člen organizace má přístup k"
@@ -17778,9 +17671,6 @@
       ],
       "This field cannot contain only spaces": [
         "Toto pole nesmí obsahovat pouze mezery"
-      ],
-      "Time": [
-        "Čas"
       ],
       "Time zone": [
         "Časové pásmo"

@@ -70,11 +70,11 @@
       "Accept": [
         "Accepta"
       ],
-      "activate": [
-        "activar"
-      ],
       "Activate": [
         "Activa"
+      ],
+      "activate": [
+        "activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activa ${ user.Name }@pm.me"
@@ -222,12 +222,6 @@
       ],
       "Clear all formatting": [
         "Esborra tot el format"
-      ],
-      "Clear filter": [
-        "Neteja el filtre"
-      ],
-      "Clear filters": [
-        "Neteja els filtres"
       ],
       "Close": [
         "Tanca"
@@ -864,6 +858,9 @@
       ],
       "Resend code": [
         "Reenvia el codi"
+      ],
+      "Reset": [
+        "Restablir"
       ],
       "Reset credentials": [
         "Restaurar credencials"
@@ -5106,9 +5103,6 @@
         "Només es permet ${ n } invitació acceptada en un període de 6 mesos.",
         "Només es permeten ${ n } invitacions acceptades en un període de 6 mesos."
       ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Els propietaris d'un pla amb membres no poden unir-se a un altre pla de grup."
-      ],
       "Pending": [
         "Pendent"
       ],
@@ -5149,9 +5143,6 @@
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Heu de configurar un domini personalitzat abans de crear un usuari."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Esteu convidat a enllaçar el vostre compte de ${ BRAND_NAME } a aquest pla de grup i gaudir junts de totes les característiques prèmium de ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "El vostre compte té més adreces de correu electrònic de les que teniu disponibles en aquest pla. ${ addressSettingsLink }"
@@ -6524,6 +6515,9 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Afegiu una adreça de correu electrònic @pm.me al vostre compte. Aquest domini curt i senzill significa «${ MAIL_APP_NAME } me» o «Private message me»."
       ],
+      "Add a recovery ${ type }": [
+        "Afegeix una recuperació ${ type }"
+      ],
       "Add a recovery email address": [
         "Afegeix una adreça de correu electrònic de recuperació"
       ],
@@ -6586,9 +6580,6 @@
       "All (${ totalFoldersCount } label)": [
         "Tot (${ totalFoldersCount } etiqueta)",
         "Tot (${ totalFoldersCount } etiquetes)"
-      ],
-      "All Events ": [
-        "Tots els esdeveniments"
       ],
       "All keys successfully reactivated": [
         "S'han reactivat correctament totes les claus"
@@ -6761,12 +6752,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Potencieu la identitat de marca de la vostra organització i creeu una experiència en línia més coherent per als usuaris."
-      ],
-      "Breach Custom Email Deleted": [
-        "S'ha eliminat el correu electrònic personalitzat en cas de violació de les dades."
-      ],
-      "Breach Custom Email Validated": [
-        "S'ha validat el correu electrònic personalitzat en cas de violació de les dades."
       ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Per defecte, els membres de l'organització només poden exportar caixes fortes de les quals són propietaris. Si s'activa aquesta opció, no podran exportar cap dada"
@@ -7340,16 +7325,7 @@
       "Invitation link used": [
         "S'ha utilitzat l'enllaç d'invitació."
       ],
-      "Invite Accepted": [
-        "S'ha acceptat la invitació"
-      ],
-      "Invite Created": [
-        "S'ha creat la invitació."
-      ],
       "Invite deleted": [
-        "S'ha eliminat la invitació."
-      ],
-      "Invite Deleted": [
         "S'ha eliminat la invitació."
       ],
       "Invite for new user deleted": [
@@ -7364,9 +7340,6 @@
       "Invite rejected": [
         "S'ha rebutjat la invitació"
       ],
-      "Invite Rejected": [
-        "S'ha rebutjat la invitació."
-      ],
       "Invite successfully sent": [
         "S'ha convidat correctament",
         "S'han enviat les invitacions correctament"
@@ -7374,29 +7347,17 @@
       "It appears some of your data is encrypted and locked.": [
         "Sembla que algunes de les vostres dades estan xifrades i bloquejades."
       ],
-      "Item Autofilled": [
-        "S'ha emplenat l'element automàticament"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "S'ha emplenat automàticament l'element a ${ vaultLink }"
       ],
       "Item autofilled in vault": [
         "S'ha emplenat un element automàticament a la caixa forta"
       ],
-      "Item Changed Flags": [
-        "Els indicadors de l'element han canviat"
-      ],
-      "Item Created": [
-        "S'ha creat l'element."
-      ],
       "Item created in ${ vaultLink }": [
         "S'ha creat l'element a ${ vaultLink }"
       ],
       "Item created in vault": [
         "S'ha creat un element a la caixa forta"
-      ],
-      "Item Deleted": [
-        "S'ha eliminat l'element."
       ],
       "Item deleted from ${ vaultLink }": [
         "S'ha eliminat l'element a ${ vaultLink }"
@@ -7422,23 +7383,11 @@
       "Item in vault untrashed": [
         "S'ha restaurat un element a la caixa forta"
       ],
-      "Item Read": [
-        "S'ha llegit l'element"
-      ],
       "Item read in ${ vaultLink }": [
         "S'ha llegit l'element a ${ vaultLink }"
       ],
       "Item read in vault": [
         "S'ha llegit un element de la caixa forta"
-      ],
-      "Item Trashed": [
-        "S'ha enviat l'element a la paperera"
-      ],
-      "Item Untrashed": [
-        "S'ha restaurat l'element"
-      ],
-      "Item Updated": [
-        "S'ha actualitzat l'element."
       ],
       "Item updated in ${ vaultLink }": [
         "S'ha actualitzat l'element a ${ vaultLink }"
@@ -7601,12 +7550,6 @@
       ],
       "New": [
         "Nova"
-      ],
-      "New User Invite Created": [
-        "S'ha creat una invitació d'usuari nou"
-      ],
-      "New User Invite Deleted": [
-        "S'ha eliminat la invitació d'usuari nou"
       ],
       "New user invited to organization": [
         "S'ha convidat el nou usuari a l'organització."
@@ -7980,15 +7923,6 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
       ],
-      "Session Ended": [
-        "Sessió finalitzada"
-      ],
-      "Session Roaming": [
-        "Sessió itinerant"
-      ],
-      "Session Started": [
-        "S'ha iniciat la sessió."
-      ],
       "Session timed out": [
         "S'ha esgotat el temps de sessió"
       ],
@@ -8003,15 +7937,6 @@
       ],
       "Settings updated": [
         "S'han actualitzat les preferències."
-      ],
-      "Share Created": [
-        "S'ha creat una compartició"
-      ],
-      "Share Deleted": [
-        "S'ha eliminat la compartició"
-      ],
-      "Share Updated": [
-        "S'ha actualitzat la compartició"
       ],
       "Shared ${ vaultLink } deleted": [
         "S'ha eliminat l'enllaç compartit ${ vaultLink }."
@@ -8449,9 +8374,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Milloreu al pla ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } o ${ PLAN_NAMES[bundleProPlan] } per a accedir a ${ PROTON_SENTINEL_NAME }."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Milloreu per afegir una adreça @pm.me més curta al vostre compte que sigui més fàcil de compartir. Vol dir «${ MAIL_APP_NAME } me» o «Private Message me»."
       ],
@@ -8500,13 +8422,7 @@
       "Vault created": [
         "S'ha creat la caixa forta."
       ],
-      "Vault Created": [
-        "S'ha creat la caixa forta."
-      ],
       "Vault deleted": [
-        "S'ha eliminat la caixa forta."
-      ],
-      "Vault Deleted": [
         "S'ha eliminat la caixa forta."
       ],
       "Vault either deleted or requires access permissions": [
@@ -8516,9 +8432,6 @@
         "S'ha compartit la caixa forta per correu electrònic"
       ],
       "Vault updated": [
-        "S'ha actualitzat la caixa forta."
-      ],
-      "Vault Updated": [
         "S'ha actualitzat la caixa forta."
       ],
       "Verification can take a few minutes.": [
@@ -10407,6 +10320,16 @@
         "Frase de recuperació"
       ]
     },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Des de"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Fins a"
+      ]
+    },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Afegiu un domini propi al vostre compte de ${ MAIL_APP_NAME }."
@@ -11759,6 +11682,16 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } administrador",
+        "${ admins } administradors"
+      ],
+      "${ users } user": [
+        "${ users } usuari",
+        "${ users } usuaris"
       ]
     },
     "new_plans: feature info": {
@@ -13381,9 +13314,6 @@
       "Email address": [
         "Adreça de correu electrònic"
       ],
-      "Email or IP": [
-        "Correu electrònic o IP"
-      ],
       "End date": [
         "Data de finalització"
       ],
@@ -13749,6 +13679,12 @@
       "Show more": [
         "Mostra més"
       ],
+      "Update your Recovery Kit": [
+        "Actualitza el kit de recuperació"
+      ],
+      "Update your Recovery Kit?": [
+        "Voleu actualitzar el kit de recuperació?"
+      ],
       "Verify": [
         "Verifica"
       ],
@@ -13778,6 +13714,9 @@
       ],
       "Your Recovery Kit": [
         "Kit de recuperació"
+      ],
+      "Your Recovery Kit is set": [
+        "El vostre kit de recuperació està configurat."
       ],
       "Your recovery methods": [
         "Els vostres mètodes de recuperació"
@@ -15701,9 +15640,6 @@
       "Status": [
         "Estat"
       ],
-      "Time": [
-        "Hora"
-      ],
       "Total storage": [
         "Emmagatzematge"
       ],
@@ -15999,9 +15935,6 @@
       "Connect ${ name }": [
         "Connecta ${ name }"
       ],
-      "Connection events": [
-        "Esdeveniments de connexió"
-      ],
       "Contact us": [
         "Contacteu amb nosaltres"
       ],
@@ -16255,9 +16188,6 @@
       ],
       "Error": [
         "Error"
-      ],
-      "Event": [
-        "Esdeveniment"
       ],
       "Every member of the organization can access": [
         "Tots els membres de l'organització poden accedir."
@@ -16792,9 +16722,6 @@
       ],
       "This field cannot contain only spaces": [
         "Aquest camp no pot contenir només espais"
-      ],
-      "Time": [
-        "Hora"
       ],
       "Time zone": [
         "Zona horària"

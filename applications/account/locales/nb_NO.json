@@ -70,11 +70,11 @@
       "Accept": [
         "Aksepter"
       ],
-      "activate": [
-        "aktiver"
-      ],
       "Activate": [
         "Aktiver"
+      ],
+      "activate": [
+        "aktiver"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiver ${ user.Name }@pm.me"
@@ -225,12 +225,6 @@
       ],
       "Clear all formatting": [
         "Fjern all formattering"
-      ],
-      "Clear filter": [
-        "Tøm filter"
-      ],
-      "Clear filters": [
-        "Tøm filtre"
       ],
       "Close": [
         "Lukk"
@@ -867,6 +861,9 @@
       ],
       "Resend code": [
         "Send kode på nytt"
+      ],
+      "Reset": [
+        "Tilbakestill"
       ],
       "Reset credentials": [
         "Tilbakestill legitimasjon"
@@ -5185,14 +5182,8 @@
       "*Only one free trial per user. Regular pricing applies thereafter.": [
         "*Kun én gratis prøveperiode per bruker. Ordinær pris gjelder deretter."
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Kontoer med egendefinerte domener kan ikke bli med i en gruppeplan."
-      ],
       "customer support": [
         "kundestøtte"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Gruppeplaner støtter for øyeblikket ikke eksterne kontoer. Opprett en ${ BRAND_NAME }-adresse før du blir med. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Hvis du godtar invitasjonen, bytter vi deg fra den nåværende planen og krediterer kontoen din med eventuell gjenværende saldo."
@@ -5212,9 +5203,6 @@
       "Leave Visionary plan": [
         "Forlat Visionary-plan"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Livsvarige kontoer kan ikke bli med i en gruppeplan."
-      ],
       "Manage addresses.": [
         "Administrer adresser"
       ],
@@ -5224,9 +5212,6 @@
       "Only ${ n } accepted invitation are allowed in a 6-month period.": [
         "Kun ${ n } akseptert invitasjon på 6 måneder er tillat.",
         "Kun ${ n } aksepterte invitasjoner på 6 måneder er tillat."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Eiere av en plan med medlemmer kan ikke bli med i en annen gruppeplan."
       ],
       "Pending": [
         "Ventende"
@@ -5272,9 +5257,6 @@
       "You have successfully joined the family group": [
         "Du har blitt med i familiegruppen"
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Du har ubetalte fakturaer. Vennligst betal dem før du blir med i en gruppeplan."
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Du må konfigurere et egendefinert domene før du kan legge til flere brukere."
       ],
@@ -5283,9 +5265,6 @@
       ],
       "You will lose access to all premium features and storage space included with ${ plan }.": [
         "Du vil miste tilgang til alle premiumfunksjoner og lagringsplass inkludert med ${ plan }."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Du er invitert til å koble din ${ BRAND_NAME }-konto til denne gruppeplanen og sammen nyte alle ${ BRAND_NAME_TWO }-premiumfunksjoner."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Kontoen din har flere e-postadresser enn det som er tilgjengelig for deg i denne planen. ${ addressSettingsLink }"
@@ -6745,9 +6724,6 @@
         "(${ totalFoldersCount } etikett)",
         "Alle (${ totalFoldersCount } etiketter)"
       ],
-      "All Events ": [
-        "Alle hendelser "
-      ],
       "All keys successfully reactivated": [
         "Alle nøkler aktivert på nytt"
       ],
@@ -6928,15 +6904,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Styrk organisasjonens merkeidentitet og skap en mer konsekvent nettopplevelse for brukerne."
-      ],
-      "Breach Custom Email Created": [
-        "Brudd tilpasset e-post opprettet"
-      ],
-      "Breach Custom Email Deleted": [
-        "Brudd tilpasset e-post slettet"
-      ],
-      "Breach Custom Email Validated": [
-        "Brudd tilpasset e-post validert"
       ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Som standard kan organisasjonsmedlemmer bare eksportere hvelv der de er eiere. Hvis dette alternativet er aktivert, kan de ikke eksportere noe data"
@@ -7538,16 +7505,7 @@
       "Invitation link used": [
         "Invitasjonskobling brukt"
       ],
-      "Invite Accepted": [
-        "Invitasjon akseptert"
-      ],
-      "Invite Created": [
-        "Invitasjon opprettet"
-      ],
       "Invite deleted": [
-        "Invitasjon slettet"
-      ],
-      "Invite Deleted": [
         "Invitasjon slettet"
       ],
       "Invite for new user deleted": [
@@ -7562,9 +7520,6 @@
       "Invite rejected": [
         "Invitasjon avslått"
       ],
-      "Invite Rejected": [
-        "Invitasjon avslått"
-      ],
       "Invite successfully sent": [
         "Invitasjon ble sendt",
         "Invitasjonene ble sendt"
@@ -7572,29 +7527,17 @@
       "It appears some of your data is encrypted and locked.": [
         "Det ser ut til at noe av dataene dine er kryptert og låst."
       ],
-      "Item Autofilled": [
-        "Element autofylt"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "Element automatisk utfylt i ${ vaultLink }"
       ],
       "Item autofilled in vault": [
         "Element automatisk utfylt i hvelv"
       ],
-      "Item Changed Flags": [
-        "Element endret flagg"
-      ],
-      "Item Created": [
-        "Element opprettet"
-      ],
       "Item created in ${ vaultLink }": [
         "Element opprettet i ${ vaultLink }"
       ],
       "Item created in vault": [
         "Element opprettet i hvelv"
-      ],
-      "Item Deleted": [
-        "Element slettet"
       ],
       "Item deleted from ${ vaultLink }": [
         "Element slettet fra ${ vaultLink }"
@@ -7620,23 +7563,11 @@
       "Item in vault untrashed": [
         "Element flyttet fra papirkurv i hvelv"
       ],
-      "Item Read": [
-        "Element lest"
-      ],
       "Item read in ${ vaultLink }": [
         "Element lest i ${ vaultLink }"
       ],
       "Item read in vault": [
         "Element lest i hvelv"
-      ],
-      "Item Trashed": [
-        "Element flyttet til papirkurv"
-      ],
-      "Item Untrashed": [
-        "Element fjernet fra papirkurv"
-      ],
-      "Item Updated": [
-        "Element oppdatert"
       ],
       "Item updated in ${ vaultLink }": [
         "Element oppdatert i ${ vaultLink }"
@@ -7805,12 +7736,6 @@
       ],
       "New": [
         "Ny"
-      ],
-      "New User Invite Created": [
-        "Ny brukerinvitasjon opprettet"
-      ],
-      "New User Invite Deleted": [
-        "Ny brukerinvitasjon slettet"
       ],
       "New user invited to organization": [
         "Ny bruker invitert til organisasjon"
@@ -8211,15 +8136,6 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Tjenerne er utilgjengelige. Vennligst prøv på nytt om noen få minutter."
       ],
-      "Session Ended": [
-        "Økten ble avsluttet"
-      ],
-      "Session Roaming": [
-        "Økt-roaming"
-      ],
-      "Session Started": [
-        "Økten ble startet"
-      ],
       "Session timed out": [
         "Økten ble tidsavbrutt"
       ],
@@ -8234,15 +8150,6 @@
       ],
       "Settings updated": [
         "Innstillinger oppdatert"
-      ],
-      "Share Created": [
-        "Delt ressurs opprettet"
-      ],
-      "Share Deleted": [
-        "Delt ressurs slettet"
-      ],
-      "Share Updated": [
-        "Delt ressurs oppdatert"
       ],
       "Shared ${ vaultLink } deleted": [
         "Delt ${ vaultLink } slettet"
@@ -8698,9 +8605,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Oppgrader nå for å få premiumfunksjoner, produkter og lagringsplass til spesialpris."
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Oppgrader til ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, eller ${ PLAN_NAMES[bundleProPlan] }-plan for å få tilgang til ${ PROTON_SENTINEL_NAME }."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Oppgrader for å legge til en kortere @pm.me-adresse til din konto som er enklere å dele. Den står for \"${ MAIL_APP_NAME } meg\" eller \"send meg privat melding\"."
       ],
@@ -8752,13 +8656,7 @@
       "Vault created": [
         "Hvelv opprettet"
       ],
-      "Vault Created": [
-        "Hvelv opprettet"
-      ],
       "Vault deleted": [
-        "Hvelv slettet"
-      ],
-      "Vault Deleted": [
         "Hvelv slettet"
       ],
       "Vault either deleted or requires access permissions": [
@@ -8768,9 +8666,6 @@
         "Hvelv delt med e-post"
       ],
       "Vault updated": [
-        "Hvelv oppdatert"
-      ],
-      "Vault Updated": [
         "Hvelv oppdatert"
       ],
       "Verification can take a few minutes.": [
@@ -10687,6 +10582,16 @@
       ],
       "Recovery phrase": [
         "Gjenopprettingsfrase"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Fra"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Til"
       ]
     },
     "Label for adding a new custom domain": {
@@ -13782,9 +13687,6 @@
       "Email address": [
         "E-postadresse"
       ],
-      "Email or IP": [
-        "E-post eller IP"
-      ],
       "End date": [
         "Sluttdato"
       ],
@@ -16283,9 +16185,6 @@
       "Status": [
         "Status"
       ],
-      "Time": [
-        "Tidspunkt"
-      ],
       "Total storage": [
         "Total lagringsplass"
       ],
@@ -16584,9 +16483,6 @@
       "Connect ${ name }": [
         "Koble til ${ name }"
       ],
-      "Connection events": [
-        "Tilkoblingshendelser"
-      ],
       "Connection monitor disabled": [
         "Tilkoblingsovervåking deaktivert"
       ],
@@ -16846,9 +16742,6 @@
       ],
       "Error": [
         "Feil"
-      ],
-      "Event": [
-        "Hendelse"
       ],
       "Every member of the organization can access": [
         "Hvert medlem av organisasjonen har tilgang"
@@ -17389,9 +17282,6 @@
       ],
       "This field cannot contain only spaces": [
         "Feltet kan ikke kun innholde mellomrom"
-      ],
-      "Time": [
-        "Tidspunkt"
       ],
       "Time zone": [
         "Tidssone"
