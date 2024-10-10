@@ -256,6 +256,7 @@ export const exchangeRate: WasmApiExchangeRate = {
     ExchangeRateTime: '2024-03-07T07:01:06+00:00',
     ExchangeRate: 365760,
     Cents: 100,
+    Sign: '$',
 };
 
 export const userWalletSettings: WasmUserSettings = {
@@ -267,4 +268,5 @@ export const userWalletSettings: WasmUserSettings = {
     ReceiveInviterNotification: null,
     WalletCreated: null,
     AcceptTermsAndConditions: 0,
+    ReceiveTransactionNotification: null,
 };

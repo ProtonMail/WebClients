@@ -21,6 +21,7 @@ describe('useExchangeRate', () => {
         ExchangeRateTime: '0',
         ExchangeRate: 64110,
         Cents: 100,
+        Sign: '€',
     };
     const exchangeRateUsd: WasmApiExchangeRateData['Data'] = {
         ID: '00002',
@@ -29,6 +30,7 @@ describe('useExchangeRate', () => {
         ExchangeRateTime: '0',
         ExchangeRate: 70110,
         Cents: 100,
+        Sign: '$',
     };
     describe('useGetExchangeRate', () => {
         beforeEach(() => {

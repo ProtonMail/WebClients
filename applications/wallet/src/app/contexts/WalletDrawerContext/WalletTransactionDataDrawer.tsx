@@ -102,6 +102,7 @@ export const WalletTransactionDataDrawer = ({
             <RecipientsDataItem
                 tx={transactionData}
                 onClick={(email, btcAddress, index) =>
+                    btcAddress &&
                     setRecipientDetailsModal({ recipient: { Address: email, Name: email }, btcAddress, index })
                 }
             />
