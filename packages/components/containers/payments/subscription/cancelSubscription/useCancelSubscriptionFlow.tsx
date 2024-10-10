@@ -8,6 +8,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import { useModalTwo, useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import {
     type PLANS,
@@ -37,7 +38,7 @@ import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash';
 
-import { useGetSubscription, useNotifications, usePreferredPlansMap, useSubscription } from '../../../../hooks';
+import { useGetSubscription, useNotifications, useSubscription } from '../../../../hooks';
 import DowngradeModal from '../../DowngradeModal';
 import LossLoyaltyModal from '../../LossLoyaltyModal';
 import MemberDowngradeModal from '../../MemberDowngradeModal';

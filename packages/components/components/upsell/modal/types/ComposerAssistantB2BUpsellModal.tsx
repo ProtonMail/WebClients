@@ -9,8 +9,8 @@ import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal'
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { usePreferredPlansMap, useSubscription } from '@proton/components/hooks';
 import useAssistantUpsellConfig from '@proton/components/hooks/assistant/useAssistantUpsellConfig';
-import { PLAN_TYPES, getScribeAddonNameByPlan } from '@proton/payments';
 import type { ADDON_NAMES, PLANS } from '@proton/payments';
+import { PLAN_TYPES, getScribeAddonNameByPlan } from '@proton/payments';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 
