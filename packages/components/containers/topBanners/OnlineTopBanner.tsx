@@ -8,9 +8,9 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { useOnline } from '../../hooks';
 import useApi from '../../hooks/useApi';
 import useApiStatus from '../../hooks/useApiStatus';
+import useOnline from '../../hooks/useOnline';
 import TopBanner from './TopBanner';
 import UnreachableTopBanner from './UnreachableTopBanner';
 
