@@ -269,6 +269,9 @@
       "Import": [
         "불러오기"
       ],
+      "Import alias": [
+        "별칭 가져오기"
+      ],
       "Import your passwords": [
         "비밀번호 불러오기"
       ],
@@ -1825,6 +1828,9 @@
       "You cannot change the mailboxes for this alias.": [
         "이 별명의 메일함을 변경할 수 없습니다."
       ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "SimpleLogin에 ${ aliasCount }개의 별칭이 존재하지만 ${ PASS_APP_NAME }에는 누락된 별칭이 있음이 발견되었어요. 해당 별명을 불러오시겠어요?"
+      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "이 기능과 다른 프리미엄 기능들을 체험할 시간이 ${ daysRemaining }일 남았습니다."
       ],
@@ -2813,6 +2819,9 @@
       ],
       "Import to vault(s)": [
         "금고로 가져오기"
+      ],
+      "Import your aliases from SimpleLogin": [
+        "SimpleLogin에서 별칭 가져오기"
       ],
       "Last autofill": [
         "마지막 자동 완성"
