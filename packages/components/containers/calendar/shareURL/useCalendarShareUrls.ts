@@ -20,7 +20,8 @@ import type {
 import { splitKeys } from '@proton/shared/lib/keys';
 import updateItem from '@proton/utils/updateItem';
 
-import { useGetCalendarInfo, useNotifications } from '../../../hooks';
+import { useNotifications } from '../../../hooks';
+import useGetCalendarInfo from '../../../hooks/useGetCalendarInfo';
 import { useGetCalendarPublicLinks } from '../../../hooks/useGetCalendarPublicLinks';
 import { useCalendarModelEventManager } from '../../eventManager/calendar/CalendarModelEventManagerProvider';
 
