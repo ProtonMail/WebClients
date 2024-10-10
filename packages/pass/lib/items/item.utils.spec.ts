@@ -35,7 +35,7 @@ describe('Item utils', () => {
         test('should return the correct key string', () => {
             const input = createTestItem('login', { shareId: 'share123', itemId: 'item456', revision: 789 });
             const result = getItemKey(input);
-            expect(result).toBe('item-share123-item456');
+            expect(result).toBe('share123::item456');
         });
     });
 
@@ -43,7 +43,7 @@ describe('Item utils', () => {
         test('should return the correct key string', () => {
             const input = createTestItem('login', { shareId: 'share123', itemId: 'item456', revision: 1 });
             const result = getItemKeyRevision(input);
-            expect(result).toBe('share123-item456-1');
+            expect(result).toBe('share123::item456::1');
         });
     });
 
@@ -60,19 +60,19 @@ describe('Item utils', () => {
         test('should return the correct optimistic ID for optimistic payloads', () => {
             const input = { optimisticId: 'optimistic123', shareId: 'share123' };
             const result = getItemActionId(input);
-            expect(result).toBe('share123-optimistic123');
+            expect(result).toBe('share123::optimistic123');
         });
 
         test('should return the correct optimistic ID for non-optimistic payloads', () => {
             const input = { itemId: 'item456', shareId: 'share123' };
             const result = getItemActionId(input);
-            expect(result).toBe('share123-item456');
+            expect(result).toBe('share123::item456');
         });
 
         test('should prioritize `optimisticId` over `itemId`', () => {
             const input = { optimisticId: 'optimistic123', itemId: 'item456', shareId: 'share123' };
             const result = getItemActionId(input);
-            expect(result).toBe('share123-optimistic123');
+            expect(result).toBe('share123::optimistic123');
         });
     });
 
