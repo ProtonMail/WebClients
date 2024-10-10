@@ -2,7 +2,6 @@ export { default as useFeature } from './useFeature';
 export { default as useFeatures } from './useFeatures';
 export { default as useGetEncryptionPreferences } from './useGetEncryptionPreferences';
 export { default as useHandler, useEventListener, useSubscribeEventManager, useInterval } from './useHandler';
-export { default as useLocalState } from './useLocalState';
 export { default as useModals } from './useModals';
 export { default as useIsMnemonicAvailable } from './useIsMnemonicAvailable';
 export { default as useMyCountry } from './useMyCountry';

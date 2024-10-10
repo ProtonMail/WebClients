@@ -4,7 +4,8 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button, ButtonLike } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
-import { useLocalState, useSubscription } from '@proton/components/hooks';
+import { useSubscription } from '@proton/components/hooks';
+import useLocalState from '@proton/components/hooks/useLocalState';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,

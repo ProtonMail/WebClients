@@ -1,6 +1,5 @@
 import { Button } from '@proton/atoms'
-import { Icon } from '@proton/components'
-import { useLocalState } from '@proton/components/hooks'
+import { Icon, useLocalState } from '@proton/components'
 import { DOCS_DEBUG_KEY } from '@proton/docs-shared'
 import { useEffect, useState } from 'react'
 import { useApplication } from '../Containers/ApplicationProvider'
