@@ -109,12 +109,6 @@
       "Choose my own password": [
         "Deixa'm triar la meva contrasenya"
       ],
-      "Clear filter": [
-        "Neteja el filtre"
-      ],
-      "Clear filters": [
-        "Neteja els filtres"
-      ],
       "Close": [
         "Tanca"
       ],
@@ -279,6 +273,9 @@
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Explora altres ${ BRAND_NAME } plans"
+      ],
+      "Export": [
+        "Exporta"
       ],
       "Extend": [
         "Amplia"
@@ -477,6 +474,9 @@
       ],
       "Resend code": [
         "Reenvia el codi"
+      ],
+      "Reset": [
+        "Restablir"
       ],
       "Reset credentials": [
         "Restaurar credencials"
@@ -2739,9 +2739,6 @@
         "Només es permet ${ n } invitació acceptada en un període de 6 mesos.",
         "Només es permeten ${ n } invitacions acceptades en un període de 6 mesos."
       ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Els propietaris d'un pla amb membres no poden unir-se a un altre pla de grup."
-      ],
       "Pending": [
         "Pendent"
       ],
@@ -2779,9 +2776,6 @@
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Heu de configurar un domini personalitzat abans de crear un usuari."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Esteu convidat a enllaçar el vostre compte de ${ BRAND_NAME } a aquest pla de grup i gaudir junts de totes les característiques prèmium de ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "El vostre compte té més adreces de correu electrònic de les que teniu disponibles en aquest pla. ${ addressSettingsLink }"
@@ -3471,9 +3465,6 @@
         "L'usuari afectat es troba a la fila.",
         "Els usuaris afectats es troben a les files."
       ],
-      "All Events ": [
-        "Tots els esdeveniments"
-      ],
       "All members have been added.": [
         "S'han afegit tots els membres."
       ],
@@ -3551,12 +3542,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Cicle de facturació: ${ text }"
-      ],
-      "Breach Custom Email Deleted": [
-        "S'ha eliminat el correu electrònic personalitzat en cas de violació de les dades."
-      ],
-      "Breach Custom Email Validated": [
-        "S'ha validat el correu electrònic personalitzat en cas de violació de les dades."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Si baixeu a un pla gratuït, perdreu per sempre aquests avantatges, fins i tot si en tornareu a actualitzar."
@@ -3915,16 +3900,7 @@
       "Internet connection restored.": [
         "S'ha restaurat la connexió a Internet."
       ],
-      "Invite Accepted": [
-        "S'ha acceptat la invitació"
-      ],
-      "Invite Created": [
-        "S'ha creat la invitació."
-      ],
       "Invite deleted": [
-        "S'ha eliminat la invitació."
-      ],
-      "Invite Deleted": [
         "S'ha eliminat la invitació."
       ],
       "Invite for new user deleted": [
@@ -3939,32 +3915,17 @@
       "Invite rejected": [
         "S'ha rebutjat la invitació"
       ],
-      "Invite Rejected": [
-        "S'ha rebutjat la invitació."
-      ],
-      "Item Autofilled": [
-        "S'ha emplenat l'element automàticament"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "S'ha emplenat automàticament l'element a ${ vaultLink }"
       ],
       "Item autofilled in vault": [
         "S'ha emplenat un element automàticament a la caixa forta"
       ],
-      "Item Changed Flags": [
-        "Els indicadors de l'element han canviat"
-      ],
-      "Item Created": [
-        "S'ha creat l'element."
-      ],
       "Item created in ${ vaultLink }": [
         "S'ha creat l'element a ${ vaultLink }"
       ],
       "Item created in vault": [
         "S'ha creat un element a la caixa forta"
-      ],
-      "Item Deleted": [
-        "S'ha eliminat l'element."
       ],
       "Item deleted from ${ vaultLink }": [
         "S'ha eliminat l'element a ${ vaultLink }"
@@ -3990,23 +3951,11 @@
       "Item in vault untrashed": [
         "S'ha restaurat un element a la caixa forta"
       ],
-      "Item Read": [
-        "S'ha llegit l'element"
-      ],
       "Item read in ${ vaultLink }": [
         "S'ha llegit l'element a ${ vaultLink }"
       ],
       "Item read in vault": [
         "S'ha llegit un element de la caixa forta"
-      ],
-      "Item Trashed": [
-        "S'ha enviat l'element a la paperera"
-      ],
-      "Item Untrashed": [
-        "S'ha restaurat l'element"
-      ],
-      "Item Updated": [
-        "S'ha actualitzat l'element."
       ],
       "Item updated in ${ vaultLink }": [
         "S'ha actualitzat l'element a ${ vaultLink }"
@@ -4100,12 +4049,6 @@
       ],
       "Must start with a letter.": [
         "Ha de començar amb una lletra."
-      ],
-      "New User Invite Created": [
-        "S'ha creat una invitació d'usuari nou"
-      ],
-      "New User Invite Deleted": [
-        "S'ha eliminat la invitació d'usuari nou"
       ],
       "New user invited to organization": [
         "S'ha convidat el nou usuari a l'organització."
@@ -4328,29 +4271,11 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
       ],
-      "Session Ended": [
-        "Sessió finalitzada"
-      ],
-      "Session Roaming": [
-        "Sessió itinerant"
-      ],
-      "Session Started": [
-        "S'ha iniciat la sessió."
-      ],
       "Session timed out": [
         "S'ha esgotat el temps de sessió"
       ],
       "Setting up your organization": [
         "S'està configurant la vostra organització."
-      ],
-      "Share Created": [
-        "S'ha creat una compartició"
-      ],
-      "Share Deleted": [
-        "S'ha eliminat la compartició"
-      ],
-      "Share Updated": [
-        "S'ha actualitzat la compartició"
       ],
       "Shared ${ vaultLink } deleted": [
         "S'ha eliminat l'enllaç compartit ${ vaultLink }."
@@ -4635,22 +4560,13 @@
       "Vault created": [
         "S'ha creat la caixa forta."
       ],
-      "Vault Created": [
-        "S'ha creat la caixa forta."
-      ],
       "Vault deleted": [
-        "S'ha eliminat la caixa forta."
-      ],
-      "Vault Deleted": [
         "S'ha eliminat la caixa forta."
       ],
       "Vault shared with email": [
         "S'ha compartit la caixa forta per correu electrònic"
       ],
       "Vault updated": [
-        "S'ha actualitzat la caixa forta."
-      ],
-      "Vault Updated": [
         "S'ha actualitzat la caixa forta."
       ],
       "Verification can take a few minutes.": [
@@ -5532,6 +5448,16 @@
         "Número de telèfon de recuperació"
       ]
     },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Des de"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Fins a"
+      ]
+    },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Afegiu un domini propi al vostre compte de ${ MAIL_APP_NAME }."
@@ -6396,6 +6322,16 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } administrador",
+        "${ admins } administradors"
+      ],
+      "${ users } user": [
+        "${ users } usuari",
+        "${ users } usuaris"
       ]
     },
     "new_plans: feature info": {
@@ -7372,9 +7308,6 @@
       ],
       "E.g., ": [
         "Ex., "
-      ],
-      "Email or IP": [
-        "Correu electrònic o IP"
       ],
       "End date": [
         "Data de finalització"
@@ -9329,9 +9262,6 @@
       "Confirm phone number": [
         "Confirmeu el número de telèfon"
       ],
-      "Connection events": [
-        "Esdeveniments de connexió"
-      ],
       "Contact us": [
         "Contacteu amb nosaltres"
       ],
@@ -9489,9 +9419,6 @@
       ],
       "Error": [
         "Error"
-      ],
-      "Event": [
-        "Esdeveniment"
       ],
       "Every member of the organization can access": [
         "Tots els membres de l'organització poden accedir."
@@ -9746,9 +9673,6 @@
       ],
       "There are no groups": [
         "No hi ha grups."
-      ],
-      "Time": [
-        "Hora"
       ],
       "TV sign in": [
         "Inici de sessió al TV"

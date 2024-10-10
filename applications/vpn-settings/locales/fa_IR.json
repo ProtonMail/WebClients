@@ -164,6 +164,9 @@
       "Explore other ${ BRAND_NAME } plans": [
         "طرح‌های ${ BRAND_NAME } دیگر را بررسی کنید"
       ],
+      "Export": [
+        "برون‌برد"
+      ],
       "Extend": [
         "تمدید"
       ],
@@ -301,6 +304,9 @@
       ],
       "Resend code": [
         "ارسال دوباره کد"
+      ],
+      "Reset": [
+        "تنظیم مجدد"
       ],
       "Reset credentials": [
         "بازنشانی اعتبارنامه‌ها"
@@ -3261,6 +3267,16 @@
         "شماره تلفن بازیابی"
       ]
     },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "از"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "به"
+      ]
+    },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "دامنه‌ای را که متعلق به شماست به حساب ${ MAIL_APP_NAME } خود اضافه کنید."
@@ -4999,9 +5015,6 @@
       "Error": [
         "خطا"
       ],
-      "Event": [
-        "رویداد"
-      ],
       "Find email or username": [
         "رایانامه یا نام کاربری را پیدا کنید"
       ],
@@ -5160,9 +5173,6 @@
       ],
       "Switch to two-password mode": [
         "گذر به حالت دوگذرواژه"
-      ],
-      "Time": [
-        "زمان"
       ],
       "TV sign in": [
         "ورود به حساب در تلویزیون"

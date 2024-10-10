@@ -112,12 +112,6 @@
       "Choose my own password": [
         "Escolher sua senha"
       ],
-      "Clear filter": [
-        "Limpar filtro"
-      ],
-      "Clear filters": [
-        "Limpar filtros"
-      ],
       "Close": [
         "Fechar"
       ],
@@ -282,6 +276,9 @@
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Explorar outros planos da ${ BRAND_NAME }"
+      ],
+      "Export": [
+        "Exportar"
       ],
       "Extend": [
         "Estender"
@@ -480,6 +477,9 @@
       ],
       "Resend code": [
         "Reenviar código"
+      ],
+      "Reset": [
+        "Redefinir"
       ],
       "Reset credentials": [
         "Redefinir credenciais"
@@ -2759,14 +2759,8 @@
       "${ BRAND_NAME } groups": [
         "grupos da ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Contas com domínios personalizados não podem participar de um plano de grupo."
-      ],
       "customer support": [
         "suporte ao cliente"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Os planos de grupo não oferecem suporte a contas externas no momento. Crie um endereço da ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se aceitar o convite, seu plano atual será alterado e você receberá um crédito em sua conta com o saldo restante, se houver."
@@ -2777,9 +2771,6 @@
       "Invited by: ${ inviteEmail }": [
         "Convidado por: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Contas vitalícias não podem ingressar em um plano de grupo."
-      ],
       "Manage addresses.": [
         "Gerenciar endereços."
       ],
@@ -2789,9 +2780,6 @@
       "Only ${ n } accepted invitation are allowed in a 6-month period.": [
         "Apenas ${ n } convite pode ser aceito em um período de 6 meses.",
         "Apenas ${ n } convites podem ser aceitos em um período de 6 meses."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Proprietários de um plano com membros não podem participar de outro plano de grupo."
       ],
       "Pending": [
         "Pendente"
@@ -2831,17 +2819,11 @@
       "You have successfully joined the family group": [
         "Você entrou com sucesso no grupo familiar"
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Você tem faturas não pagas. Pague-as antes de entrar em um plano de grupo."
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Você precisa configurar um domínio personalizado antes de adicionar usuários."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Você precisa configurar um domínio personalizado antes de criar um novo usuário."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Você foi convidado a vincular sua conta da ${ BRAND_NAME } a este plano de grupo e aproveitar juntos de todos os recursos premium da ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Sua conta tem mais endereços de e-mail do que a quantidade que está disponível para você neste plano. ${ addressSettingsLink }"
@@ -3552,9 +3534,6 @@
         "O usuário afetado está na fila",
         "Os usuários afetados estão na fila"
       ],
-      "All Events ": [
-        "Todos os eventos "
-      ],
       "All members have been added.": [
         "Todos os membros foram adicionados"
       ],
@@ -3601,7 +3580,7 @@
         "Você tem certeza que deseja remover o domínio ${ boldDomain }?"
       ],
       "Ask your organization admin to setup Gateways.": [
-        "Peça ao administrador de sua organização para configurar os 'Gateways'."
+        "Peça ao administrador de sua organização para configurar os 'Gateways."
       ],
       "Attention required": [
         "Atenção necessária"
@@ -3641,15 +3620,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Ciclo de faturamento: ${ text }"
-      ],
-      "Breach Custom Email Created": [
-        "E-mail personalizado de violação criado"
-      ],
-      "Breach Custom Email Deleted": [
-        "E-mail personalizado de violação excluído"
-      ],
-      "Breach Custom Email Validated": [
-        "E-mail personalizado de violação validado"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao fazer o downgrade para um plano gratuito, você perderá permanentemente esses benefícios, mesmo que você faça o upgrade novamente no futuro."
@@ -4027,16 +3997,7 @@
       "Internet connection restored.": [
         "Conexão com a internet restaurada."
       ],
-      "Invite Accepted": [
-        "Convite aceito"
-      ],
-      "Invite Created": [
-        "Convite criado"
-      ],
       "Invite deleted": [
-        "Convite excluído"
-      ],
-      "Invite Deleted": [
         "Convite excluído"
       ],
       "Invite for new user deleted": [
@@ -4051,32 +4012,17 @@
       "Invite rejected": [
         "Convite rejeitado"
       ],
-      "Invite Rejected": [
-        "Convite rejeitado"
-      ],
-      "Item Autofilled": [
-        "Item preenchido automaticamente"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "Item preenchido automaticamente em ${ vaultLink }"
       ],
       "Item autofilled in vault": [
         "Item preenchido automaticamente no cofre"
       ],
-      "Item Changed Flags": [
-        "Sinalizadores de itens alterados"
-      ],
-      "Item Created": [
-        "Item criado"
-      ],
       "Item created in ${ vaultLink }": [
         "Item criado em ${ vaultLink }"
       ],
       "Item created in vault": [
         "Item criado no cofre"
-      ],
-      "Item Deleted": [
-        "Item excluído"
       ],
       "Item deleted from ${ vaultLink }": [
         "Item excluído no ${ vaultLink }"
@@ -4102,23 +4048,11 @@
       "Item in vault untrashed": [
         "Item do cofre restaurado"
       ],
-      "Item Read": [
-        "Item lido"
-      ],
       "Item read in ${ vaultLink }": [
         "Item lido do ${ vaultLink }"
       ],
       "Item read in vault": [
         "Item lido no cofre"
-      ],
-      "Item Trashed": [
-        "Item excluído"
-      ],
-      "Item Untrashed": [
-        "Item recuperado"
-      ],
-      "Item Updated": [
-        "Item atualizado"
       ],
       "Item updated in ${ vaultLink }": [
         "Item atualizado em ${ vaultLink }"
@@ -4218,12 +4152,6 @@
       ],
       "Must start with a letter.": [
         "Precisa começar com uma letra."
-      ],
-      "New User Invite Created": [
-        "Convite de novo usuário criado"
-      ],
-      "New User Invite Deleted": [
-        "Convite de novo usuário excluído"
       ],
       "New user invited to organization": [
         "Novo usuário convidado para a organização"
@@ -4467,29 +4395,11 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis. Tente novamente em alguns minutos"
       ],
-      "Session Ended": [
-        "Sessão encerrada"
-      ],
-      "Session Roaming": [
-        "Roaming de sessão"
-      ],
-      "Session Started": [
-        "Sessão iniciada"
-      ],
       "Session timed out": [
         "Sessão expirada"
       ],
       "Setting up your organization": [
         "Configurando a sua organização"
-      ],
-      "Share Created": [
-        "Compartilhamento criado"
-      ],
-      "Share Deleted": [
-        "Compartilhamento excluído"
-      ],
-      "Share Updated": [
-        "Compartilhamento atualizado"
       ],
       "Shared ${ vaultLink } deleted": [
         "${ vaultLink } compartilhado excluído"
@@ -4792,22 +4702,13 @@
       "Vault created": [
         "Cofre criado"
       ],
-      "Vault Created": [
-        "Cofre criado"
-      ],
       "Vault deleted": [
-        "Cofre excluído"
-      ],
-      "Vault Deleted": [
         "Cofre excluído"
       ],
       "Vault shared with email": [
         "Cofre compartilhado por e-mail"
       ],
       "Vault updated": [
-        "Cofre atualizado"
-      ],
-      "Vault Updated": [
         "Cofre atualizado"
       ],
       "Verification can take a few minutes.": [
@@ -5699,6 +5600,16 @@
     "label": {
       "Recovery phone number": [
         "Telefone de recuperação"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "De"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Para"
       ]
     },
     "Label for adding a new custom domain": {
@@ -7639,9 +7550,6 @@
       ],
       "E.g., ": [
         "Ex., "
-      ],
-      "Email or IP": [
-        "E-mail ou IP"
       ],
       "End date": [
         "Data de término"
@@ -9610,6 +9518,9 @@
       "Change second password": [
         "Alterar segunda senha"
       ],
+      "Click a value in the table to use it as filter": [
+        "Clique em um valor na tabela para usá-lo como filtro"
+      ],
       "Close": [
         "Fechar"
       ],
@@ -9627,9 +9538,6 @@
       ],
       "Confirm phone number": [
         "Confirme o número do telefone"
-      ],
-      "Connection events": [
-        "Eventos de conexão"
       ],
       "Connection monitor disabled": [
         "Monitor de conexão desativado"
@@ -9794,9 +9702,6 @@
       ],
       "Error": [
         "Erro"
-      ],
-      "Event": [
-        "Evento"
       ],
       "Every member of the organization can access": [
         "Todos os membros da organização podem acessar"
@@ -10051,9 +9956,6 @@
       ],
       "There are no groups": [
         "Não há grupos"
-      ],
-      "Time": [
-        "Hora"
       ],
       "TV sign in": [
         "Iniciar sessão na TV"

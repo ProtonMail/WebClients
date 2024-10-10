@@ -268,6 +268,9 @@
       "Explore other ${ BRAND_NAME } plans": [
         "その他の ${ BRAND_NAME } プランを表示"
       ],
+      "Export": [
+        "エクスポート"
+      ],
       "Extend": [
         "延長"
       ],
@@ -456,6 +459,9 @@
       ],
       "Resend code": [
         "コードを再送信"
+      ],
+      "Reset": [
+        "リセット"
       ],
       "Reset credentials": [
         "認証情報をリセット"
@@ -2543,9 +2549,6 @@
       "Manage user accounts": [
         "ユーザーアカウントを管理"
       ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "メンバーがいるプランのオーナーは他のグループプランに加入できません。"
-      ],
       "Pending": [
         "保留中"
       ],
@@ -2575,9 +2578,6 @@
       ],
       "You need to configure a custom domain before creating a new user.": [
         "新規ユーザーを作成する前にカスタムドメインを設定する必要があります。"
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "${ BRAND_NAME_TWO } のプレミアム機能が利用できるように、あなたの ${ BRAND_NAME } アカウントをこのグループプランにリンクする招待が届いています。"
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "あなたのアカウントはこのプランで利用可能なメールアドレスの上限を超えています。${ addressSettingsLink }"
@@ -3222,9 +3222,6 @@
       "Admin account allocation": [
         "管理者アカウント割り当て"
       ],
-      "All Events ": [
-        "すべてのイベント"
-      ],
       "All your changes will be lost.": [
         "変更内容はすべて失われます。"
       ],
@@ -3654,35 +3651,11 @@
       "Internet connection restored.": [
         "インターネット接続が回復しました。"
       ],
-      "Invite Accepted": [
-        "招待が承認されました"
-      ],
-      "Invite Created": [
-        "招待が作成されました"
-      ],
       "Invite deleted": [
-        "招待が削除されました"
-      ],
-      "Invite Deleted": [
         "招待が削除されました"
       ],
       "Invite rejected": [
         "招待が拒否されました"
-      ],
-      "Invite Rejected": [
-        "招待が拒否されました"
-      ],
-      "Item Autofilled": [
-        "アイテムが自動入力されました"
-      ],
-      "Item Created": [
-        "アイテムが作成されました"
-      ],
-      "Item Deleted": [
-        "アイテムが削除されました"
-      ],
-      "Item Updated": [
-        "アイテムが更新されました"
       ],
       "JCB logo": [
         "JCB ロゴ"
@@ -3987,15 +3960,6 @@
       "Setting up your organization": [
         "組織の設定"
       ],
-      "Share Created": [
-        "共有が作成されました"
-      ],
-      "Share Deleted": [
-        "共有が削除されました"
-      ],
-      "Share Updated": [
-        "共有が更新されました"
-      ],
       "Shared ${ vaultLink } deleted": [
         "共有 ${ vaultLink } が削除されました"
       ],
@@ -4254,19 +4218,10 @@
       "Vault created": [
         "保管庫が作成されました"
       ],
-      "Vault Created": [
-        "保管庫が作成されました"
-      ],
       "Vault deleted": [
         "保管庫が削除されました"
       ],
-      "Vault Deleted": [
-        "保管庫が削除されました"
-      ],
       "Vault updated": [
-        "保管庫が更新されました"
-      ],
-      "Vault Updated": [
         "保管庫が更新されました"
       ],
       "Verification can take a few minutes.": [
@@ -5085,6 +5040,16 @@
     "label": {
       "Recovery phone number": [
         "回復用電話番号"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "開始日"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "終了日"
       ]
     },
     "Label for adding a new custom domain": {
@@ -8467,9 +8432,6 @@
       "Error": [
         "エラー"
       ],
-      "Event": [
-        "イベント"
-      ],
       "Every member of the organization can access": [
         "組織の全メンバーがアクセスできる"
       ],
@@ -8709,9 +8671,6 @@
       ],
       "Text": [
         "テキスト"
-      ],
-      "Time": [
-        "時刻"
       ],
       "TV sign in": [
         "TV サインイン"

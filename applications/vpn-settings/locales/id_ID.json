@@ -112,12 +112,6 @@
       "Choose my own password": [
         "Pilih kata sandi saya sendiri"
       ],
-      "Clear filter": [
-        "Hapus filter"
-      ],
-      "Clear filters": [
-        "Hapus filter"
-      ],
       "Close": [
         "Tutup"
       ],
@@ -282,6 +276,9 @@
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Telusuri paket ${ BRAND_NAME } lainnya"
+      ],
+      "Export": [
+        "Ekspor"
       ],
       "Extend": [
         "Perpanjang"
@@ -480,6 +477,9 @@
       ],
       "Resend code": [
         "Kirim ulang kode"
+      ],
+      "Reset": [
+        "Atur ulang"
       ],
       "Reset credentials": [
         "Atur ulang kredensial"
@@ -2133,6 +2133,9 @@
       ]
     },
     "Description": {
+      "Keep different parts of your life separate and your inbox organized with additional addresses.": [
+        "Pisahkan aspek kehidupan Anda dan rapikan kotak masuk Anda dengan alamat tambahan."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Pisahkan berbagai aspek kehidupan Anda dengan alamat emailnya masing-masing dan dapatkan lebih banyak fitur premium pada saat Anda meningkatkan akun."
       ]
@@ -2747,14 +2750,8 @@
       "${ BRAND_NAME } groups": [
         "Grup ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Akun dengan domain khusus tidak dapat bergabung ke paket grup."
-      ],
       "customer support": [
         "layanan dukungan"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Paket grup saat ini tidak mendukung akun eksternal. Buat alamat ${ BRAND_NAME } sebelum bergabung. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jika Anda menerima undangan, kami akan mengalihkan Anda dari paket saat ini dan mengkredit akun Anda dengan sisa saldo."
@@ -2765,9 +2762,6 @@
       "Invited by: ${ inviteEmail }": [
         "Diundang oleh: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Akun Lifetime tidak dapat bergabung dalam paket grup."
-      ],
       "Manage addresses.": [
         "Kelola alamat."
       ],
@@ -2776,9 +2770,6 @@
       ],
       "Only ${ n } accepted invitation are allowed in a 6-month period.": [
         "Hanya ${ n } undangan yang diterima yang diizinkan dalam kurun waktu 6 bulan."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Pemilik paket dengan anggota tidak dapat bergabung ke paket grup lain."
       ],
       "Pending": [
         "Ditunda"
@@ -2816,17 +2807,11 @@
       "You have successfully joined the family group": [
         "Anda telah berhasil bergabung ke grup keluarga ini"
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Anda memiliki faktur yang belum dibayar. Silakan dibayar sebelum bergabung dalam paket grup."
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Anda harus mengatur domain khusus sebelum menambahkan lebih dari satu pengguna."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Anda harus mengatur domain kustom sebelum membuat pengguna baru."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Anda diundang untuk mengaitkan Akun ${ BRAND_NAME } Anda ke paket grup ini dan menikmati semua fitur premium ${ BRAND_NAME_TWO } bersama."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Akun Anda memiliki alamat email lebih banyak dari yang tersedia kepada Anda dalam paket ini. ${ addressSettingsLink }"
@@ -3507,9 +3492,6 @@
       "Affected user is on row": [
         "Pengguna yang terdampak terdapat pada baris"
       ],
-      "All Events ": [
-        "Semua Acara "
-      ],
       "All members have been added.": [
         "Semua anggota telah ditambahkan."
       ],
@@ -3596,15 +3578,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Siklus tagihan: ${ text }"
-      ],
-      "Breach Custom Email Created": [
-        "Email Khusus Kebocoran Dibuat"
-      ],
-      "Breach Custom Email Deleted": [
-        "Email Khusus Kebocoran Dihapus"
-      ],
-      "Breach Custom Email Validated": [
-        "Email Khusus Kebocoran Divalidasi"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Dengan menurunkan ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen, bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
@@ -3978,17 +3951,8 @@
       "Internet connection restored.": [
         "Koneksi internet telah kembali pulih."
       ],
-      "Invite Accepted": [
-        "Undangan Diterima"
-      ],
-      "Invite Created": [
-        "Undangan Dibuat"
-      ],
       "Invite deleted": [
         "Undangan dihapus"
-      ],
-      "Invite Deleted": [
-        "Undangan Dihapus"
       ],
       "Invite for new user deleted": [
         "Undangan untuk pengguna baru dihapus"
@@ -4002,32 +3966,17 @@
       "Invite rejected": [
         "Undangan ditolak"
       ],
-      "Invite Rejected": [
-        "Undangan Ditolak"
-      ],
-      "Item Autofilled": [
-        "Item Diisi Otomatis"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "Item diisi otomatis dalam ${ vaultLink }"
       ],
       "Item autofilled in vault": [
         "Item diisi secara otomatis dalam brankas"
       ],
-      "Item Changed Flags": [
-        "Bendera Item Diubah"
-      ],
-      "Item Created": [
-        "Item Dibuat"
-      ],
       "Item created in ${ vaultLink }": [
         "Item dibuat dalam ${ vaultLink }"
       ],
       "Item created in vault": [
         "Item dibuat dalam brankas"
-      ],
-      "Item Deleted": [
-        "Item Dihapus"
       ],
       "Item deleted from ${ vaultLink }": [
         "Item dihapus dari ${ vaultLink }"
@@ -4053,23 +4002,11 @@
       "Item in vault untrashed": [
         "Item dalam brankas dipulihkan dari sampah"
       ],
-      "Item Read": [
-        "Item Dibaca"
-      ],
       "Item read in ${ vaultLink }": [
         "Item telah dibaca di ${ vaultLink }"
       ],
       "Item read in vault": [
         "Item dibaca dalam brankas"
-      ],
-      "Item Trashed": [
-        "Item di Sampah"
-      ],
-      "Item Untrashed": [
-        "Item Dipulihkan dari Sampah"
-      ],
-      "Item Updated": [
-        "Item Diperbarui"
       ],
       "Item updated in ${ vaultLink }": [
         "Item diperbarui dalam ${ vaultLink }"
@@ -4169,12 +4106,6 @@
       ],
       "Must start with a letter.": [
         "Nama gateway harus diawali dengan huruf."
-      ],
-      "New User Invite Created": [
-        "Undangan Pengguna Baru Dibuat"
-      ],
-      "New User Invite Deleted": [
-        "Undangan Pengguna Baru Dihapus"
       ],
       "New user invited to organization": [
         "Pengguna baru diundang ke organisasi"
@@ -4413,29 +4344,11 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
       ],
-      "Session Ended": [
-        "Sesi Diakhiri"
-      ],
-      "Session Roaming": [
-        "Sesi dalam Proses Roaming"
-      ],
-      "Session Started": [
-        "Sesi Dimulai"
-      ],
       "Session timed out": [
         "Masa berlaku sesi telah berakhir"
       ],
       "Setting up your organization": [
         "Menyiapkan organisasi Anda"
-      ],
-      "Share Created": [
-        "Pembagian Dibuat"
-      ],
-      "Share Deleted": [
-        "Pembagian Dihapus"
-      ],
-      "Share Updated": [
-        "Pembagian Diperbarui"
       ],
       "Shared ${ vaultLink } deleted": [
         "${ vaultLink } terbagi telah dihapus"
@@ -4734,23 +4647,14 @@
       "Vault created": [
         "Brankas dibuat"
       ],
-      "Vault Created": [
-        "Brankas Dibuat"
-      ],
       "Vault deleted": [
         "Brankas dihapus"
-      ],
-      "Vault Deleted": [
-        "Brankas Dihapus"
       ],
       "Vault shared with email": [
         "Brankas dibagikan dengan email"
       ],
       "Vault updated": [
         "Brankas diperbarui"
-      ],
-      "Vault Updated": [
-        "Brankas Diperbarui"
       ],
       "Verification can take a few minutes.": [
         "Proses verifikasi dapat memakan waktu hingga beberapa menit."
@@ -5630,6 +5534,16 @@
         "Nomor telepon pemulihan"
       ]
     },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Dari"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Kepada"
+      ]
+    },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Tambahkan domain yang Anda miliki ke akun ${ MAIL_APP_NAME } Anda."
@@ -6052,11 +5966,17 @@
       "From ${ price }": [
         "Dari ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Mulai dari ${ priceMailPlus }"
+      ],
       "Upgrade": [
         "Tingkatkan"
       ],
       "Upgrade now": [
         "Tingkatkan sekarang"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -7512,9 +7432,6 @@
       "E.g., ": [
         "Misalnya "
       ],
-      "Email or IP": [
-        "Email atau IP"
-      ],
       "End date": [
         "Tanggal berakhir"
       ],
@@ -8287,6 +8204,9 @@
       ],
       "/ month": [
         "/ bulan"
+      ],
+      "/month": [
+        "/bulan"
       ],
       "1 year": [
         "1 tahun"
@@ -9435,6 +9355,9 @@
       "Change second password": [
         "Ubah kata sandi kedua"
       ],
+      "Click a value in the table to use it as filter": [
+        "Klik nilai di tabel untuk menggunakannya sebagai penyaring"
+      ],
       "Close": [
         "Tutup"
       ],
@@ -9452,9 +9375,6 @@
       ],
       "Confirm phone number": [
         "Konfirmasi nomor telepon"
-      ],
-      "Connection events": [
-        "Peristiwa koneksi"
       ],
       "Connection monitor disabled": [
         "Pemantau koneksi dinonaktifkan"
@@ -9617,9 +9537,6 @@
       ],
       "Error": [
         "Kesalahan"
-      ],
-      "Event": [
-        "Peristiwa"
       ],
       "Every member of the organization can access": [
         "Dapat diakses oleh seluruh anggota organisasi"
@@ -9872,9 +9789,6 @@
       ],
       "There are no groups": [
         "Tidak ada grup"
-      ],
-      "Time": [
-        "Waktu"
       ],
       "TV sign in": [
         "Masuk TV"

@@ -112,12 +112,6 @@
       "Choose my own password": [
         "Задать собственный пароль"
       ],
-      "Clear filter": [
-        "Сбросить фильтр"
-      ],
-      "Clear filters": [
-        "Очистить фильтры"
-      ],
       "Close": [
         "Закрыть"
       ],
@@ -282,6 +276,9 @@
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Изучите другие тарифы ${ BRAND_NAME }"
+      ],
+      "Export": [
+        "Экспорт"
       ],
       "Extend": [
         "Продлить"
@@ -480,6 +477,9 @@
       ],
       "Resend code": [
         "Повторно отправить код"
+      ],
+      "Reset": [
+        "Сбросить"
       ],
       "Reset credentials": [
         "Сбросить учётные данные"
@@ -2777,14 +2777,8 @@
       "${ BRAND_NAME } groups": [
         "Группы ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Аккаунты с пользовательским доменом не могут присоединиться к групповому плану."
-      ],
       "customer support": [
         "служба поддержки"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "На данный момент групповые планы не поддерживают внешние аккаунты. Перед подключением создайте адрес ${ BRAND_NAME }. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Если вы примете приглашение, тарифный план будет изменен. Неиспользованный баланс возвратится на счет аккаунта."
@@ -2794,9 +2788,6 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Вас приглашает: ${ inviteEmail }"
-      ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Пожизненные аккаунты не могут присоединиться к групповому плану."
       ],
       "Manage addresses.": [
         "Управляйте адресами."
@@ -2809,9 +2800,6 @@
         "За полгода можно принять только ${ n } приглашения.",
         "За полгода можно принять только ${ n } приглашений.",
         "За полгода можно принять только ${ n } приглашений."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Владельцы групповых тарифов не могут присоединиться к другим групповым тарифам."
       ],
       "Pending": [
         "В ожидании"
@@ -2855,17 +2843,11 @@
       "You have successfully joined the family group": [
         "Вы успешно присоединились к семейному плану"
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "У вас есть неоплаченные счета. Пожалуйста, оплатите их, прежде чем присоединиться к группе."
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Перед добавлением нескольких пользователей необходимо настроить пользовательский домен."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Перед регистрацией нового пользователя необходимо настроить пользовательский домен."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Вам предложили присоединить аккаунт ${ BRAND_NAME } к групповому тарифу для совместного использования всех платных функций ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "К аккаунту подключено больше адресов электронной почты, чем позволяет текущий тарифный план. ${ addressSettingsLink }"
@@ -3618,9 +3600,6 @@
         "Затронутые пользователи находятся на строках",
         "Затронутые пользователи находятся на строках"
       ],
-      "All Events ": [
-        "Все события"
-      ],
       "All members have been added.": [
         "Все участники были добавлены."
       ],
@@ -3707,15 +3686,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Платежный цикл: ${ text }"
-      ],
-      "Breach Custom Email Created": [
-        "Создан пользовательский адрес эл. почты взломов"
-      ],
-      "Breach Custom Email Deleted": [
-        "Удалён пользовательский адрес эл. почты взломов"
-      ],
-      "Breach Custom Email Validated": [
-        "Подтверждён пользовательский адрес эл. почты взломов"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Перейдя на бесплатный тарифный план, вы навсегда потеряете эти преимущества, даже если в будущем вы снова улучшите его."
@@ -4101,16 +4071,7 @@
       "Internet connection restored.": [
         "Подключение к Интернету восстановлено."
       ],
-      "Invite Accepted": [
-        "Приглашение принято"
-      ],
-      "Invite Created": [
-        "Приглашение создано"
-      ],
       "Invite deleted": [
-        "Приглашение удалено"
-      ],
-      "Invite Deleted": [
         "Приглашение удалено"
       ],
       "Invite for new user deleted": [
@@ -4125,32 +4086,17 @@
       "Invite rejected": [
         "Приглашение отклонено"
       ],
-      "Invite Rejected": [
-        "Приглашение отклонено"
-      ],
-      "Item Autofilled": [
-        "Элемент автоматически заполнен"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "Элемент автоматически заполнен в ${ vaultLink }"
       ],
       "Item autofilled in vault": [
         "Элемент автоматически заполнен в хранилище"
       ],
-      "Item Changed Flags": [
-        "Элемент изменил флажки"
-      ],
-      "Item Created": [
-        "Элемент создан"
-      ],
       "Item created in ${ vaultLink }": [
         "Элемент создан в ${ vaultLink }"
       ],
       "Item created in vault": [
         "Элемент создан в хранилище"
-      ],
-      "Item Deleted": [
-        "Элемент удален"
       ],
       "Item deleted from ${ vaultLink }": [
         "Элемент удален из ${ vaultLink }"
@@ -4176,23 +4122,11 @@
       "Item in vault untrashed": [
         "Элемент из хранилища перемещен из корзины"
       ],
-      "Item Read": [
-        "Элемент прочитан"
-      ],
       "Item read in ${ vaultLink }": [
         "Элемент прочитан в ${ vaultLink }"
       ],
       "Item read in vault": [
         "Элемент прочитан в хранилище"
-      ],
-      "Item Trashed": [
-        "Элемент помещен в корзину"
-      ],
-      "Item Untrashed": [
-        "Элемент извлечен из корзины"
-      ],
-      "Item Updated": [
-        "Элемент обновлен"
       ],
       "Item updated in ${ vaultLink }": [
         "Элемент обновлен в ${ vaultLink }"
@@ -4292,12 +4226,6 @@
       ],
       "Must start with a letter.": [
         "Должно начинаться с буквы."
-      ],
-      "New User Invite Created": [
-        "Приглашение нового пользователя создано"
-      ],
-      "New User Invite Deleted": [
-        "Приглашение новому пользователю удалено"
       ],
       "New user invited to organization": [
         "Новый пользователь приглашен в организацию"
@@ -4542,29 +4470,11 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
       ],
-      "Session Ended": [
-        "Сеанс окончен"
-      ],
-      "Session Roaming": [
-        "Роуминг сеансов"
-      ],
-      "Session Started": [
-        "Сеанс начат"
-      ],
       "Session timed out": [
         "Время сеанса истекло"
       ],
       "Setting up your organization": [
         "Настройка вашей организации"
-      ],
-      "Share Created": [
-        "Общий ресурс создан"
-      ],
-      "Share Deleted": [
-        "Общий ресурс удален"
-      ],
-      "Share Updated": [
-        "Общий ресурс обновлен"
       ],
       "Shared ${ vaultLink } deleted": [
         "Коллективная ${ vaultLink } удалена"
@@ -4875,22 +4785,13 @@
       "Vault created": [
         "Хранилище создано"
       ],
-      "Vault Created": [
-        "Хранилище создано"
-      ],
       "Vault deleted": [
-        "Хранилище удалено"
-      ],
-      "Vault Deleted": [
         "Хранилище удалено"
       ],
       "Vault shared with email": [
         "Общий доступ к хранилищу с помощью электронной почты"
       ],
       "Vault updated": [
-        "Хранилище обновлено"
-      ],
-      "Vault Updated": [
         "Хранилище обновлено"
       ],
       "Verification can take a few minutes.": [
@@ -5799,6 +5700,16 @@
     "label": {
       "Recovery phone number": [
         "Номер телефона для восстановления"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "От"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Кому"
       ]
     },
     "Label for adding a new custom domain": {
@@ -7766,9 +7677,6 @@
       ],
       "E.g., ": [
         "Например, "
-      ],
-      "Email or IP": [
-        "адрес электронной почты или IP"
       ],
       "End date": [
         "Дата окончания"
@@ -9804,6 +9712,9 @@
       "Change second password": [
         "Изменить второй пароль"
       ],
+      "Click a value in the table to use it as filter": [
+        "Нажмите значение в таблице, чтобы использовать его в качестве фильтра"
+      ],
       "Close": [
         "Закрыть"
       ],
@@ -9821,9 +9732,6 @@
       ],
       "Confirm phone number": [
         "Подтвердите номер телефона"
-      ],
-      "Connection events": [
-        "События подключения"
       ],
       "Connection monitor disabled": [
         "Отслеживание подключения выключено"
@@ -9992,9 +9900,6 @@
       ],
       "Error": [
         "Ошибка"
-      ],
-      "Event": [
-        "Событие"
       ],
       "Every member of the organization can access": [
         "Каждый член организации может получить доступ"
@@ -10253,9 +10158,6 @@
       ],
       "There are no groups": [
         "Нет ни одной группы"
-      ],
-      "Time": [
-        "Время"
       ],
       "TV sign in": [
         "Вход на ТВ"
