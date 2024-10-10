@@ -10,10 +10,28 @@ const isUser = {
     [APPS.PROTONMAIL]: isMailMobileAppUser,
 };
 
+const utmParams = {
+    [APPS.PROTONCALENDAR]: {
+        appStore: '?pt=106513916&ct=pme-calendar-topbanner&mt=8',
+        playStore: '&utm_source=proton.me&utm_campaign=pme-calendar-topbanner',
+    },
+    [APPS.PROTONMAIL]: {
+        appStore: '?pt=106513916&ct=webapp-mail-topbanner&mt=8',
+        playStore: '&utm_source=webapp&utm_campaign=webapp-mail-topbanner',
+    },
+};
+
 const storeLinks = {
     [APPS.PROTONCALENDAR]: CALENDAR_MOBILE_APP_LINKS,
     [APPS.PROTONMAIL]: MAIL_MOBILE_APP_LINKS,
 };
+
+type StoreType = keyof (
+    | Omit<typeof CALENDAR_MOBILE_APP_LINKS, 'qrCode'>
+    | Omit<typeof MAIL_MOBILE_APP_LINKS, 'qrCode'>
+);
+
+const getStoreLink = (app: SmartBannerApp, store: StoreType) => storeLinks[app][store] + utmParams[app][store];
 
 export const useSmartBanner = (app: SmartBannerApp) => {
     // We can't (easily) detect if a user has downloaded/installed the native app, but
@@ -35,5 +53,5 @@ export const useSmartBanner = (app: SmartBannerApp) => {
         return null;
     }
 
-    return storeLinks[app][isAndroid ? 'playStore' : 'appStore'];
+    return getStoreLink(app, isAndroid ? 'playStore' : 'appStore');
 };
