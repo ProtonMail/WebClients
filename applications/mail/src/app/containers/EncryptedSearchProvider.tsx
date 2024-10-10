@@ -8,7 +8,6 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import {
     useApi,
-    useGetMessageCounts,
     useGetUserKeys,
     useISESEnabledElectron,
     useSubscribeEventManager,
@@ -22,6 +21,7 @@ import {
     wrappedGetOldestInfo,
 } from '@proton/encrypted-search';
 import { FeatureCode, useFeature } from '@proton/features';
+import { useGetMessageCounts } from '@proton/mail/counts/messageCounts';
 import { SECOND } from '@proton/shared/lib/constants';
 import { isESEnabledUserChoiceInboxDesktop } from '@proton/shared/lib/desktop/encryptedSearch';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';

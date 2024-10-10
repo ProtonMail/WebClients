@@ -6,7 +6,6 @@ export { default as useLocalState } from './useLocalState';
 export { default as useMainArea, MainAreaContext } from './useMainArea';
 export * from './useMember';
 export * from './useMembers';
-export * from './useMessageCounts';
 export { default as useModals } from './useModals';
 export { default as useIsMnemonicAvailable } from './useIsMnemonicAvailable';
 export { default as useMyCountry } from './useMyCountry';
