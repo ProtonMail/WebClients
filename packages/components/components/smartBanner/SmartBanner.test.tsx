@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import { default as defaultUserSettings } from '@proton/components/hooks/useUserSettings';
-import { APPS, type APP_NAMES, CALENDAR_MOBILE_APP_LINKS, MAIL_MOBILE_APP_LINKS } from '@proton/shared/lib/constants';
+import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { isAndroid, isIos } from '@proton/shared/lib/helpers/browser';
 import { isCalendarMobileAppUser, isMailMobileAppUser } from '@proton/shared/lib/helpers/usedClientsFlags';
 
@@ -71,8 +71,16 @@ const defaultUsedClientsFlagsResponses = {
 const linkRoleOptions = { name: 'Download' };
 
 const storeLinks = {
-    [APPS.PROTONCALENDAR]: CALENDAR_MOBILE_APP_LINKS,
-    [APPS.PROTONMAIL]: MAIL_MOBILE_APP_LINKS,
+    [APPS.PROTONCALENDAR]: {
+        appStore: 'https://apps.apple.com/app/apple-store/id1514709943?pt=106513916&ct=pme-calendar-topbanner&mt=8',
+        playStore:
+            'https://play.google.com/store/apps/details?id=me.proton.android.calendar&utm_source=proton.me&utm_campaign=pme-calendar-topbanner',
+    },
+    [APPS.PROTONMAIL]: {
+        appStore: 'https://apps.apple.com/app/apple-store/id979659905?pt=106513916&ct=webapp-mail-topbanner&mt=8',
+        playStore:
+            'https://play.google.com/store/apps/details?id=ch.protonmail.android&utm_source=webapp&utm_campaign=webapp-mail-topbanner',
+    },
 };
 
 describe('@proton/components/components/SmartBanner', () => {
