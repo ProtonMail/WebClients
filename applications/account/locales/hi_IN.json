@@ -70,10 +70,10 @@
       "Accept": [
         "स्वीकार करें"
       ],
-      "activate": [
+      "Activate": [
         "सक्रिय"
       ],
-      "Activate": [
+      "activate": [
         "सक्रिय"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -216,12 +216,6 @@
       ],
       "Clear all formatting": [
         "सारा फॉर्मेटिंग साफ करें"
-      ],
-      "Clear filter": [
-        "फिल्टर हटाएं"
-      ],
-      "Clear filters": [
-        "फिल्टर हटाएं"
       ],
       "Close": [
         "बंद करें"
@@ -819,6 +813,9 @@
       ],
       "Resend code": [
         "कोड वापस भेजें"
+      ],
+      "Reset": [
+        "रीसेट करें"
       ],
       "Reset credentials": [
         "क्रेडेंशियल रीसेट करें"
@@ -4567,9 +4564,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "नया उपयोगकर्ता बनाने से पहले आपको एक कस्टम डोमेन कॉन्फ़िगर करना होगा।"
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "आपको अपने ${ BRAND_NAME } खाते को इस समूह योजना से लिंक करने और साथ में सभी ${ BRAND_NAME_TWO } प्रीमियम सुविधाओं का आनंद लेने के लिए आमंत्रित किया जाता है।"
-      ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "आपका खाता ${ usedSpace } स्टोरेज का उपयोग कर रहा है, जो आपको दिए गए ${ inviteSpace } से अधिक है। कुछ डेटा हटाएं या प्लान एडमिन से अपना स्टोरेज बढ़ाने के लिए कहें।"
       ]
@@ -5885,9 +5879,6 @@
         "सभी (${ totalFoldersCount } लेबल)",
         "सभी (${ totalFoldersCount } लेबल)"
       ],
-      "All Events ": [
-        "सभी कार्यक्रम "
-      ],
       "All keys successfully reactivated": [
         "सभी कुंजियाँ सफलतापूर्वक पुन: सक्रिय हो गईं"
       ],
@@ -6574,16 +6565,7 @@
       "Internet connection restored.": [
         "इंटरनेट कनेक्शन बहाल"
       ],
-      "Invite Accepted": [
-        "न्योता माना गया"
-      ],
-      "Invite Created": [
-        "न्योता बनाया गया"
-      ],
       "Invite deleted": [
-        "न्योता मिटाया गया"
-      ],
-      "Invite Deleted": [
         "न्योता मिटाया गया"
       ],
       "Invite for organization accepted": [
@@ -6595,9 +6577,6 @@
       "Invite rejected": [
         "न्योता ठुकराया गया"
       ],
-      "Invite Rejected": [
-        "न्योता ठुकराया गया"
-      ],
       "Invite successfully sent": [
         "न्योता सफलतापूर्वक भेजा गया",
         "न्योते सफलतापूर्वक भेजे गए"
@@ -6605,29 +6584,17 @@
       "It appears some of your data is encrypted and locked.": [
         "ऐसा लगता है कि आपका कुछ डेटा एन्क्रिप्ट और लॉक किया गया है।"
       ],
-      "Item Autofilled": [
-        "आइटम स्वतः भरा गया"
-      ],
       "Item autofilled in vault": [
         "आइटम तिजोरी में स्वत: भर गई"
       ],
-      "Item Created": [
-        "आइटम बनाया गया"
-      ],
       "Item created in vault": [
         "तिजोरी में बनाया गया आइटम"
-      ],
-      "Item Deleted": [
-        "आइटम मिटाया गया"
       ],
       "Item flags changed in vault": [
         "तिजोरी में आइटम के फ्लैग बदले गए"
       ],
       "Item read in vault": [
         "तिजोरी में पढ़ा गया आइटम"
-      ],
-      "Item Updated": [
-        "आइटम अपडेट हुआ"
       ],
       "Item updated in vault": [
         "तिजोरी में आइटम अपडेट हुआ"
@@ -6784,12 +6751,6 @@
       ],
       "New": [
         "नया"
-      ],
-      "New User Invite Created": [
-        "नया यूजर न्योता बनाया गया"
-      ],
-      "New User Invite Deleted": [
-        "नया यूजर न्योता मिटाया गया"
       ],
       "No account keys exist": [
         "कोई खाता चाबी मौजूद नहीं"
@@ -7147,15 +7108,6 @@
       ],
       "Settings updated": [
         "सेटिंग अपडेट किया"
-      ],
-      "Share Created": [
-        "शेयर बनाया गया"
-      ],
-      "Share Deleted": [
-        "शेयर मिटाया गया"
-      ],
-      "Share Updated": [
-        "शेयर अपडेट हुआ"
       ],
       "Shared vault deleted": [
         "साझा तिजोरी मिटा दी गई"
@@ -7545,9 +7497,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "विशेष मूल्य पर प्रीमियम सुविधाएं, उत्पाद और संग्रहण प्राप्त करने के लिए अभी अपग्रेड करें"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "${ PROTON_SENTINEL_NAME } तक पहुंच प्राप्त करने के लिए ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, या ${ PLAN_NAMES[bundleProPlan] } प्लान में अपग्रेड करें।"
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "अपने खाते में एक छोटा @pm.me पता जोड़ने के लिए अपग्रेड करें जिसे साझा करना आसान हो। इसका मतलब है “${ MAIL_APP_NAME } me” या “मुझे निजी संदेश भेजें”।"
       ],
@@ -7596,22 +7545,13 @@
       "Vault created": [
         "तिजोरी बनाया गया"
       ],
-      "Vault Created": [
-        "तिजोरी बनाई गई"
-      ],
       "Vault deleted": [
-        "तिजोरी मिटाई गई"
-      ],
-      "Vault Deleted": [
         "तिजोरी मिटाई गई"
       ],
       "Vault shared with email": [
         "तिजोरी ईमेल द्वारा शेयर की गयी"
       ],
       "Vault updated": [
-        "तिजोरी अपडेट हुई"
-      ],
-      "Vault Updated": [
         "तिजोरी अपडेट हुई"
       ],
       "Verification can take a few minutes.": [
@@ -9347,6 +9287,16 @@
       ],
       "Recovery phrase": [
         "पुनर्प्राप्ति वाक्यांश"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "से"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "को"
       ]
     },
     "Label for adding a new custom domain": {
@@ -11601,9 +11551,6 @@
       "Email address": [
         "ई-मेल पता"
       ],
-      "Email or IP": [
-        "ईमेल या आईपी"
-      ],
       "End date": [
         "समाप्ति दिनांक"
       ],
@@ -13678,9 +13625,6 @@
       "Error": [
         "गड़बड़"
       ],
-      "Event": [
-        "इवेंट"
-      ],
       "Every member of the organization can access": [
         "संगठन का प्रत्येक सदस्य एक्सेस कर सकता है"
       ],
@@ -14157,9 +14101,6 @@
       ],
       "Theme": [
         "थीम"
-      ],
-      "Time": [
-        "समय"
       ],
       "Time zone": [
         "समय क्षेत्र"

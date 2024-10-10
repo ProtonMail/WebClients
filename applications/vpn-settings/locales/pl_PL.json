@@ -112,12 +112,6 @@
       "Choose my own password": [
         "Ustaw własne hasło"
       ],
-      "Clear filter": [
-        "Wyczyść filtr"
-      ],
-      "Clear filters": [
-        "Wyczyść filtry"
-      ],
       "Close": [
         "Zamknij"
       ],
@@ -282,6 +276,9 @@
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Pokaż inne plany ${ BRAND_NAME }"
+      ],
+      "Export": [
+        "Eksportuj"
       ],
       "Extend": [
         "Rozszerz"
@@ -480,6 +477,9 @@
       ],
       "Resend code": [
         "Wyślij ponownie kod"
+      ],
+      "Reset": [
+        "Resetuj"
       ],
       "Reset credentials": [
         "Zresetuj dane logowania"
@@ -2771,14 +2771,8 @@
       "${ BRAND_NAME } groups": [
         "Grupy ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Konta z niestandardowymi domenami nie mogą dołączyć do tego planu."
-      ],
       "customer support": [
         "wsparcie klienta"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Plany grupowe nie obsługują obecnie kont zewnętrznych. Utwórz adres ${ BRAND_NAME } przed dołączeniem. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jeśli zaakceptujesz zaproszenie, zmienimy obecny plan i obciążymy Twoje konto kwotą pozostałego salda."
@@ -2788,9 +2782,6 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Zaproszenie wysłane przez: ${ inviteEmail }"
-      ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Konta dożywotnie nie mogę dołączyć do innego planu."
       ],
       "Manage addresses.": [
         "Zarządzaj adresami."
@@ -2803,9 +2794,6 @@
         "Możesz zaakceptować ${ n } zaproszenia w ciągu 6 miesięcy.",
         "Możesz zaakceptować ${ n } zaproszeń w ciągu 6 miesięcy.",
         "Możesz zaakceptować ${ n } zaproszenia w ciągu 6 miesięcy."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Właściciele planu z użytkownikami nie mogą dołączyć do innego planu."
       ],
       "Pending": [
         "Oczekujące"
@@ -2849,17 +2837,11 @@
       "You have successfully joined the family group": [
         "Dołączono do grupy rodzinnej"
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Masz nieopłacone faktury. Opłać je przed dołączeniem do planu grupowego."
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Musisz skonfigurować niestandardową domenę przed dodaniem użytkowników."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Musisz skonfigurować niestandardową domenę przed utworzeniem nowego użytkownika."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Zaproszono Cię do połączenia konta ${ BRAND_NAME } z tym planem grupy, aby razem korzystać z wszystkich funkcji premium ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Twoje konto ma większą liczbę adresów, niż jest to dostępne w planie. ${ addressSettingsLink }"
@@ -3612,9 +3594,6 @@
         "Dotyczy użytkowników",
         "Dotyczy użytkowników"
       ],
-      "All Events ": [
-        "Wszystkie zdarzenia"
-      ],
       "All members have been added.": [
         "Wszyscy użytkownicy zostali dodani."
       ],
@@ -3701,15 +3680,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Cykl rozliczeniowy: ${ text }"
-      ],
-      "Breach Custom Email Created": [
-        "Utworzenie niestandardowego adresu e-mail w monitoringu"
-      ],
-      "Breach Custom Email Deleted": [
-        "Usunięcie niestandardowego adresu e-mail z monitoringu"
-      ],
-      "Breach Custom Email Validated": [
-        "Zweryfikowanie niestandardowego adresu e-mail w monitoringu"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Obniżając plan do wersji Free, utracisz te bonusy na zawsze, nawet jeśli w przyszłości ponownie ulepszysz swoje konto."
@@ -4095,16 +4065,7 @@
       "Internet connection restored.": [
         "Połączenie z Internetem zostało przywrócone."
       ],
-      "Invite Accepted": [
-        "Zaakceptowanie zaproszenia"
-      ],
-      "Invite Created": [
-        "Utworzenie zaproszenia"
-      ],
       "Invite deleted": [
-        "Usunięcie zaproszenia"
-      ],
-      "Invite Deleted": [
         "Usunięcie zaproszenia"
       ],
       "Invite for new user deleted": [
@@ -4119,32 +4080,17 @@
       "Invite rejected": [
         "Odrzucenie zaproszenia"
       ],
-      "Invite Rejected": [
-        "Odrzucenie zaproszenia"
-      ],
-      "Item Autofilled": [
-        "Autouzupełnienie elementu"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "Autouzupełnienie elementu w sejfie ${ vaultLink }"
       ],
       "Item autofilled in vault": [
         "Autouzupełnienie elementu w sejfie"
       ],
-      "Item Changed Flags": [
-        "Zmiana flagi elementu"
-      ],
-      "Item Created": [
-        "Utworzenie elementu"
-      ],
       "Item created in ${ vaultLink }": [
         "Utworzenie elementu w sejfie ${ vaultLink }"
       ],
       "Item created in vault": [
         "Utworzenie elementu w sejfie"
-      ],
-      "Item Deleted": [
-        "Usunięcie elementu"
       ],
       "Item deleted from ${ vaultLink }": [
         "Usunięcie elementu z sejfu ${ vaultLink }"
@@ -4170,23 +4116,11 @@
       "Item in vault untrashed": [
         "Przywrócenie elementu z Kosza sejfu"
       ],
-      "Item Read": [
-        "Odczytanie elementu"
-      ],
       "Item read in ${ vaultLink }": [
         "Odczytanie elementu w sejfie ${ vaultLink }"
       ],
       "Item read in vault": [
         "Odczytanie elementu w sejfie"
-      ],
-      "Item Trashed": [
-        "Przeniesienie elementu do Kosza"
-      ],
-      "Item Untrashed": [
-        "Przywrócenie elementu z Kosza"
-      ],
-      "Item Updated": [
-        "Zaktualizowanie elementu"
       ],
       "Item updated in ${ vaultLink }": [
         "Zaktualizowanie elementu w sejfie ${ vaultLink }"
@@ -4286,12 +4220,6 @@
       ],
       "Must start with a letter.": [
         "Nazwa musi rozpoczynać się literą."
-      ],
-      "New User Invite Created": [
-        "Utworzenie zaproszenia dla nowego użytkownika"
-      ],
-      "New User Invite Deleted": [
-        "Usunięcie zaproszenia dla nowego użytkownika"
       ],
       "New user invited to organization": [
         "Zaproszenie nowego użytkownika do organizacji"
@@ -4536,29 +4464,11 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
       ],
-      "Session Ended": [
-        "Zakończenie sesji"
-      ],
-      "Session Roaming": [
-        "Roaming sesji"
-      ],
-      "Session Started": [
-        "Rozpoczęcie sesji"
-      ],
       "Session timed out": [
         "Upłynął limit czasu sesji"
       ],
       "Setting up your organization": [
         "Konfiguracja organizacji"
-      ],
-      "Share Created": [
-        "Utworzenie udostępnionego obiektu"
-      ],
-      "Share Deleted": [
-        "Usunięcie udostępnionego obiektu"
-      ],
-      "Share Updated": [
-        "Zaktualizowanie udostępnionego obiektu"
       ],
       "Shared ${ vaultLink } deleted": [
         "Usunięcie udostępniania sejfu ${ vaultLink }"
@@ -4866,22 +4776,13 @@
       "Vault created": [
         "Utworzenie sejfu"
       ],
-      "Vault Created": [
-        "Utworzenie sejfu"
-      ],
       "Vault deleted": [
-        "Usunięcie sejfu"
-      ],
-      "Vault Deleted": [
         "Usunięcie sejfu"
       ],
       "Vault shared with email": [
         "Udostępnienie sejfu za pomocą adresu e-mail"
       ],
       "Vault updated": [
-        "Zaktualizowanie sejfu"
-      ],
-      "Vault Updated": [
         "Zaktualizowanie sejfu"
       ],
       "Verification can take a few minutes.": [
@@ -5790,6 +5691,16 @@
     "label": {
       "Recovery phone number": [
         "Numer pomocniczy"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Od"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Do"
       ]
     },
     "Label for adding a new custom domain": {
@@ -7769,9 +7680,6 @@
       ],
       "E.g., ": [
         "Np. "
-      ],
-      "Email or IP": [
-        "Adres e-mail lub adres IP"
       ],
       "End date": [
         "Zakres dat do"
@@ -9822,6 +9730,9 @@
       "Change second password": [
         "Zmień drugie hasło"
       ],
+      "Click a value in the table to use it as filter": [
+        "Kliknij wartość w tabeli, aby użyć jej jako filtra"
+      ],
       "Close": [
         "Zamknij"
       ],
@@ -9839,9 +9750,6 @@
       ],
       "Confirm phone number": [
         "Potwierdź numer telefonu"
-      ],
-      "Connection events": [
-        "Logi połączeń"
       ],
       "Connection monitor disabled": [
         "Monitoring połączenia został wyłączony"
@@ -10010,9 +9918,6 @@
       ],
       "Error": [
         "Błąd"
-      ],
-      "Event": [
-        "Zdarzenie"
       ],
       "Every member of the organization can access": [
         "Wszyscy użytkownicy organizacji"
@@ -10271,9 +10176,6 @@
       ],
       "There are no groups": [
         "Brak grup"
-      ],
-      "Time": [
-        "Czas"
       ],
       "TV sign in": [
         "Zaloguj się na telewizorze"

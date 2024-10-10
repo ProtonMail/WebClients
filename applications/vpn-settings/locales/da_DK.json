@@ -112,12 +112,6 @@
       "Choose my own password": [
         "Vælg min egen adgangskode"
       ],
-      "Clear filter": [
-        "Ryd filter"
-      ],
-      "Clear filters": [
-        "Ryd filtre"
-      ],
       "Close": [
         "Luk"
       ],
@@ -282,6 +276,9 @@
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Udforsk andre ${ BRAND_NAME }-abonnementer"
+      ],
+      "Export": [
+        "Eksportér"
       ],
       "Extend": [
         "Forlæng"
@@ -480,6 +477,9 @@
       ],
       "Resend code": [
         "Send kode igen"
+      ],
+      "Reset": [
+        "Nulstil"
       ],
       "Reset credentials": [
         "Nulstil legitimationsoplysninger"
@@ -2740,14 +2740,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } grupper"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Konti med tilpassede domæner kan ikke deltage i et gruppeabonnement."
-      ],
       "customer support": [
         "kundeservice"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Gruppeabonnementer understøttes pt. ikke af eksterne konti. Opret en ${ BRAND_NAME }-adresse før tilmelding. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Hvis du accepterer invitationen, overflytter vi dig fra dit nuværende abonnement og krediterer din konto med en eventuel restsaldo."
@@ -2758,9 +2752,6 @@
       "Invited by: ${ inviteEmail }": [
         "Inviteret af: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Livstidskonti kan ikke indgå i et gruppeabonnement."
-      ],
       "Manage addresses.": [
         "Administrer adresser."
       ],
@@ -2770,9 +2761,6 @@
       "Only ${ n } accepted invitation are allowed in a 6-month period.": [
         "Kun ${ n } accepteret invitation tilladt i en 6-måneders periode.",
         "Kun ${ n } accepterede invitationer tilladt i en 6-måneders periode."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Ejere af et abonnement med medlemmer kan ikke blive medlem af et andet gruppe-abonnement."
       ],
       "Pending": [
         "Afventer"
@@ -2812,17 +2800,11 @@
       "You have successfully joined the family group": [
         "Du er blevet medlem af familiegruppen"
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Du har ubetalte fakturaer. Betal dem først, før du tilslutter et gruppeabonnement."
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Du skal konfigurere et brugerdefineret domæne, før du tilføjer flere brugere."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Du skal konfigurere et brugerdefineret domæne, før du tilføjer en ny bruger."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Du er inviteret til at forbinde din ${ BRAND_NAME }-konto til dette gruppe-abonnement og sammen nyde alle ${ BRAND_NAME_TWO } premium funktionerne."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Din konto har flere e-mailadresser en det, der er tilgængeligt for dig på dette abonnement. ${ addressSettingsLink }"
@@ -3521,9 +3503,6 @@
         "Berørt bruger er på række",
         "Berørt brugere er på række"
       ],
-      "All Events ": [
-        "Alle begivenheder "
-      ],
       "All members have been added.": [
         "Alle medlemmer er blevet tilføjet."
       ],
@@ -3607,15 +3586,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Faktureringsperiode: ${ text }"
-      ],
-      "Breach Custom Email Created": [
-        "Tilpasset e-mail om databrud oprettet"
-      ],
-      "Breach Custom Email Deleted": [
-        "Tilpasset e-mail om databrud slettet"
-      ],
-      "Breach Custom Email Validated": [
-        "Tilpasset e-mail om databrud bekræftet"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved at nedgradere til et gratis abonnement mister du disse fordele permanent, selvom du senere opgraderer igen."
@@ -3987,16 +3957,7 @@
       "Internet connection restored.": [
         "Internetforbindelse genoprettet."
       ],
-      "Invite Accepted": [
-        "Invitation accepteret"
-      ],
-      "Invite Created": [
-        "Invitation oprettet"
-      ],
       "Invite deleted": [
-        "Invitation slettet"
-      ],
-      "Invite Deleted": [
         "Invitation slettet"
       ],
       "Invite for new user deleted": [
@@ -4011,32 +3972,17 @@
       "Invite rejected": [
         "Invitation afvist"
       ],
-      "Invite Rejected": [
-        "Invitation afvist"
-      ],
-      "Item Autofilled": [
-        "Element autoudfyldt"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "Element autoudfyldt i ${ vaultLink }"
       ],
       "Item autofilled in vault": [
         "Element autoudfyldt i boks"
       ],
-      "Item Changed Flags": [
-        "Element ændrede flag"
-      ],
-      "Item Created": [
-        "Element oprettet"
-      ],
       "Item created in ${ vaultLink }": [
         "Element oprettet i ${ vaultLink }"
       ],
       "Item created in vault": [
         "Element oprettet i boks"
-      ],
-      "Item Deleted": [
-        "Element slettet"
       ],
       "Item deleted from ${ vaultLink }": [
         "Element slettet fra ${ vaultLink }"
@@ -4062,23 +4008,11 @@
       "Item in vault untrashed": [
         "Element i boks ubeskadiget"
       ],
-      "Item Read": [
-        "Element læst"
-      ],
       "Item read in ${ vaultLink }": [
         "Element læst i ${ vaultLink }"
       ],
       "Item read in vault": [
         "Element læst i boks"
-      ],
-      "Item Trashed": [
-        "Element skrottet"
-      ],
-      "Item Untrashed": [
-        "Element ubeskadiget"
-      ],
-      "Item Updated": [
-        "Element opdateret"
       ],
       "Item updated in ${ vaultLink }": [
         "Element opdateret i ${ vaultLink }"
@@ -4178,12 +4112,6 @@
       ],
       "Must start with a letter.": [
         "Skal begynde med et bogstav"
-      ],
-      "New User Invite Created": [
-        "Ny brugerinvitation oprettet"
-      ],
-      "New User Invite Deleted": [
-        "Ny brugerinvitation slettet"
       ],
       "New user invited to organization": [
         "Ny bruger inviteret til organisation"
@@ -4421,29 +4349,11 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
       ],
-      "Session Ended": [
-        "Session afsluttet"
-      ],
-      "Session Roaming": [
-        "Omrokering af sessioner"
-      ],
-      "Session Started": [
-        "Session startet"
-      ],
       "Session timed out": [
         "Session er udløbet"
       ],
       "Setting up your organization": [
         "Konfigurerer din organisation"
-      ],
-      "Share Created": [
-        "Deling oprettet"
-      ],
-      "Share Deleted": [
-        "Deling slettet"
-      ],
-      "Share Updated": [
-        "Deling opdateret"
       ],
       "Shared ${ vaultLink } deleted": [
         "Delt ${ vaultLink } slettet"
@@ -4743,22 +4653,13 @@
       "Vault created": [
         "Boks oprettet"
       ],
-      "Vault Created": [
-        "Boks oprettet"
-      ],
       "Vault deleted": [
-        "Boks slettet"
-      ],
-      "Vault Deleted": [
         "Boks slettet"
       ],
       "Vault shared with email": [
         "Boks delt med e-mail"
       ],
       "Vault updated": [
-        "Boks opdateret"
-      ],
-      "Vault Updated": [
         "Boks opdateret"
       ],
       "Verification can take a few minutes.": [
@@ -5644,6 +5545,16 @@
     "label": {
       "Recovery phone number": [
         "Telefonnummer til gendannelse"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Fra"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Til"
       ]
     },
     "Label for adding a new custom domain": {
@@ -7528,9 +7439,6 @@
       ],
       "E.g., ": [
         "F.eks., "
-      ],
-      "Email or IP": [
-        "E-mail eller IP"
       ],
       "End date": [
         "Slutdato"
@@ -9442,6 +9350,9 @@
       "Amount due": [
         "Forfaldent beløb"
       ],
+      "An address for each role": [
+        "En adresse for hver rolle"
+      ],
       "Appearance": [
         "Udseende"
       ],
@@ -9493,6 +9404,9 @@
       "Change second password": [
         "Ændr anden adgangskode"
       ],
+      "Click a value in the table to use it as filter": [
+        "Klik på en værdi i tabellen for at bruge den som filter"
+      ],
       "Close": [
         "Luk"
       ],
@@ -9510,9 +9424,6 @@
       ],
       "Confirm phone number": [
         "Bekræft telefonnummer"
-      ],
-      "Connection events": [
-        "Forbindelseshændelse"
       ],
       "Connection monitor disabled": [
         "Forbindelsesmonitor deaktiveret"
@@ -9677,9 +9588,6 @@
       ],
       "Error": [
         "Fejl"
-      ],
-      "Event": [
-        "Begivenhed"
       ],
       "Every member of the organization can access": [
         "Alle medlemmer af organisationen kan få adgang"
@@ -9934,9 +9842,6 @@
       ],
       "There are no groups": [
         "Der er ingen grupper"
-      ],
-      "Time": [
-        "Tid"
       ],
       "TV sign in": [
         "TV log ind"

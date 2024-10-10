@@ -4710,14 +4710,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } grupper"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Konti med tilpassede domæner kan ikke deltage i et gruppeabonnement."
-      ],
       "customer support": [
         "kundeservice"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Gruppeabonnementer understøttes pt. ikke af eksterne konti. Opret en ${ BRAND_NAME }-adresse før tilmelding. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Hvis du accepterer invitationen, overflytter vi dig fra dit nuværende abonnement og krediterer din konto med en eventuel restsaldo."
@@ -4725,14 +4719,8 @@
       "Invited by: ${ inviteEmail }": [
         "Inviteret af: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Livstidskonti kan ikke indgå i et gruppeabonnement."
-      ],
       "Manage addresses.": [
         "Administrer adresser."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Ejere af et abonnement med medlemmer kan ikke blive medlem af et andet gruppe-abonnement."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Beklager, du kan i øjeblikket ikke ændre abonnement."
@@ -4754,12 +4742,6 @@
       ],
       "You have successfully joined the family group": [
         "Du er blevet medlem af familiegruppen"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Du har ubetalte fakturaer. Betal dem først, før du tilslutter et gruppeabonnement."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Du er inviteret til at forbinde din ${ BRAND_NAME }-konto til dette gruppe-abonnement og sammen nyde alle ${ BRAND_NAME_TWO } premium funktionerne."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Din konto har flere e-mailadresser en det, der er tilgængeligt for dig på dette abonnement. ${ addressSettingsLink }"
@@ -10564,11 +10546,6 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(vil åbne ${ PASS_APP_NAME })"
-      ]
-    },
-    "Security Center - Action": {
-      "View logs": [
-        "Se logs."
       ]
     },
     "Security Center - Info": {

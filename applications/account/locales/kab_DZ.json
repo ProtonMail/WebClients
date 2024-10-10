@@ -44,11 +44,11 @@
       "Accept": [
         "Qbel"
       ],
-      "activate": [
-        "rmed"
-      ],
       "Activate": [
         "Rmed"
+      ],
+      "activate": [
+        "rmed"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Rmed ${ user.Name }@pm.me"
@@ -721,6 +721,9 @@
       ],
       "Resend code": [
         "Ales tuzna n tengalt"
+      ],
+      "Reset": [
+        "Wennez"
       ],
       "Reset credentials": [
         "Wennez turagin"
@@ -7246,6 +7249,11 @@
         "Tafyirt n tririt"
       ]
     },
+    "Label (end date/advanced search)": {
+      "To": [
+        "I"
+      ]
+    },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Rnu taɣult i tesɛiḍ ar umiḍan-ik ${ MAIL_APP_NAME }."
@@ -10810,9 +10818,6 @@
       ],
       "This field cannot be empty": [
         "Urti-a ur ilaq ad yili d ilem"
-      ],
-      "Time": [
-        "Akud"
       ],
       "Time zone": [
         "Tamnaḍt tasragant"

@@ -4397,9 +4397,6 @@
       "Manage addresses.": [
         "Címek kezelése."
       ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Tagokkal rendelkező csomagok tulajdonosai nem csatlakozhatnak másik csoportos előfizetéshez."
-      ],
       "Sorry, you can't switch plans at this time.": [
         "Sajnos jelenleg nincs lehetőség csomagváltásra."
       ],
@@ -4414,12 +4411,6 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Meghívást kapott a következőhöz: ${ bannerOrganization }. ${ viewInviteButton }"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Kifizetetlen számlája van. Kérjük, rendezze a számlákat, mielőtt csoportos csomagba lépne."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Meghívót kapott, hogy a ${ BRAND_NAME } fiókjával csatlakozzon ehhez a csoporthoz és együtt használhassák a ${ BRAND_NAME_TWO } prémium lehetőségeit."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "A fiókjában több e-mail cím van, mint amennyit a csomagja lehetővé tesz. ${ addressSettingsLink }"
@@ -9652,11 +9643,6 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(meg fogja nyitni ${ PASS_APP_NAME })"
-      ]
-    },
-    "Security Center - Action": {
-      "View logs": [
-        "Naplók megtekintése"
       ]
     },
     "Security Center - Info": {

@@ -268,6 +268,9 @@
       "Import": [
         "Impor"
       ],
+      "Import alias": [
+        "Impor alias"
+      ],
       "Importing": [
         "Mengimpor"
       ],
@@ -1835,6 +1838,9 @@
       "You cannot change the mailboxes for this alias.": [
         "Anda tidak dapat mengubah kotak surat untuk alias ini."
       ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Anda memiliki ${ aliasCount } alias yang terdapat pada SimpleLogin namun belum ada pada ${ PASS_APP_NAME }. Apakah Anda ingin mengimpornya?"
+      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Anda memiliki ${ daysRemaining } hari tersisa untuk mencoba fitur ini dan berbagai fitur premium lainnya."
       ],
@@ -2861,6 +2867,9 @@
       ],
       "Import to vault(s)": [
         "Impor ke brankas"
+      ],
+      "Import your aliases from SimpleLogin": [
+        "Impor alias Anda dari SimpleLogin"
       ],
       "Import your data": [
         "Impor data Anda"

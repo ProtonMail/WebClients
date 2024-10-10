@@ -70,11 +70,11 @@
       "Accept": [
         "Kabul et"
       ],
-      "activate": [
-        "kullanıma al"
-      ],
       "Activate": [
         "Kullanıma al"
+      ],
+      "activate": [
+        "kullanıma al"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me adresini kullanıma al"
@@ -225,12 +225,6 @@
       ],
       "Clear all formatting": [
         "Tüm biçimlendirmeyi temizle"
-      ],
-      "Clear filter": [
-        "Süzgeci temizle"
-      ],
-      "Clear filters": [
-        "Süzgeçleri temizle"
       ],
       "Close": [
         "Kapat"
@@ -867,6 +861,9 @@
       ],
       "Resend code": [
         "Kodu yeniden gönder"
+      ],
+      "Reset": [
+        "Sıfırla"
       ],
       "Reset credentials": [
         "Kimlik doğrulama bilgilerini sıfırla"
@@ -5185,14 +5182,8 @@
       "*Only one free trial per user. Regular pricing applies thereafter.": [
         "*Her kullanıcı için yalnızca bir ücretsiz deneme süresi olabilir. Bundan sonra normal fiyatlandırma geçerli olur."
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Özel etki alanları olan hesaplar, bir grup tarifesine katılamaz."
-      ],
       "customer support": [
         "müşteri desteği"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Grup tarifeleri şu anda dış hesapları desteklemiyor. Katılmadan önce bir ${ BRAND_NAME } adresi oluşturun. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Daveti kabul ederseniz, sizi geçerli tarifenizde çıkarırız ve kalan tutarı hesabınıza yatırırız."
@@ -5212,9 +5203,6 @@
       "Leave Visionary plan": [
         "Visionary tarifesinden ayrıl"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Lifetime hesaplar bir grup tarifesine katılamaz."
-      ],
       "Manage addresses.": [
         "Adres yönetimi."
       ],
@@ -5224,9 +5212,6 @@
       "Only ${ n } accepted invitation are allowed in a 6-month period.": [
         "6 ay içinde yalnızca ${ n } davetin kabul edilmesine izin verilir.",
         "6 ay içinde yalnızca ${ n } davetin kabul edilmesine izin verilir."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Üyeleri olan bir tarifenin sahipleri başka bir grup tarifesine katılamaz."
       ],
       "Pending": [
         "Bekliyor"
@@ -5272,9 +5257,6 @@
       "You have successfully joined the family group": [
         "Aile grubuna katıldınız"
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Ödenmemiş faturalarınız var. Bir grup tarifesine geçmeden önce lütfen onları ödeyin."
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Birkaç kullanıcı eklemeden önce özel bir etki alanı yapılandırmanız gerekir."
       ],
@@ -5283,9 +5265,6 @@
       ],
       "You will lose access to all premium features and storage space included with ${ plan }.": [
         "${ plan } tarifesindeki tüm ücretli özelliklere ve depolama alanına erişiminizi kaybedeceksiniz."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "${ BRAND_NAME } hesabınızı bu grup tarifesine bağlamaya ve birlikte ücretli tüm ${ BRAND_NAME_TWO } özelliklerinin tadını çıkarmaya davet edildiniz."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Hesabınızda, bu tarifede kullanabileceğinizden daha fazla e-posta adresi var. ${ addressSettingsLink }"
@@ -6745,9 +6724,6 @@
         "Tümü (${ totalFoldersCount } etiket)",
         "Tümü (${ totalFoldersCount } etiket)"
       ],
-      "All Events ": [
-        "Tüm etkinlikler "
-      ],
       "All keys successfully reactivated": [
         "Tüm anahtarlar yeniden kullanıma alındı"
       ],
@@ -6928,15 +6904,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Kuruluşunuzun marka kimliğini güçlendirerek kullanıcılarınız için daha kararlı bir çevrim içi deneyim sağlayın."
-      ],
-      "Breach Custom Email Created": [
-        "Verilerin ele geçirilmesi özel e-posta adresi oluşturuldu"
-      ],
-      "Breach Custom Email Deleted": [
-        "Verilerin ele geçirilmesi özel e-posta adresi silindi"
-      ],
-      "Breach Custom Email Validated": [
-        "Verilerin ele geçirilmesi özel e-posta adresi doğrulandı"
       ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Varsayılan olarak kuruluş üyeleri yalnızca sahibi oldukları kasaları dışa aktarabilir. Bu seçenek açıksa, hiçbir veriyi dışa aktaramazlar"
@@ -7538,16 +7505,7 @@
       "Invitation link used": [
         "Davet bağlantısı kullanıldı"
       ],
-      "Invite Accepted": [
-        "Davet kabul edildi"
-      ],
-      "Invite Created": [
-        "Davet oluşturuldu"
-      ],
       "Invite deleted": [
-        "Davet silindi"
-      ],
-      "Invite Deleted": [
         "Davet silindi"
       ],
       "Invite for new user deleted": [
@@ -7562,9 +7520,6 @@
       "Invite rejected": [
         "Davet reddedildi"
       ],
-      "Invite Rejected": [
-        "Davet reddedildi"
-      ],
       "Invite successfully sent": [
         "Davet gönderildi",
         "Davet gönderildi"
@@ -7572,29 +7527,17 @@
       "It appears some of your data is encrypted and locked.": [
         "Bazı verileriniz şifrelenmiş ve kilitlenmiş görünüyor."
       ],
-      "Item Autofilled": [
-        "Öge otomatik dolduruldu"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "${ vaultLink } kasasındaki öge otomatik olarak dolduruldu"
       ],
       "Item autofilled in vault": [
         "Kasa ögesi otomatik olarak dolduruldu"
       ],
-      "Item Changed Flags": [
-        "Öge işaretleri değiştirildi"
-      ],
-      "Item Created": [
-        "Öge oluşturuldu"
-      ],
       "Item created in ${ vaultLink }": [
         "${ vaultLink } kasasına öge eklendi"
       ],
       "Item created in vault": [
         "Kasa ögesi oluşturuldu"
-      ],
-      "Item Deleted": [
-        "Öge silindi"
       ],
       "Item deleted from ${ vaultLink }": [
         "${ vaultLink } kasasındaki öge silindi"
@@ -7620,23 +7563,11 @@
       "Item in vault untrashed": [
         "Kasa ögesi çöpten çıkarıldı"
       ],
-      "Item Read": [
-        "Öge okundu"
-      ],
       "Item read in ${ vaultLink }": [
         "${ vaultLink } kasasındaki öge okundu"
       ],
       "Item read in vault": [
         "Kasa ögesi okundu"
-      ],
-      "Item Trashed": [
-        "Öge çöpe atıldı"
-      ],
-      "Item Untrashed": [
-        "Öge çöpten çıkarıldı"
-      ],
-      "Item Updated": [
-        "Öge güncellendi"
       ],
       "Item updated in ${ vaultLink }": [
         "${ vaultLink } kasasındaki öge güncellendi"
@@ -7805,12 +7736,6 @@
       ],
       "New": [
         "Yeni"
-      ],
-      "New User Invite Created": [
-        "Yeni kullanıcı daveti oluşturuldu"
-      ],
-      "New User Invite Deleted": [
-        "Yeni kullanıcı daveti silindi"
       ],
       "New user invited to organization": [
         "Kuruluşa yeni kullanıcı davet edildi"
@@ -8208,15 +8133,6 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
       ],
-      "Session Ended": [
-        "Oturum sona erdi"
-      ],
-      "Session Roaming": [
-        "Oturum dolaşımı"
-      ],
-      "Session Started": [
-        "Oturum başladı"
-      ],
       "Session timed out": [
         "Oturum zaman aşımına uğradı"
       ],
@@ -8231,15 +8147,6 @@
       ],
       "Settings updated": [
         "Ayarlar güncellendi"
-      ],
-      "Share Created": [
-        "Paylaşım oluşturuldu"
-      ],
-      "Share Deleted": [
-        "Paylaşım silindi"
-      ],
-      "Share Updated": [
-        "Paylaşım güncellendi"
       ],
       "Shared ${ vaultLink } deleted": [
         "Paylaşılan ${ vaultLink } silindi"
@@ -8695,9 +8602,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ücretli özellikleri, ürünleri ve depolama alanını özel bir ücret ile almak için tarifenizi şimdi yükseltin"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "${ PROTON_SENTINEL_NAME } erişimi elde etmek için ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } ya da ${ PLAN_NAMES[bundleProPlan] } tarifesine yükseltin."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Hesabınızı paylaşması daha kolay ve daha kısa @pm.me adresi ile kullanmak için tarifenizi yükseltin. İngilizce olarak \"${ MAIL_APP_NAME } ben\" ya da \"Bana özel ileti\" anlamına gelir."
       ],
@@ -8749,13 +8653,7 @@
       "Vault created": [
         "Kasa oluşturuldu"
       ],
-      "Vault Created": [
-        "Kasa oluşturuldu"
-      ],
       "Vault deleted": [
-        "Kasa silindi"
-      ],
-      "Vault Deleted": [
         "Kasa silindi"
       ],
       "Vault either deleted or requires access permissions": [
@@ -8765,9 +8663,6 @@
         "Kasa e-posta ile paylaşıldı"
       ],
       "Vault updated": [
-        "Kasa güncellendi"
-      ],
-      "Vault Updated": [
         "Kasa güncellendi"
       ],
       "Verification can take a few minutes.": [
@@ -10681,6 +10576,16 @@
       ],
       "Recovery phrase": [
         "Kurtarma ifadesi"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Kimden"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Kime"
       ]
     },
     "Label for adding a new custom domain": {
@@ -13755,9 +13660,6 @@
       "Email address": [
         "E-posta adresi"
       ],
-      "Email or IP": [
-        "E-posta ya da IP adresi"
-      ],
       "End date": [
         "Bitiş tarihi"
       ],
@@ -16256,9 +16158,6 @@
       "Status": [
         "Durum"
       ],
-      "Time": [
-        "Zaman"
-      ],
       "Total storage": [
         "Toplam depolama alanı"
       ],
@@ -16560,9 +16459,6 @@
       "Connect ${ name }": [
         "${ name } bağlantısı kur"
       ],
-      "Connection events": [
-        "Bağlantı işlemleri"
-      ],
       "Connection monitor disabled": [
         "Bağlantı monitörü kapalı"
       ],
@@ -16822,9 +16718,6 @@
       ],
       "Error": [
         "Hata"
-      ],
-      "Event": [
-        "Etkinlik"
       ],
       "Every member of the organization can access": [
         "Kuruluşun tüm üyeleri erişebilir"
@@ -17365,9 +17258,6 @@
       ],
       "This field cannot contain only spaces": [
         "Bu alanda yalnızca boşluk bulunamaz"
-      ],
-      "Time": [
-        "Saat"
       ],
       "Time zone": [
         "Saat dilimi"

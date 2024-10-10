@@ -482,10 +482,10 @@
       "Not now": [
         "Ei nyt"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -2451,6 +2451,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } suojaa käyttäjätilisi 24/7 epäilyttävän toiminnan tarkkailulla - sisältäen eskaloinnin tietoturva-asiantuntijoille."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA lisää ylimääräisen turvakerroksen, joka estää luvattoman pääsyn tilillesi."
       ],
@@ -3648,14 +3651,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-ryhmää"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Omia verkkotunnuksia käyttävät tilit eivät voi liittyä ryhmätilaukseen."
-      ],
       "customer support": [
         "asiakaspalveluun"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Ryhmätilaukset eivät tällä hetkellä tue ulkoisia tilejä. Luo ${ BRAND_NAME } -osoite ennen liittymistä. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jos hyväksyt kutsun, siirrämme sinut nykyisestä tilauksestasi ja hyvitämme tilillesi jäljellä olevan saldon."
@@ -3663,14 +3660,8 @@
       "Invited by: ${ inviteEmail }": [
         "Kutsunut: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Elinikäiset tilit eivät voi liittyä ryhmätilaukseen."
-      ],
       "Manage addresses.": [
         "Hallitse osoitteita."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Jäseniä sisältävän tilauksen omistajat eivät voi liittyä toiseen ryhmätilaukseen."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Valitettavasti et voi tällä hetkellä vaihtaa tilaustasi."
@@ -3692,12 +3683,6 @@
       ],
       "You have successfully joined the family group": [
         "Olet liittynyt perheryhmään"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Sinulla on maksamattomia laskuja. Maksa ne ennen ryhmätilaukseen liittymistä."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Sinut on kutsuttu yhdistämään ${ BRAND_NAME }-tilisi tähän ryhmätilaukseen ja nauttimaan kaikista ${ BRAND_NAME_TWO }in premium-ominaisuuksista yhdessä."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Tililläsi on enemmän sähköpostiosoitteita kuin mitä sinulla on käytettävissäsi tässä tilauksessa. ${ addressSettingsLink }"
@@ -7843,11 +7828,6 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(avaa ${ PASS_APP_NAME }in)"
-      ]
-    },
-    "Security Center - Action": {
-      "View logs": [
-        "Näytä lokitiedot"
       ]
     },
     "Security Center - Info": {

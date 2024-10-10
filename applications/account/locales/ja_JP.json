@@ -67,11 +67,11 @@
       "Accept": [
         "承認する"
       ],
-      "activate": [
-        "有効にする"
-      ],
       "Activate": [
         "有効化"
+      ],
+      "activate": [
+        "有効にする"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me をアクティブ化します"
@@ -840,6 +840,9 @@
       ],
       "Resend code": [
         "コードを再送信"
+      ],
+      "Reset": [
+        "リセット"
       ],
       "Reset credentials": [
         "認証情報をリセット"
@@ -4809,9 +4812,6 @@
       "Manage user accounts": [
         "ユーザーアカウントを管理"
       ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "メンバーがいるプランのオーナーは他のグループプランに加入できません。"
-      ],
       "Pending": [
         "保留中"
       ],
@@ -4844,9 +4844,6 @@
       ],
       "You need to configure a custom domain before creating a new user.": [
         "新規ユーザーを作成する前にカスタムドメインを設定する必要があります。"
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "${ BRAND_NAME_TWO } のプレミアム機能が利用できるように、あなたの ${ BRAND_NAME } アカウントをこのグループプランにリンクする招待が届いています。"
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "あなたのアカウントはこのプランで利用可能なメールアドレスの上限を超えています。${ addressSettingsLink }"
@@ -6183,9 +6180,6 @@
       "All (${ totalFoldersCount } label)": [
         "すべて (${ totalFoldersCount } 件のラベル)"
       ],
-      "All Events ": [
-        "すべてのイベント"
-      ],
       "All keys successfully reactivated": [
         "すべての鍵は正常に再度アクティブになりました"
       ],
@@ -6903,22 +6897,10 @@
       "Internet connection restored.": [
         "インターネット接続が回復しました。"
       ],
-      "Invite Accepted": [
-        "招待が承認されました"
-      ],
-      "Invite Created": [
-        "招待が作成されました"
-      ],
       "Invite deleted": [
         "招待が削除されました"
       ],
-      "Invite Deleted": [
-        "招待が削除されました"
-      ],
       "Invite rejected": [
-        "招待が拒否されました"
-      ],
-      "Invite Rejected": [
         "招待が拒否されました"
       ],
       "Invite successfully sent": [
@@ -6926,18 +6908,6 @@
       ],
       "It appears some of your data is encrypted and locked.": [
         "いくつかのデータの暗号化と復号を可能にします。"
-      ],
-      "Item Autofilled": [
-        "アイテムが自動入力されました"
-      ],
-      "Item Created": [
-        "アイテムが作成されました"
-      ],
-      "Item Deleted": [
-        "アイテムが削除されました"
-      ],
-      "Item Updated": [
-        "アイテムが更新されました"
       ],
       "it’s imperative": [
         "必須です"
@@ -7470,15 +7440,6 @@
       "Settings updated": [
         "設定が更新されました"
       ],
-      "Share Created": [
-        "共有が作成されました"
-      ],
-      "Share Deleted": [
-        "共有が削除されました"
-      ],
-      "Share Updated": [
-        "共有が更新されました"
-      ],
       "Shared ${ vaultLink } deleted": [
         "共有 ${ vaultLink } が削除されました"
       ],
@@ -7878,9 +7839,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "今すぐアップグレードして、プレミアム機能、製品、ストレージを特別価格で手に入れよう"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "${ PLAN_NAMES[PLANS.PASS] }、${ PLAN_NAMES[PLANS.BUNDLE] }、${ PLAN_NAMES[PLANS.FAMILY] }、または ${ PLAN_NAMES[bundleProPlan] } プランにアップグレードすると、${ PROTON_SENTINEL_NAME } にアクセスできるようになります 。"
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "アップグレードすると、共有しやすくなる短い @pm.me アドレスがアカウントに追加されます。 これは「${ MAIL_APP_NAME } me」または「Private Message me」の略です。"
       ],
@@ -7929,19 +7887,10 @@
       "Vault created": [
         "保管庫が作成されました"
       ],
-      "Vault Created": [
-        "保管庫が作成されました"
-      ],
       "Vault deleted": [
         "保管庫が削除されました"
       ],
-      "Vault Deleted": [
-        "保管庫が削除されました"
-      ],
       "Vault updated": [
-        "保管庫が更新されました"
-      ],
-      "Vault Updated": [
         "保管庫が更新されました"
       ],
       "Verification can take a few minutes.": [
@@ -9712,6 +9661,16 @@
       ],
       "Recovery phrase": [
         "回復用フレーズ"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "開始日"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "終了日"
       ]
     },
     "Label for adding a new custom domain": {
@@ -14931,9 +14890,6 @@
       "Error": [
         "エラー"
       ],
-      "Event": [
-        "イベント"
-      ],
       "Every member of the organization can access": [
         "組織の全メンバーがアクセスできる"
       ],
@@ -15434,9 +15390,6 @@
       ],
       "This field cannot be empty": [
         "このフィールドを空にすることはできません"
-      ],
-      "Time": [
-        "時刻"
       ],
       "Time zone": [
         "タイムゾーン"

@@ -390,6 +390,9 @@
       "Move to trash": [
         "Mover para a lixeira"
       ],
+      "New": [
+        "Novo"
+      ],
       "New document": [
         "Novo documento"
       ],
@@ -405,11 +408,11 @@
       "Not now": [
         "Agora não"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Abrir"
@@ -2473,6 +2476,9 @@
       "IMAP server is required": [
         "O servidor IMAP é obrigatório"
       ],
+      "Incorrect password. Please try again.": [
+        "A senha não é válida. Tente novamente."
+      ],
       "Incorrect username": [
         "Nome de usuário incorreto"
       ],
@@ -3053,14 +3059,8 @@
       "${ BRAND_NAME } groups": [
         "grupos da ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Contas com domínios personalizados não podem participar de um plano de grupo."
-      ],
       "customer support": [
         "suporte ao cliente"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Os planos de grupo não oferecem suporte a contas externas no momento. Crie um endereço da ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se aceitar o convite, seu plano atual será alterado e você receberá um crédito em sua conta com o saldo restante, se houver."
@@ -3068,14 +3068,8 @@
       "Invited by: ${ inviteEmail }": [
         "Convidado por: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Contas vitalícias não podem ingressar em um plano de grupo."
-      ],
       "Manage addresses.": [
         "Gerenciar endereços."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Proprietários de um plano com membros não podem participar de outro plano de grupo."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Infelizmente não é possível trocar de plano neste momento."
@@ -3097,12 +3091,6 @@
       ],
       "You have successfully joined the family group": [
         "Você entrou com sucesso no grupo familiar"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Você tem faturas não pagas. Pague-as antes de entrar em um plano de grupo."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Você foi convidado a vincular sua conta da ${ BRAND_NAME } a este plano de grupo e aproveitar juntos de todos os recursos premium da ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Sua conta tem mais endereços de e-mail do que a quantidade que está disponível para você neste plano. ${ addressSettingsLink }"
@@ -7204,11 +7192,6 @@
         "(abrirá ${ PASS_APP_NAME })"
       ]
     },
-    "Security Center - Action": {
-      "View logs": [
-        "Visualizar registros"
-      ]
-    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } e ${ remainingCount } outros potenciais vazamentos foram detectados. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes. ${ link }"
@@ -8188,6 +8171,9 @@
       "Cannot add more addresses": [
         "Não é possível adicionar mais endereços."
       ],
+      "Cannot load link": [
+        "Não foi possível carregar o link"
+      ],
       "Card verification": [
         "Verificação do cartão"
       ],
@@ -8532,6 +8518,12 @@
       ],
       "Summary": [
         "Resumo"
+      ],
+      "The link either does not exist or has expired": [
+        "O link não existe ou já expirou"
+      ],
+      "The link expired": [
+        "O link expirou"
       ],
       "Unlock contacts groups": [
         "Desbloquear grupos de contato"

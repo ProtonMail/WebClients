@@ -390,6 +390,9 @@
       "Move to trash": [
         "Переместить в Корзину"
       ],
+      "New": [
+        "Новая"
+      ],
       "New document": [
         "Новый документ"
       ],
@@ -405,10 +408,10 @@
       "Not now": [
         "Не сейчас"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -2473,6 +2476,9 @@
       "IMAP server is required": [
         "Нужно укзать сервер IMAP"
       ],
+      "Incorrect password. Please try again.": [
+        "Неверный пароль. Пожалуйста, попробуйте снова."
+      ],
       "Incorrect username": [
         "Некорректное имя пользователя"
       ],
@@ -3067,14 +3073,8 @@
       "${ BRAND_NAME } groups": [
         "Группы ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Аккаунты с пользовательским доменом не могут присоединиться к групповому плану."
-      ],
       "customer support": [
         "служба поддержки"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "На данный момент групповые планы не поддерживают внешние аккаунты. Перед подключением создайте адрес ${ BRAND_NAME }. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Если вы примете приглашение, тарифный план будет изменен. Неиспользованный баланс возвратится на счет аккаунта."
@@ -3082,14 +3082,8 @@
       "Invited by: ${ inviteEmail }": [
         "Вас приглашает: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Пожизненные аккаунты не могут присоединиться к групповому плану."
-      ],
       "Manage addresses.": [
         "Управляйте адресами."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Владельцы групповых тарифов не могут присоединиться к другим групповым тарифам."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Смена тарифа на данный момент недоступна."
@@ -3111,12 +3105,6 @@
       ],
       "You have successfully joined the family group": [
         "Вы успешно присоединились к семейному плану"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "У вас есть неоплаченные счета. Пожалуйста, оплатите их, прежде чем присоединиться к группе."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Вам предложили присоединить аккаунт ${ BRAND_NAME } к групповому тарифу для совместного использования всех платных функций ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "К аккаунту подключено больше адресов электронной почты, чем позволяет текущий тарифный план. ${ addressSettingsLink }"
@@ -7305,11 +7293,6 @@
         "(откроет ${ PASS_APP_NAME })"
       ]
     },
-    "Security Center - Action": {
-      "View logs": [
-        "Просмотр журналов"
-      ]
-    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Обнаружены другие потенциальные утечки ${ name } и ${ remainingCount }. Включите ${ DARK_WEB_MONITORING_NAME } для просмотра информации. ${ link }"
@@ -8354,6 +8337,9 @@
       "Cannot add more addresses": [
         "Невозможно добавить больше адресов"
       ],
+      "Cannot load link": [
+        "Не удалось загрузить ссылку"
+      ],
       "Card verification": [
         "Проверка карты"
       ],
@@ -8695,6 +8681,12 @@
       ],
       "Summary": [
         "Сводка"
+      ],
+      "The link either does not exist or has expired": [
+        "Ссылка не существует или просрочена"
+      ],
+      "The link expired": [
+        "Срок действия ссылки истек"
       ],
       "Unlock contacts groups": [
         "Разблокировать группы контактов"

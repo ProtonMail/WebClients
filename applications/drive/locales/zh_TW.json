@@ -381,11 +381,11 @@
       "Get link": [
         "取得連結"
       ],
-      "Get started": [
-        "開始使用"
-      ],
       "Get Started": [
         "入門指南"
+      ],
+      "Get started": [
+        "開始使用"
       ],
       "Get verification code": [
         "取得驗證碼"
@@ -552,11 +552,11 @@
       "Not now": [
         "現在不要"
       ],
-      "OK": [
-        "好"
-      ],
       "Ok": [
         "確定"
+      ],
+      "OK": [
+        "好"
       ],
       "Open": [
         "開啟"
@@ -798,6 +798,9 @@
       "Start setup": [
         "開始設定"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "${ priceUnlimited }起"
+      ],
       "Stay": [
         "停留"
       ],
@@ -863,6 +866,9 @@
       ],
       "Upgrade now": [
         "立即升級"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "升級至${ BRAND_NAME }無限版"
       ],
       "Upload anyway": [
         "仍要上載"
@@ -3292,14 +3298,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } 群組"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "有自訂網域的帳號無法加入群組方案。"
-      ],
       "customer support": [
         "客服"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "群組方案目前不支援外部帳號。請在加入前創建 ${ BRAND_NAME } 地址。${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "若您接受邀請，我們會將您從目前的方案轉出，並將所有剩餘金額存入的您的帳號。"
@@ -3307,14 +3307,8 @@
       "Invited by: ${ inviteEmail }": [
         "邀請人：${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "終身帳號無法加入群組方案。"
-      ],
       "Manage addresses.": [
         "管理電子郵件位址。"
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "有成員的方案的擁有者無法加入其他群組方案。"
       ],
       "Sorry, you can't switch plans at this time.": [
         "抱歉，目前無法切換方案。"
@@ -3336,12 +3330,6 @@
       ],
       "You have successfully joined the family group": [
         "您已成功加入家庭群組"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "您有未付款發票。請在加入群組方案前繳付。"
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "我們邀請您將您的 ${ BRAND_NAME } 帳號連結至此群組方案，並一起享受所有 ${ BRAND_NAME_TWO } 進階功能。"
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "您帳號中的電子郵件位址多於此方案中可用的電子郵件位址。${ addressSettingsLink }"
@@ -7982,11 +7970,6 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(轉開 ${ PASS_APP_NAME })"
-      ]
-    },
-    "Security Center - Action": {
-      "View logs": [
-        "檢視日誌"
       ]
     },
     "Security Center - Info": {

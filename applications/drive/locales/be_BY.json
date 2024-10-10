@@ -390,10 +390,10 @@
       "Get link": [
         "Атрымаць спасылку"
       ],
-      "Get started": [
+      "Get Started": [
         "Пачаць працу"
       ],
-      "Get Started": [
+      "Get started": [
         "Пачаць працу"
       ],
       "Get verification code": [
@@ -567,10 +567,10 @@
       "Not now": [
         "Не зараз"
       ],
-      "OK": [
+      "Ok": [
         "Добра"
       ],
-      "Ok": [
+      "OK": [
         "Добра"
       ],
       "Open": [
@@ -3408,14 +3408,8 @@
       "${ BRAND_NAME } groups": [
         "Групы ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Уліковыя запісы з карыстальніцкімі даменамі нельга далучыць да групавога тарыфнага плана."
-      ],
       "customer support": [
         "падтрымка кліентаў"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Групавыя тарыфныя планы ў цяперашні час не падтрымліваюць знешнія ўліковыя запісы. Перад далучэннем стварыце адрас ${ BRAND_NAME }. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Калі вы прыміце запрашэнне, то ваш тарыфны план будзе зменены. Рэшта балансу вашай падпіскі вернецца на ваш рахунак."
@@ -3423,14 +3417,8 @@
       "Invited by: ${ inviteEmail }": [
         "Запрашэнне адпраўлена: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Пажыццёвыя ўліковыя запісы нельга далучыць да групавога тарыфнага плана."
-      ],
       "Manage addresses.": [
         "Кіраванне адрасамі."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Уладальнікі тарыфных планаў з удзельнікамі не могуць далучацца да іншых групавых тарыфных планаў."
       ],
       "Sorry, you can't switch plans at this time.": [
         "У дадзены момант змена тарыфнага плана недаступна."
@@ -3452,12 +3440,6 @@
       ],
       "You have successfully joined the family group": [
         "Вы паспяхова далучыліся да сямейнай групы"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "У вас ёсць неаплачаныя рахункі. Аплаціце іх перад тым, як далучыцца да групавога тарыфнага плана."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Вас запрашаюць далучыць ваш уліковы запіс ${ BRAND_NAME } да гэтага групавога тарыфнага плана, каб разам выкарыстоўваць усе прэміяльныя функцыі ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Колькасць адрасоў электроннай пошты перавышае дазволенае значэнне вашага бягучага тарыфнага плана. ${ addressSettingsLink }"
@@ -8193,7 +8175,7 @@
         "Зашыфраванае скразным метадам сховішча для вашых файлаў"
       ],
       "Faster uploads for large or multiple files": [
-        "Хутчэйшае запампоўвання для вялікіх або састаўных файлаў"
+        "Хутчэйшае запампоўванне для вялікіх або састаўных файлаў"
       ],
       "Final approval in progress": [
         "Чакаецца фінальнае зацвярджэнне"
@@ -8214,10 +8196,10 @@
         "Атрымаць мабільную праграму"
       ],
       "Got an Android? We've got you covered.": [
-        "У вас Android? У нас ёсць рашэнне."
+        "У вас Android? У нас нешта для вас ёсць."
       ],
       "Got an iPhone? We've got you covered.": [
-        "У вас iPhone? У нас ёсць рашэнне."
+        "У вас iPhone? У нас нешта для вас ёсць."
       ],
       "Hang tight": [
         "Адну хвіліну"
@@ -8232,7 +8214,7 @@
         "Запрашэнне атрымана"
       ],
       "Invite team members": [
-        "Запрашэнне ўдзельнікаў каманды"
+        "Запрасіць удзельнікаў каманды"
       ],
       "Manage access": [
         "Кіруйце доступам"
@@ -8755,11 +8737,6 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(адкрые ${ PASS_APP_NAME })"
-      ]
-    },
-    "Security Center - Action": {
-      "View logs": [
-        "Паглядзець журнал"
       ]
     },
     "Security Center - Info": {

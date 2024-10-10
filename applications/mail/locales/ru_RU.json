@@ -4776,14 +4776,8 @@
       "${ BRAND_NAME } groups": [
         "Группы ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Аккаунты с пользовательским доменом не могут присоединиться к групповому плану."
-      ],
       "customer support": [
         "служба поддержки"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "На данный момент групповые планы не поддерживают внешние аккаунты. Перед подключением создайте адрес ${ BRAND_NAME }. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Если вы примете приглашение, тарифный план будет изменен. Неиспользованный баланс возвратится на счет аккаунта."
@@ -4791,14 +4785,8 @@
       "Invited by: ${ inviteEmail }": [
         "Вас приглашает: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Пожизненные аккаунты не могут присоединиться к групповому плану."
-      ],
       "Manage addresses.": [
         "Управляйте адресами."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Владельцы групповых тарифов не могут присоединиться к другим групповым тарифам."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Смена тарифа на данный момент недоступна."
@@ -4820,12 +4808,6 @@
       ],
       "You have successfully joined the family group": [
         "Вы успешно присоединились к семейному плану"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "У вас есть неоплаченные счета. Пожалуйста, оплатите их, прежде чем присоединиться к группе."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Вам предложили присоединить аккаунт ${ BRAND_NAME } к групповому тарифу для совместного использования всех платных функций ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "К аккаунту подключено больше адресов электронной почты, чем позволяет текущий тарифный план. ${ addressSettingsLink }"
@@ -11020,11 +11002,6 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(откроет ${ PASS_APP_NAME })"
-      ]
-    },
-    "Security Center - Action": {
-      "View logs": [
-        "Просмотр журналов"
       ]
     },
     "Security Center - Info": {

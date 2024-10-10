@@ -112,12 +112,6 @@
       "Choose my own password": [
         "Vybrať moje vlastné heslo"
       ],
-      "Clear filter": [
-        "Vymazať filter"
-      ],
-      "Clear filters": [
-        "Vymazať filtre"
-      ],
       "Close": [
         "Zatvoriť"
       ],
@@ -282,6 +276,9 @@
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Preskúmať ďalšie ${ BRAND_NAME } plány"
+      ],
+      "Export": [
+        "Exportovať"
       ],
       "Extend": [
         "Rozšíriť"
@@ -480,6 +477,9 @@
       ],
       "Resend code": [
         "Znovu odoslať kód"
+      ],
+      "Reset": [
+        "Resetovať"
       ],
       "Reset credentials": [
         "Resetovať poverenia"
@@ -2160,6 +2160,9 @@
       ]
     },
     "Description": {
+      "Keep different parts of your life separate and your inbox organized with additional addresses.": [
+        "Oddeľte rôzne časti svojho života a usporiadajte si doručenú poštu s ďalšími adresami."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Oddeľte rôzne aspekty svojho života pomocou viacerých emailových adries a odomknite viac prémiových funkcií, ak sa rozhodnete pre upgrade."
       ]
@@ -2774,14 +2777,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } skupiny"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Účty s vlastnými doménami sa nemôžu pripojiť do skupinového plánu."
-      ],
       "customer support": [
         "zákaznícka podpora"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Skupinové plány v súčasnosti nepodporujú externé účty. Pred pripojením si vytvorte ${ BRAND_NAME } adresu. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Ak pozvánku prijmete, zameníme váš aktuálny plán a zostávajúcu čiastku pripíšeme k vášmu účtu ako kredit."
@@ -2791,9 +2788,6 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Pozvánka od: ${ inviteEmail }"
-      ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Doživotné účty nemôžu byť pripojené do skupinového predplatného."
       ],
       "Manage addresses.": [
         "Spravovať adresy."
@@ -2806,9 +2800,6 @@
         "Počas 6 mesiacov je povolené prijať iba ${ n } pozvánky.",
         "Počas 6 mesiacov je povolené prijať iba ${ n } pozvánok.",
         "Počas 6 mesiacov je povolené prijať iba ${ n } pozvánok."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Vlastníci plánu s členmi sa nemôžu pripojiť k inému skupinovému plánu."
       ],
       "Pending": [
         "Čakajúce"
@@ -2852,17 +2843,11 @@
       "You have successfully joined the family group": [
         "Úspešne ste sa pripojili do rodinnej skupiny"
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Máte nezaplatené faktúry. Pred pripojením do skupinového plánu ich zaplaťte, prosím."
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Pred pridaním viacerých používateľov, musíte nakonfigurovať vlastnú doménu."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Pred vytvorením nového používateľa, musíte nakonfigurovať vlastnú doménu."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Dostali ste pozvánku na pripojenie vášho účtu ${ BRAND_NAME } k tomuto skupinovému plánu, kde si môžete užívať všetky ${ BRAND_NAME_TWO } prémiové funkcie."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Váš účet má viac emailových adries než koľko máte k dispozícii v tomto pláne. ${ addressSettingsLink }"
@@ -3615,9 +3600,6 @@
         "Zasiahnutí používatelia sú v riadkoch",
         "Zasiahnutí používatelia sú v riadkoch"
       ],
-      "All Events ": [
-        "Všetky udalosti "
-      ],
       "All members have been added.": [
         "Všetci členovia boli pridaní"
       ],
@@ -3704,15 +3686,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Fakturačné obdobie: ${ text }"
-      ],
-      "Breach Custom Email Created": [
-        "Vlastný email pre úniky pridaný"
-      ],
-      "Breach Custom Email Deleted": [
-        "Vlastný email pre úniky zmazaný"
-      ],
-      "Breach Custom Email Validated": [
-        "Vlastný email pre úniky overený"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ak prejdete na bezplatnú verziu, natrvalo stratíte súčasné výhody a to i v budúcnosti, ak opäť upgradujte svoj účet na platenú verziu."
@@ -4098,16 +4071,7 @@
       "Internet connection restored.": [
         "Pripojenie k internetu obnovené."
       ],
-      "Invite Accepted": [
-        "Pozvánka prijatá"
-      ],
-      "Invite Created": [
-        "Pozvánka vytvorená"
-      ],
       "Invite deleted": [
-        "Pozvánka vymazaná"
-      ],
-      "Invite Deleted": [
         "Pozvánka vymazaná"
       ],
       "Invite for new user deleted": [
@@ -4122,32 +4086,17 @@
       "Invite rejected": [
         "Pozvánka odmietnutá"
       ],
-      "Invite Rejected": [
-        "Pozvánka odmietnutá"
-      ],
-      "Item Autofilled": [
-        "Položka automaticky vyplnená"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "Položka automaticky vyplnená v ${ vaultLink }"
       ],
       "Item autofilled in vault": [
         "Položka v trezore automaticky vyplnená"
       ],
-      "Item Changed Flags": [
-        "Položka zmenila značky"
-      ],
-      "Item Created": [
-        "Položka bola vytvorená"
-      ],
       "Item created in ${ vaultLink }": [
         "Položka vytvorená v trezore ${ vaultLink }"
       ],
       "Item created in vault": [
         "Položka v trezore vytvorená"
-      ],
-      "Item Deleted": [
-        "Položka bola vymazaná"
       ],
       "Item deleted from ${ vaultLink }": [
         "Položka z ${ vaultLink } bola vymazaná"
@@ -4173,23 +4122,11 @@
       "Item in vault untrashed": [
         "Položka v trezore vyňatá z koša"
       ],
-      "Item Read": [
-        "Položka bola prečítaná"
-      ],
       "Item read in ${ vaultLink }": [
         "Položka prečítaná v ${ vaultLink }"
       ],
       "Item read in vault": [
         "Položka v trezore prečítaná"
-      ],
-      "Item Trashed": [
-        "Položka premiestnená do koša"
-      ],
-      "Item Untrashed": [
-        "Položka vyňatá z koša"
-      ],
-      "Item Updated": [
-        "Položka bola aktualizovaná"
       ],
       "Item updated in ${ vaultLink }": [
         "Položka v trezore ${ vaultLink } bola aktualizovaná"
@@ -4289,12 +4226,6 @@
       ],
       "Must start with a letter.": [
         "Musí začínať písmenom."
-      ],
-      "New User Invite Created": [
-        "Nová pozvánka používateľa vytvorená"
-      ],
-      "New User Invite Deleted": [
-        "Nová pozvánka používateľa vymazaná"
       ],
       "New user invited to organization": [
         "Do organizácie bol pozvaný nový používateľ"
@@ -4539,29 +4470,11 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery sú nedostupné. Skúste to prosím o pár minút"
       ],
-      "Session Ended": [
-        "Koniec relácie"
-      ],
-      "Session Roaming": [
-        "Roaming relácie"
-      ],
-      "Session Started": [
-        "Začiatok relácie"
-      ],
       "Session timed out": [
         "Relácia vypršala"
       ],
       "Setting up your organization": [
         "Nastavovanie organizácie"
-      ],
-      "Share Created": [
-        "Zdieľanie vytvorené"
-      ],
-      "Share Deleted": [
-        "Zdieľanie vymazané"
-      ],
-      "Share Updated": [
-        "Zdieľanie aktualizované"
       ],
       "Shared ${ vaultLink } deleted": [
         "Zdieľaný ${ vaultLink } zmazaný"
@@ -4872,22 +4785,13 @@
       "Vault created": [
         "Trezor bol vytvorený"
       ],
-      "Vault Created": [
-        "Trezor bol vytvorený"
-      ],
       "Vault deleted": [
-        "Trezor bol vymazaný"
-      ],
-      "Vault Deleted": [
         "Trezor bol vymazaný"
       ],
       "Vault shared with email": [
         "Trezor zdieľaný emailom"
       ],
       "Vault updated": [
-        "Trezor bol aktualizovaný"
-      ],
-      "Vault Updated": [
         "Trezor bol aktualizovaný"
       ],
       "Verification can take a few minutes.": [
@@ -5796,6 +5700,16 @@
     "label": {
       "Recovery phone number": [
         "Telefónne číslo pre obnovenie"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Od"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Pre"
       ]
     },
     "Label for adding a new custom domain": {
@@ -7778,9 +7692,6 @@
       ],
       "E.g., ": [
         "Napr., "
-      ],
-      "Email or IP": [
-        "Email alebo IP"
       ],
       "End date": [
         "Dátum ukončenia"
@@ -9777,6 +9688,9 @@
       "Amount due": [
         "Čiastka k zaplateniu"
       ],
+      "An address for each role": [
+        "Adresa pre každú rolu"
+      ],
       "Appearance": [
         "Vzhľad"
       ],
@@ -9828,6 +9742,9 @@
       "Change second password": [
         "Zmeniť druhé heslo"
       ],
+      "Click a value in the table to use it as filter": [
+        "Kliknutím na hodnotu v tabuľke ju použijete ako filter."
+      ],
       "Close": [
         "Zatvoriť"
       ],
@@ -9845,9 +9762,6 @@
       ],
       "Confirm phone number": [
         "Potvrdenie telefónneho čísla"
-      ],
-      "Connection events": [
-        "Udalosti pripojenia"
       ],
       "Connection monitor disabled": [
         "Monitor pripojenia vypnutý"
@@ -10016,9 +9930,6 @@
       ],
       "Error": [
         "Chyba"
-      ],
-      "Event": [
-        "Udalosť"
       ],
       "Every member of the organization can access": [
         "Každý člen organizácie má prístup k"
@@ -10277,9 +10188,6 @@
       ],
       "There are no groups": [
         "Nie sú tu žiadne skupiny"
-      ],
-      "Time": [
-        "Čas"
       ],
       "TV sign in": [
         "TV prihlásenie"

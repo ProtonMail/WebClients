@@ -411,7 +411,7 @@
         "Zmiany stają się sugestią"
       ],
       "Read or print final document": [
-        "Przeczytaj lub wydrukuj ukończony dokument"
+        "Przeczytaj lub wydrukuj ostateczny dokument"
       ]
     },
     "Error": {
@@ -432,6 +432,9 @@
       ],
       "Failed to initialize editor due to unknown error.": [
         "Nie udało się zainicjować edytora z powodu nieznanego błędu."
+      ],
+      "Request timed out": [
+        "Upłynął limit czasu żądania"
       ],
       "Signature verification failed": [
         "Weryfikacja podpisu nie powiodła się"
@@ -504,6 +507,9 @@
       "Highlight": [
         "Wyróżnij"
       ],
+      "Internet connection lost": [
+        "Połączenie z Internetem zostało utracone"
+      ],
       "Just now": [
         "Teraz"
       ],
@@ -512,6 +518,12 @@
       ],
       "No comments": [
         "Brak komentarzy"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
+      ],
+      "Session timed out": [
+        "Upłynął limit czasu sesji"
       ],
       "Something went wrong:": [
         "Coś poszło nie tak:"
@@ -579,7 +591,7 @@
         "Kolor tekstu"
       ],
       "with \"${ replaceWith }\"": [
-        "za pomocą \"${ replaceWith }\""
+        "przez \"${ replaceWith }\""
       ]
     },
     "Placeholder": {

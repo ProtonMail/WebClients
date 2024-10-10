@@ -488,10 +488,10 @@
       "Not now": [
         "Не зараз"
       ],
-      "OK": [
+      "Ok": [
         "Добра"
       ],
-      "Ok": [
+      "OK": [
         "Добра"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -2506,7 +2506,7 @@
         "Лепш арганізоўвайце свой дзень, сачыце за часам і вызначайце прыярытэтныя задачы. Маркіруйце каляндар з дапамогай карыстальніцкіх колераў падзей."
       ],
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
-        "Пазначайце колерам падзеі, каб з іх дапамогай прасцей арганізаваць свой дзень, адсачыць час і вызначыць прыярытэт заданняў."
+        "Пазначайце колерам падзеі, каб з іх дапамогай прасцей арганізаваць свой дзень, адсачыць час і вызначыць прыярытэтныя заданні."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Расшыфроўка кантактаў... Гэта можа заняць некалькі хвілін. Пасля завяршэння працэсу ў вас будзе магчымасць спампаваць файл з усімі экспартаванымі кантактамі."
@@ -3726,14 +3726,8 @@
       "${ BRAND_NAME } groups": [
         "Групы ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Уліковыя запісы з карыстальніцкімі даменамі нельга далучыць да групавога тарыфнага плана."
-      ],
       "customer support": [
         "падтрымка кліентаў"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Групавыя тарыфныя планы ў цяперашні час не падтрымліваюць знешнія ўліковыя запісы. Перад далучэннем стварыце адрас ${ BRAND_NAME }. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Калі вы прыміце запрашэнне, то ваш тарыфны план будзе зменены. Рэшта балансу вашай падпіскі вернецца на ваш рахунак."
@@ -3741,14 +3735,8 @@
       "Invited by: ${ inviteEmail }": [
         "Запрашэнне адпраўлена: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Пажыццёвыя ўліковыя запісы нельга далучыць да групавога тарыфнага плана."
-      ],
       "Manage addresses.": [
         "Кіраванне адрасамі."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Уладальнікі тарыфных планаў з удзельнікамі не могуць далучацца да іншых групавых тарыфных планаў."
       ],
       "Sorry, you can't switch plans at this time.": [
         "У дадзены момант змена тарыфнага плана недаступна."
@@ -3770,12 +3758,6 @@
       ],
       "You have successfully joined the family group": [
         "Вы паспяхова далучыліся да сямейнай групы"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "У вас ёсць неаплачаныя рахункі. Аплаціце іх перад тым, як далучыцца да групавога тарыфнага плана."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Вас запрашаюць далучыць ваш уліковы запіс ${ BRAND_NAME } да гэтага групавога тарыфнага плана, каб разам выкарыстоўваць усе прэміяльныя функцыі ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Колькасць адрасоў электроннай пошты перавышае дазволенае значэнне вашага бягучага тарыфнага плана. ${ addressSettingsLink }"
@@ -3944,7 +3926,7 @@
         "Менш падрабязна"
       ],
       "Meeting link:": [
-        "Спасылка сустрэчы:"
+        "Спасылка на сустрэчу:"
       ],
       "More details": [
         "Больш падрабязна"
@@ -8139,11 +8121,6 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(адкрые ${ PASS_APP_NAME })"
-      ]
-    },
-    "Security Center - Action": {
-      "View logs": [
-        "Паглядзець журнал"
       ]
     },
     "Security Center - Info": {

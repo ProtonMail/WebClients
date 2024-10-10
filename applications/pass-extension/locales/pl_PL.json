@@ -269,6 +269,12 @@
       "Import": [
         "Importuj"
       ],
+      "Import alias": [
+        "Importuj alias",
+        "Importuj aliasy",
+        "Importuj aliasy",
+        "Importuj aliasy"
+      ],
       "Import your passwords": [
         "Importuj hasła"
       ],
@@ -1862,10 +1868,10 @@
         "Mamy problem z synchronizacją danych z magazynem lokalnym. Upewnij się, że masz wystarczającą pamięć wewnętrzną do działania aplikacji ${ PASS_SHORT_APP_NAME }."
       ],
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Masz ${ aliasCount } alias SimpleLogin, który nie jest widoczny w ${ PASS_APP_NAME } Czy chcesz go zaimportować?",
-        "Masz ${ aliasCount } aliasy SimpleLogin, które nie są widoczne w ${ PASS_APP_NAME } Czy chcesz je zaimportować?",
-        "Masz ${ aliasCount } aliasów SimpleLogin, które nie są widoczne w ${ PASS_APP_NAME } Czy chcesz je zaimportować?",
-        "Masz ${ aliasCount } aliasów SimpleLogin, które nie są widoczne w ${ PASS_APP_NAME } Czy chcesz je zaimportować?"
+        "Masz ${ aliasCount } alias SimpleLogin, który nie jest widoczny w ${ PASS_APP_NAME }. Czy chcesz go zaimportować?",
+        "Masz ${ aliasCount } aliasy SimpleLogin, które nie są widoczne w ${ PASS_APP_NAME }. Czy chcesz je zaimportować?",
+        "Masz ${ aliasCount } aliasów SimpleLogin, które nie są widoczne w ${ PASS_APP_NAME }. Czy chcesz je zaimportować?",
+        "Masz ${ aliasCount } aliasów SimpleLogin, które nie są widoczne w ${ PASS_APP_NAME }. Czy chcesz je zaimportować?"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Pole 'nazwa użytkownika' będzie zawsze widoczne podczas edytowania danych logowania w ${ PASS_APP_NAME }."
@@ -1881,6 +1887,12 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "Nie możesz zmienić skrzynek pocztowych dla tego aliasu."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Masz ${ aliasCount } alias SimpleLogin, który nie jest widoczny w ${ PASS_APP_NAME } Czy chcesz go zaimportować?",
+        "Masz ${ aliasCount } aliasy SimpleLogin, które nie są widoczne w ${ PASS_APP_NAME }. Czy chcesz je zaimportować?",
+        "Masz ${ aliasCount } aliasów SimpleLogin, które nie są widoczne w ${ PASS_APP_NAME }. Czy chcesz je zaimportować?",
+        "Masz ${ aliasCount } aliasów SimpleLogin, które nie są widoczne w ${ PASS_APP_NAME }. Czy chcesz je zaimportować?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Masz ${ daysRemaining } dzień, aby wypróbować funkcje premium.",
@@ -2897,6 +2909,9 @@
       ],
       "Import to vault(s)": [
         "Importuj do sejfów"
+      ],
+      "Import your aliases from SimpleLogin": [
+        "Importuj aliasy z SimpleLogin"
       ],
       "Last autofill": [
         "Ostatnie autouzupełnianie"

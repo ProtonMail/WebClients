@@ -384,10 +384,10 @@
       "Get link": [
         "Bağlantıyı al"
       ],
-      "Get started": [
+      "Get Started": [
         "Başlayalım"
       ],
-      "Get Started": [
+      "Get started": [
         "Başlayalım"
       ],
       "Get verification code": [
@@ -561,10 +561,10 @@
       "Not now": [
         "Şimdi değil"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
       "Open": [
@@ -3362,14 +3362,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } grupları"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Özel etki alanları olan hesaplar, bir grup tarifesine katılamaz."
-      ],
       "customer support": [
         "müşteri desteği"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Grup tarifeleri şu anda dış hesapları desteklemiyor. Katılmadan önce bir ${ BRAND_NAME } adresi oluşturun. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Daveti kabul ederseniz, sizi geçerli tarifenizde çıkarırız ve kalan tutarı hesabınıza yatırırız."
@@ -3377,14 +3371,8 @@
       "Invited by: ${ inviteEmail }": [
         "Davet eden: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Lifetime hesaplar bir grup tarifesine katılamaz."
-      ],
       "Manage addresses.": [
         "Adres yönetimi."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Üyeleri olan bir tarifenin sahipleri başka bir grup tarifesine katılamaz."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Ne yazık ki şu anda tarifeleri değiştiremezsiniz."
@@ -3406,12 +3394,6 @@
       ],
       "You have successfully joined the family group": [
         "Aile grubuna katıldınız"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Ödenmemiş faturalarınız var. Bir grup tarifesine geçmeden önce lütfen onları ödeyin."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "${ BRAND_NAME } hesabınızı bu grup tarifesine bağlamaya ve birlikte ücretli tüm ${ BRAND_NAME_TWO } özelliklerinin tadını çıkarmaya davet edildiniz."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Hesabınızda, bu tarifede kullanabileceğinizden daha fazla e-posta adresi var. ${ addressSettingsLink }"
@@ -8418,11 +8400,6 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(${ PASS_APP_NAME } açılacak)"
-      ]
-    },
-    "Security Center - Action": {
-      "View logs": [
-        "Günlüğü görüntüle"
       ]
     },
     "Security Center - Info": {

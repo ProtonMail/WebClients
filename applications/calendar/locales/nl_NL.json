@@ -482,11 +482,11 @@
       "Not now": [
         "Niet nu"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Open ${ CALENDAR_APP_NAME }-instellingen"
@@ -3639,14 +3639,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-groepen"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Accounts met een eigen domein kunnen zich niet aansluiten bij een groepsabonnement."
-      ],
       "customer support": [
         "klantondersteuning"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Groepsabonnementen bieden op dit moment geen ondersteuning voor externe accounts. Maak een ${ BRAND_NAME }-adres aan voor u zich hierbij aansluit. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Als u de uitnodiging accepteert, zetten we uw huidige abonnement om en wordt een eventueel resterend saldo teruggestort."
@@ -3654,14 +3648,8 @@
       "Invited by: ${ inviteEmail }": [
         "Uitgenodigd door: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Levenslange accounts kunnen niet deelnemen aan een groepsabonnement."
-      ],
       "Manage addresses.": [
         "Beheer adressen."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Eigenaren van een abonnement met leden kunnen zich niet aansluiten bij een ander groepsabonnement."
       ],
       "Sorry, you can't switch plans at this time.": [
         "U kunt op dit moment niet van abonnement wisselen."
@@ -3683,12 +3671,6 @@
       ],
       "You have successfully joined the family group": [
         "U hebt zich succesvol aangesloten bij de familiegroep"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "U heeft onbetaalde facturen. Betaal deze voordat u zich aansluit bij een groepsabonnement"
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "U bent uitgenodigd om uw ${ BRAND_NAME }-account te koppelen aan dit groepsabonnement en samen gebruik te maken van alle premium functies van ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Uw account heeft meer e-mailadressen dan is toegestaan in dit abonnement. ${ addressSettingsLink }"
@@ -6627,6 +6609,9 @@
       "Secure Core servers": [
         "Secure Core-servers"
       ],
+      "Secure link sharing": [
+        "Veilig delen van links"
+      ],
       "See team's availability": [
         "Bekijk beschikbaarheid van het team"
       ],
@@ -6733,6 +6718,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } beheerder",
+        "${ admins } beheerders"
       ]
     },
     "new_plans: feature info": {
@@ -7446,6 +7437,12 @@
         "Veilig delen van kluis (${ n } kluizen) en het delen van links"
       ]
     },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } gebruikersaccount",
+        "${ n } gebruikersaccounts"
+      ]
+    },
     "passwordless": {
       "Organization key does not exist.": [
         "Organisatiesleutel bestaat niet."
@@ -7819,11 +7816,6 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(${ PASS_APP_NAME } zal openen)"
-      ]
-    },
-    "Security Center - Action": {
-      "View logs": [
-        "Logboeken bekijken"
       ]
     },
     "Security Center - Info": {
@@ -8217,6 +8209,9 @@
       ],
       "/ month": [
         "/ maand"
+      ],
+      "/month": [
+        "/maand"
       ],
       "1 year": [
         "1 jaar"

@@ -433,6 +433,9 @@
       "Failed to initialize editor due to unknown error.": [
         "Editorin valmistelu epäonnistui tuntemattoman virheen takia."
       ],
+      "Request timed out": [
+        "Pyyntö aikakatkaistiin"
+      ],
       "Signature verification failed": [
         "Allekirjoituksen vahvistus epäonnistui"
       ],
@@ -499,6 +502,9 @@
       "Font size": [
         "Fonttikoko"
       ],
+      "Internet connection lost": [
+        "Internet-yhteys katkesi"
+      ],
       "Just now": [
         "Juuri nyt"
       ],
@@ -507,6 +513,12 @@
       ],
       "No comments": [
         "Kommentteja ei ole"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Palvelimia ei tavoiteta. Yritä muutaman minuutin kuluttua uudelleen."
+      ],
+      "Session timed out": [
+        "Istunto aikakatkaistiin"
       ],
       "Something went wrong:": [
         "Jotain meni pieleen:"
