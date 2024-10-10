@@ -51,7 +51,7 @@ const sanitizeRelativeHttpLinks = (link: HTMLLinkElement) => {
         // link.href is the absolute value of the link: mail.proton.me is prepended, use getAttribute
         const url = link.getAttribute('href');
 
-        if (url) {
+        if (url && !url.toLowerCase().startsWith('hxxps')) {
             link.setAttribute('href', `http://${url}`);
         }
     }
