@@ -7,6 +7,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import { useModalTwo, useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import {
     type PLANS,
     PLAN_SERVICES,
@@ -41,7 +42,6 @@ import {
     useOrganization,
     usePreferredPlansMap,
     useSubscription,
-    useVPNServersCount,
 } from '../../../../hooks';
 import DowngradeModal from '../../DowngradeModal';
 import LossLoyaltyModal from '../../LossLoyaltyModal';

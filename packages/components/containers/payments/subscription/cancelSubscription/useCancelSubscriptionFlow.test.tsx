@@ -2,9 +2,9 @@ import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { getModelState } from '@proton/account/test';
+import { useVPNServersCount } from '@proton/components';
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import { organization, vpnServersCount } from '@proton/components/containers/payments/subscription/__mocks__/data';
-import { useVPNServersCount } from '@proton/components/hooks';
 import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments';
 import { changeRenewState, deleteSubscription } from '@proton/shared/lib/api/payments';
 import { APPS, PRODUCT_BIT } from '@proton/shared/lib/constants';
