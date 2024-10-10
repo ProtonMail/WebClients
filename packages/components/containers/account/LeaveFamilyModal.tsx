@@ -53,7 +53,7 @@ const LeaveFamilyModal = ({ organisationName, ...modalState }: Props) => {
     const withTrial = organization?.PlanName === PLANS.DUO || organization?.PlanName === PLANS.FAMILY;
 
     const message = c('familyOffer_2023:Family plan')
-        .t`You will lose access to all premium features and storage space included with ${plan}.`;
+        .t`You will lose access to all premium features included with ${plan}.`;
 
     return (
         <Prompt
