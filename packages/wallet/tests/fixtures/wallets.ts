@@ -86,6 +86,7 @@ export const walletChainDataByWalletId: WalletChainDataByWalletId = {
                 }),
                 scriptType: 2,
                 derivationPath: "84'/1'/0'",
+                poolSize: 3,
             },
             [apiWalletAccountOneB.ID]: {
                 account: getMockedWasmAccount({
@@ -104,6 +105,7 @@ export const walletChainDataByWalletId: WalletChainDataByWalletId = {
                 }),
                 scriptType: 2,
                 derivationPath: "84'/1'/0'",
+                poolSize: 3,
             },
         },
     },
@@ -127,6 +129,7 @@ export const walletChainDataByWalletId: WalletChainDataByWalletId = {
                 }),
                 scriptType: 2,
                 derivationPath: "84'/1'/0'",
+                poolSize: 3,
             },
             [apiWalletAccountTwoB.ID]: {
                 account: getMockedWasmAccount({
@@ -145,6 +148,7 @@ export const walletChainDataByWalletId: WalletChainDataByWalletId = {
                 }),
                 scriptType: 2,
                 derivationPath: "84'/1'/0'",
+                poolSize: 3,
             },
         },
     },
@@ -168,6 +172,7 @@ export const walletChainDataByWalletId: WalletChainDataByWalletId = {
                 }),
                 scriptType: 2,
                 derivationPath: "84'/1'/0'",
+                poolSize: 3,
             },
         },
     },
@@ -209,6 +214,7 @@ export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
                 }),
                 scriptType: 2,
                 derivationPath: "84'/1'/0'",
+                poolSize: 3,
             },
             [apiWalletAccountOneB.ID]: {
                 account: getMockedWasmAccount({
@@ -227,6 +233,7 @@ export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
                 }),
                 scriptType: 2,
                 derivationPath: "84'/1'/0'",
+                poolSize: 3,
             },
         },
     },
@@ -262,6 +269,7 @@ export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
                 }),
                 scriptType: 2,
                 derivationPath: "84'/1'/0'",
+                poolSize: 3,
             },
             [apiWalletAccountTwoB.ID]: {
                 account: getMockedWasmAccount({
@@ -280,6 +288,7 @@ export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
                 }),
                 scriptType: 2,
                 derivationPath: "84'/1'/0'",
+                poolSize: 3,
             },
         },
     },
@@ -315,6 +324,7 @@ export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
                 }),
                 scriptType: 2,
                 derivationPath: "84'/1'/0'",
+                poolSize: 3,
             },
         },
     },
