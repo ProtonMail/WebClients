@@ -16,7 +16,8 @@ import { updateAddress } from '@proton/shared/lib/api/addresses';
 import type { Address } from '@proton/shared/lib/interfaces';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
-import { useHotkeys, useNotifications } from '../../hooks';
+import { useNotifications } from '../../hooks';
+import { useHotkeys } from '../../hooks/useHotkeys';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';

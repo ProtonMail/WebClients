@@ -860,6 +860,8 @@ export { default as useForceRefresh } from './hooks/useForceRefresh';
 export { default as useGetCalendarEventRaw } from './hooks/useGetCalendarEventRaw';
 export { default as useGetCalendarInfo } from './hooks/useGetCalendarInfo';
 export { default as useGetVerificationPreferences } from './hooks/useGetVerificationPreferences';
+export { default as useHasSuspendedCounter } from './hooks/useHasSuspendedCounter';
+export { useHotkeys, type HotkeyTuple } from './hooks/useHotkeys';
 export { default as useInboxDesktopBadgeCount } from './hooks/useInboxDesktopBadgeCount';
 export { default as useIsClosing } from './hooks/useIsClosing';
 export { default as useIsDataRecoveryAvailable } from './hooks/useIsDataRecoveryAvailable';
@@ -870,7 +872,7 @@ export { default as useNewFeatureOnboarding } from './hooks/useNewFeatureOnboard
 export { default as useProgressiveRollout } from './hooks/useProgressiveRollout';
 export { default as useRecoveryNotification } from './hooks/useRecoveryNotification';
 export { default as useRelocalizeText } from './hooks/useRelocalizeText';
+export { default as useSearchParamsEffect } from './hooks/useSearchParamsEffect';
 export { default as useSubscribedCalendars } from './hooks/useSubscribedCalendars';
 export { default as useToggle } from './hooks/useToggle';
 export { default as useWindowSize } from './hooks/useWindowSize';
-export { default as useSearchParamsEffect } from './hooks/useSearchParamsEffect';

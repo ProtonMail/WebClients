@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 
-import type { HotkeyTuple } from './index';
-import { useHotkeys } from './index';
+import { type HotkeyTuple, useHotkeys } from './useHotkeys';
 
 export interface ContactHotkeysContext {
     elementIDs: string[];
