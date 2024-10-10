@@ -1,4 +1,15 @@
-import { BrowserView, BrowserWindow, Event, Input, Rectangle, Session, WebContents, app, nativeTheme } from "electron";
+import {
+    BrowserView,
+    BrowserWindow,
+    Event,
+    Input,
+    Rectangle,
+    Session,
+    WebContents,
+    app,
+    nativeTheme,
+    session,
+} from "electron";
 import { debounce } from "lodash";
 import { getWindowBounds, saveWindowBounds } from "../../store/boundsStore";
 import { getSettings, saveSettings } from "../../store/settingsStore";
@@ -58,9 +69,16 @@ const NET_ERROR_CODE = {
 
 export const IGNORED_NET_ERROR_CODES = [NET_ERROR_CODE.ABORTED];
 
-export const viewCreationAppStartup = (session: Session) => {
+export const viewCreationAppStartup = async (session: Session) => {
     mainWindow = createBrowserWindow(session);
     createViews(session);
+    await showLoadingPage(viewTitleMap.mail);
+
+    const config = getConfig();
+    const mailto = readAndClearMailtoArgs();
+    await loadURL("mail", config.url.mail + (mailto ? `/inbox#mailto=${mailto}` : "")).then(() => {
+        updateViewBounds(browserViewMap.mail, "mail");
+    });
 
     // We add the delay to avoid blank windows on startup, only mac supports openAtLogin for now
     const delay = isMac && app.getLoginItemSettings().openAtLogin ? 100 : 0;
@@ -76,9 +94,9 @@ export const viewCreationAppStartup = (session: Session) => {
     mainWindow.on("unmaximize", debouncedSaveWindowBounds);
 
     const updateViewsBounds = () => {
-        for (const viewID of Object.keys(browserViewMap) as ViewID[]) {
-            if (browserViewMap[viewID]) {
-                updateViewBounds(viewID);
+        for (const [viewID, view] of Object.entries(browserViewMap)) {
+            if (view && viewID) {
+                updateViewBounds(view, viewID as ViewID);
             }
         }
     };
@@ -117,7 +135,9 @@ export const viewCreationAppStartup = (session: Session) => {
 const createView = (viewID: ViewID, session: Session) => {
     const view = new BrowserView(getWindowConfig(session));
 
-    handleBeforeHandle(viewID, view);
+    if (viewID) {
+        handleBeforeHandle(viewID, view);
+    }
 
     view.webContents.on("context-menu", (_e, props) => {
         createContextMenu(props, view)?.popup();
@@ -144,9 +164,9 @@ const createViews = (session: Session) => {
             if (input.key === "Alt" && input.type === "keyDown") {
                 mainWindow!.setMenuBarVisibility(!mainWindow!.isMenuBarVisible());
 
-                for (const viewID of Object.keys(browserViewMap) as ViewID[]) {
-                    if (browserViewMap[viewID]) {
-                        updateViewBounds(viewID);
+                for (const [viewID, view] of Object.entries(browserViewMap)) {
+                    if (view && viewID) {
+                        updateViewBounds(view, viewID as ViewID);
                     }
                 }
             }
@@ -164,13 +184,6 @@ const createViews = (session: Session) => {
     browserViewMap.mail.setAutoResize({ width: true, height: true });
     browserViewMap.calendar.setAutoResize({ width: true, height: true });
     browserViewMap.account.setAutoResize({ width: true, height: true });
-
-    const config = getConfig();
-
-    const mailto = readAndClearMailtoArgs();
-    loadURL("mail", config.url.mail + (mailto ? `/inbox#mailto=${mailto}` : "")).then(() => {
-        updateViewBounds("mail");
-    });
 };
 
 const createBrowserWindow = (session: Session) => {
@@ -186,7 +199,7 @@ const createBrowserWindow = (session: Session) => {
     return mainWindow;
 };
 
-function updateViewBounds(viewID: ViewID) {
+function updateViewBounds(view: BrowserView | undefined, viewID: ViewID | null = null) {
     if (!mainWindow) {
         viewLogger(viewID).warn("cannot adjust view bounds, mainWindow is null");
         return;
@@ -216,8 +229,6 @@ function updateViewBounds(viewID: ViewID) {
         width: windowWidth - horizontalMargin,
         height: windowHeight - verticalMargin,
     };
-
-    const view = browserViewMap[viewID];
 
     if (!view) {
         viewLogger(viewID).warn("cannot adjust view bounds, view is null");
@@ -259,7 +270,7 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, targetURL: string = "
     }
 
     const view = browserViewMap[viewID]!;
-    updateViewBounds(viewID);
+    updateViewBounds(view, viewID);
     view.webContents.setZoomFactor(getWindowBounds().zoom);
 
     if (viewID === currentViewID) {
@@ -273,16 +284,15 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, targetURL: string = "
 
     if (url && urlHasMailto(url)) {
         viewLogger(viewID).debug(`showView loading mailto ${url} from`, await getViewURL(viewID));
-        const loadPromise = loadURL(viewID, url);
+        await showLoadingPage(viewTitleMap[viewID]);
+        await loadURL(viewID, url);
         mainWindow!.setBrowserView(view);
-        await loadPromise;
     } else if (url && !isSameURL(url, await getViewURL(viewID))) {
         viewLogger(viewID).debug("showView current url is different", await getViewURL(viewID));
         viewLogger(viewID).info("showView loading", url);
-        await loadURL(viewID, "about:blank");
-        const loadPromise = loadURL(viewID, url);
+        await showLoadingPage(viewTitleMap[viewID]);
+        await loadURL(viewID, url);
         mainWindow!.setBrowserView(view);
-        await loadPromise;
     } else {
         viewLogger(viewID).info("showView showing view for ", url);
         mainWindow!.setBrowserView(view);
@@ -330,6 +340,7 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
 
         const handleLoadTimeout = () => {
             viewLogger(viewID).error("loadURL timeout", url);
+            showNetworkErrorPage(viewID);
             cleanup();
         };
 
@@ -341,6 +352,7 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
         const handleLoadError = (_event: Event, errorCode: number, errorDescription: string) => {
             if (!IGNORED_NET_ERROR_CODES.includes(errorCode)) {
                 viewLogger(viewID).error("did-fail-load", url, errorCode, errorDescription);
+                showNetworkErrorPage(viewID);
             }
             cleanup();
         };
@@ -385,20 +397,26 @@ export async function showNetworkErrorPage(viewID: ViewID): Promise<void> {
     await view.webContents.loadFile(filePath, { query });
 }
 
-async function showLoadingPage(viewID: ViewID): Promise<void> {
-    const view = browserViewMap[viewID];
-
-    if (!view) {
-        viewLogger(viewID).warn("cannot show blank page, view is null");
+async function showLoadingPage(title: string): Promise<void> {
+    if (!mainWindow) {
+        mainLogger.error("Cannot show loading page, mainWindow is null");
         return;
     }
 
+    mainLogger.info("Show loading view");
+    const loadingView = new BrowserView(getWindowConfig(session.defaultSession));
+    await renderLoadingPage(loadingView, title);
+
+    mainWindow.setBrowserView(loadingView);
+}
+
+async function renderLoadingPage(view: BrowserView, title: string): Promise<void> {
     const filePath = app.isPackaged
         ? join(process.resourcesPath, "loading.html")
         : join(app.getAppPath(), "assets/loading.html");
 
     const query: Record<string, string> = {
-        message: c("loading screen").t`Loading ${viewTitleMap[viewID]}…`,
+        message: c("loading screen").t`Loading ${title}…`,
         theme: nativeTheme.shouldUseDarkColors ? "dark" : "light",
     };
 
@@ -407,6 +425,7 @@ async function showLoadingPage(viewID: ViewID): Promise<void> {
     }
 
     await view.webContents.loadFile(filePath, { query });
+    updateViewBounds(view);
 }
 
 async function getViewURL(viewID: ViewID): Promise<string> {
@@ -436,7 +455,7 @@ export async function resetHiddenViews({ toHomepage } = { toHomepage: false }) {
                 loadPromises.push(loadURL(viewID as ViewID, homepageURL));
             } else {
                 viewLogger(viewID as ViewID).info("reset to blank");
-                loadPromises.push(showLoadingPage(viewID as ViewID));
+                loadPromises.push(renderLoadingPage(view, viewTitleMap[viewID as ViewID]));
             }
         }
     }
