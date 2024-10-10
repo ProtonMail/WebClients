@@ -11,7 +11,6 @@ export { default as useModals } from './useModals';
 export { default as useIsMnemonicAvailable } from './useIsMnemonicAvailable';
 export { default as useMyCountry } from './useMyCountry';
 export { default as useNotifications } from './useNotifications';
-export { default as useOnline } from './useOnline';
 export * from './useOrganization';
 export { useGetOrganizationKey, default as useOrganizationKey } from './useOrganizationKey';
 export { default as usePreventLeave, PreventLeaveProvider } from './usePreventLeave';

@@ -887,3 +887,4 @@ export {
 export { default as useSubscribedCalendars } from './hooks/useSubscribedCalendars';
 export { default as useToggle } from './hooks/useToggle';
 export { default as useWindowSize } from './hooks/useWindowSize';
+export { default as useOnline, getOnlineStatus } from './hooks/useOnline';
