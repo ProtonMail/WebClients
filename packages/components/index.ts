@@ -871,3 +871,5 @@ export { default as useRelocalizeText } from './hooks/useRelocalizeText';
 export { default as useSubscribedCalendars } from './hooks/useSubscribedCalendars';
 export { default as useToggle } from './hooks/useToggle';
 export { default as useWindowSize } from './hooks/useWindowSize';
+export { default as useGetCalendarInfo } from './hooks/useGetCalendarInfo';
+export { default as useGetCalendarEventRaw } from './hooks/useGetCalendarEventRaw';

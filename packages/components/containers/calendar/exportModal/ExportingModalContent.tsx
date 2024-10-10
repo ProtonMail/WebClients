@@ -15,7 +15,7 @@ import { processInBatches } from '@proton/shared/lib/calendar/export/export';
 import type { ExportCalendarModel, ExportError, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { EXPORT_ERRORS, EXPORT_STEPS } from '@proton/shared/lib/interfaces/calendar';
 
-import { useGetCalendarInfo } from '../../../hooks';
+import useGetCalendarInfo from '../../../hooks/useGetCalendarInfo';
 
 interface Props {
     model: ExportCalendarModel;
