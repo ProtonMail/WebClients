@@ -166,6 +166,10 @@ export const getBlockquoteRecipientsString = (recipients: Recipient[] = []) => {
 };
 
 export const generatePreviousMessageInfos = (referenceMessage: PartialMessageState, action: MESSAGE_ACTIONS) => {
+    /**
+     * Warning, if this logic is being updated, the plaintext blockquote detection needs to be updated as well.
+     * See "locatePlaintextInternalBlockquotes" function
+     */
     const senderString = getBlockquoteRecipientsString([referenceMessage.data?.Sender] as Recipient[]);
     const date = formatFullDate(getDate(referenceMessage?.data as Message, ''));
 

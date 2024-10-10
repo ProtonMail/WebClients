@@ -1,5 +1,5 @@
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
-import { ORIGINAL_MESSAGE } from '@proton/shared/lib/mail/messages';
+import { FORWARDED_MESSAGE, ORIGINAL_MESSAGE } from '@proton/shared/lib/mail/messages';
 
 export const BLOCKQUOTE_SELECTORS = [
     '.protonmail_quote', // Proton Mail
@@ -125,4 +125,83 @@ export const locateBlockquote = (inputDocument: Element | undefined): [content: 
     }
 
     return result || [parentHTML, ''];
+};
+
+/**
+ * Try to locate blockquotes on a plaintext message
+ * Warning, use it carefully because this detection finds blockquotes that are built internally,
+ * this won't work for external messages for example.
+ */
+export const locatePlaintextInternalBlockquotes = (content?: string) => {
+    // helper function to build the tuple based on a match
+    const getPlaintextInternalTuple = (content: string, matchIndex: number): [content: string, blockquotes: string] => {
+        const messageBody = content.slice(0, matchIndex);
+        const blockquotes = content.slice(matchIndex, content.length);
+
+        return [messageBody, blockquotes];
+    };
+
+    /**
+     * When building blockquotes internally, we prepend a "context string" to the previous message content.
+     * This string is different based on the scenario:
+     * - You're forwarding a message
+     * - You're replying to a message
+     * So to detect blockquotes in plaintext, we need to check both cases
+     *
+     * Detecting blockquotes in plaintext messages is challenging because:
+     * - The content of the context string differs based on the scenario (reply or forward)
+     * - Some elements are dynamic, like the date, email address or display name
+     * - The full string is localized, meaning that its structure might vary depending on the language
+     *
+     * To accurately detect blockquotes, we need to construct a regex that combines localized strings
+     * with patterns to detect dynamic parts (address, date, etc...)
+     */
+
+    // If there is no content at all, return an empty tuple
+    if (!content) {
+        return ['', ''];
+    }
+
+    const emailRegex = '[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+';
+    /**
+     * FORWARD CASE, we search for content which looks like:
+     * ------- Forwarded Message -------
+     * From: Sender <sender@address>
+     * Date: On Tuesday, 24 september 2024 at 4:00 PM
+     * Subject: Email subject
+     * To: Recipient <recipient@address>
+     */
+    const forwardMatch = content.indexOf(FORWARDED_MESSAGE);
+
+    if (forwardMatch !== -1) {
+        return getPlaintextInternalTuple(content, forwardMatch);
+    }
+
+    /**
+     * REPLY CASE, we search for content which looks like:
+     * On Tuesday, 24 september 2024 at 4:00 PM, Sender <sender@address> wrote:
+     *
+     * > previous message content
+     *
+     *
+     * On the following regex, we try to detect the line with an email surrounded with chevron and ending with ":",
+     * followed by an empty line and a line starting with ">":
+     *      - ".*": All the chars before the address surrounded with chevrons
+     *              => "On Tuesday, 24 september 2024 at 4:00 PM, Sender"
+     *      - "<${emailRegex}>": email address
+     *              => "<sender@address>"
+     *      - ".*:": The end of the line ending with ":"
+     *              => " wrote:"
+     *      - "\s*\n\s*\n^>": The next empty line being empty + the next line starting with ">"
+     */
+    const replyRegex = new RegExp(`.*<${emailRegex}>.*:\\s*\\n\\s*\\n^>`, 'm');
+
+    const replyMatch = content.match(replyRegex);
+
+    if (!!replyMatch?.[0]) {
+        const matchIndex = content.indexOf(replyMatch[0]);
+        return getPlaintextInternalTuple(content, matchIndex);
+    }
+
+    return [content, ''];
 };
