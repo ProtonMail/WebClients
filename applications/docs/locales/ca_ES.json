@@ -387,6 +387,9 @@
       "Move to trash": [
         "Mou a la paperera"
       ],
+      "New": [
+        "Nou"
+      ],
       "New document": [
         "Nou document"
       ],
@@ -402,10 +405,10 @@
       "Not now": [
         "Ara no"
       ],
-      "Ok": [
+      "OK": [
         "D'acord"
       ],
-      "OK": [
+      "Ok": [
         "D'acord"
       ],
       "Open": [
@@ -2424,6 +2427,9 @@
       "IMAP server is required": [
         "Es requereix un servidor IMAP."
       ],
+      "Incorrect password. Please try again.": [
+        "Contrasenya incorrecta, torneu-ho a intentar."
+      ],
       "Incorrect username": [
         "Nom d'usuari incorrecte"
       ],
@@ -3013,9 +3019,6 @@
       "Manage addresses.": [
         "Gestiona les adreces."
       ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Els propietaris d'un pla amb membres no poden unir-se a un altre pla de grup."
-      ],
       "Sorry, you can't switch plans at this time.": [
         "No podeu canviar de pla en aquest moment."
       ],
@@ -3030,9 +3033,6 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Se us ha convidat a unir-vos a ${ bannerOrganization }. ${ viewInviteButton }"
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Esteu convidat a enllaçar el vostre compte de ${ BRAND_NAME } a aquest pla de grup i gaudir junts de totes les característiques prèmium de ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "El vostre compte té més adreces de correu electrònic de les que teniu disponibles en aquest pla. ${ addressSettingsLink }"
@@ -5971,6 +5971,16 @@
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
       ]
     },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } administrador",
+        "${ admins } administradors"
+      ],
+      "${ users } user": [
+        "${ users } usuari",
+        "${ users } usuaris"
+      ]
+    },
     "new_plans: feature info": {
       "1 custom email domain": [
         "1 domini de correu electrònic personalitzat"
@@ -6954,11 +6964,6 @@
         "(obrirà ${ PASS_APP_NAME })"
       ]
     },
-    "Security Center - Action": {
-      "View logs": [
-        "Mostra els registres"
-      ]
-    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "S'han detectat ${ name } i ${ remainingCount } altres fuites potencials. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
@@ -7933,6 +7938,9 @@
       "Cannot add more addresses": [
         "No es poden afegir més adreces."
       ],
+      "Cannot load link": [
+        "No s'ha pogut carregar l'enllaç"
+      ],
       "Card verification": [
         "Verificació de la targeta"
       ],
@@ -8271,6 +8279,12 @@
       ],
       "Summary": [
         "Resum"
+      ],
+      "The link either does not exist or has expired": [
+        "L’enllaç no existeix o bé ha caducat"
+      ],
+      "The link expired": [
+        "L'enllaç ha caducat"
       ],
       "Unlock contacts groups": [
         "Desbloqueja grups de contactes"

@@ -112,6 +112,9 @@
       "Cancel subscription": [
         "Abonnement opzeggen"
       ],
+      "characters": [
+        "tekens"
+      ],
       "characters out of": [
         "tekens uit"
       ],
@@ -378,6 +381,9 @@
       "Move to trash": [
         "Naar prullenbak verplaatsen"
       ],
+      "New": [
+        "Nieuw"
+      ],
       "New document": [
         "Nieuw document"
       ],
@@ -393,11 +399,11 @@
       "Not now": [
         "Niet nu"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Open"
@@ -407,6 +413,9 @@
       ],
       "Open ${ DRIVE_APP_NAME }": [
         "Open ${ DRIVE_APP_NAME }"
+      ],
+      "Open folder": [
+        "Map openen"
       ],
       "Open navigation": [
         "Navigatie openen"
@@ -2431,6 +2440,9 @@
       "IMAP server is required": [
         "IMAP-server is vereist"
       ],
+      "Incorrect password. Please try again.": [
+        "Onjuist wachtwoord. Probeer het opnieuw."
+      ],
       "Incorrect username": [
         "Onjuiste gebruikersnaam"
       ],
@@ -3011,14 +3023,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-groepen"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Accounts met een eigen domein kunnen zich niet aansluiten bij een groepsabonnement."
-      ],
       "customer support": [
         "klantondersteuning"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Groepsabonnementen bieden op dit moment geen ondersteuning voor externe accounts. Maak een ${ BRAND_NAME }-adres aan voor u zich hierbij aansluit. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Als u de uitnodiging accepteert, zetten we uw huidige abonnement om en wordt een eventueel resterend saldo teruggestort."
@@ -3026,14 +3032,8 @@
       "Invited by: ${ inviteEmail }": [
         "Uitgenodigd door: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Levenslange accounts kunnen niet deelnemen aan een groepsabonnement."
-      ],
       "Manage addresses.": [
         "Beheer adressen."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Eigenaren van een abonnement met leden kunnen zich niet aansluiten bij een ander groepsabonnement."
       ],
       "Sorry, you can't switch plans at this time.": [
         "U kunt op dit moment niet van abonnement wisselen."
@@ -3055,12 +3055,6 @@
       ],
       "You have successfully joined the family group": [
         "U hebt zich succesvol aangesloten bij de familiegroep"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "U heeft onbetaalde facturen. Betaal deze voordat u zich aansluit bij een groepsabonnement"
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "U bent uitgenodigd om uw ${ BRAND_NAME }-account te koppelen aan dit groepsabonnement en samen gebruik te maken van alle premium functies van ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Uw account heeft meer e-mailadressen dan is toegestaan in dit abonnement. ${ addressSettingsLink }"
@@ -3697,6 +3691,9 @@
       "Change your password": [
         "Wijzig uw wachtwoord"
       ],
+      "characters": [
+        "tekens"
+      ],
       "characters without spaces": [
         "tekens zonder spaties"
       ],
@@ -4072,6 +4069,9 @@
       ],
       "No payment is required at this time.": [
         "Er is op dit moment geen betaling vereist."
+      ],
+      "No recent documents": [
+        "Geen recente documenten"
       ],
       "No results found": [
         "Geen resultaten gevonden"
@@ -5939,6 +5939,9 @@
       "Secure Core servers": [
         "Secure Core-servers"
       ],
+      "Secure link sharing": [
+        "Veilig delen van links"
+      ],
       "See team's availability": [
         "Bekijk beschikbaarheid van het team"
       ],
@@ -6045,6 +6048,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } beheerder",
+        "${ admins } beheerders"
       ]
     },
     "new_plans: feature info": {
@@ -6707,6 +6716,12 @@
         "Veilig delen van kluis (${ n } kluizen) en het delen van links"
       ]
     },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } gebruikersaccount",
+        "${ n } gebruikersaccounts"
+      ]
+    },
     "passwordless": {
       "Organization key does not exist.": [
         "Organisatiesleutel bestaat niet."
@@ -7054,11 +7069,6 @@
         "(${ PASS_APP_NAME } zal openen)"
       ]
     },
-    "Security Center - Action": {
-      "View logs": [
-        "Logboeken bekijken"
-      ]
-    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } en ${ remainingCount } ander potentieel lek gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
@@ -7395,6 +7405,9 @@
       ],
       "/ month": [
         "/ maand"
+      ],
+      "/month": [
+        "/maand"
       ],
       "1 year": [
         "1 jaar"
@@ -8035,6 +8048,9 @@
       "Cannot add more addresses": [
         "Kan geen extra adressen toevoegen"
       ],
+      "Cannot load link": [
+        "Kan koppeling niet laden"
+      ],
       "Card verification": [
         "Kaartverificatie"
       ],
@@ -8120,6 +8136,9 @@
       ],
       "Discard changes?": [
         "Wijzigingen annuleren?"
+      ],
+      "Docs": [
+        "Documenten"
       ],
       "Document verification failed": [
         "Documentverificatie mislukt"
@@ -8373,6 +8392,12 @@
       ],
       "Summary": [
         "Overzicht"
+      ],
+      "The link either does not exist or has expired": [
+        "De link bestaat niet of is verlopen"
+      ],
+      "The link expired": [
+        "De koppeling is verlopen"
       ],
       "Unlock contacts groups": [
         "Ontgrendel contactgroepen"

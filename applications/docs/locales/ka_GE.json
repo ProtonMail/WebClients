@@ -387,6 +387,9 @@
       "Move to trash": [
         "ნაგვის ყუთში გადატანა"
       ],
+      "New": [
+        "ახალი"
+      ],
       "New document": [
         "ახალი დოკუმენტი"
       ],
@@ -402,10 +405,10 @@
       "Not now": [
         "არა ახლა"
       ],
-      "Ok": [
+      "OK": [
         "დიახ"
       ],
-      "OK": [
+      "Ok": [
         "დიახ"
       ],
       "Open": [
@@ -561,6 +564,9 @@
       "Start import": [
         "შემოტანის დაწყება"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "${ priceUnlimited }-დან"
+      ],
       "Stay": [
         "დარჩენა"
       ],
@@ -611,6 +617,9 @@
       ],
       "Upgrade now": [
         "ტარიფის განახლება"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "ასწიეთ სატარიფო გეგმა ${ BRAND_NAME } Unlimited-ზე"
       ],
       "Upload anyway": [
         "მაინც ატვირთვა"
@@ -2452,6 +2461,9 @@
       "IMAP server is required": [
         "IMAP სერვერის მითითება აუცილებელია"
       ],
+      "Incorrect password. Please try again.": [
+        "არასწორი პაროლი. თავიდან სცადეთ."
+      ],
       "Incorrect username": [
         "მომხმარებლის სახელი არასწორია"
       ],
@@ -3032,14 +3044,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } ჯგუფები"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "მომხმარებლის დომენის მქონე ანგარიშები ჯგუფურ ტარიფს ვერ მიიღებენ."
-      ],
       "customer support": [
         "მხარდაჭერის გუნდი"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "ჯგუფურ გეგმებს, ამჟამად, გარე ანგარიშების მხარდაჭერა არ გააჩნიათ. შეერთებამდე ${ BRAND_NAME }-ის ანგარიში შექმენით. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "თუ მოსაწევევს მიიღებთ, ჩვენ თქვენი მიმდინარე ტრიფიდან გადაგრთავთ და დარჩენილ ბალანსს ანგარიშზე დაგირიცხავთ."
@@ -3047,14 +3053,8 @@
       "Invited by: ${ inviteEmail }": [
         "მომწვევი: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "სამუდამო ანგარიშები ჯგუფურ გეგმაში ვერ შევლენ."
-      ],
       "Manage addresses.": [
         "მისამართების მართვა."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "წევრების მქონე ტარიფების მფლობელებს სხვა ჯგუფურ ტარიფში გაერთიანება არ შეუძლიათ."
       ],
       "Sorry, you can't switch plans at this time.": [
         "უკაცრავად, ტარიფს ამჟამად ვერ გადართავთ."
@@ -3076,12 +3076,6 @@
       ],
       "You have successfully joined the family group": [
         "საოჯახო ტარიფს წარმატებით შეუერთდით."
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "გაქვთ გადაუხდელი ინვოისები. გადაიხადეთ, სანამ ჯგუფურ გეგმას მიუერთდებით."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "გიწვევენ, თქვენი ${ BRAND_NAME }-ის ანგარიში ამ ჯგუფს მიაბათ და ერთად ისიამოვნოთ ყველა ${ BRAND_NAME_TWO }-ის ფასიანი ფუნქციით."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "თქვენს ანგარიშს იმაზე მეტი მისამართი გააჩნია, ვიდრე ეს თქვენი სატარიფო გეგმის მიერაა დაშვებული. ${ addressSettingsLink }"
@@ -4111,6 +4105,9 @@
       ],
       "No payment is required at this time.": [
         "ჯერჯერობით გადახდა საჭირო არაა."
+      ],
+      "No recent documents": [
+        "უახლესი დოკუმენტების გარეშე"
       ],
       "No results found": [
         "შედეგების გარეშე"
@@ -5613,8 +5610,14 @@
       "Get started for ${ price }": [
         "დაწყება ${ price }-დან"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "${ priceMailPlus }-დან"
+      ],
       "Upgrade now": [
         "ახლა გაუმჯობესება"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "ასწიეთ სატარიფო გეგმა ${ MAIL_SHORT_APP_NAME } Plus-მდე"
       ]
     },
     "new_plans: action": {
@@ -6188,6 +6191,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "მიიღეთ Mail Plus ფასით ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "${ price }-დან"
       ]
     },
     "new_plans: title": {
@@ -7082,11 +7088,6 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(გახსნის ${ PASS_APP_NAME }-ს)"
-      ]
-    },
-    "Security Center - Action": {
-      "View logs": [
-        "ჟურნალის ნახვა"
       ]
     },
     "Security Center - Info": {
@@ -8068,6 +8069,9 @@
       "Cannot add more addresses": [
         "მეტი მისამართის დამატება შეუძლებელია"
       ],
+      "Cannot load link": [
+        "ბმულის ჩატვირთვის შეცდომა"
+      ],
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
@@ -8232,6 +8236,9 @@
       "Groups": [
         "ჯგუფები"
       ],
+      "High security for your account": [
+        "მაღალი უსაფრთხოება თქვენი ანგარიშისთვის"
+      ],
       "Human verification": [
         "ადამიანის შემოწმება"
       ],
@@ -8292,6 +8299,9 @@
       ],
       "Offline": [
         "გათიშულია"
+      ],
+      "One email, many recipients": [
+        "ერთი ელფოსტა, ბევრი მიმღები"
       ],
       "Open actions dropdown": [
         "ქმედებების ჩამოსაშლელი მენიუდან აღება"
@@ -8406,6 +8416,12 @@
       ],
       "Summary": [
         "შეჯამება"
+      ],
+      "The link either does not exist or has expired": [
+        "ბმული არ არსებობს ან ვადაგასულია"
+      ],
+      "The link expired": [
+        "ბმული ვადაგასულია"
       ],
       "Unlock contacts groups": [
         "განბლოკეთ კონტაქტის ჯგუფები"

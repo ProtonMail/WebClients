@@ -159,6 +159,9 @@
       "Contact group": [
         "Skupina kontaktov"
       ],
+      "Context menu": [
+        "Kontextová ponuka"
+      ],
       "Continue": [
         "Pokračovať"
       ],
@@ -390,6 +393,9 @@
       "Move to trash": [
         "Presunúť do koša"
       ],
+      "New": [
+        "Nový"
+      ],
       "New document": [
         "Nový dokument"
       ],
@@ -405,11 +411,11 @@
       "Not now": [
         "Teraz nie"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Otvoriť"
@@ -419,6 +425,9 @@
       ],
       "Open ${ DRIVE_APP_NAME }": [
         "Otvoriť ${ DRIVE_APP_NAME }"
+      ],
+      "Open folder": [
+        "Otvoriť priečinok"
       ],
       "Open navigation": [
         "Otvoriť menu"
@@ -515,6 +524,9 @@
       ],
       "Search countries": [
         "Vyhľadať krajiny"
+      ],
+      "Search docs": [
+        "Hľadať dokumenty"
       ],
       "See how": [
         "Pozrieť ako"
@@ -2488,6 +2500,9 @@
       "IMAP server is required": [
         "IMAP server je požadovaný"
       ],
+      "Incorrect password. Please try again.": [
+        "Nesprávne heslo. Skúste to prosím, znovu."
+      ],
       "Incorrect username": [
         "Nesprávne používateľské meno"
       ],
@@ -3082,14 +3097,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } skupiny"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Účty s vlastnými doménami sa nemôžu pripojiť do skupinového plánu."
-      ],
       "customer support": [
         "zákaznícka podpora"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Skupinové plány v súčasnosti nepodporujú externé účty. Pred pripojením si vytvorte ${ BRAND_NAME } adresu. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Ak pozvánku prijmete, zameníme váš aktuálny plán a zostávajúcu čiastku pripíšeme k vášmu účtu ako kredit."
@@ -3097,14 +3106,8 @@
       "Invited by: ${ inviteEmail }": [
         "Pozvánka od: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Doživotné účty nemôžu byť pripojené do skupinového predplatného."
-      ],
       "Manage addresses.": [
         "Spravovať adresy."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Vlastníci plánu s členmi sa nemôžu pripojiť k inému skupinovému plánu."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Ľutujeme, momentálne nemôžete zmeniť plány."
@@ -3126,12 +3129,6 @@
       ],
       "You have successfully joined the family group": [
         "Úspešne ste sa pripojili do rodinnej skupiny"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Máte nezaplatené faktúry. Pred pripojením do skupinového plánu ich zaplaťte, prosím."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Dostali ste pozvánku na pripojenie vášho účtu ${ BRAND_NAME } k tomuto skupinovému plánu, kde si môžete užívať všetky ${ BRAND_NAME_TWO } prémiové funkcie."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Váš účet má viac emailových adries než koľko máte k dispozícii v tomto pláne. ${ addressSettingsLink }"
@@ -3902,6 +3899,9 @@
       "Create public link": [
         "Vytvoriť verejný odkaz"
       ],
+      "Create your end-to-end encrypted document": [
+        "Vytvorte svoj end-to-end šifrovaný dokument"
+      ],
       "Creating link to file": [
         "Vytváranie odkazu na súbor"
       ],
@@ -3999,7 +3999,7 @@
         "End-to-end šifrované"
       ],
       "End-to-end encrypted.": [
-        "Šifrovanie počas celého spojenia."
+        "End-to-end šifrované."
       ],
       "Enter the code from your authenticator app": [
         "Zadajte kód z vašej overovacej aplikácie"
@@ -4237,6 +4237,9 @@
       ],
       "No payment is required at this time.": [
         "Momentálne nie je nutná žiadna platba."
+      ],
+      "No recent documents": [
+        "Žiadne nedávne dokumenty"
       ],
       "No results found": [
         "Nenájdené žiadne výsledky"
@@ -7332,11 +7335,6 @@
         "(otvorí ${ PASS_APP_NAME })"
       ]
     },
-    "Security Center - Action": {
-      "View logs": [
-        "Zobraziť záznamy"
-      ]
-    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } a ${ remainingCount } ďalšie zistené potenciálne úniky. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
@@ -8384,6 +8382,9 @@
       "Cannot add more addresses": [
         "Nie je možné pridať viac adries"
       ],
+      "Cannot load link": [
+        "Odkaz sa nepodarilo načítať"
+      ],
       "Card verification": [
         "Overenie karty"
       ],
@@ -8473,6 +8474,9 @@
       ],
       "Discard changes?": [
         "Zrušiť zmeny?"
+      ],
+      "Docs": [
+        "Dokumenty"
       ],
       "Document verification failed": [
         "Overenie dokumentu zlyhalo"
@@ -8731,6 +8735,12 @@
       ],
       "Summary": [
         "Zhrnutie"
+      ],
+      "The link either does not exist or has expired": [
+        "Odkaz neexistuje alebo vypršala jeho platnosť"
+      ],
+      "The link expired": [
+        "Platnosť odkazu vypršala"
       ],
       "Unlock contacts groups": [
         "Odomknúť skupiny kontaktov"

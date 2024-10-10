@@ -387,6 +387,9 @@
       "Move to trash": [
         "Siirrä roskakoriin"
       ],
+      "New": [
+        "Uusi"
+      ],
       "New document": [
         "Uusi dokumentti"
       ],
@@ -402,10 +405,10 @@
       "Not now": [
         "Ei nyt"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -1998,6 +2001,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } suojaa käyttäjätilisi 24/7 epäilyttävän toiminnan tarkkailulla - sisältäen eskaloinnin tietoturva-asiantuntijoille."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA lisää ylimääräisen turvakerroksen, joka estää luvattoman pääsyn tilillesi."
       ],
@@ -2463,6 +2469,9 @@
       ],
       "IMAP server is required": [
         "IMAP-palvelin vaaditaan"
+      ],
+      "Incorrect password. Please try again.": [
+        "Virheellinen salasana. Yritä uudelleen."
       ],
       "Incorrect username": [
         "Virheellinen käyttäjätunnus"
@@ -3044,14 +3053,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-ryhmää"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Omia verkkotunnuksia käyttävät tilit eivät voi liittyä ryhmätilaukseen."
-      ],
       "customer support": [
         "asiakaspalveluun"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Ryhmätilaukset eivät tällä hetkellä tue ulkoisia tilejä. Luo ${ BRAND_NAME } -osoite ennen liittymistä. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jos hyväksyt kutsun, siirrämme sinut nykyisestä tilauksestasi ja hyvitämme tilillesi jäljellä olevan saldon."
@@ -3059,14 +3062,8 @@
       "Invited by: ${ inviteEmail }": [
         "Kutsunut: ${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Elinikäiset tilit eivät voi liittyä ryhmätilaukseen."
-      ],
       "Manage addresses.": [
         "Hallitse osoitteita."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Jäseniä sisältävän tilauksen omistajat eivät voi liittyä toiseen ryhmätilaukseen."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Valitettavasti et voi tällä hetkellä vaihtaa tilaustasi."
@@ -3088,12 +3085,6 @@
       ],
       "You have successfully joined the family group": [
         "Olet liittynyt perheryhmään"
-      ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Sinulla on maksamattomia laskuja. Maksa ne ennen ryhmätilaukseen liittymistä."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Sinut on kutsuttu yhdistämään ${ BRAND_NAME }-tilisi tähän ryhmätilaukseen ja nauttimaan kaikista ${ BRAND_NAME_TWO }in premium-ominaisuuksista yhdessä."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Tililläsi on enemmän sähköpostiosoitteita kuin mitä sinulla on käytettävissäsi tässä tilauksessa. ${ addressSettingsLink }"
@@ -7114,11 +7105,6 @@
         "(avaa ${ PASS_APP_NAME }in)"
       ]
     },
-    "Security Center - Action": {
-      "View logs": [
-        "Näytä lokitiedot"
-      ]
-    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Tietojasi on saattanut vuotaa palvelusta ${ name } sekä ${ remainingCount } muusta lähteestä. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
@@ -8098,6 +8084,9 @@
       "Cannot add more addresses": [
         "Enempää osoitteita ei voida lisätä"
       ],
+      "Cannot load link": [
+        "Linkin lataus epäonnistui"
+      ],
       "Card verification": [
         "Kortin vahvistus"
       ],
@@ -8442,6 +8431,12 @@
       ],
       "Summary": [
         "Yhteenveto"
+      ],
+      "The link either does not exist or has expired": [
+        "Linkkiä ei ole olemassa tai se on vanhentunut"
+      ],
+      "The link expired": [
+        "Linkki on erääntynyt"
       ],
       "Unlock contacts groups": [
         "Avaa yhteystietoryhmät"
