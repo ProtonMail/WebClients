@@ -106,12 +106,6 @@
       "Choose my own password": [
         "選擇我自己的密碼"
       ],
-      "Clear filter": [
-        "清除篩選器"
-      ],
-      "Clear filters": [
-        "清除篩選條件"
-      ],
       "Close": [
         "關閉"
       ],
@@ -276,6 +270,9 @@
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "探索研究其它 ${ BRAND_NAME } 方案"
+      ],
+      "Export": [
+        "匯出"
       ],
       "Extend": [
         "延展"
@@ -474,6 +471,9 @@
       ],
       "Resend code": [
         "重新傳送驗證碼"
+      ],
+      "Reset": [
+        "重設"
       ],
       "Reset credentials": [
         "重設認證"
@@ -2692,14 +2692,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } 群組"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "有自訂網域的帳號無法加入群組方案。"
-      ],
       "customer support": [
         "客服"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "群組方案目前不支援外部帳號。請在加入前創建 ${ BRAND_NAME } 地址。${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "若您接受邀請，我們會將您從目前的方案轉出，並將所有剩餘金額存入的您的帳號。"
@@ -2710,17 +2704,11 @@
       "Invited by: ${ inviteEmail }": [
         "邀請人：${ inviteEmail }"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "終身帳號無法加入群組方案。"
-      ],
       "Manage addresses.": [
         "管理電子郵件位址。"
       ],
       "Manage user accounts": [
         "管理使用者帳號"
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "有成員的方案的擁有者無法加入其他群組方案。"
       ],
       "Pending": [
         "佇候中"
@@ -2752,17 +2740,11 @@
       "You have successfully joined the family group": [
         "您已成功加入家庭群組"
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "您有未付款發票。請在加入群組方案前繳付。"
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "您需要先架構自訂網域，才能加入多位使用者。"
       ],
       "You need to configure a custom domain before creating a new user.": [
         "你必須先設定自訂網域，才可以創建新的使用者"
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "我們邀請您將您的 ${ BRAND_NAME } 帳號連結至此群組方案，並一起享受所有 ${ BRAND_NAME_TWO } 進階功能。"
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "您帳號中的電子郵件位址多於此方案中可用的電子郵件位址。${ addressSettingsLink }"
@@ -3414,9 +3396,6 @@
       "Affected user is on row": [
         "受影響的使用者"
       ],
-      "All Events ": [
-        "所有事件 "
-      ],
       "All members have been added.": [
         "全部成員已添加"
       ],
@@ -3491,15 +3470,6 @@
       ],
       "Billing cycle: ${ text }": [
         "繳款單週期：${ text }"
-      ],
-      "Breach Custom Email Created": [
-        "外洩自訂電子郵件已創建"
-      ],
-      "Breach Custom Email Deleted": [
-        "外洩自訂電子郵件已刪除"
-      ],
-      "Breach Custom Email Validated": [
-        "外洩自訂電子郵件已驗證"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "一旦降級至免費方案，您將永久失去這些優惠，即便您日後再次升級也是如此。"
@@ -3858,16 +3828,7 @@
       "Internet connection restored.": [
         "網際網路連線已恢復。"
       ],
-      "Invite Accepted": [
-        "已接受邀請"
-      ],
-      "Invite Created": [
-        "邀請已建立"
-      ],
       "Invite deleted": [
-        "邀請已刪除"
-      ],
-      "Invite Deleted": [
         "邀請已刪除"
       ],
       "Invite for new user deleted": [
@@ -3882,32 +3843,17 @@
       "Invite rejected": [
         "邀請已婉拒"
       ],
-      "Invite Rejected": [
-        "邀請已拒絕"
-      ],
-      "Item Autofilled": [
-        "項目自動填滿"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "項目已於${ vaultLink }自動填入"
       ],
       "Item autofilled in vault": [
         "項目自動填滿保管庫項目"
       ],
-      "Item Changed Flags": [
-        "項目已變更標籤"
-      ],
-      "Item Created": [
-        "項目已新增"
-      ],
       "Item created in ${ vaultLink }": [
         "已於保管庫創建${ vaultLink }"
       ],
       "Item created in vault": [
         "於保管庫項目以創建"
-      ],
-      "Item Deleted": [
-        "項目已刪除"
       ],
       "Item deleted from ${ vaultLink }": [
         "項目已從保管庫刪除${ vaultLink }"
@@ -3933,23 +3879,11 @@
       "Item in vault untrashed": [
         "於保管庫的項目取消刪除"
       ],
-      "Item Read": [
-        "項目已讀"
-      ],
       "Item read in ${ vaultLink }": [
         "已於${ vaultLink }閱讀"
       ],
       "Item read in vault": [
         "於保管庫項目閱讀"
-      ],
-      "Item Trashed": [
-        "項目已刪除"
-      ],
-      "Item Untrashed": [
-        "項目已取消刪除"
-      ],
-      "Item Updated": [
-        "物品已更新"
       ],
       "Item updated in ${ vaultLink }": [
         "已於保管庫更新${ vaultLink }"
@@ -4043,12 +3977,6 @@
       ],
       "Must start with a letter.": [
         "必須以字母開頭。"
-      ],
-      "New User Invite Created": [
-        "新使用者已創建"
-      ],
-      "New User Invite Deleted": [
-        "新使用者已刪除"
       ],
       "New user invited to organization": [
         "新使用者已邀請至組織"
@@ -4281,26 +4209,11 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試"
       ],
-      "Session Ended": [
-        "作業階段已結束"
-      ],
-      "Session Started": [
-        "作業階段已開始"
-      ],
       "Session timed out": [
         "工作階段已逾時"
       ],
       "Setting up your organization": [
         "設定您的組織"
-      ],
-      "Share Created": [
-        "共享已創建"
-      ],
-      "Share Deleted": [
-        "共享已刪除"
-      ],
-      "Share Updated": [
-        "共享已更新"
       ],
       "Shared ${ vaultLink } deleted": [
         "共享${ vaultLink }刪除"
@@ -4563,22 +4476,13 @@
       "Vault created": [
         "保管庫已創建"
       ],
-      "Vault Created": [
-        "保管已庫創建"
-      ],
       "Vault deleted": [
-        "保管庫已刪除"
-      ],
-      "Vault Deleted": [
         "保管庫已刪除"
       ],
       "Vault shared with email": [
         "用電子郵件分享的保管庫"
       ],
       "Vault updated": [
-        "保管庫已更新"
-      ],
-      "Vault Updated": [
         "保管庫已更新"
       ],
       "Verification can take a few minutes.": [
@@ -5416,6 +5320,16 @@
     "label": {
       "Recovery phone number": [
         "復原手機號碼"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "寄件者"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "收件者"
       ]
     },
     "Label for adding a new custom domain": {
@@ -7112,9 +7026,6 @@
       ],
       "E.g., ": [
         "例如： "
-      ],
-      "Email or IP": [
-        "電子郵件或IP"
       ],
       "End date": [
         "結束日期"
@@ -8823,9 +8734,6 @@
       "Confirm phone number": [
         "確認手機號碼"
       ],
-      "Connection events": [
-        "連線行程"
-      ],
       "Connection monitor disabled": [
         "連線監控已關閉"
       ],
@@ -8987,9 +8895,6 @@
       ],
       "Error": [
         "錯誤"
-      ],
-      "Event": [
-        "行程"
       ],
       "Every member of the organization can access": [
         "團隊內的每個成員都能存取"
@@ -9242,9 +9147,6 @@
       ],
       "There are no groups": [
         "沒有小組"
-      ],
-      "Time": [
-        "時間"
       ],
       "TV sign in": [
         "電視登入"

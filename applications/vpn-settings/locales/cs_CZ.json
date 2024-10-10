@@ -112,12 +112,6 @@
       "Choose my own password": [
         "Zvolit si vlastní heslo"
       ],
-      "Clear filter": [
-        "Smazat filtr"
-      ],
-      "Clear filters": [
-        "Smazat filtry"
-      ],
       "Close": [
         "Zavřít"
       ],
@@ -282,6 +276,9 @@
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Další tarify ${ BRAND_NAME }"
+      ],
+      "Export": [
+        "Exportovat"
       ],
       "Extend": [
         "Rozšířit"
@@ -480,6 +477,9 @@
       ],
       "Resend code": [
         "Znovu odeslat kód"
+      ],
+      "Reset": [
+        "Resetovat"
       ],
       "Reset credentials": [
         "Resetovat pověření"
@@ -2777,14 +2777,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } skupiny"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Účty s vlastními doménami se nemohou připojit ke skupinovému tarifu."
-      ],
       "customer support": [
         "zákaznická podpora"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Skupinové tarify v současné době nepodporují externí účty. Před připojením si vytvořte adresu ${ BRAND_NAME }. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Pokud pozvánku přijmete, převedeme Vás ze stávajícího tarifu a na váš účet připíšeme zbývající částku."
@@ -2794,9 +2788,6 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Pozvánka od: ${ inviteEmail }"
-      ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Doživotní účty nemohou být připojeny ke skupinovému tarifu."
       ],
       "Manage addresses.": [
         "Spravovat adresy."
@@ -2809,9 +2800,6 @@
         "Během 6 měsíců je povoleno přijmout jen ${ n } pozvánky.",
         "Během 6 měsíců je povoleno přijmout jen ${ n } pozvánek.",
         "Během 6 měsíců je povoleno přijmout jen ${ n } pozvánek."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Vlastníci tarifu se členy, se nemohou připojit k jinému skupinovému tarifu."
       ],
       "Pending": [
         "Čekající"
@@ -2855,17 +2843,11 @@
       "You have successfully joined the family group": [
         "Úspěšně jste se připojili k rodinné skupině"
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Máte nezaplacené faktury. Před připojením ke skupinovému tarifu je prosím uhraďte."
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Před přidáním více uživatelů je třeba nakonfigurovat vlastní doménu."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Před vytvořením nového uživatele je třeba nakonfigurovat vlastní doménu."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Můžete propojit svůj účet ${ BRAND_NAME } s tímto skupinovým tarifem a společně využívat všechny prémiové funkce ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Váš účet má více e-mailových adres, než kolik je v tomto tarifu k dispozici. ${ addressSettingsLink }"
@@ -3618,9 +3600,6 @@
         "Dotčení uživatelé jsou na řádcích",
         "Dotčení uživatelé jsou na řádcích"
       ],
-      "All Events ": [
-        "Všechny události "
-      ],
       "All members have been added.": [
         "Všichni členové byli přidáni"
       ],
@@ -3707,15 +3686,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Fakturační cyklus: ${ text }"
-      ],
-      "Breach Custom Email Created": [
-        "Vlastní e-mail pro úniky přidán"
-      ],
-      "Breach Custom Email Deleted": [
-        "Vlastní e-mail pro úniky smazán"
-      ],
-      "Breach Custom Email Validated": [
-        "Vlastní e-mail pro úniky ověřen"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Pokud svůj aktuální tarif snížíte na bezplatnou verzi, navždy ztratíte současné výhody, i když v budoucnu svůj účet znovu povýšíte."
@@ -4101,16 +4071,7 @@
       "Internet connection restored.": [
         "Připojení k internetu obnoveno."
       ],
-      "Invite Accepted": [
-        "Pozvánka přijata"
-      ],
-      "Invite Created": [
-        "Pozvánka vytvořena"
-      ],
       "Invite deleted": [
-        "Pozvánka smazána"
-      ],
-      "Invite Deleted": [
         "Pozvánka smazána"
       ],
       "Invite for new user deleted": [
@@ -4125,32 +4086,17 @@
       "Invite rejected": [
         "Pozvánka odmítnuta"
       ],
-      "Invite Rejected": [
-        "Pozvánka odmítnuta"
-      ],
-      "Item Autofilled": [
-        "Položka automaticky vyplněna"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "Položka automaticky vyplněna v ${ vaultLink }"
       ],
       "Item autofilled in vault": [
         "Položka automaticky vyplněna v trezoru"
       ],
-      "Item Changed Flags": [
-        "Změněné příznaky položky"
-      ],
-      "Item Created": [
-        "Položka vytvořena"
-      ],
       "Item created in ${ vaultLink }": [
         "Položka vytvořena v ${ vaultLink }"
       ],
       "Item created in vault": [
         "Položka v trezoru vytvořena"
-      ],
-      "Item Deleted": [
-        "Položka odstraněna"
       ],
       "Item deleted from ${ vaultLink }": [
         "Položka smazána z ${ vaultLink }"
@@ -4176,23 +4122,11 @@
       "Item in vault untrashed": [
         "Položka v trezoru přesunuta z koše"
       ],
-      "Item Read": [
-        "Položka přečtena"
-      ],
       "Item read in ${ vaultLink }": [
         "Položka přečtena v ${ vaultLink }"
       ],
       "Item read in vault": [
         "Položka v trezoru přečtena"
-      ],
-      "Item Trashed": [
-        "Položka přesunuta do koše"
-      ],
-      "Item Untrashed": [
-        "Položka přesunuta z koše"
-      ],
-      "Item Updated": [
-        "Položka aktualizována"
       ],
       "Item updated in ${ vaultLink }": [
         "Položka aktualizována v ${ vaultLink }"
@@ -4292,12 +4226,6 @@
       ],
       "Must start with a letter.": [
         "Musí začínat písmenem."
-      ],
-      "New User Invite Created": [
-        "Nová uživatelská pozvánka vytvořena"
-      ],
-      "New User Invite Deleted": [
-        "Nová uživatelská pozvánka smazána"
       ],
       "New user invited to organization": [
         "Nový uživatel byl pozván do organizace"
@@ -4545,29 +4473,11 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery jsou nedostupné. Zkuste to prosím znovu za několik minut"
       ],
-      "Session Ended": [
-        "Relace ukončena"
-      ],
-      "Session Roaming": [
-        "Roaming relace"
-      ],
-      "Session Started": [
-        "Relace vytvořena"
-      ],
       "Session timed out": [
         "Relace vypršela"
       ],
       "Setting up your organization": [
         "Nastavení vaší organizace"
-      ],
-      "Share Created": [
-        "Sdílení vytvořeno"
-      ],
-      "Share Deleted": [
-        "Sdílení smazáno"
-      ],
-      "Share Updated": [
-        "Sdílení aktualizováno"
       ],
       "Shared ${ vaultLink } deleted": [
         "Sdílený ${ vaultLink } smazán"
@@ -4878,22 +4788,13 @@
       "Vault created": [
         "Trezor vytvořen"
       ],
-      "Vault Created": [
-        "Trezor vytvořen"
-      ],
       "Vault deleted": [
-        "Trezor smazán"
-      ],
-      "Vault Deleted": [
         "Trezor smazán"
       ],
       "Vault shared with email": [
         "Trezor sdílený e-mailem"
       ],
       "Vault updated": [
-        "Trezor aktualizován"
-      ],
-      "Vault Updated": [
         "Trezor aktualizován"
       ],
       "Verification can take a few minutes.": [
@@ -5805,6 +5706,16 @@
     "label": {
       "Recovery phone number": [
         "Telefonní číslo pro obnovení"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Od"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Do"
       ]
     },
     "Label for adding a new custom domain": {
@@ -7808,9 +7719,6 @@
       ],
       "E.g., ": [
         "Např., "
-      ],
-      "Email or IP": [
-        "E-mail nebo IP"
       ],
       "End date": [
         "Datum ukončení"
@@ -9861,6 +9769,9 @@
       "Change second password": [
         "Změnit druhé heslo"
       ],
+      "Click a value in the table to use it as filter": [
+        "Kliknutím na hodnotu v tabulce ji použijete jako filtr."
+      ],
       "Close": [
         "Zavřít"
       ],
@@ -9878,9 +9789,6 @@
       ],
       "Confirm phone number": [
         "Potvrzení telefonního čísla"
-      ],
-      "Connection events": [
-        "Události připojení"
       ],
       "Connection monitor disabled": [
         "Monitor připojení je deaktivován"
@@ -10049,9 +9957,6 @@
       ],
       "Error": [
         "Chyba"
-      ],
-      "Event": [
-        "Událost"
       ],
       "Every member of the organization can access": [
         "Každý člen organizace má přístup k"
@@ -10310,9 +10215,6 @@
       ],
       "There are no groups": [
         "Nejsou zde žádné skupiny"
-      ],
-      "Time": [
-        "Čas"
       ],
       "TV sign in": [
         "TV přihlášení"
