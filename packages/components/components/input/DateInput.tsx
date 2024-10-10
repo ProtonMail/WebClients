@@ -11,7 +11,7 @@ import usePopperAnchor from '@proton/components/components/popper/usePopperAncho
 import { dateLocale } from '@proton/shared/lib/i18n';
 import generateUID from '@proton/utils/generateUID';
 
-import { useHotkeys } from '../../hooks';
+import { useHotkeys } from '../../hooks/useHotkeys';
 import type { Props as InputProps } from './Input';
 import Input from './Input';
 

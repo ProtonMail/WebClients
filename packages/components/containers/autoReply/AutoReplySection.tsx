@@ -31,7 +31,8 @@ import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
 
-import { useHotkeys, useNotifications } from '../../hooks';
+import { useNotifications } from '../../hooks';
+import { useHotkeys } from '../../hooks/useHotkeys';
 import UpgradeBanner from '../account/UpgradeBanner';
 import AutoReplyFormDaily from './AutoReplyForm/AutoReplyFormDaily';
 import AutoReplyFormFixed from './AutoReplyForm/AutoReplyFormFixed';

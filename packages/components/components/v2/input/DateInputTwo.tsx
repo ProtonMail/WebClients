@@ -13,7 +13,7 @@ import usePopperAnchor from '@proton/components/components/popper/usePopperAncho
 import { dateLocale } from '@proton/shared/lib/i18n';
 import generateUID from '@proton/utils/generateUID';
 
-import { useHotkeys } from '../../../hooks';
+import { useHotkeys } from '../../../hooks/useHotkeys';
 
 const toFormatted = (value: Date, locale: Locale) => {
     return format(value, 'PP', { locale });

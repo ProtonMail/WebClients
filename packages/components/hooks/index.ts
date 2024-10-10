@@ -2,8 +2,6 @@ export { default as useFeature } from './useFeature';
 export { default as useFeatures } from './useFeatures';
 export { default as useGetEncryptionPreferences } from './useGetEncryptionPreferences';
 export { default as useHandler, useEventListener, useSubscribeEventManager, useInterval } from './useHandler';
-export { default as useHasSuspendedCounter } from './useHasSuspendedCounter';
-export * from './useHotkeys';
 export { default as useLocalState } from './useLocalState';
 export { default as useMainArea, MainAreaContext } from './useMainArea';
 export * from './useMember';
