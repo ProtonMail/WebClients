@@ -75,7 +75,9 @@ const PendingInvitationModal = ({ invite, ...modalProps }: Props) => {
             <ModalTwoContent>
                 <div className="bg-weak p-3 rounded flex gap-2 mb-4">
                     <div>{c('familyOffer_2023:Family plan').jt`Invited by: ${inviteEmail}`}</div>
-                    <div>{c('familyOffer_2023:Family plan').jt`Storage assigned to you: ${assignedStorage}`}</div>
+                    {invite.OrganizationPlanName !== PLANS.PASS_FAMILY && (
+                        <div>{c('familyOffer_2023:Family plan').jt`Storage assigned to you: ${assignedStorage}`}</div>
+                    )}
                 </div>
                 {hasErrors ? (
                     <PendingInvitationModalErrors
