@@ -468,6 +468,9 @@
       "Continue": [
         "Continuar"
       ],
+      "Continue with ${ providerName }": [
+        "Continuar con ${ providerName }"
+      ],
       "Credit card": [
         "Tarjeta de crédito"
       ],
@@ -2019,6 +2022,9 @@
       ],
       "Not now": [
         "Ahora no"
+      ],
+      "You are now leaving ${ WALLET_APP_NAME } for ${ providerName } (${ websiteLink }). Services related to card payments, bank transfers, and any other fiat transactions are provided by ${ providerName }, a separate third-party platform. By proceeding and procuring services from ${ providerName }, you acknowledge that you have read and agreed to ${ providerName }'s Terms of Service (${ termOfUseLink }) and Privacy and Cookies Policy (${ privacyAndCookiesPolicyLink }). For any questions related to ${ providerName }'s services, please contact ${ providerName } at ${ supportEmailLink }": [
+        "Estás abandonando ${ WALLET_APP_NAME } para ir a ${ providerName } (${ websiteLink }). Los servicios relacionados con pagos con tarjetas, transferencias bancarias y cualquier otra transacción fiduciaria son proporcionados por ${ providerName } , una plataforma de terceros. Al continuar y adquirir los servicios de ${ providerName }, reconoces que has leído y aceptado los Términos de servicio de ${ providerName } (${ termOfUseLink }) y la Política de privacidad y cookies (${ privacyAndCookiesPolicyLink }). Si tienes alguna pregunta relacionada con los servicios de ${ providerName }, ponte en contacto con ${ providerName } en ${ supportEmailLink }"
       ]
     },
     "Group": {
@@ -3011,6 +3017,9 @@
       "Secure Core servers": [
         "Servidores Secure Core"
       ],
+      "Secure link sharing": [
+        "Uso compartido seguro de enlaces"
+      ],
       "See team's availability": [
         "Mostrar la disponibilidad del equipo"
       ],
@@ -3114,6 +3123,16 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } administrador",
+        "${ admins } administradores"
+      ],
+      "${ users } user": [
+        "${ users } usuario",
+        "${ users } usuarios"
       ]
     },
     "new_plans: heading": {
@@ -3376,6 +3395,9 @@
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Asegura tus archivos con almacenamiento en la nube cifrado. Incluye sincronización automática, intercambio de archivos cifrado y más."
       ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Comparte elementos aislados de forma segura con cualquiera (aunque no use ${ PASS_APP_NAME })"
+      ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Guarda a buen recaudo los datos de tus contactos (teléfono, dirección, cumpleaños y notas personales). El cifrado de acceso cero garantiza que ni ${ BRAND_NAME } pueda acceder a ellos."
       ],
@@ -3507,6 +3529,12 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Intercambio seguro de caja fuerte (${ n } caja fuerte) e intercambio de enlaces",
         "Intercambio seguro de caja fuerte (${ n } cajas fuertes) e intercambio de enlaces"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } cuenta de usuario",
+        "${ n } cuentas de usuario"
       ]
     },
     "passwordless": {
@@ -5250,6 +5278,9 @@
       ],
       "View more": [
         "Ver más"
+      ],
+      "We are currently experiencing difficulties in calculating network fees. Please try again later. If issue persists, contact our support team for assistance.": [
+        "Estamos presentando dificultades para calcular las tarifas de red. Intenta de nuevo más tarde. Si el problema persiste, contacta con nuestro equipo de soporte."
       ],
       "You received": [
         "Has recibido"
