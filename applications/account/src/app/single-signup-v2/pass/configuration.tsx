@@ -393,7 +393,8 @@ export const getPassConfiguration = ({
             audience === Audience.B2B
                 ? getPassB2BBenefits(isPaidPass)
                 : getPassBenefits(plan?.Name as PLANS, isPaidPass);
-        const benefitTitle = (plan?.Name as PLANS) === PLANS.PASS_FAMILY ? `${PASS_APP_NAME} Family` : PASS_APP_NAME;
+        const benefitTitle =
+            (plan?.Name as PLANS) === PLANS.PASS_FAMILY ? `${PASS_SHORT_APP_NAME} Family` : PASS_APP_NAME;
         return (
             benefitItems && (
                 <div>
