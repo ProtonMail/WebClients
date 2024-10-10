@@ -1,6 +1,6 @@
-import { isURLProtonInternal } from '@proton/shared/lib/helpers/url';
+import { isSubDomain, isURLProtonInternal } from '@proton/shared/lib/helpers/url';
 
-import { getHostname, isExternal, isMailTo, isSubDomain, punycodeUrl } from './url';
+import { getHostname, isExternal, isMailTo, punycodeUrl } from './url';
 
 const windowHostname = 'mail.proton.me';
 
