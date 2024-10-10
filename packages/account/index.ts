@@ -37,6 +37,7 @@ export * from './persist/listener';
 export * from './groups';
 export * from './groupMembers';
 export * from './groupMemberships';
+export * from './groupMemberships/listener';
 export * from './initialModelState';
 export * from './paymentMethods';
 export * from './paymentStatus';
