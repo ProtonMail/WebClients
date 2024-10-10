@@ -831,6 +831,8 @@ export { default as WireGuardConfigurationSection } from './containers/vpn/WireG
 export { getAppVersion } from './helpers/appVersion';
 export { getCustomSizingClasses } from './helpers/getCustomSizingClasses';
 export { getObjectKeys } from './helpers/getObjectKeys';
+export { default as useIsSecurityCheckupAvailable } from './hooks/securityCheckup/useIsSecurityCheckupAvailable';
+export { default as useSecurityCheckup } from './hooks/securityCheckup/useSecurityCheckup';
 export { default as useActiveBreakpoint } from './hooks/useActiveBreakpoint';
 export type { Breakpoints } from './hooks/useActiveBreakpoint';
 export { default as useAddressFlags } from './hooks/useAddressFlags';
