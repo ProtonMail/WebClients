@@ -70,11 +70,11 @@
       "Accept": [
         "Sprejmi"
       ],
-      "activate": [
-        "aktiviraj"
-      ],
       "Activate": [
         "Aktiviraj"
+      ],
+      "activate": [
+        "aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -219,12 +219,6 @@
       ],
       "Clear all formatting": [
         "Odstrani oblikovanje"
-      ],
-      "Clear filter": [
-        "Počisti filter"
-      ],
-      "Clear filters": [
-        "Počisti filtre"
       ],
       "Close": [
         "Zapri"
@@ -855,6 +849,9 @@
       ],
       "Resend code": [
         "Znova pošlji kodo"
+      ],
+      "Reset": [
+        "Ponastavi"
       ],
       "Reset credentials": [
         "Ponastavite poverilnice"
@@ -5080,9 +5077,6 @@
         "V 6-mesečnem obdobju je dovoljenih samo ${ n } sprejetih povabil.",
         "V 6-mesečnem obdobju je dovoljenih samo ${ n } sprejetih povabil."
       ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Lastniki paketa s člani se ne morejo pridružiti drugemu skupinskemu paketu."
-      ],
       "Pending": [
         "V teku"
       ],
@@ -5128,17 +5122,11 @@
       "You have successfully joined the family group": [
         "Uspešno ste se pridružili družinski skupini"
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Imate neplačane račune. Plačajte jih, preden se boste pridružili skupinskemu paketu."
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Pred dodajanjem več uporabnikov morate nastaviti domeno po meri."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Pred ustvarjanjem novega uporabnika morate nastaviti domeno po meri."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Povabljeni ste, da povežete svoj ${ BRAND_NAME } račun s skupinskim paketom in skupaj uživate vse premijske funkcije ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Vaš račun ima več naslovov e-pošte, ko jih je na voljo za ta paket. ${ addressSettingsLink }"
@@ -6636,9 +6624,6 @@
         "Vse (${ totalFoldersCount } oznake)",
         "Vse (${ totalFoldersCount } oznak)"
       ],
-      "All Events ": [
-        "Vsi dogodki "
-      ],
       "All keys successfully reactivated": [
         "Vsi ključi so uspešno ponovno aktivirani."
       ],
@@ -6815,9 +6800,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Okrepite prepoznavnost blagovne znamke vaše organizacije in ustvarite doslednejšo spletno izkušnjo za svoje uporabnike."
-      ],
-      "Breach Custom Email Created": [
-        "Ustvarjena e-pošta po meri za kršitev"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "S prehodom na brezplačni paket boste trajno izgubili te ugodnosti, tudi če v prihodnosti znova nadgradite."
@@ -8357,9 +8339,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Nadgradite in dobite premijske funkcije, izdelke in shrambo po posebni ceni"
-      ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Nadgradite na paket ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, paket ${ PLAN_NAMES[PLANS.FAMILY] } ali paket ${ PLAN_NAMES[bundleProPlan] }, da pridobite dostop do ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Nadgradite, da boste lahko svojemu računu dodali krajši naslov @pm.me, ki je enostavnejši za deljenje. Gre za kratico za \"Pošlji mi ${ MAIL_APP_NAME }\" ali \"Zasebno sporočilo\"."
@@ -10268,6 +10247,16 @@
       ],
       "Recovery phrase": [
         "Obnovitvena fraza"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Od"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Do"
       ]
     },
     "Label for adding a new custom domain": {
@@ -13202,9 +13191,6 @@
       "Email address": [
         "E-poštni naslov"
       ],
-      "Email or IP": [
-        "E-pošta ali IP"
-      ],
       "End date": [
         "Končni datum"
       ],
@@ -15484,9 +15470,6 @@
       "Status": [
         "Stanje"
       ],
-      "Time": [
-        "Čas"
-      ],
       "Total storage": [
         "Vsa shramba"
       ],
@@ -16037,9 +16020,6 @@
       "Error": [
         "Napaka"
       ],
-      "Event": [
-        "Dogodek"
-      ],
       "Every member of the organization can access": [
         "Vsak član organizacije ima dostop"
       ],
@@ -16561,9 +16541,6 @@
       ],
       "This field cannot contain only spaces": [
         "To polje ne sme biti izpolnjeno le s presledki"
-      ],
-      "Time": [
-        "Čas"
       ],
       "Time zone": [
         "Časovni pas"

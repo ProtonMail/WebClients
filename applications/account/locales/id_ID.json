@@ -70,11 +70,11 @@
       "Accept": [
         "Terima"
       ],
-      "activate": [
-        "aktifkan"
-      ],
       "Activate": [
         "Aktifkan"
+      ],
+      "activate": [
+        "aktifkan"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktifkan ${ user.Name }@pm.me"
@@ -225,12 +225,6 @@
       ],
       "Clear all formatting": [
         "Hapus seluruh format"
-      ],
-      "Clear filter": [
-        "Hapus filter"
-      ],
-      "Clear filters": [
-        "Hapus filter"
       ],
       "Close": [
         "Tutup"
@@ -867,6 +861,9 @@
       ],
       "Resend code": [
         "Kirim ulang kode"
+      ],
+      "Reset": [
+        "Atur ulang"
       ],
       "Reset credentials": [
         "Atur ulang kredensial"
@@ -3374,8 +3371,17 @@
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Hapus pesan spam dan sampah secara otomatis dan buka lebih banyak fitur premium saat Anda meningkatkan."
       ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Hapus email di Sampah dan Spam lebih dari 30 hari yang lalu."
+      ],
+      "Available with ${ BRAND_NAME } Mail plus": [
+        "Tersedia dengan ${ BRAND_NAME } Mail Plus"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Selamat! Anda telah memperoleh langganan ${ plusPlanName } gratis selama ${ rewardsLimit } bulan."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Buat label atau folder sebanyak yang Anda butuh demi menjaga kotak masuk Anda tetap rapi."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Aktifkan ${ PROTON_SENTINEL_NAME } untuk mengakses berbagai fitur berikut"
@@ -3398,6 +3404,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sepertinya daftar kontak yang Anda impor mengandung beberapa grup. Mohon periksa bagaimana grup ini diimpor."
       ],
+      "Keep different parts of your life separate and your inbox organized with additional addresses.": [
+        "Pisahkan aspek kehidupan Anda dan rapikan kotak masuk Anda dengan alamat tambahan."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Pisahkan berbagai aspek kehidupan Anda dengan alamat emailnya masing-masing dan dapatkan lebih banyak fitur premium pada saat Anda meningkatkan akun."
       ],
@@ -3409,6 +3418,9 @@
       ],
       "Track the status and activity of your referrals.": [
         "Lacak status dan aktivitas rujukan Anda."
+      ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Dapatkan ${ activatePmUser } untuk alamat email yang menarik dan mudah ditulis"
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Dapatkan alamat email yang lebih pendek dan berbagai fitur premium lainnya dengan meningkatkan akun."
@@ -5140,14 +5152,8 @@
       "*Only one free trial per user. Regular pricing applies thereafter.": [
         "*Terbatas hanya pada satu uji coba gratis per pengguna. Harga normal berlaku setelahnya."
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Akun dengan domain khusus tidak dapat bergabung ke paket grup."
-      ],
       "customer support": [
         "layanan dukungan"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Paket grup saat ini tidak mendukung akun eksternal. Buat alamat ${ BRAND_NAME } sebelum bergabung. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jika Anda menerima undangan, kami akan mengalihkan Anda dari paket saat ini dan mengkredit akun Anda dengan sisa saldo."
@@ -5167,9 +5173,6 @@
       "Leave Visionary plan": [
         "Keluar dari paket Visionary"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Akun Lifetime tidak dapat bergabung dalam paket grup."
-      ],
       "Manage addresses.": [
         "Kelola alamat."
       ],
@@ -5178,9 +5181,6 @@
       ],
       "Only ${ n } accepted invitation are allowed in a 6-month period.": [
         "Hanya ${ n } undangan yang diterima yang diizinkan dalam kurun waktu 6 bulan."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Pemilik paket dengan anggota tidak dapat bergabung ke paket grup lain."
       ],
       "Pending": [
         "Ditunda"
@@ -5224,9 +5224,6 @@
       "You have successfully joined the family group": [
         "Anda telah berhasil bergabung ke grup keluarga ini"
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Anda memiliki faktur yang belum dibayar. Silakan dibayar sebelum bergabung dalam paket grup."
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Anda harus mengatur domain khusus sebelum menambahkan lebih dari satu pengguna."
       ],
@@ -5235,9 +5232,6 @@
       ],
       "You will lose access to all premium features and storage space included with ${ plan }.": [
         "Anda akan kehilangan akses ke seluruh fitur premium dan ruang penyimpanan yang terliput dalam ${ plan }."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Anda diundang untuk mengaitkan Akun ${ BRAND_NAME } Anda ke paket grup ini dan menikmati semua fitur premium ${ BRAND_NAME_TWO } bersama."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Akun Anda memiliki alamat email lebih banyak dari yang tersedia kepada Anda dalam paket ini. ${ addressSettingsLink }"
@@ -6656,9 +6650,6 @@
       "All (${ totalFoldersCount } label)": [
         "Semua (${ totalFoldersCount } label)"
       ],
-      "All Events ": [
-        "Semua Acara "
-      ],
       "All keys successfully reactivated": [
         "Seluruh kunci berhasil diaktifkan ulang"
       ],
@@ -6838,15 +6829,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Angkat identitas merek organisasi Anda dan ciptakan pengalaman online yang lebih konsisten bagi para pengguna Anda."
-      ],
-      "Breach Custom Email Created": [
-        "Email Khusus Kebocoran Dibuat"
-      ],
-      "Breach Custom Email Deleted": [
-        "Email Khusus Kebocoran Dihapus"
-      ],
-      "Breach Custom Email Validated": [
-        "Email Khusus Kebocoran Divalidasi"
       ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Secara bawaan, anggota organisasi hanya dapat mengekspor brankas yang mereka miliki. Apabila opsi ini diaktifkan, mereka tidak akan dapat mengekspor data apa pun"
@@ -7442,17 +7424,8 @@
       "Invitation link used": [
         "Tautan undangan digunakan"
       ],
-      "Invite Accepted": [
-        "Undangan Diterima"
-      ],
-      "Invite Created": [
-        "Undangan Dibuat"
-      ],
       "Invite deleted": [
         "Undangan dihapus"
-      ],
-      "Invite Deleted": [
-        "Undangan Dihapus"
       ],
       "Invite for new user deleted": [
         "Undangan untuk pengguna baru dihapus"
@@ -7466,17 +7439,11 @@
       "Invite rejected": [
         "Undangan ditolak"
       ],
-      "Invite Rejected": [
-        "Undangan Ditolak"
-      ],
       "Invite successfully sent": [
         "Undangan berhasil dikirim"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Sepertinya sebagian data Anda terenkripsi dan terkunci."
-      ],
-      "Item Autofilled": [
-        "Item Diisi Otomatis"
       ],
       "Item autofilled in ${ vaultLink }": [
         "Item diisi otomatis dalam ${ vaultLink }"
@@ -7484,20 +7451,11 @@
       "Item autofilled in vault": [
         "Item diisi secara otomatis dalam brankas"
       ],
-      "Item Changed Flags": [
-        "Bendera Item Diubah"
-      ],
-      "Item Created": [
-        "Item Dibuat"
-      ],
       "Item created in ${ vaultLink }": [
         "Item dibuat dalam ${ vaultLink }"
       ],
       "Item created in vault": [
         "Item dibuat dalam brankas"
-      ],
-      "Item Deleted": [
-        "Item Dihapus"
       ],
       "Item deleted from ${ vaultLink }": [
         "Item dihapus dari ${ vaultLink }"
@@ -7523,23 +7481,11 @@
       "Item in vault untrashed": [
         "Item dalam brankas dipulihkan dari sampah"
       ],
-      "Item Read": [
-        "Item Dibaca"
-      ],
       "Item read in ${ vaultLink }": [
         "Item telah dibaca di ${ vaultLink }"
       ],
       "Item read in vault": [
         "Item dibaca dalam brankas"
-      ],
-      "Item Trashed": [
-        "Item di Sampah"
-      ],
-      "Item Untrashed": [
-        "Item Dipulihkan dari Sampah"
-      ],
-      "Item Updated": [
-        "Item Diperbarui"
       ],
       "Item updated in ${ vaultLink }": [
         "Item diperbarui dalam ${ vaultLink }"
@@ -7708,12 +7654,6 @@
       ],
       "New": [
         "Baru"
-      ],
-      "New User Invite Created": [
-        "Undangan Pengguna Baru Dibuat"
-      ],
-      "New User Invite Deleted": [
-        "Undangan Pengguna Baru Dihapus"
       ],
       "New user invited to organization": [
         "Pengguna baru diundang ke organisasi"
@@ -8108,15 +8048,6 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
       ],
-      "Session Ended": [
-        "Sesi Diakhiri"
-      ],
-      "Session Roaming": [
-        "Sesi dalam Proses Roaming"
-      ],
-      "Session Started": [
-        "Sesi Dimulai"
-      ],
       "Session timed out": [
         "Masa berlaku sesi telah berakhir"
       ],
@@ -8131,15 +8062,6 @@
       ],
       "Settings updated": [
         "Pengaturan diperbarui"
-      ],
-      "Share Created": [
-        "Pembagian Dibuat"
-      ],
-      "Share Deleted": [
-        "Pembagian Dihapus"
-      ],
-      "Share Updated": [
-        "Pembagian Diperbarui"
       ],
       "Shared ${ vaultLink } deleted": [
         "${ vaultLink } terbagi telah dihapus"
@@ -8591,9 +8513,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Tingkatkan sekarang untuk memperoleh berbagai fitur, produk, dan ruang penyimpanan berkapasitas premium dengan harga khusus"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Tingkatkan ke paket ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, atau ${ PLAN_NAMES[bundleProPlan] } untuk memperoleh akses ke ${ PROTON_SENTINEL_NAME }."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Tingkatkan akun Anda untuk menggunakan alamat @pm.me yang lebih pendek dan lebih mudah untuk dibagikan. Alamat ini merupakan kependekan dari “${ MAIL_APP_NAME } me” atau \"Private Message me\"."
       ],
@@ -8645,14 +8564,8 @@
       "Vault created": [
         "Brankas dibuat"
       ],
-      "Vault Created": [
-        "Brankas Dibuat"
-      ],
       "Vault deleted": [
         "Brankas dihapus"
-      ],
-      "Vault Deleted": [
-        "Brankas Dihapus"
       ],
       "Vault either deleted or requires access permissions": [
         "Brankas telah dihapus atau memerlukan izin akses"
@@ -8662,9 +8575,6 @@
       ],
       "Vault updated": [
         "Brankas diperbarui"
-      ],
-      "Vault Updated": [
-        "Brankas Diperbarui"
       ],
       "Verification can take a few minutes.": [
         "Proses verifikasi dapat memakan waktu hingga beberapa menit."
@@ -8860,6 +8770,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Anda akan membuka tab browser baru dan mengunjungi:"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Anda akan membuka browser bawaan Anda dan mengunjungi:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Anda sedang masuk sebagai ${ user.Name } (${ user.Email })."
@@ -10561,6 +10474,16 @@
         "Frasa pemulihan"
       ]
     },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Dari"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Kepada"
+      ]
+    },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Tambahkan domain yang Anda miliki ke akun ${ MAIL_APP_NAME } Anda."
@@ -11432,11 +11355,17 @@
       "Get started for ${ price }": [
         "Mulai dengan harga ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Mulai dari ${ priceMailPlus }"
+      ],
       "Upgrade": [
         "Tingkatkan"
       ],
       "Upgrade now": [
         "Tingkatkan sekarang"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -12111,6 +12040,9 @@
       ],
       "Get Mail Plus for ${ price }": [
         "Dapatkan Mail Plus dengan harga ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Mulai dari ${ price }"
       ],
       "Your account's usage": [
         "Penggunaan akun Anda"
@@ -13576,9 +13508,6 @@
       "Email address": [
         "Alamat email"
       ],
-      "Email or IP": [
-        "Email atau IP"
-      ],
       "End date": [
         "Tanggal berakhir"
       ],
@@ -14876,6 +14805,9 @@
       "/ month": [
         "/ bulan"
       ],
+      "/month": [
+        "/bulan"
+      ],
       "1 year": [
         "1 tahun"
       ],
@@ -16032,9 +15964,6 @@
       "Status": [
         "Status"
       ],
-      "Time": [
-        "Waktu"
-      ],
       "Total storage": [
         "Total ruang penyimpanan"
       ],
@@ -16327,9 +16256,6 @@
       "Connect ${ name }": [
         "Hubungkan ${ name }"
       ],
-      "Connection events": [
-        "Peristiwa koneksi"
-      ],
       "Connection monitor disabled": [
         "Pemantau koneksi dinonaktifkan"
       ],
@@ -16588,9 +16514,6 @@
       "Error": [
         "Kesalahan"
       ],
-      "Event": [
-        "Peristiwa"
-      ],
       "Every member of the organization can access": [
         "Dapat diakses oleh seluruh anggota organisasi"
       ],
@@ -16611,6 +16534,9 @@
       ],
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "${ failedUsers.length } akun pengguna gagal dibuat."
+      ],
+      "Filter for more focus": [
+        "Filter untuk fokus yang lebih"
       ],
       "Filter name cannot contain only spaces": [
         "Nama filter tidak boleh diisi hanya dengan spasi"
@@ -16789,6 +16715,9 @@
       "My calendars": [
         "Kalender saya"
       ],
+      "Need more labels or folders?": [
+        "Butuh lebih banyak label atau folder?"
+      ],
       "Network error": [
         "Kesalahan jaringan"
       ],
@@ -16800,6 +16729,9 @@
       ],
       "No account information was found in any data breaches": [
         "Tidak ada informasi akun yang ditemukan pada kebocoran data mana pun"
+      ],
+      "No need to empty the trash": [
+        "Tanpa perlu mengosongkan kotak sampah"
       ],
       "No recovery method": [
         "Tidak ada metode pemulihan"
@@ -16885,6 +16817,9 @@
       "QRCode": [
         "Kode QR"
       ],
+      "Ready, set, forward": [
+        "Siap, sedia, teruskan"
+      ],
       "Recommended": [
         "Direkomendasikan"
       ],
@@ -16950,6 +16885,9 @@
       ],
       "Revoke certificate": [
         "Cabut sertifikat"
+      ],
+      "Same inbox, shorter email address": [
+        "Kotak masuk yang sama, alamat email yang lebih pendek"
       ],
       "SAML authentication": [
         "Autentikasi SAML"
@@ -17109,9 +17047,6 @@
       ],
       "This field cannot contain only spaces": [
         "Kolom ini tidak boleh diisi hanya dengan spasi"
-      ],
-      "Time": [
-        "Waktu"
       ],
       "Time zone": [
         "Zona waktu"

@@ -70,11 +70,11 @@
       "Accept": [
         "Принять"
       ],
-      "activate": [
-        "включить"
-      ],
       "Activate": [
         "Активировать"
+      ],
+      "activate": [
+        "включить"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активировать ${ user.Name }@pm.me"
@@ -225,12 +225,6 @@
       ],
       "Clear all formatting": [
         "Удалить форматирование"
-      ],
-      "Clear filter": [
-        "Сбросить фильтр"
-      ],
-      "Clear filters": [
-        "Очистить фильтры"
       ],
       "Close": [
         "Закрыть"
@@ -867,6 +861,9 @@
       ],
       "Resend code": [
         "Повторно отправить код"
+      ],
+      "Reset": [
+        "Сбросить"
       ],
       "Reset credentials": [
         "Сбросить учётные данные"
@@ -3452,6 +3449,9 @@
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Выделите различные аспекты своей жизни с помощью нескольких адресов электронной почты и получите доступ к дополнительным функциям при обновлении тарифа."
       ],
+      "Set up auto-forwarding to redirect incoming emails to another email address.": [
+        "Настройте автопереадресацию, чтобы перенаправлять входящие электронные письма на другой адрес электронной почты."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Чтобы импортировать контакты из Google или Outlook, ${ easySwitchLink }."
       ],
@@ -3697,6 +3697,11 @@
       ],
       "Tailored made solutions for larger organizations with custom needs": [
         "Индивидуальные решения для крупных организаций с индивидуальными потребностями"
+      ]
+    },
+    "drive_signup_2024: TitleB2B": {
+      "The only business solution that is:": [
+        "Единственное решение для бизнеса:"
       ]
     },
     "driveplus2024: Deal details": {
@@ -5204,14 +5209,8 @@
       "${ BRAND_NAME } groups": [
         "Группы ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Аккаунты с пользовательским доменом не могут присоединиться к групповому плану."
-      ],
       "customer support": [
         "служба поддержки"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "На данный момент групповые планы не поддерживают внешние аккаунты. Перед подключением создайте адрес ${ BRAND_NAME }. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Если вы примете приглашение, тарифный план будет изменен. Неиспользованный баланс возвратится на счет аккаунта."
@@ -5221,9 +5220,6 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Вас приглашает: ${ inviteEmail }"
-      ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Пожизненные аккаунты не могут присоединиться к групповому плану."
       ],
       "Manage addresses.": [
         "Управляйте адресами."
@@ -5236,9 +5232,6 @@
         "За полгода можно принять только ${ n } приглашения.",
         "За полгода можно принять только ${ n } приглашений.",
         "За полгода можно принять только ${ n } приглашений."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Владельцы групповых тарифов не могут присоединиться к другим групповым тарифам."
       ],
       "Pending": [
         "В ожидании"
@@ -5285,9 +5278,6 @@
       "You have successfully joined the family group": [
         "Вы успешно присоединились к семейному плану"
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "У вас есть неоплаченные счета. Пожалуйста, оплатите их, прежде чем присоединиться к группе."
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Перед добавлением нескольких пользователей необходимо настроить пользовательский домен."
       ],
@@ -5296,9 +5286,6 @@
       ],
       "You will lose access to all premium features and storage space included with ${ plan }.": [
         "Вы потеряете доступ ко всем платным функциям и месту в хранилище, включенным в ${ plan }."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Вам предложили присоединить аккаунт ${ BRAND_NAME } к групповому тарифу для совместного использования всех платных функций ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "К аккаунту подключено больше адресов электронной почты, чем позволяет текущий тарифный план. ${ addressSettingsLink }"
@@ -6826,9 +6813,6 @@
         "Все (${ totalFoldersCount } ярлыков)",
         "Всё (${ totalFoldersCount } ярлыков)"
       ],
-      "All Events ": [
-        "Все события"
-      ],
       "All keys successfully reactivated": [
         "Все ключи успешно реактивированы"
       ],
@@ -7011,15 +6995,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Расширьте идентификацию бренда вашей организации и создайте более последовательный опыт работы в Интернете для ваших пользователей."
-      ],
-      "Breach Custom Email Created": [
-        "Создан пользовательский адрес эл. почты взломов"
-      ],
-      "Breach Custom Email Deleted": [
-        "Удалён пользовательский адрес эл. почты взломов"
-      ],
-      "Breach Custom Email Validated": [
-        "Подтверждён пользовательский адрес эл. почты взломов"
       ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "По умолчанию члены организации могут экспортировать только те хранилища, владельцами которых они являются. Если этот параметр включен, они не смогут экспортировать никакие данные"
@@ -7633,16 +7608,7 @@
       "Invitation link used": [
         "Ссылка для приглашения использована"
       ],
-      "Invite Accepted": [
-        "Приглашение принято"
-      ],
-      "Invite Created": [
-        "Приглашение создано"
-      ],
       "Invite deleted": [
-        "Приглашение удалено"
-      ],
-      "Invite Deleted": [
         "Приглашение удалено"
       ],
       "Invite for new user deleted": [
@@ -7657,9 +7623,6 @@
       "Invite rejected": [
         "Приглашение отклонено"
       ],
-      "Invite Rejected": [
-        "Приглашение отклонено"
-      ],
       "Invite successfully sent": [
         "Приглашение успешно отправлено",
         "Приглашения успешно отправлено",
@@ -7669,29 +7632,17 @@
       "It appears some of your data is encrypted and locked.": [
         "Похоже, что некоторые ваши данные зашифрованы и заблокированы."
       ],
-      "Item Autofilled": [
-        "Элемент автоматически заполнен"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "Элемент автоматически заполнен в ${ vaultLink }"
       ],
       "Item autofilled in vault": [
         "Элемент автоматически заполнен в хранилище"
       ],
-      "Item Changed Flags": [
-        "Элемент изменил флажки"
-      ],
-      "Item Created": [
-        "Элемент создан"
-      ],
       "Item created in ${ vaultLink }": [
         "Элемент создан в ${ vaultLink }"
       ],
       "Item created in vault": [
         "Элемент создан в хранилище"
-      ],
-      "Item Deleted": [
-        "Элемент удален"
       ],
       "Item deleted from ${ vaultLink }": [
         "Элемент удален из ${ vaultLink }"
@@ -7717,23 +7668,11 @@
       "Item in vault untrashed": [
         "Элемент из хранилища перемещен из корзины"
       ],
-      "Item Read": [
-        "Элемент прочитан"
-      ],
       "Item read in ${ vaultLink }": [
         "Элемент прочитан в ${ vaultLink }"
       ],
       "Item read in vault": [
         "Элемент прочитан в хранилище"
-      ],
-      "Item Trashed": [
-        "Элемент помещен в корзину"
-      ],
-      "Item Untrashed": [
-        "Элемент извлечен из корзины"
-      ],
-      "Item Updated": [
-        "Элемент обновлен"
       ],
       "Item updated in ${ vaultLink }": [
         "Элемент обновлен в ${ vaultLink }"
@@ -7902,12 +7841,6 @@
       ],
       "New": [
         "Новый"
-      ],
-      "New User Invite Created": [
-        "Приглашение нового пользователя создано"
-      ],
-      "New User Invite Deleted": [
-        "Приглашение новому пользователю удалено"
       ],
       "New user invited to organization": [
         "Новый пользователь приглашен в организацию"
@@ -8311,15 +8244,6 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
       ],
-      "Session Ended": [
-        "Сеанс окончен"
-      ],
-      "Session Roaming": [
-        "Роуминг сеансов"
-      ],
-      "Session Started": [
-        "Сеанс начат"
-      ],
       "Session timed out": [
         "Время сеанса истекло"
       ],
@@ -8334,15 +8258,6 @@
       ],
       "Settings updated": [
         "Настройки обновлены"
-      ],
-      "Share Created": [
-        "Общий ресурс создан"
-      ],
-      "Share Deleted": [
-        "Общий ресурс удален"
-      ],
-      "Share Updated": [
-        "Общий ресурс обновлен"
       ],
       "Shared ${ vaultLink } deleted": [
         "Коллективная ${ vaultLink } удалена"
@@ -8806,9 +8721,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Улучшить сейчас, чтобы получить платные функции, программное обеспечение и хранилище по специальной цене"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Улучшите до тарифа ${ PLAN_NAMES[PLANS.PASS] }${ PLAN_NAMES[PLANS.BUNDLE] }${ PLAN_NAMES[PLANS.FAMILY] } или ${ PLAN_NAMES[bundleProPlan] } чтобы получить доступ к ${ PROTON_SENTINEL_NAME }"
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Обновите тариф, чтобы добавить к своей учетной записи более короткий адрес @pm.me, которым проще поделиться. Он означает «Напишите мне в ${ MAIL_APP_NAME }» или «Отправьте мне личное сообщение»."
       ],
@@ -8860,13 +8772,7 @@
       "Vault created": [
         "Хранилище создано"
       ],
-      "Vault Created": [
-        "Хранилище создано"
-      ],
       "Vault deleted": [
-        "Хранилище удалено"
-      ],
-      "Vault Deleted": [
         "Хранилище удалено"
       ],
       "Vault either deleted or requires access permissions": [
@@ -8876,9 +8782,6 @@
         "Общий доступ к хранилищу с помощью электронной почты"
       ],
       "Vault updated": [
-        "Хранилище обновлено"
-      ],
-      "Vault Updated": [
         "Хранилище обновлено"
       ],
       "Verification can take a few minutes.": [
@@ -10819,6 +10722,16 @@
       ],
       "Recovery phrase": [
         "Фраза для восстановления доступа к учетной записи"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "От"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Кому"
       ]
     },
     "Label for adding a new custom domain": {
@@ -13959,9 +13872,6 @@
       "Email address": [
         "Адрес электронной почты"
       ],
-      "Email or IP": [
-        "адрес электронной почты или IP"
-      ],
       "End date": [
         "Дата окончания"
       ],
@@ -16527,9 +16437,6 @@
       "Status": [
         "Статус"
       ],
-      "Time": [
-        "Время"
-      ],
       "Total storage": [
         "Общий объем хранилища"
       ],
@@ -16840,9 +16747,6 @@
       "Connect ${ name }": [
         "Подключить ${ name }"
       ],
-      "Connection events": [
-        "События подключения"
-      ],
       "Connection monitor disabled": [
         "Отслеживание подключения выключено"
       ],
@@ -17106,9 +17010,6 @@
       ],
       "Error": [
         "Ошибка"
-      ],
-      "Event": [
-        "Событие"
       ],
       "Every member of the organization can access": [
         "Каждый член организации может получить доступ"
@@ -17640,9 +17541,6 @@
       ],
       "This field cannot contain only spaces": [
         "Это поле не может содержать только пробелы"
-      ],
-      "Time": [
-        "Время"
       ],
       "Time zone": [
         "Часовой пояс"

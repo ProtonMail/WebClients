@@ -70,11 +70,11 @@
       "Accept": [
         "Accetta"
       ],
-      "activate": [
-        "attiva"
-      ],
       "Activate": [
         "Attiva"
+      ],
+      "activate": [
+        "attiva"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Attiva ${ user.Name }@pm.me"
@@ -225,12 +225,6 @@
       ],
       "Clear all formatting": [
         "Cancella tutta la formattazione"
-      ],
-      "Clear filter": [
-        "Rimuovi filtro"
-      ],
-      "Clear filters": [
-        "Rimuovi filtri"
       ],
       "Close": [
         "Chiudi"
@@ -867,6 +861,9 @@
       ],
       "Resend code": [
         "Reinvia il codice"
+      ],
+      "Reset": [
+        "Reimposta"
       ],
       "Reset credentials": [
         "Ripristina credenziali"
@@ -5185,14 +5182,8 @@
       "*Only one free trial per user. Regular pricing applies thereafter.": [
         "*Solo una prova gratuita per utente. Successivamente si applica il prezzo normale."
       ],
-      "Accounts with custom domains cannot join a group plan.": [
-        "Gli account con domini personalizzati non possono aderire a un piano di gruppo."
-      ],
       "customer support": [
         "assistenza clienti"
-      ],
-      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "I piani di gruppo attualmente non supportano account esterni. Crea un indirizzo ${ BRAND_NAME } prima di iscriverti. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se accetti l'invito, ti cambieremo piano. Il saldo eventualmente rimasto sarà accreditato sul tuo account."
@@ -5212,9 +5203,6 @@
       "Leave Visionary plan": [
         "Lascia il piano Visionary"
       ],
-      "Lifetime accounts cannot join a group plan.": [
-        "Gli account Lifetime non possono aderire a un piano di gruppo."
-      ],
       "Manage addresses.": [
         "Gestisci gli indirizzi."
       ],
@@ -5224,9 +5212,6 @@
       "Only ${ n } accepted invitation are allowed in a 6-month period.": [
         "È ammesso solo ${ n } invito accettato nell'arco di 6 mesi.",
         "Sono ammessi solo ${ n } inviti accettati nell'arco di 6 mesi."
-      ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "I proprietari di un piano con membri non possono unirsi a un piano di gruppo."
       ],
       "Pending": [
         "In attesa"
@@ -5272,9 +5257,6 @@
       "You have successfully joined the family group": [
         "Ti sei unito al gruppo famiglia"
       ],
-      "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Hai delle fatture non pagate. Si prega di pagarle prima di aderire ad un piano di gruppo."
-      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Devi configurare un dominio personalizzato prima di aggiungere più utenti."
       ],
@@ -5283,9 +5265,6 @@
       ],
       "You will lose access to all premium features and storage space included with ${ plan }.": [
         "Perderai l'accesso a tutte le funzionalità premium e allo spazio di archiviazione inclusi con ${ plan }."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Hai ricevuto un invito a collegare il tuo account ${ BRAND_NAME } a questo piano collettivo, per beneficiare insieme di tutte le funzioni premium di ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Il tuo account ha più indirizzi email rispetto alla disponibilità di questo piano. ${ addressSettingsLink }"
@@ -6745,9 +6724,6 @@
         "Tutta la (${ totalFoldersCount } etichetta)",
         "Tutte le (${ totalFoldersCount } etichette)"
       ],
-      "All Events ": [
-        "Tutti gli eventi "
-      ],
       "All keys successfully reactivated": [
         "Tutte le chiavi sono state riattivate con successo"
       ],
@@ -6928,15 +6904,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Rafforza l'identità della tua organizzazione e crea un'esperienza online più coerente per i tuoi utenti."
-      ],
-      "Breach Custom Email Created": [
-        "Email personalizzata per le violazioni di dati creata"
-      ],
-      "Breach Custom Email Deleted": [
-        "Email personalizzata per le violazioni di dati eliminata"
-      ],
-      "Breach Custom Email Validated": [
-        "Email personalizzata per le violazioni di dati convalidata"
       ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Per impostazione predefinita, i membri dell'organizzazione possono esportare solo le casseforti di cui sono i proprietari. Se questa opzione è attivata, non potranno esportare alcun dato."
@@ -7538,16 +7505,7 @@
       "Invitation link used": [
         "Il link di invito è stato utilizzato"
       ],
-      "Invite Accepted": [
-        "Invito accettato"
-      ],
-      "Invite Created": [
-        "Invito creato"
-      ],
       "Invite deleted": [
-        "Invito eliminato"
-      ],
-      "Invite Deleted": [
         "Invito eliminato"
       ],
       "Invite for new user deleted": [
@@ -7562,9 +7520,6 @@
       "Invite rejected": [
         "Invito rifiutato"
       ],
-      "Invite Rejected": [
-        "Invito rifiutato"
-      ],
       "Invite successfully sent": [
         "Invito inviato con successo",
         "Inviti inviati con successo"
@@ -7572,29 +7527,17 @@
       "It appears some of your data is encrypted and locked.": [
         "Sembra che alcuni dei tuoi dati siano crittografati e bloccati."
       ],
-      "Item Autofilled": [
-        "Elemento compilato automaticamente"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "Elemento compilato automaticamente in ${ vaultLink }"
       ],
       "Item autofilled in vault": [
         "Elemento compilato automaticamente nella cassaforte"
       ],
-      "Item Changed Flags": [
-        "Flag dell'elemento modificati"
-      ],
-      "Item Created": [
-        "Elemento creato"
-      ],
       "Item created in ${ vaultLink }": [
         "Elemento creato in ${ vaultLink }"
       ],
       "Item created in vault": [
         "Elemento creato nella cassaforte"
-      ],
-      "Item Deleted": [
-        "Elemento eliminato"
       ],
       "Item deleted from ${ vaultLink }": [
         "Elemento eliminato da ${ vaultLink }"
@@ -7620,23 +7563,11 @@
       "Item in vault untrashed": [
         "Elemento nella cassaforte rimosso dal cestino"
       ],
-      "Item Read": [
-        "Elemento letto"
-      ],
       "Item read in ${ vaultLink }": [
         "Elemento letto in ${ vaultLink }"
       ],
       "Item read in vault": [
         "Elemento letto nella cassaforte"
-      ],
-      "Item Trashed": [
-        "Elemento spostato nel cestino"
-      ],
-      "Item Untrashed": [
-        "Elemento rimosso dal cestino"
-      ],
-      "Item Updated": [
-        "Elemento aggiornato"
       ],
       "Item updated in ${ vaultLink }": [
         "Elemento aggiornato in ${ vaultLink }"
@@ -7805,12 +7736,6 @@
       ],
       "New": [
         "Nuovo"
-      ],
-      "New User Invite Created": [
-        "Invito per nuovo utente creato"
-      ],
-      "New User Invite Deleted": [
-        "Invito per nuovo utente eliminato"
       ],
       "New user invited to organization": [
         "Nuovo utente invitato all'organizzazione"
@@ -8211,15 +8136,6 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "I server sono irraggiungibili. Riprova tra qualche minuto"
       ],
-      "Session Ended": [
-        "Sessione terminata"
-      ],
-      "Session Roaming": [
-        "Sessione trasferita"
-      ],
-      "Session Started": [
-        "Sessione avviata"
-      ],
       "Session timed out": [
         "Sessione scaduta"
       ],
@@ -8234,15 +8150,6 @@
       ],
       "Settings updated": [
         "Impostazioni aggiornate"
-      ],
-      "Share Created": [
-        "Condivisione creata"
-      ],
-      "Share Deleted": [
-        "Condivisione eliminata"
-      ],
-      "Share Updated": [
-        "Condivisione aggiornata"
       ],
       "Shared ${ vaultLink } deleted": [
         "${ vaultLink } condiviso eliminato"
@@ -8701,9 +8608,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Effettua l'upgrade adesso per ottenere funzionalità premium, prodotti e spazio di archiviazione a un prezzo speciale"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Effettua l'upgrade al piano ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } o ${ PLAN_NAMES[bundleProPlan] } per ottenere l'accesso a ${ PROTON_SENTINEL_NAME }."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Effettua l'upgrade per aggiungere un indirizzo @pm.me al tuo account, più breve e più facile da condividere. Significa \"${ MAIL_APP_NAME } me\" o \"Private Message me\"."
       ],
@@ -8755,13 +8659,7 @@
       "Vault created": [
         "Cassaforte creata"
       ],
-      "Vault Created": [
-        "Cassaforte creata"
-      ],
       "Vault deleted": [
-        "Cassaforte eliminata"
-      ],
-      "Vault Deleted": [
         "Cassaforte eliminata"
       ],
       "Vault either deleted or requires access permissions": [
@@ -8771,9 +8669,6 @@
         "Cassaforte condivisa per email"
       ],
       "Vault updated": [
-        "Cassaforte aggiornata"
-      ],
-      "Vault Updated": [
         "Cassaforte aggiornata"
       ],
       "Verification can take a few minutes.": [
@@ -10690,6 +10585,16 @@
       ],
       "Recovery phrase": [
         "Frase di recupero"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Dal"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Al"
       ]
     },
     "Label for adding a new custom domain": {
@@ -13788,9 +13693,6 @@
       "Email address": [
         "Indirizzo email"
       ],
-      "Email or IP": [
-        "Email o IP"
-      ],
       "End date": [
         "Data di fine"
       ],
@@ -16289,9 +16191,6 @@
       "Status": [
         "Stato"
       ],
-      "Time": [
-        "Orario"
-      ],
       "Total storage": [
         "Spazio totale"
       ],
@@ -16593,9 +16492,6 @@
       "Connect ${ name }": [
         "Connetti ${ name }"
       ],
-      "Connection events": [
-        "Eventi di connessione"
-      ],
       "Connection monitor disabled": [
         "Monitoraggio della connessione disabilitato"
       ],
@@ -16855,9 +16751,6 @@
       ],
       "Error": [
         "Errore"
-      ],
-      "Event": [
-        "Evento"
       ],
       "Every member of the organization can access": [
         "Ogni membro dell'organizzazione può accedere"
@@ -17401,9 +17294,6 @@
       ],
       "This field cannot contain only spaces": [
         "Questo campo non può contenere solo spazi"
-      ],
-      "Time": [
-        "Orario"
       ],
       "Time zone": [
         "Fuso orario"

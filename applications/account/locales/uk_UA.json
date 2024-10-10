@@ -70,11 +70,11 @@
       "Accept": [
         "Схвалити"
       ],
-      "activate": [
-        "активувати"
-      ],
       "Activate": [
         "Активувати"
+      ],
+      "activate": [
+        "активувати"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активувати ${ user.Name }@pm.me"
@@ -219,12 +219,6 @@
       ],
       "Clear all formatting": [
         "Очистити форматування"
-      ],
-      "Clear filter": [
-        "Очистити фільтр"
-      ],
-      "Clear filters": [
-        "Очистити фільтри"
       ],
       "Close": [
         "Закрити"
@@ -399,6 +393,9 @@
       ],
       "Discard changes": [
         "Відхилити зміни"
+      ],
+      "Domain name": [
+        "Ім'я домену"
       ],
       "Don't show again": [
         "Не показувати знову"
@@ -849,6 +846,9 @@
       ],
       "Resend code": [
         "Надіслати код повторно"
+      ],
+      "Reset": [
+        "Скинути"
       ],
       "Reset credentials": [
         "Скинути облікові дані"
@@ -3605,6 +3605,11 @@
         "Пріоритетна підтримка"
       ]
     },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 користувачі"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 хвилин"
@@ -5069,9 +5074,6 @@
       "Manage user accounts": [
         "Керувати обліковими записами користувачів"
       ],
-      "Owners of a plan with members cannot join another group plan.": [
-        "Власники тарифних планів з учасниками не можуть приєднуватися до інших групових тарифних планів."
-      ],
       "Pending": [
         "У черзі"
       ],
@@ -5110,9 +5112,6 @@
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Перш ніж створити нового користувача, потрібно налаштувати власний домен."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Вас запрошено пов'язати обліковий запис ${ BRAND_NAME } із цим груповим планом і разом користуватися всіма преміумфункціями ${ BRAND_NAME_TWO }"
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Ваш обліковий запис має більше адрес електронної пошти, ніж доступно в цьому плані. ${ addressSettingsLink }"
@@ -6633,9 +6632,6 @@
         "Усі (${ totalFoldersCount } міток)",
         "Усі (${ totalFoldersCount } мітки)"
       ],
-      "All Events ": [
-        "Усі події "
-      ],
       "All keys successfully reactivated": [
         "Усі ключі успішно повторно активовано"
       ],
@@ -6815,15 +6811,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Підсильте впізнаваність бренду вашої організації та забезпечте зручнішу роботу онлайн для ваших користувачів."
-      ],
-      "Breach Custom Email Created": [
-        "Створено витік користувацької пошти"
-      ],
-      "Breach Custom Email Deleted": [
-        "Витік користувацької пошти видалено"
-      ],
-      "Breach Custom Email Validated": [
-        "Витік користувацької пошти перевірено"
       ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "По стандарту учасники організації можуть експортувати лише сховища, власниками яких вони є. Якщо цей параметр увімкнено, вони не зможуть експортувати жодних даних"
@@ -7404,16 +7391,7 @@
       "Invitation link used": [
         "Посилання на запрошення використано"
       ],
-      "Invite Accepted": [
-        "Запрошення прийнято"
-      ],
-      "Invite Created": [
-        "Запрошення створено"
-      ],
       "Invite deleted": [
-        "Запрошення видалено"
-      ],
-      "Invite Deleted": [
         "Запрошення видалено"
       ],
       "Invite for new user deleted": [
@@ -7428,9 +7406,6 @@
       "Invite rejected": [
         "Запрошення відхилено"
       ],
-      "Invite Rejected": [
-        "Запрошення відхилено"
-      ],
       "Invite successfully sent": [
         "Запрошення успішно надіслано",
         "Запрошення успішно надіслані",
@@ -7440,29 +7415,17 @@
       "It appears some of your data is encrypted and locked.": [
         "Здається, деякі з ваших даних зашифровано та заблоковано."
       ],
-      "Item Autofilled": [
-        "Елемент автоматично заповнений"
-      ],
       "Item autofilled in ${ vaultLink }": [
         "Елемент автозаповнено в ${ vaultLink }"
       ],
       "Item autofilled in vault": [
         "Елемент автоматично заповнений у сховищі"
       ],
-      "Item Changed Flags": [
-        "Елемент змінив прапорці"
-      ],
-      "Item Created": [
-        "Елемент створено"
-      ],
       "Item created in ${ vaultLink }": [
         "Елемент створено в ${ vaultLink }"
       ],
       "Item created in vault": [
         "Елемент створений у сховищі"
-      ],
-      "Item Deleted": [
-        "Елемент видалено"
       ],
       "Item deleted from ${ vaultLink }": [
         "Елемент видалено з ${ vaultLink }"
@@ -7488,23 +7451,11 @@
       "Item in vault untrashed": [
         "Елемент забрано зі смітника сховища"
       ],
-      "Item Read": [
-        "Елемент прочитаний"
-      ],
       "Item read in ${ vaultLink }": [
         "Елемент прочитано в ${ vaultLink }"
       ],
       "Item read in vault": [
         "Пункт прочитаний у сховищі"
-      ],
-      "Item Trashed": [
-        "Елемент переміщено до смітника"
-      ],
-      "Item Untrashed": [
-        "Елемент переміщено зі смітника"
-      ],
-      "Item Updated": [
-        "Елемент оновлено"
       ],
       "Item updated in ${ vaultLink }": [
         "Елемент оновлено в ${ vaultLink }"
@@ -7670,12 +7621,6 @@
       ],
       "New": [
         "Нове"
-      ],
-      "New User Invite Created": [
-        "Створено запрошення для нового користувача"
-      ],
-      "New User Invite Deleted": [
-        "Запрошення для нового користувача видалено"
       ],
       "New user invited to organization": [
         "До організації запрошено нового користувача"
@@ -8070,15 +8015,6 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
       ],
-      "Session Ended": [
-        "Сесію завершено"
-      ],
-      "Session Roaming": [
-        "Сеанс роумінгу"
-      ],
-      "Session Started": [
-        "Сесія розпочалась"
-      ],
       "Session timed out": [
         "Сеанс завершився"
       ],
@@ -8093,15 +8029,6 @@
       ],
       "Settings updated": [
         "Налаштування оновлено"
-      ],
-      "Share Created": [
-        "Поділитися створеним"
-      ],
-      "Share Deleted": [
-        "Поділитися вилученим"
-      ],
-      "Share Updated": [
-        "Поділитися оновленим"
       ],
       "Shared ${ vaultLink } deleted": [
         "Надіслане ${ vaultLink } видалено"
@@ -8553,9 +8480,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Передплатіть тарифний план ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } або ${ PLAN_NAMES[bundleProPlan] }, щоб отримати доступ до ${ PROTON_SENTINEL_NAME }."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Передплатіть тарифний план, щоб додати до облікового запису коротку адресу @pm.me, якою легше ділитися. Вона розшифровується як \"${ MAIL_APP_NAME } me\" або \"Private Message me\"."
       ],
@@ -8604,13 +8528,7 @@
       "Vault created": [
         "Сховище створено"
       ],
-      "Vault Created": [
-        "Сховище створено"
-      ],
       "Vault deleted": [
-        "Сховище видалено"
-      ],
-      "Vault Deleted": [
         "Сховище видалено"
       ],
       "Vault either deleted or requires access permissions": [
@@ -8620,9 +8538,6 @@
         "Сховище поширено за допомогою електронної пошти"
       ],
       "Vault updated": [
-        "Сховище оновлено"
-      ],
-      "Vault Updated": [
         "Сховище оновлено"
       ],
       "Verification can take a few minutes.": [
@@ -10507,6 +10422,16 @@
       ],
       "Recovery phrase": [
         "Фраза відновлення"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Від"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Кому"
       ]
     },
     "Label for adding a new custom domain": {
@@ -13460,9 +13385,6 @@
       "Email address": [
         "Адреса е-пошти"
       ],
-      "Email or IP": [
-        "Електронна пошта або IP-адреса"
-      ],
       "End date": [
         "Дата завершення"
       ],
@@ -13779,6 +13701,9 @@
       ],
       "Enable recovery by email": [
         "Увімкнути відновлення за допомогою електронної пошти"
+      ],
+      "Show more": [
+        "Розгорнути"
       ],
       "to recover your account if you're ever locked out": [
         "щоб відновити свій обліковий запис, якщо ви коли-небудь втратите доступ до нього"
@@ -15963,9 +15888,6 @@
       "Connect ${ name }": [
         "Під'єднати ${ name }"
       ],
-      "Connection events": [
-        "Події з’єднання"
-      ],
       "Contact us": [
         "Зв'яжіться з нами"
       ],
@@ -16217,9 +16139,6 @@
       ],
       "Error": [
         "Помилка"
-      ],
-      "Event": [
-        "Подія"
       ],
       "Every member of the organization can access": [
         "Кожен учасник організації може отримати доступ до"
@@ -16742,9 +16661,6 @@
       ],
       "This field cannot contain only spaces": [
         "Це поле не може містити лише пробіли"
-      ],
-      "Time": [
-        "Час"
       ],
       "Time zone": [
         "Часовий пояс"
