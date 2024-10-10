@@ -24,7 +24,7 @@ import SendWithExpirationModal from '../../components/composer/addresses/SendWit
 import SendWithWarningsModal from '../../components/composer/addresses/SendWithWarningsModal';
 import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR, NO_REPLY_EMAIL_DONT_SHOW_AGAIN_KEY } from '../../constants';
 import { removeMessageRecipients, uniqueMessageRecipients } from '../../helpers/message/cleanMessage';
-import { locateBlockquote } from '../../helpers/message/messageBlockquote';
+import { locateBlockquote, locatePlaintextInternalBlockquotes } from '../../helpers/message/messageBlockquote';
 import type { MapSendInfo } from '../../models/crypto';
 import type { MessageStateWithData } from '../../store/messages/messagesTypes';
 import { useContactsMap } from '../contact/useContacts';
@@ -102,8 +102,10 @@ export const useSendVerifications = (
                 }
             }
 
-            if (verifications.noAttachments && !isPlainText(message.data)) {
-                const [contentBeforeBlockquote] = locateBlockquote(message.messageDocument?.document);
+            if (verifications.noAttachments) {
+                const [contentBeforeBlockquote] = isPlainText(message.data)
+                    ? locatePlaintextInternalBlockquotes(message.messageDocument?.plainText)
+                    : locateBlockquote(message.messageDocument?.document);
                 const normalized = normalize(`${message.data.Subject} ${contentBeforeBlockquote || ''}`);
                 const [keyword] = mentionAttachment(normalized) || [];
 
