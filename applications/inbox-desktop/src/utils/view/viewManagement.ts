@@ -30,6 +30,7 @@ import { handleBeforeInput } from "./windowShortcuts";
 import { join } from "node:path";
 import { c } from "ttag";
 import { isElectronOnMac } from "@proton/shared/lib/helpers/desktop";
+import { APPS, APPS_CONFIGURATION, CALENDAR_APP_NAME, MAIL_APP_NAME } from "@proton/shared/lib/constants";
 
 type ViewID = keyof ReturnType<typeof getConfig>["url"];
 
@@ -48,9 +49,9 @@ const loadingViewMap: Record<ViewID, Promise<void> | undefined> = {
 };
 
 const viewTitleMap: Record<ViewID, string> = {
-    mail: "Proton Mail",
-    calendar: "Proton Calendar",
-    account: "Proton",
+    mail: MAIL_APP_NAME,
+    calendar: CALENDAR_APP_NAME,
+    account: APPS_CONFIGURATION[APPS.PROTONACCOUNT].name,
 };
 
 const PRELOADED_VIEWS: ViewID[] = ["mail", "calendar"];
