@@ -25,6 +25,7 @@ export const DEFAULT_SETTINGS: WasmUserSettings = {
     ReceiveInviterNotification: null,
     WalletCreated: null,
     AcceptTermsAndConditions: 0,
+    ReceiveTransactionNotification: null,
 };
 
 export const bitcoinUnitChange = createAction('bitcoin unit change', (payload: { bitcoinUnit: WasmBitcoinUnit }) => ({

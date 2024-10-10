@@ -16,6 +16,7 @@ export const mockUseWalletSettings = (
             ReceiveInviterNotification: null,
             WalletCreated: null,
             AcceptTermsAndConditions: 0,
+            ReceiveTransactionNotification: null,
         },
         mockedValue?.[1] ?? false,
     ]);
