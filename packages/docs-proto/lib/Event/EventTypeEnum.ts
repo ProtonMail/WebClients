@@ -9,4 +9,6 @@ export enum EventTypeEnum {
   ServerHasMoreOrLessGivenTheClientEverythingItHas = 13,
   ServerIsNotifyingOtherServersToDisconnectAllClientsFromTheStream = 14,
   ServerIsReadyToAcceptClientMessages = 15,
+  ServerIsRequestingOtherServersToBroadcastParticipants = 16,
+  ServerIsInformingOtherServersOfTheParticipants = 17,
 }

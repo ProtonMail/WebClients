@@ -562,6 +562,8 @@ export class WebsocketService implements WebsocketServiceInterface {
         case EventTypeEnum.ServerIsPlacingEmptyActivityIndicatorInStreamToIndicateTheStreamIsStillActive:
         case EventTypeEnum.ClientIsDebugRequestingServerToPerformCommit:
         case EventTypeEnum.ServerIsNotifyingOtherServersToDisconnectAllClientsFromTheStream:
+        case EventTypeEnum.ServerIsRequestingOtherServersToBroadcastParticipants:
+        case EventTypeEnum.ServerIsInformingOtherServersOfTheParticipants:
           break
         case EventTypeEnum.ServerIsReadyToAcceptClientMessages:
           this.onDocumentConnectionReadyToBroadcast(record, event.content)
