@@ -22,6 +22,7 @@ import { CommentViewer } from './CommentViewer'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { ACCEPT_SUGGESTION_COMMAND, REJECT_SUGGESTION_COMMAND } from '../Suggestions/Commands'
 import { useSuggestionCommentContent } from './useSuggestionCommentContent'
+import { generateSuggestionSummary } from '../Suggestions/generateSuggestionSummary'
 
 export function CommentsPanelListComment({
   comment,
@@ -40,7 +41,7 @@ export function CommentsPanelListComment({
 
   const { application, isSuggestionsFeatureEnabled } = useApplication()
 
-  const { username, controller, removeMarkNode, awarenessStates } = useCommentsContext()
+  const { username, controller, markNodeMap, removeMarkNode, awarenessStates } = useCommentsContext()
 
   const [confirmModal, showConfirmModal] = useConfirmActionModal()
 
@@ -60,24 +61,26 @@ export function CommentsPanelListComment({
     if (!suggestionID) {
       return
     }
+    const summary = JSON.stringify(generateSuggestionSummary(editor, markNodeMap, suggestionID))
     const didAccept = editor.dispatchCommand(ACCEPT_SUGGESTION_COMMAND, suggestionID)
     if (!didAccept) {
       return
     }
     application.logger.info('Accepting suggestion thread', thread.id)
-    controller.acceptSuggestion(thread.id).catch(sendErrorMessage)
+    controller.acceptSuggestion(thread.id, summary).catch(sendErrorMessage)
   }
 
   const rejectSuggestion = () => {
     if (!suggestionID) {
       return
     }
+    const summary = JSON.stringify(generateSuggestionSummary(editor, markNodeMap, suggestionID))
     const didReject = editor.dispatchCommand(REJECT_SUGGESTION_COMMAND, suggestionID)
     if (!didReject) {
       return
     }
     application.logger.info('Rejecting suggestion thread', thread.id)
-    controller.rejectSuggestion(thread.id).catch(sendErrorMessage)
+    controller.rejectSuggestion(thread.id, summary).catch(sendErrorMessage)
   }
 
   const deleteThread = async () => {

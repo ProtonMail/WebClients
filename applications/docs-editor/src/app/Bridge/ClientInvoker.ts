@@ -82,12 +82,12 @@ export class ClientInvoker implements EditorRequiresClientMethods {
     return this.invokeClientMethod('resolveThread', [threadId])
   }
 
-  async acceptSuggestion(threadId: string): Promise<boolean> {
-    return this.invokeClientMethod('acceptSuggestion', [threadId])
+  async acceptSuggestion(threadId: string, summary: string): Promise<boolean> {
+    return this.invokeClientMethod('acceptSuggestion', [threadId, summary])
   }
 
-  async rejectSuggestion(threadId: string): Promise<boolean> {
-    return this.invokeClientMethod('rejectSuggestion', [threadId])
+  async rejectSuggestion(threadId: string, summary?: string): Promise<boolean> {
+    return this.invokeClientMethod('rejectSuggestion', [threadId, summary])
   }
 
   async reopenSuggestion(threadId: string): Promise<boolean> {

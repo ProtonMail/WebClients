@@ -41,8 +41,8 @@ export interface EditorOrchestratorInterface {
   ): Promise<CommentThreadInterface | undefined>
   resolveThread(threadId: string): Promise<boolean>
   unresolveThread(threadId: string): Promise<boolean>
-  acceptSuggestion(threadId: string): Promise<boolean>
-  rejectSuggestion(threadId: string): Promise<boolean>
+  acceptSuggestion(threadId: string, summary: string): Promise<boolean>
+  rejectSuggestion(threadId: string, summary?: string): Promise<boolean>
   reopenSuggestion(threadId: string): Promise<boolean>
   deleteThread(id: string): Promise<boolean>
   markThreadAsRead(id: string): Promise<void>
