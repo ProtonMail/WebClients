@@ -1,4 +1,3 @@
-import { isURLProtonInternal } from '@proton/components/helpers/url';
 import { getAssistantModels } from '@proton/llm/lib/api';
 import {
     ASSISTANT_CONTEXT_SIZE_LIMIT,
@@ -21,7 +20,7 @@ import { isRefineActionType } from '@proton/llm/lib/types';
 import { AssistantEvent } from '@proton/llm/lib/types';
 import { GENERATION_TYPE, checkHardwareForAssistant } from '@proton/shared/lib/assistant';
 import { isChromiumBased, isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
-import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
+import { getApiSubdomainUrl, isURLProtonInternal } from '@proton/shared/lib/helpers/url';
 import type { Api } from '@proton/shared/lib/interfaces';
 import window from '@proton/shared/lib/window';
 

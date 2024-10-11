@@ -5,13 +5,13 @@ import { c } from 'ttag';
 
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { PROTON_DOMAINS } from '@proton/shared/lib/constants';
-import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
+import { getSecondLevelDomain, isSubDomain } from '@proton/shared/lib/helpers/url';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { CONFIRM_LINK } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 
 import LinkConfirmationModal from '../components/notifications/LinkConfirmationModal/LinkConfirmationModal';
-import { getHostname, isExternal, isSubDomain, punycodeUrl } from '../helpers/url';
+import { getHostname, isExternal, punycodeUrl } from '../helpers/url';
 import { useHandler, useNotifications } from './index';
 
 // Reference : Angular/src/app/utils/directives/linkHandler.js

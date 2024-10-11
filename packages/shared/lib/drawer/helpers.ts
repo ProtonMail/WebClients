@@ -1,5 +1,5 @@
-import { isURLProtonInternal } from '@proton/components/helpers/url';
 import { LOCALSTORAGE_DRAWER_KEY } from '@proton/shared/lib/drawer/constants';
+import { isURLProtonInternal } from '@proton/shared/lib/helpers/url';
 
 import { getAppHref } from '../apps/helper';
 import { getLocalIDFromPathname } from '../authentication/pathnameHelper';

@@ -1,4 +1,3 @@
-import { versionCookieAtLoad } from '@proton/components/hooks/useEarlyAccess'
 import type { EditorSystemMode } from '@proton/docs-shared'
 import {
   BridgeOriginProvider,
@@ -8,6 +7,7 @@ import {
   EDITOR_REQUESTS_TOTAL_CLIENT_RELOAD,
 } from '@proton/docs-shared'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
 
 type Props = {
   onFrameReady: (frame: HTMLIFrameElement) => void
