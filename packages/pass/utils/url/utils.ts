@@ -56,20 +56,23 @@ export const intoDomainImageHostname = (maybeUrl: string): MaybeNull<string> => 
     return hostname;
 };
 
-export const intoDomainWithPort = ({ domain, port, protocol }: URLComponents): MaybeNull<string> => {
+export const intoDomainWithPort = ({
+    domain,
+    port,
+    protocol,
+    as = 'href',
+}: URLComponents & { as?: 'href' | 'host' }): MaybeNull<string> => {
     if (!(domain && protocol)) return null;
 
     try {
         const url = new URL(`${protocol}//${domain}`);
         if (port) url.port = port;
 
-        return url.href;
+        return url[as];
     } catch {
         return null;
     }
 };
-
-export const intoHostWithoutProtocol = (url: MaybeNull<string>): string => (url ? new URL(url).host : '');
 
 export const globToRegExp = (globPattern: string) => {
     const regexString = globPattern.replace(/\//g, '\\/').replace(/\./g, '\\.').replace(/\*/g, '.*');
