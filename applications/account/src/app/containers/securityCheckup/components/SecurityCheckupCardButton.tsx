@@ -34,7 +34,10 @@ interface Props {
 
 const SecurityCheckupCardButton = ({ onClick, className, children }: Props) => {
     return (
-        <button className={clsx('security-checkup-card', 'relative interactive-pseudo', className)} onClick={onClick}>
+        <button
+            className={clsx('security-checkup-card bg-norm', 'relative interactive-pseudo', className)}
+            onClick={onClick}
+        >
             {children}
         </button>
     );
