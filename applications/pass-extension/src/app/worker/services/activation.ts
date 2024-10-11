@@ -23,7 +23,7 @@ import { semver } from '@proton/pass/utils/string/semver';
 import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
 import { getEpoch, msToEpoch } from '@proton/pass/utils/time/epoch';
 import { parseUrl } from '@proton/pass/utils/url/parser';
-import { intoDomainWithPort, intoHostWithoutProtocol } from '@proton/pass/utils/url/utils';
+import { intoDomainWithPort } from '@proton/pass/utils/url/utils';
 import noop from '@proton/utils/noop';
 
 import { getSessionResumeAlarm, getSessionResumeDelay, shouldForceLock } from './auth';
@@ -243,9 +243,7 @@ export const createActivationService = () => {
         const filters = selectPopupFilters(state);
         const pushTabState = tabState !== undefined && [subdomain, domain].includes(tabState.domain);
         const searchForAutofill =
-            hasAutofillCandidates && domain
-                ? intoHostWithoutProtocol(intoDomainWithPort({ domain, port, protocol }))
-                : '';
+            hasAutofillCandidates && domain ? (intoDomainWithPort({ domain, port, protocol, as: 'host' }) ?? '') : '';
 
         const validItem = tabState?.selectedItem
             ? selectItem(tabState.selectedItem.shareId, tabState.selectedItem.itemId) !== undefined
