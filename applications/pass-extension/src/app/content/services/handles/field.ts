@@ -30,13 +30,11 @@ const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
         requestAnimationFrame(async () => {
             if (actionPrevented(element)) return;
 
-            if (ctx?.getSettings().autofill.inject) {
-                const { formType } = field.getFormHandle();
-                const login = formType === FormType.LOGIN;
-                const count = login ? ((await ctx?.service.autofill.getCredentialsCount()) ?? 0) : 0;
+            const { formType } = field.getFormHandle();
+            const login = formType === FormType.LOGIN;
+            const count = login ? ((await ctx?.service.autofill.getCredentialsCount()) ?? 0) : 0;
 
-                field.attachIcon({ count });
-            }
+            field.attachIcon({ count });
 
             const target = evt?.target;
             const dropdown = ctx?.service.iframe.dropdown;
@@ -45,8 +43,7 @@ const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
             const opened = dropdown?.getState().visible;
 
             const shouldClose = opened && current !== target;
-            const openOnFocus = ctx?.getSettings().autofill.openOnFocus;
-            const shouldOpen = ctx?.getState().authorized && (!opened || shouldClose) && openOnFocus;
+            const shouldOpen = ctx?.getState().authorized && (!opened || shouldClose);
 
             if (shouldClose) dropdown?.close();
             if (shouldOpen) {
