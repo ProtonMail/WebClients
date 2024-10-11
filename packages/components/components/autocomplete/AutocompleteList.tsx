@@ -17,9 +17,21 @@ interface Props<V> {
     highlightedIndex: number;
     anchorRef: RefObject<HTMLElement>;
     dataTestId?: string;
+    /**
+     * In case we want to filter the number of items in the list for accessibility purposes
+     */
+    searchResultsCount?: number;
 }
 
-const AutocompleteList = <V,>({ id, children, onClose, isOpen, highlightedIndex, anchorRef }: Props<V>) => {
+const AutocompleteList = <V,>({
+    id,
+    children,
+    onClose,
+    isOpen,
+    highlightedIndex,
+    anchorRef,
+    searchResultsCount,
+}: Props<V>) => {
     const items = Children.map(children, (child, index) => {
         return cloneElement(child, {
             active: highlightedIndex === index,
@@ -44,9 +56,9 @@ const AutocompleteList = <V,>({ id, children, onClose, isOpen, highlightedIndex,
 
             <div className="sr-only" aria-atomic="true" aria-live="assertive">
                 {c('Hint').ngettext(
-                    msgid`Found ${items.length} suggestion, use keyboard to navigate.`,
-                    `Found ${items.length} suggestions, use keyboard to navigate.`,
-                    items.length
+                    msgid`Found ${searchResultsCount || items.length} suggestion, use keyboard to navigate.`,
+                    `Found ${searchResultsCount || items.length} suggestions, use keyboard to navigate.`,
+                    searchResultsCount || items.length
                 )}
             </div>
 
