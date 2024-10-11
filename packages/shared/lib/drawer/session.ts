@@ -1,11 +1,9 @@
-import { updateVersionCookie, versionCookieAtLoad } from '@proton/components/hooks/useEarlyAccess';
-
 import type { ResumedSessionResult } from '../authentication/persistedSessionHelper';
 import type { APP_NAMES } from '../constants';
 import { SECOND } from '../constants';
 import { createTimeoutError } from '../fetch/ApiError';
 import { getIsDrawerPostMessage, postMessageFromIframe } from './helpers';
-import { DRAWER_EVENTS } from './interfaces';
+import { DRAWER_EVENTS, type SESSION_MESSAGE } from './interfaces';
 
 export const resumeSessionDrawerApp = ({
     parentApp,
@@ -16,7 +14,7 @@ export const resumeSessionDrawerApp = ({
 }) => {
     let timeout: ReturnType<typeof setTimeout> | undefined;
 
-    return new Promise<ResumedSessionResult>((resolve, reject) => {
+    return new Promise<ResumedSessionResult & { tag: SESSION_MESSAGE['payload']['tag'] }>((resolve, reject) => {
         const handler = (event: MessageEvent) => {
             if (!getIsDrawerPostMessage(event)) {
                 return;
@@ -31,23 +29,17 @@ export const resumeSessionDrawerApp = ({
                     clearTimeout(timeout);
                 }
 
-                // When opening the drawer, we might need to set the tag of the app we are opening
-                // Otherwise we will not open the correct version of the app (default instead of beta or alpha)
-                if (tag && versionCookieAtLoad !== tag) {
-                    updateVersionCookie(tag, undefined);
-                    window.location.reload();
-                } else {
-                    resolve({
-                        UID,
-                        keyPassword,
-                        clientKey,
-                        offlineKey,
-                        User,
-                        persistent,
-                        trusted,
-                        LocalID: localID ?? parentLocalID,
-                    });
-                }
+                resolve({
+                    tag,
+                    UID,
+                    keyPassword,
+                    clientKey,
+                    offlineKey,
+                    User,
+                    persistent,
+                    trusted,
+                    LocalID: localID ?? parentLocalID,
+                });
             }
         };
 

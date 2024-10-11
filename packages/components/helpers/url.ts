@@ -1,16 +1,5 @@
 import punycode from 'punycode.js';
 
-import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
-import isTruthy from '@proton/utils/isTruthy';
-
-export const isSubDomain = (hostname: string, domain: string) => {
-    if (hostname === domain) {
-        return true;
-    }
-
-    return hostname.endsWith(`.${domain}`);
-};
-
 export const getHostname = (url: string) => {
     // The easy way to parse an URL, is to create <a> element.
     // @see: https://gist.github.com/jlong/2428561
@@ -34,16 +23,6 @@ export const isExternal = (url: string, hostname: string) => {
          */
         return true;
     }
-};
-
-export const isURLProtonInternal = (url: string, hostname: string) => {
-    const currentDomain = getSecondLevelDomain(hostname);
-    const targetOriginHostname = getHostname(url);
-
-    // Still need to check the current domain otherwise it would not work on proton.local, localhost, etc...
-    return ['protonmail.com', currentDomain]
-        .filter(isTruthy)
-        .some((domain) => isSubDomain(targetOriginHostname, domain));
 };
 
 /**

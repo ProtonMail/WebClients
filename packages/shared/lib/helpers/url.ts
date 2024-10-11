@@ -204,6 +204,26 @@ export const getIsDohDomain = (origin: string) => {
     return DOH_DOMAINS.some((dohDomain) => origin.endsWith(dohDomain));
 };
 
+export const isSubDomain = (hostname: string, domain: string) => {
+    if (hostname === domain) {
+        return true;
+    }
+    return hostname.endsWith(`.${domain}`);
+};
+
+export const isURLProtonInternal = (url: string, hostname: string) => {
+    const currentDomain = getSecondLevelDomain(hostname);
+    const targetOriginHostname = getHostname(url);
+
+    // Still need to check the current domain otherwise it would not work on proton.local, localhost, etc...
+    return [
+        currentDomain,
+        'proton.me',
+        'protonmail.com',
+        'protonmailrmez3lotccipshtkleegetolb73fuirgj7r4o4vfu7ozyd.onion',
+    ].some((domain) => isSubDomain(targetOriginHostname, domain));
+};
+
 export const getIsConvertHostname = (hostname: string) => {
     return hostname === 'join.protonvpn.com';
 };
