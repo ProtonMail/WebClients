@@ -1,7 +1,7 @@
 import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import { Comment } from '../Models'
-import type { CommentInterface } from '@proton/docs-shared'
-import { CommentType, ServerTime } from '@proton/docs-shared'
+import type { CommentInterface, CommentType } from '@proton/docs-shared'
+import { ServerTime } from '@proton/docs-shared'
 import { GenerateUUID } from '../Util/GenerateUuid'
 import type { EncryptComment } from './EncryptComment'
 import type { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
@@ -89,7 +89,7 @@ export class CreateComment implements UseCaseInterface<CommentInterface> {
       emailToUse,
       [],
       false,
-      CommentType.Comment,
+      commentFromResponse.Type,
     )
     dto.commentsState.replacePlaceholderComment(localComment.id, comment)
 
