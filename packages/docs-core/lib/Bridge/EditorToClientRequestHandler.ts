@@ -79,12 +79,12 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
     return this.docOrchestrator.resolveThread(threadId)
   }
 
-  async acceptSuggestion(threadId: string): Promise<boolean> {
-    return this.docOrchestrator.acceptSuggestion(threadId)
+  async acceptSuggestion(threadId: string, summary: string): Promise<boolean> {
+    return this.docOrchestrator.acceptSuggestion(threadId, summary)
   }
 
-  async rejectSuggestion(threadId: string): Promise<boolean> {
-    return this.docOrchestrator.rejectSuggestion(threadId)
+  async rejectSuggestion(threadId: string, summary?: string): Promise<boolean> {
+    return this.docOrchestrator.rejectSuggestion(threadId, summary)
   }
 
   async reopenSuggestion(threadId: string): Promise<boolean> {
