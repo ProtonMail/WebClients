@@ -12,8 +12,8 @@ const isUser = {
 
 const utmParams = {
     [APPS.PROTONCALENDAR]: {
-        appStore: '?pt=106513916&ct=pme-calendar-topbanner&mt=8',
-        playStore: '&utm_source=proton.me&utm_campaign=pme-calendar-topbanner',
+        appStore: '?pt=106513916&ct=webapp-calendar-topbanner&mt=8',
+        playStore: '&utm_source=proton.me&utm_campaign=webapp-calendar-topbanner',
     },
     [APPS.PROTONMAIL]: {
         appStore: '?pt=106513916&ct=webapp-mail-topbanner&mt=8',
