@@ -184,20 +184,20 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     return this.comments.resolveThread(threadId)
   }
 
-  async acceptSuggestion(threadId: string): Promise<boolean> {
+  async acceptSuggestion(threadId: string, summary: string): Promise<boolean> {
     if (!this.comments) {
       return false
     }
 
-    return this.comments.changeSuggestionThreadState(threadId, 'accept')
+    return this.comments.changeSuggestionThreadState(threadId, 'accept', summary)
   }
 
-  async rejectSuggestion(threadId: string): Promise<boolean> {
+  async rejectSuggestion(threadId: string, summary?: string): Promise<boolean> {
     if (!this.comments) {
       return false
     }
 
-    return this.comments.changeSuggestionThreadState(threadId, 'reject')
+    return this.comments.changeSuggestionThreadState(threadId, 'reject', summary)
   }
 
   async reopenSuggestion(threadId: string): Promise<boolean> {
