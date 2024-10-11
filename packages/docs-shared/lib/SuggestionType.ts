@@ -7,6 +7,7 @@ export type SuggestionType =
   | 'link-change'
   | 'style-change'
   | 'image-change'
+  | 'indent-change'
 
 export type SuggestionSummaryType =
   | SuggestionType

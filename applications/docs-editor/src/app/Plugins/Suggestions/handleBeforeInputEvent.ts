@@ -31,6 +31,7 @@ import {
 import { $generateNodesFromDOM } from '@lexical/html'
 import type { Logger } from '@proton/utils/logs'
 import { INSERT_FILE_COMMAND } from '../../Commands/Events'
+import { TextEditingSuggestionTypes } from './Types'
 
 /**
  * This is the main core of suggestion mode. It handles input events,
@@ -383,8 +384,10 @@ function $handleInsertTextData(
 
     const shouldMergeWithSibling = suggestionSiblingType === 'insert'
 
-    const shouldUseSameIDAsSibling =
-      suggestionSiblingType !== 'property-change' && suggestionSiblingType !== 'link-change'
+    /* When inserting text next to a non-insert suggestion sibling, we only want to
+    continue to that suggestion if it is a text editing suggestion and not if it is
+    a formatting, style or other kind of chnage */
+    const shouldUseSameIDAsSibling = TextEditingSuggestionTypes.includes(suggestionSiblingType)
 
     if (shouldMergeWithSibling) {
       $mergeWithExistingSuggestionNode(suggestionNode, suggestionSibling, isNextSiblingSuggestion)
