@@ -656,7 +656,6 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   }
 
   handleAttemptingToBroadcastUpdateThatIsTooLarge(): void {
-    console.trace('handleAttemptingToBroadcastUpdateThatIsTooLarge')
     void this.websocketService.flushPendingUpdates()
 
     this.logger.error(new Error('Update Too Large'))

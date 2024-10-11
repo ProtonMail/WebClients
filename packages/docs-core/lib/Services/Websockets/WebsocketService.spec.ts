@@ -16,6 +16,7 @@ import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/Websocke
 import { type UpdateDebouncer } from './Debouncer/UpdateDebouncer'
 import { DocumentDebounceMode } from './Debouncer/DocumentDebounceMode'
 import type { PrivateKeyReference, SessionKey } from '@proton/crypto'
+import type { MetricService } from '../Metrics/MetricService'
 
 const mockOnReadyContentPayload = new TextEncoder().encode(
   JSON.stringify({ connectionId: '12345678', clientUpgradeRecommended: true, clientUpgradeRequired: true }),
@@ -31,6 +32,7 @@ describe('WebsocketService', () => {
   let logger: LoggerInterface
   let document: NodeMeta
   let keys: DocumentKeys
+  let metricService: MetricService
 
   const createService = async (mode: DocumentDebounceMode) => {
     if (service) {
@@ -71,6 +73,7 @@ describe('WebsocketService', () => {
       } as unknown as jest.Mocked<DecryptMessage>,
       logger,
       eventBus,
+      metricService,
       '0.0.0.0',
     )
 
@@ -118,7 +121,7 @@ describe('WebsocketService', () => {
     it('should add to buffer', async () => {
       debouncer.addUpdates = jest.fn()
 
-      service.sendDocumentUpdateMessage(document, new Uint8Array())
+      await service.sendDocumentUpdateMessage(document, new Uint8Array())
 
       expect(debouncer.addUpdates).toHaveBeenCalled()
     })

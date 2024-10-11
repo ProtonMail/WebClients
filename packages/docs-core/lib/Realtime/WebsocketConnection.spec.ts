@@ -7,6 +7,8 @@ import { getWebSocketServerURL } from './getWebSocketServerURL'
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { WebsocketCallbacks } from '@proton/docs-shared'
 import { Result } from '../Domain/Result/Result'
+import { MetricService } from '../Services/Metrics/MetricService'
+import type { Api } from '@proton/shared/lib/interfaces'
 
 const setWindowLocationHref = (href: string) => {
   delete (window as any).location
@@ -15,13 +17,17 @@ const setWindowLocationHref = (href: string) => {
 
 describe('WebsocketConnection', () => {
   let connection: WebsocketConnection
+  let metricService: MetricService
 
   beforeEach(() => {
+    metricService = new MetricService({} as Api)
+
     connection = new WebsocketConnection(
       {
         onFailToGetToken: jest.fn(),
         onConnecting: jest.fn(),
       } as unknown as WebsocketCallbacks,
+      metricService,
       {
         error: jest.fn(),
         info: jest.fn(),
@@ -254,6 +260,7 @@ describe('WebsocketConnection', () => {
           getUrlAndToken: () => Result.fail('error'),
           onFailToGetToken: onFailToGetToken,
         } as unknown as WebsocketCallbacks,
+        metricService,
         {
           error: jest.fn(),
           info: jest.fn(),

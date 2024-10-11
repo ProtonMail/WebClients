@@ -42,6 +42,7 @@ import { UpdateDebouncer } from './Debouncer/UpdateDebouncer'
 import { UpdateDebouncerEventType } from './Debouncer/UpdateDebouncerEventType'
 import { DocumentDebounceMode } from './Debouncer/DocumentDebounceMode'
 import { PostApplicationError } from '../../Application/ApplicationEvent'
+import type { MetricService } from '../Metrics/MetricService'
 
 type LinkID = string
 
@@ -55,6 +56,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     private _decryptMessage: DecryptMessage,
     private logger: LoggerInterface,
     private eventBus: InternalEventBusInterface,
+    private metricService: MetricService,
     private appVersion: string,
   ) {
     window.addEventListener('beforeunload', this.handleWindowUnload)
@@ -190,7 +192,7 @@ export class WebsocketService implements WebsocketServiceInterface {
       },
     }
 
-    const connection = new WebsocketConnection(callbacks, this.logger, this.appVersion)
+    const connection = new WebsocketConnection(callbacks, this.metricService, this.logger, this.appVersion)
 
     const debouncer = new UpdateDebouncer(document, this.logger, (event) => {
       if (event.type === UpdateDebouncerEventType.DidFlush) {
