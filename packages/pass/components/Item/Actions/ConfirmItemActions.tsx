@@ -19,7 +19,6 @@ export const ConfirmDeleteItem: FC<ConfirmationPromptHandles & { item: ItemRevis
     ) : (
         <ConfirmationPrompt
             {...props}
-            open
             danger
             title={c('Title').t`Delete this item?`}
             message={c('Warning').t`Are you sure you want to permanently delete this item?`}
@@ -38,10 +37,9 @@ export const ConfirmMoveItem: FC<
         <WithVault shareId={shareId} onFallback={onCancel}>
             {({ content: { name: vaultName } }) => (
                 <ConfirmationPrompt
-                    open
                     onConfirm={onConfirm}
                     onCancel={onCancel}
-                    title={c('Title').t`Move item to "${vaultName}"?`}
+                    title={c('Title').t`Move item to "${vaultName}"`}
                     message={
                         hasLinks
                             ? c('Info').t`Moving an item to another vault will erase its history and all secure links.`

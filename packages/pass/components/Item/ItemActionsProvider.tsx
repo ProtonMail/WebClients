@@ -91,10 +91,13 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
     );
 
     const trashManyItems = useConfirm(
-        useCallback((selected: BulkSelectionDTO) => {
-            dispatch(itemBulkTrashIntent({ selected }));
-            bulk.disable();
-        }, [])
+        useCallback(
+            (selected: BulkSelectionDTO) => {
+                dispatch(itemBulkTrashIntent({ selected }));
+                bulk.disable();
+            },
+            [bulk]
+        )
     );
 
     const deleteItem = useConfirm(
@@ -110,10 +113,13 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
     );
 
     const deleteManyItems = useConfirm(
-        useCallback((selected: BulkSelectionDTO) => {
-            dispatch(itemBulkDeleteIntent({ selected }));
-            bulk.disable();
-        }, [])
+        useCallback(
+            (selected: BulkSelectionDTO) => {
+                dispatch(itemBulkDeleteIntent({ selected }));
+                bulk.disable();
+            },
+            [bulk]
+        )
     );
 
     const restoreItem = useCallback(
@@ -128,10 +134,13 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
         []
     );
 
-    const restoreManyItems = useCallback((selected: BulkSelectionDTO) => {
-        dispatch(itemBulkRestoreIntent({ selected }));
-        bulk.disable();
-    }, []);
+    const restoreManyItems = useCallback(
+        (selected: BulkSelectionDTO) => {
+            dispatch(itemBulkRestoreIntent({ selected }));
+            bulk.disable();
+        },
+        [bulk]
+    );
 
     const context = useMemo<ItemActionsContextType>(() => {
         return {
@@ -165,9 +174,7 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                             .then((prompt) => (prompt ? trashItem.prompt(item) : trashItem.call(item)))
                             .catch(() => trashItem.call(item));
                     }
-                }
-
-                trashItem.call(item);
+                } else trashItem.call(item);
             },
             trashMany: trashManyItems.prompt,
             delete: deleteItem.prompt,
@@ -189,7 +196,6 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
 
             {moveItem.pending && (
                 <ConfirmMoveItem
-                    open
                     item={moveItem.param.item}
                     shareId={moveItem.param.shareId}
                     onCancel={moveItem.cancel}
@@ -199,7 +205,6 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
 
             {moveManyItems.pending && (
                 <ConfirmMoveManyItems
-                    open
                     selected={moveManyItems.param.selected}
                     shareId={moveManyItems.param.shareId}
                     onConfirm={moveManyItems.confirm}
@@ -208,17 +213,11 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
             )}
 
             {trashItem.pending && (
-                <ConfirmTrashAlias
-                    open
-                    onCancel={trashItem.cancel}
-                    onConfirm={trashItem.confirm}
-                    item={trashItem.param}
-                />
+                <ConfirmTrashAlias onCancel={trashItem.cancel} onConfirm={trashItem.confirm} item={trashItem.param} />
             )}
 
             {trashManyItems.pending && (
                 <ConfirmTrashManyItems
-                    open
                     onCancel={trashManyItems.cancel}
                     onConfirm={trashManyItems.confirm}
                     selected={trashManyItems.param}
@@ -227,7 +226,6 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
 
             {deleteItem.pending && (
                 <ConfirmDeleteItem
-                    open
                     onCancel={deleteItem.cancel}
                     onConfirm={deleteItem.confirm}
                     item={deleteItem.param}
@@ -236,9 +234,8 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
 
             {deleteManyItems.pending && (
                 <ConfirmDeleteManyItems
-                    open
-                    onCancel={deleteItem.cancel}
-                    onConfirm={deleteItem.confirm}
+                    onCancel={deleteManyItems.cancel}
+                    onConfirm={deleteManyItems.confirm}
                     selected={deleteManyItems.param}
                 />
             )}

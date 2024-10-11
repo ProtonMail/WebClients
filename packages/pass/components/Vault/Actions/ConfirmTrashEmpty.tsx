@@ -10,7 +10,7 @@ import {
 } from '@proton/pass/components/Confirmation/ConfirmationPrompt';
 import { selectTrashedAliasCount } from '@proton/pass/store/selectors';
 
-export const ConfirmTrashEmpty: FC<ConfirmationPromptHandles> = ({ open, onCancel, onConfirm }) => {
+export const ConfirmTrashEmpty: FC<ConfirmationPromptHandles> = ({ onCancel, onConfirm }) => {
     const aliasCount = useSelector(selectTrashedAliasCount);
 
     return (
@@ -18,7 +18,6 @@ export const ConfirmTrashEmpty: FC<ConfirmationPromptHandles> = ({ open, onCance
             danger
             onCancel={onCancel}
             onConfirm={onConfirm}
-            open={open}
             title={c('Title').t`Permanently remove all items?`}
             confirmText={c('Action').t`Delete all`}
             message={
