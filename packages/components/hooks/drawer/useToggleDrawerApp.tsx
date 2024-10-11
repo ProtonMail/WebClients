@@ -1,5 +1,7 @@
 import type { Dispatch, SetStateAction } from 'react';
 
+import { c } from 'ttag';
+
 import useApiStatus from '@proton/components/hooks/useApiStatus';
 import useConfig from '@proton/components/hooks/useConfig';
 import useOnline from '@proton/components/hooks/useOnline';
@@ -8,6 +10,8 @@ import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathna
 import { addParentAppToUrl, getIsIframedDrawerApp, postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
 import type { DrawerApp, IframeSrcMap, OpenDrawerArgs } from '@proton/shared/lib/drawer/interfaces';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
+
+import useNotifications from '../useNotifications';
 
 interface Props {
     appInView: DrawerApp | undefined;
@@ -20,12 +24,23 @@ const useToggleDrawerApp = ({ appInView, setAppInView, iframeSrcMap, setIframeSr
     const { offline } = useApiStatus();
     const onlineStatus = useOnline();
     const { APP_NAME: currentApp } = useConfig();
+    const { createNotification } = useNotifications();
 
     const isAppReachable = !offline && onlineStatus;
 
     return (args: OpenDrawerArgs) => () => {
         const { app, path = '/' } = args;
         const isAppOpened = app === appInView;
+
+        // Avoid opening app if we don't have internet connection
+        if (!isAppOpened && !isAppReachable) {
+            createNotification({
+                type: 'error',
+                text: c('Error').t`App cannot be opened without internet connection.`,
+            });
+
+            return;
+        }
 
         setAppInView(isAppOpened ? undefined : app);
 
