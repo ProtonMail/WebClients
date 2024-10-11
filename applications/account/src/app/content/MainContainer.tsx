@@ -37,6 +37,7 @@ import {
 import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso/SSODomainUnverifiedBanner';
 import { getIsSectionAvailable, getRoutePaths } from '@proton/components/containers/layout/helper';
 import UnprivatizationRequestTopBanner from '@proton/components/containers/members/Unprivatization/UnprivatizationRequestTopBanner';
+import SubscriptionModalProvider from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import { useIsSessionRecoveryAvailable, useShowThemeSelection } from '@proton/components/hooks';
 import { FeatureCode, useFeatures } from '@proton/features';
@@ -335,70 +336,72 @@ const MainContainer = () => {
     return (
         <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
             <AccountStartupModals />
-            <Switch>
-                <Route path={anyAccountAppRoute}>
-                    <AccountSettingsRouter
-                        app={app}
-                        path={prefixPath}
-                        accountAppRoutes={routes.account}
-                        redirect={redirect}
-                    />
-                </Route>
-                <Route path={anyOrganizationAppRoute}>
-                    <OrganizationSettingsRouter
-                        app={app}
-                        path={prefixPath}
-                        organizationAppRoutes={routes.organization}
-                        redirect={redirect}
-                    />
-                </Route>
-                <Route path={`/${appSlug}${CANCEL_ROUTE}`}>
-                    <CancellationReminderSection app={app} />
-                </Route>
-                <Route path={`/${mailSlug}`}>
-                    <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <MailSettingsRouter mailAppRoutes={routes.mail} redirect={redirect} app={app} />
-                    </Suspense>
-                </Route>
-                <Route path={`/${calendarSlug}`}>
-                    <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <ContactEmailsProvider>
-                            <CalendarSettingsRouter
-                                user={user}
-                                subscription={subscription}
-                                calendarAppRoutes={routes.calendar}
-                                redirect={redirect}
-                            />
-                        </ContactEmailsProvider>
-                    </Suspense>
-                </Route>
-                <Route path={`/${vpnSlug}`}>
-                    <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <VpnSettingsRouter vpnAppRoutes={routes.vpn} redirect={redirect} />
-                    </Suspense>
-                </Route>
-                <Route path={`/${driveSlug}`}>
-                    <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <DriveSettingsRouter driveAppRoutes={routes.drive} redirect={redirect} />
-                    </Suspense>
-                </Route>
-                <Route path={`/${docsSlug}`}>
-                    <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <DocsSettingsRouter docsAppRoutes={routes.docs} redirect={redirect} />
-                    </Suspense>
-                </Route>
-                <Route path={`/${walletSlug}`}>
-                    <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <WalletSettingsRouter walletAppRoutes={routes.wallet} redirect={redirect} />
-                    </Suspense>
-                </Route>
-                <Route path={`/${passSlug}`}>
-                    <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <PassSettingsRouter passAppRoutes={routes.pass} redirect={redirect} />
-                    </Suspense>
-                </Route>
-                {redirect}
-            </Switch>
+            <SubscriptionModalProvider app={app}>
+                <Switch>
+                    <Route path={anyAccountAppRoute}>
+                        <AccountSettingsRouter
+                            app={app}
+                            path={prefixPath}
+                            accountAppRoutes={routes.account}
+                            redirect={redirect}
+                        />
+                    </Route>
+                    <Route path={anyOrganizationAppRoute}>
+                        <OrganizationSettingsRouter
+                            app={app}
+                            path={prefixPath}
+                            organizationAppRoutes={routes.organization}
+                            redirect={redirect}
+                        />
+                    </Route>
+                    <Route path={`/${appSlug}${CANCEL_ROUTE}`}>
+                        <CancellationReminderSection app={app} />
+                    </Route>
+                    <Route path={`/${mailSlug}`}>
+                        <Suspense fallback={<PrivateMainAreaLoading />}>
+                            <MailSettingsRouter mailAppRoutes={routes.mail} redirect={redirect} />
+                        </Suspense>
+                    </Route>
+                    <Route path={`/${calendarSlug}`}>
+                        <Suspense fallback={<PrivateMainAreaLoading />}>
+                            <ContactEmailsProvider>
+                                <CalendarSettingsRouter
+                                    user={user}
+                                    subscription={subscription}
+                                    calendarAppRoutes={routes.calendar}
+                                    redirect={redirect}
+                                />
+                            </ContactEmailsProvider>
+                        </Suspense>
+                    </Route>
+                    <Route path={`/${vpnSlug}`}>
+                        <Suspense fallback={<PrivateMainAreaLoading />}>
+                            <VpnSettingsRouter vpnAppRoutes={routes.vpn} redirect={redirect} />
+                        </Suspense>
+                    </Route>
+                    <Route path={`/${driveSlug}`}>
+                        <Suspense fallback={<PrivateMainAreaLoading />}>
+                            <DriveSettingsRouter driveAppRoutes={routes.drive} redirect={redirect} />
+                        </Suspense>
+                    </Route>
+                    <Route path={`/${docsSlug}`}>
+                        <Suspense fallback={<PrivateMainAreaLoading />}>
+                            <DocsSettingsRouter docsAppRoutes={routes.docs} redirect={redirect} />
+                        </Suspense>
+                    </Route>
+                    <Route path={`/${walletSlug}`}>
+                        <Suspense fallback={<PrivateMainAreaLoading />}>
+                            <WalletSettingsRouter walletAppRoutes={routes.wallet} redirect={redirect} />
+                        </Suspense>
+                    </Route>
+                    <Route path={`/${passSlug}`}>
+                        <Suspense fallback={<PrivateMainAreaLoading />}>
+                            <PassSettingsRouter passAppRoutes={routes.pass} redirect={redirect} />
+                        </Suspense>
+                    </Route>
+                    {redirect}
+                </Switch>
+            </SubscriptionModalProvider>
         </PrivateAppContainer>
     );
 };
