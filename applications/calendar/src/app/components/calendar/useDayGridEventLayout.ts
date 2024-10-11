@@ -34,6 +34,30 @@ const useDayGridEventLayout = (
     numberOfRows: number,
     dayEventHeight: number
 ) => {
+    // To make more events accessible with keyboard in the correct order,
+    // we need to sort events and more events to put more events at their correct place.
+    // Since we are building an event row, we need to regroup all events that have the same left position.
+    const getSortedEventsAndMoreDays = (events: EventsStyleResult[], moreEvents: EventsStyleResult[]) => {
+        const sortedEvents: EventsStyleResult[] = [];
+
+        events.forEach((event, index) => {
+            const eventLeftPos = event.style['--left-custom'] as string;
+            sortedEvents.push(event);
+
+            // If the event is the last event from the array with this position,
+            // we can insert potential more events that have the same position right after the last event element
+            const isLastEventWithSamePosition =
+                index === events.length - 1 || events[index + 1]?.style['--left-custom'] !== eventLeftPos;
+            const moreWithSameLeftPosition = moreEvents.find((item) => item.style['--left-custom'] === eventLeftPos);
+
+            if (isLastEventWithSamePosition && moreWithSameLeftPosition) {
+                sortedEvents.push(moreWithSameLeftPosition);
+            }
+        });
+
+        return sortedEvents;
+    };
+
     return useMemo(() => {
         return rows.map((row) => {
             const columns = row.length;
@@ -115,9 +139,11 @@ const useDayGridEventLayout = (
                 return acc;
             }, []);
 
+            const sortedEvents = getSortedEventsAndMoreDays(eventsInRowStyles, moreDays);
+
             return {
                 eventsInRow,
-                eventsInRowStyles: eventsInRowStyles.concat(moreDays),
+                eventsInRowStyles: sortedEvents,
                 eventsInRowSummary,
                 maxRows,
             };
