@@ -7697,12 +7697,12 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@types/react": "npm:^18.3.11"
     "@types/react-dom": "npm:^18.3.0"
-    "@unleash/proxy-client-react": "npm:^4.2.4"
+    "@unleash/proxy-client-react": "npm:^4.3.1"
     eslint: "npm:^8.57.1"
     jest: "npm:^29.7.0"
     prettier: "npm:^3.3.3"
     typescript: "npm:^5.6.3"
-    unleash-proxy-client: "npm:^3.4.0"
+    unleash-proxy-client: "npm:^3.6.1"
   peerDependencies:
     date-fns: ^3.6.0
     react: ^18.3.1
@@ -12322,12 +12322,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@unleash/proxy-client-react@npm:^4.2.4":
-  version: 4.2.4
-  resolution: "@unleash/proxy-client-react@npm:4.2.4"
+"@unleash/proxy-client-react@npm:^4.3.1":
+  version: 4.3.1
+  resolution: "@unleash/proxy-client-react@npm:4.3.1"
   peerDependencies:
-    unleash-proxy-client: ^3.4.0
-  checksum: 10c0/873f8ca70cf23224372c34397851f152b30a07a451d77174f643fb2954407103a048193d51d138440cc1ee10f76249c9b1de1779929e10ce7896adae731954a5
+    unleash-proxy-client: ^3.5.2
+  checksum: 10c0/559cb333b51d100598bd1c84d006a2aab38cc753a1498d8ec90e85a05a87e87b38e5ba94257e61cbeab261e84d1350903953e3be259b6c4ca74dc93cf5e5e6bc
   languageName: node
   linkType: hard
 
@@ -42223,13 +42223,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unleash-proxy-client@npm:^3.4.0":
-  version: 3.4.0
-  resolution: "unleash-proxy-client@npm:3.4.0"
+"unleash-proxy-client@npm:^3.6.1":
+  version: 3.6.1
+  resolution: "unleash-proxy-client@npm:3.6.1"
   dependencies:
     tiny-emitter: "npm:^2.1.0"
     uuid: "npm:^9.0.1"
-  checksum: 10c0/1661daf37226568abe48bd7d7b411da4fcb940ee6d0a96b314afb17f775aa08eb6bbe92e9c18b3c58f1ec9537dbc823c2701645f8af2b2fe2047e41f765bc8a5
+  checksum: 10c0/f4d422496422031525aa9f6b4a43dce5325bf50d462ef450d9620da1633deaa344983dc627118e2b1304b66a31f58a4e1637c4fca4b9b45476e8f1557759bc7d
   languageName: node
   linkType: hard
 
