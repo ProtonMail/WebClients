@@ -69,15 +69,19 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
         if (online) {
             yield put(startEventPolling());
             yield put(withRevalidate(getBreaches.intent()));
+            yield put(withRevalidate(aliasSyncStatus.intent()));
+            yield put(withRevalidate(secureLinksGet.intent()));
+            if (EXTENSION_BUILD) yield put(resolveWebsiteRules.intent());
 
             if (fromCache) {
+                /** These actions should only be revalidated when booting
+                 * from cache. When logging-in for the first time or if
+                 * cache is corrupted, these will have been revalidated
+                 * by the `hydrate` call above inside `getUserData` */
                 yield put(withRevalidate(getUserFeaturesIntent(userID)));
                 yield put(withRevalidate(getUserAccessIntent(userID)));
                 yield put(withRevalidate(getUserSettings.intent(userID)));
-                yield put(withRevalidate(secureLinksGet.intent()));
                 yield put(withRevalidate(getOrganizationSettings.intent()));
-                yield put(withRevalidate(aliasSyncStatus.intent()));
-                if (EXTENSION_BUILD) yield put(resolveWebsiteRules.intent());
             }
         }
 
