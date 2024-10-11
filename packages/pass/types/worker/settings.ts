@@ -1,4 +1,13 @@
-export type AutoFillSettings = { inject: boolean; openOnFocus: boolean; identity?: boolean; twofa: boolean };
+export type AutoFillSettings = {
+    login: boolean;
+    identity: boolean;
+    twofa: boolean;
+    /** @deprecated Kept for >=1.24.0 migrations */
+    inject?: boolean;
+    /** @deprecated Kept for >=1.24.0 migrations */
+    openOnFocus?: boolean;
+};
+
 export type AutoSaveSettings = { prompt: boolean; shareId?: string; passwordSuggest: boolean };
 export type AutoSuggestSettings = { password: boolean; email: boolean; passwordCopy: boolean };
 export type PasskeySettings = { create: boolean; get: boolean };

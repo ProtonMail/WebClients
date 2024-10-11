@@ -71,8 +71,8 @@ export const createContentScriptContext = (options: {
             const { autofill, autosuggest, autosave, passkeys } = settings;
 
             return {
-                /** autofill can only be active if user has injection or "open on focus" setup */
-                Autofill: (autofill.inject || autofill.openOnFocus) && !hasCriteria(mask, 'Autofill'),
+                /** autofill can only be active if user has `autofill.login` or `autofill.identity` */
+                Autofill: (autofill.login || autofill.identity) && !hasCriteria(mask, 'Autofill'),
                 Autofill2FA: autofill.twofa && !hasCriteria(mask, 'Autofill2FA'),
                 AutosuggestPassword: autosuggest.password && !hasCriteria(mask, 'Autosuggest'),
                 AutosuggestAlias: autosuggest.email && !hasCriteria(mask, 'Autosuggest'),
