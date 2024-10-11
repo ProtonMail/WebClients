@@ -201,7 +201,7 @@ export const AmountDataListItem = ({
     exchangeRate,
 }: TxDataWithExchangeRateListItemProps & { loadingLabel?: boolean }) => {
     const [settings] = useUserWalletSettings();
-    const value = getTransactionValue(tx);
+    const value = getTransactionValue(tx, false);
 
     const bitcoinUnit = settings.BitcoinUnit;
 
