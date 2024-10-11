@@ -1,4 +1,4 @@
-import type { ElementType, ForwardedRef } from 'react';
+import type { ElementType } from 'react';
 import { forwardRef } from 'react';
 
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
@@ -18,11 +18,8 @@ export type InputProps<E extends ElementType = typeof CoreInput> = Omit<
     isGroupElement?: boolean;
 };
 
-export const Input = forwardRef(
-    (
-        { containerClassName, prefix, suffix, isGroupElement, ...props }: InputProps,
-        ref: ForwardedRef<HTMLInputElement>
-    ) => {
+export const Input = forwardRef<HTMLDivElement, InputProps>(
+    ({ containerClassName, prefix, suffix, isGroupElement, ...props }, ref) => {
         return (
             <InputFieldStacked
                 icon={prefix}
