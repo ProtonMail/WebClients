@@ -151,10 +151,14 @@ const SecurityCheckupLayout = ({ children }: Props) => {
                 )}
             >
                 <header className="flex flex-nowrap justify-space-between items-center gap-4 mb-6">
-                    <div className="inline-flex flex-nowrap shrink-0 gap-4 items-center">
-                        <div className={clsx('shrink-0 flex items-center', isElectronOnMac && 'md:pl-14 lg:pl-8')}>
-                            {logo}
-                        </div>
+                    <div
+                        className={clsx(
+                            'inline-flex flex-nowrap shrink-0 gap-4 items-center',
+                            isElectronOnMac && 'pl-custom'
+                        )}
+                        style={isElectronOnMac ? { '--pl-custom': '7.2rem' } : undefined}
+                    >
+                        {!isElectronOnMac && <div className="shrink-0 flex items-center">{logo}</div>}
 
                         <BackButton />
                     </div>
