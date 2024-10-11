@@ -55,6 +55,7 @@ const DayGrid = ({
     children,
     ...rest
 }: Props) => {
+    const containerRef = useRef<HTMLDivElement>(null);
     const rowsWrapperRef = useRef<HTMLDivElement>(null);
     const firstRowRef = useRef<HTMLDivElement>(null);
     const firstRowRect = useRect(firstRowRef.current);
@@ -101,9 +102,30 @@ const DayGrid = ({
             }
             handleMouseDownRef.current?.(e);
         };
+
+        const handleKeyDown = (e: KeyboardEvent) => {
+            const target = e.target as HTMLElement;
+            // The shortest way we found to open the event popover using keyboard
+            // is to click on the event.
+            // We need to trigger a mousedown to launch the logic to open an event,
+            // but since mousedown event is allowing to drag the event on the grid,
+            // we need to trigger a mouseup event right after so that we only open the popover.
+            if (!!target && (e.key === 'Enter' || e.key === ' ')) {
+                const rect = target.getBoundingClientRect();
+                // add a small offset to the click, otherwise when we search for the day container,
+                // we detect the previous day. Then the event is not found in the container and not opened
+                target.dispatchEvent(new MouseEvent('mousedown', { clientX: rect.left + 5, clientY: rect.top }));
+                target.dispatchEvent(new MouseEvent('mouseup'));
+            }
+        };
+
         document.addEventListener('mousedown', listener, true);
+
+        // Add event listener on events so that we can open them using keyboard
+        containerRef.current?.addEventListener('keydown', handleKeyDown, true);
         return () => {
             document.removeEventListener('mousedown', listener, true);
+            containerRef.current?.removeEventListener('keydown', handleKeyDown, true);
         };
     }, [isInteractionEnabled]);
 
@@ -114,7 +136,7 @@ const DayGrid = ({
     }, [rows, formatDate]);
 
     return (
-        <div className="flex-1 overflow-auto h-full is-month-view" {...rest}>
+        <div className="flex-1 overflow-auto h-full is-month-view" {...rest} ref={containerRef}>
             {children}
             <div className="calendar-daygrid flex flex-column relative h-full">
                 <div data-testid="calendar-month-view:week-header" className="flex calendar-daygrid-days">
