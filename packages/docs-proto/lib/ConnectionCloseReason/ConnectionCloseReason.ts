@@ -75,7 +75,7 @@ export class ConnectionCloseReason extends ValueObject<ConnectionCloseReasonProp
 
   static create(props: ConnectionCloseReasonProps): ConnectionCloseReason {
     if (Object.values(ConnectionCloseReason.CODES).indexOf(props.code) === -1) {
-      throw new Error('Invalid close code')
+      throw new Error(`Invalid close code: ${props.code}`)
     }
 
     if (!props.message) {
