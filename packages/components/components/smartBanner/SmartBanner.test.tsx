@@ -72,9 +72,9 @@ const linkRoleOptions = { name: 'Download' };
 
 const storeLinks = {
     [APPS.PROTONCALENDAR]: {
-        appStore: 'https://apps.apple.com/app/apple-store/id1514709943?pt=106513916&ct=pme-calendar-topbanner&mt=8',
+        appStore: 'https://apps.apple.com/app/apple-store/id1514709943?pt=106513916&ct=webapp-calendar-topbanner&mt=8',
         playStore:
-            'https://play.google.com/store/apps/details?id=me.proton.android.calendar&utm_source=proton.me&utm_campaign=pme-calendar-topbanner',
+            'https://play.google.com/store/apps/details?id=me.proton.android.calendar&utm_source=proton.me&utm_campaign=webapp-calendar-topbanner',
     },
     [APPS.PROTONMAIL]: {
         appStore: 'https://apps.apple.com/app/apple-store/id979659905?pt=106513916&ct=webapp-mail-topbanner&mt=8',
