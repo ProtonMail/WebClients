@@ -7,11 +7,11 @@ export class EventType extends ValueObject<EventTypeProps> {
 
   static create(type: number): EventType {
     if (!Object.values(EventType.TYPES).includes(type)) {
-      throw new Error('Invalid message type')
+      throw new Error(`Invalid message type: ${type}`)
     }
 
     if (typeof type !== 'number') {
-      throw new Error('Type must be a number')
+      throw new Error(`Type must be a number: ${type}`)
     }
 
     return new EventType({ type })
