@@ -3,7 +3,7 @@ import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
 import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import { CommentThread } from '../Models'
-import { ServerTime } from '@proton/docs-shared'
+import { CommentThreadType, CommentType, ServerTime } from '@proton/docs-shared'
 import type { DecryptComment } from './DecryptComment'
 import type { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
 import type { DocsApi } from '../Api/DocsApi'
@@ -62,26 +62,52 @@ export class LoadThreads implements UseCaseInterface<void> {
     }
 
     const { CommentThread: commentThreadDto } = thread.getValue()
+    const corruptThreadIds: Set<string> = new Set()
+
     const comments = await Promise.all(
       commentThreadDto.Comments.map(async (commentDto) => {
         const result = await this.decryptComment.execute(commentDto, commentThreadDto.Mark, dto.keys)
-        return result
+        if (!result.isFailed()) {
+          return result.getValue()
+        }
+
+        /**
+         * If the comment or suggestion refers to a date before the encryption incident was resolved,
+         * and given that decryption has failed, we delete this comment thread from the API.
+         * See DRVDOC-1194 for more information.
+         */
+        if (commentDto.Type === CommentType.Suggestion || commentThreadDto.Type === CommentThreadType.Suggestion) {
+          this.logger.error(`[LoadThreads] Failed to decrypt suggestion comment: ${result.getError()}`)
+          const dateEncryptionIncidentWasResolved = new Date('2024-10-03T12:00:00+02:00')
+          const dateCommentWasCreated = new ServerTime(commentDto.CreateTime).date
+          const commentWasCreatedBeforeEncryptionResolution = dateCommentWasCreated < dateEncryptionIncidentWasResolved
+          if (commentWasCreatedBeforeEncryptionResolution) {
+            corruptThreadIds.add(dto.threadID)
+          }
+        } else {
+          this.logger.error(`[LoadThreads] Failed to decrypt comment: ${result.getError()}`)
+        }
+
+        return undefined
       }),
     )
 
-    const failedComments = comments.filter((result) => result.isFailed())
-    for (const failed of failedComments) {
-      this.logger.error(`[LoadThreads] Failed to decrypt comment: ${failed.getError()}`)
+    if (corruptThreadIds.size > 0) {
+      void this.deleteCorruptSuggestionThreads(Array.from(corruptThreadIds), dto.lookup)
+
+      if (corruptThreadIds.has(dto.threadID)) {
+        return Result.ok()
+      }
     }
 
-    const successfulComments = comments.filter((result) => !result.isFailed())
+    const successfulComments = comments.filter((result) => !!result)
 
     const localThread = new CommentThread(
       commentThreadDto.CommentThreadID,
       new ServerTime(commentThreadDto.CreateTime),
       new ServerTime(commentThreadDto.ModifyTime),
       commentThreadDto.Mark,
-      successfulComments.map((result) => result.getValue()),
+      successfulComments,
       false,
       commentThreadDto.State,
       commentThreadDto.Type,
@@ -90,5 +116,25 @@ export class LoadThreads implements UseCaseInterface<void> {
     dto.commentsState.addThread(localThread)
 
     return Result.ok()
+  }
+
+  private async deleteCorruptSuggestionThreads(threadIds: string[], lookup: NodeMeta): Promise<void> {
+    for (const threadId of threadIds) {
+      this.logger.error(`[LoadThreads] Deleting corrupt suggestion thread: ${threadId}`)
+
+      /** First reject the thread with the API, so that the API will allow deletion, since it otherwise won't */
+      const rejectResponse = await this.api.changeSuggestionThreadState(
+        lookup.volumeId,
+        lookup.linkId,
+        threadId,
+        'reject',
+      )
+      if (rejectResponse.isFailed()) {
+        this.logger.info(`[LoadThreads] Failed to reject corrupt thread: ${rejectResponse.getError()}`)
+        return
+      }
+
+      void this.api.deleteThread(lookup.volumeId, lookup.linkId, threadId)
+    }
   }
 }
