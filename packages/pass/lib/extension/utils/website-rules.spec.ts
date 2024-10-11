@@ -26,6 +26,8 @@ describe('Website rules', () => {
             expect(validateRules({})).toBe(false);
             expect(validateRules(null)).toBe(false);
             expect(validateRules(undefined)).toBe(false);
+            expect(validateRules({ ...rules, rules: [] })).toBe(false);
+            expect(validateRules({ ...rules, rules: { 'example.com': 'rule' } })).toBe(false);
         });
     });
 
