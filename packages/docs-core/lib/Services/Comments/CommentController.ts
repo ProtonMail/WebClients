@@ -341,7 +341,18 @@ export class CommentController implements CommentControllerInterface, InternalEv
     return true
   }
 
-  async changeSuggestionThreadState(threadId: string, action: SuggestionThreadStateAction): Promise<boolean> {
+  async changeSuggestionThreadState(
+    threadId: string,
+    action: SuggestionThreadStateAction,
+    summary?: string,
+  ): Promise<boolean> {
+    if (summary) {
+      const comment = await this.createSuggestionSummaryComment(summary, threadId)
+      if (!comment) {
+        return false
+      }
+    }
+
     const response = await this.api.changeSuggestionThreadState(
       this.document.volumeId,
       this.document.linkId,
