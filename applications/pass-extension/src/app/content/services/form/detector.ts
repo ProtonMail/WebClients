@@ -19,6 +19,7 @@ import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/me
 import { type ExclusionRules, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { compareDomNodes } from '@proton/pass/utils/dom/sort';
 import { prop } from '@proton/pass/utils/fp/lens';
+import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { liftSort } from '@proton/pass/utils/fp/sort';
 import { logger } from '@proton/pass/utils/logger';
 import { withMaxExecutionTime } from '@proton/pass/utils/time/performance';
@@ -224,10 +225,12 @@ export const createDetectorService = () => {
         },
 
         applyRules: () => {
-            state.rules?.forEach((selector) => {
-                const match = document.querySelector<HTMLElement>(selector);
-                if (match) flagSubtreeAsIgnored(match);
-            });
+            state.rules?.forEach(
+                safeCall((selector) => {
+                    const match = document.querySelector<HTMLElement>(selector);
+                    if (match) flagSubtreeAsIgnored(match);
+                })
+            );
         },
 
         isEnabled,
