@@ -25,7 +25,7 @@
     },
     "dependencies": {
         "@mattiasbuelens/web-streams-adapter": "0.1.0",
-        "@noble/hashes": "^1.4.0",
+        "@noble/hashes": "^1.5.0",
         "@openpgp/web-stream-tools": "^0.0.13",
         "@proton/account": "workspace:^",
         "@proton/atoms": "workspace:^",
@@ -48,7 +48,7 @@
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
         "client-zip": "^2.4.5",
-        "exifreader": "^4.23.3",
+        "exifreader": "^4.23.7",
         "mime-types": "^2.1.35",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
@@ -61,11 +61,11 @@
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/i18n": "workspace:^",
         "@proton/testing": "workspace:^",
-        "@testing-library/jest-dom": "^6.4.8",
+        "@testing-library/jest-dom": "^6.5.0",
         "@testing-library/react": "^15.0.7",
         "@testing-library/react-hooks": "^8.0.1",
         "@types/mime-types": "^2.1.4",
-        "@types/react": "^18.3.3",
+        "@types/react": "^18.3.11",
         "@types/react-dom": "^18.3.0",
         "@types/react-router-dom": "^5.3.3",
         "@types/react-window": "^1.8.8",
@@ -74,7 +74,7 @@
         "cross-env": "^7.0.3",
         "cross-var": "^1.1.0",
         "ejs-webpack-loader": "^2.2.2",
-        "eslint": "^8.57.0",
+        "eslint": "^8.57.1",
         "jest": "^29.7.0",
         "jest-environment-jsdom": "^29.7.0",
         "jest-junit": "^16.0.0",
@@ -82,8 +82,8 @@
         "path-browserify": "^1.0.1",
         "prettier": "^3.3.3",
         "pretty-format": "^29.7.0",
-        "typescript": "^5.6.2",
-        "webpack": "^5.93.0"
+        "typescript": "^5.6.3",
+        "webpack": "^5.95.0"
     },
     "exifreader": {
         "exclude": {
