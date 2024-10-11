@@ -208,7 +208,11 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
                         }
                     }}
                 />
-                <AutocompleteList anchorRef={anchorRef} {...suggestionProps} isOpen onClose={() => {}}>
+                <AutocompleteList
+                    anchorRef={anchorRef}
+                    {...suggestionProps}
+                    searchResultsCount={filteredAndSortedOptions.filter((option) => !option.option.selected).length}
+                >
                     {filteredAndSortedOptions.map(({ chunks, text, option }, index) => {
                         return (
                             <AddressesAutocompleteOption

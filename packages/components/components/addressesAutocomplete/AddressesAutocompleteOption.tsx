@@ -58,7 +58,8 @@ const AddressesAutocompleteOption = <V,>({
         <li
             className="dropdown-item"
             // @ts-expect-error - https://github.com/facebook/react/issues/17157
-            inert={selected}
+            inert={selected ? '' : undefined}
+            aria-hidden={selected}
         >
             <button
                 type="button"
