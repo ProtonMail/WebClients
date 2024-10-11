@@ -7,6 +7,7 @@ import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 import type { DriveFolder } from '../../../hooks/drive/useActiveShare';
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useNavigate from '../../../hooks/drive/useNavigate';
+import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
 import type { EncryptedLink, LinkShareUrl, useFolderView } from '../../../store';
 import { useThumbnailsDownload } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
@@ -95,7 +96,7 @@ function Drive({ activeFolder, folderView }: Props) {
     const { openDocument } = useDocumentActions();
     const { canUseDocs } = useDriveDocsFeatureFlag();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
-
+    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(folderView.layout, folderView.isLoading);
     const { permissions, layout, folderName, items, sortParams, setSorting, isLoading } = folderView;
 
     const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
@@ -137,6 +138,8 @@ function Drive({ activeFolder, folderView }: Props) {
     );
 
     const handleItemRender = (item: DriveItem) => {
+        incrementItemRenderedCounter();
+
         if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
             thumbnails.addToDownloadQueue(shareId, item.linkId, item.activeRevision.id);
         }

@@ -3,6 +3,7 @@ import { useCallback, useMemo, useRef } from 'react';
 import { useActiveBreakpoint } from '@proton/components';
 
 import useNavigate from '../../../hooks/drive/useNavigate';
+import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
 import type { useDevicesView } from '../../../store';
 import FileBrowser, { Cells, useItemContextMenu, useSelection } from '../../FileBrowser';
 import type { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
@@ -39,7 +40,7 @@ function Devices({ view }: Props) {
     const browserItemContextMenu = useItemContextMenu();
     const selectionControls = useSelection();
     const { viewportWidth } = useActiveBreakpoint();
-
+    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(view.layout, view.isLoading);
     const { layout, items: browserItems, isLoading } = view;
     const sectionTitle = getDevicesSectionName();
 
@@ -47,6 +48,10 @@ function Devices({ view }: Props) {
         () => getSelectedItems(browserItems, selectionControls!.selectedItemIds),
         [browserItems, selectionControls!.selectedItemIds]
     );
+
+    const handleItemRender = () => {
+        incrementItemRenderedCounter();
+    };
 
     const handleClick = useCallback(
         (id: BrowserItemId) => {
@@ -91,6 +96,7 @@ function Devices({ view }: Props) {
                 caption={sectionTitle}
                 items={browserItems}
                 headerItems={headerItems}
+                onItemRender={handleItemRender}
                 layout={layout}
                 loading={isLoading}
                 Cells={Cells}
