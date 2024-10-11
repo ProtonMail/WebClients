@@ -35,7 +35,7 @@ export interface CommentControllerInterface {
 
   resolveThread(threadId: string): Promise<boolean>
 
-  changeSuggestionThreadState(threadId: string, action: SuggestionThreadStateAction): Promise<boolean>
+  changeSuggestionThreadState(threadId: string, action: SuggestionThreadStateAction, summary?: string): Promise<boolean>
 
   unresolveThread(threadId: string): Promise<boolean>
 
