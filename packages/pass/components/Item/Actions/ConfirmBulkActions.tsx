@@ -24,13 +24,12 @@ export const ConfirmTrashManyItems: FC<ConfirmationPromptHandles & { selected: B
 
     return (
         <ConfirmationPrompt
-            open
             danger
             onCancel={onCancel}
             onConfirm={onConfirm}
             title={c('Title').ngettext(
-                msgid`Trash ${trashedItemsCount} item?`,
-                `Trash ${trashedItemsCount} items?`,
+                msgid`Move ${trashedItemsCount} item to trash?`,
+                `Move ${trashedItemsCount} items to trash?`,
                 trashedItemsCount
             )}
             message={
@@ -66,7 +65,6 @@ export const ConfirmMoveManyItems: FC<
         <WithVault shareId={shareId} onFallback={onCancel}>
             {({ content: { name: vaultName } }) => (
                 <ConfirmationPrompt
-                    open
                     onConfirm={onConfirm}
                     onCancel={onCancel}
                     title={c('Title').ngettext(
@@ -103,7 +101,6 @@ export const ConfirmDeleteManyItems: FC<ConfirmationPromptHandles & { selected: 
 
     return (
         <ConfirmationPrompt
-            open
             danger
             onCancel={onCancel}
             onConfirm={onConfirm}
