@@ -69,6 +69,8 @@ export const intoDomainWithPort = ({ domain, port, protocol }: URLComponents): M
     }
 };
 
+export const intoHostWithoutProtocol = (url: MaybeNull<string>): string => (url ? new URL(url).host : '');
+
 export const globToRegExp = (globPattern: string) => {
     const regexString = globPattern.replace(/\//g, '\\/').replace(/\./g, '\\.').replace(/\*/g, '.*');
     return new RegExp(`^${regexString}$`);
