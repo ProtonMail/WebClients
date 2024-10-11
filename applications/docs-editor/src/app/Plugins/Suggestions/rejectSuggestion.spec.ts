@@ -7,7 +7,9 @@ import { $isTextNode } from 'lexical'
 import { $createParagraphNode, $createTextNode, $getRoot } from 'lexical'
 import { $rejectSuggestion } from './rejectSuggestion'
 import { $createHeadingNode } from '@lexical/rich-text'
-import { $createListItemNode, $createListNode } from '@lexical/list'
+import type { ListNode, ListItemNode } from '@lexical/list'
+import { $isListItemNode } from '@lexical/list'
+import { $createListItemNode, $createListNode, $isListNode } from '@lexical/list'
 import type { LinkNode } from '@lexical/link'
 import { $createLinkNode, $isLinkNode } from '@lexical/link'
 import { getStyleObjectFromCSS } from '@lexical/selection'
@@ -111,6 +113,163 @@ describe('$rejectSuggestion', () => {
         const style = getStyleObjectFromCSS(text.getStyle())
         expect(style['font-size']).toBe('16px')
         expect(style['background-color']).toBe('#fff')
+      })
+    })
+  })
+
+  describe('indent-change', () => {
+    describe('Paragraph', () => {
+      beforeEach(() => {
+        editor.update(
+          () => {
+            const paragraph1 = $createParagraphNode()
+              .append(
+                $createSuggestionNode('test', 'indent-change', {
+                  indent: 0,
+                }),
+              )
+              .setIndent(1)
+            const paragraph2 = $createParagraphNode()
+              .append(
+                $createSuggestionNode('test', 'indent-change', {
+                  indent: 1,
+                }),
+              )
+              .setIndent(0)
+            const paragraph3 = $createParagraphNode()
+              .append(
+                $createSuggestionNode('test', 'indent-change', {
+                  indent: 1,
+                }),
+              )
+              .setIndent(2)
+            const paragraph4 = $createParagraphNode()
+              .append(
+                $createSuggestionNode('test', 'indent-change', {
+                  indent: 2,
+                }),
+              )
+              .setIndent(1)
+            $getRoot().append(paragraph1, paragraph2, paragraph3, paragraph4)
+            $rejectSuggestion('test')
+          },
+          {
+            discrete: true,
+          },
+        )
+      })
+
+      test('Paragraph 1 should be outdented to level 0', () => {
+        editor.read(() => {
+          const paragraph1 = $getRoot().getChildAtIndex<ParagraphNode>(0)
+          expect(paragraph1?.getIndent()).toBe(0)
+        })
+      })
+
+      test('Paragraph 2 should be indented to level 1', () => {
+        editor.read(() => {
+          const paragraph1 = $getRoot().getChildAtIndex<ParagraphNode>(1)
+          expect(paragraph1?.getIndent()).toBe(1)
+        })
+      })
+
+      test('Paragraph 3 should be outdented to level 1', () => {
+        editor.read(() => {
+          const paragraph1 = $getRoot().getChildAtIndex<ParagraphNode>(2)
+          expect(paragraph1?.getIndent()).toBe(1)
+        })
+      })
+
+      test('Paragraph 4 should be indented to level 2', () => {
+        editor.read(() => {
+          const paragraph1 = $getRoot().getChildAtIndex<ParagraphNode>(3)
+          expect(paragraph1?.getIndent()).toBe(2)
+        })
+      })
+    })
+
+    describe('List', () => {
+      describe('To outdent', () => {
+        beforeEach(() => {
+          editor.update(
+            () => {
+              const list = $createListNode('number')
+              const item1 = $createListItemNode()
+              const item2 = $createListItemNode().append(
+                $createSuggestionNode('test', 'indent-change', {
+                  indent: 0,
+                }),
+              )
+              const item3 = $createListItemNode()
+              list.append(item1, item2, item3)
+              $getRoot().append(list)
+              item2.setIndent(1)
+            },
+            {
+              discrete: true,
+            },
+          )
+          editor.update(
+            () => {
+              $rejectSuggestion('test')
+            },
+            {
+              discrete: true,
+            },
+          )
+        })
+
+        test('Should de-nest list-item', () => {
+          editor.read(() => {
+            const list = $getRoot().getChildAtIndex<ListNode>(0)
+            const indentedItem = list?.getChildAtIndex<ListItemNode>(1)
+            expect(indentedItem?.getChildrenSize()).toBe(0)
+          })
+        })
+      })
+
+      describe('To indent', () => {
+        beforeEach(() => {
+          editor.update(
+            () => {
+              const list = $createListNode('number')
+              const item1 = $createListItemNode()
+              const item2 = $createListItemNode().append(
+                $createSuggestionNode('test', 'indent-change', {
+                  indent: 1,
+                }),
+              )
+              const item3 = $createListItemNode()
+              list.append(item1, item2, item3)
+              $getRoot().append(list)
+              item2.setIndent(0)
+            },
+            {
+              discrete: true,
+            },
+          )
+          editor.update(
+            () => {
+              $rejectSuggestion('test')
+            },
+            {
+              discrete: true,
+            },
+          )
+        })
+
+        test('Should nest list-item deeper 1 level', () => {
+          editor.read(() => {
+            const list = $getRoot().getChildAtIndex<ListNode>(0)
+            const indentedItem = list?.getChildAtIndex<ListItemNode>(1)
+            expect(indentedItem?.getChildrenSize()).toBe(1)
+            const nestedList = indentedItem?.getFirstChildOrThrow<ListNode>()
+            expect($isListNode(nestedList)).toBe(true)
+            expect(nestedList?.getChildrenSize()).toBe(1)
+            const nestedListItem = nestedList?.getFirstChildOrThrow<ListItemNode>()
+            expect($isListItemNode(nestedListItem)).toBe(true)
+          })
+        })
       })
     })
   })

@@ -6,6 +6,7 @@ import { ProtonNode, $isSuggestionNode } from './ProtonNode'
 import { $createLinkNode, $isLinkNode } from '@lexical/link'
 import { $patchStyleText } from '@lexical/selection'
 import { $isImageNode } from '../Image/ImageNode'
+import { $findMatchingParent } from '@lexical/utils'
 
 export function $rejectSuggestion(suggestionID: string): boolean {
   const nodes = $nodesOfType(ProtonNode)
@@ -119,6 +120,19 @@ export function $rejectSuggestion(suggestionID: string): boolean {
         continue
       }
       imageNode.setWidthAndHeight(initialWidth, initialHeight)
+    } else if (suggestionType === 'indent-change') {
+      const changedProperties = node.__properties.nodePropertiesChanged
+      if (!changedProperties) {
+        node.remove()
+        continue
+      }
+      const indentableParent = $findMatchingParent(
+        node,
+        (parentNode): parentNode is ElementNode =>
+          $isElementNode(parentNode) && !parentNode.isInline() && parentNode.canIndent(),
+      )
+      node.remove()
+      indentableParent?.setIndent(changedProperties.indent)
     } else {
       node.remove()
     }
