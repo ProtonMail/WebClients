@@ -198,17 +198,20 @@
 	border-block-end: 1px solid var(--border-norm);
 }
 
+:root {
+	--suggestion-normal-bg: 52 145 114;
+	--suggestion-normal-fg: rgb(15 107 76);
+	--suggestion-normal-bg-non-selected: rgb(var(--suggestion-normal-bg) / 0.05);
+	--suggestion-normal-bg-selected: rgb(var(--suggestion-normal-bg) / 0.1);
+}
+
 .Lexical__Suggestion {
 	border-block-end: 1px dotted rgb(var(--fg));
-
-	--bg: 52 145 114;
-	--fg: 15 107 76;
-
-	background-color: rgb(var(--bg) / 0.05);
-	color: rgb(var(--fg));
+	background-color: var(--suggestion-normal-bg-non-selected);
+	color: var(--suggestion-normal-fg);
 
 	&.selected {
-		background-color: rgb(var(--bg) / 0.1);
+		background-color: var(--suggestion-normal-bg-selected);
 	}
 
 	&.delete,
@@ -235,6 +238,20 @@
 			pointer-events: none;
 			user-select: none;
 		}
+	}
+
+	.Lexical__paragraph > &.indent-change {
+		display: inline-block;
+	}
+
+	*:not(.Lexical__listItem):has(> &.indent-change),
+	.Lexical__listItem:not(.Lexical__listItem--nested):has(> &.indent-change) {
+		background: var(--suggestion-normal-bg-non-selected);
+	}
+
+	*:not(.Lexical__listItem):has(> &.indent-change.selected),
+	.Lexical__listItem:not(.Lexical__listItem--nested):has(> &.indent-change.selected) {
+		background: var(--suggestion-normal-bg-selected);
 	}
 
 	&.split::after {

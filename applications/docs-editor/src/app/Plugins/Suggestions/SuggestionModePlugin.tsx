@@ -13,6 +13,8 @@ import {
   FORMAT_ELEMENT_COMMAND,
   FORMAT_TEXT_COMMAND,
   INDENT_CONTENT_COMMAND,
+  INSERT_TAB_COMMAND,
+  KEY_TAB_COMMAND,
   OUTDENT_CONTENT_COMMAND,
   PASTE_COMMAND,
   REDO_COMMAND,
@@ -21,7 +23,7 @@ import {
 } from 'lexical'
 import { useEffect, useRef, useState } from 'react'
 import { ProtonNode, $isSuggestionNode } from './ProtonNode'
-import type { SuggestionID } from './Types'
+import { SuggestionTypesThatCanBeEmpty, type SuggestionID } from './Types'
 import { BEFOREINPUT_EVENT_COMMAND } from '../../Commands/Events'
 import { type EditorRequiresClientMethods } from '@proton/docs-shared'
 import { sendErrorMessage } from '../../Utils/errorMessage'
@@ -54,6 +56,7 @@ import {
   $insertImageNodeAsSuggestion,
 } from './imageHandling'
 import { EditorUserMode } from '../../EditorUserMode'
+import { $handleIndentOutdentAsSuggestion } from './handleIndentOutdent'
 
 const LIST_TRANSFORMERS = [UNORDERED_LIST, ORDERED_LIST, CHECK_LIST]
 
@@ -288,8 +291,7 @@ export function SuggestionModePlugin({
           return
         }
         const type = node.getSuggestionTypeOrThrow()
-        // Split and join nodes are supposed to be empty.
-        if (type === 'split' || type === 'join') {
+        if (SuggestionTypesThatCanBeEmpty.includes(type)) {
           return
         }
         if (node.getChildrenSize() === 0) {
@@ -334,16 +336,23 @@ export function SuggestionModePlugin({
         COMMAND_PRIORITY_CRITICAL,
       ),
       editor.registerCommand(
-        INDENT_CONTENT_COMMAND,
-        (payload) => {
+        INSERT_TAB_COMMAND,
+        () => {
           return true
         },
         COMMAND_PRIORITY_CRITICAL,
       ),
       editor.registerCommand(
+        INDENT_CONTENT_COMMAND,
+        () => {
+          return $handleIndentOutdentAsSuggestion('indent', addCreatedIDtoSet, suggestionModeLogger)
+        },
+        COMMAND_PRIORITY_CRITICAL,
+      ),
+      editor.registerCommand(
         OUTDENT_CONTENT_COMMAND,
-        (payload) => {
-          return true
+        () => {
+          return $handleIndentOutdentAsSuggestion('outdent', addCreatedIDtoSet, suggestionModeLogger)
         },
         COMMAND_PRIORITY_CRITICAL,
       ),
@@ -380,18 +389,24 @@ export function SuggestionModePlugin({
             return true
           }
 
-          const { key, shiftKey, ctrlKey, metaKey } = event
+          const { key, shiftKey, ctrlKey, metaKey, altKey } = event
           const controlOrMeta = IS_APPLE ? metaKey : ctrlKey
           const lowerCaseKey = key.toLowerCase()
+
           const isUndo = lowerCaseKey === 'z' && !shiftKey && controlOrMeta
           const isRedo = IS_APPLE
             ? lowerCaseKey === 'z' && metaKey && shiftKey
             : (lowerCaseKey === 'y' && ctrlKey) || (lowerCaseKey === 'z' && ctrlKey && shiftKey)
+          const isTab = key === 'Tab' && !altKey && !ctrlKey && !metaKey
+
           if (isUndo) {
             editor.dispatchCommand(UNDO_COMMAND, undefined)
           } else if (isRedo) {
             editor.dispatchCommand(REDO_COMMAND, undefined)
+          } else if (isTab) {
+            editor.dispatchCommand(KEY_TAB_COMMAND, event)
           }
+
           return true
         },
         COMMAND_PRIORITY_CRITICAL,
