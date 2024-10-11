@@ -102,6 +102,8 @@ export function useSuggestionCommentContent(
       color = 'weak'
     } else if (type === 'image-change') {
       title = c('Label').t`Change image size`
+    } else if (type === 'indent-change') {
+      title = c('Label').t`Change indent level`
     }
     if (!!replaceWith || type === 'delete' || type === 'insert') {
       content = `"${content}"`

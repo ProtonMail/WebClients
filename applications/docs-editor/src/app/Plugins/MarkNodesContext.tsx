@@ -1,10 +1,14 @@
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { mergeRegister } from '@lexical/utils'
-import { $getSelection, $isRangeSelection, $isTextNode, type NodeKey } from 'lexical'
+import { $findMatchingParent, mergeRegister } from '@lexical/utils'
+import type { ElementNode } from 'lexical'
+import { $getSelection, $isElementNode, $isRangeSelection, $isTextNode, type NodeKey } from 'lexical'
 import type { ReactNode } from 'react'
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import { $getCommentThreadMarkIDs } from './Comments/CommentThreadMarkNode'
 import { $getSuggestionID } from './Suggestions/Utils'
+import type { ProtonNode } from './Suggestions/ProtonNode'
+import { $isSuggestionNode } from './Suggestions/ProtonNode'
+import { SuggestionTypesThatAffectWholeParent } from './Suggestions/Types'
 
 type MarkNodesContextValue = {
   markNodeMap: Map<string, Set<NodeKey>>
@@ -84,6 +88,23 @@ export function MarkNodesProvider({ children }: { children: ReactNode }) {
 
             if ($isRangeSelection(selection)) {
               const anchorNode = selection.anchor.getNode()
+
+              const nonInlineParent = $findMatchingParent(
+                anchorNode,
+                (node): node is ElementNode => $isElementNode(node) && !node.isInline(),
+              )
+              if (nonInlineParent) {
+                const children = nonInlineParent.getChildren()
+                const suggestionThatAffectsWholeNode = children.find(
+                  (node): node is ProtonNode =>
+                    $isSuggestionNode(node) &&
+                    SuggestionTypesThatAffectWholeParent.includes(node.getSuggestionTypeOrThrow()),
+                )
+                if (suggestionThatAffectsWholeNode) {
+                  setActiveIDs([suggestionThatAffectsWholeNode.getSuggestionIdOrThrow()])
+                  hasActiveIds = true
+                }
+              }
 
               if ($isTextNode(anchorNode)) {
                 const commentIDs = $getCommentThreadMarkIDs(anchorNode, selection.anchor.offset)

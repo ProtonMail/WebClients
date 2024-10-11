@@ -1158,7 +1158,7 @@ export default function DocumentEditorToolbar({
           type="button"
           className="text-[--text-norm]"
           content={<Icon name="three-dots-vertical" />}
-          disabled={!isEditable || isSuggestionMode}
+          disabled={!isEditable}
           hasCaret={false}
           contentProps={DropdownContentProps}
           data-testid="content-properties-button"
