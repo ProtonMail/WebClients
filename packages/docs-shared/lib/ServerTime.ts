@@ -18,6 +18,10 @@ export class ServerTime {
     return convertTimestampToMilliseconds(this.serverTimestamp)
   }
 
+  get date(): Date {
+    return new Date(this.milliseconds)
+  }
+
   get relativeSeconds(): number {
     return Math.round((this.milliseconds - Date.now()) / 1000)
   }
