@@ -2,6 +2,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { getMockedWindowLocation } from '@proton/shared/test/helpers/url.helper';
 
 import {
+    appendUrlSearchParams,
     formatURLForAjaxRequest,
     getApiSubdomainUrl,
     getAppUrlFromApiUrl,
@@ -184,5 +185,42 @@ describe('getUrlWithReturnUrl', () => {
         expect(getUrlWithReturnUrl(mailUrl, { returnUrl: getPathFromLocation(location), context: 'public' })).toEqual(
             expectedUrl
         );
+    });
+});
+
+describe('appendURLParams', () => {
+    it('should append parameters to the URL', () => {
+        const url = 'https://mail.proton.me';
+        const params = { param1: 'value1', param2: 'value2' };
+        const expectedUrl = 'https://mail.proton.me/?param1=value1&param2=value2';
+        expect(appendUrlSearchParams(url, params)).toEqual(expectedUrl);
+    });
+
+    it('should handle existing parameters in the URL', () => {
+        const url = 'https://mail.proton.me?existingParam=existingValue';
+        const params = { param1: 'value1', param2: 'value2' };
+        const expectedUrl = 'https://mail.proton.me/?existingParam=existingValue&param1=value1&param2=value2';
+        expect(appendUrlSearchParams(url, params)).toEqual(expectedUrl);
+    });
+
+    it('should not override existing parameters in the URL', () => {
+        const url = 'https://mail.proton.me?param1=oldValue';
+        const params = { param1: 'newValue', param2: 'value2' };
+        const expectedUrl = 'https://mail.proton.me/?param1=oldValue&param1=newValue&param2=value2';
+        expect(appendUrlSearchParams(url, params)).toEqual(expectedUrl);
+    });
+
+    it('should handle URLs without parameters', () => {
+        const url = 'https://mail.proton.me';
+        const params = { param1: 'value1' };
+        const expectedUrl = 'https://mail.proton.me/?param1=value1';
+        expect(appendUrlSearchParams(url, params)).toEqual(expectedUrl);
+    });
+
+    it('should handle URLs with hash parameters', () => {
+        const url = 'https://mail.proton.me#dude';
+        const params = { param1: 'value1' };
+        const expectedUrl = 'https://mail.proton.me/?param1=value1#dude';
+        expect(appendUrlSearchParams(url, params)).toEqual(expectedUrl);
     });
 });

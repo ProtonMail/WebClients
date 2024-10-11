@@ -438,3 +438,25 @@ export const getUrlWithReturnUrl = (
     }
     return urlWithReturnUrl.toString();
 };
+
+/**
+ * Append search params to a url
+ *
+ * @param url The url you want to append the search params to
+ * @param params
+ * Object with the search params you want to append.
+ * Key is the search param name and value is the search param value
+ * @throws if the url is not a valid url
+ * @returns the url with the search params appended
+ *
+ * @description
+ * Please note this method will append search params event if they already exist in the url.
+ * So if you want to override a search param you need to remove it first.
+ */
+export const appendUrlSearchParams = (url: string, params: Record<string, string>) => {
+    const urlObj = new URL(url);
+    Object.entries(params).forEach(([key, value]) => {
+        urlObj.searchParams.append(key, value);
+    });
+    return urlObj.toString();
+};
