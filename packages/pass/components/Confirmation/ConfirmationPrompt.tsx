@@ -6,7 +6,6 @@ import { Button } from '@proton/atoms';
 import { Prompt } from '@proton/components';
 
 export type ConfirmationPromptHandles = {
-    open: boolean;
     onCancel: () => void;
     onConfirm: () => void;
 };
@@ -18,10 +17,10 @@ type Props = ConfirmationPromptHandles & {
     title: ReactNode;
 };
 
-export const ConfirmationPrompt: FC<Props> = ({ confirmText, danger, message, title, open, onCancel, onConfirm }) => {
+export const ConfirmationPrompt: FC<Props> = ({ confirmText, danger, message, title, onCancel, onConfirm }) => {
     return (
         <Prompt
-            open={open}
+            open
             title={<span className="text-break">{title}</span>}
             buttons={[
                 <Button onClick={onConfirm} color={danger ? 'danger' : 'norm'} pill>
