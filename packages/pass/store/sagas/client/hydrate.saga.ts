@@ -66,14 +66,16 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore, 
         settings.lockTTL = authStore.getLockTTL();
         settings.lockMode = authStore.getLockMode();
         settings.extraPassword = authStore.getExtraPassword();
+        const autofill = settings.autofill;
 
-        if (EXTENSION_BUILD) {
-            /** setup identity autofill IIF identity setting has not been
-             * touched and `PassIdentityV1` is active. */
-            const identityEnabled = userState.features?.PassIdentityV1 ?? false;
-            if (identityEnabled && settings.autofill && settings.autofill.identity === undefined) {
-                settings.autofill.identity = true;
-            }
+        if (EXTENSION_BUILD && autofill) {
+            const autofillEnabled = Boolean(autofill.inject || autofill.openOnFocus);
+            const identityEnabled = Boolean(userState.features?.PassIdentityV1);
+
+            /** Migrate `autofill.login` based on current user preferences */
+            if (autofill.login === undefined) autofill.login = autofillEnabled;
+            if (autofill.identity === undefined && identityEnabled) autofill.identity = autofillEnabled;
+            if (autofill.twofa === undefined) autofill.twofa = autofill.login;
         }
 
         /** Activate offline mode by default for paid users who
