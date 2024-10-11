@@ -5,8 +5,8 @@ import type { WebsocketStateInterface } from './WebsocketState'
 import { WebsocketState } from './WebsocketState'
 import metrics from '@proton/metrics'
 import { isLocalEnvironment } from '../Util/isDevOrBlack'
-import { ConnectionCloseMetrics } from './ConnectionCloseMetrics'
 import { getWebSocketServerURL } from './getWebSocketServerURL'
+import type { MetricService } from '../Services/Metrics/MetricService'
 
 /**
  * The heartbeat mechanism is temporarily disabled due to the fact that we cannot renew our heartbeat when receiving
@@ -38,6 +38,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
   constructor(
     readonly callbacks: WebsocketCallbacks,
+    readonly metricService: MetricService,
     private logger: LoggerInterface,
     private appVersion: string,
   ) {
@@ -229,9 +230,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
       message,
     })
 
-    metrics.docs_realtime_disconnect_error_total.increment({
-      type: ConnectionCloseMetrics[reason.props.code],
-    })
+    this.metricService.reportRealtimeDisconnect(reason)
 
     if (this.state.isConnected) {
       this.callbacks.onClose(reason)
