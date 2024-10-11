@@ -51,8 +51,11 @@ export const BoostTransactionModal = ({ transaction, onBoost, ...modalProps }: P
 
     const getRecipientVerifiedAddressKey = useGetRecipientVerifiedAddressKey();
 
-    const { feesList } = useFees();
-    const feeRateForNextBlock = useMemo(() => findNearestBlockTargetFeeRate(1, feesList), [feesList]);
+    const { feesList, minimumFee } = useFees();
+    const feeRateForNextBlock = useMemo(
+        () => findNearestBlockTargetFeeRate(1, feesList, minimumFee),
+        [feesList, minimumFee]
+    );
 
     const exchangeRate = transaction.apiData?.ExchangeRate;
     const currentFees = transaction.networkData.fee ?? 0;
