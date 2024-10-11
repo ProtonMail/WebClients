@@ -16,6 +16,7 @@ import TransferManager from '../components/TransferManager/TransferManager';
 import DriveWindow from '../components/layout/DriveWindow';
 import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
+import { useReactRouterNavigationLog } from '../hooks/util/useReactRouterNavigationLog';
 import { useRedirectToPublicPage } from '../hooks/util/useRedirectToPublicPage';
 import {
     DriveProvider,
@@ -68,6 +69,7 @@ const InitContainer = () => {
     const { addBookmarkFromPrivateApp } = useBookmarksActions();
     const { needToRedirectToPublicPage, redirectToPublicPage, cleanupUrl } = useRedirectToPublicPage();
     useActivePing();
+    useReactRouterNavigationLog();
 
     useEffect(() => {
         const abortController = new AbortController();

@@ -6,6 +6,7 @@ import { ContactEmailsProvider, useActiveBreakpoint } from '@proton/components';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import useNavigate from '../../../hooks/drive/useNavigate';
+import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
 import {
     type EncryptedLink,
     type ExtendedInvitationDetails,
@@ -98,7 +99,10 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
     const { openDocument } = useDocumentActions();
     const { canUseDocs } = useDriveDocsFeatureFlag();
     const { openBookmark } = useBookmarksActions();
-
+    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(
+        sharedWithMeView.layout,
+        sharedWithMeView.isLoading
+    );
     const { layout, items, sortParams, setSorting, isLoading } = sharedWithMeView;
 
     const selectedItemIds = selectionControls!.selectedItemIds;
@@ -138,13 +142,13 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
                     .catch(sendErrorReport);
                 return;
             }
-
             navigateToLink(item.rootShareId, item.linkId, item.isFile);
         },
         [navigateToLink, items]
     );
 
     const handleItemRender = (item: SharedWithMeItem) => {
+        incrementItemRenderedCounter();
         if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
             thumbnails.addToDownloadQueue(item.rootShareId, item.linkId, item.activeRevision.id);
         }

@@ -4,8 +4,10 @@ import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Loader, NavigationControl, TopBanner, useAppTitle } from '@proton/components';
+import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { useFlag } from '@proton/unleash';
 
+import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
 import { useShiftKey } from '../../../hooks/util/useShiftKey';
 import type { PhotoLink } from '../../../store';
 import { isDecryptedLink, usePhotosView, useThumbnailsDownload } from '../../../store';
@@ -31,15 +33,17 @@ export const PhotosView: FC<void> = () => {
         photos,
         photoLinkIdToIndexMap
     );
-
+    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(LayoutSetting.Grid, isLoading);
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const [previewLinkId, setPreviewLinkId] = useState<string | undefined>();
     const isShiftPressed = useShiftKey();
     const thumbnails = useThumbnailsDownload();
 
-    const handleItemRender = (itemLinkId: string, domRef: React.MutableRefObject<unknown>) =>
+    const handleItemRender = (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
+        incrementItemRenderedCounter();
         loadPhotoLink(itemLinkId, domRef);
+    };
 
     const handleItemRenderLoadedLink = (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
         if (shareId) {
