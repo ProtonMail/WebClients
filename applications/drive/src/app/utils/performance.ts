@@ -3,6 +3,8 @@ import type Metrics from '@proton/metrics/Metrics';
 import Histogram from '@proton/metrics/lib/Histogram';
 import { reportWebVitals } from '@proton/shared/lib/metrics/webvitals';
 
+import { NAVIGATION_MARK } from '../hooks/util/useReactRouterNavigationLog';
+
 export const getCurrentPageType = (path: string = window.location.pathname) => {
     // Normalize the path: remove leading/trailing slashes and collapse multiple slashes
     const normalizedPath = path.replace(/^\/+|\/+$/g, '').replace(/\/+/g, '/');
@@ -87,11 +89,30 @@ export const initializePerformanceMetrics = (isPublic: boolean) => {
     reportWebVitals(isPublic ? 'public' : 'private');
 };
 
-const getTimeFromNavigationStart = (key: string): number | undefined => {
+const getNavigationStart = () => {
+    // By default we use the browser navigation
     const perfEntries = performance.getEntriesByType('navigation');
     if (perfEntries && perfEntries.length > 0) {
         const navigationEntry = perfEntries[0];
-        const startTime = navigationEntry.startTime;
+        let startTime = navigationEntry.startTime;
+
+        // If however, we had a react-router navigation, we use this navigation as the beginning of the navigation
+        const reactRouterNavigationEntries = performance
+            .getEntriesByType('mark')
+            .filter((entry) => entry.name === NAVIGATION_MARK);
+
+        const lastEntry = reactRouterNavigationEntries.at(-1);
+        if (lastEntry) {
+            startTime = lastEntry.startTime;
+        }
+
+        return startTime;
+    }
+};
+
+const getTimeFromNavigationStart = (key: string): number | undefined => {
+    const startTime = getNavigationStart();
+    if (startTime !== undefined) {
         const measureName = `measure-${key}`;
 
         performance.measure(measureName, {
@@ -108,14 +129,16 @@ const getTimeFromNavigationStart = (key: string): number | undefined => {
  * Logs a performance marker and records its timing metrics.
  *
  * This function creates a performance mark, measures the time from navigation start
- * to the mark, and records the metric to observability.
+ * to the mark (or uses a provided time), and records the metric to observability.
  *
  * @param key - The key of the performance marker, which should correspond to a key in the Metrics type (your observability metric).
- * @param view - Optional parameter specifying the view type ('list' or 'grid'), used for for certain metrics.
+ * @param view - Optional parameter specifying the view type ('list' or 'grid'), used for certain metrics.
+ * @param timeInMs - Optional parameter to provide a specific time in milliseconds instead of measuring from navigation start.
+ * @returns The time recorded for the performance marker in milliseconds.
  */
-export const logPerformanceMarker = (key: keyof Metrics, view?: 'list' | 'grid') => {
+export const logPerformanceMarker = (key: keyof Metrics, view?: 'list' | 'grid', timeInMs?: number) => {
     performance.mark(key);
-    const time = getTimeFromNavigationStart(key);
+    const time = timeInMs !== undefined ? timeInMs : getTimeFromNavigationStart(key);
     const pageType = getCurrentPageType();
 
     if (time && pageType && metrics[key] instanceof Histogram) {
@@ -127,4 +150,6 @@ export const logPerformanceMarker = (key: keyof Metrics, view?: 'list' | 'grid')
             Value: time / 1000,
         });
     }
+
+    return time;
 };

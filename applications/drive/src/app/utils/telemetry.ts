@@ -60,7 +60,7 @@ type PerformanceTelemetryAdditionalValues = {
     quantity?: number;
 };
 
-export const sendTelemetryFeaturePerformance = (
+const sendTelemetryFeaturePerformance = (
     api: Api,
     featureName: Features,
     timeInMs: number,
