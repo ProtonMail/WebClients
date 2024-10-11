@@ -47,6 +47,8 @@ const AutocompleteList = <V,>({
         e.preventDefault();
     };
 
+    const itemsCount = searchResultsCount || items.length;
+
     return (
         <>
             <span className="sr-only" id={`${id}-autocomplete-suggest-text`}>
@@ -56,9 +58,9 @@ const AutocompleteList = <V,>({
 
             <div className="sr-only" aria-atomic="true" aria-live="assertive">
                 {c('Hint').ngettext(
-                    msgid`Found ${searchResultsCount || items.length} suggestion, use keyboard to navigate.`,
-                    `Found ${searchResultsCount || items.length} suggestions, use keyboard to navigate.`,
-                    searchResultsCount || items.length
+                    msgid`Found ${itemsCount} suggestion, use keyboard to navigate.`,
+                    `Found ${itemsCount} suggestions, use keyboard to navigate.`,
+                    itemsCount
                 )}
             </div>
 
