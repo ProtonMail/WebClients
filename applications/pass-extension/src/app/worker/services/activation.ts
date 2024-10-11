@@ -23,6 +23,7 @@ import { semver } from '@proton/pass/utils/string/semver';
 import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
 import { getEpoch, msToEpoch } from '@proton/pass/utils/time/epoch';
 import { parseUrl } from '@proton/pass/utils/url/parser';
+import { intoDomainWithPort, intoHostWithoutProtocol } from '@proton/pass/utils/url/utils';
 import noop from '@proton/utils/noop';
 
 import { getSessionResumeAlarm, getSessionResumeDelay, shouldForceLock } from './auth';
@@ -233,7 +234,7 @@ export const createActivationService = () => {
          * in the UI to infer wakeup result - see `wakeup.saga.ts` */
         const tab = await browser.tabs.get(tabId);
         const parsedUrl = parseUrl(tab.url ?? '');
-        const { subdomain, domain } = parsedUrl;
+        const { subdomain, domain, port, protocol } = parsedUrl;
         const items = ctx.service.autofill.getLoginCandidates(parsedUrl);
         const hasAutofillCandidates = items.length > 0;
 
@@ -241,7 +242,10 @@ export const createActivationService = () => {
         const tabState = selectPopupTabState(tabId)(state);
         const filters = selectPopupFilters(state);
         const pushTabState = tabState !== undefined && [subdomain, domain].includes(tabState.domain);
-        const searchForAutofill = hasAutofillCandidates && domain ? domain : '';
+        const searchForAutofill =
+            hasAutofillCandidates && domain
+                ? intoHostWithoutProtocol(intoDomainWithPort({ domain, port, protocol }))
+                : '';
 
         const validItem = tabState?.selectedItem
             ? selectItem(tabState.selectedItem.shareId, tabState.selectedItem.itemId) !== undefined
