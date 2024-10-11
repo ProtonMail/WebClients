@@ -45,6 +45,8 @@ export function $acceptSuggestion(suggestionID: string): boolean {
       $unwrapSuggestionNode(node)
     } else if (suggestionType === 'image-change') {
       $unwrapSuggestionNode(node)
+    } else if (suggestionType === 'indent-change') {
+      $unwrapSuggestionNode(node)
     } else {
       $unwrapSuggestionNode(node)
     }
