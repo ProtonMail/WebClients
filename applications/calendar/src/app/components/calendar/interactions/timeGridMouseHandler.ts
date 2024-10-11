@@ -415,8 +415,8 @@ export default ({
     const { target } = e;
 
     const rect = timeGridEl.getBoundingClientRect();
-    const targetDate = getTargetIndex(e.pageX, rect.left, rect.width, totalDays);
-    const targetMinutes = getTargetMinutes(e.pageY, rect.top, rect.height, totalMinutes, interval);
+    const targetDate = getTargetIndex(e.x, rect.left, rect.width, totalDays);
+    const targetMinutes = getTargetMinutes(e.y, rect.top, rect.height, totalMinutes, interval);
 
     const dayContainerNode = timeGridEl.childNodes[targetDate + 1]; // + 1 for the hour lines
 

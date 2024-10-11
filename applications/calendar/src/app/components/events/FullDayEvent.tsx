@@ -1,4 +1,4 @@
-import type { CSSProperties, Ref } from 'react';
+import type { CSSProperties, KeyboardEvent, Ref } from 'react';
 import { useMemo } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -80,6 +80,17 @@ const FullDayEvent = ({
         return eventTitleSafe;
     })();
 
+    const handleKeyDown = (e: KeyboardEvent) => {
+        // The shortest way we found to open the event popover using keyboard
+        // is to click on the event.
+        // We need to trigger a mousedown to launch the logic to open an event,
+        // but since mousedown event is allowing to drag the event on the grid,
+        // we need to trigger a mouseup event right after so that we only open the popover.
+        if (e.key === 'Enter' || e.key === ' ') {
+            onClick?.();
+        }
+    };
+
     const content = (
         <div className="flex flex-nowrap flex-1 items-center">
             {!isAllDay ? (
@@ -118,6 +129,7 @@ const FullDayEvent = ({
             {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/prefer-tag-over-role */}
             <div
                 onClick={onClick}
+                onKeyDown={handleKeyDown}
                 title={expandableTitleString}
                 role="button"
                 tabIndex={0}
