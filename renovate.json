@@ -1,7 +1,6 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": ["config:base", "group:allNonMajor", ":semanticCommitsDisabled"],
-    "schedule": ["before 5am every tuesday", "before 5am every thursday"],
     "postUpdateOptions": ["yarnDedupeHighest"],
     "rangeStrategy": "bump",
     "rebaseWhen": "conflicted",
