@@ -107,6 +107,7 @@ const TimeGrid = ({
     ...rest
 }: Props) => {
     const attendeeBusySlots = useCalendarSelector(selectAttendeesBusySlots);
+    const containerRef = useRef<HTMLDivElement>(null);
     const timeGridRef = useRef<HTMLDivElement>(null);
     const dayGridRef = useRef<HTMLUListElement>(null);
     const nowRef = useRef<HTMLDivElement>(null);
@@ -269,9 +270,30 @@ const TimeGrid = ({
             }
             handleMouseDownRef.current?.(e);
         };
+
+        const handleKeyDown = (e: KeyboardEvent) => {
+            const target = e.target as HTMLElement;
+            // The shortest way we found to open the event popover using keyboard
+            // is to click on the event.
+            // We need to trigger a mousedown to launch the logic to open an event,
+            // but since mousedown event is allowing to drag the event on the grid,
+            // we need to trigger a mouseup event right after so that we only open the popover.
+            if (!!target && (e.key === 'Enter' || e.key === ' ')) {
+                const rect = target.getBoundingClientRect();
+                // add a small offset to the click, otherwise when we search for the day container,
+                // we detect the previous day. Then the event is not found in the container and not opened
+                target.dispatchEvent(new MouseEvent('mousedown', { clientX: rect.left + 5, clientY: rect.top }));
+                target.dispatchEvent(new MouseEvent('mouseup'));
+            }
+        };
+
         document.addEventListener('mousedown', handleMouseDown, true);
+
+        // Add event listener on events so that we can open them using keyboard
+        containerRef.current?.addEventListener('keydown', handleKeyDown, true);
         return () => {
             document.removeEventListener('mousedown', handleMouseDown, true);
+            containerRef.current?.removeEventListener('keydown', handleKeyDown, true);
         };
     }, [isInteractionEnabled]);
 
@@ -319,7 +341,7 @@ const TimeGrid = ({
     );
 
     return (
-        <div className="flex flex-column flex-nowrap w-full">
+        <div className="flex flex-column flex-nowrap w-full" ref={containerRef}>
             <div
                 ref={titleRef}
                 className={clsx(['calendar-row-heading shrink-0 shadow-norm bg-norm', displayViewClass])}
