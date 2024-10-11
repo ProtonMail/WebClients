@@ -50,25 +50,15 @@ const getSettings =
                 label: c('Label').t`Autofill`,
                 settings: [
                     {
-                        label: c('Label').t`Display ${PASS_APP_NAME} icon on autofillable fields`,
-                        description: c('Info')
-                            .t`You can quickly autofill your credentials by clicking on the ${PASS_APP_NAME} icon.`,
-                        checked: settings.autofill.inject,
-                        onChange: (checked) => onSettingsUpdate({ autofill: { inject: checked } }),
-                    },
-                    {
-                        label: c('Label').t`Automatically open autofill when a login field is focused`,
-                        description: c('Info')
-                            .t`The autofill dropdown will automatically open when you click or focus on the field.`,
-                        checked: settings.autofill.openOnFocus,
-                        onChange: (checked) => onSettingsUpdate({ autofill: { openOnFocus: checked } }),
+                        label: c('Label').t`Login autofill`,
+                        description: c('Info').t`Quickly autofill your saved credentials.`,
+                        checked: settings.autofill.login ?? true,
+                        onChange: (checked) => onSettingsUpdate({ autofill: { login: checked, twofa: checked } }),
                     },
                     {
                         label: c('Label').t`Identity autofill`,
                         description: c('Info').t`Quickly autofill your identities.`,
                         checked: settings.autofill.identity ?? false,
-                        /** identity autofill is disabled if no injection or "open on focus" */
-                        disabled: !(settings.autofill.inject || settings.autofill.openOnFocus),
                         hidden: !identityEnabled,
                         onChange: (checked) => onSettingsUpdate({ autofill: { identity: checked } }),
                     },
@@ -76,6 +66,7 @@ const getSettings =
                         label: c('Label').t`2FA autofill`,
                         description: c('Info').t`Quickly autofill your 2FA tokens.`,
                         checked: settings.autofill.twofa,
+                        disabled: !settings.autofill.login,
                         onChange: (checked) => onSettingsUpdate({ autofill: { twofa: checked } }),
                     },
                 ],
