@@ -6,6 +6,7 @@ import noop from '@proton/utils/noop';
 import { getActiveSessions } from './session';
 
 export type SwitchableSession = {
+    /** Fallsback to `Username` if address `DisplayName` is not set */
     DisplayName: string;
     lastUsedAt?: number;
     LocalID: number;
@@ -54,8 +55,14 @@ export const createAuthSwitchService = (config: AuthSwitchConfig) => {
             const [localActive, inactive] = partition(localSessions, ({ LocalID }) => sessions.has(LocalID!));
 
             const active = localActive.map((session) => {
-                const { DisplayName, PrimaryEmail = '' } = sessions.get(session.LocalID)!;
-                return { ...session, DisplayName, PrimaryEmail };
+                const { DisplayName, Username, PrimaryEmail = '' } = sessions.get(session.LocalID)!;
+                return {
+                    ...session,
+                    /** Fallback to `Username` if no `DisplayName` set
+                     * for the session's email address */
+                    DisplayName: DisplayName ?? Username,
+                    PrimaryEmail,
+                };
             });
 
             active.forEach(config.onActiveSession);
