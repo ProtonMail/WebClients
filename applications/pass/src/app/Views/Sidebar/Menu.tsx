@@ -128,7 +128,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                             <ButtonLike ref={anchorRef} onClick={toggle} shape="ghost" className="flex-1" size="small">
                                 <UserPanel
                                     email={user?.Email ?? ''}
-                                    name={user?.DisplayName ?? ''}
+                                    name={user?.DisplayName ?? user?.Name ?? ''}
                                     plan={passPlan}
                                     planName={planDisplayName}
                                 />
