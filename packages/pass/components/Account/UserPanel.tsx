@@ -19,10 +19,11 @@ type Props = {
 
 export const UserPanel: FC<Props> = ({ actions, email, name, organization, plan, planName }) => {
     const emailOnly = planName !== undefined;
+    const avatar = (name || email)?.toUpperCase()?.[0];
 
     return (
         <div className={clsx('flex flex-nowrap gap-2 items-center text-sm', plan && isPaidPlan(plan) && 'ui-orange')}>
-            <Avatar className="shrink-0">{name.toUpperCase()?.[0]}</Avatar>
+            <Avatar className="shrink-0">{avatar}</Avatar>
             <div className="text-left flex-1">
                 <span className="color-norm text-ellipsis">{emailOnly ? email : name}</span>
                 {!emailOnly && <span className="block color-weak text-ellipsis">{email}</span>}
