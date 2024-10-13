@@ -6863,7 +6863,7 @@ __metadata:
     "@webgpu/types": "npm:^0.1.48"
     babel-jest: "npm:^29.7.0"
     babel-plugin-transform-require-context: "npm:^0.1.1"
-    card-validator: "npm:^9.1.0"
+    card-validator: "npm:^10.0.0"
     codemirror: "npm:^5.65.18"
     cross-fetch: "npm:^4.0.0"
     date-fns: "npm:^2.30.0"
@@ -16475,12 +16475,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"card-validator@npm:^9.1.0":
-  version: 9.1.0
-  resolution: "card-validator@npm:9.1.0"
+"card-validator@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "card-validator@npm:10.0.0"
   dependencies:
     credit-card-type: "npm:^9.1.0"
-  checksum: 10c0/1311c4a01dbe4da917ab4d069e6db7760960403edc3ab83d687213dcf036e090dbe73426f0663f85cfd1a09d4aaa0c4ee6d925810ad65f0a4b537af7f0696fe9
+  checksum: 10c0/6318d8b41b5809cbf02f546367c6fa0d5079329bf299051274df76b7711e455bdc07c6a9481f8fd885124b93f841219098139c805e853c1b78f7ba2d2450420f
   languageName: node
   linkType: hard
 
