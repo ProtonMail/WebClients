@@ -25,6 +25,7 @@ interface TotpInputProps {
     disableChange?: boolean;
     autoFocus?: boolean;
     autoComplete?: 'one-time-code';
+    centerDivider?: boolean;
 }
 
 const size = {
@@ -58,6 +59,7 @@ const TotpInput: ForwardRefRenderFunction<HTMLInputElement, TotpInputProps> = (
         autoFocus,
         autoComplete,
         error,
+        centerDivider = true,
     }: TotpInputProps,
     focusRef
 ) => {
@@ -87,6 +89,7 @@ const TotpInput: ForwardRefRenderFunction<HTMLInputElement, TotpInputProps> = (
 
     const handleMultipleValues = (multipleValues: string, i: number) => {
         const result = multipleValues
+            .replaceAll(/\s+/g, '')
             .slice(0, list.length - i)
             .split('')
             .filter((pastedValue) => {
@@ -102,7 +105,7 @@ const TotpInput: ForwardRefRenderFunction<HTMLInputElement, TotpInputProps> = (
         onValue(newValues.join(''));
     };
 
-    const centerIndex = Math.round(list.length / 2);
+    const centerIndex = centerDivider ? Math.round(list.length / 2) : -1;
     const focusIndex = Math.min(value.trim().length, length - 1);
 
     const maxInputWidth = Math.floor(Math.max((rect?.width || 0) / length, size.minWidth));
