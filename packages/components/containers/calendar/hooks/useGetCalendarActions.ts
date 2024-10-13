@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
@@ -19,7 +20,7 @@ import type { CalendarSettings, CalendarWithOwnMembers, VisualCalendar } from '@
 import type { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 
-import { useNotifications, useReadCalendarBootstrap } from '../../../hooks';
+import { useNotifications } from '../../../hooks';
 import { useCalendarModelEventManager } from '../../eventManager/calendar/CalendarModelEventManagerProvider';
 
 interface Props {
@@ -50,7 +51,7 @@ const useGetCalendarActions = ({
     const { call } = useEventManager();
     const { call: calendarCall } = useCalendarModelEventManager();
     const getAddressKeys = useGetAddressKeys();
-    const readCalendarBootstrap = useReadCalendarBootstrap();
+    const getCalendarBootstrap = useGetCalendarBootstrap();
     const { createNotification } = useNotifications();
 
     const handleCreateCalendar = async (
@@ -138,7 +139,7 @@ const useGetCalendarActions = ({
             calendar,
             calendarPayload,
             calendarSettingsPayload,
-            readCalendarBootstrap,
+            getCalendarBootstrap,
             getAddresses,
             api
         );

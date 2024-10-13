@@ -1,5 +1,5 @@
 import type { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
-import type { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
+import type { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import type { PublicKeyReference } from '@proton/crypto';
 import { syncMultipleEvents as syncMultipleEventsRoute } from '@proton/shared/lib/api/calendars';
 import { getHasSharedEventContent, getHasSharedKeyPacket } from '@proton/shared/lib/calendar/apiModels';
@@ -32,6 +32,7 @@ export interface DeleteEventActionOperation {
         deletionReason: DELETION_REASON;
     };
 }
+
 export interface CreateEventActionOperation {
     type: SyncOperationTypes.CREATE;
     data: {
@@ -43,6 +44,7 @@ export interface CreateEventActionOperation {
         color?: string;
     };
 }
+
 export interface UpdateEventActionOperation {
     type: SyncOperationTypes.UPDATE;
     data: {

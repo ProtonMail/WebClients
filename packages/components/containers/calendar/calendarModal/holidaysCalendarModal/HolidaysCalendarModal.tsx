@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useGetHolidaysDirectory } from '@proton/calendar/holidaysDirectory/hooks';
 import Form from '@proton/components/components/form/Form';
 import Loader from '@proton/components/components/loader/Loader';
@@ -13,7 +14,6 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import HolidaysCalendarModalWithDirectory from '@proton/components/containers/calendar/calendarModal/holidaysCalendarModal/HolidaysCalendarModalWithDirectory';
 import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
 import GenericError from '@proton/components/containers/error/GenericError';
-import { useGetCalendarBootstrap } from '@proton/components/hooks/useGetCalendarBootstrap';
 import type {
     CalendarBootstrap,
     HolidaysDirectoryCalendar,

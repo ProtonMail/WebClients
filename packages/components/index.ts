@@ -515,10 +515,7 @@ export {
     default as CalendarModelEventManagerProvider,
     useCalendarModelEventManager,
 } from './containers/eventManager/calendar/CalendarModelEventManagerProvider';
-export {
-    useCalendarsInfoCoreListener,
-    default as useCalendarsInfoListener,
-} from './containers/eventManager/calendar/useCalendarsInfoListener';
+export { default as useCalendarsInfoListener } from './containers/eventManager/calendar/useCalendarsInfoListener';
 export { default as EventManagerContext } from './containers/eventManager/context';
 export { default as EventManagerProvider } from './containers/eventManager/EventManagerProvider';
 export { default as EventNotices } from './containers/eventManager/EventNotices';

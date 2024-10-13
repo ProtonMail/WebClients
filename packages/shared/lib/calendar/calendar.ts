@@ -10,6 +10,7 @@ import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
 import type {
     Calendar,
+    CalendarBootstrap,
     CalendarNotificationSettings,
     CalendarSettings,
     CalendarUserSettings,
@@ -364,7 +365,7 @@ export const updateCalendar = async (
     calendar: VisualCalendar,
     calendarPayload: CalendarCreateData,
     calendarSettingsPayload: Required<EditableCalendarSettings>,
-    readCalendarBootstrap: (calendarID: string) => any,
+    getCalendarBootstrap: (calendarID: string) => Promise<CalendarBootstrap>,
     getAddresses: GetAddresses,
     api: Api
 ) => {
@@ -372,9 +373,10 @@ export const updateCalendar = async (
     const { Color, Display, Description, Name } = calendarPayload;
     const [{ ID: memberID }] = getMemberAndAddress(await getAddresses(), calendar.Members);
     const hasChangedMemberData = getHasChangedCalendarMemberData(calendarPayload, calendar);
+    const calendarBootstrap = await getCalendarBootstrap(calendarID);
     const hasChangedSettings = getHasChangedCalendarSettings(
         calendarSettingsPayload,
-        readCalendarBootstrap(calendarID)?.CalendarSettings
+        calendarBootstrap.CalendarSettings
     );
 
     await Promise.all(
