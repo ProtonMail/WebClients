@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { Button, Href } from '@proton/atoms';
+import { useGetDecryptedPassphraseAndCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import AddressesInput, { AddressesInputItem } from '@proton/components/components/addressesInput/AddressesInput';
 import Icon from '@proton/components/components/icon/Icon';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
@@ -18,11 +19,7 @@ import AddressesAutocompleteTwo from '@proton/components/components/v2/addresses
 import InputField from '@proton/components/components/v2/field/InputField';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useKeyTransparencyContext } from '@proton/components/containers/keyTransparency/useKeyTransparencyContext';
-import {
-    useGetDecryptedPassphraseAndCalendarKeys,
-    useGetEncryptionPreferences,
-    useNotifications,
-} from '@proton/components/hooks';
+import { useGetEncryptionPreferences, useNotifications } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import type { PublicKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
@@ -54,6 +51,7 @@ export enum VALIDATION_ERROR_TYPES {
     DOES_NOT_EXIST,
     EXISTING_MEMBER,
 }
+
 const { INVALID_EMAIL, NOT_PROTON_ACCOUNT, SHARING_UNSUPPORTED, DOES_NOT_EXIST, EXISTING_MEMBER } =
     VALIDATION_ERROR_TYPES;
 

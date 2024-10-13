@@ -1,4 +1,4 @@
-import type { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
+import type { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { withPmAttendees } from '@proton/shared/lib/calendar/attendees';
 import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { getSelfAttendeeToken } from '@proton/shared/lib/calendar/mailIntegration/invite';
@@ -144,7 +144,7 @@ interface Arguments {
     onEquivalentAttendees: (attendees: string[][]) => Promise<void>;
     api: Api;
     getEventDecrypted: GetDecryptedEventCb;
-    getCalendarBootstrap: (CalendarID: string) => CalendarBootstrap;
+    getCalendarBootstrap: (CalendarID: string) => Promise<CalendarBootstrap>;
     getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
     getAddressKeys: GetAddressKeys;
     getCanonicalEmailsMap: GetCanonicalEmailsMap;
@@ -288,7 +288,7 @@ const getSaveEventActions = async ({
     /**
      * EDITION
      */
-    const calendarBootstrap = getCalendarBootstrap(oldEventData.CalendarID);
+    const calendarBootstrap = await getCalendarBootstrap(oldEventData.CalendarID);
     if (!calendarBootstrap) {
         throw new Error('Trying to edit event without a calendar');
     }
