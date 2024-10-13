@@ -20,7 +20,7 @@ const SecurityCheckupRoot = ({
     const { session, source } = useSecurityCheckup();
 
     useEffect(() => {
-        if (!session?.initialCohort || !source || pageLoadOnceRef.current) {
+        if (!session?.initialCohort || pageLoadOnceRef.current) {
             return;
         }
 
