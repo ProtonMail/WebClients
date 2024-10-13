@@ -206,6 +206,27 @@ describe('TotpInput component', () => {
         expect(inputNodes[3]).toHaveFocus();
     });
 
+    it('should strip whitespace when pasting', () => {
+        const Test = () => {
+            const [value, setValue] = useState('123');
+            return <TotpInput value={value} onValue={setValue} length={4} type="alphabet" />;
+        };
+
+        const { container } = render(<Test />);
+        const inputNodes = container.querySelectorAll('input');
+
+        expectValues('123 ', inputNodes);
+
+        fireEvent.paste(inputNodes[0], { clipboardData: { getData: () => '1 3 1' } });
+        expectValues('131', inputNodes);
+
+        fireEvent.paste(inputNodes[0], { clipboardData: { getData: () => '9\n8\n  7\n6' } });
+        expectValues('9876', inputNodes);
+
+        fireEvent.paste(inputNodes[0], { clipboardData: { getData: () => '9\na\n  7\nb' } });
+        expectValues('9a7b', inputNodes);
+    });
+
     describe('Autofocus behaviours', () => {
         const Test = (options: { autoFocus: boolean; initialValue: string }) => {
             const focusRef = useRef<HTMLInputElement>(null);

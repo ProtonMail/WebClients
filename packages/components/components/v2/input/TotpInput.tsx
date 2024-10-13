@@ -89,6 +89,7 @@ const TotpInput: ForwardRefRenderFunction<HTMLInputElement, TotpInputProps> = (
 
     const handleMultipleValues = (multipleValues: string, i: number) => {
         const result = multipleValues
+            .replaceAll(/\s+/g, '')
             .slice(0, list.length - i)
             .split('')
             .filter((pastedValue) => {
