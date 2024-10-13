@@ -72,6 +72,8 @@
 			margin: 0;
 			padding: 0;
 			display: flex;
+			min-inline-size: 0;
+			padding-inline-end: 1em;
 		}
 
 		&-right {
@@ -167,6 +169,8 @@
 
 				td:nth-child(1) {
 					grid-area: a;
+					min-inline-size: 0;
+					padding-inline-end: 1em;
 				}
 
 				td:nth-child(2) {
@@ -226,6 +230,12 @@
 			max-inline-size: 100%;
 			padding-block-end: 0.5em;
 		}
+	}
+
+	// email settings
+	label[for='swipeLeftAction'] + div,
+	label[for='swipeRightAction'] + div {
+		max-inline-size: 60%;
 	}
 }
 
