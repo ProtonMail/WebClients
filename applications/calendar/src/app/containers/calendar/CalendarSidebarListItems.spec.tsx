@@ -4,7 +4,6 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
 import { useUser } from '@proton/account/user/hooks';
-import { CacheProvider } from '@proton/components';
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { CALENDAR_FLAGS, CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
@@ -12,7 +11,6 @@ import {
     getCalendarHasSubscriptionParameters,
     getCalendarIsNotSyncedInfo,
 } from '@proton/shared/lib/calendar/subscribe/helpers';
-import createCache from '@proton/shared/lib/helpers/cache';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { mockUseAuthentication } from '@proton/testing/lib/mockUseAuthentication';
@@ -80,6 +78,11 @@ jest.mock('@proton/components/hooks/useConfig', () => ({
 jest.mock('@proton/components/hooks/useGetEncryptionPreferences', () => ({
     __esModule: true,
     default: jest.fn(),
+}));
+
+jest.mock('@proton/calendar/calendarBootstrap/keys', () => ({
+    __esModule: true,
+    useGetDecryptedPassphraseAndCalendarKeys: jest.fn(),
 }));
 
 jest.mock('@proton/account/addressKeys/hooks', () => ({
@@ -244,9 +247,7 @@ function renderComponent(props?: Partial<CalendarSidebarListItemsProps>) {
     mockUseAuthentication({} as any);
     return (
         <Router history={memoryHistory}>
-            <CacheProvider cache={createCache()}>
-                <CalendarSidebarListItems {...defaultProps} {...props} />
-            </CacheProvider>
+            <CalendarSidebarListItems {...defaultProps} {...props} />
         </Router>
     );
 }

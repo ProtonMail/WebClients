@@ -1,7 +1,12 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
 import { protonDomainsReducer } from '@proton/account';
-import { calendarSettingsReducer, calendarsReducer, holidaysDirectoryReducer } from '@proton/calendar';
+import {
+    calendarSettingsReducer,
+    calendarsBootstrapReducer,
+    calendarsReducer,
+    holidaysDirectoryReducer,
+} from '@proton/calendar';
 import { breachesCountReducer, securityCenterReducer } from '@proton/components';
 import { conversationCountsReducer, filtersReducer, messageCountsReducer } from '@proton/mail';
 import { sharedPersistReducer, sharedReducers } from '@proton/redux-shared-store';
@@ -23,6 +28,7 @@ export const rootReducer = combineReducers({
     ...messageCountsReducer,
     ...conversationCountsReducer,
     ...calendarsReducer,
+    ...calendarsBootstrapReducer,
     ...calendarSettingsReducer,
     ...holidaysDirectoryReducer,
     ...attachmentsReducer,

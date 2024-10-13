@@ -9,17 +9,8 @@ export { default as useElementRect } from './useElementRect';
 export { default as useErrorHandler } from './useErrorHandler';
 export { default as useFeature } from './useFeature';
 export { default as useFeatures } from './useFeatures';
-export {
-    default as useGetCalendarBootstrap,
-    useCalendarBootstrap,
-    useReadCalendarBootstrap,
-} from './useGetCalendarBootstrap';
 export { default as useGetCalendarInfo } from './useGetCalendarInfo';
 export { default as useGetCalendarEventRaw } from './useGetCalendarEventRaw';
-export {
-    useGetDecryptedPassphraseAndCalendarKeys,
-    useGetCalendarKeys,
-} from './useGetDecryptedPassphraseAndCalendarKeys';
 export { default as useGetEncryptionPreferences } from './useGetEncryptionPreferences';
 export { default as useHandler, useEventListener, useSubscribeEventManager, useInterval } from './useHandler';
 export { default as useHasSuspendedCounter } from './useHasSuspendedCounter';

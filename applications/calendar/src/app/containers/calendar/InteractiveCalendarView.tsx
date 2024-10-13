@@ -6,6 +6,8 @@ import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useGetCalendarBootstrap, useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
+import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import {
     Dropzone,
     ImportModal,
@@ -21,9 +23,7 @@ import {
     useNotifications,
     useRelocalizeText,
 } from '@proton/components';
-import { useReadCalendarBootstrap } from '@proton/components/hooks/useGetCalendarBootstrap';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
-import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
 import useSendIcs from '@proton/components/hooks/useSendIcs';
@@ -258,6 +258,7 @@ interface Props extends SharedViewProps {
     setEventTargetAction: Dispatch<SetStateAction<EventTargetAction | undefined>>;
     getOpenedMailEvents: () => OpenedMailEvent[];
 }
+
 const InteractiveCalendarView = ({
     view,
     isLoading,
@@ -364,6 +365,7 @@ const InteractiveCalendarView = ({
     }, [contacts]);
 
     const readCalendarBootstrap = useReadCalendarBootstrap();
+    const getCalendarBootstrap = useGetCalendarBootstrap();
     const getCalendarKeys = useGetCalendarKeys();
     const getAddressKeys = useGetAddressKeys();
     const getCalendarEventRaw = useGetCalendarEventRaw(contactEmailsMap);
@@ -547,7 +549,11 @@ const InteractiveCalendarView = ({
         }
         const initialDate = getInitialDate();
         const targetCalendar = duplicateFromNonWritableCalendarData?.calendar || calendarData;
-        const { Members = [], CalendarSettings } = readCalendarBootstrap(targetCalendar.ID);
+        const calendarBootstrap = readCalendarBootstrap(targetCalendar.ID);
+        if (!calendarBootstrap) {
+            throw new Error('Missing calendar bootstrap');
+        }
+        const { Members = [], CalendarSettings } = calendarBootstrap;
         const [Member, Address] = getMemberAndAddress(addresses, Members, eventData.Author);
 
         const [
@@ -1376,7 +1382,7 @@ const InteractiveCalendarView = ({
                 onSaveConfirmation: handleSaveConfirmation,
                 onEquivalentAttendees: handleEquivalentAttendees,
                 getEventDecrypted,
-                getCalendarBootstrap: readCalendarBootstrap,
+                getCalendarBootstrap,
                 getCalendarKeys,
                 getAddressKeys,
                 getCanonicalEmailsMap,
@@ -1463,7 +1469,7 @@ const InteractiveCalendarView = ({
                 onDeleteConfirmation: handleDeleteConfirmation,
                 api,
                 getEventDecrypted,
-                getCalendarBootstrap: readCalendarBootstrap,
+                getCalendarBootstrap,
                 getAddressKeys,
                 getCalendarKeys,
                 getCalendarEventRaw,

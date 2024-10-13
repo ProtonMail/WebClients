@@ -3,13 +3,8 @@ import { useMemo, useRef } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import {
-    Badge,
-    CalendarEventDateHeader,
-    CalendarInviteButtons,
-    Loader,
-    useReadCalendarBootstrap,
-} from '@proton/components';
+import { useCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
+import { Badge, CalendarEventDateHeader, CalendarInviteButtons, Loader } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import {
     getIsCalendarDisabled,
@@ -109,12 +104,11 @@ const EventPopover = ({
 
     const [loadingDelete, withLoadingDelete] = useLoading();
     const [loadingRefresh, withLoadingRefresh] = useLoading();
-    const readCalendarBootstrap = useReadCalendarBootstrap();
 
     const targetEventData = targetEvent?.data || {};
     const { eventReadResult, eventData, calendarData, eventRecurrence } = targetEventData;
+    const [calendarBootstrap] = useCalendarBootstrap(calendarData.ID);
     const [{ veventComponent }] = eventReadResult?.result || [{}];
-    const calendarBootstrap = readCalendarBootstrap(calendarData.ID);
     const isCalendarDisabled = getIsCalendarDisabled(calendarData);
     const isSubscribedCalendar = getIsSubscribedCalendar(calendarData);
     const isOwnedCalendar = getIsOwnedCalendar(calendarData);

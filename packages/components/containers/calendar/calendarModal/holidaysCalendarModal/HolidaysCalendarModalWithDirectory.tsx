@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms';
+import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import CountrySelect from '@proton/components/components/country/CountrySelect';
 import Form from '@proton/components/components/form/Form';
@@ -56,7 +57,7 @@ import type {
 } from '@proton/shared/lib/interfaces/calendar';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import { useNotifications, useReadCalendarBootstrap } from '../../../../hooks';
+import { useNotifications } from '../../../../hooks';
 
 const getInitialCalendarNotifications = (bootstrap?: CalendarBootstrap) => {
     if (!bootstrap) {
@@ -133,7 +134,7 @@ const HolidaysCalendarModalWithDirectory = ({
     const { validator, onFormSubmit } = useFormErrors();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
-    const readCalendarBootstrap = useReadCalendarBootstrap();
+    const getCalendarBootstrap = useGetCalendarBootstrap();
     const defaultModel = getDefaultModel(CALENDAR_TYPE.HOLIDAYS);
     const [makesUserBusy, setMakesUserBusy] = useState(
         calendarBootstrap?.CalendarSettings?.MakesUserBusy ?? defaultModel.shareBusySlots
@@ -285,7 +286,7 @@ const HolidaysCalendarModalWithDirectory = ({
                             inputHolidaysCalendar,
                             calendarPayload,
                             calendarSettingsPayload,
-                            readCalendarBootstrap,
+                            getCalendarBootstrap,
                             getAddresses,
                             api
                         );

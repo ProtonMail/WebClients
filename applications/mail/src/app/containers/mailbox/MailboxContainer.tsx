@@ -14,7 +14,6 @@ import {
     ErrorBoundary,
     InboxQuickSettingsAppButton,
     PrivateMainArea,
-    useCalendarsInfoCoreListener,
     useInboxDesktopBadgeCount,
     useItemsSelection,
     useModalState,
@@ -216,8 +215,6 @@ const MailboxContainer = ({
     // Launch two calendar-specific API calls here to boost calendar widget performance
     useCalendars();
     useCalendarUserSettings();
-    // listen to calendar "core" updates
-    useCalendarsInfoCoreListener();
 
     const elementsLength = loading ? placeholderCount : elements.length;
     const showList = columnMode || !elementID;

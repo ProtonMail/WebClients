@@ -29,7 +29,7 @@ jest.mock('@proton/account/addresses/hooks', () => ({
     ]),
     useGetAddresses: jest.fn(),
 }));
-jest.mock('@proton/components/hooks/useGetCalendarBootstrap', () => ({
+jest.mock('@proton/calendar/calendarBootstrap/hooks', () => ({
     __esModule: true,
     default: jest.fn(),
     useGetCalendarBootstrap: jest.fn(),
