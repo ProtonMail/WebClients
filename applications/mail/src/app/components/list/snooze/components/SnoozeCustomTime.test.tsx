@@ -1,5 +1,5 @@
 import { fireEvent, render } from '@testing-library/react';
-import { addDays, format, nextMonday, set } from 'date-fns';
+import { addDays, format, set } from 'date-fns';
 import { enUS } from 'date-fns/locale';
 
 import { useUserSettings } from '@proton/components/hooks';
@@ -34,7 +34,7 @@ describe('SnoozeCustomTime', () => {
     });
 
     it('should render with element default time', async () => {
-        const futureDate = set(nextMonday(new Date()), { hours: 10, minutes: 10, seconds: 10 });
+        const futureDate = set(addDays(new Date(), 2), { hours: 10, minutes: 10, seconds: 10 });
         const element = {
             Labels: [{ ID: MAILBOX_LABEL_IDS.SNOOZED, ContextSnoozeTime: futureDate.getTime() / 1000 }],
         } as Element;
