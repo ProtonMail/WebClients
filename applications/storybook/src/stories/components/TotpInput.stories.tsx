@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { InlineLinkButton } from '@proton/atoms';
-import { TotpInput } from '@proton/components';
+import { Toggle, TotpInput } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
 import mdx from './TotpInput.mdx';
@@ -24,8 +24,35 @@ export const Basic = () => {
 
 export const Length = () => {
     const [value, setValue] = useState('1a2b');
+    const [centerDivider, setCenterDivider] = useState(true);
 
-    return <TotpInput value={value} length={4} onValue={setValue} type="alphabet" />;
+    return (
+        <div>
+            <div className="mb-4">
+                <div className="flex justify-center">
+                    <div className="w-2/3">
+                        <TotpInput
+                            value={value}
+                            length={4}
+                            onValue={setValue}
+                            type="alphabet"
+                            centerDivider={centerDivider}
+                        />
+                    </div>
+                </div>
+            </div>
+            <div className="flex items-center gap-4">
+                <Toggle
+                    id="center-divider"
+                    checked={centerDivider}
+                    onChange={(e) => setCenterDivider(e.target.checked)}
+                />
+                <label htmlFor="center-divider" className="flex-1 text-sm">
+                    Enable center divider
+                </label>
+            </div>
+        </div>
+    );
 };
 
 export const Type = () => {
