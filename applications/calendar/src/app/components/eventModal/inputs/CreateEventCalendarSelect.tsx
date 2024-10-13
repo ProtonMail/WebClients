@@ -1,5 +1,5 @@
 import { useGetAddresses } from '@proton/account/addresses/hooks';
-import { useGetCalendarBootstrap } from '@proton/components';
+import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import CalendarSelect from '@proton/components/components/calendarSelect/CalendarSelect';
 import type { SelectTwoProps } from '@proton/components/components/selectTwo/SelectTwo';
 import { useLoading } from '@proton/hooks';

@@ -6,7 +6,12 @@ import {
     paymentMethodsReducer,
     samlReducer,
 } from '@proton/account';
-import { calendarSettingsReducer, calendarsReducer, holidaysDirectoryReducer } from '@proton/calendar';
+import {
+    calendarSettingsReducer,
+    calendarsBootstrapReducer,
+    calendarsReducer,
+    holidaysDirectoryReducer,
+} from '@proton/calendar';
 import { filtersReducer, incomingAddressForwardingsReducer, outgoingAddressForwardingsReducer } from '@proton/mail';
 import { sharedPersistReducer, sharedReducers } from '@proton/redux-shared-store';
 import { selectPersistModel } from '@proton/redux-utilities';
@@ -20,6 +25,7 @@ export const rootReducer = combineReducers({
     ...domainsAddressesReducer,
     ...calendarSettingsReducer,
     ...calendarsReducer,
+    ...calendarsBootstrapReducer,
     ...holidaysDirectoryReducer,
     ...samlReducer,
     ...allowAddressDeletionReducer,

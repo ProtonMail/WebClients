@@ -4,10 +4,10 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import {
     useApi,
     useAppTitle,
-    useCalendarBootstrap,
     useModalState,
     useNotifications,
     useObserveDrawerIframeAppLocation,
