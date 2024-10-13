@@ -1,8 +1,8 @@
-import { encode } from 'hi-base32';
+import { base32 } from '@scure/base';
 
 export const generateSharedSecret = (length = 20) => {
     const randomBytes = crypto.getRandomValues(new Uint8Array(length));
-    return encode(randomBytes);
+    return base32.encode(randomBytes);
 };
 
 interface GetUriArguments {
@@ -13,6 +13,7 @@ interface GetUriArguments {
     algorithm?: string;
     period?: number;
 }
+
 export const getUri = ({
     identifier,
     sharedSecret,
