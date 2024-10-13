@@ -1,6 +1,7 @@
 import { BrowserRouter } from 'react-router-dom';
 
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { createMemoryHistory } from 'history';
 import { mocked } from 'jest-mock';
 import { HttpResponse, http } from 'msw';
 import { setupServer } from 'msw/node';
@@ -94,13 +95,16 @@ const mockedUseAddresses = mocked(useAddresses);
 const mockedUseGetAddresses = mocked(useGetAddresses);
 const mockedUserSettings = mocked(useUserSettings);
 
-function renderComponent(overrides?: any, preloadedState?: Parameters<typeof getStoreWrapper>[0]) {
+function renderComponent(overrides?: any, preloadedState?: Parameters<typeof getStoreWrapper>[0]['preloadedState']) {
     window.history.pushState({}, 'Calendar', '/');
 
     const { Wrapper: ReduxWrapper, store } = getStoreWrapper({
-        calendars: getModelState([calendarBuilder()]),
-        calendarUserSettings: getModelState(calendarUserSettingsBuilder()),
-        ...preloadedState,
+        history: createMemoryHistory(),
+        preloadedState: {
+            calendars: getModelState([calendarBuilder()]),
+            calendarUserSettings: getModelState(calendarUserSettingsBuilder()),
+            ...preloadedState,
+        },
     });
 
     const Wrapper = ({ children }: any) => (
