@@ -7538,6 +7538,7 @@ __metadata:
     "@protontech/mutex-browser": "npm:^1.0.5"
     "@protontech/tidy-url": "npm:^1.10.1"
     "@protontech/timezone-support": "npm:^2.0.0"
+    "@scure/base": "npm:^1.1.9"
     "@sentry/browser": "npm:^7.119.2"
     "@types/dompurify": "npm:^3.0.5"
     "@types/jasmine": "npm:^5.1.4"
@@ -7552,7 +7553,6 @@ __metadata:
     eslint: "npm:^8.57.1"
     eslint-plugin-jasmine: "npm:^4.2.2"
     file-saver: "npm:^2.0.5"
-    hi-base32: "npm:^0.5.1"
     ical.js: "npm:^1.5.0"
     is-valid-domain: "npm:0.1.6"
     jasmine: "npm:^5.3.1"
@@ -8496,6 +8496,13 @@ __metadata:
     "@daybrush/utils": "npm:^1.4.0"
     framework-utils: "npm:^1.1.0"
   checksum: 10c0/d764cf3944c6fdd319af400e7526c7287946d6c5435a35c626918a11473f934ea2bf14b77c5bbffeb567bf8fbf8a81e914e032f80b5917cd9b5a8a0b6b289823
+  languageName: node
+  linkType: hard
+
+"@scure/base@npm:^1.1.9":
+  version: 1.1.9
+  resolution: "@scure/base@npm:1.1.9"
+  checksum: 10c0/77a06b9a2db8144d22d9bf198338893d77367c51b58c72b99df990c0a11f7cadd066d4102abb15e3ca6798d1529e3765f55c4355742465e49aed7a0c01fe76e8
   languageName: node
   linkType: hard
 
@@ -24694,13 +24701,6 @@ __metadata:
   version: 4.0.2
   resolution: "headers-polyfill@npm:4.0.2"
   checksum: 10c0/865736fa62028e2368f528a4d0fa0fc0f9cb44570a5acb79e38fc0b860b5a9bccdbf84553bb38b03d44e2aa85078256d70011cb731308aeea49f7bbafa3d66b0
-  languageName: node
-  linkType: hard
-
-"hi-base32@npm:^0.5.1":
-  version: 0.5.1
-  resolution: "hi-base32@npm:0.5.1"
-  checksum: 10c0/45adb99249b04108fd689cb344f4b625b49d0518327117c34c403dbaf4723aaefb2a1bde6d7a0288ff0f835970d0f844a3ae103534dc237c99b8552a0e689177
   languageName: node
   linkType: hard
 
