@@ -161,7 +161,13 @@ interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
     initialPath?: string;
 }
 
-export const getStoreWrapper = (preloadedState?: ExtendedRenderOptions['preloadedState']) => {
+export const getStoreWrapper = ({
+    preloadedState,
+    history,
+}: {
+    preloadedState?: ExtendedRenderOptions['preloadedState'];
+    history?: ReturnType<typeof createMemoryHistory>;
+}) => {
     const store = setupStore({
         preloadedState: {
             user: getModelState({ UsedSpace: 10, MaxSpace: 100, Flags: {} } as UserModel),
@@ -206,6 +212,7 @@ export const getStoreWrapper = (preloadedState?: ExtendedRenderOptions['preloade
         } as any,
         api: api as any,
         eventManager: jest.fn() as any,
+        history,
     });
 
     function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
@@ -222,10 +229,10 @@ export const render = async (
     mockDomApi();
     registerFeatureFlagsApiMock();
 
-    const { Wrapper, store } = getStoreWrapper(preloadedState);
+    const history = createMemoryHistory({ initialEntries });
+    const { Wrapper, store } = getStoreWrapper({ preloadedState, history });
     await onStore?.(store);
 
-    const history = createMemoryHistory({ initialEntries });
     if (initialPath) {
         history.push(initialPath);
     }
@@ -271,9 +278,9 @@ export const renderHook = async <TProps, TResult>({
 }) => {
     registerFeatureFlagsApiMock();
 
-    const { store, Wrapper } = getStoreWrapper(preloadedState);
-    init?.(store);
     const history = createMemoryHistory();
+    const { store, Wrapper } = getStoreWrapper({ preloadedState, history });
+    init?.(store);
 
     const HookWrapper = ({ children }: { children?: ReactNode }) => {
         return (
