@@ -12,11 +12,73 @@ import {
     getIsCalendarMemberEventManagerUpdate,
 } from '@proton/shared/lib/eventManager/calendar/helpers';
 
+import {
+    type CalendarsBootstrapState,
+    calendarsBootstrapActions,
+    findCalendarBootstrapID,
+    selectCalendarsBootstrap,
+} from '../calendarBootstrap';
+import { deleteCalendarFromKeyCache } from '../calendarBootstrap/keys';
+import { calendarServerEvent } from '../calendarServerEvent';
 import type { CalendarStartListening } from '../interface';
-import { CalendarsState, calendarsActions, selectCalendars } from './index';
+import type { CalendarsState } from './index';
+import { calendarsActions, selectCalendars } from './index';
 
 // This calendar event listener needs to access the global state to get the addresses, so it's a listener and not a reducer.
-export const startCalendarEventListener = (startListening: CalendarStartListening<CalendarsState>) => {
+export const startCalendarEventListener = (
+    startListening: CalendarStartListening<CalendarsState & CalendarsBootstrapState>
+) => {
+    startListening({
+        actionCreator: serverEvent,
+        effect: async (action, listenerApi) => {
+            const updateMembers = action.payload.CalendarMembers;
+            if (updateMembers?.length) {
+                updateMembers.forEach((event) => {
+                    listenerApi.dispatch(calendarsBootstrapActions.memberEvent({ event }));
+                });
+            }
+
+            const updateCalendars = action.payload.Calendars;
+            if (updateCalendars?.length) {
+                updateCalendars.forEach((event) => {
+                    if (getIsCalendarEventManagerDelete(event)) {
+                        const calendarID = event.ID;
+                        listenerApi.dispatch(calendarsBootstrapActions.remove({ id: calendarID }));
+                        deleteCalendarFromKeyCache(calendarID);
+                    }
+                });
+            }
+        },
+    });
+
+    startListening({
+        actionCreator: calendarServerEvent,
+        effect: async (action, listenerApi) => {
+            const calendarKeysUpdate = action.payload.CalendarKeys;
+            if (calendarKeysUpdate?.length) {
+                const deleteCalendarFromCache = (calendarID: string) => {
+                    listenerApi.dispatch(calendarsBootstrapActions.remove({ id: calendarID }));
+                    deleteCalendarFromKeyCache(calendarID);
+                };
+                const state = selectCalendarsBootstrap(listenerApi.getState());
+                calendarKeysUpdate.forEach(({ ID: KeyID, Key }) => {
+                    // When a new calendar key is received, the entire calendar cache is invalidated.
+                    // TODO: Merge the bootstrapped version.
+                    if (Key && Key.CalendarID) {
+                        deleteCalendarFromCache(Key.CalendarID);
+                        return;
+                    }
+                    const calendarID = findCalendarBootstrapID(state, ({ Keys }) => {
+                        return Boolean(Array.isArray(Keys) && Keys.find(({ ID: otherID }) => otherID === KeyID));
+                    });
+                    if (calendarID) {
+                        deleteCalendarFromCache(calendarID);
+                    }
+                });
+            }
+        },
+    });
+
     startListening({
         actionCreator: serverEvent,
         effect: async (action, listenerApi) => {

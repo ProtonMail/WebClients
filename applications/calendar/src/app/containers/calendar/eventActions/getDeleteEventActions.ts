@@ -109,7 +109,7 @@ interface Arguments {
     addresses: Address[];
     onDeleteConfirmation: OnDeleteConfirmationCb;
     api: Api;
-    getCalendarBootstrap: (CalendarID: string) => CalendarBootstrap;
+    getCalendarBootstrap: (CalendarID: string) => Promise<CalendarBootstrap>;
     getAddressKeys: GetAddressKeys;
     getCalendarKeys: GetCalendarKeys;
     getEventDecrypted: GetDecryptedEventCb;
@@ -139,7 +139,7 @@ const getDeleteEventActions = async ({
     attendeeDeleteSingleEditActions?: AttendeeDeleteSingleEditOperation[];
     texts: { success: string };
 }> => {
-    const calendarBootstrap = getCalendarBootstrap(oldCalendarData.ID);
+    const calendarBootstrap = await getCalendarBootstrap(oldCalendarData.ID);
     if (!calendarBootstrap) {
         throw new Error('Trying to delete event without calendar information');
     }

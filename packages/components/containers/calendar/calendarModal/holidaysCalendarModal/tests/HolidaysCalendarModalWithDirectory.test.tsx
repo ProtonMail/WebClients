@@ -17,10 +17,10 @@ jest.mock('@proton/account/addresses/hooks', () => ({
     default: jest.fn(() => []),
     useGetAddresses: jest.fn(),
 }));
-jest.mock('@proton/components/hooks/useGetCalendarBootstrap', () => ({
+jest.mock('@proton/calendar/calendarBootstrap/hooks', () => ({
     __esModule: true,
     default: jest.fn(() => () => Promise.resolve({ CalendarSettings: { DefaultFullDayNotifications: [] } })),
-    useReadCalendarBootstrap: jest.fn(),
+    useGetCalendarBootstrap: jest.fn(),
 }));
 jest.mock('@proton/components/hooks/useEventManager', () => () => ({}));
 jest.mock('@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider', () => ({
