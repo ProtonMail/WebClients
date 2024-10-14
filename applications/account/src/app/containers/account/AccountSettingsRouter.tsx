@@ -39,7 +39,6 @@ import {
     SettingsMaintenanceLayoutWrapper,
     SettingsPageTitle,
     SettingsSectionWide,
-    SubscriptionModalProvider,
     SubscriptionsSection,
     ThemesSection,
     TwoFactorSection,
@@ -83,40 +82,36 @@ const AccountSettingsRouter = ({
         <Switch>
             {getIsSectionAvailable(dashboard) && (
                 <Route path={getSectionPath(path, dashboard)}>
-                    <SubscriptionModalProvider app={app}>
-                        <AutomaticSubscriptionModal />
-                        <PrivateMainSettingsArea config={dashboard}>
-                            <YourStorageSection app={app} />
-                            <YourPlanSection app={app} />
-                            <AssistantToggle />
-                            <SubscriptionsSection />
-                            <PaymentMethodsSection />
-                            <CreditsSection />
-                            <GiftCodeSection />
-                            <InvoicesSection />
-                            <EmailSubscriptionSection />
-                            <CancelSubscriptionSection app={app} />
-                            <CancelSubscriptionViaSupportSection />
-                            <DowngradeSubscriptionSection app={app} />
-                        </PrivateMainSettingsArea>
-                    </SubscriptionModalProvider>
+                    <AutomaticSubscriptionModal />
+                    <PrivateMainSettingsArea config={dashboard}>
+                        <YourStorageSection app={app} />
+                        <YourPlanSection app={app} />
+                        <AssistantToggle />
+                        <SubscriptionsSection />
+                        <PaymentMethodsSection />
+                        <CreditsSection />
+                        <GiftCodeSection />
+                        <InvoicesSection />
+                        <EmailSubscriptionSection />
+                        <CancelSubscriptionSection app={app} />
+                        <CancelSubscriptionViaSupportSection />
+                        <DowngradeSubscriptionSection app={app} />
+                    </PrivateMainSettingsArea>
                 </Route>
             )}
             {getIsSectionAvailable(upgrade) && (
                 <Route path={getSectionPath(path, upgrade)}>
-                    <SubscriptionModalProvider app={app}>
-                        <PrivateMainArea>
-                            <div className="container-section-sticky">
-                                <div className="text-center flex">
-                                    <SettingsSectionWide className="mx-auto">
-                                        <SettingsPageTitle className="my-14">{c('new_plans: title')
-                                            .t`Unlock premium features by upgrading`}</SettingsPageTitle>
-                                        <PlansSection app={app} />
-                                    </SettingsSectionWide>
-                                </div>
+                    <PrivateMainArea>
+                        <div className="container-section-sticky">
+                            <div className="text-center flex">
+                                <SettingsSectionWide className="mx-auto">
+                                    <SettingsPageTitle className="my-14">{c('new_plans: title')
+                                        .t`Unlock premium features by upgrading`}</SettingsPageTitle>
+                                    <PlansSection app={app} />
+                                </SettingsSectionWide>
                             </div>
-                        </PrivateMainArea>
-                    </SubscriptionModalProvider>
+                        </div>
+                    </PrivateMainArea>
                 </Route>
             )}
             {getIsSectionAvailable(recovery) && (
@@ -158,16 +153,14 @@ const AccountSettingsRouter = ({
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, security)}>
-                <SubscriptionModalProvider app={app}>
-                    <AutomaticSubscriptionModal />
-                    <PrivateMainSettingsArea config={security}>
-                        <SentinelSection app={app} />
-                        <CredentialLeakSection />
-                        <SessionsSection />
-                        <LogsSection />
-                        <PrivacySection />
-                    </PrivateMainSettingsArea>
-                </SubscriptionModalProvider>
+                <AutomaticSubscriptionModal />
+                <PrivateMainSettingsArea config={security}>
+                    <SentinelSection app={app} />
+                    <CredentialLeakSection />
+                    <SessionsSection />
+                    <LogsSection />
+                    <PrivacySection />
+                </PrivateMainSettingsArea>
             </Route>
             {getIsSectionAvailable(referral) && (
                 <Route path={getSectionPath(path, referral)}>

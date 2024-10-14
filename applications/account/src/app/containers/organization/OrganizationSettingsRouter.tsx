@@ -19,7 +19,6 @@ import {
     PrivateMainSettingsArea,
     PrivateMainSettingsAreaBase,
     SsoPage,
-    SubscriptionModalProvider,
     UsersAndAddressesSection,
     VPNEvents,
     useOrganization,
@@ -58,9 +57,7 @@ const OrganizationSettingsRouter = ({
             {getIsSectionAvailable(gateways) && (
                 <Route path={getSectionPath(path, gateways)}>
                     <PrivateMainSettingsArea config={gateways}>
-                        <SubscriptionModalProvider app={app}>
-                            <GatewaysSection organization={organization} />
-                        </SubscriptionModalProvider>
+                        <GatewaysSection organization={organization} />
                     </PrivateMainSettingsArea>
                 </Route>
             )}
@@ -88,24 +85,20 @@ const OrganizationSettingsRouter = ({
             )}
             {getIsSectionAvailable(orgKeys) && (
                 <Route path={getSectionPath(path, orgKeys)}>
-                    <SubscriptionModalProvider app={app}>
-                        <PrivateMainSettingsArea config={orgKeys}>
-                            <OrganizationScheduleCallSection onOpenChat={onOpenChat} />
-                            <OrganizationSection app={app} organization={organization} />
-                            <OrganizationPasswordSection organization={organization} onceRef={onceRef} />
-                        </PrivateMainSettingsArea>
-                    </SubscriptionModalProvider>
+                    <PrivateMainSettingsArea config={orgKeys}>
+                        <OrganizationScheduleCallSection onOpenChat={onOpenChat} />
+                        <OrganizationSection app={app} organization={organization} />
+                        <OrganizationPasswordSection organization={organization} onceRef={onceRef} />
+                    </PrivateMainSettingsArea>
                 </Route>
             )}
             {getIsSectionAvailable(users) && (
                 <Route path={getSectionPath(path, users)}>
-                    <SubscriptionModalProvider app={app}>
-                        <PrivateMainSettingsArea config={users}>
-                            <OrganizationScheduleCallSection onOpenChat={onOpenChat} />
-                            <UsersAndAddressesSection app={app} onceRef={onceRef} />
-                            <MultiUserCreationSection app={app} />
-                        </PrivateMainSettingsArea>
-                    </SubscriptionModalProvider>
+                    <PrivateMainSettingsArea config={users}>
+                        <OrganizationScheduleCallSection onOpenChat={onOpenChat} />
+                        <UsersAndAddressesSection app={app} onceRef={onceRef} />
+                        <MultiUserCreationSection app={app} />
+                    </PrivateMainSettingsArea>
                 </Route>
             )}
             {getIsSectionAvailable(filter) && (
@@ -128,9 +121,7 @@ const OrganizationSettingsRouter = ({
             {getIsSectionAvailable(sso) && (
                 <Route path={getSectionPath(path, sso)}>
                     <PrivateMainSettingsAreaBase title={sso.title || sso.text} description={sso.description}>
-                        <SubscriptionModalProvider app={app}>
-                            <SsoPage />
-                        </SubscriptionModalProvider>
+                        <SsoPage />
                     </PrivateMainSettingsAreaBase>
                 </Route>
             )}
