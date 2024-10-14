@@ -240,20 +240,20 @@ const MainContainer: FunctionComponent = () => {
 
     return (
         <>
-            {render && <AuthenticatedBugModal mode={authenticatedBugReportMode} {...authenticatedBugReportModal} />}
-            {renderFreeUserLiveChatModal && <FreeUserLiveChatModal {...freeUserLiveChatModal} />}
-            <Switch>
-                <Route path={VPN_TV_PATHS}>
-                    <UnAuthenticated>
-                        <TVContainer />
-                    </UnAuthenticated>
-                </Route>
-                <Route path="*">
-                    <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
-                        <Switch>
-                            {getIsSectionAvailable(vpnRoutes.dashboard) && (
-                                <Route path={vpnRoutes.dashboard.to}>
-                                    <SubscriptionModalProvider app={app}>
+            <SubscriptionModalProvider app={app}>
+                {render && <AuthenticatedBugModal mode={authenticatedBugReportMode} {...authenticatedBugReportModal} />}
+                {renderFreeUserLiveChatModal && <FreeUserLiveChatModal {...freeUserLiveChatModal} />}
+                <Switch>
+                    <Route path={VPN_TV_PATHS}>
+                        <UnAuthenticated>
+                            <TVContainer />
+                        </UnAuthenticated>
+                    </Route>
+                    <Route path="*">
+                        <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
+                            <Switch>
+                                {getIsSectionAvailable(vpnRoutes.dashboard) && (
+                                    <Route path={vpnRoutes.dashboard.to}>
                                         <AutomaticSubscriptionModal />
                                         <PrivateMainSettingsArea config={vpnRoutes.dashboard}>
                                             <PlansSection app={app} />
@@ -268,73 +268,73 @@ const MainContainer: FunctionComponent = () => {
                                             <DowngradeSubscriptionSection app={app} />
                                             <CancelSubscriptionViaSupportSection />
                                         </PrivateMainSettingsArea>
-                                    </SubscriptionModalProvider>
+                                    </Route>
+                                )}
+                                <Route path="/account">
+                                    <Redirect to={vpnRoutes.account.to} />
                                 </Route>
-                            )}
-                            <Route path="/account">
-                                <Redirect to={vpnRoutes.account.to} />
-                            </Route>
-                            <Route path={vpnRoutes.account.to}>
-                                <PrivateMainSettingsArea config={vpnRoutes.account}>
-                                    <>
-                                        <UsernameSection app={app} />
-                                        <PasswordsSection />
-                                    </>
-                                    <LanguageSection locales={locales} />
-                                    <TwoFactorSection />
-                                    <OpenVPNCredentialsSection />
-                                    <AccountRecoverySection />
-                                    <EmailSubscriptionSection />
-                                    <DeleteSection />
-                                </PrivateMainSettingsArea>
-                            </Route>
-                            <Route path={vpnRoutes.appearance.to}>
-                                <PrivateMainSettingsArea config={vpnRoutes.appearance}>
-                                    <ThemesSection />
-                                </PrivateMainSettingsArea>
-                            </Route>
-                            <Route path={vpnRoutes.downloads.to}>
-                                <PrivateMainSettingsArea config={vpnRoutes.downloads}>
-                                    <ProtonVPNClientsSection />
-                                    <OpenVPNConfigurationSection />
-                                    <WireGuardConfigurationSection />
-                                </PrivateMainSettingsArea>
-                            </Route>
-                            <Route path={anyOrganizationAppRoute}>
-                                <OrganizationSettingsRouter
-                                    app={app}
-                                    path=""
-                                    organizationAppRoutes={organizationAppRoutes}
-                                    redirect={redirect}
-                                    onOpenChat={openChat}
+                                <Route path={vpnRoutes.account.to}>
+                                    <PrivateMainSettingsArea config={vpnRoutes.account}>
+                                        <>
+                                            <UsernameSection app={app} />
+                                            <PasswordsSection />
+                                        </>
+                                        <LanguageSection locales={locales} />
+                                        <TwoFactorSection />
+                                        <OpenVPNCredentialsSection />
+                                        <AccountRecoverySection />
+                                        <EmailSubscriptionSection />
+                                        <DeleteSection />
+                                    </PrivateMainSettingsArea>
+                                </Route>
+                                <Route path={vpnRoutes.appearance.to}>
+                                    <PrivateMainSettingsArea config={vpnRoutes.appearance}>
+                                        <ThemesSection />
+                                    </PrivateMainSettingsArea>
+                                </Route>
+                                <Route path={vpnRoutes.downloads.to}>
+                                    <PrivateMainSettingsArea config={vpnRoutes.downloads}>
+                                        <ProtonVPNClientsSection />
+                                        <OpenVPNConfigurationSection />
+                                        <WireGuardConfigurationSection />
+                                    </PrivateMainSettingsArea>
+                                </Route>
+                                <Route path={anyOrganizationAppRoute}>
+                                    <OrganizationSettingsRouter
+                                        app={app}
+                                        path=""
+                                        organizationAppRoutes={organizationAppRoutes}
+                                        redirect={redirect}
+                                        onOpenChat={openChat}
+                                    />
+                                </Route>
+                                <Route path={`${CANCEL_ROUTE}`}>
+                                    <CancellationReminderSection app={APPS.PROTONVPN_SETTINGS} />
+                                </Route>
+                                {redirect}
+                            </Switch>
+                            {showChat.render && canEnableChat ? (
+                                <LiveChatZendesk
+                                    tags={tagsArray}
+                                    zendeskRef={zendeskRef}
+                                    zendeskKey={vpnZendeskKey}
+                                    name={name || ''}
+                                    email={email || ''}
+                                    onLoaded={() => {
+                                        if (showChat.autoToggle) {
+                                            zendeskRef.current?.toggle();
+                                        }
+                                    }}
+                                    onUnavailable={() => {
+                                        openAuthenticatedBugReportModal('chat-no-agents');
+                                    }}
+                                    locale={localeCode.replace('_', '-')}
                                 />
-                            </Route>
-                            <Route path={`${CANCEL_ROUTE}`}>
-                                <CancellationReminderSection app={APPS.PROTONVPN_SETTINGS} />
-                            </Route>
-                            {redirect}
-                        </Switch>
-                        {showChat.render && canEnableChat ? (
-                            <LiveChatZendesk
-                                tags={tagsArray}
-                                zendeskRef={zendeskRef}
-                                zendeskKey={vpnZendeskKey}
-                                name={name || ''}
-                                email={email || ''}
-                                onLoaded={() => {
-                                    if (showChat.autoToggle) {
-                                        zendeskRef.current?.toggle();
-                                    }
-                                }}
-                                onUnavailable={() => {
-                                    openAuthenticatedBugReportModal('chat-no-agents');
-                                }}
-                                locale={localeCode.replace('_', '-')}
-                            />
-                        ) : null}
-                    </PrivateAppContainer>
-                </Route>
-            </Switch>
+                            ) : null}
+                        </PrivateAppContainer>
+                    </Route>
+                </Switch>
+            </SubscriptionModalProvider>
         </>
     );
 };

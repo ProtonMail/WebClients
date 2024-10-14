@@ -11,16 +11,16 @@ import {
     UpsellModal,
     useModalState,
     useSpotlightShow,
+    useUpsellConfig
 } from '@proton/components';
 import { useSpotlightOnFeature, useWelcomeFlags } from '@proton/components/hooks';
 import { FeatureCode } from '@proton/features';
 import { APPS, APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import {
-    addUpsellPath,
-    getUpgradePath,
     getUpsellRef,
     useNewUpsellModalVariant,
 } from '@proton/shared/lib/helpers/upsell';
+import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
 import paintImg from '@proton/styles/assets/img/illustrations/new-upsells-img/paint.svg';
 
@@ -69,6 +69,15 @@ const EventColorSelect = ({ model, setModel, isSmallViewport, isDrawerApp }: Pro
         }
     };
 
+    const upsellRef = getUpsellRef({
+        app: APP_UPSELL_REF_PATH.CALENDAR_UPSELL_REF_PATH,
+        component: UPSELL_COMPONENT.MODAL,
+        feature: CALENDAR_UPSELL_PATHS.COLOR_PER_EVENT,
+    });
+
+    const oneDollarConfig = useOneDollarConfig();
+    const upsellConfig = useUpsellConfig({ upsellRef, ...oneDollarConfig });
+
     const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
 
     const modal = displayNewUpsellModalsVariant ? (
@@ -80,15 +89,8 @@ const EventColorSelect = ({ model, setModel, isSmallViewport, isDrawerApp }: Pro
             modalProps={upsellModalProps}
             sourceEvent="BUTTON_COLOR_PER_EVENT"
             application={APPS.PROTONCALENDAR}
-            upgradePath={addUpsellPath(
-                getUpgradePath({ user }),
-                getUpsellRef({
-                    app: APP_UPSELL_REF_PATH.CALENDAR_UPSELL_REF_PATH,
-                    component: UPSELL_COMPONENT.MODAL,
-                    feature: CALENDAR_UPSELL_PATHS.COLOR_PER_EVENT,
-                })
-            )}
             illustration={paintImg}
+            {...upsellConfig}
         />
     ) : (
         <UpsellModal
@@ -100,16 +102,9 @@ const EventColorSelect = ({ model, setModel, isSmallViewport, isDrawerApp }: Pro
             title={c('Title').t`Add some color to your day`}
             sourceEvent="BUTTON_COLOR_PER_EVENT"
             application={APPS.PROTONCALENDAR}
-            upgradePath={addUpsellPath(
-                getUpgradePath({ user }),
-                getUpsellRef({
-                    app: APP_UPSELL_REF_PATH.CALENDAR_UPSELL_REF_PATH,
-                    component: UPSELL_COMPONENT.MODAL,
-                    feature: CALENDAR_UPSELL_PATHS.COLOR_PER_EVENT,
-                })
-            )}
             headerType="calendar"
             hideInfo={isDrawerApp}
+            {...upsellConfig}
         />
     );
 
