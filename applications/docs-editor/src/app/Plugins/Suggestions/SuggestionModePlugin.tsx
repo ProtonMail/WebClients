@@ -24,7 +24,7 @@ import {
 import { useEffect, useRef, useState } from 'react'
 import { ProtonNode, $isSuggestionNode } from './ProtonNode'
 import { SuggestionTypesThatCanBeEmpty, type SuggestionID } from './Types'
-import { BEFOREINPUT_EVENT_COMMAND } from '../../Commands/Events'
+import { BEFOREINPUT_EVENT_COMMAND, COMPOSITION_START_EVENT_COMMAND } from '../../Commands/Events'
 import { type EditorRequiresClientMethods } from '@proton/docs-shared'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { useMarkNodesContext } from '../MarkNodesContext'
@@ -57,6 +57,8 @@ import {
 } from './imageHandling'
 import { EditorUserMode } from '../../EditorUserMode'
 import { $handleIndentOutdentAsSuggestion } from './handleIndentOutdent'
+import { useGenericAlertModal } from '@proton/docs-shared/components/GenericAlert'
+import { c } from 'ttag'
 
 const LIST_TRANSFORMERS = [UNORDERED_LIST, ORDERED_LIST, CHECK_LIST]
 
@@ -74,6 +76,47 @@ export function SuggestionModePlugin({
   const { markNodeMap } = useMarkNodesContext()
 
   const [suggestionModeLogger] = useState(() => new Logger('docs-suggestions-mode'))
+
+  const [alertModal, showAlertModal] = useGenericAlertModal()
+
+  useEffect(() => {
+    /**
+     * Since we cannot reliably capture and wrap content
+     * inserted using IME, we disable suggestion mode if
+     * the editor is composing and show an alert to the user.
+     */
+    function disableSuggestionModeIfComposing() {
+      const isComposing = editor.isComposing()
+      const info = { isComposing, isSuggestionMode }
+      suggestionModeLogger.info('Should disable suggestion mode?', info)
+      if (isComposing && isSuggestionMode) {
+        editor.setEditable(false)
+        editor._compositionKey = null
+        onUserModeChange(EditorUserMode.Preview)
+        showAlertModal({
+          title: c('Title').t`Input mode not supported`,
+          translatedMessage: c('Info')
+            .t`The input mode or keyboard you are using is not currently supported in suggestion mode. Please switch to edit mode to resume editing.`,
+        })
+      }
+    }
+
+    disableSuggestionModeIfComposing()
+
+    return mergeRegister(
+      editor.registerCommand(
+        COMPOSITION_START_EVENT_COMMAND,
+        () => {
+          disableSuggestionModeIfComposing()
+          return true
+        },
+        COMMAND_PRIORITY_CRITICAL,
+      ),
+      editor.registerUpdateListener(() => {
+        disableSuggestionModeIfComposing()
+      }),
+    )
+  }, [editor, isSuggestionMode, onUserModeChange, showAlertModal, suggestionModeLogger])
 
   /**
    * Set of suggestion IDs created during the current session.
@@ -522,5 +565,5 @@ export function SuggestionModePlugin({
     )
   }, [controller, editor, isSuggestionMode, suggestionModeLogger])
 
-  return null
+  return <>{alertModal}</>
 }
