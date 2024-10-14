@@ -5,7 +5,6 @@ import type { GeneratePasswordConfig } from '@proton/pass/lib/password/generator
 import { toggleCriteria } from '@proton/pass/lib/settings/criteria';
 import {
     extraPasswordToggle,
-    getUserFeaturesSuccess,
     itemCreationSuccess,
     lockCreateSuccess,
     lockSync,
@@ -53,7 +52,7 @@ export type ExcludedProxiedSettingsKeys = Unpack<typeof EXCLUDED_SETTINGS_KEYS>;
 export type ProxiedSettings = Omit<SettingsState, ExcludedProxiedSettingsKeys>;
 
 export const getInitialSettings = (): ProxiedSettings => ({
-    autofill: { login: true, identity: true, twofa: true },
+    autofill: { identity: true, twofa: true },
     autosave: { prompt: true, passwordSuggest: true },
     autosuggest: { password: true, email: true, passwordCopy: false },
     disallowedDomains: {},
@@ -111,13 +110,6 @@ const reducer: Reducer<SettingsState> = (state = getInitialState(), action) => {
 
     if (extraPasswordToggle.success.match(action)) {
         return partialMerge<SettingsState>(state, { extraPassword: action.payload });
-    }
-
-    if (EXTENSION_BUILD && getUserFeaturesSuccess.match(action)) {
-        const identityEnabled = action.payload.PassIdentityV1 ?? false;
-        if (identityEnabled && state.autofill.identity === undefined) {
-            return partialMerge<SettingsState>(state, { autofill: { identity: true } });
-        }
     }
 
     return state;

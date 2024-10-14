@@ -1,5 +1,6 @@
 export type AutoFillSettings = {
-    login: boolean;
+    /** Removal optional after 1.24.0 */
+    login?: boolean;
     identity: boolean;
     twofa: boolean;
     /** @deprecated Kept for >=1.24.0 migrations */

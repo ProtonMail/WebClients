@@ -7,9 +7,7 @@ import { Dropdown, DropdownButton, DropdownMenu, Icon, usePopperAnchor } from '@
 import { CountLabel } from '@proton/pass/components/Layout/Dropdown/CountLabel';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import type { ItemRevisionWithOptimistic, ItemTypeFilter } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 
 type Props = {
     items: ItemRevisionWithOptimistic[];
@@ -48,19 +46,16 @@ export const getItemTypeOptions = (): Record<ItemTypeFilter, { label: string; ic
 
 export const TypeFilter: FC<Props> = ({ items, value, onChange }) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
-    const identityItemEnabled = useFeatureFlag(PassFeature.PassIdentityV1);
 
     const options = useMemo(
         () =>
-            Object.entries(getItemTypeOptions())
-                .filter(([type]) => identityItemEnabled || type !== 'identity')
-                .map(([type, { label, icon }]) => ({
-                    type: type as ItemTypeFilter,
-                    label,
-                    icon,
-                    count: type === '*' ? items.length : items.filter((item) => item.data.type === type).length,
-                })),
-        [items, identityItemEnabled]
+            Object.entries(getItemTypeOptions()).map(([type, { label, icon }]) => ({
+                type: type as ItemTypeFilter,
+                label,
+                icon,
+                count: type === '*' ? items.length : items.filter((item) => item.data.type === type).length,
+            })),
+        [items]
     );
 
     const selectedOption = options.find(({ type }) => type === value)!;
