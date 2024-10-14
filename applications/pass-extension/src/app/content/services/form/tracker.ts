@@ -14,6 +14,7 @@ import { stage, stash, validateFormCredentials } from 'proton-pass-extension/lib
 import { FieldType, kButtonSubmitSelector } from '@proton/pass/fathom';
 import { matchExtensionMessage } from '@proton/pass/lib/extension/message/utils';
 import browser from '@proton/pass/lib/globals/browser';
+import { enableLoginAutofill } from '@proton/pass/lib/settings/utils';
 import type { AutosaveFormEntry, FormCredentials, MaybeNull } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
@@ -75,12 +76,13 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
     const canProcessAction = withContext<(action: DropdownAction) => boolean>((ctx, action) => {
         const features = ctx?.getFeatures();
         const settings = ctx?.getSettings();
+        const autofillEnabled = settings?.autofill && enableLoginAutofill(settings.autofill);
 
         switch (action) {
             case DropdownAction.AUTOFILL_LOGIN:
-                return (features?.Autofill && settings?.autofill.login) ?? false;
+                return Boolean(features?.Autofill && (settings?.autofill.login ?? autofillEnabled));
             case DropdownAction.AUTOFILL_IDENTITY:
-                return (features?.Autofill && settings?.autofill.identity) ?? false;
+                return Boolean(features?.Autofill && (settings?.autofill.identity ?? autofillEnabled));
             case DropdownAction.AUTOSUGGEST_ALIAS:
                 return features?.AutosuggestAlias ?? false;
             case DropdownAction.AUTOSUGGEST_PASSWORD:
