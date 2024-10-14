@@ -124,7 +124,7 @@ describe('countActionWithTelemetry', () => {
     });
 
     it('countActionWithTelemetry: should send telemetry report with a count', () => {
-        countActionWithTelemetry(Actions.DismissDocsOnboardingModal);
+        countActionWithTelemetry(Actions.PublicDownload);
         expect(sendTelemetryData).toHaveBeenCalledTimes(1);
         expect(sendTelemetryData).toHaveBeenCalledWith({
             MeasurementGroup: TelemetryMeasurementGroups.driveWebActions,
@@ -133,14 +133,14 @@ describe('countActionWithTelemetry', () => {
                 count: 1,
             },
             Dimensions: {
-                name: Actions.DismissDocsOnboardingModal,
+                name: Actions.PublicDownload,
                 isLoggedIn: 'true',
             },
         });
     });
 
     it('countActionWithTelemetry: should send telemetry report with custom count', () => {
-        countActionWithTelemetry(Actions.DismissDocsOnboardingModal, 15);
+        countActionWithTelemetry(Actions.PublicDownload, 15);
         expect(sendTelemetryData).toHaveBeenCalledTimes(1);
         expect(sendTelemetryData).toHaveBeenCalledWith({
             MeasurementGroup: TelemetryMeasurementGroups.driveWebActions,
@@ -149,7 +149,7 @@ describe('countActionWithTelemetry', () => {
                 count: 15,
             },
             Dimensions: {
-                name: Actions.DismissDocsOnboardingModal,
+                name: Actions.PublicDownload,
                 isLoggedIn: 'true',
             },
         });
