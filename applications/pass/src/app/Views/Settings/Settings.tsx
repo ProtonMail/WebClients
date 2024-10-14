@@ -73,7 +73,7 @@ export const SettingsTabs: FC<RouteChildrenProps> = (props) => {
         <Tabs
             className="w-full shrink-0"
             contentClassName="p-0"
-            navContainerClassName="pass-settings--tabs mb-2 pt-4 sticky top-0"
+            navContainerClassName="pass-settings--tabs mb-2 pt-4 sticky top-0 z-up"
             onChange={handleOnChange}
             tabs={tabs}
             value={activeTab}
