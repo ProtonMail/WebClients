@@ -1,28 +1,11 @@
 import { c } from 'ttag';
 
-import {
-    type WasmApiWallet,
-    type WasmApiWalletAccount,
-    type WasmMigratedWallet,
-    WasmMigratedWalletAccounts,
-    WasmMigratedWalletTransactions,
-    type WasmProtonWalletApiClient,
-} from '@proton/andromeda';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+import { type WasmApiWallet, type WasmApiWalletAccount } from '@proton/andromeda';
 import { type DecryptedKey } from '@proton/shared/lib/interfaces';
 
 import { type IWasmApiWalletData } from '../types';
-import {
-    decryptMnemonicWithUserKey,
-    decryptWalletData,
-    decryptWalletKey,
-    decryptWalletKeyForHmac,
-    encryptWalletData,
-    encryptWalletDataWithWalletKey,
-    hmac,
-} from './crypto';
+import { decryptMnemonicWithUserKey, decryptWalletData, decryptWalletKey } from './crypto';
 import { getPassphraseLocalStorageKey } from './localStorage';
-import { decryptTransactionData } from './transactions';
 
 export const buildMapFromWallets = (wallets: IWasmApiWalletData[] = []) => {
     return wallets.reduce(
@@ -147,104 +130,4 @@ export const decryptWallet = async ({
 
         return data;
     }
-};
-
-export const migrateWallet = async ({
-    wallet,
-    walletApi,
-    userKeys,
-    addressKeys,
-}: {
-    wallet: IWasmApiWalletData;
-    walletApi: WasmProtonWalletApiClient;
-    userKeys: DecryptedKey[];
-    addressKeys: DecryptedKey[];
-}) => {
-    const { Wallet, WalletKey, WalletAccounts } = wallet;
-
-    const oldWalletKey = WalletKey?.DecryptedKey;
-
-    // Typeguard: no wallet should have empty wallet key, mnemonic or fingerprint
-    if (!oldWalletKey || !Wallet.Mnemonic || !Wallet.Fingerprint) {
-        return;
-    }
-
-    const userKeyToUse = userKeys.find((k) => k.ID === WalletKey.UserKeyID) ?? userKeys.at(0);
-
-    // We won't migrate wallets from a user with no key
-    if (!userKeyToUse) {
-        return;
-    }
-
-    const [[encryptedName, encryptedMnemonic], [encryptedWalletKey, walletKeySignature, newWalletKey]] =
-        await encryptWalletData([Wallet.Name, Wallet.Mnemonic], userKeyToUse);
-
-    // Hmac key will be used for hashing transaction ids with new wallet key
-    const hmacKey = await decryptWalletKeyForHmac(encryptedWalletKey, walletKeySignature, userKeys);
-
-    const migratedWallet: WasmMigratedWallet = {
-        Name: encryptedName,
-        Mnemonic: encryptedMnemonic,
-        Fingerprint: Wallet.Fingerprint,
-        UserKeyID: WalletKey.UserKeyID,
-        WalletKey: encryptedWalletKey,
-        WalletKeySignature: walletKeySignature,
-    };
-
-    const migratedWalletAccounts = new WasmMigratedWalletAccounts();
-    const migratedWalletTransactions = new WasmMigratedWalletTransactions();
-
-    for (const account of WalletAccounts) {
-        const [encryptedLabel] = await encryptWalletDataWithWalletKey([account.Label], newWalletKey);
-        const migratedAccount = {
-            Label: encryptedLabel,
-            ID: account.ID,
-        };
-
-        // Add account to the migrated wallet accounts
-        migratedWalletAccounts.push(migratedAccount);
-
-        // Get all transactions for the migrated account
-        const walletAccountTransactions = await walletApi
-            .clients()
-            .wallet.getWalletTransactions(account.WalletID, account.ID);
-
-        for (const transaction of walletAccountTransactions[0]) {
-            const decryptedTransaction = await decryptTransactionData(
-                transaction.Data,
-                oldWalletKey,
-                userKeys.map((k) => k.privateKey),
-                addressKeys.map((k) => k.privateKey)
-            );
-
-            const { TransactionID } = decryptedTransaction;
-
-            // Typeguard: no transaction should have empty wallet account id or transaction id
-            if (!decryptedTransaction.WalletAccountID || !TransactionID) {
-                continue;
-            }
-
-            const hashedTxIdBuffer = decryptedTransaction.HashedTransactionID
-                ? await hmac(hmacKey, TransactionID)
-                : null;
-
-            const hashedTxId = hashedTxIdBuffer ? uint8ArrayToBase64String(new Uint8Array(hashedTxIdBuffer)) : null;
-
-            const [encryptedLabel] = decryptedTransaction.Label
-                ? await encryptWalletDataWithWalletKey([decryptedTransaction.Label], newWalletKey)
-                : [null];
-
-            // Add transaction to the migrated wallet transactions
-            migratedWalletTransactions.push({
-                ID: decryptedTransaction.ID,
-                WalletAccountID: decryptedTransaction.WalletAccountID,
-                HashedTransactionID: hashedTxId,
-                Label: encryptedLabel,
-            });
-        }
-    }
-
-    await walletApi
-        .clients()
-        .wallet.migrate(Wallet.ID, migratedWallet, migratedWalletAccounts, migratedWalletTransactions);
 };
