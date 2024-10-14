@@ -23,7 +23,7 @@ const DriveStartupModals = () => {
     const isOnboardingV2 = useFlag('DriveWebOnboardingV2');
 
     // Drive onboarding V2
-    const showWelcomeV2Modal = true; // !welcomeFlags.isDone && isOnboardingV2;
+    const showWelcomeV2Modal = !welcomeFlags.isDone && isOnboardingV2;
     const [welcomeV2Modal, setWelcomeV2Modal, renderWelcomeV2Modal] = useModalState();
 
     // Drive welcome modal
