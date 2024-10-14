@@ -23,13 +23,16 @@ import { type CountryOptions, getLocalizedCountryByAbbr } from '../../../helpers
 import { CountryFlagAndName } from './CountryFlagAndName';
 import type { Gateway } from './Gateway';
 import GatewayAddServersModal from './GatewayAddServersModal';
+import type { GatewayLocation } from './GatewayLocation';
 import type { GatewayLogical } from './GatewayLogical';
 import type { GatewayUser } from './GatewayUser';
-import { getFormattedLoad, getSuffix, getTotalAdded } from './helpers';
+import RemoveServerConfirmationModal from './RemoveServerConfirmationModal';
+import { getFormattedLoad, getLocationFromId, getSuffix, getTotalAdded } from './helpers';
 
 interface Props extends ModalProps<typeof Form> {
     gateway: Gateway;
     countries: readonly string[];
+    locations: readonly GatewayLocation[];
     countryOptions: CountryOptions;
     deletedInCountries: Record<string, number>;
     users: readonly GatewayUser[];
@@ -49,6 +52,7 @@ interface Props extends ModalProps<typeof Form> {
 const GatewayServersModal = ({
     gateway,
     countries,
+    locations,
     countryOptions,
     deletedInCountries,
     users,
@@ -66,6 +70,7 @@ const GatewayServersModal = ({
     ...rest
 }: Props) => {
     const [addServersModal, showAddServersModal] = useModalTwoStatic(GatewayAddServersModal);
+    const [removeServerConfirmation, showRemoveServerConfirmation] = useModalTwoStatic(RemoveServerConfirmationModal);
     const [deleted, setDeleted] = useState<Record<string, boolean>>({});
     const [added, setAdded] = useState<Record<string, number>>({});
     const [loading, setLoading] = useState(false);
@@ -137,6 +142,7 @@ const GatewayServersModal = ({
     const addServers = () =>
         showAddServersModal({
             countries,
+            locations,
             deletedInCountries,
             ownedCount,
             usedCount: usedCount - deletedServerCount + addedServerCount,
@@ -149,16 +155,24 @@ const GatewayServersModal = ({
         });
 
     const handleDelete = (logical: GatewayLogical) => async () => {
-        if (added[logical.ExitCountry] > 0) {
-            decreaseQuantities({ [logical.ExitCountry]: 1 });
+        const onRemoveConfirmed = () => {
+            if (added[logical.ExitCountry] > 0) {
+                decreaseQuantities({ [logical.ExitCountry]: 1 });
 
-            return;
+                return;
+            }
+
+            setDeleted({
+                ...deleted,
+                [logical.ID]: !deleted[logical.ID],
+            });
+        };
+
+        if (!deleted[logical.ID]) {
+            showRemoveServerConfirmation({ onSubmitDone: onRemoveConfirmed });
+        } else {
+            onRemoveConfirmed();
         }
-
-        setDeleted({
-            ...deleted,
-            [logical.ID]: !deleted[logical.ID],
-        });
     };
 
     const handleSubmit = async () => {
@@ -187,7 +201,7 @@ const GatewayServersModal = ({
                     <Table className="my-2">
                         <thead>
                             <tr>
-                                <TableCell key="country" type="header">{c('Header').t`Country`}</TableCell>
+                                <TableCell key="country" type="header">{c('Header').t`Location`}</TableCell>
                                 <TableCell key="server" type="header" className="w-1/10">
                                     {c('Header').t`Server`}
                                 </TableCell>
@@ -217,7 +231,11 @@ const GatewayServersModal = ({
                                     cells={[
                                         <CountryFlagAndName
                                             countryCode={logical.ExitCountry}
-                                            countryName={getLocalizedCountryByAbbr(logical.ExitCountry, countryOptions)}
+                                            countryName={
+                                                getLocalizedCountryByAbbr(logical.ExitCountry, countryOptions) +
+                                                ' - ' +
+                                                logical.City
+                                            }
                                             className="mb-1"
                                         />,
                                         getSuffix(logical.Name),
@@ -260,10 +278,11 @@ const GatewayServersModal = ({
                                         cells={[
                                             <CountryFlagAndName
                                                 countryCode={logical.ExitCountry}
-                                                countryName={getLocalizedCountryByAbbr(
-                                                    logical.ExitCountry,
-                                                    countryOptions
-                                                )}
+                                                countryName={
+                                                    getLocalizedCountryByAbbr(logical.ExitCountry, countryOptions) +
+                                                    ' - ' +
+                                                    logical.City
+                                                }
                                                 className="mb-1"
                                             />,
                                             getSuffix(logical.Name),
@@ -294,7 +313,11 @@ const GatewayServersModal = ({
                                     cells={[
                                         <CountryFlagAndName
                                             countryCode={logical.ExitCountry}
-                                            countryName={getLocalizedCountryByAbbr(logical.ExitCountry, countryOptions)}
+                                            countryName={
+                                                getLocalizedCountryByAbbr(logical.ExitCountry, countryOptions) +
+                                                ' - ' +
+                                                logical.City
+                                            }
                                             className="mb-1"
                                         />,
                                         getSuffix(logical.Name),
@@ -310,39 +333,46 @@ const GatewayServersModal = ({
                                     ]}
                                 />
                             ))}
-                            {Object.keys(added).map((country) =>
-                                range(0, added[country]).map((index) => (
-                                    <TableRow
-                                        key={'future-logical-' + country + '-' + index}
-                                        cells={[
-                                            <CountryFlagAndName
-                                                countryCode={country}
-                                                countryName={getLocalizedCountryByAbbr(country, countryOptions)}
-                                                className="mb-1"
-                                            />,
-                                            '',
-                                            new Cell(
-                                                (
-                                                    <span className="py-1 px-2 rounded text-uppercase bg-weak">{
-                                                        /** translator: status of the server: will be created when user click "Save" */
-                                                        c('Server-Info').t`to be created`
-                                                    }</span>
+                            {Object.keys(added).map((locationId) =>
+                                range(0, added[locationId]).map((index) => {
+                                    const location = getLocationFromId(locationId);
+                                    return (
+                                        <TableRow
+                                            key={'future-logical-' + locationId + '-' + index}
+                                            cells={[
+                                                <CountryFlagAndName
+                                                    countryCode={location.Country}
+                                                    countryName={
+                                                        getLocalizedCountryByAbbr(location.Country, countryOptions) +
+                                                        ' - ' +
+                                                        location.TranslatedCity
+                                                    }
+                                                    className="mb-1"
+                                                />,
+                                                '',
+                                                new Cell(
+                                                    (
+                                                        <span className="py-1 px-2 rounded text-uppercase bg-weak">{
+                                                            /** translator: status of the server: will be created when user click "Save" */
+                                                            c('Server-Info').t`to be created`
+                                                        }</span>
+                                                    ),
+                                                    1 + Number(showIP) + Number(showLoad)
                                                 ),
-                                                1 + Number(showIP) + Number(showLoad)
-                                            ),
-                                            <Button
-                                                icon
-                                                size="small"
-                                                key="delete"
-                                                onClick={() => {
-                                                    decreaseQuantities({ [country]: 1 });
-                                                }}
-                                            >
-                                                <Icon name="trash" />
-                                            </Button>,
-                                        ]}
-                                    />
-                                ))
+                                                <Button
+                                                    icon
+                                                    size="small"
+                                                    key="delete"
+                                                    onClick={() => {
+                                                        decreaseQuantities({ [locationId]: 1 });
+                                                    }}
+                                                >
+                                                    <Icon name="trash" />
+                                                </Button>,
+                                            ]}
+                                        />
+                                    );
+                                })
                             )}
                         </TableBody>
                     </Table>
@@ -385,6 +415,7 @@ const GatewayServersModal = ({
                 </ModalTwoFooter>
             </ModalTwo>
             {addServersModal}
+            {removeServerConfirmation}
         </>
     );
 };
