@@ -68,7 +68,7 @@ describe('metrics', () => {
             const url = fetchMock.mock.lastCall?.[0];
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
-            expect(url).toBe('api/data/v1/metrics');
+            expect(url).toBe('/api/data/v1/metrics');
         });
 
         it('makes a post request', async () => {
@@ -178,7 +178,7 @@ describe('metrics', () => {
             const url = fetchMock.mock.lastCall?.[0];
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
-            expect(url).toBe('api/data/v1/metrics');
+            expect(url).toBe('/api/data/v1/metrics');
         });
 
         it('makes a post request', async () => {
