@@ -33,7 +33,7 @@ describe('MetricsRequestService', () => {
         requestService.report(defaultMetricsRequest);
 
         expect(metricsApi.fetch).toHaveBeenCalledTimes(1);
-        expect(metricsApi.fetch).toHaveBeenCalledWith('api/data/v1/metrics', {
+        expect(metricsApi.fetch).toHaveBeenCalledWith('/api/data/v1/metrics', {
             method: 'post',
             body: JSON.stringify({ Metrics: [defaultMetricsRequest] }),
         });
@@ -149,13 +149,13 @@ describe('MetricsRequestService', () => {
                 expect(metricsApi.fetch).not.toHaveBeenCalled();
 
                 jest.advanceTimersByTime(1);
-                expect(metricsApi.fetch).toHaveBeenCalledWith('api/data/v1/metrics', {
+                expect(metricsApi.fetch).toHaveBeenCalledWith('/api/data/v1/metrics', {
                     method: 'post',
                     body: JSON.stringify({ Metrics: [getMetricsRequest('Request 1')] }),
                 });
 
                 jest.advanceTimersByTime(1);
-                expect(metricsApi.fetch).toHaveBeenCalledWith('api/data/v1/metrics', {
+                expect(metricsApi.fetch).toHaveBeenCalledWith('/api/data/v1/metrics', {
                     method: 'post',
                     body: JSON.stringify({ Metrics: [getMetricsRequest('Request 2')] }),
                 });
@@ -387,13 +387,13 @@ describe('MetricsRequestService', () => {
             expect(metricsApi.fetch).not.toHaveBeenCalled();
 
             jest.advanceTimersByTime(batchFrequency);
-            expect(metricsApi.fetch).toHaveBeenCalledWith('api/data/v1/metrics', {
+            expect(metricsApi.fetch).toHaveBeenCalledWith('/api/data/v1/metrics', {
                 method: 'post',
                 body: JSON.stringify({ Metrics: [getMetricsRequest('Request 1'), getMetricsRequest('Request 2')] }),
             });
 
             jest.advanceTimersByTime(batchFrequency);
-            expect(metricsApi.fetch).toHaveBeenCalledWith('api/data/v1/metrics', {
+            expect(metricsApi.fetch).toHaveBeenCalledWith('/api/data/v1/metrics', {
                 method: 'post',
                 body: JSON.stringify({ Metrics: [getMetricsRequest('Request 3'), getMetricsRequest('Request 4')] }),
             });
@@ -416,13 +416,13 @@ describe('MetricsRequestService', () => {
             expect(metricsApi.fetch).not.toHaveBeenCalled();
 
             jest.advanceTimersByTime(batchFrequency);
-            expect(metricsApi.fetch).toHaveBeenCalledWith('api/data/v1/metrics', {
+            expect(metricsApi.fetch).toHaveBeenCalledWith('/api/data/v1/metrics', {
                 method: 'post',
                 body: JSON.stringify({ Metrics: [getMetricsRequest('Request 1'), getMetricsRequest('Request 2')] }),
             });
 
             jest.advanceTimersByTime(batchFrequency);
-            expect(metricsApi.fetch).toHaveBeenCalledWith('api/data/v1/metrics', {
+            expect(metricsApi.fetch).toHaveBeenCalledWith('/api/data/v1/metrics', {
                 method: 'post',
                 body: JSON.stringify({ Metrics: [getMetricsRequest('Request 3')] }),
             });
@@ -453,7 +453,7 @@ describe('MetricsRequestService', () => {
 
                 await jest.advanceTimersByTimeAsync(batchFrequency);
                 expect(metricsApi.fetch).toHaveBeenCalledTimes(1);
-                expect(metricsApi.fetch).toHaveBeenCalledWith('api/data/v1/metrics', {
+                expect(metricsApi.fetch).toHaveBeenCalledWith('/api/data/v1/metrics', {
                     method: 'post',
                     body: JSON.stringify({ Metrics: [getMetricsRequest('Request 1'), getMetricsRequest('Request 2')] }),
                 });
@@ -464,7 +464,7 @@ describe('MetricsRequestService', () => {
 
                 await jest.advanceTimersByTimeAsync(batchFrequency);
                 expect(metricsApi.fetch).toHaveBeenCalledTimes(2);
-                expect(metricsApi.fetch).toHaveBeenCalledWith('api/data/v1/metrics', {
+                expect(metricsApi.fetch).toHaveBeenCalledWith('/api/data/v1/metrics', {
                     method: 'post',
                     body: JSON.stringify({ Metrics: [getMetricsRequest('Request 3'), getMetricsRequest('Request 4')] }),
                 });
@@ -477,7 +477,7 @@ describe('MetricsRequestService', () => {
                 await jest.advanceTimersByTimeAsync(batchFrequency);
 
                 expect(metricsApi.fetch).toHaveBeenCalledTimes(3);
-                expect(metricsApi.fetch).toHaveBeenCalledWith('api/data/v1/metrics', {
+                expect(metricsApi.fetch).toHaveBeenCalledWith('/api/data/v1/metrics', {
                     method: 'post',
                     body: JSON.stringify({ Metrics: [getMetricsRequest('Request 3'), getMetricsRequest('Request 4')] }),
                 });
@@ -580,7 +580,7 @@ describe('MetricsRequestService', () => {
             expect(metricsApi.fetch).not.toHaveBeenCalled();
 
             jest.advanceTimersByTime(batchFrequency);
-            expect(metricsApi.fetch).toHaveBeenCalledWith('api/data/v1/metrics', {
+            expect(metricsApi.fetch).toHaveBeenCalledWith('/api/data/v1/metrics', {
                 method: 'post',
                 body: JSON.stringify({ Metrics: [getMetricsRequest('Request 1')] }),
             });
@@ -589,7 +589,7 @@ describe('MetricsRequestService', () => {
             await requestService.processAllRequests();
 
             expect(metricsApi.fetch).toHaveBeenCalledTimes(2);
-            expect(metricsApi.fetch).toHaveBeenCalledWith('api/data/v1/metrics', {
+            expect(metricsApi.fetch).toHaveBeenCalledWith('/api/data/v1/metrics', {
                 method: 'post',
                 body: JSON.stringify({ Metrics: [getMetricsRequest('Request 2'), getMetricsRequest('Request 3')] }),
             });

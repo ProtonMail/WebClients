@@ -76,7 +76,7 @@ class MetricsRequestService implements IMetricsRequestService {
         const frequencyWithIncrementalBackoff = (this._jailCount + 1) * this._batch.frequency;
 
         this._intervalId = setInterval(() => {
-            this.processNextBatch();
+            void this.processNextBatch();
         }, frequencyWithIncrementalBackoff);
     }
 
@@ -154,7 +154,7 @@ class MetricsRequestService implements IMetricsRequestService {
         }
 
         try {
-            await this.api.fetch('api/data/v1/metrics', {
+            await this.api.fetch('/api/data/v1/metrics', {
                 method: 'post',
                 body: JSON.stringify({ Metrics: metrics }),
             });
