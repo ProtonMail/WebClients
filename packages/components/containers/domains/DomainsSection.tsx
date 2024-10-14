@@ -23,6 +23,7 @@ import {
     APP_UPSELL_REF_PATH,
     BRAND_NAME,
     MAIL_UPSELL_PATHS,
+    ORGANIZATION_STATE,
     PLANS,
     PLAN_NAMES,
     UPSELL_COMPONENT,
@@ -74,6 +75,7 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
     const UsedDomains = organization?.UsedDomains || 0;
     const MaxDomains = organization?.MaxDomains || 0;
     const hasReachedDomainsLimit = UsedDomains === MaxDomains;
+    const isOrgActive = organization?.State === ORGANIZATION_STATE.ACTIVE;
 
     const handleRefresh = async () => {
         // Fetch all domains individually to trigger a DNS refresh CP-8499
@@ -124,7 +126,7 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
                             color="norm"
                             onClick={() => setNewDomainModalOpen(true)}
                             className="mr-4 mb-2"
-                            disabled={hasReachedDomainsLimit}
+                            disabled={hasReachedDomainsLimit || !isOrgActive}
                         >
                             {c('Action').t`Add domain`}
                         </Button>
@@ -132,6 +134,7 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
                             className="mb-2"
                             loading={loadingRefresh || loadingDomainsAddressesMap}
                             onClick={() => withLoadingRefresh(handleRefresh())}
+                            disabled={!isOrgActive}
                         >{c('Action').t`Refresh status`}</Button>
                     </div>
                     {!!customDomains?.length && domainsAddressesMap && (
@@ -161,15 +164,17 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
                                                 <DropdownActions
                                                     size="small"
                                                     list={[
-                                                        {
-                                                            text: reviewText,
-                                                            'aria-label': `${reviewText} ${domain.DomainName}`,
-                                                            onClick: () => {
-                                                                setTmpDomainProps({ domain, domainAddresses });
-                                                                setEditDomainModalOpen(true);
-                                                            },
-                                                        } as const,
-                                                        Array.isArray(domainAddresses) &&
+                                                        isOrgActive &&
+                                                            ({
+                                                                text: reviewText,
+                                                                'aria-label': `${reviewText} ${domain.DomainName}`,
+                                                                onClick: () => {
+                                                                    setTmpDomainProps({ domain, domainAddresses });
+                                                                    setEditDomainModalOpen(true);
+                                                                },
+                                                            } as const),
+                                                        isOrgActive &&
+                                                            Array.isArray(domainAddresses) &&
                                                             domainAddresses.length &&
                                                             ({
                                                                 text: setCatchAllText,
@@ -197,10 +202,12 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
                             </TableBody>
                         </Table>
                     )}
-                    <div className="mb-4 color-weak">
-                        {UsedDomains} / {MaxDomains}{' '}
-                        {c('Info').ngettext(msgid`domain used`, `domains used`, MaxDomains)}
-                    </div>
+                    {isOrgActive && (
+                        <div className="mb-4 color-weak">
+                            {UsedDomains} / {MaxDomains}{' '}
+                            {c('Info').ngettext(msgid`domain used`, `domains used`, MaxDomains)}
+                        </div>
+                    )}
                 </>
             )}
         </SettingsSectionWide>
@@ -229,10 +236,15 @@ const DomainsSectionUpgrade = () => {
 };
 
 const DomainsSection = ({ onceRef }: { onceRef: MutableRefObject<boolean> }) => {
+    const [customDomains] = useCustomDomains();
     const [user] = useUser();
     const hasPermission = user.isAdmin && !user.isSubUser && hasPaidMail(user);
 
-    return hasPermission ? <DomainsSectionInternal onceRef={onceRef} /> : <DomainsSectionUpgrade />;
+    return hasPermission || (!hasPermission && customDomains?.length) ? (
+        <DomainsSectionInternal onceRef={onceRef} />
+    ) : (
+        <DomainsSectionUpgrade />
+    );
 };
 
 export default DomainsSection;
