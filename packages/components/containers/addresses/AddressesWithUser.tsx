@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { Href } from '@proton/atoms';
-import { NewUpsellModal } from '@proton/components';
+import { NewUpsellModal, useUpsellConfig } from '@proton/components';
 import Alert from '@proton/components/components/alert/Alert';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import OrderableTable from '@proton/components/components/orderableTable/OrderableTable';
@@ -13,18 +13,14 @@ import OrderableTableHeader from '@proton/components/components/orderableTable/O
 import OrderableTableRow from '@proton/components/components/orderableTable/OrderableTableRow';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
+import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { orderAddress } from '@proton/shared/lib/api/addresses';
 import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import {
-    addUpsellPath,
-    getUpgradePath,
-    getUpsellRef,
-    useNewUpsellModalVariant,
-} from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address, CachedOrganizationKey, Member, UserModel } from '@proton/shared/lib/interfaces';
 import { getIsNonDefault, sortAddresses } from '@proton/shared/lib/mail/addresses';
@@ -52,14 +48,17 @@ const AddressesUser = ({ user, organizationKey, member, hasDescription = true, a
     const [addresses, loadingAddresses] = useAddresses();
     const [list, setAddresses] = useState<Address[]>(() => sortAddresses(addresses || []));
 
-    const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
-
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
         component: UPSELL_COMPONENT.MODAL,
         feature: MAIL_UPSELL_PATHS.UNLIMITED_ADDRESSES,
         isSettings: true,
     });
+
+    const oneDollarConfig = useOneDollarConfig();
+    const upsellConfig = useUpsellConfig({ upsellRef, ...oneDollarConfig });
+
+    const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
 
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
@@ -132,9 +131,9 @@ const AddressesUser = ({ user, organizationKey, member, hasDescription = true, a
             description={c('Description')
                 .t`Keep different parts of your life separate and your inbox organized with additional addresses.`}
             modalProps={upsellModalProps}
-            upgradePath={addUpsellPath(getUpgradePath({ user }), upsellRef)}
             illustration={addressesImg}
             sourceEvent="BUTTON_MORE_ADDRESSES"
+            {...upsellConfig}
         />
     ) : (
         <UpsellModal
@@ -142,9 +141,9 @@ const AddressesUser = ({ user, organizationKey, member, hasDescription = true, a
             description={c('Description')
                 .t`Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.`}
             modalProps={upsellModalProps}
-            upgradePath={addUpsellPath(getUpgradePath({ user }), upsellRef)}
             sourceEvent="BUTTON_MORE_ADDRESSES"
             features={['more-storage', 'more-email-addresses', 'unlimited-folders-and-labels', 'custom-email-domains']}
+            {...upsellConfig}
         />
     );
 
