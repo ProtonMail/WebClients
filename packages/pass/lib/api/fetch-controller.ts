@@ -36,7 +36,7 @@ export const createAbortResponse = () =>
     });
 
 export const createEmptyResponse = (res?: Response) =>
-    new Response('Empty', {
+    new Response(null, {
         status: res?.status ?? 204,
         statusText: res?.statusText ?? 'No content',
         headers: res?.headers ?? { 'Content-Type': 'text/plain' },
