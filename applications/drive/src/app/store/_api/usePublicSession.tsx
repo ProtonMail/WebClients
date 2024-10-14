@@ -13,6 +13,7 @@ import { srpAuth } from '@proton/shared/lib/srp';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 
 import { getLastActivePersistedUserSession } from '../../utils/lastActivePersistedUserSession';
+import { userSuccessMetrics } from '../../utils/metrics/userSuccessMetrics';
 import retryOnError from '../../utils/retryOnError';
 import { hasCustomPassword, hasGeneratedPasswordIncluded, isLegacySharedUrl } from '../_shares';
 import useDebouncedRequest from './useDebouncedRequest';
@@ -58,7 +59,9 @@ function usePublicSessionProvider() {
                     auth.setUID(persistedSession.UID);
                     auth.setLocalID(persistedSession.localID);
                 }
-                setUser(formatUser(resumedSession.User));
+                const user = formatUser(resumedSession.User);
+                setUser(user);
+                await userSuccessMetrics.setLocalUser(persistedSession.UID, user.isPaid);
             } catch (e) {
                 // TODO: Probably getLastPersistedLocalID is the source of issue
                 // Investigate why later
@@ -118,6 +121,7 @@ function usePublicSessionProvider() {
             };
             // This enables metrics to work for both auth and un-auth customers
             metrics.setAuthHeaders(UID, AccessToken);
+            void userSuccessMetrics.setAuthHeaders(UID, AccessToken);
             return sessionInfo.current;
         });
     };

@@ -11,6 +11,8 @@ import {
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { is4xx, is5xx } from '../../../utils/errorHandling/apiErrors';
+import { UserAvailabilityTypes } from '../../../utils/metrics/types/userSuccessMetricsTypes';
+import { userSuccessMetrics } from '../../../utils/metrics/userSuccessMetrics';
 import type { UploadErrorCategoryType } from '../../../utils/type/MetricTypes';
 import { MetricShareType, UploadErrorCategory } from '../../../utils/type/MetricTypes';
 import type { Share } from '../../_shares/interface';
@@ -70,6 +72,7 @@ export default function useUploadMetrics(isPaid: boolean, metricsModule = metric
     };
 
     const uploadFailed = (failedUploadMetadata: FailedUploadMetadata, error: any) => {
+        userSuccessMetrics.mark(UserAvailabilityTypes.coreFeatureError);
         const shareType = getShareIdType(failedUploadMetadata.shareId);
         const errorCategory = getErrorCategory(error);
         const retry = failedUploadMetadata.numberOfErrors > 1;

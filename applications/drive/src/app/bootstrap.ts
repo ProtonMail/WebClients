@@ -13,6 +13,7 @@ import { FeatureCode, fetchFeatures } from '@proton/features';
 import createApi from '@proton/shared/lib/api/createApi';
 import { queryUserSettings } from '@proton/shared/lib/api/drive/user';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { getClientID } from '@proton/shared/lib/apps/helper';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import type { UserSettingsResponse } from '@proton/shared/lib/interfaces/drive/userSettings';
@@ -23,6 +24,7 @@ import { extendStore, setupStore } from './redux-store/store';
 import { sendErrorReport } from './utils/errorHandling';
 import { getWebpackChunkFailedToLoadError } from './utils/errorHandling/WebpackChunkFailedToLoadError';
 import { initDriveWorker } from './utils/initDriveWorker';
+import { userSuccessMetrics } from './utils/metrics/userSuccessMetrics';
 
 const getAppContainer = () =>
     import(/* webpackChunkName: "MainContainer" */ './containers/MainContainer')
@@ -41,6 +43,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     const silentApi = getSilentApi(api);
     const authentication = bootstrap.createAuthentication();
     bootstrap.init({ config, authentication, locales });
+    await userSuccessMetrics.init();
     setupGuestCrossStorage();
     const appName = config.APP_NAME;
 
@@ -76,6 +79,8 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
                 bootstrap.loadLocales({ userSettings, locales }),
             ]);
 
+            await userSuccessMetrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
+            await userSuccessMetrics.setLocalUser(authentication.getUID(), user.isPaid);
             return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope], scopes };
         };
 
