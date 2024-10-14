@@ -4,7 +4,6 @@ import { forwardRef, useCallback, useMemo, useRef, useState } from 'react';
 import AutocompleteList from '@proton/components/components/autocomplete/AutocompleteList';
 import { useAutocomplete, useAutocompleteFilter } from '@proton/components/components/autocomplete/useAutocomplete';
 import Icon from '@proton/components/components/icon/Icon';
-import Option from '@proton/components/components/option/Option';
 import Marks from '@proton/components/components/text/Marks';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { useCombinedRefs } from '@proton/hooks';
@@ -16,6 +15,7 @@ import { handleRecipientInputChange, inputToRecipient } from '@proton/shared/lib
 
 import type { Props as InputProps } from '../input/Input';
 import Input from '../input/Input';
+import AddressesAutocompleteOption from './AddressesAutocompleteOption';
 import type { AddressesAutocompleteItem, GroupsWithContactsMap } from './helper';
 import {
     getContactGroupsAutocompleteItems,
@@ -23,7 +23,13 @@ import {
     getNumberOfMembersCount,
     getNumberOfMembersText,
     getRecipientFromAutocompleteItem,
+    isEmailSelected,
+    isGroupSelected,
 } from './helper';
+
+import './AddressesAutocomplete.scss';
+
+type AutocompleteItemWithSelection = AddressesAutocompleteItem & { selected: boolean };
 
 interface Props extends Omit<InputProps, 'value'> {
     id: string;
@@ -78,22 +84,26 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
             );
         }, [recipients]);
 
-        const isGroupEmpty = (groupID: string) => {
-            return groupsWithContactsMap ? (groupsWithContactsMap[groupID]?.contacts.length || 0) <= 0 : false;
-        };
-
-        const contactsAutocompleteItems = useMemo(() => {
+        const contactsAutocompleteItems = useMemo<AutocompleteItemWithSelection[]>(() => {
             return [
                 ...getContactsAutocompleteItems(
                     contactEmails,
-                    ({ Email }) => !recipientsByAddress.has(canonicalizeEmail(Email))
+                    () => true,
+                    (mappedItem, initialContact) => ({
+                        ...mappedItem,
+                        selected: isEmailSelected(initialContact, recipientsByAddress),
+                    })
                 ),
                 ...getContactGroupsAutocompleteItems(
                     contactGroups,
-                    ({ Path, ID }) => !recipientsByGroup.has(Path) && !isGroupEmpty(ID)
+                    () => true,
+                    (mappedItem, initialContactGroup) => ({
+                        ...mappedItem,
+                        selected: isGroupSelected(initialContactGroup, recipientsByGroup, groupsWithContactsMap),
+                    })
                 ),
             ];
-        }, [contactEmails, contactGroups, recipientsByAddress, recipientsByGroup]);
+        }, [contactEmails, contactGroups, recipientsByAddress, recipientsByGroup, groupsWithContactsMap]);
 
         const handleAddRecipient = (newRecipients: Recipient[]) => {
             setInput('');
@@ -130,12 +140,37 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
             ? [exactNameGroup, ...filteredOptions.filter(({ option: { label } }) => label !== input)]
             : filteredOptions;
 
-        const { getOptionID, inputProps, suggestionProps } = useAutocomplete<AddressesAutocompleteItem>({
+        const { getOptionID, inputProps, suggestionProps } = useAutocomplete<AutocompleteItemWithSelection>({
             id,
             options: filteredOptions,
             onSelect: handleSelect,
             input,
             inputRef,
+            findPreviousOptionIndex: (currentIndex, options) => {
+                for (let i = currentIndex - 1; i >= 0; i--) {
+                    if (!options[i].option.selected) {
+                        return i;
+                    }
+                }
+                return currentIndex;
+            },
+            findNextOptionIndex: (currentIndex, options) => {
+                for (let i = currentIndex + 1; i < options.length; i++) {
+                    if (!options[i].option.selected) {
+                        return i;
+                    }
+                }
+                return currentIndex;
+            },
+            selectCustomIndexOnInputChange: (options) => {
+                for (let i = 0; i < options.length - 1; i++) {
+                    if (!options[i].option.selected) {
+                        return i;
+                    }
+                }
+
+                return 0;
+            },
         });
 
         const handleInputChange = (newValue: string) => {
@@ -173,16 +208,21 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
                         }
                     }}
                 />
-                <AutocompleteList anchorRef={anchorRef} {...suggestionProps}>
+                <AutocompleteList
+                    anchorRef={anchorRef}
+                    {...suggestionProps}
+                    searchResultsCount={filteredAndSortedOptions.filter((option) => !option.option.selected).length}
+                >
                     {filteredAndSortedOptions.map(({ chunks, text, option }, index) => {
                         return (
-                            <Option
+                            <AddressesAutocompleteOption
                                 key={option.key}
                                 id={getOptionID(index)}
                                 title={option.label}
                                 value={option}
                                 disableFocusOnActive
                                 onChange={handleSelect}
+                                selected={option.selected}
                             >
                                 {option.type === 'group' ? (
                                     <div className="flex flex-nowrap *:items-center gap-2">
@@ -204,7 +244,7 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
                                 ) : (
                                     <Marks chunks={chunks}>{text}</Marks>
                                 )}
-                            </Option>
+                            </AddressesAutocompleteOption>
                         );
                     })}
                 </AutocompleteList>
