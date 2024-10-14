@@ -1,12 +1,12 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto/lib';
 import {
-    KEY_LENGTH_BYTES,
     decryptData,
     encryptData,
-    generateKey as generateSymmetricKey,
-    importKey as importSymmetricKey,
+    generateKey as generateAesGcmKey,
+    importKey as importAesGcmKey,
 } from '@proton/crypto/lib/subtle/aesGcm';
+import { signData as computeHmacSignature, importKey as importHmacKey } from '@proton/crypto/lib/subtle/hmac';
 import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
@@ -157,20 +157,16 @@ const decryptArmoredWalletKey = async (walletKey: string, walletKeySignature: st
 
 export const decryptWalletKey = async (walletKey: string, walletKeySignature: string, keys: DecryptedKey[]) => {
     const decryptedEntropy = await decryptArmoredWalletKey(walletKey, walletKeySignature, keys);
-    return importSymmetricKey(decryptedEntropy);
+    return importAesGcmKey(decryptedEntropy);
 };
 
 export const decryptWalletKeyForHmac = async (walletKey: string, walletKeySignature: string, keys: DecryptedKey[]) => {
     const decryptedEntropy = await decryptArmoredWalletKey(walletKey, walletKeySignature, keys);
-
-    // https://github.com/vercel/edge-runtime/issues/813
-    const slicedKey = new Uint8Array(decryptedEntropy.slice(0, KEY_LENGTH_BYTES));
-
-    return crypto.subtle.importKey('raw', slicedKey, { name: 'HMAC', hash: 'SHA-256' }, false, ['sign', 'verify']);
+    return importHmacKey(decryptedEntropy);
 };
 
 export const hmac = async (hmacKey: CryptoKey, data: string) => {
-    return crypto.subtle.sign({ name: 'HMAC', hash: { name: 'SHA-256' } }, hmacKey, stringToUtf8Array(data));
+    return computeHmacSignature(hmacKey, stringToUtf8Array(data));
 };
 
 /**
@@ -204,8 +200,8 @@ export const encryptWalletData = async (
     dataToEncrypt: string[],
     userKey: DecryptedKey
 ): Promise<[string[], [string, string, CryptoKey, string]]> => {
-    const secretEntropy = generateSymmetricKey();
-    const key = await importSymmetricKey(secretEntropy);
+    const secretEntropy = generateAesGcmKey();
+    const key = await importAesGcmKey(secretEntropy);
 
     const encryptedData = await encryptWalletDataWithWalletKey(dataToEncrypt, key);
 
