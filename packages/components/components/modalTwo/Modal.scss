@@ -71,6 +71,10 @@
 		z-index: map.get($z-indexes, 'modals') - 1;
 	}
 
+	&--backdrop-blur {
+		backdrop-filter: blur(0.25rem);
+	}
+
 	@keyframes anime-modal-two-in {
 		from {
 			opacity: 0;
