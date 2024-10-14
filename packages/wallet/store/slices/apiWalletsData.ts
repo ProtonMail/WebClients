@@ -6,7 +6,6 @@ import {
     type AddressKeysState,
     type ModelState,
     type UserKeysState,
-    dispatchGetAllAddressesKeys,
     getInitialModelState,
     userKeysThunk,
 } from '@proton/account';
@@ -15,7 +14,7 @@ import { type ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 
 import type { IWasmApiWalletData } from '../../types';
-import { decryptWallet, migrateWallet } from '../../utils';
+import { decryptWallet } from '../../utils';
 import type { WalletThunkArguments } from '../thunk';
 
 export const apiWalletsDataSliceName = 'api_wallets_data' as const;
@@ -31,24 +30,20 @@ export const selectApiWalletsData = (state: ApiWalletsDataState) => state[apiWal
 
 const fetchAndDecryptWallets = async ({
     extraArgument,
-    getState,
     dispatch,
 }: {
     extraArgument: WalletThunkArguments;
-    getState: () => ApiWalletsDataState;
     dispatch: ThunkDispatch<ApiWalletsDataState, ProtonThunkArguments, UnknownAction>;
 }) => {
     const { walletApi, notificationsManager } = extraArgument;
     const walletClient = walletApi.clients().wallet;
 
     const userKeys = await dispatch(userKeysThunk());
-    const addressKeys = await dispatchGetAllAddressesKeys(dispatch);
 
     return walletClient
         .getWallets()
         .then(async (payload): Promise<IWasmApiWalletData[]> => {
             const wallets = payload[0];
-            let didMigration = false;
 
             const decryptedWallets = await Promise.all(
                 wallets.map(async ({ Wallet, WalletKey, WalletSettings }) => {
@@ -64,20 +59,9 @@ const fetchAndDecryptWallets = async ({
                         WalletAccounts: accounts,
                     };
 
-                    const decrypted = await decryptWallet({ apiWalletData, userKeys });
-
-                    if (decrypted?.Wallet.MigrationRequired) {
-                        await migrateWallet({ wallet: decrypted, walletApi, userKeys, addressKeys });
-                        didMigration = true;
-                    }
-
-                    return decrypted;
+                    return decryptWallet({ apiWalletData, userKeys });
                 })
             );
-
-            if (didMigration) {
-                return fetchAndDecryptWallets({ extraArgument, getState, dispatch });
-            }
 
             return compact(decryptedWallets);
         })
@@ -94,8 +78,8 @@ const fetchAndDecryptWallets = async ({
 const modelThunk = createAsyncModelThunk<Model, ApiWalletsDataState, WalletThunkArguments>(
     `${apiWalletsDataSliceName}/fetch`,
     {
-        miss: async ({ extraArgument, getState, dispatch }) => {
-            return fetchAndDecryptWallets({ extraArgument, getState, dispatch });
+        miss: async ({ extraArgument, dispatch }) => {
+            return fetchAndDecryptWallets({ extraArgument, dispatch });
         },
         previous: previousSelector(selectApiWalletsData),
     }
