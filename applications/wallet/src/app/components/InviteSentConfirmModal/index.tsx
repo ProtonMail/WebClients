@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import type { ModalOwnProps } from '@proton/components';
-import { Prompt } from '@proton/components';
+import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import walletSendingPlane from '@proton/styles/assets/img/wallet/wallet-paper-plane.jpg';
 
@@ -19,8 +19,14 @@ export const InviteSentConfirmModal = ({ email, ...modalProps }: Props) => {
         <Prompt
             {...modalProps}
             buttons={
-                <Button fullWidth size="large" shape="solid" color="norm" onClick={modalProps.onClose}>{c('Wallet')
-                    .t`Close`}</Button>
+                <Button
+                    data-testid="invite-sent-close-button"
+                    fullWidth
+                    size="large"
+                    shape="solid"
+                    color="norm"
+                    onClick={modalProps.onClose}
+                >{c('Wallet').t`Close`}</Button>
             }
         >
             <div className="flex flex-column">

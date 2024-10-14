@@ -1,8 +1,13 @@
 import * as useWalletDispatchModule from '../../store/hooks/app';
 
-export const mockUseWalletDispatch = (mockedValue?: ReturnType<typeof useWalletDispatchModule.useWalletDispatch>) => {
+type MockedDispatch = ReturnType<typeof useWalletDispatchModule.useWalletDispatch>;
+
+export const mockUseWalletDispatch = (mockedValue?: MockedDispatch) => {
     const spy = vi.spyOn(useWalletDispatchModule, 'useWalletDispatch');
-    spy.mockReturnValue(mockedValue ?? vi.fn);
+
+    const dispatch = mockedValue ?? vi.fn();
+
+    spy.mockReturnValue(dispatch as MockedDispatch);
 
     return spy;
 };

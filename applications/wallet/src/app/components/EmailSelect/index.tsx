@@ -4,7 +4,8 @@ import keyBy from 'lodash/keyBy';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { Icon, Tooltip } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { ANONYMOUS_SENDER_ADDRESS_ID } from '@proton/wallet';
 
 import { Select } from '../../atoms';
