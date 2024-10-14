@@ -15,11 +15,9 @@ import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import { UpsellRef } from '@proton/pass/constants';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectAllVaults, selectOwnReadOnlyVaults, selectShare, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { ItemType } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { prop } from '@proton/pass/utils/fp/lens';
 import clsx from '@proton/utils/clsx';
 
@@ -43,8 +41,6 @@ export const ItemsListPlaceholder: FC<Props> = ({ noActions }) => {
     const { navigate, matchTrash, filters } = useNavigation();
     const { search, selectedShareId } = filters;
     const { totalCount } = useItems();
-
-    const identityEnabled = useFeatureFlag(PassFeature.PassIdentityV1);
 
     const { didDowngrade } = useSelector(selectVaultLimits);
     const selectedShare = useSelector(selectShare(selectedShareId));
@@ -90,18 +86,17 @@ export const ItemsListPlaceholder: FC<Props> = ({ noActions }) => {
                 icon: itemTypeToIconName.identity,
                 label: c('Label').t`Create an Identity`,
                 type: 'identity',
-                hidden: !identityEnabled,
                 onClick: () => navigate(getNewItemRoute('identity')),
             },
             {
                 type: 'import',
                 icon: 'arrow-up-line',
-                shape: identityEnabled ? 'outline' : 'solid',
+                shape: 'outline',
                 label: c('Label').t`Import passwords`,
                 onClick: () => openSettings?.('import'),
             },
         ],
-        [identityEnabled]
+        []
     );
 
     if (showUpgrade && !matchTrash) {
