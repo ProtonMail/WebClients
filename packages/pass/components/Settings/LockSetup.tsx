@@ -16,7 +16,6 @@ import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvide
 import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
 import { DEFAULT_LOCK_TTL, UpsellRef } from '@proton/pass/constants';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { lockCreateIntent } from '@proton/pass/store/actions';
@@ -29,7 +28,6 @@ import {
     selectUserSettings,
 } from '@proton/pass/store/selectors';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
@@ -56,7 +54,6 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
     const hasExtraPassword = useSelector(selectExtraPasswordEnabled);
     const canPasswordLock = !EXTENSION_BUILD && (!twoPwdMode || hasOfflinePassword);
     const canToggleTTL = currentLockMode !== LockMode.NONE && !orgLockTTL;
-    const biometricsRolledOut = useFeatureFlag(PassFeature.PassDesktopBiometrics);
     const [biometricsEnabled, setBiometricsEnabled] = useState(currentLockMode === LockMode.BIOMETRICS);
     const plan = useSelector(selectPassPlan);
     const onFreePlan = !isPaidPlan(plan);
@@ -227,9 +224,9 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
         (async () => {
             if (!DESKTOP_BUILD || currentLockMode === LockMode.BIOMETRICS) return;
             const canCheckPresence = (await window.ctxBridge?.canCheckPresence?.()) ?? false;
-            setBiometricsEnabled(canCheckPresence && biometricsRolledOut);
+            setBiometricsEnabled(canCheckPresence);
         })().catch(noop);
-    }, [currentLockMode, biometricsRolledOut]);
+    }, [currentLockMode]);
 
     return (
         <>
@@ -279,7 +276,7 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
                           ]
                         : []),
 
-                    ...(DESKTOP_BUILD && canPasswordLock && biometricsRolledOut
+                    ...(DESKTOP_BUILD && canPasswordLock
                         ? [
                               {
                                   label: (
