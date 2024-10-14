@@ -4,7 +4,6 @@ export enum PassFeature {
     PassAccountSwitchV1 = 'PassAccountSwitchV1',
     PassDesktopBiometrics = 'PassDesktopBiometrics',
     PassEnableDesktopAutoUpdate = 'PassEnableDesktopAutoUpdate',
-    PassIdentityV1 = 'PassIdentityV1',
     PassSimpleLoginAliasesSync = 'PassSimpleLoginAliasesSync',
     PassWebInternalAlpha = 'PassWebInternalAlpha',
     PassWebOfflineMode = 'PassWebOfflineMode',
