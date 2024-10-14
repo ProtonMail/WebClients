@@ -1,3 +1,5 @@
+import merge from 'lodash/merge';
+
 import type {
     WasmBitcoinAddressClient,
     WasmEmailIntegrationClient,
@@ -107,18 +109,20 @@ export const getMockedApi = (mockedValue?: PartiallyMockedWalletApiClient): Wasm
     });
 };
 
-export const mockUseWalletApi = (mockedValue?: WasmProtonWalletApiClient) => {
+const mockedApi = getMockedApi();
+
+export const mockUseWalletApi = (mockedValue?: PartiallyMockedWalletApiClient) => {
     const spy = vi.spyOn(useWalletApiModule, 'useWalletApi');
 
-    spy.mockReturnValue(mockedValue ?? getMockedApi());
+    spy.mockReturnValue(freeable({ clients: () => freeable(merge({ ...mockedApi.clients(), ...mockedValue })) }));
 
     return spy;
 };
 
-export const mockUseWalletApiClients = (mockedValue?: WasmProtonWalletApiClient) => {
+export const mockUseWalletApiClients = (mockedValue?: PartiallyMockedWalletApiClient) => {
     const spy = vi.spyOn(useWalletApiModule, 'useWalletApiClients');
 
-    spy.mockReturnValue((mockedValue ?? getMockedApi()).clients());
+    spy.mockReturnValue(freeable(merge({ ...mockedApi.clients(), ...mockedValue })));
 
     return spy;
 };
