@@ -22,6 +22,7 @@ import {
     useGetEncryptionPreferences,
     useNotifications,
     useRelocalizeText,
+    useUserSettings,
 } from '@proton/components';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
@@ -69,7 +70,7 @@ import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import type { Address } from '@proton/shared/lib/interfaces';
+import { type Address, SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces';
 import type { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import type {
     AttendeeDeleteSingleEditResponse,
@@ -303,6 +304,7 @@ const InteractiveCalendarView = ({
     getOpenedMailEvents,
 }: Props) => {
     const api = useApi();
+    const [userSettings] = useUserSettings();
     const { call } = useEventManager();
     const { call: calendarCall } = useCalendarModelEventManager();
     const { createNotification } = useNotifications();
@@ -1591,9 +1593,25 @@ const InteractiveCalendarView = ({
 
     const formatTime = useCallback(
         (utcDate: Date) => {
-            return format(utcDate, 'p', { locale: dateLocale });
+            const timeString = format(utcDate, 'p', { locale: dateLocale });
+            const is12HourFormat = timeString.includes('AM') || timeString.includes('PM');
+
+            if (
+                userSettings.TimeFormat === SETTINGS_TIME_FORMAT.H12 ||
+                (is12HourFormat && userSettings.TimeFormat === SETTINGS_TIME_FORMAT.LOCALE_DEFAULT)
+            ) {
+                if (format(utcDate, 'mm') === '00') {
+                    // If it's a full hour, display only the hour with AM/PM in lowercase
+                    return format(utcDate, 'ha', { locale: dateLocale }).toLowerCase();
+                } else {
+                    // Otherwise, display the hour with minutes and AM/PM in lowercase
+                    return format(utcDate, 'h:mma', { locale: dateLocale }).toLowerCase().replace(/\s/g, ''); // strip spaces
+                }
+            }
+
+            return timeString;
         },
-        [dateLocale]
+        [dateLocale, view]
     );
 
     const [weekdays, weekdaysSingle] = useMemo(() => {
