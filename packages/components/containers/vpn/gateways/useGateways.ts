@@ -1,8 +1,12 @@
+import { useEffect, useRef, useState } from 'react';
+
 import { c, msgid } from 'ttag';
 
-import useApiResult from '@proton/components/hooks/useApiResult';
+import useApi from '@proton/components/hooks/useApi';
+import { SECOND } from '@proton/shared/lib/constants';
 
 import type { Gateway } from './Gateway';
+import type { GatewayLocation } from './GatewayLocation';
 import type { GatewayUser } from './GatewayUser';
 import { queryVPNGateways } from './api';
 
@@ -24,20 +28,56 @@ interface GatewayConfig {
     };
 }
 
-export const useGateways = () => {
-    const {
-        loading,
-        result,
-        request: refresh,
-    } = useApiResult<
-        {
-            Config: GatewayConfig;
-            Countries: readonly string[];
-            Gateways: readonly Gateway[];
-            Users: readonly GatewayUser[];
-        },
-        typeof queryVPNGateways
-    >(queryVPNGateways, []);
+interface GatewayResult {
+    Config: GatewayConfig;
+    Countries: readonly string[];
+    Locations: readonly GatewayLocation[];
+    Gateways: readonly Gateway[];
+    Users: readonly GatewayUser[];
+}
+
+export const useGateways = (maxAge: number) => {
+    const [result, setResult] = useState<GatewayResult | null>(null);
+    const [loading, setLoading] = useState<boolean>(true);
+
+    const api = useApi();
+
+    const refreshStateRef = useRef({ lastUpdate: 0, lastSuccess: 0 });
+
+    const refresh = async () => {
+        try {
+            refreshStateRef.current.lastUpdate = Date.now();
+            const result = await api<GatewayResult>(queryVPNGateways());
+            refreshStateRef.current.lastSuccess = Date.now();
+            setResult(result);
+        } catch {
+            // ignore
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        refresh();
+
+        const refreshHandle = setInterval(() => {
+            const { lastSuccess, lastUpdate } = refreshStateRef.current;
+
+            // Don't start to refresh until first success
+            if (!lastSuccess) {
+                return;
+            }
+
+            const now = Date.now();
+            if (now > lastUpdate + maxAge / 5 && now > lastSuccess + maxAge) {
+                refresh();
+            }
+        }, 30 * SECOND);
+
+        return () => {
+            clearInterval(refreshHandle);
+        };
+    }, []);
 
     const nbDay = 7;
 
@@ -65,6 +105,7 @@ export const useGateways = () => {
             },
         },
         countries: result?.Countries,
+        locations: result?.Locations,
         gateways: result?.Gateways,
         users: result?.Users || [],
         refresh,
