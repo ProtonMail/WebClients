@@ -31,7 +31,6 @@ export enum Features {
  * At the present time, these metrics will only work when user is authenticated
  */
 export enum Actions {
-    DismissDocsOnboardingModal = 'dismissDocsOnboardingModal',
     AddToBookmark = 'addToBookmark',
     ViewSignUpFlowModal = 'viewSignUpFlowModal',
     DismissSignUpFlowModal = 'dismissSignUpFlowModal',
