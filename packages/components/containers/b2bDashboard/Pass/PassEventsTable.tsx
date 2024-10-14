@@ -11,7 +11,7 @@ import TableRow from '@proton/components/components/table/TableRow';
 import Time from '@proton/components/components/time/Time';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useApi from '@proton/components/hooks/useApi';
-import { getShareID } from '@proton/shared/lib/api/b2blogs';
+import { getShareID } from '@proton/shared/lib/api/b2bevents';
 import { APPS, SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 
@@ -126,7 +126,7 @@ const PassEventsTable = ({ events, loading, onEventClick, onTimeClick, onEmailOr
                 onToggleSort={toggleSort}
                 cells={[
                     { content: c('Title').t`User`, className: 'w-1/4' },
-                    { key: 'time', content: c('TableHeader').t`Event and Time`, sorting: true, className: 'w-1/4' },
+                    { key: 'time', content: c('TableHeader').t`Event`, sorting: true, className: 'w-1/4' },
                     { content: c('Title').t`Description`, className: 'w-1/4' },
                     { content: c('Title').t`IP`, className: 'w-1/4' },
                 ]}

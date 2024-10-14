@@ -1,29 +1,29 @@
 import type { B2BLogsQuery } from '../interfaces/B2BLogs';
 
 export const getPassLogs = (params: B2BLogsQuery) => ({
-    url: 'account/organization/logs/pass',
+    url: 'account/organization/events/pass',
     method: 'get',
     params,
 });
 
 export const getPassEventTypes = () => ({
-    url: 'account/organization/logs/pass/event-types',
+    url: 'account/organization/events/pass/event-types',
     method: 'get',
 });
 
 export const getVPNLogs = (params: B2BLogsQuery) => ({
-    url: 'account/organization/logs/vpn',
+    url: 'account/organization/events/vpn',
     method: 'get',
     params,
 });
 
 export const getVpnEventTypes = () => ({
-    url: 'account/organization/logs/vpn/event-types',
+    url: 'account/organization/events/vpn/event-types',
     method: 'get',
 });
 
 export const getVPNLogDownload = (params: B2BLogsQuery) => ({
-    url: 'account/organization/logs/export/vpn',
+    url: 'account/organization/events/export/vpn',
     method: 'get',
     params,
     output: 'text',
@@ -33,7 +33,7 @@ export const getVPNLogDownload = (params: B2BLogsQuery) => ({
 });
 
 export const getPassLogsDownload = (params: B2BLogsQuery) => ({
-    url: 'account/organization/logs/export/pass',
+    url: 'account/organization/events/export/pass',
     method: 'get',
     params,
     output: 'text',

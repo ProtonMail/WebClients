@@ -10,11 +10,10 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import TimeIntl from '@proton/components/components/time/TimeIntl';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useErrorHandler, useNotifications, useUserSettings } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
-import { getVPNLogDownload, getVPNLogs, getVpnEventTypes } from '@proton/shared/lib/api/b2blogs';
+import { getVPNLogDownload, getVPNLogs, getVpnEventTypes } from '@proton/shared/lib/api/b2bevents';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import type { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
 import noop from '@proton/utils/noop';
@@ -89,6 +88,11 @@ export const VPNEvents = () => {
         const sortedItems = filteredItems.sort((a: EventObject, b: EventObject) =>
             a.EventTypeName.localeCompare(b.EventTypeName)
         );
+        sortedItems.forEach((item: { EventType: string; EventTypeName: string }) => {
+            if (item.EventType === 'session_roaming') {
+                item.EventTypeName = 'Network change';
+            }
+        });
         setConnectionEvents(sortedItems);
     };
 
@@ -102,6 +106,12 @@ export const VPNEvents = () => {
                 getVPNLogs({ ...params, Sort: sortDirection === SORT_DIRECTION.DESC ? 'desc' : 'asc' })
             );
             const connectionEvents = toCamelCase(Items);
+            connectionEvents.forEach((item: VPNEvent) => {
+                if (item.eventType === 'session_roaming') {
+                    item.eventTypeName = 'Network change';
+                }
+            });
+
             setEvents(connectionEvents);
             setTotal(Total | 0);
         } catch (e) {
@@ -212,6 +222,7 @@ export const VPNEvents = () => {
         const date = new Date(time);
         const start = getLocalTimeStringFromDate(startOfDay(date));
         const end = getLocalTimeStringFromDate(endOfDay(date));
+
         setFilter({ ...filter, start: date, end: date });
         setQuery({ ...query, StartTime: start, EndTime: end });
         reset();
@@ -230,6 +241,24 @@ export const VPNEvents = () => {
         reset();
     };
 
+    const setGatewayMonitoring = async () => {
+        try {
+            const enabling = !monitoring;
+            const newSettings = await api<OrganizationSettings>(updateMonitoringSetting(enabling));
+
+            setMonitoring(enabling);
+            setMonitoringLastChange(newSettings.GatewayMonitoringLastUpdate || Date.now() / 1000);
+            setTogglingMonitoringModalOpen(false);
+            setTogglingMonitoringLoading(false);
+        } catch (e) {
+            setTogglingMonitoringModalOpen(false);
+
+            throw e;
+        } finally {
+            setTogglingMonitoringLoading(false);
+        }
+    };
+
     const toggleMonitoring = async () => {
         if (togglingMonitoringLoading || togglingMonitoringInitializing) {
             return;
@@ -238,20 +267,6 @@ export const VPNEvents = () => {
         const enabling = !monitoring;
         setMonitoringEnabling(enabling);
         setTogglingMonitoringModalOpen(true);
-        setTogglingMonitoringLoading(true);
-
-        try {
-            const newSettings = await api<OrganizationSettings>(updateMonitoringSetting(enabling));
-
-            setMonitoring(enabling);
-            setMonitoringLastChange(newSettings.GatewayMonitoringLastUpdate || Date.now() / 1000);
-        } catch (e) {
-            setTogglingMonitoringModalOpen(false);
-
-            throw e;
-        } finally {
-            setTogglingMonitoringLoading(false);
-        }
     };
 
     const getMonitoringInfoText = (): string => {
@@ -290,10 +305,10 @@ export const VPNEvents = () => {
         return monitoring
             ? /** translator: formattedDateAndTime be like "25 Sep 2023, 15:37" or just "15:37" if it's on the same day */ c(
                   'Info'
-              ).jt`Enabled since ${formattedDateAndTime}`
+              ).jt`Enabled on ${formattedDateAndTime}`
             : /** translator: formattedDateAndTime be like "25 Sep 2023, 15:37" or just "15:37" if it's on the same day */ c(
                   'Info'
-              ).jt`Disabled since ${formattedDateAndTime}`;
+              ).jt`Disabled on ${formattedDateAndTime}`;
     };
 
     const handleToggleSort = (direction: SORT_DIRECTION) => {
@@ -311,10 +326,14 @@ export const VPNEvents = () => {
     return (
         <SettingsSectionWide customWidth="90em">
             {togglingMonitoringModalRender && (
-                <TogglingMonitoringModal {...togglingMonitoringModalProps} enabling={monitoringEnabling} />
+                <TogglingMonitoringModal
+                    {...togglingMonitoringModalProps}
+                    enabling={monitoringEnabling}
+                    onChange={setGatewayMonitoring}
+                />
             )}
             <div className="mb-8 flex *:min-size-auto flex-column sm:flex-row gap-2">
-                <div className="flex-1">
+                <div className="flex flex-row flex-nowrap items-center gap-2">
                     <Toggle
                         loading={togglingMonitoringLoading || togglingMonitoringInitializing}
                         checked={monitoring}
@@ -322,12 +341,11 @@ export const VPNEvents = () => {
                             !togglingMonitoringLoading && !togglingMonitoringInitializing && !businessSettingsAvailable
                         }
                         onChange={toggleMonitoring}
-                    >
-                        <span className="pl-2">
-                            {getBoldFormattedText(getMonitoringInfoText())}
-                            <span className="block color-weak text-sm">{getMonitoringLastChangeText()}</span>
-                        </span>
-                    </Toggle>
+                    />
+                    <span>
+                        <span className="text-bold">{getMonitoringInfoText()}</span>
+                        <span className="block color-weak text-sm">{getMonitoringLastChangeText()}</span>
+                    </span>
                 </div>
             </div>
 
