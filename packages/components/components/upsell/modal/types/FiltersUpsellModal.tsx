@@ -27,6 +27,7 @@ const FiltersUpsellModal = ({ modalProps, onCloseCustomAction, isSettings = fals
         isSettings,
     });
     const oneDollarConfig = useOneDollarConfig();
+
     const upsellConfig = useUpsellConfig({ upsellRef, ...oneDollarConfig });
 
     const displayNewUpsellModalsVariant = useNewUpsellModalVariant();

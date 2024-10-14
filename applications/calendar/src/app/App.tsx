@@ -15,9 +15,11 @@ import {
     StandardErrorPage,
     StandardLoadErrorPage,
     StandardPrivateApp,
+    SubscriptionModalProvider,
 } from '@proton/components';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import { APPS } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import { FlagProvider } from '@proton/unleash';
@@ -77,22 +79,24 @@ const App = () => {
                                     <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
                                         <Router history={extraThunkArguments.history}>
                                             <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
-                                                <CalendarModelEventManagerProvider
-                                                    calendarModelEventManager={
-                                                        extraThunkArguments.calendarModelEventManager
-                                                    }
-                                                >
-                                                    <ErrorBoundary big component={<StandardErrorPage big />}>
-                                                        <StandardPrivateApp
-                                                            hasReadableMemberKeyActivation
-                                                            hasMemberKeyMigration
-                                                            hasPrivateMemberKeyGeneration
-                                                            loader={loader}
-                                                        >
-                                                            <state.MainContainer />
-                                                        </StandardPrivateApp>
-                                                    </ErrorBoundary>
-                                                </CalendarModelEventManagerProvider>
+                                                <SubscriptionModalProvider app={APPS.PROTONCALENDAR}>
+                                                    <CalendarModelEventManagerProvider
+                                                        calendarModelEventManager={
+                                                            extraThunkArguments.calendarModelEventManager
+                                                        }
+                                                    >
+                                                        <ErrorBoundary big component={<StandardErrorPage big />}>
+                                                            <StandardPrivateApp
+                                                                hasReadableMemberKeyActivation
+                                                                hasMemberKeyMigration
+                                                                hasPrivateMemberKeyGeneration
+                                                                loader={loader}
+                                                            >
+                                                                <state.MainContainer />
+                                                            </StandardPrivateApp>
+                                                        </ErrorBoundary>
+                                                    </CalendarModelEventManagerProvider>
+                                                </SubscriptionModalProvider>
                                             </EventManagerProvider>
                                         </Router>
                                     </FlagProvider>

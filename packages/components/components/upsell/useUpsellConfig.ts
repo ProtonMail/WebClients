@@ -47,7 +47,7 @@ const useUpsellConfig = ({
     const inboxUpsellFlowEnabled = useFlag('InboxUpsellFlow');
     const { APP_NAME } = useConfig();
     const hasInboxDesktopInAppPayments = useHasInboxDesktopInAppPayments();
-    const hasInAppPayments = APP_NAME === APPS.PROTONMAIL || hasInboxDesktopInAppPayments;
+    const hasInAppPayments = APP_NAME === APPS.PROTONACCOUNT || APPS.PROTONMAIL || hasInboxDesktopInAppPayments;
 
     if (hasSubscriptionModal && hasInAppPayments && inboxUpsellFlowEnabled && upsellRef) {
         const subscriptionCallBackProps = getUpsellSubscriptionModalConfig({
@@ -84,6 +84,9 @@ const useUpsellConfig = ({
     // The user will be redirected to account app
     return {
         upgradePath: addUpsellPath(getUpgradePath({ user, subscription, app: APP_NAME }), upsellRef),
+        ...(title && { title }),
+        ...(submitText && { submitText }),
+        ...(footerText && { footerText }),
     };
 };
 
