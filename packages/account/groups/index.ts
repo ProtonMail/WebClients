@@ -54,6 +54,12 @@ const slice = createSlice({
             if (!state.value) {
                 state.value = [];
             }
+
+            // early return if the group already exists
+            if (state.value.find((group) => group.ID === action.payload.ID)) {
+                return;
+            }
+
             state.value.push(action.payload);
         },
         updateGroup: (state, action: PayloadAction<Group>) => {
