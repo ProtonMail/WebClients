@@ -5,6 +5,7 @@ import { getCacheKey } from '@proton/pass/lib/cache/keys';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { getOrganization } from '@proton/pass/lib/organization/organization.requests';
 import { sanitizeBetaSetting } from '@proton/pass/lib/settings/beta';
+import { enableLoginAutofill } from '@proton/pass/lib/settings/utils';
 import { getPassPlan } from '@proton/pass/lib/user/user.plan';
 import { isPaidPlan, userStateHydrated } from '@proton/pass/lib/user/user.predicates';
 import { getUserData } from '@proton/pass/lib/user/user.requests';
@@ -69,12 +70,10 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore, 
         const autofill = settings.autofill;
 
         if (EXTENSION_BUILD && autofill) {
-            const autofillEnabled = Boolean(autofill.inject || autofill.openOnFocus);
-            const identityEnabled = Boolean(userState.features?.PassIdentityV1);
-
+            const autofillEnabled = enableLoginAutofill(autofill);
             /** Migrate `autofill.login` based on current user preferences */
             if (autofill.login === undefined) autofill.login = autofillEnabled;
-            if (autofill.identity === undefined && identityEnabled) autofill.identity = autofillEnabled;
+            if (autofill.identity === undefined) autofill.identity = autofillEnabled;
             if (autofill.twofa === undefined) autofill.twofa = autofill.login;
         }
 
