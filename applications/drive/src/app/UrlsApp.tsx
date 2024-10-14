@@ -16,6 +16,7 @@ import {
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';
+import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import noop from '@proton/utils/noop';
 
@@ -25,11 +26,15 @@ import locales from './locales';
 import type { DriveStore } from './redux-store/store';
 import { extendStore, setupStore } from './redux-store/store';
 import { extraThunkArguments } from './redux-store/thunk';
+import { userSuccessMetrics } from './utils/metrics/userSuccessMetrics';
 import { logPerformanceMarker } from './utils/performance';
 
 const bootstrapApp = async () => {
     const authentication = bootstrap.createAuthentication({ initialAuth: false });
     bootstrap.init({ config, locales, authentication });
+
+    await userSuccessMetrics.init();
+    await userSuccessMetrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
 
     const store = setupStore();
     const api = createApi({ config });
