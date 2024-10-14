@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { useErrorHandler } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
-import { getOrgAuthLogs } from '@proton/shared/lib/api/b2blogs';
+import { getOrgAuthLogs } from '@proton/shared/lib/api/b2bevents';
 
 import type { AuthLogsQueryParams } from './AuthenticationLogs';
 
@@ -34,7 +34,9 @@ const useOrgAuthLogs = (api: any, query: AuthLogsQueryParams, page: number) => {
     const [error, setError] = useState<string | undefined>(undefined);
 
     const fetchAuthLogs = async () => {
-        if (!query.Emails.length) {return;}
+        if (!query.Emails.length) {
+            return;
+        }
         setError(undefined);
 
         try {

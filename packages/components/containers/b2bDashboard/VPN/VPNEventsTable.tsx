@@ -49,11 +49,14 @@ const VPNEventsTable = ({
     });
 
     const toggleSort = () => {
-        setSortConfig({
-            ...sortConfig,
-            direction: sortConfig.direction === SORT_DIRECTION.ASC ? SORT_DIRECTION.DESC : SORT_DIRECTION.ASC,
+        setSortConfig((prevSortConfig) => {
+            const newDirection =
+                prevSortConfig.direction === SORT_DIRECTION.ASC ? SORT_DIRECTION.DESC : SORT_DIRECTION.ASC;
+
+            onToggleSort(newDirection);
+
+            return { ...prevSortConfig, direction: newDirection };
         });
-        onToggleSort(sortConfig.direction);
     };
 
     return (
@@ -63,10 +66,10 @@ const VPNEventsTable = ({
                 onToggleSort={toggleSort}
                 cells={[
                     { content: c('Title').t`User`, className: 'w-1/3' },
-                    { key: 'time', content: c('TableHeader').t`Event and Time`, sorting: true, className: 'w-1/6' },
+                    { key: 'time', content: c('TableHeader').t`Event`, sorting: true, className: 'w-1/6' },
                     { content: c('Title').t`Gateway`, className: 'w-1/6' },
                     { content: c('Title').t`Origin`, className: 'w-1/6' },
-                    { content: c('Title').t`Device Name`, className: 'w-1/6' },
+                    { content: c('Title').t`Device name`, className: 'w-1/6' },
                 ]}
             />
             <TableBody colSpan={5} loading={loading}>
@@ -142,10 +145,13 @@ const VPNEventsTable = ({
                                         alt={originCountryCode}
                                     />
                                     <div className="flex flex-column mb-1">
-                                        <span>{getLocalizedCountryByAbbr(location, countryOptions)}</span>
+                                        <span className="w-full text-ellipsis">
+                                            {getLocalizedCountryByAbbr(location, countryOptions)}
+                                        </span>
                                         <span
                                             onClick={() => onEmailOrIpClick(ip)}
-                                            className="cursor-pointer color-weak mt-1"
+                                            className="cursor-pointer color-weak mt-1 w-full text-ellipsis"
+                                            title={ip}
                                         >
                                             {ip}
                                         </span>
