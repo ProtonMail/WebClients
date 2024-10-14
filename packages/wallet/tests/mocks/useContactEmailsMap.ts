@@ -1,6 +1,6 @@
 import * as useContactEmailsCacheModule from '@proton/components/containers/contacts/ContactEmailsProvider';
 
-export const mockUseUseContactEmailsMap = (mockedValue?: Partial<useContactEmailsCacheModule.ContactEmailsCache>) => {
+export const mockUseContactEmailsMap = (mockedValue?: Partial<useContactEmailsCacheModule.ContactEmailsCache>) => {
     const spy = vi.spyOn(useContactEmailsCacheModule, 'useContactEmailsCache');
 
     spy.mockReturnValue({

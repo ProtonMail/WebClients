@@ -16,9 +16,7 @@ export const useWalletPassphrase = (wallet?: IWasmApiWalletData) => {
 
     const needPassphrase = Boolean(wallet?.Wallet.HasPassphrase && !wallet?.Wallet.Passphrase);
     const wrongFingerprint = Boolean(
-        needPassphrase &&
-            wallet?.Wallet.ID &&
-            wallet?.Wallet.Fingerprint !== walletsChainData[wallet.Wallet.ID]?.wallet.getFingerprint()
+        wallet?.Wallet.ID && wallet?.Wallet.Fingerprint !== walletsChainData[wallet.Wallet.ID]?.wallet.getFingerprint()
     );
 
     const canUseWallet = !needPassphrase && !wrongFingerprint;
