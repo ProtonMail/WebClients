@@ -13,7 +13,7 @@ import { PromotionBanner } from '@proton/components/containers/banner/PromotionB
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useApi from '@proton/components/hooks/useApi';
-import { PLANS, SERVER_FEATURES, SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { MINUTE, PLANS, SERVER_FEATURES, SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { getVPNDedicatedIPs } from '@proton/shared/lib/helpers/subscription';
 import type { Organization } from '@proton/shared/lib/interfaces';
@@ -34,6 +34,7 @@ import GatewayRow from './GatewayRow';
 import GatewayServersModal from './GatewayServersModal';
 import GatewayUsersModal from './GatewayUsersModal';
 import { addIpInVPNGateway, createVPNGateway, deleteVPNGateway, renameVPNGateway, updateVPNGatewayUsers } from './api';
+import { getLocationFromId } from './helpers';
 import { useGateways } from './useGateways';
 
 interface Props {
@@ -59,7 +60,6 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
     const [subscription] = useSubscription();
     const [deletedLogicals, setDeletedLogicals] = useState<Record<string, boolean>>({});
     const [deletingLogicals, setDeletingLogicals] = useState<readonly string[]>([]);
-    const [createdGateways, setCreatedGateways] = useState<Gateway[]>([]);
     const [updatedLogicals, setUpdatedLogicals] = useState<Record<string, GatewayLogical>>({});
     const {
         config: {
@@ -69,18 +69,18 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
         },
         users,
         countries,
+        locations,
         gateways,
         refresh,
-    } = useGateways();
+    } = useGateways(10 * MINUTE);
     const refreshList = async () => {
-        setCreatedGateways([]);
         setUpdatedLogicals({});
         await refresh();
     };
     const allGateways = useMemo<readonly Gateway[]>(() => {
         const ids: Record<string, true> = {};
 
-        return [...createdGateways, ...(gateways || [])]
+        return [...(gateways || [])]
             .map((gateway) => ({
                 ...gateway,
                 Logicals: gateway.Logicals.filter((l) => !deletedLogicals[l.ID]).map((l) => updatedLogicals[l.ID] || l),
@@ -98,11 +98,11 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
 
                 return false;
             });
-    }, [createdGateways, gateways, updatedLogicals, deletedLogicals]);
+    }, [gateways, updatedLogicals, deletedLogicals]);
     const { sortedList } = useSortedList(allGateways as Gateway[], { key: 'Name', direction: SORT_DIRECTION.ASC });
     const [openSubscriptionModal] = useSubscriptionModal();
 
-    if (!organization || !user || !subscription || !gateways || !countries) {
+    if (!organization || !user || !subscription || !gateways || !countries || !locations) {
         return <Loader />;
     }
 
@@ -233,15 +233,15 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
             return;
         }
 
-        const countries = Object.keys(quantities);
-        const total = countries.reduce((total, country) => total + (quantities[country] || 0), 0);
+        const locationIds = Object.keys(quantities);
+        const total = locationIds.reduce((total, location) => total + (quantities[location] || 0), 0);
         let gatewayHost: Gateway | undefined = initialGateway;
         let serverNumber = 0;
 
-        for (let i = 0; i < countries.length; i++) {
-            const country = countries[i];
+        for (let i = 0; i < locationIds.length; i++) {
+            const locationId = locationIds[i];
 
-            for (let j = 0; j < quantities[country]; j++) {
+            for (let j = 0; j < quantities[locationId]; j++) {
                 ++serverNumber;
 
                 createNotification({
@@ -265,7 +265,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                     gatewayHost = await createGateway(
                         createVPNGateway({
                             Name: data.Name,
-                            Country: country,
+                            Location: getLocationFromId(locationId),
                             Features: features,
                             UserIds: usersIds,
                         })
@@ -278,7 +278,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                     gatewayHost = await createGateway(
                         addIpInVPNGateway({
                             Name: gatewayHost.Name,
-                            Country: country,
+                            Location: getLocationFromId(locationId),
                         })
                     );
                 } catch (error) {
@@ -306,7 +306,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
         return createGateway(
             createVPNGateway({
                 Name: data.Name,
-                Country: data.Country,
+                Location: data.Location,
                 Features: features,
                 UserIds: usersIds,
             })
@@ -317,7 +317,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
         showCreateModal({
             countryOptions,
             showCancelButton,
-            countries,
+            locations,
             deletedInCountries,
             ownedCount: ipAddresses,
             usedCount: ipCount,
@@ -334,7 +334,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                     return;
                 }
 
-                setCreatedGateways([...createdGateways, gateway]);
+                await refreshList();
             },
             onUpsell: getCustomizeSubscriptionOpener('dashboard'),
         });
@@ -345,6 +345,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
             showCancelButton,
             gateway,
             countries,
+            locations,
             deletedInCountries,
             users,
             ownedCount: ipAddresses,
