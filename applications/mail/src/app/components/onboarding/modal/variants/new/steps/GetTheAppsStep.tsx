@@ -15,6 +15,7 @@ import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry'
 import { MAIL_APP_NAME, MAIL_MOBILE_APP_LINKS } from '@proton/shared/lib/constants';
 import { getOS, isMobile } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { appendUrlSearchParams } from '@proton/shared/lib/helpers/url';
 import desktopAppIcon from '@proton/styles/assets/img/onboarding/mail_onboarding_desktop_app.svg';
 import mobileAppIcon from '@proton/styles/assets/img/onboarding/mail_onboarding_mobile_app.svg';
 import clsx from '@proton/utils/clsx';
@@ -30,7 +31,11 @@ const getApps = (displayAltDesktopVersion: boolean, onClick: (type: 'desktopLink
         <Href
             key="appstore"
             onClick={() => onClick('mobileLink')}
-            href={MAIL_MOBILE_APP_LINKS.appStore}
+            href={appendUrlSearchParams(MAIL_MOBILE_APP_LINKS.appStore, {
+                pt: '106513916',
+                ct: 'webapp-mail-onboarding',
+                mt: '8',
+            })}
             target="_blank"
         >{c('Onboarding modal').t`App Store`}</Href>
     );
@@ -39,7 +44,10 @@ const getApps = (displayAltDesktopVersion: boolean, onClick: (type: 'desktopLink
         <Href
             key="googleplay"
             onClick={() => onClick('mobileLink')}
-            href={MAIL_MOBILE_APP_LINKS.playStore}
+            href={appendUrlSearchParams(MAIL_MOBILE_APP_LINKS.playStore, {
+                utm_source: 'webapp',
+                utm_campaign: 'webapp-mail-onboarding',
+            })}
             target="_blank"
         >{c('Onboarding modal').t`Google Play`}</Href>
     );
@@ -55,7 +63,7 @@ const getApps = (displayAltDesktopVersion: boolean, onClick: (type: 'desktopLink
         <SettingsLink
             key="desktop"
             onClick={() => onClick('desktopLink')}
-            path="/get-the-apps#proton-mail-desktop-apps"
+            path="/get-the-apps?ref=mail-cta-onboarding#proton-mail-desktop-apps"
             target="_blank"
         >{c('Onboarding modal').t`Get the desktop app`}</SettingsLink>
     );
@@ -182,7 +190,9 @@ const GetTheAppsStep = ({ onNext }: OnboardingStepRenderCallback) => {
                         className="pb-6"
                         description={apps.mobileApp.description}
                         imgSrc={apps.mobileApp.icon}
-                        qrCodeLink={MAIL_MOBILE_APP_LINKS.qrCode}
+                        qrCodeLink={appendUrlSearchParams(MAIL_MOBILE_APP_LINKS.qrCode, {
+                            ref: 'mail-qr-onboarding',
+                        })}
                         title={apps.mobileApp.title}
                     />
                     <div className="border-top border-weak" />
