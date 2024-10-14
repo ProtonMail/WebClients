@@ -573,5 +573,5 @@ export const PROTON_DEFAULT_THEME_INFORMATION: ThemeInformation = {
 };
 
 export const isDesktopThemeType = (value: unknown): value is ThemeTypes => {
-    return Object.values(DESKTOP_THEME_TYPES).includes(value as any);
+    return Object.values(DESKTOP_THEME_TYPES).some((theme) => theme === value);
 };
