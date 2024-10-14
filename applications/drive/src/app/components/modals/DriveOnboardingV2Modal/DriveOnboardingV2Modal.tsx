@@ -63,7 +63,7 @@ export const DriveOnboardingV2Modal: FC<ModalStateProps> = (props) => {
 
     if (isLoading) {
         return (
-            <ModalTwo open={true} size="xlarge">
+            <ModalTwo open fullscreenOnMobile blurBackdrop size="xlarge">
                 <ModalTwoContent className="my-8">
                     <div className="flex flex-column items-center">
                         <Loader size="medium" className="my-4" />
@@ -109,7 +109,7 @@ export const DriveOnboardingV2Modal: FC<ModalStateProps> = (props) => {
     };
 
     return (
-        <ModalTwo {...props} fullscreenOnMobile size="xlarge" data-testid="drive-onboarding-v2">
+        <ModalTwo {...props} fullscreenOnMobile blurBackdrop size="xlarge" data-testid="drive-onboarding-v2">
             <ModalTwoContent className="my-8">
                 <Header
                     currentStep={step}

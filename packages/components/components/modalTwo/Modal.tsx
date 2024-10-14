@@ -73,6 +73,10 @@ export interface ModalOwnProps {
      * Whether the modal should close when clicking outside of it.
      */
     enableCloseWhenClickOutside?: boolean;
+    /**
+     * Whether or not to blur the backdrop of the modal
+     */
+    blurBackdrop?: boolean;
 }
 
 enum ExitState {
@@ -101,6 +105,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
     rootClassName,
     behind,
     as,
+    blurBackdrop,
     ...rest
 }: PolymorphicPropsWithoutRef<ModalOwnProps, E>) => {
     const [key, setKey] = useState(() => generateUID());
@@ -205,6 +210,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
                     exiting && 'modal-two--out',
                     fullscreenOnMobile && 'modal-two--fullscreen-on-mobile',
                     fullscreen && 'modal-two--fullscreen',
+                    blurBackdrop && 'modal-two--backdrop-blur',
                     (!last || behind) && 'modal-two--is-behind-backdrop',
                 ])}
                 onAnimationEnd={({ animationName }) => {
