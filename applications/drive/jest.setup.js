@@ -44,3 +44,12 @@ jest.mock('./src/app/store/_uploads/initUploadFileWorker.ts', () => {
         initUploadFileWorker: jest.fn(),
     };
 });
+
+jest.mock('./src/app/utils/metrics/userSuccessMetrics.ts', () => {
+    return {
+        userSuccessMetrics: {
+            init: jest.fn(),
+            mark: jest.fn(),
+        },
+    };
+});
