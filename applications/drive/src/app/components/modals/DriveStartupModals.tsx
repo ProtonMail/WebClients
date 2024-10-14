@@ -6,7 +6,6 @@ import {
     getShouldOpenReferralModal,
     shouldOpenReminderModal,
     useModalState,
-    useNewFeatureOnboarding,
     useShowLightLabellingFeatureModal,
     useSubscription,
     useWelcomeFlags,
@@ -16,8 +15,6 @@ import { FeatureCode, useFeature } from '@proton/features';
 import { OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
 import useFlag from '@proton/unleash/useFlag';
 
-import { useDriveDocsFeatureFlag } from '../../store/_documents';
-import DriveDocsOnboardingModal from './DriveDocsOnboardingModal';
 import { DriveOnboardingModal } from './DriveOnboardingModal';
 import { DriveOnboardingV2Modal } from './DriveOnboardingV2Modal';
 
@@ -26,25 +23,12 @@ const DriveStartupModals = () => {
     const isOnboardingV2 = useFlag('DriveWebOnboardingV2');
 
     // Drive onboarding V2
-    const showWelcomeV2Modal = !welcomeFlags.isDone && isOnboardingV2;
+    const showWelcomeV2Modal = true; // !welcomeFlags.isDone && isOnboardingV2;
     const [welcomeV2Modal, setWelcomeV2Modal, renderWelcomeV2Modal] = useModalState();
 
     // Drive welcome modal
     const showWelcomeModal = !welcomeFlags.isDone && !isOnboardingV2;
     const [welcomeModal, setWelcomeModal, renderWelcomeModal] = useModalState();
-
-    // Docs welcome modal
-    const { isDocsEnabled } = useDriveDocsFeatureFlag();
-    const { showOnboarding: showDocsOnboarding, onWasShown: onDocsOnboardingShown } = useNewFeatureOnboarding({
-        key: 'drive-docs',
-        featureFlagsEnabled: isDocsEnabled,
-        shouldWelcomeFlowBeDone: true,
-        startDate: '2024-08-15',
-        expirationDate: '2024-08-31',
-    });
-    const [docsModal, setDocsModal, renderDocsModal] = useModalState({
-        onClose: onDocsOnboardingShown,
-    });
 
     // Referral modal
     const [subscription, subscriptionLoading] = useSubscription();
@@ -80,7 +64,6 @@ const DriveStartupModals = () => {
             // Drive modals
             [showWelcomeV2Modal, setWelcomeV2Modal],
             [showWelcomeModal, setWelcomeModal],
-            [showDocsOnboarding, setDocsModal],
             // Account modals
             [showReminderModal, setReminderModal],
             [showReferralModal, setReferralModal],
@@ -95,21 +78,13 @@ const DriveStartupModals = () => {
                 break;
             }
         }
-    }, [
-        showWelcomeV2Modal,
-        showWelcomeModal,
-        showDocsOnboarding,
-        showReminderModal,
-        showReferralModal,
-        showLightLabellingFeatureModal,
-    ]);
+    }, [showWelcomeV2Modal, showWelcomeModal, showReminderModal, showReferralModal, showLightLabellingFeatureModal]);
 
     return (
         <>
             {/* Drive modals */}
             {renderWelcomeV2Modal && <DriveOnboardingV2Modal {...welcomeV2Modal} />}
             {renderWelcomeModal && <DriveOnboardingModal {...welcomeModal} onDone={setWelcomeFlagsDone} />}
-            {renderDocsModal && <DriveDocsOnboardingModal {...docsModal} />}
 
             {/* Account modals */}
             {renderReminderModal && <CancellationReminderModal {...reminderModal} />}
