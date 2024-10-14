@@ -40,6 +40,12 @@
         {
             "groupName": "redux",
             "matchPackagePatterns": ["redux"]
+        },
+        {
+            "groupName": "pass-desktop exclusions",
+            "matchPaths": ["applications/pass-desktop/package.json"],
+            "matchPackageNames": ["@vercel/webpack-asset-relocator-loader"],
+            "enabled": false
         }
     ]
 }
