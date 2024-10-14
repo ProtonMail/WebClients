@@ -53,7 +53,7 @@ export type ExcludedProxiedSettingsKeys = Unpack<typeof EXCLUDED_SETTINGS_KEYS>;
 export type ProxiedSettings = Omit<SettingsState, ExcludedProxiedSettingsKeys>;
 
 export const getInitialSettings = (): ProxiedSettings => ({
-    autofill: { login: true, identity: true, twofa: true },
+    autofill: { identity: true, twofa: true },
     autosave: { prompt: true, passwordSuggest: true },
     autosuggest: { password: true, email: true, passwordCopy: false },
     disallowedDomains: {},
