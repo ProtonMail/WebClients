@@ -144,7 +144,7 @@ export interface MoveLink {
     ParentLinkID: string;
     NodePassphrase: string;
     NodePassphraseSignature: string;
-    SignatureAddress: string;
+    NameSignatureEmail: string;
     NewShareID?: string;
     ContentHash?: string;
 }

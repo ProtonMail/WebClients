@@ -28,7 +28,7 @@ const RECOVERY_STATE_CACHE_KEY = 'photos-recovery-state';
 export const usePhotosRecovery = () => {
     const { shareId, linkId, deletePhotosShare } = usePhotos();
     const { getRestoredPhotosShares } = useSharesState();
-    const { getCachedChildren, loadChildren } = useLinksListing();
+    const { getCachedChildren, getCachedTrashed, loadChildren } = useLinksListing();
     const { moveLinks } = useLinksActions();
     const [countOfUnrecoveredLinksLeft, setCountOfUnrecoveredLinksLeft] = useState<number>(0);
     const [countOfFailedLinks, setCountOfFailedLinks] = useState<number>(0);
@@ -52,17 +52,18 @@ export const usePhotosRecovery = () => {
     const handleDecryptLinks = useCallback(
         async (abortSignal: AbortSignal, shares: Share[] | ShareWithKey[]) => {
             for (const share of shares) {
-                await loadChildren(abortSignal, share.shareId, share.rootLinkId);
+                await loadChildren(abortSignal, share.shareId, share.rootLinkId, undefined, undefined, true);
                 await waitFor(
                     () => {
                         const { isDecrypting } = getCachedChildren(abortSignal, share.shareId, share.rootLinkId);
-                        return !isDecrypting;
+                        const { isDecrypting: isTrashDecrypting } = getCachedTrashed(abortSignal, share.volumeId);
+                        return !isDecrypting && !isTrashDecrypting;
                     },
                     { abortSignal }
                 );
             }
         },
-        [getCachedChildren, loadChildren]
+        [getCachedChildren, getCachedTrashed, loadChildren]
     );
 
     const handlePrepareLinks = useCallback(
@@ -72,27 +73,34 @@ export const usePhotosRecovery = () => {
 
             for (const share of shares) {
                 const { links } = getCachedChildren(abortSignal, share.shareId, share.rootLinkId);
+                const trashLinks = getCachedTrashed(abortSignal, share.volumeId).links.filter(
+                    (link) => !!link.activeRevision?.photo
+                );
+                const allLinks = links.concat(trashLinks);
                 allRestoredData.push({
-                    links,
+                    links: allLinks,
                     shareId: share.shareId,
                 });
-                totalNbLinks += links.length;
+                totalNbLinks += allLinks.length;
             }
             return { allRestoredData, totalNbLinks };
         },
-        [getCachedChildren]
+        [getCachedChildren, getCachedTrashed]
     );
 
     const safelyDeleteShares = useCallback(
         async (abortSignal: AbortSignal, shares: Share[] | ShareWithKey[]) => {
             for (const share of shares) {
                 const { links } = getCachedChildren(abortSignal, share.shareId, share.rootLinkId);
-                if (!links.length) {
+                const trashLinks = getCachedTrashed(abortSignal, share.volumeId).links.filter(
+                    (link) => !!link.activeRevision?.photo
+                );
+                if (!links.length && !trashLinks.length) {
                     await deletePhotosShare(share.volumeId, share.shareId);
                 }
             }
         },
-        [deletePhotosShare, getCachedChildren]
+        [deletePhotosShare, getCachedChildren, getCachedTrashed]
     );
 
     const handleMoveLinks = useCallback(
