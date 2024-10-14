@@ -190,7 +190,6 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
                     setSelectedPaymentProvider(bestQuote.provider);
                     setSelectedPaymentMethod(bestQuote.PaymentMethod);
                 } else {
-                    // TODO: add notification here
                     setSortedQuotes([]);
                     setSelectedPaymentProvider(undefined);
                     setSelectedPaymentMethod(undefined);

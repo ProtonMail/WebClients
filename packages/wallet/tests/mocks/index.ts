@@ -10,3 +10,7 @@ export * from './useWalletAccountExchangeRate';
 export * from './useWalletApi';
 export * from './useWalletDispatch';
 export * from './useWalletSettings';
+export * from './useContactEmails';
+export * from './useApiWalletTransactionData';
+export * from './useSaveVCardContact';
+export * from './useRemainingInvites';

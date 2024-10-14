@@ -2,7 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import type { WasmApiWalletAccount } from '@proton/andromeda';
-import { useModalState, useModalStateWithData } from '@proton/components';
+import useModalState, { useModalStateWithData } from '@proton/components/components/modalTwo/useModalState';
 import { decrementAvailableInvites, useRemainingInvites, useWalletDispatch } from '@proton/wallet/store';
 
 import { Button } from '../../atoms';
@@ -29,6 +29,7 @@ export const InvitesButton = ({ walletAccount }: Props) => {
     return (
         <>
             <Button
+                data-testid="invite-button"
                 size="small"
                 shape="solid"
                 color="norm"
