@@ -208,7 +208,7 @@ export function useLinksActions({
                 ParentLinkID: newParentLinkId,
                 NodePassphrase,
                 NodePassphraseSignature,
-                SignatureAddress: address.Email,
+                NameSignatureEmail: address.Email,
                 NewShareID: newShareId === shareId ? undefined : newShareId,
                 ContentHash,
             }),
