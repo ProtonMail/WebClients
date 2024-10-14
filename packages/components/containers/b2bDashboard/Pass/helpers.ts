@@ -1,9 +1,8 @@
-import { format, parseISO } from 'date-fns';
+import { format } from 'date-fns';
 import startCase from 'lodash/startCase';
 import { c } from 'ttag';
 
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import { dateLocale } from '@proton/shared/lib/i18n';
 
 import type { PassEvent } from './interface';
 
@@ -210,43 +209,4 @@ export const getUniqueEventTypes = (eventLogs: PassEvent[]) => {
     const events = eventLogs.map((log) => log.eventType);
     const uniqueEvents = ['All Events', ...new Set(events)];
     return uniqueEvents.map((event) => startCase(event));
-};
-
-const formatDateCSV = (date: string) => {
-    const parsedDate = parseISO(date);
-    const formattedDate = format(parsedDate, 'MMM d, yyyy, h:mm a', { locale: dateLocale });
-    return `"${formattedDate}"`;
-};
-
-export const formatPassEventsCSV = async (csv: string) => {
-    if (!csv.trim()) {
-        return '';
-    }
-
-    const rows = csv.trim().split('\n');
-    const header = ['Time', 'User Name', 'User Email', 'Event', 'IP'];
-
-    const formatRow = (row: string) => {
-        const columns = row.split(',');
-
-        try {
-            const formattedDate = formatDateCSV(columns[0]);
-            const otherColumns = [...columns.slice(2, 4), columns[1], ...columns.slice(4, 5)].map((column) =>
-                column?.trim()
-            );
-
-            return [formattedDate, ...otherColumns].join(',');
-        } catch (error) {
-            console.error(`Error formatting row "${row}":`, error);
-            return row;
-        }
-    };
-
-    return [
-        header,
-        ...rows.slice(1).reduce<string[]>((acc, row) => {
-            acc.push(formatRow(row));
-            return acc;
-        }, []),
-    ].join('\n');
 };

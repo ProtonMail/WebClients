@@ -231,6 +231,7 @@ export type IconName =
     | 'mobile'
     | 'mobile-plus'
     | 'money-bills'
+    | 'monitor'
     | 'moon'
     | 'note'
     | 'notepad-checklist'
@@ -595,6 +596,7 @@ export { IcMinusCircleFilled } from './icons/IcMinusCircleFilled';
 export { IcMobile } from './icons/IcMobile';
 export { IcMobilePlus } from './icons/IcMobilePlus';
 export { IcMoneyBills } from './icons/IcMoneyBills';
+export { IcMonitor } from './icons/IcMonitor';
 export { IcMoon } from './icons/IcMoon';
 export { IcNote } from './icons/IcNote';
 export { IcNotepadChecklist } from './icons/IcNotepadChecklist';

@@ -9,7 +9,7 @@ import usePaginationAsync from '@proton/components/components/pagination/usePagi
 import { useErrorHandler, useNotifications } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
-import { getPassEventTypes, getPassLogs, getPassLogsDownload } from '@proton/shared/lib/api/b2blogs';
+import { getPassEventTypes, getPassLogs, getPassLogsDownload } from '@proton/shared/lib/api/b2bevents';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import type { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
 import noop from '@proton/utils/noop';

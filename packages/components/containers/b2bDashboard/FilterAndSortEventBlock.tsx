@@ -19,6 +19,11 @@ interface Event {
     EventTypeName: string;
 }
 
+interface Event {
+    EventType: string;
+    EventTypeName: string;
+}
+
 interface Props {
     filter: FilterModel;
     keyword: string;
@@ -57,6 +62,14 @@ export const FilterAndSortEventsBlock = ({
 
     const { viewportWidth } = useActiveBreakpoint();
 
+    const isFilterEmpty = () => {
+        return (
+            (filter.eventType === '' || filter.eventType === 'All Events') &&
+            filter.start === undefined &&
+            filter.end === undefined
+        );
+    };
+
     return (
         <div className="flex flex-row justify-space-between">
             <div className="w-full">
@@ -65,12 +78,12 @@ export const FilterAndSortEventsBlock = ({
                     className="flex flex-column md:flex-row gap-2 justify-space-between *:min-size-auto"
                 >
                     <div className="md:flex-1 flex flex-column *:min-size-auto w-full leading-10 mb-2">
-                        <Label className="text-semibold p-0 h-6" htmlFor="search">
+                        <Label className="text-semibold p-0 h-6 mb-1" htmlFor="search">
                             {c('Label').t`Search`}
                         </Label>
                         <Input
                             value={keyword}
-                            placeholder={c('Placeholder').t`Search for email or IP address`}
+                            placeholder={c('Placeholder').t`Search for an email or IP address`}
                             prefix={<Icon name="magnifier" />}
                             onValue={setKeyword}
                             className="md:max-h-auto"
@@ -79,7 +92,7 @@ export const FilterAndSortEventsBlock = ({
                     </div>
                     {hasFilterEvents && (
                         <div className="md:flex-1 flex flex-column leading-10 mb-2">
-                            <Label className="text-semibold p-0 h-6" htmlFor="search">
+                            <Label className="text-semibold p-0 h-6 mb-1" htmlFor="search">
                                 {c('Label').t`Event`}
                             </Label>
                             <div>
@@ -111,7 +124,7 @@ export const FilterAndSortEventsBlock = ({
                         ])}
                     >
                         <div className="flex-1 flex flex-column *:min-size-auto leading-10">
-                            <Label className="text-semibold p-0 h-6" htmlFor="begin-date">
+                            <Label className="text-semibold p-0 h-6 mb-1" htmlFor="begin-date">
                                 {c('Label (begin date/advanced search)').t`From`}
                             </Label>
                             <DateInput
@@ -130,7 +143,7 @@ export const FilterAndSortEventsBlock = ({
                             -
                         </span>
                         <div className="flex-1 flex flex-column *:min-size-auto leading-10">
-                            <Label className="text-semibold p-0 h-6" htmlFor="end-date">
+                            <Label className="text-semibold p-0 h-6 mb-1" htmlFor="end-date">
                                 {c('Label (end date/advanced search)').t`To`}
                             </Label>
                             <DateInput
@@ -150,16 +163,18 @@ export const FilterAndSortEventsBlock = ({
                             </Button>
                         </div>
                         <div className="flex mt-auto">
-                            <Button
-                                color="norm"
-                                shape="ghost"
-                                type="submit"
-                                loading={submitting}
-                                className="self-end"
-                                onClick={resetFilter}
-                            >
-                                {c('Action').t`Reset`}
-                            </Button>
+                            {!isFilterEmpty() && (
+                                <Button
+                                    color="norm"
+                                    shape="ghost"
+                                    type="submit"
+                                    loading={submitting}
+                                    className="self-end"
+                                    onClick={resetFilter}
+                                >
+                                    {c('Action').t`Reset`}
+                                </Button>
+                            )}
                         </div>
                         <div className="mt-auto ml-auto">
                             <Button
