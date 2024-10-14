@@ -3,7 +3,7 @@ import type { LexicalEditor } from 'lexical'
 import type { Ref } from 'react'
 import { forwardRef, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { mergeRefs } from '../Shared/mergeRefs'
-import { BEFOREINPUT_EVENT_COMMAND, INPUT_EVENT_COMMAND } from '../Commands/Events'
+import { BEFOREINPUT_EVENT_COMMAND, COMPOSITION_START_EVENT_COMMAND, INPUT_EVENT_COMMAND } from '../Commands/Events'
 import { SUGGESTION_MODE_KEYDOWN_COMMAND } from '../Plugins/Suggestions/Commands'
 
 export type Props = {
@@ -59,6 +59,9 @@ function ContentEditableElementImpl(
   const handleRef = useCallback(
     (rootElement: null | HTMLElement) => {
       if (rootElement) {
+        rootElement.addEventListener('compositionstart', (event) => {
+          editor.dispatchCommand(COMPOSITION_START_EVENT_COMMAND, event)
+        })
         rootElement.addEventListener('keydown', (event) => {
           if (isSuggestionModeRef.current) {
             // We don't want to preventDefault keydown
