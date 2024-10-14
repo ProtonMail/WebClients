@@ -1,5 +1,6 @@
 import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
+import { signData as computeHmacSignature, importKey as importHmacKey } from '@proton/crypto/lib/subtle/hmac';
 import { arrayToHexString, stringToUtf8Array } from '@proton/crypto/lib/utils';
 
 import { createSessionKey, getEncryptedSessionKey } from '../calendar/crypto/encrypt';
@@ -101,17 +102,10 @@ export const generateDriveKey = async (rawPassphrase: string) => {
 };
 
 export const generateLookupHash = async (name: string, parentHashKey: Uint8Array) => {
-    const key = await crypto.subtle.importKey('raw', parentHashKey, { name: 'HMAC', hash: 'SHA-256' }, false, [
-        'sign',
-        'verify',
-    ]);
+    const key = await importHmacKey(parentHashKey);
 
-    const signature = await crypto.subtle.sign(
-        { name: 'HMAC', hash: { name: 'SHA-256' } },
-        key,
-        stringToUtf8Array(name)
-    );
-    return arrayToHexString(new Uint8Array(signature));
+    const signature = await computeHmacSignature(key, stringToUtf8Array(name));
+    return arrayToHexString(signature);
 };
 
 export const generateNodeHashKey = async (publicKey: PublicKeyReference, addressPrivateKey: PrivateKeyReference) => {
