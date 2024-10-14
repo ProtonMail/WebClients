@@ -24,24 +24,15 @@ interface DownloadSectionProps extends PropsWithChildren {
     isBeta?: boolean;
 }
 
-const getButtonName = (url: string) => {
-    if (url.includes('.deb')) {
-        return c('Download link').t`.deb for Debian / Ubuntu`;
-    } else if (url.includes('.rpm')) {
-        return c('Download link').t`.rpm for Fedora / Red Hat`;
-    }
-
-    return '';
-};
-
 const DownloadDropdown = ({ app }: { app: DesktopVersion }) => {
-    const [value, setValue] = useState(app.File[0].Url);
+    const debUrl = app.File.find((file) => file.Url.endsWith('.deb'))!.Url;
+    const debText = c('Download link').t`.deb for Debian / Ubuntu`;
+    const rpmUrl = app.File.find((file) => file.Url.endsWith('.rpm'))!.Url;
+    const rpmText = c('Download link').t`.rpm for Fedora / Red Hat`;
+
+    const [value, setValue] = useState(debUrl);
 
     const handleClick = () => {
-        if (!value) {
-            return;
-        }
-
         if (isElectronMail) {
             invokeInboxDesktopIPC({ type: 'openExternal', payload: value });
         } else {
@@ -52,14 +43,12 @@ const DownloadDropdown = ({ app }: { app: DesktopVersion }) => {
     return (
         <div className="flex gap-2 w-full">
             <SelectTwo value={value} onChange={({ value }) => setValue(value)}>
-                {app.File.map((file) => {
-                    const text = getButtonName(file.Url!);
-                    return (
-                        <Option key={file.Url} value={file.Url} title={text}>
-                            {text}
-                        </Option>
-                    );
-                })}
+                <Option value={debUrl} title={debText}>
+                    {debText}
+                </Option>
+                <Option value={rpmUrl} title={rpmText}>
+                    {rpmText}
+                </Option>
             </SelectTwo>
             <Button color="norm" onClick={handleClick} fullWidth>{c('Action').t`Download`}</Button>
         </div>
@@ -99,12 +88,14 @@ const DownloadCard = ({ version, icon, platform, isBeta, children }: DownloadSec
             <div className="border p-7 flex-1 rounded flex flex-column items-center">
                 <Icon size={12} name={icon} className="mb-4" />
                 <h3 className="text-bold text-xl m-0 text-center">{getPlatformCopy(platform)}</h3>
-                <div className="flex gap-2 items-baseline">
-                    {isBeta && <Pill className="mt-2 mb-4">{c('Label').t`Beta`}</Pill>}
-                    <span className="mb-4 text-center">{version}</span>
-                </div>
+                {version.length ? (
+                    <div className="flex gap-2 items-baseline">
+                        {isBeta && <Pill className="mt-2">{c('Label').t`Beta`}</Pill>}
+                        <span className=" text-center">{version}</span>
+                    </div>
+                ) : null}
 
-                {children}
+                <div className="mt-4 w-full">{children}</div>
             </div>
         </div>
     );
@@ -112,9 +103,6 @@ const DownloadCard = ({ version, icon, platform, isBeta, children }: DownloadSec
 
 export const InboxDesktopSettingsSection = () => {
     const { windowsApp, macosApp, linuxApp } = useInboxDesktopVersion();
-    const isWindowsAppOK = windowsApp && windowsApp.File[0]?.Url && windowsApp.Version;
-    const isMacosAppOK = macosApp && macosApp.File[0]?.Url && macosApp.Version;
-    const isLinuxAppOK = linuxApp && linuxApp.Version && linuxApp.File.every((file) => file.Url);
 
     return (
         <SettingsSectionWide>
@@ -127,31 +115,25 @@ export const InboxDesktopSettingsSection = () => {
             </SettingsParagraph>
 
             <div className="mt-8 grid-column-2 grid-auto-fill gap-4">
-                {isWindowsAppOK && (
-                    <DownloadCard
-                        version={windowsApp.Version}
-                        icon="brand-windows"
-                        platform={DESKTOP_PLATFORMS.WINDOWS}
-                        isBeta={windowsApp.CategoryName === 'EarlyAccess'}
-                    >
-                        <DownloadButton link={windowsApp.File[0].Url} />
-                    </DownloadCard>
-                )}
-                {isMacosAppOK && (
-                    <DownloadCard
-                        version={macosApp.Version}
-                        icon="brand-apple"
-                        platform={DESKTOP_PLATFORMS.MACOS}
-                        isBeta={macosApp.CategoryName === 'EarlyAccess'}
-                    >
-                        <DownloadButton link={macosApp.File[0].Url} />
-                    </DownloadCard>
-                )}
-                {isLinuxAppOK && (
-                    <DownloadCard version={linuxApp.Version} icon="brand-linux" platform={DESKTOP_PLATFORMS.LINUX}>
-                        <DownloadDropdown app={linuxApp} />
-                    </DownloadCard>
-                )}
+                <DownloadCard
+                    version={windowsApp.Version}
+                    icon="brand-windows"
+                    platform={DESKTOP_PLATFORMS.WINDOWS}
+                    isBeta={windowsApp.CategoryName === 'EarlyAccess'}
+                >
+                    <DownloadButton link={windowsApp.File[0]!.Url} />
+                </DownloadCard>
+                <DownloadCard
+                    version={macosApp.Version}
+                    icon="brand-apple"
+                    platform={DESKTOP_PLATFORMS.MACOS}
+                    isBeta={macosApp.CategoryName === 'EarlyAccess'}
+                >
+                    <DownloadButton link={macosApp.File[0]!.Url} />
+                </DownloadCard>
+                <DownloadCard version={linuxApp.Version} icon="brand-linux" platform={DESKTOP_PLATFORMS.LINUX}>
+                    <DownloadDropdown app={linuxApp} />
+                </DownloadCard>
             </div>
         </SettingsSectionWide>
     );
