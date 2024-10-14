@@ -11,11 +11,12 @@ export const queryFolderChildren = (
         FoldersOnly = 0,
         Sort = DEFAULT_SORT_FIELD,
         Desc = DEFAULT_SORT_ORDER === SORT_DIRECTION.ASC ? 0 : 1,
-    }: { Page: number; PageSize?: number; FoldersOnly?: number; Sort?: string; Desc?: 0 | 1 }
+        ShowAll = 0,
+    }: { Page: number; PageSize?: number; FoldersOnly?: number; Sort?: string; Desc?: 0 | 1; ShowAll?: 0 | 1 }
 ) => ({
     method: 'get',
     url: `drive/shares/${shareID}/folders/${linkID}/children`,
-    params: { Page, PageSize, FoldersOnly, Sort, Desc, Thumbnails: 1 },
+    params: { Page, PageSize, FoldersOnly, Sort, Desc, Thumbnails: 1, ShowAll },
 });
 
 export const queryCreateFolder = (shareID: string, data: CreateNewFolder) => ({
