@@ -9,13 +9,13 @@ import { useExchangeRate, useUserWalletSettings } from '@proton/wallet/store';
 
 import { Button, CoreButton } from '../../../atoms';
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
+import Card from '../../../atoms/Card';
 import { NoteOrMessage } from '../../../atoms/NoteOrMessage';
 import { Price } from '../../../atoms/Price';
 import { TEXT_AREA_MAX_LENGTH } from '../../../constants';
 import { useBitcoinBlockchainContext } from '../../../contexts';
 import type { TxBuilderHelper } from '../../../hooks/useTxBuilder';
 import { convertAmount, isUndefined } from '../../../utils';
-import Card from '../../Card';
 import { EmailListItem } from '../../EmailListItem';
 import type { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 import { EmailSelect } from '../../EmailSelect';

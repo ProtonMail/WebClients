@@ -3,10 +3,11 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { ModalOwnProps } from '@proton/components';
-import { Prompt, Tooltip } from '@proton/components';
-import { useNotifications } from '@proton/components/hooks';
-import { useLoading } from '@proton/hooks';
+import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
+import Prompt from '@proton/components/components/prompt/Prompt';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import useLoading from '@proton/hooks/useLoading';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import walletExclusiveInvites from '@proton/styles/assets/img/wallet/wallet-user.jpg';
@@ -78,6 +79,7 @@ export const InviteModal = ({ defaultInviterAddressID, onInviteSent, ...modalPro
             buttons={[
                 <Tooltip title={errorMessage}>
                     <Button
+                        data-testid="send-invite-confirm-button"
                         fullWidth
                         color="norm"
                         shape="solid"
@@ -132,6 +134,7 @@ export const InviteModal = ({ defaultInviterAddressID, onInviteSent, ...modalPro
                 <div className="flex flex-row mt-2 w-full">
                     <Input
                         id="invitee-email-input"
+                        data-testid="invitee-email-input"
                         label={c('Wallet invite').t`Email address`}
                         placeholder={c('Wallet invite').t`Your friend's email`}
                         value={email}
