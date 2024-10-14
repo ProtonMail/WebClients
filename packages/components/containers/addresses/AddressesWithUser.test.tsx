@@ -16,6 +16,21 @@ import useFlag from '@proton/unleash/useFlag';
 import AddressesWithUser from './AddressesWithUser';
 
 jest.mock('@proton/components/hooks/useEventManager', () => () => ({}));
+jest.mock('@proton/components/components/upsell/useOneDollarPromo.tsx', () => ({
+    __esModule: true,
+    default: () => null,
+}));
+
+jest.mock('@proton/components/components/upsell/useUpsellConfig.ts', () => ({
+    __esModule: true,
+    default: () => null,
+}));
+
+jest.mock('@proton/shared/lib/helpers/upsell.ts', () => ({
+    __esModule: true,
+    useNewUpsellModalVariant: () => true,
+    getUpsellRef: () => '',
+}));
 
 jest.mock('@proton/components/components/orderableTable/OrderableTable');
 const ActualOrderableTable = jest.requireActual('@proton/components/components/orderableTable/OrderableTable').default;
