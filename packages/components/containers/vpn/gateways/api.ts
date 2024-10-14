@@ -45,3 +45,8 @@ export const updateVPNGatewayUsers = (currentName: string, features: number, use
         UserIds: userIds ?? null,
     },
 });
+
+export const queryDeletedDedicatedIPs = () => ({
+    url: 'vpn/v1/business/gateways/deleted-dedicated-ips',
+    method: 'get',
+});
