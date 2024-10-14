@@ -66,7 +66,7 @@ export const IPCInboxHostUpdateMessageSchema = z.union([
 ]);
 
 export type IPCInboxHostUpdateMessage = z.infer<typeof IPCInboxHostUpdateMessageSchema>;
-export type IPCInboxHostUpdateMessageType = string & IPCInboxHostUpdateMessage['type'];
+export type IPCInboxHostUpdateMessageType = IPCInboxHostUpdateMessage['type'];
 export type IPCInboxHostUpdateMessagePayload = IPCInboxHostUpdateMessage['payload'];
 export type IPCInboxHostUpdateListener = (payload: IPCInboxHostUpdateMessagePayload) => void;
 export type IPCInboxHostUpdateListenerRemover = { removeListener: () => void };
