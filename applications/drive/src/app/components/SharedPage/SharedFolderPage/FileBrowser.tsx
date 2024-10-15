@@ -57,11 +57,14 @@ export default function SharedFileBrowser({ folderName, items, isLoading, sortPa
 
     const isListEmpty = items.length === 0 && !isLoading;
 
-    const handleItemRender = (item: DecryptedLink) => {
-        if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
-            thumbnails.addToDownloadQueue(token, item.linkId, item.activeRevision.id);
-        }
-    };
+    const handleItemRender = useCallback(
+        (item: DecryptedLink) => {
+            if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
+                thumbnails.addToDownloadQueue(token, item.linkId, item.activeRevision.id);
+            }
+        },
+        [thumbnails, token]
+    );
 
     return (
         <div className={classname}>
