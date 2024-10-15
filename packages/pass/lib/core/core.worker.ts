@@ -1,4 +1,4 @@
-import * as PassRustCore from '@protontech/pass-rust-core';
+import * as PassRustWorker from '@protontech/pass-rust-core/worker';
 
 import type { PassCoreMethod, PassCoreRPC } from './types';
 
@@ -6,5 +6,5 @@ import type { PassCoreMethod, PassCoreRPC } from './types';
  * from the PassRustCore WebAssembly module */
 self.onmessage = ({ data: { method, args }, ports }: MessageEvent<PassCoreRPC<PassCoreMethod>>) => {
     const port = ports?.[0];
-    if (port) port.postMessage((PassRustCore[method] as any)(...args));
+    if (port) port.postMessage((PassRustWorker[method] as any)(...args));
 };

@@ -1,4 +1,7 @@
-import type { WasmPublicKeyCredentialAssertion, WasmPublicKeyCredentialAttestation } from '@protontech/pass-rust-core';
+import type {
+    WasmPublicKeyCredentialAssertion,
+    WasmPublicKeyCredentialAttestation,
+} from '@protontech/pass-rust-core/worker';
 
 import { SafeUint8Array } from '@proton/pass/utils/buffer/sanitization';
 
