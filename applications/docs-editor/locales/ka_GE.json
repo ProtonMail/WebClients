@@ -158,6 +158,9 @@
       "Numbered List": [
         "დანომრილი სია"
       ],
+      "Ok": [
+        "დიახ"
+      ],
       "Options": [
         "პარამეტრები"
       ],
@@ -436,9 +439,6 @@
       "Request timed out": [
         "მოთხოვნის ვადა გავიდა"
       ],
-      "Signature verification failed": [
-        "ხელმოწერის შემოწმების შეცდომა"
-      ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Word-ის დოკუმენტის გადაყვანა შეუძლებელია. ის პაროლითაა დაცული? თუ კი, ჯერ პაროლი მოაცილეთ და თავიდან სცადეთ."
       ]
@@ -549,8 +549,14 @@
       "Background colour": [
         "ფონის ფერი"
       ],
+      "Change image size": [
+        "გამოსახულების ზომის შეცვლა"
+      ],
       "Delete": [
         "წაშლა"
+      ],
+      "Delete image": [
+        "გამოსახულების წაშლა"
       ],
       "Delete link": [
         "ბმულის წაშლა"
@@ -563,6 +569,9 @@
       ],
       "Insert": [
         "ჩასმა"
+      ],
+      "Insert image": [
+        "გამოსახულების ჩასმა"
       ],
       "Insert paragraph": [
         "აბზაცის ჩასმა"

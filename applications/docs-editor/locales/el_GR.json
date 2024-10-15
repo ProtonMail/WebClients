@@ -158,6 +158,9 @@
       "Numbered List": [
         "Αριθμημένη Λίστα"
       ],
+      "Ok": [
+        "OK"
+      ],
       "Options": [
         "Επιλογές"
       ],
@@ -403,6 +406,17 @@
         "Απόρριψη σχολίου;"
       ]
     },
+    "Description": {
+      "Edit document directly": [
+        "Επεξεργασία εγγράφου απευθείας"
+      ],
+      "Edits become suggestion": [
+        "Οι αλλαγές γίνονται πρόταση"
+      ],
+      "Read or print final document": [
+        "Ανάγνωση ή εκτύπωση τελικού εγγράφου"
+      ]
+    },
     "Error": {
       "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
         "Παρουσιάστηκε σφάλμα κατά τη φόρτωση του εγγράφου. Για να αποφευχθεί η καταστροφή εγγράφων, το πρόγραμμα επεξεργασίας έχει κλειδωθεί. Φορτώστε ξανά τη σελίδα και προσπαθήστε ξανά."
@@ -424,9 +438,6 @@
       ],
       "Request timed out": [
         "Λήξη χρονικού ορίου αιτήματος"
-      ],
-      "Signature verification failed": [
-        "Η επαλήθευση υπογραφής απέτυχε"
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Δεν είναι δυνατή η μετατροπή εγγράφου του Word. Προστατεύεται με κωδικό πρόσβασης; Εάν ναι, παρακαλούμε καταργήστε τον κωδικό πρόσβασης και προσπαθήστε ξανά."
@@ -541,6 +552,9 @@
       "Delete": [
         "Διαγραφή"
       ],
+      "Delete image": [
+        "Διαγραφή εικόνας"
+      ],
       "Delete link": [
         "Διαγραφή συνδέσμου"
       ],
@@ -552,6 +566,9 @@
       ],
       "Insert": [
         "Εισαγωγή"
+      ],
+      "Insert image": [
+        "Εισαγωγή εικόνας"
       ],
       "Insert paragraph": [
         "Εισαγωγή παραγράφου"

@@ -158,6 +158,9 @@
       "Numbered List": [
         "Liste numérotée"
       ],
+      "Ok": [
+        "OK"
+      ],
       "Options": [
         "Options"
       ],
@@ -436,9 +439,6 @@
       "Request timed out": [
         "La requête a expiré."
       ],
-      "Signature verification failed": [
-        "La signature n'a pas pu être vérifiée."
-      ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "La conversion du document Word n'a pas abouti. Est-il protégé par un mot de passe ? Si c'est le cas, nous vous invitons à retirer le mot de passe et à réessayer."
       ]
@@ -535,6 +535,9 @@
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "Le contenu que vous essayez de coller est trop volumineux pour être collé en une seule fois. Essayez de le coller à nouveau en plus petites parties."
       ],
+      "The input mode or keyboard you are using is not currently supported in suggestion mode. Please switch to edit mode to resume editing.": [
+        "Le mode de saisie ou le clavier que vous utilisez n'est pas actuellement pris en charge pour le mode de suggestion. Passez en mode édition pour reprendre la modification."
+      ],
       "Viewing": [
         "Affichage"
       ],
@@ -551,6 +554,9 @@
       ],
       "Change image size": [
         "Modifier la taille de l'image"
+      ],
+      "Change indent level": [
+        "Changer le niveau d'indentation"
       ],
       "Delete": [
         "Supprimer"
@@ -624,6 +630,9 @@
       ],
       "Delete thread": [
         "Supprimer le fil de discussion"
+      ],
+      "Input mode not supported": [
+        "Le mode de saisie n'est pas pris en charge."
       ]
     }
   }
