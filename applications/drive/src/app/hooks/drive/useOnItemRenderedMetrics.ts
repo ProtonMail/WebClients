@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
@@ -65,9 +65,11 @@ export const useOnItemRenderedMetrics = (layout: LayoutSetting, isLoading: boole
         resetItemRenderedCounter();
     }, [location]);
 
+    const incrementItemRenderedCounter = useCallback(() => {
+        setCount((prevState) => prevState + 1);
+    }, []);
+
     return {
-        incrementItemRenderedCounter: () => {
-            setCount(count + 1);
-        },
+        incrementItemRenderedCounter,
     };
 };
