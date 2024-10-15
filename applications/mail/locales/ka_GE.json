@@ -3421,6 +3421,12 @@
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "განბლოკეთ სპამისა და სანაგვე ყუთის ავტომატური წაშლა და სხვა ფასიანი ფუნქციები, როცა სატარიფო გეგმას ასწევთ."
       ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "თქვენი შემომავალი შეტყობინებების ავტომატური დალაგება მანამდე, სანამ ის თქვენს საფოსტო ყუთამდე მოაღწევს."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "შექმენით იმდენი ჭდე და საქაღალდე, რამდენიც საჭიროა და იქონიეთ თქვენი საფოსტო ყუთი სუფთად."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "მიმდინარეობს კონტაქტების გაშიფვრა… ამას რამდენიმე წუთი შეიძლება, დასჭირდეს. როცა პროცესი დასრულდება, თქვენ შეგეძლებათ, გადმოწეროთ ფაილი ყველა თქვენი კონტაქტით."
       ],
@@ -3490,6 +3496,9 @@
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "ჩართეთ ელფოსტის ტრეკრებისგან დაცვა, რათა თავიდან აიცილოთ რეკლამისა და სხვების მიერ თქვენი მდებარეობის და ონლაინ აქტივობების ტრეკინგი."
+      ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "განბლოკეთ ${ activatePmUser } ადვილი და ლამაზი ელფოსტის მისამართისთვის."
       ],
       "Unlock custom message scheduling and more premium features when you upgrade.": [
         "აწიეთ სატარიფო გეგმა და მიიღეთ მორგებული შეტყობინებების დაგეგმვა და სხვა ფასიანი ფუნქციები."
@@ -4713,8 +4722,14 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } ჯგუფები"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "მომხმარებლის დომენის მქონე ანგარიშები ოჯახის ტარიფს ვერ მიიღებენ."
+      ],
       "customer support": [
         "მხარდაჭერის გუნდი"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "ოჯახის გეგმებს, ამჟამად, გარე ანგარიშების მხარდაჭერა არ გააჩნიათ. შეერთებამდე ${ BRAND_NAME }-ის ანგარიში შექმენით. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "თუ მოსაწევევს მიიღებთ, ჩვენ თქვენი მიმდინარე ტრიფიდან გადაგრთავთ და დარჩენილ ბალანსს ანგარიშზე დაგირიცხავთ."
@@ -4722,8 +4737,14 @@
       "Invited by: ${ inviteEmail }": [
         "მომწვევი: ${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "სამუდამო ანგარიშები ოჯახის გეგმაში ვერ შევლენ."
+      ],
       "Manage addresses.": [
         "მისამართების მართვა."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "წევრების მქონე ტარიფების მფლობელებს სხვა ოჯახურ ტარიფში გაერთიანება არ შეუძლიათ."
       ],
       "Sorry, you can't switch plans at this time.": [
         "უკაცრავად, ტარიფს ამჟამად ვერ გადართავთ."
@@ -4745,6 +4766,12 @@
       ],
       "You have successfully joined the family group": [
         "საოჯახო ტარიფს წარმატებით შეუერთდით."
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "გაქვთ გადაუხდელი ინვოისები. გადაიხადეთ, სანამ საოჯახო გეგმას მიუერთდებით."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "გიწვევენ, თქვენი ${ BRAND_NAME }-ის ანგარიში ამ ოჯახის ტარიფს მიაბათ და ერთად ისიამოვნოთ ყველა ${ brandOrAppName }-ის ფასიანი ფუნქციით."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "თქვენს ანგარიშს იმაზე მეტი მისამართი გააჩნია, ვიდრე ეს თქვენი სატარიფო გეგმის მიერაა დაშვებული. ${ addressSettingsLink }"
@@ -5269,10 +5296,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "ნაპოვნია ${ items.length } მინიშნება. აირჩიეთ კლავიატურით.",
-        "ნაპოვნია ${ items.length } მინიშნება. აირჩიეთ კლავიატურით."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "გამოიყენეთ ზევით და ქვევით კლავიშები შემოთავაზებების შეყვანის შემდეგ წვდომისთვის და დასათვალიერებლად. დააჭირეთ Enter თქვენი არჩევანის დასადასტურებლად, ან Escape შემოთავაზებების ველის დასახურავად."
       ]
@@ -7327,6 +7350,9 @@
       "You are about to open another browser tab and visit:": [
         "თქვენ ახლა ბრაუზერის ახალ ჩანართს გახსნით და ეწვევით:"
       ],
+      "You are about to open your default browser and visit:": [
+        "თქვენ ახლა თქვენი ნაგულისხმევი ბრაუზერის ახალ ჩანართს გახსნით და ეწვევით:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "შესული ხართ როგორც ${ user.Name } (${ user.Email })."
       ],
@@ -9368,6 +9394,9 @@
       "Secure Core servers": [
         "Secure Core-ის სერვერები"
       ],
+      "Secure link sharing": [
+        "დაცული ბმულის გაზიარება"
+      ],
       "See team's availability": [
         "გუნდის ხელმისაწვდომობის ნახვა"
       ],
@@ -9456,6 +9485,10 @@
         "${ n }-მდე მომხმარებელი",
         "${ n }-მდე მომხმარებელი"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "${ n }-მდე მომხამრებელი (${ adminsText }, ${ usersText })",
+        "${ n }-მდე მომხამრებელი (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "${ totalStorageSize }-მდე საცავი"
       ],
@@ -9474,6 +9507,16 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ჩვენ ვასკანერებთ ბნელ ვებს, რომ აღმოვაჩინოთ, არის თუ არა თქვენი ${ BRAND_NAME }-ის მისამართები ან ფსევდონიმები გაჟონილი და გაგაფრთხილოთ, თუ რამეს აღმოვაჩენთ."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } ადმინისტრატორი",
+        "${ admins } ადმინისტრატორი"
+      ],
+      "${ users } user": [
+        "${ users } მომხმარებელი",
+        "${ users } მომხმარებელი"
       ]
     },
     "new_plans: feature info": {
@@ -10190,6 +10233,32 @@
         "დაცული საცავის გაზიარება (${ n } საცავი) და ბმულების გაზიარება"
       ]
     },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } მომხმარებლის ანგარიში",
+        "${ n } მომხმარებლის ანგარიში"
+      ],
+      "Admin panel to manage users and subscription": [
+        "ადმინის პანელ მომხმარებლებისა და გამოწერების სამართავად"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "ყველა ფასიანი სერვისი. 6 მომხმარებელი. ერთი იოლი გამოწერა."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "ექსკლუზიური შემოთავზება ხელმისაწვდომია, მხოლოდ, ${ PASS_APP_NAME }-ის ადრეული მხარდამჭერებისთვის."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "მიიღეთ ფასით ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "წარმოგიდგენთ ${ passFamilyPlanName }-ს"
+      ],
+      "Limited-time deal.": [
+        "დროში შეზღუდული შეთავაზება."
+      ]
+    },
     "passwordless": {
       "Organization key does not exist.": [
         "ორგანიზაციის გასაღები არ არსებობს."
@@ -10685,6 +10754,11 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(გახსნის ${ PASS_APP_NAME }-ს)"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "მოვლენების ნახვა"
       ]
     },
     "Security Center - Info": {

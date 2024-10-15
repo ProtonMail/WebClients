@@ -4743,8 +4743,14 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } ομάδες"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Οι λογαριασμοί με προσαρμοσμένους τομείς δεν μπορούν να συμμετάσχουν σε οικογενειακό πλάνο."
+      ],
       "customer support": [
         "υποστήριξη πελατών"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Τα οικογενειακά πλάνα δεν υποστηρίζουν προς το παρόν εξωτερικούς λογαριασμούς. Δημιουργήστε μια διεύθυνση ${ BRAND_NAME } πριν εγγραφείτε. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Εάν αποδεχτείτε την πρόσκληση, θα σας αλλάξουμε από το τρέχον πρόγραμμά σας και θα πιστώσουμε στον λογαριασμό σας τυχόν υπόλοιπο."
@@ -4752,8 +4758,14 @@
       "Invited by: ${ inviteEmail }": [
         "Προσκλήθηκε από: ${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Οι λογαριασμοί εφ' όρου ζωής δεν μπορούν να συμμετάσχουν σε οικογενειακό πλάνο."
+      ],
       "Manage addresses.": [
         "Διαχείριση διευθύνσεων."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Οι κάτοχοι ενός προγράμματος με μέλη δεν μπορούν να συμμετάσχουν σε άλλο οικογενειακό πλάνο."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Λυπούμαστε, δεν μπορείτε να αλλάξετε σχέδια αυτήν τη στιγμή."
@@ -4775,6 +4787,12 @@
       ],
       "You have successfully joined the family group": [
         "Συμμετείχατε με επιτυχία στην ομάδα οικογένειας"
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Έχετε ανεξόφλητα τιμολόγια. Πληρώστε τους πριν συμμετάσχετε σε ένα οικογενειακό πλάνο."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Έχετε προσκληθεί να συνδέσετε τον λογαριασμό σας ${ BRAND_NAME } σε αυτό το οικογενειακό πλάνο και να απολαύσετε μαζί όλες τις premium λειτουργίες ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Ο λογαριασμός σας έχει περισσότερες διευθύνσεις ηλεκτρονικού ταχυδρομείου από αυτές που είναι διαθέσιμες σε αυτό το σχέδιο. ${ addressSettingsLink }"
@@ -5230,8 +5248,17 @@
       ]
     },
     "Google Meet": {
+      "Join Google Meet": [
+        "Συμμετάσχετε στο Google Meet"
+      ],
+      "Joining instructions": [
+        "Οδηγίες συμμετοχής"
+      ],
       "Less details": [
         "Λιγότερο λεπτομέρειες"
+      ],
+      "Meeting link:": [
+        "Σύνδεσμος συνάντησης:"
       ],
       "More details": [
         "Περισσότερες λεπτομέρειες"
@@ -5290,10 +5317,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Βρέθηκαν ${ items.length } πρόταση, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση.",
-        "Βρέθηκαν ${ items.length } προτάσεις, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Χρησιμοποιήστε τα πλήκτρα Up και Down για πρόσβαση και περιήγηση στις προτάσεις μετά την εισαγωγή. Πατήστε Enter για να επιβεβαιώσετε την επιλογή σας, ή διαφυγής για να κλείσετε το πλαίσιο προτάσεων."
       ]
@@ -9392,6 +9415,9 @@
       "Secure Core servers": [
         "Διακομιστές Secure Core"
       ],
+      "Secure link sharing": [
+        "Ασφαλής κοινή χρήση συνδέσμων"
+      ],
       "See team's availability": [
         "Δείτε τη διαθεσιμότητα της ομάδας"
       ],
@@ -9480,6 +9506,10 @@
         "Μέχρι και ${ n } χρήστη",
         "Μέχρι και ${ n } χρήστες"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Έως ${ n } χρήστη (${ adminsText }, ${ usersText })",
+        "Έως ${ n } χρήστες (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Έως και ${ totalStorageSize } αποθηκευτικού χώρου"
       ],
@@ -9498,6 +9528,16 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } διαχειριστής",
+        "${ admins } διαχειριστές"
+      ],
+      "${ users } user": [
+        "${ users } χρήστης",
+        "${ users } χρήστες"
       ]
     },
     "new_plans: feature info": {
@@ -9573,6 +9613,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Προστατεύστε τις ευαίσθητες επιχειρηματικές πληροφορίες και συνεργαστείτε με ασφάλεια."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Προστατέψτε την οικογένειά σας με όλες τις premium δυνατότητες του ${ PASS_SHORT_APP_NAME } Plus για 6 χρήστες."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Προστατέψτε το απόρρητο της οικογένειάς σας με όλες τις υπηρεσίες του ${ BRAND_NAME } σε συνδυασμό."
@@ -9781,6 +9824,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Μοιραστείτε με ασφάλεια μεμονωμένα στοιχεία με οποιονδήποτε (ακόμα και αν δε χρησιμοποιεί ${ PASS_APP_NAME })"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Αποθηκεύστε με ασφάλεια τα στοιχεία των επαφών σας, όπως τον αριθμό τηλεφώνου, τη διεύθυνση, τα γενέθλια και τις προσωπικές σημειώσεις. Η κρυπτογράφηση μηδενικής πρόσβασης διασφαλίζει ότι ακόμη και η${ BRAND_NAME } δεν μπορεί να έχουν πρόσβαση σε αυτά."
@@ -10215,6 +10261,35 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Ασφαλής κοινή χρήση κρύπτης (${ n } κρύπτη) και κοινή χρήση συνδέσμων",
         "Ασφαλής κοινή χρήση κρυπτών (${ n } κρύπτες) και κοινή χρήση συνδέσμων"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } λογαριασμός χρήστη",
+        "${ n } λογαριασμοί χρηστών"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Πίνακας διαχείρισης για τη διαχείριση χρηστών και συνδρομών"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Όλα τα premium χαρακτηριστικά. 6 χρήστες. 1 εύκολη συνδρομή."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Χρεώνεται ετησίως σε ${ yearlyPrice }. Εξοικονομήστε ${ yearlySavedPrice } με ${ passFamilyPlanName } (έναντι 6 μεμονωμένων συνδρομών ${ passPlusPlanName })."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Αποκλειστική προσφορά διαθέσιμη μόνο σε ${ PASS_APP_NAME } πρώιμους υποστηρικτές."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Αποκτήστε το για ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Παρουσιάζουμε το ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Προσφορά περιορισμένου χρόνου."
       ]
     },
     "passwordless": {
@@ -10712,6 +10787,11 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(θα ανοίξει ${ PASS_APP_NAME })"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Προβολή εκδηλώσεων"
       ]
     },
     "Security Center - Info": {
@@ -13758,6 +13838,12 @@
     "Zoom Meeting": {
       "Join Zoom Meeting": [
         "Συνδεθήτε στο Zoom Meeting"
+      ],
+      "Meeting ID:": [
+        "ID συνάντησης:"
+      ],
+      "Passcode: ${ password }": [
+        "Κωδικός πρόσβασης: ${ password }"
       ]
     }
   }

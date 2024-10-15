@@ -3689,7 +3689,7 @@
     },
     "duoplan2024: SubTitle": {
       "All of ${ BRAND_NAME }, for 2.": [
-        "Todas las funciones de ${ BRAND_NAME }, para 2."
+        "Todo ${ BRAND_NAME } para 2"
       ],
       "Double your storage": [
         "Doblar tu almacenamiento"
@@ -3888,7 +3888,7 @@
         "No se han podido resolver las opciones de alias."
       ],
       "Aliases could not be loaded": [
-        "No se pudieron cargar los alias."
+        "No se han podido cargar los alias."
       ],
       "Amount above the maximum.": [
         "Cantidad por encima del máximo."
@@ -4220,7 +4220,7 @@
         "El envío de archivos adjuntos está limitado hasta que respetes los límites de tu plan o mejores."
       ],
       "Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.": [
-        "El envío de archivos adjuntos está restringido cuando excedes los límites de tu plan o hasta que actualices tu plan."
+        "El envío de archivos adjuntos está limitado mientras excedas los límites del plan o hasta que lo mejores."
       ],
       "Signature not verified": [
         "Firma no verificada"
@@ -4265,7 +4265,7 @@
         "Pestaña cerrada"
       ],
       "Text is too long to refine": [
-        "El texto es demasiado largo para refinarlo"
+        "El texto es demasiado largo para refinarlo."
       ],
       "Thanks for the feedback!": [
         "¡Gracias por los comentarios!"
@@ -4362,10 +4362,10 @@
         "Estado del token de pago desconocido"
       ],
       "Username must begin with a letter or digit": [
-        "El nombre de usuario debe comenzar con una letra o un número"
+        "El nombre de usuario debe comenzar con una letra o un número."
       ],
       "Username must end with a letter or digit": [
-        "El nombre de usuario debe terminar con una letra o un número"
+        "El nombre de usuario debe terminar con una letra o un número."
       ],
       "Wrong second password": [
         "La segunda contraseña no es correcta."
@@ -5317,9 +5317,9 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Se ha encontrado ${ items.length } sugerencia. Utiliza el teclado para navegar.",
-        "Se han encontrado ${ items.length } sugerencias. Utiliza el teclado para navegar."
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Se ha encontrado ${ itemsCount } sugerencia. Usa el teclado para navegar.",
+        "Se han encontrado ${ itemsCount } sugerencias. Usa el teclado para navegar."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Utiliza las teclas Arriba y Abajo para acceder y navegar por las sugerencias después de la entrada. Pulsa Entrar para confirmar tu elección o Escape para cerrar el cuadro de sugerencias."
@@ -6702,7 +6702,7 @@
         "Ten en cuenta que este proceso puede tardar algo de tiempo dependiendo del tamaño de tu libreta de direcciones."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ remainingCreditsFormatted } créditos restantes."
+        "Toma en cuenta que al hacer clic en el botón Confirmar, la cuenta tendrá ${ remainingCreditsFormatted } créditos restantes."
       ],
       "Please open the document to view it.": [
         "Abre el documento para verlo."
@@ -7088,7 +7088,7 @@
         "Este mensaje se moverá a Borradores para que puedas editarlo. Deberás reprogramar el envío."
       ],
       "This message will be sent in the morning at ${ formattedTime }": [
-        "Este mensaje se enviará por la mañana a las ${ formattedTime }"
+        "Este mensaje se enviará por la mañana a las ${ formattedTime }."
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
         "Este mensaje se enviará el ${ dateString } a las ${ formattedTime }."
@@ -9513,6 +9513,10 @@
         "Hasta ${ n } usuario",
         "Hasta ${ n } usuarios"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Hasta ${ n } usuario (${ adminsText }, ${ usersText })",
+        "Hasta ${ n } usuarios (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Hasta ${ totalStorageSize } de almacenamiento"
       ],
@@ -9616,6 +9620,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Protege la información empresarial confidencial y colabora de forma segura."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Protege a tu familia con todas las características premium de ${ PASS_SHORT_APP_NAME } Plus para seis usuarios."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protege la privacidad de tu familia con todos los servicios combinados de ${ BRAND_NAME }."
@@ -10267,9 +10274,18 @@
       "${ n } user account": [
         "${ n } cuenta de usuario",
         "${ n } cuentas de usuario"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Panel de administración para gestionar usuarios y suscripciones"
       ]
     },
     "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Todos los servicios premium., 6 usuarios y una sola suscripción."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Se factura anualmente a ${ yearlyPrice }. Ahorre ${ yearlySavedPrice } con ${ passFamilyPlanName } (en comparación con 6 suscripciones individuales a ${ passPlusPlanName })."
+      ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
         "Oferta exclusiva disponible solo para los primeros seguidores de ${ PASS_APP_NAME }."
       ],
@@ -10780,6 +10796,11 @@
         "(abrirá ${ PASS_APP_NAME })"
       ]
     },
+    "Security Center - Action": {
+      "View events": [
+        "Ver los eventos"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } y ${ remainingCount } potenciales filtraciones fueron detectadas. Active ${ DARK_WEB_MONITORING_NAME } para ver los detalles. ${ link }"
@@ -10961,7 +10982,7 @@
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Tienes ${ timeRemaining.inMinutes } minuto para restablecer tu contraseña.",
-        " Tienes ${ timeRemaining.inMinutes } minutos para restablecer tu contraseña."
+        "Tienes ${ timeRemaining.inMinutes } minutos para restablecer tu contraseña."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Tienes ${ timeRemaining.inSeconds } segundo para restablecer tu contraseña.",
