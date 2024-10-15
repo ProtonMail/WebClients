@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { createContext, useContext, useMemo, useRef } from 'react';
 
 import { useApi, useEventManager } from '@proton/components';
+import metrics from '@proton/metrics';
 import { queryLatestVolumeEvent, queryVolumeEvents } from '@proton/shared/lib/api/drive/volume';
 import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
@@ -10,10 +11,12 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 import generateUID from '@proton/utils/generateUID';
 
-import { logError } from '../../utils/errorHandling';
+import { isIgnoredErrorForReporting, logError } from '../../utils/errorHandling';
+import { UserAvailabilityTypes } from '../../utils/metrics/types/userSuccessMetricsTypes';
+import { userSuccessMetrics } from '../../utils/metrics/userSuccessMetrics';
 import { driveEventsResultToDriveEvents } from '../_api';
 import type { VolumeType } from '../_volumes';
-import { EventsMetrics, countEventsPerType } from './driveEventsMetrics';
+import { EventsMetrics, countEventsPerType, getErrorCategory } from './driveEventsMetrics';
 import type { DriveEvent, EventHandler } from './interface';
 
 const DRIVE_EVENT_HANDLER_ID_PREFIX = 'drive-event-handler';
@@ -82,25 +85,39 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
         });
     };
 
-    const createVolumeEventManager = async (volumeId: string) => {
-        const { EventID } = await api<{ EventID: string }>(queryLatestVolumeEvent(volumeId));
+    const createVolumeEventManager = async (volumeId: string, volumeType: VolumeType) => {
+        try {
+            const { EventID } = await api<{ EventID: string }>(queryLatestVolumeEvent(volumeId));
 
-        const eventManager = createEventManager({
-            api,
-            eventID: EventID,
-            query: (eventId: string) => queryVolumeEvents(volumeId, eventId),
-        });
+            const eventManager = createEventManager({
+                api,
+                eventID: EventID,
+                query: (eventId: string) => queryVolumeEvents(volumeId, eventId),
+            });
 
-        eventManagers.current.set(volumeId, eventManager);
+            eventManagers.current.set(volumeId, eventManager);
 
-        return eventManager;
+            return eventManager;
+        } catch (e) {
+            // TODO: DRVWEB-4319 Implement sync errors & sync erroring users
+            // This metric will have to be redone
+            metrics.drive_sync_errors_total.increment({
+                type: getErrorCategory(e),
+                // This is in fact volumeType but since the metric is old we haven't updated yet and are using shareType as volumeType
+                shareType: volumeType,
+            });
+            if (!isIgnoredErrorForReporting(e)) {
+                userSuccessMetrics.mark(UserAvailabilityTypes.coreFeatureError);
+            }
+            throw e;
+        }
     };
 
     /**
      * Creates event manager for a specified volume and starts interval polling of event.
      */
     const subscribeToVolume = async (volumeId: string, type: VolumeType) => {
-        const eventManager = await createVolumeEventManager(volumeId);
+        const eventManager = await createVolumeEventManager(volumeId, type);
         eventManager.subscribe((payload: DriveEventsResult) => genericHandler(volumeId, type, payload));
         eventManagers.current.set(volumeId, eventManager);
     };

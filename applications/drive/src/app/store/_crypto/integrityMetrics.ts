@@ -2,6 +2,9 @@ import { fromUnixTime } from 'date-fns';
 
 import metrics from '@proton/metrics';
 
+import { UserAvailabilityTypes } from '../../utils/metrics/types/userSuccessMetricsTypes';
+import { userSuccessMetrics } from '../../utils/metrics/userSuccessMetrics';
+
 const REPORT_ERROR_USERS_EVERY = 5 * 60 * 1000; // 5 minutes,
 
 // Share type string used in metrics context, do not confuse with ShareType enum.
@@ -64,6 +67,7 @@ export class IntegrityMetrics {
             fromBefore2024,
         });
         if (fromBefore2024 === 'no') {
+            userSuccessMetrics.mark(UserAvailabilityTypes.coreFeatureError);
             this.reportErroringUser(shareType, options.isPaid);
         }
     }
@@ -87,6 +91,7 @@ export class IntegrityMetrics {
             fromBefore2024,
         });
         if (fromBefore2024 === 'no' && addressMatchingDefaultShare === 'yes') {
+            userSuccessMetrics.mark(UserAvailabilityTypes.coreFeatureError);
             this.reportErroringUser(shareType, options.isPaid);
         }
     }
@@ -103,6 +108,7 @@ export class IntegrityMetrics {
             fileSize,
         });
         if (!options.retryHelped) {
+            userSuccessMetrics.mark(UserAvailabilityTypes.coreFeatureError);
             this.reportErroringUser(shareType, options.isPaid);
         }
     }
