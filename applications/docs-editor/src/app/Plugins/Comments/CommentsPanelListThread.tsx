@@ -90,6 +90,7 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
       return
     }
     const activeElement = document.activeElement
+    const currentEditableState = editor.isEditable()
     editor.setEditable(false)
     editor.update(
       () => {
@@ -123,7 +124,7 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
       },
       {
         onUpdate() {
-          editor.setEditable(true)
+          editor.setEditable(currentEditableState)
           // Restore selection to the previous element
           if (activeElement !== null) {
             ;(activeElement as HTMLElement).focus()
