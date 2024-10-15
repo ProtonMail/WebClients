@@ -378,11 +378,11 @@
       "Get link": [
         "生成共享链接"
       ],
-      "Get Started": [
-        "立即体验"
-      ],
       "Get started": [
         "入门"
+      ],
+      "Get Started": [
+        "立即体验"
       ],
       "Get verification code": [
         "获取验证码"
@@ -549,10 +549,10 @@
       "Not now": [
         "以后再说"
       ],
-      "Ok": [
+      "OK": [
         "确定"
       ],
-      "OK": [
+      "Ok": [
         "确定"
       ],
       "Open": [
@@ -3387,9 +3387,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "找到 ${ items.length } 建议，使用键盘导航。"
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "使用向上和向下键进入并浏览输入后的建议。按 Enter 键确认您的选择，或按 Escape 键关闭建议框。"
       ]
@@ -7197,28 +7194,16 @@
       ]
     },
     "Onboarding Action": {
-      "Create new document": [
-        "创建新文档"
-      ],
       "Next": [
         "下一步"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "开始使用 ${ DRIVE_APP_NAME }"
-      ],
-      "Try it later": [
-        "稍后再试"
       ]
     },
     "Onboarding Info": {
-      "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
-        "创建和协作处理文档。一切都受到端到端加密的保护。"
-      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "开始使用 ${ DRIVE_APP_NAME }，我们将会把您的存储空间升级到 5 GB！"
-      ],
-      "Introducing ${ DOCS_APP_NAME }": [
-        "${ DOCS_APP_NAME } 现已推出"
       ],
       "Set a recovery method": [
         "设置恢复方法"

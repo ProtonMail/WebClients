@@ -384,11 +384,11 @@
       "Get link": [
         "Λάβετε σύνδεσμο"
       ],
-      "Get Started": [
-        "Ξεκινήστε"
-      ],
       "Get started": [
         "Ας ξεκινήσουμε"
+      ],
+      "Get Started": [
+        "Ξεκινήστε"
       ],
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
@@ -561,11 +561,11 @@
       "Not now": [
         "Όχι τώρα"
       ],
-      "Ok": [
-        "OK"
-      ],
       "OK": [
         "ΟΚ"
+      ],
+      "Ok": [
+        "OK"
       ],
       "Open": [
         "Άνοιγμα"
@@ -3362,8 +3362,14 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } ομάδες"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Οι λογαριασμοί με προσαρμοσμένους τομείς δεν μπορούν να συμμετάσχουν σε οικογενειακό πλάνο."
+      ],
       "customer support": [
         "υποστήριξη πελατών"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Τα οικογενειακά πλάνα δεν υποστηρίζουν προς το παρόν εξωτερικούς λογαριασμούς. Δημιουργήστε μια διεύθυνση ${ BRAND_NAME } πριν εγγραφείτε. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Εάν αποδεχτείτε την πρόσκληση, θα σας αλλάξουμε από το τρέχον πρόγραμμά σας και θα πιστώσουμε στον λογαριασμό σας τυχόν υπόλοιπο."
@@ -3371,8 +3377,14 @@
       "Invited by: ${ inviteEmail }": [
         "Προσκλήθηκε από: ${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Οι λογαριασμοί εφ' όρου ζωής δεν μπορούν να συμμετάσχουν σε οικογενειακό πλάνο."
+      ],
       "Manage addresses.": [
         "Διαχείριση διευθύνσεων."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Οι κάτοχοι ενός προγράμματος με μέλη δεν μπορούν να συμμετάσχουν σε άλλο οικογενειακό πλάνο."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Λυπούμαστε, δεν μπορείτε να αλλάξετε σχέδια αυτήν τη στιγμή."
@@ -3394,6 +3406,12 @@
       ],
       "You have successfully joined the family group": [
         "Συμμετείχατε με επιτυχία στην ομάδα οικογένειας"
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Έχετε ανεξόφλητα τιμολόγια. Πληρώστε τους πριν συμμετάσχετε σε ένα οικογενειακό πλάνο."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Έχετε προσκληθεί να συνδέσετε τον λογαριασμό σας ${ BRAND_NAME } σε αυτό το οικογενειακό πλάνο και να απολαύσετε μαζί όλες τις premium λειτουργίες ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Ο λογαριασμός σας έχει περισσότερες διευθύνσεις ηλεκτρονικού ταχυδρομείου από αυτές που είναι διαθέσιμες σε αυτό το σχέδιο. ${ addressSettingsLink }"
@@ -3565,10 +3583,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Βρέθηκαν ${ items.length } πρόταση, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση.",
-        "Βρέθηκαν ${ items.length } προτάσεις, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Χρησιμοποιήστε τα πλήκτρα Up και Down για πρόσβαση και περιήγηση στις προτάσεις μετά την εισαγωγή. Πατήστε Enter για να επιβεβαιώσετε την επιλογή σας, ή διαφυγής για να κλείσετε το πλαίσιο προτάσεων."
       ]
@@ -3942,6 +3956,10 @@
       "${ groupCounts } group found": [
         "${ groupCounts } ομάδα βρέθηκε",
         "${ groupCounts } ομάδες βρέθηκαν"
+      ],
+      "${ invitations.length } pending invitation": [
+        "${ invitations.length } πρόσκληση σε εκκρεμότητα",
+        "${ invitations.length } προσκλήσεις σε εκκρεμότητα"
       ],
       "${ nbFile } encrypted file": [
         "${ nbFile } κρυπτογραφημένο αρχείο",
@@ -6989,6 +7007,9 @@
       "Secure Core servers": [
         "Διακομιστές Secure Core"
       ],
+      "Secure link sharing": [
+        "Ασφαλής κοινή χρήση συνδέσμων"
+      ],
       "See team's availability": [
         "Δείτε τη διαθεσιμότητα της ομάδας"
       ],
@@ -7077,6 +7098,10 @@
         "Μέχρι και ${ n } χρήστη",
         "Μέχρι και ${ n } χρήστες"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Έως ${ n } χρήστη (${ adminsText }, ${ usersText })",
+        "Έως ${ n } χρήστες (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Έως και ${ totalStorageSize } αποθηκευτικού χώρου"
       ],
@@ -7095,6 +7120,16 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } διαχειριστής",
+        "${ admins } διαχειριστές"
+      ],
+      "${ users } user": [
+        "${ users } χρήστης",
+        "${ users } χρήστες"
       ]
     },
     "new_plans: feature info": {
@@ -7170,6 +7205,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Προστατεύστε τις ευαίσθητες επιχειρηματικές πληροφορίες και συνεργαστείτε με ασφάλεια."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Προστατέψτε την οικογένειά σας με όλες τις premium δυνατότητες του ${ PASS_SHORT_APP_NAME } Plus για 6 χρήστες."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Προστατέψτε το απόρρητο της οικογένειάς σας με όλες τις υπηρεσίες του ${ BRAND_NAME } σε συνδυασμό."
@@ -7378,6 +7416,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Μοιραστείτε με ασφάλεια μεμονωμένα στοιχεία με οποιονδήποτε (ακόμα και αν δε χρησιμοποιεί ${ PASS_APP_NAME })"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Αποθηκεύστε με ασφάλεια τα στοιχεία των επαφών σας, όπως τον αριθμό τηλεφώνου, τη διεύθυνση, τα γενέθλια και τις προσωπικές σημειώσεις. Η κρυπτογράφηση μηδενικής πρόσβασης διασφαλίζει ότι ακόμη και η${ BRAND_NAME } δεν μπορεί να έχουν πρόσβαση σε αυτά."
@@ -7776,11 +7817,17 @@
       "Continue": [
         "Συνέχεια"
       ],
-      "Create new document": [
-        "Δημιουργία νέου εγγράφου"
-      ],
       "Get started": [
         "Ας ξεκινήσουμε"
+      ],
+      "Install and continue": [
+        "Εγκατάσταση και συνέχεια"
+      ],
+      "Install later": [
+        "Εγκατάσταση αργότερα"
+      ],
+      "Invite members": [
+        "Προσκάλεσε μέλη"
       ],
       "Maybe later": [
         "Ίσως αργότερα"
@@ -7800,8 +7847,8 @@
       "Start using ${ DRIVE_APP_NAME }": [
         "Έναρξη χρήσης του ${ DRIVE_APP_NAME }"
       ],
-      "Try it later": [
-        "Δοκιμάστε το αργότερα"
+      "Try the app": [
+        "Δοκιμάστε την εφαρμογή"
       ],
       "Upload file": [
         "Ανέβασμα αρχείου"
@@ -7811,14 +7858,44 @@
       ]
     },
     "Onboarding Info": {
+      "Access your files on the go": [
+        "Πρόσβαση στα αρχεία σας εν κινήσει"
+      ],
+      "Back up your photos and memories": [
+        "Δημιουργήστε αντίγραφα ασφαλείας των φωτογραφιών και των αναμνήσεών σας"
+      ],
+      "Backup your photos and memories": [
+        "Δημιουργήστε αντίγραφα ασφαλείας των φωτογραφιών και των αναμνήσεών σας"
+      ],
+      "Choose your favorite theme": [
+        "Επιλέξτε το αγαπημένο σας θέμα"
+      ],
       "Collaborate on documents": [
         "Συνεργασία σε έγγραφα"
       ],
-      "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
-        "Δημιουργήστε και συνεργαστείτε σε έγγραφα. Όλα προστατεύονται από κρυπτογράφηση από άκρο σε άκρο."
+      "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
+        "Προτιμάτε ${ DRIVE_APP_NAME } σε φωτεινή ή σκοτεινή λειτουργία; Επιλέξτε το χρώμα που σας εμπνέει περισσότερο."
+      ],
+      "Drag and drop your files here": [
+        "Σύρετε τα αρχεία σας εδώ"
+      ],
+      "Edit documents online": [
+        "Επεξεργασία εγγράφων online"
+      ],
+      "End-to-end encrypted storage for your files": [
+        "Κρυπτογραφημένος χώρος αποθήκευσης από άκρο σε άκρο για τα αρχεία σας"
+      ],
+      "Faster uploads for large or multiple files": [
+        "Ταχύτερες μεταφορτώσεις για μεγάλα ή πολλαπλά αρχεία"
       ],
       "Final approval in progress": [
         "Τελική έγκριση σε εξέλιξη"
+      ],
+      "Final approval pending": [
+        "Εκκρεμεί η τελική έγκριση"
+      ],
+      "Free up hard drive space on your computer": [
+        "Ελευθερώστε χώρο στον σκληρό δίσκο του υπολογιστή σας"
       ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Αρχίστε να χρησιμοποιείτε το ${ DRIVE_APP_NAME } και θα αναβαθμίστε τον αποθηκευτικό χώρο σας σε 5 GB!"
@@ -7829,8 +7906,11 @@
       "Get the mobile app": [
         "Αποκτήστε την εφαρμογή για κινητά"
       ],
-      "Introducing ${ DOCS_APP_NAME }": [
-        "Παρουσιάζουμε το ${ DOCS_APP_NAME }"
+      "Got an Android? We've got you covered.": [
+        "Έχετε Android; Σας καλύπτουμε."
+      ],
+      "Got an iPhone? We've got you covered.": [
+        "Έχετε iPhone; Σας καλύπτουμε."
       ],
       "Invitation accepted": [
         "Η πρόσκληση έγινε αποδεκτή"
@@ -7843,6 +7923,21 @@
       ],
       "Manage access": [
         "Διαχείριση πρόσβασης"
+      ],
+      "Organize files right from your desktop": [
+        "Οργανώστε αρχεία απευθείας από την επιφάνεια εργασίας σας"
+      ],
+      "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
+        "Προστατέψτε τα οικονομικά έγγραφα, τις ταυτότητες, τα αρχεία έργου, τις φωτογραφίες και πολλά άλλα με κρυπτογράφηση από άκρο σε άκρο."
+      ],
+      "Scan the QR code to install the mobile app": [
+        "Σαρώστε τον κωδικό QR για να εγκαταστήσετε την εφαρμογή για κινητά"
+      ],
+      "Secure your files": [
+        "Ασφαλίστε τα αρχεία σας"
+      ],
+      "Securely share files and folders": [
+        "Ασφαλής κοινή χρήση αρχείων και φακέλων"
       ],
       "Securely store, manage, and share your business-critical files with confidence.": [
         "Αποθηκεύστε, διαχειριστείτε και μοιραστείτε με ασφάλεια τα κρίσιμα αρχεία της επιχείρησής σας με σιγουριά."
@@ -7863,11 +7958,23 @@
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "Αποθηκεύστε τα αρχεία σας και μοιραστείτε τα με ασφάλεια. Ξεκινήστε ασφαλίζοντας τα πιο ιδιωτικά αρχεία σας, όπως ταυτότητες, συμβόλαια και προσωπικές φωτογραφίες."
       ],
+      "Sync and access your files from anywhere": [
+        "Συγχρονίστε και αποκτήστε πρόσβαση στα αρχεία σας από οπουδήποτε"
+      ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Ο κάτοχος πρέπει να επιβεβαιώσει την πρόσβαση κοινής χρήσης. Θα λάβετε ένα μήνυμα ηλεκτρονικού ταχυδρομείου μόλις ολοκληρωθεί."
       ],
       "Upload a file": [
         "Φόρτωση αρχείου"
+      ],
+      "Upload your first file": [
+        "Ανεβάστε το πρώτο σας αρχείο"
+      ],
+      "Work faster, smarter": [
+        "Εργαστείτε πιο γρήγορα, πιο έξυπνα"
+      ],
+      "Work together": [
+        "Συνεργαστείτε"
       ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Το αξιόπιστο διαδικτυακό θησαυροφυλάκιο σας για ζωτικά έγγραφα και πολύτιμες αναμνήσεις."
@@ -7954,6 +8061,35 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Ασφαλής κοινή χρήση κρύπτης (${ n } κρύπτη) και κοινή χρήση συνδέσμων",
         "Ασφαλής κοινή χρήση κρυπτών (${ n } κρύπτες) και κοινή χρήση συνδέσμων"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } λογαριασμός χρήστη",
+        "${ n } λογαριασμοί χρηστών"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Πίνακας διαχείρισης για τη διαχείριση χρηστών και συνδρομών"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Όλα τα premium χαρακτηριστικά. 6 χρήστες. 1 εύκολη συνδρομή."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Χρεώνεται ετησίως σε ${ yearlyPrice }. Εξοικονομήστε ${ yearlySavedPrice } με ${ passFamilyPlanName } (έναντι 6 μεμονωμένων συνδρομών ${ passPlusPlanName })."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Αποκλειστική προσφορά διαθέσιμη μόνο σε ${ PASS_APP_NAME } πρώιμους υποστηρικτές."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Αποκτήστε το για ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Παρουσιάζουμε το ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Προσφορά περιορισμένου χρόνου."
       ]
     },
     "passwordless": {
@@ -8319,6 +8455,11 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(θα ανοίξει ${ PASS_APP_NAME })"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Προβολή εκδηλώσεων"
       ]
     },
     "Security Center - Info": {
@@ -10170,6 +10311,9 @@
       ],
       "What would you like to import?": [
         "Τι θα θέλατε να εισάγετε;"
+      ],
+      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Πρόκειται να απορρίψετε την πρόσκληση για το κοινόχρηστο στοιχείο. Δε θα μπορείτε να αποκτήσετε ξανά πρόσβαση σε αυτό έως ότου ο κάτοχος το μοιραστεί μαζί σας."
       ],
       "You have inaccessible files": [
         "Έχετε μη προσβάσιμα αρχεία"

@@ -390,14 +390,17 @@
       "Get link": [
         "Получить ссылку"
       ],
-      "Get Started": [
-        "Начать"
-      ],
       "Get started": [
         "Приступить к работе"
       ],
+      "Get Started": [
+        "Начать"
+      ],
       "Get verification code": [
         "Получить проверочный код"
+      ],
+      "Go back": [
+        "Назад"
       ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Перейдите в ${ DRIVE_SHORT_APP_NAME }"
@@ -564,10 +567,10 @@
       "Not now": [
         "Не сейчас"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -2438,6 +2441,9 @@
     "drive:action": {
       "Open in ${ DRIVE_SHORT_APP_NAME }": [
         "Открыть в ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Save for later": [
+        "Сохранить на потом"
       ]
     },
     "driveplus2024: Deal details": {
@@ -3387,8 +3393,14 @@
       "${ BRAND_NAME } groups": [
         "Группы ${ BRAND_NAME }"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Аккаунты с пользовательскими доменами не могут присоединиться к семейному тарифному тарифу."
+      ],
       "customer support": [
         "служба поддержки"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Семейные тарифы в настоящее время не поддерживают внешние аккаунты. Создайте адрес ${ BRAND_NAME } перед тем, как присоединиться. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Если вы примете приглашение, тарифный план будет изменен. Неиспользованный баланс возвратится на счет аккаунта."
@@ -3396,8 +3408,14 @@
       "Invited by: ${ inviteEmail }": [
         "Вас приглашает: ${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Пожизненные аккаунты не могут присоединяться к семейному тарифу."
+      ],
       "Manage addresses.": [
         "Управляйте адресами."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Владельцы тарифа с участниками не могут присоединиться к другому семейному тарифу."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Смена тарифа на данный момент недоступна."
@@ -3419,6 +3437,12 @@
       ],
       "You have successfully joined the family group": [
         "Вы успешно присоединились к семейному плану"
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "У вас есть неоплаченные счета. Оплатите их перед подключением к семейному тарифу."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Приглашаем вас подключить свой аккаунт ${ BRAND_NAME } к этому семейному тарифу и вместе пользоваться всеми платными функциями ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "К аккаунту подключено больше адресов электронной почты, чем позволяет текущий тарифный план. ${ addressSettingsLink }"
@@ -3602,12 +3626,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Найдено ${ items.length } предложение, используйте клавиатуру для навигации.",
-        "Найдено ${ items.length } предложения, используйте клавиатуру для навигации.",
-        "Найдено ${ items.length } предложений, используйте клавиатуру для навигации.",
-        "Найдено ${ items.length } предложений, используйте клавиатуру для навигации."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Используйте клавиши Вверх и Вниз, чтобы получить доступ и просмотреть предложения после ввода. Нажмите Enter для подтверждения выбора, или Escape для закрытия окна предложений."
       ]
@@ -7181,6 +7199,9 @@
       "Secure Core servers": [
         "Серверы Secure Core"
       ],
+      "Secure link sharing": [
+        "Защищенный совместный доступ к ссылкам"
+      ],
       "See team's availability": [
         "Посмотреть доступность команды"
       ],
@@ -7271,6 +7292,12 @@
         "До ${ n } пользователей",
         "До ${ n } пользователей"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "До ${ n } пользователя (${ adminsText }, ${ usersText })",
+        "До ${ n } пользователей (${ adminsText }, ${ usersText })",
+        "До ${ n } пользователей (${ adminsText }, ${ usersText })",
+        "До ${ n } пользователей (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } хранилища"
       ],
@@ -7291,6 +7318,20 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Мы сканируем Темную паутину на предмет утечки ваших адресов или псевдонимов ${ BRAND_NAME } и немедленно оповещаем вас, если что-то находим."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins }администратор",
+        "${ admins }администратора",
+        "${ admins }администраторов",
+        "${ admins }администраторов"
+      ],
+      "${ users } user": [
+        "${ users } пользователь",
+        "${ users } пользователя",
+        "${ users } пользователей",
+        "${ users } пользователей"
       ]
     },
     "new_plans: feature info": {
@@ -7366,6 +7407,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Защитите конфиденциальную деловую информацию и сотрудничайте безопасно."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Защитите свою семью, используя все платные функции ${ PASS_SHORT_APP_NAME } Plus для 6 пользователей."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Защитите конфиденциальность вашей семьи с помощью комплекса услуг ${ BRAND_NAME }."
@@ -7573,6 +7617,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Защитите свои файлы с помощью зашифрованного облачного хранилища. Возможности включают автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Защищенно делитесь отдельными элементами со всеми (даже если они не используют ${ PASS_APP_NAME })."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Защищенное хранение данных контактов, таких как номер телефона, адрес, день рождения и личные заметки. Шифрование с нулевым доступом гарантирует, что даже ${ BRAND_NAME } не сможет получить к ним доступ."
@@ -8004,34 +8051,91 @@
       ]
     },
     "Onboarding Action": {
-      "Create new document": [
-        "Создать новый документ"
+      "Continue": [
+        "Продолжить"
+      ],
+      "Get started": [
+        "Начать"
+      ],
+      "Maybe later": [
+        "Может быть позже"
       ],
       "Next": [
         "Далее"
       ],
+      "Select theme": [
+        "Выберите тему"
+      ],
+      "Skip": [
+        "Пропустить"
+      ],
+      "Skip for now": [
+        "Пока пропустить"
+      ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Начните использовать ${ DRIVE_APP_NAME }"
       ],
-      "Try it later": [
-        "Попробовать позже"
+      "Upload file": [
+        "Загрузить файл"
+      ],
+      "Upload folder": [
+        "Загрузить папку"
       ]
     },
     "Onboarding Info": {
+      "Access your files on the go": [
+        "Получите доступ к своим файлам в пути"
+      ],
+      "Backup your photos and memories": [
+        "Резервное копирование фотографий и воспоминаний"
+      ],
+      "Choose your favorite theme": [
+        "Выберите любимую тему"
+      ],
       "Collaborate on documents": [
         "Совместно работайте над документами"
       ],
-      "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
-        "Создавайте документы и редактируйте их совместно. Все защищено сквозным шифрованием."
+      "Final approval in progress": [
+        "Идет окончательное одобрение"
+      ],
+      "Final approval pending": [
+        "Ожидается окончательное одобрение"
       ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Начните использовать ${ DRIVE_APP_NAME }, и мы увеличим объем вашего хранилища до 5 ГБ!"
       ],
-      "Introducing ${ DOCS_APP_NAME }": [
-        "Представляем ${ DOCS_APP_NAME }"
+      "Get the desktop app": [
+        "Получите приложение для настольных компьютеров"
+      ],
+      "Get the mobile app": [
+        "Получить мобильное приложение"
+      ],
+      "Got an Android? We've got you covered.": [
+        "У вас Android? Мы позаботились о вас."
+      ],
+      "Got an iPhone? We've got you covered.": [
+        "У вас iPhone? Мы позаботились о вас."
+      ],
+      "Hang tight": [
+        "Держитесь крепче"
+      ],
+      "Invitation accepted": [
+        "Приглашение принято"
+      ],
+      "Invitation received": [
+        "Приглашение получено"
+      ],
+      "Invite team members": [
+        "Пригласите членов команды"
       ],
       "Manage access": [
         "Управляйте доступом"
+      ],
+      "Scan the QR code to install the mobile app": [
+        "Отсканируйте QR-код, чтобы установить приложение для мобильных устройств"
+      ],
+      "Secure your files": [
+        "Защитите файлы"
       ],
       "Securely store, manage, and share your business-critical files with confidence.": [
         "Надежно и с уверенностью храните, управляйте и делитесь критически важными для бизнеса файлами."
@@ -8059,6 +8163,15 @@
       ],
       "Upload a file": [
         "Загрузить файл"
+      ],
+      "Upload your first file": [
+        "Загрузите первый файл"
+      ],
+      "Work faster, smarter": [
+        "Work faster, smarter"
+      ],
+      "Work together": [
+        "Работайте вместе"
       ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Ваше надежное онлайновое хранилище для жизненно важных документов и драгоценных воспоминаний."
@@ -8149,6 +8262,37 @@
         "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам",
         "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам",
         "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } аккаунт пользователя",
+        "${ n } аккаунта пользователей",
+        "${ n } аккаунтов пользователей",
+        "${ n } аккаунтов пользователей"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Панель администратора для управления пользователями и подпиской"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Все платные функции. 6 пользователей. 1 простая подписка."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Счет выставляется ежегодно по цене ${ yearlyPrice }. Сэкономьте ${ yearlySavedPrice } с ${ passFamilyPlanName } (по сравнению с 6 индивидуальными подписками на ${ passPlusPlanName })."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Эксклюзивное предложение доступно только для ранних сторонников ${ PASS_APP_NAME }."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Получить за ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Представляем ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Ограниченное по времени предложение."
       ]
     },
     "passwordless": {
@@ -8524,6 +8668,11 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(откроет ${ PASS_APP_NAME })"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Просмотр событий"
       ]
     },
     "Security Center - Info": {
