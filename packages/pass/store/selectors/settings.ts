@@ -29,3 +29,4 @@ export const selectLockMode = ({ settings }: State) => settings.lockMode ?? Lock
 export const selectLockEnabled = pipe(selectLockMode, (mode) => mode !== LockMode.NONE);
 export const selectShowUsernameField = ({ settings }: State) => settings.showUsernameField ?? false;
 export const selectTheme = ({ settings }: State): Maybe<PassThemeOption> => settings?.theme;
+export const selectClipboardTTL = ({ settings }: State) => settings.clipboardTTL;

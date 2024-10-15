@@ -43,6 +43,7 @@ export type SettingsState = {
     passwordOptions: MaybeNull<GeneratePasswordConfig>;
     showUsernameField?: boolean;
     theme?: PassThemeOption;
+    clipboardTTL?: number;
 };
 
 export const EXCLUDED_SETTINGS_KEYS = ['createdItemsCount', 'lockMode', 'extraPassword'] as const;
