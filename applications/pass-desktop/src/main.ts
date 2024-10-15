@@ -118,7 +118,7 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
             devTools: Boolean(process.env.PASS_DEBUG) || !isProdEnv(),
             preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
         },
-        titleBarStyle: isMac ? 'hidden' : 'default',
+        ...(isMac ? { titleBarStyle: 'hidden', frame: false } : { titleBarStyle: 'default' }),
         trafficLightPosition: {
             x: 20,
             y: 18,
