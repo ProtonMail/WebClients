@@ -3,7 +3,8 @@ import { wrap } from 'comlink';
 import { v4 as uuidv4 } from 'uuid';
 
 import { getLocalID } from '../url/localid';
-import type { MetricSharedWorkerInterface, UserAvailabilityTypes } from './types/userSuccessMetricsTypes';
+import type { MetricSharedWorkerInterface } from './types/userSuccessMetricsTypes';
+import { UserAvailabilityTypes } from './types/userSuccessMetricsTypes';
 
 let worker: SharedWorker;
 let metricSharedWorker: Remote<MetricSharedWorkerInterface>;
@@ -22,6 +23,9 @@ export const userSuccessMetrics = {
         connectionId = getLocalID() || uuidv4();
         window.addEventListener('beforeunload', async () => {
             await metricSharedWorker.disconnect(connectionId);
+        });
+        window.addEventListener('error', () => {
+            userSuccessMetrics.mark(UserAvailabilityTypes.unhandledError);
         });
     },
     mark: (type: UserAvailabilityTypes) => {
