@@ -2740,8 +2740,14 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } grupper"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Konti med tilpassede domæner kan ikke deltage i et familieabonnement."
+      ],
       "customer support": [
         "kundeservice"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Familieabonnementer understøtter i øjeblikket ikke eksterne konti. Opret en ${ BRAND_NAME } adresse for du tilmelder dig. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Hvis du accepterer invitationen, overflytter vi dig fra dit nuværende abonnement og krediterer din konto med en eventuel restsaldo."
@@ -2752,6 +2758,9 @@
       "Invited by: ${ inviteEmail }": [
         "Inviteret af: ${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Livstidskonti kan ikke indgå i et familieabonnement."
+      ],
       "Manage addresses.": [
         "Administrer adresser."
       ],
@@ -2761,6 +2770,9 @@
       "Only ${ n } accepted invitation are allowed in a 6-month period.": [
         "Kun ${ n } accepteret invitation tilladt i en 6-måneders periode.",
         "Kun ${ n } accepterede invitationer tilladt i en 6-måneders periode."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Ejere af et abonnement med medlemmer kan ikke deltage i et andet familieabonnement."
       ],
       "Pending": [
         "Afventer"
@@ -2799,6 +2811,9 @@
       ],
       "You have successfully joined the family group": [
         "Du er blevet medlem af familiegruppen"
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Du har ubetalte fakturaer. Betal dem venligst, før du tilmelder dig et familieabonnement."
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Du skal konfigurere et brugerdefineret domæne, før du tilføjer flere brugere."
@@ -2932,10 +2947,6 @@
       ],
       "Add": [
         "Tilføj"
-      ],
-      "Add (${ numberOfAddedServers })": [
-        "Tilføj (${ numberOfAddedServers })",
-        "Tilføj (${ numberOfAddedServers })"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Forbindelse for op til ${ plusVpnConnections } enhed",
@@ -3207,9 +3218,6 @@
       "Checkout": [
         "Betaling"
       ],
-      "Country": [
-        "Land"
-      ],
       "Create your account": [
         "Opret din konto"
       ],
@@ -3307,10 +3315,6 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Tilføj denne post til dit domæne i kontrolpanelet hos din domæneregistrator"
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Fandt ${ items.length } forslag, brug tastaturet til at navigere.",
-        "Fandt ${ items.length } forslag, brug tastaturet til at navigere."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Brug op- og ned-tasterne til at få adgang til og gennemse forslag efter input. Tryk på Enter for at bekræfte dit valg eller Escape for at lukke forslagsfeltet."
@@ -4137,9 +4141,6 @@
       "Number of dedicated servers in the organization": [
         "Antal dedikerede servere i organisationen"
       ],
-      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "Antallet af dedikerede servere, du forsøger at tildele (${ addedCount }) er større end det, der stadig er tilgængeligt i dit abonnement (${ remainingCount }) da du ejer ${ ownedCount } og allerede bruger ${ usedCount }."
-      ],
       "of": [
         "af"
       ],
@@ -4376,9 +4377,6 @@
       "Single sign-on removed": [
         "Single sign-on fjernet"
       ],
-      "Some of your available servers can only be used in specific countries due to recent removals": [
-        "Nogle af dine tilgængelige servere kan kun bruges i specifikke lande på grund af nylige fjernelser"
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Angiv det domæne, der har tilladelse til at autentificere med SAML SSO."
       ],
@@ -4484,9 +4482,6 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Dette kan tage nogle sekunder/minutter afhængigt af din enhed"
-      ],
-      "This change will be fully reflected across your infrastructure in about 1 hour": [
-        "Denne ændring vil blive afspejlet på tværs af din infrastruktur i løbet af ca. 1 time."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Dette kan tage noget tid. Luk ikke denne side, og afbryd ikke forbindelsen til internettet."
@@ -4692,9 +4687,6 @@
       "Visa Secure logo": [
         "Visa Secure logo"
       ],
-      "Want servers in other countries?": [
-        "Vil du have servere i andre lande?"
-      ],
       "Warning:": [
         "Advarsel:"
       ],
@@ -4828,9 +4820,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kan redigere dette én gang for at sikre den korrekte e-mailadresse til bekræftelse."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Du kan straks låse op for ovenstående opsætning ved at tilføje ${ specificCountryCount } til antallet af IP-adresser i dit abonnement eller kontakte os for skræddersyede løsninger."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalender. Fjern venligst delte kalenderlinks og enhver ${ BRAND_NAME } bruger, som du har delt dine kalendere med, før du annullerer dit ${ MAIL_SHORT_APP_NAME }-abonnement.",
         "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalendere. Fjern venligst delte kalenderlinks og enhver ${ BRAND_NAME } bruger, som du har delt dine kalendere med, før du annullerer dit ${ MAIL_SHORT_APP_NAME }-abonnement."
@@ -4850,10 +4839,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Du kan bruge følgende legitimationsoplysninger til at oprette forbindelse til en ${ VPN_APP_NAME }-server ved hjælp af en tredjeparts, open source VPN-app, såsom Tunnelblick til macOS eller OpenVPN til GNU/Linux."
-      ],
-      "You have ${ availableCount } dedicated server available.": [
-        "Du har ${ availableCount } dedikeret server tilgængelig.",
-        "Du har ${ availableCount } dedikerede servere tilgængelig."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Du har et ${ planTitle }-prøveabonnement. Hvis du gerne vil fortsætte dit abonnement efter prøveperioden, skal du tilføje en betalingsmetode."
@@ -5656,9 +5641,6 @@
       "Common sign up issues": [
         "Almindelige tilmeldingsproblemer"
       ],
-      "Contact us": [
-        "Kontakt os"
-      ],
       "Create account": [
         "Opret konto"
       ],
@@ -5977,11 +5959,20 @@
       "From ${ price }": [
         "Fra ${ price }"
       ],
+      "Get started for ${ price }": [
+        "Kom i gang for ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Fra ${ priceMailPlus }"
+      ],
       "Upgrade": [
         "Opgradér"
       ],
       "Upgrade now": [
         "Opgradér nu"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Opgrader til ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -6334,6 +6325,9 @@
       "Secure Core servers": [
         "Secure Core servere"
       ],
+      "Secure link sharing": [
+        "Sikker link-deling"
+      ],
       "See team's availability": [
         "Se teamets tilgængelighed"
       ],
@@ -6432,6 +6426,10 @@
         "Op til ${ n } bruger",
         "Op til ${ n } brugere"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Op til ${ n } bruger (${ adminsText }, ${ usersText })",
+        "Op til ${ n } brugere (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Op til ${ totalStorageSize } lagerplads"
       ],
@@ -6450,6 +6448,16 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi scanner det mørke web for at tjekke, om dine ${ BRAND_NAME }-adresser eller aliasser er blevet lækket, og giver dig straks besked, hvis vi finder noget."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } admin",
+        "${ admins } administratorer"
+      ],
+      "${ users } user": [
+        "${ users } bruger",
+        "${ users } brugere"
       ]
     },
     "new_plans: feature info": {
@@ -6606,6 +6614,12 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } Prøveversion"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Få Mail Plus for ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Fra ${ price }"
       ],
       "Your account's usage": [
         "Din kontos forbrug"
@@ -7194,6 +7208,12 @@
     "pass_signup_2023: Title": {
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Alle ${ BRAND_NAME } Plus-tjenester.${ br }Ét nemt abonnement"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } brugerkonto",
+        "${ n } brugerkonti"
       ]
     },
     "password_reset: info": {
@@ -8234,6 +8254,9 @@
       ],
       "/ month": [
         "/ måned"
+      ],
+      "/month": [
+        "/måned"
       ],
       "1 year": [
         "1 år"
@@ -9323,9 +9346,6 @@
       "Add pm.me subdomain": [
         "Tilføj pm.me-underdomæne"
       ],
-      "Add servers": [
-        "Tilføj servere"
-      ],
       "Add to allow list": [
         "Føj til tillad-liste"
       ],
@@ -9424,12 +9444,6 @@
       ],
       "Confirm phone number": [
         "Bekræft telefonnummer"
-      ],
-      "Connection monitor disabled": [
-        "Forbindelsesmonitor deaktiveret"
-      ],
-      "Connection monitor enabled": [
-        "Forbindelsesmonitor aktiveret"
       ],
       "Contact us": [
         "Kontakt os"

@@ -2984,12 +2984,6 @@
       "Add": [
         "Pridať"
       ],
-      "Add (${ numberOfAddedServers })": [
-        "Pridať (${ numberOfAddedServers })",
-        "Pridať (${ numberOfAddedServers })",
-        "Pridať (${ numberOfAddedServers })",
-        "Pridať (${ numberOfAddedServers })"
-      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Pripojenie pre ${ plusVpnConnections } zariadenie",
         "Pripojenie až pre ${ plusVpnConnections } zariadenia",
@@ -3276,9 +3270,6 @@
       "Checkout": [
         "Pokladňa"
       ],
-      "Country": [
-        "Krajina"
-      ],
       "Create your account": [
         "Vytvoriť svoj účet"
       ],
@@ -3376,12 +3367,6 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Pridajte tento záznam do svojej domény v ovládacom paneli registrátora názvu domény"
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Našiel sa ${ items.length } návrh, na navigáciu použite klávesnicu.",
-        "Našli sa ${ items.length } návrhy, na navigáciu použite klávesnicu.",
-        "Našlo sa ${ items.length } návrhov, na navigáciu použite klávesnicu.",
-        "Našlo sa ${ items.length } návrhov, na navigáciu použite klávesnicu."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Použite klávesy hore a dole pre prechádzanie návrhov po zadaní. Stlačte tlačidlo Enter pre potvrdenie vašej voľby, alebo tlačidlo Esc pre zatvorenie návrhov."
@@ -3786,9 +3771,6 @@
         "Odstraňovanie ${ deletedServerCount } serverov brány",
         "Odstraňovanie ${ deletedServerCount } serverov brány"
       ],
-      "Disabled since ${ formattedDateAndTime }": [
-        "Vypnuté od ${ formattedDateAndTime }"
-      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Vypnutím dvojfázového overovania bude váš účet menej bezpečný. Vypnite toto overovanie iba ak je to nevyhnutné."
       ],
@@ -3872,9 +3854,6 @@
       ],
       "Enable single sign-on to keep your organization safe": [
         "Povoľte jednotné prihlásenie, aby bola vaša organizácia v bezpečí"
-      ],
-      "Enabled since ${ formattedDateAndTime }": [
-        "Zapnuté od ${ formattedDateAndTime }"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL adresa koncového bodu získaná od poskytovateľa identity (napr. https://idp.example.com/sso/saml)."
@@ -4251,9 +4230,6 @@
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
       ],
-      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "Počet dedikovaných serverov, ktoré sa pokúšate priradiť (${ addedCount }), je vyšší ako počet, ktorý je ešte k dispozícii vo vašom pláne (${ remainingCount }), pretože vlastníte ${ ownedCount } a už používate ${ usedCount }."
-      ],
       "of": [
         "z"
       ],
@@ -4497,9 +4473,6 @@
       "Single sign-on removed": [
         "Jednotné prihlásenie bolo odstránené"
       ],
-      "Some of your available servers can only be used in specific countries due to recent removals": [
-        "Niektoré z vašich dostupných serverov je možné používať len v určitých krajinách z dôvodu nedávneho odstránenia"
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Zadajte doménu, ktorá sa môže overovať pomocou SAML SSO."
       ],
@@ -4616,9 +4589,6 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "V závislosti na vašom zariadení to môže trvať niekoľko sekúnd alebo minút"
-      ],
-      "This change will be fully reflected across your infrastructure in about 1 hour": [
-        "Táto zmena sa plne prejaví vo vašej infraštruktúre približne o 1 hodinu."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Môže to trvať nejaký čas. Nezatvárajte prosím túto stránku, ani sa neodpájajte od internetu."
@@ -4824,9 +4794,6 @@
       "Visa Secure logo": [
         "Visa Secure logo"
       ],
-      "Want servers in other countries?": [
-        "Chcete servery v iných krajinách?"
-      ],
       "Warning:": [
         "Upozornenie:"
       ],
@@ -4968,9 +4935,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Pre zaistenie správnej emailovej adresy pre overenie môžete tento údaj jedenkrát upraviť."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Vyššie uvedené nastavenie môžete okamžite odblokovať pridaním ${ specificCountryCount } k počtu IP adries vo vašom pláne alebo nás oslovte pre riešenie na mieru."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Môžete mať až ${ MAX_CALENDARS_FREE } kalendár. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy zdieľaného kalendára a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
         "Môžete mať až ${ MAX_CALENDARS_FREE } kalendáre. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy zdieľaného kalendára a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
@@ -4994,12 +4958,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Na pripojenie k serveru ${ VPN_APP_NAME } pomocou aplikácie VPN s otvoreným zdrojovým kódom tretej strany, napríklad Tunnelblick pre macOS alebo OpenVPN pre GNU/Linux, môžete použiť nasledujúce prihlasovacie údaje."
-      ],
-      "You have ${ availableCount } dedicated server available.": [
-        "Máte dostupný ${ availableCount } dedikovaný server.",
-        "Máte dostupné ${ availableCount } dedikované servery.",
-        "Máte dostupných ${ availableCount } dedikovaných serverov.",
-        "Máte dostupných ${ availableCount } dedikovaných serverov."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Máte skúšobné predplatné ${ planTitle }. Ak chcete pokračovať v predplatnom aj po skončení skúšobnej lehoty, pridajte spôsob platby."
@@ -5811,9 +5769,6 @@
       "Common sign up issues": [
         "Bežné problémy s registráciou"
       ],
-      "Contact us": [
-        "Kontaktujte nás"
-      ],
       "Create account": [
         "Vytvoriť účet"
       ],
@@ -6139,6 +6094,9 @@
       ],
       "From ${ price }": [
         "Od ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Začnite za ${ price }"
       ],
       "Starting from ${ priceMailPlus }": [
         "Cena od ${ priceMailPlus }"
@@ -6819,6 +6777,12 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "Skúšobná verzia ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Získajte Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Cena od ${ price }"
       ],
       "Your account's usage": [
         "Využitie vášho účtu"
@@ -9661,9 +9625,6 @@
       "Add pm.me subdomain": [
         "Pridať subdoménu pm.me"
       ],
-      "Add servers": [
-        "Pridať servery"
-      ],
       "Add to allow list": [
         "Pridať do zoznamu povolených"
       ],
@@ -9762,12 +9723,6 @@
       ],
       "Confirm phone number": [
         "Potvrdenie telefónneho čísla"
-      ],
-      "Connection monitor disabled": [
-        "Monitor pripojenia vypnutý"
-      ],
-      "Connection monitor enabled": [
-        "Monitor pripojenia zapnutý"
       ],
       "Contact us": [
         "Kontaktujte nás"

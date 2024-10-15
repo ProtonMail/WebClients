@@ -2539,10 +2539,6 @@
       "Add": [
         "जोड़ें"
       ],
-      "Add (${ numberOfAddedServers })": [
-        "(${ numberOfAddedServers }) जोड़ें",
-        "(${ numberOfAddedServers }) जोड़ें"
-      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "${ plusVpnConnections } डिवाइस तक के लिए कनेक्शन",
         "अधिकतम ${ plusVpnConnections } उपकरणों के लिए कनेक्शन"
@@ -2802,9 +2798,6 @@
       "Checkout": [
         "चेकआउट"
       ],
-      "Country": [
-        "देश"
-      ],
       "Create your account": [
         "अपना खाता बनाएं"
       ],
@@ -2899,10 +2892,6 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "डोमेन नाम रजिस्ट्रार के नियंत्रण पैनल में इस रिकॉर्ड को डोमेन में जोड़ें"
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } सुझाव मिला, नेविगेट करने के लिए कीबोर्ड का उपयोग करें।",
-        "${ items.length } सुझाव मिले, नेविगेट करने के लिए कीबोर्ड का उपयोग करें।"
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "इनपुट के बाद सुझावों को एक्सेस और ब्राउज़ करने के लिए ऊपर और नीचे कुंजी का उपयोग करें। अपनी पसंद की पुष्टि करने के लिए Enter दबाएं, या सुझाव बॉक्स को बंद करने के लिए Escape दबाएं।"
@@ -3623,9 +3612,6 @@
       "Number of dedicated servers in the organization": [
         "संगठन में विशेष सर्वरों की संख्या"
       ],
-      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "आपके द्वारा असाइन करने का प्रयास किए जाने वाले समर्पित सर्वरों की संख्या (${ addedCount }) आपके प्लान में अभी भी उपलब्ध (${ remainingCount }) से अधिक है क्योंकि आपके पास ${ ownedCount } है और आप पहले से ही ${ usedCount } का उपयोग करते हैं।"
-      ],
       "of": [
         "का"
       ],
@@ -3816,9 +3802,6 @@
       ],
       "Single sign-on removed": [
         "एकल साइन-ऑन हटाया गया है।"
-      ],
-      "Some of your available servers can only be used in specific countries due to recent removals": [
-        "कुछ उपलब्ध सर्वर हाल ही में हटाए जाने के कारण केवल विशिष्ट देशों में ही उपयोग किए जा सकते हैं"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "वह डोमेन निर्दिष्ट करें जिसे SAML SSO के साथ प्रमाणित करने की अनुमति है।"
@@ -4085,9 +4068,6 @@
       "Visa Secure logo": [
         "Visa सेक्योर लोगो"
       ],
-      "Want servers in other countries?": [
-        "क्या अन्य देशों में सर्वर चाहते हैं?"
-      ],
       "Warning:": [
         "चेतावनी:"
       ],
@@ -4201,9 +4181,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "सत्यापन के लिए सही ईमेल पता सुनिश्चित करने के लिए आप इसे एक बार संपादित कर सकते हैं।"
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
-        "आप अपनी योजना में आईपी पतों की संख्या में ${ specificCountryCount } जोड़कर उपरोक्त सेटअप को तुरंत अनलॉक कर सकते हैं या अनुकूलित समाधानों के लिए हम तक पहुंच सकते हैं।"
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। अपना ${ MAIL_SHORT_APP_NAME } सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किया है को हटाए।",
         "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। अपना ${ MAIL_SHORT_APP_NAME } सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किये है को हटाए।"
@@ -4220,10 +4197,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "आप ${ VPN_APP_NAME } सर्वर से किसी तृतीय-पक्ष, ओपन सोर्स VPN ऐप का उपयोग करके कनेक्ट करने के लिए निम्न क्रेडेंशियल का उपयोग कर सकते हैं, जैसे macOS के लिए Tunnelblick या GNU/Linux के लिए OpenVPN।"
-      ],
-      "You have ${ availableCount } dedicated server available.": [
-        "आपके पास ${ availableCount } समर्पित सर्वर उपलब्ध है।",
-        "आपके पास ${ availableCount } समर्पित सर्वर उपलब्ध है।"
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "आपके पास परीक्षण ${ planTitle } सदस्यता है। यदि आप परीक्षण अवधि के बाद अपनी सदस्यता जारी रखना चाहते हैं, तो कृपया भुगतान विधि जोड़ें।"
@@ -4945,9 +4918,6 @@
       ],
       "Common sign up issues": [
         "सामान्य साइन अप मुद्दे"
-      ],
-      "Contact us": [
-        "हमसे संपर्क करें"
       ],
       "Create account": [
         "खाता बनाएं"
@@ -7433,9 +7403,6 @@
       ],
       "Add PayPal payment method": [
         "पेपैल भुगतान विधि जोड़ें"
-      ],
-      "Add servers": [
-        "सर्वर जोड़ें"
       ],
       "Add to allow list": [
         "अलाउ सूची में जोड़ें"

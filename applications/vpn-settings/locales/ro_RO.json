@@ -697,6 +697,9 @@
       "Verify": [
         "Verifică"
       ],
+      "Verify ${ unverifiedSSODomain.DomainName }": [
+        "Verificare ${ unverifiedSSODomain.DomainName }"
+      ],
       "Verify account": [
         "Verificare cont"
       ],
@@ -2151,6 +2154,9 @@
       ]
     },
     "Description": {
+      "Keep different parts of your life separate and your inbox organized with additional addresses.": [
+        "Păstrați diferite părți ale vieții separate și contul de e-mail organizat cu adrese suplimentare."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Modernizați-vă contul pentru a vă separa diferitele aspecte ale vieții personale cu mai multe adrese de e-mail și a debloca mai multe funcții premium."
       ]
@@ -2765,8 +2771,14 @@
       "${ BRAND_NAME } groups": [
         "Grupuri ${ BRAND_NAME }"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Conturile cu domenii personale nu se pot alătura unui plan de familie."
+      ],
       "customer support": [
         "suportul tehnic"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Planurile de familie nu acceptă în prezent conturi externe. Creați o adresă ${ BRAND_NAME } înainte de a vă alătura. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Dacă acceptați invitația, se va schimba planul curent, iar soldul rămas va fi returnat ca și credit în cont."
@@ -2776,6 +2788,9 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Invitație de la: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Conturile pe viață nu se pot alătura unui plan de familie."
       ],
       "Manage addresses.": [
         "Gestionare adrese."
@@ -2787,6 +2802,9 @@
         "Într-o perioadă de 6 luni este permisă doar ${ n } invitație acceptată.",
         "Într-o perioadă de 6 luni sunt permise doar ${ n } invitații acceptate.",
         "Într-o perioadă de 6 luni sunt permise doar ${ n } de invitații acceptate."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Proprietarii unui plan cu membri nu se pot alătura unui alt plan de familie."
       ],
       "Pending": [
         "În așteptare"
@@ -2828,11 +2846,17 @@
       "You have successfully joined the family group": [
         "V-ați alăturat cu succes grupului de familie."
       ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Aveți facturi neplătite. Trebuie să le achitați înainte de a vă alătura unui plan de familie."
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Trebuie să configurați un domeniu personal înainte de a adăuga utilizatori multipli."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Trebuie să configurați un domeniu personal înainte de a crea un utilizator."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Ați primit o invitație să vă conectați contul ${ BRAND_NAME } la acest plan de familie și să vă bucurați împreună de toate funcțiile premium ale ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Acest cont are mai multe adrese de e-mail decât cele disponibile în acest plan. ${ addressSettingsLink }"
@@ -2848,6 +2872,9 @@
       "*Only one free trial per user. Regular pricing applies thereafter.": [
         "* Doar o singură perioadă de probare per utilizator. După aceea se aplică prețul standard."
       ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
+        "După părăsirea planului, acest utilizator va fi mutat la un plan ${ BRAND_NAME } Free."
+      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "După ce vă va părăsi planul actual, acest utilizator va fi mutat la planul ${ BRAND_NAME } Unlimited cu o perioadă de probare de 30 de zile.*"
       ],
@@ -2856,6 +2883,12 @@
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Creați și gestionați membrii familiei și alocați-le spațiu de stocare partajat între${ DRIVE_APP_NAME } și ${ MAIL_APP_NAME }."
+      ],
+      "Create and manage family members.": [
+        "Creați și gestionați membrii contului de familie."
+      ],
+      "If the user already has a ${ BRAND_NAME } account (${ domain } or other, e.g. @gmail.com), enter it here. Otherwise they need to create an account first.": [
+        "Dacă utilizatorul are deja un cont ${ BRAND_NAME } (${ domain } sau altul, de exemplu @gmail.com), introduceți-l aici. În caz contrar, mai întâi trebuie să-și creeze un cont."
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Dacă utilizatorul are deja o adresă ${ MAIL_APP_NAME }, introduceți-o aici. În caz contrar, acesta va trebui să-și creeze mai întâi un cont."
@@ -2967,11 +3000,6 @@
       ],
       "Add": [
         "Adăugare"
-      ],
-      "Add (${ numberOfAddedServers })": [
-        "Adăugare (${ numberOfAddedServers })",
-        "Adăugare (${ numberOfAddedServers })",
-        "Adăugare (${ numberOfAddedServers })"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Conectare cu un dispozitiv",
@@ -3251,9 +3279,6 @@
       "Checkout": [
         "Finalizare"
       ],
-      "Country": [
-        "Țara"
-      ],
       "Create your account": [
         "Creați-vă contul"
       ],
@@ -3351,11 +3376,6 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Adăugați această înregistrare la domeniul personal în panoul de control al registratorului de nume de domeniu."
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "S-a găsit o sugestie, folosiți tastatura pentru a naviga.",
-        "S-au găsit ${ items.length } sugestii, folosiți tastatura pentru a naviga.",
-        "S-au găsit ${ items.length } de sugestii, folosiți tastatura pentru a naviga."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Utilizați tastele sus și jos pentru a accesa și răsfoi sugestiile după introducere. Apăsați «Enter» pentru a confirma alegerea sau «Escape» pentru a închide caseta cu sugestii."
@@ -3744,9 +3764,6 @@
         "Se șterg ${ deletedServerCount } servere poartă de acces",
         "Se șterg ${ deletedServerCount } de servere poartă de acces"
       ],
-      "Disabled since ${ formattedDateAndTime }": [
-        "Dezactivat din ${ formattedDateAndTime }"
-      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Dezactivarea autentificării cu doi factori vă va face contul mai puțin sigur. Continuați doar dacă este absolut necesar."
       ],
@@ -3829,9 +3846,6 @@
       ],
       "Enable single sign-on to keep your organization safe": [
         "Activați autentificarea unică pentru a vă menține organizația în siguranță."
-      ],
-      "Enabled since ${ formattedDateAndTime }": [
-        "Activat din ${ formattedDateAndTime }"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Adresa URL a punctului final primită de la furnizorul de identitate (ex. https://idp.exemplu.com/sso/saml)."
@@ -4208,9 +4222,6 @@
       "Number of dedicated servers in the organization": [
         "Număr servere dedicate din organizație"
       ],
-      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "Numărul de servere dedicate pe care încercați să le atribuiți (${ addedCount }) este mai mare decât cel încă disponibil în planul actual (${ remainingCount }), deoarece dețineți ${ ownedCount } și utilizați deja ${ usedCount }."
-      ],
       "of": [
         "din"
       ],
@@ -4455,9 +4466,6 @@
       "Single sign-on removed": [
         "Autentificarea unică a fost eliminată"
       ],
-      "Some of your available servers can only be used in specific countries due to recent removals": [
-        "Unele dintre serverele dvs. disponibile pot fi utilizate numai în anumite țări din cauza eliminărilor recente."
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Specificați domeniul căruia i se permite autentificarea cu SAML SSO."
       ],
@@ -4570,9 +4578,6 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Acesta poate dura câteva secunde sau câteva minute, în funcție de dispozitivul folosit"
-      ],
-      "This change will be fully reflected across your infrastructure in about 1 hour": [
-        "Această modificare va fi complet aplicată infrastructurii în aproximativ o oră."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Asta ar putea dura ceva timp. Nu închideți această pagină și nu vă deconectați de la internet."
@@ -4778,9 +4783,6 @@
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
-      "Want servers in other countries?": [
-        "Doriți servere în alte țări?"
-      ],
       "Warning:": [
         "Avertizare:"
       ],
@@ -4807,6 +4809,9 @@
       ],
       "We recommend having multiple servers in different locations to provide redundancy.": [
         "Vă recomandăm să aveți mai multe servere în locuri diferite pentru a oferi redundanță."
+      ],
+      "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "Se recomandă notificarea membrilor familiei și solicitați-le să-și activeze autentificarea cu doi factori înainte de activarea utilizării acesteia."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Se recomandă notificarea membrilor organizației și solicitarea ca aceștia să-ți activeze autentificarea cu doi factori înainte de forțarea utilizării acesteia."
@@ -4918,9 +4923,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Puteți edita aceasta o dată pentru a vă asigura că este adresa de e-mail corectă pentru verificare."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Puteți debloca imediat configurația de mai sus adăugând ${ specificCountryCount } la numărul de adrese IP din planul actual sau ne puteți contacta pentru soluții personalizate."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
         "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
@@ -4942,11 +4944,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Puteți utiliza următoarele date pentru a vă conecta la un server ${ VPN_APP_NAME } folosind o terță parte, aplicație VPN cu sursă publică, cum ar fi Tunnelblick pentru macOS sau OpenVPN pentru GNU/Linux."
-      ],
-      "You have ${ availableCount } dedicated server available.": [
-        "Aveți ${ availableCount } server dedicat disponibil.",
-        "Aveți ${ availableCount } servere dedicate disponibile.",
-        "Aveți ${ availableCount } de servere dedicate disponibile."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Aveți un abonament ${ planTitle } de probare. Dacă doriți să vă continuați abonamentul după perioada de probare, adăugați o metodă de plată."
@@ -5382,6 +5379,9 @@
       "Enter the code displayed on your TV": [
         "Introduceți codul afișat pe TV"
       ],
+      "Event": [
+        "Eveniment"
+      ],
       "Expiration (${ patternExpiration })": [
         "Expirare (${ patternExpiration })"
       ],
@@ -5561,6 +5561,9 @@
       ],
       "Reveal password": [
         "Afișare parolă"
+      ],
+      "Search": [
+        "Căutare"
       ],
       "Search by email": [
         "Caută după e-mail"
@@ -5757,9 +5760,6 @@
       ],
       "Common sign up issues": [
         "Probleme comune de înregistrare"
-      ],
-      "Contact us": [
-        "Contactați-ne"
       ],
       "Create account": [
         "Creare cont"
@@ -6086,11 +6086,20 @@
       "From ${ price }": [
         "De la ${ price }"
       ],
+      "Get started for ${ price }": [
+        "Începeți cu ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Începând de la ${ priceMailPlus }"
+      ],
       "Upgrade": [
         "Modificare"
       ],
       "Upgrade now": [
         "Modificare"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Treceți la ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -6462,6 +6471,9 @@
       "Secure Core servers": [
         "Servere Secure Core"
       ],
+      "Secure link sharing": [
+        "Partajare securizată legături web"
+      ],
       "See team's availability": [
         "Vedeți disponibilitatea echipei"
       ],
@@ -6562,6 +6574,11 @@
         "Până la ${ n } utilizatori",
         "Până la ${ n } utilizatori"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Maxim ${ n } utilizator (${ adminsText }, ${ usersText })",
+        "Maxim ${ n } utilizatori (${ adminsText }, ${ usersText })",
+        "Maxim ${ n } de utilizatori (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Până la ${ totalStorageSize } spațiu"
       ],
@@ -6581,6 +6598,18 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Scanăm internetul ascuns pentru a verifica dacă adresele sau aliasurile ${ BRAND_NAME } v-au fost divulgate și vă avertizăm imediat dacă găsim ceva."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } administrator",
+        "${ admins } administratori",
+        "${ admins } de administratori"
+      ],
+      "${ users } user": [
+        "${ users } utilizator",
+        "${ users } utilizatori",
+        "${ users } de utilizatori"
       ]
     },
     "new_plans: feature info": {
@@ -6660,6 +6689,9 @@
       "Protect sensitive business information and collaborate securely.": [
         "Protejați informațiile confidențiale de afaceri și colaborați în siguranță."
       ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Protejați-vă familia cu toate funcțiile premium din ${ PASS_SHORT_APP_NAME } Plus pentru 6 utilizatori."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protejați-vă confidențialitatea familiei cu toate serviciile ${ BRAND_NAME } combinate."
       ],
@@ -6737,6 +6769,12 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "Probare ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Luați Mail Plus cu ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Începând de la ${ price }"
       ],
       "Your account's usage": [
         "Utilizare cont"
@@ -6898,6 +6936,9 @@
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
       ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Partajați în siguranță articole individuale cu oricine (chiar dacă nu utilizează ${ PASS_APP_NAME })"
+      ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Stocați în siguranță detaliile contactelor personale, cum ar fi numărul de telefon, adresa, ziua de naștere și notele personale. Criptarea cu acces zero vă garantează că nici chiar ${ BRAND_NAME } nu le poate accesa."
       ],
@@ -7047,11 +7088,17 @@
       "Key copied to the clipboard": [
         "Cheia a fost copiată în memorie."
       ],
+      "Number of records exceeds the download limit of 10000": [
+        "Numărul de înregistrări depășește limita de descărcare de 10.000."
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credențiale OpenVPN/IKE2 regenerate"
       ],
       "Reminder has been sent": [
         "Notificările au fost trimise"
+      ],
+      "Too many recent API requests": [
+        "Prea multe solicitări recente ale API-ului."
       ],
       "Two-factor authentication has been enforced for administrators": [
         "Autentificarea cu doi factori este obligatorie pentru administratori."
@@ -7376,6 +7423,36 @@
     "pass_signup_2023: Title": {
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Toate serviciile ${ BRAND_NAME } Plus.${ br } Un singur abonament."
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } cont de utilizator",
+        "${ n } conturi de utilizator",
+        "${ n } de conturi de utilizator"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Panou de administrare pentru a gestiona utilizatorii și abonamentul"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Toate funcțiile premium. Șase utilizatori. Un singur abonament ușor."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Facturat anual cu ${ yearlyPrice }. Economisiți ${ yearlySavedPrice } cu ${ passFamilyPlanName } (față de 6 abonamente individuale ${ passPlusPlanName })."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Ofertă exclusivă disponibilă numai pentru suporterii timpurii ai ${ PASS_APP_NAME }."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Luați-l cu ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Vă prezentăm ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Ofertă limitată."
       ]
     },
     "password_reset: info": {
@@ -8442,6 +8519,9 @@
       "/ month": [
         "/ lună"
       ],
+      "/month": [
+        "/lună"
+      ],
       "1 year": [
         "1 an"
       ],
@@ -9210,6 +9290,11 @@
         "Expiră"
       ]
     },
+    "Subtitle": {
+      "View VPN session details for your organization.": [
+        "Vizualizați detaliile sesiunii VPN pentru organizație."
+      ]
+    },
     "Success": {
       "Account deleted. Signing out...": [
         "Cont șters. Se deconectează..."
@@ -9549,9 +9634,6 @@
       "Add pm.me subdomain": [
         "Adăugare domeniu pm.me"
       ],
-      "Add servers": [
-        "Adăugare servere"
-      ],
       "Add to allow list": [
         "Adăugare la lista de adrese permise"
       ],
@@ -9575,6 +9657,9 @@
       ],
       "Amount due": [
         "Suma datorată"
+      ],
+      "An address for each role": [
+        "O adresă pentru fiecare rol"
       ],
       "Appearance": [
         "Aspect"
@@ -9647,12 +9732,6 @@
       ],
       "Confirm phone number": [
         "Confirmați numărul de telefon"
-      ],
-      "Connection monitor disabled": [
-        "Monitorizare conexiune dezactivată"
-      ],
-      "Connection monitor enabled": [
-        "Monitorizare conexiune activată"
       ],
       "Contact us": [
         "Contactați-ne"
