@@ -2897,12 +2897,6 @@
       "Add": [
         "Dodaj"
       ],
-      "Add (${ numberOfAddedServers })": [
-        "Dodaj (${ numberOfAddedServers })",
-        "Dodaj (${ numberOfAddedServers })",
-        "Dodaj (${ numberOfAddedServers })",
-        "Dodaj (${ numberOfAddedServers })"
-      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Povezava za do ${ plusVpnConnections } naprave",
         "Povezava za do ${ plusVpnConnections } naprav",
@@ -3184,9 +3178,6 @@
       "Checkout": [
         "Na blagajno"
       ],
-      "Country": [
-        "Država"
-      ],
       "Create your account": [
         "Ustvarite svoj račun"
       ],
@@ -3284,12 +3275,6 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Dodajte ta zapis svoji domeni na nadzorni plošči registrarja domenskih imen"
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Najden ${ items.length } predlog, za krmarjenje uporabite tipkovnico.",
-        "Najdena ${ items.length } predloga, za krmarjenje uporabite tipkovnico.",
-        "Najdenih ${ items.length } predlogov, za navigacijo uporabite tipkovnico.",
-        "Najdenih ${ items.length } predlogov, za krmarjenje uporabite tipkovnico."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "S smernimi tipkama gor in dol si oglejte in izberite predloge. Za potrditev izbire pritisnite Enter, za preklic in zapiranje polja s predlogi pritisnite Esc."
@@ -4042,9 +4027,6 @@
       "Number of dedicated servers in the organization": [
         "Število namenskih strežnikov v organizaciji"
       ],
-      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "Število namenskih strežnikov, ki jih poskušate dodati (${ addedCount }), je večje od tistega, ki je še na voljo v vašem paketu (${ remainingCount }), saj ste lastnik ${ ownedCount } in že uporabljate ${ usedCount }."
-      ],
       "of": [
         "od"
       ],
@@ -4263,9 +4245,6 @@
       ],
       "Single sign-on removed": [
         "​Enotna prijava je odstranjena"
-      ],
-      "Some of your available servers can only be used in specific countries due to recent removals": [
-        "Nekatere od vaših razpoložljivih strežnikov je mogoče uporabljati samo v določenih državah zaradi nedavnih odstranitev."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Določite domeno, ki ima dovoljenje za preverjanje pristnosti s SAML SSO."
@@ -4561,9 +4540,6 @@
       "Visa Secure logo": [
         "Visa Secure logotip"
       ],
-      "Want servers in other countries?": [
-        "Želite strežnike v drugih državah?"
-      ],
       "Warning:": [
         "Opozorilo:"
       ],
@@ -4690,9 +4666,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "To lahko uredite takrat, ko zagotovite pravilen e-poštni naslov za preverjanje."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Zgornjo nastavitev lahko takoj odklenete tako, da številu naslovov IP v svojem paketu dodate ${ specificCountryCount } ali pa stopite v stik z nami za rešitve po meri."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Lahko obdržite do ${ MAX_CALENDARS_FREE } koledar. Preden prekličete naročnino na ${ MAIL_SHORT_APP_NAME }, prosimo odstranite deljene povezave do koledarjev in uporabnike storitve ${ BRAND_NAME }, s katerimi ste delili svoje koledarje.",
         "Lahko obdržite do ${ MAX_CALENDARS_FREE } koledarja. Preden prekličete naročnino na ${ MAIL_SHORT_APP_NAME }, prosimo odstranite deljene povezave do koledarjev in uporabnike storitve ${ BRAND_NAME }, s katerimi ste delili svoje koledarje.",
@@ -4716,12 +4689,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Uporabite lahko naslednje poverilnice, da se povežete v strežnik ${ VPN_APP_NAME } z uporabo zunanje odprtokodne VPN aplikacije, kot je Tunnelblick za macOS ali OpenVPN za GNU/Linux."
-      ],
-      "You have ${ availableCount } dedicated server available.": [
-        "Na voljo imate ${ availableCount } namenski strežnik.",
-        "Na voljo imate ${ availableCount } namenska strežnika.",
-        "Na voljo imate ${ availableCount } namenske strežnike.",
-        "Na voljo imate ${ availableCount } namenskih strežnikov."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Imate preizkusno naročnino ${ planTitle }. Če želite nadaljevati naročnino po preizkusnem obdobju, dodajte način plačila."
@@ -5489,9 +5456,6 @@
       ],
       "Common sign up issues": [
         "Pogoste težave pri ustvarjanju računa."
-      ],
-      "Contact us": [
-        "Kontaktirajte nas"
       ],
       "Create account": [
         "Ustvarite račun"
@@ -9012,9 +8976,6 @@
       ],
       "Add PayPal payment method": [
         "Dodaj vrsto PayPal plačila"
-      ],
-      "Add servers": [
-        "Dodaj strežnike"
       ],
       "Add to allow list": [
         "Dodaj v seznam dovoljenih"

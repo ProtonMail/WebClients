@@ -2692,6 +2692,9 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } 群組"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "有自訂網域的帳號無法加入家庭方案。"
+      ],
       "customer support": [
         "客服"
       ],
@@ -2704,11 +2707,17 @@
       "Invited by: ${ inviteEmail }": [
         "邀請人：${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "終身帳號無法加入群組方案。"
+      ],
       "Manage addresses.": [
         "管理電子郵件位址。"
       ],
       "Manage user accounts": [
         "管理使用者帳號"
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "有成員的方案的擁有者無法加入其他家庭方案。"
       ],
       "Pending": [
         "佇候中"
@@ -2868,9 +2877,6 @@
       ],
       "Add": [
         "新增"
-      ],
-      "Add (${ numberOfAddedServers })": [
-        "新增 (${ numberOfAddedServers } 台)"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "多達 ${ plusVpnConnections } 台裝置的連線"
@@ -3129,9 +3135,6 @@
       "Checkout": [
         "結帳"
       ],
-      "Country": [
-        "國家"
-      ],
       "Create your account": [
         "創建您的帳號"
       ],
@@ -3226,9 +3229,6 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "請在您的網域名稱註冊機構的控制台中新增此記錄到您的網域中"
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "找到 ${ items.length } 個建議，請使用鍵盤導覽。"
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "使用向上、向下方向鍵存取並瀏覽輸入建議。按一下 [Enter] 鍵確認選項，或 [Esc] 鍵關閉建議方塊。"
@@ -3561,9 +3561,6 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "正在刪除 ${ deletedServerCount } 台閘道伺服器"
       ],
-      "Disabled since ${ formattedDateAndTime }": [
-        "自從${ formattedDateAndTime }關閉"
-      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 標誌"
       ],
@@ -3641,9 +3638,6 @@
       ],
       "Enable single sign-on to keep your organization safe": [
         "開啟單一登入 (SSO) 來保障你的組織安全"
-      ],
-      "Enabled since ${ formattedDateAndTime }": [
-        "自從${ formattedDateAndTime }啟用"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "由您的身分提供者提供的端點 URL (範例：https://idp.example.com/sso/saml)。"
@@ -4002,9 +3996,6 @@
       "Number of dedicated servers in the organization": [
         "團隊專用的伺服器數量"
       ],
-      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "您嘗試分配的專用伺服器數量（${ addedCount }）超過了您的方案中仍可使用的數量（${ remainingCount }），因為您擁有 ${ ownedCount } 臺伺服器，且您已經使用了 ${ usedCount } 臺。"
-      ],
       "of": [
         "/"
       ],
@@ -4235,9 +4226,6 @@
       ],
       "Single sign-on removed": [
         "單一登入移除"
-      ],
-      "Some of your available servers can only be used in specific countries due to recent removals": [
-        "因為近期的移除，部份可用的伺服器僅能在特定國家使用"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "指定允許以 SAML SSO 驗證的網域。"
@@ -4515,9 +4503,6 @@
       "Visa Secure logo": [
         "Visa Secure 標誌"
       ],
-      "Want servers in other countries?": [
-        "想要於不同國家的伺服器?"
-      ],
       "Warning:": [
         "警告："
       ],
@@ -4632,9 +4617,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "您可以編輯這個一次以確保用於驗證的電子郵件位址正確。"
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
-        "您可以立刻解鎖上方的設定，只要在您的方案中新增 ${ specificCountryCount } 個 IP 位址，或聯絡我們以取得量身打造的解決方案。"
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "您可保留最多 ${ MAX_CALENDARS_FREE } 個行事曆。請先移除已分享的行事曆連結以及任何與其分享行事曆的 ${ BRAND_NAME } 使用者，然後才取消您的 ${ MAIL_SHORT_APP_NAME } 訂閱。"
       ],
@@ -4652,9 +4634,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "您可使用下列憑證，透過第三方或開放原始碼 VPN 程式（例如：macOS 版本適用的 Tunnelblick 或 GNU/Linux 適用的 OpenVPN），連線至 ${ VPN_APP_NAME } 伺服器。"
-      ],
-      "You have ${ availableCount } dedicated server available.": [
-        "您有${ availableCount }台可用的獨立伺服器。"
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "您有一個試用期 ${ planTitle } 訂購授權。如果您希望在試用期完結後繼續您的訂購授權，請增加一個繳款方式。"
@@ -5431,9 +5410,6 @@
       "Common sign up issues": [
         "常見註冊問題"
       ],
-      "Contact us": [
-        "聯絡我們"
-      ],
       "Create account": [
         "創建帳號"
       ],
@@ -5742,11 +5718,20 @@
       "From ${ price }": [
         "${ price }起"
       ],
+      "Get started for ${ price }": [
+        "使用${ price }取得"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "從${ priceMailPlus }起"
+      ],
       "Upgrade": [
         "升級"
       ],
       "Upgrade now": [
         "立即升級"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "升級至${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -6080,6 +6065,9 @@
       "Secure Core servers": [
         "Secure Core 伺服器"
       ],
+      "Secure link sharing": [
+        "安全連結分享"
+      ],
       "See team's availability": [
         "查看團隊可用程度"
       ],
@@ -6176,6 +6164,9 @@
       "Up to ${ n } user": [
         "多達 ${ n } 位使用者"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "至多${ n }位使用者(${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "最多至 ${ totalStorageSize } 儲存空間"
       ],
@@ -6193,6 +6184,14 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins }位管理員"
+      ],
+      "${ users } user": [
+        "${ users }位使用者"
       ]
     },
     "new_plans: feature info": {
@@ -6334,6 +6333,12 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title }滿意體驗"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "使用${ price }取得Mail Plus"
+      ],
+      "Starting from ${ price }": [
+        "從${ price }起"
       ],
       "Your account's usage": [
         "您帳號的使用情況"
@@ -6855,6 +6860,14 @@
     "pass_signup_2023: Title": {
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "全部${ BRAND_NAME }升級服務。${ br }一個簡單的訂購授權。"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n }使用者帳號"
+      ],
+      "Admin panel to manage users and subscription": [
+        "管理員面板以管理使用者及訂閱"
       ]
     },
     "passwordless": {
@@ -7705,6 +7718,9 @@
       ],
       "/ month": [
         "/ 月"
+      ],
+      "/month": [
+        "/月"
       ],
       "1 year": [
         "1 年"
@@ -8638,9 +8654,6 @@
       "Add pm.me subdomain": [
         "添加pm.me子網域"
       ],
-      "Add servers": [
-        "新增伺服器"
-      ],
       "Add to allow list": [
         "新增至允許清單"
       ],
@@ -8733,12 +8746,6 @@
       ],
       "Confirm phone number": [
         "確認手機號碼"
-      ],
-      "Connection monitor disabled": [
-        "連線監控已關閉"
-      ],
-      "Connection monitor enabled": [
-        "連線監控已啟用"
       ],
       "Contact us": [
         "聯絡我們"
@@ -9578,6 +9585,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin透過電子郵件"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "一個更安全/容易持有&傳送Bitcoin的方法"
       ]
     },
     "wallet_signup_2024:Bug category": {
