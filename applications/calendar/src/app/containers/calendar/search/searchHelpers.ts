@@ -18,12 +18,12 @@ import {
 import { formatIntlUTCDate } from '@proton/shared/lib/date-utc/formatIntlUTCDate';
 import { convertTimestampToTimezone, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { pick } from '@proton/shared/lib/helpers/object';
-import { dateLocale } from '@proton/shared/lib/i18n';
-import type { MaybeArray, SimpleMap } from '@proton/shared/lib/interfaces';
+import type { MaybeArray, SimpleMap, UserSettings } from '@proton/shared/lib/interfaces';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import groupWith from '@proton/utils/groupWith';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { formatShortTime } from '../../../helpers/date';
 import { getEventKey } from '../../../helpers/encryptedSearch/esUtils';
 import { generateEventUniqueId } from '../../../helpers/event';
 import type { ESCalendarContent, ESCalendarMetadata } from '../../../interfaces/encryptedSearch';
@@ -269,11 +269,13 @@ export const getTimeString = ({
     endDate,
     isAllDay,
     plusDaysToEnd,
+    userSettings,
 }: {
     startDate: Date;
     endDate: Date;
     isAllDay: boolean;
     plusDaysToEnd: number;
+    userSettings: UserSettings;
 }) => {
     if (isAllDay) {
         if (plusDaysToEnd <= 1) {
@@ -288,8 +290,8 @@ export const getTimeString = ({
         );
     }
 
-    const formattedStartTime = formatUTC(startDate, 'p', { locale: dateLocale });
-    const formattedEndTime = formatUTC(endDate, 'p', { locale: dateLocale });
+    const formattedStartTime = formatShortTime(startDate, userSettings);
+    const formattedEndTime = formatShortTime(endDate, userSettings);
 
     return plusDaysToEnd === 0
         ? `${formattedStartTime} - ${formattedEndTime}`
