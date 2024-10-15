@@ -2658,10 +2658,6 @@
       "Add": [
         "Adicionar"
       ],
-      "Add (${ numberOfAddedServers })": [
-        "Adicionar (${ numberOfAddedServers })",
-        "Adicionar (${ numberOfAddedServers })"
-      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Ligação para ${ plusVpnConnections } dispositivo",
         "Ligação para até ${ plusVpnConnections } dispositivos"
@@ -2927,9 +2923,6 @@
       "Checkout": [
         "Pagamento"
       ],
-      "Country": [
-        "País"
-      ],
       "Create your account": [
         "Crie a sua conta"
       ],
@@ -3022,10 +3015,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } sugestão foi encontrada. Utilize o teclado para navegar.",
-        "${ items.length } sugestões foram encontradas. Utilize o teclado para navegar."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Utilize as setas Acima e Abaixo para aceder e pesquisar sugestões após a entrada. Prima la tecla Enter para confirmar a sua escolha ou la tecla Esc para fechar a caixa de sugestões."
       ]
@@ -3686,9 +3675,6 @@
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
       ],
-      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "O número de servidores dedicados que tentou atribuir (${ addedCount }) é superior ao que está disponível no seu plano (${ remainingCount }) dado que dispõe de ${ ownedCount } e já utiliza ${ usedCount }."
-      ],
       "of": [
         "de"
       ],
@@ -3909,9 +3895,6 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sendo utilizador(a) leal, a sua conta dispõe de funcionalidades adicionais."
-      ],
-      "Some of your available servers can only be used in specific countries due to recent removals": [
-        "Alguns dos seus servidores disponíveis só podem ser utilizados em países específicos devido a eliminações recentes"
       ],
       "Step ${ step }": [
         "Passo ${ step }",
@@ -4169,9 +4152,6 @@
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
-      "Want servers in other countries?": [
-        "Pretende servidores em outros países?"
-      ],
       "Warning:": [
         "Aviso:"
       ],
@@ -4279,9 +4259,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Pode editar isto uma vez para garantir o endereço de e-mail correto para verificação."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Pode desbloquear imediatamente a configuração acima ao adicionar ${ specificCountryCount } ao número de endereços IP no seu plano ou contactar-nos para soluções personalizadas."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova ligações de calendários partilhados e qualquer utilizador do ${ BRAND_NAME } com quem partilhou os seus calendários antes de cancelar a sua assinatura do${ MAIL_SHORT_APP_NAME }.",
         "Pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova ligações de calendários partilhados e qualquer utilizador do ${ BRAND_NAME } com quem partilhou os seus calendários antes de cancelar a sua assinatura do${ MAIL_SHORT_APP_NAME }."
@@ -4301,10 +4278,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Pode utilizar as seguintes credenciais quando se liga a um servidor do ${ VPN_APP_NAME } utilizando uma aplicação de VPN de código aberto de terceiros, como Tunnelblick para macOS ou OpenVPN para GNU/Linux."
-      ],
-      "You have ${ availableCount } dedicated server available.": [
-        "Tem ${ availableCount } servidor dedicado disponível.",
-        "Tem ${ availableCount } servidores dedicados disponíveis."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Tem uma subscrição experimental ${ planTitle }. Se gostaria de continuar com a sua subscrição após o período de avaliação, por favor, adicione um método de pagamento."
@@ -5021,9 +4994,6 @@
       "Common sign up issues": [
         "Problemas de registo comuns"
       ],
-      "Contact us": [
-        "Contacte-nos"
-      ],
       "Create account": [
         "Criar uma conta"
       ],
@@ -5300,6 +5270,9 @@
       ],
       "From ${ price }": [
         "A partir de ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Comece por ${ price }"
       ],
       "Upgrade": [
         "Alterar a subscrição"
@@ -7861,9 +7834,6 @@
       "Add pm.me subdomain": [
         "Adicionar subdomínio pm.me"
       ],
-      "Add servers": [
-        "Adicionar servidores"
-      ],
       "Add to allow list": [
         "Adicionar à lista de endereços permitidos"
       ],
@@ -7959,12 +7929,6 @@
       ],
       "Confirm phone number": [
         "Confirmar número de telefone"
-      ],
-      "Connection monitor disabled": [
-        "Monitor de ligação desativado"
-      ],
-      "Connection monitor enabled": [
-        "Monitor de ligação ativado"
       ],
       "Contact us": [
         "Contacte-nos"

@@ -2543,6 +2543,9 @@
       "Invited by: ${ inviteEmail }": [
         "招待者: ${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Lifetime アカウントはファミリープランに参加できません。"
+      ],
       "Manage addresses.": [
         "アドレスの管理"
       ],
@@ -2695,9 +2698,6 @@
       ],
       "Add": [
         "追加"
-      ],
-      "Add (${ numberOfAddedServers })": [
-        "追加 ( ${ numberOfAddedServers } )"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "最大 ${ plusVpnConnections } 台のデバイスに接続"
@@ -2961,9 +2961,6 @@
       "Checkout": [
         "チェックアウト"
       ],
-      "Country": [
-        "国"
-      ],
       "Create your account": [
         "アカウントを作成"
       ],
@@ -3058,9 +3055,6 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "ドメイン名登録事業者のコントロールパネルで、ドメインにこの記録を追加します。"
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } つの提案が見つかりました。キーボードを使って操作します。"
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "矢印キーで提案を表示し、選択することができます。エンターキーで確定し、エスケープキーで提案を閉じることができます。"
@@ -3768,9 +3762,6 @@
       "Number of dedicated servers in the organization": [
         "組織内の専用サーバー数"
       ],
-      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "${ ownedCount } を所有しており、すでに ${ usedCount } を使用しているため、割り当てようとしている専用サーバーの数 (${ addedCount }) は、プランでまだ利用可能な数 (${ remainingCount }) を超えています。"
-      ],
       "of": [
         " / "
       ],
@@ -3980,9 +3971,6 @@
       ],
       "Single sign-on removed": [
         "シングルサインオンが削除されました"
-      ],
-      "Some of your available servers can only be used in specific countries due to recent removals": [
-        "最近削除されたため、特定の国でのみ使用可能なサーバーがあります。"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "SAML SSO認証を許可するドメインを指定します。"
@@ -4254,9 +4242,6 @@
       "Visa Secure logo": [
         "Visa Secure ロゴ"
       ],
-      "Want servers in other countries?": [
-        "他の国のサーバーが必要ですか？"
-      ],
       "Warning:": [
         "警告:"
       ],
@@ -4374,9 +4359,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "確認のための正しいメールアドレスを確認するために、一度編集することができます。"
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
-        "プラン内の IP アドレス番号に ${ specificCountryCount } を追加することで、上記の設定をすぐに利用できます。特別な対応が必要な場合は私たちにご相談ください"
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "カレンダーを最大 ${ MAX_CALENDARS_FREE } 個まで保持することができます。あなたの ${ MAIL_SHORT_APP_NAME } サブスクリプションをキャンセルする前に、共有カレンダーリンクと共有したカレンダーの ${ BRAND_NAME } ユーザーを削除してください。"
       ],
@@ -4391,9 +4373,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "以下の認証情報を使用すると、macOS 向け Tunnelblick や GNU/Linux 向け OpenVPN のようなサードパーティのオープンソースの VPN アプリで ${ VPN_APP_NAME } サーバーに接続できます。"
-      ],
-      "You have ${ availableCount } dedicated server available.": [
-        "${ availableCount } 個の専用サーバーが利用可能です。"
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "試用版 ${ planTitle } のサブスクリプションが有効です。試用期間後にサブスクリプションを継続したい場合は、支払い方法を追加してください。"
@@ -5148,9 +5127,6 @@
       "Common sign up issues": [
         "一般的なサインアップの問題"
       ],
-      "Contact us": [
-        "お問い合わせ"
-      ],
       "Create account": [
         "アカウントを作成"
       ],
@@ -5438,6 +5414,9 @@
       "From ${ price }": [
         "${ price } から"
       ],
+      "Get started for ${ price }": [
+        "${ price } で始めましょう"
+      ],
       "Upgrade": [
         "アップグレード"
       ],
@@ -5689,6 +5668,9 @@
       "Password-protected Emails": [
         "パスワードで保護されたメール"
       ],
+      "Phone support (20+ users)": [
+        "電話サポート (20 ユーザー以上)"
+      ],
       "Priority email support": [
         "優先的なメールサポート"
       ],
@@ -5820,6 +5802,14 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、あなたの ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } 名の管理者"
+      ],
+      "${ users } user": [
+        "${ users }名のユーザー"
       ]
     },
     "new_plans: feature info": {
@@ -5961,6 +5951,9 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title }トライアル"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "${ price }で Mail Plus を入手する"
       ],
       "Your account's usage": [
         "アカウントの使用率"
@@ -6490,6 +6483,11 @@
     "pass_signup_2023: Title": {
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "すべての ${ BRAND_NAME } Plus サービス。${ br }1 つの簡単なサブスクリプション。"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } 個のユーザーアカウント"
       ]
     },
     "password_reset: info": {
@@ -7923,6 +7921,9 @@
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "有効な回復用電話番号を入力していた場合、すぐにあなたのユーザー名を記載した SMS をお送りします。"
       ],
+      "Invitation rejected": [
+        "招待が拒否されました"
+      ],
       "Invitation sent": [
         "招待状が送信されました"
       ],
@@ -8185,9 +8186,6 @@
       ],
       "Add pm.me subdomain": [
         "pm.me サブドメインを追加"
-      ],
-      "Add servers": [
-        "サーバー追加"
       ],
       "Add to allow list": [
         "許可リストに追加"
@@ -9081,8 +9079,16 @@
       "${ n } email address": [
         "${ n } メールアドレス"
       ],
+      "A safer way to hold your Bitcoin": [
+        "Bitcoin を保持する安全な方法"
+      ],
       "Bitcoin via email": [
         "メールで Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Bitcoin を保持・送信する安全で簡単な方法"
       ]
     },
     "wallet_signup_2024:Bug category": {
