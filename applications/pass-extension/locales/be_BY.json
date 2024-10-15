@@ -1657,6 +1657,9 @@
       "Quickly autofill your identities.": [
         "Хуткае запаўненне вашых ідэнтычнасцей."
       ],
+      "Quickly autofill your saved credentials.": [
+        "Хуткае аўтазапаўненне вашых захаваных ідэнтычнасцей."
+      ],
       "Registering extra password...": [
         "Рэгістрацыя дадатковага пароля..."
       ],
@@ -1749,9 +1752,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Дзякуй, што паведамілі аб праблеме"
-      ],
-      "The autofill dropdown will automatically open when you click or focus on the field.": [
-        "Выпадное меню аўтазапаўнення будзе аўтаматычна адкрывацца пры націску або навядзенні на поле."
       ],
       "The export will only contain vaults that you own.": [
         "Экспартаванне будзе змяшчаць толькі тыя сховішчы, якімі вы валодаеце."
@@ -1884,9 +1884,6 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Цяпер вы можаце выкарыстоўваць свой пароль ${ BRAND_NAME } для доступу па-за сеткай ${ PASS_SHORT_APP_NAME }"
-      ],
-      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Вы можаце хутка аўтазапаўняць свае ўліковыя даныя, націснуўшы на значок ${ PASS_APP_NAME }."
       ],
       "You cannot change the mailboxes for this alias.": [
         "У вас няма магчымасці змяніць паштовыя скрыні для гэтага псеўданіма."
@@ -2088,9 +2085,6 @@
       "Autofill 2FA": [
         "Аўтазапаўненне 2ФА"
       ],
-      "Automatically open autofill when a login field is focused": [
-        "Аўтаматычна адкрываць аўтазапаўненне пры навядзенні на поле ўваходу"
-      ],
       "Autosave": [
         "Аўтазахаванне"
       ],
@@ -2183,9 +2177,6 @@
       ],
       "Display": [
         "Адлюстроўваць"
-      ],
-      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
-        "Паказваць значок ${ PASS_APP_NAME } у палях аўтазапаўнення"
       ],
       "Domain": [
         "Дамен"
@@ -2363,6 +2354,9 @@
       ],
       "Login": [
         "Запіс уваходу"
+      ],
+      "Login autofill": [
+        "Аўтазапаўненне уваходу"
       ],
       "Logins": [
         "Запісы ўваходу"
