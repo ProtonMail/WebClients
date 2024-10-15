@@ -66,7 +66,7 @@ export const AutofillOTP: FC<Props> = ({ item }) => {
                         }
                     }}
                 >
-                    <span className="text-ellipsis">{c('Action').t`Copy & fill in`}</span>
+                    <span className="text-ellipsis">{c('Action').t`Fill in`}</span>
                 </Button>
             </div>
         </div>
