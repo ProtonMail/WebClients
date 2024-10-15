@@ -1436,7 +1436,7 @@
         "Se ha anclado el elemento."
       ],
       "Item successfully unpinned": [
-        "Elemento desanclado con éxito"
+        "Se ha desanclado el elemento."
       ],
       "Leaving vault...": [
         "Dejando la caja fuerte..."
@@ -1619,6 +1619,9 @@
       "Quickly autofill your identities.": [
         "Rellena rápidamente tus identidades."
       ],
+      "Quickly autofill your saved credentials.": [
+        "Rellena automáticamente y rápidamente tus credenciales guardadas."
+      ],
       "Registering extra password...": [
         "Registrando la contraseña adicional..."
       ],
@@ -1711,9 +1714,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Gracias por notificar el problema."
-      ],
-      "The autofill dropdown will automatically open when you click or focus on the field.": [
-        "El menú desplegable de completado automático se abrirá automáticamente cuando haga clic o se centre en el campo."
       ],
       "The export will only contain vaults that you own.": [
         "La exportación solo contendrá las cajas fuertes que te pertenecen."
@@ -1842,9 +1842,6 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Ahora puedes usar tu contraseña de ${ BRAND_NAME } para acceder sin conexión a ${ PASS_SHORT_APP_NAME }."
-      ],
-      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Puedes rellenar automáticamente tus credenciales al pulsar el icono de ${ PASS_APP_NAME }."
       ],
       "You cannot change the mailboxes for this alias.": [
         "No puedes cambiar los buzones para este alias."
@@ -2030,9 +2027,6 @@
       "Autofill 2FA": [
         "Rellenar automáticamente 2FA"
       ],
-      "Automatically open autofill when a login field is focused": [
-        "Abrir el completado automático cuando un campo de inicio de sesión está enfocado."
-      ],
       "Autosave": [
         "Guardar automáticamente"
       ],
@@ -2125,9 +2119,6 @@
       ],
       "Display": [
         "Mostrar"
-      ],
-      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
-        "Mostrar el ícono de ${ PASS_APP_NAME } en campos de relleno automático"
       ],
       "Domain": [
         "Dominio"
@@ -2305,6 +2296,9 @@
       ],
       "Login": [
         "Inicio de sesión"
+      ],
+      "Login autofill": [
+        "Relleno automático de inicios de sesión"
       ],
       "Logins": [
         "Inicios de sesión"

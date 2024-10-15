@@ -381,14 +381,17 @@
       "Get link": [
         "取得連結"
       ],
-      "Get Started": [
-        "入門指南"
-      ],
       "Get started": [
         "開始使用"
       ],
+      "Get Started": [
+        "入門指南"
+      ],
       "Get verification code": [
         "取得驗證碼"
+      ],
+      "Go back": [
+        "倒退"
       ],
       "Go to label": [
         "跳至標籤"
@@ -552,11 +555,11 @@
       "Not now": [
         "現在不要"
       ],
-      "Ok": [
-        "確定"
-      ],
       "OK": [
         "好"
+      ],
+      "Ok": [
+        "確定"
       ],
       "Open": [
         "開啟"
@@ -2324,6 +2327,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "您的帳戶資料復原方法已就緒。"
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
       ]
     },
     "description": {
@@ -2397,6 +2403,9 @@
       ]
     },
     "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "於 ${ DRIVE_SHORT_APP_NAME } 開啟"
+      ],
       "Save for later": [
         "替稍後儲存"
       ]
@@ -3298,6 +3307,9 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } 群組"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "有自訂網域的帳號無法加入家庭方案。"
+      ],
       "customer support": [
         "客服"
       ],
@@ -3307,8 +3319,14 @@
       "Invited by: ${ inviteEmail }": [
         "邀請人：${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "終身帳號無法加入群組方案。"
+      ],
       "Manage addresses.": [
         "管理電子郵件位址。"
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "有成員的方案的擁有者無法加入其他家庭方案。"
       ],
       "Sorry, you can't switch plans at this time.": [
         "抱歉，目前無法切換方案。"
@@ -3495,9 +3513,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "找到 ${ items.length } 個建議，請使用鍵盤導覽。"
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "使用向上、向下方向鍵存取並瀏覽輸入建議。按一下 [Enter] 鍵確認選項，或 [Esc] 鍵關閉建議方塊。"
       ]
@@ -5208,6 +5223,9 @@
       "You are about to open another browser tab and visit:": [
         "您將要開啟其他瀏覽器分頁並造訪："
       ],
+      "You are about to open your default browser and visit:": [
+        "您將要開啟預設瀏覽器並造訪："
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "您目前已登入為 ${ user.Name } (${ user.Email })。"
       ],
@@ -5707,6 +5725,9 @@
       ],
       "Import to:": [
         "匯入到："
+      ],
+      "Include message and file name in invite email": [
+        "在邀請電子郵件中包含訊息與檔案名稱"
       ],
       "Keep both": [
         "兩者皆保留"
@@ -6458,8 +6479,14 @@
       "Get started for ${ price }": [
         "使用${ price }取得"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "從${ priceMailPlus }起"
+      ],
       "Upgrade now": [
         "立即升級"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "升級至${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6798,6 +6825,9 @@
       "Secure Core servers": [
         "Secure Core 伺服器"
       ],
+      "Secure link sharing": [
+        "安全連結分享"
+      ],
       "See team's availability": [
         "查看團隊可用程度"
       ],
@@ -6885,6 +6915,9 @@
       "Up to ${ n } user": [
         "多達 ${ n } 位使用者"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "至多${ n }位使用者(${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "最多至 ${ totalStorageSize } 儲存空間"
       ],
@@ -6902,6 +6935,14 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins }位管理員"
+      ],
+      "${ users } user": [
+        "${ users }位使用者"
       ]
     },
     "new_plans: feature info": {
@@ -6997,6 +7038,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "使用${ price }取得Mail Plus"
+      ],
+      "Starting from ${ price }": [
+        "從${ price }起"
       ]
     },
     "new_plans: title": {
@@ -7501,31 +7545,85 @@
       ]
     },
     "Onboarding Action": {
-      "Create new document": [
-        "建立新文件"
+      "Continue": [
+        "下一步"
+      ],
+      "Get started": [
+        "開始使用"
+      ],
+      "Install and continue": [
+        "安裝及繼續"
+      ],
+      "Install later": [
+        "稍後安裝"
+      ],
+      "Invite members": [
+        "邀請成員"
+      ],
+      "Maybe later": [
+        "稍後再說"
       ],
       "Next": [
         "下一步"
       ],
+      "Select theme": [
+        "選擇主題"
+      ],
+      "Skip": [
+        "跳過"
+      ],
+      "Skip for now": [
+        "暫時跳過"
+      ],
       "Start using ${ DRIVE_APP_NAME }": [
         "開始使用 ${ DRIVE_APP_NAME }"
       ],
-      "Try it later": [
-        "稍後嘗試"
+      "Try the app": [
+        "適用此應用程式"
+      ],
+      "Upload file": [
+        "上傳檔案"
+      ],
+      "Upload folder": [
+        "上傳資料夾"
       ]
     },
     "Onboarding Info": {
+      "Back up your photos and memories": [
+        "備份您的檔案及回憶"
+      ],
+      "Choose your favorite theme": [
+        "選擇您喜好的布景主題"
+      ],
       "Collaborate on documents": [
         "於文件上合作"
+      ],
+      "Drag and drop your files here": [
+        "將您的文件拖放到此處"
+      ],
+      "Edit documents online": [
+        "線上編輯文件"
+      ],
+      "End-to-end encrypted storage for your files": [
+        "端對端加密儲存您的檔案"
       ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "開始使用 ${ DRIVE_APP_NAME }，我們會將您儲存空間升級至 5GB！"
       ],
-      "Introducing ${ DOCS_APP_NAME }": [
-        "介紹 ${ DOCS_APP_NAME }"
+      "Get the desktop app": [
+        "取得桌面應用程式"
+      ],
+      "Hang tight": [
+        "準備好"
+      ],
+      "Invite team members": [
+        "邀請團隊成員"
       ],
       "Manage access": [
         "管理存取權限"
+      ],
+      "Secure your files": [
+        "確保您的檔案安全"
       ],
       "Set a recovery method": [
         "設定備援方法"
@@ -7539,8 +7637,17 @@
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "只要在接下來的 ${ expiresInDays } 天完成以下任務："
       ],
+      "Sync and access your files from anywhere": [
+        "於任何地方同步及存取您的檔案"
+      ],
       "Upload a file": [
         "上載檔案"
+      ],
+      "Upload your first file": [
+        "上傳您的第一個檔案"
+      ],
+      "Work faster, smarter": [
+        "更快，智慧工作"
       ],
       "Your trusty online vault for vital documents and precious memories.": [
         "值得您信賴的線上保存庫，讓您安放重要文件和珍貴回憶。"
@@ -7625,6 +7732,14 @@
       ],
       "Secure vault sharing (${ n } vault) and link sharing": [
         "安全保管庫共享(${ n } 保管庫)和連結共享"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n }使用者帳號"
+      ],
+      "Admin panel to manage users and subscription": [
+        "管理員面板以管理使用者及訂閱"
       ]
     },
     "passwordless": {
@@ -7972,6 +8087,11 @@
         "(轉開 ${ PASS_APP_NAME })"
       ]
     },
+    "Security Center - Action": {
+      "View events": [
+        "檢視活動"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "偵測到 ${ name } 與 ${ remainingCount } 筆外洩的資料。開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳細資料。 ${ link }"
@@ -8291,6 +8411,9 @@
       ],
       "/ month": [
         "/ 月"
+      ],
+      "/month": [
+        "/月"
       ],
       "1 year": [
         "1 年"
@@ -9416,6 +9539,9 @@
       "Number of items": [
         "項目數量"
       ],
+      "One email, many recipients": [
+        "一個電子郵件，多位收件者"
+      ],
       "Open actions dropdown": [
         "展開操作下拉選單"
       ],
@@ -9839,6 +9965,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin透過電子郵件"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "一個更安全/容易持有&傳送Bitcoin的方法"
       ]
     },
     "wallet_signup_2024:Bug category": {

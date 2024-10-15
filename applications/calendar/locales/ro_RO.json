@@ -485,10 +485,10 @@
       "Not now": [
         "Nu acum"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -668,6 +668,9 @@
       "Start setup": [
         "Pornire configurare"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Începând de la ${ priceUnlimited }"
+      ],
       "Stay": [
         "Nu închide"
       ],
@@ -721,6 +724,9 @@
       ],
       "Upgrade now": [
         "Modificare"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Treceți la ${ BRAND_NAME } Unlimited"
       ],
       "Upload picture": [
         "Încărcare imagine"
@@ -2466,6 +2472,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } vă protejează contul printr-o monitorizare dedicată 24/7 a activităților suspecte, inclusiv intervenția specialiștilor în securitate."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "A2F adaugă un nivel de securitate suplimentar, prevenind accesul neautorizat."
       ],
@@ -2474,6 +2483,9 @@
       ],
       "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
         "Organizați-vă mai bine ziua, urmăriți timpul și prioritizați sarcinile. Utilizați culori personale pentru evenimentele din calendar."
+      ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "Codificați-vă evenimentele prin culori pentru a vă facilita organizarea zilei, urmărirea timpului și prioritizarea sarcinilor."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Se decriptează contactele… Ar putea dura câteva minute. După finalizarea operației, veți putea descărca fișierul cu contactele exportate."
@@ -2526,6 +2538,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Trageți și plasați prioritatea de îmbinare dintre contacte. Debifați contactele pe care nu doriți să le îmbinați."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Cu grupurile de contacte, puteți trimite mesaje tuturor celor din grup cu un singur clic."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puteți importa evenimente în format iCal (fișier ICS). Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_EVENTS_STRING } evenimente. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
       ],
@@ -2537,6 +2552,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Metodele de recuperare a contului și datelor sunt setate."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -3672,8 +3690,14 @@
       "${ BRAND_NAME } groups": [
         "Grupuri ${ BRAND_NAME }"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Conturile cu domenii personale nu se pot alătura unui plan de familie."
+      ],
       "customer support": [
         "suportul tehnic"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Planurile de familie nu acceptă în prezent conturi externe. Creați o adresă ${ BRAND_NAME } înainte de a vă alătura. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Dacă acceptați invitația, se va schimba planul curent, iar soldul rămas va fi returnat ca și credit în cont."
@@ -3681,8 +3705,14 @@
       "Invited by: ${ inviteEmail }": [
         "Invitație de la: ${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Conturile pe viață nu se pot alătura unui plan de familie."
+      ],
       "Manage addresses.": [
         "Gestionare adrese."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Proprietarii unui plan cu membri nu se pot alătura unui alt plan de familie."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Ne pare rău, nu puteți schimba planurile în acest moment."
@@ -3704,6 +3734,12 @@
       ],
       "You have successfully joined the family group": [
         "V-ați alăturat cu succes grupului de familie."
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Aveți facturi neplătite. Trebuie să le achitați înainte de a vă alătura unui plan de familie."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Ați primit o invitație să vă conectați contul ${ BRAND_NAME } la acest plan de familie și să vă bucurați împreună de toate funcțiile premium ale ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Acest cont are mai multe adrese de e-mail decât cele disponibile în acest plan. ${ addressSettingsLink }"
@@ -3855,6 +3891,23 @@
         "Foarte mic"
       ]
     },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Alăturați-vă întâlnirii de pe Google"
+      ],
+      "Joining instructions": [
+        "Instrucțiuni alăturare"
+      ],
+      "Less details": [
+        "Mai puține detalii"
+      ],
+      "Meeting link:": [
+        "Legătură web întâlnire:"
+      ],
+      "More details": [
+        "Mai multe detalii"
+      ]
+    },
     "Group": {
       "Account": [
         "Cont"
@@ -3890,11 +3943,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "S-a găsit o sugestie, folosiți tastatura pentru a naviga.",
-        "S-au găsit ${ items.length } sugestii, folosiți tastatura pentru a naviga.",
-        "S-au găsit ${ items.length } de sugestii, folosiți tastatura pentru a naviga."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Utilizați tastele sus și jos pentru a accesa și răsfoi sugestiile după introducere. Apăsați «Enter» pentru a confirma alegerea sau «Escape» pentru a închide caseta cu sugestii."
       ]
@@ -5117,6 +5165,9 @@
       "You are about to open another browser tab and visit:": [
         "Se va deschide o nouă filă în navigator cu adresa:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Urmează să deschideți navigatorul web implicit și să vizitați:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "V-ați conectat cu ${ user.Name } (${ user.Email })."
       ],
@@ -6323,8 +6374,14 @@
       "Get started for ${ price }": [
         "Începeți cu ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Începând de la ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Modificare"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Treceți la ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6701,6 +6758,9 @@
       "Secure Core servers": [
         "Servere Secure Core"
       ],
+      "Secure link sharing": [
+        "Partajare securizată legături web"
+      ],
       "See team's availability": [
         "Vedeți disponibilitatea echipei"
       ],
@@ -6790,6 +6850,11 @@
         "Până la ${ n } utilizatori",
         "Până la ${ n } utilizatori"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Maxim ${ n } utilizator (${ adminsText }, ${ usersText })",
+        "Maxim ${ n } utilizatori (${ adminsText }, ${ usersText })",
+        "Maxim ${ n } de utilizatori (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Până la ${ totalStorageSize } spațiu"
       ],
@@ -6809,6 +6874,18 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Scanăm internetul ascuns pentru a verifica dacă adresele sau aliasurile ${ BRAND_NAME } v-au fost divulgate și vă avertizăm imediat dacă găsim ceva."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } administrator",
+        "${ admins } administratori",
+        "${ admins } de administratori"
+      ],
+      "${ users } user": [
+        "${ users } utilizator",
+        "${ users } utilizatori",
+        "${ users } de utilizatori"
       ]
     },
     "new_plans: feature info": {
@@ -6885,6 +6962,9 @@
       "Protect sensitive business information and collaborate securely.": [
         "Protejați informațiile confidențiale de afaceri și colaborați în siguranță."
       ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Protejați-vă familia cu toate funcțiile premium din ${ PASS_SHORT_APP_NAME } Plus pentru 6 utilizatori."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protejați-vă confidențialitatea familiei cu toate serviciile ${ BRAND_NAME } combinate."
       ],
@@ -6919,6 +6999,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Luați Mail Plus cu ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Începând de la ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7091,6 +7174,9 @@
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
       ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Partajați în siguranță articole individuale cu oricine (chiar dacă nu utilizează ${ PASS_APP_NAME })"
+      ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Stocați în siguranță detaliile contactelor personale, cum ar fi numărul de telefon, adresa, ziua de naștere și notele personale. Criptarea cu acces zero vă garantează că nici chiar ${ BRAND_NAME } nu le poate accesa."
       ],
@@ -7219,6 +7305,9 @@
       ],
       "Link copied to clipboard": [
         "Legătura a fost copiată în memorie."
+      ],
+      "Passcode copied to clipboard": [
+        "Codul de acces s-a copiat în memorie."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -7546,6 +7635,36 @@
         "Partajare securizată seif (${ n } seif) și legături web",
         "Partajare securizată seifuri (${ n } seifuri) și legături web",
         "Partajare securizată seifuri (${ n } de seifuri) și legături web"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } cont de utilizator",
+        "${ n } conturi de utilizator",
+        "${ n } de conturi de utilizator"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Panou de administrare pentru a gestiona utilizatorii și abonamentul"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Toate funcțiile premium. Șase utilizatori. Un singur abonament ușor."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Facturat anual cu ${ yearlyPrice }. Economisiți ${ yearlySavedPrice } cu ${ passFamilyPlanName } (față de 6 abonamente individuale ${ passPlusPlanName })."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Ofertă exclusivă disponibilă numai pentru suporterii timpurii ai ${ PASS_APP_NAME }."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Luați-l cu ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Vă prezentăm ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Ofertă limitată."
       ]
     },
     "passwordless": {
@@ -7926,6 +8045,11 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(va deschide ${ PASS_APP_NAME })"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Afișare evenimente"
       ]
     },
     "Security Center - Info": {
@@ -8337,6 +8461,9 @@
       ],
       "/ month": [
         "/ lună"
+      ],
+      "/month": [
+        "/lună"
       ],
       "1 year": [
         "1 an"
@@ -9601,6 +9728,9 @@
       "Hide time zones for event start and end times": [
         "Ascundere fusuri orare pentru orele de început și de sfârșit"
       ],
+      "High security for your account": [
+        "Securitate maximă pentru cont"
+      ],
       "Human verification": [
         "Verificare persoană"
       ],
@@ -9650,6 +9780,9 @@
       ],
       "Notes": [
         "Notițe"
+      ],
+      "One email, many recipients": [
+        "Un singur cont, mai mulți destinatari"
       ],
       "Open actions dropdown": [
         "Deschidere meniu acțiuni"
@@ -10458,6 +10591,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Anual, ${ untilString }"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Alăturați-vă la întâlnirea de pe Zoom"
+      ],
+      "Meeting ID:": [
+        "ID întâlnire:"
+      ],
+      "Passcode: ${ password }": [
+        "Co de acces: ${ password }"
       ]
     }
   }

@@ -384,10 +384,10 @@
       "Get link": [
         "Hanki linkki"
       ],
-      "Get Started": [
+      "Get started": [
         "Aloita"
       ],
-      "Get started": [
+      "Get Started": [
         "Aloita"
       ],
       "Get verification code": [
@@ -561,10 +561,10 @@
       "Not now": [
         "Ei nyt"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -2475,7 +2475,7 @@
     },
     "duoplan2024: SubTitle": {
       "All of ${ BRAND_NAME }, for 2.": [
-        "Kaikki ${ BRAND_NAME }:n tarjoama, kahdelle."
+        "Kaikki ${ BRAND_NAME }in tarjoama, kahdelle."
       ],
       "Double your storage": [
         "Tuplaa tallennustilasi"
@@ -3247,7 +3247,7 @@
         "Sivua ei voitu ladata. Päivitä sivu tai tarkista Internet-yhteytesi."
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Kun lisäsalasana on käytössä, aliaksia voidaan hallita vain ${ PASS_APP_NAME }:ssa."
+        "Kun lisäsalasana on käytössä, aliaksia voidaan hallita vain ${ PASS_APP_NAME }issa."
       ],
       "You may also refresh the page or try again later.": [
         "Voit myös päivittää sivun tai yrittää myöhemmin uudelleen."
@@ -3362,8 +3362,14 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-ryhmää"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Omia verkkotunnuksia käyttävät tilit eivät voi liittyä perhetilaukseen."
+      ],
       "customer support": [
         "asiakaspalveluun"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Perhetilaukset eivät tällä hetkellä tue ulkoisia tilejä. Luo ${ BRAND_NAME } -osoite ennen liittymistä. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jos hyväksyt kutsun, siirrämme sinut nykyisestä tilauksestasi ja hyvitämme tilillesi jäljellä olevan saldon."
@@ -3371,8 +3377,14 @@
       "Invited by: ${ inviteEmail }": [
         "Kutsunut: ${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Elinikäiset tilit eivät voi liittyä perhetilaukseen."
+      ],
       "Manage addresses.": [
         "Hallitse osoitteita."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Jäseniä sisältävän tilauksen omistajat eivät voi liittyä toiseen perhetilaukseen."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Valitettavasti et voi tällä hetkellä vaihtaa tilaustasi."
@@ -3394,6 +3406,12 @@
       ],
       "You have successfully joined the family group": [
         "Olet liittynyt perheryhmään"
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Sinulla on maksamattomia laskuja. Maksa ne ennen perhetilaukseen liittymistä."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Sinut on kutsuttu yhdistämään ${ BRAND_NAME } -tilisi tähän perhetilaukseen ja nauttimaan kaikista ${ brandOrAppName } -premium-ominaisuuksista yhdessä."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Tililläsi on enemmän sähköpostiosoitteita kuin mitä sinulla on käytettävissäsi tässä tilauksessa. ${ addressSettingsLink }"
@@ -3565,10 +3583,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Löydettiin ${ items.length } ehdotus, käytä siirtymiseen näppäimistöä.",
-        "Löydettiin ${ items.length } ehdotusta, käytä siirtymiseen näppäimistöä."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Selaa kirjoituksen jälkeen näytettäviä ehdotuksia Ylös-/Alas-näppäimillä ja vahvista valinta Enter-näppäimellä tai sulje ehdotukset Esc-näppäimellä."
       ]
@@ -3662,7 +3676,7 @@
     },
     "Import contact error": {
       "Contact ${ contactId }: ": [
-        "Yhteystieto ${ contactId }: "
+        "Ota yhteyttä ${ contactId }: "
       ]
     },
     "Import contact groups info": {
@@ -3942,6 +3956,10 @@
       "${ groupCounts } group found": [
         "${ groupCounts } ryhmä löytyi",
         "${ groupCounts } ryhmää löytyi"
+      ],
+      "${ invitations.length } pending invitation": [
+        "${ invitations.length } odottava kutsu",
+        "${ invitations.length } odottavaa kutsua"
       ],
       "${ nbFile } encrypted file": [
         "${ nbFile } salattu tiedosto",
@@ -6745,7 +6763,7 @@
         "${ size } tallennustilaa"
       ],
       "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - ${ DRIVE_APP_NAME }:lle"
+        "${ textType } - ${ DRIVE_APP_NAME }lle"
       ],
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Kaikille ${ BRAND_NAME }-palveluille"
@@ -6986,6 +7004,9 @@
       "Secure Core servers": [
         "Secure Core -palvelimet"
       ],
+      "Secure link sharing": [
+        "Suojattu linkkien jako"
+      ],
       "See team's availability": [
         "Katso tiimin saatavuus"
       ],
@@ -7074,6 +7095,10 @@
         "Enintään ${ n } käyttäjää",
         "Enintään ${ n } käyttäjää"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Enintään ${ n } käyttäjä (${ adminsText }, ${ usersText })",
+        "Enintään ${ n } käyttäjää (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Jopa ${ totalStorageSize } tallennustilaa"
       ],
@@ -7092,6 +7117,16 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skannaamme pimeää verkkoa tarkistaaksemme, onko ${ BRAND_NAME } -osoitteesi tai -aliaksesi vuotaneet ja hälytämme välittömästi, jos löydämme jotain."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } ylläpitäjä",
+        "${ admins }ylläpitäjää"
+      ],
+      "${ users } user": [
+        "${ users } käyttäjä",
+        "${ users } käyttäjää"
       ]
     },
     "new_plans: feature info": {
@@ -7167,6 +7202,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Suojaa arkaluonteiset yritystiedot ja yhteistyöskentele turvallisesti."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Suojaa perheesi kaikilla ${ PASS_SHORT_APP_NAME } Plussan premium-ominaisuuksista kuudelle käyttäjälle."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Suojaa perheesi yksityisyyttä kaikkien ${ BRAND_NAME } -palveluiden yhdistelmällä."
@@ -7341,7 +7379,7 @@
         "Mukauta sähköpostiallekirjoitustasi mm. logoilla, kuvilla, sosiaalisen median kuvakkeilla sekä yhteystietolinkeillä"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "${ BRAND_NAME }:in asiakaspalvelu tarjoaa puhelintukea eurooppalaisina toimistoaikoina asiakkaille, joilla on vähintään 20 käyttäjää"
+        "${ BRAND_NAME }in asiakaspalvelu tarjoaa puhelintukea eurooppalaisina toimistoaikoina asiakkaille, joilla on vähintään 20 käyttäjää"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Estää ${ BRAND_NAME }ilta ja ulkopuolisilta tahoilta avaamasta viestejä. Viestejä voivat lukea vain niiden lähettäjät ja tarkoitetut vastaanottajat."
@@ -7375,6 +7413,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää automaattisen synkronoinnin, salatun tiedostojen jakamisen ja paljon muuta."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Jaa yksittäisiä kohteita turvallisesti kenelle tahansa (vaikkeivat he käyttäisikään ${ PASS_APP_NAME }ia)"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Säilytä yhteystietojesi puhelinnumeroiden, osoitteiden, syntymäpäivien ja henkilökohtaisten muistiinpanojen kaltaiset tiedot turvallisesti. Zero Access -salaus varmistaa, ettei edes ${ BRAND_NAME } näe niitä."
@@ -7773,9 +7814,6 @@
       "Continue": [
         "Jatka"
       ],
-      "Create new document": [
-        "Luo uusi dokumentti"
-      ],
       "Get started": [
         "Aloita"
       ],
@@ -7806,9 +7844,6 @@
       "Start using ${ DRIVE_APP_NAME }": [
         "Aloita ${ DRIVE_APP_NAME }n käyttö"
       ],
-      "Try it later": [
-        "Kokeile myöhemmin"
-      ],
       "Try the app": [
         "Kokeile sovellusta"
       ],
@@ -7835,11 +7870,8 @@
       "Collaborate on documents": [
         "Yhteistyöskentele dokumenttien parissa"
       ],
-      "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
-        "Luo ja tee yhteistyötä dokumenttien parissa. Se kaikki suojataan päästä päähän -salauksella."
-      ],
       "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
-        "Tykkäätkö ${ DRIVE_APP_NAME }:stä vaaleassa vai tummassa tilassa? Valitse väri, joka inspiroi sinua eniten."
+        "Tykkäätkö ${ DRIVE_APP_NAME }stä vaaleassa vai tummassa tilassa? Valitse väri, joka inspiroi sinua eniten."
       ],
       "Drag and drop your files here": [
         "Raahaa ja pudota tiedostosi tähän"
@@ -7852,6 +7884,12 @@
       ],
       "Faster uploads for large or multiple files": [
         "Nopeampi lähetys suurille tai useammille tiedostoille"
+      ],
+      "Final approval in progress": [
+        "Lopullinen hyväksyntä käynnissä"
+      ],
+      "Final approval pending": [
+        "Lopullista hyväksyntää odotetaan"
       ],
       "Free up hard drive space on your computer": [
         "Vapauta tietokoneesi levytilaa"
@@ -7873,9 +7911,6 @@
       ],
       "Hang tight": [
         "Malta hetki"
-      ],
-      "Introducing ${ DOCS_APP_NAME }": [
-        "Esittelyssä ${ DOCS_APP_NAME }"
       ],
       "Invitation accepted": [
         "Kutsu hyväksyttiin"
@@ -8014,7 +8049,7 @@
         "Turvallisten holvien ja linkkien jakaminen"
       ],
       "Secure vault sharing": [
-        "Turvallinen holvien jako"
+        "Suojattu holvien jako"
       ],
       "Secure vault sharing (${ n } vault)": [
         "Turvallisten holvien jakaminen (${ n } holvi)",
@@ -8023,6 +8058,32 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Turvallisten holvien (${ n } holvi) ja linkkien jakaminen",
         "Turvallisten holvien (${ n } holvia) ja linkkien jakaminen"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } käyttäjätili",
+        "${ n } käyttäjätiliä"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Ylläpitopaneeli käyttäjien ja tilauksen hallintaan"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Kaikki premium-ominaisuudet. Kuusi käyttäjää. Yksi helppo tilaus."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Erikoistarjous vain ${ PASS_APP_NAME }in varhaisille tukijoille."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Hanki se hintaan ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Esittelyssä ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Rajoitetun ajan tarjous."
       ]
     },
     "passwordless": {
@@ -8388,6 +8449,11 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(avaa ${ PASS_APP_NAME }in)"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Tarkastele tapahtumia"
       ]
     },
     "Security Center - Info": {
@@ -10239,6 +10305,9 @@
       ],
       "What would you like to import?": [
         "Mitä haluat tuoda?"
+      ],
+      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Olet kieltäytymästä jaetun kohteen kutsusta. Et voi käyttää sitä uudelleen, ennen kuin omistaja jakaa sen sinulle."
       ],
       "You have inaccessible files": [
         "Sinulla on tiedostoja, joita ei voida käyttää"

@@ -269,6 +269,9 @@
       "Import": [
         "インポート"
       ],
+      "Import alias": [
+        "エイリアスをインポート"
+      ],
       "Import your passwords": [
         "パスワードをインポートする"
       ],
@@ -1636,9 +1639,6 @@
       "Thank you, the problem has been reported": [
         "ありがとう、問題は報告されました"
       ],
-      "The autofill dropdown will automatically open when you click or focus on the field.": [
-        "フィールドをクリックするかフィールドにフォーカスすると、自動入力ドロップダウンが自動的に開きます。"
-      ],
       "The export will only contain vaults that you own.": [
         "エクスポートには、自分が所有するボールトのみが含まれます。"
       ],
@@ -1762,11 +1762,11 @@
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "${ BRAND_NAME } のパスワードを使用して ${ PASS_SHORT_APP_NAME } にオフラインでアクセスできるようになりました"
       ],
-      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "${ PASS_APP_NAME } アイコンをクリックすると、資格情報をすばやく自動入力できます。"
-      ],
       "You cannot change the mailboxes for this alias.": [
         "このエイリアスのメールボックスを変更することはできません。"
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "SimpleLogin に存在する ${ aliasCount } 個のエイリアスが、 ${ PASS_APP_NAME }には見つかりませんでした。インポートしますか？"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "これらおよびその他のプレミアム機能をお試しいただける期間は、残り ${ daysRemaining } 日間です。"
@@ -1934,9 +1934,6 @@
       ],
       "Autofill 2FA": [
         "2要素認証自動入力"
-      ],
-      "Automatically open autofill when a login field is focused": [
-        "ログインフィールドがフォーカスされているときに自動入力を自動的に開く"
       ],
       "Autosave": [
         "自動保存"
@@ -2714,6 +2711,9 @@
       ],
       "Import to vault(s)": [
         "一つ(複数)のフォルダーへのインポート"
+      ],
+      "Import your aliases from SimpleLogin": [
+        "SimpleLoginからエイリアスをインポート"
       ],
       "Last autofill": [
         "最後の自動入力"

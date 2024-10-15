@@ -221,7 +221,7 @@
         "Wachtwoord genereren"
       ],
       "Generated passwords": [
-        "Gegenereerd wachtwoorden"
+        "Gegenereerde wachtwoorden"
       ],
       "Get ${ PASS_APP_NAME }": [
         "Kies ${ PASS_APP_NAME }"
@@ -249,6 +249,10 @@
       ],
       "Import": [
         "Importeren"
+      ],
+      "Import alias": [
+        "Importeer alias",
+        "Importeer aliassen"
       ],
       "Importing": [
         "Importeren"
@@ -334,6 +338,9 @@
       "Multiple select": [
         "Meervoudige selectie"
       ],
+      "No expired links": [
+        "Geen verlopen koppelingen"
+      ],
       "OK": [
         "OK"
       ],
@@ -414,6 +421,9 @@
       ],
       "Saving": [
         "Bezig met opslaan"
+      ],
+      "Secure links": [
+        "Beveiligde links"
       ],
       "See all": [
         "Alles weergeven"
@@ -934,6 +944,17 @@
         "Er is iets fout gegaan"
       ]
     },
+    "FamilyPlanPromo2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Alle premium-functionaliteiten. 6 gebruikers. 1 eenvoudig abonnement."
+      ],
+      "Get it for ${ price }/month": [
+        "Neem het voor ${ price }/maand"
+      ],
+      "Introducing ${ planNameJSX }": [
+        "Ontdek ${ planNameJSX }"
+      ]
+    },
     "Feature": {
       "Dark Web Monitoring": [
         "Dark Web Monitoring"
@@ -1216,6 +1237,12 @@
       "Expires in ${ remainingTime }": [
         "Verloopt over ${ remainingTime }"
       ],
+      "Extra password successfuly created": [
+        "Extra wachtwoord aangemaakt"
+      ],
+      "Extra password successfuly removed": [
+        "Extra wachtwoord verwijderd"
+      ],
       "Fill in the CSV with your data": [
         "Vul de CSV in met uw gegevens"
       ],
@@ -1372,11 +1399,17 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Bij het verplaatsen van een item naar een andere kluis worden de geschiedenis en alle beveiligde koppelingen gewist."
+      ],
       "Moving an item to another vault will erase its history.": [
         "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
+      ],
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Bij het verplaatsen van items naar een andere kluis worden de geschiedenis en alle beveiligde koppelingen gewist."
       ],
       "Moving items to another vault will erase their history.": [
         "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
@@ -1411,8 +1444,11 @@
       "Offline support successfully disabled": [
         "Offline ondersteuning succesvol uitgeschakeld"
       ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "Online-toegang tot ${ PASS_APP_NAME } vereist een PIN-code. U wordt uitgelogd na 3 mislukte pogingen."
+      ],
       "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Met onze meldingen nemen we het zekere voor het onzekere. Als je de geschonden informatie niet herkent, kun je deze melding veilig negeren."
+        "Met onze meldingen nemen we het zekere voor het onzekere. Als u de geschonden informatie niet herkent, kunt u deze melding veilig negeren."
       ],
       "Owner": [
         "Eigenaar"
@@ -1454,8 +1490,14 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bevestig uw ${ BRAND_NAME }-wachtwoord om uw ${ PASS_APP_NAME }-gegevens te exporteren"
       ],
+      "Please confirm your extra password": [
+        "Bevestig uw extra wachtwoord"
+      ],
       "Please confirm your password": [
         "Bevestig uw wachtwoord"
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "Bevestig uw wachtwoord om uw huidige vergrendeling te deactiveren."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Bevestig uw PIN-code om uw huidige vergrendeling te deactiveren."
@@ -1584,6 +1626,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Deze export wordt niet versleuteld en iedereen met toegang tot uw geëxporteerde bestand kan uw wachtwoorden zien. Verwijder het voor de veiligheid nadat u klaar bent met het gebruik ervan."
       ],
+      "This option is currently not available on your device.": [
+        "Deze optie is momenteel niet beschikbaar op uw apparaat."
+      ],
       "This setting is disabled on the organization level": [
         "Deze instelling is uitgeschakeld op organisatieniveau"
       ],
@@ -1608,8 +1653,14 @@
       "Unlimited hide-my-email aliases": [
         "Onbeperkt aantal hide-my-email-aliassen"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Ontgrendel ${ PASS_SHORT_APP_NAME } met biometrische gegevens"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Ontgrendel ${ PASS_SHORT_APP_NAME } met uw ${ BRAND_NAME }-wachtwoord"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "Ontgrendel ${ PASS_SHORT_APP_NAME } met uw extra wachtwoord"
       ],
       "Unpinning item...": [
         "Item losmaken..."
@@ -1653,6 +1704,10 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "We hebben moeite met het synchroniseren van gegevens naar uw lokale opslag. Zorg ervoor dat u voldoende schijfruimte heeft voor ${ PASS_SHORT_APP_NAME } om soepel te werken."
       ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "We hebben gedetecteerd dat u ${ aliasCount } alias hebt die aanwezig is in SimpleLogin, maar ontbreekt in ${ PASS_APP_NAME }. Wilt u deze importeren?",
+        "We hebben gedetecteerd dat u ${ aliasCount } aliassen hebt die aanwezig zijn in SimpleLogin, maar ontbreken in ${ PASS_APP_NAME }. Wilt u deze importeren?"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "We hebben een verificatiecode gestuurd naar ${ email }. Voer deze hieronder in:"
       ],
@@ -1664,6 +1719,10 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "U kan het postvak IN voor deze alias niet veranderen."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "U hebt ${ aliasCount } alias die aanwezig is in SimpleLogin, maar ontbreekt in ${ PASS_APP_NAME }. Wilt u deze importeren?",
+        "U hebt ${ aliasCount } aliassen die aanwezig zijn in SimpleLogin, maar ontbreken in ${ PASS_APP_NAME }. Wilt u deze importeren?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "U hebt nog ${ daysRemaining } dag over om deze en andere premium kenmerken te proberen.",
@@ -1716,6 +1775,10 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } alias",
+        "${ aliasCount } aliassen"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } teken",
         "${ config.options.length } tekens"
@@ -1790,6 +1853,9 @@
       ],
       "Account": [
         "Account"
+      ],
+      "Add section": [
+        "Sectie toevoegen"
       ],
       "Address details": [
         "Adresgegevens"
@@ -1905,6 +1971,9 @@
       "Domain": [
         "Domeinnaam"
       ],
+      "Don't remind me again": [
+        "Niet opnieuw herinneren"
+      ],
       "Download logs": [
         "Logboeken downloaden"
       ],
@@ -1929,6 +1998,9 @@
       "Enable offline access": [
         "Offline toegang inschakelen"
       ],
+      "Enter email or username": [
+        "Voer e-mail of gebruikersnaam in"
+      ],
       "Expiration date": [
         "Vervaldatum"
       ],
@@ -1943,6 +2015,9 @@
       ],
       "Extra password": [
         "Extra wachtwoord"
+      ],
+      "Facebook account": [
+        "Facebook-account"
       ],
       "Field name": [
         "Veldnaam"
@@ -2055,6 +2130,9 @@
       "License number": [
         "Licentienummer"
       ],
+      "LinkedIn account": [
+        "LinkedIn-account"
+      ],
       "Login": [
         "Inloggen"
       ],
@@ -2166,11 +2244,17 @@
       "Prefix": [
         "Prefix"
       ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "Bescherm ${ PASS_APP_NAME } met een extra wachtwoord"
+      ],
       "Rate us": [
         "Beoordeel ons"
       ],
       "Recent": [
         "Recent"
+      ],
+      "Reddit handle": [
+        "Reddit-gebruikersnaam"
       ],
       "Remove link": [
         "Link verwijderen"
@@ -2240,6 +2324,13 @@
       ],
       "Text": [
         "Tekst"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "De kluis van het item wordt momenteel gedeeld met ${ targetMembers } persoon",
+        "De kluis van het item wordt momenteel gedeeld met ${ targetMembers } personen"
+      ],
+      "The URL has been copied to the clipboard": [
+        "De URL is naar het klembord gekopieerd."
       ],
       "Title": [
         "Titel"
@@ -2749,6 +2840,9 @@
       "Switch to": [
         "Wissel naar"
       ],
+      "Sync alias": [
+        "Synchroniseer alias"
+      ],
       "Transfer ownership": [
         "Eigendom overdragen"
       ],
@@ -2833,6 +2927,9 @@
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Al uw weggegooide items worden permanent verwijderd. U kunt deze actie niet ongedaan maken."
+      ],
+      "An error occurred while exporting your data": [
+        "Er is een fout opgetreden bij het exporteren van uw gegevens"
       ],
       "At least one email address is required": [
         "Ten minste één e-mailadres is vereist"

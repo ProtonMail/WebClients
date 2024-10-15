@@ -2868,12 +2868,6 @@
       "Add": [
         "Додати"
       ],
-      "Add (${ numberOfAddedServers })": [
-        "Додати (${ numberOfAddedServers })",
-        "Додати (${ numberOfAddedServers })",
-        "Додати (${ numberOfAddedServers })",
-        "Додати (${ numberOfAddedServers })"
-      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "З'єднання для ${ plusVpnConnections } пристрою",
         "З'єднання для ${ plusVpnConnections } пристроїв",
@@ -3160,9 +3154,6 @@
       "Checkout": [
         "Оплата"
       ],
-      "Country": [
-        "Країна"
-      ],
       "Create your account": [
         "Створіть обліковий запис"
       ],
@@ -3260,12 +3251,6 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Додайте цей запис на панелі керування реєстратора доменних імен свого домену"
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Знайдено ${ items.length } пропозицію. Використовуйте клавіатуру для вибору.",
-        "Знайдено ${ items.length } пропозиції. Використовуйте клавіатуру для вибору.",
-        "Знайдено ${ items.length } пропозицій. Використовуйте клавіатуру для вибору.",
-        "Знайдено ${ items.length } пропозицій. Використовуйте клавіатуру для вибору."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Використовуйте клавіші Вгору і Вниз для доступу до пропозицій перегляду після введення. Натисніть Enter для підтвердження свого вибору, або Escape для закриття пропозицій."
@@ -4102,9 +4087,6 @@
       "Number of dedicated servers in the organization": [
         "Кількість виділених серверів у організації"
       ],
-      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "Кількість виділених серверів, які ви намагаєтеся призначити (${ addedCount }), перевищує кількість доступних у вашому плані (${ remainingCount }), оскільки ви володієте ${ ownedCount } і вже використовуєте ${ usedCount }."
-      ],
       "of": [
         "з"
       ],
@@ -4341,9 +4323,6 @@
       ],
       "Single sign-on removed": [
         "Єдиний вхід вилучено"
-      ],
-      "Some of your available servers can only be used in specific countries due to recent removals": [
-        "Деякі з ваших доступних серверів можна використовувати лише в певних країнах через нещодавнє видалення"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Вкажіть домен, якому дозволено автентифікацію з SAML SSO."
@@ -4654,9 +4633,6 @@
       "Visa Secure logo": [
         "Логотип Visa Secure"
       ],
-      "Want servers in other countries?": [
-        "Потрібні сервери в інших країнах?"
-      ],
       "Warning:": [
         "Попередження:"
       ],
@@ -4795,9 +4771,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Ви можете змінити це один раз щоб переконатися у правильності адреси електронної пошти для підтвердження."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Ви можете негайно розблокувати наведені вище налаштування, додавши ${ specificCountryCount } до кількості IP-адрес у вашому тарифному плані, або звернутися до нас по індивідуальні рішення."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календар. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
         "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарі. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
@@ -4821,12 +4794,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Ви можете використовувати такі облікові дані для з'єднання з сервером ${ VPN_APP_NAME } через сторонні програми з відкритим кодом, наприклад, Tunnelblick для macOS чи OpenVPN для GNU/Linux."
-      ],
-      "You have ${ availableCount } dedicated server available.": [
-        "Вам доступний ${ availableCount } виділений сервер.",
-        "Вам доступні ${ availableCount } виділені сервери.",
-        "Вам доступно ${ availableCount } виділених серверів.",
-        "Вам доступно ${ availableCount } виділених серверів."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "У вас є пробний період передплати ${ planTitle }. Якщо ви бажаєте продовжити передплату після пробного періоду, будь ласка, додайте спосіб оплати."
@@ -5611,9 +5578,6 @@
       ],
       "Common sign up issues": [
         "Поширені проблеми з реєстрацією"
-      ],
-      "Contact us": [
-        "Зв'яжіться з нами"
       ],
       "Create account": [
         "Зареєструватися"
@@ -9138,9 +9102,6 @@
       ],
       "Add pm.me subdomain": [
         "Додати піддомен «pm.me»"
-      ],
-      "Add servers": [
-        "Додати сервери"
       ],
       "Add to allow list": [
         "Додати до списку дозволених"

@@ -390,10 +390,10 @@
       "Get link": [
         "Атрымаць спасылку"
       ],
-      "Get Started": [
+      "Get started": [
         "Пачаць працу"
       ],
-      "Get started": [
+      "Get Started": [
         "Пачаць працу"
       ],
       "Get verification code": [
@@ -567,10 +567,10 @@
       "Not now": [
         "Не зараз"
       ],
-      "Ok": [
+      "OK": [
         "Добра"
       ],
-      "OK": [
+      "Ok": [
         "Добра"
       ],
       "Open": [
@@ -3408,8 +3408,14 @@
       "${ BRAND_NAME } groups": [
         "Групы ${ BRAND_NAME }"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Уліковыя запісы з карыстальніцкімі даменамі нельга далучыць да сямейнага тарыфнага плана."
+      ],
       "customer support": [
         "падтрымка кліентаў"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Сямейныя тарыфныя планы ў цяперашні час не падтрымліваюць знешнія ўліковыя запісы. Перад далучэннем стварыце адрас ${ BRAND_NAME }. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Калі вы прыміце запрашэнне, то ваш тарыфны план будзе зменены. Рэшта балансу вашай падпіскі вернецца на ваш рахунак."
@@ -3417,8 +3423,14 @@
       "Invited by: ${ inviteEmail }": [
         "Запрашэнне адпраўлена: ${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Пажыццёвыя ўліковыя запісы нельга далучыць да сямейнага тарыфнага плана."
+      ],
       "Manage addresses.": [
         "Кіраванне адрасамі."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Уладальнікі тарыфнага плана з удзельнікамі не могуць далучацца да іншых сямейных тарыфных планаў."
       ],
       "Sorry, you can't switch plans at this time.": [
         "У дадзены момант змена тарыфнага плана недаступна."
@@ -3440,6 +3452,12 @@
       ],
       "You have successfully joined the family group": [
         "Вы паспяхова далучыліся да сямейнай групы"
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "У вас ёсць неаплачаныя рахункі. Аплаціце іх перад тым, як далучыцца да сямейнага тарыфнага плана."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Вас запрашаюць далучыць свой уліковы запіс ${ BRAND_NAME } да гэтага сямейнага тарыфнага плана, каб разам выкарыстоўваць усе прэміяльныя функцыі ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Колькасць адрасоў электроннай пошты перавышае дазволенае значэнне вашага бягучага тарыфнага плана. ${ addressSettingsLink }"
@@ -3623,12 +3641,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Знойдзена ${ items.length } прапанова, выкарыстоўвайце клавіятуру для навігацыі.",
-        "Знойдзены ${ items.length } прапановы, выкарыстоўвайце клавіятуру для навігацыі.",
-        "Знойдзены ${ items.length } прапаноў, выкарыстоўвайце клавіятуру для навігацыі.",
-        "Знойдзены ${ items.length } прапановы, выкарыстоўвайце клавіятуру для навігацыі."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Выкарыстоўвайце клавішы Уверх і Уніз, каб атрымаць доступ і прагледзець прапановы пасля ўводу. Націсніце Enter, каб пацвердзіць свой выбар або Escape, каб закрыць акно прапаноў."
       ]
@@ -4048,6 +4060,12 @@
         "Знойдзены ${ groupCounts } групы",
         "Знойдзены ${ groupCounts } груп",
         "Знойдзены ${ groupCounts } групы"
+      ],
+      "${ invitations.length } pending invitation": [
+        "${ invitations.length } у чаканні запрашэння",
+        "${ invitations.length } у чаканні запрашэнняў",
+        "${ invitations.length } у чаканні запрашэнняў",
+        "${ invitations.length } у чаканні запрашэнняў"
       ],
       "${ nbFile } encrypted file": [
         "${ nbFile } зашыфраваны файл",
@@ -7268,6 +7286,9 @@
       "Secure Core servers": [
         "Серверы Secure Core"
       ],
+      "Secure link sharing": [
+        "Бяспечнае абагульванне спасылкі"
+      ],
       "See team's availability": [
         "Прагляд даступнасці каманды"
       ],
@@ -7358,6 +7379,12 @@
         "Да ${ n } карыстальнікаў",
         "Да ${ n } карыстальнікаў"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Да ${ n } карыстальніка (${ adminsText }, ${ usersText })",
+        "Да ${ n } карыстальнікаў (${ adminsText }, ${ usersText })",
+        "Да ${ n } карыстальнікаў (${ adminsText }, ${ usersText })",
+        "Да ${ n } карыстальнікаў (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Да ${ totalStorageSize } сховішча"
       ],
@@ -7378,6 +7405,20 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Мы сканіруем цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } адміністратар",
+        "${ admins } адміністратары",
+        "${ admins } адміністратараў",
+        "${ admins } адміністратараў"
+      ],
+      "${ users } user": [
+        "${ users } карыстальнік",
+        "${ users } карыстальнікі",
+        "${ users } карыстальнікаў",
+        "${ users } карыстальнікаў"
       ]
     },
     "new_plans: feature info": {
@@ -7453,6 +7494,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Абарона адчувальных звестак бізнесу і бяспечнае супрацоўніцтва."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Абараніце сваю сям'ю з прэміяльнымі функцыямі ${ PASS_SHORT_APP_NAME } Plus для 6 карыстальнікаў."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Абараняйце прыватнасць вашай сям'і з дапамогай усіх сэрвісаў ${ BRAND_NAME } адначасова."
@@ -7663,6 +7707,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, абагульванне зашыфраваных файлаў і іншыя функцыі."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Бяспечнае абагульванне індывідуальных элементаў з любой асобай (у тым ліку з тымі, хто не карыстаецца ${ PASS_APP_NAME })"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Бяспечна захоўвайце кантактныя звесткі, такія як нумары тэлефонаў, адрасы, дні нараджэнні і іншыя асабістыя нататкі. Шыфраванне з нулявым доступам гарантуе, што даныя не будуць даступны нікому, нават супрацоўнікам ${ BRAND_NAME }."
@@ -8097,9 +8144,6 @@
       "Continue": [
         "Працягнуць"
       ],
-      "Create new document": [
-        "Стварыць новы дакумент"
-      ],
       "Get started": [
         "Пачаць працу"
       ],
@@ -8130,9 +8174,6 @@
       "Start using ${ DRIVE_APP_NAME }": [
         "Пачаць выкарыстоўваць ${ DRIVE_APP_NAME }"
       ],
-      "Try it later": [
-        "Паспрабуйце пазней"
-      ],
       "Try the app": [
         "Паспрабаваць праграму"
       ],
@@ -8159,9 +8200,6 @@
       "Collaborate on documents": [
         "Сумесна працуйце над дакументамі"
       ],
-      "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
-        "Стварайце і сумесна працуйце над дакументамі. Усе яны абаронены скразным шыфраваннем."
-      ],
       "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
         "Вы аддаяце перавагу светламу або цёмнаму рэжыму ў ${ DRIVE_APP_NAME }? Выберыце колер, які найбольш вас натхняе."
       ],
@@ -8178,7 +8216,7 @@
         "Хутчэйшае запампоўванне для вялікіх або састаўных файлаў"
       ],
       "Final approval in progress": [
-        "Чакаецца фінальнае зацвярджэнне"
+        "Адбываецца канчатковае зацвярджэнне"
       ],
       "Final approval pending": [
         "Чакаецца фінальнае зацвярджэнне"
@@ -8203,9 +8241,6 @@
       ],
       "Hang tight": [
         "Адну хвіліну"
-      ],
-      "Introducing ${ DOCS_APP_NAME }": [
-        "Прадстаўляем ${ DOCS_APP_NAME }"
       ],
       "Invitation accepted": [
         "Запрашэнне прынята"
@@ -8265,7 +8300,7 @@
         "Запампаваць файл"
       ],
       "Upload your first file": [
-        "Запампуйце ваш першы файл"
+        "Запампуйце свой першы файл"
       ],
       "Work faster, smarter": [
         "Працуйце хутчэй і разумней"
@@ -8362,6 +8397,37 @@
         "Бяспечнае абагульванне сховішча (${ n } сховішчы) і абагульванне спасылкі",
         "Бяспечнае абагульванне сховішча (${ n } сховішчаў) і абагульванне спасылкі",
         "Бяспечнае абагульванне сховішча (${ n } сховішчаў) і абагульванне спасылкі"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } уліковы запіс карыстальніка",
+        "${ n } уліковыя запісы карыстальніка",
+        "${ n } уліковых запісаў карыстальніка",
+        "${ n } уліковых запісаў карыстальніка"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Панэль адміністратара для кіравання карыстальнікамі і падпіскай"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Усе прэміяльныя функцыі. 6 карыстальнікаў. 1 простая падпіска."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Аплачваецца штогод у памеры ${ yearlyPrice }. Эканомія складае ${ yearlySavedPrice } з тарыфным планам ${ passFamilyPlanName } (у параўнанні з 6 асобнымі падпіскамі тарыфнага плана ${ passPlusPlanName })"
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Эксклюзіўная прапанова даступная толькі для першых прыхільнікаў ${ PASS_APP_NAME }"
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Атрымайце яго за ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Прадстаўляем ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Прапанова абмежаваная па часе."
       ]
     },
     "passwordless": {
@@ -8737,6 +8803,11 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(адкрые ${ PASS_APP_NAME })"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Прагляд падзей"
       ]
     },
     "Security Center - Info": {
@@ -10682,6 +10753,9 @@
       ],
       "What would you like to import?": [
         "Што вы хочаце імпартаваць?"
+      ],
+      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Вы збіраецеся адхіліць запрашэнне для абагуленага элемента. Вы не зможаце атрымаць доступ да яго, пакуль уладальнік паўторна не абагуліць яго з вамі."
       ],
       "You have inaccessible files": [
         "Вы маеце недаступныя файлы"

@@ -157,6 +157,9 @@
       "Contact group": [
         "Contactgroep"
       ],
+      "Context menu": [
+        "Contextmenu"
+      ],
       "Continue": [
         "Doorgaan"
       ],
@@ -291,6 +294,9 @@
       "Get verification code": [
         "Krijg verificatie code"
       ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Ga naar ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Go to label": [
         "Ga naar label"
       ],
@@ -350,6 +356,9 @@
       ],
       "Loading verification": [
         "Verificatie laden"
+      ],
+      "Login": [
+        "Inloggen"
       ],
       "Make a copy": [
         "Een kopie maken"
@@ -513,6 +522,9 @@
       "Search countries": [
         "Zoek landen"
       ],
+      "Search docs": [
+        "Documenten zoeken"
+      ],
       "See how": [
         "Zie hoe"
       ],
@@ -549,6 +561,9 @@
       "Sign out": [
         "Uitloggen"
       ],
+      "Sign up": [
+        "Inschrijven"
+      ],
       "Skip verification": [
         "Verificatie overslaan"
       ],
@@ -569,6 +584,9 @@
       ],
       "Switch or add account": [
         "Account toevoegen of wisselen"
+      ],
+      "Take out of trash": [
+        "Haal uit de prullenbak"
       ],
       "Trust": [
         "Vertrouwen"
@@ -605,6 +623,9 @@
       ],
       "Upgrade now": [
         "Nu upgraden"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Upgrade naar ${ BRAND_NAME } Unlimited"
       ],
       "Upload anyway": [
         "Toch uploaden"
@@ -1986,6 +2007,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } beschermt je account met 24/7 monitoring van verdachte activiteiten - inclusief escalatie naar beveiligingsspecialisten."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA voegt een extra beveiligingslaag toe, waardoor onbevoegde toegang wordt voorkomen."
       ],
@@ -2048,6 +2072,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Uw account en dataherstelmethodes zijn ingesteld."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Je hebt al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -2140,6 +2167,9 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Elke 2 jaar gefactureerd aan ${ amountBilled }. Kortingen zijn gebaseerd op de standaard maandelijkse prijs."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "Jaarlijks gefactureerd op ${ amountBilled }. Bespaar ${ amountSave } op 2 individuele ${ BRAND_NAME } Unlimited jaarabonnementen."
       ]
@@ -2332,6 +2362,12 @@
       ],
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Er is een fout opgetreden tijdens het dupliceren van het document. Probeer het opnieuw."
+      ],
+      "An error occurred while attempting to restore the document. Please try again.": [
+        "Er is een fout opgetreden tijdens het converteren van het herstellen. Probeer het opnieuw."
+      ],
+      "An error occurred while attempting to trash the document. Please try again.": [
+        "Er is een fout opgetreden bij het verplaatsen naar de prullenbak. Probeer het opnieuw."
       ],
       "An error occurred while creating a new document. Please try again.": [
         "Er is een fout opgetreden tijdens het aanmaken van een nieuw document. Probeer het opnieuw."
@@ -3023,8 +3059,14 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-groepen"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Accounts met een eigen domein kunnen zich niet aansluiten bij een Family-abonnement."
+      ],
       "customer support": [
         "klantondersteuning"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Family-abonnementen bieden op dit moment geen ondersteuning voor externe accounts. Maak een ${ BRAND_NAME }-adres aan voor u zich hierbij aansluit. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Als u de uitnodiging accepteert, zetten we uw huidige abonnement om en wordt een eventueel resterend saldo teruggestort."
@@ -3032,8 +3074,14 @@
       "Invited by: ${ inviteEmail }": [
         "Uitgenodigd door: ${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Levenslange accounts kunnen niet deelnemen aan een Family-abonnement."
+      ],
       "Manage addresses.": [
         "Beheer adressen."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Eigenaren van een abonnement met leden kunnen zich niet aansluiten bij een ander Family-abonnement."
       ],
       "Sorry, you can't switch plans at this time.": [
         "U kunt op dit moment niet van abonnement wisselen."
@@ -3055,6 +3103,12 @@
       ],
       "You have successfully joined the family group": [
         "U hebt zich succesvol aangesloten bij de familiegroep"
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "U heeft onbetaalde facturen. Betaal deze voordat u zich aansluit bij een Family-abonnement"
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "U bent uitgenodigd om uw ${ BRAND_NAME } account te linken aan dit familieplan en samen te genieten van de premium functies van ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Uw account heeft meer e-mailadressen dan is toegestaan in dit abonnement. ${ addressSettingsLink }"
@@ -3207,10 +3261,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } suggestie gevonden, gebruik het toetsenbord om te navigeren.",
-        "${ items.length } suggesties gevonden, gebruik het toetsenbord om te navigeren."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Gebruik omhoog- en omlaagknoppen om suggesties te openen en te bladeren na invoer. Druk op Enter om uw keuze te bevestigen, of op Escape om het suggestievak te sluiten."
       ]
@@ -3497,6 +3547,12 @@
       ]
     },
     "Info": {
+      "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
+        "\"${ documentTitle }\" is verplaatst naar de prullenbak. Het blijft daar totdat u het herstelt of permanent verwijdert."
+      ],
+      "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
+        "\"${ documentTitle }\" is in de prullenbak en zal daar blijven totdat u het permanent verwijdert."
+      ],
       "${ addressCount } email address": [
         "${ addressCount } e-mailadres",
         "${ addressCount } e-mailadressen"
@@ -3747,6 +3803,9 @@
       "Create public link": [
         "Maak een publieke link"
       ],
+      "Create your end-to-end encrypted document": [
+        "Maak uw end-to-end versleutelde document"
+      ],
       "Creating link to file": [
         "Link naar bestand maken"
       ],
@@ -3782,6 +3841,15 @@
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
+      ],
+      "Display word count": [
+        "Woordenaantal weergeven"
+      ],
+      "Document is in trash": [
+        "Document is in de prullenbak"
+      ],
+      "Document moved to trash": [
+        "Document verplaatst naar prullenbak"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ziet u niets? Denk eraan om het blokkeren van pop-ups uit te schakelen."
@@ -4037,6 +4105,9 @@
         "Maximum ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter",
         "Maximum ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakters"
       ],
+      "Me": [
+        "Ik"
+      ],
       "Medium Priority": [
         "Middelmatige prioriteit"
       ],
@@ -4114,7 +4185,7 @@
         "Grootte van de organisatie"
       ],
       "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Met onze meldingen nemen we het zekere voor het onzekere. Als je de geschonden informatie niet herkent, kun je deze melding veilig negeren."
+        "Met onze meldingen nemen we het zekere voor het onzekere. Als u de geschonden informatie niet herkent, kunt u deze melding veilig negeren."
       ],
       "Owner": [
         "Eigenaar"
@@ -4197,6 +4268,9 @@
       ],
       "Primary": [
         "Primair"
+      ],
+      "Public documents are not yet enabled for your organization.": [
+        "Openbare documenten zijn nog niet ingeschakeld voor uw organisatie."
       ],
       "recommended browser": [
         "aanbevolen browser"
@@ -4329,6 +4403,9 @@
       ],
       "This message will be presented again later": [
         "Dit bericht zal later opnieuw worden gepresenteerd"
+      ],
+      "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
+        "Dit openbare document bestaat mogelijk niet of u hebt geen toestemming om het te bekijken. U kunt de pagina proberen te herladen om te zien of het probleem zich blijft voordoen."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Dit zal de link verwijderen en de toegang tot uw bestand of map voor iedereen met de link verwijderen.",
@@ -4480,6 +4557,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "U staat het punt om een nieuw tabblad te openen en de volgende locatie te bezoeken:"
+      ],
+      "You are about to open your default browser and visit:": [
+        "U staat op het punt uw standaardbrowser te openen om te bezoeken:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "U bent momenteel aangemeld als ${ user.Name } (${ user.Email })."
@@ -6054,6 +6134,10 @@
       "${ admins } admin": [
         "${ admins } beheerder",
         "${ admins } beheerders"
+      ],
+      "${ users } user": [
+        "${ users } gebruiker",
+        "${ users } gebruikers"
       ]
     },
     "new_plans: feature info": {
@@ -6129,6 +6213,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Bescherm gevoelige bedrijfsinformatie en werk veilig samen."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Bescherm uw familie met alle premium-functies van ${ PASS_SHORT_APP_NAME } Plus voor 6 gebruikers."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Bescherm de privacy van uw gezin met alle services van ${ BRAND_NAME } gecombineerd."
@@ -6337,6 +6424,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld delen van bestanden en meer."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Veilig delen van individuele items met wie u wilt (zelfs als ze geen ${ PASS_APP_NAME } gebruiken)."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Sla de gegevens van uw contactpersonen, zoals telefoonnummer, adres, geboortedatum en persoonlijke notities, veilig op. Dankzij zero-access versleuteling heeft zelfs ${ BRAND_NAME } geen toegang tot deze gegevens."
@@ -6720,6 +6810,29 @@
       "${ n } user account": [
         "${ n } gebruikersaccount",
         "${ n } gebruikersaccounts"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Beheerpaneel om gebruikers en abonnement te beheren"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Alle premium functionaliteiten. 6 gebruikers. 1 eenvoudig abonnement."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Jaarlijks gefactureerd aan ${ yearlyPrice }. Spaar ${ yearlySavedPrice } met ${ passFamilyPlanName } (in plaats van 6 individuele ${ passPlusPlanName } abonnementen)"
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Exclusieve aanbieding alleen beschikbaar voor ${ PASS_APP_NAME } vroege supporters."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Neem het voor ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Ontdek ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Tijdelijk aanbieding."
       ]
     },
     "passwordless": {
@@ -7067,6 +7180,11 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(${ PASS_APP_NAME } zal openen)"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Bekijk gebeurtenissen"
       ]
     },
     "Security Center - Info": {
@@ -8278,6 +8396,9 @@
       ],
       "Offline": [
         "Offline"
+      ],
+      "One email, many recipients": [
+        "Één e-mail, veel ontvangers"
       ],
       "Open actions dropdown": [
         "Open dropdown-menu voor acties"

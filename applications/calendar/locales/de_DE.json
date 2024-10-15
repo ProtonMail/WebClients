@@ -482,11 +482,11 @@
       "Not now": [
         "Nicht jetzt"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
@@ -721,6 +721,9 @@
       ],
       "Upgrade now": [
         "Jetzt upgraden"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Upgrade auf ${ BRAND_NAME } Unlimitiert"
       ],
       "Upload picture": [
         "Bild hochladen"
@@ -2448,6 +2451,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } schützt dein Konto mit spezieller 24/7-Überwachung verdächtiger Aktivitäten - einschließlich der Eskalation zu Sicherheitsspezialisten."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA fügt eine zusätzliche Sicherheitsebene hinzu, die unbefugten Zugriff verhindert."
       ],
@@ -2484,6 +2490,9 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kontakte werden zusammengeführt… Dies kann einige Minuten dauern. Wenn der Vorgang abgeschlossen ist, kannst du diese Meldung schließen."
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Spare Zeit, indem du mit Kontaktgruppen E-Mails an alle auf einmal schickst. Schalte diese und andere Premium-Funktionen frei, wenn du ein Upgrade machst."
+      ],
       "Set a data recovery method to prevent data loss.": [
         "Lege eine Methode zur Datenwiederherstellung fest, um Datenverluste zu vermeiden."
       ],
@@ -2505,6 +2514,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Durch Ziehen kannst du die Zusammenführungspriorität zwischen den Kontakten festlegen. Deaktiviere die Kontakte, die du nicht zusammenführen möchtest."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Mit Kontaktgruppen kannst du mit einem Klick E-Mails an alle Mitglieder der Gruppe senden."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kannst Termine im iCal-Format (ICS-Datei) importieren. Die Datei darf die max. Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und bis zu ${ MAX_IMPORT_EVENTS_STRING } Termine enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf."
       ],
@@ -2516,6 +2528,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Dein Konto und die Methoden zur Datenwiederherstellung sind festgelegt."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
       ]
     },
     "description": {
@@ -3856,10 +3871,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } Vorschlag gefunden. Verwende die Tastatur zum Navigieren.",
-        "${ items.length } Vorschläge gefunden. Verwende die Tastatur zum Navigieren."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Verwende die Pfeiltasten hoch und runter, um die Vorschläge nach der Eingabe aufzurufen und durchzusehen. Bestätige deine Auswahl mit der Eingabetaste oder drücke die Escape-Taste, um das Vorschlagsfeld zu schließen."
       ]
@@ -4387,6 +4398,9 @@
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt der Gruppe ${ contactGroupName } zugewiesen."
+      ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Kontakt von Gruppe ${ contactGroupName } entfernt"
       ],
       "Copy the link to clipboard": [
         "Link in die Zwischenablage kopieren"
@@ -5046,6 +5060,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Es wird nun ein neuer Tab im Browser geöffnet und folgende Adresse aufgerufen:"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Du bist dabei, deinen Standardbrowser zu öffnen und zu besuchen:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du bist derzeit als „${ user.Name }“ (${ user.Email }) angemeldet."
@@ -9426,6 +9443,9 @@
       "Hide time zones for event start and end times": [
         "Zeitzonen für Beginn und Ende des Termins ausblenden"
       ],
+      "High security for your account": [
+        "Hochsicherheit für dein Konto"
+      ],
       "Human verification": [
         "Captcha"
       ],
@@ -9474,6 +9494,9 @@
       ],
       "Notes": [
         "Notizen"
+      ],
+      "One email, many recipients": [
+        "Eine E-Mail, viele Empfänger"
       ],
       "Open actions dropdown": [
         "Auswahlliste „Aktionen“ öffnen"

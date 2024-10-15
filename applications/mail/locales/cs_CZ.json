@@ -4809,8 +4809,14 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } skupiny"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Účty s vlastními doménami se nemohou připojit k rodinnému tarifu."
+      ],
       "customer support": [
         "zákaznická podpora"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Rodinné tarify v současné době nepodporují externí účty. Před připojením si vytvořte adresu ${ BRAND_NAME }. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Pokud pozvánku přijmete, převedeme Vás ze stávajícího tarifu a na váš účet připíšeme zbývající částku."
@@ -4818,8 +4824,14 @@
       "Invited by: ${ inviteEmail }": [
         "Pozvánka od: ${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Doživotní účty nemohou být připojeny k rodinnému tarifu."
+      ],
       "Manage addresses.": [
         "Spravovat adresy."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Vlastníci tarifu se členy, se nemohou připojit k jinému rodinnému tarifu."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Omlouváme se, ale v tuto chvíli nemůžete změnit tarif."
@@ -4841,6 +4853,12 @@
       ],
       "You have successfully joined the family group": [
         "Úspěšně jste se připojili k rodinné skupině"
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Máte nezaplacené faktury. Před připojením k rodinnému tarifu je prosím uhraďte."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Můžete propojit svůj účet ${ BRAND_NAME } s tímto rodinným tarifem a společně využívat všechny prémiové funkce ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Váš účet má více e-mailových adres, než kolik je v tomto tarifu k dispozici. ${ addressSettingsLink }"
@@ -5377,12 +5395,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Nalezen ${ items.length } návrh, použijte klávesnice pro navigaci.",
-        "Nalezeny ${ items.length } návrhy, použijte klávesnice pro navigaci.",
-        "Nalezeno ${ items.length } návrhů, použijte klávesnice pro navigaci.",
-        "Nalezeno ${ items.length } návrhů, použijte klávesnice pro navigaci."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Použijte klávesy nahoru a dolů pro procházení návrhů po zadání. Stiskněte tlačítko Enter pro potvrzení vaší volby, nebo tlačítko Esc pro zavření návrhů."
       ]
@@ -9723,6 +9735,9 @@
       "Secure Core servers": [
         "Servery Secure Core"
       ],
+      "Secure link sharing": [
+        "Sdílení bezpečných odkazů"
+      ],
       "See team's availability": [
         "Podívejte se, jaká je dostupnost týmu"
       ],
@@ -9813,6 +9828,12 @@
         "Až ${ n } uživatelů",
         "Až ${ n } uživatelů"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Až ${ n } uživatel (${ adminsText }, ${ usersText })",
+        "Až ${ n } uživatelé (${ adminsText }, ${ usersText })",
+        "Až ${ n } uživatelů (${ adminsText }, ${ usersText })",
+        "Až ${ n } uživatelů (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Až ${ totalStorageSize } úložného prostoru"
       ],
@@ -9833,6 +9854,20 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Prohledáváme dark web a kontrolujeme, zda nedošlo k úniku vašich adres nebo aliasů ${ BRAND_NAME }, pokud něco najdeme, okamžitě vás upozorníme."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } správce",
+        "${ admins } správcové",
+        "${ admins } správců",
+        "${ admins } správců"
+      ],
+      "${ users } user": [
+        "${ users } uživatel",
+        "${ users } uživatelé",
+        "${ users } uživatelů",
+        "${ users } uživatelů"
       ]
     },
     "new_plans: feature info": {
@@ -9908,6 +9943,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Chraňte citlivé obchodní informace a bezpečně spolupracujte."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Chraňte svou rodinu pomocí všech prémiových funkcí ${ PASS_SHORT_APP_NAME } Plus pro 6 uživatelů."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Chraňte soukromí své rodiny pomocí všech služeb ${ BRAND_NAME }."
@@ -10118,6 +10156,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Bezpečně sdílejte jednotlivé položky s kýmkoli (i když nepoužívají ${ PASS_APP_NAME })"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Bezpečně ukládejte údaje vašich kontaktů, např. telefonní číslo, adresu, narozeniny a osobní poznámky. Šifrování bez přístupu (koncové) znamená, že ani ${ BRAND_NAME } si nemůže přečíst tyto údaje."
@@ -10352,7 +10393,7 @@
         "Blokování nevhodných odesílatelů"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "Smazání odstraněných e-mailů a spamu po 30 dnech."
+        "Smazání e-mailů z koše a spamu po 30 dnech."
       ],
       "Congratulations on choosing privacy": [
         "Gratulujeme k volbě soukromí"
@@ -10558,6 +10599,37 @@
         "Bezpečné sdílení trezoru (${ n } trezory) a sdílení odkazu",
         "Bezpečné sdílení trezoru (${ n } trezorů) a sdílení odkazu",
         "Bezpečné sdílení trezoru (${ n } trezorů) a sdílení odkazu"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } uživatelský účet",
+        "${ n } uživatelské účty",
+        "${ n } uživatelských účtů",
+        "${ n } uživatelských účtů"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Panel správce pro správu uživatelů a předplatného"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Všechny prémiové funkce. 6 uživatelů. 1 snadné předplatné."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Účtováno ročně za ${ yearlyPrice }. Ušetřete ${ yearlySavedPrice } s ${ passFamilyPlanName } (oproti 6 individuálním předplatným ${ passPlusPlanName })."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Exkluzivní nabídka dostupná pouze pro včasné podporovatele ${ PASS_APP_NAME }."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Získejte za ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Představujeme ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Časově omezená nabídka."
       ]
     },
     "passwordless": {
@@ -11067,6 +11139,11 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(otevře ${ PASS_APP_NAME })"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Zobrazit události"
       ]
     },
     "Security Center - Info": {

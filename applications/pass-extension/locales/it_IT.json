@@ -1619,6 +1619,9 @@
       "Quickly autofill your identities.": [
         "Compila rapidamente e automaticamente le tue identità."
       ],
+      "Quickly autofill your saved credentials.": [
+        "Compila rapidamente e automaticamente le tue credenziali."
+      ],
       "Registering extra password...": [
         "Registrazione della password aggiuntiva..."
       ],
@@ -1711,9 +1714,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Grazie, il problema è stato segnalato"
-      ],
-      "The autofill dropdown will automatically open when you click or focus on the field.": [
-        "Il menu di compilazione automatica si aprirà automaticamente quando clicchi o selezioni il campo."
       ],
       "The export will only contain vaults that you own.": [
         "L'esportazione conterrà solamente le casseforti che possiedi."
@@ -1842,9 +1842,6 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Ora puoi utilizzare la password dell'account ${ BRAND_NAME } per accedere a ${ PASS_SHORT_APP_NAME } offline"
-      ],
-      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Puoi compilare automaticamente le tue credenziali in un istante cliccando sull'icona di ${ PASS_APP_NAME }."
       ],
       "You cannot change the mailboxes for this alias.": [
         "Non puoi cambiare le caselle di posta associate a questo alias."
@@ -2030,9 +2027,6 @@
       "Autofill 2FA": [
         "Compilazione automatica 2FA"
       ],
-      "Automatically open autofill when a login field is focused": [
-        "Apri automaticamente la compilazione automatica quando è selezionato un campo di accesso"
-      ],
       "Autosave": [
         "Salvataggio automatico"
       ],
@@ -2125,9 +2119,6 @@
       ],
       "Display": [
         "Mostra"
-      ],
-      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
-        "Mostra l'icona di ${ PASS_APP_NAME } nei campi con la compilazione automatica"
       ],
       "Domain": [
         "Dominio"
@@ -2305,6 +2296,9 @@
       ],
       "Login": [
         "Login"
+      ],
+      "Login autofill": [
+        "Compilazione automatica del login"
       ],
       "Logins": [
         "Login"

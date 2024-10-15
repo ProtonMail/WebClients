@@ -479,11 +479,11 @@
       "Not now": [
         "現在不要"
       ],
-      "Ok": [
-        "確定"
-      ],
       "OK": [
         "好"
+      ],
+      "Ok": [
+        "確定"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "開啟 ${ CALENDAR_APP_NAME } 設定"
@@ -2501,6 +2501,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "您的帳戶資料復原方法已就緒。"
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
       ]
     },
     "description": {
@@ -3595,6 +3598,9 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } 群組"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "有自訂網域的帳號無法加入家庭方案。"
+      ],
       "customer support": [
         "客服"
       ],
@@ -3604,8 +3610,14 @@
       "Invited by: ${ inviteEmail }": [
         "邀請人：${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "終身帳號無法加入群組方案。"
+      ],
       "Manage addresses.": [
         "管理電子郵件位址。"
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "有成員的方案的擁有者無法加入其他家庭方案。"
       ],
       "Sorry, you can't switch plans at this time.": [
         "抱歉，目前無法切換方案。"
@@ -3766,6 +3778,23 @@
         "非常小"
       ]
     },
+    "Google Meet": {
+      "Join Google Meet": [
+        "加入Google Meet"
+      ],
+      "Joining instructions": [
+        "加入說明"
+      ],
+      "Less details": [
+        "較少詳細資料"
+      ],
+      "Meeting link:": [
+        "會議連結:"
+      ],
+      "More details": [
+        "更多詳細資料"
+      ]
+    },
     "Group": {
       "Account": [
         "帳號"
@@ -3801,9 +3830,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "找到 ${ items.length } 個建議，請使用鍵盤導覽。"
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "使用向上、向下方向鍵存取並瀏覽輸入建議。按一下 [Enter] 鍵確認選項，或 [Esc] 鍵關閉建議方塊。"
       ]
@@ -4961,6 +4987,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "您將要開啟其他瀏覽器分頁並造訪："
+      ],
+      "You are about to open your default browser and visit:": [
+        "您將要開啟預設瀏覽器並造訪："
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "您目前已登入為 ${ user.Name } (${ user.Email })。"
@@ -6138,8 +6167,14 @@
       "Get started for ${ price }": [
         "使用${ price }取得"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "從${ priceMailPlus }起"
+      ],
       "Upgrade now": [
         "立即升級"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "升級至${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6478,6 +6513,9 @@
       "Secure Core servers": [
         "Secure Core 伺服器"
       ],
+      "Secure link sharing": [
+        "安全連結分享"
+      ],
       "See team's availability": [
         "查看團隊可用程度"
       ],
@@ -6565,6 +6603,9 @@
       "Up to ${ n } user": [
         "多達 ${ n } 位使用者"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "至多${ n }位使用者(${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "最多至 ${ totalStorageSize } 儲存空間"
       ],
@@ -6582,6 +6623,14 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins }位管理員"
+      ],
+      "${ users } user": [
+        "${ users }位使用者"
       ]
     },
     "new_plans: feature info": {
@@ -6677,6 +6726,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "使用${ price }取得Mail Plus"
+      ],
+      "Starting from ${ price }": [
+        "從${ price }起"
       ]
     },
     "new_plans: title": {
@@ -7218,6 +7270,14 @@
         "安全保管庫共享(${ n } 保管庫)和連結共享"
       ]
     },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n }使用者帳號"
+      ],
+      "Admin panel to manage users and subscription": [
+        "管理員面板以管理使用者及訂閱"
+      ]
+    },
     "passwordless": {
       "Organization key does not exist.": [
         "組織金鑰不存在。"
@@ -7571,6 +7631,11 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(轉開 ${ PASS_APP_NAME })"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "檢視活動"
       ]
     },
     "Security Center - Info": {
@@ -7946,6 +8011,9 @@
       ],
       "/ month": [
         "/ 月"
+      ],
+      "/month": [
+        "/月"
       ],
       "1 year": [
         "1 年"
@@ -9090,6 +9158,9 @@
       "Notes": [
         "備註"
       ],
+      "One email, many recipients": [
+        "一個電子郵件，多位收件者"
+      ],
       "Open actions dropdown": [
         "展開操作下拉選單"
       ],
@@ -9484,6 +9555,11 @@
         "Bitcoin透過電子郵件"
       ]
     },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "一個更安全/容易持有&傳送Bitcoin的方法"
+      ]
+    },
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "錢包問題"
@@ -9799,6 +9875,17 @@
       ],
       "Yearly, ${ untilString }": [
         "每年，${ untilString }"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "參與 Zoom 會議"
+      ],
+      "Meeting ID:": [
+        "會議識別碼:"
+      ],
+      "Passcode: ${ password }": [
+        "密碼數字：${ password }"
       ]
     }
   }
