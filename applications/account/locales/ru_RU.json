@@ -70,11 +70,11 @@
       "Accept": [
         "Принять"
       ],
-      "Activate": [
-        "Активировать"
-      ],
       "activate": [
         "включить"
+      ],
+      "Activate": [
+        "Активировать"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активировать ${ user.Name }@pm.me"
@@ -1200,6 +1200,9 @@
       ],
       "Verify": [
         "Подтвердить"
+      ],
+      "Verify ${ unverifiedSSODomain.DomainName }": [
+        "Проверить ${ unverifiedSSODomain.DomainName }"
       ],
       "Verify account": [
         "Подтвердить аккаунт"
@@ -5209,8 +5212,20 @@
       "${ BRAND_NAME } groups": [
         "Группы ${ BRAND_NAME }"
       ],
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Только один бесплатный пробный период для одного пользователя. После этого действуют обычные цены."
+      ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Аккаунты с пользовательскими доменами не могут присоединиться к семейному тарифному тарифу."
+      ],
+      "After leaving, you will be moved to a ${ BRAND_NAME } Free plan.": [
+        "После завершения вы будете переведены на тариф ${ BRAND_NAME } Free."
+      ],
       "customer support": [
         "служба поддержки"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Семейные тарифы в настоящее время не поддерживают внешние аккаунты. Создайте адрес ${ BRAND_NAME } перед тем, как присоединиться. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Если вы примете приглашение, тарифный план будет изменен. Неиспользованный баланс возвратится на счет аккаунта."
@@ -5220,6 +5235,21 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Вас приглашает: ${ inviteEmail }"
+      ],
+      "Leave ${ PASS_SHORT_APP_NAME } Family plan": [
+        "Завершить Семейный тариф ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Leave Duo plan": [
+        "Завершить тариф Duo"
+      ],
+      "Leave Family plan": [
+        "Завершить Семейный тариф"
+      ],
+      "Leave Visionary plan": [
+        "Завершить тариф Visionary"
+      ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Пожизненные аккаунты не могут присоединяться к семейному тарифу."
       ],
       "Manage addresses.": [
         "Управляйте адресами."
@@ -5232,6 +5262,9 @@
         "За полгода можно принять только ${ n } приглашения.",
         "За полгода можно принять только ${ n } приглашений.",
         "За полгода можно принять только ${ n } приглашений."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Владельцы тарифа с участниками не могут присоединиться к другому семейному тарифу."
       ],
       "Pending": [
         "В ожидании"
@@ -5250,6 +5283,9 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Счет за подписку будет выставлен основному администратору этого тарифа."
+      ],
+      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
+        "Чтобы облегчить переход, мы дарим вам 30-дневный бесплатный пробный период ${ BRAND_NAME } Unlimited*."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Вас пригласили присоединиться к организации «${ invite.OrganizationName }»‎"
@@ -5278,14 +5314,20 @@
       "You have successfully joined the family group": [
         "Вы успешно присоединились к семейному плану"
       ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "У вас есть неоплаченные счета. Оплатите их перед подключением к семейному тарифу."
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Перед добавлением нескольких пользователей необходимо настроить пользовательский домен."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Перед регистрацией нового пользователя необходимо настроить пользовательский домен."
       ],
-      "You will lose access to all premium features and storage space included with ${ plan }.": [
-        "Вы потеряете доступ ко всем платным функциям и месту в хранилище, включенным в ${ plan }."
+      "You will lose access to all premium features included with ${ plan }.": [
+        "Вы потеряете доступ ко всем платным функциям, включенным в ${ plan }."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Приглашаем вас подключить свой аккаунт ${ BRAND_NAME } к этому семейному тарифу и вместе пользоваться всеми платными функциями ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "К аккаунту подключено больше адресов электронной почты, чем позволяет текущий тарифный план. ${ addressSettingsLink }"
@@ -5301,6 +5343,9 @@
       "*Only one free trial per user. Regular pricing applies thereafter.": [
         "*Только одна бесплатная пробная версия для одного пользователя. После этого действуют обычные цены."
       ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
+        "После выхода из вашего тарифа этот пользователь будет переведен на тариф ${ BRAND_NAME } Free."
+      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "После выхода из вашего тарифа этот пользователь будет переведен на тариф ${ BRAND_NAME } Безлимитный тариф с 30-дневным пробным периодом.*"
       ],
@@ -5309,6 +5354,12 @@
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Создавайте и настраивайте аккаунты членов семьи, а также управляйте доступным им объемом хранилища для ${ DRIVE_APP_NAME } и ${ MAIL_APP_NAME }."
+      ],
+      "Create and manage family members.": [
+        "Создавайте и управляйте членами семьи."
+      ],
+      "If the user already has a ${ BRAND_NAME } account (${ domain } or other, e.g. @gmail.com), enter it here. Otherwise they need to create an account first.": [
+        "Если у пользователя уже есть аккаунт ${ BRAND_NAME } (${ domain } или другой, например @gmail.com), введите его здесь. В противном случае необходимо сначала создать аккаунт."
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Если у пользователя уже есть адрес ${ MAIL_APP_NAME }, введите его. В противном случае сначала необходимо создать аккаунт."
@@ -5424,12 +5475,6 @@
       ],
       "Add": [
         "Добавить"
-      ],
-      "Add (${ numberOfAddedServers })": [
-        "Добавить (${ numberOfAddedServers })",
-        "Добавить (${ numberOfAddedServers })",
-        "Добавить (${ numberOfAddedServers })",
-        "Добавить (${ numberOfAddedServers })"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Подключение до ${ plusVpnConnections } устройства",
@@ -5898,6 +5943,20 @@
     "Group state": {
       "Active": [
         "Активна"
+      ],
+      "Unanswered": [
+        "Без ответа"
+      ]
+    },
+    "group_invitation: Success": {
+      "Group invitation accepted": [
+        "Приглашение в группу принято"
+      ],
+      "Group invitation declined": [
+        "Приглашение в группу отклонено"
+      ],
+      "Left group": [
+        "Покинул группу"
       ]
     },
     "group_invite_2024: Error message, recovery": {
@@ -5939,9 +5998,6 @@
       ],
       "Checkout": [
         "Оформление покупки"
-      ],
-      "Country": [
-        "Страна"
       ],
       "Create your account": [
         "Создать аккаунт"
@@ -6088,12 +6144,6 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Добавьте эту запись к вашему домену в панели управления регистратора доменных имен"
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Найдено ${ items.length } предложение, используйте клавиатуру для навигации.",
-        "Найдено ${ items.length } предложения, используйте клавиатуру для навигации.",
-        "Найдено ${ items.length } предложений, используйте клавиатуру для навигации.",
-        "Найдено ${ items.length } предложений, используйте клавиатуру для навигации."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Используйте клавиши Вверх и Вниз, чтобы получить доступ и просмотреть предложения после ввода. Нажмите Enter для подтверждения выбора, или Escape для закрытия окна предложений."
@@ -7170,9 +7220,6 @@
       "Disable recovery by ${ type }": [
         "Отключить восстановление с помощью ${ type }"
       ],
-      "Disabled since ${ formattedDateAndTime }": [
-        "Отключено с момента ${ formattedDateAndTime }"
-      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Отключение двухфакторной аутентификации сделает вашу учетную запись менее защищенной. Продолжайте только при крайней необходимости."
       ],
@@ -7292,9 +7339,6 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Включите TLS или SSL внешней почтовой службы, если она поддерживает данные протоколы."
-      ],
-      "Enabled since ${ formattedDateAndTime }": [
-        "Включено с момента ${ formattedDateAndTime }"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Повторное включение восстановления по фразе приведет к созданию новой фразы восстановления."
@@ -7899,9 +7943,6 @@
       "Number of dedicated servers in the organization": [
         "Количество выделенных серверов в организации"
       ],
-      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "Количество выделенных серверов, которые вы пытаетесь установить (${ addedCount }), больше, чем осталось в вашем тарифе (${ remainingCount }), поскольку у вас есть ${ ownedCount } и вы уже используете ${ usedCount }."
-      ],
       "of": [
         "из"
       ],
@@ -8298,9 +8339,6 @@
       "Some keys successfully reactivated": [
         "Некоторые ключи успешно реактивированы"
       ],
-      "Some of your available servers can only be used in specific countries due to recent removals": [
-        "Некоторые из доступных вам серверов могут быть использованы только в определенных странах из-за недавних удалений"
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Укажите домен, которому разрешена аутентификация с помощью SAML SSO."
       ],
@@ -8471,9 +8509,6 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Это может занять от нескольких секунд до нескольких минут в зависимости от вашего устройства"
-      ],
-      "This change will be fully reflected across your infrastructure in about 1 hour": [
-        "Это изменение будет полностью отражено в вашей инфраструктуре примерно через час."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Это может занять некоторое время. Не закрывайте эту страницу и не отключайтесь от Интернета."
@@ -8721,6 +8756,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Улучшить сейчас, чтобы получить платные функции, программное обеспечение и хранилище по специальной цене"
       ],
+      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Перейдите на тариф ${ firstPlanNames } или ${ lastPlanName }, чтобы получить доступ к ${ PROTON_SENTINEL_NAME }."
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Обновите тариф, чтобы добавить к своей учетной записи более короткий адрес @pm.me, которым проще поделиться. Он означает «Напишите мне в ${ MAIL_APP_NAME }» или «Отправьте мне личное сообщение»."
       ],
@@ -8826,9 +8864,6 @@
       "Visa Secure logo": [
         "Логотип Visa Secure"
       ],
-      "Want servers in other countries?": [
-        "Хотите серверы в других странах?"
-      ],
       "Want to learn more?": [
         "Хотите узнать больше?"
       ],
@@ -8864,6 +8899,9 @@
       ],
       "We recommend having multiple servers in different locations to provide redundancy.": [
         "Мы рекомендуем иметь несколько серверов в разных местах для обеспечения резервирования."
+      ],
+      "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "Мы рекомендуем уведомить членов семьи и попросить их настроить двухфакторную аутентификацию своих учетных записей, прежде чем принудительно использовать двухфакторную аутентификацию"
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Мы рекомендуем уведомить участников организации и попросить их настроить двухфакторную аутентификацию для своих аккаунтов перед введением обязательного использования двухфакторной аутентификации."
@@ -9036,9 +9074,6 @@
       "You can enable the Photos section from the interface using the toggle below.": [
         "Вы можете включить раздел Фотографии в интерфейсе с помощью расположенного ниже переключателя."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Вы можете сразу разблокировать описанную выше настройку, добавив ${ specificCountryCount } к количеству IP-адресов в ваше тарифе, или обратиться к нам за индивидуальными решениями."
-      ],
       "You can import one data type at a time.": [
         "Вы можете импортировать один тип данных за один раз."
       ],
@@ -9092,12 +9127,6 @@
       ],
       "You do not have permission to perform this action": [
         "У вас нет разрешения на выполнение данного действия"
-      ],
-      "You have ${ availableCount } dedicated server available.": [
-        "У вас есть ${ availableCount } доступный выделенный сервер.",
-        "У вас есть ${ availableCount } доступных выделенных сервера.",
-        "У вас есть ${ availableCount } доступных выделенных серверов.",
-        "У вас есть ${ availableCount } доступных выделенных серверов."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "У вас пробная подписка на ${ planTitle }. Если вы хотите продолжить подписку после пробного периода, добавьте способ оплаты."
@@ -10169,6 +10198,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Введите пароль для ключа с цифровым отпечатком: ${ fingerprintCode }"
       ],
+      "Event": [
+        "Событие"
+      ],
       "Event duration": [
         "Длительность события"
       ],
@@ -10516,6 +10548,9 @@
       ],
       "Reveal password": [
         "Показать пароль"
+      ],
+      "Search": [
+        "Поиск"
       ],
       "Search by email": [
         "Выполните поиск по адресу электронной почты"
@@ -10928,9 +10963,6 @@
       "Common sign up issues": [
         "Частые проблемы при регистрации"
       ],
-      "Contact us": [
-        "Связаться с нами"
-      ],
       "create a ticket": [
         "создать тикет"
       ],
@@ -11118,6 +11150,12 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Включите ${ reason }"
+      ],
+      "Enable detailed events": [
+        "Включить подробные события"
+      ],
+      "Enable security events": [
+        "Включить события безопасности"
       ]
     },
     "Mail import summary": {
@@ -12065,6 +12103,9 @@
       "Secure Core servers": [
         "Серверы Secure Core"
       ],
+      "Secure link sharing": [
+        "Защищенный совместный доступ к ссылкам"
+      ],
       "See team's availability": [
         "Посмотреть доступность команды"
       ],
@@ -12170,6 +12211,12 @@
         "До ${ n } пользователей",
         "До ${ n } пользователей"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "До ${ n } пользователя (${ adminsText }, ${ usersText })",
+        "До ${ n } пользователей (${ adminsText }, ${ usersText })",
+        "До ${ n } пользователей (${ adminsText }, ${ usersText })",
+        "До ${ n } пользователей (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } хранилища"
       ],
@@ -12190,6 +12237,20 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Мы сканируем Темную паутину на предмет утечки ваших адресов или псевдонимов ${ BRAND_NAME } и немедленно оповещаем вас, если что-то находим."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins }администратор",
+        "${ admins }администратора",
+        "${ admins }администраторов",
+        "${ admins }администраторов"
+      ],
+      "${ users } user": [
+        "${ users } пользователь",
+        "${ users } пользователя",
+        "${ users } пользователей",
+        "${ users } пользователей"
       ]
     },
     "new_plans: feature info": {
@@ -12286,6 +12347,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Защитите конфиденциальную деловую информацию и сотрудничайте безопасно."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Защитите свою семью, используя все платные функции ${ PASS_SHORT_APP_NAME } Plus для 6 пользователей."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Защитите конфиденциальность вашей семьи с помощью комплекса услуг ${ BRAND_NAME }."
@@ -12562,6 +12626,9 @@
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Защитите свои файлы с помощью зашифрованного облачного хранилища. Возможности включают автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
       ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Защищенно делитесь отдельными элементами со всеми (даже если они не используют ${ PASS_APP_NAME })."
+      ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Защищенное хранение данных контактов, таких как номер телефона, адрес, день рождения и личные заметки. Шифрование с нулевым доступом гарантирует, что даже ${ BRAND_NAME } не сможет получить к ним доступ."
       ],
@@ -12736,11 +12803,17 @@
       "Link copied to clipboard": [
         "Ссылка скопирована в буфер обмена"
       ],
+      "Number of records exceeds the download limit of 10000": [
+        "Количество записей превышает предел скачивания в 10000"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Учетные данные OpenVPN / IKEv2 обновлены"
       ],
       "Reminder has been sent": [
         "Напоминание отправлено"
+      ],
+      "Too many recent API requests": [
+        "Слишком много недавних запросов API"
       ],
       "Trial started": [
         "Начат пробный период"
@@ -13615,6 +13688,37 @@
         "Для частных лиц"
       ]
     },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } аккаунт пользователя",
+        "${ n } аккаунта пользователей",
+        "${ n } аккаунтов пользователей",
+        "${ n } аккаунтов пользователей"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Панель администратора для управления пользователями и подпиской"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Все платные функции. 6 пользователей. 1 простая подписка."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Счет выставляется ежегодно по цене ${ yearlyPrice }. Сэкономьте ${ yearlySavedPrice } с ${ passFamilyPlanName } (по сравнению с 6 индивидуальными подписками на ${ passPlusPlanName })."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Эксклюзивное предложение доступно только для ранних сторонников ${ PASS_APP_NAME }."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Получить за ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Представляем ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Ограниченное по времени предложение."
+      ]
+    },
     "password_reset: info": {
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
         "**Все ваши существующие данные** (электронные письма, события, контакты, файлы, входы в ${ PASS_APP_NAME } и т. д.) **будут заблокированы** и могут быть разблокированы только с помощью вашего **старого пароля**."
@@ -13745,6 +13849,9 @@
       "Payment Processing": [
         "Обработка платежа"
       ],
+      "Please add a payment method in the dashboard to continue.": [
+        "Чтобы продолжить, добавьте способ оплаты на панели управления."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Сначала повторно активируйте подписку, чтобы уменьшить количество дополнений."
       ],
@@ -13775,11 +13882,17 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "Специальная цена в ${ priceWithDiscount } действует за первый месяц. Затем будет выполнено автоматическое продление по сниженной цене в ${ price } каждый месяц. Отменить подписку можно в любой момент."
       ],
+      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
+        "Транзакция успешно распознана. Остаток на счету будут добавлен на ваш счет как только транзакция будет полностью подтверждена."
+      ],
       "Timeout exceeded": [
         "Превышено время ожидания"
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Мы обрабатываем ваш платеж по выставленному счету. Дождитесь завершения оплаты, прежде чем вносить изменения в ваш тариф или обновлять платежные реквизиты. Благодарим вас за терпение."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "При выбранном способе оплаты с вас будет снято ${ amountToCharge }."
       ]
     },
     "Payments.Error": {
@@ -13955,6 +14068,12 @@
       ]
     },
     "placeholder": {
+      "Add a group name": [
+        "Добавить название группы"
+      ],
+      "e.g. distribution list for marketing team": [
+        "например, список рассылки для команды маркетологов"
+      ],
       "e.g. marketing": [
         "например, маркетинг"
       ],
@@ -14433,6 +14552,9 @@
       ]
     },
     "saml: Error": {
+      "Sign-in wasn't successfully completed.": [
+        "Вход не был успешно завершен."
+      ],
       "Something went wrong": [
         "Что-то пошло не так"
       ]
@@ -14962,6 +15084,11 @@
     "session_recovery:status:title": {
       "Password reset request": [
         "Изменение пароля запрошено"
+      ]
+    },
+    "Setting": {
+      "Enable Photos section": [
+        "Включить раздел \"Фото\""
       ]
     },
     "Settings description": {
@@ -16061,6 +16188,11 @@
         "Истекающий"
       ]
     },
+    "Subtitle": {
+      "View VPN session details for your organization.": [
+        "Просмотр информации о сеансе VPN вашей организации."
+      ]
+    },
     "Success": {
       "Account deleted. Signing out...": [
         "Аккаунт удален. Выходим из системы..."
@@ -16594,9 +16726,6 @@
       "Add pm.me subdomain": [
         "Добавить поддомен pm.me"
       ],
-      "Add servers": [
-        "Добавить серверы"
-      ],
       "Add Sieve filter": [
         "Добавить фильтр Sieve"
       ],
@@ -16746,12 +16875,6 @@
       ],
       "Connect ${ name }": [
         "Подключить ${ name }"
-      ],
-      "Connection monitor disabled": [
-        "Отслеживание подключения выключено"
-      ],
-      "Connection monitor enabled": [
-        "Отслеживание подключения включено"
       ],
       "Contact us": [
         "Свяжитесь с нами"
@@ -17314,6 +17437,9 @@
       "QRCode": [
         "Код QR"
       ],
+      "Ready, set, forward": [
+        "Готово, установлено, вперед!"
+      ],
       "Recommended": [
         "Рекомендуется"
       ],
@@ -17818,6 +17944,9 @@
       "Enable/disable desktop and mobile notifications": [
         "Включить/отключить уведомления на рабочем столе, а также мобильные"
       ],
+      "Enabling detailed events records the IP address for each event.": [
+        "При включении подробных событий записывается адрес IP для каждого события."
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL конечной точки поставщика личных данных (например, https://idp.primer.com/sso/saml)."
       ],
@@ -17972,6 +18101,9 @@
       ],
       "Group membership paused": [
         "Членство в группе приостановлено"
+      ],
+      "Sending member invitation": [
+        "Отправка приглашения участника"
       ],
       "User declined invitation": [
         "Пользователь отклонил приглашение"
@@ -18558,6 +18690,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Удалив этот номер телефона, вы больше не сможете восстановить свою учётную запись."
+      ],
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Отключив мониторинг событий безопасности, вы также очистите всю свою историю. Вы уверены, что хотите отключить это?"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Срок действия не в формате ММ/ГГ"
