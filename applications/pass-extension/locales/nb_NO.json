@@ -1619,6 +1619,9 @@
       "Quickly autofill your identities.": [
         "Fyll ut identitetene dine raskt automatisk."
       ],
+      "Quickly autofill your saved credentials.": [
+        "Autofyll raskt den lagrede legitimasjonen din."
+      ],
       "Registering extra password...": [
         "Registrerer ekstra passord..."
       ],
@@ -1711,9 +1714,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Takk, problemet er rapportert"
-      ],
-      "The autofill dropdown will automatically open when you click or focus on the field.": [
-        "Autofyll-rullegardinmenyen åpnes automatisk når du klikker eller fokuserer på feltet."
       ],
       "The export will only contain vaults that you own.": [
         "Eksporten inneholder bare hvelv som du eier."
@@ -1842,9 +1842,6 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Du kan nå bruke ${ BRAND_NAME }-passordet for å få frakoblet tilgang til ${ PASS_SHORT_APP_NAME }."
-      ],
-      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Du kan raskt fylle ut påloggingsinformasjonen din automatisk ved å klikke på ${ PASS_APP_NAME }-ikonet."
       ],
       "You cannot change the mailboxes for this alias.": [
         "Du kan ikke endre postboksene for dette aliaset."
@@ -2030,9 +2027,6 @@
       "Autofill 2FA": [
         "Autofyll 2FA"
       ],
-      "Automatically open autofill when a login field is focused": [
-        "Åpne autofyll automatisk når det er fokus på et påloggingsfelt"
-      ],
       "Autosave": [
         "Automatisk lagring"
       ],
@@ -2125,9 +2119,6 @@
       ],
       "Display": [
         "Vis"
-      ],
-      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
-        "Vis ${ PASS_APP_NAME }-ikonet på automatisk utfyllbare felt"
       ],
       "Domain": [
         "Domene"
@@ -2305,6 +2296,9 @@
       ],
       "Login": [
         "Pålogging"
+      ],
+      "Login autofill": [
+        "Logg på autofyll"
       ],
       "Logins": [
         "Pålogginger"

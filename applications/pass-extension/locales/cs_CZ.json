@@ -1657,6 +1657,9 @@
       "Quickly autofill your identities.": [
         "Rychlé vyplnění vašich identit."
       ],
+      "Quickly autofill your saved credentials.": [
+        "Rychlé automatické vyplňování vašich uložených přihlašovacích údajů."
+      ],
       "Registering extra password...": [
         "Registrování dodatečného hesla..."
       ],
@@ -1749,9 +1752,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Děkujeme, problém byl nahlášen"
-      ],
-      "The autofill dropdown will automatically open when you click or focus on the field.": [
-        "Rozbalovací nabídka automatického vyplňování se automaticky otevře, když na pole kliknete nebo ho vyberete."
       ],
       "The export will only contain vaults that you own.": [
         "Export bude obsahovat pouze vaše vlastní trezory."
@@ -1884,9 +1884,6 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Nyní můžete použít své heslo ${ BRAND_NAME } pro přístup k ${ PASS_SHORT_APP_NAME } offline."
-      ],
-      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Můžete rychle automaticky vyplnit přihlašovací údaje kliknutím na ikonu ${ PASS_APP_NAME }."
       ],
       "You cannot change the mailboxes for this alias.": [
         "Nemůžete měnit e-mailové schránky tohoto aliasu."
@@ -2088,9 +2085,6 @@
       "Autofill 2FA": [
         "Automaticky vyplnit 2FA"
       ],
-      "Automatically open autofill when a login field is focused": [
-        "Automatické otevření automatického vyplňování při vybrání přihlašovacího pole"
-      ],
       "Autosave": [
         "Automatické uložení"
       ],
@@ -2183,9 +2177,6 @@
       ],
       "Display": [
         "Zobrazení"
-      ],
-      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
-        "Zobrazit ikonu ${ PASS_APP_NAME } v automaticky vyplnitelných polích"
       ],
       "Domain": [
         "Doména"
@@ -2363,6 +2354,9 @@
       ],
       "Login": [
         "Přihlášení"
+      ],
+      "Login autofill": [
+        "Automatické vyplňování přihlášení"
       ],
       "Logins": [
         "Přihlášení"

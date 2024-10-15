@@ -1657,6 +1657,9 @@
       "Quickly autofill your identities.": [
         "Rýchle automatické vyplnenie vašich identít."
       ],
+      "Quickly autofill your saved credentials.": [
+        "Rýchle automatické vyplnenie vašich uložených prihlasovacích údajov."
+      ],
       "Registering extra password...": [
         "Registrácia dodatočného hesla..."
       ],
@@ -1749,9 +1752,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Ďakujeme, problém bol nahlásený"
-      ],
-      "The autofill dropdown will automatically open when you click or focus on the field.": [
-        "Rozbaľovacia ponuka automatického vypĺňania sa automaticky otvorí po kliknutí alebo zvolení poľa."
       ],
       "The export will only contain vaults that you own.": [
         "Export bude obsahovať iba trezory, ktoré vlastníte."
@@ -1884,9 +1884,6 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Teraz môžete použiť svoje ${ BRAND_NAME } heslo na prístup k ${ PASS_SHORT_APP_NAME } offline"
-      ],
-      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Kliknutím na ikonu ${ PASS_APP_NAME } môžete rýchlo automaticky vyplniť svoje prihlasovacie údaje."
       ],
       "You cannot change the mailboxes for this alias.": [
         "Nemôžete zmeniť schránku pre tento alias."
@@ -2088,9 +2085,6 @@
       "Autofill 2FA": [
         "Automatické vypĺňanie 2FA"
       ],
-      "Automatically open autofill when a login field is focused": [
-        "Automatické otvorenie automatického vypĺňania pri zvolení prihlasovacieho poľa"
-      ],
       "Autosave": [
         "Automatické ukladanie"
       ],
@@ -2183,9 +2177,6 @@
       ],
       "Display": [
         "Zobraziť"
-      ],
-      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
-        "Zobraziť ikonu ${ PASS_APP_NAME } v automaticky vyplniteľných poliach"
       ],
       "Domain": [
         "Doména"
@@ -2363,6 +2354,9 @@
       ],
       "Login": [
         "Prihlásenie"
+      ],
+      "Login autofill": [
+        "Automatické vyplnenie prihlasovacích údajov"
       ],
       "Logins": [
         "Prihlásenia"
