@@ -70,7 +70,7 @@ import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { type Address, SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces';
+import { type Address } from '@proton/shared/lib/interfaces';
 import type { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import type {
     AttendeeDeleteSingleEditResponse,
@@ -117,6 +117,7 @@ import { getTimeInUtc } from '../../components/eventModal/eventForm/time';
 import EventPopover from '../../components/events/EventPopover';
 import MorePopoverEvent from '../../components/events/MorePopoverEvent';
 import { modifyEventModelPartstat } from '../../helpers/attendees';
+import { formatShortTime } from '../../helpers/date';
 import { getCanEditSharedEventData } from '../../helpers/event';
 import { extractInviteEmails } from '../../helpers/invite';
 import { getCleanSendDataFromSendPref, getSendPrefErrorMap } from '../../helpers/sendPreferences';
@@ -1593,23 +1594,7 @@ const InteractiveCalendarView = ({
 
     const formatTime = useCallback(
         (utcDate: Date) => {
-            const timeString = format(utcDate, 'p', { locale: dateLocale });
-            const is12HourFormat = timeString.includes('AM') || timeString.includes('PM');
-
-            if (
-                userSettings.TimeFormat === SETTINGS_TIME_FORMAT.H12 ||
-                (is12HourFormat && userSettings.TimeFormat === SETTINGS_TIME_FORMAT.LOCALE_DEFAULT)
-            ) {
-                if (format(utcDate, 'mm') === '00') {
-                    // If it's a full hour, display only the hour with AM/PM in lowercase
-                    return format(utcDate, 'ha', { locale: dateLocale }).toLowerCase();
-                } else {
-                    // Otherwise, display the hour with minutes and AM/PM in lowercase
-                    return format(utcDate, 'h:mma', { locale: dateLocale }).toLowerCase().replace(/\s/g, ''); // strip spaces
-                }
-            }
-
-            return timeString;
+            return formatShortTime(utcDate, userSettings);
         },
         [dateLocale, view]
     );

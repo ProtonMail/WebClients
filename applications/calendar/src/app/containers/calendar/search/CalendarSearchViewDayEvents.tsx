@@ -4,6 +4,7 @@ import { isSameDay } from 'date-fns';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useUserSettings } from '@proton/components/hooks/useUserSettings';
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import { format as formatUTC } from '@proton/shared/lib/date-fns-utc';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -27,6 +28,7 @@ interface Props {
 const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, closestToDateRef }: Props) => {
     const [addresses] = useAddresses();
     const [{ hasPaidMail }] = useUser();
+    const [userSettings] = useUserSettings();
 
     const now = new Date();
     const startDate = dailyEvents.length ? dailyEvents[0].fakeUTCStartDate : new Date();
@@ -95,6 +97,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                             endDate: fakeUTCEndDate,
                             isAllDay,
                             plusDaysToEnd,
+                            userSettings,
                         });
 
                         return (
