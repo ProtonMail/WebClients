@@ -112,6 +112,10 @@
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
+      ],
+      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
+        "You have ${ unassignedAvailableCount } recently used server available. To allocate this server to another country, you'll have to wait until deactivation is complete.",
+        "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete."
       ]
     },
     "Label": {

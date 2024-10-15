@@ -44,11 +44,11 @@
       "Accept": [
         "Qbel"
       ],
-      "Activate": [
-        "Rmed"
-      ],
       "activate": [
         "rmed"
+      ],
+      "Activate": [
+        "Rmed"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Rmed ${ user.Name }@pm.me"
@@ -4261,9 +4261,6 @@
       "Checkout": [
         "Axelleṣ"
       ],
-      "Country": [
-        "Tamurt"
-      ],
       "Create your account": [
         "Rnu amiḍan"
       ],
@@ -4396,10 +4393,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Af asumer n ${ items.length }, seqdec anasiw i tunigin.",
-        "Af isumar ${ items.length }, seqdec anasiw i tunigin."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Seqdec tiqeffalin Asawen d Akessar i wakken ad tkecmeḍ ɣer yisumar syen asenqed-nsen seld anekcum. Sit ɣef Enter i wakken ad tesnetmeḍ afran-inek·inem, neɣ Escape i wakken ad tmedleḍ tabewwaḍt n yisumar."
       ]
@@ -5882,9 +5875,6 @@
       "Visa Secure logo": [
         "Alugu n Visa Secure"
       ],
-      "Want servers in other countries?": [
-        "Tesriḍ iqeddacen deg tmura niḍen?"
-      ],
       "Want to learn more?": [
         "Tebɣiḍ ad tissineḍ ugar?"
       ],
@@ -5987,10 +5977,6 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Ur tesbaduḍ ara tarayt n tririt, tiririt n umiḍan-inek•inem ur tezmir ara ad d-ḍru ma yella tettuḍ awal-ik•im uffir. Tebɣiḍ ad tkemmleḍ s war tarayt n tririt?"
-      ],
-      "You have ${ availableCount } dedicated server available.": [
-        "Yella ${ availableCount } uqeddac yettwamudden.",
-        "Llan ${ availableCount } yiqeddacen yettwamudden."
       ],
       "You have no calendars to export.": [
         "Ur tesɛiḍ ara ula d yiwen uwitay ara tdifḍeḍ."
@@ -7405,9 +7391,6 @@
       ],
       "Common sign up issues": [
         "Uguren n tuffɣa i d-yettuɣalen"
-      ],
-      "Contact us": [
-        "Nermes-aɣ-d"
       ],
       "create a ticket": [
         "snulfu-d atiki"
@@ -10083,9 +10066,6 @@
       ],
       "Add PayPal payment method": [
         "Rnu tarrayt n uxelleṣ PayPal"
-      ],
-      "Add servers": [
-        "Rnu iqeddacen"
       ],
       "Add Sieve filter": [
         "Rnu imsizdeg Sieve"

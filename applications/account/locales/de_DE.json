@@ -70,11 +70,11 @@
       "Accept": [
         "Annehmen"
       ],
-      "Activate": [
-        "Aktivieren"
-      ],
       "activate": [
         "aktivieren"
+      ],
+      "Activate": [
+        "Aktivieren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktivieren"
@@ -1201,6 +1201,9 @@
       "Verify": [
         "Verifizieren"
       ],
+      "Verify ${ unverifiedSSODomain.DomainName }": [
+        "Überprüfe ${ unverifiedSSODomain.DomainName }"
+      ],
       "Verify account": [
         "Konto verifizieren"
       ],
@@ -1224,6 +1227,9 @@
       ],
       "View plans details": [
         "Details zum Abonnement ansehen"
+      ],
+      "View recovery settings": [
+        "Wiederherstellungseinstellungen anzeigen"
       ],
       "Void": [
         "Ungültig"
@@ -3379,11 +3385,23 @@
       ]
     },
     "Description": {
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Lösche automatisch Spam und gelöschte Nachrichten und schalte mit einem Upgrade weitere Premium-Funktionen frei."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Automatisches Löschen von E-Mails, die vor mehr als 30 Tagen in den Papierkorb und in den Spam verschoben wurden."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Sortiere deine eingehenden Nachrichten automatisch, bevor sie deinen Posteingang erreichen."
+      ],
       "Available with ${ BRAND_NAME } Mail plus": [
         "Verfügbar mit${ BRAND_NAME } Mail Plus"
       ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Herzlichen Glückwunsch! Du hast das Maximum von ${ rewardsLimit } kostenlosen Monaten von ${ plusPlanName } verdient."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Lege so viele Etiketten oder Ordner an, wie du brauchst, um deinen Posteingang in übersichtlich zu halten."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Aktiviere ${ PROTON_SENTINEL_NAME }, um auf diese Funktionen zuzugreifen."
@@ -3406,8 +3424,17 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Die Kontaktliste, die du importieren möchtest, enthält anscheinend Gruppen. Bitte lege fest, wie diese Gruppen importiert werden sollen."
       ],
+      "Keep different parts of your life separate and your inbox organized with additional addresses.": [
+        "Halte die verschiedenen Bereiche deines Lebens getrennt und organisiere deinen Posteingang mit zusätzlichen Adressen."
+      ],
+      "Make your email footer your own — showcase your unique brand, not ours.": [
+        "Mach deine E-Mail-Fußzeile zu deiner eigenen - präsentiere deine einzigartige Identität, nicht unsere."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Trenne verschiedene Aspekte deines Lebens mit mehreren E-Mail-Adressen und schalte weitere Premium-Funktionen frei, wenn du ein Upgrade durchführst."
+      ],
+      "Set up auto-forwarding to redirect incoming emails to another email address.": [
+        "Richte eine automatische Weiterleitung ein, um eingehende E-Mails an eine andere E-Mail-Adresse umzuleiten."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Verwende zum Importieren deiner Kontakte von Google oder Outlook ${ easySwitchLink }."
@@ -3417,6 +3444,9 @@
       ],
       "Track the status and activity of your referrals.": [
         "Verfolge den Status und die Aktivität deiner Empfehlungen."
+      ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Schalte ${ activatePmUser } für eine einprägsame und leicht einzugebende E-Mail-Adresse frei."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Schalte mit einem Upgrade kürzere E-Mail-Adressen und weitere Premiumfunktionen frei."
@@ -5228,8 +5258,8 @@
       "You need to configure a custom domain before creating a new user.": [
         "Du musst eine eigene Domain konfigurieren, bevor du einen neuen Benutzer erstellst."
       ],
-      "You will lose access to all premium features and storage space included with ${ plan }.": [
-        "Du wirst Zugriff zu allen Premiumfunktionen und Speicherplatz, der mit ${ plan } kommt, verlieren."
+      "You will lose access to all premium features included with ${ plan }.": [
+        "Du verlierst den Zugang zu allen Premium-Funktionen, die in ${ plan } enthalten sind."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Dein Konto hat mehr E-Mail-Adressen, als dir in diesem Abonnement zur Verfügung stehen. ${ addressSettingsLink }"
@@ -5360,10 +5390,6 @@
       ],
       "Add": [
         "Hinzufügen"
-      ],
-      "Add (${ numberOfAddedServers })": [
-        "Hinzufügen (${ numberOfAddedServers })",
-        "Hinzufügen (${ numberOfAddedServers })"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Verbindung für bis zu ${ plusVpnConnections } Gerät",
@@ -5872,9 +5898,6 @@
       "Checkout": [
         "Zur Kasse"
       ],
-      "Country": [
-        "Land"
-      ],
       "Create your account": [
         "Erstelle dein Konto"
       ],
@@ -6020,10 +6043,6 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Füge diesen Eintrag in der Verwaltungskonsole deines Domain-Registrars hinzu."
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } Vorschlag gefunden. Verwende die Tastatur zum Navigieren.",
-        "${ items.length } Vorschläge gefunden. Verwende die Tastatur zum Navigieren."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Verwende die Pfeiltasten hoch und runter, um die Vorschläge nach der Eingabe aufzurufen und durchzusehen. Bestätige deine Auswahl mit der Eingabetaste oder drücke die Escape-Taste, um das Vorschlagsfeld zu schließen."
@@ -6789,6 +6808,9 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Bist du sicher, dass du die Domain ${ boldDomain } entfernen möchtest?"
       ],
+      "Ask your organization admin to setup Gateways.": [
+        "Bitte den Administrator deiner Organisation um die Einrichtung von Gateways."
+      ],
       "Attention required": [
         "Aufmerksamkeit erforderlich"
       ],
@@ -7027,9 +7049,6 @@
       "Disable recovery by ${ type }": [
         "Wiederherstellung über ${ type } deaktivieren"
       ],
-      "Disabled since ${ formattedDateAndTime }": [
-        "Deaktiviert seit ${ formattedDateAndTime }"
-      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Wenn du die Zwei-Faktor-Authentifizierung deaktivierst, wird dein Konto weniger sicher. Fahre nur fort, wenn es unbedingt notwendig ist."
       ],
@@ -7147,9 +7166,6 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Aktiviere TLS oder SSL für den externen Dienst, falls dies unterstützt wird."
-      ],
-      "Enabled since ${ formattedDateAndTime }": [
-        "Aktiviert seit ${ formattedDateAndTime }"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Wenn du die Wiederherstellung mittels Phrase erneut aktivierst, wird eine neue Wiederherstellungsphrase generiert."
@@ -7750,9 +7766,6 @@
       "Number of dedicated servers in the organization": [
         "Anzahl der dedizierten Server in der Organisation"
       ],
-      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "Die Anzahl der dedizierten Server, die du zuweisen möchtest (${ addedCount }), ist höher als die Anzahl der in deinem Abonnement noch verfügbaren Server (${ remainingCount }), da du ${ ownedCount } besitzt und ${ usedCount } bereits nutzt."
-      ],
       "of": [
         "von"
       ],
@@ -8056,6 +8069,9 @@
       "SCIM token active": [
         "SCIM-Token aktiv"
       ],
+      "Search by an email address to begin": [
+        "Suche nach einer E-Mail Adresse um zu beginnen"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Schütze dein ${ BRAND_NAME }-Konto"
       ],
@@ -8139,9 +8155,6 @@
       ],
       "Some keys successfully reactivated": [
         "Einige Schlüssel wurden erfolgreich wiederhergestellt"
-      ],
-      "Some of your available servers can only be used in specific countries due to recent removals": [
-        "Einige deiner verfügbaren Server können aufgrund kürzlicher Entfernungen nur in bestimmten Ländern verwendet werden."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Gib die Domain an, die sich mit SAML SSO authentifizieren darf."
@@ -8305,9 +8318,6 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Dies kann je nach Gerät ein paar Sekunden oder einige Minuten dauern."
-      ],
-      "This change will be fully reflected across your infrastructure in about 1 hour": [
-        "Diese Änderung wird sich in ungefähr 1 Stunde auf Ihrer gesamten Infrastruktur auswirken."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Dies kann einige Zeit dauern. Bitte schließe diese Seite nicht und trenne die Verbindung zum Internet nicht."
@@ -8555,6 +8565,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten."
       ],
+      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Steige auf den ${ firstPlanNames }, oder ${ lastPlanName } Plan um, um Zugang zu ${ PROTON_SENTINEL_NAME } zu erhalten."
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Führe ein Upgrade durch, um deinem Konto kürzere @pm.me-Adressen hinzuzufügen, die einfacher zu teilen sind. Das steht für \"${ MAIL_APP_NAME } me\" oder \"Private Message me\"."
       ],
@@ -8660,9 +8673,6 @@
       "Visa Secure logo": [
         "Visa Secure Logo"
       ],
-      "Want servers in other countries?": [
-        "Du brauchst Server in anderen Ländern?"
-      ],
       "Want to learn more?": [
         "Möchtest du mehr erfahren?"
       ],
@@ -8698,6 +8708,9 @@
       ],
       "We recommend having multiple servers in different locations to provide redundancy.": [
         "Wir empfehlen, mehrere Server an verschiedenen Standorten zu betreiben, um Redundanz zu gewährleisten."
+      ],
+      "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "Wir empfehlen, die Familienmitglieder zu benachrichtigen und sie zu bitten, 2FA für ihre Konten einzurichten, bevor du die Verwendung von 2FA erzwingst."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Wir empfehlen, die Mitglieder der Organisation zu benachrichtigen und sie zu bitten, 2FA für ihre Konten einzurichten, bevor du die Verwendung von 2FA erzwingst."
@@ -8813,6 +8826,9 @@
       "You are about to open another browser tab and visit:": [
         "Es wird nun ein neuer Tab im Browser geöffnet und folgende Adresse aufgerufen:"
       ],
+      "You are about to open your default browser and visit:": [
+        "Du bist dabei, deinen Standardbrowser zu öffnen und zu besuchen:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du bist derzeit als „${ user.Name }“ (${ user.Email }) angemeldet."
       ],
@@ -8862,9 +8878,6 @@
       "You can enable the Photos section from the interface using the toggle below.": [
         "Du kannst den Bereich Fotos über das Interface aktivieren, indem du den Schalter unten betätigst."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Du kannst die oben genannte Konfiguration sofort freischalten, indem du ${ specificCountryCount } zur Anzahl der IP-Adressen in deinem Plan hinzufügst oder uns für maßgeschneiderte Lösungen kontaktierst."
-      ],
       "You can import one data type at a time.": [
         "Du kannst jeweils nur einen Datentyp importieren."
       ],
@@ -8912,10 +8925,6 @@
       ],
       "You do not have permission to perform this action": [
         "Du hast keine Berechtigung, diese Aktion durchzuführen"
-      ],
-      "You have ${ availableCount } dedicated server available.": [
-        "Dir steht ${ availableCount } dedizierter Server zur Verfügung.",
-        "Dir stehen ${ availableCount } dedizierte Server zur Verfügung."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Du hast ein ${ planTitle }-Probeabonnement. Wenn du dein Abonnement nach dem Testzeitraum fortsetzen möchtest, füge bitte eine Zahlungsmethode hinzu."
@@ -9973,6 +9982,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Gib das Passwort für den Schlüssel mit dem folgenden Fingerabdruck ein: ${ fingerprintCode }"
       ],
+      "Event": [
+        "Ereignis"
+      ],
       "Event duration": [
         "Termindauer"
       ],
@@ -10321,6 +10333,12 @@
       "Reveal password": [
         "Passwort anzeigen"
       ],
+      "Search": [
+        "Suche"
+      ],
+      "Search by email": [
+        "Suche per E-Mail-Adresse"
+      ],
       "Second password": [
         "Zusätzliches Passwort"
       ],
@@ -10422,6 +10440,9 @@
       ],
       "Time zone": [
         "Zeitzone"
+      ],
+      "Tips and insights": [
+        "Tipps und Hintergründe"
       ],
       "To: ${ toEmail }": [
         "An: ${ toEmail }"
@@ -10725,9 +10746,6 @@
       ],
       "Common sign up issues": [
         "Häufige Probleme bei der Registrierung"
-      ],
-      "Contact us": [
-        "Kontaktiere uns"
       ],
       "create a ticket": [
         "Ein Ticket erstellen"
@@ -12449,6 +12467,9 @@
       "Downloaded 2FA recovery codes": [
         "2FA-Wiederherstellungscodes heruntergeladen."
       ],
+      "Email notifications have been enabled": [
+        "E-Mail-Benachrichtigungen wurden aktiviert"
+      ],
       "Invalid code": [
         "Ungültiger Code"
       ],
@@ -12467,11 +12488,17 @@
       "Link copied to clipboard": [
         "Link in die Zwischenablage kopiert"
       ],
+      "Number of records exceeds the download limit of 10000": [
+        "Die Anzahl der Datensätze überschreitet die Grenze der maximalen Downloads von 10000"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN/IKEv2-Zugangsdaten wiederhergestellt"
       ],
       "Reminder has been sent": [
         "Eine Erinnerung wurde versandt"
+      ],
+      "Too many recent API requests": [
+        "Zu viele aktuelle API-Anfragen"
       ],
       "Trial started": [
         "Testphase begonnen"
@@ -16229,9 +16256,6 @@
       "Add pm.me subdomain": [
         "pm.me-Subdomain hinzufügen"
       ],
-      "Add servers": [
-        "Server hinzufügen"
-      ],
       "Add Sieve filter": [
         "Sieve-Filter hinzufügen"
       ],
@@ -16264,6 +16288,9 @@
       ],
       "Amount due": [
         "Fälliger Betrag"
+      ],
+      "An address for each role": [
+        "Eine Adresse für jede Rolle"
       ],
       "App": [
         "App"
@@ -16378,12 +16405,6 @@
       ],
       "Connect ${ name }": [
         "Verbinde ${ name }"
-      ],
-      "Connection monitor disabled": [
-        "Verbindungsüberwachung deaktiviert"
-      ],
-      "Connection monitor enabled": [
-        "Verbindungsüberwachung aktiviert"
       ],
       "Contact us": [
         "Kontaktiere uns"
@@ -16661,6 +16682,9 @@
         "Das Erstellen von ${ failedUsers.length } Benutzerkonto ist fehlgeschlagen.",
         "Das Erstellen von ${ failedUsers.length } Benutzerkonten ist fehlgeschlagen."
       ],
+      "Filter for more focus": [
+        "Filter für mehr Fokus"
+      ],
       "Filter name cannot contain only spaces": [
         "Der Filtername darf nicht nur Leerzeichen enthalten."
       ],
@@ -16854,6 +16878,9 @@
       "No account information was found in any data breaches": [
         "Bei keinem Datenmissbrauch wurden Kontoinformationen gefunden"
       ],
+      "No need to empty the trash": [
+        "Kein Ausleeren des Papierkorbs notwendig"
+      ],
       "No recovery method": [
         "Keine Wiederherstellungsmethode"
       ],
@@ -16944,6 +16971,9 @@
       "QRCode": [
         "QR-Code"
       ],
+      "Ready, set, forward": [
+        "Auf die Plätze, fertig, los"
+      ],
       "Recommended": [
         "Empfohlen"
       ],
@@ -17009,6 +17039,9 @@
       ],
       "Revoke certificate": [
         "Zertifikat widerrufen"
+      ],
+      "Same inbox, shorter email address": [
+        "Gleicher Posteingang, kürzere E-Mail-Adresse"
       ],
       "SAML authentication": [
         "SAML-Authentifizierung"
@@ -17455,6 +17488,9 @@
       "Feature in early access": [
         "Funktion im frühzeitigen Zugang"
       ],
+      "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
+        "Hole dir Produktivitäts- und Sicherheitstipps, um das Beste aus ${ MAIL_APP_NAME } und darüber hinaus zu machen."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategorisiert automatisch einige E-Mails als Soziale Netzwerke oder Werbeaktionen. Du kannst auswählen, wohin diese E-Mails importiert werden sollen."
       ],
@@ -17466,6 +17502,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Wenn du einen Geschenkgutschein erworben oder von unserem Support-Team erhalten hast, kannst du ihn hier eingeben."
+      ],
+      "IP address (Internet Service Provider)": [
+        "IP-Adresse (Internetdienstanbieter)"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Mitglieder, die keine 2FA verwenden, erhalten eine E-Mail mit der Aufforderung, sie so bald wie möglich zu aktivieren."

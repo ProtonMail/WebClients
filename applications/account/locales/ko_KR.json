@@ -70,10 +70,10 @@
       "Accept": [
         "수락"
       ],
-      "Activate": [
+      "activate": [
         "활성화"
       ],
-      "activate": [
+      "Activate": [
         "활성화"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -1200,6 +1200,9 @@
       ],
       "Verify": [
         "인증"
+      ],
+      "Verify ${ unverifiedSSODomain.DomainName }": [
+        "${ unverifiedSSODomain.DomainName }을(를) 인증하기"
       ],
       "Verify account": [
         "계정 인증"
@@ -5161,8 +5164,17 @@
       "*Only one free trial per user. Regular pricing applies thereafter.": [
         "*사용자 당 1회 무료 체험. 종료 후 정규 가격으로 적용됩니다."
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "커스텀 도메인과 연동된 계정은 가족 플랜에 합류할 수 없습니다."
+      ],
+      "After leaving, you will be moved to a ${ BRAND_NAME } Free plan.": [
+        "떠나면 ${ BRAND_NAME } 무료 플랜으로 자동 전환됩니다."
+      ],
       "customer support": [
         "고객 지원"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "햔재 가족 플랜은 추가 계정을 지원하지 않습니다. 그룹 합류 전 ${ BRAND_NAME } 계정을 생성하세요. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "초대를 수락하면, 현재 요금제에서 전환되고 남은 잔액이 사용자의 계좌로 환불됩니다."
@@ -5173,6 +5185,9 @@
       "Invited by: ${ inviteEmail }": [
         "이 사용자에게 의해 초대됨: ${ inviteEmail }"
       ],
+      "Leave ${ PASS_SHORT_APP_NAME } Family plan": [
+        "${ PASS_SHORT_APP_NAME } Family 플랜 떠나기"
+      ],
       "Leave Duo plan": [
         "듀오 플랜 취소"
       ],
@@ -5182,6 +5197,9 @@
       "Leave Visionary plan": [
         "Visionary 요금제 떠나기"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "평생 계정은 가족 플랜에 합류 불가합니다."
+      ],
       "Manage addresses.": [
         "주소를 관리하세요."
       ],
@@ -5190,6 +5208,9 @@
       ],
       "Only ${ n } accepted invitation are allowed in a 6-month period.": [
         "오직 6개월 기간 동안 ${ n }명의 수락된 초대만 가능합니다."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "구성원들이 있는 요금제의 소유자가 다른 그룹 가족 플랜에 합류할 수 없습니다."
       ],
       "Pending": [
         "보류 중"
@@ -5233,14 +5254,20 @@
       "You have successfully joined the family group": [
         "가족 그룹에 성공적으로 가입했습니다."
       ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "결제가 필요한 청구서들이 있습니다. 가족 플랜에 참여하기 전에 결제하세요."
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "여러 사용자를 추가하기 전에 지정 도메인을 설정해야 합니다."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "새 사용자를 생성하기 전 지정 도메인 구성이 필요합니다."
       ],
-      "You will lose access to all premium features and storage space included with ${ plan }.": [
-        "${ plan }에 포함된 프리미엄 기능들과 저장 공간을 모두 잃게 됩니다."
+      "You will lose access to all premium features included with ${ plan }.": [
+        "${ plan }에 포함된 모든 프리미엄 기능 접근 권한을 잃게됩니다."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "사용자가 ${ BRAND_NAME } 계정이 이 가족 요금제에 합류하도록 초대되었습니다. 함께 모든 ${ brandOrAppName } 프리미엄 기능들을 즐기세요."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "사용자의 계정이 사용자 요금제단에서 사용 가능한 이메일 주소 이상을 가지고 있습니다. ${ addressSettingsLink }"
@@ -5256,6 +5283,9 @@
       "*Only one free trial per user. Regular pricing applies thereafter.": [
         "*사용자 당 1회 무료 체험. 종료 후 정규 가격으로 적용됩니다."
       ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
+        "플랜에서 떠나면 ${ BRAND_NAME } 무료 플랜으로 자동 전환됩니다."
+      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "해당 플랜을 떠나면 이 사용자는 30일 무료 체험이 포함되는 ${ BRAND_NAME } Unlimited 플랜으로 전환됩니다.*"
       ],
@@ -5264,6 +5294,12 @@
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "가족 구성원을 생성하고 관리하며 ${ DRIVE_APP_NAME } 및 ${ MAIL_APP_NAME } 간에 공유되는 저장 공간을 할당합니다."
+      ],
+      "Create and manage family members.": [
+        "가족 구성원을 추가 및 관리하세요."
+      ],
+      "If the user already has a ${ BRAND_NAME } account (${ domain } or other, e.g. @gmail.com), enter it here. Otherwise they need to create an account first.": [
+        "만약 사용자가 이미 ${ BRAND_NAME } 계정을 소유한다면 (${ domain } 또는 @gmail.com 등등의) 여기에 입력하세요. 그렇지 않다면 계정 생성을 우선 진행해야 합니다."
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "만일 사용자가 이미 ${ MAIL_APP_NAME } 주소를 소유한다면, 입력하십시오. 그렇지 않다면 먼저 계정 생성이 필요합니다."
@@ -5283,7 +5319,7 @@
     },
     "familyOffer_2023:Info for members section": {
       "Add, remove, and make changes to user accounts in your family group.": [
-        "사용자의 가족 그룹에 사용자 계정을 생성, 삭제 및 변경하십시오."
+        "나의 가족 그룹에 사용자 계정을 생성, 삭제 및 변경하세요."
       ],
       "Add, remove, and make changes to user accounts in your organization.": [
         "나의 조직에 사용자 계정을 생성, 삭제 및 변경하세요."
@@ -5376,9 +5412,6 @@
       ],
       "Add": [
         "추가"
-      ],
-      "Add (${ numberOfAddedServers })": [
-        "생성 (${ numberOfAddedServers }개)"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "최대 ${ plusVpnConnections }개 기기 연결"
@@ -5879,9 +5912,6 @@
       "Checkout": [
         "주문"
       ],
-      "Country": [
-        "국가"
-      ],
       "Create your account": [
         "계정 만들기"
       ],
@@ -6027,9 +6057,6 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "도메인 이름 등록 기관의 제어판에서 이 기록을 도메인에 추가하세요."
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } 개 제안 찾음. 탐색하려면 키보드를 사용하세요."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "위 아래 키를 사용하여 입력 뒤의 브라우저 제안에 접근하세요. 엔터를 눌러 선택을 확인하거나, Esc키를 눌러 제안 창을 닫으세요."
@@ -7001,9 +7028,6 @@
       "Disable recovery by ${ type }": [
         "${ type }(으)로 복구 비활성화"
       ],
-      "Disabled since ${ formattedDateAndTime }": [
-        "${ formattedDateAndTime }부터 비활성화됨"
-      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "2단계 인증을 비활성화하면 계정의 보안이 약해집니다. 꼭 필요한 경우에만 진행하세요."
       ],
@@ -7120,9 +7144,6 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "지원시 외부 서비스의 TLS 및 SSL을 활성화 하십시오."
-      ],
-      "Enabled since ${ formattedDateAndTime }": [
-        "${ formattedDateAndTime }부터 활성화됨"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "복구 키를 다시 활성화하면 새로운 복구 문구가 생성됩니다."
@@ -7721,9 +7742,6 @@
       "Number of dedicated servers in the organization": [
         "조직의 전용 서버 수"
       ],
-      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "할당하려는 전용 서버의 수 (${ addedCount }개) ${ ownedCount }개를 소유하고 이미 ${ usedCount }개를 사용하기 때문에 요금제 (${ remainingCount }개)에서 여전히 사용할 수 있는 것보다 많습니다."
-      ],
       "of": [
         "의"
       ],
@@ -8114,9 +8132,6 @@
       "Some keys successfully reactivated": [
         "일부 키가 성공적으로 재활성화 되었습니다"
       ],
-      "Some of your available servers can only be used in specific countries due to recent removals": [
-        "사용 가능한 서버 중 일부는 최근 제거로 인해 특정 국가에서만 사용할 수 있습니다."
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "SAML SSO로 인증할 수 있는 도메인을 지정하십시오."
       ],
@@ -8247,7 +8262,7 @@
         "${ BRAND_NAME } 계정을 설정하지 않았다고 보고하는 링크가 만료되었습니다. 이 문제를 해결하기 위해 저희 지원팀에 연락해 주세요."
       ],
       "The name will be visible to your users while they are signed in.": [
-        "유저들이 로그인하고 있을 경우 그들에게 이름이 보여집니다."
+        "구성원이 로그인하고 있을 경우 이름을 확인할 수 있습니다."
       ],
       "The securest way to browse, stream, and be online.": [
         "검색, 스트리밍 및 온라인 상태를 유지하는 가장 안전한 방법이에요."
@@ -8275,9 +8290,6 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "기기에 따라 몇 초 또는 몇 분이 걸릴 수 있습니다"
-      ],
-      "This change will be fully reflected across your infrastructure in about 1 hour": [
-        "해당 변경 사항이 약 1시간 내에 사용자의 인프라에 반영됩니다."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "이 작업은 몇 분이 소요될 수 있습니다. 이 페이지를 닫거나 인터넷 연결을 끊지 마세요."
@@ -8525,6 +8537,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "지금 업그레이드하여 프리미엄 기능, 제품, 저장 공간을 특별한 가격에 이용하세요."
       ],
+      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "${ PROTON_SENTINEL_NAME }에 접근하려면 ${ firstPlanNames } 및 ${ lastPlanName } 플랜으로 업그레이드하세요."
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "공유하기 쉽도록 계정에 @pm.me 짧은 주소로 업그레이드 하세요. \"${ MAIL_APP_NAME }\" 또는 \"비공개 메시지 me\"를 의미합니다."
       ],
@@ -8630,9 +8645,6 @@
       "Visa Secure logo": [
         "Visa Secure 로고"
       ],
-      "Want servers in other countries?": [
-        "다른 국가의 서버를 원하시나요?"
-      ],
       "Want to learn more?": [
         "더 알아보시겠어요?"
       ],
@@ -8668,6 +8680,9 @@
       ],
       "We recommend having multiple servers in different locations to provide redundancy.": [
         "중복성을 위해 다른 위치에 여러 서버를 두는 것이 좋습니다."
+      ],
+      "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "2단계 인증 사용을 시작하기 전에 가족 구성원에게 알리고 계정에 2단계 인증을 설정하도록 요청하는 것이 좋습니다."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "2단계 인증 사용을 시작하기 전에 조직 구성원에게 알리고 계정에 2단계 인증을 설정하도록 요청하는 것이 좋습니다."
@@ -8831,9 +8846,6 @@
       "You can enable the Photos section from the interface using the toggle below.": [
         "아래 토글을 통해 인터페이스상의 사진 섹션을 활성화할 수 있습니다."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
-        "요금제의 IP 주소가 있는 경우 번호에 ${ specificCountryCount }을(를) 추가하거나 맞춤형 솔루션을 위해 당사에 연락하여 위의 설정을 즉시 잠금 해제할 수 있습니다."
-      ],
       "You can import one data type at a time.": [
         "한 번에 하나의 데이터 유형을 가져올 수 있어요."
       ],
@@ -8878,9 +8890,6 @@
       ],
       "You do not have permission to perform this action": [
         "이 작업을 수행할 권한이 없습니다."
-      ],
-      "You have ${ availableCount } dedicated server available.": [
-        "${ availableCount }개 전용 서버를 사용할 수 있습니다."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "체험판 ${ planTitle } 구독이 있습니다. 체험 기간 이후로도 계속 구독을 사용하려면, 결제 수단을 추가해 주세요."
@@ -9931,6 +9940,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "키의 지문 인식을 위해 비밀번호를 입력하세요: ${ fingerprintCode }"
       ],
+      "Event": [
+        "이벤트"
+      ],
       "Event duration": [
         "이벤트 기간"
       ],
@@ -10278,6 +10290,9 @@
       ],
       "Reveal password": [
         "비밀번호 표시"
+      ],
+      "Search": [
+        "검색"
       ],
       "Search by email": [
         "이메일로 검색"
@@ -10692,9 +10707,6 @@
       ],
       "Common sign up issues": [
         "일반적 회원가입 문제"
-      ],
-      "Contact us": [
-        "문의"
       ],
       "create a ticket": [
         "티켓을 생성"
@@ -11752,6 +11764,9 @@
       "Secure Core servers": [
         "Secure Core 서버"
       ],
+      "Secure link sharing": [
+        "안전한 링크 공유"
+      ],
       "See team's availability": [
         "팀의 가용성 확인"
       ],
@@ -11851,6 +11866,9 @@
       "Up to ${ n } user": [
         "사용자 최대 ${ n }명"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "최대 ${ n }명 사용자 (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "최대 ${ totalStorageSize } 스토리지"
       ],
@@ -11868,6 +11886,14 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } 주소나 별칭이 유출되었는지 확인하기 위해 다크 웹을 탐색하며 발견한 것이 있다면 즉시 알려드립니다."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins }명 관리자"
+      ],
+      "${ users } user": [
+        "${ users }명 사용자"
       ]
     },
     "new_plans: feature info": {
@@ -11964,6 +11990,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "민감한 비즈니스 정보를 보호하고 안전하게 공동 작업하기."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "6명의 구성원을 위한 ${ PASS_SHORT_APP_NAME } Plus의 프리미엄 기능으로 우리 가족을 보호하세요."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "${ BRAND_NAME } 서비스들로 가족의 개인정보를 보호하세요."
@@ -12240,6 +12269,9 @@
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "자동 동기화, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
       ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "나의 항목을 ${ PASS_APP_NAME }를 사용하지 않는 사람이더라도 안전하게 공유"
+      ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "전화번호, 주소, 생일과 개인 노트와 같은 연락처 상세 정보를 안전하게 저장하세요. 제로 엑세스 암호화는 ${ BRAND_NAME } 또한 접근할 수 없음을 보장합니다."
       ],
@@ -12411,11 +12443,17 @@
       "Link copied to clipboard": [
         "링크가 클립보드에 복사됨"
       ],
+      "Number of records exceeds the download limit of 10000": [
+        "최대 기록 수가 10000개의 다운로드 제한을 초과합니다."
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 자격 증명 재생성됨"
       ],
       "Reminder has been sent": [
         "알리미가 전송되었습니다."
+      ],
+      "Too many recent API requests": [
+        "너무 많이 API가 요청됨"
       ],
       "Trial started": [
         "체험기간이 시작되었습니다"
@@ -13279,6 +13317,34 @@
       ],
       "For individuals": [
         "개인용"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n }개 사용자 계정"
+      ],
+      "Admin panel to manage users and subscription": [
+        "사용자 및 구독을 관리할 수 있는 관리자 패널"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "한 번의 쉬운 구독으로 6명 구성원과 모든 프리미엄 기능을 누려보세요."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "${ yearlyPrice }(으)로 매년 청구. ${ passFamilyPlanName }로 ${ yearlySavedPrice } 절약하세요 (6인의 각각 ${ passPlusPlanName } 구독과 비교)"
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "${ PASS_APP_NAME } 얼리 서포터를 위한 특별 할인."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "${ monthlyPrice }에 구매하세요"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "${ passFamilyPlanName }를 소개합니다"
+      ],
+      "Limited-time deal.": [
+        "기간 한정 할인."
       ]
     },
     "password_reset: info": {
@@ -15627,6 +15693,11 @@
         "만료"
       ]
     },
+    "Subtitle": {
+      "View VPN session details for your organization.": [
+        "내 조직의 VPN 세션 상세 사항을 확인하세요."
+      ]
+    },
     "Success": {
       "Account deleted. Signing out...": [
         "계정이 삭제되었습니다. 로그아웃 중..."
@@ -16142,9 +16213,6 @@
       "Add pm.me subdomain": [
         "pm.me 하위 도매인 생성"
       ],
-      "Add servers": [
-        "서버 추가"
-      ],
       "Add Sieve filter": [
         "Sieve 필터 추가"
       ],
@@ -16294,12 +16362,6 @@
       ],
       "Connect ${ name }": [
         "${ name } 연락"
-      ],
-      "Connection monitor disabled": [
-        "연결 모니터 비활성화됨"
-      ],
-      "Connection monitor enabled": [
-        "연결 모니터 활성화됨"
       ],
       "Contact us": [
         "문의"
