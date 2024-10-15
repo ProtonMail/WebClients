@@ -269,6 +269,11 @@
       "Import": [
         "Importare"
       ],
+      "Import alias": [
+        "Importare alias",
+        "Importare aliasuri",
+        "Importare aliasuri"
+      ],
       "Import your passwords": [
         "Importați-vă parolele"
       ],
@@ -1726,9 +1731,6 @@
       "Thank you, the problem has been reported": [
         "Mulțumim, problema a fost raportată."
       ],
-      "The autofill dropdown will automatically open when you click or focus on the field.": [
-        "Meniul derulant de autocompletare se va deschide automat când se dă clic sau se focalizează pe un câmp."
-      ],
       "The export will only contain vaults that you own.": [
         "Exportarea va conține doar seifurile pe care le dețineți."
       ],
@@ -1859,11 +1861,13 @@
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Acum vă puteți folosi parola ${ BRAND_NAME } pentru a accesa ${ PASS_SHORT_APP_NAME } în mod deconectat."
       ],
-      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Vă puteți completa automat rapid acreditările apăsând pe pictograma ${ PASS_APP_NAME }."
-      ],
       "You cannot change the mailboxes for this alias.": [
         "Nu se poate modifica adresa reală pentru acest alias."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Aveți ${ aliasCount } alias care există în SimpleLogin, dar lipsește în ${ PASS_APP_NAME }. Doriți să-l importați?",
+        "Aveți ${ aliasCount } aliasuri care există în SimpleLogin, dar lipsesc în ${ PASS_APP_NAME }. Doriți să le importați?",
+        "Aveți ${ aliasCount } de aliasuri care există în SimpleLogin, dar lipsesc în ${ PASS_APP_NAME }. Doriți să le importați?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Mai aveți ${ daysRemaining } zi rămasă pentru a încerca aceste funcții premium.",
@@ -2049,9 +2053,6 @@
       "Autofill 2FA": [
         "Autocompletare A2F"
       ],
-      "Automatically open autofill when a login field is focused": [
-        "Deschidere automată autocompletare când este accesat un câmp"
-      ],
       "Autosave": [
         "Autosalvare"
       ],
@@ -2144,9 +2145,6 @@
       ],
       "Display": [
         "Afișare"
-      ],
-      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
-        "Afișare pictogramă ${ PASS_APP_NAME } pe câmpurile de completare automată"
       ],
       "Domain": [
         "Domeniu"
@@ -2873,6 +2871,9 @@
       ],
       "Import to vault(s)": [
         "Importare în seif(uri)"
+      ],
+      "Import your aliases from SimpleLogin": [
+        "Importați-vă aliasurile din SimpleLogin"
       ],
       "Last autofill": [
         "Ultima autocompletare"

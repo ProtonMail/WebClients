@@ -904,6 +904,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Virhe poistettaessa suojattua linkkiä. Yritä muutaman minuutin kuluttua uudelleen."
       ],
+      "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
+        "Tämä voi tapahtua, jos ${ PASS_SHORT_APP_NAME } on ollut pitkään käyttämättä tai olet tyhjentänyt Safari-historiasi."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Liian monta epäonnistunutta yritystä. Kirjaudu sisään uudelleen."
       ],
@@ -982,6 +985,9 @@
     "FamilyPlanPromo2024": {
       "All premium features. 6 users. 1 easy subscription.": [
         "Kaikki premium-ominaisuudet. Kuusi käyttäjää. Yksi helppo tilaus."
+      ],
+      "Exclusive offer for ${ PASS_APP_NAME } early supporters.": [
+        "Erikoistarjous ${ PASS_APP_NAME }in varhaisille tukijoille."
       ],
       "Get it for ${ price }/month": [
         "Hanki se hintaan ${ price }/kuukausi"
@@ -1706,9 +1712,6 @@
       "Thank you, the problem has been reported": [
         "Kiitos, ongelmasta on ilmoitettu"
       ],
-      "The autofill dropdown will automatically open when you click or focus on the field.": [
-        "Automaattitäytön pudotusvalikko avautuu automaattisesti, kun kenttää klikataan tai se kohdistetaan."
-      ],
       "The export will only contain vaults that you own.": [
         "Vienti sisältää vain omistamasi holvit."
       ],
@@ -1837,11 +1840,12 @@
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Voit nyt käyttää ${ PASS_SHORT_APP_NAME }ia ${ BRAND_NAME }-salasanallasi myös ilman verkkoyhteyttä."
       ],
-      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Mahdollistaa kirjautumistietojen nopean automaattitäytön ${ PASS_APP_NAME }-kuvakkeesta."
-      ],
       "You cannot change the mailboxes for this alias.": [
         "Et voi muuttaa aliakseen liitettyjä postilaatikoita."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Sinulla on SimpleLoginissa ${ aliasCount } ${ PASS_APP_NAME }ista puuttuva alias. Haluaisitko tuoda sen?",
+        "Sinulla on SimpleLoginissa ${ aliasCount } ${ PASS_APP_NAME }ista puuttuvaa aliasta. Haluaisitko tuoda ne?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Sinulla on ${ daysRemaining } päivä jäljellä kokeilla näitä ja muita premium-ominaisuuksia.",
@@ -2020,9 +2024,6 @@
       "Autofill 2FA": [
         "Automaattitäytä vahvistuskoodi"
       ],
-      "Automatically open autofill when a login field is focused": [
-        "Näytä automaattitäyttö kirjautumiskentän aktivoituessa."
-      ],
       "Autosave": [
         "Automaattitallennus"
       ],
@@ -2115,9 +2116,6 @@
       ],
       "Display": [
         "Ulkoasu"
-      ],
-      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
-        "Näytä ${ PASS_APP_NAME } -kuvake automaattisesti täytettävissä kentissä"
       ],
       "Domain": [
         "Verkkotunnus"
@@ -2295,6 +2293,9 @@
       ],
       "Login": [
         "Kirjautumistieto"
+      ],
+      "Login autofill": [
+        "Kirjautumistiedon automaattitäyttö"
       ],
       "Logins": [
         "Kirjautumistiedot"

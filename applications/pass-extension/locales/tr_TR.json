@@ -1619,6 +1619,9 @@
       "Quickly autofill your identities.": [
         "Kimliklerinizi kolayca otomatik olarak doldurun"
       ],
+      "Quickly autofill your saved credentials.": [
+        "Kaydedilmiş kimlik doğrulama bilgilerinizi otomatik olarak doldurun."
+      ],
       "Registering extra password...": [
         "Ek parola kaydediliyor..."
       ],
@@ -1711,9 +1714,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Teşekkürler. Sorununuz bildirildi"
-      ],
-      "The autofill dropdown will automatically open when you click or focus on the field.": [
-        "Alana tıkladığınızda ya da üzerine geldiğinizde otomatik doldurma penceresi açılır."
       ],
       "The export will only contain vaults that you own.": [
         "Yalnızca sahibi olduğunuz kasalar dışa aktarılacak."
@@ -1842,9 +1842,6 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Artık ${ PASS_SHORT_APP_NAME } çevrim dışı erişimi için ${ BRAND_NAME } parolanızı kullanabilirsiniz"
-      ],
-      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "${ PASS_APP_NAME } simgesine tıklayarak kimlik doğrulama bilgilerinizi otomatik olarak doldurabilirsiniz."
       ],
       "You cannot change the mailboxes for this alias.": [
         "Bu takma adın e-posta kutularını değiştiremezsiniz."
@@ -2030,9 +2027,6 @@
       "Autofill 2FA": [
         "Otomatik iki adımlı doğrulama doldurma"
       ],
-      "Automatically open autofill when a login field is focused": [
-        "Bir oturum açma alanına gelindiğinde otomatik doldurma açılsın"
-      ],
       "Autosave": [
         "Otomatik kaydet"
       ],
@@ -2125,9 +2119,6 @@
       ],
       "Display": [
         "Görünüm"
-      ],
-      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
-        "Otomatik doldurulabilir alanlarda ${ PASS_APP_NAME } simgesi görüntülensin"
       ],
       "Domain": [
         "Etki alanı"
@@ -2305,6 +2296,9 @@
       ],
       "Login": [
         "Oturum açma"
+      ],
+      "Login autofill": [
+        "Otomatik oturum açma bilgileri doldurma"
       ],
       "Logins": [
         "Oturum açma kayıtları"
