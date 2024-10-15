@@ -10,6 +10,7 @@ import {
 } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
+import { isIgnoredErrorForReporting } from '../../../utils/errorHandling';
 import { is4xx, is5xx } from '../../../utils/errorHandling/apiErrors';
 import { UserAvailabilityTypes } from '../../../utils/metrics/types/userSuccessMetricsTypes';
 import { userSuccessMetrics } from '../../../utils/metrics/userSuccessMetrics';
@@ -72,18 +73,29 @@ export default function useUploadMetrics(isPaid: boolean, metricsModule = metric
     };
 
     const uploadFailed = (failedUploadMetadata: FailedUploadMetadata, error: any) => {
-        userSuccessMetrics.mark(UserAvailabilityTypes.coreFeatureError);
         const shareType = getShareIdType(failedUploadMetadata.shareId);
         const errorCategory = getErrorCategory(error);
         const retry = failedUploadMetadata.numberOfErrors > 1;
 
-        if (!IGNORED_ERROR_CATEGORIES_FROM_SUCCESS_RATE.includes(errorCategory)) {
+        if (!IGNORED_ERROR_CATEGORIES_FROM_SUCCESS_RATE.includes(errorCategory) && !isIgnoredErrorForReporting(error)) {
+            userSuccessMetrics.mark(UserAvailabilityTypes.coreFeatureError);
+
             metricsModule.drive_upload_success_rate_total.increment({
                 status: 'failure',
                 shareType,
                 retry: retry ? 'true' : 'false',
                 initiator: 'explicit',
             });
+
+            if (Date.now() - lastErroringUserReport.current > REPORT_ERROR_USERS_EVERY) {
+                metricsModule.drive_upload_erroring_users_total.increment({
+                    plan: isPaid ? 'paid' : 'free',
+                    shareType,
+                    initiator: 'explicit',
+                });
+
+                lastErroringUserReport.current = Date.now();
+            }
         }
         // Type of error
         metricsModule.drive_upload_errors_total.increment({
@@ -106,16 +118,6 @@ export default function useUploadMetrics(isPaid: boolean, metricsModule = metric
                 Value: failedUploadMetadata.roundedUnencryptedFileSize,
                 Labels: {},
             });
-        }
-
-        if (Date.now() - lastErroringUserReport.current > REPORT_ERROR_USERS_EVERY) {
-            metricsModule.drive_upload_erroring_users_total.increment({
-                plan: isPaid ? 'paid' : 'free',
-                shareType,
-                initiator: 'explicit',
-            });
-
-            lastErroringUserReport.current = Date.now();
         }
     };
 
