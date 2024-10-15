@@ -137,13 +137,16 @@ function Drive({ activeFolder, folderView }: Props) {
         [sortParams.sortField, sortParams.sortOrder, isLoading]
     );
 
-    const handleItemRender = (item: DriveItem) => {
-        incrementItemRenderedCounter();
+    const handleItemRender = useCallback(
+        (item: DriveItem) => {
+            incrementItemRenderedCounter();
 
-        if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
-            thumbnails.addToDownloadQueue(shareId, item.linkId, item.activeRevision.id);
-        }
-    };
+            if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
+                thumbnails.addToDownloadQueue(shareId, item.linkId, item.activeRevision.id);
+            }
+        },
+        [thumbnails, shareId, incrementItemRenderedCounter]
+    );
 
     const handleClick = useCallback(
         (id: BrowserItemId) => {
