@@ -3,5 +3,5 @@ import { join } from 'path';
 
 export const uninstallProton = () => {
     const file = join(process.resourcesPath, 'uninstall.sh');
-    spawn(file, { detached: true }).unref();
+    spawn(file, { detached: true, stdio: 'ignore' }).unref();
 };
