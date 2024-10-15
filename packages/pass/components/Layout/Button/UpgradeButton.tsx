@@ -2,7 +2,7 @@ import type { CSSProperties, FC, MouseEventHandler } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, type ButtonLikeSize, InlineLinkButton } from '@proton/atoms';
+import { Button, ButtonLike, type ButtonLikeSize } from '@proton/atoms';
 import type { IconSize } from '@proton/components';
 import { Icon } from '@proton/components';
 import { type UpsellRef } from '@proton/pass/constants';
@@ -36,8 +36,9 @@ export const UpgradeButton: FC<UpgradeButtonProps> = ({
     style,
     upsellRef,
 }) => {
-    const ButtonComponent = inline ? InlineLinkButton : Button;
-    const buttonProps = inline ? { as: 'a' } : ({ pill: true, shape: 'solid' } as const);
+    const ButtonComponent = inline ? ButtonLike : Button;
+    const buttonProps = inline ? ({ as: 'a', shape: 'underline' } as const) : ({ pill: true, shape: 'solid' } as const);
+
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef, path });
 
     /** `onClick` may trigger async wrapped code - since `navigateToUpgrade`
@@ -50,7 +51,11 @@ export const UpgradeButton: FC<UpgradeButtonProps> = ({
 
     return (
         <ButtonComponent
-            className={clsx('items-center flex-nowrap shrink-0', inline ? 'inline-flex' : 'flex', className)}
+            className={clsx(
+                'items-center flex-nowrap shrink-0',
+                inline ? 'inline-flex link link-focus align-baseline text-left' : 'flex',
+                className
+            )}
             color="norm"
             onClick={handleClick}
             size={buttonSize}
