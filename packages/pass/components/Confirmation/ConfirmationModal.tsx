@@ -24,6 +24,7 @@ export type ConfirmationModalProps = {
     open?: boolean;
     disabled?: boolean;
     size?: ModalSize;
+    closeAfterSubmit?: boolean;
 };
 
 export const ConfirmationModal = ({
@@ -37,10 +38,11 @@ export const ConfirmationModal = ({
     size,
     onClose,
     onSubmit,
+    closeAfterSubmit = true,
 }: ConfirmationModalProps) => {
     const handleSubmit = async () => {
         await onSubmit?.();
-        onClose?.();
+        if (closeAfterSubmit) onClose?.();
     };
 
     return (
