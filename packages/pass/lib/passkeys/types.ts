@@ -1,4 +1,7 @@
-import type { WasmGeneratePasskeyResponse, WasmResolvePasskeyChallengeResponse } from '@protontech/pass-rust-core';
+import type {
+    WasmGeneratePasskeyResponse,
+    WasmResolvePasskeyChallengeResponse,
+} from '@protontech/pass-rust-core/worker';
 
 import type { SelectedItem } from '@proton/pass/types';
 import type { Passkey } from '@proton/pass/types/protobuf/item-v1';
