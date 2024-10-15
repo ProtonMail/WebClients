@@ -220,6 +220,9 @@
       "Click here.": [
         "Hier klicken."
       ],
+      "Click to copy ${ defaultEmailAddress } to clipboard": [
+        "Klick um ${ defaultEmailAddress } in die Zwischenablage zu kopieren"
+      ],
       "Close": [
         "Schließen"
       ],
@@ -1308,6 +1311,9 @@
       ],
       "Upgrade now": [
         "Jetzt upgraden"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Upgrade auf ${ BRAND_NAME } Unlimitiert"
       ],
       "Upload picture": [
         "Bild hochladen"
@@ -3409,8 +3415,23 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } in den Einstellungen."
       ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } schützt dein Konto mit spezieller 24/7-Überwachung verdächtiger Aktivitäten - einschließlich der Eskalation zu Sicherheitsspezialisten."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA fügt eine zusätzliche Sicherheitsebene hinzu, die unbefugten Zugriff verhindert."
+      ],
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Lösche automatisch Spam und gelöschte Nachrichten und schalte mit einem Upgrade weitere Premium-Funktionen frei."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Automatisches Löschen von E-Mails, die vor mehr als 30 Tagen in den Papierkorb und in den Spam verschoben wurden."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Sortiere deine eingehenden Nachrichten automatisch, bevor sie deinen Posteingang erreichen."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Lege so viele Etiketten oder Ordner an, wie du brauchst, um deinen Posteingang in übersichtlich zu halten."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Kontakte werden entschlüsselt… Dies kann einige Minuten dauern. Wenn der Prozess abgeschlossen ist, kannst du die Datei mit allen deinen exportierten Kontakten herunterladen."
@@ -3420,6 +3441,9 @@
       ],
       "Designed for users seeking heightened protection for their accounts.": [
         "Entwickelt für Benutzer, die ihre Konten besser schützen möchten."
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "Du willst deine E-Mail nicht sofort verschicken? Plane sie genau für den richtigen Zeitpunkt."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kontakte werden verschlüsselt und importiert… Dies kann einige Minuten dauern. Wenn der Vorgang abgeschlossen ist, kannst du diese Meldung schließen."
@@ -3452,6 +3476,9 @@
       "No labels": [
         "Keine Kategorie"
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Spare Zeit, indem du mit Kontaktgruppen E-Mails an alle auf einmal schickst. Schalte diese und andere Premium-Funktionen frei, wenn du ein Upgrade machst."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Trenne verschiedene Aspekte deines Lebens mit mehreren E-Mail-Adressen und schalte weitere Premium-Funktionen frei, wenn du ein Upgrade durchführst."
       ],
@@ -3479,6 +3506,15 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Aktiviere den E-Mail-Tracker-Schutz, um zu verhindern, dass Werbetreibende und andere Personen deinen Standort und deine Online-Aktivitäten verfolgen."
       ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "Schalte ${ activatePmUser } für eine einprägsame und leicht einzugebende E-Mail-Adresse frei."
+      ],
+      "Unlock custom message scheduling and more premium features when you upgrade.": [
+        "Schalte mit dem Upgrade individuelle Nachrichtenplanung und weitere Premium-Funktionen frei."
+      ],
+      "Unlock custom snooze times and more premium features when you upgrade.": [
+        "Schalte individuelle Schlummerzeiten und weitere Premium-Funktionen frei, indem du ein Upgrade durchführst."
+      ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Schalte mit einem Upgrade kürzere E-Mail-Adressen und weitere Premiumfunktionen frei."
       ],
@@ -3491,6 +3527,9 @@
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Upgrade dein Konto und aktiviere ${ PROTON_SENTINEL_NAME }, unsere hochmoderne KI-gesteuerte Sicherheitslösung mit dediziertem 24/7-Experten-Support."
       ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "Verwende ${ MAIL_APP_NAME }, um dich bei Online-Diensten anzumelden, denn im Gegensatz zu anderen E-Mail-Anbietern werden wir deine Daten niemals verfolgen und an Dritte weitergeben."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Durch Ziehen kannst du die Zusammenführungspriorität zwischen den Kontakten festlegen. Deaktiviere die Kontakte, die du nicht zusammenführen möchtest."
       ],
@@ -3499,6 +3538,12 @@
       ],
       "When do you want your message to be sent?": [
         "Wann soll diese Nachricht gesendet werden?"
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Mit Kontaktgruppen kannst du mit einem Klick E-Mails an alle Mitglieder der Gruppe senden."
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "Mit der benutzerdefinierten Schlummerfunktion kannst du E-Mails ausblenden und so einstellen, dass sie zu einem günstigeren Zeitpunkt wieder erscheinen."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kannst Termine im iCal-Format (ICS-Datei) importieren. Die Datei darf die max. Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und bis zu ${ MAX_IMPORT_EVENTS_STRING } Termine enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf."
@@ -3511,6 +3556,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Dein Konto und die Methoden zur Datenwiederherstellung sind festgelegt."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
       ]
     },
     "description": {
@@ -5239,10 +5287,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } Vorschlag gefunden. Verwende die Tastatur zum Navigieren.",
-        "${ items.length } Vorschläge gefunden. Verwende die Tastatur zum Navigieren."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Verwende die Pfeiltasten hoch und runter, um die Vorschläge nach der Eingabe aufzurufen und durchzusehen. Bestätige deine Auswahl mit der Eingabetaste oder drücke die Escape-Taste, um das Vorschlagsfeld zu schließen."
       ]
@@ -5997,6 +6041,9 @@
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt der Gruppe ${ contactGroupName } zugewiesen."
       ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Kontakt von Gruppe ${ contactGroupName } entfernt"
+      ],
       "Copied to clipboard": [
         "In die Zwischenablage kopiert"
       ],
@@ -6711,6 +6758,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
       ],
+      "Remember to update this in your password manager or wherever you keep your account and login information.": [
+        "Denk daran, dies in deinem Passwort-Manager oder wo auch immer du deine Konto- und Anmeldeinformationen aufbewahrst, zu aktualisieren."
+      ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Entfernt alle Daten, die mit dieser App verbunden sind (einschließlich heruntergeladener Nachrichten, …)"
       ],
@@ -7290,6 +7340,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Es wird nun ein neuer Tab im Browser geöffnet und folgende Adresse aufgerufen:"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Du bist dabei, deinen Standardbrowser zu öffnen und zu besuchen:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du bist derzeit als „${ user.Name }“ (${ user.Email }) angemeldet."
@@ -9893,19 +9946,40 @@
       "Finance": [
         "Finanzen"
       ],
+      "I have moved my logins to ${ BRAND_NAME }": [
+        "Ich habe meine Anmeldedaten nach ${ BRAND_NAME } verschoben."
+      ],
+      "Privacy for all your online accounts": [
+        "Privatsphäre für alle deine Online-Konten"
+      ],
       "Shopping": [
         "Shopping"
       ],
       "Social media": [
         "Social Media"
+      ],
+      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
+        "Verwende deine ${ MAIL_APP_NAME } Adresse, um dich bei Online-Diensten anzumelden, damit du nicht verfolgt und profiliert wirst. Ändere jetzt deine E-Mail-Adresse für beliebte Dienste. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
+      "Access email and calendar right from your desktop with the desktop app.": [
+        "Greife mit der Desktop-App direkt von deinem Desktop aus auf E-Mails und Kalender zu."
+      ],
+      "Activate premium features": [
+        "Aktiviere Premiumfunktionen"
+      ],
+      "Activate selected": [
+        "Ausgewählte aktivieren"
+      ],
       "Advanced encryption": [
         "Fortschrittliche Verschlüsselung"
       ],
       "App Store": [
         "App Store"
+      ],
+      "Auto-delete spam and trash": [
+        "Spam und Papierkorb automatisch löschen"
       ],
       "Automatically forward emails": [
         "E-Mails automatisch weiterleiten"
@@ -9915,6 +9989,9 @@
       ],
       "Block unsavory senders": [
         "Blockiere unerwünschte Absender"
+      ],
+      "Clear out deleted and spam emails after 30 days.": [
+        "Lösche gelöschte und Spam-E-Mails nach 30 Tagen."
       ],
       "Congratulations on choosing privacy": [
         "Herzlichen Glückwunsch zur Entscheidung für den Datenschutz"
@@ -9928,20 +10005,32 @@
       "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
         "Eine so starke Verschlüsselung, dass nur du und die beabsichtigten Empfänger deine E-Mails einsehen können. ${ kbLinkEncryption }"
       ],
+      "Fixed and focused": [
+        "Fixiert und konzentriert"
+      ],
       "For your eyes only": [
         "Nur für dich"
       ],
       "Forward Gmail messages to your inbox.": [
         "Leite Gmail-Nachrichten automatisch an dein Postfach weiter."
       ],
+      "Get notified if your password is compromised.": [
+        "Lass dich benachrichtigen, wenn dein Passwort kompromittiert wurde."
+      ],
       "Get the desktop app": [
         "Desktop-App herunterladen"
+      ],
+      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
+        "Hole die mobile App aus dem ${ mobileAppAppStoreLink } oder ${ mobileAppGooglePlayLink }."
       ],
       "Google Play": [
         "Google Play"
       ],
       "Let's get started": [
         "Fangen wir an"
+      ],
+      "Make the most of your paid plan.": [
+        "Nutze dein kostenpflichtiges Angebot optimal aus."
       ],
       "Maybe later": [
         "Vielleicht später"
@@ -9957,6 +10046,12 @@
       ],
       "Skip": [
         "Überspringen"
+      ],
+      "Start using ${ BRAND_NAME }": [
+        "Beginne mit ${ BRAND_NAME }"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Verwende die kürzere, eingängigere Version deiner E-Mail Adresse."
       ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "Wir hindern Werbetreibende und Datensammler daran, ein Profil von dir zu erstellen. ${ kbLinkPrivacy }"
@@ -11185,6 +11280,20 @@
       ],
       "Unsubscribed": [
         "Abbestellt"
+      ]
+    },
+    "Step": {
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "Gib deine ${ MAIL_APP_NAME } Adresse als neue Adresse ein, und speichere, bestätige oder verifiziere die Änderung"
+      ],
+      "In the account settings, look for the option to edit or change your email address ": [
+        "Suche in den Kontoeinstellungen nach der Option zum Bearbeiten oder Ändern deiner E-Mail-Adresse "
+      ],
+      "Select service to update": [
+        "Zu aktualisierenden Dienst auswählen"
+      ],
+      "Sign in to the service": [
+        "Beim Dienst anmelden"
       ]
     },
     "Step in filter modal": {
@@ -12549,6 +12658,9 @@
       "External encryption": [
         "Externe Verschlüsselung"
       ],
+      "Filter for more focus": [
+        "Filter für mehr Fokus"
+      ],
       "Filter name cannot contain only spaces": [
         "Der Filtername darf nicht nur Leerzeichen enthalten."
       ],
@@ -12575,6 +12687,12 @@
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Verstecke deine E-Mail-Adresse mit ${ PASS_APP_NAME }"
+      ],
+      "High security for your account": [
+        "Hochsicherheit für dein Konto"
+      ],
+      "How to update your email address": [
+        "So aktualisierst du deine E-Mail Adresse"
       ],
       "Human verification": [
         "Captcha"
@@ -12736,6 +12854,9 @@
       "No breaches detected": [
         "Keine Datenlecks entdeckt"
       ],
+      "No need to empty the trash": [
+        "Kein Ausleeren des Papierkorbs notwendig"
+      ],
       "No trackers found": [
         "Keine E-Mail-Tracker gefunden"
       ],
@@ -12744,6 +12865,9 @@
       ],
       "Notes": [
         "Notizen"
+      ],
+      "One email, many recipients": [
+        "Eine E-Mail, viele Empfänger"
       ],
       "Open actions dropdown": [
         "Auswahlliste „Aktionen“ öffnen"
@@ -12819,6 +12943,9 @@
       ],
       "Request new code": [
         "Neuen Code anfordern"
+      ],
+      "Same inbox, shorter email address": [
+        "Gleicher Posteingang, kürzere E-Mail-Adresse"
       ],
       "Save time with email filters": [
         "Spare Zeit mit E-Mail-Filtern"
