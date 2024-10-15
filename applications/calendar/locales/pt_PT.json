@@ -473,11 +473,11 @@
       "Not now": [
         "Agora não"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "Aceitar"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir definições do ${ CALENDAR_APP_NAME }"
@@ -3677,10 +3677,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } sugestão foi encontrada. Utilize o teclado para navegar.",
-        "${ items.length } sugestões foram encontradas. Utilize o teclado para navegar."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Utilize as setas Acima e Abaixo para aceder e pesquisar sugestões após a entrada. Prima la tecla Enter para confirmar a sua escolha ou la tecla Esc para fechar a caixa de sugestões."
       ]
