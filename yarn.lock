@@ -2325,7 +2325,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@electron-forge/cli@npm:^7.5.0":
+"@electron-forge/cli@npm:^7.3.0, @electron-forge/cli@npm:^7.5.0":
   version: 7.5.0
   resolution: "@electron-forge/cli@npm:7.5.0"
   dependencies:
@@ -2418,7 +2418,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@electron-forge/maker-deb@npm:^7.5.0":
+"@electron-forge/maker-deb@npm:^7.3.0, @electron-forge/maker-deb@npm:^7.5.0":
   version: 7.5.0
   resolution: "@electron-forge/maker-deb@npm:7.5.0"
   dependencies:
@@ -2432,7 +2432,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@electron-forge/maker-dmg@npm:^7.5.0":
+"@electron-forge/maker-dmg@npm:^7.3.0, @electron-forge/maker-dmg@npm:^7.5.0":
   version: 7.5.0
   resolution: "@electron-forge/maker-dmg@npm:7.5.0"
   dependencies:
@@ -2447,7 +2447,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@electron-forge/maker-rpm@npm:^7.5.0":
+"@electron-forge/maker-rpm@npm:^7.3.0, @electron-forge/maker-rpm@npm:^7.5.0":
   version: 7.5.0
   resolution: "@electron-forge/maker-rpm@npm:7.5.0"
   dependencies:
@@ -2461,7 +2461,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@electron-forge/maker-squirrel@npm:^7.5.0":
+"@electron-forge/maker-squirrel@npm:^7.3.0, @electron-forge/maker-squirrel@npm:^7.5.0":
   version: 7.5.0
   resolution: "@electron-forge/maker-squirrel@npm:7.5.0"
   dependencies:
@@ -2476,7 +2476,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@electron-forge/maker-zip@npm:^7.5.0":
+"@electron-forge/maker-zip@npm:^7.3.0, @electron-forge/maker-zip@npm:^7.5.0":
   version: 7.5.0
   resolution: "@electron-forge/maker-zip@npm:7.5.0"
   dependencies:
@@ -2489,7 +2489,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@electron-forge/plugin-auto-unpack-natives@npm:^7.5.0":
+"@electron-forge/plugin-auto-unpack-natives@npm:^7.3.0, @electron-forge/plugin-auto-unpack-natives@npm:^7.5.0":
   version: 7.5.0
   resolution: "@electron-forge/plugin-auto-unpack-natives@npm:7.5.0"
   dependencies:
@@ -2519,7 +2519,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@electron-forge/plugin-fuses@npm:^7.5.0":
+"@electron-forge/plugin-fuses@npm:^7.3.0, @electron-forge/plugin-fuses@npm:^7.5.0":
   version: 7.5.0
   resolution: "@electron-forge/plugin-fuses@npm:7.5.0"
   dependencies:
@@ -2531,7 +2531,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@electron-forge/plugin-webpack@npm:^7.5.0":
+"@electron-forge/plugin-webpack@npm:^7.3.0, @electron-forge/plugin-webpack@npm:^7.5.0":
   version: 7.5.0
   resolution: "@electron-forge/plugin-webpack@npm:7.5.0"
   dependencies:
@@ -2561,7 +2561,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@electron-forge/publisher-github@npm:^7.5.0":
+"@electron-forge/publisher-github@npm:^7.3.0":
   version: 7.5.0
   resolution: "@electron-forge/publisher-github@npm:7.5.0"
   dependencies:
@@ -2686,7 +2686,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@electron/fuses@npm:^1.8.0":
+"@electron/fuses@npm:^1.7.0, @electron/fuses@npm:^1.8.0":
   version: 1.8.0
   resolution: "@electron/fuses@npm:1.8.0"
   dependencies:
@@ -12369,15 +12369,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/webpack-asset-relocator-loader@npm:1.7.4":
-  version: 1.7.4
-  resolution: "@vercel/webpack-asset-relocator-loader@npm:1.7.4"
-  dependencies:
-    resolve: "npm:^1.10.0"
-  checksum: 10c0/0a04cecad5e1910e64c2e9eaacea36336e1aa1fd74e3077b078b327340634744e480ac60322d0dd60461734568811d02473a7a8c433a3c51cb2878650dd933bb
-  languageName: node
-  linkType: hard
-
 "@vitejs/plugin-react-swc@npm:^3.7.1":
   version: 3.7.1
   resolution: "@vitejs/plugin-react-swc@npm:3.7.1"
@@ -19954,14 +19945,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron-log@npm:^5.2.0":
+"electron-log@npm:^5.1.1, electron-log@npm:^5.2.0":
   version: 5.2.0
   resolution: "electron-log@npm:5.2.0"
   checksum: 10c0/a3925dfe11aabc354ffcd5f47875e0a6c9698e61f5231e4df2ca5afb6e5fa905bba41880a16806adb7c95f441fc1e78f7507331feab0a9dfac0c542c62f2df7e
   languageName: node
   linkType: hard
 
-"electron-squirrel-startup@npm:^1.0.1":
+"electron-squirrel-startup@npm:^1.0.0":
   version: 1.0.1
   resolution: "electron-squirrel-startup@npm:1.0.1"
   dependencies:
@@ -19970,7 +19961,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron-store@npm:^8.2.0":
+"electron-store@npm:^8.1.0, electron-store@npm:^8.2.0":
   version: 8.2.0
   resolution: "electron-store@npm:8.2.0"
   dependencies:
@@ -34527,17 +34518,17 @@ __metadata:
   resolution: "proton-inbox-desktop@workspace:applications/inbox-desktop"
   dependencies:
     "@doyensec/electronegativity": "npm:^1.10.3"
-    "@electron-forge/cli": "npm:^7.5.0"
-    "@electron-forge/maker-deb": "npm:^7.5.0"
-    "@electron-forge/maker-dmg": "npm:^7.5.0"
-    "@electron-forge/maker-rpm": "npm:^7.5.0"
-    "@electron-forge/maker-squirrel": "npm:^7.5.0"
-    "@electron-forge/maker-zip": "npm:^7.5.0"
-    "@electron-forge/plugin-auto-unpack-natives": "npm:^7.5.0"
-    "@electron-forge/plugin-fuses": "npm:^7.5.0"
-    "@electron-forge/plugin-webpack": "npm:^7.5.0"
-    "@electron-forge/publisher-github": "npm:^7.5.0"
-    "@electron/fuses": "npm:^1.8.0"
+    "@electron-forge/cli": "npm:^7.3.0"
+    "@electron-forge/maker-deb": "npm:^7.3.0"
+    "@electron-forge/maker-dmg": "npm:^7.3.0"
+    "@electron-forge/maker-rpm": "npm:^7.3.0"
+    "@electron-forge/maker-squirrel": "npm:^7.3.0"
+    "@electron-forge/maker-zip": "npm:^7.3.0"
+    "@electron-forge/plugin-auto-unpack-natives": "npm:^7.3.0"
+    "@electron-forge/plugin-fuses": "npm:^7.3.0"
+    "@electron-forge/plugin-webpack": "npm:^7.3.0"
+    "@electron-forge/publisher-github": "npm:^7.3.0"
+    "@electron/fuses": "npm:^1.7.0"
     "@proton/shared": "workspace:^"
     "@types/jest": "npm:^29.5.13"
     "@types/lodash": "npm:^4.17.10"
@@ -34545,15 +34536,15 @@ __metadata:
     "@types/node": "npm:^20.16.11"
     "@typescript-eslint/eslint-plugin": "npm:^7.18.0"
     "@typescript-eslint/parser": "npm:^7.18.0"
-    "@vercel/webpack-asset-relocator-loader": "npm:1.7.4"
+    "@vercel/webpack-asset-relocator-loader": "npm:1.7.3"
     cross-env: "npm:^7.0.3"
     crypto: "npm:^1.0.1"
     css-loader: "npm:^7.1.2"
     dotenv: "npm:^16.4.5"
     electron: "npm:29.4.6"
-    electron-log: "npm:^5.2.0"
-    electron-squirrel-startup: "npm:^1.0.1"
-    electron-store: "npm:^8.2.0"
+    electron-log: "npm:^5.1.1"
+    electron-squirrel-startup: "npm:^1.0.0"
+    electron-store: "npm:^8.1.0"
     eslint: "npm:^8.57.1"
     eslint-plugin-import: "npm:^2.31.0"
     execa: "npm:^8.0.1"
