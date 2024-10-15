@@ -20008,16 +20008,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron@npm:^31.7.0":
-  version: 31.7.0
-  resolution: "electron@npm:31.7.0"
+"electron@npm:33.0.0":
+  version: 33.0.0
+  resolution: "electron@npm:33.0.0"
   dependencies:
     "@electron/get": "npm:^2.0.0"
     "@types/node": "npm:^20.9.0"
     extract-zip: "npm:^2.0.1"
   bin:
     electron: cli.js
-  checksum: 10c0/f1992f772de3b07a3f8e2fd4339f04ac324d6c964ad4eafe006c1a33d65e9bf376692cfe0d10c189db07749d1a56565118ab34678c15fc53b854e23166f5aa39
+  checksum: 10c0/3158741c4348e27494a0aed1ecd6c1fd55e42cfd051da4f22dc7c9824ae03e88261f0561da71347e84043c3282db3e9ae20e81efba3c69ec9f1d83f69b98225e
   languageName: node
   linkType: hard
 
@@ -34671,7 +34671,7 @@ __metadata:
     "@proton/pack": "workspace:^"
     "@vercel/webpack-asset-relocator-loader": "npm:1.7.3"
     cross-env: "npm:^7.0.3"
-    electron: "npm:^31.7.0"
+    electron: "npm:33.0.0"
     electron-log: "npm:^5.2.0"
     electron-store: "npm:^8.2.0"
     eslint: "npm:^8.57.1"
