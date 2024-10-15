@@ -79,45 +79,6 @@ export function SuggestionModePlugin({
 
   const [alertModal, showAlertModal] = useGenericAlertModal()
 
-  useEffect(() => {
-    /**
-     * Since we cannot reliably capture and wrap content
-     * inserted using IME, we disable suggestion mode if
-     * the editor is composing and show an alert to the user.
-     */
-    function disableSuggestionModeIfComposing() {
-      const isComposing = editor.isComposing()
-      const info = { isComposing, isSuggestionMode }
-      suggestionModeLogger.info('Should disable suggestion mode?', info)
-      if (isComposing && isSuggestionMode) {
-        editor.setEditable(false)
-        editor._compositionKey = null
-        onUserModeChange(EditorUserMode.Preview)
-        showAlertModal({
-          title: c('Title').t`Input mode not supported`,
-          translatedMessage: c('Info')
-            .t`The input mode or keyboard you are using is not currently supported in suggestion mode. Please switch to edit mode to resume editing.`,
-        })
-      }
-    }
-
-    disableSuggestionModeIfComposing()
-
-    return mergeRegister(
-      editor.registerCommand(
-        COMPOSITION_START_EVENT_COMMAND,
-        () => {
-          disableSuggestionModeIfComposing()
-          return true
-        },
-        COMMAND_PRIORITY_CRITICAL,
-      ),
-      editor.registerUpdateListener(() => {
-        disableSuggestionModeIfComposing()
-      }),
-    )
-  }, [editor, isSuggestionMode, onUserModeChange, showAlertModal, suggestionModeLogger])
-
   /**
    * Set of suggestion IDs created during the current session.
    * When the mutation listener for suggestion nodes is triggered,
@@ -562,8 +523,29 @@ export function SuggestionModePlugin({
         (event) => $handleImageDragAndDropAsSuggestion(event, addCreatedIDtoSet, suggestionModeLogger),
         COMMAND_PRIORITY_CRITICAL,
       ),
+      editor.registerCommand(
+        COMPOSITION_START_EVENT_COMMAND,
+        /**
+         * Since we cannot reliably capture and wrap content
+         * inserted using IME, we disable suggestion mode if
+         * the editor is composing and show an alert to the user.
+         */
+        function disableSuggestionModeIfComposing() {
+          suggestionModeLogger.info('Editor is composing, disabling suggestion mode')
+          editor.setEditable(false)
+          editor._compositionKey = null
+          onUserModeChange(EditorUserMode.Preview)
+          showAlertModal({
+            title: c('Title').t`Language not supported`,
+            translatedMessage: c('Info')
+              .t`The language you're using isn’t currently supported in suggestion mode. Please switch to edit mode or change the language.`,
+          })
+          return true
+        },
+        COMMAND_PRIORITY_CRITICAL,
+      ),
     )
-  }, [controller, editor, isSuggestionMode, suggestionModeLogger])
+  }, [controller, editor, isSuggestionMode, onUserModeChange, showAlertModal, suggestionModeLogger])
 
   return <>{alertModal}</>
 }
