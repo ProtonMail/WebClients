@@ -42,9 +42,8 @@
             "matchPackagePatterns": ["redux"]
         },
         {
-            "groupName": "pass-desktop exclusions",
-            "matchPaths": ["applications/pass-desktop/package.json"],
-            "matchPackageNames": ["@vercel/webpack-asset-relocator-loader"],
+            "groupName": "pass-desktop and inbox-desktop exclusions",
+            "matchPackagePatterns": ["@electron-forge/*", "@electron/fuses", "@vercel/webpack-asset-relocator-loader"],
             "enabled": false
         }
     ]
