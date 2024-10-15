@@ -1,4 +1,5 @@
 import { type FC, useMemo, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -9,6 +10,7 @@ import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/Qu
 import { TableRowLoading } from '@proton/pass/components/Layout/Table/TableRowLoading';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { resendVerifyMailbox, setDefaultMailbox } from '@proton/pass/store/actions';
+import { selectUserPlan } from '@proton/pass/store/selectors';
 import type { MaybeNull, UserMailboxOutput } from '@proton/pass/types';
 
 import { MailboxDeleteModal, type MailboxToDelete } from './MailboxDeleteModal';
@@ -26,6 +28,7 @@ export const AliasMailboxesTable: FC<Props> = ({ mailboxes, onVerify, onChangeDe
         () => mailboxes?.filter(({ MailboxID }) => MailboxID !== mailboxToDelete?.MailboxID) ?? [],
         [mailboxToDelete]
     );
+    const canManageAlias = useSelector(selectUserPlan)?.ManageAlias;
 
     const setDefaultMailboxRequest = useRequest(setDefaultMailbox, {
         onSuccess: ({ data: { DefaultMailboxID } }) => onChangeDefault(DefaultMailboxID),
@@ -78,6 +81,7 @@ export const AliasMailboxesTable: FC<Props> = ({ mailboxes, onVerify, onChangeDe
                                             className="button-xs ui-purple"
                                             pill={false}
                                             originalPlacement="bottom-end"
+                                            disabled={!canManageAlias}
                                         >
                                             {!IsDefault && (
                                                 <DropdownMenuButton
