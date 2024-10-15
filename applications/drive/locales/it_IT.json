@@ -384,10 +384,10 @@
       "Get link": [
         "Ottieni link"
       ],
-      "Get Started": [
+      "Get started": [
         "Inizia ora"
       ],
-      "Get started": [
+      "Get Started": [
         "Inizia ora"
       ],
       "Get verification code": [
@@ -561,11 +561,11 @@
       "Not now": [
         "Non ora"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Apri"
@@ -3362,8 +3362,14 @@
       "${ BRAND_NAME } groups": [
         "Gruppi ${ BRAND_NAME }"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Gli account con domini personalizzati non possono essere associati a un piano famiglia."
+      ],
       "customer support": [
         "assistenza clienti"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "I piani famiglia non supportano account esterni al momento. Crea un indirizzo con ${ BRAND_NAME } prima di unirti. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se accetti l'invito, ti cambieremo piano. Il saldo eventualmente rimasto sarà accreditato sul tuo account."
@@ -3371,8 +3377,14 @@
       "Invited by: ${ inviteEmail }": [
         "Invito di: ${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Gli account a vita non possono essere associati a un piano famiglia."
+      ],
       "Manage addresses.": [
         "Gestisci gli indirizzi."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "I titolari di un piano con membri non possono aderire a un altro piano famiglia."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Ci spiace, ma non è possibile cambiare piano al momento."
@@ -3394,6 +3406,12 @@
       ],
       "You have successfully joined the family group": [
         "Ti sei unito al gruppo famiglia"
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Hai delle fatture non pagate. Si prega di pagarle prima di aderire ad un piano famiglia."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Hai ricevuto un invito a collegare il tuo account ${ BRAND_NAME } a questo piano famiglia, per beneficiare insieme di tutte le funzioni premium di ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Il tuo account ha più indirizzi email rispetto alla disponibilità di questo piano. ${ addressSettingsLink }"
@@ -3565,10 +3583,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Trovato ${ items.length } suggerimento, usa la tastiera per navigare.",
-        "Trovati ${ items.length } suggerimenti, usa la tastiera per navigare."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Usa i tasti Su e Giù per accedere e sfogliare i suggerimenti dopo l'input. Premi Invio per confermare la tua scelta o Esc per chiudere la casella dei suggerimenti."
       ]
@@ -3942,6 +3956,10 @@
       "${ groupCounts } group found": [
         "${ groupCounts } gruppo trovato",
         "${ groupCounts } gruppi trovati"
+      ],
+      "${ invitations.length } pending invitation": [
+        "${ invitations.length } invito in attesa",
+        "${ invitations.length } inviti in attesa"
       ],
       "${ nbFile } encrypted file": [
         "${ nbFile } file crittografato",
@@ -7040,6 +7058,9 @@
       "Secure Core servers": [
         "Server Secure Core"
       ],
+      "Secure link sharing": [
+        "Condivisione tramite link sicuro"
+      ],
       "See team's availability": [
         "Visualizza la disponibilità del team"
       ],
@@ -7128,6 +7149,10 @@
         "${ n } utente",
         "Fino a ${ n } utenti"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Fino a ${ n } utente (${ adminsText }, ${ usersText })",
+        "Fino a ${ n } utenti (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Fino a ${ totalStorageSize } di archiviazione"
       ],
@@ -7146,6 +7171,16 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Monitoriamo il dark web per verificare se i tuoi indirizzi o alias ${ BRAND_NAME } vengono diffusi e ti avvisiamo immediatamente se troviamo qualcosa."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } amministratore",
+        "${ admins } amministratori"
+      ],
+      "${ users } user": [
+        "${ users } utente",
+        "${ users } utenti"
       ]
     },
     "new_plans: feature info": {
@@ -7221,6 +7256,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Proteggi le informazioni aziendali sensibili e collabora in modo sicuro."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Proteggi la tua famiglia con tutte le funzionalità premium di ${ PASS_SHORT_APP_NAME } Plus per 6 utenti."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Proteggi la privacy della tua famiglia con tutti i servizi ${ BRAND_NAME } combinati."
@@ -7432,6 +7470,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteggi i tuoi file con l'archiviazione su cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Condividi in modo sicuro singoli elementi con chiunque (anche se non utilizzano ${ PASS_APP_NAME })"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Archivia in modo sicuro i dettagli dei tuoi contatti, come numero di telefono, indirizzo, compleanno e note personali. La crittografia ad accesso zero assicura che nemmeno ${ BRAND_NAME } possa accedervi."
@@ -7830,9 +7871,6 @@
       "Continue": [
         "Continua"
       ],
-      "Create new document": [
-        "Crea un nuovo documento"
-      ],
       "Get started": [
         "Inizia"
       ],
@@ -7863,9 +7901,6 @@
       "Start using ${ DRIVE_APP_NAME }": [
         "Inizia ad usare ${ DRIVE_APP_NAME }"
       ],
-      "Try it later": [
-        "Prova più tardi"
-      ],
       "Try the app": [
         "Prova l'app"
       ],
@@ -7891,9 +7926,6 @@
       ],
       "Collaborate on documents": [
         "Collabora sui documenti"
-      ],
-      "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
-        "Crea e collabora sui documenti. Tutto è protetto dalla crittografia end-to-end."
       ],
       "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
         "Preferisci ${ DRIVE_APP_NAME } in modalità chiara o scura? Seleziona il colore che più ti ispira."
@@ -7936,9 +7968,6 @@
       ],
       "Hang tight": [
         "Tieniti forte"
-      ],
-      "Introducing ${ DOCS_APP_NAME }": [
-        "Ti presentiamo ${ DOCS_APP_NAME }"
       ],
       "Invitation accepted": [
         "Invito accettato"
@@ -8089,6 +8118,35 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Condivisione sicura della cassaforte (${ n } cassaforte) e condivisione dei collegamenti",
         "Condivisione sicura delle casseforti (${ n } casseforti) e condivisione dei collegamenti"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } account utente",
+        "${ n } account utente"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Pannello di amministrazione per gestire utenti e abbonamenti"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Tutte le funzionalità premium. 6 utenti. 1 semplice abbonamento."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Fatturato annualmente a ${ yearlyPrice }. Risparmia ${ yearlySavedPrice } con ${ passFamilyPlanName } (rispetto a 6 abbonamenti individuali a ${ passPlusPlanName })."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Offerta esclusiva disponibile solo per i primi sostenitori di ${ PASS_APP_NAME }."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Ottieni per ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Ti presentiamo ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Offerta a tempo limitato"
       ]
     },
     "passwordless": {
@@ -8454,6 +8512,11 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(aprirà ${ PASS_APP_NAME })"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Vedi eventi"
       ]
     },
     "Security Center - Info": {
@@ -10305,6 +10368,9 @@
       ],
       "What would you like to import?": [
         "Cosa vorresti importare?"
+      ],
+      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Stai per rifiutare l'invito per l'elemento condiviso. Non potrai accedervi nuovamente finché il proprietario non lo condividerà con te."
       ],
       "You have inaccessible files": [
         "Hai dei file inaccessibili"

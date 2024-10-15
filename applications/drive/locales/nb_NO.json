@@ -384,10 +384,10 @@
       "Get link": [
         "Få kobling"
       ],
-      "Get Started": [
+      "Get started": [
         "Kom i gang"
       ],
-      "Get started": [
+      "Get Started": [
         "Kom i gang"
       ],
       "Get verification code": [
@@ -561,10 +561,10 @@
       "Not now": [
         "Ikke nå"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -3362,8 +3362,14 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-grupper"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Kontoer med egendefinerte domener kan ikke bli med i en familieplan."
+      ],
       "customer support": [
         "kundestøtte"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Familieplaner støtter for øyeblikket ikke eksterne kontoer. Opprett en ${ BRAND_NAME }-adresse før du blir med. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Hvis du godtar invitasjonen, bytter vi deg fra den nåværende planen og krediterer kontoen din med eventuell gjenværende saldo."
@@ -3371,8 +3377,14 @@
       "Invited by: ${ inviteEmail }": [
         "Invitert av: ${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Livsvarige kontoer kan ikke bli med i en familieplan."
+      ],
       "Manage addresses.": [
         "Administrer adresser"
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Eiere av en plan med medlemmer kan ikke bli med i en annen familieplan."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Beklager, du kan ikke endre abonnementet på nåværende tidspunkt."
@@ -3394,6 +3406,12 @@
       ],
       "You have successfully joined the family group": [
         "Du har blitt med i familiegruppen"
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Du har ubetalte fakturaer. Vennligst betal dem før du blir med i en familieplan."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Du er invitert til å koble din ${ BRAND_NAME }-konto til denne familieplanen og sammen nyte alle ${ brandOrAppName }-premiumfunksjoner."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Kontoen din har flere e-postadresser enn det som er tilgjengelig for deg i denne planen. ${ addressSettingsLink }"
@@ -3565,10 +3583,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Fant ${ items.length } forslag, bruk tastaturet til å navigere.",
-        "Fant ${ items.length } forslag, bruk tastaturet til å navigere."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Bruk opp- og ned-tastene for å få tilgang til og bla gjennom forslag etter inndata. Trykk Enter for å bekrefte valget, eller Esc for å lukke forslagsboksen."
       ]
@@ -3942,6 +3956,10 @@
       "${ groupCounts } group found": [
         "${ groupCounts } gruppe funnet",
         "${ groupCounts } grupper funnet"
+      ],
+      "${ invitations.length } pending invitation": [
+        "${ invitations.length } ventende invitasjon",
+        "${ invitations.length } ventende invitasjoner"
       ],
       "${ nbFile } encrypted file": [
         "${ nbFile } kryptert fil",
@@ -7046,6 +7064,9 @@
       "Secure Core servers": [
         "Secure Core-tjenere"
       ],
+      "Secure link sharing": [
+        "Sikker deling av koblinger"
+      ],
       "See team's availability": [
         "Se teamets tilgjengelighet"
       ],
@@ -7134,6 +7155,10 @@
         "Opptil ${ n } bruker",
         "Opptil ${ n } brukere"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Opptil ${ n } bruker (${ adminsText }, ${ usersText })",
+        "Opptil ${ n } brukere (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Opptil ${ totalStorageSize } lagringsplass"
       ],
@@ -7152,6 +7177,16 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } administrator",
+        "${ admins } administratorer"
+      ],
+      "${ users } user": [
+        "${ users } bruker",
+        "${ users } brukere"
       ]
     },
     "new_plans: feature info": {
@@ -7227,6 +7262,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Beskytt sensitiv forretningsinformasjon og samarbeid sikkert."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Beskytt familien din med alle premiumfunksjonene til ${ PASS_SHORT_APP_NAME } Plus for 6 brukere."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Beskytt familiens personvern med alle ${ BRAND_NAME }-tjenester kombinert."
@@ -7435,6 +7473,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sikre filene dine med kryptert skylagring. Inkluderer automatisk synkronisering, kryptert fildeling og mer."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Del enkeltelementer med hvem som helst på en sikker måte (selv om de ikke bruker ${ PASS_APP_NAME })"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Lagre kontaktenes detaljer på en sikker måte, for eksempel telefonnummer, adresse, bursdag og personlige notater. Nulltilgangskryptering sikrer at selv ${ BRAND_NAME } ikke får tilgang til dem."
@@ -7833,9 +7874,6 @@
       "Continue": [
         "Fortsett"
       ],
-      "Create new document": [
-        "Opprett nytt dokument"
-      ],
       "Get started": [
         "Kom i gang"
       ],
@@ -7866,9 +7904,6 @@
       "Start using ${ DRIVE_APP_NAME }": [
         "Begynn å bruke ${ DRIVE_APP_NAME }"
       ],
-      "Try it later": [
-        "Prøv det senere"
-      ],
       "Try the app": [
         "Prøv appen"
       ],
@@ -7894,9 +7929,6 @@
       ],
       "Collaborate on documents": [
         "Samarbeid på dokumenter"
-      ],
-      "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
-        "Opprett og samarbeid på dokumenter. Det hele er beskyttet av ende-til-ende-kryptering."
       ],
       "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
         "Foretrekker du ${ DRIVE_APP_NAME } i lys eller mørk modus? Velg fargen som inspirerer deg mest."
@@ -7939,9 +7971,6 @@
       ],
       "Hang tight": [
         "Hold deg fast"
-      ],
-      "Introducing ${ DOCS_APP_NAME }": [
-        "Introduserer ${ DOCS_APP_NAME }"
       ],
       "Invitation accepted": [
         "Invitasjon godtatt"
@@ -8092,6 +8121,35 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Sikker hvelvdeling (${ n } hvelv) og koblingsdeling",
         "Sikker hvelvdeling (${ n } hvelv) og koblingsdeling"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } brukerkonto",
+        "${ n } brukerkontoer"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Administrasjonspanel for å administrere brukere og abonnement"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Alle premiumfunksjoner. 6 brukere. Ett enkelt abonnement."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Faktureres årlig til ${ yearlyPrice }. Spar ${ yearlySavedPrice } med ${ passFamilyPlanName } (i motsetning til 6 individuelle ${ passPlusPlanName }- abonnementer)."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Eksklusivt tilbud kun for tidlige støttespillere av ${ PASS_APP_NAME }."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Få planen for ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Introduserer ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Tidsbegrenset tilbud."
       ]
     },
     "passwordless": {
@@ -8457,6 +8515,11 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(vil åpne ${ PASS_APP_NAME })"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Vis hendelser"
       ]
     },
     "Security Center - Info": {
@@ -10308,6 +10371,9 @@
       ],
       "What would you like to import?": [
         "Hva ønsker du å importere?"
+      ],
+      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Du er i ferd med å avslå invitasjonen til det delte elementet. Du vil ikke få tilgang til det igjen før eieren deler det med deg."
       ],
       "You have inaccessible files": [
         "Du har utilgjengelige filer"
