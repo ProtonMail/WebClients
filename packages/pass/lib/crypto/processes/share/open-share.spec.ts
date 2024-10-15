@@ -55,6 +55,7 @@ describe('openShare crypto process', () => {
             TargetMembers: 0,
             TargetType: ShareType.Vault,
             VaultID: vaultId,
+            CanAutoFill: true,
         };
 
         const share = await openShare({ type: ShareType.Vault, encryptedShare, vaultKey });
