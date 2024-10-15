@@ -354,6 +354,9 @@
       "Loading verification": [
         "Memuat verifikasi"
       ],
+      "Login": [
+        "Masuk"
+      ],
       "Make a copy": [
         "Buat salinan"
       ],
@@ -554,6 +557,9 @@
       ],
       "Sign out": [
         "Keluar"
+      ],
+      "Sign up": [
+        "Daftar"
       ],
       "Skip verification": [
         "Lewati verifikasi"
@@ -2639,7 +2645,7 @@
         "Nama label terlalu panjang. Mohon pilih nama lain."
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
-        "Pembaruan terakhir yang Anda buat pada dokumen terlalu besar atau akan melebihi jumlah batas ukuran dokumen. Penyuntingan saat ini dinonaktifkan. Perubahan Anda tidak akan disimpan. Silakan mengekspor salinan dokumen Anda dan muat ulang laman ini."
+        "Pembaruan terakhir yang Anda buat pada dokumen terlalu besar atau akan melebihi jumlah batas ukuran dokumen. Penyuntingan saat ini telah dinonaktifkan. Perubahan Anda tidak akan disimpan. Silakan ekspor salinan dokumen Anda dan muat ulang halaman ini."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Nominal saldo minimal yang dapat ditambahkan adalah ${ price }"
@@ -3031,8 +3037,14 @@
       "${ BRAND_NAME } groups": [
         "Grup ${ BRAND_NAME }"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Akun dengan domain khusus tidak dapat bergabung ke paket keluarga."
+      ],
       "customer support": [
         "layanan dukungan"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Paket keluarga saat ini tidak mendukung akun eksternal. Buat alamat ${ BRAND_NAME } sebelum bergabung. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jika Anda menerima undangan, kami akan mengalihkan Anda dari paket saat ini dan mengkredit akun Anda dengan sisa saldo."
@@ -3040,8 +3052,14 @@
       "Invited by: ${ inviteEmail }": [
         "Diundang oleh: ${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Akun Lifetime tidak dapat bergabung dalam paket grup."
+      ],
       "Manage addresses.": [
         "Kelola alamat."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Pemilik paket dengan anggota tidak dapat bergabung ke paket keluarga lain."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Maaf, Anda tidak dapat mengubah paket untuk saat ini."
@@ -3063,6 +3081,12 @@
       ],
       "You have successfully joined the family group": [
         "Anda telah berhasil bergabung ke grup keluarga ini"
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Anda memiliki faktur yang belum dibayar. Silakan dibayar sebelum bergabung dalam paket keluarga."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Anda diundang untuk mengaitkan Akun ${ BRAND_NAME } Anda ke paket keluarga ini dan menikmati semua fitur premium ${ brandOrAppName } bersama."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Akun Anda memiliki alamat email lebih banyak dari yang tersedia kepada Anda dalam paket ini. ${ addressSettingsLink }"
@@ -3209,9 +3233,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } saran ditemukan. Gunakan keyboard Anda untuk beralih antar pilihan yang ada."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Pakai kunci Up dan Down untuk mengakses dan menjelajah saran setelah input. Pencet Enter untuk mengonfirmasi pilihan, atau Escape untuk menutup kotak saran."
       ]
@@ -4025,6 +4046,9 @@
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maksimal ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter"
       ],
+      "Me": [
+        "Saya"
+      ],
       "Medium Priority": [
         "Prioritas Menengah"
       ],
@@ -4184,6 +4208,9 @@
       "Primary": [
         "Utama"
       ],
+      "Public documents are not yet enabled for your organization.": [
+        "Dokumen publik belum diaktifkan untuk organisasi Anda."
+      ],
       "recommended browser": [
         "browser yang disarankan"
       ],
@@ -4315,6 +4342,9 @@
       ],
       "This message will be presented again later": [
         "Pesan ini akan ditampilkan kembali di kemudian waktu"
+      ],
+      "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
+        "Dokumen publik ini tidak ada, atau Anda mungkin tidak memiliki izin untuk melihat dokumen ini. Anda dapat mencoba untuk memuat ulang halaman untuk memeriksa apakah masalah ini terus berlanjut."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Tindakan ini akan menonaktifkan tautan ini dan membuat berkas atau folder Anda tidak lagi dapat diakses melalui tautan yang bersangkutan."
@@ -4472,6 +4502,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Anda sedang masuk sebagai ${ user.Name } (${ user.Email })."
       ],
+      "You are currently viewing this document in view-only mode. Reach out to the owner to request access to edit and comment.": [
+        "Anda saat ini menampilkan dokumen ini dalam mode hanya tampil. Sampaikan kepada pemilik untuk meminta akses penyuntingan dan komentar."
+      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Anda menggunakan ruang penyimpanan lebih dari yang terliput pada paket ${ downgradedPlanName }. Silakan hapus sebagian data untuk dapat menurunkan paket."
       ],
@@ -4554,7 +4587,7 @@
         "Perubahan Anda sedang disinkronkan ke Drive. Mohon untuk tidak menutup halaman ini."
       ],
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
-        "Perubahan Anda gagal disinkronkan. Drive akan mencoba menyimpan perubahan secara otomatis. Jangan tutup laman web ini."
+        "Perubahan Anda gagal disinkronkan. Drive akan mencoba untuk menyimpan perubahan yang ada secara otomatis. Mohon untuk tidak metutup halaman web ini."
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Browser Anda saat ini tidak dapat digunakan untuk mengunduh berkas yang berukuran besar karena tidak tersedianya dukungan service worker yang memadai. Mengunduh berkas yang berukuran besar dapat membekukan layar atau menonaktifkan browser Anda sepenuhnya. Mohon gunakan versi terbaru dari ${ recommendedBrowser } dan coba lagi."
@@ -5955,6 +5988,9 @@
       "Secure Core servers": [
         "Server Secure Core"
       ],
+      "Secure link sharing": [
+        "Pembagian tautan aman"
+      ],
       "See team's availability": [
         "Lihat ketersediaan tim"
       ],
@@ -6042,6 +6078,9 @@
       "Up to ${ n } user": [
         "Hingga ${ n } pengguna"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Sampai dengan ${ n } pengguna (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Ruang penyimpanan hingga ${ totalStorageSize }"
       ],
@@ -6059,6 +6098,14 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Kami memindai dark web untuk memeriksa apakah alamat atau alias ${ BRAND_NAME } Anda telah dibocorkan serta memberitahukan Anda dengan segera apabila kami menemukan sesuatu."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } admin"
+      ],
+      "${ users } user": [
+        "${ users } pengguna"
       ]
     },
     "new_plans: feature info": {
@@ -6134,6 +6181,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Lindungi informasi bisnis yang sensitif dan berkolaborasi dengan aman."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Lindungi keluarga Anda dengan semua fitur premium dari ${ PASS_SHORT_APP_NAME } Plus untuk 6 pengguna."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Lindungi privasi keluarga Anda dengan perlindungan gabungan dari seluruh layanan ${ BRAND_NAME }."
@@ -6211,7 +6261,7 @@
         "Setiap alamat dapat digunakan untuk mengirim dan menerima pesan. Seorang pengguna dapat memiliki lebih dari satu alamat; meskipun demikian, satu alamat tidak dapat dimiliki oleh lebih dari satu pengguna."
       ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
-        "Memungkinkan Anda untuk mengakses lebih dari satu jaringan pada saat yang bersamaan, cth. ketika Anda hendak menonton film dari luar negeri namun tetap ingin mendapatkan hasil pencarian lokal"
+        "Memungkinkan Anda untuk mengakses lebih dari satu jaringan dalam satu waktu, mis. pada saat Anda ingin menonton film dari luar negeri namun tetap ingin mendapatkan hasil pencarian lokal"
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Memungkinkan Anda untuk menyiapkan pesan balasan otomatis (auto-reply) bagi seluruh pesan yang Anda terima"
@@ -6341,6 +6391,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan ruang penyimpanan terenkripsi berbasis cloud. Dengan dukungan sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Bagikan item individu secara aman dengan siapa pun (bahkan jika mereka tidak menggunakan ${ PASS_APP_NAME })"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Simpan rincian kontak Anda seperti nomor telepon, alamat, tanggal ulang tahun, catatan personal, dan lain sebagainya secara aman. Enkripsi zero-access kami memastikan bahwa tidak ada siapapun yang dapat mengakses data Anda, termasuk ${ BRAND_NAME } sendiri."
@@ -6705,6 +6758,34 @@
         "Pembagian brankas aman (${ n } brankas) dan tautan aman"
       ]
     },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } akun pengguna"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Panel admin untuk mengelola pengguna dan langganan"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Seluruh fitur premium. 6 pengguna. 1 langganan mudah."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Ditagih setiap tahun seharga ${ yearlyPrice }. Hemat ${ yearlySavedPrice } dengan ${ passFamilyPlanName } (dibandingkan 6 langganan ${ passPlusPlanName } individu)"
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Penawaran eksklusif hanya tersedia bagi pendukung dini ${ PASS_APP_NAME }."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Dapatkan seharga ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Perkenalkan ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Penawaran waktu terbatas."
+      ]
+    },
     "passwordless": {
       "Organization key does not exist.": [
         "Kunci organisasi tidak ada."
@@ -7047,6 +7128,11 @@
         "(akan membuka jendela ${ PASS_APP_NAME })"
       ]
     },
+    "Security Center - Action": {
+      "View events": [
+        "Lihat peristiwa"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } dan ${ remainingCount } kebocoran data potensial lainnya terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
@@ -7077,7 +7163,7 @@
     },
     "Select search results": {
       "No results found": [
-        "Hasil tidak ditemukan"
+        "Tidak ada hasil yang ditemukan"
       ]
     },
     "session_recovery:available:action": {
@@ -7665,7 +7751,7 @@
         "Aplikasi desktop"
       ],
       "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet tetap aman dan privat bagi siapa pun. Tingkatkan akun Anda ke paket berbayar."
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
       ],
       "No ads or tracking": [
         "Tanpa iklan atau pelacakan"

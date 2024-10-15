@@ -351,6 +351,9 @@
       "Loading verification": [
         "인증 정보 불러오는 중"
       ],
+      "Login": [
+        "로그인"
+      ],
       "Make a copy": [
         "복사본 만들기"
       ],
@@ -551,6 +554,9 @@
       ],
       "Sign out": [
         "로그아웃"
+      ],
+      "Sign up": [
+        "회원가입"
       ],
       "Skip verification": [
         "인증 건너뛰기"
@@ -3025,8 +3031,14 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } 그룹"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "커스텀 도메인과 연동된 계정은 가족 플랜에 합류할 수 없습니다."
+      ],
       "customer support": [
         "고객 지원"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "햔재 가족 플랜은 추가 계정을 지원하지 않습니다. 그룹 합류 전 ${ BRAND_NAME } 계정을 생성하세요. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "초대를 수락하면, 현재 요금제에서 전환되고 남은 잔액이 사용자의 계좌로 환불됩니다."
@@ -3034,8 +3046,14 @@
       "Invited by: ${ inviteEmail }": [
         "이 사용자에게 의해 초대됨: ${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "평생 계정은 가족 플랜에 합류 불가합니다."
+      ],
       "Manage addresses.": [
         "주소를 관리하세요."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "구성원들이 있는 요금제의 소유자가 다른 그룹 가족 플랜에 합류할 수 없습니다."
       ],
       "Sorry, you can't switch plans at this time.": [
         "죄송합니다, 현재 요금제 수정이 불가합니다."
@@ -3057,6 +3075,12 @@
       ],
       "You have successfully joined the family group": [
         "가족 그룹에 성공적으로 가입했습니다."
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "결제가 필요한 청구서들이 있습니다. 가족 플랜에 참여하기 전에 결제하세요."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "사용자가 ${ BRAND_NAME } 계정이 이 가족 요금제에 합류하도록 초대되었습니다. 함께 모든 ${ brandOrAppName } 프리미엄 기능들을 즐기세요."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "사용자의 계정이 사용자 요금제단에서 사용 가능한 이메일 주소 이상을 가지고 있습니다. ${ addressSettingsLink }"
@@ -3203,9 +3227,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } 개 제안 찾음. 탐색하려면 키보드를 사용하세요."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "위 아래 키를 사용하여 입력 뒤의 브라우저 제안에 접근하세요. 엔터를 눌러 선택을 확인하거나, Esc키를 눌러 제안 창을 닫으세요."
       ]
@@ -4019,6 +4040,9 @@
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "최대 ${ MAX_SHARED_URL_PASSWORD_LENGTH }자"
       ],
+      "Me": [
+        "나"
+      ],
       "Medium Priority": [
         "중요도 보통"
       ],
@@ -4178,6 +4202,9 @@
       "Primary": [
         "우선 순위"
       ],
+      "Public documents are not yet enabled for your organization.": [
+        "공개 문서는 사용자의 조직에 활성화되지 않았습니다."
+      ],
       "recommended browser": [
         "권장하는 브라우저"
       ],
@@ -4309,6 +4336,9 @@
       ],
       "This message will be presented again later": [
         "이 메시지가 나중에 다시 표시됩니다."
+      ],
+      "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
+        "이 문서는 존재하지 않거나 확인할 수 있는 권한이 없을 수 있습니다. 문제가 재발한다면 페이지를 새로 고침하세요."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "링크가 삭제되고 아무도 이 링크를 통해 파일이나 폴더에 접근할 수 없게 됩니다."
@@ -4465,6 +4495,9 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "현재 ${ user.Name } (${ user.Email })로 로그인 했습니다."
+      ],
+      "You are currently viewing this document in view-only mode. Reach out to the owner to request access to edit and comment.": [
+        "보기 전용 모드로 문서를 확인하고 있습니다. 편집하거나 댓글을 작성하려면 소유자에게 연락하세요."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "${ downgradedPlanName } 플랜에 포함된 저장 공간보다 더 많이 사용하고 계십니다. 다운그레이드를 진행하려면 일부 데이터를 지우거나 완전 삭제하세요."
@@ -5892,6 +5925,9 @@
       "Secure Core servers": [
         "Secure Core 서버"
       ],
+      "Secure link sharing": [
+        "안전한 링크 공유"
+      ],
       "See team's availability": [
         "팀의 가용성 확인"
       ],
@@ -5979,6 +6015,9 @@
       "Up to ${ n } user": [
         "사용자 최대 ${ n }명"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "최대 ${ n }명 사용자 (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "최대 ${ totalStorageSize } 스토리지"
       ],
@@ -5996,6 +6035,14 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } 주소나 별칭이 유출되었는지 확인하기 위해 다크 웹을 탐색하며 발견한 것이 있다면 즉시 알려드립니다."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins }명 관리자"
+      ],
+      "${ users } user": [
+        "${ users }명 사용자"
       ]
     },
     "new_plans: feature info": {
@@ -6071,6 +6118,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "민감한 비즈니스 정보를 보호하고 안전하게 공동 작업하기."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "6명의 구성원을 위한 ${ PASS_SHORT_APP_NAME } Plus의 프리미엄 기능으로 우리 가족을 보호하세요."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "${ BRAND_NAME } 서비스들로 가족의 개인정보를 보호하세요."
@@ -6278,6 +6328,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "자동 동기화, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "나의 항목을 ${ PASS_APP_NAME }를 사용하지 않는 사람이더라도 안전하게 공유"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "전화번호, 주소, 생일과 개인 노트와 같은 연락처 상세 정보를 안전하게 저장하세요. 제로 엑세스 암호화는 ${ BRAND_NAME } 또한 접근할 수 없음을 보장합니다."
@@ -6642,6 +6695,34 @@
         "안전한 링크 공유 (${ n }개 금고) 및 링크 공유"
       ]
     },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n }개 사용자 계정"
+      ],
+      "Admin panel to manage users and subscription": [
+        "사용자 및 구독을 관리할 수 있는 관리자 패널"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "한 번의 쉬운 구독으로 6명 구성원과 모든 프리미엄 기능을 누려보세요."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "${ yearlyPrice }(으)로 매년 청구. ${ passFamilyPlanName }로 ${ yearlySavedPrice } 절약하세요 (6인의 각각 ${ passPlusPlanName } 구독과 비교)"
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "${ PASS_APP_NAME } 얼리 서포터를 위한 특별 할인."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "${ monthlyPrice }에 구매하세요"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "${ passFamilyPlanName }를 소개합니다"
+      ],
+      "Limited-time deal.": [
+        "기간 한정 할인."
+      ]
+    },
     "passwordless": {
       "Organization key does not exist.": [
         "조직 키가 존재하지 없습니다."
@@ -6982,6 +7063,11 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(${ PASS_APP_NAME }을 엽니다)"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "이벤트 보기"
       ]
     },
     "Security Center - Info": {
