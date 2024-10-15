@@ -36,7 +36,7 @@ const initialWindowsClient: DesktopVersion = {
     ReleaseDate: '',
     File: [
         {
-            Url: getDownloadUrl('/mail/windows/ProtonMail-desktop-setup.exe'),
+            Url: getDownloadUrl('/mail/windows/ProtonMail-desktop.exe'),
             Sha512CheckSum: '',
         },
     ],
@@ -51,7 +51,7 @@ const initialMacosClient: DesktopVersion = {
     ReleaseDate: '',
     File: [
         {
-            Url: getDownloadUrl('/mail/windows/ProtonMail-desktop-setup.dmg'),
+            Url: getDownloadUrl('/mail/macos/ProtonMail-desktop.dmg'),
             Sha512CheckSum: '',
         },
     ],
