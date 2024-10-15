@@ -4749,8 +4749,14 @@
       "${ BRAND_NAME } groups": [
         "grupos da ${ BRAND_NAME }"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Contas com domínios personalizados não podem participar de um plano de família."
+      ],
       "customer support": [
         "suporte ao cliente"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Os planos de família não oferecem suporte a contas externas no momento. Crie um endereço da ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se aceitar o convite, seu plano atual será alterado e você receberá um crédito em sua conta com o saldo restante, se houver."
@@ -4758,8 +4764,14 @@
       "Invited by: ${ inviteEmail }": [
         "Convidado por: ${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Contas vitalícias não podem ingressar em um plano de família."
+      ],
       "Manage addresses.": [
         "Gerenciar endereços."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Proprietários de um plano com membros não podem participar de outro plano de família."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Infelizmente não é possível trocar de plano neste momento."
@@ -4781,6 +4793,12 @@
       ],
       "You have successfully joined the family group": [
         "Você entrou com sucesso no grupo familiar"
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Você tem faturas não pagas. Você deve pagá-las antes de aderir a um plano familiar."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Você está convidado a vincular sua conta ${ BRAND_NAME } a este plano familiar e, juntos, aproveitarem todos os recursos premium do ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Sua conta tem mais endereços de e-mail do que a quantidade que está disponível para você neste plano. ${ addressSettingsLink }"
@@ -5305,10 +5323,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Encontrada ${ items.length } sugestão, use o teclado para navegar.",
-        "Encontradas ${ items.length } sugestões, use o teclado para navegar."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Use as teclas Para cima e Para baixo para acessar e procurar sugestões após a entrada. Pressione Enter para confirmar sua escolha, ou Escape para fechar a caixa de sugestões."
       ]
@@ -9422,6 +9436,9 @@
       "Secure Core servers": [
         "Servidores Secure Core"
       ],
+      "Secure link sharing": [
+        "Compartilhamento de link seguro"
+      ],
       "See team's availability": [
         "Veja a disponibilidade da equipe"
       ],
@@ -9510,6 +9527,10 @@
         "Até ${ n } usuário",
         "Até ${ n } usuários"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Até ${ n } usuário (${ adminsText }, ${ usersText })",
+        "Até ${ n } usuários (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Até ${ totalStorageSize } de armazenamento"
       ],
@@ -9528,6 +9549,16 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } administrador",
+        "${ admins } administradores"
+      ],
+      "${ users } user": [
+        "${ users } usuário",
+        "${ users } usuários"
       ]
     },
     "new_plans: feature info": {
@@ -9603,6 +9634,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Proteja as informações comerciais sensíveis e colabore com segurança."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Proteja sua família com todos os recursos premium do ${ PASS_SHORT_APP_NAME } Plus para 6 usuários."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Proteja a privacidade da sua família com todos os serviços da ${ BRAND_NAME } combinados."
@@ -9814,6 +9848,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja seus arquivos com um armazenamento cloud criptografado. Inclui sincronização automática, compartilhamento de arquivo criptografado, e mais."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Compartilhe itens individuais com segurança com qualquer pessoa (mesmo que ela não use ${ PASS_APP_NAME })"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Armazene com segurança os detalhes dos seus contatos, como número de telefone, endereço, aniversário e anotações pessoais. A criptografia de acesso zero garante que nem mesmo a ${ BRAND_NAME } pode acessá-los."
@@ -10248,6 +10285,35 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Compartilhamento seguro de cofre (${ n } cofre) e compartilhamento de link.",
         "Compartilhamento seguro de cofre (${ n } cofres) e compartilhamento de link."
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } conta de usuário",
+        "${ n } contas de usuário"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Painel administrativo para gerenciar usuários e assinaturas"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Todos os recursos premium. 6 usuários. 1 assinatura fácil."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Cobrança anual de ${ yearlyPrice }. Você pode economizar ${ yearlySavedPrice } com ${ passFamilyPlanName } (em comparação com 6 assinaturas individuais de ${ passPlusPlanName })."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Oferta exclusiva disponível apenas para os primeiros apoiadores do ${ PASS_APP_NAME }."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Obtenha por ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Apresentando ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Oferta por tempo limitado."
       ]
     },
     "passwordless": {
@@ -10751,6 +10817,11 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(abrirá ${ PASS_APP_NAME })"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Ver eventos"
       ]
     },
     "Security Center - Info": {
