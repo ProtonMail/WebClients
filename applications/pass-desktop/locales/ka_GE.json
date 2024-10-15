@@ -1026,6 +1026,12 @@
       ]
     },
     "FamilyPlanPromo2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "ყველა ფასიანი სერვისი. 6 მომხმარებელი. ერთი იოლი გამოწერა."
+      ],
+      "Exclusive offer for ${ PASS_APP_NAME } early supporters.": [
+        "ექსკლუზიური შემოთავზება ${ PASS_APP_NAME }-ის ადრეული მხარდამჭერებისთვის."
+      ],
       "Get it for ${ price }/month": [
         "მიიღეთ ფასით ${ price }/თვეში"
       ],
@@ -1915,6 +1921,10 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "ამ ფსევდონიმისთვის საფოსტო ყუთებს ვერ შეცვლით."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "გაქვთ ${ aliasCount } ფსევდონიმი, რომელიც არსებობს SimpleLogin-ში, მაგრამ არა ${ PASS_APP_NAME }-ში. გნებავთ მათი შემოტანა?",
+        "გაქვთ ${ aliasCount } ფსევდონიმი, რომელიც არსებობს SimpleLogin-ში, მაგრამ არა ${ PASS_APP_NAME }-ში. გნებავთ მათი შემოტანა?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "დაგრჩათ ${ daysRemaining } დღე, ეს და სხვა ფასიანი ფუნქციები სცადოთ.",

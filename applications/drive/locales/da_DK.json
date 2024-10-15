@@ -384,11 +384,11 @@
       "Get link": [
         "Få link"
       ],
-      "Get Started": [
-        "Kom i gang"
-      ],
       "Get started": [
         "Kom godt i gang"
+      ],
+      "Get Started": [
+        "Kom i gang"
       ],
       "Get verification code": [
         "Få bekræftelseskode"
@@ -561,10 +561,10 @@
       "Not now": [
         "Ikke nu"
       ],
-      "Ok": [
+      "OK": [
         "Ok"
       ],
-      "OK": [
+      "Ok": [
         "Ok"
       ],
       "Open": [
@@ -807,6 +807,9 @@
       "Start setup": [
         "Start opsætning"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Fra ${ priceUnlimited }"
+      ],
       "Stay": [
         "Bliv her"
       ],
@@ -872,6 +875,9 @@
       ],
       "Upgrade now": [
         "Opgradér nu"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Opgrader til ${ BRAND_NAME } Unlimited"
       ],
       "Upload anyway": [
         "Upload alligevel"
@@ -2278,6 +2284,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } beskytter din konto med målrettet 24/7-overvågning af mistænkelig aktivitet - inklusive eskalering til sikkerhedsspecialister."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA tilføjer et ekstra sikkerheds lag, der forhindrer uautoriseret adgang."
       ],
@@ -2326,6 +2335,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Benyt Træk og Slip for at rangordne fletningsprioritet mellem kontakter. Afmarkér de kontakter du ikke vil sammenflette."
       ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "Med kontaktgrupper kan du sende e-mails til alle i gruppen med et enkelt klik."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere begivenheder i iCal format (ICS-fil). Denne fil skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have op til ${ MAX_IMPORT_EVENTS_STRING } begivenheder. Hvis din fil er større, skal du opdele den i mindre filer."
       ],
@@ -2337,6 +2349,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Dine konto- og datagendannelsesmetoder er indstillet."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -3347,8 +3362,14 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } grupper"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Konti med tilpassede domæner kan ikke deltage i et familieabonnement."
+      ],
       "customer support": [
         "kundeservice"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Familieabonnementer understøtter i øjeblikket ikke eksterne konti. Opret en ${ BRAND_NAME } adresse for du tilmelder dig. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Hvis du accepterer invitationen, overflytter vi dig fra dit nuværende abonnement og krediterer din konto med en eventuel restsaldo."
@@ -3356,8 +3377,14 @@
       "Invited by: ${ inviteEmail }": [
         "Inviteret af: ${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Livstidskonti kan ikke indgå i et familieabonnement."
+      ],
       "Manage addresses.": [
         "Administrer adresser."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Ejere af et abonnement med medlemmer kan ikke deltage i et andet familieabonnement."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Beklager, du kan i øjeblikket ikke ændre abonnement."
@@ -3379,6 +3406,9 @@
       ],
       "You have successfully joined the family group": [
         "Du er blevet medlem af familiegruppen"
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Du har ubetalte fakturaer. Betal dem venligst, før du tilmelder dig et familieabonnement."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Din konto har flere e-mailadresser en det, der er tilgængeligt for dig på dette abonnement. ${ addressSettingsLink }"
@@ -3550,10 +3580,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Fandt ${ items.length } forslag, brug tastaturet til at navigere.",
-        "Fandt ${ items.length } forslag, brug tastaturet til at navigere."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Brug op- og ned-tasterne til at få adgang til og gennemse forslag efter input. Tryk på Enter for at bekræfte dit valg eller Escape for at lukke forslagsfeltet."
       ]
@@ -4181,6 +4207,9 @@
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilføjet til gruppen ${ contactGroupName }"
+      ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Kontakt fjernet fra gruppen ${ contactGroupName }"
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Fortsæt med at bruge ${ DRIVE_APP_NAME } og lås op for drev senere"
@@ -5331,6 +5360,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Du er ved at åbne en anden browserfane og besøge:"
+      ],
+      "You are about to open your default browser and visit:": [
+        "Du er ved at åbne din standardbrowser og besøge:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du er i øjeblikket logget ind som ${ user.Name } (${ user.Email })."
@@ -6603,8 +6635,14 @@
       "Get started for ${ price }": [
         "Kom i gang for ${ price }"
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Fra ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Opgradér nu"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Opgrader til ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6962,6 +7000,9 @@
       "Secure Core servers": [
         "Secure Core servere"
       ],
+      "Secure link sharing": [
+        "Sikker link-deling"
+      ],
       "See team's availability": [
         "Se teamets tilgængelighed"
       ],
@@ -7050,6 +7091,10 @@
         "Op til ${ n } bruger",
         "Op til ${ n } brugere"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Op til ${ n } bruger (${ adminsText }, ${ usersText })",
+        "Op til ${ n } brugere (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Op til ${ totalStorageSize } lagerplads"
       ],
@@ -7068,6 +7113,16 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi scanner det mørke web for at tjekke, om dine ${ BRAND_NAME }-adresser eller aliasser er blevet lækket, og giver dig straks besked, hvis vi finder noget."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } admin",
+        "${ admins } administratorer"
+      ],
+      "${ users } user": [
+        "${ users } bruger",
+        "${ users } brugere"
       ]
     },
     "new_plans: feature info": {
@@ -7178,6 +7233,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "Få Mail Plus for ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Fra ${ price }"
       ]
     },
     "new_plans: title": {
@@ -7746,9 +7804,6 @@
       "Continue": [
         "Fortsæt"
       ],
-      "Create new document": [
-        "Opret nyt dokument"
-      ],
       "Get started": [
         "Kom i gang"
       ],
@@ -7779,9 +7834,6 @@
       "Start using ${ DRIVE_APP_NAME }": [
         "Begynd at bruge ${ DRIVE_APP_NAME }"
       ],
-      "Try it later": [
-        "Prøv det senere"
-      ],
       "Try the app": [
         "Prøv appen"
       ],
@@ -7798,9 +7850,6 @@
       ],
       "Collaborate on documents": [
         "Arbejd sammen om dokumenter"
-      ],
-      "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
-        "Opret og samarbejd på dokumenter. Det hele er beskyttet af end-to-end-kryptering."
       ],
       "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
         "Foretrækker du ${ DRIVE_APP_NAME } i lyst eller mørkt tema? Vælg den farve der inspirerer dig mest."
@@ -7837,9 +7886,6 @@
       ],
       "Hang tight": [
         "Hæng på"
-      ],
-      "Introducing ${ DOCS_APP_NAME }": [
-        "Vi præsenterer ${ DOCS_APP_NAME }"
       ],
       "Invitation accepted": [
         "Invitation accepteret"
@@ -7984,6 +8030,12 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Sikker deling af boks (${ n } vault) og deling af link",
         "Sikker deling af bokse (${ n } vault) og deling af links"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } brugerkonto",
+        "${ n } brugerkonti"
       ]
     },
     "passwordless": {
@@ -8351,6 +8403,11 @@
         "(vil åbne ${ PASS_APP_NAME })"
       ]
     },
+    "Security Center - Action": {
+      "View events": [
+        "Vis begivenheder"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } og ${ remainingCount } andre potentielle lækager fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
@@ -8687,6 +8744,9 @@
       ],
       "/ month": [
         "/ måned"
+      ],
+      "/month": [
+        "/måned"
       ],
       "1 year": [
         "1 år"
@@ -9888,6 +9948,9 @@
       "Groups": [
         "Grupper"
       ],
+      "High security for your account": [
+        "Høj sikkerhed for din konto"
+      ],
       "Hm, we couldn't find that one": [
         "Hmm, den kunne vi ikke finde"
       ],
@@ -9969,6 +10032,9 @@
       ],
       "Number of items": [
         "Antal elementer"
+      ],
+      "One email, many recipients": [
+        "Én e-mail, mange modtagere"
       ],
       "Open actions dropdown": [
         "Åbn handlingsrullemenu"

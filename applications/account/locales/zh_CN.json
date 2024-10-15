@@ -61,11 +61,11 @@
       "Accept": [
         "接受"
       ],
-      "Activate": [
-        "启用"
-      ],
       "activate": [
         "激活"
+      ],
+      "Activate": [
+        "启用"
       ],
       "Activate ${ user.Name }@pm.me": [
         "激活 ${ user.Name }@pm.me"
@@ -4676,9 +4676,6 @@
       "Add": [
         "添加"
       ],
-      "Add (${ numberOfAddedServers })": [
-        "添加 (${ numberOfAddedServers } 台)"
-      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "最多连接 ${ plusVpnConnections } 部设备"
       ],
@@ -5101,9 +5098,6 @@
       "Checkout": [
         "支付"
       ],
-      "Country": [
-        "国家/地区"
-      ],
       "Create your account": [
         "创建您的账户"
       ],
@@ -5236,9 +5230,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "找到 ${ items.length } 建议，使用键盘导航。"
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "使用向上和向下键进入并浏览输入后的建议。按 Enter 键确认您的选择，或按 Escape 键关闭建议框。"
       ]
@@ -6749,9 +6740,6 @@
       "Number of dedicated servers in the organization": [
         "组织中的专用服务器数量"
       ],
-      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "一共有 ${ ownedCount } 台专用服务器能用，有 ${ usedCount } 台正在用，剩下的 ${ remainingCount } 台不够分配出去 ${ addedCount } 台。"
-      ],
       "of": [
         "，共"
       ],
@@ -7102,9 +7090,6 @@
       ],
       "Some keys successfully reactivated": [
         "已成功重新激活某些密钥"
-      ],
-      "Some of your available servers can only be used in specific countries due to recent removals": [
-        "由于我们近来移除了一些服务器，目前能用的服务器中，有的只能在部分国家/地区使用"
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF 用于声明谁可以代表您的域名发送邮件。请务必在您的 DNS 管理面板（在您购买该域名的平台上）添加下列 TXT 记录。"
@@ -7538,9 +7523,6 @@
       "Visa Secure logo": [
         "Visa Secure 图标"
       ],
-      "Want servers in other countries?": [
-        "想连到其他国家/地区的服务器？"
-      ],
       "Want to learn more?": [
         "想详细了解？"
       ],
@@ -7709,9 +7691,6 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "您可以开启登录记录功能查看每次登录的时间和 IP 地址，登录失败也会被记录下来。"
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
-        "您可以通过将 ${ specificCountryCount } 添加到您计划中的IP地址数量来立即解锁上述设置，或者联系我们获取量身定制的解决方案。"
-      ],
       "You can import one data type at a time.": [
         "您一次可以导入一种数据类型。"
       ],
@@ -7753,9 +7732,6 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "您没有设置任何找回账户的方式，一旦忘记密码，账户将无法找回。是否继续？"
-      ],
-      "You have ${ availableCount } dedicated server available.": [
-        "有 ${ availableCount } 台专用服务器可以使用。"
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "您有一个试用版 ${ planTitle } 订阅。如果您想在试用期结束后继续订阅，请添加付款方式。"
@@ -9425,9 +9401,6 @@
       ],
       "Common sign up issues": [
         "常见注册问题"
-      ],
-      "Contact us": [
-        "联系我们"
       ],
       "create a ticket": [
         "创建工单"
@@ -13285,9 +13258,6 @@
       ],
       "Add PayPal payment method": [
         "添加 PayPal 支付方式"
-      ],
-      "Add servers": [
-        "添加服务器"
       ],
       "Add Sieve filter": [
         "创建 Sieve 规则"

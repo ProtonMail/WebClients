@@ -70,11 +70,11 @@
       "Accept": [
         "Accepta"
       ],
-      "Activate": [
-        "Activa"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activa"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activa ${ user.Name }@pm.me"
@@ -1191,6 +1191,9 @@
       ],
       "Verify": [
         "Verifica"
+      ],
+      "Verify ${ unverifiedSSODomain.DomainName }": [
+        "Verifica ${ unverifiedSSODomain.DomainName }"
       ],
       "Verify account": [
         "Verifiqueu el compte"
@@ -5084,6 +5087,9 @@
       "Invited by: ${ inviteEmail }": [
         "Convidat per: ${ inviteEmail }"
       ],
+      "Leave ${ PASS_SHORT_APP_NAME } Family plan": [
+        "Deixa el pla ${ PASS_SHORT_APP_NAME } Family"
+      ],
       "Leave Duo plan": [
         "Deixa el pla Duo"
       ],
@@ -5143,6 +5149,9 @@
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Heu de configurar un domini personalitzat abans de crear un usuari."
+      ],
+      "You will lose access to all premium features included with ${ plan }.": [
+        "Perdreu qualsevol accés a les funcions prèmium incloses en ${ plan }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "El vostre compte té més adreces de correu electrònic de les que teniu disponibles en aquest pla. ${ addressSettingsLink }"
@@ -5271,16 +5280,22 @@
       "Add": [
         "Afegeix"
       ],
-      "Add (${ numberOfAddedServers })": [
-        "Afegeix (${ numberOfAddedServers })",
-        "Afegeix (${ numberOfAddedServers })"
+      "Add (${ totalAddedCount })": [
+        "Afegeix (${ totalAddedCount })",
+        "Afegeix (${ totalAddedCount })"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Connexió per fins a ${ plusVpnConnections } dispositiu",
         "Connexió per fins a ${ plusVpnConnections } dispositius"
       ],
+      "Continue": [
+        "Continua"
+      ],
       "Fastest VPN servers": [
         "Els servidors VPN més ràpids"
+      ],
+      "Remove": [
+        "Esborra"
       ],
       "Secure Core servers": [
         "Servidors Secure Core"
@@ -5779,9 +5794,6 @@
       "Checkout": [
         "Pagament"
       ],
-      "Country": [
-        "País"
-      ],
       "Create your account": [
         "Creeu el vostre compte"
       ],
@@ -5927,10 +5939,6 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Afegiu aquest registre al domini, al tauler de control del registrador de noms de domini"
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "S'ha trobat ${ items.length } suggerència, utilitza el teclat per navegar.",
-        "S'han trobat ${ items.length } suggeriments, utilitzant el teclat per navegar."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Utilitzeu les tecles de fletxa amunt i fletxa avall per accedir i navegar pels suggeriments després de l'entrada. Premeu Retorn per confirmar la vostra elecció, o Esc per tancar el quadre de suggeriments."
@@ -7605,9 +7613,6 @@
       "Number of dedicated servers in the organization": [
         "Nombre de servidors dedicats a l'organització"
       ],
-      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "El nombre de servidors dedicats que intenteu assignar (${ addedCount }) és més del que encara està disponible al vostre pla (${ remainingCount }), ja que en teniu ${ ownedCount } i ja n'utilitzeu ${ usedCount }."
-      ],
       "of": [
         "de"
       ],
@@ -7976,9 +7981,6 @@
       ],
       "Some keys successfully reactivated": [
         "S'han reactivat correctament algunes claus"
-      ],
-      "Some of your available servers can only be used in specific countries due to recent removals": [
-        "Alguns dels vostres servidors disponibles només es poden utilitzar en països específics a causa de les eliminacions recents"
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF aclareix qui està autoritzat a enviar correus electrònics per al vostre domini. Assegureu-vos d'afegir el registre TXT següent a la consola DNS (ubicada a la plataforma on heu comprat el domini personalitzat)."
@@ -8476,9 +8478,6 @@
       "Visa Secure logo": [
         "Logo de Visa Secure"
       ],
-      "Want servers in other countries?": [
-        "Voleu servidors en altres països?"
-      ],
       "Want to learn more?": [
         "Voleu saber-ne més?"
       ],
@@ -8669,9 +8668,6 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Podeu activar el registre d'autenticacions per veure quan s'accedeix al vostre compte i des de quina IP. Enregistrarem l'adreça IP que accedeix al compte i l'hora, així com els intents que no han funcionat."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Podeu desbloquejar immediatament la configuració anterior afegint ${ specificCountryCount } al nombre d'adreces IP del vostre pla o posar-vos en contacte amb nosaltres per a solucions a mida."
-      ],
       "You can import one data type at a time.": [
         "Podeu importar un tipus de dades alhora."
       ],
@@ -8716,10 +8712,6 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "No heu establert un mètode de recuperació i per tant la recuperació del compte serà impossible si oblideu la vostra contrasenya. Voleu procedir sense mètode de recuperació?"
-      ],
-      "You have ${ availableCount } dedicated server available.": [
-        "Teniu ${ availableCount } servidor dedicat disponible.",
-        "Teniu ${ availableCount } servidors dedicats disponibles."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Teniu una subscripció de prova de ${ planTitle }. Si voleu continuar amb la subscripció després del període de prova, afegiu un mètode de pagament."
@@ -9771,6 +9763,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Introduïu la contrasenya per la clau amb l'empremta digital ${ fingerprintCode }"
       ],
+      "Event": [
+        "Esdeveniment"
+      ],
       "Event duration": [
         "Duració de l'esdeveniment"
       ],
@@ -10115,6 +10110,9 @@
       ],
       "Reveal password": [
         "Mostra la contrasenya"
+      ],
+      "Search": [
+        "Cerca"
       ],
       "Search by email": [
         "Cerca per correu electrònic"
@@ -10523,9 +10521,6 @@
       ],
       "Common sign up issues": [
         "Problemes comuns de registre"
-      ],
-      "Contact us": [
-        "Contacteu amb nosaltres"
       ],
       "create a ticket": [
         "creeu un tiquet"
@@ -11474,6 +11469,9 @@
       "GDPR data processing agreement": [
         "Acord de processament de dades RGPD"
       ],
+      "Generate emails with a prompt": [
+        "Genera correus electrònics amb un missatge"
+      ],
       "Group management (coming soon)": [
         "Gestió de grups (aviat)"
       ],
@@ -11572,6 +11570,9 @@
       "Secure Core servers": [
         "Servidors Secure Core"
       ],
+      "Secure link sharing": [
+        "Compartició d'enllaços segurs"
+      ],
       "See team's availability": [
         "Consulteu la disponibilitat de l'equip"
       ],
@@ -11608,6 +11609,9 @@
       ],
       "Strict no-logs policy": [
         "Política estricta de no conservació de registres"
+      ],
+      "Support for up to 2 users": [
+        "Suport per a 2 usuaris"
       ],
       "Tailored to your needs": [
         "A mida de les vostres necessitats"
@@ -11663,6 +11667,10 @@
       "Up to ${ n } user": [
         "Fins a ${ n } usuari",
         "Fins a ${ n } usuaris"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Fins a ${ n } usuari (${ adminsText }, ${ usersText })",
+        "Fins a ${ n } usuaris (${ adminsText }, ${ usersText })"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Fins a ${ totalStorageSize } d'emmagatzematge"
@@ -11875,7 +11883,7 @@
         "Prova de ${ shortPlan.title }"
       ],
       "Get Mail Plus for ${ price }": [
-        "Obtingueu Mail Plus per ${ price }"
+        "Obtingueu el Mail Plus per ${ price }"
       ],
       "Starting from ${ price }": [
         "Comenceu des de ${ price }"
@@ -12213,11 +12221,17 @@
       "Link copied to clipboard": [
         "S'ha copiat l'enllaç al porta-retalls."
       ],
+      "Number of records exceeds the download limit of 10000": [
+        "El nombre de registres excedeix el límit de 10 000 descàrregues."
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credencials OpenVPN / IKEv2 regenerades"
       ],
       "Reminder has been sent": [
         "S'ha enviat un recordatori"
+      ],
+      "Too many recent API requests": [
+        "Massa sol·licituds recents de l'API"
       ],
       "Trial started": [
         "S'ha iniciat la prova."
@@ -13064,6 +13078,20 @@
       ],
       "For individuals": [
         "Per a particulars"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } compte d'usuari",
+        "${ n } comptes d'usuari"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "Get it for ${ monthlyPrice }": [
+        "Obteniu-lo per ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Presentem ${ passFamilyPlanName }"
       ]
     },
     "password_reset: info": {
@@ -15788,9 +15816,6 @@
       "Add pm.me subdomain": [
         "Afegeix un subdomini pm.me"
       ],
-      "Add servers": [
-        "Afegeix servidors"
-      ],
       "Add Sieve filter": [
         "Afegeix un filtre Sieve"
       ],
@@ -16526,6 +16551,9 @@
       ],
       "Remove domain": [
         "Esborra el domini"
+      ],
+      "Remove server?": [
+        "Voleu esborrar el servidor?"
       ],
       "Remove single sign-on": [
         "Esborra l'inici de sessió únic"

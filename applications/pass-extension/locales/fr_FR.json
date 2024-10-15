@@ -1619,6 +1619,9 @@
       "Quickly autofill your identities.": [
         "Remplissez automatiquement et rapidement vos identités."
       ],
+      "Quickly autofill your saved credentials.": [
+        "Remplis automatiquement et rapidement vos identifiants enregistrés."
+      ],
       "Registering extra password...": [
         "Enregistrement du mot de passe supplémentaire..."
       ],
@@ -1711,9 +1714,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Nous vous remercions. Le bug a été signalé."
-      ],
-      "The autofill dropdown will automatically open when you click or focus on the field.": [
-        "La liste déroulante de remplissage automatique s'ouvrira automatiquement quand vous cliquez sur un champ ou que vous le sélectionnez."
       ],
       "The export will only contain vaults that you own.": [
         "L'exportation contiendra uniquement les coffres-forts dont vous êtes propriétaire."
@@ -1842,9 +1842,6 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Vous pouvez maintenant utiliser votre mot de passe ${ BRAND_NAME } pour accéder en mode hors ligne à ${ PASS_SHORT_APP_NAME }."
-      ],
-      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Vous pouvez rapidement remplir automatiquement vos identifiants de connexion en cliquant sur l'icône ${ PASS_APP_NAME }."
       ],
       "You cannot change the mailboxes for this alias.": [
         "Vous ne pouvez pas modifier la véritable adresse e-mail associée à cet alias."
@@ -2030,9 +2027,6 @@
       "Autofill 2FA": [
         "Remplissage automatique A2F"
       ],
-      "Automatically open autofill when a login field is focused": [
-        "Ouvrir automatiquement le remplissage automatique dès qu'un champ de connexion est sélectionné."
-      ],
       "Autosave": [
         "Sauvegarde automatique"
       ],
@@ -2125,9 +2119,6 @@
       ],
       "Display": [
         "Affichage"
-      ],
-      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
-        "Afficher l'icône ${ PASS_APP_NAME } dans les champs avec remplissage automatique"
       ],
       "Domain": [
         "Domaine"
@@ -2305,6 +2296,9 @@
       ],
       "Login": [
         "Identifiant"
+      ],
+      "Login autofill": [
+        "Remplissage automatique d'identifiants"
       ],
       "Logins": [
         "Identifiants"

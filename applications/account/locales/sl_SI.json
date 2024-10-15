@@ -70,11 +70,11 @@
       "Accept": [
         "Sprejmi"
       ],
-      "Activate": [
-        "Aktiviraj"
-      ],
       "activate": [
         "aktiviraj"
+      ],
+      "Activate": [
+        "Aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -5254,12 +5254,6 @@
       "Add": [
         "Dodaj"
       ],
-      "Add (${ numberOfAddedServers })": [
-        "Dodaj (${ numberOfAddedServers })",
-        "Dodaj (${ numberOfAddedServers })",
-        "Dodaj (${ numberOfAddedServers })",
-        "Dodaj (${ numberOfAddedServers })"
-      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Povezava za do ${ plusVpnConnections } naprave",
         "Povezava za do ${ plusVpnConnections } naprav",
@@ -5775,9 +5769,6 @@
       "Checkout": [
         "Na blagajno"
       ],
-      "Country": [
-        "Država"
-      ],
       "Create your account": [
         "Ustvarite svoj račun"
       ],
@@ -5923,12 +5914,6 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Dodajte ta zapis svoji domeni na nadzorni plošči registrarja domenskih imen"
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Najden ${ items.length } predlog, za krmarjenje uporabite tipkovnico.",
-        "Najdena ${ items.length } predloga, za krmarjenje uporabite tipkovnico.",
-        "Najdenih ${ items.length } predlogov, za navigacijo uporabite tipkovnico.",
-        "Najdenih ${ items.length } predlogov, za krmarjenje uporabite tipkovnico."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "S smernimi tipkama gor in dol si oglejte in izberite predloge. Za potrditev izbire pritisnite Enter, za preklic in zapiranje polja s predlogi pritisnite Esc."
@@ -7584,9 +7569,6 @@
       "Number of dedicated servers in the organization": [
         "Število namenskih strežnikov v organizaciji"
       ],
-      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "Število namenskih strežnikov, ki jih poskušate dodati (${ addedCount }), je večje od tistega, ki je še na voljo v vašem paketu (${ remainingCount }), saj ste lastnik ${ ownedCount } in že uporabljate ${ usedCount }."
-      ],
       "of": [
         "od"
       ],
@@ -7952,9 +7934,6 @@
       ],
       "Some keys successfully reactivated": [
         "Nekateri ključi so uspešno ponovno aktivirani."
-      ],
-      "Some of your available servers can only be used in specific countries due to recent removals": [
-        "Nekatere od vaših razpoložljivih strežnikov je mogoče uporabljati samo v določenih državah zaradi nedavnih odstranitev."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Določite domeno, ki ima dovoljenje za preverjanje pristnosti s SAML SSO."
@@ -8433,9 +8412,6 @@
       "Visa Secure logo": [
         "Visa Secure logotip"
       ],
-      "Want servers in other countries?": [
-        "Želite strežnike v drugih državah?"
-      ],
       "Want to learn more?": [
         "Želite izvedeti več?"
       ],
@@ -8619,9 +8595,6 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Za ogled prijav v vaš račun ter naslovov IP, s katerih so se te prijave izvršile, lahko omogočite prijavo s preverjanjem pristnosti. Zabeležili bomo naslov IP, ki dostopa do računa, ter časovne podatke, prav tako pa tudi neuspele poskuse."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Zgornjo nastavitev lahko takoj odklenete tako, da številu naslovov IP v svojem paketu dodate ${ specificCountryCount } ali pa stopite v stik z nami za rešitve po meri."
-      ],
       "You can import one data type at a time.": [
         "Uvažate lahko eno vrsto podatkov naenkrat."
       ],
@@ -8672,12 +8645,6 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Niste nastavili načina za obnovitev, zato obnovitev računa ne bo mogoča, če pozabite geslo. Nadaljujte brez načina za obnovitev?"
-      ],
-      "You have ${ availableCount } dedicated server available.": [
-        "Na voljo imate ${ availableCount } namenski strežnik.",
-        "Na voljo imate ${ availableCount } namenska strežnika.",
-        "Na voljo imate ${ availableCount } namenske strežnike.",
-        "Na voljo imate ${ availableCount } namenskih strežnikov."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Imate preizkusno naročnino ${ planTitle }. Če želite nadaljevati naročnino po preizkusnem obdobju, dodajte način plačila."
@@ -10449,9 +10416,6 @@
       ],
       "Common sign up issues": [
         "Pogoste težave pri ustvarjanju računa."
-      ],
-      "Contact us": [
-        "Kontaktirajte nas"
       ],
       "create a ticket": [
         "ustvari prijavo napake"
@@ -15620,9 +15584,6 @@
       ],
       "Add PayPal payment method": [
         "Dodaj vrsto PayPal plačila"
-      ],
-      "Add servers": [
-        "Dodaj strežnike"
       ],
       "Add Sieve filter": [
         "Dodaj Sieve filter"

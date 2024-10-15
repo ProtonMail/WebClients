@@ -4743,8 +4743,14 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } grupları"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Özel etki alanları olan hesaplar, bir aile tarifesine katılamaz."
+      ],
       "customer support": [
         "müşteri desteği"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Aile tarifeleri şu anda dış hesapları desteklemiyor. Katılmadan önce bir ${ BRAND_NAME } adresi oluşturun. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Daveti kabul ederseniz, sizi geçerli tarifenizde çıkarırız ve kalan tutarı hesabınıza yatırırız."
@@ -4752,8 +4758,14 @@
       "Invited by: ${ inviteEmail }": [
         "Davet eden: ${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Lifetime hesaplar bir aile tarifesine katılamaz."
+      ],
       "Manage addresses.": [
         "Adres yönetimi."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Üyeleri olan bir tarifenin sahipleri başka bir aile tarifesine katılamaz."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Ne yazık ki şu anda tarifeleri değiştiremezsiniz."
@@ -4775,6 +4787,12 @@
       ],
       "You have successfully joined the family group": [
         "Aile grubuna katıldınız"
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Ödenmemiş faturalarınız var. Bir aile tarifesine geçmeden önce lütfen onları ödeyin."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "${ BRAND_NAME } hesabınızı bu aile tarifesine bağlamaya ve birlikte ücretli tüm ${ brandOrAppName } özelliklerinin tadını çıkarmaya davet edildiniz."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Hesabınızda, bu tarifede kullanabileceğinizden daha fazla e-posta adresi var. ${ addressSettingsLink }"
@@ -5299,10 +5317,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } öneri bulundu, gezinmek için klavyeyi kullanın.",
-        "${ items.length } öneri bulundu, gezinmek için klavyeyi kullanın."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Girişten sonra önerilere erişmek ve göz atmak için Yukarı ve Aşağı ok tuşlarını kullanın. Seçiminizi onaylamak için Enter tuşuna, öneriler kutusunu kapatmak için Esc tuşuna basın."
       ]
@@ -9401,6 +9415,9 @@
       "Secure Core servers": [
         "Secure Core sunucuları"
       ],
+      "Secure link sharing": [
+        "Güvenli bağlantı paylaşımı"
+      ],
       "See team's availability": [
         "Ekibin uygunluğuna bakın"
       ],
@@ -9489,6 +9506,10 @@
         "${ n } kullanıcıya kadar",
         "${ n } kullanıcıya kadar"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "${ n } kullanıcıya kadar (${ adminsText }, ${ usersText })",
+        "${ n } kullanıcıya kadar (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "${ totalStorageSize } boyutuna kadar depolama alanı"
       ],
@@ -9507,6 +9528,16 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını kontrol etmek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } yönetici",
+        "${ admins } yönetici"
+      ],
+      "${ users } user": [
+        "${ users } kullanıcı",
+        "${ users } kullanıcı"
       ]
     },
     "new_plans: feature info": {
@@ -9582,6 +9613,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Önemli iş bilgilerinizi koruyun ve güvende kalarak işbirliği yapın."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Ailenizi 6 kullanıcıya kadar ${ PASS_SHORT_APP_NAME } Plus tüm ücretli özellikleriyle koruyun."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Tüm ${ BRAND_NAME } hizmetlerini bir arada kullanarak ailenizin gizliliğini koruyun."
@@ -9790,6 +9824,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Kişisel ögeleri herkesle güvenli olarak paylaşın (${ PASS_APP_NAME } kullanmasalar bile)"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Kişilerinizin, telefon numarası, adres, doğum günü ve kişisel notlar gibi bilgilerini güvenli bir şekilde saklayın. Sıfır erişim şifrelemesi, bu bilgilere ${ BRAND_NAME } tarafından bile erişilememesini sağlar."
@@ -10224,6 +10261,35 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım",
         "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } kullanıcı hesabı",
+        "${ n } kullanıcı hesabı"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Kullanıcıları ve aboneliğinizi panonuzdan yönetin"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Tüm ücretli hizmetler. 6 kullanıcı. Bir kolay abonelik."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Yıllık ${ yearlyPrice } tutarla faturalanır. ${ passFamilyPlanName } ile ${ yearlySavedPrice } kazanç sağlayın (6 ayrı ${ passPlusPlanName } aboneliğine kıyasla)."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Yalnızca erken ${ PASS_APP_NAME } destekçileri için özel teklif."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "${ monthlyPrice } ile edinin"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "${ passFamilyPlanName } ile tanışın"
+      ],
+      "Limited-time deal.": [
+        "Sınırlı süreli teklif."
       ]
     },
     "passwordless": {
@@ -10721,6 +10787,11 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(${ PASS_APP_NAME } açılacak)"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Etkinlikleri görüntüle"
       ]
     },
     "Security Center - Info": {

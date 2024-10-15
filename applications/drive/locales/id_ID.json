@@ -381,11 +381,11 @@
       "Get link": [
         "Dapatkan tautan"
       ],
-      "Get Started": [
-        "Mulai"
-      ],
       "Get started": [
         "Selesai"
+      ],
+      "Get Started": [
+        "Mulai"
       ],
       "Get verification code": [
         "Dapatkan kode verifikasi"
@@ -558,10 +558,10 @@
       "Not now": [
         "Tidak sekarang"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -2663,7 +2663,7 @@
         "Tanda tangan kontak tidak terverifikasi"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "Pencarian konten tidak dapat dilangsungkan pada browser ini. Mohon keluar dari mode private browsing atau gunakan browser lain."
+        "Pencarian konten tidak dapat diaktifkan pada browser ini. Silakan keluar dari mode penjelajahan privat atau gunakan browser lain."
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Pencarian konten tidak dapat diaktifkan. Silakan mulai ulang aplikasi atau hapus data."
@@ -3339,8 +3339,14 @@
       "${ BRAND_NAME } groups": [
         "Grup ${ BRAND_NAME }"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Akun dengan domain khusus tidak dapat bergabung ke paket keluarga."
+      ],
       "customer support": [
         "layanan dukungan"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Paket keluarga saat ini tidak mendukung akun eksternal. Buat alamat ${ BRAND_NAME } sebelum bergabung. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jika Anda menerima undangan, kami akan mengalihkan Anda dari paket saat ini dan mengkredit akun Anda dengan sisa saldo."
@@ -3348,8 +3354,14 @@
       "Invited by: ${ inviteEmail }": [
         "Diundang oleh: ${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Akun Lifetime tidak dapat bergabung dalam paket grup."
+      ],
       "Manage addresses.": [
         "Kelola alamat."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Pemilik paket dengan anggota tidak dapat bergabung ke paket keluarga lain."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Maaf, Anda tidak dapat mengubah paket untuk saat ini."
@@ -3371,6 +3383,12 @@
       ],
       "You have successfully joined the family group": [
         "Anda telah berhasil bergabung ke grup keluarga ini"
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Anda memiliki faktur yang belum dibayar. Silakan dibayar sebelum bergabung dalam paket keluarga."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Anda diundang untuk mengaitkan Akun ${ BRAND_NAME } Anda ke paket keluarga ini dan menikmati semua fitur premium ${ brandOrAppName } bersama."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Akun Anda memiliki alamat email lebih banyak dari yang tersedia kepada Anda dalam paket ini. ${ addressSettingsLink }"
@@ -3536,9 +3554,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } saran ditemukan. Gunakan keyboard Anda untuk beralih antar pilihan yang ada."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Pakai kunci Up dan Down untuk mengakses dan menjelajah saran setelah input. Pencet Enter untuk mengonfirmasi pilihan, atau Escape untuk menutup kotak saran."
       ]
@@ -3889,6 +3904,9 @@
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } grup ditemukan"
+      ],
+      "${ invitations.length } pending invitation": [
+        "${ invitations.length } undangan tertunda"
       ],
       "${ nbFile } encrypted file": [
         "${ nbFile } berkas terenkripsi"
@@ -6932,6 +6950,9 @@
       "Secure Core servers": [
         "Server Secure Core"
       ],
+      "Secure link sharing": [
+        "Pembagian tautan aman"
+      ],
       "See team's availability": [
         "Lihat ketersediaan tim"
       ],
@@ -7019,6 +7040,9 @@
       "Up to ${ n } user": [
         "Hingga ${ n } pengguna"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Sampai dengan ${ n } pengguna (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Ruang penyimpanan hingga ${ totalStorageSize }"
       ],
@@ -7036,6 +7060,14 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Kami memindai dark web untuk memeriksa apakah alamat atau alias ${ BRAND_NAME } Anda telah dibocorkan serta memberitahukan Anda dengan segera apabila kami menemukan sesuatu."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } admin"
+      ],
+      "${ users } user": [
+        "${ users } pengguna"
       ]
     },
     "new_plans: feature info": {
@@ -7111,6 +7143,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Lindungi informasi bisnis yang sensitif dan berkolaborasi dengan aman."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Lindungi keluarga Anda dengan semua fitur premium dari ${ PASS_SHORT_APP_NAME } Plus untuk 6 pengguna."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Lindungi privasi keluarga Anda dengan perlindungan gabungan dari seluruh layanan ${ BRAND_NAME }."
@@ -7188,7 +7223,7 @@
         "Setiap alamat dapat digunakan untuk mengirim dan menerima pesan. Seorang pengguna dapat memiliki lebih dari satu alamat; meskipun demikian, satu alamat tidak dapat dimiliki oleh lebih dari satu pengguna."
       ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
-        "Memungkinkan Anda untuk mengakses lebih dari satu jaringan pada saat yang bersamaan, cth. ketika Anda hendak menonton film dari luar negeri namun tetap ingin mendapatkan hasil pencarian lokal"
+        "Memungkinkan Anda untuk mengakses lebih dari satu jaringan dalam satu waktu, mis. pada saat Anda ingin menonton film dari luar negeri namun tetap ingin mendapatkan hasil pencarian lokal"
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Memungkinkan Anda untuk menyiapkan pesan balasan otomatis (auto-reply) bagi seluruh pesan yang Anda terima"
@@ -7318,6 +7353,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan ruang penyimpanan terenkripsi berbasis cloud. Dengan dukungan sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Bagikan item individu secara aman dengan siapa pun (bahkan jika mereka tidak menggunakan ${ PASS_APP_NAME })"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Simpan rincian kontak Anda seperti nomor telepon, alamat, tanggal ulang tahun, catatan personal, dan lain sebagainya secara aman. Enkripsi zero-access kami memastikan bahwa tidak ada siapapun yang dapat mengakses data Anda, termasuk ${ BRAND_NAME } sendiri."
@@ -7698,11 +7736,11 @@
       "Continue": [
         "Lanjut"
       ],
-      "Create new document": [
-        "Buat dokumen baru"
-      ],
       "Get started": [
         "Mulai"
+      ],
+      "Install and continue": [
+        "Pasang dan lanjutkan"
       ],
       "Install later": [
         "Pasang nanti"
@@ -7727,9 +7765,6 @@
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Mulai gunakan ${ DRIVE_APP_NAME }"
-      ],
-      "Try it later": [
-        "Coba nanti"
       ],
       "Try the app": [
         "Coba aplikasinya"
@@ -7757,11 +7792,11 @@
       "Collaborate on documents": [
         "Berkolaborasi dalam dokumen"
       ],
-      "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
-        "Buat dokumen baru dan mulai kolaborasi antar dokumen. Segala sesuatunya terlindung oleh enkripsi end-to-end."
-      ],
       "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
         "Apakah Anda lebih menyukai ${ DRIVE_APP_NAME } di mode gelap, atau mode terang? Pilih warna yang paling menginspirasi Anda."
+      ],
+      "Drag and drop your files here": [
+        "Seret dan lepas berkas Anda di sini"
       ],
       "Edit documents online": [
         "Sunting dokumen secara online"
@@ -7771,6 +7806,12 @@
       ],
       "Faster uploads for large or multiple files": [
         "Unggahan yang cepat untuk berkas yang besar atau dalam jumlah banyak"
+      ],
+      "Final approval in progress": [
+        "Persetujuan akhir sedang berlangsung"
+      ],
+      "Final approval pending": [
+        "Penyetujuan akhir tertunda"
       ],
       "Free up hard drive space on your computer": [
         "Kosongkan ruang perangkat keras pada komputer Anda"
@@ -7793,8 +7834,8 @@
       "Hang tight": [
         "Bersiaplah"
       ],
-      "Introducing ${ DOCS_APP_NAME }": [
-        "Memperkenalkan ${ DOCS_APP_NAME }"
+      "Invitation accepted": [
+        "Undangan diterima"
       ],
       "Invitation received": [
         "Undangan diterima"
@@ -7939,6 +7980,34 @@
       ],
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Pembagian brankas aman (${ n } brankas) dan tautan aman"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } akun pengguna"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Panel admin untuk mengelola pengguna dan langganan"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Seluruh fitur premium. 6 pengguna. 1 langganan mudah."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Ditagih setiap tahun seharga ${ yearlyPrice }. Hemat ${ yearlySavedPrice } dengan ${ passFamilyPlanName } (dibandingkan 6 langganan ${ passPlusPlanName } individu)"
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Penawaran eksklusif hanya tersedia bagi pendukung dini ${ PASS_APP_NAME }."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Dapatkan seharga ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Perkenalkan ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Penawaran waktu terbatas."
       ]
     },
     "passwordless": {
@@ -8301,6 +8370,11 @@
         "(akan membuka jendela ${ PASS_APP_NAME })"
       ]
     },
+    "Security Center - Action": {
+      "View events": [
+        "Lihat peristiwa"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } dan ${ remainingCount } kebocoran data potensial lainnya terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
@@ -8331,7 +8405,7 @@
     },
     "Select search results": {
       "No results found": [
-        "Hasil tidak ditemukan"
+        "Tidak ada hasil yang ditemukan"
       ]
     },
     "session_recovery:available:action": {
@@ -9245,7 +9319,7 @@
         "Aplikasi desktop"
       ],
       "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet tetap aman dan privat bagi siapa pun. Tingkatkan akun Anda ke paket berbayar."
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
       ],
       "No ads or tracking": [
         "Tanpa iklan atau pelacakan"
@@ -10103,6 +10177,9 @@
       ],
       "What would you like to import?": [
         "Hal-hal apa saja yang hendak Anda impor?"
+      ],
+      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Anda akan menolak undangan untuk item yang dibagikan. Anda tidak akan dapat mengakses lagi sampai pemilik membagikan ulang kepada Anda."
       ],
       "You have inaccessible files": [
         "Anda memiliki berkas yang tidak dapat diakses"

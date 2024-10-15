@@ -1654,6 +1654,9 @@
       "Quickly autofill your identities.": [
         "Uzupełniaj swoje tożsamości."
       ],
+      "Quickly autofill your saved credentials.": [
+        "Szybkie autouzupełnianie danych logowania."
+      ],
       "Registering extra password...": [
         "Dodawanie dodatkowego hasła..."
       ],
@@ -1746,9 +1749,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Dziękujemy. Problem został zgłoszony"
-      ],
-      "The autofill dropdown will automatically open when you click or focus on the field.": [
-        "Menu autouzupełniania będzie otwierane w polach logowania."
       ],
       "The export will only contain vaults that you own.": [
         "Plik eksportu będzie zawierał tylko Twoje sejfy."
@@ -1881,9 +1881,6 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Użyj hasła ${ BRAND_NAME }, aby uzyskać dostęp do trybu offline ${ PASS_SHORT_APP_NAME }"
-      ],
-      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Automatycznie uzupełniaj dane logowania po kliknięciu ikony ${ PASS_APP_NAME }."
       ],
       "You cannot change the mailboxes for this alias.": [
         "Nie możesz zmienić skrzynek pocztowych dla tego aliasu."
@@ -2085,9 +2082,6 @@
       "Autofill 2FA": [
         "Autouzupełnianie uwierzytelniania dwustopniowego"
       ],
-      "Automatically open autofill when a login field is focused": [
-        "Automatycznie otwieraj autouzupełnianie w polach logowania"
-      ],
       "Autosave": [
         "Automatyczne zapisywanie"
       ],
@@ -2180,9 +2174,6 @@
       ],
       "Display": [
         "Wyświetlanie"
-      ],
-      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
-        "Pokaż ikonę ${ PASS_APP_NAME } w polach automatycznego uzupełniania"
       ],
       "Domain": [
         "Domena"
@@ -2360,6 +2351,9 @@
       ],
       "Login": [
         "Dane logowania"
+      ],
+      "Login autofill": [
+        "Autouzupełnianie danych logowania"
       ],
       "Logins": [
         "Dane logowania"
@@ -2686,7 +2680,7 @@
         "Utworzysz"
       ],
       "Your browser will stop using its built-in password manager.": [
-        "Przeglądarka przestanie korzystać z wbudowanego menedżera haseł."
+        "Przeglądarka przestanie korzystać ze wbudowanego menedżera haseł."
       ],
       "ZIP or Postal code": [
         "Kod pocztowy"

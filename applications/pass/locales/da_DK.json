@@ -28,6 +28,9 @@
       "Add": [
         "Tilføj"
       ],
+      "Add account": [
+        "Tilføj konto"
+      ],
       "Add current URL": [
         "Tilføj nuværende URL"
       ],
@@ -264,6 +267,10 @@
       ],
       "Import": [
         "Importér"
+      ],
+      "Import alias": [
+        "Importer alias",
+        "Importer aliasser"
       ],
       "Importing": [
         "Importerer"
@@ -987,6 +994,23 @@
       ],
       "Something went wrong": [
         "Noget gik galt"
+      ]
+    },
+    "FamilyPlanPromo2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Alle premium-tjenester. 6 brugere. 1 nemt abonnement."
+      ],
+      "Exclusive offer for ${ PASS_APP_NAME } early supporters.": [
+        "Eksklusivt tilbud til tidlige støtter af ${ PASS_APP_NAME }."
+      ],
+      "Get it for ${ price }/month": [
+        "Få det til ${ price }/måned"
+      ],
+      "Introducing ${ planNameJSX }": [
+        "Vi præsenterer ${ planNameJSX }"
+      ],
+      "Limited-time offer only.": [
+        "Tilbuddet gælder kun i en begrænset periode."
       ]
     },
     "Feature": {
@@ -1834,6 +1858,10 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "Du kan ikke ændre postkasserne for dette alias"
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Du har ${ aliasCount } alias, som findes i SimpleLogin, men som mangler i ${ PASS_APP_NAME }. Vil du gerne importere det?",
+        "Du har ${ aliasCount } aliasser, som findes i SimpleLogin, men som mangler i ${ PASS_APP_NAME }. Vil du gerne importere dem?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Du har ${ daysRemaining } dag tilbage til at prøve disse og andre premium-funktioner.",
@@ -2873,6 +2901,9 @@
       "Import to vault(s)": [
         "Importér til boks(e)"
       ],
+      "Import your aliases from SimpleLogin": [
+        "Importer dine aliasser fra SimpleLogin"
+      ],
       "Import your data": [
         "Importér dine data"
       ],
@@ -3017,6 +3048,9 @@
       ],
       "Suggestions": [
         "Forslag"
+      ],
+      "Switch to": [
+        "Skift til"
       ],
       "Sync alias": [
         "Synkroniser alias"

@@ -1029,6 +1029,9 @@
       "All premium features. 6 users. 1 easy subscription.": [
         "Kaikki premium-ominaisuudet. Kuusi käyttäjää. Yksi helppo tilaus."
       ],
+      "Exclusive offer for ${ PASS_APP_NAME } early supporters.": [
+        "Erikoistarjous ${ PASS_APP_NAME }in varhaisille tukijoille."
+      ],
       "Get it for ${ price }/month": [
         "Hanki se hintaan ${ price }/kuukausi"
       ],
@@ -1918,6 +1921,10 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "Et voi muuttaa aliakseen liitettyjä postilaatikoita."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Sinulla on SimpleLoginissa ${ aliasCount } ${ PASS_APP_NAME }ista puuttuva alias. Haluaisitko tuoda sen?",
+        "Sinulla on SimpleLoginissa ${ aliasCount } ${ PASS_APP_NAME }ista puuttuvaa aliasta. Haluaisitko tuoda ne?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Sinulla on ${ daysRemaining } päivä jäljellä kokeilla näitä ja muita premium-ominaisuuksia.",

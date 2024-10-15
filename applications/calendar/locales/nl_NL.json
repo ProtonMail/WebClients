@@ -482,11 +482,11 @@
       "Not now": [
         "Niet nu"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Open ${ CALENDAR_APP_NAME }-instellingen"
@@ -721,6 +721,9 @@
       ],
       "Upgrade now": [
         "Nu upgraden"
+      ],
+      "Upgrade to ${ BRAND_NAME } Unlimited": [
+        "Upgrade naar ${ BRAND_NAME } Unlimited"
       ],
       "Upload picture": [
         "Afbeelding uploaden"
@@ -2448,6 +2451,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } beschermt je account met 24/7 monitoring van verdachte activiteiten - inclusief escalatie naar beveiligingsspecialisten."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA voegt een extra beveiligingslaag toe, waardoor onbevoegde toegang wordt voorkomen."
       ],
@@ -2456,6 +2462,9 @@
       ],
       "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
         "Organiseer uw dag beter, houd uw tijd bij en prioriteer taken. Stel uw agenda in met aangepast kleuren."
+      ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "Kleurcodering maakt het makkelijker om je dag in te delen, de tijd bij te houden en taken te prioriteren."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Contacten decoderen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u het bestand downloaden met al uw geëxporteerde contactpersonen."
@@ -2522,6 +2531,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Uw account en dataherstelmethodes zijn ingesteld."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Je hebt al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -2639,6 +2651,9 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Elke 2 jaar gefactureerd aan ${ amountBilled }. Kortingen zijn gebaseerd op de standaard maandelijkse prijs."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "Jaarlijks gefactureerd op ${ amountBilled }. Bespaar ${ amountSave } op 2 individuele ${ BRAND_NAME } Unlimited jaarabonnementen."
       ]
@@ -3639,8 +3654,14 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-groepen"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Accounts met een eigen domein kunnen zich niet aansluiten bij een Family-abonnement."
+      ],
       "customer support": [
         "klantondersteuning"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Family-abonnementen bieden op dit moment geen ondersteuning voor externe accounts. Maak een ${ BRAND_NAME }-adres aan voor u zich hierbij aansluit. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Als u de uitnodiging accepteert, zetten we uw huidige abonnement om en wordt een eventueel resterend saldo teruggestort."
@@ -3648,8 +3669,14 @@
       "Invited by: ${ inviteEmail }": [
         "Uitgenodigd door: ${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Levenslange accounts kunnen niet deelnemen aan een Family-abonnement."
+      ],
       "Manage addresses.": [
         "Beheer adressen."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Eigenaren van een abonnement met leden kunnen zich niet aansluiten bij een ander Family-abonnement."
       ],
       "Sorry, you can't switch plans at this time.": [
         "U kunt op dit moment niet van abonnement wisselen."
@@ -3671,6 +3698,12 @@
       ],
       "You have successfully joined the family group": [
         "U hebt zich succesvol aangesloten bij de familiegroep"
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "U heeft onbetaalde facturen. Betaal deze voordat u zich aansluit bij een Family-abonnement"
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "U bent uitgenodigd om uw ${ BRAND_NAME } account te linken aan dit familieplan en samen te genieten van de premium functies van ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Uw account heeft meer e-mailadressen dan is toegestaan in dit abonnement. ${ addressSettingsLink }"
@@ -3817,8 +3850,17 @@
       ]
     },
     "Google Meet": {
+      "Join Google Meet": [
+        "Deelnemen aan Google Meet"
+      ],
+      "Joining instructions": [
+        "Instructies om deel te nemen"
+      ],
       "Less details": [
         "Minder details"
+      ],
+      "Meeting link:": [
+        "Meeting link:"
       ],
       "More details": [
         "Meer details"
@@ -3859,10 +3901,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } suggestie gevonden, gebruik het toetsenbord om te navigeren.",
-        "${ items.length } suggesties gevonden, gebruik het toetsenbord om te navigeren."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Gebruik omhoog- en omlaagknoppen om suggesties te openen en te bladeren na invoer. Druk op Enter om uw keuze te bevestigen, of op Escape om het suggestievak te sluiten."
       ]
@@ -4729,7 +4767,7 @@
         "Andere gebruikers binnen uw organisatie zien uw bezette slots. Er worden geen details over het event gedeeld."
       ],
       "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Met onze meldingen nemen we het zekere voor het onzekere. Als je de geschonden informatie niet herkent, kun je deze melding veilig negeren."
+        "Met onze meldingen nemen we het zekere voor het onzekere. Als u de geschonden informatie niet herkent, kunt u deze melding veilig negeren."
       ],
       "password": [
         "wachtwoord"
@@ -5052,6 +5090,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "U staat het punt om een nieuw tabblad te openen en de volgende locatie te bezoeken:"
+      ],
+      "You are about to open your default browser and visit:": [
+        "U staat op het punt uw standaardbrowser te openen om te bezoeken:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "U bent momenteel aangemeld als ${ user.Name } (${ user.Email })."
@@ -6724,6 +6765,10 @@
       "${ admins } admin": [
         "${ admins } beheerder",
         "${ admins } beheerders"
+      ],
+      "${ users } user": [
+        "${ users } gebruiker",
+        "${ users } gebruikers"
       ]
     },
     "new_plans: feature info": {
@@ -6799,6 +6844,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Bescherm gevoelige bedrijfsinformatie en werk veilig samen."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Bescherm uw familie met alle premium-functies van ${ PASS_SHORT_APP_NAME } Plus voor 6 gebruikers."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Bescherm de privacy van uw gezin met alle services van ${ BRAND_NAME } gecombineerd."
@@ -7008,6 +7056,9 @@
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld delen van bestanden en meer."
       ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Veilig delen van individuele items met wie u wilt (zelfs als ze geen ${ PASS_APP_NAME } gebruiken)."
+      ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Sla de gegevens van uw contactpersonen, zoals telefoonnummer, adres, geboortedatum en persoonlijke notities, veilig op. Dankzij zero-access versleuteling heeft zelfs ${ BRAND_NAME } geen toegang tot deze gegevens."
       ],
@@ -7135,6 +7186,9 @@
       ],
       "Link copied to clipboard": [
         "Link gekopieerd naar klembord"
+      ],
+      "Passcode copied to clipboard": [
+        "Passcode gekopieerd naar klembord"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -7441,6 +7495,29 @@
       "${ n } user account": [
         "${ n } gebruikersaccount",
         "${ n } gebruikersaccounts"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Beheerpaneel om gebruikers en abonnement te beheren"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Alle premium functionaliteiten. 6 gebruikers. 1 eenvoudig abonnement."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Jaarlijks gefactureerd aan ${ yearlyPrice }. Spaar ${ yearlySavedPrice } met ${ passFamilyPlanName } (in plaats van 6 individuele ${ passPlusPlanName } abonnementen)"
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Exclusieve aanbieding alleen beschikbaar voor ${ PASS_APP_NAME } vroege supporters."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Neem het voor ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Ontdek ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Tijdelijk aanbieding."
       ]
     },
     "passwordless": {
@@ -7816,6 +7893,11 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(${ PASS_APP_NAME } zal openen)"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Bekijk gebeurtenissen"
       ]
     },
     "Security Center - Info": {
@@ -9505,6 +9587,9 @@
       "Notes": [
         "Notities"
       ],
+      "One email, many recipients": [
+        "Één e-mail, veel ontvangers"
+      ],
       "Open actions dropdown": [
         "Open dropdown-menu voor acties"
       ],
@@ -10274,6 +10359,12 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Deelnemen aan Zoom Meeting"
+      ],
+      "Meeting ID:": [
+        "Meeting ID:"
+      ],
       "Passcode: ${ password }": [
         "Toegangscode: ${ password }"
       ]

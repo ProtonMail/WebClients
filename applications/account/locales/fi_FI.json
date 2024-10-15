@@ -70,11 +70,11 @@
       "Accept": [
         "Hyväksy"
       ],
-      "Activate": [
-        "Ota käyttöön"
-      ],
       "activate": [
         "ota käyttöön"
+      ],
+      "Activate": [
+        "Ota käyttöön"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivoi ${ user.Name }@pm.me"
@@ -1200,6 +1200,9 @@
       ],
       "Verify": [
         "Vahvista"
+      ],
+      "Verify ${ unverifiedSSODomain.DomainName }": [
+        "Vahvista ${ unverifiedSSODomain.DomainName }"
       ],
       "Verify account": [
         "Vahvista tili"
@@ -3668,7 +3671,7 @@
         "Kehittynyt ja alan standardit ylittävä suojaus"
       ],
       "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
-        "Liity yli 50 000 ${ BRAND_NAME }:n suojausta hyödyntävän yrityksen joukkoon"
+        "Liity yli 50 000 ${ BRAND_NAME }in suojausta hyödyntävän yrityksen joukkoon"
       ],
       "Protect sensitive business information and collaborate securely": [
         "Suojaa arkaluonteiset yritystiedot ja yhteistyöskentele turvallisesti."
@@ -3725,7 +3728,7 @@
     },
     "duoplan2024: SubTitle": {
       "All of ${ BRAND_NAME }, for 2.": [
-        "Kaikki ${ BRAND_NAME }:n tarjoama, kahdelle."
+        "Kaikki ${ BRAND_NAME }in tarjoama, kahdelle."
       ],
       "Double your storage": [
         "Tuplaa tallennustilasi"
@@ -5179,8 +5182,17 @@
       "*Only one free trial per user. Regular pricing applies thereafter.": [
         "*Vain yksi ilmainen kokeilujakso käyttäjää kohden. Normaali hinnoittelu on voimassa sen jälkeen."
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Omia verkkotunnuksia käyttävät tilit eivät voi liittyä perhetilaukseen."
+      ],
+      "After leaving, you will be moved to a ${ BRAND_NAME } Free plan.": [
+        "Kun poistut, sinut siirretään ${ BRAND_NAME } Free -tilaukseen."
+      ],
       "customer support": [
         "asiakaspalveluun"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Perhetilaukset eivät tällä hetkellä tue ulkoisia tilejä. Luo ${ BRAND_NAME } -osoite ennen liittymistä. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jos hyväksyt kutsun, siirrämme sinut nykyisestä tilauksestasi ja hyvitämme tilillesi jäljellä olevan saldon."
@@ -5191,6 +5203,9 @@
       "Invited by: ${ inviteEmail }": [
         "Kutsunut: ${ inviteEmail }"
       ],
+      "Leave ${ PASS_SHORT_APP_NAME } Family plan": [
+        "Jätä ${ PASS_SHORT_APP_NAME } -perhetilaus"
+      ],
       "Leave Duo plan": [
         "Poistu Duo-tilauksesta"
       ],
@@ -5199,6 +5214,9 @@
       ],
       "Leave Visionary plan": [
         "Poistu Visionary-tilauksesta"
+      ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Elinikäiset tilit eivät voi liittyä perhetilaukseen."
       ],
       "Manage addresses.": [
         "Hallitse osoitteita."
@@ -5209,6 +5227,9 @@
       "Only ${ n } accepted invitation are allowed in a 6-month period.": [
         "Kuuden kuukauden sisällä sallitaan vain ${ n } kutsuhyväksyntä.",
         "Kuuden kuukauden sisällä sallitaan vain ${ n } kutsuhyväksyntää."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Jäseniä sisältävän tilauksen omistajat eivät voi liittyä toiseen perhetilaukseen."
       ],
       "Pending": [
         "Odottaa"
@@ -5254,14 +5275,20 @@
       "You have successfully joined the family group": [
         "Olet liittynyt perheryhmään"
       ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Sinulla on maksamattomia laskuja. Maksa ne ennen perhetilaukseen liittymistä."
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Sinun on määritettävä oma verkkotunnus ennen kuin voit lisätä useita käyttäjiä."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Sinun on määritettävä oma verkkotunnus ennen kuin luot uuden käyttäjän."
       ],
-      "You will lose access to all premium features and storage space included with ${ plan }.": [
-        "Menetät pääsyn kaikkiin ${ plan } -tilauksen sisältämiin premium-ominaisuuksiin ja tallennustilaan."
+      "You will lose access to all premium features included with ${ plan }.": [
+        "Menetät pääsyn kaikkiin ${ plan } -tilauksen sisältämiin premium-ominaisuuksiin."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Sinut on kutsuttu yhdistämään ${ BRAND_NAME } -tilisi tähän perhetilaukseen ja nauttimaan kaikista ${ brandOrAppName } -premium-ominaisuuksista yhdessä."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Tililläsi on enemmän sähköpostiosoitteita kuin mitä sinulla on käytettävissäsi tässä tilauksessa. ${ addressSettingsLink }"
@@ -5277,6 +5304,9 @@
       "*Only one free trial per user. Regular pricing applies thereafter.": [
         "*Vain yksi ilmainen kokeilujakso käyttäjää kohden. Normaali hinnoittelu on voimassa sen jälkeen."
       ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
+        "Kun tämä käyttäjä jättää tilauksesi, hänet siirretään ${ BRAND_NAME } Free -tilaukseen."
+      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Poistuttaan tilauksestasi, tämä käyttäjä siirretään ${ BRAND_NAME }  Unlimited -tilaukseen 30 päivän maksuttomalla kokeilujaksolla.*"
       ],
@@ -5285,6 +5315,12 @@
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Luo ja hallinnoi perheenjäseniä ja myönnä heille tallennustilaa, joka on jaettu ${ DRIVE_APP_NAME } ja ${ MAIL_APP_NAME } välillä."
+      ],
+      "Create and manage family members.": [
+        "Luo ja hallitse perheenjäseniä."
+      ],
+      "If the user already has a ${ BRAND_NAME } account (${ domain } or other, e.g. @gmail.com), enter it here. Otherwise they need to create an account first.": [
+        "Jos käyttäjällä on jo ${ BRAND_NAME } -tili (${ domain } tai muu, esim. @gmail.com), syötä se tähän. Muutoin heidän on ensin luotava tili."
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Jos käyttäjällä on jo ${ MAIL_APP_NAME } -osoite, syötä se tähän. Muutoin heidän on ensin luotava tili."
@@ -5398,10 +5434,6 @@
       ],
       "Add": [
         "Lisää"
-      ],
-      "Add (${ numberOfAddedServers })": [
-        "Lisää (${ numberOfAddedServers })",
-        "Lisää (${ numberOfAddedServers })"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Yhteys enintään ${ plusVpnConnections } laitteelle",
@@ -5910,9 +5942,6 @@
       "Checkout": [
         "Kassa"
       ],
-      "Country": [
-        "Maa"
-      ],
       "Create your account": [
         "Luo oma tilisi"
       ],
@@ -6059,10 +6088,6 @@
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Lisää tämä tietue verkkotunnuksesi DNS-palveluun."
       ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Löydettiin ${ items.length } ehdotus, käytä siirtymiseen näppäimistöä.",
-        "Löydettiin ${ items.length } ehdotusta, käytä siirtymiseen näppäimistöä."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Selaa kirjoituksen jälkeen näytettäviä ehdotuksia Ylös-/Alas-näppäimillä ja vahvista valinta Enter-näppäimellä tai sulje ehdotukset Esc-näppäimellä."
       ]
@@ -6156,7 +6181,7 @@
     },
     "Import contact error": {
       "Contact ${ contactId }: ": [
-        "Yhteystieto ${ contactId }: "
+        "Ota yhteyttä ${ contactId }: "
       ]
     },
     "Import contact groups info": {
@@ -7068,9 +7093,6 @@
       "Disable recovery by ${ type }": [
         "Poista palautuksen ${ type }"
       ],
-      "Disabled since ${ formattedDateAndTime }": [
-        "Pois käytöstä ${ formattedDateAndTime } lähtien"
-      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Kaksivaiheisen tunnistautumisen käytöstä poistaminen heikentää tilisi suojausta. Jatka vain, jos se on välttämätöntä."
       ],
@@ -7188,9 +7210,6 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Ota TLS tai SSL käyttöön ulkoisessa palvelussa, jos sitä tuetaan."
-      ],
-      "Enabled since ${ formattedDateAndTime }": [
-        "Käytössä ${ formattedDateAndTime } lähtien"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Palautuslausekkeen uusi käyttöönotto luo uuden palautuslausekkeen."
@@ -7791,9 +7810,6 @@
       "Number of dedicated servers in the organization": [
         "Organisaation omien palvelinten määrä"
       ],
-      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "Yrität määrittää suurempaa omien palvelinten määrää (${ addedCount }) kuin tilauksesi palvelimista on vapaana (${ remainingCount }). Tilaukseesi sisältyy ${ ownedCount } palvelinta, joista käytössäsi on jo ${ usedCount }."
-      ],
       "of": [
         "/"
       ],
@@ -8184,9 +8200,6 @@
       "Some keys successfully reactivated": [
         "Joitakin avaimia aktivoitiin uudelleen"
       ],
-      "Some of your available servers can only be used in specific countries due to recent removals": [
-        "Osaa palvelimistasi voidaan hiljattaisten poistojen vuoksi käyttää vain tietyissä maissa"
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Määritä toimialue, joka saa todentaa SAML SSO:lla."
       ],
@@ -8349,9 +8362,6 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Tämä saattaa laitteesta riippuen kestää muutamasta sekunnista muutamaan minuuttiin"
-      ],
-      "This change will be fully reflected across your infrastructure in about 1 hour": [
-        "Tämä muutos näkyy infrastruktuurissasi tunnin kuluessa."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Tämä saattaa kestää jonkin aikaa. Älä sulje tätä sivua tai katkaise Internet-yhteyttäsi."
@@ -8704,9 +8714,6 @@
       "Visa Secure logo": [
         "Visa Secure -logo"
       ],
-      "Want servers in other countries?": [
-        "Haluatko palvelimia muista maista?"
-      ],
       "Want to learn more?": [
         "Haluatko lisätietoja?"
       ],
@@ -8742,6 +8749,9 @@
       ],
       "We recommend having multiple servers in different locations to provide redundancy.": [
         "Suosittelemme vikasietoisuutta varten useita palvelimia eri sijainneista."
+      ],
+      "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "Suosittelemme, että ilmoitat asiasta perheenjäsenille ja pyydät heitä ottamaan 2FA:n käyttöön omilla tileillään ennen 2FA:n käytön pakottamista."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Suosittelemme, että ilmoitat asiasta organisaation jäsenille ja pyydät heitä ottamaan 2FA:n käyttöön omilla tileillään ennen 2FA:n käytön pakottamista."
@@ -8909,9 +8919,6 @@
       "You can enable the Photos section from the interface using the toggle below.": [
         "Voit ottaa Kuvat-osion käyttöön käyttöliittymän alla olevalla painikkeella."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Voit avata yllä olevan määrityksen heti lisäämällä ${ specificCountryCount } tilauksesi IP-osoitteiden määrään tai ottamalla meihin yhteyttä räätälöityjä ratkaisuja varten."
-      ],
       "You can import one data type at a time.": [
         "Voit tuoda vain yhden tietotyypin kerrallaan."
       ],
@@ -8959,10 +8966,6 @@
       ],
       "You do not have permission to perform this action": [
         "Sinulla ei ole oikeuksia tämän toiminnon suorittamiseen"
-      ],
-      "You have ${ availableCount } dedicated server available.": [
-        "Käytettävissäsi on ${ availableCount } oma palvelin.",
-        "Käytettävissäsi on ${ availableCount } omaa palvelinta."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Sinulla on ${ planTitle } -kokeilutilaus. Jos haluat jatkaa tilausta kokeilujakson jälkeen, lisää maksutapa."
@@ -10020,6 +10023,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Syötä salasana avaimelle sormenjäljellä: ${ fingerprintCode }"
       ],
+      "Event": [
+        "Tapahtuma"
+      ],
       "Event duration": [
         "Tapahtuman kesto"
       ],
@@ -10367,6 +10373,9 @@
       ],
       "Reveal password": [
         "Näytä salasana"
+      ],
+      "Search": [
+        "Haku"
       ],
       "Search by email": [
         "Hae sähköpostilla"
@@ -10778,9 +10787,6 @@
       ],
       "Common sign up issues": [
         "Yleiset rekisteröitymisongelmat"
-      ],
-      "Contact us": [
-        "Ota yhteyttä"
       ],
       "create a ticket": [
         "luo tukipyyntö"
@@ -11603,7 +11609,7 @@
         "${ size } tallennustilaa"
       ],
       "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - ${ DRIVE_APP_NAME }:lle"
+        "${ textType } - ${ DRIVE_APP_NAME }lle"
       ],
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Kaikille ${ BRAND_NAME }-palveluille"
@@ -11868,6 +11874,9 @@
       "Secure Core servers": [
         "Secure Core -palvelimet"
       ],
+      "Secure link sharing": [
+        "Suojattu linkkien jako"
+      ],
       "See team's availability": [
         "Katso tiimin saatavuus"
       ],
@@ -11969,6 +11978,10 @@
         "Enintään ${ n } käyttäjää",
         "Enintään ${ n } käyttäjää"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Enintään ${ n } käyttäjä (${ adminsText }, ${ usersText })",
+        "Enintään ${ n } käyttäjää (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Jopa ${ totalStorageSize } tallennustilaa"
       ],
@@ -11987,6 +12000,16 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skannaamme pimeää verkkoa tarkistaaksemme, onko ${ BRAND_NAME } -osoitteesi tai -aliaksesi vuotaneet ja hälytämme välittömästi, jos löydämme jotain."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } ylläpitäjä",
+        "${ admins }ylläpitäjää"
+      ],
+      "${ users } user": [
+        "${ users } käyttäjä",
+        "${ users } käyttäjää"
       ]
     },
     "new_plans: feature info": {
@@ -12083,6 +12106,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Suojaa arkaluonteiset yritystiedot ja yhteistyöskentele turvallisesti."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Suojaa perheesi kaikilla ${ PASS_SHORT_APP_NAME } Plussan premium-ominaisuuksista kuudelle käyttäjälle."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Suojaa perheesi yksityisyyttä kaikkien ${ BRAND_NAME } -palveluiden yhdistelmällä."
@@ -12325,7 +12351,7 @@
         "Mukauta sähköpostiallekirjoitustasi mm. logoilla, kuvilla, sosiaalisen median kuvakkeilla sekä yhteystietolinkeillä"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "${ BRAND_NAME }:in asiakaspalvelu tarjoaa puhelintukea eurooppalaisina toimistoaikoina asiakkaille, joilla on vähintään 20 käyttäjää"
+        "${ BRAND_NAME }in asiakaspalvelu tarjoaa puhelintukea eurooppalaisina toimistoaikoina asiakkaille, joilla on vähintään 20 käyttäjää"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Estää ${ BRAND_NAME }ilta ja ulkopuolisilta tahoilta avaamasta viestejä. Viestejä voivat lukea vain niiden lähettäjät ja tarkoitetut vastaanottajat."
@@ -12359,6 +12385,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää automaattisen synkronoinnin, salatun tiedostojen jakamisen ja paljon muuta."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Jaa yksittäisiä kohteita turvallisesti kenelle tahansa (vaikkeivat he käyttäisikään ${ PASS_APP_NAME }ia)"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Säilytä yhteystietojesi puhelinnumeroiden, osoitteiden, syntymäpäivien ja henkilökohtaisten muistiinpanojen kaltaiset tiedot turvallisesti. Zero Access -salaus varmistaa, ettei edes ${ BRAND_NAME } näe niitä."
@@ -12532,11 +12561,17 @@
       "Link copied to clipboard": [
         "Linkki kopioitiin leikepöydälle"
       ],
+      "Number of records exceeds the download limit of 10000": [
+        "Tietueiden määrä ylittää 10000 latausrajan"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN/IKEv2-kirjautumistiedot luotiin uudelleen"
       ],
       "Reminder has been sent": [
         "Muistutus on lähetetty"
+      ],
+      "Too many recent API requests": [
+        "Liian monta viimeaikaista API-pyyntöä"
       ],
       "Trial started": [
         "Kokeilujakso on alkanut"
@@ -13259,7 +13294,7 @@
         "Se on ainoa tapa palauttaa tilisi kokonaan, joten varmista, että säilytät sen jossakin turvallisessa paikassa."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
-        "Liity yli 100 miljoonaan ihmiseen, jotka ovat valinneet ${ BRAND_NAME }:n pysyäkseen turvassa verkossa"
+        "Liity yli 100 miljoonaan ihmiseen, jotka ovat valinneet ${ BRAND_NAME }in pysyäkseen turvassa verkossa"
       ],
       "Launching ${ PASS_APP_NAME }": [
         "Käynnistetään ${ PASS_APP_NAME }"
@@ -13307,7 +13342,7 @@
         "Turvallisten holvien ja linkkien jakaminen"
       ],
       "Secure vault sharing": [
-        "Turvallinen holvien jako"
+        "Suojattu holvien jako"
       ],
       "Secure vault sharing (${ n } vault)": [
         "Turvallisten holvien jakaminen (${ n } holvi)",
@@ -13389,6 +13424,32 @@
       ],
       "For individuals": [
         "Yksityishenkilöille"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } käyttäjätili",
+        "${ n } käyttäjätiliä"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Ylläpitopaneeli käyttäjien ja tilauksen hallintaan"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Kaikki premium-ominaisuudet. Kuusi käyttäjää. Yksi helppo tilaus."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Erikoistarjous vain ${ PASS_APP_NAME }in varhaisille tukijoille."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Hanki se hintaan ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Esittelyssä ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Rajoitetun ajan tarjous."
       ]
     },
     "password_reset: info": {
@@ -15779,6 +15840,11 @@
         "Päättyy"
       ]
     },
+    "Subtitle": {
+      "View VPN session details for your organization.": [
+        "Tarkastele organisaatiosi VPN-istunnon tietoja."
+      ]
+    },
     "Success": {
       "Account deleted. Signing out...": [
         "Tili on poistettu. Kirjaudutaan ulos..."
@@ -16303,9 +16369,6 @@
       "Add pm.me subdomain": [
         "Lisää pm.me-aliverkkotunnus"
       ],
-      "Add servers": [
-        "Lisää palvelimia"
-      ],
       "Add Sieve filter": [
         "Lisää Sieve-suodatin"
       ],
@@ -16455,12 +16518,6 @@
       ],
       "Connect ${ name }": [
         "Yhdistä palveluun ${ name }"
-      ],
-      "Connection monitor disabled": [
-        "Yhteyden valvonta ei ole käytössä"
-      ],
-      "Connection monitor enabled": [
-        "Yhteyden valvonta on käytössä"
       ],
       "Contact us": [
         "Ota yhteyttä"
@@ -17023,6 +17080,9 @@
       ],
       "QRCode": [
         "QR-koodi"
+      ],
+      "Ready, set, forward": [
+        "Paikoillanne, valmiit, välitä"
       ],
       "Recommended": [
         "Suositus"
@@ -17742,6 +17802,12 @@
       ]
     },
     "unprivatization": {
+      "Administrator access enabled": [
+        "Ylläpitäjän pääsy käytössä"
+      ],
+      "Administrator access rejected": [
+        "Ylläpitäjän pääsy kielletty"
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Ylläpitäjillä ei ole pääsyä yksityisten käyttäjien tietoihin, eivätkä he voi nollata heidän salasanojaan."
       ],
@@ -17759,6 +17825,9 @@
       ],
       "Cancel": [
         "Peruuta"
+      ],
+      "Could not enable administrator access: ${ error }": [
+        "Ylläpitäjän käyttöoikeutta ei voitu ottaa käyttöön: ${ error }"
       ],
       "Delete request": [
         "Poista pyyntö"
@@ -17810,6 +17879,9 @@
       ],
       "The user must have an address to request data access": [
         "Käyttäjällä on oltava osoite tietojen käyttöoikeuden anomiseksi"
+      ],
+      "This will delete the pending request for administrator access to the user’s data or password reset.": [
+        "Tämä poistaa odottavan ylläpitäjän pääsypyynnön käyttäjän tietoihin tai salasanan nollaukseen."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Tämä mitätöi ylläpitäjän oikeuden hallita tämän käyttäjän tiliä."

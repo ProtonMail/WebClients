@@ -395,7 +395,7 @@
         "OK"
       ],
       "Open": [
-        "Ouvert"
+        "Ouvrir"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ouvrir les paramètres de ${ CALENDAR_APP_NAME }"
@@ -696,6 +696,9 @@
       ],
       "Verify": [
         "Vérifier"
+      ],
+      "Verify ${ unverifiedSSODomain.DomainName }": [
+        "Vérifier ${ unverifiedSSODomain.DomainName }"
       ],
       "Verify account": [
         "Vérifier le compte"
@@ -2638,6 +2641,9 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Tous les utilisateurs de votre abonnement sont utilisés. Nous vous invitons à mettre à jour votre abonnement pour ajouter un nouvel utilisateur."
       ],
+      "You've assigned all of your servers.": [
+        "Vous avez attribué tous vos serveurs."
+      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Votre compte ou organisation a une facture en retard. Nous vous invitons à régler les factures impayées."
       ]
@@ -2841,7 +2847,7 @@
         "Vous devez configurer un domaine personnalisé avant de créer un nouvel utilisateur."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Vous avez une invitation à lier votre compte ${ BRAND_NAME } à cet abonnement familial pour profiter tous ensemble des fonctionnalités premium de ${ brandOrAppName }."
+        "Vous avez une invitation pour lier votre compte ${ BRAND_NAME } à cet abonnement familial pour profiter tous ensemble des fonctionnalités premium de ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Le nombre d'adresses e-mail de votre compte dépasse celui prévu avec cet abonnement. ${ addressSettingsLink }"
@@ -2985,16 +2991,22 @@
       "Add": [
         "Ajouter"
       ],
-      "Add (${ numberOfAddedServers })": [
-        "Ajouter (${ numberOfAddedServers })",
-        "Ajouter (${ numberOfAddedServers })"
+      "Add (${ totalAddedCount })": [
+        "Ajouter (${ totalAddedCount })",
+        "Ajouter (${ totalAddedCount })"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Connexion pour ${ plusVpnConnections } appareil au maximum",
         "Connexion pour ${ plusVpnConnections } appareils au maximum"
       ],
+      "Continue": [
+        "Continuer"
+      ],
       "Fastest VPN servers": [
         "Serveurs VPN les plus rapides"
+      ],
+      "Remove": [
+        "Retirer"
       ],
       "Secure Core servers": [
         "Serveurs Secure Core"
@@ -3259,9 +3271,6 @@
       "Checkout": [
         "Paiement"
       ],
-      "Country": [
-        "Pays"
-      ],
       "Create your account": [
         "Créez votre compte"
       ],
@@ -3360,9 +3369,9 @@
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Ajoutez cet enregistrement à votre domaine dans le panneau de contrôle gestionnaire de nom de domaine."
       ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } suggestion trouvée, utilisez le clavier pour naviguer.",
-        "${ items.length } suggestions trouvées, utilisez le clavier pour naviguer."
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount } suggestion a été trouvée. Utilisez le clavier pour naviguer.",
+        "${ itemsCount } suggestions ont été trouvées. Utilisez le clavier pour naviguer."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Utilisez les touches Haut et Bas pour afficher et parcourir les suggestions après la saisie. Appuyez sur Entrée pour confirmer votre choix ou sur Esc (ou Échap) pour fermer la boite de suggestions."
@@ -3735,9 +3744,6 @@
         "Suppression de ${ deletedServerCount } serveur de Passerelle",
         "Suppression de ${ deletedServerCount } serveurs de Passerelle"
       ],
-      "Disabled since ${ formattedDateAndTime }": [
-        "Désactivation depuis ${ formattedDateAndTime }"
-      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "La désactivation de l'authentification à deux facteurs rendra votre compte moins sécurisé. Ne procédez que si c'est absolument nécessaire."
       ],
@@ -3819,9 +3825,6 @@
       ],
       "Enable single sign-on to keep your organization safe": [
         "Activez l'authentification unique afin d'assurer la sécurité de votre organisation."
-      ],
-      "Enabled since ${ formattedDateAndTime }": [
-        "Activation depuis ${ formattedDateAndTime }"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "L'URL des points de terminaison reçue de votre fournisseur d'identité (par ex. https://idp.exemple.fr/sso/saml)."
@@ -4033,6 +4036,9 @@
       "Invite rejected": [
         "L'invitation a été refusée."
       ],
+      "It takes 10 days to change a server's country, so make sure your selection is correct.": [
+        "Cela prend 10 jours pour modifier le pays d'un serveur. Assurez-vous que votre sélection est correcte."
+      ],
       "Item autofilled in ${ vaultLink }": [
         "L'élément a été rempli automatiquement dans ${ vaultLink }."
       ],
@@ -4198,9 +4204,6 @@
       "Number of dedicated servers in the organization": [
         "Nombre de serveurs dédiés dans l'organisation"
       ],
-      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "Le nombre de serveurs dédiés que vous tentez d'attribuer (${ addedCount }) est supérieur à celui de votre abonnement (${ remainingCount }) : vous en avez ${ ownedCount } et vous en utilisez ${ usedCount }."
-      ],
       "of": [
         "sur"
       ],
@@ -4215,6 +4218,14 @@
       ],
       "or ${ selectFileButton }": [
         "ou ${ selectFileButton }"
+      ],
+      "or assign to any country in ${ availableAgainAfterDays } day": [
+        "ou les assigner à un pays dans ${ availableAgainAfterDays } jour.",
+        "ou les assigner à un pays dans ${ availableAgainAfterDays } jours."
+      ],
+      "or assign to any country in ${ availableAgainAfterHours } hour": [
+        "ou les assigner à un pays dans ${ availableAgainAfterHours } heure.",
+        "ou les assigner à un pays dans ${ availableAgainAfterHours } heures."
       ],
       "Or select a particular server:": [
         "Ou sélectionnez un serveur spécifique :"
@@ -4341,6 +4352,9 @@
       "read our two-factor authentication guide first": [
         "lire d'abord notre guide sur l'authentification à deux facteurs"
       ],
+      "Recently used servers:": [
+        "Serveurs récemment utilisés :"
+      ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recommandé sur les appareils de confiance. ${ keepMeSignedInLearnMoreLink }"
       ],
@@ -4401,6 +4415,9 @@
       "Securing your account": [
         "Sécurisation de votre compte"
       ],
+      "Select recently used servers": [
+        "Sélectionner les serveurs récemment utilisés"
+      ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Envoyez un message à vos membres pour les encourager à protéger leurs comptes en utilisant l'authentification à deux facteurs."
       ],
@@ -4439,9 +4456,6 @@
       ],
       "Single sign-on removed": [
         "L'authentification unique a été retirée."
-      ],
-      "Some of your available servers can only be used in specific countries due to recent removals": [
-        "Certains des serveurs disponibles peuvent uniquement être utilisés dans certains pays en raison de suppressions récentes."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Indiquez le domaine autorisant l'authentification unique (SSO) SAML."
@@ -4551,9 +4565,6 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Cela peut prendre quelques secondes ou minutes selon votre appareil."
-      ],
-      "This change will be fully reflected across your infrastructure in about 1 hour": [
-        "Cette modification sera entièrement répercutée sur toute votre infrastructure dans environ 1 heure."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Cela peut prendre un moment. Ne fermez pas cette page et ne vous déconnectez pas d'internet."
@@ -4759,9 +4770,6 @@
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
-      "Want servers in other countries?": [
-        "Vous avez besoin de serveurs dans d'autres pays ?"
-      ],
       "Warning:": [
         "Attention :"
       ],
@@ -4834,6 +4842,9 @@
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Lorsque vous annulez votre abonnement, ce dernier ne sera pas renouvelé. Toutefois, vous pourrez toujours profiter des avantages jusqu'à la fin de la période. Après cela, vous passerez à un abonnement ${ BRAND_NAME } Free."
       ],
+      "When you remove a server from a Gateway, it enters a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
+        "Lorsque vous retirez un serveur d'une passerelle, il entre dans une période de désactivation de 10 jours. Ces serveurs peuvent être ajoutés comme nouvelle passerelle mais leur pays ne peut pas être changé."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quand vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
       ],
@@ -4898,9 +4909,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Vous pouvez modifier ceci une fois pour vous assurer que l'adresse e-mail utilisée pour la vérification est correcte."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Vous pouvez débloquer immédiatement la configuration ci-dessus en ajoutant ${ specificCountryCount } au nombre d'adresses IP de votre abonnement ou nous contacter pour une solution personnalisée."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à retirer les liens du calendrier partagé et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé votre calendrier avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }.",
         "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à retirer les liens des calendriers partagés et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé vos calendriers avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }."
@@ -4921,9 +4929,13 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Vous pouvez utiliser les identifiants suivants pour vous connecter à un serveur ${ VPN_APP_NAME } en utilisant une application VPN open source tierce, comme Tunnelblick pour macOS ou OpenVPN pour GNU/Linux."
       ],
-      "You have ${ availableCount } dedicated server available.": [
-        "${ availableCount } serveur dédié est disponible.",
-        "${ availableCount } serveurs dédiés sont disponibles."
+      "You have ${ availableCount } new server available.": [
+        "Vous avez ${ availableCount } nouveau serveur dédié disponible.",
+        "Vous avez ${ availableCount } nouveaux serveurs dédiés disponibles."
+      ],
+      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
+        "Vous avez ${ unassignedAvailableCount } serveur récemment utilisé disponible. Pour allouer ce serveur à un autre pays, vous devrez attendre que la désactivation soit terminée.",
+        "Vous avez ${ unassignedAvailableCount } serveurs récemment utilisés disponibles. Pour allouer ces serveurs à un autre pays, vous devrez attendre que la désactivation soit terminée."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Vous disposez d'une période d'essai pour l'abonnement ${ planTitle }. Si vous souhaitez poursuivre votre abonnement après la période d'essai, veuillez ajouter un moyen de paiement."
@@ -4966,6 +4978,9 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
+      ],
+      "You won’t be able to reassign these servers to another country for 10 days.": [
+        "Vous ne pourrez pas réassigner ces serveurs à un autre pays pendant 10 jours."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Votre compte ${ BRAND_NAME } est suspendu. Au bout de 28 jours, les messages ne seront plus envoyés dans votre boite de réception, vos liens de partage Drive seront bloqués et vous ne pourrez plus télécharger de nouveaux fichiers. Pour retrouver un service normal, nous vous invitons à régler toutes les factures en retard."
@@ -5020,6 +5035,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Votre abonnement est géré par Mozilla. Nous vous invitons à contacter le support Mozilla."
+      ],
+      "You’ll be able to add these servers to another Gateway immediately.": [
+        "Vous pourrez ajouter immédiatement ces serveurs à une autre passerelle ."
       ],
       "Zoom meeting": [
         "réunion Zoom"
@@ -5356,6 +5374,9 @@
       "Enter the code displayed on your TV": [
         "Saisissez le code affiché sur votre téléviseur."
       ],
+      "Event": [
+        "Événement"
+      ],
       "Expiration (${ patternExpiration })": [
         "Expiration (${ patternExpiration })"
       ],
@@ -5535,6 +5556,9 @@
       ],
       "Reveal password": [
         "Afficher le mot de passe"
+      ],
+      "Search": [
+        "Rechercher"
       ],
       "Search by email": [
         "Rechercher par e-mail"
@@ -5728,9 +5752,6 @@
       ],
       "Common sign up issues": [
         "Problèmes d'inscription courants"
-      ],
-      "Contact us": [
-        "Nous contacter"
       ],
       "Create account": [
         "Créer un compte"
@@ -6055,6 +6076,9 @@
       ],
       "From ${ price }": [
         "À partir de ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Commencez pour ${ price }"
       ],
       "Starting from ${ priceMailPlus }": [
         "À partir de ${ priceMailPlus }"
@@ -6712,6 +6736,12 @@
       "${ shortPlan.title } Trial": [
         "Essai de ${ shortPlan.title }"
       ],
+      "Get Mail Plus for ${ price }": [
+        "Profitez de Mail Plus pour ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "À partir de ${ price }"
+      ],
       "Your account's usage": [
         "Utilisation de votre compte"
       ]
@@ -7008,7 +7038,7 @@
         "Une adresse externe ne peut pas être une adresse par défaut."
       ],
       "Downloaded 2FA recovery codes": [
-        "Télécharger les codes de récupération A2F"
+        "Les codes de récupération A2F ont été téléchargés."
       ],
       "Invalid code": [
         "Le code n’est pas valide."
@@ -7022,11 +7052,17 @@
       "Key copied to the clipboard": [
         "La clé a été copiée dans le presse-papiers."
       ],
+      "Number of records exceeds the download limit of 10000": [
+        "Le nombre d'enregistrements dépasse la limite de 10 000 téléchargements."
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Les identifiants OpenVPN/IKEv2 ont été regénérés."
       ],
       "Reminder has been sent": [
         "Le rappel a été envoyé."
+      ],
+      "Too many recent API requests": [
+        "Trop de requêtes récentes avec l'API"
       ],
       "Two-factor authentication has been enforced for administrators": [
         "L'authentification à deux facteurs (A2F) a été activée pour les administrateurs."
@@ -9150,6 +9186,11 @@
         "Expiré"
       ]
     },
+    "Subtitle": {
+      "View VPN session details for your organization.": [
+        "Affichez les informations de la session VPN pour votre organisation."
+      ]
+    },
     "Success": {
       "Account deleted. Signing out...": [
         "Le compte a été supprimé. Déconnexion…"
@@ -9471,6 +9512,10 @@
       "Activate user": [
         "Activer l'utilisateur"
       ],
+      "Add ${ totalServerCount } server?": [
+        "Ajouter ${ totalServerCount } serveur ?",
+        "Ajouter ${ totalServerCount } serveurs ?"
+      ],
       "Add address": [
         "Ajouter une adresse"
       ],
@@ -9480,6 +9525,9 @@
       "Add credits": [
         "Ajouter des crédits"
       ],
+      "Add dedicated servers": [
+        "Ajouter des serveurs dédiés"
+      ],
       "Add domain": [
         "Ajouter un domaine"
       ],
@@ -9488,9 +9536,6 @@
       ],
       "Add pm.me subdomain": [
         "Ajouter le sous-domaine pm.me"
-      ],
-      "Add servers": [
-        "Ajouter des serveurs"
       ],
       "Add to allow list": [
         "Ajouter à la liste d'adresses autorisées"
@@ -9590,12 +9635,6 @@
       ],
       "Confirm phone number": [
         "Confirmer le numéro de téléphone"
-      ],
-      "Connection monitor disabled": [
-        "La surveillance de la connexion a été désactivée."
-      ],
-      "Connection monitor enabled": [
-        "La surveillance de la connexion a été activée."
       ],
       "Contact us": [
         "Nous contacter"
@@ -9896,6 +9935,9 @@
       ],
       "Remove domain": [
         "Retirer le domaine"
+      ],
+      "Remove server?": [
+        "Retirer le serveur ?"
       ],
       "Remove single sign-on": [
         "Retirer l'authentification unique"
