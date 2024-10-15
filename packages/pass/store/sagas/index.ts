@@ -6,6 +6,7 @@ import aliasDetailsRequest from './alias/alias-details-request.saga';
 import aliasManagementSagas from './alias/alias-management.sagas';
 import aliasOptionsRequest from './alias/alias-options-request.saga';
 import aliasSyncSagas from './alias/alias-sync.sagas';
+import customDomainsSagas from './alias/custom-domains.sagas';
 import lockCreate from './auth/lock-create.saga';
 import lock from './auth/lock.saga';
 import passwordConfirm from './auth/password-confirm.saga';
@@ -63,6 +64,7 @@ import vaultTransferOwner from './vaults/vault-transfer-owner.saga';
 const COMMON_SAGAS = [
     ...aliasManagementSagas,
     ...aliasSyncSagas,
+    ...customDomainsSagas,
     ...secureLinkSagas,
     ...ssoSagas,
     ...shareAccessSagas,
