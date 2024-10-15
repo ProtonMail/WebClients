@@ -2,6 +2,8 @@ import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHel
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import { isProduction, traceError } from '@proton/shared/lib/helpers/sentry';
 
+import { UserAvailabilityTypes } from '../metrics/types/userSuccessMetricsTypes';
+import { userSuccessMetrics } from '../metrics/userSuccessMetrics';
 import type { EnrichedError } from './EnrichedError';
 import { isEnrichedError } from './EnrichedError';
 import { isValidationError } from './ValidationError';
@@ -39,6 +41,8 @@ export function sendErrorReport(error: Error | EnrichedError | unknown) {
     if (isIgnoredErrorForReporting(error)) {
         return;
     }
+
+    userSuccessMetrics.mark(UserAvailabilityTypes.handledError);
 
     let errorForReporting = error as Error;
 

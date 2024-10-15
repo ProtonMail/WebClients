@@ -11,8 +11,11 @@ import {
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
+import { isIgnoredErrorForReporting } from '../../../utils/errorHandling';
 import { is4xx, is5xx, isCryptoEnrichedError } from '../../../utils/errorHandling/apiErrors';
 import { getIsPublicContext } from '../../../utils/getIsPublicContext';
+import { UserAvailabilityTypes } from '../../../utils/metrics/types/userSuccessMetricsTypes';
+import { userSuccessMetrics } from '../../../utils/metrics/userSuccessMetrics';
 import type { DownloadErrorCategoryType, MetricShareTypeWithPublic } from '../../../utils/type/MetricTypes';
 import { MetricSharePublicType } from '../../../utils/type/MetricTypes';
 import { DownloadErrorCategory } from '../../../utils/type/MetricTypes';
@@ -71,13 +74,16 @@ export const useDownloadMetrics = (
         });
     };
 
-    const maybeLogUserError = (shareType: MetricShareTypeWithPublic, isError: boolean) => {
-        if (isError && Date.now() - lastErroringUserReport.current > REPORT_ERROR_USERS_EVERY) {
-            metrics.drive_download_erroring_users_total.increment({
-                plan: user ? (user.isPaid ? 'paid' : 'free') : 'unknown',
-                shareType,
-            });
-            lastErroringUserReport.current = Date.now();
+    const maybeLogUserError = (shareType: MetricShareTypeWithPublic, isError: boolean, error?: Error) => {
+        if (isError && !isIgnoredErrorForReporting(error)) {
+            if (Date.now() - lastErroringUserReport.current > REPORT_ERROR_USERS_EVERY) {
+                metrics.drive_download_erroring_users_total.increment({
+                    plan: user ? (user.isPaid ? 'paid' : 'free') : 'unknown',
+                    shareType,
+                });
+                lastErroringUserReport.current = Date.now();
+            }
+            userSuccessMetrics.mark(UserAvailabilityTypes.coreFeatureError);
         }
     };
 
@@ -93,7 +99,7 @@ export const useDownloadMetrics = (
         if (isError) {
             logDownloadError(shareType, state, error);
         }
-        maybeLogUserError(shareType, isError);
+        maybeLogUserError(shareType, isError, error);
     };
 
     /*
