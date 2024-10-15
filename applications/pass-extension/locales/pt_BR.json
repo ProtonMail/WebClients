@@ -1619,6 +1619,9 @@
       "Quickly autofill your identities.": [
         "Preencha rapidamente suas identidades."
       ],
+      "Quickly autofill your saved credentials.": [
+        "Preencha rapidamente suas credenciais salvas."
+      ],
       "Registering extra password...": [
         "Registrando senha adicional..."
       ],
@@ -1711,9 +1714,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Nós lhe agradecemos. O problema foi relatado."
-      ],
-      "The autofill dropdown will automatically open when you click or focus on the field.": [
-        "O menu suspenso de preenchimento automático será aberto automaticamente quando você clicar ou focar no campo."
       ],
       "The export will only contain vaults that you own.": [
         "A exportação conterá apenas cofres que você possui."
@@ -1842,9 +1842,6 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Você agora pode usar a senha da ${ BRAND_NAME } para acessar o ${ PASS_SHORT_APP_NAME } no modo off-line"
-      ],
-      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Você pode preencher rapidamente suas credenciais clicando no ícone do ${ PASS_APP_NAME }."
       ],
       "You cannot change the mailboxes for this alias.": [
         "Você não pode alterar as caixas de entrada para este alias."
@@ -2030,9 +2027,6 @@
       "Autofill 2FA": [
         "Preenchimento automático de A2F"
       ],
-      "Automatically open autofill when a login field is focused": [
-        "Abrir automaticamente o autopreenchimento quando o campo de login estiver focalizado"
-      ],
       "Autosave": [
         "Salvar automaticamente"
       ],
@@ -2125,9 +2119,6 @@
       ],
       "Display": [
         "Exibição"
-      ],
-      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
-        "Exibe o ícone do ${ PASS_APP_NAME } nos campos de preenchimento automático"
       ],
       "Domain": [
         "Domínio"
@@ -2308,6 +2299,9 @@
       ],
       "Login": [
         "Início de sessão"
+      ],
+      "Login autofill": [
+        "Preenchimento automático de início de sessão"
       ],
       "Logins": [
         "Inícios de sessão"

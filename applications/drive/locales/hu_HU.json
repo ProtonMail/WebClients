@@ -369,10 +369,10 @@
       "Get link": [
         "Hivatkozás készítése"
       ],
-      "Get Started": [
+      "Get started": [
         "Kezdés"
       ],
-      "Get started": [
+      "Get Started": [
         "Kezdés"
       ],
       "Get verification code": [
@@ -531,10 +531,10 @@
       "Not now": [
         "Most nem"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -3275,10 +3275,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } javaslatot találtunk, használja a billentyűzetet a navigáláshoz.",
-        "${ items.length } javaslatot találtunk, használja a billentyűzetet a navigáláshoz."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Használja a Fel és Le billentyűket a javaslatok eléréséhez és böngészéséhez. Nyomja meg az Enter billentyűt a választásának megerősítéséhez, vagy az Escape billentyűt a javaslatok doboz bezárásához."
       ]
@@ -3909,8 +3905,8 @@
         "Új névjegy csoport"
       ],
       "Create a secure cloud for ${ n } member": [
-        "Hozzon létre biztonságos felhőt ${ n } tagnak",
-        "Hozzon létre biztonságos felhőt ${ n } tagnak"
+        "Hozzon létre biztonságos felhőárhelyet ${ n } tagnak",
+        "Hozzon létre biztonságos felhőárhelyet ${ n } tagnak"
       ],
       "Create in": [
         "Létrehozás itt"
@@ -4882,7 +4878,7 @@
         "Szeretné helyreállítani a fájljait?"
       ],
       "Writing assistant": [
-        "Fogalmazási segéd"
+        "Írási segéd"
       ],
       "Yes": [
         "Igen"
@@ -5979,8 +5975,8 @@
         "${ n } üzenet naponta"
       ],
       "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
-        "${ n } megosztott ${ PASS_SHORT_APP_NAME } széf felhasználónként",
-        "${ n } megosztott ${ PASS_SHORT_APP_NAME } széf felhasználónként"
+        "${ n } megosztott ${ PASS_SHORT_APP_NAME } tároló felhasználónként",
+        "${ n } megosztott ${ PASS_SHORT_APP_NAME } tároló felhasználónként"
       ],
       "${ n } user": [
         "${ n } felhasználó",
@@ -5995,8 +5991,8 @@
         "${ n } VPN kapcsolat"
       ],
       "${ options }-day file version history": [
-        "${ options } napos fájl verzió előzmény",
-        "${ options } napos fájl verzió előzmény"
+        "Fájlok változtatási előzményeinek megtartása ${ options } napig",
+        "Fájlok változtatási előzményeinek megtartása ${ options } napig"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } ${ n } hide-my-email e-mail álnévvel",
@@ -6818,9 +6814,6 @@
       ]
     },
     "Onboarding Info": {
-      "Introducing ${ DOCS_APP_NAME }": [
-        "${ DOCS_APP_NAME } bemutatása"
-      ],
       "Set a recovery method": [
         "Helyreállítási módszer beállítása"
       ],

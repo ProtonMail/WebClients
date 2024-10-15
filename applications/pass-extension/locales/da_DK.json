@@ -269,6 +269,10 @@
       "Import": [
         "Importér"
       ],
+      "Import alias": [
+        "Importer alias",
+        "Importer aliasser"
+      ],
       "Import your passwords": [
         "Importér dine adgangskoder"
       ],
@@ -978,6 +982,23 @@
         "Noget gik galt"
       ]
     },
+    "FamilyPlanPromo2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Alle premium-tjenester. 6 brugere. 1 nemt abonnement."
+      ],
+      "Exclusive offer for ${ PASS_APP_NAME } early supporters.": [
+        "Eksklusivt tilbud til tidlige støtter af ${ PASS_APP_NAME }."
+      ],
+      "Get it for ${ price }/month": [
+        "Få det til ${ price }/måned"
+      ],
+      "Introducing ${ planNameJSX }": [
+        "Vi præsenterer ${ planNameJSX }"
+      ],
+      "Limited-time offer only.": [
+        "Tilbuddet gælder kun i en begrænset periode."
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -1598,6 +1619,9 @@
       "Quickly autofill your identities.": [
         "Autofyld hurtigt dine identiteter"
       ],
+      "Quickly autofill your saved credentials.": [
+        "Autofyld hurtigt dine gemte legitimationsoplysninger."
+      ],
       "Registering extra password...": [
         "Registrerer ekstra adgangskode..."
       ],
@@ -1690,9 +1714,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Tak, problemet er blevet rapporteret"
-      ],
-      "The autofill dropdown will automatically open when you click or focus on the field.": [
-        "Autofyld-menuen åbner automatisk når du trykker eller fokuserer på et felt."
       ],
       "The export will only contain vaults that you own.": [
         "Eksporten vil kun indeholde bokse, som du ejer."
@@ -1822,11 +1843,12 @@
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Du kan nu bruge din ${ BRAND_NAME }-adgangskode til at tilgå ${ PASS_SHORT_APP_NAME } offline"
       ],
-      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Du kan hurtigt autoudfylde dine legitimationsoplysninger ved at klikke på ikonet for ${ PASS_APP_NAME }."
-      ],
       "You cannot change the mailboxes for this alias.": [
         "Du kan ikke ændre postkasserne for dette alias"
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Du har ${ aliasCount } alias, som findes i SimpleLogin, men som mangler i ${ PASS_APP_NAME }. Vil du gerne importere det?",
+        "Du har ${ aliasCount } aliasser, som findes i SimpleLogin, men som mangler i ${ PASS_APP_NAME }. Vil du gerne importere dem?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Du har ${ daysRemaining } dag tilbage til at prøve disse og andre premium-funktioner.",
@@ -2005,9 +2027,6 @@
       "Autofill 2FA": [
         "Autofyld 2FA"
       ],
-      "Automatically open autofill when a login field is focused": [
-        "Åbn automatisk autofyld når et login-felt fokuseres"
-      ],
       "Autosave": [
         "Gem automatisk"
       ],
@@ -2019,6 +2038,9 @@
       ],
       "Birthdate": [
         "Fødselsdato"
+      ],
+      "Browser settings": [
+        "Browser-indstillinger"
       ],
       "Capital letters (A-Z)": [
         "Store bogstaver (A-Z)"
@@ -2097,9 +2119,6 @@
       ],
       "Display": [
         "Visning"
-      ],
-      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
-        "Vis ${ PASS_APP_NAME }-ikon på autoudfyldelige felter"
       ],
       "Domain": [
         "Domæne"
@@ -2277,6 +2296,9 @@
       ],
       "Login": [
         "Login"
+      ],
+      "Login autofill": [
+        "Login-autofyld"
       ],
       "Logins": [
         "Logins"
@@ -2555,6 +2577,9 @@
       "Update": [
         "Opdatér"
       ],
+      "Use ${ PASS_APP_NAME } as your browser's default password manager": [
+        "Brug ${ PASS_APP_NAME } som din browsers standard adgangskodeadministrator"
+      ],
       "Username": [
         "Brugernavn"
       ],
@@ -2599,6 +2624,9 @@
       ],
       "You are about to create": [
         "Du er ved at oprette"
+      ],
+      "Your browser will stop using its built-in password manager.": [
+        "Din browser vil ikke længere bruge sin indbyggede adgangskodeadministrator."
       ],
       "ZIP or Postal code": [
         "Postnummer"
@@ -2817,6 +2845,9 @@
       ],
       "Import to vault(s)": [
         "Importér til boks(e)"
+      ],
+      "Import your aliases from SimpleLogin": [
+        "Importer dine aliasser fra SimpleLogin"
       ],
       "Last autofill": [
         "Seneste autofyld"

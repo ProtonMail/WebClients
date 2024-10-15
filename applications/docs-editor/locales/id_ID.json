@@ -158,6 +158,9 @@
       "Numbered List": [
         "Daftar Numerik"
       ],
+      "Ok": [
+        "OK"
+      ],
       "Options": [
         "Opsi"
       ],
@@ -406,6 +409,12 @@
     "Description": {
       "Edit document directly": [
         "Sunting dokumen secara langsung"
+      ],
+      "Edits become suggestion": [
+        "Penyuntingan menjadi saran"
+      ],
+      "Read or print final document": [
+        "Baca atau cetak dokumen akhir"
       ]
     },
     "Error": {
@@ -429,9 +438,6 @@
       ],
       "Request timed out": [
         "Waktu permintaan habis"
-      ],
-      "Signature verification failed": [
-        "Verifikasi tanda tangan gagal"
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Dokumen Word tidak dapat dikonversi. Apakah dokumen ini terlindung oleh kata sandi? Apabila ya, silakan hapus kata sandi yang bersangkutan dan coba lagi."
@@ -542,8 +548,14 @@
       "Background colour": [
         "Warna latar"
       ],
+      "Change image size": [
+        "Ubah ukuran gambar"
+      ],
       "Delete": [
         "Hapus"
+      ],
+      "Delete image": [
+        "Hapus gambar"
       ],
       "Delete link": [
         "Hapus tautan"
@@ -556,6 +568,9 @@
       ],
       "Insert": [
         "Sisipkan"
+      ],
+      "Insert image": [
+        "Sisipkan gambar"
       ],
       "Insert paragraph": [
         "Sisipkan paragraf"

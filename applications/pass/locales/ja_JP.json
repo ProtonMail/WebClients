@@ -265,6 +265,9 @@
       "Import": [
         "インポート"
       ],
+      "Import alias": [
+        "エイリアスをインポート"
+      ],
       "Importing": [
         "インポート"
       ],
@@ -1799,6 +1802,9 @@
       "You cannot change the mailboxes for this alias.": [
         "このエイリアスのメールボックスを変更することはできません。"
       ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "SimpleLogin に存在する ${ aliasCount } 個のエイリアスが、 ${ PASS_APP_NAME }には見つかりませんでした。インポートしますか？"
+      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "これらおよびその他のプレミアム機能をお試しいただける期間は、残り ${ daysRemaining } 日間です。"
       ],
@@ -2804,6 +2810,9 @@
       ],
       "Import to vault(s)": [
         "一つ(複数)のフォルダーへのインポート"
+      ],
+      "Import your aliases from SimpleLogin": [
+        "SimpleLoginからエイリアスをインポート"
       ],
       "Import your data": [
         "データのインポート"

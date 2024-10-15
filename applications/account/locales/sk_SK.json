@@ -70,11 +70,11 @@
       "Accept": [
         "Prijať"
       ],
-      "Activate": [
-        "Aktivovať"
-      ],
       "activate": [
         "aktivovať"
+      ],
+      "Activate": [
+        "Aktivovať"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovať ${ user.Name }@pm.me"
@@ -3458,6 +3458,9 @@
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Oddeľte rôzne aspekty svojho života pomocou viacerých emailových adries a odomknite viac prémiových funkcií, ak sa rozhodnete pre upgrade."
       ],
+      "Set up auto-forwarding to redirect incoming emails to another email address.": [
+        "Nastavenie automatického preposielania na presmerovanie prichádzajúcich emailov na inú emailovú adresu."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pre import kontaktov zo služby Google alebo Outlook ${ easySwitchLink }."
       ],
@@ -5308,9 +5311,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "Pred vytvorením nového používateľa, musíte nakonfigurovať vlastnú doménu."
       ],
-      "You will lose access to all premium features and storage space included with ${ plan }.": [
-        "Stratíte prístup ku všetkým prémiovým funkciám a úložnému priestoru, ktoré sú súčasťou ${ plan }."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Váš účet má viac emailových adries než koľko máte k dispozícii v tomto pláne. ${ addressSettingsLink }"
       ],
@@ -5448,12 +5448,6 @@
       ],
       "Add": [
         "Pridať"
-      ],
-      "Add (${ numberOfAddedServers })": [
-        "Pridať (${ numberOfAddedServers })",
-        "Pridať (${ numberOfAddedServers })",
-        "Pridať (${ numberOfAddedServers })",
-        "Pridať (${ numberOfAddedServers })"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Pripojenie pre ${ plusVpnConnections } zariadenie",
@@ -5978,9 +5972,6 @@
       "Checkout": [
         "Pokladňa"
       ],
-      "Country": [
-        "Krajina"
-      ],
       "Create your account": [
         "Vytvoriť svoj účet"
       ],
@@ -6126,12 +6117,6 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Pridajte tento záznam do svojej domény v ovládacom paneli registrátora názvu domény"
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Našiel sa ${ items.length } návrh, na navigáciu použite klávesnicu.",
-        "Našli sa ${ items.length } návrhy, na navigáciu použite klávesnicu.",
-        "Našlo sa ${ items.length } návrhov, na navigáciu použite klávesnicu.",
-        "Našlo sa ${ items.length } návrhov, na navigáciu použite klávesnicu."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Použite klávesy hore a dole pre prechádzanie návrhov po zadaní. Stlačte tlačidlo Enter pre potvrdenie vašej voľby, alebo tlačidlo Esc pre zatvorenie návrhov."
@@ -7208,9 +7193,6 @@
       "Disable recovery by ${ type }": [
         "Deaktivovať obnovenie ${ type }"
       ],
-      "Disabled since ${ formattedDateAndTime }": [
-        "Vypnuté od ${ formattedDateAndTime }"
-      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Vypnutím dvojfázového overovania bude váš účet menej bezpečný. Vypnite toto overovanie iba ak je to nevyhnutné."
       ],
@@ -7330,9 +7312,6 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Povoľte TLS alebo SSL na externej službe, ak je podporovaná."
-      ],
-      "Enabled since ${ formattedDateAndTime }": [
-        "Zapnuté od ${ formattedDateAndTime }"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Opätovným aktivovaním obnovovacej frázy bude vygenerovaná nová."
@@ -7937,9 +7916,6 @@
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
       ],
-      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "Počet dedikovaných serverov, ktoré sa pokúšate priradiť (${ addedCount }), je vyšší ako počet, ktorý je ešte k dispozícii vo vašom pláne (${ remainingCount }), pretože vlastníte ${ ownedCount } a už používate ${ usedCount }."
-      ],
       "of": [
         "z"
       ],
@@ -8336,9 +8312,6 @@
       "Some keys successfully reactivated": [
         "Niektoré kľúče boli úspešne reaktivované"
       ],
-      "Some of your available servers can only be used in specific countries due to recent removals": [
-        "Niektoré z vašich dostupných serverov je možné používať len v určitých krajinách z dôvodu nedávneho odstránenia"
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Zadajte doménu, ktorá sa môže overovať pomocou SAML SSO."
       ],
@@ -8509,9 +8482,6 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "V závislosti na vašom zariadení to môže trvať niekoľko sekúnd alebo minút"
-      ],
-      "This change will be fully reflected across your infrastructure in about 1 hour": [
-        "Táto zmena sa plne prejaví vo vašej infraštruktúre približne o 1 hodinu."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Môže to trvať nejaký čas. Nezatvárajte prosím túto stránku, ani sa neodpájajte od internetu."
@@ -8864,9 +8834,6 @@
       "Visa Secure logo": [
         "Visa Secure logo"
       ],
-      "Want servers in other countries?": [
-        "Chcete servery v iných krajinách?"
-      ],
       "Want to learn more?": [
         "Chcete sa dozvedieť viac?"
       ],
@@ -9077,9 +9044,6 @@
       "You can enable the Photos section from the interface using the toggle below.": [
         "Sekciu Fotografie môžete povoliť v rozhraní pomocou prepínača nižšie."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Vyššie uvedené nastavenie môžete okamžite odblokovať pridaním ${ specificCountryCount } k počtu IP adries vo vašom pláne alebo nás oslovte pre riešenie na mieru."
-      ],
       "You can import one data type at a time.": [
         "Importovať môžete vždy jeden typ údajov."
       ],
@@ -9133,12 +9097,6 @@
       ],
       "You do not have permission to perform this action": [
         "Na vykonanie tejto akcie nemáte oprávnenie"
-      ],
-      "You have ${ availableCount } dedicated server available.": [
-        "Máte dostupný ${ availableCount } dedikovaný server.",
-        "Máte dostupné ${ availableCount } dedikované servery.",
-        "Máte dostupných ${ availableCount } dedikovaných serverov.",
-        "Máte dostupných ${ availableCount } dedikovaných serverov."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Máte skúšobné predplatné ${ planTitle }. Ak chcete pokračovať v predplatnom aj po skončení skúšobnej lehoty, pridajte spôsob platby."
@@ -10968,9 +10926,6 @@
       ],
       "Common sign up issues": [
         "Bežné problémy s registráciou"
-      ],
-      "Contact us": [
-        "Kontaktujte nás"
       ],
       "create a ticket": [
         "vytvoriť požiadavku"
@@ -16679,9 +16634,6 @@
       "Add pm.me subdomain": [
         "Pridať subdoménu pm.me"
       ],
-      "Add servers": [
-        "Pridať servery"
-      ],
       "Add Sieve filter": [
         "Pridať Sieve filter"
       ],
@@ -16831,12 +16783,6 @@
       ],
       "Connect ${ name }": [
         "Pripojiť ${ name }"
-      ],
-      "Connection monitor disabled": [
-        "Monitor pripojenia vypnutý"
-      ],
-      "Connection monitor enabled": [
-        "Monitor pripojenia zapnutý"
       ],
       "Contact us": [
         "Kontaktujte nás"

@@ -357,6 +357,9 @@
       "Loading verification": [
         "Carregant verificació"
       ],
+      "Login": [
+        "Inici de sessió"
+      ],
       "Make a copy": [
         "Fes una còpia"
       ],
@@ -558,6 +561,9 @@
       "Sign out": [
         "Tanca la sessió"
       ],
+      "Sign up": [
+        "Crea un compte"
+      ],
       "Skip verification": [
         "Omet la verificació"
       ],
@@ -619,7 +625,7 @@
         "Millora ara"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Millora a ${ BRAND_NAME } Unlimited"
+        "Milloreu a ${ BRAND_NAME } Unlimited"
       ],
       "Upload anyway": [
         "Carrega de totes maneres"
@@ -3182,10 +3188,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "S'ha trobat ${ items.length } suggerència, utilitza el teclat per navegar.",
-        "S'han trobat ${ items.length } suggeriments, utilitzant el teclat per navegar."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Utilitzeu les tecles de fletxa amunt i fletxa avall per accedir i navegar pels suggeriments després de l'entrada. Premeu Retorn per confirmar la vostra elecció, o Esc per tancar el quadre de suggeriments."
       ]
@@ -3756,6 +3758,9 @@
       ],
       "Document is in trash": [
         "El document és a la paperera."
+      ],
+      "Document moved to trash": [
+        "S'ha mogut el document a la paperera."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "No veieu res? Recordeu desactivar els bloquejadors de finestres emergents."
@@ -5780,6 +5785,9 @@
       "GDPR data processing agreement": [
         "Acord de processament de dades RGPD"
       ],
+      "Generate emails with a prompt": [
+        "Genera correus electrònics amb un missatge"
+      ],
       "Group management (coming soon)": [
         "Gestió de grups (aviat)"
       ],
@@ -5872,6 +5880,9 @@
       "Secure Core servers": [
         "Servidors Secure Core"
       ],
+      "Secure link sharing": [
+        "Compartició d'enllaços segurs"
+      ],
       "See team's availability": [
         "Consulteu la disponibilitat de l'equip"
       ],
@@ -5898,6 +5909,9 @@
       ],
       "Strict no-logs policy": [
         "Política estricta de no conservació de registres"
+      ],
+      "Support for up to 2 users": [
+        "Suport per a 2 usuaris"
       ],
       "Tor over VPN": [
         "Tor sobre VPN"
@@ -5950,6 +5964,10 @@
       "Up to ${ n } user": [
         "Fins a ${ n } usuari",
         "Fins a ${ n } usuaris"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Fins a ${ n } usuari (${ adminsText }, ${ usersText })",
+        "Fins a ${ n } usuaris (${ adminsText }, ${ usersText })"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Fins a ${ totalStorageSize } d'emmagatzematge"
@@ -6082,7 +6100,7 @@
     },
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
-        "Obtingueu Mail Plus per ${ price }"
+        "Obtingueu el Mail Plus per ${ price }"
       ],
       "Starting from ${ price }": [
         "Comenceu des de ${ price }"
@@ -6626,6 +6644,20 @@
         "Compartició segura de caixes fortes (${ n } caixes fortes) i compartició d'enllaços"
       ]
     },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } compte d'usuari",
+        "${ n } comptes d'usuari"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "Get it for ${ monthlyPrice }": [
+        "Obteniu-lo per ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Presentem ${ passFamilyPlanName }"
+      ]
+    },
     "passwordless": {
       "Organization key does not exist.": [
         "La clau de l'organització no existeix."
@@ -6962,6 +6994,11 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(obrirà ${ PASS_APP_NAME })"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Mostra els esdeveniments"
       ]
     },
     "Security Center - Info": {

@@ -757,7 +757,7 @@
         "Tindakan perbaikan lainnya"
       ],
       "More search options": [
-        "Opsi pencarian lain"
+        "Opsi pencarian lainnya"
       ],
       "Move": [
         "Pindahkan"
@@ -3409,6 +3409,9 @@
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Hapus email di Sampah dan Spam lebih dari 30 hari yang lalu."
       ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Urutkan pesan masuk Anda secara otomatis sebelum mencapai kotak masuk Anda."
+      ],
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Buat label atau folder sebanyak yang Anda butuh demi menjaga kotak masuk Anda tetap rapi."
       ],
@@ -3922,7 +3925,7 @@
         "Hubungi administrator organisasi Anda untuk menyelesaikan masalah ini"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "Pencarian konten tidak dapat dilangsungkan pada browser ini. Mohon keluar dari mode private browsing atau gunakan browser lain."
+        "Pencarian konten tidak dapat diaktifkan pada browser ini. Silakan keluar dari mode penjelajahan privat atau gunakan browser lain."
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Pencarian konten tidak dapat diaktifkan. Silakan mulai ulang aplikasi atau hapus data."
@@ -4369,7 +4372,7 @@
         "Impor Anda tidak akan diproses."
       ],
       "Your search matched too many results. Please limit your search and try again.": [
-        "Pencarian Anda membuahkan terlalu banyak hasil. Harap persempit kriteria pencarian Anda dan coba lagi."
+        "Pencarian Anda membuahkan terlalu banyak hasil. Silakan persempit kriteria pencarian Anda dan coba lagi."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -4569,10 +4572,10 @@
         "Kesalahan: ${ errorMessage }"
       ],
       "No results found": [
-        "Tidak ada hasil"
+        "Tidak ada hasil yang ditemukan"
       ],
       "No results found for \"${ query }\"": [
-        "Hasil dengan \"${ query }\" tidak ada"
+        "Tidak ada hasil yang ditemukan untuk \"${ query }\""
       ],
       "Oops, something went wrong": [
         "Aduh, ada yang tidak beres"
@@ -4707,8 +4710,14 @@
       "${ BRAND_NAME } groups": [
         "Grup ${ BRAND_NAME }"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Akun dengan domain khusus tidak dapat bergabung ke paket keluarga."
+      ],
       "customer support": [
         "layanan dukungan"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Paket keluarga saat ini tidak mendukung akun eksternal. Buat alamat ${ BRAND_NAME } sebelum bergabung. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jika Anda menerima undangan, kami akan mengalihkan Anda dari paket saat ini dan mengkredit akun Anda dengan sisa saldo."
@@ -4716,8 +4725,14 @@
       "Invited by: ${ inviteEmail }": [
         "Diundang oleh: ${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Akun Lifetime tidak dapat bergabung dalam paket grup."
+      ],
       "Manage addresses.": [
         "Kelola alamat."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Pemilik paket dengan anggota tidak dapat bergabung ke paket keluarga lain."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Maaf, Anda tidak dapat mengubah paket untuk saat ini."
@@ -4739,6 +4754,12 @@
       ],
       "You have successfully joined the family group": [
         "Anda telah berhasil bergabung ke grup keluarga ini"
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Anda memiliki faktur yang belum dibayar. Silakan dibayar sebelum bergabung dalam paket keluarga."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Anda diundang untuk mengaitkan Akun ${ BRAND_NAME } Anda ke paket keluarga ini dan menikmati semua fitur premium ${ brandOrAppName } bersama."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Akun Anda memiliki alamat email lebih banyak dari yang tersedia kepada Anda dalam paket ini. ${ addressSettingsLink }"
@@ -5191,6 +5212,9 @@
       "Join Google Meet": [
         "Bergabung ke Google Meet"
       ],
+      "Joining instructions": [
+        "Petunjuk bergabung"
+      ],
       "Less details": [
         "Lebih sedikit detail"
       ],
@@ -5212,7 +5236,7 @@
         "Folder kustom"
       ],
       "Default folders": [
-        "Folder default"
+        "Folder bawaan"
       ],
       "Labels": [
         "Label"
@@ -5254,9 +5278,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } saran ditemukan. Gunakan keyboard Anda untuk beralih antar pilihan yang ada."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Pakai kunci Up dan Down untuk mengakses dan menjelajah saran setelah input. Pencet Enter untuk mengonfirmasi pilihan, atau Escape untuk menutup kotak saran."
       ]
@@ -5931,7 +5952,7 @@
         "Hapus pilihan"
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
-        "Membersihkan data peramban akan menonaktikan pencarian konten pesan di perangkat ini. Semua pesan perlu dimuat lagi bila ingin dicari."
+        "Membersihkan data browser akan menonaktikan pencarian konten pesan pada perangkat ini. Seluruh pesan akan perlu untuk kembali diunduh ulang untuk melangsungkan pencarian konten pesan."
       ],
       "Clears browser data (including downloaded messages, …)": [
         "Menghapus data browser (yang meliputi pesan yang diunduh, …)"
@@ -6288,7 +6309,7 @@
         "Sertakan Spam/Sampah."
       ],
       "Include your prompt and the response to help us improve accuracy.": [
-        "Masukkan perintah dan respons Anda untuk membantu kami meningkatkan akurasi."
+        "Sertakan perintah Anda dan respon yang Anda peroleh untuk membantu kami meningkatkan akurasi asisten penulisan."
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Meliputi ${ taxName } ${ formattedTaxRate }%: ${ price }"
@@ -7047,7 +7068,7 @@
         "Nonaktifkan pilihan ini untuk membatasi pencarian hanya berdasarkan tanggal, nama, alamat email, atau baris subjek. Untuk menonaktifkan pencarian konten pesan (dan menghapus pesan yang telah diunduh untuk mengaktifkan fitur ini), tuju menu Pengaturan."
       ],
       "Turn on to search the content of your messages": [
-        "Aktifkan untuk dapat mencari isi konten pesan Anda"
+        "Aktifkan untuk mencari konten pesan Anda"
       ],
       "Unlock message": [
         "Buka kunci pesan"
@@ -9234,6 +9255,9 @@
       "Secure Core servers": [
         "Server Secure Core"
       ],
+      "Secure link sharing": [
+        "Pembagian tautan aman"
+      ],
       "See team's availability": [
         "Lihat ketersediaan tim"
       ],
@@ -9321,6 +9345,9 @@
       "Up to ${ n } user": [
         "Hingga ${ n } pengguna"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Sampai dengan ${ n } pengguna (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Ruang penyimpanan hingga ${ totalStorageSize }"
       ],
@@ -9338,6 +9365,14 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Kami memindai dark web untuk memeriksa apakah alamat atau alias ${ BRAND_NAME } Anda telah dibocorkan serta memberitahukan Anda dengan segera apabila kami menemukan sesuatu."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } admin"
+      ],
+      "${ users } user": [
+        "${ users } pengguna"
       ]
     },
     "new_plans: feature info": {
@@ -9413,6 +9448,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Lindungi informasi bisnis yang sensitif dan berkolaborasi dengan aman."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Lindungi keluarga Anda dengan semua fitur premium dari ${ PASS_SHORT_APP_NAME } Plus untuk 6 pengguna."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Lindungi privasi keluarga Anda dengan perlindungan gabungan dari seluruh layanan ${ BRAND_NAME }."
@@ -9490,7 +9528,7 @@
         "Setiap alamat dapat digunakan untuk mengirim dan menerima pesan. Seorang pengguna dapat memiliki lebih dari satu alamat; meskipun demikian, satu alamat tidak dapat dimiliki oleh lebih dari satu pengguna."
       ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
-        "Memungkinkan Anda untuk mengakses lebih dari satu jaringan pada saat yang bersamaan, cth. ketika Anda hendak menonton film dari luar negeri namun tetap ingin mendapatkan hasil pencarian lokal"
+        "Memungkinkan Anda untuk mengakses lebih dari satu jaringan dalam satu waktu, mis. pada saat Anda ingin menonton film dari luar negeri namun tetap ingin mendapatkan hasil pencarian lokal"
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Memungkinkan Anda untuk menyiapkan pesan balasan otomatis (auto-reply) bagi seluruh pesan yang Anda terima"
@@ -9620,6 +9658,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan ruang penyimpanan terenkripsi berbasis cloud. Dengan dukungan sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Bagikan item individu secara aman dengan siapa pun (bahkan jika mereka tidak menggunakan ${ PASS_APP_NAME })"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Simpan rincian kontak Anda seperti nomor telepon, alamat, tanggal ulang tahun, catatan personal, dan lain sebagainya secara aman. Enkripsi zero-access kami memastikan bahwa tidak ada siapapun yang dapat mengakses data Anda, termasuk ${ BRAND_NAME } sendiri."
@@ -9753,6 +9794,9 @@
       ],
       "Link copied to clipboard": [
         "Tautan disalin ke papan klip"
+      ],
+      "Passcode copied to clipboard": [
+        "Kode sandi disalin ke papan klip"
       ],
       "Password has been set successfully": [
         "Kata sandi berhasil ditentukan"
@@ -10050,6 +10094,34 @@
         "Pembagian brankas aman (${ n } brankas) dan tautan aman"
       ]
     },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } akun pengguna"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Panel admin untuk mengelola pengguna dan langganan"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Seluruh fitur premium. 6 pengguna. 1 langganan mudah."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Ditagih setiap tahun seharga ${ yearlyPrice }. Hemat ${ yearlySavedPrice } dengan ${ passFamilyPlanName } (dibandingkan 6 langganan ${ passPlusPlanName } individu)"
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Penawaran eksklusif hanya tersedia bagi pendukung dini ${ PASS_APP_NAME }."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Dapatkan seharga ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Perkenalkan ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Penawaran waktu terbatas."
+      ]
+    },
     "passwordless": {
       "Organization key does not exist.": [
         "Kunci organisasi tidak ada."
@@ -10195,7 +10267,7 @@
         "Alamat email"
       ],
       "End date": [
-        "Tanggal berakhir"
+        "Tanggal akhir"
       ],
       "Filter folders": [
         "Filter folder"
@@ -10492,10 +10564,10 @@
         "Tidak ada hasil yang ditemukan"
       ],
       "No snoozed messages": [
-        "Tidak ada pesan tertunda"
+        "Tidak ada pesan yang tertunda"
       ],
       "No unread messages found": [
-        "Tidak ada pesan yang belum dibaca yang ditemukan"
+        "Tidak ada pesan belum dibaca yang ditemukan"
       ]
     },
     "Security Center": {
@@ -10541,6 +10613,11 @@
         "(akan membuka jendela ${ PASS_APP_NAME })"
       ]
     },
+    "Security Center - Action": {
+      "View events": [
+        "Lihat peristiwa"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } dan ${ remainingCount } kebocoran data potensial lainnya terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
@@ -10571,7 +10648,7 @@
     },
     "Select search results": {
       "No results found": [
-        "Hasil tidak ditemukan"
+        "Tidak ada hasil yang ditemukan"
       ]
     },
     "Send email with changed preferences": {
@@ -11656,7 +11733,7 @@
         "Aplikasi desktop"
       ],
       "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet tetap aman dan privat bagi siapa pun. Tingkatkan akun Anda ke paket berbayar."
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
       ],
       "No ads or tracking": [
         "Tanpa iklan atau pelacakan"
@@ -13470,6 +13547,9 @@
       ],
       "Meeting ID:": [
         "ID Rapat:"
+      ],
+      "Passcode: ${ password }": [
+        "Kode sandi: ${ password }"
       ]
     }
   }

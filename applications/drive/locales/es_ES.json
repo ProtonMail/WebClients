@@ -384,10 +384,10 @@
       "Get link": [
         "Obtener enlace"
       ],
-      "Get Started": [
+      "Get started": [
         "Comenzar"
       ],
-      "Get started": [
+      "Get Started": [
         "Comenzar"
       ],
       "Get verification code": [
@@ -561,10 +561,10 @@
       "Not now": [
         "Ahora no"
       ],
-      "Ok": [
+      "OK": [
         "Aceptar"
       ],
-      "OK": [
+      "Ok": [
         "Aceptar"
       ],
       "Open": [
@@ -2475,7 +2475,7 @@
     },
     "duoplan2024: SubTitle": {
       "All of ${ BRAND_NAME }, for 2.": [
-        "Todas las funciones de ${ BRAND_NAME }, para 2."
+        "Todo ${ BRAND_NAME } para 2"
       ],
       "Double your storage": [
         "Doblar tu almacenamiento"
@@ -2634,7 +2634,7 @@
         "No se han podido resolver las opciones de alias."
       ],
       "Aliases could not be loaded": [
-        "No se pudieron cargar los alias."
+        "No se han podido cargar los alias."
       ],
       "Already a member of this share": [
         "Ya se ha compartido con este miembro."
@@ -3016,10 +3016,10 @@
         "La carga para esta carpeta está desactivada temporalmente."
       ],
       "Username must begin with a letter or digit": [
-        "El nombre de usuario debe comenzar con una letra o un número"
+        "El nombre de usuario debe comenzar con una letra o un número."
       ],
       "Username must end with a letter or digit": [
-        "El nombre de usuario debe terminar con una letra o un número"
+        "El nombre de usuario debe terminar con una letra o un número."
       ],
       "Validation error": [
         "Error de validación"
@@ -3583,9 +3583,9 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Se ha encontrado ${ items.length } sugerencia. Utiliza el teclado para navegar.",
-        "Se han encontrado ${ items.length } sugerencias. Utiliza el teclado para navegar."
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Se ha encontrado ${ itemsCount } sugerencia. Usa el teclado para navegar.",
+        "Se han encontrado ${ itemsCount } sugerencias. Usa el teclado para navegar."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Utiliza las teclas Arriba y Abajo para acceder y navegar por las sugerencias después de la entrada. Pulsa Entrar para confirmar tu elección o Escape para cerrar el cuadro de sugerencias."
@@ -4818,7 +4818,7 @@
         "Ten en cuenta que este proceso puede tardar algo de tiempo dependiendo del tamaño de tu libreta de direcciones."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ remainingCreditsFormatted } créditos restantes."
+        "Toma en cuenta que al hacer clic en el botón Confirmar, la cuenta tendrá ${ remainingCreditsFormatted } créditos restantes."
       ],
       "Please open the document to view it.": [
         "Abre el documento para verlo."
@@ -5439,7 +5439,7 @@
         "Perderás todos los cambios no guardados."
       ],
       "You will need to save it again from the public link page.": [
-        "Necesitarás guardarlo de nuevo desde la página del enlace público.",
+        "Necesitarás guardarlos de nuevo desde la página del enlace público.",
         "Necesitarás guardarlos de nuevo desde la página del enlace público."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
@@ -7105,6 +7105,10 @@
         "Hasta ${ n } usuario",
         "Hasta ${ n } usuarios"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Hasta ${ n } usuario (${ adminsText }, ${ usersText })",
+        "Hasta ${ n } usuarios (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Hasta ${ totalStorageSize } de almacenamiento"
       ],
@@ -7208,6 +7212,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Protege la información empresarial confidencial y colabora de forma segura."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Protege a tu familia con todas las características premium de ${ PASS_SHORT_APP_NAME } Plus para seis usuarios."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protege la privacidad de tu familia con todos los servicios combinados de ${ BRAND_NAME }."
@@ -7817,9 +7824,6 @@
       "Continue": [
         "Continuar"
       ],
-      "Create new document": [
-        "Crear un documento"
-      ],
       "Get started": [
         "Empezamos"
       ],
@@ -7850,9 +7854,6 @@
       "Start using ${ DRIVE_APP_NAME }": [
         "Comienza a utilizar ${ DRIVE_APP_NAME }"
       ],
-      "Try it later": [
-        "Probar después"
-      ],
       "Try the app": [
         "Prueba la aplicación"
       ],
@@ -7878,9 +7879,6 @@
       ],
       "Collaborate on documents": [
         "Colabora en documentos"
-      ],
-      "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
-        "Crea y colabora en documentos. Todo protegido con cifrado de extremo a extremo."
       ],
       "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
         "¿Prefieres ${ DRIVE_APP_NAME } en modo claro u oscuro? Selecciona el color que te inspira más."
@@ -7923,9 +7921,6 @@
       ],
       "Hang tight": [
         "Espera un momento"
-      ],
-      "Introducing ${ DOCS_APP_NAME }": [
-        "Presentamos ${ DOCS_APP_NAME }"
       ],
       "Invitation accepted": [
         "Se ha acceptado la invitación."
@@ -8082,9 +8077,18 @@
       "${ n } user account": [
         "${ n } cuenta de usuario",
         "${ n } cuentas de usuario"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Panel de administración para gestionar usuarios y suscripciones"
       ]
     },
     "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Todos los servicios premium., 6 usuarios y una sola suscripción."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Se factura anualmente a ${ yearlyPrice }. Ahorre ${ yearlySavedPrice } con ${ passFamilyPlanName } (en comparación con 6 suscripciones individuales a ${ passPlusPlanName })."
+      ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
         "Oferta exclusiva disponible solo para los primeros seguidores de ${ PASS_APP_NAME }."
       ],
@@ -8463,6 +8467,11 @@
         "(abrirá ${ PASS_APP_NAME })"
       ]
     },
+    "Security Center - Action": {
+      "View events": [
+        "Ver los eventos"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } y ${ remainingCount } potenciales filtraciones fueron detectadas. Active ${ DARK_WEB_MONITORING_NAME } para ver los detalles. ${ link }"
@@ -8554,7 +8563,7 @@
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Tienes ${ timeRemaining.inMinutes } minuto para restablecer tu contraseña.",
-        " Tienes ${ timeRemaining.inMinutes } minutos para restablecer tu contraseña."
+        "Tienes ${ timeRemaining.inMinutes } minutos para restablecer tu contraseña."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Tienes ${ timeRemaining.inSeconds } segundo para restablecer tu contraseña.",

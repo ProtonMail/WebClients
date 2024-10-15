@@ -697,6 +697,9 @@
       "Verify": [
         "Verifiser"
       ],
+      "Verify ${ unverifiedSSODomain.DomainName }": [
+        "Verifiser ${ unverifiedSSODomain.DomainName }"
+      ],
       "Verify account": [
         "Verifiser konto"
       ],
@@ -2759,8 +2762,14 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-grupper"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Kontoer med egendefinerte domener kan ikke bli med i en familieplan."
+      ],
       "customer support": [
         "kundestøtte"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Familieplaner støtter for øyeblikket ikke eksterne kontoer. Opprett en ${ BRAND_NAME }-adresse før du blir med. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Hvis du godtar invitasjonen, bytter vi deg fra den nåværende planen og krediterer kontoen din med eventuell gjenværende saldo."
@@ -2771,6 +2780,9 @@
       "Invited by: ${ inviteEmail }": [
         "Invitert av: ${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Livsvarige kontoer kan ikke bli med i en familieplan."
+      ],
       "Manage addresses.": [
         "Administrer adresser"
       ],
@@ -2780,6 +2792,9 @@
       "Only ${ n } accepted invitation are allowed in a 6-month period.": [
         "Kun ${ n } akseptert invitasjon på 6 måneder er tillat.",
         "Kun ${ n } aksepterte invitasjoner på 6 måneder er tillat."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Eiere av en plan med medlemmer kan ikke bli med i en annen familieplan."
       ],
       "Pending": [
         "Ventende"
@@ -2819,11 +2834,17 @@
       "You have successfully joined the family group": [
         "Du har blitt med i familiegruppen"
       ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Du har ubetalte fakturaer. Vennligst betal dem før du blir med i en familieplan."
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Du må konfigurere et egendefinert domene før du kan legge til flere brukere."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Du må konfigurere et egendefinert domene før du kan opprette en ny bruker."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Du er invitert til å koble din ${ BRAND_NAME }-konto til denne familieplanen og sammen nyte alle ${ brandOrAppName }-premiumfunksjoner."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Kontoen din har flere e-postadresser enn det som er tilgjengelig for deg i denne planen. ${ addressSettingsLink }"
@@ -2839,6 +2860,9 @@
       "*Only one free trial per user. Regular pricing applies thereafter.": [
         "*Kun én gratis prøveperiode per bruker. Ordinær pris gjelder deretter."
       ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
+        "Etter å ha forlatt planen din, vil denne brukeren bli flyttet til en ${ BRAND_NAME } Free-plan."
+      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Etter å ha forlatt planen din, vil denne brukeren bli flyttet til en ${ BRAND_NAME } Unlimited-plan med en 30-dagers gratis prøveperiode.*"
       ],
@@ -2847,6 +2871,12 @@
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Opprett og behandle familiemedlemmer og tildel dem lagringsplass delt mellom ${ DRIVE_APP_NAME } og ${ MAIL_APP_NAME }."
+      ],
+      "Create and manage family members.": [
+        "Opprett og administrer familiemedlemmer."
+      ],
+      "If the user already has a ${ BRAND_NAME } account (${ domain } or other, e.g. @gmail.com), enter it here. Otherwise they need to create an account first.": [
+        "Hvis brukeren allerede har en ${ BRAND_NAME }-konto (${ domain } eller annen, f.eks. @gmail.com), angi den her. Ellers må de opprette en konto først."
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Hvis brukeren allerede har en ${ MAIL_APP_NAME }-adresse, angi den her. Ellers må de opprette en konto først."
@@ -2957,10 +2987,6 @@
       ],
       "Add": [
         "Legg til"
-      ],
-      "Add (${ numberOfAddedServers })": [
-        "Legg til (${ numberOfAddedServers })",
-        "Legg til (${ numberOfAddedServers })"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Tilkobling for opptil ${ plusVpnConnections } enhet",
@@ -3232,9 +3258,6 @@
       "Checkout": [
         "Sjekk ut"
       ],
-      "Country": [
-        "Land"
-      ],
       "Create your account": [
         "Opprett konto"
       ],
@@ -3332,10 +3355,6 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Legg til denne posten i domenet ditt i kontrollpanelet til domenenavnregistratoren."
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Fant ${ items.length } forslag, bruk tastaturet til å navigere.",
-        "Fant ${ items.length } forslag, bruk tastaturet til å navigere."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Bruk opp- og ned-tastene for å få tilgang til og bla gjennom forslag etter inndata. Trykk Enter for å bekrefte valget, eller Esc for å lukke forslagsboksen."
@@ -3708,9 +3727,6 @@
         "Sletter ${ deletedServerCount } mellomtjener",
         "Sletter ${ deletedServerCount } mellomtjenere"
       ],
-      "Disabled since ${ formattedDateAndTime }": [
-        "Deaktivert siden ${ formattedDateAndTime }"
-      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Deaktivering av tofaktorautentisering vil gjøre kontoen din mindre sikker. Fortsett bare hvis det er absolutt nødvendig."
       ],
@@ -3792,9 +3808,6 @@
       ],
       "Enable single sign-on to keep your organization safe": [
         "Aktiver enkel pålogging for å holde organisasjonen din trygg"
-      ],
-      "Enabled since ${ formattedDateAndTime }": [
-        "Aktivert siden ${ formattedDateAndTime }"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Nettadresse for endepunkt mottatt fra identitetsleverandøren din (f.eks. https://idp.example.com/sso/saml)."
@@ -4171,9 +4184,6 @@
       "Number of dedicated servers in the organization": [
         "Antall dedikerte tjenere i organisasjonen"
       ],
-      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "Antall dedikerte tjenere du prøver å tildele (${ addedCount }) er mer enn det som fortsatt er tilgjengelig i planen din (${ remainingCount }) ettersom du eier ${ ownedCount } og du allerede bruker ${ usedCount }."
-      ],
       "of": [
         "av"
       ],
@@ -4416,9 +4426,6 @@
       "Single sign-on removed": [
         "Enkel pålogging fjernet"
       ],
-      "Some of your available servers can only be used in specific countries due to recent removals": [
-        "Noen av de tilgjengelige tjenerne dine kan bare brukes i bestemte land på grunn av nylige fjerninger."
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Spesifiser domenet som har tillatelse til å autentisere med SAML SSO."
       ],
@@ -4527,9 +4534,6 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Dette kan ta få sekunder eller få minutter avhengig av enheten din."
-      ],
-      "This change will be fully reflected across your infrastructure in about 1 hour": [
-        "Denne endringen vil gjenspeiles fullt ut på tvers av infrastrukturen din i løpet av ca. 1 time"
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Dette kan ta litt tid. Vennligst ikke lukk siden eller koble fra internett."
@@ -4735,9 +4739,6 @@
       "Visa Secure logo": [
         "Visa Secure logo"
       ],
-      "Want servers in other countries?": [
-        "Vil du ha tjenere i andre land?"
-      ],
       "Warning:": [
         "Advarsel:"
       ],
@@ -4764,6 +4765,9 @@
       ],
       "We recommend having multiple servers in different locations to provide redundancy.": [
         "Vi anbefaler at du har flere tjenere på forskjellige steder for å gi redundans."
+      ],
+      "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "Vi anbefaler å varsle familiemedlemmene og be dem om å sette opp 2FA for kontoene sine før du håndhever bruken av 2FA."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Vi anbefaler å varsle organisasjonsmedlemmene og be dem om å sette opp 2FA for kontoene sine før du håndhever bruken av 2FA."
@@ -4871,9 +4875,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kan redigere den en gang for å sikre riktig e-postadresse for bekreftelse."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Du kan umiddelbart låse opp oppsettet ovenfor ved å legge til ${ specificCountryCount } til antall IP-adresser i planen din eller nå oss for skreddersydde løsninger."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Vennligst fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet.",
         "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalendere. Vennligst fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet."
@@ -4893,10 +4894,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Du kan bruke følgende påloggingsinformasjon for å koble til en ${ VPN_APP_NAME }-tjener ved å bruke en tredje-part, åpen kilde VPN-app, som Tunnelblick for macOS eller OpenVPN for GNU/Linux."
-      ],
-      "You have ${ availableCount } dedicated server available.": [
-        "Du har ${ availableCount } dedikert tjener tilgjengelig.",
-        "Du har ${ availableCount } dedikerte tjenere tilgjengelig."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Du har et prøveabonnement på ${ planTitle }. Hvis du vil fortsette abonnementet etter prøveperioden, må du legge til en betalingsmåte."
@@ -5329,6 +5326,9 @@
       "Enter the code displayed on your TV": [
         "Tast inn koden som vises på TV-en"
       ],
+      "Event": [
+        "Hendelse"
+      ],
       "Expiration (${ patternExpiration })": [
         "Utløpstid (${ patternExpiration })"
       ],
@@ -5508,6 +5508,9 @@
       ],
       "Reveal password": [
         "Avslør passord"
+      ],
+      "Search": [
+        "Søk"
       ],
       "Search by email": [
         "Søk etter e-post"
@@ -5704,9 +5707,6 @@
       ],
       "Common sign up issues": [
         "Vanlige registreringsutfordringer"
-      ],
-      "Contact us": [
-        "Kontakt oss"
       ],
       "Create account": [
         "Opprett konto"
@@ -6031,6 +6031,9 @@
       ],
       "From ${ price }": [
         "Fra ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Kom i gang for ${ price }"
       ],
       "Starting from ${ priceMailPlus }": [
         "Starter fra ${ priceMailPlus }"
@@ -6395,6 +6398,9 @@
       "Secure Core servers": [
         "Secure Core-tjenere"
       ],
+      "Secure link sharing": [
+        "Sikker deling av koblinger"
+      ],
       "See team's availability": [
         "Se teamets tilgjengelighet"
       ],
@@ -6493,6 +6499,10 @@
         "Opptil ${ n } bruker",
         "Opptil ${ n } brukere"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Opptil ${ n } bruker (${ adminsText }, ${ usersText })",
+        "Opptil ${ n } brukere (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Opptil ${ totalStorageSize } lagringsplass"
       ],
@@ -6511,6 +6521,16 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } administrator",
+        "${ admins } administratorer"
+      ],
+      "${ users } user": [
+        "${ users } bruker",
+        "${ users } brukere"
       ]
     },
     "new_plans: feature info": {
@@ -6590,6 +6610,9 @@
       "Protect sensitive business information and collaborate securely.": [
         "Beskytt sensitiv forretningsinformasjon og samarbeid sikkert."
       ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Beskytt familien din med alle premiumfunksjonene til ${ PASS_SHORT_APP_NAME } Plus for 6 brukere."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Beskytt familiens personvern med alle ${ BRAND_NAME }-tjenester kombinert."
       ],
@@ -6667,6 +6690,12 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } prøveversjon"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Få Mail Plus for ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Starter fra ${ price }"
       ],
       "Your account's usage": [
         "Kontoens forbruk"
@@ -6827,6 +6856,9 @@
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sikre filene dine med kryptert skylagring. Inkluderer automatisk synkronisering, kryptert fildeling og mer."
       ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Del enkeltelementer med hvem som helst på en sikker måte (selv om de ikke bruker ${ PASS_APP_NAME })"
+      ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Lagre kontaktenes detaljer på en sikker måte, for eksempel telefonnummer, adresse, bursdag og personlige notater. Nulltilgangskryptering sikrer at selv ${ BRAND_NAME } ikke får tilgang til dem."
       ],
@@ -6975,11 +7007,17 @@
       "Key copied to the clipboard": [
         "Nøkkel kopiert til utklippstavlen"
       ],
+      "Number of records exceeds the download limit of 10000": [
+        "Antall poster overskrider nedlastingsgrensen på 10000"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2-påloggingsinformasjon generert på nytt"
       ],
       "Reminder has been sent": [
         "Påminnelse er sendt"
+      ],
+      "Too many recent API requests": [
+        "For mange nylige API-forespørsler"
       ],
       "Two-factor authentication has been enforced for administrators": [
         "Tofaktorautentisering er fremtvunget for administratorer"
@@ -7299,6 +7337,35 @@
     "pass_signup_2023: Title": {
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Alle ${ BRAND_NAME } Plus-tjenester.${ br }Ett enkelt abonnement."
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } brukerkonto",
+        "${ n } brukerkontoer"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Administrasjonspanel for å administrere brukere og abonnement"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Alle premiumfunksjoner. 6 brukere. Ett enkelt abonnement."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Faktureres årlig til ${ yearlyPrice }. Spar ${ yearlySavedPrice } med ${ passFamilyPlanName } (i motsetning til 6 individuelle ${ passPlusPlanName }- abonnementer)."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Eksklusivt tilbud kun for tidlige støttespillere av ${ PASS_APP_NAME }."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Få planen for ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Introduserer ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Tidsbegrenset tilbud."
       ]
     },
     "password_reset: info": {
@@ -9095,6 +9162,11 @@
         "Utløper"
       ]
     },
+    "Subtitle": {
+      "View VPN session details for your organization.": [
+        "Vis VPN-øktdetaljer for organisasjonen din."
+      ]
+    },
     "Success": {
       "Account deleted. Signing out...": [
         "Konto slettet. Logger av..."
@@ -9431,9 +9503,6 @@
       "Add pm.me subdomain": [
         "Legg til pm.me underdomene"
       ],
-      "Add servers": [
-        "Legg til tjenere"
-      ],
       "Add to allow list": [
         "Legg til tillatliste"
       ],
@@ -9532,12 +9601,6 @@
       ],
       "Confirm phone number": [
         "Bekreft telefonnummer"
-      ],
-      "Connection monitor disabled": [
-        "Tilkoblingsovervåking deaktivert"
-      ],
-      "Connection monitor enabled": [
-        "Tilkoblingsovervåking aktivert"
       ],
       "Contact us": [
         "Kontakt oss"

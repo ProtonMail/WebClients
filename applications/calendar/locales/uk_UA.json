@@ -485,11 +485,11 @@
       "Not now": [
         "Не зараз"
       ],
-      "Ok": [
-        "OK"
-      ],
       "OK": [
         "Застосувати"
+      ],
+      "Ok": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Відкрити налаштування ${ CALENDAR_APP_NAME }"
@@ -3863,12 +3863,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Знайдено ${ items.length } пропозицію. Використовуйте клавіатуру для вибору.",
-        "Знайдено ${ items.length } пропозиції. Використовуйте клавіатуру для вибору.",
-        "Знайдено ${ items.length } пропозицій. Використовуйте клавіатуру для вибору.",
-        "Знайдено ${ items.length } пропозицій. Використовуйте клавіатуру для вибору."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Використовуйте клавіші Вгору і Вниз для доступу до пропозицій перегляду після введення. Натисніть Enter для підтвердження свого вибору, або Escape для закриття пропозицій."
       ]

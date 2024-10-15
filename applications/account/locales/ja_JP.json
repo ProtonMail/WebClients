@@ -67,11 +67,11 @@
       "Accept": [
         "承認する"
       ],
-      "Activate": [
-        "有効化"
-      ],
       "activate": [
         "有効にする"
+      ],
+      "Activate": [
+        "有効化"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me をアクティブ化します"
@@ -4078,6 +4078,9 @@
       "No emails found to import - the account does not have an inbox": [
         "インポートするメールがありません - アカウントに受信箱がありません"
       ],
+      "No external key retrieved for user is valid for sending": [
+        "送信に有効なキーが取得されませんでした。"
+      ],
       "No image selected": [
         "画像が選択されていません"
       ],
@@ -4297,6 +4300,9 @@
       "Unable to upload file": [
         "ファイルをアップロードできません"
       ],
+      "Unexpected error, we can't import the contacts": [
+        "予期しないエラーにより、連絡先をインポートできません"
+      ],
       "Unknown error": [
         "原因不明なエラーが発生しました"
       ],
@@ -4350,6 +4356,9 @@
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "SMTP 送信トークンを生成するには、カスタム ドメイン アドレスが必要です。"
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "文字数が上限に達しました。メッセージを短くしてください。"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "あなたのアカウントあるいは組織には未払いの請求があります。すべての未払いの請求をお支払いください。"
@@ -4806,6 +4815,9 @@
       "Invited by: ${ inviteEmail }": [
         "招待者: ${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Lifetime アカウントはファミリープランに参加できません。"
+      ],
       "Manage addresses.": [
         "アドレスの管理"
       ],
@@ -4964,9 +4976,6 @@
       ],
       "Add": [
         "追加"
-      ],
-      "Add (${ numberOfAddedServers })": [
-        "追加 ( ${ numberOfAddedServers } )"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "最大 ${ plusVpnConnections } 台のデバイスに接続"
@@ -5427,9 +5436,6 @@
       "Checkout": [
         "チェックアウト"
       ],
-      "Country": [
-        "国"
-      ],
       "Create your account": [
         "アカウントを作成"
       ],
@@ -5572,9 +5578,6 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "ドメイン名登録事業者のコントロールパネルで、ドメインにこの記録を追加します。"
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } つの提案が見つかりました。キーボードを使って操作します。"
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "矢印キーで提案を表示し、選択することができます。エンターキーで確定し、エスケープキーで提案を閉じることができます。"
@@ -7122,9 +7125,6 @@
       "Number of dedicated servers in the organization": [
         "組織内の専用サーバー数"
       ],
-      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "${ ownedCount } を所有しており、すでに ${ usedCount } を使用しているため、割り当てようとしている専用サーバーの数 (${ addedCount }) は、プランでまだ利用可能な数 (${ remainingCount }) を超えています。"
-      ],
       "of": [
         " / "
       ],
@@ -7478,9 +7478,6 @@
       ],
       "Some keys successfully reactivated": [
         "いくつかの鍵は正常に再度アクティブになりました"
-      ],
-      "Some of your available servers can only be used in specific countries due to recent removals": [
-        "最近削除されたため、特定の国でのみ使用可能なサーバーがあります。"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "SAML SSO認証を許可するドメインを指定します。"
@@ -7929,9 +7926,6 @@
       "Visa Secure logo": [
         "Visa Secure ロゴ"
       ],
-      "Want servers in other countries?": [
-        "他の国のサーバーが必要ですか？"
-      ],
       "Want to learn more?": [
         "もっと詳しく知りたいですか?"
       ],
@@ -8100,9 +8094,6 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "認証サインインを有効にすると、自分のアカウントにいつ、どのIPからアクセスがあったかを確認することができます。アカウントにアクセスしたIPアドレスと時間、失敗した試行回数を記録します。"
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
-        "プラン内の IP アドレス番号に ${ specificCountryCount } を追加することで、上記の設定をすぐに利用できます。特別な対応が必要な場合は私たちにご相談ください"
-      ],
       "You can import one data type at a time.": [
         "1 回にインポートできるのは 1 種類のみです。"
       ],
@@ -8141,9 +8132,6 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "回復手段を設定していないため、パスワードを忘れた場合にはアカウントを回復できません。回復手段を設定しないまま続行しますか？"
-      ],
-      "You have ${ availableCount } dedicated server available.": [
-        "${ availableCount } 個の専用サーバーが利用可能です。"
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "試用版 ${ planTitle } のサブスクリプションが有効です。試用期間後にサブスクリプションを継続したい場合は、支払い方法を追加してください。"
@@ -9567,6 +9555,9 @@
       "Time zone": [
         "タイムゾーン"
       ],
+      "Tips and insights": [
+        "ヒントとインサイト"
+      ],
       "To: ${ toEmail }": [
         "宛先: ${ toEmail }"
       ],
@@ -9860,9 +9851,6 @@
       ],
       "Common sign up issues": [
         "一般的なサインアップの問題"
-      ],
-      "Contact us": [
-        "お問い合わせ"
       ],
       "create a ticket": [
         "チケットを作成する"
@@ -10755,6 +10743,9 @@
       "Password-protected Emails": [
         "パスワードで保護されたメール"
       ],
+      "Phone support (20+ users)": [
+        "電話サポート (20 ユーザー以上)"
+      ],
       "Priority email support": [
         "優先的なメールサポート"
       ],
@@ -10886,6 +10877,14 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、あなたの ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } 名の管理者"
+      ],
+      "${ users } user": [
+        "${ users }名のユーザー"
       ]
     },
     "new_plans: feature info": {
@@ -12156,6 +12155,11 @@
       ],
       "For individuals": [
         "個人向け"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } 個のユーザーアカウント"
       ]
     },
     "password_reset: info": {
@@ -14094,6 +14098,9 @@
       "Import record deleted": [
         "インポート記録が削除されました"
       ],
+      "Invitation rejected": [
+        "招待が拒否されました"
+      ],
       "Invitation sent": [
         "招待状が送信されました"
       ],
@@ -14496,9 +14503,6 @@
       ],
       "Add pm.me subdomain": [
         "pm.me サブドメインを追加"
-      ],
-      "Add servers": [
-        "サーバー追加"
       ],
       "Add Sieve filter": [
         "仕分けフィルターを追加する"
@@ -15670,6 +15674,9 @@
       "Feature in early access": [
         "早期アクセスの機能"
       ],
+      "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
+        "${ MAIL_APP_NAME } などを最大限に活用するための生産性とセキュリティのヒントを入手しましょう。"
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmailは「ソーシャル」や「プロモーション」など、自動的にメールを種類分けしているものがあります。各種類のメールをどこにインポートするかを選択できます。"
       ],
@@ -16090,6 +16097,9 @@
       "${ n } email address": [
         "${ n } メールアドレス"
       ],
+      "A safer way to hold your Bitcoin": [
+        "Bitcoin を保持する安全な方法"
+      ],
       "Bitcoin via email": [
         "メールで Bitcoin"
       ],
@@ -16101,6 +16111,11 @@
       ],
       "Unlock ${ appName } premium features by upgrading": [
         "アップグレードして ${ appName } のプレミアム機能をロック解除しましょう"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Bitcoin を保持・送信する安全で簡単な方法"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -70,11 +70,11 @@
       "Accept": [
         "Accepteren"
       ],
-      "Activate": [
-        "Activeren"
-      ],
       "activate": [
         "activeer"
+      ],
+      "Activate": [
+        "Activeren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activeer ${ user.Name }@pm.me"
@@ -246,6 +246,9 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Bevestig het openen van link ${ linkToShow }"
+      ],
+      "Contact sales": [
+        "Contact opnemen met Sales"
       ],
       "Contact support": [
         "Neem contact op met ondersteuning"
@@ -1448,6 +1451,9 @@
       ],
       "Fast and secure. No logs are kept.": [
         "Snel en veilig. Er worden geen logboeken opgeslagen."
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Uitvoeren op ${ BRAND_NAME }-servers"
       ],
       "Run on device": [
         "Uitgevoerd op het apparaat zelf"
@@ -3350,6 +3356,11 @@
         "Houd er rekening mee dat als u dit domein verwijdert ${ domainName }, alle geassocieerde adressen uitgeschakeld worden."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Weet u zeker dat u deze groep wilt verwijderen?"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Onbetaalde factuur"
@@ -3359,8 +3370,20 @@
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Automatisch spam en weggegooide berichten verwijderen en meer premium-functies ontgrendelen als u upgrade."
       ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Wis automatisch e-mails die meer dan 30 dagen geleden naar Prullenbak en Spam zijn verplaatst."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "Sorteer automatisch inkomende berichten voordat ze uw inbox bereiken."
+      ],
+      "Available with ${ BRAND_NAME } Mail plus": [
+        "Beschikbaar met ${ BRAND_NAME } Mail Plus"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Gefeliciteerd! U hebt het maximum van ${ rewardsLimit } gratis maanden ${ plusPlanName } verdiend."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "Maak zoveel labels of mappen als u nodig hebt om uw inbox georganiseerd te houden."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Schakel ${ PROTON_SENTINEL_NAME } in om toegang te krijgen tot deze functies"
@@ -3598,6 +3621,17 @@
         "U bent uitgenodigd om een bestand in ${ DRIVE_APP_NAME } te bekijken"
       ]
     },
+    "drive_signup_2024: Info": {
+      "Advanced protection that goes beyond industry standards": [
+        "Geavanceerde bescherming die verder gaat dan de industriestandaard"
+      ],
+      "Protect sensitive business information and collaborate securely": [
+        "Bescherm gevoelige bedrijfsinformatie en werk veilig samen"
+      ],
+      "Secure cloud storage that gives you control of your data": [
+        "Beveiligde cloudopslag die u de controle over uw gegevens geeft"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Uitgebreide versiegeschiedenis bekijken"
@@ -3615,6 +3649,9 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Elke 2 jaar gefactureerd aan ${ amountBilled }. Kortingen zijn gebaseerd op de standaard maandelijkse prijs."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "Jaarlijks gefactureerd op ${ amountBilled }. Bespaar ${ amountSave } op 2 individuele ${ BRAND_NAME } Unlimited jaarabonnementen."
       ]
@@ -5078,8 +5115,14 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-groepen"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Accounts met een eigen domein kunnen zich niet aansluiten bij een Family-abonnement."
+      ],
       "customer support": [
         "klantondersteuning"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Family-abonnementen bieden op dit moment geen ondersteuning voor externe accounts. Maak een ${ BRAND_NAME }-adres aan voor u zich hierbij aansluit. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Als u de uitnodiging accepteert, zetten we uw huidige abonnement om en wordt een eventueel resterend saldo teruggestort."
@@ -5099,6 +5142,9 @@
       "Leave Visionary plan": [
         "Verlaat Visionary-abonnement"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Levenslange accounts kunnen niet deelnemen aan een Family-abonnement."
+      ],
       "Manage addresses.": [
         "Beheer adressen."
       ],
@@ -5108,6 +5154,9 @@
       "Only ${ n } accepted invitation are allowed in a 6-month period.": [
         "Slechts ${ n } geaccepteerde uitnodiging is toegestaan binnen een periode van 6 maanden.",
         "Slechts ${ n } geaccepteerde uitnodigingen zijn toegestaan binnen een periode van 6 maanden."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Eigenaren van een abonnement met leden kunnen zich niet aansluiten bij een ander Family-abonnement."
       ],
       "Pending": [
         "In behandeling"
@@ -5150,11 +5199,17 @@
       "You have successfully joined the family group": [
         "U hebt zich succesvol aangesloten bij de familiegroep"
       ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "U heeft onbetaalde facturen. Betaal deze voordat u zich aansluit bij een Family-abonnement"
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "U moet een eigen domein configureren voordat u meerdere gebruikers toevoegt."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "U moet een eigen domein configureren voordat u een nieuwe gebruiker aanmaakt."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "U bent uitgenodigd om uw ${ BRAND_NAME } account te linken aan dit familieplan en samen te genieten van de premium functies van ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Uw account heeft meer e-mailadressen dan is toegestaan in dit abonnement. ${ addressSettingsLink }"
@@ -5285,10 +5340,6 @@
       ],
       "Add": [
         "Toevoegen"
-      ],
-      "Add (${ numberOfAddedServers })": [
-        "Toevoegen (${ numberOfAddedServers })",
-        "Toevoegen (${ numberOfAddedServers })"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Verbinding op ${ plusVpnConnections } apparaat",
@@ -5797,9 +5848,6 @@
       "Checkout": [
         "Afrekenen"
       ],
-      "Country": [
-        "Land"
-      ],
       "Create your account": [
         "Maak uw account aan"
       ],
@@ -5945,10 +5993,6 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Voeg deze record toe aan uw domein in het beheerpaneel van uw domeinnaam register"
-      ],
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } suggestie gevonden, gebruik het toetsenbord om te navigeren.",
-        "${ items.length } suggesties gevonden, gebruik het toetsenbord om te navigeren."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Gebruik omhoog- en omlaagknoppen om suggesties te openen en te bladeren na invoer. Druk op Enter om uw keuze te bevestigen, of op Escape om het suggestievak te sluiten."
@@ -6708,6 +6752,9 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Weet u zeker dat u het domein ${ boldDomain } wilt verwijderen?"
       ],
+      "Ask your organization admin to setup Gateways.": [
+        "Vraag de beheerder van uw organisatie om Gateways in te stellen."
+      ],
       "Attention required": [
         "Aandacht vereist"
       ],
@@ -6946,9 +6993,6 @@
       "Disable recovery by ${ type }": [
         "Herstel via ${ type } uitschakelen"
       ],
-      "Disabled since ${ formattedDateAndTime }": [
-        "Uitgeschakeld sinds ${ formattedDateAndTime }"
-      ],
       "Discount": [
         "Korting"
       ],
@@ -7061,9 +7105,6 @@
       "Enable TLS or SSL on the external service if it is supported.": [
         "Activeer TLS of SSL op de externe dienst indien dit wordt ondersteund."
       ],
-      "Enabled since ${ formattedDateAndTime }": [
-        "Ingeschakeld sinds ${ formattedDateAndTime }"
-      ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Het opnieuw inschakelen van herstel per uitdrukking zal een nieuwe herstelzin genereren."
       ],
@@ -7123,6 +7164,9 @@
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "Afspraakuitnodigingen en RSVP's zullen worden verstuurd in deze taal."
+      ],
+      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
+        "Afspraken bevatten authenticatiepogingen voor alle ${ BRAND_NAME }-diensten die uw ${ BRAND_NAME_TWO }-inloggegevens gebruiken."
       ],
       "Example: ${ spfExample }": [
         "Voorbeeld: ${ spfExample }"
@@ -7654,9 +7698,6 @@
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
       ],
-      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "De hoeveelheid toegewijde servers die u probeert toe te wijzen (${ addedCount }) ligt hoger dan wat er nog beschikbaar is in uw abonnement (${ remainingCount }), omdat u er ${ ownedCount } heeft en al ${ usedCount } gebruikt."
-      ],
       "of": [
         "van"
       ],
@@ -7697,7 +7738,7 @@
         "Andere gebruikers binnen uw organisatie zien uw bezette slots. Er worden geen details over het event gedeeld."
       ],
       "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Met onze meldingen nemen we het zekere voor het onzekere. Als je de geschonden informatie niet herkent, kun je deze melding veilig negeren."
+        "Met onze meldingen nemen we het zekere voor het onzekere. Als u de geschonden informatie niet herkent, kunt u deze melding veilig negeren."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Verouderd herstelbestand; werk het bij om toegang tot uw gegevens te garanderen"
@@ -8040,9 +8081,6 @@
       ],
       "Some keys successfully reactivated": [
         "Sommige sleutels zijn succesvol geheractiveerd"
-      ],
-      "Some of your available servers can only be used in specific countries due to recent removals": [
-        "Sommige van uw beschikbare servers kunnen alleen worden gebruikt in specifieke landen door recente opheffingen"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Geef het domein op dat is toegestaan om te verifiëren met SAML SSO."
@@ -8546,9 +8584,6 @@
       "Visa Secure logo": [
         "Visa Secure logo"
       ],
-      "Want servers in other countries?": [
-        "Wilt u servers in andere landen?"
-      ],
       "Want to learn more?": [
         "Wilt u meer weten?"
       ],
@@ -8584,6 +8619,9 @@
       ],
       "We recommend having multiple servers in different locations to provide redundancy.": [
         "We raden aan om meerdere servers op verschillende locaties te hebben voor redundantie."
+      ],
+      "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "We raden aan om de familieleden op de hoogte te brengen en ze te vragen om 2FA in te stellen voor hun account voordat u het gebruik van 2FA forceert."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "We raden aan om de organisatieleden op de hoogte te brengen en ze te vragen om 2FA in te stellen voor hun account voordat u het gebruik van 2FA forceert."
@@ -8696,6 +8734,9 @@
       "You are about to open another browser tab and visit:": [
         "U staat het punt om een nieuw tabblad te openen en de volgende locatie te bezoeken:"
       ],
+      "You are about to open your default browser and visit:": [
+        "U staat op het punt uw standaardbrowser te openen om te bezoeken:"
+      ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "U bent momenteel aangemeld als ${ user.Name } (${ user.Email })."
       ],
@@ -8738,9 +8779,6 @@
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "U kunt inschakelen dat bijgehouden wordt wanneer uw account benaderd wordt, en vanaf welk IP-adres. We zullen dan het IP-adres bijhouden vanaf waar uw account benaderd wordt, de tijd wanneer dit gebeurt, evenals mislukte inlogpogingen."
-      ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
-        "U kunt meteen de installatie ontgrendelen door ${ specificCountryCount } toe te voegen aan de hoeveelheid IP-adressen in uw abonnement of neem contact op met ons voor oplossingen op maat."
       ],
       "You can import one data type at a time.": [
         "U kunt maar één type gegevens tegelijk importeren."
@@ -8786,10 +8824,6 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "U heeft geen herstelmethode ingesteld dus accountherstel is niet mogelijk als u uw wachtwoord vergeet. Doorgaan zonder herstelmethode?"
-      ],
-      "You have ${ availableCount } dedicated server available.": [
-        "U heeft ${ availableCount } toegewijde server beschikbaar.",
-        "U heeft ${ availableCount } toegewijde servers beschikbaar."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Je hebt een trial ${ planTitle } abonnement. Als je na de proefperiode door wilt gaan met je abonnement, voeg een betaalmethode toe."
@@ -9455,6 +9489,9 @@
       "Activity": [
         "Activiteit"
       ],
+      "Add group member": [
+        "Groepslid toevoegen"
+      ],
       "Address": [
         "Adres"
       ],
@@ -9833,6 +9870,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Voer het wachtwoord in voor de sleutel met vingerafdruk: ${ fingerprintCode }"
       ],
+      "Event": [
+        "Afspraak"
+      ],
       "Event duration": [
         "Duur van de afspraak"
       ],
@@ -10174,6 +10214,9 @@
       ],
       "Reveal password": [
         "Wachtwoord tonen"
+      ],
+      "Search": [
+        "Zoeken"
       ],
       "Second password": [
         "Tweede wachtwoord"
@@ -10580,9 +10623,6 @@
       "Common sign up issues": [
         "Problemen met algemene registratie"
       ],
-      "Contact us": [
-        "Neem contact op"
-      ],
       "create a ticket": [
         "een ticket aanmaken"
       ],
@@ -10795,6 +10835,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Schrijfassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Voeg ${ BRAND_NAME } Scribe schrijfassistent toe"
       ],
@@ -11785,6 +11828,10 @@
       "${ admins } admin": [
         "${ admins } beheerder",
         "${ admins } beheerders"
+      ],
+      "${ users } user": [
+        "${ users } gebruiker",
+        "${ users } gebruikers"
       ]
     },
     "new_plans: feature info": {
@@ -11881,6 +11928,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Bescherm gevoelige bedrijfsinformatie en werk veilig samen."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Bescherm uw familie met alle premium-functies van ${ PASS_SHORT_APP_NAME } Plus voor 6 gebruikers."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Bescherm de privacy van uw gezin met alle services van ${ BRAND_NAME } gecombineerd."
@@ -12157,6 +12207,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld delen van bestanden en meer."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Veilig delen van individuele items met wie u wilt (zelfs als ze geen ${ PASS_APP_NAME } gebruiken)."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Sla de gegevens van uw contactpersonen, zoals telefoonnummer, adres, geboortedatum en persoonlijke notities, veilig op. Dankzij zero-access versleuteling heeft zelfs ${ BRAND_NAME } geen toegang tot deze gegevens."
@@ -12775,6 +12828,18 @@
       ]
     },
     "orgidentity": {
+      "Current organization identity": [
+        "Huidige organisatie-identiteit"
+      ],
+      "Edit organization identity": [
+        "Identiteit organisatie bewerken"
+      ],
+      "New organization identity": [
+        "Nieuwe organisatie-identiteit"
+      ],
+      "Organization identity": [
+        "Organisatie-identiteit"
+      ],
       "Verify": [
         "Verifiëren"
       ]
@@ -13166,6 +13231,29 @@
       "${ n } user account": [
         "${ n } gebruikersaccount",
         "${ n } gebruikersaccounts"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Beheerpaneel om gebruikers en abonnement te beheren"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Alle premium functionaliteiten. 6 gebruikers. 1 eenvoudig abonnement."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Jaarlijks gefactureerd aan ${ yearlyPrice }. Spaar ${ yearlySavedPrice } met ${ passFamilyPlanName } (in plaats van 6 individuele ${ passPlusPlanName } abonnementen)"
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Exclusieve aanbieding alleen beschikbaar voor ${ PASS_APP_NAME } vroege supporters."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Neem het voor ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Ontdek ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Tijdelijk aanbieding."
       ]
     },
     "password_reset: info": {
@@ -13745,8 +13833,14 @@
       "Download ${ size }": [
         "${ size } downloaden"
       ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
+        "Als u buitengesloten raakt uit uw ${ BRAND_NAME }-account, zal uw herstelkit u toelaten om in te liggen en uw data te herstellen."
+      ],
       "Invalid code": [
         "Ongeldige code"
+      ],
+      "Recovery phone number": [
+        "Herstel-telefoonnummer"
       ],
       "Review your account safety": [
         "Controleer de veiligheid van uw account"
@@ -13756,6 +13850,9 @@
       ],
       "Verify": [
         "Verifiëren"
+      ],
+      "You recovery email address is:": [
+        "Uw herstel e-mailadres is:"
       ],
       "Your recovery email": [
         "Uw herstel-e-mailadres"
@@ -15838,9 +15935,6 @@
       "Add pm.me subdomain": [
         "Voeg pm.me subdomein toe"
       ],
-      "Add servers": [
-        "Servers toevoegen"
-      ],
       "Add Sieve filter": [
         "Sieve-filter toevoegen"
       ],
@@ -16261,6 +16355,9 @@
         "${ failedUsers.length } gebruikersaccount aanmaken niet gelukt.",
         "${ failedUsers.length } gebruikersaccounts aanmaken niet gelukt."
       ],
+      "Filter for more focus": [
+        "Filter voor meer focus"
+      ],
       "Filter name cannot contain only spaces": [
         "Filternaam mag niet alleen spaties bevatten"
       ],
@@ -16439,6 +16536,9 @@
       "My calendars": [
         "Mijn agenda's"
       ],
+      "Need more labels or folders?": [
+        "Meer labels of mappen nodig?"
+      ],
       "Network error": [
         "Netwerkfout"
       ],
@@ -16603,6 +16703,9 @@
       ],
       "Revoke certificate": [
         "Certificaat intrekken"
+      ],
+      "Same inbox, shorter email address": [
+        "Zelfde inbox, korter e-mailadres"
       ],
       "SAML authentication": [
         "SAML-authenticatie"
@@ -17054,6 +17157,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Als u een geschenkcode heeft gekocht of een heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
+      ],
+      "IP address (Internet Service Provider)": [
+        "IP-adres (Internet Service Provider)"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Leden die geen 2FA gebruiken zullen een e-mail ontvangen met de vraag om het zo snel mogelijk in te schakelen."

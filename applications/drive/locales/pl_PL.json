@@ -390,10 +390,10 @@
       "Get link": [
         "Uzyskaj link"
       ],
-      "Get Started": [
+      "Get started": [
         "Rozpocznij"
       ],
-      "Get started": [
+      "Get Started": [
         "Rozpocznij"
       ],
       "Get verification code": [
@@ -567,11 +567,11 @@
       "Not now": [
         "Nie teraz"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Otwórz"
@@ -883,7 +883,7 @@
         "Ulepsz teraz"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Ulepsz do wersji ${ BRAND_NAME } Unlimited"
+        "Ulepsz plan do wersji ${ BRAND_NAME } Unlimited"
       ],
       "Upload anyway": [
         "Prześlij mimo to"
@@ -3402,8 +3402,14 @@
       "${ BRAND_NAME } groups": [
         "Grupy ${ BRAND_NAME }"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Konta z niestandardową domenę nie mogą dołączać do planu rodzinnego."
+      ],
       "customer support": [
         "wsparcie klienta"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Plany rodzinne nie są obsługiwane dla kont zewnętrznych. Przed dołączeniem utwórz adres ${ BRAND_NAME }. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jeśli zaakceptujesz zaproszenie, zmienimy obecny plan i obciążymy Twoje konto kwotą pozostałego salda."
@@ -3411,8 +3417,14 @@
       "Invited by: ${ inviteEmail }": [
         "Zaproszenie wysłane przez: ${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Konta dożywotnie nie mogę dołączyć do planu rodzinnego."
+      ],
       "Manage addresses.": [
         "Zarządzaj adresami."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Właściciele planu z użytkownikami nie mogą dołączać do innego planu rodzinnego."
       ],
       "Sorry, you can't switch plans at this time.": [
         "W tej chwili nie możesz zmienić planów."
@@ -3434,6 +3446,12 @@
       ],
       "You have successfully joined the family group": [
         "Dołączono do grupy rodzinnej"
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Masz nieopłacone faktury. Opłać je przed dołączeniem do planu rodzinnego."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Zaproszono Cię do połączenia konta ${ BRAND_NAME } z tym planem rodzinnym, aby razem korzystać z wszystkich funkcji premium ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Twoje konto ma większą liczbę adresów, niż jest to dostępne w planie. ${ addressSettingsLink }"
@@ -3617,12 +3635,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Została znaleziona ${ items.length } sugestia. Użyj klawiszy do nawigacji.",
-        "Zostały znalezione ${ items.length } sugestie. Użyj klawiszy do nawigacji.",
-        "Zostało znalezionych ${ items.length } sugestii. Użyj klawiszy do nawigacji.",
-        "Zostało znalezionych ${ items.length } sugestii. Użyj klawiszy do nawigacji."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Użyj klawiszy strzałek w górę i w dół, aby zobaczyć i wybrać sugestie. Naciśnij klawisz Enter, aby potwierdzić swój wybór lub Escape, aby zamknąć pole sugestii."
       ]
@@ -4042,6 +4054,12 @@
         "${ groupCounts } znalezione grupy",
         "${ groupCounts } znalezionych grup",
         "${ groupCounts } znalezionych grup"
+      ],
+      "${ invitations.length } pending invitation": [
+        "${ invitations.length } oczekujące zaproszenie",
+        "${ invitations.length } oczekujące zaproszenia",
+        "${ invitations.length } oczekujących zaproszeń",
+        "${ invitations.length } oczekujących zaproszeń"
       ],
       "${ nbFile } encrypted file": [
         "Zaszyfrowano ${ nbFile } plik",
@@ -7262,6 +7280,9 @@
       "Secure Core servers": [
         "Serwery Secure Core"
       ],
+      "Secure link sharing": [
+        "Bezpieczne udostępnianie linków"
+      ],
       "See team's availability": [
         "Sprawdzanie dostępności zespołu"
       ],
@@ -7352,6 +7373,12 @@
         "Do ${ n } użytkowników",
         "Do ${ n } użytkowników"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Do ${ n } użytkownika (${ adminsText }, ${ usersText })",
+        "Do ${ n } użytkowników (${ adminsText }, ${ usersText })",
+        "Do ${ n } użytkowników (${ adminsText }, ${ usersText })",
+        "Do ${ n } użytkowników (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Do ${ totalStorageSize } przestrzeni dyskowej"
       ],
@@ -7372,6 +7399,20 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skanujemy dark web, aby sprawdzić, czy adresy lub aliasy ${ BRAND_NAME } zostały ujawnione. W przypadku wycieku danych zostaniesz powiadomiony."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } administrator",
+        "${ admins } administratorów",
+        "${ admins } administratorów",
+        "${ admins } administratorów"
+      ],
+      "${ users } user": [
+        "${ users } użytkownik",
+        "${ users } użytkowników",
+        "${ users } użytkowników",
+        "${ users } użytkowników"
       ]
     },
     "new_plans: feature info": {
@@ -7447,6 +7488,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Ochrona poufnych informacji biznesowych i bezpieczna współpraca."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Chroń swoją rodzinę dzięki wszystkim funkcjom premium planu ${ PASS_SHORT_APP_NAME } Plus dla 6 użytkowników."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Chroń prywatność rodziny za pomocą usług ${ BRAND_NAME }."
@@ -7657,6 +7701,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpiecz swoje pliki za pomocą szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Bezpieczne udostępnianie pojedynczych elementów każdemu (nawet jeśli nie używa ${ PASS_APP_NAME })"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Bezpiecznie przechowuj szczegóły kontaktów, takie jak numer telefonu, adres, datę urodzin i osobiste notatki. Szyfrowanie po stronie klienta zapewnia, że nawet ${ BRAND_NAME } nie ma do nich dostępu."
@@ -8091,9 +8138,6 @@
       "Continue": [
         "Kontynuuj"
       ],
-      "Create new document": [
-        "Utwórz nowy dokument"
-      ],
       "Get started": [
         "Rozpocznij"
       ],
@@ -8124,9 +8168,6 @@
       "Start using ${ DRIVE_APP_NAME }": [
         "Zacznij korzystać z ${ DRIVE_APP_NAME }"
       ],
-      "Try it later": [
-        "Spróbuj ponownie później"
-      ],
       "Try the app": [
         "Wypróbuj aplikację"
       ],
@@ -8153,9 +8194,6 @@
       "Collaborate on documents": [
         "Współpracuj nad dokumentami"
       ],
-      "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
-        "Twórz i współpracuj nad dokumentami. Wszystko jest chronione za pomocą szyfrowania end-to-end."
-      ],
       "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
         "Wolisz ${ DRIVE_APP_NAME } w jasnym czy ciemnym motywie? Wybierz kolor, który najbardziej Cię inspiruje."
       ],
@@ -8169,13 +8207,13 @@
         "Szyfrowanie end-to-end plików"
       ],
       "Faster uploads for large or multiple files": [
-        "Szybsze przesyłanie dużych lub wielu plików"
+        "Szybsze przesyłanie wielu dużych plików"
       ],
       "Final approval in progress": [
-        "Ostateczne zatwierdzenie w toku"
+        "Zatwierdzenie jest w toku"
       ],
       "Final approval pending": [
-        "Oczekiwanie na ostateczne zatwierdzenie"
+        "Oczekiwanie na zatwierdzenie"
       ],
       "Free up hard drive space on your computer": [
         "Zwolnij miejsce na urządzeniu"
@@ -8197,9 +8235,6 @@
       ],
       "Hang tight": [
         "Poczekaj"
-      ],
-      "Introducing ${ DOCS_APP_NAME }": [
-        "Przedstawiamy ${ DOCS_APP_NAME }"
       ],
       "Invitation accepted": [
         "Zaakceptowano zaproszenie"
@@ -8356,6 +8391,37 @@
         "Bezpieczne udostępnianie ${ n } sejfów i linków",
         "Bezpieczne udostępnianie ${ n } sejfów i linków",
         "Bezpieczne udostępnianie ${ n } sejfów i linków"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } konto użytkownika",
+        "${ n } konta użytkowników",
+        "${ n } kont użytkowników",
+        "${ n } kont użytkowników"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Panel administratora do zarządzania użytkownikami i subskrypcją"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Wszystkie funkcje premium. 6 użytkowników. Jedna prosta subskrypcja."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Płatne rocznie ${ yearlyPrice }. Zaoszczędź ${ yearlySavedPrice } na subskrypcji planu ${ passFamilyPlanName } (w porównaniu do 6 indywidualnych subskrypcji ${ passPlusPlanName })."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Specjalna oferta dla pierwszych użytkowników ${ PASS_APP_NAME }."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Uzyskaj za ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Przedstawiamy plan ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Oferta ograniczona czasowo."
       ]
     },
     "passwordless": {
@@ -8728,6 +8794,11 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(otworzy ${ PASS_APP_NAME })"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Zobacz logi"
       ]
     },
     "Security Center - Info": {
@@ -10673,6 +10744,9 @@
       ],
       "What would you like to import?": [
         "Jakie dane chcesz zaimportować?"
+      ],
+      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Zamierzasz odrzucić zaproszenie do udostępnionego elementu. Nie będziesz mógł ponownie uzyskać do niego dostępu, dopóki właściciel go nie udostępni."
       ],
       "You have inaccessible files": [
         "Masz niedostępne pliki"

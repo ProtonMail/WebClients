@@ -70,11 +70,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "Activate": [
-        "Ativar"
-      ],
       "activate": [
         "ativar"
+      ],
+      "Activate": [
+        "Ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -4913,10 +4913,6 @@
       "Add": [
         "Adicionar"
       ],
-      "Add (${ numberOfAddedServers })": [
-        "Adicionar (${ numberOfAddedServers })",
-        "Adicionar (${ numberOfAddedServers })"
-      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Ligação para ${ plusVpnConnections } dispositivo",
         "Ligação para até ${ plusVpnConnections } dispositivos"
@@ -5367,9 +5363,6 @@
       "Checkout": [
         "Pagamento"
       ],
-      "Country": [
-        "País"
-      ],
       "Create your account": [
         "Crie a sua conta"
       ],
@@ -5510,10 +5503,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } sugestão foi encontrada. Utilize o teclado para navegar.",
-        "${ items.length } sugestões foram encontradas. Utilize o teclado para navegar."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Utilize as setas Acima e Abaixo para aceder e pesquisar sugestões após a entrada. Prima la tecla Enter para confirmar a sua escolha ou la tecla Esc para fechar a caixa de sugestões."
       ]
@@ -7041,9 +7030,6 @@
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
       ],
-      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "O número de servidores dedicados que tentou atribuir (${ addedCount }) é superior ao que está disponível no seu plano (${ remainingCount }) dado que dispõe de ${ ownedCount } e já utiliza ${ usedCount }."
-      ],
       "of": [
         "de"
       ],
@@ -7415,9 +7401,6 @@
       ],
       "Some keys successfully reactivated": [
         "Algumas chaves foram reativadas."
-      ],
-      "Some of your available servers can only be used in specific countries due to recent removals": [
-        "Alguns dos seus servidores disponíveis só podem ser utilizados em países específicos devido a eliminações recentes"
       ],
       "Stay tuned for future promotions.": [
         "Fique atento a futuras promoções."
@@ -7864,9 +7847,6 @@
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
-      "Want servers in other countries?": [
-        "Pretende servidores em outros países?"
-      ],
       "Want to learn more?": [
         "Quer saber mais?"
       ],
@@ -8031,9 +8011,6 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Pode ativar o registo de autenticação para ver quando a sua conta e de qual IP ela é acessada. Registamos o endereço IP que acessa a conta e a hora, bem como as tentativas sem êxito."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Pode desbloquear imediatamente a configuração acima ao adicionar ${ specificCountryCount } ao número de endereços IP no seu plano ou contactar-nos para soluções personalizadas."
-      ],
       "You can import one data type at a time.": [
         "Pode importar um tipo de dado por vez."
       ],
@@ -8078,10 +8055,6 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Não definiu um método de recuperação, a recuperação da conta será impossível se se esquecer da palavra-passe. Deseja continuar sem um método de recuperação?"
-      ],
-      "You have ${ availableCount } dedicated server available.": [
-        "Tem ${ availableCount } servidor dedicado disponível.",
-        "Tem ${ availableCount } servidores dedicados disponíveis."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Tem uma subscrição experimental ${ planTitle }. Se gostaria de continuar com a sua subscrição após o período de avaliação, por favor, adicione um método de pagamento."
@@ -9748,9 +9721,6 @@
       ],
       "Common sign up issues": [
         "Problemas de registo comuns"
-      ],
-      "Contact us": [
-        "Contacte-nos"
       ],
       "create a ticket": [
         "criar um ticket"
@@ -14000,9 +13970,6 @@
       "Add pm.me subdomain": [
         "Adicionar subdomínio pm.me"
       ],
-      "Add servers": [
-        "Adicionar servidores"
-      ],
       "Add Sieve filter": [
         "Adicionar filtro Sieve"
       ],
@@ -14149,12 +14116,6 @@
       ],
       "Connect ${ name }": [
         "Conectar ${ name }"
-      ],
-      "Connection monitor disabled": [
-        "Monitor de ligação desativado"
-      ],
-      "Connection monitor enabled": [
-        "Monitor de ligação ativado"
       ],
       "Contact us": [
         "Contacte-nos"
