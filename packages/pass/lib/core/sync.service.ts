@@ -8,7 +8,8 @@ export const createPassCoreSyncService = (): PassCoreService => {
     let wasmPromise: MaybeNull<Promise<PassCore>> = null;
 
     const loadWASM = async () =>
-        (wasmPromise = wasmPromise ?? import(/* webpackChunkName: "pass-core" */ '@protontech/pass-rust-core')).catch(
+        (wasmPromise =
+            wasmPromise ?? import(/* webpackChunkName: "pass-core.worker" */ '@protontech/pass-rust-core')).catch(
             (error) => {
                 /** Chrome extensions may encounter internal runtime errors (ie: `ChromeMethodBFE`)
                  * during WASM instantiation. We explicitly read `browser.runtime.lastError` to

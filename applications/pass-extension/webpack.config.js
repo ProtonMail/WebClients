@@ -159,7 +159,6 @@ module.exports = {
         chunkFilename: ({ chunk: { name, id } }) => {
             if (name === null) {
                 if (id === ARGON2_CHUNK_NAME) return 'chunk.crypto-argon2.js';
-                if (/pass-rust-core/.test(id)) return 'chunk.pass-core.[contenthash:8].js';
                 return 'chunk.[contenthash:8].js';
             }
 
