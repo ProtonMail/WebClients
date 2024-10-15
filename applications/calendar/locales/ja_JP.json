@@ -470,11 +470,11 @@
       "Not now": [
         "後で"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } の設定を開く"
@@ -2616,6 +2616,12 @@
       "Amount below minimum (${ minimumAmount }).": [
         "最低金額 (${ minimumAmount }) を下回っています。"
       ],
+      "An error occurred while loading alias options": [
+        "エイリアス設定の読み込み中にエラーが発生しました"
+      ],
+      "An error occurred while saving your alias": [
+        "エイリアスの保存中にエラーが発生しました"
+      ],
       "Answer failed to be sent": [
         "回答の送信に失敗しました"
       ],
@@ -2805,6 +2811,9 @@
       "No emails found to import - the account does not have an inbox": [
         "インポートするメールがありません - アカウントに受信箱がありません"
       ],
+      "No external key retrieved for user is valid for sending": [
+        "送信に有効なキーが取得されませんでした。"
+      ],
       "No valid address found": [
         "有効なアドレスが見つかりません"
       ],
@@ -2972,6 +2981,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "文字・数字・ _.- のみを使用してみてください"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "予期しないエラーにより、連絡先をインポートできません"
       ],
       "Unknown error": [
         "原因不明なエラーが発生しました"
@@ -3372,6 +3384,9 @@
       "Invited by: ${ inviteEmail }": [
         "招待者: ${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Lifetime アカウントはファミリープランに参加できません。"
+      ],
       "Manage addresses.": [
         "アドレスの管理"
       ],
@@ -3557,9 +3572,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } つの提案が見つかりました。キーボードを使って操作します。"
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "矢印キーで提案を表示し、選択することができます。エンターキーで確定し、エスケープキーで提案を閉じることができます。"
       ]
@@ -6080,6 +6092,9 @@
       "Password-protected Emails": [
         "パスワードで保護されたメール"
       ],
+      "Phone support (20+ users)": [
+        "電話サポート (20 ユーザー以上)"
+      ],
       "Priority email support": [
         "優先的なメールサポート"
       ],
@@ -6202,6 +6217,14 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、あなたの ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } 名の管理者"
+      ],
+      "${ users } user": [
+        "${ users }名のユーザー"
       ]
     },
     "new_plans: feature info": {
@@ -6825,6 +6848,11 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "安全な保管庫共有"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } 個のユーザーアカウント"
       ]
     },
     "passwordless": {
@@ -8037,6 +8065,9 @@
       "Import record deleted": [
         "インポート記録が削除されました"
       ],
+      "Invitation rejected": [
+        "招待が拒否されました"
+      ],
       "Invitation sent and all events updated": [
         "招待を送信し、予定は更新されました"
       ],
@@ -8875,8 +8906,16 @@
       "${ n } email address": [
         "${ n } メールアドレス"
       ],
+      "A safer way to hold your Bitcoin": [
+        "Bitcoin を保持する安全な方法"
+      ],
       "Bitcoin via email": [
         "メールで Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Bitcoin を保持・送信する安全で簡単な方法"
       ]
     },
     "wallet_signup_2024:Bug category": {

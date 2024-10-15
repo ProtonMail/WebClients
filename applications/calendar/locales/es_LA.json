@@ -482,10 +482,10 @@
       "Not now": [
         "Ahora no"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -3654,8 +3654,14 @@
       "${ BRAND_NAME } groups": [
         "Grupos de ${ BRAND_NAME }"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Las cuentas con dominios personalizados no pueden unirse a un plan familiar."
+      ],
       "customer support": [
         "soporte al cliente"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Los planes familiares actualmente no admiten cuentas externas. Cree una dirección de ${ BRAND_NAME } antes de unirse. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Si acepta la invitación, lo cambiaremos del plan actual y acreditaremos la cuenta con cualquier saldo restante."
@@ -3663,8 +3669,14 @@
       "Invited by: ${ inviteEmail }": [
         "Invitado por: ${ inviteEmail }"
       ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Las cuentas Lifetime no pueden unirse a un plan familiar."
+      ],
       "Manage addresses.": [
         "Gestionar direcciones."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Los dueños de un plan con miembros no pueden unirse a otro plan familiar."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Lamentablemente, no puede cambiar de plan en este momento."
@@ -3889,10 +3901,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Se encontró ${ items.length } sugerencia, use el teclado para navegar.",
-        "Se encontraron ${ items.length } sugerencias, use el teclado para navegar."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Use las teclas Arriba y Abajo para acceder y navegar por las sugerencias después de la entrada. Pulse Enter para confirmar su elección, o Escape para cerrar el cuadro de sugerencias."
       ]
@@ -6646,7 +6654,7 @@
         "Servidores Secure Core"
       ],
       "Secure link sharing": [
-        "Uso compartido seguro de enlaces"
+        "Uso compartido de enlaces seguros"
       ],
       "See team's availability": [
         "Ver la disponibilidad del equipo"
@@ -6735,6 +6743,10 @@
       "Up to ${ n } user": [
         "Hasta ${ n } usuario",
         "Hasta ${ n } usuarios"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Hasta ${ n } usuario (${ adminsText }, ${ usersText })",
+        "Hasta ${ n } usuarios (${ adminsText }, ${ usersText })"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Hasta ${ totalStorageSize } de almacenamiento"
@@ -6839,6 +6851,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Proteja la información sensible del negocio y colabore con seguridad."
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Proteja a su familia con todas las funciones premium de ${ PASS_SHORT_APP_NAME } Plus para seis usuarios."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Proteja la privacidad de su familia con todos los servicios combinados de ${ BRAND_NAME }."
@@ -7487,11 +7502,26 @@
       "${ n } user account": [
         "${ n } cuenta de usuario",
         "${ n } cuentas de usuario"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Panel de administración para gestionar usuarios y suscripciones"
       ]
     },
     "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Todos los servicios premium. Seis usuarios y una sola suscripción."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Se factura anualmente por ${ yearlyPrice }. Ahorre ${ yearlySavedPrice } con ${ passFamilyPlanName } (en comparación con 6 suscripciones individuales a ${ passPlusPlanName })."
+      ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
         "Oferta exclusiva disponible solo para los primeros seguidores de ${ PASS_APP_NAME }."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Obténgalo por ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Presentamos ${ passFamilyPlanName }"
       ],
       "Limited-time deal.": [
         "Oferta por tiempo limitado."
@@ -7870,6 +7900,11 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(abrirá ${ PASS_APP_NAME })"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Ver eventos"
       ]
     },
     "Security Center - Info": {
