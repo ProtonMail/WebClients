@@ -13,12 +13,20 @@ import type {
     AliasMailbox,
     AliasOptions,
     AliasToggleStatusDTO,
+    CatchAllDTO,
+    CustomDomainMailboxesDTO,
+    CustomDomainNameDTO,
+    CustomDomainOutput,
+    CustomDomainSettingsOutput,
+    CustomDomainValidationOutput,
     ItemRevision,
     MailboxDefaultDTO,
     MailboxDeleteDTO,
+    RandomPrefixDTO,
     SelectedItem,
     ShareId,
     SlSyncStatusOutput,
+    UserAliasDomainOutput,
     UserAliasSettingsGetOutput,
     UserMailboxOutput,
 } from '@proton/pass/types';
@@ -169,6 +177,7 @@ export const validateMailbox = requestActionsFactory<{ mailboxID: number; code: 
                 type: 'error',
                 error,
             })({ payload: getApiError(error) }),
+        config: { data: true },
     },
 });
 
@@ -230,5 +239,217 @@ export const setDefaultMailbox = requestActionsFactory<MailboxDefaultDTO, UserAl
                 type: 'error',
                 error,
             })({ payload }),
+    },
+});
+
+export const getAliasDomains = requestActionsFactory<void, UserAliasDomainOutput[]>('alias::domains')({
+    success: { config: { data: true } },
+});
+
+export const setDefaultAliasDomain = requestActionsFactory<string, UserAliasSettingsGetOutput>(
+    'alias::domain::set-default'
+)({
+    key: identity,
+    success: {
+        prepare: (payload) =>
+            withNotification({
+                type: 'success',
+                text: c('Success').t`Default domain successfully updated`,
+            })({ payload }),
+        config: { data: true },
+    },
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                text: c('Error').t`Failed to update default domain`,
+                type: 'error',
+                error,
+            })({ payload: null }),
+    },
+});
+
+export const getCustomDomains = requestActionsFactory<void, CustomDomainOutput[]>('alias::custom-domains')({
+    success: {
+        prepare: (payload) => withCache({ payload }),
+        config: { data: true },
+    },
+});
+
+export const createCustomDomain = requestActionsFactory<string, CustomDomainOutput>('alias::custom-domain::create')({
+    key: identity,
+    success: { config: { data: true } },
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                text: c('Error').t`Failed to create domain`,
+                type: 'error',
+                error,
+            })({ payload: null }),
+    },
+});
+
+export const getCustomDomainInfo = requestActionsFactory<number, CustomDomainOutput>('alias::custom-domain::info')({
+    key: String,
+    success: {
+        prepare: (payload) => withCache({ payload }),
+        config: { data: true },
+    },
+});
+
+export const verifyCustomDomain = requestActionsFactory<number, CustomDomainValidationOutput>(
+    'alias::custom-domain::validate'
+)({
+    key: String,
+    success: {
+        prepare: (payload) =>
+            withNotification({
+                type: 'success',
+                text: (() => {
+                    if (payload.OwnershipVerified && payload.MxVerified) {
+                        return c('Success')
+                            .t`Domain successfully verified. Your domain can start receiving emails and creating aliases`;
+                    } else if (payload.OwnershipVerified && !payload.MxVerified) {
+                        return c('Success').t`Domain ownership verified. You can now set up MX record.`;
+                    } else {
+                        return c('Error')
+                            .t`Domain could not be verified. Please make sure you added the correct DNS records`;
+                    }
+                })(),
+            })({ payload }),
+        config: { data: true },
+    },
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                text: c('Error').t`Failed to verify domain`,
+                type: 'error',
+                error,
+            })({ payload: null }),
+    },
+});
+
+export const deleteCustomDomain = requestActionsFactory<number, Boolean>('alias::custom-domain::delete')({
+    key: String,
+    success: {
+        prepare: () =>
+            withNotification({
+                type: 'success',
+                text: c('Success').t`Domain successfully deleted`,
+            })({ payload: {} }),
+    },
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                text: c('Error').t`Failed to delete domain`,
+                type: 'error',
+                error,
+            })({ payload: null }),
+    },
+});
+
+export const getCustomDomainSettings = requestActionsFactory<number, CustomDomainSettingsOutput>(
+    'alias::custom-domain::settings'
+)({
+    key: String,
+    success: { config: { data: true } },
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                text: c('Error').t`Failed to load domain settings.`,
+                type: 'error',
+                error,
+            })({ payload: null }),
+    },
+});
+
+export const updateCatchAll = requestActionsFactory<CatchAllDTO, CustomDomainSettingsOutput>(
+    'alias::custom-domain::settings::catch-all'
+)({
+    key: ({ domainID }) => String(domainID),
+    success: {
+        config: { data: true },
+        prepare: (data) =>
+            withNotification({
+                type: 'success',
+                text: data.CatchAll
+                    ? c('Success').t`Catch-all setting successfully enabled`
+                    : c('Success').t`Catch-all setting successfully disabled`,
+            })({ payload: data }),
+    },
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                text: c('Error').t`Failed to update catch-all setting.`,
+                type: 'error',
+                error,
+            })({ payload: null }),
+    },
+});
+
+export const updateCustomDomainDisplayName = requestActionsFactory<CustomDomainNameDTO, CustomDomainSettingsOutput>(
+    'alias::custom-domain::settings::name'
+)({
+    key: ({ domainID }) => String(domainID),
+    success: {
+        config: { data: true },
+        prepare: (data) =>
+            withNotification({
+                type: 'success',
+                text: c('Success').t`Display name successfully updated`,
+            })({ payload: data }),
+    },
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                text: c('Error').t`Failed to update domain name.`,
+                type: 'error',
+                error,
+            })({ payload: null }),
+    },
+});
+
+export const updateRandomPrefix = requestActionsFactory<RandomPrefixDTO, CustomDomainSettingsOutput>(
+    'alias::custom-domain::settings::random-prefix'
+)({
+    key: ({ domainID }) => String(domainID),
+    success: {
+        config: { data: true },
+        prepare: (data) =>
+            withNotification({
+                type: 'success',
+                text: data.RandomPrefixGeneration
+                    ? c('Success').t`Random prefix generation successfully enabled`
+                    : c('Success').t`Random prefix generation successfully disabled`,
+            })({ payload: data }),
+    },
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                text: c('Error').t`Failed to update random prefix generation setting.`,
+                type: 'error',
+                error,
+            })({ payload: null }),
+    },
+});
+
+export const updateCustomDomainMailboxes = requestActionsFactory<CustomDomainMailboxesDTO, CustomDomainSettingsOutput>(
+    'alias::custom-domain::settings::mailboxes'
+)({
+    key: ({ domainID }) => String(domainID),
+    success: {
+        config: { data: true },
+        prepare: (data) =>
+            withNotification({
+                type: 'success',
+                text: c('Success').t`Mailboxes successfully updated`,
+            })({ payload: data }),
+    },
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                text: c('Error').t`Failed to update domain mailboxes.`,
+                type: 'error',
+                error,
+            })({ payload: null }),
     },
 });

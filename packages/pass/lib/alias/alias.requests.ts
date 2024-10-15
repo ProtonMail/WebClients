@@ -13,11 +13,16 @@ import type {
     AliasOptions,
     AliasPending,
     AliasToggleStatusDTO,
+    CatchAllDTO,
     CreatePendingAliasRequest,
+    CustomDomainMailboxesDTO,
+    CustomDomainNameDTO,
+    CustomDomainOutput,
     EnableSLSyncRequest,
     ItemRevisionContentsResponse,
     MailboxDefaultDTO,
     MailboxDeleteDTO,
+    RandomPrefixDTO,
     SlSyncStatusOutput,
 } from '@proton/pass/types';
 import chunk from '@proton/utils/chunk';
@@ -177,5 +182,117 @@ export const setDefaultMailboxApi = async ({ defaultMailboxID }: MailboxDefaultD
             url: 'pass/v1/user/alias/settings/default_mailbox_id',
             method: 'put',
             data: { DefaultMailboxID: defaultMailboxID },
+        })
+    ).Settings!;
+
+export const getAliasDomainsApi = async () =>
+    (
+        await api({
+            url: `pass/v1/user/alias/domain`,
+            method: 'get',
+        })
+    ).Domains!;
+
+export const setDefaultAliasDomainApi = async (domain: string) =>
+    (
+        await api({
+            url: 'pass/v1/user/alias/settings/default_alias_domain',
+            method: 'put',
+            data: { DefaultAliasDomain: domain },
+        })
+    ).Settings!;
+
+export const getCustomDomainsApi = async (): Promise<CustomDomainOutput[]> =>
+    createPageIterator({
+        request: async (cursor) => {
+            const result = await api({
+                url: `pass/v1/user/alias/custom_domain`,
+                method: 'get',
+                params: { LastID: cursor },
+            });
+            const pending = result.CustomDomains?.Domains ?? [];
+            const total = result.CustomDomains?.Total ?? 0;
+
+            // BE may return a non-null LastID even if there is no next page, so we set the cursor to null in that case
+            if (pending.length >= total) {
+                return { data: pending, cursor: null };
+            }
+
+            return { data: pending, cursor: result.CustomDomains?.LastID?.toString() };
+        },
+    })();
+
+export const getCustomDomainInfoApi = async (domainID: number) =>
+    (
+        await api({
+            url: `pass/v1/user/alias/custom_domain/${domainID}`,
+            method: 'get',
+        })
+    ).CustomDomain!;
+
+export const createCustomDomainApi = async (domain: string) =>
+    (
+        await api({
+            url: `pass/v1/user/alias/custom_domain`,
+            method: 'post',
+            data: { Domain: domain },
+        })
+    ).CustomDomain!;
+
+export const verifyCustomDomainApi = async (domainID: number) =>
+    (
+        await api({
+            url: `pass/v1/user/alias/custom_domain/${domainID}`,
+            method: 'post',
+        })
+    ).CustomDomainValidation!;
+
+export const deleteCustomDomainApi = async (domainID: number) =>
+    api({
+        url: `pass/v1/user/alias/custom_domain/${domainID}`,
+        method: 'delete',
+    }).then(() => true);
+
+export const getCustomDomainSettingsApi = async (domainID: number) =>
+    (
+        await api({
+            url: `pass/v1/user/alias/custom_domain/${domainID}/settings`,
+            method: 'get',
+        })
+    ).Settings!;
+
+export const updateCatchAllApi = async ({ domainID, catchAll }: CatchAllDTO) =>
+    (
+        await api({
+            url: `pass/v1/user/alias/custom_domain/${domainID}/settings/catch_all`,
+            method: 'put',
+            data: { CatchAll: catchAll },
+        })
+    ).Settings!;
+
+export const updateCustomDomainDisplayNameApi = async ({ domainID, name }: CustomDomainNameDTO) =>
+    (
+        await api({
+            url: `pass/v1/user/alias/custom_domain/${domainID}/settings/name`,
+            method: 'put',
+            data: { Name: name },
+        })
+    ).Settings!;
+
+export const updateRandomPrefixApi = async ({ domainID, randomPrefix }: RandomPrefixDTO) =>
+    (
+        await api({
+            url: `pass/v1/user/alias/custom_domain/${domainID}/settings/random_prefix`,
+            method: 'put',
+            data: { RandomPrefixGeneration: randomPrefix },
+        })
+    ).Settings!;
+
+export const updateCustomDomainMailboxesApi = async ({ domainID, mailboxIDs }: CustomDomainMailboxesDTO) =>
+    (
+        await api({
+            url: `pass/v1/user/alias/custom_domain/${domainID}/settings/mailboxes`,
+            method: 'put',
+            data: { MailboxIDs: mailboxIDs },
         })
     ).Settings!;

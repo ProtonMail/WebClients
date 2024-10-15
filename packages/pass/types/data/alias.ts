@@ -9,5 +9,11 @@ export type AliasDetails = { aliasEmail: string; mailboxes: AliasMailbox[] };
 export type AliasPending = { pendingAliasID: string; aliasEmail: string; aliasNote: string };
 export type AliasCreateFromPendingDTO = { shareId: string; pendingAliases: AliasPending[] };
 export type AliasToggleStatusDTO = UniqueItem & { enabled: boolean };
+
 export type MailboxDeleteDTO = { mailboxID: number; transferMailboxID: MaybeNull<number> };
 export type MailboxDefaultDTO = { defaultMailboxID: number };
+
+export type CatchAllDTO = { domainID: number; catchAll: boolean };
+export type CustomDomainMailboxesDTO = { domainID: number; mailboxIDs: number[] };
+export type CustomDomainNameDTO = { domainID: number; name: string };
+export type RandomPrefixDTO = { domainID: number; randomPrefix: boolean };
