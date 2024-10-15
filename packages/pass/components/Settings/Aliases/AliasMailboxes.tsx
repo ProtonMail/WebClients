@@ -1,4 +1,5 @@
 import { type FC, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -9,6 +10,7 @@ import { MailboxVerifyModal } from '@proton/pass/components/Settings/Aliases/Mai
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { getMailboxes } from '@proton/pass/store/actions';
+import { selectUserPlan } from '@proton/pass/store/selectors';
 import type { MaybeNull, UserMailboxOutput } from '@proton/pass/types';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 
@@ -20,6 +22,7 @@ export const AliasMailboxes: FC = () => {
     const [mailboxes, setMailboxes] = useState<MaybeNull<UserMailboxOutput[]>>(null);
     const [action, setAction] = useState<MaybeNull<MailboxAction>>(null);
     const getAllMailboxes = useActionRequest(getMailboxes.intent, { onSuccess: ({ data }) => setMailboxes(data) });
+    const canManageAlias = useSelector(selectUserPlan)?.ManageAlias;
 
     const handleAddMailboxClick = () => setAction({ type: 'add' });
 
@@ -52,12 +55,17 @@ export const AliasMailboxes: FC = () => {
     useEffect(getAllMailboxes.dispatch, []);
 
     return (
-        <SettingsPanel title={c('Label').t`Mailboxes`}>
+        <SettingsPanel title={c('Label').t`Mailboxes`} contentClassname="pt-4 pb-2">
             <div>{c('Info')
                 .t`Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.`}</div>
 
-            <Button color="weak" shape="solid" className="w-1/6 my-2" onClick={handleAddMailboxClick}>{c('Action')
-                .t`Add mailbox`}</Button>
+            <Button
+                color="weak"
+                shape="solid"
+                className="mt-2"
+                disabled={!canManageAlias}
+                onClick={handleAddMailboxClick}
+            >{c('Action').t`Add mailbox`}</Button>
 
             <AliasMailboxesTable
                 mailboxes={mailboxes}
