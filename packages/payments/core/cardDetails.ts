@@ -50,7 +50,7 @@ export const getDefaultCard = (): CardModel => {
 };
 export const isCardNumber = (value: string | undefined) => valid.number(value).isValid;
 export const isCVV = (value: string | undefined, maxLength: number) => valid.cvv(value, maxLength).isValid;
-export const isPostalCode = (value: string | undefined) => valid.postalCode(value).isValid;
+export const isPostalCode = (value: string | undefined) => Boolean(value && value.length >= 3);
 export const isExpirationDate = (month: string, year: string) => valid.expirationDate({ month, year }).isValid;
 
 const check = (card: CardModel, key: keyof CardModel): string | undefined => {
