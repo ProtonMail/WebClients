@@ -25,6 +25,7 @@ import {
 } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
 import Icons from '@proton/icons/Icons';
+import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
 import { ConnectivityProvider } from '@proton/pass/components/Core/ConnectivityProvider';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
@@ -58,7 +59,8 @@ import locales from './locales';
 
 import './app.scss';
 
-exposeAuthStore(createAuthStore(createSecureSessionStorage()));
+const authStore = exposeAuthStore(createAuthStore(createSecureSessionStorage()));
+
 exposeApi(createApi({ config: PASS_CONFIG }));
 exposePassCrypto(createPassCrypto());
 sentry({ config: PASS_CONFIG, sentryConfig: SENTRY_CONFIG });
@@ -106,8 +108,8 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     prepareImport: prepareImport,
     getLogs: logStore.read,
     writeToClipboard: async (str) => window.ctxBridge?.writeToClipboard(str),
-    getBiometricsKey: async (authStore: AuthStore) => {
-        const encryptedKD = authStore.getEncryptedOfflineKD();
+    getBiometricsKey: async ({ getEncryptedOfflineKD }: AuthStore) => {
+        const encryptedKD = getEncryptedOfflineKD();
         if (!encryptedKD) return;
         const biometricsKey = await window.ctxBridge?.getSecret(BIOMETRICS_KEY).catch(noop);
         return biometricsKey;
@@ -129,19 +131,21 @@ export const App = () => {
                             >
                                 <Router history={history}>
                                     <NavigationProvider>
-                                        <AuthSwitchProvider>
-                                            <AuthServiceProvider>
-                                                <StoreProvider>
-                                                    <Localized>
-                                                        <AppGuard />
-                                                    </Localized>
-                                                    <Portal>
-                                                        <ModalsChildren />
-                                                        <NotificationsChildren />
-                                                    </Portal>
-                                                </StoreProvider>
-                                            </AuthServiceProvider>
-                                        </AuthSwitchProvider>
+                                        <AuthStoreProvider store={authStore}>
+                                            <AuthSwitchProvider>
+                                                <AuthServiceProvider>
+                                                    <StoreProvider>
+                                                        <Localized>
+                                                            <AppGuard />
+                                                        </Localized>
+                                                        <Portal>
+                                                            <ModalsChildren />
+                                                            <NotificationsChildren />
+                                                        </Portal>
+                                                    </StoreProvider>
+                                                </AuthServiceProvider>
+                                            </AuthSwitchProvider>
+                                        </AuthStoreProvider>
                                     </NavigationProvider>
                                 </Router>
                             </ConnectivityProvider>
