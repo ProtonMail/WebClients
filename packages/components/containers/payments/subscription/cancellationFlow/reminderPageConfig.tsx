@@ -1,3 +1,4 @@
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { PLANS } from '@proton/shared/lib/constants';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import type { SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
@@ -14,12 +15,12 @@ import { getVisionaryConfig } from './config/visionary';
 import type { PlanConfig } from './interface';
 
 export const getReminderPageConfig = ({
+    app,
     subscription,
-    vpnCountries,
     user,
 }: {
+    app?: APP_NAMES;
     subscription?: SubscriptionModel;
-    vpnCountries?: number | null;
     user: UserModel;
 }): PlanConfig | null => {
     const plan = getPlan(subscription);
@@ -28,42 +29,40 @@ export const getReminderPageConfig = ({
         return null;
     }
 
-    const vpnCountriesCount = vpnCountries || 90;
-
     if (plan.Name === PLANS.MAIL) {
-        return getMailPlusConfig(subscription, user, plan);
+        return getMailPlusConfig({ plan, subscription, user });
     }
 
     if (plan.Name === PLANS.BUNDLE) {
-        return getBundleConfig(subscription, user, plan, vpnCountriesCount);
+        return getBundleConfig({ app, plan, subscription, user });
     }
 
     if (plan.Name === PLANS.FAMILY) {
-        return getFamilyConfig(subscription, user, plan, vpnCountriesCount);
+        return getFamilyConfig({ plan, subscription, user });
     }
 
     if (plan.Name === PLANS.DUO) {
-        return getDuoConfig(subscription, user, plan, vpnCountriesCount);
+        return getDuoConfig({ app, plan, subscription, user });
     }
 
     if (plan.Name === PLANS.VISIONARY) {
-        return getVisionaryConfig(subscription, user, plan, vpnCountriesCount);
+        return getVisionaryConfig({ app, plan, subscription, user });
     }
 
     if (plan.Name === PLANS.DRIVE) {
-        return getDrivePlusConfig(subscription, user, plan);
+        return getDrivePlusConfig({ plan, subscription, user });
     }
 
     if (plan.Name === PLANS.MAIL_PRO) {
-        return getMailEssentialConfig(subscription, user, plan);
+        return getMailEssentialConfig({ plan, subscription, user });
     }
 
     if (plan.Name === PLANS.MAIL_BUSINESS) {
-        return getMailBusinessConfig(subscription, user, plan);
+        return getMailBusinessConfig({ app, plan, subscription, user });
     }
 
     if (plan.Name === PLANS.BUNDLE_PRO_2024 || plan.Name === PLANS.BUNDLE_PRO) {
-        return getBundleProConfig(subscription, user, plan);
+        return getBundleProConfig({ app, plan, subscription, user });
     }
 
     return null;

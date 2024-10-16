@@ -1,20 +1,18 @@
 import { c, msgid } from 'ttag';
 
 import {
+    APPS,
     BRAND_NAME,
     CALENDAR_APP_NAME,
-    DARK_WEB_MONITORING_NAME,
-    DRIVE_APP_NAME,
-    MAIL_APP_NAME,
-    PASS_APP_NAME,
+    DRIVE_SHORT_APP_NAME,
+    PASS_SHORT_APP_NAME,
     PLANS,
     PLAN_NAMES,
     PROTON_SENTINEL_NAME,
-    VPN_APP_NAME,
+    VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
-import type { SubscriptionModel, SubscriptionPlan, UserModel } from '@proton/shared/lib/interfaces';
 
 import type {
     ConfirmationModal,
@@ -29,20 +27,23 @@ import {
     getDefaultReminder,
     getDefaultTestimonial,
 } from './b2bCommonConfig';
+import type { ConfigProps, UpsellPlans } from './types';
 
-export const getBundleProConfig = (
-    subscription: SubscriptionModel,
-    user: UserModel,
-    plan: SubscriptionPlan & { Name: PLANS }
-): PlanConfig => {
+const upsellPlans: UpsellPlans = {
+    [APPS.PROTONMAIL]: PLANS.MAIL_BUSINESS,
+};
+
+export const getBundleProConfig = ({ app, plan, subscription, user }: ConfigProps): PlanConfig => {
     const currentPlan = PLANS.BUNDLE_PRO_2024;
     const planName = PLAN_NAMES[currentPlan];
     const planMaxSpace = humanSize({ bytes: plan.MaxSpace, unit: 'GB', fraction: 0 });
+    const planNumberOfEmails = plan.MaxAddresses;
+    const planNumberOfDomains = plan.MaxDomains;
+    const planNumberOfCalendars = plan.MaxCalendars;
 
     const reminder = getDefaultReminder(planName);
     const testimonials: PlanConfigTestimonial = getDefaultTestimonial(planName);
 
-    const { MaxDomains: maxDomainNames, MaxCalendars } = plan;
     const features: PlanConfigFeatures = {
         title: c('Subscription reminder').t`Productivity features`,
         description: c('Subscription reminder')
@@ -54,51 +55,56 @@ export const getBundleProConfig = (
             },
             {
                 icon: 'envelopes',
-                text: c('Subscription reminder').t`20 email addresses per user`,
+                text: c('Subscription reminder').ngettext(
+                    msgid`${planNumberOfEmails} email address per user`,
+                    `${planNumberOfEmails} email addresses per user`,
+                    planNumberOfEmails
+                ),
+            },
+            {
+                icon: 'folders',
+                text: c('Subscription reminder').t`Folders, labels, and custom filters`,
             },
             {
                 icon: 'globe',
                 text: c('Subscription reminder').ngettext(
-                    msgid`${maxDomainNames} custom email domain`,
-                    `${maxDomainNames} custom email domains`,
-                    maxDomainNames
+                    msgid`${planNumberOfDomains} custom email domain`,
+                    `${planNumberOfDomains} custom email domains`,
+                    planNumberOfDomains
                 ),
+            },
+            {
+                icon: 'at',
+                text: c('Subscription reminder').t`Catch-all email address`,
+            },
+            {
+                icon: 'tv',
+                text: c('Subscription reminder').t`Desktop app and email client support (via IMAP)`,
+            },
+            {
+                icon: 'envelope-arrow-up-and-right',
+                text: c('Subscription reminder').t`Automatic email forwarding`,
             },
             {
                 icon: 'calendar-grid',
                 text: c('Subscription reminder').ngettext(
-                    msgid`${MaxCalendars} calendar per user`,
-                    `${MaxCalendars} calendars per user`,
-                    MaxCalendars
+                    msgid`${planNumberOfCalendars} calendar per user`,
+                    `${planNumberOfCalendars} calendars per user`,
+                    planNumberOfCalendars
                 ),
             },
             {
-                icon: 'brand-proton-mail',
-                text: c('Subscription reminder').t`${MAIL_APP_NAME} with automatic email forwarding`,
-            },
-            {
-                icon: 'brand-proton-calendar',
-                text: c('Subscription reminder').t`${CALENDAR_APP_NAME} with calendar sharing and availability`,
-            },
-            {
-                icon: 'brand-proton-drive',
-                text: c('Subscription reminder').t`${DRIVE_APP_NAME} with version history`,
-            },
-            {
-                icon: 'brand-proton-pass',
-                text: c('Subscription reminder').t`${PASS_APP_NAME} with ${DARK_WEB_MONITORING_NAME}`,
-            },
-            {
-                icon: 'brand-proton-vpn',
-                text: c('Subscription reminder').t`${VPN_APP_NAME} with malware and ad-blocking`,
-            },
-            {
                 icon: 'shield-half-filled',
-                text: c('Subscription reminder').t`${PROTON_SENTINEL_NAME} program`,
+                text: c('Subscription reminder').t`${PROTON_SENTINEL_NAME} advanced account protection`,
             },
             {
                 icon: 'life-ring',
                 text: c('Subscription reminder').t`Priority support`,
+            },
+            {
+                icon: 'app-switch',
+                text: c('Subscription reminder')
+                    .t`${CALENDAR_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, and ${VPN_SHORT_APP_NAME} with premium features`,
             },
         ],
     };
@@ -121,5 +127,6 @@ export const getBundleProConfig = (
         storage,
         confirmationModal,
         plan: currentPlan,
+        upsellPlan: app && upsellPlans[app],
     };
 };

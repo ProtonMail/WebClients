@@ -1,18 +1,17 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import {
+    APPS,
     CALENDAR_APP_NAME,
-    DRIVE_APP_NAME,
-    MAIL_APP_NAME,
-    PASS_APP_NAME,
+    DRIVE_SHORT_APP_NAME,
+    PASS_SHORT_APP_NAME,
     PLANS,
     PLAN_NAMES,
     PROTON_SENTINEL_NAME,
-    VPN_APP_NAME,
+    VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
-import type { SubscriptionModel, SubscriptionPlan, UserModel } from '@proton/shared/lib/interfaces';
 
 import type {
     ConfirmationModal,
@@ -27,19 +26,21 @@ import {
     getDefaultTBStorageWarning,
     getDefaultTestimonial,
 } from './b2cCommonConfig';
+import type { ConfigProps, UpsellPlans } from './types';
 
-export const getDuoConfig = (
-    subscription: SubscriptionModel,
-    user: UserModel,
-    plan: SubscriptionPlan & { Name: PLANS },
-    vpnCountries: number
-): PlanConfig => {
+export const getDuoConfig = ({ app, plan, subscription, user }: ConfigProps): PlanConfig => {
     const currentPlan = PLANS.DUO;
     const planName = PLAN_NAMES[currentPlan];
     const planMaxSpace = humanSize({ bytes: plan.MaxSpace, unit: 'TB', fraction: 0 });
+    const planNumberOfEmails = plan.MaxAddresses;
+    const planNumberOfDomains = plan.MaxDomains;
 
     const reminder = getDefaultReminder(planName);
     const testimonials: PlanConfigTestimonial = getDefaultTestimonial();
+
+    const upsellPlans: UpsellPlans = {
+        [APPS.PROTONMAIL]: PLANS.BUNDLE,
+    };
 
     const features: PlanConfigFeatures = {
         title: c('Subscription reminder').t`Unlimited privacy for two`,
@@ -56,32 +57,40 @@ export const getDuoConfig = (
             },
             {
                 icon: 'shield-half-filled',
-                text: c('Subscription reminder').t`${PROTON_SENTINEL_NAME} program`,
+                text: c('Subscription reminder').t`${PROTON_SENTINEL_NAME} advanced account protection`,
             },
             {
                 icon: 'life-ring',
                 text: c('Subscription reminder').t`Priority support`,
             },
             {
-                icon: 'brand-proton-mail',
-                text: c('Subscription reminder').t`${MAIL_APP_NAME} and all premium productivity features`,
+                icon: 'envelopes',
+                text: c('Subscription reminder').ngettext(
+                    msgid`${planNumberOfEmails} email address`,
+                    `${planNumberOfEmails} email addresses`,
+                    planNumberOfEmails
+                ),
             },
             {
-                icon: 'brand-proton-calendar',
-                text: c('Subscription reminder').t`${CALENDAR_APP_NAME} including calendar sharing`,
+                icon: 'folders',
+                text: c('Subscription reminder').t`Folders, labels, and custom filters`,
             },
             {
-                icon: 'brand-proton-drive',
-                text: c('Subscription reminder').t`${DRIVE_APP_NAME} including version history`,
+                icon: 'globe',
+                text: c('Subscription reminder').ngettext(
+                    msgid`${planNumberOfDomains} custom email domain`,
+                    `${planNumberOfDomains} custom email domains`,
+                    planNumberOfDomains
+                ),
             },
             {
-                icon: 'brand-proton-pass',
-                text: c('Subscription reminder').t`${PASS_APP_NAME} including unlimited hide-my-email aliases`,
+                icon: 'at',
+                text: c('Subscription reminder').t`Your own short @pm.me email alias`,
             },
             {
-                icon: 'brand-proton-vpn',
+                icon: 'app-switch',
                 text: c('Subscription reminder')
-                    .t`${VPN_APP_NAME} with access to all high-speed servers in ${vpnCountries} countries`,
+                    .t`${CALENDAR_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, and ${VPN_SHORT_APP_NAME} with premium features`,
             },
         ],
     };
@@ -91,12 +100,13 @@ export const getDuoConfig = (
     const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(subscription, planName, cancellablePlan);
 
     return {
+        confirmationModal,
+        features,
+        plan: currentPlan,
         planName,
         reminder,
-        testimonials,
-        features,
         storage,
-        confirmationModal,
-        plan: currentPlan,
+        testimonials,
+        upsellPlan: app && upsellPlans[app],
     };
 };
