@@ -40,10 +40,13 @@ export const PhotosView: FC<void> = () => {
     const isShiftPressed = useShiftKey();
     const thumbnails = useThumbnailsDownload();
 
-    const handleItemRender = (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
-        incrementItemRenderedCounter();
-        loadPhotoLink(itemLinkId, domRef);
-    };
+    const handleItemRender = useCallback(
+        (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
+            incrementItemRenderedCounter();
+            loadPhotoLink(itemLinkId, domRef);
+        },
+        [incrementItemRenderedCounter, loadPhotoLink]
+    );
 
     const handleItemRenderLoadedLink = (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
         if (shareId) {
