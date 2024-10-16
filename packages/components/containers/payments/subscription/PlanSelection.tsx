@@ -36,6 +36,7 @@ import {
     getPricePerCycle,
     hasMaximumCycle,
     hasPass,
+    hasPassFamily,
     hasSomeAddonOrPlan,
 } from '@proton/shared/lib/helpers/subscription';
 import {
@@ -254,7 +255,8 @@ export function useAccessiblePlans({
         canAccessDuoPlan ? plansMap[PLANS.DUO] : null,
     ]);
 
-    const canAccessPassFamilyPlan = (isFree(user) && app === APPS.PROTONPASS) || hasPass(subscription);
+    const canAccessPassFamilyPlan =
+        (isFree(user) && app === APPS.PROTONPASS) || hasPass(subscription) || hasPassFamily(subscription);
     let FamilyPlans = filterPlans([
         hasFreePlan ? FREE_PLAN : null,
         canAccessDuoPlan && !canAccessPassFamilyPlan ? plansMap[PLANS.DUO] : null,
