@@ -2,7 +2,7 @@ import type { Environment } from '@proton/shared/lib/interfaces';
 
 import type { ThemeModeSetting, ThemeSetting, ThemeTypes } from '../themes/themes';
 import type { DefaultProtocol } from './DefaultProtocol';
-import type { DesktopVersion } from './DesktopVersion';
+import type { AppVersion, DesktopVersion } from './DesktopVersion';
 
 export interface DesktopThemeSetting {
     Mode: ThemeModeSetting;
@@ -27,12 +27,14 @@ export type IPCInboxDesktopFeature =
     | 'MultiAccount'
     | 'LatestVersionCheck'
     | 'InstallSource'
-    | 'MailtoTelemetry';
+    | 'MailtoTelemetry'
+    | 'StoreVersion';
 export type IPCInboxGetInfoMessage =
     | { type: 'theme'; result: ThemeSetting }
     | { type: 'latestVersion'; result: DesktopVersion | null }
     | { type: 'installSource'; result: string | null }
-    | { type: 'defaultMailto'; result: DefaultProtocol };
+    | { type: 'defaultMailto'; result: DefaultProtocol }
+    | { type: 'getAllAppVersions'; result: string };
 export type IPCInboxClientUpdateMessage =
     | { type: 'updateNotification'; payload: number }
     | { type: 'userLogin'; payload?: undefined }
@@ -48,7 +50,8 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'setTheme'; payload: ThemeSetting }
     | { type: 'earlyAccess'; payload: Environment | undefined }
     | { type: 'checkDefaultMailtoAndSignal'; payload?: undefined }
-    | { type: 'defaultMailtoTelemetryReported'; payload: number };
+    | { type: 'defaultMailtoTelemetryReported'; payload: number }
+    | { type: 'storeAppVersion'; payload: AppVersion };
 export type IPCInboxClientUpdateMessageType = IPCInboxClientUpdateMessage['type'];
 
 // WARNING: DO NOT EXTEND THIS WITH OTHER UNION. IT IS NOT EASY AND EVENTS WON'T BE TYPESAFE

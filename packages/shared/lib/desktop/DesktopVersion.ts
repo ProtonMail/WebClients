@@ -29,3 +29,8 @@ export const VersionFileSchema = z.object({
 
 export type DesktopVersion = z.infer<typeof DesktopVersionSchema>;
 export type VersionFile = z.infer<typeof VersionFileSchema>;
+
+export type AppVersion = {
+    name: string;
+    version: string;
+};
