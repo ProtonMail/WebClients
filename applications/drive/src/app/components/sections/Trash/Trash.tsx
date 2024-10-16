@@ -131,12 +131,15 @@ function Trash({ trashView, shareId }: Props) {
         [navigateToLink, browserItems]
     );
 
-    const handleItemRender = (item: TrashItem) => {
-        incrementItemRenderedCounter();
-        if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
-            thumbnails.addToDownloadQueue(item.rootShareId, item.linkId, item.activeRevision.id);
-        }
-    };
+    const handleItemRender = useCallback(
+        (item: TrashItem) => {
+            incrementItemRenderedCounter();
+            if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
+                thumbnails.addToDownloadQueue(item.rootShareId, item.linkId, item.activeRevision.id);
+            }
+        },
+        [thumbnails, incrementItemRenderedCounter]
+    );
 
     /* eslint-disable react/display-name */
     const GridHeaderComponent = useMemo(
