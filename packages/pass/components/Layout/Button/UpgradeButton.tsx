@@ -53,7 +53,7 @@ export const UpgradeButton: FC<UpgradeButtonProps> = ({
         <ButtonComponent
             className={clsx(
                 'items-center flex-nowrap shrink-0',
-                inline ? 'inline-flex link link-focus align-baseline text-left' : 'flex',
+                inline ? 'inline-flex link link-focus align-baseline text-left p-0' : 'flex',
                 className
             )}
             color="norm"
