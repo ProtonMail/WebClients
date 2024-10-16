@@ -21,7 +21,6 @@ import { getAppVersionStr } from '@proton/shared/lib/fetch/headers';
 import { getDecryptedAddressKeysHelper } from '@proton/shared/lib/keys';
 
 import { WalletType } from '..';
-import { POOL_FILLING_THRESHOLD } from '../constants/settings';
 import { encryptWalletData } from '../utils/crypto';
 import { getDefaultWalletName } from '../utils/wallet';
 
@@ -103,7 +102,7 @@ export const useWalletAutoCreate = ({ higherLevelPilot = true }: { higherLevelPi
 
         // Fill bitcoin address pool
         const addressesPoolPayload = await account.generateBitcoinAddressesPayloadToFillPool({
-            addressesToCreate: POOL_FILLING_THRESHOLD,
+            addressesToCreate: walletAccount.PoolSize,
             wasmAccount,
             walletAccountAddressKey: primaryAddressKey,
         });
