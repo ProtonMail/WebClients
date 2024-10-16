@@ -16,19 +16,18 @@ import { useCurrencies } from '@proton/components/payments/client-extensions/use
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
-import type { MultiCheckSubscriptionData, PaymentMethodStatusExtended } from '@proton/payments';
-import {
-    type BillingAddress,
-    type CheckWithAutomaticOptions,
-    PAYMENT_METHOD_TYPES,
-    getPlansMap,
-    isOnSessionMigration,
+import type {
+    BillingAddress,
+    CheckWithAutomaticOptions,
+    MultiCheckSubscriptionData,
+    PaymentMethodStatusExtended,
 } from '@proton/payments';
+import { PAYMENT_METHOD_TYPES, getPlansMap, isOnSessionMigration } from '@proton/payments';
 import type { CheckSubscriptionData } from '@proton/shared/lib/api/payments';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
-import { APPS, DEFAULT_CURRENCY, PLANS, PLAN_TYPES, isFreeSubscription } from '@proton/shared/lib/constants';
+import { APPS, DEFAULT_CURRENCY, PLANS, isFreeSubscription } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { AddonGuard } from '@proton/shared/lib/helpers/addons';
 import { getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
@@ -48,7 +47,6 @@ import {
     getIsVpnPlan,
     getMaximumCycleForApp,
     getPlanIDs,
-    hasVisionary,
 } from '@proton/shared/lib/helpers/subscription';
 import type {
     Currency,
@@ -87,12 +85,10 @@ import PaymentWrapper from '../PaymentWrapper';
 import { ProtonPlanCustomizer } from '../planCustomizer/ProtonPlanCustomizer';
 import { getHasPlanCustomizer } from '../planCustomizer/helpers';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
-import type { VisionaryWarningModalOwnProps } from './PlanLossWarningModal';
-import { VisionaryWarningModal } from './PlanLossWarningModal';
 import PlanSelection from './PlanSelection';
 import { RenewalEnableNote } from './RenewalEnableNote';
 import SubscriptionSubmitButton from './SubscriptionSubmitButton';
-import { useCancelSubscriptionFlow } from './cancelSubscription';
+import { useCancelSubscriptionFlow } from './cancelSubscription/useCancelSubscriptionFlow';
 import { SUBSCRIPTION_STEPS } from './constants';
 import SubscriptionCheckoutCycleItem from './cycle-selector/SubscriptionCheckoutCycleItem';
 import SubscriptionCycleSelector from './cycle-selector/SubscriptionCycleSelector';
@@ -241,7 +237,6 @@ const SubscriptionContainer = ({
     const [user] = useUser();
     const { call } = useEventManager();
     const pollEventsMultipleTimes = usePollEvents();
-    const [visionaryWarningModal, showVisionaryWarningModal] = useModalTwoPromise<VisionaryWarningModalOwnProps>();
     const [calendarDowngradeModal, showCalendarDowngradeModal] = useModalTwoPromise();
     const { createNotification } = useNotifications();
     const { cancelSubscriptionModals, cancelSubscription } = useCancelSubscriptionFlow({ app });
@@ -388,15 +383,6 @@ const SubscriptionContainer = ({
 
     const amount = model.step === SUBSCRIPTION_STEPS.CHECKOUT ? amountDue : 0;
 
-    const handlePlanWarnings = async (planIDs: PlanIDs) => {
-        const newPlanName = Object.keys(planIDs).find((planName) =>
-            plans.find((plan) => plan.Type === PLAN_TYPES.PLAN && plan.Name === planName)
-        );
-        if (hasVisionary(subscription) && PLANS.VISIONARY !== newPlanName) {
-            await showVisionaryWarningModal({ type: !newPlanName ? 'downgrade' : 'switch' });
-        }
-    };
-
     const getCodesForSubscription = () => {
         return getCodes({
             // the gift code is always set by user directly, it can't come from subscription or from
@@ -419,12 +405,6 @@ const SubscriptionContainer = ({
                 return;
             }
             onUnsubscribed?.();
-            return;
-        }
-
-        try {
-            await handlePlanWarnings(operationsSubscriptionData.Plans);
-        } catch (e) {
             return;
         }
 
@@ -715,7 +695,9 @@ const SubscriptionContainer = ({
                     abortControllerRef.current.signal
                 );
             } catch (error) {
+                // eslint-disable-next-line no-console
                 console.warn(error);
+                // eslint-disable-next-line no-console
                 console.warn('Additional Check calls failed');
             }
 
@@ -1038,23 +1020,21 @@ const SubscriptionContainer = ({
                                             {c('Label').t`Subscription options`}
                                         </h2>
                                         {hasPlanCustomizer && currentPlan && (
-                                            <>
-                                                <ProtonPlanCustomizer
-                                                    scribeEnabled={scribeEnabled.paymentsEnabled}
-                                                    loading={blockAccountSizeSelector}
-                                                    currency={model.currency}
-                                                    cycle={model.cycle}
-                                                    plansMap={plansMap}
-                                                    currentPlan={currentPlan}
-                                                    planIDs={optimisticPlanIDs ?? model.planIDs}
-                                                    onChangePlanIDs={handleOptimisticPlanIDs}
-                                                    forceHideDescriptions
-                                                    showUsersTooltip={false}
-                                                    latestSubscription={latestSubscription}
-                                                    allowedAddonTypes={allowedAddonTypes}
-                                                    className="mb-8"
-                                                />
-                                            </>
+                                            <ProtonPlanCustomizer
+                                                scribeEnabled={scribeEnabled.paymentsEnabled}
+                                                loading={blockAccountSizeSelector}
+                                                currency={model.currency}
+                                                cycle={model.cycle}
+                                                plansMap={plansMap}
+                                                currentPlan={currentPlan}
+                                                planIDs={optimisticPlanIDs ?? model.planIDs}
+                                                onChangePlanIDs={handleOptimisticPlanIDs}
+                                                forceHideDescriptions
+                                                showUsersTooltip={false}
+                                                latestSubscription={latestSubscription}
+                                                allowedAddonTypes={allowedAddonTypes}
+                                                className="mb-8"
+                                            />
                                         )}
                                         <div className="mb-8">
                                             {disableCycleSelector ? (
@@ -1180,9 +1160,6 @@ const SubscriptionContainer = ({
 
     return (
         <>
-            {visionaryWarningModal((props) => {
-                return <VisionaryWarningModal {...props} onConfirm={props.onResolve} onClose={props.onReject} />;
-            })}
             {calendarDowngradeModal((props) => {
                 return (
                     <CalendarDowngradeModal

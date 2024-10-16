@@ -29,8 +29,10 @@ const defaultUser = {
 const defaultB2CSubscription = {
     Plans: [
         {
-            Type: PLAN_TYPES.PLAN,
+            MaxAddresses: 5,
+            MaxDomains: 1,
             Name: PLANS.MAIL,
+            Type: PLAN_TYPES.PLAN,
         },
     ],
 };
@@ -53,7 +55,9 @@ describe('Cancellation flow section', () => {
         mockUseSubscription.mockReturnValue([defaultB2CSubscription, false]);
 
         renderWithProviders(<CancellationReminderSection app={APPS.PROTONMAIL} />);
-        expect(screen.getByTestId('cancellation-flow:heading')).toBeInTheDocument();
+        expect(
+            screen.getByRole('heading', { name: `What you give up when you cancel ${PLAN_NAMES[PLANS.MAIL]}` })
+        ).toBeInTheDocument();
     });
 
     it.each([
@@ -66,10 +70,11 @@ describe('Cancellation flow section', () => {
             {
                 Plans: [
                     {
-                        Type: PLAN_TYPES.PLAN,
-                        Name: plan,
-                        MaxDomains: 10,
+                        MaxAddresses: 5,
                         MaxCalendars: 10,
+                        MaxDomains: 10,
+                        Name: plan,
+                        Type: PLAN_TYPES.PLAN,
                     },
                 ],
             },
@@ -77,10 +82,13 @@ describe('Cancellation flow section', () => {
         ]);
 
         renderWithProviders(<CancellationReminderSection app={APPS.PROTONMAIL} />);
-        expect(screen.getByTestId('cancellation-flow:heading')).toBeInTheDocument();
 
-        const keepButton = screen.getByTestId('cancellation-flow:keep-plan-button');
-        expect(keepButton).toHaveTextContent(`Keep ${planName}`);
+        expect(
+            screen.getByRole('heading', { name: `What you give up when you cancel ${planName}` })
+        ).toBeInTheDocument();
+
+        expect(screen.getByRole('button', { name: 'Keep subscription' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Cancel subscription' })).toBeInTheDocument();
     });
 
     it('Should redirect to the dashboard for free users', () => {

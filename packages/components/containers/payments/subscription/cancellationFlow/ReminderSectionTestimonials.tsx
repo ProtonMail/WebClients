@@ -11,7 +11,7 @@ const ReminderSectionTestimonials = ({
     title,
     description,
     learnMoreCTA,
-    learMoreLink,
+    learnMoreLink,
     testimonials,
 }: PlanConfigTestimonial) => {
     return (
@@ -21,25 +21,25 @@ const ReminderSectionTestimonials = ({
                 <SettingsParagraph>
                     <>
                         {description}
-                        {learnMoreCTA && learMoreLink && (
-                            <>
-                                <a className="block mt-3" href={learMoreLink} target="_blank" rel="noopener noreferrer">
-                                    {learnMoreCTA}
-                                </a>
-                            </>
-                        )}
+                        {learnMoreCTA && learnMoreLink ? (
+                            <a className="block mt-3" href={learnMoreLink} target="_blank" rel="noopener noreferrer">
+                                {learnMoreCTA}
+                            </a>
+                        ) : null}
                     </>
                 </SettingsParagraph>
             </SettingsSection>
-            <section className="testimonial-grid">
+            <section className="flex flex-column">
                 {testimonials.map(({ title, description, ctaText, link, picture }) => (
-                    <div key={title} className="border flex flex-column gap-2 rounded-lg h-full p-4">
-                        <img src={picture} alt={title} className="rounded-lg object-cover" />
-                        <p className="m-0 text-bold">{title}</p>
-                        <p className="m-0 grow color-weak text-sm">{description}</p>
-                        <a href={link} target="_blank" rel="noopener noreferrer">
-                            {ctaText}
-                        </a>
+                    <div key={title} className="flex flex-row flex-nowrap gap-2 rounded-lg h-full py-3">
+                        <img src={picture} alt={title} className="rounded-lg object-cover w-1/3 min-w-1/3" />
+                        <div className="flex flex-column gap-2 h-full pl-4">
+                            <p className="m-0 text-bold">{title}</p>
+                            <p className="m-0 grow color-weak text-sm">{description}</p>
+                            <a href={link} target="_blank" rel="noopener noreferrer">
+                                {ctaText}
+                            </a>
+                        </div>
                     </div>
                 ))}
             </section>

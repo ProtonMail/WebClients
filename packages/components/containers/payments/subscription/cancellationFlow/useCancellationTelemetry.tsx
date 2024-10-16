@@ -1,6 +1,6 @@
 import useApi from '@proton/components/hooks/useApi';
 import type { TelemetryEvents } from '@proton/shared/lib/api/telemetry';
-import { TelemetryMeasurementGroups, TelemtryAccountCancellationEvents } from '@proton/shared/lib/api/telemetry';
+import { TelemetryAccountCancellationEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 
@@ -40,38 +40,44 @@ const useCancellationTelemetry = () => {
     };
 
     const sendStartCancellationReport = (source: 'cancellation_section' | 'cancellation_pricing') => {
-        sendReport(TelemtryAccountCancellationEvents.startCancellation, {
+        sendReport(TelemetryAccountCancellationEvents.startCancellation, {
             cancellation_start: source,
         });
     };
 
     const sendCancelPageReport = (source: 'confirm_cancel' | 'keep_plan') => {
-        sendReport(TelemtryAccountCancellationEvents.cancelPage, {
+        sendReport(TelemetryAccountCancellationEvents.cancelPage, {
             cancel_action: source,
         });
     };
 
     const sendCancelModalReport = (source: 'confirm_cancel' | 'keep_plan') => {
-        sendReport(TelemtryAccountCancellationEvents.cancelModal, {
+        sendReport(TelemetryAccountCancellationEvents.cancelModal, {
             cancel_modal_action: source,
         });
     };
 
     const sendFeedbackModalReport = (source: 'confirm_feedback' | 'cancel_feedback') => {
-        sendReport(TelemtryAccountCancellationEvents.feedbackModal, {
+        sendReport(TelemetryAccountCancellationEvents.feedbackModal, {
             feedback_modal_action: source,
         });
     };
 
     const sendResubscribeModalReport = (source: 'resubscribe' | 'close_modal') => {
-        sendReport(TelemtryAccountCancellationEvents.resubscribeModal, {
+        sendReport(TelemetryAccountCancellationEvents.resubscribeModal, {
             resubscribe_modal_action: source,
         });
     };
 
     const sendDashboardReactivateReport = (source: string) => {
-        sendReport(TelemtryAccountCancellationEvents.dashboardReactivate, {
+        sendReport(TelemetryAccountCancellationEvents.dashboardReactivate, {
             cancellation_reactivate: validateSource(source),
+        });
+    };
+
+    const sendUpsellModalReport = (source: 'confirm_cancel' | 'keep_plan' | 'upsell') => {
+        sendReport(TelemetryAccountCancellationEvents.upsellModal, {
+            upsell_modal_action: source,
         });
     };
 
@@ -87,6 +93,9 @@ const useCancellationTelemetry = () => {
         sendResubscribeModalResubcribeReport: () => sendResubscribeModalReport('resubscribe'),
         sendResubscribeModalCloseReport: () => sendResubscribeModalReport('close_modal'),
         sendDashboardReactivateReport,
+        sendUpsellModalCancelReport: () => sendUpsellModalReport('confirm_cancel'),
+        sendUpsellModalCloseReport: () => sendUpsellModalReport('keep_plan'),
+        sendUpsellModalUpsellReport: () => sendUpsellModalReport('upsell'),
     };
 };
 

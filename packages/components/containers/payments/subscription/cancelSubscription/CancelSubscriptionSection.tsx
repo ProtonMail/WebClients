@@ -23,7 +23,7 @@ export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
         if (b2cAccess || b2bAccess) {
             redirectToCancellationFlow();
         } else {
-            void cancelSubscription();
+            void cancelSubscription(undefined, undefined, true);
         }
     };
 

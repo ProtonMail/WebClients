@@ -11,41 +11,39 @@ import netShield from '@proton/styles/assets/img/cancellation-flow/testimonial_n
 
 import type { ConfirmationModal, PlanConfigTestimonial } from '../interface';
 
-export const getDefaultTestimonial = (): PlanConfigTestimonial => {
-    return {
-        title: c('Subscription reminder').t`Direct contribution to our mission`,
-        description: c('Subscription reminder')
-            .t`${BRAND_NAME}'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.`,
-        learMoreLink: 'https://proton.me/about/impact',
-        learnMoreCTA: c('Subscription reminder').t`Learn more about our impact`,
-        testimonials: [
-            {
-                title: c('Subscription reminder').t`Our fight against censorship in Russia`,
-                description: c('Subscription reminder')
-                    .t`How we fought back when ${BRAND_NAME} was targeted in an aggressive censorship campaign.`,
-                ctaText: c('Subscription reminder').t`Read the story`,
-                link: 'https://www.nytimes.com/2022/12/06/technology/russia-internet-proton-vpn.html',
-                picture: darkWeb,
-            },
-            {
-                title: c('Subscription reminder').t`Helping activists in Hong Kong`,
-                description: c('Subscription reminder')
-                    .t`How we supported local activists when privacy and free speech were threatened in Hong Kong.`,
-                ctaText: c('Subscription reminder').t`Watch the interview`,
-                link: 'https://www.youtube.com/watch?v=QmFTporQpM8',
-                picture: netShield,
-            },
-            {
-                title: c('Subscription reminder').t`Unblocking internet access in Iran`,
-                description: c('Subscription reminder')
-                    .t`How our customer support team got our VPN app directly into people's hands.`,
-                ctaText: c('Subscription reminder').t`Read the story`,
-                link: 'https://www.pcmag.com/opinions/proton-vpns-new-stealth-feature-helps-fight-censorship-in-iran-and-russia',
-                picture: alias,
-            },
-        ],
-    };
-};
+export const getDefaultTestimonial = (): PlanConfigTestimonial => ({
+    title: c('Subscription reminder').t`Direct contribution to our mission`,
+    description: c('Subscription reminder')
+        .t`User subscriptions are ${BRAND_NAME}'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.`,
+    learnMoreLink: 'https://proton.me/about/impact',
+    learnMoreCTA: c('Subscription reminder').t`Learn more about our impact`,
+    testimonials: [
+        {
+            title: c('Subscription reminder').t`Our fight against censorship in Russia`,
+            description: c('Subscription reminder')
+                .t`How we fought back when ${BRAND_NAME} was blocked in an aggressive campaign.`,
+            ctaText: c('Subscription reminder').t`Read the story`,
+            link: 'https://www.nytimes.com/2022/12/06/technology/russia-internet-proton-vpn.html',
+            picture: darkWeb,
+        },
+        {
+            title: c('Subscription reminder').t`Helping activists in Hong Kong`,
+            description: c('Subscription reminder')
+                .t`How we supported local activists when privacy and free speech were threatened.`,
+            ctaText: c('Subscription reminder').t`Watch the interview`,
+            link: 'https://www.youtube.com/watch?v=QmFTporQpM8',
+            picture: netShield,
+        },
+        {
+            title: c('Subscription reminder').t`Unblocking internet access in Iran`,
+            description: c('Subscription reminder')
+                .t`How our customer support team got our VPN app directly into people's hands.`,
+            ctaText: c('Subscription reminder').t`Read the story`,
+            link: 'https://www.pcmag.com/opinions/proton-vpns-new-stealth-feature-helps-fight-censorship-in-iran-and-russia',
+            picture: alias,
+        },
+    ],
+});
 
 export const ExpirationTime = ({
     subscription,
@@ -90,22 +88,30 @@ export const getDefaultConfirmationModal = (
         </Href>
     );
 
-    const description = cancellablePlan
-        ? c('Subscription reminder')
-              .jt`Your ${planName} subscription ends on ${expiryDate}. After that, you'll be on the ${BRAND_NAME} Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${learnMoreLink}`
-        : c('Subscription reminder')
-              .jt`You still have ${expiryDate} on your ${planName} subscription. We'll add the credits for the remaining time to your ${BRAND_NAME} Account. Make sure you do not exceed the free plan limits before canceling. ${learnMoreLink}`;
+    const descriptionP1 = c('Subscription reminder')
+        .jt`When your ${planName} subscription ends on ${expiryDate}, you'll be downgraded to the ${BRAND_NAME} Free plan.`;
+    const descriptionP2 = c('Subscription reminder')
+        .t`If your usage exceeds free plan limits, you may experience restricted access to product features and your data.`;
+
+    const description = cancellablePlan ? (
+        <>
+            <p className="m-0 mb-1">{descriptionP1}</p>
+            <p className="m-0 mb-1">{descriptionP2}</p>
+            <p className="m-0 mb-1">{learnMoreLink}</p>
+        </>
+    ) : (
+        c('Subscription reminder')
+            .jt`You still have ${expiryDate} on your ${planName} subscription. We'll add the credits for the remaining time to your ${BRAND_NAME} Account. Make sure you do not exceed the free plan limits before canceling. ${learnMoreLink}`
+    );
 
     return {
         description,
-        warningTitle: c('Subscription reminder')
-            .t`If you exceed the free plan limits when your ${planName} subscription expires, you will not be able to:`,
+        warningTitle: c('Subscription reminder').t`If you exceed free plan limits, you won't be able to:`,
         warningPoints: [
             c('Subscription reminder').t`Receive new emails`,
             c('Subscription reminder').t`Send emails with attachments`,
             c('Subscription reminder').t`Manage your calendar`,
-            c('Subscription reminder').t`Sync files on devices`,
-            c('Subscription reminder').t`Add any new files`,
+            c('Subscription reminder').t`Upload any new files`,
             c('Subscription reminder').t`Back up photos from your devices`,
         ],
     };

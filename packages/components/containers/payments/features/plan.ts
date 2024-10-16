@@ -118,9 +118,13 @@ export const getEarlyAccessFeature = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getUpToNUsers = (n: number): PlanCardFeatureDefinition => {
+export const getUpToNUsers = (numberOfUsers: number): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').ngettext(msgid`${n} user`, `Up to ${n} users`, n),
+        text: c('new_plans: feature').ngettext(
+            msgid`${numberOfUsers} user`,
+            `Up to ${numberOfUsers} users`,
+            numberOfUsers
+        ),
         included: true,
     };
 };

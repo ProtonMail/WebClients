@@ -8,7 +8,7 @@ export interface PlanConfigReminder {
 export interface PlanConfigTestimonial {
     title: string;
     description: string;
-    learMoreLink?: string;
+    learnMoreLink?: string;
     learnMoreCTA?: string;
     testimonials: {
         title: string;
@@ -26,7 +26,6 @@ export interface PlanConfigFeatures {
         icon: IconName;
         text: string;
     }[];
-    extraWarning?: string;
 }
 
 export interface PlanConfigStorage {
@@ -36,7 +35,7 @@ export interface PlanConfigStorage {
 }
 
 export interface ConfirmationModal {
-    description: string[];
+    description: React.ReactNode;
     warningTitle: string;
     warningPoints: string[];
 }
@@ -49,4 +48,5 @@ export interface PlanConfig {
     features: PlanConfigFeatures;
     storage?: PlanConfigStorage;
     confirmationModal: ConfirmationModal;
+    upsellPlan?: PLANS;
 }
