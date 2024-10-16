@@ -14,6 +14,7 @@ export const DESKTOP_FEATURES = {
     MailtoTelemetry: true,
     ESUserChoice: true,
     FullTheme: true,
+    StoreVersion: true,
 } as const satisfies Record<IPCInboxDesktopFeature, boolean>;
 
 export type IPCHasFeatureMessage = {

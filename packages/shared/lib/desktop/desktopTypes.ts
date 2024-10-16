@@ -4,7 +4,7 @@ import type { Environment } from '@proton/shared/lib/interfaces';
 
 import type { ColorScheme, ThemeSetting } from '../themes/themes';
 import { type DefaultProtocol, zDefaultProtocol } from './DefaultProtocol';
-import type { DesktopVersion } from './DesktopVersion';
+import type { AppVersion, DesktopVersion } from './DesktopVersion';
 
 export type CHANGE_VIEW_TARGET = 'mail' | 'calendar' | 'account';
 export type ElectronNotification = {
@@ -27,13 +27,15 @@ export type IPCInboxDesktopFeature =
     | 'InstallSource'
     | 'MailtoTelemetry'
     | 'ESUserChoice'
-    | 'FullTheme';
+    | 'FullTheme'
+    | 'StoreVersion';
 export type IPCInboxGetInfoMessage =
     | { type: 'theme'; result: ThemeSetting }
     | { type: 'latestVersion'; result: DesktopVersion | null }
     | { type: 'installSource'; result: string | null }
     | { type: 'defaultMailto'; result: DefaultProtocol }
-    | { type: 'colorScheme'; result: ColorScheme };
+    | { type: 'colorScheme'; result: ColorScheme }
+    | { type: 'getAllAppVersions'; result: string };
 export type IPCInboxGetUserInfoMessage = { type: 'esUserChoice'; result: ESUserChoice };
 export type IPCInboxClientUpdateMessage =
     | { type: 'updateNotification'; payload: number }
@@ -51,7 +53,8 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'earlyAccess'; payload: Environment | undefined }
     | { type: 'checkDefaultMailtoAndSignal'; payload?: undefined }
     | { type: 'defaultMailtoTelemetryReported'; payload: number }
-    | { type: 'setESUserChoice'; payload: { userID: string; userChoice: boolean } };
+    | { type: 'setESUserChoice'; payload: { userID: string; userChoice: boolean } }
+    | { type: 'storeAppVersion'; payload: AppVersion };
 export type IPCInboxClientUpdateMessageType = IPCInboxClientUpdateMessage['type'];
 
 export const IPCInboxHostUpdateMessageSchema = z.union([
