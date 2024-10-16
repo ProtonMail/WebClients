@@ -11,3 +11,7 @@ export namespace biometric {
     export function setSecret(key: string, secret: Uint8Array): Promise<void>;
     export function deleteSecret(key: string): Promise<void>;
 }
+export namespace clipboard {
+    export function writeText(text: string, sensitive: boolean): Promise<void>;
+    export function read(): Promise<string>;
+}
