@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { useGetUser, useUser } from '@proton/account/user/hooks';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
+import { useModalTwo, useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { isSplittedUser, onSessionMigrationPaymentsVersion } from '@proton/payments';
@@ -12,20 +12,22 @@ import { changeRenewState, deleteSubscription } from '@proton/shared/lib/api/pay
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
 import type { PLANS } from '@proton/shared/lib/constants';
-import { PLAN_SERVICES, isFreeSubscription } from '@proton/shared/lib/constants';
+import { APPS, PLAN_SERVICES, isFreeSubscription } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
 import {
     getPlan,
+    getPlanName,
     hasCancellablePlan,
     hasMigrationDiscount,
     hasPassLaunchOffer,
-    hasVisionary,
     isManagedExternally,
 } from '@proton/shared/lib/helpers/subscription';
+import type { SubscriptionModel } from '@proton/shared/lib/interfaces';
 import { Renew } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
+import { useFlag } from '@proton/unleash';
 
 import {
     useGetSubscription,
@@ -47,7 +49,8 @@ import FeedbackDowngradeModal, { isKeepSubscription } from '../FeedbackDowngrade
 import type { HighlightPlanDowngradeModalOwnProps } from '../HighlightPlanDowngradeModal';
 import HighlightPlanDowngradeModal, { planSupportsCancellationDowngradeModal } from '../HighlightPlanDowngradeModal';
 import InAppPurchaseModal from '../InAppPurchaseModal';
-import { DiscountWarningModal, VisionaryWarningModal } from '../PlanLossWarningModal';
+import { DiscountWarningModal } from '../PlanLossWarningModal';
+import UpsellModal from '../UpsellModal';
 import CancelSubscriptionLoadingModal from './CancelSubscriptionLoadingModal';
 import { CancelSubscriptionModal } from './CancelSubscriptionModal';
 import type { CancelSubscriptionResult } from './types';
@@ -61,6 +64,10 @@ const SUBSCRIPTION_DOWNGRADED: CancelSubscriptionResult = {
 
 const SUBSCRIPTION_CANCELLED: CancelSubscriptionResult = {
     status: 'cancelled',
+};
+
+const SUBSCRIPTION_UPSOLD: CancelSubscriptionResult = {
+    status: 'upsold',
 };
 
 interface Props {
@@ -87,7 +94,11 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
     const [vpnServers] = useVPNServersCount();
     const api = useApi();
     const freePlan = plansResult?.freePlan || FREE_PLAN;
+    const plans = plansResult?.plans ?? [];
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
+    const currentPlanId = getPlanName(subscription);
+    const isUpsellEnabled = useFlag('NewCancellationFlowUpsell');
+    const canUseUpsellFlow = isUpsellEnabled && app === APPS.PROTONMAIL;
 
     const [cancelSubscriptionModal, showCancelSubscriptionModal] = useModalTwoPromise<
         undefined,
@@ -97,8 +108,8 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
         undefined,
         FeedbackDowngradeResult
     >();
+    const [upsellModal, showUpsellModal] = useModalTwo(UpsellModal);
     const [discountWarningModal, showDiscountWarningModal] = useModalTwoPromise();
-    const [visionaryWarningModal, showVisionaryWarningModal] = useModalTwoPromise();
     const [inAppPurchaseModal, showInAppPurchaseModal] = useModalTwoPromise();
     const [highlightPlanDowngradeModal, showHighlightPlanDowngradeModal] =
         useModalTwoPromise<HighlightPlanDowngradeModalOwnProps>();
@@ -156,16 +167,8 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
                 inAppPurchaseModal((props) => {
                     return <InAppPurchaseModal {...props} subscription={subscription} onClose={props.onReject} />;
                 })}
-            {visionaryWarningModal((props) => {
-                return (
-                    <VisionaryWarningModal
-                        {...props}
-                        type="downgrade"
-                        onConfirm={props.onResolve}
-                        onClose={props.onReject}
-                    />
-                );
-            })}
+
+            {currentPlanId ? upsellModal : null}
             {discountWarningModal((props) => {
                 return (
                     <DiscountWarningModal
@@ -198,15 +201,105 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
         </>
     );
 
-    const cancelRenew = async (
-        subscriptionReminderFlow: boolean | undefined,
-        paymentsVersionOverride: PaymentsVersion | undefined
-    ) => {
-        if (!subscriptionReminderFlow) {
-            const result = await showCancelSubscriptionModal();
+    interface CancellationProps {
+        feedback?: FeedbackDowngradeResult;
+        paymentsVersionOverride: PaymentsVersion | undefined;
+    }
 
-            if (result.status === 'kept') {
-                return SUBSCRIPTION_KEPT;
+    const finaliseCancellation = async (cancellationProps: CancellationProps) => {
+        let cancelNotificationId;
+
+        try {
+            let { feedback } = cancellationProps;
+
+            if (!feedback) {
+                feedback = await showFeedbackDowngradeModal();
+                if (isKeepSubscription(feedback)) {
+                    return SUBSCRIPTION_KEPT;
+                }
+            }
+
+            cancelNotificationId = createNotification({
+                type: 'info',
+                text: c('State').t`Canceling your subscription, please wait`,
+                expiration: 99999,
+            });
+
+            await api(
+                changeRenewState(
+                    {
+                        RenewalState: Renew.Disabled,
+                        CancellationFeedback: feedback as FeedbackDowngradeData,
+                    },
+                    cancellationProps.paymentsVersionOverride ?? onSessionMigrationPaymentsVersion(user, subscription)
+                )
+            );
+            await eventManager.call();
+
+            createNotification({ text: c('Success').t`You have successfully canceled your subscription.` });
+        } finally {
+            if (cancelNotificationId) {
+                hideNotification(cancelNotificationId);
+            }
+        }
+
+        return SUBSCRIPTION_CANCELLED;
+    };
+
+    interface CancelWithUpsellProps {
+        paymentsVersionOverride: PaymentsVersion | undefined;
+        subscription: SubscriptionModel;
+        upsellPlanId: PLANS | undefined;
+    }
+
+    const cancelWithUpsell = async ({ paymentsVersionOverride, subscription, upsellPlanId }: CancelWithUpsellProps) => {
+        if (!currentPlanId) {
+            return SUBSCRIPTION_KEPT;
+        }
+
+        const resolution = upsellPlanId
+            ? await showUpsellModal({
+                  freePlan,
+                  plans,
+                  subscription,
+                  upsellPlanId,
+              })
+            : SUBSCRIPTION_CANCELLED;
+
+        if (resolution.status === SUBSCRIPTION_KEPT.status) {
+            return SUBSCRIPTION_KEPT;
+        }
+
+        if (resolution.status === SUBSCRIPTION_CANCELLED.status) {
+            return finaliseCancellation({ paymentsVersionOverride });
+        }
+        return SUBSCRIPTION_UPSOLD;
+    };
+
+    interface CancelRenewProps {
+        paymentsVersionOverride: PaymentsVersion | undefined;
+        skipUpsell?: boolean;
+        subscription: SubscriptionModel;
+        subscriptionReminderFlow: boolean | undefined;
+        upsellPlanId: PLANS | undefined;
+    }
+
+    const cancelRenew = async ({
+        paymentsVersionOverride,
+        skipUpsell,
+        subscription,
+        subscriptionReminderFlow,
+        upsellPlanId,
+    }: CancelRenewProps) => {
+        if (!subscriptionReminderFlow) {
+            if (canUseUpsellFlow && !skipUpsell) {
+                return cancelWithUpsell({ paymentsVersionOverride, subscription, upsellPlanId });
+            } else {
+                const result = await showCancelSubscriptionModal();
+
+                if (result.status === 'kept') {
+                    return SUBSCRIPTION_KEPT;
+                }
             }
         }
 
@@ -250,29 +343,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
             return SUBSCRIPTION_KEPT;
         }
 
-        const cancelNotificationId = createNotification({
-            type: 'info',
-            text: c('State').t`Canceling your subscription, please wait`,
-            expiration: 99999,
-        });
-
-        try {
-            await api(
-                changeRenewState(
-                    {
-                        RenewalState: Renew.Disabled,
-                        CancellationFeedback: feedback,
-                    },
-                    paymentsVersionOverride ?? onSessionMigrationPaymentsVersion(user, subscription)
-                )
-            );
-            await eventManager.call();
-            createNotification({ text: c('Success').t`You have successfully canceled your subscription.` });
-        } finally {
-            hideNotification(cancelNotificationId);
-        }
-
-        return SUBSCRIPTION_CANCELLED;
+        return finaliseCancellation({ feedback, paymentsVersionOverride });
     };
 
     const handleFinalizeUnsubscribe = async (data: FeedbackDowngradeData) => {
@@ -297,10 +368,6 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
 
         if (hasMigrationDiscount(subscription)) {
             await showDiscountWarningModal();
-        }
-
-        if (hasVisionary(subscription)) {
-            await showVisionaryWarningModal();
         }
 
         const { PeriodEnd = 0 } = subscription || {};
@@ -356,7 +423,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
     return {
         loadingCancelSubscription: loadingOrganization || loadingSubscription || loadingPlans || plansMapLoading,
         cancelSubscriptionModals: modals,
-        cancelSubscription: async (subscriptionReminderFlow?: boolean) => {
+        cancelSubscription: async (subscriptionReminderFlow?: boolean, upsellPlanId?: PLANS, skipUpsell?: boolean) => {
             const [subscription, user] = await Promise.all([getSubscription(), getUser()]);
             if (user.isFree || isFreeSubscription(subscription)) {
                 createNotification({ type: 'error', text: c('Info').t`You already have a free account` });
@@ -364,11 +431,8 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
             }
 
             if (isManagedExternally(subscription)) {
-                try {
-                    await showInAppPurchaseModal();
-                } finally {
-                    return SUBSCRIPTION_KEPT;
-                }
+                await showInAppPurchaseModal();
+                return SUBSCRIPTION_KEPT;
             }
 
             if (hasCancellablePlan(subscription, user)) {
@@ -384,7 +448,13 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
                     ? 'v4'
                     : undefined;
 
-                return cancelRenew(subscriptionReminderFlow, paymentsVersionOverride);
+                return cancelRenew({
+                    paymentsVersionOverride,
+                    skipUpsell,
+                    subscription,
+                    subscriptionReminderFlow,
+                    upsellPlanId,
+                });
             }
 
             return handleUnsubscribe(subscriptionReminderFlow);

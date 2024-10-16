@@ -1,9 +1,8 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { MAIL_APP_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
-import type { SubscriptionModel, SubscriptionPlan, UserModel } from '@proton/shared/lib/interfaces';
 
 import type {
     ConfirmationModal,
@@ -18,21 +17,20 @@ import {
     getDefaultReminder,
     getDefaultTestimonial,
 } from './b2cCommonConfig';
+import type { ConfigProps } from './types';
 
-export const getMailPlusConfig = (
-    subscription: SubscriptionModel,
-    user: UserModel,
-    plan: SubscriptionPlan & { Name: PLANS }
-): PlanConfig => {
+export const getMailPlusConfig = ({ plan, subscription, user }: ConfigProps): PlanConfig => {
     const currentPlan = PLANS.MAIL;
     const planName = PLAN_NAMES[currentPlan];
     const planMaxSpace = humanSize({ bytes: plan.MaxSpace, unit: 'GB', fraction: 0 });
+    const planNumberOfEmails = plan.MaxAddresses;
+    const planNumberOfDomains = plan.MaxDomains;
 
     const reminder = getDefaultReminder(planName);
     const testimonials: PlanConfigTestimonial = getDefaultTestimonial();
 
     const features: PlanConfigFeatures = {
-        title: c('Subscription reminder').t`Premium productivity features`,
+        title: c('Subscription reminder').t`Comprehensive privacy and security`,
         description: c('Subscription reminder')
             .t`${planName} goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.`,
         features: [
@@ -45,36 +43,40 @@ export const getMailPlusConfig = (
                 text: c('Subscription reminder').t`Yearly free storage bonuses`,
             },
             {
+                icon: 'shield-2-bolt',
+                text: c('Subscription reminder').t`Dark web monitoring`,
+            },
+            {
+                icon: 'life-ring',
+                text: c('Subscription reminder').t`Priority support`,
+            },
+            {
                 icon: 'envelopes',
-                text: c('Subscription reminder').t`10 email addresses`,
+                text: c('Subscription reminder').ngettext(
+                    msgid`${planNumberOfEmails} email address`,
+                    `${planNumberOfEmails} email addresses`,
+                    planNumberOfEmails
+                ),
             },
             {
                 icon: 'folders',
-                text: c('Subscription reminder').t`Unlimited folders, labels and filters`,
+                text: c('Subscription reminder').t`Folders, labels and filters`,
             },
             {
                 icon: 'globe',
-                text: c('Subscription reminder').t`Your own custom email domain`,
-            },
-            {
-                icon: 'calendar-grid',
-                text: c('Subscription reminder').t`Calendar sharing`,
+                text: c('Subscription reminder').ngettext(
+                    msgid`${planNumberOfDomains} custom email domain`,
+                    `${planNumberOfDomains} custom email domains`,
+                    planNumberOfDomains
+                ),
             },
             {
                 icon: 'at',
                 text: c('Subscription reminder').t`Your own short @pm.me email alias`,
             },
             {
-                icon: 'clock-paper-plane',
-                text: c('Subscription reminder').t`Custom schedule send and snooze times`,
-            },
-            {
                 icon: 'tv',
                 text: c('Subscription reminder').t`${MAIL_APP_NAME} desktop app`,
-            },
-            {
-                icon: 'life-ring',
-                text: c('Subscription reminder').t`Priority support`,
             },
         ],
     };
@@ -84,12 +86,12 @@ export const getMailPlusConfig = (
     const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(subscription, planName, cancellablePlan);
 
     return {
+        confirmationModal,
+        features,
+        plan: currentPlan,
         planName,
         reminder,
-        testimonials,
-        features,
         storage,
-        confirmationModal,
-        plan: currentPlan,
+        testimonials,
     };
 };

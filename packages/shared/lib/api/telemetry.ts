@@ -106,13 +106,14 @@ export enum TelemetryAccountSignupEvents {
     signupFinish = 'fe.signup_finish',
 }
 
-export enum TelemtryAccountCancellationEvents {
+export enum TelemetryAccountCancellationEvents {
     startCancellation = 'start_cancellation',
     cancelPage = 'cancel_page',
     cancelModal = 'cancel_modal',
     feedbackModal = 'feedback_modal',
     resubscribeModal = 'resubscribe_modal',
     dashboardReactivate = 'dashboard_reactivate',
+    upsellModal = 'upsell_modal',
 }
 
 export enum TelemetryAccountOrganizationLogoUploadEvents {
@@ -232,7 +233,7 @@ export type TelemetryEvents =
     | TelemetryIcsSurgeryEvents
     | TelemetryAccountSignupBasicEvents
     | TelemetryAccountSignupEvents
-    | TelemtryAccountCancellationEvents
+    | TelemetryAccountCancellationEvents
     | TelemetryKeyTransparencyErrorEvents
     | TelemetryMailEvents
     | TelemetryMailSelectAllEvents
