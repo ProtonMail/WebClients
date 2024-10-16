@@ -88,7 +88,7 @@ export const LobbyContent: FC<Props> = ({
 
     useEffect(() => {
         (async () => {
-            if (localID) {
+            if (localID !== undefined) {
                 const enabled = (await settings.resolve(localID))?.offlineEnabled ?? false;
                 setOfflineEnabled(enabled);
             }
