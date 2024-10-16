@@ -49,9 +49,9 @@ function Devices({ view }: Props) {
         [browserItems, selectionControls!.selectedItemIds]
     );
 
-    const handleItemRender = () => {
+    const handleItemRender = useCallback(() => {
         incrementItemRenderedCounter();
-    };
+    }, [incrementItemRenderedCounter]);
 
     const handleClick = useCallback(
         (id: BrowserItemId) => {

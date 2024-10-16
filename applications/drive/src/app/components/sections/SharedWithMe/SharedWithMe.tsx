@@ -147,12 +147,15 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
         [navigateToLink, items]
     );
 
-    const handleItemRender = (item: SharedWithMeItem) => {
-        incrementItemRenderedCounter();
-        if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
-            thumbnails.addToDownloadQueue(item.rootShareId, item.linkId, item.activeRevision.id);
-        }
-    };
+    const handleItemRender = useCallback(
+        (item: SharedWithMeItem) => {
+            incrementItemRenderedCounter();
+            if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
+                thumbnails.addToDownloadQueue(item.rootShareId, item.linkId, item.activeRevision.id);
+            }
+        },
+        [thumbnails, incrementItemRenderedCounter]
+    );
 
     /* eslint-disable react/display-name */
     const GridHeaderComponent = useMemo(
