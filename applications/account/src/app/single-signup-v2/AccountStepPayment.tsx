@@ -4,7 +4,7 @@ import { useImperativeHandle, useRef } from 'react';
 import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
-import { Info, PayPalButton, Price, StyledPayPalButton } from '@proton/components';
+import { Alert3ds, Info, PayPalButton, Price, StyledPayPalButton } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
@@ -299,6 +299,13 @@ const AccountStepPayment = ({
         checkResult: hasCouponCode ? model.subscriptionData.checkResult : options.checkResult,
     });
 
+    const isSignupPass = paymentFacade.flow === 'signup-pass' || paymentFacade.flow === 'signup-pass-upgrade';
+
+    const selectedMethodCard =
+        paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CARD ||
+        paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
+    const showAlert3ds = selectedMethodCard && !isSignupPass;
+
     return (
         <div className="flex flex-column md:flex-row items-stretch md:items-start justify-space-between gap-14">
             <div className="shrink-0 md:flex-1 order-1 md:order-0">
@@ -459,6 +466,8 @@ const AccountStepPayment = ({
                                         <Guarantee />
                                     )}
                                 </div>
+
+                                {showAlert3ds && <Alert3ds />}
                             </>
                         );
                     })()}
