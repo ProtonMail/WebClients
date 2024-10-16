@@ -66,8 +66,11 @@ export const useOnItemRenderedMetrics = (layout: LayoutSetting, isLoading: boole
     }, [location]);
 
     const incrementItemRenderedCounter = useCallback(() => {
-        setCount((prevState) => prevState + 1);
-    }, []);
+        // no point increasing count further after lastPageSet is true
+        if (lastPageIsSet === false) {
+            setCount((prevState) => prevState + 1);
+        }
+    }, [lastPageIsSet]);
 
     return {
         incrementItemRenderedCounter,
