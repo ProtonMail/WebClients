@@ -17,7 +17,10 @@ export type DashlaneLoginItem = {
     note: Maybe<string>;
     url: Maybe<string>;
     category: Maybe<string>;
+    /** OTP field in older Dashlane versions */
     otpSecret: Maybe<string>;
+    /** OTP field in latest Dashlane version (tested on 16th October 2024) */
+    otpUrl: Maybe<string>;
 };
 
 export type DashlaneNoteItem = {
