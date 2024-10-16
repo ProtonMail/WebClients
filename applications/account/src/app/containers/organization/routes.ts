@@ -176,6 +176,18 @@ export const getOrganizationAppRoutes = ({
                     },
                 ],
             },
+            connectionEvents: <SectionConfig>{
+                text: c('Title').t`Gateway monitor`,
+                description: c('Subtitle').t`View VPN session details for your organization.`,
+                to: '/gateway-monitor',
+                icon: 'monitor',
+                available: canShowB2BConnectionEvents,
+                subsections: [
+                    {
+                        id: 'vpn-connection-events',
+                    },
+                ],
+            },
             setup: <SectionConfig>{
                 text: subMenuTitle,
                 to: '/multi-user-support',
@@ -245,18 +257,6 @@ export const getOrganizationAppRoutes = ({
                     hasVpnB2BPlan &&
                     canHaveOrganization &&
                     (hasOrganizationKey || hasOrganization),
-            },
-            connectionEvents: <SectionConfig>{
-                text: c('Title').t`Gateway monitor`,
-                description: c('Subtitle').t`View VPN session details for your organization.`,
-                to: '/gateway-monitor',
-                icon: 'globe',
-                available: canShowB2BConnectionEvents,
-                subsections: [
-                    {
-                        id: 'vpn-connection-events',
-                    },
-                ],
             },
         },
     };
