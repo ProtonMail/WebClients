@@ -22,6 +22,7 @@ import {
 } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
 import Icons from '@proton/icons/Icons';
+import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
 import { ConnectivityProvider } from '@proton/pass/components/Core/ConnectivityProvider';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
@@ -61,7 +62,8 @@ import { StoreProvider } from './Store/StoreProvider';
 import { store } from './Store/store';
 import locales from './locales';
 
-exposeAuthStore(createAuthStore(createSecureSessionStorage()));
+const authStore = exposeAuthStore(createAuthStore(createSecureSessionStorage()));
+
 exposeApi(createApi({ config, threshold: API_CONCURRENCY_TRESHOLD }));
 exposePassCrypto(createPassCrypto());
 sentry({ config: PASS_CONFIG });
@@ -146,19 +148,21 @@ export const App = () => (
                                         >
                                             <Router history={history}>
                                                 <NavigationProvider>
-                                                    <AuthSwitchProvider>
-                                                        <AuthServiceProvider>
-                                                            <StoreProvider>
-                                                                <Localized>
-                                                                    <AppGuard />
-                                                                </Localized>
-                                                                <Portal>
-                                                                    <ModalsChildren />
-                                                                    <NotificationsChildren />
-                                                                </Portal>
-                                                            </StoreProvider>
-                                                        </AuthServiceProvider>
-                                                    </AuthSwitchProvider>
+                                                    <AuthStoreProvider store={authStore}>
+                                                        <AuthSwitchProvider>
+                                                            <AuthServiceProvider>
+                                                                <StoreProvider>
+                                                                    <Localized>
+                                                                        <AppGuard />
+                                                                    </Localized>
+                                                                    <Portal>
+                                                                        <ModalsChildren />
+                                                                        <NotificationsChildren />
+                                                                    </Portal>
+                                                                </StoreProvider>
+                                                            </AuthServiceProvider>
+                                                        </AuthSwitchProvider>
+                                                    </AuthStoreProvider>
                                                 </NavigationProvider>
                                             </Router>
                                         </ConnectivityProvider>
