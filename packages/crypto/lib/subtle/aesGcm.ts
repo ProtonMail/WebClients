@@ -103,9 +103,7 @@ export const decryptData = async (
 
 /**
  * DEPRECATED: use `encryptData` instead.
- * This function encrypts using a non-standard IV of 16 bytes, which can be problematic if a large number of
- * messages is encrypted with the same key.
- * This function will be removed once the new version of fork & session blobs is implemented for authentication.
+ * This function encrypts using a non-standard IV of 16 bytes.
  * @param key - WebCrypto key for encryption
  * @param data - data to encrypt
  * @param additionalData - additional data to authenticate
@@ -113,6 +111,8 @@ export const decryptData = async (
  */
 export const encryptDataWith16ByteIV = async (key: AesCryptoKey, data: Uint8Array, additionalData?: Uint8Array) => {
     const ivLength = 16;
+    // A random 16-byte IV is non-standard, but it does not negatively affect the max number of encryptable messages using the same key,
+    // nor does it increase the risk of nonce collision; see summary at https://crypto.stackexchange.com/a/80390.
     const iv = crypto.getRandomValues(new Uint8Array(ivLength));
     const ciphertext = await crypto.subtle.encrypt(
         { name: ENCRYPTION_ALGORITHM, iv, ...(additionalData !== undefined ? { additionalData } : undefined) },
