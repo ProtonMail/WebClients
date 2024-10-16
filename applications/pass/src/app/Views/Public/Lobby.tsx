@@ -74,11 +74,11 @@ export const Lobby: FC = () => {
                         return (
                             sessions.length > 0 && (
                                 <Scroll
-                                    className="overflow-auto mb-4 max-h-custom"
+                                    className="overflow-auto mb-4 max-h-custom max-w-full"
                                     style={{ '--max-h-custom': '11.5em' }}
                                 >
                                     <div className="flex flex-column gap-2">
-                                        <AccountSwitcherList sessions={sessions} />
+                                        <AccountSwitcherList sessions={sessions} childClassName="rounded pl-2" />
                                     </div>
                                 </Scroll>
                             )
@@ -100,8 +100,8 @@ export const Lobby: FC = () => {
                                         ref={anchorRef}
                                         shape="ghost"
                                     >
-                                        <Icon name="user" />
-                                        <span>{authStore?.getUserEmail()}</span>
+                                        <Icon name="user" className="shrink-0" />
+                                        <span className="text-ellipsis">{authStore?.getUserEmail()}</span>
                                     </DropdownButton>
                                 </div>
                             )}

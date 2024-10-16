@@ -19,9 +19,9 @@ import { APPS } from '@proton/shared/lib/constants';
 import { useAuthService } from './AuthServiceProvider';
 import { useAuthSwitch } from './AuthSwitchProvider';
 
-type AccountSwitcherProps = { sessions: SwitchableSession[] };
+type AccountSwitcherProps = { sessions: SwitchableSession[]; childClassName?: string };
 
-export const AccountSwitcherList: FC<AccountSwitcherProps> = ({ sessions }) => {
+export const AccountSwitcherList: FC<AccountSwitcherProps> = ({ sessions, childClassName }) => {
     const authSwitch = useAuthSwitch();
 
     return sessions.map(({ LocalID, PrimaryEmail, DisplayName, UID }) => (
@@ -29,9 +29,10 @@ export const AccountSwitcherList: FC<AccountSwitcherProps> = ({ sessions }) => {
             key={LocalID}
             onClick={() => authSwitch.switch(LocalID)}
             label={<UserPanel email={PrimaryEmail} name={DisplayName} />}
-            quickActionsClassname="pr-3"
+            quickActionsClassname="pr-2"
             quickActionsPlacement="bottom-end"
-            className="rounded"
+            className={childClassName}
+            parentClassName="max-w-full"
             quickActions={[
                 <DropdownMenuButton
                     key="revoke"
