@@ -12,7 +12,6 @@ import { MINUTE } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import generateUID from '@proton/utils/generateUID';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import { POOL_FILLING_THRESHOLD } from '@proton/wallet';
 import { SYNCING_MINIMUM_COOLDOWN_MINUTES } from '@proton/wallet';
 import { useGetBitcoinNetwork } from '@proton/wallet/store';
 
@@ -51,10 +50,11 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
         return apiWalletsData?.map(({ Wallet, WalletAccounts, IsNotDecryptable }) => ({
             ...pick(Wallet, ['ID', 'Mnemonic', 'Passphrase', 'HasPassphrase']),
             IsNotDecryptable,
-            WalletAccounts: WalletAccounts.map(({ ID, ScriptType, DerivationPath }) => ({
+            WalletAccounts: WalletAccounts.map(({ ID, ScriptType, DerivationPath, PoolSize }) => ({
                 ID,
                 ScriptType,
                 DerivationPath,
+                PoolSize,
             })),
         }));
     }, [apiWalletsData]);
@@ -85,6 +85,7 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
                             account: wasmAccount,
                             scriptType: account.ScriptType,
                             derivationPath: account.DerivationPath,
+                            poolSize: account.PoolSize,
                         },
                     };
                 }, {});
@@ -184,7 +185,7 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
                     if ((await wasmAccount.hasSyncData()) && !manual) {
                         await blockchainClient.partialSync(wasmAccount);
                     } else {
-                        await blockchainClient.fullSync(wasmAccount, getDefaultStopGap() + POOL_FILLING_THRESHOLD);
+                        await blockchainClient.fullSync(wasmAccount, getDefaultStopGap() + account.poolSize);
                     }
 
                     incrementSyncKey(walletId, accountId);

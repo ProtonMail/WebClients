@@ -320,7 +320,7 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
                             await api.wallet.addEmailAddress(Wallet.ID, created.Data.ID, firstAddress.ID);
                             addedEmailAddresses = [{ ID: firstAddress.ID, Email: firstAddress.Email }];
 
-                            const { DerivationPath, ScriptType } = created.Data;
+                            const { DerivationPath, PoolSize, ScriptType } = created.Data;
 
                             const derivationPath = new WasmDerivationPath(DerivationPath);
                             const wasmAccount = new WasmAccount(wasmWallet, ScriptType, derivationPath);
@@ -336,6 +336,7 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
                                     account: wasmAccount,
                                     scriptType: ScriptType,
                                     derivationPath: DerivationPath,
+                                    poolSize: PoolSize,
                                 },
                             });
                         } catch (error: any) {
