@@ -200,18 +200,22 @@
 
 :root {
 	--suggestion-normal-bg: 52 145 114;
-	--suggestion-normal-fg: rgb(15 107 76);
+	--suggestion-normal-fg: 15 107 76;
 	--suggestion-normal-bg-non-selected: rgb(var(--suggestion-normal-bg) / 0.05);
-	--suggestion-normal-bg-selected: rgb(var(--suggestion-normal-bg) / 0.1);
+	--suggestion-normal-bg-selected: rgb(var(--suggestion-normal-bg) / 0.25);
 }
 
 .Lexical__Suggestion {
-	border-block-end: 1px dotted rgb(var(--fg));
+	border-block-end: 1px dotted rgb(var(--suggestion-normal-fg));
 	background-color: var(--suggestion-normal-bg-non-selected);
-	color: var(--suggestion-normal-fg);
+	color: rgb(var(--suggestion-normal-fg));
 
 	&.selected {
 		background-color: var(--suggestion-normal-bg-selected);
+	}
+
+	&.delete {
+		opacity: 0.5;
 	}
 
 	&.delete,
@@ -222,6 +226,7 @@
 		text-decoration: line-through;
 
 		&.selected {
+			opacity: 1;
 			background-color: var(--background-weak);
 		}
 	}
@@ -247,6 +252,7 @@
 	*:not(.Lexical__listItem):has(> &.indent-change),
 	.Lexical__listItem:not(.Lexical__listItem--nested):has(> &.indent-change) {
 		background: var(--suggestion-normal-bg-non-selected);
+		border-block-end: 1px dotted rgb(var(--suggestion-normal-fg));
 	}
 
 	*:not(.Lexical__listItem):has(> &.indent-change.selected),
