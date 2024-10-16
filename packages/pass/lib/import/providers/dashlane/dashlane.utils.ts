@@ -33,7 +33,6 @@ export const DASHLANE_LOGINS_EXPECTED_HEADERS: (keyof DashlaneLoginItem)[] = [
     'note',
     'url',
     'category',
-    'otpSecret',
 ];
 
 export const DASHLANE_NOTES_EXPECTED_HEADERS: (keyof DashlaneNoteItem)[] = ['title', 'note'];
@@ -199,7 +198,7 @@ export const processDashlaneLogin: DashlaneItemParser<DashlaneLoginItem> = (item
         ...getEmailOrUsername(item.username),
         password: item.password,
         urls: [item.url],
-        totp: item.otpSecret,
+        totp: item.otpUrl ?? item.otpSecret,
         extraFields: [item.username2, item.username3].filter(Boolean).map((username, index) => ({
             fieldName: `username${index + 1}`,
             type: 'text',
