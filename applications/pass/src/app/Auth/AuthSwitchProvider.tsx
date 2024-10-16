@@ -8,13 +8,15 @@ import { getPersistedSession, getSessionKey, getSwitchableSessions } from 'proto
 import { clearUserLocalData } from 'proton-pass-web/lib/storage';
 
 import useInstance from '@proton/hooks/useInstance';
+import { AppStateContext } from '@proton/pass/components/Core/AppStateProvider';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { reloadHref } from '@proton/pass/components/Navigation/routing';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
+import { useContextProxy } from '@proton/pass/hooks/useContextProxy';
 import { api } from '@proton/pass/lib/api/api';
 import { decodeUserData, encodeUserData } from '@proton/pass/lib/auth/store';
 import { type AuthSwitchService, type SwitchableSession, createAuthSwitchService } from '@proton/pass/lib/auth/switch';
-import { type MaybeNull } from '@proton/pass/types';
+import { AppStatus, type MaybeNull } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 export const AuthSwitchContext = createContext<MaybeNull<AuthSwitchService>>(null);
@@ -44,6 +46,7 @@ export const useAvailableSessions = () => {
 
 export const AuthSwitchProvider: FC<PropsWithChildren> = ({ children }) => {
     const authStore = useAuthStore();
+    const app = useContextProxy(AppStateContext);
     const [sessions, setSessions] = useState<SwitchableSession[]>([]);
     const sw = useServiceWorker();
 
@@ -52,6 +55,8 @@ export const AuthSwitchProvider: FC<PropsWithChildren> = ({ children }) => {
             api,
 
             onSwitch: (LocalID: number) => {
+                app.setStatus(AppStatus.IDLE);
+                app.setBooted(false);
                 authStore?.clear();
                 reloadHref(`/u/${LocalID}`);
             },
