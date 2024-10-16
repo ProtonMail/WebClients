@@ -138,12 +138,15 @@ const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
         [navigateToLink, browserItems]
     );
 
-    const handleItemRender = (item: SharedLinkItem) => {
-        incrementItemRenderedCounter();
-        if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
-            thumbnails.addToDownloadQueue(item.rootShareId, item.linkId, item.activeRevision.id);
-        }
-    };
+    const handleItemRender = useCallback(
+        (item: SharedLinkItem) => {
+            incrementItemRenderedCounter();
+            if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
+                thumbnails.addToDownloadQueue(item.rootShareId, item.linkId, item.activeRevision.id);
+            }
+        },
+        [thumbnails, incrementItemRenderedCounter]
+    );
 
     /* eslint-disable react/display-name */
     const GridHeaderComponent = useMemo(
