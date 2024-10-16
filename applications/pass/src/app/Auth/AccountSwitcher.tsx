@@ -7,6 +7,7 @@ import { ButtonLike } from '@proton/atoms';
 import { Dropdown, usePopperAnchor } from '@proton/components';
 import { Icon } from '@proton/components/index';
 import { UserPanel } from '@proton/pass/components/Account/UserPanel';
+import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useRerender } from '@proton/pass/hooks/useRerender';
@@ -52,8 +53,9 @@ type AccountSwitcherTooltipProps = AccountSwitcherProps & { children: (props: Po
 
 export const AccountSwitcherTooltip: FC<AccountSwitcherTooltipProps> = ({ children, sessions }) => {
     const { SSO_URL } = usePassConfig();
-
     const authService = useAuthService();
+    const online = useConnectivity();
+
     const dropdown = usePopperAnchor<HTMLButtonElement>();
     const [key, rerender] = useRerender();
     const canSwitch = sessions.length > 0;
@@ -86,6 +88,7 @@ export const AccountSwitcherTooltip: FC<AccountSwitcherTooltipProps> = ({ childr
                         className="w-full text-left text-sm rounded-none"
                         shape="ghost"
                         color="weak"
+                        disabled={!online}
                         icon
                         onClick={() =>
                             authService.requestFork({
