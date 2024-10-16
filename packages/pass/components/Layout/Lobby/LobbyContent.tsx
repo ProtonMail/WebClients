@@ -205,7 +205,7 @@ export const LobbyContent: FC<Props> = ({
                                     color="norm"
                                     className="w-full"
                                     onClick={() => (errored ? onLogin({ forceLock: true }) : onFork())}
-                                    disabled={!online && (errored || !offlineEnabled)}
+                                    disabled={!online && (errored ? !offlineEnabled : true)}
                                 >
                                     {errored ? c('Action').t`Retry` : c('Action').t`Sign in with ${BRAND_NAME}`}
                                 </Button>
