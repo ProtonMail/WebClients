@@ -121,21 +121,21 @@ export const createAuthService = ({
                  * hydrate the userID and offline salts before resuming session. */
                 authStore.setSession(persistedSession);
                 core.i18n.setLocale().catch(noop);
-                const cookieUpgrade = authStore.shouldCookieUpgrade(persistedSession);
 
-                if (getOnline()) {
+                const cookieUpgrade = authStore.shouldCookieUpgrade(persistedSession);
+                const onlineAndSessionReady = getOnline() && !cookieUpgrade;
+                await authSwitch.sync({ revalidate: onlineAndSessionReady });
+
+                if (onlineAndSessionReady) {
                     /** If no cookie upgrade is required, then the persisted session is now
                      * cookie-based. As such, if the user is online, resolve the `clientKey`
                      * as soon as possible in order to make an authenticated API call before
                      * applying the `forceLock` option. This allows detecting stale sessions
                      * before allowing the user to password unlock. */
-                    if (!cookieUpgrade) {
-                        await authSwitch.sync({ revalidate: true });
-                        await getPersistedSessionKey(api, authStore).catch((err) => {
-                            app.setStatus(AppStatus.ERROR);
-                            throw err;
-                        });
-                    }
+                    await getPersistedSessionKey(api, authStore).catch((err) => {
+                        app.setStatus(AppStatus.ERROR);
+                        throw err;
+                    });
                 }
             }
 
