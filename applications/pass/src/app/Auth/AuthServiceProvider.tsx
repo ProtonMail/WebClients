@@ -10,7 +10,6 @@ import { getStateKey } from 'proton-pass-web/lib/sessions';
 import { useNotifications } from '@proton/components/hooks';
 import useInstance from '@proton/hooks/useInstance';
 import { AppStateContext } from '@proton/pass/components/Core/AppStateProvider';
-import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useCheckConnectivity, useConnectivityRef } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
@@ -173,10 +172,8 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
     }, []);
 
     return (
-        <AuthStoreProvider store={authStore}>
-            <AuthServiceContext.Provider value={authService}>
-                <UnlockProvider unlock={handleUnlock}>{children}</UnlockProvider>
-            </AuthServiceContext.Provider>
-        </AuthStoreProvider>
+        <AuthServiceContext.Provider value={authService}>
+            <UnlockProvider unlock={handleUnlock}>{children}</UnlockProvider>
+        </AuthServiceContext.Provider>
     );
 };
