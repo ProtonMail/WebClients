@@ -152,7 +152,7 @@ export function useTree(shareId: string, { rootLinkId, rootExpanded, foldersOnly
                     return a.link.name.localeCompare(b.link.name, undefined, { numeric: true });
                 });
             }
-            return { ...item };
+            return item;
         },
         [shareId, foldersOnly, getCachedChildren]
     );
@@ -160,7 +160,7 @@ export function useTree(shareId: string, { rootLinkId, rootExpanded, foldersOnly
     const setLoadedFlag = (item: TreeItem, linkId: string) => {
         if (item.link.linkId === linkId) {
             item.isLoaded = true;
-            return { ...item };
+            return item;
         }
         item.children = item.children.map((child) => setLoadedFlag(child, linkId));
         return item;
@@ -202,17 +202,18 @@ export function useTree(shareId: string, { rootLinkId, rootExpanded, foldersOnly
     }, [!rootFolder || rootFolder.isLoaded, rootFolder?.link?.linkId]);
 
     const setExpand = useCallback(
-        (linkId: string, getNewExpanded: (item: TreeItem) => boolean) => {
+        (linkId: string, getNewExpanded: (isExpanded: boolean) => boolean) => {
             const updateExpand = (item: TreeItem) => {
                 if (item.link.linkId === linkId) {
                     if (!item.isExpanded && !item.isLoaded) {
                         loadSubfolders(new AbortController().signal, item.link.linkId);
                     }
-                    item.isExpanded = getNewExpanded(item);
+                    item.isExpanded = getNewExpanded(item.isExpanded);
                 }
                 item.children = item.children.map(updateExpand);
-                return { ...item };
+                return item;
             };
+
             setFolderTree((state) => (state ? updateExpand(state) : undefined));
         },
         [loadSubfolders]
@@ -220,10 +221,7 @@ export function useTree(shareId: string, { rootLinkId, rootExpanded, foldersOnly
 
     const expand = useCallback((linkId: string) => setExpand(linkId, () => true), [setExpand]);
 
-    const toggleExpand = useCallback(
-        (linkId: string) => setExpand(linkId, ({ isExpanded }) => !isExpanded),
-        [setExpand]
-    );
+    const toggleExpand = useCallback((linkId: string) => setExpand(linkId, (isExpanded) => !isExpanded), [setExpand]);
 
     const deepestOpenedLevel = useMemo(() => getDeepestOpenedLevel(rootFolder), [rootFolder]);
 
