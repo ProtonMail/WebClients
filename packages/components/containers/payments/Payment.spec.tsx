@@ -292,7 +292,7 @@ describe('Payment', () => {
         let { container } = render(
             <PaymentContext
                 onMethod={() => {}}
-                type="signup"
+                type="subscription"
                 method="my-custom-method-123"
                 amount={1000}
                 card={defaultCard}
@@ -325,7 +325,7 @@ describe('Payment', () => {
         });
     });
 
-    it('should render <Alert3DS> if user selected a perviously used method which is not a credit card', async () => {
+    it('should not render <Alert3DS> if user selected a perviously used method which is not a credit card', async () => {
         apiMock.mockImplementation((query) => {
             if (query.url === 'payments/v4/methods') {
                 return {
@@ -360,7 +360,7 @@ describe('Payment', () => {
         let { container } = render(
             <PaymentContext
                 onMethod={() => {}}
-                type="signup"
+                type="subscription"
                 method="my-custom-method-123"
                 amount={1000}
                 card={defaultCard}
