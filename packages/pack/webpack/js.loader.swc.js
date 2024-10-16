@@ -5,7 +5,7 @@ const getUnsupportedLoader = () => {
     return {
         loader: require.resolve('swc-loader'),
         options: {
-            env: { coreJs: require('core-js/package.json').version, mode: 'usage', targets: 'ie 11' },
+            env: { coreJs: require('core-js/package.json').version, mode: 'entry', targets: 'ie 11' },
         },
     };
 };
@@ -14,7 +14,7 @@ const getSwcLoader = ({ browserslist, isProduction = false, hasReactRefresh = tr
     return {
         loader: require.resolve('swc-loader'),
         options: {
-            env: { coreJs: require('core-js/package.json').version, mode: 'usage', targets: browserslist },
+            env: { coreJs: require('core-js/package.json').version, mode: 'entry', targets: browserslist },
             jsc: {
                 parser: {
                     syntax: 'typescript',
