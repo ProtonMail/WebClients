@@ -25,8 +25,8 @@ export const UserPanel: FC<Props> = ({ actions, email, name, organization, plan,
         <div className={clsx('flex flex-nowrap gap-2 items-center text-sm', plan && isPaidPlan(plan) && 'ui-orange')}>
             <Avatar className="shrink-0">{avatar}</Avatar>
             <div className="text-left flex-1">
-                <span className="color-norm text-ellipsis">{emailOnly ? email : name}</span>
-                {!emailOnly && <span className="block color-weak text-ellipsis">{email}</span>}
+                <span className="color-norm block text-ellipsis">{emailOnly ? email : name}</span>
+                {!emailOnly && <span className="color-weak block text-ellipsis">{email}</span>}
 
                 {planName && (
                     <div

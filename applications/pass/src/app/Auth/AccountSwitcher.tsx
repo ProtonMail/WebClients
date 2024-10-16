@@ -7,6 +7,7 @@ import { ButtonLike } from '@proton/atoms';
 import { Dropdown, usePopperAnchor } from '@proton/components';
 import { Icon } from '@proton/components/index';
 import { UserPanel } from '@proton/pass/components/Account/UserPanel';
+import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useRerender } from '@proton/pass/hooks/useRerender';
@@ -18,9 +19,9 @@ import { APPS } from '@proton/shared/lib/constants';
 import { useAuthService } from './AuthServiceProvider';
 import { useAuthSwitch } from './AuthSwitchProvider';
 
-type AccountSwitcherProps = { sessions: SwitchableSession[] };
+type AccountSwitcherProps = { sessions: SwitchableSession[]; childClassName?: string };
 
-export const AccountSwitcherList: FC<AccountSwitcherProps> = ({ sessions }) => {
+export const AccountSwitcherList: FC<AccountSwitcherProps> = ({ sessions, childClassName }) => {
     const authSwitch = useAuthSwitch();
 
     return sessions.map(({ LocalID, PrimaryEmail, DisplayName, UID }) => (
@@ -28,9 +29,10 @@ export const AccountSwitcherList: FC<AccountSwitcherProps> = ({ sessions }) => {
             key={LocalID}
             onClick={() => authSwitch.switch(LocalID)}
             label={<UserPanel email={PrimaryEmail} name={DisplayName} />}
-            quickActionsClassname="pr-3"
+            quickActionsClassname="pr-2"
             quickActionsPlacement="bottom-end"
-            className="rounded"
+            className={childClassName}
+            parentClassName="max-w-full"
             quickActions={[
                 <DropdownMenuButton
                     key="revoke"
@@ -52,8 +54,9 @@ type AccountSwitcherTooltipProps = AccountSwitcherProps & { children: (props: Po
 
 export const AccountSwitcherTooltip: FC<AccountSwitcherTooltipProps> = ({ children, sessions }) => {
     const { SSO_URL } = usePassConfig();
-
     const authService = useAuthService();
+    const online = useConnectivity();
+
     const dropdown = usePopperAnchor<HTMLButtonElement>();
     const [key, rerender] = useRerender();
     const canSwitch = sessions.length > 0;
@@ -86,6 +89,7 @@ export const AccountSwitcherTooltip: FC<AccountSwitcherTooltipProps> = ({ childr
                         className="w-full text-left text-sm rounded-none"
                         shape="ghost"
                         color="weak"
+                        disabled={!online}
                         icon
                         onClick={() =>
                             authService.requestFork({
