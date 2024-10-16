@@ -15,6 +15,18 @@ jest.mock('@proton/account/user/hooks', () => ({
     ],
 }));
 
+jest.mock('@proton/components/hooks/useUserSettings.ts', () => ({
+    __esModule: true,
+    useUserSettings: function () {
+        return [
+            {
+                TimeFormat: 2,
+            },
+            false,
+        ];
+    },
+}));
+
 const dailyEvents = [
     {
         ID: 'z1atJaCep8olkfcWKkWxUz_t0wbXL6JXeVRZhSHD2JFjqz3xxKXVcNo4I-KdQCdxqAV_aAxuR4fASmIgTXfPzw==',
@@ -69,11 +81,11 @@ describe('CalendarSearchViewDayEvents', () => {
         const [first, second] = events;
 
         // first event
-        expect(within(first).getByText('2:00 PM - 2:30 PM'));
+        expect(within(first).getByText('2pm - 2:30pm'));
         expect(within(first).getByText('Tataratatata'));
 
         // first event
-        expect(within(second).getByText('3:00 PM - 3:30 PM'));
+        expect(within(second).getByText('3pm - 3:30pm'));
         expect(within(second).getByText('Testerere'));
     });
 
