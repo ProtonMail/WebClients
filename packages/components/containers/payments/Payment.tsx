@@ -183,7 +183,13 @@ export const PaymentsNoApi = ({
     const isSignupPass = type === 'signup-pass' || type === 'signup-pass-upgrade';
     const isSignupVpn = type === 'signup-vpn';
     const isSingleSignup = isSignupPass || isSignupVpn;
-    const isSignup = type === 'signup' || isSignupPass || isSignupVpn;
+    const showAlert3ds = !(
+        type === 'signup' ||
+        isSignupPass ||
+        isSignupVpn ||
+        type === 'signup-v2' ||
+        type === 'signup-v2-upgrade'
+    );
 
     const sharedCbProps = {
         iframeHandles,
@@ -237,7 +243,7 @@ export const PaymentsNoApi = ({
                                 setCardProperty={onCard}
                                 fieldsStatus={cardFieldStatus}
                             />
-                            {!isSignup && <Alert3DS />}
+                            {showAlert3ds && <Alert3DS />}
                         </>
                     )}
                     {method === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD && (
@@ -247,7 +253,7 @@ export const PaymentsNoApi = ({
                                 themeCode={themeCode}
                                 initialCountryCode={paymentStatus?.CountryCode}
                             />
-                            {!isSignup && <Alert3DS />}
+                            {showAlert3ds && <Alert3DS />}
                         </>
                     )}
                     {method === PAYMENT_METHOD_TYPES.CASH && <Cash />}
@@ -320,7 +326,8 @@ export const PaymentsNoApi = ({
                                 <PaymentMethodDetails type={savedMethod.Type} details={savedMethod.Details} />
                             )}
                             {(savedMethod.Type === PAYMENT_METHOD_TYPES.CARD ||
-                                savedMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) && <Alert3DS />}
+                                savedMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) &&
+                                showAlert3ds && <Alert3DS />}
                             {renderSavedChargebeeIframe && <ChargebeeSavedCardWrapper {...sharedCbProps} />}
                         </>
                     )}
