@@ -2,14 +2,14 @@ import { differenceInDays, format, fromUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { BRAND_NAME, MAIL_APP_NAME, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl, getStaticURL } from '@proton/shared/lib/helpers/url';
 import type { SubscriptionModel } from '@proton/shared/lib/interfaces';
 import compliance from '@proton/styles/assets/img/cancellation-flow/testimonial_compliance.svg';
 import connected from '@proton/styles/assets/img/cancellation-flow/testimonial_connceted.svg';
 import standOut from '@proton/styles/assets/img/cancellation-flow/testimonial_stand_out.svg';
 
-import type { ConfirmationModal, PlanConfigFeatures, PlanConfigTestimonial } from '../interface';
+import type { ConfirmationModal, PlanConfigTestimonial } from '../interface';
 
 export const getDefaultTestimonial = (planName: string): PlanConfigTestimonial => {
     return {
@@ -40,73 +40,6 @@ export const getDefaultTestimonial = (planName: string): PlanConfigTestimonial =
                 ctaText: c('Subscription reminder').t`Learn more`,
                 link: getStaticURL('/mail/download'),
                 picture: connected,
-            },
-        ],
-    };
-};
-
-export const getDefaultFeatures = (
-    planName: string,
-    planMaxSpace: string,
-    maxEmails: number,
-    maxDomainNames: number
-): PlanConfigFeatures => {
-    return {
-        title: c('Subscription reminder').t`Email productivity features`,
-        description: c('Subscription reminder')
-            .t`${planName} gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.`,
-        features: [
-            {
-                icon: 'storage',
-                text: c('Subscription reminder').t`${planMaxSpace} storage per user`,
-            },
-            {
-                icon: 'envelopes',
-                text: c('Subscription reminder').ngettext(
-                    msgid`${maxEmails} email address per user`,
-                    `${maxEmails} email addresses per user`,
-                    maxEmails
-                ),
-            },
-            {
-                icon: 'folders',
-                text: c('Subscription reminder').t`Unlimited folders and labels`,
-            },
-            {
-                icon: 'globe',
-                text: c('Subscription reminder').ngettext(
-                    msgid`${maxDomainNames} custom email domain`,
-                    `${maxDomainNames} custom email domains`,
-                    maxDomainNames
-                ),
-            },
-            {
-                icon: 'envelope-arrow-up-and-right',
-                text: c('Subscription reminder').t`Automatic email forwarding`,
-            },
-            {
-                icon: 'calendar-grid',
-                text: c('Subscription reminder').t`25 calendars per user`,
-            },
-            {
-                icon: 'calendar-checkmark',
-                text: c('Subscription reminder').t`See your colleagues’ availability`,
-            },
-            {
-                icon: 'at',
-                text: c('Subscription reminder').t`Catch-all email address`,
-            },
-            {
-                icon: 'tv',
-                text: c('Subscription reminder').t`Desktop app and email client support (via IMAP)`,
-            },
-            {
-                icon: 'shield-half-filled',
-                text: c('Subscription reminder').t`${PROTON_SENTINEL_NAME} program`,
-            },
-            {
-                icon: 'life-ring',
-                text: c('Subscription reminder').t`Priority support`,
             },
         ],
     };
@@ -155,21 +88,30 @@ export const getDefaultConfirmationModal = (
         </Href>
     );
 
-    const description = isChargeBeeUser
-        ? c('Subscription reminder')
-              .jt`Your ${planName} subscription ends on ${expiryDate}. After that, you'll be on the ${BRAND_NAME} Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${learnMoreLink}`
-        : c('Subscription reminder')
-              .jt`You still have ${expiryDate} on your ${planName} subscription. We'll add the credits for the remaining time to your ${BRAND_NAME} Account. Make sure you do not exceed the free plan limits before canceling. ${learnMoreLink}`;
+    const descriptionP1 = c('Subscription reminder')
+        .jt`When your ${planName} subscription ends on ${expiryDate}, you'll be downgraded to the ${BRAND_NAME} Free plan.`;
+    const descriptionP2 = c('Subscription reminder')
+        .t`If your usage exceeds free plan limits, you may experience restricted access to product features and your data.`;
+
+    const description = isChargeBeeUser ? (
+        <>
+            <p className="m-0 mb-1">{descriptionP1}</p>
+            <p className="m-0 mb-1">{descriptionP2}</p>
+            <p className="m-0 mb-1">{learnMoreLink}</p>
+        </>
+    ) : (
+        c('Subscription reminder')
+            .jt`You still have ${expiryDate} on your ${planName} subscription. We'll add the credits for the remaining time to your ${BRAND_NAME} Account. Make sure you do not exceed the free plan limits before canceling. ${learnMoreLink}`
+    );
 
     return {
         description,
-        warningTitle: c('Subscription reminder')
-            .t`Organizations, additional users, and custom email domains are not supported on the free plan. This means:`,
+        warningTitle: c('Subscription reminder').t`Limitations of the free plan:`,
         warningPoints: [
             c('Subscription reminder').t`Invited members will be removed from your organization`,
             c('Subscription reminder').t`Users won’t be able to send emails`,
             c('Subscription reminder').t`Users won’t be able to manage their calendars`,
-            c('Subscription reminder').t`Users won’t be able to sync files on their devices`,
+            c('Subscription reminder').t`Users won’t be able to upload files on their devices`,
             c('Subscription reminder').t`Any custom email domains will be disabled`,
         ],
     };

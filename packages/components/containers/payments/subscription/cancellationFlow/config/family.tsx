@@ -1,18 +1,16 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import {
     CALENDAR_APP_NAME,
-    DRIVE_APP_NAME,
-    MAIL_APP_NAME,
-    PASS_APP_NAME,
+    DRIVE_SHORT_APP_NAME,
+    PASS_SHORT_APP_NAME,
     PLANS,
     PLAN_NAMES,
     PROTON_SENTINEL_NAME,
-    VPN_APP_NAME,
+    VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
-import type { SubscriptionModel, SubscriptionPlan, UserModel } from '@proton/shared/lib/interfaces';
 
 import type {
     ConfirmationModal,
@@ -27,16 +25,15 @@ import {
     getDefaultTBStorageWarning,
     getDefaultTestimonial,
 } from './b2cCommonConfig';
+import type { ConfigProps } from './types';
 
-export const getFamilyConfig = (
-    subscription: SubscriptionModel,
-    user: UserModel,
-    plan: SubscriptionPlan & { Name: PLANS },
-    vpnCountries: number
-): PlanConfig => {
+export const getFamilyConfig = ({ plan, subscription, user }: ConfigProps): PlanConfig => {
     const currentPlan = PLANS.FAMILY;
     const planName = PLAN_NAMES[currentPlan];
     const planMaxSpace = humanSize({ bytes: plan.MaxSpace, unit: 'TB', fraction: 0 });
+    const planNumberOfEmails = plan.MaxAddresses;
+    const planNumberOfUsers = plan.MaxMembers;
+    const planNumberOfDomains = plan.MaxDomains;
 
     const reminder = getDefaultReminder(planName);
     const testimonials: PlanConfigTestimonial = getDefaultTestimonial();
@@ -44,7 +41,7 @@ export const getFamilyConfig = (
     const features: PlanConfigFeatures = {
         title: c('Subscription reminder').t`Online privacy, for your whole family`,
         description: c('Subscription reminder')
-            .t`${planName} helps you ensure that each of your family members — and their data — are protected whenever they’re online.`,
+            .t`${planName} helps you ensure that each of your family members — and their data — are protected whenever they're online.`,
         features: [
             {
                 icon: 'storage',
@@ -52,36 +49,48 @@ export const getFamilyConfig = (
             },
             {
                 icon: 'users',
-                text: c('Subscription reminder').t`6 users`,
+                text: c('Subscription reminder').ngettext(
+                    msgid`${planNumberOfUsers} user`,
+                    `${planNumberOfUsers} users`,
+                    planNumberOfUsers
+                ),
             },
             {
                 icon: 'shield-half-filled',
-                text: c('Subscription reminder').t`${PROTON_SENTINEL_NAME} program`,
+                text: c('Subscription reminder').t`${PROTON_SENTINEL_NAME} advanced account protection`,
             },
             {
                 icon: 'life-ring',
                 text: c('Subscription reminder').t`Priority support`,
             },
             {
-                icon: 'brand-proton-mail',
-                text: c('Subscription reminder').t`${MAIL_APP_NAME} and all premium productivity features`,
+                icon: 'envelopes',
+                text: c('Subscription reminder').ngettext(
+                    msgid`${planNumberOfEmails} email address`,
+                    `${planNumberOfEmails} email addresses`,
+                    planNumberOfEmails
+                ),
             },
             {
-                icon: 'brand-proton-calendar',
-                text: c('Subscription reminder').t`${CALENDAR_APP_NAME} including calendar sharing`,
+                icon: 'folders',
+                text: c('Subscription reminder').t`Folders, labels, and custom filters`,
             },
             {
-                icon: 'brand-proton-drive',
-                text: c('Subscription reminder').t`${DRIVE_APP_NAME} including version history`,
+                icon: 'globe',
+                text: c('Subscription reminder').ngettext(
+                    msgid`${planNumberOfDomains} custom email domain`,
+                    `${planNumberOfDomains} custom email domains`,
+                    planNumberOfDomains
+                ),
             },
             {
-                icon: 'brand-proton-pass',
-                text: c('Subscription reminder').t`${PASS_APP_NAME} including unlimited hide-my-email aliases`,
+                icon: 'at',
+                text: c('Subscription reminder').t`Your own short @pm.me email alias`,
             },
             {
-                icon: 'brand-proton-vpn',
+                icon: 'app-switch',
                 text: c('Subscription reminder')
-                    .t`${VPN_APP_NAME} with access to all high-speed servers in ${vpnCountries} countries`,
+                    .t`${CALENDAR_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, and ${VPN_SHORT_APP_NAME} with premium features`,
             },
         ],
     };
@@ -91,12 +100,12 @@ export const getFamilyConfig = (
     const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(subscription, planName, cancellablePlan);
 
     return {
+        confirmationModal,
+        features,
+        plan: currentPlan,
         planName,
         reminder,
-        testimonials,
-        features,
         storage,
-        confirmationModal,
-        plan: currentPlan,
+        testimonials,
     };
 };
