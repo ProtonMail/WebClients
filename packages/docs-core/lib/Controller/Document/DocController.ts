@@ -444,19 +444,27 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       return
     }
 
-    if (
-      this.doesUserHaveEditingPermissions() &&
-      !this.isExperiencingErroredSync &&
-      !this.isLockedDueToSizeContraint &&
-      !this.hasEditorRenderingIssue &&
-      this.websocketStatus === 'connected' &&
-      this.trashState !== 'trashed'
-    ) {
-      this.logger.info('Changing editing locked to false')
-      void this.editorInvoker.changeLockedState(false)
+    let shouldLock = true
+
+    if (!this.doesUserHaveEditingPermissions()) {
+      this.logger.info('Locking editor due to lack of editing permissions')
+    } else if (this.isExperiencingErroredSync) {
+      this.logger.info('Locking editor due to errored sync')
+    } else if (this.isLockedDueToSizeContraint) {
+      this.logger.info('Locking editor due to size constraint')
+    } else if (this.hasEditorRenderingIssue) {
+      this.logger.info('Locking editor due to editor rendering issue')
+    } else if (this.websocketStatus !== 'connected') {
+      this.logger.info('Locking editor due to websocket status', this.websocketStatus)
+    } else if (this.trashState === 'trashed') {
+      this.logger.info('Locking editor due to trash state')
     } else {
-      this.logger.info('Changing editing locked to true')
-      void this.editorInvoker.changeLockedState(true)
+      this.logger.info('Unlocking editor')
+      shouldLock = false
+    }
+
+    void this.editorInvoker.changeLockedState(shouldLock)
+    if (shouldLock) {
       this.incrementMetricsReadonlyState()
     }
   }
