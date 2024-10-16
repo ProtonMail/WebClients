@@ -7,4 +7,7 @@ export type CancelSubscriptionResult =
       }
     | {
           status: 'downgraded';
+      }
+    | {
+          status: 'upsold';
       };

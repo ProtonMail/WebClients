@@ -27,6 +27,7 @@ enum CommonFeatureFlag {
     InboxDesktopWinLinNewAppSwitcher = 'InboxDesktopWinLinNewAppSwitcher',
     DarkWebEmailNotifications = 'DarkWebEmailNotifications',
     InboxNewUpsellModals = 'InboxNewUpsellModals',
+    NewCancellationFlowUpsell = 'NewCancellationFlowUpsell',
 }
 
 enum AccountFlag {

@@ -1,18 +1,14 @@
 import { c } from 'ttag';
 
-import { BRAND_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
-import type { SubscriptionModel, SubscriptionPlan, UserModel } from '@proton/shared/lib/interfaces';
 
 import type { ConfirmationModal, PlanConfig, PlanConfigFeatures, PlanConfigTestimonial } from '../interface';
 import { getDefaultConfirmationModal, getDefaultReminder, getDefaultTestimonial } from './b2cCommonConfig';
+import type { ConfigProps } from './types';
 
-export const getDrivePlusConfig = (
-    subscription: SubscriptionModel,
-    user: UserModel,
-    plan: SubscriptionPlan & { Name: PLANS }
-): PlanConfig => {
+export const getDrivePlusConfig = ({ plan, subscription, user }: ConfigProps): PlanConfig => {
     const currentPlan = PLANS.DRIVE;
     const planName = PLAN_NAMES[currentPlan];
     const planMaxSpace = humanSize({ bytes: plan.MaxSpace, unit: 'GB', fraction: 0 });
@@ -30,12 +26,6 @@ export const getDrivePlusConfig = (
             c('Subscription reminder').t`Back up photos from your devices`,
         ],
     };
-
-    const extraWarning = cancellablePlan
-        ? c('Subscription reminder')
-              .t`After your ${planName} subscription expires, you will be downgraded to ${BRAND_NAME} Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.`
-        : c('Subscription reminder')
-              .t`When you cancel ${planName}, you will be downgraded to ${BRAND_NAME} Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.`;
 
     const features: PlanConfigFeatures = {
         title: c('Subscription reminder').t`Extra storage and bonuses`,
@@ -59,15 +49,14 @@ export const getDrivePlusConfig = (
                 text: c('Subscription reminder').t`Priority support`,
             },
         ],
-        extraWarning,
     };
 
     return {
+        confirmationModal,
+        features,
+        plan: currentPlan,
         planName,
         reminder,
         testimonials,
-        features,
-        confirmationModal,
-        plan: currentPlan,
     };
 };
