@@ -88,10 +88,12 @@ export const LobbyContent: FC<Props> = ({
 
     useEffect(() => {
         (async () => {
-            const enabled = (await settings.resolve(localID))?.offlineEnabled ?? false;
-            setOfflineEnabled(enabled);
+            if (localID) {
+                const enabled = (await settings.resolve(localID))?.offlineEnabled ?? false;
+                setOfflineEnabled(enabled);
+            }
         })().catch(noop);
-    }, [online]);
+    }, [online, localID]);
 
     const brandNameJSX = (
         <img
@@ -203,7 +205,7 @@ export const LobbyContent: FC<Props> = ({
                                     color="norm"
                                     className="w-full"
                                     onClick={() => (errored ? onLogin({ forceLock: true }) : onFork())}
-                                    disabled={!online && (errored || !offlineEnabled)}
+                                    disabled={!online && (errored ? !offlineEnabled : true)}
                                 >
                                     {errored ? c('Action').t`Retry` : c('Action').t`Sign in with ${BRAND_NAME}`}
                                 </Button>
