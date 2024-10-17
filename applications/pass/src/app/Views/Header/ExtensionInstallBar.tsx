@@ -9,11 +9,10 @@ import edge from '@proton/pass/assets/import/edge-icon-48.png';
 import firefox from '@proton/pass/assets/import/firefox-icon-48.png';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
+import { TopBar } from '@proton/pass/components/Layout/Bar/TopBar';
 import type { SupportedExtensionClient } from '@proton/pass/lib/extension/utils/browser';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { Clients, clients } from '@proton/shared/lib/pass/constants';
-
-import { TopBar } from './TopBar';
 
 const BrowserImages: Record<SupportedExtensionClient, string> = {
     [Clients.Brave]: brave,
@@ -28,7 +27,7 @@ export const ExtensionInstallBar: FC = () => {
     const browser = supportedBrowser ? clients[supportedBrowser] : null;
 
     return supportedBrowser && browser ? (
-        <TopBar visible={!installed}>
+        <TopBar breakpoint="md" visible={!installed}>
             <img src={BrowserImages[supportedBrowser]} width="24" height="24" alt="" />
             <span>
                 {
@@ -36,7 +35,14 @@ export const ExtensionInstallBar: FC = () => {
                     c('Info').t`Install ${PASS_APP_NAME} for ${browser.title} to quickly autofill your logins. `
                 }
             </span>
-            <Button pill size="small" shape="solid" color="norm" onClick={() => onLink(browser.link)}>
+            <Button
+                className="button-xs"
+                color="norm"
+                pill
+                shape="solid"
+                size="small"
+                onClick={() => onLink(browser.link)}
+            >
                 {c('Action').t`Install extension`}
             </Button>
         </TopBar>
