@@ -23,6 +23,7 @@ import {
 } from '@proton/pass/store/actions';
 import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
+import { getAuthDevices } from '@proton/pass/store/actions/creators/sso';
 import { isCachingAction } from '@proton/pass/store/actions/enhancers/cache';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
@@ -69,6 +70,7 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
         if (online) {
             yield put(startEventPolling());
             yield put(withRevalidate(getBreaches.intent()));
+            yield put(getAuthDevices.intent());
             yield put(withRevalidate(aliasSyncStatus.intent()));
             yield put(withRevalidate(secureLinksGet.intent()));
             if (EXTENSION_BUILD) yield put(resolveWebsiteRules.intent());

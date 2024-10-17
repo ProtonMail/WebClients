@@ -16,7 +16,7 @@ import type {
     DeviceSecretData,
     DeviceSecretUser,
 } from '@proton/shared/lib/keys/device';
-import { deleteAuthDevice } from '@proton/shared/lib/keys/device';
+import { deleteAuthDevice, getAllAuthDevices } from '@proton/shared/lib/keys/device';
 import { AuthDeviceState } from '@proton/shared/lib/keys/device';
 import {
     AuthDeviceInactiveError,
@@ -27,7 +27,6 @@ import {
     createAuthDeviceToActivate,
     encryptAuthDeviceSecret,
     getAuthDeviceDataByUser,
-    getAuthDevices,
     setPersistedAuthDeviceDataByUser,
 } from '@proton/shared/lib/keys/device';
 import { changeSSOUserKeysPasswordHelper } from '@proton/shared/lib/keys/password';
@@ -370,13 +369,15 @@ const createSSOPolling = ({ api, user }: { api: Api; user: User }): SSOPolling =
 export const getSSOInactiveData = async ({
     deviceDataSerialized,
     cache,
+    user: cachedUser,
 }: {
     deviceDataSerialized: DeviceDataSerialized;
     cache: AuthCacheResult;
+    user: User;
 }): Promise<SSOInactiveData> => {
     const { api } = cache;
 
-    const authDevices = await getAuthDevices({ api });
+    const authDevices = await getAllAuthDevices({ user: cachedUser, api });
     const authDeviceSelf = authDevices.find(({ ID }) => {
         return ID === deviceDataSerialized.serializedDeviceData.id;
     });
@@ -388,7 +389,7 @@ export const getSSOInactiveData = async ({
         ({ ID, State }) => ID !== deviceDataSerialized.serializedDeviceData.id && State === AuthDeviceState.Active
     );
 
-    let [user, addresses, organizationData] = await Promise.all([
+    const [user, addresses, organizationData] = await Promise.all([
         cache.data.user || syncUser(cache),
         cache.data.addresses || syncAddresses(cache),
         getOrganizationData({ api }),
@@ -435,7 +436,7 @@ export const getSSOUnlockData = async ({ cache }: { cache: AuthCacheResult }): P
 
     const deviceData = await createAuthDeviceToActivate({ primaryAddressKey, api });
     await setPersistedAuthDeviceDataByUser({ user, deviceData });
-    const authDevices = await getAuthDevices({ api: cache.api });
+    const authDevices = await getAllAuthDevices({ user, api: cache.api });
     const activeAuthDevicesExceptSelf = authDevices.filter(
         ({ ID, State }) => ID !== deviceData.deviceOutput.ID && State === AuthDeviceState.Active
     );
@@ -488,7 +489,7 @@ export const handlePrepareSSOData = async ({ cache }: { cache: AuthCacheResult }
     } catch (e) {
         if (e instanceof AuthDeviceInactiveError) {
             const deviceDataSerialized = e.deviceDataSerialized;
-            const ssoInactiveData = await getSSOInactiveData({ deviceDataSerialized, cache });
+            const ssoInactiveData = await getSSOInactiveData({ user, deviceDataSerialized, cache });
             cache.data.ssoData = ssoInactiveData;
 
             return {
