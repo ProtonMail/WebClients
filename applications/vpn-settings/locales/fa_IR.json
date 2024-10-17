@@ -3490,6 +3490,23 @@
         "سرعت متوسط VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "تنزل به ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "همه طرح های ${ BRAND_NAME } را بررسی کنید"
+      ],
+      "From ${ price }": [
+        "از ${ price }"
+      ],
+      "Upgrade": [
+        "ارتقاء"
+      ],
+      "Upgrade now": [
+        "اکنون ارتقا دهید"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "حذف حساب کاربری"
@@ -3511,23 +3528,6 @@
       ],
       "Switch plan": [
         "تغییر دادن طرح"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "تنزل به ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "همه طرح های ${ BRAND_NAME } را بررسی کنید"
-      ],
-      "From ${ price }": [
-        "از ${ price }"
-      ],
-      "Upgrade": [
-        "ارتقاء"
-      ],
-      "Upgrade now": [
-        "اکنون ارتقا دهید"
       ]
     },
     "new_plans: feature": {
@@ -3805,6 +3805,14 @@
         "شرایط و ضوابط"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "دوره آزمایشی رایگان ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "رکورد استفاده حساب شما"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "حذف کردن حساب؟"
@@ -3817,14 +3825,6 @@
       ],
       "Switch plans?": [
         "تغییر دادن طرح؟"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "دوره آزمایشی رایگان ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "رکورد استفاده حساب شما"
       ]
     },
     "new_plans: tooltip": {
@@ -4534,31 +4534,11 @@
       ]
     },
     "Subscription reminder": {
-      "${ maxDomainNames } custom email domain": [
-        "${ maxDomainNames } دامنه ایمیل سفارشی",
-        "${ maxDomainNames } دامنه ایمیل سفارشی"
-      ],
-      "${ maxEmails } email address per user": [
-        "${ maxEmails } آدرس ایمیل برای هر کاربر",
-        "${ maxEmails } آدرس ایمیل برای هر کاربر"
-      ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } فضای ذخیره‌سازی برای هر کاربر"
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } فضای ذخیره‌سازی کلی"
-      ],
-      "10 email addresses": [
-        "۱۰ نشانی ایمیل"
-      ],
-      "6 users": [
-        "6 کاربر"
-      ],
-      "Calendar sharing": [
-        "اشتراک گذاری تقویم"
-      ],
-      "Close": [
-        "بستن"
       ],
       "Keep ${ config.planName }": [
         "${ config.planName } را نگه دار"
@@ -4568,9 +4548,6 @@
       ],
       "Priority support": [
         "اولویت پشتیبانی"
-      ],
-      "Unlimited folders, labels and filters": [
-        "پوشه‌ها، برچسب‌ها و فیلترهای نامحدود"
       ]
     },
     "subscription reminder": {
