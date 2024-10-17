@@ -1,6 +1,10 @@
 import { c } from 'ttag';
 
-import { BIOMETRICS_KEY } from '@proton/pass/constants';
+import {
+    fromBiometricsEncryptedOfflineKD,
+    getBiometricsStorageKey,
+    intoBiometricsEncryptedOfflineKD,
+} from '@proton/pass/lib/auth/lock/biometrics/utils';
 import { type LockAdapter, LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import { getOfflineComponents } from '@proton/pass/lib/cache/crypto';
@@ -77,15 +81,16 @@ export const biometricsLockAdapterFactory = (auth: AuthService): LockAdapter => 
             if (!offlineKD) throw new Error('Missing offline KD');
 
             const keyBytes = generateKey();
-            await window.ctxBridge?.setSecret(BIOMETRICS_KEY, uint8ArrayToString(keyBytes));
+            const biometricsStorageKey = getBiometricsStorageKey(authStore.getLocalID()!);
+            await window.ctxBridge?.setSecret(biometricsStorageKey, uint8ArrayToString(keyBytes));
 
             const key = await importSymmetricKey(keyBytes);
-            const encryptedOfflineKD = await encryptData(
-                key,
-                stringToUint8Array(offlineKD),
-                PassEncryptionTag.BiometricOfflineKD
-            );
-            authStore.setEncryptedOfflineKD(uint8ArrayToString(encryptedOfflineKD));
+
+            const rawOfflineKD = stringToUint8Array(offlineKD);
+            const rawEncryptedOfflineKD = await encryptData(key, rawOfflineKD, PassEncryptionTag.BiometricOfflineKD);
+            const encryptedOfflineKD = intoBiometricsEncryptedOfflineKD(uint8ArrayToString(rawEncryptedOfflineKD));
+
+            authStore.setEncryptedOfflineKD(encryptedOfflineKD);
             authStore.setLockMode(adapter.type);
             authStore.setLockTTL(ttl);
             authStore.setLockLastExtendTime(getEpoch());
@@ -153,11 +158,13 @@ export const biometricsLockAdapterFactory = (auth: AuthService): LockAdapter => 
                 }
 
                 const biometricsCryptoKey = await importSymmetricKey(stringToUint8Array(biometricsSecret));
+
                 const offlineKD = await decryptData(
                     biometricsCryptoKey,
-                    stringToUint8Array(offlineEncryptedKD),
+                    stringToUint8Array(fromBiometricsEncryptedOfflineKD(offlineEncryptedKD).key),
                     PassEncryptionTag.BiometricOfflineKD
                 );
+
                 const offlineKey = await importSymmetricKey(offlineKD);
 
                 /** this will throw if the derived offlineKD is incorrect */
