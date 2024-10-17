@@ -1,16 +1,17 @@
-import type { DragEvent} from 'react';
-import { useMemo } from 'react';
+import type { DragEvent } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
-import { ErrorBoundary, useHandler, useToggle, useWindowSize } from '@proton/components';
+import { ErrorBoundary, useHandler, useWindowSize } from '@proton/components';
 import type { Breakpoints } from '@proton/components/hooks/useActiveBreakpoint';
 import { getHasAssistantStatus } from '@proton/llm/lib';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
-import { COMPOSER_MODE } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';
 
-import useMailModel from 'proton-mail/hooks/useMailModel';
+import { selectComposer } from 'proton-mail/store/composers/composerSelectors';
+import { composerActions } from 'proton-mail/store/composers/composersSlice';
+import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT, DRAG_ADDRESS_KEY } from '../../constants';
 import { computeComposerStyle, getComposerDimension, shouldBeMaximized } from '../../helpers/composerPositioning';
@@ -41,21 +42,21 @@ const ComposerFrame = ({
     composerID,
     drawerOffset,
 }: Props) => {
-    const mailSettings = useMailModel('MailSettings');
     const composerFrameRef = useRef<HTMLDivElement>(null);
     const composerRef = useRef<ComposerAction>(null);
     // Ref to focus minimize button, otherwise focus is still on Composer, and it's still possible to edit fields
     const minimizeButtonRef = useRef<HTMLButtonElement>(null);
     // Needed for re-renders when window size changes
     const [, windowHeight] = useWindowSize();
+    const dispatch = useMailDispatch();
+    const { isMaximized, isMinimized } = useMailSelector((store) => selectComposer(store, composerID));
 
-    // Minimized status of the composer
-    const { state: minimized, toggle: toggleMinimized } = useToggle(false);
-
-    // Maximized status of the composer
-    const { state: maximized, toggle: toggleMaximized } = useToggle(
-        mailSettings.ComposerMode === COMPOSER_MODE.MAXIMIZED
-    );
+    const toggleMinimizeComposer = useCallback(() => {
+        dispatch(composerActions.toggleMinimizeComposer(composerID));
+    }, [composerID]);
+    const toggleMaximizeComposer = useCallback(() => {
+        dispatch(composerActions.toggleMaximizeComposer(composerID));
+    }, [composerID]);
 
     const composerDimension = getComposerDimension();
 
@@ -63,8 +64,8 @@ const ComposerFrame = ({
         composerDimension,
         index,
         count,
-        minimized,
-        maximized,
+        minimized: isMinimized,
+        maximized: isMaximized,
         isSmallViewport: breakpoints.viewportWidth['<=small'],
         drawerOffset,
     });
@@ -76,8 +77,8 @@ const ComposerFrame = ({
     } = useComposerDrag({
         composerDimension,
         composerIndex: index,
-        maximized,
-        minimized,
+        maximized: isMinimized,
+        minimized: isMaximized,
         totalComposers: count,
         drawerOffset,
     });
@@ -105,8 +106,8 @@ const ComposerFrame = ({
     useEffect(() => {
         const shouldMaximized = shouldBeMaximized(composerDimension, windowHeight);
 
-        if (!maximized && shouldMaximized) {
-            toggleMaximized();
+        if (!isMaximized && shouldMaximized) {
+            toggleMaximizeComposer();
         }
     }, [windowHeight]);
 
@@ -116,8 +117,8 @@ const ComposerFrame = ({
     };
 
     const handleClick = () => {
-        if (minimized && !isDragging) {
-            toggleMinimized();
+        if (isMinimized && !isDragging) {
+            toggleMinimizeComposer();
         }
         onFocus();
     };
@@ -137,8 +138,8 @@ const ComposerFrame = ({
             className={clsx([
                 `composer rounded flex flex-nowrap flex-column outline-none ${customClasses}`,
                 !focus && 'composer--is-blur',
-                minimized && 'composer--is-minimized',
-                maximized && 'composer--is-maximized',
+                isMinimized && 'composer--is-minimized',
+                isMaximized && 'composer--is-maximized',
             ])}
             style={{ ...style, '--composer-drag-offset': `${dragOffset}px` }}
             onFocus={handleFocus}
@@ -150,10 +151,10 @@ const ComposerFrame = ({
             {!isAssistantExpanded && (
                 <ComposerTitleBar
                     title={subject}
-                    minimized={minimized}
-                    maximized={maximized}
-                    toggleMinimized={toggleMinimized}
-                    toggleMaximized={toggleMaximized}
+                    minimized={isMinimized}
+                    maximized={isMaximized}
+                    toggleMinimized={toggleMinimizeComposer}
+                    toggleMaximized={toggleMaximizeComposer}
                     onClose={handleClose}
                     handleStartDragging={handleStartDragging}
                     minimizeButtonRef={minimizeButtonRef}
@@ -163,8 +164,8 @@ const ComposerFrame = ({
                 <Composer
                     ref={composerRef}
                     composerFrameRef={composerFrameRef}
-                    toggleMinimized={toggleMinimized}
-                    toggleMaximized={toggleMaximized}
+                    toggleMinimized={toggleMinimizeComposer}
+                    toggleMaximized={toggleMaximizeComposer}
                     onFocus={onFocus}
                     onClose={onClose}
                     onSubject={(subject) => setSubject(subject)}
