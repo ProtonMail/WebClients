@@ -7,7 +7,7 @@ import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 
 import { getSharedLink } from '../../store/_shares';
 import { getUrlPassword } from '../../utils/url/password';
-import { useRedirectToPublicPage } from './useRedirectToPublicPage';
+import { drivePublicRedirectionReasonKey, useRedirectToPublicPage } from './useRedirectToPublicPage';
 
 jest.mock('react-router-dom', () => ({
     useHistory: jest.fn(),
@@ -35,18 +35,22 @@ describe('useRedirectToPublicPage', () => {
         mockedUseHistory.mockReturnValue({ replace: mockHistoryReplace } as any);
     });
 
-    it('should determine if redirection is needed', () => {
-        mockedUseLocation.mockReturnValue({ search: '?redirectToPublic=true' } as any);
+    it('should redirect if account switch redirection reason is passed and is signin or accountSwitch', () => {
+        mockedUseLocation.mockReturnValue({ search: `?${drivePublicRedirectionReasonKey}=signin` } as any);
         const { result } = renderHook(() => useRedirectToPublicPage());
-        expect(result.current.needToRedirectToPublicPage).toBe(true);
+        expect(result.current.redirectionReason).toEqual('signin');
 
-        mockedUseLocation.mockReturnValue({ search: '?redirectToPublic=false' } as any);
+        mockedUseLocation.mockReturnValue({ search: `?${drivePublicRedirectionReasonKey}=accountSwitch` } as any);
         const { result: result2 } = renderHook(() => useRedirectToPublicPage());
-        expect(result2.current.needToRedirectToPublicPage).toBe(false);
+        expect(result2.current.redirectionReason).toEqual('accountSwitch');
+
+        mockedUseLocation.mockReturnValue({ search: `?${drivePublicRedirectionReasonKey}=false` } as any);
+        const { result: result3 } = renderHook(() => useRedirectToPublicPage());
+        expect(result3.current.redirectionReason).toEqual(undefined);
     });
 
     it('should clean up the URL', () => {
-        mockedUseLocation.mockReturnValue({ search: '?redirectToPublic=true&token=123' } as any);
+        mockedUseLocation.mockReturnValue({ search: `?${drivePublicRedirectionReasonKey}=signin&token=123` } as any);
         const { result } = renderHook(() => useRedirectToPublicPage());
 
         result.current.cleanupUrl();

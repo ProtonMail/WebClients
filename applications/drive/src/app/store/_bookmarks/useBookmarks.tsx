@@ -26,7 +26,7 @@ export const useBookmarks = () => {
 
     const addBookmark = async (
         abortSignal: AbortSignal,
-        { token, urlPassword }: { token: string; urlPassword: string }
+        { token, urlPassword, apiSilence }: { token: string; urlPassword: string; apiSilence?: number | number[] }
     ) => {
         const defaultShare = await getDefaultShare();
         const { address, addressKeyID, privateKey } = await getShareCreatorKeys(
@@ -47,13 +47,16 @@ export const useBookmarks = () => {
             binarySignature: signature,
         });
         return debouncedRequest<{ Code: number; BookmarkShareURL: { Token: string } }>(
-            queryCreateShareURLBookmark(token, {
-                BookmarkShareURL: {
-                    EncryptedUrlPassword: result.message,
-                    AddressID: address.ID,
-                    AddressKeyID: addressKeyID,
-                },
-            }),
+            {
+                ...queryCreateShareURLBookmark(token, {
+                    BookmarkShareURL: {
+                        EncryptedUrlPassword: result.message,
+                        AddressID: address.ID,
+                        AddressKeyID: addressKeyID,
+                    },
+                }),
+                silence: apiSilence,
+            },
             abortSignal
         ).then(({ BookmarkShareURL }) => BookmarkShareURL.Token);
     };
