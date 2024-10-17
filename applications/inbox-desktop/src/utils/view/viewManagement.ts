@@ -1,4 +1,4 @@
-import { BrowserView, BrowserWindow, Event, Input, Rectangle, Session, WebContents, app } from "electron";
+import { BrowserView, BrowserWindow, Event, Input, Rectangle, WebContents, app } from "electron";
 import { debounce } from "lodash";
 import { getWindowBounds, saveWindowBounds } from "../../store/boundsStore";
 import { getSettings, saveSettings } from "../../store/settingsStore";
@@ -45,9 +45,9 @@ const IGNORED_NET_ERROR_CODES = [
     -300, // INVALID_URL
 ];
 
-export const viewCreationAppStartup = (session: Session) => {
-    mainWindow = createBrowserWindow(session);
-    createViews(session);
+export const viewCreationAppStartup = () => {
+    mainWindow = createBrowserWindow();
+    createViews();
 
     // We add the delay to avoid blank windows on startup, only mac supports openAtLogin for now
     const delay = isMac && app.getLoginItemSettings().openAtLogin ? 100 : 0;
@@ -101,8 +101,8 @@ export const viewCreationAppStartup = (session: Session) => {
     return mainWindow;
 };
 
-const createView = (viewID: ViewID, session: Session) => {
-    const view = new BrowserView(getWindowConfig(session));
+const createView = (viewID: ViewID) => {
+    const view = new BrowserView(getWindowConfig());
 
     handleBeforeHandle(viewID, view);
 
@@ -118,11 +118,11 @@ const createView = (viewID: ViewID, session: Session) => {
     return view;
 };
 
-const createViews = (session: Session) => {
+const createViews = () => {
     mainLogger.info("Creating views");
-    browserViewMap.mail = createView("mail", session);
-    browserViewMap.calendar = createView("calendar", session);
-    browserViewMap.account = createView("account", session);
+    browserViewMap.mail = createView("mail");
+    browserViewMap.calendar = createView("calendar");
+    browserViewMap.account = createView("account");
 
     if (isWindows) {
         mainWindow!.setMenuBarVisibility(false);
@@ -160,8 +160,8 @@ const createViews = (session: Session) => {
     });
 };
 
-const createBrowserWindow = (session: Session) => {
-    mainWindow = new BrowserWindow({ ...getWindowConfig(session) });
+const createBrowserWindow = () => {
+    mainWindow = new BrowserWindow(getWindowConfig());
 
     setApplicationMenu();
 

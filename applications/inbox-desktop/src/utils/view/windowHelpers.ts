@@ -1,9 +1,10 @@
-import { BrowserWindowConstructorOptions, Session, app } from "electron";
+import { BrowserWindowConstructorOptions, app } from "electron";
 import { join } from "path";
 import { MINIMUM_HEIGHT, MINIMUM_WIDTH, getWindowBounds } from "../../store/boundsStore";
 import { getSettings } from "../../store/settingsStore";
 import { getConfig } from "../config";
 import { isLinux, isMac, isWindows } from "../helpers";
+import { appSession } from "../session";
 
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 
@@ -23,7 +24,7 @@ const getOSSpecificConfig = (): BrowserWindowConstructorOptions => {
     return {};
 };
 
-export const getWindowConfig = (session: Session): BrowserWindowConstructorOptions => {
+export const getWindowConfig = (): BrowserWindowConstructorOptions => {
     const { x, y, width, height } = getWindowBounds();
     const settings = getSettings();
 
@@ -42,7 +43,7 @@ export const getWindowConfig = (session: Session): BrowserWindowConstructorOptio
             preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
             spellcheck: settings.spellChecker,
             // Security additions
-            session,
+            session: appSession(),
             nodeIntegration: false,
             contextIsolation: true,
             disableBlinkFeatures: "Auxclick",
