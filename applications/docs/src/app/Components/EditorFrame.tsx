@@ -111,6 +111,7 @@ export function EditorFrame({ onFrameReady, systemMode }: Props) {
       ref={setIframe}
       sandbox={SANDBOX_OPTIONS}
       allow="clipboard-write"
+      data-testid={`editor-frame-${systemMode}`}
     ></iframe>
   )
 }

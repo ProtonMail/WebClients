@@ -197,7 +197,12 @@ export function Editor({
         <AutoFocusPlugin isEditorHidden={hidden} />
         <ReadonlyLinkFixPlugin openLink={openLink} />
         <EditorRefPlugin editorRef={setEditorRef} />
-        <WordCountPlugin onWordCountChange={(wordCountInfo) => clientInvoker.reportWordCount(wordCountInfo)} />
+
+        <WordCountPlugin
+          onWordCountChange={(wordCountInfo) =>
+            systemMode !== EditorSystemMode.Revision && clientInvoker.reportWordCount(wordCountInfo)
+          }
+        />
         {showTreeView && <TreeViewPlugin />}
         <MarkNodesProvider>
           <CommentPlugin controller={clientInvoker} username={username} />
