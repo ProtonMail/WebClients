@@ -4764,6 +4764,9 @@
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "Pro vygenerování tokenu pro SMTP odesílání je třeba mít vlastní doménovou adresu."
       ],
+      "You've assigned all of your servers.": [
+        "Přiřadili jste všechny své servery."
+      ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Dosáhli jste maximálního počtu znaků. Zkraťte prosím svou zprávu."
       ],
@@ -5488,14 +5491,29 @@
       "Add": [
         "Přidat"
       ],
+      "Add (${ totalAddedCount })": [
+        "Přidat (${ totalAddedCount })",
+        "Přidat (${ totalAddedCount })",
+        "Přidat (${ totalAddedCount })",
+        "Přidat (${ totalAddedCount })"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Připojení až pro ${ plusVpnConnections } zařízení",
         "Připojení až pro ${ plusVpnConnections } zařízení",
         "Připojení až pro ${ plusVpnConnections } zařízení",
         "Připojení až pro ${ plusVpnConnections } zařízení"
       ],
+      "Continue": [
+        "Pokračovat"
+      ],
+      "Dark Web Monitoring": [
+        "Sledování Dark webu"
+      ],
       "Fastest VPN servers": [
         "Nejrychlejší servery VPN"
+      ],
+      "Remove": [
+        "Odebrat"
       ],
       "Secure Core servers": [
         "Servery Secure Core"
@@ -6156,6 +6174,12 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Přidejte tento záznam do své domény v ovládacím panelu svého registrátora doménových jmen"
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Nalezen ${ itemsCount } návrh, použijte klávesnice pro navigaci.",
+        "Nalezeny ${ itemsCount } návrhy, použijte klávesnice pro navigaci.",
+        "Nalezeno ${ itemsCount } návrhů, použijte klávesnice pro navigaci.",
+        "Nalezeno ${ itemsCount } návrhů, použijte klávesnice pro navigaci."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Použijte klávesy nahoru a dolů pro procházení návrhů po zadání. Stiskněte tlačítko Enter pro potvrzení vaší volby, nebo tlačítko Esc pro zavření návrhů."
@@ -7103,6 +7127,9 @@
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
         "Nastavte pro svoji organizaci ověřování pomocí SAML prostřednictvím poskytovatele identity jako Okta, Microsoft Azure, nebo Google Identity Platform. Tento krok aktivuje SAML pro celou organizaci."
       ],
+      "Connection data will be available in around 1 hour.": [
+        "Údaje o připojení budou k dispozici přibližně za 1 hodinu."
+      ],
       "Continue with ${ freeName }": [
         "Pokračovat jako ${ freeName }"
       ],
@@ -7232,6 +7259,9 @@
       "Disable recovery by ${ type }": [
         "Deaktivovat obnovení ${ type }"
       ],
+      "Disabled on ${ formattedDateAndTime }": [
+        "Deaktivováno ${ formattedDateAndTime }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Vypnutím dvoufázového ověřování bude váš účet méně bezpečný. Vypněte toto ověřování pouze pokud je to nezbytně nutné."
       ],
@@ -7351,6 +7381,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Povolte TLS nebo SSL u externí služby, pokud je podporováno."
+      ],
+      "Enabled on ${ formattedDateAndTime }": [
+        "Povoleno ${ formattedDateAndTime }"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Opětovné povolení obnovení pomocí fráze vygeneruje novou frázi pro obnovení."
@@ -7536,7 +7569,7 @@
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
-        "Pokud máte vlastní doménu s ${ MAIL_APP_NAME }, můžete nastavit \"spádovou\" e-mailovou adresu, která bude dostávat zprávy odeslané do Vaší domény, ale na neplatnou e-mailovou adresu (např. kvůli překlepům)."
+        "Pokud používáte v ${ MAIL_APP_NAME } vlastní doménu, můžete nastavit spádovou e-mailovou adresu, na kterou budou doručeny e-maily, které někdo odeslal na neexistující adresy vaší domény (např. kvůli překlepům nebo spamu)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Pokud máte dárkový kód, zadejte jej níže pro použití Vaší slevy."
@@ -7687,6 +7720,9 @@
       ],
       "It appears some of your data is encrypted and locked.": [
         "Zdá se, že některá z vašich dat jsou zašifrována a uzamčena."
+      ],
+      "It takes 10 days to change a server's country, so make sure your selection is correct.": [
+        "Změna země serveru trvá 10 dní, proto se ujistěte, že je váš výběr správný."
       ],
       "Item autofilled in ${ vaultLink }": [
         "Položka automaticky vyplněna v ${ vaultLink }"
@@ -7901,6 +7937,9 @@
       "New user invited to organization": [
         "Nový uživatel byl pozván do organizace"
       ],
+      "New VPN connection data will stop being collected and shown.": [
+        "Data o nových připojeních VPN se přestanou shromažďovat a zobrazovat."
+      ],
       "No account keys exist": [
         "Neexistují žádné klíče k účtu"
       ],
@@ -7978,6 +8017,18 @@
       ],
       "or ${ selectFileButton }": [
         "nebo ${ selectFileButton }"
+      ],
+      "or assign to any country in ${ availableAgainAfterDays } day": [
+        "nebo přiřadit libovolné zemi za ${ availableAgainAfterDays } den",
+        "nebo přiřadit libovolné zemi za ${ availableAgainAfterDays } dny",
+        "nebo přiřadit libovolné zemi za ${ availableAgainAfterDays } dnů",
+        "nebo přiřadit libovolné zemi za ${ availableAgainAfterDays } dnů"
+      ],
+      "or assign to any country in ${ availableAgainAfterHours } hour": [
+        "nebo přiřadit libovolné zemi za ${ availableAgainAfterHours } hodinu",
+        "nebo přiřadit libovolné zemi za ${ availableAgainAfterHours } hodiny",
+        "nebo přiřadit libovolné zemi za ${ availableAgainAfterHours } hodin",
+        "nebo přiřadit libovolné zemi za ${ availableAgainAfterHours } hodin"
       ],
       "Or select a particular server:": [
         "Nebo vyberte konkrétní server:"
@@ -8177,6 +8228,9 @@
       "read our two-factor authentication guide first": [
         "přečtěte si nejprve našeho průvodce dvoufázovým ověřováním"
       ],
+      "Recently used servers:": [
+        "Nedávno použité servery:"
+      ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Doporučeno na důvěryhodných zařízeních. ${ keepMeSignedInLearnMoreLink }"
       ],
@@ -8278,6 +8332,9 @@
       ],
       "Select a service provider to start": [
         "Vyberte poskytovatele služeb a začněte"
+      ],
+      "Select recently used servers": [
+        "Výběr nedávno použitých serverů"
       ],
       "Select what you want to import.": [
         "Vyberte co chcete importovat."
@@ -8987,6 +9044,9 @@
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Po kliknutí na odkaz vás tato funkce proti phishingu požádá o potvrzení adresy webové stránky."
       ],
+      "When you remove a server from a Gateway, it enters a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
+        "Pokud odeberete server z brány, začne běžet desetidenní deaktivační lhůta. Tyto servery lze přidat do nové brány, ale jejich zemi nelze změnit."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Při nastavení dvoufázového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
       ],
@@ -9146,6 +9206,18 @@
       "You do not have permission to perform this action": [
         "K provedení této akce nemáte oprávnění"
       ],
+      "You have ${ availableCount } new server available.": [
+        "Máte k dispozici ${ availableCount } nový server.",
+        "Máte k dispozici ${ availableCount } nové servery.",
+        "Máte k dispozici ${ availableCount } nových serverů.",
+        "Máte k dispozici ${ availableCount } nových serverů."
+      ],
+      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
+        "Máte k dispozici ${ unassignedAvailableCount } nedávno použitý server. Chcete-li tento server přidělit k jiné zemi, musíte počkat, dokud nebude deaktivace dokončena.",
+        "Máte k dispozici ${ unassignedAvailableCount } nedávno použité servery. Chcete-li tyto servery přidělit k jiné zemi, musíte počkat, dokud nebude deaktivace dokončena.",
+        "Máte k dispozici ${ unassignedAvailableCount } nedávno použitých serverů. Chcete-li tyto servery přidělit k jiné zemi, musíte počkat, dokud nebude deaktivace dokončena.",
+        "Máte k dispozici ${ unassignedAvailableCount } nedávno použitých serverů. Chcete-li tyto servery přidělit k jiné zemi, musíte počkat, dokud nebude deaktivace dokončena."
+      ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Máte zkušební verzi předplatného ${ planTitle }. Pokud chcete pokračovat s vaším předplatným po zkušební době, prosím přidejte platební metodu."
       ],
@@ -9205,6 +9277,9 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Za účelem ověření platby budete přesměrováni na PayPal."
+      ],
+      "You won’t be able to reassign these servers to another country for 10 days.": [
+        "Po dobu 10 dnů nebudete moci tyto servery přeřadit do jiné země."
       ],
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Pomocí stažených souborů pro obnovení nebude možné obnovit uzamčená data."
@@ -9304,6 +9379,9 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Vaše žádost na podporu byla uzavřena. Děkujeme za kontaktování podpory ${ BRAND_NAME }."
+      ],
+      "You’ll be able to add these servers to another Gateway immediately.": [
+        "Tyto servery budete moci okamžitě přidat do jiné brány."
       ],
       "Zoom meeting": [
         "schůzku na Zoomu"
@@ -11815,12 +11893,6 @@
         "${ n } sdílelých trezorů ${ PASS_SHORT_APP_NAME } na uživatele",
         "${ n } sdílelých trezorů ${ PASS_SHORT_APP_NAME } na uživatele"
       ],
-      "${ n } user": [
-        "${ n } uživatel",
-        "Až ${ n } uživatelé",
-        "Až ${ n } uživatelů",
-        "Až ${ n } uživatelů"
-      ],
       "${ n } vault": [
         "${ n } trezor",
         "${ n } trezory",
@@ -12719,10 +12791,10 @@
         "Dostupné v rámci ${ BRAND_NAME } for Business, ${ familyPlanName } a ${ mailProPlanName }."
       ],
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
-        "Dostupné v rámci ${ plus }, ${ bundle }, a ${ BRAND_NAME } pro Firmy."
+        "Dostupné v rámci ${ plus }, ${ bundle }, a ${ BRAND_NAME } for Business."
       ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
-        "Zahrnuto s více uživateli ${ BRAND_NAME } pro plány Business."
+        "Dostupné v rámci všech tarifů ${ BRAND_NAME } Business pro více uživatelů."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -14086,6 +14158,9 @@
       ],
       "Search for a user or address": [
         "Hledat uživatele nebo adresu"
+      ],
+      "Search for an email or IP address": [
+        "Hledat e-mail nebo IP adresu"
       ],
       "Search parent folder": [
         "Prohledat nadřazenou složku"
@@ -15813,62 +15888,17 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
-        "Jediným zdrojem příjmů společnosti ${ BRAND_NAME } je předplatné od uživatelů. Díky vaší podpoře můžeme zůstat nezávislí, rozvíjet naše poslání vytvářet internet, kde je soukromí samozřejmostí a pokračovat v podpoře aktivistů a organizací bojujících za soukromí a svobodu."
-      ],
-      "${ CALENDAR_APP_NAME } including calendar sharing": [
-        "${ CALENDAR_APP_NAME } včetně sdílení kalendáře"
-      ],
-      "${ CALENDAR_APP_NAME } with calendar sharing and availability": [
-        "${ CALENDAR_APP_NAME } se sdílením kalendáře a dostupností"
-      ],
       "${ dayDiff } day left": [
         "Zbývá ${ dayDiff } den",
         "Zbývají ${ dayDiff } dny",
         "Zbývá ${ dayDiff } dnů",
         "Zbývá ${ dayDiff } dnů"
       ],
-      "${ DRIVE_APP_NAME } including version history": [
-        "${ DRIVE_APP_NAME } včetně historie verzí"
-      ],
-      "${ DRIVE_APP_NAME } with version history": [
-        "${ DRIVE_APP_NAME } s historií verzí"
-      ],
-      "${ MAIL_APP_NAME } and all premium productivity features": [
-        "${ MAIL_APP_NAME } a všechny prémiové funkce produktivity"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktopová aplikace"
       ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } uchovává vaše firemní data v bezpečí a umožňuje posílat šifrované e-maily komukoli."
-      ],
-      "${ MAIL_APP_NAME } with automatic email forwarding": [
-        "${ MAIL_APP_NAME } s automatickým přesměrováním e-mailů"
-      ],
-      "${ MaxCalendars } calendar per user": [
-        "${ MaxCalendars } kalendář na uživatele",
-        "${ MaxCalendars } kalendáře na uživatele",
-        "${ MaxCalendars } kalendářů na uživatele",
-        "${ MaxCalendars } kalendářů na uživatele"
-      ],
-      "${ maxDomainNames } custom email domain": [
-        "${ maxDomainNames } vlastní e-mailová doména",
-        "${ maxDomainNames } vlastní e-mailové domény",
-        "${ maxDomainNames } vlastních e-mailových domén",
-        "${ maxDomainNames } vlastních e-mailových domén"
-      ],
-      "${ maxEmails } email address per user": [
-        "${ maxEmails } e-mailová adresa na uživatele",
-        "${ maxEmails } e-mailové adresy na uživatele",
-        "${ maxEmails } e-mailových adres na uživatele",
-        "${ maxEmails } e-mailových adres na uživatele"
-      ],
-      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
-        "${ PASS_APP_NAME } včetně neomezeného počtu aliasů Hide-my-email"
-      ],
-      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
-        "${ PASS_APP_NAME } s ${ DARK_WEB_MONITORING_NAME }"
       ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } úložiště na uživatele"
@@ -15894,9 +15924,6 @@
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planName } jde nad to, co je běžné, abyste byli více produktivní, organizovaní a měli kontrolu nad vaší poštovní schránkou, e-mailovou identitou atd.."
       ],
-      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
-        "${ planName } vám pomůže zajistit, aby každý člen vaší rodiny - a jeho data - byl chráněn, kdykoli je online."
-      ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } nabízí ${ planMaxSpace } úložného prostoru pro vaše e-maily, přílohy, události, hesla a soubory. Také máte nárok na roční bonusový prostor na úložišti."
       ],
@@ -15909,29 +15936,8 @@
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } nabízí ${ planMaxSpace } úložného prostoru pro uživatelské e-maily, přílohy, události, soubory a hesla. Také máte nárok na roční bonusový prostor na úložišti."
       ],
-      "${ PROTON_SENTINEL_NAME } program": [
-        "Program ${ PROTON_SENTINEL_NAME }"
-      ],
-      "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
-        "${ VPN_APP_NAME } s přístupem ke všem vysokorychlostním serverům v(e) ${ vpnCountries } zemích"
-      ],
-      "${ VPN_APP_NAME } with malware and ad-blocking": [
-        "${ VPN_APP_NAME } s blokováním malware a reklamy"
-      ],
-      "10 email addresses": [
-        "10 e-mailových adres"
-      ],
       "2 users": [
         "2 uživatelé"
-      ],
-      "20 email addresses per user": [
-        "20 e-mailových adres na uživatele"
-      ],
-      "25 calendars per user": [
-        "25 kalendářů na uživatele"
-      ],
-      "6 users": [
-        "6 uživatelů"
       ],
       "Add any new files": [
         "Přidávat jakékoliv nové soubory"
@@ -15941,9 +15947,6 @@
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
         "Po vypršení platnosti vašeho předplatného ${ planName } budete převedeni na ${ BRAND_NAME } Free, který nabízí až 1 GB úložiště Mail a až 5 GB úložiště Drive. Váš tým bude mít výpadky v práci, protože další uživatelé nejsou v bezplatném tarifu podporováni."
-      ],
-      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
-        "Po vypršení vašeho předplatného ${ planName } bude váš účet snížen na ${ BRAND_NAME } Free, který nabízí maximálně 5 GB prostoru Drive a maximálně 1 GB prostoru Mail. Přijdete také o všechny dříve udělené bonusy k úložišti."
       ],
       "All you need for your business": [
         "Vše co potřebujete pro vaše podnikání"
@@ -15960,9 +15963,6 @@
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Vybudujte si důvěryhodnost a rozpoznatelnost značky pomocí profesionálních e-mailových adres na vlastní doméně."
       ],
-      "Calendar sharing": [
-        "Sdílení kalendáře"
-      ],
       "Cancel subscription": [
         "Zrušit předplatné"
       ],
@@ -15972,14 +15972,8 @@
       "Catch-all email address": [
         "E-mailová adresa doménového koše"
       ],
-      "Close": [
-        "Zavřít"
-      ],
       "Comprehensive privacy and security": [
         "Komplexní ochrana soukromí a zabezpečení"
-      ],
-      "Custom schedule send and snooze times": [
-        "Vlastní harmonogram odesílání a odložení"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Aplikace pro desktop a podpora e-mailových klientů (přes IMAP)"
@@ -16008,18 +16002,6 @@
       "How our customer support team got our VPN app directly into people's hands.": [
         "Jak náš tým zákaznické podpory dostal naši aplikaci VPN přímo do rukou lidí."
       ],
-      "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
-        "Jak jsme se bránili, když se ${ BRAND_NAME } stal terčem agresivní cenzurní kampaně."
-      ],
-      "How we supported local activists when privacy and free speech were threatened in Hong Kong.": [
-        "Jak jsme podpořili místní aktivisty, když bylo v Hongkongu ohroženo soukromí a svoboda projevu."
-      ],
-      "I still want to cancel": [
-        "Přesto chci zrušit"
-      ],
-      "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
-        "Pokud po vypršení platnosti předplatného ${ planName } překročíte limity bezplatného tarifu, nebudete moci:"
-      ],
       "Invited members will be removed from your organization": [
         "Pozvaní členové budou odebráni z vaší organizace"
       ],
@@ -16044,17 +16026,8 @@
       "Online privacy, for your whole family": [
         "Online soukromí pro celou vaši rodinu"
       ],
-      "Organizations, additional users, and custom email domains are not supported on the free plan. This means:": [
-        "Organizace, další uživatelé a vlastní e-mailové domény nejsou v bezplatném plánu podporovány. To znamená, že:"
-      ],
       "Our fight against censorship in Russia": [
         "Náš boj proti cenzuře v Rusku"
-      ],
-      "Please note that ${ planName } is no longer available for purchase. If you downgrade your account, you will lose all plan benefits and won't be able to resubscribe.": [
-        "Vezměte prosím na vědomí, že ${ planName } již není k dispozici k zakoupení. Pokud svůj účet snížíte, ztratíte všechny výhody tarifu a nebudete si ho moci znovu objednat."
-      ],
-      "Premium productivity features": [
-        "Prémiové funkce produktivity"
       ],
       "Priority support": [
         "Prioritní podpora"
@@ -16098,12 +16071,6 @@
       "Unblocking internet access in Iran": [
         "Odblokování internetového přístupu v Íránu"
       ],
-      "Unlimited folders and labels": [
-        "Neomezený počet složek a štítků"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Neomezený počet složek, štítků a filtrů"
-      ],
       "Unlimited privacy for two": [
         "Neomezené soukromí pro dva"
       ],
@@ -16112,9 +16079,6 @@
       ],
       "Users won’t be able to send emails": [
         "Uživatelé nebudou moci odesílat e-maily"
-      ],
-      "Users won’t be able to sync files on their devices": [
-        "Uživatelé nebudou moci synchronizovat soubory na svých zařízeních"
       ],
       "Version history": [
         "Historie verzí"
@@ -16131,32 +16095,14 @@
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
         "Když zrušíte ${ planName }, bude vám snížen účet na ${ BRAND_NAME } Free, který nabízí až 1 GB úložiště Mail a až 5 GB úložiště Drive. Váš tým bude mít výpadky v práci, protože další uživatelé nejsou v bezplatném tarifu podporováni."
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
-        "Když zrušíte ${ planName }, budete váš účet snížen na ${ BRAND_NAME } Free, který nabízí maximálně 5 GB prostoru Drive a maximálně 1 GB prostoru Mail. Přijdete také o všechny dříve udělené bonusy k úložišti."
-      ],
       "Yearly free storage bonuses": [
         "Roční bonusy bezplatného úložiště"
-      ],
-      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
-        "Vaše předplatné ${ planName } trvá do ${ expiryDate }. Kredity za zbývající čas přičteme na váš účet ${ BRAND_NAME }. Před zrušením se ujistěte, že nepřekračujete limity bezplatného tarifu. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
         "Vaše předplatné ${ planName } trvá do ${ expiryDate }. Kredity za zbývající čas přičteme na váš účet ${ BRAND_NAME }. Před zrušením se ujistěte, že nepřekračujete limity bezplatného tarifu. ${ learnMoreLink }"
       ],
-      "Your ${ planName } has been canceled.": [
-        "Váš ${ planName } byl zrušen."
-      ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Váš tarif ${ planName } nechrání pouze vaše firemní data a komunikaci. Podporuje vaše cíle v oblasti dodržování předpisů, dává vaší firmě vyniknout a udržuje váš tým ve spojení."
-      ],
-      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
-        "Vaše předplatné ${ planName } končí ${ expiryDate }. Poté budete převedeni na bezplatný tarif ${ BRAND_NAME } Free. Pokud nyní překračujete limity bezplatného tarifu, může dojít k omezení přístupu k funkcím produktu a k vašim datům. ${ learnMoreLink }"
-      ],
-      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you’ll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink } ${ unavailablePlan }": [
-        "Vaše předplatné ${ planName } končí ${ expiryDate }. Poté budete převedeni na bezplatný tarif ${ BRAND_NAME } Free. Pokud nyní překračujete limity bezplatného tarifu, může dojít k omezení přístupu k funkcím produktu a k vašim datům. ${ learnMoreLink } ${ unavailablePlan }"
-      ],
-      "Your own custom email domain": [
-        "Vaše vlastní e-mailová doména"
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
@@ -16599,6 +16545,9 @@
       "Email addresses": [
         "E-mailové adresy"
       ],
+      "Event": [
+        "Událost"
+      ],
       "Import": [
         "Importovat"
       ],
@@ -16753,6 +16702,12 @@
       "Activate user": [
         "Aktivovat uživatele"
       ],
+      "Add ${ totalServerCount } server?": [
+        "Přidat ${ totalServerCount } server?",
+        "Přidat ${ totalServerCount } servery?",
+        "Přidat ${ totalServerCount } serverů?",
+        "Přidat ${ totalServerCount } serverů?"
+      ],
       "Add a custom logo": [
         "Přidejte vlastní logo"
       ],
@@ -16770,6 +16725,9 @@
       ],
       "Add credits": [
         "Přidat kredit"
+      ],
+      "Add dedicated servers": [
+        "Přidat dedikované servery"
       ],
       "Add domain": [
         "Přidat doménu"
@@ -17012,7 +16970,7 @@
         "Přizpůsobte si proces importování e-mailů"
       ],
       "Dashboard": [
-        "Přehled"
+        "Ovládací panel"
       ],
       "Data locked": [
         "Data uzamčena"
@@ -17079,6 +17037,9 @@
       ],
       "Device connected!": [
         "Zařízení připojeno!"
+      ],
+      "Device name": [
+        "Název zařízení"
       ],
       "Disable two-factor authentication": [
         "Zakázat dvoufázové ověření"
@@ -17253,6 +17214,15 @@
       ],
       "Gateway": [
         "Brána"
+      ],
+      "Gateway monitor": [
+        "Monitorování brány"
+      ],
+      "Gateway monitor disabled": [
+        "Monitorování bran deaktivováno"
+      ],
+      "Gateway monitor enabled": [
+        "Monitorování bran povoleno"
       ],
       "Gateways": [
         "Brány"
@@ -17535,6 +17505,9 @@
       ],
       "Remove domain": [
         "Odebrat doménu"
+      ],
+      "Remove server?": [
+        "Odebrat server?"
       ],
       "Remove single sign-on": [
         "Zrušit jednotné přihlášení"
@@ -17971,8 +17944,8 @@
       "Account is disconnected": [
         "Účet je odpojen"
       ],
-      "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
-        "Správci mohou provádět změny v předplatném, spravovat uživatelské účty a hesla a udělovat práva správce ostatním uživatelům."
+      "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
+        "Správci mohou spravovat uživatelské účty a udělovat práva správce ostatním uživatelům. Tarif organizace může upravovat pouze primární správce."
       ],
       "An approximate location of the IP address": [
         "Přibližné umístění IP adresy"
