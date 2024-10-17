@@ -400,6 +400,11 @@
         "Kommentar verwerfen?"
       ]
     },
+    "Description": {
+      "Edit document directly": [
+        "Dokument direkt bearbeiten"
+      ]
+    },
     "Error": {
       "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
         "Ein Fehler ist beim Laden des Dokuments aufgetreten. Um eine Beschädigung des Dokuments zu verhindern, wurde der Editor gesperrt. Bitte lade die Seite erneut und versuche es noch einmal."
@@ -529,8 +534,17 @@
       "Background colour": [
         "Hintergrundfarbe"
       ],
+      "Change image size": [
+        "Bildgröße ändern"
+      ],
+      "Change indent level": [
+        "Einrückungsebene ändern"
+      ],
       "Delete": [
         "Löschen"
+      ],
+      "Delete image": [
+        "Bild löschen"
       ],
       "Delete link": [
         "Link löschen"
@@ -543,6 +557,9 @@
       ],
       "Insert": [
         "Einfügen"
+      ],
+      "Insert image": [
+        "Bild einfügen"
       ],
       "Insert paragraph": [
         "Absatz einfügen"
