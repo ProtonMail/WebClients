@@ -14,9 +14,13 @@ import { useBitcoinBlockchainContext } from '../contexts';
 export const useWalletPassphrase = (wallet?: IWasmApiWalletData) => {
     const { walletsChainData } = useBitcoinBlockchainContext();
 
-    const needPassphrase = Boolean(wallet?.Wallet.HasPassphrase && !wallet?.Wallet.Passphrase);
+    const needPassphrase = Boolean(
+        !wallet?.IsNotDecryptable && wallet?.Wallet.HasPassphrase && !wallet?.Wallet.Passphrase
+    );
     const wrongFingerprint = Boolean(
-        wallet?.Wallet.ID && wallet?.Wallet.Fingerprint !== walletsChainData[wallet.Wallet.ID]?.wallet.getFingerprint()
+        !wallet?.IsNotDecryptable &&
+            wallet?.Wallet.ID &&
+            wallet?.Wallet.Fingerprint !== walletsChainData[wallet.Wallet.ID]?.wallet.getFingerprint()
     );
 
     const canUseWallet = !needPassphrase && !wrongFingerprint;
