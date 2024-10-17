@@ -5,8 +5,8 @@ import debounce from '@proton/utils/debounce'
 import clsx from '@proton/utils/clsx'
 import { Icon } from '@proton/components'
 import { c } from 'ttag'
-import { addNewColumnToTable } from './TableUtils/addNewColumnToTable'
-import { addNewRowToTable } from './TableUtils/addNewRowToTable'
+import { $addNewColumnAtEndOfTable } from './TableUtils/addNewColumnToTable'
+import { $addNewRowAtEndOfTable } from './TableUtils/addNewRowToTable'
 import { isHTMLElement } from '../../Utils/guard'
 
 export function TableAddButtons({ tableNode }: { tableNode: TableNode }) {
@@ -134,7 +134,14 @@ export function TableAddButtons({ tableNode }: { tableNode: TableNode }) {
           isHoveringOnLastRow && 'pointer-events-auto opacity-100',
         )}
         onClick={() => {
-          addNewRowToTable(editor, tableNode)
+          editor.update(
+            () => {
+              $addNewRowAtEndOfTable(editor, tableNode)
+            },
+            {
+              onUpdate: () => editor.focus(),
+            },
+          )
         }}
         onMouseLeave={(event) => {
           const relatedTarget = event.relatedTarget
@@ -155,7 +162,14 @@ export function TableAddButtons({ tableNode }: { tableNode: TableNode }) {
           isHoveringOnLastColumn && 'pointer-events-auto opacity-100',
         )}
         onClick={() => {
-          addNewColumnToTable(editor, tableNode)
+          editor.update(
+            () => {
+              $addNewColumnAtEndOfTable(editor, tableNode)
+            },
+            {
+              onUpdate: () => editor.focus(),
+            },
+          )
         }}
         onMouseLeave={(event) => {
           const relatedTarget = event.relatedTarget

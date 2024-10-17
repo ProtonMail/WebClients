@@ -2,10 +2,12 @@ import { createHeadlessEditor } from '@lexical/headless'
 import { AllNodes } from '../../AllNodes'
 import { $createSuggestionNode } from './ProtonNode'
 import type { ParagraphNode } from 'lexical'
-import { $createParagraphNode, $createTextNode, $getRoot, $isTextNode } from 'lexical'
+import { $createParagraphNode, $createTextNode, $getRoot, $isParagraphNode, $isTextNode } from 'lexical'
 import { $acceptSuggestion } from './acceptSuggestion'
 import { $createHeadingNode } from '@lexical/rich-text'
 import { $createListItemNode, $createListNode } from '@lexical/list'
+import type { TableCellNode, TableNode, TableRowNode } from '@lexical/table'
+import { $createTableNodeWithDimensions } from '@lexical/table'
 
 describe('$acceptSuggestion', () => {
   const editor = createHeadlessEditor({
@@ -165,6 +167,260 @@ describe('$acceptSuggestion', () => {
         const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
         expect(paragraph.getChildrenSize()).toBe(1)
         expect($isTextNode(paragraph.getFirstChild())).toBe(true)
+      })
+    })
+  })
+
+  describe('insert-table', () => {
+    it('should remove suggestion node(s)', () => {
+      const suggestionID = Math.random().toString()
+
+      editor.update(
+        () => {
+          const table = $createTableNodeWithDimensions(2, 2)
+          $getRoot().append(table)
+          const cells = table
+            .getChildren<TableRowNode>()
+            .map((row) => row.getChildren<TableCellNode>())
+            .flat()
+          for (const cell of cells) {
+            cell.append($createSuggestionNode(suggestionID, 'insert-table'))
+          }
+          $acceptSuggestion(suggestionID)
+        },
+        {
+          discrete: true,
+        },
+      )
+
+      editor.read(() => {
+        const table = $getRoot().getFirstChildOrThrow<TableNode>()
+        const cells = table
+          .getChildren<TableRowNode>()
+          .map((row) => row.getChildren<TableCellNode>())
+          .flat()
+        for (const cell of cells) {
+          expect(cell.getChildrenSize()).toBe(1)
+          expect($isParagraphNode(cell.getFirstChildOrThrow())).toBe(true)
+        }
+      })
+    })
+  })
+
+  describe('delete-table', () => {
+    it('should remove whole table', () => {
+      const suggestionID = Math.random().toString()
+
+      editor.update(
+        () => {
+          const table = $createTableNodeWithDimensions(2, 2)
+          $getRoot().append(table)
+          const cells = table
+            .getChildren<TableRowNode>()
+            .map((row) => row.getChildren<TableCellNode>())
+            .flat()
+          for (const cell of cells) {
+            cell.append($createSuggestionNode(suggestionID, 'delete-table'))
+          }
+          $acceptSuggestion(suggestionID)
+        },
+        {
+          discrete: true,
+        },
+      )
+
+      editor.read(() => {
+        expect($getRoot().getChildrenSize()).toBe(0)
+      })
+    })
+  })
+
+  describe('insert-table-row', () => {
+    it('should remove suggestion node(s)', () => {
+      const suggestionID = Math.random().toString()
+
+      editor.update(
+        () => {
+          const table = $createTableNodeWithDimensions(2, 2)
+          $getRoot().append(table)
+          const cells = table.getFirstChildOrThrow<TableRowNode>().getChildren<TableCellNode>()
+          for (const cell of cells) {
+            cell.append($createSuggestionNode(suggestionID, 'insert-table-row'))
+          }
+          $acceptSuggestion(suggestionID)
+        },
+        {
+          discrete: true,
+        },
+      )
+
+      editor.read(() => {
+        const table = $getRoot().getFirstChildOrThrow<TableNode>()
+        const cells = table.getFirstChildOrThrow<TableRowNode>().getChildren<TableCellNode>()
+        for (const cell of cells) {
+          expect(cell.getChildrenSize()).toBe(1)
+          expect($isParagraphNode(cell.getFirstChildOrThrow())).toBe(true)
+        }
+      })
+    })
+  })
+
+  describe('duplicate-table-row', () => {
+    it('should remove suggestion node(s)', () => {
+      const suggestionID = Math.random().toString()
+
+      editor.update(
+        () => {
+          const table = $createTableNodeWithDimensions(2, 2)
+          $getRoot().append(table)
+          const cells = table.getFirstChildOrThrow<TableRowNode>().getChildren<TableCellNode>()
+          for (const cell of cells) {
+            cell.append($createSuggestionNode(suggestionID, 'duplicate-table-row'))
+          }
+          $acceptSuggestion(suggestionID)
+        },
+        {
+          discrete: true,
+        },
+      )
+
+      editor.read(() => {
+        const table = $getRoot().getFirstChildOrThrow<TableNode>()
+        const cells = table.getFirstChildOrThrow<TableRowNode>().getChildren<TableCellNode>()
+        for (const cell of cells) {
+          expect(cell.getChildrenSize()).toBe(1)
+          expect($isParagraphNode(cell.getFirstChildOrThrow())).toBe(true)
+        }
+      })
+    })
+  })
+
+  describe('delete-table-row', () => {
+    it('should remove table row', () => {
+      const suggestionID = Math.random().toString()
+
+      editor.update(
+        () => {
+          const table = $createTableNodeWithDimensions(2, 2)
+          $getRoot().append(table)
+          const cells = table.getFirstChildOrThrow<TableRowNode>().getChildren<TableCellNode>()
+          for (const cell of cells) {
+            cell.append($createSuggestionNode(suggestionID, 'delete-table-row'))
+          }
+          $acceptSuggestion(suggestionID)
+        },
+        {
+          discrete: true,
+        },
+      )
+
+      editor.read(() => {
+        const table = $getRoot().getFirstChildOrThrow<TableNode>()
+        expect(table.getChildrenSize()).toBe(1)
+      })
+    })
+  })
+
+  describe('insert-table-column', () => {
+    it('should remove suggestion node(s)', () => {
+      const suggestionID = Math.random().toString()
+
+      editor.update(
+        () => {
+          const table = $createTableNodeWithDimensions(2, 2)
+          $getRoot().append(table)
+          const cells = table
+            .getChildren<TableRowNode>()
+            .map((row) => row.getChildAtIndex<TableCellNode>(1)!)
+            .flat()
+          for (const cell of cells) {
+            cell.append($createSuggestionNode(suggestionID, 'insert-table-column'))
+          }
+          $acceptSuggestion(suggestionID)
+        },
+        {
+          discrete: true,
+        },
+      )
+
+      editor.read(() => {
+        const table = $getRoot().getFirstChildOrThrow<TableNode>()
+        const cells = table
+          .getChildren<TableRowNode>()
+          .map((row) => row.getChildAtIndex<TableCellNode>(1)!)
+          .flat()
+        for (const cell of cells) {
+          expect(cell.getChildrenSize()).toBe(1)
+          expect($isParagraphNode(cell.getFirstChildOrThrow())).toBe(true)
+        }
+      })
+    })
+  })
+
+  describe('duplicate-table-column', () => {
+    it('should remove suggestion node(s)', () => {
+      const suggestionID = Math.random().toString()
+
+      editor.update(
+        () => {
+          const table = $createTableNodeWithDimensions(2, 2)
+          $getRoot().append(table)
+          const cells = table
+            .getChildren<TableRowNode>()
+            .map((row) => row.getChildAtIndex<TableCellNode>(1)!)
+            .flat()
+          for (const cell of cells) {
+            cell.append($createSuggestionNode(suggestionID, 'duplicate-table-column'))
+          }
+          $acceptSuggestion(suggestionID)
+        },
+        {
+          discrete: true,
+        },
+      )
+
+      editor.read(() => {
+        const table = $getRoot().getFirstChildOrThrow<TableNode>()
+        const cells = table
+          .getChildren<TableRowNode>()
+          .map((row) => row.getChildAtIndex<TableCellNode>(1)!)
+          .flat()
+        for (const cell of cells) {
+          expect(cell.getChildrenSize()).toBe(1)
+          expect($isParagraphNode(cell.getFirstChildOrThrow())).toBe(true)
+        }
+      })
+    })
+  })
+
+  describe('delete-table-column', () => {
+    it('should remove table column', () => {
+      const suggestionID = Math.random().toString()
+
+      editor.update(
+        () => {
+          const table = $createTableNodeWithDimensions(2, 2)
+          $getRoot().append(table)
+          const cells = table
+            .getChildren<TableRowNode>()
+            .map((row) => row.getChildAtIndex<TableCellNode>(1)!)
+            .flat()
+          for (const cell of cells) {
+            cell.append($createSuggestionNode(suggestionID, 'delete-table-column'))
+          }
+          $acceptSuggestion(suggestionID)
+        },
+        {
+          discrete: true,
+        },
+      )
+
+      editor.read(() => {
+        const table = $getRoot().getFirstChildOrThrow<TableNode>()
+        const rows = table.getChildren<TableRowNode>()
+        for (const row of rows) {
+          expect(row.getChildrenSize()).toBe(1)
+        }
       })
     })
   })

@@ -59,6 +59,26 @@ import { EditorUserMode } from '../../EditorUserMode'
 import { $handleIndentOutdentAsSuggestion } from './handleIndentOutdent'
 import { useGenericAlertModal } from '@proton/docs-shared/components/GenericAlert'
 import { c } from 'ttag'
+import {
+  DELETE_TABLE_COLUMN_COMMAND,
+  DELETE_TABLE_COMMAND,
+  DELETE_TABLE_ROW_COMMAND,
+  DUPLICATE_TABLE_COLUMN_COMMAND,
+  DUPLICATE_TABLE_ROW_COMMAND,
+  INSERT_TABLE_COLUMN_COMMAND,
+  INSERT_TABLE_COMMAND,
+  INSERT_TABLE_ROW_COMMAND,
+} from '../Table/Commands'
+import {
+  $duplicateTableColumnAsSuggestion,
+  $duplicateTableRowAsSuggestion,
+  $insertNewTableAsSuggestion,
+  $insertNewTableColumnAsSuggestion,
+  $insertNewTableRowAsSuggestion,
+  $suggestTableColumnDeletion,
+  $suggestTableDeletion,
+  $suggestTableRowDeletion,
+} from './handleTables'
 
 const LIST_TRANSFORMERS = [UNORDERED_LIST, ORDERED_LIST, CHECK_LIST]
 
@@ -541,6 +561,62 @@ export function SuggestionModePlugin({
               .t`The language you're using isn’t currently supported in suggestion mode. Please switch to edit mode or change the language.`,
           })
           return true
+        },
+        COMMAND_PRIORITY_CRITICAL,
+      ),
+      editor.registerCommand(
+        INSERT_TABLE_COMMAND,
+        (payload) => {
+          return $insertNewTableAsSuggestion(payload, addCreatedIDtoSet)
+        },
+        COMMAND_PRIORITY_CRITICAL,
+      ),
+      editor.registerCommand(
+        DELETE_TABLE_COMMAND,
+        (key) => {
+          return $suggestTableDeletion(key, addCreatedIDtoSet, suggestionModeLogger)
+        },
+        COMMAND_PRIORITY_CRITICAL,
+      ),
+      editor.registerCommand(
+        INSERT_TABLE_ROW_COMMAND,
+        ({ insertAfter }) => {
+          return $insertNewTableRowAsSuggestion(insertAfter, addCreatedIDtoSet)
+        },
+        COMMAND_PRIORITY_CRITICAL,
+      ),
+      editor.registerCommand(
+        DUPLICATE_TABLE_ROW_COMMAND,
+        (row) => {
+          return $duplicateTableRowAsSuggestion(row, addCreatedIDtoSet)
+        },
+        COMMAND_PRIORITY_CRITICAL,
+      ),
+      editor.registerCommand(
+        DELETE_TABLE_ROW_COMMAND,
+        (row) => {
+          return $suggestTableRowDeletion(row, addCreatedIDtoSet)
+        },
+        COMMAND_PRIORITY_CRITICAL,
+      ),
+      editor.registerCommand(
+        INSERT_TABLE_COLUMN_COMMAND,
+        ({ insertAfter }) => {
+          return $insertNewTableColumnAsSuggestion(insertAfter, addCreatedIDtoSet)
+        },
+        COMMAND_PRIORITY_CRITICAL,
+      ),
+      editor.registerCommand(
+        DUPLICATE_TABLE_COLUMN_COMMAND,
+        (cell) => {
+          return $duplicateTableColumnAsSuggestion(cell, addCreatedIDtoSet)
+        },
+        COMMAND_PRIORITY_CRITICAL,
+      ),
+      editor.registerCommand(
+        DELETE_TABLE_COLUMN_COMMAND,
+        (cell) => {
+          return $suggestTableColumnDeletion(cell, addCreatedIDtoSet)
         },
         COMMAND_PRIORITY_CRITICAL,
       ),

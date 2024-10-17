@@ -104,6 +104,25 @@ export function useSuggestionCommentContent(
       title = c('Label').t`Change image size`
     } else if (type === 'indent-change') {
       title = c('Label').t`Change indent level`
+    } else if (type === 'insert-table') {
+      title = c('Label').t`Insert table`
+    } else if (type === 'insert-table-row') {
+      title = c('Label').t`Insert table row`
+    } else if (type === 'duplicate-table-row') {
+      title = c('Label').t`Duplicate table row`
+    } else if (type === 'insert-table-column') {
+      title = c('Label').t`Insert table column`
+    } else if (type === 'duplicate-table-column') {
+      title = c('Label').t`Duplicate table column`
+    } else if (type === 'delete-table') {
+      title = c('Label').t`Delete table`
+      color = 'weak'
+    } else if (type === 'delete-table-row') {
+      title = c('Label').t`Delete table row`
+      color = 'weak'
+    } else if (type === 'delete-table-column') {
+      title = c('Label').t`Delete table column`
+      color = 'weak'
     }
     if (!!replaceWith || type === 'delete' || type === 'insert') {
       content = `"${content}"`

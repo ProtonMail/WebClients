@@ -1,0 +1,169 @@
+:root {
+	--suggestion-normal-bg: 52 145 114;
+	--suggestion-normal-fg: 15 107 76;
+	--suggestion-normal-bg-non-selected: rgb(var(--suggestion-normal-bg) / 0.05);
+	--suggestion-normal-bg-selected: rgb(var(--suggestion-normal-bg) / 0.25);
+}
+
+.Lexical__Suggestion {
+	border-block-end: 1px dotted rgb(var(--suggestion-normal-fg));
+	background-color: var(--suggestion-normal-bg-non-selected);
+	color: rgb(var(--suggestion-normal-fg));
+
+	&.selected {
+		background-color: var(--suggestion-normal-bg-selected);
+	}
+
+	&.delete {
+		opacity: 0.5;
+	}
+
+	&.delete,
+	&.join {
+		background-color: transparent;
+		color: var(--text-hint);
+		border-block-end-color: var(--text-hint);
+		text-decoration: line-through;
+
+		&.selected {
+			opacity: 1;
+			background-color: var(--background-weak);
+		}
+	}
+
+	&.split,
+	&.join {
+		position: relative;
+
+		&::after {
+			content: '';
+			display: inline-block;
+			block-size: 100%;
+			font-size: 0.8rem;
+			pointer-events: none;
+			user-select: none;
+		}
+	}
+
+	.Lexical__paragraph > &.indent-change {
+		display: inline-block;
+	}
+
+	*:not(.Lexical__listItem):has(> &.indent-change),
+	.Lexical__listItem:not(.Lexical__listItem--nested):has(> &.indent-change) {
+		background: var(--suggestion-normal-bg-non-selected);
+		border-block-end: 1px dotted rgb(var(--suggestion-normal-fg));
+	}
+
+	.Lexical__table:has(> tr > .Lexical__tableCell > &.insert-table),
+	.Lexical__table:has(> tr > .Lexical__tableCell > &.delete-table),
+	.Lexical__table > tr:has(> .Lexical__tableCell > &.insert-table-row),
+	.Lexical__table > tr:has(> .Lexical__tableCell > &.duplicate-table-row),
+	.Lexical__table > tr:has(> .Lexical__tableCell > &.delete-table-row),
+	.Lexical__table > tr > .Lexical__tableCell:has(> &.insert-table-column),
+	.Lexical__table > tr > .Lexical__tableCell:has(> &.duplicate-table-column),
+	.Lexical__table > tr > .Lexical__tableCell:has(> &.delete-table-column) {
+		position: relative;
+
+		&::after {
+			content: '';
+			position: absolute;
+			inline-size: calc(100% + 5px);
+			block-size: calc(100% + 5px);
+			inset-block-start: -3px;
+			inset-inline-start: -3px;
+			border: 2px dotted rgb(var(--suggestion-normal-fg) / 0.5);
+			pointer-events: none;
+			z-index: 1;
+		}
+	}
+
+	.Lexical__table:has(> tr > .Lexical__tableCell > &.insert-table.selected),
+	.Lexical__table:has(> tr > .Lexical__tableCell > &.delete-table.selected),
+	.Lexical__table > tr:has(> .Lexical__tableCell > &.insert-table-row.selected),
+	.Lexical__table > tr:has(> .Lexical__tableCell > &.duplicate-table-row.selected),
+	.Lexical__table > tr:has(> .Lexical__tableCell > &.delete-table-row.selected),
+	.Lexical__table > tr > .Lexical__tableCell:has(> &.insert-table-column.selected),
+	.Lexical__table > tr > .Lexical__tableCell:has(> &.duplicate-table-column.selected),
+	.Lexical__table > tr > .Lexical__tableCell:has(> &.delete-table-column.selected) {
+		&::after {
+			border-width: 3px;
+			border-color: rgb(var(--suggestion-normal-fg) / 0.75);
+		}
+	}
+
+	.Lexical__table > tr > .Lexical__tableCell:has(> &[class*='table-column'], > &[class*='table-column'].selected) {
+		&::after {
+			block-size: calc(100% + 2px);
+			inset-block-start: 0;
+			border-block-width: 0;
+		}
+	}
+
+	.Lexical__table > tr:first-of-type > .Lexical__tableCell:has(> &[class*='table-column']) {
+		&::after {
+			inset-block-start: -2px;
+			border-block-start-width: 2px;
+		}
+	}
+
+	.Lexical__table > tr:last-of-type > .Lexical__tableCell:has(> &[class*='table-column']) {
+		&::after {
+			inset-block-start: 2px;
+			border-block-end-width: 2px;
+		}
+	}
+
+	.Lexical__table > tr:first-of-type > .Lexical__tableCell:has(> &[class*='table-column'].selected) {
+		&::after {
+			border-block-start-width: 3px;
+		}
+	}
+
+	.Lexical__table > tr:last-of-type > .Lexical__tableCell:has(> &[class*='table-column'].selected) {
+		&::after {
+			border-block-end-width: 3px;
+		}
+	}
+
+	.Lexical__table:has(> tr > .Lexical__tableCell > &.delete-table),
+	.Lexical__table > tr:has(> .Lexical__tableCell > &.delete-table-row),
+	.Lexical__table > tr > .Lexical__tableCell:has(> &.delete-table-column) {
+		color: var(--text-hint);
+		text-decoration: line-through;
+
+		&::after {
+			border-color: var(--background-strong);
+		}
+	}
+
+	.Lexical__table:has(> tr > .Lexical__tableCell > &.delete-table.selected),
+	.Lexical__table > tr:has(> .Lexical__tableCell > &.delete-table-row.selected),
+	.Lexical__table > tr > .Lexical__tableCell:has(> &.delete-table-column.selected) {
+		&::after {
+			border-color: var(--text-hint);
+		}
+	}
+
+	*:not(.Lexical__listItem):has(> &.indent-change.selected),
+	.Lexical__listItem:not(.Lexical__listItem--nested):has(> &.indent-change.selected) {
+		background: var(--suggestion-normal-bg-selected);
+	}
+
+	&.split::after {
+		content: '↵';
+	}
+
+	&.join::after {
+		content: '↵';
+		scale: 1 -1;
+	}
+
+	.Lexical__link {
+		color: inherit;
+	}
+
+	.Lexical__textCode {
+		color: inherit;
+	}
+}

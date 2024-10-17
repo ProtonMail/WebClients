@@ -8,20 +8,25 @@ import { isHTMLElement } from '../../Utils/guard'
 import { $getNearestNodeFromDOMNode } from 'lexical'
 import { setBackgroundColorForSelection } from './TableUtils/setBackgroundColorForSelection'
 import { setColorForSelection } from './TableUtils/setColorForSelection'
-import { duplicateSelectedColumn } from './TableUtils/duplicateSelectedColumn'
-import { duplicateRow } from './TableUtils/duplicateRow'
 import { $clearCellsInTableSelection } from './TableUtils/clearCellsInTableSelection'
-import { deleteColumnAtSelection } from './TableUtils/deleteColumnAtSelection'
-import { deleteRowAtSelection } from './TableUtils/deleteRowAtSelection'
-import { insertNewColumnAtSelection } from './TableUtils/insertNewColumnAtSelection'
-import { insertNewRowAtSelection } from './TableUtils/insertNewRowAtSelection'
 import { selectColumn } from './TableUtils/selectColumn'
 import { selectRow } from './TableUtils/selectRow'
 import { FontColorMenu } from '../../Components/ColorMenu'
 import { TextColors, BackgroundColors } from '../../Shared/Color'
+import {
+  DELETE_TABLE_COLUMN_AT_SELECTION_COMMAND,
+  DELETE_TABLE_ROW_AT_SELECTION_COMMAND,
+  DUPLICATE_TABLE_COLUMN_COMMAND,
+  DUPLICATE_TABLE_ROW_COMMAND,
+  INSERT_TABLE_COLUMN_COMMAND,
+  INSERT_TABLE_ROW_COMMAND,
+} from './Commands'
+import { useApplication } from '../../ApplicationProvider'
 
 export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) {
   const [editor] = useLexicalComposerContext()
+
+  const { isSuggestionMode } = useApplication()
 
   const tableRowNode = useRef<TableRowNode | null>(null)
   const rowMenuRef = useRef<HTMLDivElement>(null)
@@ -169,40 +174,43 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
         }}
       >
         <DropdownMenu>
-          <SimpleDropdown
-            as={DropdownMenuButton}
-            className={menuButtonClassName}
-            content={
-              <>
-                <Icon name="palette" />
-                {c('Action').t`Color`}
-                <Icon name="chevron-right" className="ml-auto" />
-              </>
-            }
-            contentProps={{
-              originalPlacement: 'right-start',
-              offset: 0,
-            }}
-            hasCaret={false}
-          >
-            <FontColorMenu
-              textColors={TextColors}
-              onTextColorChange={(color) => {
-                setColorForSelection(editor, color)
+          {!isSuggestionMode && (
+            <SimpleDropdown
+              as={DropdownMenuButton}
+              className={menuButtonClassName}
+              content={
+                <>
+                  <Icon name="palette" />
+                  {c('Action').t`Color`}
+                  <Icon name="chevron-right" className="ml-auto" />
+                </>
+              }
+              contentProps={{
+                originalPlacement: 'right-start',
+                offset: 0,
               }}
-              backgroundColors={BackgroundColors}
-              onBackgroundColorChange={(color) => {
-                setBackgroundColorForSelection(editor, color)
-              }}
-            />
-          </SimpleDropdown>
+              hasCaret={false}
+            >
+              <FontColorMenu
+                textColors={TextColors}
+                onTextColorChange={(color) => {
+                  setColorForSelection(editor, color)
+                }}
+                backgroundColors={BackgroundColors}
+                onBackgroundColorChange={(color) => {
+                  setBackgroundColorForSelection(editor, color)
+                }}
+              />
+            </SimpleDropdown>
+          )}
           <DropdownMenuButton
             className={menuButtonClassName}
             onClick={() => {
               if (!tableRowNode.current) {
                 return
               }
-              insertNewRowAtSelection(editor, tableRowNode.current, false)
+              editor.dispatchCommand(INSERT_TABLE_ROW_COMMAND, { insertAfter: false })
+              editor.focus()
             }}
           >
             <Icon name="arrow-up" />
@@ -214,7 +222,8 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               if (!tableRowNode.current) {
                 return
               }
-              insertNewRowAtSelection(editor, tableRowNode.current, true)
+              editor.dispatchCommand(INSERT_TABLE_ROW_COMMAND, { insertAfter: true })
+              editor.focus()
             }}
           >
             <Icon name="arrow-down" />
@@ -226,27 +235,31 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               if (!tableRowNode.current) {
                 return
               }
-              duplicateRow(editor, tableRowNode.current)
+              editor.dispatchCommand(DUPLICATE_TABLE_ROW_COMMAND, tableRowNode.current)
             }}
           >
             <Icon name="squares" />
             {c('Action').t`Duplicate`}
           </DropdownMenuButton>
+          {!isSuggestionMode && (
+            <DropdownMenuButton
+              className={menuButtonClassName}
+              disabled={isSuggestionMode}
+              onClick={() => {
+                editor.update(() => $clearCellsInTableSelection(), {
+                  onUpdate: () => editor.focus(),
+                })
+              }}
+            >
+              <Icon name="cross" />
+              {c('Action').t`Clear contents`}
+            </DropdownMenuButton>
+          )}
           <DropdownMenuButton
             className={menuButtonClassName}
             onClick={() => {
-              editor.update(() => $clearCellsInTableSelection(), {
-                onUpdate: () => editor.focus(),
-              })
-            }}
-          >
-            <Icon name="cross" />
-            {c('Action').t`Clear contents`}
-          </DropdownMenuButton>
-          <DropdownMenuButton
-            className={menuButtonClassName}
-            onClick={() => {
-              deleteRowAtSelection(editor)
+              editor.dispatchCommand(DELETE_TABLE_ROW_AT_SELECTION_COMMAND, undefined)
+              editor.focus()
             }}
           >
             <Icon name="trash" />
@@ -285,40 +298,44 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
         }}
       >
         <DropdownMenu>
-          <SimpleDropdown
-            as={DropdownMenuButton}
-            className={menuButtonClassName}
-            contentProps={{
-              originalPlacement: 'right-start',
-              offset: 0,
-            }}
-            content={
-              <>
-                <Icon name="palette" />
-                {c('Action').t`Color`}
-                <Icon name="chevron-right" className="ml-auto" />
-              </>
-            }
-            hasCaret={false}
-          >
-            <FontColorMenu
-              textColors={TextColors}
-              onTextColorChange={(color) => {
-                setColorForSelection(editor, color)
+          {!isSuggestionMode && (
+            <SimpleDropdown
+              as={DropdownMenuButton}
+              className={menuButtonClassName}
+              disabled={isSuggestionMode}
+              contentProps={{
+                originalPlacement: 'right-start',
+                offset: 0,
               }}
-              backgroundColors={BackgroundColors}
-              onBackgroundColorChange={(color) => {
-                setBackgroundColorForSelection(editor, color)
-              }}
-            />
-          </SimpleDropdown>
+              content={
+                <>
+                  <Icon name="palette" />
+                  {c('Action').t`Color`}
+                  <Icon name="chevron-right" className="ml-auto" />
+                </>
+              }
+              hasCaret={false}
+            >
+              <FontColorMenu
+                textColors={TextColors}
+                onTextColorChange={(color) => {
+                  setColorForSelection(editor, color)
+                }}
+                backgroundColors={BackgroundColors}
+                onBackgroundColorChange={(color) => {
+                  setBackgroundColorForSelection(editor, color)
+                }}
+              />
+            </SimpleDropdown>
+          )}
           <DropdownMenuButton
             className={menuButtonClassName}
             onClick={() => {
               if (!tableCellNode.current) {
                 return
               }
-              insertNewColumnAtSelection(editor, tableCellNode.current, false)
+              editor.dispatchCommand(INSERT_TABLE_COLUMN_COMMAND, { insertAfter: false })
+              editor.focus()
             }}
           >
             <Icon name="arrow-left" />
@@ -330,7 +347,8 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               if (!tableCellNode.current) {
                 return
               }
-              insertNewColumnAtSelection(editor, tableCellNode.current, true)
+              editor.dispatchCommand(INSERT_TABLE_COLUMN_COMMAND, { insertAfter: true })
+              editor.focus()
             }}
           >
             <Icon name="arrow-right" />
@@ -342,27 +360,32 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               if (!tableCellNode.current) {
                 return
               }
-              duplicateSelectedColumn(editor, tableCellNode.current)
+              editor.dispatchCommand(DUPLICATE_TABLE_COLUMN_COMMAND, tableCellNode.current)
+              editor.focus()
             }}
           >
             <Icon name="squares" />
             {c('Action').t`Duplicate`}
           </DropdownMenuButton>
+          {!isSuggestionMode && (
+            <DropdownMenuButton
+              className={menuButtonClassName}
+              disabled={isSuggestionMode}
+              onClick={() => {
+                editor.update(() => $clearCellsInTableSelection(), {
+                  onUpdate: () => editor.focus(),
+                })
+              }}
+            >
+              <Icon name="cross" size={4.5} />
+              {c('Action').t`Clear contents`}
+            </DropdownMenuButton>
+          )}
           <DropdownMenuButton
             className={menuButtonClassName}
             onClick={() => {
-              editor.update(() => $clearCellsInTableSelection(), {
-                onUpdate: () => editor.focus(),
-              })
-            }}
-          >
-            <Icon name="cross" size={4.5} />
-            {c('Action').t`Clear contents`}
-          </DropdownMenuButton>
-          <DropdownMenuButton
-            className={menuButtonClassName}
-            onClick={() => {
-              deleteColumnAtSelection(editor)
+              editor.dispatchCommand(DELETE_TABLE_COLUMN_AT_SELECTION_COMMAND, undefined)
+              editor.focus()
             }}
           >
             <Icon name="trash" />

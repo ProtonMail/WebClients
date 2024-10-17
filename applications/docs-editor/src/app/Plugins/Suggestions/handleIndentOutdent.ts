@@ -1,4 +1,4 @@
-import { $findMatchingParent } from '@lexical/utils'
+import { $findMatchingParent, $insertFirst } from '@lexical/utils'
 import type { ElementNode } from 'lexical'
 import { $getSelection, $isRangeSelection, $isElementNode } from 'lexical'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
@@ -76,11 +76,7 @@ export function $handleIndentOutdentAsSuggestion(
       const suggestionNode = $createSuggestionNode(suggestionID, 'indent-change', {
         indent: currentIndent,
       })
-      if (parentBlockChildren.length === 0) {
-        parentBlock.append(suggestionNode)
-      } else {
-        parentBlock.getFirstChildOrThrow().insertBefore(suggestionNode)
-      }
+      $insertFirst(parentBlock, suggestionNode)
     }
   }
 

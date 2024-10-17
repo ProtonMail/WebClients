@@ -5,8 +5,10 @@ import type { SuggestionType } from '@proton/docs-shared/lib/SuggestionType'
 import { $isImageNode } from '../Image/ImageNode'
 import type { ProtonNode } from './ProtonNode'
 import { $isSuggestionNode, $createSuggestionNode } from './ProtonNode'
-import { $findMatchingParent } from '@lexical/utils'
+import { $findMatchingParent, $insertFirst } from '@lexical/utils'
 import type { Logger } from '@proton/utils/logs'
+import type { TableCellNode, TableRowNode } from '@lexical/table'
+import { $isTableNode } from '@lexical/table'
 
 /**
  * Wraps a given selection with suggestion node(s), splitting
@@ -111,6 +113,26 @@ export function $wrapSelectionInSuggestionNode(
     } else if ($isImageNode(node)) {
       logger?.info('Node is image node')
       targetNode = node
+    } else if ($isTableNode(node)) {
+      logger?.info('Node is table node')
+
+      if (type !== 'delete' && type !== 'insert') {
+        // We only want to wrap whole table node if it is a insert
+        // or delete suggestion
+        continue
+      }
+
+      const isFullyWithinSelection = !node.isParentOf(anchor.getNode()) && !node.isParentOf(focus.getNode())
+      if (!isFullyWithinSelection) {
+        continue
+      }
+
+      const tableRows = node.getChildren<TableRowNode>()
+      const tableCells = tableRows.map((row) => row.getChildren<TableCellNode>()).flat()
+      const tableSuggestionType: SuggestionType = type === 'insert' ? 'insert-table' : 'delete-table'
+      for (const cell of tableCells) {
+        $insertFirst(cell, $createSuggestionNode(id, tableSuggestionType))
+      }
     }
 
     if (targetNode !== null) {

@@ -1,51 +1,88 @@
 import { $generateJSONFromSelectedNodes, $generateNodesFromSerializedNodes } from '@lexical/clipboard'
 import type { TableCellNode, TableRowNode } from '@lexical/table'
-import {
-  $getTableColumnIndexFromTableCellNode,
-  $isTableCellNode,
-  $isTableNode,
-  $isTableSelection,
-} from '@lexical/table'
+import { $createTableSelection } from '@lexical/table'
+import { $isTableNode } from '@lexical/table'
 import { $findMatchingParent } from '@lexical/utils'
 import type { LexicalEditor } from 'lexical'
-import { $getSelection } from 'lexical'
+import { $copySuggestionsOnColumnOperation } from './copySuggestionsOnColumnOperation'
+import { $moveSelectionToCell } from './moveSelectionToCell'
+
+type DuplicatedColumn = {
+  index: number
+  cells: TableCellNode[]
+}
+
+/**
+ * Duplicates a column of cells, and copies any existing suggestions
+ * @returns the index of the original column and an array of duplicated cells
+ */
+export function $generateDuplicatedColumn(editor: LexicalEditor, cellNode: TableCellNode): DuplicatedColumn {
+  const cellIndex = cellNode.getIndexWithinParent()
+  const cells: TableCellNode[] = []
+
+  const table = $findMatchingParent(cellNode, $isTableNode)
+  if (!table) {
+    throw new Error('Expected cell to have table parent')
+  }
+
+  const tableKey = table.getKey()
+
+  for (const row of table.getChildren<TableRowNode>()) {
+    const cellAtIndex = row.getChildAtIndex<TableCellNode>(cellIndex)
+    if (!cellAtIndex) {
+      throw new Error('No cell found at index')
+    }
+    const cellAtIndexKey = cellAtIndex.getKey()
+    const selection = $createTableSelection()
+    selection.set(tableKey, cellAtIndexKey, cellAtIndexKey)
+    const json = $generateJSONFromSelectedNodes(editor, selection)
+    const nodes = $generateNodesFromSerializedNodes(json.nodes)
+    const duplicatedCell = nodes
+      .find($isTableNode)
+      ?.getFirstChildOrThrow<TableRowNode>()
+      .getFirstChildOrThrow<TableCellNode>()
+    if (!duplicatedCell) {
+      continue
+    }
+    $copySuggestionsOnColumnOperation(duplicatedCell, cellAtIndex)
+    cells.push(duplicatedCell)
+  }
+
+  return {
+    index: cellIndex,
+    cells,
+  }
+}
 
 export function duplicateSelectedColumn(editor: LexicalEditor, cellNode: TableCellNode) {
   editor.update(
     () => {
-      const selection = $getSelection()
-      if (!$isTableSelection(selection)) {
-        return
-      }
-      const cellIndex = $getTableColumnIndexFromTableCellNode(cellNode)
       const originalTable = $findMatchingParent(cellNode, $isTableNode)
-      const json = $generateJSONFromSelectedNodes(editor, selection)
-      const nodes = $generateNodesFromSerializedNodes(json.nodes)
-      const duplicatedTable = nodes.find($isTableNode)
-      if (!originalTable || !$isTableNode(duplicatedTable)) {
+      if (!originalTable) {
         return
       }
-      const rows = originalTable?.getChildren<TableRowNode>()
+      const rows = originalTable.getChildren<TableRowNode>()
+      const { index, cells: duplicatedCells } = $generateDuplicatedColumn(editor, cellNode)
       let firstInsertedCell: TableCellNode | undefined
-      rows.forEach((row, index) => {
-        const cell = row.getChildAtIndex(cellIndex)
+      for (let rowIndex = 0; rowIndex < rows.length; rowIndex++) {
+        const row = rows[rowIndex]
+        const cell = row.getChildAtIndex(index)
         if (!cell) {
-          return
+          throw new Error('Could not find cell at index')
         }
 
-        const duplicatedRow = duplicatedTable?.getChildAtIndex<TableRowNode>(index)
-        const duplicatedCell = duplicatedRow?.getFirstChild()
-        if (!$isTableCellNode(duplicatedCell)) {
-          return
+        const duplicatedCell = duplicatedCells[rowIndex]
+        if (!duplicatedCell) {
+          continue
         }
-
         cell.insertAfter(duplicatedCell)
+
         if (!firstInsertedCell) {
           firstInsertedCell = duplicatedCell
         }
-      })
+      }
       if (firstInsertedCell) {
-        firstInsertedCell.selectStart()
+        $moveSelectionToCell(firstInsertedCell)
       }
     },
     {
