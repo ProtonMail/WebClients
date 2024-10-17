@@ -16,7 +16,7 @@ import { DOCS_DEBUG_KEY, EditorSystemMode } from '@proton/docs-shared'
 import { Logger } from '@proton/utils/logs'
 import { useCallback, useMemo, useState } from 'react'
 import { c } from 'ttag'
-import { EditorFrame } from './EditorFrame'
+import { EditorFrame } from '../EditorFrame'
 import HistoryTimeline from './HistoryTimeline'
 
 function HistoryViewerModalContent({
@@ -37,8 +37,17 @@ function HistoryViewerModalContent({
   }, [selectedBatchIndex, versionHistory])
 
   const onFrameReady = useCallback(
-    (frame: HTMLIFrameElement) => {
+    async (frame: HTMLIFrameElement) => {
+      /**
+       * Note that as is, the invoker only invokes and cannot hear back from the editor. This is because
+       * we are instantiating an EditorInvoker which is one way. This means that we cannot `await` any invocations
+       * because we will never receive a resolution. For now this is not a problem, but if it does become one in the future,
+       * instantiate a ClientToEditorBridge instead (which contains an EditorInvoker).
+       */
       const editorInvoker = new EditorInvoker(frame, new Logger('ViewOnlyEditorInvoker', DOCS_DEBUG_KEY))
+
+      editorInvoker.initializeEditor('DummyDocumentId', 'DummyUsername', 'Viewer').catch(console.error)
+
       editorInvoker
         .receiveMessage({
           content: mergedUpdate,
@@ -47,6 +56,7 @@ function HistoryViewerModalContent({
           },
         })
         .catch(console.error)
+
       editorInvoker.showEditor().catch(console.error)
     },
     [mergedUpdate],

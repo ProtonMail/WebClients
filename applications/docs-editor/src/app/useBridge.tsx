@@ -19,10 +19,11 @@ export type EditorConfig = {
 }
 
 export function useBridge({ systemMode }: { systemMode: EditorSystemMode }) {
-  const viewOnlyDocumentId = useId()
   const [application] = useState(() => new Application())
   const [bridge] = useState(() => new EditorToClientBridge(window.parent))
   const [docState, setDocState] = useState<DocState | null>(null)
+
+  const viewOnlyDocumentId = useId()
 
   const [didSetInitialConfig, setDidSetInitialConfig] = useState(false)
   const editorConfig = useRef<EditorConfig | null>(
@@ -54,7 +55,11 @@ export function useBridge({ systemMode }: { systemMode: EditorSystemMode }) {
             return
           }
 
-          if (application.getRole().isPublicViewer()) {
+          if (
+            application.getRole().isPublicViewer() ||
+            systemMode === EditorSystemMode.PublicView ||
+            systemMode === EditorSystemMode.Revision
+          ) {
             return
           }
 
@@ -72,7 +77,11 @@ export function useBridge({ systemMode }: { systemMode: EditorSystemMode }) {
             return
           }
 
-          if (application.getRole().isPublicViewer()) {
+          if (
+            application.getRole().isPublicViewer() ||
+            systemMode === EditorSystemMode.PublicView ||
+            systemMode === EditorSystemMode.Revision
+          ) {
             return
           }
 
