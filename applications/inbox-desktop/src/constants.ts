@@ -1,5 +1,3 @@
-export const PARTITION = "persist:app";
-
 export const ALLOWED_PERMISSIONS = ["clipboard-sanitized-write", "persistent-storage"];
 
 export const CERT_PROTON_ME = [

@@ -1,5 +1,5 @@
-import { Notification, Event, app, session } from "electron";
-import { ALLOWED_PERMISSIONS, PARTITION } from "./constants";
+import { Notification, Event, app } from "electron";
+import { ALLOWED_PERMISSIONS } from "./constants";
 import { handleIPCCalls } from "./ipc/main";
 import { moveUninstaller } from "./macos/uninstall";
 import { saveAppID } from "./store/idStore";
@@ -19,6 +19,7 @@ import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
 import { registerLogIPCForwardTransport } from "./utils/logIPCForwardTransport";
 import { handleStartupMailto, handleAppReadyMailto } from "./utils/protocol/mailto";
 import { checkDefaultProtocols } from "./utils/protocol/default";
+import { appSession } from "./utils/session";
 
 (async function () {
     initializeLog();
@@ -104,11 +105,7 @@ import { checkDefaultProtocols } from "./utils/protocol/default";
                 updateNativeTheme(getTheme());
             }
 
-            const secureSession = session.fromPartition(PARTITION, {
-                cache: false,
-            });
-
-            connectNetLogger(secureSession, getWebContentsViewName);
+            connectNetLogger(getWebContentsViewName);
 
             app.on("activate", () => {
                 if (isMac) {
@@ -117,11 +114,11 @@ import { checkDefaultProtocols } from "./utils/protocol/default";
                 }
 
                 if (!getMainWindow()) {
-                    return viewCreationAppStartup(secureSession);
+                    return viewCreationAppStartup();
                 }
             });
 
-            viewCreationAppStartup(secureSession);
+            viewCreationAppStartup();
 
             // Check updates
             initializeUpdateChecks();
@@ -146,7 +143,7 @@ import { checkDefaultProtocols } from "./utils/protocol/default";
             handleAppReadyMailto();
 
             // Security addition, reject all permissions except notifications
-            secureSession.setPermissionRequestHandler((webContents, permission, callback) => {
+            appSession().setPermissionRequestHandler((webContents, permission, callback) => {
                 try {
                     const { host, protocol } = new URL(webContents.getURL());
                     if (!isHostAllowed(host) || protocol !== "https:") {

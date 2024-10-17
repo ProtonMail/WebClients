@@ -1,4 +1,4 @@
-import { autoUpdater, session, app } from "electron";
+import { autoUpdater, app } from "electron";
 import { updateElectronApp, UpdateSourceType } from "update-electron-app";
 import pkg from "../package.json";
 import { getPlatform } from "./utils/helpers";
@@ -8,6 +8,7 @@ import { updateLogger } from "./utils/log";
 import { RELEASE_CATEGORIES, DESKTOP_PLATFORMS } from "@proton/shared/lib/constants";
 import { DesktopVersion, VersionFile, VersionFileSchema } from "@proton/shared/lib/desktop/DesktopVersion";
 import { semver } from "./utils/external/packages/pass/utils/string/semver";
+import { updateSession } from "./utils/session";
 
 export type LocalDesktopVersion = {
     Version: DesktopVersion["Version"];
@@ -34,8 +35,7 @@ export function initializeUpdateChecks() {
         updateDownloaded = true;
     });
 
-    const ses = session.fromPartition("persist:update", { cache: false });
-    ses.setCertificateVerifyProc(verifyDownloadCertificate);
+    updateSession().setCertificateVerifyProc(verifyDownloadCertificate);
 
     checkForValidUpdates();
     setInterval(checkForValidUpdates, pkg.config.updateInterval);
@@ -148,10 +148,8 @@ function isANewerThanB(a: string, b: string) {
 }
 
 async function getAvailableVersions(platform: DESKTOP_PLATFORMS): Promise<VersionFile | undefined> {
-    const updateSession = session.fromPartition("persist:update", { cache: false });
-
     try {
-        const response = await updateSession.fetch(getVersionURL(platform), { cache: "no-cache" });
+        const response = await updateSession().fetch(getVersionURL(platform), { cache: "no-cache" });
         const json = await response.json();
         return VersionFileSchema.parse(json);
     } catch (error) {
