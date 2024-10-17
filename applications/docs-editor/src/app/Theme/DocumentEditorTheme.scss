@@ -1,6 +1,7 @@
 @import 'lists';
 @import 'table';
 @import 'code';
+@import 'suggestions';
 
 .DocumentEditor {
 	min-block-size: 100%;
@@ -196,84 +197,4 @@
 
 .Lexical__hr {
 	border-block-end: 1px solid var(--border-norm);
-}
-
-:root {
-	--suggestion-normal-bg: 52 145 114;
-	--suggestion-normal-fg: 15 107 76;
-	--suggestion-normal-bg-non-selected: rgb(var(--suggestion-normal-bg) / 0.05);
-	--suggestion-normal-bg-selected: rgb(var(--suggestion-normal-bg) / 0.25);
-}
-
-.Lexical__Suggestion {
-	border-block-end: 1px dotted rgb(var(--suggestion-normal-fg));
-	background-color: var(--suggestion-normal-bg-non-selected);
-	color: rgb(var(--suggestion-normal-fg));
-
-	&.selected {
-		background-color: var(--suggestion-normal-bg-selected);
-	}
-
-	&.delete {
-		opacity: 0.5;
-	}
-
-	&.delete,
-	&.join {
-		background-color: transparent;
-		color: var(--text-hint);
-		border-block-end-color: var(--text-hint);
-		text-decoration: line-through;
-
-		&.selected {
-			opacity: 1;
-			background-color: var(--background-weak);
-		}
-	}
-
-	&.split,
-	&.join {
-		position: relative;
-
-		&::after {
-			content: '';
-			display: inline-block;
-			block-size: 100%;
-			font-size: 0.8rem;
-			pointer-events: none;
-			user-select: none;
-		}
-	}
-
-	.Lexical__paragraph > &.indent-change {
-		display: inline-block;
-	}
-
-	*:not(.Lexical__listItem):has(> &.indent-change),
-	.Lexical__listItem:not(.Lexical__listItem--nested):has(> &.indent-change) {
-		background: var(--suggestion-normal-bg-non-selected);
-		border-block-end: 1px dotted rgb(var(--suggestion-normal-fg));
-	}
-
-	*:not(.Lexical__listItem):has(> &.indent-change.selected),
-	.Lexical__listItem:not(.Lexical__listItem--nested):has(> &.indent-change.selected) {
-		background: var(--suggestion-normal-bg-selected);
-	}
-
-	&.split::after {
-		content: '↵';
-	}
-
-	&.join::after {
-		content: '↵';
-		scale: 1 -1;
-	}
-
-	.Lexical__link {
-		color: inherit;
-	}
-
-	.Lexical__textCode {
-		color: inherit;
-	}
 }

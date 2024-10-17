@@ -8,6 +8,14 @@ export type SuggestionType =
   | 'style-change'
   | 'image-change'
   | 'indent-change'
+  | 'insert-table'
+  | 'delete-table'
+  | 'insert-table-row'
+  | 'duplicate-table-row'
+  | 'delete-table-row'
+  | 'insert-table-column'
+  | 'delete-table-column'
+  | 'duplicate-table-column'
 
 export type SuggestionSummaryType =
   | SuggestionType

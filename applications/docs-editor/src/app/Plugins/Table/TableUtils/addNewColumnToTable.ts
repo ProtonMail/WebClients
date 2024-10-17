@@ -1,15 +1,14 @@
-import type { TableNode, TableRowNode } from '@lexical/table'
-import { $getElementForTableNode, $insertTableColumn } from '@lexical/table'
+import type { TableNode, TableRowNode, TableCellNode } from '@lexical/table'
 import type { LexicalEditor } from 'lexical'
+import { $selectColumn } from './selectColumn'
+import { INSERT_TABLE_COLUMN_COMMAND } from '../Commands'
 
-export function addNewColumnToTable(editor: LexicalEditor, tableNode: TableNode) {
-  editor.update(() => {
-    const table = tableNode.getLatest()
-    const firstRow = table.getFirstChild<TableRowNode>()
-    if (!firstRow) {
-      return
-    }
-    const columnCount = firstRow.getChildrenSize()
-    $insertTableColumn(table, columnCount - 1, true, 1, $getElementForTableNode(editor, table))
-  })
+export function $addNewColumnAtEndOfTable(editor: LexicalEditor, tableNode: TableNode) {
+  const table = tableNode.getLatest()
+  const lastCellOfFirstRow = table.getFirstChildOrThrow<TableRowNode>().getLastChildOrThrow<TableCellNode>()
+  if (!lastCellOfFirstRow) {
+    return
+  }
+  $selectColumn(lastCellOfFirstRow)
+  editor.dispatchCommand(INSERT_TABLE_COLUMN_COMMAND, { insertAfter: true })
 }

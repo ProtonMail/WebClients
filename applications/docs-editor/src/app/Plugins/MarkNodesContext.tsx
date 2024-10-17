@@ -7,8 +7,7 @@ import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import { $getCommentThreadMarkIDs } from './Comments/CommentThreadMarkNode'
 import { $getSuggestionID } from './Suggestions/Utils'
 import type { ProtonNode } from './Suggestions/ProtonNode'
-import { $isSuggestionNode } from './Suggestions/ProtonNode'
-import { SuggestionTypesThatAffectWholeParent } from './Suggestions/Types'
+import { $isSuggestionThatAffectsWholeParent } from './Suggestions/Types'
 
 type MarkNodesContextValue = {
   markNodeMap: Map<string, Set<NodeKey>>
@@ -89,21 +88,30 @@ export function MarkNodesProvider({ children }: { children: ReactNode }) {
             if ($isRangeSelection(selection)) {
               const anchorNode = selection.anchor.getNode()
 
+              let suggestionThatAffectsWholeNode: ProtonNode | undefined
+
+              if ($isElementNode(anchorNode) && !anchorNode.isInline()) {
+                const siblings = anchorNode.getParent()?.getChildren()
+                suggestionThatAffectsWholeNode = siblings?.find($isSuggestionThatAffectsWholeParent)
+              }
+
               const nonInlineParent = $findMatchingParent(
                 anchorNode,
                 (node): node is ElementNode => $isElementNode(node) && !node.isInline(),
               )
               if (nonInlineParent) {
                 const children = nonInlineParent.getChildren()
-                const suggestionThatAffectsWholeNode = children.find(
-                  (node): node is ProtonNode =>
-                    $isSuggestionNode(node) &&
-                    SuggestionTypesThatAffectWholeParent.includes(node.getSuggestionTypeOrThrow()),
-                )
-                if (suggestionThatAffectsWholeNode) {
-                  setActiveIDs([suggestionThatAffectsWholeNode.getSuggestionIdOrThrow()])
-                  hasActiveIds = true
+                suggestionThatAffectsWholeNode = children.find($isSuggestionThatAffectsWholeParent)
+
+                if (!suggestionThatAffectsWholeNode) {
+                  const siblings = nonInlineParent.getParent()?.getChildren()
+                  suggestionThatAffectsWholeNode = siblings?.find($isSuggestionThatAffectsWholeParent)
                 }
+              }
+
+              if (suggestionThatAffectsWholeNode) {
+                setActiveIDs([suggestionThatAffectsWholeNode.getSuggestionIdOrThrow()])
+                hasActiveIds = true
               }
 
               if ($isTextNode(anchorNode)) {
