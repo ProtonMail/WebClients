@@ -1,0 +1,12 @@
+.first-child-container {
+	& > * /* Hide all direct children */ {
+		display: none;
+	}
+
+	& > *:not(:empty) {
+		display: block; /* Show all non-empty children */
+		& ~ :not(:empty) /* Hide any non-empty siblings */ {
+			display: none;
+		}
+	}
+}
