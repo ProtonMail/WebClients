@@ -12,6 +12,7 @@ export const DESKTOP_FEATURES = {
     LatestVersionCheck: true,
     InstallSource: true,
     MailtoTelemetry: true,
+    ESUserChoice: true,
 } as const satisfies Record<IPCInboxDesktopFeature, boolean>;
 
 export type IPCHasFeatureMessage = {

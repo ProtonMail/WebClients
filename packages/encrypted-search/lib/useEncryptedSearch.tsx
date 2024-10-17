@@ -8,6 +8,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useGetUserKeys } from '@proton/components/hooks/useUserKeys';
 import { SECOND } from '@proton/shared/lib/constants';
+import { storeESUserChoiceInboxDesktop } from '@proton/shared/lib/desktop/encryptedSearch';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
@@ -237,6 +238,8 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             ...esStatus,
             esEnabled: !currentOption,
         }));
+
+        storeESUserChoiceInboxDesktop(userID, !currentOption);
 
         if (currentOption) {
             abortSearchingRef.current.abort();
