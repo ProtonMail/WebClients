@@ -3103,6 +3103,11 @@
         "Zaščitite vaše datoteke s šifrirano shrambo v oblaku. Vključuje samodejno sinhronizacijo, šifrirano delitev datotek in drugo."
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Spremljanje temnega spleta"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
@@ -5740,12 +5745,6 @@
         "${ n } sporočila na dan",
         "${ n } sporočil na dan"
       ],
-      "${ n } user": [
-        "${ n } uporabnik",
-        "Do ${ n } uporabnika",
-        "Do ${ n } uporabniki",
-        "Do ${ n } uporabnikov"
-      ],
       "${ n } vault": [
         "${ n } trezor",
         "${ n } trezorja",
@@ -7763,6 +7762,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } shrambe na uporabnika"
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } vam nudi vse aplikacije, vse funkcije, zgodnji dostop do novih izdaj in vse potrebno za nadzor nad svojimi podatki in njihovo varnostjo."
       ]

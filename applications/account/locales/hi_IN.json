@@ -4666,6 +4666,9 @@
         "${ plusVpnConnections } डिवाइस तक के लिए कनेक्शन",
         "अधिकतम ${ plusVpnConnections } उपकरणों के लिए कनेक्शन"
       ],
+      "Dark Web Monitoring": [
+        "डार्क वेब मॉनिटरिंग"
+      ],
       "Fastest VPN servers": [
         "सबसे तेज़ वीपीएन सर्वर"
       ],
@@ -12619,47 +12622,21 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
-        "${ BRAND_NAME } की आय का एकमात्र स्रोत उपयोगकर्ता सदस्यताएँ हैं। आपका समर्थन हमें स्वतंत्र रहने, गोपनीयता को ऑनलाइन डिफ़ॉल्ट बनाने के हमारे लक्ष्य को आगे बढ़ाने और गोपनीयता और स्वतंत्रता के लिए लड़ने वाले कार्यकर्ताओं और संगठनों का समर्थन जारी रखने की अनुमति देता है।"
-      ],
       "${ dayDiff } day left": [
         "${ dayDiff } दिन बाकी",
         "${ dayDiff } दिन बाकी"
       ],
-      "${ MaxCalendars } calendar per user": [
-        "प्रति उपयोगकर्ता ${ MaxCalendars } कैलेंडर",
-        "प्रति उपयोगकर्ता ${ MaxCalendars } कैलेंडर"
-      ],
-      "${ maxEmails } email address per user": [
-        "प्रति उपयोगकर्ता ${ maxEmails } ईमेल पता",
-        "प्रति उपयोगकर्ता ${ maxEmails } ईमेल पते"
-      ],
       "${ planMaxSpace } total storage": [
         "कुल स्टोरेज ${ planMaxSpace }"
       ],
-      "${ PROTON_SENTINEL_NAME } program": [
-        "${ PROTON_SENTINEL_NAME } क्रमादेश"
-      ],
-      "10 email addresses": [
-        "10 ईमेल पते"
-      ],
-      "6 users": [
-        "6 यूज़र"
-      ],
       "Automatic email forwarding": [
         "स्वचालित ईमेल फॉरवर्ड"
-      ],
-      "Calendar sharing": [
-        "कैलेंडर शेयर"
       ],
       "Cancel subscription": [
         "सदस्यता रद्द करें"
       ],
       "Cancel subscription?": [
         "सदस्यता रद्द करें?"
-      ],
-      "Close": [
-        "बंद करें"
       ],
       "Helping activists in Hong Kong": [
         "हांगकांग में क्रांतिकारियों की सहायता करना"
@@ -12696,9 +12673,6 @@
       ],
       "Watch the interview": [
         "इंटरव्यू देखें"
-      ],
-      "Your own custom email domain": [
-        "अपना कस्टम ईमेल डोमेन"
       ]
     },
     "subscription reminder": {
@@ -14293,9 +14267,6 @@
       ],
       "Account is disconnected": [
         "खाता डिस्कनेक्ट किया गया है"
-      ],
-      "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
-        "व्यवस्थापक आपकी सदस्यता में परिवर्तन कर सकते हैं, उपयोगकर्ता खातों और पासवर्डों का प्रबंधन कर सकते हैं, तथा अन्य उपयोगकर्ताओं को प्रशासनिक विशेषाधिकार दे सकते हैं।"
       ],
       "An approximate location of the IP address": [
         "IP ​​पते का अनुमानित स्थान"

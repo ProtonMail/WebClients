@@ -479,6 +479,12 @@
       "Editing": [
         "Redigerer"
       ],
+      "Font": [
+        "Skrifttype"
+      ],
+      "Font size": [
+        "Skriftstørrelse"
+      ],
       "Internet connection lost": [
         "Internetforbindelse mistet"
       ],
@@ -517,11 +523,26 @@
       ]
     },
     "Label": {
+      "Add link": [
+        "Tilføj link"
+      ],
       "Background colour": [
         "Baggrundsfarve"
       ],
+      "Change image size": [
+        "Skift billedstørrelse"
+      ],
+      "Change indent level": [
+        "Skift indrykningsniveau"
+      ],
       "Delete": [
         "Slet"
+      ],
+      "Delete image": [
+        "Slet billede"
+      ],
+      "Delete link": [
+        "Slet link"
       ],
       "Delete paragraph": [
         "Slet afsnit"
@@ -531,6 +552,9 @@
       ],
       "Insert": [
         "Indsæt"
+      ],
+      "Insert image": [
+        "Indsæt billede"
       ],
       "Insert paragraph": [
         "Indsæt afsnit"
@@ -550,8 +574,14 @@
       "Replace": [
         "Erstat"
       ],
+      "Replace link": [
+        "Erstat link"
+      ],
       "Text colour": [
         "Tekstfarve"
+      ],
+      "with \"${ replaceWith }\"": [
+        "med \"${ replaceWith }\""
       ]
     },
     "Placeholder": {

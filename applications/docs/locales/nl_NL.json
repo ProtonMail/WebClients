@@ -2008,7 +2008,7 @@
     },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
-        "${ PROTON_SENTINEL_NAME } beschermt je account met 24/7 monitoring van verdachte activiteiten - inclusief escalatie naar beveiligingsspecialisten."
+        "${ PROTON_SENTINEL_NAME } beschermt uw account met 24/7 monitoring van verdachte activiteiten - inclusief escalatie naar beveiligingsspecialisten."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA voegt een extra beveiligingslaag toe, waardoor onbevoegde toegang wordt voorkomen."
@@ -2074,7 +2074,7 @@
         "Uw account en dataherstelmethodes zijn ingesteld."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "Je hebt al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
+        "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -3153,6 +3153,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld bestanden delen en meer."
+      ]
+    },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
       ]
     },
     "fido2: Error": {
@@ -4564,6 +4569,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "U bent momenteel aangemeld als ${ user.Name } (${ user.Email })."
       ],
+      "You are currently viewing this document in view-only mode. Reach out to the owner to request access to edit and comment.": [
+        "U bekijkt momenteel dit document in alleen-bekijken modus. Neem contact op met de eigenaar om toegang tot bewerken en commentaar te vragen."
+      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "U gebruikt meer opslag dan is inbegrepen in een ${ downgradedPlanName } abonnement. Wis of verwijder gegevens om te kunnen downgraden."
       ],
@@ -5741,10 +5749,6 @@
       "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
         "${ n } heeft een ${ PASS_SHORT_APP_NAME } kluis gedeeld per gebruiker",
         "${ n } heeft ${ PASS_SHORT_APP_NAME } kluizen gedeeld per gebruiker"
-      ],
-      "${ n } user": [
-        "${ n } gebruiker",
-        "Tot ${ n } gebruikers"
       ],
       "${ n } vault": [
         "${ n } kluis",
@@ -7853,6 +7857,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } opslagruimte per gebruiker"
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over de veiligheid van de veiligheid te hebben."
       ]

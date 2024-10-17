@@ -3199,6 +3199,11 @@
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Sledování Dark webu"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Při ověřování pomocí bezpečnostního klíče se něco pokazilo. Zkuste to prosím znovu."
@@ -3317,6 +3322,12 @@
       ]
     },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Nalezen ${ itemsCount } návrh, použijte klávesnice pro navigaci.",
+        "Nalezeny ${ itemsCount } návrhy, použijte klávesnice pro navigaci.",
+        "Nalezeno ${ itemsCount } návrhů, použijte klávesnice pro navigaci.",
+        "Nalezeno ${ itemsCount } návrhů, použijte klávesnice pro navigaci."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Použijte klávesy nahoru a dolů pro procházení návrhů po zadání. Stiskněte tlačítko Enter pro potvrzení vaší volby, nebo tlačítko Esc pro zavření návrhů."
       ]
@@ -5913,12 +5924,6 @@
         "${ n } sdílelých trezorů ${ PASS_SHORT_APP_NAME } na uživatele",
         "${ n } sdílelých trezorů ${ PASS_SHORT_APP_NAME } na uživatele"
       ],
-      "${ n } user": [
-        "${ n } uživatel",
-        "Až ${ n } uživatelé",
-        "Až ${ n } uživatelů",
-        "Až ${ n } uživatelů"
-      ],
       "${ n } vault": [
         "${ n } trezor",
         "${ n } trezory",
@@ -8142,6 +8147,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } úložiště na uživatele"
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } vám poskytne všechny aplikace, všechny funkce, předběžný přístup k novým verzím a vše, co potřebujete, abyste měli svá data a jejich zabezpečení pod kontrolou."
       ]

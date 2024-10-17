@@ -3181,6 +3181,11 @@
         "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Monitoring dark web"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Coś poszło nie tak z uwierzytelnianiem za pomocą klucza bezpieczeństwa. Spróbuj ponownie później."
@@ -5937,12 +5942,6 @@
         "${ n } udostępnionych sejfów ${ PASS_SHORT_APP_NAME } na użytkownika",
         "${ n } udostępnionych sejfów ${ PASS_SHORT_APP_NAME } na użytkownika"
       ],
-      "${ n } user": [
-        "${ n } użytkownik",
-        "Do ${ n } użytkowników",
-        "Do ${ n } użytkowników",
-        "Do ${ n } użytkowników"
-      ],
       "${ n } vault": [
         "${ n } sejf",
         "${ n } sejfy",
@@ -8163,6 +8162,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } przestrzeni dyskowej na użytkownika"
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "Plan ${ planName } zawiera wszystkie aplikacje, wszystkie funkcje, wcześniejszy dostęp do nowych wersji i wszystko, czego potrzebujesz, aby mieć kontrolę nad swoimi danymi i ich bezpieczeństwem."
       ]

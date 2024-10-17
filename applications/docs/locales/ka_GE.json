@@ -3146,6 +3146,11 @@
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს შეიცავს ავტომატურ სინქრონიზაციას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "თქვენი უსაფრთხოების გასაღების ავთენტიკაციისას რაღაც არასწორად წავიდა. კიდევ სცადეთ."
@@ -3252,6 +3257,10 @@
       ]
     },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "ნაპოვნია ${ itemsCount } მინიშნება. აირჩიეთ კლავიატურით.",
+        "ნაპოვნია ${ itemsCount } მინიშნება. აირჩიეთ კლავიატურით."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "გამოიყენეთ ზევით და ქვევით კლავიშები შემოთავაზებების შეყვანის შემდეგ წვდომისთვის და დასათვალიერებლად. დააჭირეთ Enter თქვენი არჩევანის დასადასტურებლად, ან Escape შემოთავაზებების ველის დასახურავად."
       ]
@@ -5733,10 +5742,6 @@
         "${ n } გაზიარებული ${ PASS_SHORT_APP_NAME }-ის საცავი თითოეული მომხმარებლისთვის",
         "${ n } გაზიარებული ${ PASS_SHORT_APP_NAME }-ის საცავი თითოეული მომხმარებლისთვის"
       ],
-      "${ n } user": [
-        "${ n } მომხმარებელი",
-        "${ n }-მდე მომხმარებელი"
-      ],
       "${ n } vault": [
         "${ n } საცავი",
         "${ n } საცავი"
@@ -7839,6 +7844,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace }/მომხმარებელი"
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } გაძლევთ ყველა აპს, ყველა ფუნქციას, ადრეულ წვდომას ახალ რელიზებთან და ყველაფერს, რაც გჭირდებათ, რომ მართოთ თქვენი მონაცემები და მისი უსაფრთხოება."
       ]

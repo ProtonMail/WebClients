@@ -3137,6 +3137,11 @@
         "Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Övervakning mörka webben"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Något gick fel vid autentisering med din säkerhetsnyckel. Försök igen."
@@ -3243,6 +3248,10 @@
       ]
     },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Hittade ${ itemsCount } förslag, använd tangentbord för att navigera.",
+        "Hittade ${ itemsCount } förslag, använd tangentbord för att navigera."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Använd upp och ner tangenterna för att komma åt och bläddra genom förslag efter inmatning. Tryck på Enter för att bekräfta ditt val, eller Esc för att stänga förslagsrutan."
       ]
@@ -5787,10 +5796,6 @@
         "${ n } delat ${ PASS_SHORT_APP_NAME }-valv per användare",
         "${ n } delat ${ PASS_SHORT_APP_NAME }-valv per användare"
       ],
-      "${ n } user": [
-        "${ n } användare",
-        "Upp till ${ n } användare"
-      ],
       "${ n } vault": [
         "${ n } valv",
         "${ n } valv"
@@ -7899,6 +7904,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } lagringsutrymme per användare"
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } ger dig alla appar, alla funktioner, förhandstillgång till nya utgåvor och allt du behöver för att ha kontroll över din data och dess säkerhet."
       ]
