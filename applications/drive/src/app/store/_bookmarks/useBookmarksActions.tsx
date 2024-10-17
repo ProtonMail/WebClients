@@ -2,6 +2,7 @@ import { c, msgid } from 'ttag';
 
 import type { useConfirmActionModal } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { partialPublicViewKey } from '../../hooks/util/usePartialPublicView';
 import { sendErrorReport } from '../../utils/errorHandling';
@@ -30,7 +31,19 @@ export const useBookmarksActions = () => {
             return;
         }
         try {
-            await addBookmark(abortSignal, { urlPassword, token });
+            await addBookmark(abortSignal, {
+                urlPassword,
+                token,
+                apiSilence: API_CUSTOM_ERROR_CODES.ALREADY_EXISTS,
+            }).catch((e) => {
+                // Because we can only list bookmark while being logged-in
+                // This case will only happend if the user try to bookmark the file he already have while being logged-out
+                // In other case we don't allow saved to drive if you already have the bookmark.
+                if (e?.data?.Code === API_CUSTOM_ERROR_CODES.ALREADY_EXISTS) {
+                    return undefined;
+                }
+                return e;
+            });
             if (!hideNotifications) {
                 createNotification({
                     type: 'success',

@@ -42,6 +42,7 @@ function usePublicSessionProvider() {
     const sessionInfo = useRef<SessionInfo>();
     const auth = useAuthentication();
     const [user, setUser] = useState<UserModel>();
+    const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
 
     const initHandshake = async (token: string) => {
         /*
@@ -53,7 +54,8 @@ function usePublicSessionProvider() {
         if (persistedSession) {
             try {
                 metrics.setAuthHeaders(persistedSession.UID);
-                const resumedSession = await resumeSession({ api, localID: persistedSession.localID });
+                // We need to silence reponse, in case the token is invalid we just want to show not logged-in page instead of have error notification
+                const resumedSession = await resumeSession({ api: silentApi, localID: persistedSession.localID });
                 if (resumedSession) {
                     auth.setPassword(resumedSession.keyPassword);
                     auth.setUID(persistedSession.UID);
