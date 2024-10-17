@@ -18,14 +18,16 @@ import {
 } from '@proton/components';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryCheckEmailAvailability } from '@proton/shared/lib/api/user';
-import { DRIVE_APP_NAME, PLANS } from '@proton/shared/lib/constants';
-import { DRIVE_SIGNIN, DRIVE_SIGNUP } from '@proton/shared/lib/drive/urls';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { APPS, DRIVE_APP_NAME, PLANS, SSO_PATHS } from '@proton/shared/lib/constants';
+import { DRIVE_SIGNIN } from '@proton/shared/lib/drive/urls';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { emailValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getUrlWithReturnUrl } from '@proton/shared/lib/helpers/url';
 
 import usePublicToken from '../../../hooks/drive/usePublicToken';
+import { RedirectionReason, drivePublicRedirectionReasonKey } from '../../../hooks/util/useRedirectToPublicPage';
 import { Actions, countActionWithTelemetry, traceTelemetry } from '../../../utils/telemetry';
 import { deleteStoredUrlPassword, saveUrlPasswordForRedirection } from '../../../utils/url/password';
 
@@ -70,10 +72,12 @@ export const SignupFlowModal = ({ customPassword, onClose, ...modalProps }: Prop
                 const returnUrlSearchParams = new URLSearchParams();
                 returnUrlSearchParams.append('token', token);
                 const returnUrl = `/shared-with-me?`.concat(returnUrlSearchParams.toString());
-                const url = new URL(DRIVE_SIGNUP);
+
+                const url = new URL(getAppHref(SSO_PATHS.SIGNUP, APPS.PROTONACCOUNT));
                 // This autofill the sign-up email input
                 url.searchParams.append('email', email);
                 url.searchParams.append('plan', PLANS.FREE);
+                url.searchParams.append('product', 'drive');
                 replaceUrl(
                     getUrlWithReturnUrl(url.toString(), {
                         returnUrl,
@@ -89,12 +93,13 @@ export const SignupFlowModal = ({ customPassword, onClose, ...modalProps }: Prop
                 await countActionWithTelemetry(Actions.SignInFlowModal);
                 const returnUrlSearchParams = new URLSearchParams();
                 returnUrlSearchParams.append('token', token);
+                returnUrlSearchParams.append(drivePublicRedirectionReasonKey, RedirectionReason.SIGNIN);
                 // Always return to public page in case of signin. This will be done in MainContainer.tsx on page loading
-                returnUrlSearchParams.append('redirectToPublic', 'true');
-                const returnUrl = `/shared-with-me?`.concat(returnUrlSearchParams.toString());
+                const returnUrl = `/?`.concat(returnUrlSearchParams.toString());
                 const url = new URL(DRIVE_SIGNIN);
                 // This autofill the sign-in email input
                 url.searchParams.append('username', email);
+                url.searchParams.append('product', 'drive');
                 replaceUrl(
                     getUrlWithReturnUrl(url.toString(), {
                         returnUrl,

@@ -67,7 +67,7 @@ const InitContainer = () => {
     const { convertExternalInvitationsFromEvents } = useShareBackgroundActions();
     const isDriveShareUrlBookmarkingEnabled = useDriveShareURLBookmarkingFeatureFlag();
     const { addBookmarkFromPrivateApp } = useBookmarksActions();
-    const { needToRedirectToPublicPage, redirectToPublicPage, cleanupUrl } = useRedirectToPublicPage();
+    const { redirectionReason, redirectToPublicPage, cleanupUrl } = useRedirectToPublicPage();
     useActivePing();
     useReactRouterNavigationLog();
 
@@ -79,14 +79,16 @@ const InitContainer = () => {
                 // In case the user Sign-up we just let him in the App (in /shared-with-me route)
                 // So we don't even load the app.
                 // See useSharedWithMeView.tsx for Sign-up logic
-
                 const token = isDriveShareUrlBookmarkingEnabled && getTokenFromSearchParams();
-                if (token && needToRedirectToPublicPage) {
-                    await addBookmarkFromPrivateApp(abortController.signal, {
-                        token,
-                        hideNotifications: true,
-                    });
-                    setPublicRedirectSpotlightToPending();
+                if (token && redirectionReason) {
+                    // In case of account switch we need to pass by the private app to set the latest active session
+                    if (redirectionReason === 'signin') {
+                        await addBookmarkFromPrivateApp(abortController.signal, {
+                            token,
+                            hideNotifications: true,
+                        });
+                        setPublicRedirectSpotlightToPending();
+                    }
                     redirectToPublicPage(token);
                 }
 
