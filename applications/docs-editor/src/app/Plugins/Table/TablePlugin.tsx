@@ -6,20 +6,24 @@ import {
   $computeTableMap,
   $computeTableMapSkipCellCheck,
   $createTableCellNode,
+  $deleteTableColumn,
   $getNodeTriplet,
   $isTableCellNode,
   $isTableNode,
   $isTableRowNode,
+  $isTableSelection,
   applyTableHandlers,
   TableCellNode,
   TableNode,
   TableRowNode,
 } from '@lexical/table'
-import { $insertFirst, $insertNodeToNearestRoot, mergeRegister } from '@lexical/utils'
+import { $findMatchingParent, $insertFirst, $insertNodeToNearestRoot, mergeRegister } from '@lexical/utils'
 import {
   $createParagraphNode,
   $getNodeByKey,
+  $getSelection,
   $isElementNode,
+  $isRangeSelection,
   $isTextNode,
   $nodesOfType,
   COMMAND_PRIORITY_EDITOR,
@@ -28,14 +32,29 @@ import {
 import { useEffect, useState } from 'react'
 import invariant from '../../Shared/invariant'
 import { $createTableNodeWithDimensions } from './CreateTableNodeWithDimensions'
-import type { InsertTableCommandPayload } from './InsertTableCommand'
-import { INSERT_TABLE_COMMAND } from './InsertTableCommand'
+import type { InsertTableCommandPayload } from './Commands'
+import {
+  DELETE_TABLE_COLUMN_AT_SELECTION_COMMAND,
+  DELETE_TABLE_COLUMN_COMMAND,
+  DELETE_TABLE_COMMAND,
+  DELETE_TABLE_ROW_AT_SELECTION_COMMAND,
+  DELETE_TABLE_ROW_COMMAND,
+  DUPLICATE_TABLE_COLUMN_COMMAND,
+  DUPLICATE_TABLE_ROW_COMMAND,
+  INSERT_TABLE_COLUMN_COMMAND,
+  INSERT_TABLE_COMMAND,
+  INSERT_TABLE_ROW_COMMAND,
+} from './Commands'
 import { TableMenu } from './TableMenu'
 import Portal from '../../Components/Portal'
 import { TableAddButtons } from './TableAddButtons'
 import debounce from '@proton/utils/debounce'
 import { TableRowAndColumnMenus } from './TableRowAndColumnMenus'
-import { useApplication } from '../../ApplicationProvider'
+import { $insertTableRowAtSelection } from './TableUtils/insertNewRowAtSelection'
+import { $insertTableColumnAtSelection } from './TableUtils/insertNewColumnAtSelection'
+import { $moveSelectionToCell } from './TableUtils/moveSelectionToCell'
+import { duplicateRow } from './TableUtils/duplicateRow'
+import { duplicateSelectedColumn } from './TableUtils/duplicateSelectedColumn'
 
 export function TablePlugin({
   hasCellMerge = false,
@@ -49,8 +68,6 @@ export function TablePlugin({
   const [editor] = useLexicalComposerContext()
 
   const isEditable = editor.isEditable()
-
-  const { isSuggestionMode } = useApplication()
 
   const [tables, setTables] = useState<TableNode[]>([])
 
@@ -101,6 +118,112 @@ export function TablePlugin({
             firstDescendant.select()
           }
 
+          return true
+        },
+        COMMAND_PRIORITY_EDITOR,
+      ),
+      editor.registerCommand(
+        INSERT_TABLE_ROW_COMMAND,
+        ({ insertAfter }) => {
+          const insertedRow = $insertTableRowAtSelection(insertAfter)
+          if (insertedRow) {
+            insertedRow.getFirstChild()?.selectStart()
+            return true
+          }
+          return false
+        },
+        COMMAND_PRIORITY_EDITOR,
+      ),
+      editor.registerCommand(
+        INSERT_TABLE_COLUMN_COMMAND,
+        ({ insertAfter }) => {
+          const firstInsertedCell = $insertTableColumnAtSelection(insertAfter)
+          if (firstInsertedCell) {
+            $moveSelectionToCell(firstInsertedCell)
+            return true
+          }
+          return false
+        },
+        COMMAND_PRIORITY_EDITOR,
+      ),
+      editor.registerCommand(
+        DELETE_TABLE_COMMAND,
+        (key) => {
+          const table = $getNodeByKey(key)
+          if (!table) {
+            return false
+          }
+          table.selectStart()
+          table.remove()
+          return true
+        },
+        COMMAND_PRIORITY_EDITOR,
+      ),
+      editor.registerCommand(
+        DELETE_TABLE_ROW_COMMAND,
+        (row) => {
+          row.remove()
+          return true
+        },
+        COMMAND_PRIORITY_EDITOR,
+      ),
+      editor.registerCommand(
+        DELETE_TABLE_COLUMN_COMMAND,
+        (cell) => {
+          const table = $findMatchingParent(cell, $isTableNode)
+          if (!table) {
+            return false
+          }
+          const cellIndex = cell.getIndexWithinParent()
+          $deleteTableColumn(table, cellIndex)
+          return true
+        },
+        COMMAND_PRIORITY_EDITOR,
+      ),
+      editor.registerCommand(
+        DELETE_TABLE_ROW_AT_SELECTION_COMMAND,
+        () => {
+          const selection = $getSelection()
+          if (!$isRangeSelection(selection) && !$isTableSelection(selection)) {
+            return false
+          }
+          const focus = selection.focus.getNode()
+          const row = $findMatchingParent(focus, $isTableRowNode)
+          if (!row) {
+            return false
+          }
+          return editor.dispatchCommand(DELETE_TABLE_ROW_COMMAND, row)
+        },
+        COMMAND_PRIORITY_EDITOR,
+      ),
+      editor.registerCommand(
+        DELETE_TABLE_COLUMN_AT_SELECTION_COMMAND,
+        () => {
+          const selection = $getSelection()
+          if (!$isRangeSelection(selection) && !$isTableSelection(selection)) {
+            return false
+          }
+          const focus = selection.focus.getNode()
+          const cell = $findMatchingParent(focus, $isTableCellNode)
+          if (!cell) {
+            return false
+          }
+          return editor.dispatchCommand(DELETE_TABLE_COLUMN_COMMAND, cell)
+        },
+        COMMAND_PRIORITY_EDITOR,
+      ),
+      editor.registerCommand(
+        DUPLICATE_TABLE_ROW_COMMAND,
+        (row) => {
+          duplicateRow(editor, row)
+          return true
+        },
+        COMMAND_PRIORITY_EDITOR,
+      ),
+      editor.registerCommand(
+        DUPLICATE_TABLE_COLUMN_COMMAND,
+        (cell) => {
+          duplicateSelectedColumn(editor, cell)
           return true
         },
         COMMAND_PRIORITY_EDITOR,
@@ -273,7 +396,7 @@ export function TablePlugin({
 
   const editorContainer = editor.getRootElement()?.parentElement
 
-  if (!isEditable || isSuggestionMode) {
+  if (!isEditable) {
     return null
   }
 

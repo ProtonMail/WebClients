@@ -7,6 +7,7 @@ import { $createLinkNode, $isLinkNode } from '@lexical/link'
 import { $patchStyleText } from '@lexical/selection'
 import { $isImageNode } from '../Image/ImageNode'
 import { $findMatchingParent } from '@lexical/utils'
+import { $deleteTableColumn, $isTableCellNode, $isTableNode, $isTableRowNode } from '@lexical/table'
 
 export function $rejectSuggestion(suggestionID: string): boolean {
   const nodes = $nodesOfType(ProtonNode)
@@ -133,6 +134,35 @@ export function $rejectSuggestion(suggestionID: string): boolean {
       )
       node.remove()
       indentableParent?.setIndent(changedProperties.indent)
+    } else if (suggestionType === 'insert-table') {
+      const table = $findMatchingParent(node, $isTableNode)
+      node.remove()
+      if (table) {
+        table.remove()
+      }
+    } else if (suggestionType === 'delete-table') {
+      node.remove()
+    } else if (suggestionType === 'insert-table-row' || suggestionType === 'duplicate-table-row') {
+      const row = $findMatchingParent(node, $isTableRowNode)
+      node.remove()
+      if (row) {
+        row.remove()
+      }
+    } else if (suggestionType === 'delete-table-row') {
+      node.remove()
+    } else if (suggestionType === 'insert-table-column' || suggestionType === 'duplicate-table-column') {
+      const cell = $findMatchingParent(node, $isTableCellNode)
+      node.remove()
+      if (!cell) {
+        continue
+      }
+      const cellIndex = cell.getIndexWithinParent()
+      const table = $findMatchingParent(cell, $isTableNode)
+      if (table) {
+        $deleteTableColumn(table, cellIndex)
+      }
+    } else if (suggestionType === 'delete-table-column') {
+      node.remove()
     } else {
       node.remove()
     }
