@@ -1,7 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
-import type { Optional, Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces';
 
 import type { RecipientType } from '../../models/address';
 import { globalReset } from '../actions';
@@ -12,55 +12,15 @@ export const composersInitialState: ComposersState = {
     composers: {},
 };
 
-const getComposerUID = (() => {
-    let current = 0;
-    return () => `composer-${current++}`;
-})();
-
 const name = 'composers';
 
 const composersSlice = createSlice({
     name,
     initialState: composersInitialState,
     reducers: {
-        addComposer(
-            state,
-            action: PayloadAction<
-                Optional<
-                    Pick<
-                        Composer,
-                        'messageID' | 'type' | 'senderEmailAddress' | 'recipients' | 'status' | 'forceOpenScheduleSend'
-                    >,
-                    'recipients'
-                > & { ID?: string }
-            >
-        ) {
-            const {
-                ID = getComposerUID(),
-                messageID,
-                type,
-                senderEmailAddress,
-                recipients,
-                status,
-                forceOpenScheduleSend,
-            } = action.payload;
-
-            const composer = {
-                ID,
-                messageID,
-                type,
-                senderEmailAddress,
-                changesCount: 0,
-                recipients: {
-                    ToList: recipients?.ToList || [],
-                    CCList: recipients?.CCList || [],
-                    BCCList: recipients?.BCCList || [],
-                },
-                status,
-                forceOpenScheduleSend,
-            } as Composer;
-
-            state.composers[composer.ID] = composer;
+        /** Check `addComposerAction` in `composerActions.ts` */
+        addComposer(state, action: PayloadAction<Composer>) {
+            state.composers[action.payload.ID] = action.payload;
         },
         setInitialized(state, action: PayloadAction<{ ID: ComposerID; message: MessageState }>) {
             state.composers[action.payload.ID].senderEmailAddress = action.payload.message?.data?.Sender?.Address;
@@ -82,6 +42,15 @@ const composersSlice = createSlice({
             const { ID, type, recipients } = action.payload;
             state.composers[ID].recipients[type] = recipients;
             state.composers[ID].changesCount += 1;
+        },
+        toggleMinimizeComposer(state, action: PayloadAction<ComposerID>) {
+            state.composers[action.payload].isMinimized = !state.composers[action.payload].isMinimized;
+        },
+        toggleMaximizeComposer(state, action: PayloadAction<ComposerID>) {
+            const nextMaximizeValue = !state.composers[action.payload].isMaximized;
+
+            state.composers[action.payload].isMinimized = false;
+            state.composers[action.payload].isMaximized = nextMaximizeValue;
         },
     },
     extraReducers: (builder) => {

@@ -25,7 +25,7 @@ import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isOutbox, isScheduledSend } from '@proton/shared/lib/mail/messages';
 
-import { composerActions } from 'proton-mail/store/composers/composersSlice';
+import { addComposerAction } from 'proton-mail/store/composers/composerActions';
 import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
 
 import SendingOriginalMessageModal from '../../components/composer/modals/SendingOriginalMessageModal';
@@ -35,7 +35,6 @@ import { openDraft } from '../../store/messages/draft/messagesDraftActions';
 import type { MessageState, PartialMessageState } from '../../store/messages/messagesTypes';
 import { useGetLocalID, useGetMessage } from '../message/useMessage';
 import { useDraft } from '../useDraft';
-import { EditorTypes } from './useComposerContent';
 
 export enum ComposeTypes {
     existingDraft,
@@ -119,8 +118,7 @@ export const useCompose = ({
 
             if (type === ComposeTypes.existingDraft) {
                 dispatch(
-                    composerActions.addComposer({
-                        type: EditorTypes.composer,
+                    addComposerAction({
                         messageID,
                         senderEmailAddress: undefined,
                         status: 'loading',
@@ -133,8 +131,7 @@ export const useCompose = ({
                 }
 
                 dispatch(
-                    composerActions.addComposer({
-                        type: EditorTypes.composer,
+                    addComposerAction({
                         messageID,
                         senderEmailAddress: message.data.Sender.Address,
                         recipients: pick(message.data, ['ToList', 'CCList', 'BCCList']),
