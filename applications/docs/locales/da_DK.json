@@ -3095,6 +3095,9 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Du har ubetalte fakturaer. Betal dem venligst, før du tilmelder dig et familieabonnement."
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Du er inviteret til at forbinde din ${ BRAND_NAME }-konto til dette familieabonnement og sammen nyde alle ${ brandOrAppName } premium-funktioner."
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Din konto har flere e-mailadresser en det, der er tilgængeligt for dig på dette abonnement. ${ addressSettingsLink }"
       ],
@@ -3138,6 +3141,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
+      ]
+    },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Monitorering af det mørke net"
       ]
     },
     "fido2: Error": {
@@ -3246,6 +3254,10 @@
       ]
     },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Fandt ${ itemsCount } forslag, brug tastaturet til at navigere.",
+        "Fandt ${ itemsCount } forslag, brug tastaturet til at navigere."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Brug op- og ned-tasterne til at få adgang til og gennemse forslag efter input. Tryk på Enter for at bekræfte dit valg eller Escape for at lukke forslagsfeltet."
       ]
@@ -5712,10 +5724,6 @@
         "${ n } delt ${ PASS_SHORT_APP_NAME } boks pr. bruger",
         "${ n } delt ${ PASS_SHORT_APP_NAME } boks pr. bruger"
       ],
-      "${ n } user": [
-        "${ n } bruger",
-        "Op til ${ n } brugere"
-      ],
       "${ n } vault": [
         "${ n } boks",
         "${ n } bokse"
@@ -7798,6 +7806,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } lagerplads pr. bruger"
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } giver dig alle apps, alle funktioner, forhåndstilgang til nye udgivelser og alt, hvad der kræves for at have kontrol over dine datasikkerhed."
       ]

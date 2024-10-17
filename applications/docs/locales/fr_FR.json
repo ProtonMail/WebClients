@@ -3155,6 +3155,11 @@
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Cela comprend la synchronisation automatique, le partage de fichiers chiffrés et d'autres fonctionnalités."
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Surveillance du dark web"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Veuillez réessayer."
@@ -5749,10 +5754,6 @@
         "${ n } coffre-fort ${ PASS_SHORT_APP_NAME } partagé par utilisateur",
         "${ n } coffres-forts ${ PASS_SHORT_APP_NAME } partagés par utilisateur"
       ],
-      "${ n } user": [
-        "${ n } utilisateur",
-        "Jusqu'à ${ n } utilisateurs"
-      ],
       "${ n } vault": [
         "${ n } coffre-fort",
         "${ n } coffres-forts"
@@ -7864,6 +7865,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } d'espace de stockage par utilisateur"
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } vous donne accès à toutes les applications, toutes les fonctionnalités, un accès en avant-première aux nouvelles versions et tout ce dont vous besoin pour contrôler vos données et leur sécurité."
       ]

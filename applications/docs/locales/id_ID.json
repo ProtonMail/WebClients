@@ -3133,6 +3133,11 @@
         "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi sinkronisasi otomatis, pembagian berkas terenkripsi, dan masih banyak lagi."
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Pemantauan Dark Web"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Terdapat kesalahan dalam mengautentikasi kunci keamanan Anda. Silakan coba lagi."
@@ -3233,6 +3238,9 @@
       ]
     },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount } saran ditemukan, gunakan papan tik Anda untuk navigasi."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Pakai kunci Up dan Down untuk mengakses dan menjelajah saran setelah input. Pencet Enter untuk mengonfirmasi pilihan, atau Escape untuk menutup kotak saran."
       ]
@@ -5718,9 +5726,6 @@
       "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
         "${ n } brankas ${ PASS_SHORT_APP_NAME } terbagi per pengguna"
       ],
-      "${ n } user": [
-        "Sampai dengan ${ n } pengguna"
-      ],
       "${ n } vault": [
         "${ n } brankas"
       ],
@@ -6135,7 +6140,7 @@
         "${ brand } akan berakhir dalam ${ last4 }"
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
-        "Keamanan jaringan tingkat lanjut dan pengelolaan akses dengan Gateway terdedikasi yang aman"
+        "Keamanan jaringan dan pengelolaan akses tingkat lanjut dengan Gateway khusus yang aman"
       ],
       "Advanced protection for teams that goes beyond industry standards.": [
         "Perlindungan tingkat lanjut untuk tim yang melampaui standar industri."
@@ -6201,7 +6206,7 @@
         "Solusi yang didesain untuk organisasi yang lebih besar dengan kebutuhan keamanan spesifik"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "Solusi VPN yang memberikan Anda akses internet yang aman, tanpa batas, dan berkecepatan tinggi."
+        "Solusi VPN khusus yang memberikan akses internet yang aman, tanpa batas, dan berkecepatan tinggi."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Akun gratis yang dirancang untuk menyediakan privasi sebagai hal yang baku bagi semua."
@@ -6288,7 +6293,7 @@
         "Buat hingga ${ n } alamat/alias email yang dapat Anda tentukan kepada para anggota keluarga. Gunakan alamat/alias ini untuk identitas online-nya masing-masing, mis. JohnShopper@${ domain } untuk akun berbelanja."
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Server khusus yang memiliki alamat IP-nya tersendiri dapat ditambahkan ke gateway pribadi untuk manajemen akses yang lebih spesifik"
+        "Server khusus yang memiliki alamat IP-nya tersendiri dapat ditambahkan ke dalam gateway pribadi untuk manajemen akses yang lebih spesifik"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Melindungi Anda dari ancaman terhadap privasi VPN dengan mengalihkan lalu lintas internet Anda melalui berbagai server"
@@ -7776,6 +7781,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "Ruang penyimpanan ${ planMaxSpace } per pengguna"
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."
       ]
@@ -8550,7 +8558,7 @@
         "Gambar tidak dapat dimuat menggunakan proxy"
       ],
       "The import will start with the most recent messages.": [
-        "Proses impor akan dimulai dari pesan Anda yang paling baru."
+        "Proses impor akan dimulai dari pesan yang paling baru."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Siklus langganan baru akan dimulai pada ${ formattedTime }"

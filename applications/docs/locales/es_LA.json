@@ -3158,6 +3158,11 @@
         "Proteja los archivos con almacenamiento en la nube cifrado. Incluye sincronización automática, uso compartido de archivos cifrados y más."
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Monitoreo de la Dark Web"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Hubo un problema al autenticar con la clave de seguridad. Intente de nuevo."
@@ -3264,6 +3269,10 @@
       ]
     },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Se encontró ${ itemsCount } sugerencia. Use el teclado para navegar.",
+        "Se encontraron ${ itemsCount } sugerencias. Use el teclado para navegar."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Use las teclas Arriba y Abajo para acceder y navegar por las sugerencias después de la entrada. Pulse Enter para confirmar su elección, o Escape para cerrar el cuadro de sugerencias."
       ]
@@ -5808,10 +5817,6 @@
         "${ n } bóveda compartida de ${ PASS_SHORT_APP_NAME } por usuario",
         "${ n } bóvedas compartidas de ${ PASS_SHORT_APP_NAME } por usuario"
       ],
-      "${ n } user": [
-        "${ n } usuario",
-        "Hasta ${ n } usuarios"
-      ],
       "${ n } vault": [
         "${ n } bóveda",
         "${ n } bóvedas"
@@ -7923,6 +7928,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } de almacenamiento por usuario"
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } le ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesita para tener control de sus datos y seguridad."
       ]
