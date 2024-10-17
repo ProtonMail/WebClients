@@ -16,6 +16,10 @@ contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
         return ipcRenderer.sendSync("getInfo", type);
     },
 
+    getUserInfo: (type, userID) => {
+        return ipcRenderer.sendSync("getUserInfo", type, userID);
+    },
+
     on: addHostUpdateListener,
     send: (type, payload) => {
         ipcLogger.info(`Sending message: ${type}`);
