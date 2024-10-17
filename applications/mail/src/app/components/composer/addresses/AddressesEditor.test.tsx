@@ -7,11 +7,11 @@ import { pick } from '@proton/shared/lib/helpers/object';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
+import { addComposerAction } from 'proton-mail/store/composers/composerActions';
 import type { MailStore } from 'proton-mail/store/store';
 
 import { addApiMock, clearAll, getDropdown, render, tick } from '../../../helpers/test/helper';
 import type { MessageSendInfo } from '../../../hooks/useSendInfo';
-import { composerActions } from '../../../store/composers/composersSlice';
 import type { MessageState } from '../../../store/messages/messagesTypes';
 import AddressesEditor from './AddressesEditor';
 
@@ -79,7 +79,7 @@ const props = {
 
 const setupComposer = (store: MailStore, composerID: string) => {
     store.dispatch(
-        composerActions.addComposer({
+        addComposerAction({
             ID: composerID,
             messageID: message.localID || '',
             // @ts-expect-error
