@@ -34,10 +34,10 @@ import { PassExtensionLink } from '@proton/pass/components/Core/PassExtensionLin
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { BIOMETRICS_KEY } from '@proton/pass/constants';
 import { api, exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
 import { createImageProxyHandler, imageResponsetoDataURL } from '@proton/pass/lib/api/images';
+import { inferBiometricsStorageKey } from '@proton/pass/lib/auth/lock/biometrics/utils';
 import { type AuthStore, createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
@@ -108,11 +108,11 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     prepareImport: prepareImport,
     getLogs: logStore.read,
     writeToClipboard: async (str) => window.ctxBridge?.writeToClipboard(str),
-    getBiometricsKey: async ({ getEncryptedOfflineKD }: AuthStore) => {
-        const encryptedKD = getEncryptedOfflineKD();
-        if (!encryptedKD) return;
-        const biometricsKey = await window.ctxBridge?.getSecret(BIOMETRICS_KEY).catch(noop);
-        return biometricsKey;
+    getBiometricsKey: async (store: AuthStore) => {
+        try {
+            const biometricStorageKey = inferBiometricsStorageKey(store);
+            return await window.ctxBridge?.getSecret(biometricStorageKey).catch(noop);
+        } catch {}
     },
 });
 
