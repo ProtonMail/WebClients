@@ -5978,10 +5978,6 @@
         "${ n } megosztott ${ PASS_SHORT_APP_NAME } tároló felhasználónként",
         "${ n } megosztott ${ PASS_SHORT_APP_NAME } tároló felhasználónként"
       ],
-      "${ n } user": [
-        "${ n } felhasználó",
-        "${ n } felhasználóig"
-      ],
       "${ n } vault": [
         "${ n } tároló",
         "${ n } tároló"
@@ -7186,6 +7182,11 @@
         "(meg fogja nyitni ${ PASS_APP_NAME })"
       ]
     },
+    "Security Center - Action": {
+      "View events": [
+        "Események megtekintése"
+      ]
+    },
     "Security Center - Info": {
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Kapjon értesítést ha az ön jelszava vagy más információja benne volt egy harmadik féltől származó adatszivárgásban. ${ learnMoreLink }"
@@ -7739,39 +7740,15 @@
       ]
     },
     "Subscription reminder": {
-      "${ CALENDAR_APP_NAME } with calendar sharing and availability": [
-        "${ CALENDAR_APP_NAME } naptármegosztással és elérhetőséggel"
-      ],
       "${ dayDiff } day left": [
         "${ dayDiff } nap van hátra",
         "${ dayDiff } nap van hátra"
-      ],
-      "${ DRIVE_APP_NAME } with version history": [
-        "${ DRIVE_APP_NAME } verzióelőzményekkel"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } asztali alkalmazás"
       ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "A ${ MAIL_APP_NAME } biztonságban tartja üzleti adatait, és bárkinek titkosított e-maileket küldhet"
-      ],
-      "${ MAIL_APP_NAME } with automatic email forwarding": [
-        "${ MAIL_APP_NAME } automatikus e-mail-átirányítással"
-      ],
-      "${ MaxCalendars } calendar per user": [
-        "${ MaxCalendars } naptár felhasználónként",
-        "${ MaxCalendars } naptár felhasználónként"
-      ],
-      "${ maxDomainNames } custom email domain": [
-        "${ maxDomainNames } saját e-mail domain név",
-        "${ maxDomainNames } saját e-mail domain név"
-      ],
-      "${ maxEmails } email address per user": [
-        "${ maxEmails } e-mail cím felhasználónként",
-        "${ maxEmails } e-mail cím felhasználónként"
-      ],
-      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
-        "${ PASS_APP_NAME } a következővel: ${ DARK_WEB_MONITORING_NAME }"
       ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } tárhely felhasználónként"
@@ -7785,32 +7762,11 @@
       "${ planName } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
         "A ${ planName } megadja csapatának azt, amire szükségük van ahhoz, hogy produktívabbak, szervezettebbek legyenek, és kézben tartsák beérkező leveleiket, ütemezésüket és sok mást."
       ],
-      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
-        "${ planName } segít a családtagjai — és adataik — védelmében, amikor csak online vannak."
-      ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
         "A ${ planName } ${ planMaxSpace } tárhelyet kínál felhasználónként e-mailek, mellékletek, események és fájlok számára. Ezenkívül jogosult éves tárolási bónuszokra."
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "A ${ planName } ${ planMaxSpace } tárhelyet kínál felhasználónként e-mailek, mellékletek, események, fájlok és jelszavak számára. Ezenkívül jogosult éves tárolási bónuszokra."
-      ],
-      "${ PROTON_SENTINEL_NAME } program": [
-        "${ PROTON_SENTINEL_NAME } program"
-      ],
-      "${ VPN_APP_NAME } with malware and ad-blocking": [
-        "${ VPN_APP_NAME } rosszindulatú program és hirdetésblokkolóval"
-      ],
-      "10 email addresses": [
-        "10 e-mail cím"
-      ],
-      "20 email addresses per user": [
-        "20 e-mail cím felhasználónként"
-      ],
-      "25 calendars per user": [
-        "25 naptár felhasználónként"
-      ],
-      "6 users": [
-        "6 felhasználó"
       ],
       "Add any new files": [
         "Bármilyen új fájl hozzáadása"
@@ -7829,9 +7785,6 @@
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Építsen bizalmat és a márka ismertségét professzionális e-mail címekkel a saját domainjében!"
-      ],
-      "Calendar sharing": [
-        "Naptár megosztás"
       ],
       "Catch-all email address": [
         "Mindenre kiterjedő e-mail cím"
@@ -7869,9 +7822,6 @@
       "Online privacy, for your whole family": [
         "Online adatvédelem az egész családnak"
       ],
-      "Organizations, additional users, and custom email domains are not supported on the free plan. This means:": [
-        "Az ingyenes csomag nem támogatja a szervezeteket, a további felhasználókat és az egyéni e-mail-domaineket. Ez azt jelenti:"
-      ],
       "Priority support": [
         "Elsőbbségi támogatás"
       ],
@@ -7899,20 +7849,11 @@
       "Sync files on devices": [
         "Fájlok szinkronizálása az eszközökön"
       ],
-      "Unlimited folders and labels": [
-        "Korlátlan mappa és címke"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Korlátlan számú mappa, címke és szűrő"
-      ],
       "Users won’t be able to manage their calendars": [
         "A felhasználók nem tudják majd kezelni a naptáraikat"
       ],
       "Users won’t be able to send emails": [
         "Felhasználók nem fognak tudni e-maileket küldeni"
-      ],
-      "Users won’t be able to sync files on their devices": [
-        "A felhasználók nem tudják majd szinkronizálni a fájlokat eszközeiken"
       ],
       "Version history": [
         "Verziótörténet"

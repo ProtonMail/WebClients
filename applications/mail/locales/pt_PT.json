@@ -4579,6 +4579,11 @@
         "Proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui sincronização automática, partilha de ficheiros encriptados e muito mais."
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Monitoramento da Dark Web"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Algo correu mal ao autenticar com a sua chave de segurança. Por favor, tente novamente."
@@ -8762,10 +8767,6 @@
         "${ n } cofre partilhado de ${ PASS_SHORT_APP_NAME } por utilizador",
         "${ n } cofres partilhados de ${ PASS_SHORT_APP_NAME } por utilizador"
       ],
-      "${ n } user": [
-        "${ n } utilizador",
-        "Até ${ n } utilizadores"
-      ],
       "${ n } vault": [
         "${ n } cofre",
         "${ n } cofres"
@@ -10714,50 +10715,17 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicativo para desktop do ${ MAIL_APP_NAME }"
       ],
-      "${ MaxCalendars } calendar per user": [
-        "${ MaxCalendars } calendário por utilizador",
-        "${ MaxCalendars } calendários por utilizador"
-      ],
-      "${ maxDomainNames } custom email domain": [
-        "${ maxDomainNames } domínio de e-mail personalizado",
-        "${ maxDomainNames } domínios de e-mail personalizados"
-      ],
-      "${ maxEmails } email address per user": [
-        "${ maxEmails } endereço de e-mail por utilizador",
-        "${ maxEmails } endereços de e-mail por utilizador"
-      ],
-      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
-        "${ PASS_APP_NAME } incluindo aliases hide-my-email Ilimitados"
-      ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } de armazenamento por utilizador"
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } de armazenamento total"
       ],
-      "${ PROTON_SENTINEL_NAME } program": [
-        "Programa ${ PROTON_SENTINEL_NAME }"
-      ],
-      "10 email addresses": [
-        "10 endereços de e-mail"
-      ],
-      "20 email addresses per user": [
-        "20 endereços de e-mail por utilizador"
-      ],
-      "25 calendars per user": [
-        "25 calendários por utilizador"
-      ],
-      "6 users": [
-        "6 utilizadores"
-      ],
       "Add any new files": [
         "Adicionar qualquer novo ficheiro"
       ],
       "Automatic email forwarding": [
         "Encaminhamento automático de e-mail"
-      ],
-      "Calendar sharing": [
-        "Partilha de calendário"
       ],
       "Early access to new apps and features": [
         "Acesso antecipado a novas aplicações e funcionalidades"
@@ -10791,12 +10759,6 @@
       ],
       "The best of ${ BRAND_NAME }": [
         "O melhor da ${ BRAND_NAME }"
-      ],
-      "Unlimited folders and labels": [
-        "Pastas e etiquetas ilimitadas"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Pastas, etiquetas e filtros ilimitados"
       ],
       "Version history": [
         "Histórico de versões"

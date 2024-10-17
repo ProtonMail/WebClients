@@ -357,6 +357,9 @@
       "Loading verification": [
         "Überprüfung wird geladen"
       ],
+      "Login": [
+        "Anmelden"
+      ],
       "Make a copy": [
         "Erstelle eine Kopie"
       ],
@@ -519,6 +522,9 @@
       "Search countries": [
         "Länder durchsuchen"
       ],
+      "Search docs": [
+        "Dokumente durchsuchen"
+      ],
       "See how": [
         "Siehe wie"
       ],
@@ -554,6 +560,9 @@
       ],
       "Sign out": [
         "Abmelden"
+      ],
+      "Sign up": [
+        "Registrieren"
       ],
       "Skip verification": [
         "Überprüfung überspringen"
@@ -3128,6 +3137,11 @@
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet automatische Synchronisierung, verschlüsselte Dateifreigabe und mehr."
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Dark Web-Überwachung"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Bei der Authentifizierung mit deinem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte versuche es erneut."
@@ -4075,6 +4089,9 @@
         "Maximal ${ MAX_SHARED_URL_PASSWORD_LENGTH } Zeichen",
         "Maximal ${ MAX_SHARED_URL_PASSWORD_LENGTH } Zeichen"
       ],
+      "Me": [
+        "Ich"
+      ],
       "Medium Priority": [
         "Mittlere Priorität"
       ],
@@ -4107,6 +4124,9 @@
       ],
       "No payment is required at this time.": [
         "Zu diesem Zeitpunkt ist keine Zahlung erforderlich."
+      ],
+      "No recent documents": [
+        "Keine kürzlichen Dokumente"
       ],
       "No results found": [
         "Keine Ergebnisse gefunden"
@@ -5754,10 +5774,6 @@
         "${ n } geteilter ${ PASS_SHORT_APP_NAME } Tresor pro Benutzer",
         "${ n } geteilte ${ PASS_SHORT_APP_NAME } Tresore pro Benutzer"
       ],
-      "${ n } user": [
-        "${ n } Benutzer",
-        "Bis zu ${ n } Benutzer"
-      ],
       "${ n } vault": [
         "${ n } Tresor",
         "${ n } Tresore"
@@ -6119,6 +6135,10 @@
         "Bis zu ${ n } Benutzer",
         "Bis zu ${ n } Benutzer"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Bis zu ${ n } Benutzer (${ adminsText }, ${ usersText })",
+        "Bis zu ${ n } Benutzer (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Bis zu ${ totalStorageSize } Speicherplatz"
       ],
@@ -6137,6 +6157,16 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden und alarmieren dich sofort, wenn wir etwas finden."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } Admin",
+        "${ admins } Admins"
+      ],
+      "${ users } user": [
+        "${ users } Benutzer",
+        "${ users } Benutzer"
       ]
     },
     "new_plans: feature info": {
@@ -6794,6 +6824,23 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Sichere Tresorfreigabe (${ n } Tresor) und Linkfreigabe",
         "Sichere Tresorfreigabe (${ n } Tresore) und Linkfreigabe"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } Benutzerkonto",
+        "${ n } Benutzerkonten"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "Get it for ${ monthlyPrice }": [
+        "Für ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Wir stellen vor: ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Zeitlich begrenztes Angebot."
       ]
     },
     "passwordless": {
@@ -7806,6 +7853,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } Speicherplatz pro Benutzer"
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "Mit ${ planName } erhältst du alle Anwendungen, alle Funktionen, frühen Zugriff auf neue Versionen und alles, was du brauchst, um die Kontrolle über deine Daten und deren Sicherheit zu behalten."
       ]

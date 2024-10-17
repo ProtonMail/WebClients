@@ -3161,6 +3161,11 @@
         "Proteja seus arquivos com armazenamento criptografado na nuvem. Inclui sincronização automática, compartilhamento de arquivos criptografados e muito mais."
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Monitoramento da Dark Web"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Ocorreu um erro ao autenticar com sua chave de segurança. Tente novamente."
@@ -3267,6 +3272,10 @@
       ]
     },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Encontrada ${ itemsCount } sugestão, use o teclado para navegar.",
+        "Encontradas ${ itemsCount } sugestões, use o teclado para navegar."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Use as teclas Para cima e Para baixo para acessar e procurar sugestões após a entrada. Pressione Enter para confirmar sua escolha, ou Escape para fechar a caixa de sugestões."
       ]
@@ -5823,10 +5832,6 @@
         "${ n } cofre compartilhado do ${ PASS_SHORT_APP_NAME } por usuário",
         "${ n } cofres compartilhados do ${ PASS_SHORT_APP_NAME } por usuário"
       ],
-      "${ n } user": [
-        "${ n } usuário",
-        "${ n } usuários"
-      ],
       "${ n } vault": [
         "${ n } cofre",
         "${ n } cofres"
@@ -7947,6 +7952,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } de armazenamento por usuário"
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } oferece todos os aplicativos, recursos, acesso antecipado a novos lançamentos, e tudo que você precisa para controlar seus dados e segurança."
       ]
