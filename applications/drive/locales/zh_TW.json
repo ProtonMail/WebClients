@@ -3405,6 +3405,11 @@
         "使用加密的雲端存儲保護您的檔案。包含自動同步、加密檔案分享等。"
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "暗網監控"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
@@ -6555,9 +6560,6 @@
       "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
         "每位使用者${ n }個共享${ PASS_SHORT_APP_NAME }保管庫"
       ],
-      "${ n } user": [
-        "多達 ${ n } 位使用者"
-      ],
       "${ n } vault": [
         "${ n } 個保險櫃"
       ],
@@ -8695,35 +8697,14 @@
       ]
     },
     "Subscription reminder": {
-      "${ CALENDAR_APP_NAME } with calendar sharing and availability": [
-        "${ CALENDAR_APP_NAME }與行事曆共享和使用性"
-      ],
       "${ dayDiff } day left": [
         "剩下${ dayDiff }天"
-      ],
-      "${ DRIVE_APP_NAME } with version history": [
-        "${ DRIVE_APP_NAME }與版本歷史"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面應用程式"
       ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME }保護您企業的資料安全和讓您傳送安全加密電郵給任何人。"
-      ],
-      "${ MAIL_APP_NAME } with automatic email forwarding": [
-        "${ MAIL_APP_NAME }與自動郵件轉寄"
-      ],
-      "${ MaxCalendars } calendar per user": [
-        "每位使用者${ MaxCalendars }個行事曆"
-      ],
-      "${ maxDomainNames } custom email domain": [
-        "${ maxDomainNames } 個自訂電郵網域"
-      ],
-      "${ maxEmails } email address per user": [
-        "${ maxEmails } 組電郵位址/每位使用者"
-      ],
-      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
-        "${ PASS_APP_NAME }與${ DARK_WEB_MONITORING_NAME }"
       ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } 可用空間 / 每位使用者"
@@ -8737,26 +8718,8 @@
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } 提供每位使用者 ${ planMaxSpace } 儲存空間用於電子郵件、其附件、行事曆與檔案。您還有資格獲得年度儲存空間獎勵。"
       ],
-      "${ PROTON_SENTINEL_NAME } program": [
-        "${ PROTON_SENTINEL_NAME } 方案"
-      ],
-      "${ VPN_APP_NAME } with malware and ad-blocking": [
-        "${ VPN_APP_NAME }與惡意軟體和廣告阻擋"
-      ],
-      "10 email addresses": [
-        "10 個電子信箱"
-      ],
       "2 users": [
         "2 位使用者"
-      ],
-      "20 email addresses per user": [
-        "每位使用者20組電郵位址"
-      ],
-      "25 calendars per user": [
-        "每位使用者25個行事曆"
-      ],
-      "6 users": [
-        "6 位使用者"
       ],
       "Add any new files": [
         "新增任何檔案"
@@ -8779,14 +8742,8 @@
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "為您的品牌建立可信與具識別性的專業電子郵件地址，使用你的專屬網域。"
       ],
-      "Calendar sharing": [
-        "行事曆分享"
-      ],
       "Catch-all email address": [
         "跟上電子郵件地址"
-      ],
-      "Custom schedule send and snooze times": [
-        "自訂寄出時間與暫緩處理郵件"
       ],
       "Desktop app and email client support (via IMAP)": [
         "桌面應用程式和電子郵件用戶端支援(透過 IMAP)"
@@ -8821,14 +8778,8 @@
       "Online privacy, for your whole family": [
         "您整個家庭的線上隱私"
       ],
-      "Organizations, additional users, and custom email domains are not supported on the free plan. This means:": [
-        "免費方案支援組織，添加使用者，和自訂電子郵件網域名稱。代表:"
-      ],
       "Our fight against censorship in Russia": [
         "我們對抗俄羅斯審查"
-      ],
-      "Premium productivity features": [
-        "進階版生產力功能"
       ],
       "Priority support": [
         "優先支援"
@@ -8851,12 +8802,6 @@
       "Unblocking internet access in Iran": [
         "解除於伊朗的網路存取權"
       ],
-      "Unlimited folders and labels": [
-        "無限的資料夾 / 標籤"
-      ],
-      "Unlimited folders, labels and filters": [
-        "資料夾、標籤與篩選器無上限"
-      ],
       "Unlimited privacy for two": [
         "無限隱私提供給兩位"
       ],
@@ -8865,9 +8810,6 @@
       ],
       "Users won’t be able to send emails": [
         "使用者將無法傳送電子郵件"
-      ],
-      "Users won’t be able to sync files on their devices": [
-        "用戶不能在他們的裝置同步文件"
       ],
       "Version history": [
         "版本歷史紀錄"
@@ -8886,9 +8828,6 @@
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
         "您的${ planName }訂購授權還剩餘${ expiryDate }。我們將會在您的剩餘時間，給您的${ BRAND_NAME }帳號添加可用額度。在取消前，確保您沒有超出免費方案的限度。${ learnMoreLink }"
-      ],
-      "Your own custom email domain": [
-        "您持有的自訂電子郵件網域名稱"
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"

@@ -1392,6 +1392,9 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } 追加カスタムドメイン"
+      ],
       "${ ips } server": [
         "${ ips } のサーバー"
       ],
@@ -1580,6 +1583,9 @@
     "bf2023: Tooltip": {
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "私たちのグローバルなサーバーのネットワークで、地域のインターネットブロックと検閲をバイパスします。"
+      ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "${ domains } 個のカスタムメールドメイン、 ${ addresses } 個のメールアドレス、無制限の hide-my-email エイリアス、カレンダー共有などのサポートが含まれています。"
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "1 件の独自メールドメイン対応、10 件のメールアドレス、10 件の hide-my-email エイリアス、カレンダー共有などが含まれます。"
@@ -3595,6 +3601,9 @@
       "Choose a date in the future.": [
         "未来の日付を入力してください。"
       ],
+      "Choose a date within the next ${ n } day.": [
+        "${ n } 日以内に日付を選択してください。"
+      ],
       "Condition incomplete": [
         "条件が不完全です"
       ],
@@ -4456,6 +4465,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
+      ]
+    },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "ダークウェブモニタリング"
       ]
     },
     "fido2: Error": {
@@ -5589,6 +5603,9 @@
       ],
       "Create a new contact group": [
         "新しい連絡先グループを作成"
+      ],
+      "Create a secure cloud for ${ n } member": [
+        "${ n } 名のメンバーのために安全なクラウドを作成します"
       ],
       "Create in": [
         "作成日時"
@@ -9307,6 +9324,12 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "安全な保管庫共有"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "安全な保管庫の共有 (${ n } 個の保管庫)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "安全な保管庫共有 (${ n } 個の保管庫) とリンクの共有"
       ]
     },
     "pass_signup_2024: Info": {
@@ -10422,35 +10445,11 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
-        "${ BRAND_NAME } の唯一の収益源はユーザーのサブスクリプションです。皆様のご支援により、私たちは独立性を維持し、プライバシーをオンラインのデフォルトにするという使命を前進させ、プライバシーと自由のために戦う活動家や組織を支援し続けることができます。"
-      ],
-      "${ CALENDAR_APP_NAME } with calendar sharing and availability": [
-        "${ CALENDAR_APP_NAME } のカレンダー共有と可用性"
-      ],
       "${ dayDiff } day left": [
         "残り ${ dayDiff } 日"
       ],
-      "${ DRIVE_APP_NAME } with version history": [
-        "${ DRIVE_APP_NAME } のバージョン履歴"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
-      ],
-      "${ MAIL_APP_NAME } with automatic email forwarding": [
-        "${ MAIL_APP_NAME } の自動メール転送"
-      ],
-      "${ MaxCalendars } calendar per user": [
-        "ユーザーあたり ${ MaxCalendars } 個のカレンダー"
-      ],
-      "${ maxDomainNames } custom email domain": [
-        "${ maxDomainNames } 件の独自メールドメイン"
-      ],
-      "${ maxEmails } email address per user": [
-        "1 ユーザーあたり ${ maxEmails } 件のメールアドレス"
-      ],
-      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
-        "${ PASS_APP_NAME } の ${ DARK_WEB_MONITORING_NAME }"
       ],
       "${ planMaxSpace } storage per user": [
         "1 ユーザーあたり ${ planMaxSpace } のストレージ"
@@ -10458,35 +10457,11 @@
       "${ planMaxSpace } total storage": [
         "合計 ${ planMaxSpace } のストレージ"
       ],
-      "${ PROTON_SENTINEL_NAME } program": [
-        "${ PROTON_SENTINEL_NAME }プログラム"
-      ],
-      "${ VPN_APP_NAME } with malware and ad-blocking": [
-        "${ VPN_APP_NAME } のマルウェアと広告ブロック"
-      ],
-      "10 email addresses": [
-        "10個のメールアドレス"
-      ],
       "2 users": [
         "2 ユーザー"
       ],
-      "20 email addresses per user": [
-        "ユーザーあたり 20 個の電子メール アドレス"
-      ],
-      "25 calendars per user": [
-        "ユーザーあたり 25 個のカレンダー"
-      ],
-      "6 users": [
-        "6 ユーザー"
-      ],
       "Automatic email forwarding": [
         "自動メール転送"
-      ],
-      "Calendar sharing": [
-        "カレンダーの共有"
-      ],
-      "Custom schedule send and snooze times": [
-        "カスタムスケジュールの送信時間とスヌーズ時間"
       ],
       "Desktop app and email client support (via IMAP)": [
         "デスクトップアプリとメールクライアントのサポート (IMAP 経由)"
@@ -10530,20 +10505,11 @@
       "Unblocking internet access in Iran": [
         "イランでのインターネットアクセスのブロックを解除"
       ],
-      "Unlimited folders and labels": [
-        "無制限のフォルダーとラベル"
-      ],
-      "Unlimited folders, labels and filters": [
-        "制限なしのフォルダー、ラベル、フィルター"
-      ],
       "Users won’t be able to manage their calendars": [
         "ユーザーは自分のカレンダーを管理できません"
       ],
       "Users won’t be able to send emails": [
         "ユーザーはメールを送信できません"
-      ],
-      "Users won’t be able to sync files on their devices": [
-        "ユーザーは自分のデバイス上のファイルを同期できません"
       ],
       "Version history": [
         "バージョン履歴"
@@ -10553,9 +10519,6 @@
       ],
       "Yearly free storage bonuses": [
         "年間無料ストレージボーナス"
-      ],
-      "Your own custom email domain": [
-        "独自のカスタムメールドメイン"
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
@@ -11910,8 +11873,14 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "一つのウォレットに${ n } 個のアカウント"
+      ],
       "${ n } email address": [
         "${ n } メールアドレス"
+      ],
+      "${ n } wallet": [
+        "${ n } 個のウォレット"
       ],
       "A safer way to hold your Bitcoin": [
         "Bitcoin を保持する安全な方法"

@@ -3155,6 +3155,11 @@
         "Proteggi i tuoi file con l'archiviazione cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Monitoraggio del Dark Web"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Qualcosa è andato storto durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
@@ -3261,6 +3266,10 @@
       ]
     },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Trovato ${ itemsCount } suggerimento, usa la tastiera per navigare.",
+        "Trovati ${ itemsCount } suggerimenti, usa la tastiera per navigare."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Usa i tasti Su e Giù per accedere e sfogliare i suggerimenti dopo l'input. Premi Invio per confermare la tua scelta o Esc per chiudere la casella dei suggerimenti."
       ]
@@ -5796,10 +5805,6 @@
         "${ n } ${ PASS_SHORT_APP_NAME } cassaforte condivisa per utente",
         "${ n } ${ PASS_SHORT_APP_NAME } casseforti condivise per utente"
       ],
-      "${ n } user": [
-        "${ n } utente",
-        "Fino a ${ n } utenti"
-      ],
       "${ n } vault": [
         "${ n } cassaforte",
         "${ n } casseforti"
@@ -7914,6 +7919,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } di spazio di archiviazione per utente"
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } ti offre tutte le app, tutte le funzionalità, l'accesso anticipato alle nuove versioni e tutto ciò di cui hai bisogno per avere il controllo dei tuoi dati e della loro sicurezza."
       ]

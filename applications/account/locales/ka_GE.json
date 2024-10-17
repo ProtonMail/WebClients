@@ -3374,6 +3374,9 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ მონიშნული ჯგუფის წაშლა?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "დაიმახსოვრეთ, რომ თუ წასლით ჯგუფს ${ displayGroupName } (მისამართით ${ displayGroupAddressEmail }), მის მისამართზე ელფოსტას ვეღარ მიიღებთ."
       ]
     },
     "Delinquent modal title": {
@@ -4717,6 +4720,9 @@
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "SMTP გადაცემის კოდის შესაქმნელად თქვენი დომენური მისამართის მითითითებაა საჭირო."
       ],
+      "You've assigned all of your servers.": [
+        "თქვენ მიანიჭეთ ყველა თქვენი სერვერი."
+      ],
       "You've reached the maximum character number. Please shorten your message.": [
         "მიაღწიეთ სიმბოლოების მაქსიმალურ რაოდენობას. შეამოკლეთ შეტყობინება."
       ],
@@ -5426,12 +5432,25 @@
       "Add": [
         "დამატება"
       ],
+      "Add (${ totalAddedCount })": [
+        "დამატება (${ totalAddedCount })",
+        "დამატება (${ totalAddedCount })"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "${ plusVpnConnections }-მდე მოწყობილობის შეერთება",
         "${ plusVpnConnections }-მდე მოწყობილობის შეერთება"
       ],
+      "Continue": [
+        "გაგრძელება"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
+      ],
       "Fastest VPN servers": [
         "ყველაზე სწრაფი VPN სერვერები"
+      ],
+      "Remove": [
+        "წაშლა"
       ],
       "Secure Core servers": [
         "Secure Core-ის სერვერები"
@@ -6078,6 +6097,10 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "დაამატეთ ეს ჩანაწერი თქვენს დომენს თქვენი დომენური სახელის რეგისტრატორის მართვის პანელში"
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "ნაპოვნია ${ itemsCount } მინიშნება. აირჩიეთ კლავიატურით.",
+        "ნაპოვნია ${ itemsCount } მინიშნება. აირჩიეთ კლავიატურით."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "გამოიყენეთ ზევით და ქვევით კლავიშები შემოთავაზებების შეყვანის შემდეგ წვდომისთვის და დასათვალიერებლად. დააჭირეთ Enter თქვენი არჩევანის დასადასტურებლად, ან Escape შემოთავაზებების ველის დასახურავად."
@@ -6963,6 +6986,9 @@
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
         "მოირგეთ SAML ავთენტიკაცია თქვენი ორგანიზაციისთვის ისეთი იდენტიფიკატორის მომწოდებლებისთვის, როგორიცაა Okta, Microsoft Azure ან Google Identity Platform. ეს ჩართავს SAML-ს მთელი ორგანიზაციისთვის."
       ],
+      "Connection data will be available in around 1 hour.": [
+        "მიერთების მონაცემები დაახლოებით 1 საათში იქნება ხელმისაწვდომი"
+      ],
       "Continue with ${ freeName }": [
         "გაგრძელება ${ freeName }-ით"
       ],
@@ -7084,6 +7110,9 @@
       "Disable recovery by ${ type }": [
         "${ type }-ით აღდგენის გათიშვა"
       ],
+      "Disabled on ${ formattedDateAndTime }": [
+        "გათიშვის თარიღი ${ formattedDateAndTime }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "2FA-ის გათიშვა თქვენს ანგარიშს ნაკლებად დაცულს გახდის. გააგრძელეთ, თუ ზუსტად იცით, რას აკეთებთ."
       ],
@@ -7201,6 +7230,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "გარე სერვისზე TLS/SSL_ის ჩართვა მხარდაჭერილი არაა."
+      ],
+      "Enabled on ${ formattedDateAndTime }": [
+        "ჩართვის თარიღი ${ formattedDateAndTime }"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "აღდგენის ფრაზის ჩართვა მის ხელახალ გენერაციას გამოიწვევს."
@@ -7747,6 +7779,9 @@
       "New user invited to organization": [
         "ახალი მომხმარებელი მოწვეულია მორგანიზაციაში"
       ],
+      "New VPN connection data will stop being collected and shown.": [
+        "ახალი VPN მიერთების მონაცემების შეგროვებას და ჩვენებას შევწყვეტთ."
+      ],
       "No account keys exist": [
         "ანგარიშის გასაღები არ არსებობს"
       ],
@@ -7824,6 +7859,14 @@
       ],
       "or ${ selectFileButton }": [
         "ან ${ selectFileButton }"
+      ],
+      "or assign to any country in ${ availableAgainAfterDays } day": [
+        "ან მიანიჭეთ ნებისმიერ ქვეყანაზე ${ availableAgainAfterDays } დღეში",
+        "ან მიანიჭეთ ნებისმიერ ქვეყანაზე ${ availableAgainAfterDays } დღეში"
+      ],
+      "or assign to any country in ${ availableAgainAfterHours } hour": [
+        "ან მიანიჭეთ ნებისმიერ ქვეყანაზე ${ availableAgainAfterHours } საათში",
+        "ან მიანიჭეთ ნებისმიერ ქვეყანაზე ${ availableAgainAfterHours } საათში"
       ],
       "Or select a particular server:": [
         "ან აირჩიეთ სერვერი:"
@@ -8014,6 +8057,9 @@
       "read our two-factor authentication guide first": [
         "გთხოვთ, ჯერ თვალი გადაავლოთ ჩვენს 2FA-ის დოკუმენტაციას"
       ],
+      "Recently used servers:": [
+        "ახლახან გამოყენებული სერვერები:"
+      ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "რეკომენდებულია სანდო მოწყობილობებზე. ${ keepMeSignedInLearnMoreLink }"
       ],
@@ -8115,6 +8161,9 @@
       ],
       "Select a service provider to start": [
         "დასაწყებად აირჩიეთ მომსახურების მომწოდებელი"
+      ],
+      "Select recently used servers": [
+        "ახლახან გამოყენებული სერვერების არჩევა"
       ],
       "Select what you want to import.": [
         "მონიშნეთ, რისი შემოტანაც გნებავთ."
@@ -8958,6 +9007,14 @@
       "You do not have permission to perform this action": [
         "ამ ქმედების შესრულების წვდომა არ გაგაჩნიათ"
       ],
+      "You have ${ availableCount } new server available.": [
+        "გაქვთ ხელმისაწვდომი ${ availableCount } ახალი სერვერი.",
+        "გაქვთ ხელმისაწვდომი ${ availableCount } ახალი სერვერი."
+      ],
+      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
+        "გაქვთ ${ unassignedAvailableCount } ახლახანს გამოყენებული სერვერი. ამ სერვერების სხვა ქვეყანაზე მისანიჭებლად ჯერ დეაქტივაციის დასრულებას უნდა დაელოდოთ.",
+        "გაქვთ ${ unassignedAvailableCount } ახლახანს გამოყენებული სერვერი. ამ სერვერების სხვა ქვეყანაზე მისანიჭებლად ჯერ დეაქტივაციის დასრულებას უნდა დაელოდოთ."
+      ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "გაქვთ საცდელი ${ planTitle }-ის გამოწერა. თუ გნებავთ, გააგრძელოთ თქვენი გამოწერა მას შემდეგ, რაც სატესტო პერიოდი ამოიწურება, დაამატეთ გადახდის მეთოდი."
       ],
@@ -9017,6 +9074,9 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "გადახდის დასასრულებლად PayPal-ის ვებგვერდზე გადამისამართდებით."
+      ],
+      "You won’t be able to reassign these servers to another country for 10 days.": [
+        "ამ სერვერებს სხვა ქვეყანას შემდეგ 10 დღე ვერ მიანიჭებთ."
       ],
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "თქვენ არ გექნებათ შესაძლებლობა, აღადგინოთ დაბლოკილი მონაცემები აღდგენის გადმოწერილი ფაილებით."
@@ -9114,6 +9174,9 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "თქვენი მხარდაჭერის ბილეთი დაიხურა. გმადლობთ, რომ დაუკავშირდით ${ BRAND_NAME } მხარდაჭერას."
+      ],
+      "You’ll be able to add these servers to another Gateway immediately.": [
+        "ამ სერვერების სხვა კარიბჭეში ჩამატება დაუყოვნებლივ შეგეძლებათ."
       ],
       "Zoom meeting": [
         "Zoom-ის შეხვედრა"
@@ -11564,10 +11627,6 @@
         "${ n } გაზიარებული ${ PASS_SHORT_APP_NAME }-ის საცავი თითოეული მომხმარებლისთვის",
         "${ n } გაზიარებული ${ PASS_SHORT_APP_NAME }-ის საცავი თითოეული მომხმარებლისთვის"
       ],
-      "${ n } user": [
-        "${ n } მომხმარებელი",
-        "${ n }-მდე მომხმარებელი"
-      ],
       "${ n } vault": [
         "${ n } საცავი",
         "${ n } საცავი"
@@ -13754,6 +13813,9 @@
       "Search for a user or address": [
         "მომხმარებლის ან მისამართის ძებნა"
       ],
+      "Search for an email or IP address": [
+        "ელფოსტის ან IP მისამართის ძებნა"
+      ],
       "Search parent folder": [
         "მშობელ საქაღალდეში ძებნა"
       ],
@@ -15404,54 +15466,15 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
-        "${ BRAND_NAME }-ის შემოსავლის ერთად-ერთი წყარო მომხმარებლის გამოწერებია. თქვენი მხარდაჭერა საშუალებას გვაძლევს, დამოუკიდებლები ვიყოთ და ვიაროთ წინ ჩვენი მისიისკენ, რომ ინტერნეტში მუშაობა ნაგულისხმევად კონფიდენციალური იყოს და მხარს უჭერს აქტივისტებს და ორგანიზაციებს, რომლებიც კონფიდენციალობისთვის და თავისუფლებისთვის იბრძვიან."
-      ],
-      "${ CALENDAR_APP_NAME } including calendar sharing": [
-        "${ CALENDAR_APP_NAME } კალენდრის გაზიარებასაც შეიცავს"
-      ],
-      "${ CALENDAR_APP_NAME } with calendar sharing and availability": [
-        "${ CALENDAR_APP_NAME } კალენდრის გაზიარებით და ხელმისაწვდომობით"
-      ],
       "${ dayDiff } day left": [
         "დარჩენილია ${ dayDiff } დღე",
         "დარჩენილია ${ dayDiff } დღე"
-      ],
-      "${ DRIVE_APP_NAME } including version history": [
-        "${ DRIVE_APP_NAME } ვერსიის ისტორიის ჩათვლით"
-      ],
-      "${ DRIVE_APP_NAME } with version history": [
-        "${ DRIVE_APP_NAME } ვერსიის ისტორიის ჩათვლით"
-      ],
-      "${ MAIL_APP_NAME } and all premium productivity features": [
-        "${ MAIL_APP_NAME } და ყველა პროდუქიულობის ფასიანი თვისება"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
       ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } თქვენი კომპანიის მონაცემებს უსაფრთხოთ ინარჩუნებს და საშუალებას გაძლევთ, დაშიფრული ელფოსტები აგზავნოთ."
-      ],
-      "${ MAIL_APP_NAME } with automatic email forwarding": [
-        "${ MAIL_APP_NAME } ავტომატური ელფოსტის გადაგზავნით"
-      ],
-      "${ MaxCalendars } calendar per user": [
-        "${ MaxCalendars } კალენდარი თითოეული მომხმარებლისათვის",
-        "${ MaxCalendars } კალენდარი თითოეული მომხმარებლისათვის"
-      ],
-      "${ maxDomainNames } custom email domain": [
-        "ელფოსტის ${ maxDomainNames } ხელით მითითებული დომენი",
-        "ელფოსტის ${ maxDomainNames } ხელით მითითებული დომენი"
-      ],
-      "${ maxEmails } email address per user": [
-        "ელფოსტის ${ maxEmails } მისამართი თითოეული მომხმარებლისთვის",
-        "ელფოსტის ${ maxEmails } მისამართი თითოეული მომხმარებლისთვის"
-      ],
-      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
-        "${ PASS_APP_NAME } ულიმიტო hide-my-email ფსევდონიმების ჩათვლით"
-      ],
-      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
-        "${ PASS_APP_NAME } ${ DARK_WEB_MONITORING_NAME }-ით"
       ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace }/მომხმარებელი"
@@ -15477,9 +15500,6 @@
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planName } საბაზისო მოთხოვნებზე შორს მისის, რომ დაგეხმაროთ, უფრო პროდუქტიული და ორგანიზებული ბრძანდებოდეთ და საფოსტო ყუთის, განრიგის და ა.შ. კონტროლში დაგეხმაროთ."
       ],
-      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
-        "${ planName } დაგეხმარებათ დარწმუნდეთ, რომ თქვენი ოჯახის წევრები - და მათი მონაცემები - დაცულია, როცა ისინი ინტერნეტში მუშაობენ."
-      ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } გთავაზობთ ${ planMaxSpace } საცავს თქვენი ელფოსტების, მიმაგრებული ფაილების, პაროლების, მოვლენებისა და ფაილებისთვის. ასევე შეგიძლიათ წლიური საცავის ბონუსების მიღებაც."
       ],
@@ -15492,29 +15512,8 @@
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } გთავაზობთ ${ planMaxSpace } საცავს თითოეული მომხმრებლისთვის ელფოსტების, მიმაგრებული ფაილების, მოვლენებისა და პაროლებისთვის. ასევე შეგიძლიათ წლიური საცავის ბონუსების მიღებაც."
       ],
-      "${ PROTON_SENTINEL_NAME } program": [
-        "${ PROTON_SENTINEL_NAME } პროგრამა"
-      ],
-      "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
-        "${ VPN_APP_NAME } წვდომით ჩქაროსნულ სერვერებთან ${ vpnCountries } ქვეყანაში"
-      ],
-      "${ VPN_APP_NAME } with malware and ad-blocking": [
-        "${ VPN_APP_NAME } მავნე პროგრამებისა და რეკლამების დაბლოკვით"
-      ],
-      "10 email addresses": [
-        "10 ელფოსტის მისამართი"
-      ],
       "2 users": [
         "2 მომხმარებელი"
-      ],
-      "20 email addresses per user": [
-        "20 ელფოსტის  მისამართი თითოეული მომხმარებლისთვის"
-      ],
-      "25 calendars per user": [
-        "25 კალენდარი თითოეული მომხმარებლისთვის"
-      ],
-      "6 users": [
-        "6 მომხმარებელი"
       ],
       "Add any new files": [
         "დაამატეთ ნებისმიერი ახალი ფაილები"
@@ -15524,9 +15523,6 @@
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
         "როცა თქვენი ${ planName }-ის გამოწერის ვადა ამოიწურება, ტარიფი ჩამოწეული იქნება ${ BRAND_NAME } Free-ზე, რომელსაც, მხოლოდ, 1 გბ Mail-ის და 5 გბ-მდე Drive-ის საცავი გააჩნია. თქვენი გუნდი დაკარგავს უნარს, იმუშაოს, რადგან უფასო სატარიფო გეგმაში დამატებითი მომხმარებლების ქონა მხარდაჭერილი არაა."
-      ],
-      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
-        "როცა თქვენი ${ planName }-ის გამოწერის ვადა ამოიწურება, ტარიფი ჩამოწეული იქნება ${ BRAND_NAME } Free-ზე, რომელსაც, მხოლოდ, 1 გბ Mail-ის და 5 გბ-მდე Drive-ის საცავი გააჩნია. ასევე დაკარგავთ ადრე თქვენზე მონიშენულ საცავის ბონუსებს."
       ],
       "All you need for your business": [
         "ყველაფერი, რაც თქვენი ბიზნესისთვის გჭირდებათ"
@@ -15543,9 +15539,6 @@
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "ააგეთ ნდობა და ბრენდის ცნობადობა პროფესიონალური ელფოსტის მისამართებით თქვენი საკუთარი დომენით."
       ],
-      "Calendar sharing": [
-        "კალენდრის გაზიარება"
-      ],
       "Cancel subscription": [
         "გამოწერის გაუქმება"
       ],
@@ -15555,14 +15548,8 @@
       "Catch-all email address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Close": [
-        "დახურვა"
-      ],
       "Comprehensive privacy and security": [
         "კომპლექსური კონფიდენციალობა და უსაფრთხოება"
-      ],
-      "Custom schedule send and snooze times": [
-        "მომხმარებლის მიერ აღწერილი გაგზავნისა და დადუმების დრო"
       ],
       "Desktop app and email client support (via IMAP)": [
         "კომპიუტერის აპი და ელფოსტის კლიენტის მხარდაჭერა (IMAP-ით)"
@@ -15591,18 +15578,6 @@
       "How our customer support team got our VPN app directly into people's hands.": [
         "როგორ მოათავსა ჩვენმა მხარდაჭერის გუნდმა ჩვენი VPN-ის აპი პირდაპირ ხალხის გამოშვერილ ხელში."
       ],
-      "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
-        "როგორ შევუბრუნეთ ხელი, როცა ${ BRAND_NAME } აგრესიული ცენზურის კამპანიის სამიზნე იყო."
-      ],
-      "How we supported local activists when privacy and free speech were threatened in Hong Kong.": [
-        "როგორ ვუჭერდით მხარს ლოკალურ აქტივისტებს, როცა კონფიდენციალობა და თავისუფალი სიტყვა ჰონკ-კონგში საფრთხის ქვეშ იყო."
-      ],
-      "I still want to cancel": [
-        "მე მაინც მინდა, გავაუქმო"
-      ],
-      "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
-        "თუ გადააცილებით უფასო სატარიფო გეგმას, როცა ${ planName } გამოწერა ამოიწურება, თქვენ არ გექნებათ საშუალება, რომ:"
-      ],
       "Invited members will be removed from your organization": [
         "მოწვეული წევრები წაიშლება თქვენი ორგანიზაციიდან"
       ],
@@ -15627,17 +15602,8 @@
       "Online privacy, for your whole family": [
         "ონლაინ კონფიდენციალობა მთელი თქვენი ოჯახისთვის"
       ],
-      "Organizations, additional users, and custom email domains are not supported on the free plan. This means:": [
-        "ორგანიზაციები, დამატებითი მომხმარებლები და მორგებული ელფოსტის დომენები უფასო სატარიფო გეგმაზე ხელმისაწვდომი არაა. ეს ნიშნავს, რომ:"
-      ],
       "Our fight against censorship in Russia": [
         "ჩვენი ბრძოლა რუსეთის ცენზურის წინააღმდეგ"
-      ],
-      "Please note that ${ planName } is no longer available for purchase. If you downgrade your account, you will lose all plan benefits and won't be able to resubscribe.": [
-        "დაიამხსოვრეთ, რომ ${ planName } შესაძენად ხელმისაწვდომი აღარაა. თუ სატარიფო გეგმას ჩამოსწევთ, დაკარგავთ მის ყველა პრივილეგიას და თავიდან ვეღარ გამოიწერთ."
-      ],
-      "Premium productivity features": [
-        "ფასიანი პროდუქტიულობის ფუნქციები"
       ],
       "Priority support": [
         "პრიორიტეტული მხარდაჭერა"
@@ -15681,12 +15647,6 @@
       "Unblocking internet access in Iran": [
         "ინტერნეტთან წვდომის განბლოკვა ირანში"
       ],
-      "Unlimited folders and labels": [
-        "შეუზღუდავი საქაღალდეები და ჭდეები"
-      ],
-      "Unlimited folders, labels and filters": [
-        "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
-      ],
       "Unlimited privacy for two": [
         "შეუზღუდავი კონფიდენციალობა ორისთვის"
       ],
@@ -15695,9 +15655,6 @@
       ],
       "Users won’t be able to send emails": [
         "მომმხარებლები ელფოსტას ვერ გააგზავნიან"
-      ],
-      "Users won’t be able to sync files on their devices": [
-        "მომხმარებლებს თავიანთ მოწყობილობებზე ფაილებსი სინქრონიზაციის საშუალება არ ექნებათ"
       ],
       "Version history": [
         "ვერსიის ისტორია"
@@ -15714,32 +15671,14 @@
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
         "როცა თქვენი ${ planName }-ის გამოწერგას გააუქმებთ, ტარიფი ჩამოწეული იქნება ${ BRAND_NAME } Free-ზე, რომელსაც, მხოლოდ, 1 გბ Mail-ის და 5 გბ-მდე Drive-ის საცავი გააჩნია. თქვენი გუნდი დაკარგავს უნარს, იმუშაოს, რადგან უფასო სატარიფო გეგმაში დამატებითი მომხმარებლების ქონა მხარდაჭერილი არაა."
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
-        "როცა ${ planName }-ს გააუქმებთ, სატარიფო გეგმა ${ BRAND_NAME } Free-ზე ჩამოიწევა, რაც, მხოლოდ, 5 გბ Drive-ის საცავს და 1 გბ-მდე ელფოსტის საცავს შეიცავს. ასევე დაკარგავთ ადრე მონიჭებულ საცავის ბონუსებსაც."
-      ],
       "Yearly free storage bonuses": [
         "წლიური უფასო საცავის ბონუსები"
-      ],
-      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
-        "თქვენს ${ planName } გამოწერაზე ${ expiryDate } დაგრჩათ. ჩვენ დაგიმატებთ კრედიტებს დარჩენილი დროისთვის თქვენს ${ BRAND_NAME }-ის ანგარიშზე.\nდარწმუნდით, რომ არსცდებით უფასო სატარიფო გეგმის შეზღუდვებს, სანამ გააუქმებთ. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
         "თქვენს ${ planName } გამოწერაზე ${ expiryDate } დაგრჩათ. ჩვენ დაგიმატებთ კრედიტებს დარჩენილი დროისთვის თქვენს ${ BRAND_NAME }-ის ანგარიშზე. დარწმუნდით, რომ არსცდებით უფასო სატარიფო გეგმის შეზღუდვებს, სანამ გააუქმებთ. ${ learnMoreLink }"
       ],
-      "Your ${ planName } has been canceled.": [
-        "თქვენი ${ planName } გაუქმდა."
-      ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "თქვენი ${ planName } არა მხოლოდ იცავს თქვენი ბიზნესის მონაცემებს და ურთიერთობას. მას თქვენს სტანადრტებთან შესაბამისობის მხარდაჭერა აქვს, შეუძლია, გამოკვეთოს თქვენი ბიზნესი სხვებთან შედარებით და ინარჩუნებს გუნდებს ერთად, დაკავშირებულს."
-      ],
-      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
-        "თქვენი ${ planName } გამოწერის დასრულების დრა${ expiryDate }. ამის შემდეგ თქვენი სატარიფო გეგმა იქნება ${ BRAND_NAME } Free. თუ თქვენი გამოყენება უფასო სატარიფო გეგმის შეზღუდვვებს სცდება, შეიძლება, პროდუქტის ფუნქციებთან შეზღუდული წვდომა გქონდეთ. ${ learnMoreLink }"
-      ],
-      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you’ll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink } ${ unavailablePlan }": [
-        "თქვენი ${ planName } გამოწერის დასრულების დრა${ expiryDate }. ამის შემდეგ თქვენი სატარიფო გეგმა იქნება ${ BRAND_NAME } Free. თუ თქვენი გამოყენება უფასო სატარიფო გეგმის შეზღუდვვებს სცდება, შეიძლება, პროდუქტის ფუნქციებთან შეზღუდული წვდომა გქონდეთ. ${ learnMoreLink } ${ unavailablePlan }"
-      ],
-      "Your own custom email domain": [
-        "თქვენი საკუთარი ელფოსტის დომენი"
       ],
       "Your own short @pm.me email alias": [
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
@@ -16182,6 +16121,9 @@
       "Email addresses": [
         "ელფოსტის მისამართები"
       ],
+      "Event": [
+        "მოვლენა"
+      ],
       "Import": [
         "შემოტანა"
       ],
@@ -16324,6 +16266,10 @@
       "Activate user": [
         "მომხმარებლის გააქტიურება"
       ],
+      "Add ${ totalServerCount } server?": [
+        "დავამატო ${ totalServerCount } სერვერი?",
+        "დავამატო ${ totalServerCount } სერვერი?"
+      ],
       "Add a custom logo": [
         "დაამატეთ სასურველი ლოგო"
       ],
@@ -16341,6 +16287,9 @@
       ],
       "Add credits": [
         "ანგარიშის შევსება"
+      ],
+      "Add dedicated servers": [
+        "გამოყოფილი სერვერების დამატება"
       ],
       "Add domain": [
         "დომენის დამატება"
@@ -16647,6 +16596,9 @@
       "Device connected!": [
         "მოწყობილობა მიერთებულია!"
       ],
+      "Device name": [
+        "მოწყობილობის სახელი"
+      ],
       "Disable two-factor authentication": [
         "2FA-ის გამორთვა"
       ],
@@ -16818,6 +16770,15 @@
       ],
       "Gateway": [
         "კარიბჭე"
+      ],
+      "Gateway monitor": [
+        "რაუტერის მონიტორი"
+      ],
+      "Gateway monitor disabled": [
+        "კარიბჭის მონიტორინგი გამორთულია"
+      ],
+      "Gateway monitor enabled": [
+        "კარიბჭის მონიტორინგი ჩართულია"
       ],
       "Gateways": [
         "რაუტერები"
@@ -17098,6 +17059,9 @@
       ],
       "Remove domain": [
         "დომენის წაშლა"
+      ],
+      "Remove server?": [
+        "წავშალო სერვერი?"
       ],
       "Remove single sign-on": [
         "SSO-ის წაშლა"
@@ -17531,9 +17495,6 @@
       ],
       "Account is disconnected": [
         "ანგარიში გათიშულია"
-      ],
-      "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
-        "ადმინისტრატორებს, შეუძლიათ, შეცვალონ თქვენი გამოწერა, მართონ მომხმარებლის ანგარიშები და პარლები და სხვა მომხმარებლებს ადმინსტრატორის პრივილეგიები მიანიჭონ."
       ],
       "An approximate location of the IP address": [
         "IP მისამართის დაახლოებითი მდებარეობა"

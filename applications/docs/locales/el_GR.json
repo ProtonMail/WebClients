@@ -3155,6 +3155,11 @@
         "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
@@ -3261,6 +3266,10 @@
       ]
     },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Βρέθηκε ${ itemsCount } πρόταση, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση.",
+        "Βρέθηκαν ${ itemsCount } προτάσεις, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Χρησιμοποιήστε τα πλήκτρα Up και Down για πρόσβαση και περιήγηση στις προτάσεις μετά την εισαγωγή. Πατήστε Enter για να επιβεβαιώσετε την επιλογή σας, ή διαφυγής για να κλείσετε το πλαίσιο προτάσεων."
       ]
@@ -3803,6 +3812,9 @@
       "Create public link": [
         "Δημιουργία δημόσιου συνδέσμου"
       ],
+      "Create your end-to-end encrypted document": [
+        "Δημιουργήστε το κρυπτογραφημένο έγγραφό σας από άκρο σε άκρο"
+      ],
       "Creating link to file": [
         "Δημιουργία συνδέσμου προς το αρχείο"
       ],
@@ -4138,6 +4150,9 @@
       "No payment is required at this time.": [
         "Δεν απαιτείται πληρωμή αυτή τη στιγμή."
       ],
+      "No recent documents": [
+        "Δεν υπάρχουν πρόσφατα έγγραφα"
+      ],
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
       ],
@@ -4262,6 +4277,9 @@
       ],
       "Primary": [
         "Κύριο"
+      ],
+      "Public documents are not yet enabled for your organization.": [
+        "Τα δημόσια έγγραφα δεν έχουν ενεργοποιηθεί ακόμα για τον οργανισμό σας."
       ],
       "recommended browser": [
         "συνιστώμενο πρόγραμμα περιήγησης"
@@ -4394,6 +4412,9 @@
       ],
       "This message will be presented again later": [
         "Αυτό το μήνυμα θα εμφανιστεί ξανά αργότερα"
+      ],
+      "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
+        "Αυτό το δημόσιο έγγραφο ενδέχεται να μην υπάρχει ή να μην έχετε δικαίωμα προβολής του. Μπορείτε να δοκιμάσετε να φορτώσετε ξανά τη σελίδα για να δείτε εάν το πρόβλημα παραμένει."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Αυτό θα διαγράψει τον σύνδεσμο και θα καταργήσει την πρόσβαση στο αρχείο ή φάκελο σας για οποιονδήποτε με τον σύνδεσμο.",
@@ -4551,6 +4572,9 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Είστε συνδεδεμένος/η ως ${ user.Name } (${ user.Email })."
+      ],
+      "You are currently viewing this document in view-only mode. Reach out to the owner to request access to edit and comment.": [
+        "Αυτήν τη στιγμή προβάλλετε αυτό το έγγραφο σε λειτουργία μόνο προβολής. Επικοινωνήστε με τον κάτοχο για να ζητήσετε πρόσβαση για επεξεργασία και σχολιασμό."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Χρησιμοποιείτε περισσότερο χώρο αποθήκευσης από αυτόν που περιλαμβάνεται σε ένα πλάνο ${ downgradedPlanName }. Παρακαλούμε διαγράψτε ή αφαιρέστε δεδομένα για να υποβαθμίσετε."
@@ -5729,10 +5753,6 @@
       "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
         "${ n } κοινόχρηστη ${ PASS_SHORT_APP_NAME } κρύπτη ανά χρήστη",
         "${ n } κοινόχρηστες ${ PASS_SHORT_APP_NAME } κρύπτες ανά χρήστη"
-      ],
-      "${ n } user": [
-        "${ n } χρήστης",
-        "Μέχρι και ${ n } χρήστες"
       ],
       "${ n } vault": [
         "${ n } κρύπτη",
@@ -7845,6 +7865,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } αποθηκευτικός χώρος ανά χρήστη"
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "Το ${ planName } σάς παρέχει όλες τις εφαρμογές, όλες τις δυνατότητες, την πρώιμη πρόσβαση σε νέες κυκλοφορίες και όλα όσα χρειάζεστε για να έχετε τον έλεγχο των δεδομένων σας και της ασφάλειάς τους."
       ]

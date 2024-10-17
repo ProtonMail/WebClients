@@ -883,6 +883,9 @@
       "Resume": [
         "Continuar"
       ],
+      "Resume membership": [
+        "Reprèn la subscripció"
+      ],
       "Retry": [
         "Reintenta"
       ],
@@ -1176,6 +1179,9 @@
       ],
       "Use authentication code": [
         "Utilitzar el codi d'autenticació"
+      ],
+      "Use group sending permissions": [
+        "Utilitza els permisos d'enviament del grup"
       ],
       "Use recovery code": [
         "Utilitza un codi de recuperació"
@@ -3362,6 +3368,11 @@
         "Tingueu en compte que, si elimineu aquest domini ${ domainName }, es desactivaran totes les adreces associades amb ell."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Està segur que vol suprimir aquest grup?"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Factura vençuda"
@@ -3373,6 +3384,12 @@
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Activa ${ PROTON_SENTINEL_NAME } per accedir a aquestes funcions"
+      ],
+      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Activeu els esdeveniments detallats i ${ PROTON_SENTINEL_NAME } per accedir a aquestes funcions."
+      ],
+      "Enable detailed events to access these features": [
+        "Activeu els esdeveniments detallats per accedir a aquestes funcions."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Xifrar i importar contactes... És possible que passi uns quants minuts. Quan el procés s'hagi completat, podeu tancar aquesta modalitat."
@@ -3599,8 +3616,14 @@
       ]
     },
     "drive_signup_2024: Info": {
+      "**GDPR** and **HIPAA** compliant": [
+        "Conforme a l'**RGPD** i l'**HIPAA**"
+      ],
       "**ISO 27001** certified": [
         "Certificat **ISO 27001**"
+      ],
+      "Tailored made solutions for larger organizations with custom needs": [
+        "Solucions a mida per a organitzacions més grans amb necessitats personalitzades"
       ]
     },
     "driveplus2024: Deal details": {
@@ -4185,7 +4208,7 @@
         "El domini no està disponible, torneu-ho a provar més tard"
       ],
       "Email address disabled": [
-        "Correu electrònic desactivada"
+        "Correu electrònic desactivat"
       ],
       "Email address is invalid": [
         "L'adreça de correu electrònic no és vàlida."
@@ -5144,6 +5167,9 @@
         "Heu arribat al límit de ${ n } invitació acceptada en 6 mesos. El botó es farà clicable quan pugueu convidar usuaris addicionals.",
         "Heu arribat al límit de ${ n } invitacions acceptades en 6 mesos. El botó es farà clicable quan pugueu convidar usuaris addicionals."
       ],
+      "You have successfully joined the family group": [
+        "Us heu unit al grup familiar."
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Heu de configurar un domini personalitzat abans d'afegir diversos usuaris."
       ],
@@ -5290,6 +5316,9 @@
       ],
       "Continue": [
         "Continua"
+      ],
+      "Dark Web Monitoring": [
+        "Monitoratge de la web fosca"
       ],
       "Fastest VPN servers": [
         "Els servidors VPN més ràpids"
@@ -6650,6 +6679,9 @@
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "Ningú amb aquest enllaç no podrà sincronitzar o rebre actualitzacions futures del vostre calendari. Si els hi voleu tornar a donar accés, haureu de crear un enllaç nou."
       ],
+      "Are you sure you want to cancel editing the group?": [
+        "Esteu segur que voleu cancel·lar l'edició d'aquest grup?"
+      ],
       "Are you sure you want to delete this calendar?": [
         "Segur que voleu eliminar aquest calendari?"
       ],
@@ -6686,8 +6718,14 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Esteu segur que voleu esborrar els privilegis d'administració d'aquest usuari?"
       ],
+      "Are you sure you want to remove all members from this group?": [
+        "Esteu segur que voleu esborrar tots els membres d'aquest grup?"
+      ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Segur que voleu esborrar el domini «${ boldDomain }»?"
+      ],
+      "Ask your organization admin to setup Gateways.": [
+        "Demaneu a l'administrador de l'organització que configuri passarel·les."
       ],
       "Attention required": [
         "Es requereix la vostra atenció"
@@ -6920,6 +6958,9 @@
         "S'està eliminant ${ deletedServerCount } servidor de passarel·la",
         "S'estan eliminant ${ deletedServerCount } servidors de passarel·la"
       ],
+      "Disable recovery by ${ type }": [
+        "Desactiva la recuperació per ${ type }"
+      ],
       "Discount": [
         "Descompte"
       ],
@@ -7139,6 +7180,12 @@
       ],
       "Gateways": [
         "Passarel·les"
+      ],
+      "Gateways monitoring is disabled.": [
+        "El monitor de passarel·les està desactivat."
+      ],
+      "Gateways monitoring is enabled.": [
+        "El monitor de passarel·les està activat."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "La generació d’una nova frase de recuperació desactivarà l'antiga."
@@ -7811,6 +7858,9 @@
       "read our two-factor authentication guide first": [
         "llegir primer la nostra guia d’autenticació de dos factors"
       ],
+      "Recently used servers:": [
+        "Servidors utilitzats recentment:"
+      ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recomanat en dispositius de confiança. ${ keepMeSignedInLearnMoreLink }"
       ],
@@ -7906,6 +7956,9 @@
       ],
       "Select a service provider to start": [
         "Seleccioneu un proveïdor de serveis per començar"
+      ],
+      "Select recently used servers": [
+        "Selecciona els servidors utilitzats recentment"
       ],
       "Select what you want to import.": [
         "Seleccioneu què voleu importar."
@@ -8713,6 +8766,13 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "No heu establert un mètode de recuperació i per tant la recuperació del compte serà impossible si oblideu la vostra contrasenya. Voleu procedir sense mètode de recuperació?"
       ],
+      "You do not have permission to perform this action": [
+        "No teniu el permís per realitzar aquesta acció."
+      ],
+      "You have ${ availableCount } new server available.": [
+        "Teniu ${ availableCount } nou servidor disponible.",
+        "Teniu ${ availableCount } nous servidores disponibles."
+      ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Teniu una subscripció de prova de ${ planTitle }. Si voleu continuar amb la subscripció després del període de prova, afegiu un mètode de pagament."
       ],
@@ -8857,6 +8917,9 @@
       ],
       "Your recovery phrase": [
         "La vostra frase de recuperació"
+      ],
+      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
+        "La vostra frase de recuperació és una sèrie de 12 paraules generades aleatòriament en un ordre específic."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "La vostra subscripció és gestionada per Mozilla. Contacteu amb el suport de Mozilla."
@@ -9894,6 +9957,9 @@
       ],
       "Link label (optional)": [
         "Etiqueta de l'enllaç (opcional)"
+      ],
+      "Lock app after inactivity": [
+        "Bloqueja l'aplicació després d'una inactivitat"
       ],
       "Logo": [
         "Logo"
@@ -11288,10 +11354,6 @@
         "${ n } missatge per dia",
         "${ n } missatges per dia"
       ],
-      "${ n } user": [
-        "${ n } usuari",
-        "Fins a ${ n } usuaris"
-      ],
       "${ n } vault": [
         "${ n } caixa forta",
         "${ n } caixes fortes"
@@ -12202,6 +12264,9 @@
       ],
       "Dark Web Monitoring has been enabled": [
         "S'ha activat la supervisió del web fosc"
+      ],
+      "Downloaded 2FA recovery codes": [
+        "Codis de recuperació 2FA descarregats"
       ],
       "Invalid code": [
         "El codi no és vàlid."
@@ -13665,11 +13730,17 @@
       "Code sent to ${ boldValue }": [
         "S'ha enviat el codi a ${ boldValue }."
       ],
+      "Continue to Safety Review": [
+        "Continua amb la revisió de seguretat"
+      ],
       "Device-based recovery enabled": [
         "S'ha activat la recuperació basada en un dispositiu"
       ],
       "Download ${ size }": [
         "Descarrega ${ size }"
+      ],
+      "Download your Recovery Kit": [
+        "Descarregueu el vostre kit de recuperació"
       ],
       "Enable device-based recovery": [
         "Activa la recuperació basada en un dispositiu"
@@ -13682,6 +13753,9 @@
       ],
       "Invalid code": [
         "El codi no és vàlid."
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
+        "És l'única forma de recuperar completament el vostre compte. Per tant, assegureu-vos de guardar-lo en un lloc segur."
       ],
       "Recovery email address": [
         "Correu electrònic de recuperació"
@@ -13698,6 +13772,9 @@
       "Safeguard your account": [
         "Protegiu el vostre compte"
       ],
+      "Safeguard your account further": [
+        "Reforceu la seguretat del vostre compte."
+      ],
       "Safety review": [
         "Revisió de seguretat"
       ],
@@ -13706,6 +13783,9 @@
       ],
       "Show more": [
         "Mostra més"
+      ],
+      "There was an error verifying your recovery phone": [
+        "S'ha produït un error en verificar el vostre número de telèfon."
       ],
       "Update your Recovery Kit": [
         "Actualitza el kit de recuperació"
@@ -13721,6 +13801,9 @@
       ],
       "Verify your recovery phone number": [
         "Verifiqueu el vostre número de telèfon de recuperació"
+      ],
+      "You have recommended actions.": [
+        "Teniu accions recomanades."
       ],
       "You recovery email address is:": [
         "La vostra adreça de correu electrònic de recuperació és:"
@@ -13785,6 +13868,9 @@
       ],
       "Test SAML configuration": [
         "Test de la configuració SAML"
+      ],
+      "Testing SAML configuration": [
+        "Provant la configuració de SAML"
       ]
     },
     "scim: Action": {
@@ -14393,6 +14479,11 @@
         "Sol·liciteu una prova"
       ]
     },
+    "signup_2024: Feature": {
+      "GDPR and HIPAA compliant": [
+        "Conforme a l'RGPD i l'HIPAA"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Tanca"
@@ -14874,54 +14965,15 @@
       ]
     },
     "Subscription reminder": {
-      "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
-        "Les úniques fonts de finançament de ${ BRAND_NAME } són les subscripcions dels usuaris. El vostre suport ens permet continuar sent independents, avançar en la nostra missió de fer de la privacitat la norma a internet i continuar donant suport a activistes i organitzacions que lluiten per la privacitat i la llibertat."
-      ],
-      "${ CALENDAR_APP_NAME } including calendar sharing": [
-        "${ CALENDAR_APP_NAME } inclòs l'ús compartit del calendari"
-      ],
-      "${ CALENDAR_APP_NAME } with calendar sharing and availability": [
-        "${ CALENDAR_APP_NAME } amb compartició de calendari i disponibilitat"
-      ],
       "${ dayDiff } day left": [
         "Queda ${ dayDiff } dia.",
         "Queden ${ dayDiff } dies."
-      ],
-      "${ DRIVE_APP_NAME } including version history": [
-        "${ DRIVE_APP_NAME } inclòs l'historial de versions"
-      ],
-      "${ DRIVE_APP_NAME } with version history": [
-        "${ DRIVE_APP_NAME } amb historial de versions"
-      ],
-      "${ MAIL_APP_NAME } and all premium productivity features": [
-        "${ MAIL_APP_NAME } i totes les funcions de productivitat prèmium"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } manté les dades del vostre negoci segures i us permet enviar correus electrònics xifrats a qualsevol persona."
-      ],
-      "${ MAIL_APP_NAME } with automatic email forwarding": [
-        "${ MAIL_APP_NAME } amb reenviament de correu automàtic"
-      ],
-      "${ MaxCalendars } calendar per user": [
-        "${ MaxCalendars } calendari per usuari",
-        "${ MaxCalendars } calendaris per usuari"
-      ],
-      "${ maxDomainNames } custom email domain": [
-        "${ maxDomainNames } domini de correu electrònic personalitzat",
-        "${ maxDomainNames } dominis de correu electrònic personalitzats"
-      ],
-      "${ maxEmails } email address per user": [
-        "${ maxEmails } adreça de correu electrònic per usuari",
-        "${ maxEmails } adreces de correu electrònic per usuari"
-      ],
-      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
-        "${ PASS_APP_NAME } inclosos àlies il·limitats de hide-my-email"
-      ],
-      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
-        "${ PASS_APP_NAME } amb ${ DARK_WEB_MONITORING_NAME }"
       ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } d'emmagatzematge per usuari"
@@ -14944,9 +14996,6 @@
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planName } va més enllà de l'essencial per a ajudar-vos a tenir una major productivitat, capacitat d'organització i el control de la vostra safata d'entrada, la vostra identitat de correu electrònic i molt més."
       ],
-      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
-        "${ planName } us ajuda a assegurar-vos que els membres de la vostra família, i les seves dades, estiguin protegits sempre que estiguin en línia."
-      ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } ofereix ${ planMaxSpace } d'emmagatzematge per als vostres correus electrònics, adjunts, esdeveniments, contrasenyes i fitxers. També podeu optar a bonificacions d'emmagatzematge anuals."
       ],
@@ -14959,29 +15008,8 @@
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } ofereix ${ planMaxSpace } d'emmagatzematge per usuari per a correus electrònics, adjunts, esdeveniments, fitxers i contrasenyes. També podeu optar a bonificacions anuals d'emmagatzematge."
       ],
-      "${ PROTON_SENTINEL_NAME } program": [
-        "Programa ${ PROTON_SENTINEL_NAME }"
-      ],
-      "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
-        "${ VPN_APP_NAME } amb accés a tots els servidors d'alta velocitat dels països de ${ vpnCountries }"
-      ],
-      "${ VPN_APP_NAME } with malware and ad-blocking": [
-        "${ VPN_APP_NAME } amb bloqueig d'anuncis i programari maliciós"
-      ],
-      "10 email addresses": [
-        "10 adreces de correu electrònic"
-      ],
       "2 users": [
         "2 usuaris"
-      ],
-      "20 email addresses per user": [
-        "20 adreces de correu electrònic per usuari"
-      ],
-      "25 calendars per user": [
-        "25 calendaris per usuari"
-      ],
-      "6 users": [
-        "6 usuaris"
       ],
       "Add any new files": [
         "Afegiu fitxers nous"
@@ -14991,9 +15019,6 @@
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
         "Un cop caduqui la vostra subscripció a ${ planName }, passareu a ${ BRAND_NAME } Free, el qual només ofereix 1 GB d'emmagatzematge a Mail i fins a 5 GB d'emmagatzematge a Drive. La feina del vostre equip es veurà interrompuda, ja que al pla gratuït no és compatible amb usuaris addicionals."
-      ],
-      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
-        "Un cop caduqui la vostra subscripció a ${ planName }, descarregareu a ${ BRAND_NAME } Free, que només ofereix fins a 5 GB d'emmagatzematge de Drive i fins a 1 GB d'emmagatzematge de correu. També perdreu les bonificacions d'emmagatzematge concedides anteriorment."
       ],
       "All you need for your business": [
         "Tot el que necessiteu per al vostre negoci"
@@ -15010,9 +15035,6 @@
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Creeu confiança i reconeixement de marca amb adreces professionals de correu electrònic al vostre propi domini."
       ],
-      "Calendar sharing": [
-        "Compartició de calendari"
-      ],
       "Cancel subscription": [
         "Cancel·la la subscripció"
       ],
@@ -15022,14 +15044,8 @@
       "Catch-all email address": [
         "Adreça de correu electrònic d'arreplega"
       ],
-      "Close": [
-        "Tanca"
-      ],
       "Comprehensive privacy and security": [
         "Privacitat i seguretat integrals"
-      ],
-      "Custom schedule send and snooze times": [
-        "Personalització de l'hora d'enviament i del temps de posposició"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Aplicació d'escriptori i compatibilitat amb clients de correu electrònic (a través d'IMAP)"
@@ -15058,18 +15074,6 @@
       "How our customer support team got our VPN app directly into people's hands.": [
         "Com el nostre equip d'atenció al client va posar la nostra aplicació VPN directament en mans de la gent."
       ],
-      "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
-        "Com vam lluitar quan ${ BRAND_NAME } va ser objecte d'una campanya de censura agressiva."
-      ],
-      "How we supported local activists when privacy and free speech were threatened in Hong Kong.": [
-        "Com vam donar suport als activistes locals quan la privacitat i la llibertat d'expressió es van veure amenaçades a Hong Kong."
-      ],
-      "I still want to cancel": [
-        "Encara vull cancel·lar"
-      ],
-      "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
-        "Si supereu els límits del pla gratuït quan caduqui la vostra subscripció a ${ planName }, no podreu:"
-      ],
       "Invited members will be removed from your organization": [
         "Els membres convidats seran eliminats de l'organització"
       ],
@@ -15094,17 +15098,8 @@
       "Online privacy, for your whole family": [
         "Privacitat en línia per a tota la vostra família"
       ],
-      "Organizations, additional users, and custom email domains are not supported on the free plan. This means:": [
-        "Les organitzacions, els usuaris addicionals i els dominis de correu electrònic personalitzats no són compatibles amb el pla gratuït. Això significa:"
-      ],
       "Our fight against censorship in Russia": [
         "La nostra lluita contra la censura a Rússia"
-      ],
-      "Please note that ${ planName } is no longer available for purchase. If you downgrade your account, you will lose all plan benefits and won't be able to resubscribe.": [
-        "Tingueu en compte que ${ planName } ja no està disponible per a la compra. Si baixeu de categoria el vostre compte, perdreu tots els avantatges del pla i no us podreu tornar a subscriure."
-      ],
-      "Premium productivity features": [
-        "Característiques de productivitat prèmium"
       ],
       "Priority support": [
         "Suport prioritari"
@@ -15148,12 +15143,6 @@
       "Unblocking internet access in Iran": [
         "Desbloqueig de l'accés a Internet a l'Iran"
       ],
-      "Unlimited folders and labels": [
-        "Carpetes i etiquetes il·limitades"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Carpetes, etiquetes i filtres il·limitats"
-      ],
       "Unlimited privacy for two": [
         "Privadesa il·limitada per a dos"
       ],
@@ -15162,9 +15151,6 @@
       ],
       "Users won’t be able to send emails": [
         "Els usuaris no podran enviar correus electrònics"
-      ],
-      "Users won’t be able to sync files on their devices": [
-        "Els usuaris no podran sincronitzar fitxers als seus dispositius"
       ],
       "Version history": [
         "Historial de versions"
@@ -15181,32 +15167,14 @@
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
         "Quan cancel·leu ${ planName }, passareu a ${ BRAND_NAME } Free, el qual només ofereix 1 GB d'emmagatzematge a Mail i fins a 5 GB d'emmagatzematge a Drive. La feina del vostre equip es veurà interrompuda, ja que el pla gratuït no és compatible amb usuaris addicionals."
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
-        "Quan cancel·leu ${ planName }, descarregareu a ${ BRAND_NAME } Free, que només ofereix fins a 5 GB d'emmagatzematge de Drive i fins a 1 GB d'emmagatzematge de correu. També perdreu les bonificacions d'emmagatzematge concedides anteriorment."
-      ],
       "Yearly free storage bonuses": [
         "Bonificacions anuals d'emmagatzematge gratuïtes"
-      ],
-      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
-        "Encara us queden ${ expiryDate } a la vostra subscripció de ${ planName }. Afegirem els crèdits del temps restant al vostre compte de ${ BRAND_NAME }. Assegureu-vos que no supereu els límits del pla gratuït abans de cancel·lar-la. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
         "Encara teniu ${ expiryDate } a la vostra subscripció ${ planName }. Afegirem els crèdits del temps restant al vostre compte de ${ BRAND_NAME }. Assegureu-vos que no supereu els límits del pla gratuït abans de cancel·lar-la. ${ learnMoreLink }"
       ],
-      "Your ${ planName } has been canceled.": [
-        "S'ha cancel·lat el vostre ${ planName }."
-      ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "El pla ${ planName } no només manté segures les dades i comunicacions de la vostra empresa. Dona suport als vostres objectius de compliment, destaca el vostre negoci i manté el vostre equip connectat."
-      ],
-      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
-        "La vostra subscripció a ${ planName } finalitza el ${ expiryDate }. Després d'això, estareu al pla Free de ${ BRAND_NAME }. Si el vostre ús supera els límits del pla Free, és possible que tingueu accés restringit a les característiques dels productes i a les vostres dades. ${ learnMoreLink }"
-      ],
-      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you’ll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink } ${ unavailablePlan }": [
-        "La vostra subscripció a ${ planName } finalitza el ${ expiryDate }. Després d'això, estareu al pla Free de ${ BRAND_NAME }. Si el vostre ús supera els límits del pla Free, és possible que tingueu accés restringit a les característiques dels productes i a les vostres dades. ${ learnMoreLink } ${ unavailablePlan }"
-      ],
-      "Your own custom email domain": [
-        "El vostre propi domini de correu electrònic personalitzat"
       ],
       "Your own short @pm.me email alias": [
         "El vostre propi àlies de correu electrònic curt @pm.me"
@@ -15644,6 +15612,9 @@
       "Email addresses": [
         "Adreces de correu electrònic"
       ],
+      "Event": [
+        "Esdeveniment"
+      ],
       "Import": [
         "Importa"
       ],
@@ -15804,6 +15775,9 @@
       "Add credits": [
         "Afegir crèdits"
       ],
+      "Add dedicated servers": [
+        "Afegeix servidors dedicats"
+      ],
       "Add domain": [
         "Afegir domini"
       ],
@@ -15848,6 +15822,9 @@
       ],
       "Amount due": [
         "Import a deure"
+      ],
+      "An address for each role": [
+        "Una adreça per a cada rol"
       ],
       "App": [
         "Applicació"
@@ -16103,6 +16080,9 @@
       "Device connected!": [
         "S'ha connectat el dispositiu"
       ],
+      "Device name": [
+        "Nom del dispositiu"
+      ],
       "Disable two-factor authentication": [
         "Desactiva l'autenticació en dos passos"
       ],
@@ -16274,6 +16254,15 @@
       ],
       "Gateway": [
         "Passarel·la"
+      ],
+      "Gateway monitor": [
+        "Monitor de passarel·les"
+      ],
+      "Gateway monitor disabled": [
+        "S'ha desactivat el monitor de passarel·les."
+      ],
+      "Gateway monitor enabled": [
+        "S'ha activat el monitor de passarel·les."
       ],
       "Gateways": [
         "Passarel·les"
@@ -16521,6 +16510,9 @@
       ],
       "QRCode": [
         "Codi QR"
+      ],
+      "Ready, set, forward": [
+        "Llest, configurat i reenviat"
       ],
       "Recommended": [
         "Recomanat"
@@ -16985,9 +16977,6 @@
       "Account is disconnected": [
         "El compte està desconnectat"
       ],
-      "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
-        "Els administradors poden fer canvis a la vostra subscripció, gestionar comptes d'usuari i contrasenyes i donar privilegis d'administrador a altres usuaris."
-      ],
       "An approximate location of the IP address": [
         "Una ubicació aproximada de l'adreça IP"
       ],
@@ -17169,6 +17158,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
+      ],
+      "Group membership paused": [
+        "S'ha pausat la subscripció del grup."
+      ],
+      "Sending member invitation": [
+        "S'està enviant la invitació del membre."
       ],
       "User declined invitation": [
         "L'usuari ha rebutjat la invitació."
@@ -17582,6 +17577,9 @@
       ],
       "Invite Friends": [
         "Convideu amics"
+      ],
+      "Join ${ appName } early access!": [
+        "Uniu-vos a l'accés anticipat de ${ appName }!"
       ],
       "Unlock ${ appName } premium features by upgrading": [
         "Desbloquegeu característiques prèmium de ${ appName } millorant la subscripció"
