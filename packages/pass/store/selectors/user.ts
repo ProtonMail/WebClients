@@ -6,9 +6,12 @@ import type { State } from '@proton/pass/store/types';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
+import { oneOf } from '@proton/pass/utils/fp/predicates';
+import { sortOn } from '@proton/pass/utils/fp/sort';
 import { UNIX_DAY } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { type Address, SETTINGS_STATUS, UserType } from '@proton/shared/lib/interfaces';
+import { AuthDeviceState } from '@proton/shared/lib/keys/device';
 
 import { selectDefaultVault } from './shares';
 
@@ -70,4 +73,17 @@ export const selectFeatureFlag =
 export const selectUserDefaultShareID = createSelector(
     [selectUserData, selectDefaultVault],
     (userData, defaultShare): Maybe<string> => userData?.defaultShareId ?? defaultShare?.shareId
+);
+
+export const selectAuthDevices = (state: State) => state.user.devices;
+
+export const selectPendingAuthDevices = createSelector(selectAuthDevices, (authDevices) =>
+    authDevices
+        .filter((device) =>
+            Boolean(
+                oneOf(AuthDeviceState.PendingActivation, AuthDeviceState.PendingAdminActivation)(device.State) &&
+                    selectAddress(device.ActivationAddressID || '')
+            )
+        )
+        .sort(sortOn('CreateTime'))
 );

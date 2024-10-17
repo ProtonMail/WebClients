@@ -429,11 +429,6 @@ export const getAuthDeviceDataByUser = async ({
     };
 };
 
-export const getAuthDevices = async ({ api }: { api: Api }) => {
-    const { AuthDevices } = await api<AuthDevicesOutput>(getAuthDevicesConfig());
-    return AuthDevices;
-};
-
 export const getPendingMemberAuthDevices = async ({ api }: { api: Api }) => {
     const { MemberAuthDevices } = await api<{
         MemberAuthDevices: MemberAuthDeviceOutput[];
@@ -489,7 +484,7 @@ export const getAllAuthDevices = async ({
 }): Promise<AuthDeviceOutput[]> => {
     if (user && getIsGlobalSSOAccount(user)) {
         try {
-            const { AuthDevices }: AuthDevicesOutput = await api<AuthDevicesOutput>({
+            const { AuthDevices } = await api<AuthDevicesOutput>({
                 silence: true,
                 ...getAuthDevicesConfig(),
             });
