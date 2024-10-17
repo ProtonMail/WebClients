@@ -19,7 +19,7 @@ import type {
 } from '@proton/pass/types/api';
 import type { ShareRole, ShareType } from '@proton/pass/types/data/shares';
 import type { MaybeNull } from '@proton/pass/types/utils';
-import type { Address, DecryptedKey, User } from '@proton/shared/lib/interfaces';
+import type { Address, DecryptedAddressKey, DecryptedKey, User } from '@proton/shared/lib/interfaces';
 
 import type { ItemKey, OpenedItem, Rotation, ShareId, TypedOpenedShare, VaultKey } from './pass-types';
 
@@ -36,6 +36,7 @@ export type PassCryptoSnapshot = Pick<PassCryptoManagerContext, 'shareManagers'>
 
 export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSnapshot> {
     ready: boolean;
+    getDecryptedAddressKeys: (addressId: string) => Promise<DecryptedAddressKey[]>;
     getContext: () => PassCryptoManagerContext;
     hydrate: (options: {
         addresses: Address[];
