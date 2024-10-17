@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
@@ -13,7 +14,7 @@ interface HasToString {
     toString: () => string;
 }
 
-type Args = (string | number | boolean | HasToString)[];
+type Args = (string | number | boolean | HasToString | object | undefined | null)[];
 type LogTypes = 'error' | 'warn' | 'debug' | 'info';
 
 const toString = (args: Args): string => {
@@ -28,7 +29,7 @@ const toString = (args: Args): string => {
                     })
                     .join(' ');
             }
-            return arg.toString();
+            return arg?.toString();
         })
         .join(' ');
 };
