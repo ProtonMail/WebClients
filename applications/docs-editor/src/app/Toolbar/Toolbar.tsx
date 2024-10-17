@@ -60,7 +60,7 @@ import RedoIcon from '../Icons/RedoIcon'
 import TableIcon from '../Icons/TableIcon'
 import UndoIcon from '../Icons/UndoIcon'
 import { EDIT_LINK_COMMAND } from '../Plugins/Link/LinkInfoPlugin'
-import { INSERT_TABLE_COMMAND } from '../Plugins/Table/InsertTableCommand'
+import { INSERT_TABLE_COMMAND } from '../Plugins/Table/Commands'
 import { BackgroundColors, TextColors } from '../Shared/Color'
 import { DefaultFont, FontOptions, FontSizes } from '../Shared/Fonts'
 import { sendErrorMessage } from '../Utils/errorMessage'
@@ -939,7 +939,7 @@ export default function DocumentEditorToolbar({
             </ToolbarButton>
             <ToolbarButton
               label={<ShortcutLabel shortcut="INSERT_TABLE_SHORTCUT" label={c('Action').t`Insert table`} />}
-              disabled={!isEditable || isSuggestionMode}
+              disabled={!isEditable}
               onClick={insertTable}
               data-testid="table-button"
             >

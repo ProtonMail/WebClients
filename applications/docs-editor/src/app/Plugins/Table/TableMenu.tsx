@@ -15,6 +15,8 @@ import { isCellHeaderRow } from './TableUtils/isCellHeaderRow'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import debounce from '@proton/utils/debounce'
 import { getNodeLatestSafe } from '../../Utils/getNodeLatestSafe'
+import { DELETE_TABLE_COMMAND } from './Commands'
+import { useApplication } from '../../ApplicationProvider'
 
 type MenuPosition = {
   x: number
@@ -25,6 +27,8 @@ export function TableMenu() {
   const [editor] = useLexicalComposerContext()
   const isEditable = useLexicalEditable()
   const menuRef = useRef<HTMLDivElement>(null)
+
+  const { isSuggestionMode } = useApplication()
 
   const [tableNode, setTableNode] = useState<TableNode | null>(null)
 
@@ -186,14 +190,12 @@ export function TableMenu() {
   }
 
   const deleteTable = () => {
+    if (!tableNode) {
+      return
+    }
     editor.update(
       () => {
-        const table = tableNode?.getLatest()
-        if (!table) {
-          return
-        }
-        table.selectStart()
-        table.remove()
+        editor.dispatchCommand(DELETE_TABLE_COMMAND, tableNode.__key)
       },
       {
         onUpdate: () => editor.focus(),
@@ -219,51 +221,56 @@ export function TableMenu() {
       }}
       data-testid="table-button-group"
     >
-      <Button icon shape="ghost" size="small" onClick={fitTableToPageWidth}>
-        <span className="sr-only">{c('Action').t`Fit table to page width`}</span>
-        <Icon name="arrows-from-center-horizontal" />
-      </Button>
-      <SimpleDropdown
-        as={Button}
-        shape="ghost"
-        size="small"
-        className="px-2 text-sm"
-        // translator: Table header options
-        content={c('Action').t`Options`}
-      >
-        <DropdownMenu>
-          <DropdownMenuButton
-            className="flex items-center gap-2.5 text-sm"
-            onClick={() => {
-              editor.update(() => {
-                if (!tableNode) {
-                  return
-                }
-                $toggleTableHeaderRow(tableNode)
-              })
-            }}
-          >
-            <Icon name="palette" />
-            <span className="mr-1">Header row</span>
-            <Toggle className="pointer-events-none ml-auto" checked={tableHasHeaderRow} />
-          </DropdownMenuButton>
-          <DropdownMenuButton
-            className="flex items-center gap-2.5 text-sm"
-            onClick={() => {
-              editor.update(() => {
-                if (!tableNode) {
-                  return
-                }
-                $toggleTableHeaderColumn(tableNode)
-              })
-            }}
-          >
-            <Icon name="palette" />
-            <span className="mr-1">Header column</span>
-            <Toggle className="pointer-events-none ml-auto" checked={tableHasHeaderColumn} />
-          </DropdownMenuButton>
-        </DropdownMenu>
-      </SimpleDropdown>
+      {!isSuggestionMode && (
+        <Button icon shape="ghost" size="small" onClick={fitTableToPageWidth} disabled={isSuggestionMode}>
+          <span className="sr-only">{c('Action').t`Fit table to page width`}</span>
+          <Icon name="arrows-from-center-horizontal" />
+        </Button>
+      )}
+      {!isSuggestionMode && (
+        <SimpleDropdown
+          as={Button}
+          shape="ghost"
+          size="small"
+          className="px-2 text-sm"
+          // translator: Table header options
+          content={c('Action').t`Options`}
+          disabled={isSuggestionMode}
+        >
+          <DropdownMenu>
+            <DropdownMenuButton
+              className="flex items-center gap-2.5 text-sm"
+              onClick={() => {
+                editor.update(() => {
+                  if (!tableNode) {
+                    return
+                  }
+                  $toggleTableHeaderRow(tableNode)
+                })
+              }}
+            >
+              <Icon name="palette" />
+              <span className="mr-1">Header row</span>
+              <Toggle className="pointer-events-none ml-auto" checked={tableHasHeaderRow} />
+            </DropdownMenuButton>
+            <DropdownMenuButton
+              className="flex items-center gap-2.5 text-sm"
+              onClick={() => {
+                editor.update(() => {
+                  if (!tableNode) {
+                    return
+                  }
+                  $toggleTableHeaderColumn(tableNode)
+                })
+              }}
+            >
+              <Icon name="palette" />
+              <span className="mr-1">Header column</span>
+              <Toggle className="pointer-events-none ml-auto" checked={tableHasHeaderColumn} />
+            </DropdownMenuButton>
+          </DropdownMenu>
+        </SimpleDropdown>
+      )}
       <SimpleDropdown
         as={Button}
         icon
@@ -278,10 +285,12 @@ export function TableMenu() {
         hasCaret={false}
       >
         <DropdownMenu>
-          <DropdownMenuButton className="flex items-center gap-2 text-sm" onClick={duplicateTable}>
-            <Icon name="squares" />
-            {c('Action').t`Duplicate`}
-          </DropdownMenuButton>
+          {!isSuggestionMode && (
+            <DropdownMenuButton className="flex items-center gap-2 text-sm" onClick={duplicateTable}>
+              <Icon name="squares" />
+              {c('Action').t`Duplicate`}
+            </DropdownMenuButton>
+          )}
           <DropdownMenuButton className="flex items-center gap-2 text-sm" onClick={deleteTable}>
             <Icon name="trash" />
             {c('Action').t`Delete`}
