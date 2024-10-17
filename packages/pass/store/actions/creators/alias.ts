@@ -6,10 +6,21 @@ import { isAliasDisabled } from '@proton/pass/lib/items/item.predicates';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { type ActionCallback, withCallback } from '@proton/pass/store/actions/enhancers/callback';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import { aliasDetailsRequest, aliasOptionsRequest, selectedItemKey } from '@proton/pass/store/actions/requests';
+import {
+    aliasBlockContactRequest,
+    aliasContactInfoRequest,
+    aliasDeleteContactRequest,
+    aliasDetailsRequest,
+    aliasOptionsRequest,
+    selectedItemKey,
+} from '@proton/pass/store/actions/requests';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type {
+    AliasContactBlockDTO,
+    AliasContactGetResponse,
+    AliasContactInfoDTO,
+    AliasDetails,
     AliasMailbox,
     AliasOptions,
     AliasToggleStatusDTO,
@@ -72,7 +83,7 @@ export const getAliasDetailsIntent = createAction(
 
 export const getAliasDetailsSuccess = createAction(
     'alias::details::get::success',
-    withRequestSuccess((payload: { aliasEmail: string; mailboxes: AliasMailbox[] }) => withCache({ payload }), {
+    withRequestSuccess((payload: AliasDetails) => withCache({ payload }), {
         maxAge: ALIAS_DETAILS_MAX_AGE,
     })
 );
@@ -451,5 +462,38 @@ export const updateCustomDomainMailboxes = requestActionsFactory<CustomDomainMai
                 type: 'error',
                 error,
             })({ payload: null }),
+    },
+});
+
+export const aliasFetchContactInfo = requestActionsFactory<AliasContactInfoDTO, AliasContactGetResponse>(
+    'alias::mailbox::create'
+)({
+    key: ({ shareId, itemId }) => aliasContactInfoRequest(shareId, itemId),
+    success: {
+        config: { data: true },
+    },
+});
+
+export const aliasDeleteContact = requestActionsFactory<AliasContactInfoDTO, boolean>('alias::mailbox::create')({
+    key: ({ shareId, itemId }) => aliasDeleteContactRequest(shareId, itemId),
+    success: {
+        prepare: () =>
+            withNotification({
+                type: 'success',
+                text: c('Success').t`Contact successfully deleted`,
+            })({ payload: {} }),
+    },
+});
+
+export const aliasBlockContact = requestActionsFactory<AliasContactBlockDTO, boolean>('alias::mailbox::create')({
+    key: ({ shareId, itemId }) => aliasBlockContactRequest(shareId, itemId),
+    success: {
+        prepare: (blocked) =>
+            withNotification({
+                type: 'success',
+                text: blocked
+                    ? c('Success').t`Contact successfully blocked`
+                    : c('Success').t`Contact successfully unblocked`,
+            })({ payload: {} }),
     },
 });
