@@ -26,7 +26,7 @@ export class ClientToEditorBridge {
 
     window.addEventListener('message', (event) => {
       if (event.source !== this.editorFrame.contentWindow) {
-        this.logger.info('Ignoring message from unknown source', event.data)
+        this.logger.info('Client ignoring message from unknown source', event.data)
         return
       }
 
