@@ -3175,6 +3175,11 @@
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, šifrované zdieľanie súborov a ďalšie funkcie."
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Monitorovanie Dark Webu"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Prosím skúste znova."
@@ -5877,12 +5882,6 @@
         "${ n } zdieľaných trezorov ${ PASS_SHORT_APP_NAME } na používateľa",
         "${ n } zdieľaných trezorov ${ PASS_SHORT_APP_NAME } na používateľa"
       ],
-      "${ n } user": [
-        "${ n } používateľ",
-        "Až ${ n } používatelia",
-        "Až ${ n } používateľov",
-        "Až ${ n } používateľov"
-      ],
       "${ n } vault": [
         "${ n } trezor",
         "${ n } trezory",
@@ -8041,6 +8040,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } úložisko na používateľa"
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } vám poskytne všetky aplikácie, všetky funkcie, predbežný prístup k novým verziám a všetko, čo potrebujete, aby ste mali svoje dáta a ich zabezpečenie pod kontrolou."
       ]

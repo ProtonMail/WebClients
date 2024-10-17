@@ -3040,6 +3040,9 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Se us ha convidat a unir-vos a ${ bannerOrganization }. ${ viewInviteButton }"
       ],
+      "You have successfully joined the family group": [
+        "Us heu unit al grup familiar."
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "El vostre compte té més adreces de correu electrònic de les que teniu disponibles en aquest pla. ${ addressSettingsLink }"
       ],
@@ -3080,6 +3083,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."
+      ]
+    },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Monitoratge de la web fosca"
       ]
     },
     "fido2: Error": {
@@ -4015,6 +4023,9 @@
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Màxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caràcter",
         "Màxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caràcters"
+      ],
+      "Me": [
+        "Jo"
       ],
       "Medium Priority": [
         "Prioritat mitjana"
@@ -5621,10 +5632,6 @@
       "${ n } message per day": [
         "${ n } missatge per dia",
         "${ n } missatges per dia"
-      ],
-      "${ n } user": [
-        "${ n } usuari",
-        "Fins a ${ n } usuaris"
       ],
       "${ n } vault": [
         "${ n } caixa forta",
@@ -7662,6 +7669,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } d'emmagatzematge per usuari"
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } us ofereix totes les aplicacions, totes les característiques, accés anticipat a les versions noves i tot el que necessiteu per a tenir el control de les vostres dades i la vostra seguretat."
       ]

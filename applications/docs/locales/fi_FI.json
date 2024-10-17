@@ -3155,6 +3155,11 @@
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää mm. automaattisen synkronoinnin ja salatun tiedostojen jakamisen."
       ]
     },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Pimeän verkon valvonta"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Jotain meni pieleen suojausavaimellasi tunnistauduttaessa. Yritä uudelleen."
@@ -3261,6 +3266,10 @@
       ]
     },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Löydettiin ${ itemsCount } ehdotus, käytä siirtymiseen näppäimistöä.",
+        "Löydettiin ${ itemsCount } ehdotusta, käytä siirtymiseen näppäimistöä."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Selaa kirjoituksen jälkeen näytettäviä ehdotuksia Ylös-/Alas-näppäimillä ja vahvista valinta Enter-näppäimellä tai sulje ehdotukset Esc-näppäimellä."
       ]
@@ -5742,10 +5751,6 @@
         "${ n } jaettu ${ PASS_SHORT_APP_NAME }-holvi/käyttäjä",
         "${ n } jaettua ${ PASS_SHORT_APP_NAME }-holvia/käyttäjä"
       ],
-      "${ n } user": [
-        "${ n } käyttäjä",
-        "Enintään ${ n } käyttäjää"
-      ],
       "${ n } vault": [
         "${ n } holvi",
         "${ n } holvia"
@@ -7854,6 +7859,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } tallennustilaa/käyttäjä"
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen käyttöoikeuden uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
       ]
