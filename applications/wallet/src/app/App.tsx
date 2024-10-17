@@ -129,7 +129,8 @@ const App = () => {
     if (!isWasmSupported()) {
         return (
             <div className="unsupported-wasm-container">
-                <span>{c('Wallet').t`WebAssembly must be enabled to use ${WALLET_APP_NAME}`}</span>
+                <span>{c('Wallet')
+                    .t`WebAssembly must be enabled to use ${WALLET_APP_NAME}, please try updating your browser or device's software. Alternatively, you can download our mobile app.`}</span>
             </div>
         );
     }
