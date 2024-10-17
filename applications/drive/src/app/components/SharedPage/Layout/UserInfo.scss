@@ -9,6 +9,12 @@
 	}
 }
 
+.user-info:hover {
+	.user-initials {
+		background-color: var(--interaction-default-hover);
+	}
+}
+
 @media (width <= 42.5em) {
 	.user-info {
 		padding: 0;
