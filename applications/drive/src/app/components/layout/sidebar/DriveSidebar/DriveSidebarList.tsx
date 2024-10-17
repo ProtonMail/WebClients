@@ -75,7 +75,7 @@ const DriveSidebarList = ({ shareId, userShares }: Props) => {
                         .t`Shared with me`}</span>
                     {!!invitations.length && (
                         <span
-                            className="drive-sidebar-list--counter bg-primary ml-auto text-xs flex justify-center items-center"
+                            className="navigation-counter-item px-1 ml-auto"
                             title={invitationsCountTitle}
                             aria-label={invitationsCountTitle}
                             data-testid="drive-navigation-link:invitations-count"
