@@ -71,6 +71,7 @@ export const getUserData = async (): Promise<HydratedUserState> => {
     return {
         ...access,
         addresses,
+        devices: [],
         eventId,
         features,
         user,
