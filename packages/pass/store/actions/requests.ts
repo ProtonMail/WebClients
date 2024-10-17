@@ -33,6 +33,10 @@ export const lockCreateRequest = () => `auth::lock::create`;
 
 export const settingsEditRequest = withKey(`settings::edit`);
 
+export const aliasContactInfoRequest = withItemKey(`alias::contact::get`);
+export const aliasDeleteContactRequest = withItemKey(`alias::contact::delete`);
+export const aliasBlockContactRequest = withItemKey(`alias::contact::block`);
+
 export const aliasOptionsRequest = withKey(`alias::options`);
 export const aliasDetailsRequest = withKey(`alias::details`);
 

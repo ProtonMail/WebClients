@@ -7,9 +7,13 @@ import { PassCrypto } from '@proton/pass/lib/crypto';
 import { serializeItemContent } from '@proton/pass/lib/items/item-proto.transformer';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import type {
+    AliasContactBlockDTO,
+    AliasContactGetResponse,
+    AliasContactInfoDTO,
     AliasCreateFromPendingDTO,
     AliasDetails,
     AliasMailbox,
+    AliasMailboxResponse,
     AliasOptions,
     AliasPending,
     AliasToggleStatusDTO,
@@ -53,16 +57,53 @@ export const getAliasOptions = async (shareId: string): Promise<AliasOptions> =>
 };
 
 export const getAliasDetails = async (shareId: string, itemId: string): Promise<AliasDetails> => {
-    const result = await api({
-        url: `pass/v1/share/${shareId}/alias/${itemId}`,
-        method: 'get',
-    });
+    const result = (
+        await api({
+            url: `pass/v1/share/${shareId}/alias/${itemId}`,
+            method: 'get',
+        })
+    ).Alias!;
+
+    const intoMailbox = ({ Email, ID }: AliasMailboxResponse): AliasMailbox => ({ id: ID, email: Email });
 
     return {
-        aliasEmail: result.Alias!.Email,
-        mailboxes: result.Alias!.Mailboxes?.map(({ Email, ID }): AliasMailbox => ({ id: ID, email: Email })) ?? [],
+        aliasEmail: result.Email,
+        availableMailboxes: result.AvailableMailboxes?.map(intoMailbox) ?? [],
+        mailboxes: result.Mailboxes?.map(intoMailbox) ?? [],
+        name: result.Name ?? '',
+        displayName: result.DisplayName,
+        stats: {
+            blockedEmails: result.Stats.BlockedEmails,
+            forwardedEmails: result.Stats.ForwardedEmails,
+            repliedEmails: result.Stats.RepliedEmails,
+        },
     };
 };
+
+export const aliasFetchContactInfoApi = async ({
+    shareId,
+    itemId,
+    contactId,
+}: AliasContactInfoDTO): Promise<AliasContactGetResponse> =>
+    (
+        await api({
+            url: `pass/v1/share/${shareId}/alias/${itemId}/contact/${contactId}`,
+            method: 'get',
+        })
+    ).Contact!;
+
+export const aliasDeleteContactApi = ({ shareId, itemId, contactId }: AliasContactInfoDTO) =>
+    api({
+        url: `pass/v1/share/${shareId}/alias/${itemId}/contact/${contactId}`,
+        method: 'delete',
+    }).then(() => true);
+
+export const aliasBlockContactApi = ({ shareId, itemId, contactId, blocked }: AliasContactBlockDTO) =>
+    api({
+        url: `pass/v1/share/${shareId}/alias/${itemId}/contact/${contactId}`,
+        method: 'put',
+        data: { Blocked: blocked },
+    }).then(() => blocked);
 
 export const getAliasCount = async (): Promise<number> =>
     (await api({ url: `pass/v1/user/alias/count`, method: 'get' }))?.AliasCount?.Total ?? 0;
