@@ -3221,6 +3221,14 @@
         "Najviša VPN brzina"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Upgrade now": [
+        "Nadogradi sada"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -3230,14 +3238,6 @@
       ],
       "Get ${ planName }": [
         "Nabavite ${ planName }"
-      ]
-    },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {
@@ -3405,17 +3405,17 @@
         "/mjesec"
       ]
     },
+    "new_plans: Title": {
+      "Your account's usage": [
+        "Korištenje računa"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Izbriši račun?"
       ],
       "Downgrade account?": [
         "Smanjite svoj plan?"
-      ]
-    },
-    "new_plans: Title": {
-      "Your account's usage": [
-        "Korištenje računa"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -4031,36 +4031,14 @@
       ]
     },
     "Subscription reminder": {
-      "${ MaxCalendars } calendar per user": [
-        "${ MaxCalendars } kalendar po korisniku",
-        "${ MaxCalendars } kalendara po korisniku",
-        "${ MaxCalendars } kalendara po korisniku"
-      ],
-      "${ maxEmails } email address per user": [
-        "${ maxEmails } e-pošta po korisniku",
-        "${ maxEmails } e-pošte po korisniku",
-        "${ maxEmails } e-pošte po korisniku"
-      ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } prostora za pohranu po korisniku"
-      ],
-      "${ PROTON_SENTINEL_NAME } program": [
-        "${ PROTON_SENTINEL_NAME } program"
-      ],
-      "10 email addresses": [
-        "10 adrese e-pošte"
-      ],
-      "6 users": [
-        "6 korisnika"
       ],
       "Cancel subscription": [
         "Otkaži pretplatu"
       ],
       "Cancel subscription?": [
         "Otkazati pretplatu?"
-      ],
-      "Close": [
-        "Zatvori"
       ],
       "Learn more": [
         "Više informacija"
@@ -4070,9 +4048,6 @@
       ],
       "Reactivate": [
         "Ponovo aktiviraj"
-      ],
-      "Unlimited folders and labels": [
-        "Neograničen broj mapa i oznaka"
       ],
       "Version history": [
         "Povijest verzija"

@@ -2662,6 +2662,9 @@
         "Ligação para ${ plusVpnConnections } dispositivo",
         "Ligação para até ${ plusVpnConnections } dispositivos"
       ],
+      "Dark Web Monitoring": [
+        "Monitoramento da Dark Web"
+      ],
       "Fastest VPN servers": [
         "Servidores VPN mais rápidos"
       ],
@@ -5238,6 +5241,26 @@
         "Velocidade VPN média"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Descubra todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Comece por ${ price }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Eliminar conta"
@@ -5259,26 +5282,6 @@
       ],
       "Switch plan": [
         "Alterar o plano"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Descubra todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Comece por ${ price }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade now": [
-        "Actualizar agora"
       ]
     },
     "new_plans: feature": {
@@ -5335,10 +5338,6 @@
       "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
         "${ n } cofre partilhado de ${ PASS_SHORT_APP_NAME } por utilizador",
         "${ n } cofres partilhados de ${ PASS_SHORT_APP_NAME } por utilizador"
-      ],
-      "${ n } user": [
-        "${ n } utilizador",
-        "Até ${ n } utilizadores"
       ],
       "${ n } vault": [
         "${ n } cofre",
@@ -5771,6 +5770,14 @@
         "termos e condições"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilização da sua conta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Eliminar conta?"
@@ -5783,14 +5790,6 @@
       ],
       "Switch plans?": [
         "Alterar o plano?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilização da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -7324,41 +7323,11 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicativo para desktop do ${ MAIL_APP_NAME }"
       ],
-      "${ MaxCalendars } calendar per user": [
-        "${ MaxCalendars } calendário por utilizador",
-        "${ MaxCalendars } calendários por utilizador"
-      ],
-      "${ maxDomainNames } custom email domain": [
-        "${ maxDomainNames } domínio de e-mail personalizado",
-        "${ maxDomainNames } domínios de e-mail personalizados"
-      ],
-      "${ maxEmails } email address per user": [
-        "${ maxEmails } endereço de e-mail por utilizador",
-        "${ maxEmails } endereços de e-mail por utilizador"
-      ],
-      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
-        "${ PASS_APP_NAME } incluindo aliases hide-my-email Ilimitados"
-      ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } de armazenamento por utilizador"
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } de armazenamento total"
-      ],
-      "${ PROTON_SENTINEL_NAME } program": [
-        "Programa ${ PROTON_SENTINEL_NAME }"
-      ],
-      "10 email addresses": [
-        "10 endereços de e-mail"
-      ],
-      "20 email addresses per user": [
-        "20 endereços de e-mail por utilizador"
-      ],
-      "25 calendars per user": [
-        "25 calendários por utilizador"
-      ],
-      "6 users": [
-        "6 utilizadores"
       ],
       "Add any new files": [
         "Adicionar qualquer novo ficheiro"
@@ -7366,17 +7335,11 @@
       "Automatic email forwarding": [
         "Encaminhamento automático de e-mail"
       ],
-      "Calendar sharing": [
-        "Partilha de calendário"
-      ],
       "Cancel subscription": [
         "Cancelar subscrição"
       ],
       "Cancel subscription?": [
         "Cancelar subscrição?"
-      ],
-      "Close": [
-        "Fechar"
       ],
       "Early access to new apps and features": [
         "Acesso antecipado a novas aplicações e funcionalidades"
@@ -7386,9 +7349,6 @@
       ],
       "Have a question?": [
         "Tem uma pergunta?"
-      ],
-      "I still want to cancel": [
-        "Eu ainda quero cancelar."
       ],
       "Keep ${ config.planName }": [
         "Manter ${ config.planName }"
@@ -7425,12 +7385,6 @@
       ],
       "The best of ${ BRAND_NAME }": [
         "O melhor da ${ BRAND_NAME }"
-      ],
-      "Unlimited folders and labels": [
-        "Pastas e etiquetas ilimitadas"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Pastas, etiquetas e filtros ilimitados"
       ],
       "Version history": [
         "Histórico de versões"
@@ -8464,9 +8418,6 @@
       ]
     },
     "Tooltip": {
-      "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
-        "Administradores conseguem fazer alterações à sua subscrição, gerir contas de utilizador e palavras-passe, e dar privilégios de administrador a outros utilizadores."
-      ],
       "An approximate location of the IP address": [
         "Uma localização aproximada do endereço IP"
       ],
