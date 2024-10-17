@@ -3,12 +3,15 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import type { ModalOwnProps } from '@proton/components';
+import { Icon } from '@proton/components';
 import { AuthModal, Prompt } from '@proton/components';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import useConfig from '@proton/components/hooks/useConfig';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { IWasmApiWalletData } from '@proton/wallet';
 
-import { Button } from '../../atoms';
+import { Button, ButtonLike } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
 import { useBalance } from '../Balance/useBalance';
 import { useWalletDeletion } from './useWalletDeletion';
@@ -18,6 +21,7 @@ interface Props extends ModalOwnProps {
 }
 
 export const WalletDeletionModal = ({ wallet, ...modalProps }: Props) => {
+    const { APP_NAME } = useConfig();
     const [authed, setAuthed] = useState(false);
     const { loadingDeletion, handleWalletDeletion, openBackupModal } = useWalletDeletion({
         wallet,
@@ -27,6 +31,9 @@ export const WalletDeletionModal = ({ wallet, ...modalProps }: Props) => {
     });
 
     const { totalBalance } = useBalance(wallet);
+
+    const headerWithWalletName = c('Wallet deletion').t`Are you sure you want to delete "${wallet.Wallet.Name}"`;
+    const headerWithoutWalletName = c('Wallet deletion').t`Are you sure you want to delete this wallet`;
 
     if (!authed) {
         return (
@@ -45,14 +52,29 @@ export const WalletDeletionModal = ({ wallet, ...modalProps }: Props) => {
         <Prompt
             {...modalProps}
             buttons={[
-                <Button
-                    fullWidth
-                    disabled={loadingDeletion}
-                    shape="ghost"
-                    onClick={() => {
-                        openBackupModal();
-                    }}
-                >{c('Wallet preference').t`Copy seed phrase`}</Button>,
+                wallet.IsNotDecryptable ? (
+                    <ButtonLike
+                        fullWidth
+                        disabled={loadingDeletion}
+                        as={SettingsLink}
+                        path={'/mail/encryption-keys'}
+                        app={APP_NAME}
+                        target="_blank"
+                        color="info"
+                    >
+                        {c('Title').t`Go to settings and recover keys`}
+                        <Icon alt={c('Action').t`Go to settings`} name="arrow-out-square" className="ml-2" />
+                    </ButtonLike>
+                ) : (
+                    <Button
+                        fullWidth
+                        disabled={loadingDeletion}
+                        shape="ghost"
+                        onClick={() => {
+                            openBackupModal();
+                        }}
+                    >{c('Wallet preference').t`Copy seed phrase`}</Button>
+                ),
                 <Button
                     fullWidth
                     disabled={loadingDeletion}
@@ -68,8 +90,9 @@ export const WalletDeletionModal = ({ wallet, ...modalProps }: Props) => {
             ]}
         >
             <div className="flex flex-column mb-4">
-                <h1 className="text-4xl text-bold mx-auto text-center mb-4">{c('Wallet deletion')
-                    .t`Are you sure you want to delete "${wallet.Wallet.Name}"`}</h1>
+                <h1 className="text-4xl text-bold mx-auto text-center mb-4">
+                    {wallet.IsNotDecryptable ? headerWithoutWalletName : headerWithWalletName}
+                </h1>
 
                 {totalBalance > 0 ? (
                     <ModalParagraph>
@@ -78,6 +101,13 @@ export const WalletDeletionModal = ({ wallet, ...modalProps }: Props) => {
                         <p>
                             {c('Wallet setup')
                                 .t`Please transfer them to another wallet before deleting. Deleting this wallet will remove all its data from ${BRAND_NAME}'s servers. However, you can recover the wallet later if you have its seed phrase.`}
+                        </p>
+                    </ModalParagraph>
+                ) : wallet.IsNotDecryptable ? (
+                    <ModalParagraph>
+                        <p>
+                            {c('Wallet setup')
+                                .t`By deleting this wallet, all data is removed from ${BRAND_NAME}'s servers. You are able to recover this by reactivating the keys used during wallet creation in your account.`}
                         </p>
                     </ModalParagraph>
                 ) : (

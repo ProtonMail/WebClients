@@ -61,12 +61,6 @@ const WalletsSidebarListItem = ({ wallet, onAddWalletAccount, theme, apiWalletsD
             <SidebarListItemLink
                 to={`/wallets/${wallet.Wallet.ID}`}
                 exact
-                onClick={(e) => {
-                    if (wallet.IsNotDecryptable) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                    }
-                }}
                 className={clsx(wallet.IsNotDecryptable ? 'disabled-sidebar-link' : '', 'pl-1 mb-2')}
             >
                 <SidebarListItemContent
