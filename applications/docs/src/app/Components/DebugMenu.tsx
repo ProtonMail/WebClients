@@ -68,6 +68,7 @@ const DebugMenu = ({ docController }: { docController: AnyDocControllerInterface
         id="debug-menu-button"
         className="fixed bottom-2 left-2 z-20 flex items-center justify-center rounded-full border border-[--border-weak] bg-[--background-weak] p-2 hover:bg-[--background-strong]"
         onClick={() => setIsOpen(true)}
+        data-testid="debug-menu-button"
       >
         <div className="sr-only">Debug menu</div>
         <Icon name="cog-wheel" className="h-4 w-4" />
@@ -79,6 +80,7 @@ const DebugMenu = ({ docController }: { docController: AnyDocControllerInterface
     <div
       id="debug-menu"
       className="fixed bottom-2 left-2 z-20 flex min-w-[12.5rem] flex-col gap-2 rounded border border-[--border-weak] bg-[--background-weak] px-1 py-1"
+      data-testid="debug-menu"
     >
       <div className="mt-1 flex items-center justify-between gap-2 px-2 font-semibold">
         <div>Debug menu</div>
@@ -102,7 +104,7 @@ const DebugMenu = ({ docController }: { docController: AnyDocControllerInterface
         <Button size="small" onClick={squashDocument}>
           Squash Last Commit with DX
         </Button>
-        <Button size="small" onClick={createInitialCommit}>
+        <Button size="small" onClick={createInitialCommit} data-testid="create-initial-commit">
           Create Initial Commit
         </Button>
         <Button size="small" onClick={closeConnection}>

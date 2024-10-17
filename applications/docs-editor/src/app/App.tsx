@@ -187,6 +187,8 @@ export function App({ systemMode }: Props) {
         docMap.set(documentId, docState.getDoc())
         application.setRole(role)
 
+        application.logger.info('Initialized editor with role', role, 'config', editorInitializationConfig)
+
         if (editorInitializationConfig) {
           setEditorConfig({ documentId, username, editorInitializationConfig: editorInitializationConfig })
           if (editorInitializationConfig.mode === 'conversion') {
@@ -304,8 +306,10 @@ export function App({ systemMode }: Props) {
       }
 
       docState.onEditorReadyToReceiveUpdates()
+
+      application.logger.info('Editor is ready to receive updates')
     },
-    [docState, bridge],
+    [docState, bridge, application.logger],
   )
 
   const onEditorError = useCallback(
@@ -326,6 +330,12 @@ export function App({ systemMode }: Props) {
   )
 
   if (!didSetInitialConfig || !editorConfig.current || !docState) {
+    application.logger.debug('Attempting to render editor before it is ready', {
+      didSetInitialConfig,
+      editorConfig: editorConfig.current,
+      docState,
+    })
+
     return (
       <div className="flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center">
         <CircleLoader size="large" />
