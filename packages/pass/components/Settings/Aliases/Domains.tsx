@@ -42,9 +42,32 @@ export const Domains: FC = () => {
         handleOpenModalDNS(domain);
     };
 
+    const handleVerifyClick = (updatedDomain: CustomDomainOutput) => {
+        setDomains((domains) => {
+            if (!domains) return [updatedDomain];
+
+            return domains.map((domain) => {
+                if (domain.ID === updatedDomain.ID) {
+                    return updatedDomain;
+                }
+                return domain;
+            });
+        });
+    };
+
     useEffect(() => {
         getAllDomains.dispatch();
     }, []);
+
+    // If action contains a domain state, keep it up to date when the domains list changes
+    useEffect(() => {
+        setAction((action) => {
+            if (!action || action.type === 'add') return action;
+
+            const updatedDomain = domains?.find((domain) => domain.ID === action.ID);
+            return { ...action, ...updatedDomain };
+        });
+    }, [domains]);
 
     return (
         <>
@@ -64,7 +87,12 @@ export const Domains: FC = () => {
 
             {action?.type === 'add' && <DomainAddModal onClose={() => setAction(null)} onSubmit={handleAdded} />}
             {(action?.type === 'verify-DNS' || action?.type === 'info') && (
-                <DomainDetailsModal tab={action.type} onClose={() => setAction(null)} domain={action} />
+                <DomainDetailsModal
+                    tab={action.type}
+                    onClose={() => setAction(null)}
+                    domain={action}
+                    onVerify={handleVerifyClick}
+                />
             )}
         </>
     );
