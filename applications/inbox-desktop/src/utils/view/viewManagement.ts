@@ -425,6 +425,10 @@ export function getMainWindow() {
     return mainWindow!;
 }
 
+export function getCurrentViewID() {
+    return currentViewID;
+}
+
 export function getCurrentView() {
     return browserViewMap[currentViewID];
 }

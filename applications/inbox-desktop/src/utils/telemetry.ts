@@ -1,4 +1,4 @@
-import { captureMessage, init, setTag, setTags, setUser, SeverityLevel } from "@sentry/electron/main";
+import { addBreadcrumb, captureMessage, init, setTag, setTags, setUser, SeverityLevel } from "@sentry/electron/main";
 import { appSession, updateSession } from "./session";
 import pkg from "../../package.json";
 import { app } from "electron";
@@ -7,6 +7,9 @@ import { DESKTOP_FEATURES } from "../ipc/ipcConstants";
 import { isLinux, isMac, isWindows } from "./helpers";
 import Logger, { LogMessage, Transport } from "electron-log";
 import { getAppURL } from "../store/urlStore";
+import { getSettings } from "../store/settingsStore";
+import { getWindowBounds } from "../store/boundsStore";
+import { getAccountView, getCalendarView, getCurrentViewID, getMailView, getMainWindow } from "./view/viewManagement";
 
 const MAX_TAG_LENGTH = 32;
 
@@ -53,16 +56,37 @@ export async function initializeTelemetry() {
         setTag(tagName, enabled);
     }
 
-    const sentryTransport: Transport = ({ data, level }: LogMessage) => {
-        reportToTelemetry(data, LOG_LEVEL_TO_SEVERITY[level]);
+    const sentryTransport: Transport = ({ data, level, scope, date }: LogMessage) => {
+        addBreadcrumb({
+            category: scope,
+            level: LOG_LEVEL_TO_SEVERITY[level],
+            message: serialize(data),
+            timestamp: date.getTime(),
+        });
+
+        if (level === "error" || level === "warn") {
+            captureMessage(serialize(data), {
+                level: LOG_LEVEL_TO_SEVERITY[level],
+                tags: { logScope: scope },
+                extra: {
+                    appID: getAppID(),
+                    settings: getSettings(),
+                    windowBounds: getWindowBounds(),
+                    mainWindow: {
+                        isMinimized: getMainWindow().isMinimized(),
+                        currentView: getCurrentViewID(),
+                        mailViewURL: getMailView()?.webContents.getURL(),
+                        calendarViewURL: getCalendarView()?.webContents.getURL(),
+                        accountViewURL: getAccountView()?.webContents.getURL(),
+                    },
+                    appURL: getAppURL(),
+                },
+            });
+        }
     };
-    sentryTransport.level = "info";
+    sentryTransport.level = "silly";
     sentryTransport.transforms = [];
     Logger.transports.sentry = sentryTransport;
-}
-
-export function reportToTelemetry(message: unknown, level: SeverityLevel = "info") {
-    captureMessage(serialize(message), { level });
 }
 
 function serialize(value: unknown): string {
