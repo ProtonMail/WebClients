@@ -1,7 +1,8 @@
-import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store/lib'
+import type { NodeMeta } from '@proton/drive-store/lib'
+import type { PublicNodeMetaWithResolvedVolumeID } from '@proton/drive-store/lib/interface'
 
 export interface DocumentMetaInterface {
-  nodeMeta: NodeMeta | PublicNodeMeta
+  nodeMeta: NodeMeta | PublicNodeMetaWithResolvedVolumeID
   commitIds: string[]
   createTime: number
   modifyTime: number

@@ -9,10 +9,19 @@ import type { DocumentAction, PublicDriveCompat, PublicNodeMeta } from '@proton/
 import { APP_VERSION } from '../../config'
 import { WordCountContextProvider } from '../../Components/WordCount/WordCountProvider'
 import { useDocsUrlBar } from '../../Containers/useDocsUrlBar'
-import PublicLayout from './PublicLayout'
+import SharedLayout from '../SharedLayout'
+import { usePublicSessionUser } from '@proton/drive-store/store'
+import UserProvider from '../../Containers/ContextProvider'
 
 function PublicApplicationContent({ publicDriveCompat }: { publicDriveCompat: PublicDriveCompat }) {
   const api = useApi()
+
+  const { user, UID } = usePublicSessionUser()
+
+  if (user) {
+    /** Allow the API to make authenticated requests, such as bookmarking a document for the current session user */
+    ;(api as any).UID = UID
+  }
 
   const { openAction } = useDocsUrlBar({ isDocsEnabled: publicDriveCompat.isDocsEnabled })
 
@@ -40,7 +49,11 @@ function PublicApplicationContent({ publicDriveCompat }: { publicDriveCompat: Pu
 
   useEffect(() => {
     if (openAction) {
-      application.logger.info('Opening doc through action', openAction)
+      application.logger.info('Opening doc through action', {
+        mode: openAction.mode,
+        linkId: 'linkId' in openAction ? openAction.linkId : undefined,
+        volumeId: 'volumeId' in openAction ? openAction.volumeId : undefined,
+      })
     }
   }, [application.logger, openAction])
 
@@ -50,15 +63,17 @@ function PublicApplicationContent({ publicDriveCompat }: { publicDriveCompat: Pu
 
   return (
     <ApplicationProvider application={application}>
-      <WordCountContextProvider>
-        <Switch>
-          <Route path={'*'}>
-            <PublicLayout>
-              <Content openAction={openAction} actionMode={action} />
-            </PublicLayout>
-          </Route>
-        </Switch>
-      </WordCountContextProvider>
+      <UserProvider publicContext={{ user, compat: publicDriveCompat }} privateContext={undefined}>
+        <WordCountContextProvider>
+          <Switch>
+            <Route path={'*'}>
+              <SharedLayout>
+                <Content openAction={openAction} actionMode={action} />
+              </SharedLayout>
+            </Route>
+          </Switch>
+        </WordCountContextProvider>
+      </UserProvider>
     </ApplicationProvider>
   )
 }

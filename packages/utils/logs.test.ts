@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { Logger } from './logs';
@@ -90,6 +91,30 @@ describe('Logger', () => {
                 1: 123,
             },
         });
+    });
+
+    test('should not log if enabled is false', () => {
+        logger.setEnabled(false);
+        logger.info('This is an info message');
+
+        expect(console.log).not.toHaveBeenCalled();
+        expect(logger.getLogs()).not.toContain('This is an info message');
+    });
+
+    test('should not warn if enabled is false', () => {
+        logger.setEnabled(false);
+        logger.warn('This is a warn message');
+
+        expect(console.warn).not.toHaveBeenCalled();
+        expect(logger.getLogs()).not.toContain('This is a warn message');
+    });
+
+    test('should not error if enabled is false', () => {
+        logger.setEnabled(false);
+        logger.error('This is an error message');
+
+        expect(console.error).not.toHaveBeenCalled();
+        expect(logger.getLogs()).not.toContain('This is an error message');
     });
 
     test('should save logs', () => {
