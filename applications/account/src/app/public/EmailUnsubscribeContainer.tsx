@@ -1,18 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
-import {
-    EmailSubscriptionCategories,
-    GenericError,
-    useApi,
-    useErrorHandler,
-    useNotifications,
-} from '@proton/components';
+import { GenericError, useApi, useErrorHandler, useNotifications } from '@proton/components';
 import type { NewsletterSubscriptionUpdateData } from '@proton/components/containers/account/EmailSubscriptionToggles';
-import { useLoading } from '@proton/hooks';
+import { getEmailSubscriptionCategories } from '@proton/components/containers/account/getEmailSubscriptionCategories';
 import { authJwt } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAuthAPI, getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -24,9 +18,8 @@ import { getBits } from '@proton/shared/lib/helpers/bitset';
 import { isGlobalFeatureNewsEnabled } from '@proton/shared/lib/helpers/newsletter';
 import type { Api } from '@proton/shared/lib/interfaces';
 
-import EmailResubscribed from '../components/EmailResubscribed';
 import EmailSubscriptionManagement from '../components/EmailSubscriptionManagement';
-import EmailUnsubscribed from '../components/EmailUnsubscribed';
+import { EmailUnsubscribedContainer } from '../components/EmailUnsubscribed';
 import ExpiredError from './ExpiredError';
 
 interface UserSettingsNewsResponse {
@@ -38,7 +31,6 @@ interface UserSettingsNewsResponse {
 
 enum PAGE {
     UNSUBSCRIBE,
-    RESUBSCRIBE,
     MANAGE,
 }
 
@@ -66,11 +58,10 @@ const getUpdatedSubscription = (
 const EmailUnsubscribeContainer = () => {
     const api = useApi();
     const silentApi = getSilentApi(api);
-    const [authApi, setAuthApi] = useState<Api | null>(null);
+    const authApiRef = useRef<Api | null>(null);
     const [news, setNews] = useState<number | null>(null);
     const [page, setPage] = useState(PAGE.UNSUBSCRIBE);
     const [error, setError] = useState<{ type: ErrorType } | null>(null);
-    const [loading, withLoading] = useLoading();
     const location = useLocation();
     const handleError = useErrorHandler();
     const { subscriptions: subscriptionsParam } = useParams<{ subscriptions: string | undefined }>();
@@ -86,20 +77,17 @@ const EmailUnsubscribeContainer = () => {
 
             const authApiFn = getAuthAPI(UID, AccessToken, silentApi);
 
-            const result = await authApiFn<UserSettingsNewsResponse>(getNewsExternal());
-            let currentNews = result.UserSettings.News;
+            const {
+                UserSettings: { News: currentNews },
+            } = await authApiFn<UserSettingsNewsResponse>(getNewsExternal());
+
+            setNews(currentNews);
 
             if (!subscriptionBits.length) {
                 setPage(PAGE.MANAGE);
-            } else {
-                const nextNews = getUpdatedSubscription(currentNews, subscriptionBits);
-                const result = await authApiFn<UserSettingsNewsResponse>(patchNewsExternal(nextNews));
-                currentNews = result.UserSettings.News;
             }
 
-            setAuthApi(() => authApiFn);
-
-            setNews(currentNews);
+            authApiRef.current = authApiFn;
         };
 
         init().catch((error) => {
@@ -116,6 +104,7 @@ const EmailUnsubscribeContainer = () => {
     const { createNotification } = useNotifications();
 
     const update = async (data: NewsletterSubscriptionUpdateData) => {
+        const authApi = authApiRef.current;
         if (!authApi) {
             return;
         }
@@ -128,14 +117,12 @@ const EmailUnsubscribeContainer = () => {
         createNotification({ text: c('Info').t`Emailing preference saved` });
     };
 
-    const handleResubscribeClick = async () => {
-        await withLoading(update(getUpdatedSubscription(news ?? 0, subscriptionBits, true)));
-        setPage(PAGE.RESUBSCRIBE);
+    const handleUnsubscribeClick = async () => {
+        return update(getUpdatedSubscription(news ?? 0, subscriptionBits, false));
     };
 
-    const handleUnsubscribeClick = async () => {
-        await withLoading(update(getUpdatedSubscription(news ?? 0, subscriptionBits)));
-        setPage(PAGE.UNSUBSCRIBE);
+    const handleResubscribeClick = async () => {
+        return update(getUpdatedSubscription(news ?? 0, subscriptionBits, true));
     };
 
     const handleManageClick = () => {
@@ -143,10 +130,15 @@ const EmailUnsubscribeContainer = () => {
     };
 
     const handleChange = (data: NewsletterSubscriptionUpdateData) => {
-        void withLoading(update(data));
+        return update(data);
     };
 
-    const categoriesJsx = <EmailSubscriptionCategories key="subscription-categories" news={subscriptionBits} />;
+    const categoriesValue = getEmailSubscriptionCategories(subscriptionBits);
+    const categoriesJsx = (
+        <span className="text-bold" key="subscription-categories">
+            {categoriesValue}
+        </span>
+    );
 
     return (
         <main className="main-area h-full">
@@ -184,26 +176,16 @@ const EmailUnsubscribeContainer = () => {
                 }
                 if (page === PAGE.UNSUBSCRIBE) {
                     return (
-                        <EmailUnsubscribed
-                            categories={categoriesJsx}
-                            onResubscribeClick={handleResubscribeClick}
-                            onManageClick={handleManageClick}
-                            loading={loading}
-                        />
-                    );
-                }
-                if (page === PAGE.RESUBSCRIBE) {
-                    return (
-                        <EmailResubscribed
+                        <EmailUnsubscribedContainer
                             categories={categoriesJsx}
                             onUnsubscribeClick={handleUnsubscribeClick}
+                            onResubscribeClick={handleResubscribeClick}
                             onManageClick={handleManageClick}
-                            loading={loading}
                         />
                     );
                 }
                 if (page === PAGE.MANAGE) {
-                    return <EmailSubscriptionManagement News={news} disabled={loading} onChange={handleChange} />;
+                    return <EmailSubscriptionManagement News={news} onChange={handleChange} />;
                 }
                 return null;
             })()}
