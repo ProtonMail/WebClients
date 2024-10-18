@@ -10,7 +10,7 @@ import { c, msgid } from 'ttag'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { useCommentsContext } from './CommentsContext'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { $getNodeByKey, $getSelection, $isRangeSelection } from 'lexical'
+import { $getNodeByKey } from 'lexical'
 
 export function CommentsPanelListThread({ thread }: { thread: CommentThreadInterface }) {
   const [editor] = useLexicalComposerContext()
@@ -83,55 +83,39 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
     })
   }, [editor, isSuggestionThread, markNodes])
 
-  const handleClickThread = () => {
-    controller.markThreadAsRead(thread.id).catch(sendErrorMessage)
+  const scrollEditorToThreadLocation = () => {
     const firstMarkNode = markNodes[0]
     if (!firstMarkNode) {
       return
     }
-    const activeElement = document.activeElement
-    const currentEditableState = editor.isEditable()
-    editor.setEditable(false)
-    editor.update(
-      () => {
-        const rootElement = editor.getRootElement()?.parentElement
-        const nodeKey = firstMarkNode.getKey()
-        const firstMarkNodeLatest = $getNodeByKey(nodeKey)
-        if (!firstMarkNodeLatest) {
-          return
+
+    editor.update(() => {
+      const rootElement = editor.getRootElement()?.parentElement
+      const nodeKey = firstMarkNode.getKey()
+      const firstMarkNodeLatest = $getNodeByKey(nodeKey)
+      if (!firstMarkNodeLatest) {
+        return
+      }
+      const markNodeElement = editor.getElementByKey(nodeKey)
+      if (markNodeElement && rootElement) {
+        const markRect = markNodeElement.getBoundingClientRect()
+        const rootRect = rootElement.getBoundingClientRect()
+        const shouldScroll = markRect.bottom < rootRect.top || markRect.top > rootRect.bottom
+        if (shouldScroll) {
+          markNodeElement.scrollIntoView({
+            // eslint-disable-next-line custom-rules/deprecate-classes
+            block: 'center',
+            behavior: 'smooth',
+          })
         }
-        const markNodeElement = editor.getElementByKey(nodeKey)
-        if (markNodeElement && rootElement) {
-          const markRect = markNodeElement.getBoundingClientRect()
-          const rootRect = rootElement.getBoundingClientRect()
-          const shouldScroll = markRect.bottom < rootRect.top || markRect.top > rootRect.bottom
-          if (shouldScroll) {
-            markNodeElement.scrollIntoView({
-              // eslint-disable-next-line custom-rules/deprecate-classes
-              block: 'center',
-              behavior: 'smooth',
-            })
-          }
-        }
-        const selection = $getSelection()
-        if ($isRangeSelection(selection)) {
-          const focus = selection.focus.getNode()
-          if (firstMarkNodeLatest.is(focus) || firstMarkNodeLatest.isParentOf(focus)) {
-            return
-          }
-        }
-        firstMarkNodeLatest.selectStart()
-      },
-      {
-        onUpdate() {
-          editor.setEditable(currentEditableState)
-          // Restore selection to the previous element
-          if (activeElement !== null) {
-            ;(activeElement as HTMLElement).focus()
-          }
-        },
-      },
-    )
+      }
+    })
+  }
+
+  const handleClickThread = () => {
+    controller.markThreadAsRead(thread.id).catch(sendErrorMessage)
+
+    scrollEditorToThreadLocation()
   }
 
   const isActive = activeIDs.includes(markID) || isFocusWithin
