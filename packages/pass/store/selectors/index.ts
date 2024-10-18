@@ -12,3 +12,4 @@ export * from './popup';
 export * from './settings';
 export * from './shares';
 export * from './user';
+export * from './desktop-settings';

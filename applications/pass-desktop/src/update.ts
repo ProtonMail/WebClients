@@ -2,7 +2,6 @@ import assert from 'assert';
 import { randomBytes } from 'crypto';
 import { type MessageBoxOptions, type Session, app, autoUpdater, dialog } from 'electron';
 import logger from 'electron-log/main';
-import Store from 'electron-store';
 import isURL from 'is-url';
 import os from 'os';
 
@@ -11,10 +10,11 @@ import noop from '@proton/utils/noop';
 
 import * as config from './app/config';
 import { ARCH } from './lib/env';
+import { store } from './store';
 import { isMac, isProdEnv, isWindows } from './utils/platform';
 
-type StoreUpdateProperties = {
-    'update.distribution': number;
+export type StoreUpdateProperties = {
+    distribution: number;
 };
 
 type RemoteManifestResponse = {
@@ -46,13 +46,6 @@ export type UpdateOptions = {
 };
 
 const calculateUpdateDistribution = () => randomBytes(4).readUint32LE() / Math.pow(2, 32);
-
-const store = new Store<StoreUpdateProperties>({
-    accessPropertiesByDotNotation: false,
-    defaults: {
-        'update.distribution': calculateUpdateDistribution(),
-    },
-});
 
 const userAgent = `ProtonPass/${config.APP_VERSION} (${os.platform()}: ${os.arch()})`;
 const supportedPlatforms = ['darwin', 'win32'];
@@ -100,7 +93,7 @@ const checkForUpdates = async (opts: ReturnType<typeof validateInput>) => {
         return;
     }
 
-    const localDistributionPct = store.get('update.distribution') || 0;
+    const localDistributionPct = store.get('update')?.distribution || calculateUpdateDistribution();
     const remoteDistributionPct = latestRelease.RolloutPercentage || 0;
     if (remoteDistributionPct < localDistributionPct) {
         logger.log(
@@ -171,7 +164,7 @@ const initUpdater = (opts: ReturnType<typeof validateInput>) => {
 
     autoUpdater.on('update-downloaded', () => {
         logger.log('[Update] Update downloaded.');
-        store.set('update.distribution', calculateUpdateDistribution());
+        store.set('update', { distribution: calculateUpdateDistribution() });
     });
 
     autoUpdater.on('update-not-available', () => {

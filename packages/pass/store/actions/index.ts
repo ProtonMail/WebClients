@@ -14,3 +14,4 @@ export * from './creators/share';
 export * from './creators/trash';
 export * from './creators/user';
 export * from './creators/vault';
+export * from './creators/desktop-settings';

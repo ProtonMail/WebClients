@@ -30,6 +30,7 @@ import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { setVersionTag } from '@proton/pass/lib/settings/beta';
 import { startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
 import { rootSagaFactory } from '@proton/pass/store/sagas';
+import { DESKTOP_SAGAS } from '@proton/pass/store/sagas/desktop';
 import { WEB_SAGAS } from '@proton/pass/store/sagas/web';
 import { selectFeatureFlag, selectLocale, selectOnboardingEnabled } from '@proton/pass/store/selectors';
 import { OnboardingMessage } from '@proton/pass/types';
@@ -53,8 +54,9 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
     const enhance = useNotificationEnhancer();
 
     useEffect(() => {
+        const sagas = DESKTOP_BUILD ? [...WEB_SAGAS, ...DESKTOP_SAGAS] : WEB_SAGAS;
         const runner = sagaMiddleware.run(
-            rootSagaFactory(WEB_SAGAS).bind(null, {
+            rootSagaFactory(sagas).bind(null, {
                 endpoint: 'web',
 
                 getAppState: () => app.state,

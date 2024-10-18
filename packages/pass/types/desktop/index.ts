@@ -1,4 +1,5 @@
 import type { MaybeNull } from '@proton/pass/types/utils';
+import type { ClipboardStoreProperties } from '@proton/pass/lib/desktop-settings/types';
 
 export type ContextBridgeApi = {
     writeToClipboard: (text: string) => Promise<void>;
@@ -11,4 +12,6 @@ export type ContextBridgeApi = {
     deleteSecret: (key: string) => Promise<void>;
     getInstallInfo: () => Promise<{ installSource: MaybeNull<string> }>;
     setInstallSourceReported: () => Promise<void>;
+    setClipboardConfig: (config: ClipboardStoreProperties) => Promise<void>;
+    getClipboardConfig: () => Promise<ClipboardStoreProperties>;
 };
