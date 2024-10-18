@@ -7,10 +7,9 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import type { WasmApiWalletAccount, WasmFiatCurrencySymbol } from '@proton/andromeda';
 import { useNotifications, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
-import { useDispatch } from '@proton/redux-shared-store';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { encryptWalletDataWithWalletKey, useWalletApiClients } from '@proton/wallet';
-import { useFiatCurrencies, walletAccountDeletion, walletAccountUpdate } from '@proton/wallet/store';
+import { useFiatCurrencies, useWalletDispatch, walletAccountDeletion, walletAccountUpdate } from '@proton/wallet/store';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { getAccountWithChainDataFromManyWallets } from '../../utils';
@@ -30,7 +29,7 @@ export const useAccountPreferences = (
 
     const { manageBitcoinAddressPool, walletsChainData } = useBitcoinBlockchainContext();
     const api = useWalletApiClients();
-    const dispatch = useDispatch();
+    const dispatch = useWalletDispatch();
 
     const [addresses] = useAddresses();
 
@@ -108,7 +107,7 @@ export const useAccountPreferences = (
         return addresses?.map((addr) => [addr, !alreadyUsedAddresses.includes(addr.ID)] as const) ?? [];
     }, [wallet, otherWallets, addresses]);
 
-    const onChangeFiatCurrency = async (fiatCurrency: WasmFiatCurrencySymbol) => {
+    const onChangeFiatCurrency = (fiatCurrency: WasmFiatCurrencySymbol) => {
         const promise = async () => {
             try {
                 await api.wallet.updateWalletAccountFiatCurrency(wallet.Wallet.ID, walletAccount.ID, fiatCurrency);
@@ -132,7 +131,7 @@ export const useAccountPreferences = (
         return withLoadingFiatCurrencyUpdate(promise());
     };
 
-    const onAddEmailAddress = async (emailAddressId: string) => {
+    const onAddEmailAddress = (emailAddressId: string) => {
         const promise = async () => {
             try {
                 const { Data: updatedAccount } = await api.wallet.addEmailAddress(
@@ -176,10 +175,10 @@ export const useAccountPreferences = (
             }
         };
 
-        return withLoadingEmailUpdate(promise());
+        void withLoadingEmailUpdate(promise());
     };
 
-    const onRemoveEmailAddress = async (emailAddressId: string) => {
+    const onRemoveEmailAddress = (emailAddressId: string) => {
         const promise = async () => {
             try {
                 const { Data: updatedAccount } = await api.wallet.removeEmailAddress(
@@ -204,10 +203,10 @@ export const useAccountPreferences = (
             }
         };
 
-        return withLoadingEmailUpdate(promise());
+        void withLoadingEmailUpdate(promise());
     };
 
-    const onReplaceEmailAddress = async (previousEmailAddressId: string, emailAddressId: string) => {
+    const onReplaceEmailAddress = (previousEmailAddressId: string, emailAddressId: string) => {
         const promise = async () => {
             try {
                 // remove old email address
@@ -257,7 +256,7 @@ export const useAccountPreferences = (
             }
         };
 
-        return withLoadingEmailUpdate(promise());
+        void withLoadingEmailUpdate(promise());
     };
 
     return {

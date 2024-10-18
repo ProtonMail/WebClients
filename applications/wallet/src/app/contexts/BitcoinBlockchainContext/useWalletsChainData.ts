@@ -6,6 +6,7 @@ import pick from 'lodash/pick';
 import set from 'lodash/set';
 import { c } from 'ttag';
 
+import type { WasmNetwork } from '@proton/andromeda';
 import { WasmWallet, getDefaultStopGap } from '@proton/andromeda';
 import usePrevious from '@proton/hooks/usePrevious';
 import { MINUTE } from '@proton/shared/lib/constants';
@@ -32,6 +33,76 @@ const getKey = (walletId: string, walletAccountID: string) => {
     return `${walletId}-${walletAccountID}`;
 };
 
+interface WalletSubsetData {
+    IsNotDecryptable: boolean | undefined;
+    WalletAccounts: {
+        ID: string;
+        ScriptType: number;
+        DerivationPath: string;
+        PoolSize: number;
+    }[];
+    ID: string;
+    Mnemonic: string | null;
+    Passphrase?: string | undefined;
+    HasPassphrase: number;
+}
+
+export const formatToSubset = (apiWalletsData?: IWasmApiWalletData[]): WalletSubsetData[] | undefined =>
+    apiWalletsData?.map(({ Wallet, WalletAccounts, IsNotDecryptable }) => ({
+        ...pick(Wallet, ['ID', 'Mnemonic', 'Passphrase', 'HasPassphrase']),
+        IsNotDecryptable,
+        WalletAccounts: WalletAccounts.map(({ ID, ScriptType, DerivationPath, PoolSize }) => ({
+            ID,
+            ScriptType,
+            DerivationPath,
+            PoolSize,
+        })),
+    }));
+
+export const getWalletsChainDataInit = async ({
+    apiWalletsData,
+    network,
+}: {
+    apiWalletsData: WalletSubsetData[];
+    network: WasmNetwork;
+}) => {
+    const walletsChainData = apiWalletsData?.reduce((acc: WalletChainDataByWalletId, apiWallet) => {
+        const { ID, Mnemonic, HasPassphrase, Passphrase, WalletAccounts, IsNotDecryptable } = apiWallet;
+
+        // TODO: support watch-only wallets
+        if (IsNotDecryptable || !Mnemonic || (HasPassphrase && !Passphrase)) {
+            return acc;
+        }
+
+        const wasmWallet = new WasmWallet(network, Mnemonic, Passphrase ?? '');
+
+        // Get accounts created in wasm wallet
+        const wasmAccounts = WalletAccounts.reduce((acc: AccountChainDataByAccountId, account) => {
+            const wasmAccount = wasmWallet.addAccount(account.ScriptType, account.DerivationPath);
+
+            return {
+                ...acc,
+                [account.ID]: {
+                    account: wasmAccount,
+                    scriptType: account.ScriptType,
+                    derivationPath: account.DerivationPath,
+                    poolSize: account.PoolSize,
+                },
+            };
+        }, {});
+
+        return {
+            ...acc,
+            [ID]: {
+                wallet: wasmWallet,
+                accounts: wasmAccounts,
+            },
+        };
+    }, {});
+
+    return walletsChainData;
+};
+
 /**
  * Returns chain data given API wallets
  */
@@ -46,18 +117,7 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
 
     const walletsChainDataRef = useRef<WalletChainDataByWalletId>();
 
-    const walletSubsetData = useMemo(() => {
-        return apiWalletsData?.map(({ Wallet, WalletAccounts, IsNotDecryptable }) => ({
-            ...pick(Wallet, ['ID', 'Mnemonic', 'Passphrase', 'HasPassphrase']),
-            IsNotDecryptable,
-            WalletAccounts: WalletAccounts.map(({ ID, ScriptType, DerivationPath, PoolSize }) => ({
-                ID,
-                ScriptType,
-                DerivationPath,
-                PoolSize,
-            })),
-        }));
-    }, [apiWalletsData]);
+    const walletSubsetData = useMemo(() => formatToSubset(apiWalletsData), [apiWalletsData]);
 
     const previousWalletSubsetData = usePrevious(walletSubsetData);
 
