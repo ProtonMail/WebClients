@@ -12,7 +12,8 @@ import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import clsx from '@proton/utils/clsx';
 import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet';
-import { useUserWalletSettings, useWalletAccountExchangeRate } from '@proton/wallet/store';
+import { useUserWalletSettings } from '@proton/wallet/store';
+import { useWalletAccountExchangeRate } from '@proton/wallet/store/hooks/useWalletAccountExchangeRate';
 
 import { Price } from '../../atoms/Price';
 import { Skeleton } from '../../atoms/Skeleton';
@@ -33,6 +34,7 @@ type ValidAccountChecker = (
 
 const WalletAccountBalance = ({ walletAccount, balance }: { walletAccount: WasmApiWalletAccount; balance: number }) => {
     const [exchangeRate, loadingExchangeRate] = useWalletAccountExchangeRate(walletAccount);
+
     const [settings] = useUserWalletSettings();
 
     return (
@@ -195,6 +197,7 @@ export const WalletAccountSelector = ({
                 ref={anchorRef}
                 isOpen={isOpen}
                 onClick={toggle}
+                data-testid="wallet-account-dropdown-trigger"
                 className="border rounded-xl bg-weak py-5 w-full"
                 disabled={disabled}
             >
@@ -226,6 +229,8 @@ export const WalletAccountSelector = ({
 
                                 {walletAccounts.map(({ walletAccount, accountChainData, isValid }) => (
                                     <DropdownMenuButton
+                                        key={walletAccount.ID}
+                                        data-testid={`wallet-account-option-${walletAccount.ID}`}
                                         onClick={() => onSelect([wallet, walletAccount])}
                                         className="text-left"
                                         disabled={!isValid}
