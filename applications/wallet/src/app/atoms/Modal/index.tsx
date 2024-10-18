@@ -24,12 +24,11 @@ export const Modal = ({
     titleClassName,
     subline,
     children,
-    key,
     hasClose,
     ...rest
 }: PropsWithChildren<Props>) => {
     return (
-        <ModalTwo {...rest} key={key}>
+        <ModalTwo {...rest}>
             {header ?? (
                 <ModalTwoHeader
                     title={title}
