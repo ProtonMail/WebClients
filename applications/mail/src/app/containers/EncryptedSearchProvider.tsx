@@ -160,9 +160,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         // automatically enable content search too
         const automaticallyEnableForNewUser = welcomeFlags.isWelcomeFlow && !isMobile() && !isElectronMail;
         const automaticallyEnableForElectronMail =
-            isElectronMail &&
-            (isESEnabledInbox || welcomeFlags.isWelcomeFlow) &&
-            isESEnabledUserChoiceInboxDesktop(user.ID);
+            isElectronMail && isESEnabledInbox && isESEnabledUserChoiceInboxDesktop(user.ID);
         if (automaticallyEnableForNewUser || automaticallyEnableForElectronMail) {
             return esLibraryFunctions.enableEncryptedSearch({ showErrorNotification: false }).then((success) => {
                 if (success) {
