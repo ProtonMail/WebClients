@@ -143,7 +143,16 @@ export function proofreadActionToCustomRefineAction(action: ProofreadAction): Cu
     return {
         ...action,
         type: 'customRefine',
-        prompt: 'Fix any spelling or grammatical errors. Keep correct text otherwise unchanged, in the same language as the original text. If needed, you can introduce paragraph breaks (with two newlines) to help with the flow.',
+        prompt: [
+            'Proofread and correct the following text. Your task:',
+            '1) Fix any spelling, grammatical, or punctuation errors;',
+            '2) Preserve correct text without changes;',
+            '3) Maintain the original language of the text;',
+            '4) Introduce paragraph breaks (with two newlines) if needed to improve readability;',
+            '5) For short texts (less than 50 words), explicitly state if no changes were needed;',
+            '6) If the text is perfect, respond with "No changes needed."; and',
+            '8) Always provide the corrected version of the text, even if no changes were made.',
+        ].join(' '),
     };
 }
 
@@ -151,7 +160,19 @@ export function formalActionToCustomRefineAction(action: FormalAction): CustomRe
     return {
         ...action,
         type: 'customRefine',
-        prompt: 'Rewrite the same text with a very formal tone, adapted to a corporate or business setting, in the same language as the original text.',
+        prompt: [
+            'Rewrite the following text with a very formal tone, suitable for a corporate or business setting. Your task:',
+            '1) Maintain the original language of the text;',
+            '2) Elevate the language to a professional, business-appropriate level;',
+            '3) Use industry-standard terminology where applicable;',
+            '4) Eliminate colloquialisms, slang, and informal expressions;',
+            '5) Ensure proper grammar, punctuation, and sentence structure;',
+            '6) Maintain the original meaning and key information of the text;',
+            '7) If appropriate, organize the content into clear, concise paragraphs;',
+            '8) Add appropriate transitions between ideas for improved flow;',
+            '9) Use a respectful and diplomatic tone, avoiding any potentially offensive language; and',
+            '10) If the text is already formal, make minimal changes but state that the tone was already appropriate.',
+        ].join(' '),
     };
 }
 
@@ -159,7 +180,22 @@ export function friendlyActionToCustomRefineAction(action: FriendlyAction): Cust
     return {
         ...action,
         type: 'customRefine',
-        prompt: 'Rewrite the same text with a friendly and enthusiastic tone, like writing to a friend, in the same language as the original text, using idioms from that language.',
+        prompt: [
+            "Rewrite the following text with a warm, friendly tone, as if you're writing to a close friend. Your task:",
+            '1) Maintain the original language of the text;',
+            '2) Use a conversational and informal style, but avoid being overly casual or unprofessional;',
+            "3) Incorporate appropriate idioms and colloquial expressions from the text's original language to add authenticity and warmth.",
+            '4) Address the reader directly, using "you" and "your" where appropriate.',
+            '5) Use contractions (e.g., "it\'s" instead of "it is") to make the text sound more natural and conversational;',
+            '6) Include personal touches or anecdotes where relevant to make the content more relatable;',
+            '7) Use shorter sentences and simpler words to enhance readability and approachability;',
+            "8) Add humor or light-hearted comments where appropriate, but be mindful of the original content's seriousness if applicable;",
+            '9) Incorporate rhetorical questions or conversational asides to engage the reader;',
+            "10) Use exclamation points sparingly to convey enthusiasm, but don't overdo it;",
+            '11) Maintain the core meaning and key information of the original text;',
+            '12) If the text is already friendly in tone, make minimal changes but enhance its warmth where possible; and',
+            '13) Be mindful of cultural context when using idioms or colloquialisms to ensure they are appropriate and widely understood.',
+        ].join(' '),
     };
 }
 
@@ -167,7 +203,20 @@ export function expandActionToCustomRefineAction(action: ExpandAction): CustomRe
     return {
         ...action,
         type: 'customRefine',
-        prompt: 'Expand the text, i.e. paraphrase it, and use more words to say the same thing, in the same language as the original text.',
+        prompt: [
+            'Expand and elaborate on the following text. Your task:',
+            '1) Maintain the original language of the text;',
+            '2) Preserve the core meaning and key points of the original text;',
+            '3) Paraphrase and elaborate on each main idea. Add relevant examples, explanations, or context to enrich the content;',
+            '4) Use varied sentence structures to improve flow and readability;',
+            '5) Incorporate transitional phrases to connect ideas smoothly;',
+            '6) Introduce new paragraphs where appropriate to organize the expanded content;',
+            '7) Aim to at least double the length of the original text, but ensure all additions are meaningful and relevant;',
+            '8) Maintain the original tone and style of writing (e.g., formal, casual, technical);',
+            '9) If the text contains specialized terms or concepts, provide brief explanations or definitions;',
+            '10) Ensure the expanded version remains coherent and logically structured; and',
+            '11) If the original text is very short (less than 50 words), aim for a more significant expansion, providing substantial additional context or examples.',
+        ].join(' '),
     };
 }
 
@@ -176,7 +225,19 @@ function shortenActionToCustomRefineAction(action: ShortenAction): CustomRefineA
         ...action,
         type: 'customRefine',
         prompt: [
-            'Shorten the text in one short paragraph by keeping only one or two important details, in the same language as the original text.',
+            'Condense the following text into a single, concise paragraph. Your task:',
+            '1) Maintain the original language of the text; ',
+            '2) Identify and retain only the 1-2 most crucial points or ideas from the original text;',
+            '3) Aim for a length of 2-3 sentences, not exceeding 50 words;',
+            '4) Preserve the core meaning and essential message of the original text;',
+            '5) Use clear, direct language without sacrificing clarity for brevity;',
+            '6) Eliminate all non-essential details, examples, and elaborations;',
+            '7) Combine related ideas if possible to maximize conciseness;',
+            '8) Ensure the shortened version can stand alone and be understood without the original context;',
+            '9) Maintain the original tone (e.g., formal, casual) as much as possible within the constraints of brevity;',
+            '10) If the original text is already very short (less than 50 words), focus on further distilling the main idea without losing essential meaning;',
+            '11) Avoid introducing new information not present in the original text; and',
+            '12) If dealing with a list or steps, consider condensing it into a single, overarching statement.',
         ].join(' '),
     };
 }
@@ -315,7 +376,7 @@ export function formatPromptCustomRefine(action: CustomRefineAction): string {
         },
         {
             role: 'assistant',
-            contents: `Sure, here's your modified email. I rewrote it in the same language as the original, and I kept numbers ^0, ^1, ... in the markdown links:\n\n\`\`\`${assistantOutputFormat}\n${newEmailStart}`,
+            contents: `Sure, here's your modified email. I rewrote it in the same language as the original:\n\n\`\`\`${assistantOutputFormat}\n${newEmailStart}`,
         },
     ];
 
