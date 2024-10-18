@@ -92,6 +92,7 @@ import { InteractionDropdownButton } from './InteractionDropdownButton'
 import { SET_SELECTION_STYLE_PROPERTY_COMMAND } from '../Plugins/FormattingPlugin'
 import { INSERT_FILE_COMMAND } from '../Commands/Events'
 import { EditorUserMode } from '../EditorUserMode'
+import { SET_BLOCK_TYPE_COMMAND } from '../Commands/Blocks'
 
 type BlockType = keyof typeof blockTypeToBlockName
 
@@ -186,30 +187,15 @@ export default function DocumentEditorToolbar({
   }
 
   const formatParagraph = useCallback(() => {
-    editor.update(
-      () => {
-        const selection = $getSelection()
-        $setBlocksType(selection, () => $createParagraphNode())
-      },
-      {
-        onUpdate: focusEditor,
-      },
-    )
+    editor.dispatchCommand(SET_BLOCK_TYPE_COMMAND, () => $createParagraphNode())
+    focusEditor()
   }, [editor, focusEditor])
 
   const formatHeading = useCallback(
     (headingSize: HeadingTagType) => {
       if (blockType !== headingSize) {
-        editor.update(
-          () => {
-            const selection = $getSelection()
-            $setBlocksType(selection, () => $createHeadingNode(headingSize))
-            editor.focus()
-          },
-          {
-            onUpdate: focusEditor,
-          },
-        )
+        editor.dispatchCommand(SET_BLOCK_TYPE_COMMAND, () => $createHeadingNode(headingSize))
+        focusEditor()
       }
     },
     [editor, blockType, focusEditor],
@@ -251,15 +237,8 @@ export default function DocumentEditorToolbar({
 
   const formatQuote = useCallback(() => {
     if (!isQuote) {
-      editor.update(
-        () => {
-          const selection = $getSelection()
-          $setBlocksType(selection, () => $createQuoteNode())
-        },
-        {
-          onUpdate: focusEditor,
-        },
-      )
+      editor.dispatchCommand(SET_BLOCK_TYPE_COMMAND, () => $createQuoteNode())
+      focusEditor()
     } else {
       formatParagraph()
     }
@@ -267,15 +246,8 @@ export default function DocumentEditorToolbar({
 
   const formatCode = useCallback(() => {
     if (!isCodeBlock) {
-      editor.update(
-        () => {
-          const selection = $getSelection()
-          $setBlocksType(selection, () => $createCodeNode())
-        },
-        {
-          onUpdate: focusEditor,
-        },
-      )
+      editor.dispatchCommand(SET_BLOCK_TYPE_COMMAND, () => $createCodeNode())
+      focusEditor()
     } else {
       formatParagraph()
     }
@@ -538,6 +510,15 @@ export default function DocumentEditorToolbar({
               return false
             }
           }
+        },
+        COMMAND_PRIORITY_NORMAL,
+      ),
+      activeEditor.registerCommand(
+        SET_BLOCK_TYPE_COMMAND,
+        (createElement) => {
+          const selection = $getSelection()
+          $setBlocksType(selection, createElement)
+          return true
         },
         COMMAND_PRIORITY_NORMAL,
       ),
