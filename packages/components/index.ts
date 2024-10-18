@@ -343,9 +343,7 @@ export { default as VideoInstructions } from './components/videoInstructions/Vid
 export { default as AccessibilitySection } from './containers/account/AccessibilitySection';
 export { default as DeleteSection } from './containers/account/DeleteSection';
 export { default as EditEmailSubscription } from './containers/account/EditEmailSubscription';
-export { default as EmailSubscriptionCategories } from './containers/account/EmailSubscriptionCategories';
 export { default as EmailSubscriptionSection } from './containers/account/EmailSubscriptionSection';
-export { default as EmailSubscriptionToggles } from './containers/account/EmailSubscriptionToggles';
 export { default as FamilyPlanSection } from './containers/account/FamilyPlanSection';
 export { default as AuthSecurityKeyContent } from './containers/account/fido/AuthSecurityKeyContent';
 export { default as GroupMembershipSection } from './containers/account/groups/GroupMembershipSection';
