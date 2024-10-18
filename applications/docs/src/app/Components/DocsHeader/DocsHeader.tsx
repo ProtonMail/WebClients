@@ -13,12 +13,14 @@ import type { DocumentAction } from '@proton/drive-store'
 import type { AnyDocControllerInterface } from '@proton/docs-core/lib/Controller/Document/AnyDocControllerInterface'
 import { isPrivateDocController } from '@proton/docs-core/lib/Controller/Document/isPrivateDocController'
 import PopoverPill from '../PopoverPill'
-import { getAppHref } from '@proton/shared/lib/apps/helper'
+import { useDocsContext } from '../../Containers/ContextProvider'
+import { HeaderPublicOptions } from './HeaderPublicOptions'
 
 const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
   const application = useApplication()
   const [isReady, setIsReady] = useState(false)
-  const isPublicMode = application.isPublicMode
+
+  const { publicContext } = useDocsContext()
 
   const [controller, setController] = useState<AnyDocControllerInterface | null>(null)
   useEffect(() => {
@@ -45,12 +47,12 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
       </div>
 
       {/* Middle */}
-      <div className="flex-none">{isPublicMode && <ViewOnlyPill />}</div>
+      <div className="flex-none">{publicContext && <ViewOnlyPill />}</div>
 
       {/* Right */}
       <div className="flex flex-1 items-center justify-end">
-        {isPublicMode ? (
-          <PublicLoginOptions />
+        {publicContext ? (
+          <HeaderPublicOptions context={publicContext} controller={controller} />
         ) : (
           <>
             <DocumentActiveUsers className="mr-2 hidden md:flex" />
@@ -77,37 +79,6 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
           </>
         )}
       </div>
-    </div>
-  )
-}
-
-const PublicLoginOptions = () => {
-  const openAuthPage = (to = '/', target = '_blank') => {
-    window.open(getAppHref(to, APPS.PROTONDOCS), target)
-  }
-
-  return (
-    <div className="flex items-center gap-2">
-      <Button
-        size="small"
-        className="flex items-center gap-2 text-sm"
-        data-testid="public-login-button"
-        onClick={() => openAuthPage()}
-      >
-        <Icon name="arrow-in-to-rectangle" />
-        {c('Action').t`Login`}
-      </Button>
-
-      <Button
-        color="norm"
-        size="small"
-        className="flex items-center gap-2 text-sm"
-        data-testid="public-register-button"
-        onClick={() => openAuthPage()}
-      >
-        <Icon name="user-plus" />
-        {c('Action').t`Sign up`}
-      </Button>
     </div>
   )
 }

@@ -1,9 +1,9 @@
-import { useDriveDocsFeatureFlag, useDriveDocsPublicSharingFF } from '../store/_documents';
+import { useDriveDocsFeatureFlag, useDriveDocsPublicSharingFF, useOpenDocument } from '../store/_documents';
 import { type DocumentKeys } from './_documents';
 import { usePublicNode } from './_nodes';
 import type { DecryptedNode } from './_nodes/interface';
 import { usePublicDocsToken } from './_shares';
-import type { PublicNodeMeta } from './interface';
+import type { NodeMeta, PublicNodeMeta } from './interface';
 
 export interface PublicDriveCompat {
     /**
@@ -17,6 +17,21 @@ export interface PublicDriveCompat {
     isPublicDocsEnabled: boolean;
 
     /**
+     * The custom password for the public link.
+     */
+    customPassword: string;
+
+    /**
+     * The token for the public link.
+     */
+    token: string;
+
+    /**
+     * The url password for the public link.
+     */
+    urlPassword: string;
+
+    /**
      * Whether or not the interface is ready to receive calls.
      */
     isReady: boolean;
@@ -27,9 +42,19 @@ export interface PublicDriveCompat {
     isError: boolean;
 
     /**
+     * The error that occurred while loading the public link.
+     */
+    error?: Error;
+
+    /**
      * Gets a node, either from cache or fetched.
      */
     getNode: (meta: PublicNodeMeta) => Promise<DecryptedNode>;
+
+    /**
+     * Redirects to the authed document.
+     */
+    redirectToAuthedDocument: (meta: NodeMeta) => void;
 
     /**
      * Gets the keys for a given document node.
@@ -46,14 +71,22 @@ export const usePublicDriveCompat = (): PublicDriveCompat => {
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
 
-    const { isReady, isError, getPublicAuthHeaders } = usePublicDocsToken();
+    const { isReady, isError, error, getPublicAuthHeaders, customPassword, token, urlPassword } = usePublicDocsToken();
 
     const { getNode, getNodeContentKey } = usePublicNode();
+    const { openDocumentWindow } = useOpenDocument();
+
+    const redirectToAuthedDocument = (meta: NodeMeta) => openDocumentWindow({ ...meta, mode: 'open', window: window });
 
     return {
         isDocsEnabled,
+        customPassword,
+        token,
+        urlPassword,
         isReady,
         isError,
+        error,
+        redirectToAuthedDocument: redirectToAuthedDocument,
         isPublicDocsEnabled: isDocsPublicSharingEnabled,
         getDocumentKeys: async (nodeMeta) => ({
             documentContentKey: await getNodeContentKey(nodeMeta),

@@ -3,7 +3,7 @@ import type { InternalEventBusInterface } from '@proton/docs-shared'
 import { EditorOrchestrator } from '../Orchestrator/EditorOrchestrator'
 import type { LoadDocument } from '../../UseCase/LoadDocument'
 import type { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
-import type { PublicNodeMeta } from '@proton/drive-store'
+import type { PublicDriveCompat, PublicNodeMeta } from '@proton/drive-store'
 import type { DocLoaderInterface } from './DocLoaderInterface'
 import type { EditorOrchestratorInterface } from '../Orchestrator/EditorOrchestratorInterface'
 import type { LoadCommit } from '../../UseCase/LoadCommit'
@@ -23,6 +23,7 @@ export class PublicDocLoader implements DocLoaderInterface {
   private readonly statusObservers: StatusObserver[] = []
 
   constructor(
+    private driveCompat: PublicDriveCompat,
     private docsApi: DocsApi,
     private loadDocument: LoadDocument,
     private loadCommit: LoadCommit,
@@ -57,6 +58,14 @@ export class PublicDocLoader implements DocLoaderInterface {
       this.statusObservers.forEach((observer) => {
         observer.onError(result.getError())
       })
+      return
+    }
+
+    const { entitlements, meta } = result.getValue()
+
+    if (entitlements.role.isPublicViewerWithAccess()) {
+      this.logger.info('Redirecting to authed document')
+      this.driveCompat.redirectToAuthedDocument(meta.nodeMeta)
       return
     }
 

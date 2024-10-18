@@ -6,6 +6,7 @@ import { Button, CircleLoader } from '@proton/atoms/index'
 import { c } from 'ttag'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
+import { useEffect } from 'react'
 
 const PublicAppRootContainer = () => {
   void import('../../tailwind.scss')
@@ -21,6 +22,12 @@ const PublicAppRootContainer = () => {
 
 const RenderApplicationWhenReady = () => {
   const publicDriveCompat = usePublicDriveCompat()
+
+  useEffect(() => {
+    if (publicDriveCompat.error) {
+      console.error('publicDriveCompat error', publicDriveCompat.error)
+    }
+  }, [publicDriveCompat])
 
   if (publicDriveCompat.isError) {
     return (

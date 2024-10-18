@@ -129,6 +129,7 @@ export class PublicDocController implements AnyDocControllerInterface {
 
     return Result.ok({
       entitlements: this.entitlements,
+      meta: this.docMeta,
     })
   }
 
@@ -188,12 +189,20 @@ export class PublicDocController implements AnyDocControllerInterface {
     return undefined
   }
 
+  async exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array> {
+    if (!this.editorInvoker || !this.decryptedNode) {
+      throw new Error(`Attepting to export document before editor invoker or decrypted node is initialized`)
+    }
+
+    return this.editorInvoker.exportData(format)
+  }
+
   async exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs): Promise<void> {
     if (!this.editorInvoker || !this.decryptedNode) {
       throw new Error(`Attepting to export document before editor invoker or decrypted node is initialized`)
     }
 
-    const data = await this.editorInvoker.exportData(format)
+    const data = await this.exportData(format)
 
     await this._exportAndDownload.execute(data, this.decryptedNode?.name, format)
   }

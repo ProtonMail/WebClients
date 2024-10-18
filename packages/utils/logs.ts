@@ -96,6 +96,8 @@ export interface LoggerInterface {
      * Clears all logged messages from the logger.
      */
     clearLogs(): void;
+
+    setEnabled(enabled: boolean): void;
 }
 
 export class Logger implements LoggerInterface {
@@ -104,6 +106,8 @@ export class Logger implements LoggerInterface {
     private stack: [string, DebugLogDetail][] = [];
 
     private verbose: boolean = false;
+
+    private enabled: boolean = true;
 
     constructor(
         identifier: string,
@@ -115,6 +119,10 @@ export class Logger implements LoggerInterface {
         this.listen();
     }
 
+    setEnabled(enabled: boolean) {
+        this.enabled = enabled;
+    }
+
     public debug(...args: Args): void {
         if (this.verbose) {
             console.log(...this.logWithColorParams(), ...args);
@@ -123,20 +131,26 @@ export class Logger implements LoggerInterface {
     }
 
     public info(...args: Args): void {
-        console.log(...this.logWithColorParams(), ...args);
-        this.save(toString(args), 'info');
+        if (this.enabled) {
+            console.log(...this.logWithColorParams(), ...args);
+            this.save(toString(args), 'info');
+        }
     }
 
     public warn(...args: Args): void {
-        console.warn(...args);
-        this.save(toString(args), 'warn');
+        if (this.enabled) {
+            console.warn(...args);
+            this.save(toString(args), 'warn');
+        }
     }
 
     public error(...args: Args): void {
-        console.error(...args);
-        report(this.identifier, ...args);
-        Availability.mark(AvailabilityTypes.ERROR);
-        this.save(toString(args), 'error');
+        if (this.enabled) {
+            console.error(...args);
+            this.save(toString(args), 'error');
+            report(this.identifier, ...args);
+            Availability.mark(AvailabilityTypes.ERROR);
+        }
     }
 
     public downloadLogs(): void {
