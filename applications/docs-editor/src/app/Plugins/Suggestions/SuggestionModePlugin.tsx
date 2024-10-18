@@ -14,6 +14,7 @@ import {
   FORMAT_TEXT_COMMAND,
   INDENT_CONTENT_COMMAND,
   INSERT_TAB_COMMAND,
+  KEY_DOWN_COMMAND,
   KEY_TAB_COMMAND,
   OUTDENT_CONTENT_COMMAND,
   PASTE_COMMAND,
@@ -28,12 +29,7 @@ import { BEFOREINPUT_EVENT_COMMAND, COMPOSITION_START_EVENT_COMMAND } from '../.
 import { type EditorRequiresClientMethods } from '@proton/docs-shared'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { useMarkNodesContext } from '../MarkNodesContext'
-import {
-  ACCEPT_SUGGESTION_COMMAND,
-  REJECT_SUGGESTION_COMMAND,
-  SUGGESTION_MODE_KEYDOWN_COMMAND,
-  TOGGLE_SUGGESTION_MODE_COMMAND,
-} from './Commands'
+import { ACCEPT_SUGGESTION_COMMAND, REJECT_SUGGESTION_COMMAND, TOGGLE_SUGGESTION_MODE_COMMAND } from './Commands'
 import debounce from '@proton/utils/debounce'
 import { UNORDERED_LIST, ORDERED_LIST, CHECK_LIST } from '@lexical/markdown'
 import { $acceptSuggestion } from './acceptSuggestion'
@@ -79,6 +75,9 @@ import {
   $suggestTableDeletion,
   $suggestTableRowDeletion,
 } from './handleTables'
+import { INSERT_CHECK_LIST_COMMAND, INSERT_ORDERED_LIST_COMMAND, INSERT_UNORDERED_LIST_COMMAND } from '@lexical/list'
+import { INSERT_CUSTOM_ORDERED_LIST_COMMAND } from '../CustomList/CustomListCommands'
+import { SET_BLOCK_TYPE_COMMAND } from '../../Commands/Blocks'
 
 const LIST_TRANSFORMERS = [UNORDERED_LIST, ORDERED_LIST, CHECK_LIST]
 
@@ -405,7 +404,7 @@ export function SuggestionModePlugin({
         COMMAND_PRIORITY_CRITICAL,
       ),
       editor.registerCommand(
-        SUGGESTION_MODE_KEYDOWN_COMMAND,
+        KEY_DOWN_COMMAND,
         (event) => {
           const shortcut = getShortcutFromKeyboardEvent(event)
           if (shortcut === 'SUGGESTION_MODE_SHORTCUT') {
@@ -422,16 +421,25 @@ export function SuggestionModePlugin({
             ? lowerCaseKey === 'z' && metaKey && shiftKey
             : (lowerCaseKey === 'y' && ctrlKey) || (lowerCaseKey === 'z' && ctrlKey && shiftKey)
           const isTab = key === 'Tab' && !altKey && !ctrlKey && !metaKey
+          const isBold = key.toLowerCase() === 'b' && !altKey && controlOrMeta
+          const isItalic = key.toLowerCase() === 'i' && !altKey && controlOrMeta
+          const isUnderline = key.toLowerCase() === 'u' && !altKey && controlOrMeta
 
           if (isUndo) {
-            editor.dispatchCommand(UNDO_COMMAND, undefined)
+            return editor.dispatchCommand(UNDO_COMMAND, undefined)
           } else if (isRedo) {
-            editor.dispatchCommand(REDO_COMMAND, undefined)
+            return editor.dispatchCommand(REDO_COMMAND, undefined)
           } else if (isTab) {
-            editor.dispatchCommand(KEY_TAB_COMMAND, event)
+            return editor.dispatchCommand(KEY_TAB_COMMAND, event)
+          } else if (isBold) {
+            return editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'bold')
+          } else if (isItalic) {
+            return editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'italic')
+          } else if (isUnderline) {
+            return editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'underline')
           }
 
-          return true
+          return false
         },
         COMMAND_PRIORITY_CRITICAL,
       ),
@@ -617,6 +625,41 @@ export function SuggestionModePlugin({
         DELETE_TABLE_COLUMN_COMMAND,
         (cell) => {
           return $suggestTableColumnDeletion(cell, addCreatedIDtoSet)
+        },
+        COMMAND_PRIORITY_CRITICAL,
+      ),
+      editor.registerCommand(
+        INSERT_CHECK_LIST_COMMAND,
+        () => {
+          return true
+        },
+        COMMAND_PRIORITY_CRITICAL,
+      ),
+      editor.registerCommand(
+        INSERT_ORDERED_LIST_COMMAND,
+        () => {
+          return true
+        },
+        COMMAND_PRIORITY_CRITICAL,
+      ),
+      editor.registerCommand(
+        INSERT_UNORDERED_LIST_COMMAND,
+        () => {
+          return true
+        },
+        COMMAND_PRIORITY_CRITICAL,
+      ),
+      editor.registerCommand(
+        INSERT_CUSTOM_ORDERED_LIST_COMMAND,
+        () => {
+          return true
+        },
+        COMMAND_PRIORITY_CRITICAL,
+      ),
+      editor.registerCommand(
+        SET_BLOCK_TYPE_COMMAND,
+        () => {
+          return true
         },
         COMMAND_PRIORITY_CRITICAL,
       ),
