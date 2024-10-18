@@ -92,3 +92,6 @@ export const websiteRulesRequest = () => `rules::get`;
 export const getAuthDevicesRequest = () => `auth::sso::auth_devices`;
 export const confirmPendingAuthDeviceRequest = withKey(`auth::sso::confirm`);
 export const rejectPendingAuthDeviceRequest = withKey(`auth::sso::reject`);
+
+export const desktopSettingsSetRequest = () => `desktop-settings::set`;
+export const desktopSettingsSyncRequest = () => `desktop-settings::sync`;
