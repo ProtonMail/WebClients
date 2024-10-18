@@ -2,9 +2,9 @@ import { BrowserWindowConstructorOptions, app } from "electron";
 import { join } from "path";
 import { MINIMUM_HEIGHT, MINIMUM_WIDTH, getWindowBounds } from "../../store/boundsStore";
 import { getSettings } from "../../store/settingsStore";
-import { getConfig } from "../config";
 import { isLinux, isMac, isWindows } from "../helpers";
 import { appSession } from "../session";
+import { MAIL_APP_NAME } from "@proton/shared/lib/constants";
 
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 
@@ -29,7 +29,7 @@ export const getWindowConfig = (): BrowserWindowConstructorOptions => {
     const settings = getSettings();
 
     return {
-        title: getConfig().appTitle,
+        title: MAIL_APP_NAME,
         icon: join(app.getAppPath(), "assets/icon.png"),
         x,
         y,
