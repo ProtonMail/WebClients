@@ -100,21 +100,21 @@ export const WalletDeletionModal = ({ wallet, ...modalProps }: Props) => {
                             .t`This wallet seems to still have assets.`}</p>
                         <p>
                             {c('Wallet setup')
-                                .t`Please transfer them to another wallet before deleting. Deleting this wallet will remove all its data from ${BRAND_NAME}'s servers. However, you can recover the wallet later if you have its seed phrase.`}
+                                .t`Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${BRAND_NAME}'s servers. You can recover this wallet at a later stage using the seed phrase.`}
                         </p>
                     </ModalParagraph>
                 ) : wallet.IsNotDecryptable ? (
                     <ModalParagraph>
                         <p>
                             {c('Wallet setup')
-                                .t`By deleting this wallet, all data is removed from ${BRAND_NAME}'s servers. You are able to recover this by reactivating the keys used during wallet creation in your account.`}
+                                .t`Deleting this wallet will remove all its data from ${BRAND_NAME}'s servers. You can recover the wallet by reactivating the keys used during wallet creation in your account.`}
                         </p>
                     </ModalParagraph>
                 ) : (
                     <ModalParagraph>
                         <p>
                             {c('Wallet setup')
-                                .t`Deleting this wallet will remove all its data from ${BRAND_NAME}'s servers. However, you can recover the wallet later if you have its seed phrase.`}
+                                .t`Deleting this wallet will remove all its data from ${BRAND_NAME}'s servers. You can recover the wallet at a later stage using the seed phrase.`}
                         </p>
                     </ModalParagraph>
                 )}
