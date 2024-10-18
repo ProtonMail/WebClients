@@ -10,7 +10,7 @@ import {
 } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
-import { isIgnoredErrorForReporting } from '../../../utils/errorHandling';
+import { isIgnoredErrorForReporting, sendErrorReport } from '../../../utils/errorHandling';
 import { is4xx, is5xx } from '../../../utils/errorHandling/apiErrors';
 import { UserAvailabilityTypes } from '../../../utils/metrics/types/userSuccessMetricsTypes';
 import { userSuccessMetrics } from '../../../utils/metrics/userSuccessMetrics';
@@ -167,5 +167,11 @@ export function getErrorCategory(error: any): UploadErrorCategoryType {
     } else if (error?.statusCode && is5xx(error?.statusCode)) {
         return UploadErrorCategory.HTTPServerError;
     }
+
+    sendErrorReport(error, {
+        tags: {
+            label: 'upload-unknown-error',
+        },
+    });
     return UploadErrorCategory.Unknown;
 }

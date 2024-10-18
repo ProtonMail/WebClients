@@ -1,3 +1,5 @@
+import type { ScopeContext } from '@sentry/types';
+
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import { isProduction, traceError } from '@proton/shared/lib/helpers/sentry';
@@ -37,7 +39,7 @@ const hasSentryMessage = (error: unknown): error is Error & { sentryMessage: str
  *
  * Also attaches proper data to Sentry if an EnrichedError is passed, or alternatively context can be passed directly.
  */
-export function sendErrorReport(error: Error | EnrichedError | unknown) {
+export function sendErrorReport(error: Error | EnrichedError | unknown, additionalContext?: Partial<ScopeContext>) {
     if (isIgnoredErrorForReporting(error)) {
         return;
     }
@@ -52,7 +54,7 @@ export function sendErrorReport(error: Error | EnrichedError | unknown) {
         errorForReporting.stack = error.stack;
     }
 
-    const context = isEnrichedError(error) ? error.context || {} : {};
+    const context = Object.assign({}, isEnrichedError(error) ? error.context || {} : {}, additionalContext || {});
 
     if (isProduction(window.location.host)) {
         const cookieTag = getCookie('Tag') || 'prod';
