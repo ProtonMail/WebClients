@@ -7,22 +7,21 @@ export type DocumentAction =
           mode: 'open' | 'convert' | 'download' | 'history';
           linkId: string;
           volumeId: string;
-          parentLinkId?: never;
-          token?: never;
       }
     | {
           mode: 'create';
           parentLinkId: string;
           volumeId: string;
-          linkId?: never;
-          token?: never;
       }
     | {
           mode: 'open-url';
           linkId: string;
           token: string;
-          parentLinkId?: never;
-          volumeId?: never;
+          urlPassword: string;
+      }
+    | {
+          /** Make a copy of a public document */
+          mode: 'copy-public';
       };
 
 export const useOpenDocument = () => {
@@ -33,29 +32,28 @@ export const useOpenDocument = () => {
      *
      * In the Drive application, this should not be used directly, prefer `useDocumentActions`.
      */
-    const openDocumentWindow = ({
-        token,
-        volumeId,
-        linkId,
-        parentLinkId,
-        mode,
-        window,
-    }: DocumentAction & { window: Window }) => {
+    const openDocumentWindow = (action: DocumentAction & { window: Window }) => {
+        const { mode, window } = action;
+
         const href = getAppHref(`/doc`, APPS.PROTONDOCS, getLocalID());
         const url = new URL(href);
 
         url.searchParams.append('mode', mode);
 
-        if (volumeId) {
-            url.searchParams.append('volumeId', volumeId);
-        } else if (token) {
-            url.searchParams.append('token', token);
+        if ('volumeId' in action && action.volumeId) {
+            url.searchParams.append('volumeId', action.volumeId);
+        } else if ('token' in action && action.token) {
+            url.searchParams.append('token', action.token);
         }
 
-        if (linkId) {
-            url.searchParams.append('linkId', linkId);
-        } else if (parentLinkId) {
-            url.searchParams.append('parentLinkId', parentLinkId);
+        if ('linkId' in action && action.linkId) {
+            url.searchParams.append('linkId', action.linkId);
+        } else if ('parentLinkId' in action && action.parentLinkId) {
+            url.searchParams.append('parentLinkId', action.parentLinkId);
+        }
+
+        if ('urlPassword' in action && action.urlPassword) {
+            url.hash = action.urlPassword;
         }
 
         window.location.assign(url);

@@ -11,7 +11,7 @@ import { useDriveCompat } from '@proton/drive-store'
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { c } from 'ttag'
 
-import { UserLayout } from '../../Components'
+import { SharedLayout } from '../SharedLayout'
 import { DocumentConverter } from '../../Components/DocumentConverter'
 import { DocumentViewer } from '../../Components/DocumentViewer'
 import { useDriveDocsLandingPageFeatureFlag } from '../../Components/Homepage/useDriveDocsLandingPageFeatureFlag'
@@ -19,6 +19,9 @@ import { WordCountContextProvider } from '../../Components/WordCount/WordCountPr
 import { APP_VERSION } from '../../config'
 import ApplicationProvider, { useApplication } from '../../Containers/ApplicationProvider'
 import { useDocsUrlBar } from '../../Containers/useDocsUrlBar'
+import { useUser } from '@proton/account/user/hooks'
+import UserProvider from '../../Containers/ContextProvider'
+import { PublicDocumentCopier } from '../../Components/PublicDocumentCopier'
 
 const HomepageRoute = lazy(() => import('../../Components/Homepage/HomepageRoute'))
 
@@ -80,9 +83,11 @@ function DocsRoute({ driveCompat }: { driveCompat: DriveCompat }) {
   void import('../../tailwind.scss')
   const application = useApplication()
 
+  const [user] = useUser()
+
   const { openAction, updateParameters } = useDocsUrlBar({ isDocsEnabled: driveCompat.isDocsEnabled })
 
-  const [action, setAction] = useState<DocumentAction['mode']>()
+  const [actionMode, setActionMode] = useState<DocumentAction['mode']>()
   const [isCreatingNewDocument, setIsCreatingNewDocument] = useState<boolean>(false)
   const [didCreateNewDocument, setDidCreateNewDocument] = useState<boolean>(false)
   const [contentToInject, setContentToInject] = useState<FileToDocPendingConversion | undefined>(undefined)
@@ -97,7 +102,11 @@ function DocsRoute({ driveCompat }: { driveCompat: DriveCompat }) {
 
   useEffect(() => {
     if (openAction) {
-      application.logger.info('Opening doc through action', openAction)
+      application.logger.info('Opening doc through action', {
+        mode: openAction.mode,
+        linkId: 'linkId' in openAction ? openAction.linkId : undefined,
+        volumeId: 'volumeId' in openAction ? openAction.volumeId : undefined,
+      })
     }
   }, [application.logger, openAction])
 
@@ -139,13 +148,13 @@ function DocsRoute({ driveCompat }: { driveCompat: DriveCompat }) {
 
     const shouldOpenHistory = openAction && openAction.mode === 'history'
     if (shouldOpenHistory) {
-      setAction('history')
+      setActionMode('history')
       updateParameters(openAction.volumeId, openAction.linkId)
     }
 
     const shouldDownload = openAction && openAction.mode === 'download'
     if (shouldDownload) {
-      setAction('download')
+      setActionMode('download')
       updateParameters(openAction.volumeId, openAction.linkId)
     }
   }, [createNewDocInRoot, isAppReady, isCreatingNewDocument, openAction, updateParameters])
@@ -178,16 +187,18 @@ function DocsRoute({ driveCompat }: { driveCompat: DriveCompat }) {
   }
   return (
     <WordCountContextProvider>
-      <UserLayout action={action}>
-        <Content
-          onConversionSuccess={onConversionSuccess}
-          openAction={openAction}
-          actionMode={action}
-          isCreatingNewDocument={isCreatingNewDocument}
-          getNodeContents={driveCompat.getNodeContents}
-          editorInitializationConfig={editorInitializationConfig}
-        />
-      </UserLayout>
+      <UserProvider publicContext={undefined} privateContext={{ user, compat: driveCompat }}>
+        <SharedLayout action={actionMode}>
+          <Content
+            onConversionSuccess={onConversionSuccess}
+            openAction={openAction}
+            actionMode={actionMode}
+            isCreatingNewDocument={isCreatingNewDocument}
+            getNodeContents={driveCompat.getNodeContents}
+            editorInitializationConfig={editorInitializationConfig}
+          />
+        </SharedLayout>
+      </UserProvider>
     </WordCountContextProvider>
   )
 }
@@ -216,7 +227,17 @@ function Content({
     )
   }
 
-  if (!openAction || openAction.mode === 'create' || !openAction.volumeId || !openAction.linkId) {
+  if (openAction?.mode === 'copy-public') {
+    return <PublicDocumentCopier />
+  }
+
+  if (
+    !openAction ||
+    openAction.mode === 'create' ||
+    openAction.mode === 'open-url' ||
+    !openAction.volumeId ||
+    !openAction.linkId
+  ) {
     return (
       <div className="m-auto">{c('Info')
         .jt`No document supplied in URL. Return to ${DRIVE_APP_NAME} and select a document.`}</div>
