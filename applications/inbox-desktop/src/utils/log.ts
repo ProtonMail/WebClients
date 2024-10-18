@@ -2,6 +2,7 @@ import { WebContents } from "electron";
 import Logger from "electron-log";
 import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 import { appSession } from "./session";
+import { sentryTransport } from "./telemetry";
 
 export const mainLogger = Logger.scope("main");
 export const ipcLogger = Logger.scope("ipc");
@@ -15,6 +16,7 @@ export const viewLogger = (viewID: CHANGE_VIEW_TARGET) => Logger.scope(viewID);
 export function initializeLog() {
     Logger.initialize({ preload: true });
     Logger.transports.file.maxSize = 5 * 1024 * 1024; // 3MB
+    Logger.transports.sentry = sentryTransport;
 }
 
 export async function connectNetLogger(
