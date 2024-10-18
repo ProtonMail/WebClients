@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { getAliasDetailsIntent } from '@proton/pass/store/actions';
 import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
-import { selectAliasDetails } from '@proton/pass/store/selectors';
+import { selectAliasMailboxes } from '@proton/pass/store/selectors';
 import type { AliasMailbox, Maybe } from '@proton/pass/types';
 
 import { useActionRequest } from './useActionRequest';
@@ -20,7 +20,7 @@ type UseAliasDetailsConfig = {
 
 export const useAliasDetails = ({ aliasEmail, itemId, shareId, onAliasDetailsLoaded }: UseAliasDetailsConfig) => {
     const { createNotification } = useNotifications();
-    const aliasDetails = useSelector(selectAliasDetails(aliasEmail));
+    const aliasDetails = useSelector(selectAliasMailboxes(aliasEmail));
 
     const getAliasDetails = useActionRequest(getAliasDetailsIntent, {
         requestId: aliasDetailsRequest(aliasEmail),
