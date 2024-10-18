@@ -22,6 +22,7 @@ import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import { listenFreeTrialSessionExpiration } from '@proton/shared/lib/desktop/endOfTrialHelpers';
 import { getInboxDesktopInfo, hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { reportClientLaunch } from '@proton/shared/lib/desktop/reportClientLaunch';
+import { initializeTelemetry } from '@proton/shared/lib/desktop/telemetry';
 import { isChromiumBased } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
@@ -57,6 +58,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     const appName = config.APP_NAME;
 
     if (isElectronMail) {
+        initializeTelemetry();
         listenFreeTrialSessionExpiration(appName, authentication, api);
 
         if (hasInboxDesktopFeature('InstallSource')) {
