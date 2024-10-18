@@ -4,7 +4,8 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { WasmWallet } from '@proton/andromeda';
-import { type ModalStateProps, PasswordInputTwo } from '@proton/components';
+import { type ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useLoading from '@proton/hooks/useLoading';
 import { type IWasmApiWalletData, encryptWalletDataWithWalletKey, getPassphraseLocalStorageKey } from '@proton/wallet';
 import { setWalletPassphrase, useWalletDispatch } from '@proton/wallet/store';
@@ -43,6 +44,7 @@ export const PassphraseInputModal = ({ wallet, ...modalProps }: Props & ModalSta
 
     const handleConfirmPassphrase = async () => {
         dispatch(setWalletPassphrase({ walletID: wallet.Wallet.ID, passphrase }));
+
         if (wallet.WalletKey?.DecryptedKey && wallet.Wallet.Fingerprint) {
             const [encryptedPassphrase] = await encryptWalletDataWithWalletKey(
                 [passphrase],
@@ -66,6 +68,7 @@ export const PassphraseInputModal = ({ wallet, ...modalProps }: Props & ModalSta
                 <div className="flex flex-row mb-5">
                     <Input
                         id="passphrase-input"
+                        data-testid="passphrase-input"
                         disabled={loading}
                         as={PasswordInputTwo}
                         label={c('Wallet passphrase').t`Wallet passphrase`}
@@ -79,6 +82,7 @@ export const PassphraseInputModal = ({ wallet, ...modalProps }: Props & ModalSta
                 </div>
 
                 <Button
+                    data-testid="passphrase-confirm-button"
                     disabled={!passphrase || Boolean(error) || loading}
                     className="block w-4/5 mx-auto mt-4 mb-2"
                     shape="solid"

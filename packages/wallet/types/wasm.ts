@@ -1,4 +1,4 @@
-import { WasmApiWallet, WasmApiWalletAccount, WasmApiWalletKey, WasmApiWalletSettings } from '@proton/andromeda';
+import type { WasmApiWallet, WasmApiWalletAccount, WasmApiWalletKey, WasmApiWalletSettings } from '@proton/andromeda';
 
 export type ApiWalletWithPassphraseInput = WasmApiWallet & { Passphrase?: string };
 export type DecryptedApiWalletKey = WasmApiWalletKey & { DecryptedKey?: CryptoKey };

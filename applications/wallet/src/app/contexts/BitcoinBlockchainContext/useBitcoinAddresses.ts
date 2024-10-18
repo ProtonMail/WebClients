@@ -68,7 +68,7 @@ export const useBitcoinAddresses = ({
         [allWalletAccounts]
     );
 
-    const completeBitcoinAddressPool = useCallback(
+    const checkBitcoinAddressPool = useCallback(
         async (
             walletAccount: WasmApiWalletAccount,
             wasmAccount: WasmAccount,
@@ -180,7 +180,7 @@ export const useBitcoinAddresses = ({
                 const primaryAddressKey = addressKey.at(0);
 
                 if (primaryAddressKey) {
-                    await completeBitcoinAddressPool(
+                    await checkBitcoinAddressPool(
                         account,
                         accountChainData.account,
                         primaryAddressKey,
@@ -196,7 +196,7 @@ export const useBitcoinAddresses = ({
                 }
             }
         },
-        [completeBitcoinAddressPool, fillBitcoinAddressPool, getAddressKeys]
+        [checkBitcoinAddressPool, fillBitcoinAddressPool, getAddressKeys]
     );
 
     const updateBitcoinAddressHelper = useCallback((accountId: string, update: Partial<BitcoinAddressHelper>) => {
