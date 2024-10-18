@@ -1,10 +1,9 @@
-import type { LexicalEditor } from 'lexical'
+import { KEY_DOWN_COMMAND, type LexicalEditor } from 'lexical'
 
 import type { Ref } from 'react'
 import { forwardRef, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { mergeRefs } from '../Shared/mergeRefs'
 import { BEFOREINPUT_EVENT_COMMAND, COMPOSITION_START_EVENT_COMMAND, INPUT_EVENT_COMMAND } from '../Commands/Events'
-import { SUGGESTION_MODE_KEYDOWN_COMMAND } from '../Plugins/Suggestions/Commands'
 
 export type Props = {
   editor: LexicalEditor
@@ -68,7 +67,7 @@ function ContentEditableElementImpl(
             // as that will also stop beforeinput events
             // from being triggered.
             event.stopImmediatePropagation()
-            editor.dispatchCommand(SUGGESTION_MODE_KEYDOWN_COMMAND, event)
+            editor.dispatchCommand(KEY_DOWN_COMMAND, event)
           }
         })
         rootElement.addEventListener('input', (event) => {
