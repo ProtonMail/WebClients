@@ -19,9 +19,8 @@ export function KeyboardShortcutsPlugin() {
           event.preventDefault()
           return true
         }
-        {
-          return false
-        }
+
+        return false
       },
       COMMAND_PRIORITY_NORMAL,
     )
