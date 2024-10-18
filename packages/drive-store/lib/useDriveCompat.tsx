@@ -6,6 +6,7 @@ import { getNewWindow } from '@proton/shared/lib/helpers/window';
 
 import { useLinkSharingModal } from '../components/modals/ShareLinkModal/ShareLinkModal';
 import { useDriveCrypto } from '../store/_crypto';
+import type { DocumentAction } from '../store/_documents';
 import { useDriveDocsFeatureFlag, useOpenDocument } from '../store/_documents';
 import type { PathItem } from '../store/_views/useLinkPath';
 import type { DocumentKeys, DocumentNodeMeta } from './_documents';
@@ -88,6 +89,11 @@ export interface DriveCompat {
      * Opens a document in a new window.
      */
     openDocument: (meta: NodeMeta) => void;
+    openDocumentWindow: (
+        action: DocumentAction & {
+            window: Window;
+        }
+    ) => void;
 
     /**
      * Gets the key used to verify signatures.
@@ -142,6 +148,7 @@ export const useDriveCompat = (): DriveCompat => {
         restoreDocument: withResolve(restoreDocument),
         getDocumentUrl,
         openDocument,
+        openDocumentWindow,
         openDocumentSharingModal: withResolve(showLinkSharingModal),
         getMyFilesNodeMeta,
         getVerificationKey,

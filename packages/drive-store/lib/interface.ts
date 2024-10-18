@@ -14,6 +14,13 @@ export type PublicNodeMeta = {
     linkId: string;
 };
 
+/**
+ * A PublicNodeMeta with an additional resolved volumeId.
+ */
+export type PublicNodeMetaWithResolvedVolumeID = PublicNodeMeta & {
+    volumeId: string;
+};
+
 export function isPublicNodeMeta(meta: NodeMeta | PublicNodeMeta): meta is PublicNodeMeta {
     return 'token' in meta;
 }
