@@ -3,7 +3,6 @@ import { debounce } from "lodash";
 import { getWindowBounds, saveWindowBounds } from "../../store/boundsStore";
 import { getSettings, saveSettings } from "../../store/settingsStore";
 import { updateDownloaded } from "../../update";
-import { getConfig } from "../config";
 import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 import { isLinux, isMac, isWindows } from "../helpers";
 import { urlHasMailto, readAndClearMailtoArgs } from "../protocol/mailto";
@@ -16,8 +15,9 @@ import { getWindowConfig } from "../view/windowHelpers";
 import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsAndLinuxExitEvent } from "./windowClose";
 import { handleBeforeInput } from "./windowShortcuts";
+import { getAppURL } from "../../store/urlStore";
 
-type ViewID = keyof ReturnType<typeof getConfig>["url"];
+type ViewID = keyof ReturnType<typeof getAppURL>;
 
 let currentViewID: ViewID;
 
@@ -152,10 +152,8 @@ const createViews = () => {
     browserViewMap.calendar.setAutoResize({ width: true, height: true });
     browserViewMap.account.setAutoResize({ width: true, height: true });
 
-    const config = getConfig();
-
     const mailto = readAndClearMailtoArgs();
-    loadURL("mail", config.url.mail + (mailto ? `/inbox#mailto=${mailto}` : "")).then(() => {
+    loadURL("mail", getAppURL().mail + (mailto ? `/inbox#mailto=${mailto}` : "")).then(() => {
         updateViewBounds("mail");
     });
 };
@@ -378,12 +376,12 @@ export async function reloadHiddenViews() {
 }
 
 export async function resetHiddenViews({ toHomepage } = { toHomepage: false }) {
-    const config = getConfig();
+    const appURL = getAppURL();
     const loadPromises = [];
     for (const [viewID, view] of Object.entries(browserViewMap)) {
         if (viewID !== currentViewID && view) {
             if (PRELOADED_VIEWS.includes(viewID as ViewID) && toHomepage) {
-                const homepageURL = await updateLocalID(config.url[viewID as ViewID]);
+                const homepageURL = await updateLocalID(appURL[viewID as ViewID]);
                 viewLogger(viewID as ViewID).info("reset to home page", homepageURL);
                 loadPromises.push(loadURL(viewID as ViewID, homepageURL));
             } else {
@@ -396,7 +394,7 @@ export async function resetHiddenViews({ toHomepage } = { toHomepage: false }) {
 }
 
 export async function showEndOfTrial() {
-    const trialEndURL = `${getConfig().url.account}/trial-ended`;
+    const trialEndURL = `${getAppURL().account}/trial-ended`;
     await loadURL("account", trialEndURL);
     showView("account");
     resetHiddenViews();

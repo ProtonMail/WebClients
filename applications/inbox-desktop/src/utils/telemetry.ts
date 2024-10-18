@@ -1,12 +1,12 @@
 import { captureMessage, init, setTag, setTags, setUser, SeverityLevel } from "@sentry/electron/main";
 import { appSession, updateSession } from "./session";
 import pkg from "../../package.json";
-import { getConfig } from "./config";
 import { app } from "electron";
 import { getAppID } from "../store/idStore";
 import { DESKTOP_FEATURES } from "../ipc/ipcConstants";
 import { isLinux, isMac, isWindows } from "./helpers";
-import { LogMessage, Transport } from "electron-log";
+import Logger, { LogMessage, Transport } from "electron-log";
+import { getAppURL } from "../store/urlStore";
 
 const MAX_TAG_LENGTH = 32;
 
@@ -21,8 +21,7 @@ const LOG_LEVEL_TO_SEVERITY: Record<LogMessage["level"], SeverityLevel> = {
 
 export async function initializeTelemetry() {
     const appID = await getAppID();
-    const config = getConfig();
-    const environment = new URL(config.url.mail).hostname.replace(/^mail./i, "");
+    const environment = new URL(getAppURL().mail).hostname.replace(/^mail./i, "");
     const release = `${pkg.name}@${pkg.version}+${app.isPackaged ? "packaged" : "unpackaged"}`;
 
     init({
@@ -53,6 +52,13 @@ export async function initializeTelemetry() {
         const tagName = `flag.${feature}`.substring(0, MAX_TAG_LENGTH);
         setTag(tagName, enabled);
     }
+
+    const sentryTransport: Transport = ({ data, level }: LogMessage) => {
+        reportToTelemetry(data, LOG_LEVEL_TO_SEVERITY[level]);
+    };
+    sentryTransport.level = "info";
+    sentryTransport.transforms = [];
+    Logger.transports.sentry = sentryTransport;
 }
 
 export function reportToTelemetry(message: unknown, level: SeverityLevel = "info") {
@@ -70,9 +76,3 @@ function serialize(value: unknown): string {
 
     return JSON.stringify(value);
 }
-
-export const sentryTransport: Transport = ({ data, level }: LogMessage) => {
-    reportToTelemetry(data, LOG_LEVEL_TO_SEVERITY[level]);
-};
-sentryTransport.level = "info";
-sentryTransport.transforms = [];

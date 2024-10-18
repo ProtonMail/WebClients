@@ -3,7 +3,7 @@ import { c } from "ttag";
 import { uninstallProton } from "../../macos/uninstall";
 import { clearStorage, isMac } from "../helpers";
 import { getMainWindow, getSpellCheckStatus, resetZoom, toggleSpellCheck, updateZoom } from "../view/viewManagement";
-import { isProdEnv } from "../config";
+import { isProdEnv } from "../isProdEnv";
 
 type MenuKey = "app" | "file" | "edit" | "view" | "window";
 interface MenuProps extends MenuItemConstructorOptions {
