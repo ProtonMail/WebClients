@@ -1,13 +1,12 @@
 import { ipcMain } from 'electron';
 import logger from 'electron-log/main';
-import Store from 'electron-store';
 
-const store = new Store<{
-    installInfo?: {
-        source: string | null;
-        reported: boolean;
-    };
-}>({});
+import { store } from '../store';
+
+export type StoreInstallProperties = {
+    source: string | null;
+    reported: boolean;
+};
 
 export function setInstallSource(installSource: string) {
     logger.info('set install source', installSource);
