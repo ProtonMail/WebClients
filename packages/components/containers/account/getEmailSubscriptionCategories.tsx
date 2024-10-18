@@ -5,7 +5,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { getEmailSubscriptionsMap } from './constants/email-subscriptions';
 
-const EmailSubscriptionCategories = ({ news }: { news: NEWSLETTER_SUBSCRIPTIONS_BITS[] }) => {
+export const getEmailSubscriptionCategories = (news: NEWSLETTER_SUBSCRIPTIONS_BITS[]) => {
     const emailSubscriptionMap = getEmailSubscriptionsMap();
     const categoryTitles = news
         .map((newsKind) => emailSubscriptionMap[newsKind]?.title)
@@ -18,16 +18,7 @@ const EmailSubscriptionCategories = ({ news }: { news: NEWSLETTER_SUBSCRIPTIONS_
     const allCategoryTitlesExceptTheLastOne = categoryTitles.slice(0, -1).join(', ');
     const lastCategoryTitle = categoryTitles[categoryTitles.length - 1];
 
-    const categoriesString =
-        categoryTitles.length > 1
-            ? c('Email Unsubscribe Categories').t`${allCategoryTitlesExceptTheLastOne} and ${lastCategoryTitle}`
-            : lastCategoryTitle;
-
-    return (
-        <span className="text-bold" key="category-title">
-            {categoriesString}
-        </span>
-    );
+    return categoryTitles.length > 1
+        ? c('Email Unsubscribe Categories').t`${allCategoryTitlesExceptTheLastOne} and ${lastCategoryTitle}`
+        : lastCategoryTitle;
 };
-
-export default EmailSubscriptionCategories;
