@@ -29,6 +29,7 @@ export interface DocControllerInterface extends AnyDocControllerInterface {
   editorIsReadyToReceiveInvocations(editorInvoker: ClientRequiresEditorMethods): Promise<void>
   editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void>
   editorIsRequestingToLockAfterRenderingIssue(): void
+  exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array>
   exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs): Promise<void>
   getDocumentClientId(): Promise<number | undefined>
   getEditorJSON(): Promise<SerializedEditorState | undefined>

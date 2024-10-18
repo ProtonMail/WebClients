@@ -15,6 +15,7 @@ import type { MetricService } from '../Services/Metrics/MetricService'
 import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import type { PublicDocLoader } from '../Services/DocumentLoader/PublicDocLoader'
 import type { HttpHeaders } from '../Api/DocsApi'
+import type { DuplicateDocument } from '../UseCase/DuplicateDocument'
 
 declare const window: CustomWindow
 
@@ -31,7 +32,7 @@ export class Application implements ApplicationInterface {
     private protonApi: Api,
     private publicContextHeaders: HttpHeaders | undefined,
     private imageProxyParams: ImageProxyParams | undefined,
-    private compatWrapper: DriveCompatWrapper,
+    public readonly compatWrapper: DriveCompatWrapper,
     private appVersion: string,
   ) {
     this.deps.get<MetricService>(App_TYPES.MetricService).initialize()
@@ -71,6 +72,10 @@ export class Application implements ApplicationInterface {
 
   public get createEmptyDocumentForConversionUseCase(): CreateEmptyDocumentForConversion {
     return this.deps.get<CreateEmptyDocumentForConversion>(App_TYPES.CreateEmptyDocumentForConversion)
+  }
+
+  public get duplicateDocumentUseCase(): DuplicateDocument {
+    return this.deps.get<DuplicateDocument>(App_TYPES.DuplicateDocument)
   }
 
   public get websocketService(): WebsocketServiceInterface {

@@ -1,10 +1,11 @@
 import type { DocumentMetaInterface } from '@proton/docs-shared'
-import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store/lib'
+import type { NodeMeta } from '@proton/drive-store/lib'
+import type { PublicNodeMetaWithResolvedVolumeID } from '@proton/drive-store/lib/interface'
 import { isPublicNodeMeta } from '@proton/drive-store/lib/interface'
 
 export class DocumentMeta implements DocumentMetaInterface {
   constructor(
-    public nodeMeta: NodeMeta | PublicNodeMeta,
+    public nodeMeta: NodeMeta | PublicNodeMetaWithResolvedVolumeID,
     public commitIds: string[],
     public createTime: number,
     public modifyTime: number,
