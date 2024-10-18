@@ -130,7 +130,7 @@ const App = () => {
         return (
             <div className="unsupported-wasm-container">
                 <span>{c('Wallet')
-                    .t`WebAssembly must be enabled to use ${WALLET_APP_NAME}, please try updating your browser or device's software. Alternatively, you can download our mobile app.`}</span>
+                    .t`Your browser or device software does not support ${WALLET_APP_NAME}. Please update your browser or device. Alternatively, you can use one of our mobile apps.`}</span>
             </div>
         );
     }
