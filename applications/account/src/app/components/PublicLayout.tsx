@@ -22,7 +22,7 @@ const PublicLayout = ({ img, header, main, footer, below, className }: PublicLay
                 style={{ '--w-custom': width }}
             >
                 {img && <div className="mb-6 shrink-0">{img}</div>}
-                {header && <h1 className="h3 mb-6 text-bold shrink-0">{header}</h1>}
+                {header && <h1 className="h3 mb-6 text-bold shrink-0 text-center">{header}</h1>}
 
                 {main}
 
