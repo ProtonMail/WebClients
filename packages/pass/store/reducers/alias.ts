@@ -7,13 +7,13 @@ import {
     itemCreationIntent,
     itemEditIntent,
 } from '@proton/pass/store/actions';
-import type { MaybeNull } from '@proton/pass/types';
-import type { AliasMailbox, AliasOptions } from '@proton/pass/types/data/alias';
+import type { AliasDetails, MaybeNull } from '@proton/pass/types';
+import type { AliasOptions } from '@proton/pass/types/data/alias';
 import { merge } from '@proton/pass/utils/object/merge';
 
 export type AliasState = {
     aliasOptions: MaybeNull<AliasOptions>;
-    aliasDetails: { [aliasEmail: string]: AliasMailbox[] };
+    aliasDetails: { [aliasEmail: string]: Omit<AliasDetails, 'aliasEmail'> };
 };
 
 const getInitialState = (): AliasState => ({ aliasOptions: null, aliasDetails: {} });
@@ -32,23 +32,24 @@ const reducer: Reducer<AliasState> = (state = getInitialState(), action) => {
 
         return merge(state, {
             aliasDetails: {
-                [aliasEmail]: mailboxes,
+                [aliasEmail]: { mailboxes },
             },
         });
     }
 
     if (getAliasDetailsSuccess.match(action)) {
         const {
-            payload: { aliasEmail, mailboxes },
+            payload: { aliasEmail, ...aliasDetails },
         } = action;
-        return merge(state, { aliasDetails: { [aliasEmail]: mailboxes } });
+
+        return merge(state, { aliasDetails: { [aliasEmail]: aliasDetails } });
     }
 
     if (aliasDetailsSync.match(action)) {
         const {
             payload: { aliasEmail, mailboxes },
         } = action;
-        return merge(state, { aliasDetails: { [aliasEmail]: mailboxes } });
+        return merge(state, { aliasDetails: { [aliasEmail]: { mailboxes } } });
     }
 
     if (
@@ -60,7 +61,7 @@ const reducer: Reducer<AliasState> = (state = getInitialState(), action) => {
         const {
             extraData: { mailboxes, aliasEmail },
         } = action.payload;
-        return merge(state, { aliasDetails: { [aliasEmail]: mailboxes } });
+        return merge(state, { aliasDetails: { [aliasEmail]: { mailboxes } } });
     }
 
     return state;
