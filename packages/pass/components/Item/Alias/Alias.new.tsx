@@ -43,7 +43,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
         const domain = url ? resolveDomain(url) : null;
 
         return domain
-            ? { name: domain, note: c('Placeholder').t`Used on ${url}`, aliasPrefix: deriveAliasPrefix(domain) }
+            ? { name: domain, note: c('Placeholder').t`Used on ${domain}`, aliasPrefix: deriveAliasPrefix(domain) }
             : { name: '', note: '', aliasPrefix: '' };
     }, []);
 
