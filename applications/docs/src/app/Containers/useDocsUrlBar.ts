@@ -44,11 +44,22 @@ export function useDocsUrlBar({ isDocsEnabled }: { isDocsEnabled: boolean }) {
       return
     }
 
+    if (mode === 'copy-public') {
+      setOpenAction({
+        mode,
+      })
+
+      return
+    }
+
     if (hasValidPublicLink) {
+      const urlPassword = window.location.hash
+
       setOpenAction({
         mode: 'open-url',
         token,
         linkId,
+        urlPassword,
       })
       return
     }

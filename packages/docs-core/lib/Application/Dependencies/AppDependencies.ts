@@ -199,7 +199,12 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.PublicDocLoader, () => {
+      if (!compatWrapper.publicCompat) {
+        throw new Error('Public compat not available')
+      }
+
       return new PublicDocLoader(
+        compatWrapper.publicCompat,
         this.get<DocsApi>(App_TYPES.DocsApi),
         this.get<LoadDocument>(App_TYPES.LoadDocument),
         this.get<LoadCommit>(App_TYPES.LoadCommit),

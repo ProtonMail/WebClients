@@ -1,5 +1,6 @@
 import { utf8ArrayToString } from '@proton/crypto/lib/utils'
 import { c } from 'ttag'
+
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { SquashDocument } from '../../UseCase/SquashDocument'
 import type { DuplicateDocument } from '../../UseCase/DuplicateDocument'
@@ -826,11 +827,8 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       throw new Error('Editor invoker not initialized')
     }
 
-    const date = getPlatformFriendlyDateForFileName()
-    const newName = `${this.docMeta.name} (copy ${date})`
-
     const state = await this.editorInvoker.exportData('yjs')
-    const result = await this._duplicateDocument.execute(newName, this.nodeMeta, state)
+    const result = await this._duplicateDocument.executePrivate(this.docMeta, state)
 
     if (result.isFailed()) {
       PostApplicationError(this.eventBus, {
@@ -1062,12 +1060,20 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     void this.editorInvoker.showCommentsPanel()
   }
 
+  async exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array> {
+    if (!this.editorInvoker || !this.decryptedNode) {
+      throw new Error(`Attepting to export document before editor invoker or decrypted node is initialized`)
+    }
+
+    return this.editorInvoker.exportData(format)
+  }
+
   async exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs): Promise<void> {
     if (!this.editorInvoker || !this.decryptedNode) {
       throw new Error(`Attepting to export document before editor invoker or decrypted node is initialized`)
     }
 
-    const data = await this.editorInvoker.exportData(format)
+    const data = await this.exportData(format)
 
     await this._exportAndDownload.execute(data, this.decryptedNode?.name, format)
   }

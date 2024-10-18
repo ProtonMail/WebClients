@@ -110,9 +110,23 @@ export class LoadDocument {
         return Result.fail('Unable to load all necessary data')
       }
 
+      /**
+       * We attempt to determine if the current public session user can load the actual document meta via the
+       * authenticated API.
+       *
+       * If it succeeds, this means the user has some sort of access to this document, and can perform
+       * actions like duplicating it.
+       */
+      const authenticatedMetaAttempt = await this.getDocumentMeta.execute({
+        volumeId: decryptedMeta.nodeMeta.volumeId,
+        linkId: decryptedMeta.nodeMeta.linkId,
+      })
+
+      const doesHaveAccessToDoc = !authenticatedMetaAttempt.isFailed()
+
       const entitlements: PublicDocumentEntitlements = {
         keys: keysResult,
-        role: new DocumentRole('PublicViewer'),
+        role: new DocumentRole(doesHaveAccessToDoc ? 'PublicViewerWithAccess' : 'PublicViewer'),
       }
 
       return Result.ok({ entitlements, meta: decryptedMeta, node: node, lastCommitId: decryptedMeta.latestCommitId() })

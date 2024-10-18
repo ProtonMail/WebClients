@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { handleDriveCustomPassword } from '@proton/shared/lib/drive/sharing/publicDocsSharing';
@@ -13,11 +13,12 @@ export const usePublicDocsToken = () => {
     const token = params.get('token') || '';
     const urlPassword = hash.substring(1);
 
-    const { isLoading, isPasswordNeeded, submitPassword, error } = usePublicAuth(token, urlPassword);
+    const { isLoading, isPasswordNeeded, submitPassword, error, customPassword } = usePublicAuth(token, urlPassword);
     const { getSessionInfo } = usePublicSession();
-    const [isPasswordError, setIsPasswordError] = useState<boolean>(false);
+    const [passwordError, setPasswordError] = useState<Error | null>(null);
+    const isHandlingCustomPassword = useRef(false);
 
-    const isError = !!error[0] || isPasswordError;
+    const isError = !!error[0] || !!passwordError;
     const isReady = !isLoading && !isPasswordNeeded && !isError;
 
     useEffect(() => {
@@ -25,17 +26,27 @@ export const usePublicDocsToken = () => {
             return;
         }
 
+        if (isHandlingCustomPassword.current) {
+            return;
+        }
+
+        isHandlingCustomPassword.current = true;
+
         handleDriveCustomPassword({
             submitPassword,
-            onError: () => {
-                setIsPasswordError(true);
+            onError: (e) => {
+                setPasswordError(e);
             },
         });
-    }, [isLoading, isPasswordNeeded, isError]);
+    }, [isLoading, isPasswordNeeded, isError, submitPassword, isHandlingCustomPassword]);
 
     return {
         isReady,
         isError,
+        error: passwordError || (error[0] as Error),
+        customPassword,
+        token,
+        urlPassword,
         getPublicAuthHeaders: () => {
             const sessionInfo = getSessionInfo();
 
