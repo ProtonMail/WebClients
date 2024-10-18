@@ -35,6 +35,7 @@ export const useTransactionTable = ({
     const isSyncingWalletData = Boolean(syncingData?.syncing || syncingData?.error);
 
     const { currentPage, handleNext, handlePrev, handleGoFirst } = useLocalPagination();
+    const [canGoNext, setCanGoNext] = useState<boolean>(false);
 
     const [apiWalletTransactionDataArg, setApiWalletTransactionDataArg] = useState<WalletTransactionsThunkArg>({
         networkTransactionByHashedTxId: {},
@@ -90,6 +91,7 @@ export const useTransactionTable = ({
                         slicedTransactions,
                         walletHmacKey
                     );
+                    setCanGoNext(transactions?.length > ITEMS_PER_PAGE);
 
                     setApiWalletTransactionDataArg({
                         networkTransactionByHashedTxId,
@@ -122,7 +124,6 @@ export const useTransactionTable = ({
 
     const { networkTransactionByHashedTxId } = apiWalletTransactionDataArg;
 
-    const canGoNext = (Object.keys(networkTransactionByHashedTxId)?.length ?? 0) > ITEMS_PER_PAGE;
     // We display pagination if we aren't on the first page anymore OR if there are transaction
     const shouldDisplayPaginator = currentPage > 0 || canGoNext;
 
