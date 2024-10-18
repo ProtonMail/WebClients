@@ -53,6 +53,7 @@ const getIframeHtml = ({ emailContent, messageDocument, isPlainText, themeCSSVar
      * Padding bottom is needed for the scrollbar
      */
     return `
+      <!DOCTYPE html>
       <html>
         <head>
           <style>${themeCSSVariables}</style>
