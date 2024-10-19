@@ -82,7 +82,7 @@ export type PassCoreContextValue = {
     /** Writes text to the clipboard */
     writeToClipboard: (text: string) => Promise<void>;
     /** Gets the unlock key via biometrics */
-    getBiometricsKey?: (authStore: AuthStore) => Promise<Maybe<string>>;
+    getBiometricsKey?: (authStore: AuthStore) => Promise<MaybeNull<string>>;
 };
 
 export type PassCoreProviderProps = Omit<PassCoreContextValue, 'locale'>;

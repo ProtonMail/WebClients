@@ -24,7 +24,7 @@ export const getBiometricsStorageKey = (localID: number) => `${BIOMETRICS_KEY}::
  * the keys are not prefixed and are detected as version 1. In such cases,
  * it uses the non-indexed BIOMETRICS_KEY. Starting from v1.24.0, the function
  * parses and extracts the encrypted key, appending the localID. */
-export const inferBiometricsStorageKey = (authStore: AuthStore): string => {
+export const inferBiometricsStorageKey = (authStore: AuthStore): { version: number; storageKey: string } => {
     const localID = authStore.getLocalID();
     if (localID === undefined) throw new Error('Missing LocalID');
 
@@ -32,6 +32,8 @@ export const inferBiometricsStorageKey = (authStore: AuthStore): string => {
     if (!encryptedOfflineKD) throw new Error('Missing encrypted offline key');
 
     const { version } = fromBiometricsEncryptedOfflineKD(encryptedOfflineKD);
-    if (version === 1) return BIOMETRICS_KEY;
-    else return getBiometricsStorageKey(localID);
+    return {
+        storageKey: version === 1 ? BIOMETRICS_KEY : getBiometricsStorageKey(localID),
+        version,
+    };
 };
