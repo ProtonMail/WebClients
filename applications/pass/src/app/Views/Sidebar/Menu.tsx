@@ -27,6 +27,7 @@ import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { selectLockMode, selectPassPlan, selectPlanDisplayName, selectUser } from '@proton/pass/store/selectors';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import { MenuActions } from './MenuActions';
 
@@ -125,7 +126,13 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                 <div className="flex justify-space-between items-center flex-nowrap gap-1 pl-3 pr-5">
                     <AccountSwitcherTooltip sessions={authSwitchEnabled ? sessions : []}>
                         {({ anchorRef, toggle }) => (
-                            <ButtonLike ref={anchorRef} onClick={toggle} shape="ghost" className="flex-1" size="small">
+                            <ButtonLike
+                                ref={anchorRef}
+                                onClick={toggle}
+                                shape="ghost"
+                                className={clsx('flex-1', !authSwitchEnabled && 'pointer-events-none')}
+                                size="small"
+                            >
                                 <UserPanel
                                     email={user?.Email ?? ''}
                                     name={user?.DisplayName ?? user?.Name ?? ''}
