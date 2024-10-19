@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { Suspense, lazy, useEffect, useReducer, useState } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 
 import AuthModal from '@proton/components/containers/password/AuthModal';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
@@ -15,16 +15,7 @@ import DelinquentModal from './DelinquentModal';
 import ApiContext from './apiContext';
 import ApiServerTimeContext from './apiServerTimeContext';
 import ApiStatusContext, { defaultApiStatus } from './apiStatusContext';
-
-const HumanVerificationModal = lazy(
-    () =>
-        import(
-            /* webpackChunkName: "human-verification-modal" */
-            /* webpackMode: "lazy" */
-            /* webpackFetchPriority: "low" */
-            './humanVerification/HumanVerificationModal'
-        )
-);
+import HumanVerificationModal from './humanVerification/HumanVerificationModal';
 
 const reducer = (oldState: typeof defaultApiStatus, diff: Partial<typeof defaultApiStatus>) => {
     const newState = {
@@ -111,20 +102,18 @@ const ApiProvider = ({ api, children }: { api: ApiWithListener; children: ReactN
             if (event.type === 'handle-verification') {
                 const { resolve, reject, token, methods, onVerify, title, error } = event.payload;
                 createModal(
-                    <Suspense fallback={null}>
-                        <HumanVerificationModal
-                            title={title}
-                            token={token}
-                            methods={methods}
-                            onVerify={onVerify}
-                            onSuccess={resolve}
-                            onError={reject}
-                            onClose={() => {
-                                error.cancel = true;
-                                reject(error);
-                            }}
-                        />
-                    </Suspense>
+                    <HumanVerificationModal
+                        title={title}
+                        token={token}
+                        methods={methods}
+                        onVerify={onVerify}
+                        onSuccess={resolve}
+                        onError={reject}
+                        onClose={() => {
+                            error.cancel = true;
+                            reject(error);
+                        }}
+                    />
                 );
             }
 
