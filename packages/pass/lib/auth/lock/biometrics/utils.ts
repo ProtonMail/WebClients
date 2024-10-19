@@ -3,17 +3,21 @@ import type { AuthStore } from '@proton/pass/lib/auth/store';
 
 export const BIOMETRICS_KEY_VERSION = 2;
 export const BIOMETRICS_KEY_VERSION_PREFIX = `BIOMETRICS::V${BIOMETRICS_KEY_VERSION}::`;
-export const BIOMETRICS_KEY_RE = /BIOMETRICS::V(\d+)::(.+)/;
+export const BIOMETRICS_VERSION_RE = /^BIOMETRICS::V(\d+)::/;
 
 type BiometricEncryptedOfflineKD = { key: string; version: number };
 
 export const intoBiometricsEncryptedOfflineKD = (encryptedOfflineKD: string) =>
     `${BIOMETRICS_KEY_VERSION_PREFIX}${encryptedOfflineKD}`;
 
-/** Extracts the version and key from a biometric encrypted offline key. */
+/** Extracts version and key from a biometric `encryptedOfflineKD`.
+ * Uses regex only for version prefix to handle `Uint8Array` string
+ * representation safely.*/
 export const fromBiometricsEncryptedOfflineKD = (encryptedOfflineKD: string): BiometricEncryptedOfflineKD => {
-    const match = encryptedOfflineKD.match(BIOMETRICS_KEY_RE);
-    return match ? { key: match[2], version: parseInt(match[1], 10) } : { key: encryptedOfflineKD, version: 1 };
+    const match = encryptedOfflineKD.match(BIOMETRICS_VERSION_RE);
+    return match
+        ? { key: encryptedOfflineKD.slice(match[0].length), version: parseInt(match[1], 10) }
+        : { key: encryptedOfflineKD, version: 1 };
 };
 
 /** Starting from >= 1.24.0 */
