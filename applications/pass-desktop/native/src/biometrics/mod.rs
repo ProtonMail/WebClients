@@ -9,8 +9,8 @@ pub trait BiometricsTrait {
     fn can_check_presence() -> Result<bool>;
     fn check_presence(handle: Vec<u8>, reason: String) -> Result<bool>;
     fn get_decryption_key(challenge: Option<&str>) -> Result<[String; 2]>;
-    fn get_secret(key: String) -> Result<String>;
-    fn set_secret(key: String, data: String) -> Result<()>;
+    fn get_secret(key: String) -> Result<Vec<u8>>;
+    fn set_secret(key: String, data: Vec<u8>) -> Result<()>;
     fn delete_secret(key: String) -> Result<()>;
 }
 

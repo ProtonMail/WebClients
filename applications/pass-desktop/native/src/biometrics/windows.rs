@@ -2,7 +2,7 @@ use anyhow::{anyhow, ensure, Result};
 use base64::{engine::general_purpose::STANDARD as base64_engine, Engine};
 use rand::RngCore;
 use sha2::{Digest, Sha256};
-use widestring::{U16CString, U16String};
+use widestring::U16CString;
 use windows::{
     core::{factory, h, Array, HSTRING, PCWSTR, PWSTR},
     Foundation::IAsyncOperation,
@@ -82,7 +82,7 @@ impl super::BiometricsTrait for Biometrics {
         }
     }
 
-    fn get_secret(key: String) -> Result<String> {
+    fn get_secret(key: String) -> Result<Vec<u8>> {
         let target_name = U16CString::from_str(target_name(&key))?;
 
         let mut credential: *mut CREDENTIALW = std::ptr::null_mut();
@@ -99,18 +99,18 @@ impl super::BiometricsTrait for Biometrics {
 
         ensure!(result.is_ok(), result.unwrap_err().to_string());
 
-        let secret = unsafe {
-            U16String::from_ptr(
-                (*credential).CredentialBlob as *const u16,
-                (*credential).CredentialBlobSize as usize / 2,
+        let secret_bytes = unsafe {
+            std::slice::from_raw_parts(
+                (*credential).CredentialBlob as *const u8,
+                (*credential).CredentialBlobSize as usize,
             )
-            .to_string_lossy()
+            .to_vec()
         };
-    
-        Ok(String::from(secret))    
+
+        Ok(secret_bytes)
     }
 
-    fn set_secret(key: String, data: String) -> Result<()> {
+    fn set_secret(key: String, data: Vec<u8>) -> Result<()> {
         let _ = Self::delete_secret(key.clone());
         let mut target_name = U16CString::from_str(target_name(&key))?;
         let mut user_name = U16CString::from_str(key)?;
@@ -118,10 +118,9 @@ impl super::BiometricsTrait for Biometrics {
             dwLowDateTime: 0,
             dwHighDateTime: 0,
         };
-    
-        let credential = U16CString::from_str(&data)?;
-        let credential_len = data.len() as u32 * 2;
-    
+
+        let credential_len = data.len() as u32;
+
         let credential = CREDENTIALW {
             Flags: CRED_FLAGS(0),
             Type: CRED_TYPE_GENERIC,
@@ -129,7 +128,7 @@ impl super::BiometricsTrait for Biometrics {
             Comment: PWSTR::null(),
             LastWritten: last_written,
             CredentialBlobSize: credential_len,
-            CredentialBlob: credential.as_ptr() as *mut u8,
+            CredentialBlob: data.as_ptr() as *mut u8,
             Persist: CRED_PERSIST_ENTERPRISE,
             AttributeCount: 0,
             Attributes: std::ptr::null_mut(),

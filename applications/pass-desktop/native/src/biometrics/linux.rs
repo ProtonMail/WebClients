@@ -15,11 +15,11 @@ impl super::BiometricsTrait for Biometrics {
         bail!("Not implemented")
     }
 
-    fn get_secret(key: String) -> Result<String> {
+    fn get_secret(_key: String) -> Result<Vec<u8>> {
         bail!("Not implemented")
     }
 
-    fn set_secret(key: String, data: String) -> Result<()> {
+    fn set_secret(_key: String, _data: Vec<u8>) -> Result<()> {
         bail!("Not implemented")
     }
 
