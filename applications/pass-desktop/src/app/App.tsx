@@ -52,7 +52,6 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 import { ping } from '@proton/shared/lib/api/tests';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 import sentry from '@proton/shared/lib/helpers/sentry';
-import noop from '@proton/utils/noop';
 
 import { PASS_CONFIG, SENTRY_CONFIG } from '../lib/env';
 import locales from './locales';
@@ -110,9 +109,11 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     writeToClipboard: async (str) => window.ctxBridge?.writeToClipboard(str),
     getBiometricsKey: async (store: AuthStore) => {
         try {
-            const biometricStorageKey = inferBiometricsStorageKey(store);
-            return await window.ctxBridge?.getSecret(biometricStorageKey).catch(noop);
-        } catch {}
+            const { storageKey, version } = inferBiometricsStorageKey(store);
+            return (await window.ctxBridge?.getSecret(storageKey, version)) ?? null;
+        } catch {
+            return null;
+        }
     },
 });
 
