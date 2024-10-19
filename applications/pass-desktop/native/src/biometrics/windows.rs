@@ -7,12 +7,19 @@ use windows::{
     core::{factory, h, Array, HSTRING, PCWSTR, PWSTR},
     Foundation::IAsyncOperation,
     Security::{
-        Credentials::{KeyCredentialCreationOption, KeyCredentialManager, KeyCredentialStatus, UI::{
-            UserConsentVerificationResult, UserConsentVerifier, UserConsentVerifierAvailability,
-        }},
-        Cryptography::CryptographicBuffer
+        Credentials::{
+            KeyCredentialCreationOption, KeyCredentialManager, KeyCredentialStatus,
+            UI::{UserConsentVerificationResult, UserConsentVerifier, UserConsentVerifierAvailability},
+        },
+        Cryptography::CryptographicBuffer,
     },
-    Win32::{Foundation::{FILETIME, HWND}, Security::Credentials::{CredDeleteW, CredReadW, CredWriteW, CREDENTIALW, CRED_FLAGS, CRED_PERSIST_ENTERPRISE, CRED_TYPE_GENERIC}, System::WinRT::IUserConsentVerifierInterop},
+    Win32::{
+        Foundation::{FILETIME, HWND},
+        Security::Credentials::{
+            CredDeleteW, CredReadW, CredWriteW, CREDENTIALW, CRED_FLAGS, CRED_PERSIST_ENTERPRISE, CRED_TYPE_GENERIC,
+        },
+        System::WinRT::IUserConsentVerifierInterop,
+    },
 };
 
 pub struct Biometrics {}
@@ -37,14 +44,15 @@ impl super::BiometricsTrait for Biometrics {
         static KEY_NAME: &HSTRING = h!("ProtonPass");
 
         let challenge: [u8; 16] = match challenge_b64 {
-            Some(str) => base64_engine.decode(str)?.try_into().map_err(|_e| anyhow!("Invalid challenge"))?,
-            None => random_challenge()
+            Some(str) => base64_engine
+                .decode(str)?
+                .try_into()
+                .map_err(|_e| anyhow!("Invalid challenge"))?,
+            None => random_challenge(),
         };
 
-        let open_result = KeyCredentialManager::RequestCreateAsync(
-            KEY_NAME,
-            KeyCredentialCreationOption::FailIfExists
-        )?.get()?;
+        let open_result =
+            KeyCredentialManager::RequestCreateAsync(KEY_NAME, KeyCredentialCreationOption::FailIfExists)?.get()?;
 
         let retreive_result = match open_result.Status()? {
             KeyCredentialStatus::CredentialAlreadyExists => KeyCredentialManager::OpenAsync(KEY_NAME)?.get()?,
@@ -55,15 +63,18 @@ impl super::BiometricsTrait for Biometrics {
         let credential = retreive_result.Credential()?;
         let challenge_buffer = CryptographicBuffer::CreateFromByteArray(&challenge)?;
         let signature_result = credential.RequestSignAsync(&challenge_buffer)?.get()?;
-        ensure!(signature_result.Status()? == KeyCredentialStatus::Success, "Failed to sign data");
-        
+        ensure!(
+            signature_result.Status()? == KeyCredentialStatus::Success,
+            "Failed to sign data"
+        );
+
         let signature_buffer = signature_result.Result()?;
         let mut signature_value = Array::<u8>::with_len(signature_buffer.Length()? as usize);
         CryptographicBuffer::CopyToByteArray(&signature_buffer, &mut signature_value)?;
 
         let key = Sha256::digest(&*signature_value);
-        let key_b64 = base64_engine.encode(&key);
-        let iv_b64 = base64_engine.encode(&challenge);
+        let key_b64 = base64_engine.encode(key);
+        let iv_b64 = base64_engine.encode(challenge);
         Ok([key_b64, iv_b64])
     }
 
@@ -87,15 +98,8 @@ impl super::BiometricsTrait for Biometrics {
 
         let mut credential: *mut CREDENTIALW = std::ptr::null_mut();
         let credential_ptr = &mut credential;
-    
-        let result = unsafe {
-            CredReadW(
-                PCWSTR(target_name.as_ptr()),
-                CRED_TYPE_GENERIC,
-                0,
-                credential_ptr,
-            )
-        };
+
+        let result = unsafe { CredReadW(PCWSTR(target_name.as_ptr()), CRED_TYPE_GENERIC, 0, credential_ptr) };
 
         ensure!(result.is_ok(), result.unwrap_err().to_string());
 
@@ -114,6 +118,7 @@ impl super::BiometricsTrait for Biometrics {
         let _ = Self::delete_secret(key.clone());
         let mut target_name = U16CString::from_str(target_name(&key))?;
         let mut user_name = U16CString::from_str(key)?;
+
         let last_written = FILETIME {
             dwLowDateTime: 0,
             dwHighDateTime: 0,
@@ -135,23 +140,17 @@ impl super::BiometricsTrait for Biometrics {
             TargetAlias: PWSTR::null(),
             UserName: PWSTR(user_name.as_mut_ptr()),
         };
-    
+
         unsafe { CredWriteW(&credential, 0) }?;
-    
-        Ok(())    
+
+        Ok(())
     }
 
     fn delete_secret(key: String) -> Result<()> {
         let target_name = U16CString::from_str(target_name(&key))?;
 
-        unsafe {
-            CredDeleteW(
-                PCWSTR(target_name.as_ptr()),
-                CRED_TYPE_GENERIC,
-                0,
-            )?
-        };
-    
+        unsafe { CredDeleteW(PCWSTR(target_name.as_ptr()), CRED_TYPE_GENERIC, 0)? };
+
         Ok(())
     }
 }

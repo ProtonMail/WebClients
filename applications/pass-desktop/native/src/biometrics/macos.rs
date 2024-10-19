@@ -1,7 +1,5 @@
 use anyhow::{bail, Result};
-use security_framework::passwords::{
-    delete_generic_password, get_generic_password, set_generic_password,
-};
+use security_framework::passwords::{delete_generic_password, get_generic_password, set_generic_password};
 
 pub struct Biometrics {}
 
@@ -29,7 +27,6 @@ impl super::BiometricsTrait for Biometrics {
     }
 
     fn delete_secret(key: String) -> Result<()> {
-        let res = delete_generic_password(SERVICE_NAME, &key)?;
-        Ok(res)
+        Ok(delete_generic_password(SERVICE_NAME, &key)?)
     }
 }

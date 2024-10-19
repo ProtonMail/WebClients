@@ -1,5 +1,3 @@
-#![deny(clippy::all)]
-
 mod biometrics;
 
 #[macro_use]

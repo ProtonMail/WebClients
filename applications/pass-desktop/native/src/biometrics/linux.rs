@@ -23,7 +23,7 @@ impl super::BiometricsTrait for Biometrics {
         bail!("Not implemented")
     }
 
-    fn delete_secret(key: String) -> Result<()> {
+    fn delete_secret(_key: String) -> Result<()> {
         bail!("Not implemented")
     }
 }

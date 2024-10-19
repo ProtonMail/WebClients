@@ -3,7 +3,7 @@ use anyhow::Result;
 #[cfg_attr(target_os = "windows", path = "windows.rs")]
 #[cfg_attr(target_os = "macos", path = "macos.rs")]
 #[cfg_attr(target_os = "linux", path = "linux.rs")]
-mod biometrics;
+mod biometrics_platform;
 
 pub trait BiometricsTrait {
     fn can_check_presence() -> Result<bool>;
@@ -14,4 +14,4 @@ pub trait BiometricsTrait {
     fn delete_secret(key: String) -> Result<()>;
 }
 
-pub use biometrics::*;
+pub use biometrics_platform::*;
