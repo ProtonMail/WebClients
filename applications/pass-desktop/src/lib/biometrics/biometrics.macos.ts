@@ -1,5 +1,8 @@
 import { systemPreferences } from 'electron';
 
+import { utf8ArrayToString } from '@proton/crypto/lib/utils';
+import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+
 import { biometric as macBiometrics } from '../../../native';
 import type { BiometricsFactory, BiometricsPlatformHandler } from './types';
 
@@ -15,19 +18,27 @@ const factory: BiometricsFactory = () => {
     };
 
     const biometrics: BiometricsPlatformHandler = {
-        canCheckPresence: async () => true,
-        checkPresence: async (_e: Electron.IpcMainInvokeEvent, reason?: string) => checkPresence(reason),
-        getDecryptionKey: async () => Promise.resolve(null),
-        getSecret: async (_e, key) => {
+        canCheckPresence: () => Promise.resolve(true),
+        checkPresence: (_, reason) => checkPresence(reason),
+        getDecryptionKey: () => Promise.resolve(null),
+        getSecret: async (_, key, version) => {
             if (!(await checkPresence())) throw new Error('Biometric authentication failed');
-            let res: string | null = null;
-            try {
-                res = await macBiometrics.getSecret(key);
-            } catch (_e) {}
-            return res;
+
+            const secretBytes = await macBiometrics.getSecret(key).catch(() => null);
+            if (!secretBytes) return null;
+
+            /** Version 1 (Legacy): Secrets were stored as UTF-8 encoded strings.
+             * Rust would store the bytes of this string using `as_bytes()` and
+             * retrieve using `String::from_utf8()`. As such treat the uint8 array
+             * as an utf8 array for proper string conversion */
+            if (version === 1) return utf8ArrayToString(secretBytes);
+
+            /* Version 2+: Secrets are stored as raw byte arrays without
+             * any conversions to and from strings */
+            return uint8ArrayToString(secretBytes);
         },
-        setSecret: async (_e, key, secret) => macBiometrics.setSecret(key, secret),
-        deleteSecret: async (_e, key) => macBiometrics.deleteSecret(key),
+        setSecret: (_, key, secret) => macBiometrics.setSecret(key, secret),
+        deleteSecret: (_, key) => macBiometrics.deleteSecret(key),
     };
     return biometrics;
 };
