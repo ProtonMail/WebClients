@@ -41,7 +41,12 @@ export const UserPanel: FC<Props> = ({ actions, email, name, organization, plan,
                         {plan === UserPassPlan.FREE && (
                             <>
                                 {' · '}
-                                <UpgradeButton upsellRef={UpsellRef.MENU} hideIcon inline />
+                                <UpgradeButton
+                                    upsellRef={UpsellRef.MENU}
+                                    hideIcon
+                                    inline
+                                    style={{ pointerEvents: 'auto' }}
+                                />
                             </>
                         )}
                     </div>

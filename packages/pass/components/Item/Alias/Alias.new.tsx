@@ -31,6 +31,10 @@ import { resolveDomain } from '@proton/pass/utils/url/utils';
 
 const FORM_ID = 'new-alias';
 
+/** NOTE: extracted to avoid translation with duplicate variable keys.
+ * see `proton-pass-extension/src/app/worker/services/alias.ts` */
+const getPlaceholderNote = (url: string) => c('Placeholder').t`Used on ${url}`;
+
 export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit, onCancel }) => {
     const { needsUpgrade } = useSelector(selectAliasLimits);
     const { vaultTotalCount } = useSelector(selectVaultLimits);
@@ -43,7 +47,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
         const domain = url ? resolveDomain(url) : null;
 
         return domain
-            ? { name: domain, note: c('Placeholder').t`Used on ${domain}`, aliasPrefix: deriveAliasPrefix(domain) }
+            ? { name: domain, note: getPlaceholderNote(domain), aliasPrefix: deriveAliasPrefix(domain) }
             : { name: '', note: '', aliasPrefix: '' };
     }, []);
 

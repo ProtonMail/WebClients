@@ -82,7 +82,7 @@ export const biometricsLockAdapterFactory = (auth: AuthService): LockAdapter => 
 
             const keyBytes = generateKey();
             const biometricsStorageKey = getBiometricsStorageKey(authStore.getLocalID()!);
-            await window.ctxBridge?.setSecret(biometricsStorageKey, uint8ArrayToString(keyBytes));
+            await window.ctxBridge?.setSecret(biometricsStorageKey, keyBytes);
 
             const key = await importSymmetricKey(keyBytes);
 

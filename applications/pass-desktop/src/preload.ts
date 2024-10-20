@@ -4,18 +4,18 @@ import type { ContextBridgeApi } from '@proton/pass/types';
 
 const contextBridgeApi: ContextBridgeApi = {
     /* clipboard */
-    writeToClipboard: (text: string) => ipcRenderer.invoke('clipboard:writeText', text),
+    writeToClipboard: (text) => ipcRenderer.invoke('clipboard:writeText', text),
 
     /* routing */
-    navigate: (href: string) => ipcRenderer.invoke('router:navigate', href),
+    navigate: (href) => ipcRenderer.invoke('router:navigate', href),
 
     /* secrets */
     canCheckPresence: () => ipcRenderer.invoke('biometrics:canCheckPresence'),
-    checkPresence: (reason?: string) => ipcRenderer.invoke('biometrics:checkPresence', reason),
-    getDecryptionKey: (challenge: string) => ipcRenderer.invoke('biometrics:getDecryptionKey', challenge),
-    getSecret: (key: string) => ipcRenderer.invoke('biometrics:getSecret', key),
-    setSecret: (key: string, data: string) => ipcRenderer.invoke('biometrics:setSecret', key, data),
-    deleteSecret: (key: string) => ipcRenderer.invoke('biometrics:deleteSecret', key),
+    checkPresence: (reason) => ipcRenderer.invoke('biometrics:checkPresence', reason),
+    getDecryptionKey: (challenge) => ipcRenderer.invoke('biometrics:getDecryptionKey', challenge),
+    getSecret: (key, version) => ipcRenderer.invoke('biometrics:getSecret', key, version),
+    setSecret: (key, data) => ipcRenderer.invoke('biometrics:setSecret', key, data),
+    deleteSecret: (key) => ipcRenderer.invoke('biometrics:deleteSecret', key),
 
     /* install info */
     getInstallInfo: () => ipcRenderer.invoke('installInfo:getInfo'),
