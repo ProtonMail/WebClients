@@ -44,13 +44,16 @@ describe('Biometrics utils', () => {
         test('should return `BIOMETRICS_KEY` for version 1', () => {
             mockAuthStore.getLocalID.mockReturnValue(0);
             mockAuthStore.getEncryptedOfflineKD.mockReturnValue('version1Key');
-            expect(inferBiometricsStorageKey(mockAuthStore)).toBe(BIOMETRICS_KEY);
+            expect(inferBiometricsStorageKey(mockAuthStore)).toEqual({ storageKey: BIOMETRICS_KEY, version: 1 });
         });
 
         test('should return `BIOMETRICS_KEY::localID` for version 2', () => {
             mockAuthStore.getLocalID.mockReturnValue(0);
             mockAuthStore.getEncryptedOfflineKD.mockReturnValue('BIOMETRICS::V2::version2Key');
-            expect(inferBiometricsStorageKey(mockAuthStore)).toBe(`${BIOMETRICS_KEY}::0`);
+            expect(inferBiometricsStorageKey(mockAuthStore)).toEqual({
+                storageKey: `${BIOMETRICS_KEY}::0`,
+                version: 2,
+            });
         });
 
         test('should throw an error if `LocalID` is missing', () => {

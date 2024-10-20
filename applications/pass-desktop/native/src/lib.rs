@@ -1,5 +1,3 @@
-#![deny(clippy::all)]
-
 mod biometrics;
 
 #[macro_use]
@@ -7,7 +5,7 @@ extern crate napi_derive;
 
 #[napi]
 pub mod biometric {
-    use napi::bindgen_prelude::Buffer;
+    use napi::bindgen_prelude::{Buffer, Uint8Array};
 
     use super::biometrics::*;
 
@@ -15,7 +13,7 @@ pub mod biometric {
     pub async fn can_check_presence() -> napi::Result<bool> {
         Biometrics::can_check_presence().map_err(|e| napi::Error::from_reason(e.to_string()))
     }
-    
+
     #[napi]
     pub async fn check_presence(handle: Buffer, reason: String) -> napi::Result<bool> {
         Biometrics::check_presence(handle.into(), reason).map_err(|e| napi::Error::from_reason(e.to_string()))
@@ -29,21 +27,18 @@ pub mod biometric {
     }
 
     #[napi]
-    pub async fn get_secret(key: String) -> napi::Result<String> {
-        Biometrics::get_secret(key).map_err(|e| napi::Error::from_reason(e.to_string()))
+    pub async fn get_secret(key: String) -> napi::Result<Uint8Array> {
+        let vec = Biometrics::get_secret(key).map_err(|e| napi::Error::from_reason(e.to_string()))?;
+        Ok(Uint8Array::new(vec))
     }
 
     #[napi]
-    pub async fn set_secret(
-        key: String,
-        secret: String,
-    ) -> napi::Result<()> {
-        Biometrics::set_secret(key, secret).map_err(|e| napi::Error::from_reason(e.to_string()))
+    pub async fn set_secret(key: String, secret: Uint8Array) -> napi::Result<()> {
+        Biometrics::set_secret(key, secret.to_vec()).map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 
     #[napi]
     pub async fn delete_secret(key: String) -> napi::Result<()> {
         Biometrics::delete_secret(key).map_err(|e| napi::Error::from_reason(e.to_string()))
     }
-
 }
