@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import type { ImportProvider } from '@proton/activation/src/interface';
+import type { ImportProvider, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import useApiEnvironmentConfig from '@proton/components/hooks/useApiEnvironmentConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
@@ -62,7 +62,7 @@ const useOAuthPopup = ({ errorMessage }: Props) => {
         loginHint,
         callback,
     }: {
-        provider: ImportProvider;
+        provider: ImportProvider | OAUTH_PROVIDER;
         scope: string;
         loginHint?: string;
         // TODO properly type this

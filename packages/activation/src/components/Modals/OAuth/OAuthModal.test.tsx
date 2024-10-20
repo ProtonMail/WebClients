@@ -12,8 +12,9 @@ const server = setupServer();
 
 jest.mock('@proton/components/hooks/useApiEnvironmentConfig', () => () => [
     {
-        'importer.google.client_id': 'string',
-        'importer.outlook.client_id': 'string',
+        'oauth.google.client_id': 'string',
+        'oauth.outlook.client_id': 'string',
+        'oauth.zoom.client_id': 'string',
     },
     false,
 ]);
