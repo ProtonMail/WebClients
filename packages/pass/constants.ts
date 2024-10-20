@@ -59,8 +59,10 @@ export enum AccountPath {
 
 export const PASS_BF_MONTHLY_PRICE = 199;
 export const PASS_REGULAR_MONTHLY_PRICE = 399;
+export const PASS_FAMILY_BF_2024_MONTHLY_PRICE = 349;
+export const PASS_LIFETIME_BF_2024_YEARLY_PRICE = 19900;
 
-export const PASS_BF_2023_DATES = [+new Date('2023-11-02T06:00:00'), +new Date('2023-12-04T00:00:00')] as const;
+export const PASS_BF_2024_DATES = [+new Date('2024-11-04T06:00:00'), +new Date('2024-12-03T00:00:00')] as const;
 
 export enum UpsellRefPrefix {
     Extension = 'pass_extension',
