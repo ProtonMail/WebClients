@@ -3,6 +3,10 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { createToken, getTokens } from '@proton/activation/src/api';
+import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
+import type { OAuthProps } from '@proton/activation/src/interface';
+import { EASY_SWITCH_SOURCES, ImportType, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { Button, CircleLoader } from '@proton/atoms';
 import { Icon, IconRow, useApi } from '@proton/components';
 import { useLoading } from '@proton/hooks';
@@ -39,6 +43,9 @@ export const ZoomRow = ({ model, setModel }: Props) => {
 
     const api = useApi();
     const [, withLoading] = useLoading();
+    const { triggerOAuthPopup, loadingConfig } = useOAuthPopup({
+        errorMessage: c('loc_nightly:Error').t`Failed to load oauth modal.`,
+    });
 
     useEffect(() => {
         if (model.conferenceUrl) {
@@ -46,17 +53,7 @@ export const ZoomRow = ({ model, setModel }: Props) => {
         }
     }, []);
 
-    const handleClick = async () => {
-        if (user.isFree) {
-            // TODO display upsell for Zoom, will be done in a separate MR
-            alert('Display upsell for zoom');
-            return;
-        }
-
-        if (processState === 'disconnected') {
-            // TODO open OAuth window
-        }
-
+    const createVideoConferenceMeeting = async () => {
         setProcessState('loading');
         const data = await withLoading(api<VideoConferenceMeetingCreation>(createZoomMeeting()));
 
@@ -68,6 +65,41 @@ export const ZoomRow = ({ model, setModel }: Props) => {
             conferenceCreator: user.ID,
         });
         setProcessState('meeting-present');
+    };
+
+    const handleClick = async () => {
+        if (user.isFree) {
+            // TODO display upsell for Zoom, will be done in a separate MR
+            alert('Display upsell for zoom');
+            return;
+        }
+
+        const { Tokens } = await api(getTokens());
+
+        if (!Tokens.length) {
+            setProcessState('disconnected');
+
+            triggerOAuthPopup({
+                provider: OAUTH_PROVIDER.ZOOM,
+                scope: [].join(' '),
+                callback: async (oAuthProps: OAuthProps) => {
+                    const { Code, Provider, RedirectUri } = oAuthProps;
+
+                    await api(
+                        createToken({
+                            Provider,
+                            Code,
+                            RedirectUri,
+                            Source: EASY_SWITCH_SOURCES.CALENDAR_WEB_CREATE_EVENT,
+                            Products: [ImportType.CALENDAR],
+                        })
+                    );
+                    await createVideoConferenceMeeting();
+                },
+            });
+        } else {
+            await createVideoConferenceMeeting();
+        }
     };
 
     if (processState === 'meeting-present') {
@@ -88,7 +120,15 @@ export const ZoomRow = ({ model, setModel }: Props) => {
         <IconRow icon={getIcon(processState)} labelClassName={clsx(processState === 'loading' && 'my-auto p-0')}>
             {(processState === 'connected' || processState === 'disconnected') && (
                 <div className="flex items-center gap-1">
-                    <Button onClick={handleClick} shape="underline" className="p-0" color="norm" size="small">
+                    <Button
+                        onClick={handleClick}
+                        disabled={loadingConfig}
+                        loading={loadingConfig}
+                        shape="underline"
+                        className="p-0"
+                        color="norm"
+                        size="small"
+                    >
                         {c('Zoom integration').t`Add Zoom meeting`}
                     </Button>
                     {user.isFree && <Icon name="upgrade" className="color-primary" />}
