@@ -1,7 +1,5 @@
 use anyhow::{bail, Result};
-use security_framework::passwords::{
-    delete_generic_password, get_generic_password, set_generic_password,
-};
+use security_framework::passwords::{delete_generic_password, get_generic_password, set_generic_password};
 
 pub struct Biometrics {}
 
@@ -20,18 +18,15 @@ impl super::BiometricsTrait for Biometrics {
         bail!("Not implemented")
     }
 
-    fn get_secret(key: String) -> Result<String> {
-        let res = String::from_utf8(get_generic_password(SERVICE_NAME, &key)?)?;
-        Ok(res)
+    fn get_secret(key: String) -> Result<Vec<u8>> {
+        Ok(get_generic_password(SERVICE_NAME, &key)?)
     }
 
-    fn set_secret(key: String, data: String) -> Result<()> {
-        let res = set_generic_password(SERVICE_NAME, &key, data.as_bytes())?;
-        Ok(res)
+    fn set_secret(key: String, data: Vec<u8>) -> Result<()> {
+        Ok(set_generic_password(SERVICE_NAME, &key, &data)?)
     }
 
     fn delete_secret(key: String) -> Result<()> {
-        let res = delete_generic_password(SERVICE_NAME, &key)?;
-        Ok(res)
+        Ok(delete_generic_password(SERVICE_NAME, &key)?)
     }
 }

@@ -12,7 +12,7 @@ const factory: BiometricsFactory = (getWindow) => {
                 return (require('./biometrics.macos').default as BiometricsFactory)(getWindow);
             default:
                 return {
-                    canCheckPresence: async () => false,
+                    canCheckPresence: () => Promise.resolve(false),
                     checkPresence: () => Promise.reject('Not implemented'),
                     getDecryptionKey: () => Promise.reject('Not implemented'),
                     getSecret: () => Promise.reject('Not implemented'),
