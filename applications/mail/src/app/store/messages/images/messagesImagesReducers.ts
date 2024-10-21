@@ -4,7 +4,7 @@ import type { Draft } from 'immer';
 import { encodeImageUri, forgeImageURL } from '@proton/shared/lib/helpers/image';
 
 import { API_URL } from '../../../config';
-import { markEmbeddedImagesAsLoaded } from '../../../helpers/message/messageEmbeddeds';
+import { insertBlobImages, markEmbeddedAsLoaded, replaceEmbeddedUrls } from '../../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages, getRemoteImages, updateImages } from '../../../helpers/message/messageImages';
 import { loadBackgroundImages, loadImages, urlCreator } from '../../../helpers/message/messageRemotes';
 import { getMessage } from '../helpers/messagesReducer';
@@ -35,7 +35,7 @@ export const loadEmbeddedFulfilled = (
     {
         payload,
         meta: {
-            arg: { ID },
+            arg: { ID, isDraft },
         },
     }: PayloadAction<LoadEmbeddedResults, string, { arg: LoadEmbeddedParams }>
 ) => {
@@ -43,7 +43,19 @@ export const loadEmbeddedFulfilled = (
 
     if (messageState && messageState.messageImages) {
         const embeddedImages = getEmbeddedImages(messageState);
-        const updatedEmbeddedImages = markEmbeddedImagesAsLoaded(embeddedImages, payload);
+
+        // First, get urls from blob
+        let updatedEmbeddedImages = replaceEmbeddedUrls(embeddedImages, payload);
+
+        // If we are initializing images on a draft, insert them in the content
+        if (isDraft && messageState.messageDocument?.document) {
+            insertBlobImages(messageState.messageDocument.document, updatedEmbeddedImages);
+        }
+
+        // Then we can mark images as loaded
+        // They are mot marked directly when replacing urls,
+        // because this would trigger a rerender in the composer too early and we would not display them
+        updatedEmbeddedImages = markEmbeddedAsLoaded(embeddedImages, payload);
 
         messageState.messageImages = updateImages(
             messageState.messageImages,
