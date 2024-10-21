@@ -16,8 +16,6 @@ import {
     queryRejectShareInvite,
     queryResendExternalInvitation,
     queryResendInvitation,
-    queryShareInvitationDetails,
-    queryShareInvitationsListing,
     queryUpdateExternalInvitationPermissions,
     queryUpdateInvitationPermissions,
 } from '@proton/shared/lib/api/drive/invitation';
@@ -28,11 +26,12 @@ import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shar
 import type {
     ShareExternalInvitationPayload,
     ShareInvitationDetailsPayload,
-    ShareInvitationListingPayload,
     ShareInvitationPayload,
 } from '@proton/shared/lib/interfaces/drive/invitation';
+import { decryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 
+import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import {
     shareExternalInvitationPayloadToShareExternalInvitation,
@@ -66,25 +65,56 @@ export const useInvitations = () => {
     const { getShareCreatorKeys, getShareSessionKey } = useShare();
     const { getLink, getLinkPrivateKey } = useLink();
     const { getDefaultShare } = useDefaultShare();
-    const { setInvitations } = useInvitationsState();
+    const invitationsState = useInvitationsState();
 
-    const getInvitations = async (
-        abortSignal: AbortSignal,
-        { volumeId, shareId }: { volumeId: string; shareId: string }
+    const decryptInvitationLinkName = async (
+        invitation: ShareInvitationDetails,
+        privateKeys: PrivateKeyReference[]
     ) => {
-        return debouncedRequest<ShareInvitationListingPayload>(
-            queryShareInvitationsListing(volumeId, shareId),
+        try {
+            const passphrase = await decryptUnsigned({
+                armoredMessage: invitation.share.passphrase,
+                privateKey: privateKeys,
+            });
+
+            const sharePrivateKey = await CryptoProxy.importPrivateKey({
+                passphrase: passphrase,
+                armoredKey: invitation.share.shareKey,
+            });
+
+            const name = await decryptUnsigned({
+                armoredMessage: invitation.link.name,
+                privateKey: sharePrivateKey,
+            });
+            return name;
+        } catch (e) {
+            const error = new EnrichedError("Failed to decrypt invitation's link name", {
+                extra: {
+                    e,
+                },
+                tags: {
+                    shareId: invitation.share.shareId,
+                    linkId: invitation.link.linkId,
+                    volumeId: invitation.share.volumeId,
+                    invitationId: invitation.invitation.invitationId,
+                },
+            });
+            sendErrorReport(error);
+            return '�';
+        }
+    };
+
+    // We don't update invitation cache after fetching as invitation will be removed right after in some cases like acceptInvitation
+    const getInvitation = async (abortSignal: AbortSignal, invitationId: string) => {
+        const cachedInvitation = invitationsState.getInvitation(invitationId);
+        if (cachedInvitation) {
+            return cachedInvitation;
+        }
+        const invitation = await debouncedRequest<ShareInvitationDetailsPayload>(
+            queryInvitationDetails(invitationId),
             abortSignal
-        )
-            .then(({ InvitationIDs }) =>
-                debouncedRequest<{ Invitations: ShareInvitationPayload[] }>(
-                    queryShareInvitationDetails(volumeId, shareId, {
-                        InvitationIDs,
-                    }),
-                    abortSignal
-                )
-            )
-            .then(({ Invitations }) => Invitations.map(shareInvitationPayloadToShareInvitation));
+        ).then(shareInvitationDetailsPayloadToShareInvitationDetails);
+        return invitation;
     };
 
     const inviteProtonUser = async (
@@ -316,7 +346,7 @@ export const useInvitations = () => {
                 Link,
             })
         );
-        setInvitations([invitationDetails]);
+        invitationsState.setInvitations([invitationDetails]);
         return invitationDetails;
     };
 
@@ -480,9 +510,10 @@ export const useInvitations = () => {
         );
 
     return {
+        decryptInvitationLinkName,
         getInvitationDetails,
         convertExternalInvitation,
-        getInvitations,
+        getInvitation,
         inviteProtonUser,
         inviteExternalUser,
         listInvitations,

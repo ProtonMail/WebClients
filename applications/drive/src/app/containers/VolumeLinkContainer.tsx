@@ -46,11 +46,8 @@ export const VolumeLinkContainer: FC<RouteComponentProps<{ volumeId: string; lin
             .catch(() => {
                 navigateToSharedWithMe();
             });
-
-        return () => {
-            abortController.abort();
-        };
-    }, [invitationId]);
+        // No cleanup/abort function, allowing the action to continue in the background
+    }, [invitationId, volumeId, linkId]);
 
     useEffect(() => {
         if (!externalInvitationId) {
@@ -63,10 +60,8 @@ export const VolumeLinkContainer: FC<RouteComponentProps<{ volumeId: string; lin
         }).finally(() => {
             navigateToSharedByMe();
         });
-        return () => {
-            abortController.abort();
-        };
+        // No cleanup/abort function, allowing the action to continue in the background
     }, [externalInvitationId]);
     // This is a temporary solution until we have proper view to accept/decline screens
-    return <Loader />;
+    return <Loader size="medium" className="absolute inset-center" />;
 };

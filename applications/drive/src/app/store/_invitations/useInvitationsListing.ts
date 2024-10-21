@@ -1,11 +1,9 @@
 import { useCallback, useRef } from 'react';
 
 import type { PrivateKeyReference } from '@proton/crypto/lib';
-import { CryptoProxy } from '@proton/crypto/lib';
 import { queryInvitationDetails, queryListPendingInvitations } from '@proton/shared/lib/api/drive/invitation';
 import type { ShareInvitationDetailsPayload } from '@proton/shared/lib/interfaces/drive/invitation';
 import type { ListDrivePendingInvitationsPayload } from '@proton/shared/lib/interfaces/drive/sharing';
-import { decryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
 
 import { shareInvitationDetailsPayloadToShareInvitationDetails, useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
@@ -16,6 +14,7 @@ import {
     useLinksListingHelpers,
 } from '../_links/useLinksListing/useLinksListingHelpers';
 import { useDefaultShare } from '../_shares';
+import { useInvitations } from './useInvitations';
 import { useInvitationsState } from './useInvitationsState';
 
 interface FetchSharedLinksMeta extends FetchMeta {
@@ -32,6 +31,7 @@ export function useInvitationsListing() {
     const { getPrivateAddressKeys } = useDriveCrypto();
     const { loadFullListingWithAnchor } = useLinksListingHelpers();
     const { setInvitations, getAllInvitations, getInvitation } = useInvitationsState();
+    const { decryptInvitationLinkName } = useInvitations();
     const fetchMeta = useRef<FetchSharedLinksMeta>({
         lastPage: 0,
         lastSorting: DEFAULT_SORTING,
@@ -41,47 +41,25 @@ export function useInvitationsListing() {
         invitations: ListDrivePendingInvitationsPayload['Invitations'],
         privateKeys: PrivateKeyReference[]
     ) => {
-        return Promise.all(
-            invitations.map((invitation) => {
-                const cachedInvitation = getInvitation(invitation.InvitationID);
-                if (cachedInvitation) {
-                    return cachedInvitation;
-                }
-                return debouncedRequest<ShareInvitationDetailsPayload>(queryInvitationDetails(invitation.InvitationID))
+        for (let invitation of invitations) {
+            const cachedInvitation = getInvitation(invitation.InvitationID);
+
+            const invitationDetailsWithName =
+                cachedInvitation ||
+                (await debouncedRequest<ShareInvitationDetailsPayload>(queryInvitationDetails(invitation.InvitationID))
                     .then(shareInvitationDetailsPayloadToShareInvitationDetails)
-                    .then(async (invitation) => {
-                        const passphrase = await decryptUnsigned({
-                            armoredMessage: invitation.share.passphrase,
-                            privateKey: privateKeys,
-                        });
-
-                        const sharePrivateKey = await CryptoProxy.importPrivateKey({
-                            passphrase: passphrase,
-                            armoredKey: invitation.share.shareKey,
-                        });
-
-                        const name = await decryptUnsigned({
-                            armoredMessage: invitation.link.name,
-                            privateKey: sharePrivateKey,
-                        });
-                        setInvitations([
-                            {
-                                ...invitation,
-                                link: {
-                                    ...invitation.link,
-                                    name,
-                                },
-                            },
-                        ]);
-                    })
+                    .then(async (invitationDetails) => ({
+                        ...invitationDetails,
+                        decryptedLinkName: await decryptInvitationLinkName(invitationDetails, privateKeys),
+                    }))
                     .catch((error) => {
                         if (error.data?.Code === 2501) {
                             return undefined;
                         }
-                        throw error;
-                    });
-            })
-        );
+                        return error;
+                    }));
+            setInvitations([invitationDetailsWithName]);
+        }
     };
 
     const fetchInvitationsNextPage = async (
