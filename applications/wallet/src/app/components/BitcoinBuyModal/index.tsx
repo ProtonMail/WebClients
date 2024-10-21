@@ -7,7 +7,6 @@ import type { WasmApiCountry, WasmApiWallet, WasmApiWalletAccount } from '@proto
 import { Loader, type ModalOwnProps } from '@proton/components';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { toWalletAccountSelectorOptions } from '@proton/wallet';
-import { useGatewaysPublicApiKeys } from '@proton/wallet/store';
 
 import { FullscreenModal } from '../../atoms/FullscreenModal';
 import { useBitcoinBlockchainContext } from '../../contexts';
@@ -44,8 +43,6 @@ export const BitcoinBuyModal = ({ wallet, account, modal, onDone }: Props) => {
     const [country, setCountry] = useState<WasmApiCountry>();
     const [quote, setQuote] = useState<QuoteWithProvider>();
 
-    const [apikeys] = useGatewaysPublicApiKeys();
-
     const defaultWalletAccount = first(wallet.WalletAccounts);
     const [selectedWalletAccount, setSelectedWalletAccount] = useState<[WasmApiWallet, WasmApiWalletAccount?]>([
         wallet.Wallet,
@@ -54,7 +51,7 @@ export const BitcoinBuyModal = ({ wallet, account, modal, onDone }: Props) => {
 
     const { bitcoinAddressHelperByWalletAccountId, apiWalletsData } = useBitcoinBlockchainContext();
 
-    if (!apikeys || !isWalletAccountSet(selectedWalletAccount)) {
+    if (!isWalletAccountSet(selectedWalletAccount)) {
         return null;
     }
 
