@@ -120,12 +120,15 @@ const UserInviteOrEditModal = ({
         modalState.onClose();
     };
 
-    const editingCreateAccountCopyFamily = c('familyOffer_2023:Info').t`If the user already has a ${MAIL_APP_NAME} address, enter it here. Otherwise they need to create an account first.`;
-    const domain = '@proton.me';
-    const editingCreateAccountCopyPassFamily = c('familyOffer_2023:Info').t`If the user already has a ${BRAND_NAME} account (${domain} or other, e.g. @gmail.com), enter it here. Otherwise they need to create an account first.`;
+    const editingCreateAccountCopyFamily = c('familyOffer_2023:Info')
+        .t`If the user already has a ${MAIL_APP_NAME} address, enter it here. Otherwise they need to create an account first.`;
+    const editingCreateAccountCopyFamilyWithAccount = c('familyOffer_2023:Info')
+        .t`If the user already has an account with ${BRAND_NAME}, enter it here. Otherwise they need to create an account first.`;
 
-    const editingCreateAccountCopy = hasPassFamily(subscription) ? editingCreateAccountCopyPassFamily : editingCreateAccountCopyFamily;
-
+    const editingCreateAccountCopy =
+        hasPassFamily(subscription) || hasVisionary(subscription)
+            ? editingCreateAccountCopyFamilyWithAccount
+            : editingCreateAccountCopyFamily;
 
     const mailFieldValidator = !isEditing ? [requiredValidator(model.address), emailValidator(model.address)] : [];
     const modalTitle = isEditing
