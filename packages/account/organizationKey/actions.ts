@@ -1024,6 +1024,6 @@ export const changeOrganizationSignature = ({
                 Signature: signature,
             })
         );
-        await extra.eventManager.call();
+        await dispatch(organizationKeyThunk({ cache: CacheType.None }));
     };
 };
