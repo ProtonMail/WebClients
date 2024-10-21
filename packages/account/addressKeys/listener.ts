@@ -58,22 +58,19 @@ const getChanges = (currentValue: AddressKeysState['addressKeys'], nextValue: Ad
 
 export const addressKeysListener = (startListening: SharedStartListening<AddressKeysState>) => {
     startListening({
-        predicate: (action, currentState, nextState) => {
+        predicate: (action, currentState, previousState) => {
             const currentUserKeys = selectUserKeys(currentState).value;
-            const nextUserKeys = selectUserKeys(nextState).value;
             const currentAddresses = selectAddresses(currentState).value || [];
-            const nextAddresses = selectAddresses(nextState).value || [];
-            const currentAddressKeys = selectAddressKeys(currentState);
-            if (
+            const previousUserKeys = selectUserKeys(previousState).value;
+            const previousAddresses = selectAddresses(previousState).value || [];
+            const previousAddressKeys = selectAddressKeys(previousState);
+            return (
                 // Decrypting address keys depend on user keys, so if they change we assume it should get recomputed.
-                (currentUserKeys !== nextUserKeys ||
+                (currentUserKeys !== previousUserKeys ||
                     // Addresses changed and address keys have been computed.
-                    currentAddresses !== nextAddresses) &&
-                Object.keys(currentAddressKeys).length > 0
-            ) {
-                return true;
-            }
-            return false;
+                    currentAddresses !== previousAddresses) &&
+                Object.keys(previousAddressKeys).length > 0
+            );
         },
         effect: async (action, listenerApi) => {
             const currentState = listenerApi.getOriginalState();
@@ -102,9 +99,9 @@ export const addressKeysListener = (startListening: SharedStartListening<Address
     });
 
     startListening({
-        predicate: (action, currentState, nextState) => {
-            const oldValue = selectAddressKeys(currentState);
-            const newValue = selectAddressKeys(nextState);
+        predicate: (action, currentState, previousState) => {
+            const newValue = selectAddressKeys(currentState);
+            const oldValue = selectAddressKeys(previousState);
             const changes = getChanges(oldValue, newValue);
             return changes.length > 0;
         },

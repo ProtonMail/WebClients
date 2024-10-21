@@ -31,15 +31,15 @@ const getOrganizationLogoURL = (data: { logoID: string | null; API_URL: string; 
 
 export const organizationThemeListener = (startListening: SharedStartListening<OrganizationState>) => {
     startListening({
-        predicate: (action, currentState, nextState) => {
+        predicate: (action, currentState, previousState) => {
             const currentOrganization = selectOrganization(currentState).value;
-            const nextOrganization = selectOrganization(nextState).value;
+            const previousOrganization = selectOrganization(previousState).value;
             return (
                 bootstrapEvent.match(action) ||
                 Boolean(
-                    currentOrganization?.PlanName !== nextOrganization?.PlanName ||
-                        currentOrganization?.Settings !== nextOrganization?.Settings ||
-                        currentOrganization?.Name !== nextOrganization?.Name
+                    currentOrganization?.PlanName !== previousOrganization?.PlanName ||
+                        currentOrganization?.Settings !== previousOrganization?.Settings ||
+                        currentOrganization?.Name !== previousOrganization?.Name
                 )
             );
         },
