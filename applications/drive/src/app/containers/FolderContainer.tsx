@@ -2,7 +2,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import type { RouteComponentProps } from 'react-router';
 import { Route } from 'react-router';
 
-import { useAppTitle } from '@proton/components';
+import { Loader, useAppTitle } from '@proton/components';
+import useLoading from '@proton/hooks/useLoading';
 import { LinkURLType } from '@proton/shared/lib/drive/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import noop from '@proton/utils/noop';
@@ -14,9 +15,13 @@ import type { DriveFolder } from '../hooks/drive/useActiveShare';
 import useActiveShare from '../hooks/drive/useActiveShare';
 import { useFolderContainerTitle } from '../hooks/drive/useFolderContainerTitle';
 import useNavigate from '../hooks/drive/useNavigate';
-import { useDefaultShare, useDriveEventManager } from '../store';
+import { useContextShareHandler, useDefaultShare, useDriveEventManager } from '../store';
 import { VolumeType, useVolumesState } from '../store/_volumes';
 import PreviewContainer from './PreviewContainer';
+
+const hasValidLinkType = (type: string) => {
+    return type === LinkURLType.FILE || type === LinkURLType.FOLDER;
+};
 
 export default function FolderContainer({ match }: RouteComponentProps<DriveSectionRouteProps>) {
     const { navigateToRoot, navigateToNoAccess } = useNavigate();
@@ -28,10 +33,6 @@ export default function FolderContainer({ match }: RouteComponentProps<DriveSect
     const driveEventManager = useDriveEventManager();
 
     useFolderContainerTitle({ params: match.params, setAppTitle: useAppTitle });
-
-    const hasValidLinkType = (type: string) => {
-        return type === LinkURLType.FILE || type === LinkURLType.FOLDER;
-    };
 
     const folderPromise = useMemo(async () => {
         const { shareId, type, linkId } = match.params;
@@ -119,3 +120,41 @@ export default function FolderContainer({ match }: RouteComponentProps<DriveSect
         </>
     );
 }
+
+export const FolderConntainerWrapper = ({ match, ...props }: RouteComponentProps<DriveSectionRouteProps>) => {
+    const { isShareAvailable } = useDefaultShare();
+    const [isLoading, withLoading] = useLoading(true);
+    const { navigateToRoot } = useNavigate();
+    const { handleContextShare } = useContextShareHandler();
+
+    useEffect(() => {
+        const abortController = new AbortController();
+        void withLoading(async () => {
+            const { shareId, type, linkId } = match.params;
+            if (!shareId || !linkId || !type || !hasValidLinkType(type)) {
+                return;
+            }
+            await isShareAvailable(abortController.signal, shareId).catch(async (err) => {
+                if (err.data?.Code === API_CUSTOM_ERROR_CODES.NOT_ALLOWED) {
+                    await handleContextShare(abortController.signal, {
+                        shareId,
+                        linkId,
+                        isFile: type === LinkURLType.FILE,
+                    });
+                    return;
+                }
+                console.warn('Provided share is not available, probably locked or soft deleted');
+                navigateToRoot();
+                return;
+            });
+        });
+        return () => {
+            abortController.abort();
+        };
+    }, [match.params.shareId, match.params.type, match.params.linkId]);
+
+    if (isLoading) {
+        return <Loader size="medium" className="absolute inset-center" />;
+    }
+    return <FolderContainer match={match} {...props} />;
+};

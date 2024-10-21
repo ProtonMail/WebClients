@@ -14,6 +14,7 @@ export { default as useShareUrl } from './useShareUrl';
 export { default as useVolume } from './useVolume';
 export { default as useLockedVolume } from './useLockedVolume';
 export { useDriveSharingFlags } from './useDriveSharingFlags';
+export { useContextShareHandler } from './useContextShareHandler';
 
 export function SharesProvider({ children }: { children: React.ReactNode }) {
     return (

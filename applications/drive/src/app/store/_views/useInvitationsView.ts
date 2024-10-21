@@ -21,7 +21,8 @@ export const useInvitationsView = () => {
                     mimeType: item.link.mimeType,
                     rootShareId: item.share.shareId,
                     id: item.share.shareId,
-                    name: item.link.name,
+                    // DecrypptedLinkName will always be defined as it's retrieve in the listing
+                    name: item.decryptedLinkName || '',
                     invitationDetails: item,
                     sharedBy: item.invitation.inviterEmail,
                     isInvitation: true,

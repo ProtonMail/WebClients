@@ -294,10 +294,10 @@ export const AcceptOrRejectInviteCell = ({ item }: { item: SharedWithMeItem }) =
                                     data-testid="share-decline-button"
                                     onClick={(e) => {
                                         e.stopPropagation();
-                                        void rejectInvitation(
+                                        void rejectInvitation(new AbortController().signal, {
                                             showConfirmModal,
-                                            invitationDetails.invitation.invitationId
-                                        );
+                                            invitationId: invitationDetails.invitation.invitationId,
+                                        });
                                     }}
                                 >
                                     <span className="file-browser-list-item--accept-decline-text">{c('Action')

@@ -16,7 +16,7 @@ export const DeclineButton = ({ invitationId, close, showConfirmModal }: Props) 
         <ContextMenuButton
             icon="cross"
             name={c('Action').t`Decline`}
-            action={() => rejectInvitation(showConfirmModal, invitationId)}
+            action={() => rejectInvitation(new AbortController().signal, { showConfirmModal, invitationId })}
             close={close}
             testId="shared-with-me-decline-invitation"
         />
