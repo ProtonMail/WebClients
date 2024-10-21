@@ -163,7 +163,7 @@ const OrganizationLogoModal = ({ onClose, organization, app, ...rest }: Props) =
                     };
 
                     if (image.width !== image.height) {
-                        handleImageUploadError(c('Error').t`Please upload a square file`);
+                        handleImageUploadError(c('Error').t`Please upload a square logo`);
                         return;
                     }
 

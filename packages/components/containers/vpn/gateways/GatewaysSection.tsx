@@ -179,7 +179,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                                 }{' '}
                                 <Href
                                     href="https://protonvpn.com/support/manage-vpn-servers-organization"
-                                    title={c('Info').t`Lean more about gateways`}
+                                    title={c('Info').t`Learn more about Gateways`}
                                 >{c('Link').t`Learn more`}</Href>
                             </div>
                         </div>

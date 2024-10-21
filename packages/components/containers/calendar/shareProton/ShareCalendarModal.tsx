@@ -625,7 +625,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                                         label: (
                                             <span className="flex-1">
                                                 {c('Calendar sharing access option label')
-                                                    .t`Edit (view, create and edit event details)`}
+                                                    .t`Edit (view, create or edit event details)`}
                                             </span>
                                         ),
                                         value: MEMBER_PERMISSIONS.EDIT,

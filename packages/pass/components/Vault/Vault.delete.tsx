@@ -50,7 +50,7 @@ export const VaultDelete: FC<Props> = ({ vault, onClose, onSubmit }) => {
             size="medium"
             onClose={onClose}
             onSubmit={form.submitForm}
-            title={c('Title').t`Delete vault "${vaultName}" ?`}
+            title={c('Title').t`Delete vault "${vaultName}"?`}
             disabled={!form.isValid}
             submitText={c('Action').t`Delete`}
             alertText={c('Warning')

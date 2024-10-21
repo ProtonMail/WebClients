@@ -169,7 +169,7 @@ export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwi
                             if (code === IMPORT_ERROR.TOO_LARGE) {
                                 return {
                                     importType: product,
-                                    error: c('Error').t`You have reached the contacts limit for your account`,
+                                    error: c('Error').t`You have reached the number of contacts limit for your account`,
                                 };
                             } else if (code === IMPORT_ERROR.ACCOUNT_DOES_NOT_EXIST) {
                                 return {

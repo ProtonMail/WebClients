@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { Checkbox, Info } from '@proton/components';
 import Field from '@proton/components/components/container/Field';
 import Row from '@proton/components/components/container/Row';
 import Icon from '@proton/components/components/icon/Icon';
@@ -11,7 +12,6 @@ import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { useNow } from '@proton/components/hooks/useNow';
-import { Checkbox, Info } from '@proton/components';
 import { MAX_IPS_ADDON, SECOND } from '@proton/shared/lib/constants';
 
 import { type CountryOptions, getLocalizedCountryByAbbr } from '../../../helpers/countries';
@@ -202,7 +202,7 @@ export const GatewayCountrySelection = ({
                                 <>
                                     <b>{c('Info').t`Recently used servers:`}</b>{' '}
                                     {c('Info')
-                                        .t`When you remove a server from a Gateway, it enters a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.`}
+                                        .t`When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.`}
                                 </>
                             }
                         />

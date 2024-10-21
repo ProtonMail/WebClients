@@ -57,7 +57,7 @@ export const useBookmarksActions = () => {
                 if (!hideNotifications) {
                     createNotification({
                         type: 'success',
-                        text: c('Notification').t`The item was succefully added to your drive`,
+                        text: c('Notification').t`The item was successfully added to your drive`,
                     });
                 }
             } catch (e) {

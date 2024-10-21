@@ -153,7 +153,7 @@ export const getAdvancedVPNCustomizations = (included: boolean, highlight?: bool
     return {
         text: c('vpn_2step: feature').t`Advanced VPN customizations`,
         tooltip: c('vpn_2step: tooltip')
-            .t`Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.`,
+            .t`Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.`,
         included,
         highlight,
         icon: 'arrows-switch',
@@ -193,8 +193,8 @@ export const getSecureCore = (included: boolean, highlight?: boolean): PlanCardF
 };
 export const getTor = (included: boolean, highlight?: boolean): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').t`Tor over VPN`,
-        tooltip: c('new_plans: tooltip').t`Route your internet traffic through the Tor network with a single click`,
+        text: c('new_plans: feature').t`TOR over VPN`,
+        tooltip: c('new_plans: tooltip').t`Route your internet traffic through the TOR network with a single click`,
         included,
         highlight,
         icon: 'brand-tor',
@@ -359,7 +359,7 @@ export const getDedicatedServersVPNFeature = (serversCount?: VPNServersCountData
         included: true,
         text,
         tooltip: c('new_plans: tooltip')
-            .t`Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control`,
+            .t`Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control`,
     };
 };
 

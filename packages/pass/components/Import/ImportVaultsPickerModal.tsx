@@ -85,7 +85,7 @@ export const ImportVaultsPickerModal: FC<ImportVaultsPickerProps> = ({ payload, 
                         <Card rounded className="mb-4 text-sm">
                             {
                                 // translator: this is generic instruction message in import modal suggesting that user may select one or more vaults
-                                c('Info').t`Select where you want your imported vault(s) to be saved.`
+                                c('Info').t`Select where you want your imported vaults to be saved.`
                             }
 
                             {vaultsRemaining <= 0 && (
@@ -98,7 +98,7 @@ export const ImportVaultsPickerModal: FC<ImportVaultsPickerProps> = ({ payload, 
                                             <UpgradeButton inline className="ml-1" upsellRef={UpsellRef.LIMIT_IMPORT} />
                                         </>
                                     ) : (
-                                        c('Warning').t`You cannot create more vaults than your subscription allows.`
+                                        c('Warning').t`Your subscription does not allow you to create more vaults.`
                                     )}
                                 </>
                             )}
