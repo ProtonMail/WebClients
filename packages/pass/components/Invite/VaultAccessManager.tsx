@@ -202,7 +202,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                         {b2b ? (
                             <>
                                 {c('Error').t`Cannot send invitations at the moment`}{' '}
-                                {c('Warning').t`Please contact us for investigating the issue`}
+                                {c('Warning').t`Please contact us to investigate the issue`}
                             </>
                         ) : (
                             // translator: full message is "Vaults can’t contain more than 10 users.""

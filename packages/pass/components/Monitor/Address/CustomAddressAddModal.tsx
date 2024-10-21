@@ -78,7 +78,7 @@ export const CustomAddressAddModal: FC<Props> = ({ onClose }) => {
                     }
                 >
                     <h2 className="text-xl text-bold mb-3">{c('Title').t`Custom email monitoring`}</h2>
-                    <p>{c('Info').t`Add your custom email address to monitor :`}</p>
+                    <p>{c('Info').t`Add your custom email address to monitor:`}</p>
                     <FormikProvider value={form}>
                         <Form id={FORM_ID} className="mb-4">
                             <FieldsetCluster>

@@ -39,7 +39,7 @@ const getFeatures = (): UpsellFeature[] => [
         key: 'logins',
         className: 'ui-red',
         icon: 'users-plus',
-        label: c('Info').t`Share your logins, secure notes, with up to 10 people`,
+        label: c('Info').t`Share your logins and secure notes, with up to 10 people`,
     },
     {
         key: 'sentinel',

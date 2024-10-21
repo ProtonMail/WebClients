@@ -178,9 +178,9 @@ const ForgotUsernameContainer = ({ toApp, metaTags, onBack, loginUrl }: Props) =
                                 const text =
                                     data.method === 'email'
                                         ? c('Success')
-                                              .t`If you entered a valid recovery email we will send you an email with your usernames in the next minute.`
+                                              .t`You will receive your username via email within a minute if you entered a valid recovery email address.`
                                         : c('Success')
-                                              .t`If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.`;
+                                              .t`You will receive your username via SMS within a minute if you entered a valid recovery phone number.`;
                                 createNotification({ text });
                                 history.push(loginUrl);
                             }

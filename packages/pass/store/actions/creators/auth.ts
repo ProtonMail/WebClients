@@ -159,8 +159,8 @@ export const extraPasswordToggle = requestActionsFactory<ExtraPasswordDTO, boole
                 withNotification({
                     type: 'success',
                     text: enabled
-                        ? c('Info').t`Extra password successfuly created`
-                        : c('Info').t`Extra password successfuly removed`,
+                        ? c('Info').t`Extra password successfully created`
+                        : c('Info').t`Extra password successfully removed`,
                 })
             )({ payload: enabled }),
     },

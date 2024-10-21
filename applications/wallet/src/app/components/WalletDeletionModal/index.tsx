@@ -62,7 +62,7 @@ export const WalletDeletionModal = ({ wallet, ...modalProps }: Props) => {
                         target="_blank"
                         color="info"
                     >
-                        {c('Title').t`Go to settings and recover keys`}
+                        {c('Title').t`Go to settings and recovery keys`}
                         <Icon alt={c('Action').t`Go to settings`} name="arrow-out-square" className="ml-2" />
                     </ButtonLike>
                 ) : (

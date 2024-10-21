@@ -106,7 +106,7 @@ const UserNeedsToReactivate = ({ onRestorePrivilegesClick }: { onRestorePrivileg
                         .t`Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:`}
                 </div>
                 <ul className="mb-0">
-                    <li>{c('Restore administrator panel').t`Creating or accessing non-private users`}</li>
+                    <li>{c('Restore administrator panel').t`Creating or accessing non-private user accounts`}</li>
                     <li>{c('Restore administrator panel').t`Changing organization password`}</li>
                     <li>{c('Restore administrator panel').t`Changing organization keys`}</li>
                 </ul>

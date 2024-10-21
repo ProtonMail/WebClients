@@ -43,7 +43,7 @@ export const InAppText = ({ subscription }: { subscription: Subscription | undef
             .t`Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.`;
 
         secondLine = c('Subscription change warning')
-            .jt`Just sign in to your Apple App Store account, then press ${subscriptions}.`;
+            .jt`Just sign in to your Apple App Store account, then select ${subscriptions}.`;
     }
 
     return (

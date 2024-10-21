@@ -430,7 +430,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
                         {isPartOfFamily && (
                             <Row>
                                 <ButtonLike as={SettingsLink} path="/users-addresses">
-                                    {c('familyOffer_2023:Action').t`Invite member to your family`}
+                                    {c('familyOffer_2023:Action').t`Invite a user`}
                                 </ButtonLike>
                             </Row>
                         )}

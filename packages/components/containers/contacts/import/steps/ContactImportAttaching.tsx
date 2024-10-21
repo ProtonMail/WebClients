@@ -168,7 +168,7 @@ const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
                         <p className="mb-2">{c('Description')
                             .jt`To import your contacts from Google or Outlook, ${easySwitchLink}.`}</p>
                         <p className="mt-0">{c('Description')
-                            .jt`For import via CSV and VCF file, ensure the file does not exceed ${MAX_IMPORT_FILE_SIZE_STRING} or ${MAX_IMPORT_CONTACTS_STRING} contacts. If your file is bigger, please split it into smaller files. ${learnMoreLink}.`}</p>
+                            .jt`To import via a CSV and VCF file, ensure the file does not exceed ${MAX_IMPORT_FILE_SIZE_STRING} or ${MAX_IMPORT_CONTACTS_STRING} contacts. If your file is bigger, please split it into smaller files. ${learnMoreLink}.`}</p>
                     </>
                 )}
                 <Dropzone onDrop={onAddFiles} size="small" shape="flashy">

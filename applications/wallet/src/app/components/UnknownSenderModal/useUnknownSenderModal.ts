@@ -137,7 +137,7 @@ export const useUnknownSenderModal = ({ hashedTxId, onClose }: { hashedTxId: str
             }
 
             onClose?.();
-            createNotification({ text: c('Unknown sender').t`Transaction sender has been updated succesfully` });
+            createNotification({ text: c('Unknown sender').t`Transaction sender has been updated successfully` });
         } catch (error: any) {
             createNotification({
                 text: error?.error ?? c('Unknown sender').t`Transaction sender could not be updated`,

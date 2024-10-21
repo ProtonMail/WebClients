@@ -39,7 +39,7 @@ const StepInstructionsGoogle = ({ triggerOAuth }: Props) => {
         .t`For the import to work, you must select all requested items as shown in the GIF.`;
 
     const instructionsVideoAlt = c('Oauth instructions video alternative')
-        .t`Select what ${BRAND_NAME} can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.`;
+        .t`Select what ${BRAND_NAME} can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.`;
 
     return (
         <ModalTwo open onClose={handleQuit}>
