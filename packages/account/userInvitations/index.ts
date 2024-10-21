@@ -6,12 +6,14 @@ import { CacheType, createAsyncModelThunk, handleAsyncModel, previousSelector } 
 import { getInvitations } from '@proton/shared/lib/api/user';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { PendingInvitation } from '@proton/shared/lib/interfaces';
-import { Api, PendingInvitation as PendingUserInvitation } from '@proton/shared/lib/interfaces';
+import type { Api, PendingInvitation as PendingUserInvitation } from '@proton/shared/lib/interfaces';
+import noop from '@proton/utils/noop';
 
 import { serverEvent } from '../eventLoop';
 import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
-import { OrganizationState, selectOrganization } from '../organization';
+import type { OrganizationState } from '../organization';
+import { selectOrganization } from '../organization';
 
 const fetchPendingUserInvitations = (api: Api) =>
     api<{ UserInvitations: PendingUserInvitation[] }>(getInvitations()).then(({ UserInvitations }) => {
@@ -60,17 +62,17 @@ export const userInvitationsThunk = modelThunk.thunk;
 
 export const userInvitationsListener = (startListening: SharedStartListening<UserInvitationsState>) => {
     startListening({
-        predicate: (action, currentState, nextState) => {
+        predicate: (action, currentState, previousState) => {
             // Force refresh the invitations when the organization changes since this could cause errors in the invitations
+            const previousOrganization = selectOrganization(previousState).value;
             const currentOrganization = selectOrganization(currentState).value;
-            const nextOrganization = selectOrganization(nextState).value;
-            if ((['PlanName'] as const).some((key) => currentOrganization?.[key] !== nextOrganization?.[key])) {
+            if ((['PlanName'] as const).some((key) => currentOrganization?.[key] !== previousOrganization?.[key])) {
                 return true;
             }
             return false;
         },
-        effect: async (action, listenerApi) => {
-            await listenerApi.dispatch(userInvitationsThunk({ cache: CacheType.None }));
+        effect: (action, listenerApi) => {
+            listenerApi.dispatch(userInvitationsThunk({ cache: CacheType.None })).catch(noop);
         },
     });
 };
