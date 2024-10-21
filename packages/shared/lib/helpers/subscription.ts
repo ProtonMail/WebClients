@@ -14,7 +14,7 @@ import {
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getSupportedAddons, isIpAddon, isMemberAddon, isScribeAddon } from '@proton/shared/lib/helpers/addons';
 
-import type { FreeSubscription } from '../constants';
+import type { APP_NAMES, FreeSubscription } from '../constants';
 import { APPS, COUPON_CODES, CYCLE, isFreeSubscription } from '../constants';
 import type {
     Currency,
@@ -364,6 +364,18 @@ export const getIsB2BAudienceFromSubscription = (subscription: Subscription | un
 
 export const getHasVpnB2BPlan = (subscription: MaybeFreeSubscription) => {
     return hasVpnPro(subscription) || hasVpnBusiness(subscription);
+};
+
+export const appSupportsSSO = (appName?: APP_NAMES) => {
+    return appName && [APPS.PROTONVPN_SETTINGS, APPS.PROTONPASS].some((ssoPlanName) => ssoPlanName === appName);
+};
+
+export const planSupportsSSO = (planName?: PLANS) => {
+    return planName && [PLANS.VPN_BUSINESS, PLANS.PASS_BUSINESS].some((ssoPlanName) => ssoPlanName === planName);
+};
+
+export const upsellPlanSSO = (planName?: PLANS) => {
+    return planName && [PLANS.VPN_PRO, PLANS.PASS_PRO].some((ssoPlanName) => ssoPlanName === planName);
 };
 
 export const getHasSomeVpnPlan = (subscription: MaybeFreeSubscription) => {

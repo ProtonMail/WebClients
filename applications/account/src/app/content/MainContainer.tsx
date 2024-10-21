@@ -4,6 +4,8 @@ import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import AuthDevicesTopBanner from '@proton/account/sso/AuthDevicesTopBanner';
+import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesTopBanner';
 import { useUser } from '@proton/account/user/hooks';
 import {
     AppLink,
@@ -247,6 +249,8 @@ const MainContainer = () => {
         <TopBanners app={app}>
             <UnprivatizationRequestTopBanner />
             <SSODomainUnverifiedBanner />
+            <AuthDevicesTopBanner />
+            <MembersAuthDevicesTopBanner />
         </TopBanners>
     );
 

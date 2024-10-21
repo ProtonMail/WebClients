@@ -17,6 +17,9 @@ import TestSamlModal from '@proton/components/containers/organization/sso/TestSa
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { PLANS } from '@proton/payments';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
+import { planSupportsSSO } from '@proton/shared/lib/helpers/subscription';
 import type { Domain, SSO } from '@proton/shared/lib/interfaces';
 import securityUpsellSvg from '@proton/styles/assets/img/illustrations/security-upsell.svg';
 
@@ -139,7 +142,7 @@ const RemoveSSOSettingsSection = ({ domain, ssoConfigs }: { domain: Domain; ssoC
     );
 };
 
-const SsoPage = () => {
+const SsoPage = ({ app }: { app: APP_NAMES }) => {
     const [customDomains] = useCustomDomains();
     const [samlSSO] = useSamlSSO();
     const [organization] = useOrganization();
@@ -156,7 +159,15 @@ const SsoPage = () => {
 
     const ssoDomains = customDomains.filter((domain) => domain.Flags['sso-intent']);
 
-    if (organization.PlanName !== PLANS.VPN_BUSINESS) {
+    if (!planSupportsSSO(organization.PlanName)) {
+        const upsellPlan = (() => {
+            if (app === APPS.PROTONVPN_SETTINGS) {
+                return PLANS.VPN_BUSINESS;
+            }
+            if (app === APPS.PROTONPASS) {
+                return PLANS.PASS_BUSINESS;
+            }
+        })();
         return (
             <SettingsSectionWide>
                 <PromotionBanner
@@ -178,7 +189,7 @@ const SsoPage = () => {
                         </div>
                     }
                     cta={
-                        user.canPay && (
+                        user.canPay && upsellPlan ? (
                             <Button
                                 color="norm"
                                 fullWidth
@@ -188,14 +199,14 @@ const SsoPage = () => {
                                             source: 'upsells',
                                         },
                                         step: SUBSCRIPTION_STEPS.CHECKOUT,
-                                        plan: PLANS.VPN_BUSINESS,
+                                        plan: upsellPlan,
                                     });
                                 }}
                                 title={c('Title').t`Setup dedicated servers by upgrading to Business`}
                             >
                                 {c('Action').t`Upgrade to Business`}
                             </Button>
-                        )
+                        ) : undefined
                     }
                 />
             </SettingsSectionWide>

@@ -22,7 +22,8 @@ import {
     useNotifications,
 } from '@proton/components';
 import { AuthType, ExternalSSOFlow } from '@proton/components/containers/login/interface';
-import { handleExternalSSOLogin, handleLogin } from '@proton/components/containers/login/loginActions';
+import { handleLogin } from '@proton/components/containers/login/loginActions';
+import { handleExternalSSOLogin } from '@proton/components/containers/login/ssoExternalLogin';
 import { useLoading } from '@proton/hooks';
 import { auth, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';

@@ -12,15 +12,26 @@ interface Props {
     onSubmit: (keyPassword: string) => Promise<void>;
 }
 
+const getPasswordData = () => {
+    return {
+        formName: 'unlockForm',
+        passwordId: 'mailboxPassword',
+        passwordLabel: c('Label').t`Second password`,
+        cta: c('Action').t`Unlock`,
+    };
+};
+
 const UnlockForm = ({ onSubmit }: Props) => {
     const [loading, withLoading] = useLoading();
     const [keyPassword, setKeyPassword] = useState('');
 
     const { validator, onFormSubmit } = useFormErrors();
 
+    const data = getPasswordData();
+
     return (
         <form
-            name="unlockForm"
+            name={data.formName}
             onSubmit={(event) => {
                 event.preventDefault();
                 if (loading || !onFormSubmit()) {
@@ -32,9 +43,9 @@ const UnlockForm = ({ onSubmit }: Props) => {
         >
             <InputFieldTwo
                 as={PasswordInputTwo}
-                id="mailboxPassword"
+                id={data.passwordId}
                 bigger
-                label={c('Label').t`Second password`}
+                label={data.passwordLabel}
                 error={validator([requiredValidator(keyPassword)])}
                 disableChange={loading}
                 autoFocus
@@ -42,7 +53,7 @@ const UnlockForm = ({ onSubmit }: Props) => {
                 onValue={setKeyPassword}
             />
             <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt-6">
-                {c('Action').t`Unlock`}
+                {data.cta}
             </Button>
         </form>
     );

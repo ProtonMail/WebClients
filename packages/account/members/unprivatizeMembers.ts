@@ -193,16 +193,16 @@ export const unprivatizeApprovalMembers = ({
     membersToUnprivatize,
 }: {
     membersToUnprivatize: MemberReadyForUnprivatizationApproval[];
-}): ThunkAction<Promise<void>, MembersState & OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
+}): ThunkAction<Promise<Member[]>, MembersState & OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, getState) => {
         if (!membersToUnprivatize.length) {
-            return;
+            return [];
         }
 
         {
             const oldState = selectUnprivatizationState(getState());
             if (oldState.loading.approval) {
-                return;
+                return [];
             }
             const newState = createNextState(oldState, (state) => {
                 state.loading.approval = true;
@@ -240,6 +240,8 @@ export const unprivatizeApprovalMembers = ({
         membersToUpdate.forEach((member) => {
             dispatch(upsertMember({ member }));
         });
+
+        return membersToUpdate;
     };
 };
 

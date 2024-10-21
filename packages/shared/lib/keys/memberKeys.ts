@@ -1,6 +1,10 @@
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
+import { getDecryptedAddressKeys } from '@proton/shared/lib/keys/getDecryptedAddressKeys';
+import { getDecryptedUserKeys } from '@proton/shared/lib/keys/getDecryptedUserKeys';
+import { getPrimaryKey } from '@proton/shared/lib/keys/getPrimaryKey';
 import { getDefaultKeyFlags } from '@proton/shared/lib/keys/keyFlags';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { createMemberKeyRoute, setupMemberKeyRoute } from '../api/memberKeys';
 import { MEMBER_PRIVATE } from '../constants';
@@ -9,6 +13,7 @@ import type {
     CachedOrganizationKey,
     DecryptedKey,
     KeyGenConfig,
+    KeyPair,
     KeyTransparencyVerify,
     UserModel,
     Address as tsAddress,
@@ -316,4 +321,42 @@ export const createMemberAddressKeysV2 = async ({
     newActiveKey.ID = MemberKey.ID;
 
     return updatedActiveKeys;
+};
+
+export const getMemberKeys = async ({
+    member,
+    memberAddresses,
+    organizationKey,
+}: {
+    member: tsMember;
+    memberAddresses: tsAddress[];
+    organizationKey: KeyPair;
+}) => {
+    const memberUserKeys = await getDecryptedUserKeys(member.Keys, '', organizationKey);
+    const memberUserKeyPrimary = getPrimaryKey(memberUserKeys)?.privateKey;
+    if (!memberUserKeyPrimary) {
+        throw new Error('Not able to decrypt the primary member user key');
+    }
+
+    const memberAddressesKeys = (
+        await Promise.all(
+            memberAddresses.map(async (address) => {
+                const result = {
+                    address,
+                    keys: await getDecryptedAddressKeys(address.Keys, memberUserKeys, '', organizationKey),
+                };
+                // Some non-private members don't have keys generated
+                if (!result.keys.length) {
+                    return;
+                }
+                return result;
+            })
+        )
+    ).filter(isTruthy);
+
+    return {
+        memberUserKeyPrimary,
+        memberUserKeys,
+        memberAddressesKeys,
+    };
 };

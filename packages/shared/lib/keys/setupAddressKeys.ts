@@ -1,4 +1,5 @@
 import type { ProductParam } from '@proton/shared/lib/apps/product';
+import type { DeviceSecretData } from '@proton/shared/lib/keys/device';
 
 import { setupAddress as setupAddressRoute } from '../api/addresses';
 import type { Api, PreAuthKTVerify, Address as tsAddress } from '../interfaces';
@@ -32,6 +33,7 @@ interface SetupAddressKeysArgs {
     domains: string[];
     preAuthKTVerify: PreAuthKTVerify;
     productParam: ProductParam;
+    deviceSecretData?: DeviceSecretData;
 }
 
 export const handleSetupAddressKeys = async ({
