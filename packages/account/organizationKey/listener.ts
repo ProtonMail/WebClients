@@ -1,5 +1,3 @@
-import type { Action } from '@reduxjs/toolkit';
-
 import { CryptoProxy } from '@proton/crypto';
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities';
@@ -22,7 +20,7 @@ import { type OrganizationKeyState, organizationKeyThunk, selectOrganizationKey 
 
 export const organizationKeysListener = (startListening: SharedStartListening<OrganizationKeyState>) => {
     startListening({
-        predicate: (action: Action, currentState: OrganizationKeyState) => {
+        predicate: (action, currentState) => {
             // Warning: There is no event update coming for organization key changes, however, an update for the organization
             // is received as the keys are changed. So each time it changes, it will redo this.
             return !!(
@@ -37,9 +35,9 @@ export const organizationKeysListener = (startListening: SharedStartListening<Or
     });
 
     startListening({
-        predicate: (action, currentState, nextState) => {
-            const oldValue = selectOrganizationKey(currentState).value;
-            return !!(oldValue && oldValue !== selectOrganizationKey(nextState).value);
+        predicate: (action, currentState, previousState) => {
+            const oldValue = selectOrganizationKey(previousState).value;
+            return !!(oldValue && oldValue !== selectOrganizationKey(currentState).value);
         },
         effect: async (action, listenerApi) => {
             const oldValue = selectOrganizationKey(listenerApi.getOriginalState())?.value;
@@ -52,11 +50,11 @@ export const organizationKeysListener = (startListening: SharedStartListening<Or
 
 export const organizationKeysManagementListener = (startListening: SharedStartListening<OrganizationKeyState>) => {
     startListening({
-        predicate: (action, currentState, nextState) => {
+        predicate: (action, currentState) => {
             return Boolean(
-                selectOrganizationKey(nextState).value &&
-                    selectMembers(nextState).value?.length &&
-                    selectOrganization(nextState).value
+                selectOrganizationKey(currentState).value &&
+                    selectMembers(currentState).value?.length &&
+                    selectOrganization(currentState).value
             );
         },
         effect: async (action, listenerApi) => {
@@ -81,38 +79,45 @@ export const organizationKeysManagementListener = (startListening: SharedStartLi
     });
 
     startListening({
-        predicate: (action, currentState, nextState) => {
-            const orgKey = selectOrganizationKey(nextState).value;
-            const eligibleAddresses = (selectAddresses(nextState).value || []).filter(
+        predicate: (action, currentState) => {
+            const organizationKey = selectOrganizationKey(currentState).value;
+            const eligibleAddresses = (selectAddresses(currentState).value || []).filter(
                 getIsEligibleOrganizationIdentityAddress
             );
-            return Boolean(orgKey?.privateKey && !orgKey.Key.FingerprintSignature && eligibleAddresses.length >= 1);
+            return Boolean(
+                organizationKey?.privateKey &&
+                    !organizationKey.Key.FingerprintSignature &&
+                    eligibleAddresses.length >= 1
+            );
         },
         effect: async (action, listenerApi) => {
-            const state = listenerApi.getState();
-            const organizationKey = selectOrganizationKey(state).value;
-            if (!organizationKey?.privateKey) {
-                return;
-            }
-
             listenerApi.unsubscribe();
 
-            const addresses = await listenerApi.dispatch(addressesThunk());
+            const [organizationKey, addresses] = await Promise.all([
+                listenerApi.dispatch(organizationKeyThunk()),
+                listenerApi.dispatch(addressesThunk()),
+            ]);
+
             const eligibleAddresses = addresses.filter(getIsEligibleOrganizationIdentityAddress);
             const primaryEligibleAddress = eligibleAddresses[0];
-            if (!primaryEligibleAddress) {
-                return;
-            }
 
-            try {
-                await listenerApi.dispatch(changeOrganizationSignature({ address: primaryEligibleAddress }));
-            } catch (e) {
-                const error = getSentryError(e);
-                if (error) {
-                    captureMessage('Organization identity: Error generating signature', {
-                        level: 'error',
-                        extra: { error },
-                    });
+            if (
+                Boolean(
+                    organizationKey?.privateKey &&
+                        !organizationKey.Key.FingerprintSignature &&
+                        eligibleAddresses.length >= 1
+                )
+            ) {
+                try {
+                    await listenerApi.dispatch(changeOrganizationSignature({ address: primaryEligibleAddress }));
+                } catch (e) {
+                    const error = getSentryError(e);
+                    if (error) {
+                        captureMessage('Organization identity: Error generating signature', {
+                            level: 'error',
+                            extra: { error },
+                        });
+                    }
                 }
             }
         },
