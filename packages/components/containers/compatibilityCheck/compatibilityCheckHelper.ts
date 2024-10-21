@@ -1,3 +1,5 @@
+export type CompatibilityItem = { name: string; valid: boolean; text: string };
+
 const isGoodPrngAvailable = () => {
     if (window.crypto && !!window.crypto.getRandomValues) {
         return true;
@@ -55,7 +57,7 @@ const isBigIntSupported = () => {
 };
 
 // Locale is not loaded here so no translations
-export const getCompatibilityList = () => {
+export const getCompatibilityList = (compatibilities: CompatibilityItem[] = []): CompatibilityItem[] => {
     const isSSR = typeof window === 'undefined';
     return [
         {
@@ -88,5 +90,6 @@ export const getCompatibilityList = () => {
             valid: hasReplaceAll(),
             text: '',
         },
+        ...compatibilities,
     ];
 };
