@@ -30,7 +30,7 @@
         "node-gyp": "^10.2.0",
         "rfc2047@^2.0.1": "patch:rfc2047@npm%3A2.0.1#./.yarn/patches/rfc2047-npm-2.0.1-60a2a07c99.patch",
         "safe-buffer": "^5.2.1",
-        "terser": "^5.34.1"
+        "terser": "^5.36.0"
     },
     "dependencies": {
         "@proton/eslint-config-proton": "workspace:^",
@@ -48,9 +48,9 @@
         "nyc": "^17.1.0",
         "prettier": "^3.3.3",
         "sort-package-json": "^2.10.1",
-        "turbo": "^2.1.3"
+        "turbo": "^2.2.2"
     },
-    "packageManager": "yarn@4.5.0",
+    "packageManager": "yarn@4.5.1",
     "engines": {
         "node": ">= 20.18.0"
     }
