@@ -172,7 +172,7 @@ const SsoPage = () => {
                                     .t`Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.`}{' '}
                                 <Href
                                     href="https://protonvpn.com/support/sso"
-                                    title={c('Info').t`Lean more about single sign-on`}
+                                    title={c('Info').t`Learn more about single sign-on`}
                                 >{c('Link').t`Learn more`}</Href>
                             </div>
                         </div>

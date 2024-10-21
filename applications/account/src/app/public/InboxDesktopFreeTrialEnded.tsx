@@ -81,7 +81,7 @@ const InboxDesktopFreeTrialEnded = () => {
                         <h1 className="text-bold mb-2 text-2xl">{c('Free trial desktop')
                             .t`Your desktop app free trial has ended`}</h1>
                         <p className="m-0">{c('Free trial desktop')
-                            .t`Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features. `}</p>
+                            .t`Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features.`}</p>
                     </div>
                     <div>
                         <Button

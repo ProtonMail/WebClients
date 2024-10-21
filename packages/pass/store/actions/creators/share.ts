@@ -81,7 +81,7 @@ export const shareEditMemberAccessSuccess = createAction(
             withCache,
             withNotification({
                 type: 'info',
-                text: c('Info').t`User's access sucessfuly updated`,
+                text: c('Info').t`User's access successfully updated`,
             })
         )({ payload: { shareId, userShareId, shareRoleId } })
     )

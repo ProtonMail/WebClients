@@ -87,7 +87,7 @@ function* createInviteWorker(
             onNotification?.({
                 type: 'error',
                 // Translator: list of failed invited emails is appended
-                text: c('Warning').t`Could not send invitations to the following addresses :` + ` ${failed.join(', ')}`,
+                text: c('Warning').t`Could not send invitations to the following addresses:` + ` ${failed.join(', ')}`,
             });
         }
 
@@ -100,7 +100,7 @@ function* createInviteWorker(
             const { code } = getApiError(apiError);
 
             if (code === PassErrorCode.RESOURCE_LIMIT_EXCEEDED) {
-                apiError.data.Error = c('Warning').t`Please contact us for investigating the issue`;
+                apiError.data.Error = c('Warning').t`Please contact us to investigate the issue`;
             }
         }
 

@@ -36,7 +36,7 @@ const getResult = (result: Unwrap<ReturnType<typeof validateOrganizationSignatur
         } as const;
     }
     return {
-        label: c('passwordless').t`We couldn't verify authenticity of this identity.`,
+        label: c('passwordless').t`We couldn't verify the authenticity of this identity.`,
         state: 'invalid',
         icon: 'info-circle-filled',
         className: 'color-danger',

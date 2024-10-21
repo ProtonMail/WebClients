@@ -12,8 +12,8 @@ export const validateUrl = <V extends UrlGroupValues>({ url, urls }: V) => {
         const { valid: validURL, url: safeUrl } = sanitizeURL(url);
         const urlExists = urls.map(({ url }) => url).includes(safeUrl);
 
-        if (!validURL) return { url: c('Validation').t`Url is invalid` };
-        if (urlExists) return { url: c('Validation').t`Url already exists` };
+        if (!validURL) return { url: c('Validation').t`URL is invalid` };
+        if (urlExists) return { url: c('Validation').t`URL already exists` };
     }
 
     return {};

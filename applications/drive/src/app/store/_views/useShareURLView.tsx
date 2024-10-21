@@ -264,7 +264,7 @@ export default function useShareURLView(shareId: string, linkId: string) {
                 .catch(() => {
                     createNotification({
                         type: 'error',
-                        text: c('Notification').t`Stopping to share this item has failed`,
+                        text: c('Notification').t`Stopping the sharing of this item has failed`,
                     });
                 });
             await updateLinkState(abortController.signal);

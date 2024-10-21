@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useEncryptedSearchLibrary } from '../../EncryptedSearchLibraryProvider';
 import CalendarSearchProgress from './CalendarSearchProgress';
@@ -31,11 +32,11 @@ const CalendarSearchActivation = ({ onClose }: Props) => {
         <div className="px-6 py-4">
             <div aria-live="assertive" aria-atomic="true">
                 <h1 className="text-bold text-xl flex justify-space-between items-center flex-nowrap mb-4">
-                    {c('Title').t`We're setting up Calendar search`}
+                    {c('Title').t`We're setting up calendar search`}
                 </h1>
                 <div className="mb-4">
                     {c('Description')
-                        .t`This can take a few minutes. Meanwhile, you can continue using Calendar as usual.`}
+                        .t`This can take a few minutes. Meanwhile, you can continue using ${CALENDAR_APP_NAME} as usual.`}
                 </div>
             </div>
 

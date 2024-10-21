@@ -33,7 +33,7 @@ const ThemesSection = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="themeSyncToggle" className="text-semibold">
-                        <span className="mr-2">{c('Label').t`Synchronize with system`}</span>
+                        <span className="mr-2">{c('Label').t`Sync with system`}</span>
                         <Info
                             title={c('Tooltip')
                                 .t`Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes`}

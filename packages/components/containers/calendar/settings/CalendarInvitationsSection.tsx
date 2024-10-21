@@ -49,7 +49,7 @@ const CalendarInvitationsSection = ({ calendarUserSettings: { InviteLocale, Auto
                         }{' '}
                         <Info
                             buttonClass="ml-2 inline-flex"
-                            title={c('Info').t`Event invitations and RSVPs will be sent in this language.`}
+                            title={c('Info').t`Event invitations and responses will be sent in this language.`}
                         />
                     </label>
                 </SettingsLayoutLeft>

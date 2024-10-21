@@ -83,7 +83,7 @@ const ReferralSignatureToggle = () => {
                      * the word "protonmail" is the "link" we are talking about.
                      */
                     c('Tooltip')
-                        .jt`Sets the following footer in the emails you send: ${signature} The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.`
+                        .jt`Sets the following footer in the emails you send: ${signature} The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.`
                 }
             />
         </div>

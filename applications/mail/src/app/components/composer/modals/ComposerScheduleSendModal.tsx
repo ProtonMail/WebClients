@@ -82,8 +82,8 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
             onCancel={handleCancel}
         >
             <div className="mb-4 flex">
-                <span data-testid="composer:schedule-send:custom-modal:title">{c('Info')
-                    .t`When do you want your message to be sent?`}</span>
+                <span data-testid="composer:schedule-send:custom-modal:title">{c('Description')
+                    .t`When do you want your message to be sent?`}</span>{' '}
                 <Href className="underline inline-block" href={getKnowledgeBaseUrl('/schedule-email-send')}>{c('Link')
                     .t`Learn more`}</Href>
             </div>

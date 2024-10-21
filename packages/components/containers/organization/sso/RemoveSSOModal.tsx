@@ -61,7 +61,7 @@ const RemoveSSOModal = ({ sso, onClose, ...rest }: Props) => {
                         {
                             // translator: full sentence 'SSO users (provided by your Identity Provider) will be deleted and you will have to create them manually to add them back to your organization.'
                             c('Info')
-                                .jt`${boldSSOUserInformation} and you will have to create them manually to add them back to your organization`
+                                .jt`${boldSSOUserInformation} and you will have to create them manually to add them back to your organization.`
                         }
                     </li>
                     <li>

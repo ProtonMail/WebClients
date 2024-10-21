@@ -34,7 +34,7 @@ const PendingInvitationModalErrors = ({ errors, invite, onClose }: Props) => {
 
     const addressSettingsLink = (
         <SettingsLink app={APPS.PROTONMAIL} path="/identity-addresses" onClick={onClose} target="_self">
-            {c('familyOffer_2023:Family plan').t`Manage addresses.`}
+            {c('familyOffer_2023:Family plan').t`Manage addresses`}
         </SettingsLink>
     );
 
@@ -57,7 +57,7 @@ const PendingInvitationModalErrors = ({ errors, invite, onClose }: Props) => {
             .jt`You can only accept 3 invitations in a 6-month period. Please contact ${supportLink} if you require an exception.`;
     } else if (errors.IsOnForbiddenPlan) {
         errorDescription = c('familyOffer_2023:Family plan')
-            .t`Your cannot accept this invitation with your current plan.`;
+            .t`You cannot accept this invitation with your current plan.`;
     } else if (errors.IsExternalUser) {
         errorDescription = c('familyOffer_2023:Family plan')
             .jt`Family plans do not currently support external accounts. Create a ${BRAND_NAME} address before joining. ${addressSettingsLink}`;

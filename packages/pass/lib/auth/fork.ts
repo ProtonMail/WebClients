@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { ARGON2_PARAMS } from '@proton/crypto/lib';
-import type { TabId } from '@proton/pass/types';
 import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
+import type { TabId } from '@proton/pass/types';
 import { type Api, AuthMode, type MaybeNull } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -211,7 +211,7 @@ export const getAccountForkResponsePayload = (type: AccountForkResponse, error?:
                 return {
                     title: getWelcomeToText(PASS_APP_NAME),
                     message: c('Info')
-                        .t`More than a password manager, ${PASS_APP_NAME} protects your password and your personal email address via email aliases. Powered by the same technology behind ${MAIL_APP_NAME}, your data is end to end encrypted and is only accessible by you.`,
+                        .t`More than a password manager, ${PASS_APP_NAME} protects your password and your personal email address via email aliases. Powered by the same technology behind ${MAIL_APP_NAME}, your data is end-to-end encrypted and is only accessible by you.`,
                 };
             }
             case AccountForkResponse.ERROR: {

@@ -71,7 +71,7 @@ const ExtraSnoozedMessage = ({ message }: Props) => {
          * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
          * Full sentence for reference: "Snoozed until on Tuesday, May 11 at 8:00 AM"
          */
-        return c('Info').t`Snoozed until  ${dateString} at ${formattedTime}`;
+        return c('Info').t`Snoozed until ${dateString} at ${formattedTime}`;
     };
 
     // Prevent from cancelling a message that is about to be sent 30s before

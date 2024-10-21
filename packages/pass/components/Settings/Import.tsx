@@ -74,7 +74,7 @@ export const Import: FC = () => {
                 <SettingsPanel title={c('Label').t`Latest import`}>
                     <div className="flex flex-column gap-y-1 text-sm">
                         <div>
-                            <span className="color-weak">{c('Label').t`Imported from : `}</span>
+                            <span className="color-weak">{c('Label').t`Imported from: `}</span>
                             <span className="rounded bg-primary px-1 user-select-none">
                                 {PROVIDER_INFO_MAP[result.provider].title}
                             </span>
@@ -86,12 +86,12 @@ export const Import: FC = () => {
                         </div>
 
                         <div>
-                            <span className="color-weak">{c('Label').t`Total items : `}</span>
+                            <span className="color-weak">{c('Label').t`Total items: `}</span>
                             <span>{getItemsText(totalItems)}</span>
                         </div>
 
                         <div>
-                            <span className="color-weak">{c('Label').t`Total imported items : `}</span>
+                            <span className="color-weak">{c('Label').t`Total imported items: `}</span>
                             <span>{getItemsText(totalImportedItems)}</span>
                         </div>
 
@@ -124,7 +124,7 @@ export const Import: FC = () => {
                         {endpoint === 'page' && (
                             <div className="mt-2">
                                 {c('Info')
-                                    .t`To review your imported data, click on the Pass icon in your browser toolbar.`}
+                                    .t`To review your imported data, click on the ${PASS_APP_NAME} icon in your browser toolbar.`}
                             </div>
                         )}
                     </div>

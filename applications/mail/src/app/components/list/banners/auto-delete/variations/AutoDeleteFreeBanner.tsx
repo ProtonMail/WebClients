@@ -12,7 +12,7 @@ const AutoDeleteFreeBanner = () => {
             <PromotionBanner
                 contentCentered
                 description={c('Info')
-                    .t`Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.`}
+                    .t`Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.`}
                 data-testid="auto-delete:banner:free"
                 cta={
                     <Button

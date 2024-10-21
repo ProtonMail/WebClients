@@ -9,7 +9,7 @@ export const WalletDownloadsSettingsPage = () => {
         <SettingsSectionWide>
             <SettingsParagraph>
                 {c('wallet_signup_2024:Info')
-                    .t`${WALLET_APP_NAME} is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google open testing.`}
+                    .t`${WALLET_APP_NAME} is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.`}
             </SettingsParagraph>
             <div className="flex gap-4 flex-column md:flex-row">
                 {Object.values(WALLET_CLIENTS).map(({ title, icon, link }) => {
