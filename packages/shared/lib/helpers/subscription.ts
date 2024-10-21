@@ -881,18 +881,16 @@ export function isTaxInclusive(checkResponse?: Pick<SubscriptionCheckResponse, '
     return checkResponse?.TaxInclusive === TaxInclusive.INCLUSIVE;
 }
 
+export const PASS_LAUNCH_OFFER = 'passlaunch';
+
 export function hasPassLaunchOffer(subscription: Subscription | FreeSubscription | undefined): boolean {
     if (!subscription || isFreeSubscription(subscription)) {
         return false;
     }
 
-    const passLaunchOfferAmount = 1200;
-    const passLaunchOfferName = 'passlaunch';
     const plan = getPlan(subscription);
 
-    const isLaunchOffer =
-        (subscription.RenewAmount === passLaunchOfferAmount && subscription.Amount === passLaunchOfferAmount) ||
-        plan?.Offer === passLaunchOfferName;
+    const isLaunchOffer = plan?.Offer === PASS_LAUNCH_OFFER;
 
     return isLaunchOffer && subscription.Cycle === CYCLE.YEARLY && plan?.Name === PLANS.PASS;
 }
