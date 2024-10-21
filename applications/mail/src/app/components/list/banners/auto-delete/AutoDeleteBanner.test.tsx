@@ -19,7 +19,7 @@ describe('AutoDeleteBanner', () => {
             render(<AutoDeleteBanner bannerType="free-banner" />);
             expect(
                 screen.getByText(
-                    /Upgrade to automatically delete messages that have been in trash and spam for more than 30 days./i
+                    /Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days./i
                 )
             ).toBeInTheDocument();
         });
