@@ -111,17 +111,19 @@ export const getGroupMembership = () => ({
     url: `core/v4/groups/members/internal`,
 });
 
-export const getExternalGroupMembership = (jwt: string) => ({
+export const getExternalGroupMemberships = (jwt: string) => ({
     method: 'get',
     url: `core/v4/groups/members/external/${jwt}`,
 });
 
-export const acceptExternalGroupMembership = (jwt: string) => ({
+export const acceptExternalGroupMembership = (jwt: string, groupID: string | null = null) => ({
     method: 'put',
     url: `core/v4/groups/external/${jwt}`,
+    params: groupID ? { GroupID: groupID } : {},
 });
 
-export const declineExternalGroupMembership = (jwt: string) => ({
+export const declineExternalGroupMembership = (jwt: string, groupID: string | null = null) => ({
     method: 'delete',
     url: `core/v4/groups/external/${jwt}`,
+    params: groupID ? { GroupID: groupID } : {},
 });

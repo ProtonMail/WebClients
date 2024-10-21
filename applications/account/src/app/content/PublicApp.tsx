@@ -96,6 +96,7 @@ import EmailForwardingContainer, { EmailForwardingRequest } from '../public/Emai
 import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
 import ForgotUsernameContainer from '../public/ForgotUsernameContainer';
 import GroupInviteContainer, { GroupInviteRequest } from '../public/GroupInviteContainer';
+import GroupMembershipsContainer from '../public/GroupMembershipsContainer';
 import InboxDesktopFreeTrialEnded from '../public/InboxDesktopFreeTrialEnded';
 import JoinMagicLinkContainer from '../public/JoinMagicLinkContainer';
 import OAuthConfirmForkContainer from '../public/OAuthConfirmForkContainer';
@@ -616,6 +617,11 @@ const BasePublicApp = ({ onLogin }: Props) => {
                 <Route path={`${UNAUTHENTICATED_ROUTES.GROUP_INVITE}/decline`}>
                     <UnAuthenticated>
                         <GroupInviteContainer request={GroupInviteRequest.Decline} />
+                    </UnAuthenticated>
+                </Route>
+                <Route path={`${UNAUTHENTICATED_ROUTES.GROUP_INVITE}/manage`}>
+                    <UnAuthenticated>
+                        <GroupMembershipsContainer />
                     </UnAuthenticated>
                 </Route>
                 <Route path={UNAUTHENTICATED_ROUTES.CLOSE_TICKET}>
