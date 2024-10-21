@@ -6,7 +6,6 @@ export * from './useCountriesByProvider';
 export * from './useExchangeRate';
 export * from './useFiatCurrencies';
 export * from './useFiatCurrenciesByProvider';
-export * from './useGatewaysPublicApiKeys';
 export * from './usePriceGraphData';
 export * from './useQuotesByProvider';
 export * from './useRemainingInvites';
