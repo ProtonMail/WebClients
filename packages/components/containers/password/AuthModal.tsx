@@ -165,7 +165,7 @@ enum Step {
     TWO_FA,
 }
 
-interface Props extends Omit<ModalProps<'div'>, 'as' | 'onSubmit' | 'size' | 'onSuccess' | 'onError'> {
+export interface AuthModalProps extends Omit<ModalProps<'div'>, 'as' | 'onSubmit' | 'size' | 'onSuccess' | 'onError'> {
     config: SrpConfig;
     onSuccess?: (data: { credentials: Credentials; response: Response }) => Promise<void> | void;
     onCancel: (() => void) | undefined;
@@ -183,7 +183,7 @@ const AuthModal = ({
     prioritised2FAItem = 'fido2',
     onRecoveryClick,
     ...rest
-}: Props) => {
+}: AuthModalProps) => {
     const { APP_NAME } = useConfig();
     const [infoResult, setInfoResult] = useState<InfoAuthedResponse>();
     const api = useApi();

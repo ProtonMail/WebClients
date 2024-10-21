@@ -71,16 +71,14 @@ const App = () => {
                 return (
                     <ProtonStoreProvider store={state.store}>
                         <AuthenticationProvider store={extraThunkArguments.authentication}>
-                            <ApiProvider api={extraThunkArguments.api}>
-                                <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
-                                    <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
-                                        <Router history={extraThunkArguments.history}>
-                                            <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
-                                                <CalendarModelEventManagerProvider
-                                                    calendarModelEventManager={
-                                                        extraThunkArguments.calendarModelEventManager
-                                                    }
-                                                >
+                            <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
+                                <Router history={extraThunkArguments.history}>
+                                    <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+                                        <CalendarModelEventManagerProvider
+                                            calendarModelEventManager={extraThunkArguments.calendarModelEventManager}
+                                        >
+                                            <ApiProvider api={extraThunkArguments.api}>
+                                                <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
                                                     <ErrorBoundary big component={<StandardErrorPage big />}>
                                                         <StandardPrivateApp
                                                             hasReadableMemberKeyActivation
@@ -92,12 +90,12 @@ const App = () => {
                                                             <state.MainContainer />
                                                         </StandardPrivateApp>
                                                     </ErrorBoundary>
-                                                </CalendarModelEventManagerProvider>
-                                            </EventManagerProvider>
-                                        </Router>
-                                    </FlagProvider>
-                                </DrawerProvider>
-                            </ApiProvider>
+                                                </DrawerProvider>
+                                            </ApiProvider>
+                                        </CalendarModelEventManagerProvider>
+                                    </EventManagerProvider>
+                                </Router>
+                            </FlagProvider>
                         </AuthenticationProvider>
                     </ProtonStoreProvider>
                 );
