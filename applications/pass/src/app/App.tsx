@@ -2,6 +2,7 @@ import { Router } from 'react-router-dom';
 
 import * as config from 'proton-pass-web/app/config';
 import { B2BEvents } from 'proton-pass-web/lib/b2b';
+import { PASS_WEB_COMPAT } from 'proton-pass-web/lib/compatibility';
 import { core } from 'proton-pass-web/lib/core';
 import { PASS_CONFIG } from 'proton-pass-web/lib/env';
 import { i18n } from 'proton-pass-web/lib/i18n';
@@ -135,7 +136,7 @@ export const App = () => (
         <ServiceWorkerContext.Consumer>
             {(sw) => (
                 <PassCoreProvider {...getPassCoreProps(sw?.client)}>
-                    <CompatibilityCheck>
+                    <CompatibilityCheck compatibilities={PASS_WEB_COMPAT}>
                         <Icons />
                         <ThemeProvider />
                         <ErrorBoundary component={<StandardErrorPage big />}>
