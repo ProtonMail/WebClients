@@ -33,8 +33,7 @@ export const findNearestBlockTargetFeeRate = (
 
 export const findQuickestBlock = (feeRate: number, blockEstimationKeys: [number, number][]): number | undefined => {
     const sorted = [...blockEstimationKeys].sort(([blockA], [blockB]) => blockA - blockB);
-
-    return sorted.find(([, blockFeeRate]) => blockFeeRate <= feeRate)?.[1];
+    return sorted.find(([, blockFeeRate]) => blockFeeRate <= feeRate)?.[0];
 };
 
 export const feesMapToList = (feesMap: Map<string, number>) => {
