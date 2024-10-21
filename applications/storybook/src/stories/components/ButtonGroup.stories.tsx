@@ -32,13 +32,17 @@ export const BasicGroup = ({ ...args }) => {
         {
             text: 'How about one more',
         },
+        {
+            text: 'Delete',
+            color: 'danger' as const,
+        },
     ];
 
     return (
-        <ButtonGroup {...args}>
-            {buttons.map(({ text }, i) => {
+        <ButtonGroup {...args} individualButtonColor={true}>
+            {buttons.map(({ text, color }, i) => {
                 return (
-                    <Button key={i} selected={selectedButton === i} onClick={() => setSelectedButton(i)}>
+                    <Button key={i} selected={selectedButton === i} onClick={() => setSelectedButton(i)} color={color}>
                         {text}
                     </Button>
                 );
