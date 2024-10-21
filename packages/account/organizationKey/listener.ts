@@ -82,37 +82,44 @@ export const organizationKeysManagementListener = (startListening: SharedStartLi
 
     startListening({
         predicate: (action, currentState, nextState) => {
-            const orgKey = selectOrganizationKey(nextState).value;
+            const organizationKey = selectOrganizationKey(nextState).value;
             const eligibleAddresses = (selectAddresses(nextState).value || []).filter(
                 getIsEligibleOrganizationIdentityAddress
             );
-            return Boolean(orgKey?.privateKey && !orgKey.Key.FingerprintSignature && eligibleAddresses.length >= 1);
+            return Boolean(
+                organizationKey?.privateKey &&
+                    !organizationKey.Key.FingerprintSignature &&
+                    eligibleAddresses.length >= 1
+            );
         },
         effect: async (action, listenerApi) => {
-            const state = listenerApi.getState();
-            const organizationKey = selectOrganizationKey(state).value;
-            if (!organizationKey?.privateKey) {
-                return;
-            }
-
             listenerApi.unsubscribe();
 
-            const addresses = await listenerApi.dispatch(addressesThunk());
+            const [organizationKey, addresses] = await Promise.all([
+                listenerApi.dispatch(organizationKeyThunk()),
+                listenerApi.dispatch(addressesThunk()),
+            ]);
+
             const eligibleAddresses = addresses.filter(getIsEligibleOrganizationIdentityAddress);
             const primaryEligibleAddress = eligibleAddresses[0];
-            if (!primaryEligibleAddress) {
-                return;
-            }
 
-            try {
-                await listenerApi.dispatch(changeOrganizationSignature({ address: primaryEligibleAddress }));
-            } catch (e) {
-                const error = getSentryError(e);
-                if (error) {
-                    captureMessage('Organization identity: Error generating signature', {
-                        level: 'error',
-                        extra: { error },
-                    });
+            if (
+                Boolean(
+                    organizationKey?.privateKey &&
+                        !organizationKey.Key.FingerprintSignature &&
+                        eligibleAddresses.length >= 1
+                )
+            ) {
+                try {
+                    await listenerApi.dispatch(changeOrganizationSignature({ address: primaryEligibleAddress }));
+                } catch (e) {
+                    const error = getSentryError(e);
+                    if (error) {
+                        captureMessage('Organization identity: Error generating signature', {
+                            level: 'error',
+                            extra: { error },
+                        });
+                    }
                 }
             }
         },
