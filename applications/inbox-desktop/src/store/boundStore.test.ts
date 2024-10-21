@@ -1,26 +1,6 @@
 import { BrowserWindow, Display, screen } from "electron";
-import { Singleton, getSingleton } from "../utils/testUtils";
-import { WindowBounds, getWindowBounds, saveWindowBounds } from "./boundsStore";
-import Store from "electron-store";
-
-const MockedStore = Store as unknown as Singleton<{
-    get: jest.MockedFn<() => WindowBounds>;
-    set: () => void;
-}>;
-
-jest.mock("electron-store", () =>
-    getSingleton<(typeof MockedStore)["INSTANCE"]>(() => ({
-        get: jest.fn(),
-        set: jest.fn(),
-    })),
-);
-
-jest.mock("electron", () => ({
-    screen: {
-        getDisplayNearestPoint: jest.fn(),
-        getCursorScreenPoint: () => {},
-    },
-}));
+import { getWindowBounds, saveWindowBounds } from "./boundsStore";
+import { MockedStore } from "../utils/testUtils";
 
 jest.mock("../utils/view/windowBounds.ts", () => ({
     ensureWindowIsVisible: () => {},
