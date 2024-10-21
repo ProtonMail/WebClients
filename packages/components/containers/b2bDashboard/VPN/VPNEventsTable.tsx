@@ -110,7 +110,7 @@ const VPNEventsTable = ({
                                         />
                                         <div className="flex flex-column">
                                             <span
-                                                className={getVPNEventColor(eventType)}
+                                                className={clsx('text-bold', getVPNEventColor(eventType))}
                                                 onClick={() => onEventClick(eventType)}
                                             >
                                                 {eventTypeName}
