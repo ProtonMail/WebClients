@@ -37,7 +37,7 @@ export const getLocalizedDescription = (mimeType: string): string | undefined =>
         case 'application/x-freearc':
             return c('Mimetype').t`Archive document`;
         case SupportedMimeTypes.gzip:
-            return c('Mimetype').t`GZip Compressed Archive`;
+            return c('Mimetype').t`GZip Archive`;
         case SupportedMimeTypes.rar:
             return c('Mimetype').t`RAR archive`;
         case SupportedMimeTypes.zip:
@@ -158,7 +158,7 @@ export const getLocalizedDescription = (mimeType: string): string | undefined =>
         case SupportedMimeTypes.ico:
             return c('Mimetype').t`Icon format`;
         case SupportedMimeTypes.jpg:
-            return c('Mimetype').t`JPEG images`;
+            return c('Mimetype').t`JPEG image`;
         case SupportedMimeTypes.mp2t:
             return c('Mimetype').t`MPEG transport stream`;
         case SupportedMimeTypes.mpeg:
@@ -174,7 +174,7 @@ export const getLocalizedDescription = (mimeType: string): string | undefined =>
         case SupportedMimeTypes.opus:
             return c('Mimetype').t`Opus audio`;
         case SupportedMimeTypes.png:
-            return c('Mimetype').t`Portable Network Graphics`;
+            return c('Mimetype').t`Portable Network Graphics (PNG)`;
         case SupportedMimeTypes.svg:
             return c('Mimetype').t`Scalable Vector Graphics (SVG)`;
         case SupportedMimeTypes.tiff:

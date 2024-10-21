@@ -103,7 +103,7 @@ export const VaultNew: FC<Props> = ({ onSuccess, ...modalProps }) => {
                         {vaultLimitReached && (
                             <Card className="mb-4 text-sm" type="primary">
                                 {c('Info').t`You have reached the limit of vaults you can create.`}
-                                {isFreePlan && c('Info').t` Upgrade to a paid plan to create multiple vaults.`}
+                                {isFreePlan && <> {c('Info').t`Upgrade to a paid plan to create multiple vaults.`}</>}
                             </Card>
                         )}
                         <FormikProvider value={form}>

@@ -299,7 +299,7 @@ export const TransactionReviewStep = ({
                             ) : (
                                 <Card type={'error'}>
                                     {c('Wallet transaction')
-                                        .t`We are currently experiencing difficulties in calculating network fees. Please try again later. If issue persists, contact our support team for assistance.`}
+                                        .t`We are currently experiencing difficulties in calculating network fees. Please try again later. If the issue persists, contact our support team for assistance.`}
                                 </Card>
                             )}
                         </div>

@@ -71,7 +71,7 @@ export const ImportForm: FC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ fo
                         ))}
                     </div>
                     <Href href="https://protonmail.uservoice.com/forums/953584-proton-pass">{c('Action')
-                        .t`Your password manager not here? Request it.`}</Href>
+                        .t`Your password manager is not here? Request it.`}</Href>
                 </>
             )}
 

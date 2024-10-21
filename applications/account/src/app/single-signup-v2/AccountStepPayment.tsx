@@ -396,7 +396,7 @@ const AccountStepPayment = ({
                                             currency={paymentFacade.currency}
                                             onClick={() => process(paymentFacade.paypalCredit)}
                                         >
-                                            {c('Link').t`Paypal without credit card`}
+                                            {c('Link').t`PayPal without credit card`}
                                         </PayPalButton>
                                     )}
                                 </div>

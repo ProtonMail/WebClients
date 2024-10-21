@@ -18,7 +18,7 @@ const UserBreachInfo = ({ inModal = false, exposedData }: UserBreachInfoProps) =
         <Info
             className="ml-2"
             title={c('Info')
-                .t`Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.`}
+                .t`Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.`}
         />
     );
     return (

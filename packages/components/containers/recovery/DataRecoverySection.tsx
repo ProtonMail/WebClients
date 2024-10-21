@@ -145,7 +145,7 @@ export const DataRecoverySection = () => {
                             <p className="color-danger">
                                 <Icon className="mr-2 float-left mt-1" name="exclamation-circle-filled" size={3.5} />
                                 {c('Warning')
-                                    .t`Your recovery phrase is outdated. It can't recover new data if you reset your account again.`}
+                                    .t`Your recovery phrase is outdated. It can't recover new data if you reset your password again.`}
                             </p>
                         )}
 
@@ -248,7 +248,7 @@ export const DataRecoverySection = () => {
                                     <span className="mr-2">{c('Title').t`Recovery file`}</span>
                                     <Info
                                         title={c('Info')
-                                            .t`A recovery file lets you unlock and view your data after an account reset`}
+                                            .t`A recovery file lets you unlock and view your data after account recovery`}
                                     />
                                 </span>
                             </SettingsLayoutLeft>
@@ -274,7 +274,7 @@ export const DataRecoverySection = () => {
                             <p className="color-danger flex flex-nowrap">
                                 <Icon className="mr-2 shrink-0 mt-0.5" name="exclamation-circle-filled" size={3.5} />
                                 <span className="flex-1">{c('Warning')
-                                    .t`Your recovery file is outdated. It can't recover new data if you reset your account again.`}</span>
+                                    .t`Your recovery file is outdated. It can't recover new data if you reset your password again.`}</span>
                             </p>
                         )}
                     </>

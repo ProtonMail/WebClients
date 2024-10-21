@@ -64,7 +64,7 @@ const WireGuardCreationModal = ({
                                 ),
                             },
                             {
-                                title: c('Title').t`QRCode`,
+                                title: c('Title').t`QR Code`,
                                 content: (
                                     <div className="text-center">
                                         <QRCode value={config} />

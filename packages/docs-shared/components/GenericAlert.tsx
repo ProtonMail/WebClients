@@ -32,7 +32,7 @@ export default function GenericAlertModal({
       onClose={handleClose}
       footer={
         <>
-          <PrimaryButton onClick={handleClose}>{c('Action').t`Ok`}</PrimaryButton>
+          <PrimaryButton onClick={handleClose}>{c('Action').t`OK`}</PrimaryButton>
         </>
       }
       {...modalProps}

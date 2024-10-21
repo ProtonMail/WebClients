@@ -68,7 +68,7 @@ const checkConditionsErrors = (conditions: Condition[]): string => {
         return c('Error').t`Error in one of the conditions`;
     }
     if (!conditions.length) {
-        return c('Error').t`Require at least one condition`;
+        return c('Error').t`Add at least one condition`;
     }
     return '';
 };
@@ -81,7 +81,7 @@ const checkActionsErrors = (actions: Actions) => {
     }
 
     if (!labelAs.labels.length && !moveTo.folder && !markAs.read && !markAs.starred && !autoReply) {
-        return c('Error').t`Require at least one action`;
+        return c('Error').t`Add at least one action`;
     }
 
     return '';
