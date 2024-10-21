@@ -12,6 +12,7 @@ import type { CustomDomainOutput } from '@proton/pass/types';
 type Props = {
     domains: CustomDomainOutput[];
     openModalDNS: (domain: CustomDomainOutput) => void;
+    handleRemoveDomainClick: (domain: CustomDomainOutput) => void;
 };
 
 const getDomainStatusLabel = ({ OwnershipVerified, MxVerified }: CustomDomainOutput) => {
@@ -24,7 +25,7 @@ const getDomainStatusLabel = ({ OwnershipVerified, MxVerified }: CustomDomainOut
     return null;
 };
 
-export const DomainsTable: FC<Props> = ({ domains, openModalDNS }) => {
+export const DomainsTable: FC<Props> = ({ domains, handleRemoveDomainClick, openModalDNS }) => {
     const canManageAlias = useSelector(selectUserPlan)?.ManageAlias;
 
     return (
@@ -61,6 +62,10 @@ export const DomainsTable: FC<Props> = ({ domains, openModalDNS }) => {
                                             <DropdownMenuButton
                                                 label={c('Action').t`Check DNS`}
                                                 onClick={() => openModalDNS(domain)}
+                                            />
+                                            <DropdownMenuButton
+                                                label={c('Action').t`Delete`}
+                                                onClick={() => handleRemoveDomainClick(domain)}
                                             />
                                         </QuickActionsDropdown>
                                     </div>
