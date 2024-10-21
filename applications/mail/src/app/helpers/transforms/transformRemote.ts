@@ -17,7 +17,6 @@ import {
     loadFakeImages,
     loadRemoteImages,
     loadSkipProxyImages,
-    removeProtonPrefix,
 } from '../message/messageRemotes';
 
 const SELECTOR = ATTRIBUTES_TO_FIND.map((name) => {
@@ -60,12 +59,15 @@ export const transformRemote = (
     onLoadRemoteImagesProxy?: (imagesToLoad: MessageRemoteImage[]) => void,
     onLoadFakeImagesProxy?: (imagesToLoad: MessageRemoteImage[], firstLoad?: boolean) => void
 ) => {
-    const showRemoteImages =
-        message.messageImages?.showRemoteImages || hasShowRemote(mailSettings) || !!message.data?.Sender?.IsProton;
-
     const draft = isDraft(message.data);
 
-    const useProxy = hasBit(mailSettings.ImageProxy, IMAGE_PROXY_FLAGS.PROXY);
+    const showRemoteImages =
+        message.messageImages?.showRemoteImages ||
+        hasShowRemote(mailSettings) ||
+        !!message.data?.Sender?.IsProton ||
+        draft;
+
+    const useProxy = hasBit(mailSettings.ImageProxy, IMAGE_PROXY_FLAGS.PROXY) || draft;
 
     const { matchedElements, hasRemoteImages } = getRemoteImageMatches(message);
     const remoteImages = getRemoteImages(message);
@@ -83,12 +85,6 @@ export const transformRemote = (
             if (!draft) {
                 insertImageAnchor(id, 'remote', match);
             }
-        }
-
-        // If the user do not want to use the proxy at all, we can remove all proton prefix in drafts
-        // This will load all images
-        if (draft && showRemoteImages && !useProxy) {
-            removeProtonPrefix(match);
         }
 
         let url = '';
