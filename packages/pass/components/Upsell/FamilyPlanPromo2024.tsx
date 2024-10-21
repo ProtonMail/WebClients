@@ -13,6 +13,7 @@ import { selectUser, selectUserPlan } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { DEFAULT_CURRENCY, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { PASS_LAUNCH_OFFER } from '@proton/shared/lib/helpers/subscription';
 import noop from '@proton/utils/noop';
 
 import './FamilyPlanPromo2024.scss';
@@ -37,7 +38,7 @@ export const FamilyPlanPromo2024: FC<BaseSpotlightMessage> = ({ onClose = noop }
     const cohort = useMemo<MaybeNull<FamilyPlanCohort>>(() => {
         const isPass2023 = userPlan?.InternalName === 'pass2023';
         const isFree = userPlan?.InternalName === 'free';
-        const isPassLaunch = userPlan?.SubscriptionOffer === 'passlaunch';
+        const isPassLaunch = userPlan?.SubscriptionOffer === PASS_LAUNCH_OFFER;
 
         if (isPass2023 && isPassLaunch) return FamilyPlanCohort.EARLY_SUPPORTER;
         if (isPass2023) return FamilyPlanCohort.PASS_PLUS;
