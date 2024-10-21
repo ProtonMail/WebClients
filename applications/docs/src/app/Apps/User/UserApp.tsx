@@ -50,11 +50,11 @@ const UserApp = () => {
     void (async () => {
       try {
         /*
-          Availability will report every 5 minutes the user status:
-          - if an error occured and was reported to Sentry
-          - if an error occured and was explicitely marked as an error
-          - if an error occurred and was explicitely marked as critical
-        */
+                                          Availability will report every 5 minutes the user status:
+                                          - if an error occured and was reported to Sentry
+                                          - if an error occured and was explicitely marked as an error
+                                          - if an error occurred and was explicitely marked as critical
+                                        */
         Availability.init((report: AvailabilityReport) => {
           metrics.docs_users_success_rate_total.increment({
             plan: state.initialUser?.isFree ? 'free' : 'paid',
@@ -99,11 +99,11 @@ const UserApp = () => {
         return (
           <ProtonStoreProvider store={state.store}>
             <AuthenticationProvider store={extraThunkArguments.authentication}>
-              <ApiProvider api={extraThunkArguments.api}>
-                <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
-                  <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
-                    <Router history={extraThunkArguments.history}>
-                      <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+              <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
+                <Router history={extraThunkArguments.history}>
+                  <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+                    <ApiProvider api={extraThunkArguments.api}>
+                      <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
                         <ErrorBoundary big component={<StandardErrorPage big />}>
                           <StandardPrivateApp
                             hasReadableMemberKeyActivation
@@ -114,11 +114,11 @@ const UserApp = () => {
                             <state.MainContainer />
                           </StandardPrivateApp>
                         </ErrorBoundary>
-                      </EventManagerProvider>
-                    </Router>
-                  </FlagProvider>
-                </DrawerProvider>
-              </ApiProvider>
+                      </DrawerProvider>
+                    </ApiProvider>
+                  </EventManagerProvider>
+                </Router>
+              </FlagProvider>
             </AuthenticationProvider>
           </ProtonStoreProvider>
         )

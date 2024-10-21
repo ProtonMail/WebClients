@@ -82,16 +82,16 @@ export const EasySwitchTestProviders = ({ children }: { children: JSX.Element | 
     <ConfigProvider config={config}>
         <NotificationsContext.Provider value={notificationsManager}>
             <ModalsProvider>
-                <ApiProvider api={api}>
-                    <EventManagerProvider eventManager={eventManager}>
-                        <CacheProvider cache={fakeCache.instance}>
-                            <ModalsChildren />
-                            <Router history={history}>
+                <Router history={history}>
+                    <ApiProvider api={api}>
+                        <EventManagerProvider eventManager={eventManager}>
+                            <CacheProvider cache={fakeCache.instance}>
+                                <ModalsChildren />
                                 <EasySwitchStoreProvider>{children}</EasySwitchStoreProvider>
-                            </Router>
-                        </CacheProvider>
-                    </EventManagerProvider>
-                </ApiProvider>
+                            </CacheProvider>
+                        </EventManagerProvider>
+                    </ApiProvider>
+                </Router>
             </ModalsProvider>
         </NotificationsContext.Provider>
     </ConfigProvider>

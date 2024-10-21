@@ -18,7 +18,8 @@ import HumanVerificationForm from './HumanVerificationForm';
 import { isVerifyAddressOwnership } from './helper';
 import { type HumanVerificationResult, HumanVerificationSteps, type VerificationModel } from './interface';
 
-interface Props<T extends { humanVerificationResult?: HumanVerificationResult }> extends ModalProps {
+export interface HumanVerificationModalProps<T extends { humanVerificationResult?: HumanVerificationResult }>
+    extends ModalProps {
     title?: string;
     token: string;
     methods: HumanVerificationMethodType[];
@@ -36,7 +37,7 @@ const HumanVerificationModal = <T extends { humanVerificationResult?: HumanVerif
     onError,
     onClose = noop,
     ...rest
-}: Props<T>) => {
+}: HumanVerificationModalProps<T>) => {
     const theme = useTheme();
     const title = maybeTitle || c('Title').t`Human verification`;
     const { createNotification } = useNotifications();

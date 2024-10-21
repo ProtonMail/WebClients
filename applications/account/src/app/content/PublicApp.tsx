@@ -948,9 +948,9 @@ const PublicApp = () => {
     return (
         <ProtonApp config={config}>
             <AuthenticationProvider store={authentication}>
-                <ApiProvider api={api}>
+                <BrowserRouter>
                     <ProtonStoreProvider store={store}>
-                        <BrowserRouter>
+                        <ApiProvider api={api}>
                             <ErrorBoundary big component={<StandardErrorPage big />}>
                                 <BasePublicApp
                                     onLogin={(args) => {
@@ -959,9 +959,9 @@ const PublicApp = () => {
                                     }}
                                 />
                             </ErrorBoundary>
-                        </BrowserRouter>
+                        </ApiProvider>
                     </ProtonStoreProvider>
-                </ApiProvider>
+                </BrowserRouter>
             </AuthenticationProvider>
         </ProtonApp>
     );
