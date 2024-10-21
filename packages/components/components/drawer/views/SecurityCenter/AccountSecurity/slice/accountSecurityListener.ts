@@ -10,11 +10,11 @@ import { securityCenterSliceActions } from './accountSecuritySlice';
 
 export const startAccountSecurityListener = (startListening: SharedStartListening<AccountSecuritySlice>) => {
     startListening({
-        predicate: (action, currentState, nextState) => {
+        predicate: (action, currentState, previousState) => {
             const hasChange =
-                selectUser(currentState) !== selectUser(nextState) ||
-                selectUserSettings(currentState) !== selectUserSettings(nextState) ||
-                selectFeatures(currentState) !== selectFeatures(nextState);
+                selectUser(currentState) !== selectUser(previousState) ||
+                selectUserSettings(currentState) !== selectUserSettings(previousState) ||
+                selectFeatures(currentState) !== selectFeatures(previousState);
 
             return hasChange;
         },

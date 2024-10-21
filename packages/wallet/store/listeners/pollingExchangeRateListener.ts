@@ -9,7 +9,7 @@ import type { AppStartListening } from '../store';
 
 export const startPollingExchangeRateListener = (startListening: AppStartListening) => {
     startListening({
-        predicate: (action, previousState, currentState) => {
+        predicate: (action, currentState, previousState) => {
             const previousValue = selectExchangeRate(previousState).value;
             const currentValue = selectExchangeRate(currentState).value;
 

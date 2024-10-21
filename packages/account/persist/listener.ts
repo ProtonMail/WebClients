@@ -9,7 +9,8 @@ import { isSubUser } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
 import { serverEvent } from '../eventLoop';
-import { UserState, selectUser } from '../user';
+import type { UserState } from '../user';
+import { selectUser } from '../user';
 import { deleteStore, pruneStores } from './db';
 import { setEncryptedPersistedState } from './helper';
 
@@ -24,8 +25,8 @@ export const startPersistListener = <T extends UserState>(
     transformState: (state: T) => string
 ) => {
     startListening({
-        predicate: (action, currentState, nextState) => {
-            const hasChange = currentState !== nextState;
+        predicate: (action, currentState, previousState) => {
+            const hasChange = currentState !== previousState;
 
             return isVisible() && hasChange;
         },

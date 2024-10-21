@@ -13,28 +13,25 @@ export const userKeysListener = (startListening: SharedStartListening<UserKeysSt
     };
 
     startListening({
-        predicate: (action, currentState, nextState) => {
+        predicate: (action, currentState, previousState) => {
             const currentUser = selectUser(currentState);
-            const nextUser = selectUser(nextState);
-            const currentKeys = selectUserKeys(currentState).value;
-            if (
-                currentKeys &&
-                currentUser !== nextUser &&
-                !keyEqualityComparator(currentUser.value?.Keys, nextUser.value?.Keys)
-            ) {
-                return true;
-            }
-            return false;
+            const previousUser = selectUser(previousState);
+            const previousKeys = selectUserKeys(previousState).value;
+            return Boolean(
+                previousKeys &&
+                    previousUser !== currentUser &&
+                    !keyEqualityComparator(currentUser.value?.Keys, previousUser.value?.Keys)
+            );
         },
-        effect: async (action, listenerApi) => {
-            await listenerApi.dispatch(userKeysThunk({ cache: CacheType.None }));
+        effect: (action, listenerApi) => {
+            listenerApi.dispatch(userKeysThunk({ cache: CacheType.None })).catch(noop);
         },
     });
 
     startListening({
-        predicate: (action, currentState, nextState) => {
-            const oldValue = selectUserKeys(currentState).value;
-            const newValue = selectUserKeys(nextState).value;
+        predicate: (action, currentState, previousState) => {
+            const newValue = selectUserKeys(currentState).value;
+            const oldValue = selectUserKeys(previousState).value;
             return !!oldValue && oldValue !== newValue;
         },
         effect: async (action, listenerApi) => {
