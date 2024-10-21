@@ -13,11 +13,13 @@ import {
     insertActualEmbeddedImages,
     insertBlobImages,
     isEmbeddable,
+    markEmbeddedAsLoaded,
     markEmbeddedImagesAsLoaded,
     matchSameCidOrLoc,
     readContentIDandLocation,
     removeEmbeddedHTML,
     replaceEmbeddedAttachments,
+    replaceEmbeddedUrls,
     setEmbeddedAttr,
     trimQuotes,
 } from './messageEmbeddeds';
@@ -369,6 +371,63 @@ describe('messageEmbeddeds', () => {
                     attachment: { ID: attachmentID },
                     cid: contentID,
                     status: 'loaded',
+                    type: 'embedded',
+                    url: blobURL,
+                },
+            ] as MessageEmbeddedImage[];
+
+            expect(res).toEqual(expected);
+        });
+    });
+
+    describe('markEmbeddedAsLoaded', () => {
+        it('should mark embedded images as loaded', () => {
+            const blobURL = 'blobURL';
+            const embeddedImages = [
+                {
+                    cid: contentID,
+                    type: 'embedded',
+                    attachment: { ID: attachmentID } as Attachment,
+                } as MessageEmbeddedImage,
+            ] as MessageEmbeddedImage[];
+
+            const loadResults: { attachment: Attachment; blob: string }[] = [{ attachment, blob: blobURL }];
+
+            const res = markEmbeddedAsLoaded(embeddedImages, loadResults);
+
+            const expected = [
+                {
+                    attachment: { ID: attachmentID },
+                    cid: contentID,
+                    status: 'loaded',
+                    type: 'embedded',
+                    url: undefined,
+                },
+            ] as MessageEmbeddedImage[];
+
+            expect(res).toEqual(expected);
+        });
+    });
+
+    describe('replaceEmbeddedUrls', () => {
+        it('should replace embedded urls', () => {
+            const blobURL = 'blobURL';
+            const embeddedImages = [
+                {
+                    cid: contentID,
+                    type: 'embedded',
+                    attachment: { ID: attachmentID } as Attachment,
+                } as MessageEmbeddedImage,
+            ] as MessageEmbeddedImage[];
+
+            const loadResults: { attachment: Attachment; blob: string }[] = [{ attachment, blob: blobURL }];
+
+            const res = replaceEmbeddedUrls(embeddedImages, loadResults);
+
+            const expected = [
+                {
+                    attachment: { ID: attachmentID },
+                    cid: contentID,
                     type: 'embedded',
                     url: blobURL,
                 },

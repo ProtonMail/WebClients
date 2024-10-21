@@ -204,11 +204,37 @@ export const insertBlobImages = (document: Element, embeddedImages: MessageEmbed
 export const markEmbeddedImagesAsLoaded = (
     embeddedImages: MessageEmbeddedImage[],
     loadResults: { attachment: Attachment; blob: string }[]
-) => {
+): MessageEmbeddedImage[] => {
     return embeddedImages.map((image) => {
         const result = loadResults.find((loadResult) => loadResult.attachment.ID === image.attachment.ID);
         if (result) {
-            return { ...image, url: result?.blob, status: 'loaded' as 'loaded' };
+            return { ...image, url: result?.blob, status: 'loaded' };
+        }
+        return image;
+    });
+};
+
+export const markEmbeddedAsLoaded = (
+    embeddedImages: MessageEmbeddedImage[],
+    loadResults: { attachment: Attachment; blob: string }[]
+): MessageEmbeddedImage[] => {
+    return embeddedImages.map((image) => {
+        const result = loadResults.find((loadResult) => loadResult.attachment.ID === image.attachment.ID);
+        if (result) {
+            return { ...image, status: 'loaded' };
+        }
+        return image;
+    });
+};
+
+export const replaceEmbeddedUrls = (
+    embeddedImages: MessageEmbeddedImage[],
+    loadResults: { attachment: Attachment; blob: string }[]
+): MessageEmbeddedImage[] => {
+    return embeddedImages.map((image) => {
+        const result = loadResults.find((loadResult) => loadResult.attachment.ID === image.attachment.ID);
+        if (result) {
+            return { ...image, url: result?.blob };
         }
         return image;
     });
@@ -219,7 +245,8 @@ export const markEmbeddedImagesAsLoaded = (
  */
 export const decryptEmbeddedImages = (
     images: MessageEmbeddedImage[],
-    onLoadEmbeddedImages: (attachments: Attachment[]) => Promise<LoadEmbeddedResults>
+    onLoadEmbeddedImages: (attachments: Attachment[], isDraft?: boolean) => Promise<LoadEmbeddedResults>,
+    isDraft?: boolean
 ) => {
     const attachments = unique(
         images
@@ -235,7 +262,7 @@ export const decryptEmbeddedImages = (
         return image;
     });
 
-    const downloadPromise = onLoadEmbeddedImages(attachments);
+    const downloadPromise = onLoadEmbeddedImages(attachments, isDraft);
 
     return { updatedImages, downloadPromise };
 };

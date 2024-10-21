@@ -22,6 +22,7 @@ import {
     setMessageContentBeforeBlockquote,
 } from 'proton-mail/helpers/composer/contentFromComposerMessage';
 import { insertSignature } from 'proton-mail/helpers/message/messageSignature';
+import { useLoadEmbeddedImages, useLoadRemoteImages } from 'proton-mail/hooks/message/useLoadImages';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { selectComposer } from 'proton-mail/store/composers/composerSelectors';
 import { composerActions } from 'proton-mail/store/composers/composersSlice';
@@ -145,6 +146,10 @@ export const useComposerContent = (args: EditorArgs) => {
     const [modelMessage, setModelMessage, getModelMessage] = useLongLivingState<MessageState>({
         localID: messageID,
     });
+
+    const newDraftImageLoadingStatus = useRef<'not-loaded' | 'loading' | 'loaded'>('not-loaded');
+    const loadRemoteImages = useLoadRemoteImages(messageID);
+    const loadEmbeddedImages = useLoadEmbeddedImages(messageID);
 
     // Computed composer status
     const hasRecipients = getRecipients(modelMessage.data).length > 0;
@@ -289,10 +294,44 @@ export const useComposerContent = (args: EditorArgs) => {
         }
     }, [pendingSave.isPending, syncedMessage.data?.ID]);
 
-    // Manage initializing the message from an existing draft
+    const handleLoadImages = async () => {
+        newDraftImageLoadingStatus.current = 'loading';
+        await loadRemoteImages();
+        await loadEmbeddedImages();
+        newDraftImageLoadingStatus.current = 'loaded';
+    };
+
+    // Manage initializing modelMessage document
     useEffect(() => {
+        /* Before initializing the composer (initializing modelMessage document), we want to make sure all images are loaded.
+         * However, there are two cases:
+         * 1- Opening an old draft
+         *      The message has already been initialized in the past,
+         *      so we simply have to wait for all the images to be loaded in redux (if any) before displaying the message
+         * 2- Creating a new draft
+         *      The message is new, so we first need to manually "load all images"
+         *      (Which consist on replacing imgs src attributes with proton-src so that we can load them using proxy).
+         *      Then once they are "loaded" in redux, we can initialize the message in the composer
+         */
+
+        const hasImages =
+            syncedMessage.messageImages?.hasEmbeddedImages || syncedMessage.messageImages?.hasRemoteImages;
+
+        // First, if the message is a new draft. and we haven't loaded the images yet, load them.
+        const messageIsNewDraft = isNewDraft(syncedMessage.localID);
+        if (messageIsNewDraft && newDraftImageLoadingStatus.current === 'not-loaded' && hasImages) {
+            handleLoadImages();
+            return;
+        }
+
+        // If all images have been loaded and this is the first initialization,
+        // then we can initialize modelMessage to display some content in the composer
+        const messageImagesLoaded =
+            !hasImages || syncedMessage.messageImages?.images.every((img) => img.status === 'loaded');
         const firstInitialization =
-            !modelMessage.messageDocument?.initialized && syncedMessage.messageDocument?.initialized;
+            !modelMessage.messageDocument?.initialized &&
+            syncedMessage.messageDocument?.initialized &&
+            messageImagesLoaded;
 
         if (firstInitialization) {
             const isOpenFromUndo = syncedMessage.draftFlags?.openDraftFromUndo === true;
@@ -332,9 +371,11 @@ export const useComposerContent = (args: EditorArgs) => {
         }
     }, [
         pendingSave.isPending,
+        syncedMessage.localID,
         syncedMessage.messageDocument?.document,
         syncedMessage.messageDocument?.plainText,
         syncedMessage.messageDocument?.initialized,
+        syncedMessage.messageImages,
     ]);
 
     const timeoutRef = useRef(0);

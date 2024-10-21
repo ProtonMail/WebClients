@@ -37,7 +37,7 @@ export const prepareHtml = async (
     message: MessageState,
     base64Cache: Base64Cache,
     mailSettings: MailSettings,
-    onLoadEmbeddedImages: (attachments: Attachment[]) => Promise<LoadEmbeddedResults>,
+    onLoadEmbeddedImages: (attachments: Attachment[], isDraft?: boolean) => Promise<LoadEmbeddedResults>,
     onLoadRemoteImagesProxy: (imagesToLoad: MessageRemoteImage[]) => void,
     onLoadFakeImagesProxy: (imagesToLoad: MessageRemoteImage[], firstLoad?: boolean) => void,
     onLoadRemoteImagesDirect: (imagesToLoad: MessageRemoteImage[]) => void,

@@ -8,8 +8,6 @@ import type { LoadEmbeddedResults, MessageEmbeddedImage, MessageState } from '..
 import {
     decryptEmbeddedImages,
     findEmbedded,
-    insertBlobImages,
-    markEmbeddedImagesAsLoaded,
     matchSameCidOrLoc,
     readContentIDandLocation,
     setEmbeddedAttr,
@@ -19,14 +17,15 @@ import { getEmbeddedImages, insertImageAnchor } from '../message/messageImages';
 export const transformEmbedded = async (
     message: MessageState,
     mailSettings: MailSettings,
-    onLoadEmbeddedImages: (attachments: Attachment[]) => Promise<LoadEmbeddedResults>
+    onLoadEmbeddedImages: (attachments: Attachment[], isDraft?: boolean) => Promise<LoadEmbeddedResults>
 ) => {
     const draft = isDraft(message.data);
 
     const showEmbeddedImages =
         message.messageImages?.showEmbeddedImages === true ||
         hasShowEmbedded(mailSettings) ||
-        hasProtonSender(message.data);
+        hasProtonSender(message.data) ||
+        draft;
 
     const existingEmbeddedImage = getEmbeddedImages(message);
     let newEmbeddedImages: MessageEmbeddedImage[] = [];
@@ -75,17 +74,8 @@ export const transformEmbedded = async (
     const hasEmbeddedImages = !!embeddedImages.length;
 
     if (showEmbeddedImages) {
-        const { updatedImages, downloadPromise } = decryptEmbeddedImages(embeddedImages, onLoadEmbeddedImages);
+        const { updatedImages } = decryptEmbeddedImages(embeddedImages, onLoadEmbeddedImages, draft);
         embeddedImages = updatedImages;
-
-        // In draft, we actually want image in the document
-        if (draft) {
-            const downloadResults = await downloadPromise;
-            embeddedImages = markEmbeddedImagesAsLoaded(embeddedImages, downloadResults);
-            if (message.messageDocument?.document) {
-                insertBlobImages(message.messageDocument.document, embeddedImages);
-            }
-        }
     }
 
     return {
