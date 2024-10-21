@@ -8,6 +8,7 @@ import { Price } from '@proton/components';
 import type { Props as PriceProps } from '@proton/components/components/price/Price';
 import { usePreferredPlansMap, useSubscription } from '@proton/components/hooks';
 import { COUPON_CODES, PASS_APP_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { hasPassLaunchOffer } from '@proton/shared/lib/helpers/subscription';
 
 import OfferDisableButton from '../../components/shared/OfferDisableButton';
 import OfferLoader from '../../components/shared/OfferLoader';
@@ -34,7 +35,7 @@ const Layout: FC<OfferLayoutProps> = (props) => {
          * - Cohort 1 : `pass2023` with `passlaunch` offer => PASSEARLYSUPPORTER (299)
          * - Cohort 2 : `pass2023` => PASSFAMILYLAUNCH (399)
          * - Cohort 3 : `free` => PASSFAMILYLAUNCH (399) */
-        const isPassLaunch = subscription?.Plans?.some((plan) => plan.Offer === 'passlaunch') ?? false;
+        const isPassLaunch = hasPassLaunchOffer(subscription);
         const coupon = !user.isFree && isPassLaunch ? COUPON_CODES.PASSEARLYSUPPORTER : COUPON_CODES.PASSFAMILYLAUNCH;
         const userDeal = offer?.deals.find((deal) => deal.couponCode === coupon);
         const baseDeal = offer?.deals.find((deal) => deal.couponCode === COUPON_CODES.PASSFAMILYLAUNCH);
