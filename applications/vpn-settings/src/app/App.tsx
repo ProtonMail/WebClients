@@ -37,9 +37,9 @@ const App = () => {
         <ProtonApp config={config}>
             <ErrorBoundary component={<StandardErrorPage />}>
                 <AuthenticationProvider store={extraThunkArguments.authentication}>
-                    <ApiProvider api={extraThunkArguments.api}>
-                        <Router history={extraThunkArguments.history}>
-                            <ProtonStoreProvider store={store}>
+                    <Router history={extraThunkArguments.history}>
+                        <ProtonStoreProvider store={store}>
+                            <ApiProvider api={extraThunkArguments.api}>
                                 {extraThunkArguments.authentication.UID ? (
                                     <PrivateApp store={store} locales={locales} />
                                 ) : (
@@ -51,9 +51,9 @@ const App = () => {
                                         locales={locales}
                                     />
                                 )}
-                            </ProtonStoreProvider>
-                        </Router>
-                    </ApiProvider>
+                            </ApiProvider>
+                        </ProtonStoreProvider>
+                    </Router>
                 </AuthenticationProvider>
             </ErrorBoundary>
         </ProtonApp>

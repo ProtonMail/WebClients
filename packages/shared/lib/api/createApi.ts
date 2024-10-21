@@ -28,15 +28,15 @@ const getSilenced = ({ silence }: SilenceConfig = {}, code: number) => {
     return !!silence;
 };
 
-type ServerTimeEvent = {
+export type ServerTimeEvent = {
     type: 'server-time';
     payload: Date;
 };
-type ApiStatusEvent = {
+export type ApiStatusEvent = {
     type: 'status';
     payload: Partial<typeof defaultApiStatus>;
 };
-type ApiNotificationEvent = {
+export type ApiNotificationEvent = {
     type: 'notification';
     payload: {
         type: 'error';
@@ -45,13 +45,13 @@ type ApiNotificationEvent = {
         expiration?: number;
     };
 };
-type ApiLogoutEvent = {
+export type ApiLogoutEvent = {
     type: 'logout';
     payload: {
         error: any;
     };
 };
-type ApiMissingScopeEvent = {
+export type ApiMissingScopeEvent = {
     type: 'missing-scopes';
     payload: {
         scopes: string[];
@@ -61,7 +61,7 @@ type ApiMissingScopeEvent = {
         reject: (value: any) => void;
     };
 };
-type ApiVerificationEvent = {
+export type ApiVerificationEvent = {
     type: 'handle-verification';
     payload: {
         token: string;
@@ -73,7 +73,7 @@ type ApiVerificationEvent = {
         reject: (value: any) => void;
     };
 };
-type ApiEvent =
+export type ApiEvent =
     | ServerTimeEvent
     | ApiStatusEvent
     | ApiNotificationEvent
