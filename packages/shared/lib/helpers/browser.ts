@@ -130,6 +130,7 @@ export const isWindows = () => ua.os.name === 'Windows';
 export const isLinux = () => ua.ua.match(/(L|l)inux/);
 export const hasTouch = typeof document === 'undefined' ? false : 'ontouchstart' in document.documentElement;
 export const hasCookie = () => navigator.cookieEnabled;
+export const getOs = () => ua.os;
 export const getBrowser = () => ua.browser;
 export const getDevice = () => ua.device;
 export const isMobile = () => {

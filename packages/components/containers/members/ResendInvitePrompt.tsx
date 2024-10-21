@@ -26,6 +26,7 @@ const ResendInvitePrompt = ({ onClose, onResend, email, ...rest }: Props) => {
                 >{c('Action').t`Send new invite`}</Button>,
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
             ]}
+            onClose={onClose}
             {...rest}
         >
             <p className="text-break">

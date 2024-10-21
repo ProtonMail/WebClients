@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import type { AuthTypes } from '@proton/components/containers/login/interface';
 import { CryptoProxy } from '@proton/crypto';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
@@ -30,5 +32,15 @@ export const handleUnlockKey = async (User: tsUser, KeySalts: tsKeySalt[], rawKe
     const keyPassword = KeySalt ? ((await computeKeyPassword(rawKeyPassword, KeySalt)) as string) : rawKeyPassword;
     const primaryKey = await CryptoProxy.importPrivateKey({ armoredKey: PrivateKey, passphrase: keyPassword });
 
-    return { primaryKey, keyPassword };
+    return {
+        primaryKey,
+        keyPassword,
+    };
+};
+
+export const getUnlockError = () => {
+    const error: any = new Error(c('Error').t`Incorrect second password. Please try again.`);
+    error.name = 'PasswordError';
+    error.trace = false;
+    return error;
 };

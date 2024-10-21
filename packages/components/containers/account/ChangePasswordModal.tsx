@@ -354,13 +354,15 @@ const ChangePasswordModal = ({
                             inputs.newPassword
                         );
                         const addressesKeys = await getAddressesWithKeysList(addresses);
-                        const updateKeysPayload = await getUpdateKeysPayload(
+                        const updateKeysPayload = await getUpdateKeysPayload({
                             addressesKeys,
-                            userKeysList,
-                            getIsPasswordless(organizationKey?.Key) ? undefined : organizationKey?.privateKey,
+                            userKeys: userKeysList,
+                            organizationKey: getIsPasswordless(organizationKey?.Key)
+                                ? undefined
+                                : organizationKey?.privateKey,
                             keyPassword,
-                            keySalt
-                        );
+                            keySalt,
+                        });
 
                         await api(updatePrivateKeyRoute(updateKeysPayload));
 
@@ -415,13 +417,13 @@ const ChangePasswordModal = ({
                 );
 
                 const addressesWithKeys = await getAddressesWithKeysList(addresses);
-                const updateKeysPayload = await getUpdateKeysPayload(
-                    addressesWithKeys,
-                    userKeysList,
-                    getIsPasswordless(organizationKey?.Key) ? undefined : organizationKey?.privateKey,
+                const updateKeysPayload = await getUpdateKeysPayload({
+                    addressesKeys: addressesWithKeys,
+                    userKeys: userKeysList,
+                    organizationKey: getIsPasswordless(organizationKey?.Key) ? undefined : organizationKey?.privateKey,
                     keyPassword,
-                    keySalt
-                );
+                    keySalt,
+                });
 
                 const routeConfig = updatePrivateKeyRoute({ ...updateKeysPayload, PersistPasswordScope: disable2FA });
                 const credentials = {

@@ -52,6 +52,7 @@ enum AccountFlag {
     UserGroupsMembersPermissionCheck = 'UserGroupsMembersPermissionCheck',
     B2BAuthenticationLogs = 'B2BAuthenticationLogs',
     ShowGatewaysForBundlePlan = 'ShowGatewaysForBundlePlan',
+    GlobalSSO = 'GlobalSSO',
     ShowBundleUpsellFromVPNBiz = 'ShowBundleUpsellFromVPNBiz',
     EasySwitchConsentExperiment = 'EasySwitchConsentExperiment',
 }

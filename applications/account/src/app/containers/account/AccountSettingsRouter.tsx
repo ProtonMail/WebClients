@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import AuthDevicesSettings from '@proton/account/sso/AuthDevicesSettings';
 import { EasySwitchSettingsArea } from '@proton/activation';
 import {
     AccessibilitySection,
@@ -157,6 +158,7 @@ const AccountSettingsRouter = ({
                 <PrivateMainSettingsArea config={security}>
                     <SentinelSection app={app} />
                     <CredentialLeakSection />
+                    <AuthDevicesSettings />
                     <SessionsSection />
                     <LogsSection />
                     <PrivacySection />

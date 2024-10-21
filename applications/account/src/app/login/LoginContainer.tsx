@@ -1,4 +1,3 @@
-import type { ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -31,18 +30,14 @@ import {
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
+import { getIsPassApp, getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { isElectronPass } from '@proton/shared/lib/helpers/desktop';
+import useFlag from '@proton/unleash/useFlag';
 
 import type { Paths } from '../content/helper';
-import Content from '../public/Content';
-import Header from '../public/Header';
-import Layout from '../public/Layout';
-import Main from '../public/Main';
-import PublicHelpLink from '../public/PublicHelpLink';
 import Text from '../public/Text';
 import { getContinueToString } from '../public/helper';
 import { useFlowRef } from '../useFlowRef';
@@ -50,19 +45,14 @@ import type { MetaTags } from '../useMetaTags';
 import { useMetaTags } from '../useMetaTags';
 import type { LoginFormRef } from './LoginForm';
 import LoginForm from './LoginForm';
+import { type Render, type RenderProps, defaultElectronPassLoginRender, defaultLoginRender } from './LoginRender';
 import SetPasswordForm from './SetPasswordForm';
 import Testflight from './Testflight';
 import TwoFactorStep from './TwoFactorStep';
 import UnlockForm from './UnlockForm';
+import SSOLogin from './sso/SSOLogin';
 
-interface RenderProps {
-    title: string;
-    subTitle?: string;
-    onBack?: () => void;
-    content: ReactNode;
-}
-
-interface Props {
+export interface Props {
     defaultUsername?: string;
     initialSearchParams?: URLSearchParams;
     onLogin: OnLoginCallback;
@@ -76,19 +66,10 @@ interface Props {
     productParam: ProductParam;
     modal?: boolean;
     metaTags: MetaTags | null;
-    render?: (renderProps: RenderProps) => ReactNode;
+    render?: Render;
     testflight?: 'vpn';
     externalRedirect?: string;
 }
-
-const defaultRender = (data: RenderProps) => {
-    return (
-        <>
-            <Header onBack={data.onBack} title={data.title} subTitle={data.subTitle} />
-            <Content>{data.content}</Content>
-        </>
-    );
-};
 
 const getDefaultUsername = (searchParams?: URLSearchParams) => {
     if (!searchParams) {
@@ -96,6 +77,8 @@ const getDefaultUsername = (searchParams?: URLSearchParams) => {
     }
     return searchParams.get('username') || searchParams.get('email');
 };
+
+const defaultRender = isElectronPass ? defaultElectronPassLoginRender : defaultLoginRender;
 
 const LoginContainer = ({
     initialSearchParams,
@@ -131,6 +114,7 @@ const LoginContainer = ({
     const { isElectronDisabled } = useIsInboxElectronApp();
     const loginFormRef = useRef<LoginFormRef>();
     const searchParams = new URLSearchParams(location.search);
+    const globalSSOEnabled = useFlag('GlobalSSO');
     const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
 
     useMetaTags(metaTags);
@@ -217,7 +201,7 @@ const LoginContainer = ({
         const continueTo = toAppName ? getContinueToString(toAppName) : '';
         if (authType === AuthType.ExternalSSO) {
             return {
-                title: c('Title').t`Sign in to your organization`,
+                title: c('sso').t`Sign in to your organization`,
                 subTitle: continueTo,
             };
         }
@@ -229,11 +213,16 @@ const LoginContainer = ({
         };
     })();
 
+    const sharedProps: Pick<RenderProps, 'step' | 'toApp'> = {
+        toApp,
+        step,
+    };
+
     if (isElectronDisabled) {
         return <ElectronBlockedContainer />;
     }
 
-    const children = (
+    return (
         <>
             <AbuseModal
                 message={abuseModal?.apiErrorMessage}
@@ -244,6 +233,7 @@ const LoginContainer = ({
             {step === AuthStep.LOGIN && (
                 <>
                     {render({
+                        ...sharedProps,
                         title: titles.title,
                         subTitle: titles.subTitle,
                         onBack: handleBackStep,
@@ -261,7 +251,9 @@ const LoginContainer = ({
                                     modal={modal || isElectronPass}
                                     appName={APP_NAME}
                                     externalSSO={{
-                                        enabled: APP_NAME === APPS.PROTONACCOUNT && getIsVPNApp(toApp),
+                                        enabled:
+                                            APP_NAME === APPS.PROTONACCOUNT &&
+                                            (getIsVPNApp(toApp) || (globalSSOEnabled && getIsPassApp(toApp))),
                                         options: state?.externalSSO,
                                     }}
                                     signInText={showContinueTo ? `Continue to ${toAppName}` : undefined}
@@ -281,7 +273,8 @@ const LoginContainer = ({
                                                 api: silentApi,
                                                 appName: APP_NAME,
                                                 toApp,
-                                                ignoreUnlock: data.authType === AuthType.ExternalSSO,
+                                                ignoreUnlock:
+                                                    data.authType === AuthType.ExternalSSO && !globalSSOEnabled,
                                                 setupVPN,
                                                 ktActivation,
                                                 verifyOutboundPublicKeys,
@@ -310,6 +303,7 @@ const LoginContainer = ({
             {step === AuthStep.TWO_FA && cache && (
                 <>
                     {render({
+                        ...sharedProps,
                         title: c('Title').t`Two-factor authentication`,
                         onBack: handleBackStep,
                         content: (
@@ -359,6 +353,7 @@ const LoginContainer = ({
             {step === AuthStep.UNLOCK && cache && (
                 <>
                     {render({
+                        ...sharedProps,
                         title: c('Title').t`Unlock your data`,
                         onBack: handleBackStep,
                         content: (
@@ -387,9 +382,23 @@ const LoginContainer = ({
                     })}
                 </>
             )}
+            {step === AuthStep.SSO && cache && (
+                <SSOLogin
+                    toApp={toApp}
+                    step={step}
+                    render={render}
+                    cache={cache}
+                    createFlow={createFlow}
+                    onBack={handleBackStep}
+                    onError={handleError}
+                    onCancel={handleCancel}
+                    onResult={handleResult}
+                />
+            )}
             {step === AuthStep.NEW_PASSWORD && cache && (
                 <>
                     {render({
+                        ...sharedProps,
                         title: c('Title').t`Set new password`,
                         onBack: handleBackStep,
                         content: (
@@ -421,30 +430,6 @@ const LoginContainer = ({
                 </>
             )}
         </>
-    );
-
-    if (modal) {
-        return children;
-    }
-
-    if (isElectronPass) {
-        return (
-            <Layout toApp={toApp}>
-                <Main>{children}</Main>
-            </Layout>
-        );
-    }
-
-    return (
-        <Layout
-            toApp={toApp}
-            hasWelcome
-            onBack={handleBackStep}
-            hasDecoration={step === AuthStep.LOGIN}
-            bottomRight={<PublicHelpLink />}
-        >
-            <Main>{children}</Main>
-        </Layout>
     );
 };
 export default LoginContainer;

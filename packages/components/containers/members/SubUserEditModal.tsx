@@ -180,7 +180,7 @@ const SubUserEditModal = ({
     const canPromoteAdmin =
         !isSelf &&
         member.Role === MEMBER_ROLE.ORGANIZATION_MEMBER &&
-        !member.SSO &&
+        (!member.SSO || (member.SSO && member.Keys?.length > 0)) &&
         unprivatization.mode !== MemberUnprivatizationMode.MagicLinkInvite;
 
     const canRevokeAdmin = !isSelf && member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN;
