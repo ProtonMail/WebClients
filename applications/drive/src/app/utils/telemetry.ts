@@ -43,6 +43,8 @@ export enum Actions {
     PublicLinkVisit = 'publicLinkVisit',
     DeleteBookmarkFromSharedWithMe = 'DeleteBookmarkFromSharedWithMe',
     SignUpFlowAndRedirectCompleted = 'signUpFlowAndRedirectCompleted',
+    RedirectToCorrectContextShare = 'redirectToCorrectContextShare',
+    RedirectToCorrectAcceptInvitation = 'RedirectToCorrectAcceptInvitation',
     // onboarding actions
     OnboardingV2Shown = 'onboardingV2Shown',
     OnboardingV2InstallMacApp = 'onboardingV2InstallMacApp',
