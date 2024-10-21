@@ -2,20 +2,21 @@ import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
 import useConfig from '@proton/components/hooks/useConfig';
-import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 import { decryptData, encryptData, importKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 
 import CompatibilityCheckView from './CompatibilityCheckView';
-import { getCompatibilityList } from './compatibilityCheckHelper';
+import { type CompatibilityItem, getCompatibilityList } from './compatibilityCheckHelper';
 
 interface Props {
     children: ReactNode;
+    compatibilities?: CompatibilityItem[];
 }
 
-const CompatibilityCheck = ({ children }: Props) => {
+const CompatibilityCheck = ({ children, compatibilities }: Props) => {
     const { APP_NAME } = useConfig();
     const [incompatibilities, setIncompatibilities] = useState(() => {
-        return getCompatibilityList().filter(({ valid }) => !valid);
+        return getCompatibilityList(compatibilities).filter(({ valid }) => !valid);
     });
 
     useEffect(() => {
