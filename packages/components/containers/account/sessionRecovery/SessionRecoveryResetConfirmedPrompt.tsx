@@ -37,7 +37,7 @@ const SessionRecoveryResetConfirmedPrompt = ({ open, onClose }: { open?: boolean
                 .t`We will contact you again when the password reset is available.`}</p>
             <p>
                 {
-                    // translator: full sentence "You can check the status of your request at any time in the in the Account and password section of the settings."
+                    // translator: full sentence "You can check the status of your request at any time in the Account and password section of the settings."
                     c('session_recovery:initiation:info')
                         .jt`You can check the status of your request at any time ${accountAndPasswordSectionLink} of the settings.`
                 }
