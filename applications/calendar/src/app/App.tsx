@@ -74,11 +74,11 @@ const App = () => {
                 return (
                     <ProtonStoreProvider store={state.store}>
                         <AuthenticationProvider store={extraThunkArguments.authentication}>
-                            <ApiProvider api={extraThunkArguments.api}>
-                                <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
-                                    <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
-                                        <Router history={extraThunkArguments.history}>
-                                            <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+                            <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
+                                <Router history={extraThunkArguments.history}>
+                                    <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+                                        <ApiProvider api={extraThunkArguments.api}>
+                                            <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
                                                 <SubscriptionModalProvider app={APPS.PROTONCALENDAR}>
                                                     <CalendarModelEventManagerProvider
                                                         calendarModelEventManager={
@@ -97,11 +97,11 @@ const App = () => {
                                                         </ErrorBoundary>
                                                     </CalendarModelEventManagerProvider>
                                                 </SubscriptionModalProvider>
-                                            </EventManagerProvider>
-                                        </Router>
-                                    </FlagProvider>
-                                </DrawerProvider>
-                            </ApiProvider>
+                                            </DrawerProvider>
+                                        </ApiProvider>
+                                    </EventManagerProvider>
+                                </Router>
+                            </FlagProvider>
                         </AuthenticationProvider>
                     </ProtonStoreProvider>
                 );

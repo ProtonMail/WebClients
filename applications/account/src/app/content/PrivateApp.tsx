@@ -63,15 +63,13 @@ const PrivateApp = () => {
                 return (
                     <ProtonStoreProvider store={state.store}>
                         <AuthenticationProvider store={extraThunkArguments.authentication}>
-                            <ApiProvider api={extraThunkArguments.api}>
-                                <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
-                                    <Router history={extraThunkArguments.history}>
-                                        <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
-                                            <CalendarModelEventManagerProvider
-                                                calendarModelEventManager={
-                                                    extraThunkArguments.calendarModelEventManager
-                                                }
-                                            >
+                            <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
+                                <Router history={extraThunkArguments.history}>
+                                    <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+                                        <CalendarModelEventManagerProvider
+                                            calendarModelEventManager={extraThunkArguments.calendarModelEventManager}
+                                        >
+                                            <ApiProvider api={extraThunkArguments.api}>
                                                 <AccountSpotlightsProvider>
                                                     <ErrorBoundary big component={<StandardErrorPage big />}>
                                                         <StandardPrivateApp
@@ -84,11 +82,11 @@ const PrivateApp = () => {
                                                         </StandardPrivateApp>
                                                     </ErrorBoundary>
                                                 </AccountSpotlightsProvider>
-                                            </CalendarModelEventManagerProvider>
-                                        </EventManagerProvider>
-                                    </Router>
-                                </FlagProvider>
-                            </ApiProvider>
+                                            </ApiProvider>
+                                        </CalendarModelEventManagerProvider>
+                                    </EventManagerProvider>
+                                </Router>
+                            </FlagProvider>
                         </AuthenticationProvider>
                     </ProtonStoreProvider>
                 );

@@ -98,11 +98,11 @@ const AppInner = () => {
     return (
         <ProtonStoreProvider store={state.store}>
             <AuthenticationProvider store={extraThunkArguments.authentication}>
-                <ApiProvider api={extraThunkArguments.api}>
-                    <ExtendedApiProvider walletApi={extraThunkArguments.walletApi}>
-                        <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
-                            <Router history={extraThunkArguments.history}>
-                                <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+                <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
+                    <Router history={extraThunkArguments.history}>
+                        <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+                            <ApiProvider api={extraThunkArguments.api}>
+                                <ExtendedApiProvider walletApi={extraThunkArguments.walletApi}>
                                     <ErrorBoundary big component={<StandardErrorPage big />}>
                                         <StandardPrivateApp
                                             hasReadableMemberKeyActivation
@@ -115,11 +115,11 @@ const AppInner = () => {
                                             </SubscriptionModalProvider>
                                         </StandardPrivateApp>
                                     </ErrorBoundary>
-                                </EventManagerProvider>
-                            </Router>
-                        </FlagProvider>
-                    </ExtendedApiProvider>
-                </ApiProvider>
+                                </ExtendedApiProvider>
+                            </ApiProvider>
+                        </EventManagerProvider>
+                    </Router>
+                </FlagProvider>
             </AuthenticationProvider>
         </ProtonStoreProvider>
     );
