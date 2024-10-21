@@ -106,20 +106,11 @@ export const RevisionDiff: FC = () => {
             }
             footer={
                 <ButtonBar className="text-semibold text-sm md:text-rg">
-                    <Button
-                        onClick={() => setSelected(previous)}
-                        selected={selected === previous}
-                        color="norm"
-                        fullWidth
-                    >
+                    <Button onClick={() => setSelected(previous)} selected={selected === previous} fullWidth>
                         {epochToRelativeDate(previousItem.revisionTime)}
                     </Button>
-                    <Button
-                        onClick={() => setSelected(current)}
-                        selected={selected === current}
-                        color="norm"
-                        fullWidth
-                    >{c('Info').t`Current version`}</Button>
+                    <Button onClick={() => setSelected(current)} selected={selected === current} fullWidth>{c('Info')
+                        .t`Current version`}</Button>
                 </ButtonBar>
             }
         >
