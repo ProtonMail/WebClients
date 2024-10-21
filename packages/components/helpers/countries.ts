@@ -135,6 +135,7 @@ const getCountries = () => [
     { value: 'KI', label: c('Country name').t`Kiribati` },
     { value: 'KP', label: c('Country name').t`Korea (Democratic People's Republic of)` },
     { value: 'KR', label: c('Country name').t`Korea (Republic of)` },
+    { value: 'XK', label: c('Country name').t`Kosovo` },
     { value: 'KW', label: c('Country name').t`Kuwait` },
     { value: 'KG', label: c('Country name').t`Kyrgyzstan` },
     { value: 'LA', label: c('Country name').t`Lao People's Democratic Republic` },
