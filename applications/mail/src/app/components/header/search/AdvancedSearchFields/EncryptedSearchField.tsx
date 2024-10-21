@@ -59,7 +59,7 @@ const EncryptedSearchField = ({ esIndexingProgressState }: Props) => {
     if (contentIndexingDone && !isEnablingContentSearch) {
         esToggleTooltip = esEnabled
             ? c('Info')
-                  .t`Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.`
+                  .t`Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.`
             : c('Info').t`Turn on to search the content of your messages`;
     }
 

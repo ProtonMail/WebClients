@@ -38,7 +38,7 @@ export const PasswordMemorableOptions: FC<Props> = ({ advanced, config, dense = 
         {!dense && <hr className="m-0" />}
         <div className="flex items-center justify-space-between">
             <label htmlFor="password-capitalise" className="w-custom" style={{ '--w-custom': '10rem' }}>
-                {c('Label').t`Capitalise`}
+                {c('Label').t`Capitalize`}
             </label>
             <Toggle
                 id="password-capitalise"

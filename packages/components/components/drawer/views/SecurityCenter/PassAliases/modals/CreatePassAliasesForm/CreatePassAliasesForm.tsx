@@ -208,7 +208,7 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit, passAliasesURL }: Props) 
                                     autoGrow
                                     unstyled
                                     className="rounded-none p-0 resize-none"
-                                    placeholder={c('Security Center').t`Used on amazon for shopping, etc.`}
+                                    placeholder={c('Security Center').t`Used on Amazon for shopping, etc.`}
                                     onBlur={() => setBlurred({ ...blurred, note: true })}
                                     onValue={(note: string) => {
                                         setFormValues({ ...formValues, note });

@@ -176,7 +176,7 @@ export const getMailConfiguration = ({
                 subsection: (
                     <FeatureListPlanCardSubSection
                         description={c('mail_signup_2024: Info')
-                            .t`All ${BRAND_NAME} business apps and premium features to protect your entire business`}
+                            .t`All ${BRAND_NAME} for Business apps and premium features to protect your entire business`}
                         features={
                             <PlanCardFeatureList
                                 {...planCardFeatureProps}

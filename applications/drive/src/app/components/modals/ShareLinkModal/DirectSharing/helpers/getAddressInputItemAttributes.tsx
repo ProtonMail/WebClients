@@ -38,7 +38,7 @@ export const getAddressInputItemAttributes = ({ isLoading, error, email, isExter
                 <Icon size={4} name="lock-filled" className={'color-info'} data-testid="invite-address-ok" />
             </span>
         ),
-        iconTooltip: c('Tooltip').t`Shared end-to-end encrypted`,
+        iconTooltip: c('Tooltip').t`Shared with end-to-end encryption`,
         labelTooltip: email,
     };
 };

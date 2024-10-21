@@ -136,7 +136,7 @@ export const useOnboardingMessages = () => {
                 className: 'ui-red',
                 onClose: () => acknowledge(OnboardingMessage.STORAGE_ISSUE),
                 action: {
-                    label: c('Label').t`Need help ?`,
+                    label: c('Label').t`Need help?`,
                     type: 'button',
                     onClick: () => acknowledge(OnboardingMessage.STORAGE_ISSUE, () => openSettings?.('support')),
                 },

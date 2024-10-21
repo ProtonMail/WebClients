@@ -37,7 +37,7 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
     if (logAuth === DISABLE) {
         return (
             <Alert className="mb-4">{c('Info')
-                .t`You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.`}</Alert>
+                .t`You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.`}</Alert>
         );
     }
 

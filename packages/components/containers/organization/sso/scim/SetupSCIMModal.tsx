@@ -26,7 +26,7 @@ const SetupSCIMModal = ({ onClose, token, type, baseUrl, ...rest }: SetupSCIMMod
                 title={
                     type === 'setup'
                         ? c('scim: Info').t`Enter URL and token into your identity provider`
-                        : c('scim: Info').t`Enter token into your identity provider`
+                        : c('scim: Info').t`Enter the token into your identity provider`
                 }
             />
             <ModalContent>

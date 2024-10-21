@@ -147,7 +147,7 @@ export const useAttachments = ({
                 createNotification({
                     type: 'error',
                     text: c('Error')
-                        .t`Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.`,
+                        .t`Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.`,
                 });
             }
 

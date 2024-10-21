@@ -42,13 +42,13 @@ const DeleteLabelModal = ({ label, onRemove, ...rest }: Props) => {
         [LABEL_TYPE.MESSAGE_LABEL]: {
             // translator: ${nameDeleted} contain the label name.
             content: c('Info')
-                .jt`Emails tagged with this label ${nameDeleted} will not be deleted and can still be found in the respective folder.`,
+                .jt`Emails tagged with the label ${nameDeleted} will not be deleted and can still be found in the respective folder.`,
             confirm: c('Info').t`Are you sure you want to delete this label?`,
         },
         [LABEL_TYPE.MESSAGE_FOLDER]: {
             // translator: ${nameDeleted} contain the folder name.
             content: c('Info')
-                .jt`Any subfolders will also be deleted. However, emails stored in this folder ${nameDeleted} will not be deleted and can be found in All Mail folder.`,
+                .jt`Any subfolders will also be deleted. However, emails stored in the folder ${nameDeleted} will not be deleted and can be found in All Mail folder.`,
             confirm: c('Info').t`Are you sure you want to delete this folder?`,
         },
     };

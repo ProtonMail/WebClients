@@ -25,7 +25,7 @@ const OnboardingSetupOrganization = (props: Props) => {
         : c('Onboarding Proton').t`Set up your organization`;
 
     const description = hasFamilyOrg
-        ? c('familyOffer_2023:Onboarding Proton').t`Configure your family account and invite users `
+        ? c('familyOffer_2023:Onboarding Proton').t`Configure your family account and invite users`
         : c('Onboarding Proton')
               .t`Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.`;
 

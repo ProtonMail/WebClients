@@ -15,7 +15,7 @@ type InvitationBadgeMap = Partial<{
 const getInvitationBadgeMap = (): InvitationBadgeMap => ({
     [GROUP_MEMBER_STATE.PENDING]: {
         label: c('invitation status').t`Pending`,
-        tooltip: c('tooltip').t`Waiting user to accept the invitation`,
+        tooltip: c('tooltip').t`Waiting for user to accept the invitation`,
     },
     [GROUP_MEMBER_STATE.REJECTED]: {
         label: c('invitation status').t`Declined`,

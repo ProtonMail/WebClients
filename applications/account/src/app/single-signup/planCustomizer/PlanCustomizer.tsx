@@ -101,7 +101,7 @@ const PlanCustomizer = ({
                                 id={id}
                                 label={c('Info').t`Dedicated servers`}
                                 tooltip={c('Info')
-                                    .t`Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.`}
+                                    .t`Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.`}
                             >
                                 {buttonNumberInput}
                             </AddonField>

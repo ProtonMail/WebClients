@@ -28,7 +28,7 @@ const getTexts = (type: Props['type']) => {
         return {
             title: c('Info').t`Report link expired`,
             description: c('Info')
-                .t`The link to report that that you didn't set up a ${BRAND_NAME} Account has expired. Please get in touch with our support team to resolve this issue.`,
+                .t`The link to report that you didn't set up a ${BRAND_NAME} Account has expired. Please get in touch with our support team to resolve this issue.`,
             cta: <ReportLink />,
         };
     }
