@@ -1,9 +1,13 @@
 import { type ReactNode } from 'react';
 import { Suspense, lazy, useEffect, useReducer, useState } from 'react';
 
+import * as config from 'proton-wallet/src/app/config';
+
+import AccountLockedUpsellModal from '@proton/components/components/upsell/modal/AccountLockedUpsellModal';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { SubscriptionModalProvider, useModalState } from '@proton/components/index';
 import type {
     ApiListenerCallback,
     ApiMissingScopeEvent,
@@ -72,6 +76,8 @@ const ApiProvider = ({ api, children }: { api: ApiWithListener; children: ReactN
     const [delinquentModals, setDelinquentModals] = useState<ModalPayload<ApiMissingScopeEvent['payload']>[]>([]);
     const [verificationModals, setVerificationModals] = useState<ModalPayload<ApiVerificationEvent['payload']>[]>([]);
 
+    const [accountLockedModalProps, setAccountLockedModal, renderAccountLockedModal] = useModalState();
+
     useEffect(() => {
         setApiStatus(defaultApiStatus);
 
@@ -96,6 +102,9 @@ const ApiProvider = ({ api, children }: { api: ApiWithListener; children: ReactN
 
             if (event.type === 'handle-verification') {
                 setVerificationModals((prev) => [...prev, { open: true, payload: event.payload }]);
+                if (event.payload.methods.includes('payment')) {
+                    setAccountLockedModal(true);
+                }
             }
 
             if (event.type === 'server-time') {
@@ -174,28 +183,42 @@ const ApiProvider = ({ api, children }: { api: ApiWithListener; children: ReactN
                     )}
                     {verification && (
                         <Suspense fallback={null}>
-                            <HumanVerificationModal
-                                open={verification.open}
-                                title={verification.payload.title}
-                                token={verification.payload.token}
-                                methods={verification.payload.methods}
-                                onVerify={verification.payload.onVerify}
-                                onSuccess={verification.payload.resolve}
-                                onError={verification.payload.reject}
-                                onClose={() => {
-                                    verification.payload.error.cancel = true;
-                                    verification.payload.reject(verification.payload.error);
-                                    setVerificationModals((arr) =>
-                                        replace(arr, verification, {
-                                            ...verification,
-                                            open: false,
-                                        })
-                                    );
-                                }}
-                                onExit={() => {
-                                    setVerificationModals((arr) => remove(arr, verification));
-                                }}
-                            />
+                            {verification.payload.methods.includes('payment') ? (
+                                <SubscriptionModalProvider app={config.APP_NAME}>
+                                    {renderAccountLockedModal && (
+                                        <AccountLockedUpsellModal
+                                            modalProps={accountLockedModalProps}
+                                            onSubscribed={() => {
+                                                setAccountLockedModal(false);
+                                                verification.payload.resolve(null);
+                                            }}
+                                        />
+                                    )}
+                                </SubscriptionModalProvider>
+                            ) : (
+                                <HumanVerificationModal
+                                    open={verification.open}
+                                    title={verification.payload.title}
+                                    token={verification.payload.token}
+                                    methods={verification.payload.methods}
+                                    onVerify={verification.payload.onVerify}
+                                    onSuccess={verification.payload.resolve}
+                                    onError={verification.payload.reject}
+                                    onClose={() => {
+                                        verification.payload.error.cancel = true;
+                                        verification.payload.reject(verification.payload.error);
+                                        setVerificationModals((arr) =>
+                                            replace(arr, verification, {
+                                                ...verification,
+                                                open: false,
+                                            })
+                                        );
+                                    }}
+                                    onExit={() => {
+                                        setVerificationModals((arr) => remove(arr, verification));
+                                    }}
+                                />
+                            )}
                         </Suspense>
                     )}
                     {reauth && (

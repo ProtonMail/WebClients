@@ -3,8 +3,7 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
-import Icon, { type IconSize } from '@proton/components/components/icon/Icon';
-import Info from '@proton/components/components/link/Info';
+import { type IconSize } from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { ModalSize } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -21,8 +20,8 @@ import composerAssistantImage from '@proton/styles/assets/img/illustrations/upse
 import mailHeaderImage from '@proton/styles/assets/img/illustrations/upsell-mail-header.svg';
 import clsx from '@proton/utils/clsx';
 
+import UpsellFeatureList from './UpsellFeatureList';
 import type { UpsellFeatureName } from './constants';
-import { upsellFeatures } from './constants';
 
 type UpsellHeaderType = 'mail' | 'calendar' | 'composer-assistant';
 const getHeader = (headerType: UpsellHeaderType) => {
@@ -111,30 +110,12 @@ const UpsellBox = ({
                         ])}
                     >
                         {featuresDescription}
-                        <ul className={clsx('m-0 unstyled', submitPosition === 'inside' && 'mb-4')}>
-                            {features.map((featureName) => {
-                                const feature = upsellFeatures[featureName];
-                                return (
-                                    <li className="py-2 rounded" key={feature.getText()}>
-                                        <div className="flex flex-nowrap items-center">
-                                            <div className="mr-3 shrink-0 flex">
-                                                <Icon
-                                                    className="color-primary m-auto"
-                                                    size={iconSize}
-                                                    name={feature.icon}
-                                                />
-                                            </div>
-                                            <div className="flex-1">
-                                                {feature.getText()}
-                                                {feature.getTooltip && !hideInfo ? (
-                                                    <Info buttonClass="ml-2" title={feature.getTooltip()} />
-                                                ) : null}
-                                            </div>
-                                        </div>
-                                    </li>
-                                );
-                            })}
-                        </ul>
+                        <UpsellFeatureList
+                            className={submitPosition === 'inside' ? 'mb-4' : ''}
+                            features={features}
+                            iconSize={iconSize}
+                            hideInfo={hideInfo}
+                        />
                         {submitPosition === 'inside' && (
                             <>
                                 {UpgradeButton}
