@@ -30,7 +30,7 @@ const TorWarningBanner = () => {
             {
                 // translator: followed by a link "stable release"
                 c('Tor out of date')
-                    .jt`This version of Tor Browser is not supported. Please update to the latest ${stableRelease}`
+                    .jt`This version of TOR Browser is not supported. Please update to the latest ${stableRelease}`
             }
         </TopBanner>
     );

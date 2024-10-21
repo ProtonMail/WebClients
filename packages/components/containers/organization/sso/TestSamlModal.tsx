@@ -83,7 +83,7 @@ const handleTestSaml = async ({
         return { type: 'success' };
     } catch (error) {
         if (error instanceof ExternalSSOError) {
-            return { type: 'error', error, extra: c('saml: Error').t`Sign-in wasn't successfully completed.` };
+            return { type: 'error', error, extra: c('saml: Error').t`Sign in wasn't successfully completed.` };
         }
         const apiError = getApiError(error);
         if (apiError.message) {

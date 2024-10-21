@@ -194,7 +194,7 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
                     <Button onClick={() => setStep(STEP.CONFIRM_CANCELLATION)}>{c('session_recovery:available:action')
                         .t`Cancel reset`}</Button>
                     <Button color="norm" onClick={onClose}>
-                        {c('Action').t`Ok`}
+                        {c('Action').t`OK`}
                     </Button>
                 </ModalFooter>
             </Modal>

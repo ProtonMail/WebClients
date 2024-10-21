@@ -49,7 +49,7 @@ export const InboxDesktopFreeTrialOnboardingModal = () => {
                         <img src={protonDesktop} alt={c('Free trial desktop').t`${MAIL_APP_NAME} desktop app`} />
                         <div>
                             <h1 className="text-bold mb-2 text-2xl">{c('Free trial desktop')
-                                .t`Try the app-new desktop app`}</h1>
+                                .t`Try the new desktop app`}</h1>
                             <p className="my-0">{c('Free trial desktop')
                                 .t`Enjoy fast, secure, and distraction-free access to your inbox and calendar.`}</p>
                         </div>

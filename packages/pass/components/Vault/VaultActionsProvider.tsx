@@ -121,7 +121,7 @@ export const VaultActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                                 open
                                 onClose={reset}
                                 onSubmit={() => onVaultLeave(state.vault)}
-                                title={c('Title').t`Leave vault ?`}
+                                title={c('Title').t`Leave vault?`}
                                 submitText={c('Action').t`Leave`}
                                 alertText={c('Warning')
                                     .t`You will no longer have access to this vault. To join it again, you will need a new invitation.`}
@@ -133,7 +133,7 @@ export const VaultActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                                 open
                                 onClose={reset}
                                 onSubmit={pipe(onTrashEmpty, reset)}
-                                title={c('Title').t`Permanently remove all items ?`}
+                                title={c('Title').t`Permanently remove all items?`}
                                 submitText={c('Action').t`Delete all`}
                                 alertText={c('Warning')
                                     .t`All your trashed items will be permanently deleted. You cannot undo this action.`}

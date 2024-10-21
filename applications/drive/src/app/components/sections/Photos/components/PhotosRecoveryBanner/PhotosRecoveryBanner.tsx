@@ -78,7 +78,7 @@ const PhotosRecoveryBanner = () => {
                 )}
                 {recoveryState === 'SUCCEED' && (
                     <Button size="small" onClick={() => setShowBanner(false)}>
-                        {c('Action').t`Ok`}
+                        {c('Action').t`OK`}
                     </Button>
                 )}
                 {recoveryState === 'FAILED' && (

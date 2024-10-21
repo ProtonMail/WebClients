@@ -176,7 +176,7 @@ export const WalletCreationModal = ({ theme, isFirstCreation, onWalletCreate, ..
                                 onClick={() => {
                                     setWalletInfoModal(true);
                                 }}
-                            >{c('Wallet setup').t`What’s a wallet passphrase?`}</CoreButton>
+                            >{c('Wallet setup').t`What's a wallet passphrase?`}</CoreButton>
                         </CollapsibleContent>
                     </Collapsible>
                 )}

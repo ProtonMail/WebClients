@@ -26,7 +26,7 @@ const ContactDrawerAppButton = ({
             data-testid="contacts-drawer-app-button:contacts-icon"
             buttonContent={<ContactsDrawerLogo />}
             onClick={handleClick}
-            alt={c('Action').t`Toggle Contact app`}
+            alt={c('Action').t`Toggle Contacts app`}
             aria-controls="drawer-app-proton-contact"
             {...rest}
         />

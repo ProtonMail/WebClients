@@ -157,7 +157,7 @@ const getCycleSelectorOptions = () => {
 const ActionLabel = ({ plan, currency, cycle }: { plan: Plan; currency: Currency; cycle: Cycle }) => {
     const serverPrice = <Price currency={currency}>{getIpPricePerMonth(cycle)}</Price>;
     // translator: example of full sentence: "VPN Business requires at least 1 dedicated server (CHF 39.99 /month)"
-    const serverPriceStr = c('Info').jt`(${serverPrice} /month)`;
+    const serverPriceStr = c('Info').jt`(${serverPrice}/month)`;
     const serverPricePerMonth = <span className="text-nowrap">{serverPriceStr}</span>;
 
     return (

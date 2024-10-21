@@ -223,10 +223,10 @@ const SentinelUserRecoveryCard = ({
                 {isDataRecoveryAvailable
                     ? // translator: Full sentence is 'If you lose your login details and need to reset your account, it’s imperative that you have both an account recovery and data recovery method in place, otherwise you might not be able to access any of your emails, contacts, or files.'
                       c('Info')
-                          .jt`If you lose your password and need to reset your account, ${boldImperative} that you have both an ${boldAccountAndRecovery} in place, otherwise you might not be able to access any of your emails, contacts, or files.`
+                          .jt`If you lose your password and need to recover your account, ${boldImperative} that you have both an ${boldAccountAndRecovery} in place, otherwise you might not be able to access any of your emails, contacts, or files.`
                     : // translator: Full sentence is 'If you lose your login details and need to reset your account, it’s imperative that you have an account recovery method in place.'
                       c('Info')
-                          .jt`If you lose your password and need to reset your account, ${boldImperative} that you have an ${boldAccountRecovery} in place.`}
+                          .jt`If you lose your password and need to recover your account, ${boldImperative} that you have an ${boldAccountRecovery} in place.`}
                 <br />
                 <Href href={getKnowledgeBaseUrl('/set-account-recovery-methods')}>
                     {c('Link').t`Why set recovery methods?`}
@@ -332,7 +332,7 @@ const SecurityCheckupCard = () => {
                 icon="pass-shield-warning"
                 color="info"
                 description={c('Safety review')
-                    .t`Your account and data can be recovered. You have recommended actions to Safeguard your account further.`}
+                    .t`Your account and data can be recovered. You have recommended actions to safeguard your account further.`}
                 cta={c('Safety review').t`Safeguard account now`}
             />
         );

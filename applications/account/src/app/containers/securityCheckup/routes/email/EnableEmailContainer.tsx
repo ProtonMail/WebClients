@@ -73,7 +73,7 @@ const EnableEmailContainer = () => {
                 {c('Safety review').t`Enable recovery by email`}
             </SecurityCheckupMainTitle>
 
-            <div className="mb-2">{c('Safety review').t`You recovery email address is:`}</div>
+            <div className="mb-2">{c('Safety review').t`Your recovery email address is:`}</div>
             <div className="rounded bg-weak p-3 mb-4">{email.value}</div>
 
             <div>

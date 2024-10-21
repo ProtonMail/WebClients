@@ -110,7 +110,7 @@ const SCIMSettingsSection = ({ domain, onConfigureSaml, onShowVerifyDomain, hasS
                                             <PreReq
                                                 data={getBoldFormattedText(
                                                     c('scim: Info')
-                                                        .t`**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${domainName}**. This verification can take up to one hour.`
+                                                        .t`**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${domainName}**. This verification can take up to one hour.`
                                                 )}
                                                 action={
                                                     <Button

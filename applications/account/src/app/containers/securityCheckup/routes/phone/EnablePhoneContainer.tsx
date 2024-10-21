@@ -76,7 +76,7 @@ const EnablePhoneContainer = () => {
                 {c('Safety review').t`Enable recovery by phone`}
             </SecurityCheckupMainTitle>
 
-            <div className="mb-2">{c('Safety review').t`You recovery phone number is:`}</div>
+            <div className="mb-2">{c('Safety review').t`Your recovery phone number is:`}</div>
             <div className="rounded bg-weak p-3 mb-4">{formattedPhoneNumber}</div>
 
             <div>
