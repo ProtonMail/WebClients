@@ -1,4 +1,6 @@
 export * from './init';
+export { authDevicesReducer } from './sso/authDevices';
+export { memberAuthDevicesReducer } from './sso/memberAuthDevices';
 export * from './addresses';
 export * from './addressKeys';
 export * from './addressKeys/listener';

@@ -276,6 +276,10 @@ export const getIsSSOVPNOnlyAccount = (user: tsUser | undefined) => {
     return user && user.Flags.sso && !user.Keys.length;
 };
 
+export const getIsGlobalSSOAccount = (user: tsUser | undefined) => {
+    return user && user.Flags.sso && user.Keys.length > 0;
+};
+
 export const getIsPublicUserWithoutProtonAddress = (user: tsUser | undefined) => {
     return user && user.Flags['no-proton-address'] && !user.Private;
 };

@@ -31,8 +31,11 @@ import type {
     CalendarMemberEventManager,
 } from '@proton/shared/lib/interfaces/calendar/EventManager';
 import type { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { AuthDeviceOutput, MemberAuthDeviceOutput } from '@proton/shared/lib/keys/device';
 
 export interface EventLoop {
+    AuthDevices?: EventItemUpdate<AuthDeviceOutput, 'AuthDevice'>[];
+    MemberAuthDevices?: EventItemUpdate<MemberAuthDeviceOutput, 'MemberAuthDevice'>[];
     User?: User;
     Filters?: EventItemUpdate<Filter, 'Filter'>[];
     Domains?: EventItemUpdate<Domain, 'Domain'>[];

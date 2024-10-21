@@ -40,9 +40,9 @@ const useOrganizationUnprivatizationModals = () => {
                 <div className="flex flex-column md:flex-row flex-nowrap gap-2">
                     <div className="md:flex-1">
                         <Icon name="info-circle" className="align-text-top" />{' '}
-                        {c('unprivatization').ngettext(
-                            msgid`${n} user have joined your organization through your Identity Provider. Approve or reject their accounts now:`,
-                            `${n} users have joined your organization through your Identity Provider. Approve or reject their accounts now:`,
+                        {c('sso').ngettext(
+                            msgid`${n} user have joined your organization through your Identity Provider. Approve or delete their accounts now:`,
+                            `${n} users have joined your organization through your Identity Provider. Approve or delete their accounts now:`,
                             n
                         )}
                     </div>

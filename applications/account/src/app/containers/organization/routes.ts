@@ -6,12 +6,15 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import {
+    appSupportsSSO,
     getHasExternalMemberCapableB2BPlan,
     getHasMemberCapablePlan,
     getHasVpnB2BPlan,
     hasBundlePro,
     hasBundlePro2024,
     hasVpnBusiness,
+    planSupportsSSO,
+    upsellPlanSSO,
 } from '@proton/shared/lib/helpers/subscription';
 import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/support';
 import type { Group, Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
@@ -253,8 +256,8 @@ export const getOrganizationAppRoutes = ({
                 to: '/single-sign-on',
                 icon: 'key',
                 available:
-                    app === APPS.PROTONVPN_SETTINGS &&
-                    hasVpnB2BPlan &&
+                    appSupportsSSO(app) &&
+                    (planSupportsSSO(organization?.PlanName) || upsellPlanSSO(organization?.PlanName)) &&
                     canHaveOrganization &&
                     (hasOrganizationKey || hasOrganization),
             },

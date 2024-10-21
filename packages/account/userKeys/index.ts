@@ -10,7 +10,7 @@ import { signoutAction } from '../authenticationService';
 import { inactiveKeysActions } from '../inactiveKeys';
 import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
-import { UserState, userThunk } from '../user';
+import { type UserState, userThunk } from '../user';
 
 const name = 'userKeys' as const;
 

@@ -2,7 +2,9 @@ import { combineReducers } from '@reduxjs/toolkit';
 
 import {
     allowAddressDeletionReducer,
+    authDevicesReducer,
     domainsAddressesReducer,
+    memberAuthDevicesReducer,
     paymentMethodsReducer,
     samlReducer,
 } from '@proton/account';
@@ -29,6 +31,8 @@ export const rootReducer = combineReducers({
     ...holidaysDirectoryReducer,
     ...samlReducer,
     ...allowAddressDeletionReducer,
+    ...authDevicesReducer,
+    ...memberAuthDevicesReducer,
 });
 
 export type AccountState = ReturnType<typeof rootReducer>;

@@ -7,6 +7,7 @@ import OrganizationSettingsRouter from 'proton-account/src/app/containers/organi
 import { getOrganizationAppRoutes } from 'proton-account/src/app/containers/organization/routes';
 import { c } from 'ttag';
 
+import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesTopBanner';
 import { useUser } from '@proton/account/user/hooks';
 import {
     AccountRecoverySection,
@@ -168,6 +169,7 @@ const MainContainer: FunctionComponent = () => {
     const top = (
         <TopBanners app={APPS.PROTONVPN_SETTINGS}>
             <SSODomainUnverifiedBanner />
+            <MembersAuthDevicesTopBanner />
         </TopBanners>
     );
 
