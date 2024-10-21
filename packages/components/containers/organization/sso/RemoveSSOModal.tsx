@@ -6,6 +6,7 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -31,49 +32,39 @@ const RemoveSSOModal = ({ sso, onClose, ...rest }: Props) => {
         createNotification({
             text:
                 // translator: refers to removing the SSO configuration
-                c('Info').t`Single sign-on removed`,
+                c('sso').t`Single sign-on removed`,
         });
 
         onClose?.();
     };
 
-    const boldSSOUserInformation = (
-        <b key="bold-sso-information">
-            {
-                // translator: full sentence 'SSO users (provided by your Identity Provider) will be deleted and you will have to create them manually to add them back to your organization.'
-                c('Info').t`SSO users (provided by your Identity Provider) will be deleted`
-            }
-        </b>
-    );
-
     return (
         <ModalTwo onClose={onClose} size="small" {...rest}>
-            <ModalTwoHeader title={c('Title').t`Remove single sign-on for your organization?`} />
+            <ModalTwoHeader title={c('sso').t`Remove single sign-on for your organization?`} />
             <ModalTwoContent>
                 <div className="text-center my-8">
                     <img className="m-auto w-custom" style={{ '--w-custom': '6rem' }} src={errorImg} alt="" />
                 </div>
-                <p className="m-0 text-bold">{c('Info')
+                <p className="m-0 text-bold">{c('sso')
                     .t`The credentials from your Identity Provider will be deleted.`}</p>
-                <p className="my-4">{c('Info').t`Once single sign-on is disabled for your organization:`}</p>
+                <p className="my-4">{c('sso').t`Once single sign-on is disabled for your organization:`}</p>
                 <ul className="mt-0">
                     <li>
-                        {
-                            // translator: full sentence 'SSO users (provided by your Identity Provider) will be deleted and you will have to create them manually to add them back to your organization.'
-                            c('Info')
-                                .jt`${boldSSOUserInformation} and you will have to create them manually to add them back to your organization.`
-                        }
+                        {getBoldFormattedText(
+                            c('sso')
+                                .t`**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.`
+                        )}
                     </li>
                     <li>
-                        {c('Info')
-                            .t`Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization`}
+                        {c('sso')
+                            .t`Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.`}
                     </li>
                 </ul>
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
                 <Button color="danger" onClick={() => withLoading(removeSSO)} loading={loading}>
-                    {c('Action').t`Remove single sign-on`}
+                    {c('sso').t`Remove single sign-on`}
                 </Button>
             </ModalTwoFooter>
         </ModalTwo>
