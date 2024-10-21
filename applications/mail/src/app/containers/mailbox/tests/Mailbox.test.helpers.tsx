@@ -118,7 +118,7 @@ export const baseApiMocks = () => {
     addApiMock('importer/v1/importers', () => ({ Importers: [] }));
     addApiMock('settings/calendar', () => ({}));
     addApiMock('calendar/v1', () => ({}));
-    addApiMock('payments/v4/plans', () => ({}));
+    addApiMock('payments/v4/plans', () => ({ Plans: [] }));
 };
 
 export const setup = async ({
