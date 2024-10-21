@@ -122,3 +122,8 @@ jest.mock('proton-mail/components/list/tip/useTips.tsx', () => ({
     __esModule: true,
     default: jest.fn().mockReturnValue({}),
 }));
+
+jest.mock('@proton/account/securityCheckup/listener', () => ({
+    __esModule: true,
+    securityCheckupListener: jest.fn().mockReturnValue({}),
+}));

@@ -150,7 +150,7 @@ export const useInitializeMessage = () => {
 
             const MIMEType = dataChanges.MIMEType || getData().MIMEType;
 
-            const handleLoadEmbeddedImages = async (attachments: Attachment[]) => {
+            const handleLoadEmbeddedImages = async (attachments: Attachment[], isDraft?: boolean) => {
                 const dispatchResult = dispatch(
                     loadEmbedded({
                         ID: localID,
@@ -161,6 +161,7 @@ export const useInitializeMessage = () => {
                         getAttachment,
                         onUpdateAttachment,
                         messageFlags: message.data.Flags,
+                        isDraft,
                     })
                 ) as any as Promise<PayloadAction<LoadEmbeddedResults, string, { arg: LoadEmbeddedParams }>>;
                 const { payload } = await dispatchResult;
