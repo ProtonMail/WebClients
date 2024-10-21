@@ -78,7 +78,7 @@ export const useLoadEmbeddedImages = (localID: string) => {
         const message = getMessage(localID) as MessageStateWithData;
         const messageKeys = await getMessageKeys(message.data);
 
-        const handleLoadEmbeddedImages = (attachments: Attachment[]) => {
+        const handleLoadEmbeddedImages = (attachments: Attachment[], isDraft?: boolean) => {
             const dispatchResult = dispatch(
                 loadEmbedded({
                     ID: localID,
@@ -89,6 +89,7 @@ export const useLoadEmbeddedImages = (localID: string) => {
                     getAttachment,
                     onUpdateAttachment,
                     messageFlags: message.data.Flags,
+                    isDraft,
                 })
             );
             return dispatchResult as any as Promise<LoadEmbeddedResults>;
