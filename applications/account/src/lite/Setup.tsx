@@ -241,15 +241,15 @@ const Setup = ({ api, onLogin, UID, children, loader }: Props) => {
     }
 
     return (
-        <ApiProvider api={extraThunkArguments.api}>
-            <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
-                <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+        <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
+            <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+                <ApiProvider api={extraThunkArguments.api}>
                     <ModalsChildren />
                     <NotificationsChildren />
                     {children}
-                </EventManagerProvider>
-            </FlagProvider>
-        </ApiProvider>
+                </ApiProvider>
+            </EventManagerProvider>
+        </FlagProvider>
     );
 };
 
