@@ -8,34 +8,37 @@ import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { useInvitations } from '../_invitations';
 import { useInvitationsState } from '../_invitations/useInvitationsState';
 import { useLink, useLinksListing } from '../_links';
-import { useDirectSharingInfo } from '../_shares/useDirectSharingInfo';
 import { useVolumesState } from '../_volumes';
 
 export const useInvitationsActions = () => {
     const { setVolumeShareIds } = useVolumesState();
     const { getLink } = useLink();
     const { acceptInvitation, rejectInvitation } = useInvitations();
-    const { getDirectSharingInfo } = useDirectSharingInfo();
     const { createNotification } = useNotifications();
-    const { getInvitation, setInvitations, removeInvitations } = useInvitationsState();
+    const invitationsState = useInvitationsState();
+    const { getInvitation } = useInvitations();
     const linksListing = useLinksListing();
 
-    const handleAcceptInvitation = async (abortSignal: AbortSignal, invitationId: string) => {
-        const pendingInvitation = getInvitation(invitationId);
-        if (!pendingInvitation) {
+    const handleAcceptInvitation = async (
+        abortSignal: AbortSignal,
+        invitationId: string,
+        preloadLink: boolean = true
+    ) => {
+        const invitation = await getInvitation(abortSignal, invitationId);
+        if (!invitation) {
             return;
         }
-        setInvitations([{ ...pendingInvitation, isLocked: true }]);
-        await acceptInvitation(abortSignal, pendingInvitation)
+        invitationsState.setInvitations([{ ...invitation, isLocked: true }]);
+        await acceptInvitation(abortSignal, invitation)
             .then((response) => {
                 if (response?.Code !== 1000) {
                     throw new EnrichedError(
                         c('Notification').t`Failed to accept share invitation`,
                         {
                             tags: {
-                                volumeId: pendingInvitation.share.volumeId,
-                                shareId: pendingInvitation.share.shareId,
-                                linkId: pendingInvitation.link.linkId,
+                                volumeId: invitation.share.volumeId,
+                                shareId: invitation.share.shareId,
+                                linkId: invitation.link.linkId,
                                 invitationId,
                             },
                         },
@@ -49,30 +52,42 @@ export const useInvitationsActions = () => {
                     type: 'error',
                     text: error.message,
                 });
-                setInvitations([{ ...pendingInvitation, isLocked: false }]);
+                invitationsState.setInvitations([{ ...invitation, isLocked: false }]);
                 throw error;
             });
 
-        // Preload link's info
-        await Promise.all([
-            getLink(abortSignal, pendingInvitation.share.shareId, pendingInvitation.link.linkId),
-            getDirectSharingInfo(abortSignal, pendingInvitation.share.shareId),
-        ]);
+        // Due to how cache is done, we do that to prevent multiple call to share bootstrap
+        // We only need link's preload in case of accept in the shared with me section
+        if (preloadLink) {
+            await getLink(abortSignal, invitation.share.shareId, invitation.link.linkId);
+        }
 
         // TODO: Remove this when we will have events
-        linksListing.setSharedWithMeShareIdsState([pendingInvitation.share.shareId]);
-        setVolumeShareIds(pendingInvitation.share.volumeId, [pendingInvitation.share.shareId]);
+        linksListing.setSharedWithMeShareIdsState([invitation.share.shareId]);
+        setVolumeShareIds(invitation.share.volumeId, [invitation.share.shareId]);
 
-        removeInvitations([pendingInvitation.invitation.invitationId]);
+        invitationsState.removeInvitations([invitation.invitation.invitationId]);
         createNotification({
             type: 'success',
             text: c('Notification').t`Share invitation accepted successfully`,
         });
+
+        return {
+            shareId: invitation.share.shareId,
+            linkId: invitation.link.linkId,
+            volumeId: invitation.share.volumeId,
+        };
     };
 
     const handleRejectInvitation = async (
-        showConfirmModal: ReturnType<typeof useConfirmActionModal>[1],
-        invitationId: string
+        abortSignal: AbortSignal,
+        {
+            showConfirmModal,
+            invitationId,
+        }: {
+            showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
+            invitationId: string;
+        }
     ) => {
         showConfirmModal({
             title: c('Title')
@@ -81,11 +96,11 @@ export const useInvitationsActions = () => {
             submitText: c('Action').t`Confirm`,
             onSubmit: async () => {
                 // When rejecting an invitation, we can optimistically remove it, and if any issue occurs, we add it back.
-                const pendingInvitation = getInvitation(invitationId);
-                if (!pendingInvitation) {
+                const invitation = await getInvitation(abortSignal, invitationId);
+                if (!invitation) {
                     return;
                 }
-                removeInvitations([invitationId]);
+                invitationsState.removeInvitations([invitationId]);
                 await rejectInvitation(new AbortController().signal, invitationId)
                     .then((response) => {
                         if (response?.Code !== 1000) {
@@ -93,9 +108,9 @@ export const useInvitationsActions = () => {
                                 c('Notification').t`Failed to reject share invitation`,
                                 {
                                     tags: {
-                                        volumeId: pendingInvitation.share.volumeId,
-                                        shareId: pendingInvitation.share.shareId,
-                                        linkId: pendingInvitation.link.linkId,
+                                        volumeId: invitation.share.volumeId,
+                                        shareId: invitation.share.shareId,
+                                        linkId: invitation.link.linkId,
                                         invitationId,
                                     },
                                 },
@@ -109,8 +124,8 @@ export const useInvitationsActions = () => {
                             text: err.message,
                         });
                         // Adding invite back if any issue happened
-                        if (pendingInvitation) {
-                            setInvitations([pendingInvitation]);
+                        if (invitation) {
+                            invitationsState.setInvitations([invitation]);
                         }
                         throw err;
                     });
