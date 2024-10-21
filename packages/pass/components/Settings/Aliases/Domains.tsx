@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/index';
 import { DomainAddModal } from '@proton/pass/components/Settings/Aliases/DomainAddModal';
+import { DomainDeleteModal } from '@proton/pass/components/Settings/Aliases/DomainDeleteModal';
 import { DomainDetailsModal } from '@proton/pass/components/Settings/Aliases/DomainDetailsModal';
 import { DomainsTable } from '@proton/pass/components/Settings/Aliases/DomainsTable';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
@@ -15,6 +16,7 @@ import type { CustomDomainOutput, CustomDomainSettingsOutput, MaybeNull } from '
 
 type DomainAction =
     | { type: 'add' }
+    | ({ type: 'remove' } & CustomDomainOutput)
     | ({ type: 'verify-DNS' } & CustomDomainOutput)
     | ({ type: 'info' } & CustomDomainOutput & CustomDomainSettingsOutput);
 
@@ -55,6 +57,18 @@ export const Domains: FC = () => {
         });
     };
 
+    const handleRemoveDomainClick = (domain: CustomDomainOutput) => {
+        setAction({ type: 'remove', ...domain });
+    };
+
+    const handleRemoved = (domainID: number) => {
+        setDomains((domains) => {
+            if (!domains) return null;
+
+            return domains.filter((domain) => domain.ID !== domainID);
+        });
+    };
+
     useEffect(() => {
         getAllDomains.dispatch();
     }, []);
@@ -82,7 +96,13 @@ export const Domains: FC = () => {
                     onClick={handleAddDomainClick}
                     disabled={!canManageAlias}
                 >{c('Action').t`Add custom domain`}</Button>
-                {domains && domains.length > 0 && <DomainsTable domains={domains} openModalDNS={handleOpenModalDNS} />}
+                {domains && domains.length > 0 && (
+                    <DomainsTable
+                        domains={domains}
+                        openModalDNS={handleOpenModalDNS}
+                        handleRemoveDomainClick={handleRemoveDomainClick}
+                    />
+                )}
             </SettingsPanel>
 
             {action?.type === 'add' && <DomainAddModal onClose={() => setAction(null)} onSubmit={handleAdded} />}
@@ -93,6 +113,9 @@ export const Domains: FC = () => {
                     domain={action}
                     onVerify={handleVerifyClick}
                 />
+            )}
+            {action?.type === 'remove' && (
+                <DomainDeleteModal domainToDelete={action} onClose={() => setAction(null)} onRemove={handleRemoved} />
             )}
         </>
     );
