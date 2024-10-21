@@ -1,6 +1,7 @@
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 
 import { EXPENSIVE_REQUEST_TIMEOUT } from '../../drive/constants';
+import { API_CUSTOM_ERROR_CODES } from '../../errors';
 import type { MoveLink } from '../../interfaces/drive/link';
 import type { CreateDrivePhotosShare, CreateDriveShare } from '../../interfaces/drive/share';
 
@@ -25,6 +26,7 @@ export const queryUserShares = (ShowAll = 1) => ({
 export const queryShareMeta = (shareID: string) => ({
     method: `get`,
     url: `drive/shares/${shareID}`,
+    silence: [API_CUSTOM_ERROR_CODES.NOT_ALLOWED],
 });
 
 export const queryRenameLink = (
