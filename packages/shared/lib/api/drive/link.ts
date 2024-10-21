@@ -70,3 +70,21 @@ export const queryShareMap = (shareID: string, lastIndex?: number, sessionName?:
         PageSize: pageSize,
     },
 });
+
+export const queryUserLinkAccess = ({
+    volumeId,
+    shareId,
+    linkId,
+}: {
+    volumeId?: string;
+    shareId: string;
+    linkId: string;
+}) => ({
+    method: 'get',
+    url: `drive/v2/user-link-access`,
+    params: {
+        VolumeID: volumeId,
+        ShareID: shareId,
+        LinkID: linkId,
+    },
+});

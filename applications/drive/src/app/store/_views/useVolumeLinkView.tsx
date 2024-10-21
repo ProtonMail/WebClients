@@ -10,7 +10,7 @@ import { useDebouncedRequest } from '../_api';
 import { EXTERNAL_INVITATIONS_ERROR_NAMES, useInvitations } from '../_invitations';
 import type { DecryptedLink } from '../_links';
 import { useLink } from '../_links';
-import type { ShareInvitationDetails } from '../_shares';
+import { type ShareInvitationDetails } from '../_shares';
 import { useVolumesState } from '../_volumes';
 
 export const useVolumeLinkView = () => {
@@ -18,10 +18,11 @@ export const useVolumeLinkView = () => {
     const { acceptInvitation } = useInvitationsActions();
     const debouncedRequest = useDebouncedRequest();
     const { getLink } = useLink();
+
     const { createNotification } = useNotifications();
     const volumeState = useVolumesState();
 
-    const getInvitationLinkDetails = async (
+    const getContextShareLinkDetails = async (
         abortSignal: AbortSignal,
         { volumeId, linkId }: { volumeId: string; linkId: string }
     ) => {
@@ -57,7 +58,7 @@ export const useVolumeLinkView = () => {
             });
 
             if (!invitationDetails) {
-                const link: DecryptedLink | undefined = await getInvitationLinkDetails(abortSignal, {
+                const link: DecryptedLink | undefined = await getContextShareLinkDetails(abortSignal, {
                     volumeId,
                     linkId,
                 }).catch((error) => {
@@ -78,8 +79,10 @@ export const useVolumeLinkView = () => {
                 // This will happen if we can't find the invite and the file/folder does not exist
                 return;
             }
-            volumeState.setVolumeShareIds(volumeId, [invitationDetails.share.shareId]);
-            await acceptInvitation(abortSignal, invitationDetails.invitation.invitationId);
+            const acceptedInvitation = await acceptInvitation(abortSignal, invitationId, false);
+            if (!acceptedInvitation) {
+                return;
+            }
             return {
                 linkId: invitationDetails.link.linkId,
                 shareId: invitationDetails.share.shareId,
