@@ -138,10 +138,7 @@ const MessageBodyImage = ({
 
     const showLoader = status === 'loading';
 
-    const errorMessage = error?.data?.Error
-        ? error?.data?.Error
-        : c('Message image')
-              .t`Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.`;
+    const errorMessage = error?.data?.Error ?? c('Message image').t`Image could not be loaded.`;
 
     const placeholderTooltip = error
         ? errorMessage
