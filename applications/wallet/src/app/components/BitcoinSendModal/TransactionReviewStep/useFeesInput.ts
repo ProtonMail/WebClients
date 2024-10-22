@@ -12,8 +12,7 @@ export type FeeRateByBlockTarget = [BlockTarget, FeeRate];
 
 export const findNearestBlockTargetFeeRate = (
     blockEstimate: number,
-    blockEstimationKeys: [number, number][],
-    minimumFee?: number | undefined
+    blockEstimationKeys: [number, number][]
 ): number | undefined => {
     const nearestAbove = blockEstimationKeys.find(([block]) => {
         return Number(block) >= blockEstimate;
@@ -27,8 +26,7 @@ export const findNearestBlockTargetFeeRate = (
 
     const fee = (nearestAbove ?? nearestBelow ?? first)?.[1];
 
-    // Return minimumFee if exists and if superior to fee or if fee is undefined
-    return minimumFee && (fee === undefined || minimumFee > fee) ? minimumFee : fee;
+    return !fee || fee < 1 ? 1 : fee;
 };
 
 export const findQuickestBlock = (feeRate: number, blockEstimationKeys: [number, number][]): number | undefined => {
@@ -47,7 +45,7 @@ export const feesMapToList = (feesMap: Map<string, number>) => {
 };
 
 export const useFees = () => {
-    const { feesEstimation: feesMap, minimumFee: minimumFee } = useBitcoinBlockchainContext();
+    const { feesEstimation: feesMap } = useBitcoinBlockchainContext();
 
     const feesList = useMemo(() => {
         return feesMapToList(feesMap);
@@ -56,28 +54,27 @@ export const useFees = () => {
     return {
         feesList,
         feesMap,
-        minimumFee,
     };
 };
 
 export const useFeesInput = (txBuilderHelpers: TxBuilderHelper) => {
     const { txBuilder, updateTxBuilder } = txBuilderHelpers;
 
-    const { feesList, minimumFee } = useFees();
+    const { feesList } = useFees();
 
     const getFeesByBlockTarget = (blockTarget: number) => {
-        return findNearestBlockTargetFeeRate(blockTarget, feesList, minimumFee);
+        return findNearestBlockTargetFeeRate(blockTarget, feesList);
     };
 
     const feeRate = Number(txBuilder.getFeeRate() ?? 1);
 
     useEffect(() => {
-        const defaultFeeRate = findNearestBlockTargetFeeRate(DEFAULT_TARGET_BLOCK, feesList, minimumFee);
+        const defaultFeeRate = findNearestBlockTargetFeeRate(DEFAULT_TARGET_BLOCK, feesList);
 
         if (defaultFeeRate && !txBuilder.getFeeRate()) {
             updateTxBuilder((txBuilder) => txBuilder.setFeeRate(BigInt(Math.round(defaultFeeRate))));
         }
-    }, [feeRate, feesList, minimumFee, txBuilder, updateTxBuilder]);
+    }, [feeRate, feesList, txBuilder, updateTxBuilder]);
 
     return {
         feeRate,
