@@ -12,7 +12,7 @@ const AppConfigSchema = z.object({
 
 const APP_CONFIG_PATH = resolve(__dirname, "../../packages/config/mail/appConfig.json");
 const { appConfig } = AppConfigSchema.parse(JSON.parse(readFileSync(APP_CONFIG_PATH, "utf8")));
-const sentryDSN = appConfig.sentryDesktop.replace("sentry", "mail.proton.me/api/core/v4/reports/sentry");
+const sentryDSN = appConfig.sentryDesktop;
 
 export const mainConfig: Configuration = {
     /**
