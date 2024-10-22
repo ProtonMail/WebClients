@@ -22,7 +22,7 @@ const LOG_LEVEL_TO_SEVERITY: Record<LogMessage["level"], SeverityLevel> = {
     silly: "debug",
 };
 
-export async function initializeTelemetry() {
+export async function initializeSentry() {
     const appID = await getAppID();
     const environment = new URL(getAppURL().mail).hostname.replace(/^mail./i, "");
     const release = `${pkg.name}@${pkg.version}+${app.isPackaged ? "packaged" : "unpackaged"}`;
