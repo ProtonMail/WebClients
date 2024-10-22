@@ -411,9 +411,6 @@
       "OK": [
         "V redu"
       ],
-      "Ok": [
-        "V redu"
-      ],
       "Open": [
         "Odpri"
       ],
@@ -2018,9 +2015,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifriranje in uvažanje stikov … To lahko traja nekaj minut. Ko se postopek konča, lahko zaprete to okno."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Uvozite lahko datoteko CSV ali VCF, v kolikor ne presega ${ MAX_IMPORT_FILE_SIZE_STRING } ali ${ MAX_IMPORT_CONTACTS_STRING } stikov. Če je vaša datoteka večja, jo razdelite na več manjših. ${ learnMoreLink }."
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Zagotovite si neomejeno število vzdevkov in 500 GB prostora za shranjevanje z ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
@@ -2716,9 +2710,6 @@
         "Sporočilo lahko pošljete največ ${ maxContacts } prejemnikom.",
         "Sporočilo lahko pošljete največ ${ maxContacts } prejemnikom."
       ],
-      "You have reached the contacts limit for your account": [
-        "Dosegli ste mejo za število stikov v vašem računu."
-      ],
       "You have reached the maximum number of calendars.": [
         "Dosegli ste največje število koledarjev."
       ],
@@ -3036,9 +3027,6 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Vabilo od: ${ inviteEmail }"
-      ],
-      "Manage addresses.": [
-        "Upravljanje naslovov"
       ],
       "Sorry, you can't switch plans at this time.": [
         "Oprostite, trenutno ne morete zamenjati paketa."
@@ -3645,9 +3633,6 @@
         "(${ memberCount } člana)",
         "(${ memberCount } člani)",
         "(${ memberCount } članov)"
-      ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } na mesec)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } dodaten prostor za shranjevanje"
@@ -5487,9 +5472,6 @@
       "Graphics Interchange Format (GIF)": [
         "Graphics Interchange Format (GIF)"
       ],
-      "GZip Compressed Archive": [
-        "GZip arhiv"
-      ],
       "HyperText Markup Language (HTML)": [
         "HyperText Markup Language (HTML)"
       ],
@@ -5507,9 +5489,6 @@
       ],
       "Java Archive (JAR)": [
         "Java arhiv (JAR)"
-      ],
-      "JPEG images": [
-        "JPEG slike"
       ],
       "MP3 audio": [
         "MP3 zvočna datoteka"
@@ -5546,9 +5525,6 @@
       ],
       "Opus audio": [
         "Opus zvočna datoteka"
-      ],
-      "Portable Network Graphics": [
-        "Portable Network Graphics (PNG)"
       ],
       "RAR archive": [
         "RAR arhiv"
@@ -6009,9 +5985,6 @@
       "Strict no-logs policy": [
         "Strikten pravilnik brez dnevniških datotek"
       ],
-      "Tor over VPN": [
-        "Tor preko VPN"
-      ],
       "Two-factor authentication": [
         "Dvojno preverjanja pristnosti"
       ],
@@ -6244,9 +6217,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Ustvarite do ${ n } e-poštnih naslovov/vzdevkov, ki jih lahko dodelite družinskim članom. Uporabite jih za spletne identitete, npr. JohnShopper@${ domain } za nakupovalne račune."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Namenske strežnike z namenskimi naslovi IP lahko dodate zasebnim prehodom, da omogočite natančno nastavljen nadzor dostopa"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Brani pred grožnjo zasebnosti VPN tako, da vaš internetni promet preusmeri prek več strežnikov"
       ],
@@ -6336,9 +6306,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Ponastavi gesla uporabnika in ponastavi dvojno preverjanje pristnosti za uporabnike"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Z enim klikom preusmerite internetni promet prek omrežja Tor."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zaščitite vaše datoteke s šifrirano shrambo v oblaku. Vključuje samodejno sinhronizacijo, šifrirano delitev datotek in drugo."
@@ -6641,9 +6608,6 @@
       "Share invitation accepted successfully": [
         "Povabilo k skupni rabi je bilo sprejeto."
       ],
-      "Stopping to share this item has failed": [
-        "Preklic deljenja za ta predmet ni uspel."
-      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Povezave do »${ name }« ni bilo mogoče izbrisati"
       ],
@@ -6682,11 +6646,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Uvoz bo uspešen, ko izberete vse zahtevane predmete, kot je prikazano v GIF."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Izberite, do česa lahko ${ BRAND_NAME } dostopa: oglejte si svoja e-poštna sporočila in nastavitve, oglejte si in prenesite svoje stike, oglejte si in prenesite vse dnevne rede, do katerih dostopate iz storitve Google Agenda."
       ]
     },
     "Option": {
@@ -6843,6 +6802,9 @@
       ],
       "E.g., ": [
         "Npr. "
+      ],
+      "Email": [
+        "E-pošta"
       ],
       "Filter groups": [
         "Filtriraj skupine"
@@ -7042,9 +7004,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Poizkusite ${ PASS_APP_NAME }"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "Uporablja se v spletnih trgovinah, kot je Amazon, itd."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Ko vas vprašajo za vaš e-poštni naslov, namesto tega navedite ta vzdevek. Vzdevke ponuja ${ passLink }."
@@ -7695,9 +7654,6 @@
     "Subscription change warning": {
       "Got it": [
         "Razumem"
-      ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Samo prijavite se v svoj račun v Apple App Store in nato pritisnite ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Samo prijavite se v svoj račun v Trgovini Play in nato pritisnite ${ subscriptions }."
@@ -8544,9 +8500,6 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Izberite shemo PGP, ki bo uporabljena pri podpisovanju ali šifriranju uporabnika. Upoštevajte, da PGP/Inline prisili v navadna besedilna sporočila"
       ],
-      "Shared end-to-end encrypted": [
-        "V skupni rabi s šifriranjem od konca do konca"
-      ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sistemske podmape bodo v ${ MAIL_APP_NAME }u prikazane kot ločene mape"
       ],
@@ -8653,11 +8606,6 @@
       ],
       "No ads": [
         "Brez oglasov"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Dostop do varnih strežnikov, do hitrih prenosov P2P/BitTorrent, Tor prek VPN in še več"
       ]
     },
     "wallet_signup_2024: Info": {

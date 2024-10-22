@@ -184,6 +184,9 @@
       "Copy link": [
         "Copia l'enllaç"
       ],
+      "Create a copy": [
+        "Crea una còpia"
+      ],
       "Create a new contact group": [
         "Crear un nou grup de contactes"
       ],
@@ -357,9 +360,6 @@
       "Loading verification": [
         "Carregant verificació"
       ],
-      "Login": [
-        "Inici de sessió"
-      ],
       "Make a copy": [
         "Fes una còpia"
       ],
@@ -409,9 +409,6 @@
         "Ara no"
       ],
       "OK": [
-        "D'acord"
-      ],
-      "Ok": [
         "D'acord"
       ],
       "Open": [
@@ -560,9 +557,6 @@
       ],
       "Sign out": [
         "Tanca la sessió"
-      ],
-      "Sign up": [
-        "Crea un compte"
       ],
       "Skip verification": [
         "Omet la verificació"
@@ -989,6 +983,26 @@
       ],
       "Continue your subscription": [
         "Continueu amb la vostra subscripció"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "Emmagatzematge de ${ maxSpaceTB }"
+      ],
+      "Advanced account protection": [
+        "Protecció avançada del compte"
+      ],
+      "Cancel and downgrade": [
+        "Cancel·la i passa a un pla inferior"
+      ],
+      "Encrypted password manager": [
+        "Gestor de contrasenyes xifrat"
+      ],
+      "Save ${ upsellSavings }": [
+        "Estalvieu el ${ upsellSavings }"
+      ],
+      "Try ${ planName }": [
+        "Proveu ${ planName }"
       ]
     },
     "Checkout row": {
@@ -2022,9 +2036,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Xifrar i importar contactes... És possible que passi uns quants minuts. Quan el procés s'hagi completat, podeu tancar aquesta modalitat."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Per importar a través de fitxers CSV i VCF, assegureu-vos que el fitxer no excedeixi ${ MAX_IMPORT_FILE_SIZE_STRING } o ${ MAX_IMPORT_CONTACTS_STRING } contactes. Si el fitxer és més gran, dividiu-lo en fitxers més petits. ${ learnMoreLink }."
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
@@ -2127,6 +2138,14 @@
     "Downgrade warning": {
       "Remove discount": [
         "Suprimeix el descompte"
+      ]
+    },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Obre a ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Save for later": [
+        "Guarda per a després"
       ]
     },
     "driveplus2024: Deal details": {
@@ -2706,9 +2725,6 @@
         "No podeu enviar un correu a més d'${ maxContacts } destinatari.",
         "No podeu enviar un correu a més de ${ maxContacts } destinataris."
       ],
-      "You have reached the contacts limit for your account": [
-        "Heu arribat al límit de contactes per al vostre compte."
-      ],
       "You have reached the maximum number of calendars.": [
         "Heu arribat al nombre màxim de calendaris."
       ],
@@ -3021,9 +3037,6 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Convidat per: ${ inviteEmail }"
-      ],
-      "Manage addresses.": [
-        "Gestiona les adreces."
       ],
       "Sorry, you can't switch plans at this time.": [
         "No podeu canviar de pla en aquest moment."
@@ -3566,9 +3579,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
-      ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice }/mes)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonificació d'emmagatzematge"
@@ -4916,6 +4926,9 @@
       "Last month only": [
         "Només el darrer mes"
       ],
+      "Log in or sign up ": [
+        "Inicieu sessió o registreu-vos "
+      ],
       "Mail Server (IMAP)": [
         "Servidor de correu (IMAP)"
       ],
@@ -5391,9 +5404,6 @@
       "Graphics Interchange Format (GIF)": [
         "Format d'intercanvi de gràfics (GIF)"
       ],
-      "GZip Compressed Archive": [
-        "Arxiu comprimit GZip"
-      ],
       "HyperText Markup Language (HTML)": [
         "Llenguatge d'etiquetatge d'hipertext (HTML)"
       ],
@@ -5411,9 +5421,6 @@
       ],
       "Java Archive (JAR)": [
         "Arxiu Java (JAR)"
-      ],
-      "JPEG images": [
-        "Imatges JPEG"
       ],
       "MP3 audio": [
         "Àudio MP3"
@@ -5450,9 +5457,6 @@
       ],
       "Opus audio": [
         "Àudio Opus"
-      ],
-      "Portable Network Graphics": [
-        "Gràfics de xarxa portàtils (PNG)"
       ],
       "RAR archive": [
         "Arxiu RAR"
@@ -5640,6 +5644,10 @@
       "${ n } VPN connection": [
         "${ n } connexió VPN",
         "${ n } connexions VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } usuari",
+        "Fins a ${ numberOfUsers } usuaris"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email",
@@ -5920,9 +5928,6 @@
       "Support for up to 2 users": [
         "Suport per a 2 usuaris"
       ],
-      "Tor over VPN": [
-        "Tor sobre VPN"
-      ],
       "Two-factor authentication": [
         "Autenticació de dos factors"
       ],
@@ -6174,9 +6179,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Creeu fins a ${ n } adreces de correu electrònic o àlies que podeu assignar als membres de la família. Utilitzeu-los per a les identitats en línia, p. ex., JoanCompres@${ domain } per als comptes de compres."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a activar un control d'accés més optimitzat"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defensa contra les amenaces a la privacitat de la VPN passant el vostre trànsit d'internet a través de múltiples servidors"
       ],
@@ -6266,9 +6268,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Restableix les contrasenyes i l'autenticació de dos factors dels usuaris."
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Dirigiu el vostre trànsit d'internet a través de la xarxa Tor amb un sol clic."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."
@@ -6557,9 +6556,6 @@
       "Share invitation declined": [
         "S'ha rebutjat la invitació per a compartir."
       ],
-      "Stopping to share this item has failed": [
-        "No s'ha pogut deixar de compartir aquest element"
-      ],
       "The link to \"${ name }\" failed to be deleted": [
         "No s'ha pogut eliminar l'enllaç a \"${ name }\"."
       ],
@@ -6598,11 +6594,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Perquè la importació funcioni, seleccioneu tots els elements sol·licitats tal com es mostra al fitxer GIF."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Seleccioneu a què pot accedir ${ BRAND_NAME }: visualitzeu els vostres missatges de correu electrònic i la vostra configuració, visualitzeu i baixeu els vostres contactes, visualitzeu i baixeu totes les agendes a les quals accediu des de Google Calendar."
       ]
     },
     "Option": {
@@ -6797,6 +6788,9 @@
       "E.g., ": [
         "Ex., "
       ],
+      "Email": [
+        "Corrreu electrònic"
+      ],
       "Filter groups": [
         "Filtra grups"
       ],
@@ -6990,9 +6984,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Proveu ${ PASS_APP_NAME }"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "S'utilitza a l'Amazon per a fer compres, etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Quan se us demani l'adreça de correu electrònic, doneu aquest àlies en el seu lloc. ${ passLink } proporciona els àlies."
@@ -7602,9 +7593,6 @@
     "Subscription change warning": {
       "Got it": [
         "Entesos"
-      ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Inicieu la sessió al vostre compte de l'App Store d'Apple i, després, premeu ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Inicieu la sessió al vostre compte de la Play Store i, després, premeu ${ subscriptions }."
@@ -8441,9 +8429,6 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccioneu l'esquema PGP que s'utilitzarà en signar o xifrar a un usuari. Tingueu en compte que PGP/inline força missatges de text simples"
       ],
-      "Shared end-to-end encrypted": [
-        "Compartit amb xifratge d'extrem a extrem"
-      ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les subcarpetes del sistema es mostraran com a carpetes independents a ${ MAIL_APP_NAME }"
       ],
@@ -8534,11 +8519,6 @@
       ],
       "No ads": [
         "Sense anuncis"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Accés a servidors Secure Core, descàrregues ràpides P2P/BitTorrent, Tor sobre VPN i moltes més funcions."
       ]
     },
     "wallet_signup_2024: Info": {

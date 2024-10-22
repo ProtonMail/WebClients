@@ -360,9 +360,6 @@
       "Loading verification": [
         "Загружается проверка"
       ],
-      "Login": [
-        "Вход"
-      ],
       "Make a copy": [
         "Сделать копию"
       ],
@@ -412,9 +409,6 @@
         "Не сейчас"
       ],
       "OK": [
-        "OK"
-      ],
-      "Ok": [
         "OK"
       ],
       "Open": [
@@ -557,9 +551,6 @@
       ],
       "Sign out": [
         "Выйти"
-      ],
-      "Sign up": [
-        "Регистрация"
       ],
       "Skip verification": [
         "Пропустить проверку"
@@ -2033,9 +2024,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идет шифрование и импортирование контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Для импорта через CSV- и VCF-файл убедитесь, что файл не превышает ${ MAX_IMPORT_FILE_SIZE_STRING } или ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, пожалуйста, разделите его на более мелкие файлы. ${ learnMoreLink }."
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Получите неограниченное количество псевдонимов и 500 ГБ в облачном хранилище с ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
@@ -2150,6 +2138,14 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Вы подписаны на ${ PLAN_NAMES[PLANS.PASS] } по специальной цене ${ price } в год. Перейдя на бесплатный план, вы навсегда потеряете скидку, даже если вы улучшите снова в будущем."
+      ]
+    },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Открыть в ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Save for later": [
+        "Сохранить на потом"
       ]
     },
     "driveplus2024: Deal details": {
@@ -2767,9 +2763,6 @@
         "Нельзя отправить письмо более чем ${ maxContacts } получателям",
         "Нельзя отправить письмо более чем ${ maxContacts } получателям"
       ],
-      "You have reached the contacts limit for your account": [
-        "Вы достигли лимита контактов для вашего аккаунта."
-      ],
       "You have reached the maximum number of calendars.": [
         "Вы достигли максимального количества календарей."
       ],
@@ -3097,9 +3090,6 @@
       "Lifetime accounts cannot join a family plan.": [
         "Пожизненные аккаунты не могут присоединяться к семейному тарифу."
       ],
-      "Manage addresses.": [
-        "Управляйте адресами."
-      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Владельцы тарифа с участниками не могут присоединиться к другому семейному тарифу."
       ],
@@ -3135,9 +3125,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ваш аккаунт занимает ${ usedSpace }, что превышает лимит хранилища в ${ inviteSpace }. Удалите некоторые данные или попросите администратора тарифного плана увеличить доступный вам объем."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "Вы не можете принять это приглашение со своим текущим планом."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3721,9 +3708,6 @@
         "(${ memberCount } участников)",
         "(${ memberCount } участника)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /месяц)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонусного пространства"
       ],
@@ -4069,6 +4053,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Для достижения наилучших результатов избегайте просмотра трансляций и действий, требующих большого объема памяти, или разделите загрузку на более мелкие пакеты."
       ],
+      "Free 5GB encrypted storage to get started": [
+        "Бесплатное зашифрованное хранилище объемом 5ГБ для начала работы"
+      ],
       "here": [
         "здесь"
       ],
@@ -4143,6 +4130,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто подтвердите свой выбор, а остальное мы сделаем сами."
+      ],
+      "Keep your files secure with end-to-end encryption.": [
+        "Обеспечьте защиту своих файлов с помощью сквозного шифрования."
       ],
       "Key fingerprint": [
         "Отпечаток ключа"
@@ -4278,9 +4268,6 @@
       ],
       "Organization size": [
         "Размер организации"
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Мы отправляем уведомления, проявляя избыточную осторожность. Если вы не узнаёте какие-либо из скомпрометированных данных, вы можете смело игнорировать этот отчёт."
       ],
       "Owner": [
         "Владелец"
@@ -5124,6 +5111,9 @@
       "Last month only": [
         "Только за последний месяц"
       ],
+      "Log in or sign up ": [
+        "Войти или зарегистрироваться "
+      ],
       "Mail Server (IMAP)": [
         "Почтовый сервер (IMAP)"
       ],
@@ -5609,9 +5599,6 @@
       "Graphics Interchange Format (GIF)": [
         "Graphics Interchange Format (GIF)"
       ],
-      "GZip Compressed Archive": [
-        "Сжатый архив GZip"
-      ],
       "HyperText Markup Language (HTML)": [
         "Язык гипертекстовой разметки (HTML)"
       ],
@@ -5629,9 +5616,6 @@
       ],
       "Java Archive (JAR)": [
         "Архив Java (JAR)"
-      ],
-      "JPEG images": [
-        "Изображения JPEG"
       ],
       "MP3 audio": [
         "Аудио MP3"
@@ -5668,9 +5652,6 @@
       ],
       "Opus audio": [
         "Аудио Opus"
-      ],
-      "Portable Network Graphics": [
-        "Portable Network Graphics (PNG)"
       ],
       "RAR archive": [
         "Архив RAR"
@@ -5890,6 +5871,12 @@
         "${ n } подключения к VPN",
         "${ n } подключений к VPN",
         "${ n } подключений к VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } пользователь",
+        "До ${ numberOfUsers } пользователей",
+        "До ${ numberOfUsers } пользователей",
+        "До ${ numberOfUsers } пользователей"
       ],
       "${ options }-day file version history": [
         "${ options }-дневный журнал версий файла",
@@ -6200,9 +6187,6 @@
       "Sync and backup all your files across devices": [
         "Синхронизируйте файлы на всех устройствах и создавайте резервные копии"
       ],
-      "Tor over VPN": [
-        "Tor через VPN"
-      ],
       "Two-factor authentication": [
         "Двухфакторная аутентификация"
       ],
@@ -6478,9 +6462,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Создайте до ${ n } адресов электронной почты или псевдонимов, которые можно назначить членам семьи. Используйте их для идентификации в Интернете, например JohnShopper@${ domain } для аккаунтов для покупок."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Защищает конфиденциальность VPN от угроз, передавая ваш интернет-трафик через несколько серверов"
       ],
@@ -6576,9 +6557,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Сбрасывайте пароли и двухфакторную аутентификацию для пользователей"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Направляйте свой трафик через сеть Tor одним нажатием"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Защитите свои файлы с помощью зашифрованного облачного хранилища. Возможности включают автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
@@ -6896,9 +6874,6 @@
       "Share invitation declined": [
         "Приглашение поделиться отклонено"
       ],
-      "Stopping to share this item has failed": [
-        "Остановка совместного использования этого общего ресурса не удалась"
-      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Не удалось удалить ссылку на \"${ name }\""
       ],
@@ -6937,11 +6912,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Чтобы импорт сработал, необходимо выбрать все требуемые элементы, как показано в GIF."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Укажите, к чему ${ BRAND_NAME } может получить доступ: просмотр электронных писем и настроек, просмотр и скачивание контактов, просмотр и скачивание всех расписаний из Календаря Google."
       ]
     },
     "Option": {
@@ -7166,6 +7136,9 @@
       "E.g., ": [
         "Например, "
       ],
+      "Email": [
+        "Электронная почта"
+      ],
       "Filter groups": [
         "Фильтровать группы"
       ],
@@ -7369,9 +7342,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Попробуйте ${ PASS_APP_NAME }"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "Используется на Amazon для покупок и прочего"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Когда вас попросят указать адрес электронной почты, укажите вместо него этот псевдоним. Псевдонимы предоставляются с помощью ${ passLink }."
@@ -7854,6 +7824,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "Ссылка на этот элемент была сохранена на вашем диске. Позже вы сможете получить доступ к ней в разделе «Поделились со мной»."
+      ],
       "Get up to ${ credits } in credits.": [
         "Вы можете получить до ${ credits } в кредитах."
       ],
@@ -8025,9 +7998,6 @@
       "Got it": [
         "Понятно"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Просто войдите в свой аккаунт Apple App Store, а затем нажмите ${ subscriptions }."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Просто войдите в свой аккаунт Play Маркет, а затем нажмите ${ subscriptions }."
       ],
@@ -8101,6 +8071,18 @@
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } предоставляет вам все приложения и функции, ранний доступ к новым версиям и все, что нужно для управления вашими данными и их безопасностью."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } пользовательский домен электронной почты",
+        "${ planNumberOfDomains } пользовательских домена электронной почты",
+        "${ planNumberOfDomains } пользовательских доменов электронной почты",
+        "${ planNumberOfDomains } пользовательских доменов электронной почты"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } адрес электронной почты",
+        "${ planNumberOfEmails } адреса электронной почты",
+        "${ planNumberOfEmails } адресов электронной почты",
+        "${ planNumberOfEmails } адресов электронной почты"
       ]
     },
     "Subscription renewal state": {
@@ -8722,6 +8704,9 @@
       "Request new code": [
         "Запросить новый код"
       ],
+      "Save it for later in ${ DRIVE_APP_NAME }": [
+        "Сохранить позже в ${ DRIVE_APP_NAME }"
+      ],
       "Security center": [
         "Центр безопасности"
       ],
@@ -8845,6 +8830,9 @@
       ]
     },
     "Tooltip": {
+      "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
+        "Добавьте этот общий файл к вашему ${ DRIVE_APP_NAME } для легкого доступа к нему в дальнейшем."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Значение \"Автоматический\" обозначает формат содержимого редактора, применяемый при отправке этому пользователю. \"Простой текст\" означает, что при отправке сообщение всегда будет преобразовываться в простой текст."
       ],
@@ -8892,9 +8880,6 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберите схему PGP, которая будет применяться при подписи или шифровании для пользователя. Учтите, что PGP/Inline принудительно устанавливает формат сообщений на \"простой текст\""
-      ],
-      "Shared end-to-end encrypted": [
-        "Общий доступ со сквозным шифрованием"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Системные подпапки будут отображаться как отдельные папки в ${ MAIL_APP_NAME }"
@@ -9002,11 +8987,6 @@
       ],
       "No ads": [
         "Без рекламы"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Доступ к защищенным основным серверам, быстрая загрузка P2P/BitTorrent, Tor через VPN и многое другое."
       ]
     },
     "wallet_signup_2024: Info": {
