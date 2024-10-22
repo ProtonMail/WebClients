@@ -849,9 +849,6 @@
       "OK": [
         "OK"
       ],
-      "Ok": [
-        "OK"
-      ],
       "Open": [
         "Открыть"
       ],
@@ -1235,9 +1232,6 @@
       ],
       "Toggle Calendar app": [
         "Переключить на приложение Календарь"
-      ],
-      "Toggle Contact app": [
-        "Переключить на приложение Контакты"
       ],
       "Toggle security center app": [
         "Вкл/выкл приложение \"Центр безопасности\""
@@ -3463,9 +3457,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идет шифрование и импортирование контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Для импорта через CSV- и VCF-файл убедитесь, что файл не превышает ${ MAX_IMPORT_FILE_SIZE_STRING } или ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, пожалуйста, разделите его на более мелкие файлы. ${ learnMoreLink }."
-      ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Для неограниченного доступа к помощнику по написанию и другим функциям обновите до ${ BRAND_NAME } Duo."
       ],
@@ -4233,17 +4224,8 @@
       "Request timed out": [
         "Время запроса истекло"
       ],
-      "Require at least one action": [
-        "Требуется как минимум одно действие"
-      ],
-      "Require at least one condition": [
-        "Требуется как минимум одно условие"
-      ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Отправка вложений ограничена до тех пор, пока вы не достигнете ограничений своего плана или не обновите его."
-      ],
-      "Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.": [
-        "Отправка вложений ограничена когда вы превышаете ограничения тарифа или пока вы не перейдете на новый тариф."
       ],
       "Signature not verified": [
         "Подпись подтверждена"
@@ -4409,9 +4391,6 @@
       ],
       "You did not provide a file.": [
         "Вы не предоставили файл."
-      ],
-      "You have reached the contacts limit for your account": [
-        "Вы достигли лимита контактов для вашего аккаунта."
       ],
       "You have reached the maximum number of calendars.": [
         "Вы достигли максимального количества календарей."
@@ -4794,9 +4773,6 @@
       "Lifetime accounts cannot join a family plan.": [
         "Пожизненные аккаунты не могут присоединяться к семейному тарифу."
       ],
-      "Manage addresses.": [
-        "Управляйте адресами."
-      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Владельцы тарифа с участниками не могут присоединиться к другому семейному тарифу."
       ],
@@ -4832,9 +4808,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ваш аккаунт занимает ${ usedSpace }, что превышает лимит хранилища в ${ inviteSpace }. Удалите некоторые данные или попросите администратора тарифного плана увеличить доступный вам объем."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "Вы не можете принять это приглашение со своим текущим планом."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4854,9 +4827,6 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users ": [
-        "Создайте семейный аккаунт и приглашайте пользователей "
-      ],
       "Invite members and get everything up and running.": [
         "Пригласите участников и настройте всё для работы."
       ],
@@ -5051,11 +5021,6 @@
         "Непрочитанные"
       ]
     },
-    "Filter option to only show message with attachments": {
-      "Has file": [
-        "Есть файл"
-      ]
-    },
     "Filter preview": {
       "read": [
         "прочитано"
@@ -5147,9 +5112,6 @@
       ],
       "Start free trial": [
         "Начать бесплатный пробный период"
-      ],
-      "Try the app-new desktop app": [
-        "Попробуйте новое приложение для настольных компьютеров"
       ],
       "Upgrade now": [
         "Улучшить сейчас"
@@ -5948,9 +5910,6 @@
         "(${ memberCount } участников)",
         "(${ memberCount } участника)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /месяц)"
-      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Фильтровать, если ВСЕ из следующих условий выполнены)"
       ],
@@ -6064,9 +6023,6 @@
       ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Все запланированные или отложенные сообщения будут отменены."
-      ],
-      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
-        "Все вложенные папки также будут удалены. Однако письма, хранящиеся в этой папке ${ nameDeleted }, не будут удалены и могут быть найдены в папке \"Вся почта\"."
       ],
       "Applying actions to conversations": [
         "Применение действий к цепочкам писем"
@@ -6400,9 +6356,6 @@
       ],
       "Emails are automatically signed": [
         "Электронные письма подписываются автоматически"
-      ],
-      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "Письма, помеченные этим ярлыком ${ nameDeleted }, не будут удалены и по-прежнему могут быть найдены в соответствующей папке."
       ],
       "embedded image": [
         "встроенное изображение",
@@ -6815,9 +6768,6 @@
       "Organization size": [
         "Размер организации"
       ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Мы отправляем уведомления, проявляя избыточную осторожность. Если вы не узнаёте какие-либо из скомпрометированных данных, вы можете смело игнорировать этот отчёт."
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Наша система отметила это сообщение как попытку фишинга. Пожалуйста, проверьте, является ли оно подлинным."
       ],
@@ -7075,9 +7025,6 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
-      ],
-      "Snoozed until  ${ dateString } at ${ formattedTime }": [
-        "Отложено до  ${ dateString } ${ formattedTime }"
       ],
       "Snoozed until today, ${ formattedTime }": [
         "Отложено до сегодняшнего дня, ${ formattedTime }"
@@ -7355,9 +7302,6 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Испытайте новые функции, обновления и продукты ${ BRAND_NAME } до их выпуска широкой публике. Приложение будет перезапущено."
       ],
-      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
-        "Выключите, чтобы искать только по дате, имени, адресу электронной почты или теме. Чтобы выключить поиск по содержимому сообщений и удалить загруженную копию сообщений перейдите в настройки."
-      ],
       "Turn on to search the content of your messages": [
         "Включите поиск по содержимому ваших сообщений"
       ],
@@ -7387,9 +7331,6 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Улучшите аккаунт, чтобы добавить больше адресов."
-      ],
-      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "Сменить тариф для автоматического удаления сообщений, находящихся в корзине и спаме более 30 дней."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Обновите аккаунт чтобы создавать больше папок, фильтров и адресов."
@@ -7507,9 +7448,6 @@
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Когда Вы хотите, чтобы Ваше сообщение было автоматически удалено из папки «Входящие» получателя и из Вашей папки «Отправленные»?"
-      ],
-      "When do you want your message to be sent?": [
-        "Когда вы хотите, чтобы ваше сообщение было отправлено?"
       ],
       "When do you want your message to self-destruct?": [
         "Когда вы хотите, чтобы ваше сообщение самоуничтожилось?"
@@ -8554,9 +8492,6 @@
       "Sync with system": [
         "Синхронизировать с системой"
       ],
-      "Synchronize with system": [
-        "Синхронизировать с системой"
-      ],
       "System information": [
         "Сведения о системе"
       ],
@@ -9065,9 +9000,6 @@
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "Изображение не было загружено, чтобы защитить вашу конфиденциальность."
-      ],
-      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
-        "Ваш браузер не смог проверить идентичность удаленного сервера. Возможно, изображение размещено с использованием протокола http."
       ]
     },
     "Message notification": {
@@ -9402,6 +9334,12 @@
         "${ n } подключений к VPN",
         "${ n } подключений к VPN"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } пользователь",
+        "До ${ numberOfUsers } пользователей",
+        "До ${ numberOfUsers } пользователей",
+        "До ${ numberOfUsers } пользователей"
+      ],
       "${ options }-day file version history": [
         "${ options }-дневный журнал версий файла",
         "${ options }-дневный журнал версий файла",
@@ -9711,9 +9649,6 @@
       "Sync and backup all your files across devices": [
         "Синхронизируйте файлы на всех устройствах и создавайте резервные копии"
       ],
-      "Tor over VPN": [
-        "Tor через VPN"
-      ],
       "Two-factor authentication": [
         "Двухфакторная аутентификация"
       ],
@@ -9989,9 +9924,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Создайте до ${ n } адресов электронной почты или псевдонимов, которые можно назначить членам семьи. Используйте их для идентификации в Интернете, например JohnShopper@${ domain } для аккаунтов для покупок."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Защищает конфиденциальность VPN от угроз, передавая ваш интернет-трафик через несколько серверов"
       ],
@@ -10087,9 +10019,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Сбрасывайте пароли и двухфакторную аутентификацию для пользователей"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Направляйте свой трафик через сеть Tor одним нажатием"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Защитите свои файлы с помощью зашифрованного облачного хранилища. Возможности включают автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
@@ -10262,11 +10191,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Чтобы импорт сработал, необходимо выбрать все требуемые элементы, как показано в GIF."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Укажите, к чему ${ BRAND_NAME } может получить доступ: просмотр электронных писем и настроек, просмотр и скачивание контактов, просмотр и скачивание всех расписаний из Календаря Google."
       ]
     },
     "Onboarding List Placeholder": {
@@ -11062,9 +10986,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Попробуйте ${ PASS_APP_NAME }"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "Используется на Amazon для покупок и прочего"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Когда вас попросят указать адрес электронной почты, укажите вместо него этот псевдоним. Псевдонимы предоставляются с помощью ${ passLink }."
@@ -11925,9 +11846,6 @@
       "Got it": [
         "Понятно"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Просто войдите в свой аккаунт Apple App Store, а затем нажмите ${ subscriptions }."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Просто войдите в свой аккаунт Play Маркет, а затем нажмите ${ subscriptions }."
       ],
@@ -12003,6 +11921,36 @@
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } предлагает ${ planMaxSpace } хранилища на одного пользователя для электронной почты, вложений, событий, файлов и паролей. Вы также имеете право на ежегодные бонусы на хранилище."
       ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } календарь на пользователя",
+        "${ planNumberOfCalendars } календаря на пользователя",
+        "${ planNumberOfCalendars } календарей на пользователя",
+        "${ planNumberOfCalendars } календарей на пользователя"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } пользовательский домен электронной почты",
+        "${ planNumberOfDomains } пользовательских домена электронной почты",
+        "${ planNumberOfDomains } пользовательских доменов электронной почты",
+        "${ planNumberOfDomains } пользовательских доменов электронной почты"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } адрес электронной почты",
+        "${ planNumberOfEmails } адреса электронной почты",
+        "${ planNumberOfEmails } адресов электронной почты",
+        "${ planNumberOfEmails } адресов электронной почты"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } адрес электронной почты на пользователя",
+        "${ planNumberOfEmails } адреса электронной почты на пользователя",
+        "${ planNumberOfEmails } адресов электронной почты на пользователя",
+        "${ planNumberOfEmails } адресов электронной почты на пользователя"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } пользователь",
+        "${ planNumberOfUsers } пользователя",
+        "${ planNumberOfUsers } пользователей",
+        "${ planNumberOfUsers } пользователей"
+      ],
       "2 users": [
         "2 пользователя"
       ],
@@ -12036,6 +11984,9 @@
       "Comprehensive privacy and security": [
         "Комплексная защита конфиденциальности и безопасности"
       ],
+      "Dark web monitoring": [
+        "Мониторинг Темной паутины"
+      ],
       "Desktop app and email client support (via IMAP)": [
         "Поддержка приложений для настольных компьютеров и почтовых клиентов (через IMAP)"
       ],
@@ -12054,11 +12005,23 @@
       "Extra storage and users": [
         "Дополнительные место в хранилище и пользователи"
       ],
+      "Folders, labels and filters": [
+        "Папки, ярлыки и фильтры"
+      ],
       "Helping activists in Hong Kong": [
         "Помощь активистам в Гонконге"
       ],
       "How our customer support team got our VPN app directly into people's hands.": [
         "Как наша команда поддержки клиентов передала наше приложение VPN прямо в руки людей."
+      ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "Как мы боролись, когда ${ BRAND_NAME } был заблокирован в результате агрессивной кампании."
+      ],
+      "How we supported local activists when privacy and free speech were threatened.": [
+        "Как мы поддержали местных активистов, когда под угрозой оказались частная жизнь и свобода слова."
+      ],
+      "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Если ваше потребление превышает пределы бесплатного тарифа, вы можете столкнуться с ограничением доступа к функциям продукта и своим данным."
       ],
       "Invited members will be removed from your organization": [
         "Приглашенные участники будут удалены из вашей организации"
@@ -12120,6 +12083,9 @@
       "Unlimited privacy for two": [
         "Неограниченная конфиденциальность для двоих"
       ],
+      "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
+        "Подписки пользователей - это единственный источник дохода ${ BRAND_NAME }. Ваша поддержка позволяет нам оставаться независимыми, продолжать нашу миссию по обеспечению неприкосновенности частной жизни в Интернете, а также помогать активистам и организациям, борющимся за свободу."
+      ],
       "Users won’t be able to manage their calendars": [
         "Пользователи не смогут управлять своими календарями"
       ],
@@ -12140,6 +12106,9 @@
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
         "При отказе от ${ planName } вы будете переведены на ${ BRAND_NAME } Free, который предлагает только до 1 ГБ хранилища для почты и до 5 ГБ хранилища для Drive. Ваша команда будет испытывать перебои в работе, поскольку дополнительные пользователи не поддерживаются на бесплатном тарифе."
+      ],
+      "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Когда ваша подписка на тариф ${ planName } закончится ${ expiryDate }, вы будете переведены на тарифный план ${ BRAND_NAME } Free."
       ],
       "Yearly free storage bonuses": [
         "Ежегодные бесплатные бонусы для места в хранилище"
@@ -13648,9 +13617,6 @@
     "Tor out of date": {
       "stable release": [
         "стабильная версия"
-      ],
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Эта версия браузера Tor не поддерживается. Пожалуйста, обновите до последней версии ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -13729,11 +13695,6 @@
       ],
       "No ads": [
         "Без рекламы"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Доступ к защищенным основным серверам, быстрая загрузка P2P/BitTorrent, Tor через VPN и многое другое."
       ]
     },
     "wallet_signup_2024: Info": {

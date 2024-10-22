@@ -834,9 +834,6 @@
       "OK": [
         "Застосувати"
       ],
-      "Ok": [
-        "OK"
-      ],
       "Open": [
         "Відкрити"
       ],
@@ -1214,9 +1211,6 @@
       ],
       "Toggle Calendar app": [
         "Відкрити календар"
-      ],
-      "Toggle Contact app": [
-        "Відкрити контакти"
       ],
       "Toggle security center app": [
         "Відкрити програму Центр безпеки"
@@ -3402,9 +3396,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Щоб імпортувати з використанням файлів CSV і VCF, розмір файлу не має перевищувати ${ MAX_IMPORT_FILE_SIZE_STRING }, а кількість контактів – ${ MAX_IMPORT_CONTACTS_STRING }. Якщо ваш файл більший, розділіть його на декілька менших. ${ learnMoreLink }."
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Отримайте необмежену кількість псевдонімів і 500 ГБ сховища з ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
@@ -4105,12 +4096,6 @@
       "Request timed out": [
         "Час очікування запиту завершився"
       ],
-      "Require at least one action": [
-        "Необхідна принаймні одна дія"
-      ],
-      "Require at least one condition": [
-        "Необхідна принаймні одна умова"
-      ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Надсилання вкладених файлів обмежено, доки ви не досягнете лімітів плану або не оновите тарифний план."
       ],
@@ -4278,9 +4263,6 @@
       ],
       "You did not provide a file.": [
         "Ви не надали файл."
-      ],
-      "You have reached the contacts limit for your account": [
-        "Ви досягли максимальної кількості контактів для облікового запису"
       ],
       "You have reached the maximum number of calendars.": [
         "Ви досягли максимальної кількості календарів."
@@ -4654,9 +4636,6 @@
       "Invited by: ${ inviteEmail }": [
         "Запрошення від: ${ inviteEmail }"
       ],
-      "Manage addresses.": [
-        "Керувати адресами."
-      ],
       "Sorry, you can't switch plans at this time.": [
         "На жаль, зараз вам не дозволено змінити план."
       ],
@@ -4702,9 +4681,6 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users ": [
-        "Налаштуйте сімейний обліковий запис і запросіть користувачів "
-      ],
       "Set up your family": [
         "Налаштуйте сімейний обліковий запис"
       ],
@@ -4896,11 +4872,6 @@
         "Непрочитані"
       ]
     },
-    "Filter option to only show message with attachments": {
-      "Has file": [
-        "З файлом"
-      ]
-    },
     "Filter preview": {
       "read": [
         "прочитані"
@@ -4992,9 +4963,6 @@
       ],
       "Start free trial": [
         "Почати пробний період"
-      ],
-      "Try the app-new desktop app": [
-        "Спробуйте нову програму для комп'ютера"
       ],
       "Upgrade now": [
         "Покращити зараз"
@@ -5790,9 +5758,6 @@
         "(${ memberCount } учасників)",
         "(${ memberCount } учасників)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice }/місяць)"
-      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Фільтрувати, якщо виконуються ВСІ зазначені умови)"
       ],
@@ -5906,9 +5871,6 @@
       ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Усі заплановані або відкладені повідомлення будуть скасовані."
-      ],
-      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
-        "Підтеки також будуть видалені. Однак листи, що зберігаються в теці ${ nameDeleted }, не видалятимуться і їх можна знайти в теці \"Уся пошта\"."
       ],
       "Applying actions to conversations": [
         "Застосування дій до розмов"
@@ -6236,9 +6198,6 @@
       ],
       "Emails are automatically signed": [
         "Електронні листи підписуються автоматично"
-      ],
-      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "Листи, позначені міткою ${ nameDeleted }, не видалятимуться. Їх можна знайти у відповідній теці."
       ],
       "embedded image": [
         "вбудоване зображення",
@@ -6648,9 +6607,6 @@
       "Organization size": [
         "Розмір організації"
       ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Наші попередження є запобіжними. Якщо ви не впізнаєте жодної із зазначених відомостей, можете сміливо ігнорувати це повідомлення."
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Наша система позначила це повідомлення спробою шахрайства. Переконайтеся, що воно надійне."
       ],
@@ -6902,9 +6858,6 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Оскільки ви лояльний користувач, ваш обліковий запис має увімкнені додаткові функції."
-      ],
-      "Snoozed until  ${ dateString } at ${ formattedTime }": [
-        "Відкладено до ${ dateString }, ${ formattedTime }"
       ],
       "Snoozed until today, ${ formattedTime }": [
         "Відкладено до сьогодні, ${ formattedTime }"
@@ -7179,9 +7132,6 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Спробуйте нові функції, оновлення та продукти ${ BRAND_NAME } до того, як вони будуть випущені для широкого загалу. Це призведе до перезапуску програми"
       ],
-      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
-        "Вимкніть, щоб шукати лише за датою, іменем, адресою електронної пошти або темою повідомлення. Щоб вимкнути пошук вмісту повідомлень і видалити завантажені повідомлення, перейдіть до налаштувань."
-      ],
       "Turn on to search the content of your messages": [
         "Увімкніть, щоб шукати вміст своїх повідомлень"
       ],
@@ -7211,9 +7161,6 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Передплатіть тарифний план, щоб додати більше адрес до свого облікового запису."
-      ],
-      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "Придбайте передплату, щоб повідомлення, які перебувають у смітнику та спамі понад 30 днів, видалялися автоматично."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Передплатіть тарифний план, щоб створити більше тек, фільтрів та адрес."
@@ -7331,9 +7278,6 @@
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Час бажаного автоматичного видалення повідомлення з поштової скриньки отримувача і вашої теки надісланих."
-      ],
-      "When do you want your message to be sent?": [
-        "Коли ви хочете надіслати ваше повідомлення?"
       ],
       "When do you want your message to self-destruct?": [
         "На коли ви плануєте самознищення свого повідомлення?"
@@ -8369,9 +8313,6 @@
       "Sync with system": [
         "Синхронізувати з системою"
       ],
-      "Synchronize with system": [
-        "Синхронізувати з системою"
-      ],
       "System information": [
         "Інформація про систему"
       ],
@@ -8880,9 +8821,6 @@
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "З метою захисту вашої приватності, зображення не було завантажено."
-      ],
-      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
-        "Ваш браузер не міг перевірити справжність віддаленого сервера. Зображення може бути розміщене за допомогою протоколу http."
       ]
     },
     "Message notification": {
@@ -9353,7 +9291,7 @@
         "HTML-підписи"
       ],
       "Integrated 2FA authenticator": [
-        "Інтегрований 2FA автентифікатор"
+        "Інтегрований автентифікатор 2FA"
       ],
       "Kill switch/always-on VPN": [
         "Kill Switch/Постійна VPN"
@@ -9438,9 +9376,6 @@
       ],
       "Strict no-logs policy": [
         "Суворе дотримання політики без журналювання"
-      ],
-      "Tor over VPN": [
-        "Tor через VPN"
       ],
       "Two-factor authentication": [
         "Двоетапна перевірка"
@@ -9677,9 +9612,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Створіть до ${ n } адрес електронної пошти/псевдонімів, які можна призначити членам сім'ї. Використовуйте їх для ідентифікації в інтернеті, наприклад, JohnShopper@${ domain } для облікових записів покупок."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Щоб мати можливість якісного контролю доступу, до приватних мережевих шлюзів можна додати виділені сервери з виділеними IP-адресами"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Захист від загроз приватності VPN завдяки спрямуванню інтернет-трафіку через кілька серверів"
       ],
@@ -9769,9 +9701,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Скидання паролів та двоетапної перевірки користувачів"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Спрямовуйте свій інтернет-трафік через мережу Tor одним натиском"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з автоматичною синхронізацією, зашифрованим спільним доступом та іншими можливостями."
@@ -9941,11 +9870,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Для імпортування ви повинні вибрати всі запитувані елементи, як показано в GIF."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Оберіть, до чого ${ BRAND_NAME } може мати доступ: переглядати ваші поштові повідомлення та налаштування, переглядати й завантажувати ваші контакти, переглядати й завантажувати усі заплановані події з календаря Google."
       ]
     },
     "Onboarding List Placeholder": {
@@ -10576,9 +10500,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Спробуйте ${ PASS_APP_NAME }"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "Використовується на Amazon для покупок та ін."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Коли потрібно вказати адресу електронної пошти, скористайтеся натомість цим псевдонімом. Псевдоніми надаються ${ passLink }."
@@ -11409,9 +11330,6 @@
       "Got it": [
         "Зрозуміло"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Увійдіть до свого облікового запису Apple App Store і натисніть ${ subscriptions }."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Увійдіть до свого облікового запису Google Play і натисніть ${ subscriptions }."
       ],
@@ -11450,7 +11368,7 @@
         "Усього ${ planMaxSpace } сховища"
       ],
       "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } надає вам доступ до всіх застосунків та преміум функцій. Вбудована функція приватності дозволяє вам продовжувати роботу, знаючи, що ваші дані та особистість у безпеці."
+        "${ planName } надає вам доступ до всіх застосунків та преміумфункцій. Вбудована функція приватності дозволяє вам продовжувати роботу, знаючи, що ваші дані та особистість у безпеці."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } надає вам усі застосунки, усі функції, ранній доступ до нових релізів і все необхідне, щоби контролювати свої дані та їхню безпеку."
@@ -13013,9 +12931,6 @@
     "Tor out of date": {
       "stable release": [
         "стабільна версія"
-      ],
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Ця версія браузера Tor не підтримується. Будь ласка, оновіть до найновішої версії ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -13094,11 +13009,6 @@
       ],
       "No ads": [
         "Без реклами"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Доступ до серверів Secure Core, швидке завантаження P2P/BitTorrent, Tor через VPN та інші можливості."
       ]
     },
     "wallet_signup_2024: Info": {

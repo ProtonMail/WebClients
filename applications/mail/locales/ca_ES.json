@@ -838,9 +838,6 @@
       "OK": [
         "D'acord"
       ],
-      "Ok": [
-        "D'acord"
-      ],
       "Open": [
         "Obert"
       ],
@@ -1227,9 +1224,6 @@
       ],
       "Toggle Calendar app": [
         "Canvia a l'aplicació Calendari"
-      ],
-      "Toggle Contact app": [
-        "Canvia a l'aplicació Contactes"
       ],
       "Toggle security center app": [
         "Commuta l'aplicació del centre de seguretat"
@@ -2100,6 +2094,26 @@
       ],
       "Your subscription is ending soon": [
         "La subscripció finalitzarà aviat"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "Emmagatzematge de ${ maxSpaceTB }"
+      ],
+      "Advanced account protection": [
+        "Protecció avançada del compte"
+      ],
+      "Cancel and downgrade": [
+        "Cancel·la i passa a un pla inferior"
+      ],
+      "Encrypted password manager": [
+        "Gestor de contrasenyes xifrat"
+      ],
+      "Save ${ upsellSavings }": [
+        "Estalvieu el ${ upsellSavings }"
+      ],
+      "Try ${ planName }": [
+        "Proveu ${ planName }"
       ]
     },
     "Checkout row": {
@@ -3418,9 +3432,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Xifrar i importar contactes... És possible que passi uns quants minuts. Quan el procés s'hagi completat, podeu tancar aquesta modalitat."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Per importar a través de fitxers CSV i VCF, assegureu-vos que el fitxer no excedeixi ${ MAX_IMPORT_FILE_SIZE_STRING } o ${ MAX_IMPORT_CONTACTS_STRING } contactes. Si el fitxer és més gran, dividiu-lo en fitxers més petits. ${ learnMoreLink }."
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
@@ -4128,12 +4139,6 @@
       "Request timed out": [
         "S'ha esgotat el temps d'espera"
       ],
-      "Require at least one action": [
-        "Requereix al menys una acció"
-      ],
-      "Require at least one condition": [
-        "Requereix al menys una condició"
-      ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "L'enviament d'adjunts està restringit fins que compliu els límits del vostre pla o el milloreu."
       ],
@@ -4295,9 +4300,6 @@
       ],
       "You did not provide a file.": [
         "No has proporcionat un arxiu."
-      ],
-      "You have reached the contacts limit for your account": [
-        "Heu arribat al límit de contactes per al vostre compte."
       ],
       "You have reached the maximum number of calendars.": [
         "Heu arribat al nombre màxim de calendaris."
@@ -4661,9 +4663,6 @@
       "Invited by: ${ inviteEmail }": [
         "Convidat per: ${ inviteEmail }"
       ],
-      "Manage addresses.": [
-        "Gestiona les adreces."
-      ],
       "Sorry, you can't switch plans at this time.": [
         "No podeu canviar de pla en aquest moment."
       ],
@@ -4706,9 +4705,6 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users ": [
-        "Configureu el vostre compte familiar i convideu usuaris "
-      ],
       "Set up your family": [
         "Configureu la vostra família"
       ],
@@ -4888,11 +4884,6 @@
         "No llegit"
       ]
     },
-    "Filter option to only show message with attachments": {
-      "Has file": [
-        "Té un adjunt"
-      ]
-    },
     "Filter preview": {
       "read": [
         "llegit"
@@ -4984,9 +4975,6 @@
       ],
       "Start free trial": [
         "Inicieu la prova gratuïta"
-      ],
-      "Try the app-new desktop app": [
-        "Proveu la nova aplicació d'escriptori"
       ],
       "Upgrade now": [
         "Millora ara"
@@ -5698,9 +5686,6 @@
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice }/mes)"
-      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtre si es compleixen totes les condicions següents)"
       ],
@@ -5804,9 +5789,6 @@
       ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Es cancel·larà qualsevol missatge planificat o posposat."
-      ],
-      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
-        "També s'eliminaran les subcarpetes. Tanmateix, els correus electrònics emmagatzemats en aquesta carpeta ${ nameDeleted } no s'eliminaran i es poden trobar a la carpeta Tot el correu."
       ],
       "Applying actions to conversations": [
         "S'estan aplicant les accions a les converses"
@@ -6121,9 +6103,6 @@
       ],
       "Emails are automatically signed": [
         "Els correus se signen automàticament"
-      ],
-      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "Els correus electrònics amb aquesta etiqueta ${ nameDeleted } no s'eliminaran i continuaran trobant-se a la carpeta respectiva."
       ],
       "embedded image": [
         "imatge integrade",
@@ -6764,9 +6743,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
       ],
-      "Snoozed until  ${ dateString } at ${ formattedTime }": [
-        "En posposició fins ${ dateString } a les ${ formattedTime }"
-      ],
       "Snoozed until today, ${ formattedTime }": [
         "En posposició fins avui a les ${ formattedTime }"
       ],
@@ -7034,9 +7010,6 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Això tornarà a carregar l'aplicació"
       ],
-      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
-        "Desactiveu-ho per a cercar només per data, nom, adreça de correu electrònic o assumpte. Per a desactivar la cerca del contingut dels missatges i eliminar els missatges descarregats, aneu a les preferències."
-      ],
       "Turn on to search the content of your messages": [
         "Activeu-ho per cercar el contingut dels missatges"
       ],
@@ -7066,9 +7039,6 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Milloreu el vostre pla per afegir més adreces al vostre compte."
-      ],
-      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "Milloreu el vostre pla per eliminar automàticament els missatges que han estat a la paperera i al correu brossa durant més de 30 dies."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Actualitzeu per crear més carpetes, filtres, i adreces."
@@ -7186,9 +7156,6 @@
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Quan voleu que el vostre missatge s'elimini automàticament de la safata d'entrada del destinatari i de la carpeta de missatges enviats?"
-      ],
-      "When do you want your message to be sent?": [
-        "Quan voleu que s'enviï el vostre missatge?"
       ],
       "When do you want your message to self-destruct?": [
         "Quan voleu que el vostre missatge es destrueixi automàticament?"
@@ -8188,9 +8155,6 @@
       "Sync with system": [
         "Sincronitza amb el sistema"
       ],
-      "Synchronize with system": [
-        "Sincronitza amb el sistema"
-      ],
       "System information": [
         "Informació del sistema"
       ],
@@ -8689,9 +8653,6 @@
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "La imatge no s'ha carregat per tal de protegir la vostra privacitat."
-      ],
-      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
-        "El vostre navegador no ha pogut verificar la identitat del servidor remot. Pot ser que la imatge estigui allotjada mitjançant el protocol HTTP."
       ]
     },
     "Message notification": {
@@ -8988,6 +8949,10 @@
         "${ n } connexió VPN",
         "${ n } connexions VPN"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } usuari",
+        "Fins a ${ numberOfUsers } usuaris"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email",
         "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email"
@@ -9267,9 +9232,6 @@
       "Support for up to 2 users": [
         "Suport per a 2 usuaris"
       ],
-      "Tor over VPN": [
-        "Tor sobre VPN"
-      ],
       "Two-factor authentication": [
         "Autenticació de dos factors"
       ],
@@ -9521,9 +9483,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Creeu fins a ${ n } adreces de correu electrònic o àlies que podeu assignar als membres de la família. Utilitzeu-los per a les identitats en línia, p. ex., JoanCompres@${ domain } per als comptes de compres."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a activar un control d'accés més optimitzat"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defensa contra les amenaces a la privacitat de la VPN passant el vostre trànsit d'internet a través de múltiples servidors"
       ],
@@ -9613,9 +9572,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Restableix les contrasenyes i l'autenticació de dos factors dels usuaris."
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Dirigiu el vostre trànsit d'internet a través de la xarxa Tor amb un sol clic."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."
@@ -9786,11 +9742,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Perquè la importació funcioni, seleccioneu tots els elements sol·licitats tal com es mostra al fitxer GIF."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Seleccioneu a què pot accedir ${ BRAND_NAME }: visualitzeu els vostres missatges de correu electrònic i la vostra configuració, visualitzeu i baixeu els vostres contactes, visualitzeu i baixeu totes les agendes a les quals accediu des de Google Calendar."
       ]
     },
     "Onboarding List Placeholder": {
@@ -10472,9 +10423,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Proveu ${ PASS_APP_NAME }"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "S'utilitza a l'Amazon per a fer compres, etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Quan se us demani l'adreça de correu electrònic, doneu aquest àlies en el seu lloc. ${ passLink } proporciona els àlies."
@@ -11268,9 +11216,6 @@
       "Got it": [
         "Entesos"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Inicieu la sessió al vostre compte de l'App Store d'Apple i, després, premeu ${ subscriptions }."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Inicieu la sessió al vostre compte de la Play Store i, després, premeu ${ subscriptions }."
       ],
@@ -11336,6 +11281,10 @@
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } ofereix ${ planMaxSpace } d'emmagatzematge per usuari per a correus electrònics, adjunts, esdeveniments, fitxers i contrasenyes. També podeu optar a bonificacions anuals d'emmagatzematge."
       ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } usuari",
+        "${ planNumberOfUsers } usuaris"
+      ],
       "2 users": [
         "2 usuaris"
       ],
@@ -11386,6 +11335,9 @@
       ],
       "Extra storage and users": [
         "Emmagatzematge i bonificacions addicionals"
+      ],
+      "Folders, labels and filters": [
+        "Carpetes, etiquetes i filtres"
       ],
       "Helping activists in Hong Kong": [
         "Ajuda per als activistes a Hong Kong"
@@ -12892,9 +12844,6 @@
     "Tor out of date": {
       "stable release": [
         "versió estable"
-      ],
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Aquesta versió del Navegador Tor no està suportada. Actualitzeu a la darrera ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -12959,11 +12908,6 @@
       ],
       "No ads": [
         "Sense anuncis"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Accés a servidors Secure Core, descàrregues ràpides P2P/BitTorrent, Tor sobre VPN i moltes més funcions."
       ]
     },
     "wallet_signup_2024: Info": {

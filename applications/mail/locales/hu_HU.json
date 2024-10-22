@@ -790,9 +790,6 @@
       "OK": [
         "OK"
       ],
-      "Ok": [
-        "OK"
-      ],
       "Open": [
         "Megnyitás"
       ],
@@ -1137,9 +1134,6 @@
       ],
       "Toggle Calendar app": [
         "Naptár alkalmazás váltása"
-      ],
-      "Toggle Contact app": [
-        "Névjegyek alkalmazás váltása"
       ],
       "Toggle settings": [
         "Beállítások kapcsolása"
@@ -3237,9 +3231,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek betöltése és titkosítása. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "CSV- és VCF-fájlon keresztüli importálás esetén ügyeljen arra, hogy a fájl ne haladja meg a ${ MAX_IMPORT_FILE_SIZE_STRING } vagy a ${ MAX_IMPORT_CONTACTS_STRING } névjegyet. Ha a fájl nagyobb, ossza fel kisebb fájlokra. ${ learnMoreLink }."
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Tegyen szert korlátlan számú e-mail álnévre és 500 GB tárhelyre a ${ PLAN_NAMES[PLANS.BUNDLE] } csomaggal."
       ],
@@ -3867,15 +3858,6 @@
       "Request timed out": [
         "A kérés túllépte az időkorlátot"
       ],
-      "Require at least one action": [
-        "Legalább egy művelet szükséges"
-      ],
-      "Require at least one condition": [
-        "Legalább egy feltétel szükséges"
-      ],
-      "Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.": [
-        "Elérte az Ön által választott csomag által megengedett határokat, ezért a csatolmányok küldése korlátozott lehet, amíg magasabb csomagra nem vált."
-      ],
       "Signature not verified": [
         "Aláírás nincs ellenőrizve"
       ],
@@ -4034,9 +4016,6 @@
       ],
       "You did not provide a file.": [
         "Nem adott meg fájlt."
-      ],
-      "You have reached the contacts limit for your account": [
-        "Elérte a fiókhoz létrehozható névjegyek maximális számát"
       ],
       "You have reached the maximum number of calendars.": [
         "Elérte a naptárak maximális számát."
@@ -4394,9 +4373,6 @@
       "Invited by: ${ inviteEmail }": [
         "Meghívó küldője: ${ inviteEmail }"
       ],
-      "Manage addresses.": [
-        "Címek kezelése."
-      ],
       "Sorry, you can't switch plans at this time.": [
         "Sajnos jelenleg nincs lehetőség csomagváltásra."
       ],
@@ -4433,9 +4409,6 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users ": [
-        "Állítsa be a Family csomagot és hívja meg a tagokat "
-      ],
       "Set up your family": [
         "Family csomag beállítása"
       ],
@@ -4610,11 +4583,6 @@
         "Olvasatlan"
       ]
     },
-    "Filter option to only show message with attachments": {
-      "Has file": [
-        "Van fájl"
-      ]
-    },
     "Filter preview": {
       "read": [
         "olvasott"
@@ -4706,9 +4674,6 @@
       ],
       "Start free trial": [
         "Ingyenes próba megkezdése"
-      ],
-      "Try the app-new desktop app": [
-        "Próbálja ki az új asztali alkalmazást"
       ],
       "Upgrade now": [
         "Váltás nagyobb csomagra"
@@ -5391,9 +5356,6 @@
         "(${ memberCount } tag)",
         "(${ memberCount } tagok)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /hónap)"
-      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Szűrés ha az alábbi ÖSSZES feltétel teljesül)"
       ],
@@ -5773,9 +5735,6 @@
       ],
       "Emails are automatically signed": [
         "Az e-mailek automatikusan aláírásra kerülnek"
-      ],
-      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "A ${ nameDeleted } címkével ellátott e-mailek nem kerülnek törlésre, és továbbra is megtalálhatók az adott mappában."
       ],
       "embedded image": [
         "beágyazott kép",
@@ -6582,9 +6541,6 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Próbálja ki a ${ BRAND_NAME } új funkcióit, frissítéseit és termékeit mielőtt azok elérhetővé válnak a nyilvánosság számára. Ez újra fogja tölteni az alkalmazást"
       ],
-      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
-        "Kikapcsolásával csak dátum alapján, a nevekben, email címekben vagy tárgynevekben történik keresés. Az üzenetek tartalmában való keresés kikapcsolásához és a letöltött üzenetek törléséhez nyissa meg a beállításokat."
-      ],
       "Turn on to search the content of your messages": [
         "Kapcsolja be, hogy az üzenetek szövegében is kereshessen"
       ],
@@ -6611,9 +6567,6 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Váltson nagyobb csomagra, hogy több címet hozhasson létre a fiókjában."
-      ],
-      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "Váltson nagyobb csomagra a 30 napja lomtárban vagy a levélszemét mappában lévő üzenetek automatikus törléséhez."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Váltson nagyobb csomagra, hogy több mappát, szűrőt és címet hozhasson létre."
@@ -6728,9 +6681,6 @@
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Mikor szeretné, hogy az üzenet automatikusan törlődjön a címzett fiókjából és az elküldött üzenetekből?"
-      ],
-      "When do you want your message to be sent?": [
-        "Mikor szeretné elküldeni az üzenetet?"
       ],
       "When do you want your message to self-destruct?": [
         "Mikor szeretné, hogy az üzenet megsemmisítse önmagát?"
@@ -7690,9 +7640,6 @@
       "Sync with system": [
         "Szinkronizálás a rendszerrel"
       ],
-      "Synchronize with system": [
-        "Szinkronizálás a rendszerrel"
-      ],
       "System information": [
         "Rendszer információk"
       ],
@@ -8150,9 +8097,6 @@
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "Az adatai védelme érdekében a kép nem került betöltésre."
-      ],
-      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
-        "A böngészője nem tudta ellenőrizni a távoli szerver azonosságát. A kép esetleg HTTP protokollon keresztül kerülhet kiszolgálásra."
       ]
     },
     "Message notification": {
@@ -8679,9 +8623,6 @@
       "Strict no-logs policy": [
         "Szigorú nincs-naplózás irányelv"
       ],
-      "Tor over VPN": [
-        "Tor VPN-en"
-      ],
       "Two-factor authentication": [
         "Kétlépcsős hitelesítés"
       ],
@@ -8884,9 +8825,6 @@
         "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől",
         "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől"
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Dedikált szervereket, dedikált IP-címekkel, lehet hozzáadni a privát átjárókhoz, a finomhangolt hozzáférés-irányítás lehetővé tételéhez"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "A VPN elleni támadással szemben úgy véd, hogy több szerveren keresztül továbbítja az internetes forgalmat"
       ],
@@ -8952,9 +8890,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Felhasználók jelszavának és kétlépcsős hitelesítésének visszaállítása"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Egyetlen kattintással irányítsa a teljes internetforgalmát a Tor hálózaton keresztül"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Tartsa biztonságban fájljait, titkosított felhőtárhelyen. Automatikus szinkronizálást, titkosított megosztás és további lehetőségeket tartalmaz."
@@ -9095,11 +9030,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Ahhoz, hogy az importálás működjön, ki kell választani az összes kért elemet, ahogy a GIF mutatja."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Válassza ki, ${ BRAND_NAME } mihez tud hozzáférni: megnézheti az e-mailjeit és beállításait, megnézheti és letöltheti a kapcsolatait és letöltheti az összes naptárát, amihez a Google Naptárból hozzá tud férni."
       ]
     },
     "Onboarding modal": {
@@ -11769,9 +11699,6 @@
     "Tor out of date": {
       "stable release": [
         "stabil kiadásra"
-      ],
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Az a Tor Browser verzió nem támogatott. Kérjük, frissítsen a legfrissebb ${ stableRelease }"
       ]
     },
     "Update font modal": {
