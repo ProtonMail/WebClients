@@ -567,9 +567,6 @@
       ],
       "Write us on Twitter": [
         "Tulis tentang kami di Twitter"
-      ],
-      "Your password manager not here? Request it.": [
-        "Tidak menemukan pengelola kata sandi Anda? Mintalah kepada kami."
       ]
     },
     "bf2023: Info": {
@@ -1058,9 +1055,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        " Tingkatkan ke paket berbayar untuk membuat lebih dari satu brankas."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Item \"${ payload.item.data.metadata.name }\" telah diabaikan"
       ],
@@ -1120,9 +1114,6 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Akses ke ${ PASS_APP_NAME } akan membutuhkan sidik jari atau PIN milik perangkat Anda."
-      ],
-      "Add your custom email address to monitor :": [
-        "Tambahkan alamat email khusus Anda untuk dipantau:"
       ],
       "Admin": [
         "Admin"
@@ -1319,12 +1310,6 @@
       "Expires in ${ remainingTime }": [
         "Kedaluwarsa dalam ${ remainingTime }"
       ],
-      "Extra password successfuly created": [
-        "Kata sandi tambahan berhasil dibuat"
-      ],
-      "Extra password successfuly removed": [
-        "Kata sandi tambahan berhasil dihapus"
-      ],
       "Fill in the CSV with your data": [
         "Isi CSV dengan data Anda"
       ],
@@ -1469,9 +1454,6 @@
       "Monitoring settings successfully updated": [
         "Pengaturan pemantauan berhasil diperbarui"
       ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Lebih dari sekadar pengelola kata sandi, ${ PASS_APP_NAME } melindungi kata sandi dan alamat email pribadi Anda melalui alamat email samaran. Dengan didukung oleh teknologi yang serupa dengan ${ MAIL_APP_NAME }, data Anda akan terenkripsi secara end-to-end dan hanya akan dapat diakses oleh Anda."
-      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
       ],
@@ -1519,9 +1501,6 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Akses ${ PASS_APP_NAME } secara daring akan memerlukan kode PIN. Anda akan dikeluarkan setelah 3 percobaan gagal."
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Peringatan kami dimaksudkan agar Anda dapat lebih berhati-hati. Apabila Anda tidak mengenali informasi mana pun yang telah ditandai bocor, Anda dapat mengabaikan laporan ini dengan aman."
       ],
       "Owner": [
         "Pemilik"
@@ -1658,9 +1637,6 @@
       "Select vault to share": [
         "Pilih brankas untuk dibagikan"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Tentukan di mana brankas yang Anda impor akan tersimpan."
-      ],
       "Selected items permanently deleted": [
         "Item yang dipilih dihapus secara permanen"
       ],
@@ -1681,9 +1657,6 @@
       ],
       "Settings successfully updated": [
         "Pengaturan berhasil diperbarui"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Bagikan entri masuk dan catatan aman Anda ke hingga 10 pengguna"
       ],
       "Sign in to your account": [
         "Masuk ke akun Anda"
@@ -1754,9 +1727,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Untuk memindahkan data dari pengelola kata sandi lain, tuju pengelola kata sandi yang dimaksud, ekspor data Anda, lalu unggah data ini ke ${ PASS_APP_NAME }. Setelah data selesai diunggah, hapus berkas yang diekspor."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "Untuk meninjau data Anda yang telah diimpor, klik ikon Pass pada toolbar browser Anda."
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Coba berbagai fitur, pembaruan, dan produk ${ BRAND_NAME } baru sebelum waktu rilisnya kepada publik. Mengubah peraturan ini akan memuat ulang halaman."
       ],
@@ -1792,9 +1762,6 @@
       ],
       "User's access removed": [
         "Akses pengguna dihapus"
-      ],
-      "User's access sucessfuly updated": [
-        "Akses pengguna berhasil diperbarui"
       ],
       "username": [
         "nama pengguna"
@@ -2020,9 +1987,6 @@
       "Capital letters (A-Z)": [
         "Huruf kapital (A-Z)"
       ],
-      "Capitalise": [
-        "Gunakan huruf kapital"
-      ],
       "Card": [
         "Kartu"
       ],
@@ -2212,9 +2176,6 @@
       "Import passwords": [
         "Impor kata sandi"
       ],
-      "Imported from : ": [
-        "Diimpor dari : "
-      ],
       "Imported on : ": [
         "Diimpor pada : "
       ],
@@ -2314,7 +2275,7 @@
       "Name on card": [
         "Nama di kartu"
       ],
-      "Need help ?": [
+      "Need help?": [
         "Butuh bantuan?"
       ],
       "New vault": [
@@ -2505,12 +2466,6 @@
       ],
       "Today": [
         "Hari ini"
-      ],
-      "Total imported items : ": [
-        "Total item yang diimpor : "
-      ],
-      "Total items : ": [
-        "Total item : "
       ],
       "TOTP": [
         "TOTP"
@@ -2826,9 +2781,6 @@
       "Dark Web Monitoring": [
         "Pemantauan Dark Web"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "Hapus brankas \"${ vaultName }\" ?"
-      ],
       "Details": [
         "Rincian"
       ],
@@ -2885,9 +2837,6 @@
       ],
       "Last modified": [
         "Terakhir diubah"
-      ],
-      "Leave vault ?": [
-        "Tinggalkan brankas?"
       ],
       "Loading breaches...": [
         "Memuat kebocoran..."
@@ -2948,9 +2897,6 @@
       ],
       "Pending access to the shared data": [
         "Menunggu akses ke data yang dibagikan"
-      ],
-      "Permanently remove all items ?": [
-        "Hapus seluruh item secara permanen ?"
       ],
       "Pinned (${ items.length })": [
         "Disematkan (${ items.length })"
@@ -3089,14 +3035,8 @@
       "Section name cannot be empty": [
         "Nama bagian tidak dapat dikosongkan"
       ],
-      "Url already exists": [
-        "URL sudah ada"
-      ],
       "URL cannot be empty": [
         "URL tidak boleh kosong"
-      ],
-      "Url is invalid": [
-        "URL tidak valid"
       ],
       "URL is invalid": [
         "URL tidak valid"
@@ -3126,9 +3066,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Brankas \"${ vaultName }\" tidak dapat dibuat"
-      ],
-      "Could not send invitations to the following addresses :": [
-        "Undangan tidak dapat dikirimkan ke alamat berikut :"
       ],
       "Duplicate email addresses.": [
         "Terdapat alamat email duplikat."
@@ -3217,9 +3154,6 @@
       "Please check that the extension is properly installed and enabled": [
         "Silakan periksa apakah ekstensi telah terpasang dengan benar dan telah diaktifkan"
       ],
-      "Please contact us for investigating the issue": [
-        "Silakan hubungi kami untuk menyelidiki masalah"
-      ],
       "Please update the extension to its latest version": [
         "Silakan perbarui ekstensi ke versi terkini"
       ],
@@ -3267,9 +3201,6 @@
       ],
       "Verification code is required": [
         "Kode verifikasi diperlukan"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "Anda tidak dapat membuat lebih banyak brankas dari yang diizinkan oleh paket langganan Anda."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Anda telah mencapai batas jumlah anggota yang dapat mengakses brankas ini."

@@ -488,9 +488,6 @@
       "OK": [
         "Застосувати"
       ],
-      "Ok": [
-        "OK"
-      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Відкрити налаштування ${ CALENDAR_APP_NAME }"
       ],
@@ -679,9 +676,6 @@
       ],
       "Today": [
         "Сьогодні"
-      ],
-      "Toggle Contact app": [
-        "Відкрити контакти"
       ],
       "Toggle settings": [
         "Перемкнути налаштування"
@@ -1258,9 +1252,6 @@
       ]
     },
     "Calendar sharing access option label": {
-      "Edit (view, create and edit event details)": [
-        "Редагування (перегляд, створення й редагування подробиць події)"
-      ],
       "View (see all event details)": [
         "Перегляд (усі подробиці події)"
       ]
@@ -2482,6 +2473,9 @@
       "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
         "Краще організовуйте свій день, відстежуйте час і визначайте пріоритети завдань. Призначайте власні кольори для подій, щоб працювати продуктивніше."
       ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "Позначайте події кольором, щоб легше організувати свій день, відстежувати час і визначати пріоритетність завдань."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Розшифрування контактів… Це може тривати кілька хвилин. Після завершення процесу ви зможете завантажити файл з усіма експортованими контактами."
       ],
@@ -2493,9 +2487,6 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
-      ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Щоб імпортувати з використанням файлів CSV і VCF, розмір файлу не має перевищувати ${ MAX_IMPORT_FILE_SIZE_STRING }, а кількість контактів – ${ MAX_IMPORT_CONTACTS_STRING }. Якщо ваш файл більший, розділіть його на декілька менших. ${ learnMoreLink }."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Отримайте необмежену кількість псевдонімів і 500 ГБ сховища з ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -2514,9 +2505,6 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Налаштуйте спосіб відновлення, щоб запобігти втраті доступу до облікового запису."
-      ],
-      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
-        "Це може тривати декілька хвилин. Тим часом можете користуватися Proton Calendar."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Для гарантування максимальної безпеки вашого облікового запису налаштуйте фразу відновлення."
@@ -3258,9 +3246,6 @@
         "Ви можете надіслати лист щонайбільше ${ maxContacts } отримувачам",
         "Ви можете надіслати лист щонайбільше ${ maxContacts } отримувачам"
       ],
-      "You have reached the contacts limit for your account": [
-        "Ви досягли максимальної кількості контактів для облікового запису"
-      ],
       "You have reached the maximum number of calendars.": [
         "Ви досягли максимальної кількості календарів."
       ],
@@ -3651,9 +3636,6 @@
       "Invited by: ${ inviteEmail }": [
         "Запрошення від: ${ inviteEmail }"
       ],
-      "Manage addresses.": [
-        "Керувати адресами."
-      ],
       "Sorry, you can't switch plans at this time.": [
         "На жаль, зараз вам не дозволено змінити план."
       ],
@@ -3699,9 +3681,6 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users ": [
-        "Налаштуйте сімейний обліковий запис і запросіть користувачів "
-      ],
       "Set up your family": [
         "Налаштуйте сімейний обліковий запис"
       ],
@@ -4285,9 +4264,6 @@
         "(${ memberCount } учасників)",
         "(${ memberCount } учасників)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice }/місяць)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } додаткового сховища"
       ],
@@ -4791,9 +4767,6 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Інші користувачі вашої організації бачитимуть вашу зайнятість. Подробиці подій не поширюються."
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Наші попередження є запобіжними. Якщо ви не впізнаєте жодної із зазначених відомостей, можете сміливо ігнорувати це повідомлення."
       ],
       "password": [
         "пароль"
@@ -6588,7 +6561,7 @@
         "HTML-підписи"
       ],
       "Integrated 2FA authenticator": [
-        "Інтегрований 2FA автентифікатор"
+        "Інтегрований автентифікатор 2FA"
       ],
       "Kill switch/always-on VPN": [
         "Kill Switch/Постійна VPN"
@@ -6673,9 +6646,6 @@
       ],
       "Strict no-logs policy": [
         "Суворе дотримання політики без журналювання"
-      ],
-      "Tor over VPN": [
-        "Tor через VPN"
       ],
       "Two-factor authentication": [
         "Двоетапна перевірка"
@@ -6912,9 +6882,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Створіть до ${ n } адрес електронної пошти/псевдонімів, які можна призначити членам сім'ї. Використовуйте їх для ідентифікації в інтернеті, наприклад, JohnShopper@${ domain } для облікових записів покупок."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Щоб мати можливість якісного контролю доступу, до приватних мережевих шлюзів можна додати виділені сервери з виділеними IP-адресами"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Захист від загроз приватності VPN завдяки спрямуванню інтернет-трафіку через кілька серверів"
       ],
@@ -7004,9 +6971,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Скидання паролів та двоетапної перевірки користувачів"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Спрямовуйте свій інтернет-трафік через мережу Tor одним натиском"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з автоматичною синхронізацією, зашифрованим спільним доступом та іншими можливостями."
@@ -7339,11 +7303,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Для імпортування ви повинні вибрати всі запитувані елементи, як показано в GIF."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Оберіть, до чого ${ BRAND_NAME } може мати доступ: переглядати ваші поштові повідомлення та налаштування, переглядати й завантажувати ваші контакти, переглядати й завантажувати усі заплановані події з календаря Google."
       ]
     },
     "Onboarding": {
@@ -7836,9 +7795,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Спробуйте ${ PASS_APP_NAME }"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "Використовується на Amazon для покупок та ін."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Коли потрібно вказати адресу електронної пошти, скористайтеся натомість цим псевдонімом. Псевдоніми надаються ${ passLink }."
@@ -8553,9 +8509,6 @@
       "Got it": [
         "Зрозуміло"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Увійдіть до свого облікового запису Apple App Store і натисніть ${ subscriptions }."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Увійдіть до свого облікового запису Google Play і натисніть ${ subscriptions }."
       ],
@@ -8594,7 +8547,7 @@
         "Усього ${ planMaxSpace } сховища"
       ],
       "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } надає вам доступ до всіх застосунків та преміум функцій. Вбудована функція приватності дозволяє вам продовжувати роботу, знаючи, що ваші дані та особистість у безпеці."
+        "${ planName } надає вам доступ до всіх застосунків та преміумфункцій. Вбудована функція приватності дозволяє вам продовжувати роботу, знаючи, що ваші дані та особистість у безпеці."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } надає вам усі застосунки, усі функції, ранній доступ до нових релізів і все необхідне, щоби контролювати свої дані та їхню безпеку."
@@ -9568,9 +9521,6 @@
       "Warning: suspected fake website": [
         "Попередження: імовірно підроблений вебсайт"
       ],
-      "We're setting up Calendar search": [
-        "Ми налаштовуємо пошук в календарі"
-      ],
       "We've locked some calendars to protect your data": [
         "Ми заблокували деякі календарі для захисту ваших даних"
       ],
@@ -9790,11 +9740,6 @@
       ],
       "No ads": [
         "Без реклами"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Доступ до серверів Secure Core, швидке завантаження P2P/BitTorrent, Tor через VPN та інші можливості."
       ]
     },
     "wallet_signup_2024: Info": {

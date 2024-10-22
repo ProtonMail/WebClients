@@ -357,9 +357,6 @@
       "Loading verification": [
         "Ładowanie weryfikacji"
       ],
-      "Login": [
-        "Zaloguj się"
-      ],
       "Make a copy": [
         "Utwórz kopię"
       ],
@@ -410,9 +407,6 @@
       ],
       "OK": [
         "OK"
-      ],
-      "Ok": [
-        "Ok"
       ],
       "Open": [
         "Otwórz"
@@ -560,9 +554,6 @@
       ],
       "Sign out": [
         "Wyloguj"
-      ],
-      "Sign up": [
-        "Zarejestruj się"
       ],
       "Skip verification": [
         "Pomiń weryfikację"
@@ -993,6 +984,53 @@
       ],
       "Continue your subscription": [
         "Kontynuuj subskrypcję"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB } przestrzeni dyskowej"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } przestrzeń dyskowa na wiadomości e-mail"
+      ],
+      "Advanced account protection": [
+        "Zaawansowana ochrona konta"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "Wszystkie aplikacje ${ BRAND_NAME } i ich funkcje premium"
+      ],
+      "Cancel and downgrade": [
+        "Anulowanie i obniżanie wersji"
+      ],
+      "Cloud storage and sharing for large files": [
+        "Przechowywanie i udostępnianie dużych plików w chmurze"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Szyfrowane przechowywanie zdjęć i dokumentów w chmurze"
+      ],
+      "Encrypted password manager": [
+        "Szyfrowany menadżer haseł"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "Nasz podstawowy, bezpłatny plan z szyfrowaną pocztą e-mail i pamięcią masową. Nie zawiera funkcji premium."
+      ],
+      "Save ${ upsellSavings }": [
+        "Zaoszczędź ${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "Zaoszczędź z planem ${ upsellPlanName }"
+      ],
+      "Secure personal and shared calendar": [
+        "Bezpieczny kalendarz osobisty i udostępniony"
+      ],
+      "Try ${ planName }": [
+        "Wypróbuj ${ planName }"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "Wypróbuj ${ upsellPlanName } i zachowaj dostęp do wszystkich funkcji premium poczty e-mail i kalendarza."
+      ],
+      "Ultra fast and private VPN": [
+        "Bardzo szybka i prywatna usługa VPN"
       ]
     },
     "Checkout row": {
@@ -2033,9 +2071,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Trwa importowanie i szyfrowanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Upewnij się, że plik importu CSV lub VCF nie przekracza rozmiaru ${ MAX_IMPORT_FILE_SIZE_STRING } lub ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży. ${ learnMoreLink }."
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
@@ -2156,6 +2191,14 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Twoja subskrypcja ${ PLAN_NAMES[PLANS.PASS] } jest w specjalnej cenie ${ price } za rok. Obniżenie planu do darmowej wersji spowoduje trwałą utratę zniżki, nawet w przypadku ponownej subskrypcji w przyszłości."
+      ]
+    },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Otwórz w ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Save for later": [
+        "Zapisz na później"
       ]
     },
     "driveplus2024: Deal details": {
@@ -2773,9 +2816,6 @@
         "Nie możesz wysłać wiadomości do ponad ${ maxContacts } odbiorców",
         "Nie możesz wysłać wiadomości do ponad ${ maxContacts } odbiorców"
       ],
-      "You have reached the contacts limit for your account": [
-        "Osiągnięto limit kontaktów na koncie"
-      ],
       "You have reached the maximum number of calendars.": [
         "Osiągnięto maksymalną liczbę kalendarzy."
       ],
@@ -3103,9 +3143,6 @@
       "Lifetime accounts cannot join a family plan.": [
         "Konta dożywotnie nie mogę dołączyć do planu rodzinnego."
       ],
-      "Manage addresses.": [
-        "Zarządzaj adresami."
-      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Właściciele planu z użytkownikami nie mogą dołączać do innego planu rodzinnego."
       ],
@@ -3141,9 +3178,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Twoje konto wykorzystuje ${ usedSpace } przestrzeni dyskowej, co przekracza przypisany limit (${ inviteSpace }). Usuń dane lub skontaktuj się z administratorem planu, żeby zwiększyć przestrzeń dyskową."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "Nie możesz zaakceptować zaproszenia w obecnym planie."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3304,6 +3338,12 @@
       ]
     },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Została znaleziona ${ itemsCount } sugestia. Użyj klawiszy do nawigacji.",
+        "Zostały znalezione ${ itemsCount } sugestie. Użyj klawiszy do nawigacji.",
+        "Zostało znalezionych ${ itemsCount } sugestii. Użyj klawiszy do nawigacji.",
+        "Zostało znalezionych ${ itemsCount } sugestii. Użyj klawiszy do nawigacji."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Użyj klawiszy strzałek w górę i w dół, aby zobaczyć i wybrać sugestie. Naciśnij klawisz Enter, aby potwierdzić swój wybór lub Escape, aby zamknąć pole sugestii."
       ]
@@ -3727,9 +3767,6 @@
         "(${ memberCount } członków)",
         "(${ memberCount } członków)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } / miesiąc)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusowej przestrzeni dyskowej"
       ],
@@ -4072,6 +4109,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Ogranicz aktywność wymagającą dużej ilości pamięci (jak streaming) lub prześlij dane partiami."
       ],
+      "Free 5GB encrypted storage to get started": [
+        "Darmowe 5 GB zaszyfrowanej przestrzeni dyskowej na początek"
+      ],
       "here": [
         "tutaj"
       ],
@@ -4146,6 +4186,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Potwierdź swój wybór, a my zajmiemy się resztą."
+      ],
+      "Keep your files secure with end-to-end encryption.": [
+        "Przechowuj bezpiecznie swoje pliki za pomocą szyfrowania end-to-end."
       ],
       "Key fingerprint": [
         "Odcisk klucza"
@@ -5124,6 +5167,9 @@
       "Last month only": [
         "Tylko ostatni miesiąc"
       ],
+      "Log in or sign up ": [
+        "Zaloguj się lub zarejestruj "
+      ],
       "Mail Server (IMAP)": [
         "Serwer poczty (IMAP)"
       ],
@@ -5618,9 +5664,6 @@
       "Graphics Interchange Format (GIF)": [
         "Obraz GIF"
       ],
-      "GZip Compressed Archive": [
-        "Archiwum Gzip"
-      ],
       "HyperText Markup Language (HTML)": [
         "Plik HTML"
       ],
@@ -5641,9 +5684,6 @@
       ],
       "JavaScript": [
         "JavaScript"
-      ],
-      "JPEG images": [
-        "Obraz JPEG"
       ],
       "JSON": [
         "Plik JSON"
@@ -5710,9 +5750,6 @@
       ],
       "Opus audio": [
         "Plik dźwiękowy Opus"
-      ],
-      "Portable Network Graphics": [
-        "Obraz PNG"
       ],
       "Python": [
         "Python"
@@ -5953,6 +5990,12 @@
         "${ n } połączenia VPN",
         "${ n } połączeń VPN",
         "${ n } połączeń VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } użytkownik",
+        "Do ${ numberOfUsers } użytkowników",
+        "Do ${ numberOfUsers } użytkowników",
+        "Do ${ numberOfUsers } użytkowników"
       ],
       "${ options }-day file version history": [
         "${ options }-dniowa historia wersji plików",
@@ -6263,9 +6306,6 @@
       "Sync and backup all your files across devices": [
         "Synchronizuj wszystkie pliki i wykonuj ich kopie zapasowe na różnych urządzeniach"
       ],
-      "Tor over VPN": [
-        "Tor przez VPN"
-      ],
       "Two-factor authentication": [
         "Uwierzytelnianie dwustopniowe"
       ],
@@ -6544,9 +6584,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Utwórz do ${ n } adresów e-mail lub aliasów, które możesz przypisać do członków rodziny. Używaj ich do tożsamości internetowych, np. JanZakupowy@${ domain } dla kont zakupowych."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Dedykowane serwery z dedykowanymi adresami IP można dodać do prywatnych bram, aby precyzyjnie kontrolować dostęp do nich"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Chroni przed zagrożeniem prywatności VPN, przekierowując ruch internetowy przez wiele serwerów"
       ],
@@ -6642,9 +6679,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetowanie haseł i uwierzytelniania dwustopniowego użytkowników"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Przekieruj swój ruch internetowy przez sieć Tor za pomocą jednego kliknięcia"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpiecz swoje pliki za pomocą szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
@@ -6962,9 +6996,6 @@
       "Share invitation declined": [
         "Zaproszenie zostało odrzucone"
       ],
-      "Stopping to share this item has failed": [
-        "Zatrzymanie udostępniania elementu nie powiodło się"
-      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Usunięcie linku do elementu \"${ name }\" nie powiodło się"
       ],
@@ -7003,11 +7034,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Aby zaimportować dane, zaznacz wszystkie żądane elementy, jak pokazano na grafice GIF."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Wybierz, do czego ${ BRAND_NAME } może uzyskać dostęp: odczytywać wiadomości i ustawienia, odczytywać i pobierać kontakty, odczytywać i pobierać wszystkie harmonogramy, do których masz dostęp w Kalendarzu Google."
       ]
     },
     "Option": {
@@ -7229,6 +7255,9 @@
       "E.g., ": [
         "Np. "
       ],
+      "Email": [
+        "Adres e-mail"
+      ],
       "Filter groups": [
         "Filtruj grupy"
       ],
@@ -7432,9 +7461,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Wypróbuj ${ PASS_APP_NAME }"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "Używany w Amazon do zakupów itp."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Użyj aliasu, zamiast adresu e-mail. Aliasy dostarcza ${ passLink }."
@@ -7920,6 +7946,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "Link do elementu został zapisany na dysku. Możesz uzyskać do niego dostęp w sekcji 'Udostępnione Tobie'."
+      ],
       "Get up to ${ credits } in credits.": [
         "Uzyskaj do ${ credits }."
       ],
@@ -8091,9 +8120,6 @@
       "Got it": [
         "Ok"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Zaloguj się do konta App Store, a następnik kliknij ${ subscriptions }."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Zaloguj się do konta Google Play, a następnik kliknij ${ subscriptions }."
       ],
@@ -8167,6 +8193,21 @@
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "Plan ${ planName } zawiera wszystkie aplikacje, wszystkie funkcje, wcześniejszy dostęp do nowych wersji i wszystko, czego potrzebujesz, aby mieć kontrolę nad swoimi danymi i ich bezpieczeństwem."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } niestandardowa domena",
+        "${ planNumberOfDomains } niestandardowe domeny",
+        "${ planNumberOfDomains } niestandardowych domen",
+        "${ planNumberOfDomains } niestandardowych domen"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adres e-mail",
+        "${ planNumberOfEmails } adresy e-mail",
+        "${ planNumberOfEmails } adresów e-mail",
+        "${ planNumberOfEmails } adresów e-mail"
+      ],
+      "Folders, labels, and custom filters": [
+        "Foldery, etykiety i filtry niestandardowe"
       ]
     },
     "Subscription renewal state": {
@@ -8797,6 +8838,9 @@
       "Request new code": [
         "Poproś o nowy kod"
       ],
+      "Save it for later in ${ DRIVE_APP_NAME }": [
+        "Zapisz na później w ${ DRIVE_APP_NAME }"
+      ],
       "Security center": [
         "Centrum zabezpieczeń"
       ],
@@ -8920,6 +8964,9 @@
       ]
     },
     "Tooltip": {
+      "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
+        "Dodaj udostępniony plik do ${ DRIVE_APP_NAME }, aby mieć do niego łatwy dostęp."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Format automatyczny wyśle do tego użytkownika wiadomość w formacie użytym w edytorze. Format zwykłego tekstu oznacza, że wiadomość przed wysłaniem zostanie przekonwertowana do zwykłego tekstu."
       ],
@@ -8967,9 +9014,6 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Wybierz schemat PGP, który będzie używany przy podpisywaniu lub szyfrowaniu wiadomości wysyłanych do użytkownika. Pamiętaj, że PGP/Inline wymusza wysyłanie wiadomości w trybie zwykłego tekstu"
-      ],
-      "Shared end-to-end encrypted": [
-        "Udostępniono z szyfrowaniem end-to-end"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Podfoldery systemowe będą widoczne jako oddzielne foldery w poczcie ${ MAIL_APP_NAME }"
@@ -9077,11 +9121,6 @@
       ],
       "No ads": [
         "Brak reklam"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Dostęp do serwerów Secure Core, szybkiego pobierania P2P / BitTorrent, Tor przez VPN i wiele więcej."
       ]
     },
     "wallet_signup_2024: Info": {

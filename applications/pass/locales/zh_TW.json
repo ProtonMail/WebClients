@@ -462,9 +462,6 @@
       ],
       "Write us on Twitter": [
         "在 Twitter 上寫上我們"
-      ],
-      "Your password manager not here? Request it.": [
-        "您的密碼管理器不在此?要求他。"
       ]
     },
     "bf2023: Label": {
@@ -790,9 +787,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        " 升級付費方案以創建多重保管庫。"
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "忽略${ payload.item.data.metadata.name }項目"
       ],
@@ -1033,9 +1027,6 @@
       "Monitoring settings successfully updated": [
         "監控設定已成功更新"
       ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "超越密碼管理器，${ PASS_APP_NAME }保護密碼及私人的電子郵件位址及電子郵件別名。使用與${ MAIL_APP_NAME }相同技術，您的資料使用點到點加密，只有您能存取。"
-      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "移動全部於\"${ payload.content.name }\"的項目"
       ],
@@ -1059,9 +1050,6 @@
       ],
       "Offline mode": [
         "離線模式"
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "我們的警示偏向於謹慎。如果您不認識任何外洩的資訊，您可以放心地忽略此報告。"
       ],
       "Owner": [
         "擁有者"
@@ -1141,9 +1129,6 @@
       "Settings successfully updated": [
         "設定已成功更新"
       ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "共享您的登入,安全筆記,至多10人"
-      ],
       "Sign in to your account": [
         "登入您的帳戶"
       ],
@@ -1183,9 +1168,6 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "此匯出將會解密，所有能存取匯出檔案者皆可以看到密碼。為了安全請與使用後刪除。"
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "以接收匯入資料，點擊於瀏覽器工具列的Pass標示。"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "在它們公開前，嘗試新的 ${ BRAND_NAME } 功能，更新與產品。這將會重新載入應用程式"
       ],
@@ -1206,9 +1188,6 @@
       ],
       "User's access removed": [
         "使用者存取權已撤銷"
-      ],
-      "User's access sucessfuly updated": [
-        "使用者權限已成功更新"
       ],
       "username": [
         "使用者名稱"
@@ -1362,9 +1341,6 @@
       "Capital letters (A-Z)": [
         "大寫字母(A~Z)"
       ],
-      "Capitalise": [
-        "大寫"
-      ],
       "Card": [
         "卡片"
       ],
@@ -1503,9 +1479,6 @@
       "Import passwords": [
         "匯入密碼"
       ],
-      "Imported from : ": [
-        "匯入自 : "
-      ],
       "Imported on : ": [
         "匯入自 : "
       ],
@@ -1584,7 +1557,7 @@
       "Name on card": [
         "持卡人姓名"
       ],
-      "Need help ?": [
+      "Need help?": [
         "需要協助嗎？"
       ],
       "New vault": [
@@ -1721,12 +1694,6 @@
       ],
       "Today": [
         "今日"
-      ],
-      "Total imported items : ": [
-        "全部匯入項目: "
-      ],
-      "Total items : ": [
-        "全部項目 "
       ],
       "TOTP": [
         "TOTP"
@@ -2006,9 +1973,6 @@
       "Dark Web Monitoring": [
         "暗網監控"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "刪除保管庫${ vaultName }?"
-      ],
       "Details": [
         "詳細資訊"
       ],
@@ -2060,9 +2024,6 @@
       "Last modified": [
         "上次修改時間"
       ],
-      "Leave vault ?": [
-        "離開保管庫 ?"
-      ],
       "Loading breaches...": [
         "載入外洩..."
       ],
@@ -2107,9 +2068,6 @@
       ],
       "Pending access to the shared data": [
         "暫緩存取分享的資料"
-      ],
-      "Permanently remove all items ?": [
-        "永久刪除所有項目嗎?"
       ],
       "Pinned (${ items.length })": [
         "地址 (${ items.length })"
@@ -2230,14 +2188,8 @@
       "OTP secret or URI required": [
         "需要一次性代碼或網址"
       ],
-      "Url already exists": [
-        "網址已存在"
-      ],
       "URL cannot be empty": [
         "網址不能為空"
-      ],
-      "Url is invalid": [
-        "網址錯誤"
       ],
       "URL is invalid": [
         "URL無效"
@@ -2255,9 +2207,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "無法創建保管庫${ vaultName }"
-      ],
-      "Could not send invitations to the following addresses :": [
-        "無法發送邀請到以下的電子郵件位 :"
       ],
       "Duplicate email addresses.": [
         "重複的電子郵件位址"
@@ -2348,9 +2297,6 @@
       ],
       "Verification code is required": [
         "驗證碼為必要"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "您無法創建多於訂購授權的保管庫。"
       ],
       "You have reached the limit of members who can access this vault.": [
         "此保管庫的存取者數量已達上限。"

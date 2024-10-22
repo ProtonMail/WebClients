@@ -357,9 +357,6 @@
       "Loading verification": [
         "Αναμονή για επαλήθευση"
       ],
-      "Login": [
-        "Είσοδος"
-      ],
       "Make a copy": [
         "Κάντε ένα αντίγραφο"
       ],
@@ -410,9 +407,6 @@
       ],
       "OK": [
         "ΟΚ"
-      ],
-      "Ok": [
-        "OK"
       ],
       "Open": [
         "Άνοιγμα"
@@ -560,9 +554,6 @@
       ],
       "Sign out": [
         "Αποσύνδεση"
-      ],
-      "Sign up": [
-        "Εγγραφείτε"
       ],
       "Skip verification": [
         "Παράλειψη επαλήθευσης"
@@ -989,6 +980,53 @@
       ],
       "Continue your subscription": [
         "Συνέχιση της συνδρομής σας"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB } αποθηκευτικού χώρου"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } αποθηκευτικού χώρου email"
+      ],
+      "Advanced account protection": [
+        "Προηγμένη προστασία λογαριασμού"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "Όλες οι εφαρμογές ${ BRAND_NAME } και οι premium δυνατότητές"
+      ],
+      "Cancel and downgrade": [
+        "Ακύρωση και υποβάθμιση"
+      ],
+      "Cloud storage and sharing for large files": [
+        "Αποθήκευση και κοινή χρήση στο cloud για μεγάλα αρχεία"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Κρυπτογραφημένος χώρος αποθήκευσης στο cloud για φωτογραφίες και έγγραφα"
+      ],
+      "Encrypted password manager": [
+        "Κρυπτογραφημένος διαχειριστής κωδικών πρόσβασης"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "Το βασικό, δωρεάν πακέτο μας με κρυπτογραφημένο email και αποθηκευτικό χώρο από άκρο σε άκρο. Δεν περιλαμβάνονται premium χαρακτηριστικά."
+      ],
+      "Save ${ upsellSavings }": [
+        "Εξοικονομίστε ${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "Εξοικονομήστε χρήματα με ${ upsellPlanName }"
+      ],
+      "Secure personal and shared calendar": [
+        "Ασφαλές προσωπικό και κοινόχρηστο ημερολόγιο"
+      ],
+      "Try ${ planName }": [
+        "Δοκιμάστε το ${ planName }"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "Δοκιμάστε το ${ upsellPlanName } και διατηρήστε την πρόσβαση σε όλες τις premium λειτουργίες email και ημερολογίου."
+      ],
+      "Ultra fast and private VPN": [
+        "Εξαιρετικά γρήγορο και ιδιωτικό VPN"
       ]
     },
     "Checkout row": {
@@ -2025,9 +2063,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται κρυπτογράφηση και εισαγωγή επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Για εισαγωγή μέσω αρχείου CSV και VCF, βεβαιωθείτε ότι το αρχείο δεν υπερβαίνει ${ MAX_IMPORT_FILE_SIZE_STRING } ή τις ${ MAX_IMPORT_CONTACTS_STRING } επαφές. Εάν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε χωρίστε το σε μικρότερα αρχεία. ${ learnMoreLink }."
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
@@ -2148,6 +2183,14 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Η ${ PLAN_NAMES[PLANS.PASS] } συνδρομή είναι σε ειδική τιμή ${ price } ανά έτος. Με την υποβάθμιση στο Free πλάνο, θα χάσετε οριστικά την έκπτωση, ακόμα και αν κάνετε αναβάθμιση ξανά στο μέλλον."
+      ]
+    },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Άνοιγμα σε ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Save for later": [
+        "Αποθήκευση για αργότερα"
       ]
     },
     "driveplus2024: Deal details": {
@@ -2749,9 +2792,6 @@
         "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από ${ maxContacts } παραλήπτη",
         "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από ${ maxContacts } παραλήπτες"
       ],
-      "You have reached the contacts limit for your account": [
-        "Έχετε συμπληρώσει το όριο επαφών για τον λογαριασμό σας"
-      ],
       "You have reached the maximum number of calendars.": [
         "Έχετε φτάσει τον μέγιστο αριθμό ημερολογίων."
       ],
@@ -3077,9 +3117,6 @@
       "Lifetime accounts cannot join a family plan.": [
         "Οι λογαριασμοί εφ' όρου ζωής δεν μπορούν να συμμετάσχουν σε οικογενειακό πλάνο."
       ],
-      "Manage addresses.": [
-        "Διαχείριση διευθύνσεων."
-      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Οι κάτοχοι ενός προγράμματος με μέλη δεν μπορούν να συμμετάσχουν σε άλλο οικογενειακό πλάνο."
       ],
@@ -3115,9 +3152,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ο λογαριασμός σας χρησιμοποιεί αποθηκευτικό χώρο ${ usedSpace }, ο οποίος υπερβαίνει τα ${ inviteSpace } που σας έχουν εκχωρηθεί. Διαγράψτε ορισμένα δεδομένα ή ζητήστε από τον διαχειριστή του προγράμματος να αυξήσει τον αποθηκευτικό σας χώρο."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "Δεν μπορείτε να αποδεχτείτε αυτήν την πρόσκληση με το τρέχον πλάνο σας."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3647,9 +3681,6 @@
         "(${ memberCount } μέλος)",
         "(${ memberCount } μέλη)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /μήνα)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus αποθήκευση"
       ],
@@ -3986,6 +4017,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Για καλύτερα αποτελέσματα, αποφύγετε ροή ή εντατικές σε μνήμη δραστηριότητες ή χωρίστε τη μεταφόρτωση σε μικρότερες παρτίδες."
       ],
+      "Free 5GB encrypted storage to get started": [
+        "Δωρεάν κρυπτογραφημένη αποθήκευση 5GB για να ξεκινήσετε"
+      ],
       "here": [
         "εδώ"
       ],
@@ -4058,6 +4092,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Απλώς επιβεβαιώστε την επιλογή σας και εμείς θα κάνουμε τα υπόλοιπα."
+      ],
+      "Keep your files secure with end-to-end encryption.": [
+        "Διατηρήστε τα αρχεία σας ασφαλή με διατερματική κρυπτογράφηση."
       ],
       "Key fingerprint": [
         "Κλειδί δακτυλικού αποτυπώματος"
@@ -4192,9 +4229,6 @@
       ],
       "Organization size": [
         "Μέγεθος οργανισμού"
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Οι ειδοποιήσεις μας σφάλλουν προς την πλευρά της προσοχής. Εάν δεν αναγνωρίζετε καμία από τις παραβιασμένες πληροφορίες, μπορείτε να αγνοήσετε με ασφάλεια αυτήν την αναφορά."
       ],
       "Owner": [
         "Ιδιοκτήτης"
@@ -5027,6 +5061,9 @@
       "Last month only": [
         "Τελευταίο μήνα μόνο"
       ],
+      "Log in or sign up ": [
+        "Σύνδεση ή Eγγραφή "
+      ],
       "Mail Server (IMAP)": [
         "Διακομιστής Αλληλογραφίας (IMAP)"
       ],
@@ -5502,9 +5539,6 @@
       "Graphics Interchange Format (GIF)": [
         "Graphics Interchange Format (GIF)"
       ],
-      "GZip Compressed Archive": [
-        "Συμπιεσμένο Αρχείο GZip"
-      ],
       "HyperText Markup Language (HTML)": [
         "HyperText Markup Language (HTML)"
       ],
@@ -5522,9 +5556,6 @@
       ],
       "Java Archive (JAR)": [
         "Αρχείο Java (JAR)"
-      ],
-      "JPEG images": [
-        "Εικόνες JPEG"
       ],
       "MP3 audio": [
         "Ήχος MP3"
@@ -5561,9 +5592,6 @@
       ],
       "Opus audio": [
         "Ήχος Opus"
-      ],
-      "Portable Network Graphics": [
-        "Portable Network Graphics"
       ],
       "RAR archive": [
         "Αρχείο RAR"
@@ -5761,6 +5789,10 @@
       "${ n } VPN connection": [
         "${ n } σύνδεση VPN",
         "${ n } συνδέσεις VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } χρήστης",
+        "Έως ${ numberOfUsers } χρήστες"
       ],
       "${ options }-day file version history": [
         "${ options }-ημέρα ιστορικό εκδόσεων αρχείου",
@@ -6063,9 +6095,6 @@
       "Sync and backup all your files across devices": [
         "Συγχρονίστε και δημιουργήστε αντίγραφα ασφαλείας όλων των αρχείων σας σε όλες τις συσκευές"
       ],
-      "Tor over VPN": [
-        "Tor μέσω VPN"
-      ],
       "Two-factor authentication": [
         "Ταυτοποίηση δύο παραγόντων"
       ],
@@ -6332,9 +6361,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Δημιουργήστε έως και ${ n } διευθύνσεις ηλεκτρονικού ταχυδρομείου/ψευδώνυμα που μπορείτε να αντιστοιχίσετε σε μέλη της οικογένειας. Χρησιμοποιήστε τα για διαδικτυακές ταυτότητες, π.χ. JohnShopper@${ domain } για λογαριασμούς αγορών."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Αποκλειστικοί διακομιστές με αποκλειστική(ές) διεύθυνση(σεις) IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να ενεργοποιήσουν βελτιστοποιημένο έλεγχο πρόσβασης"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Προστατεύει από την απειλή για το απόρρητο του VPN μεταβιβάζοντας την κυκλοφορία στο διαδίκτυο μέσω πολλών διακομιστών"
       ],
@@ -6430,9 +6456,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Επαναφέρετε τους κωδικούς πρόσβασης χρήστη και επαναφέρετε τον έλεγχο ταυτότητας δύο παραγόντων στους χρήστες"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Δρομολογήστε την κυκλοφορία σας στο διαδίκτυο μέσω του δικτύου Tor με ένα μόνο κλικ."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
@@ -6724,9 +6747,6 @@
       "Share invitation declined": [
         "Η πρόσκληση κοινής χρήσης απορρίφθηκε"
       ],
-      "Stopping to share this item has failed": [
-        "Η διακοπή της κοινής χρήσης αυτού του στοιχείου απέτυχε"
-      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Αποτυχία διαγραφής συνδέσμου προς το \"${ name }\""
       ],
@@ -6765,11 +6785,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Για να ολοκληρωθεί η διαδικασία της εισαγωγής πρέπει να επιλέξετε όλα τα απαραίτητα στοιχεία, όπως φαίνεται στο GIF."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Επιλέξτε σε τι μπορεί να έχει πρόσβαση το ${ BRAND_NAME }: δείτε τα μηνύματα ηλεκτρονικού ταχυδρομείου και τις ρυθμίσεις σας, προβάλετε και κατεβάστε τις επαφές σας, προβάλετε και κατεβάστε όλες τις ατζέντες στις οποίες έχετε πρόσβαση από την Ατζέντα Google."
       ]
     },
     "Option": {
@@ -6988,6 +7003,9 @@
       "E.g., ": [
         "Για παράδειγμα, "
       ],
+      "Email": [
+        "Ηλεκτρονικό ταχυδρομείο"
+      ],
       "Filter groups": [
         "Φιλτράρισμα κατά ομάδες"
       ],
@@ -7181,9 +7199,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Δοκιμάστε το ${ PASS_APP_NAME }"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "Χρησιμοποιείται στο Amazon για ψώνια κ.λπ."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Όταν σας ζητηθεί η διεύθυνση ηλεκτρονικού ταχυδρομείου σας, δώστε αυτό το ψευδώνυμο. Τα ψευδώνυμα παρέχονται από το ${ passLink }."
@@ -7635,6 +7650,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "Ένας σύνδεσμος προς αυτό το στοιχείο έχει αποθηκευτεί στη μονάδα δίσκου σας. Μπορείτε να αποκτήσετε πρόσβαση σε αυτό αργότερα στην ενότητα \"Κοινή χρήση με εμένα\"."
+      ],
       "Get up to ${ credits } in credits.": [
         "Λάβετε έως και ${ credits } σε πιστώσεις."
       ],
@@ -7794,9 +7812,6 @@
       "Got it": [
         "Το κατάλαβα"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Απλώς συνδεθείτε στον λογαριασμό σας στο Apple App Store και, στη συνέχεια, πατήστε ${ subscriptions }."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Απλώς συνδεθείτε στον λογαριασμό σας στο Play Store και, στη συνέχεια, πατήστε ${ subscriptions }."
       ],
@@ -7870,6 +7885,17 @@
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "Το ${ planName } σάς παρέχει όλες τις εφαρμογές, όλες τις δυνατότητες, την πρώιμη πρόσβαση σε νέες κυκλοφορίες και όλα όσα χρειάζεστε για να έχετε τον έλεγχο των δεδομένων σας και της ασφάλειάς τους."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου",
+        "${ planNumberOfDomains } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } διεύθυνση email",
+        "${ planNumberOfEmails } διευθύνσεις email"
+      ],
+      "Folders, labels, and custom filters": [
+        "Φάκελοι, ετικέτες, και προσαρμοσμένα φίλτρα"
       ]
     },
     "Subscription renewal state": {
@@ -8472,6 +8498,9 @@
       "Request new code": [
         "Αίτηση νέου κωδικού"
       ],
+      "Save it for later in ${ DRIVE_APP_NAME }": [
+        "Αποθηκεύστε το για αργότερα στο ${ DRIVE_APP_NAME }"
+      ],
       "Security center": [
         "Κέντρο ασφαλείας"
       ],
@@ -8595,6 +8624,9 @@
       ]
     },
     "Tooltip": {
+      "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
+        "Προσθέστε αυτό το κοινόχρηστο αρχείο στο ${ DRIVE_APP_NAME } για εύκολη πρόσβαση αργότερα."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Η επιλογή \"Αυτόματο\" υποδεικνύει ότι θα χρησιμοποιηθεί η μορφή κειμένου στην σύνταξη, για την αποστολή του μηνύματος στον συγκεκριμένο χρήστη. Το \"απλό κείμενο\" υποδηλώνει ότι το μήνυμα θα μετατρέπεται πάντα σε απλό κείμενο κατά την αποστολή."
       ],
@@ -8642,9 +8674,6 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Επιλέξτε το σχέδιο PGP που θα χρησιμοποιηθεί κατά την υπογραφή ή την κρυπτογράφηση σε ένα χρήστη. Σημειώστε ότι το PGP / Inline αναγκάζει την προβολή ως απλά μηνύματα κειμένου"
-      ],
-      "Shared end-to-end encrypted": [
-        "Κοινοποιημένο, διατερματικά κρυπτογραφημένο"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Οι υποφάκελοι συστήματος θα εμφανιστούν στο ${ MAIL_APP_NAME } ως χωριστοί φάκελοι"
@@ -8736,11 +8765,6 @@
       ],
       "No ads": [
         "Χωρίς διαφημίσεις"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Πρόσβαση σε Secure core διακομιστές, γρήγορες λήψεις P2P/BitTorrent, Tor over VPN, και πολλά άλλα."
       ]
     },
     "wallet_signup_2024: Info": {

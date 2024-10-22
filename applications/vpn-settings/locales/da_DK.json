@@ -388,9 +388,6 @@
       "Next month": [
         "Næste måned"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "Ok"
       ],
@@ -456,9 +453,6 @@
       ],
       "Remove gift code": [
         "Fjern gavekode"
-      ],
-      "Remove single sign-on": [
-        "Fjern single sign-on"
       ],
       "Rename": [
         "Omdøb"
@@ -2125,6 +2119,11 @@
         "NB: Hvis du sletter dette domæne ${ domainName }, vil alle tilknyttede adresser blive deaktiveret."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Er du sikker på, at du vil slette denne gruppe?"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Forfalden faktura"
@@ -2531,9 +2530,6 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Opgrader venligst til et erhversabonnement med mere end 1 bruger for at administrere flere brugere."
       ],
-      "Please upload a square file": [
-        "Overfør en kvadratisk fil"
-      ],
       "Please upload an xml file": [
         "Upload en xml-fil"
       ],
@@ -2704,9 +2700,6 @@
       "Invite an existing ${ BRAND_NAME } user": [
         "Inviter en eksisterende ${ BRAND_NAME } bruger"
       ],
-      "Invite member to your family": [
-        "Inviter medlemmer til din familie"
-      ],
       "Set up family group": [
         "Konfigurer familiegruppe"
       ],
@@ -2760,9 +2753,6 @@
       ],
       "Lifetime accounts cannot join a family plan.": [
         "Livstidskonti kan ikke indgå i et familieabonnement."
-      ],
-      "Manage addresses.": [
-        "Administrer adresser."
       ],
       "Manage user accounts": [
         "Administrer brugerkonti"
@@ -2829,9 +2819,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Din konto bruger ${ usedSpace } lagerplads, hvilket overstiger de ${ inviteSpace } du har fået tildelt. Slet nogle data eller bed abonnementsadministratoren om at øge din lagerplads."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "Du kan ikke acceptere denne invitation med dit nuværende abonnement."
       ]
     },
     "familyOffer_2023:Info": {
@@ -2951,15 +2938,25 @@
       "Add": [
         "Tilføj"
       ],
+      "Add (${ totalAddedCount })": [
+        "Tilføj (${ totalAddedCount })",
+        "Tilføj (${ totalAddedCount })"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Forbindelse for op til ${ plusVpnConnections } enhed",
         "Forbindelse for op til ${ plusVpnConnections } enheder"
+      ],
+      "Continue": [
+        "Fortsæt"
       ],
       "Dark Web Monitoring": [
         "Monitorering af det mørke net"
       ],
       "Fastest VPN servers": [
         "Hurtigste VPN-servere"
+      ],
+      "Remove": [
+        "Fjern"
       ],
       "Secure Core servers": [
         "Secure Core servere"
@@ -3345,9 +3342,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
       ],
-      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
-        "${ boldSSOUserInformation }, og du bliver nødt til at oprette dem manuelt for at føje dem tilbage til din organisation"
-      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Du mister adgangen til alle nuværende krypterede data på din konto, hvis du fortsætter."
       ],
@@ -3430,9 +3424,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
-      ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } måned)"
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Få en ${ BRAND_NAME }-adresse** for at bruge alle ${ BRAND_NAME_TWO }-tjenester, herunder ${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }."
@@ -3683,9 +3674,6 @@
       ],
       "Dedicated servers": [
         "Dedikerede servere"
-      ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
-        "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen."
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Slet eventuelle andre MX-poster eller sørg for, at ${ MAIL_APP_NAME }'s prioritet har det laveste tal."
@@ -4043,12 +4031,6 @@
       "Labels:": [
         "Etiketter:"
       ],
-      "Lean more about gateways": [
-        "Lær mere om gateways"
-      ],
-      "Lean more about single sign-on": [
-        "Lær mere om single sign-on"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Lær, hvordan du logger på ${ VPN_APP_NAME } med tredjeparts VPN-applikationer."
       ],
@@ -4145,17 +4127,11 @@
       "No results found": [
         "Ingen resultater fundet"
       ],
-      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
-        "Ikke-SSO brugere (oprettet manuelt, ikke leveret af din identitetsudbyder) kan stadig logge ind på din organisation"
-      ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerede servere i organisationen"
       ],
       "of": [
         "af"
-      ],
-      "Once single sign-on is disabled for your organization:": [
-        "Når single sing-on er deaktiveret for din organisation:"
       ],
       "Once you reset your password:": [
         "Når du nulstiller din adgangskode:"
@@ -4291,6 +4267,9 @@
       "read our two-factor authentication guide first": [
         "læser vores to-faktor-godkendelsesguide først"
       ],
+      "Recently used servers:": [
+        "Nyligt anvendte servere:"
+      ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Anbefales på alle betroede enheder. ${ keepMeSignedInLearnMoreLink }"
       ],
@@ -4384,17 +4363,11 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
       ],
-      "Single sign-on removed": [
-        "Single sign-on fjernet"
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Angiv det domæne, der har tilladelse til at autentificere med SAML SSO."
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF angiver, hvem der har lov til at sende e-mails for dit domæne. Sørg for at tilføje følgende TXT-post i din DNS-konsol (som kan findes på platformen, hvor du købte dit brugerdomæne)."
-      ],
-      "SSO users (provided by your Identity Provider) will be deleted": [
-        "SSO-brugere (leveret af din identitetsudbyder) slettes"
       ],
       "Step ${ step }": [
         "Trin ${ step }",
@@ -4438,9 +4411,6 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Tak, fordi du støtter vores mission om at opbygge et bedre internet, hvor privatliv og frihed kommer i første række."
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Legitimationsoplysningerne fra din identitetsudbyder vil blive slettet."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Antallet af downloads omfatter både faktiske downloads og tilfælde, hvor filer forhåndsvises."
@@ -5281,6 +5251,9 @@
       "Enter the code displayed on your TV": [
         "Indtast den kode, der vises på dit TV"
       ],
+      "Event": [
+        "Begivenhed"
+      ],
       "Expiration (${ patternExpiration })": [
         "Udløb (${ patternExpiration })"
       ],
@@ -5461,6 +5434,9 @@
       "Reveal password": [
         "Vis adgangskode"
       ],
+      "Search": [
+        "Søg"
+      ],
       "Second password": [
         "Anden adgangskode"
       ],
@@ -5482,8 +5458,8 @@
       "Subscription options": [
         "Abonnementsmuligheder"
       ],
-      "Synchronize with system": [
-        "Synkroniser med system"
+      "Sync with system": [
+        "Synkronisér med system"
       ],
       "System information": [
         "Systemoplysninger"
@@ -5683,9 +5659,6 @@
       ],
       "Pay invoice": [
         "Betal faktura"
-      ],
-      "Paypal without credit card": [
-        "Paypal uden betalingskort"
       ],
       "perform a password reset from your active session": [
         "udføre en nulstilling af adgangskoden fra din aktive session"
@@ -6377,9 +6350,6 @@
       "Sync and backup all your files across devices": [
         "Synkroniser og sikkerhedskopier alle dine filer mellem enheder"
       ],
-      "Tor over VPN": [
-        "Tor over VPN"
-      ],
       "Two-factor authentication": [
         "To-faktor-godkendelse"
       ],
@@ -6681,9 +6651,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Opret op til ${ n } e-mailadresser/aliasser, som du kan tildele familiemedlemmer. Brug dem til onlineidentiteter, f.eks. JohnShopper@${ domain } til shoppingkonti."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Afværger trussel mod VPN-privatliv ved at sende din internettrafik gennem flere servere"
       ],
@@ -6779,9 +6746,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Nulstil brugeradgangskoder og nulstil to-faktor-godkendelse på brugere"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Send din internettrafik gennem Tor-netværket med ét enkelt tryk"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
@@ -6940,6 +6904,9 @@
       "Reminder has been sent": [
         "En påmindelse er blevet sendt."
       ],
+      "Too many recent API requests": [
+        "For mange nylige API-anmodninger"
+      ],
       "Two-factor authentication has been enforced for administrators": [
         "To-faktor-godkendelse er blevet gjort obligatorisk for administratorer."
       ],
@@ -7088,6 +7055,26 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Brugere vil se dit logo i stedet for ${ BRAND_NAME }-ikonet, når de er logget ind på vores webapps."
+      ]
+    },
+    "orgidentity": {
+      "Current organization identity": [
+        "Nuværende organisationsidentitet"
+      ],
+      "Edit organization identity": [
+        "Rediger organisationsidentitet"
+      ],
+      "New organization identity": [
+        "Ny organisationsidentitet"
+      ],
+      "Organization identity": [
+        "Organisationsidentitet"
+      ],
+      "Organization identity updated": [
+        "Organisationens identitet opdateret"
+      ],
+      "Verify": [
+        "Bekræft"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -7296,9 +7283,6 @@
       ],
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Brug en datagendannelsesmetode, kontakt en anden administrator, eller nulstil organisationsnøglen for at gendanne administratorrettigheder."
-      ],
-      "We couldn't verify authenticity of this identity.": [
-        "Vi kunne ikke bekræfte ægtheden af denne identitet."
       ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Vi kunne ikke bekræfte sikkerheden af denne afsenderes adressenøgle. Nogle gange er der en forsinkelse i opdateringen af afsenderens oplysninger. Prøv igen senere. Hvis du ikke har tillid til gyldigheden af denne invitation eller afsender, skal du kontakte ${ BRAND_NAME } kundesupport."
@@ -7643,9 +7627,6 @@
       "Changing organization password": [
         "Opretning af organisationsadgangskode"
       ],
-      "Creating or accessing non-private users": [
-        "Oprettelse af eller adgang til ikke-private brugere"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Grundet en adgangskodeændring er dine organisations administratorprivilegier blevet begrænset. De følgende handlinger er ikke længere tilladt:"
       ]
@@ -7672,9 +7653,6 @@
       ]
     },
     "saml: Error": {
-      "Sign-in wasn't successfully completed.": [
-        "Indlogningen var ikke gennemført."
-      ],
       "Something went wrong": [
         "Et eller andet gik galt"
       ]
@@ -7735,12 +7713,6 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Forudsætning:** SAML-godkendelse skal være konfigureret for at aktivere SCIM-provisionering."
-      ],
-      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
-        "**Forudsætning:** For at aktivere SCIM-levering skal du bekræfte dit ejerskab af domænet **${ domainName }**. Denne bekræftelse kan tage op til en time."
-      ],
-      "Enter token into your identity provider": [
-        "Indtast token hos din identitetsudbyder"
       ],
       "Enter URL and token into your identity provider": [
         "Indtast URL og token hos din identitetsudbyder"
@@ -8059,14 +8031,6 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Vi kontakter dig igen, når nulstillingen af adgangskoden er tilgængelig."
-      ],
-      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
-        "Du kan til enhver tid tjekke status for din anmodning i ${ accountAndPasswordSectionLink } i indstillingerne."
-      ]
-    },
-    "session_recovery:initiation:link": {
-      "account and password section": [
-        "sektionen for konto og adgangskode"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -8435,19 +8399,19 @@
         "Dit ${ appStorage } er fuldt"
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Dit ${ storage } er ${ percentage }% fyldt. ${ cta }."
+        "Din ${ storage } er ${ percentage }% fyldt. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
-        "Dit ${ storage } er fyldt. ${ cta }."
+        "Din ${ storage } er fyldt. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "Dit drev er ${ percentage }% fyldt. ${ cta }."
+        "Din lagerplads er ${ percentage }% fyldt. ${ cta }."
       ],
       "Your storage is full": [
         "Dit lager er fuldt"
       ],
       "Your storage is full. ${ cta }.": [
-        "Dit drev er fyldt. ${ cta }."
+        "Din lagerplads er fyldt. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Du mister adgang til ${ gb } lagerplads og prioriteret support."
@@ -8561,9 +8525,6 @@
     "Subscription change warning": {
       "Got it": [
         "Forstået"
-      ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Log ind på din Apple App Store-konto, og tryk på ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Log ind på din Play Store-konto, og tryk på ${ subscriptions }."
@@ -8694,6 +8655,9 @@
       ],
       "Extra storage and users": [
         "Ekstra lagerplads og brugere"
+      ],
+      "Got it": [
+        "Forstået"
       ],
       "Have a question?": [
         "Har du et spørgsmål?"
@@ -8933,12 +8897,6 @@
       "Gift code applied": [
         "Gavekode anvendt"
       ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Har du angivet en gyldig e-mail, vil du få tilsendt dine brugernavne inden for det næste minut."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Har du angivet en gyldig gendannelses-telefon, vil vi sende dig en sms med dine brugernavne inden for det næste minut."
-      ],
       "Invitation rejected": [
         "Invitation afslået"
       ],
@@ -9134,6 +9092,9 @@
       ],
       "Email addresses": [
         "E-mailadresser"
+      ],
+      "Event": [
+        "Begivenhed"
       ],
       "Invitation email": [
         "Invitationsmail"
@@ -9405,6 +9366,9 @@
       "Device connected!": [
         "Enhed tilsluttet!"
       ],
+      "Device name": [
+        "Enhedsnavn"
+      ],
       "Disable two-factor authentication": [
         "Deaktivér to-faktor-godkendelse"
       ],
@@ -9613,9 +9577,6 @@
       "Processing...": [
         "Behandler..."
       ],
-      "QRCode": [
-        "QR-kode"
-      ],
       "Recommended": [
         "Anbefalet"
       ],
@@ -9630,9 +9591,6 @@
       ],
       "Remove single sign-on": [
         "Fjern single sign-on"
-      ],
-      "Remove single sign-on for your organization?": [
-        "Fjern single sign-on for din organisation?"
       ],
       "Remove user?": [
         "Fjern bruger?"
@@ -9950,9 +9908,6 @@
       ],
       "User declined invitation": [
         "Bruger afviste invitation"
-      ],
-      "Waiting user to accept the invitation": [
-        "Venter på, at brugeren accepterer invitationen"
       ]
     },
     "Tooltip for news": {
@@ -9966,9 +9921,6 @@
     "Tor out of date": {
       "stable release": [
         "stabil udgave"
-      ],
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Denne version af Tor Browseren er ikke understøttet. Opdatér venligst til den nyeste ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -10258,11 +10210,6 @@
       ],
       "Your ${ selected } plan": [
         "Dit ${ selected }-abonnement"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Adgang til Secure Core-servere, hurtige P2P/BitTorrent-downloads, Tor over VPN og meget mere."
       ]
     },
     "wallet_signup_2024: Info": {

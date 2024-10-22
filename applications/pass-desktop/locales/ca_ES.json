@@ -565,9 +565,6 @@
       ],
       "Write us on Twitter": [
         "Escriviu-nos a Twitter"
-      ],
-      "Your password manager not here? Request it.": [
-        "No hi apareix el vostre gestor de contrasenyes? Demaneu-lo."
       ]
     },
     "App menu": {
@@ -1008,6 +1005,9 @@
       ]
     },
     "FamilyPlanPromo2024": {
+      "Get it for ${ price }/month": [
+        "Obteniu-lo per ${ price }/mes"
+      ],
       "Introducing ${ planNameJSX }": [
         "Presentem ${ planNameJSX }"
       ],
@@ -1095,9 +1095,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        "Millora a un pla de pagament per crear diverses caixes fortes."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "S'ha descartat l'element \"${ payload.item.data.metadata.name }\""
       ],
@@ -1153,9 +1150,6 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "L'accés a ${ PASS_APP_NAME } sempre requerirà la vostra contrasenya de ${ BRAND_NAME }."
-      ],
-      "Add your custom email address to monitor :": [
-        "Afegiu la vostra adreça electrònica personalitzada per supervisar:"
       ],
       "Admin": [
         "Administrador"
@@ -1322,12 +1316,6 @@
       "Expires in ${ remainingTime }": [
         "Caduca en ${ remainingTime }"
       ],
-      "Extra password successfuly created": [
-        "S'ha creat la contrasenya addicional."
-      ],
-      "Extra password successfuly removed": [
-        "S'ha esborrat la contrasenya addicional."
-      ],
       "Fill in the CSV with your data": [
         "Empleneu el CSV amb les vostres dades"
       ],
@@ -1477,9 +1465,6 @@
       ],
       "Monitoring settings successfully updated": [
         "Les preferències de seguiment s'han actualitzat correctament"
-      ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Més que un gestor de contrasenyes, ${ PASS_APP_NAME } protegeix la vostra contrasenya i la vostra adreça de correu electrònic personal mitjançant àlies de correu electrònic. Desenvolupat amb la mateixa tecnologia que hi ha darrere de ${ MAIL_APP_NAME }, les vostres dades estan xifrades d'extrem a extrem i només són accessibles per vós."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
@@ -1641,9 +1626,6 @@
       "Select vault to share": [
         "Seleccioneu la caixa forta per compartir"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Seleccioneu on voleu que es desi la/es caixa/es forta/es importada/es."
-      ],
       "Selected items permanently deleted": [
         "Els elements seleccionats s'han suprimit permanentment"
       ],
@@ -1664,9 +1646,6 @@
       ],
       "Settings successfully updated": [
         "S'han actualitzat les preferències"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Compartiu els inicis de sessió, notes segures, amb un màxim de 10 persones"
       ],
       "Sign in to your account": [
         "Inicieu sessió al compte"
@@ -1738,9 +1717,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Per migrar dades des d'un altre gestor de contrasenyes, aneu al gestor de contrasenyes, exporteu les dades i carregueu-les a ${ PASS_APP_NAME }. Un cop les dades s'hagin importat, suprimiu el fitxer exportat."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "Per revisar les dades importades, feu clic a la icona del Proton Pass de la barra d'eines del navegador."
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Això tornarà a carregar l'aplicació"
       ],
@@ -1773,9 +1749,6 @@
       ],
       "User's access removed": [
         "S'ha esborrat l'accés de l'usuari."
-      ],
-      "User's access sucessfuly updated": [
-        "S'ha actualitzat l'accés del usuari."
       ],
       "username": [
         "nom d'usuari"
@@ -1997,9 +1970,6 @@
       "Capital letters (A-Z)": [
         "Lletres majúscules (A-Z)"
       ],
-      "Capitalise": [
-        "Majúscules"
-      ],
       "Card": [
         "Targeta"
       ],
@@ -2189,9 +2159,6 @@
       "Import passwords": [
         "Importa les contrasenyes"
       ],
-      "Imported from : ": [
-        "Importat des de: "
-      ],
       "Imported on : ": [
         "Importat en: "
       ],
@@ -2291,7 +2258,7 @@
       "Name on card": [
         "Nom de la targeta"
       ],
-      "Need help ?": [
+      "Need help?": [
         "Necessiteu ajuda?"
       ],
       "New vault": [
@@ -2477,12 +2444,6 @@
       ],
       "Today": [
         "Avui"
-      ],
-      "Total imported items : ": [
-        "Total d'elements importats: "
-      ],
-      "Total items : ": [
-        "Total d'elements: "
       ],
       "TOTP": [
         "TOTP"
@@ -2811,9 +2772,6 @@
       "Dark Web Monitoring": [
         "Monitoratge de la web fosca"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "Voleu eliminar la caixa forta \"${ vaultName }\"?"
-      ],
       "Details": [
         "Detalls"
       ],
@@ -2868,9 +2826,6 @@
       "Last modified": [
         "Última modificació"
       ],
-      "Leave vault ?": [
-        "Deixa la caixa forta?"
-      ],
       "Loading breaches...": [
         "S'estan carregant les infraccions..."
       ],
@@ -2921,9 +2876,6 @@
       ],
       "Pending access to the shared data": [
         "Accés a les dades compartides pendent"
-      ],
-      "Permanently remove all items ?": [
-        "Voleu esborrar els elements de manera permanent?"
       ],
       "Pinned (${ items.length })": [
         "Ancorat (${ items.length })"
@@ -3063,14 +3015,8 @@
       "Section name cannot be empty": [
         "El nom de la selecció no pot estar buit."
       ],
-      "Url already exists": [
-        "Ja existeix l'URL."
-      ],
       "URL cannot be empty": [
         "L'URL no pot ser buit."
-      ],
-      "Url is invalid": [
-        "L'URL no és vàlid."
       ],
       "URL is invalid": [
         "L'URL no és vàlid."
@@ -3094,9 +3040,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "No s'ha pogut crear la caixa forta \"${ vaultName }\""
-      ],
-      "Could not send invitations to the following addresses :": [
-        "No s'han pogut enviar invitacions a les següents adreces:"
       ],
       "Duplicate email addresses.": [
         "Duplicitat d'adreces de correu electrònic."
@@ -3186,9 +3129,6 @@
       "Please check that the extension is properly installed and enabled": [
         "Comproveu que l'extensió estigui instal·lada i correctament activada"
       ],
-      "Please contact us for investigating the issue": [
-        "Contacteu amb nosaltres per a investigar el problema"
-      ],
       "Please update the extension to its latest version": [
         "Actualitzeu l'extensió a la seva darrera versió"
       ],
@@ -3233,9 +3173,6 @@
       ],
       "Verification code is required": [
         "Cal un codi de verificació"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "No podeu crear més caixes fortes del que permet la vostra subscripció."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Heu arribat al límit de membres que poden accedir a aquesta caixa forta."

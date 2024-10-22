@@ -249,13 +249,13 @@
         "Genererer sikker kobling..."
       ],
       "Get mobile apps": [
-        "Få mobilapper"
+        "Skaff deg mobilapper"
       ],
       "Get Pass Business": [
-        "Få Pass Business"
+        "Skaff deg Pass Business"
       ],
       "Get Pass Plus": [
-        "Få Pass Plus"
+        "Skaff deg Pass Plus"
       ],
       "Hide": [
         "Skjul"
@@ -572,9 +572,6 @@
       ],
       "Write us on Twitter": [
         "Skriv til oss på Twitter"
-      ],
-      "Your password manager not here? Request it.": [
-        "Passordbehandleren din er ikke her? Be om den."
       ]
     },
     "bf2023: Info": {
@@ -584,7 +581,7 @@
     },
     "bf2023: Label": {
       "Get the deal": [
-        "Få avtalen"
+        "Skaff deg tilbudet"
       ]
     },
     "bf2023: Title": {
@@ -990,7 +987,7 @@
         "Eksklusivt tilbud for tidlige støttespillere av ${ PASS_APP_NAME }."
       ],
       "Get it for ${ price }/month": [
-        "Få planen for ${ price }/måned"
+        "Skaff deg planen for ${ price }/måned"
       ],
       "Introducing ${ planNameJSX }": [
         "Introduserer ${ planNameJSX }"
@@ -1040,9 +1037,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        " Oppgrader til en betalt plan for å opprette flere hvelv."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "\"${ payload.item.data.metadata.name }\"-element ble avvist"
       ],
@@ -1330,12 +1324,6 @@
       "Expires in ${ remainingTime }": [
         "Utløper om ${ remainingTime }"
       ],
-      "Extra password successfuly created": [
-        "Ekstra passord vellykket opprettet"
-      ],
-      "Extra password successfuly removed": [
-        "Ekstra passord vellykket fjernet"
-      ],
       "Fill in the CSV with your data": [
         "Fyll ut CSV-filen med dataene dine"
       ],
@@ -1458,9 +1446,6 @@
       ],
       "Monitoring settings successfully updated": [
         "Overvåkingsinnstillingene er oppdatert"
-      ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Mer enn en passordbehandler, ${ PASS_APP_NAME } beskytter passordet ditt og din personlige e-postadresse via e-postaliaser. Drevet av den samme teknologien bak ${ MAIL_APP_NAME }, er dataene dine kryptert fra ende til ende og er bare tilgjengelige for deg."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
@@ -1661,9 +1646,6 @@
       "Select destination vault": [
         "Velg destinasjonshvelv"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Velg hvor du ønsker det/de importerte hvelvet(ene) skal lagres."
-      ],
       "Selected items permanently deleted": [
         "Valgte elementer permanent slettet"
       ],
@@ -1684,9 +1666,6 @@
       ],
       "Settings successfully updated": [
         "Innstillinger oppdatert"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Del dine pålogginger og sikre notater med opptil 10 personer"
       ],
       "Sign in or create an account to continue.": [
         "Logg på eller opprett en konto for å fortsette."
@@ -1755,9 +1734,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "For å migrere data fra en annen passordbehandler, gå til passordbehandleren, eksporter dataene dine og last dem deretter opp til ${ PASS_APP_NAME }. Når dataene er importert, sletter du den eksporterte filen."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "For å se gjennom de importerte dataene dine, klikk på Pass-ikonet i nettleserens verktøylinje."
-      ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Prøv å laste inn eller installere utvidelsen på nytt, og sørg for at nettleseren og ${ PASS_SHORT_APP_NAME } er oppdatert."
       ],
@@ -1805,9 +1781,6 @@
       ],
       "User's access removed": [
         "Brukerens tilgang fjernet"
-      ],
-      "User's access sucessfuly updated": [
-        "Brukerens tilgang oppdatert"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Hvelv \"${ payload.content.name }\" slettet"
@@ -2045,9 +2018,6 @@
       "Capital letters (A-Z)": [
         "Store bokstaver (A–Å)"
       ],
-      "Capitalise": [
-        "Gjør om til store bokstaver"
-      ],
       "Card": [
         "Kort"
       ],
@@ -2234,9 +2204,6 @@
       "Import passwords": [
         "Importer passord"
       ],
-      "Imported from : ": [
-        "Importert fra : "
-      ],
       "Imported on : ": [
         "Importert den : "
       ],
@@ -2336,7 +2303,7 @@
       "Name on card": [
         "Navn på kortet"
       ],
-      "Need help ?": [
+      "Need help?": [
         "Trenger du hjelp?"
       ],
       "New vault": [
@@ -2534,12 +2501,6 @@
       ],
       "Today": [
         "I dag"
-      ],
-      "Total imported items : ": [
-        "Totalt antall importerte elementer : "
-      ],
-      "Total items : ": [
-        "Totalt antall elementer : "
       ],
       "TOTP": [
         "TOTP"
@@ -2795,9 +2756,6 @@
       "Current version": [
         "Gjeldende versjon"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "Slett hvelv \"${ vaultName }\" ?"
-      ],
       "Discard changes?": [
         "Forkaste endringer?"
       ],
@@ -2826,7 +2784,7 @@
         "Kom i gang"
       ],
       "Get the mobile apps": [
-        "Få mobilappene"
+        "Skaff deg mobilappene"
       ],
       "Grant permissions": [
         "Gi tillatelser"
@@ -2854,9 +2812,6 @@
       ],
       "Last modified": [
         "Sist endret"
-      ],
-      "Leave vault ?": [
-        "Forlate hvelvet?"
       ],
       "Log in as...": [
         "Logg på som..."
@@ -2899,9 +2854,6 @@
       ],
       "Pending access to the shared data": [
         "Venter på tilgang til de delte dataene"
-      ],
-      "Permanently remove all items ?": [
-        "Vil du fjerne alle elementene permanent?"
       ],
       "Pin the extension": [
         "Fest utvidelsen"
@@ -3013,14 +2965,8 @@
       "Section name cannot be empty": [
         "Seksjonsnavn kan ikke være tomt"
       ],
-      "Url already exists": [
-        "Nettadresse finnes allerede"
-      ],
       "URL cannot be empty": [
         "Nettadresse kan ikke være tom"
-      ],
-      "Url is invalid": [
-        "Nettadressen er ugyldig"
       ],
       "URL is invalid": [
         "Nettadressen er ugyldig"
@@ -3053,9 +2999,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Kunne ikke opprette hvelv \"${ vaultName }\""
-      ],
-      "Could not send invitations to the following addresses :": [
-        "Kunne ikke sende invitasjoner til følgende adresser:"
       ],
       "Duplicate email addresses.": [
         "Dupliserte e-postadresser."
@@ -3127,9 +3070,6 @@
       "PGP encrypted export file requires passphrase": [
         "PGP-kryptert eksportfil krever passfrase."
       ],
-      "Please contact us for investigating the issue": [
-        "Vennligst kontakt oss for å undersøke problemet."
-      ],
       "Please verify your email address in order to use email aliases": [
         "Vennligst bekreft e-postadressen din for å kunne bruke e-postaliaser."
       ],
@@ -3168,9 +3108,6 @@
       ],
       "Vault name is required": [
         "Hvelvnavn kreves"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "Du kan ikke opprette flere hvelv enn det abonnementet ditt tillater."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Du har nådd grensen for medlemmer som kan ha tilgang til dette hvelvet."

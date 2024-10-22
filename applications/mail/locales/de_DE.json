@@ -841,9 +841,6 @@
       "OK": [
         "OK"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "Open": [
         "Öffnen"
       ],
@@ -1230,9 +1227,6 @@
       ],
       "Toggle Calendar app": [
         "Kalender-App umschalten"
-      ],
-      "Toggle Contact app": [
-        "Kontakt-App umschalten"
       ],
       "Toggle security center app": [
         "Umschalten der Sicherheitszentrum-App"
@@ -2112,6 +2106,53 @@
       ],
       "Your subscription is ending soon": [
         "Dein Abonnement endet bald"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB } Speicherplatz"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } E-Mail-Speicherplatz"
+      ],
+      "Advanced account protection": [
+        "Erweiterter Kontoschutz"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "Alle ${ BRAND_NAME } Anwendungen und Premiumfunktionen"
+      ],
+      "Cancel and downgrade": [
+        "Abbrechen und Herabstufen"
+      ],
+      "Cloud storage and sharing for large files": [
+        "Cloud-Speicher und Freigabe großer Dateien"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Verschlüsselter Cloud-Speicher für Fotos und Dokumente"
+      ],
+      "Encrypted password manager": [
+        "Verschlüsselter Passwortmanager"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "Unsere grundlegende, kostenlose Version mit Ende-zu-Ende-verschlüsselter E-Mail und Speicherplatz. Keine Premiumfunktionen enthalten."
+      ],
+      "Save ${ upsellSavings }": [
+        "Spare ${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "Spare Geld mit ${ upsellPlanName }"
+      ],
+      "Secure personal and shared calendar": [
+        "Sicherer persönlicher und geteilter Kalender"
+      ],
+      "Try ${ planName }": [
+        "${ planName } ausprobieren"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "Teste ${ upsellPlanName } und behalte den Zugang zu allen Premium-E-Mail- und Kalenderfunktionen."
+      ],
+      "Ultra fast and private VPN": [
+        "Ultraschnelles und privates VPN"
       ]
     },
     "Checkout row": {
@@ -3448,9 +3489,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kontakte werden verschlüsselt und importiert… Dies kann einige Minuten dauern. Wenn der Vorgang abgeschlossen ist, kannst du diese Meldung schließen."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Achte beim Import von CSV- und VCF-Dateien darauf, dass die Datei nicht größer ist als ${ MAX_IMPORT_FILE_SIZE_STRING } oder mehr als ${ MAX_IMPORT_CONTACTS_STRING } Kontakte enthält. Falls deine Datei größer ist, teile sie bitte in kleinere Dateien auf. ${ learnMoreLink }."
-      ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Für unbegrenzten Zugang zum Schreibassistenten und mehr, upgrade auf ${ BRAND_NAME } Duo."
       ],
@@ -4210,17 +4248,8 @@
       "Request timed out": [
         "Zeitüberschreitung bei der Anfrage"
       ],
-      "Require at least one action": [
-        "Erfordert mindestens eine Aktion"
-      ],
-      "Require at least one condition": [
-        "Erfordert mindestens eine Bedingung"
-      ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Der Versand von Anhängen ist eingeschränkt, bis du die Grenzen deines Abonnements erfüllst oder ein Upgrade durchgeführt hast."
-      ],
-      "Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.": [
-        "Der Versand von Anhängen ist eingeschränkt, solange du die Grenzen deines Abonnements überschreitest oder bis du ein Upgrade deines Abonnements durchgeführt hast."
       ],
       "Signature not verified": [
         "Signatur nicht bestätigt"
@@ -4380,9 +4409,6 @@
       ],
       "You did not provide a file.": [
         "Du hast keine Datei angegeben."
-      ],
-      "You have reached the contacts limit for your account": [
-        "Du hast das Kontaktlimit für dein Konto erreicht."
       ],
       "You have reached the maximum number of calendars.": [
         "Du hast die maximale Anzahl an Kalendern erreicht."
@@ -4743,8 +4769,14 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-Gruppen"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Konten mit eigenen Domains können keinem Familienabonnement beitreten."
+      ],
       "customer support": [
         "Kundendienst"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Familienabonnements unterstützen derzeit keine externen Konten. Erstelle vor dem Beitritt eine ${ BRAND_NAME }-Adresse. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Wenn du die Einladung annimmst, wechseln wir dein aktuelles Abonnement und schreiben deinem Konto das verbleibende Guthaben gut."
@@ -4752,8 +4784,11 @@
       "Invited by: ${ inviteEmail }": [
         "Eingeladen von: ${ inviteEmail }"
       ],
-      "Manage addresses.": [
-        "Adressen verwalten."
+      "Lifetime accounts cannot join a family plan.": [
+        "Lebenslang lizenzierte Konten können keinem Familienabonnement beitreten."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Besitzer eines Abonnements mit Mitgliedern können keinem anderen Familienabonnement beitreten."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Du kannst leider derzeit nicht zwischen Abonnements wechseln."
@@ -4776,14 +4811,17 @@
       "You have successfully joined the family group": [
         "Du bist erfolgreich der Familiengruppe beigetreten"
       ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Du hast unbezahlte Rechnungen. Bitte bezahle diese, bevor du einem Familienabonnement beitrittst."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit diesem Familienabonnement zu verknüpfen und gemeinsam alle ${ brandOrAppName } Premium-Funktionen zu nutzen."
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Dein Konto hat mehr E-Mail-Adressen, als dir in diesem Abonnement zur Verfügung stehen. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Dein Konto verwendet Speicher in Höhe von ${ usedSpace }, was den dir zugewiesenen Speicherplatz von ${ inviteSpace } übersteigt. Lösche einige Daten oder bitte den Abonnement-Administrator, deinen Speicher zu erhöhen."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "Du kannst diese Einladung mit deinem derzeitigen Abonnement nicht annehmen."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4803,9 +4841,6 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users ": [
-        "Konfiguriere dein Family-Konto und lade andere Benutzer ein "
-      ],
       "Set up your family": [
         "Family einrichten"
       ],
@@ -4985,11 +5020,6 @@
         "Ungelesen"
       ]
     },
-    "Filter option to only show message with attachments": {
-      "Has file": [
-        "Mit Dateianhang"
-      ]
-    },
     "Filter preview": {
       "read": [
         "Lesen"
@@ -5081,9 +5111,6 @@
       ],
       "Start free trial": [
         "Jetzt kostenlos ausprobieren"
-      ],
-      "Try the app-new desktop app": [
-        "Probiere die neue Desktop-App aus"
       ],
       "Upgrade now": [
         "Jetzt upgraden"
@@ -5301,6 +5328,10 @@
       ]
     },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount } Vorschlag gefunden. Verwende die Tastatur zum Navigieren.",
+        "${ itemsCount } Vorschläge gefunden. Verwende die Tastatur zum Navigieren."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Verwende die Pfeiltasten hoch und runter, um die Vorschläge nach der Eingabe aufzurufen und durchzusehen. Bestätige deine Auswahl mit der Eingabetaste oder drücke die Escape-Taste, um das Vorschlagsfeld zu schließen."
       ]
@@ -5801,9 +5832,6 @@
         "(${ memberCount } Mitglied)",
         "(${ memberCount } Mitglieder)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice }/Monat)"
-      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtern, wenn ALLE der folgenden Bedingungen erfüllt sind)"
       ],
@@ -5907,9 +5935,6 @@
       ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Alle geplanten oder aufgeschobenen Nachrichten werden verworfen."
-      ],
-      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
-        "Alle Unterordner werden ebenfalls gelöscht. E-Mails, die im Ordner ${ nameDeleted } gespeichert sind, werden jedoch nicht gelöscht und können im Ordner \"Alle E-Mails\" gefunden werden."
       ],
       "Applying actions to conversations": [
         "Aktionen werden auf Unterhaltungen angewandt"
@@ -6231,9 +6256,6 @@
       ],
       "Emails are automatically signed": [
         "E-Mails werden automatisch signiert."
-      ],
-      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "E-Mails, die mit der Kategorie ${ nameDeleted } gekennzeichnet sind, werden nicht gelöscht und sind weiterhin im entsprechenden Ordner zu finden."
       ],
       "embedded image": [
         "eingebettetes Bild",
@@ -6630,9 +6652,6 @@
       "Organization size": [
         "Organisationsgröße"
       ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Unsere Warnungen sind tendenziell übervorsichtig. Wenn du keine der gefundenen Informationen erkennst, kannst du diesen Bericht getrost ignorieren."
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Unser System hat diese Nachricht als Phishing-Versuch gekennzeichnet. Bitte überprüfe, ob sie seriös ist."
       ],
@@ -6886,9 +6905,6 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da du ein treuer Benutzer bist, wurden deinem Konto zusätzliche Funktionen hinzugefügt."
-      ],
-      "Snoozed until  ${ dateString } at ${ formattedTime }": [
-        "Aufgeschoben bis zum ${ dateString } um ${ formattedTime }"
       ],
       "Snoozed until today, ${ formattedTime }": [
         "Aufgeschoben bis heute, ${ formattedTime }"
@@ -7160,9 +7176,6 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Teste neue Funktionen, Updates und Produkte von ${ BRAND_NAME }, bevor sie für die Öffentlichkeit freigegeben werden. Dadurch wird die Seite neu geladen."
       ],
-      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
-        "Schalte diese Option aus, um nur nach Datum, Name, E-Mail-Adresse oder Betreff zu suchen. Um die Suche nach Nachrichteninhalten zu deaktivieren und heruntergeladene Nachrichten zu löschen, gehe zu den Einstellungen."
-      ],
       "Turn on to search the content of your messages": [
         "Aktivieren, um den Inhalt deiner Nachrichten durchsuchen zu können"
       ],
@@ -7192,9 +7205,6 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Upgrade, um deinem Konto weitere E-Mail-Adressen hinzuzufügen."
-      ],
-      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "Führe ein Upgrade durch, um Nachrichten, die sich seit mehr als 30 Tagen im Papierkorb und Spam befinden automatisch zu löschen."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Upgrade, um mehr Ordner, Filter und E-Mail-Adressen erstellen zu können."
@@ -7312,9 +7322,6 @@
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Wann möchtest du, dass deine Nachricht automatisch aus dem Posteingang des Empfängers und aus deinem Gesendet-Ordner gelöscht wird?"
-      ],
-      "When do you want your message to be sent?": [
-        "Wann soll diese Nachricht gesendet werden?"
       ],
       "When do you want your message to self-destruct?": [
         "Wann soll sich die Nachricht selbst zerstören?"
@@ -8320,9 +8327,6 @@
       "Sync with system": [
         "Mit dem System synchronisieren"
       ],
-      "Synchronize with system": [
-        "Mit System synchronisieren"
-      ],
       "System information": [
         "Systeminformationen"
       ],
@@ -8821,9 +8825,6 @@
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "Zum Schutz deiner Privatsphäre wurde das Bild nicht geladen."
-      ],
-      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
-        "Dein Browser konnte die Identität des Remote-Servers nicht verifizieren. Das Bild wird möglicherweise über das http-Protokoll gehostet."
       ]
     },
     "Message notification": {
@@ -9039,6 +9040,9 @@
       ],
       "Upgrade now": [
         "Jetzt upgraden"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Upgrade auf ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -9126,6 +9130,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-Verbindung",
         "${ n } VPN-Verbindungen"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } Benutzer",
+        "Bis zu ${ numberOfUsers } Benutzer"
       ],
       "${ options }-day file version history": [
         "Dateiversionsverlauf für ${ options } Tag",
@@ -9425,9 +9433,6 @@
       "Sync and backup all your files across devices": [
         "Synchronisiere und sichere alle deine Dateien auf all deinen Geräten"
       ],
-      "Tor over VPN": [
-        "Tor über VPN"
-      ],
       "Two-factor authentication": [
         "Zwei‐Faktor‐Authentifizierung"
       ],
@@ -9588,6 +9593,9 @@
       "Protect sensitive business information and collaborate securely.": [
         "Schütze sensible Geschäftsinformationen und arbeite sicher zusammen."
       ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Schütze deine Familie mit allen Premium-Funktionen von ${ PASS_SHORT_APP_NAME } Plus für 6 Benutzer."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Schütze die Privatsphäre deiner Familie durch die Kombination aller ${ BRAND_NAME }-Dienste."
       ],
@@ -9691,9 +9699,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Erstelle bis zu ${ n } E-Mail-Adressen/-Aliasse, die du Familienmitgliedern zuweisen kannst. Nutze sie für Online-Identitäten, z.B. MaxEinkauf@${ domain } für Einkaufskonten."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Dedizierte Server mit dedizierter(n) IP-Adresse(n) können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Diese Funktion schützt vor der Bedrohung der VPN-Privatsphäre, indem dein Internet-Verkehr über mehrere Server geleitet wird."
       ],
@@ -9702,6 +9707,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Teile deine Kalender ganz einfach mit Verwandten, Freunden oder Kollegen"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Sende E-Mails an alle Mitglieder einer Gruppe mit einer einzigen E-Mail-Adresse"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Mit dieser Funktion stellst du sicher, dass du alle an deine Domain gesendeten E-Mails erhältst, auch wenn die E-Mail-Adresse nicht oder nicht mehr existiert oder einen Tippfehler enthält."
@@ -9786,9 +9794,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Setze Passwörter und die Zwei-Faktor-Authentifizierung für Benutzer zurück."
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Leite deinen Internetverkehr mit einem einzigen Klick durch das Tor-Netzwerk."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Inklusive automatischer Synchronisierung, verschlüsselter Dateifreigabe und mehr."
@@ -9961,11 +9966,6 @@
         "Damit der Import funktioniert, musst du alle gewünschten Elemente auswählen, wie im GIF gezeigt."
       ]
     },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Wähle aus, worauf ${ BRAND_NAME } zugreifen darf: Deine E-Mail-Nachrichten und -Einstellungen anzeigen, deine Kontakte anzeigen und herunterladen, alle Terminkalender, auf die du über Google Agenda zugreifst, anzeigen und herunterladen."
-      ]
-    },
     "Onboarding List Placeholder": {
       "Finance": [
         "Finanzen"
@@ -9987,6 +9987,15 @@
       ]
     },
     "Onboarding modal": {
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "${ advancedEncryptionTitle } stellt sicher, dass nur du und die vorgesehenen Empfänger auf deine E-Mails zugreifen können."
+      ],
+      "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
+        "${ industryLeadingSpamProtectionTitle } verhindert, dass betrügerische E-Mails jemals deinen Posteingang erreichen."
+      ],
+      "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
+        "${ protectionFromTrackersTitle } bedeutet, dass du nicht mehr über das Internet verfolgt wirst."
+      ],
       "Access email and calendar right from your desktop with the desktop app.": [
         "Greife mit der Desktop-App direkt von deinem Desktop aus auf E-Mails und Kalender zu."
       ],
@@ -10058,6 +10067,9 @@
       ],
       "Maybe later": [
         "Vielleicht später"
+      ],
+      "More ways to experience ${ MAIL_APP_NAME }": [
+        "Weitere Möglichkeiten, ${ MAIL_APP_NAME } zu erleben"
       ],
       "Next": [
         "Weiter"
@@ -10205,6 +10217,12 @@
       ]
     },
     "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Alle Premiumfunktionen. 6 Benutzer. 1 einfaches Abonnement."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Exklusives Angebot, das nur für frühe Unterstützer von ${ PASS_APP_NAME } gilt."
+      ],
       "Get it for ${ monthlyPrice }": [
         "Für ${ monthlyPrice }"
       ],
@@ -10696,9 +10714,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } ausprobieren"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "Verwendet auf Amazon für Shopping, etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Wenn du nach deiner E-Mail-Adresse gefragt wirst, gibst du stattdessen diesen Alias an. Aliasse werden von ${ passLink } zur Verfügung gestellt."
@@ -11499,9 +11514,6 @@
       "Got it": [
         "Verstanden"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Melde dich einfach in deinem Apple App Store Konto an und klicke auf ${ subscriptions }."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Melde dich einfach in deinem Play Store Konto an und klicke auf ${ subscriptions }."
       ],
@@ -11529,6 +11541,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
+      ],
       "${ dayDiff } day left": [
         "${ dayDiff } verbleibender Tag",
         "${ dayDiff } verbleibende Tage"
@@ -11563,6 +11578,9 @@
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planName } geht über die Grundlagen hinaus und hilft dir, produktiver und organisierter zu sein und die Kontrolle über deinen Posteingang, deine E-Mail-Identität und vieles mehr zu behalten."
       ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
+        "${ planName } kann sicherstellen, dass alle deine Familienmitglieder - und deren Daten - geschützt sind, wenn sie online sind."
+      ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } bietet ${ planMaxSpace } Speicherplatz für deine E-Mails, Anhänge, Termine, Passwörter und Dateien. Du hast auch Anspruch auf jährliche Speicherplatzboni."
       ],
@@ -11574,6 +11592,29 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } bietet ${ planMaxSpace } Speicherplatz pro Benutzer für E-Mails, Anhänge, Termine, Dateien und Passwörter. Du hast außerdem Anspruch auf jährliche Speicherplatzboni."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } Kalender pro Benutzer",
+        "${ planNumberOfCalendars } Kalender pro Benutzer"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } eigene E-Mail-Domain",
+        "${ planNumberOfDomains } eigene E-Mail-Domains"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } E-Mail-Adresse",
+        "${ planNumberOfEmails } E-Mail-Adressen"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } E-Mail-Adresse pro Benutzer",
+        "${ planNumberOfEmails } E-Mail-Adressen pro Benutzer"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } Benutzer",
+        "${ planNumberOfUsers } Benutzer"
+      ],
+      "${ PROTON_SENTINEL_NAME } advanced account protection": [
+        "${ PROTON_SENTINEL_NAME } erweiterter Kontoschutz"
       ],
       "2 users": [
         "2 Benutzer"
@@ -11608,6 +11649,9 @@
       "Comprehensive privacy and security": [
         "Umfassender Datenschutz und Sicherheit"
       ],
+      "Dark web monitoring": [
+        "Dark Web-Überwachung"
+      ],
       "Desktop app and email client support (via IMAP)": [
         "Unterstützung für Desktop-App und E-Mail-Client (über IMAP)"
       ],
@@ -11626,11 +11670,29 @@
       "Extra storage and users": [
         "Zusätzlicher Speicherplatz und Benutzer"
       ],
+      "Folders, labels and filters": [
+        "Ordner, Kategorien und Filter"
+      ],
+      "Folders, labels, and custom filters": [
+        "Ordner, Kategorien und benutzerdefinierte Filter"
+      ],
       "Helping activists in Hong Kong": [
         "Hilfe für Aktivisten in Hongkong"
       ],
       "How our customer support team got our VPN app directly into people's hands.": [
         "Wie unser Kundensupport-Team es geschafft hat, einen direkten Zugang zu unserer VPN-App für alle zu ermöglichen."
+      ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "Wie wir uns gewehrt haben, als ${ BRAND_NAME } im Zuge einer aggressiven Kampagne blockiert wurde."
+      ],
+      "How we supported local activists when privacy and free speech were threatened.": [
+        "Wie wir lokale Aktivisten unterstützt haben, als die Privatsphäre und die Redefreiheit bedroht waren."
+      ],
+      "If you exceed free plan limits, you won't be able to:": [
+        "Wenn du die Limite der kostenlosen Version überschreitest, ist Folgendes nicht möglich:"
+      ],
+      "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Wenn deine Nutzung die Limite der kostenlosen Version überschreitet, kann der Zugang zu den Produktfunktionen und deinen Daten eingeschränkt sein."
       ],
       "Invited members will be removed from your organization": [
         "Eingeladene Mitglieder werden aus deiner Organisation entfernt"
@@ -11643,6 +11705,9 @@
       ],
       "Learn more about our impact": [
         "Erfahre mehr über unsere Wirkung"
+      ],
+      "Limitations of the free plan:": [
+        "Einschränkungen des kostenlosen Abonnements:"
       ],
       "Make your business stand out": [
         "Hebe dein Unternehmen hervor"
@@ -11692,11 +11757,20 @@
       "Unlimited privacy for two": [
         "Unbegrenzte Privatsphäre für zwei"
       ],
+      "Upload any new files": [
+        "Neue Dateien hochladen"
+      ],
+      "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
+        "Benutzerabonnements sind die einzige Einnahmequelle von ${ BRAND_NAME }. Deine Unterstützung hält uns unabhängig, fördert unsere Mission für den Online-Datenschutz und hilft Aktivisten und Organisationen, die für Freiheit kämpfen."
+      ],
       "Users won’t be able to manage their calendars": [
         "Die Benutzer werden ihre Kalender nicht verwalten können."
       ],
       "Users won’t be able to send emails": [
         "Die Benutzer werden keine E-Mails versenden können."
+      ],
+      "Users won’t be able to upload files on their devices": [
+        "Nutzer können keine Dateien von ihren Geräten hochladen"
       ],
       "Version history": [
         "Versionsverlauf"
@@ -11712,6 +11786,9 @@
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
         "Wenn du ${ planName } kündigst, wirst du auf ${ BRAND_NAME } Free herabgestuft, das nur bis zu 1 GB Mail-Speicher und bis zu 5 GB Drive-Speicher bietet. Dein Team wird in seiner Arbeit unterbrochen werden, da zusätzliche Benutzer im kostenlosen Abonnement nicht unterstützt werden."
+      ],
+      "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Wenn dein ${ planName }-Abonnement am ${ expiryDate } endet, wirst du auf das ${ BRAND_NAME } Free-Abonnement zurückgestuft."
       ],
       "Yearly free storage bonuses": [
         "Jährliche Boni für kostenlosen Speicherplatz"
@@ -13158,9 +13235,6 @@
     "Tor out of date": {
       "stable release": [
         "stabile Version"
-      ],
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Diese Version des Tor Browsers wird nicht unterstützt. Bitte aktualisiere auf die neueste ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -13225,11 +13299,6 @@
       ],
       "No ads": [
         "Keine Werbung"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Zugang zu Secure Core-Servern, schnelle P2P/BitTorrent-Downloads, Tor über VPN und mehr."
       ]
     },
     "wallet_signup_2024: Info": {

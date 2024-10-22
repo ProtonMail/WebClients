@@ -357,9 +357,6 @@
       "Loading verification": [
         "Doğrulama yükleniyor"
       ],
-      "Login": [
-        "Oturum aç"
-      ],
       "Make a copy": [
         "Kopya oluştur"
       ],
@@ -409,9 +406,6 @@
         "Şimdi değil"
       ],
       "OK": [
-        "Tamam"
-      ],
-      "Ok": [
         "Tamam"
       ],
       "Open": [
@@ -560,9 +554,6 @@
       ],
       "Sign out": [
         "Oturumu kapat"
-      ],
-      "Sign up": [
-        "Hesap açın"
       ],
       "Skip verification": [
         "Doğrulamayı atla"
@@ -989,6 +980,53 @@
       ],
       "Continue your subscription": [
         "Aboneliğinizi kullanmayı sürdürün"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB } depolama alanı"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } e-posta depolama alanı"
+      ],
+      "Advanced account protection": [
+        "Gelişmiş hesap koruması"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "Tüm ${ BRAND_NAME } uygulamaları ve ücretli özellikleri"
+      ],
+      "Cancel and downgrade": [
+        "İptal edip tarifeyi düşür"
+      ],
+      "Cloud storage and sharing for large files": [
+        "Büyük dosyalar için paylaşım ve bulut depolama"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Fotoğraf ve belgeler için şifrelenmiş bulut depolama alanı"
+      ],
+      "Encrypted password manager": [
+        "Şifrelenmiş parola yöneticisi"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "Uçtan uca şifrelenmiş e-posta ve depolama alanı ile temel, Free tarifemiz. Ücretli özellikler bulunmaz."
+      ],
+      "Save ${ upsellSavings }": [
+        "${ upsellSavings } indirim"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "${ upsellPlanName } ile kazanç sağlayın"
+      ],
+      "Secure personal and shared calendar": [
+        "Güvenli kişisel ve paylaşımlı takvim"
+      ],
+      "Try ${ planName }": [
+        "${ planName } tarifesini deneyin"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "${ upsellPlanName } tarifesini deneyin ve tüm ücretli e-posta ve takvim özelliklerine erişin."
+      ],
+      "Ultra fast and private VPN": [
+        "Süper hızlı ve güvenli VPN"
       ]
     },
     "Checkout row": {
@@ -2025,9 +2063,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "CSV ve VCF dosyası ile içe aktarma için, ${ MAX_IMPORT_FILE_SIZE_STRING } dosya boyutunu ya da ${ MAX_IMPORT_CONTACTS_STRING } kişiyi aşmadığınızdan emin olun. Dosyanız büyükse lütfen daha küçük dosyalara bölün. ${ learnMoreLink }."
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "${ PLAN_NAMES[PLANS.BUNDLE] } ile sınırsız takma ad ve 500 GB depolama alanı edinin."
       ],
@@ -2148,6 +2183,14 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "${ PLAN_NAMES[PLANS.PASS] } aboneliğinizi yıllık ${ price } özel fiyatı ile kullanıyorsunuz. Free tarifesine geçtikten sonra, gelecekte yeniden tarifenizi yükseltseniz bile indirim hakkınızı kalıcı olarak kaybedersiniz."
+      ]
+    },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } uygulamasında aç"
+      ],
+      "Save for later": [
+        "Sonrası için kaydet"
       ]
     },
     "driveplus2024: Deal details": {
@@ -2749,9 +2792,6 @@
         "Bir e-postayı ${ maxContacts } üzerinde alıcıya gönderemezsiniz",
         "Bir e-postayı ${ maxContacts } üzerinde alıcıya gönderemezsiniz"
       ],
-      "You have reached the contacts limit for your account": [
-        "Hesabınızın kişi sayısı sınırına ulaştınız"
-      ],
       "You have reached the maximum number of calendars.": [
         "Eklenebilecek en fazla takvim sayısı sınırına ulaştınız."
       ],
@@ -3077,9 +3117,6 @@
       "Lifetime accounts cannot join a family plan.": [
         "Lifetime hesaplar bir aile tarifesine katılamaz."
       ],
-      "Manage addresses.": [
-        "Adres yönetimi."
-      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Üyeleri olan bir tarifenin sahipleri başka bir aile tarifesine katılamaz."
       ],
@@ -3115,9 +3152,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Hesabınız, size ayrılmış ${ inviteSpace } boyutunu aşan ${ usedSpace } depolama alanı kullanıyor. Bazı verileri silin ya da tarife yöneticisinden depolama alanınızı artırmasını isteyin."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "Geçerli tarifenizle bu daveti kabul edemezsiniz."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3647,9 +3681,6 @@
         "(${ memberCount } üye)",
         "(${ memberCount } üye)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /ay)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ek depolama alanı"
       ],
@@ -3986,6 +4017,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "En iyi sonucu almak için yayın akışları ve fazla bellek kullanılması gereken etkinliklerden kaçının ya da yüklemenizi daha küçük gruplara ayırın."
       ],
+      "Free 5GB encrypted storage to get started": [
+        "Başlamak için ücretsiz 5GB şifrelenmiş depolama alanı"
+      ],
       "here": [
         "buraya"
       ],
@@ -4058,6 +4092,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Yalnızca seçiminizi onaylayın, gerisini biz halledeceğiz."
+      ],
+      "Keep your files secure with end-to-end encryption.": [
+        "Dosyanızı uçtan uca şifrelemeyle güvende tutun."
       ],
       "Key fingerprint": [
         "Anahtar parmak izi"
@@ -4192,9 +4229,6 @@
       ],
       "Organization size": [
         "Kuruluş boyutu"
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Uyarılarımız ihtiyatlı davranmak yönündedir. Ele geçirilmiş bilgilerin hiçbirini tanımıyorsanız, bu raporu güvenle yok sayabilirsiniz."
       ],
       "Owner": [
         "Sahibi"
@@ -5027,6 +5061,9 @@
       "Last month only": [
         "Yalnızca son ay"
       ],
+      "Log in or sign up ": [
+        "Oturum ya da hesap açın "
+      ],
       "Mail Server (IMAP)": [
         "E-posta sunucusu (IMAP)"
       ],
@@ -5502,9 +5539,6 @@
       "Graphics Interchange Format (GIF)": [
         "Grafik alışveriş biçimi (GIF)"
       ],
-      "GZip Compressed Archive": [
-        "GZip sıkıştırılmış arşivi"
-      ],
       "HyperText Markup Language (HTML)": [
         "Hypertext kodlama dili (HTML)"
       ],
@@ -5522,9 +5556,6 @@
       ],
       "Java Archive (JAR)": [
         "Java arşivi (JAR)"
-      ],
-      "JPEG images": [
-        "JPEG görseli (JPG)"
       ],
       "MP3 audio": [
         "MP3 sesi"
@@ -5561,9 +5592,6 @@
       ],
       "Opus audio": [
         "Opus sesi"
-      ],
-      "Portable Network Graphics": [
-        "Taşınabilir ağ grafiği (PNG)"
       ],
       "RAR archive": [
         "RAR arşivi"
@@ -5761,6 +5789,10 @@
       "${ n } VPN connection": [
         "${ n } VPN bağlantısı",
         "${ n } VPN bağlantısı"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } kullanıcı",
+        "${ numberOfUsers } kullanıcıya kadar"
       ],
       "${ options }-day file version history": [
         "${ options } günlük dosya sürümü geçmişi",
@@ -6063,9 +6095,6 @@
       "Sync and backup all your files across devices": [
         "Tüm dosyalarınızı aygıtlarınız arasında eşitleyin ve yedekleyin"
       ],
-      "Tor over VPN": [
-        "VPN üzerinden Tor"
-      ],
       "Two-factor authentication": [
         "İki adımlı doğrulama"
       ],
@@ -6332,9 +6361,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Aile üyelerine atayabileceğiniz en fazla ${ n } e-posta adresi/takma ad oluşturabilirsiniz. Bunları çevrim içi kimlikler için kullanabilirsiniz. Örneğin alışveriş hesapları için AliSiparis@${ domain }."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "İnternet trafiğinizi birden çok sunucudan geçirerek VPN gizliliğine yönelik tehditlere karşı koruma sağlar"
       ],
@@ -6430,9 +6456,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Kullanıcı parolalarını ve kullanıcıların iki adımlı doğrulama ayarlarını sıfırla"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yöneltin"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
@@ -6724,9 +6747,6 @@
       "Share invitation declined": [
         "Paylaşma daveti reddedildi"
       ],
-      "Stopping to share this item has failed": [
-        "Bu ögenin paylaşması durdurulamadı"
-      ],
       "The link to \"${ name }\" failed to be deleted": [
         "${ name }\" bağlantısı silinemedi"
       ],
@@ -6765,11 +6785,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "İçe aktarma işleminin yapılabilmesi için, görseldeki gibi gerekli tüm ögeleri seçmelisiniz."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "${ BRAND_NAME } uygulamasının nelere erişebileceğini seçin: E-posta iletilerinizi ve ayarlarınızı görüntüleme, kişilerinizi görüntüleme ve indirme, Google Takvim üzerinde eriştiğiniz tüm takvimleri görüntüleme ve indirme."
       ]
     },
     "Option": {
@@ -6988,6 +7003,9 @@
       "E.g., ": [
         "Örneğin, "
       ],
+      "Email": [
+        "E-posta adresi"
+      ],
       "Filter groups": [
         "Grupları süz"
       ],
@@ -7181,9 +7199,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulamasını deneyin"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "Amazon alışverişleri için kullanıldı gibi."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "E-posta adresiniz sorulduğunda, bunun yerine bu takma adı verin. Takma adlar ${ passLink } tarafından sağlanır."
@@ -7635,6 +7650,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "Bu ögenin bağlantısı Drive depolama alanınıza kaydedildi. Daha sonra 'Benimle paylaşılan' bölümünden erişebilirsiniz."
+      ],
       "Get up to ${ credits } in credits.": [
         "${ credits } tutarına kadar kredi kazanın."
       ],
@@ -7794,9 +7812,6 @@
       "Got it": [
         "Anladım"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Apple App Store hesabınızda oturum açın, ardından ${ subscriptions } üzerine dokunun."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Play Store hesabınızda oturum açın, ardından ${ subscriptions } üzerine dokunun."
       ],
@@ -7870,6 +7885,17 @@
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } size tüm uygulamaları, tüm özellikleri, yeni sürümlere erken erişimi ve verileriniz ile güvenliğinizin kontrolunu sağlamanız için gereken her şeyi sunar."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } özel e-posta etki alanı",
+        "${ planNumberOfDomains } özel e-posta etki alanı"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-posta adresi",
+        "${ planNumberOfEmails } e-posta adresi"
+      ],
+      "Folders, labels, and custom filters": [
+        "Klasörler, etiketler ve özel süzgeçler"
       ]
     },
     "Subscription renewal state": {
@@ -8472,6 +8498,9 @@
       "Request new code": [
         "Yeni kod iste"
       ],
+      "Save it for later in ${ DRIVE_APP_NAME }": [
+        "Daha sonra kullanmak için ${ DRIVE_APP_NAME } üzerine kaydet"
+      ],
       "Security center": [
         "Güvenlik merkezi"
       ],
@@ -8595,6 +8624,9 @@
       ]
     },
     "Tooltip": {
+      "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
+        "Bu paylaşılan dosyayı daha sonra kolayca erişebilmek için ${ DRIVE_APP_NAME } depolama alanınıza ekleyin"
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Otomatik, bu kullanıcıya gönderim için oluşturucudaki biçimin kullanılacağını belirtir. Düz metin, iletinin gönderim sırasında her zaman düz metne dönüştürüleceğini belirtir."
       ],
@@ -8642,9 +8674,6 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"
-      ],
-      "Shared end-to-end encrypted": [
-        "Uçtan uca şifrelenmiş olarak paylaşıldı"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sistem alt klasörleri ${ MAIL_APP_NAME } üzerinde ayrı klasörler olarak görünecek"
@@ -8736,11 +8765,6 @@
       ],
       "No ads": [
         "Reklamsız"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Secure Core sunucularına erişim, hızlı P2P/BitTorrent indirmeleri, VPN üzerinden Tor ve diğer özellikler"
       ]
     },
     "wallet_signup_2024: Info": {

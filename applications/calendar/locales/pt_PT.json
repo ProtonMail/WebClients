@@ -153,6 +153,9 @@
       "Close this banner": [
         "Fechar esta faixa"
       ],
+      "Collapse navigation bar": [
+        "Recolher a barra de navegação"
+      ],
       "Compose": [
         "Compor"
       ],
@@ -253,6 +256,9 @@
       ],
       "Dismiss": [
         "Descartar"
+      ],
+      "Display navigation bar": [
+        "Mostrar a barra de navegação"
       ],
       "Done": [
         "Concluído"
@@ -374,6 +380,9 @@
       "Import from Outlook": [
         "Importar do Outlook"
       ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Atualização importante disponível. Para continuar a utilizar a aplicação, atualize para a versão mais recente. ${ downloadUpdate }"
+      ],
       "Increase": [
         "Aumentar"
       ],
@@ -475,9 +484,6 @@
       ],
       "OK": [
         "Aceitar"
-      ],
-      "Ok": [
-        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir definições do ${ CALENDAR_APP_NAME }"
@@ -593,6 +599,9 @@
       "Select all": [
         "Seleccionar tudo"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Selecionar ciclo de faturação ${ billingText }"
+      ],
       "Select calendar view": [
         "Selecionar vista de calendário"
       ],
@@ -664,9 +673,6 @@
       ],
       "Today": [
         "Hoje"
-      ],
-      "Toggle Contact app": [
-        "Alternar aplicação de contactos"
       ],
       "Toggle settings": [
         "Alternar definições"
@@ -1174,9 +1180,6 @@
       ]
     },
     "Calendar sharing access option label": {
-      "Edit (view, create and edit event details)": [
-        "Edição (ver, criar e editar os detalhes do evento)"
-      ],
       "View (see all event details)": [
         "Visualizar (ver todos os detalhes do evento)"
       ]
@@ -2372,9 +2375,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "A encriptar e importar contactos... Pode levar alguns minutos. Quando o processo terminar, poderá fechar este diálogo."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Para importar via ficheiro CSV e VCF, certifique-se de que o ficheiro não excede ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contactos. Se o seu ficheiro for maior, divida-o em ficheiros mais pequenos. ${ learnMoreLink }."
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Obtenha aliases ilimitados e 500 GB de armazenamento com ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
@@ -2395,9 +2395,6 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Defina um método de recuperação para evitar a perda de acesso à sua conta."
-      ],
-      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
-        "Isso pode levar alguns minutos. Entretanto, pode continuar a usar o calendário normalmente."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Para garantir a maior segurança possível da sua conta, defina uma frase de recuperação."
@@ -2568,6 +2565,9 @@
       ],
       "This event was updated.": [
         "Este evento foi atualizado."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Este evento foi atualizado. Veja o que mudou:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
         "Foi convidado para ${ eventTitle }.\n\n${ eventDetailsText }"
@@ -3090,9 +3090,6 @@
         "Não pode enviar um e-mail para mais de ${ maxContacts } destinatário.",
         "Não pode enviar um e-mail para mais de ${ maxContacts } destinatários."
       ],
-      "You have reached the contacts limit for your account": [
-        "Atingiu o limite de contactos da sua conta."
-      ],
       "You have reached the maximum number of calendars.": [
         "Atingiu o número máximo de calendários."
       ],
@@ -3477,9 +3474,6 @@
       "Invited by: ${ inviteEmail }": [
         "Convidado por: ${ inviteEmail }"
       ],
-      "Manage addresses.": [
-        "Gerir endereços."
-      ],
       "Sorry, you can't switch plans at this time.": [
         "Lamentamos, mas não é possível mudar de plano neste momento."
       ],
@@ -3503,9 +3497,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "A sua conta está a utilizar ${ usedSpace } de armazenamento, o que excede o ${ inviteSpace } que lhe foi atribuído. Elimine alguns dados ou peça ao administrador do plano para aumentar o seu armazenamento."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "Não pode aceitar este convite com o seu plano atual."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3525,9 +3516,6 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users ": [
-        "Definir a sua conta familiar e convidar utilizadores "
-      ],
       "Set up your family": [
         "Organizar a sua família"
       ],
@@ -3975,6 +3963,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "O ${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "A tecnologia de encriptação da ${ BRAND_NAME } significa que ninguém pode aceder à sua palavra-passe - nem mesmo nós."
       ],
@@ -4049,9 +4040,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } membro)",
         "(${ memberCount } membros)"
-      ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /mês)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } de armazenamento extra"
@@ -4537,9 +4525,6 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Outros utilizadores da sua organização verão as suas faixas horárias ocupadas. Não são partilhados quaisquer detalhes do evento."
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Os nossos alertas são mais cautelosos. Se não reconhece nenhuma das informações violadas, pode ignorar este relatório em segurança."
       ],
       "password": [
         "palavra-passe"
@@ -6329,9 +6314,6 @@
       "Support for up to 2 users": [
         "Suporte para até 2 usuários"
       ],
-      "Tor over VPN": [
-        "Tor sobre VPN"
-      ],
       "Two-factor authentication": [
         "Autenticação em dois fatores"
       ],
@@ -6387,6 +6369,16 @@
       "Vault sharing (up to ${ n } person)": [
         "Partilha de cofre (até ${ n } pessoa)",
         "Partilha de cofre (até ${ n } pessoas)"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } administrador",
+        "${ admins } administradores"
+      ],
+      "${ users } user": [
+        "${ users } utilizador",
+        "${ users } utilizadores"
       ]
     },
     "new_plans: feature info": {
@@ -6510,9 +6502,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Crie até ${ n } endereços de e-mail ou aliases que pode atribuir aos membros da sua família. Utilize-os como identidades digitais como, por exemplo, JoaoCompras@${ domain } para contas de comércio eletrónico."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Servidores dedicados com endereço(s) IP dedicados podem ser adicionados a gateways privados para ativar controlo de acesso ajustado"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defende-se contra a ameaça à privacidade da VPN ao enviar o tráfego na internet por vários servidores."
       ],
@@ -6587,9 +6576,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Reponha as palavras-passe dos utilizadores e a autenticação de dois fatores."
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Envie todo o seu tráfego na internet através da rede Tor com um único clique."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui sincronização automática, partilha de ficheiros encriptados e muito mais."
@@ -6858,11 +6844,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Para que a importação funcione, deverá selecionar todos os items solicitados como é mostrado no GIF."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Selecione o que ${ BRAND_NAME } pode aceder: ver mensagens de e-mail e definições, ver e transferir contactos, ver e transferir todas as agendas do Google Agenda."
       ]
     },
     "Onboarding": {
@@ -7297,9 +7278,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Experimente o ${ PASS_APP_NAME }"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "Usado na Amazon para compras, etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Quando lhe for pedido o seu endereço de e-mail, forneça este alias. Os aliases são fornecidos pelo ${ passLink }."
@@ -7919,9 +7897,6 @@
     "Subscription change warning": {
       "Got it": [
         "Entendido"
-      ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Basta iniciar sessão na sua conta da Apple App Store e, em seguida, premir ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Basta iniciar sessão na sua conta da Play Store e, em seguida, premir ${ subscriptions }."
@@ -8619,6 +8594,9 @@
       "Hide time zones for event start and end times": [
         "Ocultar fusos horários para horas inicial e final dos eventos"
       ],
+      "High security for your account": [
+        "Alta segurança para sua conta"
+      ],
       "Human verification": [
         "Verificação humana"
       ],
@@ -8845,9 +8823,6 @@
       "Warning: suspected fake website": [
         "Aviso: suspeita de sítio web falso"
       ],
-      "We're setting up Calendar search": [
-        "Estamos a configurar a pesquisa do calendário"
-      ],
       "We've locked some calendars to protect your data": [
         "Bloqueámos alguns calendários para proteger os seus dados."
       ],
@@ -9045,11 +9020,6 @@
       ],
       "No ads": [
         "Sem anúncios"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Acesso a servidores Secure Core, transferências P2P/BitTorrent rápidas, Tor sobre VPN e mais."
       ]
     },
     "wallet_signup_2024: Info": {

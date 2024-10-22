@@ -70,11 +70,11 @@
       "Accept": [
         "Принять"
       ],
-      "activate": [
-        "включить"
-      ],
       "Activate": [
         "Активировать"
+      ],
+      "activate": [
+        "включить"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активировать ${ user.Name }@pm.me"
@@ -198,9 +198,6 @@
       ],
       "Change keys": [
         "Изменить ключи"
-      ],
-      "Change other email subscriptions": [
-        "Изменить другие подписки"
       ],
       "Change password": [
         "Изменить пароль"
@@ -739,9 +736,6 @@
       "OK": [
         "OK"
       ],
-      "Ok": [
-        "OK"
-      ],
       "Open": [
         "Открыть"
       ],
@@ -829,9 +823,6 @@
       "Remove gift code": [
         "Удалить подарочный код"
       ],
-      "Remove single sign-on": [
-        "Удалить единый вход"
-      ],
       "Remove this label": [
         "Удалить этот ярлык"
       ],
@@ -879,9 +870,6 @@
       ],
       "Restore": [
         "Восстановить"
-      ],
-      "Resubscribe": [
-        "Возобновить подписку"
       ],
       "Resume": [
         "Возобновить"
@@ -1966,9 +1954,6 @@
       ]
     },
     "Calendar sharing access option label": {
-      "Edit (view, create and edit event details)": [
-        "Изменить (просмотр, создание и изменение информации о событии)"
-      ],
       "View (see all event details)": [
         "Просмотр (см. всю информацию о событии)"
       ]
@@ -3416,9 +3401,6 @@
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Автоматически удаляйте спам и сообщения в Корзине, а также откройте дополнительные платные функции при обновлении."
       ],
-      "Available with ${ BRAND_NAME } Mail plus": [
-        "Доступно с помощью ${ BRAND_NAME } Mail plus"
-      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Поздравляем! Вы заработали максимальное количество из ${ rewardsLimit } бесплатных месяцев ${ plusPlanName }."
       ],
@@ -3433,9 +3415,6 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идет шифрование и импортирование контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
-      ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Для импорта через CSV- и VCF-файл убедитесь, что файл не превышает ${ MAX_IMPORT_FILE_SIZE_STRING } или ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, пожалуйста, разделите его на более мелкие файлы. ${ learnMoreLink }."
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Получите до ${ credits } кредитов, приглашая друзей в ${ BRAND_NAME }."
@@ -3899,17 +3878,26 @@
       ]
     },
     "Email Unsubscribe": {
+      "Change other email subscriptions": [
+        "Изменить другие подписки"
+      ],
       "Email subscriptions": [
         "Подписки на рассылки"
+      ],
+      "Resubscribe": [
+        "Возобновить подписку"
+      ],
+      "Unsubscribe": [
+        "Отменить подписку"
+      ],
+      "Unsubscribe?": [
+        "Отменить подписку?"
       ],
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
         "Какую электронную почту вы хотите получать от ${ BRAND_NAME }?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "Вы снова подписаны на ${ categoriesJsx }."
-      ],
-      "You unsubscribed from ${ categoriesJsx } emails.": [
-        "Вы отписались от ${ categoriesJsx }."
       ]
     },
     "Email Unsubscribe Categories": {
@@ -4542,9 +4530,6 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Чтобы управлять несколькими пользователями, перейдите на бизнес-план с более чем 1 пользователем."
       ],
-      "Please upload a square file": [
-        "Загрузите квадратный файл"
-      ],
       "Please upload an xml file": [
         "Загрузите файл xml"
       ],
@@ -4577,12 +4562,6 @@
       ],
       "Request timed out": [
         "Время запроса истекло"
-      ],
-      "Require at least one action": [
-        "Требуется как минимум одно действие"
-      ],
-      "Require at least one condition": [
-        "Требуется как минимум одно условие"
       ],
       "Session expired. Please refresh the page.": [
         "Время сеанса истекло. Обновите страницу."
@@ -4733,9 +4712,6 @@
       ],
       "You already added this holidays calendar": [
         "Вы уже добавили календарь этих праздников"
-      ],
-      "You have reached the contacts limit for your account": [
-        "Вы достигли лимита контактов для вашего аккаунта."
       ],
       "You have reached the maximum number of calendars.": [
         "Вы достигли максимального количества календарей."
@@ -5176,9 +5152,6 @@
       "Invite an existing ${ BRAND_NAME } user": [
         "Пригласить существующего пользователя ${ BRAND_NAME }"
       ],
-      "Invite member to your family": [
-        "Пригласить пользователя в семейную группу"
-      ],
       "Set up family group": [
         "Настроить семейную группу"
       ],
@@ -5250,9 +5223,6 @@
       ],
       "Lifetime accounts cannot join a family plan.": [
         "Пожизненные аккаунты не могут присоединяться к семейному тарифу."
-      ],
-      "Manage addresses.": [
-        "Управляйте адресами."
       ],
       "Manage user accounts": [
         "Управление аккаунтами пользователей"
@@ -5334,9 +5304,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ваш аккаунт занимает ${ usedSpace }, что превышает лимит хранилища в ${ inviteSpace }. Удалите некоторые данные или попросите администратора тарифного плана увеличить доступный вам объем."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "Вы не можете принять это приглашение со своим текущим планом."
       ]
     },
     "familyOffer_2023:Info": {
@@ -5357,9 +5324,6 @@
       ],
       "Create and manage family members.": [
         "Создавайте и управляйте членами семьи."
-      ],
-      "If the user already has a ${ BRAND_NAME } account (${ domain } or other, e.g. @gmail.com), enter it here. Otherwise they need to create an account first.": [
-        "Если у пользователя уже есть аккаунт ${ BRAND_NAME } (${ domain } или другой, например @gmail.com), введите его здесь. В противном случае необходимо сначала создать аккаунт."
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Если у пользователя уже есть адрес ${ MAIL_APP_NAME }, введите его. В противном случае сначала необходимо создать аккаунт."
@@ -5476,17 +5440,29 @@
       "Add": [
         "Добавить"
       ],
+      "Add (${ totalAddedCount })": [
+        "Добавить (${ totalAddedCount })",
+        "Добавить (${ totalAddedCount })",
+        "Добавить (${ totalAddedCount })",
+        "Добавить (${ totalAddedCount })"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Подключение до ${ plusVpnConnections } устройства",
         "Подключение до ${ plusVpnConnections } устройств",
         "Подключение до ${ plusVpnConnections } устройств",
         "Подключение до ${ plusVpnConnections } устройств"
       ],
+      "Continue": [
+        "Продолжить"
+      ],
       "Dark Web Monitoring": [
         "Мониторинг Темной паутины"
       ],
       "Fastest VPN servers": [
         "Самые быстрые серверы VPN"
+      ],
+      "Remove": [
+        "Удалить"
       ],
       "Secure Core servers": [
         "Серверы Secure Core"
@@ -5808,9 +5784,6 @@
       ],
       "Back to sign in": [
         "Вернуться к входу"
-      ],
-      "Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features. ": [
-        "Продолжайте пользоваться быстрым, целенаправленным и безопасным настольным компьютером. Обновите версию, чтобы получить неограниченный доступ и другие платные функции. "
       ],
       "Keep using the desktop app": [
         "Продолжить использование приложения для настольных компьютеров"
@@ -6512,9 +6485,6 @@
       "${ boldName } will be set as default calendar.": [
         "${ boldName } будет установлен в качестве календаря по умолчанию."
       ],
-      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
-        "${ boldSSOUserInformation } и вам придется создавать их вручную, чтобы добавить их в свою организацию."
-      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Если вы продолжите, то потеряете доступ ко всем текущим зашифрованным данным в вашего аккаунта."
       ],
@@ -6692,9 +6662,6 @@
         "(${ memberCount } участников)",
         "(${ memberCount } участника)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /месяц)"
-      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Фильтровать, если ВСЕ из следующих условий выполнены)"
       ],
@@ -6748,9 +6715,6 @@
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Номер телефона может быть использован для подтверждения только одного аккаунта ${ BRAND_NAME }"
-      ],
-      "A recovery file lets you unlock and view your data after an account reset": [
-        "Файл восстановления позволяет разблокировать и просмотреть данные после сброса аккаунта"
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
         "Фраза восстановления позволяет получить доступ к аккаунту и восстановить зашифрованные сообщения, если вы забыли пароль"
@@ -6916,9 +6880,6 @@
       ],
       "and": [
         "и"
-      ],
-      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
-        "Все вложенные папки также будут удалены. Однако письма, хранящиеся в этой папке ${ nameDeleted }, не будут удалены и могут быть найдены в папке \"Вся почта\"."
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Каждый, кто имеет эту ссылку, может увидеть все подробности события из этого календаря, такие как название, местоположение или участников."
@@ -7205,9 +7166,6 @@
       "Dedicated servers": [
         "Выделенные серверы"
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
-        "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Удалите все остальные записи MX или убедитесь, что приоритет ${ MAIL_APP_NAME } имеет наименьшее число."
       ],
@@ -7328,9 +7286,6 @@
       "Emailing preference saved": [
         "Настройки отправки почты сохранены"
       ],
-      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "Письма, помеченные этим ярлыком ${ nameDeleted }, не будут удалены и по-прежнему могут быть найдены в соответствующей папке."
-      ],
       "Enable email notifications": [
         "Включить уведомления по электронной почте"
       ],
@@ -7399,9 +7354,6 @@
       ],
       "Enter your recovery phrase to change your password now.": [
         "Введите фразу для восстановления, чтобы изменить пароль."
-      ],
-      "Event invitations and RSVPs will be sent in this language.": [
-        "Приглашения на событие и RSVP будут отправлены на этом языке."
       ],
       "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "События включают попытки аутентификации для всех служб ${ BRAND_NAME }, которые используют ваши учетные данные ${ BRAND_NAME_TWO }."
@@ -7534,12 +7486,6 @@
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Если вы никогда не использовали двухфакторную аутентификацию, мы настоятельно рекомендуем вам ${ guideButton }."
-      ],
-      "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "В случае утери пароля и необходимости восстановления аккаунта ${ boldImperative }, что у вас есть ${ boldAccountRecovery }."
-      ],
-      "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "В случае утери пароля и необходимости восстановления аккаунта ${ boldImperative }, что у вас есть ${ boldAccountAndRecovery }, иначе вы рискуете потерять доступ к электронной почте, контактам и файлам."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Если вы потеряете устройство, привязанное к двухфакторной аутентификации, то эти коды могут быть использованы вместо 6-значного кода двухфакторной аутентификации для входа в аккаунт. Каждый код можно использовать только один раз."
@@ -7760,12 +7706,6 @@
       "Large imports can take several days.": [
         "Большой импорт может занять несколько дней."
       ],
-      "Lean more about gateways": [
-        "Узнайте больше о шлюзах"
-      ],
-      "Lean more about single sign-on": [
-        "Узнайте больше о едином входе"
-      ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Узнайте как ${ staySaferOnlineLink }"
       ],
@@ -7934,9 +7874,6 @@
       "No results found": [
         "Результаты не найдены"
       ],
-      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
-        "Пользователи, не входящие в систему SSO (созданные вручную, а не предоставленные поставщиком идентификационных данных), по-прежнему могут входить в вашу организацию"
-      ],
       "Not a valid URL": [
         "Недействительный URL"
       ],
@@ -7948,9 +7885,6 @@
       ],
       "of": [
         "из"
-      ],
-      "Once single sign-on is disabled for your organization:": [
-        "Если в вашей организации отключена единая регистрация:"
       ],
       "Once you reset your password:": [
         "После изменения пароля:"
@@ -7984,9 +7918,6 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Другие пользователи в вашей организации будут видеть ваши занятые часы. Никакие подробности события не сообщаются."
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Мы отправляем уведомления, проявляя избыточную осторожность. Если вы не узнаёте какие-либо из скомпрометированных данных, вы можете смело игнорировать этот отчёт."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Устаревший файл восстановления; обновите его, чтобы обеспечить доступ к данным"
@@ -8084,9 +8015,6 @@
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Пожалуйста, храните её в безопасности. Она понадобится вам для доступа к вашему аккаунту и расшифровки данных в случае сброса пароля."
       ],
-      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
-        "Обратите внимание, что если вы удалите этот фильтр ${ nameDeleted }, мы перестанем обрабатывать все автоматические действия, которые он запускает."
-      ],
       "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
         "Обратите внимание, что после нажатия на «Подтвердить» на вашем счету останется ${ remainingCreditsFormatted }."
       ],
@@ -8164,6 +8092,9 @@
       ],
       "read our two-factor authentication guide first": [
         "сначала прочитайте наше руководство по двухфакторной аутентификации"
+      ],
+      "Recently used servers:": [
+        "Недавно использованные серверы:"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Рекомендуется на доверенных устройствах. ${ keepMeSignedInLearnMoreLink }"
@@ -8330,9 +8261,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
       ],
-      "Single sign-on removed": [
-        "SSO удалён"
-      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-отправка позволяет сторонним сервисам или устройствам отправлять электронные письма через ${ MAIL_APP_NAME } для адресов вашего пользовательского домена. Чтобы запросить доступ, пожалуйста ${ createTicket }, описав ваши потребности, какие пользовательские домены вы хотели бы использовать, а также ежечасные и ежедневные ожидаемые объемы электронных писем."
       ],
@@ -8347,9 +8275,6 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF уточняет, кому разрешено отправлять электронные письма на ваш домен. Убедитесь, что вы добавили следующую запись TXT в консоли DNS (расположенной на платформе, где вы приобрели пользовательский домен)."
-      ],
-      "SSO users (provided by your Identity Provider) will be deleted": [
-        "Пользователи SSO (предоставленные вашим поставщиком личных данных) будут удалены"
       ],
       "Stay tuned for future promotions.": [
         "Следите за будущими акциями."
@@ -8432,9 +8357,6 @@
       "The calendar will be removed from your account.": [
         "Календарь будет удален из вашей учетной записи."
       ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Учетные данные поставщика идентификационных данных будут удалены."
-      ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Темная паутина - это скрытая часть Интернета, где можно купить и продать украденную персональную информацию, например, личные данные."
       ],
@@ -8479,9 +8401,6 @@
       ],
       "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
         "Функция групп не поддерживается вашей текущей подпиской. Ранее созданные группы отключены и могут быть только удалены."
-      ],
-      "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
-        "Ссылка для сообщения о том, что вы не создали аккаунт ${ BRAND_NAME } истекла. Свяжитесь с нашей службой поддержки, чтобы решить эту проблему."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Имя будет видно вашим пользователям, когда они войдут в систему."
@@ -9070,9 +8989,6 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Вы можете изменить это один раз, чтобы обеспечить правильную проверку адреса электронной почты."
-      ],
-      "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Вы можете включить журналы аутентификации, чтобы видеть когда и с какого IP-адреса производился доступ к аккаунту. Мы будем записывать IP-адреса, которые имели доступ к учетной записи, а также время доступа и неудачные попытки войти."
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Вы можете включить раздел Фотографии в интерфейсе с помощью расположенного ниже переключателя."
@@ -10645,7 +10561,7 @@
       "Swipe right action": [
         "Действие при смахивании вправо"
       ],
-      "Synchronize with system": [
+      "Sync with system": [
         "Синхронизировать с системой"
       ],
       "System information": [
@@ -11029,9 +10945,6 @@
       "Pay invoice": [
         "Оплатить счёт"
       ],
-      "Paypal without credit card": [
-        "Paypal без кредитной карты"
-      ],
       "perform a password reset from your active session": [
         "выполнить сброс пароля из вашего активного сеанса"
       ],
@@ -11201,9 +11114,6 @@
       ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Добавить помощника по написанию ${ BRAND_NAME } Scribe"
-      ],
-      "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
-        "Все бизнес-приложения ${ BRAND_NAME } и платные функции для защиты всего вашего бизнеса"
       ],
       "An encrypted email service that puts your privacy first": [
         "Зашифрованная почтовая служба, которая ставит вашу частную жизнь на первое место"
@@ -11389,9 +11299,6 @@
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Забыли имя пользователя аккаунта ${ BRAND_NAME }? Найдите его, используя вашу резервную электронную почту или номер телефона, и восстановите доступ к ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } и другим сервисам."
-      ],
-      "Private and secure email, no credit card required": [
-        "Приватная и защищенная электронная почта, кредитная карта не требуется"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Сбросить пароль от аккаунта ${ BRAND_NAME }"
@@ -11803,6 +11710,12 @@
         "${ n } подключений к VPN",
         "${ n } подключений к VPN"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } пользователь",
+        "До ${ numberOfUsers } пользователей",
+        "До ${ numberOfUsers } пользователей",
+        "До ${ numberOfUsers } пользователей"
+      ],
       "${ options }-day file version history": [
         "${ options }-дневный журнал версий файла",
         "${ options }-дневный журнал версий файла",
@@ -12150,9 +12063,6 @@
       ],
       "Tailored to your needs": [
         "Подстраивается под ваши потребности"
-      ],
-      "Tor over VPN": [
-        "Tor через VPN"
       ],
       "Two-factor authentication": [
         "Двухфакторная аутентификация"
@@ -12518,9 +12428,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Создайте до ${ n } адресов электронной почты или псевдонимов, которые можно назначить членам семьи. Используйте их для идентификации в Интернете, например JohnShopper@${ domain } для аккаунтов для покупок."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Защищает конфиденциальность VPN от угроз, передавая ваш интернет-трафик через несколько серверов"
       ],
@@ -12616,9 +12523,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Сбрасывайте пароли и двухфакторную аутентификацию для пользователей"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Направляйте свой трафик через сеть Tor одним нажатием"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Защитите свои файлы с помощью зашифрованного облачного хранилища. Возможности включают автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
@@ -12924,11 +12828,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Чтобы импорт сработал, необходимо выбрать все требуемые элементы, как показано в GIF."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Укажите, к чему ${ BRAND_NAME } может получить доступ: просмотр электронных писем и настроек, просмотр и скачивание контактов, просмотр и скачивание всех расписаний из Календаря Google."
       ]
     },
     "Onboarding": {
@@ -13791,9 +13690,6 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Используйте метод восстановления данных, обратитесь к другому администратору или сбросьте ключ организации, чтобы восстановить права администратора."
       ],
-      "We couldn't verify authenticity of this identity.": [
-        "Мы не смогли проверить подлинность этих личных данных"
-      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Мы не смогли проверить безопасность ключа адреса этого отправителя. Иногда бывает задержка обновления информации об отправителе. Повторите попытку позже. Если вы не доверяете достоверности этого приглашения или отправителя, обратитесь в Службу Поддержки ${ BRAND_NAME }."
       ],
@@ -14274,9 +14170,6 @@
       "Changing organization password": [
         "Изменение пароля организации"
       ],
-      "Creating or accessing non-private users": [
-        "Создание или доступ к неприватным пользователям"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "По причине смены пароля ваши полномочия администратора организации были ограничены. Указанные действия более не разрешены:"
       ]
@@ -14482,20 +14375,11 @@
       "You have recommended actions.": [
         "У вас есть рекомендованные действия."
       ],
-      "You recovery email address is:": [
-        "Ваш резервный адрес электронной почты:"
-      ],
-      "You recovery phone number is:": [
-        "Номер телефона для восстановления доступа:"
-      ],
       "Your account and data can be recovered": [
         "Вы можете восстановить аккаунт и данные"
       ],
       "Your account and data can be recovered. Check if you can still access your recovery methods.": [
         "Вы можете восстановить аккаунт и данные. Проверьте, есть ли у вас доступ к методам восстановления."
-      ],
-      "Your account and data can be recovered. You have recommended actions to Safeguard your account further.": [
-        "Вы можете восстановить аккаунт и данные. У вас есть рекомендованные действия, чтобы дальше защитить аккаунт."
       ],
       "Your account and data can be recovered. You have recommended actions.": [
         "Ваш аккаунт и данные могут быть восстановлены. Есть рекомендуемые действия."
@@ -14549,9 +14433,6 @@
       ]
     },
     "saml: Error": {
-      "Sign-in wasn't successfully completed.": [
-        "Вход не был успешно завершен."
-      ],
       "Something went wrong": [
         "Что-то пошло не так"
       ]
@@ -14612,12 +14493,6 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Требования.** Для обеспечения возможности предоставления SCIM необходимо настроить аутентификацию SAML."
-      ],
-      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
-        "**Пререквизиты:** чтобы включить предоставление SCIM, необходимо подтвердить право собственности на домен **${ domainName }**. Эта проверка может занять до одного часа."
-      ],
-      "Enter token into your identity provider": [
-        "Введите токен в провайдер личных данных"
       ],
       "Enter URL and token into your identity provider": [
         "Введите адрес и токен в провайдер личных данных"
@@ -14990,14 +14865,6 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Мы свяжемся с вами, когда будет доступен сброс пароля."
-      ],
-      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
-        "Проверить статус запроса можно в любой момент в разделе ${ accountAndPasswordSectionLink } настроек."
-      ]
-    },
-    "session_recovery:initiation:link": {
-      "account and password section": [
-        "раздел учетных записей и паролей"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -15726,9 +15593,6 @@
       "Got it": [
         "Понятно"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Просто войдите в свой аккаунт Apple App Store, а затем нажмите ${ subscriptions }."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Просто войдите в свой аккаунт Play Маркет, а затем нажмите ${ subscriptions }."
       ],
@@ -15804,6 +15668,36 @@
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } предлагает ${ planMaxSpace } хранилища на одного пользователя для электронной почты, вложений, событий, файлов и паролей. Вы также имеете право на ежегодные бонусы на хранилище."
       ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } календарь на пользователя",
+        "${ planNumberOfCalendars } календаря на пользователя",
+        "${ planNumberOfCalendars } календарей на пользователя",
+        "${ planNumberOfCalendars } календарей на пользователя"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } пользовательский домен электронной почты",
+        "${ planNumberOfDomains } пользовательских домена электронной почты",
+        "${ planNumberOfDomains } пользовательских доменов электронной почты",
+        "${ planNumberOfDomains } пользовательских доменов электронной почты"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } адрес электронной почты",
+        "${ planNumberOfEmails } адреса электронной почты",
+        "${ planNumberOfEmails } адресов электронной почты",
+        "${ planNumberOfEmails } адресов электронной почты"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } адрес электронной почты на пользователя",
+        "${ planNumberOfEmails } адреса электронной почты на пользователя",
+        "${ planNumberOfEmails } адресов электронной почты на пользователя",
+        "${ planNumberOfEmails } адресов электронной почты на пользователя"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } пользователь",
+        "${ planNumberOfUsers } пользователя",
+        "${ planNumberOfUsers } пользователей",
+        "${ planNumberOfUsers } пользователей"
+      ],
       "2 users": [
         "2 пользователя"
       ],
@@ -15843,6 +15737,9 @@
       "Comprehensive privacy and security": [
         "Комплексная защита конфиденциальности и безопасности"
       ],
+      "Dark web monitoring": [
+        "Мониторинг Темной паутины"
+      ],
       "Desktop app and email client support (via IMAP)": [
         "Поддержка приложений для настольных компьютеров и почтовых клиентов (через IMAP)"
       ],
@@ -15861,6 +15758,12 @@
       "Extra storage and users": [
         "Дополнительные место в хранилище и пользователи"
       ],
+      "Folders, labels and filters": [
+        "Папки, ярлыки и фильтры"
+      ],
+      "Got it": [
+        "Применить"
+      ],
       "Have a question?": [
         "Появились вопросы?"
       ],
@@ -15869,6 +15772,15 @@
       ],
       "How our customer support team got our VPN app directly into people's hands.": [
         "Как наша команда поддержки клиентов передала наше приложение VPN прямо в руки людей."
+      ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "Как мы боролись, когда ${ BRAND_NAME } был заблокирован в результате агрессивной кампании."
+      ],
+      "How we supported local activists when privacy and free speech were threatened.": [
+        "Как мы поддержали местных активистов, когда под угрозой оказались частная жизнь и свобода слова."
+      ],
+      "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Если ваше потребление превышает пределы бесплатного тарифа, вы можете столкнуться с ограничением доступа к функциям продукта и своим данным."
       ],
       "Invited members will be removed from your organization": [
         "Приглашенные участники будут удалены из вашей организации"
@@ -15942,6 +15854,9 @@
       "Unlimited privacy for two": [
         "Неограниченная конфиденциальность для двоих"
       ],
+      "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
+        "Подписки пользователей - это единственный источник дохода ${ BRAND_NAME }. Ваша поддержка позволяет нам оставаться независимыми, продолжать нашу миссию по обеспечению неприкосновенности частной жизни в Интернете, а также помогать активистам и организациям, борющимся за свободу."
+      ],
       "Users won’t be able to manage their calendars": [
         "Пользователи не смогут управлять своими календарями"
       ],
@@ -15962,6 +15877,9 @@
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
         "При отказе от ${ planName } вы будете переведены на ${ BRAND_NAME } Free, который предлагает только до 1 ГБ хранилища для почты и до 5 ГБ хранилища для Drive. Ваша команда будет испытывать перебои в работе, поскольку дополнительные пользователи не поддерживаются на бесплатном тарифе."
+      ],
+      "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Когда ваша подписка на тариф ${ planName } закончится ${ expiryDate }, вы будете переведены на тарифный план ${ BRAND_NAME } Free."
       ],
       "Yearly free storage bonuses": [
         "Ежегодные бесплатные бонусы для места в хранилище"
@@ -16136,12 +16054,6 @@
       ],
       "Gift code applied": [
         "Подарочный код применён"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Если вы ввели действительный адрес резервной эл. почты для восстановления, мы отправим вам письмо с именами ваших пользователей в течение минуты."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Если вы ввели действительный номер телефона для восстановления, мы отправим вам короткое сообщение с именами ваших пользователей в течение минуты."
       ],
       "Import record deleted": [
         "Запись об импорте удалена"
@@ -16412,6 +16324,9 @@
       ],
       "Email addresses": [
         "Адреса электронной почты"
+      ],
+      "Event": [
+        "Событие"
       ],
       "Import": [
         "Импорт"
@@ -16891,6 +16806,9 @@
       "Device connected!": [
         "Устройство подключено!"
       ],
+      "Device name": [
+        "Название устройства"
+      ],
       "Disable two-factor authentication": [
         "Отключение двухфакторной аутентификации"
       ],
@@ -17275,6 +17193,9 @@
       "PayPal verification failed": [
         "Сбой проверки PayPal"
       ],
+      "Personalise your e-mail footer": [
+        "Настройте нижний колонтитул вашего электронного письма"
+      ],
       "Personalize your email footer": [
         "Персонализируйте нижний колонтитул электронной почты"
       ],
@@ -17301,9 +17222,6 @@
       ],
       "Profile": [
         "Профиль"
-      ],
-      "QRCode": [
-        "Код QR"
       ],
       "Ready, set, forward": [
         "Готово, установлено, вперед!"
@@ -17340,9 +17258,6 @@
       ],
       "Remove single sign-on": [
         "Удалить SSO"
-      ],
-      "Remove single sign-on for your organization?": [
-        "Удалить SSO для вашей организации?"
       ],
       "Remove user?": [
         "Удалить пользователя?"
@@ -17770,6 +17685,9 @@
       "Account is disconnected": [
         "Учётная запись отсоединена"
       ],
+      "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
+        "Администраторы могут управлять аккаунтами пользователей и предоставлять права администратора другим пользователям. Только основной администратор может изменить тариф организации."
+      ],
       "An approximate location of the IP address": [
         "Примерное местонахождение IP-адреса"
       ],
@@ -17853,9 +17771,6 @@
       ],
       "Set the default layout for your Inbox.": [
         "Задать схему отображения по умолчанию для Входящих."
-      ],
-      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
-        "Устанавливает следующий нижний колонтитул в отправляемых вами электронных письмах: ${ signature }. Ссылка указывает на вашу реферальную ссылку. Нижний колонтитул будет отображаться под вашей подписью. Вы можете персонализировать свою подпись в настройках любое время."
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Показать изображение каждого отправителя в списке сообщений. Инициалы отправителя будут показаны, если фотография недоступна."
@@ -17972,9 +17887,6 @@
       ],
       "User declined invitation": [
         "Пользователь отклонил приглашение"
-      ],
-      "Waiting user to accept the invitation": [
-        "Ожидание принятия приглашения пользователем"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -18016,9 +17928,6 @@
     "Tor out of date": {
       "stable release": [
         "стабильная версия"
-      ],
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Эта версия браузера Tor не поддерживается. Пожалуйста, обновите до последней версии ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -18427,11 +18336,6 @@
         "Ваш тариф ${ selected }"
       ]
     },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Доступ к защищенным основным серверам, быстрая загрузка P2P/BitTorrent, Tor через VPN и многое другое."
-      ]
-    },
     "wallet_signup_2024: Info": {
       "${ n } account per wallet": [
         "${ n } счёт на один кошелёк",
@@ -18508,9 +18412,6 @@
       ]
     },
     "wallet_signup_2024:Info": {
-      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google open testing.": [
-        "${ WALLET_APP_NAME } находится в раннем доступе. Вы можете скачать приложение iOS через Apple TestFlight и Android через открытое Google-тестирование."
-      ],
       "Coming soon": [
         "Скоро"
       ]
@@ -18615,12 +18516,6 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ваш бесплатный пробный период заканчивается ${ textDate }. ${ action }"
-      ],
-      "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
-        "Ваш файл восстановления устарел. Он не сможет восстановить новые данные, если вы снова сбросите аккаунт."
-      ],
-      "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
-        "Ваша фраза восстановления устарела. Она не сможет восстановить новые данные, если вы снова сбросите аккаунт."
       ]
     },
     "Warning for domain modal": {

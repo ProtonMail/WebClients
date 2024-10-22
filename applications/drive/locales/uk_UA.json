@@ -399,6 +399,9 @@
       "Go back": [
         "Назад"
       ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Відкрийте ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Go to label": [
         "Перейти до мітки"
       ],
@@ -560,9 +563,6 @@
       ],
       "OK": [
         "Застосувати"
-      ],
-      "Ok": [
-        "OK"
       ],
       "Open": [
         "Відкрити"
@@ -821,9 +821,6 @@
       ],
       "Toggle Calendar app": [
         "Відкрити календар"
-      ],
-      "Toggle Contact app": [
-        "Відкрити контакти"
       ],
       "Toggle settings": [
         "Перемкнути налаштування"
@@ -2296,9 +2293,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Щоб імпортувати з використанням файлів CSV і VCF, розмір файлу не має перевищувати ${ MAX_IMPORT_FILE_SIZE_STRING }, а кількість контактів – ${ MAX_IMPORT_CONTACTS_STRING }. Якщо ваш файл більший, розділіть його на декілька менших. ${ learnMoreLink }."
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Отримайте необмежену кількість псевдонімів і 500 ГБ сховища з ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
@@ -2972,9 +2966,6 @@
         "Ви можете надіслати лист щонайбільше ${ maxContacts } отримувачам",
         "Ви можете надіслати лист щонайбільше ${ maxContacts } отримувачам"
       ],
-      "You have reached the contacts limit for your account": [
-        "Ви досягли максимальної кількості контактів для облікового запису"
-      ],
       "You have reached the maximum number of calendars.": [
         "Ви досягли максимальної кількості календарів."
       ],
@@ -3319,9 +3310,6 @@
       "Invited by: ${ inviteEmail }": [
         "Запрошення від: ${ inviteEmail }"
       ],
-      "Manage addresses.": [
-        "Керувати адресами."
-      ],
       "Sorry, you can't switch plans at this time.": [
         "На жаль, зараз вам не дозволено змінити план."
       ],
@@ -3367,9 +3355,6 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users ": [
-        "Налаштуйте сімейний обліковий запис і запросіть користувачів "
-      ],
       "Set up your family": [
         "Налаштуйте сімейний обліковий запис"
       ],
@@ -4031,9 +4016,6 @@
         "(${ memberCount } учасників)",
         "(${ memberCount } учасників)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice }/місяць)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } додаткового сховища"
       ],
@@ -4559,9 +4541,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ fromEmail } до ${ toEmail }."
       ],
-      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Тим часом зареєструйте свій обліковий запис ${ DRIVE_APP_NAME } і захистіть свої дані за допомогою наскрізного шифрування та безпечно діліться ними."
-      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Наступним кроком ви зможете внести депозит за допомогою адреси Bitcoin."
       ],
@@ -4771,9 +4750,6 @@
       ],
       "Organization size": [
         "Розмір організації"
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Наші попередження є запобіжними. Якщо ви не впізнаєте жодної із зазначених відомостей, можете сміливо ігнорувати це повідомлення."
       ],
       "Owner": [
         "Власник"
@@ -6497,9 +6473,6 @@
       "Graphics Interchange Format (GIF)": [
         "Формат обміну зображеннями (GIF)"
       ],
-      "GZip Compressed Archive": [
-        "Стиснутий архів GZip"
-      ],
       "HyperText Markup Language (HTML)": [
         "Мова розмітки гіпертексту (HTML)"
       ],
@@ -6517,9 +6490,6 @@
       ],
       "Java Archive (JAR)": [
         "Архів Java (JAR)"
-      ],
-      "JPEG images": [
-        "Зображення JPEG"
       ],
       "MP3 audio": [
         "Аудіо MP3"
@@ -6556,9 +6526,6 @@
       ],
       "Opus audio": [
         "Аудіо Opus"
-      ],
-      "Portable Network Graphics": [
-        "Портативна мережева графіка (PNG)"
       ],
       "RAR archive": [
         "Архів RAR"
@@ -6915,7 +6882,7 @@
         "HTML-підписи"
       ],
       "Integrated 2FA authenticator": [
-        "Інтегрований 2FA автентифікатор"
+        "Інтегрований автентифікатор 2FA"
       ],
       "Kill switch/always-on VPN": [
         "Kill Switch/Постійна VPN"
@@ -7000,9 +6967,6 @@
       ],
       "Strict no-logs policy": [
         "Суворе дотримання політики без журналювання"
-      ],
-      "Tor over VPN": [
-        "Tor через VPN"
       ],
       "Two-factor authentication": [
         "Двоетапна перевірка"
@@ -7239,9 +7203,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Створіть до ${ n } адрес електронної пошти/псевдонімів, які можна призначити членам сім'ї. Використовуйте їх для ідентифікації в інтернеті, наприклад, JohnShopper@${ domain } для облікових записів покупок."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Щоб мати можливість якісного контролю доступу, до приватних мережевих шлюзів можна додати виділені сервери з виділеними IP-адресами"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Захист від загроз приватності VPN завдяки спрямуванню інтернет-трафіку через кілька серверів"
       ],
@@ -7331,9 +7292,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Скидання паролів та двоетапної перевірки користувачів"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Спрямовуйте свій інтернет-трафік через мережу Tor одним натиском"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з автоматичною синхронізацією, зашифрованим спільним доступом та іншими можливостями."
@@ -7690,9 +7648,6 @@
       "Share invitation declined": [
         "Запрошення, яким поділилися, відхилено"
       ],
-      "Stopping to share this item has failed": [
-        "Не вдалося припинити спільний доступ для цього елемента"
-      ],
       "Subfolder failed to be loaded": [
         "Не вдалося завантажити підтеку"
       ],
@@ -7737,11 +7692,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Для імпортування ви повинні вибрати всі запитувані елементи, як показано в GIF."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Оберіть, до чого ${ BRAND_NAME } може мати доступ: переглядати ваші поштові повідомлення та налаштування, переглядати й завантажувати ваші контакти, переглядати й завантажувати усі заплановані події з календаря Google."
       ]
     },
     "Onboarding": {
@@ -8209,9 +8159,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Спробуйте ${ PASS_APP_NAME }"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "Використовується на Amazon для покупок та ін."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Коли потрібно вказати адресу електронної пошти, скористайтеся натомість цим псевдонімом. Псевдоніми надаються ${ passLink }."
@@ -8875,9 +8822,6 @@
       "Got it": [
         "Зрозуміло"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Увійдіть до свого облікового запису Apple App Store і натисніть ${ subscriptions }."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Увійдіть до свого облікового запису Google Play і натисніть ${ subscriptions }."
       ],
@@ -8916,7 +8860,7 @@
         "Усього ${ planMaxSpace } сховища"
       ],
       "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } надає вам доступ до всіх застосунків та преміум функцій. Вбудована функція приватності дозволяє вам продовжувати роботу, знаючи, що ваші дані та особистість у безпеці."
+        "${ planName } надає вам доступ до всіх застосунків та преміумфункцій. Вбудована функція приватності дозволяє вам продовжувати роботу, знаючи, що ваші дані та особистість у безпеці."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } надає вам усі застосунки, усі функції, ранній доступ до нових релізів і все необхідне, щоби контролювати свої дані та їхню безпеку."
@@ -10032,9 +9976,6 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Оберіть PGP-схему для використання при підписуванні чи шифруванні для користувача. Зауважте, що PGP/Inline примусово перетворює повідомлення у звичайний текст"
       ],
-      "Shared end-to-end encrypted": [
-        "Наскрізно зашифрований спільний доступ"
-      ],
       "Show side panel": [
         "Показати бічну панель"
       ],
@@ -10144,11 +10085,6 @@
       ],
       "No ads": [
         "Без реклами"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Доступ до серверів Secure Core, швидке завантаження P2P/BitTorrent, Tor через VPN та інші можливості."
       ]
     },
     "wallet_signup_2024: Info": {

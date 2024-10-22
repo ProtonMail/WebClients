@@ -110,6 +110,9 @@
       "Edit link": [
         "Rediger link"
       ],
+      "Exit Suggestion": [
+        "Forlad forslag"
+      ],
       "Fit table to page width": [
         "Tilpas tabel til sidens bredde"
       ],
@@ -155,7 +158,7 @@
       "Numbered List": [
         "Nummereret liste"
       ],
-      "Ok": [
+      "OK": [
         "Ok"
       ],
       "Options": [
@@ -211,6 +214,9 @@
       ],
       "Submit": [
         "Indsend"
+      ],
+      "Suggestion Mode": [
+        "Forslagstilstand"
       ],
       "Table options": [
         "Tilvalg i tabel"
@@ -400,6 +406,17 @@
         "Kassér kommentar?"
       ]
     },
+    "Description": {
+      "Edit document directly": [
+        "Rediger dokument direkte"
+      ],
+      "Edits become suggestion": [
+        "Redigeringer bliver til forslag"
+      ],
+      "Read or print final document": [
+        "Læs eller print det endelige dokument"
+      ]
+    },
     "Error": {
       "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
         "Der opstod en fejl under indlæsning af dokumentet. Redigeringen er låst for at forhindre beskadigelse af dokumentet. Genindlæs siden og prøv igen."
@@ -485,6 +502,9 @@
       "Font size": [
         "Skriftstørrelse"
       ],
+      "Highlight": [
+        "Fremhæv"
+      ],
       "Internet connection lost": [
         "Internetforbindelse mistet"
       ],
@@ -514,6 +534,9 @@
       ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "Indholdet, du prøver at indsætte, er for stort til at blive indsat på én gang. Prøv igen med mindre stykker ad gangen."
+      ],
+      "The language you're using isn’t currently supported in suggestion mode. Please switch to edit mode or change the language.": [
+        "Det sprog, du bruger, understøttes i øjeblikket ikke i forslagstilstand. Skift til redigeringstilstand, eller skift sprog."
       ],
       "Viewing": [
         "Visning"
@@ -607,6 +630,9 @@
       ],
       "Delete thread": [
         "Slet tråd"
+      ],
+      "Language not supported": [
+        "Sprog ikke understøttet"
       ]
     }
   }
