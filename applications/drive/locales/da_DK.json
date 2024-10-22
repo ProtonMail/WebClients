@@ -564,9 +564,6 @@
       "OK": [
         "Ok"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "Open": [
         "Åbn"
       ],
@@ -830,9 +827,6 @@
       ],
       "Toggle Calendar app": [
         "Skift Kalender-app"
-      ],
-      "Toggle Contact app": [
-        "Skift Kontakt-app"
       ],
       "Toggle settings": [
         "Åbn/luk indstillinger"
@@ -2302,9 +2296,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "For at importere via en CSV- eller VCF-fil, skal du være sikker på at filen ikke overskriver ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, skal du dele den i mindre filer. ${ learnMoreLink }."
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Få ubegrænsede aliasser og 500 GB lagerplads med ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
@@ -3028,9 +3019,6 @@
         "Du kan ikke sende en e-mail til flere end ${ maxContacts } modtager",
         "Du kan ikke sende en e-mail til flere end ${ maxContacts } modtagere"
       ],
-      "You have reached the contacts limit for your account": [
-        "Du har nået det maksimale antal kontakter for din konto"
-      ],
       "You have reached the maximum number of calendars.": [
         "Du har nået det maksimale antal kalendere."
       ],
@@ -3380,9 +3368,6 @@
       "Lifetime accounts cannot join a family plan.": [
         "Livstidskonti kan ikke indgå i et familieabonnement."
       ],
-      "Manage addresses.": [
-        "Administrer adresser."
-      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Ejere af et abonnement med medlemmer kan ikke deltage i et andet familieabonnement."
       ],
@@ -3418,9 +3403,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Din konto bruger ${ usedSpace } lagerplads, hvilket overstiger de ${ inviteSpace } du har fået tildelt. Slet nogle data eller bed abonnementsadministratoren om at øge din lagerplads."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "Du kan ikke acceptere denne invitation med dit nuværende abonnement."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3440,9 +3422,6 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users ": [
-        "Konfigurer din familie-konto og inviter brugere "
-      ],
       "Set up your family": [
         "Opret din familie"
       ],
@@ -3966,6 +3945,10 @@
         "${ groupCounts } gruppe fundet",
         "${ groupCounts } grupper fundet"
       ],
+      "${ invitations.length } pending invitation": [
+        "${ invitations.length } afventende invitation",
+        "${ invitations.length } afventende invitationer"
+      ],
       "${ nbFile } encrypted file": [
         "${ nbFile } krypteret fil",
         "${ nbFile } krypterede filer"
@@ -4029,9 +4012,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
-      ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } måned)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus lagerplads"
@@ -4552,9 +4532,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
       ],
-      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "I mellemtiden kan du tilmelde dig din egen ${ DRIVE_APP_NAME } konto og beskyt dine data med end-to-end-kryptering og dele dem sikkert."
-      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I det næste trin kan du foretage en indbetaling ved hjælp af en Bitcoin-adresse."
       ],
@@ -4763,9 +4740,6 @@
       ],
       "Organization size": [
         "Organisationsstørrelse"
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Vores advarsler er baseret på forsigtighed. Hvis du ikke genkender nogen af de lækkede oplysninger, kan du trygt ignorere denne rapport."
       ],
       "Owner": [
         "Ejer"
@@ -6483,9 +6457,6 @@
       "Graphics Interchange Format (GIF)": [
         "Grafisk Udskiftningsformat (GIF)"
       ],
-      "GZip Compressed Archive": [
-        "GZip-komprimeret arkiv"
-      ],
       "HyperText Markup Language (HTML)": [
         "HyperText Markup Language (HTML)"
       ],
@@ -6503,9 +6474,6 @@
       ],
       "Java Archive (JAR)": [
         "Java-arkiv (JAR)"
-      ],
-      "JPEG images": [
-        "JPEG-billeder"
       ],
       "MP3 audio": [
         "MP3-lyd"
@@ -6542,9 +6510,6 @@
       ],
       "Opus audio": [
         "Opus audio"
-      ],
-      "Portable Network Graphics": [
-        "Bærbar netværksgrafik"
       ],
       "RAR archive": [
         "RAR-arkiv"
@@ -7044,9 +7009,6 @@
       "Sync and backup all your files across devices": [
         "Synkroniser og sikkerhedskopier alle dine filer mellem enheder"
       ],
-      "Tor over VPN": [
-        "Tor over VPN"
-      ],
       "Two-factor authentication": [
         "To-faktor-godkendelse"
       ],
@@ -7310,9 +7272,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Opret op til ${ n } e-mailadresser/aliasser, som du kan tildele familiemedlemmer. Brug dem til onlineidentiteter, f.eks. JohnShopper@${ domain } til shoppingkonti."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Afværger trussel mod VPN-privatliv ved at sende din internettrafik gennem flere servere"
       ],
@@ -7408,9 +7367,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Nulstil brugeradgangskoder og nulstil to-faktor-godkendelse på brugere"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Send din internettrafik gennem Tor-netværket med ét enkelt tryk"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
@@ -7735,17 +7691,11 @@
       "Share invitation declined": [
         "Afvist invitation til at dele"
       ],
-      "Stopping to share this item has failed": [
-        "Det lykkedes ikke at stoppe med at dele dette element"
-      ],
       "Subfolder failed to be loaded": [
         "Undermappe kunne ikke indlæses"
       ],
       "The item was not added to your drive": [
         "Elementet blev ikke tilføjet dit drev"
-      ],
-      "The item was succefully added to your drive": [
-        "Elementet blev tilføjet dit drev"
       ],
       "The link to \"${ name }\" failed to be deleted": [
         "Linket til \"${ name }\" kunne ikke slettes"
@@ -7796,11 +7746,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "For at importen kan fungere, skal du vælge alle de ønskede elementer som vist i GIF-illustrationen."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Vælg, hvad ${ BRAND_NAME } kan få adgang til: se dine e-mailbeskeder og indstillinger, se og downloade dine kontakter, se og downloade alle kalendere, du har adgang til fra Google Kalender."
       ]
     },
     "Onboarding": {
@@ -7856,6 +7801,15 @@
       "Access your files on the go": [
         "Tilgå dine filer på farten"
       ],
+      "Back up your photos and memories": [
+        "Sikkerhedskopier dine fotos og minder"
+      ],
+      "Backup your photos and memories": [
+        "Sikkerhedskopier dine fotos og minder"
+      ],
+      "Choose your favorite theme": [
+        "Vælg dit foretrukne tema"
+      ],
       "Collaborate on documents": [
         "Arbejd sammen om dokumenter"
       ],
@@ -7892,6 +7846,12 @@
       "Get the mobile app": [
         "Hent mobil-appen"
       ],
+      "Got an Android? We've got you covered.": [
+        "Har du en Android? Vi er der for dig."
+      ],
+      "Got an iPhone? We've got you covered.": [
+        "Har du en iPhone? Vi er der for dig."
+      ],
       "Hang tight": [
         "Hæng på"
       ],
@@ -7918,6 +7878,9 @@
       ],
       "Secure your files": [
         "Beskyt dine filer"
+      ],
+      "Securely share files and folders": [
+        "Del filer og mapper på sikker vis"
       ],
       "Securely store, manage, and share your business-critical files with confidence.": [
         "Opbevar, håndter og del dine erhvervskritiske filer på en sikker måde."
@@ -7949,6 +7912,9 @@
       ],
       "Upload your first file": [
         "Upload din første fil"
+      ],
+      "Work faster, smarter": [
+        "Arbejd hurtigere og smartere"
       ],
       "Work together": [
         "Arbejd sammen"
@@ -8398,9 +8364,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Prøv ${ PASS_APP_NAME }"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "Bruges på Amazon til shopping osv."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Når du bliver bedt om din email-adresse, skal du i stedet give dette email-alias i stedet for. E-mail aliasserne bliver leveret af ${ passLink }."
@@ -8953,19 +8916,19 @@
         "Dit ${ appStorage } er fuldt"
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Dit ${ storage } er ${ percentage }% fyldt. ${ cta }."
+        "Din ${ storage } er ${ percentage }% fyldt. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
-        "Dit ${ storage } er fyldt. ${ cta }."
+        "Din ${ storage } er fyldt. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "Dit drev er ${ percentage }% fyldt. ${ cta }."
+        "Din lagerplads er ${ percentage }% fyldt. ${ cta }."
       ],
       "Your storage is full": [
         "Dit lager er fuldt"
       ],
       "Your storage is full. ${ cta }.": [
-        "Dit drev er fyldt. ${ cta }."
+        "Din lagerplads er fyldt. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Du mister adgang til ${ gb } lagerplads og prioriteret support."
@@ -9028,9 +8991,6 @@
     "Subscription change warning": {
       "Got it": [
         "Forstået"
-      ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Log ind på din Apple App Store-konto, og tryk på ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Log ind på din Play Store-konto, og tryk på ${ subscriptions }."
@@ -10152,6 +10112,9 @@
       "What would you like to import?": [
         "Hvad ønsker du at importere?"
       ],
+      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Du er ved at afvise invitationen til det delte element. Du vil ikke kunne få adgang til det igen, før ejeren deler det med dig."
+      ],
       "You have inaccessible files": [
         "Du har utilgængelige filer"
       ],
@@ -10257,9 +10220,6 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vælg den PGP-metode, der skal benyttes, når du signerer eller krypterer til en bruger. Bemærk, at PGP/Inline gennemtvinger beskeder i simpel tekst"
       ],
-      "Shared end-to-end encrypted": [
-        "Delt end-to-end krypteret"
-      ],
       "Show side panel": [
         "Vis sidepanel"
       ],
@@ -10353,11 +10313,6 @@
       ],
       "No ads": [
         "Ingen reklamer"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Adgang til Secure Core-servere, hurtige P2P/BitTorrent-downloads, Tor over VPN og meget mere."
       ]
     },
     "wallet_signup_2024: Info": {

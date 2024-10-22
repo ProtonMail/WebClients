@@ -393,6 +393,9 @@
       "Go back": [
         "倒退"
       ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "前往 ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Go to label": [
         "跳至標籤"
       ],
@@ -557,9 +560,6 @@
       ],
       "OK": [
         "好"
-      ],
-      "Ok": [
-        "確定"
       ],
       "Open": [
         "開啟"
@@ -824,9 +824,6 @@
       ],
       "Toggle Calendar app": [
         "切換行事曆應用程式"
-      ],
-      "Toggle Contact app": [
-        "切換聯絡人應用程式"
       ],
       "Toggle settings": [
         "切換設定"
@@ -1252,6 +1249,32 @@
       ],
       "Your subscription is ending soon": [
         "您的訂閱即將結束"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB }儲存"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace }電子郵件儲存"
+      ],
+      "Advanced account protection": [
+        "高端的帳號保護"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "所有${ BRAND_NAME }應用程式和頂級質子版功能"
+      ],
+      "Cloud storage and sharing for large files": [
+        "大型文件雲端儲存與共享"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "加密雲端儲存給予照片和文件"
+      ],
+      "Encrypted password manager": [
+        "加密密碼管理"
+      ],
+      "Ultra fast and private VPN": [
+        "超快與私有的VPN"
       ]
     },
     "Checkout row": {
@@ -2283,9 +2306,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密並匯入聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "要匯入 CSV 或 VCF 檔，請確保檔案大小不超過 ${ MAX_IMPORT_FILE_SIZE_STRING }，且聯絡人數不超過 ${ MAX_IMPORT_CONTACTS_STRING }。如果檔案超過此限制，請將其分成比較小的檔案。 ${ learnMoreLink }"
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "駐冊 ${ PLAN_NAMES[PLANS.BUNDLE] } 可得到無限別名及 500 GB 儲存量"
       ],
@@ -2975,9 +2995,6 @@
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "您無法將郵件傳送給超過 ${ maxContacts } 位收件人"
       ],
-      "You have reached the contacts limit for your account": [
-        "您的帳號已達聯絡人數量限制"
-      ],
       "You have reached the maximum number of calendars.": [
         "您已用鑿行事曆組的上限。"
       ],
@@ -3322,9 +3339,6 @@
       "Lifetime accounts cannot join a family plan.": [
         "終身帳號無法加入群組方案。"
       ],
-      "Manage addresses.": [
-        "管理電子郵件位址。"
-      ],
       "Owners of a plan with members cannot join another family plan.": [
         "有成員的方案的擁有者無法加入其他家庭方案。"
       ],
@@ -3354,9 +3368,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "您的帳號已使用 ${ usedSpace } 的儲存空間，這超過了為您分配的 ${ inviteSpace }。刪除一些資料或要求方案管理員增加您的儲存空間。"
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "您無法使用目前方案接受此邀請函。"
       ]
     },
     "familyOffer_2023:Label": {
@@ -3376,9 +3387,6 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users ": [
-        "設定您的家庭帳號並邀請使用者 "
-      ],
       "Set up your family": [
         "設定您的家庭"
       ],
@@ -3518,6 +3526,9 @@
       ]
     },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "找到${ itemsCount }個推薦，使用鍵盤移動"
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "使用向上、向下方向鍵存取並瀏覽輸入建議。按一下 [Enter] 鍵確認選項，或 [Esc] 鍵關閉建議方塊。"
       ]
@@ -3919,9 +3930,6 @@
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } 位成員)"
-      ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /月)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 附贈的儲存空間"
@@ -4430,9 +4438,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "正在把你的資料從 ${ fromEmail } 匯入至 ${ toEmail }。"
       ],
-      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "與此同時，不妨註冊您自己的 ${ DRIVE_APP_NAME } 帳號，以端到端加密保護您的資料並安全地分享。"
-      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "在下一步驟裡，您將可以使用比特幣數位錢包，提交單筆存款。"
       ],
@@ -4636,9 +4641,6 @@
       ],
       "Organization size": [
         "組織規模"
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "我們的警示偏向於謹慎。如果您不認識任何外洩的資訊，您可以放心地忽略此報告。"
       ],
       "Owner": [
         "擁有者"
@@ -6320,9 +6322,6 @@
       "Graphics Interchange Format (GIF)": [
         "圖形交換格式(GIF)"
       ],
-      "GZip Compressed Archive": [
-        "GZip 壓縮封存檔"
-      ],
       "HyperText Markup Language (HTML)": [
         "超文件標示語言 (HTML)"
       ],
@@ -6340,9 +6339,6 @@
       ],
       "Java Archive (JAR)": [
         "Java 封存檔 (JAR)"
-      ],
-      "JPEG images": [
-        "JPEG 圖片"
       ],
       "MP3 audio": [
         "MP3 音訊"
@@ -6379,9 +6375,6 @@
       ],
       "Opus audio": [
         "Opus 音訊"
-      ],
-      "Portable Network Graphics": [
-        "可攜式網路圖形 (PNG)"
       ],
       "RAR archive": [
         "RAR 存檔"
@@ -6565,6 +6558,9 @@
       ],
       "${ n } VPN connection": [
         "${ n } 個 VPN 連線"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers }個用戶"
       ],
       "${ options }-day file version history": [
         "${ options }-天的檔案版本紀錄"
@@ -6863,9 +6859,6 @@
       "Sync and backup all your files across devices": [
         "於裝置同步及備份您全部的檔案"
       ],
-      "Tor over VPN": [
-        "Tor 經由 VPN"
-      ],
       "Two-factor authentication": [
         "兩步驟驗證"
       ],
@@ -7093,9 +7086,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "創建${ n }個電子郵件位址/別名分配至家庭成員。包含線上身分，如，JohnShopper@${ domain }給購物帳號。"
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "具有專用 IP 位址的專用伺服器可以新增至私有閘道器，以啟用可微調的存取控制"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "透過將您的網際網路流量傳遞給多個伺服器來對抗針對 VPN 隱私的威脅"
       ],
@@ -7179,9 +7169,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "重設使用者密碼以及使用者的兩步驟認證"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "一按即可把您的網際網路流量繞經 Tor 網路"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "使用加密的雲端存儲保護您的檔案。包含自動同步、加密檔案分享等。"
@@ -7484,9 +7471,6 @@
       "Share invitation declined": [
         "共享邀請被婉拒"
       ],
-      "Stopping to share this item has failed": [
-        "無法終止共享此項目"
-      ],
       "Subfolder failed to be loaded": [
         "子資料夾載入失敗"
       ],
@@ -7534,11 +7518,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "為使匯入開始運作，您必須選取所有必要的項目，可參考依循 GIF 裡顯示的部分。"
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "選取 ${ BRAND_NAME } 可以存取的內容：檢視您的電子郵件與設定、檢視與下載您的聯絡人、檢視與下載來自 Google 日曆您可存取的所有行事曆。"
       ]
     },
     "Onboarding": {
@@ -7742,6 +7721,11 @@
       ],
       "Admin panel to manage users and subscription": [
         "管理員面板以管理使用者及訂閱"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "Get it for ${ monthlyPrice }": [
+        "只需${ monthlyPrice }"
       ]
     },
     "passwordless": {
@@ -8076,9 +8060,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "嘗試${ PASS_APP_NAME }"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "在Amazon血拼時等等…"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "當網站要求您輸入電子郵件時，給他們別名就好。 別名由 ${ passLink } 提供。"
@@ -8672,9 +8653,6 @@
       "Got it": [
         "明白"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "請登入您的 Apple App Store 帳號，然後按一下「${ subscriptions }」。"
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "請登入您的 Play 商店帳號，然後按一下「${ subscriptions }」。"
       ],
@@ -8697,6 +8675,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
+        "擁有頂級質子版功能的${ CALENDAR_APP_NAME }，${ DRIVE_SHORT_APP_NAME }，${ PASS_SHORT_APP_NAME }和${ VPN_SHORT_APP_NAME }"
+      ],
       "${ dayDiff } day left": [
         "剩下${ dayDiff }天"
       ],
@@ -8717,6 +8698,21 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } 提供每位使用者 ${ planMaxSpace } 儲存空間用於電子郵件、其附件、行事曆與檔案。您還有資格獲得年度儲存空間獎勵。"
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "每位用戶${ planNumberOfCalendars }個行事曆"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains }個電郵網域名稱"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails }個電郵位址"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "每位用戶${ planNumberOfEmails }個電郵位址"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers }位用戶"
       ],
       "2 users": [
         "2 位使用者"
@@ -8745,6 +8741,9 @@
       "Catch-all email address": [
         "跟上電子郵件地址"
       ],
+      "Dark web monitoring": [
+        "黑暗網路監測"
+      ],
       "Desktop app and email client support (via IMAP)": [
         "桌面應用程式和電子郵件用戶端支援(透過 IMAP)"
       ],
@@ -8757,6 +8756,9 @@
       "Extra storage and users": [
         "更多儲存和使用者"
       ],
+      "Folders, labels and filters": [
+        "資料夾，標籤和過濾"
+      ],
       "Helping activists in Hong Kong": [
         "支持於香港的行動"
       ],
@@ -8768,6 +8770,9 @@
       ],
       "Learn more about our impact": [
         "了解更多我們的影響"
+      ],
+      "Limitations of the free plan:": [
+        "免費方案的限制："
       ],
       "Make your business stand out": [
         "使您的企業突出"
@@ -8810,6 +8815,9 @@
       ],
       "Users won’t be able to send emails": [
         "使用者將無法傳送電子郵件"
+      ],
+      "Users won’t be able to upload files on their devices": [
+        "用戶不能上載文件至他們的裝置"
       ],
       "Version history": [
         "版本歷史紀錄"
@@ -9801,9 +9809,6 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "請選擇簽署或加密至某使用者時採用的 PGP 方法。請注意 PGP/inline 強制使用純文字郵件格式"
-      ],
-      "Shared end-to-end encrypted": [
-        "已以端對端加密共享"
       ],
       "Show side panel": [
         "顯示側邊面板"

@@ -376,7 +376,7 @@
         "Videresend som vedlegg"
       ],
       "Get ${ DRIVE_APP_NAME }": [
-        "Få ${ DRIVE_APP_NAME }"
+        "Skaff deg ${ DRIVE_APP_NAME }"
       ],
       "Get in touch": [
         "Ta kontakt"
@@ -562,9 +562,6 @@
         "Ikke nå"
       ],
       "OK": [
-        "OK"
-      ],
-      "Ok": [
         "OK"
       ],
       "Open": [
@@ -830,9 +827,6 @@
       ],
       "Toggle Calendar app": [
         "Åpne/lukke kalender-app"
-      ],
-      "Toggle Contact app": [
-        "Åpne/lukke kontakt-app"
       ],
       "Toggle settings": [
         "Åpne/lukke innstillinger"
@@ -1266,6 +1260,53 @@
       ],
       "Your subscription is ending soon": [
         "Abonnementet avsluttes snart"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB } lagring"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } e-postlagring"
+      ],
+      "Advanced account protection": [
+        "Avansert kontobeskyttelse"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "Alle ${ BRAND_NAME }s apper og deres premium funksjoner"
+      ],
+      "Cancel and downgrade": [
+        "Avbryt og nedgrader"
+      ],
+      "Cloud storage and sharing for large files": [
+        "Skylagring og deling for store filer"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Kryptert skylagring for bilder og dokumenter"
+      ],
+      "Encrypted password manager": [
+        "Kryptert passordbehandler"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "Vår grunnleggende, gratis plan med ende-til-ende-kryptert e-post og lagring. Ingen premiumfunksjoner inkludert."
+      ],
+      "Save ${ upsellSavings }": [
+        "Spar ${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "Spar penger med ${ upsellPlanName }"
+      ],
+      "Secure personal and shared calendar": [
+        "Sikker personlig og delt kalender"
+      ],
+      "Try ${ planName }": [
+        "Prøv ${ planName }"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "Prøv ${ upsellPlanName } og behold tilgangen til alle premium e-post- og kalenderfunksjoner."
+      ],
+      "Ultra fast and private VPN": [
+        "Superrask og privat VPN"
       ]
     },
     "Checkout row": {
@@ -2302,9 +2343,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan ta noen minutter. Når prosessen er fullført, kan du lukke dette hjelpevinduet."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "For import via CSV- og VCF-fil, forsikre deg om at filen ikke overskrider ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis filen er større, vennligst del den opp i mindre filer. ${ learnMoreLink }."
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Få ubegrensede aliaser og 500 GB lagringsplass med ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
@@ -2445,10 +2483,10 @@
     },
     "duoplan2024: Action": {
       "Get ${ BRAND_NAME } Duo": [
-        "Få ${ BRAND_NAME } Duo"
+        "Skaff deg ${ BRAND_NAME } Duo"
       ],
       "Get it for ${ price }": [
-        "Få planen for ${ price }"
+        "Skaff deg planen for ${ price }"
       ]
     },
     "duoplan2024: Footer": {
@@ -2616,7 +2654,7 @@
         "En gruppe med dette navnet eksisterer allerede."
       ],
       "A problem occurred, please try again.": [
-        "En feil oppstod, vennligst forsøk igjen."
+        "En feil oppstod. Forsøk igjen."
       ],
       "Account does not exist": [
         "Kontoen finnes ikke"
@@ -2676,7 +2714,7 @@
         "Kontaktsignaturen er ikke bekreftet"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "Innholdssøk kan ikke aktiveres i denne nettleseren. Vennligst avslutt privat nettlesingsmodus eller bruk en annen nettleser."
+        "Innholdssøk kan ikke aktiveres i denne nettleseren. Avslutt privat nettlesingsmodus eller bruk en annen nettleser."
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Innholdssøk kan ikke aktiveres. Start programmet på nytt eller tøm data."
@@ -2858,7 +2896,7 @@
         "Opplasting av bilder er midlertidig deaktivert, vennligst prøv igjen senere."
       ],
       "Please activate your search again": [
-        "Vennligst aktiver søket ditt på nytt"
+        "Aktiver søket ditt på nytt"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Vennligst løs den uthevede konflikten for å fortsette.",
@@ -2908,19 +2946,19 @@
         "Noen grupper kunne ikke slettes"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
-        "Noen av dine mappenavn er utilgjengelige. Vennligst tilpass importen for å redigere disse navnene."
+        "Noen av dine mappenavn er utilgjengelige. Tilpass importen for å redigere disse navnene."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Noen av dine mappenavn overskrider ${ MAIL_APP_NAME }s maksimale tegngrense. Vennligst tilpass importen for å redigere disse navnene."
+        "Noen av dine mappenavn overskrider ${ MAIL_APP_NAME }s maksimale tegngrense. Tilpass importen for å redigere disse navnene."
       ],
       "Some of your label names are reserved. Please customize the import to edit these names.": [
-        "Noen av dine etikettnavn er reservert. Vennligst tilpass importen for å redigere disse navnene."
+        "Noen av dine etikettnavn er reservert. Tilpass importen for å redigere disse navnene."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        "Noen av dine etikettnavn er utilgjengelige. Vennligst tilpass importen for å endre disse navnene."
+        "Noen av dine etikettnavn er utilgjengelige. Tilpass importen for å endre disse navnene."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Noen av dine etikettnavn overskrider ${ MAIL_APP_NAME }s maksimale tegngrense. Vennligst tilpass importen for å redigere disse navnene."
+        "Noen av dine etikettnavn overskrider ${ MAIL_APP_NAME }s maksimale tegngrense.Tilpass importen for å redigere disse navnene."
       ],
       "status page": [
         "statusside"
@@ -2935,10 +2973,10 @@
         "E-postadressene samsvarer ikke"
       ],
       "The folder name is invalid. Please choose a different name.": [
-        "Mappenavnet er ikke gyldig. Vennligst velg et annet navn."
+        "Mappenavnet er ikke gyldig. Velg et annet navn."
       ],
       "The folder name is too long. Please choose a different name.": [
-        "Mappenavnet er for langt. Vennligst velg et annet navn."
+        "Mappenavnet er for langt. Velg et annet navn."
       ],
       "The invitation cannot be completed yet. Please try again later.": [
         "Invitasjonen kan ikke fullføres enda. Prøv igjen senere."
@@ -2947,10 +2985,10 @@
         "Invitasjonen eksisterer ikke lenger"
       ],
       "The label name is invalid. Please choose a different name.": [
-        "Etikettnavnet er ikke gyldig. Vennligst velg et annet navn."
+        "Etikettnavnet er ikke gyldig. Velg et annet navn."
       ],
       "The label name is too long. Please choose a different name.": [
-        "Etikettnavnet er for langt. Vennligst velg et annet navn."
+        "Etikettnavnet er for langt. Velg et annet navn."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimumsbeløpet av kreditt som kan legges til er ${ price }"
@@ -2977,7 +3015,7 @@
         "Den opprinnelige mappen ble ikke funnet"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "Det er for mange mapper i din eksterne konto. Vennligst tilpass importen for å slette noen mapper."
+        "Det er for mange mapper i din eksterne konto. Tilpass importen for å slette noen mapper."
       ],
       "There was an error when exporting the contacts vCards": [
         "Det oppsto en feil under eksport av kontaktenes vCards."
@@ -2992,10 +3030,10 @@
         "Dette feltet krever minimum ${ minimumLength } tegn."
       ],
       "This folder name is not available. Please choose a different name.": [
-        "Dette mappenavnet er ikke tilgjengelig. Vennligst velg et annet navn."
+        "Dette mappenavnet er ikke tilgjengelig. Velg et annet navn."
       ],
       "This label name is not available. Please choose a different name.": [
-        "Dette etikettenavnet er ikke tilgjengelig. Vennligst velg et annet navn."
+        "Dette etikettenavnet er ikke tilgjengelig. Velg et annet navn."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Denne meldingen kan inneholde noen koblinger til nettadresser som ikke kan åpnes riktig av din nåværende nettleser."
@@ -3027,9 +3065,6 @@
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan ikke sende e-post til flere enn ${ maxContacts } mottaker.",
         "Du kan ikke sende e-post til flere enn ${ maxContacts } mottakere."
-      ],
-      "You have reached the contacts limit for your account": [
-        "Du har nådd kontaktgrensen for kontoen din"
       ],
       "You have reached the maximum number of calendars.": [
         "Du har nådd maksimalt antall kalendere."
@@ -3380,9 +3415,6 @@
       "Lifetime accounts cannot join a family plan.": [
         "Livsvarige kontoer kan ikke bli med i en familieplan."
       ],
-      "Manage addresses.": [
-        "Administrer adresser"
-      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Eiere av en plan med medlemmer kan ikke bli med i en annen familieplan."
       ],
@@ -3418,9 +3450,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Kontoen din bruker ${ usedSpace } med lagringsplass som overskrider de ${ inviteSpace } tildelt deg. Slett noen data, eller be planadministratoren om å øke lagringsplassen."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "Du kan ikke godta denne invitasjonen med din nåværende plan."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3440,9 +3469,6 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users ": [
-        "Konfigurer familiekontoen din og inviter brukere "
-      ],
       "Set up your family": [
         "Sett opp familien din"
       ],
@@ -4034,9 +4060,6 @@
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /måned)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonuslagring"
       ],
@@ -4496,10 +4519,10 @@
         "fra versjonshistorikken?"
       ],
       "Get the app to backup photos from your phone.": [
-        "Få appen til å sikkerhetskopiere bilder fra telefonen."
+        "Skaff deg appen til å sikkerhetskopiere bilder fra telefonen."
       ],
       "Get the desktop app to sync files from your computer.": [
-        "Få skrivebordsappen til å synkronisere filer fra datamaskinen."
+        "Skaff deg skrivebordsappen til å synkronisere filer fra datamaskinen."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
         "Bli kjent med ${ DRIVE_APP_NAME } og få 3 GB lagringsbonus! Ta grep i dag."
@@ -4555,9 +4578,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
-      ],
-      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "I mellomtiden kan du registrere for din egen ${ DRIVE_APP_NAME }-konto og beskytte dataene dine med ende-til-ende-kryptering og dele dem sikkert."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I neste trinn, vil du kunne sende inn et innskudd ved å bruke en Bitcoin-adresse."
@@ -4767,9 +4787,6 @@
       ],
       "Organization size": [
         "Organisasjonsstørrelse"
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Våre varsler feil på siden av forsiktighet. Hvis du ikke gjenkjenner noe av informasjonen som er brutt, kan du trygt ignorere denne rapporten."
       ],
       "Owner": [
         "Eier"
@@ -6352,7 +6369,7 @@
     },
     "mailtrial2024: Action": {
       "Get the deal": [
-        "Få avtalen"
+        "Skaff deg tilbudet"
       ],
       "Special Offer": [
         "Spesialtilbud"
@@ -6393,7 +6410,7 @@
     },
     "mailtrial2024: Title": {
       "Get ${ planName } for only ${ planPrice }": [
-        "Få ${ planName } for kun ${ planPrice }"
+        "Skaff deg ${ planName } for kun ${ planPrice }"
       ]
     },
     "Message": {
@@ -6496,9 +6513,6 @@
       "Graphics Interchange Format (GIF)": [
         "Graphics Interchange Format (GIF)"
       ],
-      "GZip Compressed Archive": [
-        "GZip komprimert arkiv"
-      ],
       "HyperText Markup Language (HTML)": [
         "HyperText Markup Language (HTML)"
       ],
@@ -6519,9 +6533,6 @@
       ],
       "JavaScript": [
         "JavaScript"
-      ],
-      "JPEG images": [
-        "JPEG-bilder"
       ],
       "JSON": [
         "JSON"
@@ -6588,9 +6599,6 @@
       ],
       "Opus audio": [
         "Opus-lyd"
-      ],
-      "Portable Network Graphics": [
-        "Bærbar nettverksgrafikk"
       ],
       "Python": [
         "Python"
@@ -6729,7 +6737,7 @@
         "Få ${ BRAND_NAME } gratis"
       ],
       "Get ${ planName }": [
-        "Få ${ planName }"
+        "Skaff deg ${ planName }"
       ],
       "Keep ${ plan }": [
         "Behold ${ plan }"
@@ -6803,6 +6811,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-tilkobling",
         "${ n } VPN-tilkoblinger"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } bruker",
+        "Opptil ${ numberOfUsers } brukere"
       ],
       "${ options }-day file version history": [
         "${ options }-dag filversjonshistorikk",
@@ -7105,9 +7117,6 @@
       "Sync and backup all your files across devices": [
         "Synkroniser og sikkerhetskopier alle filene dine på tvers av enheter"
       ],
-      "Tor over VPN": [
-        "Tor over VPN"
-      ],
       "Two-factor authentication": [
         "Tofaktorautentisering"
       ],
@@ -7374,9 +7383,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Opprett opp til ${ n } e-postadresser/aliaser som du kan tilordne til familemedlemmer. Bruk dem til nettidentiteter, f.eks. JohnShopper@${ domain } for shoppingkontoer."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Dedikerte tjenere med dedikert IP-adresse(r) kan bli lagt til private mellomtjenere for å aktivere finjustert tilgangskontroll."
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Forsvarer mot trusler til VPN-personvern ved å overføre internettrafikk gjennom flere tjenere."
       ],
@@ -7472,9 +7478,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Tilbakestill brukerpassord og tilbakestill tofaktorautentisering på brukere"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Rute din internetttrafikk gjennom Tor-nettverket med ett enkeltklikk."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sikre filene dine med kryptert skylagring. Inkluderer automatisk synkronisering, kryptert fildeling og mer."
@@ -7802,17 +7805,11 @@
       "Share invitation declined": [
         "Delingsinvitasjon avslått"
       ],
-      "Stopping to share this item has failed": [
-        "Å stoppe delingen av dette elementet mislyktes"
-      ],
       "Subfolder failed to be loaded": [
         "Undermappen kunne ikke lastes inn"
       ],
       "The item was not added to your drive": [
         "Elementet ble ikke lagt til i din Drive"
-      ],
-      "The item was succefully added to your drive": [
-        "Elementet ble lagt til i din Drive"
       ],
       "The link to \"${ name }\" failed to be deleted": [
         "Koblingen til \"${ name }\" kunne ikke slettes"
@@ -7863,11 +7860,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "For at importen skal fungere, må du velge alle forespurte elementer som vist i GIF-en."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Velg hva ${ BRAND_NAME } kan få tilgang til: se e-postmeldinger og innstillinger, se og last ned kontaktene dine, se og last ned alle agendaer du får tilgang til fra Google Agenda."
       ]
     },
     "Onboarding": {
@@ -7963,10 +7955,10 @@
         "Begynn å bruke ${ DRIVE_APP_NAME } og vi vil oppgradere lagringsplassen din til 5 GB."
       ],
       "Get the desktop app": [
-        "Få skrivebordsappen"
+        "Skaff deg skrivebordsappen"
       ],
       "Get the mobile app": [
-        "Få mobilappen"
+        "Skaff deg mobilappen"
       ],
       "Got an Android? We've got you covered.": [
         "Har du en Android? Du er dekket."
@@ -8148,7 +8140,7 @@
         "Eksklusivt tilbud kun for tidlige støttespillere av ${ PASS_APP_NAME }."
       ],
       "Get it for ${ monthlyPrice }": [
-        "Få planen for ${ monthlyPrice }"
+        "Skaff deg planen for ${ monthlyPrice }"
       ],
       "Introducing ${ passFamilyPlanName }": [
         "Introduserer ${ passFamilyPlanName }"
@@ -8509,9 +8501,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Prøv ${ PASS_APP_NAME }"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "Brukt på Amazon for shopping, og så videre."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Når du blir bedt om e-postadressen din, gir du dette aliaset i stedet. Aliaser leveres av ${ passLink }."
@@ -9140,9 +9129,6 @@
       "Got it": [
         "Forstått"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Bare logg på din Apple App Store-konto, deretter klikk ${ subscriptions }."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Bare logg på din Play Store-konto, deretter klikk ${ subscriptions }."
       ],
@@ -9170,6 +9156,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME } med premiumfunksjoner"
+      ],
       "${ dayDiff } day left": [
         "${ dayDiff } dag igjen",
         "${ dayDiff } dager igjen"
@@ -9204,6 +9193,9 @@
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planName } går utover det grunnleggende for å hjelpe deg med å være mer produktiv, organisert og ha kontroll over innboksen, e-postidentiteten og mer."
       ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
+        "${ planName } hjelper deg med å sikre at hvert av familiemedlemmene dine - og deres data - er beskyttet når de er på nett."
+      ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } tilbyr ${ planMaxSpace } lagring for dine e-poster, vedlegg, hendelser, passord og filer. Du er også kvalifisert for årlige lagringsbonuser."
       ],
@@ -9215,6 +9207,29 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } tilbyr ${ planMaxSpace } lagring per bruker for e-post, vedlegg, hendelser, filer og passord. Du er også kvalifisert for årlige lagringsbonuser."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } kalender per bruker",
+        "${ planNumberOfCalendars } kalendere per bruker"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } egendefinert e-postdomene",
+        "${ planNumberOfDomains } egendefinerte e-postdomener"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-postadresse",
+        "${ planNumberOfEmails } e-postadresser"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } e-postadresse per bruker",
+        "${ planNumberOfEmails } e-postadresser per bruker"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } bruker",
+        "${ planNumberOfUsers } brukere"
+      ],
+      "${ PROTON_SENTINEL_NAME } advanced account protection": [
+        "${ PROTON_SENTINEL_NAME } avansert kontobeskyttelse"
       ],
       "2 users": [
         "2 brukere"
@@ -9249,6 +9264,9 @@
       "Comprehensive privacy and security": [
         "Omfattende personvern og sikkerhet"
       ],
+      "Dark web monitoring": [
+        "Overvåking av det mørke nettet"
+      ],
       "Desktop app and email client support (via IMAP)": [
         "Støtte for skrivebordsapp og e-postklient (via IMAP)"
       ],
@@ -9267,11 +9285,29 @@
       "Extra storage and users": [
         "Ekstra lagring og brukere"
       ],
+      "Folders, labels and filters": [
+        "Mapper, etiketter og filtre"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mapper, etiketter og egendefinerte filtre"
+      ],
       "Helping activists in Hong Kong": [
         "Hjelper aktivister i Hong Kong"
       ],
       "How our customer support team got our VPN app directly into people's hands.": [
         "Hvordan kundestøtteteamet vårt fikk VPN-appen vår direkte i folks hender."
+      ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "Hvordan vi kjempet tilbake da ${ BRAND_NAME } ble blokkert i en aggressiv kampanje."
+      ],
+      "How we supported local activists when privacy and free speech were threatened.": [
+        "Hvordan vi støttet lokale aktivister da personvern og ytringsfrihet ble truet."
+      ],
+      "If you exceed free plan limits, you won't be able to:": [
+        "Hvis du overskrider grensene for gratis planer, kan du ikke:"
+      ],
+      "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Hvis bruken din overskrider grensene for gratis planer, kan du oppleve begrenset tilgang til produktfunksjoner og dataene dine."
       ],
       "Invited members will be removed from your organization": [
         "Inviterte medlemmer fjernes fra organisasjonen"
@@ -9284,6 +9320,9 @@
       ],
       "Learn more about our impact": [
         "Finn ut mer om innvirkningen vår"
+      ],
+      "Limitations of the free plan:": [
+        "Begrensninger for gratisplanen:"
       ],
       "Make your business stand out": [
         "Få bedriften din til å skille seg ut"
@@ -9333,11 +9372,20 @@
       "Unlimited privacy for two": [
         "Ubegrenset personvern for to"
       ],
+      "Upload any new files": [
+        "Laste opp nye filer"
+      ],
+      "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
+        "Brukerabonnementer er ${ BRAND_NAME }s eneste inntekt. Din støtte holder oss uavhengige, fremmer vårt oppdrag for personvern på nettet og hjelper aktivister og organisasjoner som kjemper for frihet."
+      ],
       "Users won’t be able to manage their calendars": [
         "Brukere kan ikke administrere kalenderne sine"
       ],
       "Users won’t be able to send emails": [
         "Brukere vil ikke kunne sende e-post"
+      ],
+      "Users won’t be able to upload files on their devices": [
+        "Brukere vil ikke kunne laste opp filer på enhetene sine"
       ],
       "Version history": [
         "Versjonshistorikk"
@@ -9353,6 +9401,9 @@
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
         "Når du avbryter ${ planName }, blir du nedgradert til ${ BRAND_NAME } Free, som bare tilbyr opptil 1 GB Mail-lagring og opptil 5 GB Drive-lagring. Teamet ditt vil oppleve avbrudd i arbeidet siden flere brukere ikke støttes på gratisplanen."
+      ],
+      "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Når ${ planName }-abonnementet ditt avsluttes den ${ expiryDate }, blir du nedgradert til ${ BRAND_NAME } Free-abonnementet."
       ],
       "Yearly free storage bonuses": [
         "Årlige gratis lagringsbonuser"
@@ -10371,9 +10422,6 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Velg PGP-ordningen som skal brukes når du signerer eller krypterer til en bruker. Merk at PGP/Inline tvinger meldinger i ren tekst."
       ],
-      "Shared end-to-end encrypted": [
-        "Delt ende-til-ende-kryptert"
-      ],
       "Show side panel": [
         "Vis sidepanel"
       ],
@@ -10467,11 +10515,6 @@
       ],
       "No ads": [
         "Ingen annonser"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Tilgang til Secure Core-tjenere, raske P2P/BitTorrent-nedlastinger, Tor over VPN og mer."
       ]
     },
     "wallet_signup_2024: Info": {
