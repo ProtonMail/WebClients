@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { API_CODES } from '../../constants';
-import { HTTP_ERROR_CODES } from '../../errors';
+import { API_CODES, HTTP_STATUS_CODE } from '../../constants';
+import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '../../errors';
 
 export const isNotExistError = (error: any) => {
     const notExistErrorCodes = [
@@ -108,4 +108,9 @@ export const getApiErrorMessage = (e: any): string | undefined => {
     if (message) {
         return `${message}`;
     }
+};
+
+export const getIsMissingScopeError = (e: any) => {
+    const { status, code } = getApiError(e);
+    return status === HTTP_STATUS_CODE.FORBIDDEN && code === API_CUSTOM_ERROR_CODES.SCOPE_MISSING_UNEXPECTED;
 };
