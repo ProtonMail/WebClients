@@ -15,9 +15,9 @@ import { getWindowConfig } from "../view/windowHelpers";
 import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsAndLinuxExitEvent } from "./windowClose";
 import { handleBeforeInput } from "./windowShortcuts";
-import { getAppURL } from "../../store/urlStore";
+import { getAppURL, URLConfig } from "../../store/urlStore";
 
-type ViewID = keyof ReturnType<typeof getAppURL>;
+type ViewID = keyof URLConfig;
 
 let currentViewID: ViewID;
 
