@@ -1,3 +1,11 @@
+### Version 1.24.0
+
+-   Added in-app account switching capabilities
+-   UX improvement: Display current user on the unlock screen
+-   Improved logging for user reports
+-   Fixed Dashlane import compatibility due to export format changes
+-   Fixed Kaspersky TXT import compatibility
+
 ### Version 1.23.1
 
 -   Fine-tune alias syncing
