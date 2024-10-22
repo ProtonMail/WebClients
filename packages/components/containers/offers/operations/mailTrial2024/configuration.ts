@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { FeatureCode } from '@proton/features';
-import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
 
 import { getMailPlus2024InboxFeatures } from '../../helpers/offerCopies';
 import type { OfferConfig } from '../../interface';

@@ -1,5 +1,5 @@
 import { useUser } from '@proton/account/user/hooks';
-import { PLANS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/payments';
 
 import { useOrganization } from '../useOrganization';
 

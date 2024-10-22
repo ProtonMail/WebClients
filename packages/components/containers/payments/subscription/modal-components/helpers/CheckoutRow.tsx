@@ -38,7 +38,10 @@ const CheckoutRow = ({
     }
     return (
         <>
-            <div className={clsx(['flex flex-nowrap justify-space-between', className])}>
+            <div
+                className={clsx(['flex flex-nowrap justify-space-between', className])}
+                data-testid={`container-${dataTestId}`}
+            >
                 <div className="pr-2">{title}</div>
                 {loading ? (
                     <EllipsisLoader />

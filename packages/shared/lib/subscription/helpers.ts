@@ -1,4 +1,4 @@
-import { PLAN_TYPES } from '../constants';
+import { PLAN_TYPES } from '@proton/payments';
 
 export const isManagedByMozilla = ({ CouponCode }: { CouponCode?: string | null } = {}) => {
     const coupon = CouponCode || ''; // CouponCode can be null

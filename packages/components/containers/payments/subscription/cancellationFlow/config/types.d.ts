@@ -1,4 +1,5 @@
-import type { APP_NAMES, PLANS } from '@proton/shared/lib/constants';
+import { type PLANS } from '@proton/payments';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { SubscriptionModel, SubscriptionPlan, UserModel } from '@proton/shared/lib/interfaces';
 
 export type ConfigProps = {

@@ -1,5 +1,6 @@
+import { PLANS } from '@proton/payments';
 import type { APP_NAMES, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { APPS, APP_UPSELL_REF_PATH, PLANS } from '@proton/shared/lib/constants';
+import { APPS, APP_UPSELL_REF_PATH } from '@proton/shared/lib/constants';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import type { Api, Audience, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import useVariant from '@proton/unleash/useVariant';

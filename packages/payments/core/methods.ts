@@ -1,5 +1,6 @@
+import { isSEPACountry } from 'ibantools';
+
 import { queryPaymentMethods } from '@proton/shared/lib/api/payments';
-import type { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
 import {
     BLACK_FRIDAY,
     MIN_BITCOIN_AMOUNT,
@@ -10,11 +11,11 @@ import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscriptio
 import type { Api, BillingPlatform, ChargebeeUserExists } from '@proton/shared/lib/interfaces';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
+import { type BillingAddress } from './billing-address';
 import { isExpired as getIsExpired } from './cardDetails';
-import { PAYMENT_METHOD_TYPES } from './constants';
-import { MethodStorage } from './constants';
-import { extendStatus } from './helpers';
-import { isSignupFlow } from './helpers';
+import type { ADDON_NAMES, PLANS } from './constants';
+import { MethodStorage, PAYMENT_METHOD_TYPES } from './constants';
+import { extendStatus, isSignupFlow } from './helpers';
 import type {
     AvailablePaymentMethod,
     PaymentMethodFlows,
@@ -76,7 +77,9 @@ export class PaymentMethods {
         private _selectedPlanName: PLANS | ADDON_NAMES | undefined,
         public billingPlatform: BillingPlatform | undefined,
         public chargebeeUserExists: ChargebeeUserExists | undefined,
-        public disableNewPaymentMethods: boolean
+        public disableNewPaymentMethods: boolean,
+        public billingAddress: BillingAddress | undefined,
+        public enableSepa: boolean
     ) {
         this._statusExtended = extendStatus(paymentMethodStatus);
     }
@@ -112,9 +115,19 @@ export class PaymentMethods {
                     paymentMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL &&
                     this.statusExtended.VendorStates.Paypal;
 
+                const isExistingChargebeeSepaDirectDebit =
+                    paymentMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT &&
+                    this.statusExtended.VendorStates.Card;
+
                 // Only Paypal and Card can be saved/used payment methods.
                 // E.g. it's not possible to make Bitcoin/Cash a saved payment method.
-                return isExistingCard || isExistingPaypal || isExistingChargebeeCard || isExistingChargebeePaypal;
+                return (
+                    isExistingCard ||
+                    isExistingPaypal ||
+                    isExistingChargebeeCard ||
+                    isExistingChargebeePaypal ||
+                    isExistingChargebeeSepaDirectDebit
+                );
             })
             .map((paymentMethod) => {
                 const isExpired =
@@ -170,6 +183,10 @@ export class PaymentMethods {
                 type: PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
             },
             {
+                available: this.isSEPADirectDebitAvailable(),
+                type: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
+            },
+            {
                 available: this.isCashAvailable(),
                 type: PAYMENT_METHOD_TYPES.CASH,
             },
@@ -216,6 +233,24 @@ export class PaymentMethods {
             !isSignupFlow(this.flow) &&
             this.coupon !== BLACK_FRIDAY.COUPON_CODE
         );
+    }
+
+    private isSEPADirectDebitAvailable(): boolean {
+        if (!this.enableSepa) {
+            return false;
+        }
+
+        const directDebitEnabledFlows: PaymentMethodFlows[] = ['subscription'];
+
+        const flowSupportsDirectDebit = directDebitEnabledFlows.includes(this.flow);
+
+        const billingCountrySupportsSEPA = this.billingAddress?.CountryCode
+            ? isSEPACountry(this.billingAddress.CountryCode)
+            : false;
+
+        const cbUser = this.chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED;
+
+        return flowSupportsDirectDebit && billingCountrySupportsSEPA && cbUser;
     }
 
     private isBitcoinAvailable(): boolean {
@@ -350,7 +385,9 @@ export async function initializePaymentMethods(
     selectedPlanName: PLANS | ADDON_NAMES | undefined,
     billingPlatform?: BillingPlatform,
     chargebeeUserExists?: ChargebeeUserExists,
-    disableNewPaymentMethods?: boolean
+    disableNewPaymentMethods?: boolean,
+    billingAddress?: BillingAddress,
+    enableSepa?: boolean
 ) {
     const paymentMethodStatusPromise = maybePaymentMethodStatus ?? paymentsApi.statusExtendedAutomatic();
     const paymentMethodsPromise = (() => {
@@ -398,6 +435,8 @@ export async function initializePaymentMethods(
         selectedPlanName,
         billingPlatform,
         chargebeeUserExists,
-        !!disableNewPaymentMethods
+        !!disableNewPaymentMethods,
+        billingAddress,
+        !!enableSepa
     );
 }

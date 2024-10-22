@@ -1,5 +1,5 @@
+import { PLANS } from '@proton/payments';
 import { CALENDAR_SHARE_BUSY_TIME_SLOTS, CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
-import { PLANS } from '@proton/shared/lib/constants';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
 export const isUserEligibleForBusySlots = (organization: Organization): boolean => {

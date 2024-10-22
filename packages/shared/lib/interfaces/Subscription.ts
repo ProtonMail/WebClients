@@ -1,5 +1,7 @@
-import type { CURRENCIES, CYCLE, PLAN_TYPES } from '../constants';
-import type { ADDON_NAMES, PLANS } from '../constants';
+import type { ADDON_NAMES, PLANS, PLAN_TYPES } from '@proton/payments';
+
+import type { ProrationMode } from '../api/payments';
+import type { CURRENCIES, CYCLE } from '../constants';
 import type { Nullable } from './utils';
 
 export type Currency = (typeof CURRENCIES)[number];
@@ -24,18 +26,6 @@ export interface CycleMapping<T> {
 }
 
 export type Pricing = CycleMapping<number>;
-
-export type MaxKeys =
-    | 'MaxDomains'
-    | 'MaxAddresses'
-    | 'MaxSpace'
-    | 'MaxMembers'
-    | 'MaxVPN'
-    | 'MaxTier'
-    | 'MaxIPs' // synthetic key, it does't exist in the API
-    | 'MaxAI'; // synthetic key, it does't exist in the API
-
-export type Quantity = number;
 
 export interface Offer {
     Name: string;
@@ -62,7 +52,7 @@ export interface Plan {
     MaxTier: number;
     Services: number;
     Features: number;
-    Quantity: Quantity;
+    Quantity: number;
     Pricing: Pricing;
     DefaultPricing?: Pricing;
     PeriodEnd: CycleMapping<number>;
@@ -143,10 +133,6 @@ export interface SubscriptionModel extends Subscription {
     isManagedByMozilla: boolean;
 }
 
-export type PlanIDs = Partial<{
-    [planName in PLANS | ADDON_NAMES]: Quantity;
-}>;
-
 export type BasePlansMap<T extends Plan> = {
     [planName in PLANS | ADDON_NAMES]: T;
 };
@@ -199,6 +185,7 @@ export interface SubscriptionCheckResponse {
     TaxInclusive?: TaxInclusive;
     SubscriptionMode?: SubscriptionMode;
     optimistic?: boolean;
+    ProrationMode?: ProrationMode;
 }
 
 export enum Audience {

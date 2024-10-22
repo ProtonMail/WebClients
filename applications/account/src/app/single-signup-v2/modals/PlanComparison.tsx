@@ -4,13 +4,12 @@ import { c } from 'ttag';
 
 import type { IconSize } from '@proton/components';
 import { DriveLogo, MailLogo, PassLogo, VpnLogo } from '@proton/components';
+import { PLANS, PLAN_SERVICES } from '@proton/payments';
 import {
     APPS,
     DRIVE_SHORT_APP_NAME,
     MAIL_SHORT_APP_NAME,
     PASS_SHORT_APP_NAME,
-    PLANS,
-    PLAN_SERVICES,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';

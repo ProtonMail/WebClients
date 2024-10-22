@@ -7,9 +7,10 @@ import { useUser } from '@proton/account/user/hooks';
 import Badge from '@proton/components/components/badge/Badge';
 import Info from '@proton/components/components/link/Info';
 import useConfig from '@proton/components/hooks/useConfig';
-import type { FullPlansMap, PaymentMethodStatusExtended } from '@proton/payments';
-import { getAvailableCurrencies } from '@proton/payments';
-import { APPS, PLANS } from '@proton/shared/lib/constants';
+import { type MethodsHook } from '@proton/components/payments/react-extensions';
+import type { FullPlansMap, PaymentMethodStatusExtended, PlanIDs } from '@proton/payments';
+import { PLANS, getAvailableCurrencies } from '@proton/payments';
+import { APPS } from '@proton/shared/lib/constants';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { getCheckout, getDiscountText } from '@proton/shared/lib/helpers/checkout';
 import { getPlanFromCheckout, hasPlanIDs, planIDsPositiveDifference } from '@proton/shared/lib/helpers/planIDs';
@@ -21,7 +22,6 @@ import type {
     Cycle,
     FreePlanDefault,
     Plan,
-    PlanIDs,
     SubscriptionModel,
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
@@ -58,6 +58,7 @@ type Props = {
     onBillingAddressChange?: OnBillingAddressChange;
     subscription: SubscriptionModel;
     paymentNeeded: boolean;
+    paymentMethods: MethodsHook;
 } & CheckoutModifiers;
 
 export const useAvailableCurrenciesForPlan = (plan: Plan | null, subscription: SubscriptionModel) => {
@@ -97,6 +98,7 @@ const SubscriptionCheckout = ({
     isProration,
     isCustomBilling,
     paymentNeeded,
+    paymentMethods,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
@@ -153,6 +155,7 @@ const SubscriptionCheckout = ({
             loading={loading}
             hasGuarantee={hasGuarantee}
             description={showPlanDescription ? <PlanDescription list={list} /> : null}
+            paymentMethods={paymentMethods}
             hiddenRenewNotice={
                 hasBFDiscount && (
                     <div className="color-weak">

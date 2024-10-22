@@ -17,14 +17,13 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
 import {
     APP_UPSELL_REF_PATH,
     AutoReplyDuration,
     BRAND_NAME,
     MAIL_UPSELL_PATHS,
-    PLANS,
-    PLAN_NAMES,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';

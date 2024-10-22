@@ -9,7 +9,6 @@ export * from './useGetBitcoinAddressHighestIndex';
 export * from './useGetExchangeRate';
 export * from './useHideAmounts';
 export * from './useRemainingInvites';
-export * from './useSaveVCardContact';
 export * from './useUserWalletSettings';
 export * from './useWalletAccountExchangeRate';
 export * from './useWalletApi';

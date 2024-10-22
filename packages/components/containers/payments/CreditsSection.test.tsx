@@ -1,7 +1,7 @@
 import { getModelState } from '@proton/account/test';
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import { userDefault } from '@proton/components/hooks/helpers/test';
-import { PLANS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/payments';
 import type { Subscription, SubscriptionModel } from '@proton/shared/lib/interfaces';
 import { BillingPlatform } from '@proton/shared/lib/interfaces';
 import { applyHOCs, getSubscriptionState, withApi, withCache } from '@proton/testing';

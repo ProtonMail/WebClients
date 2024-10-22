@@ -6,7 +6,7 @@ import { useSubscription } from '@proton/components';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import { PLANS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/payments';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import useCancellationTelemetry, { REACTIVATE_SOURCE } from './useCancellationTelemetry';

@@ -10,13 +10,13 @@ import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { usePlans } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
+import { PLANS } from '@proton/payments';
 import {
     APPS,
     APP_UPSELL_REF_PATH,
     BRAND_NAME,
     CYCLE,
     MAIL_UPSELL_PATHS,
-    PLANS,
     PROTON_SENTINEL_NAME,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';

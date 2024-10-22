@@ -1,5 +1,5 @@
+import { PLANS } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { PLANS } from '@proton/shared/lib/constants';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import type { SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
 

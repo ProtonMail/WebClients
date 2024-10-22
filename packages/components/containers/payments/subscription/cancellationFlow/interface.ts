@@ -1,5 +1,5 @@
 import { type IconName } from '@proton/components/components/icon/Icon';
-import type { PLANS } from '@proton/shared/lib/constants';
+import type { PLANS } from '@proton/payments';
 
 export interface PlanConfigReminder {
     title: string;

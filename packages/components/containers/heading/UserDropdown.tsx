@@ -38,17 +38,17 @@ import { useSessionRecoveryState } from '@proton/components/hooks/useSessionReco
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import useSubscription from '@proton/components/hooks/useSubscription';
 import { FeatureCode, useFeature } from '@proton/features';
+import { type PLANS, PLAN_NAMES } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppHref, getAppShortName } from '@proton/shared/lib/apps/helper';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
-import type { APP_NAMES, PLANS } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
     APPS_CONFIGURATION,
     BRAND_NAME,
-    PLAN_NAMES,
     SECURITY_CHECKUP_PATHS,
     SHARED_UPSELL_PATHS,
     SSO_PATHS,

@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { FeatureCode } from '@proton/features';
-import { BRAND_NAME, CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { BRAND_NAME, CYCLE } from '@proton/shared/lib/constants';
 
 import Layout from '../../components/duoPlan/Layout';
 import type { OfferConfig } from '../../interface';

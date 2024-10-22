@@ -1,5 +1,6 @@
 import type { ComponentType } from 'react';
 
+import { getModelState } from '@proton/account/test';
 import ApiContext from '@proton/components/containers/api/apiContext';
 import type { Props as AuthenticationProviderProps } from '@proton/components/containers/authentication/Provider';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
@@ -9,14 +10,25 @@ import EventManagerContext from '@proton/components/containers/eventManager/cont
 import ModalsContext from '@proton/components/containers/modals/modalsContext';
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
 import { PaymentSwitcherContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
+import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { CLIENT_TYPES } from '@proton/shared/lib/constants';
-import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type {
+    ApiEnvironmentConfig,
+    CachedOrganizationKey,
+    ProtonConfig,
+    UserModel,
+} from '@proton/shared/lib/interfaces';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
+import { defaultVPNServersCountData as mockDefaultVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
+import { buildUser } from '@proton/testing/builders';
 
 import { apiMock } from '../api';
 import { mockCache } from '../cache';
 import { mockEventManager } from '../event-manager';
+import { getOrganizationState, getPaymentStatusState, getSubscriptionState } from '../initialReduxState';
 import { mockModals } from '../mockModals';
+import { type RootState, setupStore } from './store';
 
 export const withNotifications =
     () =>
@@ -127,3 +139,45 @@ export const withPaymentContext =
                 </PaymentSwitcherContext.Provider>
             );
         };
+
+export type WithReduxStoreProps = {
+    user?: UserModel;
+    preloadedState?: Partial<RootState>;
+};
+
+export const withReduxStore =
+    (props: WithReduxStoreProps = {}) =>
+    <T extends {}>(Component: ComponentType<T>) => {
+        const store = setupStore({
+            preloadedState: {
+                user: getModelState(props.user ?? buildUser()),
+                addresses: getModelState([]),
+                addressKeys: {},
+                contacts: getModelState([]),
+                categories: getModelState([]),
+                contactEmails: getModelState([]),
+                subscription: getSubscriptionState(),
+                paymentStatus: getPaymentStatusState(),
+                organization: getOrganizationState(),
+                organizationKey: getModelState({} as CachedOrganizationKey),
+                userInvitations: getModelState([]),
+                plans: getModelState({ plans: [], freePlan: FREE_PLAN }),
+                features: {},
+                importerConfig: getModelState({} as ApiEnvironmentConfig),
+                vpnServersCount: getModelState(mockDefaultVPNServersCountData),
+                ...props.preloadedState,
+            },
+        });
+
+        const ReduxStoreHoc = (props: T & JSX.IntrinsicAttributes) => {
+            return (
+                <ProtonStoreProvider store={store}>
+                    <Component {...props} />
+                </ProtonStoreProvider>
+            );
+        };
+
+        ReduxStoreHoc.displayName = `withReduxStore(${Component.displayName || Component.name})`;
+
+        return ReduxStoreHoc;
+    };

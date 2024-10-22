@@ -1,8 +1,8 @@
 import { getModelState } from '@proton/account/test';
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import { plansDefaultResponse } from '@proton/components/hooks/helpers/test';
+import { PLANS } from '@proton/payments';
 import { changeRenewState } from '@proton/shared/lib/api/payments';
-import { PLANS } from '@proton/shared/lib/constants';
 import type { Subscription, SubscriptionModel } from '@proton/shared/lib/interfaces';
 import { Renew } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';

@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
+import { PLANS } from '@proton/payments';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
 
-import { MEMBER_ROLE, MEMBER_SUBSCRIBER, PLANS } from '../constants';
+import { MEMBER_ROLE, MEMBER_SUBSCRIBER } from '../constants';
 import type { Address, CachedOrganizationKey, Domain, Member, Organization } from '../interfaces';
 import { DOMAIN_STATE, MEMBER_ORG_KEY_STATE } from '../interfaces';
 

@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
-import { BRAND_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 interface Props {

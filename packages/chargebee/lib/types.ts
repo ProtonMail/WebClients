@@ -1,4 +1,4 @@
-import { Currency } from '@proton/shared/lib/interfaces';
+import { type Currency } from '@proton/shared/lib/interfaces';
 
 export interface CountryEntry {
     label: string;
@@ -80,7 +80,11 @@ export type CbSavedCardConfig = {
     paymentMethodType: 'saved-card';
 } & ChargebeeInstanceConfiguration;
 
-export type CbIframeConfig = CbCardConfig | CbPaypalConfig | CbSavedCardConfig;
+export type CbDirectDebitConfig = {
+    paymentMethodType: 'direct-debit';
+} & ChargebeeInstanceConfiguration;
+
+export type CbIframeConfig = CbCardConfig | CbPaypalConfig | CbSavedCardConfig | CbDirectDebitConfig;
 
 export type PaymentIntent = {
     id: string;
@@ -292,3 +296,24 @@ export const paymentAttemptRefusedChargebeeErrorName = 'PAYMENT_ATTEMPT_REFUSED'
 export type UpdateFieldsPayload = {
     cssVariables: CssVariables;
 };
+
+export type DirectDebitCustomerNameType = 'company' | 'individual';
+export interface DirectDebitCustomer {
+    email: string;
+    company: string;
+    firstName: string;
+    lastName: string;
+    customerNameType: DirectDebitCustomerNameType;
+    countryCode: string;
+    addressLine1: string;
+}
+
+export interface DirectDebitBankAccount {
+    iban: string;
+}
+
+export interface ChargebeeSubmitDirectDebitEventPayload {
+    paymentIntent: PaymentIntent;
+    customer: DirectDebitCustomer;
+    bankAccount: DirectDebitBankAccount;
+}

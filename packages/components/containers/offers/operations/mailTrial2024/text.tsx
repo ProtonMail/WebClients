@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
-import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 import type { Currency } from '@proton/shared/lib/interfaces';
 
 export const getCTAContent = () => {

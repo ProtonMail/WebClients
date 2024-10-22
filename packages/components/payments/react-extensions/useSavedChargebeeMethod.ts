@@ -7,6 +7,7 @@ import {
     type ChargebeeIframeEvents,
     type ChargebeeIframeHandles,
     type ExistingPaymentMethod,
+    PAYMENT_METHOD_TYPES,
     type PaymentVerificatorV5,
     SavedChargebeePaymentProcessor,
     type SavedPaymentMethod,
@@ -24,6 +25,7 @@ export interface Props {
     onChargeable: (data: ChargeablePaymentParameters, paymentMethodId: ExistingPaymentMethod) => Promise<unknown>;
     onProcessPaymentToken?: (paymentMethodType: PaymentProcessorType) => void;
     onProcessPaymentTokenFailed?: (paymentMethodType: PaymentProcessorType) => void;
+    onBeforeSepaPayment?: () => Promise<boolean>;
 }
 
 export interface Dependencies {
@@ -38,7 +40,14 @@ export interface SavedChargebeeMethodProcessorHook extends PaymentProcessorHook 
 }
 
 export const useSavedChargebeeMethod = (
-    { amountAndCurrency, savedMethod, onChargeable, onProcessPaymentToken, onProcessPaymentTokenFailed }: Props,
+    {
+        amountAndCurrency,
+        savedMethod,
+        onChargeable,
+        onProcessPaymentToken,
+        onProcessPaymentTokenFailed,
+        onBeforeSepaPayment,
+    }: Props,
     { verifyPayment, api, handles, events }: Dependencies
 ): SavedChargebeeMethodProcessorHook => {
     const paymentProcessorRef = useRef<SavedChargebeePaymentProcessor>();
@@ -83,8 +92,19 @@ export const useSavedChargebeeMethod = (
 
     const reset = () => paymentProcessor?.reset();
 
-    const fetchPaymentToken = async () => withFetchingToken(paymentProcessor?.fetchPaymentToken());
-    const verifyPaymentToken = async () => {
+    const fetchPaymentToken = () => {
+        return withFetchingToken(async () => {
+            if (onBeforeSepaPayment && savedMethod?.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT) {
+                const result = await onBeforeSepaPayment();
+                if (!result) {
+                    return;
+                }
+            }
+
+            return paymentProcessor?.fetchPaymentToken();
+        });
+    };
+    const verifyPaymentToken = () => {
         const tokenPromise = paymentProcessor?.verifyPaymentToken();
         if (!tokenPromise) {
             throw new Error('There is no saved method to verify');

@@ -10,7 +10,8 @@ export type PaymentProcessorType =
     | 'chargebee-paypal-credit'
     | 'saved-chargebee'
     | 'bitcoin'
-    | 'chargebee-bitcoin';
+    | 'chargebee-bitcoin'
+    | 'sepadirectdebit';
 
 export function getSystemByHookType(
     type: PaymentProcessorType | 'n/a' | undefined

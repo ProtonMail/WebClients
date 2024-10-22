@@ -9,14 +9,13 @@ import SubscriptionModalProvider, {
 } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useConfig from '@proton/components/hooks/useConfig';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
     CYCLE,
     MAIL_APP_NAME,
     OPEN_OFFER_MODAL_EVENT,
-    PLANS,
-    PLAN_NAMES,
     SHARED_UPSELL_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';

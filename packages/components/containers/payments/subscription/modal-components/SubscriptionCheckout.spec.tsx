@@ -51,6 +51,7 @@ describe('SubscriptionCheckout', () => {
                 isAddonDowngrade={false}
                 subscription={buildSubscription()}
                 paymentNeeded={true}
+                paymentMethods={{} as any}
             ></SubscriptionCheckout>
         );
 
@@ -77,6 +78,7 @@ describe('SubscriptionCheckout', () => {
                 isAddonDowngrade={false}
                 subscription={buildSubscription()}
                 paymentNeeded={true}
+                paymentMethods={{} as any}
             ></SubscriptionCheckout>
         );
 
@@ -103,6 +105,7 @@ describe('SubscriptionCheckout', () => {
                 isAddonDowngrade={false}
                 subscription={buildSubscription()}
                 paymentNeeded={true}
+                paymentMethods={{} as any}
             ></SubscriptionCheckout>
         );
 
@@ -131,6 +134,7 @@ describe('SubscriptionCheckout', () => {
                     PeriodEnd: 1668868986,
                 })}
                 paymentNeeded={true}
+                paymentMethods={{} as any}
             ></SubscriptionCheckout>
         );
 
@@ -171,6 +175,7 @@ describe('SubscriptionCheckout', () => {
                     PeriodEnd: 1668868986,
                 })}
                 paymentNeeded={true}
+                paymentMethods={{} as any}
             ></SubscriptionCheckout>
         );
 
@@ -218,6 +223,7 @@ describe('SubscriptionCheckout', () => {
                     PeriodEnd: 1668868986,
                 })}
                 paymentNeeded={true}
+                paymentMethods={{} as any}
             ></SubscriptionCheckout>
         );
 
@@ -265,6 +271,7 @@ describe('SubscriptionCheckout', () => {
                     PeriodEnd: 1668868986,
                 })}
                 paymentNeeded={true}
+                paymentMethods={{} as any}
             ></SubscriptionCheckout>
         );
 

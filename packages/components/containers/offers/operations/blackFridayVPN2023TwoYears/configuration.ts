@@ -1,5 +1,6 @@
 import { FeatureCode } from '@proton/features';
-import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
 
 import { getUnlimitedVPNFeatures } from '../../helpers/offerCopies';
 import type { OfferConfig } from '../../interface';
