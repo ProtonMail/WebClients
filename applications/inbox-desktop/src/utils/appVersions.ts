@@ -1,16 +1,9 @@
 import { app } from "electron";
 import { AppVersion } from "@proton/shared/lib/desktop/DesktopVersion";
 import { utilsLogger } from "./log";
+import { type APP_NAMES, APPS } from "@proton/shared/lib/constants";
 
-const usedAppVersions: {
-    M: string;
-    C: string;
-    A: string;
-} = {
-    M: "",
-    C: "",
-    A: "",
-};
+const usedAppVersions: Partial<Record<APP_NAMES, string>> = {};
 
 export const getAllAppVersions = (): string => {
     const appVersions: string[] = [];
@@ -18,7 +11,16 @@ export const getAllAppVersions = (): string => {
     Object.entries(usedAppVersions).forEach(([key, value]) => {
         if (!value) return;
 
-        appVersions.push(`${key} ${value}`);
+        const abbrev: string = (() => {
+            if (key === APPS.PROTONMAIL) return "M";
+            if (key === APPS.PROTONCALENDAR) return "C";
+            if (key === APPS.PROTONACCOUNT) return "A";
+
+            // It should not happen. If it does, we need to know Y.
+            return "Y";
+        })();
+
+        appVersions.push(`${abbrev} ${value}`);
     });
 
     return `${app.getVersion()} (${appVersions.join(" / ")})`;
@@ -27,19 +29,7 @@ export const getAllAppVersions = (): string => {
 export const storeAppVersion = (appVersion: AppVersion): void => {
     utilsLogger.info(`Application loaded: ${appVersion.name}@${appVersion.version}`);
 
-    switch (appVersion.name) {
-        case "proton-mail":
-            usedAppVersions.M = appVersion.version;
-            break;
-        case "proton-calendar":
-            usedAppVersions.C = appVersion.version;
-            break;
-        case "proton-account":
-            usedAppVersions.A = appVersion.version;
-            break;
-        default:
-            utilsLogger.warn(`Unexpected app loaded: ${appVersion.name}@${appVersion.version}`);
-    }
+    usedAppVersions[appVersion.name] = appVersion.version;
 
     utilsLogger.debug("Current versions are:", getAllAppVersions());
 };

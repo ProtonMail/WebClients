@@ -1,5 +1,7 @@
 import { z } from 'zod';
 
+import { type APP_NAMES } from '@proton/shared/lib/constants';
+
 import { RELEASE_CATEGORIES } from '../constants';
 
 export const DesktopVersionSchema = z.object({
@@ -31,6 +33,6 @@ export type DesktopVersion = z.infer<typeof DesktopVersionSchema>;
 export type VersionFile = z.infer<typeof VersionFileSchema>;
 
 export type AppVersion = {
-    name: string;
+    name: APP_NAMES;
     version: string;
 };

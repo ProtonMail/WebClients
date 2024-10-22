@@ -63,6 +63,7 @@ export const handleIPCCalls = () => {
             }
             case "colorScheme":
                 event.returnValue = getColorScheme();
+                break;
             case "getAllAppVersions":
                 event.returnValue = getAllAppVersions();
                 break;

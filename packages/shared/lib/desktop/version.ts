@@ -1,3 +1,5 @@
+import { type APP_NAMES } from '@proton/shared/lib/constants';
+
 import { electronAppVersion } from '../helpers/desktop';
 import { getInboxDesktopInfo, hasInboxDesktopFeature, invokeInboxDesktopIPC } from './ipcHelpers';
 
@@ -5,7 +7,7 @@ export const addDesktopAppVersion = (appVersion: string) => {
     return `${electronAppVersion} (${appVersion})`;
 };
 
-export const storeVersionInboxElectron = (name: string, version: string) => {
+export const storeAppVersion = (name: APP_NAMES, version: string) => {
     if (!hasInboxDesktopFeature('StoreVersion')) {
         return;
     }
