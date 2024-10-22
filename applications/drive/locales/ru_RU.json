@@ -570,9 +570,6 @@
       "OK": [
         "OK"
       ],
-      "Ok": [
-        "OK"
-      ],
       "Open": [
         "Открыть"
       ],
@@ -833,9 +830,6 @@
       ],
       "Toggle Calendar app": [
         "Переключить на приложение Календарь"
-      ],
-      "Toggle Contact app": [
-        "Переключить на приложение Контакты"
       ],
       "Toggle settings": [
         "Включить/выключить настройки"
@@ -2319,9 +2313,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идет шифрование и импортирование контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Для импорта через CSV- и VCF-файл убедитесь, что файл не превышает ${ MAX_IMPORT_FILE_SIZE_STRING } или ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, пожалуйста, разделите его на более мелкие файлы. ${ learnMoreLink }."
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Получите неограниченное количество псевдонимов и 500 ГБ в облачном хранилище с ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
@@ -3055,9 +3046,6 @@
         "Нельзя отправить письмо более чем ${ maxContacts } получателям",
         "Нельзя отправить письмо более чем ${ maxContacts } получателям"
       ],
-      "You have reached the contacts limit for your account": [
-        "Вы достигли лимита контактов для вашего аккаунта."
-      ],
       "You have reached the maximum number of calendars.": [
         "Вы достигли максимального количества календарей."
       ],
@@ -3411,9 +3399,6 @@
       "Lifetime accounts cannot join a family plan.": [
         "Пожизненные аккаунты не могут присоединяться к семейному тарифу."
       ],
-      "Manage addresses.": [
-        "Управляйте адресами."
-      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Владельцы тарифа с участниками не могут присоединиться к другому семейному тарифу."
       ],
@@ -3449,9 +3434,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ваш аккаунт занимает ${ usedSpace }, что превышает лимит хранилища в ${ inviteSpace }. Удалите некоторые данные или попросите администратора тарифного плана увеличить доступный вам объем."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "Вы не можете принять это приглашение со своим текущим планом."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3471,9 +3453,6 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users ": [
-        "Создайте семейный аккаунт и приглашайте пользователей "
-      ],
       "Set up your family": [
         "Создайте семейную группу"
       ],
@@ -4051,6 +4030,12 @@
         "Найдено ${ groupCounts } групп",
         "Найдено ${ groupCounts } группы"
       ],
+      "${ invitations.length } pending invitation": [
+        "${ invitations.length } ожидающее приглашение",
+        "${ invitations.length } ожидающих приглашений",
+        "${ invitations.length } ожидающих приглашений",
+        "${ invitations.length } ожидающих приглашений"
+      ],
       "${ nbFile } encrypted file": [
         "${ nbFile } зашифрованный файл",
         "${ nbFile } зашифрованных файла",
@@ -4140,9 +4125,6 @@
         "(${ memberCount } участника)",
         "(${ memberCount } участников)",
         "(${ memberCount } участника)"
-      ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /месяц)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонусного пространства"
@@ -4681,9 +4663,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Импорт данных из ${ fromEmail } в ${ toEmail }."
       ],
-      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "А пока зарегистрируйте свой собственный аккаунт ${ DRIVE_APP_NAME } для защиты данных с помощью сквозного шифрования и безопасного обмена ими."
-      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "На следующем шаге вы сможете отправить депозит, используя адрес Bitcoin."
       ],
@@ -4896,9 +4875,6 @@
       ],
       "Organization size": [
         "Размер организации"
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Мы отправляем уведомления, проявляя избыточную осторожность. Если вы не узнаёте какие-либо из скомпрометированных данных, вы можете смело игнорировать этот отчёт."
       ],
       "Owner": [
         "Владелец"
@@ -5580,6 +5556,12 @@
       ],
       "You will lose all unsaved changes.": [
         "Вы потеряете все несохраненные изменения."
+      ],
+      "You will need to save it again from the public link page.": [
+        "Вам нужно будет снова сохранить его со страницы публичной ссылки.",
+        "Вам нужно будет снова сохранить их со страницы публичной ссылки",
+        "Вам нужно будет снова сохранить их со страницы публичной ссылки",
+        "Вам нужно будет снова сохранить их со страницы публичной ссылки"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Скоро вы будете перенаправлены на сайт PayPal для подтверждения вашего платежа."
@@ -6643,9 +6625,6 @@
       "Graphics Interchange Format (GIF)": [
         "Graphics Interchange Format (GIF)"
       ],
-      "GZip Compressed Archive": [
-        "Сжатый архив GZip"
-      ],
       "HyperText Markup Language (HTML)": [
         "Язык гипертекстовой разметки (HTML)"
       ],
@@ -6663,9 +6642,6 @@
       ],
       "Java Archive (JAR)": [
         "Архив Java (JAR)"
-      ],
-      "JPEG images": [
-        "Изображения JPEG"
       ],
       "MP3 audio": [
         "Аудио MP3"
@@ -6702,9 +6678,6 @@
       ],
       "Opus audio": [
         "Аудио Opus"
-      ],
-      "Portable Network Graphics": [
-        "Portable Network Graphics (PNG)"
       ],
       "RAR archive": [
         "Архив RAR"
@@ -6924,6 +6897,12 @@
         "${ n } подключения к VPN",
         "${ n } подключений к VPN",
         "${ n } подключений к VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } пользователь",
+        "До ${ numberOfUsers } пользователей",
+        "До ${ numberOfUsers } пользователей",
+        "До ${ numberOfUsers } пользователей"
       ],
       "${ options }-day file version history": [
         "${ options }-дневный журнал версий файла",
@@ -7234,9 +7213,6 @@
       "Sync and backup all your files across devices": [
         "Синхронизируйте файлы на всех устройствах и создавайте резервные копии"
       ],
-      "Tor over VPN": [
-        "Tor через VPN"
-      ],
       "Two-factor authentication": [
         "Двухфакторная аутентификация"
       ],
@@ -7512,9 +7488,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Создайте до ${ n } адресов электронной почты или псевдонимов, которые можно назначить членам семьи. Используйте их для идентификации в Интернете, например JohnShopper@${ domain } для аккаунтов для покупок."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Защищает конфиденциальность VPN от угроз, передавая ваш интернет-трафик через несколько серверов"
       ],
@@ -7610,9 +7583,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Сбрасывайте пароли и двухфакторную аутентификацию для пользователей"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Направляйте свой трафик через сеть Tor одним нажатием"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Защитите свои файлы с помощью зашифрованного облачного хранилища. Возможности включают автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
@@ -7972,17 +7942,11 @@
       "Share invitation declined": [
         "Приглашение поделиться отклонено"
       ],
-      "Stopping to share this item has failed": [
-        "Остановка совместного использования этого общего ресурса не удалась"
-      ],
       "Subfolder failed to be loaded": [
         "Не удалось загрузить подпапку"
       ],
       "The item was not added to your drive": [
         "Элемент не был добавлен в хранилище"
-      ],
-      "The item was succefully added to your drive": [
-        "Элемент был успешно добавлен в хранилище"
       ],
       "The link to \"${ name }\" failed to be deleted": [
         "Не удалось удалить ссылку на \"${ name }\""
@@ -8039,11 +8003,6 @@
         "Чтобы импорт сработал, необходимо выбрать все требуемые элементы, как показано в GIF."
       ]
     },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Укажите, к чему ${ BRAND_NAME } может получить доступ: просмотр электронных писем и настроек, просмотр и скачивание контактов, просмотр и скачивание всех расписаний из Календаря Google."
-      ]
-    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Добро пожаловать в ${ appName }"
@@ -8055,6 +8014,15 @@
       ],
       "Get started": [
         "Начать"
+      ],
+      "Install and continue": [
+        "Установить и продолжить"
+      ],
+      "Install later": [
+        "Скачаю позже"
+      ],
+      "Invite members": [
+        "Пригласить участников"
       ],
       "Maybe later": [
         "Может быть позже"
@@ -8074,6 +8042,9 @@
       "Start using ${ DRIVE_APP_NAME }": [
         "Начните использовать ${ DRIVE_APP_NAME }"
       ],
+      "Try the app": [
+        "Попробовать приложение"
+      ],
       "Upload file": [
         "Загрузить файл"
       ],
@@ -8085,6 +8056,9 @@
       "Access your files on the go": [
         "Получите доступ к своим файлам в пути"
       ],
+      "Back up your photos and memories": [
+        "Создавайте резервные копии фотографий и воспоминаний"
+      ],
       "Backup your photos and memories": [
         "Резервное копирование фотографий и воспоминаний"
       ],
@@ -8094,6 +8068,18 @@
       "Collaborate on documents": [
         "Совместно работайте над документами"
       ],
+      "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
+        "Вы предпочитаете ${ DRIVE_APP_NAME } в светлом или темном стиле? Выберите цвет, который привлекает вас больше всего."
+      ],
+      "Drag and drop your files here": [
+        "Перетащите ваши файлы сюда"
+      ],
+      "Edit documents online": [
+        "Изменяйте документы онлайн"
+      ],
+      "End-to-end encrypted storage for your files": [
+        "Зашифрованное сквозным методом хранилище для ваших файлов"
+      ],
       "Faster uploads for large or multiple files": [
         "Ускоренная загрузка больших или многочисленных файлов"
       ],
@@ -8102,6 +8088,9 @@
       ],
       "Final approval pending": [
         "Ожидается окончательное одобрение"
+      ],
+      "Free up hard drive space on your computer": [
+        "Освободите место на жестком диске вашего компьютера"
       ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Начните использовать ${ DRIVE_APP_NAME }, и мы увеличим объем вашего хранилища до 5 ГБ!"
@@ -8133,11 +8122,20 @@
       "Manage access": [
         "Управляйте доступом"
       ],
+      "Organize files right from your desktop": [
+        "Упорядочивайте файлы прямо с рабочего стола"
+      ],
+      "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
+        "Защитите свои финансовые документы, удостоверения личности, файлы проектов, фотографии и многое другое с помощью сквозного шифрования."
+      ],
       "Scan the QR code to install the mobile app": [
         "Отсканируйте QR-код, чтобы установить приложение для мобильных устройств"
       ],
       "Secure your files": [
         "Защитите файлы"
+      ],
+      "Securely share files and folders": [
+        "Защищенно делитесь файлами и папками"
       ],
       "Securely store, manage, and share your business-critical files with confidence.": [
         "Надежно и с уверенностью храните, управляйте и делитесь критически важными для бизнеса файлами."
@@ -8159,6 +8157,9 @@
       ],
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "Храните файлы и делитесь ими безопасно. Начните с защиты самых важных документов, таких как удостоверения личности, контракты и личные фотографии."
+      ],
+      "Sync and access your files from anywhere": [
+        "Синхронизируйте и получайте доступ к файлам из любого места"
       ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Владелец должен подтвердить доступ. Вы получите электронное письмо, как только это случится."
@@ -8659,9 +8660,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Попробуйте ${ PASS_APP_NAME }"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "Используется на Amazon для покупок и прочего"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Когда вас попросят указать адрес электронной почты, укажите вместо него этот псевдоним. Псевдонимы предоставляются с помощью ${ passLink }."
@@ -9333,9 +9331,6 @@
       "Got it": [
         "Понятно"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Просто войдите в свой аккаунт Apple App Store, а затем нажмите ${ subscriptions }."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Просто войдите в свой аккаунт Play Маркет, а затем нажмите ${ subscriptions }."
       ],
@@ -9411,6 +9406,36 @@
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } предлагает ${ planMaxSpace } хранилища на одного пользователя для электронной почты, вложений, событий, файлов и паролей. Вы также имеете право на ежегодные бонусы на хранилище."
       ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } календарь на пользователя",
+        "${ planNumberOfCalendars } календаря на пользователя",
+        "${ planNumberOfCalendars } календарей на пользователя",
+        "${ planNumberOfCalendars } календарей на пользователя"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } пользовательский домен электронной почты",
+        "${ planNumberOfDomains } пользовательских домена электронной почты",
+        "${ planNumberOfDomains } пользовательских доменов электронной почты",
+        "${ planNumberOfDomains } пользовательских доменов электронной почты"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } адрес электронной почты",
+        "${ planNumberOfEmails } адреса электронной почты",
+        "${ planNumberOfEmails } адресов электронной почты",
+        "${ planNumberOfEmails } адресов электронной почты"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } адрес электронной почты на пользователя",
+        "${ planNumberOfEmails } адреса электронной почты на пользователя",
+        "${ planNumberOfEmails } адресов электронной почты на пользователя",
+        "${ planNumberOfEmails } адресов электронной почты на пользователя"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } пользователь",
+        "${ planNumberOfUsers } пользователя",
+        "${ planNumberOfUsers } пользователей",
+        "${ planNumberOfUsers } пользователей"
+      ],
       "2 users": [
         "2 пользователя"
       ],
@@ -9444,6 +9469,9 @@
       "Comprehensive privacy and security": [
         "Комплексная защита конфиденциальности и безопасности"
       ],
+      "Dark web monitoring": [
+        "Мониторинг Темной паутины"
+      ],
       "Desktop app and email client support (via IMAP)": [
         "Поддержка приложений для настольных компьютеров и почтовых клиентов (через IMAP)"
       ],
@@ -9462,11 +9490,23 @@
       "Extra storage and users": [
         "Дополнительные место в хранилище и пользователи"
       ],
+      "Folders, labels and filters": [
+        "Папки, ярлыки и фильтры"
+      ],
       "Helping activists in Hong Kong": [
         "Помощь активистам в Гонконге"
       ],
       "How our customer support team got our VPN app directly into people's hands.": [
         "Как наша команда поддержки клиентов передала наше приложение VPN прямо в руки людей."
+      ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "Как мы боролись, когда ${ BRAND_NAME } был заблокирован в результате агрессивной кампании."
+      ],
+      "How we supported local activists when privacy and free speech were threatened.": [
+        "Как мы поддержали местных активистов, когда под угрозой оказались частная жизнь и свобода слова."
+      ],
+      "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Если ваше потребление превышает пределы бесплатного тарифа, вы можете столкнуться с ограничением доступа к функциям продукта и своим данным."
       ],
       "Invited members will be removed from your organization": [
         "Приглашенные участники будут удалены из вашей организации"
@@ -9528,6 +9568,9 @@
       "Unlimited privacy for two": [
         "Неограниченная конфиденциальность для двоих"
       ],
+      "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
+        "Подписки пользователей - это единственный источник дохода ${ BRAND_NAME }. Ваша поддержка позволяет нам оставаться независимыми, продолжать нашу миссию по обеспечению неприкосновенности частной жизни в Интернете, а также помогать активистам и организациям, борющимся за свободу."
+      ],
       "Users won’t be able to manage their calendars": [
         "Пользователи не смогут управлять своими календарями"
       ],
@@ -9548,6 +9591,9 @@
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
         "При отказе от ${ planName } вы будете переведены на ${ BRAND_NAME } Free, который предлагает только до 1 ГБ хранилища для почты и до 5 ГБ хранилища для Drive. Ваша команда будет испытывать перебои в работе, поскольку дополнительные пользователи не поддерживаются на бесплатном тарифе."
+      ],
+      "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Когда ваша подписка на тариф ${ planName } закончится ${ expiryDate }, вы будете переведены на тарифный план ${ BRAND_NAME } Free."
       ],
       "Yearly free storage bonuses": [
         "Ежегодные бесплатные бонусы для места в хранилище"
@@ -10600,9 +10646,6 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберите схему PGP, которая будет применяться при подписи или шифровании для пользователя. Учтите, что PGP/Inline принудительно устанавливает формат сообщений на \"простой текст\""
       ],
-      "Shared end-to-end encrypted": [
-        "Общий доступ со сквозным шифрованием"
-      ],
       "Show side panel": [
         "Показать боковую панель"
       ],
@@ -10712,11 +10755,6 @@
       ],
       "No ads": [
         "Без рекламы"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Доступ к защищенным основным серверам, быстрая загрузка P2P/BitTorrent, Tor через VPN и многое другое."
       ]
     },
     "wallet_signup_2024: Info": {

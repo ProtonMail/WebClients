@@ -5,12 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "Ok": [
-        "OK"
-      ],
-      "Toggle Contact app": [
-        "Toggle Contacts app"
-      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "You can't send vCard files of more than ${ maxAttachments } contact",
         "You can't send vCard files of more than ${ maxAttachments } contacts"
@@ -22,90 +16,20 @@
         "Includes support for ${ domains } custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more."
       ]
     },
-    "Description": {
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }."
-      ]
-    },
-    "Error": {
-      "You have reached the contacts limit for your account": [
-        "You have reached the number of contacts limit for your account"
-      ]
-    },
-    "familyOffer_2023:Family plan": {
-      "Manage addresses.": [
-        "Manage addresses"
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "You cannot accept this invitation with your current plan."
-      ]
-    },
-    "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users ": [
-        "Configure your family account and invite users"
-      ]
-    },
     "Info": {
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice }/month)"
-      ],
-      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely."
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report."
-      ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
         "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to Computers."
       ]
     },
-    "Mimetype": {
-      "GZip Compressed Archive": [
-        "GZip Archive"
-      ],
-      "JPEG images": [
-        "JPEG image"
-      ],
-      "Portable Network Graphics": [
-        "Portable Network Graphics (PNG)"
-      ]
-    },
-    "new_plans: feature": {
-      "Tor over VPN": [
-        "TOR over VPN"
-      ]
-    },
     "new_plans: tooltip": {
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalize your email signature with logos, images, social media icons, links to your contact details, and more"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Route your internet traffic through the TOR network with a single click"
       ]
     },
     "Notification": {
-      "Stopping to share this item has failed": [
-        "Stopping the sharing of this item has failed"
-      ],
-      "The item was succefully added to your drive": [
-        "The item was successfully added to your drive"
-      ],
       "This item was succefully removed from your list": [
         "This item was successfully removed from your list",
         "All items were successfully removed from your list"
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar."
-      ]
-    },
-    "Security Center": {
-      "Used on amazon for shopping, etc.": [
-        "Used on Amazon for shopping, etc."
       ]
     },
     "session_recovery:available:info": {
@@ -120,21 +44,6 @@
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "You have ${ timeRemaining.inSeconds } second to reset your password.",
         "You have ${ timeRemaining.inSeconds } seconds to reset your password."
-      ]
-    },
-    "Subscription change warning": {
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Just sign in to your Apple App Store account, then select ${ subscriptions }."
-      ]
-    },
-    "Tooltip": {
-      "Shared end-to-end encrypted": [
-        "Shared with end-to-end encryption"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more."
       ]
     }
   }
