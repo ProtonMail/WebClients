@@ -16,6 +16,7 @@ import {
     getFetchedEphemeral,
     previousSelector,
 } from '@proton/redux-utilities';
+import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSubscription } from '@proton/shared/lib/api/payments';
 import { FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
@@ -140,17 +141,28 @@ const modelThunk = (options?: {
         };
         const getPayload = async () => {
             const user = await dispatch(userThunk());
-            if (!canFetch(user)) {
-                return { value: freeSubscription, type: ValueType.dummy };
-            }
-            const { Subscription, UpcomingSubscription } = await extraArgument.api<{
-                Subscription: Subscription;
-                UpcomingSubscription: Subscription;
-            }>(getSubscription());
-            return {
-                value: formatSubscription(Subscription, UpcomingSubscription),
-                type: ValueType.complete,
+            const defaultValue = {
+                value: freeSubscription,
+                type: ValueType.dummy,
             };
+            if (!canFetch(user)) {
+                return defaultValue;
+            }
+            try {
+                const { Subscription, UpcomingSubscription } = await extraArgument.api<{
+                    Subscription: Subscription;
+                    UpcomingSubscription: Subscription;
+                }>(getSubscription());
+                return {
+                    value: formatSubscription(Subscription, UpcomingSubscription),
+                    type: ValueType.complete,
+                };
+            } catch (e: any) {
+                if (getIsMissingScopeError(e)) {
+                    return defaultValue;
+                }
+                throw e;
+            }
         };
         const cb = async () => {
             try {
