@@ -88,6 +88,8 @@ export enum UpsellRef {
     PASS_FAMILY_FREE_399 = 'pass_family_free_399',
     PASS_FAMILY_PLUS_399 = 'pass_family_plus_399',
     PASS_FAMILY_1LT_299 = 'pass_family_1lt_299',
+    PASS_FAMILY_BF_2024 = 'bf_24_pass-family',
+    PASS_LIFETIME_BF_2024 = 'bf_24_pass-lifetime',
 }
 
 export const MAX_LOCAL_STORAGE_SIZE = 5 * 1024 * 1024; /* 5MB */
