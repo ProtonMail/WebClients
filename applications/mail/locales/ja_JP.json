@@ -804,9 +804,6 @@
       "OK": [
         "OK"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "Open": [
         "開く"
       ],
@@ -924,6 +921,12 @@
       "Remove this label": [
         "このラベルを削除"
       ],
+      "Replace": [
+        "置き換える"
+      ],
+      "Replaces the selected text in your message": [
+        "メッセージ内の選択したテキストを置き換えます"
+      ],
       "Reply": [
         "返信"
       ],
@@ -989,6 +992,9 @@
       ],
       "Schedule message": [
         "メッセージを送信予約"
+      ],
+      "Scroll to bottom": [
+        "一番下までスクロール"
       ],
       "Search": [
         "検索"
@@ -1172,9 +1178,6 @@
       ],
       "Toggle Calendar app": [
         "カレンダーアプリを切り替え"
-      ],
-      "Toggle Contact app": [
-        "連絡先アプリを切り替え"
       ],
       "Toggle security center app": [
         "セキュリティセンターアプリを切り替える"
@@ -3269,9 +3272,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の暗号化とインポート... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "CSV および VCF ファイル経由でインポートする場合は、ファイルが ${ MAX_IMPORT_FILE_SIZE_STRING } または ${ MAX_IMPORT_CONTACTS_STRING } の連絡先を超えないようにしてください。 ファイルが大きい場合は、より小さいファイルに分割してください。 ${ learnMoreLink }。"
-      ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "執筆アシスタントなどを無制限に利用するために、${ BRAND_NAME } Duo にアップグレードしてください。"
       ],
@@ -3874,12 +3874,6 @@
       "Request timed out": [
         "リクエストがタイムアウトしました"
       ],
-      "Require at least one action": [
-        "少なくとも 1 つのアクションが必要です"
-      ],
-      "Require at least one condition": [
-        "少なくとも 1 つの条件が必要です"
-      ],
       "Signature not verified": [
         "署名が検証されていません"
       ],
@@ -4032,9 +4026,6 @@
       ],
       "You did not provide a file.": [
         "ファイルが選択されていません。"
-      ],
-      "You have reached the contacts limit for your account": [
-        "アカウントの連絡先が上限に達しています。"
       ],
       "You have reached the maximum number of calendars.": [
         "カレンダーの上限数に達しました。"
@@ -4396,9 +4387,6 @@
       "Lifetime accounts cannot join a family plan.": [
         "Lifetime アカウントはファミリープランに参加できません。"
       ],
-      "Manage addresses.": [
-        "アドレスの管理"
-      ],
       "Sorry, you can't switch plans at this time.": [
         "申し訳ありませんが、現在あなたのプランは変更できません。"
       ],
@@ -4438,9 +4426,6 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users ": [
-        "家族アカウントを設定し、ユーザーを招待します "
-      ],
       "Set up your family": [
         "家族を設定"
       ],
@@ -4614,11 +4599,6 @@
         "未読"
       ]
     },
-    "Filter option to only show message with attachments": {
-      "Has file": [
-        "添付ファイルあり"
-      ]
-    },
     "Filter preview": {
       "read": [
         "既読にする"
@@ -4701,9 +4681,6 @@
       ],
       "No credit card required.": [
         "クレジットカード不要."
-      ],
-      "Try the app-new desktop app": [
-        "新しいデスクトップアプリを試す"
       ],
       "Upgrade now": [
         "今すぐアップグレード"
@@ -5343,9 +5320,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } 人のメンバー)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /月)"
-      ],
       "(Filter if ALL of the following conditions are met)": [
         "(以下のすべての条件が満たされた場合に動作します)"
       ],
@@ -5441,9 +5415,6 @@
       ],
       "Another tip will be displayed next time you open Mail": [
         "次回メールを開いた際に、別のヒントが表示されます"
-      ],
-      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
-        "すべてのサブフォルダーも削除されます。このフォルダー「${ nameDeleted }」内のメールは削除されず、すべてのメールフォルダーで確認できます。"
       ],
       "Applying actions to conversations": [
         "会話に適用する操作"
@@ -5741,9 +5712,6 @@
       ],
       "Emails are automatically signed": [
         "電子メールは自動的に署名されます"
-      ],
-      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "このラベル「${ nameDeleted }」が付いたメールは削除されず、各フォルダで見つけることができます。"
       ],
       "embedded image": [
         "個の埋め込み画像"
@@ -6573,9 +6541,6 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "${ BRAND_NAME } の新しい機能、アップデート、製品を一般公開される前にお試しください。 これによりアプリケーションがリロードされます"
       ],
-      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
-        "日付、名前、メールアドレス、件名のみで検索する場合はオフにします。メッセージ内容の検索を無効にし、ダウンロードしたメッセージを削除するには、設定に進みます。"
-      ],
       "Turn on to search the content of your messages": [
         "メッセージ内容の検索をオンにします"
       ],
@@ -6605,9 +6570,6 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "アップグレードして更なるアドレスを手に入れましょう。"
-      ],
-      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "アップグレードして、30 日以上経過したごみ箱のメールと迷惑メールを自動で削除しましょう。"
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "アップグレードしてさらなるフォルダー、フィルター、アドレスを作成します。"
@@ -6719,9 +6681,6 @@
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "宛先の受信トレイとあなたの送信済みフォルダーからメッセージをいつ自動的に削除しますか？"
-      ],
-      "When do you want your message to be sent?": [
-        "いつメッセージを送信しますか？"
       ],
       "When do you want your message to self-destruct?": [
         "メッセージの有効期限をいつに設定しますか？"
@@ -7680,9 +7639,6 @@
       "Sync with system": [
         "システムと同期する"
       ],
-      "Synchronize with system": [
-        "システムと同期する"
-      ],
       "System information": [
         "システム情報"
       ],
@@ -8149,9 +8105,6 @@
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "プライバシーを保護するために画像は読み込まれませんでした。"
-      ],
-      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
-        "ブラウザーはサーバーの識別子を検証することができませんでした。この画像は HTTP プロトコルを使用してホストしているようです。"
       ]
     },
     "Message notification": {
@@ -8675,9 +8628,6 @@
       "Support for up to 2 users": [
         "最大2ユーザーのサポート"
       ],
-      "Tor over VPN": [
-        "Tor over VPN"
-      ],
       "Two-factor authentication": [
         "2 要素認証"
       ],
@@ -8902,9 +8852,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "最大 ${ n } 個の電子メール アドレス/エイリアスを作成し、家族に割り当てることができます。 これらはオンライン Id に使用します。\n例: ショッピングアカウントのJohnShopper@${ domain }。"
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "一つ(複数)の専用IPアドレスを持つ専用サーバーをプライベートゲートウェイに追加することで、きめ細かなアクセス制御が可能になります。"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "複数のサーバーを経由してインターネットトラフィックを送受信することで、高度なプライバシー上の脅威からあなたを保護します"
       ],
@@ -8988,9 +8935,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "ユーザーのパスワードとユーザーの 2 段階認証をリセットします"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "あなたのインターネットトラフィックを、簡単な操作で Tor 経由でのルーティングに切り替えることができます"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
@@ -9143,11 +9087,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "インポートするには、GIF にあるように要求されたすべてのアイテムを選択します。"
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "${ BRAND_NAME } のアクセス権を選択してください: メールメッセージと設定の閲覧 / 連絡先の閲覧とダウンロード / Google Agendaの全アジェンダの閲覧とダウンロード。"
       ]
     },
     "Onboarding List Placeholder": {
@@ -9747,9 +9686,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } をお試しください"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "例: Amazonでの買い物に使用"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "メールアドレスを求められた場合、このエイリアスを代わりに入力してください。エイリアスは${ passLink } によって提供されます。"
@@ -10419,9 +10355,6 @@
     "Subscription change warning": {
       "Got it": [
         "了承"
-      ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Apple App Store アカウントにサインインし、${ subscriptions } を押すだけです。"
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Play ストア アカウントにサインインして、${ subscriptions } を押すだけです。"
@@ -11805,9 +11738,6 @@
     "Tor out of date": {
       "stable release": [
         "安定版"
-      ],
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "このバージョンの Tor Brower はサポートしていません。最新の ${ stableRelease } に更新してください。"
       ]
     },
     "Update font modal": {
@@ -11865,11 +11795,6 @@
       ],
       "No ads": [
         "広告なし"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "セキュアなコア サーバー、高速 P2P/BitTorrent ダウンロード、Tor over VPN などへのアクセス。"
       ]
     },
     "wallet_signup_2024: Info": {

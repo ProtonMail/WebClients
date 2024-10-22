@@ -831,9 +831,6 @@
       "OK": [
         "V redu"
       ],
-      "Ok": [
-        "V redu"
-      ],
       "Open": [
         "Odpri"
       ],
@@ -1208,9 +1205,6 @@
       ],
       "Toggle Calendar app": [
         "Prikaži/skrij aplikacijo Koledar"
-      ],
-      "Toggle Contact app": [
-        "Prikaži/skrij aplikacijo Stiki"
       ],
       "Toggle security center app": [
         "Preklop aplikacije varnostnega centra"
@@ -3395,9 +3389,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifriranje in uvažanje stikov … To lahko traja nekaj minut. Ko se postopek konča, lahko zaprete to okno."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Uvozite lahko datoteko CSV ali VCF, v kolikor ne presega ${ MAX_IMPORT_FILE_SIZE_STRING } ali ${ MAX_IMPORT_CONTACTS_STRING } stikov. Če je vaša datoteka večja, jo razdelite na več manjših. ${ learnMoreLink }."
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Zagotovite si neomejeno število vzdevkov in 500 GB prostora za shranjevanje z ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
@@ -4105,12 +4096,6 @@
       "Request timed out": [
         "Zahteva se je iztekla"
       ],
-      "Require at least one action": [
-        "Zahtevano je vsaj eno dejanje"
-      ],
-      "Require at least one condition": [
-        "Zahtevan je vsaj en pogoj"
-      ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Pošiljanje priponk je omejeno, dokler ne dosežete dovoljene omejitve paketa oziroma ga nadgradite."
       ],
@@ -4275,9 +4260,6 @@
       ],
       "You did not provide a file.": [
         "Manjka datoteka."
-      ],
-      "You have reached the contacts limit for your account": [
-        "Dosegli ste mejo za število stikov v vašem računu."
       ],
       "You have reached the maximum number of calendars.": [
         "Dosegli ste največje število koledarjev."
@@ -4651,9 +4633,6 @@
       "Invited by: ${ inviteEmail }": [
         "Vabilo od: ${ inviteEmail }"
       ],
-      "Manage addresses.": [
-        "Upravljanje naslovov"
-      ],
       "Sorry, you can't switch plans at this time.": [
         "Oprostite, trenutno ne morete zamenjati paketa."
       ],
@@ -4699,9 +4678,6 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users ": [
-        "Nastavite svoj družinski račun in povabite uporabnike. "
-      ],
       "Set up your family": [
         "Ustvari svojo družino"
       ],
@@ -4893,11 +4869,6 @@
         "Neprebrano"
       ]
     },
-    "Filter option to only show message with attachments": {
-      "Has file": [
-        "Vsebuje datoteko"
-      ]
-    },
     "Filter preview": {
       "read": [
         "prebrano"
@@ -4989,9 +4960,6 @@
       ],
       "Start free trial": [
         "Začnite brezplačni preizkus"
-      ],
-      "Try the app-new desktop app": [
-        "Preizkusite novo aplikacijo za namizne računalnike"
       ],
       "Upgrade now": [
         "Nadgradi zdaj"
@@ -5778,9 +5746,6 @@
         "(${ memberCount } člani)",
         "(${ memberCount } članov)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } na mesec)"
-      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtriraj, če so izpolnjeni VSI naslednji pogoji)"
       ],
@@ -5894,9 +5859,6 @@
       ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Vsa načrtovana ali preložena sporočila bodo preklicana."
-      ],
-      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
-        "Izbrisane bodo tudi vse podmape. Vendar e-poštna sporočila, shranjena v tej mapi ${ nameDeleted }, ne bodo izbrisana in jih je mogoče najti v mapi Vsa pošta."
       ],
       "Applying actions to conversations": [
         "Uporaba dejanj za pogovore"
@@ -6215,9 +6177,6 @@
       ],
       "Emails are automatically signed": [
         "Sporočila so samodejno podpisana"
-      ],
-      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "Sporočila označena s to oznako ${ nameDeleted } ne bodo izbrisana in jih je še vedno mogoče najti v ustrezni mapi."
       ],
       "embedded image": [
         "vdelana slika",
@@ -6864,9 +6823,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Ker ste zvest uporabnik, smo vašemu računu omogočili dodatne funkcionalnosti."
       ],
-      "Snoozed until  ${ dateString } at ${ formattedTime }": [
-        "Dremež do ${ dateString } ob ${ formattedTime }"
-      ],
       "Snoozed until today, ${ formattedTime }": [
         "Dremež do danes, ${ formattedTime }"
       ],
@@ -7140,9 +7096,6 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Preizkusite nove zmožnosti, posodobitve in izdelke ${ BRAND_NAME }, preden postanejo dostopni širši javnosti. Aplikacija se bo znova naložila."
       ],
-      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
-        "Izklopite možnost iskanja samo po datumu, imenu, e-poštnem naslovu ali vrstici zadeve. Če želite onemogočiti iskanje po vsebini sporočil in izbrisati prenesena sporočila, pojdite v nastavitve."
-      ],
       "Turn on to search the content of your messages": [
         "Vklopi iskanje po vsebini tvojih sporočil."
       ],
@@ -7172,9 +7125,6 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Nadgradite naročniški paket za priključitev dodatnih naslovov računu."
-      ],
-      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "Nadgradite naročniški paket za samodejno brisanje sporočil, ki so v smetnjaku ali neželeni pošti več kot 30 dni."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Nadgradite naročniški paket za ustvaritev več map, filtrov in naslovov."
@@ -7292,9 +7242,6 @@
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Kdaj naj se sporočilo samodejno izbriše iz prejemnikovega e-poštnega predala in iz vaše mape Poslano?"
-      ],
-      "When do you want your message to be sent?": [
-        "Kdaj želite, da se sporočilo pošlje?"
       ],
       "When do you want your message to self-destruct?": [
         "Kdaj naj se sporočilo samouniči?"
@@ -8319,9 +8266,6 @@
       "Sync with system": [
         "Usklajeno s sistemom"
       ],
-      "Synchronize with system": [
-        "Usklajeno s sistemom."
-      ],
       "System information": [
         "Podatki o sistemu"
       ],
@@ -8821,9 +8765,6 @@
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "Zaradi zaščite vaše zasebnosti se slika ni naložila."
-      ],
-      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
-        "Vaš brskalnik ni mogel potrditi istovetnosti oddaljenega strežnika. Slika morda gostuje z uporabo protokola http."
       ]
     },
     "Message notification": {
@@ -9398,9 +9339,6 @@
       "Strict no-logs policy": [
         "Strikten pravilnik brez dnevniških datotek"
       ],
-      "Tor over VPN": [
-        "Tor preko VPN"
-      ],
       "Two-factor authentication": [
         "Dvojno preverjanja pristnosti"
       ],
@@ -9633,9 +9571,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Ustvarite do ${ n } e-poštnih naslovov/vzdevkov, ki jih lahko dodelite družinskim članom. Uporabite jih za spletne identitete, npr. JohnShopper@${ domain } za nakupovalne račune."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Namenske strežnike z namenskimi naslovi IP lahko dodate zasebnim prehodom, da omogočite natančno nastavljen nadzor dostopa"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Brani pred grožnjo zasebnosti VPN tako, da vaš internetni promet preusmeri prek več strežnikov"
       ],
@@ -9725,9 +9660,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Ponastavi gesla uporabnika in ponastavi dvojno preverjanje pristnosti za uporabnike"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Z enim klikom preusmerite internetni promet prek omrežja Tor."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zaščitite vaše datoteke s šifrirano shrambo v oblaku. Vključuje samodejno sinhronizacijo, šifrirano delitev datotek in drugo."
@@ -9897,11 +9829,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Uvoz bo uspešen, ko izberete vse zahtevane predmete, kot je prikazano v GIF."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Izberite, do česa lahko ${ BRAND_NAME } dostopa: oglejte si svoja e-poštna sporočila in nastavitve, oglejte si in prenesite svoje stike, oglejte si in prenesite vse dnevne rede, do katerih dostopate iz storitve Google Agenda."
       ]
     },
     "Onboarding List Placeholder": {
@@ -10517,9 +10444,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Poizkusite ${ PASS_APP_NAME }"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "Uporablja se v spletnih trgovinah, kot je Amazon, itd."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Ko vas vprašajo za vaš e-poštni naslov, namesto tega navedite ta vzdevek. Vzdevke ponuja ${ passLink }."
@@ -11355,9 +11279,6 @@
     "Subscription change warning": {
       "Got it": [
         "Razumem"
-      ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Samo prijavite se v svoj račun v Apple App Store in nato pritisnite ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Samo prijavite se v svoj račun v Trgovini Play in nato pritisnite ${ subscriptions }."
@@ -12975,9 +12896,6 @@
     "Tor out of date": {
       "stable release": [
         "izdajno različico"
-      ],
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Ta različica brskalnika Tor ni podprta. Posodobite na najnovejšo ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -13056,11 +12974,6 @@
       ],
       "No ads": [
         "Brez oglasov"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Dostop do varnih strežnikov, do hitrih prenosov P2P/BitTorrent, Tor prek VPN in še več"
       ]
     },
     "wallet_signup_2024: Info": {
