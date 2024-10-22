@@ -1,10 +1,9 @@
-@use "sass:map";
+@use 'sass:map';
 @import '~@proton/styles/scss/lib';
 
 .transfers-manager {
-	position: fixed;
-	inset-inline-end: 0;
-	inset-block-end: 0;
+	width: 100%;
+	position: relative;
 	z-index: map.get($z-indexes, 'transfer-manager');
 	box-shadow: var(--shadow-lifted);
 	color: var(--text-norm);
