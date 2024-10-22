@@ -5,6 +5,7 @@ import { getSettings } from "../../store/settingsStore";
 import { isLinux, isMac, isWindows } from "../helpers";
 import { appSession } from "../session";
 import { MAIL_APP_NAME } from "@proton/shared/lib/constants";
+import { isProdEnv } from "../isProdEnv";
 
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 
@@ -29,7 +30,7 @@ export const getWindowConfig = (): BrowserWindowConstructorOptions => {
     const settings = getSettings();
 
     return {
-        title: MAIL_APP_NAME,
+        title: isProdEnv() ? MAIL_APP_NAME : `${MAIL_APP_NAME} Dev`,
         icon: join(app.getAppPath(), "assets/icon.png"),
         x,
         y,
