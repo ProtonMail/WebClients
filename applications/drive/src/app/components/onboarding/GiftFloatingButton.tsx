@@ -11,13 +11,11 @@ import {
     Spotlight,
     useActiveBreakpoint,
     useAuthentication,
-    useDrawerWidth,
     useLocalState,
 } from '@proton/components';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, BRAND_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
-import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { ChecklistKey } from '@proton/shared/lib/interfaces';
 import spotlightIcon from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
@@ -28,6 +26,8 @@ import { useFileUploadInput } from '../../store';
 import { useFileSharingModal } from '../modals/SelectLinkToShareModal/SelectLinkToShareModal';
 import { useLinkSharingModal } from '../modals/ShareLinkModal/ShareLinkModal';
 import useChecklist from './useChecklist';
+
+import './GiftFloatingButton.scss';
 
 export default function GiftFloatingButton() {
     const checklist = useChecklist();
@@ -168,10 +168,6 @@ function FloatingSpotlight({
     hasClose?: boolean;
     onClick: () => void;
 }) {
-    const drawerWidth = useDrawerWidth();
-    // 1.6 is the default right offset on the floating button. Adding to that space that the drawer is taking
-    const rightOffset = drawerWidth / rootFontSize() + 1.6;
-
     return (
         <Spotlight
             content={content}
@@ -182,14 +178,14 @@ function FloatingSpotlight({
             hasClose={hasClose}
         >
             <FloatingButton
+                // Only way to override fab classes
+                id="gift-floating-button"
                 title={c('Action').t`Your 3 GB bonus`}
                 onClick={onClick}
                 color={color}
-                className="w-custom h-custom"
-                style={{ '--w-custom': '3em', '--h-custom': '3em', '--right': `${rightOffset}rem` }}
                 data-testid="gift-floating-button"
             >
-                <Icon size={6} name={icon} className="m-auto" />
+                <Icon size={5} name={icon} className="m-auto" />
             </FloatingButton>
         </Spotlight>
     );
