@@ -16,11 +16,11 @@
       "Accept": [
         "Prihvati"
       ],
-      "activate": [
-        "aktiviraj"
-      ],
       "Activate": [
         "Aktiviraj"
+      ],
+      "activate": [
+        "aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -51,6 +51,9 @@
       ],
       "Add domain": [
         "Dodaj domenu"
+      ],
+      "Add email address": [
+        "Dodaj adresu e-pošte"
       ],
       "Add filter": [
         "Dodaj filtar"
@@ -117,9 +120,6 @@
       ],
       "Change": [
         "Promijeni"
-      ],
-      "Change other email subscriptions": [
-        "Promijeni druge pretplate e-pošte"
       ],
       "Change password": [
         "Promjena lozinke"
@@ -226,6 +226,9 @@
       "Delete and confirm": [
         "Izbriši i potvrdi"
       ],
+      "Delete group": [
+        "Izbriši grupu"
+      ],
       "Delete link": [
         "Izbrisati poveznicu"
       ],
@@ -252,6 +255,12 @@
       ],
       "Discard": [
         "Odbaci"
+      ],
+      "Discard changes": [
+        "Odbaci promjene"
+      ],
+      "Domain name": [
+        "Naziv domene"
       ],
       "Don't show again": [
         "Ne prikazuj ponovno"
@@ -484,9 +493,6 @@
       "OK": [
         "U redu"
       ],
-      "Ok": [
-        "U redu"
-      ],
       "Open": [
         "Otvori"
       ],
@@ -603,9 +609,6 @@
       ],
       "Restore": [
         "Vrati"
-      ],
-      "Resubscribe": [
-        "Ponovna pretplata"
       ],
       "Resume": [
         "Nastavi"
@@ -920,6 +923,9 @@
       ],
       "Disabled": [
         "Onemogućeno"
+      ],
+      "Inactive": [
+        "Neaktivano"
       ],
       "Orphan": [
         "Siroče"
@@ -2347,6 +2353,11 @@
         "Izbriši"
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Jeste li sigurni da želite izbrisati ovu grupu?"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Neplaćena faktura"
@@ -2428,14 +2439,23 @@
       ]
     },
     "Email Unsubscribe": {
+      "Change other email subscriptions": [
+        "Promijeni druge pretplate e-pošte"
+      ],
       "Email subscriptions": [
         "Redovno slanje e-pošte"
       ],
+      "Resubscribe": [
+        "Ponovna pretplata"
+      ],
+      "Unsubscribe": [
+        "Otkaži pretplatu"
+      ],
+      "Unsubscribe?": [
+        "Otkaži pretplatu?"
+      ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "Ponovno ste se pretplatili na ${ categoriesJsx } e-poruke."
-      ],
-      "You unsubscribed from ${ categoriesJsx } emails.": [
-        "Otkazali ste pretplatu na ${ categoriesJsx } e-poruka."
       ]
     },
     "Email Unsubscribe Categories": {
@@ -2713,12 +2733,6 @@
       ],
       "Process aborted": [
         "Proces je prekinut"
-      ],
-      "Require at least one action": [
-        "Zahtijeva najmanje jednu radnju"
-      ],
-      "Require at least one condition": [
-        "Zahtijeva najmanje jedan uvjet"
       ],
       "Signature not verified": [
         "Potpis nije ovjeren"
@@ -3045,9 +3059,6 @@
       ],
       "Got it": [
         "Shvaćam"
-      ],
-      "Invite member to your family": [
-        "Pozovite korisnika u svoju obitelj"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -3061,9 +3072,6 @@
       ],
       "customer support": [
         "korisnička podrška"
-      ],
-      "Manage addresses.": [
-        "Upravljanje adresama."
       ],
       "Manage user accounts": [
         "Upravljanje korisničkim računima"
@@ -3120,8 +3128,14 @@
         "Veza za do ${ plusVpnConnections } uređaja",
         "Veza za do ${ plusVpnConnections } uređaja"
       ],
+      "Continue": [
+        "Nastavite"
+      ],
       "Fastest VPN servers": [
         "Najbrži VPN poslužitelji"
+      ],
+      "Remove": [
+        "Ukloni"
       ],
       "Secure Core servers": [
         "Secure Core poslužitelji"
@@ -3401,6 +3415,11 @@
         "${ memberCount } član",
         "${ memberCount } članova",
         "${ memberCount } člana"
+      ]
+    },
+    "Group state": {
+      "Active": [
+        "Aktivno"
       ]
     },
     "Header": {
@@ -3877,9 +3896,6 @@
       "and": [
         "i"
       ],
-      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
-        "Sve pod mape će također biti izbrisane. Ali poruke spremljene u mapi ${ nameDeleted } neće biti izbrisane i mogu se pronaći u mapi Sva pošta."
-      ],
       "Are you sure you want to delete this calendar?": [
         "Jeste li sigurni da želite ukloniti ovaj kalendar?"
       ],
@@ -4305,6 +4321,9 @@
       "purchase additional storage": [
         "kupite dodatni prostor za pohranu"
       ],
+      "Recently used servers:": [
+        "Nedavno korišteni poslužitelji:"
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
       ],
@@ -4659,6 +4678,14 @@
     "Input placeholder": {
       "Add label": [
         "Dodaj oznaku"
+      ]
+    },
+    "invitation status": {
+      "Paused": [
+        "Pauzirano"
+      ],
+      "Pending": [
+        "Na čekanju"
       ]
     },
     "Invoice state display as badge": {
@@ -5070,6 +5097,9 @@
       "Authenticator app": [
         "Aplikacija autentifikatora"
       ],
+      "Auto show embedded images": [
+        "Automatski prikaži ugrađene slike"
+      ],
       "Auto show remote images": [
         "Automatsko prikazivanje udaljenih slika"
       ],
@@ -5223,6 +5253,9 @@
       "Disable animations": [
         "Onemogući animacije"
       ],
+      "Disabled": [
+        "Onemogućeno"
+      ],
       "Display name": [
         "Zaslonski naziv"
       ],
@@ -5270,6 +5303,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Unesite lozinku za ključ s otiskom prsta: ${ fingerprintCode }"
+      ],
+      "Event": [
+        "Događaj"
       ],
       "Event duration": [
         "Trajanje događaja"
@@ -5490,11 +5526,17 @@
       "Recovery phrase": [
         "Fraza za oporavak"
       ],
+      "Remove image metadata": [
+        "Ukloni meta podatke slika"
+      ],
       "Repeat password": [
         "Ponovite lozinku"
       ],
       "Reveal password": [
         "Prikaži lozinku"
+      ],
+      "Search": [
+        "Pretraži"
       ],
       "Send auto-reply": [
         "Pošalji automatski odgovor"
@@ -5543,6 +5585,9 @@
       ],
       "Sticky labels": [
         "Automatske oznake"
+      ],
+      "Sync with system": [
+        "Sinkroniziraj s operativnim sistemom"
       ],
       "System information": [
         "Informacije o sustavu"
@@ -6242,9 +6287,6 @@
       "Strict no-logs policy": [
         "Stroga politika ne spremanja zapisa"
       ],
-      "Tor over VPN": [
-        "Tor preko VPN-a"
-      ],
       "Two-factor authentication": [
         "Dvofaktorska autentikacija"
       ],
@@ -6352,6 +6394,9 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 vjerodajnice su ponovno stvorene"
+      ],
+      "Too many recent API requests": [
+        "Prevelik broj zahtjeva API-ju"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -6624,6 +6669,11 @@
     "Option group label": {
       "Create new calendar": [
         "Stvori novi kalendar"
+      ]
+    },
+    "orgidentity": {
+      "Verify": [
+        "Potvrda"
       ]
     },
     "OS compatibility": {
@@ -6969,9 +7019,37 @@
         "Korisnik"
       ]
     },
+    "Safety review": {
+      "Add a recovery phone number": [
+        "Dodajte telefonski broj za oporavak"
+      ],
+      "Download ${ size }": [
+        "Preuzmi ${ size }"
+      ],
+      "Invalid code": [
+        "Nevažeći kôd"
+      ],
+      "Recovery email address": [
+        "Adresa e-pošte za oporavak"
+      ],
+      "Recovery phone number": [
+        "Broj mobitela za oporavak"
+      ],
+      "Show more": [
+        "Prikaži više"
+      ],
+      "Verify": [
+        "Potvrda"
+      ]
+    },
     "saml: Action": {
       "Cancel": [
         "Poništi"
+      ]
+    },
+    "saml: Error": {
+      "Something went wrong": [
+        "Nešto je pošlo po zlu"
       ]
     },
     "saml: Info": {
@@ -7081,6 +7159,9 @@
       ],
       "Request password reset": [
         "Zahtjev za ponovno postavljanje lozinke"
+      ],
+      "Use recovery method": [
+        "Koristite metodu oporavka"
       ]
     },
     "session_recovery:initiation:title": {
@@ -7426,9 +7507,6 @@
     "Subscription change warning": {
       "Got it": [
         "Razumijem"
-      ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Samo se prijavite na svoj Apple App Store račun, zatim pritisnite ${ subscriptions }."
       ]
     },
     "Subscription reminder": {
@@ -7440,6 +7518,9 @@
       ],
       "Cancel subscription?": [
         "Otkazati pretplatu?"
+      ],
+      "Got it": [
+        "Razumijem"
       ],
       "Learn more": [
         "Više informacija"
@@ -7531,12 +7612,6 @@
       ],
       "Gift code applied": [
         "Kôd darovnog kupona je primjenjen"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Ako ste unijeli važeću adresu e-pošte za oporavak, poslat ćemo vam e-poštu s vašim korisničkim imenima u sljedećoj minuti."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Ako ste unijeli važeći broj telefona za oporavak, poslat ćemo vam tekstualnu poruku s vašim korisničkim imenima u sljedećoj minuti."
       ],
       "Import record deleted": [
         "Zapis uvoza je izbrisan"
@@ -7690,6 +7765,9 @@
       ],
       "Email addresses": [
         "Adrese e-pošte"
+      ],
+      "Event": [
+        "Događaj"
       ],
       "Import": [
         "Uvoz"
@@ -7956,6 +8034,9 @@
       "Delete folder?": [
         "Izbriši mapu?"
       ],
+      "Delete group?": [
+        "Izbriši grupu?"
+      ],
       "Delete label?": [
         "Izbriši oznaku?"
       ],
@@ -7974,8 +8055,14 @@
       "Device connected!": [
         "Uređaj je povezan!"
       ],
+      "Device name": [
+        "Naziv uređaja"
+      ],
       "Disable two-factor authentication": [
         "Onemogući dvofaktorsku autentikaciju"
+      ],
+      "Disable two-factor authentication?": [
+        "Onemogući dvofaktorsku autentikaciju?"
       ],
       "Discard changes?": [
         "Odbaci promjene?"
@@ -8364,6 +8451,9 @@
       "Take precautions to avoid data loss!": [
         "Poduzmite mjere opreza kako biste izbjegli gubitak podataka!"
       ],
+      "Text": [
+        "Tekst"
+      ],
       "Theme": [
         "Tema"
       ],
@@ -8602,6 +8692,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Automatski potpišite sve svoje odlazne poruke kako bi korisnici mogli provjeriti autentičnost vaših poruka. To se radi u kombinaciji sa zadanim PGP postavkama koje su postavljene ispod."
+      ]
+    },
+    "unprivatization": {
+      "Cancel": [
+        "Poništi"
+      ],
+      "reject": [
+        "odbiti"
       ]
     },
     "Update font modal": {
