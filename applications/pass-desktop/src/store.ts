@@ -14,7 +14,7 @@ export const store = new Store<RootStore>({
     accessPropertiesByDotNotation: false,
     clearInvalidConfig: true,
     migrations: {
-        '>=1.24.0': (s) => {
+        '>=1.25.0': (s) => {
             const distribution = s.get('update.distribution') as number;
             if (!distribution) return;
             s.set('update', { distribution });
