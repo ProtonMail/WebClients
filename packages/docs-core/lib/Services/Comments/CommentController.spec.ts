@@ -13,6 +13,7 @@ import type { LoadThreads } from '../../UseCase/LoadThreads'
 import type { HandleRealtimeCommentsEvent } from '../../UseCase/HandleRealtimeCommentsEvent'
 import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
 import type { MetricService } from '../Metrics/MetricService'
+import type { UnleashClient } from '@proton/unleash'
 
 describe('CommentController', () => {
   let controller: CommentController
@@ -75,6 +76,13 @@ describe('CommentController', () => {
 
     const metricService = {} as unknown as jest.Mocked<MetricService>
 
+    const getLatestDocumentName = jest.fn()
+
+    const unleashClient = {
+      isReady: () => false,
+      on: jest.fn(),
+    } as unknown as jest.Mocked<UnleashClient>
+
     controller = new CommentController(
       document,
       keys,
@@ -86,6 +94,8 @@ describe('CommentController', () => {
       createComment,
       loadThreads,
       handleRealtimeCommentsEvent,
+      getLatestDocumentName,
+      unleashClient,
       eventBus,
       logger,
     )

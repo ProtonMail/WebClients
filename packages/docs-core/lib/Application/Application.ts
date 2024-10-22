@@ -16,6 +16,7 @@ import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrap
 import type { PublicDocLoader } from '../Services/DocumentLoader/PublicDocLoader'
 import type { HttpHeaders } from '../Api/DocsApi'
 import type { DuplicateDocument } from '../UseCase/DuplicateDocument'
+import type { UnleashClient } from '@proton/unleash'
 
 declare const window: CustomWindow
 
@@ -26,6 +27,7 @@ export class Application implements ApplicationInterface {
     this.publicContextHeaders,
     this.compatWrapper,
     this.appVersion,
+    this.unleashClient,
   )
 
   constructor(
@@ -34,6 +36,7 @@ export class Application implements ApplicationInterface {
     private imageProxyParams: ImageProxyParams | undefined,
     public readonly compatWrapper: DriveCompatWrapper,
     private appVersion: string,
+    private unleashClient: UnleashClient,
   ) {
     this.deps.get<MetricService>(App_TYPES.MetricService).initialize()
   }
