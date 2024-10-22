@@ -10,6 +10,7 @@ import {
     aliasBlockContactRequest,
     aliasContactInfoRequest,
     aliasContactListRequest,
+    aliasCreateContactRequest,
     aliasDeleteContactRequest,
     aliasDetailsRequest,
     aliasOptionsRequest,
@@ -22,6 +23,7 @@ import type {
     AliasContactGetResponse,
     AliasContactInfoDTO,
     AliasContactListResponse,
+    AliasContactNewDTO,
     AliasDetails,
     AliasMailbox,
     AliasOptions,
@@ -486,6 +488,25 @@ export const aliasGetContactInfo = requestActionsFactory<AliasContactInfoDTO, Al
     },
 });
 
+export const aliasCreateContact = requestActionsFactory<AliasContactNewDTO, boolean>('alias::contact::create')({
+    key: ({ shareId, itemId }) => aliasCreateContactRequest(shareId, itemId),
+    success: {
+        prepare: () =>
+            withNotification({
+                type: 'success',
+                text: c('Success').t`Contact successfully created`,
+            })({ payload: {} }),
+    },
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                text: c('Error').t`Failed to create the contact`,
+                type: 'error',
+                error,
+            })({ payload: {} }),
+    },
+});
+
 export const aliasDeleteContact = requestActionsFactory<AliasContactInfoDTO, boolean>('alias::contact::delete')({
     key: ({ shareId, itemId }) => aliasDeleteContactRequest(shareId, itemId),
     success: {
@@ -494,6 +515,14 @@ export const aliasDeleteContact = requestActionsFactory<AliasContactInfoDTO, boo
                 type: 'success',
                 text: c('Success').t`Contact successfully deleted`,
             })({ payload: {} }),
+    },
+    failure: {
+        prepare: (error, payload) =>
+            withNotification({
+                text: c('Error').t`Failed to delete the contact`,
+                type: 'error',
+                error,
+            })({ payload }),
     },
 });
 
@@ -506,6 +535,14 @@ export const aliasBlockContact = requestActionsFactory<AliasContactBlockDTO, boo
                 text: blocked
                     ? c('Success').t`Contact successfully blocked`
                     : c('Success').t`Contact successfully unblocked`,
+            })({ payload: {} }),
+    },
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                text: c('Error').t`Failed to block the contact`,
+                type: 'error',
+                error,
             })({ payload: {} }),
     },
 });

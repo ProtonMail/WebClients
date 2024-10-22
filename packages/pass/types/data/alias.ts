@@ -15,6 +15,7 @@ export type AliasDetails = {
     stats: AliasStats;
 };
 export type AliasPending = { pendingAliasID: string; aliasEmail: string; aliasNote: string };
+export type AliasContactNewDTO = UniqueItem & { name: string; email: string };
 export type AliasContactInfoDTO = UniqueItem & { contactId: number };
 export type AliasContactBlockDTO = AliasContactInfoDTO & { blocked: boolean };
 export type AliasCreateFromPendingDTO = { shareId: string; pendingAliases: AliasPending[] };
