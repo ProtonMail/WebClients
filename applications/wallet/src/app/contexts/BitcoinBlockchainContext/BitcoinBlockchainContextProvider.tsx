@@ -8,7 +8,6 @@ import { BitcoinBlockchainContext } from '.';
 import { type WalletMap } from '../../types';
 import { useBitcoinAddresses } from './useBitcoinAddresses';
 import { useBlockchainFeesEstimation } from './useBlockchainFeesEstimation';
-import { useBlockchainMinimumFee } from './useBlockchainMinimumFee';
 import { useWalletsChainData } from './useWalletsChainData';
 
 interface Props {
@@ -37,7 +36,6 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
     } = useWalletsChainData(apiWalletsData);
 
     const { feesEstimation, loading: loadingFeesEstimation } = useBlockchainFeesEstimation();
-    const { minimumFee, loading: loadingMinimumFee } = useBlockchainMinimumFee();
 
     const { manageBitcoinAddressPool, bitcoinAddressHelperByWalletAccountId } = useBitcoinAddresses({
         apiWalletsData,
@@ -67,8 +65,6 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
 
                 feesEstimation,
                 loadingFeesEstimation,
-                minimumFee,
-                loadingMinimumFee,
 
                 manageBitcoinAddressPool,
                 bitcoinAddressHelperByWalletAccountId,
