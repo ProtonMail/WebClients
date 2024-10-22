@@ -14,6 +14,7 @@ import { ShareType } from '@proton/pass/types';
 import { unwrap } from '@proton/pass/utils/fp/promises';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { entriesMap } from '@proton/pass/utils/object/map';
+import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 
 import * as processes from './processes';
@@ -65,20 +66,17 @@ export const createPassCrypto = (): PassCryptoWorker => {
         });
     };
 
-    /* Resolves the decrypted address key reference */
-    const getPrimaryAddressKeyById = async (addressId: string) => {
+    const getDecryptedAddressKeys = async (addressId: string): Promise<DecryptedAddressKey[]> => {
         assertHydrated(context);
 
         const address = context.addresses.find((address) => address.ID === addressId);
         if (address === undefined) throw new PassCryptoError(`Could not find address with ID ${logId(addressId)}`);
+        return getDecryptedAddressKeysHelper(address.Keys, context.user, context.userKeys, authStore.getPassword()!);
+    };
 
-        const [primaryAddressKey] = await getDecryptedAddressKeysHelper(
-            address.Keys,
-            context.user,
-            context.userKeys,
-            authStore.getPassword()!
-        );
-
+    /** Resolves the decrypted address key reference */
+    const getPrimaryAddressKeyById = async (addressId: string): Promise<DecryptedAddressKey> => {
+        const [primaryAddressKey] = await getDecryptedAddressKeys(addressId);
         return primaryAddressKey;
     };
 
@@ -138,6 +136,8 @@ export const createPassCrypto = (): PassCryptoWorker => {
         },
 
         getShareManager,
+
+        getDecryptedAddressKeys,
 
         /* Creating a vault does not register a share manager :
          * call PassCrypto::openShare to register it */

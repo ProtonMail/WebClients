@@ -28,7 +28,7 @@ export default createRequestSaga({
 
         if (yield revalidateWebsiteRules(lastRequestedAt)) {
             const response: Response = yield fetch(WEBSITE_RULES_URL);
-            const rules = yield response.json();
+            const rules: unknown = yield response.json();
             if (validateRules(rules)) yield getStorage?.().setItem('websiteRules', JSON.stringify(rules));
         }
 
