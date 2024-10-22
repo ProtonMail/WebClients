@@ -1,8 +1,7 @@
 import type { Store } from 'redux';
 
-import { ITEM_COUNT_RATING_PROMPT, PASS_BF_2023_DATES } from '@proton/pass/constants';
+import { ITEM_COUNT_RATING_PROMPT, PASS_BF_2024_DATES } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
-import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
     selectCreatedItemsCount,
     selectFeatureFlag,
@@ -58,18 +57,6 @@ export const createUpdateRule = (getAvailableUpdate: () => MaybeNull<string>) =>
             const shouldPrompt = !previous || previousAckVersion !== availableVersion;
 
             return availableVersion !== null && shouldPrompt;
-        },
-    });
-
-export const createBlackFridayRule = (store: Store<State>) =>
-    createOnboardingRule({
-        message: OnboardingMessage.BLACK_FRIDAY_OFFER,
-        when: (previous) => {
-            const passPlan = selectPassPlan(store.getState());
-            if (isPaidPlan(passPlan)) return false;
-
-            const now = api.getState().serverTime?.getTime() ?? Date.now();
-            return !previous && now > PASS_BF_2023_DATES[0] && now < PASS_BF_2023_DATES[1];
         },
     });
 
@@ -159,5 +146,50 @@ export const createAliasSyncEnableRule = (store: Store<State>) =>
             const { pendingAliasToSync } = selectUserData(state);
 
             return enabled && !previous && pendingAliasToSync > 0;
+        },
+    });
+
+/* - Single message for both Lifetime and Family offers
+ * - `extraData` stores the acknowledged feature flag
+ * - Pass Family offer shown to free and pass2023 users
+ * - Pass Unlimited offer shown to pass2023 users */
+export const createBlackFriday2024Rule = (store: Store<State>) =>
+    createOnboardingRule({
+        message: OnboardingMessage.BLACK_FRIDAY_2024,
+        onAcknowledge: (ack) => {
+            /** FIXME: >= 1.25.0 - leverage `extraData` parameter
+             * passed to `onAcknowledge` instead of inferring which
+             * offer was acknowledged by the user */
+            const state = store.getState();
+            const plan = selectUserPlan(state);
+            const lifetimeUpsell = selectFeatureFlag(PassFeature.PassBlackFriday2024Lifetime)(state);
+            const lifeTimeAck = lifetimeUpsell && plan?.InternalName === 'pass2023';
+
+            return {
+                ...ack,
+                extraData: lifeTimeAck
+                    ? PassFeature.PassBlackFriday2024Lifetime
+                    : PassFeature.PassBlackFriday2024Family,
+            };
+        },
+        when: (previous) => {
+            /* sanity check in-case feature flags are unreliable */
+            const now = api.getState().serverTime?.getTime() ?? Date.now();
+            if (now > PASS_BF_2024_DATES[1]) return false;
+
+            const state = store.getState();
+            const plan = selectUserPlan(state);
+            const familyUpsell = selectFeatureFlag(PassFeature.PassBlackFriday2024Family)(state);
+            const lifetimeUpsell = selectFeatureFlag(PassFeature.PassBlackFriday2024Lifetime)(state);
+
+            switch (plan?.InternalName) {
+                case 'pass2023':
+                    if (lifetimeUpsell && previous?.extraData !== PassFeature.PassBlackFriday2024Lifetime) return true;
+                    return !previous && familyUpsell;
+                case 'free':
+                    return !previous && familyUpsell;
+                default:
+                    return false;
+            }
         },
     });
