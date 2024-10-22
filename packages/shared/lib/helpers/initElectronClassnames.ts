@@ -1,12 +1,20 @@
 import { canGetInboxDesktopInfo, getInboxDesktopInfo, hasInboxDesktopFeature } from '../desktop/ipcHelpers';
 import type { ThemeSetting } from '../themes/themes';
-import { ThemeModeSetting, electronAppTheme, getDarkThemes } from '../themes/themes';
+import { ColorScheme, ThemeModeSetting, electronAppTheme, getDarkThemes } from '../themes/themes';
 import { isElectronApp, isElectronOnMac, isElectronOnWindows } from './desktop';
 
 export const updateElectronThemeModeClassnames = (theme: ThemeSetting) => {
-    const prefersDark =
-        theme.Mode === ThemeModeSetting.Dark ||
-        (theme.Mode === ThemeModeSetting.Auto && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    let prefersDark = false;
+
+    if (theme.Mode === ThemeModeSetting.Dark) {
+        prefersDark = true;
+    } else if (theme.Mode === ThemeModeSetting.Auto) {
+        if (canGetInboxDesktopInfo && hasInboxDesktopFeature('FullTheme')) {
+            prefersDark = getInboxDesktopInfo('colorScheme') === ColorScheme.Dark;
+        } else {
+            prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        }
+    }
 
     const selectedTheme = prefersDark ? theme.DarkTheme : theme.LightTheme;
     const isUsingDarkTheme = getDarkThemes().includes(selectedTheme);
