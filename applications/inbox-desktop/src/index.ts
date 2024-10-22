@@ -19,12 +19,12 @@ import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
 import { registerLogIPCForwardTransport } from "./utils/logIPCForwardTransport";
 import { handleStartupMailto, handleAppReadyMailto } from "./utils/protocol/mailto";
 import { checkDefaultProtocols } from "./utils/protocol/default";
-import { initializeTelemetry } from "./utils/telemetry";
+import { initializeSentry } from "./utils/telemetry";
 import { appSession } from "./utils/session";
 
 (async function () {
     initializeLog();
-    await initializeTelemetry();
+    await initializeSentry();
 
     mainLogger.info(
         "App start is mac:",
