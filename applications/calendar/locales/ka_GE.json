@@ -485,9 +485,6 @@
       "OK": [
         "დიახ"
       ],
-      "Ok": [
-        "დიახ"
-      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-ის მორგება"
       ],
@@ -679,9 +676,6 @@
       ],
       "Today": [
         "დღეს"
-      ],
-      "Toggle Contact app": [
-        "კონტაქტების აპის გადართვა"
       ],
       "Toggle settings": [
         "პარამეტრების გადართვა"
@@ -1241,9 +1235,6 @@
       ]
     },
     "Calendar sharing access option label": {
-      "Edit (view, create and edit event details)": [
-        "ჩასწორება (მოვლენის დეტალების ნახვა, შექმნა და ჩასწორება)"
-      ],
       "View (see all event details)": [
         "ხედი (ყველა იხილეთ მოვლენის დეტალებში)"
       ]
@@ -1346,6 +1337,47 @@
       ],
       "Your subscription is ending soon": [
         "თქვენი გამოწერა მალე დასრულდება"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB } საცავი"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } ელფოსტის საცავი"
+      ],
+      "Advanced account protection": [
+        "დამატებითი ანგარიშის დაცვა"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "${ BRAND_NAME }-ის ყველა აპი და ფასიანი ფუნქციები"
+      ],
+      "Cancel and downgrade": [
+        "გაუქმება და ტარიფის ჩამოწევა"
+      ],
+      "Cloud storage and sharing for large files": [
+        "ღრუბლოვანი საცავი და გაზიარება დიდი ფაილებისთვის"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "დაშიფრული ღრუბლოვანი საცავი სურათებისა და დოკუმენტებისთვის"
+      ],
+      "Encrypted password manager": [
+        "დაშიფრული პაროლების მმართველი"
+      ],
+      "Save ${ upsellSavings }": [
+        "დაზოგეთ ${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "დაზოგეთ თანხა ${ upsellPlanName }-ით"
+      ],
+      "Secure personal and shared calendar": [
+        "უსაფრთხო საკუთარი და გაზიარებული კალენდარი"
+      ],
+      "Try ${ planName }": [
+        "სცადეთ ${ planName }"
+      ],
+      "Ultra fast and private VPN": [
+        "ზეჩქარი და კონფიდენციალური VPN"
       ]
     },
     "Checkout row": {
@@ -2472,9 +2504,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "მიმდინარეობს კონტაქტების დაშიფვრა და შემოტანა... ამას რამდენიმე წუთი შეიძლება დასჭირდეს. როცა პროცესი დასრულდება, ეს ფანჯარა შეგეძლებათ, დახუროთ."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "CSV და VCF ფაილების შემოსატანად დარწმუნდით, რომ ფაილი ${ MAX_IMPORT_FILE_SIZE_STRING }-ზე დიდი არაა და არ შეიცავს ${ MAX_IMPORT_CONTACTS_STRING }-ზე მეტ კონტაქტს. თუ თქვენი ფაილი უფრო დიდია, დაყავით ის უფრო პატარა ფაილებად. ${ learnMoreLink }."
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "მიიღეთ შეუზღუდავი ფსევდონიმები და 500 გბ საცავი ${ PLAN_NAMES[PLANS.BUNDLE] }-სთან ერთად."
       ],
@@ -2496,9 +2525,6 @@
       "Set a recovery method to prevent losing access to your account.": [
         "დააყენეთ აღდგენის მეთოდი, რომ თავიდან აიცილოთ თქვენს ანგარიშზე წვდომის დაკარგვა."
       ],
-      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
-        "ამას რამდენიმე წუთი შეიძლება, დასჭირდეს. კალენდრით სარგებლობა ჩვეულებრივ შეგიძლიათ."
-      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "იმისათვის, რომ გქონდეთ უმაღლესი შესაძლო უსაფრთხოება თქვენი ანგარიშისთვის, დააყენეთ აღდგენის ფრაზა."
       ],
@@ -2510,6 +2536,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "გადაათრიეთ და ისე დაალაგეთ პრიორიტეტები კონტაქტებს შორის. ნუ შემოიტანთ კონტაქტებს, რომლის შერწყმაც არ გსურთ."
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "კონტაქტის ჯგუფებთან ერთად ელფოსტების გაგზავნა ამ ჯგუფის წევრებისთვის ერთი წკაპით შეგიძლიათ."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "შეგიძლიათ, შემოიტანოთ ფაილები iCAL ფორმატში (ICS ფაილები). ფაილის მაქსიმალური ზომაა ${ MAX_IMPORT_FILE_SIZE_STRING } და შეიძლება შეიცავდეს ${ MAX_IMPORT_EVENTS_STRING }-მდე მოვლენას. თუ თქვენი ფაილი უფრო დიდია, სცადეთ, ის უფრო პატარა ფაილებად დახლიჩოთ."
@@ -3264,9 +3293,6 @@
         "თქვენ არ შეგიძლიათ გაგზავნოთ ელფოსტა ${ maxContacts }-ზე მეტი მიმღებით",
         "თქვენ არ შეგიძლიათ გაგზავნოთ ელფოსტა ${ maxContacts }-ზე მეტი მიმღებით"
       ],
-      "You have reached the contacts limit for your account": [
-        "თქვენ მიაღწიეთ კონტაქტების რაოდენობის ზღვარს თქვენი ანგარიშისთვის"
-      ],
       "You have reached the maximum number of calendars.": [
         "თქვენ მიაღწიეთ კალენდრების მაქსიმალურ რაოდენობას."
       ],
@@ -3660,9 +3686,6 @@
       "Lifetime accounts cannot join a family plan.": [
         "სამუდამო ანგარიშები ოჯახის გეგმაში ვერ შევლენ."
       ],
-      "Manage addresses.": [
-        "მისამართების მართვა."
-      ],
       "Owners of a plan with members cannot join another family plan.": [
         "წევრების მქონე ტარიფების მფლობელებს სხვა ოჯახურ ტარიფში გაერთიანება არ შეუძლიათ."
       ],
@@ -3698,9 +3721,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "თქვენი ანგარიში ${ usedSpace } ადგილს იკავებს, რაც თქვენთვის გამოყოფილ ${ inviteSpace }-ზე მეტია. წაშალეთ ზოგი რამ ან ტარიფის ადმინისტრატორს თქვენი საცავის გაზრდა სთხოვეთ."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "მიმდინარე სატარიფო გეგმით მოსაწვევს ვერ დაეთანხმებით."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3720,9 +3740,6 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users ": [
-        "მოირგეთ თქვენი საოჯახო ანგარიში და მოიწვიეთ მომხმარებლები "
-      ],
       "Set up your family": [
         "მოირგეთ თქვენი ოჯახი"
       ],
@@ -4269,9 +4286,6 @@
         "(${ memberCount } წევრი)",
         "(${ memberCount } წევრი)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /თვეში)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } დამატებითი საცავი"
       ],
@@ -4762,9 +4776,6 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "სხვა მომხმარებლები თქვენს ორგანიზაციაში დაინახავენ თქვენს დაკავებულ სლოტებს. მოვლენის დეტალები გაზიარებული არ იქნება."
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "ყურადღება მიაქციეთ ჩვენს გაფრთხილებებს. თუ გაჟონილ ინფორმაციაში თავი ვერ ამოიცანით, ეს ანგარიში, შეგიძლიათ, დაიკიდოთ."
       ],
       "password": [
         "პაროლი"
@@ -6378,6 +6389,10 @@
         "${ n } VPN კავშირი",
         "${ n } VPN კავშირი"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } მომხმარებელი",
+        "${ numberOfUsers } მომხამრებელი"
+      ],
       "${ options }-day file version history": [
         "${ options }-დღიანი ფაილის ვერსიის ისტორია",
         "${ options }-დღიანი ფაილის ვერსიის ისტორია"
@@ -6679,9 +6694,6 @@
       "Sync and backup all your files across devices": [
         "დაასინქრონეთ და დაამარქაფეთ ყველა თქვენი ფაილი ყველა თქვენს მოწყობილობაზე"
       ],
-      "Tor over VPN": [
-        "Tor VPN-ის ზემოდან"
-      ],
       "Two-factor authentication": [
         "2FA"
       ],
@@ -6945,9 +6957,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "შექმენით ${ n }-მდე ელფოსტის მისამართი/ფსევდონიმი, რომლებიც შეგიძლიათ, ოჯახის წევრებს მიანიჭოთ. გამოიყენეთ ისინი, მაგალითად, შოინგისთვის. JemalShpper@${ domain }."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "გამოყოფილი სერვერები გამოყოფილი IP მისამართ(ებ)-ით, რომლებიც, წვდომის უფრო ზუსტი მართვისთვის, შეგიძლიათ, პირად რაუტერებში ჩაამატოთ"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "დაიცავით თავი VPN-ის გამოვლენისგან თქვენი ტრაფიკის ბევრ სერვერზე გატარებით"
       ],
@@ -7043,9 +7052,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "მომხმარებლების პაროლებისა და 2FA-ის აღდგენა"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "გადაამისამართეთ თქვენი ინტერნეტ-ტრაფიკი Tor-ის ქსელში თაგუნას ერთადერთი წკაპუნით"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს მოიცავს ავტომატურ სინქრონიზაციას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
@@ -7337,11 +7343,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "შემოსატანად საჭიროა, რომ მონიშნოთ ყველა საჭირო ელემენტი, ისე, როგორც ეს GIF-ზეა."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "აირჩიეთ, რასთან აქვს ${ BRAND_NAME }-ს წვდომა: ნახოს თქვენი ელფოსტის შეტყობინებები დ პარამეტრები, ნახოს და გადმოწეროს თქვენი კონტაქტები; გადმოწეროს და ნახოს ყველა გეგმა Google Agenda-დან."
       ]
     },
     "Onboarding": {
@@ -7870,9 +7871,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "სცადეთ ${ PASS_APP_NAME }"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "გამოიყენება Amazon-ზე შოპინგისთვის და ა.შ."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "როცა გკითხავენ ელფოსტის მისამართს, ეს ფსევდონიმი მიეცით. ფსევდონიმები უზრუნველყოფილია პროგრამით ${ passLink }."
@@ -8558,9 +8556,6 @@
       "Got it": [
         "გავიგე"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "შედით თქვენს Apple App Store-ის ანგარიშზე და ${ subscriptions }-ს დააწექით."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "შედით თქვენს Play Store-ის ანგარიშზე და ${ subscriptions }-ს დააწექით."
       ],
@@ -8588,6 +8583,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME } ფასიანი ფუნქციებით"
+      ],
       "${ dayDiff } day left": [
         "დარჩენილია ${ dayDiff } დღე",
         "დარჩენილია ${ dayDiff } დღე"
@@ -8634,6 +8632,29 @@
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } გთავაზობთ ${ planMaxSpace } საცავს თითოეული მომხმრებლისთვის ელფოსტების, მიმაგრებული ფაილების, მოვლენებისა და პაროლებისთვის. ასევე შეგიძლიათ წლიური საცავის ბონუსების მიღებაც."
       ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } კალენდარი თითოეული მომხმარებლისათვის",
+        "${ planNumberOfCalendars } კალენდარი თითოეული მომხმარებლისათვის"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი",
+        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } ელფოსტის მისამართი",
+        "${ planNumberOfEmails } ელფოსტის მისამართი"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "ელფოსტის ${ planNumberOfEmails } მისამართი თითოეული მომხმარებლისთვის",
+        "ელფოსტის ${ planNumberOfEmails } მისამართი თითოეული მომხმარებლისთვის"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } მომხმარებელი",
+        "${ planNumberOfUsers } მომხმარებელი"
+      ],
+      "${ PROTON_SENTINEL_NAME } advanced account protection": [
+        "${ PROTON_SENTINEL_NAME } - ანგარიშის დამატებითი დაცვა"
+      ],
       "2 users": [
         "2 მომხმარებელი"
       ],
@@ -8667,6 +8688,9 @@
       "Comprehensive privacy and security": [
         "კომპლექსური კონფიდენციალობა და უსაფრთხოება"
       ],
+      "Dark web monitoring": [
+        "Dark Web-ის მონიტორინგი"
+      ],
       "Desktop app and email client support (via IMAP)": [
         "კომპიუტერის აპი და ელფოსტის კლიენტის მხარდაჭერა (IMAP-ით)"
       ],
@@ -8685,11 +8709,26 @@
       "Extra storage and users": [
         "დამატებითი საცავი და მომხმარებლები"
       ],
+      "Folders, labels and filters": [
+        "საქაღალდეები, ჭდეები და ფილტრები"
+      ],
+      "Folders, labels, and custom filters": [
+        "საქაღალდეები, ჭდეები და მომხმარებლის ფილტრები"
+      ],
       "Helping activists in Hong Kong": [
         "ვეხმარებით აქტვისტებს ჰონკ-კონგში"
       ],
       "How our customer support team got our VPN app directly into people's hands.": [
         "როგორ მოათავსა ჩვენმა მხარდაჭერის გუნდმა ჩვენი VPN-ის აპი პირდაპირ ხალხის გამოშვერილ ხელში."
+      ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "როგორ შევუბრუნეთ ხელი, როცა ${ BRAND_NAME } დაიბლოკა აგრესულ კამპანიაში."
+      ],
+      "How we supported local activists when privacy and free speech were threatened.": [
+        "როგორ ვუჭერდით მხარს ლოკალურ აქტივისტებს, როცა კონფიდენციალობა და თავისუფალი სიტყვა საფრთხის ქვეშ იყო."
+      ],
+      "If you exceed free plan limits, you won't be able to:": [
+        "თუ გადააცილებთ უფასო სატარიფო გეგმის შეზღუდვებს, თქვენ არ შეგეძლებათ:"
       ],
       "Invited members will be removed from your organization": [
         "მოწვეული წევრები წაიშლება თქვენი ორგანიზაციიდან"
@@ -8702,6 +8741,9 @@
       ],
       "Learn more about our impact": [
         "გაიგეთ მეტი ჩვენი გავლენის შესახებ"
+      ],
+      "Limitations of the free plan:": [
+        "უფასო სატარიფო გეგმის შეზღუდვები:"
       ],
       "Make your business stand out": [
         "გახადეთ თქვენი ბიზნესი გამორჩეული"
@@ -8751,11 +8793,17 @@
       "Unlimited privacy for two": [
         "შეუზღუდავი კონფიდენციალობა ორისთვის"
       ],
+      "Upload any new files": [
+        "ატვირთეთ ნებისმიერი ახალი ფაილი"
+      ],
       "Users won’t be able to manage their calendars": [
         "მომხმარებლები თავიანთი კალენდრების მართვას ვერ შეძლებენ"
       ],
       "Users won’t be able to send emails": [
         "მომმხარებლები ელფოსტას ვერ გააგზავნიან"
+      ],
+      "Users won’t be able to upload files on their devices": [
+        "მომხმარებლებს თავიანთ მოწყობილობებზე ფაილების ატვირთვის საშუალება არ ექნებათ"
       ],
       "Version history": [
         "ვერსიის ისტორია"
@@ -9641,9 +9689,6 @@
       "Warning: suspected fake website": [
         "გაფრთხილება: დიდი ალბათობით, ვებგვერდი ყალბია"
       ],
-      "We're setting up Calendar search": [
-        "მიმდინარეობს კალენდრის ძებნის მორგება"
-      ],
       "We've locked some calendars to protect your data": [
         "თქვენი მონაცემების დასაცავად თქვენი ზოგიერთი კალენდარი დავბლოკეთ"
       ],
@@ -9849,11 +9894,6 @@
       ],
       "No ads": [
         "რეკლამის გარეშე"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "წვდომა Secure core-ის სერვერებზე, სწრაფ P2P/BitTorrent-ით გადმოწერებზე და Tor-VPN-ის-ზემოდან და სხვ."
       ]
     },
     "wallet_signup_2024: Info": {

@@ -485,9 +485,6 @@
       "OK": [
         "D'acord"
       ],
-      "Ok": [
-        "D'acord"
-      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Obrir ajustos de ${ CALENDAR_APP_NAME }"
       ],
@@ -679,9 +676,6 @@
       ],
       "Today": [
         "Avui"
-      ],
-      "Toggle Contact app": [
-        "Canvia a l'aplicació Contactes"
       ],
       "Toggle settings": [
         "Commuta les preferències"
@@ -1241,9 +1235,6 @@
       ]
     },
     "Calendar sharing access option label": {
-      "Edit (view, create and edit event details)": [
-        "Edita (mostra, crea i edita els detalls de l'esdeveniment)"
-      ],
       "View (see all event details)": [
         "Mostra (tots els detalls de l'esdeveniment)"
       ]
@@ -1346,6 +1337,26 @@
       ],
       "Your subscription is ending soon": [
         "La subscripció finalitzarà aviat"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "Emmagatzematge de ${ maxSpaceTB }"
+      ],
+      "Advanced account protection": [
+        "Protecció avançada del compte"
+      ],
+      "Cancel and downgrade": [
+        "Cancel·la i passa a un pla inferior"
+      ],
+      "Encrypted password manager": [
+        "Gestor de contrasenyes xifrat"
+      ],
+      "Save ${ upsellSavings }": [
+        "Estalvieu el ${ upsellSavings }"
+      ],
+      "Try ${ planName }": [
+        "Proveu ${ planName }"
       ]
     },
     "Checkout row": {
@@ -2475,9 +2486,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Xifrar i importar contactes... És possible que passi uns quants minuts. Quan el procés s'hagi completat, podeu tancar aquesta modalitat."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Per importar a través de fitxers CSV i VCF, assegureu-vos que el fitxer no excedeixi ${ MAX_IMPORT_FILE_SIZE_STRING } o ${ MAX_IMPORT_CONTACTS_STRING } contactes. Si el fitxer és més gran, dividiu-lo en fitxers més petits. ${ learnMoreLink }."
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
@@ -2495,9 +2503,6 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Definiu un mètode de recuperació per evitar perdre l'accés al compte."
-      ],
-      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
-        "Això pot trigar uns minuts. Mentrestant, podeu continuar utilitzant el calendari com de costum."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Per a importar els vostres contactes de Google o Outlook, ${ easySwitchLink }"
@@ -3239,9 +3244,6 @@
         "No podeu enviar un correu a més d'${ maxContacts } destinatari.",
         "No podeu enviar un correu a més de ${ maxContacts } destinataris."
       ],
-      "You have reached the contacts limit for your account": [
-        "Heu arribat al límit de contactes per al vostre compte."
-      ],
       "You have reached the maximum number of calendars.": [
         "Heu arribat al nombre màxim de calendaris."
       ],
@@ -3623,9 +3625,6 @@
       "Invited by: ${ inviteEmail }": [
         "Convidat per: ${ inviteEmail }"
       ],
-      "Manage addresses.": [
-        "Gestiona les adreces."
-      ],
       "Sorry, you can't switch plans at this time.": [
         "No podeu canviar de pla en aquest moment."
       ],
@@ -3668,9 +3667,6 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users ": [
-        "Configureu el vostre compte familiar i convideu usuaris "
-      ],
       "Set up your family": [
         "Configureu la vostra família"
       ],
@@ -4212,9 +4208,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
-      ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice }/mes)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonificació d'emmagatzematge"
@@ -6293,6 +6286,10 @@
         "${ n } connexió VPN",
         "${ n } connexions VPN"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } usuari",
+        "Fins a ${ numberOfUsers } usuaris"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email",
         "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email"
@@ -6572,9 +6569,6 @@
       "Support for up to 2 users": [
         "Suport per a 2 usuaris"
       ],
-      "Tor over VPN": [
-        "Tor sobre VPN"
-      ],
       "Two-factor authentication": [
         "Autenticació de dos factors"
       ],
@@ -6826,9 +6820,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Creeu fins a ${ n } adreces de correu electrònic o àlies que podeu assignar als membres de la família. Utilitzeu-los per a les identitats en línia, p. ex., JoanCompres@${ domain } per als comptes de compres."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a activar un control d'accés més optimitzat"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defensa contra les amenaces a la privacitat de la VPN passant el vostre trànsit d'internet a través de múltiples servidors"
       ],
@@ -6918,9 +6909,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Restableix les contrasenyes i l'autenticació de dos factors dels usuaris."
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Dirigiu el vostre trànsit d'internet a través de la xarxa Tor amb un sol clic."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."
@@ -7212,11 +7200,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Perquè la importació funcioni, seleccioneu tots els elements sol·licitats tal com es mostra al fitxer GIF."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Seleccioneu a què pot accedir ${ BRAND_NAME }: visualitzeu els vostres missatges de correu electrònic i la vostra configuració, visualitzeu i baixeu els vostres contactes, visualitzeu i baixeu totes les agendes a les quals accediu des de Google Calendar."
       ]
     },
     "Onboarding": {
@@ -7724,9 +7707,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Proveu ${ PASS_APP_NAME }"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "S'utilitza a l'Amazon per a fer compres, etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Quan se us demani l'adreça de correu electrònic, doneu aquest àlies en el seu lloc. ${ passLink } proporciona els àlies."
@@ -8409,9 +8389,6 @@
       "Got it": [
         "Entesos"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Inicieu la sessió al vostre compte de l'App Store d'Apple i, després, premeu ${ subscriptions }."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Inicieu la sessió al vostre compte de la Play Store i, després, premeu ${ subscriptions }."
       ],
@@ -8477,6 +8454,10 @@
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } ofereix ${ planMaxSpace } d'emmagatzematge per usuari per a correus electrònics, adjunts, esdeveniments, fitxers i contrasenyes. També podeu optar a bonificacions anuals d'emmagatzematge."
       ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } usuari",
+        "${ planNumberOfUsers } usuaris"
+      ],
       "2 users": [
         "2 usuaris"
       ],
@@ -8527,6 +8508,9 @@
       ],
       "Extra storage and users": [
         "Emmagatzematge i bonificacions addicionals"
+      ],
+      "Folders, labels and filters": [
+        "Carpetes, etiquetes i filtres"
       ],
       "Helping activists in Hong Kong": [
         "Ajuda per als activistes a Hong Kong"
@@ -9478,9 +9462,6 @@
       "Warning: suspected fake website": [
         "Avís: presumpte lloc web fals"
       ],
-      "We're setting up Calendar search": [
-        "Estem configurant la cerca al calendari."
-      ],
       "We've locked some calendars to protect your data": [
         "Hem bloquejat alguns calendaris per a protegir les vostres dades"
       ],
@@ -9686,11 +9667,6 @@
       ],
       "No ads": [
         "Sense anuncis"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Accés a servidors Secure Core, descàrregues ràpides P2P/BitTorrent, Tor sobre VPN i moltes més funcions."
       ]
     },
     "wallet_signup_2024: Info": {
