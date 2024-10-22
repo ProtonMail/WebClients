@@ -210,7 +210,7 @@
         "금고 편집"
       ],
       "Enable this alias to receive emails sent to this alias": [
-        "이 이메일로 이메일을 전송하려면 이 별칭을 활성화하십시오."
+        "이 이메일 주소로 수신하려면 이 별칭을 활성화하십시오."
       ],
       "Entire vault": [
         "전체 금고 공유"
@@ -225,7 +225,7 @@
         "피드백 및 지원"
       ],
       "Fill in": [
-        "기입"
+        "채우기"
       ],
       "Fill password": [
         "비밀번호 채우기"
@@ -303,7 +303,7 @@
         "링크 만료시점"
       ],
       "Lock extension": [
-        "확장 프로그램 잠금"
+        "확장 프로그램 잠그기"
       ],
       "Make admin": [
         "관리자 생성"
@@ -571,9 +571,6 @@
       ],
       "Write us on Twitter": [
         "Twitter에서 작성"
-      ],
-      "Your password manager not here? Request it.": [
-        "사용 중이신 비밀번호 관리자가 없으신가요? 알려주세요."
       ]
     },
     "bf2023: Info": {
@@ -889,7 +886,7 @@
         "문제가 발생했습니다"
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
-        "무언가 문제가 발생했습니다. ${ PASS_APP_NAME } 확장을 다시 로드하세요. 문제가 기록되었습니다."
+        "무언가가 잘못 되었습니다. ${ PASS_APP_NAME } 확장을 다시 로드하세요. 문제가 기록되었습니다."
       ],
       "The file you are trying to import is empty": [
         "불러오기를 시도 중인 파일이 비어 있습니다."
@@ -901,7 +898,7 @@
         "안전한 링크 삭제 중 문제가 발생했습니다. 몇 분 후 다시 시도하십시오."
       ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
-        "이는 오랜 시간 ${ PASS_SHORT_APP_NAME }를 사용하지 않았거나 Safari 기록을 정리하면 발생할 수 있습니다."
+        "이는 오랜 시간 ${ PASS_SHORT_APP_NAME }를 사용하지 않았거나 Safari 내역을 삭제하면 발생할 수 있습니다."
       ],
       "Too many failed attempts. Please sign in again.": [
         "너무 많은 시도 실패. 다시 로그인 하세요."
@@ -986,7 +983,7 @@
         "${ PASS_APP_NAME } 얼리 서포터를 위한 특별 할인."
       ],
       "Get it for ${ price }/month": [
-        "${ price }에 구매하세요"
+        "매달 ${ price }에 구매하세요"
       ],
       "Introducing ${ planNameJSX }": [
         "${ planNameJSX }를 소개합니다"
@@ -1030,9 +1027,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        " 여러 개의 금고를 생성하기 위해 유료 요금제로 업그레이드 해보세요."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "\"${ payload.item.data.metadata.name }\" 항목이 무시되었습니다."
       ],
@@ -1067,10 +1061,10 @@
         "${ PASS_APP_NAME }가 오직 로그인, 메모, 신용 카드 및 신원 정보에 한해 불러옵니다."
       ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
-        "${ PASS_APP_NAME }가 생성된 비밀번호를 자동입력하는대로 알려줍니다."
+        "${ PASS_APP_NAME }가 생성된 비밀번호를 자동 입력되면 알려줍니다."
       ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
-        "${ PASS_APP_NAME }가 자격 증명 저장 및 업데이트를 표시합니다."
+        "${ PASS_APP_NAME }가 자격 증명을 저장 혹은 업데이트 하도록 창을 표시합니다."
       ],
       "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
         "${ PASS_APP_NAME }에서 저장된 패스키를 통한 인증을 제안합니다."
@@ -1169,7 +1163,7 @@
         "자동으로 생성된 비밀번호를 클립보드로 복사"
       ],
       "Autosaved on ${ url }": [
-        "${ url }에 자동 저장됨"
+        "${ url }에서 자동 저장됨"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "이 포맷으로 데이터를 내보내기 전에, Safari 설정-> \"일반\" 탭 ->\" 다운로드 후 '안전한' 파일 열기\"를 비활성화해주세요. 이 설정으로 Safari가 내보낸 파일을 잘못 추출하는 것을 방지할 수 있습니다."
@@ -1202,13 +1196,13 @@
         "${ domain }에 로그인하려면 저장한 패스키 중 선택하세요."
       ],
       "Click the icon to open it anytime.": [
-        "언제든지 열 수 있도록 아이콘을 선택하세요."
+        "언제든지 아이콘을 클릭해 여세요."
       ],
       "Close this window in order to use a security key or another passkey.": [
         "다른 보안 키 및 패스키를 사용하려면 이 창을 닫으십시오."
       ],
       "Close this window in order to use another passkey manager.": [
-        "타 패스키 관리자를 사용하려면 이 윈도우를 닫으십시오."
+        "다른 패스키를 사용하려면 이 창을 닫으십시오."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "삭제를 하려면 추가 비밀번호를 확인하십시오."
@@ -1315,12 +1309,6 @@
       "Expires in ${ remainingTime }": [
         "${ remainingTime }에 만료"
       ],
-      "Extra password successfuly created": [
-        "추가 비밀번호를 설정했습니다."
-      ],
-      "Extra password successfuly removed": [
-        "추가 비밀번호를 삭제했습니다."
-      ],
       "Fill in the CSV with your data": [
         "사용자의 데이터인 CSV를 채워 넣으십시오"
       ],
@@ -1331,7 +1319,7 @@
         "비밀번호 등에 쉽게 접근할 수 있습니다."
       ],
       "For security reason, your access needs to be confirmed": [
-        "보안 상의 이유로, 접근이 수락되어야 합니다."
+        "보안 상의 이유로, 접근이 확인되어야 합니다."
       ],
       "For security reasons, your access needs to be confirmed": [
         "보안 상의 이유로, 접근이 수락되어야 합니다."
@@ -1440,9 +1428,6 @@
       ],
       "Monitoring settings successfully updated": [
         "모니터링 설정이 업데이트되었습니다"
-      ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "${ PASS_APP_NAME }은 그저 비밀번호 관리자가 아닙니다. 당신의 비밀번호를 보호하는 것은 물론 이메일 별칭으로 개인적인 이메일 주소를 보호합니다. ${ MAIL_APP_NAME }에 쓰이는 것과 같은 기술로 작동하며, 당신의 데이터가 종단간 암호화되어 당신에 의해서만 접근할 수 있습니다."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
@@ -1642,9 +1627,6 @@
       "Select destination vault": [
         "대상 금고 선택"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "불러온 금고가 저장될 위치를 선택하세요."
-      ],
       "Selected items permanently deleted": [
         "선택한 항목을 영구적으로 지웠습니다."
       ],
@@ -1665,9 +1647,6 @@
       ],
       "Settings successfully updated": [
         "설정이 성공적으로 업데이트되었습니다."
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "최대 10명 까지 로그인을 공유하고, 메모를 보호하세요."
       ],
       "Sign in or create an account to continue.": [
         "계속하기 위해 로그인 하거나 계정을 생성하십시오."
@@ -1735,9 +1714,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "타 비밀번호 관리자에서 데이터를 이전하려면, 현재 사용 중인 비밀번호 관리자에 이동하여 데이터를 불러온 다음 ${ PASS_APP_NAME }에 업로드 하십시오. 데이터를 모두 가져오면 해당 추출된 파일은 삭제하십시오."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "불러온 데이터를 검토하려면, 브라우저 툴바의 Pass 아이콘을 클릭하십시오."
-      ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "확장을 새로고침 및 재설치하고 브라우저와 ${ PASS_SHORT_APP_NAME }를 최신 버전으로 유지하세요."
       ],
@@ -1785,9 +1761,6 @@
       ],
       "User's access removed": [
         "사용자 접근 삭제됨"
-      ],
-      "User's access sucessfuly updated": [
-        "사용자의 접근을 성공적으로 업데이트 했습니다."
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "금고 :${ payload.content.name }\" 이(가) 성공적으로 삭제되었습니다."
@@ -2016,9 +1989,6 @@
       "Capital letters (A-Z)": [
         "대문자 알파벳 (A-Z)"
       ],
-      "Capitalise": [
-        "대문자"
-      ],
       "Card": [
         "카드"
       ],
@@ -2205,9 +2175,6 @@
       "Import passwords": [
         "비밀번호 불러오기"
       ],
-      "Imported from : ": [
-        "불러온 위치 : "
-      ],
       "Imported on : ": [
         "불러온 위치 : "
       ],
@@ -2307,8 +2274,8 @@
       "Name on card": [
         "카드 소유자 이름"
       ],
-      "Need help ?": [
-        "도움이 필요한가요 ?"
+      "Need help?": [
+        "도움이 필요한가요?"
       ],
       "New vault": [
         "새 금고"
@@ -2365,7 +2332,7 @@
         "비밀번호"
       ],
       "Pause list": [
-        "항목 정지"
+        "중단 목록"
       ],
       "Personal details": [
         "개인 정보"
@@ -2392,7 +2359,7 @@
         "자동 저장할 때 묻기"
       ],
       "Prompt for auto-save when generating passwords": [
-        "패스워드 생성 시 자동저장 알려주기"
+        "패스워드 생성 시 자동 저장 알려주기"
       ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "추가 비밀번호로 ${ PASS_APP_NAME } 보호"
@@ -2458,7 +2425,7 @@
         "웹사이트 아이콘 표시"
       ],
       "Social security": [
-        "사회 보장 번호"
+        "주민등록번호"
       ],
       "Social security number": [
         "사회 보장 번호"
@@ -2504,12 +2471,6 @@
       ],
       "Today": [
         "오늘"
-      ],
-      "Total imported items : ": [
-        "총 불러온 항목 : "
-      ],
-      "Total items : ": [
-        "총 항목 : "
       ],
       "TOTP": [
         "TOTP"
@@ -2596,7 +2557,7 @@
         "생성하려고 하는 주소:"
       ],
       "Your browser will stop using its built-in password manager.": [
-        "브라우저 내장형 패스워드 관리자의 사용이 중지됩니다."
+        "브라우저에 내장된 패스워드 관리자가 중지됩니다."
       ],
       "ZIP or Postal code": [
         "우편번호"
@@ -2763,9 +2724,6 @@
       "Current version": [
         "현재 버전"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "금고 \"${ vaultName }\"을(를) 삭제하시겠어요?"
-      ],
       "Discard changes?": [
         "변경 사항을 취소할까요?"
       ],
@@ -2800,7 +2758,7 @@
         "권한 부여"
       ],
       "Hide my email": [
-        "Hide My Email"
+        "내 이메일 주소 숨기기"
       ],
       "History": [
         "기록"
@@ -2822,9 +2780,6 @@
       ],
       "Last modified": [
         "마지막 수정"
-      ],
-      "Leave vault ?": [
-        "금고를 떠납니까?"
       ],
       "Log in as...": [
         "다음으로 로그인..."
@@ -2867,9 +2822,6 @@
       ],
       "Pending access to the shared data": [
         "공유 데이터에 대한 접근 대기 중"
-      ],
-      "Permanently remove all items ?": [
-        "모든 항목을 완전히 삭제하시겠어요?"
       ],
       "Pin the extension": [
         "확장 프로그램 고정"
@@ -2938,7 +2890,7 @@
         "프리미엄 기능을 잠금해제 하려면 업그레이드"
       ],
       "Use my email": [
-        "나의 이메일 사용"
+        "내 이메일 주소 사용하기"
       ],
       "Vault": [
         "금고"
@@ -2981,14 +2933,8 @@
       "Section name cannot be empty": [
         "섹션 이름은 비워둘 수 없습니다"
       ],
-      "Url already exists": [
-        "URL이 이미 존재합니다."
-      ],
       "URL cannot be empty": [
         "URL은 필수 정보입니다."
-      ],
-      "Url is invalid": [
-        "URL이 잘못되었습니다."
       ],
       "URL is invalid": [
         "URL이 올바르지 않습니다."
@@ -3021,9 +2967,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "\"${ vaultName }\" 금고를 생성할 수 없음"
-      ],
-      "Could not send invitations to the following addresses :": [
-        "다음의 주소에 초대장을 보낼수 없었습니다 :"
       ],
       "Duplicate email addresses.": [
         "중복된 이메일 주소들입니다."
@@ -3094,9 +3037,6 @@
       "PGP encrypted export file requires passphrase": [
         "PGP 암호화 내보내기 파일은 비밀번호가 필요합니다."
       ],
-      "Please contact us for investigating the issue": [
-        "문제 조사를 위해 연락을 부탁드립니다."
-      ],
       "Please verify your email address in order to use email aliases": [
         "이메일 별칭을 사용하려면 이메일 주소를 인증해 주세요."
       ],
@@ -3136,9 +3076,6 @@
       "Vault name is required": [
         "금고 이름이 필요합니다."
       ],
-      "You cannot create more vaults than your subscription allows.": [
-        "현재 구독보다 더 많은 금고를 생성할 수 없습니다."
-      ],
       "You have reached the limit of members who can access this vault.": [
         "이 금고를 접근할 수 있는 최대 사용자 수에 도달했습니다."
       ],
@@ -3161,7 +3098,7 @@
         "이 요금제에서는 더 많은 별칭을 생성할 수 없습니다"
       ],
       "Your plan only allows you to autofill from your first two vaults": [
-        "사용자의 플랜에서 처음 두개 금고에서만 자동 완성을 지원합니다."
+        "당신의 플랜은 오직 처음 2개의 금고에서만 자동 완성을 지원합니다."
       ],
       "Your session could not be authorized.": [
         "사용자 세션을 승인할 수 없습니다."

@@ -572,9 +572,6 @@
       ],
       "Write us on Twitter": [
         "Escríbenos en Twitter"
-      ],
-      "Your password manager not here? Request it.": [
-        "¿No aparece tu gestor de contraseñas? Solicítalo."
       ]
     },
     "bf2023: Info": {
@@ -1040,9 +1037,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        "Mejora a un plan de pago para crear varias cajas fuertes."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Se ha descartado el elemento \"${ payload.item.data.metadata.name }\"."
       ],
@@ -1330,12 +1324,6 @@
       "Expires in ${ remainingTime }": [
         "Expira en ${ remainingTime }"
       ],
-      "Extra password successfuly created": [
-        "Se ha creado la contraseña adicional."
-      ],
-      "Extra password successfuly removed": [
-        "Se ha borrado la contraseña adicional."
-      ],
       "Fill in the CSV with your data": [
         "Rellenar el CSV con tus datos"
       ],
@@ -1458,9 +1446,6 @@
       ],
       "Monitoring settings successfully updated": [
         "Los ajustes de monitoreo se han actualizado."
-      ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Más que un gestor de contraseñas, ${ PASS_APP_NAME } protege tu contraseña y tu dirección de correo personal a través de alias de correo electrónico. Se ha desarrollado con la misma tecnología detrás de ${ MAIL_APP_NAME }, tus datos están cifrados de extremo a extremo y sólo son accesibles por ti."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
@@ -1661,9 +1646,6 @@
       "Select destination vault": [
         "Selecciona la caja fuerte de destino"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Selecciona dónde quieres guardar tus cajas fuertes importadas."
-      ],
       "Selected items permanently deleted": [
         "Los elementos seleccionados han sido eliminados permanentemente."
       ],
@@ -1684,9 +1666,6 @@
       ],
       "Settings successfully updated": [
         "Se ha actualizado la configuración"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Comparte tus inicios de sesión y notas con hasta 10 personas"
       ],
       "Sign in or create an account to continue.": [
         "Inicia sesión o crea una cuenta para continuar."
@@ -1755,9 +1734,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Para migrar los datos desde otro gestor de contraseñas, ve al gestor, exporta tus datos y luego cárgalos en ${ PASS_APP_NAME }. Una vez que los datos se han importado, elimina el archivo exportado."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "Para verificar tus datos importados, pulsa el ícono de Proton Pass en la barra de herramientas del navegador."
-      ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Intenta recargar o reinstalar la extensión y asegúrate de que el navegador y ${ PASS_SHORT_APP_NAME } estén actualizados."
       ],
@@ -1805,9 +1781,6 @@
       ],
       "User's access removed": [
         "Se ha borrado el acceso del usuario."
-      ],
-      "User's access sucessfuly updated": [
-        "Se ha actualizado el acceso del usuario."
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Se ha eliminado la caja fuerte \"${ payload.content.name }\"."
@@ -2045,9 +2018,6 @@
       "Capital letters (A-Z)": [
         "Letras mayúsculas (A-Z)"
       ],
-      "Capitalise": [
-        "Mayúsculas"
-      ],
       "Card": [
         "Tarjeta"
       ],
@@ -2234,9 +2204,6 @@
       "Import passwords": [
         "Importar contraseñas"
       ],
-      "Imported from : ": [
-        "Importado desde: "
-      ],
       "Imported on : ": [
         "Importado el: "
       ],
@@ -2336,7 +2303,7 @@
       "Name on card": [
         "Titular de la tarjeta"
       ],
-      "Need help ?": [
+      "Need help?": [
         "¿Necesitas ayuda?"
       ],
       "New vault": [
@@ -2534,12 +2501,6 @@
       ],
       "Today": [
         "Hoy"
-      ],
-      "Total imported items : ": [
-        "Elementos totales importados: "
-      ],
-      "Total items : ": [
-        "Elementos totales: "
       ],
       "TOTP": [
         "TOTP"
@@ -2795,9 +2756,6 @@
       "Current version": [
         "Versión actual"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "¿Eliminar la caja fuerte \"${ vaultName }\"?"
-      ],
       "Discard changes?": [
         "¿Descartar los cambios?"
       ],
@@ -2855,9 +2813,6 @@
       "Last modified": [
         "Última modificación"
       ],
-      "Leave vault ?": [
-        "¿Dejar la caja fuerte?"
-      ],
       "Log in as...": [
         "Iniciar sesión como..."
       ],
@@ -2899,9 +2854,6 @@
       ],
       "Pending access to the shared data": [
         "Acceso pendiente a los datos compartidos"
-      ],
-      "Permanently remove all items ?": [
-        "¿Borrar todos los elementos permanentemente?"
       ],
       "Pin the extension": [
         "Ancla la extensión"
@@ -3013,14 +2965,8 @@
       "Section name cannot be empty": [
         "El nombre de la sección no puede estar vacío."
       ],
-      "Url already exists": [
-        "La URL ya existe."
-      ],
       "URL cannot be empty": [
         "La URL no puede estar vacía."
-      ],
-      "Url is invalid": [
-        "URL inválida"
       ],
       "URL is invalid": [
         "La URL no es válida."
@@ -3053,9 +2999,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "No se ha podido crear la caja fuerte \"${ vaultName }\"."
-      ],
-      "Could not send invitations to the following addresses :": [
-        "No se han podido enviar las invitaciones a las siguientes direcciones:"
       ],
       "Duplicate email addresses.": [
         "Direcciones de correo duplicadas"
@@ -3127,9 +3070,6 @@
       "PGP encrypted export file requires passphrase": [
         "El archivo de exportación cifrado con PGP requiere una frase de contraseña."
       ],
-      "Please contact us for investigating the issue": [
-        "Contacta con nosotros para investigar el problema"
-      ],
       "Please verify your email address in order to use email aliases": [
         "Verifica tu dirección de correo electrónico para poder utilizar alias de correo electrónico."
       ],
@@ -3168,9 +3108,6 @@
       ],
       "Vault name is required": [
         "El nombre de la caja fuerte es requerido."
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "No puedes crear más cajas fuertes de las que permite tu suscripción."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Has alcanzado el límite de miembros que pueden acceder a esta caja fuerte."

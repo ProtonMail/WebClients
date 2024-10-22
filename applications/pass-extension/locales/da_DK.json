@@ -572,9 +572,6 @@
       ],
       "Write us on Twitter": [
         "Skriv til os på Twitter"
-      ],
-      "Your password manager not here? Request it.": [
-        "Er din adgangskodeadministrator her ikke? Anmod om den."
       ]
     },
     "bf2023: Info": {
@@ -881,7 +878,7 @@
         "Sikkert link kunne ikke åbnes."
       ],
       "Settings update failed": [
-        "Ændring af indstillinger mislykkedes"
+        "Opdatering af indstillinger mislykkedes"
       ],
       "Signature verification failed": [
         "Bekræftelse af signatur mislykkedes"
@@ -1040,9 +1037,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        " Opgrader til et betalt abonnement for at oprette flere bokse."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "\"${ payload.item.data.metadata.name }\" element blev afvist"
       ],
@@ -1330,12 +1324,6 @@
       "Expires in ${ remainingTime }": [
         "Udløber om ${ remainingTime }"
       ],
-      "Extra password successfuly created": [
-        "Ekstra adgangskode oprettet med succes"
-      ],
-      "Extra password successfuly removed": [
-        "Ekstra adgangskode fjernet med succes"
-      ],
       "Fill in the CSV with your data": [
         "Udfyld CSV-filen med dine data"
       ],
@@ -1459,9 +1447,6 @@
       "Monitoring settings successfully updated": [
         "Indstillinger for monitorering opdateret"
       ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "${ PASS_APP_NAME } er mere end en adgangskodeadministrator, den beskytter din adgangskode og din personlige e-mailadresse via e-mail-aliasser. Med samme teknologi, som bruges til ${ MAIL_APP_NAME }, er dine data end-to-end krypteret og kun tilgængelige for dig."
-      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
@@ -1536,7 +1521,7 @@
         "Afventer adgang til de delte data"
       ],
       "Permanently deleting selected items": [
-        "De valgte elementer slettes permanent"
+        "Sletter valgte elementer permanent"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Fastgør ${ PASS_APP_NAME } til din værktøjslinje"
@@ -1599,7 +1584,7 @@
         "Indtast din nuværende pinkode for at fortsætte"
       ],
       "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
-        "Indtast din ekstra adgangskode for at starte med at bruge ${ PASS_SHORT_APP_NAME }."
+        "Indtast din ekstra adgangskode for at begynde at bruge ${ PASS_SHORT_APP_NAME }."
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Opgrader for at få tidlig adgang ${ PASS_APP_NAME } webapp"
@@ -1661,9 +1646,6 @@
       "Select destination vault": [
         "Vælg destinationsboks"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Vælg, hvor du vil gemme din(e) importerede boks(e)."
-      ],
       "Selected items permanently deleted": [
         "De valgte elementer blev slettet permanent"
       ],
@@ -1684,9 +1666,6 @@
       ],
       "Settings successfully updated": [
         "Indstillingerne blev opdateret"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Del dine logins og sikre noter med op til 10 personer"
       ],
       "Sign in or create an account to continue.": [
         "Log ind eller opret en konto for at fortsætte."
@@ -1755,9 +1734,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "For at migrere data fra en anden adgangskodeadministrator skal du gå til adgangskodeadministratoren, eksportere dine data og derefter uploade dem til ${ PASS_APP_NAME }. Når dine data er blevet importeret, skal du slette den eksporterede fil."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "For at gennemgå dine importerede data skal du klikke på Pass-ikonet i din browsers værktøjslinje."
-      ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Prøv at genindlæse eller geninstallere udvidelsen, og sørg for, at din browser og ${ PASS_SHORT_APP_NAME } er opdateret."
       ],
@@ -1805,9 +1781,6 @@
       ],
       "User's access removed": [
         "Brugers adgang fjernet"
-      ],
-      "User's access sucessfuly updated": [
-        "Brugers adgang opdateret"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Boksen \"${ payload.content.name }\" blev slettet"
@@ -2045,9 +2018,6 @@
       "Capital letters (A-Z)": [
         "Store bogstaver (A-Z)"
       ],
-      "Capitalise": [
-        "Brug store bogstaver"
-      ],
       "Card": [
         "Kort"
       ],
@@ -2234,9 +2204,6 @@
       "Import passwords": [
         "Importér adgangskoder"
       ],
-      "Imported from : ": [
-        "Importeret fra : "
-      ],
       "Imported on : ": [
         "Importeret : "
       ],
@@ -2336,8 +2303,8 @@
       "Name on card": [
         "Navn på kort"
       ],
-      "Need help ?": [
-        "Brug for hjælp?"
+      "Need help?": [
+        "Behov for hjælp?"
       ],
       "New vault": [
         "Ny boks"
@@ -2535,12 +2502,6 @@
       "Today": [
         "I dag"
       ],
-      "Total imported items : ": [
-        "Samlet antal importerede elementer : "
-      ],
-      "Total items : ": [
-        "Elementer i alt : "
-      ],
       "TOTP": [
         "TOTP"
       ],
@@ -2584,7 +2545,7 @@
         "Brugernavn"
       ],
       "Username/email": [
-        "Brugernavn/email"
+        "Brugernavn/e-mail"
       ],
       "Vault ID": [
         "Boks-ID"
@@ -2795,9 +2756,6 @@
       "Current version": [
         "Aktuel version"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "Slet boksen \"${ vaultName }\"?"
-      ],
       "Discard changes?": [
         "Kassér ændringer?"
       ],
@@ -2855,9 +2813,6 @@
       "Last modified": [
         "Sidst ændret"
       ],
-      "Leave vault ?": [
-        "Forlad boks?"
-      ],
       "Log in as...": [
         "Log ind som..."
       ],
@@ -2899,9 +2854,6 @@
       ],
       "Pending access to the shared data": [
         "Afventer adgang til de delte data"
-      ],
-      "Permanently remove all items ?": [
-        "Fjern alle elementer permanent?"
       ],
       "Pin the extension": [
         "Fastgør udvidelsen"
@@ -3013,14 +2965,8 @@
       "Section name cannot be empty": [
         "Sektionsnavn kan ikke være tomt"
       ],
-      "Url already exists": [
-        "URL eksisterer allerede"
-      ],
       "URL cannot be empty": [
         "URL må ikke være tom"
-      ],
-      "Url is invalid": [
-        "URL er ugyldig"
       ],
       "URL is invalid": [
         "URL er ugyldig"
@@ -3053,9 +2999,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Kunne ikke oprette boksen \"${ vaultName }\""
-      ],
-      "Could not send invitations to the following addresses :": [
-        "Kunne ikke sende invitationer til følgende adresser :"
       ],
       "Duplicate email addresses.": [
         "Dubletter af e-mailadresser."
@@ -3127,9 +3070,6 @@
       "PGP encrypted export file requires passphrase": [
         "PGP-krypteret eksportfil kræver adgangssætning"
       ],
-      "Please contact us for investigating the issue": [
-        "Kontakt os, så vi kan undersøge problemet"
-      ],
       "Please verify your email address in order to use email aliases": [
         "Bekræft din e-mailadresse for at bruge e-mail-aliasser."
       ],
@@ -3168,9 +3108,6 @@
       ],
       "Vault name is required": [
         "Navn på boks er påkrævet"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "Du kan ikke oprette flere bokse, end dit abonnement tillader."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Du har nået grænsen for medlemmer, der kan få adgang til denne boks."
