@@ -1,10 +1,9 @@
-import type { PayloadAction, UnknownAction} from '@reduxjs/toolkit';
+import type { PayloadAction, UnknownAction } from '@reduxjs/toolkit';
 import { createSlice, miniSerializeError, original } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import type {
-    CacheType} from '@proton/redux-utilities';
+import type { CacheType } from '@proton/redux-utilities';
 import {
     cacheHelper,
     createPromiseStore,
@@ -13,6 +12,7 @@ import {
     previousSelector,
 } from '@proton/redux-utilities';
 import { queryDomains } from '@proton/shared/lib/api/domains';
+import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import queryPages from '@proton/shared/lib/api/helpers/queryPages';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Domain, User } from '@proton/shared/lib/interfaces';
@@ -20,7 +20,7 @@ import { isAdmin } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';
 import type { ModelState } from '../interface';
-import type { UserState} from '../user';
+import type { UserState } from '../user';
 import { userThunk } from '../user';
 
 const name = 'domains' as const;
@@ -117,25 +117,33 @@ const modelThunk = (options?: {
         };
         const getPayload = async () => {
             const user = await dispatch(userThunk());
-            if (!canFetch(user)) {
-                return {
-                    value: freeDomains,
-                    type: ValueType.dummy,
-                };
-            }
-            const pages = await queryPages((page, pageSize) => {
-                return extraArgument.api<{ Domains: Domain[]; Total: number }>(
-                    queryDomains({
-                        Page: page,
-                        PageSize: pageSize,
-                    })
-                );
-            });
-            const value = pages.flatMap(({ Domains }) => Domains);
-            return {
-                value,
-                type: ValueType.complete,
+            const defaultValue = {
+                value: freeDomains,
+                type: ValueType.dummy,
             };
+            if (!canFetch(user)) {
+                return defaultValue;
+            }
+            try {
+                const pages = await queryPages((page, pageSize) => {
+                    return extraArgument.api<{ Domains: Domain[]; Total: number }>(
+                        queryDomains({
+                            Page: page,
+                            PageSize: pageSize,
+                        })
+                    );
+                });
+                const value = pages.flatMap(({ Domains }) => Domains);
+                return {
+                    value,
+                    type: ValueType.complete,
+                };
+            } catch (e: any) {
+                if (getIsMissingScopeError(e)) {
+                    return defaultValue;
+                }
+                throw e;
+            }
         };
         const cb = async () => {
             try {
