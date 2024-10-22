@@ -224,6 +224,9 @@
       "Feedback & Help": [
         "Feedback und Hilfe"
       ],
+      "Fill in": [
+        "Ausfüllen"
+      ],
       "Fill password": [
         "Passwort ausfüllen"
       ],
@@ -569,9 +572,6 @@
       ],
       "Write us on Twitter": [
         "Schreibe uns auf Twitter"
-      ],
-      "Your password manager not here? Request it.": [
-        "Ist dein Passwort-Manager nicht dabei? Fordere ihn an."
       ]
     },
     "bf2023: Info": {
@@ -977,11 +977,17 @@
       ]
     },
     "FamilyPlanPromo2024": {
+      "Exclusive offer for ${ PASS_APP_NAME } early supporters.": [
+        "Exklusives Angebot für frühe Unterstützer von ${ PASS_APP_NAME }."
+      ],
       "Get it for ${ price }/month": [
         "Für ${ price }/Monat"
       ],
       "Introducing ${ planNameJSX }": [
         "Wir präsentieren ${ planNameJSX }"
+      ],
+      "Limited-time offer only.": [
+        "Zeitlich begrenztes Angebot."
       ]
     },
     "file size format": {
@@ -1025,9 +1031,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        "Upgrade auf ein kostenpflichtiges Abonnement, um mehrere Tresore zu erstellen."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Der Eintrag \"${ payload.item.data.metadata.name }\" wurde verworfen."
       ],
@@ -1315,12 +1318,6 @@
       "Expires in ${ remainingTime }": [
         "Läuft ab in ${ remainingTime }"
       ],
-      "Extra password successfuly created": [
-        "Zusätzliches Passwort erfolgreich erstellt."
-      ],
-      "Extra password successfuly removed": [
-        "Zusätzliches Passwort erfolgreich entfernt."
-      ],
       "Fill in the CSV with your data": [
         "Fülle die CSV-Datei mit deinen Daten aus."
       ],
@@ -1443,9 +1440,6 @@
       ],
       "Monitoring settings successfully updated": [
         "Überwachungseinstellungen erfolgreich aktualisiert."
-      ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "${ PASS_APP_NAME } ist mehr als nur ein Passwort-Manager: Er schützt dein Passwort und deine persönliche E-Mail-Adresse über E-Mail-Aliasse. Dank der gleichen Technologie wie bei ${ MAIL_APP_NAME } sind deine Daten durchgängig verschlüsselt und nur für dich zugänglich."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
@@ -1640,9 +1634,6 @@
       "Select destination vault": [
         "Zieltresor auswählen:"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Wähle aus, wo die importierten Tresore gespeichert werden sollen."
-      ],
       "Selected items permanently deleted": [
         "Ausgewählte Einträge dauerhaft gelöscht"
       ],
@@ -1663,9 +1654,6 @@
       ],
       "Settings successfully updated": [
         "Einstellungen erfolgreich aktualisiert."
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Teile deine Logins und sichere Notizen mit bis zu 10 Personen."
       ],
       "Sign in or create an account to continue.": [
         "Melde dich an oder erstelle ein Konto, um fortzufahren."
@@ -1734,9 +1722,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Um Daten von einem anderen Passwort-Manager zu migrieren, exportiere deine Daten und lade sie dann zu ${ PASS_APP_NAME } hoch. Lösche die exportierte Datei, sobald deine Daten importiert wurden."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "Klicke auf das Pass-Symbol in der Symbolleiste deines Browsers, um deine importierten Daten zu überprüfen."
-      ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Versuche, die Erweiterung neu zu laden oder zu installieren und stelle sicher, dass dein Browser und ${ PASS_SHORT_APP_NAME } auf dem neuesten Stand sind."
       ],
@@ -1784,9 +1769,6 @@
       ],
       "User's access removed": [
         "Benutzerzugriff entfernt"
-      ],
-      "User's access sucessfuly updated": [
-        "Benutzerzugriff erfolgreich aktualisiert"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Tresor \"${ payload.content.name }\" erfolgreich gelöscht."
@@ -2020,9 +2002,6 @@
       "Capital letters (A-Z)": [
         "Großbuchstaben (A-Z)"
       ],
-      "Capitalise": [
-        "Großschreiben"
-      ],
       "Card": [
         "Karte"
       ],
@@ -2206,9 +2185,6 @@
       "Import passwords": [
         "Passwörter importieren"
       ],
-      "Imported from : ": [
-        "Importiert von:"
-      ],
       "Imported on : ": [
         "Importiert am: "
       ],
@@ -2305,7 +2281,7 @@
       "Name on card": [
         "Karteninhaber"
       ],
-      "Need help ?": [
+      "Need help?": [
         "Benötigst du Hilfe?"
       ],
       "New vault": [
@@ -2504,12 +2480,6 @@
       "Today": [
         "Heute"
       ],
-      "Total imported items : ": [
-        "Insgesamt importierte Einträge:"
-      ],
-      "Total items : ": [
-        "Einträge insgesamt: "
-      ],
       "TOTP": [
         "TOTP"
       ],
@@ -2545,6 +2515,9 @@
       ],
       "Update": [
         "Aktualisieren"
+      ],
+      "Use ${ PASS_APP_NAME } as your browser's default password manager": [
+        "Verwende ${ PASS_APP_NAME } als Standard-Passwortmanager deines Browsers"
       ],
       "Username": [
         "Benutzername"
@@ -2590,6 +2563,9 @@
       ],
       "You are about to create": [
         "Folgender Alias wird erstellt:"
+      ],
+      "Your browser will stop using its built-in password manager.": [
+        "Dein Browser verwendet dann nicht mehr den integrierten Passwort-Manager."
       ],
       "ZIP or Postal code": [
         "Postleitzahl oder ZIP-Code"
@@ -2758,9 +2734,6 @@
       "Current version": [
         "Aktuelle Version"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "Tresor \"${ vaultName }\" löschen?"
-      ],
       "Discard changes?": [
         "Änderungen verwerfen?"
       ],
@@ -2809,14 +2782,14 @@
       "Import to vault(s)": [
         "In Tresor(e) importieren"
       ],
+      "Import your aliases from SimpleLogin": [
+        "Importiere deine Aliasse von SimpleLogin"
+      ],
       "Last autofill": [
         "Letztes Auto-Ausfüllen"
       ],
       "Last modified": [
         "Zuletzt geändert"
-      ],
-      "Leave vault ?": [
-        "Tresor verlassen?"
       ],
       "Log in as...": [
         "Anmelden als..."
@@ -2859,9 +2832,6 @@
       ],
       "Pending access to the shared data": [
         "Zugriff auf die geteilten Daten ist ausstehend"
-      ],
-      "Permanently remove all items ?": [
-        "Alle Einträge dauerhaft löschen?"
       ],
       "Pin the extension": [
         "Erweiterung anheften"
@@ -2973,14 +2943,8 @@
       "Section name cannot be empty": [
         "Abschnittsname darf nicht leer sein."
       ],
-      "Url already exists": [
-        "URL existiert bereits"
-      ],
       "URL cannot be empty": [
         "URL darf nicht leer sein."
-      ],
-      "Url is invalid": [
-        "URL ungültig"
       ],
       "URL is invalid": [
         "URL ist ungültig."
@@ -3013,9 +2977,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Tresor \"${ vaultName }\" konnte nicht erstellt werden."
-      ],
-      "Could not send invitations to the following addresses :": [
-        "An folgende Adressen konnten keine Einladungen gesendet werden:"
       ],
       "Duplicate email addresses.": [
         "Doppelte E-Mail-Adressen."
@@ -3087,9 +3048,6 @@
       "PGP encrypted export file requires passphrase": [
         "PGP-verschlüsselte Exportdatei erfordert Passphrase"
       ],
-      "Please contact us for investigating the issue": [
-        "Bitte kontaktiere uns, um das Problem zu untersuchen"
-      ],
       "Please verify your email address in order to use email aliases": [
         "Bitte bestätige deine E-Mail-Adresse, um E-Mail-Aliasse verwenden zu können."
       ],
@@ -3128,9 +3086,6 @@
       ],
       "Vault name is required": [
         "Tresorname ist erforderlich"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "Du kannst nicht mehr Tresore erstellen, als dein Abonnement zulässt."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Du hast die Benutzerlimite für den Zugriff auf diesen Tresor erreicht."

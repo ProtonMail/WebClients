@@ -224,6 +224,9 @@
       "Feedback & Help": [
         "Palaute ja tuki"
       ],
+      "Fill in": [
+        "Täytä"
+      ],
       "Fill password": [
         "Täytä salasana"
       ],
@@ -569,9 +572,6 @@
       ],
       "Write us on Twitter": [
         "Kirjoita meille Twitterissä"
-      ],
-      "Your password manager not here? Request it.": [
-        "Eikö salasanahallintaasi ole listattu? Pyydä sen lisäystä."
       ]
     },
     "bf2023: Info": {
@@ -1037,9 +1037,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        " Luo useita holveja päivittämällä maksulliseen tilaukseen."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Kohde \"${ payload.item.data.metadata.name }\" hylättiin"
       ],
@@ -1327,12 +1324,6 @@
       "Expires in ${ remainingTime }": [
         "Erääntymiseen: ${ remainingTime }"
       ],
-      "Extra password successfuly created": [
-        "Lisäsalasana luotiin"
-      ],
-      "Extra password successfuly removed": [
-        "Lisäsalasana poistettiin"
-      ],
       "Fill in the CSV with your data": [
         "Täytä CSV omilla tiedoillasi"
       ],
@@ -1455,9 +1446,6 @@
       ],
       "Monitoring settings successfully updated": [
         "Valvonnan asetukset päivitettiin"
-      ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "${ PASS_APP_NAME } on muutakin kuin pelkkä salasanahallinta, sillä se voi salasanojesi lisäksi suojata myös sähköpostiosoitteesi sähköpostialiaksilla. Tietosi ovat päästä päähän -salattuja ${ MAIL_APP_NAME }in käyttämällä tekniikalla ja vain sinä pääset niihin käsiksi."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
@@ -1658,9 +1646,6 @@
       "Select destination vault": [
         "Valitse kohdeholvi"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Valitse tuotavien holvien tallennuskohde."
-      ],
       "Selected items permanently deleted": [
         "Valitut kohteet poistettiin pysyvästi"
       ],
@@ -1681,9 +1666,6 @@
       ],
       "Settings successfully updated": [
         "Asetukset tallennettiin"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Jaa kirjautumistietosi ja suojatut muistiinpanosi jopa 10 henkilölle"
       ],
       "Sign in or create an account to continue.": [
         "Jatka kirjautumalla tai luomalla tili."
@@ -1752,9 +1734,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Tuo tietosi muista salasanahallinnoista lataamalla käyttämästäsi palvelusta viemäsi tiedosto ${ PASS_APP_NAME }iin. Kun tietosi on tuotu, poista vientitiedosto."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "Voit tarkastella tuotuja tietoja klikkaamalla selaimen työkalurivin Pass-kuvaketta."
-      ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Yritä ladata tai asentaa laajennus uudelleen ja varmista, että selaimesi ja ${ PASS_SHORT_APP_NAME } ovat ajan tasalla."
       ],
@@ -1802,9 +1781,6 @@
       ],
       "User's access removed": [
         "Käyttäjän käyttöoikeus mitätöitiin"
-      ],
-      "User's access sucessfuly updated": [
-        "Käyttäjän käyttöoikeutta muutettiin"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Holvi \"${ payload.content.name }\" poistettiin"
@@ -2042,9 +2018,6 @@
       "Capital letters (A-Z)": [
         "Isot kirjaimet (A-Z)"
       ],
-      "Capitalise": [
-        "Isot alkukirjaimet"
-      ],
       "Card": [
         "Kortti"
       ],
@@ -2231,9 +2204,6 @@
       "Import passwords": [
         "Tuo salasanoja"
       ],
-      "Imported from : ": [
-        "Tuontilähde: "
-      ],
       "Imported on : ": [
         "Tuontiaika: "
       ],
@@ -2333,7 +2303,7 @@
       "Name on card": [
         "Kortissa oleva nimi"
       ],
-      "Need help ?": [
+      "Need help?": [
         "Tarvitsetko apua?"
       ],
       "New vault": [
@@ -2531,12 +2501,6 @@
       ],
       "Today": [
         "Tänään"
-      ],
-      "Total imported items : ": [
-        "Kohteita tuotiin yhteensä: "
-      ],
-      "Total items : ": [
-        "Kohteita yhteensä: "
       ],
       "TOTP": [
         "TOTP"
@@ -2792,9 +2756,6 @@
       "Current version": [
         "Nykyinen versio"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "Poistetaanko holvi \"${ vaultName }\"?"
-      ],
       "Discard changes?": [
         "Hylätäänkö muutokset?"
       ],
@@ -2852,9 +2813,6 @@
       "Last modified": [
         "Muokattu viimeksi"
       ],
-      "Leave vault ?": [
-        "Poistutaanko holvista?"
-      ],
       "Log in as...": [
         "Kirjaudu tunnuksella..."
       ],
@@ -2896,9 +2854,6 @@
       ],
       "Pending access to the shared data": [
         "Odotetaan käyttöoikeutta jaettuihin tietoihin"
-      ],
-      "Permanently remove all items ?": [
-        "Poistetaanko kaikki kohteet pysyvästi?"
       ],
       "Pin the extension": [
         "Kiinnitä laajennus"
@@ -3010,14 +2965,8 @@
       "Section name cannot be empty": [
         "Osion nimi ei voi olla tyhjä"
       ],
-      "Url already exists": [
-        "URL-osoite on jo olemassa"
-      ],
       "URL cannot be empty": [
         "URL ei voi olla tyhjä"
-      ],
-      "Url is invalid": [
-        "URL-osoite on virheellinen"
       ],
       "URL is invalid": [
         "URL on virheellinen."
@@ -3050,9 +2999,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Holvia \"${ vaultName }\" ei voitu luoda"
-      ],
-      "Could not send invitations to the following addresses :": [
-        "Kutsujen lähetys seuraaviin osoitteisiin ei onnistunut:"
       ],
       "Duplicate email addresses.": [
         "Sähköpostiosoitteiden kaksoiskappaleita."
@@ -3124,9 +3070,6 @@
       "PGP encrypted export file requires passphrase": [
         "PGP-salattu vientitiedosto vaatii tunnuslausekkeen"
       ],
-      "Please contact us for investigating the issue": [
-        "Ota meihin yhteyttä ongelman tutkimiseksi"
-      ],
       "Please verify your email address in order to use email aliases": [
         "Vahvista sähköpostiosoitteesi käyttääksesi sähköpostialiaksia"
       ],
@@ -3165,9 +3108,6 @@
       ],
       "Vault name is required": [
         "Holvin nimi vaaditaan"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "Et voi luoda enempää holveja kuin tilauksesi sallii."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Holvin käyttöoikeuden omaavien jäsenten enimmäismäärä on saavutettu."
