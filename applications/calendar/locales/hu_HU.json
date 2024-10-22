@@ -476,9 +476,6 @@
       "OK": [
         "OK"
       ],
-      "Ok": [
-        "OK"
-      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } beállításainak megnyitása"
       ],
@@ -661,9 +658,6 @@
       ],
       "Today": [
         "Ma"
-      ],
-      "Toggle Contact app": [
-        "Névjegyek alkalmazás váltása"
       ],
       "Toggle settings": [
         "Beállítások kapcsolása"
@@ -1176,9 +1170,6 @@
       ]
     },
     "Calendar sharing access option label": {
-      "Edit (view, create and edit event details)": [
-        "Szerkesztés (események megtekintése, létrehozása és szerkesztése)"
-      ],
       "View (see all event details)": [
         "Megtekintés (az összes eseményrészlet megtekintése)"
       ]
@@ -2386,9 +2377,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek betöltése és titkosítása. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "CSV- és VCF-fájlon keresztüli importálás esetén ügyeljen arra, hogy a fájl ne haladja meg a ${ MAX_IMPORT_FILE_SIZE_STRING } vagy a ${ MAX_IMPORT_CONTACTS_STRING } névjegyet. Ha a fájl nagyobb, ossza fel kisebb fájlokra. ${ learnMoreLink }."
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Tegyen szert korlátlan számú e-mail álnévre és 500 GB tárhelyre a ${ PLAN_NAMES[PLANS.BUNDLE] } csomaggal."
       ],
@@ -2400,9 +2388,6 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek egyesítése. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
-      ],
-      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
-        "Ez eltarthat egy pár percig. Közben használhatja a Naptárat ahogy szokta."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Névjegyeinek importálásához a Google-ból vagy az Outlookból ${ easySwitchLink }."
@@ -3090,9 +3075,6 @@
         "Nem küldhet emailt több, mint ${ maxContacts } címzettnek",
         "Nem küldhet emailt több, mint ${ maxContacts } címzettnek"
       ],
-      "You have reached the contacts limit for your account": [
-        "Elérte a fiókhoz létrehozható névjegyek maximális számát"
-      ],
       "You have reached the maximum number of calendars.": [
         "Elérte a naptárak maximális számát."
       ],
@@ -3468,9 +3450,6 @@
       "Invited by: ${ inviteEmail }": [
         "Meghívó küldője: ${ inviteEmail }"
       ],
-      "Manage addresses.": [
-        "Címek kezelése."
-      ],
       "Sorry, you can't switch plans at this time.": [
         "Sajnos jelenleg nincs lehetőség csomagváltásra."
       ],
@@ -3507,9 +3486,6 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users ": [
-        "Állítsa be a Family csomagot és hívja meg a tagokat "
-      ],
       "Set up your family": [
         "Family csomag beállítása"
       ],
@@ -4029,9 +4005,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } tag)",
         "(${ memberCount } tagok)"
-      ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /hónap)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bónusz tárterület"
@@ -6298,9 +6271,6 @@
       "Strict no-logs policy": [
         "Szigorú nincs-naplózás irányelv"
       ],
-      "Tor over VPN": [
-        "Tor VPN-en"
-      ],
       "Two-factor authentication": [
         "Kétlépcsős hitelesítés"
       ],
@@ -6503,9 +6473,6 @@
         "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől",
         "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől"
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Dedikált szervereket, dedikált IP-címekkel, lehet hozzáadni a privát átjárókhoz, a finomhangolt hozzáférés-irányítás lehetővé tételéhez"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "A VPN elleni támadással szemben úgy véd, hogy több szerveren keresztül továbbítja az internetes forgalmat"
       ],
@@ -6571,9 +6538,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Felhasználók jelszavának és kétlépcsős hitelesítésének visszaállítása"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Egyetlen kattintással irányítsa a teljes internetforgalmát a Tor hálózaton keresztül"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Tartsa biztonságban fájljait, titkosított felhőtárhelyen. Automatikus szinkronizálást, titkosított megosztás és további lehetőségeket tartalmaz."
@@ -6841,11 +6805,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Ahhoz, hogy az importálás működjön, ki kell választani az összes kért elemet, ahogy a GIF mutatja."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Válassza ki, ${ BRAND_NAME } mihez tud hozzáférni: megnézheti az e-mailjeit és beállításait, megnézheti és letöltheti a kapcsolatait és letöltheti az összes naptárát, amihez a Google Naptárból hozzá tud férni."
       ]
     },
     "Onboarding": {
@@ -8834,9 +8793,6 @@
       ],
       "Warning: suspected fake website": [
         "Figyelem: gyanítottan hamis weboldal"
-      ],
-      "We're setting up Calendar search": [
-        "A Naptárban való keresést beállítása"
       ],
       "We've locked some calendars to protect your data": [
         "Néhány naptárat - az adatai védelme érdekében - zároltunk"

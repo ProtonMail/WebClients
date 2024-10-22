@@ -485,9 +485,6 @@
       "OK": [
         "Tamam"
       ],
-      "Ok": [
-        "Tamam"
-      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } ayarlarını aç"
       ],
@@ -679,9 +676,6 @@
       ],
       "Today": [
         "Bugün"
-      ],
-      "Toggle Contact app": [
-        "Kişiler uygulamasına geç"
       ],
       "Toggle settings": [
         "Ayarları aç / kapat"
@@ -1241,9 +1235,6 @@
       ]
     },
     "Calendar sharing access option label": {
-      "Edit (view, create and edit event details)": [
-        "Düzenleme (etkinlik bilgilerini görüntüleme, ekleme ya da düzenleme)"
-      ],
       "View (see all event details)": [
         "Görüntüleme (tüm etkinlik bilgilerini görüntüleme)"
       ]
@@ -1346,6 +1337,53 @@
       ],
       "Your subscription is ending soon": [
         "Aboneliğiniz yakında sona erecek"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB } depolama alanı"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } e-posta depolama alanı"
+      ],
+      "Advanced account protection": [
+        "Gelişmiş hesap koruması"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "Tüm ${ BRAND_NAME } uygulamaları ve ücretli özellikleri"
+      ],
+      "Cancel and downgrade": [
+        "İptal edip tarifeyi düşür"
+      ],
+      "Cloud storage and sharing for large files": [
+        "Büyük dosyalar için paylaşım ve bulut depolama"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Fotoğraf ve belgeler için şifrelenmiş bulut depolama alanı"
+      ],
+      "Encrypted password manager": [
+        "Şifrelenmiş parola yöneticisi"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "Uçtan uca şifrelenmiş e-posta ve depolama alanı ile temel, Free tarifemiz. Ücretli özellikler bulunmaz."
+      ],
+      "Save ${ upsellSavings }": [
+        "${ upsellSavings } indirim"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "${ upsellPlanName } ile kazanç sağlayın"
+      ],
+      "Secure personal and shared calendar": [
+        "Güvenli kişisel ve paylaşımlı takvim"
+      ],
+      "Try ${ planName }": [
+        "${ planName } tarifesini deneyin"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "${ upsellPlanName } tarifesini deneyin ve tüm ücretli e-posta ve takvim özelliklerine erişin."
+      ],
+      "Ultra fast and private VPN": [
+        "Süper hızlı ve güvenli VPN"
       ]
     },
     "Checkout row": {
@@ -2478,9 +2516,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "CSV ve VCF dosyası ile içe aktarma için, ${ MAX_IMPORT_FILE_SIZE_STRING } dosya boyutunu ya da ${ MAX_IMPORT_CONTACTS_STRING } kişiyi aşmadığınızdan emin olun. Dosyanız büyükse lütfen daha küçük dosyalara bölün. ${ learnMoreLink }."
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "${ PLAN_NAMES[PLANS.BUNDLE] } ile sınırsız takma ad ve 500 GB depolama alanı edinin."
       ],
@@ -2501,9 +2536,6 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Hesabınıza erişimi kaybetmemek için bir kurtarma yöntemi belirleyin."
-      ],
-      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
-        "Bu işlem birkaç dakika sürebilir. Bu arada takvimi her zamanki gibi kullanmayı sürdürebilirsiniz."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Hesabınızda olabilecek en yüksek güvenliğini sağlamak için bir kurtarma ifadesi belirleyin."
@@ -3276,9 +3308,6 @@
         "Bir e-postayı ${ maxContacts } üzerinde alıcıya gönderemezsiniz",
         "Bir e-postayı ${ maxContacts } üzerinde alıcıya gönderemezsiniz"
       ],
-      "You have reached the contacts limit for your account": [
-        "Hesabınızın kişi sayısı sınırına ulaştınız"
-      ],
       "You have reached the maximum number of calendars.": [
         "Eklenebilecek en fazla takvim sayısı sınırına ulaştınız."
       ],
@@ -3672,9 +3701,6 @@
       "Lifetime accounts cannot join a family plan.": [
         "Lifetime hesaplar bir aile tarifesine katılamaz."
       ],
-      "Manage addresses.": [
-        "Adres yönetimi."
-      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Üyeleri olan bir tarifenin sahipleri başka bir aile tarifesine katılamaz."
       ],
@@ -3710,9 +3736,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Hesabınız, size ayrılmış ${ inviteSpace } boyutunu aşan ${ usedSpace } depolama alanı kullanıyor. Bazı verileri silin ya da tarife yöneticisinden depolama alanınızı artırmasını isteyin."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "Geçerli tarifenizle bu daveti kabul edemezsiniz."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3732,9 +3755,6 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users ": [
-        "Aile hesabınızı yapılandırın ve kullanıcıları davet edin "
-      ],
       "Set up your family": [
         "Ailenizi oluşturun"
       ],
@@ -4281,9 +4301,6 @@
         "(${ memberCount } üye)",
         "(${ memberCount } üye)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /ay)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ek depolama alanı"
       ],
@@ -4774,9 +4791,6 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Kuruluşunuzdaki diğer kullanıcılar meşgul zamanlarınızı görecek. Etkinlik bilgileri paylaşılmaz."
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Uyarılarımız ihtiyatlı davranmak yönündedir. Ele geçirilmiş bilgilerin hiçbirini tanımıyorsanız, bu raporu güvenle yok sayabilirsiniz."
       ],
       "password": [
         "parola"
@@ -6390,6 +6404,10 @@
         "${ n } VPN bağlantısı",
         "${ n } VPN bağlantısı"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } kullanıcı",
+        "${ numberOfUsers } kullanıcıya kadar"
+      ],
       "${ options }-day file version history": [
         "${ options } günlük dosya sürümü geçmişi",
         "${ options } günlük dosya sürümü geçmişi"
@@ -6691,9 +6709,6 @@
       "Sync and backup all your files across devices": [
         "Tüm dosyalarınızı aygıtlarınız arasında eşitleyin ve yedekleyin"
       ],
-      "Tor over VPN": [
-        "VPN üzerinden Tor"
-      ],
       "Two-factor authentication": [
         "İki adımlı doğrulama"
       ],
@@ -6960,9 +6975,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Aile üyelerine atayabileceğiniz en fazla ${ n } e-posta adresi/takma ad oluşturabilirsiniz. Bunları çevrim içi kimlikler için kullanabilirsiniz. Örneğin alışveriş hesapları için AliSiparis@${ domain }."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "İnternet trafiğinizi birden çok sunucudan geçirerek VPN gizliliğine yönelik tehditlere karşı koruma sağlar"
       ],
@@ -7058,9 +7070,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Kullanıcı parolalarını ve kullanıcıların iki adımlı doğrulama ayarlarını sıfırla"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yöneltin"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
@@ -7355,11 +7364,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "İçe aktarma işleminin yapılabilmesi için, görseldeki gibi gerekli tüm ögeleri seçmelisiniz."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "${ BRAND_NAME } uygulamasının nelere erişebileceğini seçin: E-posta iletilerinizi ve ayarlarınızı görüntüleme, kişilerinizi görüntüleme ve indirme, Google Takvim üzerinde eriştiğiniz tüm takvimleri görüntüleme ve indirme."
       ]
     },
     "Onboarding": {
@@ -7891,9 +7895,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulamasını deneyin"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "Amazon alışverişleri için kullanıldı gibi."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "E-posta adresiniz sorulduğunda, bunun yerine bu takma adı verin. Takma adlar ${ passLink } tarafından sağlanır."
@@ -8579,9 +8580,6 @@
       "Got it": [
         "Anladım"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Apple App Store hesabınızda oturum açın, ardından ${ subscriptions } üzerine dokunun."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Play Store hesabınızda oturum açın, ardından ${ subscriptions } üzerine dokunun."
       ],
@@ -8609,6 +8607,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
+        "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
+      ],
       "${ dayDiff } day left": [
         "${ dayDiff } gün kaldı",
         "${ dayDiff } gün kaldı"
@@ -8643,6 +8644,9 @@
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planName }, daha üretken ve düzenli olmanızı sağlamak için, gelen kutunuzu, e-posta kimliğinizi ve diğer şeyleri kontrol etmenize yardımcı olarak temel konuların ötesine geçer."
       ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
+        "${ planName }, ailenizdeki her bir bireyin ve verilerinin çevrim içi oldukları her an korunmasını sağlamanıza yardımcı olur."
+      ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName }, e-postalarınız, ek dosyalarınız, etkinlikleriniz, parolalarınız ve dosyalarınız için ${ planMaxSpace } depolama alanı sunar. Ayrıca yıllık depolama alanı hediyeleri almaya da hak kazanırsınız."
       ],
@@ -8654,6 +8658,29 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } e-postalar, ek dosyalar, etkinlikler, dosyalar ve parolalar için kullanıcı başına ${ planMaxSpace } depolama alanı sunar. Ayrıca yıllık depolama alanı hediyeleri almaya da hak kazanırsınız."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "Her kullanıcı için ${ planNumberOfCalendars } takvim",
+        "Her kullanıcı için ${ planNumberOfCalendars } takvim"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } özel e-posta etki alanı",
+        "${ planNumberOfDomains } özel e-posta etki alanı"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-posta adresi",
+        "${ planNumberOfEmails } e-posta adresi"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "Her kullanıcı için ${ planNumberOfEmails } e-posta adresi",
+        "Her kullanıcı için ${ planNumberOfEmails } e-posta adresi"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } kullanıcı",
+        "${ planNumberOfUsers } kullanıcı"
+      ],
+      "${ PROTON_SENTINEL_NAME } advanced account protection": [
+        "${ PROTON_SENTINEL_NAME } gelişmiş hesap koruması"
       ],
       "2 users": [
         "2 kullanıcı"
@@ -8688,6 +8715,9 @@
       "Comprehensive privacy and security": [
         "Kapsamlı gizlilik ve güvenlik"
       ],
+      "Dark web monitoring": [
+        "Karanlık ağ izleme"
+      ],
       "Desktop app and email client support (via IMAP)": [
         "Masaüstü uygulaması ve e-posta istemcisi desteği (IMAP ile)"
       ],
@@ -8706,11 +8736,29 @@
       "Extra storage and users": [
         "Ek depolama alanı ve kullanıcılar"
       ],
+      "Folders, labels and filters": [
+        "Klasörler, etiketler ve süzgeçler"
+      ],
+      "Folders, labels, and custom filters": [
+        "Klasörler, etiketler ve özel süzgeçler"
+      ],
       "Helping activists in Hong Kong": [
         "Hong Kong aktivistlerine yardımlarımız"
       ],
       "How our customer support team got our VPN app directly into people's hands.": [
         "Müşteri destek ekibimiz VPN uygulamamızı insanlara nasıl doğrudan ulaştırdı?"
+      ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "${ BRAND_NAME } saldırgan bir sansür kampanyası ile engellendiğinde nasıl karşılık verdik."
+      ],
+      "How we supported local activists when privacy and free speech were threatened.": [
+        "Gizlilik ve ifade özgürlüğü tehdit edildiğinde yerel aktivistleri nasıl destekledik."
+      ],
+      "If you exceed free plan limits, you won't be able to:": [
+        "Ücretsiz tarifenin sınırlarını aşarsanız şunları yapamazsınız:"
+      ],
+      "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Kullanımınızın Free tarife sınırlarını aşması durumunda ürün özelliklerine ve verilerinize erişmekte sorun yaşayabilirsiniz."
       ],
       "Invited members will be removed from your organization": [
         "Davet edilmiş üyeler kuruluşunuzdan kaldırılacaklar"
@@ -8723,6 +8771,9 @@
       ],
       "Learn more about our impact": [
         "Yarattığımız etki hakkında ayrıntılı bilgi alın"
+      ],
+      "Limitations of the free plan:": [
+        "Free tarife sınırları:"
       ],
       "Make your business stand out": [
         "İşletmenizi öne çıkarın"
@@ -8772,11 +8823,20 @@
       "Unlimited privacy for two": [
         "İki kişi için sınırsız gizlilik"
       ],
+      "Upload any new files": [
+        "Yeni dosyalar yükleyemezsiniz"
+      ],
+      "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
+        "${ BRAND_NAME } tek gelirini kullanıcı aboneliklerinden sağlar. Desteğiniz bağımsız olmamızı sağlar, çevrim içi gizlilik sağlama amacımıza güç verir ve özgürlük için mücadele eden aktivistlere ve örgütlere yardımcı olur."
+      ],
       "Users won’t be able to manage their calendars": [
         "Kullanıcılar takvimlerini yönetemeyecekler"
       ],
       "Users won’t be able to send emails": [
         "Kullanıcılar e-posta gönderemeyecekler"
+      ],
+      "Users won’t be able to upload files on their devices": [
+        "Kullanıcılar aygıtlarındaki dosyaları yükleyemeyecek"
       ],
       "Version history": [
         "Sürüm geçmişi"
@@ -8792,6 +8852,9 @@
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
         "${ planName } aboneliğinizi iptal ettiğinizde, yalnızca 1 GB Mail depolama alanı ve 5 GB' Drive depolama alanı sunan ${ BRAND_NAME } Free tarifesine geçeceksiniz. Free tarifesinde ek kullanıcılar desteklenmediği için ekibinizin çalışmaları kesintiye uğrayacaktır."
+      ],
+      "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "${ planName } aboneliğiniz ${ expiryDate } tarihinde sona erdiğinde, ${ BRAND_NAME } Free tarifesine düşürülecek."
       ],
       "Yearly free storage bonuses": [
         "Yıllık ücretsiz depolama alanı hediyeleri"
@@ -9662,9 +9725,6 @@
       "Warning: suspected fake website": [
         "Uyarı: Sahte olma olasılığı bulunan şüpheli site"
       ],
-      "We're setting up Calendar search": [
-        "Takvim aranmaya hazırlanıyor"
-      ],
       "We've locked some calendars to protect your data": [
         "Verilerinizi korumak için bazı takvimleri kilitledik"
       ],
@@ -9870,11 +9930,6 @@
       ],
       "No ads": [
         "Reklamsız"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Secure Core sunucularına erişim, hızlı P2P/BitTorrent indirmeleri, VPN üzerinden Tor ve diğer özellikler"
       ]
     },
     "wallet_signup_2024: Info": {

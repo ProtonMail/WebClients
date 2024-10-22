@@ -485,9 +485,6 @@
       "OK": [
         "Ok"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åbn ${ CALENDAR_APP_NAME } indstillinger"
       ],
@@ -679,9 +676,6 @@
       ],
       "Today": [
         "I dag"
-      ],
-      "Toggle Contact app": [
-        "Skift Kontakt-app"
       ],
       "Toggle settings": [
         "Åbn/luk indstillinger"
@@ -1241,9 +1235,6 @@
       ]
     },
     "Calendar sharing access option label": {
-      "Edit (view, create and edit event details)": [
-        "Rediger (visning, oprettelse og redigering af begivenhedsoplysninger)"
-      ],
       "View (see all event details)": [
         "Vis (se alle detaljer om begivenheden)"
       ]
@@ -2478,9 +2469,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "For at importere via en CSV- eller VCF-fil, skal du være sikker på at filen ikke overskriver ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, skal du dele den i mindre filer. ${ learnMoreLink }."
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Få ubegrænsede aliasser og 500 GB lagerplads med ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
@@ -2501,9 +2489,6 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Indstil en gendannelsesmetode for at forhindre, at du mister adgang til din konto."
-      ],
-      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
-        "Dette kan tage et par minutter. I mellemtiden kan du fortsætte med at bruge Kalender som sædvanligt."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Opnå størst mulig sikkerhed for din konto ved at indstille en gendannelsessætning."
@@ -3276,9 +3261,6 @@
         "Du kan ikke sende en e-mail til flere end ${ maxContacts } modtager",
         "Du kan ikke sende en e-mail til flere end ${ maxContacts } modtagere"
       ],
-      "You have reached the contacts limit for your account": [
-        "Du har nået det maksimale antal kontakter for din konto"
-      ],
       "You have reached the maximum number of calendars.": [
         "Du har nået det maksimale antal kalendere."
       ],
@@ -3672,9 +3654,6 @@
       "Lifetime accounts cannot join a family plan.": [
         "Livstidskonti kan ikke indgå i et familieabonnement."
       ],
-      "Manage addresses.": [
-        "Administrer adresser."
-      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Ejere af et abonnement med medlemmer kan ikke deltage i et andet familieabonnement."
       ],
@@ -3710,9 +3689,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Din konto bruger ${ usedSpace } lagerplads, hvilket overstiger de ${ inviteSpace } du har fået tildelt. Slet nogle data eller bed abonnementsadministratoren om at øge din lagerplads."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "Du kan ikke acceptere denne invitation med dit nuværende abonnement."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3732,9 +3708,6 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users ": [
-        "Konfigurer din familie-konto og inviter brugere "
-      ],
       "Set up your family": [
         "Opret din familie"
       ],
@@ -4275,9 +4248,6 @@
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } måned)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus lagerplads"
       ],
@@ -4768,9 +4738,6 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Andre brugere i din organisation vil se dine optagede tidsrum. Ingen detaljer om begivenheden deles."
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Vores advarsler er baseret på forsigtighed. Hvis du ikke genkender nogen af de lækkede oplysninger, kan du trygt ignorere denne rapport."
       ],
       "password": [
         "adgangskode"
@@ -6685,9 +6652,6 @@
       "Sync and backup all your files across devices": [
         "Synkroniser og sikkerhedskopier alle dine filer mellem enheder"
       ],
-      "Tor over VPN": [
-        "Tor over VPN"
-      ],
       "Two-factor authentication": [
         "To-faktor-godkendelse"
       ],
@@ -6951,9 +6915,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Opret op til ${ n } e-mailadresser/aliasser, som du kan tildele familiemedlemmer. Brug dem til onlineidentiteter, f.eks. JohnShopper@${ domain } til shoppingkonti."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Afværger trussel mod VPN-privatliv ved at sende din internettrafik gennem flere servere"
       ],
@@ -7049,9 +7010,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Nulstil brugeradgangskoder og nulstil to-faktor-godkendelse på brugere"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Send din internettrafik gennem Tor-netværket med ét enkelt tryk"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
@@ -7343,11 +7301,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "For at importen kan fungere, skal du vælge alle de ønskede elementer som vist i GIF-illustrationen."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Vælg, hvad ${ BRAND_NAME } kan få adgang til: se dine e-mailbeskeder og indstillinger, se og downloade dine kontakter, se og downloade alle kalendere, du har adgang til fra Google Kalender."
       ]
     },
     "Onboarding": {
@@ -7856,9 +7809,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Prøv ${ PASS_APP_NAME }"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "Bruges på Amazon til shopping osv."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Når du bliver bedt om din email-adresse, skal du i stedet give dette email-alias i stedet for. E-mail aliasserne bliver leveret af ${ passLink }."
@@ -8455,19 +8405,19 @@
         "Dit ${ appStorage } er fuldt"
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Dit ${ storage } er ${ percentage }% fyldt. ${ cta }."
+        "Din ${ storage } er ${ percentage }% fyldt. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
-        "Dit ${ storage } er fyldt. ${ cta }."
+        "Din ${ storage } er fyldt. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "Dit drev er ${ percentage }% fyldt. ${ cta }."
+        "Din lagerplads er ${ percentage }% fyldt. ${ cta }."
       ],
       "Your storage is full": [
         "Dit lager er fuldt"
       ],
       "Your storage is full. ${ cta }.": [
-        "Dit drev er fyldt. ${ cta }."
+        "Din lagerplads er fyldt. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Du mister adgang til ${ gb } lagerplads og prioriteret support."
@@ -8543,9 +8493,6 @@
     "Subscription change warning": {
       "Got it": [
         "Forstået"
-      ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Log ind på din Apple App Store-konto, og tryk på ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Log ind på din Play Store-konto, og tryk på ${ subscriptions }."
@@ -9627,9 +9574,6 @@
       "Warning: suspected fake website": [
         "Advarsel: mistanke om falsk websted"
       ],
-      "We're setting up Calendar search": [
-        "Vi opretter en kalender-søgning"
-      ],
       "We've locked some calendars to protect your data": [
         "Vi har låst nogle kalendere for at beskytte dine data"
       ],
@@ -9835,11 +9779,6 @@
       ],
       "No ads": [
         "Ingen reklamer"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Adgang til Secure Core-servere, hurtige P2P/BitTorrent-downloads, Tor over VPN og meget mere."
       ]
     },
     "wallet_signup_2024: Info": {
