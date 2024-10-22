@@ -146,7 +146,7 @@
       "Numbered List": [
         "Нумерованный список"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Options": [
@@ -505,6 +505,9 @@
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "Содержимое, которое вы пытаетесь вставить, слишком велико для одновременной вставки. Попробуйте еще раз, вставляя небольшие фрагменты за раз."
       ],
+      "The language you're using isn’t currently supported in suggestion mode. Please switch to edit mode or change the language.": [
+        "Используемый вами язык не поддерживается в режиме подсказок. Пожалуйста, переключитесь в режим изменения или измените язык."
+      ],
       "Viewing": [
         "Просмотр"
       ],
@@ -582,6 +585,9 @@
       ],
       "Delete thread": [
         "Удалить тему"
+      ],
+      "Language not supported": [
+        "Язык не поддерживается."
       ]
     }
   }
