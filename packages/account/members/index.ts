@@ -10,6 +10,7 @@ import {
     getFetchedEphemeral,
     previousSelector,
 } from '@proton/redux-utilities';
+import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAllMemberAddresses, getAllMembers } from '@proton/shared/lib/api/members';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Address, Api, EnhancedMember, Member, User } from '@proton/shared/lib/interfaces';
@@ -223,22 +224,30 @@ const modelThunk = (options?: {
         };
         const getPayload = async () => {
             const user = await dispatch(userThunk());
-            if (!canFetch(user)) {
-                return {
-                    value: freeMembers,
-                    type: ValueType.dummy,
-                };
-            }
-            const value = await getAllMembers(extraArgument.api).then((members): EnhancedMember[] => {
-                return members.map((member) => ({
-                    ...member,
-                    addressState: 'partial' as const,
-                }));
-            });
-            return {
-                value,
-                type: ValueType.complete,
+            const defaultValue = {
+                value: freeMembers,
+                type: ValueType.dummy,
             };
+            if (!canFetch(user)) {
+                return defaultValue;
+            }
+            try {
+                const value = await getAllMembers(extraArgument.api).then((members): EnhancedMember[] => {
+                    return members.map((member) => ({
+                        ...member,
+                        addressState: 'partial' as const,
+                    }));
+                });
+                return {
+                    value,
+                    type: ValueType.complete,
+                };
+            } catch (e: any) {
+                if (getIsMissingScopeError(e)) {
+                    return defaultValue;
+                }
+                throw e;
+            }
         };
         const cb = async () => {
             try {
