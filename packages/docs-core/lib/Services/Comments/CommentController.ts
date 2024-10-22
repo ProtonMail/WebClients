@@ -37,6 +37,9 @@ import { CommentThreadType } from '@proton/docs-shared'
 import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
 import type { MetricService } from '../Metrics/MetricService'
 import { TelemetryDocsEvents } from '@proton/shared/lib/api/telemetry'
+import type { UnleashClient } from '@proton/unleash'
+
+const DocsEnableNotificationsOnNewCommentFeatureFlag = 'DocsEnableNotificationsOnNewComment'
 
 /**
  * Controls comments for a single document.
@@ -52,6 +55,8 @@ export class CommentController implements CommentControllerInterface, InternalEv
     this.logger,
   )
 
+  private shouldSendDocumentName = false
+
   constructor(
     private readonly document: NodeMeta,
     private readonly keys: DocumentKeys,
@@ -63,12 +68,22 @@ export class CommentController implements CommentControllerInterface, InternalEv
     private _createComment: CreateComment,
     private _loadThreads: LoadThreads,
     private _handleRealtimeEvent: HandleRealtimeCommentsEvent,
+    private getLatestDocumentName: () => string,
+    unleashClient: UnleashClient,
     public readonly eventBus: InternalEventBusInterface,
     private logger: LoggerInterface,
   ) {
     this.localCommentsState = new LocalCommentsState(eventBus)
     eventBus.addEventHandler(this, DocControllerEvent.RealtimeCommentMessageReceived)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.ConnectionEstablishedButNotYetReady)
+
+    if (unleashClient.isReady()) {
+      this.shouldSendDocumentName = unleashClient.isEnabled(DocsEnableNotificationsOnNewCommentFeatureFlag)
+    }
+
+    unleashClient.on('update', () => {
+      this.shouldSendDocumentName = unleashClient.isEnabled(DocsEnableNotificationsOnNewCommentFeatureFlag)
+    })
   }
 
   get userDisplayName(): string {
@@ -131,6 +146,8 @@ export class CommentController implements CommentControllerInterface, InternalEv
     markID?: string,
     createMarkNode = true,
   ): Promise<CommentThreadInterface | undefined> {
+    const decryptedDocumentName = this.shouldSendDocumentName ? this.getLatestDocumentName() : null
+
     const threadResult = await this._createThread.execute({
       text: commentContent,
       keys: this.keys,
@@ -139,6 +156,7 @@ export class CommentController implements CommentControllerInterface, InternalEv
       markID,
       createMarkNode,
       type: CommentThreadType.Comment,
+      decryptedDocumentName,
     })
 
     if (threadResult.isFailed()) {
@@ -158,6 +176,8 @@ export class CommentController implements CommentControllerInterface, InternalEv
     commentContent: string,
     suggestionType: SuggestionSummaryType,
   ): Promise<CommentThreadInterface | undefined> {
+    const decryptedDocumentName = this.shouldSendDocumentName ? this.getLatestDocumentName() : null
+
     const threadResult = await this._createThread.execute({
       text: commentContent,
       keys: this.keys,
@@ -166,6 +186,7 @@ export class CommentController implements CommentControllerInterface, InternalEv
       markID: suggestionID,
       createMarkNode: false,
       type: CommentThreadType.Suggestion,
+      decryptedDocumentName,
     })
 
     if (threadResult.isFailed()) {
@@ -184,6 +205,8 @@ export class CommentController implements CommentControllerInterface, InternalEv
   }
 
   async createComment(content: string, threadID: string): Promise<CommentInterface | undefined> {
+    const decryptedDocumentName = this.shouldSendDocumentName ? this.getLatestDocumentName() : null
+
     const commentResult = await this._createComment.execute({
       text: content,
       threadID,
@@ -191,6 +214,7 @@ export class CommentController implements CommentControllerInterface, InternalEv
       lookup: this.document,
       commentsState: this.localCommentsState,
       type: CommentType.Comment,
+      decryptedDocumentName,
     })
 
     if (commentResult.isFailed()) {
@@ -211,6 +235,8 @@ export class CommentController implements CommentControllerInterface, InternalEv
   }
 
   async createSuggestionSummaryComment(content: string, threadID: string): Promise<CommentInterface | undefined> {
+    const decryptedDocumentName = this.shouldSendDocumentName ? this.getLatestDocumentName() : null
+
     const commentResult = await this._createComment.execute({
       text: content,
       threadID,
@@ -218,6 +244,7 @@ export class CommentController implements CommentControllerInterface, InternalEv
       lookup: this.document,
       commentsState: this.localCommentsState,
       type: CommentType.Suggestion,
+      decryptedDocumentName,
     })
 
     if (commentResult.isFailed()) {

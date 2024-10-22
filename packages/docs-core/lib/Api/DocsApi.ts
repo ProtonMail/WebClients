@@ -247,19 +247,34 @@ export class DocsApi {
     authorEmail: string
     type: CommentThreadType
     commentType: CommentType
+    decryptedDocumentName: string | null
   }): Promise<Result<CreateThreadResponse>> {
     if (!this.protonApi) {
       throw new Error('Proton API not set')
     }
 
-    const { volumeId, linkId, markId, encryptedMainCommentContent, authorEmail, type, commentType } = dto
+    const {
+      volumeId,
+      linkId,
+      markId,
+      encryptedMainCommentContent,
+      authorEmail,
+      type,
+      commentType,
+      decryptedDocumentName,
+    } = dto
 
     try {
       this.inflight++
       const response = await this.protonApi(
         createThreadInDocument(volumeId, linkId, {
           Mark: markId,
-          Comment: { Content: encryptedMainCommentContent, AuthorEmail: authorEmail, Type: commentType },
+          Comment: {
+            Type: commentType,
+            AuthorEmail: authorEmail,
+            Content: encryptedMainCommentContent,
+            DocumentName: decryptedDocumentName,
+          },
           Type: type,
         }),
       )
@@ -311,21 +326,24 @@ export class DocsApi {
     parentCommentId: string | null
     authorEmail: string
     type: CommentType
+    decryptedDocumentName: string | null
   }): Promise<Result<AddCommentToThreadResponse>> {
     if (!this.protonApi) {
       throw new Error('Proton API not set')
     }
 
-    const { volumeId, linkId, threadId, encryptedContent, parentCommentId, authorEmail, type } = dto
+    const { volumeId, linkId, threadId, encryptedContent, parentCommentId, authorEmail, type, decryptedDocumentName } =
+      dto
 
     try {
       this.inflight++
       const response = await this.protonApi(
         addCommentToThreadInDocument(volumeId, linkId, threadId, {
-          Content: encryptedContent,
-          ParentCommentId: parentCommentId,
-          AuthorEmail: authorEmail,
           Type: type,
+          ParentCommentId: parentCommentId,
+          DocumentName: decryptedDocumentName,
+          AuthorEmail: authorEmail,
+          Content: encryptedContent,
         }),
       )
       return Result.ok(response)
