@@ -89,6 +89,7 @@ enum DriveFeatureFlag {
     DriveDocsLandingPageEnabled = 'DriveDocsLandingPageEnabled',
     DriveDocsPublicSharing = 'DriveDocsPublicSharing',
     DriveDocsPublicSharingDisabled = 'DriveDocsPublicSharingDisabled',
+    DocsEnableNotificationsOnNewComment = 'DocsEnableNotificationsOnNewComment',
     // Bookmarks
     DriveShareURLBookmarking = 'DriveShareURLBookmarking',
     DriveShareURLBookmarksDisabled = 'DriveShareURLBookmarksDisabled',
