@@ -70,10 +70,10 @@
       "Accept": [
         "स्वीकार करें"
       ],
-      "activate": [
+      "Activate": [
         "सक्रिय"
       ],
-      "Activate": [
+      "activate": [
         "सक्रिय"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -111,6 +111,9 @@
       ],
       "Add domain": [
         "डोमेन जोड़ें"
+      ],
+      "Add email address": [
+        "ईमेल पता जोड़ें"
       ],
       "Add filter": [
         "फ़िल्टर जोड़ें"
@@ -189,9 +192,6 @@
       ],
       "Change keys": [
         "कुंजियाँ बदलें"
-      ],
-      "Change other email subscriptions": [
-        "अन्य ईमेल सदस्यताएँ बदलें"
       ],
       "Change password": [
         "पासवर्ड बदलें"
@@ -375,6 +375,9 @@
       ],
       "Discard": [
         "रद्द करें"
+      ],
+      "Discard changes": [
+        "परिवर्तन छोड़ें"
       ],
       "Don't show again": [
         "फिर से न दिखाएं"
@@ -694,9 +697,6 @@
       "OK": [
         "ठीक है"
       ],
-      "Ok": [
-        "ठीक है"
-      ],
       "Open": [
         "अनिर्णित"
       ],
@@ -781,9 +781,6 @@
       "Remove gift code": [
         "उपहार कोड हटाएं"
       ],
-      "Remove single sign-on": [
-        "एकल साइन-ऑन हटाएं"
-      ],
       "Remove this label": [
         "ये लेबल हटाएं"
       ],
@@ -831,9 +828,6 @@
       ],
       "Restore": [
         "रिस्टोर करें"
-      ],
-      "Resubscribe": [
-        "पुन: सदस्यता लें"
       ],
       "Resume": [
         "जारी रखें"
@@ -1292,6 +1286,9 @@
       ],
       "External": [
         "बाहरी"
+      ],
+      "Inactive": [
+        "सक्रिय नहीं"
       ],
       "No E2EE mail": [
         "कोई E2EE मेल नहीं"
@@ -1762,9 +1759,6 @@
       ]
     },
     "Calendar sharing access option label": {
-      "Edit (view, create and edit event details)": [
-        "बदले (इवेंट जानकारी देखे, बनाएं और बदले)"
-      ],
       "View (see all event details)": [
         "देखें (सारे इवेंट जानकारी देखें)"
       ]
@@ -3135,6 +3129,11 @@
         "मिटा दें"
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "इस ग्रुप को पक्का मिटाएं?"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "अतिदेय चालान"
@@ -3149,9 +3148,6 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "संपर्कों को एन्क्रिप्ट और आयात किया जा रहा है... इसमें कुछ मिनट लग सकते हैं. जब प्रक्रिया पूरी हो जाती है, तो आप इस मोडल को बंद कर सकते हैं।"
-      ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "CSV और VCF फ़ाइल के माध्यम से आयात के लिए, सुनिश्चित करें कि फ़ाइल ${ MAX_IMPORT_FILE_SIZE_STRING } या ${ MAX_IMPORT_CONTACTS_STRING } संपर्कों से अधिक न हो। यदि आपकी फ़ाइल बड़ी है, तो कृपया उसे छोटी फ़ाइलों में विभाजित करें। ${ learnMoreLink }।"
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "${ BRAND_NAME } पे दोस्तों को बुला के ${ credits } तक क्रेडिट लें।"
@@ -3396,14 +3392,20 @@
       "Email subscriptions": [
         "ईमेल सदस्यताएँ"
       ],
+      "Resubscribe": [
+        "पुन: सदस्यता लें"
+      ],
+      "Unsubscribe": [
+        "सदस्यता रद्द"
+      ],
+      "Unsubscribe?": [
+        "सदस्यता रद्द करें?"
+      ],
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
         "आप ${ BRAND_NAME } से कौन सा ईमेल प्राप्त करना चाहते हैं?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "आपने ${ categoriesJsx } ईमेल पर फिर से भेज दिया।"
-      ],
-      "You unsubscribed from ${ categoriesJsx } emails.": [
-        "आपने ${ categoriesJsx } ईमेल से सदस्यता समाप्त कर ली है।"
       ]
     },
     "Email Unsubscribe Categories": {
@@ -3936,12 +3938,6 @@
       ],
       "Request timed out": [
         "अनुरोध का समय समाप्त हुआ"
-      ],
-      "Require at least one action": [
-        "कम से कम एक कार्रवाई की आवश्यकता है"
-      ],
-      "Require at least one condition": [
-        "कम से कम एक शर्त की आवश्यकता है"
       ],
       "Signature not verified": [
         "संपर्क हस्ताक्षर सत्यापित नहीं"
@@ -4489,9 +4485,6 @@
       "Invite an existing ${ BRAND_NAME } user": [
         "मौजूदा ${ BRAND_NAME } यूज़र को न्योता भेजें"
       ],
-      "Invite member to your family": [
-        "अपने परिवार में किसी को बुलाएं"
-      ],
       "Set up family group": [
         "परिवार ग्रुप सेट करें"
       ],
@@ -4533,9 +4526,6 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "इन्होने न्योता भेजा: ${ inviteEmail }"
-      ],
-      "Manage addresses.": [
-        "पते संभालें"
       ],
       "Manage user accounts": [
         "यूज़र खाते संभालें"
@@ -4662,15 +4652,25 @@
       "Add": [
         "जोड़ें"
       ],
+      "Add (${ totalAddedCount })": [
+        "(${ totalAddedCount }) जोड़ें",
+        "(${ totalAddedCount }) जोड़ें"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "${ plusVpnConnections } डिवाइस तक के लिए कनेक्शन",
         "अधिकतम ${ plusVpnConnections } उपकरणों के लिए कनेक्शन"
+      ],
+      "Continue": [
+        "जारी रखें"
       ],
       "Dark Web Monitoring": [
         "डार्क वेब मॉनिटरिंग"
       ],
       "Fastest VPN servers": [
         "सबसे तेज़ वीपीएन सर्वर"
+      ],
+      "Remove": [
+        "हटाएं"
       ],
       "Secure Core servers": [
         "सुरक्षित कोर सर्वर"
@@ -5076,6 +5076,21 @@
       "${ memberCount } member": [
         "${ memberCount } मेंबर",
         "${ memberCount } मेंबर"
+      ]
+    },
+    "Group state": {
+      "Active": [
+        "सक्रिय"
+      ]
+    },
+    "group_invite_2024: Error message, recovery": {
+      "Please try opening the link again.": [
+        "कृपया दोबारा लिंक खोलने का प्रयास करें।"
+      ]
+    },
+    "group_invite_2024: Info": {
+      "You can safely close this tab.": [
+        "आप इस टैब को सुरक्षित रूप से बंद कर सकते हैं।"
       ]
     },
     "Header": {
@@ -5590,9 +5605,6 @@
       "${ boldName } will be set as default calendar.": [
         "${ boldName } डिफॉल्ट कैलेंडर सेट होगा।"
       ],
-      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
-        "${ boldSSOUserInformation } और आपको उन्हें संगठन में वापस जोड़ने के लिए मैन्युअल रूप से बनाना होगा"
-      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } अगर आप जारी रखते हैं तो आप अपने खाते के सभी मौजूदा एन्क्रिप्टेड डेटा तक पहुंच खो देंगे।"
       ],
@@ -5726,9 +5738,6 @@
         "(${ memberCount } सदस्य)",
         "(${ memberCount } सदस्य)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /महीना)"
-      ],
       "(Filter if ALL of the following conditions are met)": [
         "(फ़िल्टर करें यदि सभी निम्नलिखित शर्तों को पूरा करते हैं)"
       ],
@@ -5771,9 +5780,6 @@
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "एक ${ BRAND_NAME } खाता सत्यापित करने के लिए सिर्फ एक फोन नंबर इस्तेमाल हो सकता है"
-      ],
-      "A recovery file lets you unlock and view your data after an account reset": [
-        "एक रिकवरी फाइल आपको खाता रीसेट के बाद अपना डाटा अनलॉक करने और देखने देता है।"
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
         "अगर आप अपना पासवर्ड भूल जाते हैं तो रिक्वरी वाक्य आपको अपने खाते को एक्सेस करने और आपके एन्क्रिप्ट किए संदेशो को रिकवर करने में मदद करेगा।"
@@ -6167,9 +6173,6 @@
       "Dedicated servers": [
         "विशेष सर्वर"
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
-        "विशेष IP पते वाले विशेष सर्वर को निजी गेटवे में जोड़ा जा सकता है ताकि बेहतर पहुंच नियंत्रण संभव हो सके।"
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "कोई भी अन्य MX रिकॉर्ड को हटा दें या सुनिश्चित करें कि ${ MAIL_APP_NAME } की प्राथमिकता सबसे कम नंबर पे है।"
       ],
@@ -6334,9 +6337,6 @@
       "Enter your recovery phrase to change your password now.": [
         "पासवर्ड बदलने के लिए पुनर्प्राप्ति रिकवरी दर्ज करें।"
       ],
-      "Event invitations and RSVPs will be sent in this language.": [
-        "इवेंट का न्योता और आरएसवीपी (मन करें तो जवाब दें) इस भाषा में भेजे जाएंगे।"
-      ],
       "Example: ${ spfExample }": [
         "उदाहरण: ${ spfExample }"
       ],
@@ -6447,12 +6447,6 @@
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "यदि आपने पहले कभी दो-कारक प्रमाणीकरण का उपयोग नहीं किया है, तो हम आपको दृढ़ता से ${ guideButton } की सलाह देते हैं।"
-      ],
-      "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "अगर आप अपना पासवर्ड खो देते हैं और आपको अपना खाता रिसेट करने की ज़रूरत हैं, तो ${ boldImperative } की आपके पास ${ boldAccountRecovery } हैं।"
-      ],
-      "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "अगर आप अपना पासवर्ड खो देते है और आपको अपना खाता रीसेट करने की ज़रूरत है, तो ${ boldImperative } की आपके पास ${ boldAccountAndRecovery } है, या फिर आप अपना ईमेल, संपर्क, या फाइल एक्सेस नहीं कर पाएगे।"
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "अगर आप अपना दो-फैक्टर पे चल रहे डिवाइस को खो देते है, तो 6-अंक के दो-फैक्टर सत्यापन कोड की जगह ये कोड इस्तेमाल करके आप अपने खाते में साइन इन कर सकते है। हर कोड सिर्फ एक बार इस्तेमाल किया जा सकता है।"
@@ -6621,12 +6615,6 @@
       "Large imports can take several days.": [
         "बड़े आयात में कई दिन लग सकते हैं।"
       ],
-      "Lean more about gateways": [
-        "गेटवे के बारे में और जानें"
-      ],
-      "Lean more about single sign-on": [
-        "सिंगल साइन-ऑन के बारे में और जानें"
-      ],
       "Learn how to ${ staySaferOnlineLink }": [
         "जानें कैसे ${ staySaferOnlineLink }"
       ],
@@ -6786,9 +6774,6 @@
       "No results found": [
         "कोई परिणाम नहीं मिला"
       ],
-      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
-        "गैर-SSO यूजर (मैन्युअल रूप से बनाए गए, पहचान प्रदाता द्वारा प्रदान नहीं किए गए) अभी भी संगठन में लॉग इन कर सकते हैं"
-      ],
       "Not a valid URL": [
         "मान्य URL नहीं है"
       ],
@@ -6800,9 +6785,6 @@
       ],
       "of": [
         "का"
-      ],
-      "Once single sign-on is disabled for your organization:": [
-        "एक बार संगठन के लिए एकल साइन-ऑन अक्षम हो जाने पर:"
       ],
       "Once you reset your password:": [
         "आप एक बार अपना पासवर्ड बदलते है तो:"
@@ -6908,9 +6890,6 @@
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "कृपया इसे सुरक्षित रखें। पासवर्ड रीसेट होने की स्थिति में आपको अपने खाते तक पहुंचने और अपने डेटा को डिक्रिप्ट करने के लिए इसकी आवश्यकता होगी।"
-      ],
-      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
-        "कृपया ध्यान दें कि अगर आप इस फ़िल्टर ${ nameDeleted } को हटा देते हैं, तो हम उसके द्वारा उत्पन्न सभी स्वचालित क्रियाएँ प्रोसेस करना बंद कर देंगे।"
       ],
       "Please select the folders you would like to import:": [
         "कृपया उन फ़ोल्डरों का चयन करें जिन्हें आप आयात करना चाहते हैं:"
@@ -7119,9 +7098,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "चूंकि आप एक वफादार उपयोगकर्ता हैं, इसलिए आपके खाते में अतिरिक्त सुविधाएं सक्षम हैं।"
       ],
-      "Single sign-on removed": [
-        "एकल साइन-ऑन हटाया गया है।"
-      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "एसएमटीपी सबमिशन तृतीय-पक्ष सेवाओं या उपकरणों को आपके कस्टम डोमेन पते के लिए ${ MAIL_APP_NAME } के माध्यम से ईमेल भेजने की अनुमति देता है। पहुंच का अनुरोध करने के लिए, कृपया ${ createTicket } अपने उपयोग के मामलों, आप कौन से कस्टम डोमेन का उपयोग करना चाहते हैं, और अपेक्षित प्रति घंटा और दैनिक ईमेल वॉल्यूम का वर्णन करें।"
       ],
@@ -7136,9 +7112,6 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF स्पष्ट करता है कि आपके डोमेन के लिए किसे ईमेल भेजने की अनुमति है। सुनिश्चित करें कि आप निम्नलिखित TXT रेकॉर्ड को अपने DNS कंसोल में जोड़ें (जो प्लेटफ़ॉर्म पर स्थित है जहां आपने कस्टम डोमेन खरीदा है)।"
-      ],
-      "SSO users (provided by your Identity Provider) will be deleted": [
-        "पहचान प्रदाता द्वारा प्रदान किए गए SSO यूजर हटा दिए जाएंगे"
       ],
       "Stay tuned for future promotions.": [
         "भविष्य के प्रचार के लिए बने रहें।"
@@ -7213,9 +7186,6 @@
       "The calendar will be removed from your account.": [
         "कैलेंडर आपके खाते से हटा दिया जाएगा।"
       ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "पहचान प्रदाता के क्रेडेंशियल मिटा दिए जाएंगे।"
-      ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "डार्क वेब इंटरनेट का एक छिपा हुआ हिस्सा है जहां चोरी की गई व्यक्तिगत जानकारी, जैसे पहचान, खरीदी और बेची जा सकती है।"
       ],
@@ -7251,9 +7221,6 @@
       ],
       "The format of your CSV file is incorrect.": [
         "आपके CSV फाइल का फॉर्मेट गलत हैं।"
-      ],
-      "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
-        "यह रिपोर्ट करने वाला लिंक कि आपने ${ BRAND_NAME } खाता सेट नहीं किया है, समाप्त हो गया है। कृपया इस समस्या के समाधान के लिए हमारी सहायता टीम से संपर्क करें।"
       ],
       "The name will be visible to your users while they are signed in.": [
         "नाम आपके साइनइन किए यूज़र को दिखाई देगा।"
@@ -7734,9 +7701,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "सत्यापन के लिए सही ईमेल पता सुनिश्चित करने के लिए आप इसे एक बार संपादित कर सकते हैं।"
       ],
-      "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "आप साइनइन सत्यापन को सक्षम कर सकते है, ये देखने के लिए की आपका खाता कब एक्सेस किया गया, और किस आईपी से। हम खाते को एक्सेस करने वाले आईपी को रिकॉर्ड करेगे, और असफल कोशिशो को भी।"
-      ],
       "You can import one data type at a time.": [
         "आप एक बार में एक डेटा प्रकार आयात कर सकते हैं।"
       ],
@@ -7991,6 +7955,17 @@
     "Input placeholder": {
       "Add label": [
         "लेबल जोड़ें"
+      ]
+    },
+    "invitation status": {
+      "Declined": [
+        "मना किए गए"
+      ],
+      "Paused": [
+        "रुका हुआ"
+      ],
+      "Pending": [
+        "अपूर्ण"
       ]
     },
     "Invoice state display as badge": {
@@ -8686,6 +8661,9 @@
       "Disable animations": [
         "एनीमेशन अक्षम करें"
       ],
+      "Disabled": [
+        "अक्षम किया"
+      ],
       "Display name": [
         "डिस्प्ले नाम"
       ],
@@ -8754,6 +8732,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "फिंगरप्रिंट के साथ कुंजी के लिए पासवर्ड दर्ज करें: ${ fingerprintCode }"
+      ],
+      "Event": [
+        "इवेंट"
       ],
       "Event duration": [
         "इवेंट समय"
@@ -8868,6 +8849,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "NetShield ब्लॉकर फिल्टर की ताकत"
+      ],
+      "Link label (optional)": [
+        "लिंक लेबल (वैकल्पिक)"
       ],
       "Logo": [
         "चिन्ह"
@@ -9064,6 +9048,9 @@
       "Recovery phrase": [
         "पुनर्प्राप्ति वाक्यांश"
       ],
+      "Remove image metadata": [
+        "छवि मेटाडेटा निकालें"
+      ],
       "Repeat password": [
         "पासवर्ड दोहराएं"
       ],
@@ -9078,6 +9065,9 @@
       ],
       "Reveal password": [
         "पासवर्ड प्रकट"
+      ],
+      "Search": [
+        "खोजें"
       ],
       "Second password": [
         "दूसरा पासवर्ड"
@@ -9160,7 +9150,7 @@
       "Subscription options": [
         "सदस्यता विकल्प"
       ],
-      "Synchronize with system": [
+      "Sync with system": [
         "सिस्टम के साथ तालमेल बिठाएं"
       ],
       "System information": [
@@ -9516,9 +9506,6 @@
       ],
       "Pay invoice": [
         "चालान भुगतान करें"
-      ],
-      "Paypal without credit card": [
-        "पेपैल बिना क्रेडिट कार्ड के"
       ],
       "Privacy policy": [
         "गोपनीयता नीति"
@@ -10313,9 +10300,6 @@
       "Strict no-logs policy": [
         "सख्त लॉग-नहीं नीति"
       ],
-      "Tor over VPN": [
-        "वीपीएन के ऊपर Tor"
-      ],
       "Two-factor authentication": [
         "दो तरीकों से प्रमाणीकरण"
       ],
@@ -10651,9 +10635,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "यूज़र पासवर्ड और यूज़र का दो-फैक्टर सत्यापन रीसेट करें"
       ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "एक क्लिक के साथ Tor नेटवर्क से अपने इंटरनेट ट्रैफिक को गुज़ार के ले जाएं"
-      ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "अपने संपर्क डाटा, जैसे फोन नंबर, पता, जन्मदिन, और निजी नोट, को सुरक्षित रखे। ज़ीरो-एक्सेस एन्क्रिप्शन ये पक्का करता है की ${ BRAND_NAME } भी इन को एक्सेस ना कर पाए।"
       ],
@@ -10766,6 +10747,9 @@
       "Reminder has been sent": [
         "अनुस्मारक भेज दिया गया है"
       ],
+      "Too many recent API requests": [
+        "हाल ही में बहुत से एप्रोअं अनुरोध"
+      ],
       "Two-factor authentication has been enforced for administrators": [
         "प्रशासकों के लिए टू फैक्टर ऑथेंटिकेशन लागू किया गया है"
       ],
@@ -10860,11 +10844,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "आयात करने के लिए आपको GIF में दिखाई गई सारी चीज़े चुननी होगी।"
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "चुने की ${ BRAND_NAME } क्या एक्सेस कर सकता है: आपके ईमेल संदेश और सेटिंग देखना, आपके संपर्क देखना और डाउनलोड करना, सारे एजेंडा जो आपने Google Agenda से एक्सेस किए है को देखना और डाउनलोड करना।"
       ]
     },
     "Onboarding": {
@@ -11192,6 +11171,20 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "हमारे वेब ऐप पर साइन इन करने पर उपयोगकर्ताओं को ${ BRAND_NAME } आइकन के बजाय आपका चिन्ह दिखाई देगा।"
+      ]
+    },
+    "orgidentity": {
+      "Current organization identity": [
+        "वर्तमान संगठन पहचान"
+      ],
+      "Edit organization identity": [
+        "संगठन पहचान बदलें"
+      ],
+      "New organization identity": [
+        "नये संगठन की पहचान"
+      ],
+      "Organization identity": [
+        "संगठन पहचान"
       ]
     },
     "OS compatibility": {
@@ -11786,9 +11779,6 @@
       "Changing organization password": [
         "संगठन का पासवर्ड बदलना"
       ],
-      "Creating or accessing non-private users": [
-        "गैर-निजी उपयोगकर्ताओं को बनाना या उन तक पहुँचना"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "पासवर्ड परिवर्तन के कारण, आपके संगठन व्यवस्थापक विशेषाधिकार प्रतिबंधित कर दिए गए हैं। निम्नलिखित क्रियाओं की अब अनुमति नहीं है:"
       ]
@@ -11802,6 +11792,40 @@
       ],
       "User": [
         "यूज़र"
+      ]
+    },
+    "Safety review": {
+      "Code sent to ${ boldValue }": [
+        "${ boldValue } को कोड भेजा गया"
+      ],
+      "Download ${ size }": [
+        "${ size } डाउनलोड करें"
+      ],
+      "Invalid code": [
+        "अमान्य कोड"
+      ],
+      "Show more": [
+        "और दिखाएँ"
+      ]
+    },
+    "saml: Action": {
+      "Cancel": [
+        "कैंसिल करें"
+      ]
+    },
+    "saml: Error": {
+      "Something went wrong": [
+        "कोई गड़बड़ हो गई"
+      ]
+    },
+    "saml: Info": {
+      "Details": [
+        "जानकारी"
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "ईमेल"
       ]
     },
     "scim: Action": {
@@ -12241,6 +12265,11 @@
         "सत्यापन"
       ]
     },
+    "signup: Action": {
+      "Request trial": [
+        "ट्रायल का अनुरोध करें"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "बंद करें"
@@ -12602,9 +12631,6 @@
       "Got it": [
         "समझ गए"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "बस अपने एप्पल App Store खाते पे साइनइन करके ${ subscriptions } पे जाएं।"
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "बस अपने Play Store खाते पे साइन इन करें, फिर ${ subscriptions } दबाएं।"
       ],
@@ -12637,6 +12663,9 @@
       ],
       "Cancel subscription?": [
         "सदस्यता रद्द करें?"
+      ],
+      "Got it": [
+        "ठीक है"
       ],
       "Helping activists in Hong Kong": [
         "हांगकांग में क्रांतिकारियों की सहायता करना"
@@ -12794,12 +12823,6 @@
       ],
       "Gift code applied": [
         "उपहार कोड लागू"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "यदि आप एक मान्य पुनर्प्राप्ति ईमेल दर्ज करते हैं तो हम आपको अगले मिनट में आपके उपयोगकर्ता नाम के साथ एक ईमेल भेजेंगे।"
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "यदि आप एक मान्य पुनर्प्राप्ति ईमेल दर्ज करते हैं तो हम आपको अगले मिनट में आपके उपयोगकर्ता नाम के साथ एक ईमेल भेजेंगे।"
       ],
       "Import record deleted": [
         "आयात रिकॉर्ड हटा दिए गए"
@@ -13035,6 +13058,9 @@
       "Email addresses": [
         "ईमेल पता"
       ],
+      "Event": [
+        "इवेंट"
+      ],
       "Import": [
         "आयात"
       ],
@@ -13206,6 +13232,9 @@
       ],
       "Add users": [
         "यूजर जोड़ें"
+      ],
+      "Address": [
+        "पता"
       ],
       "Address and key verification": [
         "पता और कुंजी सत्यापन"
@@ -13461,6 +13490,9 @@
       "Device connected!": [
         "डिवाइस जुड़ गया।"
       ],
+      "Device name": [
+        "डिवाइस नाम"
+      ],
       "Disable two-factor authentication": [
         "दो-कारक प्रमाणीकरण अक्षम करें"
       ],
@@ -13648,6 +13680,9 @@
       "Gift code": [
         "उपहार कोड"
       ],
+      "Group": [
+        "ग्रुप"
+      ],
       "Groups": [
         "ग्रुप"
       ],
@@ -13817,6 +13852,9 @@
       "PayPal verification failed": [
         "पेपाल सत्यापन विफल रहा"
       ],
+      "Personalise your e-mail footer": [
+        "ईमेल फुटर अपने पसंद का बनाएं"
+      ],
       "Phone": [
         "फोन"
       ],
@@ -13867,9 +13905,6 @@
       ],
       "Remove single sign-on": [
         "एकल साइन-ऑन हटाएं"
-      ],
-      "Remove single sign-on for your organization?": [
-        "अपने संगठन के लिए एकल साइन-ऑन हटाएं?"
       ],
       "Remove user?": [
         "यूज़र हटाएं?"
@@ -14039,6 +14074,9 @@
       ],
       "Take precautions to avoid data loss!": [
         "डेटा हानि से बचने के लिए सावधानी बरतें!"
+      ],
+      "Text": [
+        "पाठ"
       ],
       "Theme": [
         "थीम"
@@ -14337,9 +14375,6 @@
       "Set the default layout for your Inbox.": [
         "अपने इनबॉक्स के लिए डिफ़ॉल्ट लेआउट सेट करें।"
       ],
-      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
-        "आपके भेजे गए ईमेल के फुटर में ये डाल देगा: ${ signature } लिंक आपके रेफरल लिंक पे ले जाएगा। फुटर आपके हस्ताक्षर के नीचे आएगा। आप सेटिंग में अपने हस्ताक्षर को कभी भी बदल सकते है।"
-      ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "संदेश लिस्ट में भेजने वालो की तस्वीर दिखाएं। अगर तस्वीर नहीं है तो भेजने वालो के नाम का शुरुआती हिस्सा दिखाया जाएगा।"
       ],
@@ -14468,9 +14503,11 @@
     "Tor out of date": {
       "stable release": [
         "स्थिर निस्तार"
-      ],
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Tor ब्राउज़र का यह संस्करण समर्थित नहीं है। कृपया नवीनतम ${ stableRelease } में अपडेट करें"
+      ]
+    },
+    "unprivatization": {
+      "Cancel": [
+        "कैंसिल करें"
       ]
     },
     "Update font modal": {
@@ -14758,12 +14795,6 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "आपका निःशुल्क परीक्षण ${ textDate } को समाप्त होगा। ${ action }"
-      ],
-      "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
-        "आपकी पुनर्प्राप्ति फ़ाइल पुरानी हो चुकी है. यदि आप अपना खाता फिर से रीसेट करते हैं तो यह नया डेटा पुनर्प्राप्त नहीं कर सकता है।"
-      ],
-      "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
-        "आपका पुनर्प्राप्ति वाक्यांश पुराना है। यदि आप अपना खाता फिर से रीसेट करते हैं तो यह नया डेटा पुनर्प्राप्त नहीं कर सकता है।"
       ]
     },
     "Warning for domain modal": {
