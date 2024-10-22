@@ -1,14 +1,10 @@
+import { z } from 'zod';
+
 import type { Environment } from '@proton/shared/lib/interfaces';
 
-import type { ThemeModeSetting, ThemeSetting, ThemeTypes } from '../themes/themes';
-import type { DefaultProtocol } from './DefaultProtocol';
+import type { ColorScheme, ThemeSetting } from '../themes/themes';
+import { type DefaultProtocol, zDefaultProtocol } from './DefaultProtocol';
 import type { DesktopVersion } from './DesktopVersion';
-
-export interface DesktopThemeSetting {
-    Mode: ThemeModeSetting;
-    LightTheme: ThemeTypes;
-    DarkTheme: ThemeTypes;
-}
 
 export type CHANGE_VIEW_TARGET = 'mail' | 'calendar' | 'account';
 export type ElectronNotification = {
@@ -30,12 +26,14 @@ export type IPCInboxDesktopFeature =
     | 'LatestVersionCheck'
     | 'InstallSource'
     | 'MailtoTelemetry'
-    | 'ESUserChoice';
+    | 'ESUserChoice'
+    | 'FullTheme';
 export type IPCInboxGetInfoMessage =
     | { type: 'theme'; result: ThemeSetting }
     | { type: 'latestVersion'; result: DesktopVersion | null }
     | { type: 'installSource'; result: string | null }
-    | { type: 'defaultMailto'; result: DefaultProtocol };
+    | { type: 'defaultMailto'; result: DefaultProtocol }
+    | { type: 'colorScheme'; result: ColorScheme };
 export type IPCInboxGetUserInfoMessage = { type: 'esUserChoice'; result: ESUserChoice };
 export type IPCInboxClientUpdateMessage =
     | { type: 'updateNotification'; payload: number }
@@ -56,20 +54,24 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'setESUserChoice'; payload: { userID: string; userChoice: boolean } };
 export type IPCInboxClientUpdateMessageType = IPCInboxClientUpdateMessage['type'];
 
-// WARNING: DO NOT EXTEND THIS WITH OTHER UNION. IT IS NOT EASY AND EVENTS WON'T BE TYPESAFE
-// label: inda-refactor-001
-export type IPCInboxHostUpdateMessage =
-    | {
-          type: 'captureMessage';
-          payload: {
-              message: string;
-              level: 'error' | 'warning';
-              tags: Record<string, string | number>;
-              extra: Record<string, string | number>;
-          };
-      }
-    | { type: 'defaultMailtoChecked'; payload: DefaultProtocol };
-export type IPCInboxHostUpdateMessageType = string & IPCInboxHostUpdateMessage['type'];
+export const IPCInboxHostUpdateMessageSchema = z.union([
+    z.object({
+        type: z.literal('captureMessage'),
+        payload: z.object({
+            message: z.string(),
+            level: z.union([z.literal('error'), z.literal('warning')]),
+            tags: z.record(z.union([z.string(), z.number()])),
+            extra: z.record(z.union([z.string(), z.number()])),
+        }),
+    }),
+    z.object({
+        type: z.literal('defaultMailtoChecked'),
+        payload: zDefaultProtocol,
+    }),
+]);
+
+export type IPCInboxHostUpdateMessage = z.infer<typeof IPCInboxHostUpdateMessageSchema>;
+export type IPCInboxHostUpdateMessageType = IPCInboxHostUpdateMessage['type'];
 export type IPCInboxHostUpdateMessagePayload = IPCInboxHostUpdateMessage['payload'];
 export type IPCInboxHostUpdateListener = (payload: IPCInboxHostUpdateMessagePayload) => void;
 export type IPCInboxHostUpdateListenerRemover = { removeListener: () => void };
@@ -83,38 +85,6 @@ export type IPCInboxHostUpdateListenerAdder = (
     eventType: IPCInboxHostUpdateMessageType,
     callback: IPCInboxHostUpdateListener
 ) => IPCInboxHostUpdateListenerRemover;
-
-// THIS NEEDS REFACTOR: inda-refactor-001
-// Either avoid this function completelly or at least implemet it in zod.
-export function isValidHostUpdateMessage(
-    data: unknown
-): { success: false; error: string } | { success: true; data: IPCInboxHostUpdateMessage } {
-    if (!data) {
-        return { success: false, error: 'is null' };
-    }
-    if (typeof data !== 'object') {
-        return { success: false, error: 'not an object' };
-    }
-
-    if (!('type' in data)) {
-        return { success: false, error: 'not have type' };
-    }
-
-    if (typeof data.type !== 'string') {
-        return { success: false, error: 'have non-string type' };
-    }
-
-    if (!('payload' in data)) {
-        return { success: false, error: 'not have payload' };
-    }
-
-    const allowedTypes = ['captureMessage', 'defaultMailtoChecked'];
-    if (allowedTypes.indexOf(data.type) > -1) {
-        return { success: true, data: data as IPCInboxHostUpdateMessage };
-    }
-
-    return { success: false, error: `unknown type ${data.type}` };
-}
 
 /**
  * Electron injects an object in the window object
@@ -143,20 +113,6 @@ export type PayloadOfHostUpdateType<T extends IPCInboxHostUpdateMessageType> = E
     IPCInboxHostUpdateMessage,
     { type: T }
 >['payload'];
-
-// Assuming that broker was added as window object.
-export function addIPCHostUpdateListener<T extends IPCInboxHostUpdateMessageType>(
-    eventType: T,
-    callback: (payload: PayloadOfHostUpdateType<T>) => void
-): IPCInboxHostUpdateListenerRemover {
-    // THIS NEEDS REFACTOR inda-refactor-001
-    // This shouldn't be needed, better to avoid it with custom type-safe event emmiter
-    //
-    // With generic T we make sure first correct callback type is added to
-    // correct event type. But the `on` function must accept union of callbacks.
-    const unsafeCallback = callback as IPCInboxHostUpdateListener;
-    return window.ipcInboxMessageBroker!.on!(eventType, unsafeCallback);
-}
 
 export const END_OF_TRIAL_KEY = 'endOfTrial';
 
