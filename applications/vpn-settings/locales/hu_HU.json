@@ -361,9 +361,6 @@
       "Next month": [
         "Következő hónap"
       ],
-      "Ok": [
-        "OK"
-      ],
       "OK": [
         "OK"
       ],
@@ -2018,6 +2015,11 @@
         "Domain név törlése?"
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Biztos, hogy törölni szeretné ezt a csoportot?"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Lejárt számla"
@@ -2357,9 +2359,6 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Váltson egy üzleti csomagra, egynél több felhasználval, hogy több felhasználót kezelhessen."
       ],
-      "Please upload a square file": [
-        "Egy négyzet alakú képet töltsön fel"
-      ],
       "Process aborted": [
         "Folyamat megszakítva"
       ],
@@ -2518,9 +2517,6 @@
       "Invite an existing ${ BRAND_NAME } user": [
         "Már létező ${ BRAND_NAME } felhasználó meghívása"
       ],
-      "Invite member to your family": [
-        "Családtag meghívása"
-      ],
       "Set up family group": [
         "Családi csoport létrehozása"
       ],
@@ -2559,9 +2555,6 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Meghívó küldője: ${ inviteEmail }"
-      ],
-      "Manage addresses.": [
-        "Címek kezelése."
       ],
       "Manage user accounts": [
         "Felhasználói fiókok kezelése"
@@ -2707,8 +2700,14 @@
         "Kapcsolódás akár ${ plusVpnConnections } eszközzel",
         "Kapcsolódás akár ${ plusVpnConnections } eszközzel"
       ],
+      "Continue": [
+        "Folytatás"
+      ],
       "Fastest VPN servers": [
         "A leggyorsabb VPN szerverek"
+      ],
+      "Remove": [
+        "Eltávolítás"
       ],
       "Secure Core servers": [
         "Secure Core szerverek"
@@ -3157,9 +3156,6 @@
         "(${ memberCount } tag)",
         "(${ memberCount } tagok)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /hónap)"
-      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Szerezzen ${ BRAND_NAME } címet** és használja az összes ${ BRAND_NAME_TWO } szolgáltatást, mint például a ${ MAIL_SHORT_APP_NAME } és a ${ CALENDAR_SHORT_APP_NAME }."
       ],
@@ -3369,9 +3365,6 @@
       ],
       "Dedicated servers": [
         "Dedikált szerverek"
-      ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
-        "Dedikált szervereket, dedikált IP-címekkel, lehet hozzáadni a privát átjárókhoz, a finomhangolt hozzáférés-irányítás lehetővé tételéhez."
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Töröljön le minden más MX rekordot vagy bizonyosodjon meg róla, hogy a ${ MAIL_APP_NAME } prioritása a legalacsonyabb szám."
@@ -3694,9 +3687,6 @@
       ],
       "Labels:": [
         "Címkék:"
-      ],
-      "Lean more about single sign-on": [
-        "További információ az egyszeri bejelentkezésről"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "További információk arról, hogyan jelentkezhet be más VPN alkalmazásokkal a ${ VPN_APP_NAME }-re."
@@ -4994,7 +4984,7 @@
       "Subscription options": [
         "Előfizetés lehetőségei"
       ],
-      "Synchronize with system": [
+      "Sync with system": [
         "Szinkronizálás a rendszerrel"
       ],
       "System information": [
@@ -5178,9 +5168,6 @@
       ],
       "Pay invoice": [
         "Számla kifizetése"
-      ],
-      "Paypal without credit card": [
-        "Paypal bankkártya nélkül"
       ],
       "perform a password reset from your active session": [
         "visszaállítani a jelszavát az aktív munkafolyamatból."
@@ -5738,9 +5725,6 @@
       "Strict no-logs policy": [
         "Szigorú nincs-naplózás irányelv"
       ],
-      "Tor over VPN": [
-        "Tor VPN-en"
-      ],
       "Two-factor authentication": [
         "Kétlépcsős hitelesítés"
       ],
@@ -5983,9 +5967,6 @@
         "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől",
         "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől"
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Dedikált szervereket, dedikált IP-címekkel, lehet hozzáadni a privát átjárókhoz, a finomhangolt hozzáférés-irányítás lehetővé tételéhez"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "A VPN elleni támadással szemben úgy véd, hogy több szerveren keresztül továbbítja az internetes forgalmat"
       ],
@@ -6051,9 +6032,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Felhasználók jelszavának és kétlépcsős hitelesítésének visszaállítása"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Egyetlen kattintással irányítsa a teljes internetforgalmát a Tor hálózaton keresztül"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Tartsa biztonságban fájljait, titkosított felhőtárhelyen. Automatikus szinkronizálást, titkosított megosztás és további lehetőségeket tartalmaz."
@@ -6524,9 +6502,6 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Az adminisztrátori jogok helyreállításához használjon egy helyreállítási módszert, lépjen kapcsolatba egy másik adminisztrátorral, vagy állítsa vissza a szervezeti kulcsot."
       ],
-      "We couldn't verify authenticity of this identity.": [
-        "Nem tudtuk ellenőrizi ennek a személyazonosságnak a hitelességét."
-      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Nem sikerült ellenőrizni a feladó cím kulcsának hitelességét. Esetenként késedelem lehet a feladó adatainak frissülésében. Próbálja meg később. Ha nem bízik meg a feladó vagy a meghívó hitelességében, vegye fel a kapcsolatot a ${ BRAND_NAME } ügyfélszolgálattal."
       ],
@@ -6848,6 +6823,9 @@
     "saml: Title": {
       "It works!": [
         "Működik!"
+      ],
+      "Test SAML configuration": [
+        "SAML beállítások ellenőrzése"
       ]
     },
     "scim: Action": {
@@ -7633,6 +7611,9 @@
       "Extra storage and users": [
         "Extra tárhely és további felhasználók"
       ],
+      "Got it": [
+        "Rendben"
+      ],
       "Have a question?": [
         "Kérdése van?"
       ],
@@ -7801,12 +7782,6 @@
       ],
       "Gift code applied": [
         "Ajándék kód alkalmazva"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Amennyiben érvényes helyreállítási e-mailt adott meg, akkor a következő percben küldünk egy levelet a felhasználónevével."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Amennyiben érvényes helyreállítási számot adott meg, akkor a következő percben küldünk egy SMS-t a felhasználónevével."
       ],
       "Invitation sent": [
         "Meghívó elküldve"
@@ -7991,6 +7966,9 @@
       ],
       "Email addresses": [
         "E-mail cím"
+      ],
+      "Event": [
+        "Esemény"
       ],
       "Invitation email": [
         "Meghívó e-mail"
@@ -8238,6 +8216,9 @@
       "Device connected!": [
         "Eszköz csatlakoztatva!"
       ],
+      "Device name": [
+        "Eszköz neve"
+      ],
       "Disable two-factor authentication": [
         "Kétlépcsős hitelesítés kikapcsolása"
       ],
@@ -8421,9 +8402,6 @@
       ],
       "Processing...": [
         "Folyamatban..."
-      ],
-      "QRCode": [
-        "QR-kód"
       ],
       "Recommended": [
         "Javasolt"
@@ -8717,17 +8695,11 @@
       ],
       "User declined invitation": [
         "A felhasználó elutasította a meghívást"
-      ],
-      "Waiting user to accept the invitation": [
-        "Várakozás a meghívás elfogadására"
       ]
     },
     "Tor out of date": {
       "stable release": [
         "stabil kiadásra"
-      ],
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Az a Tor Browser verzió nem támogatott. Kérjük, frissítsen a legfrissebb ${ stableRelease }"
       ]
     },
     "unprivatization": {

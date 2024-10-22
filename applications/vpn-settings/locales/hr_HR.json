@@ -119,6 +119,9 @@
       "Delete": [
         "Izbriši"
       ],
+      "Delete group": [
+        "Izbriši grupu"
+      ],
       "Delete user": [
         "Izbriši korisnika"
       ],
@@ -136,6 +139,12 @@
       ],
       "Discard": [
         "Odbaci"
+      ],
+      "Discard changes": [
+        "Odbaci promjene"
+      ],
+      "Domain name": [
+        "Naziv domene"
       ],
       "Done": [
         "Gotovo"
@@ -262,9 +271,6 @@
       ],
       "Next month": [
         "Sljedeći mjesec"
-      ],
-      "Ok": [
-        "U redu"
       ],
       "OK": [
         "U redu"
@@ -556,6 +562,9 @@
       ],
       "Disabled": [
         "Onemogućeno"
+      ],
+      "Inactive": [
+        "Neaktivano"
       ],
       "Orphan": [
         "Siroče"
@@ -1617,6 +1626,11 @@
         "Izbriši"
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Jeste li sigurni da želite izbrisati ovu grupu?"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Neplaćena faktura"
@@ -1817,9 +1831,6 @@
       ],
       "Got it": [
         "Shvaćam"
-      ],
-      "Invite member to your family": [
-        "Pozovite korisnika u svoju obitelj"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -1833,9 +1844,6 @@
       ],
       "customer support": [
         "korisnička podrška"
-      ],
-      "Manage addresses.": [
-        "Upravljanje adresama."
       ],
       "Manage user accounts": [
         "Upravljanje korisničkim računima"
@@ -1892,8 +1900,14 @@
         "Veza za do ${ plusVpnConnections } uređaja",
         "Veza za do ${ plusVpnConnections } uređaja"
       ],
+      "Continue": [
+        "Nastavite"
+      ],
       "Fastest VPN servers": [
         "Najbrži VPN poslužitelji"
+      ],
+      "Remove": [
+        "Ukloni"
       ],
       "Secure Core servers": [
         "Secure Core poslužitelji"
@@ -2458,6 +2472,9 @@
       "Preview": [
         "Pregled"
       ],
+      "Recently used servers:": [
+        "Nedavno korišteni poslužitelji:"
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
       ],
@@ -2688,6 +2705,14 @@
         "Da biste izbjegli bilo kakve prekide u usluzi zbog neplaćenih faktura, molimo vas da u bilo kojem trenutku imate barem 1 valjani način plaćanja."
       ]
     },
+    "invitation status": {
+      "Paused": [
+        "Pauzirano"
+      ],
+      "Pending": [
+        "Na čekanju"
+      ]
+    },
     "Invoice state display as badge": {
       "Paid": [
         "Plaćeno"
@@ -2882,6 +2907,9 @@
       "Enter the code displayed on your TV": [
         "Unesite kôd prikazan na vašem televizoru"
       ],
+      "Event": [
+        "Događaj"
+      ],
       "Expires": [
         "Ističe"
       ],
@@ -2978,11 +3006,17 @@
       "Reveal password": [
         "Prikaži lozinku"
       ],
+      "Search": [
+        "Pretraži"
+      ],
       "Spam": [
         "Neželjena pošta"
       ],
       "Start date": [
         "Početni datum"
+      ],
+      "Sync with system": [
+        "Sinkroniziraj s operativnim sistemom"
       ],
       "System information": [
         "Informacije o sustavu"
@@ -3354,9 +3388,6 @@
       "Strict no-logs policy": [
         "Stroga politika ne spremanja zapisa"
       ],
-      "Tor over VPN": [
-        "Tor preko VPN-a"
-      ],
       "Two-factor authentication": [
         "Dvofaktorska autentikacija"
       ],
@@ -3435,6 +3466,9 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 vjerodajnice su ponovno stvorene"
+      ],
+      "Too many recent API requests": [
+        "Prevelik broj zahtjeva API-ju"
       ]
     },
     "Onboarding": {
@@ -3469,6 +3503,11 @@
       ],
       "Standard server configs": [
         "Postavke standardnog poslužitelja"
+      ]
+    },
+    "orgidentity": {
+      "Verify": [
+        "Potvrda"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -3675,6 +3714,11 @@
         "Poništi"
       ]
     },
+    "saml: Error": {
+      "Something went wrong": [
+        "Nešto je pošlo po zlu"
+      ]
+    },
     "saml: Info": {
       "Details": [
         "Pojedinosti"
@@ -3774,6 +3818,9 @@
       ],
       "Request password reset": [
         "Zahtjev za ponovno postavljanje lozinke"
+      ],
+      "Use recovery method": [
+        "Koristite metodu oporavka"
       ]
     },
     "session_recovery:initiation:title": {
@@ -4025,9 +4072,6 @@
     "Subscription change warning": {
       "Got it": [
         "Razumijem"
-      ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Samo se prijavite na svoj Apple App Store račun, zatim pritisnite ${ subscriptions }."
       ]
     },
     "Subscription reminder": {
@@ -4039,6 +4083,9 @@
       ],
       "Cancel subscription?": [
         "Otkazati pretplatu?"
+      ],
+      "Got it": [
+        "Razumijem"
       ],
       "Learn more": [
         "Više informacija"
@@ -4106,12 +4153,6 @@
       ],
       "Gift code applied": [
         "Kôd darovnog kupona je primjenjen"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Ako ste unijeli važeću adresu e-pošte za oporavak, poslat ćemo vam e-poštu s vašim korisničkim imenima u sljedećoj minuti."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Ako ste unijeli važeći broj telefona za oporavak, poslat ćemo vam tekstualnu poruku s vašim korisničkim imenima u sljedećoj minuti."
       ],
       "Invoice customized": [
         "Prilagođena je faktura"
@@ -4228,6 +4269,9 @@
       ],
       "Email addresses": [
         "Adrese e-pošte"
+      ],
+      "Event": [
+        "Događaj"
       ],
       "List": [
         "Lista"
@@ -4386,14 +4430,23 @@
       "Delete account": [
         "Ukloni račun"
       ],
+      "Delete group?": [
+        "Izbriši grupu?"
+      ],
       "Delete user?": [
         "Izbriši korisnika?"
       ],
       "Device connected!": [
         "Uređaj je povezan!"
       ],
+      "Device name": [
+        "Naziv uređaja"
+      ],
       "Disable two-factor authentication": [
         "Onemogući dvofaktorsku autentikaciju"
+      ],
+      "Disable two-factor authentication?": [
+        "Onemogući dvofaktorsku autentikaciju?"
       ],
       "Discard changes?": [
         "Odbaci promjene?"
@@ -4595,6 +4648,9 @@
       ],
       "Switch to two-password mode": [
         "Prijeđite na način rada s dvije lozinke"
+      ],
+      "Text": [
+        "Tekst"
       ],
       "TV sign in": [
         "Prijava putem televizije"

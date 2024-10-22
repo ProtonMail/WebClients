@@ -388,9 +388,6 @@
       "Next month": [
         "Nächster Monat"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
       ],
@@ -456,9 +453,6 @@
       ],
       "Remove gift code": [
         "Geschenkgutschein entfernen"
-      ],
-      "Remove single sign-on": [
-        "Single Sign-on entfernen"
       ],
       "Rename": [
         "Umbenennen"
@@ -1133,6 +1127,53 @@
       ],
       "Continue your subscription": [
         "Abonnement fortsetzen"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB } Speicherplatz"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } E-Mail-Speicherplatz"
+      ],
+      "Advanced account protection": [
+        "Erweiterter Kontoschutz"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "Alle ${ BRAND_NAME } Anwendungen und Premiumfunktionen"
+      ],
+      "Cancel and downgrade": [
+        "Abbrechen und Herabstufen"
+      ],
+      "Cloud storage and sharing for large files": [
+        "Cloud-Speicher und Freigabe großer Dateien"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Verschlüsselter Cloud-Speicher für Fotos und Dokumente"
+      ],
+      "Encrypted password manager": [
+        "Verschlüsselter Passwortmanager"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "Unsere grundlegende, kostenlose Version mit Ende-zu-Ende-verschlüsselter E-Mail und Speicherplatz. Keine Premiumfunktionen enthalten."
+      ],
+      "Save ${ upsellSavings }": [
+        "Spare ${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "Spare Geld mit ${ upsellPlanName }"
+      ],
+      "Secure personal and shared calendar": [
+        "Sicherer persönlicher und geteilter Kalender"
+      ],
+      "Try ${ planName }": [
+        "${ planName } ausprobieren"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "Teste ${ upsellPlanName } und behalte den Zugang zu allen Premium-E-Mail- und Kalenderfunktionen."
+      ],
+      "Ultra fast and private VPN": [
+        "Ultraschnelles und privates VPN"
       ]
     },
     "Checkout row": {
@@ -2548,9 +2589,6 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Bitte upgrade auf ein Business-Abonnement mit mehr als einem Benutzer, um mehrere Benutzer zu verwalten."
       ],
-      "Please upload a square file": [
-        "Bitte lade eine quadratische Datei hoch."
-      ],
       "Please upload an xml file": [
         "Bitte lade eine XML-Datei hoch."
       ],
@@ -2641,8 +2679,16 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du hast die max. Anzahl von Benutzern in deinem Abonnement ausgeschöpft. Bitte upgrade dein Abonnement, um weitere Benutzer hinzuzufügen."
       ],
+      "You've assigned all of your servers.": [
+        "Du hast alle deine Server zugewiesen."
+      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Dein Konto oder deine Organisation enthält derzeit eine überfällige Rechnung. Bitte begleiche alle unbezahlten Rechnungen."
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "E-Mail-Adresse eingeben"
       ]
     },
     "Error importing users": {
@@ -2721,9 +2767,6 @@
       "Invite an existing ${ BRAND_NAME } user": [
         "Lade einen bestehenden Benutzer von ${ BRAND_NAME } ein"
       ],
-      "Invite member to your family": [
-        "Mitglied in Family einladen"
-      ],
       "Set up family group": [
         "Familiengruppe einrichten"
       ],
@@ -2757,8 +2800,14 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-Gruppen"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Konten mit eigenen Domains können keinem Familienabonnement beitreten."
+      ],
       "customer support": [
         "Kundendienst"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Familienabonnements unterstützen derzeit keine externen Konten. Erstelle vor dem Beitritt eine ${ BRAND_NAME }-Adresse. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Wenn du die Einladung annimmst, wechseln wir dein aktuelles Abonnement und schreiben deinem Konto das verbleibende Guthaben gut."
@@ -2769,8 +2818,8 @@
       "Invited by: ${ inviteEmail }": [
         "Eingeladen von: ${ inviteEmail }"
       ],
-      "Manage addresses.": [
-        "Adressen verwalten."
+      "Lifetime accounts cannot join a family plan.": [
+        "Lebenslang lizenzierte Konten können keinem Familienabonnement beitreten."
       ],
       "Manage user accounts": [
         "Benutzerkonten verwalten"
@@ -2778,6 +2827,9 @@
       "Only ${ n } accepted invitation are allowed in a 6-month period.": [
         "In einem Zeitraum von 6 Monaten ist nur ${ n } angenommene Einladung zulässig.",
         "In einem Zeitraum von 6 Monaten sind nur ${ n } angenommene Einladungen zulässig."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Besitzer eines Abonnements mit Mitgliedern können keinem anderen Familienabonnement beitreten."
       ],
       "Pending": [
         "Ausstehend"
@@ -2817,23 +2869,35 @@
       "You have successfully joined the family group": [
         "Du bist erfolgreich der Familiengruppe beigetreten"
       ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Du hast unbezahlte Rechnungen. Bitte bezahle diese, bevor du einem Familienabonnement beitrittst."
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Du musst eine eigene Domain konfigurieren, bevor du mehrere Benutzer hinzufügst."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Du musst eine eigene Domain konfigurieren, bevor du einen neuen Benutzer erstellst."
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit diesem Familienabonnement zu verknüpfen und gemeinsam alle ${ brandOrAppName } Premium-Funktionen zu nutzen."
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Dein Konto hat mehr E-Mail-Adressen, als dir in diesem Abonnement zur Verfügung stehen. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Dein Konto verwendet Speicher in Höhe von ${ usedSpace }, was den dir zugewiesenen Speicherplatz von ${ inviteSpace } übersteigt. Lösche einige Daten oder bitte den Abonnement-Administrator, deinen Speicher zu erhöhen."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "Du kannst diese Einladung mit deinem derzeitigen Abonnement nicht annehmen."
       ]
     },
     "familyOffer_2023:Info": {
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Nur eine kostenlose Testphase pro Benutzer. Danach gelten die regulären Preise."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
+        "Nach dem Verlassen deines Abonnements wird diesem Benutzer ein ${ BRAND_NAME } Free-Abonnement zugewiesen."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "Nach dem Verlassen deines Abonnements wird diesem Benutzer ein ${ BRAND_NAME } Unlimited-Abonnement mit 30-tägiger Testphase zugewiesen.*"
+      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Standardmäßig weisen wir dem Administratorkonto ${ formattedStorage } Speicher zu. Du kannst den zugewiesenen Speicher verwalten, um ihn später auf weitere Benutzer zu verteilen."
       ],
@@ -3334,6 +3398,10 @@
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Füge diesen Eintrag in der Verwaltungskonsole deines Domain-Registrars hinzu."
       ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount } Vorschlag gefunden. Verwende die Tastatur zum Navigieren.",
+        "${ itemsCount } Vorschläge gefunden. Verwende die Tastatur zum Navigieren."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Verwende die Pfeiltasten hoch und runter, um die Vorschläge nach der Eingabe aufzurufen und durchzusehen. Bestätige deine Auswahl mit der Eingabetaste oder drücke die Escape-Taste, um das Vorschlagsfeld zu schließen."
       ]
@@ -3352,9 +3420,6 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
-      ],
-      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
-        "${ boldSSOUserInformation } und du musst sie manuell erstellen, um sie wieder zu deiner Organisation hinzuzufügen"
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Wenn du fortfährst, verlierst du den Zugriff auf alle derzeit verschlüsselten Daten in deinem Konto."
@@ -3438,9 +3503,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } Mitglied)",
         "(${ memberCount } Mitglieder)"
-      ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice }/Monat)"
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Hol dir eine ${ BRAND_NAME }-Adresse**, um alle unsere ${ BRAND_NAME_TWO }-Dienste einschließlich ${ MAIL_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME } zu nutzen."
@@ -3636,6 +3698,9 @@
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
         "Konfiguriere die SAML-Authentifizierung für dein Unternehmen über einen Identitätsanbieter wie Okta, Microsoft Azure oder Google Identity Platform. Dadurch wird SAML für die gesamte Organisation aktiviert."
       ],
+      "Connection data will be available in around 1 hour.": [
+        "Die Verbindungsdaten werden in etwa 1 Stunde verfügbar sein."
+      ],
       "Continue with ${ freeName }": [
         "Mit ${ freeName } fortfahren"
       ],
@@ -3695,15 +3760,15 @@
       "Dedicated servers": [
         "Dezidierte Server"
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
-        "Dedizierte Server mit dedizierter(n) IP-Adresse(n) können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Lösche alle anderen MX-Einträge oder stelle sicher, dass ${ MAIL_APP_NAME } die geringste Priorität hat."
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } Gateway-Server wird gelöscht",
         "${ deletedServerCount } Gateway-Server werden gelöscht"
+      ],
+      "Disabled on ${ formattedDateAndTime }": [
+        "Deaktiviert am ${ formattedDateAndTime }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Wenn du die Zwei-Faktor-Authentifizierung deaktivierst, wird dein Konto weniger sicher. Fahre nur fort, wenn es unbedingt notwendig ist."
@@ -3786,6 +3851,9 @@
       ],
       "Enable single sign-on to keep your organization safe": [
         "Aktiviere Single Sign-on, um die Sicherheit deines Unternehmens zu gewährleisten."
+      ],
+      "Enabled on ${ formattedDateAndTime }": [
+        "Aktiviert am ${ formattedDateAndTime }"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Endpunkt-URL, die du von deinem Identitätsanbieter erhalten hast (z.B. https://idp.beispiel.com/sso/saml)."
@@ -3997,6 +4065,9 @@
       "Invite rejected": [
         "Einladung abgelehnt"
       ],
+      "It takes 10 days to change a server's country, so make sure your selection is correct.": [
+        "Es dauert 10 Tage, um das Land eines Servers zu ändern, stelle also sicher, dass deine Auswahl korrekt ist."
+      ],
       "Item autofilled in ${ vaultLink }": [
         "Eintrag in ${ vaultLink } automatisch ausgefüllt."
       ],
@@ -4053,12 +4124,6 @@
       ],
       "Labels:": [
         "Kategorien:"
-      ],
-      "Lean more about gateways": [
-        "Mehr über Gateways erfahren"
-      ],
-      "Lean more about single sign-on": [
-        "Erfahre mehr über Single Sign-on"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Erfahre, wie du dich bei ${ VPN_APP_NAME } mit VPN-Anwendungen von Drittanbietern anmelden kannst."
@@ -4141,6 +4206,9 @@
       "New user invited to organization": [
         "Neuen Benutzer zur Organisation eingeladen"
       ],
+      "New VPN connection data will stop being collected and shown.": [
+        "Neue VPN-Verbindungsdaten werden nicht mehr gesammelt und angezeigt."
+      ],
       "No addresses exist": [
         "Keine Adressen vorhanden"
       ],
@@ -4156,17 +4224,11 @@
       "No results found": [
         "Keine Ergebnisse gefunden"
       ],
-      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
-        "Nicht-SSO-Benutzer (manuell erstellt, nicht von deinem Identitätsanbieter bereitgestellt) können sich weiterhin bei deiner Organisation anmelden."
-      ],
       "Number of dedicated servers in the organization": [
         "Anzahl der dedizierten Server in der Organisation"
       ],
       "of": [
         "von"
-      ],
-      "Once single sign-on is disabled for your organization:": [
-        "Sobald Single Sign-on für deine Organisation deaktiviert ist:"
       ],
       "Once you reset your password:": [
         "Sobald du dein Passwort zurücksetzt:"
@@ -4176,6 +4238,14 @@
       ],
       "or ${ selectFileButton }": [
         "oder ${ selectFileButton }"
+      ],
+      "or assign to any country in ${ availableAgainAfterDays } day": [
+        "oder einem beliebigen Land in ${ availableAgainAfterDays } Tag zuordnen",
+        "oder einem beliebigen Land in ${ availableAgainAfterDays } Tagen zuordnen"
+      ],
+      "or assign to any country in ${ availableAgainAfterHours } hour": [
+        "oder einem beliebigen Land in ${ availableAgainAfterHours } Stunde zuordnen",
+        "oder einem beliebigen Land in ${ availableAgainAfterHours } Stunden zuordnen"
       ],
       "Or select a particular server:": [
         "Oder wähle einen bestimmten Server aus:"
@@ -4365,6 +4435,9 @@
       "Securing your account": [
         "Dein Konto wird abgesichert"
       ],
+      "Select recently used servers": [
+        "Zuletzt verwendete Server auswählen"
+      ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Versende E-Mails, um deine Mitglieder zu ermutigen, ihre Konten mit 2FA zu schützen."
       ],
@@ -4401,17 +4474,11 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da du ein treuer Benutzer bist, wurden deinem Konto zusätzliche Funktionen hinzugefügt."
       ],
-      "Single sign-on removed": [
-        "Single Sign-on entfernt"
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Gib die Domain an, die sich mit SAML SSO authentifizieren darf."
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF klärt, wer berechtigt ist, E-Mails über deine Domain zu senden. Stelle sicher, dass du den folgenden TXT-Eintrag in deiner DNS-Konsole hinzufügst (befindet sich auf der Plattform, wo du die individuelle Domain erworben hast)."
-      ],
-      "SSO users (provided by your Identity Provider) will be deleted": [
-        "SSO-Benutzer (bereitgestellt von deinem Identitätsanbieter) werden gelöscht."
       ],
       "Step ${ step }": [
         "Schritt ${ step }",
@@ -4455,9 +4522,6 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Vielen Dank für die Unterstützung unserer Mission, ein besseres Internet zu schaffen, in dem Privatsphäre und Freiheit an erster Stelle stehen."
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Die Zugangsdaten von deinem Identitätsanbieter werden gelöscht."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Die Anzahl der Downloads umfasst sowohl die tatsächlichen Downloads als auch die Fälle, in denen Dateien in der Vorschau angezeigt werden."
@@ -4873,6 +4937,14 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Du kannst die folgenden Anmeldedaten verwenden, um dich mit einem ${ VPN_APP_NAME }-Server zu verbinden, indem du eine Open-Source-VPN-Anwendung eines Drittanbieters verwendest, wie Tunnelblick für macOS oder OpenVPN für GNU/Linux."
       ],
+      "You have ${ availableCount } new server available.": [
+        "Dir steht ${ availableCount } neuer Server zur Verfügung.",
+        "Dir stehen ${ availableCount } neue Server zur Verfügung."
+      ],
+      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
+        "Du hast ${ unassignedAvailableCount } kürzlich verwendeten Server verfügbar. Um diesen Server einem anderen Land zuzuweisen, musst du warten, bis die Deaktivierung abgeschlossen ist.",
+        "Du hast ${ unassignedAvailableCount } kürzlich verwendete Server verfügbar. Um diese Server einem anderen Land zuzuweisen, musst du warten, bis die Deaktivierung abgeschlossen ist."
+      ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Du hast ein ${ planTitle }-Probeabonnement. Wenn du dein Abonnement nach dem Testzeitraum fortsetzen möchtest, füge bitte eine Zahlungsmethode hinzu."
       ],
@@ -4914,6 +4986,9 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du wirst in Kürze zu PayPal weitergeleitet, um deine Zahlung zu bestätigen."
+      ],
+      "You won’t be able to reassign these servers to another country for 10 days.": [
+        "Du kannst diese Server 10 Tage lang nicht in ein anderes Land zuweisen."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. Nach 28 Tagen werden keine E-Mails mehr an deinen Posteingang zugestellt, deine Drive-Freigabelinks werden blockiert, und du kannst keine neuen Dateien mehr hochladen. Um dein Konto wieder normal nutzen zu können, bezahle bitte alle überfälligen Rechnungen."
@@ -4968,6 +5043,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Dein Abonnement wird von Mozilla verwaltet. Bitte kontaktiere den Mozilla-Support."
+      ],
+      "You’ll be able to add these servers to another Gateway immediately.": [
+        "Du kannst diese Server sofort zu einem anderen Gateway hinzufügen."
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
@@ -5514,8 +5592,8 @@
       "Subscription options": [
         "Abonnement-Optionen"
       ],
-      "Synchronize with system": [
-        "Mit System synchronisieren"
+      "Sync with system": [
+        "Mit dem System synchronisieren"
       ],
       "System information": [
         "Systeminformationen"
@@ -5715,9 +5793,6 @@
       ],
       "Pay invoice": [
         "Rechnung bezahlen"
-      ],
-      "Paypal without credit card": [
-        "PayPal ohne Kreditkarte"
       ],
       "perform a password reset from your active session": [
         "dein Passwort in deiner aktiven Sitzung zurücksetzen"
@@ -5995,6 +6070,9 @@
       ],
       "Upgrade now": [
         "Jetzt upgraden"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Upgrade auf ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6082,6 +6160,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-Verbindung",
         "${ n } VPN-Verbindungen"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } Benutzer",
+        "Bis zu ${ numberOfUsers } Benutzer"
       ],
       "${ options }-day file version history": [
         "Dateiversionsverlauf für ${ options } Tag",
@@ -6409,9 +6491,6 @@
       "Sync and backup all your files across devices": [
         "Synchronisiere und sichere alle deine Dateien auf all deinen Geräten"
       ],
-      "Tor over VPN": [
-        "Tor über VPN"
-      ],
       "Two-factor authentication": [
         "Zwei‐Faktor‐Authentifizierung"
       ],
@@ -6575,6 +6654,9 @@
       "Protect sensitive business information and collaborate securely.": [
         "Schütze sensible Geschäftsinformationen und arbeite sicher zusammen."
       ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Schütze deine Familie mit allen Premium-Funktionen von ${ PASS_SHORT_APP_NAME } Plus für 6 Benutzer."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Schütze die Privatsphäre deiner Familie durch die Kombination aller ${ BRAND_NAME }-Dienste."
       ],
@@ -6713,9 +6795,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Erstelle bis zu ${ n } E-Mail-Adressen/-Aliasse, die du Familienmitgliedern zuweisen kannst. Nutze sie für Online-Identitäten, z.B. MaxEinkauf@${ domain } für Einkaufskonten."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Dedizierte Server mit dedizierter(n) IP-Adresse(n) können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Diese Funktion schützt vor der Bedrohung der VPN-Privatsphäre, indem dein Internet-Verkehr über mehrere Server geleitet wird."
       ],
@@ -6724,6 +6803,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Teile deine Kalender ganz einfach mit Verwandten, Freunden oder Kollegen"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Sende E-Mails an alle Mitglieder einer Gruppe mit einer einzigen E-Mail-Adresse"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Mit dieser Funktion stellst du sicher, dass du alle an deine Domain gesendeten E-Mails erhältst, auch wenn die E-Mail-Adresse nicht oder nicht mehr existiert oder einen Tippfehler enthält."
@@ -6808,9 +6890,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Setze Passwörter und die Zwei-Faktor-Authentifizierung für Benutzer zurück."
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Leite deinen Internetverkehr mit einem einzigen Klick durch das Tor-Netzwerk."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Inklusive automatischer Synchronisierung, verschlüsselter Dateifreigabe und mehr."
@@ -7126,6 +7205,9 @@
       ]
     },
     "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify } deine E-Mail-Adresse ${ email }, um die Organisationsidentität festzulegen."
+      ],
       "Current organization identity": [
         "Aktuelle Organisationsidentität"
       ],
@@ -7278,6 +7360,12 @@
       ]
     },
     "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Alle Premiumfunktionen. 6 Benutzer. 1 einfaches Abonnement."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Exklusives Angebot, das nur für frühe Unterstützer von ${ PASS_APP_NAME } gilt."
+      ],
       "Get it for ${ monthlyPrice }": [
         "Für ${ monthlyPrice }"
       ],
@@ -7362,9 +7450,6 @@
       ],
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Verwende eine Datenwiederherstellungsmethode, kontaktiere einen anderen Administrator oder setze den Organisationsschlüssel zurück, um die Administratorrechte wiederherzustellen."
-      ],
-      "We couldn't verify authenticity of this identity.": [
-        "Wir konnten die Echtheit dieser Identität nicht verifizieren."
       ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Wir konnten die Sicherheit des Adressschlüssels dieses Absenders nicht überprüfen. Manchmal kommt es zu einer Verzögerung bei der Aktualisierung der Absenderinformationen. Versuche es später noch einmal. Wenn du der Gültigkeit dieser Einladung oder dieses Absenders nicht traust, wende dich an den ${ BRAND_NAME }-Kundensupport."
@@ -7456,6 +7541,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Wir bearbeiten gerade deine Zahlung für die Rechnung. Bitte warte, bis die Zahlung abgeschlossen ist, bevor du Änderungen an deinem Abonnement vornimmst oder deine Zahlungsdaten aktualisierst. Vielen Dank für deine Geduld."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Du wirst mit ${ amountToCharge } von der von dir gewählten Zahlungsmethode belastet."
       ]
     },
     "Payments.Error": {
@@ -7561,6 +7649,9 @@
       ],
       "Search for a user or address": [
         "Nach einem Benutzer oder einer Adresse suchen"
+      ],
+      "Search for an email or IP address": [
+        "Nach einer E-Mail-Adresse oder IP-Adresse suchen"
       ],
       "Search users": [
         "Benutzer suchen"
@@ -7706,9 +7797,6 @@
       "Changing organization password": [
         "Passwort der Organisation ändern"
       ],
-      "Creating or accessing non-private users": [
-        "Erstelle oder greife auf nicht-private Benutzer zu"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Aufgrund einer Passwortänderung wurden deine Organisations-Administrationsprivilegien eingeschränkt. Die folgenden Aktionen sind nicht länger erlaubt:"
       ]
@@ -7735,9 +7823,6 @@
       ]
     },
     "saml: Error": {
-      "Sign-in wasn't successfully completed.": [
-        "Die Anmeldung wurde nicht erfolgreich abgeschlossen."
-      ],
       "Something went wrong": [
         "Etwas ist schiefgelaufen."
       ]
@@ -7798,12 +7883,6 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Voraussetzung:** Die SAML-Authentifizierung muss konfiguriert sein, um das SCIM-Provisioning zu ermöglichen."
-      ],
-      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
-        "**Voraussetzung:** Um die SCIM-Bereitstellung zu aktivieren, musst du die Eigentümerschaft der Domain **${ domainName }** verifizieren. Diese Verifizierung kann bis zu einer Stunde dauern."
-      ],
-      "Enter token into your identity provider": [
-        "Gib den Token bei deinem Identitätsanbieter ein"
       ],
       "Enter URL and token into your identity provider": [
         "Gib die URL und den Token bei deinem Identitätsanbieter ein"
@@ -8122,14 +8201,6 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Wir werden dich kontaktieren, sobald die Passwortzurücksetzung verfügbar ist."
-      ],
-      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
-        "Du kannst den Status deiner Anfrage jederzeit in der ${ accountAndPasswordSectionLink } in den Einstellungen überprüfen."
-      ]
-    },
-    "session_recovery:initiation:link": {
-      "account and password section": [
-        "Konto- und Passwortübersicht"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -8625,9 +8696,6 @@
       "Got it": [
         "Verstanden"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Melde dich einfach in deinem Apple App Store Konto an und klicke auf ${ subscriptions }."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Melde dich einfach in deinem Play Store Konto an und klicke auf ${ subscriptions }."
       ],
@@ -8655,6 +8723,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
+      ],
       "${ dayDiff } day left": [
         "${ dayDiff } verbleibender Tag",
         "${ dayDiff } verbleibende Tage"
@@ -8689,6 +8760,9 @@
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planName } geht über die Grundlagen hinaus und hilft dir, produktiver und organisierter zu sein und die Kontrolle über deinen Posteingang, deine E-Mail-Identität und vieles mehr zu behalten."
       ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
+        "${ planName } kann sicherstellen, dass alle deine Familienmitglieder - und deren Daten - geschützt sind, wenn sie online sind."
+      ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } bietet ${ planMaxSpace } Speicherplatz für deine E-Mails, Anhänge, Termine, Passwörter und Dateien. Du hast auch Anspruch auf jährliche Speicherplatzboni."
       ],
@@ -8700,6 +8774,29 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } bietet ${ planMaxSpace } Speicherplatz pro Benutzer für E-Mails, Anhänge, Termine, Dateien und Passwörter. Du hast außerdem Anspruch auf jährliche Speicherplatzboni."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } Kalender pro Benutzer",
+        "${ planNumberOfCalendars } Kalender pro Benutzer"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } eigene E-Mail-Domain",
+        "${ planNumberOfDomains } eigene E-Mail-Domains"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } E-Mail-Adresse",
+        "${ planNumberOfEmails } E-Mail-Adressen"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } E-Mail-Adresse pro Benutzer",
+        "${ planNumberOfEmails } E-Mail-Adressen pro Benutzer"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } Benutzer",
+        "${ planNumberOfUsers } Benutzer"
+      ],
+      "${ PROTON_SENTINEL_NAME } advanced account protection": [
+        "${ PROTON_SENTINEL_NAME } erweiterter Kontoschutz"
       ],
       "2 users": [
         "2 Benutzer"
@@ -8740,6 +8837,9 @@
       "Comprehensive privacy and security": [
         "Umfassender Datenschutz und Sicherheit"
       ],
+      "Dark web monitoring": [
+        "Dark Web-Überwachung"
+      ],
       "Desktop app and email client support (via IMAP)": [
         "Unterstützung für Desktop-App und E-Mail-Client (über IMAP)"
       ],
@@ -8758,6 +8858,15 @@
       "Extra storage and users": [
         "Zusätzlicher Speicherplatz und Benutzer"
       ],
+      "Folders, labels and filters": [
+        "Ordner, Kategorien und Filter"
+      ],
+      "Folders, labels, and custom filters": [
+        "Ordner, Kategorien und benutzerdefinierte Filter"
+      ],
+      "Got it": [
+        "Verstanden"
+      ],
       "Have a question?": [
         "Du hast eine Frage?"
       ],
@@ -8766,6 +8875,18 @@
       ],
       "How our customer support team got our VPN app directly into people's hands.": [
         "Wie unser Kundensupport-Team es geschafft hat, einen direkten Zugang zu unserer VPN-App für alle zu ermöglichen."
+      ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "Wie wir uns gewehrt haben, als ${ BRAND_NAME } im Zuge einer aggressiven Kampagne blockiert wurde."
+      ],
+      "How we supported local activists when privacy and free speech were threatened.": [
+        "Wie wir lokale Aktivisten unterstützt haben, als die Privatsphäre und die Redefreiheit bedroht waren."
+      ],
+      "If you exceed free plan limits, you won't be able to:": [
+        "Wenn du die Limite der kostenlosen Version überschreitest, ist Folgendes nicht möglich:"
+      ],
+      "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Wenn deine Nutzung die Limite der kostenlosen Version überschreitet, kann der Zugang zu den Produktfunktionen und deinen Daten eingeschränkt sein."
       ],
       "Invited members will be removed from your organization": [
         "Eingeladene Mitglieder werden aus deiner Organisation entfernt"
@@ -8781,6 +8902,9 @@
       ],
       "Learn more about our impact": [
         "Erfahre mehr über unsere Wirkung"
+      ],
+      "Limitations of the free plan:": [
+        "Einschränkungen des kostenlosen Abonnements:"
       ],
       "Make your business stand out": [
         "Hebe dein Unternehmen hervor"
@@ -8839,11 +8963,20 @@
       "Unlimited privacy for two": [
         "Unbegrenzte Privatsphäre für zwei"
       ],
+      "Upload any new files": [
+        "Neue Dateien hochladen"
+      ],
+      "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
+        "Benutzerabonnements sind die einzige Einnahmequelle von ${ BRAND_NAME }. Deine Unterstützung hält uns unabhängig, fördert unsere Mission für den Online-Datenschutz und hilft Aktivisten und Organisationen, die für Freiheit kämpfen."
+      ],
       "Users won’t be able to manage their calendars": [
         "Die Benutzer werden ihre Kalender nicht verwalten können."
       ],
       "Users won’t be able to send emails": [
         "Die Benutzer werden keine E-Mails versenden können."
+      ],
+      "Users won’t be able to upload files on their devices": [
+        "Nutzer können keine Dateien von ihren Geräten hochladen"
       ],
       "Version history": [
         "Versionsverlauf"
@@ -8859,6 +8992,9 @@
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
         "Wenn du ${ planName } kündigst, wirst du auf ${ BRAND_NAME } Free herabgestuft, das nur bis zu 1 GB Mail-Speicher und bis zu 5 GB Drive-Speicher bietet. Dein Team wird in seiner Arbeit unterbrochen werden, da zusätzliche Benutzer im kostenlosen Abonnement nicht unterstützt werden."
+      ],
+      "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Wenn dein ${ planName }-Abonnement am ${ expiryDate } endet, wirst du auf das ${ BRAND_NAME } Free-Abonnement zurückgestuft."
       ],
       "Yearly free storage bonuses": [
         "Jährliche Boni für kostenlosen Speicherplatz"
@@ -8995,12 +9131,6 @@
       ],
       "Gift code applied": [
         "Gutscheincode eingelöst"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Wenn du eine gültige Wiederherstellungs-E-Mail-Adresse eingegeben hast, wird dir in Kürze eine E-Mail mit deinen Benutzernamen zugesendet."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Wenn du eine gültige Wiederherstellungs-Telefonnummer eingegeben hast, erhältst du in Kürze eine SMS mit deinen Benutzernamen."
       ],
       "Invitation rejected": [
         "Einladung abgelehnt"
@@ -9198,6 +9328,9 @@
       "Email addresses": [
         "E‐Mail‐Adressen"
       ],
+      "Event": [
+        "Ereignis"
+      ],
       "Invitation email": [
         "Einladungs-E-Mail"
       ],
@@ -9286,6 +9419,9 @@
       ],
       "Add credits": [
         "Guthaben hinzufügen"
+      ],
+      "Add dedicated servers": [
+        "Dedizierte Server hinzufügen"
       ],
       "Add domain": [
         "Domain hinzufügen"
@@ -9472,6 +9608,9 @@
       "Device connected!": [
         "Gerät verbunden!"
       ],
+      "Device name": [
+        "Gerätename"
+      ],
       "Disable two-factor authentication": [
         "Zwei-Faktor-Authentifizierung deaktivieren"
       ],
@@ -9568,6 +9707,15 @@
       ],
       "Gateway": [
         "Gateway"
+      ],
+      "Gateway monitor": [
+        "Gateway-Überwachung"
+      ],
+      "Gateway monitor disabled": [
+        "Gateway-Überwachung deaktiviert"
+      ],
+      "Gateway monitor enabled": [
+        "Gateway-Überwachung aktiviert"
       ],
       "Gateways": [
         "Gateways"
@@ -9680,9 +9828,6 @@
       "Processing...": [
         "Wird verarbeitet..."
       ],
-      "QRCode": [
-        "QR-Code"
-      ],
       "Recommended": [
         "Empfohlen"
       ],
@@ -9695,11 +9840,11 @@
       "Remove domain": [
         "Domain entfernen"
       ],
+      "Remove server?": [
+        "Server entfernen?"
+      ],
       "Remove single sign-on": [
         "Single Sign-on entfernen"
-      ],
-      "Remove single sign-on for your organization?": [
-        "Single Sign-on für deine Organisation entfernen?"
       ],
       "Remove user?": [
         "Benutzer entfernen?"
@@ -9935,6 +10080,9 @@
       ]
     },
     "Tooltip": {
+      "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
+        "Admins können Benutzerkonten verwalten und anderen Benutzern Administratorrechte erteilen. Nur der Hauptadministrator kann das Abonnement der Organisation bearbeiten."
+      ],
       "An approximate location of the IP address": [
         "Eine ungefähre Lage der IP-Adresse."
       ],
@@ -10020,9 +10168,6 @@
       ],
       "User declined invitation": [
         "Der Benutzer hat die Einladung abgelehnt"
-      ],
-      "Waiting user to accept the invitation": [
-        "Auf die Annahme der Einladung wartender Benutzer"
       ]
     },
     "Tooltip for news": {
@@ -10036,14 +10181,14 @@
     "Tor out of date": {
       "stable release": [
         "stabile Version"
-      ],
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Diese Version des Tor Browsers wird nicht unterstützt. Bitte aktualisiere auf die neueste ${ stableRelease }"
       ]
     },
     "unprivatization": {
       "Approve all": [
         "Alle genehmigen"
+      ],
+      "Could not enable administrator access: ${ error }": [
+        "Fehler beim Aktivieren des Administratorzugriffs: ${ error }"
       ],
       "Delete request": [
         "Anfrage löschen"
@@ -10304,11 +10449,6 @@
       ],
       "Your ${ selected } plan": [
         "Dein ${ selected }-Abonnement"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Zugang zu Secure Core-Servern, schnelle P2P/BitTorrent-Downloads, Tor über VPN und mehr."
       ]
     },
     "wallet_signup_2024: Info": {

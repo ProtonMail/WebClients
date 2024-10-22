@@ -4,51 +4,13 @@
     "language": "en_US"
   },
   "contexts": {
-    "Action": {
-      "Ok": [
-        "OK"
-      ]
-    },
     "bf2023: Tooltip": {
       "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Includes support for ${ domains } custom email domain, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.",
         "Includes support for ${ domains } custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more."
       ]
     },
-    "Error": {
-      "Please upload a square file": [
-        "Please upload a square logo"
-      ]
-    },
-    "familyOffer_2023:Action": {
-      "Invite member to your family": [
-        "Invite a user"
-      ]
-    },
-    "familyOffer_2023:Family plan": {
-      "Manage addresses.": [
-        "Manage addresses"
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "You cannot accept this invitation with your current plan."
-      ]
-    },
     "Info": {
-      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
-        "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization."
-      ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice }/month)"
-      ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
-        "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control."
-      ],
-      "Lean more about gateways": [
-        "Learn more about Gateways"
-      ],
-      "Lean more about single sign-on": [
-        "Learn more about single sign-on"
-      ],
       "Tor": [
         "Tor"
       ],
@@ -57,53 +19,9 @@
         "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete."
       ]
     },
-    "Label": {
-      "Synchronize with system": [
-        "Sync with system"
-      ]
-    },
-    "Link": {
-      "Paypal without credit card": [
-        "PayPal without credit card"
-      ]
-    },
-    "new_plans: feature": {
-      "Tor over VPN": [
-        "TOR over VPN"
-      ]
-    },
     "new_plans: tooltip": {
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalize your email signature with logos, images, social media icons, links to your contact details, and more"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Route your internet traffic through the TOR network with a single click"
-      ]
-    },
-    "passwordless": {
-      "We couldn't verify authenticity of this identity.": [
-        "We couldn't verify the authenticity of this identity."
-      ]
-    },
-    "Restore administrator panel": {
-      "Creating or accessing non-private users": [
-        "Creating or accessing non-private user accounts"
-      ]
-    },
-    "saml: Error": {
-      "Sign-in wasn't successfully completed.": [
-        "Sign in wasn't successfully completed."
-      ]
-    },
-    "scim: Info": {
-      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
-        "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour."
-      ],
-      "Enter token into your identity provider": [
-        "Enter the token into your identity provider"
       ]
     },
     "session_recovery:available:info": {
@@ -118,49 +36,6 @@
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "You have ${ timeRemaining.inSeconds } second to reset your password.",
         "You have ${ timeRemaining.inSeconds } seconds to reset your password."
-      ]
-    },
-    "session_recovery:initiation:info": {
-      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
-        "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings."
-      ]
-    },
-    "session_recovery:initiation:link": {
-      "account and password section": [
-        "in the Account and password section"
-      ]
-    },
-    "Subscription change warning": {
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Just sign in to your Apple App Store account, then select ${ subscriptions }."
-      ]
-    },
-    "Success": {
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "You will receive your username via email within a minute if you entered a valid recovery email address."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "You will receive your username via SMS within a minute if you entered a valid recovery phone number."
-      ]
-    },
-    "Title": {
-      "QRCode": [
-        "QR Code"
-      ]
-    },
-    "tooltip": {
-      "Waiting user to accept the invitation": [
-        "Waiting for user to accept the invitation"
-      ]
-    },
-    "Tor out of date": {
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more."
       ]
     }
   }

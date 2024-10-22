@@ -370,9 +370,6 @@
       "Next month": [
         "翌月"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
       ],
@@ -438,9 +435,6 @@
       ],
       "Remove gift code": [
         "ギフトコードを削除"
-      ],
-      "Remove single sign-on": [
-        "シングルサインオンを削除"
       ],
       "Rename": [
         "名前を変更"
@@ -658,6 +652,9 @@
       "Use authentication code": [
         "認証コードを使用"
       ],
+      "Use group sending permissions": [
+        "グループ送信権限を使用する"
+      ],
       "Use recovery code": [
         "回復用コードを使用"
       ],
@@ -779,6 +776,9 @@
       ],
       "External": [
         "外部"
+      ],
+      "Inactive": [
+        "非アクティブ"
       ],
       "No E2EE mail": [
         "エンドツーエンド暗号化メールなし"
@@ -2325,14 +2325,14 @@
       "Please set a recovery phone number first": [
         "まず回復用の電話番号を設定してください"
       ],
+      "Please try again in a few moments.": [
+        "しばらくしてからもう一度お試しください."
+      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "マルチユーザーサポートを受けるには、複数のユーザーを含むビジネスプランにアップグレードしてください"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "複数のユーザーを管理するには、複数のユーザーを含むビジネスプランにアップグレードしてください。"
-      ],
-      "Please upload a square file": [
-        "正方形のファイルをアップロードしてください"
       ],
       "Please upload an xml file": [
         "XML ファイルをアップロードしてください"
@@ -2501,9 +2501,6 @@
       "Invite an existing ${ BRAND_NAME } user": [
         "既存の ${ BRAND_NAME } ユーザーを招待"
       ],
-      "Invite member to your family": [
-        "家族をメンバーに招待"
-      ],
       "Set up family group": [
         "家族グループを設定"
       ],
@@ -2551,9 +2548,6 @@
       ],
       "Lifetime accounts cannot join a family plan.": [
         "Lifetime アカウントはファミリープランに参加できません。"
-      ],
-      "Manage addresses.": [
-        "アドレスの管理"
       ],
       "Manage user accounts": [
         "ユーザーアカウントを管理"
@@ -2705,14 +2699,23 @@
       "Add": [
         "追加"
       ],
+      "Add (${ totalAddedCount })": [
+        "追加 ( ${ totalAddedCount } )"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "最大 ${ plusVpnConnections } 台のデバイスに接続"
+      ],
+      "Continue": [
+        "続ける"
       ],
       "Dark Web Monitoring": [
         "ダークウェブモニタリング"
       ],
       "Fastest VPN servers": [
         "最速の VPN サーバー"
+      ],
+      "Remove": [
+        "削除"
       ],
       "Secure Core servers": [
         "Secure Core サーバー"
@@ -3084,9 +3087,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
       ],
-      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
-        "${ boldSSOUserInformation } を組織に追加するには、手動で作成する必要があります。"
-      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } 続行するとアカウント内にある現在の暗号化されたデータにアクセスすることができなくなります。"
       ],
@@ -3155,9 +3155,6 @@
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } 人のメンバー)"
-      ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /月)"
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**${ BRAND_NAME } アドレス**を取得すると、${ MAIL_SHORT_APP_NAME } や ${ CALENDAR_SHORT_APP_NAME } を含むすべての ${ BRAND_NAME_TWO } サービスを使用できます。"
@@ -3383,9 +3380,6 @@
       ],
       "Dedicated servers": [
         "専用サーバー"
-      ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
-        "一つ(複数)の専用IPアドレスを持つ専用サーバーをプライベートゲートウェイに追加することで、きめ細かなアクセス制御が可能になります。"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "他の MX レコードを削除するか、他と比較して ${ MAIL_APP_NAME } の優先度が最も小さい値であることをご確認ください。"
@@ -3672,12 +3666,6 @@
       "Labels:": [
         "ラベル:"
       ],
-      "Lean more about gateways": [
-        "ゲートウェイについてもっと知る"
-      ],
-      "Lean more about single sign-on": [
-        "シングル サインオンについて詳しく見る"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "サードパーティの VPN アプリを使用して、${ VPN_APP_NAME } にサインインする方法を学ぶ"
       ],
@@ -3768,17 +3756,11 @@
       "No results found": [
         "該当する項目がありません"
       ],
-      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
-        "非 SSO ユーザー (アイデンティティ プロバイダーによって提供されずに手動で作成されたユーザー) は引き続き組織にログインできます"
-      ],
       "Number of dedicated servers in the organization": [
         "組織内の専用サーバー数"
       ],
       "of": [
         " / "
-      ],
-      "Once single sign-on is disabled for your organization:": [
-        "組織でシングル サインオンが無効になったら、次の手順を実行します。"
       ],
       "Once you reset your password:": [
         "パスワードをリセットしたら:"
@@ -3894,6 +3876,9 @@
       "read our two-factor authentication guide first": [
         "はじめに 2 要素認証ガイドをお読みください"
       ],
+      "Recently used servers:": [
+        "最近使用したサーバー:"
+      ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "信頼できるデバイスで推奨されます。 ${ keepMeSignedInLearnMoreLink }"
       ],
@@ -3981,17 +3966,11 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
       ],
-      "Single sign-on removed": [
-        "シングルサインオンが削除されました"
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "SAML SSO認証を許可するドメインを指定します。"
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF は、ドメインへの電子メールの送信を許可されているユーザーを明確にします。 DNS コンソール (カスタム ドメインを購入したプラットフォームにあります) に次の TXT レコードを必ず追加してください。"
-      ],
-      "SSO users (provided by your Identity Provider) will be deleted": [
-        "SSO ユーザー (アイデンティティ プロバイダーによって提供される) は削除されます"
       ],
       "Step ${ step }": [
         "ステップ ${ step }"
@@ -4031,9 +4010,6 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "プライバシーと自由が最優先される、より良いインターネットを構築するという私たちの使命をサポートしていただきありがとうございます。"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "ID プロバイダーからの認証情報は削除されます。"
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "ダウンロード数には、実際のダウンロードとファイルがプレビューされた場合の両方が含まれます。"
@@ -4521,6 +4497,17 @@
         "閲覧のみ"
       ]
     },
+    "invitation status": {
+      "Declined": [
+        "拒否"
+      ],
+      "Paused": [
+        "一時停止"
+      ],
+      "Pending": [
+        "保留中"
+      ]
+    },
     "Invoice state display as badge": {
       "Gifted": [
         "ギフト"
@@ -4781,6 +4768,9 @@
       "Enter the code displayed on your TV": [
         "TV に表示されているコードを入力"
       ],
+      "Event": [
+        "イベント"
+      ],
       "Expiration (${ patternExpiration })": [
         "有効期限 (${ patternExpiration })"
       ],
@@ -4955,6 +4945,9 @@
       "Reveal password": [
         "パスワードを表示する"
       ],
+      "Search": [
+        "検索"
+      ],
       "Second password": [
         "セカンドパスワード"
       ],
@@ -4976,7 +4969,7 @@
       "Subscription options": [
         "サブスクリプションのオプション"
       ],
-      "Synchronize with system": [
+      "Sync with system": [
         "システムと同期する"
       ],
       "System information": [
@@ -5171,9 +5164,6 @@
       ],
       "Pay invoice": [
         "請求の支払い"
-      ],
-      "Paypal without credit card": [
-        "クレジットカードなしのPayPal"
       ],
       "Privacy policy": [
         "プライバシーポリシー"
@@ -5752,9 +5742,6 @@
       "Support for up to 2 users": [
         "最大2ユーザーのサポート"
       ],
-      "Tor over VPN": [
-        "Tor over VPN"
-      ],
       "Two-factor authentication": [
         "2 要素認証"
       ],
@@ -6017,9 +6004,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "最大 ${ n } 個の電子メール アドレス/エイリアスを作成し、家族に割り当てることができます。 これらはオンライン Id に使用します。\n例: ショッピングアカウントのJohnShopper@${ domain }。"
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "一つ(複数)の専用IPアドレスを持つ専用サーバーをプライベートゲートウェイに追加することで、きめ細かなアクセス制御が可能になります。"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "複数のサーバーを経由してインターネットトラフィックを送受信することで、高度なプライバシー上の脅威からあなたを保護します"
       ],
@@ -6103,9 +6087,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "ユーザーのパスワードとユーザーの 2 段階認証をリセットします"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "あなたのインターネットトラフィックを、簡単な操作で Tor 経由でのルーティングに切り替えることができます"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
@@ -6251,6 +6232,9 @@
       "Reminder has been sent": [
         "リマインダーが送信されました"
       ],
+      "Too many recent API requests": [
+        "最近 API 要求が多すぎます"
+      ],
       "Two-factor authentication has been enforced for administrators": [
         "管理者には二要素認証が強制されています"
       ],
@@ -6380,6 +6364,26 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "ユーザーがウェブアプリにサインインすると、${ BRAND_NAME } アイコンの代わりにロゴが表示されます。"
+      ]
+    },
+    "orgidentity": {
+      "Current organization identity": [
+        "現在の組織ID"
+      ],
+      "Edit organization identity": [
+        "組織IDを編集"
+      ],
+      "New organization identity": [
+        "新しい組織ID"
+      ],
+      "Organization identity": [
+        "組織 ID"
+      ],
+      "Organization identity updated": [
+        "組織IDが更新されました"
+      ],
+      "Verify": [
+        "検証"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -6863,9 +6867,6 @@
       "Changing organization password": [
         "組織のパスワードを変更しています"
       ],
-      "Creating or accessing non-private users": [
-        "非プライベート ユーザーの作成またはアクセス"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "パスワードの変更のために、組織の管理権限が制限されています。次の操作は許可されなくなりました。"
       ]
@@ -6884,6 +6885,11 @@
     "saml: Action": {
       "Cancel": [
         "キャンセル"
+      ]
+    },
+    "saml: Error": {
+      "Something went wrong": [
+        "何か問題が発生しました"
       ]
     },
     "saml: Info": {
@@ -6924,9 +6930,6 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**前提条件:** SCIM プロビジョニングを有効にするために SAML 認証を構成する必要があります。"
-      ],
-      "Enter token into your identity provider": [
-        "ID プロバイダーにトークンを入力します"
       ],
       "Enter URL and token into your identity provider": [
         "ID プロバイダーに URL とトークンを入力します"
@@ -7215,14 +7218,6 @@
       ],
       "We will contact you again when the password reset is available.": [
         "パスワードリセットが利用可能になった際に、再度ご連絡いたします。"
-      ],
-      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
-        "いつでも設定の${ accountAndPasswordSectionLink }でリクエストのステータスを確認できます。"
-      ]
-    },
-    "session_recovery:initiation:link": {
-      "account and password section": [
-        "アカウントとパスワードセクション"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -7646,9 +7641,6 @@
       "Got it": [
         "了承"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Apple App Store アカウントにサインインし、${ subscriptions } を押すだけです。"
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Play ストア アカウントにサインインして、${ subscriptions } を押すだけです。"
       ],
@@ -7706,6 +7698,9 @@
       ],
       "Extra storage and users": [
         "追加のストレージとユーザー"
+      ],
+      "Got it": [
+        "わかった"
       ],
       "Have a question?": [
         "質問がありますか？"
@@ -7866,12 +7861,6 @@
       ],
       "Gift code applied": [
         "ギフトコードが適用されました。"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "有効な回復用メールアドレスを入力していた場合、すぐにあなたのユーザー名を記載したメールをお送りします。"
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "有効な回復用電話番号を入力していた場合、すぐにあなたのユーザー名を記載した SMS をお送りします。"
       ],
       "Invitation rejected": [
         "招待が拒否されました"
@@ -8047,6 +8036,9 @@
       ],
       "Email addresses": [
         "メールアドレス"
+      ],
+      "Event": [
+        "イベント"
       ],
       "List": [
         "リスト"
@@ -8307,8 +8299,14 @@
       "Device connected!": [
         "デバイスが接続されました！"
       ],
+      "Device name": [
+        "デバイス名"
+      ],
       "Disable two-factor authentication": [
         "2 段階認証を無効化"
+      ],
+      "Disable two-factor authentication?": [
+        "2 段階認証を無効化?"
       ],
       "Discard changes?": [
         "変更を破棄しますか?"
@@ -8502,9 +8500,6 @@
       "Processing...": [
         "処理中..."
       ],
-      "QRCode": [
-        "QR コード"
-      ],
       "Recommended": [
         "おすすめ"
       ],
@@ -8519,9 +8514,6 @@
       ],
       "Remove single sign-on": [
         "シングルサインオンを削除"
-      ],
-      "Remove single sign-on for your organization?": [
-        "組織のシングル サインオンを削除しますか?"
       ],
       "Remove user?": [
         "ユーザーを削除しますか？"
@@ -8561,6 +8553,9 @@
       ],
       "Send email reminders?": [
         "メールでのリマインダーを送信しますか？"
+      ],
+      "Send new invite?": [
+        "新しい招待を送信?"
       ],
       "Set new password": [
         "新しいパスワードを設定"
@@ -8824,14 +8819,14 @@
     "Tor out of date": {
       "stable release": [
         "安定版"
-      ],
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "このバージョンの Tor Brower はサポートしていません。最新の ${ stableRelease } に更新してください。"
       ]
     },
     "unprivatization": {
       "Organization key must be activated to request data access": [
         "データアクセスをリクエストするには、組織の鍵を有効にする必要があります"
+      ],
+      "Revoke access": [
+        "アクセスの失効"
       ]
     },
     "upsell panel": {
@@ -9017,11 +9012,6 @@
       ],
       "Your ${ selected } plan": [
         "あなたの ${ selected } プラン"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "セキュアなコア サーバー、高速 P2P/BitTorrent ダウンロード、Tor over VPN などへのアクセス。"
       ]
     },
     "wallet_signup_2024: Info": {
