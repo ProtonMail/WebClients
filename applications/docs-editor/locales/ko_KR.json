@@ -156,9 +156,9 @@
         "링크"
       ],
       "Numbered List": [
-        "번호 매기기 목록"
+        "번호가 매겨진 목록"
       ],
-      "Ok": [
+      "OK": [
         "확인"
       ],
       "Options": [
@@ -183,7 +183,7 @@
         "페이지 새로 고침"
       ],
       "Remove background color": [
-        "백그라운드 색상 삭제"
+        "배경 색상 삭제"
       ],
       "Remove link": [
         "링크 삭제"
@@ -408,10 +408,10 @@
     },
     "Description": {
       "Edit document directly": [
-        "즉시 문 서 편집"
+        "즉시 문서 편집"
       ],
       "Edits become suggestion": [
-        "편집이 제안이 되다"
+        "수정사안이 제안이 됩니다"
       ],
       "Read or print final document": [
         "최종 문서 읽거나 프린트"
@@ -534,6 +534,9 @@
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "복사하려는 콘텐츠가 붙여놓기에 너무 큽니다. 콘텐츠를 줄여서 다시 붙여놓기를 시도해 보세요."
       ],
+      "The language you're using isn’t currently supported in suggestion mode. Please switch to edit mode or change the language.": [
+        "현재 사용 중인 언어로는 제안 모드를 사용할 수 없습니다. 편집 모드로 전환하거나 언어를 변경하세요."
+      ],
       "Viewing": [
         "보기"
       ],
@@ -550,6 +553,9 @@
       ],
       "Change image size": [
         "이미지 크기 변경"
+      ],
+      "Change indent level": [
+        "들여쓰기 수준 변경"
       ],
       "Delete": [
         "삭제"
@@ -595,6 +601,9 @@
       ],
       "Text colour": [
         "텍스트 색"
+      ],
+      "with \"${ replaceWith }\"": [
+        "\"${ replaceWith }\"로"
       ]
     },
     "Placeholder": {
@@ -620,6 +629,9 @@
       ],
       "Delete thread": [
         "대화 목록 삭제"
+      ],
+      "Language not supported": [
+        "이 언어는 지원하지 않습니다"
       ]
     }
   }

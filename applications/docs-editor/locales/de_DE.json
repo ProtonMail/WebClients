@@ -155,8 +155,8 @@
       "Numbered List": [
         "Nummerierte Liste"
       ],
-      "Ok": [
-        "Ok"
+      "OK": [
+        "OK"
       ],
       "Options": [
         "Optionen"
@@ -211,6 +211,9 @@
       ],
       "Submit": [
         "Senden"
+      ],
+      "Suggestion Mode": [
+        "Vorschlagsmodus"
       ],
       "Table options": [
         "Tabellenoptionen"
@@ -520,6 +523,9 @@
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "Der Inhalt, den du einzufügen versuchst, ist zu groß, um auf einmal eingefügt zu werden. Versuche es erneut, indem du kleinere Teile auf einmal einfügst."
       ],
+      "The language you're using isn’t currently supported in suggestion mode. Please switch to edit mode or change the language.": [
+        "Die Sprache, die du verwendest, wird derzeit im Vorschlagsmodus nicht unterstützt. Bitte wechsle in den Bearbeitungsmodus oder ändere die Sprache."
+      ],
       "Viewing": [
         "Schaut"
       ],
@@ -584,6 +590,9 @@
       ],
       "Text colour": [
         "Schriftfarbe"
+      ],
+      "with \"${ replaceWith }\"": [
+        "mit \"${ replaceWith }\""
       ]
     },
     "Placeholder": {
@@ -609,6 +618,9 @@
       ],
       "Delete thread": [
         "Unterhaltung löschen"
+      ],
+      "Language not supported": [
+        "Sprache wird nicht unterstützt"
       ]
     }
   }
