@@ -8,8 +8,9 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { leaveOrganisation } from '@proton/shared/lib/api/organization';
-import { BRAND_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { isOrganizationFamily, isOrganizationPassFamily } from '@proton/shared/lib/organization/helper';
 
 interface Props extends ModalStateProps {

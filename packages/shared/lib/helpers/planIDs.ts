@@ -1,12 +1,11 @@
-import { SelectedPlan } from '@proton/payments';
+import { ADDON_NAMES, PLANS, PLAN_TYPES, type PlanIDs, SelectedPlan } from '@proton/payments';
 
-import { ADDON_NAMES, CYCLE, DEFAULT_CURRENCY, PLANS, PLAN_TYPES } from '../constants';
+import { CYCLE, DEFAULT_CURRENCY } from '../constants';
 import type {
     BasePlansMap,
     Currency,
     Organization,
     Plan,
-    PlanIDs,
     PlansMap,
     StrictPlan,
     SubscriptionCheckResponse,

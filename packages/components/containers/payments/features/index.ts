@@ -1,4 +1,4 @@
-import type { PLANS } from '@proton/shared/lib/constants';
+import type { PLANS } from '@proton/payments';
 import type { Audience, FreePlanDefault, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 

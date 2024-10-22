@@ -1,5 +1,4 @@
-import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments';
-import { PLANS } from '@proton/shared/lib/constants';
+import { DEFAULT_TAX_BILLING_ADDRESS, PLANS } from '@proton/payments';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { defaultVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';

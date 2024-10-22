@@ -18,7 +18,10 @@ import type {
     SavedPaymentMethod,
 } from '@proton/payments';
 import {
+    type ADDON_NAMES,
     PAYMENT_METHOD_TYPES,
+    type PLANS,
+    type PlanIDs,
     canUseChargebee,
     isExistingPaymentMethod,
     isOnSessionMigration,
@@ -27,7 +30,7 @@ import {
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { buyCredit, payInvoice, setPaymentMethodV5, subscribe } from '@proton/shared/lib/api/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import type { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
+import type {} from '@proton/shared/lib/constants';
 import type {
     Api,
     BillingPlatform,
@@ -35,7 +38,7 @@ import type {
     ChargebeeUserExists,
     Currency,
     Cycle,
-    PlanIDs,
+    User,
 } from '@proton/shared/lib/interfaces';
 
 import type { PaymentProcessorType } from './interface';
@@ -49,6 +52,7 @@ import { usePaymentsApi } from './usePaymentsApi';
 import { usePaypal } from './usePaypal';
 import { useSavedChargebeeMethod } from './useSavedChargebeeMethod';
 import { useSavedMethod } from './useSavedMethod';
+import { useSepaDirectDebit } from './useSepaDirectDebit';
 
 export interface OperationsSubscriptionData {
     Plans: PlanIDs;
@@ -188,6 +192,10 @@ export const usePaymentFacade = (
         chargebeeUserExists,
         forceInhouseSavedMethodProcessors,
         disableNewPaymentMethods,
+        onCurrencyChange,
+        user,
+        enableSepa,
+        onBeforeSepaPayment,
     }: {
         amount: number;
         currency: Currency;
@@ -218,6 +226,15 @@ export const usePaymentFacade = (
         chargebeeUserExists?: ChargebeeUserExists;
         forceInhouseSavedMethodProcessors?: boolean;
         disableNewPaymentMethods?: boolean;
+        onCurrencyChange?: (
+            currency: Currency,
+            context: {
+                paymentMethodType: PlainPaymentMethodType;
+            }
+        ) => void;
+        user: User | undefined;
+        enableSepa?: boolean;
+        onBeforeSepaPayment?: () => Promise<boolean>;
     },
     {
         api,
@@ -261,9 +278,12 @@ export const usePaymentFacade = (
             isChargebeeEnabled,
             paymentsApi,
             selectedPlanName,
+            billingAddress,
             billingPlatform,
             chargebeeUserExists,
             disableNewPaymentMethods,
+            onCurrencyChange,
+            enableSepa,
         },
         {
             api,
@@ -302,6 +322,7 @@ export const usePaymentFacade = (
             savedMethod: methods.savedSelectedMethod,
             onProcessPaymentToken,
             onProcessPaymentTokenFailed,
+            onBeforeSepaPayment,
             onChargeable: (params, paymentMethodId) =>
                 onChargeable(
                     getOperations(api, params, paymentContext.getOperationsData(), 'v5', forceEnableChargebee),
@@ -500,6 +521,35 @@ export const usePaymentFacade = (
         },
     });
 
+    const directDebit = useSepaDirectDebit(
+        {
+            amountAndCurrency,
+            selectedPlanName,
+            user,
+            onBeforeSepaPayment,
+            onChargeable: (params) => {
+                return onChargeable(
+                    getOperations(api, params, paymentContext.getOperationsData(), 'v5', forceEnableChargebee),
+                    {
+                        chargeablePaymentParameters: params,
+                        source: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
+                        sourceType: params.type,
+                        context: paymentContext.getOperationsData(),
+                        paymentsVersion: 'v5',
+                        paymentProcessorType: 'sepadirectdebit',
+                    }
+                );
+            },
+        },
+        {
+            api,
+            forceEnableChargebee,
+            handles: chargebeeHandles,
+            events: chargebeeEvents,
+            verifyPayment: verifyPaymentChargebeeCard,
+        }
+    );
+
     const onSessionMigration = isOnSessionMigration(isChargebeeEnabled(), billingPlatform);
     const splittedUser = isSplittedUser(isChargebeeEnabled(), chargebeeUserExists, billingPlatform);
     const creditFlowBeforeMigration = flow === 'credit' && onSessionMigration && !splittedUser;
@@ -554,6 +604,10 @@ export const usePaymentFacade = (
         if (paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
             return bitcoinChargebee;
         }
+
+        if (paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT) {
+            return directDebit;
+        }
     }, [
         paymentMethodValue,
         paymentMethodType,
@@ -581,5 +635,6 @@ export const usePaymentFacade = (
         amount,
         currency,
         paymentContext,
+        directDebit,
     };
 };

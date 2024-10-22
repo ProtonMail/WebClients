@@ -46,7 +46,6 @@ enum AccountFlag {
     WalletAppSwitcherNewBadge = 'WalletAppSwitcherNewBadge',
     UserGroupsPermissionCheck = 'UserGroupsPermissionCheck',
     SAMLTest = 'SamlTest',
-    AllowDowncycling = 'AllowDowncycling',
     SecurityCheckup = 'SecurityCheckup',
     PassB2BForceLock = 'PassB2BForceLock',
     SignedInForgot2FAFlow = 'SignedInForgot2FAFlow',
@@ -55,6 +54,11 @@ enum AccountFlag {
     ShowGatewaysForBundlePlan = 'ShowGatewaysForBundlePlan',
     ShowBundleUpsellFromVPNBiz = 'ShowBundleUpsellFromVPNBiz',
     EasySwitchConsentExperiment = 'EasySwitchConsentExperiment',
+}
+
+enum PaymentsFlag {
+    AllowDowncycling = 'AllowDowncycling',
+    SepaPayments = 'SepaPayments',
 }
 
 enum CalendarFeatureFlag {
@@ -114,6 +118,7 @@ enum AdminFeatureFlag {
 export type FeatureFlag =
     | `${CommonFeatureFlag}`
     | `${AccountFlag}`
+    | `${PaymentsFlag}`
     | `${CalendarFeatureFlag}`
     | `${DriveFeatureFlag}`
     | `${MailFeatureFlag}`

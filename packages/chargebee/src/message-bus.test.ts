@@ -10,8 +10,10 @@ import type {
     PaypalAuthorizedPayload,
     ThreeDsChallengePayload,
 } from '../lib';
+import { chargebeeWrapperVersion } from './checkpoints';
 import type {
     ChargebeeSubmitEvent,
+    DirectDebitSubmitEvent,
     GetBinEvent,
     GetHeightEvent,
     ParentMessagesProps,
@@ -484,6 +486,97 @@ it('should send 3ds success message', () => {
         JSON.stringify({
             type: 'chargebee-submit-response',
             ...expectedMessage,
+        }),
+        '*'
+    );
+});
+
+it('should send unhandled error message', () => {
+    const error = new Error('Unhandled error');
+
+    messageBus?.sendUnhandledErrorMessage(error);
+
+    expect(window.parent.postMessage).toHaveBeenCalled();
+
+    const postMessageArg = (window.parent.postMessage as jest.Mock).mock.calls[0][0];
+    const parsedArg = JSON.parse(postMessageArg);
+
+    expect(parsedArg).toEqual({
+        type: 'chargebee-unhandled-error',
+        status: 'failure',
+        error: expect.objectContaining({
+            message: 'Unhandled error',
+            stack: error.stack,
+            name: 'Error',
+            checkpoints: expect.any(Array),
+            chargebeeWrapperVersion,
+        }),
+    });
+});
+
+it('should listen to direct debit submit event', () => {
+    const event: DirectDebitSubmitEvent = {
+        type: 'direct-debit-submit',
+        correlationId: 'dd-123',
+        paymentIntent: {
+            id: 'pi_123',
+            status: 'inited',
+            amount: 1000,
+            currency_code: 'USD',
+            gateway_account_id: 'ga_123',
+            gateway: 'stripe',
+            customer_id: 'cust_123',
+            payment_method_type: 'card',
+            expires_at: 1234567890,
+            created_at: 1234567890,
+            modified_at: 1234567890,
+            updated_at: 1234567890,
+            resource_version: 1234567890,
+            object: 'payment_intent',
+        },
+        customer: {
+            email: 'test@example.com',
+            company: 'Test Company',
+            firstName: 'John',
+            lastName: 'Doe',
+            customerNameType: 'individual',
+            countryCode: 'US',
+            addressLine1: '123 Test St',
+        },
+        bankAccount: {
+            iban: 'DE89370400440532013000',
+        },
+    };
+
+    // Mock the onDirectDebitSubmit handler
+    const mockOnDirectDebitSubmit = jest.fn();
+    messageBus!.onDirectDebitSubmit = mockOnDirectDebitSubmit;
+
+    fireEvent(
+        window,
+        new MessageEvent('message', {
+            data: event,
+        })
+    );
+
+    expect(mockOnDirectDebitSubmit).toHaveBeenCalled();
+    const firstArg = mockOnDirectDebitSubmit.mock.calls[0][0];
+    expect(firstArg).toEqual(event);
+
+    const secondArg = mockOnDirectDebitSubmit.mock.calls[0][1];
+    expect(secondArg).toBeInstanceOf(Function);
+
+    const response: MessageBusResponse<{}> = {
+        status: 'success',
+        data: {},
+    };
+    secondArg(response);
+    expect(window.parent.postMessage).toHaveBeenCalledWith(
+        JSON.stringify({
+            type: 'direct-debit-submit-response',
+            correlationId: event.correlationId,
+            status: 'success',
+            data: {},
         }),
         '*'
     );

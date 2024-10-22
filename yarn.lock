@@ -6880,6 +6880,7 @@ __metadata:
     emoji-mart: "npm:^5.1.0"
     eslint: "npm:^8.57.1"
     formik: "npm:^2.4.6"
+    ibantools: "npm:^4.5.1"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
     libphonenumber-js: "npm:^1.11.12"
@@ -7657,6 +7658,7 @@ __metadata:
     cross-fetch: "npm:^4.0.0"
     eslint: "npm:^8.57.1"
     msw: "npm:^2.4.12"
+    typescript: "npm:^5.6.3"
   languageName: unknown
   linkType: soft
 
@@ -25348,6 +25350,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ibantools@npm:^4.5.1":
+  version: 4.5.1
+  resolution: "ibantools@npm:4.5.1"
+  checksum: 10c0/adc0fbb84baa0dd5162e318396653b785e70e3d6e383eac851abe06960b8ef22fbea7e097f454052808bb7916c120ff4184b4ec9aab9570e7720f9bcfc0fa5b8
+  languageName: node
+  linkType: hard
+
 "ical.js@npm:^1.5.0":
   version: 1.5.0
   resolution: "ical.js@npm:1.5.0"
@@ -34558,6 +34567,7 @@ __metadata:
     "@proton/colors": "workspace:^"
     "@proton/crypto": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
+    "@proton/payments": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/srp": "workspace:^"
     "@proton/utils": "workspace:^"

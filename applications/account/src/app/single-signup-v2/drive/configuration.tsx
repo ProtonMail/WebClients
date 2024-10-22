@@ -21,16 +21,9 @@ import {
 } from '@proton/components/containers/payments/features/vpn';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { PLANS } from '@proton/payments';
 import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
-import {
-    APPS,
-    BRAND_NAME,
-    CYCLE,
-    DRIVE_APP_NAME,
-    DRIVE_SHORT_APP_NAME,
-    PLANS,
-    SSO_PATHS,
-} from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, CYCLE, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { FreePlanDefault, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';

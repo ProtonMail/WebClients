@@ -8,7 +8,7 @@ const TYPES = {
     [INVOICE_STATE.UNPAID]: 'error',
     [INVOICE_STATE.PAID]: 'success',
     [INVOICE_STATE.VOID]: 'default',
-    [INVOICE_STATE.BILLED]: 'error',
+    [INVOICE_STATE.BILLED]: 'origin',
     [INVOICE_STATE.WRITEOFF]: 'default',
 } as const;
 

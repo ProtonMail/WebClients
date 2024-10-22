@@ -128,6 +128,8 @@ export const useChargebeeCardVerifyPayment = (api: Api): PaymentVerificatorV5 =>
                         if (error && error.message && !error.config) {
                             createNotification({ text: error.message, type: 'error' });
                         }
+
+                        reject();
                     });
                 return;
             }

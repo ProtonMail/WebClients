@@ -3,7 +3,8 @@ import { c, msgid } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike, Card } from '@proton/atoms';
 import { SettingsLink, SettingsSectionWide, usePlans } from '@proton/components';
-import { PLANS, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/payments';
+import { VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { canPay, isPaid } from '@proton/shared/lib/user/helpers';
 
 const VpnUpgradeSection = () => {

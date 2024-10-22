@@ -6,8 +6,9 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Prompt from '@proton/components/components/prompt/Prompt';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { getInviteLimit } from '@proton/components/containers/members/UsersAndAddressesSection/helper';
+import { PLAN_NAMES } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { BRAND_NAME, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';
 import { isOrganizationFamily, isOrganizationPassFamily } from '@proton/shared/lib/organization/helper';
 

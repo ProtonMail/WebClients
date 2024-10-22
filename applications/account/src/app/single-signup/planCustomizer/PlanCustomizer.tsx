@@ -3,9 +3,9 @@ import type { ComponentPropsWithoutRef } from 'react';
 import { c } from 'ttag';
 
 import { Icon, Info } from '@proton/components';
-import { ADDON_NAMES } from '@proton/shared/lib/constants';
+import { ADDON_NAMES, type PlanIDs } from '@proton/payments';
 import { setQuantity } from '@proton/shared/lib/helpers/planIDs';
-import type { Currency, Cycle, Plan, PlanIDs } from '@proton/shared/lib/interfaces';
+import type { Currency, Cycle, Plan } from '@proton/shared/lib/interfaces';
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 

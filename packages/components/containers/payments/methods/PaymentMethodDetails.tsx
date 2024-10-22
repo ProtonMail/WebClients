@@ -2,8 +2,9 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { SepaAuthorizationText } from '@proton/components/payments/chargebee/SepaAuthorizationText';
 import { getBankSvg } from '@proton/components/payments/client-extensions/credit-card-type';
-import type { PayPalDetails, SavedCardDetails } from '@proton/payments';
+import type { PayPalDetails, SavedCardDetails, SepaDetails } from '@proton/payments';
 import { PAYMENT_METHOD_TYPES, isPaypalDetails, isSavedCardDetails } from '@proton/payments';
 
 import Bordered from '../../../components/container/Bordered';
@@ -96,8 +97,9 @@ interface Props {
         | PAYMENT_METHOD_TYPES.CARD
         | PAYMENT_METHOD_TYPES.PAYPAL
         | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
-        | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
-    details: SavedCardDetails | PayPalDetails;
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
+    details: SavedCardDetails | PayPalDetails | SepaDetails;
 }
 
 const PaymentMethodDetails = ({ type, details }: Props) => {
@@ -115,6 +117,10 @@ const PaymentMethodDetails = ({ type, details }: Props) => {
         }
 
         return <PaymentMethodDetailsPaypal details={details} />;
+    }
+
+    if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT) {
+        return <SepaAuthorizationText />;
     }
 
     return null;

@@ -13,7 +13,8 @@ import { PromotionBanner } from '@proton/components/containers/banner/PromotionB
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useApi from '@proton/components/hooks/useApi';
-import { MINUTE, PLANS, SERVER_FEATURES, SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/payments';
+import { MINUTE, SERVER_FEATURES, SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { getVPNDedicatedIPs } from '@proton/shared/lib/helpers/subscription';
 import type { Organization } from '@proton/shared/lib/interfaces';

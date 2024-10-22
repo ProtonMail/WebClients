@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
 

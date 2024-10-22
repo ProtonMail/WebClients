@@ -9,7 +9,8 @@ import { usePaymentsApi } from '@proton/components/payments/react-extensions/use
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { type BillingAddress, DEFAULT_TAX_BILLING_ADDRESS, type PaymentMethodStatusExtended } from '@proton/payments';
-import { MAIL_APP_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import Content from '../public/Content';
 import Header from '../public/Header';

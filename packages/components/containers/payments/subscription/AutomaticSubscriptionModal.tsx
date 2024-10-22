@@ -60,7 +60,7 @@ import useLastSubscriptionEnd from '@proton/components/hooks/useLastSubscription
 import useLoad from '@proton/components/hooks/useLoad';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { type PaymentMethodStatusExtended, getPlansMap } from '@proton/payments';
-import type { PLANS } from '@proton/shared/lib/constants';
+import type { PLANS } from '@proton/payments';
 import { CURRENCIES, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
 import { getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import type { Currency, Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';

@@ -4,10 +4,12 @@ import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
 import type {
+    ADDON_NAMES,
     BillingAddress,
     ChargeablePaymentParameters,
     ChargebeeIframeEvents,
     ChargebeeIframeHandles,
+    PLANS,
     PaymentMethodFlows,
     PaymentMethodStatusExtended,
     PaymentMethodType,
@@ -16,7 +18,6 @@ import type {
 } from '@proton/payments';
 import { PAYMENT_METHOD_TYPES, canUseChargebee } from '@proton/payments';
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
-import type { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { isTaxInclusive } from '@proton/shared/lib/helpers/subscription';
@@ -28,6 +29,7 @@ import type {
     Currency,
     User,
 } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import { useModals } from '../../hooks';
@@ -102,6 +104,13 @@ type PaymentFacadeProps = {
     user?: User;
     forceInhouseSavedMethodProcessors?: boolean;
     disableNewPaymentMethods?: boolean;
+    onCurrencyChange?: (
+        currency: Currency,
+        context: {
+            paymentMethodType: PlainPaymentMethodType;
+        }
+    ) => void;
+    onBeforeSepaPayment?: () => Promise<boolean>;
 };
 
 /**
@@ -132,7 +141,11 @@ export const usePaymentFacade = ({
     user,
     forceInhouseSavedMethodProcessors,
     disableNewPaymentMethods,
+    onCurrencyChange,
+    onBeforeSepaPayment,
 }: PaymentFacadeProps) => {
+    const enableSepa = useFlag('SepaPayments');
+
     const { APP_NAME } = useConfig();
     const defaultApi = useApi();
     const api = apiOverride ?? defaultApi;
@@ -199,6 +212,10 @@ export const usePaymentFacade = ({
             chargebeeUserExists,
             forceInhouseSavedMethodProcessors,
             disableNewPaymentMethods,
+            onCurrencyChange,
+            user,
+            enableSepa,
+            onBeforeSepaPayment,
         },
         {
             api,
@@ -224,6 +241,7 @@ export const usePaymentFacade = ({
         [PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL]: true,
         [PAYMENT_METHOD_TYPES.BITCOIN]: false,
         [PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN]: false,
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT]: true,
     };
 
     const userCanTriggerSelected = methods.selectedMethod?.type ? userCanTrigger[methods.selectedMethod.type] : false;
@@ -301,6 +319,7 @@ export const usePaymentFacade = ({
             PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
             PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
             PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
+            PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
         ];
 
         const isNewMethod = methodsWithTaxCountry.includes(methods.selectedMethod?.type);

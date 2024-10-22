@@ -174,6 +174,12 @@ describe('Payment', () => {
                 isChargebeeEnabled={() => ChargebeeEnabled.INHOUSE_FORCED}
                 user={undefined}
                 paymentStatus={undefined}
+                directDebit={
+                    {
+                        customer: {} as any,
+                        bankAccount: {} as any,
+                    } as any
+                }
             />
         );
     });
@@ -207,6 +213,12 @@ describe('Payment', () => {
                 isChargebeeEnabled={() => ChargebeeEnabled.INHOUSE_FORCED}
                 user={undefined}
                 paymentStatus={undefined}
+                directDebit={
+                    {
+                        customer: {} as any,
+                        bankAccount: {} as any,
+                    } as any
+                }
             />
         );
 
@@ -244,6 +256,12 @@ describe('Payment', () => {
                 isChargebeeEnabled={() => ChargebeeEnabled.INHOUSE_FORCED}
                 user={undefined}
                 paymentStatus={undefined}
+                directDebit={
+                    {
+                        customer: {} as any,
+                        bankAccount: {} as any,
+                    } as any
+                }
             />
         );
 
@@ -317,6 +335,12 @@ describe('Payment', () => {
                 isChargebeeEnabled={() => ChargebeeEnabled.INHOUSE_FORCED}
                 user={undefined}
                 paymentStatus={undefined}
+                directDebit={
+                    {
+                        customer: {} as any,
+                        bankAccount: {} as any,
+                    } as any
+                }
             />
         );
 
@@ -385,6 +409,12 @@ describe('Payment', () => {
                 isChargebeeEnabled={() => ChargebeeEnabled.INHOUSE_FORCED}
                 user={undefined}
                 paymentStatus={undefined}
+                directDebit={
+                    {
+                        customer: {} as any,
+                        bankAccount: {} as any,
+                    } as any
+                }
             />
         );
 

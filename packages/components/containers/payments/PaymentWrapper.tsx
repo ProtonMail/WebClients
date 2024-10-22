@@ -1,3 +1,4 @@
+import { type FormErrorsHook } from '@proton/components/components/v2/useFormErrors';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import type { ThemeCode, usePaymentFacade } from '@proton/components/payments/client-extensions';
 import type { PAYMENT_METHOD_TYPES } from '@proton/payments';
@@ -18,6 +19,7 @@ export type Props = ReturnType<typeof usePaymentFacade> & {
     themeCode: ThemeCode;
     onMethod?: (method: string | undefined) => void;
     billingAddressStatus?: BillingAddressStatus;
+    formErrors?: FormErrorsHook;
 };
 
 const PaymentWrapper = ({
@@ -48,6 +50,8 @@ const PaymentWrapper = ({
     onMethod,
     user,
     billingAddressStatus,
+    directDebit,
+    formErrors,
 }: Props) => {
     const { UID } = useAuthentication();
     const isAuthenticated = !!UID || !!isAuthenticatedProp;
@@ -93,6 +97,8 @@ const PaymentWrapper = ({
             user={user}
             billingAddressStatus={billingAddressStatus}
             paymentStatus={methods.status}
+            directDebit={directDebit}
+            formErrors={formErrors}
         />
     );
 };

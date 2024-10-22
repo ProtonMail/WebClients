@@ -4,9 +4,7 @@ import { useCallback, useState } from 'react';
 import { c } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
-import { SelectedPlan } from '@proton/payments';
-import type { ADDON_NAMES } from '@proton/shared/lib/constants';
-import { AddonKey, AddonLimit } from '@proton/shared/lib/constants';
+import { type ADDON_NAMES, AddonKey, AddonLimit, type PlanIDs, SelectedPlan } from '@proton/payments';
 import type { AddonGuard, SupportedAddons } from '@proton/shared/lib/helpers/addons';
 import {
     getSupportedAddons,
@@ -26,7 +24,7 @@ import {
     hasBundlePro2024,
     hasVpnBusiness,
 } from '@proton/shared/lib/helpers/subscription';
-import type { Audience, Currency, Cycle, Plan, PlanIDs, Subscription } from '@proton/shared/lib/interfaces';
+import type { Audience, Currency, Cycle, Plan, Subscription } from '@proton/shared/lib/interfaces';
 import { Renew } from '@proton/shared/lib/interfaces';
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';

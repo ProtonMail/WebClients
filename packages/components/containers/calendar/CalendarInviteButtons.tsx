@@ -8,9 +8,9 @@ import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdow
 import useApi from '@proton/components/hooks/useApi';
 import { useSubscription } from '@proton/components/hooks/useSubscription';
 import { useLoading } from '@proton/hooks';
+import { PLANS } from '@proton/payments';
 import { TelemetryCalendarEvents } from '@proton/shared/lib/api/telemetry';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
-import { PLANS } from '@proton/shared/lib/constants';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import type { PartstatActions } from '@proton/shared/lib/interfaces/calendar';
 import move from '@proton/utils/move';
