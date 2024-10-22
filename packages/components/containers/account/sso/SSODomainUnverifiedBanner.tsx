@@ -49,7 +49,7 @@ const SSODomainUnverifiedBanner = () => {
                         setModal(true);
                     }}
                 >
-                    {c('Action').t`Verify ${unverifiedSSODomain.DomainName}`}
+                    {c('Action').t`Verify the domain ${unverifiedSSODomain.DomainName}`}
                 </InlineLinkButton>
             </TopBanner>
             {renderModal && <TXTRecordModal domain={unverifiedSSODomain} {...modalProps} />}
