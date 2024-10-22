@@ -1,0 +1,10 @@
+@import '~@proton/styles/scss/lib';
+
+#gift-floating-button {
+	border-radius: 50%;
+	block-size: rem(48);
+	inline-size: rem(48);
+	inset-inline-end: rem(10);
+	inset-block-end: rem(10);
+	position: relative;
+}

@@ -8,6 +8,7 @@ import {
     LoaderPage,
     LocationErrorBoundary,
     ModalsChildren,
+    useDrawerWidth,
 } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { useLoading } from '@proton/hooks';
@@ -54,6 +55,19 @@ const DEFAULT_VOLUME_INITIAL_STATE: {
     linkId: undefined,
 };
 
+const FloatingElements = () => {
+    const drawerWidth = useDrawerWidth();
+    return (
+        <div
+            className="flex fixed bottom-0 flex-column z-up w-full items-end right-custom"
+            style={{ '--right-custom': `${drawerWidth}px` }}
+        >
+            <GiftFloatingButton />
+            <TransferManager />
+        </div>
+    );
+};
+
 const InitContainer = () => {
     const { getDefaultShare, getDefaultPhotosShare } = useDefaultShare();
     const { migrateShares } = useShareActions();
@@ -70,7 +84,6 @@ const InitContainer = () => {
     const { redirectionReason, redirectToPublicPage, cleanupUrl } = useRedirectToPublicPage();
     useActivePing();
     useReactRouterNavigationLog();
-
     useEffect(() => {
         const abortController = new AbortController();
         const initPromise = async () => {
@@ -151,8 +164,7 @@ const InitContainer = () => {
     return (
         <ActiveShareProvider defaultShareRoot={rootShare}>
             <ModalsChildren />
-            <TransferManager />
-            <GiftFloatingButton />
+            <FloatingElements />
             <DriveWindow>
                 <Switch>
                     <Route path="/devices" component={DevicesContainer} />
