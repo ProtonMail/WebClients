@@ -549,9 +549,6 @@
       ],
       "Write us on Twitter": [
         "Напишіть нам у Twitter"
-      ],
-      "Your password manager not here? Request it.": [
-        "Вашого менеджера паролів немає? Запитайте його."
       ]
     },
     "bf2023: Info": {
@@ -958,7 +955,7 @@
         "Відстеження Dark Web"
       ],
       "Integrated 2FA authenticator": [
-        "Інтегрований двоетапний (2FA) автентифікатор"
+        "Інтегрований автентифікатор 2FA"
       ],
       "Unlimited hide-my-email aliases": [
         "Необмежена кількість псевдонімів Hide-my-email"
@@ -1020,9 +1017,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        " Перейдіть на платний тарифний план, щоб створити кілька сховищ."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "\"${ payload.item.data.metadata.name }\" елемент було відхилено"
       ],
@@ -1088,9 +1082,6 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Для доступу до ${ PASS_APP_NAME } завжди буде потрібен ваш пароль ${ BRAND_NAME }."
-      ],
-      "Add your custom email address to monitor :": [
-        "Додайте власну адресу пошти для відстеження:"
       ],
       "Admin": [
         "Адміністратор"
@@ -1404,9 +1395,6 @@
       "Monitoring settings successfully updated": [
         "Налаштування відстеження успішно оновлено"
       ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Більше, ніж менеджер паролів, ${ PASS_APP_NAME } захищає ваш пароль та вашу особисту адресу електронної пошти за допомогою псевдонімів електронної пошти. Працюючи за тією ж технологією, що й ${ MAIL_APP_NAME }, ваші дані наскрізно зашифровані та доступні лише вам."
-      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Переміщення всіх елементів із ${ payload.content.name }"
       ],
@@ -1451,9 +1439,6 @@
       ],
       "Offline support successfully disabled": [
         "Підтримка автономного доступу успішно відключена"
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Наші попередження є запобіжними. Якщо ви не впізнаєте жодної із зазначених відомостей, можете сміливо ігнорувати це повідомлення."
       ],
       "Owner": [
         "Власник"
@@ -1548,9 +1533,6 @@
       "Select vault to share": [
         "Виберіть сховище для спільного доступу"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Виберіть, де ви хочете зберегти імпортоване сховище (сховища)."
-      ],
       "Selected items permanently deleted": [
         "Вибрані елементи видалено назавжди"
       ],
@@ -1568,9 +1550,6 @@
       ],
       "Settings successfully updated": [
         "Налаштування успішно оновлені!"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Діліться своїми входами, захищеними нотатками з 10 людьми"
       ],
       "Sign in to your account": [
         "Увійдіть у свій обліковий запис"
@@ -1635,9 +1614,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Щоб перенести дані з іншого менеджера паролів, перейдіть до нього, експортуйте дані, а потім завантажте їх до ${ PASS_APP_NAME }. Після імпорту даних видаліть експортований файл."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "Щоб переглянути імпортовані дані, натисніть на іконку \"Pass\" на панелі інструментів вашого браузера."
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Спробуйте нові функції, оновлення та продукти ${ BRAND_NAME } до того, як вони будуть випущені для широкого загалу. Це призведе до перезапуску програми"
       ],
@@ -1667,9 +1643,6 @@
       ],
       "User's access removed": [
         "Доступ користувача вилучено"
-      ],
-      "User's access sucessfuly updated": [
-        "Доступ користувача успішно оновлено"
       ],
       "username": [
         "ім'я користувача"
@@ -1883,9 +1856,6 @@
       "Capital letters (A-Z)": [
         "Великі літери (А-Я)"
       ],
-      "Capitalise": [
-        "Великі літери"
-      ],
       "Card": [
         "Картка"
       ],
@@ -2045,9 +2015,6 @@
       "Import passwords": [
         "Імпорт паролів"
       ],
-      "Imported from : ": [
-        "Імпортовано з : "
-      ],
       "Imported on : ": [
         "Імпортовано : "
       ],
@@ -2141,7 +2108,7 @@
       "Name on card": [
         "Ім'я на картці"
       ],
-      "Need help ?": [
+      "Need help?": [
         "Потрібна допомога?"
       ],
       "New vault": [
@@ -2299,12 +2266,6 @@
       ],
       "Today": [
         "Сьогодні"
-      ],
-      "Total imported items : ": [
-        "Всього імпортованих елементів : "
-      ],
-      "Total items : ": [
-        "Всього елементів : "
       ],
       "TOTP": [
         "TOTP"
@@ -2608,9 +2569,6 @@
       "Dark Web Monitoring": [
         "Моніторинг Темного Вебу"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "Видалити сховище \"${ vaultName }\" ?"
-      ],
       "Details": [
         "Подробиці"
       ],
@@ -2661,9 +2619,6 @@
       ],
       "Last modified": [
         "Востаннє змінено"
-      ],
-      "Leave vault ?": [
-        "Покинути сховище?"
       ],
       "Loading breaches...": [
         "Завантаження порушень..."
@@ -2718,9 +2673,6 @@
       ],
       "Pending access to the shared data": [
         "Очікування доступу до спільних даних"
-      ],
-      "Permanently remove all items ?": [
-        "Остаточно видалити всі елементи ?"
       ],
       "Pinned (${ items.length })": [
         "Закріплено (${ items.length })"
@@ -2856,14 +2808,8 @@
       "Section name cannot be empty": [
         "Назва розділу не може бути пустою"
       ],
-      "Url already exists": [
-        "Url вже існує"
-      ],
       "URL cannot be empty": [
         "URL не може бути порожнім"
-      ],
-      "Url is invalid": [
-        "Неправильний Url"
       ],
       "URL is invalid": [
         "Невірне посилання"
@@ -2887,9 +2833,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Не вдалося створити сховище \"${ vaultName }\""
-      ],
-      "Could not send invitations to the following addresses :": [
-        "Не вдалося надіслати запрошення на наступні адреси :"
       ],
       "Duplicate email addresses.": [
         "Дублювати адресу електронної пошти."
@@ -2975,9 +2918,6 @@
       "Please check that the extension is properly installed and enabled": [
         "Перевірте, чи правильно встановлено та увімкнено розширення"
       ],
-      "Please contact us for investigating the issue": [
-        "Будь ласка, зв'яжіться з нами для розслідування проблеми"
-      ],
       "Please update the extension to its latest version": [
         "Оновіть розширення до останньої версії"
       ],
@@ -3022,9 +2962,6 @@
       ],
       "Verification code is required": [
         "Потрібно код підтвердження"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "Не можна створити більше сховищ, ніж передбачено у вашому тарифному плані."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Ви досягли ліміту учасників, які можуть отримати доступ до цього сховища."

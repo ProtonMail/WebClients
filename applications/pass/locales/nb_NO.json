@@ -245,16 +245,16 @@
         "Genererer sikker kobling..."
       ],
       "Get ${ PASS_APP_NAME }": [
-        "Få ${ PASS_APP_NAME }"
+        "Skaff deg ${ PASS_APP_NAME }"
       ],
       "Get mobile apps": [
-        "Få mobilapper"
+        "Skaff deg mobilapper"
       ],
       "Get Pass Business": [
-        "Få Pass Business"
+        "Skaff deg Pass Business"
       ],
       "Get Pass Plus": [
-        "Få Pass Plus"
+        "Skaff deg Pass Plus"
       ],
       "Get Started": [
         "Kom i gang"
@@ -568,9 +568,6 @@
       ],
       "Write us on Twitter": [
         "Skriv til oss på Twitter"
-      ],
-      "Your password manager not here? Request it.": [
-        "Passordbehandleren din er ikke her? Be om den."
       ]
     },
     "bf2023: Info": {
@@ -580,7 +577,7 @@
     },
     "bf2023: Label": {
       "Get the deal": [
-        "Få avtalen"
+        "Skaff deg tilbudet"
       ]
     },
     "bf2023: Title": {
@@ -1004,7 +1001,7 @@
         "Eksklusivt tilbud for tidlige støttespillere av ${ PASS_APP_NAME }."
       ],
       "Get it for ${ price }/month": [
-        "Få planen for ${ price }/måned"
+        "Skaff deg planen for ${ price }/måned"
       ],
       "Introducing ${ planNameJSX }": [
         "Introduserer ${ planNameJSX }"
@@ -1068,9 +1065,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        " Oppgrader til en betalt plan for å opprette flere hvelv."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "\"${ payload.item.data.metadata.name }\"-element ble avvist"
       ],
@@ -1135,9 +1129,6 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Tilgang til ${ PASS_APP_NAME } krever fingeravtrykk eller PIN-kode for enheten."
-      ],
-      "Add your custom email address to monitor :": [
-        "Legg til den tilpassede e-postadressen din for å overvåke:"
       ],
       "Admin": [
         "Administrator"
@@ -1334,12 +1325,6 @@
       "Expires in ${ remainingTime }": [
         "Utløper om ${ remainingTime }"
       ],
-      "Extra password successfuly created": [
-        "Ekstra passord vellykket opprettet"
-      ],
-      "Extra password successfuly removed": [
-        "Ekstra passord vellykket fjernet"
-      ],
       "Fill in the CSV with your data": [
         "Fyll ut CSV-filen med dataene dine"
       ],
@@ -1487,9 +1472,6 @@
       "Monitoring settings successfully updated": [
         "Overvåkingsinnstillingene er oppdatert"
       ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Mer enn en passordbehandler, ${ PASS_APP_NAME } beskytter passordet ditt og din personlige e-postadresse via e-postaliaser. Drevet av den samme teknologien bak ${ MAIL_APP_NAME }, er dataene dine kryptert fra ende til ende og er bare tilgjengelige for deg."
-      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
@@ -1537,9 +1519,6 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Nettilgang til ${ PASS_APP_NAME } krever en PIN-kode. Du blir logget ut etter 3 mislykkede forsøk."
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Våre varsler feil på siden av forsiktighet. Hvis du ikke gjenkjenner noe av informasjonen som er brutt, kan du trygt ignorere denne rapporten."
       ],
       "Owner": [
         "Eier"
@@ -1677,9 +1656,6 @@
       "Select vault to share": [
         "Velg hvelv å dele"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Velg hvor du ønsker det/de importerte hvelvet(ene) skal lagres."
-      ],
       "Selected items permanently deleted": [
         "Valgte elementer permanent slettet"
       ],
@@ -1700,9 +1676,6 @@
       ],
       "Settings successfully updated": [
         "Innstillinger oppdatert"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Del dine pålogginger og sikre notater med opptil 10 personer"
       ],
       "Sign in to your account": [
         "Logg på kontoen din"
@@ -1774,9 +1747,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "For å migrere data fra en annen passordbehandler, gå til passordbehandleren, eksporter dataene dine og last dem deretter opp til ${ PASS_APP_NAME }. Når dataene er importert, sletter du den eksporterte filen."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "For å se gjennom de importerte dataene dine, klikk på Pass-ikonet i nettleserens verktøylinje."
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prøv nye ${ BRAND_NAME }-funksjoner, oppdateringer og produkter før de er utgitt til offentligheten. Dette vil laste inn applikasjonen på nytt."
       ],
@@ -1812,9 +1782,6 @@
       ],
       "User's access removed": [
         "Brukerens tilgang fjernet"
-      ],
-      "User's access sucessfuly updated": [
-        "Brukerens tilgang oppdatert"
       ],
       "username": [
         "brukernavn"
@@ -2050,9 +2017,6 @@
       "Capital letters (A-Z)": [
         "Store bokstaver (A–Å)"
       ],
-      "Capitalise": [
-        "Gjør om til store bokstaver"
-      ],
       "Card": [
         "Kort"
       ],
@@ -2242,9 +2206,6 @@
       "Import passwords": [
         "Importer passord"
       ],
-      "Imported from : ": [
-        "Importert fra : "
-      ],
       "Imported on : ": [
         "Importert den : "
       ],
@@ -2344,7 +2305,7 @@
       "Name on card": [
         "Navn på kortet"
       ],
-      "Need help ?": [
+      "Need help?": [
         "Trenger du hjelp?"
       ],
       "New vault": [
@@ -2536,12 +2497,6 @@
       ],
       "Today": [
         "I dag"
-      ],
-      "Total imported items : ": [
-        "Totalt antall importerte elementer : "
-      ],
-      "Total items : ": [
-        "Totalt antall elementer : "
       ],
       "TOTP": [
         "TOTP"
@@ -2859,9 +2814,6 @@
       "Dark Web Monitoring": [
         "Overvåking av det mørke nettet"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "Slett hvelv \"${ vaultName }\" ?"
-      ],
       "Details": [
         "Detaljer"
       ],
@@ -2918,9 +2870,6 @@
       ],
       "Last modified": [
         "Sist endret"
-      ],
-      "Leave vault ?": [
-        "Forlate hvelvet?"
       ],
       "Loading breaches...": [
         "Laster inn brudd..."
@@ -2981,9 +2930,6 @@
       ],
       "Pending access to the shared data": [
         "Venter på tilgang til de delte dataene"
-      ],
-      "Permanently remove all items ?": [
-        "Vil du fjerne alle elementene permanent?"
       ],
       "Pinned (${ items.length })": [
         "Festet (${ items.length })"
@@ -3123,14 +3069,8 @@
       "Section name cannot be empty": [
         "Seksjonsnavn kan ikke være tomt"
       ],
-      "Url already exists": [
-        "Nettadresse finnes allerede"
-      ],
       "URL cannot be empty": [
         "Nettadresse kan ikke være tom"
-      ],
-      "Url is invalid": [
-        "Nettadressen er ugyldig"
       ],
       "URL is invalid": [
         "Nettadressen er ugyldig"
@@ -3160,9 +3100,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Kunne ikke opprette hvelv \"${ vaultName }\""
-      ],
-      "Could not send invitations to the following addresses :": [
-        "Kunne ikke sende invitasjoner til følgende adresser:"
       ],
       "Duplicate email addresses.": [
         "Dupliserte e-postadresser."
@@ -3252,9 +3189,6 @@
       "Please check that the extension is properly installed and enabled": [
         "Vennligst kontroller at utvidelsen er riktig installert og aktivert"
       ],
-      "Please contact us for investigating the issue": [
-        "Vennligst kontakt oss for å undersøke problemet."
-      ],
       "Please update the extension to its latest version": [
         "Vennligst oppdater utvidelsen til siste versjon"
       ],
@@ -3302,9 +3236,6 @@
       ],
       "Verification code is required": [
         "Bekreftelseskode er påkrevd"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "Du kan ikke opprette flere hvelv enn det abonnementet ditt tillater."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Du har nådd grensen for medlemmer som kan ha tilgang til dette hvelvet."

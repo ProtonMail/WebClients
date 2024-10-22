@@ -568,9 +568,6 @@
       ],
       "Write us on Twitter": [
         "Schreibe uns auf Twitter"
-      ],
-      "Your password manager not here? Request it.": [
-        "Ist dein Passwort-Manager nicht dabei? Fordere ihn an."
       ]
     },
     "bf2023: Info": {
@@ -994,11 +991,17 @@
       ]
     },
     "FamilyPlanPromo2024": {
+      "Exclusive offer for ${ PASS_APP_NAME } early supporters.": [
+        "Exklusives Angebot für frühe Unterstützer von ${ PASS_APP_NAME }."
+      ],
       "Get it for ${ price }/month": [
         "Für ${ price }/Monat"
       ],
       "Introducing ${ planNameJSX }": [
         "Wir präsentieren ${ planNameJSX }"
+      ],
+      "Limited-time offer only.": [
+        "Zeitlich begrenztes Angebot."
       ]
     },
     "Feature": {
@@ -1056,9 +1059,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        "Upgrade auf ein kostenpflichtiges Abonnement, um mehrere Tresore zu erstellen."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Der Eintrag \"${ payload.item.data.metadata.name }\" wurde verworfen."
       ],
@@ -1123,9 +1123,6 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Zugang zu ${ PASS_APP_NAME } wird deinen Fingerabdruck oder Geräte-PIN-Code benötigen."
-      ],
-      "Add your custom email address to monitor :": [
-        "Füge deine eigene E-Mail-Adresse zur Überwachung hinzu:"
       ],
       "Admin": [
         "Administrator"
@@ -1322,12 +1319,6 @@
       "Expires in ${ remainingTime }": [
         "Läuft ab in ${ remainingTime }"
       ],
-      "Extra password successfuly created": [
-        "Zusätzliches Passwort erfolgreich erstellt."
-      ],
-      "Extra password successfuly removed": [
-        "Zusätzliches Passwort erfolgreich entfernt."
-      ],
       "Fill in the CSV with your data": [
         "Fülle die CSV-Datei mit deinen Daten aus."
       ],
@@ -1475,9 +1466,6 @@
       "Monitoring settings successfully updated": [
         "Überwachungseinstellungen erfolgreich aktualisiert."
       ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "${ PASS_APP_NAME } ist mehr als nur ein Passwort-Manager: Er schützt dein Passwort und deine persönliche E-Mail-Adresse über E-Mail-Aliasse. Dank der gleichen Technologie wie bei ${ MAIL_APP_NAME } sind deine Daten durchgängig verschlüsselt und nur für dich zugänglich."
-      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
@@ -1525,9 +1513,6 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online-Zugang zu ${ PASS_APP_NAME } wird einen PIN-Code benötigen. Du wirst nach 3 falschen Versuchen abgemeldet werden."
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Unsere Warnungen sind tendenziell übervorsichtig. Wenn du keine der gefundenen Informationen erkennst, kannst du diesen Bericht getrost ignorieren."
       ],
       "Owner": [
         "Besitzer"
@@ -1662,9 +1647,6 @@
       "Select vault to share": [
         "Zu teilenden Tresor auswählen"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Wähle aus, wo die importierten Tresore gespeichert werden sollen."
-      ],
       "Selected items permanently deleted": [
         "Ausgewählte Einträge dauerhaft gelöscht"
       ],
@@ -1685,9 +1667,6 @@
       ],
       "Settings successfully updated": [
         "Einstellungen erfolgreich aktualisiert."
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Teile deine Logins und sichere Notizen mit bis zu 10 Personen."
       ],
       "Sign in to your account": [
         "Mit deinem Konto anmelden"
@@ -1759,9 +1738,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Um Daten von einem anderen Passwort-Manager zu migrieren, exportiere deine Daten und lade sie dann zu ${ PASS_APP_NAME } hoch. Lösche die exportierte Datei, sobald deine Daten importiert wurden."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "Klicke auf das Pass-Symbol in der Symbolleiste deines Browsers, um deine importierten Daten zu überprüfen."
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Teste neue Funktionen, Updates und Produkte von ${ BRAND_NAME }, bevor sie für die Öffentlichkeit freigegeben werden. Dadurch wird die Seite neu geladen."
       ],
@@ -1797,9 +1773,6 @@
       ],
       "User's access removed": [
         "Benutzerzugriff entfernt"
-      ],
-      "User's access sucessfuly updated": [
-        "Benutzerzugriff erfolgreich aktualisiert"
       ],
       "username": [
         "Benutzername"
@@ -2031,9 +2004,6 @@
       "Capital letters (A-Z)": [
         "Großbuchstaben (A-Z)"
       ],
-      "Capitalise": [
-        "Großschreiben"
-      ],
       "Card": [
         "Karte"
       ],
@@ -2220,9 +2190,6 @@
       "Import passwords": [
         "Passwörter importieren"
       ],
-      "Imported from : ": [
-        "Importiert von:"
-      ],
       "Imported on : ": [
         "Importiert am: "
       ],
@@ -2322,7 +2289,7 @@
       "Name on card": [
         "Karteninhaber"
       ],
-      "Need help ?": [
+      "Need help?": [
         "Benötigst du Hilfe?"
       ],
       "New vault": [
@@ -2514,12 +2481,6 @@
       ],
       "Today": [
         "Heute"
-      ],
-      "Total imported items : ": [
-        "Insgesamt importierte Einträge:"
-      ],
-      "Total items : ": [
-        "Einträge insgesamt: "
       ],
       "TOTP": [
         "TOTP"
@@ -2837,9 +2798,6 @@
       "Dark Web Monitoring": [
         "Dark Web-Überwachung"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "Tresor \"${ vaultName }\" löschen?"
-      ],
       "Details": [
         "Details"
       ],
@@ -2879,6 +2837,9 @@
       "Import to vault(s)": [
         "In Tresor(e) importieren"
       ],
+      "Import your aliases from SimpleLogin": [
+        "Importiere deine Aliasse von SimpleLogin"
+      ],
       "Import your data": [
         "Importiere deine Daten"
       ],
@@ -2893,9 +2854,6 @@
       ],
       "Last modified": [
         "Zuletzt geändert"
-      ],
-      "Leave vault ?": [
-        "Tresor verlassen?"
       ],
       "Loading breaches...": [
         "Lade Datenlecks..."
@@ -2956,9 +2914,6 @@
       ],
       "Pending access to the shared data": [
         "Zugriff auf die geteilten Daten ist ausstehend"
-      ],
-      "Permanently remove all items ?": [
-        "Alle Einträge dauerhaft löschen?"
       ],
       "Pinned (${ items.length })": [
         "Angeheftet (${ items.length })"
@@ -3098,14 +3053,8 @@
       "Section name cannot be empty": [
         "Abschnittsname darf nicht leer sein."
       ],
-      "Url already exists": [
-        "URL existiert bereits"
-      ],
       "URL cannot be empty": [
         "URL darf nicht leer sein."
-      ],
-      "Url is invalid": [
-        "URL ungültig"
       ],
       "URL is invalid": [
         "URL ist ungültig."
@@ -3135,9 +3084,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Tresor \"${ vaultName }\" konnte nicht erstellt werden."
-      ],
-      "Could not send invitations to the following addresses :": [
-        "An folgende Adressen konnten keine Einladungen gesendet werden:"
       ],
       "Duplicate email addresses.": [
         "Doppelte E-Mail-Adressen."
@@ -3227,9 +3173,6 @@
       "Please check that the extension is properly installed and enabled": [
         "Bitte überprüfe, ob die Erweiterung richtig installiert und aktiviert ist"
       ],
-      "Please contact us for investigating the issue": [
-        "Bitte kontaktiere uns, um das Problem zu untersuchen"
-      ],
       "Please update the extension to its latest version": [
         "Bitte update die Erweiterung auf die aktuelle Version"
       ],
@@ -3277,9 +3220,6 @@
       ],
       "Verification code is required": [
         "Verifizierungscode ist erforderlich"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "Du kannst nicht mehr Tresore erstellen, als dein Abonnement zulässt."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Du hast die Benutzerlimite für den Zugriff auf diesen Tresor erreicht."

@@ -568,9 +568,6 @@
       ],
       "Write us on Twitter": [
         "Escríbenos en Twitter"
-      ],
-      "Your password manager not here? Request it.": [
-        "¿No aparece tu gestor de contraseñas? Solicítalo."
       ]
     },
     "bf2023: Info": {
@@ -1068,9 +1065,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        "Mejora a un plan de pago para crear varias cajas fuertes."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Se ha descartado el elemento \"${ payload.item.data.metadata.name }\"."
       ],
@@ -1135,9 +1129,6 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "El acceso a ${ PASS_APP_NAME } requerirá tu huella dactilar o el código PIN del dispositivo."
-      ],
-      "Add your custom email address to monitor :": [
-        "Añade tu dirección de correo personalizado para monitorear:"
       ],
       "Admin": [
         "Administrador"
@@ -1334,12 +1325,6 @@
       "Expires in ${ remainingTime }": [
         "Expira en ${ remainingTime }"
       ],
-      "Extra password successfuly created": [
-        "Se ha creado la contraseña adicional."
-      ],
-      "Extra password successfuly removed": [
-        "Se ha borrado la contraseña adicional."
-      ],
       "Fill in the CSV with your data": [
         "Rellenar el CSV con tus datos"
       ],
@@ -1487,9 +1472,6 @@
       "Monitoring settings successfully updated": [
         "Los ajustes de monitoreo se han actualizado."
       ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Más que un gestor de contraseñas, ${ PASS_APP_NAME } protege tu contraseña y tu dirección de correo personal a través de alias de correo electrónico. Se ha desarrollado con la misma tecnología detrás de ${ MAIL_APP_NAME }, tus datos están cifrados de extremo a extremo y sólo son accesibles por ti."
-      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
@@ -1537,9 +1519,6 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "El acceso en línea a ${ PASS_APP_NAME } requerirá un código PIN. Se cerrará la sesión después de 3 intentos incorrectos."
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Nuestras alertas se caracterizan por su cautela. Si no reconoces la información vulnerada, puedes ignorar este informe."
       ],
       "Owner": [
         "Propietario"
@@ -1677,9 +1656,6 @@
       "Select vault to share": [
         "Selecciona la caja fuerte para compartir"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Selecciona dónde quieres guardar tus cajas fuertes importadas."
-      ],
       "Selected items permanently deleted": [
         "Los elementos seleccionados han sido eliminados permanentemente."
       ],
@@ -1700,9 +1676,6 @@
       ],
       "Settings successfully updated": [
         "Se ha actualizado la configuración"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Comparte tus inicios de sesión y notas con hasta 10 personas"
       ],
       "Sign in to your account": [
         "Iniciar sesión en tu cuenta"
@@ -1774,9 +1747,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Para migrar los datos desde otro gestor de contraseñas, ve al gestor, exporta tus datos y luego cárgalos en ${ PASS_APP_NAME }. Una vez que los datos se han importado, elimina el archivo exportado."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "Para verificar tus datos importados, pulsa el ícono de Proton Pass en la barra de herramientas del navegador."
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prueba las nuevas funciones, actualizaciones y productos de ${ BRAND_NAME } antes de que se lancen al público. Esto recargará la aplicación."
       ],
@@ -1812,9 +1782,6 @@
       ],
       "User's access removed": [
         "Se ha borrado el acceso del usuario."
-      ],
-      "User's access sucessfuly updated": [
-        "Se ha actualizado el acceso del usuario."
       ],
       "username": [
         "nombre de usuario"
@@ -2050,9 +2017,6 @@
       "Capital letters (A-Z)": [
         "Letras mayúsculas (A-Z)"
       ],
-      "Capitalise": [
-        "Mayúsculas"
-      ],
       "Card": [
         "Tarjeta"
       ],
@@ -2242,9 +2206,6 @@
       "Import passwords": [
         "Importar contraseñas"
       ],
-      "Imported from : ": [
-        "Importado desde: "
-      ],
       "Imported on : ": [
         "Importado el: "
       ],
@@ -2344,7 +2305,7 @@
       "Name on card": [
         "Titular de la tarjeta"
       ],
-      "Need help ?": [
+      "Need help?": [
         "¿Necesitas ayuda?"
       ],
       "New vault": [
@@ -2536,12 +2497,6 @@
       ],
       "Today": [
         "Hoy"
-      ],
-      "Total imported items : ": [
-        "Elementos totales importados: "
-      ],
-      "Total items : ": [
-        "Elementos totales: "
       ],
       "TOTP": [
         "TOTP"
@@ -2859,9 +2814,6 @@
       "Dark Web Monitoring": [
         "Monitoreo de la Dark Web"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "¿Eliminar la caja fuerte \"${ vaultName }\"?"
-      ],
       "Details": [
         "Detalles"
       ],
@@ -2918,9 +2870,6 @@
       ],
       "Last modified": [
         "Última modificación"
-      ],
-      "Leave vault ?": [
-        "¿Dejar la caja fuerte?"
       ],
       "Loading breaches...": [
         "Cargando las vulneraciones..."
@@ -2981,9 +2930,6 @@
       ],
       "Pending access to the shared data": [
         "Acceso pendiente a los datos compartidos"
-      ],
-      "Permanently remove all items ?": [
-        "¿Borrar todos los elementos permanentemente?"
       ],
       "Pinned (${ items.length })": [
         "Anclados (${ items.length })"
@@ -3123,14 +3069,8 @@
       "Section name cannot be empty": [
         "El nombre de la sección no puede estar vacío."
       ],
-      "Url already exists": [
-        "La URL ya existe."
-      ],
       "URL cannot be empty": [
         "La URL no puede estar vacía."
-      ],
-      "Url is invalid": [
-        "URL inválida"
       ],
       "URL is invalid": [
         "La URL no es válida."
@@ -3160,9 +3100,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "No se ha podido crear la caja fuerte \"${ vaultName }\"."
-      ],
-      "Could not send invitations to the following addresses :": [
-        "No se han podido enviar las invitaciones a las siguientes direcciones:"
       ],
       "Duplicate email addresses.": [
         "Direcciones de correo duplicadas"
@@ -3252,9 +3189,6 @@
       "Please check that the extension is properly installed and enabled": [
         "Comprueba que la extensión está instalada y activada correctamente."
       ],
-      "Please contact us for investigating the issue": [
-        "Contacta con nosotros para investigar el problema"
-      ],
       "Please update the extension to its latest version": [
         "Actualiza la extensión a la última versión."
       ],
@@ -3302,9 +3236,6 @@
       ],
       "Verification code is required": [
         "El código de verificación es obligatorio."
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "No puedes crear más cajas fuertes de las que permite tu suscripción."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Has alcanzado el límite de miembros que pueden acceder a esta caja fuerte."
