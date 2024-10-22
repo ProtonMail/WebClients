@@ -12,9 +12,11 @@ import { useDocsUrlBar } from '../../Containers/useDocsUrlBar'
 import SharedLayout from '../SharedLayout'
 import { usePublicSessionUser } from '@proton/drive-store/store'
 import UserProvider from '../../Containers/ContextProvider'
+import { useUnleashClient } from '@proton/unleash'
 
 function PublicApplicationContent({ publicDriveCompat }: { publicDriveCompat: PublicDriveCompat }) {
   const api = useApi()
+  const unleashClient = useUnleashClient()
 
   const { user, UID } = usePublicSessionUser()
 
@@ -34,6 +36,7 @@ function PublicApplicationContent({ publicDriveCompat }: { publicDriveCompat: Pu
       undefined,
       { publicCompat: publicDriveCompat },
       APP_VERSION,
+      unleashClient,
     )
     // Ensure only one application instance is created
     // eslint-disable-next-line react-hooks/exhaustive-deps
