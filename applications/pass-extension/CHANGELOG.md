@@ -1,3 +1,17 @@
+### Version 1.24.0
+
+-   Trigger autofill only when field is focused
+-   Simplified autofill settings (login, identity, 2FA)
+-   Added filterable autofill suggestions while typing
+-   Added ability to select destination vault during autosave
+-   Removed "autosave vault" setting - now uses last selected vault by default
+-   Added support for URL ports in autofill/save operations
+-   Set Safari minimum version requirement to 16
+-   Improved logging for user reports
+-   Fixed Dashlane import compatibility due to export format changes
+-   Fixed Kaspersky TXT import compatibility
+-   Fixed reported passkey authentication timeout errors
+
 ### Version 1.23.1
 
 -   Fix autosave vault edge-case when shared and non-writable
