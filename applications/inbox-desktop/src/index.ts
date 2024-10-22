@@ -19,7 +19,7 @@ import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
 import { registerLogIPCForwardTransport } from "./utils/logIPCForwardTransport";
 import { handleStartupMailto, handleAppReadyMailto } from "./utils/protocol/mailto";
 import { checkDefaultProtocols } from "./utils/protocol/default";
-import { initializeSentry } from "./utils/telemetry";
+import { initializeSentry } from "./utils/sentry";
 import { appSession } from "./utils/session";
 
 (async function () {
