@@ -3,8 +3,9 @@ import { createRequestSaga } from '@proton/pass/store/request/sagas';
 
 export default createRequestSaga({
     actions: syncDesktopSettings,
-    call: async () => {
-        const clipboard = await window.ctxBridge!.getClipboardConfig();
+    call: async (_, { getDesktopBridge }) => {
+        const desktopBridge = getDesktopBridge?.();
+        const clipboard = (await desktopBridge?.getClipboardConfig()) || {};
         return { clipboard };
     },
 });

@@ -67,6 +67,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 getPollingInterval: () => ACTIVE_POLLING_TIMEOUT,
                 getSettings: () => settings.resolve(authStore.getLocalID()),
                 getTelemetry: () => telemetry,
+                getDesktopBridge: DESKTOP_BUILD ? () => window.ctxBridge! : undefined,
 
                 onBoot: async (res) => {
                     app.setBooted(res.ok);

@@ -5,6 +5,7 @@ import type {
     AppState,
     AppStatus,
     ClientEndpoint,
+    ContextBridgeApi,
     LocalStoreData,
     MaybeNull,
     MaybePromise,
@@ -52,6 +53,9 @@ export interface RootSagaOptions {
 
     /** Retrieves storage for the given client */
     getStorage?: () => AnyStorage<LocalStoreData>;
+
+    /** Retrieves the IPC bridge when running in Electron */
+    getDesktopBridge?: () => ContextBridgeApi;
 
     /** Callback with the result of the boot sequence. The `clearCache`
      * flag indicates if the boot failure should result in a cache wipe */
