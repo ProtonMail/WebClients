@@ -564,9 +564,6 @@
       "OK": [
         "OK"
       ],
-      "Ok": [
-        "OK"
-      ],
       "Open": [
         "Ouvrir"
       ],
@@ -830,9 +827,6 @@
       ],
       "Toggle Calendar app": [
         "Basculer vers l'application Calendar"
-      ],
-      "Toggle Contact app": [
-        "Afficher les contacts"
       ],
       "Toggle settings": [
         "Afficher ou masquer les paramètres"
@@ -1266,6 +1260,53 @@
       ],
       "Your subscription is ending soon": [
         "Votre abonnement se termine bientôt."
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB } d'espace de stockage"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } d'espace de stockage pour vos messages"
+      ],
+      "Advanced account protection": [
+        "Protection avancée des comptes"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "Toutes les applications ${ BRAND_NAME } et les fonctionnalités premium"
+      ],
+      "Cancel and downgrade": [
+        "Annuler et passer à un abonnement inférieur"
+      ],
+      "Cloud storage and sharing for large files": [
+        "Stockage cloud et partage de vos fichiers"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Stockage cloud chiffré pour les photos et les documents."
+      ],
+      "Encrypted password manager": [
+        "Gestionnaire de mots de passe chiffré"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "Notre abonnement gratuit de base avec une messagerie et un stockage chiffrés de bout en bout. Aucune fonctionnalité premium incluse."
+      ],
+      "Save ${ upsellSavings }": [
+        "Économisez ${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "Économisez de l'argent avec ${ upsellPlanName }"
+      ],
+      "Secure personal and shared calendar": [
+        "Calendrier partagé et personnel sécurisé"
+      ],
+      "Try ${ planName }": [
+        "J'essaie ${ planName }"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "Essayez ${ upsellPlanName } et conservez l'accès à toutes les fonctionnalités premium de messagerie et de calendrier."
+      ],
+      "Ultra fast and private VPN": [
+        "Un VPN ultrarapide et privé"
       ]
     },
     "Checkout row": {
@@ -2302,9 +2343,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Chiffrement et importation des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Pour importer à partir d'un fichier CSV ou VCF, assurez-vous que le fichier ne dépasse pas ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus volumineux, divisez-le en plusieurs fichiers plus petits. ${ learnMoreLink }"
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Obtenez un nombre illimité d'alias et 500 Go d'espace de stockage avec l'offre groupée ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
@@ -2325,6 +2363,9 @@
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Pour garantir la sécurité maximale de votre compte, définissez une phrase de récupération."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pour importer à partir d'un fichier CSV ou VCF, assurez-vous que le fichier ne dépasse pas ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus volumineux, divisez-le en plusieurs fichiers plus petits. ${ learnMoreLink }"
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
@@ -3028,11 +3069,11 @@
         "Vous ne pouvez pas envoyer un message à plus de ${ maxContacts } destinataire.",
         "Vous ne pouvez pas envoyer un message à plus de ${ maxContacts } destinataires."
       ],
-      "You have reached the contacts limit for your account": [
-        "Vous avez atteint la limite du nombre de contacts pour votre compte."
-      ],
       "You have reached the maximum number of calendars.": [
         "Vous avez atteint le nombre maximum de calendriers."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Vous avez atteint la limite du nombre de contacts pour votre compte."
       ],
       "You must set a name": [
         "Vous devez définir un nom."
@@ -3380,7 +3421,7 @@
       "Lifetime accounts cannot join a family plan.": [
         "Les comptes Lifetime ne peuvent rejoindre un abonnement familial."
       ],
-      "Manage addresses.": [
+      "Manage addresses": [
         "Gérer les adresses"
       ],
       "Owners of a plan with members cannot join another family plan.": [
@@ -3401,6 +3442,9 @@
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Vous ne pouvez accepter que 3 invitations par période de 6 mois. Contactez le ${ supportLink } si vous avez besoin d'une exception."
       ],
+      "You cannot accept this invitation with your current plan.": [
+        "Vous ne pouvez pas accepter cette invitation avec votre abonnement actuel."
+      ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Vous avez une invitation à rejoindre ${ bannerOrganization }. ${ viewInviteButton }"
       ],
@@ -3418,9 +3462,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Votre compte utilise ${ usedSpace } d'espace de stockage, ce qui dépasse les ${ inviteSpace } dont vous disposez. Supprimez certaines données ou demandez à l'administrateur de l'abonnement d'augmenter votre espace de stockage."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "Vous ne pouvez pas accepter cette invitation avec votre abonnement actuel."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3440,8 +3481,8 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users ": [
-        "Configurez votre compte familial et invitez des utilisateurs. "
+      "Configure your family account and invite users": [
+        "Configurez votre compte familial et invitez des utilisateurs."
       ],
       "Set up your family": [
         "Configurez votre famille"
@@ -4034,7 +4075,7 @@
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
       ],
-      "(${ serverPrice } /month)": [
+      "(${ serverPrice }/month)": [
         "(${ serverPrice }/mois)"
       ],
       "+${ bonusSpace } bonus storage": [
@@ -4556,7 +4597,7 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Vos données sont en cours d'importation depuis ${ fromEmail } vers ${ toEmail }."
       ],
-      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
         "En attendant, créez votre propre compte ${ DRIVE_APP_NAME } : protégez vos données avec le chiffrement de bout en bout et partagez-les en toute sécurité."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
@@ -4767,9 +4808,6 @@
       ],
       "Organization size": [
         "Taille de l’organisation"
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Nos alertes se caractérisent par leur prudence. Si vous ne reconnaissez pas les informations compromises, vous pouvez ignorer ce rapport."
       ],
       "Owner": [
         "Propriétaire"
@@ -6487,8 +6525,8 @@
       "Graphics Interchange Format (GIF)": [
         "Graphics Interchange Format (GIF)"
       ],
-      "GZip Compressed Archive": [
-        "Archive compressée GZip"
+      "GZip Archive": [
+        "Archive GZip"
       ],
       "HyperText Markup Language (HTML)": [
         "Langage de balisage d’hypertexte (HTML)"
@@ -6508,8 +6546,8 @@
       "Java Archive (JAR)": [
         "Archive JAVA (JAR)"
       ],
-      "JPEG images": [
-        "Images JPEG"
+      "JPEG image": [
+        "Image JPEG"
       ],
       "MP3 audio": [
         "Audio MP3"
@@ -6547,8 +6585,8 @@
       "Opus audio": [
         "Audio Opus"
       ],
-      "Portable Network Graphics": [
-        "Portable Network Graphics"
+      "Portable Network Graphics (PNG)": [
+        "Portable Network Graphics (PNG)"
       ],
       "RAR archive": [
         "Archive RAR"
@@ -6746,6 +6784,10 @@
       "${ n } VPN connection": [
         "${ n } connexion VPN",
         "${ n } connexions VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } utilisateur",
+        "Jusqu'à ${ numberOfUsers } utilisateurs"
       ],
       "${ options }-day file version history": [
         "Historique des versions de fichiers datant d'${ options } jour",
@@ -7048,8 +7090,8 @@
       "Sync and backup all your files across devices": [
         "Synchronisez et sauvegardez tous vos fichiers entre plusieurs appareils."
       ],
-      "Tor over VPN": [
-        "Tor via VPN"
+      "TOR over VPN": [
+        "TOR via VPN"
       ],
       "Two-factor authentication": [
         "Authentification à deux facteurs"
@@ -7317,8 +7359,8 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Créez jusqu'à ${ n } adresses e-mail/alias et attribuez-les aux membres de votre famille. Utilisez-les pour vos identités en ligne, comme « SebShopping@${ domain } » pour tous vos achats en ligne."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Vous pouvez ajouter des serveurs dédiés avec une ou plusieurs adresses IP dédiées aux passerelles privées pour un contrôle d'accès plus précis."
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Vous pouvez ajouter des serveurs dédiés avec des adresses IP dédiées aux passerelles privées pour un contrôle d'accès plus précis."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Cette fonctionnalité vous protège des menaces sur la confidentialité du VPN en acheminant votre trafic internet à travers plusieurs serveurs."
@@ -7416,8 +7458,8 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "Réinitialisez les mots de passe des utilisateurs et leur authentification à deux facteurs."
       ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Envoyez l'ensemble de votre trafic internet à travers le réseau Tor en un seul clic."
+      "Route your internet traffic through the TOR network with a single click": [
+        "Envoyez l'ensemble de votre trafic Internet à travers le réseau TOR en un seul clic."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Cela inclut la synchronisation automatique, le partage de fichiers chiffrés et d'autres fonctionnalités."
@@ -7745,7 +7787,7 @@
       "Share invitation declined": [
         "L'invitation au partage a été refusée."
       ],
-      "Stopping to share this item has failed": [
+      "Stopping the sharing of this item has failed": [
         "L'arrêt du partage de cet élément n'a pas abouti."
       ],
       "Subfolder failed to be loaded": [
@@ -7754,7 +7796,7 @@
       "The item was not added to your drive": [
         "L'élément n'a pas été ajouté à votre drive."
       ],
-      "The item was succefully added to your drive": [
+      "The item was successfully added to your drive": [
         "L'élément a été ajouté à votre drive."
       ],
       "The link to \"${ name }\" failed to be deleted": [
@@ -7809,8 +7851,8 @@
       ]
     },
     "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Sélectionnez ce à quoi ${ BRAND_NAME } peut accéder : afficher vos messages électroniques et leurs paramètres, afficher et télécharger vos contacts, afficher et télécharger tous les agendas auxquels vous accédez à partir de Google Agenda."
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Sélectionnez ce à quoi ${ BRAND_NAME } peut accéder : afficher vos messages électroniques et leurs paramètres, afficher et télécharger vos contacts, afficher et télécharger tous les agendas auxquels vous accédez à partir de Google Calendar."
       ]
     },
     "Onboarding": {
@@ -8453,7 +8495,7 @@
       "Try ${ PASS_APP_NAME }": [
         "Essayer ${ PASS_APP_NAME }"
       ],
-      "Used on amazon for shopping, etc.": [
+      "Used on Amazon for shopping, etc.": [
         "Utilisé par exemple sur Amazon pour vos achats."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
@@ -9083,8 +9125,8 @@
       "Got it": [
         "J'ai compris"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Il vous suffit de vous connecter à votre compte Apple App Store, puis d'appuyer sur ${ subscriptions }."
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Il vous suffit de vous connecter à votre compte Apple App Store, puis de sélectionner ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Il vous suffit de vous connecter à votre compte Play Store, puis d'appuyer sur ${ subscriptions }."
@@ -9113,6 +9155,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } avec leurs fonctionnalités premium"
+      ],
       "${ dayDiff } day left": [
         "${ dayDiff } jour restant",
         "${ dayDiff } jours restants"
@@ -9147,6 +9192,9 @@
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planName } ne se limite pas à l'essentiel et vous permet d'améliorer votre productivité, d'être plus organisé et de contrôler votre boite de réception, votre identité de messagerie et bien plus encore."
       ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
+        "${ planName } vous permet de vous assurer que chaque membre de votre famille, ainsi que leurs données, sont protégés lorsqu'ils sont en ligne."
+      ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } vous propose ${ planMaxSpace } d'espace de stockage pour vos messages, pièces jointes, événements, mots de passe et fichiers. Vous pouvez également bénéficier de bonus annuels d'espace de stockage."
       ],
@@ -9158,6 +9206,29 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } vous propose ${ planMaxSpace } d'espace de stockage par utilisateur pour vos messages, pièces jointes, événements, fichiers et mots de passe. Vous pouvez également bénéficier de bonus d'espace de stockage annuels."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } calendrier par utilisateur",
+        "${ planNumberOfCalendars } calendriers par utilisateur"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } domaine de messagerie personnalisé",
+        "${ planNumberOfDomains } domaines de messagerie personnalisés"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adresse e-mail",
+        "${ planNumberOfEmails } adresses e-mail"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } adresse e-mail par utilisateur",
+        "${ planNumberOfEmails } adresses e-mail par utilisateur"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } utilisateur",
+        "${ planNumberOfUsers } utilisateurs"
+      ],
+      "${ PROTON_SENTINEL_NAME } advanced account protection": [
+        "Protection avancée des comptes ${ PROTON_SENTINEL_NAME }"
       ],
       "2 users": [
         "2 utilisateurs"
@@ -9192,6 +9263,9 @@
       "Comprehensive privacy and security": [
         "Protection de la vie privée et sécurité"
       ],
+      "Dark web monitoring": [
+        "Surveillance du dark web"
+      ],
       "Desktop app and email client support (via IMAP)": [
         "Prise en charge de clients de messagerie et applications de bureau (par IMAP)"
       ],
@@ -9210,11 +9284,29 @@
       "Extra storage and users": [
         "Espace de stockage et utilisateurs supplémentaires"
       ],
+      "Folders, labels and filters": [
+        "Dossiers, labels et filtres"
+      ],
+      "Folders, labels, and custom filters": [
+        "Dossiers, labels et filtres personnalisés"
+      ],
       "Helping activists in Hong Kong": [
         "Aider les militants à Hong Kong"
       ],
       "How our customer support team got our VPN app directly into people's hands.": [
         "Voici comment l'équipe de notre service client a réussi à donner un accès direct à notre application VPN à tous."
+      ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "Voici comment nous avons riposté lorsque ${ BRAND_NAME } a été bloqué lors d'une campagne agressive."
+      ],
+      "How we supported local activists when privacy and free speech were threatened.": [
+        "Voici comment nous avons soutenu les activistes locaux lorsque la vie privée et la liberté d'expression étaient menacées."
+      ],
+      "If you exceed free plan limits, you won't be able to:": [
+        "Si vous dépassez les limites de l'abonnement gratuit, vous ne pourrez plus :"
+      ],
+      "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Si votre utilisation dépasse les limites de l'abonnement gratuit, vous pourriez rencontrer des restrictions d'accès aux fonctionnalités du produit et à vos données."
       ],
       "Invited members will be removed from your organization": [
         "Les membres invités seront retirés de votre organisation."
@@ -9227,6 +9319,9 @@
       ],
       "Learn more about our impact": [
         "En savoir plus sur notre impact"
+      ],
+      "Limitations of the free plan:": [
+        "Limites de l'abonnement gratuit :"
       ],
       "Make your business stand out": [
         "Faites en sorte que votre entreprise se démarque !"
@@ -9276,11 +9371,20 @@
       "Unlimited privacy for two": [
         "Confidentialité illimitée pour deux personnes"
       ],
+      "Upload any new files": [
+        "Importer tout nouveau fichier"
+      ],
+      "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
+        "Les abonnements utilisateurs sont la seule source de revenus de ${ BRAND_NAME }. Votre soutien nous permet de rester indépendants, de poursuivre notre mission pour la protection de la vie privée en ligne, et d'aider les militants et organisations qui luttent pour la liberté."
+      ],
       "Users won’t be able to manage their calendars": [
         "Les utilisateurs ne pourront plus gérer leurs calendriers."
       ],
       "Users won’t be able to send emails": [
         "Les utilisateurs ne pourront plus envoyer de messages."
+      ],
+      "Users won’t be able to upload files on their devices": [
+        "Les utilisateurs ne pourront pas importer les fichiers sur leurs appareils."
       ],
       "Version history": [
         "Historique des versions"
@@ -9296,6 +9400,9 @@
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
         "Lorsque vous annulez ${ planName }, votre abonnement passera à ${ BRAND_NAME } Free qui n'offre que jusqu'à 1 Go d'espace de stockage pour vos messages courrier et jusqu'à 5 Go d'espace de stockage sur Drive. Le travail de votre équipe sera interrompu car l'abonnement gratuit ne prend pas en charge les utilisateurs supplémentaires."
+      ],
+      "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Lorsque votre abonnement ${ planName } se termine le ${ expiryDate }, vous passerez à l'abonnement gratuit de ${ BRAND_NAME }."
       ],
       "Yearly free storage bonuses": [
         "Bonus annuels gratuits pour votre espace de stockage"
@@ -10314,7 +10421,7 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Sélectionnez le schéma PGP à utiliser lors de la signature ou du chiffrement vers un autre utilisateur. Notez que PGP/Inline force le format des messages en texte brut."
       ],
-      "Shared end-to-end encrypted": [
+      "Shared with end-to-end encryption": [
         "Partagé avec un chiffrement de bout en bout"
       ],
       "Show side panel": [
@@ -10413,7 +10520,7 @@
       ]
     },
     "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Accès aux serveurs Secure Core, téléchargements P2P/BitTorrent rapides, Tor via VPN et bien d'autres fonctionnalités."
       ]
     },

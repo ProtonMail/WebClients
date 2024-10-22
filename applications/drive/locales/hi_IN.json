@@ -533,9 +533,6 @@
       "OK": [
         "ठीक है"
       ],
-      "Ok": [
-        "ठीक है"
-      ],
       "Open": [
         "अनिर्णित"
       ],
@@ -790,9 +787,6 @@
       ],
       "Toggle Calendar app": [
         "कैलेंडर ऐप बदलें"
-      ],
-      "Toggle Contact app": [
-        "संपर्क ऐप बदलें"
       ],
       "Trust": [
         "भरोसा करें"
@@ -2136,9 +2130,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "संपर्कों को एन्क्रिप्ट और आयात किया जा रहा है... इसमें कुछ मिनट लग सकते हैं. जब प्रक्रिया पूरी हो जाती है, तो आप इस मोडल को बंद कर सकते हैं।"
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "CSV और VCF फ़ाइल के माध्यम से आयात के लिए, सुनिश्चित करें कि फ़ाइल ${ MAX_IMPORT_FILE_SIZE_STRING } या ${ MAX_IMPORT_CONTACTS_STRING } संपर्कों से अधिक न हो। यदि आपकी फ़ाइल बड़ी है, तो कृपया उसे छोटी फ़ाइलों में विभाजित करें। ${ learnMoreLink }।"
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "ऐसा लगता है कि आप जिस संपर्क सूची को आयात कर रहे हैं उसमें कुछ समूह हैं। कृपया समीक्षा करें कि इन समूहों को कैसे आयात किया जाना चाहिए।"
       ],
@@ -2951,9 +2942,6 @@
       "Invited by: ${ inviteEmail }": [
         "इन्होने न्योता भेजा: ${ inviteEmail }"
       ],
-      "Manage addresses.": [
-        "पते संभालें"
-      ],
       "Sorry, you can't switch plans at this time.": [
         "माफ करें, आप अभी प्लान नहीं बदल सकते।"
       ],
@@ -3545,9 +3533,6 @@
         "(${ memberCount } सदस्य)",
         "(${ memberCount } सदस्य)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /महीना)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } बोनस भंडारण"
       ],
@@ -4028,9 +4013,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ fromEmail } से ${ toEmail } पे डाटा आयात कर रहे।"
-      ],
-      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "इसी दौरान, अपना खुद का ${ DRIVE_APP_NAME } खाता बनाएं और अपने डेटा को एंड-टू-एंड एन्क्रिप्शन के साथ सुरक्षित करें और इसे सुरक्षित रूप से साझा करें।"
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "अगले चरण में, आप बिटकॉइन पते का उपयोग करके राशि जमा करने में सक्षम होंगे।"
@@ -5780,9 +5762,6 @@
       "Graphics Interchange Format (GIF)": [
         "ग्राफ़िक्स इंटरचेंज फ़ॉर्मेट (GIF)"
       ],
-      "GZip Compressed Archive": [
-        "GZip संपीडित संग्रहण"
-      ],
       "HyperText Markup Language (HTML)": [
         "हाइपरटेक्स्ट मार्कअप लैंग्वेज (HTML)"
       ],
@@ -5800,9 +5779,6 @@
       ],
       "Java Archive (JAR)": [
         "Java संग्रहण (JAR)"
-      ],
-      "JPEG images": [
-        "JPEG छवियां"
       ],
       "MP3 audio": [
         "MP3 ऑडियो"
@@ -5839,9 +5815,6 @@
       ],
       "Opus audio": [
         "ओपस ऑडियो"
-      ],
-      "Portable Network Graphics": [
-        "पोर्टेबल नेटवर्क ग्राफ़िक्स"
       ],
       "RAR archive": [
         "RAR संग्रहण"
@@ -6217,9 +6190,6 @@
       "Strict no-logs policy": [
         "सख्त लॉग-नहीं नीति"
       ],
-      "Tor over VPN": [
-        "वीपीएन के ऊपर Tor"
-      ],
       "Two-factor authentication": [
         "दो तरीकों से प्रमाणीकरण"
       ],
@@ -6469,9 +6439,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "यूज़र पासवर्ड और यूज़र का दो-फैक्टर सत्यापन रीसेट करें"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "एक क्लिक के साथ Tor नेटवर्क से अपने इंटरनेट ट्रैफिक को गुज़ार के ले जाएं"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "अपने संपर्क डाटा, जैसे फोन नंबर, पता, जन्मदिन, और निजी नोट, को सुरक्षित रखे। ज़ीरो-एक्सेस एन्क्रिप्शन ये पक्का करता है की ${ BRAND_NAME } भी इन को एक्सेस ना कर पाए।"
@@ -6733,9 +6700,6 @@
       "Share invitation accepted successfully": [
         "साझा करने का आमंत्रण सफलतापूर्वक स्वीकार कर लिया गया है"
       ],
-      "Stopping to share this item has failed": [
-        "इस चीज़ का साझाकरण बंद नहीं किया जा सका"
-      ],
       "Subfolder failed to be loaded": [
         "उप-फोल्डर लोड करनें में असफल"
       ],
@@ -6775,11 +6739,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "आयात करने के लिए आपको GIF में दिखाई गई सारी चीज़े चुननी होगी।"
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "चुने की ${ BRAND_NAME } क्या एक्सेस कर सकता है: आपके ईमेल संदेश और सेटिंग देखना, आपके संपर्क देखना और डाउनलोड करना, सारे एजेंडा जो आपने Google Agenda से एक्सेस किए है को देखना और डाउनलोड करना।"
       ]
     },
     "Onboarding": {
@@ -7577,9 +7536,6 @@
     "Subscription change warning": {
       "Got it": [
         "समझ गए"
-      ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "बस अपने एप्पल App Store खाते पे साइनइन करके ${ subscriptions } पे जाएं।"
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "बस अपने Play Store खाते पे साइन इन करें, फिर ${ subscriptions } दबाएं।"
@@ -8518,9 +8474,6 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "उपयोगकर्ता को हस्ताक्षर या एन्क्रिप्ट करते समय उपयोग की जाने वाली PGP योजना का चयन करें। ध्यान दें कि PGP/Inline सादे पाठ संदेशों को बाध्य करता है"
-      ],
-      "Shared end-to-end encrypted": [
-        "शेयर किया शुरु-से-अंत तक एन्क्रिप्ट करके"
       ],
       "Show side panel": [
         "साइड पैनल दिखाएं"
