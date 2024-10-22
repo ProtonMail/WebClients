@@ -7546,7 +7546,7 @@ __metadata:
     "@protontech/bip39": "npm:^1.0.2"
     "@protontech/mimemessage": "npm:~v1.1.4"
     "@protontech/mutex-browser": "npm:^1.0.5"
-    "@protontech/tidy-url": "npm:^1.10.1"
+    "@protontech/tidy-url": "npm:^1.18.3"
     "@protontech/timezone-support": "npm:^2.0.0"
     "@scure/base": "npm:^1.1.9"
     "@sentry/browser": "npm:^7.119.2"
@@ -7798,10 +7798,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@protontech/tidy-url@npm:^1.10.1":
-  version: 1.10.1
-  resolution: "@protontech/tidy-url@npm:1.10.1"
-  checksum: 10c0/9b1302f784e64bfb553a139a5e6fb7d07c493d145343934aab6e88a79bb23acb3fdd188dcb038d6b3c72caff5600b99f2c7d2e1afc03aa82008e1ce8a1d99db0
+"@protontech/tidy-url@npm:^1.18.3":
+  version: 1.18.3
+  resolution: "@protontech/tidy-url@npm:1.18.3"
+  checksum: 10c0/61df8c5576596fb74d9721a949062b517229ef195fbca8f198f343f2b9d7649dc51106cce24dbf54b5b0779d11c096f121b663aeb62e2cc022513d5c96a73b99
   languageName: node
   linkType: hard
 
@@ -34693,7 +34693,7 @@ __metadata:
     "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
     "@protontech/mimemessage": "npm:~v1.1.4"
-    "@protontech/tidy-url": "npm:^1.10.1"
+    "@protontech/tidy-url": "npm:^1.18.3"
     "@reduxjs/toolkit": "npm:^2.3.0"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/jest-dom": "npm:^6.6.2"
