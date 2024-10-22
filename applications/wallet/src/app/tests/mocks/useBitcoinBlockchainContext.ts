@@ -29,8 +29,6 @@ export const mockUseBitcoinBlockchainContext = (
 
         feesEstimation: getFeesEstimationMap(),
         loadingFeesEstimation: false,
-        minimumFee: 1,
-        loadingMinimumFee: false,
 
         manageBitcoinAddressPool: vi.fn(),
         bitcoinAddressHelperByWalletAccountId: {},
