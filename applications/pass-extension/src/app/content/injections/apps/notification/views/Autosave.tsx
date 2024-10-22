@@ -10,7 +10,7 @@ import { NotificationHeader } from 'proton-pass-extension/app/content/injections
 import type { NotificationAction, NotificationActions } from 'proton-pass-extension/app/content/types/notification';
 import { c } from 'ttag';
 
-import { Button, Scroll } from '@proton/atoms';
+import { Button, ButtonLike, Scroll } from '@proton/atoms';
 import { useNotifications } from '@proton/components';
 import usePrevious from '@proton/hooks/usePrevious';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
@@ -111,6 +111,8 @@ export const Autosave: FC<Props> = ({ data }) => {
         }
     }, [shouldUpdate, data]);
 
+    const isUpdateStep = form.values.step === 'select' && data.type === AutosaveMode.UPDATE;
+
     return (
         <FormikProvider value={form}>
             <Form className="ui-violet flex flex-column flex-nowrap justify-space-between h-full anime-fadein gap-2">
@@ -139,38 +141,42 @@ export const Autosave: FC<Props> = ({ data }) => {
                     }
                 />
 
-                {form.values.step === 'select' && data.type === AutosaveMode.UPDATE && (
-                    <>
-                        <div className="shrink-0 px-1">
-                            {`${c('Label').t`Login`} • ${domain}`}
-                            <span className="block text-xs color-weak">{c('Info')
-                                .t`Select an existing login item to update.`}</span>
-                        </div>
-
-                        <Scroll>
-                            {data.candidates.map(({ itemId, shareId, url, userIdentifier, name }) => (
-                                <ListItem
-                                    key={`${shareId}-${itemId}`}
-                                    className="rounded-xl"
-                                    icon="user"
-                                    title={name}
-                                    subTitle={userIdentifier}
-                                    url={url}
-                                    onClick={() =>
-                                        form.setValues((values) => ({
-                                            ...values,
-                                            type: AutosaveMode.UPDATE,
-                                            step: 'edit',
-                                            itemId,
-                                            shareId,
-                                            name: name || values.name,
-                                            userIdentifier: userIdentifier || values.userIdentifier,
-                                        }))
-                                    }
-                                />
-                            ))}
-                        </Scroll>
-                    </>
+                {isUpdateStep && (
+                    <Scroll>
+                        {data.candidates.map(({ itemId, shareId, url, userIdentifier, name }) => (
+                            <ListItem
+                                key={`${shareId}-${itemId}`}
+                                className="rounded-xl"
+                                icon="user"
+                                title={name}
+                                subTitle={userIdentifier}
+                                url={url}
+                                action={
+                                    data?.candidates.length > 1 && (
+                                        <ButtonLike
+                                            as="div"
+                                            pill
+                                            color="norm"
+                                            loading={busy}
+                                            disabled={busy}
+                                            className="flex-auto"
+                                            onClick={() =>
+                                                form.setValues((values) => ({
+                                                    ...values,
+                                                    type: AutosaveMode.UPDATE,
+                                                    step: 'edit',
+                                                    itemId,
+                                                    shareId,
+                                                    name: name || values.name,
+                                                    userIdentifier: userIdentifier || values.userIdentifier,
+                                                }))
+                                            }
+                                        >{c('Label').t`Update`}</ButtonLike>
+                                    )
+                                }
+                            />
+                        ))}
+                    </Scroll>
                 )}
 
                 {form.values.step === 'edit' && (
@@ -207,19 +213,61 @@ export const Autosave: FC<Props> = ({ data }) => {
                 )}
 
                 <div className="flex justify-space-between shrink-0 gap-3 mt-1">
-                    <Button pill color="norm" shape="outline" onClick={() => close({ discard: shouldDiscard })}>{c(
-                        'Action'
-                    ).t`Not now`}</Button>
-                    <Button pill color="norm" type="submit" loading={busy} disabled={busy} className="flex-auto">
-                        <span className="text-ellipsis">
-                            {(() => {
-                                const { step, type } = form.values;
-                                if (step === 'select') return c('Action').t`Create new login`;
-                                if (type === AutosaveMode.NEW) return busy ? c('Action').t`Saving` : c('Action').t`Add`;
-                                return busy ? c('Action').t`Updating` : c('Action').t`Update`;
-                            })()}
-                        </span>
-                    </Button>
+                    {isUpdateStep ? (
+                        <>
+                            <Button pill color="norm" shape="ghost" type="submit">{c('Action')
+                                .t`Create new login`}</Button>
+                            {data?.candidates.length === 1 && (
+                                <ButtonLike
+                                    as="div"
+                                    pill
+                                    color="norm"
+                                    loading={busy}
+                                    disabled={busy}
+                                    onClick={() =>
+                                        form.setValues((values) => ({
+                                            ...values,
+                                            type: AutosaveMode.UPDATE,
+                                            step: 'edit',
+                                            itemId: data.candidates[0].itemId,
+                                            shareId: data.candidates[0].shareId,
+                                            name: data.candidates[0].name || values.name,
+                                            userIdentifier: data.candidates[0].userIdentifier || values.userIdentifier,
+                                        }))
+                                    }
+                                >
+                                    <span className="text-ellipsis">{c('Action').t`Update this login`}</span>
+                                </ButtonLike>
+                            )}
+                        </>
+                    ) : (
+                        <>
+                            <Button
+                                pill
+                                color="norm"
+                                shape="outline"
+                                onClick={() => close({ discard: shouldDiscard })}
+                            >{c('Action').t`Not now`}</Button>
+                            <Button
+                                pill
+                                color="norm"
+                                type="submit"
+                                loading={busy}
+                                disabled={busy}
+                                className="flex-auto"
+                            >
+                                <span className="text-ellipsis">
+                                    {(() => {
+                                        const { type } = form.values;
+                                        if (type === AutosaveMode.NEW) {
+                                            return busy ? c('Action').t`Saving` : c('Action').t`Add`;
+                                        }
+                                        return busy ? c('Action').t`Updating` : c('Action').t`Update`;
+                                    })()}
+                                </span>
+                            </Button>
+                        </>
+                    )}
                 </div>
             </Form>
         </FormikProvider>
