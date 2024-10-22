@@ -572,9 +572,6 @@
       ],
       "Write us on Twitter": [
         "Scrieți-ne pe Twitter"
-      ],
-      "Your password manager not here? Request it.": [
-        "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
       ]
     },
     "App menu": {
@@ -1132,9 +1129,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        "Treceți la un plan cu plată pentru a putea crea seifuri multiple."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Articolul „${ payload.item.data.metadata.name }” a fost respins."
       ],
@@ -1204,9 +1198,6 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Accesul la ${ PASS_APP_NAME } va necesita amprenta digitală sau codul PIN al dispozitivului."
-      ],
-      "Add your custom email address to monitor :": [
-        "Adăugați-vă adresa personală la monitorizare:"
       ],
       "Admin": [
         "Administrator"
@@ -1403,12 +1394,6 @@
       "Expires in ${ remainingTime }": [
         "Expiră peste ${ remainingTime }"
       ],
-      "Extra password successfuly created": [
-        "S-a creat parola suplimentară."
-      ],
-      "Extra password successfuly removed": [
-        "S-a eliminat parola suplimentară."
-      ],
       "Fill in the CSV with your data": [
         "Completați fișierul CSV cu datele necesare."
       ],
@@ -1562,9 +1547,6 @@
       "Monitoring settings successfully updated": [
         "Setările monitorizării s-au actualizat,"
       ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Mai mult decât un manager de parole, ${ PASS_APP_NAME } vă protejează parolele și adresele de e-mail personale prin aliasuri de e-mail. Creat cu aceeași tehnologie folosită la ${ MAIL_APP_NAME }, datele vă sunt criptate în ambele sensuri și doar dvs. le puteți accesa."
-      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
@@ -1615,9 +1597,6 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Accesul la online la ${ PASS_APP_NAME } va necesita un cod PIN. După 3 încercări nereușite contul va fi deconectat."
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Alertele noastre de erori noastre de atenționare. Dacă nu recunoașteți niciuna dintre informațiile divulgate, puteți ignora acest raport."
       ],
       "Owner": [
         "Proprietar"
@@ -1756,9 +1735,6 @@
       "Select vault to share": [
         "Selectați seiful de partajat"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Selectați unde doriți să fie salvate seifurile importate."
-      ],
       "Selected items permanently deleted": [
         "Articolele selectate s-au șters permanent."
       ],
@@ -1779,9 +1755,6 @@
       ],
       "Settings successfully updated": [
         "Setările s-au actualizat."
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Partajați-vă datele de conectare și notițele securizate, cu până la 10 persoane"
       ],
       "Sign in to your account": [
         "Conectare la cont"
@@ -1857,9 +1830,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Pentru a migra datele dintr-un alt manager de parole, accesați managerul de parole, exportați datele, apoi încărcați-le în ${ PASS_APP_NAME }. După ce datele v-au fost importate, puteți șterge fișierul exportat."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "Pentru a revizui datele importate, faceți clic pe pictograma Proton Pass din bara de utilitare a navigatorului."
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Încercați noile funcții, actualizări și produse ${ BRAND_NAME } înainte ca acestea să fie lansate publicului. Aceasta va reporni aplicația."
       ],
@@ -1895,9 +1865,6 @@
       ],
       "User's access removed": [
         "Accesul utilizatorului a fot eliminat."
-      ],
-      "User's access sucessfuly updated": [
-        "Accesul utilizatorului a fost actualizat."
       ],
       "username": [
         "utilizator"
@@ -2143,9 +2110,6 @@
       "Capital letters (A-Z)": [
         "Majuscule (A-Z)"
       ],
-      "Capitalise": [
-        "Scriere cu majuscule"
-      ],
       "Card": [
         "Card"
       ],
@@ -2335,9 +2299,6 @@
       "Import passwords": [
         "Importare parole"
       ],
-      "Imported from : ": [
-        "Importat din : "
-      ],
       "Imported on : ": [
         "Importat la data: "
       ],
@@ -2437,8 +2398,8 @@
       "Name on card": [
         "Titular card"
       ],
-      "Need help ?": [
-        "Doriți ajutor ?"
+      "Need help?": [
+        "Doriți ajutor?"
       ],
       "New vault": [
         "Seif nou"
@@ -2630,12 +2591,6 @@
       ],
       "Today": [
         "Astăzi"
-      ],
-      "Total imported items : ": [
-        "Total articole importate : "
-      ],
-      "Total items : ": [
-        "Total articole: "
       ],
       "TOTP": [
         "TOTP"
@@ -2969,9 +2924,6 @@
       "Dark Web Monitoring": [
         "Monitorizare pe internetul ascuns"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "Ștergeți seiful „${ vaultName }”?"
-      ],
       "Details": [
         "Detalii"
       ],
@@ -3028,9 +2980,6 @@
       ],
       "Last modified": [
         "Ultima modificare"
-      ],
-      "Leave vault ?": [
-        "Părăsiți seiful ?"
       ],
       "Loading breaches...": [
         "Se încarcă divulgările..."
@@ -3091,9 +3040,6 @@
       ],
       "Pending access to the shared data": [
         "În așteptarea accesului la datele partajate"
-      ],
-      "Permanently remove all items ?": [
-        "Ștergeți definitiv toate articolele?"
       ],
       "Pinned (${ items.length })": [
         "Fixate (${ items.length })"
@@ -3234,14 +3180,8 @@
       "Section name cannot be empty": [
         "Numele secțiunii nu poate fi gol"
       ],
-      "Url already exists": [
-        "Acest URL există deja."
-      ],
       "URL cannot be empty": [
         "Adresa URL nu poate fi goală."
-      ],
-      "Url is invalid": [
-        "URL nu este valid."
       ],
       "URL is invalid": [
         "Adresa URL nu este validă."
@@ -3271,9 +3211,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Nu s-a putut crea seiful „${ vaultName }”."
-      ],
-      "Could not send invitations to the following addresses :": [
-        "Nu s-au putut trimite invitații la următoare adrese:"
       ],
       "Duplicate email addresses.": [
         "Adrese de e-mail duplicate."
@@ -3364,9 +3301,6 @@
       "Please check that the extension is properly installed and enabled": [
         "Verificați dacă extensia este instalată și activată corect."
       ],
-      "Please contact us for investigating the issue": [
-        "Contactați-ne pentru a investiga problema."
-      ],
       "Please update the extension to its latest version": [
         "Actualizați extensia la ultima versiune."
       ],
@@ -3414,9 +3348,6 @@
       ],
       "Verification code is required": [
         "Este necesar codul de verificare."
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "Abonamentul actual nu vă permite să creați mai multe seifuri."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Ați atins limita de membri care pot accesa acest seif."

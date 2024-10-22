@@ -572,9 +572,6 @@
       ],
       "Write us on Twitter": [
         "Skriv till oss på Twitter"
-      ],
-      "Your password manager not here? Request it.": [
-        "Är din lösenordshanterare inte här? Begär det."
       ]
     },
     "bf2023: Info": {
@@ -1037,9 +1034,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        " Uppgradera till ett betalt paket för att skapa flera valv."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Objekt ”${ payload.item.data.metadata.name }” avfärdades"
       ],
@@ -1318,12 +1312,6 @@
       "Expires in ${ remainingTime }": [
         "Löper ut om ${ remainingTime }"
       ],
-      "Extra password successfuly created": [
-        "Extra lösenord skapat"
-      ],
-      "Extra password successfuly removed": [
-        "Extra lösenord borttaget"
-      ],
       "Fill in the CSV with your data": [
         "Fyll i CSV med dina data"
       ],
@@ -1446,9 +1434,6 @@
       ],
       "Monitoring settings successfully updated": [
         "Övervakningsinställningar uppdaterades"
-      ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Mer än en lösenordshanterare. ${ PASS_APP_NAME } skyddar ditt lösenord och din personliga e-postadress via e-postalias. Drivs av samma teknologi bakom ${ MAIL_APP_NAME }, din data är krypterad från början och är endast åtkomlig för dig."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
@@ -1637,9 +1622,6 @@
       "Select destination vault": [
         "Välj målvalv"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Välj var du vill att dina importerade valv ska sparas."
-      ],
       "Selected items permanently deleted": [
         "Markerade objekt togs bort permanent"
       ],
@@ -1660,9 +1642,6 @@
       ],
       "Settings successfully updated": [
         "Inställningarna har uppdaterats"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Dela dina inloggningar och säkra anteckningar med upp till 10 personer"
       ],
       "Sign in or create an account to continue.": [
         "Logga in eller skapa ett konto för att fortsätta."
@@ -1731,9 +1710,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "För att migrera data från en annan lösenordshanterare, gå till lösenordshanteraren, exportera din data och ladda sedan upp den till ${ PASS_APP_NAME }. När din data har importerats, ta bort den exporterade filen."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "För att granska dina importerade data, klicka på Pass-ikonen i webbläsarens verktygsfält."
-      ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Prova ladda om eller installera om utökningen och se till att din webbläsare och ${ PASS_SHORT_APP_NAME } är uppdaterade."
       ],
@@ -1781,9 +1757,6 @@
       ],
       "User's access removed": [
         "Användaråtkomst borttagen"
-      ],
-      "User's access sucessfuly updated": [
-        "Användaråtkomst uppdaterad"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Valv “${ payload.content.name }“ borttaget"
@@ -2007,9 +1980,6 @@
       "Capital letters (A-Z)": [
         "Versaler (A–Ö)"
       ],
-      "Capitalise": [
-        "Versaler"
-      ],
       "Card": [
         "Kort"
       ],
@@ -2193,9 +2163,6 @@
       "Import passwords": [
         "Importera lösenord"
       ],
-      "Imported from : ": [
-        "Importerad från: "
-      ],
       "Imported on : ": [
         "Importerad den : "
       ],
@@ -2295,8 +2262,8 @@
       "Name on card": [
         "Namn på kort"
       ],
-      "Need help ?": [
-        "Behöver du hjälp ?"
+      "Need help?": [
+        "Behöver du hjälp?"
       ],
       "New vault": [
         "Nytt valv"
@@ -2493,12 +2460,6 @@
       ],
       "Today": [
         "Idag"
-      ],
-      "Total imported items : ": [
-        "Totalt antal importerade objekt: "
-      ],
-      "Total items : ": [
-        "Totalt antal objekt: "
       ],
       "TOTP": [
         "TOTP"
@@ -2754,9 +2715,6 @@
       "Current version": [
         "Nuvarande version"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "Ta bort “${ vaultName }“?"
-      ],
       "Discard changes?": [
         "Ignorera ändringar?"
       ],
@@ -2814,9 +2772,6 @@
       "Last modified": [
         "Senast ändrad"
       ],
-      "Leave vault ?": [
-        "Lämna valv?"
-      ],
       "Log in as...": [
         "Logga in som …"
       ],
@@ -2858,9 +2813,6 @@
       ],
       "Pending access to the shared data": [
         "Väntar på åtkomst till delade data"
-      ],
-      "Permanently remove all items ?": [
-        "Ta bort alla objekt permanent?"
       ],
       "Pin the extension": [
         "Fäst tillägget"
@@ -2972,14 +2924,8 @@
       "Section name cannot be empty": [
         "Namn på sektion kan inte vara tom"
       ],
-      "Url already exists": [
-        "URL finns redan"
-      ],
       "URL cannot be empty": [
         "URL kan inte vara tom"
-      ],
-      "Url is invalid": [
-        "URL är ogiltig"
       ],
       "URL is invalid": [
         "URL är ogiltig"
@@ -3012,9 +2958,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Kunde inte skapa valv “${ vaultName }“"
-      ],
-      "Could not send invitations to the following addresses :": [
-        "Kunde inte skicka inbjudningar till följande adresser:"
       ],
       "Duplicate email addresses.": [
         "Dubbletter av e-postadresser."
@@ -3086,9 +3029,6 @@
       "PGP encrypted export file requires passphrase": [
         "PGP-krypterad exportfil kräver lösenfras"
       ],
-      "Please contact us for investigating the issue": [
-        "Kontakta oss för att undersöka problemet"
-      ],
       "Please verify your email address in order to use email aliases": [
         "Verifiera din e-postadress för att kunna använda e-postalias"
       ],
@@ -3127,9 +3067,6 @@
       ],
       "Vault name is required": [
         "Valvnamn är obligatoriskt"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "Du kan inte skapa fler valv än vad din prenumeration tillåter."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Du har nått gränsen för medlemmar som kan komma åt detta valv."

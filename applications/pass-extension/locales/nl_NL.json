@@ -209,6 +209,9 @@
       "Feedback & Help": [
         "Feedback & Help"
       ],
+      "Fill in": [
+        "Invullen"
+      ],
       "Fill password": [
         "Wachtwoord invullen"
       ],
@@ -536,9 +539,6 @@
       ],
       "Write us on Twitter": [
         "Schrijf ons op Twitter"
-      ],
-      "Your password manager not here? Request it.": [
-        "Uw wachtwoordbeheerder niet gevonden? Vraag het aan."
       ]
     },
     "bf2023: Info": {
@@ -968,9 +968,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        "Upgrade naar een betalend abonnement om meerdere kluizen aan te maken."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "\"${ payload.item.data.metadata.name }\"-item werd genegeerd"
       ],
@@ -1188,12 +1185,6 @@
       "Expires in ${ remainingTime }": [
         "Verloopt over ${ remainingTime }"
       ],
-      "Extra password successfuly created": [
-        "Extra wachtwoord aangemaakt"
-      ],
-      "Extra password successfuly removed": [
-        "Extra wachtwoord verwijderd"
-      ],
       "Fill in the CSV with your data": [
         "Vul de CSV in met uw gegevens"
       ],
@@ -1316,9 +1307,6 @@
       ],
       "Monitoring settings successfully updated": [
         "Monitoring instellingen succesvol bijgewerkt"
-      ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "${ PASS_APP_NAME } is meer dan een wachtwoordbeheerder en beschermt je wachtwoord en je persoonlijke e-mailadres via e-mailaliassen. Aangedreven door dezelfde technologie achter ${ MAIL_APP_NAME }, zijn je gegevens end-to-end versleuteld en alleen toegankelijk voor jou."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
@@ -1468,9 +1456,6 @@
       "Select destination vault": [
         "Kies bestemmingskluis"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Selecteren waar u uw geïmporteerde kluizen wil bewaren."
-      ],
       "Selected items permanently deleted": [
         "Geselecteerde items permanent verwijderd"
       ],
@@ -1488,9 +1473,6 @@
       ],
       "Settings successfully updated": [
         "Instellingen succesvol bijgewerkt"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Deel uw inloggevens met maximaal 10 personen"
       ],
       "Sign in or create an account to continue.": [
         "Log in of maak een account aan om verder te gaan."
@@ -1556,9 +1538,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Om gegevens te migreren uit een andere wachtwoordbeheerder, gaat u naar de wachtwoordbeheerder, exporteert u uw gegevens, dan uploadt u het naar ${ PASS_APP_NAME }. Wanneer uw gegevens geïmporteerd zijn, verwijdert u het geëxporteerde bestand."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "Om uw geïmporteerde data te controleren, klikt u op het Pass-icoon in uw browserwerkbalk."
-      ],
       "Unable to copy to clipboard": [
         "Kan niet kopiëren naar Klembord"
       ],
@@ -1600,9 +1579,6 @@
       ],
       "User's access removed": [
         "Toegang van verbruiker verwijderd"
-      ],
-      "User's access sucessfuly updated": [
-        "Toegang gebruiker succesvol bijgewerkt"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Kluis \"${ payload.content.name }\" succesvol verwijderd"
@@ -1819,9 +1795,6 @@
       "Capital letters (A-Z)": [
         "Hoofdletters (A-Z)"
       ],
-      "Capitalise": [
-        "Kapitaliseren"
-      ],
       "Card": [
         "Kaart"
       ],
@@ -1987,9 +1960,6 @@
       "Import passwords": [
         "Wachtwoorden importeren"
       ],
-      "Imported from : ": [
-        "Geïmporteerd van: "
-      ],
       "Imported on : ": [
         "Geïmporteerd op: "
       ],
@@ -2083,7 +2053,7 @@
       "Name on card": [
         "Naam op de kaart"
       ],
-      "Need help ?": [
+      "Need help?": [
         "Heeft u hulp nodig?"
       ],
       "New vault": [
@@ -2266,12 +2236,6 @@
       ],
       "Today": [
         "Vandaag"
-      ],
-      "Total imported items : ": [
-        "Totaal geïmporteerde items: "
-      ],
-      "Total items : ": [
-        "Totale items: "
       ],
       "TOTP": [
         "TOTP"
@@ -2512,9 +2476,6 @@
       "Current version": [
         "Huidige versie"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "Kluis \"${ vaultName }\" verwijderen?"
-      ],
       "Discard changes?": [
         "Wijzigingen annuleren?"
       ],
@@ -2569,9 +2530,6 @@
       "Last modified": [
         "Laatst gewijzigd"
       ],
-      "Leave vault ?": [
-        "De kluis verlaten?"
-      ],
       "Log in as...": [
         "Log in als..."
       ],
@@ -2601,9 +2559,6 @@
       ],
       "Pending access to the shared data": [
         "Toegang tot gedeelde data hangende"
-      ],
-      "Permanently remove all items ?": [
-        "Alle items permanent verwijderen?"
       ],
       "Pin the extension": [
         "Extensie vastpinnen"
@@ -2709,14 +2664,8 @@
       "OTP secret or URI required": [
         "OTP-geheim of URI vereist"
       ],
-      "Url already exists": [
-        "Url bestaat al"
-      ],
       "URL cannot be empty": [
         "URL mag niet leeg zijn"
-      ],
-      "Url is invalid": [
-        "URL is ongeldig"
       ],
       "URL is invalid": [
         "URL is ongeldig"
@@ -2740,9 +2689,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Kon kluis \"${ vaultName }\" niet maken"
-      ],
-      "Could not send invitations to the following addresses :": [
-        "Kon geen uitnodigingen versturen naar de volgende adressen:"
       ],
       "Duplicate email addresses.": [
         "Dubbele e-mailadressen."
@@ -2805,9 +2751,6 @@
       "PGP encrypted export file requires passphrase": [
         "PGP-versleuteld exportbestand vereist wachtzin"
       ],
-      "Please contact us for investigating the issue": [
-        "Neem contact met ons op om het probleem te onderzoeken"
-      ],
       "Please verify your email address in order to use email aliases": [
         "Verifieer alstublieft uw e-mailadressen om uw e-mailaliassen te kunnen gebruiken"
       ],
@@ -2843,9 +2786,6 @@
       ],
       "Vault name is required": [
         "Kluisnaam is vereist"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "U kunt niet meer kluizen maken dan uw abonnement toestaat."
       ],
       "You have reached the limit of members who can access this vault.": [
         "U heeft de limiet voor gebruikers die toegang hebben tot deze kluis bereikt."

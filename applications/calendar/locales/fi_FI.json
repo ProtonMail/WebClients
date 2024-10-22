@@ -485,9 +485,6 @@
       "OK": [
         "OK"
       ],
-      "Ok": [
-        "OK"
-      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Avaa ${ CALENDAR_APP_NAME }in asetukset"
       ],
@@ -679,9 +676,6 @@
       ],
       "Today": [
         "Tänään"
-      ],
-      "Toggle Contact app": [
-        "Kytke Yhteystiedot-sovellus"
       ],
       "Toggle settings": [
         "Kytke asetuksia"
@@ -1241,9 +1235,6 @@
       ]
     },
     "Calendar sharing access option label": {
-      "Edit (view, create and edit event details)": [
-        "Muokkaus (tarkastele, luo ja muokkaa tapahtumia)"
-      ],
       "View (see all event details)": [
         "Tarkastelu (näytä kaikki tapahtumatiedot)"
       ]
@@ -1346,6 +1337,53 @@
       ],
       "Your subscription is ending soon": [
         "Tilauksesi päättyy pian"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB } tallennustilaa"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } sähköpostitallennustilaa"
+      ],
+      "Advanced account protection": [
+        "Edistynyt tilin suojaus"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "Kaikki ${ BRAND_NAME }-sovellukset ja niiden premium-ominaisuudet"
+      ],
+      "Cancel and downgrade": [
+        "Peru ja alenna tilaus"
+      ],
+      "Cloud storage and sharing for large files": [
+        "Pilvitallennustila ja jakaminen suurille tiedostoille"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Salattu pilvitallennustila kuville ja dokumenteille"
+      ],
+      "Encrypted password manager": [
+        "Salattu salasanahallinta"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "Ilmainen perustilauksemme, päästä-päähän salatulla sähköpostilla ja tallennustilalla. Ei sisällä premium-ominaisuuksia."
+      ],
+      "Save ${ upsellSavings }": [
+        "Säästä ${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "Säästä ${ upsellPlanName }-tilauksella"
+      ],
+      "Secure personal and shared calendar": [
+        "Suojattu henkilökohtainen ja jaettu kalenteri"
+      ],
+      "Try ${ planName }": [
+        "Kokeile ${ planName }-tilausta"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "Kokeile ${ upsellPlanName }-tilausta ja säilytä kaikki premium-sähköposti- ja -kalenteriominaisuudet."
+      ],
+      "Ultra fast and private VPN": [
+        "Äärimmäisen nopea ja yksityinen VPN"
       ]
     },
     "Checkout row": {
@@ -2475,9 +2513,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Yhteystietoja salataan ja tuodaan... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Tuodaksesi CSV- ja VCF-tiedostoista, varmista ettei tiedoston koko ylitä ${ MAX_IMPORT_FILE_SIZE_STRING } tai yhteystietojen määrä ${ MAX_IMPORT_CONTACTS_STRING } yhteystietoa. Jos tiedostosi on suurempi, jaa se pienempiin osiin. ${ learnMoreLink }"
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Hanki ${ PLAN_NAMES[PLANS.BUNDLE] } ja saat rajattomasti aliaksia ja 500 Gt tallennustilaa."
       ],
@@ -2498,9 +2533,6 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Aseta palautustapa, jottet menetä pääsyä tilillesi."
-      ],
-      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
-        "Tämä voi kestää muutamia minuutteja. Voit käyttää Calendaria odottaessasi normaalisti."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Varmista tilillesi korkein mahdollinen suojaus asettamalla salauslauseke."
@@ -3273,9 +3305,6 @@
         "Voit lähettää viestin enintään ${ maxContacts } vastaanottajalle",
         "Voit lähettää viestin enintään ${ maxContacts } vastaanottajalle"
       ],
-      "You have reached the contacts limit for your account": [
-        "Tilisi yhteystietojen enimmäismäärä on saavutettu"
-      ],
       "You have reached the maximum number of calendars.": [
         "Olet saavuttanut kalenterien enimmäismäärän."
       ],
@@ -3669,9 +3698,6 @@
       "Lifetime accounts cannot join a family plan.": [
         "Elinikäiset tilit eivät voi liittyä perhetilaukseen."
       ],
-      "Manage addresses.": [
-        "Hallitse osoitteita."
-      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Jäseniä sisältävän tilauksen omistajat eivät voi liittyä toiseen perhetilaukseen."
       ],
@@ -3707,9 +3733,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Tilisi käyttää ${ usedSpace } tallennustilaa, mikä ylittää sinulle varatun ${ inviteSpace } määrän. Poista joitakin tietoja tai pyydä tilauksen ylläpitäjää korottamaan tallennustilaasi."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "Et voi hyväksyä kutsua nykyisellä tilauksellasi."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3729,9 +3752,6 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users ": [
-        "Määritä perhetilisi ja kutsu käyttäjiä "
-      ],
       "Set up your family": [
         "Määritä perheesi"
       ],
@@ -4278,9 +4298,6 @@
         "(${ memberCount } jäsen)",
         "(${ memberCount } jäsentä)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice }/kuukausi)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } tallennustilaetua"
       ],
@@ -4771,9 +4788,6 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Organisaatiosi muut käyttäjät näkevät varatut aikasi. Tapahtumatietoja ei jaeta."
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Hälytyksemme ovat varovaisia. Jos et tunnista tietomurron kohteeksi joutuneita tietoja lainkaan, voit huoletta jättää tämän raportin huomiotta."
       ],
       "password": [
         "salasana"
@@ -6387,6 +6401,10 @@
         "${ n } VPN-yhteys",
         "${ n } VPN-yhteyttä"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } käyttäjä",
+        "Enintään ${ numberOfUsers } käyttäjää"
+      ],
       "${ options }-day file version history": [
         "${ options } päivän tiedostojen versiohistoria",
         "${ options } päivän tiedostojen versiohistoria"
@@ -6688,9 +6706,6 @@
       "Sync and backup all your files across devices": [
         "Synkronoi ja varmuuskopioi kaikki tiedostosi kaikilla laitteillasi"
       ],
-      "Tor over VPN": [
-        "Tor + VPN"
-      ],
       "Two-factor authentication": [
         "Kaksivaiheinen tunnistautuminen"
       ],
@@ -6957,9 +6972,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Luo jopa ${ n } sähköpostiosoitetta/aliasta, jotka voit määrittää perheenjäsenille ja käytä niitä verkkoidentiteeteillesi, kuten esim. MikkoOstaja@${ domain } ostostileille."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Omat palvelimet kiinteillä IP-osoitteilla voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Suojaa VPN-yksityisyyden uhkilta ohjaamalla Internet-tietoliikenteesi useiden palvelinten kautta"
       ],
@@ -7055,9 +7067,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Vaadi käyttäjien salasanojen uudelleenasetus ja palauta kaksivaiheinen tunnistautuminen oletustilaan"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Ohjaa Internet-tietoliikenteesi Tor-verkon kautta yhdellä painalluksella"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää automaattisen synkronoinnin, salatun tiedostojen jakamisen ja paljon muuta."
@@ -7354,11 +7363,6 @@
         "Jotta tuonti toimii, sinun on valittava kaikki pyydetyt kohteet GIF-animaatiossa kuvatulla tavalla."
       ]
     },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Valitse, mitä ${ BRAND_NAME } voi käyttää: tarkastele sähköpostiviestejäsi ja -asetuksiasi, tarkastele ja lataa yhteystietojasi, tarkastele ja lataa kaikkia esityslistoja, joita käytät Google Agendasta."
-      ]
-    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Tervetuloa ${ appName } -sovellukseen"
@@ -7509,6 +7513,9 @@
     "PassFamilyPlan2024": {
       "All premium features. 6 users. 1 easy subscription.": [
         "Kaikki premium-ominaisuudet. Kuusi käyttäjää. Yksi helppo tilaus."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Laskutetaan vuosittain hintaan ${ yearlyPrice }. Säästä ${ yearlySavedPrice } ${ passFamilyPlanName }-tilauksella (kuuteen yksittäiseen ${ passPlusPlanName }-tilaukseen verrattuna)."
       ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
         "Erikoistarjous vain ${ PASS_APP_NAME }in varhaisille tukijoille."
@@ -7885,9 +7892,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Kokeile ${ PASS_APP_NAME }ia"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "Käytetään Amazon-ostoksiin yms."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Kun sähköpostiosoitettasi pyydetään, anna osoitteesi sijaan tämä alias. Aliakset tarjoaa ${ passLink }."
@@ -8573,9 +8577,6 @@
       "Got it": [
         "Selvä"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Kirjaudu Apple App Store -tilillesi ja paina sitten ${ subscriptions }."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Kirjaudu Play Store -tilillesi ja paina sitten ${ subscriptions }."
       ],
@@ -8603,6 +8604,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ja ${ VPN_SHORT_APP_NAME } premium-ominaisuuksilla"
+      ],
       "${ dayDiff } day left": [
         "${ dayDiff } päivä jäljellä",
         "${ dayDiff } päivää jäljellä"
@@ -8649,6 +8653,29 @@
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } tarjoaa ${ planMaxSpace } tallennustilaa sähköposteille, liitetiedostoille, tapahtumille, tiedostoille ja salasanoille, käyttäjäkohtaisesti. Olet myös oikeutettu vuosittaisiin tallennustilabonuksiin."
       ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } kalenteri/käyttäjä",
+        "${ planNumberOfCalendars } kalenteria/käyttäjä"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } oma sähköpostiverkkotunnus",
+        "${ planNumberOfDomains } omaa sähköpostiverkkotunnusta"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } sähköpostiosoite",
+        "${ planNumberOfEmails } sähköpostiosoitetta"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } sähköpostiosoite/käyttäjä",
+        "${ planNumberOfEmails } sähköpostiosoitetta/käyttäjä"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } käyttäjä",
+        "${ planNumberOfUsers } käyttäjää"
+      ],
+      "${ PROTON_SENTINEL_NAME } advanced account protection": [
+        "${ PROTON_SENTINEL_NAME } edistynt tilisuojaus"
+      ],
       "2 users": [
         "2 käyttäjää"
       ],
@@ -8682,6 +8709,9 @@
       "Comprehensive privacy and security": [
         "Kattava yksityisyys ja suojaus"
       ],
+      "Dark web monitoring": [
+        "Pimeän verkon valvonta"
+      ],
       "Desktop app and email client support (via IMAP)": [
         "Työpöytäsovellus- ja sähköpostiohjelmatuki (IMAPin kautta)"
       ],
@@ -8700,11 +8730,29 @@
       "Extra storage and users": [
         "Enemmän tallennustilaa ja käyttäjiä"
       ],
+      "Folders, labels and filters": [
+        "Kansiot, tunnisteet ja suodattimet"
+      ],
+      "Folders, labels, and custom filters": [
+        "Kansioita, tunnisteita ja omia suodattimia"
+      ],
       "Helping activists in Hong Kong": [
         "Aktivistien auttaminen Hongkongissa"
       ],
       "How our customer support team got our VPN app directly into people's hands.": [
         "Miten asiakaspalvelumme sai VPN-sovelluksemme suoraan ihmisten käsiin."
+      ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "Miten taistelimme vastaan, kun ${ BRAND_NAME } estettiin aggressiivisessa kampanjassa."
+      ],
+      "How we supported local activists when privacy and free speech were threatened.": [
+        "Miten tuimme paikallisia aktivisteja, kun yksityisyyttä ja sananvapautta uhattiin."
+      ],
+      "If you exceed free plan limits, you won't be able to:": [
+        "Jos ylität ilmaistilauksen rajat, et voi:"
+      ],
+      "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Jos ylität ilmaistilauksen rajoitukset, tuoteominaisuuksien ja tietojesi käyttöä saatetaan rajoittaa."
       ],
       "Invited members will be removed from your organization": [
         "Kutsutut jäsenet poistetaan organisaatiostasi"
@@ -8717,6 +8765,9 @@
       ],
       "Learn more about our impact": [
         "Lue lisää vaikutuksestamme"
+      ],
+      "Limitations of the free plan:": [
+        "Ilmaistilauksen rajoitukset:"
       ],
       "Make your business stand out": [
         "Auta yritystäsi erottumaan joukosta"
@@ -8766,11 +8817,20 @@
       "Unlimited privacy for two": [
         "Rajaton yksityisyys kahdelle"
       ],
+      "Upload any new files": [
+        "Lähetä uusia tiedostoja"
+      ],
+      "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
+        "Käyttäjätilaukset ovat ${ BRAND_NAME }:n ainoa tulonlähde. Tukesi pitää meidät itsenäisinä, edistää tavoitettamme yksityisyyden suojaamiseksi verkossa ja auttaa vapauden puolesta taistelevia aktivisteja ja järjestöjä."
+      ],
       "Users won’t be able to manage their calendars": [
         "Käyttäjät eivät voi hallita kalentereitaan"
       ],
       "Users won’t be able to send emails": [
         "Käyttäjät eivät voi lähettää sähköposteja"
+      ],
+      "Users won’t be able to upload files on their devices": [
+        "Käyttäjät eivät voi lähettää tiedostoja laitteiltaan"
       ],
       "Version history": [
         "Versiohistoria"
@@ -8786,6 +8846,9 @@
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
         "Kun peruutat ${ planName } -tilauksesi, sinut alennetaan ${ BRAND_NAME } Free -tilaukseen, joka tarjoaa enintään 1 Gt Mail- ja 5 Gt Drive-tallennustilaa. Ryhmäsi työnteko keskeytyy, koska ilmaistilaus ei tue lisäkäyttäjiä."
+      ],
+      "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Kun ${ planName }-tilauksesi päättyy ${ expiryDate }, sinut allennetaan ${ BRAND_NAME } Free -tilaukseen."
       ],
       "Yearly free storage bonuses": [
         "Vuotuiset ilmaiset tallennustilakorotukset"
@@ -9656,9 +9719,6 @@
       "Warning: suspected fake website": [
         "Varoitus: epäilty huijaussivusto"
       ],
-      "We're setting up Calendar search": [
-        "Määritämme kalenterihakua"
-      ],
       "We've locked some calendars to protect your data": [
         "Osa kalentereista on lukittu tietojesi suojaamiseksi"
       ],
@@ -9864,11 +9924,6 @@
       ],
       "No ads": [
         "Ei mainoksia"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Pääsy Secure core -palvelimille, nopeat P2P/BitTorrent-lataukset, Tor + VPN, Double hop ja muuta."
       ]
     },
     "wallet_signup_2024: Info": {

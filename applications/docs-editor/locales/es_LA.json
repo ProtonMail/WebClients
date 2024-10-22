@@ -158,7 +158,7 @@
       "Numbered List": [
         "Lista numerada"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Options": [
@@ -536,7 +536,7 @@
         "El contenido que está intentando pegar es demasiado grande para pegarlo de una vez. Intente nuevamente pegándolo en partes más pequeñas."
       ],
       "The language you're using isn’t currently supported in suggestion mode. Please switch to edit mode or change the language.": [
-        "El idioma que está usando no está actualmente disponible con el modo de sugerencia. Cambie al modo de edición o cambie el idioma."
+        "El idioma que está usando no está disponible actualmente con el modo de sugerencia. Cambie al modo de edición o cambie el idioma."
       ],
       "Viewing": [
         "Ver"
@@ -570,6 +570,21 @@
       "Delete paragraph": [
         "Eliminar párrafo"
       ],
+      "Delete table": [
+        "Eliminar la tabla"
+      ],
+      "Delete table column": [
+        "Eliminar una columna en la tabla"
+      ],
+      "Delete table row": [
+        "Eliminar una fila en la tabla"
+      ],
+      "Duplicate table column": [
+        "Duplicar una columna en la tabla"
+      ],
+      "Duplicate table row": [
+        "Duplicar una fila en la tabla"
+      ],
       "Format": [
         "Formato"
       ],
@@ -581,6 +596,15 @@
       ],
       "Insert paragraph": [
         "Insertar párrafo"
+      ],
+      "Insert table": [
+        "Insertar una tabla"
+      ],
+      "Insert table column": [
+        "Insertar una columna en la tabla"
+      ],
+      "Insert table row": [
+        "Insertar una fila en la tabla"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Atajo de teclado: ${ shortcut }"

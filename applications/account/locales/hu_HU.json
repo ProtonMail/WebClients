@@ -70,11 +70,11 @@
       "Accept": [
         "Elfogadás"
       ],
-      "activate": [
-        "aktiválás"
-      ],
       "Activate": [
         "Aktiválás"
+      ],
+      "activate": [
+        "aktiválás"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktiválása"
@@ -198,9 +198,6 @@
       ],
       "Change keys": [
         "Kulcsok megváltoztatása"
-      ],
-      "Change other email subscriptions": [
-        "További e-mail feliratkozások megváltoztatása"
       ],
       "Change password": [
         "Jelszó módosítása"
@@ -712,9 +709,6 @@
       "OK": [
         "OK"
       ],
-      "Ok": [
-        "OK"
-      ],
       "Open": [
         "Megnyitás"
       ],
@@ -846,9 +840,6 @@
       ],
       "Restore": [
         "Helyreállítás"
-      ],
-      "Resubscribe": [
-        "Feliratkozás ismét"
       ],
       "Resume": [
         "Folytatás"
@@ -1839,9 +1830,6 @@
       ]
     },
     "Calendar sharing access option label": {
-      "Edit (view, create and edit event details)": [
-        "Szerkesztés (események megtekintése, létrehozása és szerkesztése)"
-      ],
       "View (see all event details)": [
         "Megtekintés (az összes eseményrészlet megtekintése)"
       ]
@@ -3245,6 +3233,11 @@
         "Domain név törlése?"
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Biztos, hogy törölni szeretné ezt a csoportot?"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Lejárt számla"
@@ -3265,9 +3258,6 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek betöltése és titkosítása. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
-      ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "CSV- és VCF-fájlon keresztüli importálás esetén ügyeljen arra, hogy a fájl ne haladja meg a ${ MAX_IMPORT_FILE_SIZE_STRING } vagy a ${ MAX_IMPORT_CONTACTS_STRING } névjegyet. Ha a fájl nagyobb, ossza fel kisebb fájlokra. ${ learnMoreLink }."
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Szerezzen akár ${ credits } kreditet azzal, hogy barátait meghívja a ${ BRAND_NAME }ba."
@@ -3671,17 +3661,26 @@
       ]
     },
     "Email Unsubscribe": {
+      "Change other email subscriptions": [
+        "További e-mail feliratkozások megváltoztatása"
+      ],
       "Email subscriptions": [
         "E-mail feliratkozás"
+      ],
+      "Resubscribe": [
+        "Feliratkozás ismét"
+      ],
+      "Unsubscribe": [
+        "Leiratkozás"
+      ],
+      "Unsubscribe?": [
+        "Leiratkozás?"
       ],
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
         "Milyen e-maileket szeretne kapni a ${ BRAND_NAME }-tól?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "Ismét feliratkozott ezekre az e-mailekre: ${ categoriesJsx }."
-      ],
-      "You unsubscribed from ${ categoriesJsx } emails.": [
-        "Leiratkozott ezekről az e-mailekről: ${ categoriesJsx }."
       ]
     },
     "Email Unsubscribe Categories": {
@@ -4256,9 +4255,6 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Váltson egy üzleti csomagra, egynél több felhasználval, hogy több felhasználót kezelhessen."
       ],
-      "Please upload a square file": [
-        "Egy négyzet alakú képet töltsön fel"
-      ],
       "Port is required": [
         "A port megadása szükséges"
       ],
@@ -4283,12 +4279,6 @@
       ],
       "Request timed out": [
         "A kérés túllépte az időkorlátot"
-      ],
-      "Require at least one action": [
-        "Legalább egy művelet szükséges"
-      ],
-      "Require at least one condition": [
-        "Legalább egy feltétel szükséges"
       ],
       "Session expired. Please refresh the page.": [
         "Munkafolyamat lejárt. Frissítse az oldalt."
@@ -4436,9 +4426,6 @@
       ],
       "You already added this holidays calendar": [
         "Már hozzáadta ezt a munkaszüneti naptárat"
-      ],
-      "You have reached the contacts limit for your account": [
-        "Elérte a fiókhoz létrehozható névjegyek maximális számát"
       ],
       "You have reached the maximum number of calendars.": [
         "Elérte a naptárak maximális számát."
@@ -4867,9 +4854,6 @@
       "Invite an existing ${ BRAND_NAME } user": [
         "Már létező ${ BRAND_NAME } felhasználó meghívása"
       ],
-      "Invite member to your family": [
-        "Családtag meghívása"
-      ],
       "Set up family group": [
         "Családi csoport létrehozása"
       ],
@@ -4914,9 +4898,6 @@
       ],
       "Leave Visionary plan": [
         "Visionary előfizetésből kilépés"
-      ],
-      "Manage addresses.": [
-        "Címek kezelése."
       ],
       "Manage user accounts": [
         "Felhasználói fiókok kezelése"
@@ -5071,8 +5052,14 @@
         "Kapcsolódás akár ${ plusVpnConnections } eszközzel",
         "Kapcsolódás akár ${ plusVpnConnections } eszközzel"
       ],
+      "Continue": [
+        "Folytatás"
+      ],
       "Fastest VPN servers": [
         "A leggyorsabb VPN szerverek"
+      ],
+      "Remove": [
+        "Eltávolítás"
       ],
       "Secure Core servers": [
         "Secure Core szerverek"
@@ -5377,9 +5364,6 @@
       "Back to sign in": [
         "Vissza a bejelentkezéshez"
       ],
-      "Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features. ": [
-        "Használja tovább a gyors, koncentrált és biztonságos asztali alkalmazást. Váltson nagyobb csomagra további prémium lehetőségek korlátlan eléréséhez. "
-      ],
       "Keep using the desktop app": [
         "Használja tovább az alkalmazást"
       ],
@@ -5512,6 +5496,14 @@
       ],
       "Unanswered": [
         "Megválaszolatlan"
+      ]
+    },
+    "group_invitation: Success": {
+      "Group invitation accepted": [
+        "Csoport meghívás elfogadva"
+      ],
+      "Group invitation declined": [
+        "Csoport meghívás elutasítva"
       ]
     },
     "group_invite_2024: Error message, recovery": {
@@ -6188,9 +6180,6 @@
         "(${ memberCount } tag)",
         "(${ memberCount } tagok)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /hónap)"
-      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Szűrés ha az alábbi ÖSSZES feltétel teljesül)"
       ],
@@ -6242,9 +6231,6 @@
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Egy telefonszám csak egy ${ BRAND_NAME } fiók ellenőrzéséhez használható"
-      ],
-      "A recovery file lets you unlock and view your data after an account reset": [
-        "A helyreállító fájl lehetővé teszti az adatok zárolásának feloldását egy fiók visszaállítás után"
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
         "A helyreállító jelmondat segít visszaszerezni ez elérését a fiókjához és helyreállítani a titkosított leveleit, ha elfelejtené a jelszavát"
@@ -6633,9 +6619,6 @@
       "Dedicated servers": [
         "Dedikált szerverek"
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
-        "Dedikált szervereket, dedikált IP-címekkel, lehet hozzáadni a privát átjárókhoz, a finomhangolt hozzáférés-irányítás lehetővé tételéhez."
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Töröljön le minden más MX rekordot vagy bizonyosodjon meg róla, hogy a ${ MAIL_APP_NAME } prioritása a legalacsonyabb szám."
       ],
@@ -6733,9 +6716,6 @@
       "Emailing preference saved": [
         "E-mail beállítás elmentve"
       ],
-      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "A ${ nameDeleted } címkével ellátott e-mailek nem kerülnek törlésre, és továbbra is megtalálhatók az adott mappában."
-      ],
       "Enable email notifications": [
         "E-mail értesítések engedélyezése"
       ],
@@ -6795,9 +6775,6 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Írja be a helyreállítási telefonszámát és elküldjük a felhasználónevét vagy e-mail címét."
-      ],
-      "Event invitations and RSVPs will be sent in this language.": [
-        "Esemény meghívók és jelentkezések ezen a nyelven kerülnek elküldésre."
       ],
       "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Az események az összes ${ BRAND_NAME } szolgáltatáshoz tartozó azonosítási kísérletet tartalmaznak, amelyek a ${ BRAND_NAME_TWO } bejelentkezését használják."
@@ -6924,12 +6901,6 @@
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Ha még sosem használt kétlépcsős hitelesítést, javasolt ${ guideButton }."
-      ],
-      "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Ha elveszíti a jelszavát és vissza kell állítania a fiókját, ${ boldImperative } hogy legyen ${ boldAccountRecovery } beállítva."
-      ],
-      "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Ha elveszíti a jelszavát és vissza kell állítania a fiókját, ${ boldImperative } hogy legyen ${ boldAccountAndRecovery } beállítva, különben megeshet, hogy nem fogja tudni többé elérni az e-mailjeit, névjegyeit vagy fájljait."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Ha elveszti a kétlépcsős hitelesítéshez használt eszközét, ezekkel a kódokkal jelentkezhet be fiókjába a 6 számjegyű kód helyett. Minden kód csak egyszer használható."
@@ -7145,9 +7116,6 @@
       ],
       "Large imports can take several days.": [
         "Egy nagyobb importálás akár napokig is eltarthat."
-      ],
-      "Lean more about single sign-on": [
-        "További információ az egyszeri bejelentkezésről"
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Tudja meg hogyan kell ${ staySaferOnlineLink }"
@@ -7428,9 +7396,6 @@
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Tartsa biztonságban. Szüksége lesz rá a fiókja eléréshez és adatai visszafejtéséhez, ha visszaállítaná a fiókja jelszavát."
       ],
-      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
-        "Amennyiben törli ezt a szűrőt (${ nameDeleted }), minden ebből kiinduló automatikus feldolgozás megszűnik."
-      ],
       "please open a support ticket": [
         "kérjük, nyisson egy ügyfélszolgálati jegyet"
       ],
@@ -7656,6 +7621,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Mivel ön a hűséges felhasználónk, fiókja extra funkciókat tartalmaz."
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "Az SMTP beküldés lehetővé teszi, hogy harmadik féltől származó szolgáltatások vagy eszközök e-mailt küldjenek a ${ MAIL_APP_NAME } alkalmazáson keresztül az Ön egyéni domaincímeire. Ez a funkció csak a ${ BRAND_NAME } számára érhető el egyéni domainekkel rendelkező üzleti felhasználók számára."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Az SMTP beküldés lehetővé teszi, hogy harmadik féltől származó szolgáltatások vagy eszközök e-mailt küldjenek a ${ MAIL_APP_NAME } alkalmazáson keresztül az Ön egyéni domaincímeire. Hozzáférés kéréséhez kérjük, ${ createTicket } írja le használati eseteit, milyen egyéni domaineket szeretne használni, valamint a várható óránkénti és napi e-mail mennyiséget."
       ],
@@ -7782,9 +7750,6 @@
       ],
       "The format of your CSV file is incorrect.": [
         "A CSV fájl formátuma hibás."
-      ],
-      "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
-        "A hivatkozás annak jelentésére, hogy nem hozott létre egy ${ BRAND_NAME } fiókot, lejárt. Lépjen kapcsolatba támogatási csoportunkkal a probléma megoldásához."
       ],
       "The name will be visible to your users while they are signed in.": [
         "A név látható lesz a bejelentkezett felhasználóinak."
@@ -8328,9 +8293,6 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Ezt egyszer szerkesztheti, hogy biztosítsa a helyes e-mail címet hitelesítéshez."
-      ],
-      "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Bekapcsolhatja a bejelentkezési naplót, hogy lássa a fiókba való belépéseket és IP címeiket. Tároljuk a fiókba belépéshez használt IP címet, az időpontot és a sikertelen bejelentkezéseket is."
       ],
       "You can import one data type at a time.": [
         "Egyszerre egyféle adat importálható."
@@ -9801,7 +9763,7 @@
       "Swipe right action": [
         "Jobbra csúsztatás művelete"
       ],
-      "Synchronize with system": [
+      "Sync with system": [
         "Szinkronizálás a rendszerrel"
       ],
       "System information": [
@@ -10168,9 +10130,6 @@
       "Pay invoice": [
         "Számla kifizetése"
       ],
-      "Paypal without credit card": [
-        "Paypal bankkártya nélkül"
-      ],
       "perform a password reset from your active session": [
         "visszaállítani a jelszavát az aktív munkafolyamatból."
       ],
@@ -10305,8 +10264,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
-        "Minden ${ BRAND_NAME } üzleti alkalmazás és prémium funkció az ön egész vállalkozását védi"
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe írási segéd"
       ],
       "An encrypted email service that puts your privacy first": [
         "Egy titkosított e-mail amiben az ön adatvédelme a legfontosabb"
@@ -10470,9 +10429,6 @@
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Keresse meg a ${ BRAND_NAME } fiók felhasználó nevét!"
-      ],
-      "Private and secure email, no credit card required": [
-        "Privát, biztonságos e-mail, nincs szükség bankkártyára."
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Jelentkezzen be a ${ BRAND_NAME } , hogy hozzáférjen minden titkosított ${ BRAND_NAME } szolgáltatáshoz, mint például ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }. Nincsen fiókja? Készítsen egyet INGYEN."
@@ -11107,9 +11063,6 @@
       "Tailored to your needs": [
         "Az igényeihez igazítva"
       ],
-      "Tor over VPN": [
-        "Tor VPN-en"
-      ],
       "Two-factor authentication": [
         "Kétlépcsős hitelesítés"
       ],
@@ -11403,9 +11356,6 @@
         "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől",
         "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől"
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Dedikált szervereket, dedikált IP-címekkel, lehet hozzáadni a privát átjárókhoz, a finomhangolt hozzáférés-irányítás lehetővé tételéhez"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "A VPN elleni támadással szemben úgy véd, hogy több szerveren keresztül továbbítja az internetes forgalmat"
       ],
@@ -11471,9 +11421,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Felhasználók jelszavának és kétlépcsős hitelesítésének visszaállítása"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Egyetlen kattintással irányítsa a teljes internetforgalmát a Tor hálózaton keresztül"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Tartsa biztonságban fájljait, titkosított felhőtárhelyen. Automatikus szinkronizálást, titkosított megosztás és további lehetőségeket tartalmaz."
@@ -11722,11 +11669,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Ahhoz, hogy az importálás működjön, ki kell választani az összes kért elemet, ahogy a GIF mutatja."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Válassza ki, ${ BRAND_NAME } mihez tud hozzáférni: megnézheti az e-mailjeit és beállításait, megnézheti és letöltheti a kapcsolatait és letöltheti az összes naptárát, amihez a Google Naptárból hozzá tud férni."
       ]
     },
     "Onboarding": {
@@ -12510,9 +12452,6 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Az adminisztrátori jogok helyreállításához használjon egy helyreállítási módszert, lépjen kapcsolatba egy másik adminisztrátorral, vagy állítsa vissza a szervezeti kulcsot."
       ],
-      "We couldn't verify authenticity of this identity.": [
-        "Nem tudtuk ellenőrizi ennek a személyazonosságnak a hitelességét."
-      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Nem sikerült ellenőrizni a feladó cím kulcsának hitelességét. Esetenként késedelem lehet a feladó adatainak frissülésében. Próbálja meg később. Ha nem bízik meg a feladó vagy a meghívó hitelességében, vegye fel a kapcsolatot a ${ BRAND_NAME } ügyfélszolgálattal."
       ],
@@ -13118,20 +13057,11 @@
       "You have recommended actions.": [
         "Javasolt műveletek érhetők el."
       ],
-      "You recovery email address is:": [
-        "A helyreállító e-mail címe:"
-      ],
-      "You recovery phone number is:": [
-        "Helyreállítási telefonszáma:"
-      ],
       "Your account and data can be recovered": [
         "A fiók és adatai helyreállíthatók"
       ],
       "Your account and data can be recovered. Check if you can still access your recovery methods.": [
         "A fiók és adatai helyreállíthatók. Győződjön meg róla, hogy továbbra is hozzáfér a helyreállítási módszereihez."
-      ],
-      "Your account and data can be recovered. You have recommended actions to Safeguard your account further.": [
-        "A fiók és adatai helyreállíthatók. Javasolt műveletek érhetők el, a fiókja biztonságának növeléséhez."
       ],
       "Your account and data can be recovered. You have recommended actions.": [
         "A fiókja és az adatai helyreállíthatóak. Javasolt műveletek érhetők el."
@@ -13205,6 +13135,9 @@
     "saml: Title": {
       "It works!": [
         "Működik!"
+      ],
+      "Test SAML configuration": [
+        "SAML beállítások ellenőrzése"
       ]
     },
     "scim: Action": {
@@ -14196,6 +14129,9 @@
       "Extra storage and users": [
         "Extra tárhely és további felhasználók"
       ],
+      "Got it": [
+        "Rendben"
+      ],
       "Have a question?": [
         "Kérdése van?"
       ],
@@ -14397,12 +14333,6 @@
       ],
       "Gift code applied": [
         "Ajándék kód alkalmazva"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Amennyiben érvényes helyreállítási e-mailt adott meg, akkor a következő percben küldünk egy levelet a felhasználónevével."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Amennyiben érvényes helyreállítási számot adott meg, akkor a következő percben küldünk egy SMS-t a felhasználónevével."
       ],
       "Import record deleted": [
         "Importálási elem törölve"
@@ -14661,6 +14591,9 @@
       ],
       "Email addresses": [
         "E-mail cím"
+      ],
+      "Event": [
+        "Esemény"
       ],
       "Import": [
         "Importálás"
@@ -15098,6 +15031,9 @@
       "Device connected!": [
         "Eszköz csatlakoztatva!"
       ],
+      "Device name": [
+        "Eszköz neve"
+      ],
       "Disable two-factor authentication": [
         "Kétlépcsős hitelesítés kikapcsolása"
       ],
@@ -15477,9 +15413,6 @@
       ],
       "Profile": [
         "Profil"
-      ],
-      "QRCode": [
-        "QR-kód"
       ],
       "Recommended": [
         "Javasolt"
@@ -15995,9 +15928,6 @@
       "Set the default layout for your Inbox.": [
         "A levelező alapértelmezett elrendezésének beállítása."
       ],
-      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
-        "Beállítja az alábbi láblécet az elküldött üzeneteiben: ${ signature } A hivatkozás az ajánló hivatkozására mutat. A lábléc az aláírása alatt fog megjelenni. Az aláírását személyre szabhatja a beállítások között."
-      ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "A feladók képének megjelenítése az üzenetek listáján. A feladó monogramja fog megjelenni, ha nincs kép."
       ],
@@ -16101,9 +16031,6 @@
       ],
       "User declined invitation": [
         "A felhasználó elutasította a meghívást"
-      ],
-      "Waiting user to accept the invitation": [
-        "Várakozás a meghívás elfogadására"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -16137,9 +16064,6 @@
     "Tor out of date": {
       "stable release": [
         "stabil kiadásra"
-      ],
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Az a Tor Browser verzió nem támogatott. Kérjük, frissítsen a legfrissebb ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -16524,9 +16448,6 @@
       ]
     },
     "wallet_signup_2024:Info": {
-      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google open testing.": [
-        "A ${ WALLET_APP_NAME } a korai hozzáférés program része. Az iOS alkalmazást az Apple TestFlighton, az Android alkalmazást pedig a Google Open Testingen érheti el."
-      ],
       "Coming soon": [
         "Hamarosan"
       ]
@@ -16625,12 +16546,6 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Az ingyenes próbaideje hamarosan le fog járni ekkor: ${ textDate }. ${ action }"
-      ],
-      "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
-        "A helyreállító fájlja elavult. Nem alkalmas az új adatok helyreállítására, ha ismét visszaállítaná a fiókja jelszavát."
-      ],
-      "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
-        "A helyreállító jelmondata elavult. Nem alkalmas az új adatok helyreállítására, ha ismét visszaállítaná a fiókja jelszavát."
       ]
     },
     "Warning for domain modal": {

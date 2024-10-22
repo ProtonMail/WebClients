@@ -570,9 +570,6 @@
       ],
       "Write us on Twitter": [
         "Napisz do nas na Twitterze"
-      ],
-      "Your password manager not here? Request it.": [
-        "Nie ma Twojego menadżera haseł? Zgłoś to."
       ]
     },
     "bf2023: Info": {
@@ -1088,9 +1085,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        "Ulepsz do płatnego planu, aby utworzyć wiele sejfów."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Element \"${ payload.item.data.metadata.name }\" został odrzucony"
       ],
@@ -1162,9 +1156,6 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Dostęp do ${ PASS_APP_NAME } będzie wymagał odcisku palca lub kodu PIN."
-      ],
-      "Add your custom email address to monitor :": [
-        "Dodaj niestandardowy adres e-mail do monitoringu:"
       ],
       "Admin": [
         "Administrator"
@@ -1361,12 +1352,6 @@
       "Expires in ${ remainingTime }": [
         "Wygasa za ${ remainingTime }"
       ],
-      "Extra password successfuly created": [
-        "Dodatkowe hasło zostało utworzone"
-      ],
-      "Extra password successfuly removed": [
-        "Dodatkowe hasło zostało usunięte"
-      ],
       "Fill in the CSV with your data": [
         "Wypełnij plik CSV danymi"
       ],
@@ -1519,9 +1504,6 @@
       ],
       "Monitoring settings successfully updated": [
         "Ustawienia monitoringu zostały zaktualizowane"
-      ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "To więcej niż menedżer haseł. ${ PASS_APP_NAME } chroni Twoje hasło i osobisty adres e-mail za pomocą aliasów. Dzięki tej samej technologii, która stoi za pocztą ${ MAIL_APP_NAME }, Twoje dane są zaszyfrowane end-to-end i są dostępne tylko dla Ciebie."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
@@ -1709,9 +1691,6 @@
       "Select vault to share": [
         "Wybierz sejf do udostępnienia"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Wybierz, gdzie chcesz zapisać zaimportowane sejfy."
-      ],
       "Selected items permanently deleted": [
         "Zaznaczone elementy zostały trwale usunięte"
       ],
@@ -1732,9 +1711,6 @@
       ],
       "Settings successfully updated": [
         "Ustawienia zostały zaktualizowane"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Udostępniaj dane logowania i bezpieczne notatki do 10 użytkownikom"
       ],
       "Sign in to your account": [
         "Zaloguj się"
@@ -1808,9 +1784,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Aby przenieść dane z innego menedżera haseł, przejdź do menedżera haseł, wyeksportuj dane, a następnie prześlij je do ${ PASS_APP_NAME }. Po zaimportowaniu danych usuń wyeksportowany plik."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "Kliknij ikonę Proton Pass na pasku narzędzi przeglądarki, aby przejrzeć zaimportowane dane."
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Wypróbuj nowe funkcje, aktualizacje i usługi ${ BRAND_NAME } przed ich premierą. Spowoduje to odświeżenie strony"
       ],
@@ -1846,9 +1819,6 @@
       ],
       "User's access removed": [
         "Uprawienia użytkownika zostały usunięte"
-      ],
-      "User's access sucessfuly updated": [
-        "Uprawienia użytkownika zostały zaktualizowane"
       ],
       "username": [
         "nazwa użytkownika"
@@ -2104,9 +2074,6 @@
       "Capital letters (A-Z)": [
         "Wielkie litery (A-Z)"
       ],
-      "Capitalise": [
-        "Wielkie litery"
-      ],
       "Card": [
         "Karta"
       ],
@@ -2296,9 +2263,6 @@
       "Import passwords": [
         "Importuj hasła"
       ],
-      "Imported from : ": [
-        "Zaimportowano z: "
-      ],
       "Imported on : ": [
         "Zaimportowano: "
       ],
@@ -2398,7 +2362,7 @@
       "Name on card": [
         "Właściciel karty"
       ],
-      "Need help ?": [
+      "Need help?": [
         "Potrzebujesz pomocy?"
       ],
       "New vault": [
@@ -2592,12 +2556,6 @@
       ],
       "Today": [
         "Dzisiaj"
-      ],
-      "Total imported items : ": [
-        "Zaimportowane elementy: "
-      ],
-      "Total items : ": [
-        "Wszystkie elementy: "
       ],
       "TOTP": [
         "TOTP"
@@ -2919,9 +2877,6 @@
       "Dark Web Monitoring": [
         "Monitoring dark web"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "Usunąć sejf \"${ vaultName }\"?"
-      ],
       "Details": [
         "Szczegóły"
       ],
@@ -2978,9 +2933,6 @@
       ],
       "Last modified": [
         "Zmodyfikowano"
-      ],
-      "Leave vault ?": [
-        "Opuścić sejf?"
       ],
       "Loading breaches...": [
         "Ładowanie wycieków..."
@@ -3041,9 +2993,6 @@
       ],
       "Pending access to the shared data": [
         "Oczekujący dostęp do udostępnionych danych"
-      ],
-      "Permanently remove all items ?": [
-        "Usunąć trwale wszystkie elementy?"
       ],
       "Pinned (${ items.length })": [
         "Przypięte (${ items.length })"
@@ -3185,14 +3134,8 @@
       "Section name cannot be empty": [
         "Nazwa sekcji nie może być pusta"
       ],
-      "Url already exists": [
-        "Adres URL już istnieje"
-      ],
       "URL cannot be empty": [
         "Adres URL nie może być pusty"
-      ],
-      "Url is invalid": [
-        "Adres URL jest nieprawidłowy"
       ],
       "URL is invalid": [
         "Adres URL jest nieprawidłowy"
@@ -3222,9 +3165,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Nie można utworzyć sejfu \"${ vaultName }\""
-      ],
-      "Could not send invitations to the following addresses :": [
-        "Nie można wysłać zaproszeń na następujące adresy:"
       ],
       "Duplicate email addresses.": [
         "Adresy e-mail są zduplikowane."
@@ -3316,9 +3256,6 @@
       "Please check that the extension is properly installed and enabled": [
         "Sprawdź, czy rozszerzenie jest poprawnie zainstalowane i włączone"
       ],
-      "Please contact us for investigating the issue": [
-        "Skontaktuj się z nami, aby zbadać problem"
-      ],
       "Please update the extension to its latest version": [
         "Zaktualizuj rozszerzenie do najnowszej wersji"
       ],
@@ -3366,9 +3303,6 @@
       ],
       "Verification code is required": [
         "Kod weryfikacyjny jest wymagany"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "Nie możesz utworzyć więcej sejfów w swojej subskrypcji."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Osiągnięto maksymalną liczbę użytkowników sejfu."

@@ -558,9 +558,6 @@
       ],
       "Write us on Twitter": [
         "Twitterに書き込む"
-      ],
-      "Your password manager not here? Request it.": [
-        "パスワード マネージャーがここにいませんか? リクエストしてください。"
       ]
     },
     "App menu": {
@@ -1085,9 +1082,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        " 複数のコンテナーを作成するには、有料プランにアップグレードします。"
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "「${ payload.item.data.metadata.name }」アイテムは無視されました"
       ],
@@ -1147,9 +1141,6 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME } へのアクセスには指紋または端末のPINが必要です。"
-      ],
-      "Add your custom email address to monitor :": [
-        "監視するカスタム電子メール アドレスを追加します。"
       ],
       "Admin": [
         "管理者"
@@ -1340,12 +1331,6 @@
       "Expires in ${ remainingTime }": [
         "${ remainingTime } で期限が切れます"
       ],
-      "Extra password successfuly created": [
-        "追加パスワードを作成しました"
-      ],
-      "Extra password successfuly removed": [
-        "追加パスワードを削除しました"
-      ],
       "Fill in the CSV with your data": [
         "CSV にデータを入力します"
       ],
@@ -1492,9 +1477,6 @@
       ],
       "Monitoring settings successfully updated": [
         "監視設定が正常に更新されました"
-      ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "${ PASS_APP_NAME } は単なるパスワード マネージャーではなく、メール エイリアスを介してパスワードと個人メール アドレスを保護します。 ${ MAIL_APP_NAME } の背後にある同じテクノロジーを利用して、あなたのデータはエンドツーエンドで暗号化され、あなただけがアクセスできます。"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべての項目を移動します"
@@ -1673,9 +1655,6 @@
       "Select vault to share": [
         "共有する保管庫を選択"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "インポートした保管庫を保存する場所を選択してください。"
-      ],
       "Selected items permanently deleted": [
         "選択したアイテムが完全に削除されました"
       ],
@@ -1696,9 +1675,6 @@
       ],
       "Settings successfully updated": [
         "設定が正常に更新されました"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "ログイン情報や安全なメモを最大 10 人と共有"
       ],
       "Sign in to your account": [
         "アカウントにサインインする"
@@ -1772,9 +1748,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "別のパスワード マネージャーからデータを移行するには、パスワード マネージャーに移動し、データをエクスポートして、${ PASS_APP_NAME } にアップロードします。 データがインポートされたら、エクスポートされたファイルを削除します。"
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "インポートしたデータを確認するには、ブラウザのツールバーにある Pass アイコンをクリックします。"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "${ BRAND_NAME } の新しい機能、アップデート、製品を一般公開される前にお試しください。 これによりアプリケーションがリロードされます"
       ],
@@ -1810,9 +1783,6 @@
       ],
       "User's access removed": [
         "ユーザーのアクセス権を削除しました。"
-      ],
-      "User's access sucessfuly updated": [
-        "ユーザーのアクセス権を正常に更新しました。"
       ],
       "username": [
         "ユーザー名"
@@ -2038,9 +2008,6 @@
       "Capital letters (A-Z)": [
         "大文字のアルファベット (A ～ Z)"
       ],
-      "Capitalise": [
-        "先頭を大文字にする"
-      ],
       "Card": [
         "カード"
       ],
@@ -2224,9 +2191,6 @@
       "Import passwords": [
         "パスワードをインポート"
       ],
-      "Imported from : ": [
-        "インポート元: "
-      ],
       "Imported on : ": [
         "インポート場所: "
       ],
@@ -2323,8 +2287,8 @@
       "Name on card": [
         "カード名義人"
       ],
-      "Need help ?": [
-        "お困りですか ?"
+      "Need help?": [
+        "お困りですか？"
       ],
       "New vault": [
         "新しい保管庫"
@@ -2505,12 +2469,6 @@
       ],
       "Today": [
         "今日"
-      ],
-      "Total imported items : ": [
-        "インポート合計: "
-      ],
-      "Total items : ": [
-        "全アイテム: "
       ],
       "TOTP": [
         "TOTP"
@@ -2840,9 +2798,6 @@
       "Dark Web Monitoring": [
         "ダークウェブモニタリング"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "保管庫「${ vaultName }」を削除しますか？"
-      ],
       "Details": [
         "詳細"
       ],
@@ -2896,9 +2851,6 @@
       ],
       "Last modified": [
         "最終更新日時"
-      ],
-      "Leave vault ?": [
-        "フォルダーをでますか？"
       ],
       "Loading breaches...": [
         "違反を読み込み中..."
@@ -2959,9 +2911,6 @@
       ],
       "Pending access to the shared data": [
         "共有データへのアクセスが保留中です"
-      ],
-      "Permanently remove all items ?": [
-        "すべてのアイテムを永久に削除しますか？"
       ],
       "Pinned (${ items.length })": [
         "ピン留め (${ items.length })"
@@ -3100,14 +3049,8 @@
       "Section name cannot be empty": [
         "セクション名は空欄にできません"
       ],
-      "Url already exists": [
-        "Url は既に存在します"
-      ],
       "URL cannot be empty": [
         "URL を空にすることはできません"
-      ],
-      "Url is invalid": [
-        "URL が無効です"
       ],
       "URL is invalid": [
         "URL が無効です"
@@ -3134,9 +3077,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "保管庫「${ vaultName }」を作成できませんでした"
-      ],
-      "Could not send invitations to the following addresses :": [
-        ":のアドレスに招待を送信できませんでした"
       ],
       "Duplicate email addresses.": [
         "メールアドレスが重複しています"
@@ -3219,9 +3159,6 @@
       "PGP encrypted export file requires passphrase": [
         "PGP暗号化エクスポートファイルにはパスフレーズが必要です。"
       ],
-      "Please contact us for investigating the issue": [
-        "問題を調査するにはお問い合わせください"
-      ],
       "Please verify your email address in order to use email aliases": [
         "メールアドレスを使用するためにメールアドレスの認証を行ってください"
       ],
@@ -3266,9 +3203,6 @@
       ],
       "Verification code is required": [
         "確認コードが必要です"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "サブスクリプションで許可されている以上の保管庫を作成することはできません。"
       ],
       "You have reached the limit of members who can access this vault.": [
         "この保管庫にアクセスできるメンバーの制限に達しました。"

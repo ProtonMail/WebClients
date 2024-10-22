@@ -573,9 +573,6 @@
       ],
       "Write us on Twitter": [
         "Napište nám na Twitter"
-      ],
-      "Your password manager not here? Request it.": [
-        "Váš správce hesel zde není? Požádejte o něj."
       ]
     },
     "App menu": {
@@ -1142,9 +1139,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        " Chcete-li vytvořit více trezorů, přejděte na placený tarif."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Položka \"${ payload.item.data.metadata.name }\" byla odmítnuta"
       ],
@@ -1219,9 +1213,6 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Přístup k ${ PASS_APP_NAME } bude vyžadovat váš otisk prstu nebo PIN zařízení."
-      ],
-      "Add your custom email address to monitor :": [
-        "Přidejte vlastní e-mailovou adresu pro sledování :"
       ],
       "Admin": [
         "Správce"
@@ -1418,12 +1409,6 @@
       "Expires in ${ remainingTime }": [
         "Vyprší za ${ remainingTime }"
       ],
-      "Extra password successfuly created": [
-        "Dodatečné heslo úspěšně vytvořeno"
-      ],
-      "Extra password successfuly removed": [
-        "Dodatečné heslo úspěšně odebráno"
-      ],
       "Fill in the CSV with your data": [
         "Vyplňte CSV vašimi daty"
       ],
@@ -1580,9 +1565,6 @@
       "Monitoring settings successfully updated": [
         "Nastavení sledování úspěšně aktualizováno"
       ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "${ PASS_APP_NAME } není obyčejný správce hesel. Chrání vaše heslo a osobní e-mailovou adresu pomocí e-mailových aliasů. Funguje na stejné technologii jako ${ MAIL_APP_NAME }, vaše data jsou koncově šifrována a dostupná jen vám."
-      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
@@ -1633,9 +1615,6 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online přístup k ${ PASS_APP_NAME } bude vyžadovat PIN kód. Budete odhlášeni po 3 neúspěšných pokusech."
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Naše upozornění jsou spíše opatrná. Pokud nepoznáváte žádné z uniklých informací, můžete tuto zprávu bez obav ignorovat."
       ],
       "Owner": [
         "Vlastník"
@@ -1775,9 +1754,6 @@
       "Select vault to share": [
         "Vyberte trezor, který chcete sdílet"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Vyberte, kam chcete importované trezory uložit."
-      ],
       "Selected items permanently deleted": [
         "Vybrané položky byly trvale smazány"
       ],
@@ -1798,9 +1774,6 @@
       ],
       "Settings successfully updated": [
         "Nastavení bylo úspěšně aktualizováno"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Sdílení přihlašovacích údajů, zabezpečených poznámek, až s 10 lidmi"
       ],
       "Sign in to your account": [
         "Přihlaste se ke svému účtu"
@@ -1877,9 +1850,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Chcete-li přenést data z jiného správce hesel, přejděte do správce hesel, exportujte data a poté je nahrajte do ${ PASS_APP_NAME }. Po importu dat exportovaný soubor smažte."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "Chcete-li si prohlédnout importovaná data, klikněte na ikonu Pass v panelu nástrojů svého prohlížeče."
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Vyzkoušejte si nové funkce, aktualizace a produkty ${ BRAND_NAME } ještě před jejich zveřejněním. Toto znovu načte aplikaci"
       ],
@@ -1915,9 +1885,6 @@
       ],
       "User's access removed": [
         "Přístup uživatele odebrán"
-      ],
-      "User's access sucessfuly updated": [
-        "Přístup uživatele byl úspěšně aktualizován"
       ],
       "username": [
         "uživatelské jméno"
@@ -2173,9 +2140,6 @@
       "Capital letters (A-Z)": [
         "Velká písmena (A-Z)"
       ],
-      "Capitalise": [
-        "Velká písmena"
-      ],
       "Card": [
         "Karta"
       ],
@@ -2365,9 +2329,6 @@
       "Import passwords": [
         "Importovat hesla"
       ],
-      "Imported from : ": [
-        "Importováno z : "
-      ],
       "Imported on : ": [
         "Importováno: "
       ],
@@ -2467,8 +2428,8 @@
       "Name on card": [
         "Jméno na kartě"
       ],
-      "Need help ?": [
-        "Potřebujete poradit ?"
+      "Need help?": [
+        "Potřebujete poradit?"
       ],
       "New vault": [
         "Nový trezor"
@@ -2661,12 +2622,6 @@
       ],
       "Today": [
         "Dnes"
-      ],
-      "Total imported items : ": [
-        "Celkem importovaných položek: "
-      ],
-      "Total items : ": [
-        "Celkem položek: "
       ],
       "TOTP": [
         "TOTP"
@@ -3002,9 +2957,6 @@
       "Dark Web Monitoring": [
         "Sledování Dark webu"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "Smazat trezor \"${ vaultName }\"?"
-      ],
       "Details": [
         "Podrobnosti"
       ],
@@ -3061,9 +3013,6 @@
       ],
       "Last modified": [
         "Naposledy změněno"
-      ],
-      "Leave vault ?": [
-        "Opustit trezor ?"
       ],
       "Loading breaches...": [
         "Načítání úniků..."
@@ -3124,9 +3073,6 @@
       ],
       "Pending access to the shared data": [
         "Čekání na přístup ke sdíleným datům"
-      ],
-      "Permanently remove all items ?": [
-        "Trvale smazat všechny položky?"
       ],
       "Pinned (${ items.length })": [
         "Připnuto (${ items.length })"
@@ -3268,14 +3214,8 @@
       "Section name cannot be empty": [
         "Název sekce nemůže být prázdný"
       ],
-      "Url already exists": [
-        "URL již existuje"
-      ],
       "URL cannot be empty": [
         "URL adresa nemůže být prázdná"
-      ],
-      "Url is invalid": [
-        "Adresa URL je neplatná"
       ],
       "URL is invalid": [
         "URL adresa je neplatná"
@@ -3305,9 +3245,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Nelze vytvořit trezor \"${ vaultName }\""
-      ],
-      "Could not send invitations to the following addresses :": [
-        "Nepodařilo se odeslat pozvánky těmto adresám:"
       ],
       "Duplicate email addresses.": [
         "Duplicitní e-mailové adresy."
@@ -3399,9 +3336,6 @@
       "Please check that the extension is properly installed and enabled": [
         "Zkontrolujte prosím, že je rozšíření správně nainstalováno a povoleno"
       ],
-      "Please contact us for investigating the issue": [
-        "Kontaktujte nás prosím pro vyšetření problému"
-      ],
       "Please update the extension to its latest version": [
         "Prosím, aktualizujte rozšíření na jeho nejnovější verzi"
       ],
@@ -3449,9 +3383,6 @@
       ],
       "Verification code is required": [
         "Je vyžadován ověřovací kód"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "Nemůžete vytvořit více trezorů, než umožňuje vaše předplatné."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Dosáhli jste limitu členů, kteří mají přístup k tomuto trezoru."

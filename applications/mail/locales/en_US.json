@@ -5,12 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "Ok": [
-        "OK"
-      ],
-      "Toggle Contact app": [
-        "Toggle Contacts app"
-      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "You can't send vCard files of more than ${ maxAttachments } contact",
         "You can't send vCard files of more than ${ maxAttachments } contacts"
@@ -22,110 +16,18 @@
         "Includes support for ${ domains } custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more."
       ]
     },
-    "Description": {
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }."
-      ]
-    },
-    "Error": {
-      "Require at least one action": [
-        "Add at least one action"
-      ],
-      "Require at least one condition": [
-        "Add at least one condition"
-      ],
-      "Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.": [
-        "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan."
-      ],
-      "You have reached the contacts limit for your account": [
-        "You have reached the number of contacts limit for your account"
-      ]
-    },
-    "familyOffer_2023:Family plan": {
-      "Manage addresses.": [
-        "Manage addresses"
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "You cannot accept this invitation with your current plan."
-      ]
-    },
-    "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users ": [
-        "Configure your family account and invite users"
-      ]
-    },
-    "Filter option to only show message with attachments": {
-      "Has file": [
-        "Has attachments"
-      ]
-    },
-    "Free trial desktop": {
-      "Try the app-new desktop app": [
-        "Try the new desktop app"
-      ]
-    },
     "Info": {
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice }/month)"
-      ],
-      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
-        "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder."
-      ],
-      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder."
-      ],
       "file attached": [
         "attachment",
         "attachments"
       ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report."
-      ],
-      "Snoozed until  ${ dateString } at ${ formattedTime }": [
-        "Snoozed until ${ dateString } at ${ formattedTime }"
-      ],
       "This message will be automatically deleted on ${ value }": [
         "This message will be automatically deleted at ${ value }"
-      ],
-      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
-        "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings."
-      ],
-      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days."
-      ],
-      "When do you want your message to be sent?": [
-        "When do you want your message to be sent? "
-      ]
-    },
-    "Label": {
-      "Synchronize with system": [
-        "Sync with system"
-      ]
-    },
-    "new_plans: feature": {
-      "Tor over VPN": [
-        "TOR over VPN"
       ]
     },
     "new_plans: tooltip": {
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalize your email signature with logos, images, social media icons, links to your contact details, and more"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Route your internet traffic through the TOR network with a single click"
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar."
-      ]
-    },
-    "Security Center": {
-      "Used on amazon for shopping, etc.": [
-        "Used on Amazon for shopping, etc."
       ]
     },
     "session_recovery:available:info": {
@@ -140,21 +42,6 @@
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "You have ${ timeRemaining.inSeconds } second to reset your password.",
         "You have ${ timeRemaining.inSeconds } seconds to reset your password."
-      ]
-    },
-    "Subscription change warning": {
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Just sign in to your Apple App Store account, then select ${ subscriptions }."
-      ]
-    },
-    "Tor out of date": {
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more."
       ]
     }
   }

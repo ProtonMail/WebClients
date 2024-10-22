@@ -388,9 +388,6 @@
       "Next month": [
         "Budúci mesiac"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
       ],
@@ -456,9 +453,6 @@
       ],
       "Remove gift code": [
         "Odstrániť darčekový kód"
-      ],
-      "Remove single sign-on": [
-        "Odstrániť jednotné prihlásenie"
       ],
       "Rename": [
         "Premenovať"
@@ -2563,9 +2557,6 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Ak chcete spravovať viacerých používateľov, prejdite na obchodný plán s viac ako 1 používateľom."
       ],
-      "Please upload a square file": [
-        "Nahrajte štvorcový obrázok, prosím."
-      ],
       "Please upload an xml file": [
         "Nahrajte XML súbor"
       ],
@@ -2741,9 +2732,6 @@
       "Invite an existing ${ BRAND_NAME } user": [
         "Pozvať existujúceho ${ BRAND_NAME } používateľa"
       ],
-      "Invite member to your family": [
-        "Pozvať člena do vašej rodiny"
-      ],
       "Set up family group": [
         "Nastaviť rodinnú skupinu"
       ],
@@ -2788,9 +2776,6 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Pozvánka od: ${ inviteEmail }"
-      ],
-      "Manage addresses.": [
-        "Spravovať adresy."
       ],
       "Manage user accounts": [
         "Spravovať používateľské účty"
@@ -2854,9 +2839,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Váš účet využíva ${ usedSpace } úložiska, čo presahuje pridelený priestor ${ inviteSpace }. Odstráňte niektoré údaje alebo požiadajte správcu plánu o navýšenie úložiska."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "S vaším aktuálnym plánom nemôžete prijať túto pozvánku."
       ]
     },
     "familyOffer_2023:Info": {
@@ -2984,17 +2966,29 @@
       "Add": [
         "Pridať"
       ],
+      "Add (${ totalAddedCount })": [
+        "Pridať (${ totalAddedCount })",
+        "Pridať (${ totalAddedCount })",
+        "Pridať (${ totalAddedCount })",
+        "Pridať (${ totalAddedCount })"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Pripojenie pre ${ plusVpnConnections } zariadenie",
         "Pripojenie až pre ${ plusVpnConnections } zariadenia",
         "Pripojenie až pre ${ plusVpnConnections } zariadení",
         "Pripojenie až pre ${ plusVpnConnections } zariadení"
       ],
+      "Continue": [
+        "Pokračovať"
+      ],
       "Dark Web Monitoring": [
         "Monitorovanie Dark Webu"
       ],
       "Fastest VPN servers": [
         "Najrýchlejšie VPN servery"
+      ],
+      "Remove": [
+        "Odstrániť"
       ],
       "Secure Core servers": [
         "Servery Secure Core"
@@ -3390,9 +3384,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikácia ${ appName } potrebuje Váš súhlas, aby mohla ${ enableDesktopNotifications }."
       ],
-      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
-        "${ boldSSOUserInformation } a budete ich musieť vytvoriť ručne, aby ste ich mohli pridať späť do svojej organizácie"
-      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Ak budete pokračovať, stratíte prístup ku všetkým aktuálnym zašifrovaným údajom vo vašom účte."
       ],
@@ -3491,9 +3482,6 @@
         "(${ memberCount } členovia)",
         "(${ memberCount } členov)",
         "(${ memberCount } členov)"
-      ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } mesačne)"
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Získajte ${ BRAND_NAME }** adresu, ak chcete využívať všetky služby ${ BRAND_NAME_TWO } vrátane služieb ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }."
@@ -3761,9 +3749,6 @@
       ],
       "Dedicated servers": [
         "Dedikované servery"
-      ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
-        "Dedikované servery s vyhradenými IP adresami môžu byť pridané k súkromným bránam, ktoré umožňujú podrobnejšie nastavenie prístupu."
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Odstráňte všetky ostatné MX záznamy, alebo sa uistite, že priorita ${ MAIL_APP_NAME } má najnižšie číslo."
@@ -4125,12 +4110,6 @@
       "Labels:": [
         "Štítky:"
       ],
-      "Lean more about gateways": [
-        "Zistiť viac o sieťových bránach"
-      ],
-      "Lean more about single sign-on": [
-        "Viac informácií o jednotnom prihlasovaní"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Zistite, ako sa prihlásiť do ${ VPN_APP_NAME } pomocou aplikácií VPN tretích strán."
       ],
@@ -4227,17 +4206,11 @@
       "No results found": [
         "Nenájdené žiadne výsledky"
       ],
-      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
-        "Používatelia, ktorí nie sú súčasťou systému SSO (vytvorení manuálne, neposkytnutí poskytovateľom identít), sa stále môžu prihlásiť do vašej organizácie."
-      ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
       ],
       "of": [
         "z"
-      ],
-      "Once single sign-on is disabled for your organization:": [
-        "Po vypnutí jednotného prihlásenia pre vašu organizáciu:"
       ],
       "Once you reset your password:": [
         "Po resete vašeho hesla:"
@@ -4377,6 +4350,9 @@
       "read our two-factor authentication guide first": [
         "aby ste si najprv prečítali nášho sprievodcu dvojstupňovým overovaním"
       ],
+      "Recently used servers:": [
+        "Nedávno použité servery:"
+      ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Odporúčané na dôveryhodných zariadeniach. ${ keepMeSignedInLearnMoreLink }"
       ],
@@ -4473,17 +4449,11 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhľadom k tomu, že ste verný používateľ, má váš účet povolené ďalšie funkcie."
       ],
-      "Single sign-on removed": [
-        "Jednotné prihlásenie bolo odstránené"
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Zadajte doménu, ktorá sa môže overovať pomocou SAML SSO."
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF upresňuje, kto smie odosielať emaily pre vašu doménu. Uistite sa, že ste do DNS konzoly (umiestnenej na platforme, kde ste zakúpili vlastnú doménu) pridali nasledujúci TXT záznam."
-      ],
-      "SSO users (provided by your Identity Provider) will be deleted": [
-        "Používatelia SSO (poskytovaní poskytovateľom identít) budú vymazaní"
       ],
       "Step ${ step }": [
         "Krok ${ step }",
@@ -4529,9 +4499,6 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Ďakujeme, že podporujete naše poslanie budovať lepší internet, v ktorom sú súkromie a sloboda na prvom mieste."
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Poverenia od poskytovateľa identít budú vymazané."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Počet stiahnutí zahŕňa skutočné stiahnutia aj prípady, keď sú súbory zobrazené v náhľade."
@@ -5399,6 +5366,9 @@
       "Enter the code displayed on your TV": [
         "Zadajte kód zobrazený na vašej TV"
       ],
+      "Event": [
+        "Udalosť"
+      ],
       "Expiration (${ patternExpiration })": [
         "Skončenie platnosti (${ patternExpiration })"
       ],
@@ -5579,6 +5549,9 @@
       "Reveal password": [
         "Odkryť heslo"
       ],
+      "Search": [
+        "Hľadať"
+      ],
       "Search by email": [
         "Hľadať podľa emailu"
       ],
@@ -5603,8 +5576,8 @@
       "Subscription options": [
         "Možnosti predplatného"
       ],
-      "Synchronize with system": [
-        "Synchronizovať so systémom"
+      "Sync with system": [
+        "Podľa systému"
       ],
       "System information": [
         "Systémové informácie"
@@ -5804,9 +5777,6 @@
       ],
       "Pay invoice": [
         "Zaplatiť faktúru"
-      ],
-      "Paypal without credit card": [
-        "PayPal bez platobnej karty"
       ],
       "perform a password reset from your active session": [
         "resetovať heslo z Vášho aktuálneho prihlásenia"
@@ -6541,9 +6511,6 @@
       "Sync and backup all your files across devices": [
         "Synchronizácia a zálohovanie všetkých vašich súborov medzi zariadeniami"
       ],
-      "Tor over VPN": [
-        "TOR cez VPN"
-      ],
       "Two-factor authentication": [
         "Dvojstupňové overenie"
       ],
@@ -6837,9 +6804,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Vytvorte až ${ n } emailových adries/aliasov, ktoré môžete priradiť členom rodiny. Použite ich pre online identity, napr. JanNakupy@${ domain } pre nákupné účty."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Dedikované servery s vyhradenými IP adresami môžu byť pridané k súkromným bránam, ktoré umožňujú jemne vyladené riadenie prístupu"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Chráni pred hrozbou VPN súkromia tým, že internetovú prevádzku prenáša cez viacero serverov"
       ],
@@ -6935,9 +6899,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Obnoviť heslá a dvojstupňové overenie používateľov"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Smerujte vašu internetovú prevádzku cez sieť Tor jediným kliknutím"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, zdieľanie šifrovaných súborov a ďalšie."
@@ -7482,9 +7443,6 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Použite metódu obnovenia údajov, obráťte sa na iného správcu alebo obnovte kľúč organizácie pre obnovenie oprávnení správcu."
       ],
-      "We couldn't verify authenticity of this identity.": [
-        "Pravosť tejto identity sa nepodarilo overiť."
-      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Nepodarilo sa overiť zabezpečenie kľúča adresy tohto odosielateľa. Niekedy dochádza k oneskoreniu pri aktualizácii informácií o odosielateľovi. Skúste to znova neskôr. Ak nedôverujete platnosti tejto pozvánky alebo odosielateľovi, kontaktujte zákaznícku podporu ${ BRAND_NAME }."
       ],
@@ -7837,9 +7795,6 @@
       "Changing organization password": [
         "Zmena hesla organizácie"
       ],
-      "Creating or accessing non-private users": [
-        "Vytváranie alebo prístup k nesúkromným používateľom"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Z dôvodu zmeny hesla boli obmedzené vaše oprávnenia správcu organizácie. Nasledujúce akcie už nie sú povolené:"
       ]
@@ -7866,9 +7821,6 @@
       ]
     },
     "saml: Error": {
-      "Sign-in wasn't successfully completed.": [
-        "Registrácia nebola úspešne dokončená."
-      ],
       "Something went wrong": [
         "Niečo sa pokazilo"
       ]
@@ -7929,12 +7881,6 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Predpoklad:** Na umožnenie poskytovania SCIM musí byť nakonfigurované overovanie SAML."
-      ],
-      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
-        "**Predpoklad:** ak chcete povoliť poskytovanie SCIM, musíte overiť vlastníctvo domény **${ domainName }**. Toto overenie môže trvať až jednu hodinu."
-      ],
-      "Enter token into your identity provider": [
-        "Zadajte token do vášho poskytovateľa identity"
       ],
       "Enter URL and token into your identity provider": [
         "Zadajte URL a token do vášho poskytovateľa identity"
@@ -8275,14 +8221,6 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Keď bude obnovovanie hesla k dispozícii, budeme vás opäť kontaktovať."
-      ],
-      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
-        "Stav svojej žiadosti môžete kedykoľvek skontrolovať v nastaveniach v ${ accountAndPasswordSectionLink } ."
-      ]
-    },
-    "session_recovery:initiation:link": {
-      "account and password section": [
-        "sekcii Účet a heslo"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -8824,9 +8762,6 @@
       "Got it": [
         "Rozumiem"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Prihláste sa do Apple Store a potom stlačte ${ subscriptions }."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Prihláste sa do Obchodu Play a potom stlačte ${ subscriptions }."
       ],
@@ -8958,6 +8893,9 @@
       ],
       "Extra storage and users": [
         "Dodatočný úložný priestor a používatelia"
+      ],
+      "Got it": [
+        "Rozumiem"
       ],
       "Have a question?": [
         "Máte otázku?"
@@ -9197,12 +9135,6 @@
       "Gift code applied": [
         "Kód kupónu aplikovaný"
       ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Pokiaľ ste zadali platný email na obnovenie, o chvíľu vám pošleme email s používateľským menom."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Pokiaľ ste zadali platné telefónne číslo na obnovenie, o chvíľu vám zašleme sms s používateľským menom."
-      ],
       "Invitation rejected": [
         "Pozvánka odmietnutá"
       ],
@@ -9398,6 +9330,9 @@
       ],
       "Email addresses": [
         "Emailové adresy"
+      ],
+      "Event": [
+        "Udalosť"
       ],
       "Invitation email": [
         "Pozývací email"
@@ -9673,6 +9608,9 @@
       "Device connected!": [
         "Zariadenie pripojené!"
       ],
+      "Device name": [
+        "Názov zariadenia"
+      ],
       "Disable two-factor authentication": [
         "Vypnúť dvojstupňové overenie"
       ],
@@ -9883,9 +9821,6 @@
       "Processing...": [
         "Prebieha spracovanie..."
       ],
-      "QRCode": [
-        "QR kód"
-      ],
       "Recommended": [
         "Odporúčané"
       ],
@@ -9900,9 +9835,6 @@
       ],
       "Remove single sign-on": [
         "Odstrániť jednotné prihlásenie"
-      ],
-      "Remove single sign-on for your organization?": [
-        "Odstrániť jednotné prihlasovanie pre vašu organizáciu?"
       ],
       "Remove user?": [
         "Odstrániť používateľa?"
@@ -10225,9 +10157,6 @@
       ],
       "User declined invitation": [
         "Používateľ odmietol pozvánku"
-      ],
-      "Waiting user to accept the invitation": [
-        "Čakanie na prijatie pozvania zo strany používateľa"
       ]
     },
     "Tooltip for news": {
@@ -10241,9 +10170,6 @@
     "Tor out of date": {
       "stable release": [
         "stabilná verzia"
-      ],
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Táto verzia prehliadača Tor nie je podporovaná. Prosím aktualizujte na poslednú ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -10572,11 +10498,6 @@
       ],
       "Your ${ selected } plan": [
         "Váš ${ selected } plán"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Prístup k Secure core serverom, rýchle P2P/BitTorrent sťahovanie, Tor cez VPN a ďalšie."
       ]
     },
     "wallet_signup_2024: Info": {

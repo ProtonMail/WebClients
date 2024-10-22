@@ -552,9 +552,6 @@
       "OK": [
         "确定"
       ],
-      "Ok": [
-        "确定"
-      ],
       "Open": [
         "打开"
       ],
@@ -812,9 +809,6 @@
       ],
       "Toggle Calendar app": [
         "切换至 Calendar 应用"
-      ],
-      "Toggle Contact app": [
-        "切换至 Contact 应用"
       ],
       "Toggle settings": [
         "打开/关闭设置"
@@ -2257,9 +2251,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密并导入联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了。"
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "如需导入 CSV 或 VCF 文件，请确保文件大小不超过 ${ MAX_IMPORT_FILE_SIZE_STRING } 且联系人数量不超过 ${ MAX_IMPORT_CONTACTS_STRING } 个。若您的文件超出限制，请先拆分成较小的文件。${ learnMoreLink }。"
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "开通 ${ PLAN_NAMES[PLANS.BUNDLE] } 即可获得无限量邮箱别名和 500 GB 存储空间。"
       ],
@@ -2882,9 +2873,6 @@
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "邮件收件人不能超过 ${ maxContacts } 位"
       ],
-      "You have reached the contacts limit for your account": [
-        "您的账户联系人数量已达上限"
-      ],
       "You have reached the maximum number of calendars.": [
         "您已达到日历创建数量的上限。"
       ],
@@ -3217,9 +3205,6 @@
       "Invited by: ${ inviteEmail }": [
         "邀请人：${ inviteEmail }"
       ],
-      "Manage addresses.": [
-        "管理邮箱地址。"
-      ],
       "Sorry, you can't switch plans at this time.": [
         "抱歉，您目前无法变更账户等级。"
       ],
@@ -3253,9 +3238,6 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users ": [
-        "配置您的家庭账户并邀请用户 "
-      ],
       "Set up your family": [
         "设置你的家庭"
       ],
@@ -3783,9 +3765,6 @@
       "(${ memberCount } member)": [
         "（${ memberCount } 位成员）"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /月)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 特权存储空间"
       ],
@@ -4280,9 +4259,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "将您的数据从 ${ fromEmail } 导入至 ${ toEmail }。"
-      ],
-      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "同时，注册您自己的 ${ DRIVE_APP_NAME } 账户并使用端到端加密保护您的数据并安全地共享。"
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "在下一步中，您将能够使用比特币地址提交存款。"
@@ -6145,9 +6121,6 @@
       "Graphics Interchange Format (GIF)": [
         "图形交换格式 (GIF)"
       ],
-      "GZip Compressed Archive": [
-        "GZip 压缩档案"
-      ],
       "HyperText Markup Language (HTML)": [
         "超文本标记语言 (HTML)"
       ],
@@ -6165,9 +6138,6 @@
       ],
       "Java Archive (JAR)": [
         "Java 归档 (JAR)"
-      ],
-      "JPEG images": [
-        "JPEG 图像"
       ],
       "MP3 audio": [
         "MP3 音频"
@@ -6204,9 +6174,6 @@
       ],
       "Opus audio": [
         "Opus 音频"
-      ],
-      "Portable Network Graphics": [
-        "便携式网络图形"
       ],
       "RAR archive": [
         "RAR 归档"
@@ -6592,9 +6559,6 @@
       "Strict no-logs policy": [
         "严格的零日志原则"
       ],
-      "Tor over VPN": [
-        "Tor + VPN"
-      ],
       "Two-factor authentication": [
         "双重验证"
       ],
@@ -6782,9 +6746,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "为全家人创建多达 ${ n } 个邮箱地址/别名，用于不同的网络服务。例如 ChenGouwu@${ domain } 用于网购商品。"
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "具有专用 IP 地址的专用服务器可以添加到专用网关，以实现微调的访问控制。"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "通过多台服务器中转流量，增强 VPN 安全性"
       ],
@@ -6850,9 +6811,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "重置用户的密码与双重验证"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "实现一键连通 Tor 网络"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
@@ -7134,9 +7092,6 @@
       "Share invitation declined": [
         "分享邀请被拒绝"
       ],
-      "Stopping to share this item has failed": [
-        "停止共享此项目失败"
-      ],
       "Subfolder failed to be loaded": [
         "加载子文件夹失败"
       ],
@@ -7181,11 +7136,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "为顺利完成导入，您需要如下图所示勾选所有权限。"
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "选择 ${ BRAND_NAME } 可以访问的内容：查看您的电子邮件和设置、查看和下载您的联系人、查看和下载您从 Google 议程访问的所有议程。"
       ]
     },
     "Onboarding": {
@@ -7599,9 +7549,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "体验 ${ PASS_APP_NAME }"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "用于 Amazon 购物等等"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "当网站要求您输入电子邮件地址时，请用这个别名代替。别名由 ${ passLink }提供。"
@@ -9172,9 +9119,6 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "选择在向用户签名或加密时要使用的 PGP 方案。请注意, PGP/内嵌强制纯文本消息。"
-      ],
-      "Shared end-to-end encrypted": [
-        "共享已经过端到端加密"
       ],
       "Show side panel": [
         "显示侧边栏"

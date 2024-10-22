@@ -357,9 +357,6 @@
       "Loading verification": [
         "Laddar verifiering"
       ],
-      "Login": [
-        "Logga in"
-      ],
       "Make a copy": [
         "Göra en kopia"
       ],
@@ -410,9 +407,6 @@
       ],
       "OK": [
         "OK"
-      ],
-      "Ok": [
-        "Ok"
       ],
       "Open": [
         "Öppna"
@@ -560,9 +554,6 @@
       ],
       "Sign out": [
         "Logga ut"
-      ],
-      "Sign up": [
-        "Registrera"
       ],
       "Skip verification": [
         "Hoppa över verifiering"
@@ -985,6 +976,53 @@
       ],
       "Continue your subscription": [
         "Fortsätt din prenumeration"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB } lagringsutrymme"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } lagringsutrymme för e-post"
+      ],
+      "Advanced account protection": [
+        "Avancerat kontoskydd"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "Alla ${ BRAND_NAME }-appar och premiumfunktioner"
+      ],
+      "Cancel and downgrade": [
+        "Avbryt och nedgradera"
+      ],
+      "Cloud storage and sharing for large files": [
+        "Molnlagring och delning för stora filer"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Krypterad molnlagring för foton och dokument"
+      ],
+      "Encrypted password manager": [
+        "Krypterad lösenordshanterare"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "Vårt grundläggande gratispaket med krypterad e-post och lagringsutrymme. Inga premiumfunktioner inkluderade."
+      ],
+      "Save ${ upsellSavings }": [
+        "Spara ${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "Spara pengar med ${ upsellPlanName }"
+      ],
+      "Secure personal and shared calendar": [
+        "Säker personlig och delad kalender"
+      ],
+      "Try ${ planName }": [
+        "Prova ${ planName }"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "Prova ${ upsellPlanName } och behåll åtkomst till alla premiumfunktioner för e-post och kalender."
+      ],
+      "Ultra fast and private VPN": [
+        "Ultrasnabb och privat VPN"
       ]
     },
     "Checkout row": {
@@ -2021,9 +2059,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterar och importerar kontakter... Detta kan ta några minuter. När processen är slutförd kan du stänga detta fönster."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "För import via CSV- och VCF-fil, se till att filen inte överstiger ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Om din fil är större, dela upp den i mindre filer. ${ learnMoreLink }."
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ PLAN_NAMES[PLANS.BUNDLE] }"
       ],
@@ -2141,6 +2176,14 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Din ${ PLAN_NAMES[PLANS.PASS] }-prenumeration är till ett specialpris på ${ price } per år. Genom att nedgradera till ett Free-paket kommer du förlora rabatten permanent, även om du uppgraderar igen i framtiden."
+      ]
+    },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Öppna i ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Save for later": [
+        "Spara till senare"
       ]
     },
     "driveplus2024: Deal details": {
@@ -2731,9 +2774,6 @@
         "Du kan inte skicka ett e-postmeddelande till mer än ${ maxContacts } mottagare",
         "Du kan inte skicka ett e-postmeddelande till fler än ${ maxContacts } mottagare"
       ],
-      "You have reached the contacts limit for your account": [
-        "Du har nått kontaktgränsen för ditt konto"
-      ],
       "You have reached the maximum number of calendars.": [
         "Du har nått det maximala antalet kalendrar."
       ],
@@ -3059,9 +3099,6 @@
       "Lifetime accounts cannot join a family plan.": [
         "Livstidskonton kan inte gå med i ett familjepaket."
       ],
-      "Manage addresses.": [
-        "Hantera adresser."
-      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Ägare av ett paket med medlemmar kan inte gå med i ett annat familjepaket."
       ],
@@ -3097,9 +3134,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ditt konto använder ${ usedSpace } lagringsutrymme, vilket överstiger ${ inviteSpace } du tilldelades. Ta bort lite data eller be administratören för paketet att öka ditt lagringsutrymme."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "Du kan inte acceptera denna inbjudan med ditt nuvarande paket."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3638,9 +3672,6 @@
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmar)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice }/månad)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonuslagring"
       ],
@@ -3767,6 +3798,9 @@
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilldelad till grupp ${ contactGroupName }"
+      ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Tilldelning borttagen för kontakt från grupp ${ contactGroupName }"
       ],
       "Converting document...": [
         "Konverterar dokument …"
@@ -3974,6 +4008,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "För bästa resultat bör du undvika streaming och minneskrävande aktiviteter eller dela upp din uppladdning i mindre partier."
       ],
+      "Free 5GB encrypted storage to get started": [
+        "Gratis 5 GB krypterat lagringsutrymme för att komma igång"
+      ],
       "here": [
         "här"
       ],
@@ -4046,6 +4083,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bekräfta bara ditt val och vi gör resten."
+      ],
+      "Keep your files secure with end-to-end encryption.": [
+        "Håll dina filer säkra med end-to-end-kryptering."
       ],
       "Key fingerprint": [
         "Nyckelfingeravtryck"
@@ -5015,6 +5055,9 @@
       "Last month only": [
         "Endast den senaste månaden"
       ],
+      "Log in or sign up ": [
+        "Logga in eller registrera "
+      ],
       "Mail Server (IMAP)": [
         "E-postserver (IMAP)"
       ],
@@ -5496,9 +5539,6 @@
       "Graphics Interchange Format (GIF)": [
         "Graphics Interchange Format (GIF)"
       ],
-      "GZip Compressed Archive": [
-        "GZip-komprimerat arkiv"
-      ],
       "HyperText Markup Language (HTML)": [
         "HyperText Markup Language (HTML)"
       ],
@@ -5519,9 +5559,6 @@
       ],
       "JavaScript": [
         "JavaScript"
-      ],
-      "JPEG images": [
-        "JPEG-bilder"
       ],
       "JSON": [
         "JSON"
@@ -5588,9 +5625,6 @@
       ],
       "Opus audio": [
         "Opus-ljud"
-      ],
-      "Portable Network Graphics": [
-        "Portable Network Graphics"
       ],
       "Python": [
         "Python"
@@ -5803,6 +5837,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-anslutning",
         "${ n } VPN-anslutningar"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } användare",
+        "Upp till ${ numberOfUsers } användare"
       ],
       "${ options }-day file version history": [
         "${ options }-dags filversionshistorik",
@@ -6099,9 +6137,6 @@
       "Sync and backup all your files across devices": [
         "Synkronisera och säkerhetskopiera alla dina filer mellan enheter"
       ],
-      "Tor over VPN": [
-        "Tor över VPN"
-      ],
       "Two-factor authentication": [
         "Tvåfaktorsautentisering"
       ],
@@ -6371,9 +6406,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Skapa upp till ${ n } e-postadresser/alias som du kan tilldela familjemedlemmar. Använd dem för onlineidentiteter, t.ex. JohnShopper@${ domain } för shoppingkonton."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Försvarar mot hot mot VPN-integriteten genom att skicka din Internet-trafik via flera servrar"
       ],
@@ -6469,9 +6501,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Återställ användarlösenord och återställ tvåfaktorsautentisering för användare"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Dirigera din Internettrafik genom Tor-nätverket med ett enda klick"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
@@ -6763,9 +6792,6 @@
       "Share invitation declined": [
         "Delningsinbjudan avböjd"
       ],
-      "Stopping to share this item has failed": [
-        "Misslyckades att stoppa delning till detta objekt"
-      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Länken till “${ name }“ misslyckades att tas bort"
       ],
@@ -6804,11 +6830,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "För att importen ska fungera måste du välja alla begärda objekt som visas i GIF."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Välj vad ${ BRAND_NAME } har åtkomst till: visa dina e-postmeddelanden och inställningar, visa och ladda ner dina kontakter, visa och ladda ner alla agendor du kommer åt från Google Agenda."
       ]
     },
     "Option": {
@@ -7027,6 +7048,9 @@
       "E.g., ": [
         "T.ex., "
       ],
+      "Email": [
+        "E-post"
+      ],
       "Filter groups": [
         "Filtrera grupper"
       ],
@@ -7220,9 +7244,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Prova ${ PASS_APP_NAME }"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "Används på Amazon för shopping etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "När du tillfrågas om din e-postadress, ge detta alias istället. Alias ​​tillhandahålls av ${ passLink }."
@@ -7674,6 +7695,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "En länk till detta objekt har sparats på din Drive. Du kan komma åt det senare i sektionen ”Delas med mig”."
+      ],
       "Get up to ${ credits } in credits.": [
         "Få upp till ${ credits } i krediter."
       ],
@@ -7833,9 +7857,6 @@
       "Got it": [
         "Förstått"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Logga bara in på ditt Apple App Store-konto och tryck sedan på ${ subscriptions }."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Logga bara in på ditt Play Store-konto och tryck sedan på ${ subscriptions }"
       ],
@@ -7909,6 +7930,17 @@
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } ger dig alla appar, alla funktioner, förhandstillgång till nya utgåvor och allt du behöver för att ha kontroll över din data och dess säkerhet."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } anpassad e-postdomän",
+        "${ planNumberOfDomains } anpassade e-postdomäner"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-postadress",
+        "${ planNumberOfEmails } e-postadresser"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mappar, etiketter och anpassade filter"
       ]
     },
     "Subscription renewal state": {
@@ -8511,6 +8543,9 @@
       "Request new code": [
         "Begär ny kod"
       ],
+      "Save it for later in ${ DRIVE_APP_NAME }": [
+        "Spara det till senare i ${ DRIVE_APP_NAME }"
+      ],
       "Security center": [
         "Säkerhetscenter"
       ],
@@ -8634,6 +8669,9 @@
       ]
     },
     "Tooltip": {
+      "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
+        "Lägg till denna delade fil på din ${ DRIVE_APP_NAME } för enkel åtkomst senare."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Indikerar automatisk att formatet i skrivfönstret används för att skicka till denna användare. Oformaterad text indikerar att meddelandet alltid kommer att konverteras till oformaterad text vid sändning."
       ],
@@ -8678,9 +8716,6 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Välj det PGP-schema som ska användas vid signering eller kryptering till en användare. Observera att PGP/Inline tvingar oformaterade textmeddelanden"
-      ],
-      "Shared end-to-end encrypted": [
-        "Delad end-to-end krypterad"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermappar kommer att visas som separata mappar i ${ MAIL_APP_NAME }"
@@ -8772,11 +8807,6 @@
       ],
       "No ads": [
         "Inga annonser"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Åtkomst till Secure Core-servrar, snabba P2P/BitTorrent-nedladdningar, Tor över VPN och mer."
       ]
     },
     "wallet_signup_2024: Info": {
