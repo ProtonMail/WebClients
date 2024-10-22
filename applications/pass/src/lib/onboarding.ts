@@ -4,7 +4,7 @@ import {
     createAliasSyncEnableRule,
     createAliasTrashConfirmRule,
     createB2BRule,
-    createBlackFridayRule,
+    createBlackFriday2024Rule,
     createFamilyPlanPromo2024Rule,
     createMonitorLearnMoreRule,
     createPendingShareAccessRule,
@@ -20,9 +20,9 @@ export const onboarding = createOnboardingService({
          * Rules displayed as spotlight should be defined above the "invisible" rules
          * otherwise they may never be displayed, as an "invisible" rule may return `true` first */
         createPendingShareAccessRule(store),
-        createFamilyPlanPromo2024Rule(store),
         createTrialRule(store),
-        createBlackFridayRule(store),
+        createBlackFriday2024Rule(store),
+        createFamilyPlanPromo2024Rule(store),
         createSecurityRule(store),
         createAliasSyncEnableRule(store),
 

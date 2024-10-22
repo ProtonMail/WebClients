@@ -3,24 +3,21 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { AliasSyncIcon, FiveStarIcon, ShieldIcon } from '@proton/pass/components/Spotlight/SpotlightIcon';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { BlackFriday2024Offer } from '@proton/pass/components/Upsell/BlackFriday2024Offer';
 import { FamilyPlanPromo2024 } from '@proton/pass/components/Upsell/FamilyPlanPromo2024';
-import { PASS_BF_MONTHLY_PRICE, PASS_LEARN_MORE_URL, UpsellRef } from '@proton/pass/constants';
-import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
+import { PASS_LEARN_MORE_URL, UpsellRef } from '@proton/pass/constants';
 import { selectUser, selectUserData } from '@proton/pass/store/selectors';
 import { OnboardingMessage } from '@proton/pass/types';
-import { BRAND_NAME, DEFAULT_CURRENCY, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 export const useOnboardingMessages = () => {
     const { onLink, openSettings, promptForPermissions, getRatingURL, onForceUpdate } = usePassCore();
     const { acknowledge, setPendingShareAccess, setUpselling } = useSpotlight();
-
-    const { SSO_URL } = usePassConfig();
     const user = useSelector(selectUser);
 
     const { pendingAliasToSync: aliasCount } = useSelector(selectUserData);
@@ -141,29 +138,6 @@ export const useOnboardingMessages = () => {
                     onClick: () => acknowledge(OnboardingMessage.STORAGE_ISSUE, () => openSettings?.('support')),
                 },
             },
-            [OnboardingMessage.BLACK_FRIDAY_OFFER]: {
-                type: 'default',
-                id: 'black-friday',
-                title: c('bf2023: Title').t`Black Friday offer`,
-                message: (() => {
-                    const relativePrice = getSimplePriceString(
-                        user?.Currency ?? DEFAULT_CURRENCY,
-                        PASS_BF_MONTHLY_PRICE
-                    );
-                    return c('bf2023: Info')
-                        .t`Save Smart. Get a year of Pass Plus for only ${relativePrice} per month.`;
-                })(),
-                className: 'ui-orange',
-                onClose: () => acknowledge(OnboardingMessage.BLACK_FRIDAY_OFFER),
-                action: {
-                    label: c('bf2023: Label').t`Get the deal`,
-                    type: 'button',
-                    onClick: () =>
-                        acknowledge(OnboardingMessage.BLACK_FRIDAY_OFFER, () =>
-                            onLink(`${SSO_URL}/pass/dashboard?plan=pass2023&coupon=BF2023&cycle=12`)
-                        ),
-                },
-            },
             [OnboardingMessage.B2B_ONBOARDING]: {
                 type: 'default',
                 id: 'b2b',
@@ -206,6 +180,13 @@ export const useOnboardingMessages = () => {
                     type: 'button',
                     onClick: () => acknowledge(OnboardingMessage.ALIAS_SYNC_ENABLE, () => openSettings?.('aliases')),
                 },
+            },
+            [OnboardingMessage.BLACK_FRIDAY_2024]: {
+                type: 'custom',
+                component: BlackFriday2024Offer,
+                id: 'bf-2024',
+                className: 'pass-bf2024-banner ui-violet',
+                onClose: () => acknowledge(OnboardingMessage.BLACK_FRIDAY_2024),
             },
         }),
         [user, aliasCount]
