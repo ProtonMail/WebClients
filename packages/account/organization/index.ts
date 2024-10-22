@@ -1,23 +1,25 @@
-import { PayloadAction, UnknownAction, createSlice, miniSerializeError, original } from '@reduxjs/toolkit';
-import { ThunkAction } from 'redux-thunk';
+import type { PayloadAction, UnknownAction } from '@reduxjs/toolkit';
+import { createSlice, miniSerializeError, original } from '@reduxjs/toolkit';
+import type { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { CacheType } from '@proton/redux-utilities';
 import {
-    CacheType,
     cacheHelper,
     createPromiseStore,
     getFetchedAt,
     getFetchedEphemeral,
     previousSelector,
 } from '@proton/redux-utilities';
+import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getOrganization, getOrganizationSettings } from '@proton/shared/lib/api/organization';
 import { APPS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
+import type { OrganizationWithSettings } from '@proton/shared/lib/interfaces';
 import {
     type Organization,
     type OrganizationSettings,
-    OrganizationWithSettings,
     type User,
     UserLockedFlags,
 } from '@proton/shared/lib/interfaces';
@@ -129,40 +131,51 @@ const modelThunk = (options?: {
         };
         const getPayload = async () => {
             const user = await dispatch(userThunk());
+            const defaultValue = {
+                value: freeOrganization,
+                type: ValueType.dummy,
+            };
             if (!canFetch(user)) {
-                return { value: freeOrganization, type: ValueType.dummy };
+                return defaultValue;
             }
 
-            const defaultSettings = {
-                ShowName: false,
-                LogoID: null,
-            };
+            try {
+                const defaultSettings = {
+                    ShowName: false,
+                    LogoID: null,
+                };
 
-            const [Organization, OrganizationSettings] = await Promise.all([
-                extraArgument
-                    .api<{
-                        Organization: Organization;
-                    }>(getOrganization())
-                    .then(({ Organization }) => Organization),
-                extraArgument.config.APP_NAME === APPS.PROTONACCOUNTLITE
-                    ? defaultSettings
-                    : extraArgument
-                          .api<OrganizationSettings>(getOrganizationSettings())
-                          .then(({ ShowName, LogoID }) => ({ ShowName, LogoID }))
-                          .catch(() => {
-                              return defaultSettings;
-                          }),
-            ]);
+                const [Organization, OrganizationSettings] = await Promise.all([
+                    extraArgument
+                        .api<{
+                            Organization: Organization;
+                        }>(getOrganization())
+                        .then(({ Organization }) => Organization),
+                    extraArgument.config.APP_NAME === APPS.PROTONACCOUNTLITE
+                        ? defaultSettings
+                        : extraArgument
+                              .api<OrganizationSettings>(getOrganizationSettings())
+                              .then(({ ShowName, LogoID }) => ({ ShowName, LogoID }))
+                              .catch(() => {
+                                  return defaultSettings;
+                              }),
+                ]);
 
-            const value = {
-                ...Organization,
-                Settings: OrganizationSettings,
-            };
+                const value = {
+                    ...Organization,
+                    Settings: OrganizationSettings,
+                };
 
-            return {
-                value: value,
-                type: ValueType.complete,
-            };
+                return {
+                    value: value,
+                    type: ValueType.complete,
+                };
+            } catch (e: any) {
+                if (getIsMissingScopeError(e)) {
+                    return defaultValue;
+                }
+                throw e;
+            }
         };
         const cb = async () => {
             try {
