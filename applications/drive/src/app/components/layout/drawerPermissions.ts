@@ -1,9 +1,9 @@
 import type { User } from '@proton/shared/lib/interfaces';
-import { UserType } from '@proton/shared/lib/interfaces';
+import { getIsExternalAccount } from '@proton/shared/lib/keys';
 
 export const getDriveDrawerPermissions = ({ user }: { user: User }) => {
     return {
         contacts: true,
-        calendar: user.Type !== UserType.EXTERNAL,
+        calendar: !getIsExternalAccount(user),
     };
 };
