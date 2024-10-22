@@ -354,9 +354,6 @@
       "Loading verification": [
         "Memuat verifikasi"
       ],
-      "Login": [
-        "Masuk"
-      ],
       "Make a copy": [
         "Buat salinan"
       ],
@@ -406,9 +403,6 @@
         "Tidak sekarang"
       ],
       "OK": [
-        "OK"
-      ],
-      "Ok": [
         "OK"
       ],
       "Open": [
@@ -557,9 +551,6 @@
       ],
       "Sign out": [
         "Keluar"
-      ],
-      "Sign up": [
-        "Daftar"
       ],
       "Skip verification": [
         "Lewati verifikasi"
@@ -978,6 +969,53 @@
       ],
       "Continue your subscription": [
         "Lanjutkan langganan Anda"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "Ruang penyimpanan ${ maxSpaceTB }"
+      ],
+      "${ planMaxSpace } email storage": [
+        "Ruang penyimpanan email ${ planMaxSpace }"
+      ],
+      "Advanced account protection": [
+        "Perlindungan akun tingkat lanjut"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "Seluruh aplikasi dan fitur premium ${ BRAND_NAME }"
+      ],
+      "Cancel and downgrade": [
+        "Batalkan dan turunkan"
+      ],
+      "Cloud storage and sharing for large files": [
+        "Penyimpanan awan dan pembagian untuk berkas besar"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Ruang penyimpanan cloud terenkripsi untuk foto dan dokumen"
+      ],
+      "Encrypted password manager": [
+        "Pengelola kata sandi terenkripsi"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "Paket dasar gratis kami dengan email dan ruang penyimpanan yang terenkripsi end-to-end. Tanpa fitur premium yang terliput."
+      ],
+      "Save ${ upsellSavings }": [
+        "Hemat ${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "Hemat dana dengan ${ upsellPlanName }"
+      ],
+      "Secure personal and shared calendar": [
+        "Kalender personal dan bersama yang aman"
+      ],
+      "Try ${ planName }": [
+        "Coba ${ planName }"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "Coba ${ upsellPlanName } dan pertahankan akses ke seluruh fitur email dan kalender premium."
+      ],
+      "Ultra fast and private VPN": [
+        "VPN yang ultra cepat dan privat"
       ]
     },
     "Checkout row": {
@@ -2012,9 +2050,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Enkripsi dan impor kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Untuk mengimpor kontak melalui berkas CSV dan VCF, pastikan berkas Anda tidak melebihi batas ukuran ${ MAX_IMPORT_FILE_SIZE_STRING } atau batas jumlah ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda melebihi batas ukuran yang ada, silakan pecahkan berkas Anda ke beberapa berkas yang lebih kecil. ${ learnMoreLink }"
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
@@ -2135,6 +2170,14 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Langganan ${ PLAN_NAMES[PLANS.PASS] } Anda saat ini berlaku dengan harga khusus ${ price } per tahun. Dengan menurunkan ke paket Free, Anda akan kehilangan diskon ini secara permanen, bahkan apabila Anda meningkatkan kembali akun Anda di masa yang akan datang."
+      ]
+    },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Buka di ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Save for later": [
+        "Simpan untuk nanti"
       ]
     },
     "driveplus2024: Deal details": {
@@ -2728,9 +2771,6 @@
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Anda tidak dapat mengirim email ke lebih dari ${ maxContacts } penerima"
       ],
-      "You have reached the contacts limit for your account": [
-        "Anda telah mencapai batas jumlah kontak yang diperkenankan untuk akun Anda"
-      ],
       "You have reached the maximum number of calendars.": [
         "Anda telah mencapai batas jumlah kalender maksimum."
       ],
@@ -3055,9 +3095,6 @@
       "Lifetime accounts cannot join a family plan.": [
         "Akun Lifetime tidak dapat bergabung dalam paket grup."
       ],
-      "Manage addresses.": [
-        "Kelola alamat."
-      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Pemilik paket dengan anggota tidak dapat bergabung ke paket keluarga lain."
       ],
@@ -3093,9 +3130,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Akun Anda menggunakan ruang penyimpanan sebesar ${ usedSpace }, yang melebihi batas ${ inviteSpace } yang dialokasikan kepada Anda. Hapus sebagian data atau minta kepada admin paket untuk meningkatkan ruang penyimpanan Anda."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "Anda tidak dapat menerima undangan ini dengan paket Anda saat ini."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3595,9 +3629,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } anggota)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /bulan)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ruang penyimpanan tambahan"
       ],
@@ -3928,6 +3959,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Untuk hasil yang maksimal, hindari streaming serta berbagai kegiatan lainnya yang boros akan memori atau pisah unggahan Anda ke dalam beberapa kelompok berkas kecil."
       ],
+      "Free 5GB encrypted storage to get started": [
+        "Ruang penyimpanan terenkripsi 5GB gratis untuk memulai"
+      ],
       "here": [
         "di sini"
       ],
@@ -3999,6 +4033,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
+      ],
+      "Keep your files secure with end-to-end encryption.": [
+        "Jaga berkas Anda tetap aman dengen enkripsi end-to-end."
       ],
       "Key fingerprint": [
         "Sidik jari kunci"
@@ -4131,9 +4168,6 @@
       ],
       "Organization size": [
         "Ukuran organisasi"
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Peringatan kami dimaksudkan agar Anda dapat lebih berhati-hati. Apabila Anda tidak mengenali informasi mana pun yang telah ditandai bocor, Anda dapat mengabaikan laporan ini dengan aman."
       ],
       "Owner": [
         "Pemilik"
@@ -4959,6 +4993,9 @@
       "Last month only": [
         "Hanya sebulan terakhir"
       ],
+      "Log in or sign up ": [
+        "Masuk atau daftar "
+      ],
       "Mail Server (IMAP)": [
         "Server Mail (IMAP)"
       ],
@@ -5438,9 +5475,6 @@
       "Graphics Interchange Format (GIF)": [
         "Graphics Interchange Format (GIF)"
       ],
-      "GZip Compressed Archive": [
-        "Arsip Terkompresi GZip"
-      ],
       "HyperText Markup Language (HTML)": [
         "HyperText Markup Language (HTML)"
       ],
@@ -5461,9 +5495,6 @@
       ],
       "JavaScript": [
         "JavaScript"
-      ],
-      "JPEG images": [
-        "Gambar JPEG"
       ],
       "JSON": [
         "JSON"
@@ -5530,9 +5561,6 @@
       ],
       "Opus audio": [
         "Audio Opus"
-      ],
-      "Portable Network Graphics": [
-        "Portable Network Graphics"
       ],
       "Python": [
         "Python"
@@ -5731,6 +5759,9 @@
       ],
       "${ n } VPN connection": [
         "${ n } koneksi VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "HIngga ${ numberOfUsers } pengguna"
       ],
       "${ options }-day file version history": [
         "Riwayat versi berkas ${ options } hari"
@@ -6029,9 +6060,6 @@
       "Sync and backup all your files across devices": [
         "Sinkronkan dan cadangkan seluruh berkas Anda antar berbagai perangkat"
       ],
-      "Tor over VPN": [
-        "Tor via VPN"
-      ],
       "Two-factor authentication": [
         "Autentikasi dua faktor"
       ],
@@ -6292,9 +6320,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Buat hingga ${ n } alamat/alias email yang dapat Anda tentukan kepada para anggota keluarga. Gunakan alamat/alias ini untuk identitas online-nya masing-masing, mis. JohnShopper@${ domain } untuk akun berbelanja."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Server khusus yang memiliki alamat IP-nya tersendiri dapat ditambahkan ke dalam gateway pribadi untuk manajemen akses yang lebih spesifik"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Melindungi Anda dari ancaman terhadap privasi VPN dengan mengalihkan lalu lintas internet Anda melalui berbagai server"
       ],
@@ -6390,9 +6415,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Atur ulang kata sandi dan status autentikasi dua faktor pengguna"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Alihkan lalu lintas Internet Anda melalui jaringan Tor dengan sekali klik"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan ruang penyimpanan terenkripsi berbasis cloud. Dengan dukungan sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
@@ -6671,9 +6693,6 @@
       "Share invitation declined": [
         "Undangan untuk berbagi ditolak"
       ],
-      "Stopping to share this item has failed": [
-        "Gagal menghentikan pembagian item"
-      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Tautan ke \"${ name }\" gagal dihapus"
       ],
@@ -6712,11 +6731,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Agar proses impor dapat berlangsung, Anda harus memilih seluruh item yang diminta sebagaimana yang ditampilkan dalam GIF."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Tentukan apa-apa saja yang akan dapat diakses oleh ${ BRAND_NAME }: melihat isi pesan dan pengaturan email Anda, melihat dan mengunduh kontak Anda, serta melihat dan mengunduh seluruh agenda yang Anda akses dari Google Agenda."
       ]
     },
     "Option": {
@@ -6932,6 +6946,9 @@
       "E.g., ": [
         "Misalnya "
       ],
+      "Email": [
+        "Email"
+      ],
       "Filter groups": [
         "Filter grup"
       ],
@@ -7120,9 +7137,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Coba ${ PASS_APP_NAME }"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "Digunakan oleh berbagai layanan mis. Amazon untuk berjualan"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Pada saat Anda diminta untuk memberikan alamat email, gunakan alias ini sebagai gantinya. Seluruh alias disediakan oleh ${ passLink }."
@@ -7557,6 +7571,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "Tautan ke item ini telah disimpan dalam drive Anda. Anda dapat mengaksesnya nanti di bagian 'Dibagikan dengan saya'."
+      ],
       "Get up to ${ credits } in credits.": [
         "Dapatkan saldo hingga ${ credits }."
       ],
@@ -7710,9 +7727,6 @@
       "Got it": [
         "Mengerti"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Anda hanya perlu untuk masuk ke akun Apple App Store Anda dan mengetuk ${ subscriptions }."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Anda hanya perlu untuk masuk ke akun Play Store Anda dan mengetuk ${ subscriptions }."
       ],
@@ -7786,6 +7800,15 @@
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } alamat email khusus"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } alamat email"
+      ],
+      "Folders, labels, and custom filters": [
+        "Folder, label, dan filter khusus"
       ]
     },
     "Subscription renewal state": {
@@ -8374,6 +8397,9 @@
       "Request new code": [
         "Minta kode baru"
       ],
+      "Save it for later in ${ DRIVE_APP_NAME }": [
+        "Simpan untuk nanti di ${ DRIVE_APP_NAME }"
+      ],
       "Security center": [
         "Pusat keamanan"
       ],
@@ -8497,6 +8523,9 @@
       ]
     },
     "Tooltip": {
+      "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
+        "Tambahkan berkas bersama ini ke ${ DRIVE_APP_NAME } anda untuk akses mudah nanti."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Opsi Otomatis berarti pesan akan dikirim apa adanya sesuai format tulis yang dipakai. Opsi Teks Polos berarti pesan akan selalu dikirim dalam bentuk teks polos."
       ],
@@ -8544,9 +8573,6 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Pilih skema PGP yang akan digunakan untuk menandatangani atau mengenkripsi pesan kepada pengguna. Mohon diperhatikan bahwa PGP/Inline mewajibkan penggunaan pesan teks polos"
-      ],
-      "Shared end-to-end encrypted": [
-        "Dibagikan dengan enkripsi end-to-end"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sub-folder milik sistem akan muncul sebagai folder terpisah di ${ MAIL_APP_NAME }"
@@ -8630,11 +8656,6 @@
       ],
       "No ads": [
         "Tanpa iklan"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Akses ke server Secure Core, unduhan P2P/BitTorrent yang cepat, akses Tor via VPN, dan masih banyak lagi."
       ]
     },
     "wallet_signup_2024: Info": {

@@ -357,9 +357,6 @@
       "Loading verification": [
         "Verificatie laden"
       ],
-      "Login": [
-        "Inloggen"
-      ],
       "Make a copy": [
         "Een kopie maken"
       ],
@@ -410,9 +407,6 @@
       ],
       "OK": [
         "OK"
-      ],
-      "Ok": [
-        "Ok"
       ],
       "Open": [
         "Open"
@@ -560,9 +554,6 @@
       ],
       "Sign out": [
         "Uitloggen"
-      ],
-      "Sign up": [
-        "Inschrijven"
       ],
       "Skip verification": [
         "Verificatie overslaan"
@@ -989,6 +980,53 @@
       ],
       "Continue your subscription": [
         "Uw abonnement voortzetten"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB } opslagruimte"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } e-mailopslag"
+      ],
+      "Advanced account protection": [
+        "Geavanceerde accountbeveiliging"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "Alle ${ BRAND_NAME }-apps en hun premium functies"
+      ],
+      "Cancel and downgrade": [
+        "Annuleren en downgraden"
+      ],
+      "Cloud storage and sharing for large files": [
+        "Cloud opslag en het delen van grote bestanden"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Versleutelde cloudopslag voor foto's en documenten"
+      ],
+      "Encrypted password manager": [
+        "Versleutelde wachtwoordmanager"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "Ons standaard, gratis plan met end-to-end versleutelde email en opslag. Geen premium functies inbegrepen."
+      ],
+      "Save ${ upsellSavings }": [
+        "Bespaar ${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "Bespaar geld met ${ upsellPlanName }"
+      ],
+      "Secure personal and shared calendar": [
+        "Veilige persoonlijke en gedeelde agenda"
+      ],
+      "Try ${ planName }": [
+        "Probeer ${ planName }"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "Probeer ${ upsellPlanName } en behoud toegang tot alle premium email- en kalenderfuncties."
+      ],
+      "Ultra fast and private VPN": [
+        "Ultrasnelle en private VPN"
       ]
     },
     "Checkout row": {
@@ -2025,9 +2063,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Versleutelen en importeren van contacten... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Voor importeren via CSV- en VCF-bestand, zorg ervoor dat het bestand niet ${ MAX_IMPORT_FILE_SIZE_STRING } of ${ MAX_IMPORT_CONTACTS_STRING } contacten overschrijdt. Als uw bestand groter is, splits het dan in kleinere bestanden. ${ learnMoreLink }."
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Krijg onbeperkte aliassen en 500 GB opslagruimte met ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
@@ -2148,6 +2183,11 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Uw ${ PLAN_NAMES[PLANS.PASS] }-abonnement heeft een speciale prijs van ${ price } per jaar. Als u downgrade naar een Free abonnement, zult u permanent uw korting verliezen, zelfs als u in de toekomst opnieuw upgrade."
+      ]
+    },
+    "drive:action": {
+      "Save for later": [
+        "Opslaan voor later"
       ]
     },
     "driveplus2024: Deal details": {
@@ -2749,9 +2789,6 @@
         "U kunt geen e-mail verzenden naar meer dan${ maxContacts } ontvanger",
         "U kunt geen e-mail verzenden naar meer dan ${ maxContacts } ontvangers"
       ],
-      "You have reached the contacts limit for your account": [
-        "U heeft de limiet van contacten bereikt voor dit account"
-      ],
       "You have reached the maximum number of calendars.": [
         "U hebt het maximum aantal agenda's bereikt."
       ],
@@ -3077,9 +3114,6 @@
       "Lifetime accounts cannot join a family plan.": [
         "Levenslange accounts kunnen niet deelnemen aan een Family-abonnement."
       ],
-      "Manage addresses.": [
-        "Beheer adressen."
-      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Eigenaren van een abonnement met leden kunnen zich niet aansluiten bij een ander Family-abonnement."
       ],
@@ -3115,9 +3149,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Uw account gebruikt ${ usedSpace } aan opslagruimte. Dat is meer dan de ${ inviteSpace } die aan u is toegewezen. Verwijder gegevens of vraag de abonnementsbeheerder uw opslagruimte uit te breiden."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "U kunt deze uitnodiging niet accepteren met uw huidige abonnement."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3266,6 +3297,10 @@
       ]
     },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount } suggestie gevonden, gebruik het toetsenbord om te navigeren.",
+        "${ itemsCount } suggesties gevonden, gebruik het toetsenbord om te navigeren."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Gebruik omhoog- en omlaagknoppen om suggesties te openen en te bladeren na invoer. Druk op Enter om uw keuze te bevestigen, of op Escape om het suggestievak te sluiten."
       ]
@@ -3643,9 +3678,6 @@
         "(${ memberCount } lid)",
         "(${ memberCount } leden)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /maand)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus opslag"
       ],
@@ -3982,6 +4014,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Vermijd streaming en andere geheugenintensieve activiteiten of splits je upload op in kleinere delen voor het beste resultaat."
       ],
+      "Free 5GB encrypted storage to get started": [
+        "Gratis 5GB versleutelde opslag om te beginnen"
+      ],
       "here": [
         "hier"
       ],
@@ -4054,6 +4089,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bevestig uw keuze en wij doen de rest."
+      ],
+      "Keep your files secure with end-to-end encryption.": [
+        "Houd uw bestanden veilig met end-to-end encryptie."
       ],
       "Key fingerprint": [
         "Digitale vingerafdruk"
@@ -4188,9 +4226,6 @@
       ],
       "Organization size": [
         "Grootte van de organisatie"
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Met onze meldingen nemen we het zekere voor het onzekere. Als u de geschonden informatie niet herkent, kunt u deze melding veilig negeren."
       ],
       "Owner": [
         "Eigenaar"
@@ -5023,6 +5058,9 @@
       "Last month only": [
         "Alleen vorige maand"
       ],
+      "Log in or sign up ": [
+        "Inloggen of registreren "
+      ],
       "Mail Server (IMAP)": [
         "Mailserver (IMAP)"
       ],
@@ -5498,9 +5536,6 @@
       "Graphics Interchange Format (GIF)": [
         "Grafische Interchange Format (GIF)"
       ],
-      "GZip Compressed Archive": [
-        "GZip gecomprimeerd bestand"
-      ],
       "HyperText Markup Language (HTML)": [
         "HyperText Markup Taal (HTML)"
       ],
@@ -5518,9 +5553,6 @@
       ],
       "Java Archive (JAR)": [
         "Java-archief (JAR)"
-      ],
-      "JPEG images": [
-        "JPEG-afbeeldingen"
       ],
       "MP3 audio": [
         "MP3-audio"
@@ -5557,9 +5589,6 @@
       ],
       "Opus audio": [
         "Opus-geluidsbestand"
-      ],
-      "Portable Network Graphics": [
-        "Draagbare netwerk afbeeldingen"
       ],
       "RAR archive": [
         "RAR-archief"
@@ -5757,6 +5786,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-verbinding",
         "${ n } VPN-verbindingen"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } gebruikers",
+        "Tot ${ numberOfUsers } gebruikers"
       ],
       "${ options }-day file version history": [
         "Bestandsversiegeschiedenis van ${ options } dag",
@@ -6059,9 +6092,6 @@
       "Sync and backup all your files across devices": [
         "Synchroniseer en back-up al uw bestanden op alle apparaten"
       ],
-      "Tor over VPN": [
-        "Tor via VPN"
-      ],
       "Two-factor authentication": [
         "Tweestapsverificatie"
       ],
@@ -6113,6 +6143,10 @@
       "Up to ${ n } user": [
         "Tot ${ n } gebruiker",
         "Tot ${ n } gebruikers"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Tot ${ n } gebruiker (${ adminsText }, ${ usersText })",
+        "Tot ${ n } gebruikers (${ adminsText }, ${ usersText })"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Tot ${ totalStorageSize } opslag"
@@ -6324,9 +6358,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Maak maximaal ${ n } e-mailadressen/aliassen aan die u aan gezinsleden kunt toewijzen. Gebruik ze voor online identiteiten, bijvoorbeeld JohnShopper@${ domain } voor shopping-accounts."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Toegewijde servers met toegewijde IP-adres(sen) kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Beschermt tegen bedreigingen van de VPN-privacy door uw internetverkeer door meerdere servers te leiden"
       ],
@@ -6422,9 +6453,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Gebruikerswachtwoorden resetten en tweestapsverificatie van gebruikers resetten"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Routeer uw internetverkeer door het Tor-netwerk met een enkele klik"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld delen van bestanden en meer."
@@ -6716,9 +6744,6 @@
       "Share invitation declined": [
         "Deel-uitnodiging afgewezen"
       ],
-      "Stopping to share this item has failed": [
-        "Stopping om dit item te delen is mislukt"
-      ],
       "The link to \"${ name }\" failed to be deleted": [
         "De link naar \"${ name }\" kon niet worden verwijderd"
       ],
@@ -6757,11 +6782,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Selecteer alle gewenste items, zoals weergegeven in de GIF, om de import te doen slagen."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Selecteer waar ${ BRAND_NAME } toegang toe heeft: uw e-mailberichten en -instellingen bekijken, uw contacten bekijken en downloaden, al uw agenda's bekijken en downloaden die u gebruikt vanuit Google Calendar."
       ]
     },
     "Option": {
@@ -6980,6 +7000,9 @@
       "E.g., ": [
         "Bijv., "
       ],
+      "Email": [
+        "E-mail"
+      ],
       "Filter groups": [
         "Filter groepen"
       ],
@@ -7173,9 +7196,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Probeer ${ PASS_APP_NAME }"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "Gebruikt in Amazon voor winkelen enz."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Wanneer uw e-mailadres gevraagd wordt, geef dan deze alias op. Aliassen worden geleverd door ${ passLink }."
@@ -7627,6 +7647,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "Een link naar dit item werd opgeslaan op uw schijf. U kan het later bekijken in de sectie \"Gedeeld met mij\"."
+      ],
       "Get up to ${ credits } in credits.": [
         "Krijg tot wel ${ credits } als krediet."
       ],
@@ -7786,9 +7809,6 @@
       "Got it": [
         "Begrepen"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Log in op uw Apple App Store account, druk dan op ${ subscriptions }."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Log in op uw Play Store-account, druk dan op ${ subscriptions }."
       ],
@@ -7862,6 +7882,17 @@
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over de veiligheid van de veiligheid te hebben."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } eigen e-maildomein",
+        "${ planNumberOfDomains } eigen e-maildomeinen"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-mailadres",
+        "${ planNumberOfEmails } e-mailadressen"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mappen, labels en aangepaste filters"
       ]
     },
     "Subscription renewal state": {
@@ -8464,6 +8495,9 @@
       "Request new code": [
         "Nieuwe code aanvragen"
       ],
+      "Save it for later in ${ DRIVE_APP_NAME }": [
+        "Opslaan voor later in ${ DRIVE_APP_NAME }"
+      ],
       "Security center": [
         "Beveiligingscentrum"
       ],
@@ -8587,6 +8621,9 @@
       ]
     },
     "Tooltip": {
+      "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
+        "Voeg dit gedeelde bestand toe aan uw ${ DRIVE_APP_NAME } voor eenvoudige toegang op een later tijdstip."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatisch betekent dat tekst met rijke opmaak gebruikt wordt, zoals in het opstelvenster. Platte tekst geeft aan dat het bericht altijd wordt omgezet naar tekst zonder opmaak voordat het wordt verzonden."
       ],
@@ -8634,9 +8671,6 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecteer het PGP-schema dat wordt gebruikt bij het ondertekenen of versleutelen naar een gebruiker. Merk op dat PGP/Inline berichten zonder opmaak forceert"
-      ],
-      "Shared end-to-end encrypted": [
-        "End-to-end versleuteld gedeeld"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systeemsubmappen worden weergegeven als aparte mappen in ${ MAIL_APP_NAME }"
@@ -8728,11 +8762,6 @@
       ],
       "No ads": [
         "Geen advertenties"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Toegang tot Secure Core-servers, snelle P2P/BitTorrent-downloads, Tor over VPN, en meer."
       ]
     },
     "wallet_signup_2024: Info": {

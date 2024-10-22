@@ -114,6 +114,9 @@
       "characters": [
         "자"
       ],
+      "characters out of": [
+        "개의 글자들 다음 중에서:"
+      ],
       "Chat with us": [
         "채팅으로 문의하기"
       ],
@@ -351,9 +354,6 @@
       "Loading verification": [
         "인증 정보 불러오는 중"
       ],
-      "Login": [
-        "로그인"
-      ],
       "Make a copy": [
         "복사본 만들기"
       ],
@@ -403,9 +403,6 @@
         "다음에"
       ],
       "OK": [
-        "확인"
-      ],
-      "Ok": [
         "확인"
       ],
       "Open": [
@@ -555,9 +552,6 @@
       "Sign out": [
         "로그아웃"
       ],
-      "Sign up": [
-        "회원가입"
-      ],
       "Skip verification": [
         "인증 건너뛰기"
       ],
@@ -619,7 +613,7 @@
         "지금 업그레이드"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "${ BRAND_NAME } Unlimtied로 업그레이드하기"
+        "${ BRAND_NAME } Unlimited로 업그레이드하기"
       ],
       "Upload anyway": [
         "무시하고 업로드"
@@ -671,6 +665,9 @@
       ],
       "words": [
         "개 (단어)"
+      ],
+      "words out of": [
+        "개의 단어들 다음 중에서:"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "vCard 파일을 ${ maxAttachments }개 이상 연락처로 보낼 수 없습니다"
@@ -972,6 +969,53 @@
       ],
       "Continue your subscription": [
         "내 구독 유지하기"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "저장공간 ${ maxSpaceTB }"
+      ],
+      "${ planMaxSpace } email storage": [
+        "이메일 저장공간 ${ planMaxSpace }"
+      ],
+      "Advanced account protection": [
+        "향상된 계정 보호"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "모든 ${ BRAND_NAME } 앱들과 해당 앱들의 프리미엄 기능들"
+      ],
+      "Cancel and downgrade": [
+        "취소 및 다운그레이드"
+      ],
+      "Cloud storage and sharing for large files": [
+        "큰 용량의 파일을 위한 클라우드 스토리지 및 공유"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "사진 및 문서를 위한 암호화된 클라우드 스토리지"
+      ],
+      "Encrypted password manager": [
+        "암호화된 비밀번호 관리자"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "종단간 암호화된 이메일 및 스토리지가 포함된 무료 플랜. 프리미엄 기능 미포함."
+      ],
+      "Save ${ upsellSavings }": [
+        "${ upsellSavings } 절약"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "${ upsellPlanName } 플랜으로 구독료 절약하기"
+      ],
+      "Secure personal and shared calendar": [
+        "사적이거나 공유된 캘린더 보호"
+      ],
+      "Try ${ planName }": [
+        "${ planName } 체험하기"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "${ upsellPlanName } 플랜을 체험하여 모든 프리미엄 기능 포함 이메일 및 캘린더에 다시 접근하세요."
+      ],
+      "Ultra fast and private VPN": [
+        "초고속 비공개 VPN"
       ]
     },
     "Checkout row": {
@@ -2006,9 +2050,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "암호화 및 연락처 불러오기 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 ${ MAX_IMPORT_CONTACTS_STRING } 연락처를 초과하지 않도록 하십시오. 파일이 더 크면, 더 작은 파일로 나누세요. ${ learnMoreLink }."
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "${ PLAN_NAMES[PLANS.BUNDLE] }으로 무제한 별칭과 500 GB 스토리지 공간을 받으세요."
       ],
@@ -2131,6 +2172,14 @@
         "${ PLAN_NAMES[PLANS.PASS] } 구독이 연간 ${ price }의 특별 가격으로 제공됩니다. Free 플랜으로 다운그레이드함으로서 할인을 잃게되며 추후에도 할인된 가격으로 구독할 수 없습니다."
       ]
     },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }에서 열기"
+      ],
+      "Save for later": [
+        "나중을 위해 저장"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "연장된 버전 기록"
@@ -2149,7 +2198,7 @@
     },
     "duoplan2024: Footer": {
       "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "2년간 ${ amountBilled }가 결제됩니다. 할인은 표준 월 비용에 따라 정해집니다."
+        "2년마다 ${ amountBilled }가 결제됩니다. 할인은 표준 월 비용에 따라 정해집니다."
       ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "매년 ${ amountBilled }가 결제됩니다. ${ BRAND_NAME } 무제한 연간 구독 두 개를 따로 결제하는 것보다 ${ amountSave }를 절약할 수 있습니다."
@@ -2345,10 +2394,10 @@
         "문서를 복제하는 도중 문제가 발생했습니다. 다시 시도햐세요."
       ],
       "An error occurred while attempting to restore the document. Please try again.": [
-        "다운로드된 문서를 복구하는 중에 오류가 발생했습니다. 다시 시도하세요."
+        "문서를 복원하는 중에 오류가 발생했습니다. 다시 시도하세요."
       ],
       "An error occurred while attempting to trash the document. Please try again.": [
-        "다운로드된 문서를 첨부하는 중에 오류가 발생했습니다. 다시 시도하세요."
+        "문서를 삭제하는 중에 오류가 발생했습니다. 다시 시도하세요."
       ],
       "An error occurred while creating a new document. Please try again.": [
         "새 문서 생성 도중 문제가 발생했습니다. 다시 시도하세요."
@@ -2639,7 +2688,7 @@
         "라벨 이름이 너무 깁니다. 다른 이름을 사용해 주세요."
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
-        "마지막으로 업데이트한 문서가 너무 크거나 총 문서 크기 제한 수에 도달했을 수 있습니다. 편집이 일시적으로 비활성화되었습니다. 변경 사항이 저장되지 않습니다. 문서의 복사본을 내보내시고, 페이지를 새로 고침해주세요."
+        "문서의 변경사항이 너무 크거나 총 문서 크기 제한에 도달했을 수 있습니다. 편집이 일시적으로 비활성화 되었고 변경 사항이 저장되지 않습니다. 문서의 복사본을 내보내시고, 페이지를 새로 고침 해주세요."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "추가할 수 있는 최소 금액은 ${ price } 입니다."
@@ -2717,13 +2766,10 @@
         "검증 오류"
       ],
       "We are having trouble saving recent edits. Please refresh the page.": [
-        "최근 편집 사항 저장에 문제 발생. 페이지를 새로고침하세요."
+        "최근 편집 사항 저장에 문제가 발생했습니다. 페이지를 새로고침 해주세요."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "${ maxContacts }명 이상의 수신자에게 메일을 보낼 수 없습니다."
-      ],
-      "You have reached the contacts limit for your account": [
-        "계정의 최대 연락처 수를 초과했습니다"
       ],
       "You have reached the maximum number of calendars.": [
         "캘린더 갯수의 한도에 도달했습니다."
@@ -3047,10 +3093,7 @@
         "이 사용자에게 의해 초대됨: ${ inviteEmail }"
       ],
       "Lifetime accounts cannot join a family plan.": [
-        "평생 계정은 가족 플랜에 합류 불가합니다."
-      ],
-      "Manage addresses.": [
-        "주소를 관리하세요."
+        "평생 계정은 가족 플랜에 합류할 수 없습니다."
       ],
       "Owners of a plan with members cannot join another family plan.": [
         "구성원들이 있는 요금제의 소유자가 다른 그룹 가족 플랜에 합류할 수 없습니다."
@@ -3077,7 +3120,7 @@
         "가족 그룹에 성공적으로 가입했습니다."
       ],
       "You have unpaid invoices. Please pay them before joining a family plan.": [
-        "결제가 필요한 청구서들이 있습니다. 가족 플랜에 참여하기 전에 결제하세요."
+        "결제되지 않은 청구서가 존재합니다. 가족 플랜에 참여하기 전에 결제해주세요."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
         "사용자가 ${ BRAND_NAME } 계정이 이 가족 요금제에 합류하도록 초대되었습니다. 함께 모든 ${ brandOrAppName } 프리미엄 기능들을 즐기세요."
@@ -3087,9 +3130,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "사용자의 계정이 할당된 ${ inviteSpace } 을(를) 초과하는 스토리지의 ${ usedSpace } 을(를) 사용하고 있습니다. 일부 데이터를 삭제하거나 요금제의 구매 관리자에게 저장 공간을 늘리도록 요청하세요."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "현재 플랜에서 이 초대를 수락할 수 없습니다."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3589,9 +3629,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } 회원)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } / 개월)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 추가 저장공간"
       ],
@@ -3922,6 +3959,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "최상의 결과를 얻으려면 스트리밍 및 메모리를 많이 사용하는 활동을 피하거나 파일을 나누어 업로드하세요."
       ],
+      "Free 5GB encrypted storage to get started": [
+        "시작하기 위한 5GB 무료 암호화 스토리지"
+      ],
       "here": [
         "여기"
       ],
@@ -3993,6 +4033,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "선택만 확인하시면 나머지는 저희가 하겠습니다."
+      ],
+      "Keep your files secure with end-to-end encryption.": [
+        "종단간 암호화로 파일을 안전하게 보관하세요."
       ],
       "Key fingerprint": [
         "지문 키"
@@ -4125,9 +4168,6 @@
       ],
       "Organization size": [
         "조직 크기"
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "이 경고는 때로는 과도할 수 있습니다. 만약 정보가 침해되었음에도 불구하고 미친 영향이 없다면, 이 보고서를 무시할 수 있습니다."
       ],
       "Owner": [
         "소유자"
@@ -4953,6 +4993,9 @@
       "Last month only": [
         "지난 달"
       ],
+      "Log in or sign up ": [
+        "로그인하거나 회원 가입하세요 "
+      ],
       "Mail Server (IMAP)": [
         "메일 서버 (IMAP)"
       ],
@@ -5423,9 +5466,6 @@
       "Graphics Interchange Format (GIF)": [
         "GIF"
       ],
-      "GZip Compressed Archive": [
-        "GZip 압축 아카이브"
-      ],
       "HyperText Markup Language (HTML)": [
         "HTML"
       ],
@@ -5443,9 +5483,6 @@
       ],
       "Java Archive (JAR)": [
         "Java 아카이브 (JAR)"
-      ],
-      "JPEG images": [
-        "JPEG 이미지"
       ],
       "MP3 audio": [
         "MP3 오디오"
@@ -5482,9 +5519,6 @@
       ],
       "Opus audio": [
         "Opus 오디오"
-      ],
-      "Portable Network Graphics": [
-        "PNG"
       ],
       "RAR archive": [
         "RAR 아카이브"
@@ -5669,6 +5703,9 @@
       "${ n } VPN connection": [
         "${ n } 개 VPN 연결"
       ],
+      "${ numberOfUsers } user": [
+        "최대 ${ numberOfUsers }명 사용자"
+      ],
       "${ options }-day file version history": [
         "${ options }일 파일 버전 기록"
       ],
@@ -5703,13 +5740,13 @@
         "사용자 1명"
       ],
       "10 email addresses/aliases": [
-        "10개 이메일 주소"
+        "10개의 이메일 주소/별칭"
       ],
       "10-year file version history": [
         "10년 파일 버전 기록"
       ],
       "15 GB storage": [
-        "저장공간 15GB"
+        "저장 공간 15GB"
       ],
       "24/7 account management support": [
         "24/7 계정 관리 지원"
@@ -5965,9 +6002,6 @@
       ],
       "Sync and backup all your files across devices": [
         "기기를 넘나들며 파일을 동기화 및 백업하세요"
-      ],
-      "Tor over VPN": [
-        "VPN을 통한 Tor"
       ],
       "Two-factor authentication": [
         "2단계 인증"
@@ -6229,9 +6263,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "가족 구성원에게 할당할 수 있는 최대 ${ n }개의 이메일 주소/별명을 생성하세요. 이를 온라인 신원으로 사용하세요. 예를 들면, 쇼핑 계정에는 JohnShopper@${ domain }을 사용할 수 있습니다."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "전용 IP 주소가 있는 전용 서버를 개인 게이트웨이에 추가하여 미세 조정된 접근 제어가 가능합니다"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "여러 서버를 통해 인터넷 트래픽을 전달하여 VPN 개인 정보에 대한 위협으로부터 방어합니다"
       ],
@@ -6327,9 +6358,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "사용자 암호 및 2단계 인증 재설정"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "한번의 클릭으로 Tor 네트워크로 인터넷 트래픽을 라우팅하세요"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "자동 동기화, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
@@ -6608,9 +6636,6 @@
       "Share invitation declined": [
         "캘린더 공유 거부됨"
       ],
-      "Stopping to share this item has failed": [
-        "이 항목의 공유 정지가 실패했습니다."
-      ],
       "The link to \"${ name }\" failed to be deleted": [
         "\"${ name }\" 에 대한 링크 삭제 실패"
       ],
@@ -6649,11 +6674,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "가져오기가 작동하려면, GIF에 표시된 대로 요청된 모든 항목을 선택해야 합니다."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "${ BRAND_NAME }이 접근할 수 있는 것을 선택하세요: 이메일 메시지와 설정을 확인하고, 연락처를 확인 및 다운로드하고, Google Agenda에서 액세스하는 모든 아젠다를 확인하고 다운로드하세요."
       ]
     },
     "Option": {
@@ -6869,6 +6889,9 @@
       "E.g., ": [
         "예, "
       ],
+      "Email": [
+        "이메일"
+      ],
       "Filter groups": [
         "필터 그룹"
       ],
@@ -7057,9 +7080,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 체험"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "쇼핑을 위해 Amazon에서 사용됨, 기타 등등."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "이메일 주소를 누군가 물어본다면, 별칭을 대신 제공하세요. 별칭이 ${ passLink }에 의해 제공됩니다."
@@ -7494,6 +7514,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "이 항목의 링크가 Drive에 저장되었어요. '나와 공유됨' 섹션에서 추후 접근이 가능합니다."
+      ],
       "Get up to ${ credits } in credits.": [
         "최대 ${ credits }의 크레딧 받기"
       ],
@@ -7647,9 +7670,6 @@
       "Got it": [
         "확인하였습니다."
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "사용자의 Apple App Store 계정으로 로그인하여 ${ subscriptions }을 누르세요."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "사용자의 Play Store 계정에 로그인하고 ${ subscriptions }을 누르세요."
       ],
@@ -7723,6 +7743,15 @@
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName }는 모든 앱, 모든 기능, 새 릴리스의 얼리 액세스, 그리고 당신의 데이터와 그 보안을 제어하기 위해 필요한 모든 것을 제공합니다."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains }개 커스텀 이메일용 도메인"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails }개 이메일 주소"
+      ],
+      "Folders, labels, and custom filters": [
+        "폴더, 라벨, 커스텀 필터"
       ]
     },
     "Subscription renewal state": {
@@ -8311,6 +8340,9 @@
       "Request new code": [
         "새 코드 요청"
       ],
+      "Save it for later in ${ DRIVE_APP_NAME }": [
+        "나중에 ${ DRIVE_APP_NAME }에 저장하기"
+      ],
       "Security center": [
         "보안 센터"
       ],
@@ -8434,6 +8466,9 @@
       ]
     },
     "Tooltip": {
+      "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
+        "추후 간편하게 접근할 수 있도록 내 ${ DRIVE_APP_NAME }에 공유된 파일을 추가하세요."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "자동은 작성기의 형식이 이 사용자에게 보내는 데 사용됨을 나타냅니다. 일반 텍스트는 발송 시 메시지가 항상 일반 텍스트로 변환됨을 나타냅니다."
       ],
@@ -8481,9 +8516,6 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "사용자에게 서명하거나 암호화 할 때 사용할 PGP 체계를 선택해주세요. PGP/Inline은 일반 텍스트 메시지를 강제합니다"
-      ],
-      "Shared end-to-end encrypted": [
-        "종단간 암호화로 공유함"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }의 시스템 하위폴더가 별도로 폴더를 표시합니다"
@@ -8567,11 +8599,6 @@
       ],
       "No ads": [
         "광고 없음"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Secure core 서버, 빠른 P2P/BitTorrent 다운로드, VPN을 통한 Tor 등에 접근하세요."
       ]
     },
     "wallet_signup_2024: Info": {

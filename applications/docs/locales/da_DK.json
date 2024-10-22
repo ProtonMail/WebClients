@@ -157,6 +157,9 @@
       "Contact group": [
         "Kontaktgruppe"
       ],
+      "Context menu": [
+        "Kontekstmenu"
+      ],
       "Continue": [
         "Fortsæt"
       ],
@@ -408,9 +411,6 @@
       "OK": [
         "Ok"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "Open": [
         "Åbn"
       ],
@@ -419,6 +419,9 @@
       ],
       "Open ${ DRIVE_APP_NAME }": [
         "Åbn ${ DRIVE_APP_NAME }"
+      ],
+      "Open folder": [
+        "Åbn mappe"
       ],
       "Open navigation": [
         "Åbn navigation"
@@ -515,6 +518,9 @@
       ],
       "Search countries": [
         "Søg lande"
+      ],
+      "Search docs": [
+        "Søg efter dokumenter"
       ],
       "See how": [
         "Se hvordan"
@@ -2013,9 +2019,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "For at importere via en CSV- eller VCF-fil, skal du være sikker på at filen ikke overskriver ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, skal du dele den i mindre filer. ${ learnMoreLink }."
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Få ubegrænsede aliasser og 500 GB lagerplads med ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
@@ -2136,6 +2139,14 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Dit ${ PLAN_NAMES[PLANS.PASS] }-abonnement er til en særpris på ${ price } pr. år. Hvis du nedgraderer til et gratis abonnement, mister du rabatten permanent, selv hvis du opgraderer igen engang i fremtiden."
+      ]
+    },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Åbn i ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Save for later": [
+        "Gem til senere"
       ]
     },
     "driveplus2024: Deal details": {
@@ -2737,9 +2748,6 @@
         "Du kan ikke sende en e-mail til flere end ${ maxContacts } modtager",
         "Du kan ikke sende en e-mail til flere end ${ maxContacts } modtagere"
       ],
-      "You have reached the contacts limit for your account": [
-        "Du har nået det maksimale antal kontakter for din konto"
-      ],
       "You have reached the maximum number of calendars.": [
         "Du har nået det maksimale antal kalendere."
       ],
@@ -3065,9 +3073,6 @@
       "Lifetime accounts cannot join a family plan.": [
         "Livstidskonti kan ikke indgå i et familieabonnement."
       ],
-      "Manage addresses.": [
-        "Administrer adresser."
-      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Ejere af et abonnement med medlemmer kan ikke deltage i et andet familieabonnement."
       ],
@@ -3103,9 +3108,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Din konto bruger ${ usedSpace } lagerplads, hvilket overstiger de ${ inviteSpace } du har fået tildelt. Slet nogle data eller bed abonnementsadministratoren om at øge din lagerplads."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "Du kan ikke acceptere denne invitation med dit nuværende abonnement."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3635,9 +3637,6 @@
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } måned)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus lagerplads"
       ],
@@ -3799,6 +3798,9 @@
       ],
       "Create public link": [
         "Opret offentligt link"
+      ],
+      "Create your end-to-end encrypted document": [
+        "Opret dit end-to-end-krypterede dokument"
       ],
       "Creating link to file": [
         "Opretter link til fil"
@@ -3971,6 +3973,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "For de bedste resultater bør du undgå streaming og hukommelsesintensive aktiviteter eller dele dit upload op i mindre bidder."
       ],
+      "Free 5GB encrypted storage to get started": [
+        "Gratis 5 GB krypteret lagerplads til at starte med"
+      ],
       "here": [
         "her"
       ],
@@ -4044,6 +4049,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "Du skal blot bekræfte dit valg, og så klarer vi resten."
       ],
+      "Keep your files secure with end-to-end encryption.": [
+        "Hold dine filer sikre med end-to-end-kryptering."
+      ],
       "Key fingerprint": [
         "Nøglefingeraftryk"
       ],
@@ -4099,6 +4107,9 @@
         "Maks. ${ MAX_SHARED_URL_PASSWORD_LENGTH } tegn",
         "Maks. ${ MAX_SHARED_URL_PASSWORD_LENGTH } tegn"
       ],
+      "Me": [
+        "Mig"
+      ],
       "Medium Priority": [
         "Mellem prioritet"
       ],
@@ -4131,6 +4142,9 @@
       ],
       "No payment is required at this time.": [
         "Betaling er ikke påkrævet på nuværende tidspunkt."
+      ],
+      "No recent documents": [
+        "Ingen seneste dokumenter"
       ],
       "No results found": [
         "Ingen resultater fundet"
@@ -4171,9 +4185,6 @@
       ],
       "Organization size": [
         "Organisationsstørrelse"
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Vores advarsler er baseret på forsigtighed. Hvis du ikke genkender nogen af de lækkede oplysninger, kan du trygt ignorere denne rapport."
       ],
       "Owner": [
         "Ejer"
@@ -4256,6 +4267,9 @@
       ],
       "Primary": [
         "Primær"
+      ],
+      "Public documents are not yet enabled for your organization.": [
+        "Offentlige dokumenter er endnu ikke aktiveret for din organisation."
       ],
       "recommended browser": [
         "anbefalet browser"
@@ -4388,6 +4402,9 @@
       ],
       "This message will be presented again later": [
         "Dette besked vil blive fremlagt igen senere"
+      ],
+      "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
+        "Dette offentlige dokument findes måske ikke, eller du har måske ikke ret til at se det. Du kan prøve at genindlæse siden for at se, om problemet fortsætter."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Dette vil slette linket og fjerne adgangen til din fil eller mappe for alle, der har linket.",
@@ -4545,6 +4562,9 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du er i øjeblikket logget ind som ${ user.Name } (${ user.Email })."
+      ],
+      "You are currently viewing this document in view-only mode. Reach out to the owner to request access to edit and comment.": [
+        "Du ser i øjeblikket dette dokument i visningsbeskyttet tilstand. Kontakt ejeren for at anmode om adgang til at redigere og kommentere."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Du bruger mere lagerplads end inkluderet i et ${ downgradedPlanName }-abonnement. Slet eller fjern data for at fortsætte nedgraderingen."
@@ -4996,6 +5016,9 @@
       ],
       "Last month only": [
         "Kun seneste måned"
+      ],
+      "Log in or sign up ": [
+        "Log ind eller opret dig "
       ],
       "Mail Server (IMAP)": [
         "Mailserver (IMAP)"
@@ -5472,9 +5495,6 @@
       "Graphics Interchange Format (GIF)": [
         "Grafisk Udskiftningsformat (GIF)"
       ],
-      "GZip Compressed Archive": [
-        "GZip-komprimeret arkiv"
-      ],
       "HyperText Markup Language (HTML)": [
         "HyperText Markup Language (HTML)"
       ],
@@ -5492,9 +5512,6 @@
       ],
       "Java Archive (JAR)": [
         "Java-arkiv (JAR)"
-      ],
-      "JPEG images": [
-        "JPEG-billeder"
       ],
       "MP3 audio": [
         "MP3-lyd"
@@ -5531,9 +5548,6 @@
       ],
       "Opus audio": [
         "Opus audio"
-      ],
-      "Portable Network Graphics": [
-        "Bærbar netværksgrafik"
       ],
       "RAR archive": [
         "RAR-arkiv"
@@ -6033,9 +6047,6 @@
       "Sync and backup all your files across devices": [
         "Synkroniser og sikkerhedskopier alle dine filer mellem enheder"
       ],
-      "Tor over VPN": [
-        "Tor over VPN"
-      ],
       "Two-factor authentication": [
         "To-faktor-godkendelse"
       ],
@@ -6299,9 +6310,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Opret op til ${ n } e-mailadresser/aliasser, som du kan tildele familiemedlemmer. Brug dem til onlineidentiteter, f.eks. JohnShopper@${ domain } til shoppingkonti."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Afværger trussel mod VPN-privatliv ved at sende din internettrafik gennem flere servere"
       ],
@@ -6397,9 +6405,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Nulstil brugeradgangskoder og nulstil to-faktor-godkendelse på brugere"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Send din internettrafik gennem Tor-netværket med ét enkelt tryk"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
@@ -6688,9 +6693,6 @@
       "Share invitation declined": [
         "Afvist invitation til at dele"
       ],
-      "Stopping to share this item has failed": [
-        "Det lykkedes ikke at stoppe med at dele dette element"
-      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Linket til \"${ name }\" kunne ikke slettes"
       ],
@@ -6729,11 +6731,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "For at importen kan fungere, skal du vælge alle de ønskede elementer som vist i GIF-illustrationen."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Vælg, hvad ${ BRAND_NAME } kan få adgang til: se dine e-mailbeskeder og indstillinger, se og downloade dine kontakter, se og downloade alle kalendere, du har adgang til fra Google Kalender."
       ]
     },
     "Option": {
@@ -6929,6 +6926,9 @@
       "E.g., ": [
         "F.eks., "
       ],
+      "Email": [
+        "E-mail"
+      ],
       "Filter groups": [
         "Filtrér grupper"
       ],
@@ -7122,9 +7122,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Prøv ${ PASS_APP_NAME }"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "Bruges på Amazon til shopping osv."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Når du bliver bedt om din email-adresse, skal du i stedet give dette email-alias i stedet for. E-mail aliasserne bliver leveret af ${ passLink }."
@@ -7576,6 +7573,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "Et link til dette element er blevet gemt på dit drev. Du kan få adgang til det senere i sektionen 'Delt med mig'."
+      ],
       "Get up to ${ credits } in credits.": [
         "Få op til ${ credits } i kreditter."
       ],
@@ -7659,19 +7659,19 @@
         "Dit ${ appStorage } er fuldt"
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Dit ${ storage } er ${ percentage }% fyldt. ${ cta }."
+        "Din ${ storage } er ${ percentage }% fyldt. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
-        "Dit ${ storage } er fyldt. ${ cta }."
+        "Din ${ storage } er fyldt. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "Dit drev er ${ percentage }% fyldt. ${ cta }."
+        "Din lagerplads er ${ percentage }% fyldt. ${ cta }."
       ],
       "Your storage is full": [
         "Dit lager er fuldt"
       ],
       "Your storage is full. ${ cta }.": [
-        "Dit drev er fyldt. ${ cta }."
+        "Din lagerplads er fyldt. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Du mister adgang til ${ gb } lagerplads og prioriteret support."
@@ -7734,9 +7734,6 @@
     "Subscription change warning": {
       "Got it": [
         "Forstået"
-      ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Log ind på din Apple App Store-konto, og tryk på ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Log ind på din Play Store-konto, og tryk på ${ subscriptions }."
@@ -8211,6 +8208,9 @@
       "Discard changes?": [
         "Kassér ændringer?"
       ],
+      "Docs": [
+        "Dokumenter"
+      ],
       "Document verification failed": [
         "Dokumentbekræftelse mislykkedes"
       ],
@@ -8410,6 +8410,9 @@
       "Request new code": [
         "Anmod om ny kode"
       ],
+      "Save it for later in ${ DRIVE_APP_NAME }": [
+        "Gem den til senere i ${ DRIVE_APP_NAME }."
+      ],
       "Security center": [
         "Sikkerhedscenter"
       ],
@@ -8533,6 +8536,9 @@
       ]
     },
     "Tooltip": {
+      "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
+        "Tilføj denne delte fil på din ${ DRIVE_APP_NAME } til nem adgang senere."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatisk betyder, at formatet i skrivesessionen benyttes ved afsendelse til denne bruger. Simpel tekst indikerer, at beskeden altid konverteres til simpel tekst ved afsendelse."
       ],
@@ -8580,9 +8586,6 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vælg den PGP-metode, der skal benyttes, når du signerer eller krypterer til en bruger. Bemærk, at PGP/Inline gennemtvinger beskeder i simpel tekst"
-      ],
-      "Shared end-to-end encrypted": [
-        "Delt end-to-end krypteret"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }"
@@ -8674,11 +8677,6 @@
       ],
       "No ads": [
         "Ingen reklamer"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Adgang til Secure Core-servere, hurtige P2P/BitTorrent-downloads, Tor over VPN og meget mere."
       ]
     },
     "wallet_signup_2024: Info": {
