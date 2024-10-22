@@ -7,7 +7,11 @@ import { Button } from '@proton/atoms';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { ProtonLogo } from '@proton/components/index';
 import type { BaseSpotlightMessage } from '@proton/pass/components/Spotlight/SpotlightContent';
-import { PASS_FAMILY_BF_2024_MONTHLY_PRICE, PASS_LIFETIME_BF_2024_YEARLY_PRICE } from '@proton/pass/constants';
+import {
+    PASS_FAMILY_BF_2024_MONTHLY_PRICE,
+    PASS_LIFETIME_BF_2024_YEARLY_PRICE,
+    UpsellRef,
+} from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { selectUser, selectUserPlan } from '@proton/pass/store/selectors';
@@ -76,13 +80,14 @@ export const BlackFriday2024Offer: FC<BaseSpotlightMessage> = ({ onClose = noop 
                   offer: true,
                   plan: 'passfamily2024',
                   email: user?.Email,
+                  upsellRef: UpsellRef.PASS_FAMILY_BF_2024,
               }
             : {
-                  /** FIXME: double check BF2024PASSLIFE params
-                   * default plan selection */
-                  coupon: 'BF2024PASSLIFE',
+                  cycle: '12',
+                  plan: 'passlifetime2024',
                   offer: true,
                   email: user?.Email,
+                  upsellRef: UpsellRef.PASS_LIFETIME_BF_2024,
               }
     );
 
