@@ -8,7 +8,7 @@ import type {
 } from "@proton/shared/lib/desktop/desktopTypes";
 import { clearStorage } from "../utils/helpers";
 import { ipcLogger } from "../utils/log";
-import { getTheme, isEqualTheme, setTheme } from "../utils/themes";
+import { getColorScheme, getTheme, isEqualTheme, setTheme } from "../utils/themes";
 import {
     reloadHiddenViews,
     resetHiddenViews,
@@ -60,6 +60,9 @@ export const handleIPCCalls = () => {
                 event.returnValue = getDefaultMailto();
                 break;
             }
+            case "colorScheme":
+                event.returnValue = getColorScheme();
+                break;
             default:
                 ipcLogger.error(`Invalid getInfo message: ${message}`);
                 break;

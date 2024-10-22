@@ -45,6 +45,11 @@ export enum ThemeTypes {
     StorefrontWallet = 11,
 }
 
+export const DESKTOP_THEME_TYPES = {
+    Carbon: ThemeTypes.Carbon,
+    Snow: ThemeTypes.Snow,
+} as const;
+
 export const PROTON_DEFAULT_THEME = ThemeTypes.Duotone;
 
 type ThemeDefinition = {
@@ -228,9 +233,9 @@ export const getDarkThemes = () => [ThemeTypes.Carbon, ThemeTypes.Monokai, Theme
 export const getProminentHeaderThemes = () => [ThemeTypes.Classic, ThemeTypes.Legacy];
 
 export const getThemes = () => {
-    // Currently we only support Snow and Carbon themes on the desktop app.
+    // Currently we only support some themes in the desktop app.
     if (isElectronApp) {
-        return [ThemeTypes.Snow, ThemeTypes.Carbon].map((id) => PROTON_THEMES_MAP[id]);
+        return Object.values(DESKTOP_THEME_TYPES).map((id) => PROTON_THEMES_MAP[id]);
     }
 
     return [
@@ -393,7 +398,7 @@ export interface ThemeInformation {
     };
 }
 
-export const electronAppTheme = {
+export const electronAppTheme: ThemeSetting = {
     Mode: ThemeModeSetting.Auto,
     LightTheme: ThemeTypes.Snow,
     DarkTheme: ThemeTypes.Carbon,
@@ -565,4 +570,8 @@ export const PROTON_DEFAULT_THEME_INFORMATION: ThemeInformation = {
         scrollbars: false,
         animations: false,
     },
+};
+
+export const isDesktopThemeType = (value: unknown): value is ThemeTypes => {
+    return Object.values(DESKTOP_THEME_TYPES).some((theme) => theme === value);
 };
