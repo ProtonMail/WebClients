@@ -4,7 +4,7 @@ import { type IconName } from '@proton/components/components/icon/Icon';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import type { AvailablePaymentMethod, PaymentMethodFlows, SavedPaymentMethod } from '@proton/payments';
-import { PAYMENT_METHOD_TYPES, isSignupFlow } from '@proton/payments';
+import { PAYMENT_METHOD_TYPES, type PaymentMethodSepa, isSignupFlow } from '@proton/payments';
 
 import type { MethodsHook, Props } from '../react-extensions/useMethods';
 import { useMethods as _useMethods } from '../react-extensions/useMethods';
@@ -46,7 +46,20 @@ const getIcon = (paymentMethod: SavedPaymentMethod): IconName | undefined => {
                 return 'credit-card';
         }
     }
+
+    if (paymentMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT) {
+        return 'bank';
+    }
 };
+
+export function formattedSavedSepaDetails(method: PaymentMethodSepa): string {
+    const NBSP_HTML = '\u00A0';
+    const {
+        Details: { Country, Last4 },
+    } = method;
+
+    return c('Info').t`IBAN${NBSP_HTML}${Country}${NBSP_HTML}••••${NBSP_HTML}${Last4}`;
+}
 
 const getMethod = (paymentMethod: SavedPaymentMethod): string => {
     switch (paymentMethod.Type) {
@@ -59,6 +72,8 @@ const getMethod = (paymentMethod: SavedPaymentMethod): string => {
         case PAYMENT_METHOD_TYPES.PAYPAL:
         case PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL:
             return `PayPal - ${paymentMethod.Details.PayerID}`;
+        case PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT:
+            return `Bank transfer - ${formattedSavedSepaDetails(paymentMethod)}`;
         default:
             return '';
     }
@@ -109,6 +124,12 @@ export function convertMethod(
         return {
             icon: 'brand-paypal' as const,
             text: c('Payment method option').t`PayPal`,
+            ...method,
+        };
+    } else if (method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT) {
+        return {
+            icon: 'bank' as const,
+            text: c('Payment method option').t`Bank transfer`,
             ...method,
         };
     }

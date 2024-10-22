@@ -3,11 +3,12 @@ import { useLocation } from 'react-router-dom';
 
 import type { OnLoginCallback } from '@proton/components';
 import { UnAuthenticated } from '@proton/components';
+import { PLANS } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { passApps } from '@proton/shared/lib/authentication/apps';
 import type { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
-import { APPS, PLANS, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash';
 
 import SignupContainer from '../signup/SignupContainer';

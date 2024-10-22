@@ -11,7 +11,7 @@ import MailLogo from '@proton/components/components/logo/MailLogo';
 import PassLogo from '@proton/components/components/logo/PassLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import WalletLogo from '@proton/components/components/logo/WalletLogo';
-import { PLANS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/payments';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';

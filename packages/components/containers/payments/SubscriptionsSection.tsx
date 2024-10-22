@@ -20,8 +20,8 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { onSessionMigrationPaymentsVersion } from '@proton/payments';
+import { PLANS } from '@proton/payments';
 import { changeRenewState } from '@proton/shared/lib/api/payments';
-import { PLANS } from '@proton/shared/lib/constants';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { getOptimisticRenewCycleAndPrice } from '@proton/shared/lib/helpers/renew';
 import {

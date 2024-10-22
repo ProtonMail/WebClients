@@ -10,6 +10,7 @@ import {
     DEFAULT_TAX_BILLING_ADDRESS,
     type MultiCheckOptions,
     type MultiCheckSubscriptionData,
+    PLANS,
     type PaymentMethodStatus,
     type PaymentMethodStatusExtended,
     type PaymentsApi,
@@ -20,7 +21,7 @@ import {
     queryPaymentMethodStatus,
 } from '@proton/payments';
 import { type CheckSubscriptionData, type PaymentsVersion, getPaymentsVersion } from '@proton/shared/lib/api/payments';
-import { APPS, PLANS } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getPlanName } from '@proton/shared/lib/helpers/subscription';
 import { type Api, ChargebeeEnabled, type SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
@@ -224,11 +225,17 @@ export const usePaymentsApi = (
             try {
                 const silence = !!fallback || !!requestOptions.silence;
 
-                return await api({
+                const result = await api({
                     ...checkSubscription(data, 'v5'),
                     ...requestOptions,
                     silence,
                 });
+
+                if (data.ProrationMode) {
+                    result.ProrationMode = data.ProrationMode;
+                }
+
+                return result;
             } catch (error) {
                 if (fallback) {
                     return fallback;
@@ -262,7 +269,7 @@ export const usePaymentsApi = (
             }
 
             const passB2bPlans = [PLANS.PASS_PRO, PLANS.PASS_BUSINESS];
-            const isPassB2b = passB2bPlans.some((plan) => data.Plans[plan] > 0);
+            const isPassB2b = passB2bPlans.some((plan) => (data.Plans[plan] ?? 0) > 0);
             if (isPassB2b) {
                 return checkV4(data, requestOptions, {
                     reason: 'pass b2b',

@@ -1,8 +1,8 @@
 import { useApi } from '@proton/components';
 import { useSubscription } from '@proton/components/hooks';
+import { PLANS } from '@proton/payments';
 import type { TelemetryEvents } from '@proton/shared/lib/api/telemetry';
 import { TelemetryMeasurementGroups, TelemetryProtonTipsEvents } from '@proton/shared/lib/api/telemetry';
-import { PLANS } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';

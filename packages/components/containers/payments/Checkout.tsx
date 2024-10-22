@@ -3,11 +3,13 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import Icon from '@proton/components/components/icon/Icon';
+import { type MethodsHook } from '@proton/components/payments/react-extensions';
+import { PAYMENT_METHOD_TYPES } from '@proton/payments';
 import type { Currency } from '@proton/shared/lib/interfaces';
 
 import CurrencySelector from './CurrencySelector';
 
-interface Props {
+export interface Props {
     currencies: readonly Currency[];
     currency: Currency;
     onChangeCurrency: (newCurrency: Currency) => void;
@@ -17,6 +19,7 @@ interface Props {
     description?: ReactNode;
     renewNotice: ReactNode;
     hiddenRenewNotice?: ReactNode;
+    paymentMethods: MethodsHook;
 }
 
 const Checkout = ({
@@ -29,7 +32,11 @@ const Checkout = ({
     description,
     renewNotice,
     hiddenRenewNotice,
+    paymentMethods,
 }: Props) => {
+    const disableCurrencySelector =
+        paymentMethods.selectedMethod?.type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
+
     return (
         <div className="p-6">
             <div className="flex flex-nowrap mb-5">
@@ -39,9 +46,8 @@ const Checkout = ({
                         currencies={currencies}
                         currency={currency}
                         onSelect={onChangeCurrency}
-                        className=""
                         mode="select-two"
-                        disabled={loading}
+                        disabled={loading || disableCurrencySelector}
                     />
                 </span>
             </div>

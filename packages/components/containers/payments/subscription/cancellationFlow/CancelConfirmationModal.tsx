@@ -10,7 +10,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
-import type { PLANS } from '@proton/shared/lib/constants';
+import type { PLANS } from '@proton/payments';
 import { useFlag } from '@proton/unleash';
 
 import type { ConfirmationModal } from './interface';

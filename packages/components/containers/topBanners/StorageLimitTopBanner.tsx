@@ -5,7 +5,8 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useConfig from '@proton/components/hooks/useConfig';
-import type { APP_NAMES, PLANS } from '@proton/shared/lib/constants';
+import type { PLANS } from '@proton/payments';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
     DRIVE_SHORT_APP_NAME,

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import type { ModalOwnProps } from '@proton/components';
 import { Prompt, SUBSCRIPTION_STEPS, Tooltip, useSubscriptionModal } from '@proton/components';
-import { PLANS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/payments';
 import upgradeWalletSrc from '@proton/styles/assets/img/wallet/wallet-bitcoin.jpg';
 
 import { Button } from '../../atoms';

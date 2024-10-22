@@ -27,7 +27,7 @@ import type { PaymentProcessorType } from '@proton/components/payments/react-ext
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import type { FullPlansMap, PaymentMethodFlows, PaymentsApi } from '@proton/payments';
-import { DEFAULT_TAX_BILLING_ADDRESS, PAYMENT_METHOD_TYPES, getPlansMap } from '@proton/payments';
+import { DEFAULT_TAX_BILLING_ADDRESS, PAYMENT_METHOD_TYPES, PLANS, getPlansMap } from '@proton/payments';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -48,7 +48,6 @@ import {
     BRAND_NAME,
     CYCLE,
     DEFAULT_CURRENCY,
-    PLANS,
     REFERRER_CODE_MAIL_TRIAL,
     SSO_PATHS,
 } from '@proton/shared/lib/constants';
@@ -873,7 +872,7 @@ const SingleSignupContainerV2 = ({
                 if (
                     !reset &&
                     Object.keys(previousPlanIDs).length <= 1 &&
-                    planCards[audience].some((planCard) => previousPlanIDs[planCard.plan] > 0)
+                    planCards[audience].some((planCard) => (previousPlanIDs[planCard.plan] ?? 0) > 0)
                 ) {
                     return previousPlanIDs;
                 }

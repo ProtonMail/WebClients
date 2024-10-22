@@ -1,5 +1,6 @@
+import { PLANS } from '@proton/payments';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
-import { APPS, COUPON_CODES, PLANS } from '@proton/shared/lib/constants';
+import { APPS, COUPON_CODES } from '@proton/shared/lib/constants';
 import { getHasCoupon, getPlan, hasMonthly, isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import type { ProtonConfig, SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
 

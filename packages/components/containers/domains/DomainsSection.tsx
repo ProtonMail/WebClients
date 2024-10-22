@@ -17,6 +17,7 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import UpgradeBanner from '@proton/components/containers/account/UpgradeBanner';
 import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { CacheType } from '@proton/redux-utilities';
 import { getDomain } from '@proton/shared/lib/api/domains';
 import {
@@ -24,8 +25,6 @@ import {
     BRAND_NAME,
     MAIL_UPSELL_PATHS,
     ORGANIZATION_STATE,
-    PLANS,
-    PLAN_NAMES,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';

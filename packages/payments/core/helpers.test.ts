@@ -1,4 +1,4 @@
-import { DEFAULT_CURRENCY, PLANS } from '@proton/shared/lib/constants';
+import { DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
 import {
     ChargebeeEnabled,
     type Plan,
@@ -7,6 +7,7 @@ import {
     type UserModel,
 } from '@proton/shared/lib/interfaces';
 
+import { PLANS } from './constants';
 import {
     getAvailableCurrencies,
     getPreferredCurrency,

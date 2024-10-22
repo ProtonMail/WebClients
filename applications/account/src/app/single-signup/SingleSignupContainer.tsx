@@ -21,14 +21,14 @@ import type { PaymentProcessorType } from '@proton/components/payments/react-ext
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
-import { getPlansMap, isMainCurrency } from '@proton/payments';
+import { PLANS, getPlansMap, isMainCurrency } from '@proton/payments';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
-import { CURRENCIES, CYCLE, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { CURRENCIES, CYCLE, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { getPlanFromPlanIDs, getPlanNameFromIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Card } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 
 import { useReferralInvitesContext } from '../ReferralInvitesContext';
 import RewardsProgress from './RewardsProgress';

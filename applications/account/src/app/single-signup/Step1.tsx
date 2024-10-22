@@ -64,19 +64,24 @@ import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
 import type { BillingAddress, ExtendedTokenPayment, TokenPayment } from '@proton/payments';
-import { PAYMENT_METHOD_TYPES, isV5PaymentToken, v5PaymentTokenToLegacyPaymentToken } from '@proton/payments';
+import {
+    ADDON_NAMES,
+    PAYMENT_METHOD_TYPES,
+    PLANS,
+    type PlanIDs,
+    isV5PaymentToken,
+    v5PaymentTokenToLegacyPaymentToken,
+} from '@proton/payments';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import {
-    ADDON_NAMES,
     APPS,
     BRAND_NAME,
     CYCLE,
     DEFAULT_CYCLE,
     PASS_APP_NAME,
     PASS_SHORT_APP_NAME,
-    PLANS,
     VPN_APP_NAME,
     VPN_CONNECTIONS,
     VPN_SHORT_APP_NAME,
@@ -108,7 +113,7 @@ import noop from '@proton/utils/noop';
 import { getLocaleTermsURL } from '../content/helper';
 import SignupSupportDropdown from '../signup/SignupSupportDropdown';
 import { getSubscriptionPrices } from '../signup/helper';
-import type { PlanIDs, SignupCacheResult, SubscriptionData } from '../signup/interfaces';
+import type { SignupCacheResult, SubscriptionData } from '../signup/interfaces';
 import { SignupType } from '../signup/interfaces';
 import type { AccountStepDetailsRef } from '../single-signup-v2/AccountStepDetails';
 import AccountStepDetails from '../single-signup-v2/AccountStepDetails';

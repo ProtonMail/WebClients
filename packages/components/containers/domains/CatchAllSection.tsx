@@ -4,13 +4,12 @@ import { useUser } from '@proton/account/user/hooks';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import UpgradeBanner from '@proton/components/containers/account/UpgradeBanner';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 import {
     APP_UPSELL_REF_PATH,
     BRAND_NAME,
     MAIL_APP_NAME,
     MAIL_UPSELL_PATHS,
-    PLANS,
-    PLAN_NAMES,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';

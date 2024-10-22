@@ -1,4 +1,4 @@
-import { PLANS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/payments';
 
 import usePlans from './usePlans';
 

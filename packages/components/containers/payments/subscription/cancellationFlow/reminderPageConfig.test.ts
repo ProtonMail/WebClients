@@ -1,4 +1,5 @@
-import { APPS, PLANS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/payments';
+import { APPS } from '@proton/shared/lib/constants';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
 
 import { user as mockUser, subscriptionBundlePro } from '../__mocks__/data';

@@ -3,9 +3,10 @@ import noop from '@proton/utils/noop';
 import type {
     BinData,
     CardFormRenderMode,
-    CbCardConfig,
+    CbIframeConfig,
     CbIframeResponseStatus,
     ChargebeeSavedCardAuthorizationSuccess,
+    ChargebeeSubmitDirectDebitEventPayload,
     ChargebeeSubmitEventPayload,
     ChargebeeSubmitEventResponse,
     ChargebeeVerifySavedCardEventPayload,
@@ -46,7 +47,7 @@ type SendResponseToParent<T> = (response: MessageBusResponse<T>) => void;
 export type SetConfigurationEvent = {
     type: 'set-configuration';
     correlationId: string;
-} & CbCardConfig;
+} & CbIframeConfig;
 
 function isSetConfigurationEvent(event: any): event is SetConfigurationEvent {
     return event?.type === 'set-configuration';
@@ -175,6 +176,23 @@ export function isUpdateFieldsEvent(event: any): event is UpdateFieldsEvent {
 
 export type OnUpdateFieldsHandler = (event: UpdateFieldsEvent, sendResponseToParent: SendResponseToParent<{}>) => void;
 
+// onDirectDebitSubmit handler
+export const directDebitSubmitMessageType = 'direct-debit-submit';
+
+export type DirectDebitSubmitEvent = {
+    type: typeof directDebitSubmitMessageType;
+    correlationId: string;
+} & ChargebeeSubmitDirectDebitEventPayload;
+
+export function isDirectDebitSubmitEvent(event: any): event is DirectDebitSubmitEvent {
+    return event?.type === directDebitSubmitMessageType;
+}
+
+export type OnDirectDebitSubmitHandler = (
+    event: DirectDebitSubmitEvent,
+    sendResponseToParent: SendResponseToParent<{}>
+) => void;
+
 export interface ParentMessagesProps {
     onSetConfiguration?: (event: SetConfigurationEvent, sendResponseToParent: SendResponseToParent<{}>) => void;
     onSubmit?: OnSubmitHandler;
@@ -185,6 +203,7 @@ export interface ParentMessagesProps {
     onVerifySavedCard?: OnVerifySavedCardHandler;
     onChangeRenderMode?: OnChangeRenderModeHandler;
     onUpdateFields?: OnUpdateFieldsHandler;
+    onDirectDebitSubmit?: OnDirectDebitSubmitHandler;
 }
 
 // the event handler function must be async to make sure that we catch all errors, sync and async
@@ -279,6 +298,14 @@ const getEventListener = (messageBus: MessageBus) => async (e: MessageEvent) => 
                     ...result,
                 });
             });
+        } else if (isDirectDebitSubmitEvent(event)) {
+            await messageBus.onDirectDebitSubmit(event, (result) => {
+                messageBus.sendMessage({
+                    type: 'direct-debit-submit-response',
+                    correlationId: event.correlationId,
+                    ...result,
+                });
+            });
         } else if (isChargebeeEvent(event)) {
             // ignore chargebee event
         } else {
@@ -309,6 +336,8 @@ export class MessageBus {
 
     public onUpdateFields;
 
+    public onDirectDebitSubmit;
+
     private eventListener: ((e: MessageEvent) => void) | null = null;
 
     constructor({
@@ -321,6 +350,7 @@ export class MessageBus {
         onVerifySavedCard,
         onChangeRenderMode,
         onUpdateFields,
+        onDirectDebitSubmit,
     }: ParentMessagesProps) {
         this.onSetConfiguration = onSetConfiguration ?? noop;
         this.onSubmit = onSubmit ?? noop;
@@ -331,6 +361,7 @@ export class MessageBus {
         this.onVerifySavedCard = onVerifySavedCard ?? noop;
         this.onChangeRenderMode = onChangeRenderMode ?? noop;
         this.onUpdateFields = onUpdateFields ?? noop;
+        this.onDirectDebitSubmit = onDirectDebitSubmit ?? noop;
     }
 
     initialize() {
@@ -459,12 +490,28 @@ export class MessageBus {
         this.sendMessage({ ...message, correlationId });
     }
 
+    sendDirectDebitSuccessMessage(data: any, correlationId?: string) {
+        this.sendMessage({
+            type: 'direct-debit-submit-response',
+            status: 'success',
+            data,
+            correlationId,
+        });
+    }
+
+    sendDirectDebitFailureMessage(error: any, correlationId?: string) {
+        this.sendMessage({
+            type: 'direct-debit-submit-response',
+            status: 'failure',
+            error,
+            correlationId,
+        });
+    }
+
     sendUnhandledErrorMessage(errorObj: any) {
         try {
             const error = {
-                message: errorObj.message,
-                stack: errorObj.stack,
-                name: errorObj.name,
+                ...this.formatError(errorObj),
                 checkpoints: getCheckpoints(),
                 chargebeeWrapperVersion,
             };
@@ -489,7 +536,30 @@ export class MessageBus {
         data?: any;
         error?: any;
     }) {
-        window.parent.postMessage(JSON.stringify(message), '*');
+        const messageToSend = {
+            ...message,
+            error: this.formatError(message.error),
+        };
+
+        window.parent.postMessage(JSON.stringify(messageToSend), '*');
+    }
+
+    private isPlainError(error: any): error is Error {
+        return (
+            !!error && !!error.message && !error.checkpoints && !error.chargebeeWrapperVersion && !Array.isArray(error)
+        );
+    }
+
+    private formatError(error: any) {
+        if (this.isPlainError(error)) {
+            return {
+                message: error.message,
+                stack: error.stack,
+                name: error.name,
+            };
+        }
+
+        return error;
     }
 }
 

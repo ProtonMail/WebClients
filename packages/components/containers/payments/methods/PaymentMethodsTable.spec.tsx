@@ -1,6 +1,7 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
-import type { PayPalDetails, SavedCardDetails, SavedPaymentMethod } from '@proton/payments';
+import { formattedSavedSepaDetails } from '@proton/components/payments/client-extensions/useMethods';
+import type { PayPalDetails, PaymentMethodSepa, SavedCardDetails, SavedPaymentMethod } from '@proton/payments';
 import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments';
 
 import TableBody from '../../../components/table/TableBody';
@@ -102,6 +103,30 @@ describe('PaymentMethodsTable', () => {
         expect(container).toHaveTextContent('John Smith');
     });
 
+    it('should render SEPA method', () => {
+        const sepaDetails = {
+            AccountName: 'John Doe',
+            Country: 'DE',
+            Last4: '1234',
+        };
+
+        const sepaMethod: PaymentMethodSepa = {
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
+            Details: sepaDetails,
+            Order: 1,
+            ID: 'id-sepa',
+            Autopay: Autopay.ENABLE,
+        };
+
+        render(<PaymentMethodsTable methods={[sepaMethod]} loading={false} />);
+
+        expect(screen.getByTestId('sepa-payment-method')).toHaveTextContent('SEPA Direct Debit');
+
+        const sepaDetailsElement = screen.getByTestId('sepa-details');
+        expect(sepaDetailsElement).toHaveTextContent(/IBAN DE .* 1234/);
+        expect(sepaDetailsElement.textContent).toMatch(formattedSavedSepaDetails(sepaMethod));
+    });
+
     it('should display multiple payment methods', () => {
         const Details1: SavedCardDetails = {
             Name: 'John Smith',
@@ -177,5 +202,97 @@ describe('PaymentMethodsTable', () => {
             'id-visa',
             'id-mastercard',
         ]);
+    });
+
+    it('should display multiple payment methods including SEPA', () => {
+        const Details1: SavedCardDetails = {
+            Name: 'John Smith',
+            ExpMonth: '01',
+            ExpYear: '2034',
+            ZIP: '12345',
+            Country: 'US',
+            Last4: '1234',
+            Brand: 'Visa',
+        };
+
+        const cardPaymentMethod1: SavedPaymentMethod = {
+            Type: PAYMENT_METHOD_TYPES.CARD,
+            Details: Details1,
+            Order: 1,
+            ID: 'id-visa',
+            Autopay: Autopay.ENABLE,
+        };
+
+        const Details2: SavedCardDetails = {
+            Name: 'John Smith',
+            ExpMonth: '01',
+            ExpYear: '2038',
+            ZIP: '12345',
+            Country: 'US',
+            Last4: '4444',
+            Brand: 'Mastercard',
+        };
+
+        const cardPaymentMethod2: SavedPaymentMethod = {
+            Type: PAYMENT_METHOD_TYPES.CARD,
+            Details: Details2,
+            Order: 2,
+            ID: 'id-mastercard',
+            Autopay: Autopay.ENABLE,
+        };
+
+        const paypalMethod: SavedPaymentMethod = {
+            Type: PAYMENT_METHOD_TYPES.PAYPAL,
+            Details: {
+                BillingAgreementID: 'agreement-id-123',
+                PayerID: 'payer-id-123',
+                Payer: 'John Smith PayPal',
+            } as any,
+            Order: 0,
+            ID: 'id-paypal',
+        };
+
+        const sepaMethod: PaymentMethodSepa = {
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
+            Details: {
+                AccountName: 'John Doe',
+                Country: 'DE',
+                Last4: '5678',
+            },
+            Order: 3,
+            ID: 'id-sepa',
+            Autopay: Autopay.ENABLE,
+        };
+
+        const TableBodyMock: jest.Mock = TableBody as any;
+        TableBodyMock.mockReset();
+        TableBodyMock.mockImplementation(({ children }) => children);
+
+        const TableRowMock: jest.Mock = TableRow as any;
+        TableRowMock.mockReset();
+        TableRowMock.mockImplementation(({ cells }) => (
+            <>
+                <span>Table Row</span>
+                <div>{cells}</div>
+            </>
+        ));
+
+        render(
+            <PaymentMethodsTable
+                methods={[cardPaymentMethod1, cardPaymentMethod2, paypalMethod, sepaMethod]}
+                loading={false}
+            />
+        );
+
+        expect(screen.getByText('John Smith PayPal')).toBeInTheDocument();
+        // check that there are two elements card-details: one visa and one mastercard
+        const cardDetails = screen.getAllByTestId('card-details');
+        expect(cardDetails).toHaveLength(2);
+        expect(cardDetails[0]).toHaveTextContent('Visa');
+        expect(cardDetails[1]).toHaveTextContent('Mastercard');
+        expect(screen.getByTestId('sepa-payment-method')).toHaveTextContent('SEPA Direct Debit');
+        const sepaDetailsElement = screen.getByTestId('sepa-details');
+        expect(sepaDetailsElement).toHaveTextContent(/IBAN DE .* 5678/);
+        expect(sepaDetailsElement.textContent).toMatch(formattedSavedSepaDetails(sepaMethod));
     });
 });

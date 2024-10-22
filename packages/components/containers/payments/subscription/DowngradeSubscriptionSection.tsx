@@ -5,8 +5,9 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import useCancellationFlow from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationFlow';
 import useLoading from '@proton/hooks/useLoading';
+import { PLANS } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { BRAND_NAME, PLANS } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import { useCancelSubscriptionFlow } from './cancelSubscription/useCancelSubscriptionFlow';

@@ -39,6 +39,7 @@ interface Props {
     isOpen?: boolean;
     onOpen?: () => void;
     onClose?: () => void;
+    disabled?: boolean;
 }
 
 const CountriesDropdown = ({ onChange, selectedCountryCode, ...rest }: Props) => {

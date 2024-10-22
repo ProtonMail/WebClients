@@ -8,9 +8,10 @@ import { CircleLoader, InlineLinkButton } from '@proton/atoms';
 import type { ChallengeRef } from '@proton/components';
 import { Challenge, DropdownSizeUnit, Icon, Info, InputFieldTwo, Option, PasswordInputTwo } from '@proton/components';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import { PLANS } from '@proton/payments';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
-import { BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME, PLANS } from '@proton/shared/lib/constants';
+import { BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import {
     confirmPasswordValidator,

@@ -4,8 +4,9 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
+import { PLANS } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, DRIVE_SHORT_APP_NAME, MAIL_SHORT_APP_NAME, PLANS } from '@proton/shared/lib/constants';
+import { APPS, DRIVE_SHORT_APP_NAME, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';

@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useGetPaymentStatus } from '@proton/account/paymentStatus/hooks';
 import type {
     AvailablePaymentMethod,
+    BillingAddress,
     PaymentMethodFlows,
     PaymentMethodStatusExtended,
     PaymentMethodType,
@@ -14,15 +15,22 @@ import type {
     SavedPaymentMethodInternal,
 } from '@proton/payments';
 import {
+    type ADDON_NAMES,
     PAYMENT_METHOD_TYPES,
+    type PLANS,
     canUseChargebee,
     initializePaymentMethods,
     isExistingPaymentMethod,
     isSavedPaymentMethodExternal,
     isSavedPaymentMethodInternal,
 } from '@proton/payments';
-import type { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
-import type { Api, BillingPlatform, ChargebeeEnabled, ChargebeeUserExists } from '@proton/shared/lib/interfaces';
+import type {
+    Api,
+    BillingPlatform,
+    ChargebeeEnabled,
+    ChargebeeUserExists,
+    Currency,
+} from '@proton/shared/lib/interfaces';
 
 export type OnMethodChangedHandler = (method: AvailablePaymentMethod) => void;
 
@@ -36,9 +44,17 @@ export interface Props {
     isChargebeeEnabled: () => ChargebeeEnabled;
     paymentsApi: PaymentsApi;
     selectedPlanName: PLANS | ADDON_NAMES | undefined;
+    billingAddress?: BillingAddress;
     billingPlatform?: BillingPlatform;
     chargebeeUserExists?: ChargebeeUserExists;
     disableNewPaymentMethods?: boolean;
+    onCurrencyChange?: (
+        currency: Currency,
+        context: {
+            paymentMethodType: PlainPaymentMethodType;
+        }
+    ) => void;
+    enableSepa?: boolean;
 }
 
 interface Dependencies {
@@ -156,9 +172,12 @@ export const useMethods = (
         isChargebeeEnabled,
         paymentsApi,
         selectedPlanName,
+        billingAddress,
         billingPlatform,
         chargebeeUserExists,
         disableNewPaymentMethods,
+        onCurrencyChange,
+        enableSepa,
     }: Props,
     { api, isAuthenticated }: Dependencies
 ): MethodsHook => {
@@ -169,9 +188,11 @@ export const useMethods = (
         pendingFlow?: PaymentMethodFlows;
         pendingChargebee?: ChargebeeEnabled;
         pendingSelectedPlanName?: PLANS | ADDON_NAMES;
+        pendingBillingAddress?: BillingAddress;
         pendingBillingPlatform?: BillingPlatform;
         pendingChargebeeUserExists?: ChargebeeUserExists;
         pendingDisableNewPaymentMethods?: boolean;
+        pendingEnableSepa?: boolean;
     }>();
 
     const [loading, setLoading] = useState(true);
@@ -229,7 +250,9 @@ export const useMethods = (
                 selectedPlanName,
                 billingPlatform,
                 overrideChargebeeUserExists ?? chargebeeUserExists,
-                !!disableNewPaymentMethods
+                !!disableNewPaymentMethods,
+                billingAddress,
+                enableSepa
             );
 
             // Initialization might take some time, so we need to check if there is any pending data
@@ -244,9 +267,11 @@ export const useMethods = (
                     pendingFlow,
                     pendingChargebee,
                     pendingSelectedPlanName,
+                    pendingBillingAddress,
                     pendingBillingPlatform,
                     pendingChargebeeUserExists,
                     pendingDisableNewPaymentMethods,
+                    pendingEnableSepa,
                 } = pendingDataRef.current;
                 pendingDataRef.current = undefined;
 
@@ -269,6 +294,14 @@ export const useMethods = (
 
                 if (pendingSelectedPlanName) {
                     paymentMethodsRef.current.selectedPlanName = pendingSelectedPlanName;
+                }
+
+                if (pendingBillingAddress !== undefined) {
+                    paymentMethodsRef.current.billingAddress = pendingBillingAddress;
+                }
+
+                if (pendingEnableSepa !== undefined) {
+                    paymentMethodsRef.current.enableSepa = pendingEnableSepa;
                 }
 
                 if (pendingBillingPlatform !== undefined) {
@@ -306,6 +339,8 @@ export const useMethods = (
                 pendingFlow: flow,
                 pendingChargebee: isChargebeeEnabled(),
                 pendingSelectedPlanName: selectedPlanName,
+                pendingBillingAddress: billingAddress,
+                pendingEnableSepa: enableSepa,
                 pendingBillingPlatform: billingPlatform,
                 pendingChargebeeUserExists: chargebeeUserExists,
                 pendingDisableNewPaymentMethods: disableNewPaymentMethods,
@@ -318,6 +353,8 @@ export const useMethods = (
         paymentMethodsRef.current.flow = flow;
         paymentMethodsRef.current.chargebeeEnabled = isChargebeeEnabled();
         paymentMethodsRef.current.selectedPlanName = selectedPlanName;
+        paymentMethodsRef.current.billingAddress = billingAddress;
+        paymentMethodsRef.current.enableSepa = !!enableSepa;
         paymentMethodsRef.current.billingPlatform = billingPlatform;
         paymentMethodsRef.current.chargebeeUserExists = overrideChargebeeUserExists ?? chargebeeUserExists;
         paymentMethodsRef.current.disableNewPaymentMethods = !!disableNewPaymentMethods;
@@ -329,6 +366,7 @@ export const useMethods = (
         flow,
         isChargebeeEnabled(),
         selectedPlanName,
+        billingAddress,
         billingPlatform,
         overrideChargebeeUserExists,
         chargebeeUserExists,
@@ -398,6 +436,10 @@ export const useMethods = (
         if (method) {
             if (selectedMethod?.value !== method.value) {
                 onMethodChanged?.(method);
+
+                if (method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT) {
+                    onCurrencyChange?.('EUR', { paymentMethodType: method.type });
+                }
             }
             setSelectedMethod(method);
             return method;

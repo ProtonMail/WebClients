@@ -96,9 +96,9 @@ export const createPaymentTokenForCard = async (
     return formatToken(paymentTokenResult, PAYMENT_METHOD_TYPES.CARD, amountAndCurrency);
 };
 
-function convertPaymentIntentData(paymentIntentData: BackendPaymentIntent): PaymentIntent;
-function convertPaymentIntentData(paymentIntentData: BackendPaymentIntent | null): PaymentIntent | null;
-function convertPaymentIntentData(paymentIntentData: BackendPaymentIntent | null): PaymentIntent | null {
+export function convertPaymentIntentData(paymentIntentData: BackendPaymentIntent): PaymentIntent;
+export function convertPaymentIntentData(paymentIntentData: BackendPaymentIntent | null): PaymentIntent | null;
+export function convertPaymentIntentData(paymentIntentData: BackendPaymentIntent | null): PaymentIntent | null {
     if (!paymentIntentData) {
         return null;
     }
@@ -126,7 +126,7 @@ function convertPaymentIntentData(paymentIntentData: BackendPaymentIntent | null
 
 export const createPaymentTokenForExistingPayment = async (
     PaymentMethodID: ExistingPaymentMethod,
-    type: PAYMENT_METHOD_TYPES.CARD | PAYMENT_METHOD_TYPES.PAYPAL,
+    type: PAYMENT_METHOD_TYPES.CARD | PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
     api: Api,
     amountAndCurrency: AmountAndCurrency
 ): Promise<ChargeablePaymentToken | NonChargeablePaymentToken> => {
@@ -371,7 +371,8 @@ export const createPaymentTokenForExistingChargebeePayment = async (
         | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
         | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
         | PAYMENT_METHOD_TYPES.CARD
-        | PAYMENT_METHOD_TYPES.PAYPAL,
+        | PAYMENT_METHOD_TYPES.PAYPAL
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
     api: Api,
     handles: ChargebeeIframeHandles,
     events: ChargebeeIframeEvents,
@@ -416,7 +417,11 @@ export const createPaymentTokenForExistingChargebeePayment = async (
 
     const chargeable = Status === PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE;
 
-    let convertedType: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
+    let convertedType:
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
+
     if (type === PAYMENT_METHOD_TYPES.CARD) {
         convertedType = PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
     } else if (type === PAYMENT_METHOD_TYPES.PAYPAL) {

@@ -9,7 +9,8 @@ import useSpotlightShow from '@proton/components/components/spotlight/useSpotlig
 import { useOrganization, useSpotlightOnFeature, useSubscription, useWelcomeFlags } from '@proton/components/hooks';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { FeatureCode } from '@proton/features';
-import { DARK_WEB_MONITORING_NAME, PLANS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/payments';
+import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
 import spotlightImg from '@proton/styles/assets/img/illustrations/sentinel-shield-bolt-breach-alert.svg';
 
 interface Props {

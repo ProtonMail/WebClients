@@ -8,6 +8,7 @@ import {
     type CbIframeConfig,
     type ChargebeeCssVariable,
     type ChargebeeSavedCardAuthorizationSuccess,
+    type ChargebeeSubmitDirectDebitEventPayload,
     type ChargebeeSubmitEventPayload,
     type ChargebeeVerifySavedCardEventPayload,
     type PaymentIntent,
@@ -51,6 +52,7 @@ import { getSentryError } from '@proton/shared/lib/keys';
 
 import { type ThemeCode } from '../client-extensions';
 import { useChargebeeContext } from '../client-extensions/useChargebeeContext';
+import { type ChargebeeDirectDebitProcessorHook } from '../react-extensions/useSepaDirectDebit';
 
 /**
  * Small helper to identify the messages sent to iframe.
@@ -233,10 +235,11 @@ export function getChargebeeErrorMessage(error: any) {
 }
 
 type ChargebeeIframeProps = React.IframeHTMLAttributes<HTMLIFrameElement> & {
-    type: 'card' | 'paypal' | 'saved-card';
+    type: 'card' | 'paypal' | 'saved-card' | 'direct-debit';
     iframeHandles: CbIframeHandles;
     chargebeeCard?: ChargebeeCardProcessorHook;
     chargebeePaypal?: ChargebeePaypalProcessorHook;
+    directDebit?: ChargebeeDirectDebitProcessorHook;
     onInitialized?: () => void;
     isNarrow?: boolean;
     themeCode?: ThemeCode;
@@ -404,6 +407,31 @@ export function useChargebeeHandles(
 
             return iframeAction('update-fields', payload, iframeRef, targetOrigin, signal);
         },
+        initializeDirectDebit: async () => {
+            const chargebeeInstanceConfig = await getConfig();
+
+            const config: CbIframeConfig = {
+                paymentMethodType: 'direct-debit',
+                ...chargebeeInstanceConfig,
+            };
+
+            return iframeAction('set-configuration', config, iframeRef, targetOrigin, signal);
+        },
+        submitDirectDebit: async (payload: ChargebeeSubmitDirectDebitEventPayload) => {
+            try {
+                return await iframeAction('direct-debit-submit', payload, iframeRef, targetOrigin, signal, {
+                    timeout: 600000,
+                });
+            } catch (error) {
+                const errorMessage = getChargebeeErrorMessage(error);
+
+                createNotification({
+                    type: 'error',
+                    text: errorMessage,
+                });
+                throw error;
+            }
+        },
     };
 }
 
@@ -417,6 +445,7 @@ export type CbIframeHandles = {
 
 export function getIframeUrl() {
     return getApiSubdomainUrl('/payments/v5/forms/cards', window.location.origin);
+    // return new URL('https://localhost:5173');
 }
 
 export const useCbIframe = (): CbIframeHandles => {
@@ -582,7 +611,7 @@ const useThreeDsChallenge = (iframe = false) => {
     };
 };
 
-function getInitialHeight(type: 'card' | 'paypal' | 'saved-card'): number {
+function getInitialHeight(type: ChargebeeIframeProps['type']): number {
     const initialPaypalHeight = 52;
     const initialSavedCardHeight = 0;
     const initialCardHeight = 300;
@@ -601,6 +630,7 @@ export const ChargebeeIframe = ({
     iframeHandles,
     chargebeeCard,
     chargebeePaypal,
+    directDebit,
     onInitialized,
     isNarrow,
     themeCode,
@@ -662,6 +692,8 @@ export const ChargebeeIframe = ({
             chargebeePaypal.paypalIframeLoadedRef.current = true;
             abortRef.current = new AbortController();
             await chargebeePaypal.initialize(abortRef.current.signal);
+        } else if (type === 'direct-debit') {
+            await iframeHandles.handles.initializeDirectDebit();
         }
 
         if (!iframeRef.current) {
@@ -695,6 +727,7 @@ export const ChargebeeIframe = ({
             abortRef.current = null;
             chargebeeCard?.reset();
             chargebeePaypal?.reset();
+            directDebit?.reset();
         },
         []
     );

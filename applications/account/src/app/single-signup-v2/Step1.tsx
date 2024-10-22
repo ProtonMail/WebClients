@@ -23,7 +23,14 @@ import useHandler from '@proton/components/hooks/useHandler';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
-import { type BillingAddress, getFallbackCurrency, getPlansMap, isRegionalCurrency } from '@proton/payments';
+import {
+    type BillingAddress,
+    PLANS,
+    type PlanIDs,
+    getFallbackCurrency,
+    getPlansMap,
+    isRegionalCurrency,
+} from '@proton/payments';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import type { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';
@@ -34,7 +41,6 @@ import {
     CYCLE,
     DRIVE_APP_NAME,
     PASS_APP_NAME,
-    PLANS,
     SSO_PATHS,
     WALLET_APP_NAME,
 } from '@proton/shared/lib/constants';
@@ -47,15 +53,7 @@ import {
     switchPlan,
 } from '@proton/shared/lib/helpers/planIDs';
 import { getHas2023OfferCoupon, getPlanIDs, getPlanOffer } from '@proton/shared/lib/helpers/subscription';
-import type {
-    Api,
-    Currency,
-    Cycle,
-    PlanIDs,
-    SubscriptionPlan,
-    User,
-    VPNServersCountData,
-} from '@proton/shared/lib/interfaces';
+import type { Api, Currency, Cycle, SubscriptionPlan, User, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { useFlag } from '@proton/unleash';

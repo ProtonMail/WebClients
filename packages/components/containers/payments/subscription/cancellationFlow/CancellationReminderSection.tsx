@@ -5,13 +5,18 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { Button, ButtonLike } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
+import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useAppTitle from '@proton/components/hooks/useAppTitle';
 import useSubscription from '@proton/components/hooks/useSubscription';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
-import { PLANS, type APP_NAMES } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/payments';
+import { type APP_NAMES } from '@proton/shared/lib/constants';
+import useFlag from '@proton/unleash/useFlag';
 
+import { useSubscriptionModal } from '../SubscriptionModalProvider';
 import { useCancelSubscriptionFlow } from '../cancelSubscription/useCancelSubscriptionFlow';
+import { SUBSCRIPTION_STEPS } from '../constants';
 import CancelConfirmationModal from './CancelConfirmationModal';
 import CancelRedirectionModal from './CancelRedirectionModal';
 import ReminderSectionFeatures from './ReminderSectionFeatures';
@@ -20,10 +25,6 @@ import ReminderSectionTestimonials from './ReminderSectionTestimonials';
 import { getReminderPageConfig } from './reminderPageConfig';
 import useCancellationFlow from './useCancellationFlow';
 import useCancellationTelemetry from './useCancellationTelemetry';
-import { useSubscriptionModal } from '../SubscriptionModalProvider';
-import useSettingsLink from '@proton/components/components/link/useSettingsLink';
-import useFlag from '@proton/unleash/useFlag';
-import { SUBSCRIPTION_STEPS } from '../constants';
 
 interface Props {
     app: APP_NAMES;
