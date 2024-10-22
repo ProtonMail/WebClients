@@ -15,8 +15,8 @@ export const store = new Store<RootStore>({
     clearInvalidConfig: true,
     migrations: {
         '>=1.25.0': (s) => {
-            const distribution = s.get('update.distribution') as number;
-            if (!distribution) return;
+            const distribution = s.get('update.distribution');
+            if (!distribution || typeof distribution !== 'number') return;
             s.set('update', { distribution });
         },
     },
