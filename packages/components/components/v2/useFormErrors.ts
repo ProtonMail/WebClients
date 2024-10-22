@@ -47,4 +47,6 @@ const useFormErrors = () => {
     };
 };
 
+export type FormErrorsHook = ReturnType<typeof useFormErrors>;
+
 export default useFormErrors;

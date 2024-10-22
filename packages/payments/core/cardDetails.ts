@@ -2,8 +2,8 @@ import valid from 'card-validator';
 import creditCardType from 'credit-card-type';
 import { c } from 'ttag';
 
-import { isSavedCardDetails } from './helpers';
 import { type CreateCardDetailsBackend } from './interface';
+import { isSavedCardDetails } from './type-guards';
 
 const formatYear = (year: any) => {
     const pre = String(year).length === 2 ? '20' : '';

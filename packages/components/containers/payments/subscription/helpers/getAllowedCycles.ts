@@ -1,9 +1,9 @@
-import { isRegionalCurrency } from '@proton/payments';
+import { ADDON_NAMES, PLANS, type PlanIDs, isRegionalCurrency } from '@proton/payments';
 import type { FreeSubscription } from '@proton/shared/lib/constants';
-import { ADDON_NAMES, CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { CYCLE } from '@proton/shared/lib/constants';
 import { getPlanFromIds } from '@proton/shared/lib/helpers/planIDs';
 import { getPlan, isTrial } from '@proton/shared/lib/helpers/subscription';
-import type { Currency, PlanIDs, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
+import type { Currency, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
 
 import { notHigherThanAvailableOnBackend } from './payment';
 

@@ -1,4 +1,4 @@
-import { PLANS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/payments';
 import type { Subscription } from '@proton/shared/lib/interfaces';
 import format from '@proton/shared/lib/subscription/format';
 

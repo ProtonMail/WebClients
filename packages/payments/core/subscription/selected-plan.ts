@@ -1,4 +1,4 @@
-import { type ADDON_NAMES, CYCLE, DEFAULT_CURRENCY, type FreeSubscription, PLANS } from '@proton/shared/lib/constants';
+import { CYCLE, DEFAULT_CURRENCY, type FreeSubscription } from '@proton/shared/lib/constants';
 import {
     type AddonGuard,
     isDomainAddon,
@@ -8,10 +8,12 @@ import {
 } from '@proton/shared/lib/helpers/addons';
 import { getPlanFromIds } from '@proton/shared/lib/helpers/planIDs';
 import { getIsB2BAudienceFromPlan, getMaxValue, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
-import type { Currency, MaxKeys, Plan, PlanIDs, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
+import type { Currency, Plan, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { type ADDON_NAMES, PLANS } from '../constants';
+import type { MaxKeys, PlanIDs } from '../interface';
 import { getScribeAddonNameByPlan } from './helpers';
 import { getPlansMap } from './plans-map-wrapper';
 

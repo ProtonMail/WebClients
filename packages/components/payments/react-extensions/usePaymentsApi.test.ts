@@ -1,8 +1,9 @@
 import { renderHook } from '@testing-library/react-hooks';
 import { addMonths } from 'date-fns';
 
+import { PLANS } from '@proton/payments';
 import type { CheckSubscriptionData } from '@proton/shared/lib/api/payments';
-import { APPS, PLANS } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import type { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import {

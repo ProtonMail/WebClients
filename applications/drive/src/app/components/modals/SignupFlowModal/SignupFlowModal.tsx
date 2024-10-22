@@ -16,10 +16,11 @@ import {
     useApi,
     useModalTwoStatic,
 } from '@proton/components';
+import { PLANS } from '@proton/payments';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryCheckEmailAvailability } from '@proton/shared/lib/api/user';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { APPS, DRIVE_APP_NAME, PLANS, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, DRIVE_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { DRIVE_SIGNIN } from '@proton/shared/lib/drive/urls';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';

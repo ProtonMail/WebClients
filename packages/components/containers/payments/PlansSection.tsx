@@ -14,9 +14,10 @@ import { useAutomaticCurrency } from '@proton/components/payments/client-extensi
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { getPlansMap } from '@proton/payments';
+import { type PlanIDs, isStringPLAN } from '@proton/payments';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, DEFAULT_CYCLE, FREE_SUBSCRIPTION, isStringPLAN } from '@proton/shared/lib/constants';
+import { APPS, DEFAULT_CYCLE, FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getPlanFromCheckout, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import {
@@ -25,7 +26,7 @@ import {
     getValidAudience,
     getValidCycle,
 } from '@proton/shared/lib/helpers/subscription';
-import type { Currency, Cycle, PlanIDs } from '@proton/shared/lib/interfaces';
+import type { Currency, Cycle } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 

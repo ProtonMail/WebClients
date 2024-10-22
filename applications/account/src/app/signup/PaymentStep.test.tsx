@@ -3,9 +3,10 @@ import { act, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import * as paymentsDataUtilsModule from '@proton/components/payments/client-extensions/data-utils';
+import { PLAN_TYPES } from '@proton/payments';
 import type { PaymentMethodStatus } from '@proton/payments';
-import { DEFAULT_TAX_BILLING_ADDRESS, PAYMENT_TOKEN_STATUS } from '@proton/payments';
-import { CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { DEFAULT_TAX_BILLING_ADDRESS, PAYMENT_TOKEN_STATUS, PLANS } from '@proton/payments';
+import { CYCLE } from '@proton/shared/lib/constants';
 import {
     addApiMock,
     applyHOCs,

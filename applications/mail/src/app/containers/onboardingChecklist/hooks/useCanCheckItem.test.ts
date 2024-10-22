@@ -2,7 +2,7 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useSubscription, useUserSettings } from '@proton/components/hooks';
-import { PLANS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/payments';
 
 import useCanCheckItem from './useCanCheckItem';
 

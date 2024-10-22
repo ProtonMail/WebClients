@@ -1,27 +1,25 @@
 import { addWeeks, fromUnixTime, isBefore } from 'date-fns';
 
-import { isRegionalCurrency, isSplittedUser, onSessionMigrationChargebeeStatus } from '@proton/payments';
+import {
+    ADDON_NAMES,
+    type MaxKeys,
+    PLANS,
+    PLAN_SERVICES,
+    PLAN_TYPES,
+    type PlanIDs,
+    isRegionalCurrency,
+    isSplittedUser,
+    onSessionMigrationChargebeeStatus,
+} from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getSupportedAddons, isIpAddon, isMemberAddon, isScribeAddon } from '@proton/shared/lib/helpers/addons';
 
 import type { FreeSubscription } from '../constants';
-import {
-    ADDON_NAMES,
-    APPS,
-    COUPON_CODES,
-    CYCLE,
-    IPS_INCLUDED_IN_PLAN,
-    PLANS,
-    PLAN_SERVICES,
-    PLAN_TYPES,
-    isFreeSubscription,
-} from '../constants';
+import { APPS, COUPON_CODES, CYCLE, isFreeSubscription } from '../constants';
 import type {
     Currency,
-    MaxKeys,
     Organization,
     Plan,
-    PlanIDs,
     PlansMap,
     Pricing,
     Subscription,
@@ -741,6 +739,12 @@ export const getPlanOffer = (plan: Plan) => {
     }
     return result;
 };
+
+const IPS_INCLUDED_IN_PLAN: Partial<Record<PLANS, number>> = {
+    [PLANS.VPN_BUSINESS]: 1,
+    [PLANS.BUNDLE_PRO]: 0,
+    [PLANS.BUNDLE_PRO_2024]: 0,
+} as const;
 
 /**
  * Currently there is no convenient way to get the number of IPs for a VPN subscription.

@@ -1,6 +1,6 @@
+import type { PlanIDs } from '@proton/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
 import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
-import type { PlanIDs } from '@proton/shared/lib/interfaces';
 import { getSubscriptionMock } from '@proton/testing/data';
 
 import { isSubscriptionUnchanged } from './helper';

@@ -1,4 +1,5 @@
-import { ORGANIZATION_STATE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_TYPES } from '@proton/payments';
+import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import type {
     FreePlanDefault,
     OrganizationWithSettings,

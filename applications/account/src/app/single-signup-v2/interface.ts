@@ -5,9 +5,9 @@ import type { LocationDescriptor } from 'history';
 import type { AuthSession } from '@proton/components/containers/login/interface';
 import type { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
 import type { BillingAddress, PaymentMethodStatusExtended } from '@proton/payments';
+import { type PLANS, type PlanIDs } from '@proton/payments';
 import type { ExtensionApp } from '@proton/shared/lib/browser/extension';
 import type { APP_NAMES, CYCLE } from '@proton/shared/lib/constants';
-import type { PLANS } from '@proton/shared/lib/constants';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import type {
     Audience,
@@ -15,7 +15,6 @@ import type {
     FreePlanDefault,
     HumanVerificationMethodType,
     Plan,
-    PlanIDs,
     PlansMap,
     SubscriptionPlan,
     VPNServersCountData,
@@ -26,11 +25,12 @@ import type {
     ReferralData,
     SessionData,
     SignupActionDoneResponse,
+    SignupCacheResult,
     SignupInviteParameters,
+    SignupType,
     SubscriptionData,
     UserCacheResult,
 } from '../signup/interfaces';
-import type { SignupCacheResult, SignupType } from '../signup/interfaces';
 import type { getSignupSearchParams } from '../signup/searchParams';
 import type { PlanCard } from './PlanCardSelector';
 import type { SubscriptionDataCycleMapping } from './helper';

@@ -23,6 +23,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useOrganization } from '@proton/components/hooks/useOrganization';
 import { useLoading } from '@proton/hooks';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { deleteToken, getTokens, isTokenEligible } from '@proton/shared/lib/api/smtptokens';
 import {
     ADDRESS_TYPE,
@@ -30,8 +31,6 @@ import {
     BRAND_NAME,
     MAIL_APP_NAME,
     MAIL_UPSELL_PATHS,
-    PLANS,
-    PLAN_NAMES,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
 import { hasSMTPSubmission } from '@proton/shared/lib/helpers/organization';

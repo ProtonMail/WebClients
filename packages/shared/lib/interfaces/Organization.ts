@@ -1,4 +1,5 @@
-import type { ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING, PLANS } from '@proton/shared/lib/constants';
+import { type PLANS } from '@proton/payments';
+import type { ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
 
 export interface Organization {
     ID: string;

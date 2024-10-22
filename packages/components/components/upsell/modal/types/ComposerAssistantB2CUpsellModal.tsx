@@ -7,12 +7,12 @@ import Price from '@proton/components/components/price/Price';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
 import { usePreferredPlansMap } from '@proton/components/hooks';
+import { PLANS } from '@proton/payments';
 import {
     APP_UPSELL_REF_PATH,
     BRAND_NAME,
     CYCLE,
     MAIL_UPSELL_PATHS,
-    PLANS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';

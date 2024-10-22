@@ -1,4 +1,4 @@
-import { PLANS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/payments';
 import type { Plan } from '@proton/shared/lib/interfaces';
 
 import { plans, subscriptionBundlePro } from '../__mocks__/data';

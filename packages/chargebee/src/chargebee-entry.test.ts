@@ -1,9 +1,10 @@
 import { fireEvent } from '@testing-library/dom';
 
 import type { BinData } from '../lib';
+import type { AuthorizedPaymentIntent, DirectDebitCustomer, PaymentIntent } from '../lib/types';
 import { resetChargebee } from './chargebee';
-import { initialize } from './chargebee-entry';
-import type { GetHeightEvent, SetConfigurationEvent } from './message-bus';
+import { formatCustomer, initialize } from './chargebee-entry';
+import type { DirectDebitSubmitEvent, GetHeightEvent, SetConfigurationEvent } from './message-bus';
 import { getMessageBus } from './message-bus';
 
 jest.mock('./ui-utils');
@@ -39,9 +40,16 @@ const createComponentMock = jest.fn().mockReturnValue({
     authorizeWith3ds: authorizeWith3dsMock,
 });
 
+const directDebitHandlerMock = {
+    setPaymentIntent: jest.fn(),
+    handlePayment: jest.fn(),
+};
+
+const loadMock = jest.fn().mockResolvedValue(directDebitHandlerMock);
+
 const chargebeeInitMock = jest.fn().mockReturnValue({
     chargebeeMock: true,
-    load: jest.fn(),
+    load: loadMock,
     createComponent: createComponentMock,
 });
 
@@ -325,15 +333,17 @@ describe('Credit card', () => {
         thenCallback(authorizedPaymentIntent);
 
         const message = await receiveMessage('chargebee-submit-response');
-        expect(message).toEqual({
-            type: 'chargebee-submit-response',
-            status: 'success',
-            correlationId: 'id-3', // the same as the original submit message
-            data: {
-                authorized: true,
-                authorizedPaymentIntent,
-            },
-        });
+        expect(message).toEqual(
+            expect.objectContaining({
+                type: 'chargebee-submit-response',
+                status: 'success',
+                correlationId: 'id-3',
+                data: {
+                    authorized: true,
+                    authorizedPaymentIntent,
+                },
+            })
+        );
     });
 
     it('should send submission error', async () => {
@@ -351,18 +361,279 @@ describe('Credit card', () => {
         });
 
         const { catchCallback } = extractAuthorizeWith3dsCallbacks();
-        const error = {
-            error: 'some error',
-            displayMessage: 'some display message',
-        };
+        const error = new Error('some error');
         catchCallback(error);
 
         const message = await receiveMessage('chargebee-submit-response');
-        expect(message).toEqual({
+        expect(message).toMatchObject({
             type: 'chargebee-submit-response',
             status: 'failure',
-            correlationId: 'id-3', // the same as the original submit message
-            error,
+            correlationId: 'id-3',
+            error: {
+                message: error.message,
+                stack: error.stack,
+                name: error.name,
+            },
         });
+    });
+});
+
+describe('formatCustomer', () => {
+    const baseCustomer: DirectDebitCustomer = {
+        email: 'test@example.com',
+        company: 'Test Company',
+        firstName: 'John',
+        lastName: 'Doe',
+        customerNameType: 'individual',
+        countryCode: 'US',
+        addressLine1: '123 Test St',
+    };
+
+    it('should format customer with individual name type', () => {
+        const customer: DirectDebitCustomer = {
+            ...baseCustomer,
+            customerNameType: 'individual',
+        };
+
+        const formattedCustomer = formatCustomer(customer);
+
+        expect(formattedCustomer).toEqual({
+            email: 'test@example.com',
+            firstName: 'John',
+            lastName: 'Doe',
+            billingAddress: {
+                countryCode: 'US',
+                addressLine1: '123 Test St',
+            },
+        });
+    });
+
+    it('should format customer with company name type', () => {
+        const customer: DirectDebitCustomer = {
+            ...baseCustomer,
+            customerNameType: 'company',
+        };
+
+        const formattedCustomer = formatCustomer(customer);
+
+        expect(formattedCustomer).toEqual({
+            email: 'test@example.com',
+            company: 'Test Company',
+            billingAddress: {
+                countryCode: 'US',
+                addressLine1: '123 Test St',
+            },
+        });
+    });
+
+    it('should handle missing optional fields', () => {
+        const customer: DirectDebitCustomer = {
+            ...baseCustomer,
+            customerNameType: 'individual',
+            countryCode: '',
+            addressLine1: '',
+        };
+
+        const formattedCustomer = formatCustomer(customer);
+
+        expect(formattedCustomer).toEqual({
+            email: 'test@example.com',
+            firstName: 'John',
+            lastName: 'Doe',
+            billingAddress: {
+                countryCode: null,
+                addressLine1: null,
+            },
+        });
+    });
+
+    it('should handle all optional fields being present', () => {
+        const customer: DirectDebitCustomer = {
+            ...baseCustomer,
+            customerNameType: 'company',
+            countryCode: 'GB',
+            addressLine1: '456 Test Ave',
+        };
+
+        const formattedCustomer = formatCustomer(customer);
+
+        expect(formattedCustomer).toEqual({
+            email: 'test@example.com',
+            company: 'Test Company',
+            billingAddress: {
+                countryCode: 'GB',
+                addressLine1: '456 Test Ave',
+            },
+        });
+    });
+});
+
+describe('Direct Debit', () => {
+    beforeEach(async () => {
+        // Set up the configuration for direct debit
+        const directDebitConfig = {
+            ...defaultSetConfigurationEvent,
+            paymentMethodType: 'direct-debit' as const,
+        };
+        await initChargebee(directDebitConfig);
+    });
+
+    it('should initialize direct debit handler', async () => {
+        expect(loadMock).toHaveBeenCalledWith('direct_debit');
+    });
+
+    it('should handle direct debit submission', async () => {
+        const paymentIntent: PaymentIntent = {
+            id: 'pi_123',
+            status: 'inited',
+            amount: 1000,
+            currency_code: 'USD',
+            gateway_account_id: 'ga_123',
+            gateway: 'stripe',
+            customer_id: 'cust_123',
+            payment_method_type: 'card',
+            expires_at: 1234567890,
+            created_at: 1234567890,
+            modified_at: 1234567890,
+            updated_at: 1234567890,
+            resource_version: 1234567890,
+            object: 'payment_intent',
+        };
+
+        const customer: DirectDebitCustomer = {
+            email: 'test@example.com',
+            company: 'Test Company',
+            firstName: 'John',
+            lastName: 'Doe',
+            customerNameType: 'individual',
+            countryCode: 'US',
+            addressLine1: '123 Test St',
+        };
+
+        const bankAccount = {
+            iban: 'DE89370400440532013000',
+        };
+
+        const directDebitSubmitEvent: DirectDebitSubmitEvent = {
+            type: 'direct-debit-submit',
+            correlationId: 'dd-123',
+            paymentIntent,
+            customer,
+            bankAccount,
+        };
+
+        sendEventToChargebee(directDebitSubmitEvent);
+
+        // Wait for the message bus to process the event
+        await new Promise((resolve) => setTimeout(resolve, 0));
+
+        expect(directDebitHandlerMock.setPaymentIntent).toHaveBeenCalledWith(paymentIntent);
+        expect(directDebitHandlerMock.handlePayment).toHaveBeenCalledWith(
+            {
+                bankAccount,
+                customer: {
+                    email: 'test@example.com',
+                    firstName: 'John',
+                    lastName: 'Doe',
+                    billingAddress: {
+                        countryCode: 'US',
+                        addressLine1: '123 Test St',
+                    },
+                },
+            },
+            expect.objectContaining({
+                challenge: expect.any(Function),
+                success: expect.any(Function),
+                error: expect.any(Function),
+            })
+        );
+    });
+
+    it('should handle direct debit success', async () => {
+        const directDebitSubmitEvent: DirectDebitSubmitEvent = {
+            type: 'direct-debit-submit',
+            correlationId: 'dd-123',
+            paymentIntent: {} as PaymentIntent,
+            customer: {} as DirectDebitCustomer,
+            bankAccount: { iban: 'DE89370400440532013000' },
+        };
+
+        sendEventToChargebee(directDebitSubmitEvent);
+
+        // Wait for the message bus to process the event
+        await new Promise((resolve) => setTimeout(resolve, 0));
+
+        const successCallback = directDebitHandlerMock.handlePayment.mock.calls[0][1].success;
+        const authorizedPaymentIntent: AuthorizedPaymentIntent = {
+            id: 'pi_123',
+            status: 'authorized',
+            amount: 1000,
+            currency_code: 'USD',
+            gateway_account_id: 'ga_123',
+            gateway: 'stripe',
+            customer_id: 'cust_123',
+            payment_method_type: 'card',
+            expires_at: 1234567890,
+            created_at: 1234567890,
+            modified_at: 1234567890,
+            updated_at: 1234567890,
+            resource_version: 1234567890,
+            object: 'payment_intent',
+            active_payment_attempt: {
+                id: 'pa_123',
+                status: 'authorized',
+                payment_method_type: 'card',
+                id_at_gateway: 'ch_123',
+                created_at: 1234567890,
+                modified_at: 1234567890,
+                object: 'payment_attempt',
+            },
+        };
+
+        successCallback(authorizedPaymentIntent);
+
+        const message = await receiveMessage('direct-debit-submit-response');
+        expect(message).toEqual(
+            expect.objectContaining({
+                type: 'direct-debit-submit-response',
+                status: 'success',
+                correlationId: 'dd-123',
+                data: authorizedPaymentIntent,
+            })
+        );
+    });
+
+    it('should handle direct debit error', async () => {
+        const directDebitSubmitEvent: DirectDebitSubmitEvent = {
+            type: 'direct-debit-submit',
+            correlationId: 'dd-123',
+            paymentIntent: {} as PaymentIntent,
+            customer: {} as DirectDebitCustomer,
+            bankAccount: { iban: 'DE89370400440532013000' },
+        };
+
+        sendEventToChargebee(directDebitSubmitEvent);
+
+        // Wait for the message bus to process the event
+        await new Promise((resolve) => setTimeout(resolve, 0));
+
+        const errorCallback = directDebitHandlerMock.handlePayment.mock.calls[0][1].error;
+        const error = new Error('Direct debit payment failed');
+
+        errorCallback(error);
+
+        const message = await receiveMessage('direct-debit-submit-response');
+        expect(message).toEqual(
+            expect.objectContaining({
+                type: 'direct-debit-submit-response',
+                status: 'failure',
+                correlationId: 'dd-123',
+                error: expect.objectContaining({
+                    message: 'Direct debit payment failed',
+                    stack: error.stack,
+                    name: error.name,
+                }),
+            })
+        );
     });
 });

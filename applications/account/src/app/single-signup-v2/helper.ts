@@ -3,10 +3,11 @@ import { c } from 'ttag';
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
 import { getMaybeForcePaymentsVersion } from '@proton/components/payments/client-extensions';
 import type { BillingAddress, PAYMENT_METHOD_TYPES, PaymentsApi, SavedPaymentMethod } from '@proton/payments';
+import { type ADDON_NAMES, PLANS, type PlanIDs } from '@proton/payments';
 import { getOrganization } from '@proton/shared/lib/api/organization';
 import { getSubscription, queryPaymentMethods } from '@proton/shared/lib/api/payments';
-import type { ADDON_NAMES, APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, COUPON_CODES, CYCLE, DEFAULT_CURRENCY, FREE_SUBSCRIPTION, PLANS } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, COUPON_CODES, CYCLE, DEFAULT_CURRENCY, FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
 import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getPlanFromPlanIDs, getPricingFromPlanIDs, hasPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
@@ -41,7 +42,7 @@ import {
 } from '@proton/shared/lib/user/helpers';
 
 import { getSubscriptionPrices } from '../signup/helper';
-import type { PlanIDs, SessionData, SignupCacheResult, SubscriptionData } from '../signup/interfaces';
+import type { SessionData, SignupCacheResult, SubscriptionData } from '../signup/interfaces';
 import type { PlanCard } from './PlanCardSelector';
 import type { Options, PlanParameters, SignupConfiguration, SignupParameters2, Upsell } from './interface';
 import { UpsellTypes } from './interface';

@@ -1,6 +1,6 @@
+import { ADDON_NAMES, PLANS } from '@proton/payments';
 import { getLongTestPlans } from '@proton/testing/data';
 
-import { ADDON_NAMES, PLANS } from '../../lib/constants';
 import {
     clearPlanIDs,
     hasPlanIDs,

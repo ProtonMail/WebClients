@@ -1,6 +1,7 @@
 import { addDays, fromUnixTime, isBefore } from 'date-fns';
 
-import { APPS, PLANS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/payments';
+import { APPS } from '@proton/shared/lib/constants';
 import { getPlan, isManagedExternally, isTrial } from '@proton/shared/lib/helpers/subscription';
 import type { ProtonConfig, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 

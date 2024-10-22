@@ -8,7 +8,8 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import { getShortPlan } from '@proton/components/containers/payments/features/plan';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { BRAND_NAME, CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { PLANS, type PlanIDs } from '@proton/payments';
+import { BRAND_NAME, CYCLE } from '@proton/shared/lib/constants';
 import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
 import { getCheckResultFromSubscription, getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { getPlanFromCheckout, getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
@@ -17,7 +18,6 @@ import type {
     Currency,
     FreePlanDefault,
     Plan,
-    PlanIDs,
     PlansMap,
     Subscription,
     SubscriptionPlan,

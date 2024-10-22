@@ -2,6 +2,7 @@ import type {
     BinData,
     CardFormRenderMode,
     ChargebeeSavedCardAuthorizationSuccess,
+    ChargebeeSubmitDirectDebitEventPayload,
     ChargebeeSubmitEventPayload,
     ChargebeeSubmitEventResponse,
     ChargebeeVerifySavedCardEventPayload,
@@ -19,12 +20,14 @@ import type { CheckSubscriptionData, PaymentsVersion } from '@proton/shared/lib/
 import type { Currency, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 import type {
+    ADDON_NAMES,
     Autopay,
     INVOICE_STATE,
     INVOICE_TYPE,
     MethodStorage,
     PAYMENT_METHOD_TYPES,
     PAYMENT_TOKEN_STATUS,
+    PLANS,
 } from './constants';
 
 export interface CreateCardDetailsBackend {
@@ -101,7 +104,8 @@ export type ChargeablePaymentParameters = Partial<V5PaymentToken> &
             | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
             | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
             | PAYMENT_METHOD_TYPES.BITCOIN
-            | PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN;
+            | PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN
+            | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
         chargeable: true;
     };
 
@@ -112,7 +116,8 @@ export type ChargeablePaymentToken = V5PaymentToken &
             | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT
             | PAYMENT_METHOD_TYPES.CARD
             | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
-            | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
+            | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
+            | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
         chargeable: true;
     };
 
@@ -194,7 +199,22 @@ export type PaymentMethodPaypalExternal = {
     External: MethodStorage.EXTERNAL;
 } & PaymentMethodPaypal;
 
-export type SavedPaymentMethod = PaymentMethodPaypal | PaymentMethodCardDetails;
+export type SepaDetails = {
+    AccountName: string;
+    Country: string;
+    Last4: string;
+};
+
+export type PaymentMethodSepa = {
+    ID: string;
+    Type: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
+    Order: number;
+    Autopay: Autopay;
+    External?: MethodStorage;
+    Details: SepaDetails;
+};
+
+export type SavedPaymentMethod = PaymentMethodPaypal | PaymentMethodCardDetails | PaymentMethodSepa;
 export type SavedPaymentMethodInternal = PaymentMethodPaypalInternal | PaymentMethodCardDetailsInternal;
 export type SavedPaymentMethodExternal = PaymentMethodPaypalExternal | PaymentMethodCardDetailsExternal;
 
@@ -236,7 +256,10 @@ export type V5PaymentToken = {
 } & V5Payments;
 
 export type ChargeableV5PaymentToken = ChargeablePaymentToken & {
-    type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
+    type:
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
 };
 
 export type NonChargeableV5PaymentToken = Omit<ChargeableV5PaymentToken, 'chargeable'> & {
@@ -256,7 +279,8 @@ export type ChargeableV5PaymentParameters = ChargeablePaymentParameters & {
     type:
         | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
         | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
-        | PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN;
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
 };
 
 export type ChargebeeFetchedPaymentToken = (ChargeableV5PaymentToken | NonChargeableV5PaymentToken) &
@@ -334,6 +358,8 @@ export type ChargebeeIframeHandles = {
     validateCardForm: () => Promise<MessageBusResponse<FormValidationErrors>>;
     changeRenderMode: (renderMode: CardFormRenderMode) => Promise<any>;
     updateFields: () => Promise<any>;
+    initializeDirectDebit: () => Promise<any>;
+    submitDirectDebit: (payload: ChargebeeSubmitDirectDebitEventPayload) => Promise<MessageBusResponseSuccess<unknown>>;
 };
 
 export type ChargebeeIframeEvents = {
@@ -386,3 +412,19 @@ export interface InvoiceResponse {
     Invoices: Invoice[];
     Total: number;
 }
+
+type Quantity = number;
+
+export type PlanIDs = Partial<{
+    [planName in PLANS | ADDON_NAMES]: Quantity;
+}>;
+
+export type MaxKeys =
+    | 'MaxDomains'
+    | 'MaxAddresses'
+    | 'MaxSpace'
+    | 'MaxMembers'
+    | 'MaxVPN'
+    | 'MaxTier'
+    | 'MaxIPs' // synthetic key, it does't exist in the API
+    | 'MaxAI'; // synthetic key, it does't exist in the API

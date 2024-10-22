@@ -8,11 +8,11 @@ import Price from '@proton/components/components/price/Price';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputField from '@proton/components/components/v2/field/InputField';
 import { SelectedPlan } from '@proton/payments';
+import { type ADDON_NAMES, type PlanIDs } from '@proton/payments';
 import type { CYCLE } from '@proton/shared/lib/constants';
-import { type ADDON_NAMES } from '@proton/shared/lib/constants';
 import { getSupportedAddons, isMemberAddon } from '@proton/shared/lib/helpers/addons';
 import { type PricingMode, type TotalPricings, getTotals } from '@proton/shared/lib/helpers/planIDs';
-import type { Currency, PlanIDs, PlansMap, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import type { Currency, PlansMap, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
