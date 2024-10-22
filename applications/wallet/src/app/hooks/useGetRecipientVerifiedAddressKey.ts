@@ -20,27 +20,28 @@ const getVerifiedAddressKey = async (
     });
 
     // If btc data is provided, we keep only the key that verify the signature
-    const keys = btc
-        ? await Promise.allSettled(
-              keysAbleToVerify.map(async (addressKey) => {
-                  const pubkey = await CryptoProxy.importPublicKey({ armoredKey: addressKey.armoredKey });
-                  const isVerified = await verifySignedData(
-                      btc.btcAddress,
-                      btc.btcAddressSignature,
-                      'wallet.bitcoin-address',
-                      [pubkey]
-                  );
+    if (btc) {
+        const keys = await Promise.allSettled(
+            keysAbleToVerify.map(async (addressKey) => {
+                const pubkey = await CryptoProxy.importPublicKey({ armoredKey: addressKey.armoredKey });
+                const isVerified = await verifySignedData(
+                    btc.btcAddress,
+                    btc.btcAddressSignature,
+                    'wallet.bitcoin-address',
+                    [pubkey]
+                );
 
-                  return isVerified ? pubkey : null;
-              })
-          )
-        : keysAbleToVerify;
+                return isVerified ? pubkey : null;
+            })
+        );
 
-    const [firstAddressKey] = keys
-        .map((result) => ('value' in result ? result.value : undefined))
-        .filter((key): key is PublicKeyReference => !!key);
+        return keys
+            .map((result) => ('value' in result ? result.value : undefined))
+            .filter((key): key is PublicKeyReference => !!key)
+            .at(0);
+    }
 
-    return firstAddressKey;
+    return keysAbleToVerify.at(0)?.publicKey;
 };
 
 export const useGetRecipientVerifiedAddressKey = () => {

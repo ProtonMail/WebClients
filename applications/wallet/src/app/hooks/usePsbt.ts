@@ -97,15 +97,19 @@ export const usePsbt = ({ txBuilderHelpers }: { txBuilderHelpers: TxBuilderHelpe
                     blockchainClient,
                     network,
                     userKeys,
+
                     walletsChainData,
                     apiWalletData,
                     apiAccount,
+
                     exchangeRateId,
                     noteToSelf,
+
                     senderAddress,
                     message,
                     recipients,
                     isAnonymousSend,
+
                     onBroadcastedTx: (txId) => {
                         void syncSingleWalletAccount({
                             walletId: apiAccount.WalletID,
