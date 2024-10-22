@@ -30,13 +30,15 @@ export async function initializeSentry() {
     }
 
     const appID = await getAppID();
-    const environment = new URL(getAppURL().mail).hostname.replace(/^mail./i, "");
+    const mailURL = new URL(getAppURL().mail);
+    const environment = mailURL.hostname.replace(/^mail./i, "");
     const release = `${pkg.name}@${pkg.version}+${app.isPackaged ? "packaged" : "unpackaged"}`;
+    const dsn = process.env.DESKTOP_SENTRY_DSN.replace("sentry", `${mailURL.host}/api/core/v4/reports/sentry`);
 
     init({
         debug: !app.isPackaged,
         enabled: true,
-        dsn: process.env.DESKTOP_SENTRY_DSN,
+        dsn,
         getSessions: () => [appSession(), updateSession()],
         maxBreadcrumbs: 100,
         attachStacktrace: true,
