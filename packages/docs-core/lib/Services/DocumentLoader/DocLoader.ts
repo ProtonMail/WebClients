@@ -24,6 +24,7 @@ import type { LoadCommit } from '../../UseCase/LoadCommit'
 import type { ExportAndDownload } from '../../UseCase/ExportAndDownload'
 import type { DocsApi } from '../../Api/DocsApi'
 import type { MetricService } from '../Metrics/MetricService'
+import type { UnleashClient } from '@proton/unleash'
 
 export type StatusObserver = {
   onSuccess: (orchestrator: EditorOrchestratorInterface) => void
@@ -55,6 +56,7 @@ export class DocLoader implements DocLoaderInterface {
     private getDocumentMeta: GetDocumentMeta,
     private getNode: GetNode,
     private exportAndDownload: ExportAndDownload,
+    private unleashClient: UnleashClient,
     private eventBus: InternalEventBusInterface,
     private logger: LoggerInterface,
   ) {}
@@ -68,7 +70,7 @@ export class DocLoader implements DocLoaderInterface {
       throw new Error('[DocLoader] docController already initialized')
     }
 
-    this.docController = new DocController(
+    const controller = new DocController(
       nodeMeta,
       this.driveCompat,
       this.squashDoc,
@@ -85,6 +87,8 @@ export class DocLoader implements DocLoaderInterface {
       this.logger,
     )
 
+    this.docController = controller
+
     const result = await this.docController.initialize()
 
     if (result.isFailed()) {
@@ -95,6 +99,8 @@ export class DocLoader implements DocLoaderInterface {
     }
 
     const { entitlements } = result.getValue()
+
+    const getLatestDocumentName = () => controller.getSureDocument().name
 
     this.commentsController = new CommentController(
       nodeMeta,
@@ -107,6 +113,8 @@ export class DocLoader implements DocLoaderInterface {
       this.createComment,
       this.loadThreads,
       this.handleRealtimeCommentsEvent,
+      getLatestDocumentName,
+      this.unleashClient,
       this.eventBus,
       this.logger,
     )

@@ -31,6 +31,7 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
     keys: DocumentKeys
     commentsState: LocalCommentsState
     type: CommentThreadType
+    decryptedDocumentName: string | null
     markID?: string
     createMarkNode?: boolean
   }): Promise<Result<CommentThreadInterface>> {
@@ -103,6 +104,7 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
       authorEmail: dto.keys.userOwnAddress,
       type: dto.type,
       commentType,
+      decryptedDocumentName: dto.decryptedDocumentName,
     })
 
     if (result.isFailed()) {
