@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { VerticalStep, VerticalSteps } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
-import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 export const ReferralHowItWorks = () => {

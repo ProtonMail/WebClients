@@ -3,6 +3,7 @@ import type {
     CbCardConfig,
     CbIframeConfig,
     CssVariables,
+    DirectDebitCustomer,
     FormValidationErrors,
     MessageBusResponse,
     PaymentIntent,
@@ -13,7 +14,9 @@ import { getConfiguration, setConfiguration } from './configuration';
 import type {
     ChangeRenderModeEvent,
     ChargebeeSubmitEvent,
+    DirectDebitSubmitEvent,
     OnChangeRenderModeHandler,
+    OnDirectDebitSubmitHandler,
     OnGetBinHandler,
     OnSetPaypalPaymentIntentHandler,
     OnUpdateFieldsHandler,
@@ -516,6 +519,76 @@ async function renderSavedCard() {
     getMessageBus().onVerifySavedCard = onVerifySavedCard;
 }
 
+export function formatCustomer(customer: DirectDebitCustomer) {
+    const countryCode = customer.countryCode || null;
+    const addressLine1 = customer.addressLine1 || null;
+
+    const customerCommon = {
+        email: customer.email,
+        billingAddress: {
+            countryCode,
+            addressLine1,
+        },
+    };
+
+    const formattedCustomer =
+        customer.customerNameType === 'company'
+            ? {
+                  ...customerCommon,
+                  company: customer.company,
+              }
+            : {
+                  ...customerCommon,
+                  firstName: customer.firstName,
+                  lastName: customer.lastName,
+              };
+
+    return formattedCustomer;
+}
+
+async function renderDirectDebit() {
+    const cbInstance = getChargebeeInstance();
+    const directDebitHandler = await cbInstance.load('direct_debit');
+    addCheckpoint('direct_debit_loaded');
+    const messageBus = getMessageBus();
+
+    const onSubmitDirectDebit: OnDirectDebitSubmitHandler = async (
+        { customer, bankAccount, paymentIntent }: DirectDebitSubmitEvent,
+        sendResponseToParent
+    ) => {
+        addCheckpoint('direct_debit_submit');
+
+        directDebitHandler.setPaymentIntent(paymentIntent);
+
+        const payload = {
+            bankAccount,
+            customer: formatCustomer(customer),
+        };
+
+        directDebitHandler.handlePayment(payload, {
+            challenge: () => {
+                addCheckpoint('direct_debit_3ds_challenge');
+            },
+            success: (data: AuthorizedPaymentIntent) => {
+                addCheckpoint('direct_debit_success');
+                sendResponseToParent({
+                    status: 'success',
+                    data,
+                });
+            },
+            error: (error: any) => {
+                addCheckpoint('direct_debit_failure');
+                sendResponseToParent({
+                    status: 'failure',
+                    error,
+                });
+            },
+        });
+    };
+
+    messageBus.onDirectDebitSubmit = onSubmitDirectDebit;
+}
+
 async function cbInit() {
     if (getConfiguration().paymentMethodType === 'card') {
         addCheckpoint('rendering_card');
@@ -526,6 +599,9 @@ async function cbInit() {
     } else if (getConfiguration().paymentMethodType === 'saved-card') {
         addCheckpoint('rendering_saved_card');
         await renderSavedCard();
+    } else if (getConfiguration().paymentMethodType === 'direct-debit') {
+        addCheckpoint('rendering_direct_debit');
+        await renderDirectDebit();
     }
 
     addCheckpoint('rendered');

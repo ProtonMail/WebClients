@@ -1,12 +1,11 @@
 import { c, msgid } from 'ttag';
 
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 import {
     APPS,
     CALENDAR_APP_NAME,
     DRIVE_SHORT_APP_NAME,
     PASS_SHORT_APP_NAME,
-    PLANS,
-    PLAN_NAMES,
     PROTON_SENTINEL_NAME,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';

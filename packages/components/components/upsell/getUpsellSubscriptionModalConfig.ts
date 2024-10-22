@@ -1,6 +1,7 @@
 import type { OpenCallbackProps } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import { CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/payments';
+import { CYCLE } from '@proton/shared/lib/constants';
 
 const getUpsellSubscriptionModalConfig = (
     options: Pick<OpenCallbackProps, 'planIDs' | 'step' | 'cycle' | 'coupon' | 'upsellRef'>

@@ -4,12 +4,15 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
+import { formattedSavedSepaDetails } from '@proton/components/payments/client-extensions/useMethods';
 import type { SavedPaymentMethod } from '@proton/payments';
-import { isPaypalDetails } from '@proton/payments';
+import { isPaypalDetails, isSavedPaymentMethodSepa } from '@proton/payments';
 import orderBy from '@proton/utils/orderBy';
 
 import PaymentMethodActions from './PaymentMethodActions';
 import PaymentMethodState from './PaymentMethodState';
+
+const NBSP_HTML = '\u00A0';
 
 export interface Props {
     methods: SavedPaymentMethod[];
@@ -34,12 +37,27 @@ const MethodCell = ({ method }: { method: SavedPaymentMethod }) => {
         );
     }
 
-    if (method.Details && method.Details.Brand && method.Details.Last4) {
+    const hiddenDigitsPlaceholder = '••••';
+
+    if (isSavedPaymentMethodSepa(method)) {
         return (
-            <span data-testid="card-details">
-                {method.Details.Brand} (•••• {method.Details.Last4})
-            </span>
+            <>
+                <span className="mr-2 align-middle" data-testid="sepa-payment-method">
+                    SEPA Direct Debit
+                </span>
+                <span
+                    className="block lg:inline-block align-middle text-ellipsis max-w-full"
+                    data-testid="sepa-details"
+                >
+                    {formattedSavedSepaDetails(method)}
+                </span>
+            </>
         );
+    }
+
+    if (method.Details && method.Details.Brand && method.Details.Last4) {
+        const cardDetails = `${method.Details.Brand} (${hiddenDigitsPlaceholder}${NBSP_HTML}${method.Details.Last4})`;
+        return <span data-testid="card-details">{cardDetails}</span>;
     }
 
     return null;

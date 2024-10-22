@@ -1,19 +1,19 @@
 import type { Location } from 'history';
 
-import { getPlanByName, planToPlanIDs } from '@proton/payments';
-import type { OtherProductParam, ProductParam } from '@proton/shared/lib/apps/product';
-import { otherProductParamValues } from '@proton/shared/lib/apps/product';
-import type { ADDON_NAMES, APP_NAMES } from '@proton/shared/lib/constants';
 import {
-    APPS,
+    type ADDON_NAMES,
     AddonLimit,
-    CURRENCIES,
     MAX_DOMAIN_PRO_ADDON,
     MAX_IPS_ADDON,
     MAX_MEMBER_ADDON,
     PLANS,
-    SSO_PATHS,
-} from '@proton/shared/lib/constants';
+    getPlanByName,
+    planToPlanIDs,
+} from '@proton/payments';
+import type { OtherProductParam, ProductParam } from '@proton/shared/lib/apps/product';
+import { otherProductParamValues } from '@proton/shared/lib/apps/product';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, CURRENCIES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getSupportedAddons, isDomainAddon, isIpAddon, isMemberAddon } from '@proton/shared/lib/helpers/addons';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import { getHas2023OfferCoupon, getPlanMaxIPs, getValidCycle } from '@proton/shared/lib/helpers/subscription';

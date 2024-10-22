@@ -6,12 +6,8 @@ import { type DecryptedKey } from '@proton/shared/lib/interfaces';
 import { mockUseNotifications, mockUseUserKeys } from '@proton/testing/lib/vitest';
 import { type DecryptedTransactionData, decryptPgp } from '@proton/wallet';
 import { getUserKeys } from '@proton/wallet/tests';
-import {
-    mockUseApiWalletTransactionData,
-    mockUseContactEmails,
-    mockUseSaveVCardContact,
-    mockUseWalletApi,
-} from '@proton/wallet/tests/mocks';
+import { mockUseApiWalletTransactionData, mockUseContactEmails, mockUseWalletApi } from '@proton/wallet/tests/mocks';
+import { mockUseSaveVCardContact } from '@proton/wallet/tests/mocks/useSaveVCardContact';
 
 import { mockUseWalletDispatch } from '../../tests';
 import { useUnknownSenderModal } from './useUnknownSenderModal';

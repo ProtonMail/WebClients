@@ -1,4 +1,4 @@
-import { fireEvent, waitFor } from '@testing-library/react';
+import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import {
@@ -7,70 +7,97 @@ import {
     organizationDefaultResponse,
     plansDefaultResponse,
 } from '@proton/components/hooks/helpers/test';
-import * as paymentsDataUtilsModule from '@proton/components/payments/client-extensions/data-utils';
-import { createTokenV4, subscribe } from '@proton/shared/lib/api/payments';
-import { PLANS } from '@proton/shared/lib/constants';
-import type { Organization, Plan } from '@proton/shared/lib/interfaces';
-import { Audience } from '@proton/shared/lib/interfaces';
+import { PAYMENT_METHOD_TYPES, PLANS, getPlansMap } from '@proton/payments';
+import { type CheckSubscriptionData, createTokenV4, subscribe } from '@proton/shared/lib/api/payments';
+import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
+import type { Currency, Organization, Plan, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { Audience, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
-import { defaultVPNServersCountData as mockDefaultVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
-import {
-    apiMock,
-    applyHOCs,
-    withApi,
-    withAuthentication,
-    withCache,
-    withConfig,
-    withDeprecatedModals,
-    withEventManager,
-    withNotifications,
-} from '@proton/testing';
+import { addApiMock, apiMock, applyHOCs, withDeprecatedModals, withReduxStore } from '@proton/testing';
 import { buildUser } from '@proton/testing/builders';
+import { getLongTestPlans } from '@proton/testing/data';
+import { type FeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
 
 import type { SubscriptionContainerProps } from './SubscriptionContainer';
 import SubscriptionContainer from './SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from './constants';
 
-jest.mock('@proton/components/components/portal/Portal');
-jest.mock('@proton/account/user/hooks', () => ({
+jest.mock('@proton/components/components/portal/Portal', () => ({
     __esModule: true,
-    useUser: jest.fn(() => [{}]),
-    useGetUser: jest.fn(() => ({})),
-}));
-jest.mock('@proton/components/hooks/useSubscription', () => ({
-    __esModule: true,
-    default: jest.fn(() => [{}, false]),
-    useSubscription: jest.fn(() => [{}, false]),
-    useGetSubscription: jest.fn(() => [{}, false]),
-}));
-
-jest.mock('@proton/features/useFeature', () => ({
-    __esModule: true,
-    default: jest.fn(() => [{}, false]),
-    useFeature: jest.fn(() => [{}, false]),
-}));
-
-jest.mock('@proton/calendar/calendars/hooks', () => ({
-    useCalendars: jest.fn(),
-    useGetCalendars: jest.fn(() => []),
-}));
-
-jest.mock('@proton/components/hooks/useVPNServersCount', () => ({
-    __esModule: true,
-    default: jest.fn(() => [mockDefaultVPNServersCountData, false]),
+    default: jest.fn(({ children }) => <>{children}</>),
 }));
 
 const ContextSubscriptionContainer = applyHOCs(
-    withConfig(),
-    withNotifications(),
-    withEventManager(),
-    withApi(),
-    withCache(),
-    withDeprecatedModals(),
-    withAuthentication()
+    withReduxStore({
+        user: buildUser({ ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED }),
+    }),
+    withDeprecatedModals()
 )(SubscriptionContainer);
 
-jest.spyOn(paymentsDataUtilsModule, 'useCachedUser').mockReturnValue(buildUser());
+function mockCheckResult(checkData: Partial<SubscriptionCheckResponse> = {}) {
+    addApiMock(
+        'payments/v5/subscription/check',
+        ({ data }: { data: CheckSubscriptionData }) => {
+            const result = getOptimisticCheckResult({
+                planIDs: data.Plans,
+                cycle: data.Cycle,
+                currency: data.Currency,
+                plansMap: getPlansMap(getLongTestPlans(), data.Currency, false),
+            });
+
+            return {
+                ...result,
+                ...checkData,
+            };
+        },
+        'post'
+    );
+}
+
+function enableSepaFeatureFlag() {
+    const sepaFlag: FeatureFlag = 'SepaPayments';
+
+    const useFlagMock = jest.spyOn(require('@proton/unleash/useFlag'), 'default');
+    useFlagMock.mockImplementation((flag) => flag === sepaFlag);
+}
+
+async function initialize(props: SubscriptionContainerProps) {
+    mockCheckResult();
+    enableSepaFeatureFlag();
+
+    const utils = renderWithProviders(<ContextSubscriptionContainer {...props} />);
+
+    await waitFor(() => {
+        expect(screen.getByTestId('subscription-amout-due')).toBeInTheDocument();
+    });
+
+    return utils;
+}
+
+async function waitUntilChecked() {
+    await waitFor(() => {
+        expect(screen.getByTestId('container-subscription-amout-due')).toBeInTheDocument();
+    });
+}
+
+async function selectPaymentMethod(paymentMethodTypes: PAYMENT_METHOD_TYPES) {
+    await waitFor(() => {
+        expect(screen.getByTestId('payment-method-selector')).toBeEnabled();
+    });
+
+    fireEvent.click(screen.getByTestId('payment-method-selector'));
+
+    fireEvent.click(screen.getByTestId(`payment-method-${paymentMethodTypes}`));
+}
+
+async function selectCurrency(currency: Currency) {
+    await waitFor(() => {
+        expect(screen.getByTestId('currency-selector')).toBeEnabled();
+    });
+
+    fireEvent.click(screen.getByTestId('currency-selector'));
+    fireEvent.click(screen.getByTestId(`currency-option-${currency}`));
+}
 
 describe('SubscriptionContainer', () => {
     let props: SubscriptionContainerProps;
@@ -79,9 +106,7 @@ describe('SubscriptionContainer', () => {
         jest.clearAllMocks();
 
         mockUserVPNServersCountApi();
-    });
 
-    beforeEach(() => {
         props = {
             app: 'proton-mail',
             defaultSelectedProductPlans: {
@@ -106,7 +131,7 @@ describe('SubscriptionContainer', () => {
             plans: plansDefaultResponse.Plans as any as Plan[],
             freePlan: FREE_PLAN,
             paymentsStatus: {
-                CountryCode: 'US',
+                CountryCode: 'CH',
                 VendorStates: {
                     Card: true,
                     Cash: true,
@@ -139,6 +164,7 @@ describe('SubscriptionContainer', () => {
             throw new Error('Form not found');
         }
 
+        await waitFor(() => {});
         fireEvent.submit(form);
 
         const createTokenUrl = createTokenV4({} as any).url;
@@ -157,5 +183,33 @@ describe('SubscriptionContainer', () => {
                 })
             );
         });
+    });
+
+    it('should handle currency change', async () => {
+        props.step = SUBSCRIPTION_STEPS.CHECKOUT;
+        props.planIDs = { mail2022: 1 };
+        props.currency = 'CHF';
+
+        await initialize(props);
+        expect(screen.getByTestId('currency-selector')).toHaveTextContent('CHF');
+
+        await selectCurrency('USD');
+        await waitUntilChecked();
+
+        expect(screen.getByTestId('currency-selector')).toHaveTextContent('USD');
+    });
+
+    it('should select EUR when SEPA is selected', async () => {
+        props.step = SUBSCRIPTION_STEPS.CHECKOUT;
+        props.planIDs = { mail2022: 1 };
+        props.currency = 'CHF';
+
+        await initialize(props);
+        expect(screen.getByTestId('currency-selector')).toHaveTextContent('CHF');
+
+        await selectPaymentMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT);
+        await waitUntilChecked();
+
+        expect(screen.getByTestId('currency-selector')).toHaveTextContent('EUR');
     });
 });

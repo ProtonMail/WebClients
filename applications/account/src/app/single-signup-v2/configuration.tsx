@@ -31,7 +31,8 @@ import {
     getRefundable,
     getVPNAppFeature,
 } from '@proton/components/containers/payments/features/vpn';
-import { DUO_MAX_USERS, FAMILY_MAX_USERS, PLANS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/payments';
+import { DUO_MAX_USERS, FAMILY_MAX_USERS } from '@proton/shared/lib/constants';
 import type { FreePlanDefault, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
 

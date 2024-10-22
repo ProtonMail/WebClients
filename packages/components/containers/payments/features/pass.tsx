@@ -1,12 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import {
-    BRAND_NAME,
-    DARK_WEB_MONITORING_NAME,
-    PASS_APP_NAME,
-    PASS_SHORT_APP_NAME,
-    PLANS,
-} from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/payments';
+import { BRAND_NAME, DARK_WEB_MONITORING_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 

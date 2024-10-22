@@ -1,5 +1,6 @@
 import { getIsVPNPassPromotion, getIsVpn2024Deal } from '@proton/components/containers/payments/subscription/helpers';
-import { CYCLE, DEFAULT_CURRENCY, PLANS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/payments';
+import { CYCLE, DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
 import type { Currency } from '@proton/shared/lib/interfaces';
 
 import { defaultSignupModel } from '../single-signup-v2/SingleSignupContainerV2';

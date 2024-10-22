@@ -1,6 +1,6 @@
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import { SelectedPlan } from '@proton/payments';
-import { ADDON_NAMES, CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { ADDON_NAMES, PLANS, SelectedPlan } from '@proton/payments';
+import { CYCLE } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { PLANS_MAP } from '@proton/testing/data';
 

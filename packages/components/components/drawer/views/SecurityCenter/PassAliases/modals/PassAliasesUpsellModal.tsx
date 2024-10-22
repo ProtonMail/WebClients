@@ -4,13 +4,12 @@ import { useUser } from '@proton/account/user/hooks';
 import type { ModalStateProps } from '@proton/components';
 import { NewUpsellModal, Price, UpsellModal } from '@proton/components';
 import { usePlans } from '@proton/components/hooks';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 import {
     APP_UPSELL_REF_PATH,
     BRAND_NAME,
     CYCLE,
     MAIL_UPSELL_PATHS,
-    PLANS,
-    PLAN_NAMES,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
 import {

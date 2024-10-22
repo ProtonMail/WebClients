@@ -7,7 +7,8 @@ import { Button } from '@proton/atoms';
 import { Price } from '@proton/components';
 import type { Props as PriceProps } from '@proton/components/components/price/Price';
 import { usePreferredPlansMap, useSubscription } from '@proton/components/hooks';
-import { COUPON_CODES, PASS_APP_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { COUPON_CODES, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { hasPassLaunchOffer } from '@proton/shared/lib/helpers/subscription';
 
 import OfferDisableButton from '../../components/shared/OfferDisableButton';

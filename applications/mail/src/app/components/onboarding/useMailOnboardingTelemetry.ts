@@ -2,8 +2,8 @@ import { useCallback } from 'react';
 
 import { useApi } from '@proton/components';
 import { useOrganization } from '@proton/components/hooks';
+import { PLANS } from '@proton/payments';
 import { TelemetryMailOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
-import { PLANS } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { ThemeTypes } from '@proton/shared/lib/themes/themes';

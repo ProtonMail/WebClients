@@ -12,7 +12,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { ReferralFeaturesList } from '@proton/components/containers/referral/ReferralFeaturesList';
 import { FeatureCode, useFeature } from '@proton/features';
-import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import emptyMailboxSvg from '@proton/styles/assets/img/illustrations/empty-mailbox.svg';
 

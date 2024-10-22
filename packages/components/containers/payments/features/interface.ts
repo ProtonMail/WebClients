@@ -1,5 +1,5 @@
 import type { IconName } from '@proton/components/components/icon/Icon';
-import type { PLANS } from '@proton/shared/lib/constants';
+import type { PLANS } from '@proton/payments';
 import type { Audience } from '@proton/shared/lib/interfaces';
 
 export interface PlanCardFeatureDefinition {

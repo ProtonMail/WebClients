@@ -257,8 +257,10 @@ export const ensureTokenChargeableV5 = async (
                     }
 
                     throw new Error(translations.tabClosedError);
-                } catch (error: any) {
-                    return reject({ ...error, tryAgain: true });
+                } catch (err: any) {
+                    const error: any = new Error(err);
+                    error.tryAgain = true;
+                    return reject(error);
                 }
             }
 

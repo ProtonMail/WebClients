@@ -7,12 +7,12 @@ import { useModalTwo, useModalTwoPromise } from '@proton/components/components/m
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { isSplittedUser, onSessionMigrationPaymentsVersion } from '@proton/payments';
+import { type PLANS, PLAN_SERVICES } from '@proton/payments';
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { changeRenewState, deleteSubscription } from '@proton/shared/lib/api/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
-import type { PLANS } from '@proton/shared/lib/constants';
-import { APPS, PLAN_SERVICES, isFreeSubscription } from '@proton/shared/lib/constants';
+import { APPS, isFreeSubscription } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
 import {

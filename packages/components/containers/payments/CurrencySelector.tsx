@@ -35,7 +35,8 @@ const CurrencySelector = (props: Props) => {
     const options = (props.currencies ?? mainCurrencies).map((c) => ({ text: c, value: c }));
 
     if (props.mode === 'buttons') {
-        const { currency = DEFAULT_CURRENCY, onSelect, loading, ...rest } = props;
+        // extracting `mode` and `currencies` in order to remove them from ...rest
+        const { currency = DEFAULT_CURRENCY, onSelect, loading, mode, currencies, ...rest } = props;
         return (
             <ButtonGroup {...rest}>
                 {options.map(({ text, value }) => {
@@ -55,7 +56,8 @@ const CurrencySelector = (props: Props) => {
     }
 
     if (props.mode === 'select-two') {
-        const { currency = DEFAULT_CURRENCY, onSelect, loading, ...rest } = props;
+        // extracting `mode` and `currencies` in order to remove them from ...rest
+        const { currency = DEFAULT_CURRENCY, onSelect, loading, mode, currencies, ...rest } = props;
         const handleChange = ({ value }: { value: Currency }) => onSelect(value);
         return (
             <SelectTwo
@@ -63,11 +65,12 @@ const CurrencySelector = (props: Props) => {
                 onChange={handleChange}
                 loading={loading}
                 aria-describedby={c('Title').t`Currency`}
+                data-testid="currency-selector"
                 {...rest}
             >
                 {options.map(({ text, value }) => {
                     return (
-                        <Option value={value} title={text} key={value}>
+                        <Option value={value} title={text} key={value} data-testid={`currency-option-${value}`}>
                             {text}
                         </Option>
                     );

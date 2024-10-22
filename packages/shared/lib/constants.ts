@@ -1,7 +1,7 @@
 import type { enums } from '@proton/crypto';
 
 import { sizeUnits } from './helpers/size';
-import type { Currency, KeyGenConfig, MaxKeys } from './interfaces';
+import type { Currency, KeyGenConfig } from './interfaces';
 
 export const DEFAULT_TIMEOUT = 30000; // default fetch timeout
 export const RETRY_DELAY_MAX = 10; // seconds
@@ -18,17 +18,6 @@ export const YEAR = 12 * MONTH;
 export const MINUTE_IN_SECONDS = 60;
 export const HOUR_IN_SECONDS = 60 * MINUTE_IN_SECONDS;
 export const DAY_IN_SECONDS = 24 * HOUR_IN_SECONDS;
-
-// Max quantity for all addons
-export const MAX_VPN_ADDON = 2000;
-export const MAX_MEMBER_ADDON = 5000;
-export const MAX_MEMBER_SCRIBE_ADDON = 5000;
-export const MAX_DOMAIN_PRO_ADDON = 99;
-export const MAX_DOMAIN_PLUS_ADDON = 10;
-export const MAX_ADDRESS_ADDON = 10;
-// VPN B2B limits
-export const MAX_MEMBER_VPN_B2B_ADDON = 5000;
-export const MAX_IPS_ADDON = 100;
 
 export const DOMAIN_PLACEHOLDER = 'example.com';
 export const EMAIL_PLACEHOLDER = 'john.doe@example.com';
@@ -779,139 +768,6 @@ export const REGEX_IMAGE_EXTENSION = /\.(gif|jpe?g|tiff|png)$/i;
 
 export const DARK_MODE_CLASS = 'isDarkMode';
 
-export const MEMBER_ADDON_PREFIX = '1member';
-export const DOMAIN_ADDON_PREFIX = '1domain';
-export const IP_ADDON_PREFIX = '1ip';
-export const SCRIBE_ADDON_PREFIX = '1scribe';
-
-export enum ADDON_NAMES {
-    MEMBER_DRIVE_PRO = `${MEMBER_ADDON_PREFIX}-drivepro2022`,
-    MEMBER_DRIVE_BUSINESS = `${MEMBER_ADDON_PREFIX}-drivebiz2024`,
-    MEMBER_MAIL_PRO = `${MEMBER_ADDON_PREFIX}-mailpro2022`,
-    MEMBER_MAIL_BUSINESS = `${MEMBER_ADDON_PREFIX}-mailbiz2024`,
-    MEMBER_BUNDLE_PRO = `${MEMBER_ADDON_PREFIX}-bundlepro2022`,
-    MEMBER_BUNDLE_PRO_2024 = `${MEMBER_ADDON_PREFIX}-bundlepro2024`,
-    DOMAIN_BUNDLE_PRO = `${DOMAIN_ADDON_PREFIX}-bundlepro2022`,
-    DOMAIN_BUNDLE_PRO_2024 = `${DOMAIN_ADDON_PREFIX}-bundlepro2024`,
-    MEMBER_ENTERPRISE = `${MEMBER_ADDON_PREFIX}-enterprise2022`,
-    DOMAIN_ENTERPRISE = `${DOMAIN_ADDON_PREFIX}-enterprise2022`,
-    MEMBER_VPN_PRO = `${MEMBER_ADDON_PREFIX}-vpnpro2023`,
-    MEMBER_VPN_BUSINESS = `${MEMBER_ADDON_PREFIX}-vpnbiz2023`,
-    IP_VPN_BUSINESS = `${IP_ADDON_PREFIX}-vpnbiz2023`,
-    IP_BUNDLE_PRO = `${IP_ADDON_PREFIX}-bundlepro2022`,
-    IP_BUNDLE_PRO_2024 = `${IP_ADDON_PREFIX}-bundlepro2024`,
-    MEMBER_PASS_PRO = `${MEMBER_ADDON_PREFIX}-passpro2024`,
-    MEMBER_PASS_BUSINESS = `${MEMBER_ADDON_PREFIX}-passbiz2024`,
-    MEMBER_SCRIBE_MAILPLUS = `${SCRIBE_ADDON_PREFIX}-mail2022`,
-    MEMBER_SCRIBE_MAIL_BUSINESS = `${SCRIBE_ADDON_PREFIX}-mailbiz2024`,
-    MEMBER_SCRIBE_DRIVEPLUS = `${SCRIBE_ADDON_PREFIX}-drive2022`,
-    MEMBER_SCRIBE_BUNDLE = `${SCRIBE_ADDON_PREFIX}-bundle2022`,
-    MEMBER_SCRIBE_PASS = `${SCRIBE_ADDON_PREFIX}-pass2023`,
-    MEMBER_SCRIBE_VPN = `${SCRIBE_ADDON_PREFIX}-vpn2022`,
-    MEMBER_SCRIBE_VPN2024 = `${SCRIBE_ADDON_PREFIX}-vpn2024`,
-    MEMBER_SCRIBE_VPN_PASS_BUNDLE = `${SCRIBE_ADDON_PREFIX}-vpnpass2023`,
-    MEMBER_SCRIBE_MAIL_PRO = `${SCRIBE_ADDON_PREFIX}-mailpro2022`,
-    MEMBER_SCRIBE_BUNDLE_PRO = `${SCRIBE_ADDON_PREFIX}-bundlepro2022`,
-    MEMBER_SCRIBE_BUNDLE_PRO_2024 = `${SCRIBE_ADDON_PREFIX}-bundlepro2024`,
-    MEMBER_SCRIBE_PASS_PRO = `${SCRIBE_ADDON_PREFIX}-passpro2024`,
-    MEMBER_SCRIBE_VPN_BIZ = `${SCRIBE_ADDON_PREFIX}-vpnbiz2023`,
-    MEMBER_SCRIBE_PASS_BIZ = `${SCRIBE_ADDON_PREFIX}-passbiz2024`,
-    MEMBER_SCRIBE_DRIVE_BIZ = `${SCRIBE_ADDON_PREFIX}-drivebiz2024`,
-    MEMBER_SCRIBE_VPN_PRO = `${SCRIBE_ADDON_PREFIX}-vpnpro2023`,
-    MEMBER_SCRIBE_FAMILY = `${SCRIBE_ADDON_PREFIX}-family2022`,
-    MEMBER_SCRIBE_DUO = `${SCRIBE_ADDON_PREFIX}-duo2024`,
-}
-
-export const AddonKey: Readonly<{
-    [K in ADDON_NAMES]: MaxKeys;
-}> = {
-    [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: 'MaxDomains',
-    [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: 'MaxDomains',
-    [ADDON_NAMES.DOMAIN_ENTERPRISE]: 'MaxDomains',
-    [ADDON_NAMES.MEMBER_MAIL_PRO]: 'MaxMembers',
-    [ADDON_NAMES.MEMBER_DRIVE_PRO]: 'MaxMembers',
-    [ADDON_NAMES.MEMBER_DRIVE_BUSINESS]: 'MaxMembers',
-    [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 'MaxMembers',
-    [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 'MaxMembers',
-    [ADDON_NAMES.MEMBER_ENTERPRISE]: 'MaxMembers',
-    [ADDON_NAMES.MEMBER_VPN_PRO]: 'MaxMembers',
-    [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 'MaxMembers',
-    [ADDON_NAMES.IP_VPN_BUSINESS]: 'MaxIPs',
-    [ADDON_NAMES.IP_BUNDLE_PRO]: 'MaxIPs',
-    [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 'MaxIPs',
-    [ADDON_NAMES.MEMBER_PASS_PRO]: 'MaxMembers',
-    [ADDON_NAMES.MEMBER_PASS_BUSINESS]: 'MaxMembers',
-    [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: 'MaxMembers',
-    [ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS]: 'MaxAI',
-    [ADDON_NAMES.MEMBER_SCRIBE_DRIVEPLUS]: 'MaxAI',
-    [ADDON_NAMES.MEMBER_SCRIBE_BUNDLE]: 'MaxAI',
-    [ADDON_NAMES.MEMBER_SCRIBE_PASS]: 'MaxAI',
-    [ADDON_NAMES.MEMBER_SCRIBE_VPN]: 'MaxAI',
-    [ADDON_NAMES.MEMBER_SCRIBE_VPN2024]: 'MaxAI',
-    [ADDON_NAMES.MEMBER_SCRIBE_VPN_PASS_BUNDLE]: 'MaxAI',
-    [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 'MaxAI',
-    [ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO]: 'MaxAI',
-    [ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024]: 'MaxAI',
-    [ADDON_NAMES.MEMBER_SCRIBE_PASS_PRO]: 'MaxAI',
-    [ADDON_NAMES.MEMBER_SCRIBE_VPN_BIZ]: 'MaxAI',
-    [ADDON_NAMES.MEMBER_SCRIBE_PASS_BIZ]: 'MaxAI',
-    [ADDON_NAMES.MEMBER_SCRIBE_DRIVE_BIZ]: 'MaxAI',
-    [ADDON_NAMES.MEMBER_SCRIBE_VPN_PRO]: 'MaxAI',
-    [ADDON_NAMES.MEMBER_SCRIBE_FAMILY]: 'MaxAI',
-    [ADDON_NAMES.MEMBER_SCRIBE_DUO]: 'MaxAI',
-    [ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS]: 'MaxAI',
-} as const;
-
-export const AddonLimit = {
-    [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: MAX_DOMAIN_PRO_ADDON,
-    [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: MAX_DOMAIN_PRO_ADDON,
-    [ADDON_NAMES.DOMAIN_ENTERPRISE]: MAX_DOMAIN_PRO_ADDON,
-    [ADDON_NAMES.MEMBER_MAIL_PRO]: MAX_MEMBER_ADDON,
-    [ADDON_NAMES.MEMBER_DRIVE_PRO]: MAX_MEMBER_ADDON,
-    [ADDON_NAMES.MEMBER_DRIVE_BUSINESS]: MAX_MEMBER_ADDON,
-    [ADDON_NAMES.MEMBER_BUNDLE_PRO]: MAX_MEMBER_ADDON,
-    [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: MAX_MEMBER_ADDON,
-    [ADDON_NAMES.MEMBER_ENTERPRISE]: MAX_MEMBER_ADDON,
-    [ADDON_NAMES.MEMBER_VPN_PRO]: MAX_MEMBER_VPN_B2B_ADDON,
-    [ADDON_NAMES.MEMBER_VPN_BUSINESS]: MAX_MEMBER_VPN_B2B_ADDON,
-    [ADDON_NAMES.IP_VPN_BUSINESS]: MAX_IPS_ADDON,
-    [ADDON_NAMES.IP_BUNDLE_PRO]: MAX_IPS_ADDON,
-    [ADDON_NAMES.IP_BUNDLE_PRO_2024]: MAX_IPS_ADDON,
-    [ADDON_NAMES.MEMBER_PASS_PRO]: MAX_MEMBER_ADDON,
-    [ADDON_NAMES.MEMBER_PASS_BUSINESS]: MAX_MEMBER_ADDON,
-    [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: MAX_MEMBER_ADDON,
-    [ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS]: MAX_IPS_ADDON,
-    [ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO]: MAX_IPS_ADDON,
-    [ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024]: MAX_IPS_ADDON,
-    [ADDON_NAMES.MEMBER_SCRIBE_DRIVEPLUS]: MAX_IPS_ADDON,
-    [ADDON_NAMES.MEMBER_SCRIBE_BUNDLE]: MAX_IPS_ADDON,
-    [ADDON_NAMES.MEMBER_SCRIBE_PASS]: MAX_IPS_ADDON,
-    [ADDON_NAMES.MEMBER_SCRIBE_VPN]: MAX_IPS_ADDON,
-    [ADDON_NAMES.MEMBER_SCRIBE_VPN2024]: MAX_IPS_ADDON,
-    [ADDON_NAMES.MEMBER_SCRIBE_VPN_PASS_BUNDLE]: MAX_IPS_ADDON,
-    [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: MAX_IPS_ADDON,
-    [ADDON_NAMES.MEMBER_SCRIBE_PASS_PRO]: MAX_IPS_ADDON,
-    [ADDON_NAMES.MEMBER_SCRIBE_VPN_BIZ]: MAX_IPS_ADDON,
-    [ADDON_NAMES.MEMBER_SCRIBE_PASS_BIZ]: MAX_IPS_ADDON,
-    [ADDON_NAMES.MEMBER_SCRIBE_DRIVE_BIZ]: MAX_IPS_ADDON,
-    [ADDON_NAMES.MEMBER_SCRIBE_VPN_PRO]: MAX_IPS_ADDON,
-    [ADDON_NAMES.MEMBER_SCRIBE_FAMILY]: MAX_IPS_ADDON,
-    [ADDON_NAMES.MEMBER_SCRIBE_DUO]: MAX_IPS_ADDON,
-    [ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS]: MAX_IPS_ADDON,
-} as const;
-
-export enum PLAN_TYPES {
-    PLAN = 1,
-    ADDON = 0,
-}
-
-export enum PLAN_SERVICES {
-    MAIL = 1,
-    DRIVE = 2,
-    VPN = 4,
-    PASS = 8,
-}
-
 export const FREE_SUBSCRIPTION = {
     isFreeSubscription: true,
     Plans: undefined,
@@ -926,64 +782,6 @@ export type FreeSubscription = typeof FREE_SUBSCRIPTION;
 export function isFreeSubscription(obj: any): obj is FreeSubscription {
     return !!obj && obj.isFreeSubscription && Object.keys(obj).filter((key) => obj[key] !== undefined).length === 1;
 }
-
-export enum PLANS {
-    FREE = 'free',
-    DRIVE = 'drive2022',
-    DRIVE_PRO = 'drivepro2022',
-    DRIVE_BUSINESS = 'drivebiz2024',
-    DRIVE_LITE = 'drivelite2024',
-    PASS = 'pass2023',
-    MAIL = 'mail2022',
-    MAIL_PRO = 'mailpro2022',
-    MAIL_BUSINESS = 'mailbiz2024',
-    VPN = 'vpn2022',
-    VPN2024 = 'vpn2024',
-    WALLET = 'wallet2024',
-    BUNDLE = 'bundle2022',
-    BUNDLE_PRO = 'bundlepro2022',
-    BUNDLE_PRO_2024 = 'bundlepro2024',
-    ENTERPRISE = 'enterprise2022',
-    FAMILY = 'family2022',
-    DUO = 'duo2024',
-    VISIONARY = 'visionary2022',
-    VPN_PRO = 'vpnpro2023',
-    VPN_BUSINESS = 'vpnbiz2023',
-    VPN_PASS_BUNDLE = 'vpnpass2023',
-    PASS_PRO = 'passpro2024',
-    PASS_BUSINESS = 'passbiz2024',
-    PASS_FAMILY = 'passfamily2024',
-}
-
-export const isStringPLAN = (value: string): value is PLANS => Object.values(PLANS).includes(value as PLANS);
-
-export const PLAN_NAMES = {
-    [PLANS.FREE]: 'Free',
-    [PLANS.VPN2024]: 'Plus',
-    [PLANS.DRIVE]: 'Drive Plus',
-    [PLANS.DRIVE_PRO]: 'Drive Essentials',
-    [PLANS.DRIVE_BUSINESS]: 'Drive Professional',
-    [PLANS.DRIVE_LITE]: 'Drive Lite',
-    [PLANS.PASS]: 'Pass Plus',
-    [PLANS.MAIL]: 'Mail Plus',
-    [PLANS.MAIL_PRO]: 'Mail Essentials',
-    [PLANS.MAIL_BUSINESS]: 'Mail Professional',
-    [PLANS.VPN]: 'VPN Plus',
-    [PLANS.WALLET]: 'Wallet Plus',
-    [PLANS.BUNDLE]: 'Proton Unlimited',
-    [PLANS.BUNDLE_PRO]: 'Proton Business Suite',
-    [PLANS.BUNDLE_PRO_2024]: 'Proton Business Suite',
-    [PLANS.ENTERPRISE]: 'Enterprise',
-    [PLANS.FAMILY]: 'Proton Family',
-    [PLANS.DUO]: 'Proton Duo',
-    [PLANS.VISIONARY]: 'Proton Visionary',
-    [PLANS.VPN_PRO]: 'VPN Essentials',
-    [PLANS.VPN_BUSINESS]: 'VPN Professional',
-    [PLANS.VPN_PASS_BUNDLE]: 'VPN and Pass bundle',
-    [PLANS.PASS_PRO]: 'Pass Essentials',
-    [PLANS.PASS_BUSINESS]: 'Pass Professional',
-    [PLANS.PASS_FAMILY]: 'Pass Family',
-};
 
 export enum COUPON_CODES {
     BLACK_FRIDAY_2023 = 'BF2023',
@@ -1343,12 +1141,6 @@ export enum RELEASE_CATEGORIES {
 export enum PROTON_WEBSITES {
     PROTON_STATUS_PAGE = 'https://status.proton.me',
 }
-
-export const IPS_INCLUDED_IN_PLAN: Partial<Record<PLANS, number>> = {
-    [PLANS.VPN_BUSINESS]: 1,
-    [PLANS.BUNDLE_PRO]: 0,
-    [PLANS.BUNDLE_PRO_2024]: 0,
-} as const;
 
 /**
  * Mail Composer toolbar

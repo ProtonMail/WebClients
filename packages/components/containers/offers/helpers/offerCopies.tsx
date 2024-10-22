@@ -3,6 +3,7 @@ import type { ReactElement } from 'react';
 import { c, msgid } from 'ttag';
 
 import { type IconName } from '@proton/components/components/icon/Icon';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 import {
     BRAND_NAME,
     CALENDAR_APP_NAME,
@@ -13,8 +14,6 @@ import {
     MAIL_APP_NAME,
     MAIL_SHORT_APP_NAME,
     PASS_SHORT_APP_NAME,
-    PLANS,
-    PLAN_NAMES,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { getPremiumPasswordManagerText } from '@proton/shared/lib/helpers/checkout';

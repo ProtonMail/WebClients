@@ -18,16 +18,10 @@ import Tabs from '@proton/components/components/tabs/Tabs';
 import useCancellationFlow from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationFlow';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { type PaymentMethodStatusExtended, getPlansMap, isRegionalCurrency, mainCurrencies } from '@proton/payments';
+import { ADDON_NAMES, PLANS, PLAN_TYPES, type PlanIDs } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { FreeSubscription } from '@proton/shared/lib/constants';
-import {
-    ADDON_NAMES,
-    APPS,
-    CYCLE,
-    PLANS,
-    PLAN_TYPES,
-    isFreeSubscription as getIsFreeSubscription,
-} from '@proton/shared/lib/constants';
+import { APPS, CYCLE, isFreeSubscription as getIsFreeSubscription } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
     getCanSubscriptionAccessDuoPlan,
@@ -46,7 +40,6 @@ import {
     type FreePlanDefault,
     type Organization,
     type Plan,
-    type PlanIDs,
     type PlansMap,
     Renew,
     type SubscriptionModel,

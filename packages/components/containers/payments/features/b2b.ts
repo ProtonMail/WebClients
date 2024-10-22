@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { BRAND_NAME, PLANS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/payments';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';

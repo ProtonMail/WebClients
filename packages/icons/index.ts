@@ -47,6 +47,7 @@ export type IconName =
     | 'at'
     | 'backspace'
     | 'bag-percent'
+    | 'bank'
     | 'bell'
     | 'bolt'
     | 'bolt-filled'

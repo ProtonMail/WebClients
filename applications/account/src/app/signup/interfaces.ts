@@ -6,6 +6,7 @@ import type {
     ExtendedTokenPayment,
     PAYMENT_METHOD_TYPES,
     PaymentMethodStatusExtended,
+    PlanIDs,
     SavedPaymentMethod,
 } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
@@ -53,10 +54,6 @@ export const SERVICES: { [key: string]: APP_NAMES } = {
     docs: APPS.PROTONDOCS,
     wallet: APPS.PROTONWALLET,
 };
-
-export interface PlanIDs {
-    [planID: string]: number;
-}
 
 export interface SessionData {
     UID: string;

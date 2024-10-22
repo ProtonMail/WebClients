@@ -6,13 +6,16 @@ import { c } from 'ttag';
 import Alert from '@proton/components/components/alert/Alert';
 import Loader from '@proton/components/components/loader/Loader';
 import Price from '@proton/components/components/price/Price';
+import { type FormErrorsHook } from '@proton/components/components/v2/useFormErrors';
 import useConfig from '@proton/components/hooks/useConfig';
+import { SepaDirectDebit } from '@proton/components/payments/chargebee/SepaDirectDebit';
 import type { ThemeCode, ViewPaymentMethod } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
 import type { BitcoinHook } from '@proton/components/payments/react-extensions/useBitcoin';
 import type { CardFieldStatus } from '@proton/components/payments/react-extensions/useCard';
 import type { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
 import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
+import { type ChargebeeDirectDebitProcessorHook } from '@proton/components/payments/react-extensions/useSepaDirectDebit';
 import type {
     CardModel,
     PaymentMethodFlows,
@@ -83,8 +86,10 @@ export interface NoApiProps extends Props {
     themeCode?: ThemeCode;
     bitcoinInhouse: BitcoinHook;
     bitcoinChargebee: BitcoinHook;
+    directDebit: ChargebeeDirectDebitProcessorHook;
     isChargebeeEnabled: () => ChargebeeEnabled;
     billingAddressStatus?: BillingAddressStatus;
+    formErrors?: FormErrorsHook;
 }
 
 export const PaymentsNoApi = ({
@@ -125,8 +130,10 @@ export const PaymentsNoApi = ({
     bitcoinChargebee,
     isChargebeeEnabled,
     user,
+    directDebit,
     billingAddressStatus = BILLING_ADDRESS_VALID,
     paymentStatus,
+    formErrors,
 }: NoApiProps) => {
     const { APP_NAME } = useConfig();
 
@@ -195,6 +202,7 @@ export const PaymentsNoApi = ({
         iframeHandles,
         chargebeeCard,
         chargebeePaypal,
+        directDebit,
     };
 
     const savedMethod = savedMethodInternal ?? savedMethodExternal;
@@ -257,6 +265,9 @@ export const PaymentsNoApi = ({
                         </>
                     )}
                     {method === PAYMENT_METHOD_TYPES.CASH && <Cash />}
+                    {method === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT && (
+                        <SepaDirectDebit formErrors={formErrors} {...sharedCbProps} />
+                    )}
                     {(() => {
                         if (!showBitcoinMethod) {
                             return null;

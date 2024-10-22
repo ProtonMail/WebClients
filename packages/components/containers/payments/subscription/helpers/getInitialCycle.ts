@@ -1,8 +1,9 @@
 import type { FullPlansMap } from '@proton/payments';
+import { type PlanIDs } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS, CYCLE, DEFAULT_CYCLE, type FreeSubscription, isFreeSubscription } from '@proton/shared/lib/constants';
 import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
-import type { Currency, Cycle, PlanIDs, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { Currency, Cycle, SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 import { getAllowedCycles } from './getAllowedCycles';
 import { notHigherThanAvailableOnBackend } from './payment';

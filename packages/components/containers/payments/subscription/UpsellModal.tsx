@@ -5,7 +5,7 @@ import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalTwoPromiseHandlers } from '@proton/components/components/modalTwo/useModalTwo';
-import type { PLANS } from '@proton/shared/lib/constants';
+import type { PLANS } from '@proton/payments';
 import type { FreePlanDefault, Plan, SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 import useCancellationTelemetry from './cancellationFlow/useCancellationTelemetry';

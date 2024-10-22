@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import Meter from '@proton/components/components/progress/Meter';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
-import { CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/payments';
+import { CYCLE } from '@proton/shared/lib/constants';
 
 interface Props {
     rewards: number;

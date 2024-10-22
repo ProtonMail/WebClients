@@ -1,7 +1,8 @@
-import { PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
-import type { Currency, Cycle, Plan, PlanIDs, StrictPlan } from '@proton/shared/lib/interfaces';
+import type { Currency, Cycle, Plan, StrictPlan } from '@proton/shared/lib/interfaces';
 
+import { PLANS, PLAN_TYPES } from '../constants';
 import { getFallbackCurrency, isRegionalCurrency } from '../helpers';
+import { type PlanIDs } from '../interface';
 import type { FullPlansMap } from './interface';
 
 export function getPlanByName(
