@@ -414,9 +414,6 @@
       "OK": [
         "OK"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "Open": [
         "Otvoriť"
       ],
@@ -2045,9 +2042,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrovanie a import kontaktov... Táto akcia môže trvať niekoľko minút. Akonáhle je proces ukončený, môžete zavrieť tento modul."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Pri importovaní prostredníctvom súborov CSV a VCF zabezpečte, aby veľkosť súboru nepresiahla ${ MAX_IMPORT_FILE_SIZE_STRING } alebo ${ MAX_IMPORT_CONTACTS_STRING } kontaktov. Ak je váš súbor väčší, rozdeľte ho na menšie súbory. ${ learnMoreLink }."
-      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
@@ -2168,6 +2162,14 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Vaše predplatné ${ PLAN_NAMES[PLANS.PASS] } je za špeciálnu cenu ${ price } ročne. Znížením ceny na bezplatný plán natrvalo stratíte zľavu, a to aj v prípade, že v budúcnosti opäť prejdete na vyšší plán."
+      ]
+    },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Otvoriť v ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Save for later": [
+        "Uložiť na neskôr"
       ]
     },
     "driveplus2024: Deal details": {
@@ -2785,9 +2787,6 @@
         "Email nemôžete odoslať viac ako ${ maxContacts } príjemcom",
         "Email nemôžete odoslať viac ako ${ maxContacts } príjemcom"
       ],
-      "You have reached the contacts limit for your account": [
-        "Dosiahli ste limit kontaktov pre svoj účet"
-      ],
       "You have reached the maximum number of calendars.": [
         "Dosiahli ste maximálny počet kalendárov."
       ],
@@ -3106,9 +3105,6 @@
       "Invited by: ${ inviteEmail }": [
         "Pozvánka od: ${ inviteEmail }"
       ],
-      "Manage addresses.": [
-        "Spravovať adresy."
-      ],
       "Sorry, you can't switch plans at this time.": [
         "Ľutujeme, momentálne nemôžete zmeniť plány."
       ],
@@ -3135,9 +3131,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Váš účet využíva ${ usedSpace } úložiska, čo presahuje pridelený priestor ${ inviteSpace }. Odstráňte niektoré údaje alebo požiadajte správcu plánu o navýšenie úložiska."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "S vaším aktuálnym plánom nemôžete prijať túto pozvánku."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3721,9 +3714,6 @@
         "(${ memberCount } členov)",
         "(${ memberCount } členov)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } mesačne)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusového miesta na disku"
       ],
@@ -4072,6 +4062,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Na dosiahnutie najlepších výsledkov sa vyhnite streamovaniu a činnostiam náročným na pamäť alebo rozdeľte nahrávanie na menšie časti."
       ],
+      "Free 5GB encrypted storage to get started": [
+        "5 GB bezplatného šifrovaného úložného priestoru"
+      ],
       "here": [
         "tu"
       ],
@@ -4146,6 +4139,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Už len potvrďte váš výber a my urobíme zbytok."
+      ],
+      "Keep your files secure with end-to-end encryption.": [
+        "Uchovávajte svoje súbory v bezpečí vďaka end-to-end šifrovaniu."
       ],
       "Key fingerprint": [
         "Identifikátor kľúča"
@@ -4281,9 +4277,6 @@
       ],
       "Organization size": [
         "Veľkosť organizácie"
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Naše upozornenia sú skôr opatrné. Ak nepoznáte žiadnu z narušených informácií, môžete túto správu pokojne ignorovať."
       ],
       "Owner": [
         "Vlastník"
@@ -5121,6 +5114,9 @@
       "Last month only": [
         "Iba minulý mesiac"
       ],
+      "Log in or sign up ": [
+        "Prihláste sa alebo zaregistrujte "
+      ],
       "Mail Server (IMAP)": [
         "Emailový server (IMAP)"
       ],
@@ -5606,9 +5602,6 @@
       "Graphics Interchange Format (GIF)": [
         "Graphics Interchange Format (GIF)"
       ],
-      "GZip Compressed Archive": [
-        "GZip archív"
-      ],
       "HyperText Markup Language (HTML)": [
         "Hypertextový značkovací jazyk (HTML)"
       ],
@@ -5626,9 +5619,6 @@
       ],
       "Java Archive (JAR)": [
         "Java Archive (JAR)"
-      ],
-      "JPEG images": [
-        "JPEG obrázky"
       ],
       "MP3 audio": [
         "MP3 audio"
@@ -5665,9 +5655,6 @@
       ],
       "Opus audio": [
         "Opus audio"
-      ],
-      "Portable Network Graphics": [
-        "Portable Network Graphics (PNG)"
       ],
       "RAR archive": [
         "RAR archív"
@@ -6200,9 +6187,6 @@
       "Sync and backup all your files across devices": [
         "Synchronizácia a zálohovanie všetkých vašich súborov medzi zariadeniami"
       ],
-      "Tor over VPN": [
-        "TOR cez VPN"
-      ],
       "Two-factor authentication": [
         "Dvojstupňové overenie"
       ],
@@ -6458,9 +6442,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Vytvorte až ${ n } emailových adries/aliasov, ktoré môžete priradiť členom rodiny. Použite ich pre online identity, napr. JanNakupy@${ domain } pre nákupné účty."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Dedikované servery s vyhradenými IP adresami môžu byť pridané k súkromným bránam, ktoré umožňujú jemne vyladené riadenie prístupu"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Chráni pred hrozbou VPN súkromia tým, že internetovú prevádzku prenáša cez viacero serverov"
       ],
@@ -6556,9 +6537,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Obnoviť heslá a dvojstupňové overenie používateľov"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Smerujte vašu internetovú prevádzku cez sieť Tor jediným kliknutím"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, zdieľanie šifrovaných súborov a ďalšie."
@@ -6873,9 +6851,6 @@
       "Share invitation declined": [
         "Pozvánka na zdieľanie odmietnutá"
       ],
-      "Stopping to share this item has failed": [
-        "Ukončenie zdieľania tejto položky zlyhalo"
-      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Odkaz na „${ name }“ sa nepodarilo zmazať"
       ],
@@ -6914,11 +6889,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Aby import fungoval, musíte vybrať všetky požadované položky, ako je znázornené na obrázku GIF."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Vyberte, k čomu môže ${ BRAND_NAME } pristupovať: prezerajte si emailové správy a nastavenia, prezerajte a sťahujte svoje kontakty, zobrazujte a sťahujte všetky agendy, ku ktorým máte prístup z Agendy Google."
       ]
     },
     "Option": {
@@ -7111,6 +7081,9 @@
       ],
       "E.g., ": [
         "Napr., "
+      ],
+      "Email": [
+        "Email"
       ],
       "Filter groups": [
         "Filtrovať skupiny"
@@ -7315,9 +7288,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Vyskúšať ${ PASS_APP_NAME }"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "Používa sa v službe Amazon na nakupovanie atď."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Keď budete požiadaní o uvedenie vašej emailovej adresy, uveďte namiesto nej tento alias. Aliasy sú poskytované pomocou ${ passLink }."
@@ -7798,6 +7768,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "Odkaz na túto položku bol uložený na vašom disku. Prístup k nemu môžete získať neskôr v časti \"Zdieľané so mnou\"."
+      ],
       "Get up to ${ credits } in credits.": [
         "Získajte až ${ credits } v kreditoch."
       ],
@@ -7968,9 +7941,6 @@
     "Subscription change warning": {
       "Got it": [
         "Rozumiem"
-      ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Prihláste sa do Apple Store a potom stlačte ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Prihláste sa do Obchodu Play a potom stlačte ${ subscriptions }."
@@ -8675,6 +8645,9 @@
       "Request new code": [
         "Vyžiadať nový kód"
       ],
+      "Save it for later in ${ DRIVE_APP_NAME }": [
+        "Uložiť na neskôr v ${ DRIVE_APP_NAME }"
+      ],
       "Security center": [
         "Centrum zabezpečenia"
       ],
@@ -8798,6 +8771,9 @@
       ]
     },
     "Tooltip": {
+      "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
+        "Tento zdieľaný súbor pridajte do svojho ${ DRIVE_APP_NAME } pre neskorší jednoduchý prístup."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatický označuje, že formát v editore bude použitý na odoslanie užívateľovi. Jednoduchý text znamená, že správa bude pri odoslaní vždy prevedená na obyčajný text."
       ],
@@ -8845,9 +8821,6 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vyberte PGP schému, ktorá sa použije pri podpisovaní, alebo šifrovanie užívateľa. Nezabudnite, že PGP/Inline vyžaduje správy vo formáte obyčajného textu"
-      ],
-      "Shared end-to-end encrypted": [
-        "Zdieľané end-to-end šifrované"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systémové podpriečinky sa v aplikácii ${ MAIL_APP_NAME } zobrazia ako samostatné priečinky"
@@ -8955,11 +8928,6 @@
       ],
       "No ads": [
         "Žiadne reklamy"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Prístup k Secure core serverom, rýchle P2P/BitTorrent sťahovanie, Tor cez VPN a ďalšie."
       ]
     },
     "wallet_signup_2024: Info": {
