@@ -39,6 +39,7 @@ describe('CreateComment', () => {
     } as DocumentKeys,
     commentsState: mockCommentsState,
     type: 1,
+    decryptedDocumentName: 'Test',
   }
 
   beforeEach(() => {
@@ -71,6 +72,7 @@ describe('CreateComment', () => {
       parentCommentId: null,
       authorEmail: 'foo@bar.com',
       type: 1,
+      decryptedDocumentName: 'Test',
     })
     expect(mockCommentsState.replacePlaceholderComment).toHaveBeenCalled()
   })

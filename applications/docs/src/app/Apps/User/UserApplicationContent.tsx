@@ -22,6 +22,7 @@ import { useDocsUrlBar } from '../../Containers/useDocsUrlBar'
 import { useUser } from '@proton/account/user/hooks'
 import UserProvider from '../../Containers/ContextProvider'
 import { PublicDocumentCopier } from '../../Components/PublicDocumentCopier'
+import { useUnleashClient } from '@proton/unleash'
 
 const HomepageRoute = lazy(() => import('../../Components/Homepage/HomepageRoute'))
 
@@ -31,6 +32,8 @@ function UserApplicationContent() {
   const { API_URL } = useConfig()
   const { UID } = useAuthentication()
   const isLandingPageEnabled = useDriveDocsLandingPageFeatureFlag()
+
+  const unleashClient = useUnleashClient()
 
   const application = useMemo(() => {
     return new Application(
@@ -42,6 +45,7 @@ function UserApplicationContent() {
       },
       { userCompat: driveCompat },
       APP_VERSION,
+      unleashClient,
     )
     // Ensure only one application instance is created
     // eslint-disable-next-line react-hooks/exhaustive-deps

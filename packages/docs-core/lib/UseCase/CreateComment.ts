@@ -26,6 +26,7 @@ export class CreateComment implements UseCaseInterface<CommentInterface> {
     keys: DocumentKeys
     commentsState: LocalCommentsState
     type: CommentType
+    decryptedDocumentName: string | null
   }): Promise<Result<CommentInterface>> {
     const thread = dto.commentsState.findThreadById(dto.threadID)
     if (!thread) {
@@ -63,6 +64,7 @@ export class CreateComment implements UseCaseInterface<CommentInterface> {
       parentCommentId: null,
       authorEmail: dto.keys.userOwnAddress,
       type: dto.type,
+      decryptedDocumentName: dto.decryptedDocumentName,
     })
     if (result.isFailed()) {
       metrics.docs_comments_error_total.increment({
