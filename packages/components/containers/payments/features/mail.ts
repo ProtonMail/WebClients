@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import { BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME, PLANS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/payments';
+import { BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { PlansMap } from '@proton/shared/lib/interfaces';

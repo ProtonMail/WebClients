@@ -6,10 +6,11 @@ import { Button } from '@proton/atoms';
 import { Icon, Logo } from '@proton/components';
 import EarlyAccessBadge from '@proton/components/components/earlyAccessBadge/EarlyAccessBadge';
 import useLoading from '@proton/hooks/useLoading';
+import { PLANS } from '@proton/payments';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, PLANS, PRODUCT_BIT } from '@proton/shared/lib/constants';
+import { APPS, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { User } from '@proton/shared/lib/interfaces';
 

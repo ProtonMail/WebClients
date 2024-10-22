@@ -1,4 +1,4 @@
-import { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
+import { ADDON_NAMES, PLANS } from '../constants';
 
 export const getScribeAddonNameByPlan = (planName: PLANS) => {
     switch (planName) {

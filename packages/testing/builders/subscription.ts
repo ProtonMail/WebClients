@@ -1,5 +1,6 @@
-import { CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
-import { External, Renew, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import { PLANS, PLAN_TYPES } from '@proton/payments';
+import { CYCLE } from '@proton/shared/lib/constants';
+import { External, Renew, type SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 export const buildSubscription = (value?: Partial<SubscriptionModel>): SubscriptionModel => {
     return {

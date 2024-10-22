@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import { PLANS, WALLET_APP_NAME } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/payments';
+import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 

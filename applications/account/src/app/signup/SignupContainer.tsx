@@ -16,6 +16,7 @@ import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebCoreSignupBackButtonTotal } from '@proton/metrics/types/web_core_signup_backButton_total_v1.schema';
 import { type BillingAddress, DEFAULT_TAX_BILLING_ADDRESS, getPlansMap } from '@proton/payments';
+import { PLANS, type PlanIDs } from '@proton/payments';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
@@ -28,7 +29,6 @@ import {
     CYCLE,
     DEFAULT_CYCLE,
     MAIL_APP_NAME,
-    PLANS,
     REFERRER_CODE_MAIL_TRIAL,
     SSO_PATHS,
 } from '@proton/shared/lib/constants';
@@ -67,14 +67,7 @@ import UpsellStep from './UpsellStep';
 import VerificationStep from './VerificationStep';
 import { DEFAULT_SIGNUP_MODEL } from './constants';
 import { getSignupApplication, getSubscriptionPrices, isMailReferAFriendSignup, isMailTrialSignup } from './helper';
-import type {
-    InviteData,
-    PlanIDs,
-    SignupActionResponse,
-    SignupCacheResult,
-    SignupModel,
-    SubscriptionData,
-} from './interfaces';
+import type { InviteData, SignupActionResponse, SignupCacheResult, SignupModel, SubscriptionData } from './interfaces';
 import { SignupSteps, SignupType } from './interfaces';
 import type { TelemetryMeasurementData } from './measure';
 import { getPlanIDsFromParams, getSignupSearchParams } from './searchParams';

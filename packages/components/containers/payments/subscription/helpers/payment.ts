@@ -1,17 +1,17 @@
 import type { BillingAddress } from '@proton/payments';
 import { isRegionalCurrency } from '@proton/payments';
+import { PLANS, type PlanIDs } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { FreeSubscription } from '@proton/shared/lib/constants';
 import {
     APPS,
     COUPON_CODES,
     CYCLE,
-    PLANS,
     VPN_PASS_PROMOTION_COUPONS,
     isFreeSubscription,
 } from '@proton/shared/lib/constants';
 import { getPlanFromIds } from '@proton/shared/lib/helpers/planIDs';
-import type { Currency, PlanIDs, PlansMap, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { Currency, PlansMap, SubscriptionModel } from '@proton/shared/lib/interfaces';
 import { Audience, Renew } from '@proton/shared/lib/interfaces';
 
 export const getVPNPlanToUse = ({

@@ -2,7 +2,8 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { BRAND_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 export const getTitle = () => {
     // translator: Introducing <Proton Duo>

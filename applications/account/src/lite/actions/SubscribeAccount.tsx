@@ -25,6 +25,7 @@ import { InAppText } from '@proton/components/containers/payments/subscription/I
 import SubscriptionContainer from '@proton/components/containers/payments/subscription/SubscriptionContainer';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { type PaymentMethodStatusExtended } from '@proton/payments';
+import { PLANS, PLAN_TYPES } from '@proton/payments';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import {
@@ -37,8 +38,6 @@ import {
     HTTP_STATUS_CODE,
     MAIL_APP_NAME,
     PASS_APP_NAME,
-    PLANS,
-    PLAN_TYPES,
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';

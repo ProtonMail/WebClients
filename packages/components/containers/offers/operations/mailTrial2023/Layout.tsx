@@ -2,7 +2,7 @@ import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/components/hooks';
-import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import OfferFooter from '../../components/shared/OfferFooter';

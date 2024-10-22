@@ -21,7 +21,8 @@ import {
     getWallets,
 } from '@proton/components/containers/payments/features/wallet';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
-import { APPS, BRAND_NAME, CYCLE, PLANS, WALLET_APP_NAME, WALLET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/payments';
+import { APPS, BRAND_NAME, CYCLE, WALLET_APP_NAME, WALLET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import type { Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';

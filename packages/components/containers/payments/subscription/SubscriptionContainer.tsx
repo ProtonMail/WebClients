@@ -8,6 +8,7 @@ import { Button } from '@proton/atoms';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import Icon from '@proton/components/components/icon/Icon';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
@@ -21,13 +22,14 @@ import type {
     CheckWithAutomaticOptions,
     MultiCheckSubscriptionData,
     PaymentMethodStatusExtended,
+    PlainPaymentMethodType,
 } from '@proton/payments';
-import { PAYMENT_METHOD_TYPES, getPlansMap, isOnSessionMigration } from '@proton/payments';
+import { PAYMENT_METHOD_TYPES, PLANS, type PlanIDs, getPlansMap, isOnSessionMigration } from '@proton/payments';
 import type { CheckSubscriptionData } from '@proton/shared/lib/api/payments';
-import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
+import { ProrationMode, getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
-import { APPS, DEFAULT_CURRENCY, PLANS, isFreeSubscription } from '@proton/shared/lib/constants';
+import { APPS, DEFAULT_CURRENCY, isFreeSubscription } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { AddonGuard } from '@proton/shared/lib/helpers/addons';
 import { getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
@@ -54,7 +56,6 @@ import type {
     FreePlanDefault,
     Organization,
     Plan,
-    PlanIDs,
     SubscriptionCheckResponse,
     SubscriptionModel,
 } from '@proton/shared/lib/interfaces';
@@ -381,6 +382,8 @@ const SubscriptionContainer = ({
 
     const abortControllerRef = useRef<AbortController>();
 
+    const formErrors = useFormErrors();
+
     const amount = model.step === SUBSCRIPTION_STEPS.CHECKOUT ? amountDue : 0;
 
     const getCodesForSubscription = () => {
@@ -517,8 +520,29 @@ const SubscriptionContainer = ({
 
             return promise.catch(noop);
         },
+        // eslint-disable-next-line @typescript-eslint/no-use-before-define
+        onCurrencyChange: (currency, context) => handleChangeCurrency(currency, context),
         flow: 'subscription',
         user,
+        onBeforeSepaPayment: async () => {
+            if (checkResult.ProrationMode === ProrationMode.Exact) {
+                const currentAmountDue = checkResult.AmountDue;
+                // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                const checkPromise = check();
+                void withLoadingCheck(checkPromise);
+                const newCheckResult = await checkPromise;
+                if (newCheckResult?.AmountDue !== currentAmountDue) {
+                    createNotification({
+                        text: c('Error').t`The amount due has changed. Please try again.`,
+                        type: 'warning',
+                        expiration: -1,
+                    });
+                    return false;
+                }
+            }
+
+            return true;
+        },
     });
 
     const isFreePlanSelected = !hasPlanIDs(model.planIDs);
@@ -581,7 +605,7 @@ const SubscriptionContainer = ({
         newModel: Model = model,
         wantToApplyNewGiftCode: boolean = false,
         selectedMethod?: string
-    ): Promise<void> => {
+    ): Promise<SubscriptionCheckResponse | undefined> => {
         const copyNewModel = {
             ...newModel,
             initialCheckComplete: true,
@@ -678,6 +702,11 @@ const SubscriptionContainer = ({
                     CountryCode: newModel.taxBillingAddress.CountryCode,
                     State: newModel.taxBillingAddress.State,
                 },
+                ProrationMode: [selectedMethod, paymentFacade.selectedMethodType].includes(
+                    PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
+                )
+                    ? ProrationMode.Exact
+                    : undefined,
             };
 
             const checkResult = await paymentsApi.checkWithAutomaticVersion(
@@ -732,7 +761,7 @@ const SubscriptionContainer = ({
             onCheck?.({ model, newModel, type: 'error', error });
         }
 
-        return;
+        return checkResult;
     };
 
     useEffect(() => {
@@ -830,7 +859,7 @@ const SubscriptionContainer = ({
         void withLoadingGift(check({ ...model, gift }, true));
     };
 
-    const handleChangeCurrency = (currency: Currency) => {
+    const handleChangeCurrency = (currency: Currency, context?: { paymentMethodType: PlainPaymentMethodType }) => {
         if (loadingCheck || currency === preferredCurrency) {
             return;
         }
@@ -838,7 +867,7 @@ const SubscriptionContainer = ({
 
         const planCurrency = getPlanCurrencyFromPlanIDs(getPlansMap(plans, currency), model.planIDs) ?? currency;
 
-        void withLoadingCheck(check({ ...model, currency: planCurrency }));
+        void withLoadingCheck(check({ ...model, currency: planCurrency }, false, context?.paymentMethodType));
     };
 
     const handleBillingAddressChange = (billingAddress: BillingAddress) => {
@@ -851,6 +880,10 @@ const SubscriptionContainer = ({
     const onSubmit = (e: FormEvent) => {
         e.preventDefault();
 
+        if (!formErrors.onFormSubmit()) {
+            return;
+        }
+
         if (model.noPaymentNeeded) {
             onCancel?.();
             return;
@@ -860,7 +893,7 @@ const SubscriptionContainer = ({
             return;
         }
 
-        void withLoading(process(paymentFacade.selectedProcessor));
+        void process(paymentFacade.selectedProcessor);
     };
 
     const hasSomeVpnPlan =
@@ -1073,7 +1106,10 @@ const SubscriptionContainer = ({
                                     hideSavedMethodsDetails={application === APPS.PROTONACCOUNTLITE}
                                     hasSomeVpnPlan={hasSomeVpnPlan}
                                     billingAddressStatus={billingAddressStatus}
+                                    formErrors={formErrors}
                                     onMethod={(value) => {
+                                        formErrors.reset();
+
                                         if (
                                             value === PAYMENT_METHOD_TYPES.BITCOIN &&
                                             isOnSessionMigration(user.ChargebeeUser, subscription.BillingPlatform)
@@ -1111,6 +1147,7 @@ const SubscriptionContainer = ({
                                 onChangeCurrency={handleChangeCurrency}
                                 showTaxCountry={paymentFacade.showTaxCountry}
                                 statusExtended={paymentFacade.statusExtended}
+                                paymentMethods={paymentFacade.methods}
                                 onBillingAddressChange={handleBillingAddressChange}
                                 showPlanDescription={!hasPlanCustomizer}
                                 paymentNeeded={!model.noPaymentNeeded}

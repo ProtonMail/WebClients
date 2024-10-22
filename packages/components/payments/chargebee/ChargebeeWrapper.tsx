@@ -86,6 +86,7 @@ export const ChargebeeCreditCardWrapper = ({
         onChange: (event: ChangeEvent<HTMLInputElement>) => chargebeeCard?.setPostalCode(event.target.value),
         disableChange: loading,
         title: title,
+        'data-protonpass-ignore': true,
     };
 
     const [initialized, setInitialized] = useState(false);

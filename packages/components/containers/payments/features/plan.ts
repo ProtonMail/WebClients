@@ -1,12 +1,11 @@
 import { c, msgid } from 'ttag';
 
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 import {
     BRAND_NAME,
     DUO_MAX_USERS,
     FAMILY_MAX_USERS,
     PASS_SHORT_APP_NAME,
-    PLANS,
-    PLAN_NAMES,
     VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
 import type { FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';

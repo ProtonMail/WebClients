@@ -3,7 +3,8 @@ import { c } from 'ttag';
 
 import type { ButtonLikeShape } from '@proton/atoms';
 import Price from '@proton/components/components/price/Price';
-import { MAIL_APP_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { hasBundle } from '@proton/shared/lib/helpers/subscription';
 import type { Subscription } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';

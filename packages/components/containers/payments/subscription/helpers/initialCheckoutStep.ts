@@ -1,4 +1,4 @@
-import type { PlanIDs } from '@proton/shared/lib/interfaces';
+import type { PlanIDs } from '@proton/payments';
 
 import { SUBSCRIPTION_STEPS } from '../constants';
 

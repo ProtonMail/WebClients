@@ -1,9 +1,10 @@
 import { c, msgid } from 'ttag';
 
+import { type PlanIDs } from '@proton/payments';
 import type { CYCLE } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
-import type { Cycle, PlanIDs, Subscription } from '@proton/shared/lib/interfaces';
+import type { Cycle, Subscription } from '@proton/shared/lib/interfaces';
 
 export const getTotalBillingText = (cycle: Cycle) => {
     const n = cycle;

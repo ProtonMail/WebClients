@@ -17,15 +17,10 @@ import useConfig from '@proton/components/hooks/useConfig';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useBundleProPlan } from '@proton/components/hooks/useHasPlan';
 import { useLoading } from '@proton/hooks';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { disableHighSecurity, enableHighSecurity } from '@proton/shared/lib/api/settings';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import {
-    PLANS,
-    PLAN_NAMES,
-    PROTON_SENTINEL_NAME,
-    SHARED_UPSELL_PATHS,
-    UPSELL_COMPONENT,
-} from '@proton/shared/lib/constants';
+import { PROTON_SENTINEL_NAME, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isProtonSentinelEligible } from '@proton/shared/lib/helpers/userSettings';

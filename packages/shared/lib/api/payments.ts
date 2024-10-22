@@ -1,5 +1,3 @@
-import type { PlanIDs } from 'proton-account/src/app/signup/interfaces';
-
 import type {
     AmountAndCurrency,
     Autopay,
@@ -8,6 +6,7 @@ import type {
     ChargeablePaymentParameters,
     ExistingPayment,
     PAYMENT_TOKEN_STATUS,
+    PlanIDs,
     SavedPaymentMethod,
     TokenPayment,
     TokenPaymentMethod,
@@ -78,6 +77,11 @@ export const deleteSubscription = (data: FeedbackDowngradeData, version: Payment
     data,
 });
 
+export enum ProrationMode {
+    Default = 0,
+    Exact = 1,
+}
+
 export type CheckSubscriptionData = {
     Plans: PlanIDs;
     Currency: Currency;
@@ -88,6 +92,7 @@ export type CheckSubscriptionData = {
      * For taxes
      */
     BillingAddress?: BillingAddress;
+    ProrationMode?: ProrationMode;
 };
 
 type CommonSubscribeData = {
@@ -386,10 +391,20 @@ export type CreatePaymentIntentSavedCardData = AmountAndCurrency & {
     PaymentMethodID: string;
 };
 
+export type CreatePaymentIntentDirectDebitData = AmountAndCurrency & {
+    Payment: {
+        Type: 'sepa_direct_debit';
+        Details: {
+            Email: string;
+        };
+    };
+};
+
 export type CreatePaymentIntentData =
     | CreatePaymentIntentPaypalData
     | CreatePaymentIntentCardData
-    | CreatePaymentIntentSavedCardData;
+    | CreatePaymentIntentSavedCardData
+    | CreatePaymentIntentDirectDebitData;
 
 export const createPaymentIntentV5 = (data: CreatePaymentIntentData) => ({
     url: `payments/v5/tokens`,

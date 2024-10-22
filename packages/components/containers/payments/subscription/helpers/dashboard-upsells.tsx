@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import type { ButtonLikeProps } from '@proton/atoms';
 import { type FullPlansMap } from '@proton/payments';
+import { PLANS } from '@proton/payments';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
@@ -14,7 +15,6 @@ import {
     DUO_MAX_USERS,
     FAMILY_MAX_USERS,
     FREE_VPN_CONNECTIONS,
-    PLANS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';

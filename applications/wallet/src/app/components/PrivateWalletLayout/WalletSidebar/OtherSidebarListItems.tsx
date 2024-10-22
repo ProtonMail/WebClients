@@ -21,8 +21,8 @@ import {
     useToggle,
 } from '@proton/components';
 import { useOrganization } from '@proton/components/hooks';
+import { PLANS } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store';
-import { PLANS } from '@proton/shared/lib/constants';
 
 import { APP_NAME } from '../../../config';
 

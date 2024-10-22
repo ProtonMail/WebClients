@@ -3,7 +3,8 @@ import { screen } from '@testing-library/react';
 import { useUser } from '@proton/account/user/hooks';
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import { useSubscription, useVPNServersCount } from '@proton/components/hooks';
-import { APPS, PLANS, PLAN_NAMES, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES, PLAN_TYPES } from '@proton/payments';
+import { APPS } from '@proton/shared/lib/constants';
 import useFlag from '@proton/unleash/useFlag';
 
 import { CancellationReminderSection } from './CancellationReminderSection';

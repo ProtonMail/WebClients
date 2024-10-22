@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
+import type { PlanIDs } from '@proton/payments';
 import { CYCLE, DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
-import type { PlanIDs, PlansMap, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import type { PlansMap, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 import { getShortBillingText } from '../../helper';
 import CycleItemView from './CycleItemView';

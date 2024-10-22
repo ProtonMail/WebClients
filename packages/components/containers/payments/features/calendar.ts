@@ -1,12 +1,13 @@
 import { c, msgid } from 'ttag';
 
+import { PLANS, PLAN_SERVICES } from '@proton/payments';
 import {
     MAX_CALENDARS_DUO,
     MAX_CALENDARS_FAMILY,
     MAX_CALENDARS_FREE,
     MAX_CALENDARS_PAID,
 } from '@proton/shared/lib/calendar/constants';
-import { CALENDAR_APP_NAME, DUO_MAX_USERS, FAMILY_MAX_USERS, PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
+import { CALENDAR_APP_NAME, DUO_MAX_USERS, FAMILY_MAX_USERS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { PlansMap } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';

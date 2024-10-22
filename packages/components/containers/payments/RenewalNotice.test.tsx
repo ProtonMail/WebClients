@@ -1,10 +1,11 @@
 import { render } from '@testing-library/react';
 import { addMonths } from 'date-fns';
 
-import { ADDON_NAMES, CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { ADDON_NAMES, PLANS, type PlanIDs } from '@proton/payments';
+import { CYCLE } from '@proton/shared/lib/constants';
 import { type RequiredCheckResponse, getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import type { PlanIDs, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
+import type { PlansMap, Subscription } from '@proton/shared/lib/interfaces';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 
 import { getCheckoutRenewNoticeText } from './RenewalNotice';

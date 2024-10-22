@@ -31,6 +31,7 @@ import metrics from '@proton/metrics';
 import type { ExtendedTokenPayment, PaymentMethodStatusExtended, TokenPayment } from '@proton/payments';
 import {
     PAYMENT_METHOD_TYPES,
+    type PlanIDs,
     getPlansMap,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
@@ -49,7 +50,7 @@ import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
 import { getSignupApplication } from './helper';
-import type { PlanIDs, SubscriptionData } from './interfaces';
+import type { SubscriptionData } from './interfaces';
 
 export interface Props {
     api: Api;

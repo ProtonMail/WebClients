@@ -1,7 +1,8 @@
 import { c, msgid } from 'ttag';
 
 import type { IconName } from '@proton/components';
-import { BRAND_NAME, PLANS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/payments';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { Plan } from '@proton/shared/lib/interfaces';
 

@@ -12,7 +12,8 @@ import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { useNow } from '@proton/components/hooks/useNow';
-import { MAX_IPS_ADDON, SECOND } from '@proton/shared/lib/constants';
+import { MAX_IPS_ADDON } from '@proton/payments';
+import { SECOND } from '@proton/shared/lib/constants';
 
 import { type CountryOptions, getLocalizedCountryByAbbr } from '../../../helpers/countries';
 import { useNotifications } from '../../../hooks';

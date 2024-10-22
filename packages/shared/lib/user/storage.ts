@@ -1,7 +1,9 @@
 import { c } from 'ttag';
 
+import { PLANS } from '@proton/payments';
+
 import type { APP_NAMES } from '../constants';
-import { APPS, PLANS } from '../constants';
+import { APPS } from '../constants';
 import { getHasMailB2BPlan, hasVisionary } from '../helpers/subscription';
 import type { Subscription, User, UserModel } from '../interfaces';
 

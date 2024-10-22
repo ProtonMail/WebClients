@@ -1,5 +1,6 @@
 import { c, msgid } from 'ttag';
 
+import { PLANS } from '@proton/payments';
 import {
     BRAND_NAME,
     CALENDAR_APP_NAME,
@@ -11,7 +12,6 @@ import {
     MAIL_SHORT_APP_NAME,
     PASS_APP_NAME,
     PASS_SHORT_APP_NAME,
-    PLANS,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
