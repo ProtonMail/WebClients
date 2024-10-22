@@ -5,14 +5,13 @@ import { c } from 'ttag';
 import { Button, Href } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { TopBar } from '@proton/pass/components/Layout/Bar/TopBar';
 import { PASS_DESKTOP_CHANGELOG_URL, PASS_LINUX_DOWNLOAD_URL, PASS_LINUX_VERSION_URL } from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { semver } from '@proton/pass/utils/string/semver';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
-
-import { TopBar } from './TopBar';
 
 type Release = {
     CategoryName: 'EarlyAccess' | 'Stable';
@@ -62,13 +61,20 @@ export const LinuxUpdateBar: FC = () => {
     );
 
     return (
-        <TopBar visible={show} onClose={() => setShow(false)}>
+        <TopBar breakpoint="md" visible={show} onClose={() => setShow(false)}>
             <Icon name="arrows-rotate" size={6} />
             <div>
                 <span className="text-bold mr-1">{c('Info').t`New version ${latestVersion} is available.`}</span>
                 <span className="color-weak">{c('Info').jt`The changelog can be found ${changelogLink}.`}</span>
             </div>
-            <Button pill size="small" shape="solid" color="norm" onClick={() => onLink(PASS_LINUX_DOWNLOAD_URL)}>
+            <Button
+                className="button-xs"
+                color="norm"
+                pill
+                shape="solid"
+                size="small"
+                onClick={() => onLink(PASS_LINUX_DOWNLOAD_URL)}
+            >
                 {c('Action').t`How to update ${PASS_APP_NAME} on Linux`}
             </Button>
         </TopBar>

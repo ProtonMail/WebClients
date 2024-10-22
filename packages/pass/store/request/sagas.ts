@@ -12,7 +12,7 @@ type RequestFlowSaga<T extends RequestFlow<any, any, void>, P extends any[] = []
     call: (
         payload: RequestIntent<T>,
         ...extraParams: P
-    ) => Promise<RequestSuccess<T>> | Generator<any, RequestSuccess<T>, any>;
+    ) => RequestSuccess<T> | Promise<RequestSuccess<T>> | Generator<any, RequestSuccess<T>, any>;
     enhance?: <A extends Action>(resultAction: A, intent: ReturnType<T['intent']>) => A;
 };
 /** The generated saga does not directly affect the application state. Instead,
