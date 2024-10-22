@@ -2,7 +2,6 @@ import Store from "electron-store";
 import { z } from "zod";
 import { getSettings, saveSettings } from "./settingsStore";
 import { mainLogger } from "../utils/log";
-import { app } from "electron";
 
 const BASE_LOCAL_URL = process.env.BASE_LOCAL_URL || "proton.local";
 const localUrls = {
@@ -54,21 +53,16 @@ const validateURL = (override?: unknown): null | URLConfig => {
 };
 
 export const getAppURL = (): URLConfig => {
-    if (app) {
-        if (app.isPackaged) {
-            const override = store.get("overrideURL");
-            const validatedOverride = validateURL(override);
-            return validatedOverride ?? defaultAppURL;
-        }
-
+    if (process.env.BASE_LOCAL_URL) {
         return localUrls;
     }
 
-    if (process.env.NODE_ENV === "development") {
-        return localUrls;
+    const overrideURLString = store.get("overrideURL");
+    const overrideURL = validateURL(overrideURLString);
+
+    if (overrideURL) {
+        return overrideURL;
     }
 
-    const override = store.get("overrideURL");
-    const validatedOverride = validateURL(override);
-    return validatedOverride ?? defaultAppURL;
+    return defaultAppURL;
 };
