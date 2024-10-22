@@ -38,7 +38,7 @@ const UsersOnboardingChecklistHeader = ({ smallVariant }: Props) => {
             <p className="m-0">
                 {isChecklistFinished
                     ? c('Get started checklist instructions').t`Congratulations, you finished!`
-                    : c('Get started checklist instructions').t`Continue setting up your email`}
+                    : c('Get started checklist instructions').t`Get more storage`}
             </p>
             <Tooltip
                 title={c('Get started checklist instructions').t`Closing this means giving up the free storage bonus.`}
