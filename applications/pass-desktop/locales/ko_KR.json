@@ -209,7 +209,7 @@
         "다크 웹 모니터링 활성화"
       ],
       "Enable this alias to receive emails sent to this alias": [
-        "이 이메일로 이메일을 전송하려면 이 별칭을 활성화하십시오."
+        "이 이메일 주소로 수신하려면 이 별칭을 활성화하십시오."
       ],
       "Entire vault": [
         "전체 금고 공유"
@@ -570,9 +570,6 @@
       ],
       "Write us on Twitter": [
         "Twitter에서 작성"
-      ],
-      "Your password manager not here? Request it.": [
-        "사용 중이신 비밀번호 관리자가 없으신가요? 알려주세요."
       ]
     },
     "App menu": {
@@ -1029,7 +1026,7 @@
         "${ PASS_APP_NAME } 얼리 서포터를 위한 특별 할인."
       ],
       "Get it for ${ price }/month": [
-        "${ price }에 구매하세요"
+        "매달 ${ price }에 구매하세요"
       ],
       "Introducing ${ planNameJSX }": [
         "${ planNameJSX }를 소개합니다"
@@ -1112,9 +1109,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        " 여러 개의 금고를 생성하기 위해 유료 요금제로 업그레이드 해보세요."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "\"${ payload.item.data.metadata.name }\" 항목이 무시되었습니다."
       ],
@@ -1174,9 +1168,6 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME }에 접근하려면 지문 인식 및 기기 PIN코드가 필요합니다."
-      ],
-      "Add your custom email address to monitor :": [
-        "모니터링할 사용자 지정 이메일 주소를 추가하세요 :"
       ],
       "Admin": [
         "관리자"
@@ -1373,12 +1364,6 @@
       "Expires in ${ remainingTime }": [
         "${ remainingTime }에 만료"
       ],
-      "Extra password successfuly created": [
-        "추가 비밀번호를 설정했습니다."
-      ],
-      "Extra password successfuly removed": [
-        "추가 비밀번호를 삭제했습니다."
-      ],
       "Fill in the CSV with your data": [
         "사용자의 데이터인 CSV를 채워 넣으십시오"
       ],
@@ -1526,9 +1511,6 @@
       "Monitoring settings successfully updated": [
         "모니터링 설정이 업데이트되었습니다"
       ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "${ PASS_APP_NAME }은 그저 비밀번호 관리자가 아닙니다. 당신의 비밀번호를 보호하는 것은 물론 이메일 별칭으로 개인적인 이메일 주소를 보호합니다. ${ MAIL_APP_NAME }에 쓰이는 것과 같은 기술로 작동하며, 당신의 데이터가 종단간 암호화되어 당신에 의해서만 접근할 수 있습니다."
-      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
@@ -1579,9 +1561,6 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "${ PASS_APP_NAME }이 온라인에 접근하려면 PIN 코드가 필요합니다. 3번의 시도가 실패하면 로그아웃됩니다."
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "이 경고는 때로는 과도할 수 있습니다. 만약 정보가 침해되었음에도 불구하고 미친 영향이 없다면, 이 보고서를 무시할 수 있습니다."
       ],
       "Owner": [
         "소유자"
@@ -1718,9 +1697,6 @@
       "Select vault to share": [
         "공유하려면 금고 선택"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "불러온 금고가 저장될 위치를 선택하세요."
-      ],
       "Selected items permanently deleted": [
         "선택한 항목을 영구적으로 지웠습니다."
       ],
@@ -1741,9 +1717,6 @@
       ],
       "Settings successfully updated": [
         "설정이 성공적으로 업데이트되었습니다."
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "최대 10명 까지 로그인을 공유하고, 메모를 보호하세요."
       ],
       "Sign in to your account": [
         "계정에 로그인하세요"
@@ -1817,9 +1790,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "타 비밀번호 관리자에서 데이터를 이전하려면, 현재 사용 중인 비밀번호 관리자에 이동하여 데이터를 불러온 다음 ${ PASS_APP_NAME }에 업로드 하십시오. 데이터를 모두 가져오면 해당 추출된 파일은 삭제하십시오."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "불러온 데이터를 검토하려면, 브라우저 툴바의 Pass 아이콘을 클릭하십시오."
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "출시되지 않은 새로운 ${ BRAND_NAME } 기능, 업데이트, 제품들을 사용해보세요. 이렇게 하면 애플리케이션이 새로고침됩니다"
       ],
@@ -1855,9 +1825,6 @@
       ],
       "User's access removed": [
         "사용자 접근 삭제됨"
-      ],
-      "User's access sucessfuly updated": [
-        "사용자의 접근을 성공적으로 업데이트 했습니다."
       ],
       "username": [
         "사용자 이름"
@@ -2083,9 +2050,6 @@
       "Capital letters (A-Z)": [
         "대문자 알파벳 (A-Z)"
       ],
-      "Capitalise": [
-        "대문자"
-      ],
       "Card": [
         "카드"
       ],
@@ -2275,9 +2239,6 @@
       "Import passwords": [
         "비밀번호 불러오기"
       ],
-      "Imported from : ": [
-        "불러온 위치 : "
-      ],
       "Imported on : ": [
         "불러온 위치 : "
       ],
@@ -2377,8 +2338,8 @@
       "Name on card": [
         "카드 소유자 이름"
       ],
-      "Need help ?": [
-        "도움이 필요한가요 ?"
+      "Need help?": [
+        "도움이 필요한가요?"
       ],
       "New vault": [
         "새 금고"
@@ -2516,7 +2477,7 @@
         "웹사이트 아이콘 표시"
       ],
       "Social security": [
-        "사회 보장 번호"
+        "주민등록번호"
       ],
       "Social security number": [
         "사회 보장 번호"
@@ -2568,12 +2529,6 @@
       ],
       "Today": [
         "오늘"
-      ],
-      "Total imported items : ": [
-        "총 불러온 항목 : "
-      ],
-      "Total items : ": [
-        "총 항목 : "
       ],
       "TOTP": [
         "TOTP"
@@ -2903,9 +2858,6 @@
       "Dark Web Monitoring": [
         "다크 웹 모니터링"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "금고 \"${ vaultName }\"을(를) 삭제하시겠어요?"
-      ],
       "Details": [
         "세부 사항"
       ],
@@ -2962,9 +2914,6 @@
       ],
       "Last modified": [
         "마지막 수정"
-      ],
-      "Leave vault ?": [
-        "금고를 떠납니까?"
       ],
       "Loading breaches...": [
         "유출 검색 중..."
@@ -3025,9 +2974,6 @@
       ],
       "Pending access to the shared data": [
         "공유 데이터에 대한 접근 대기 중"
-      ],
-      "Permanently remove all items ?": [
-        "모든 항목을 완전히 삭제하시겠어요?"
       ],
       "Pinned (${ items.length })": [
         "고정됨 (${ items.length })"
@@ -3166,14 +3112,8 @@
       "Section name cannot be empty": [
         "섹션 이름은 비워둘 수 없습니다"
       ],
-      "Url already exists": [
-        "URL이 이미 존재합니다."
-      ],
       "URL cannot be empty": [
         "URL은 필수 정보입니다."
-      ],
-      "Url is invalid": [
-        "URL이 잘못되었습니다."
       ],
       "URL is invalid": [
         "URL이 올바르지 않습니다."
@@ -3203,9 +3143,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "\"${ vaultName }\" 금고를 생성할 수 없음"
-      ],
-      "Could not send invitations to the following addresses :": [
-        "다음의 주소에 초대장을 보낼수 없었습니다 :"
       ],
       "Duplicate email addresses.": [
         "중복된 이메일 주소들입니다."
@@ -3292,10 +3229,7 @@
         "PGP 암호화 내보내기 파일은 비밀번호가 필요합니다."
       ],
       "Please check that the extension is properly installed and enabled": [
-        "확장 프로그램이 설치되고 활성 상태인지 확인하세요."
-      ],
-      "Please contact us for investigating the issue": [
-        "문제 조사를 위해 연락을 부탁드립니다."
+        "확장 프로그램이 제대로 설치되었고 활성화 되었는지 확인해주세요."
       ],
       "Please update the extension to its latest version": [
         "확장 프로그램을 최신 버전으로 업데이트해 주세요."
@@ -3344,9 +3278,6 @@
       ],
       "Verification code is required": [
         "인증 코드는 필수입니다"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "현재 구독보다 더 많은 금고를 생성할 수 없습니다."
       ],
       "You have reached the limit of members who can access this vault.": [
         "이 금고를 접근할 수 있는 최대 사용자 수에 도달했습니다."

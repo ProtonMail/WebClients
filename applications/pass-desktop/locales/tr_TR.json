@@ -571,9 +571,6 @@
       ],
       "Write us on Twitter": [
         "Bize Twitter üzerinden yazın"
-      ],
-      "Your password manager not here? Request it.": [
-        "Parola yöneticiniz burada yok mu? İstekte bulunun."
       ]
     },
     "App menu": {
@@ -1122,9 +1119,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        " Birden çok kasa oluşturabilmek için ücretli bir tarifeye geçin."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "\"${ payload.item.data.metadata.name }\" ögesi yok sayıldı"
       ],
@@ -1189,9 +1183,6 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME } kilidi açmak için parmak iziniz veya aygıtınızın PIN kodu gerekecek."
-      ],
-      "Add your custom email address to monitor :": [
-        "İzlenecek özel e-posta adresinizi ekleyin:"
       ],
       "Admin": [
         "Yönetici"
@@ -1388,12 +1379,6 @@
       "Expires in ${ remainingTime }": [
         "${ remainingTime } sonra geçerlilik süresi dolacak"
       ],
-      "Extra password successfuly created": [
-        "Ek parola oluşturuldu"
-      ],
-      "Extra password successfuly removed": [
-        "Ek parola kaldırıldı"
-      ],
       "Fill in the CSV with your data": [
         "CSV dosyasına verilerinizi ekleyin"
       ],
@@ -1544,9 +1529,6 @@
       "Monitoring settings successfully updated": [
         "İzleme ayarları güncellendi"
       ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Bir parola yöneticisinden daha fazlası. ${ PASS_APP_NAME } parolalarınızı ve takma e-posta adresleri ile e-posta adresinizi korur. ${ MAIL_APP_NAME } ile aynı teknolojiyi kullandığından, verileriniz uçtan uca şifreleme ile korunur ve yalnızca sizin tarafınızdan erişilebilir."
-      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
@@ -1597,9 +1579,6 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Çevrim içi olarak ${ PASS_APP_NAME } kullanmak için PIN kodu yazmanız gerekir. 3 başarısız denemeden sonra oturumunuz kapatılır."
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Uyarılarımız ihtiyatlı davranmak yönündedir. Ele geçirilmiş bilgilerin hiçbirini tanımıyorsanız, bu raporu güvenle yok sayabilirsiniz."
       ],
       "Owner": [
         "Sahibi"
@@ -1737,9 +1716,6 @@
       "Select vault to share": [
         "Paylaşılacak kasayı seçin"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "İçe aktarılan kasaların kaydedileceği yeri seçin."
-      ],
       "Selected items permanently deleted": [
         "Seçilmiş ögeler kalıcı olarak silindi"
       ],
@@ -1760,9 +1736,6 @@
       ],
       "Settings successfully updated": [
         "Ayarlar güncellendi"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Oturum açma bilgilerinizi ve gizli notlarınızı 10 kişiye kadar paylaşın"
       ],
       "Sign in to your account": [
         "Hesabınızda oturum açın"
@@ -1837,9 +1810,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Başka bir parola yöneticisindeki verileri aktarmak için parola yöneticisine gidin, verilerinizi dışa aktarın ve ardından ${ PASS_APP_NAME } uygulamasına yükleyin. Verileriniz içe aktarıldıktan sonra dışa aktardığınız dosyayı silin."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "İçe aktarılan verilerinizi gözden geçirmek için tarayıcınızın araç çubuğundaki Proton Pass simgesine tıklayın."
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Herkese açık olarak sunulmadan önce yeni ${ BRAND_NAME } özelliklerini, güncellemelerini ve ürünlerini deneyin. Uygulama yeniden yüklenir"
       ],
@@ -1875,9 +1845,6 @@
       ],
       "User's access removed": [
         "Kullanıcının erişimi kaldırıldı"
-      ],
-      "User's access sucessfuly updated": [
-        "Kullanıcının erişimi güncellendi"
       ],
       "username": [
         "kullanıcı adı"
@@ -2113,9 +2080,6 @@
       "Capital letters (A-Z)": [
         "Büyük harfler (A-Z)"
       ],
-      "Capitalise": [
-        "Büyüt"
-      ],
       "Card": [
         "Kart"
       ],
@@ -2305,9 +2269,6 @@
       "Import passwords": [
         "Parolaları içe aktar"
       ],
-      "Imported from : ": [
-        "Şuradan içe aktarıldı: "
-      ],
       "Imported on : ": [
         "Şu zamanda içe aktarıldı: "
       ],
@@ -2407,8 +2368,8 @@
       "Name on card": [
         "Kart üzerindeki isim"
       ],
-      "Need help ?": [
-        "Yardım mı gerekiyor ?"
+      "Need help?": [
+        "Yardım mı gerekiyor?"
       ],
       "New vault": [
         "Yeni kasa"
@@ -2599,12 +2560,6 @@
       ],
       "Today": [
         "Bugün"
-      ],
-      "Total imported items : ": [
-        "Toplam içe aktarılan öge: "
-      ],
-      "Total items : ": [
-        "Toplam öge: "
       ],
       "TOTP": [
         "Tek kullanımlık parola"
@@ -2936,9 +2891,6 @@
       "Dark Web Monitoring": [
         "Karanlık ağ izleme"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "\"${ vaultName }\" kasası silinsin mi?"
-      ],
       "Details": [
         "Ayrıntılar"
       ],
@@ -2995,9 +2947,6 @@
       ],
       "Last modified": [
         "Son değiştirilme"
-      ],
-      "Leave vault ?": [
-        "Kasa bırakılsın mı?"
       ],
       "Loading breaches...": [
         "Verilerin ele geçirilmesi olayları yükleniyor..."
@@ -3058,9 +3007,6 @@
       ],
       "Pending access to the shared data": [
         "Paylaşılmış verilere erişilmesi bekleniyor"
-      ],
-      "Permanently remove all items ?": [
-        "Tüm ögeler kalıcı olarak silinsin mi?"
       ],
       "Pinned (${ items.length })": [
         "Sabitlenmiş (${ items.length })"
@@ -3200,14 +3146,8 @@
       "Section name cannot be empty": [
         "Bölüm adı boş olamaz"
       ],
-      "Url already exists": [
-        "Adres zaten var"
-      ],
       "URL cannot be empty": [
         "Adres boş olamaz"
-      ],
-      "Url is invalid": [
-        "Adres geçersiz"
       ],
       "URL is invalid": [
         "Adres geçersiz"
@@ -3237,9 +3177,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "\"${ vaultName }\" kasası oluşturulamadı"
-      ],
-      "Could not send invitations to the following addresses :": [
-        "Şu adreslere davetiye gönderilemedi :"
       ],
       "Duplicate email addresses.": [
         "E-posta adresleri yineleniyor."
@@ -3329,9 +3266,6 @@
       "Please check that the extension is properly installed and enabled": [
         "Lütfen eklentinin düzgün olarak kurulduğundan ve etkin olduğundan emin olun"
       ],
-      "Please contact us for investigating the issue": [
-        "Sorunu inceleyebilmemiz için lütfen bizimle görüşün"
-      ],
       "Please update the extension to its latest version": [
         "Lütfen eklentiyi son sürümüne güncelleyin"
       ],
@@ -3379,9 +3313,6 @@
       ],
       "Verification code is required": [
         "Doğrulama kodunun yazılması zorunludur"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "Abonelik tarifenizde sunulan kasa sayısından daha fazla kasa oluşturamazsınız."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Bu kasaya erişebilecek en fazla üye sayısı sınırına ulaştınız."
