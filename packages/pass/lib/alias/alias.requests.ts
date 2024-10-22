@@ -11,6 +11,7 @@ import type {
     AliasContactGetResponse,
     AliasContactInfoDTO,
     AliasContactListResponse,
+    AliasContactNewDTO,
     AliasCreateFromPendingDTO,
     AliasDetails,
     AliasMailbox,
@@ -99,6 +100,13 @@ export const aliasGetContactInfoApi = async ({
             method: 'get',
         })
     ).Contact!;
+
+export const aliasCreateContactApi = ({ shareId, itemId, name, email }: AliasContactNewDTO) =>
+    api({
+        url: `pass/v1/share/${shareId}/alias/${itemId}/contact`,
+        method: 'post',
+        data: { Name: name, Email: email },
+    }).then(() => true);
 
 export const aliasDeleteContactApi = ({ shareId, itemId, contactId }: AliasContactInfoDTO) =>
     api({

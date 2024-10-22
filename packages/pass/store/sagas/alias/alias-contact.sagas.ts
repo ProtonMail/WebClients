@@ -1,11 +1,13 @@
 import {
     aliasBlockContactApi,
+    aliasCreateContactApi,
     aliasDeleteContactApi,
     aliasGetContactInfoApi,
     aliasGetContactsListApi,
 } from '@proton/pass/lib/alias/alias.requests';
 import {
     aliasBlockContact,
+    aliasCreateContact,
     aliasDeleteContact,
     aliasGetContactInfo,
     aliasGetContactsList,
@@ -22,6 +24,11 @@ const aliasContactInfoSaga = createRequestSaga({
     call: aliasGetContactInfoApi,
 });
 
+const aliasCreateContactSaga = createRequestSaga({
+    actions: aliasCreateContact,
+    call: aliasCreateContactApi,
+});
+
 const aliasDeleteContactSaga = createRequestSaga({
     actions: aliasDeleteContact,
     call: aliasDeleteContactApi,
@@ -32,4 +39,10 @@ const blockAliasContactSaga = createRequestSaga({
     call: aliasBlockContactApi,
 });
 
-export default [aliasContactListSaga, aliasContactInfoSaga, aliasDeleteContactSaga, blockAliasContactSaga];
+export default [
+    aliasContactListSaga,
+    aliasContactInfoSaga,
+    aliasCreateContactSaga,
+    aliasDeleteContactSaga,
+    blockAliasContactSaga,
+];
